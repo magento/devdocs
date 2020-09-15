@@ -55,12 +55,12 @@ During project provisioning, Magento adds your project to the Fastly service acc
 
 ### Change your Fastly API token
 
-If you need to change the Fastly API token credential, you must submit a Magento support ticket to request a new token, and then update your Staging or Production environment with the new value.
+If you need to change the Fastly API token credential, you must submit a [Magento support ticket] to request a new token, and then update your Staging or Production environment with the new value.
 
 {:.procedure}
 To change the Fastly API token credential:
 
-1. Submit a Magento support ticket requesting the new token.
+1. Submit a [Magento support ticket] requesting the new token.
 
    Include your {{ site.data.var.ece }} project ID and the environments that require a new credential.
 
@@ -104,7 +104,7 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 
 -  For attacks targeting layer 3 or 4, the Fastly service filters out traffic based on port and protocol, inspecting only HTTP or HTTPS requests. ICMP, UDP, and other network born attacks are dropped at our network edge. This includes reflection and amplification attacks, which use UDP services like SSDP or NTP. By providing this level of protection, we effectively block  multiple common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.  Fastly manages the TCP level attacks at the cache layer, addressing the necessary scale and context per client to deal with SYN flood and its many variants, including TCP stack, resource attacks, and TLS attacks within the Fastly systems.
 
--  Fastly also provides protection against Layer 7 attacks. If your Magento store is experiencing performance issues and you suspect a Layer 7 DDoS attack, submit a Magento support ticket. Magento can create and apply custom rules to the Fastly service to inspect for and filter out malicious requests based on header, payload, or a combination of attributes that identify the attack traffic. See [Checking for DDoS attacks][] and [How to block malicious traffic] in the *Magento Help Center*.
+-  Fastly also provides protection against Layer 7 attacks. If your Magento store is experiencing performance issues and you suspect a Layer 7 DDoS attack, submit a [Magento support ticket]. Magento can create and apply custom rules to the Fastly service to inspect for and filter out malicious requests based on header, payload, or a combination of attributes that identify the attack traffic. See [Checking for DDoS attacks][] and [How to block malicious traffic] in the *Magento Help Center*.
 
 <!--Link definitions-->
 [bypass the Fastly cache]: {{site.baseurl}}/cloud/cdn/fastly-vcl-bypass-to-origin.html
@@ -121,13 +121,13 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 [GeoIP service support]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-geoip-handling
 [Get Fastly credentials]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#cloud-fastly-creds
 [How to block malicious traffic]: https://support.magento.com/hc/en-us/articles/360039447892-How-to-block-malicious-traffic-for-Magento-Commerce-Cloud-on-Fastly-level
-[Magento support ticket]: https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket
+[Magento support ticket]: https://support.magento.com/hc/en-us/articles/360019088251
 [New Relic]: {{site.baseurl}}/cloud/project/new-relic.html
 [Project Web UI environment configuration variables]: {{site.baseurl}}/cloud/project/projects.html#environment-configuration-variables
 [purge options]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-purge-options
 [set up Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html
 [Test the new credential]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
-[TLS and Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#tls-and-fastly
+[TLS and Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates
 [Upgrade Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade
 [Web Application Firewall]: {{site.baseurl}}/cloud/cdn/fastly-waf-service.html
 [Working with Domains]: https://docs.fastly.com/en/guides/working-with-domains
