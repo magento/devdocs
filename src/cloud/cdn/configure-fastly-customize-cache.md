@@ -99,23 +99,23 @@ Fastly also provides a series of [geolocation-related VCL features](https://docs
 
 Fastly Edge Modules is a flexible framework that allows definition of UI components and associated VCL code through a template. These modules make it easy to customize and extend the Fastly service configuration through the user interface instead of using custom VCL snippets.
 
-Edge modules allow you to enable specific functionality like CORS headers, Magento Cloud Sitemap rewrites, and to configure integration between your Magento store and other CMSs or backends.
+Edge modules allow you to enable specific functionality like CORS headers, Magento Cloud Sitemap rewrites, and to configure integration between your Magento store and other CMSs or back ends.
 
 You must turn on the _Enable Fastly Edge modules_ option to access the Edge Modules menu to view, configure, and manage the available Edge modules.
 
-## Configure backends and Origin shielding
+## Configure back ends and Origin shielding
 
-Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A _backend_ is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.
+Back-end settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A _back end_ is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.
 
 _Origin shielding_ routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduce traffic directly to the origin.
 
 The default Fastly VCL code specifies default values for Origin shielding and timeouts for your {{ site.data.var.ece }} sites. We recommend using the default values. In some case, you might need to modify the default values. For example, if you are getting a lot of time to first byte (TTFB) errors, you might need to adjust the _first byte timeout_ value.
 
  {:.bs-callout-info}
-If you need to integrate additional backends into your site, such as a backend to serve blog content from a [Wordpress]({{ site.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. For details, see [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in the Fastly module documentation.
+If you need to integrate additional back ends into your site, such as a back end to serve blog content from a [Wordpress]({{ site.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the back end and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress back end. For details, see [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in the Fastly module documentation.
 
 {:.procedure}
-To review the backend settings configuration:
+To review the back end setting configuration:
 
 {% include cloud/admin-ui-login-step.md %}
 
@@ -123,9 +123,9 @@ To review the backend settings configuration:
 
 1. Expand the **Fastly Configuration** section.
 
-1. Expand **Backend settings** and click the gear to check the default backend. A modal opens that shows current settings with options to change them.
+1. Expand **Backend settings** and click the gear to check the default back end. A modal opens that shows current settings with options to change them.
 
-   ![Modify the backend]({{ site.baseurl }}/common/images/cloud/cloud_fastly-backend.png){:width="600px"}
+   ![Modify the back end]({{ site.baseurl }}/common/images/cloud/cloud_fastly-backend.png){:width="600px"}
 
 1. Select the **Shield** location (or datacenter) closest to your Cloud service region.
 
@@ -159,7 +159,7 @@ To review the backend settings configuration:
 
 1. In the Magento Admin, click **Save Config**.
 
-For more information, see the Magento 2 [Backend settings guide](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md) in the Fastly module documentation.
+For more information, see the [Backend settings guide](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md) in the Fastly module documentation.
 
 ## Basic authentication {#basic-auth}
 
