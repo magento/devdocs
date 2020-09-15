@@ -25,11 +25,11 @@ Jekyll::Hooks.register :pages, :post_init do |page|
   next if page.data['last_modified_at']
 
   # Skip pages created by custom generators like 'mrg_pages'
-  next if page.kind_of? Jekyll::PageWithoutAFile
+  next if page.is_a? Jekyll::PageWithoutAFile
 
   # Add site.source to the page path
   file_path = File.join(page.site.source, page.path)
-  
+
   # Get real path of the page. If this is a symlink read it to get path of the real file with content.
   real_filepath = File.realpath(file_path)
 

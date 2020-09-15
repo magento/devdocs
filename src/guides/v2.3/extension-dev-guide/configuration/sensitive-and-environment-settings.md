@@ -73,9 +73,11 @@ bin/magento app:config:dump
 
 A message similar to the following is displayed:
 
-    The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
-    CONFIG__DEFAULT__PAYMENT__TEST__PASWORD for payment/test/password
-    Done.
+```terminal
+The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
+CONFIG__DEFAULT__PAYMENT__TEST__PASWORD for payment/test/password
+Done.
+```
 
 ### Example: System-specific settings
 

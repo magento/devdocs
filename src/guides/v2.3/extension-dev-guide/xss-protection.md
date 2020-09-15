@@ -190,9 +190,9 @@ This sniff finds all _echo_ calls in PHTML-templates and determines if the outpu
 
 It covers the following cases:
 
--  /_ @noEscape _/ before output. Output does not require escaping. Test is green.
+-  `/_ @noEscape _/` before output. Output does not require escaping. Test is green.
 
--  /_ @escapeNotVerified _/ before output. Output escaping is not checked and should be verified. Test is green.
+-  `/_ @escapeNotVerified _/` before output. Output escaping is not checked and should be verified. Test is green.
 
 -  Methods which contain "html" in their names (for example echo $object->{suffix}Html{postfix}()). Data is ready for the HTML output. Test is green.
 
