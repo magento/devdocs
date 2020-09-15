@@ -14,7 +14,7 @@ Fastly provides the following services to optimize and secure content delivery o
 
 -  **Content delivery network (CDN)**—Varnish-based service that caches your site pages, assets, CSS, and more in backend data centers you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster. The CDN service provides the following features:
 
-   -  Cache your site pages, assets, CSS, and more in backend data centers that you set up to reduce bandwidth load and costs
+   -  Cache your site pages, assets, CSS, and more in back-end data centers that you set up to reduce bandwidth load and costs
 
    -  Use [Fastly custom VCL snippets] (Varnish 2.1 compliant) to modify how caching responds to requests
 
