@@ -40,25 +40,16 @@ During the [build phase]({{ site.baseurl }}/cloud/reference/discover-deploy.html
 
 The `vendor/magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type) and does not contain any code.
 
-The metapackage depends on the appropriate versions of `vendor/magento/ece-patches`, [`vendor/magento/ece-tools`](#ece-tools), and [`vendor/magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. For example, to use {{site.data.var.ee}} version 2.2.0, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.2.0.
+The metapackage depends on the appropriate versions of `vendor/magento/ece-patches`, `vendor/magento/ece-tools` and `vendor/magento/product-enterprise-edition`. At any given version, this package requires the same version of `magento/product-enterprise-edition`. For example, to use {{site.data.var.ee}} version 2.2.0, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.2.0.
 
 This package depends on a floating version of `vendor/magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified {{site.data.var.ee}} version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 
-The main components of this metapackage are the following :
+The main packages of this metapackage are the following :
 
-### vendor/magento/ece-tools {#ece-tools}
-
-The `{{site.data.var.ct}}` package is compatible with {{site.data.var.ee}} version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your projects.
-
-### vendor/magento/product-enterprise-edition {#cloud-composer-prodee}
-
-This [metapackage](https://glossary.magento.com/metapackage) requires Magento application components, including modules, frameworks, themes, and so on.
-
-### vendor/fastly2/magento2
-This module manages the Fastly CDN & services for the Pro Staging and Production and Starter Production environments. See [Fastly Documentation]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html).
-
-### vendor/magento/module-paypal-on-boarding
-This module provides PayPal payment gateway checkout by connecting to your PayPal merchant account. See [PayPal On-Boarding tool]({{ site.baseurl }}/cloud/live/paypal-onboarding.html).
+- **vendor/magento/ece-tools}** - The `{{site.data.var.ct}}` package is compatible with {{site.data.var.ee}} version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your projects.
+- **vendor/magento/product-enterprise-edition** - This [metapackage](https://glossary.magento.com/metapackage) requires Magento application components, including modules, frameworks, themes, and so on.
+- **vendor/fastly2/magento2** - This module manages the Fastly CDN & services for the Pro Staging and Production and Starter Production environments. See [Fastly Documentation]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html).
+- **vendor/magento/module-paypal-on-boarding** - This module provides PayPal payment gateway checkout by connecting to your PayPal merchant account. See [PayPal On-Boarding tool]({{ site.baseurl }}/cloud/live/paypal-onboarding.html).
 
 ## Base packages and file marshalling
 
