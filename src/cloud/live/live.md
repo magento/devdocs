@@ -17,7 +17,7 @@ If you checked this information prior to deploying and testing in Staging, consi
 *  List of all storefront domains to add to the certificate
 *  SSL/TLS certificate
 
-As part of {{site.data.var.ece}} subscription, Magento provides a Domain-Validated SSL/TLS certificate issued by Let's Encrypt. Each Pro Production, Staging and Starter Production (`master`) environment has a unique certificate that covers all domains and subdomains in that environment. These certificates are provisioned and uploaded to your site automatically after you update your DNS configuration for development and production. See [Provision SSL/TLS certificates]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates).
+As part of {{site.data.var.ece}} subscription, Magento provides a Domain-Validated SSL/TLS certificate issued by Let's Encrypt. Each Pro Production, Staging, and Starter Production (`master`) environment has a unique certificate that covers all domains and subdomains in that environment. These certificates are provisioned and uploaded to your site automatically after you update your DNS configuration for development and production. See [Provision SSL/TLS certificates]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates).
 
 {:.bs-callout-info}
 If you want to deploy your own Extended Validation SSL certificate for your company instead of using the Let's Encrypt certificate, contact your CTA or submit a [Magento Support ticket](https://support.magento.com/hc/en-us/articles/360019088251).
