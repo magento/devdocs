@@ -13,7 +13,7 @@ The following sections provide an overview and instructions for configuring some
 
 ## Force TLS
 
-Fastly provides the _Force TLS_ option to redirect unencrypted requests (HTTP) to Fastly. After your Staging or Production environment has been provisioned with a [valid SSL/TSL certificate]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates), you can update the Fastly configuration for your store to enable the Force TLS option.  See the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md) in the Fastly CDN Module for Magento 2 documentation.
+Fastly provides the _Force TLS_ option to redirect unencrypted requests (HTTP) to Fastly. After your Staging or Production environment has been provisioned with a [valid SSL/TLS certificate]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates), you can update the Fastly configuration for your store to enable the Force TLS option. See the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md) in the Fastly CDN Module for Magento 2 documentation.
 
 {:.bs-callout-info}
 Enabling the Force TLS option is a recommended best practice for Magento Commerce stores.
