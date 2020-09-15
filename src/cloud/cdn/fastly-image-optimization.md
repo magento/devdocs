@@ -25,7 +25,7 @@ You can enable Fastly image optimization (Fastly IO) from the Admin panel by upl
 **Prerequisites:**
 
 -  Install or upgrade to Fastly module version 1.2.62 or later
--  [Configure Fastly Origin shield and back end]({{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-backends-and-origin-shielding)
+-  [Configure Fastly Origin shield and back end]({{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-back-ends-and-origin-shielding)
 
 {:.procedure}
 To enable Fastly IO:
