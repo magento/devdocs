@@ -50,14 +50,14 @@ The main components of this metapackage are the following :
 
 The `{{site.data.var.ct}}` package is compatible with {{site.data.var.ee}} version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your projects.
 
-## vendor/magento/product-enterprise-edition {#cloud-composer-prodee}
+### vendor/magento/product-enterprise-edition {#cloud-composer-prodee}
 
 This [metapackage](https://glossary.magento.com/metapackage) requires Magento application components, including modules, frameworks, themes, and so on.
 
-## vendor/fastly2/magento2
+### vendor/fastly2/magento2
 This module manages the Fastly CDN & services for the Pro Staging and Production and Starter Production environments. See [Fastly Documentation]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html).
 
-## vendor/magento/module-paypal-on-boarding
+### vendor/magento/module-paypal-on-boarding
 This module provides PayPal payment gateway checkout by connecting to your PayPal merchant account. See [PayPal On-Boarding tool]({{ site.baseurl }}/cloud/live/paypal-onboarding.html).
 
 ## Base packages and file marshalling
