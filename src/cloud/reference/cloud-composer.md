@@ -44,7 +44,7 @@ The metapackage depends on the appropriate versions of `vendor/magento/ece-patch
 
 This package depends on a floating version of `vendor/magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified {{site.data.var.ee}} version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 
-The main components of this metapackage are :
+The main components of this metapackage are the following :
 
 ### vendor/magento/ece-tools {#ece-tools}
 
