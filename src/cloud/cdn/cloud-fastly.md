@@ -126,10 +126,8 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 [Project Web UI environment configuration variables]: {{site.baseurl}}/cloud/project/projects.html#environment-configuration-variables
 [purge options]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-purge-options
 [set up Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html
-[Submit a support ticket]: https://support.magento.com/hc/en-us/articles/360019088251-Submit-a-support-ticket
 [Test the new credential]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
 [TLS and Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#tls-and-fastly
-[Upgrade Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade
 [Upgrade Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade
 [Web Application Firewall]: {{site.baseurl}}/cloud/cdn/fastly-waf-service.html
 [Working with Domains]: https://docs.fastly.com/en/guides/working-with-domains
