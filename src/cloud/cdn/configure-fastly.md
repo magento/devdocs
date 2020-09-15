@@ -147,7 +147,7 @@ Refer to [Go live checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist
 
 ### TLS and Fastly
 
-To enable the Fastly service to serve secure traffic over HTTPS, your environment must have a Domain-Validated SSL/TLS certificate. Magento provides an automated process to validate domain ownership, provision a Let's Encyrpt SSL/TLS certificate, and apply it to your Cloud environment. This automation requires you to supply information to enable domain validation using **one** of the following methods:
+To enable the Fastly service to serve secure traffic over HTTPS, your environment must have a Domain-Validated SSL/TLS certificate. Magento provides an automated process to validate domain ownership, provision a Let's Encrypt SSL/TLS certificate, and apply it to your Cloud environment. This automation requires you to supply information to enable domain validation using **one** of the following methods:
 
 -  **DNS validation**–Update your DNS configuration with CNAME records that point to the Fastly service
 -  **ACME challenge CNAME records**–Add the ACME challenge CNAME records to your DNS configuration for each domain

@@ -13,18 +13,17 @@ The following sections provide an overview and instructions for configuring some
 
 ## Force TLS
 
-Fastly provides the _Force TLS_ option to redirect unencrypted requests (HTTP) to Fastly. After your Staging or Production environment has been provisioned with a [valid SSL/TSL certificate]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#tls-and-fastly), you can update the Fastly configuration for your store to enable the Force TLS option.  See the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md) in the Fastly CDN Module for Magento 2 documentation.
+Fastly provides the _Force TLS_ option to redirect unencrypted requests (HTTP) to Fastly. After your Staging or Production environment has been provisioned with a [valid SSL/TSL certificate]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#tls-and-fastly), you can update the Fastly configuration for your store to enable the Force TLS option. See the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md) in the Fastly CDN Module for Magento 2 documentation.
 
 {:.bs-callout-info}
-Enabling this option is a recommended best practice for Magento Commerce stores.
+Enabling the Force TLS option is a recommended best practice for Magento Commerce stores.
 
 ## Extend Fastly timeout
 
-The default Fastly service configuration specifies a 180 second-timeout period for HTTPS requests to the Magento Admin. Any request processing that exceeds the timeout period, returns a 503 error.
-As a result, you might get 503 errors when attempting operations that require
-lengthy processing, or when trying to perform bulk operations.
+The Fastly service configuration specifies a default timeout period of 180 seconds for HTTPS requests to the Magento Admin. Any request processing that exceeds the timeout period returns a 503 error.
+As a result, you could receive 503 errors when attempting operations that require lengthy processing, or when trying to perform bulk operations.
 
-If you need to complete bulk actions that take longer than 3 minutes, you can prevent 503 errors by changing the _Admin path timeout_.
+If you need to complete bulk actions that take longer than 3 minutes, you can prevent 503 errors by changing the _Admin path timeout_ value.
 
 {:.procedure}
 To extend the Fastly timeout for the Magento Admin:
@@ -45,7 +44,7 @@ Fastly gets the Magento Admin path for generating the VCL file from the `app/etc
 
 ## Configure purge options
 
-Fastly provides multiple types of purge options on your Magento Cache Management page including purging product category, product assets, and content. When enabled, Fastly watches for events to automatically purge those caches. If you disable a purge option, you can manually purge Fastly caches after finishing updates through the Cache Management page.
+Fastly provides multiple types of purge options on your Magento Cache Management page, including purging product category, product assets, and content. When enabled, Fastly watches for events to automatically purge those caches. If you disable a purge option, you can manually purge Fastly caches after finishing updates through the Cache Management page.
 
 The options include:
 
@@ -73,11 +72,12 @@ For more information, see [the Fastly configuration options](https://github.com/
 
 The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.
 
+{:.procedure}
+To set up GeoIp handling:
+
 {% include cloud/admin-ui-login-step.md %}
 
 1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
-
-1. In the Magento Admin _Fastly Configuration_ section,
 
 1. In the *Fastly Configuration* section, expand **Advanced**.
 
@@ -112,7 +112,7 @@ _Origin shielding_ routes all requests for your store to a specific Point of Pre
 The default Fastly VCL code specifies default values for Origin shielding and timeouts for your {{ site.data.var.ece }} sites. We recommend using the default values. In some case, you might need to modify the default values. For example, if you are getting a lot of time to first byte (TTFB) errors, you might need to adjust the _first byte timeout_ value.
 
  {:.bs-callout-info}
-If you need to integrate additional backends into your site such as a backend to serve blog content from a [Wordpress]({{ site.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. For details, see [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in the Fastly module documentation.
+If you need to integrate additional backends into your site, such as a backend to serve blog content from a [Wordpress]({{ site.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. For details, see [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in the Fastly module documentation.
 
 {:.procedure}
 To review the backend settings configuration:
@@ -128,7 +128,8 @@ To review the backend settings configuration:
    ![Modify the backend]({{ site.baseurl }}/common/images/cloud/cloud_fastly-backend.png){:width="600px"}
 
 1. Select the **Shield** location (or datacenter) closest to your Cloud service region.
-   For example, if your project is hosted on AWS, Staging is on the west coast of the United States (us-west-1), select the `sjc-ca-us` Fastly shield location. This is the POP that provides caching services.
+
+   For example, if your project is hosted on AWS, then the Staging is on the west coast of the United States (`us-west-1`); therefore, you would select the `sjc-ca-us` Fastly shield location. This is the POP that provides caching services.
 
    The following list shows which Fastly shield locations to use based on AWS regions:
 
@@ -210,7 +211,6 @@ To manage Fastly domain configuration from the Magento Admin:
 Use the _Maintenance Mode_ option to allow administrative access to your site from specified IP addresses while returning an error page for all other requests.
 
 {:.procedure}
-
 To enable Maintenance mode with Administrative access:
 
 1. Open the _Fastly configuration_ section in the Magento Admin UI.
