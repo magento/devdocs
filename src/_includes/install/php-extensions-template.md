@@ -2,6 +2,7 @@
 
 {% for item in product.require %}
   {% if item[0] contains 'ext-' %}
-* {{ item[0] }}
+
+*  {{ item[0] }}
   {% endif %}
 {% endfor %}
