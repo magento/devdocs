@@ -33,7 +33,7 @@ Fastly provides the following services to optimize and secure content delivery o
 
    -  **[Web Application Firewall]**—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. The WAF service is available on Pro and Starter Production environments only.
 
-   -  **SSL/TLS certificates**–The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. Magento provides a Domain-validated Let's Encyrpt SSL/TLS certificate for each Staging and Production environment. Magento completes domain validation and certificate provisioning during the Fastly set up process. See [TLS and Fastly].
+   -  **SSL/TLS certificates**–The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. Magento provides a Domain-validated Let's Encrypt SSL/TLS certificate for each Staging and Production environment. Magento completes domain validation and certificate provisioning during the Fastly set up process. See [TLS and Fastly].
 
    -  **Origin cloaking**–Magento can enable Origin Cloaking for all Magento Commerce projects hosted on the Cloud platform. This option hides the IP addresses of your origin servers to protect them from direct attack. When this feature is enabled, all traffic to your Cloud infrastructure must route through the Fastly CDN or another secure channel. Any traffic sent directly to the Origin servers is blocked. If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache].
 
