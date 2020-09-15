@@ -19,6 +19,10 @@ on:
     branches:
       - master
       - 2.*-develop
+    paths-ignore:
+      - '**.md'
+      - '**.html'
+      - '**.xml'
 
 ###############
 # Set the Job #
