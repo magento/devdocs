@@ -221,17 +221,17 @@ On Pro plan projects, the Master branch provides an active PaaS environment with
 
 {{site.data.var.ece}} uses the Debian GNU/Linux operating system and the [NGINX](https://glossary.magento.com/nginx) web server. You cannot upgrade this software, but you can configure versions for the following:
 
--  [PHP]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)
--  [MySQL]({{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
--  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
--  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
--  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+-  [PHP]({{ site.baseurl }}/cloud/project/magento-app.html)
+-  [MySQL]({{ site.baseurl }}/cloud/project/services-mysql.html)
+-  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
+-  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
+-  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
 
 For the Staging and Production environments, we recommend installing the latest version of the Fastly CDN module. See [Fastly in Cloud]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
 Edit the following YAML files to configure specific software versions to use in your implementation.
 
--  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
--  [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html)—url processing
--  [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
+-  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—application build and deployment
+-  [`routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)—url processing
+-  [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—supported services
 -  [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2 and later
