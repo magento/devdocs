@@ -69,4 +69,3 @@ This is an example of how the ColumnsEditingBulk component disables the [Columns
     </columns>
 </listing>
 ```
-
