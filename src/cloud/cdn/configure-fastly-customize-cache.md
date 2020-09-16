@@ -13,7 +13,7 @@ The following sections provide an overview and instructions for configuring some
 
 ## Force TLS
 
-Fastly provides the _Force TLS_ option to redirect unencrypted requests (HTTP) to Fastly. After your Staging or Production environment has been provisioned with a [valid SSL/TSL certificate]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#tls-and-fastly), you can update the Fastly configuration for your store to enable the Force TLS option. See the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md) in the Fastly CDN Module for Magento 2 documentation.
+Fastly provides the _Force TLS_ option to redirect unencrypted requests (HTTP) to Fastly. After your Staging or Production environment has been provisioned with a [valid SSL/TLS certificate]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates), you can update the Fastly configuration for your store to enable the Force TLS option. See the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md) in the Fastly CDN Module for Magento 2 documentation.
 
 {:.bs-callout-info}
 Enabling the Force TLS option is a recommended best practice for Magento Commerce stores.
@@ -101,7 +101,7 @@ Fastly Edge Modules is a flexible framework that allows definition of UI compone
 
 Edge modules allow you to enable specific functionality like CORS headers, Magento Cloud Sitemap rewrites, and to configure integration between your Magento store and other CMSs or back ends.
 
-You must turn on the _Enable Fastly Edge modules_ option to access the Edge Modules menu to view, configure, and manage the available Edge modules.
+You must turn on the _Enable Fastly Edge modules_ option to access the Edge Modules menu to view, configure, and manage the available Edge modules. See [Fastly Edge Modules](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULES.md) in the Fastly CDN module documentation.
 
 ## Configure back ends and Origin shielding
 
@@ -166,7 +166,7 @@ For more information, see the [Backend settings guide](https://github.com/fastly
 Basic authentication is a feature to protect every page and asset on your site
 with a username and password. We **do not recommend** activating basic
 authentication on your Production environment. You can configure it on Staging
-to protect your site during the development process.
+to protect your site during the development process. See the [Basic Authentication Guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BASIC-AUTH.md) in the Fastly CDN module documentation.
 
 If you add user access and enable basic authentication on Staging, you can still
 access the Magento Admin without requiring additional credentials.
@@ -182,10 +182,10 @@ Before adding custom VCL code, edge dictionaries, and ACLs to your Fastly module
 
 ## Manage domains
 
-For Starter projects, use the _Domains_ option to add and manage the Fastly domain configuration for your store. Before adding a domain to your project, you must submit a Magento Support ticket to add the domain to your Cloud configuration. You can add the domain to Fastly after Magento confirms your request.
+For Starter projects, use the _Domains_ option to add and manage the Fastly domain configuration for your store. Before adding a domain to your project, you must submit a [Magento Support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to add the domain to your Cloud configuration. You can add the domain to Fastly after Magento confirms your request.
 
 {:.bs-callout-info}
-For Pro plan projects, you must submit a Magento support ticket to update the Fastly domain configuration for your project.
+For Pro plan projects, you must submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to update the Fastly domain configuration for your project.
 
 {:.procedure}
 To manage Fastly domain configuration from the Magento Admin:
@@ -221,6 +221,6 @@ To enable Maintenance mode with Administrative access:
 
 1. In the _Maintenance Mode_ section, click **Enable Maintenance Mode**.
 
-   After you enable maintenance mode, all traffic is blocked except requests from the IP addresses in the `maint_allowlist` ACL.
+   After you enable maintenance mode, all traffic is blocked except requests from the IP addresses in the `maint_allowlist` ACL. You can update the `maint_allowlist` to change the IP addresses in the ACL.
 
    For detailed configuration instructions, see the [Maintenance Mode guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/MAINTENANCE-MODE.md) in the Fastly CDN for Magento 2 module documentation.
