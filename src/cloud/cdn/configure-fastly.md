@@ -17,9 +17,9 @@ Fastly is not available in Integration environments.
 Complete the following steps to enable, configure, and test Fastly early in your site development process to enable secure access to your site.
 
 -  Get Fastly credentials for Staging and Production environments
--  Enable Fastly CDN caching in your environment
+-  Enable Fastly CDN caching
 -  Upload Fastly VCL snippets
--  Update DNS configuration with development settings
+-  Update DNS configuration to route traffic to the Fastly service
 -  Test Fastly caching
 
 When you are ready to launch your Production site, you must update your DNS configuration to point your production domains to the Fastly service and complete additional configuration tasks. See [Launch checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html).
@@ -55,7 +55,7 @@ To view your Fastly credentials:
  {:.bs-callout-info}
 If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Customer Technical Advisor (CTA).
 
-## Enable Fastly caching for your Cloud environments {#cloud-fastly-config}
+## Enable Fastly caching {#cloud-fastly-config}
 
 **Prerequisites:**
 
@@ -104,7 +104,7 @@ To enable Fastly CDN caching in Staging and Production:
    If the test fails again, submit a support ticket or contact your Customer Technical Advisor (CTA). For Pro projects, include the URLs for your Production and Staging sites.  For Starter projects, include the URLs for your `Master` and Staging site.
 
  {:.bs-callout-info}
-If you need to change the Fastly API token credential for a Staging or Production environment, see [Change Fastly credentials]({{ site.baseurl}}/cloud/cdn/cloud-fastly.html#change-your-fastly-api-token).
+If you need to change the Fastly API token credential for a Staging or Production environment, see [Change Fastly credentials]({{ site.baseurl}}/cloud/cdn/cloud-fastly.html#change-fastly-api-token).
 
 ### Upload VCL to Fastly {#upload-vcl-snippets}
 

@@ -53,7 +53,7 @@ On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we 
 
 During project provisioning, Magento adds your project to the Fastly service account for {{ site.data.var.ece }} and adds the Fastly credentials to the configuration for the Staging and Production environments. See [Get Fastly credentials].
 
-### Change your Fastly API token
+### Change Fastly API token
 
 If you need to change the Fastly API token credential, you must submit a [Magento support ticket] to request a new token, and then update your Staging or Production environment with the new value.
 
