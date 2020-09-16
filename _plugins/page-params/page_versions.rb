@@ -29,6 +29,7 @@ Jekyll::Hooks.register :pages, :pre_render do |page, config|
   urls_filtered_by_pattern =
     pages.select do |site_page|
       next if site_page.name == 'redirect.html'
+
       site_page.url.start_with? filtering_pattern
     end.map(&:url)
 
