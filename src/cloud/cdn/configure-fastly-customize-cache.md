@@ -58,9 +58,11 @@ The options include:
 {:.procedure}
 To configure Fastly purge options:
 
-1. In the *Fastly Configuration* section, expand **Advanced**.
+1. In the *Fastly Configuration* section, expand **Advanced** to display the purge options.
 
-1. All purge options display. Select "Yes" per purge option to enable automatic purging. Select "No" to disable automatic purging, allowing you to manually purge caches through the Cache Management page.
+1. For each purge option, select **Yes** to enable automatic purging, or **No** to disable automatic purging.
+
+   When you disable a purge option, you must manually purge the cache for that category from the _Cache Management_ page.
 
 1. Click **Save Config** at the top of the page.
 
