@@ -40,7 +40,7 @@ To extend the Fastly timeout for the Magento Admin:
 
 1. After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
 
-Fastly gets the Magento Admin path for generating the VCL file from the `app/etc/env.php` configuration file.
+Fastly retrieves the Magento Admin path for generating the VCL file from the `app/etc/env.php` configuration file.
 
 ## Configure purge options
 
