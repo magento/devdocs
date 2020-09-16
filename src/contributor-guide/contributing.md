@@ -283,10 +283,12 @@ Command provides an ability to copy contributor's code or pull request into the 
 ```
 
 **Actions:**
+
 - Branch with a copy of the contributpr's source code is created in the target repository (option "code" is specified)
 - The copy of pull request is ccreared in the target repository (option "pr" or "pull request" is specified)
 
 **Permissions:**
+
 - Magento Team
 
 ## Report an issue {#report}
