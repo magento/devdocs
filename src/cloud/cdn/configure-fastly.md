@@ -16,11 +16,11 @@ Fastly is not available in Integration environments.
 
 Complete the following steps to enable, configure, and test Fastly early in your site development process to enable secure access to your site.
 
--  [Get Fastly credentials for Staging and Production environments](#cloud-fastly-creds)
+-  Get Fastly credentials for Staging and Production environments
 -  Enable Fastly CDN caching in your environment
 -  Upload Fastly VCL snippets
--  Update DNS configuration for development
-- Test Fastly caching
+-  Update DNS configuration with development settings
+-  Test Fastly caching
 
 When you are ready to launch your Production site, you must update your DNS configuration to point your production domains to the Fastly service and complete additional configuration tasks. See [Launch checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html).
 
@@ -145,7 +145,7 @@ This automation requires you to update the DNS configuration for your site to su
 
 When domain validation completes, Magento provisions the Let's Encrypt TLS/SSL certificate, and uploads it to live Staging or Production environments. This process can take up to 12 hours. We recommend that you complete the DNS configuration updates several days in advance to prevent delays in site development and site launch.
 
-## Update DNS configuration for development
+## Update DNS configuration with development settings
 
 During the initial Fastly setup process, you can use the following URLs to configure and test Fastly caching in Staging and Production environments:
 

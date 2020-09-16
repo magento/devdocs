@@ -20,7 +20,7 @@ See [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html) for te
 
 Magento provides a Let's Encrypt SSL/TLS certificate for each environment. This certificate is required for Fastly to serve secure traffic over HTTPS.
 
-To use this certificate, you must update your DNS configuration so that Magento can complete domain validation and apply the certificate to your environment. Each environment has a unique certificate that covers the domains for the Magento Commerce sites deployed in that environment. We recommend completing the configuration updates during the [Fastly set up process]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
+To use this certificate, you must update your DNS configuration so that Magento can complete domain validation and apply the certificate to your environment. Each environment has a unique certificate that covers the domains for the Magento Commerce sites deployed in that environment. We recommend completing and the configuration updates during the [Fastly set up process]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
 
 ## Update DNS configuration with production settings {#dns}
 

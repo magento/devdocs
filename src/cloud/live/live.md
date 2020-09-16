@@ -5,34 +5,36 @@ functional_areas:
   - Cloud
 ---
 
-When you have completed deployment and testing in Integration and Staging environments, you can start going live. First, you should complete all development and testing prior to touching Production. Feel ready to launch? Review our checklists, best practices, and final steps to launch your site.
+When you have completed deployment and testing in Integration and Staging environments, you can begin site launch preparation. First, you should complete all development and testing before working in the Production environment. Feel ready to launch? Review our checklists, best practices, and final steps to launch your site.
 
-If you checked this information prior to deploying and testing in Staging, consider reviewing the benefits of testing in Staging first in the next section. Staging is a near-production environment running on similar hardware, configurations, architecture, and services. It can reduce your downtime and make your extension, service, custom configurations, and merchant User Acceptance Testing vital components to releasing your sites and stores.
+If you checked this information before deploying and testing in Staging, consider reviewing the benefits of testing in Staging first in the next section. Staging is a near-production environment running on similar hardware, configurations, architecture, and services. It can reduce your downtime and make your extension, service, custom configurations, and merchant User Acceptance Testing vital components to releasing your sites and stores.
 
-## Info you need to launch your site {#goliveinfo}
+## Why test fully in Integration, Staging, and Production? {#whytest}
 
-**Prerequisites for site launch:**
+We strongly recommend testing in the Integration, Staging, and Production environments due to the complexity of ensuring that your custom code, themes, Magento extensions, and third-party integrations all work together to operate your Magento stores. The following are common issues you can discover and resolve when you complete testing in the Integration and Staging environments before updating your Production environment:
 
-*  CNAME record information for configuring the DNS
-*  List of all storefront domains to add to the certificate
-*  SSL/TLS certificate
+-  Staging supports all Production services, features, database data, technology stack, architecture, and more. It mirrors Production, which means if errors occur in Staging, you have a warning before they occur in Production.
+
+-  Code that works in your local integration environment might not work in Staging and Production environments.
+
+-  Integration environments do not support some services that are available in Staging and Production, like Fastly and New Relic.
+
+-  [Fully test]({{ site.baseurl }}/cloud/live/stage-prod-test.html#loadtest) your site with a variety of tools in Staging for load, stress, performance, and site assets.
+
+-  Because Integration environments may only have databases populated with test data, not matching a production-like environment, you might find additional errors or unexpected behavior when testing in Staging or Production environments.
+
+## Prerequisites for site launch
+
+You need the following information and resources to prepare for site launch:
+
+-  CNAME record information for configuring the DNS
+-  List of all storefront domains to add to the certificate
+-  SSL/TLS certificate
 
 As part of {{site.data.var.ece}} subscription, Magento provides a Domain-Validated SSL/TLS certificate issued by Let's Encrypt. Each Pro Production, Staging, and Starter Production (`master`) environment has a unique certificate that covers all domains and subdomains in that environment. These certificates are provisioned and uploaded to your site automatically after you update your DNS configuration for development and production. See [Provision SSL/TLS certificates]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#provision-ssltls-certificates).
 
 {:.bs-callout-info}
 If you want to deploy your own Extended Validation SSL certificate for your company instead of using the Let's Encrypt certificate, contact your CTA or submit a [Magento Support ticket](https://support.magento.com/hc/en-us/articles/360019088251).
-
-## Why test fully in Integration and Staging? {#whytest}
-
-We strongly recommend testing in these environments due to the complexity of your custom code, themes, Magento extensions, 3rd party integrations all working together to provide a single or multiple stores. Every deployment can differ between merchants. The following are common issues you can find early and solve before touching Production:
-
-*  Staging supports all Production services, features, database data, technology stack, architecture, and more. It mirrors Production, which means if errors occur in Staging, you have a **warning before it occurs in Production**.
-*  Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and frontend, sometimes clashing and causing errors.
-*  Extensions typically are heavily tested in [Developer mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html), not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.
-*  Configurations and code may work great in your developer Integration environments and run into issues in Staging and Production. Working in your local does not confirm it works perfectly in production.
-*  Integration environments do not support some services that are available in Staging and Production, like Fastly and New Relic.
-*  [Fully test]({{ site.baseurl }}/cloud/live/stage-prod-test.html#loadtest) your site with a variety of tools in Staging for load, stress, performance, and site assets
-*  Integration environments may only have databases populated with test data, not matching a production-like environment
 
 ## Set up Magento Security Scan Tool {#security-scan}
 
@@ -52,8 +54,8 @@ You must whitelist these IP addresses in your network firewall rules to allow th
 
 The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out-of-date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login).
 
-*  Monitor your sites security status and applied security updates
-*  Receive security updates and site-specific notifications
+-  Monitor your sites security status and applied security updates
+-  Receive security updates and site-specific notifications
 
 See the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html) for information about setting up and using the security scan tool. Typically, you start using this tool when you begin user acceptance testing (UAT).
 
@@ -87,8 +89,8 @@ The report lists issues including Failed Scans, Unidentified Results, and Succes
 
 Scan results include a label that describes scan pass or fail status with detailed information about the checks performed:
 
-*  "Failed" indicates that the website contains a serious vulnerability.
-*  "Unidentified" suggests that a deeper review is required by your team or hosting provider to determine if further action is required.
+-  "Failed" indicates that the website contains a serious vulnerability.
+-  "Unidentified" suggests that a deeper review is required by your team or hosting provider to determine if further action is required.
 
 The scan results also provide suggested remediation steps for each failed security test. Security scan results are protected and viewable only by the registered user. Only users designated in the site registration process receive scan completion notifications.
 
@@ -96,5 +98,5 @@ The scan results also provide suggested remediation steps for each failed securi
 
 When you are ready to begin the site launch process, see the following:
 
-*  [Launch checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html)
-*  [Launch steps]({{ site.baseurl }}/cloud/live/launch-steps.html)
+-  [Launch checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html)
+-  [Launch steps]({{ site.baseurl }}/cloud/live/launch-steps.html)
