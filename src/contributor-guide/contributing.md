@@ -260,7 +260,7 @@ To optimize the pull request queue, enter a command with a series of related pul
 
 The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into the current pull request. For example: `@magento combine 1234 1238 1239`.
 
-**actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
+**Actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
 
 -  Current pull request allows changes from maintainers.
 -  All mentioned pull requests are open.
@@ -272,6 +272,22 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 -  [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers)
 -  Magento EngCom Team
+
+### Import source code to specific repository {#import}
+Command provides an ability to copy contributor's code or pull request into the internal fork to proceed with additional fixes or delivery.
+
+**Command:** To import code or pull request, a member of the Magento Team under the existing Pull Request will enter the following command:
+
+```text
+@magento import {code|pr|pull request} to {organizationName}/{repositoryName}
+```
+
+**Actions:**
+- Branch with a copy of the contributpr's source code is created in the target repository (option "code" is specified)
+- The copy of pull request is ccreared in the target repository (option "pr" or "pull request" is specified)
+
+**Permissions:**
+- Magento Team
 
 ## Report an issue {#report}
 
