@@ -75,6 +75,19 @@ See [Important Elasticsearch configuration][] in the Elasticsearch documentation
 {:.bs-callout-info}
 If your Cloud project uses Magento version 2.3.5 or earlier with MySQL search, add the `--no-es` option to skip the Elasticsearch container configuration when you generate the Docker Compose configuration file: `ece-docker build:compose --no-es`.
 
+### Elasticsearch plugins
+
+Plugins `analysis-icu` and `analysis-phonetic` are installed by default and can not be skipped.
+Elasticsearch plugins configured in `.magento/services.yaml` will be automatically installed in elasticsearch container starting from version 6.5.
+You can change list of plugins in `docker-compose.yaml` file:
+
+```yaml
+services:
+    elasticsearch:
+        environment:
+          - 'ES_PLUGINS=analysis-stempel analysis-nori'   
+``` 
+
 ### Troubleshooting
 
 On some Linux systems, when you launch the Docker environment, the Elasticsearch service fails to start and the following error displays:
