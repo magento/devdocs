@@ -6,6 +6,8 @@ ee_only: true
 
 The `moveProductsToWishlist` mutation moves the specified quantities of one or more products to a different wish list. Because the `wishlist_item_id` for each item placed in a wish list is unique, there is no need to specify the original wish list.
 
+If you do not specify a quantity for a product, the mutation moves the entire quantity of that product to the target wish list.
+
 Use the [`customer` query]({{page.baseurl}}/graphql/queries/customer.html) to return a list of wish list IDs and item IDs.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
@@ -25,7 +27,7 @@ mutation {
 
 ## Example usage
 
-The following example moves an item to another wish list.
+The following example moves an item to another wish list. The ID of the moved product changes.
 
 **Request:**
 
