@@ -314,10 +314,13 @@ pages:
           url: /cloud/cdn/configure-fastly.html
           versionless: true
           children:
+            - label: Customize cache configuration
+              url: /cloud/cdn/configure-fastly-customize-cache.html
+              versionless: true
             - label: Customize error and maintenance pages
               url: /cloud/cdn/cloud-fastly-custom-response.html
               versionless: true
-
+              
         - label: Web Application Firewall
           url: /cloud/cdn/fastly-waf-service.html
           versionless: true
