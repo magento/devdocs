@@ -67,6 +67,9 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
    -  `<area>`: area code, can be either `frontend` or `adminhtml`.
    -  `<path_to_file>`: path to the root source file, relative to the `app/design/frontend/<Vendor>/<theme>/web` directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits] from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
 
+   **IMPORTANT NOTE** : If grunt gives the error "Error: Cannot find module ....", check the path in your grunt-config.json file and correct as necessary.
+
+
 1. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension] in your browser.
 
 ## Grunt commands {#grunt_commands}
