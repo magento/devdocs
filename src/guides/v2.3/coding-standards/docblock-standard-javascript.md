@@ -414,14 +414,14 @@ So the key will always be a string in for...in loops. But the compiler will veri
    <tr>
       <td>Function</td>
       <td><pre>function(x, y) {
-   return x * y;
+   return x &#42; y;
 }</pre></td>
       <td>Function object</td>
    </tr>
    <tr>
       <td>function(number, number): number</td>
       <td><pre>function(x, y) {
-   return x * y;
+   return x &#42; y;
 }</pre></td>
       <td>function value</td>
    </tr>

@@ -82,7 +82,6 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
         <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the [Magento Admin](https://glossary.magento.com/magento-admin).</li>
         <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
         </ul>
-
       </td>
     </tr>
 </tbody>

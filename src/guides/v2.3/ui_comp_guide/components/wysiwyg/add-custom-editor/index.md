@@ -94,7 +94,7 @@ If you are integrating Magento entities such as variable and widget as plugins, 
 **Example:** CKEditor/CKEditor4/view/base/web/ckeditor4Adapter.js
 
 {% collapsible Show file content %}
-{% include_relative _code-samples/ckeditor4Adapter.md %}
+{% include_relative code-samples/ckeditor4Adapter.md %}
 {% endcollapsible %}
 
 ## Step 4. Load editor library

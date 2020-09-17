@@ -12,4 +12,3 @@ functional_areas:
 ---
 
 {% include install/web/install-web_6-install.md %}
-
