@@ -69,7 +69,6 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
 
    **IMPORTANT NOTE** : If grunt gives the error "Error: Cannot find module ....", check the path in your grunt-config.json file and correct as necessary.
 
-
 1. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension] in your browser.
 
 ## Grunt commands {#grunt_commands}
