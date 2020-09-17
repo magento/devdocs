@@ -196,4 +196,3 @@ See [Docker service containers][Docker database container] for details about the
 [Docker database container]: https://devdocs.magento.com/cloud/docker/docker-containers-service.html#database-container
 [mysqldump]: https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html
 [Service configuration options]: {{ site.baseurl }}/cloud/docker/docker-containers.html#service-configuration-options
-

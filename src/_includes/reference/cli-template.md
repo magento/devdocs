@@ -57,6 +57,7 @@ This reference is generated from the Magento codebase. To change the content, yo
 
    {% unless item.default == nil %}
    {% if item.default == false or (item.default == empty and item.default != '') %}
+
 -  Default: `{{ item.default | inspect }}`
    {% else %}
 -  Default: `{{ item.default }}`
@@ -94,6 +95,7 @@ This reference is generated from the Magento codebase. To change the content, yo
 
    {% unless opt.default == nil %}
    {% if opt.default == false or opt.default == empty and opt.default != '' %}
+
 -  Default: `{{ opt.default | inspect }}`
    {% else %}
 -  Default: `{{ opt.default }}`

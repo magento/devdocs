@@ -431,7 +431,6 @@ The following table describes the instructions specific for generic layout files
         <ul>
           <li><code>&lt;container&gt;</code></li>
           <li><code>&lt;update&gt;</code></li>
-
         </ul>
       </td>
       <td>Mandatory root element.</td>
@@ -466,7 +465,6 @@ none
           <li><code>&lt;container&gt;</code></li>
           <li><code>&lt;referenceBlock&gt;</code></li>
           <li><code>&lt;referenceContainer&gt;</code></li>
-
         </ul>
       </td>
       <td colspan="1">Mandatory element</td>
