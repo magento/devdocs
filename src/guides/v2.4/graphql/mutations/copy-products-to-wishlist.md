@@ -123,7 +123,7 @@ The WishlistItemCopyInput object contains the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `quantity` | Float | The quantity of this item to move to the destination wish list. This value cannot be greater than the quantity in the source wish list
-`wishlist_item_id` | ID! | The ID of the item to be moved
+`wishlist_item_id` | ID! | The ID of the item to be copied
 
 ## Output attributes
 
@@ -131,7 +131,7 @@ The `UpdateProductsInWishlistOutput` object can contain the following attributes
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`user_errors` | [[WishListUserInputError!](#WishListUserInputError)] | An array of errors encountered while adding products to a wish list
+`user_errors` | [[WishListUserInputError!](#WishListUserInputError)]! | An array of errors encountered while adding products to a wish list
 `wishlist` | [Wishlist!](#Wishlist) | Contains the wish list with all items that were successfully added
 
 ### Wishlist attributes {#Wishlist}
