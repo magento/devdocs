@@ -26,10 +26,8 @@ If you are new to all this and need some help getting started, we suggest the fo
 
    ```conf
    <VirtualHost *:443>
-     ...
      # Allow encoded slashes
      AllowEncodedSlashes NoDecode
-     ...
    </VirtualHost>
    ```
 
