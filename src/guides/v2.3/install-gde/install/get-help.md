@@ -12,4 +12,3 @@ functional_areas:
 ---
 
 {% include install/get-help.md %}
-

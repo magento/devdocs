@@ -57,11 +57,14 @@ namespace :update do
 end
 
 def update_dir(dir)
-  abort "Cannot find the #{dir} directory. You can run 'rake init' to create it and rerun 'rake update:all' again.".red unless Dir.exist? dir
+  unless Dir.exist? dir
+    abort "Cannot find the #{dir} directory. You can run 'rake init' to create it and rerun 'rake update:all' again.".red
+  end
   Dir.chdir dir do
     puts "Updating #{dir}:".magenta
 
-    next warn "No branch to update" if `git status -sb`.include? 'no branch'
+    next warn 'No branch to update' if `git status -sb`.include? 'no branch'
+
     sh 'git remote -v'
     sh 'git pull --no-recurse-submodules'
     sh 'git status -sb'

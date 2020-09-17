@@ -39,4 +39,3 @@ To start configuring your hosted system:
 1. If necessary, log in to cPanel.
 
 ## Step 3: Configure a database and a database user {#newbie-db}
-

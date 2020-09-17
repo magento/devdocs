@@ -85,7 +85,7 @@ Before creating your own snippet from this example, review the values to determi
 
    If the URL for your Magento Admin UI was changed, replace the sample value `/admin` with the URL for your environment. For example, `/company-admin`.
 
-In the code sample, the condition `!req.http.Fastly-FF` is important when using [Origin Shielding]({{site.baseurl}}/cloud/cdn/configure-fastly.html#backend). Do not remove or edit this code.
+In the code sample, the condition `!req.http.Fastly-FF` is important when using [Origin Shielding]({{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-back-ends-and-origin-shielding). Do not remove or edit this code.
 
 After reviewing and updating the code for your environment, use either of the following methods to add the custom VCL snippet to your Fastly service configuration:
 
@@ -114,7 +114,7 @@ After reviewing and updating the code for your environment, use either of the fo
    -  Add the **VCL** snippet content:
 
       ```conf
-      if ((req.url ~ "^/admin") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 "Forbidden"; }
+      if ((req.url ~ "^/admin") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 "Forbidden"}
       ```
 
 1. Click **Create** to generate the VCL snippet file with the name pattern `type_priority_name.vcl`, for example `recv_5_allowlist.vcl`

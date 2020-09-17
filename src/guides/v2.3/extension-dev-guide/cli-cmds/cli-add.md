@@ -12,4 +12,3 @@ Your [module](https://glossary.magento.com/module) can optionally use Magento 2'
 *  [Command naming guidelines]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html)
 *  [How to add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-howto.html)
 *  [List of Magento CLI commands]({{ page.baseurl }}/reference/cli/magento.html)
-

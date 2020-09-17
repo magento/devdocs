@@ -49,6 +49,10 @@ pages:
         - label: Using queries
           url: /graphql/queries/index.html
 
+        - label: availableStores query
+          url: /graphql/queries/available-stores.html
+          exclude_versions: ["2.3"]
+
         - label: cart query
           url: /graphql/queries/cart.html
 
@@ -373,6 +377,22 @@ pages:
 
         - label: Virtual product data types
           url: /graphql/interfaces/virtual-product.html
+
+        - label: CreditMemoItemInterface attributes and implementations
+          url: /graphql/interfaces/credit-memo-item-interface.html
+          exclude_versions: ["2.3"]
+
+        - label: InvoiceItemInterface attributes and implementations
+          url: /graphql/interfaces/invoice-item-interface.html
+          exclude_versions: ["2.3"]
+
+        - label: OrderItemInterface attributes and implementations
+          url: /graphql/interfaces/order-item-interface.html
+          exclude_versions: ["2.3"]
+
+        - label: ShipmentItemInterface attributes and implementations
+          url: /graphql/interfaces/shipment-item-interface.html
+          exclude_versions: ["2.3"]
 
     - label: Payment methods
       children:

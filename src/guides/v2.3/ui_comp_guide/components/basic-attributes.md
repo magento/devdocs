@@ -65,4 +65,3 @@ The following options are available for all basic components:
     <td>String</td>
   </tr>
 </table>
-

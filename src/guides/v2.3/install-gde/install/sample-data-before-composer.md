@@ -12,4 +12,3 @@ functional_areas:
 ---
 
 {% include install/sampledata/sample-data-composer.md %}
-
