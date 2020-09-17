@@ -52,31 +52,43 @@ The following sample introduces a runtime configuration that allows you to redef
 
 ```php
 'queue' => [
-    'topics' => [
-        'customer.created' => [
-            'schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'response_schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'publisher' = 'default-rabitmq'
+        'amqp' => [
+            'host' => 'rabbitmq.example.com',
+            'port' => '5672',
+            'user' => 'user',
+            'password' => 'pass',
+            'virtualhost' => '/'
         ],
-        'order.created' => [
-            'schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'response_schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'publisher' = 'default-rabitmq'
+        'topics' => [
+            'product_action_attribute.update' => [
+                'publisher' => 'amqp-magento'
+            ]
         ],
-     ],
-],
+        'config' => [
+            'publishers' => [
+                'product_action_attribute.update' => [
+                    'connections' => [
+                        'amqp' => [
+                            'name' => 'amqp',
+                            'exchange' => 'magento',
+                            'disabled' => false
+                        ],
+                        'db' => [
+                            'name' => 'db',
+                            'disabled' => true
+                        ]
+                    ]
+                ]
+            ]
+        ],
+        'consumers' => [
+            'product_action_attribute.update' => [
+                'connection' => 'amqp',
+            ],
+        ],
+        'consumers_wait_for_messages' => 1
+    ],
+];
 ```
 
 ### Related Topics
