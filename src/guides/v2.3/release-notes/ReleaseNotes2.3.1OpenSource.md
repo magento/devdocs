@@ -87,7 +87,7 @@ This release includes over 30 security enhancements that help close cross-site s
 
 *  Customer address handling has been rewritten with UI components that increase platform performance, which in turn streamlines the management of customers with 3000 and more addresses.  <!--- MAGETWO-94346 95249-->
 
-*  The Admin order creation page now handles  customer accounts with 3000 addresses without performance issues.   <!--- MC-5683-->
+*  The Admin order creation page now handles  customer accounts with 3000 addresses without performance issues.  <!--- MC-5683-->
 
 *  Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. [Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. <!--- MAGETWO-94347-->
 
