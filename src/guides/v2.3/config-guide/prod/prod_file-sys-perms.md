@@ -78,7 +78,7 @@ To remove write permissions to files and directories from the web server user's 
    find app/code var/view_preprocessed vendor pub/static app/etc generated/code generated/metadata \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php
    ```
 
-1. Make Magento command line tool executable.
+1. Make the Magento command line tool executable.
 
    ```bash
    chmod u+x bin/magento
