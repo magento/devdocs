@@ -28,6 +28,9 @@ During project provisioning, Magento adds your project to the [Fastly service ac
 
 You need the Fastly credentials to configure Fastly CDN services from the Magento Admin UI and to submit Fastly API requests.
 
+{:.bs-callout-info}
+With Magento Cloud, Fastly Admin UI access is not provided. Any issue that cannot be solved through the Fastly Admin in Magento should be referred to [Magento Support](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket).
+
 Use the following methods to find and save the Fastly service ID and API token for your environment:
 
 {:.procedure}
