@@ -109,10 +109,11 @@ To check the `auto-load:psr-4` configuration:
 
 1. On your local workstation, change to the Cloud project root directory.
 
-2. Checkout your integration branch.
+1. Checkout your integration branch.
 
-3. Open the `composer.json` file in a text editor.
-4. Check the `autoload:psr-4` section for the Zend plugin manager implementation for controllers dependency::
+1. Open the `composer.json` file in a text editor.
+
+1. Check the `autoload:psr-4` section for the Zend plugin manager implementation for controllers dependency::
 
    ```diff
     "autoload": {
@@ -125,7 +126,7 @@ To check the `auto-load:psr-4` configuration:
    ```
    {:.no-copy}
 
-5. If the Zend dependency is missing, update `composer.json`:
+1. If the Zend dependency is missing, update `composer.json`:
 
    -  Add the following line to the `autoload:psr-4` section.
 
