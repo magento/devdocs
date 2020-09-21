@@ -75,7 +75,13 @@ To remove write permissions to files and directories from the web server user's 
 1. Remove write permissions to the following directories.
 
    ```bash
-   find app/code var/view_preprocessed vendor pub/static app/etc generated/code generated/metadata \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
+   find app/code var/view_preprocessed vendor pub/static app/etc generated/code generated/metadata \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php
+   ```
+
+1. Make the Magento command line tool executable.
+
+   ```bash
+   chmod u+x bin/magento
    ```
 
 #### Make code files and directories writable {#make-files-writable-one-owner}
