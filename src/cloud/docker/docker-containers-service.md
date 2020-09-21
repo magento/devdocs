@@ -77,9 +77,10 @@ If your Cloud project uses Magento version 2.3.5 or earlier with MySQL search, a
 
 ### Elasticsearch plugins
 
-Plugins `analysis-icu` and `analysis-phonetic` are installed by default and can not be skipped.
-Elasticsearch plugins configured in `.magento/services.yaml` will be automatically installed in elasticsearch container starting from version 6.5.
-You can change list of plugins in `docker-compose.yaml` file:
+The `analysis-icu` and `analysis-phonetic` plugins are installed by default and can not be skipped.
+If you use Elasticsearch 6.5 and later, the Elasticsearch plugins configured in `.magento/services.yaml` are installed automatically.
+
+You can change the list of plugins in `docker-compose.yaml` file:
 
 ```yaml
 services:
