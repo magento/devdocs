@@ -68,4 +68,3 @@ Related topics
 *  [JavaScript coding standard]({{ page.baseurl }}/coding-standards/code-standard-javascript.html)
 *  [Responsive web design]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
 *  [Translations]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html)
-

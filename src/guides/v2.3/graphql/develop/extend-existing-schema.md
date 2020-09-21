@@ -15,7 +15,7 @@ In the following example, we will change the description of an existing field (`
 
 The simplified structure of the query schema to get products is:
 
-```text
+```graphql
 schema {
     query: Query
     ...
@@ -42,7 +42,8 @@ interface ProductInterface {
 We need to extend the `ProductInterface`, since that is the schema object for a product. We can do this by creating a `schema.graphqls` file in our custom module's (`OrangeCo/CustomGQL`) `etc` directory.
 
 `OrangeCo_CustomGQL/etc/schema.graphqls`
-```
+
+```graphql
 interface ProductInterface {
     attribute_set_id: Int
         @doc(description: "ID of the attribute set assigned to the product")

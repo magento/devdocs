@@ -64,6 +64,10 @@ rm -rf <Magento install dir>/var/page_cache/*
 rm -rf <Magento install dir>/generated/code/*
 ```
 
+```bash
+rm -rf <Magento install dir>/generated/metadata/*
+```
+
 {:.bs-callout-info}
 If you use cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
 
@@ -98,6 +102,7 @@ If the application fails with a  `We're sorry, an error has occurred while gener
    -  `<magento_root>/var/cache`
    -  `<magento_root>/var/page_cache`
    -  `<magento_root>/generated/code`
+   -  `<magento_root>/generated/metadata`
 1. Check your storefront in your web browser again.
 
 <!-- Link definitions -->

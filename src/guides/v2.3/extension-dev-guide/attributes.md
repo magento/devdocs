@@ -242,24 +242,24 @@ The following table is a reference for the `Magento\Eav\Setup\EavSetup::addAttri
 {:.fixed}
 |Key|Description|Default Value|
 |--- |--- |--- |
-|apply_to|Catalog EAV Attribute apply_to||
+|apply_to|Catalog EAV Attribute - defines which product types the attribute can be applied to||
 |attribute_model|EAV Attribute attribute_model||
 |attribute_set|Name of the attribute set the new attribute will be assigned to. Works in combination with **group** or empty **user_defined**||
 |backend|EAV Attribute backend_model||
-|comparable|Catalog EAV Attribute is_comparable|0|
+|comparable|Catalog EAV Attribute - defines if attribute can be used when comparing products|0|
 |default|EAV Attribute default_value||
-|filterable_in_search|Catalog EAV Attribute is_filterable_in_search|0|
-|filterable|Catalog EAV Attribute is_filterable|0|
+|filterable_in_search|Catalog EAV Attribute is_filterable_in_search - defines if attribute can be used to filter search results|0|
+|filterable|Catalog EAV Attribute is_filterable - defines if attribute can be used to filter on navigation|0|
 |frontend_class|EAV Attribute frontend_class||
 |frontend|EAV Attribute frontend_model||
 |global|Catalog EAV Attribute is_global field|1|
 |group|Attribute group name or ID||
 |input_renderer|Catalog EAV Attribute frontend_input_renderer||
 |input|EAV Attribute frontend_input|text|
-|is_filterable_in_grid|Catalog EAV Attribute is_filterable_in_grid|0|
-|is_html_allowed_on_front|Catalog EAV Attribute is_html_allowed_on_front|0|
-|is_used_in_grid|Catalog EAV Attribute is_used_in_grid field|0|
-|is_visible_in_grid|Catalog EAV Attribute is_visible_in_grid field|0|
+|is_filterable_in_grid|Catalog EAV Attribute - defines if attribute can be used to filter on product grid in Admin|0|
+|is_html_allowed_on_front|Catalog EAV Attribute - defines if HTML needs to be escaped on the frontend|0|
+|is_used_in_grid|Catalog EAV Attribute - defines if attribute can be used on the product grid in Admin|0|
+|is_visible_in_grid|Catalog EAV Attribute is_visible_in_grid - defines if attribute will be visible on the product grid in Admin|0|
 |label|EAV Attribute frontend_label||
 |note|EAV Attribute note||
 |option|EAV Attribute Option values||
@@ -276,7 +276,7 @@ The following table is a reference for the `Magento\Eav\Setup\EavSetup::addAttri
 |used_for_sort_by|Catalog EAV Attribute used_for_sort_by|0|
 |used_in_product_listing|Catalog EAV Attribute used_in_product_listing|0|
 |user_defined|EAV Attribute is_user_defined|0|
-|visible_in_advanced_search|Catalog EAV Attribute is_visible_in_advanced_search|0|
-|visible_on_front|Catalog EAV Attribute is_visible_on_front|0|
-|visible|Catalog EAV Attribute is_visible|1|
-|wysiwyg_enabled|Catalog EAV Attribute is_wysiwyg_enabled|0|
+|visible_in_advanced_search|Catalog EAV Attribute is_visible_in_advanced_search - defines if attribute will appear on the Advanced Search form|0|
+|visible_on_front|Catalog EAV Attribute is_visible_on_front - defines attribute visibility on frontend|0|
+|visible|Catalog EAV Attribute is_visible - defines visibility in Admin, won't be available for changing a value in the admin interface if set to 0|1|
+|wysiwyg_enabled|Catalog EAV Attribute is_wysiwyg_enabled - used for enabling wysiwyg editor for an attribute. Works for textarea only|0|

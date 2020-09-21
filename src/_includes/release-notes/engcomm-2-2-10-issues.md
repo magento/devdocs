@@ -56,4 +56,3 @@
 | LouNik1984 | [16446](https://github.com/magento/magento2/issues/16446) | [22510](https://github.com/magento/magento2/pull/22510) |
 | ffauvel | [23643](https://github.com/magento/magento2/issues/23643) | [23650](https://github.com/magento/magento2/pull/23650) |
 | hostep | [11615](https://github.com/magento/magento2/issues/11615) | [14344](https://github.com/magento/magento2/pull/14344) |
-

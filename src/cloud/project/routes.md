@@ -4,6 +4,8 @@ title: Configure routes
 functional_areas:
   - Cloud
   - Setup
+redirect_from:
+ - /cloud/project/project-conf-files_routes.html  
 ---
 
 The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes for your {{ site.data.var.ece }} Integration, Staging, and Production environments. Routes determine how Magento processes incoming HTTP requests.
