@@ -79,7 +79,7 @@ For example:
 mysql -u magento -p
 ```
 
-Check you have the correct version of mySQL for the version of Magento you are installing, [Check Here For Supported Versions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#database). The following result indicates the version you are running.
+Check you have the correct version of MySQL for the version of Magento you are installing, [Check Here For Supported Versions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#database). The following result indicates the version you are running.
 
 ```terminal
 Welcome to the MySQL monitor.  Commands end with ; or \g.
