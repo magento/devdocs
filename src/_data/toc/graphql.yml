@@ -12,6 +12,9 @@ pages:
         - label: Authorization tokens
           url: /graphql/authorization-tokens.html
 
+        - label: Protected mutations
+          url: /graphql/protected-mutations.html
+
         - label: GraphQL caching
           url: /graphql/caching.html
 
