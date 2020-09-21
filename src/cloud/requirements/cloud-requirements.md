@@ -119,8 +119,8 @@ For development and testing, we recommend the following:
 
 *  Fully [test your site]({{ site.baseurl }}/cloud/live/stage-prod-test.html) in Staging as a merchant and customer prior to Production deployment
 *  [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) and verify that the Fastly VCL is uploaded
-*  Send a ticket with all storefront domains when going live (to be added to the shared SSL (HTTPS) certificate)
-*  For custom deploy hooks in Integration, open a Support ticket to have them added to the Staging and Production deployment process
+*  Before you begin the site launch process, submit a Magento Support ticket to provide all storefront domains and subdomains for Staging and Production environments. This information is required to provision SSL/TLS certificates for each environment. See [Information you need to launch your site]({{ site.baseurl }}/cloud/live/live.html#prerequisites-for-site-launch).
+*  For custom deploy hooks in Integration, submit a Support ticket to add the hooks to the Staging and Production deployment process
 
 ## License and authentication requirements
 

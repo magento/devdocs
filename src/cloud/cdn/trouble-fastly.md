@@ -59,7 +59,7 @@ Use the following list to identify and troubleshoot issues related to the Fastly
 If Fastly returns 503 timeout errors, check the error logs and the 503 error page to identify the root cause.
 
 {:.bs-callout-info}
-If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Magento Admin UI]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
+If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Magento Admin UI]({{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#extend-fastly-timeout).
 
 If you receive a 503 error, check the Production or Staging environment error log and php access log to troubleshoot the issue.
 
