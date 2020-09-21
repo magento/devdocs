@@ -136,7 +136,7 @@ To increase disk space for a service:
 
 1. In your local development environment, open the `.magento/service.yaml` configuration file.
 
-1. Add or find a service in the file. See [more about configuring services]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
+1. Add or find a service in the file. See [more about configuring services]({{ site.baseurl }}/cloud/project/services.html).
 
 1. Set a new value for the disk property (in MB).
 
@@ -170,4 +170,4 @@ magento-cloud project:clear-build-cache
 
 <!-- link definitions -->
 
-[disk-key]: {{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk
+[disk-key]: {{ site.baseurl }}/cloud/project/magento-app-properties.html#disk

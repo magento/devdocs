@@ -9,18 +9,23 @@ functional_areas:
   - Configuration
 ---
 
-[Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a [Content Delivery Network](https://glossary.magento.com/content-delivery-network) (CDN) for static assets. Fastly is not available in Integration environments.
+[Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a [Content Delivery Network](https://glossary.magento.com/content-delivery-network) (CDN) for static assets. Fastly also provides a Web Application Firewall (WAF) to secure your site and Cloud infrastructure. You must route all incoming site traffic through Fastly to protect your site and Cloud infrastructure from malicious traffic and attacks.
 
-This information gets you started with enabling and configuring Fastly caching services in your Staging and Production environments. We provide additional information for configuring backends and Origin shields, customizing error pages, and adding custom VCL snippets.
+{:.bs-callout-info}
+Fastly is not available in Integration environments.
 
-For VCL snippets, experience developing that code is required for advanced configurations.
-
-The process for configuring Fastly includes:
+Complete the following steps to enable, configure, and test Fastly early in your site development process to enable secure access to your site.
 
 -  Get Fastly credentials for Staging and Production environments
--  Enable Fastly CDN caching in your environment
+-  Enable Fastly CDN caching
 -  Upload Fastly VCL snippets
--  Advanced configurations including VCL snippets, as needed for your {{ site.data.var.ee }} sites
+-  Update DNS configuration to route traffic to the Fastly service
+-  Test Fastly caching
+
+When you are ready to launch your Production site, you must update your DNS configuration to point your production domains to the Fastly service and complete additional configuration tasks. See [Launch checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html).
+
+{:.bs-callout-info}
+After you enable and verify that Fastly works with the default settings, you can customize cache configuration settings and enable additional options such as image optimization, edge modules, and custom VCL code. See [Customize cache configuration]({{ site.baseurl }}/cloud/cdn/configure-fastly-customize-cache.html).
 
 ## Get Fastly credentials {#cloud-fastly-creds}
 
@@ -50,7 +55,7 @@ To view your Fastly credentials:
  {:.bs-callout-info}
 If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Customer Technical Advisor (CTA).
 
-## Enable Fastly caching for your Cloud environments {#cloud-fastly-config}
+## Enable Fastly caching {#cloud-fastly-config}
 
 **Prerequisites:**
 
@@ -99,7 +104,7 @@ To enable Fastly CDN caching in Staging and Production:
    If the test fails again, submit a support ticket or contact your Customer Technical Advisor (CTA). For Pro projects, include the URLs for your Production and Staging sites.  For Starter projects, include the URLs for your `Master` and Staging site.
 
  {:.bs-callout-info}
-If you need to change the Fastly API token credential for a Staging or Production environment, see [Change Fastly credentials]({{ site.baseurl}}/cloud/cdn/cloud-fastly.html#change-your-fastly-api-token).
+If you need to change the Fastly API token credential for a Staging or Production environment, see [Change Fastly credentials]({{ site.baseurl}}/cloud/cdn/cloud-fastly.html#change-fastly-api-token).
 
 ### Upload VCL to Fastly {#upload-vcl-snippets}
 
@@ -117,161 +122,126 @@ To upload the Fastly VCL:
 
 1. After the upload completes, refresh the cache according to the notification at the top of the page.
 
-## Custom configuration
+## Provision SSL/TLS certificates
 
- {:.bs-callout-info}
-Before adding [custom](#custom-configuration) or advanced configuration settings like [updating purge settings](#purge) and configuring [Fastly image optimization]({{ site.baseurl }}/cloud/cdn/fastly-image-optimization.html)(Fastly IO), [verify]({{ site.baseurl }}/cloud/cdn/trouble-fastly.html) that the Fastly caching service works with the default configuration.
+Magento provides a Domain-Validated Let's Encrypt SSL/TLS certificate to serve secure HTTPS traffic from Fastly. Magento provides one certificate for each Pro Production, Staging, and Starter Production environment to secure all domains in that environment.
 
-Configure the following features as needed:
+{:.bs-callout-info}
+You can provide your own TLS/SSL certificate instead of using the Let's Encrypt certificate provided by Magento. However, this process requires additional work to set up and maintain. To choose this option, submit a [Magento Support ticket](https://support.magento.com/hc/en-us/articles/360019088251) or work with your CTA to add custom hosted certificates to your Cloud environments.
 
--  [Configure backends and Origin shielding](#backend)
--  [Customize response pages]({{ site.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html)
--  [Enable additional Fastly configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options)
+To enable the SSL/TLS certificates for your environments, Magento automation completes the following steps:
 
-### Configure backends and Origin shielding {#backend}
+-  Validates domain ownership
+-  Provisions a Let's Encrypt SSL/TLS certificate that covers specified top-level and subdomains for your Magento stores
+-  Uploads the certificate to the Cloud environment when the site is live
 
-Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A _backend_ is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.
+This automation requires you to update the DNS configuration for your site to supply domain validation information. Use **one** of the following methods:
 
-_Origin shielding_ routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduce traffic directly to the origin.
+-  **DNS validation**–For live sites, update your DNS configuration with CNAME records that point to the Fastly service
+-  **ACME challenge CNAME records**–Update your DNS configuration with ACME challenge CNAME records provided by Magento for each domain in your environment
 
-The default Fastly VCL code specifies default values for Origin shielding and timeouts for your {{ site.data.var.ece }} sites. We recommend using the default values. In some case, you might need to modify the default values. For example, if you are getting a lot of time to first byte (TTFB) errors, you might need to adjust the _first byte timeout_ value.
+   {:.bs-callout-tip}
+   If you have a Production domain that is not active yet, use the ACME challenge CNAME records for domain validation. Adding the records to your DNS configuration early allows Magento to provision the SSL/TLS certificate with the correct domains before site launch.
 
- {:.bs-callout-info}
-If you need to integrate additional backends into your site such as a backend to serve blog content from a [Wordpress]({{ site.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. For details, see [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in the Fastly module documentation.
+When domain validation completes, Magento provisions the Let's Encrypt TLS/SSL certificate, and uploads it to live Staging or Production environments. This process can take up to 12 hours. We recommend that you complete the DNS configuration updates several days in advance to prevent delays in site development and site launch.
 
-{:.procedure}
-To review the backend settings configuration:
+## Update DNS configuration with development settings
 
-1. Access and expand **Fastly Configuration**.
+During the initial Fastly setup process, you can use the following URLs to configure and test Fastly caching in Staging and Production environments:
 
-1. Expand **Backend settings** and click the gear to check the default backend. A modal opens that shows current settings with options to change them.
+-  Pro projects:
+   -  `mcprod.<your-domain>.com`
+   -  `mcstaging.<your-domain>.com`
 
-   ![Modify the backend]({{ site.baseurl }}/common/images/cloud/cloud_fastly-backend.png){:width="600px"}
+-  Starter projects:
+   -  `mcprod.<your-domain>.com`
 
-1. Select the **Shield** location (or datacenter) closest to your Cloud service region.
-   For example, if your project is hosted on AWS, Staging is on the west coast of the United States (us-west-1), select the `sjc-ca-us` Fastly shield location. This is the POP that provides caching services.
+These are the default pre-production URLs available as soon as your project is provisioned. The value for `"your-domain"` is the domain name you specified during the onboarding process.
 
-   The following list shows which Fastly shield locations to use based on AWS regions:
+You must update your DNS configuration to route traffic from your store URLs to the Fastly service. When you update the configuration, Magento automatically provisions the required SSL/TLS certificates and uploads them to your Cloud environments. This provisioning can take up to 12 hours.
 
-   -  ap-east-1 => hongkong-hk
-   -  ap-northeast-1 => tyo-tokyo-jp, hnd-tokyo-jp
-   -  ap-northeast-2 => tyo-tokyo-jp, hnd-tokyo-jp
-   -  ap-southeast-1 => singapore-sg
-   -  ap-southeast-2 => sydney-au
-   -  ap-south-1 => singapore-sg
-   -  ca-central-1 => yul-montreal-ca, iad-va-us, dca-dc-us, bwi-va-us
-   -  eu-central-1 => frankfurt-de, hhn-frankfurt-de
-   -  eu-north-1 => stockholm-bma
-   -  eu-west-1 => london-uk, london_city-uk
-   -  eu-west-2 => london-uk, london_city-uk
-   -  eu-west-3 => cdg-par-fr
-   -  sa-east-1 => gru-br-sa
-   -  us-east-1 => iad-va-us, dca-dc-us, bwi-va-us
-   -  us-east-2 => iad-va-us, dca-dc-us, bwi-va-us
-   -  us-west-1 => sjc-ca-us, pao-ca-us
-   -  us-west-2 => sea-wa-us
+{:.bs-callout-tip}
+Check with your [DNS registrar](https://lookup.icann.org/) for information about updating the DNS configuration.
 
-1. Modify the timeout values (in microseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
+**Prerequisites:**
 
-1. Optionally, select to **Activate the backend and Shield after editing or saving**.
-
-1. Click **Upload** to save your changes and upload them to the Fastly servers.
-
-1. In the Magento Admin, click **Save Config**.
-
-For more information, see the Magento 2 [Backend settings guide](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md) in the Fastly module documentation.
-
-### Configure purge options {#purge}
-
-Fastly provides multiple types of purge options on your Magento Cache Management page including purging product category, product assets, and content. When enabled, Fastly watches for events to automatically purge those caches. If you disable a purge option, you can manually purge Fastly caches after finishing updates through the Cache Management page.
-
-The options include:
-
--  **Purge category**: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
--  **Purge product**: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
--  **Purge CMS page**: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
--  **Soft purge**: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
-
-![Configure purge options]({{ site.baseurl }}/common/images/cloud/cloud_fastly-purgeoptions.png){:width="650px"}
+-  Enable the Fastly module.
+-  Upload the default Fastly VCL code.
+-  Provide a list of top-level and subdomains for each environment to your Customer Technical Advisor (CTA) or submit them in a Magento Support ticket.
+-  Wait for confirmation that the specified domains have been added to your Cloud environments.
+-  On Starter projects, add the domains to your Fastly service configuration. See [Manage domains]({{ site.baseurl }}/cloud/cdn/configure-fastly-customize-cache.html#manage-domains).
 
 {:.procedure}
-To configure Fastly purge options:
+To update your DNS configuration for development:
 
-1. In the *Fastly Configuration* section, expand **Advanced**.
+1. Add CNAME records to point pre-production URLs to the Fastly service: `prod.magentocloud.map.fastly.net`, for example:
 
-1. All purge options display. Select "Yes" per purge option to enable automatic purging. Select "No" to disable automatic purging, allowing you to manually purge caches through the Cache Management page.
+   | Domain or Subdomain | CNAME
+   |---------------------|------
+   | mcprod.your-domain.com | prod.magentocloud.map.fastly.net
+   | mcstaging.your-domain.com | prod.magentocloud.map.fastly.net
 
-1. Click **Save Config** at the top of the page.
+   When the CNAME records are live, Magento provisions certificates and uploads the SSL/TLS certificates.
 
-1. After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
+1. Add ACME challenge CNAME records for domain validation and pre-provisioning of Production SSL/TLS certificates, for example:
 
-For more information, see [the Fastly configuration options](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options).
+   | Domain or Subdomain  | CNAME
+   |----------------------|---------
+   | _acme-challenge.your-domain.com<br>| 0123456789abcdef.validation.magento.cloud
+   | _acme-challenge.www.your-domain.com<br> | 9573186429stuvwx.validation.magento.com
+   | _acme-challenge.mystore.your-domain.com<br> | 1234567898zxywvu.validation.magento.cloud
+   | _acme-challenge.subdomain.your-domain.com<br>| 1098765743lmnopq.validation.magento.cloud
 
-### Create custom VCL snippets {#custom-vcl}
+   After adding the CNAME records, Magento validates the domains and provisions the SSL/TLS certificate for the environment. When you update the DNS configuration to route traffic from these domains to the Fastly service, Magento uploads the certificate to the environment.
 
-For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+1. Update the Magento Base URL.
 
-### Extend Fastly timeout for the Magento Admin {#bulkaction}
+   -  Use SSH to log in to the Production environment.
 
-Fastly sets a 180 second-timeout for HTTPS requests to the Magento Admin, so you may encounter timeouts if you need to complete bulk actions that take longer than 3 minutes. In these cases, update the Fastly service configuration to change the _Admin path timeout_.
+      ```bash
+      magento-cloud ssh
+      ```
 
-1. In the *Fastly Configuration* section, expand **Advanced**.
+   -  Use the Magento CLI to change the base URL for your store.
 
-1. Set the **Admin path timeout** value in seconds. This value cannot be more than 10 minutes (600 seconds).
+      ```
+      php bin/magento setup:store-config:set --base-url="https://mcstaging.your-domain.com/"
+      ```
 
-1. Click **Save Config** at the top of the page.
+   {:.bs-callout-info}
+   As an alternative to using the Magento CLI, you can update the Base URL from the [Magento Admin](https://docs.magento.com/user-guide/stores/store-urls.html#configure-the-base-url).
 
-1. After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
+1. Restart web browser.
 
-Fastly gets the Magento Admin path for generating the VCL file from the `app/etc/env.php` configuration file.
+1. Test your website.
 
-### Configure GeoIP handling {#geoip}
+## Test Fastly caching
 
-The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.
+After you complete the DNS configuration changes, use the [cURL](https://curl.haxx.se/) command-line tool to verify that Fastly cache is working.
 
-1. In the *Fastly Configuration* section, expand **Advanced**.
+{:.procedure}
+To check the response headers:
 
-1. Scroll down and select **Yes** to **Enable GeoIP**. Additional configuration options display.
+1. In a terminal, use the following `curl` command to test your live site URL:
 
-1. For GeoIP Action, select if the visitor is automatically redirected with **Redirect** or provided a list of stores to select from with **Dialog**.
+   ```bash
+   curl -vo /dev/null -H Fastly-Debug:1 https://<live-URL>
+   ```
 
-1. For **Country Mapping**, click **Add** to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+   If you have not set a static route or completed the DNS configuration for the domains on your live site, use the `--resolve` flag, which bypasses DNS name resolution.
 
-   ![Add GeoIP country maps]({{ site.baseurl }}/common/images/cloud/cloud_fastly-geo-code.png)
+   ```bash
+   curl -vo /dev/null -H Fastly-Debug:1 --resolve <live-URL-hostname>:443:<live-IP-address>
+   ```
 
-1. Click **Save Config** at the top of the page.
+1. In the response, verify the [headers]({{ site.baseurl }}/cloud/cdn/trouble-fastly.html#response-headers) to ensure that Fastly is working. You should see following unique headers in the response:
 
-1. After page reload, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
+   ```http
+   < Fastly-Magento-VCL-Uploaded: yes
+   < X-Cache: HIT, MISS
+   ```
 
-Fastly also provides a series of [geolocation-related VCL features](https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features) for customized geolocation coding.
-
-## DNS configuration {#dns}
-
-To enable Fastly caching on your Staging and Production sites, you need make the following changes to the DNS configuration for your site:
-
--  Set all necessary redirects, especially if you are migrating from an existing site
--  Set the zone’s root resource record to address the hostname
--  Lower the value for the Time-to-Live (TTL) to refresh DNS information to point customers to the correct Production store
-
-We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, you can change the TTL value from 3 days to 10 minutes when you are testing your site. Be advised that shortening the TTL value  adds load to the web server.
-
-After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple hostnames for your site, you must add a CNAME record for each one.
-
-CNAME records cannot be set for apex domains, also referred to as a naked or base domains. You must use `A` records for this.
-`A` records map a domain name to the following Fastly IP addresses:
-
--  `151.101.1.124`
--  `151.101.65.124`
--  `151.101.129.124`
--  `151.101.193.124`
-
-Refer to [Go live checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html) for more information.
-
-### TLS and Fastly {#fastly-tls}
-
-If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GlobalSign. When entering your [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
-
-For details on this TXT record, see the Fastly [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification).
+If the headers do not have the correct values, see [Resolve errors found in the response headers]({{ site.baseurl }}/cloud/cdn/trouble-fastly.html#curl) for troubleshooting help.
 
 ## Upgrade the Fastly module {#upgrade}
 

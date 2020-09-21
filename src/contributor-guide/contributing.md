@@ -95,6 +95,21 @@ The following list consists of questions you can ask to help determine the prope
 
 The number of 'Yes' answers should help you to determine the severity.
 
+### Pull request risk assessment:
+
+The 'Risk:' label highlights the risk that the suggested changes may bring to the platform.
+It helps maintainers decide:
+
+-  to which version the pull requests should be delivered
+-  which reviewers should see it
+-  whether a request should be approved or not
+
+| Risk | Description |
+| ------------- | ------------- |
+| High | A pull request that makes changes on the framework or changes that will affect multiple areas. |
+| Medium | A pull request that makes changes which may affect multiple areas or makes considerable changes on a specific area. |
+| Low | A pull request that will probably not affect other areas. |
+
 ## GitHub and Two-Factor authentication {#two-factor}
 
 Magento **requires all Partners** who contribute code to enable 2FA on their GitHub accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.

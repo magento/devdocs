@@ -18,4 +18,3 @@ To start, click either **Start Readiness Check** or **Next** on the System Upgra
 ![The readiness check enables you to find out if your server and environment are ready to proceed]({{ site.baseurl }}/common/images/upgr_readiness.png)
 
 {% include comp-man/readiness-check.md %}
-
