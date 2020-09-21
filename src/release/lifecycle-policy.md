@@ -19,7 +19,7 @@ For {{site.data.var.ece}} 2.3 and subsequent releases:
 
 | Release                   | Release Date  | End of Quality Fixes | End of Security Fixes/<br>End of Software Support |
 |---------------------------|---------------|----------------------|---------------------------------------------------|
-| {{site.data.var.ece}} 2.3 | November 2018 | July 2021            | April 2023<sup>*</sup>                            |
+| {{site.data.var.ece}} 2.3 | November 2018 | July 2021            | April 2022<sup>*</sup>                            |
 | {{site.data.var.ece}} 2.4 | July 2020     |                      |                                                   |
 
 *<sup>*</sup> The End of Software Support date for {{site.data.vr.ece}} 2.3 has been extended to April 2022 due to impacts from COVID-19.*
