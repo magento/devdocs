@@ -8,9 +8,14 @@ functional_areas:
   - Setup
 ---
 
+Fastly supports a customized version of the Varnish Configuration Language (VCL) to customize the Fastly service configuration. For example, you can allow, block, or redirect access for specific users or IPs using VCL code blocks in combination with edge and ACL dictionaries.
+
 Custom VCL snippets are blocks of VCL logic added to the active VCL version. A custom VCL snippet modifies how Fastly caching services respond to request traffic. For example, you can add a custom VCL snippet to allow request traffic only from specified client IP addresses, or to block traffic from websites known for sending referral spam to your {{ site.data.var.ece }} sites.
 
 Custom VCL snippets—generated, compiled, and transmitted to all Fastly caches—load and activate without server downtime.
+
+{:.bs-callout-info}
+Before adding custom VCL code, edge dictionaries, and ACLs to your Fastly module configuration, verify that the Fastly caching service works with the default configuration. See [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
 
 Fastly supports two types of custom VCL snippets:
 
