@@ -11,11 +11,9 @@ Klarna Payments enables your consumers to try before they buy, finance purchases
 
 The following diagram shows the workflow for placing an order when Klarna is the selected payment method.
 
-![Klarna payments sequence diagram]({{ page.baseurl }}/graphql/images/klarna-payments.svg)
-
 Klarna payments require cart information to initiate the session. For this reason, the below steps can be executed only after a cart has been created.
 
-See the [GraphQL Magento Tutorial]({{ page.baseurl }}/graphql/tutorials/checkout/index.html) to create a cart.
+![Klarna payments sequence diagram]({{ page.baseurl }}/graphql/images/klarna-payments.svg)
 
 1. The PWA client calls the [`createKlarnaPaymentsSession`]({{ page.baseurl }}/graphql/mutations/create-klarna-payments-session.html) mutation to generate the `client_token` and retrieve a list of `payment_categories`.
 
