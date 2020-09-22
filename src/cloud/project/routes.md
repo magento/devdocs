@@ -106,7 +106,7 @@ For example, for the default domain `example.com`, the route `https://{default}/
    
    https://example.com/
    ```
-But request to `http://example.com/` will always redirect to `https://example.com/`
+However, the request to `http://example.com/` always redirects to `https://example.com/`
 
 ## Route options
 
