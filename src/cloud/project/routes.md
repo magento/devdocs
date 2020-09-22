@@ -112,7 +112,7 @@ What is similar to
     to: "https://{default}/"
 ```
 
-Where the request to `http://example.com/` always redirects to `https://example.com/`
+The request to `http://example.com/` always redirects to `https://example.com/`
 
 ## Route options
 
