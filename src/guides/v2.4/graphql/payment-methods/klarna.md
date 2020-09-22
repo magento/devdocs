@@ -106,7 +106,6 @@ mutation {
     }
   }
 }
-
 ```
 
 **Response:**
