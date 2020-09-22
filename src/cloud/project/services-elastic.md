@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Search
+redirect_from:
+  - /cloud/project/project-conf-files_services-elastic.html
 ---
 
 [Elasticsearch](https://www.elastic.co) is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
@@ -22,7 +24,7 @@ Magento recommends that you always set up Elasticsearch for your {{ site.data.va
 {:.procedure}
 To enable Elasticsearch:
 
-1. Add the `elasticsearch` service to the `.magento/services.yaml` file with the Elasticsearch version and allocated disk space in MB.
+1. For Starter projects, add the `elasticsearch` service to the `.magento/services.yaml` file with the Elasticsearch version and allocated disk space in MB.
 
    ```yaml
    elasticsearch:
@@ -30,7 +32,8 @@ To enable Elasticsearch:
        disk: 1024
    ```
 
-   {:.bs-callout-info}
+   For Pro projects, you must submit a Magento Support ticket to change the Elasticsearch version.
+
    For details on determining the correct version to install, see [Elasticsearch software compatibility](#elasticsearch-software-compatibility).
 
 1. Set the `relationships` property in the `.magento.app.yaml` file.
@@ -46,9 +49,9 @@ To enable Elasticsearch:
    git add -A && git commit -m "Enable Elasticsearch" && git push origin <branch-name>
    ```
 
-   For information on how these changes affect your environments, see [Services]({{   site.baseurl }}/cloud/project/project-conf-files_services.html).
+   For information on how these changes affect your environments, see [Services]({{ site.baseurl }}/cloud/project/services.html).
 
-1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships) and configure Elasticsearch in the Admin UI.
+1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships) and configure Elasticsearch in the Admin UI.
 
 1. Reindex the Catalog Search index.
 
@@ -73,6 +76,8 @@ When you install or upgrade your {{ site.data.var.ece }} project, always check f
 -  **Project upgrade**–Verify that the Elasticsearch PHP client in the new Magento version is compatible with the Elasticsearch service version installed on the Cloud infrastructure.
 
 {% include cloud/cloud-elasticsearch-client-compatibility.md %}
+
+{%include cloud/note-cloud-services-compatibility.md%}
 
 {:.procedure}
 To check Elasticsearch software compatibility:

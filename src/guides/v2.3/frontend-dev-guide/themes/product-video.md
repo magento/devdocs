@@ -43,7 +43,6 @@ You can set the following product video options:
       <td colspan="1">Display related videos.</td>
       <td colspan="1">
 Boolean
-
       </td>
 <td>
 0 <br />
@@ -57,7 +56,6 @@ Boolean
       <td colspan="1">Auto re-play video.</td>
       <td colspan="1">
 Boolean
-
       </td>
 <td>
 0 <br />

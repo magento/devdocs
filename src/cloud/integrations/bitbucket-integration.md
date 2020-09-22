@@ -164,13 +164,17 @@ To create an OAuth consumer in Bitbucket:
 
 ### Add a webhook in BitBucket
 
-In order to communicate events—such as a push—with your Cloud Git server, you need to create a webhook for your BitBucket repository.
+In order to communicate events—such as a push—with your Cloud Git server, is it necessary to have a webhook for your BitBucket repository. The method of setting up a Bitbucket integration detailed on this page, when followed correctly, automatically creates a webhook. It is important to verify the webhook to avoid creating multiple integrations.
 
 1. Log in to your [Bitbucket](https://bitbucket.org/account/signin/) account.
 
 1. Click **Repositories** and select your project.
 
-1. Click **Settings** > **Workflow** > **Webhooks**.
+1. Click **Repository Settings** > **Workflow** > **Webhooks**.
+
+1. Verify the webhook before continuing.
+
+   If the hook is active, skip the remaining steps and [Test the integration](#test-the-integration). The hook should have a name similar to **"Magento Cloud <project_id>"** and a hook URL format similar to: `https://<zone>.magento.cloud/api/projects/<project_id>/integrations/<id>/hook`
 
 1. Click **Add webhook**.
 

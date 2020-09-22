@@ -175,7 +175,6 @@ To define web API components, set these attributes on these XML elements in the
                <strong>Note</strong>:The Magento web API framework enables guest users to access resources that are configured with `anonymous` permission.
                   Any user that the framework cannot authenticate through existing <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">authentication
                      mechanisms</a> is considered a guest user.
-
             </li>
          </ul>
       </td>
