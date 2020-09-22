@@ -46,6 +46,33 @@ To skip the interactive mode, use the `-n, --no-interaction` option.
 {:.bs-callout-info}
 The mode option for the `ece-docker build:compose` command does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
 
+## Set the environment variables
+
+You can launch a Cloud Docker environment with predefined environment variables by adding the `--env-vars` option to the `ece-docker build:compose` command.
+
+For example, the following command sets values for the `LOCK_PROVIDER` and `CRON_CONSUMERS_RUNNER` environment variables.
+
+```bash
+bin/ece-docker build:compose --env-vars="{\"MAGENTO_CLOUD_VARIABLES\":{\"LOCK_PROVIDER\":\"db\",\"CRON_CONSUMERS_RUNNER\":{\"cron_run\":\"true\",\"max_messages\":5000,\"consumers\":[\"test\"]}}}"
+```
+
+You must escape special characters when specifying the value for the `--env-vars` option. Use the following PHP script to generate the escaped value. Update the example with the values required for your Cloud Docker environment configuration.
+
+```php
+<?php
+
+echo addslashes(json_encode([
+   'MAGENTO_CLOUD_VARIABLES' => [
+       'LOCK_PROVIDER' => 'db',
+       'CRON_CONSUMERS_RUNNER' => [
+           'cron_run' => 'true',
+           'max_messages' => 5000,
+           'consumers' => ['test'],
+       ],
+   ]
+]));
+```
+
 ## Stop and start containers
 
 You can stop containers and restore them afterwards using the following methods.
