@@ -89,7 +89,8 @@ If your Cloud project supports multiple stores, follow the route configuration i
 
 All environments support both HTTP and HTTPS automatically. 
 
-- If the configuration specifies only the HTTP route, HTTPS routes are created automatically, allowing the site to be served from both HTTP and HTTPS without requiring redirects. For example, if you have project with the default domain `example.com`, the record `http://{default}/` resolves to the following URLs:
+- If the configuration specifies only the HTTP route, HTTPS routes are created automatically, allowing the site to be served from both HTTP and HTTPS without requiring redirects. 
+For example, if you have project with the default domain `example.com`, the record `http://{default}/` resolves to the following URLs:
 
    ```text
    http://example.com/
@@ -99,14 +100,20 @@ All environments support both HTTP and HTTPS automatically.
    {:.no-copy}
 
 - If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS.
-For example, for the default domain `example.com`, the route `https://{default}/` creates the following two URLs:
+For example, for the default domain `example.com`, the route `https://{default}/` resolves to URL `https://example.com/` and redirect `http://example.com/` to `https://example.com/`.
 
-   ```text
-   http://example.com/
-   
-   https://example.com/
-   ```
-However, the request to `http://example.com/` always redirects to `https://example.com/`
+What is similar to 
+  
+    ```yaml
+    "https://{default}/":
+        type: upstream
+        upstream: "mymagento:http"
+    
+    "http://{default}/":
+        type: redirect
+        to: "https://{default}/"
+    ```
+Where the request to `http://example.com/` always redirects to `https://example.com/`
 
 ## Route options
 
@@ -122,12 +129,12 @@ Property         | Description
 
 ## Simple routes
 
-The following sample routes the apex domain and the `www` subdomain to the `frontend` application. This route does not redirect HTTPS requests:
+The following sample routes the apex domain and the `www` subdomain to the `mymagento` application. This route does not redirect HTTPS requests:
 
 ```yaml
 "http://{default}/":
     type: upstream
-    upstream: "frontend:http"
+    upstream: "mymagento:http"
 
 "http://www.{default}/":
     type: redirect
@@ -139,11 +146,11 @@ The following sample route does not redirect from the `www` to the apex domain; 
 ```yaml
 "http://{default}/":
     type: upstream
-    upstream: "frontend:http"
+    upstream: "mymagento:http"
 
 "http://www.{default}/":
     type: upstream
-    upstream: "frontend:http"
+    upstream: "mymagento:http"
 ```
 
 In the first sample, the server responds directly to a request of the form `http://example.com/hello`, but it issues a _301 redirect_ for `http://www.example.com/mypath` (to `http://example.com/mypath`).
@@ -189,10 +196,7 @@ See more information about [caching]({{ site.baseurl }}/cloud/project/project-ro
 As discussed in more detail in [Redirects]({{ site.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*, and specify rules for route-based [caching]({{ site.baseurl }}/cloud/project/project-routes-more-cache.html):
 
 ```yaml
-http://www.{default}/:
-    type: redirect
-    to: https://{default}/
-http://{default}/:
+https://www.{default}/:
     type: redirect
     to: https://{default}/
 https://{default}/:
@@ -206,5 +210,5 @@ https://{default}/:
     ssi:
         enabled: false
     type: upstream
-    upstream: php:http
+    upstream: mymagento:http
 ```
