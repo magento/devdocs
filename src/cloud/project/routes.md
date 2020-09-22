@@ -53,7 +53,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
    ```text
    https://www.example.com/
-   
+
    https://www.example1.com/
 
    https://example.com/blog
@@ -87,14 +87,13 @@ If your Cloud project supports multiple stores, follow the route configuration i
 
 ## Route protocols
 
-All environments support both HTTP and HTTPS automatically. 
+All environments support both HTTP and HTTPS automatically.
 
-- If the configuration specifies only the HTTP route, HTTPS routes are created automatically, allowing the site to be served from both HTTP and HTTPS without requiring redirects. 
-For example, if you have project with the default domain `example.com`, the record `http://{default}/` resolves to the following URLs:
+- If the configuration specifies only the HTTP route, HTTPS routes are created automatically, allowing the site to be served from both HTTP and HTTPS without requiring redirects. For example, if you have project with the default domain `example.com`, the record `http://{default}/` resolves to the following URLs:
 
    ```text
    http://example.com/
-   
+
    https://example.com/
    ```
    {:.no-copy}
@@ -102,17 +101,18 @@ For example, if you have project with the default domain `example.com`, the reco
 - If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS.
 For example, for the default domain `example.com`, the route `https://{default}/` resolves to URL `https://example.com/` and redirect `http://example.com/` to `https://example.com/`.
 
-What is similar to 
-  
+What is similar to
+
     ```yaml
     "https://{default}/":
         type: upstream
         upstream: "mymagento:http"
-    
+
     "http://{default}/":
         type: redirect
         to: "https://{default}/"
     ```
+
 Where the request to `http://example.com/` always redirects to `https://example.com/`
 
 ## Route options
