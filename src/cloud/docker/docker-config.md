@@ -52,7 +52,7 @@ You can launch a Cloud Docker environment with predefined environment variables 
 
 For example,
 
-```
+```bash
 bin/ece-docker build:compose --env-vars="{\"MAGENTO_CLOUD_VARIABLES\":{\"LOCK_PROVIDER\":\"db\",\"CRON_CONSUMERS_RUNNER\":{\"cron_run\":\"true\",\"max_messages\":5000,\"consumers\":[\"test\"]}}}"
 ```
 
