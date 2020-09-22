@@ -33,7 +33,6 @@ See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html) for i
 -  **MDVA-30428** _(for Magento `>=2.3.3 <2.4.2`)_—Fixes the issue where customers cannot add a product to wishlist if this product is assigned to a custom inventory source.
 -  **MDVA-28661** _(for Magento B2B `>=1.1.0 <1.2.2`)_—Fixes the issue where an error is thrown in the Company Users company account section after company admin is changed.
 
-
 ## v1.0.4
 
 -  **MDVA-30195** _(for Magento `2.3.1 - 2.3.4-p2`)_—Fixes the issue where cron jobs fail if database name is too long, resulting in categories not being updated on the frontend.
