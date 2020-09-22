@@ -265,6 +265,21 @@ A `<field>`-Tag can have the following children:
 {:.bs-callout-warning}
 The nodes `more_url`, `demo_url`, `requires` and `options` are defined by a different core payment model and are only used once. These nodes are not reusable.
 
+### Field input type reference
+
+Each field has the default type of ´text´ to display it's frontend input type. The following input fields types can be found and used in the core at the time of this writing:
+
+| Field Type    | Description                                                                                                       |
+|---------------|-------------------------------------------------------------------------------------------------------------------|
+| ´text´        | Default. Standard text field.                                                                                     |
+| ´select´      | A common html select. Only one item can be selected.                                                              |
+| ´multiselect´ | A common html select. Multiple items can be selected at once.                                                     |
+| ´obscure´     | Commonly used for passwords. Shows asterisks as values.                                                           |
+| ´time´        | A string of the current time. Cannot be configured.                                                               |
+| ´textarea´    | A common html textarea.                                                                                           |
+| ´button´      | A common html button. It is necessary to declare a custom ´frontend_model´ in order to use the button field type. | 
+| ´image´       | Possible Image upload. The nodes ´backend_model´, ´upload_dir´ and ´base_url´ needs to be defined as well.        |
+
 ### Example: Create two fields in a given group
 
 ```xml
