@@ -89,8 +89,7 @@ Follow the instruction to configure [multiple websites or stores]({{ site.baseur
 
 All environments support both HTTP and HTTPS automatically. 
 
-- If only HTTP routes are specifying, HTTPS routes being created automatically, allowing the site to be served from both HTTP and HTTPS without redirects.
-For example, if you have project with default domain `example.com`, the record `http://{default}/` will resolve following URLs:
+- If the configuration specifies only the HTTP route, HTTPS routes are created automatically, allowing the site to be served from both HTTP and HTTPS without requiring redirects. For example, if you have project with the default domain `example.com`, the record `http://{default}/` resolves to the following URLs:
 
    ```text
    http://example.com/
