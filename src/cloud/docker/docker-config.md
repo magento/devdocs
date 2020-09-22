@@ -56,6 +56,7 @@ bin/ece-docker build:compose --env-vars="{\"MAGENTO_CLOUD_VARIABLES\":{\"LOCK_PR
 ```
 
 You must escape special characters when specifying the value for the `--env-vars` option. Use the following PHP script to generate the escaped value. Update the example with the values required for your Cloud Docker environment configuration.
+
 ```php
 <?php
 
