@@ -56,6 +56,7 @@ The `DefaultConfigProvider` class returns the data required to render the TinyMC
 From the example, the class `Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider` overrides the existing configuration provided by the `Magento_CMS` module.
 
 ## Extending the TinyMCE editor
+
 When extending the TinyMCE editor it is necessary to add the PageBuilder module to the load order of the custom module by adding the following to the `module.xml` file.
 
 ```xml
