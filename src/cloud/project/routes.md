@@ -98,7 +98,7 @@ All environments support both HTTP and HTTPS automatically.
    ```
    {:.no-copy}
 
-- If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS. For example, for the default domain `example.com`, the route `https://{default}/` resolves to URL `https://example.com/` and redirect `http://example.com/` to `https://example.com/`.
+- If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS. For example, for the default domain `example.com`, the route `https://{default}/` resolves to URL `https://example.com/` and redirects `http://example.com/` to `https://example.com/`.
 
 What is similar to
 
