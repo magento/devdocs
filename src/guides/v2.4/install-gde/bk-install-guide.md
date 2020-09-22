@@ -6,6 +6,8 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_from:
+  - /guides/v2.4/install-gde/continue-to-install.html 
 ---
 
 You are among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation.
