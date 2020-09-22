@@ -17,35 +17,38 @@ Klarna payments require cart information to initiate the session. For this reaso
 
 See the [GraphQL Magento Tutorial]({{ page.baseurl }}/graphql/tutorials/checkout/index.html) to create a cart.
 
-1. The PWA client calls the [`createKlarnaPaymentsSession`]({{ page.baseurl }}/graphql/mutations/create-klarna-payments-session.html) mutation to generate the `client_token` and retrieve the `payment_categories`.
+1. The PWA client calls the [`createKlarnaPaymentsSession`]({{ page.baseurl }}/graphql/mutations/create-klarna-payments-session.html) mutation to generate the `client_token` and retrieve a list of `payment_categories`.
 
-   -  This step can be executed at any time after the cart is created. However, it is recommended to have at least the billing address, shipping address, products, and shipping method set on the cart.
+   This step can be executed at any time after the cart is created. However, we recommend that you add products to the cart and set the billing address, shipping address, and shipping method on the cart before you perform this step.
 
 1. Magento forwards the request to Klarna.
 
-1. Klarna returns the `client_token` and `payment_categories`.
+1. Klarna returns the `client_token` and the `payment_categories` available to the shopper.
 
 1. Magento forwards the token to the client.
 
-1. The client sends the query to retrieve the available payment methods.
+1. The client sends the `cart` query to retrieve the available payment methods.
 
-   -  Magento must always retrieve the latest status information from Klarna before returning the Klarna payments method as an option to the customer. This is important to ensure that the customer is always shown the latest available payment options.
+1. Magento must always retrieve the latest status information from Klarna before returning the Klarna payments method as an option to the customer. This is important to ensure that the customer is always shown the latest available payment options.
 
-1. Magento returns the available payment methods, including the Klarna payment method.
+1. Klarna returns an updated list of `payment_categories`.
+
+
+1. Magento returns all available payment methods, including Klarna payment methods.
 
 1. The PWA client renders the Klarna payment widget.
 
-   -  The PWA client uses the `client_token` and `payment_categories` to initialize the [Klarna Payments JS SDK](https://developers.klarna.com/documentation/klarna-payments/javascript-sdk/).
+   The PWA client uses the `client_token` and `payment_categories` to initialize the [Klarna Payments JS SDK](https://developers.klarna.com/documentation/klarna-payments/javascript-sdk/).
 
 1. The PWA client sends the [authorization](https://developers.klarna.com/documentation/klarna-payments/single-call-descriptions/authorize-the-purchase/) directly to Klarna.
 
-   -  On the checkout page, the customer selects Klarna as the payment method and clicks **Place Order**. When this happens, the PWA client must send the `authorize()` call to Klarna. Then the shopper follows the authorization steps on the Klarna inline modal. During this phase the communication between the PWA client and Klarna is handled directly by the Klarna Payments JS SDK.
+   On the checkout page, the customer selects Klarna as the payment method and clicks **Place Order**. When this happens, the PWA client must send the `authorize()` call to Klarna. Then the shopper follows the authorization steps on the Klarna inline modal. During this phase, the communication between the PWA client and Klarna is handled directly by the Klarna Payments JS SDK.
 
 1. Klarna returns the `authorization_token` in response to the authorize call.
 
 1. Set the Payment Method providing the `authorization_token` as part of the `setPaymentMethodOnCart` mutation.
 
-   -  The client uses the [`setPaymentMethodOnCart`]({{ page.baseurl }}/graphql/mutations/set-payment-method.html) mutation to set the payment method to `klarna_*`. The `authorization_token` is passed in the `klarna` object.
+   The client uses the [`setPaymentMethodOnCart`]({{ page.baseurl }}/graphql/mutations/set-payment-method.html) mutation to set the payment method to `klarna_<identifier-value>`. The `authorization_token` is passed in the `klarna` object.
 
 1. Magento returns an updated `cart` object.
 
@@ -59,12 +62,12 @@ See the [GraphQL Magento Tutorial]({{ page.baseurl }}/graphql/tutorials/checkout
 
 ## How to handle cart updates
 
-During the purchase flow, the cart can be update by adding additional products, applying coupons, and changing the billing or shipping address. All these events might cause a change in Klarna options for the specific customer.
+During the purchase flow, the cart can be updated by adding additional products, applying coupons, and changing the billing or shipping address. All these events might cause a change in Klarna options for the specific customer.
 
-In order to always present customers with the latest available payment options provided by Klarna, the PWA client must:
+In order to always present shoppers with the latest available payment options provided by Klarna, the PWA client must:
 
 1. Perform a cart update.
-1. Send the query to retrieve the latest available payment methods. This will trigger a subsequent request to Klarna with the latest information available from the cart. Note that the new list of payment methods returned might contain different options for the customer.
+1. Send the `cart` query to retrieve the latest available payment methods. This will trigger a subsequent request to Klarna with the latest information available from the cart. Note that the new list of payment methods returned might contain different options for the shopper.
 1. [Reload the widget](https://developers.klarna.com/documentation/klarna-payments/single-call-descriptions/load-klarna-payments/) on the client side.
 
 The following diagram describes the workflow:
@@ -73,7 +76,7 @@ The following diagram describes the workflow:
 
 ## setPaymentMethodOnCart mutation
 
-When you set the payment method to Klarna in the [`setPaymentMethodOnCart`]({{ page.baseurl }}/graphql/mutations/set-payment-method.html) mutation, the payment_method object must contain a klarna object.
+When you set the payment method to Klarna in the [`setPaymentMethodOnCart`]({{ page.baseurl }}/graphql/mutations/set-payment-method.html) mutation, the `payment_method` object must contain a klarna object.
 
 ### klarna object
 
