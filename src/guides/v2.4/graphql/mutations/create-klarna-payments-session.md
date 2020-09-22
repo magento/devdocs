@@ -5,6 +5,14 @@ contributor_name: Klarna
 contributor_link: https://www.klarna.com/
 ---
 
+The `createKlarnaPaymentsSession` mutation initiates a Klarna session. You can create a session at any time before you display the available payment methods, but ideally, the cart would already contain products, and the billing address, shipping address, and shipping method. If the cart changes afterward, you must run the mutation again to ensure that the latest payment methods are made available to the shopper. Factors such as the cart contents, the shipping and billing addresses, and the grand total after applying coupons can determine the payment methods Klarna offers.
+
+The mutation response includes an array of payment method categories. When the shopper selects a Klarna payment method, prepend the string `klarna_` to the selected `identifer`, and use the resulting string as the `payment_method.code` value in the subsequent `setPaymentMethodOnCart` mutation. For example, if the shopper selects the "Pay later in 30 days" payment method, the `identifier` value is `pay_later`, and the `payment_method.code` value is `klarna_pay_later`.
+
+The response also contains a client token. You must also supply this value in the `setPaymentMethodOnCart` mutation.
+
+[Klarna payment method]({{page.baseurl}}/graphql/payment-methods/klarna.html) provides additional information about the workflow of Klarna transactions.
+
 ## Syntax
 
 ```graphql
@@ -42,7 +50,7 @@ mutation {
 {
   "data": {
     "createKlarnaPaymentsSession": {
-      "client_token": "1yJhbGciOiJSUzI1NiIsImtpZCI6IjgyMzA1ZWJjLWI4MTEtMzYzNy1hYTRjLTY2ZWNhMTg3NGYzZCJ9.ewogICJzZXNzaW9uX2lkIiA6ICJkY2FiZDBmNy1iNTc2LTE5MzUtODQxMC1jNjM0YjE1OGU2YTciLAogICJiYXNlX3VybCIgOiAiaHR0cHM6Ly9rbGFybmEtcGF5bWVudHMtbmEucGxheWdyb3VuZC5rbGFybmEuY29tL3BheW1lbnRzIiwKICAiZGVzaWduIiA6ICJrbGFybmEiLAogICJsYW5ndWFnZSIgOiAiZW4iLAogICJwdXJjaGFzZV9jb3VudHJ5IiA6ICJVUyIsCiAgInRyYWNlX2Zsb3ciIDogZmFsc2UsCiAgImVudmlyb25tZW50IiA6ICJwbGF5Z3JvdW5kIiwKICAibWVyY2hhbnRfbmFtZSIgOiAiTjEwMDAyMiIsCiAgInNlc3Npb25fdHlwZSIgOiAiUEFZTUVOVFMiLAogICJjbGllbnRfZXZlbnRfYmFzZV91cmwiIDogImh0dHBzOi8vbmEucGxheWdyb3VuZC5rbGFybmFldnQuY29tIiwKICAiZXhwZXJpbWVudHMiIDogWyBdCn0.Qpjp1BfnDLr698A0W3vfW7--6GrDv-gT0mnmLVivAPK40Sxbcmf3eWzL-KR7YfaDVjgaOF3Xgs64pWs6Yg-RM01daVtwfkd84VK8ihQuTe8R2BUeG2l8-c_SV5lNyDxXRJV4AEvZwaqkS5WIFO2GDDUNM6q6OhX9SdxX116BKna72gSh4seXxFqGjCB91gUmtC1MFCLZpnRqjzMgDQUUajVY6ggYuBxN22ybKQaHTXSGrZZxcy0Q3hVD-FN4Wg04acdb8SgmYeLvnsLXZMsnWdaoslQAglIgJVyxarWzX_aCCft67kHR9fTfU055DHEcxqdb5GpOXh5ZALEgm0Dqw",
+      "client_token": "<token_value>",
       "payment_method_categories": [
         {
           "identifier": "pay_later",
@@ -60,11 +68,43 @@ mutation {
 
 ## Input attributes
 
-### createKlarnaPaymentsSessionInput
+### createKlarnaPaymentsSessionInput attributes
+
+The `createKlarnaPaymentsSessionInput` object must contain the following attribute.
+
+Attribute | Data type | Description
+--- | --- | ---
+`cart_id` | String! | The masked ID that identifies the customer's cart
 
 ## Output attributes
 
-### createKlarnaPaymentsSessionOutput
+### createKlarnaPaymentsSessionOutput attributes
+
+The `createKlarnaPaymentsSessionOutput` object can contain the following attributes.
+
+Attribute | Data type | Description
+--- | --- | ---
+`client_token` |  String | The payment method client token
+`payment_method_categories` | [Categories] | An array of payment method categories
+
+### Categories attributes
+
+The `Categories` object can contain the following attributes.
+
+Attribute | Data type | Description
+--- | --- | ---
+`asset_urls` | [Assets] | The payment method assets
+`identifier` | String! | The payment method identifier
+`name` | String! | The payment method name
+
+### Assets attributes
+
+The `Assets` object can contain the following attributes.
+
+Attribute | Data type | Description
+--- | --- | ---
+`descriptive` | String | The payment method logo url (descriptive)
+`standard` | String | The payment method logo url (standard)
 
 ## Errors
 
