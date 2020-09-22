@@ -12,7 +12,7 @@ The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes fo
 
 {% include cloud/note-pro-missing-self-service-options.md %}
 
-The default `routes.yaml` file specifies the route templates for processing as HTTP as HTTPS requests on projects that have a single default domain and on projects configured for multiple domains:
+The default `routes.yaml` file specifies the route templates for processing HTTP requests as HTTPS on projects that have a single default domain and on projects configured for multiple domains:
 
 ```yaml
 "http://{default}/":
