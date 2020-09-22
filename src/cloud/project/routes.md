@@ -83,7 +83,7 @@ https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog
   {:.no-copy}
 
 {:.bs-callout-info}
-Follow the instruction to configure [multiple websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html) on your Cloud project.
+If your Cloud project supports multiple stores, follow the route configuration instructions for [multiple websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html).
 
 ## Route protocols
 
