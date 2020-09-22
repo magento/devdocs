@@ -48,14 +48,14 @@ The mode option for the `ece-docker build:compose` command does not affect the M
 
 ## Set the environment variables
 
-You can launch a Docker with predefined environment variable by passing them in `--env-vars` option.
+You can launch a Cloud Docker environment with predefined environment variables by adding the `--env-vars` option to the `ece-docker build:compose` command.
 
 For example,
 ```
 bin/ece-docker build:compose --env-vars="{\"MAGENTO_CLOUD_VARIABLES\":{\"LOCK_PROVIDER\":\"db\",\"CRON_CONSUMERS_RUNNER\":{\"cron_run\":\"true\",\"max_messages\":5000,\"consumers\":[\"test\"]}}}"
 ```
 
-Use the next php script to generate value for `--env-vars` option:
+You must escape special characters when specifying the value for the `--env-vars` option. Use the following PHP script to generate the escaped value. Update the example with the values required for your Cloud Docker environment configuration.
 ```php
 <?php
 
