@@ -31,7 +31,6 @@ Klarna payments require cart information to initiate the session. For this reaso
 
 1. Klarna returns an updated list of `payment_categories`.
 
-
 1. Magento returns all available payment methods, including Klarna payment methods.
 
 1. The PWA client renders the Klarna payment widget.
