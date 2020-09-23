@@ -171,7 +171,8 @@ class TaxColumn extends Select
 
 This block sets values for the drop-down option.
 
-## Step 4: Set default values - **OPTIONAL**
+## Step 4: Set default values - OPTIONAL
+
 It is possible to set defaults for a dynamic row configuration, this is done by adding additional XML to the defaults block in the `config.xml` file for the module.
 
 Add a block to the `<default>` section in the file as it would be done normally but do not add any values. For the example this tutorial has been using, this would look like :
@@ -189,7 +190,7 @@ So we could use `<item1>, <item2>` etc.
 
 The sub-options are the columns defined in the `_prepareToRender()` method as described in [Step 2](#step-2-create-the-block-class-to-describe-custom-field-columns).
 
-So for a single row for above we may have :
+In the following excerpt, a single row for `item1` contains 4 sub-options:
 
 ```xml
 <item1>
@@ -200,7 +201,7 @@ So for a single row for above we may have :
 </item1>
 ```
 
-Putting this all together the default block for the configuration option 'ranges', with 3 values could look like :
+Continue building the default block by adding 3 items to the `ranges` configuration option in the `config.xml` file:
 
 ```xml
 <system>
@@ -229,7 +230,11 @@ Putting this all together the default block for the configuration option 'ranges
 </system>
 ```
 
-To test, you just need to ensure that this configuration option has no entry in the database and clear the `config` cache. When the Admin section displaying your configuration is refreshed, the default values will appear.
+To verify the default values for the configuration are correct, do the following :
+- Ensure that this configuration option has no entry in the database. 
+- Clear the `config` cache 
+- Refresh configuration page in the Admin section
+- Verify default values.
 
 ## Step 5: Clean cache
 
