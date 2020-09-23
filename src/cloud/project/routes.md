@@ -69,16 +69,14 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 {{site.data.var.ee}} also generates routes for every active Integration environment. For Integration environments, `{default}` is replaced with the following domain name:
 
 ```text
-[branch]-[project-id].[region].magentosite.cloud
+[branch]-[per-environment-random-string]-[project-id].[region].magentosite.cloud
 ```
 {:.no-copy}
 
-For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains:
+For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domain:
 
 ```text
-http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/
-
-https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog
+https://refactorcss-oy3m2pq-mswy7hzcuhcjw.us.magentosite.cloud/
 ```
   {:.no-copy}
 
@@ -100,19 +98,19 @@ All environments support both HTTP and HTTPS automatically.
 
 - If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS. For example, for the default domain `example.com`, the route `https://{default}/` resolves to URL `https://example.com/` and redirects `http://example.com/` to `https://example.com/`.
 
-Which is similar to
-
+Using HTTPS requests is recommended.
+To serve all pages over TLS, you just need to change protocol to HTTPS in `routes.yaml`.
 ```yaml
 "https://{default}/":
     type: upstream
     upstream: "mymagento:http"
-
-"http://{default}/":
-    type: redirect
-    to: "https://{default}/"
+"https://{all}/":
+    type: upstream
+    upstream: "mymagento:http"
 ```
 
-The request to `http://example.com/` always redirects to `https://example.com/`
+{:.bs-callout-info}
+For Staging and Production environments you may Enable [Forse TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) without changes in `routes.yaml`.
 
 ## Route options
 
@@ -155,7 +153,7 @@ The following sample route does not redirect from the `www` to the apex domain; 
     upstream: "mymagento:http"
 ```
 
-In this example, the server responds directly to a request of the form `http://example.com/hello`, issuing a _301 redirect_ for requests with the URL pattern `http://www.example.com/mypath`. These requests redirect  to the apex domain, for example `http://example.com/mypath`.
+In this example, the server responds directly to a request of the form `http://example.com/hello`, issuing a _301 redirect_ for requests with the URL pattern `http://www.example.com/mypath`. These requests redirect to the apex domain, for example `http://example.com/mypath`.
 
 ## Wildcard routes
 
