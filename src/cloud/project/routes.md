@@ -155,7 +155,7 @@ The following sample route does not redirect from the `www` to the apex domain; 
     upstream: "mymagento:http"
 ```
 
-In the first sample, the server responds directly to a request of the form `http://example.com/hello`, but it issues a _301 redirect_ for `http://www.example.com/mypath` (to `http://example.com/mypath`).
+In this example, the server responds directly to a request of the form `http://example.com/hello`, issuing a _301 redirect_ for requests with the URL pattern `http://www.example.com/mypath`. These requests redirect  to the apex domain, for example `http://example.com/mypath`.
 
 ## Wildcard routes
 
