@@ -87,7 +87,7 @@ If your Cloud project supports multiple stores, follow the route configuration i
 
 All environments support both HTTP and HTTPS automatically.
 
-- If the configuration specifies only the HTTP route, HTTPS routes are created automatically, allowing the site to be served from both HTTP and HTTPS without requiring redirects. For example, if you have project with the default domain `example.com`, the record `http://{default}/` resolves to the following URLs:
+-  If the configuration specifies only the HTTP route, HTTPS routes are created automatically, allowing the site to be served from both HTTP and HTTPS without requiring redirects. For example, if you have project with the default domain `example.com`, the record `http://{default}/` resolves to the following URLs:
 
    ```text
    http://example.com/
@@ -96,12 +96,12 @@ All environments support both HTTP and HTTPS automatically.
    ```
    {:.no-copy}
 
-- If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS. For example, for the default domain `example.com`, the route `https://{default}/` resolves to URL `https://example.com/` and redirects `http://example.com/` to `https://example.com/`.
+-  If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS. For example, for the default domain `example.com`, the route `https://{default}/` resolves to URL `https://example.com/` and redirects `http://example.com/` to `https://example.com/`.
 
 To serve all pages over TLS is recommended.
 For this you need to configure redirects of all unencrypted request to the TLS equivalent. You can do it in one of the following ways:
 
-- Change protocol to HTTPS in `routes.yaml`.
+-  Change protocol to HTTPS in `routes.yaml`.
 
 ```yaml
 "https://{default}/":
@@ -112,7 +112,7 @@ For this you need to configure redirects of all unencrypted request to the TLS e
     upstream: "mymagento:http"
 ```
 
-- For Staging and Production environments we recommend to enable [Force TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) without changes in `routes.yaml`.
+-  For Staging and Production environments we recommend to enable [Force TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) without changes in `routes.yaml`.
 
 ## Route options
 
