@@ -232,9 +232,7 @@ Continue building the default block by adding 3 items to the `ranges` configurat
 
 To verify the default values for the configuration are correct, do the following :
 - Ensure that this configuration option has no entry in the database. 
-- Clear the `config` cache 
-- Refresh configuration page in the Admin section
-- Verify default values.
+- Continue with Step 5
 
 ## Step 5: Clean cache
 
@@ -251,7 +249,7 @@ bin/magento cache:clean config
 
 ## Result
 
-The result is a new dynamic system row field in the Admin panel.
+The result is a new dynamic system row field in the Admin panel. If you have set optional default values these should also appear.
 
 ![Dynamic Rows System Config]({{ site.baseurl }}/common/images/ext-best-practices/dynamic-rows-config-result.png)
 
