@@ -98,8 +98,7 @@ All environments support both HTTP and HTTPS automatically.
 
 -  If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS. For example, for the default domain `example.com`, the route `https://{default}/` resolves to URL `https://example.com/` and redirects `http://example.com/` to `https://example.com/`.
 
-To serve all pages over TLS is recommended.
-For this you need to configure redirects of all unencrypted request to the TLS equivalent. You can do it in one of the following ways:
+We recommend serving all pages over TLS.  For this configuration, you must configure redirects for all unencrypted request to the TLS equivalent using one of the following methods:
 
 -  Change protocol to HTTPS in `routes.yaml`.
 
