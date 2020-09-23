@@ -232,8 +232,8 @@ Continue building the default block by adding 3 items to the `ranges` configurat
 
 To verify the default values for the configuration are correct, do the following :
 
-- Ensure that this configuration option has no entry in the database.
-- Continue with Step 5
+-  Ensure that this configuration option has no entry in the database.
+-  Continue with Step 5
 
 ## Step 5: Clean cache
 
