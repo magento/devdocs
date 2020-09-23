@@ -273,7 +273,7 @@ Each field has the default type of ´text´ to display its frontend input type. 
 |---------------|-------------------------------------------------------------------------------------------------------------------|
 | ´text´        | Default. Standard text field.                                                                                     |
 | ´select´      | A common html select. Only one item can be selected.                                                              |
-| ´multiselect´ | A common html select. Multiple items can be selected at once.                                                     |
+| ´multiselect´ | A common HTML select. Multiple items can be selected at once.                                                     |
 | ´obscure´     | Commonly used for passwords. Shows asterisks as values.                                                           |
 | ´time´        | A string of the current time. Cannot be configured.                                                               |
 | ´textarea´    | A common HTML textarea.                                                                                           |
