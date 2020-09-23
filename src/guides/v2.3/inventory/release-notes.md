@@ -25,7 +25,7 @@ The release notes include:
 
 -  {:.bug} Fixed known issue related to `inventory_cleanup_reservations` cron job, addressed issue related to In-Store Pickup functionality for bundle products, general improvements to stock calculation, bundle product support and backorders functionality.
 
--  {:.new} **Functional tests.** Introduced new functional tests to provide additoinal coverage for In-Store Pickup functionality.
+-  {:.new} **Functional tests.** Introduced new functional tests to provide additional coverage for In-Store Pickup functionality.
 
 ### v1.2.0
 
