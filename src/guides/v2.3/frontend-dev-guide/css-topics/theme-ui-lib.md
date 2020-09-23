@@ -250,4 +250,3 @@ The generated Magento UI library documentation is provided in a convenient [HTML
 
 [ui_lib1.png]: {{ site.baseurl }}/common/images/ui_lib1.png
 [ui_lib2.png]: {{ site.baseurl }}/common/images/ui_lib2.png
-

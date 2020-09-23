@@ -126,4 +126,3 @@ Here is an example of how the Button component integrates with the [Form]({{ pag
 #### Result
 
 ![Form Buttons example]({{ site.baseurl }}/common/images/ui_comps/ui-form-buttons-example.png)
-

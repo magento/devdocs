@@ -4,6 +4,8 @@ title: Set up RabbitMQ service
 functional_areas:
   - Cloud
   - Setup
+redirect_from:
+  - /cloud/project/project-conf-files_services-rabbit.html  
 ---
 
 The [Message Queue Framework (MQF)]({{ site.baseurl }}/guides/v2.3/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a [module](https://glossary.magento.com/module) to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
@@ -47,9 +49,9 @@ To enable RabbitMQ:
    git push origin <branch-name>
    ```
 
-1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships).
+1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships).
 
-For information on how these changes affect your environments, see [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
+For information on how these changes affect your environments, see [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html).
 
 {% include cloud/tip-change-installed-service-version.md %}
 
@@ -81,7 +83,7 @@ For debugging purposes, it is useful to directly connect to a service instance i
    magento-cloud ssh
    ```
 
-1. Retrieve the RabbitMQ connection details and login credentials from the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable:
+1. Retrieve the RabbitMQ connection details and login credentials from the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) variable:
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp

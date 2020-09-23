@@ -29,9 +29,10 @@ _System upgrade_ refers to updating the Magento 2.x core components and other in
 {:.bs-callout-warning}
 
 *  Authorization keys from a [shared account](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html) _cannot_ be used for upgrade. You must get your authorization keys from `magento.com` account owner.
-*  If you installed the Magento application by [cloning the GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html), you _cannot_ use the System Upgrade utility to upgrade the software. Instead, you must [update it manually]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
+*  If you installed the Magento application by [cloning the GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html), you *cannot* use the System Upgrade utility to upgrade the software. Instead, you must [update it manually]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
 ## System Upgrade checklist
+
 {% include comp-man/checklist_2.2.md %}
 
 {:.ref-header}

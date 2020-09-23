@@ -133,6 +133,9 @@ Attribute | Type | Description
 
 ## CustomizableFileOption object
 
+{:.bs-callout-info}
+The `CustomizableFileOption` object is currently not supported.
+
 `CustomizableFileOption` contains information about a file picker that is defined as part of a customizable option.
 
 Attribute | Type | Description
@@ -141,6 +144,9 @@ Attribute | Type | Description
 `value` | `CustomizableFileValue` | An object that defines a file name
 
 ### CustomizableFileValue object
+
+{:.bs-callout-info}
+The `CustomizableFileValue` object is currently not supported.
 
 `CustomizableFileValue` defines the attributes of a product whose page contains a customized file picker.
 

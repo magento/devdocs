@@ -38,4 +38,3 @@ Try the following:
 
    *  Ubuntu: `service apache2 restart`
    *  CentOS: `service httpd restart`
-
