@@ -240,7 +240,7 @@ Example: add a block with a product [SKU](https://glossary.magento.com/sku) info
 ```
 
 {:.bs-callout-info}
-The `template` attribute should be declared with the name of the module it belongs to, eg. `template="<VendorName>_<ModuleName>::path-to-template.phtml"`. Following this approach will avoid failures upon template rendering and make it easier for the developer to find and navigate to the template file.
+Declare the `template` attribute with the name of the module it belongs to: `template="<VendorName>_<ModuleName>::path-to-template.phtml"`. Following this approach avoids failures with template rendering and makes it easier for the developer to find and navigate to the template file.
 
 ## Set body attributes {#layout_body_attributes}
 
