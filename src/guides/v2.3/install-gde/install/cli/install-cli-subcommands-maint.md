@@ -10,10 +10,10 @@ functional_areas:
   - System
   - Setup
 ---
-{:.bs-callout-info}
-The following guide is for using the standard Magento Maintenance Mode. If you need to use a Custom Maintenance Page then follow this [Guide]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html#compman-trouble-maint-create).
 
-Magento uses [maintenance mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#maintenance-mode) to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site.
+The following guide refers to a standard Magento maintenance mode page. If you need to use a custom maintenance page, see [Create the custom maintenance page]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html#compman-trouble-maint-create).
+
+Magento uses [maintenance mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#maintenance-mode) to disable bootstrapping. For example, while you are maintaining, upgrading, or reconfiguring your site.
 
 Magento detects maintenance mode as follows:
 
