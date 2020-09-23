@@ -182,6 +182,11 @@ pages:
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
 
+        - label: copyProductsToWishlist mutation
+          url: /graphql/mutations/copy-products-to-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: createBraintreeClientToken mutation
           url: /graphql/mutations/create-braintree-client-token.html
 
@@ -208,8 +213,18 @@ pages:
           url: /graphql/mutations/create-product-review.html
           exclude_versions: ["2.3"]
 
+        - label: createWishlist mutation
+          url: /graphql/mutations/create-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
+
+        - label: deleteWishlist mutation
+          url: /graphql/mutations/delete-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: deletePaymentToken mutation
           url: /graphql/mutations/delete-payment-token.html
@@ -222,6 +237,11 @@ pages:
 
         - label: mergeCarts mutation
           url: /graphql/mutations/merge-carts.html
+
+        - label: moveProductsToWishlist mutation
+          url: /graphql/mutations/move-products-to-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: placeOrder mutation
           url: /graphql/mutations/place-order.html
@@ -316,6 +336,11 @@ pages:
 
         - label: updateProductsInWishlist mutation
           url: /graphql/mutations/update-products-in-wishlist.html
+          exclude_versions: ["2.3"]
+
+        - label: updateWishlist mutation
+          url: /graphql/mutations/update-wishlist.html
+          edition: ee-only
           exclude_versions: ["2.3"]
 
     - label: Interfaces
