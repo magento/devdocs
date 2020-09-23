@@ -175,7 +175,7 @@ This block sets values for the drop-down option.
 
 It is possible to set defaults for a dynamic row configuration, this is done by adding additional XML to the defaults block in the `config.xml` file for the module.
 
-Add a block to the `<default>` section in the file as it would be done normally but do not add any values. For the example this tutorial has been using, this would look like :
+Add a block to the `<default>` section of the `config.xml` file and do not include any values:
 
 ```xml
 <system>
@@ -186,7 +186,7 @@ Add a block to the `<default>` section in the file as it would be done normally 
 ```
 
 For each complete line of configuration, create an XML block with a repeating node that has a different value to all the others and contains XML tags for each sub-option and value.
-So we could use `<item1>, <item2>` etc.
+For example, you can use `<item1>, <item2>`.
 
 The sub-options are the columns defined in the `_prepareToRender()` method as described in [Step 2](#step-2-create-the-block-class-to-describe-custom-field-columns).
 
