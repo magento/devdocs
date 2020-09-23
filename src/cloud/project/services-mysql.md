@@ -160,3 +160,9 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
       ```bash
       mysql -h<db> -P<number> -u<username> -p<password>
       ```
+
+## Slave Database connection
+
+{:.bs-callout-info}
+If there is a requirement to connect to the Slave database, then the port *3304* should be used. For full information on
+accessing the Slave database, consult the [Magento Commerce Cloud best practice for slave connection](https://support.magento.com/hc/en-us/articles/360049045351) article.
