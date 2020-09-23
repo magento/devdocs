@@ -185,7 +185,7 @@ Add a block to the `<default>` section of the `config.xml` file and do not inclu
 ```
 
 For each complete line of configuration, create an XML block with a repeating node that has a different value to all the others and contains XML tags for each sub-option and value.
-So we could use `<item1>, <item2>` etc.
+For example, you can use `<item1>, <item2>`.
 
 The sub-options are the columns defined in the `_prepareToRender()` method as described in [Step 2](#step-2-create-the-block-class-to-describe-custom-field-columns).
 
