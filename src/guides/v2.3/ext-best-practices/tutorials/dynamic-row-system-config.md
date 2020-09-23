@@ -250,7 +250,7 @@ bin/magento cache:clean config
 
 ## Result
 
-The result is a new dynamic system row field in the Admin panel. If you have set optional default values these should also appear.
+The result is a new dynamic system row field in the Admin panel. If you have set optional default values, these should also appear.
 
 ![Dynamic Rows System Config]({{ site.baseurl }}/common/images/ext-best-practices/dynamic-rows-config-result.png)
 
