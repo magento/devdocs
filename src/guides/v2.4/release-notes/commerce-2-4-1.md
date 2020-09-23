@@ -66,6 +66,8 @@ This release contains enhancements to core quality, which improve the quality of
    *  Network cache size has decreased by 10 - 15%
    *  Execution time for many scenarios has been improved by 3%<!--- MC-31617-->
 
+*  **Enhanced message queue consumer performance**. Three new configuration settings support a decrease of 20% in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See Extension Developer's guide for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
+
 *  **Improved execution time** for `bin/magento` commands.
 
 ### Adobe Stock Integration
@@ -196,7 +198,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36231-->
 
-*  Magento now displays an informative error message when some themes are not deployed after running `setup:static-content:deploy`. Previously, when deployment completed successfully but not all packages were deployed, Magento did not display an error. When the `setup:static-content:deploy` command is executed with enabled parallel processing and each theme requires more time to be deployed than the specified maximum execution time, this command can finish successfully although themes are not deployed.
+*  Magento now displays an informative error message when some themes are not deployed after running `setup:static-content:deploy`. Previously, when deployment completed successfully but not all packages were deployed, Magento did not display an error. When the  `setup:static-content:deploy` command is executed with enabled parallel processing and each theme requires more time to be deployed then the specified maximum execution time, this command can finish successfully, although themes are not deployed.
 
 <!--- MC-35001-->
 
@@ -209,6 +211,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- MC-33788-->
 
 *  Upgrade no longer results in the sudden failure of the Galera cluster. Previously, the Galera cluster exited abruptly after re-indexing immediately after upgrade. During Magento upgrade, index tables are altered and the engine is changed from MEMORY to InnoDB. At this point, the content of these tables becomes out-of-sync between the nodes of the Galera cluster. [GitHub-25334](https://github.com/magento/magento2/issues/25334)
+
+<!--- MC-34254-->
+
+*  Disabling the PageBuilder module no longer affects the rendering of the product page.  Previously, custom layouts on the product page disappeared when the module was disabled, and Magento displayed a blank page.
 
 <!--- ENGCOM-7219-->
 
@@ -228,19 +234,27 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7883-->
 
+*  Magento no longer displays the Backup menu when the Backup feature is disabled.
+
 <!--- ENGCOM-8006-->
 
 <!--- ENGCOM-8020-->
 
+*  Attributes are no longer duplicated in the navigation sidebar in deployments where sample data is installed.
+
 <!--- ENGCOM-7987-->
+
+*  Catalog image helper initialization now uses the product model instead of `DataObject`.
+
+<!--- MC-37226-->
+
+Admin users can now save an empty **Customer Token Lifetime (hours)** field (Admin **Stores**  >  **Configurations**  >  **Services**  >  **OAuth**  >  **Access Token Expiration**). [GitHub-29502](https://github.com/magento/magento2/issues/29502)
 
 ### AdminGWS
 
 <!--- MC-36164-->
 
 *  Magento no longer displays the **Add Attribute** button (**Stores** > **Attributes** ) or **Add Attribute Set** button (**Stores** > **Attributes** > **Customer** ) when the logged-in administrator lacks the appropriate permissions to create these entities. Previously, Magento threw a 404 error when a website administrator who did not have the appropriate permissions tried to create an **Attribute Set** or **Customer** attribute.
-
-<!--- MC-36330-->
 
 <!--- MC-36230-->
 
@@ -250,6 +264,8 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33314-->
 
+*  Administrators with the correct permissions can now access Advanced Reporting and Segment Reports.
+
 <!--- MC-34352-->
 
 *  Magento successfully generates advance reporting data files and sends them as expected to Inventory on deployments with split databases. Previously, Magento did not generate or send the `quotes.csv` file to Inventory, and as a result, Inventory did not generate the expected reports.
@@ -258,11 +274,15 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36281-->
 
-*  Magento no longer throws an exception when you try to create a product in a deployment in which MSI is installed but the `Magento_InventoryBundleProduct` module is disabled.
+*  Magento no longer throws an exception when you try to create a product in a deployment in which Inventory is installed but the `Magento_InventoryBundleProduct` module is disabled.
 
 <!--- MC-34261-->
 
 *  Magento now correctly calculates offline refunds for orders that contain bundle products.
+
+<!--- MC-24363-->
+
+*  The mini cart now displays the correct prices for bundle products when tier prices are also assigned for simple products. [GitHub-22807](https://github.com/magento/magento2/issues/22807)
 
 <!--- MC-29908-->
 
@@ -282,11 +302,19 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7073-->
 
+*  Varnish no longer throws a `Connection reset by peer` error when a large catalog is reindexed on schedule.
+
 <!--- ENGCOM-8019-->
+
+<!--- MC-29069-->
+
+*  Full page cache is no longer cleared for unrelated products when a product has been edited in the Admin. [GitHub-25670](https://github.com/magento/magento2/issues/25670)
 
 ### Cart and checkout
 
 <!--- MC-36252-->
+
+*  The Products in the Comparison and the Recently Compared Products lists now work as expected. Previously, when the comparison list was expanded, Magento did not display products, even though the section indicated that the list contained products.
 
 <!--- MC-35329-->
 
@@ -294,7 +322,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34999-->
 
-*  Magento no longer throws an error when you try to order a product by SKU when the digits you enter match a valid SKU but the case of these digits differ. Previously, when you entered an SKU on My **Account** > **Order by SKU** that did not exactly match a valid SKU, Magento threw an error.
+*  Magento no longer throws an error when you try to order a product by SKU when the digits you enter match a valid SKU but the case of these digits differ. Previously, when you entered an SKU on **My Account** > **Order by SKU** that did not exactly match a valid SKU, Magento threw an error.
 
 <!--- MC-25042-->
 
@@ -306,13 +334,15 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-23992-->
 
+*  Magento no longer throws an exception when a shopper tries to  unset the persistence cookie after beginning checkout and then navigating to the storefront home page. Previously, when the shopper clicked the **Not you?** link on the home page, Magento threw this exception: The shipping address is missing. Set the address and try again.  [GitHub-24218](https://github.com/magento/magento2/issues/24218)
+
 <!--- MC-33899-->
 
 *  Magento now displays an add-to-cart success message when a customer adds an out-of-stock product to their cart. Previously, the product was added, but Magento did not display a success message.
 
 <!--- MC-35989-->
 
-*  Custom address attributes are now included as expected in the the form that displays for the payment step in the checkout workflow.
+*  Custom address attributes are now included as expected in the form that displays for the payment step in the checkout workflow.
 
 <!--- MC-36060-->
 
@@ -322,9 +352,13 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7752-->
 
+*  The code that supports closing the mini cart has been refactored to remove the `closeSidebar` function.The appropriate click binding has been added to the `[data-action="close"]` element.
+
 <!--- ENGCOM-7585-->
 
 <!--- ENGCOM-7457-->
+
+*  Validation has been added to the phone field in the checkout workflow.
 
 <!--- ENGCOM-5629-->
 
@@ -358,7 +392,15 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 ### Catalog
 
+<!--- MC-31068-->
+
 <!--- MC-25062-->
+
+*  Deadlocks  no longer occur when the import process executes a bulk insert and the reindex process simultaneously executes a large insert from select. Previously, Magento displayed this error:`PDOException: SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock`. [GitHub-8933](https://github.com/magento/magento2/issues/8933)
+
+<!--- MC-30624-->
+
+*  Magento now sorts bestselling products as expected. Previously, both product count and the pagination of sort results were incorrect. [GitHub-25955](https://github.com/magento/magento2/issues/25955)
 
 <!--- ENGCOM-7292-->
 
@@ -382,6 +424,82 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  The total record count displayed when you click **Add Products** on the Products tab when adding products to a catalog category no longer changes based on product sort order.
 
+### Catalog Rule
+
+<!--- MC-33487-->
+
+*  Magento no longer throws a fatal error when you save a catalog rule with the following conditions: `If ALL of these conditions are FALSE:, If ALL of these conditions are TRUE:, Attribute set is default`
+
+### Cleanup
+
+<!--- ENGCOM-7281-->
+
+*  Corrected misalignment of the Admin Sales Order grid checkbox.
+
+<!--- ENGCOM-7723-->
+
+*  Corrected a misspelling in the shipping address ID getter in the sales order address save handler.
+
+<!--- ENGCOM-7745-->
+
+*  Corrected the `getRegionNameExpresion` method name to `getRegionNameExpression`.
+
+<!--- ENGCOM-7657-->
+
+<!--- ENGCOM-7698-->
+
+<!--- ENGCOM-7753-->
+
+<!--- ENGCOM-7771-->
+
+<!--- ENGCOM-7658-->
+
+*  An incorrect CSS selector in the Shipment page has been corrected.
+
+<!--- ENGCOM-7680-->
+
+<!--- ENGCOM-7925-->
+
+*  The `module:status` command now accepts multiple module names as arguments.
+
+<!--- ENGCOM-7983-->
+
+*  Fixed a typo in the class description of `\Magento\Downloadable\Block\Sales\Order\Email\Items\Downloadable`.
+
+<!--- ENGCOM-7993-->
+
+*  The `TierPriceManagement` class has been refactored to remove redundant code.
+
+<!--- ENGCOM-7830-->
+
+*  `autoload.php` has been refactored to improve readability and return speed.
+
+<!--- ENGCOM-7281-->
+
+<!--- ENGCOM-7723-->
+
+<!--- ENGCOM-7745-->
+
+<!--- ENGCOM-7657-->
+
+<!--- ENGCOM-7698-->
+
+<!--- ENGCOM-7753-->
+
+<!--- ENGCOM-7771-->
+
+<!--- ENGCOM-7658-->
+
+<!--- ENGCOM-7680-->
+
+<!--- ENGCOM-7925-->
+
+<!--- ENGCOM-7983-->
+
+<!--- ENGCOM-7993-->
+
+<!--- ENGCOM-7830-->
+
 ### CMS content
 
 <!--- MC-35971-->
@@ -394,6 +512,8 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35480-->
 
+*  Magento now throws an error when a merchant creates a CMS page withte same URL as the Company Structure page. Previously, Magento displayed the CMS page instead of the Company Structure page.
+
 ### Configurable products
 
 <!--- ENGCOM-7214-->
@@ -404,17 +524,49 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33406-->
 
+*  Magento no longer updates the Related Products price box whenever a shopper selects options for a configurable product. Previously, Magento updated the price box whenever a shopper selected an option for a configurable product.
+
 <!--- MC-29882-->
 
 *  Magento now displays the correct price for configurable products with customizable options on the Admin Create Order page. As expected, the displayed price is a sum of the child product's price and the custom option's price. Previously, Magento displayed only the custom option price. [GitHub-25766](https://github.com/magento/magento2/issues/25766)
 
 <!--- MC-33745-->
 
-*  Order summary now displays the correct discount amount when a cart price rule has been applied. Previously, the rule did not correctly round amounts when calculating shipping discounts.
+*  The order summary now displays the correct discount amount when a cart price rule has been applied. Previously, the rule did not correctly round amounts when calculating shipping discounts.
 
 <!--- MC-33765-->
 
 *  Admin user accounts created from an admin account with a restricted scope can now create a configurable product with attributes as expected. Previously, Magento threw this error: `Notice: Undefined index: value_index in 23develop/app/code/Magento/ConfigurableProduct/Helper/Product/Options/Factory.php on line 101`.
+
+<!--- MC-37255-->
+
+### Cookies
+
+<!--- ENGCOM-7156-->
+
+### cron
+
+<!--- ENGCOM-7863-->
+
+<!--- MC-35884-->
+
+*  Message queue consumer configuration has been extended with new parameters that help control consumers and save server resources and that potentially decrease consumer queue CPU consumption by 20%:
+
+   *  `maxIdleTime` defines the maximum waiting time in seconds for a new message from the queue.
+   *  `sleep` specifies time in seconds to sleep before checking if a new message is available in the queue.
+   *  `onlySpawnWhenMessageAvailable` identifies whether a consumer should be spawned only when an available message exists in the related queue. This setting is enabled globally by default for all consumers but can be configured per consumer.
+
+### CSS
+
+<!--- ENGCOM-7658-->
+
+<!--- ENGCOM-7678-->
+
+*  Magento no longer duplicates CSS when **Critical CSS** is enabled.
+
+<!--- MC-24981-->
+
+*  The server-side LESS compiler now imports all remote CSS files as expected when you run `bin/magento setup:static-content:deploy -f`. Previously, Magento did not import the remote files and threw an error. [GitHub-25119](https://github.com/magento/magento2/issues/25119)
 
 ### Custom customer attributes
 
@@ -423,6 +575,8 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 *  Corrected alignment issues for the explanatory text about passwords and the **Job Title** field on the Customer Edit Account Information page.
 
 <!--- MC-33645-->
+
+*  Captcha now works as expected when a new customer clicks the **Create an Account** button on the storefront customer registration page. Previously, Magento did not create the customer account and displayed am error when the customer clicked the button.
 
 <!--- MC-34024-->
 
@@ -444,15 +598,23 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 *  Magento no longer throws an error when a customer clicks the **Submit** button multiple times on forms throughout the storefront for which invisible reCAPTCHA has been enabled. Previously, clicking this button multiple times resulted in an internal error similar to this: `Internal error: Make sure you are using reCaptcha V3 api keys`.
 
 <!--- MC-33522-->
-<!--- MC-33357-->
-<!--- MC-33150-->
-<!--- MC-35655-->
 
-*  Magento no longer displays the **Delete customer** button on the **Customers** page when the logged-in administrator does not have permission to delete customers in deployments where B2B is installed.
+*  Saving a deleted customer from the Admin now generates an error message only. Previously, Magenta displayed a blank page and generated a report that contains this string: "0":"No such entity with customerId = 3","1":"#1 Magento\\Customer\\Model CustomerRegistry->retrieve() called at [app\/code\/Magento\/Customer\/Model\/ResourceModel\/CustomerRepository.php:340".
+
+<!--- MC-33357-->
+
+*  Magento now displays an error message as expected when an administrator tries to save an address for a customer whose account has just been deleted. Previously, Magento displayed a blank message box.
+
+<!--- MC-33150-->
+
+*  The labels for address fields in the checkout workflow and the address book have been edited for consistency.
 
 ### Customer segment
 
 <!--- MC-33184-->
+
+*  Bulk operations have been refactored to save and refresh  customer segments asynchronously, which has improved the performance of these tasks for deployments that include many customers (greater than 3,000,000).
+
 <!--- MC-36224-->
 
 *  Customer segment conditions now work as expected in a split-database deployment. Previously, Magento threw an error when you tried to edit a customer segment by adding a condition: `SQLSTATE[42S02]: Base table or view not found`
@@ -507,6 +669,8 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33700-->
 
+*  You can now create an email template that sends email with  `Content-Type: "text/plain”`.  Previously,  Magento ignored the content type specified in the template.
+
 <!--- ENGCOM-7576-->
 
 <!--- ENGCOM-7177-->
@@ -517,6 +681,8 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33232-->
 
+*  Notification emails that are sent to sales representatives assigned to a company now include the assigned corporate logo. Previously, the notification email included the default LUMA logo, not the uploaded corporate logo email.
+
 ### Frameworks
 
 <!--- MC-35893-->
@@ -525,7 +691,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34153-->
 
-*  Shoppers can now change the number of orders that are displayed per page when the Orders list spans multiple pages. Previously, Magento displayed this message when you navigated to the last page of orders and attempted to change the number of orders displayed per page: `You have placed no orders`. This was a known issue for Magento 2.4.0.
+*  Shoppers can now change the number of orders that are displayed per page when the Orders list spans multiple pages. Previously, Magento displayed this message when you navigated to the last page of orders and tried to change the number of orders displayed per page: `You have placed no orders`. This was a known issue for Magento 2.4.0.
 
 <!--- MC-35020-->
 
@@ -547,6 +713,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Magento no longer throws the following fatal error when Redis uses all allowed memory: `report.CRITICAL: OOM command not allowed when used memory > 'maxmemory'.`
 
+<!--- MC-18021-->
+
+*  Shoppers can now add multiple products to their cart when the `Persistent` module is disabled. [GitHub-14486](https://github.com/magento/magento2/issues/14486)
+
 ### General fixes
 
 <!--- MC-36048-->
@@ -559,7 +729,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35998-->
 
-*  The `var/log/system.log` now displays a more accurate message when a user tries to access non-existing resource files under the static directory when SCD OnDemand and production mode are enabled. Previously, Magento logged the same message that is logged when the error occurs in developer mode. Magento now logs a 404 error.
+*  The `var/log/system.log` now displays a more accurate message when a user tries to access a non-existing resource file under the static directory when SCD OnDemand and production mode are enabled. Magento now logs a 404 error. Previously, Magento logged the same message that is logged when the error occurs in developer mode.
 
 <!--- ENGCOM-7286-->
 
@@ -586,6 +756,8 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- ENGCOM-7588-->
 
 <!--- MC-33744-->
+
+*  Magento no longer displays a CMS page more than once in the site hierarchy if the page is assigned to multiple store views.
 
 <!--- ENGCOM-7511-->
 
@@ -623,9 +795,13 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7999-->
 
+*  RSS feed now loads correctly. Previously, the feed did not load the first time, although I loaded as expected when the page was refreshed.
+
 <!--- ENGCOM-7962-->
 
 <!--- MC-35550-->
+
+*  An expired persistent session is now renewed as expected when the shopper logs back in.
 
 <!--- MC-35230-->
 
@@ -661,6 +837,62 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Magento no longer throws a JavaScript error during checkout when the **Cookie Restriction Mode** setting and Google Tag Manager are enabled.
 
+### GraphQL
+
+<!--- MC-34485-->
+
+<!--- MC-32949-->
+
+<!--- MC-31084-->
+
+<!--- MC-36646-->
+
+<!--- MC-34187-->
+
+<!--- ENGCOM-7662-->
+
+<!--- ENGCOM-7559-->
+
+<!--- ENGCOM-7638-->
+
+<!--- ENGCOM-7663-->
+
+<!--- ENGCOM-7512-->
+
+<!--- ENGCOM-7743-->
+
+<!--- ENGCOM-7743-->
+
+<!--- ENGCOM-7559-->
+
+<!--- ENGCOM-7707-->
+
+<!--- ENGCOM-7751-->
+
+<!--- ENGCOM-7750-->
+
+<!--- ENGCOM-7216-->
+
+<!--- ENGCOM-7216-->
+
+<!--- ENGCOM-7732-->
+
+<!--- ENGCOM-7733-->
+
+<!--- ENGCOM-7821-->
+
+<!--- ENGCOM-7838-->
+
+<!--- ENGCOM-7839-->
+
+<!--- ENGCOM-7841-->
+
+### Images
+
+<!--- ENGCOM-7691-->
+
+*  HTML markup for thumbnail images has been improved.
+
 ### Import/export
 
 <!--- MC-35479-->
@@ -693,17 +925,83 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Imported `.cvs` files now capture related product information as expected. Previously, related product information was not consistently uploaded the first time the `.cvs` file was imported.
 
+<!--- MC-37424-->
+
+*  Removed unused construct parameters in `AdvancedPricing.php`. [GitHub-29531](https://github.com/magento/magento2/issues/29531)
+
 ### Index
 
 <!--- ENGCOM-7776-->
 
 <!--- ENGCOM-7073-->
 
-<!--- MC-39468-->
+*  Magento_CacheInvalidate now handles large tag patterns correctly when doing a `PURGE`. `sendPurgeRequest` has been refactored to handle an array of tags instead of requiring the caller to use `implode()`.
 
 <!--- MC-30568-->
 
 *  Shared indexers now show a status of **valid** after you run `bin/magento indexer:status` after re-indexing. Previously, shared indexers had an **invalid** status after a full re-index.
+
+### Infrastructure
+
+<!--- MC-37243-->
+
+*  Problems loading catalog and product pages on deployments running PHP 7.4.9 no longer occur. Previously, Magento threw this error when you tried to load the catalog and product pages: `There has been an error processing your request. Exception printing is disabled by default for security reasons`. [GitHub-29502](https://github.com/magento/magento2/issues/29502)
+
+<!--- ENGCOM-7994-->
+
+*  All exceptions that occur when layouts are rendered in production mode are now logged in the exception log file (`var/report`). Previously, Magento logged these messages in the system log as critical issues.
+
+<!--- ENGCOM-7154-->
+
+<!--- ENGCOM-7483-->
+
+<!--- ENGCOM-7651-->
+
+<!--- ENGCOM-7484-->
+
+<!--- ENGCOM-7817-->
+
+<!--- ENGCOM-7778-->
+
+<!--- ENGCOM-7713-->
+
+<!--- ENGCOM-7523-->
+
+<!--- ENGCOM-7756-->
+
+<!--- ENGCOM-7820-->
+
+<!--- ENGCOM-7790-->
+
+<!--- ENGCOM-7758-->
+
+<!--- ENGCOM-7781-->
+
+*  `NonComposerComponentRegistration.php` has been refactored.
+
+<!--- ENGCOM-7926-->
+
+*  `ResourceConnection.php` has been refactored to improve class readability.
+
+<!--- ENGCOM-7910-->
+
+*  The README file for the build-in web server has been updated to include all Elasticsearch parameters.
+
+<!--- ENGCOM-7814-->
+
+<!--- ENGCOM-7566-->
+
+<!--- ENGCOM-7906-->
+
+<!--- ENGCOM-8000-->
+
+<!--- ENGCOM-7994-->
+
+### Inventory
+
+<!--- ENGCOM-7979-->
+
+<!--- MC-34701-->
 
 ### Layered navigation
 
@@ -713,17 +1011,63 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7493-->
 
+### Logging
+
+<!--- ENGCOM-7692-->
+
+### Media Gallery
+
+<!--- ENGCOM-8014-->
+
+### MFTF
+
+<!--- ENGCOM-7529-->
+
+<!--- ENGCOM-7590-->
+
+<!--- ENGCOM-7343-->
+
+<!--- ENGCOM-7635-->
+
+<!--- ENGCOM-7972-->
+
+<!--- ENGCOM-7972-->
+
+<!--- ENGCOM-7963-->
+
+<!--- ENGCOM-7964-->
+
+<!--- ENGCOM-7928-->
+
+<!--- ENGCOM-7915-->
+
+<!--- ENGCOM-7991-->
+
 ### Newsletter
 
 <!--- MC-34714-->
 
-*  Exporting the Newsletter Subscribers list using the `EXCEL XML` option now results in all rows being exported as expected. Previously, exported data included only the page pagination value (`EXCEL XML` option), not all rows.
+*  Exporting the Newsletter Subscribers list using the `EXCEL XML`  option now results in the export of all rows as expected. Previously, exported data included only the page pagination value, not all rows.
 
 <!--- ENGCOM-7522-->
 
 <!--- ENGCOM-7788-->
 
 <!--- ENGCOM-7739-->
+
+### Orders
+
+<!--- ENGCOM-7858-->
+
+<!--- ENGCOM-7885-->
+
+<!--- ENGCOM-7798-->
+
+*  The order status for a credit memo with zero total is now `Closed`. Previously, Magento report its order status as `Complete`.
+
+### Page Builder
+
+<!--- ENGCOM-7918-->
 
 ### Payment methods
 
@@ -760,9 +1104,9 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7290-->
 
-<!--- MC-31617-->
-
 <!--- MC-33107-->
+
+*  The performance of checkout with multiple simultaneous orders has been improved.
 
 ### Return Merchandise Authorizations (RMA)
 
@@ -773,6 +1117,12 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- MC-35826-->
 
 *  Magento now displays either an informative error message or all available products when an administrator with restricted permissions tries to create a return for products that are no longer in the assigned website scope. Previously, Magento displayed a blank page.
+
+### Reviews
+
+<!--- MC-33405-->
+
+*  A unique key for `entity_pk_value-entity_type-store_id` has been added to the `review_entity_summary` table, which prevents the creation of duplicate rows for the same product ID (`entity_pk_value`). Previously, this lack of unique key resulted in duplicate rows for the same product ID and SQL errors.
 
 ### Sales
 
@@ -802,6 +1152,8 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35633-->
 
+*  Shipments created through the POST `/rest/V1/shipment` endpoint now update orders properly. Previously,  Magento created a shipment, but shipment status remained in the processing state.
+
 ### Search
 
 <!--- MC-31304-->
@@ -814,7 +1166,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33952-->
 
-*  Elasticsearch results now include the correct values for each storeview’s attribute options. If a Dropdown or Multiple Select attribute has a different option value in the non-default store view than in the default storeview, Elasticsearch now indexes that value or returns the product with that value in the results. Previously, Elasticsearch did not index that value or return the product with that value in the results.
+*  Elasticsearch results now include the correct values for each store view’s attribute options. If a Dropdown or Multiple Select attribute has a different option value in the non-default store view than in the default store view, Elasticsearch now indexes that value or returns the product with that value in the results. Previously, Elasticsearch did not index that value or return the product with that value in the results.
 
 <!--- MC-35013-->
 
@@ -823,6 +1175,8 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- ENGCOM-7222-->
 
 <!--- ENGCOM-7917-->
+
+*  Scope values are now reset as expected on the New Synonym Group form.
 
 ### Shipping
 
@@ -840,11 +1194,13 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35514-->
 
-*  Problems with the JavaScript components of the Create Packages window have been resolved. Previously, Magento did not display the **Create Shipping Label** checkbox on this window, and you could not create a shipping label for an existing order.
+*  Problems with the JavaScript components of the Create Packages page have been resolved. Previously, Magento did not display the **Create Shipping Label** checkbox on this page, and you could not create a shipping label for an existing order.
 
 ### Sitemap
 
 <!--- ENGCOM-7924-->
+
+*  The sitemap in `robots.txt` is now store-specific.
 
 <!--- MC-34617-->
 
@@ -876,6 +1232,12 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-32634-->
 
+*  You can now export `config.php` and default website code from one website to install and configure Magento on a second website in a multi website deployment. Previously, the default store and view disappeared after the export, and errors occurred on the storefront.
+
+### Swagger
+
+<!--- ENGCOM-7720-->
+
 ### Swatches
 
 <!--- ENGCOM-7845-->
@@ -889,6 +1251,28 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- MC-36049-->
 
 *  Magento no longer displays a fixed product tax attribute on the storefront for a product after a merchant has unassigned it from the product’s attribute set.
+
+### Test
+
+<!--- ENGCOM-7593-->
+
+<!--- ENGCOM-7887-->
+
+<!--- ENGCOM-7874-->
+
+*  PHPUnit 9 errors have been fixed in unit tests.
+
+<!--- ENGCOM-7886-->
+
+<!--- ENGCOM-8003-->
+
+*  `SynchronizeFilesInterface` is now covered by integration tests.
+
+<!--- ENGCOM-7142-->
+
+<!--- ENGCOM-7142-->
+
+<!--- ENGCOM-8009-->
 
 ### Theme
 
@@ -942,6 +1326,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Magento now correctly displays the Order by SKU widget on the storefront Category page. Previously, the HTML code for this widget was not rendered, and Magento did not display the **Load a list of SKUs** link.
 
+<!--- MC-37444-->
+
+*  UI components that have been disabled using `this.disabled(true)` no longer appear on the storefront. [GitHub-29098](https://github.com/magento/magento2/issues/29098)
+
 <!--- ENGCOM-7264-->
 
 <!--- ENGCOM-7575-->
@@ -984,7 +1372,25 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7967-->
 
+*  The title of the order failure page has been rewritten for accuracy. Previously, when a shopper canceled an order,  Magento displayed a page with this title: We received your order!.
+
 <!--- ENGCOM-8015-->
+
+### TargetRule
+
+<!--- MC-36162-->
+
+### Translation and locales
+
+<!--- MC-20372-->
+
+*  Magento no longer throws an error when an administrator changes the **Date** field during Admin product creation or save when the Admin locale is Chinese or Japanese. [GitHub-24696](https://github.com/magento/magento2/issues/24696)
+
+<!--- ENGCOM-7536-->
+
+<!--- ENGCOM-7535-->
+
+<!--- ENGCOM-7521-->
 
 ### URL rewrites
 
@@ -995,6 +1401,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- MC-33028-->
 
 *  Magento now preserves existing catalog URL rewrites as expected when a store view is assigned to a different store. Previously, Magento deleted the store-specific URL rewrites.
+
+### Varnish
+
+<!--- ENGCOM-7761-->
 
 ### Vault
 
@@ -1026,11 +1436,9 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7611-->
 
-<!--- MC-36419-->
-
 <!--- MC-36084-->
 
-*  Invoices created using the REST API now include gift card information similar to invoices that were created using the Admin. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
+*  Invoices created using REST now include gift card information similar to the invoices that are created in the Admin. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
 
 <!--- MC-35838-->
 
@@ -1042,11 +1450,13 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35975-->
 
-### Website Restrictions
+*  Search criteria filters now work as expected for product attributes that are used during the creation of a configurable product. [GitHub-29126](https://github.com/magento/magento2/issues/29126)
+
+### Website restrictions
 
 <!--- MC-32366-->
 
-*  Enabling Website Restriction no longer blocks Varnish ESI requests for customers logged in as guest. Previously, these guests could not access the home page main menu.
+*  Enabling website restriction no longer blocks Varnish ESI requests for customers logged in as guest. Previously, these guests could not access the home page main menu.
 
 <!--- MC-32369-->
 
@@ -1087,6 +1497,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- MC-36250-->
 
 *  Administrators can now configure a configurable product that has been added by a customer to a wish list from a non-default store. Previously, when the customer had also added the configurable product from a non-default store, Magento threw an error.
+
+### WYSIWYG
+
+<!--- ENGCOM-7559-->
 
 ## Community contributions
 

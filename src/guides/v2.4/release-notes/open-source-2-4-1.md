@@ -66,6 +66,8 @@ This release contains enhancements to core quality, which improve the quality of
    *  Network cache size has decreased by 10 - 15%
    *  Execution time for many scenarios has been improved by 3%<!--- MC-31617-->
 
+*  **Enhanced message queue consumer performance**. Three new configuration settings support a decrease of 20% in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See Extension Developer's guide for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
+
 *  **Improved execution time** for `bin/magento` commands.
 
 ### Adobe Stock Integration
@@ -140,7 +142,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36231-->
 
-*  Magento now displays an informative error message when some themes are not deployed after running `setup:static-content:deploy`. Previously, when deployment completed successfully but not all packages were deployed, Magento did not display an error. When the `setup:static-content:deploy` command is executed with enabled parallel processing and each theme requires more time to be deployed than the specified maximum execution time, this command can finish successfully although themes are not deployed.
+*  Magento now displays an informative error message when some themes are not deployed after running `setup:static-content:deploy`. Previously, when deployment completed successfully but not all packages were deployed, Magento did not display an error. When the  `setup:static-content:deploy` command is executed with enabled parallel processing and each theme requires more time to be deployed then the specified maximum execution time, this command can finish successfully, although themes are not deployed.
 
 <!--- MC-35001-->
 
@@ -158,7 +160,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36281-->
 
-*  Magento no longer throws an exception when you try to create a product in a deployment in which MSI is installed but the `Magento_InventoryBundleProduct` module is disabled.
+*  Magento no longer throws an exception when you try to create a product in a deployment in which Inventory is installed but the `Magento_InventoryBundleProduct` module is disabled.
 
 <!--- MC-34261-->
 
@@ -178,7 +180,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34999-->
 
-*  Magento no longer throws an error when you try to order a product by SKU when the digits you enter match a valid SKU but the case of these digits differ. Previously, when you entered an SKU on My **Account** > **Order by SKU** that did not exactly match a valid SKU, Magento threw an error.
+*  Magento no longer throws an error when you try to order a product by SKU when the digits you enter match a valid SKU but the case of these digits differ. Previously, when you entered an SKU on **My Account** > **Order by SKU** that did not exactly match a valid SKU, Magento threw an error.
 
 <!--- MC-25042-->
 
@@ -196,7 +198,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35989-->
 
-*  Custom address attributes are now included as expected in the the form that displays for the payment step in the checkout workflow.
+*  Custom address attributes are now included as expected in the form that displays for the payment step in the checkout workflow.
 
 <!--- MC-36060-->
 
@@ -232,11 +234,39 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33745-->
 
-*  Order summary now displays the correct discount amount when a cart price rule has been applied. Previously, the rule did not correctly round amounts when calculating shipping discounts.
+*  The order summary now displays the correct discount amount when a cart price rule has been applied. Previously, the rule did not correctly round amounts when calculating shipping discounts.
 
 <!--- MC-33765-->
 
 *  Admin user accounts created from an admin account with a restricted scope can now create a configurable product with attributes as expected. Previously, Magento threw this error: `Notice: Undefined index: value_index in 23develop/app/code/Magento/ConfigurableProduct/Helper/Product/Options/Factory.php on line 101`.
+
+### Cookies
+
+<!--- ENGCOM-7156-->
+
+### cron
+
+<!--- ENGCOM-7863-->
+
+<!--- MC-35884-->
+
+*  Message queue consumer configuration has been extended with new parameters that help control consumers and save server resources and that potentially decrease consumer queue CPU consumption by 20%:
+
+   *  `maxIdleTime` defines the maximum waiting time in seconds for a new message from the queue.
+   *  `sleep` specifies time in seconds to sleep before checking if a new message is available in the queue.
+   *  `onlySpawnWhenMessageAvailable` identifies whether a consumer should be spawned only when an available message exists in the related queue. This setting is enabled globally by default for all consumers but can be configured per consumer.
+
+### CSS
+
+<!--- ENGCOM-7658-->
+
+<!--- ENGCOM-7678-->
+
+*  Magento no longer duplicates CSS when **Critical CSS** is enabled.
+
+<!--- MC-24981-->
+
+*  The server-side LESS compiler now imports all remote CSS files as expected when you run `bin/magento setup:static-content:deploy -f`. Previously, Magento did not import the remote files and threw an error. [GitHub-25119](https://github.com/magento/magento2/issues/25119)
 
 ### Customer
 
@@ -294,7 +324,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34153-->
 
-*  Shoppers can now change the number of orders that are displayed per page when the Orders list spans multiple pages. Previously, Magento displayed this message when you navigated to the last page of orders and attempted to change the number of orders displayed per page: `You have placed no orders`. This was a known issue for Magento 2.4.0.
+*  Shoppers can now change the number of orders that are displayed per page when the Orders list spans multiple pages. Previously, Magento displayed this message when you navigated to the last page of orders and tried to change the number of orders displayed per page: `You have placed no orders`. This was a known issue for Magento 2.4.0.
 
 <!--- MC-35020-->
 
@@ -328,7 +358,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35998-->
 
-*  The `var/log/system.log` now displays a more accurate message when a user tries to access non-existing resource files under the static directory when SCD OnDemand and production mode are enabled. Previously, Magento logged the same message that is logged when the error occurs in developer mode. Magento now logs a 404 error.
+*  TThe `var/log/system.log` now displays a more accurate message when a user tries to access a non-existing resource file under the static directory when SCD OnDemand and production mode are enabled. Magento now logs a 404 error. Previously, Magento logged the same message that is logged when the error occurs in developer mode.
 
 <!--- MC-35230-->
 
@@ -370,11 +400,21 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Shared indexers now show a status of **valid** after you run `bin/magento indexer:status` after re-indexing. Previously, shared indexers had an **invalid** status after a full re-index.
 
+### Infrastructure
+
+<!--- MC-37243-->
+
+*  Problems loading catalog and product pages on deployments running PHP 7.4.9 no longer occur. Previously, Magento threw this error when you tried to load the catalog and product pages: `There has been an error processing your request. Exception printing is disabled by default for security reasons`. [GitHub-29502](https://github.com/magento/magento2/issues/29502)
+
+<!--- ENGCOM-7994-->
+
+*  All exceptions that occur when layouts are rendered in production mode are now logged in the exception log file (`var/report`). Previously, Magento logged these messages in the system log as critical issues.
+
 ### Newsletter
 
 <!--- MC-34714-->
 
-*  Exporting the Newsletter Subscribers list using the `EXCEL XML` option now results in all rows being exported as expected. Previously, exported data included only the page pagination value (`EXCEL XML` option), not all rows.
+*  Exporting the Newsletter Subscribers list using the `EXCEL XML`  option now results in the export of all rows as expected. Previously, exported data included only the page pagination value, not all rows.
 
 ### Payment methods
 
@@ -435,6 +475,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Localised region names that are displayed on the storefront Order page are now correctly translated. Previously, the region name was not based on the specified locale unless it was edited in the Admin.
 
+<!--- MC-35633-->
+
+*  Shipments created through the POST `/rest/V1/shipment` endpoint now update orders properly. Previously,  Magento created a shipment, but shipment status remained in the processing state.
+
 ### Search
 
 <!--- MC-31304-->
@@ -447,7 +491,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33952-->
 
-*  Elasticsearch results now include the correct values for each storeview’s attribute options. If a Dropdown or Multiple Select attribute has a different option value in the non-default store view than in the default storeview, Elasticsearch now indexes that value or returns the product with that value in the results. Previously, Elasticsearch  did not index that value or return the product with that value in the results.
+*  Elasticsearch results now include the correct values for each store view’s attribute options. If a Dropdown or Multiple Select attribute has a different option value in the non-default store view than in the default store view, Elasticsearch now indexes that value or returns the product with that value in the results. Previously, Elasticsearch did not index that value or return the product with that value in the results.
 
 <!--- MC-35013-->
 
@@ -469,7 +513,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35514-->
 
-*  Problems with the JavaScript components of the Create Packages window have been resolved. Previously, Magento did not display the **Create Shipping Label** checkbox on this window, and you could not create a shipping label for an existing order.
+*  Problems with the JavaScript components of the Create Packages page have been resolved. Previously, Magento did not display the **Create Shipping Label** checkbox on this page, and you could not create a shipping label for an existing order.
 
 ### Sitemap
 
@@ -546,6 +590,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- MC-34602-->
 
 *  Magento now correctly displays the Order by SKU widget on the storefront Category page. Previously, the HTML code for this widget was not rendered, and Magento did not display the **Load a list of SKUs** link.
+
+<!--- ENGCOM-7967-->
+
+*  The title of the order failure page has been rewritten for accuracy. Previously, when a shopper canceled an order,  Magento displayed a page with this title: We received your order!.
 
 ### URL rewrites
 
