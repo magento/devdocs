@@ -286,7 +286,7 @@ The import command provides the ability to copy a contributor's code or pull req
 **Actions:**
 
 -  Code: A branch with a copy of the contributor's source code is created within the target repository.
--  PR: A copy of the pull request is created within the target repository. 
+-  PR: A copy of the pull request is created within the target repository.
 
 **Permissions:**
 
