@@ -174,7 +174,7 @@ This block sets values for the drop-down option.
 ## Step 4: Set default values - **OPTIONAL**
 It is possible to set defaults for a dynamic row configuration, this is done by adding additional XML to the defaults block in the `config.xml` file for the module.
 
-Add a block to the `<default>` section in the file as it would be done normally but do not add any values. For the example this tutorial has been using, this would look like :
+Add a block to the `<default>` section of the `config.xml` file and do not include any values:
 
 ```xml
 <system>
