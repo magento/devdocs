@@ -267,7 +267,7 @@ The nodes `more_url`, `demo_url`, `requires` and `options` are defined by a diff
 
 ### Field input type reference
 
-Each field has the default type of ´text´ to display it's frontend input type. The following input fields types can be found and used in the core at the time of this writing:
+Each field has the default type of ´text´ to display its frontend input type. The following input field types can be found and used in the core at this time :
 
 | Field Type    | Description                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------------|
