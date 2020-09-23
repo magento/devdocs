@@ -274,22 +274,23 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 -  Magento EngCom Team
 
 ### Import source code to specific repository {#import}
-Command provides an ability to copy contributor's code or pull request into the internal fork to proceed with additional fixes or delivery.
 
-**Command:** To import code or pull request, a member of the Magento Team under the existing Pull Request will enter the following command:
+The import command provides the ability to copy a contributor's code or pull request into an internal fork.  The internal team can then proceed with additional fixes or delivery.
+
+**Command:** To import code or a pull request, a member of the Magento team controlling the pull request enters the following command:
 
 ```text
-@magento import {code|pr|pull request} to {organizationName}/{repositoryName}
+@magento import {code|pr} to {organizationName}/{repositoryName}
 ```
 
 **Actions:**
 
--  Branch with a copy of the contributpr's source code is created in the target repository (option "code" is specified)
--  The copy of pull request is ccreared in the target repository (option "pr" or "pull request" is specified)
+-  Code: A branch with a copy of the contributor's source code is created within the target repository.
+-  PR: A copy of the pull request is created within the target repository. 
 
 **Permissions:**
 
--  Magento Team
+-  Magento team
 
 ## Report an issue {#report}
 
