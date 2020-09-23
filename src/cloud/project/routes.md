@@ -128,7 +128,10 @@ Property         | Description
 
 ## Simple routes
 
-The following sample routes the apex domain and the `www` subdomain to the `mymagento` application. This route does not redirect HTTPS requests:
+In the following examples, the route configuration routes the apex domain and the `www` subdomain to the `mymagento` application. This route does not redirect HTTPS requests.
+
+**Example 1:**
+
 
 ```yaml
 "http://{default}/":
