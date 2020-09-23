@@ -276,7 +276,7 @@ Each field has the default type of ´text´ to display its frontend input type. 
 | ´multiselect´ | A common html select. Multiple items can be selected at once.                                                     |
 | ´obscure´     | Commonly used for passwords. Shows asterisks as values.                                                           |
 | ´time´        | A string of the current time. Cannot be configured.                                                               |
-| ´textarea´    | A common html textarea.                                                                                           |
+| ´textarea´    | A common HTML textarea.                                                                                           |
 | ´button´      | A common html button. It is necessary to declare a custom ´frontend_model´ in order to use the button field type. | 
 | ´image´       | Possible Image upload. The nodes ´backend_model´, ´upload_dir´ and ´base_url´ needs to be defined as well.        |
 
