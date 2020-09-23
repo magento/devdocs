@@ -112,7 +112,7 @@ For this you need to configure redirects of all unencrypted request to the TLS e
     upstream: "mymagento:http"
 ```
 
-- For Staging and Production environments we recommend to enable [Force TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) without changes in `routes.yaml`. 
+- For Staging and Production environments we recommend to enable [Force TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) without changes in `routes.yaml`.
 
 ## Route options
 
@@ -132,7 +132,6 @@ In the following examples, the route configuration routes the apex domain and th
 
 **Example 1:**
 
-
 ```yaml
 "http://{default}/":
     type: upstream
@@ -143,7 +142,9 @@ In the following examples, the route configuration routes the apex domain and th
     to: "http://{default}/"
 ```
 
-The following sample route does not redirect from the `www` to the apex domain; instead, it serves from both:
+In the following example, the route configuration does not redirect URLs from the www domain to the apex domain. Instead, requests are served from both the www and apex domain.
+
+**Example 2:**
 
 ```yaml
 "http://{default}/":
