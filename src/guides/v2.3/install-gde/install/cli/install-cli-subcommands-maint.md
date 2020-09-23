@@ -10,6 +10,8 @@ functional_areas:
   - System
   - Setup
 ---
+{:.bs-callout-info}
+The following guide is for using the standard Magento Maintenance Mode. If you need to use a Custom Maintenance Page then follow this [Guide]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html#compman-trouble-maint-create.html).
 
 Magento uses [maintenance mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#maintenance-mode) to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site.
 
@@ -50,7 +52,7 @@ where
 
 `--ip=<ip address>` is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 Using `--ip=<ip address>` with `magento maintenance:disable` means only that you're saving the list of IPs for later use. To clear the list of exempt IPs, you can use `magento maintenance:enable --ip=none` or see [Maintain the list of exempt IP addresses](#instgde-cli-maint-exempt).
 
 `magento maintenance:status` displays the current status of maintenance mode.
@@ -67,8 +69,8 @@ To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 bin/magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 ```
 
- {:.bs-callout-info}
-  After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the `ps -ef | grep queue:consumers:start` command. Then run the `kill <process_id>` command for each consumer. In a multiple node environment, be sure to repeat this task on each node.
+{:.bs-callout-info}
+After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the `ps -ef | grep queue:consumers:start` command. Then run the `kill <process_id>` command for each consumer. In a multiple node environment, be sure to repeat this task on each node.
 
 ## Maintain the list of exempt IP addresses {#instgde-cli-maint-exempt}
 
