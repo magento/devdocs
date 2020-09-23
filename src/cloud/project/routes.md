@@ -112,7 +112,7 @@ For this you need to configure redirects of all unencrypted request to the TLS e
     upstream: "mymagento:http"
 ```
 
--  For Staging and Production environments we recommend to enable [Force TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) without changes in `routes.yaml`.
+-  For Staging and Production environments, we recommend enabling the [Force TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) option from the Magento Admin UI.  When you use this option, Fastly handles the redirection to HTTPS, so you do not have to update the `routes.yaml` configuration.
 
 ## Route options
 
