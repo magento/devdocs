@@ -20,4 +20,3 @@ functional_areas:
 Related topics
 
 [Step 2. Add a database]({{ page.baseurl }}/install-gde/install/web/install-web_2-db.html)
-

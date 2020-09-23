@@ -11,9 +11,15 @@ The [Magento Cloud Components](https://github.com/magento/magento-cloud-componen
 
 The `{{site.data.var.mcc-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
-## v1.0.6
-*Release date: {{ site.data.var.ece-release-date }}*<br/>
+## v1.0.7
+*Release date: September 9, 2020*<br/>
 
+-  {:.new}**Logging improvements**–Reduce the size of the `cache.log` file to improve performance.<!--MCLOUD-6859-->
+
+-  {:.fix}Fixed a type error in the cache configuration values that caused the `php bin/magento cache:evict` Magento CLI command to fail.
+
+## v1.0.6
+*Release date: August 5, 2020*<br/>
 <!--Add release notes below-->
 
 -  {:.new}**Improve Redis performance**–Added the `./bin/magento cache:evict` command to remove expired Redis keys, which reduces Redis memory usage to improve performance.<!--MCLOUD-6023-->
