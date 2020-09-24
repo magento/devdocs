@@ -11,7 +11,7 @@ Klarna Payments enables your consumers to try before they buy, finance purchases
 
 The following diagram shows the workflow for placing an order when Klarna is the selected payment method.
 
-Klarna payments require cart information to initiate the session. For this reason, the below steps can be executed only after a cart has been created.
+Klarna payments require cart information to initiate the session. For this reason, the following steps can be executed only after a cart has been created.
 
 ![Klarna payments sequence diagram]({{ page.baseurl }}/graphql/images/klarna-payments.svg)
 
@@ -64,7 +64,17 @@ During the purchase flow, the cart can be updated by adding additional products,
 In order to always present shoppers with the latest available payment options provided by Klarna, the PWA client must:
 
 1. Perform a cart update.
-1. Send the `cart` query to retrieve the latest available payment methods. This will trigger a subsequent request to Klarna with the latest information available from the cart. Note that the new list of payment methods returned might contain different options for the shopper.
+
+1. Magento returns an updated `cart` object.
+
+1. Send the `cart` query to retrieve the latest available payment methods.
+
+1. Magento sends another request to Klarna with the latest information available from the cart. 
+
+1. Klarna returns new list of payment methods. Note that the list might contain different options for the shopper.
+
+1. Magento returns an updated `cart` object.
+
 1. [Reload the widget](https://developers.klarna.com/documentation/klarna-payments/single-call-descriptions/load-klarna-payments/) on the client side.
 
 The following diagram describes the workflow:
