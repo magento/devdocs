@@ -8,11 +8,11 @@ redirect_from:
  - /cloud/project/project-conf-files_routes.html  
 ---
 
-The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes for your {{ site.data.var.ece }} Integration, Staging, and Production environments. Routes determine how Magento processes incoming HTTP requests.
+The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes for your {{ site.data.var.ece }} Integration, Staging, and Production environments. Routes determine how Magento processes incoming HTTP and HTTPS requests.
 
 {% include cloud/note-pro-missing-self-service-options.md %}
 
-The default `routes.yaml` file specifies the route templates for processing HTTP requests on projects that have a single default domain and on projects configured for multiple domains:
+The default `routes.yaml` file specifies the route templates for processing HTTP requests as HTTPS on projects that have a single default domain and on projects configured for multiple domains:
 
 ```yaml
 "http://{default}/":
@@ -22,8 +22,6 @@ The default `routes.yaml` file specifies the route templates for processing HTTP
     type: upstream
     upstream: "mymagento:http"
 ```
-
-If you do not create a custom `routes.yaml` file, the automated deployment uses the default file.
 
 Use the `magento-cloud` CLI to view a list of the configured routes:
 
@@ -42,27 +40,25 @@ magento-cloud environment:routes
 
 The `routes.yaml` file is a list of templated routes and their configurations. You can use the following placeholders in route templates:
 
--  `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
+-  `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `https://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
 
    ```text
-   http://www.example.com/
+   https://www.example.com/
 
-   https://www.example.com/blog
+   https://example.com/blog
    ```
    {:.no-copy}
 
-   In a non-production branch, the project ID and environment ID replace the `{default}` placeholder when the project is deployed.
-
--  `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
+-  `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `https://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
 
    ```text
-   http://www.example.com/
-
-   http://www.example.com/blog
+   https://www.example.com/
 
    https://www.example1.com/
 
-   https://www.example1.com/blog
+   https://example.com/blog
+
+   https://example1.com/blog
    ```
    {:.no-copy}
 
@@ -73,21 +69,49 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 {{site.data.var.ee}} also generates routes for every active Integration environment. For Integration environments, `{default}` is replaced with the following domain name:
 
 ```text
-[branch]-[project-id].[region].magentosite.cloud
+[branch]-[per-environment-random-string]-[project-id].[region].magentosite.cloud
 ```
 {:.no-copy}
 
-For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains:
+For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domain:
 
 ```text
-http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/
-
-https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog
+https://refactorcss-oy3m2pq-mswy7hzcuhcjw.us.magentosite.cloud/
 ```
   {:.no-copy}
 
 {:.bs-callout-info}
-{{site.data.var.ece}} also supports [multiple applications]({{ site.baseurl }}/cloud/project/project-multi-sites.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application.
+If your Cloud project supports multiple stores, follow the route configuration instructions for [multiple websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html).
+
+## Route protocols
+
+All environments support both HTTP and HTTPS automatically.
+
+-  If the configuration specifies only the HTTP route, HTTPS routes are created automatically, allowing the site to be served from both HTTP and HTTPS without requiring redirects. For example, if you have project with the default domain `example.com`, the record `http://{default}/` resolves to the following URLs:
+
+   ```text
+   http://example.com/
+
+   https://example.com/
+   ```
+   {:.no-copy}
+
+-  If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS. For example, for the default domain `example.com`, the route `https://{default}/` resolves to URL `https://example.com/` and redirects `http://example.com/` to `https://example.com/`.
+
+We recommend serving all pages over TLS.  For this configuration, you must configure redirects for all unencrypted request to the TLS equivalent using one of the following methods:
+
+-  Change protocol to HTTPS in `routes.yaml`.
+
+```yaml
+"https://{default}/":
+    type: upstream
+    upstream: "mymagento:http"
+"https://{all}/":
+    type: upstream
+    upstream: "mymagento:http"
+```
+
+-  For Staging and Production environments, we recommend enabling the [Force TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) option from the Magento Admin UI.  When you use this option, Fastly handles the redirection to HTTPS, so you do not have to update the `routes.yaml` configuration.
 
 ## Route options
 
@@ -103,31 +127,35 @@ Property         | Description
 
 ## Simple routes
 
-The following sample routes the apex domain and the `www` subdomain to the `frontend` application. This route does not redirect HTTPS requests:
+In the following examples, the route configuration routes the apex domain and the `www` subdomain to the `mymagento` application. This route does not redirect HTTPS requests.
+
+**Example 1:**
 
 ```yaml
 "http://{default}/":
     type: upstream
-    upstream: "frontend:http"
+    upstream: "mymagento:http"
 
 "http://www.{default}/":
     type: redirect
     to: "http://{default}/"
 ```
 
-The following sample route does not redirect from the `www` to the apex domain; instead, it serves from both:
+In the following example, the route configuration does not redirect URLs from the www domain to the apex domain. Instead, requests are served from both the www and apex domain.
+
+**Example 2:**
 
 ```yaml
 "http://{default}/":
     type: upstream
-    upstream: "frontend:http"
+    upstream: "mymagento:http"
 
 "http://www.{default}/":
     type: upstream
-    upstream: "frontend:http"
+    upstream: "mymagento:http"
 ```
 
-In the first sample, the server responds directly to a request of the form `http://example.com/hello`, but it issues a _301 redirect_ for `http://www.example.com/mypath` (to `http://example.com/mypath`).
+In this example, the server responds directly to a request of the form `http://example.com/hello`, issuing a _301 redirect_ for requests with the URL pattern `http://www.example.com/mypath`. These requests redirect to the apex domain, for example `http://example.com/mypath`.
 
 ## Wildcard routes
 
@@ -170,10 +198,7 @@ See more information about [caching]({{ site.baseurl }}/cloud/project/project-ro
 As discussed in more detail in [Redirects]({{ site.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*, and specify rules for route-based [caching]({{ site.baseurl }}/cloud/project/project-routes-more-cache.html):
 
 ```yaml
-http://www.{default}/:
-    type: redirect
-    to: https://{default}/
-http://{default}/:
+https://www.{default}/:
     type: redirect
     to: https://{default}/
 https://{default}/:
@@ -187,5 +212,5 @@ https://{default}/:
     ssi:
         enabled: false
     type: upstream
-    upstream: php:http
+    upstream: mymagento:http
 ```
