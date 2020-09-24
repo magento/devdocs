@@ -151,6 +151,5 @@ Have a question? Need help? Magento DevDocs, Maintainers, and other Contributors
 
 -  [Slack](https://magentocommeng.slack.com/messages/CAN932A3H) ([Join us](http://tinyurl.com/engcom-slack))
 -  [Twitter @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
--  [E-mail](mailto:DL-Magento-Doc-Feedback@magento.com)
 
 Thank you for contributing your brilliance to Magento DevDocs!!
