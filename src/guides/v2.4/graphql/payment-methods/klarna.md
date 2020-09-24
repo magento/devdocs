@@ -69,7 +69,7 @@ In order to always present shoppers with the latest available payment options pr
 
 1. Send the `cart` query to retrieve the latest available payment methods.
 
-1. Magento sends another request to Klarna with the latest information available from the cart. 
+1. Magento sends another request to Klarna with the latest information available from the cart.
 
 1. Klarna returns new list of payment methods. Note that the list might contain different options for the shopper.
 
