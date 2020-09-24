@@ -71,7 +71,7 @@ desc 'Generate data for a news digest. Default timeframe is a week since today. 
 task :whatsnew do
   date = ENV['since']
   print 'Generating data for the weekly digest: $ '.magenta
-  if date.nil? or date.empty?
+  if date.nil? || date.empty?
     sh 'bin/whatsup_github'
   elsif date.is_a? String
     sh 'bin/whatsup_github', 'since', ENV['since'].to_s
@@ -84,8 +84,8 @@ desc 'Generate index for Algolia'
 task index: %w[init] do
   puts 'Generating index for Algolia ...'
   sh 'bin/jekyll',
-        'algolia',
-          '--config=_config.yml,_config.index.yml'
+     'algolia',
+     '--config=_config.yml,_config.index.yml'
 end
 
 desc 'Convert HTML text to kramdown in your terminal'
