@@ -17,6 +17,6 @@ Jekyll::Hooks.register :pages, :post_init do |page|
   filtering_pattern = '/guides/v'
 
   next if page.url.start_with? filtering_pattern
-  
+
   page.data['versionless'] = true
 end

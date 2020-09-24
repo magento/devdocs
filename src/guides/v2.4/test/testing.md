@@ -102,7 +102,7 @@ It is run on changed `*.php` files using rule strictness [level 1][] and detects
 -  Array has N duplicate keys
 -  Call to an undefined method
 -  Possibly undefined variables
--  Unknown magic methods and properties on classes with __call and __get (supports DataObject's magic methods: get/set/has/uns)
+-  Unknown magic methods and properties on classes with `__call` and `__get` (supports DataObject's magic methods: get/set/has/uns)
 
 #### Suppressing errors
 

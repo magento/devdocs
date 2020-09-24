@@ -123,12 +123,15 @@ It should be similar to the following:
                                                     <item name="children" xsi:type="array">
                                                         <item name="before-form" xsi:type="array">
                                                             <item name="children" xsi:type="array">
-                                                                <item name="custom-form" xsi:type="array">
+                                                                <item name="custom-checkout-form-container" xsi:type="array">
                                                                     <!-- Add this item to configure your js file  -->
                                                                     <item name="component" xsi:type="string">VendorName_ModuleName/js/view/custom-checkout-form</item>
                                                                     <item name="config" xsi:type="array">
                                                                         <!-- And this to add your html template  -->
                                                                         <item name="template" xsi:type="string">VendorName_ModuleName/custom-checkout-form</item>
+                                                                    </item>
+                                                                    <item name="children" xsi:type="array">
+                                                                        <!-- Here we will add the form fields  -->
                                                                     </item>
                                                                 </item>
                                                             </item>
@@ -162,101 +165,97 @@ The term static refers to the forms where all the fields are already known/prede
 
 The fields of static forms are not generated dynamically, so they can be defined in a layout.
 
-The following code sample shows configuration of the form that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (`checkoutProvider`) that is introduced in the `Magento_Checkout` module:
+The following code sample shows the configuration of the `custom-checkout-form-container` form, defined in the previous step. It contains four fields: a text input, a select, a checkbox, and a date field. This form uses the checkout data provider (`checkoutProvider`) that was introduced in the `Magento_Checkout` module:
 
 ```xml
-<item name="custom-checkout-form-container" xsi:type="array">
-    <!-- Your JS file previously created -->
-    <item name="component" xsi:type="string">%your_module_dir%/js/view/custom-checkout-form</item>
-    <item name="provider" xsi:type="string">checkoutProvider</item>
-    <item name="config" xsi:type="array">
-        <!-- Your HTML file previously created -->
-        <item name="template" xsi:type="string">%your_module_dir%/custom-checkout-form</item>
-    </item>
-    <item name="children" xsi:type="array">
-        <item name="custom-checkout-form-fieldset" xsi:type="array">
-            <!-- uiComponent is used as a wrapper for form fields (its template will render all children as a list) -->
-            <item name="component" xsi:type="string">uiComponent</item>
-            <!-- the following display area is used in template (see below) -->
-            <item name="displayArea" xsi:type="string">custom-checkout-form-fields</item>
-            <item name="children" xsi:type="array">
-                <item name="text_field" xsi:type="array">
-                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
-                    <item name="config" xsi:type="array">
-                        <!-- customScope is used to group elements within a single form (e.g. they can be validated separately) -->
-                        <item name="customScope" xsi:type="string">customCheckoutForm</item>
-                        <item name="template" xsi:type="string">ui/form/field</item>
-                        <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
-                    </item>
-                    <item name="provider" xsi:type="string">checkoutProvider</item>
-                    <item name="dataScope" xsi:type="string">customCheckoutForm.text_field</item>
-                    <item name="label" xsi:type="string" translate="true">Text Field</item>
-                    <item name="sortOrder" xsi:type="string">1</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="required-entry" xsi:type="string">true</item>
-                    </item>
-                </item>
-                <item name="checkbox_field" xsi:type="array">
-                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/boolean</item>
-                    <item name="config" xsi:type="array">
-                        <!--customScope is used to group elements within a single form (e.g. they can be validated separately)-->
-                        <item name="customScope" xsi:type="string">customCheckoutForm</item>
-                        <item name="template" xsi:type="string">ui/form/field</item>
-                        <item name="elementTmpl" xsi:type="string">ui/form/element/checkbox</item>
-                    </item>
-                    <item name="provider" xsi:type="string">checkoutProvider</item>
-                    <item name="dataScope" xsi:type="string">customCheckoutForm.checkbox_field</item>
-                    <item name="label" xsi:type="string" translate="true">Checkbox Field</item>
-                    <item name="sortOrder" xsi:type="string">3</item>
-                </item>
-                <item name="select_field" xsi:type="array">
-                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/select</item>
-                    <item name="config" xsi:type="array">
-                        <!--customScope is used to group elements within a single form (e.g. they can be validated separately)-->
-                        <item name="customScope" xsi:type="string">customCheckoutForm</item>
-                        <item name="template" xsi:type="string">ui/form/field</item>
-                        <item name="elementTmpl" xsi:type="string">ui/form/element/select</item>
-                    </item>
-                    <item name="options" xsi:type="array">
-                        <item name="0" xsi:type="array">
-                            <item name="label" xsi:type="string" translate="true">Please select value</item>
-                            <item name="value" xsi:type="string"></item>
+...
+    <item name="custom-checkout-form-container" xsi:type="array">
+        ...
+        <item name="children" xsi:type="array">
+            <item name="custom-checkout-form-fieldset" xsi:type="array">
+                <!-- uiComponent is used as a wrapper for form fields (its template will render all children as a list) -->
+                <item name="component" xsi:type="string">uiComponent</item>
+                <!-- the following display area is used in template (see below) -->
+                <item name="displayArea" xsi:type="string">custom-checkout-form-fields</item>
+                <item name="children" xsi:type="array">
+                    <item name="text_field" xsi:type="array">
+                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                        <item name="config" xsi:type="array">
+                            <!-- customScope is used to group elements within a single form (e.g. they can be validated separately) -->
+                            <item name="customScope" xsi:type="string">customCheckoutForm</item>
+                            <item name="template" xsi:type="string">ui/form/field</item>
+                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
                         </item>
-                        <item name="1" xsi:type="array">
-                            <item name="label" xsi:type="string" translate="true">Value 1</item>
-                            <item name="value" xsi:type="string">value_1</item>
-                        </item>
-                        <item name="2" xsi:type="array">
-                            <item name="label" xsi:type="string" translate="true">Value 2</item>
-                            <item name="value" xsi:type="string">value_2</item>
+                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                        <item name="dataScope" xsi:type="string">customCheckoutForm.text_field</item>
+                        <item name="label" xsi:type="string" translate="true">Text Field</item>
+                        <item name="sortOrder" xsi:type="string">1</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="string">true</item>
                         </item>
                     </item>
-                    <!-- value element allows to specify default value of the form field -->
-                    <item name="value" xsi:type="string">value_2</item>
-                    <item name="provider" xsi:type="string">checkoutProvider</item>
-                    <item name="dataScope" xsi:type="string">customCheckoutForm.select_field</item>
-                    <item name="label" xsi:type="string" translate="true">Select Field</item>
-                    <item name="sortOrder" xsi:type="string">2</item>
-                </item>
-                <item name="date_field" xsi:type="array">
-                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/date</item>
-                    <item name="config" xsi:type="array">
-                        <!--customScope is used to group elements within a single form (e.g. they can be validated separately)-->
-                        <item name="customScope" xsi:type="string">customCheckoutForm</item>
-                        <item name="template" xsi:type="string">ui/form/field</item>
-                        <item name="elementTmpl" xsi:type="string">ui/form/element/date</item>
+                    <item name="checkbox_field" xsi:type="array">
+                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/boolean</item>
+                        <item name="config" xsi:type="array">
+                            <!--customScope is used to group elements within a single form (e.g. they can be validated separately)-->
+                            <item name="customScope" xsi:type="string">customCheckoutForm</item>
+                            <item name="template" xsi:type="string">ui/form/field</item>
+                            <item name="elementTmpl" xsi:type="string">ui/form/element/checkbox</item>
+                        </item>
+                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                        <item name="dataScope" xsi:type="string">customCheckoutForm.checkbox_field</item>
+                        <item name="label" xsi:type="string" translate="true">Checkbox Field</item>
+                        <item name="sortOrder" xsi:type="string">3</item>
                     </item>
-                    <item name="provider" xsi:type="string">checkoutProvider</item>
-                    <item name="dataScope" xsi:type="string">customCheckoutForm.date_field</item>
-                    <item name="label" xsi:type="string" translate="true">Date Field</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="required-entry" xsi:type="string">true</item>
+                    <item name="select_field" xsi:type="array">
+                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/select</item>
+                        <item name="config" xsi:type="array">
+                            <!--customScope is used to group elements within a single form (e.g. they can be validated separately)-->
+                            <item name="customScope" xsi:type="string">customCheckoutForm</item>
+                            <item name="template" xsi:type="string">ui/form/field</item>
+                            <item name="elementTmpl" xsi:type="string">ui/form/element/select</item>
+                        </item>
+                        <item name="options" xsi:type="array">
+                            <item name="0" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Please select value</item>
+                                <item name="value" xsi:type="string"></item>
+                            </item>
+                            <item name="1" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Value 1</item>
+                                <item name="value" xsi:type="string">value_1</item>
+                            </item>
+                            <item name="2" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Value 2</item>
+                                <item name="value" xsi:type="string">value_2</item>
+                            </item>
+                        </item>
+                        <!-- value element allows to specify default value of the form field -->
+                        <item name="value" xsi:type="string">value_2</item>
+                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                        <item name="dataScope" xsi:type="string">customCheckoutForm.select_field</item>
+                        <item name="label" xsi:type="string" translate="true">Select Field</item>
+                        <item name="sortOrder" xsi:type="string">2</item>
+                    </item>
+                    <item name="date_field" xsi:type="array">
+                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/date</item>
+                        <item name="config" xsi:type="array">
+                            <!--customScope is used to group elements within a single form (e.g. they can be validated separately)-->
+                            <item name="customScope" xsi:type="string">customCheckoutForm</item>
+                            <item name="template" xsi:type="string">ui/form/field</item>
+                            <item name="elementTmpl" xsi:type="string">ui/form/element/date</item>
+                        </item>
+                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                        <item name="dataScope" xsi:type="string">customCheckoutForm.date_field</item>
+                        <item name="label" xsi:type="string" translate="true">Date Field</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="string">true</item>
+                        </item>
                     </item>
                 </item>
             </item>
         </item>
     </item>
-</item>
+...
 ```
 
 ### Dynamically defined forms {#dynamic_form}
