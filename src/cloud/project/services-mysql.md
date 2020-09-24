@@ -163,4 +163,4 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
 
 ## Connect to secondary database
 
-In some cases, you might need to connect to the secondary database, for example to improve database performance or resolve database locking issues. If this configuration is required, use `"port" : 3304` to establish the connection. See the [Magento Commerce Cloud database best practice](https://support.magento.com/hc/en-us/articles/360049045351) article in the _Magento Help Center_.   
+In some cases, you might need to connect to the secondary database, for example to improve database performance or resolve database locking issues. If this configuration is required, use `"port" : 3304` to establish the connection. See the [Magento Commerce Cloud database best practice](https://support.magento.com/hc/en-us/articles/360049045351) article in the _Magento Help Center_.  
