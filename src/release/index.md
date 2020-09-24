@@ -27,7 +27,7 @@ _<sup>2</sup>The 2021 Q3 release will return to normal with a security-only rele
 _<sup>3</sup>There will not be a 2.4.4 release in 2021 Q4._
 
 {:.bs-callout-info}
-We have introduced a [new policy](https://community.magento.com/t5/Magento-DevBlog/bg-p/devblog) that applies to a previous, supported Magento release line.
+We have introduced a [new policy](https://magento.com/blog/magento-news/updated-lifecycle-policy-magento-releases) that applies to a previous, supported Magento release line.
 
 ## Early access
 
