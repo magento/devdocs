@@ -282,14 +282,18 @@ The import command provides the ability to copy a contributor's code or pull req
 ```text
 @magento import {code|pr} to {organizationName}/{repositoryName}
 ```
-**Usage Examples:** 
 
--  To import the code only use: 
+**Usage Examples:**
+
+-  To import the code only use
+
 ```text
 @magento import code to magento-team/magento2
 @magento import code to https://github.com/magento-team/magento2
 ```
--  To import the pull request use:
+
+-  To import the pull request use
+
 ```text
 @magento import pr to magento-team/magento2
 @magento import pull request to magento-team/magento2
