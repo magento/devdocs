@@ -16,7 +16,7 @@ namespace :build do
   end
 
   desc 'Build the site for staging'
-  task :stage do
+  task :stage %w[init] do
     print 'Building the site for staging: $ '.magenta
     sh 'bin/jekyll',
        'build',
