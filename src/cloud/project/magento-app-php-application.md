@@ -16,7 +16,7 @@ type: php:<version>
 
 ### PHP extensions
 
-You can enable additional PHP extensions in the `runtime:extension` section. Also, the extensions specified become available in the Docker PHP containers.
+You can enable or disable PHP extensions in the `runtime:extension` section. Also, the extensions specified become available in the Docker PHP containers.
 
 > .magento.app.yaml
 
@@ -43,9 +43,9 @@ For details about a specific PHP extension, see the [PHP Extension List](https:/
 
 The following table show the supported PHP extensions when deploying {{site.data.var.ee}} on the Cloud platform.
 
-- **Default extensions** are the default extensions available with the PHP application.
-- **Required extensions** are installed automatically and cannot be removed
-- **Optional extensions**–You can install and remove these extensions as needed
+-  **Default extensions** install by automatically. You can disable them as needed.
+-  **Required extensions** install automatically and cannot be removed.
+-  **Optional extensions**–You can add or disable these extensions as needed.
 
 | Default extensions | Required extensions | Optional extensions |
 |--------------------|---------------------|---------------------|
