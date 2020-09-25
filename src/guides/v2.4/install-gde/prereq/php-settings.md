@@ -73,6 +73,15 @@ PHP Warning:  date(): It is not safe to rely on the system's timezone settings. 
       -  Installing and updating Magento components from Magento Marketplace, `2G`
       -  Testing, `~3-4G`
 
+-  Increase the values for the PHP `realpath_cache_size` and `realpath_cache_ttl` to recommended settings:
+
+   ```conf
+   realpath_cache_size=1M
+   realpath_cache_ttl=7200
+   ```
+
+   These settings allow PHP processes to cache paths to files instead of looking them up each time a page loads. See [Performance Tuning](https://www.php.net/manual/en/ini.core.php) in the PHP documentation.
+
 -  Enable [`opcache.save_comments`](https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments){:target="_blank"}, which is required for Magento 2.1 and later.
 
    We recommend you enable the [PHP OPcache](https://www.php.net/manual/en/book.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
@@ -80,7 +89,7 @@ PHP Warning:  date(): It is not safe to rely on the system's timezone settings. 
    Magento 2.1 and later use PHP code comments for code generation.
 
 {:.bs-callout-info}
-To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and the PHP web server plug-in's configuration. For more information, see the next section.
+To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and the PHP web server plug-in configuration. For more information, see the next section.
 
 ## Step 1: Find PHP configuration files {#php-required-find}
 
@@ -136,6 +145,7 @@ To set PHP options:
    ```
 
 1. Add the time zone setting you found in step 2.
+
 1. Change the value of `memory_limit` to one of the values at the beginning of this section.
 
    For example,
@@ -144,7 +154,22 @@ To set PHP options:
    memory_limit=2G
    ```
 
+1. Add or update the `realpath_cache` configuration to match the following values:
+
+   ```conf
+   ;
+   ; Increase realpath cache size
+   ;
+   realpath_cache_size = 1M
+
+   ;
+   ; Increase realpath cache ttl
+   ;
+   realpath_cache_ttl = 7200
+   ```
+
 1. Save your changes and exit the text editor.
+
 1. Open the other `php.ini` (if they are different) and make the same changes in it.
 
 ## Step 3: Set OPcache options {#php-required-opcache}
