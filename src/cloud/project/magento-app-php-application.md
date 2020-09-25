@@ -41,7 +41,7 @@ php -m
 
 For details about a specific PHP extension, see the [PHP Extension List](https://www.php.net/manual/en/extensions.alphabetical.php).
 
-The following table show the supported PHP extensions when deploying {{site.data.var.ee}} on the Cloud platform.
+The following table shows the supported PHP extensions when deploying {{site.data.var.ee}} on the Cloud platform.
 
 -  **Default extensions** install by automatically. You can disable them as needed.
 -  **Required extensions** install automatically and cannot be removed.
