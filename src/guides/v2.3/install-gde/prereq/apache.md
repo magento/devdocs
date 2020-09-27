@@ -22,14 +22,12 @@ If you are new to all this and need some help getting started, we suggest the fo
 
 ## Important: Apache required directives {#apache-required-directives}
 
-1. Set `AllowEncodedSlashes` in the server config (globally) or in the virtual host configurations to avoid decoding the encoded slashes that may cause issues for URLs. For instance, when retrieving products with a slash in the SKU via the API, you will not want that converted.
+1. Set `AllowEncodedSlashes` in the server config (globally) or in the virtual host configurations to avoid decoding the encoded slashes that may cause issues for URLs. For instance, when retrieving products with a slash in the SKU via the API, you will not want that converted. The sample block is not complete and other directives will be required.
 
    ```conf
    <VirtualHost *:443>
-     ...
      # Allow encoded slashes
      AllowEncodedSlashes NoDecode
-     ...
    </VirtualHost>
    ```
 
