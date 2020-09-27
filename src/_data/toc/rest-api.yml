@@ -40,15 +40,15 @@ pages:
           children:
 
             - label: Admin REST endpoints
-              url: https://magento.redoc.ly/2.4-admin/
+              url: https://magento.redoc.ly/2.4.0-admin/
               include_versions: ["2.4"]
 
             - label: Customer REST endpoints
-              url: https://magento.redoc.ly/2.4-customer/
+              url: https://magento.redoc.ly/2.4.0-customer/
               include_versions: ["2.4"]
 
             - label: Guest REST endpoints
-              url: https://magento.redoc.ly/2.4-guest/
+              url: https://magento.redoc.ly/2.4.0-guest/
               include_versions: ["2.4"]
 
         - label: Generate a local API reference
