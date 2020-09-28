@@ -38,7 +38,7 @@ A sample follows:
 {%
 include note.html
 type='info'
-content='The update/cron.php has been removed in Magento 2.4.0, if this file exists on your installation, it can be safely removed.
+content='The `update/cron.php` file has been removed in Magento 2.4.0, if this file exists on your installation, it can be safely removed.
 
 Any reference to `update/cron.php` and `bin/magento setup:cron:run` should also be removed from the crontab'
 %}
