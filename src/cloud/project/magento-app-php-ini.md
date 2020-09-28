@@ -26,7 +26,7 @@ memory_limit = 756M
 
 Set the following `realpath_cache` settings to improve Magento performance.
 
-```php
+```conf
 ;
 ; Increase realpath cache size
 ;
