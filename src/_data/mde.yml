@@ -22,9 +22,8 @@ extensions:
           2.3.4: compatible
           2.3.5-p1: compatible
           2.3.6: compatible
-          2.4.0: supported
-          2.4.1: compatible
-
+          2.4.0: compatible
+          2.4.1: supported
       -
         name: 4.1.0
         support:
@@ -48,7 +47,7 @@ extensions:
           2.3.5-p1: not supported
           2.3.6: not supported
           2.4.0: not supported
-          2.4.1: not supported
+          2.4.1: compatible
       -
         name: 3.0.1
         support:
@@ -58,7 +57,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
-          2.3.6: compatible
+          2.3.6: not supported
           2.4.0: not supported
           2.4.1: not supported
       -
@@ -70,7 +69,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
-          2.3.6: compatible
+          2.3.6: not supported
           2.4.0: not supported
           2.4.1: not supported
       -
@@ -82,12 +81,24 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
-          2.3.6: compatible
+          2.3.6: not supported
           2.4.0: not supported
           2.4.1: not supported
   -
     name: Magento Inventory
     versions:
+      -
+        name: 1.2.1
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.3.6: compatible
+          2.4.0: compatible
+          2.4.1: supported
       -
         name: 1.2.0
         support:
@@ -97,7 +108,21 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
-          2.4.0: supported
+          2.3.6: compatible
+          2.4.0: compatible
+          2.4.1: compatible
+      -
+        name: 1.1.6
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.3.6: supported
+          2.4.0: compatible
+          2.4.1: compatible
       -
         name: 1.1.5
         support:
@@ -107,7 +132,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: supported
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
       -
         name: 1.1.4
         support:
@@ -117,7 +144,9 @@ extensions:
           2.3.3: compatible
           2.3.4: supported
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
       -
         name: 1.1.3
         support:
@@ -127,7 +156,9 @@ extensions:
           2.3.3: supported
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
       -
         name: 1.1.2
         support:
@@ -137,7 +168,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
       -
         name: 1.1.1
         support:
@@ -147,7 +180,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
       -
         name: 1.1.0
         support:
@@ -157,7 +192,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
   -
     name: Page Builder
     versions:
@@ -269,7 +306,9 @@ extensions:
           2.3.3: supported
           2.3.4: supported
           2.3.5-p1: supported
+          2.3.6: supported
           2.4.0: supported
+          2.4.1: supported
       -
         name: 3.0.5
         support:
@@ -279,7 +318,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
       -
         name: 3.0.4
         support:
@@ -289,7 +330,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
       -
         name: 3.0.3
         support:
@@ -299,7 +342,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
       
       -
         name: 3.0.2
@@ -310,7 +355,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
       -
         name: 3.0.1
         support:
@@ -320,7 +367,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: compatible
+          2.4.1: compatible
       -
         name: 3.0.0
         support:
@@ -330,7 +379,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: not supported
+          2.4.1: not supported
       -
         name: 2.0.0
         support:
@@ -340,7 +391,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: not supported
+          2.4.1: not supported
       -
         name: 1.x.x
         support:
@@ -350,7 +403,9 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.6: not supported
           2.4.0: not supported
+          2.4.1: not supported
   -
     name: B2B
     versions:
@@ -462,4 +517,3 @@ extensions:
           2.3.6: compatible
           2.4.0: compatible
           2.4.1: compatible
-          
