@@ -23,7 +23,7 @@ extensions:
           2.3.5-p1: compatible
           2.3.6: compatible
           2.4.0: supported
-          2.4.1: compatible
+          2.4.1: supported
 
       -
         name: 4.1.0
