@@ -249,7 +249,7 @@ extensions:
     name: Product Recommendations
     versions:
       -
-        name: 3.0.4+
+        name: 3.0.6
         support:
           2.3.0: supported
           2.3.1: supported
@@ -259,24 +259,75 @@ extensions:
           2.3.5-p1: supported
           2.4.0: supported
       -
+        name: 3.0.5
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.4.0: compatible
+      -
+        name: 3.0.4
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.4.0: compatible
+      -
+        name: 3.0.3
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.4.0: compatible
+      
+      -
+        name: 3.0.2
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.4.0: compatible
+      -
+        name: 3.0.1
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.4.0: compatible
+      -
         name: 3.0.0
         support:
-          2.3.0: supported
-          2.3.1: supported
-          2.3.2: supported
-          2.3.3: supported
-          2.3.4: supported
-          2.3.5-p1: supported
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
           2.4.0: not supported
       -
         name: 2.0.0
         support:
-          2.3.0: supported
-          2.3.1: supported
-          2.3.2: supported
-          2.3.3: supported
-          2.3.4: supported
-          2.3.5-p1: supported
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
           2.4.0: not supported
       -
         name: 1.x.x

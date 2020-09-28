@@ -1,7 +1,7 @@
 ---
 group: installation-guide
 subgroup: Z_continue
-title:
+title: Installation Options
 menu_title: Next&mdash;Installation part 2, installing
 menu_node: parent
 menu_order: 1

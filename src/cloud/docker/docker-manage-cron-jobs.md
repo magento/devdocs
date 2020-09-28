@@ -5,8 +5,6 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
-redirect_from:
-  - /cloud/reference/docker-config.html
 ---
 
 The [Cron container] runs the scheduled cron jobs automatically based on the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/magento-app-properties.html#crons), and any custom configuration specified in the `docker-compose-override.yml` file.

@@ -33,10 +33,10 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
     <listingToolbar>
         ...
          <columnsControls name="columns_controls">
-            <setting>
+            <settings>
                 <minVisible>1</minVisible>
                 <maxVisible>3</maxVisible>
-            </setting>
+            </settings>
          </columnsControls>
     </listingToolbar>
     ...
@@ -46,4 +46,3 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 #### Result
 
 ![ColumnsControls component example]({{ site.baseurl }}/common/images/ui_comps/columns-controls-result.png)
-

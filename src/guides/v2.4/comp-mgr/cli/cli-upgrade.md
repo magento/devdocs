@@ -148,16 +148,6 @@ composer require magento/product-community-edition=2.3.3-p1 --no-update
    composer update
    ```
 
-1. Clean the Magento cache.
-
-   ```bash
-   bin/magento cache:clean
-   ```
-
-## Clean up
-
-Manually clear caches and generated content.
-
 1. Clear the `var/` and `generated/` subdirectories:
 
    ```bash
