@@ -19,8 +19,10 @@ Configuring PHP settings improperly can cause issues. We recommend only advanced
 To increase the PHP memory limit, add the following setting to the php.ini file:
 
 ```php
-memory_limit = 756M
+memory_limit = 1G
 ```
+
+For debugging, increase the value to 2G.
 
 ## Optimize realpath_cache configuration
 

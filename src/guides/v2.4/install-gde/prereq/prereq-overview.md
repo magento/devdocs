@@ -65,7 +65,7 @@ To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/a
 
 {% include install/php-versions-2.4.md %}
 
-See [PHP][] for info on PHP requirements.
+See [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html) for info on PHP requirements.
 
 ### MySQL
 
@@ -134,13 +134,3 @@ curl -XGET 'localhost:9200'
 Next step
 
 [Choose how to install the Magento software]({{page.baseurl}}/install-gde/bk-install-guide.html)
-
-{:.ref-header}
-Related topics
-
-*  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-*  [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
-*  [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
-*  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
-*  [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
-*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

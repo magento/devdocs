@@ -69,9 +69,9 @@ PHP Warning:  date(): It is not safe to rely on the system's timezone settings. 
 
    Our detailed recommendations are:
 
-   -  Compiling code or deploying static assets, `756M`
-      -  Installing and updating Magento components from Magento Marketplace, `2G`
-      -  Testing, `~3-4G`
+   -  Compiling code or deploying static assets, `1G`
+   -  Debugging, `2G`
+   -  Testing, `~3-4G`
 
 -  Increase the values for the PHP `realpath_cache_size` and `realpath_cache_ttl` to recommended settings:
 
@@ -146,7 +146,7 @@ To set PHP options:
 
 1. Add the time zone setting you found in step 2.
 
-1. Change the value of `memory_limit` to one of the values at the beginning of this section.
+1. Change the value of `memory_limit` to one of the values recommended at the beginning of this section.
 
    For example,
 
@@ -160,7 +160,7 @@ To set PHP options:
    ;
    ; Increase realpath cache size
    ;
-   realpath_cache_size = 1M
+   realpath_cache_size = 10M
 
    ;
    ; Increase realpath cache ttl
