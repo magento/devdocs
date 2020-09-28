@@ -74,8 +74,7 @@ It MAY include minor and patch level changes. Patch and minor version MUST be re
 | |`<actionGroup>` `<argument>` removed|MAJOR
 | |`<actionGroup>` `<argument>` changed|MAJOR
 | |`<actionGroup>` `<remove>` `<action>` added|MAJOR
-| |`<actionGroup>` `<remove>` `<action>` removed|MINOR
-| |`<actionGroup>` `<remove>` `<action>` changed|MAJOR
+| |`<actionGroup>` `<remove>` `<action>` removed|MAJOR
 |Data|`<entity>` added|MINOR
 | |`<entity>` removed|MAJOR
 | |`<entity>` `<array>` added|MINOR
@@ -124,8 +123,7 @@ It MAY include minor and patch level changes. Patch and minor version MUST be re
 | |`<test>` `<annotations>` `<annotation>` changed|PATCH
 | |`<test>` `<annotations>` `<annotation>` GROUP removed|MAJOR
 | |`<test>` `<remove>` `<action>` added|MAJOR
-| |`<test>` `<remove>` `<action>` removed|MINOR
-| |`<test>` `<remove>` `<action>` changed|MAJOR
+| |`<test>` `<remove>` `<action>` removed|MAJOR
 |Suite|`<suite>` added|MINOR
 | |`<suite>` removed|MAJOR
 | |`<suite>` `<include/exclude>` `<group/test/module>` added|PATCH
@@ -133,7 +131,7 @@ It MAY include minor and patch level changes. Patch and minor version MUST be re
 | |`<suite>` `<before/after>` `<action>` added|MINOR
 | |`<suite>` `<before/after>` `<action>` removed|MAJOR
 | |`<suite>` `<before/after>` `<remove>` `<action>` added|MAJOR
-| |`<suite>` `<before/after>` `<remove>` `<action>` removed|MINOR
+| |`<suite>` `<before/after>` `<remove>` `<action>` removed|MAJOR
 | |`<suite>` `<before/after>` `<action>` changed|PATCH
 | |`<suite>` `<before/after>` `<action>` sequence changed|MAJOR
 | |`<suite>` `<before/after>` `<action>` type (`click`, `fillField`, etc) changed|PATCH
