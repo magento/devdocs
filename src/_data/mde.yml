@@ -21,7 +21,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: supported
+          2.4.1: compatible
 
       -
         name: 4.1.0
@@ -32,7 +34,9 @@ extensions:
           2.3.3: supported
           2.3.4: supported
           2.3.5-p1: supported
+          2.3.6: compatible
           2.4.0: not supported
+          2.4.1: not supported
       -
         name: 4.0.0
         support:
@@ -42,7 +46,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: not supported
+          2.3.6: not supported
           2.4.0: not supported
+          2.4.1: not supported
       -
         name: 3.0.1
         support:
@@ -52,7 +58,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: not supported
+          2.4.1: not supported
       -
         name: 3.0.0
         support:
@@ -62,7 +70,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: not supported
+          2.4.1: not supported
       -
         name: 2.0.0
         support:
@@ -72,7 +82,9 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.3.6: compatible
           2.4.0: not supported
+          2.4.1: not supported
   -
     name: Magento Inventory
     versions:
