@@ -287,7 +287,6 @@ A `<field>`-Tag can have the following `type=""` values:
 {:.bs-callout-warning}
 It is possible to create custom `types`, but this is not covered in this reference.
 
-
 ### Example: Create two fields in a given group
 
 ```xml
