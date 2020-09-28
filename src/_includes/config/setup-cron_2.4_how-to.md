@@ -35,5 +35,10 @@ A sample follows:
 #~ MAGENTO END c5f9e5ed71cceaabc4d4fd9b3e827a2b
 ```
 
-{:.bs-callout-info}
-The `update/cron.php` file exists in [Composer](https://glossary.magento.com/composer)- and [archive-based](https://magento.com/tech-resources/download) Magento installations. It does not exist if you installed Magento by cloning the [Magento 2 git repository](https://github.com/magento/magento2/).
+{%
+include note.html
+type='info'
+content='The update/cron.php has been removed in Magento 2.4.0, if this file exists on your installation, it can be safely removed.
+
+Any reference to update/cron.php should also be removed from the crontab'
+%}
