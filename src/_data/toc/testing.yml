@@ -63,3 +63,15 @@ pages:
 
             - label: '@dataProvider'
               url: /test/unit/annotations/data-provider.html
+
+    - label: Static Testing
+      children:
+
+        - label: Running Static Tests
+          url: /test/static/static_test_execution.html
+
+    - label: Semantic Version Checker
+      children:
+
+        - label: Running SVC tool
+          url: /test/semver/semver_test_execution.html
