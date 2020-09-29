@@ -74,4 +74,4 @@ pages:
       children:
 
         - label: Running SVC tool
-          url: /test/semver/semver_test_execution.html
+          url: /test/svc/semver_test_execution.html
