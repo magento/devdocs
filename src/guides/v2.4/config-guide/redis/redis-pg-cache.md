@@ -104,7 +104,7 @@ As of Magento 2.3.5, it is recommended to use the extended Redis cache implement
 'cache' => [
     'frontend' => [
         'default' => [
-            'backend' => '\\Magento\\Framework\\Cache\\Backend\Redis',
+            'backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
             'backend_options' => [
                 'server' => '127.0.0.1',
                 'database' => '0',
