@@ -83,7 +83,7 @@ PHP Warning:  date(): It is not safe to rely on the system's timezone settings. 
 -  Increase the values for the PHP `realpath_cache_size` and `realpath_cache_ttl` to recommended settings:
 
    ```conf
-   realpath_cache_size=1M
+   realpath_cache_size=10M
    realpath_cache_ttl=7200
    ```
 
