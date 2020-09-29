@@ -97,7 +97,7 @@ The Luma theme [moves]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instruc
 
 ```xml
 <referenceBlock name="header.links">
-    <block class="Magento\Customer\Block\Account\Customer" name="customer" template="account/customer.phtml" before="-"/>
+    <block class="Magento\Customer\Block\Account\Customer" name="customer" template="Magento_Customer::account/customer.phtml" before="-"/>
     ...
 </referenceBlock>
 ...
@@ -198,8 +198,8 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="header.links">
-            <block class="Magento\Customer\Block\Account\Customer" name="customer" template="account/customer.phtml" before="-"/>
-            <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-login" template="account/link/authorization.phtml"/>
+            <block class="Magento\Customer\Block\Account\Customer" name="customer" template="Magento_Customer::account/customer.phtml" before="-"/>
+            <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-login" template="Magento_Customer::account/link/authorization.phtml"/>
         </referenceBlock>
         <move element="register-link" destination="header.links"/>
         <move element="top.links" destination="customer"/>

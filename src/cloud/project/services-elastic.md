@@ -197,6 +197,7 @@ elasticsearch:
 ```
 
 If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{ site.baseurl }}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
+When setting up ElasticSuite, add the configuration settings to the `ELASTICSUITE_CONFIGURATION` deploy variable. This configuration saves the settings across deployments.
 
 {:.bs-callout-tip}
 For details on using or troubleshooting the Elasticsuite plugin with Magento, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
