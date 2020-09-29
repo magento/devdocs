@@ -42,18 +42,18 @@ Magento requires a set of extensions to be installed:
 {% include install/php-extensions-template.md %}
 
 {:.bs-callout-warning}
-If you install Magento via cloning from the [GitHub](https://github.com/magento/magento2) repository, then make sure you have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) extension installed on your instance.
+If you install Magento by cloning the [magento/magento2](https://github.com/magento/magento2) GitHub repository, you must have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) extension installed on your system.
 
 {:.procedure}
 To verify installed extensions:
 
-1. At the command line, use the following command to list installed modules.
+1. List installed modules.
 
    ```bash
    php -m
    ```
 
-1. Verify that the extensions required by Magento are installed.
+1. Verify that all required extensions are installed.
 
 1. Add any missing modules using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.4 modules can be added with:
 
