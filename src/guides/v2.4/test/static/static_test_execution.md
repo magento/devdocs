@@ -33,7 +33,9 @@ To run the static tests on a subset of files, you will have to create a new test
 app/code/Magento/CatalogSearch/Model/Search
 ```
 
-**Step 5.** Add a new testsuite to the `dev/tests/static/phpunit.xml.dist` file inside the `<testsuites>` node:
+**Step 5.** Create a copy of `dev/tests/static/phpunit.xml.dist` file and call it `phpunit.xml`:
+
+**Step 6.** Add a new testsuite to the `dev/tests/static/phpunit.xml` file inside the `<testsuites>` node:
 :
 
 ```xml
@@ -45,7 +47,7 @@ app/code/Magento/CatalogSearch/Model/Search
     </testsuites>
 ```
 
-**Step 6.** Navigate to the Magento base directory and run this command:
+**Step 7.** Navigate to the Magento base directory and run this command:
 
 ```bash
 ./vendor/bin/phpunit --testsuite="Local Test Suite" -c dev/tests/static/phpunit.xml.dist 
