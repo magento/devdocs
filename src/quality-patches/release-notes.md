@@ -16,22 +16,23 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 -  {:.bug}Known issues -->
 
 {:.bs-callout-info}
-See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html) for instructions on applying patches to your Magento projects.
+See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) for instructions on applying patches to your Magento projects.
+See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
 ## v1.0.5
 
 -  **MDVA-30841** _(for Magento `>=2.3.4 <2.3.6 || 2.4.0`)_—Fixes the issue with layered navigation, where the 'No' value for boolean type product attributes was not included in layered navigation if Elasticsearch was used as a search engine.
 -  **MDVA-28191** _(for Magento `>=2.3.3 <2.4.2`)_—Fixes the issue where no payment methods are loaded during order creation via Magento Admin panel.
--  **MDVA-29959** _(for Magento B2B  `>=1.1.0 <=1.1.3-p1`)_—Fixes the issue where restricted admin user with 'Companies' permissions is not allowed to delete company account.
+-  **MDVA-29959** _(for Magento `>=2.3.0 <=2.3.3-p1` with B2B extension)_—Fixes the issue where restricted admin user with 'Companies' permissions is not allowed to delete company account.
 -  **MDVA-30265** _(for Magento `>=2.3.3 <2.4.2`)_—Fixes the issue where shipment tracking link stops working after Invoice creation.
 -  **MDVA-28409** _(for Magento `>=2.3.4 <2.3.6 || 2.4.0`)_—Fixes the issue where the "sales_clean_quotes" cron job fails with out-of-memory error when the number of expired quotes in the database is huge.
 -  **MDVA-30593** _(for Magento `>=2.3.0 <2.3.4`)_—Fixes the issue where quotes, that expired according to the Quote Lifetime setting, are not cleaned up.
 -  **MDVA-30107** _(for Magento `>=2.3.0 <2.3.6`)_—Fixes the issue where store switcher doesn't work as expected if different base URLs are used for store views.
 -  **MDVA-28763** _(for Magento `>=2.3.2 <2.3.4`)_—Fixes the issue where product image is getting duplicated after updating product information using REST API more than once.
 -  **MDVA-30284** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where Catalog Search indexer fails due to the following Elasticsearch error: limit of total fields in index has been exceeded.
--  **MDVA-29042** _(for Magento B2B `>=1.1.3 <=1.1.4-p2`)_—Fixes the issue where Catalog permissions were changed to Allow automatically after new product was added to the shared catalog.
+-  **MDVA-29042** _(for Magento `>=2.3.3 <=2.3.4-p2` with B2B extension)_—Fixes the issue where Catalog permissions were changed to Allow automatically after new product was added to the shared catalog.
 -  **MDVA-30428** _(for Magento `>=2.3.3 <2.4.2`)_—Fixes the issue where customers cannot add a product to wishlist if this product is assigned to a custom inventory source.
--  **MDVA-28661** _(for Magento B2B `>=1.1.0 <1.2.2`)_—Fixes the issue where an error is thrown in the Company Users company account section after company admin is changed.
+-  **MDVA-28661** _(for Magento `>=2.3.0 <2.3.2` with B2B extension)_—Fixes the issue where an error is thrown in the Company Users company account section after company admin is changed.
 
 ## v1.0.4
 
