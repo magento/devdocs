@@ -265,6 +265,28 @@ A `<field>`-Tag can have the following children:
 {:.bs-callout-warning}
 The nodes `more_url`, `demo_url`, `requires` and `options` are defined by a different core payment model and are only used once. These nodes are not reusable.
 
+### Field type reference
+
+A `<field>`-Tag can have the following `type=""` values:
+
+| Type            | Description                                                                                                                                                                                                                   |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `text`          | Standard, single row text field                                                                                                                                                                                               |
+| `textarea`      | Text block                                                                                                                                                                                                                    |
+| `select`        | Normal dropdown, may need custom `source_model` - also used for Yes/No. See `Magento\Search\Model\Adminhtml\System\Config\Source\Engine` for an example                                                                       |
+| `multiselect`   | Same as select but multiple options are valid                                                                                                                                                                                 |
+| `button`        | Allows a button to be shown that actions an immediate event. Requires custom front-end model to define the button text and the action. See `Magento\ScheduledImportExport\Block\Adminhtml\System\Config\Clean` for an example |
+| `obscure`       | Shows a text field as just "****", value has been encrypted. Changing type using "Inspect Element" in browser will not show value                                                                                             |
+| `password`      | Like `obscure` except that value does not get encrypted and forcibly changing type using "Inspect Element" in browser **will** show the value                                                                                 |
+| `file`          | Allows a file to be uploaded for processing                                                                                                                                                                                   |
+| `label`         | Allows a label to be displayed instead of an editable field. This can be used when a field is only editable on specific scopes (eg Store View level only)                                                                     |
+| `time`          | Allows a time to be set. This is done by using 3 dropdowns - Hour, minute and second.                                                                                                                                         |
+| `allowspecific` | Allows a multiselect list of specific countries. Will need a `source_model` such as `Magento\Shipping\Model\Config\Source\Allspecificcountries`                                                                               |
+| `image`         | Allows an image to be uploaded                                                                                                                                                                                                |
+
+{:.bs-callout-warning}
+It is possible to create custom `types`, but this is not covered in this reference.
+
 ### Example: Create two fields in a given group
 
 ```xml
