@@ -7,6 +7,7 @@
   {% endif %}
 {% endfor %}
 {% unless page.guide_version == '2.3' %}
+
 *  ext-sockets
 
 {% else %}
