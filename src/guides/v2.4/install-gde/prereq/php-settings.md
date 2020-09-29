@@ -58,7 +58,7 @@ To verify installed extensions:
 1. Add any missing modules using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.4 modules can be added with:
 
    ```bash
-    yum -y install php74u-pdo php74u-mysqlnd php74u-opcache php74u-xml php74u-gd php74u-devel php74u-mysql php74u-intl    php74u-mbstring php74u-bcmath php74u-json php74u-iconv php74u-soap
+    yum -y install php74u-pdo php74u-mysqlnd php74u-opcache php74u-xml php74u-gd php74u-devel php74u-mysql php74u-intl php74u-mbstring php74u-bcmath php74u-json php74u-iconv php74u-soap
    ```
 
 {:.bs-callout-info}
@@ -153,7 +153,7 @@ To set PHP options:
 
 1. Add the time zone setting you found in step 2.
 
-1. Change the value of `memory_limit` to one of the values recommendedat the beginning of this section.
+1. Change the value of `memory_limit` to one of the values recommended at the beginning of this section.
 
    For example,
 

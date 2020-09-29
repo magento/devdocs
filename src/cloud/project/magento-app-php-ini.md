@@ -32,7 +32,7 @@ Set the following `realpath_cache` settings to improve Magento performance.
 ;
 ; Increase realpath cache size
 ;
-realpath_cache_size = 1M
+realpath_cache_size = 10M
 
 ;
 ; Increase realpath cache ttl
