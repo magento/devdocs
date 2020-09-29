@@ -42,7 +42,7 @@ Magento requires a set of extensions to be installed:
 {% include install/php-extensions-template.md %}
 
 {:.bs-callout-warning}
-If you install Magento by cloning the [magento/magento2](https://github.com/magento/magento2) GitHub repository, you must have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) extension installed on your system.
+If you install Magento 2.3 by cloning the [magento/magento2](https://github.com/magento/magento2) GitHub repository, you must have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) extension installed on your system.
 
 {:.procedure}
 To verify installed extensions:
