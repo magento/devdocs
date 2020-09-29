@@ -277,7 +277,7 @@ Each field has the default type of ´text´ to display its frontend input type. 
 | ´obscure´     | Commonly used for passwords. Shows asterisks as values.                                                           |
 | ´time´        | A string of the current time. Cannot be configured.                                                               |
 | ´textarea´    | A common HTML textarea.                                                                                           |
-| ´button´      | A common html button. It is necessary to declare a custom ´frontend_model´ in order to use the button field type. | 
+| ´button´      | A common HTML button. It is necessary to declare a custom ´frontend_model´ in order to use the button field type. | 
 | ´image´       | Possible Image upload. The nodes ´backend_model´, ´upload_dir´ and ´base_url´ needs to be defined as well.        |
 
 ### Example: Create two fields in a given group
