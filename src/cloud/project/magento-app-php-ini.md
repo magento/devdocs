@@ -16,7 +16,7 @@ Configuring PHP settings improperly can cause issues. We recommend only advanced
 
 ## Increase PHP memory limit
 
-To increase the PHP memory limit, add the following setting to the php.ini file:
+To increase the PHP memory limit, add the following setting to the `php.ini` file:
 
 ```php
 memory_limit = 1G
