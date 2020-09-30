@@ -228,10 +228,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Magento no longer displays redundant validation messages when a shopper adds a bundle product to their cart without selecting a required option.  _Fix submitted by Dzung Nguyen in pull request [27455](https://github.com/magento/magento2/pull/27455)_. [GitHub-23440](https://github.com/magento/magento2/issues/23440)
 
-<!--- ENGCOM-7985-->
-
-_Fix submitted by Michał Derlatka in pull request [29256](https://github.com/magento/magento2/pull/29256)_. [GitHub-26110](https://github.com/magento/magento2/issues/26110)
-
 ### Cache
 
 <!--- MC-36096-->
@@ -286,7 +282,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- MC-23992-->
 
-*  Magento no longer throws an exception when a shopper tries to  unset the persistence cookie after beginning checkout and then navigating to the storefront home page. Previously, when the shopper clicked the **Not you?** link on the home page, Magento threw this exception: The shipping address is missing. Set the address and try again.  [GitHub-24218](https://github.com/magento/magento2/issues/24218)
+*  Magento no longer throws an exception when a shopper tries to  unset the persistence cookie after beginning checkout and then navigating to the storefront home page. Previously, when the shopper clicked the **Not you?** link on the home page, Magento threw this exception: `The shipping address is missing. Set the address and try again`.  [GitHub-24218](https://github.com/magento/magento2/issues/24218)
 
 <!--- MC-33899-->
 
@@ -306,7 +302,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- ENGCOM-7752-->
 
-*  The code that supports closing the mini cart has been refactored to remove the `closeSidebar` function.The appropriate click binding has been added to the `[data-action="close"]` element. _Fix submitted by lumnn in pull request [28906](https://github.com/magento/magento2/pull/28906)_. [GitHub-29161](https://github.com/magento/magento2/issues/29161)
+*  The code that supports closing the mini cart has been refactored to remove the `closeSidebar` function. The appropriate click binding has been added to the `[data-action="close"]` element. _Fix submitted by lumnn in pull request [28906](https://github.com/magento/magento2/pull/28906)_. [GitHub-29161](https://github.com/magento/magento2/issues/29161)
 
 <!--- ENGCOM-7585-->
 
@@ -346,10 +342,6 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 *  Magento now removes disabled products from a shopper’s cart before checkout. Previously, when a shopper added a product to their cart that was disabled before checkout completed, Magento removed the disabled product from the cart, but the product remained in the quote, and the shopper could not check out. [GitHub-26680](https://github.com/magento/magento2/issues/26680)
 
-<!--- MC-25062-->
-
-*  Deadlocks no longer occur when the import process executes a bulk insert and the re-index process simultaneously executes a large insert from select. Previously, Magento displayed this error:`PDOException: SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock`. [GitHub-8933](https://github.com/magento/magento2/issues/8933)
-
 <!--- MC-30624-->
 
 *  Magento now sorts bestselling products as expected. Previously, both product count and the pagination of sort results were incorrect. [GitHub-25955](https://github.com/magento/magento2/issues/25955)
@@ -358,14 +350,9 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 *  Shoppers can now open a product’s detail page by clicking on the product name in the compare products sidebar. _Fix submitted by Eduard Chitoraga in pull request [27451](https://github.com/magento/magento2/pull/27451)_. [GitHub-21101](https://github.com/magento/magento2/issues/21101)
 
-<!--- ENGCOM-7563--> _Fix submitted by Alexander Menk in pull request [27338](https://github.com/magento/magento2/pull/27338)_. [GitHub-26682](https://github.com/magento/magento2/issues/26682)
-
 <!--- ENGCOM-7513-->
 
 *  `children_count` values now remain positive when an administrator deletes categories. Previously, when an administrator deleted categories, the  `children_count` for remaining categories was negative. _Fix submitted by Vitaliy Prokopov in pull request [28044](https://github.com/magento/magento2/pull/28044)_. [GitHub-27969](https://github.com/magento/magento2/issues/27969)
-
-<!--- ENGCOM-7420-->
-_Fix submitted by quangdo-aligent in pull request [27429](https://github.com/magento/magento2/pull/27429)_. [GitHub-28306](https://github.com/magento/magento2/issues/28306)
 
 <!--- MC-34314-->
 
@@ -441,11 +428,7 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- ENGCOM-7602-->
 
-*  Magento no longer throws an error during  store view creation when the new store view contains a CMS page with the same URL key as a page in a different store view. _Fix submitted by Vadim Malesh in pull request [28421](https://github.com/magento/magento2/pull/28421)_. [GitHub-28357](https://github.com/magento/magento2/issues/28357)
-
-<!--- MC-35480-->
-
-*  Magento now throws an error when a merchant creates a CMS page withte same URL as the Company Structure page. Previously, Magento displayed the CMS page instead of the Company Structure page.
+*  Magento no longer throws an error during store view creation when the new store view contains a CMS page with the same URL key as a page in a different store view. _Fix submitted by Vadim Malesh in pull request [28421](https://github.com/magento/magento2/pull/28421)_. [GitHub-28357](https://github.com/magento/magento2/issues/28357)
 
 ### Configurable products
 
@@ -563,10 +546,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 *  Custom email templates now load the same elements as native default email templates. Previously, some elements, including variable values, were missing.
 
-<!--- MC-33700-->
-
-*  You can now create an email template that sends email with  `Content-Type: "text/plain”`.  Previously,  Magento ignored the content type specified in the template.
-
 <!--- ENGCOM-7576-->
 
 *  Unnecessary CSS has been removed from the email Preview template. _Fix submitted by Tu Nguyen in pull request [27828](https://github.com/magento/magento2/pull/27828)_. [GitHub-27543](https://github.com/magento/magento2/issues/27543)
@@ -581,15 +560,11 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- ENGCOM-7815-->
 
-*  A duplicate `customer.name` variable has been removed from the email template. _Fix submitted by Pawe�� Tylek in pull request [29054](https://github.com/magento/magento2/pull/29054)_. [GitHub-29087](https://github.com/magento/magento2/issues/29087)
+*  A duplicate `customer.name` variable has been removed from the email template. _Fix submitted by Paweł Tylek in pull request [29054](https://github.com/magento/magento2/pull/29054)_. [GitHub-29087](https://github.com/magento/magento2/issues/29087)
 
-<!--- MC-33232-->
+<!--- MC-33700-->
 
-*  Notification emails that are sent to sales representatives assigned to a company now include the assigned corporate logo. Previously, the notification email included the default LUMA logo, not the uploaded corporate logo email.
-
-<!--- ENGCOM--->
-
-*  `TransportBuilder` can now send plain text email `(Content-Type "text/plain”)`. _Fix submitted by twoonesixdigital in pull request [26474](https://github.com/magento/magento2/pull/26474)_. [GitHub-26471](https://github.com/magento/magento2/issues/26471)
+*  You can now create an email template that sends email with  `Content-Type: "text/plain”`. Previously, Magento ignored the content type specified in the template. _Fix submitted by twoonesixdigital in pull request [26474](https://github.com/magento/magento2/pull/26474)_. [GitHub-26471](https://github.com/magento/magento2/issues/26471)
 
 ### Frameworks
 
@@ -671,10 +646,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 *  Code generated using the Magento command-line commands is now consistent with Magentor equirements and coding standards. _Fix submitted by Lukasz Bajsarowicz in pull request [28351](https://github.com/magento/magento2/pull/28351)_. [GitHub-28376](https://github.com/magento/magento2/issues/28376)
 
-<!--- MC-33744-->
-
-*  Magento no longer displays a CMS page more than once in the site hierarchy if the page is assigned to multiple store views.
-
 <!--- ENGCOM-7511-->
 
 *  Saving an attribute with `backend_type = static` no longer removes the content of the `frontend_class` field. _Fix submitted by jiten-patel in pull request [27369](https://github.com/magento/magento2/pull/27369)_. [GitHub-27051](https://github.com/magento/magento2/issues/27051)
@@ -741,7 +712,7 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- MC-32956-->
 
-*  The position of products in the `catalog_category_product` table now update as expected when an administrator creates a product in the Admin and assigns it to a category. Previously, the position of new products was always assigned a 0 value.
+*  The position of products in the `catalog_category_product` table now updates as expected when an administrator creates a product in the Admin and assigns it to a category. Previously, the position of new products was always assigned a 0 value.
 
 <!--- MC-34939-->
 
@@ -749,7 +720,7 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- MC-34657-->
 
-*  Imported `.cvs` files now capture related product information as expected. Previously, related product information was not consistently uploaded the first time the `.cvs` file was imported.
+*  Imported CVS files now capture related product information as expected. Previously, related product information was not consistently uploaded the first time the CVS file was imported.
 
 <!--- MC-37424-->
 
@@ -895,7 +866,7 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- ENGCOM-7885-->
 
-*  The ‘CustomerAddressId' values for a newly created customer is now validated in quotes.  _Fix submitted by Andrii Kalinich in pull request [29139](https://github.com/magento/magento2/pull/29139)_. [GitHub-28793](https://github.com/magento/magento2/issues/28793)
+*  The `CustomerAddressId` values for a newly created customer is now validated in quotes.  _Fix submitted by Andrii Kalinich in pull request [29139](https://github.com/magento/magento2/pull/29139)_. [GitHub-28793](https://github.com/magento/magento2/issues/28793)
 
 <!--- ENGCOM-7798-->
 
@@ -941,6 +912,10 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 <!--- MC-33107-->
 
 *  The performance of checkout with multiple simultaneous orders has been improved.
+
+<!--- MC-25062-->
+
+*  Deadlocks no longer occur when the import process executes a bulk insert and the re-index process simultaneously executes a large insert from select. Previously, Magento displayed this error:`PDOException: SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock`. [GitHub-8933](https://github.com/magento/magento2/issues/8933)
 
 ### Reviews
 
@@ -1010,10 +985,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 *  Magento now calculates shipping table rates correctly after upgrade. Previously, shipping table rates were calculated based on net price, which excluded VAT.
 
-<!--- MC-35955-->
-
-*  Customers can now successfully remove reward points on the order review page of the checkout workflow when checking out with multiple addresses. Previously, Magento threw a `404 Not Found` error when a customer clicked the **Remove** button to remove points for any address. This was a known issue in Magento 2.4.0.
-
 <!--- MC-33737-->
 
 *  Magento now displays shipping rates in the correct currency in the checkout workflow for orders specifying FedEx as the shipping method.
@@ -1050,7 +1021,7 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- ENGCOM-7720-->
 
-*  Swagger now generates now generates a valid response code when you enter valid customer access details. Previously, Swagger did not generate a response code when valid customer access information was entered, and Magento displayed this error:  `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later`. _Fix submitted by Vadim Malesh in pull request [28822](https://github.com/magento/magento2/pull/28822)_. [GitHub-27098](https://github.com/magento/magento2/issues/27098)
+*  Swagger now generates a valid response code when you enter valid customer access details. Previously, Swagger did not generate a response code when valid customer access information was entered, and Magento displayed this error:  `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later`. _Fix submitted by Vadim Malesh in pull request [28822](https://github.com/magento/magento2/pull/28822)_. [GitHub-27098](https://github.com/magento/magento2/issues/27098)
 
 ### Swatches
 
@@ -1072,7 +1043,7 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- ENGCOM-7995-->
 
-*  Added unit tests for Approving Purchase Order That Was Made With Discount That Has Since Expired Will Place Order At Full Amount & Not Update Purchase Order Total. _Fix submitted by Joan He in pull request [18](https://github.com/magento/partners-magento2-infrastructure/pull/18)_. [GitHub-204](https://github.com/magento/partners-magento2b2b/issues/204)
+*  Added unit tests for approving a purchase order that was made with a discount that has since expired will place order at full amount and not update purchase order total. _Fix submitted by Joan He in pull request [18](https://github.com/magento/partners-magento2-infrastructure/pull/18)_. [GitHub-204](https://github.com/magento/partners-magento2b2b/issues/204)
 
 <!--- ENGCOM-7874-->
 
@@ -1084,7 +1055,7 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- ENGCOM-8009-->
 
-*  A function has been added to `\Magento\TestFramework\TestCase\WebapiAbstract` that enables the comparison of large nested arrays of expected and actual outcomes in tests and permits testers to ignore irrelevant keys in the actual outcome'._Fix submitted by Jekabs in pull request [29458](https://github.com/magento/magento2/pull/29458)_. [GitHub-29498](https://github.com/magento/magento2/issues/29498)
+*  A function has been added to `\Magento\TestFramework\TestCase\WebapiAbstract` that enables the comparison of large nested arrays of expected and actual outcomes in tests and permits testers to ignore irrelevant keys in the actual outcome._Fix submitted by Jekabs in pull request [29458](https://github.com/magento/magento2/pull/29458)_. [GitHub-29498](https://github.com/magento/magento2/issues/29498)
 
 ### Theme
 
@@ -1134,7 +1105,7 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- MC-35345-->
 
-*  Directly clicking on the **Export Tax Rates** button of the Add New Tax Rule page ( **Stores**  >  **Tax Rules**) now downloads the `tax_rates.csv` file as expected. Previously, merchants had to click on the edge of the **Export Tax Rates** button. This was a known issue in Magento 2.4.0.
+*  Directly clicking on the **Export Tax Rates** button of the Add New Tax Rule page (**Stores**  >  **Tax Rules**) now downloads the `tax_rates.csv` file as expected. Previously, merchants had to click on the edge of the **Export Tax Rates** button. This was a known issue in Magento 2.4.0.
 
 <!--- MC-35313-->
 
@@ -1150,7 +1121,7 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- MC-35658-->
 
-*  The checkout summary section of the checkout workflow no longer flickers when the customer scrolls through this page on Internet Explorer 11.x.
+*  The checkout summary section of the checkout workflow no longer flickers when a shopper scrolls through this page on Internet Explorer 11.x.
 
 <!--- MC-34602-->
 
@@ -1200,7 +1171,7 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 <!--- MC-34483-->
 
-*  You can now successfully preview the staging schedule for a CMS block. Previously, Magento threw a fatal error.
+*  Moving a store view to a different website no longer resets URLs. Previously, Magento incorrectly regenerated CMS and product URL rewrites.
 
 <!--- MC-33028-->
 
@@ -1220,10 +1191,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 ### Web API framework
 
-<!--- MC-36084-->
-
-*  Invoices created using REST now include gift card information similar to the invoices that are created in the Admin. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
-
 <!--- MC-35838-->
 
 *  Merchants with multiple websites can now use the REST API to create and update products while preserving  image and image-role inheritance. Previously, when a merchant used the REST API to create and update products, and a product was updated for store view, the default image roles were loaded and saved for that store view. As a result, the store-view image roles stopped inheriting from the default scope after update.
@@ -1238,10 +1205,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 ### Wish list
 
-<<!--- MC-35810-->
-
-*  You can now use the wish list search feature to find a product in a public wish list in deployments where support for multiple wish lists is enabled. Previously, after a customer used the wish list search to find a product, selecting it, and clicking **Add to cart**, Magento did not add the product to the cart and displayed this error: `Invalid Form Key. Please refresh the page`.
-
 <!--- MC-35622-->
 
 *  Customers can now change the quantity of a product in a wish list from the wish list itself. Previously, Magento did not update the product quantity and did not display a message.
@@ -1250,37 +1213,33 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 *  Customers can now change the quantity of a grouped product in a wish list from the wish list itself. Previously, Magento did not update the product quantity or display a message.
 
-<!--- MC-34408-->
-
-*  The storefront Category page now displays the Wish List search widget as expected.
-
 <!--- ENGCOM-7580-->
 
 *  Polyfills for `Map`, `WeakMap`, `FormData`, and `MutationObserver` are now loaded only as needed. _Fix submitted by Dmitry Tsymbal in pull request [28330](https://github.com/magento/magento2/pull/28330)_. [GitHub-28377](https://github.com/magento/magento2/issues/28377)
 
 <!--- ENGCOM-7561-->
 
-*  The wishlist update process now supports updating a wishlist item and its description simultaneously. _Fix submitted by Eduard Chitoraga in pull request [28222](https://github.com/magento/magento2/pull/28222)_. [GitHub-28261](https://github.com/magento/magento2/issues/28261)
+*  The wish list update process now supports updating a wish list item and its description simultaneously. _Fix submitted by Eduard Chitoraga in pull request [28222](https://github.com/magento/magento2/pull/28222)_. [GitHub-28261](https://github.com/magento/magento2/issues/28261)
 
 <!--- ENGCOM-7660-->
 
-*  Added a test for sharing a customer's wishlist with more than the allowed number of emails. _Fix submitted by Dmitry Tsymbal in pull request [28641](https://github.com/magento/magento2/pull/28641)_. [GitHub-28720](https://github.com/magento/magento2/issues/28720)
+*  Added a test for sharing a customer's wish list with more than the allowed number of emails. _Fix submitted by Dmitry Tsymbal in pull request [28641](https://github.com/magento/magento2/pull/28641)_. [GitHub-28720](https://github.com/magento/magento2/issues/28720)
 
 <!--- ENGCOM-7674-->
 
-*  Adds a test for deleting items from a customer’s wishlist as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28632](https://github.com/magento/magento2/pull/28632)_. [GitHub-28721](https://github.com/magento/magento2/issues/28721)
+*  Adds a test for deleting items from a customer’s wish list as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28632](https://github.com/magento/magento2/pull/28632)_. [GitHub-28721](https://github.com/magento/magento2/issues/28721)
 
 <!--- ENGCOM-7675-->
 
-*  Adds a test for disabling wishlist functionality. _Fix submitted by Dmitry Tsymbal in pull request [28635](https://github.com/magento/magento2/pull/28635)_. [GitHub-28744](https://github.com/magento/magento2/issues/28744)
+*  Adds a test for disabling wish list functionality. _Fix submitted by Dmitry Tsymbal in pull request [28635](https://github.com/magento/magento2/pull/28635)_. [GitHub-28744](https://github.com/magento/magento2/issues/28744)
 
 <!--- ENGCOM-7564-->
 
-*  Magento now correctly validates the allowed maximum of wishlists that a shopper can create. _Fix submitted by Eduard Chitoraga in pull request [247](https://github.com/magento/partners-magento2ee/pull/247)_. [GitHub-261](https://github.com/magento/partners-magento2ee/issues/261)
+*  Magento now correctly validates the allowed maximum of wish lists that a shopper can create. _Fix submitted by Eduard Chitoraga in pull request [247](https://github.com/magento/partners-magento2ee/pull/247)_. [GitHub-261](https://github.com/magento/partners-magento2ee/issues/261)
 
 <!--- ENGCOM-7717-->
 
-*  Added a test for sharing a customer's wishlist that exceeds the allowed text length limit. _Fix submitted by Dmitry Tsymbal in pull request [28812](https://github.com/magento/magento2/pull/28812)_. [GitHub-28969](https://github.com/magento/magento2/issues/28969)
+*  Added a test for sharing a customer's wish list that exceeds the allowed text length limit. _Fix submitted by Dmitry Tsymbal in pull request [28812](https://github.com/magento/magento2/pull/28812)_. [GitHub-28969](https://github.com/magento/magento2/issues/28969)
 
 <!--- MC-36250-->
 
