@@ -17,7 +17,7 @@ By default, an IDE like PhpStorm is not configured to recognize URNs and, as a r
 
 ![]({{ site.baseurl }}/common/images/config_urn_before.png){:width="750px"}
 
-The `bin/magento dev:urn-catalog:generate` command enables your IDE (currently, only PhpStorm) to recognize and highlight URNs like the following:
+The `bin/magento dev:urn-catalog:generate` command enables your IDE (currently, only PhpStorm and Visual Studio Code) to recognize and highlight URNs like the following:
 
 ![]({{ site.baseurl }}/common/images/config_urn_after.png){:width="750px"}
 
@@ -27,7 +27,7 @@ Specifically, this command creates the following PhpStorm configuration:
 
 ## Configure your IDE
 
-Currently, only PhpStorm is supported.
+Currently, only PhpStorm and Visual Studio Code are supported.
 
 Command syntax:
 
