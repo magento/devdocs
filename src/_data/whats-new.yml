@@ -4,10 +4,19 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Wed Sep 30 08:45:34 2020
+updated: Wed Sep 30 17:41:53 2020
 entries:
+- description: Added a [warning](https://devdocs.magento.com/cloud/env/variables-deploy.html#redis_use_slave_connection)
+    about enabling the `REDIS_USE_SLAVE_CONNECTION` deploy variable for Cloud projects
+    that use split architecture.
+  versions: 2.x
+  type: Technical
+  date: September 30, 2020
+  link: https://github.com/magento/devdocs/pull/7964
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
 - description: Added the Import section to the [Contribution Guide](https://devdocs.magento.com/contributor-guide/contributing.html#import).
-  versions: ''
+  versions: 2.x
   type: Major Update
   date: September 24, 2020
   link: https://github.com/magento/devdocs/pull/7886
@@ -24,7 +33,7 @@ entries:
   profile: https://github.com/BarnyShergold
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
     for the 1.0.5 Magento Quality Patch (MQP) package release.
-  versions: ''
+  versions: 2.x
   type: Major Update
   date: September 22, 2020
   link: https://github.com/magento/devdocs/pull/7913
@@ -32,7 +41,7 @@ entries:
   profile: https://github.com/Rykh
 - description: Added a new Magento [Lifecycle policy](https://devdocs.magento.com/release/lifecycle-policy.html)
     topic.
-  versions: ''
+  versions: 2.x
   type: New Topic
   date: September 22, 2020
   link: https://github.com/magento/devdocs/pull/7904
