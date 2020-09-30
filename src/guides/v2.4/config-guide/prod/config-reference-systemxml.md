@@ -284,7 +284,6 @@ A `<field>`-Tag can have the following `type=""` values:
 | `allowspecific` | Allows a multiselect list of specific countries. Will need a `source_model` such as `Magento\Shipping\Model\Config\Source\Allspecificcountries`                                                                               |
 | `image`         | Allows an image to be uploaded                                                                                                                                                                                                |
 
-
 ### Example: Create two fields in a given group
 
 ```xml
