@@ -52,7 +52,7 @@ If you run into any problems verifying that the events are collected and sent to
 
 ## Verify events are firing correctly
 
-To verify that the events used for metrics are firing correctly, look for the `impression-render`, `view`, and `rec-click` events in the Snowplow Analytics Debugger.
+To verify that the events used for metrics are firing correctly, look for the `impression-render`, `view`, and `rec-click` events in the Snowplow Analytics Debugger. The full list of events can be found on [this page](https://devdocs.magento.com/recommendations/events.html)
 
 ![Events for metrics]({{ page.baseurl }}/recommendations/images/event-metric.png)
 
