@@ -267,7 +267,7 @@ The nodes `more_url`, `demo_url`, `requires` and `options` are defined by a diff
 
 ### Field type reference
 
-A `<field>`-Tag can have the following `type=""` values:
+A `<field>`-Tag can have the following values for the `type=""` attribute:
 
 | Type            | Description                                                                                                                                                                                                                   |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
