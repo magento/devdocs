@@ -27,7 +27,7 @@ This release includes the following security enhancements:
 
 #### Over 15 security enhancements that help close remote code execution (RCE)  and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.5) have been ported to  1.14.4.5 and 1.9.4.5, as appropriate.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.5) have been ported to  1.14.4.5 and 1.9.4.5, as appropriate.
 
 Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin.
 
@@ -37,10 +37,10 @@ This release includes over 15 security fixes and platform security improvements.
 
 **CAPTCHA** protection has been added to the following product areas:
 
-   *  Place Order storefront page and REST and GraphQL endpoints <!--- MC-36067-->
-   *  Payment-related REST and GraphQL endpoints.<!--- MC-36064-->
+*  Place Order storefront page and REST and GraphQL endpoints<!--- MC-36067-->
+*  Payment-related REST and GraphQL endpoints.<!--- MC-36064-->
 
-CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks.
+  CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks.
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
@@ -87,7 +87,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35484-->
 
-*  Re-importing bundle products now works as expected. Previously, the second import didn’t change the `catalog_product_relation` table, and the storefront did not display the bundled products because parent-child product relations were not generated correctly.
+*  Re-importing bundle products now works as expected. Previously, the second import did not change the `catalog_product_relation` table, and the storefront did not display the bundled products because parent-child product relations were not generated correctly.
 
 <!--- MC-33902-->
 
@@ -97,8 +97,8 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-32022-->
 
-*   `X-Magento-Tags` headers no longer exceed the size permitted by the HTTP specification. Previously, category pages that contain many products return an `X-Magento-Tag` header that resulted in a 503 error.
-  
+*  `X-Magento-Tags` headers no longer exceed the size permitted by the HTTP specification. Previously, category pages that contain many products return an `X-Magento-Tag` header that resulted in a 503 error.
+
 ### Cart and checkout
 
 <!--- MC-36055-->
@@ -107,19 +107,19 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35953-->
 
-*  Custom address attributes are now included as expected in the form displayed for Payment step of the checkout workflow.
+*  Custom address attributes are now included as expected in the form that is displayed for the Payment step of the checkout workflow.
 
 <!--- MC-35805-->
 
-*  The shipping method estimator now works as expected when custom address attributes are present on the shipping step of the checkout workflow. Previously, Magento displayed this error message: `{"message":"Error occurred during \"custom_attributes\" processing. A custom attribute is specified with a missing attribute code. Verify the code and try again."}` [GitHub-27505](https://github.com/magento/magento2/issues/27505)
+*  The shipping method estimator now works as expected when custom address attributes are present on the shipping step of the checkout workflow. Previously, Magento displayed this error message:`{"message":"Error occurred during \"custom_attributes\" processing. A custom attribute is specified with a missing attribute code. Verify the code and try again."}` [GitHub-27505](https://github.com/magento/magento2/issues/27505)
 
 <!--- MC-35351-->
 
-*  Custom customer address attributes fields are now displayed as expected in the storefront checkout workflow.	
+*  Custom customer address attributes fields are now displayed as expected in the storefront checkout workflow.
 
 <!--- MC-35204-->
 
-*  Shoppers can now purchase a virtual gift card using Paypal Braintree without defining a shipment address. Previously. Magento threw an error.
+*  Shoppers can now purchase a virtual gift card using PayPal Braintree without defining a shipment address. Previously. Magento threw an error.
 
 <!--- MC-32160-->
 
@@ -137,7 +137,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35575-->
 
-*  Magento now successfully updates attributes labeled `Product Type`. Previously, because the `product_type` attribute is reserved in Magento core code, Magento displayed this message when you tied to update a `Product Type` attribute: `An attribute with the same code (product_type) already exists.`
+*  Magento now successfully updates attributes labeled `Product Type`. Previously, because the `product_type` attribute is reserved in Magento core code, Magento displayed this message when you tried to update a `Product Type` attribute: `An attribute with the same code (product_type) already exists.`
 
 <!--- MC-35366-->
 
@@ -149,7 +149,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-34082-->
 
-*  Magento now displays all re-enabled products in the storefront as expected. Previously, when a product was disabled and then re-enabled, Magento didn’t display the product until the Varnish page cache was cleared or the store re-indexed because the page cache was not invalidated after re-enabling a product.
+*  Magento now displays all re-enabled products in the storefront as expected. Previously, when a product was disabled and then re-enabled, Magento did not display the product until the Varnish page cache was cleared or the store re-indexed because the page cache was not invalidated after re-enabling a product.
 
 <!--- MC-32751-->
 
@@ -157,7 +157,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-32228-->
 
-*  You can now successfully save an image to a category from the Admin. Previously, after you saved the image, part of the part of the URL was missing, and you couldn’t re-open the image.	
+*  You can now successfully save an image to a category from the Admin. Previously, after you saved the image, part of the URL was missing, and you could not re-open the image.
 
 <!--- MC-31764-->
 
@@ -169,15 +169,15 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35149-->
 
-*  Saving a category now flushes only the block cache that is elated to this category. Previously, Magento flushed cache for all category blocks.
+*  Saving a category now flushes only the block cache that is related to this category. Previously, Magento flushed cache for all category blocks.
 
 <!--- MC-35025-->
 
-*  Magento now correctly represents  Arabic thousands grouping and Arabic decimal separator symbols. Previously,  Arabic symbols were trimmed. [GitHub-26676](https://github.com/magento/magento2/issues/26676)
+*  Magento now correctly represents Arabic thousands grouping and Arabic decimal separator symbols. Previously, Arabic symbols were trimmed. [GitHub-26676](https://github.com/magento/magento2/issues/26676)
 
 <!--- MC-34364-->
 
-*  Consecutive asynchronous price updates no longer interfere with each other and correct status is assigned to each operation. Previously, if an asynchronous price update fails, all following asynchronous price update will fail until the corresponding queue consumer is restarted.
+*  Consecutive asynchronous price updates no longer interfere with each other and correct status is assigned to each operation. Previously, if an asynchronous price update failed, all subsequent asynchronous price updates will fail until the corresponding queue consumer is restarted.
 
 <!--- MC-33810-->
 
@@ -193,13 +193,9 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35478-->
 
-*  Magento now throws an error when a merchant creates a CMS page withte same URL as the Company Structure page. Previously, Magento displayed the CMS page instead of the Company Structure page.
+*  Magento now throws an error when a merchant creates a CMS page with the same URL as the Company Structure page. Previously, Magento displayed the CMS page instead of the Company Structure page.
 
 ### Configurable products
-
-<!--- MC-33755-->
-
-*  Admin users accounts created from an admin account with a restricted scope can now create a configurable product with attributes as expected. Previously, Magento threw this error: `Notice: Undefined index: value_index in 23develop/app/code/Magento/ConfigurableProduct/Helper/Product/Options/Factory.php on line 101`.
 
 <!--- MC-33755-->
 
@@ -211,7 +207,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-33502-->
 
-*  Pagination problems with the Configurable Product Edit Current Variations list has been corrected.
+*  Pagination problems with the Configurable Product Edit Current Variations list have been corrected.
 
 ### Customer
 
@@ -229,7 +225,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-33458-->
 
-*  Saving a deleted customer from the Admin now generates an error message only. Previously, Magento displayed a blank page and generated a report that contains this string: `"0":"No such entity with customerId = 3","1":"#1 Magento\\Customer\\Model CustomerRegistry->retrieve() called at [app\/code\/Magento\/Customer\/Model\/ResourceModel\/CustomerRepository.php:340"`.
+*  Saving a deleted customer from the Admin now generates an error message only. Previously, Magento displayed a blank page and generated a report that contained this string: `"0":"No such entity with customerId = 3","1":"#1 Magento\\Customer\\Model CustomerRegistry->retrieve() called at [app\/code\/Magento\/Customer\/Model\/ResourceModel\/CustomerRepository.php:340"`.
 
 <!--- MC-32314-->
 
@@ -237,15 +233,15 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-32178-->
 
-*  The validation logic associated with the **Date of Birth** field of the Customer Registration form no longer triggers a Javascript error.	
+*  The validation logic associated with the **Date of Birth** field of the Customer Registration form no longer triggers a JavaScript error.
 
 <!--- MC-32151-->
 
-*  The Admin view of a customer cart now displays all the products that were added to the cart from multiple websites in a multi-website deployment. Previously, when a customer added a product to their cart from a non-default website, the product was not displayed in the Admin even when **Share customer account** is set to **Global**.
+*  The Admin view of a customer cart now displays all the products that were added to the cart from multiple websites in a multi-website deployment. Previously, when a customer added a product to their cart from a non-default website, the product was not displayed in the Admin even when **Share customer account** was set to **Global**.
 
 <!--- MC-32122-->
 
-*  The **Invalid Form Key. Please refresh the page** text string on the login page is now translated as expected.	
+*  The **Invalid Form Key. Please refresh the page** text string on the login page is now translated as expected.
 
 <!--- MC-32121-->
 
@@ -261,7 +257,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-31575-->
 
-*  The `PHPSessionId` is now changed as expected after a customer logs out and then logs back in.	
+*  The `PHPSessionId` is now changed as expected after a customer logs out and then logs back in.
 
 <!--- MC-18593-->
 
@@ -281,7 +277,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-34259-->
 
-*  Clicking on a downloadable’s product **Sample** button from the Admin product page now downloads a sample as expected. Previously, when you clicked **Sample**, Magento displayed this error: `The product that was requested doesn't exist. Verify the product and try again`.
+*  Clicking on a downloadable product's **Sample** button from the Admin product page now downloads a sample as expected. Previously, when you clicked **Sample**, Magento displayed this error: `The product that was requested doesn't exist. Verify the product and try again`.
 
 <!--- MC-32286-->
 
@@ -289,7 +285,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-31801-->
 
-*  Administrators with restricted permissions to Catalog can now create a downloadable product. Previously, administrators could not create a downloadable product, and Magento threw an error.
+*  Administrators with restricted permissions to Catalog can now create a downloadable product. Previously, these administrators could not create a downloadable product, and Magento threw an error.
 
 ### Email
 
@@ -309,7 +305,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-33007-->
 
-*  We’ve improved the performance of the `Magento\Framework\App\DeploymentConfig\Reader::load` function. Previously, when a request was made to Magento, this function was called repetitively, which resulted in `config.php` and `env.php config` files being loaded each time the method was called.
+*  We have improved the performance of the `Magento\Framework\App\DeploymentConfig\Reader::load` function. Previously, when a request was made to Magento, this function was called repetitively, which resulted in `config.php` and `env.php config` files being loaded each time the method was called.
 
 <!--- MC-32928-->
 
@@ -327,16 +323,15 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-33339-->
 
-*  MAP (minimum advertised price ) now working as expected for group products.
+*  MAP (minimum advertised price ) now works as expected for group products.
 
 <!--- MC-32374-->
 
-*  New CMS pages were not being added to a website’s store page hierarchy.
-
+*  New CMS pages are now added as expected to a website’s store page hierarchy.
 
 <!--- MC-19560-->
 
-*  Magento no longer throws an exception when a shopper tries to unset the persistence cookie after beginning checkout and then navigating to the storefront home page. Previously, when the shopper clicked the **Not you?** link on the home page, Magento threw this exception: The shipping address is missing. Set the address and try again. [GitHub-24218](https://github.com/magento/magento2/issues/24218)
+*  Magento no longer throws an exception when a shopper tries to unset the persistence cookie after beginning checkout and then navigating to the storefront home page. Previously, when the shopper clicked the **Not you?** link on the home page, Magento threw this exception: `The shipping address is missing. Set the address and try again`. [GitHub-24218](https://github.com/magento/magento2/issues/24218)
 
 <!--- MC-17438-->
 
@@ -366,11 +361,11 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35634-->
 
-*  When an imported product has `qty` set to 0 but `is_in_stock set` to 1 in the CSV file, the product is not listed on the category page, and the product details page identifies it as out-of-stock. Previously, products with these values were visible on the storefront after import.
+*  When an imported product has `qty` set to 0 but `is_in_stock set` to 1 in the CSV file, the product is not listed on the category page, and the product details page lists it as out-of-stock. Previously, products with these values were visible on the storefront after import.
 
 <!--- MC-35448-->
 
-*  The `error_report.csv` file now downloads with content and is available inside the `var/import_history/` directory as expected. Previously, this file wasn’t generated after import.
+*  The `error_report.csv` file now downloads with content and is available inside the `var/import_history/` directory as expected. Previously, this file was not generated after import.
 
 <!--- MC-35255-->
 
@@ -398,7 +393,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-22212-->
 
-*  Deadlocks no longer occur when the import process executes a bulk insert and the reindex process simultaneously executes a large insert from select. Previously, Magento displayed this error:` PDOException: SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock`. [GitHub-8933](https://github.com/magento/magento2/issues/8933)
+*  Deadlocks no longer occur when the import process executes a bulk insert and the re-index process simultaneously executes a large insert from select. Previously, Magento displayed this error: `PDOException: SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock`. [GitHub-8933](https://github.com/magento/magento2/issues/8933)
 
 <!--- MC-35080-->
 
@@ -418,7 +413,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-34540-->
 
-*  Magento no longer throws an error when a user subscribes to a newsletter and reCAPTCHA for the newsletter is disabled for the website scope. Previously, when **Use invisible ReCaptcha in newsletter** was set to default (**yes**) in the default configuration scope but set to **no** in the Main Website scope, the storefront subscription attempt failed, and Magento displayed this error: `Incorrect ReCaptcha validation`.
+*  Magento no longer throws an error when a user subscribes to a newsletter and reCAPTCHA for the newsletter is disabled for the website scope. Previously, when **Use invisible ReCaptcha in newsletter** was set to the default (**yes**) in the default configuration scope but set to **no** in the Main Website scope, the storefront subscription attempt failed, and Magento displayed this error: `Incorrect ReCaptcha validation`.
 
 <!--- MC-31709-->
 
@@ -432,7 +427,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35132-->
 
-*  Magento now completes Payflow Pro payments successfully when the shopper’s name contains accented letters. Previously, payment did not complete, and Magento logged this error: `report.CRITICAL: String to be escaped was not valid UTF-8 or could not be converted: `.
+*  Magento now completes Payflow Pro payments successfully when the shopper’s name contains accented letters. Previously, payment did not complete, and Magento logged this error: `report.CRITICAL: String to be escaped was not valid UTF-8 or could not be converted:`.
 
 <!--- MC-34670-->
 
@@ -448,7 +443,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-31109-->
 
-*  You can now successfully use PayPal Express to pay for an order when persistent checkout cart has been enabled and the **Clear Persistence on Sign Out** setting is set to **no**. Previously, Magento redirected you to the Login page.
+*  You can now successfully use PayPal Express to pay for an order when persistent checkout cart is enabled and the **Clear Persistence on Sign Out** setting is set to **no**. Previously, Magento redirected you to the Login page.
 
 ### Performance
 
@@ -480,15 +475,15 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35730-->
 
-*  The New Shipment email generated by REST now contains the same shipping and customer information as shipments that are created manually from the Admin. Previously, this email didn’t contain the customer name, tracking information, products ordered, and other order information.
+*  The New Shipment email generated by REST now contains the same shipping and customer information as shipments that are created manually from the Admin. Previously, this email did not contain the customer name, tracking information, products ordered, and other order information.
 
 <!--- MC-35554-->
 
-*  Magento no longer assigns a status of `Complete` after invoicing to an order that requires zero payment.	
+*  Magento no longer assigns a status of `Complete` after invoicing to an order that requires zero payment.
 
 <!--- MC-35309-->
 
-*  Localised region names that are displayed on the storefront Order page are now correctly translated. Previously, the region name was not based on the specified locale unless it was edited in the Admin.
+*  Localized region names that are displayed on the storefront Order page are now correctly translated. Previously, the region name was not based on the specified locale unless it was edited in the Admin.
 
 <!--- MC-34787-->
 
@@ -504,11 +499,11 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-31780-->
 
-*  Adminstrators with restricted permissions that include view permission for credit memos, invoices, and shipments can now view invoices and shipments from the Orders page as expected. Previously, when a restricted administrator tried to view an order, Magento displayed this error: Something went wrong with processing the default view and we have restored the filter to its original state.
+*  Administrators with restricted permissions that include view permission for credit memos, invoices, and shipments can now view invoices and shipments from the Orders page as expected. Previously, when a restricted administrator tried to view an order, Magento displayed this error: `Something went wrong with processing the default view and we have restored the filter to its original state`.
 
 <!--- MC-19751-->
 
-*  Magento no longer displays an error when a customer adds a quantity of a product to their cart that exceeds half of the existing product stock but does not exceed the total stock. Previously, under these circumstances, Magento displayed this error: `The requested qty is not available`. [Githib-24365](https://github.com/magento/magento2/issues/24365)
+*  Magento no longer displays an error when a customer adds a quantity of a product to their cart that exceeds half of the existing product stock but does not exceed the total stock. Previously, under these circumstances, Magento displayed this error: `The requested qty is not available`. [GitHub-24365](https://github.com/magento/magento2/issues/24365)
 
 ### Sales Rule
 
@@ -518,7 +513,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-34733-->
 
-*  Coupon discount is now calculated correctly while adding the bundle product to the cart after the coupon was applied. Previously, it was incorrectly calculated.
+*  Coupon discounts are now calculated correctly when you add a bundle product to the cart after the coupon was applied. Previously, it was incorrectly calculated.
 
 <!--- MC-34621-->
 
@@ -540,7 +535,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-33868-->
 
-*  Elasticsearch results now include the correct values for each storeview’s attribute options. If a Dropdown or Multiple Select attribute has a different option value in the non-default store view than in the default storeview, Elasticsearch now indexes that value or returns the product with that value in the results. Previously, Elasticsearch didn’t index that value or return the product with that value in the results.
+*  Elasticsearch results now include the correct values for each store view’s attribute options. If a Dropdown or Multiple Select attribute has a different option value in the non-default store view than in the default store view, Elasticsearch now indexes that value or returns the product with that value in the results. Previously, Elasticsearch did not index that value or return the product with that value in the results.
 
 <!--- MC-32420-->
 
@@ -548,7 +543,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35409-->
 
-*  The performance of catalog search has improved. Disabling ** Enable Search Suggestions**  (**Stores**  >  **Configuration**  >  **Catalog** >  **Catalog Search**) works as expected. Previously, Magento queried the MySQL search_query table instead of Elasticsearch for autocomplete search suggestions. [GitHub-25534](https://github.com/magento/magento2/issues/25534)
+*  The performance of catalog search has improved. Disabling **Enable Search Suggestions**  (**Stores**  >  **Configuration**  >  **Catalog** >  **Catalog Search**) works as expected. Previously, Magento queried the MySQL search_query table instead of Elasticsearch for autocomplete search suggestions. [GitHub-25534](https://github.com/magento/magento2/issues/25534)
 
 ### Sitemap
 
@@ -584,7 +579,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-34965-->
 
-*  Loading of product details pages has been optimized. We’ve added indices for database tables that optimize target rule conditions queries for many cases.
+*  Loading of product details pages has been optimized. We have added indices for database tables that optimize target rule conditions queries for many cases.
 
 ### Theme
 
@@ -616,7 +611,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-32810-->
 
-*  Magento no longer changes a product’s URL in all stores when a merchant changes a product URL for one store in a multisite deployment. Previously, if a merchant changed a URL key for one store view, Magento changed the URL for all stores.
+*  Magento no longer changes a product’s URL in all stores when a merchant changes a product URL for one store in a multi-site deployment. Previously, if a merchant changed a URL key for one store view, Magento changed the URL for all stores.
 
 ### Visual Merchandiser
 
@@ -632,7 +627,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-34654-->
 
-*  The `default_sort_by` attribute now takes `String` instead of `String[]`. 
+*  The `default_sort_by` attribute now takes `String` instead of `String[]`.
 
 <!--- MC-33529-->
 
