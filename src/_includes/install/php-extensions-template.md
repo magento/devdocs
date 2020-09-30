@@ -10,8 +10,4 @@
 
 *  ext-sockets
 
-{% else %}
-
-{:.bs-callout-warning}
-If you install Magento by cloning from the [GitHub](https://github.com/magento/magento2) repository, you must have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) installed on your instance.
 {% endunless %}
