@@ -557,8 +557,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 ### cron
 
-<!--- ENGCOM-7863--> _Fix submitted by Anton Evers in pull request [28930](https://github.com/magento/magento2/pull/28930)_. [GitHub-29240](https://github.com/magento/magento2/issues/29240)
-
 <!--- MC-35884-->
 
 *  Message queue consumer configuration has been extended with new parameters that help control consumers and save server resources and that potentially decrease consumer queue CPU consumption by 20%:
@@ -596,8 +594,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 <!--- MC-33679-->
 
 *  The region names in Admin customer addresses are now translated as expected.
-
-<!--- ENGCOM-7793--> _Fix submitted by Konstantin in pull request [28902](https://github.com/magento/magento2/pull/28902)_. [GitHub-29327](https://github.com/magento/magento2/issues/29327)
 
 <!--- MC-36226-->
 
@@ -780,8 +776,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 <!--- ENGCOM-7565-->
 
 *  The deprecated `addWarning` method has been replaced with the `addWarningMessage` method in the Magento core security module. _Fix submitted by kishorekumarkesavan in pull request [28264](https://github.com/magento/magento2/pull/28264)_. [GitHub-28308](https://github.com/magento/magento2/issues/28308)
-
-<!--- ENGCOM-7514--> _Fix submitted by Sathish Subramanian in pull request [28004](https://github.com/magento/magento2/pull/28004)_. [GitHub-27985](https://github.com/magento/magento2/issues/27985)
 
 <!--- ENGCOM-7588-->
 

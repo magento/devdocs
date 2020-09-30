@@ -477,8 +477,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 ### cron
 
-<!--- ENGCOM-7863--> _Fix submitted by Anton Evers in pull request [28930](https://github.com/magento/magento2/pull/28930)_. [GitHub-29240](https://github.com/magento/magento2/issues/29240)
-
 <!--- MC-35884-->
 
 *  Message queue consumer configuration has been extended with new parameters that help control consumers and save server resources and that potentially decrease consumer queue CPU consumption by 20%:
@@ -502,8 +500,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 <!--- MC-33679-->
 
 *  The region names in Admin customer addresses are now translated as expected.
-
-<!--- ENGCOM-7793--> _Fix submitted by Konstantin in pull request [28902](https://github.com/magento/magento2/pull/28902)_. [GitHub-29327](https://github.com/magento/magento2/issues/29327)
 
 <!--- MC-36226-->
 
@@ -670,8 +666,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 <!--- ENGCOM-7565-->
 
 *  The deprecated `addWarning` method has been replaced with the `addWarningMessage` method in the Magento core security module. _Fix submitted by kishorekumarkesavan in pull request [28264](https://github.com/magento/magento2/pull/28264)_. [GitHub-28308](https://github.com/magento/magento2/issues/28308)
-
-<!--- ENGCOM-7514--> _Fix submitted by Sathish Subramanian in pull request [28004](https://github.com/magento/magento2/pull/28004)_. [GitHub-27985](https://github.com/magento/magento2/issues/27985)
 
 <!--- ENGCOM-7588-->
 
@@ -1098,6 +1092,24 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 
 *  Themes that are added in User Agent Rules are now affected as expected when you run `bin/magento catalog:images:resize`. Previously, only themes that were assigned to stores were affected when `bin/magento catalog:images:resize` was run.
 
+### Translation and locales
+
+<!--- MC-20372-->
+
+*  Magento no longer throws an error when an administrator changes the **Date** field during Admin product creation or save when the Admin locale is Chinese or Japanese. [GitHub-24696](https://github.com/magento/magento2/issues/24696)
+
+<!--- ENGCOM-7536-->
+
+*  Bulgarian regions have been added to the `directory_country_region` table. _Fix submitted by Nikola Lardev in pull request [27957](https://github.com/magento/magento2/pull/27957)_. [GitHub-28215](https://github.com/magento/magento2/issues/28215)
+
+<!--- ENGCOM-7535-->
+
+*  The titles and buttons on the Admin **Customers**  >  **Add New Address** and **Edit Product**  >  **Advanced Inventory** modals can now be translated. _Fix submitted by Sathish Subramanian in pull request [28174](https://github.com/magento/magento2/pull/28174)_. [GitHub-28201](https://github.com/magento/magento2/issues/28201)
+
+<!--- ENGCOM-7521-->
+
+*  The term FPT can now be translated on Admin  **Stores**  > **Configuration**  > **Sales**  > **Tax**  > **Fixed Product Taxes**. _Fix submitted by Vadim Malesh in pull request [28108](https://github.com/magento/magento2/pull/28108)_. [GitHub-5477](https://github.com/magento/magento2/issues/5477)
+
 ### UI
 
 <!--- MC-36260-->
@@ -1183,24 +1195,6 @@ _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/mag
 <!--- ENGCOM-8015-->
 
 *  Magento now removes tags for Adobe Stock images after a merchant deletes the tags and saves the image details. Previously, tags were not deleted until the page was refreshed.  _Fix submitted by Honeymay Louiese Ignacio in pull request [29400](https://github.com/magento/magento2/pull/29400)_. [GitHub-1703](https://github.com/magento/adobe-stock-integration/issues/1703)
-
-### Translation and locales
-
-<!--- MC-20372-->
-
-*  Magento no longer throws an error when an administrator changes the **Date** field during Admin product creation or save when the Admin locale is Chinese or Japanese. [GitHub-24696](https://github.com/magento/magento2/issues/24696)
-
-<!--- ENGCOM-7536-->
-
-*  Bulgarian regions have been added to the `directory_country_region` table. _Fix submitted by Nikola Lardev in pull request [27957](https://github.com/magento/magento2/pull/27957)_. [GitHub-28215](https://github.com/magento/magento2/issues/28215)
-
-<!--- ENGCOM-7535-->
-
-*  The titles and buttons on the Admin **Customers**  >  **Add New Address** and **Edit Product**  >  **Advanced Inventory** modals can now be translated. _Fix submitted by Sathish Subramanian in pull request [28174](https://github.com/magento/magento2/pull/28174)_. [GitHub-28201](https://github.com/magento/magento2/issues/28201)
-
-<!--- ENGCOM-7521-->
-
-*  The term FPT can now be translated on Admin  **Stores**  > **Configuration**  > **Sales**  > **Tax**  > **Fixed Product Taxes**. _Fix submitted by Vadim Malesh in pull request [28108](https://github.com/magento/magento2/pull/28108)_. [GitHub-5477](https://github.com/magento/magento2/issues/5477)
 
 ### URL rewrites
 
