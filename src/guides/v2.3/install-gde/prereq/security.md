@@ -57,11 +57,10 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
    getenforce
    ```
 
-  `Enforcing` displays to confirm that SELinux is running.
+   `Enforcing` displays to confirm that SELinux is running.
 
-    * CentOS: `setsebool -P httpd_can_network_connect=1`
-
-    * Ubuntu: `setsebool -P apache2_can_network_connect=1`
+   *  CentOS: `setsebool -P httpd_can_network_connect=1`
+   *  Ubuntu: `setsebool -P apache2_can_network_connect=1`
 
 ## Opening Ports In Your Firewall {#install-iptables}
 

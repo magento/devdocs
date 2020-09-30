@@ -15,9 +15,6 @@ Two-Factor Authentication gives you the ability to:
 
 At this time, Two-Factor Authentication can be installed only from the command line.
 
-{:.bs-callout-info}
-**Magento Community Contribution** - Magento thanks [Riccardo Tempesta](https://twitter.com/rictempesta) of [MageSpecialist](https://partners.magento.com/portal/details/partner/index/id/129/) for contributing these features as part of the Magento Community Engineering program.
-
 ## Install 2FA
 
 The 2FA extension installs when you install or upgrade to Magento Open Source or Commerce 2.3.X. This extensions installs like a Core Bundled Extension (CBE).

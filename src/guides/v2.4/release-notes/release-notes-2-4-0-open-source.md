@@ -5,7 +5,11 @@ title: Magento Open Source 2.4.0 Release Notes
 
 Magento Open Source 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default.
 
-**With this release, the Authorize.Net and Braintree payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace**.
+**With this release, the Authorize.Net method integration has been removed from core code. Merchants should migrate to the official extension that is available on the Magento Marketplace**.
+
+{:.bs-callout-info}
+
+**Braintree payment integration**: Prior to Magento 2.4.0, it was recommended that merchants install and configure the official Braintree payment integration extension from the Magento Marketplace to replace the core integration. With this release (Magento 2.4.0), the extension is now included in the Magento release. Merchants must follow additional steps to ensure that Braintree works properly in a Magento 2.4.0 deployment. See [Braintree](https://docs.magento.com/user-guide/payment/braintree.html) for more information on how to migrate to Magento 2.4.0.
 
 This release includes all the improvements to core quality that were included in Magento 2.3.5-p1, over 100 new fixes to core code, and 30 security enhancements. It includes the resolution of 226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
@@ -47,7 +51,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 *  **Implementation of 2FA for Admin accounts, Magento.com user accounts, and Cloud SSH access**
 
-   *  **Securing your Magento Admin account**. Two-factor authentication (2FA) is now required for the Magento Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default and cannot be disabled. This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
+   *  **Securing your Magento Admin account**. Two-factor authentication (2FA) is now required for the Magento Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default. We strongly recommend against disabling the 2FA module.  This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
 
    *  **Securing your Magento account**. Two-factor Authentication (2FA) provides an added, optional  layer of security to better protect your Magento.com account from unauthorized users who might want to use your account in ways you do not want. See [Securing Your Account](https://docs.magento.com/user-guide/magento/magento-account-secure.html).
 
@@ -87,6 +91,8 @@ The following platform upgrades help enhance website security and performance. S
 *  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace.
 
 *  The **core Braintree module has been removed from the code base**. The Braintree Payments module now provides the same feature set. See [Braintree Payments](https://marketplace.magento.com/paypal-module-braintree.html).
+
+*  The Internet Explorer 11.x browser is no longer supported.
 
 ### Infrastructure improvements
 
@@ -1201,6 +1207,9 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 *  Products that are saved in stores where the  `onthefly` indexer and flat tables are enabled now respect website assignments. Previously, if you removed all website assignments from a product and then saved it,  all flat tables included the product, despite the specified website assignments.  _Fix submitted by Abel Truong in pull request [27365](https://github.com/magento/magento2/pull/27365)_. [GitHub-16315](https://github.com/magento/magento2/issues/16315)
 
 ### Infrastructure
+
+*  The Internet Explorer 11.x browser is no longer supported.
+
 <!--- MC-32223-->
 
 *  The validation logic that is associated with the **Date of Birth** field of the Customer Registration form no longer triggers a JavaScript error.

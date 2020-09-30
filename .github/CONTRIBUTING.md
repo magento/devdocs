@@ -24,6 +24,8 @@ If you write and contribute a full topic, we will add your name (or your company
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the [DevDocs repository](https://github.com/magento/devdocs). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
 1. Review the [DevDocs guidelines](#contribution-guidelines).
 
+**Note:** If you use a fork instead of a branch, please set permissions to allow maintainers to edit and update the PR. See [Allowing changes to a pull request branch created from a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork) in the _GitHub documentation_.
+
 ## Contribute documentation
 
 The following diagram shows the contribution workflow:
@@ -149,6 +151,5 @@ Have a question? Need help? Magento DevDocs, Maintainers, and other Contributors
 
 -  [Slack](https://magentocommeng.slack.com/messages/CAN932A3H) ([Join us](http://tinyurl.com/engcom-slack))
 -  [Twitter @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
--  [E-mail](mailto:DL-Magento-Doc-Feedback@magento.com)
 
 Thank you for contributing your brilliance to Magento DevDocs!!

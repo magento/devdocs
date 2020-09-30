@@ -16,6 +16,7 @@ GEM
     algoliasearch (1.27.2)
       httpclient (~> 2.8, >= 2.8.3)
       json (>= 1.5.1)
+    chef-utils (16.4.41)
     colorator (1.1.0)
     concurrent-ruby (1.1.6)
     em-websocket (0.5.1)
@@ -96,7 +97,7 @@ GEM
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     json (2.3.0)
-    kramdown (2.2.1)
+    kramdown (2.3.0)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
@@ -106,16 +107,19 @@ GEM
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    mdl (0.7.0)
-      kramdown (~> 2.0)
-      kramdown-parser-gfm (~> 1.0)
+    mdl (0.11.0)
+      kramdown (~> 2.3)
+      kramdown-parser-gfm (~> 1.1)
       mixlib-cli (~> 2.1, >= 2.1.1)
       mixlib-config (>= 2.2.1, < 4)
+      mixlib-shellout
     mercenary (0.4.0)
     mini_portile2 (2.4.0)
-    mixlib-cli (2.1.6)
-    mixlib-config (3.0.6)
+    mixlib-cli (2.1.8)
+    mixlib-config (3.0.9)
       tomlrb
+    mixlib-shellout (3.1.4)
+      chef-utils
     multipart-post (2.1.1)
     netrc (0.11.0)
     nokogiri (1.10.9)
@@ -153,7 +157,7 @@ GEM
     unicode-display_width (1.7.0)
     verbal_expressions (0.1.5)
     wdm (0.1.1)
-    whatsup_github (0.3.0)
+    whatsup_github (0.3.1)
       netrc (~> 0.10)
       octokit (~> 4.14)
       thor (~> 0.20)
@@ -178,7 +182,7 @@ DEPENDENCIES
   jekyll-sitemap
   jekyll-titles-from-headings
   launchy
-  mdl (= 0.7.0)
+  mdl
   rake
   wdm
   whatsup_github

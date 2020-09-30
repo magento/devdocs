@@ -230,7 +230,7 @@ Blocks are created (declared) using the `<block>` instruction.
 Example: add a block with a product [SKU](https://glossary.magento.com/sku) information.
 
 ```xml
-<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
+<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Magento_Catalog::product/view/attribute.phtml" after="product.info.type">
   <arguments>
     <argument name="at_call" xsi:type="string">getSku</argument>
     <argument name="at_code" xsi:type="string">sku</argument>
@@ -238,6 +238,9 @@ Example: add a block with a product [SKU](https://glossary.magento.com/sku) info
   </arguments>
 </block>
 ```
+
+{:.bs-callout-info}
+Declare the `template` attribute with the name of the module it belongs to: `template="<VendorName>_<ModuleName>::path-to-template.phtml"`. Following this approach avoids failures with template rendering and makes it easier for the developer to find and navigate to the template file.
 
 ## Set body attributes {#layout_body_attributes}
 
@@ -456,7 +459,7 @@ Extending layout:
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
 -  [`<move>` instruction]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv): allows changing elements' order and parent.
--  [`before` and `after` attributes of `<block>`]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after): allows changing elements' order within one parent.
+-  [`before` and `after` attributes of `<block>`]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after): sets the order of elements within a parent.
 
 **Example of `<move>` usage:**
 put the stock availability and SKU blocks next to the product price on a product page.

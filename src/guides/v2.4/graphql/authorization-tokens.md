@@ -4,7 +4,7 @@ title: Authorization tokens
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_from:
-  - /guides/v2.3/graphql/get-customer-authorization-token.html
+  - /guides/v2.4/graphql/get-customer-authorization-token.html
 ---
 
 Magento provides separate token services for customers and administrators. When you request a token from one of these services, the service returns a unique access token in exchange for the username and password for a Magento account.
@@ -36,6 +36,12 @@ mutation {
    }
  }
 ```
+
+You can now use this token in the Authorization request header field for any queries and mutations.
+
+![GraphQL Authorization Bearer]({{site.baseurl}}/common/images/graphql/graphql-authorization.png)
+
+If necessary, you also can [revoke the customer's token]({{ page.baseurl }}/graphql/mutations/revoke-customer-token.html
 
 ## Admin tokens
 

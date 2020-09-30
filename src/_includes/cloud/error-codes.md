@@ -46,7 +46,7 @@ Critical errors indicate a problem with the Magento Commerce Cloud project confi
 | 104 |  | Failed to parse the `.magento.env.yaml` file | Configuration is not defined in the `./vendor/magento/ece-tools/config/schema.yaml` file. Check that the config variable name is correct, and that it is defined. |
 | 105 |  | Unable to read the `.magento.env.yaml` file | Unable to read the `./.magento.env.yaml` file. Check file permissions. |
 | 106 |  | Unable to read the `.schema.yaml` file |  |
-| 107 | pre-deploy: clean-redis-cache | Failed to clean the Redis cache | Failed to clean the Redis cache. Check that the Redis cache configuration is correct and that the Redis service is available. See [Setup Redis service](https://devdocs.magento.com/cloud/project/project-conf-files_services-redis.html). |
+| 107 | pre-deploy: clean-redis-cache | Failed to clean the Redis cache | Failed to clean the Redis cache. Check that the Redis cache configuration is correct and that the Redis service is available. See [Setup Redis service](https://devdocs.magento.com/cloud/project/services-redis.html). |
 | 108 | pre-deploy: set-production-mode | Command `/bin/magento maintenance:enable` failed | Check the `cloud.log` for more information. For more detailed command output, add the `VERBOSE_COMMANDS: '-vvv'` option to the `.magento.env.yaml` file. |
 | 109 | validate-config | Incorrect database configuration | Check that the the `DATABASE_CONFIGURATION` environment variable is configured correctly. |
 | 110 | validate-config | Incorrect session configuration | Check that the `SESSION_CONFIGURATION` environment variable is configured correctly. The configuration must contain at least the `save` parameter. |
@@ -147,6 +147,8 @@ Warning errors indicate a problem with the Magento Commerce Cloud project config
 | 2023 | install-update:split-db | Enabling a split database will be skipped. |  |
 | 2024 | install-update:split-db | The SPLIT_DB variable is missing the configuration for split connection types. |  |
 | 2025 | install-update:split-db | Slave connection not set. |  |
+| 2026 | pre-deploy:restore-writable-dirs | Failed to restore some data generated during the build phase to the mounted directories | Check the `cloud.log` for more information. |
+| 2027 | validate-config:mage-mode-variable | Mode value for MAGE_MODE environment variable not supported | Remove the MAGE_MODE environment variable, or change its value to "production". Magento Cloud supports "production" mode only. |
 
 ### Post-deploy stage
 
@@ -156,6 +158,7 @@ Warning errors indicate a problem with the Magento Commerce Cloud project config
 | 3001 | validate-config | Debug logging is enabled in Magento | To save disk space, do not enable debug logging for your production environments. |
 | 3002 | warm-up | Can not fetch store urls |  |
 | 3003 | warm-up | Can not fetch store url |  |
+| 3004 | backup | Cannot create backup files |  |
 
 ### General
 

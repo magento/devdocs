@@ -102,10 +102,10 @@ To update the `.magento.app.yaml` file:
 
 ### Verify Zend Framework composer dependencies
 
-When upgrading to 2.3.x or later from 2.2.x, verify that the Zend Framework dependencies in the `autoload` property of the `composer.json` file have been updated with the Laminas plugin. This plugin supports new requirements for the Zend Framework, which has migrated to the Laminas project. See [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) on the _Magento DevBlog_.
+When upgrading to **2.3.x or later from 2.2.x**, verify that the Zend Framework dependencies have been added to the `autoload` property of the `composer.json` file to support Laminas. This plugin supports new requirements for the Zend Framework, which has migrated to the Laminas project. See [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) on the _Magento DevBlog_.
 
 {:.procedure}
-To check and update Zend Framework dependencies:
+To check the `auto-load:psr-4` configuration:
 
 1. On your local workstation, change to the Cloud project root directory.
 
@@ -113,25 +113,25 @@ To check and update Zend Framework dependencies:
 
 1. Open the `composer.json` file in a text editor.
 
-1. Check the `autoload:psr-4` section for the Laminas plugin:
+1. Check the `autoload:psr-4` section for the Zend plugin manager implementation for controllers dependency::
 
    ```diff
     "autoload": {
-      "psr-4": {
-         "Magento\\Framework\\": "lib/internal/Magento/Framework/",
-         "Magento\\Setup\\": "setup/src/Magento/Setup/",
-         "Magento\\": "app/code/Magento/",
-   +     "Laminas\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
-      },
+       "psr-4": {
+          "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+          "Magento\\Setup\\": "setup/src/Magento/Setup/",
+          "Magento\\": "app/code/Magento/",
+          "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/",
+       },
    ```
    {:.no-copy}
 
-1. If the Laminas plugin is missing, update `composer.json`:
+1. If the Zend dependency is missing, update `composer.json`:
 
    -  Add the following line to the `autoload:psr-4` section.
 
       ```json
-      "Laminas\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
+      "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
       ```
 
    -  Update the project dependencies.
@@ -147,7 +147,7 @@ To check and update Zend Framework dependencies:
       ```
 
       ```bash
-      git commit -m "Add Laminas plugin to Zend Framework composer dependencies"
+      git commit -m "Add Zend plugin manager implementation for controllers dependency for Laminas support"
       ```
 
       ```bash
@@ -300,12 +300,12 @@ To resolve the error:
    ```
 
 <!--Link definitions-->
-[.magento.app.yaml]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html
+[.magento.app.yaml]: {{site.baseurl}}/cloud/project/magento-app.html
 [Configuration Management]: {{site.baseurl}}/cloud/live/sens-data-over.html
 [Examine the logs]: {{site.baseurl}}/cloud/project/log-locations.html
-[extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options
+[extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/magento-app.html#configure-php-options
 [Fastly CDN module for Magento 2]: {{site.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
 [Migration of Zend Framework to the Laminas Project]: https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251
 [Upgrades and patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
-[version compatibility matrix]: {{site.baseurl}}/cloud/project/project-conf-files_services.html#service-versions
+[version compatibility matrix]: {{site.baseurl}}/cloud/project/services.html#service-versions
 [version constraint syntax]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage

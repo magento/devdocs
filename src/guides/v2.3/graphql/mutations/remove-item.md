@@ -9,7 +9,15 @@ The `removeItemFromCart` mutation deletes the entire quantity of a specified ite
 
 ## Syntax
 
-`mutation: {removeItemFromCart(input: RemoveItemFromCartInput): {RemoveItemFromCartOutput}}`
+```graphql
+mutation {
+  removeItemFromCart(
+    input: RemoveItemFromCartInput
+  ) {
+    RemoveItemFromCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -24,24 +32,23 @@ mutation {
       cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
       cart_item_id: 14
     }
-  )
- {
-  cart {
-    items {
-      id
-      product {
-        name
+  ) {
+    cart {
+      items {
+        id
+        product {
+          name
+        }
+        quantity
       }
-      quantity
-    }
-    prices {
-      grand_total{
-        value
-        currency
+      prices {
+        grand_total {
+          value
+          currency
+        }
       }
     }
   }
- }
 }
 ```
 

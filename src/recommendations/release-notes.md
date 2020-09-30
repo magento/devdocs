@@ -8,11 +8,20 @@ The release notes contain updates to the following Product Recommendations modul
 
 -  Product Recommendations metapackage: `magento/product-recommendations`
 -  Page Builder support in Product Recommendations (optional) module: `magento/module-page-builder-product-recommendations`
+-  **(Beta)** Visual similarity recommendation type support for Product Recommendations (optional) module: `magento/module-visual-product-recommendations`
 
 The release notes include:
 
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
+
+## 3.0.6 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.new}**(Beta)** Includes support for new [Visual similarity recommendation type](https://docs-beta.magento.com/user-guide/marketing/prex-type-visualsim.html)
+
+## 1.0.0 of magento/module-visual-product-recommendations for Magento Commerce 2.4.0
+
+-  {:.new}**(Beta)** [Visual similarity](https://docs-beta.magento.com/user-guide/marketing/prex-type-visualsim.html). With the _Visual similarity_ recommendation type, you can deploy a recommendation unit to your product detail page that displays products that are visually similar to the product being viewed.
 
 ## 3.0.5 of magento/product-recommendations for Magento Commerce 2.4.0
 

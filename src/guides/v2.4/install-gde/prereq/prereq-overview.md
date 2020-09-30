@@ -63,23 +63,9 @@ To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/a
 
 ### PHP
 
-Magento 2.4 supports PHP 7.3, but we recommend using PHP 7.4.
+{% include install/php-versions-2.4.md %}
 
-```bash
-php -v
-```
-
-{% include install/php-versions-template.md %}
-
-You must run [PHP](https://glossary.magento.com/php) version 7.3 or 7.4:
-
-```terminal
-PHP 7.3.0 (cli) (built: Aug 14 2019 16:42:46) ( NTS )
-Copyright (c) 1997-2017 The PHP Group
-Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2018, by Zend Technologies
-```
-
-See [PHP][] for info on PHP requirements.
+See [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html) for info on PHP requirements.
 
 ### MySQL
 
@@ -93,7 +79,7 @@ For example:
 mysql -u magento -p
 ```
 
-You must run MySQL version 5.7.9 or later as the following result indicates:
+Check you have the correct version of MySQL for the version of Magento you are installing, [Check Here For Supported Versions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#database). The following result indicates the version you are running.
 
 ```terminal
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -148,13 +134,3 @@ curl -XGET 'localhost:9200'
 Next step
 
 [Choose how to install the Magento software]({{page.baseurl}}/install-gde/bk-install-guide.html)
-
-{:.ref-header}
-Related topics
-
-*  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-*  [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
-*  [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
-*  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
-*  [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
-*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

@@ -95,6 +95,21 @@ The following list consists of questions you can ask to help determine the prope
 
 The number of 'Yes' answers should help you to determine the severity.
 
+### Pull request risk assessment:
+
+The 'Risk:' label highlights the risk that the suggested changes may bring to the platform.
+It helps maintainers decide:
+
+-  to which version the pull requests should be delivered
+-  which reviewers should see it
+-  whether a request should be approved or not
+
+| Risk | Description |
+| ------------- | ------------- |
+| High | A pull request that makes changes on the framework or changes that will affect multiple areas. |
+| Medium | A pull request that makes changes which may affect multiple areas or makes considerable changes on a specific area. |
+| Low | A pull request that will probably not affect other areas. |
+
 ## GitHub and Two-Factor authentication {#two-factor}
 
 Magento **requires all Partners** who contribute code to enable 2FA on their GitHub accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.
@@ -245,7 +260,7 @@ To optimize the pull request queue, enter a command with a series of related pul
 
 The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into the current pull request. For example: `@magento combine 1234 1238 1239`.
 
-**actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
+**Actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
 
 -  Current pull request allows changes from maintainers.
 -  All mentioned pull requests are open.
@@ -257,6 +272,43 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 -  [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers)
 -  Magento EngCom Team
+
+### Import source code to specific repository {#import}
+
+The import command provides the ability to copy a contributor's code or pull request into an internal fork.  The internal team can then proceed with additional fixes or delivery.
+
+**Command:** To import code or a pull request, a member of the Magento team controlling the pull request enters the following command:
+
+```text
+@magento import {code|pr} to {organizationName}/{repositoryName}
+```
+
+**Usage Examples:**
+
+-  To import the code only use
+
+```text
+@magento import code to magento-team/magento2
+@magento import code to https://github.com/magento-team/magento2
+```
+
+-  To import the pull request use
+
+```text
+@magento import pr to magento-team/magento2
+@magento import pull request to magento-team/magento2
+@magento import pr to https://github.com/magento-team/magento2
+@magento import pull request to https://github.com/magento-team/magento2
+```
+
+**Actions:**
+
+-  Code: A branch with a copy of the contributor's source code is created within the target repository.
+-  PR: A copy of the pull request is created within the target repository.
+
+**Permissions:**
+
+-  Magento team
 
 ## Report an issue {#report}
 

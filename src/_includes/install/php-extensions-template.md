@@ -1,5 +1,8 @@
-{% for item in platform-req %}
-  {% unless item[0] == 'php' %}
-* {{ item[0] }}
-  {% endunless %}
+{% assign product = packages | where_exp: 'package', "package.name contains 'magento/product-'" | first %}
+
+{% for item in product.require %}
+  {% if item[0] contains 'ext-' %}
+
+*  {{ item[0] }}
+  {% endif %}
 {% endfor %}

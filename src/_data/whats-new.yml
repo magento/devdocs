@@ -4,8 +4,273 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jul 27 11:43:37 2020
+updated: Mon Sep 14 12:24:21 2020
 entries:
+- description: Added the [Simple product data types](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/simple-product.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: September 11, 2020
+  link: https://github.com/magento/devdocs/pull/7805
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: Added the [Virtual product data types](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/virtual-product.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: September 11, 2020
+  link: https://github.com/magento/devdocs/pull/7806
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.4 Magento Quality Patch (MQP) package release.
+  versions: ''
+  type: Major Update
+  date: September 10, 2020
+  link: https://github.com/magento/devdocs/pull/7850
+  contributor: ilima-ebay
+  profile: https://github.com/ilima-ebay
+- description: Updated release notes for Magento Commerce on Cloud September package
+    release:<br/>- [Magento Cloud Components](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html)
+    version 1.0.7<br/>- [Magento Cloud Docker](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html)
+    version 1.1.2
+  versions: ''
+  type: Technical
+  date: September 9, 2020
+  link: https://github.com/magento/devdocs/pull/7840
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Added a Pull request risk assessment section to the [Contributing](https://devdocs.magento.com/contributor-guide/contributing.html)
+    topic.
+  versions: ''
+  type: Major Update
+  date: September 9, 2020
+  link: https://github.com/magento/devdocs/pull/7831
+  contributor: gabrieldagama
+  profile: https://github.com/gabrieldagama
+- description: Updated the examples in [Create an integration](https://devdocs.magento.com/guides/v2.4/get-started/create-integration.html)
+    to include the correct directory and to use proper casing in the examples.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: September 3, 2020
+  link: https://github.com/magento/devdocs/pull/7707
+  contributor: chandru-199
+  profile: https://github.com/chandru-199
+- description: Added a [workaround](https://devdocs.magento.com/guides/v2.4/performance-best-practices/configuration.html)
+    for a known performance issue when using MariaDB 10.4 on Magento 2.4.
+  versions: 2.4.x
+  type: Major Update
+  date: September 2, 2020
+  link: https://github.com/magento/devdocs/pull/7808
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Replaced Adobe-generated alert policies information with the new _Managed
+    alerts for Magento Commerce_ alert policy. Updated screen captures and instructions
+    for reviewing alert policies and adding notification channels. See [Monitor performance
+    with alert policies](https://devdocs.magento.com/cloud/project/new-relic.html#new-relic-apm).
+  versions: 2.x
+  type: Technical
+  date: September 2, 2020
+  link: https://github.com/magento/devdocs/pull/7789
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Updated the ElasticSearch version compatibility and software version
+    compatibility matrices to show ElasticSearch 7.7.x as the supported and recommended
+    version for Magento Commerce on the Cloud platform.
+  versions: 2.x
+  type: Technical
+  date: August 31, 2020
+  link: https://github.com/magento/devdocs/pull/7788
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Added missing documentation to _Options_ at the [CLI tools reference](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html).
+  versions: 2.x
+  type: Technical
+  date: August 28, 2020
+  link: https://github.com/magento/devdocs/pull/7785
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Added information about the Magento Quality Patches package in the
+    [Software Upgrade Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching.html)
+    and [Cloud Guide](https://devdocs.magento.com/cloud/project/project-patch.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 26, 2020
+  link: https://github.com/magento/devdocs/pull/7734
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Expanded the [Order processing with Inventory Management](https://devdocs.magento.com/guides/v2.4/rest/tutorials/inventory/index.html)
+    REST tutorial to include a new step that demonstrates the [in-store pickup](https://devdocs.magento.com/guides/v2.4/rest/tutorials/inventory/in-store-pickup.html)
+    feature.
+  versions: 2.4.0
+  type: New Topic
+  date: August 26, 2020
+  link: https://github.com/magento/devdocs/pull/7772
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: The new [Topics in Asynchronous API](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/message-queues/async-topics.html)
+    describes how Magento generates `communication.xml` data for asynchronous and
+    bulk APIs.
+  versions: 2.3.x
+  type: New Topic
+  date: August 24, 2020
+  link: https://github.com/magento/devdocs/pull/7639
+  contributor: nuzil
+  profile: https://github.com/nuzil
+- description: Added information about [how asynchronous APIs use the Magento Message Queue Framework](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/message-queues/async-message-queue-config-files.html).
+  versions: 2.3.x
+  type: New Topic
+  date: August 24, 2020
+  link: https://github.com/magento/devdocs/pull/7654
+  contributor: nuzil
+  profile: https://github.com/nuzil
+- description: Added another step to help users avoid problems during [upgrades](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 21, 2020
+  link: https://github.com/magento/devdocs/pull/7771
+  contributor: fascinosum
+  profile: https://github.com/fascinosum
+- description: Added the new [Price Adjustments](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/price-adjustments.html)
+    topic to the Extension Developer Guide.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: August 21, 2020
+  link: https://github.com/magento/devdocs/pull/7756
+  contributor: goivvy
+  profile: https://github.com/goivvy
+- description: Updated [best practices](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/theme-best-practice.html)
+    for theme development.
+  versions: 2.3.x, 2.4.x
+  type: Major Update, Technical
+  date: August 19, 2020
+  link: https://github.com/magento/devdocs/pull/7738
+  contributor: kanhaiya5590
+  profile: https://github.com/kanhaiya5590
+- description: Added a new topic to the MFTF guide about [Interactive Pause](https://devdocs.magento.com/mftf/docs/interactive-pause.html).
+  versions: 2.x
+  type: New Topic
+  date: August 19, 2020
+  link: https://github.com/magento/devdocs/pull/7762
+  contributor: dobooth
+  profile: https://github.com/dobooth
+- description: Changed data sources and content structure for [Packages](https://devdocs.magento.com/guides/v2.4/release-notes/packages-open-source.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 17, 2020
+  link: https://github.com/magento/devdocs/pull/7740
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: The section "Extend configuration data" has been moved from the `storeConfig
+    query` to the [Extend an existing GraphQL schema](https://devdocs.magento.com/guides/v2.3/graphql/develop/extend-existing-schema.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 11, 2020
+  link: https://github.com/magento/devdocs/pull/7719
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Updated the [Marketplace EQP API](https://devdocs.magento.com/marketplace/eqp/v1/api.html)
+    documentation as part of the roll-out of the sandbox environment. Other enhancements
+    include a new page on how to self-serve API access keys, and a general reorganization
+    of several topics.
+  versions: ''
+  type: New Topic
+  date: August 7, 2020
+  link: https://github.com/magento/devdocs/pull/7640
+  contributor: mikeweis
+  profile: https://github.com/mikeweis
+- description: Added PrivateLink limitation on establishing HTTPS connections to Magento.
+    See  [PrivateLink limitations](https://devdocs.magento.com/cloud/project/privatelink-service.html#limitations)
+    topic in the _Cloud Guide_ .
+  versions: 2.x
+  type: Technical
+  date: August 7, 2020
+  link: https://github.com/magento/devdocs/pull/7694
+  contributor: ttunga
+  profile: https://github.com/ttunga
+- description: Published release notes and documentation updates for the June 2020
+    Magento Cloud packages release:<br/>- [ece-tools package 2002.1.2](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v200211)<br/>-
+    [Magento Cloud Patches 1.0.6](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v106)<br/>-
+    [Magento Cloud Docker 1.1.1](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v111)<br/>-
+    [Magento Cloud Components 1.0.6](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html#v106)
+  versions: 2.x
+  type: Major Update
+  date: August 5, 2020
+  link: https://github.com/magento/devdocs/pull/7669
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Updated the list of MSI modules that must be disabled to use Connector and OMS together in the [Install Inventory Management topic](https://devdocs.magento.com/extensions/inventory-management/).
+  versions: 2.4.x
+  type: Major Update
+  date: July 30, 2020
+  link: https://github.com/magento/devdocs/pull/7611
+  contributor: shrielenee
+  profile: https://github.com/shrielenee
+- description: Updated [reference documentation](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html)
+    covering backward incompatible changes for 2.3.0-2.4.0 versions delta.
+  versions: ''
+  type: Major Update
+  date: July 29, 2020
+  link: https://github.com/magento/devdocs/pull/7607
+  contributor: devops-devdocs
+  profile: https://github.com/devops-devdocs
+- description: Added the GA version of the Magento 2.4.0 Release Notes. See [Magento
+    Commerce 2.4.0 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/release-notes-2-4-0-commerce.html)<br/>and
+    [Magento Open Source 2.4.0 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/release-notes-2-4-0-open-source.html)
+  versions: 2.4.0
+  type: Major Update
+  date: July 28, 2020
+  link: https://github.com/magento/devdocs/pull/7585
+  contributor: jfrontain
+  profile: https://github.com/jfrontain
+- description: Added documentation for aggregated logs and the New Relic Logs service
+    for Pro Production and Staging environments.  See [New Relic services](https://devdocs.magento.com/cloud/project/new-relic.html).
+  versions: 2.x
+  type: Major Update
+  date: July 28, 2020
+  link: https://github.com/magento/devdocs/pull/7604
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Updated information about [packages](https://devdocs.magento.com/guides/v2.4/release-notes/packages-open-source.html)
+    and [PHP settings](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/php-settings.html).
+  versions: 2.4.0
+  type: Major Update
+  date: July 28, 2020
+  link: https://github.com/magento/devdocs/pull/7608
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Updated `bin/magento` commands reference at [Magento OpenSource](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html)
+    and [Magento Commerce](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-commerce.html).
+  versions: 2.4.0
+  type: Major Update
+  date: July 28, 2020
+  link: https://github.com/magento/devdocs/pull/7612
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Added Module Reference Guide topics at the [2.4 version](https://devdocs.magento.com/guides/v2.4/mrg/intro.html).
+  versions: 2.4.0
+  type: Major Update
+  date: July 28, 2020
+  link: https://github.com/magento/devdocs/pull/7610
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Added a known issue about the `inventory_cleanup_reservations` cron
+    job not working properly in the [Inventory 1.2.0 release notes](https://devdocs.magento.com/guides/v2.4/inventory/release-notes.html).
+  versions: 2.4.0
+  type: Technical
+  date: July 27, 2020
+  link: https://github.com/magento/devdocs/pull/7596
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Standardized [release terminology](https://devdocs.magento.com/release/policy/)
+    related to patch releases, hotfixes, invdividual fixes, and custom patches.
+  versions: 2.4.0
+  type: Major Update
+  date: July 27, 2020
+  link: https://github.com/magento/devdocs/pull/7602
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
 - description: Added a known issue about the `inventory_cleanup_reservations` cron
     job not working properly in the [Inventory 1.2.0 release notes](https://devdocs.magento.com/guides/v2.4/inventory/release-notes.html).
   versions: 2.4.0
@@ -551,12 +816,6 @@ entries:
   type: Major Update
   date: April 29, 2020
   link: https://github.com/magento/devdocs/pull/7119
-- description: Updated [MFTF functional test reference](https://devdocs.magento.com/guides/v2.3/reference/mftf/functional-tests.html)
-    and [MFTF action group reference](https://devdocs.magento.com/guides/v2.3/reference/mftf/action-groups.html).
-  versions: 2.3.5
-  type: Major Update
-  date: April 29, 2020
-  link: https://github.com/magento/devdocs/pull/7118
 - description: Published the release notes for [Magento Cloud Patches 1.0.3](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
   versions: 2.x
   type: Technical
@@ -614,7 +873,7 @@ entries:
   type: Major Update
   date: April 27, 2020
   link: https://github.com/magento/devdocs/pull/6967
-- description: Added an example of returning swatch information in a products query to [Configurable product data types](https://devdocs.magento.com/guides/v2.3/graphql/product/configurable-product.html) in the _GraphQL Developer Guide_.
+- description: Added an example of returning swatch information in a products query to [Configurable product data types](https://devdocs.magento.com/guides/v2.3/graphql/interfaces/configurable-product.html) in the _GraphQL Developer Guide_.
   versions: 2.3.5
   type: Major Update
   date: April 27, 2020
@@ -1008,7 +1267,7 @@ entries:
   type: New topic
   date: February 13, 2020
   link: https://github.com/magento/devdocs/pull/6626
-- description: Updated the [scenario-based deployment examples in the hooks](https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html#hooks)
+- description: Updated the [scenario-based deployment examples in the hooks](https://devdocs.magento.com/cloud/project/magento-app-properties.html#hooks)
     configuration for the Cloud guide.
   versions: 2.x
   type: Technical changes
@@ -1227,7 +1486,7 @@ entries:
   type: Technical changes
   date: January 28, 2020
   link: https://github.com/magento/devdocs/pull/5448
-- description: Updated the [ProductInterface](https://devdocs.magento.com/guides/v2.3/graphql/product/product-interface.html)
+- description: Updated the [ProductInterface](https://devdocs.magento.com/guides/v2.3/graphql/interfaces/product-interface.html)
     documentation in the _GraphQL Developer Guide_ to include new data types and attributes
     that support tier pricing and price ranges in composite products.
   versions: 2.3.4
@@ -1378,7 +1637,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/6130
 - description: Added the following sections to the _Cloud Guide_ with information
     about using Adobe-generated alert policies:<br/>- [New Relic > Monitor performance
-    with New Relic alert policies](https://devdocs.magento.com/cloud/project/new-relic.html#monitor-performance-with-alert-policies)<br/>-
+    with New Relic alert policies](https://devdocs.magento.com/cloud/project/new-relic.html#monitor-performance-with-managed-alerts)<br/>-
     [Monitor performance](https://devdocs.magento.com/cloud/project/monitor-performance.html)
   versions: 2.x
   type: Major update
@@ -1588,7 +1847,7 @@ entries:
   type: Major update
   date: October 18, 2019
   link: https://github.com/magento/devdocs/pull/5800
-- description: Moved the `CategoryInterface` attributes to a separate [topic](https://devdocs.magento.com/guides/v2.3/graphql/product/category-interface.html)
+- description: Moved the `CategoryInterface` attributes to a separate [topic](https://devdocs.magento.com/guides/v2.3/graphql/interfaces/category-interface.html)
     in the _GraphQL Developer Guide_.
   versions: 2.3.x
   type: New topic
@@ -3048,8 +3307,8 @@ entries:
   type: Technical changes
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3882
-- description: Added query and mutation to the [configurable]( https://devdocs.magento.com/guides/v2.3/graphql/product/configurable-product.html)
-    and [downloadable product](https://devdocs.magento.com/guides/v2.3/graphql/product/downloadable-product.html)
+- description: Added query and mutation to the [configurable]( https://devdocs.magento.com/guides/v2.3/graphql/interfaces/configurable-product.html)
+    and [downloadable product](https://devdocs.magento.com/guides/v2.3/graphql/interfaces/downloadable-product.html)
     endpoints
   versions: 2.3.1
   type: Major update
@@ -3077,7 +3336,7 @@ entries:
   type: New topic
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3855
-- description: Added an example to [CustomizableOptionInterface](https://devdocs.magento.com/guides/v2.3/graphql/product/customizable-option-interface.html)
+- description: Added an example to [CustomizableOptionInterface](https://devdocs.magento.com/guides/v2.3/graphql/interfaces/customizable-option-interface.html)
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
