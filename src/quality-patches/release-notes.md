@@ -19,6 +19,20 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.0.6
+
+-  **MDVA-28993** _(for Magento `>=2.3.4 <2.4.0`)_—Implements the "Minimum should match" functionality and partial search for Elasticsearch engine. Solves issues with hyphens in search queries.
+-  **MDVA-30102** _(for Magento `>=2.3.2 <=2.4.0`)_—Fixes the issue where Redis cache grows up quickly since layout caches don't have TTL.
+-  **MDVA-30599** _(for Magento `>=2.3.4 <=2.4.0`)_—Fixes the issue where guest quotes created using API are incorrectly marked as quotes for logged in customers.
+-  **MDVA-29446** _(for Magento `>=2.3.3 <=2.4.0`)_—Fixes the issue where the price of not applicable shipping method is shown as zero during checkout.
+-  **MDVA-30357** _(for Magento `>=2.3.2 <=2.4.0`)_—Fixes the issue with wrong image URLs are created when generating a sitemap by cron.
+-  **MDVA-30565** _(for Magento `>=2.3.2 <=2.3.3-p1`)_—Fixes the issue where "No such entity with cartid = 0" error is displayed for guest customer on storefront checkout if persistent shopping cart is enabled.
+-  **MDVA-29787** _(for Magento `>=2.3.0 <=2.4.0`)_—Fixes the issue where target rule for related products does not work when 'is one of' condition is used to define products to be displayed.
+-  **MDVA-30977** _(for Magento `>=2.3.4 <=2.3.5-p2`)_—Fixes the issue with random products missing from categories after reindex.
+-  **MDVA-28202** _(for Magento `>=2.3.4 <=2.4.2`)_—Fixes the issue where Layered Navigation doesn't filter configurable products correctly when MSI is used.
+-  **MDVA-28300** _(for Magento `>=2.3.0 <2.3.6`)_—Fixes the issue where GQL request doesn't reflect the price changes from catalog price rules.
+-  **MDVA-31006** _(for Magento `>=2.3.2 <=2.4.2`)_—Fixes the issue where duplicated orders appear after placing an order using Paypal Express payment.
+
 ## v1.0.5
 
 -  **MDVA-30841** _(for Magento `>=2.3.4 <2.3.6 || 2.4.0`)_—Fixes the issue with layered navigation, where the 'No' value for boolean type product attributes was not included in layered navigation if Elasticsearch was used as a search engine.
