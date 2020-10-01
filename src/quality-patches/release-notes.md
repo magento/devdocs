@@ -46,7 +46,7 @@ See [Patches available in MQP tool](https://support.magento.com/hc/en-us/section
 -  **MDVA-30284** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where Catalog Search indexer fails due to the following Elasticsearch error: limit of total fields in index has been exceeded.
 -  **MDVA-29042** _(for Magento `>=2.3.3 <=2.3.4-p2` with B2B extension)_—Fixes the issue where Catalog permissions were changed to Allow automatically after new product was added to the shared catalog.
 -  **MDVA-30428** _(for Magento `>=2.3.3 <2.4.2`)_—Fixes the issue where customers cannot add a product to wishlist if this product is assigned to a custom inventory source.
--  **MDVA-28661** _(for Magento `>=2.3.0 <2.3.2` with B2B extension)_—Fixes the issue where an error is thrown in the Company Users company account section after company admin is changed.
+-  **MDVA-28661** _(for Magento `>=2.3.0 <2.4.2` with B2B extension)_—Fixes the issue where an error is thrown in the Company Users company account section after company admin is changed.
 
 ## v1.0.4
 
