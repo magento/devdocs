@@ -1410,7 +1410,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36084-->
 
-*  Invoices created using REST now include gift card information similar to the invoices that are created in the Admin. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
+*  Invoices created using REST now include gift card information similar to the invoices that are created in the Admin. Previously, using POST `/V1/order/:id/invoice` to invoice the order did not display the gift card code or gift card amount applied.
 
 <!--- MC-35838-->
 
