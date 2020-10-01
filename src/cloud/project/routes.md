@@ -141,7 +141,7 @@ In the following examples, the route configuration routes the apex domain and th
     to: "http://{default}/"
 ```
 
-In this example, the server responds directly to a request of the form `http://example.com/hello`, issuing a _301 redirect_ for requests with the URL pattern `http://www.example.com/mypath`. These requests redirect to the apex domain, for example `http://example.com/mypath`.
+In this example, the server responds directly to a request of the form `http://example.com/hello`, issuing a _301 redirect_ for requests with the URL pattern `http://www.example.com/mypath`. These requests redirect to the apex domain, for example: `http://example.com/mypath`
 
 In the following example, the route configuration does not redirect URLs from the www domain to the apex domain. Instead, requests are served from both the www and apex domain.
 
