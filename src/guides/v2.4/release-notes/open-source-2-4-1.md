@@ -170,7 +170,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-17959 ENGCOM-7629-->
 
-*  Running `/bin/magento config:show vendor_module/general/value` now returns `0` or an empty string as expected. Previously, it returned `Configuration for path: "vendor_module/general/value" doesn't exist`. _Fix submitted by Vadim Malesh in pull request [28549](https://github.com/magento/magento2/pull/28549)._ [GitHub-23290](https://github.com/magento/magento2/issues/23290)
+*  Running `bin/magento config:show <vendor_module>/general/value` now returns `0` or an empty string as expected. Previously, it returned `Configuration for path: "vendor_module/general/value" doesn't exist`. _Fix submitted by Vadim Malesh in pull request [28549](https://github.com/magento/magento2/pull/28549)._ [GitHub-23290](https://github.com/magento/magento2/issues/23290)
 
 
 <!--- ENGCOM-7853-->
