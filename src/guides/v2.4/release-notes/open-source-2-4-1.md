@@ -661,7 +661,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7729-->
 
-*  Category queries now return correct response when using inline fragments. _Fix submitted by Ulzii in pull request [28710](https://github.com/magento/magento2/pull/28710)_. [GitHub-28584](https://github.com/magento/magento2/issues/28584)
+*  Category queries now return the correct response when using inline fragments. _Fix submitted by Ulzii in pull request [28710](https://github.com/magento/magento2/pull/28710)_. [GitHub-28584](https://github.com/magento/magento2/issues/28584)
 
 <!--- ENGCOM-7856-->
 
