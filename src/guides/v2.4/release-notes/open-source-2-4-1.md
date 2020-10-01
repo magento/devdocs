@@ -1022,7 +1022,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7720-->
 
-*  Swagger now generates a valid response code when you enter valid customer access details. Previously, Swagger did not generate a response code when valid customer access information was entered, and Magento displayed this error:  `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later`. _Fix submitted by Vadim Malesh in pull request [28822](https://github.com/magento/magento2/pull/28822)_. [GitHub-27098](https://github.com/magento/magento2/issues/27098)
+*  You can now generate a customer token with Swagger. Previously, Swagger did not generate a response code when valid customer access information was entered, and Magento displayed this error:  `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later`. _Fix submitted by Vadim Malesh in pull request [28822](https://github.com/magento/magento2/pull/28822)_. [GitHub-27098](https://github.com/magento/magento2/issues/27098)
 
 ### Swatches
 
