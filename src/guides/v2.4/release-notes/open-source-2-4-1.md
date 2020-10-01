@@ -701,7 +701,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7616-->
 
-*  Importing product  using a CSV file  now generated error_report.csv file as expected. Previously, Magento generated  the file but  removed it after the import completed. _Fix submitted by Vadim Malesh in pull request [28460](https://github.com/magento/magento2/pull/28460)_. [GitHub-28420](https://github.com/magento/magento2/issues/28420)
+*  Importing products using a CSV file  now generates an error_report.csv file as expected. Previously, Magento generated the file but removed it after the import completed. _Fix submitted by Vadim Malesh in pull request [28460](https://github.com/magento/magento2/pull/28460)_. [GitHub-28420](https://github.com/magento/magento2/issues/28420)
 
 <!--- ENGCOM-7673-->
 
