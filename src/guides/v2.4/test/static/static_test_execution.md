@@ -50,7 +50,7 @@ app/code/Magento/CatalogSearch/Model/Search
 **Step 7.** Navigate to the Magento base directory and run this command:
 
 ```bash
-./vendor/bin/phpunit --testsuite="Local Test Suite" -c dev/tests/static/phpunit.xml.dist 
+./vendor/bin/phpunit --testsuite="Local Test Suite" -c dev/tests/static/phpunit.xml.dist
 ```
 
 As a result of this process you will be able to run PHP static tests on a subset of files, it is also possible to run other types of static tests by following the same process but using other testsuites.
