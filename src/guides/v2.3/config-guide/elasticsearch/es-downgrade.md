@@ -8,9 +8,7 @@ functional_areas:
   - Setup
 ---
 
-The Magento 2.3.5 update adds support for Elasticsearch (ES) 6.8.x and 7.x.x.
-
-Both ES 2.x and 5.x are [End of Life][] and are no longer supported in Magento.
+{% include config/es-version-23.md %}
 
 ## Change the Elasticsearch Client version
 
@@ -30,6 +28,4 @@ Then configure Elasticsearch within [Magento Admin][].
 
 <!-- Link Definitions -->
 
-[End of Life]: https://www.elastic.co/support/eol
-[PHP client]: https://github.com/elastic/elasticsearch-php
 [Magento Admin]: https://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html

@@ -12,6 +12,9 @@ pages:
         - label: Authorization tokens
           url: /graphql/authorization-tokens.html
 
+        - label: Protected mutations
+          url: /graphql/protected-mutations.html
+
         - label: GraphQL caching
           url: /graphql/caching.html
 
@@ -48,6 +51,10 @@ pages:
       children:
         - label: Using queries
           url: /graphql/queries/index.html
+
+        - label: availableStores query
+          url: /graphql/queries/available-stores.html
+          exclude_versions: ["2.3"]
 
         - label: cart query
           url: /graphql/queries/cart.html
@@ -106,9 +113,14 @@ pages:
 
         - label: giftCardAccount query
           url: /graphql/queries/giftcard-account.html
+          edition: ee-only
 
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
+
+        - label: productReviewRatingsMetadata query
+          url: /graphql/queries/product-review-ratings-metadata.html
+          exclude_versions: ["2.3"]
 
         - label: products query
           url: /graphql/queries/products.html
@@ -131,6 +143,10 @@ pages:
         - label: Using mutations
           url: /graphql/mutations/index.html
 
+        - label: addProductsToCart mutation
+          url: /graphql/mutations/add-products-to-cart.html
+          exclude_versions: ["2.3"]
+
         - label: addBundleProductsToCart mutation
           url: /graphql/mutations/add-bundle-products.html
 
@@ -140,23 +156,39 @@ pages:
         - label: addDownloadableProductsToCart mutation
           url: /graphql/mutations/add-downloadable-products.html
 
+        - label: addProductsToWishlist mutation
+          url: /graphql/mutations/add-products-to-wishlist.html
+          exclude_versions: ["2.3"]
+
         - label: addSimpleProductsToCart mutation
           url: /graphql/mutations/add-simple-products.html
 
         - label: addVirtualProductsToCart mutation
           url: /graphql/mutations/add-virtual-products.html
 
-        - label: applyGiftCardToCart mutation
-          url: /graphql/mutations/apply-giftcard.html
-
         - label: applyCouponToCart mutation
           url: /graphql/mutations/apply-coupon.html
 
+        - label: applyGiftCardToCart mutation
+          url: /graphql/mutations/apply-giftcard.html
+          edition: ee-only
+
+        - label: applyRewardPointsToCart mutation
+          url: /graphql/mutations/apply-reward-points.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
+          edition: ee-only
 
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
+
+        - label: copyProductsToWishlist mutation
+          url: /graphql/mutations/copy-products-to-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: createBraintreeClientToken mutation
           url: /graphql/mutations/create-braintree-client-token.html
@@ -164,11 +196,19 @@ pages:
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
 
+        - label: createCustomerV2 mutation
+          url: /graphql/mutations/create-customer-v2.html
+          exclude_versions: ["2.3"]
+
         - label: createCustomerAddress mutation
           url: /graphql/mutations/create-customer-address.html
 
         - label: createEmptyCart mutation
           url: /graphql/mutations/create-empty-cart.html
+
+        - label: createKlarnaPaymentsSession mutation
+          url: /graphql/mutations/create-klarna-payments-session.html
+          exclude_versions: ["2.3"]
 
         - label: createPayflowProToken mutation
           url: /graphql/mutations/create-payflow-pro-token.html
@@ -176,8 +216,22 @@ pages:
         - label: createPayPalExpressToken mutation
           url: /graphql/mutations/create-paypal-express-token.html
 
+        - label: createProductReview mutation
+          url: /graphql/mutations/create-product-review.html
+          exclude_versions: ["2.3"]
+
+        - label: createWishlist mutation
+          url: /graphql/mutations/create-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
+
+        - label: deleteWishlist mutation
+          url: /graphql/mutations/delete-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: deletePaymentToken mutation
           url: /graphql/mutations/delete-payment-token.html
@@ -191,36 +245,65 @@ pages:
         - label: mergeCarts mutation
           url: /graphql/mutations/merge-carts.html
 
+        - label: moveProductsToWishlist mutation
+          url: /graphql/mutations/move-products-to-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: placeOrder mutation
           url: /graphql/mutations/place-order.html
 
         - label: redeemGiftCardBalanceAsStoreCredit mutation
           url: /graphql/mutations/redeem-giftcard-balance.html
+          edition: ee-only
 
         - label: removeCouponFromCart mutation
           url: /graphql/mutations/remove-coupon.html
 
         - label: removeGiftCardFromCart mutation
           url: /graphql/mutations/remove-giftcard.html
+          edition: ee-only
 
         - label: removeItemFromCart mutation
           url: /graphql/mutations/remove-item.html
 
+        - label: removeProductsFromWishlist mutation
+          url: /graphql/mutations/remove-products-from-wishlist.html
+          exclude_versions: ["2.3"]
+
+        - label: removeRewardPointsFromCart mutation
+          url: /graphql/mutations/remove-reward-points.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
+          edition: ee-only
 
         - label: reorderItems mutation
           url: /graphql/mutations/reorder-items.html
           exclude_versions: ["2.3"]
 
+        - label: requestPasswordResetEmail mutation
+          url: /graphql/mutations/request-password-reset-email.html
+          exclude_versions: ["2.3"]
+
         - label: revokeCustomerToken mutation
           url: /graphql/mutations/revoke-customer-token.html
+
+        - label: resetPassword mutation
+          url: /graphql/mutations/reset-password.html
+          exclude_versions: ["2.3"]
 
         - label: sendEmailToFriend mutation
           url: /graphql/mutations/send-email-to-friend.html
 
         - label: setBillingAddressesOnCart mutation
           url: /graphql/mutations/set-billing-address.html
+
+        - label: setGiftOptionsOnCart mutation
+          url: /graphql/mutations/set-gift-options.html
+          exclude_versions: ["2.3"]
 
         - label: setGuestEmailOnCart mutation
           url: /graphql/mutations/set-guest-email.html
@@ -237,14 +320,35 @@ pages:
         - label: setShippingMethodsOnCart mutation
           url: /graphql/mutations/set-shipping-method.html
 
+        - label: subscribeEmailToNewsletter mutation
+          url: /graphql/mutations/subscribe-email-to-newsletter.html
+          exclude_versions: ["2.3"]
+
         - label: updateCartItems mutation
           url: /graphql/mutations/update-cart-items.html
 
         - label: updateCustomer mutation
           url: /graphql/mutations/update-customer.html
 
+        - label: updateCustomerEmail mutation
+          url: /graphql/mutations/update-customer-email.html
+          exclude_versions: ["2.3"]
+
+        - label: updateCustomerV2 mutation
+          url: /graphql/mutations/update-customer-v2.html
+          exclude_versions: ["2.3"]
+
         - label: updateCustomerAddress mutation
           url: /graphql/mutations/update-customer-address.html
+
+        - label: updateProductsInWishlist mutation
+          url: /graphql/mutations/update-products-in-wishlist.html
+          exclude_versions: ["2.3"]
+
+        - label: updateWishlist mutation
+          url: /graphql/mutations/update-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
     - label: Interfaces
       children:
@@ -281,6 +385,22 @@ pages:
         - label: Virtual product data types
           url: /graphql/interfaces/virtual-product.html
 
+        - label: CreditMemoItemInterface attributes and implementations
+          url: /graphql/interfaces/credit-memo-item-interface.html
+          exclude_versions: ["2.3"]
+
+        - label: InvoiceItemInterface attributes and implementations
+          url: /graphql/interfaces/invoice-item-interface.html
+          exclude_versions: ["2.3"]
+
+        - label: OrderItemInterface attributes and implementations
+          url: /graphql/interfaces/order-item-interface.html
+          exclude_versions: ["2.3"]
+
+        - label: ShipmentItemInterface attributes and implementations
+          url: /graphql/interfaces/shipment-item-interface.html
+          exclude_versions: ["2.3"]
+
     - label: Payment methods
       children:
 
@@ -294,6 +414,10 @@ pages:
         - label: Braintree Vault
           url: /graphql/payment-methods/braintree-vault.html
 
+        - label: Klarna
+          url: /graphql/payment-methods/klarna.html
+          exclude_versions: ["2.3"]
+
         - label: PayPal Express Checkout
           url: /graphql/payment-methods/paypal-express-checkout.html
 
@@ -305,6 +429,10 @@ pages:
           
         - label: PayPal Payflow Pro
           url: /graphql/payment-methods/payflow-pro.html
+
+        - label: PayPal Payflow Pro Vault
+          url: /graphql/payment-methods/payflow-pro-vault.html
+          exclude_versions: ["2.3"]
 
         - label: PayPal Payments Advanced
           url: /graphql/payment-methods/payments-advanced.html
