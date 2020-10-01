@@ -406,6 +406,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Custom customer address attributes fields are now displayed as expected in the storefront checkout workflow.
 
+<!--- ENGCOM-7793-->
+
+*  Magento now retrieves the current customer group for an active quote during checkout. Previously, Magento used the customer group that was active when the product was first added to the cart, and if that customer group was deleted before checkout, Magento threw an error.  _Fix submitted by Konstantin in pull request [28902](https://github.com/magento/magento2/pull/28902)_. [GitHub-29327](https://github.com/magento/magento2/issues/29327)
+
 ### Catalog
 
 <!--- MC-31068-->
@@ -547,6 +551,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
    *  `maxIdleTime` defines the maximum waiting time in seconds for a new message from the queue.
    *  `sleep` specifies time in seconds to sleep before checking if a new message is available in the queue.
    *  `onlySpawnWhenMessageAvailable` identifies whether a consumer should be spawned only when an available message exists in the related queue. This setting is enabled globally by default for all consumers but can be configured per consumer.
+
+<!--- ENGCOM-7863-->
+
+*  `cron` expressions such as  `3/10 * * * *` are now scheduled as expected. _Fix submitted by Anton Evers in pull request [28930](https://github.com/magento/magento2/pull/28930)_. [GitHub-29240](https://github.com/magento/magento2/issues/29240)
 
 ### CSS
 
@@ -1252,6 +1260,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 *  Themes that are added in User Agent Rules are now affected as expected when you run `bin/magento catalog:images:resize`. Previously, only themes that were assigned to stores were affected when `bin/magento catalog:images:resize` was run.
 
 ### UI
+
+<!--- ENGCOM-7514-->
+
+*  The privacy and cookie policy link in the page footer of the privacy and cookie policy pages no longer active. _Fix submitted by Sathish Subramanian in pull request [28004](https://github.com/magento/magento2/pull/28004)_. [GitHub-27985](https://github.com/magento/magento2/issues/27985)
 
 <!--- MC-36260-->
 
