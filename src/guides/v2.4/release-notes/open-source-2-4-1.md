@@ -1236,7 +1236,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7675-->
 
-*  Adds a test for disabling wish list functionality. _Fix submitted by Dmitry Tsymbal in pull request [28635](https://github.com/magento/magento2/pull/28635)_. [GitHub-28744](https://github.com/magento/magento2/issues/28744)
+*  Added a test for disabling wish list functionality. _Fix submitted by Dmitry Tsymbal in pull request [28635](https://github.com/magento/magento2/pull/28635)_. [GitHub-28744](https://github.com/magento/magento2/issues/28744)
 
 <!--- ENGCOM-7564-->
 
