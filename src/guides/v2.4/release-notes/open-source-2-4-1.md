@@ -175,7 +175,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7853-->
 
-*  `bin/magento setup:static-content:deploy --language=all` now deploys all languages that are used on the storefront and all languages configured by Admin users when no language parameter is set. (`en_US` is always deployed by default.)_Fix submitted by Anton Evers in pull request [28922](https://github.com/magento/magento2/pull/28922)_. [GitHub-29218](https://github.com/magento/magento2/issues/29218)
+*  `bin/magento setup:static-content:deploy --language=all` now deploys all languages that are used on the storefront and all languages configured by Admin users when no language parameter is set. (`en_US` is always deployed by default.) _Fix submitted by Anton Evers in pull request [28922](https://github.com/magento/magento2/pull/28922)_. [GitHub-29218](https://github.com/magento/magento2/issues/29218)
 
 <!--- ENGCOM-7883-->
 
