@@ -705,7 +705,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7673-->
 
-*  Removed redundant class imports throughout code base. _Fix submitted by Oleh Usik in pull request [28696](https://github.com/magento/magento2/pull/28696)_. [GitHub-29012](https://github.com/magento/magento2/issues/29012)
+*  Removed redundant class imports throughout the code base. _Fix submitted by Oleh Usik in pull request [28696](https://github.com/magento/magento2/pull/28696)_. [GitHub-29012](https://github.com/magento/magento2/issues/29012)
 
 <!--- MC-33730-->
 
