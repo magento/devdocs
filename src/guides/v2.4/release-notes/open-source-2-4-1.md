@@ -867,7 +867,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7885-->
 
-*  The `CustomerAddressId` values for a newly created customer is now validated in quotes.  _Fix submitted by Andrii Kalinich in pull request [29139](https://github.com/magento/magento2/pull/29139)_. [GitHub-28793](https://github.com/magento/magento2/issues/28793)
+*  The `CustomerAddressId` values for a newly created customer are now validated in quotes.  _Fix submitted by Andrii Kalinich in pull request [29139](https://github.com/magento/magento2/pull/29139)_. [GitHub-28793](https://github.com/magento/magento2/issues/28793)
 
 <!--- ENGCOM-7798-->
 
