@@ -1232,7 +1232,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7674-->
 
-*  Adds a test for deleting items from a customer’s wish list as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28632](https://github.com/magento/magento2/pull/28632)_. [GitHub-28721](https://github.com/magento/magento2/issues/28721)
+*  Added a test for deleting items from a customer’s wish list as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28632](https://github.com/magento/magento2/pull/28632)_. [GitHub-28721](https://github.com/magento/magento2/issues/28721)
 
 <!--- ENGCOM-7675-->
 
