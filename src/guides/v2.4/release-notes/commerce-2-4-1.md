@@ -63,7 +63,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Reduction in the size of network transfers between Redis and Magento**. Plugin list configuration is now generated during the execution of the `bin/magento di:compile` command. This configuration information is written to generated metadata folders based on scope. Previously, this information was stored in cache. Resulting performance improvements include a decrease in network cache size and execution time for many scenarios.<!--- MC-31617-->
 
-*  **Enhanced message queue consumer performance**. Three new configuration settings support a decrease of 20% in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. SSee [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
+*  **Enhanced message queue consumer performance**. Three new configuration settings support a decrease of 20% in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
 
 *  **Improved execution time** for `bin/magento` commands.
 
@@ -1403,7 +1403,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36084-->
 
-*  Invoices created using REST now include gift card information similar to the invoices that are created in the Admin. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
+*  Invoices created using REST now include gift card information similar to the invoices that are created in the Admin. Previously, using POST `/V1/order/:id/invoice` to invoice the order did not display the gift card code or gift card amount applied.
 
 <!--- MC-35838-->
 
@@ -1508,3 +1508,5 @@ You can install Magento Commerce 2.4.1 using Composer.
 ## Migration tool kits
 
 The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
+
+The [Code Migration Toolkit](https://github.com/magento-commerce/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

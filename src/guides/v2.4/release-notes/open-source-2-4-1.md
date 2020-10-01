@@ -139,7 +139,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36231-->
 
-*  Magento now displays an informative error message when some themes are not deployed after running `setup:static-content:deploy`. Previously, when deployment completed successfully but not all packages were deployed, Magento did not display an error. When the  `setup:static-content:deploy` command is executed with enabled parallel processing and each theme requires more time to be deployed then the specified maximum execution time, this command can finish successfully, although themes are not deployed.
+*  Magento now displays an informative error message when some themes are not deployed after running `bin/magento setup:static-content:deploy`. Previously, when deployment completed successfully but not all packages were deployed, Magento did not display an error. When the command is executed with enabled parallel processing and each theme requires more time to be deployed then the specified maximum execution time, this command can finish successfully, although themes are not deployed.
 
 <!--- MC-35001-->
 
@@ -163,15 +163,15 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7265-->
 
-*  Executing `php bin/magento setup:upgrade` now completes as expected. Previously, Magento displayed printed array content for caches. _Fix submitted by Sathish Subramanian in pull request [27567](https://github.com/magento/magento2/pull/27567)_. [GitHub-27091](https://github.com/magento/magento2/issues/27091)
+*  Executing `bin/magento setup:upgrade` no longer displays extraneous information about caches. _Fix submitted by Sathish Subramanian in pull request [27567](https://github.com/magento/magento2/pull/27567)_. [GitHub-27091](https://github.com/magento/magento2/issues/27091)
 
 <!--- MC-17959 ENGCOM-7629-->
 
-*  Running `/bin/magento config:show vendor_module/general/value` now returns `0` or an empty string as expected. Previously, it returned `Configuration for path: "vendor_module/general/value" doesn't exist`. _Fix submitted by Vadim Malesh in pull request [28549](https://github.com/magento/magento2/pull/28549)._ [GitHub-23290](https://github.com/magento/magento2/issues/23290)
+*  Running `bin/magento config:show <vendor_module>/general/value` now returns `0` or an empty string as expected. Previously, it returned `Configuration for path: "vendor_module/general/value" doesn't exist`. _Fix submitted by Vadim Malesh in pull request [28549](https://github.com/magento/magento2/pull/28549)._ [GitHub-23290](https://github.com/magento/magento2/issues/23290)
 
 <!--- ENGCOM-7853-->
 
-*  `bin/magento setup:static-content:deploy --language=all` now deploys all languages that are used on the storefront and all languages configured by Admin users when no language parameter is set. (`en_US` is always deployed by default.)_Fix submitted by Anton Evers in pull request [28922](https://github.com/magento/magento2/pull/28922)_. [GitHub-29218](https://github.com/magento/magento2/issues/29218)
+*  `bin/magento setup:static-content:deploy --language=all` now deploys all languages that are used on the storefront and all languages configured by Admin users when no language parameter is set. (`en_US` is always deployed by default.) _Fix submitted by Anton Evers in pull request [28922](https://github.com/magento/magento2/pull/28922)_. [GitHub-29218](https://github.com/magento/magento2/issues/29218)
 
 <!--- ENGCOM-7883-->
 
@@ -387,7 +387,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7753-->
 
-*  Updated the Magento Commerce logo and removed extraneous spaces from the README file. _Fix submitted by Rafael Corr̻a Gomes in pull request [28891](https://github.com/magento/magento2/pull/28891)_. [GitHub-29056](https://github.com/magento/magento2/issues/29056)
+*  Updated the Magento Commerce logo and removed extraneous spaces from the main README file of the `magento/magento2` repository. _Fix submitted by Rafael Corr̻a Gomes in pull request [28891](https://github.com/magento/magento2/pull/28891)_. [GitHub-29056](https://github.com/magento/magento2/issues/29056)
 
 <!--- ENGCOM-7771-->
 
@@ -403,7 +403,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7925-->
 
-*  The `module:status` command now accepts multiple module names as arguments.    _Fix submitted by Chandru Rajendran in pull request [28250](https://github.com/magento/magento2/pull/28250)_. [GitHub-29344](https://github.com/magento/magento2/issues/29344)
+*  The `bin/magento module:status` command now accepts multiple module names as arguments.    _Fix submitted by Chandru Rajendran in pull request [28250](https://github.com/magento/magento2/pull/28250)_. [GitHub-29344](https://github.com/magento/magento2/issues/29344)
 
 <!--- ENGCOM-7983-->
 
@@ -495,7 +495,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33522-->
 
-*  Saving a deleted customer from the Admin now generates an error message only. Previously, Magento displayed a blank page and generated a report that contains this string: "0":"No such entity with customerId = 3","1":"#1 Magento\\Customer\\Model CustomerRegistry->retrieve() called at [app\/code\/Magento\/Customer\/Model\/ResourceModel\/CustomerRepository.php:340".
+*  Saving a deleted customer from the Admin now generates an error message only. Previously, Magento displayed a blank page and generated a report that contains this string: `"0":"No such entity with customerId = 3","1":"#1 Magento\\Customer\\Model CustomerRegistry->retrieve() called at [app\/code\/Magento\/Customer\/Model\/ResourceModel\/CustomerRepository.php:340"`.
 
 <!--- MC-33357-->
 
@@ -575,7 +575,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34153-->
 
-*  Shoppers can now change the number of orders that are displayed per page when the Orders list spans multiple pages. Previously, Magento displayed this message when you navigated to the last page of orders and tried to change the number of orders displayed per page: `You have placed no orders`. This was a known issue for Magento 2.4.0.
+*  Shoppers can now change the number of orders that are displayed per page when the Orders list spans multiple pages. Previously, Magento displayed the following message when the shopper navigated to the last page of orders and tried to change the number of orders displayed per page: `You have placed no orders`. This was a known issue for Magento 2.4.0.
 
 <!--- MC-35020-->
 
@@ -693,11 +693,11 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7616-->
 
-*  Importing product  using a CSV file  now generated error_report.csv file as expected. Previously, Magento generated  the file but  removed it after the import completed. _Fix submitted by Vadim Malesh in pull request [28460](https://github.com/magento/magento2/pull/28460)_. [GitHub-28420](https://github.com/magento/magento2/issues/28420)
+*  Importing products using a CSV file  now generates an error_report.csv file as expected. Previously, Magento generated the file but removed it after the import completed. _Fix submitted by Vadim Malesh in pull request [28460](https://github.com/magento/magento2/pull/28460)_. [GitHub-28420](https://github.com/magento/magento2/issues/28420)
 
 <!--- ENGCOM-7673-->
 
-*  Removed redundant class imports throughout code base. _Fix submitted by Oleh Usik in pull request [28696](https://github.com/magento/magento2/pull/28696)_. [GitHub-29012](https://github.com/magento/magento2/issues/29012)
+*  Removed redundant class imports throughout the code base. _Fix submitted by Oleh Usik in pull request [28696](https://github.com/magento/magento2/pull/28696)_. [GitHub-29012](https://github.com/magento/magento2/issues/29012)
 
 <!--- MC-33730-->
 
@@ -841,7 +841,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7788-->
 
-*  Adds a test for deleting newsletter subscriber as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28972](https://github.com/magento/magento2/pull/28972)_. [GitHub-29032](https://github.com/magento/magento2/issues/29032)
+*  Added a test for deleting a newsletter subscriber as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28972](https://github.com/magento/magento2/pull/28972)_. [GitHub-29032](https://github.com/magento/magento2/issues/29032)
 
 <!--- ENGCOM-7739-->
 
@@ -855,7 +855,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7885-->
 
-*  The `CustomerAddressId` values for a newly created customer is now validated in quotes.  _Fix submitted by Andrii Kalinich in pull request [29139](https://github.com/magento/magento2/pull/29139)_. [GitHub-28793](https://github.com/magento/magento2/issues/28793)
+*  The `CustomerAddressId` values for a newly created customer are now validated in quotes.  _Fix submitted by Andrii Kalinich in pull request [29139](https://github.com/magento/magento2/pull/29139)_. [GitHub-28793](https://github.com/magento/magento2/issues/28793)
 
 <!--- ENGCOM-7798-->
 
@@ -1010,7 +1010,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7720-->
 
-*  Swagger now generates a valid response code when you enter valid customer access details. Previously, Swagger did not generate a response code when valid customer access information was entered, and Magento displayed this error:  `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later`. _Fix submitted by Vadim Malesh in pull request [28822](https://github.com/magento/magento2/pull/28822)_. [GitHub-27098](https://github.com/magento/magento2/issues/27098)
+*  You can now generate a customer token with Swagger. Previously, Swagger did not generate a response code when valid customer access information was entered, and Magento displayed this error:  `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later`. _Fix submitted by Vadim Malesh in pull request [28822](https://github.com/magento/magento2/pull/28822)_. [GitHub-27098](https://github.com/magento/magento2/issues/27098)
 
 ### Swatches
 
@@ -1220,11 +1220,11 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7674-->
 
-*  Adds a test for deleting items from a customer’s wish list as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28632](https://github.com/magento/magento2/pull/28632)_. [GitHub-28721](https://github.com/magento/magento2/issues/28721)
+*  Added a test for deleting items from a customer’s wish list as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28632](https://github.com/magento/magento2/pull/28632)_. [GitHub-28721](https://github.com/magento/magento2/issues/28721)
 
 <!--- ENGCOM-7675-->
 
-*  Adds a test for disabling wish list functionality. _Fix submitted by Dmitry Tsymbal in pull request [28635](https://github.com/magento/magento2/pull/28635)_. [GitHub-28744](https://github.com/magento/magento2/issues/28744)
+*  Added a test for disabling wish list functionality. _Fix submitted by Dmitry Tsymbal in pull request [28635](https://github.com/magento/magento2/pull/28635)_. [GitHub-28744](https://github.com/magento/magento2/issues/28744)
 
 <!--- ENGCOM-7717-->
 
@@ -1265,3 +1265,5 @@ You can install Magento Open Source 2.4.1 using Composer.
 ## Migration toolkits
 
 The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
+
+The [Code Migration Toolkit](https://github.com/magento-commerce/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
