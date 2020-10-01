@@ -407,7 +407,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7925-->
 
-*  The `module:status` command now accepts multiple module names as arguments.    _Fix submitted by Chandru Rajendran in pull request [28250](https://github.com/magento/magento2/pull/28250)_. [GitHub-29344](https://github.com/magento/magento2/issues/29344)
+*  The `bin/magento module:status` command now accepts multiple module names as arguments.    _Fix submitted by Chandru Rajendran in pull request [28250](https://github.com/magento/magento2/pull/28250)_. [GitHub-29344](https://github.com/magento/magento2/issues/29344)
 
 <!--- ENGCOM-7983-->
 
