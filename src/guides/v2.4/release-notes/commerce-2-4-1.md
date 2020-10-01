@@ -61,12 +61,9 @@ This release contains enhancements to core quality, which improve the quality of
 
 ### Performance improvements
 
-*  **Reduction in the size of network transfers between Redis and Magento**. Plugin list configuration is now generated during the execution of the `di:compile` command. This configuration information is written to generated metadata folders based on scope. Previously, this information was stored in cache. Resulting performance improvements include:
+*  **Reduction in the size of network transfers between Redis and Magento**. Plugin list configuration is now generated during the execution of the `bin/magento di:compile` command. This configuration information is written to generated metadata folders based on scope. Previously, this information was stored in cache. Resulting performance improvements include a decrease in network cache size and execution time for many scenarios.<!--- MC-31617-->
 
-   *  Network cache size has decreased by 10 - 15%
-   *  Execution time for many scenarios has been improved by 3%<!--- MC-31617-->
-
-*  **Enhanced message queue consumer performance**. Three new configuration settings support a decrease of 20% in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See Extension Developer's guide for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
+*  **Enhanced message queue consumer performance**. Three new configuration settings support a decrease of 20% in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. SSee [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
 
 *  **Improved execution time** for `bin/magento` commands.
 
@@ -208,7 +205,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33788-->
 
-*  Upgrade no longer results in the sudden failure of the Galera cluster. Previously, the Galera cluster exited abruptly after re-indexing immediately after upgrade. During Magento upgrade, index tables are altered, and the engine is changed from `MEMORY` to `InnoDB`. At this point, the content of these tables becomes out-of-sync between the nodes of the Galera cluster. [GitHub-25334](https://github.com/magento/magento2/issues/25334)
+*  Upgrade no longer results in the sudden failure of the Galera cluster. Previously, the Galera cluster exited abruptly after re-indexing immediately after upgrade. During Magento upgrade, index tables are altered, and the engine is changed from `MEMORY` to `InnoDB`. At this point, the content of these tables became out-of-sync between the nodes of the Galera cluster. [GitHub-25334](https://github.com/magento/magento2/issues/25334)
 
 <!--- MC-34254-->
 
@@ -780,10 +777,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Unnecessary code and `responsive.js` have been removed from files that are loaded by themes. _Fix submitted by Mateusz Krzeszowiak in pull request [27617](https://github.com/magento/magento2/pull/27617)_. [GitHub-28811](https://github.com/magento/magento2/issues/28811)
 
-<!--- ENGCOM-7729-->
-
-*  Category queries now return correct response when using inline fragments. _Fix submitted by Ulzii in pull request [28710](https://github.com/magento/magento2/pull/28710)_. [GitHub-28584](https://github.com/magento/magento2/issues/28584)
-
 <!--- ENGCOM-7856-->
 
 *  Validation has been added to the **Number of Symbols** field on the Admin CAPTCHA configuration page. _Fix submitted by Eden Duong in pull request [29199](https://github.com/magento/magento2/pull/29199)_. [GitHub-29198](https://github.com/magento/magento2/issues/29198)
@@ -990,7 +983,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7692-->
 
-*  All broken reference errors are now logged when deployments are in developer mode only. Previously, one error was logged for deployments in production mode, too, which bloated error logs. _Fix submitted by Bart��omiej Szubert in pull request [28735](https://github.com/magento/magento2/pull/28735)_. [GitHub-26504](https://github.com/magento/magento2/issues/26504)
+*  All broken reference errors are now logged when deployments are in developer mode only. Previously, one error was logged for deployments in production mode, too, which bloated error logs. _Fix submitted by Bartłomiej Szubert in pull request [28735](https://github.com/magento/magento2/pull/28735)_. [GitHub-26504](https://github.com/magento/magento2/issues/26504)
 
 ### Media Gallery
 
@@ -1143,7 +1136,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35013-->
 
-*  Searching by SKU now works as expected in advanced search with Elasticsearch 6. Previously, when you tried to search by SKU, Magento displayed this error message: `We can't find any items matching these search criteria. Modify your search`.
+*  Searching by SKU now works as expected in advanced search with Elasticsearch. Previously, when you tried to search by SKU, Magento displayed this error message: `We can't find any items matching these search criteria. Modify your search`.
 
 <!--- ENGCOM-7222-->
 
@@ -1474,7 +1467,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7564-->
 
-*  Magento now correctly validates the allowed maximum of wish lists that a shopper can create. _Fix submitted by Eduard Chitoraga in pull request [247](https://github.com/magento/partners-magento2ee/pull/247)_. [GitHub-261](https://github.com/magento/partners-magento2ee/issues/261)
+*  Magento now correctly validates the allowed maximum of wish lists that a shopper can create. _Fix submitted by Eduard Chitoraga in pull request 247 in private repo partners-magento2ee_.
 
 <!--- ENGCOM-7717-->
 
@@ -1515,5 +1508,3 @@ You can install Magento Commerce 2.4.1 using Composer.
 ## Migration tool kits
 
 The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
-
-The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
