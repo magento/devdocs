@@ -4,10 +4,78 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Aug 31 15:26:14 2020
+updated: Mon Sep 14 12:24:21 2020
 entries:
-- description: Updated the Elasticsearch version compatibility and software version
-    compatibility matrices to show Elasticsearch 7.7.x as the supported and recommended
+- description: Added the [Simple product data types](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/simple-product.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: September 11, 2020
+  link: https://github.com/magento/devdocs/pull/7805
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: Added the [Virtual product data types](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/virtual-product.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: September 11, 2020
+  link: https://github.com/magento/devdocs/pull/7806
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.4 Magento Quality Patch (MQP) package release.
+  versions: ''
+  type: Major Update
+  date: September 10, 2020
+  link: https://github.com/magento/devdocs/pull/7850
+  contributor: ilima-ebay
+  profile: https://github.com/ilima-ebay
+- description: Updated release notes for Magento Commerce on Cloud September package
+    release:<br/>- [Magento Cloud Components](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html)
+    version 1.0.7<br/>- [Magento Cloud Docker](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html)
+    version 1.1.2
+  versions: ''
+  type: Technical
+  date: September 9, 2020
+  link: https://github.com/magento/devdocs/pull/7840
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Added a Pull request risk assessment section to the [Contributing](https://devdocs.magento.com/contributor-guide/contributing.html)
+    topic.
+  versions: ''
+  type: Major Update
+  date: September 9, 2020
+  link: https://github.com/magento/devdocs/pull/7831
+  contributor: gabrieldagama
+  profile: https://github.com/gabrieldagama
+- description: Updated the examples in [Create an integration](https://devdocs.magento.com/guides/v2.4/get-started/create-integration.html)
+    to include the correct directory and to use proper casing in the examples.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: September 3, 2020
+  link: https://github.com/magento/devdocs/pull/7707
+  contributor: chandru-199
+  profile: https://github.com/chandru-199
+- description: Added a [workaround](https://devdocs.magento.com/guides/v2.4/performance-best-practices/configuration.html)
+    for a known performance issue when using MariaDB 10.4 on Magento 2.4.
+  versions: 2.4.x
+  type: Major Update
+  date: September 2, 2020
+  link: https://github.com/magento/devdocs/pull/7808
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Replaced Adobe-generated alert policies information with the new _Managed
+    alerts for Magento Commerce_ alert policy. Updated screen captures and instructions
+    for reviewing alert policies and adding notification channels. See [Monitor performance
+    with alert policies](https://devdocs.magento.com/cloud/project/new-relic.html#new-relic-apm).
+  versions: 2.x
+  type: Technical
+  date: September 2, 2020
+  link: https://github.com/magento/devdocs/pull/7789
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Updated the ElasticSearch version compatibility and software version
+    compatibility matrices to show ElasticSearch 7.7.x as the supported and recommended
     version for Magento Commerce on the Cloud platform.
   versions: 2.x
   type: Technical
@@ -157,7 +225,7 @@ entries:
   contributor: jfrontain
   profile: https://github.com/jfrontain
 - description: Added documentation for aggregated logs and the New Relic Logs service
-    for Pro Production and Staging environments.  See [New Relic services](https://devdocs.magento.comcloud/project/new-relic.html).
+    for Pro Production and Staging environments.  See [New Relic services](https://devdocs.magento.com/cloud/project/new-relic.html).
   versions: 2.x
   type: Major Update
   date: July 28, 2020

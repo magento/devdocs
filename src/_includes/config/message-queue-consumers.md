@@ -21,4 +21,3 @@ bin/magento queue:consumers:start <consumer_name> &
 ```
 
 See [queue:consumers:start]({{ page.baseurl }}/reference/cli/magento-commerce.html#queueconsumersstart) in the _Magento command-line reference_ for details about the command options, parameters, and values.
-

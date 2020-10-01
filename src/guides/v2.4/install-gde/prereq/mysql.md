@@ -1,8 +1,6 @@
 ---
 group: installation-guide
 title: MySQL
-redirect_from:
-  - guides/v2.3/install-gde/trouble/tshoot_mysql_table-open-cache.html
 ---
 
 ## Help if you are just starting out {#mysql-help-beginner}
@@ -112,7 +110,6 @@ To properly update MySQL from version 5.7 to version 8, you must follow these st
 
 1. Update MySQL to version 8.
 1. Import the backed-up data into MySQL.
-1. In the Magento admin, set the database engine to MySQL 8.
 1. Clean the cache:
 
    ```bash
