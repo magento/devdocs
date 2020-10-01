@@ -6,7 +6,7 @@ functional_areas:
   - test
 ---
 
-Executing the Magento 2 Semantic Version Checker is a simple process but, it requires an external tool to be done.
+Executing the Magento 2 Semantic Version Checker is a simple process, but it requires an external tool to be used.
 
 ### Running Semantic Version Checker on local changes
 
