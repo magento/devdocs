@@ -202,9 +202,9 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  The **Use default** checkbox for Klarna payments (**Stores** > **Configuration** > **Sales** > **Payment methods** > **Klarna**) now remain checked as expected when website scope changes.
 
-<!--- MC-17959-->
+<!--- MC-17959 ENGCOM-7629-->
 
-*  Running `/bin/magento config:show vendor_module/general/value` now returns `0` or an empty string as expected. Previously, it returned `Configuration for path: "vendor_module/general/value" doesn't exist`. [GitHub-23290](https://github.com/magento/magento2/issues/23290)
+*  Running `/bin/magento config:show vendor_module/general/value` now returns `0` or an empty string as expected. Previously, it returned `Configuration for path: "vendor_module/general/value" doesn't exist`. _Fix submitted by Vadim Malesh in pull request [28549](https://github.com/magento/magento2/pull/28549)._ [GitHub-23290](https://github.com/magento/magento2/issues/23290)
 
 <!--- MC-33788-->
 
@@ -224,11 +224,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7265-->
 
-*  Executing `php bin/magento s:up` now completes as expected. Previously, Magento displayed printed array content for caches. _Fix submitted by Sathish Subramanian in pull request [27567](https://github.com/magento/magento2/pull/27567)_. [GitHub-27091](https://github.com/magento/magento2/issues/27091)
-
-<!--- ENGCOM-7629-->
-
-*  Running `./bin/magento config:show vendor_module/general/value` now returns `0` or '' (an empty string) as expected. Previously, this command returned `Configuration for path: "vendor_module/general/value" doesn't exist`. _Fix submitted by Vadim Malesh in pull request [28549](https://github.com/magento/magento2/pull/28549)_. [GitHub-23290](https://github.com/magento/magento2/issues/23290)
+*  Executing `php bin/magento setup:upgrade` now completes as expected. Previously, Magento displayed printed array content for caches. _Fix submitted by Sathish Subramanian in pull request [27567](https://github.com/magento/magento2/pull/27567)_. [GitHub-27091](https://github.com/magento/magento2/issues/27091)
 
 <!--- ENGCOM-7853-->
 
@@ -878,10 +874,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  `Magento_CacheInvalidate` now handles large tag patterns correctly when doing a `PURGE`. `sendPurgeRequest` has been refactored to handle an array of tags instead of requiring the caller to use `implode()`.
 
-<!--- MC-30568-->
-
-*  Shared indexers now show a status of **valid** when you run `bin/magento indexer:status` after re-indexing. Previously, shared indexers had an **invalid** status after a full re-index.
-
 ### Infrastructure
 
 <!--- MC-37243-->
@@ -950,7 +942,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7814-->
 
-*  All after plugins now return a value as expected. Previously, `Magento\CmsUrlRewrite\Plugin\Cms\Model\Store\View::aftersSave` did not return a value, and as a result, saving a store view resulted in an error. _Fix submitted by Pieter Hoste in pull request [29035](https://github.com/magento/magento2/pull/29035)_. [GitHub-29034](https://github.com/magento/magento2/issues/29034)
+*  The `Magento\CmsUrlRewrite\Plugin\Cms\Model\Store\View::aftersSave` plugin now returns a value as expected. Previously, this plugin did not return a value, and as a result, saving a store view resulted in an error. _Fix submitted by Pieter Hoste in pull request [29035](https://github.com/magento/magento2/pull/29035)_. [GitHub-29034](https://github.com/magento/magento2/issues/29034)
 
 <!--- ENGCOM-7566-->
 
