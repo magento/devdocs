@@ -66,7 +66,7 @@ This release contains enhancements to core quality, which improve the quality of
    *  Network cache size has decreased by 10 - 15%
    *  Execution time for many scenarios has been improved by 3%<!--- MC-31617-->
 
-*  **Enhanced message queue consumer performance**. Three new configuration settings support a decrease of 20% in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See Extension Developer's guide for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
+*  **Enhanced message queue consumer performance**. Three new configuration settings support a decrease of 20% in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
 
 *  **Improved execution time** for `bin/magento` commands.
 
