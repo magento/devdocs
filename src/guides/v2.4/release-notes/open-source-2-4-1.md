@@ -853,7 +853,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7788-->
 
-*  Adds a test for deleting newsletter subscriber as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28972](https://github.com/magento/magento2/pull/28972)_. [GitHub-29032](https://github.com/magento/magento2/issues/29032)
+*  Added a test for deleting a newsletter subscriber as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28972](https://github.com/magento/magento2/pull/28972)_. [GitHub-29032](https://github.com/magento/magento2/issues/29032)
 
 <!--- ENGCOM-7739-->
 
