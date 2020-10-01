@@ -249,7 +249,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
-          2.4.0: compatible
+          2.4.0: not supported
       
       -
         name: 3.0.2
@@ -260,7 +260,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
-          2.4.0: compatible
+          2.4.0: not supported
       -
         name: 3.0.1
         support:
@@ -270,7 +270,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
-          2.4.0: compatible
+          2.4.0: not supported
       -
         name: 3.0.0
         support:
