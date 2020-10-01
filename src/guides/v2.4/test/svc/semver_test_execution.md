@@ -33,6 +33,6 @@ so you may need to clone the Magento repository to a separate folder to perform 
 .bin/svc compare ../magento2-mainline ../magento2
 ```
 
-The first parameter is the mainline code (2.4-develop branch) without any changes, and the second parameter is the path to the Magento with your feature changes.
+The first parameter is the mainline code without any changes, and the second parameter is the path to the Magento with your feature changes.
 
 As a result of this command you will get the results of the Semantic Version Checker tool.
