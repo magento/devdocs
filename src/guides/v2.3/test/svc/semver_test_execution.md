@@ -6,33 +6,32 @@ functional_areas:
   - test
 ---
 
-Executing the Magento 2 Semantic Version Checker is a simple process, but it requires an external tool to be used.
+Executing the Magento 2 Semantic Version Checker is a simple process, but it requires an external tool.
 
 ### Running Semantic Version Checker on local changes
 
-To run the Semantic Version Checker on local changes, you need to:
+To run the Semantic Version Checker on local changes:
 
-**Step 1.** Clone the `magento-semver` tool to your local machine:
+1. Clone the `magento-semver` tool to your local machine:
 
-```bash
-git clone git@github.com:magento/magento-semver.git
-```
+   ```bash
+   git clone git@github.com:magento/magento-semver.git
+   ```
 
-**Step 2.** Navigate to the cloned repository and run composer install to install the project dependencies:
+1. Navigate to the cloned repository and run `composer install` to install the project dependencies:
 
-```bash
-cd magento-semver && composer install
-```
+   ```bash
+   cd magento-semver && composer install
+   ```
 
-**Step 3.** In order to run the Semantic Version Checker we need to have one folder with the feature changes and another folder with mainline code (without changes),
+1. To run the Semantic Version Checker, we need one folder with the feature changes and another folder with mainline code (without changes),
 so you may need to clone the Magento repository to a separate folder to perform the comparison.
 
-**Step 4.** Navigate the `magento-semver` folder and run the Semantic Version Checker compare command:
+1. Navigate the `magento-semver` folder and run the Semantic Version Checker compare command:
 
-```bash
-.bin/svc compare ../magento2-mainline ../magento2
-```
+   ```bash
+   bin/svc compare ../magento2-mainline ../magento2
+   ```
 
-The first parameter is the mainline code without any changes, and the second parameter is the path to the Magento with your feature changes.
-
-As a result of this command you will get the results of the Semantic Version Checker tool.
+The first parameter is the mainline code without any changes, and the second parameter is the path to the folder with your changes.
+This command you output the results of the Semantic Version Checker tool.
