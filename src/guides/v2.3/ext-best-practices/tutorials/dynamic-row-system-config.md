@@ -171,7 +171,71 @@ class TaxColumn extends Select
 
 This block sets values for the drop-down option.
 
-## Step 4: Clean cache
+## Step 4: Set default values - OPTIONAL
+
+It is possible to set defaults for a dynamic row configuration, this is done by adding additional XML to the defaults block in the `config.xml` file for the module.
+
+Add a block to the `<default>` section of the `config.xml` file and do not include any values:
+
+```xml
+<system>
+    <general>
+        <ranges></ranges>
+    </general>
+</system>
+```
+
+For each complete line of configuration, create an XML block with a repeating node that has a different value to all the others and contains XML tags for each sub-option and value.
+For example, you can use `<item1>, <item2>`.
+
+The sub-options are the columns defined in the `_prepareToRender()` method as described in [Step 2](#step-2-create-the-block-class-to-describe-custom-field-columns).
+
+In the following excerpt, a single row for `item1` contains 4 sub-options:
+
+```xml
+<item1>
+    <from_qty>5</from_qty>
+    <to_qty>6</to_qty>
+    <price>10.00</price>
+    <tax>1</tax>
+</item1>
+```
+
+Continue building the default block by adding 3 items to the `ranges` configuration option in the `config.xml` file:
+
+```xml
+<system>
+    <general>
+        <ranges>
+            <item1>
+                <from_qty>1</from_qty>
+                <to_qty>5</to_qty>
+                <price>10.00</price>
+                <tax>1</tax>
+            </item1>
+            <item2>
+                <from_qty>6</from_qty>
+                <to_qty>10</to_qty>
+                <price>20.00</price>
+                <tax>1</tax>
+            </item2>
+            <item3>
+                <from_qty>11</from_qty>
+                <to_qty>15</to_qty>
+                <price>30.00</price>
+                <tax>0</tax>
+            </item3>
+        </ranges>
+    </general>
+</system>
+```
+
+To verify the default values for the configuration are correct, do the following :
+
+-  Ensure that this configuration option has no entry in the database.
+-  Continue with Step 5
+
+## Step 5: Clean cache
 
 Clean the Magento cache with the following command:
 
@@ -186,7 +250,7 @@ bin/magento cache:clean config
 
 ## Result
 
-The result is a new dynamic system row field in the Admin panel.
+The result is a new dynamic system row field in the Admin panel. If you have set optional default values, these should also appear.
 
 ![Dynamic Rows System Config]({{ site.baseurl }}/common/images/ext-best-practices/dynamic-rows-config-result.png)
 
