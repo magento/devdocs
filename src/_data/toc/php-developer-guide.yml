@@ -291,4 +291,4 @@ pages:
           url: /extension-dev-guide/versioning/dependencies.html
 
         - label: MFTF test versioning and backward compatibility policy
-          url: /extension-dev-guide/versioning/mftf-tests-codebase-changes.md.html
+          url: /extension-dev-guide/versioning/mftf-tests-codebase-changes.html
