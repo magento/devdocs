@@ -358,8 +358,9 @@ In the admin area, this is implemented for [global search]({{ site.mage2bloburl 
 
 There are two ways to set the template for a block:
 
--  using the `template` attribute
--  using the `<argument>` instruction
+- using the `template` attribute
+- using the `<argument>` instruction
+- using the `<action method="setTemplate">` instruction
 
 Both approaches are demonstrated in the following examples of changing the template of the page title block.
 
@@ -379,13 +380,23 @@ Both approaches are demonstrated in the following examples of changing the templ
  </referenceBlock>
 ```
 
-In both examples, the template is specified according to the following:
+**Example 3:**
+
+```xml
+ <referenceBlock name="page.main.title">
+   <action method="setTemplate">
+     <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
+   </action>
+ </referenceBlock>
+```
+
+In all listed above examples, the template is specified according to the following:
 
 -  `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
 -  `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
 
 {:.bs-callout-info}
-Template values specified as attributes have higher priority during layout generation, than the ones specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block.
+The highest priority has template that is set with setTemplate action `<action method="setTemplate">`, second priotiry has template value specified as attribute `<referenceBlock name="..." template="..."/>`, and the loweset priority has template specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block. In case if we have `<action method="setTemplate">` construction - it will override the values that you specified in template attribute `<referenceBlock name="..." template="..."/>` and the value you specified using `<argument>`.
 
 ## Modify block arguments {#layout_markup_modify-block}
 
