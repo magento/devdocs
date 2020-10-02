@@ -894,7 +894,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The `php bin/magento setup:cron:run` command has now been removed. Also, remove references to this file in crontabs when upgrading.
 
-*  The `update/cron.php` file has been removed in Magento 2.4.0, if this file exists on your installation, it can be safely removed. References to this file in crontabs should also be removed when upgrading.
+*  The `update/cron.php` file has been removed in Magento 2.4.0, if this file exists on your installation, it can be safely removed. Also, remove references to this file in crontabs when upgrading.
 
 <!--- MC-30544-->
 
