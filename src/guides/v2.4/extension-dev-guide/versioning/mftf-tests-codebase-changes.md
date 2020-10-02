@@ -1,9 +1,7 @@
 ---
 group: php-developer-guide
-title: Mftf tests codebase changes
+title: MFTF test versioning and backward compatibility policy
 ---
-
-# Magento MFTF test versioning and backward compatibility policy
  
 ## Goals and requirements
 
