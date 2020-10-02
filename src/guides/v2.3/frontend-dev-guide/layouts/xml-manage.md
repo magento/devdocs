@@ -364,13 +364,13 @@ There are two ways to set the template for a block:
 
 Both approaches are demonstrated in the following examples of changing the template of the page title block.
 
-**Example 1: using the `template` attribute**
+**Example 1:** using the `template` attribute
 
 ```xml
  <referenceBlock name="page.main.title" template="%Namespace_Module::new_template.phtml%"/>
 ```
 
-**Example 2: using the `<argument>` instruction**
+**Example 2:** using the `<argument>` instruction
 
 ```xml
  <referenceBlock name="page.main.title">
@@ -380,7 +380,7 @@ Both approaches are demonstrated in the following examples of changing the templ
  </referenceBlock>
 ```
 
-**Example 3: using the `<action method="setTemplate">` instruction**
+**Example 3:** using the `<action method="setTemplate">` instruction
 
 ```xml
  <referenceBlock name="page.main.title">
