@@ -2,13 +2,13 @@
 group: php-developer-guide
 title: MFTF test versioning and backward compatibility policy
 ---
- 
+
 ## Goals and requirements
 
 1. Release MFTF tests as a separate Magento package on repo.magento.com.
-2. Define the versioning strategy for MFTF test packages.
-3. Outline what is considered a backward incompatible change to MFTF tests.
-4. List of what should be implemented.
+1. Define the versioning strategy for MFTF test packages.
+1. Outline what is considered a backward incompatible change to MFTF tests.
+1. List of what should be implemented.
 
 ## Backwards compatibility definition for MFTF tests
 
@@ -25,20 +25,21 @@ Types of changes:
 
 The approach of defining what each release should include was taken from [Semantic Versioning](https://semver.org/).
 
-3-component version numbers
----------------------------
-
+   3-component version numbers
+   ---------------------------
+   ```text
     X.Y.Z
     | | |
     | | +-- Backward Compatible changes (bug fixes)
     | +---- Backward Compatible changes (new features)
     +------ Backward Incompatible changes
-
+   ```
+   
 ### Z release
 
 Patch version **Z** MUST be incremented if only backward compatible changes to tests are introduced.
 For instance: a fix which aims to resolve test flakiness. This can be done by updating an unreliable selector, adding a `wait` to an element, or updating a data entity value.
-  
+
 ### Y release
 
 Minor version **Y** MUST be incremented if a new, backwards compatible test or test entity is introduced.
@@ -53,9 +54,9 @@ It MAY include minor and patch level changes. Patch and minor version MUST be re
 ## Implementation tasks
 
 1. Add Semantic Version analyzer to be able automatically define the release type of the MFTF tests package.
-2. Update publication infrastructure to exclude tests from `magento2-module` package type.
-3. Introduce publication functionality for publishing `magento2-test-module` package type.
-4. Create a metapackage with test packages specifically for each Magento edition.
+1. Update publication infrastructure to exclude tests from `magento2-module` package type.
+1. Introduce publication functionality for publishing `magento2-test-module` package type.
+1. Create a metapackage with test packages specifically for each Magento edition.
 
 ## Version increase matrix
 
