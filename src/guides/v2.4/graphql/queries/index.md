@@ -278,7 +278,7 @@ Preview-Version: 1576389600
 
 #### Staging `categoryList` query
 
-In this example campaign, the **End of Year Sale** subcategory and a catalog price rule are disabled when the campaign is not in effect. When you specify valid headers, the `categoryList`query returns full details about the custom category. Otherwise, the query returns an empty array.
+In this example campaign, the **End of Year Sale** subcategory and a catalog price rule are disabled when the campaign is not in effect. When you specify valid headers, the `categoryList` query returns full details about the custom category. Otherwise, the query returns an empty array.
 
 **Headers:**
 
