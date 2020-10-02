@@ -7,7 +7,7 @@ title: Mftf tests codebase changes
  
 ## Goals and requirements
 
-1. Release MFTF tests as a separate magento package on repo.magento.com.
+1. Release MFTF tests as a separate Magento package on repo.magento.com.
 2. Define the versioning strategy for MFTF test packages.
 3. Outline what is considered a backward incompatible change to MFTF tests.
 4. List of what should be implemented.
