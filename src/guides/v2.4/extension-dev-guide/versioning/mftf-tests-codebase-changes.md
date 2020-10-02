@@ -16,10 +16,10 @@ When a test undergoes changes, but achieves the same testing results as before a
 
 Types of changes:
 
-- **Test Flow change (Test/ActionGroup)** - A backwards compatible modification of a test flow would not diminish the original set of actions in the test. Some changes may change an action's sequence (behavior), but they allow any extension to achieve the same test results without changing the test extension (e.g a 'merge file').
-- **Test Entity change (Data/Section/Page/Metadata)** - Compatible modifications of entities are 1) adding new entities or 2) updating a `value` of an existing entity in a way where the test will **NOT** require updates.
-- **Test Annotation change** - Annotations can be changed without limitation and will always be considered a backward compatible change, but removing or changing a `<group />` annotation will be considered a backward incompatible change.
-- Changes which delete and/or rename a (Test/Action Group/Data/Metadata/Page/Section/Action)'s `id` attribute will be considered a backward incompatible change. Changing a reference to a data entity will also be considered a backward incompatible change.
+-  **Test Flow change (Test/ActionGroup)** - A backwards compatible modification of a test flow would not diminish the original set of actions in the test. Some changes may change an action's sequence (behavior), but they allow any extension to achieve the same test results without changing the test extension (e.g a 'merge file').
+-  **Test Entity change (Data/Section/Page/Metadata)** - Compatible modifications of entities are 1) adding new entities or 2) updating a `value` of an existing entity in a way where the test will **NOT** require updates.
+-  **Test Annotation change** - Annotations can be changed without limitation and will always be considered a backward compatible change, but removing or changing a `<group />` annotation will be considered a backward incompatible change.
+-  Changes which delete and/or rename a (Test/Action Group/Data/Metadata/Page/Section/Action)'s `id` attribute will be considered a backward incompatible change. Changing a reference to a data entity will also be considered a backward incompatible change.
 
 ## Versioning policy
 
@@ -34,7 +34,7 @@ The approach of defining what each release should include was taken from [Semant
     | +---- Backward Compatible changes (new features)
     +------ Backward Incompatible changes
    ```
-   
+
 ### Z release
 
 Patch version **Z** MUST be incremented if only backward compatible changes to tests are introduced.
