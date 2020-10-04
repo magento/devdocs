@@ -35,7 +35,7 @@ Fastly provides the following services to optimize and secure content delivery o
 
    -  **SSL/TLS certificates**–The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. Magento provides a Domain-validated Let's Encrypt SSL/TLS certificate for each Staging and Production environment. Magento completes domain validation and certificate provisioning during the Fastly set up process. See [TLS and Fastly].
 
-   -  **Origin cloaking**–Magento can enable Origin Cloaking for all Magento Commerce projects hosted on the Cloud platform. This option hides the IP addresses of your origin servers to protect them from direct attack. When this feature is enabled, all traffic to your Cloud infrastructure must route through the Fastly CDN or another secure channel. Any traffic sent directly to the Origin servers is blocked. If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache].
+   -  **Origin cloaking**–Magento can enable Origin Cloaking for all Magento Commerce projects hosted on the Cloud platform. This option hides the IP addresses of your origin servers to protect them from direct access. When this feature is enabled, all traffic to your Cloud infrastructure must route through the Fastly CDN or another secure channel. Any traffic sent directly to the Origin servers is blocked. If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache].
 
 -  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization].
 
