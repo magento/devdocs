@@ -40,33 +40,53 @@ magento-cloud environment:routes
 
 The `routes.yaml` file is a list of templated routes and their configurations. You can use the following placeholders in route templates:
 
--  `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `https://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
+-  The `{default}` placeholder represents the qualified domain name configured as the default for the project.
+
+   For example, a project with the default domain `example.com` and the following route templates:
+
+   ```text
+   https://www.{default}/
+   https://{default}/blog
+   ```
+   {:.no-copy}
+
+   These templates resolve to the following URLs in a production environment:
 
    ```text
    https://www.example.com/
-
    https://example.com/blog
    ```
    {:.no-copy}
 
--  `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `https://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
+-  The `{all}` placeholder represents all the domain names configured for the project.
 
-   ```text
-   https://www.example.com/
+    For example, a project with `example.com` and `example1.com` domains with the following route templates:
 
-   https://www.example1.com/
+    ```text
+    https://www.{all}/
 
-   https://example.com/blog
+    https://{all}/blog
+    ```
+    {:.no-copy}
 
-   https://example1.com/blog
-   ```
-   {:.no-copy}
+    These templates resolve to the following routes for all domains in the project:
 
-   The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch `{all}` is replaced with the project ID and environment ID for each domain.
+    ```text
+    https://www.example.com/
 
-   If a project does not have any domains configured, which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
+    https://www.example1.com/
 
-{{site.data.var.ee}} also generates routes for every active Integration environment. For Integration environments, `{default}` is replaced with the following domain name:
+    https://example.com/blog
+
+    https://example1.com/blog
+    ```
+    {:.no-copy}
+
+    The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch, `{all}` is replaced with the project ID and environment ID for each domain.
+
+    If a project does not have any domains configured, which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
+
+{{site.data.var.ee}} also generates routes for every active Integration environment. For Integration environments, the `{default}` placeholder is replaced with the following domain name:
 
 ```text
 [branch]-[per-environment-random-string]-[project-id].[region].magentosite.cloud
@@ -87,7 +107,15 @@ If your Cloud project supports multiple stores, follow the route configuration i
 
 All environments support both HTTP and HTTPS automatically.
 
--  If the configuration specifies only the HTTP route, HTTPS routes are created automatically, allowing the site to be served from both HTTP and HTTPS without requiring redirects. For example, if you have project with the default domain `example.com`, the record `http://{default}/` resolves to the following URLs:
+-  If the configuration specifies only the HTTP route, HTTPS routes are created automatically, allowing the site to be served from both HTTP and HTTPS without requiring redirects.
+
+   For example, a project with the default domain `example.com` and the following route template:
+
+   ```text
+   http://{default}/
+   ```
+
+   This template resolves to the following URLs:
 
    ```text
    http://example.com/
@@ -96,20 +124,38 @@ All environments support both HTTP and HTTPS automatically.
    ```
    {:.no-copy}
 
--  If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS. For example, for the default domain `example.com`, the route `https://{default}/` resolves to URL `https://example.com/` and redirects `http://example.com/` to `https://example.com/`.
+-  If the configuration specifies only the HTTPS route, then all HTTP requests redirect to HTTPS.
+
+   For example, a project with the default domain `example.com` with the following route template:
+
+   ```text
+   https://{default}/
+   ```
+   {:.no-copy}
+
+   This template resolves to the following URL:
+
+   ```text
+   https://example.com/
+   ```
+   {:.no-copy}
+
+   It also processes the following redirect:
+
+   `http://example.com/` ==> `https://example.com/`
 
 We recommend serving all pages over TLS.  For this configuration, you must configure redirects for all unencrypted request to the TLS equivalent using one of the following methods:
 
--  Change protocol to HTTPS in `routes.yaml`.
+-  Change the protocol to HTTPS in the `routes.yaml` file.
 
-```yaml
-"https://{default}/":
-    type: upstream
-    upstream: "mymagento:http"
-"https://{all}/":
-    type: upstream
-    upstream: "mymagento:http"
-```
+   ```yaml
+   "https://{default}/":
+       type: upstream
+       upstream: "mymagento:http"
+   "https://{all}/":
+       type: upstream
+       upstream: "mymagento:http"
+   ```
 
 -  For Staging and Production environments, we recommend enabling the [Force TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) option from the Magento Admin UI.  When you use this option, Fastly handles the redirection to HTTPS, so you do not have to update the `routes.yaml` configuration.
 
@@ -141,6 +187,29 @@ In the following examples, the route configuration routes the apex domain and th
     to: "http://{default}/"
 ```
 
+In this example, the request routing follows these rules:
+
+-  The server responds directly to requests with the following URL pattern:
+
+   ```text
+   http://example.com/path
+   ```
+   {:.no-copy}
+
+-  The server issues a _301 redirect_ for requests with the following URL pattern:
+
+   ```text
+   http://www.example.com/mypath
+   ```
+   {:.no-copy}
+
+   These requests redirect to the apex domain, for example:
+
+   ```text
+   http://example.com/mypath
+   ```
+   {:.no-copy}
+
 In the following example, the route configuration does not redirect URLs from the www domain to the apex domain. Instead, requests are served from both the www and apex domain.
 
 **Example 2:**
@@ -155,8 +224,6 @@ In the following example, the route configuration does not redirect URLs from th
     upstream: "mymagento:http"
 ```
 
-In this example, the server responds directly to a request of the form `http://example.com/hello`, issuing a _301 redirect_ for requests with the URL pattern `http://www.example.com/mypath`. These requests redirect to the apex domain, for example `http://example.com/mypath`.
-
 ## Wildcard routes
 
 {{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for redirect and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
@@ -170,28 +237,78 @@ This functions as a catch-all domain in a live environment.
 
 ### Routing a non-mapped domain
 
-You can route to a system that is not mapped to a domain using a dot (\.) to separate the subdomain. For example, a project with an `add-theme` branch routes to `http://add-theme-projectID.us.magento.com/`.
+You can route to a system that is not mapped to a domain using a dot (\.) to separate the subdomain.
 
-If you define a `http://www.{default}/` route, the route becomes `http://www.add-theme-projectID.us.magento.com/`.
+**Example:**
 
-You can put any subdomain before the dot and the route resolves. In this example, the route is defined as `http://*.{default}/`, so both of the following URLs work:
+A project with an `add-theme` branch routes to the following URL:
 
--  `http://foo.add-theme-projectID.us.magentosite.cloud/`
--  `http://bar.add-theme-projectID.us.magentosite.cloud/`
-
-If you examine the routes of this sample application, you see:
-
-```bash
-echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp
+```text
+http://add-theme-projectID.us.magento.com/
 ```
 {:.no-copy}
+
+If you define the following route template:
+
+```text
+ http://www.{default}/
+ ```
+{:.no-copy}
+
+The route resolves to the following URL:
+
+```text
+http://www.add-theme-projectID.us.magento.com/
+```
+{:.no-copy}
+
+You can insert any subdomain before the dot and the route resolves.
+
+**Example:**
+
+Define the following route template:
+
+```text
+http://*.{default}/
+```
+
+This template resolves both of the following URLs:
+
+```text
+http://foo.add-theme-projectID.us.magentosite.cloud/
+http://bar.add-theme-projectID.us.magentosite.cloud/
+```
+{:.no-copy}
+
+You can view the route pattern for non-mapped domains by establishing an SSH connection to the environment, and using the Magento Cloud CLI to list the routes:
 
 ```terminal
-https://*.add-theme-projectID.us.magentosite.cloud/
+web@mymagento.0:~$ vendor/bin/ece-tools env:config:show routes
+
+Magento Cloud Routes:
++------------------------------------------+--------------------------------------------------------------+
+| Route configuration                      | Value                                                        |
++------------------------------------------+--------------------------------------------------------------+
+| http://www.add-theme-projectID.us.magento.com/:                                                         |
++------------------------------------------+--------------------------------------------------------------+
+| primary                                  | false                                                        |
+| id                                       | null                                                         |
+| attributes                               |                                                              |
+| type                                     | upstream                                                     |
+| to                                       | mymagento                                                    |
+| original_url                             | https:/{default}/                                            |
++------------------------------------------+--------------------------------------------------------------+
+| https://*.add-theme-projectID.us.magentosite.cloud/:                                                    |
++------------------------------------------+--------------------------------------------------------------+
+| primary                                  | false                                                        |
+| id                                       | null                                                         |
+| attributes                               |                                                              |
+| type                                     | upstream                                                     |
+| to                                       | mymagento                                                    |
+| original_url                             | https://*.{default}/                                         |
++------------------------------------------+--------------------------------------------------------------+
 ```
 {:.no-copy}
-
-See more information about [caching]({{ site.baseurl }}/cloud/project/project-routes-more-cache.html).
 
 ## Redirects and caching
 
