@@ -34,5 +34,7 @@
 Jekyll::Hooks.register :site, :pre_render do |site, payload|
   next unless page.site.config['serving']
 
+  # rubocop:disable Lint/Debugger
   binding.irb if site.config['debug'] == 'site_pre_render'
+  # rubocop:enable Lint/Debugger
 end
