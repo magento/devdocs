@@ -48,7 +48,7 @@ To update the container configuration and test iteratively, use the `--force-rec
 
 ## Add a new version of existing service
 
-In `{{site.data.var.mcd-package}}` package the available [service versions] are determined by the Docker service images configured in the `{{site.data.var.mcd-package}}` `images` directory. You can add a new service version by creating a directory for the version and adding a `Dockerfile` and other files to configure the new version.
+In the `{{site.data.var.mcd-package}}` package the available [service versions] are determined by the Docker service images configured in the `{{site.data.var.mcd-package}}` `images` directory. You can add a new service version by creating a directory for the version and adding a `Dockerfile` and other files to configure the new version.
 
 {:.procedure}
 To add a new service version using a `Dockerfile`:
