@@ -390,13 +390,13 @@ Both approaches are demonstrated in the following examples of changing the templ
  </referenceBlock>
 ```
 
-In all listed above examples, the template is specified according to the following:
+In the above examples, the template is specified according to the following:
 
 -  `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
--  `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
+-  `new_template.phtml`: the path to the template relative to the `templates` directory. For example: `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
 
 {:.bs-callout-info}
-The highest priority template is one with setTemplate action `<action method="setTemplate">`, second priority has attribute specified as `<referenceBlock name="..." template="..."/>` and the lowest priority has the template using `<argument>`.
+The highest priority template is one with setTemplate action `<action method="setTemplate">`. Second priority has the attribute specified as `<referenceBlock name="..." template="..."/>`, and the lowest priority has the template using `<argument>`.
 
 It means, that if for a certain block, a template is set as an attribute, it will override the value you specify in `<argument>` for the same block. In the case where we have `<action method="setTemplate">` construction - it will override the values that you specified in the template attribute `<referenceBlock name="..." template="..."/>` and the value you specified using `<argument>`.
 
