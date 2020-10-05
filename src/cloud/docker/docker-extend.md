@@ -42,7 +42,7 @@ The following example defines the build context for the Web container. You can u
 
 To update the container configuration and test iteratively, use the `--force-recreate` option to refresh the container build:
 
-  ```shell script
+  ```bash
   docker-compose up -d --force-recreate --build
   ```
 
