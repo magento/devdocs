@@ -95,7 +95,7 @@ To add a new PHP extension:
 1. Open the `ExtensionResolver.php` file, define the required extension inside the `getConfig` method by specifying the extension type and dependency.
 
    We have divided the extensions into three conditional groups:
-   1. `EXTENSION_TYPE_CORE` - Extension that exists in the `docker-php-source` More details [https://hub.docker.com/_/php][PHP, Docker Official Images], the part "How to install more PHP extensions"
+   1. `EXTENSION_TYPE_CORE` - Extension that exists in the `docker-php-source`. More details can be found at [https://hub.docker.com/_/php][PHP, Docker Official Images], in the "How to install more PHP extensions" section.
    1. `EXTENSION_TYPE_PECL` - Extensions that can be installed from [https://pecl.php.net/][PECL]. More details [https://hub.docker.com/_/php][PHP, Docker Official Images], the part "PECL extensions"
    1. `EXTENSION_TYPE_INSTALLATION_SCRIPT` - For extensions that can be installed by running a number commands. More details [https://hub.docker.com/_/php][PHP, Docker Official Images], part "Other extensions"
 
