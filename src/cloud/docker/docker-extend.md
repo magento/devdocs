@@ -172,7 +172,7 @@ To add a new PHP extension:
     ],
   ```
    
-  If the installation requires the execution of special commands, then use the type `EXTENSION_TYPE_INSTALLATION_SCRIPT`.
+  If the installation requires multi-step command processing, use the `EXTENSION_TYPE_INSTALLATION_SCRIPT` type.
   The template for this type:
    
   ```php?start_inline=1
