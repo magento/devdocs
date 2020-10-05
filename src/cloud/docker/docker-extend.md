@@ -224,7 +224,7 @@ To add a new PHP extension:
         'zip',
     ];
 ```
-Otherwise, to enable, you will need to specify the name of the extension in the file `magento.app.yaml` of your projects and restart docker container.
+Otherwise, to enable an extension, you must specify the name of the extension in the `.magento.app.yaml` for your Cloud project, regenerate the Docker compose configuration file, and restart the Docker container.
 
 1. Add any required `.ini` files to the PHP FPM container configuration.
 
