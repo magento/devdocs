@@ -126,7 +126,7 @@ To add a new PHP extension:
             self::EXTENSION_TYPE => self::EXTENSION_TYPE_CORE // or self::EXTENSION_TYPE_PECL
             self::EXTENSION_OS_DEPENDENCIES => ['<name dependency package 1>', <name dependency package 2>, ... ] // Linux packages, they will be installed in the order of indication before extantion
             self::EXTENSION_PACKAGE_NAME => '<raw extension name>', // if this parameter exists, then this value will be used when generating the installation command
-            self::EXTENSION_CONFIGURE_OPTIONS => [ // options to be applied when configuring a PHP extension using the command `docker-php-ext-configure`.  More details [https://hub.docker.com/_/php][PHP, Docker Official Images], part "PHP Core Extensions"
+            self::EXTENSION_CONFIGURE_OPTIONS => [ // options to be applied when configuring a PHP extension using the command `docker-php-ext-configure`.  See the the "PHP Core Extensions" section in the [https://hub.docker.com/_/php][PHP, Docker Official Images] documentation.
                  '--option1',
                  '--option2',
                  ...
