@@ -71,7 +71,7 @@ To add a new service version using a `Dockerfile`:
 
 1. Run the following command to build the image.
 
-  ```shell script
+  ```bash
   docker build -t test/<service-name>:<service-version>
   ```
    
