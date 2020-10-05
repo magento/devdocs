@@ -92,7 +92,11 @@ To add a new PHP extension:
   cd magento-cloud-docker/src/Compose/Php
   ```
 
-1. Open the `ExtensionResolver.php` file, define the required extension inside the `getConfig` method by specifying the extension type and dependency.
+1. Add one or more extensions:  to the `ExtensionResolver.php` file:
+
+   -   Open the `ExtensionResolver.php` file for editing.
+   
+   -   Define the required extension in the `getConfig` method by specifying the extension type and dependency.
 
    We have divided the extensions into three conditional groups:
    1. `EXTENSION_TYPE_CORE` - Extension that exists in the `docker-php-source`. More details can be found at [https://hub.docker.com/_/php][PHP, Docker Official Images], in the "How to install more PHP extensions" section.
