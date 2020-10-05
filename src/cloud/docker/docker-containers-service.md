@@ -188,7 +188,7 @@ The Selenium container, based on the [selenium/standalone-chrome/](https://hub.d
 **Docker base image**: [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image<br/>
 **Ports exposed**: None<br/>
 
-The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] has writable file system and using for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
+The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] has a writable file system and is used for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
 
 ## TLS container
 
