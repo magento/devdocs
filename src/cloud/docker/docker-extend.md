@@ -100,7 +100,7 @@ To add a new PHP extension:
 
    We have divided the extensions into three conditional groups:
    1. `EXTENSION_TYPE_CORE` - Extension that exists in the `docker-php-source`. More details can be found at [https://hub.docker.com/_/php][PHP, Docker Official Images], in the "How to install more PHP extensions" section.
-   1. `EXTENSION_TYPE_PECL` - Extensions that can be installed from [https://pecl.php.net/][PECL]. More details [https://hub.docker.com/_/php][PHP, Docker Official Images], the part "PECL extensions"
+   1. `EXTENSION_TYPE_PECL` - Extensions that can be installed from [https://pecl.php.net/][PECL]. More details can be found at [https://hub.docker.com/_/php][PHP, Docker Official Images], in the "PECL extensions" section.
    1. `EXTENSION_TYPE_INSTALLATION_SCRIPT` - For extensions that can be installed by running a number commands. More details can be found at [https://hub.docker.com/_/php][PHP, Docker Official Images], in the  "Other extensions" section.
 
    For instance, the following block adds the `bcmath` extension:
