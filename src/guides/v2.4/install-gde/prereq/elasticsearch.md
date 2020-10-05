@@ -45,7 +45,7 @@ The preceding diagram shows:
 
 *  The Magento application and Elasticsearch are installed on different hosts.
 
-   Running on separate hosts require proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch clustering documentation][].)
+   Running on separate hosts requires proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch clustering documentation][].)
 
 *  Each host has its own web server; the web servers do not have to be the same.
 
