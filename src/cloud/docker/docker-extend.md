@@ -137,7 +137,7 @@ To add a new PHP extension:
     ]
   ```
     
-  Configuration for extensions `gd`, `geoip` and would be good examples:
+  Configuration for extensions `gd`, `geoip` are good examples:
     
   ```php?start_inline=1
     'gd' => [
