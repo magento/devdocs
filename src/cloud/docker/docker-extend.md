@@ -125,10 +125,10 @@ To add a new PHP extension:
   For extension types `EXTENSION_TYPE_PECL`\\`EXTENSION_TYPE_PECL`, the following configuration pattern is valid:
    
   ```php?start_inline=1
-   '<extension name>' => [ // this name will be used to identify the extension among other PHP extensions.
-       '<php version constraint>' => [ // for which PHP versions this config will apply
+   '<extension name>' => [ // Name to identify the extension among other PHP extensions.
+       '<php version constraint>' => [ // Specifies which PHP versions this configuration applies to
             self::EXTENSION_TYPE => self::EXTENSION_TYPE_CORE // or self::EXTENSION_TYPE_PECL
-            self::EXTENSION_OS_DEPENDENCIES => ['<name dependency package 1>', <name dependency package 2>, ... ] // Linux packages, they will be installed in the order of indication before extantion
+            self::EXTENSION_OS_DEPENDENCIES => ['<name dependency package 1>', <name dependency package 2>, ... ] // Specifies Linux package dependencies. These packages install in the order listed before installing the extension.
             self::EXTENSION_PACKAGE_NAME => '<raw extension name>', // if this parameter exists, then this value will be used when generating the installation command
             self::EXTENSION_CONFIGURE_OPTIONS => [ // options to be applied when configuring a PHP extension using the command `docker-php-ext-configure`.  See the the "PHP Core Extensions" section in the [https://hub.docker.com/_/php][PHP, Docker Official Images] documentation.
                  '--option1',
