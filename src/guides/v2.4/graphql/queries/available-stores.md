@@ -3,14 +3,15 @@ group: graphql
 title: availableStores query
 ---
 
-The `availableStores` query returns configuration information about all store views that have the same parent website. Use this query to implement a store switcher.
+The `availableStores` query returns configuration information about multiple store views. Use this query to implement a store switcher.
 
-{:.bs-callout-tip}
 Specify the [Store header]({{ page.baseurl }}/graphql/send-request.html) to determine the scope of the call.
+
+If the `useCurrentGroup` input argument is set to `true`, then the `availableStores` query returns configuration information about store views that have the same parent _store_. If the input argument is not specified or is set to `false`, the query returns values for all store views with the same parent _website_.
 
 ## Syntax
 
-`availableStores: [StoreConfig]`
+`availableStores(useCurrentGroup: Boolean): [StoreConfig]`
 
 ## Example usage
 
@@ -54,6 +55,12 @@ query {
   }
 }
 ```
+
+## Input attributes
+
+Attribute | Data type | Description
+--- | --- | ---
+useCurrentGroup | Boolean | Filter store views by current store group
 
 ## Output attributes
 
