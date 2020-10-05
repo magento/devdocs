@@ -31,8 +31,8 @@
 # To exit from the IRB session:
 # > exit!
 #
-Jekyll::Hooks.register :site, :post_render do |site, config|
-  next unless page.site.config['serving']
+Jekyll::Hooks.register :site, :post_render do |site, payload|
+  next unless site.config['serving']
 
   # rubocop:disable Lint/Debugger
   binding.irb if site.config['debug'] == 'site_post_render'
