@@ -29,4 +29,4 @@ Event | Category | Description
 `sign-in` | shopper | The customer signs into their account
 `sign-out` | shopper | The customer signs out of their account
 `view` | product | The customer views a product details page (PDP)
-`view` | recommendation-unit | The recommendation unit becomes viewable on the page, such as by scrolling into view, appearing, and so on
+`view` | recommendation-unit | The recommendation unit becomes viewable on the page, such as by scrolling into view
