@@ -182,6 +182,14 @@ docker-compose run --rm redis redis-cli -h redis
 
 The Selenium container, based on the [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome/h), enables the [Magento Functional Testing Framework (MFTF)](https://devdocs.magento.com/mftf/docs/introduction.html) for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
 
+## Test container
+
+**Container name**: test<br/>
+**Docker base image**: [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image<br/>
+**Ports exposed**: None<br/>
+
+The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] has writable file system and using for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
+
 ## TLS container
 
 **Container name**: tls<br/>
