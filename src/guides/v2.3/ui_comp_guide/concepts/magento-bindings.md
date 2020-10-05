@@ -8,12 +8,12 @@ title: Magento binding syntax
 
 Within HTML templates, Magento gives you the option of using a binding syntax that is simpler and easier to read and write than the standard Knockout binding syntax. The following code snippets help make the comparison.
 
-### Knockout syntax
+### Knockout native syntax
 
 ```html
-<!-- ko if: isVisible-->
+<!-- ko if: isVisible -->
     <div class="someClass">
-        <!-- ko i18n: 'Some translatable message!'--><!-- /ko -->
+        <!-- ko i18n: 'Some translatable message!' --><!-- /ko -->
         <span data-bind="html: content"></span>
     </div>
 <!-- /ko -->
@@ -40,6 +40,9 @@ or
 ```
 
 If you use the Magento syntax, the Magento wrapper replaces the Magento syntax with the matching Knockout comments or `data-bind` attributes during the loading of the HTML template.
+
+{:.bs-callout-info}
+For render performance, we recommend using knockout native syntax. Magento syntax will render slower than native knockout syntax. When using Magento syntax, every time the HTML template is loaded for a component, it gets parsed and adjusted accordingly so that KnockoutJS actually understands which bindings it should apply. Both approaches using native syntax or Magento syntax will work fine, but in some cases performance will matter so native syntax is the advised option.
 
 ## Binding map
 
