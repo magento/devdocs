@@ -57,7 +57,7 @@ To add a new service version using a `Dockerfile`:
 
 1. On the command line, change to the directory that contains the existing service version configurations.
 
-  ```shell script
+  ```bash
   cd magento-cloud-docker/images/<service-name>
   ```
 
