@@ -50,17 +50,63 @@ If all your module's attributes are extension attributes for existing modules, t
 
 You must explicitly define each attribute that can be used as input in a GraphQL query. In the simplest cases, you can create a single `type` definition that includes all the input, output, and sorting attributes for an object. This might not be possible if your module performs calculations, or otherwise has attributes that aren't available at the time of the query.
 
+The theoretical Volumizer module extends `Catalog`. In this case, you would reference `ProductFilterInput` as the source and make each attribute be of type `FilterTypeInput`. (Both of these entities are defined in `CatalogGraphQl`’s `schema.graphqls` file. In other use cases, you would be required to create your own input type.
+
+The following example defines three Volumizer attributes (`v_height`, `v_width`, `v_depth`) that must be specified as input to a query.
+
+```text
+input ProductFilterInput {
+    v_height: FilterTypeInput
+    v_width: FilterTypeInput
+    v_depth: FilterTypeInput
+}
+```
 ### Specify output attributes {#specify-output-attributes}
 
 You must know the data type of each attribute, whether it is scalar or an object, and whether it can be part of an array. In addition, each attribute within an object must be defined in the same manner.
 
 In a `schema.graphqls` file, the output `Interface` defines top-level attributes. Each object returned is defined in a `type` definition.
 
+This example allows sorting on the `v_volume` attribute only.
+
+```text
+input ProductSortInput {
+    v_volume: SortEnum
+}
+```
+
+`ProductSortInput` indicates that the attributes are available to catalog (Product) queries. If you specify a module-specific value such as `VolumizerSortInput`, then the attribute will be available only to queries processed by that module.
+
+`SortEnum` is defined in the base `schema.graphqls` file.
+
+
 ### Define the output interface
 
 In many cases, the response contains data that was either not available as input, or was transformed in some manner from the input. For example, when you specify a price in an input filter, Magento evaluates it as a Float value. However, `Price` output objects contain a Float value, a currency value, and possibly minimum/maximum values and tax adjustments. You can define a `typeResolver` to point to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{ page.baseurl }}/graphql/develop/resolvers.html) for more information.
 
 Output types that represent entities that can be manipulated (created, updated, or removed) and/or can be cached on the client MUST have `id` field. The type of the field SHOULD be `ID`.
+
+The following example defines module-specific output attributes for the Volumizer module.
+
+```text
+interface ProductInterface @typeResolver(class: "\\Path\\To\\typeResolver\\Class"){
+    v_height: Float
+    v_width: Float
+    v_depth: Float
+    v_volume: VolumeWithUnit
+}
+```
+
+The `typeResolver` parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. 
+
+The `v_volume` attribute is defined as a `VolumeWithUnit` object. This object might be defined as follows:
+```text
+type VolumeWithUnit {
+    caclulated_volume: Float
+    unit: VolumeUnitEnum
+}
+```
+The Volumizer module could return the `calculated_volume`, while the `unit` is an enumeration, described below.
 
 ## Define mutations
 
@@ -98,7 +144,7 @@ For example:
 ```text
 sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")
 url_key: String @doc(description: "The url key assigned to the product")
-product_count: Int @doc(description: "The number of products")
+product_count: Int @doc(description: "The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not")
 ```
 
 Use the `@deprecated` directive to deprecate attributes and enum values. The GraphQL specification does not permit deprecating input values or arguments. The `reason` keyword allows you to specify which attribute/field or enum value should be used instead.
