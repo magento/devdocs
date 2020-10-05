@@ -49,7 +49,7 @@ The following table shows the options to customize service container configurati
 | [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 |
 | [redis][redis-container] | Redis     | `--redis` | 3.2, 4.0, 5.0 |   Standard redis container
 | [selenium][selenium-container]| Selenium | `--with-selenium`<br>`--selenium-version`<br>`--selenium-image`| Any | Enables Magento application testing using the Magento Functional Testing Framework (MFTF)
-| [test][test-container]| PHP CLI | `--with-test`| Any | Creates PHP CLI based container with writable file system for test running
+| [test][test-container]| PHP CLI | `--with-test`| Any | Creates PHP CLI based container with writable file system for running tests
 | [tls][tls-container] | SSL Endpoint |  |   |  Terminates SSL, can be configured to pass to varnish or nginx
 | [varnish][varnish-container] | Varnish | `--no-varnish` | 4, 6.2 | Varnish is provisioned by default. Use the `--no-varnish` option to skip Varnish service installation
 | [web][web-container] | NGINX | `--nginx` | 1.9, latest |
