@@ -107,7 +107,7 @@ To add a new PHP extension:
    ],
   ```
   
-  In this case `bcmath` extensions will be install from `docker-php-source` for all `PHP` versions starting from `7.0`.
+  In this case, the `bcmath` extension installs from `docker-php-source` for all `PHP` versions starting from `7.0`.
    
   In case of installing an extension from `PECL` which has a dependency on a specific package:
   ```php?start_inline=1
