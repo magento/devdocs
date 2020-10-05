@@ -21,7 +21,7 @@ You can use the built-in extension mechanism of Docker to specify [multiple comp
 
 1. Pass both configuration files while executing your commands. For example:
 
-  ```shell script
+  ```bash
   docker-compose -f docker-compose.yml -f docker-compose-dev.yml run deploy bash
   ```
 
