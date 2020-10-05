@@ -113,7 +113,7 @@ To add a new PHP extension:
   
   In this case, the `bcmath` extension installs from `docker-php-source` for all `PHP` versions starting from `7.0`.
    
-  In case of installing an extension from `PECL` which has a dependency on a specific package:
+  In the case of installing an extension from `PECL` which has a dependency on a specific package:
   ```php?start_inline=1
    'gnupg' => [
      '>=7.0' => [
