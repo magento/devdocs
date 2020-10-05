@@ -17,12 +17,12 @@ Event | Category | Description
 `add-to-wishlist` | product | A product is added to the wishlist
 `apply-discount-action` | shopping-cart | A discount code is applied to the cart
 `edit-product-qty` | shopping-cart | The quantity of a product in a cart changed to a non-zero value
-`impression-render` | recommendation-unit | The recommendation unit is rendered on the page. If there are _N_ items rendered, there will be _N_ recommended item contexts attached to this event (one per item recommended).
+`impression-render` | recommendation-unit | The recommendation unit is rendered on the page.
 `initiate-checkout` | shopping-cart | The customer initiates checkout
 `instant-purchase` | checkout |  The customer completes an instant purchase
 `place-order` | checkout | The customer's order is submitted
-`rec-add-to-cart-click` | recommendation-unit | The customer clicks the **Add to cart** button for an item in the recommendation unit. The recommended item context represents the item the customer clicked.
-`rec-click` | recommendation-unit | **Not supported on Chrome**. The customer clicks a product in the recommendation unit. The recommended item context represents the item the customer clicked.
+`rec-add-to-cart-click` | recommendation-unit | The customer clicks the **Add to cart** button for an item in the recommendation unit.
+`rec-click` | recommendation-unit | The customer clicks a product in the recommendation unit.
 `remove-discount-action` | shopping-cart | A discount code is removed from a cart
 `remove-from-cart` | product | A product is removed from a cart
 `remove-from-wishlist` | product | A product is removed from a wishlist
