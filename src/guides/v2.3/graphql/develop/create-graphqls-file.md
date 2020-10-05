@@ -79,7 +79,6 @@ input ProductSortInput {
 
 `SortEnum` is defined in the base `schema.graphqls` file.
 
-
 ### Define the output interface
 
 In many cases, the response contains data that was either not available as input, or was transformed in some manner from the input. For example, when you specify a price in an input filter, Magento evaluates it as a Float value. However, `Price` output objects contain a Float value, a currency value, and possibly minimum/maximum values and tax adjustments. You can define a `typeResolver` to point to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{ page.baseurl }}/graphql/develop/resolvers.html) for more information.
@@ -97,7 +96,7 @@ interface ProductInterface @typeResolver(class: "\\Path\\To\\typeResolver\\Class
 }
 ```
 
-The `typeResolver` parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. 
+The `typeResolver` parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required.
 
 The `v_volume` attribute is defined as a `VolumeWithUnit` object. This object might be defined as follows:
 ```text
