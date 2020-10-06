@@ -248,6 +248,78 @@ Admins access will be shared via comment on GitHub.
 -  Magento EngCom Team
 -  [Contributor]({{ site.baseurl }}/contributor-guide/contributors.html)
 
+###Customize deployed instances {#customize-deployed-instances}
+
+In some cases some customizations are necessary in order to test an issue, or a pull request, to achieve such need there are a set of commands that combined with the [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr) will allow you to customize your deployed instance.
+
+####Magento Edition:
+
+By appending the text below to the deployer command you will be able to specify which edition you would like to have deployed.
+
+```text
+with edition {$edition}
+```
+
+For `edition`, the supported values are `ee` to deploy Magento Commerce edition or `b2b` to deploy the Magento Commerce with B2B modules.
+
+####Environment:
+
+By appending the text below to the deployer command you will be able to specify which version of PHP, MySQL and ElasticSearch you want to have deployed on your instance.
+
+```text
+with env[ironment] PHP {$phpVersion}, search-engine ElasticSearch {$searchEngineVersion}, database {$dbEngine} {$dbEngineVersion}
+```
+
+You can replace the variables above with the following:
+
+- For `phpVersion`, you can use the PHP version that you want the instance to run.
+
+- For `searchEngineVersion`, you can use the ElasticSeach version that you want the instance to run.
+
+- For `dbEngine`, you can choose between `MariaDB` or `MySQL`.
+
+- For `dbEngineVersion`, you can replace with the version of the engine that you choose.
+
+As an example you can have an environment defined as shown below:
+
+```text
+with env PHP 7.4, search-engine ElasticSearch 7, database MariaDB 10.4
+```
+
+Please be aware such feature should be only used in specific cases, and the general recommendation is to not change the default environment.
+
+####Add Extensions:
+
+By appending the text below to the deployer command you will be able to specify extensions that you would like to add to your instance.
+
+```text
+with extensions {$extensionRepo}
+```
+
+For `extensionRepo`, you can specify extension repositories that will be additionally used when assembling your instance. You can also use define the branch by using the pattern: org/repo-name:branch-name.
+
+With such a feature you can specify multiple modules by separating each module with comma. As an example:
+
+```text
+with extensions magento/security-package:1.0-develop, magento/security-package-ee
+```
+
+####Remove Extensions:
+
+By appending the text below to the deployer command you will be able to remove extensions that you would like to not have installed on your instance.
+
+```text
+without extensions {$extensionRepo}
+```
+
+For `extensionRepo`, you can specify extension repositories that will be removed when assembling your instance.
+
+With such a feature you can specify multiple modules by separating each module with comma. As an example:
+
+```text
+with extensions magento/adobe-stock-integration
+```
+
 ### Combine multiple pull requests {#combine-pr}
 
 To optimize the pull request queue, enter a command with a series of related pull request numbers to merge and test the code. If all tests pass, the entered PRs are merged into the current PR.
