@@ -27,7 +27,7 @@ Amazon Sales Channel 4.3.0 is compatible with versions 2.3.x but only supported 
 
 This version of Amazon Sales Channel includes the following improvements and fixes.
 
--  {:.fix}The _Order Details_ feature has been redesigned and no longer relies on the _Import Orders_ setting. Order details now appear in the Amazon Sales Channel interface for all orders.
+-  {:.fix}<!--CHAN-xxxx-->The _Order Details_ feature has been redesigned and no longer relies on the _Import Orders_ setting. Order details now appear in the Amazon Sales Channel interface for all orders.
 
 -  {:.fix}In the _Marketing_ menu in the Admin, the name has been changed from _Amazon_ to _Amazon Sales Channel_.
 
