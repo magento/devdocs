@@ -98,6 +98,7 @@ To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/
 @icons__font-path: '@{baseDir}fonts/Theme-Icons'; //  Add you fonts in your-theme/web/fonts
 @icons__font-name: 'Theme-Icons';
 ```
+Once you upload icons from the IcoMoon, It occurs 404 error `woff2` file icon not found in console. `woff2` Missing from this IcoMoon package. So you need to generate `woff` to `woff2` file.
 
 {:.bs-callout-info}
 If your theme does not use the Magento UI library, include the font in your theme's CSS files using the `@font-face` CSS rule.
