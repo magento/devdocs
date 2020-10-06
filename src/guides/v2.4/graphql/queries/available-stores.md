@@ -5,9 +5,9 @@ title: availableStores query
 
 The `availableStores` query returns configuration information about multiple store views. Use this query to implement a store switcher.
 
-Specify the [Store header]({{ page.baseurl }}/graphql/send-request.html) to determine the scope of the call.
-
 If the `useCurrentGroup` input argument is set to `true`, then the `availableStores` query returns configuration information about store views that have the same parent _store_. If the input argument is not specified or is set to `false`, the query returns values for all store views with the same parent _website_.
+
+Specify the [Store header]({{ page.baseurl }}/graphql/send-request.html) to determine the scope of the call. Without this header, the query returns values for the default store view and other store views with the same parent _store_.
 
 ## Syntax
 
@@ -21,7 +21,7 @@ The following query returns information about the store's catalog configuration.
 
 ```graphql
 query {
-  availableStores {
+  availableStores(useCurrentGroup: true) {
     id
     code
     locale
@@ -60,7 +60,7 @@ query {
 
 Attribute | Data type | Description
 --- | --- | ---
-useCurrentGroup | Boolean | Filter store views by current store group
+`useCurrentGroup` | Boolean | Filter store views by current store group
 
 ## Output attributes
 
