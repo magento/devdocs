@@ -29,15 +29,15 @@ This version of Amazon Sales Channel includes the following improvements and fix
 
 -  {:.fix}The _Order Details_ feature has been redesigned and no longer relies on the _Import Orders_ setting. Order details now appear in the Amazon Sales Channel interface for all orders.
 
-- {:.fix}In the _Marketing_ menu in the Admin, the name has been changed from _Amazon_ to _Amazon Sales Channel_.
+-  {:.fix}In the _Marketing_ menu in the Admin, the name has been changed from _Amazon_ to _Amazon Sales Channel_.
 
-- {:.bug}**Important**: Known issues with Magento 2.4.0 compatibility are resolved in the Magento 2.4.1 release.
+-  {:.bug}**Important**: Known issues with Magento 2.4.0 compatibility are resolved in the Magento 2.4.1 release.
 
-   - Amazon cron processes in `error` state
+   -  Amazon cron processes in `error` state
 
-   - Installation with Magento 2.4.0 fails when creating stores in the database
+   -  Installation with Magento 2.4.0 fails when creating stores in the database
 
-   - Creating product fails when MSI is installed
+   -  Creating product fails when MSI is installed
 
 ### v4.2.0
 
