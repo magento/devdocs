@@ -16,7 +16,7 @@ type: php:<version>
 
 ### PHP extensions
 
-You can enable additional PHP extensions in the `runtime:extension` section. Also, the extensions specified become available in the Docker PHP containers.
+You can enable or disable PHP extensions in the `runtime:extension` section. Also, the extensions specified become available in the Docker PHP containers.
 
 > .magento.app.yaml
 
@@ -41,96 +41,18 @@ php -m
 
 For details about a specific PHP extension, see the [PHP Extension List](https://www.php.net/manual/en/extensions.alphabetical.php).
 
-{{site.data.var.ece}} supports the following extensions:
+The following table shows the supported PHP extensions when deploying {{site.data.var.ee}} on the Cloud platform.
 
--  Default extensions:
-   -  `bcmath`
-   -  `bz2`
-   -  `calendar`
-   -  `exif`
-   -  `gd`
-   -  `gettext`
-   -  `intl`
-   -  `mysqli`
-   -  `pcntl`
-   -  `pdo_mysql`
-   -  `soap`
-   -  `sockets`
-   -  `sysvmsg`
-   -  `sysvsem`
-   -  `sysvshm`
-   -  `opcache`
-   -  `zip`
+{:.php-plugins-table}
+| Default extensions | Installed extensions<br>that cannot be uninstalled | Extensions that can be installed<br> and uninstalled as needed|
+|--------------------|---------------------|---------------------|
+| `bcmath`<br> `bz2`<br> `calendar`<br> `exif`<br> `gd`<br> `gettext`<br> `intl`<br> `mysqli`<br> `pcntl`<br> `pdo_mysql`<br> `soap`<br> `sockets`<br>  `sysvmsg`<br> `sysvsem`<br> `sysvshm`<br> `opcache`<br> `zip` |`ctype`<br> `curl`<br> `date`<br> `dom`<br> `fileinfo`<br> `filter`<br> `ftp`<br> `hash`<br> `iconv`<br> `json`<br> `mbstring`<br> `mysqlnd`<br> `openssl`<br> `pcre`<br> `pdo`<br> `pdo_sqlite`<br> `phar`<br> `posix`<br> `readline`<br> `session`<br> `sqlite3`<br> `tokenizer`<br> `xml`<br> `xmlreader`<br> `xmlwriter`<br> |`geoip`<br>`gmp`<br> `igbinary`<br> `imagick`<br> `imap`<br>`ioncube`<br> `ldap`<br> `mailparse`<br> `mcrypt`<br> `msgpack`<br> `mysqli`<br> `oauth`<br> `pdo_mysql`<br> `propro`<br> `pspell`<br> `raphf`<br> `recode`<br> `redis`<br> `shmop` `sockets`<br> `sodium`<br> `ssh2`<br>`tidy`<br> `xdebug`<br> `xmlrpc`<br> `xsl`<br> `yaml`|
 
--  Extensions that are installed and cannot be uninstalled:
-   -  `ctype`
-   -  `curl`
-   -  `date`
-   -  `dom`
-   -  `fileinfo`
-   -  `filter`
-   -  `ftp`
-   -  `hash`
-   -  `iconv`
-   -  `json`
-   -  `mbstring`
-   -  `mysqlnd`
-   -  `openssl`
-   -  `pcre`
-   -  `pdo`
-   -  `pdo_sqlite`
-   -  `phar`
-   -  `posix`
-   -  `readline`
-   -  `session`
-   -  `sqlite3`
-   -  `tokenizer`
-   -  `xml`
-   -  `xmlreader`
-   -  `xmlwriter`
-
--  Extensions that can be installed and uninstalled as needed:
-   -  `bcmath`
-   -  `bz2`
-   -  `calendar`
-   -  `exif`
-   -  `gd`
-   -  `geoip`
-   -  `gettext`
-   -  `gmp`
-   -  `igbinary`
-   -  `imagick`
-   -  `imap`
-   -  `intl`
-   -  `ioncube`
-   -  `ldap`
-   -  `mailparse`
-   -  `mcrypt`
-   -  `msgpack`
-   -  `mysqli`
-   -  `oauth`
-   -  `opcache`
-   -  `pdo_mysql`
-   -  `propro`
-   -  `pspell`
-   -  `raphf`
-   -  `recode`
-   -  `redis`
-   -  `shmop`
-   -  `soap`
-   -  `sockets`
-   -  `sodium`
-   -  `ssh2`
-   -  `sysvmsg`
-   -  `sysvsem`
-   -  `sysvshm`
-   -  `tidy`
-   -  `xdebug`
-   -  `xmlrpc`
-   -  `xsl`
-   -  `yaml`
-   -  `zip`
-   -  `pcntl`
+The PHP module requirements for {{ site.data.var.ee }} are tied to the Magento version. See [PHP requirements]({{ site.baseurl }}/guides/v2.4/install-gde/prereq/php-settings.html).
 
 {:.bs-callout-warning}
 PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
+
+### Custom PHP configuration
+
+You can customize the PHP settings for a Cloud environment by adding a `php.ini` file to your project. See [Customize PHP.INI]({{ site.baseurl }}/cloud/project/magento-app-php-ini.html).
