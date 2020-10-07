@@ -272,13 +272,13 @@ with env[ironment] PHP {$phpVersion}, search-engine ElasticSearch {$searchEngine
 
 You can replace the variables above with the following:
 
-- For `phpVersion`, you can use the PHP version that you want the instance to run.
+-  For `phpVersion`, you can use the PHP version that you want the instance to run.
 
-- For `searchEngineVersion`, you can use the ElasticSeach version that you want the instance to run.
+-  For `searchEngineVersion`, you can use the ElasticSeach version that you want the instance to run.
 
-- For `dbEngine`, you can choose between `MariaDB` or `MySQL`.
+-  For `dbEngine`, you can choose between `MariaDB` or `MySQL`.
 
-- For `dbEngineVersion`, you can replace with the version of the engine that you choose.
+-  For `dbEngineVersion`, you can replace with the version of the engine that you choose.
 
 As an example you can have an environment defined as shown below:
 
