@@ -98,6 +98,7 @@ To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/
 @icons__font-path: '@{baseDir}fonts/Theme-Icons'; //  Add you fonts in your-theme/web/fonts
 @icons__font-name: 'Theme-Icons';
 ```
+
 With uploaded icons from IcoMoon, a "404 error `woff2` file icon not found" may occur in the console. This means the `woff2` file is missing from the IcoMoon package. You just need copy the `woff` file to `woff2`.
 
 {:.bs-callout-info}
