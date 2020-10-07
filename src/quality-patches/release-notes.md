@@ -16,7 +16,7 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 -  {:.bug}Known issues -->
 
 {:.bs-callout-info}
-See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) for instructions on applying patches to your Magento projects.
+See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html#mqp) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
 ## v1.0.6
