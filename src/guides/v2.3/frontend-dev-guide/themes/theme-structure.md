@@ -197,7 +197,7 @@ The directories and files structure described below is the most extended one. It
         optional
       </td>
       <td colspan="1">
-        Theme fonts and customize icons will be added here. `Theme-Icons`.
+        Theme fonts and customized icons will be added here. `Theme-Icons`.
       </td>
     </tr>
     <tr>
