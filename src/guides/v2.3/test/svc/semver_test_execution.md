@@ -34,4 +34,4 @@ so you may need to clone the Magento repository to a separate folder to perform 
    ```
 
 The first parameter is the mainline code without any changes, and the second parameter is the path to the folder with your changes.
-This command you output the results of the Semantic Version Checker tool.
+The results of the Semantic Version Checker are outputted to the console.
