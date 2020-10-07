@@ -33,11 +33,11 @@ This version of Amazon Sales Channel includes the following improvements and fix
 
 -  {:.bug}**Important**: Known issues with Magento 2.4.0 compatibility are resolved in the Magento 2.4.1 release.
 
-  -  Amazon cron processes in `error` state
+   -  Amazon cron processes in `error` state
 
-  -  Installation with Magento 2.4.0 fails when creating stores in the database
+   -  Installation with Magento 2.4.0 fails when creating stores in the database
 
-  -  Creating product fails when MSI is installed
+   -  Creating product fails when MSI is installed
 
 ### v4.2.0
 
@@ -126,9 +126,9 @@ Amazon Sales Channel 3.0.0 is compatible with versions 2.2.4+ and 2.3.x of {{sit
 
 -  {:.new}**Amazon UK Marketplace Now Available**: Users can choose the United Kingdom marketplace when [creating and integrating](https://docs.magento.com/m2/ee/user_guide/sales-channels/amazon/store-integration.html) an Amazon Sales Channel store. This UK upgrade includes additional support for:
 
-  -  [Amazon VAT Calculation Service](https://services.amazon.co.uk/vat-calculation-service.html)
+   -  [Amazon VAT Calculation Service](https://services.amazon.co.uk/vat-calculation-service.html)
 
-  -  [Product Tax Code](https://sellercentral.amazon.com/gp/help/help.html?itemID=G200794510&language=en_US) information.
+   -  [Product Tax Code](https://sellercentral.amazon.com/gp/help/help.html?itemID=G200794510&language=en_US) information.
 
 -  {:.new}**Improved Logging**: <!--CHAN-3642, 3672-->Implemented the **Enable Debug Logging** feature to collect additional synchronization data when troubleshooting is needed. See the [Sales Channels Settings](https://docs.magento.com/m2/ee/user_guide/configuration/sales-channels/global-settings.html) topic in the Configuration Reference.
 
