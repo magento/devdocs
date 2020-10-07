@@ -86,19 +86,14 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
 }
 
 //
-//  Tablet (for the front-end)
+//  Tablet
 //  _____________________________________________
 
-@media only screen and (max-width: @screen__m) {
-    // your code
-}
-
-//
-//  Tablets (for the back-end)
-//  _____________________________________________
-
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
-    // your code
+// This will add styles for tablet devices. When using native media-queries, we recommend wrapping your media-queries with media-width Magento mixins or media-target
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+    @media only screen and (min-width: @screen__m) and (max-width: @screen__xl - 1) {
+        // your code
+    }
 }
 
 //
