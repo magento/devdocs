@@ -12,6 +12,9 @@ pages:
         - label: Authorization tokens
           url: /graphql/authorization-tokens.html
 
+        - label: Protected mutations
+          url: /graphql/protected-mutations.html
+
         - label: GraphQL caching
           url: /graphql/caching.html
 
@@ -207,6 +210,10 @@ pages:
 
         - label: createEmptyCart mutation
           url: /graphql/mutations/create-empty-cart.html
+
+        - label: createKlarnaPaymentsSession mutation
+          url: /graphql/mutations/create-klarna-payments-session.html
+          exclude_versions: ["2.3"]
 
         - label: createPayflowProToken mutation
           url: /graphql/mutations/create-payflow-pro-token.html
@@ -416,6 +423,10 @@ pages:
 
         - label: Braintree Vault
           url: /graphql/payment-methods/braintree-vault.html
+
+        - label: Klarna
+          url: /graphql/payment-methods/klarna.html
+          exclude_versions: ["2.3"]
 
         - label: PayPal Express Checkout
           url: /graphql/payment-methods/paypal-express-checkout.html
