@@ -30,15 +30,22 @@ Magento does not support Elasticsearch 2.x, 5.x, and 6.x.
 
 ## Recommended configuration {#es-arch}
 
-The following figure shows our recommended configuration. All of the tasks we discuss assume you have configured your system this way.
+We recommend the following:
 
-![]({{ site.baseurl }}/common/images/elastic_config.png){:width="500px"}
+*  [Configure nginx and Elasticsearch][]
+*  [Configure Apache and Elasticsearch][]
+
+## Elasticsearch on different hosts {#es-host}
+
+All of the following tasks we discuss assume you have configured your system this way.
+
+![Magento ElasticSearch diagram]({{ site.baseurl }}/common/images/elastic_config.png){:width="500px"}
 
 The preceding diagram shows:
 
 *  The Magento application and Elasticsearch are installed on different hosts.
 
-   Running on separate hosts is secure, enables Elasticsearch to be scaled, and is necessary for proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch clustering documentation][].)
+   Running on separate hosts requires proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch clustering documentation][].)
 
 *  Each host has its own web server; the web servers do not have to be the same.
 
