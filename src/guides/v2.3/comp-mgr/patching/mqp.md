@@ -73,20 +73,20 @@ The status table contains the following types of information:
 
 -  **Type**:
 
-   -  `Optional`—All patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations.
-   -  `Deprecated`—Magento has deprecated the individual patch. If you have applied the patch, we recommend that you revert it. The revert operation also removes the patch from the status table.
+  -  `Optional`—All patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations.
+  -  `Deprecated`—Magento has deprecated the individual patch. If you have applied the patch, we recommend that you revert it. The revert operation also removes the patch from the status table.
 
 -  **Status**:
 
-   -  `Applied`—The patch has been applied.
-   -  `Not applied`—The patch has not been applied.
-   -  `N/A`—The status of the patch cannot be defined due to conflicts.
+  -  `Applied`—The patch has been applied.
+  -  `Not applied`—The patch has not been applied.
+  -  `N/A`—The status of the patch cannot be defined due to conflicts.
 
 -  **Details**:
 
-   -  `Affected components`—The list of affected Magento modules.
-   -  `Required patches`—The list of patches that must be applied for an indicated patch to work properly (dependencies).
-   -  `Recommended replacement`—The patch that is a recommended replacement for a deprecated patch.
+  -  `Affected components`—The list of affected Magento modules.
+  -  `Required patches`—The list of patches that must be applied for an indicated patch to work properly (dependencies).
+  -  `Recommended replacement`—The patch that is a recommended replacement for a deprecated patch.
 
 {:.bs-callout-info}
 After upgrading to a new version of Magento, you must re-apply patches if the patches are not included in the new version. See [Re-apply patches after an upgrade](#upgrade).

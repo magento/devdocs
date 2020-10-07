@@ -83,22 +83,22 @@ The status table contains the following types of information:
 
 -  **Type**:
 
-   -  `Optional`—All patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations. For {{ site.data.var.ece }}, all MQP patches are optional.
-   -  `Required`—All patches from the {{ site.data.var.mcp-prod }} package are required for Cloud customers.
-   -  `Deprecated`—The individual patch is marked as deprecated by Magento and we recommend reverting it if you have applied it. After you revert a deprecated patch, it will no longer be displayed in the status table.
-   -  `Custom`—All patches from the 'm2-hotfixes' directory.
+  -  `Optional`—All patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations. For {{ site.data.var.ece }}, all MQP patches are optional.
+  -  `Required`—All patches from the {{ site.data.var.mcp-prod }} package are required for Cloud customers.
+  -  `Deprecated`—The individual patch is marked as deprecated by Magento and we recommend reverting it if you have applied it. After you revert a deprecated patch, it will no longer be displayed in the status table.
+  -  `Custom`—All patches from the 'm2-hotfixes' directory.
 
 -  **Status**:
 
-   -  `Applied`—The patch has been applied.
-   -  `Not applied`—The patch has not been applied.
-   -  `N/A`—The status of the patch cannot be defined due to conflicts.
+  -  `Applied`—The patch has been applied.
+  -  `Not applied`—The patch has not been applied.
+  -  `N/A`—The status of the patch cannot be defined due to conflicts.
 
 -  **Details**:
 
-   -  `Affected components`—The list of affected Magento modules.
-   -  `Required patches`—The list of required patches (dependencies).
-   -  `Recommended replacement`—The patch that is a recommended replacement for a deprecated patch.
+  -  `Affected components`—The list of affected Magento modules.
+  -  `Required patches`—The list of required patches (dependencies).
+  -  `Recommended replacement`—The patch that is a recommended replacement for a deprecated patch.
 
 ## Apply a patch in a local environment
 
