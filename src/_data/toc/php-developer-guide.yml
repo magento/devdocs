@@ -284,8 +284,12 @@ pages:
         - label: Check the Magento version
           url: /extension-dev-guide/versioning/check-version.html
 
+        - label: Codebase changes
+          url: /extension-dev-guide/versioning/codebase-changes.html
+
         - label: Module version dependencies
           url: /extension-dev-guide/versioning/dependencies.html
 
-        - label: Codebase changes
-          url: /extension-dev-guide/versioning/codebase-changes.html
+        - label: MFTF test versioning and backward compatibility policy
+          url: /extension-dev-guide/versioning/mftf-tests-codebase-changes.html
+          exclude_versions: ["2.3"]
