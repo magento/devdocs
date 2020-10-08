@@ -90,7 +90,7 @@ task :whatsnew do
   generated_data = YAML.load_file generated_file
   current_data['updated'] = generated_data['updated']
   current_data['entries'].prepend(generated_data['entries']).flatten!
-  current_data['entries'].uniq! {|entry| entry['link'] }
+  current_data['entries'].uniq! { |entry| entry['link'] }
 
   puts "Writing updates to #{current_file}"
   File.write current_file, current_data.to_yaml
