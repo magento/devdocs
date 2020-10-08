@@ -5,7 +5,8 @@ functional_areas:
   - Upgrade
 ---
 
-### Command line
+{:.procedure}
+To apply patches from the command line:
 
 1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.
 1. Log into the server as the [Magento admin user][] and verify the file is in the correct directory.
