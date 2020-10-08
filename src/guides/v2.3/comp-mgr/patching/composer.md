@@ -5,7 +5,6 @@ functional_areas:
   - Upgrade
 ---
 
-### Composer
 
 {:.bs-callout-warning}
 Always perform comprehensive testing before deploying any custom patch.
