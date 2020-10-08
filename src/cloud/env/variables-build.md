@@ -201,6 +201,19 @@ stage:
     SKIP_SCD: false
 ```
 
+### `SKIP_COMPOSER_DUMP_AUTOLOAD`
+
+Do not run the composer dump-autoload command.
+
+-  **Default**— _Not set_
+-  **Version**—Magento 2.1.4 and later
+
+```yaml
+stage:
+   build:
+    SKIP_COMPOSER_DUMP_AUTOLOAD: true
+```
+
 ### `VERBOSE_COMMANDS`
 
 -  **Default**—_Not set_
