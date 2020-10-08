@@ -274,7 +274,7 @@ You can replace the variables above with the following:
 
 -  For `phpVersion`, you can set the PHP version that you want the instance to run on.
 
--  For `searchEngineVersion`, you can use the ElasticSeach version that you want the instance to run.
+-  For `searchEngineVersion`, you can set the Elasticsearch version that you want the instance to run.
 
 -  For `dbEngine`, you can choose between `MariaDB` or `MySQL`.
 
@@ -283,7 +283,7 @@ You can replace the variables above with the following:
 As an example you can have an environment defined as shown below:
 
 ```text
-with env PHP 7.4, search-engine ElasticSearch 7, database MariaDB 10.4
+with env PHP 7.4, search-engine Elasticsearch 7, database MariaDB 10.4
 ```
 
 Please be aware, these features should be only used in specific cases  and the general recommendation is not to change the default environment.
