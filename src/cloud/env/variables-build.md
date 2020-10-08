@@ -203,7 +203,7 @@ stage:
 
 ### `SKIP_COMPOSER_DUMP_AUTOLOAD`
 
-Skip executing of `composer dump-autoload` command.
+Do not run the composer dump-autoload command.
 
 -  **Default**— _Not set_
 -  **Version**—Magento 2.1.4 and later
