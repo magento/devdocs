@@ -196,4 +196,4 @@ The MQP package logs all operations in the `<Magento_root>/var/log/patch.log` fi
 
 <!-- Link Definitions -->
 
-[MQP package]: https://github.com/magento/quality-patches
+[Magento Quality Package (MQP) package]: https://github.com/magento/quality-patches
