@@ -201,7 +201,7 @@ To apply and test a custom patch on a Cloud environment:
 
 ## Apply patches to a non-Cloud project {#standalone}
 
-Use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html#mqp) package for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
+Use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) package for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
 
 ## Revert a patch in a local environment
 
