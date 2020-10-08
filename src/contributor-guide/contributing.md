@@ -250,7 +250,7 @@ Admins access will be shared via comment on GitHub.
 
 ### Customize deployed instances {#customize-deployed-instances}
 
-In some cases a custom environment is necessary in order to test an issue, or a pull request, to achieve such need there are a set of commands that combined with the [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr) will allow you to customize your deployed instance environment.
+In some cases a custom environment is necessary in order to test an issue, or a pull request, to achieve such a need there are a set of commands that, combined with the [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr), will allow you to customize your deployed instance environment.
 
 #### Magento Edition:
 
@@ -272,13 +272,13 @@ with env[ironment] PHP {$phpVersion}, search-engine ElasticSearch {$searchEngine
 
 You can replace the variables above with the following:
 
--  For `phpVersion`, you can use the PHP version that you want the instance to run.
+-  For `phpVersion`, you can set the PHP version that you want the instance to run on.
 
 -  For `searchEngineVersion`, you can use the ElasticSeach version that you want the instance to run.
 
 -  For `dbEngine`, you can choose between `MariaDB` or `MySQL`.
 
--  For `dbEngineVersion`, you can replace with the version of the engine that you choose.
+-  For `dbEngineVersion`, you can replace with the version of the database engine that you chose.
 
 As an example you can have an environment defined as shown below:
 
@@ -286,7 +286,7 @@ As an example you can have an environment defined as shown below:
 with env PHP 7.4, search-engine ElasticSearch 7, database MariaDB 10.4
 ```
 
-Please be aware such feature should be only used in specific cases, and the general recommendation is to not change the default environment.
+Please be aware, these features should be only used in specific cases  and the general recommendation is not to change the default environment.
 
 #### Add Extensions:
 
@@ -296,9 +296,9 @@ By appending the text below to [Deploy vanilla Magento instance](#vanilla-pr) or
 with extensions {$extensionRepo}
 ```
 
-For `extensionRepo`, you can specify extension repositories that will be additionally used when assembling your instance. You can also define the branch by using the pattern: org/repo-name:branch-name.
+For `extensionRepo`, you can specify extension repositories that will be additionally used when compiling your instance. You can also define the branch by using the pattern: org/repo-name:branch-name.
 
-With such a feature you can specify multiple modules by separating each module with comma. As an example:
+With this feature you can specify multiple modules by separating each module with comma. As an example:
 
 ```text
 with extensions magento/security-package:1.0-develop, magento/security-package-ee
@@ -306,13 +306,13 @@ with extensions magento/security-package:1.0-develop, magento/security-package-e
 
 #### Remove Extensions:
 
-By appending the text below to [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr) commands you will be able to remove extensions that you would like to be removed on your instance.
+By appending the text below to [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr) commands you will be able to specify extensions that you would like to be removed on your instance.
 
 ```text
 without extensions {$extensionRepo}
 ```
 
-For `extensionRepo`, you can specify extension repositories that will be removed when assembling your instance.
+For `extensionRepo`, you can specify extension repositories that will be removed when compiling your instance.
 
 With such a feature you can specify multiple modules by separating each module with comma. As an example:
 
