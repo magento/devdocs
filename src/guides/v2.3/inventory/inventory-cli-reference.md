@@ -92,12 +92,9 @@ bin/magento inventory:reservation:create-compensations
 
 Command options:
 
--  `-c`, `--complete-orders` - Creates reservations for completed order inconsistencies.
--  `-i`, `--incomplete-orders` - Creates reservations for incomplete order inconsistencies.
 -  `-r`, `--raw` - Returns raw output.
--  `-d`, `--dry-run` - Simulates reservation creation without applying reservations.
 
-If the format of the request is incorrect, the following message displays: A list of compensations needs to be defined as argument or STDIN.
+If the format of the request is incorrect, the following message displays: Error while parsing argument "your_incorrect_format_argument". Given argument does not match pattern "/(?P<increment_id>.*):(?P<sku>.*):(?P<quantity>.*):(?P<stock_id>.*)/".
 
 As the command creates reservations, it displays messages indicating the updates by SKU, order, and stock.
 
