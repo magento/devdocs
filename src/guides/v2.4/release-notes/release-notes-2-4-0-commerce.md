@@ -89,8 +89,6 @@ The following platform upgrades help enhance website security and performance. S
 
 *  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace.
 
-*  The **core Braintree module has been removed from the code base**. The Braintree Payments module now provides the same feature set. See [Braintree Payments](https://marketplace.magento.com/paypal-module-braintree.html).
-
 *  The Internet Explorer 11.x browser is no longer supported.
 
 ### Infrastructure improvements
@@ -221,9 +219,6 @@ This release includes:
 *  Ability to do multiple authorizations for a multi-item order
 *  Support for Japanese addresses
 
-#### Braintree Payments
-
-This bundled extension replaces our core Braintree integration, which has been removed in this release. See [Braintree Payments](https://marketplace.magento.com/paypal-module-braintree.html).
 
 #### Klarna
 
