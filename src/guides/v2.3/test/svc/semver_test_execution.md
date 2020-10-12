@@ -26,7 +26,6 @@ To run the Semantic Version Checker on local changes:
 
 1. To run the Semantic Version Checker, we need one folder with the feature changes and another folder with mainline code (without changes),
 so you may need to clone the Magento repository to a separate folder to perform the comparison.
-
 1. Navigate the `magento-semver` folder and run the Semantic Version Checker compare command:
 
    ```bash
