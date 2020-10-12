@@ -19,6 +19,17 @@ To ensure that your project has all required patches, update to the [latest vers
 {:.bs-callout-info}
 See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instructions on applying patches to your Magento projects.
 
+<!--Add release notes below-->
+
+## v1.0.7
+*Release date: October 13, 2020*<br/>
+
+-  **Redis patches for Magento 2.3.0 - 2.3.5, 2.4.0**–Updated the Redis patches to support adding products to a category when implementing a Level 2 cache. <!--MCLOUD-6659-->
+
+-  **Braintree VBE patch**–Fixes an issue that generated an error when an Administrator tried to view a Braintree Settlement Report. <!--MCLOUD-6684-->
+
+-  Changed the Magento Quality Patches (MQP) package dependency in the `composer.json` file from a required dependency to a suggested one. The MQP package is no longer required when installing `{{ site.data.var.mcp-package }}` as a stand-alone package. <!--MCLOUD-6910-->
+
 ## v1.0.6
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
