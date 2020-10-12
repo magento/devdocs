@@ -165,7 +165,7 @@ This process **overwrites** the store configuration; only do the following if th
 
 ## Configuration Hierarchy
 
-With Cloud Commerce there are several ways to set admin configurations and it is import to understand the order of priority, if a setting is added in two or more ways, the highest priority method takes precedence.
+On {{ site.data.var.ece }} projects, you can configure Magento Admin settings in several ways. If the same setting is configured in multiple places, Magento relies on the following configuration hierarchy to determine which value to apply to the environment. 
 
 The current hierarchy is as follows, the highest priority is top of the list.
 
