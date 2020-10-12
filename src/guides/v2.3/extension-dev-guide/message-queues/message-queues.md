@@ -53,30 +53,6 @@ The following sample introduces a runtime configuration that allows you to redef
 ```php
 'queue' => [
     'topics' => [
-        'customer.created' => [
-            'schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'response_schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'publisher' = 'default-rabitmq'
-        ],
-        'order.created' => [
-            'schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'response_schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'publisher' = 'default-rabitmq'
-        ],
-     ],
-    'topics' => [
         'product_action_attribute.update' => [
             'publisher' => 'amqp-magento'
         ]
