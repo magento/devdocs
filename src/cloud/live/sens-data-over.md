@@ -60,6 +60,15 @@ All system configurations are set during build and deploy according to the follo
 1. If an environment variable does not exist, use the configuration from a `MAGENTO_CLOUD_RELATIONSHIPS` name-value pair in the [`.magento.app.yaml` file][app-yaml]. Ignore the default configuration.
 1. If an environment variable does not exist and `MAGENTO_CLOUD_RELATIONSHIPS` does not contain a name-value pair, remove all customized configuration and use the values from the default configuration.
 
+Priority|Configuration<br/>Method|Description
+---|---|---
+1.|Cloud Admin UI|Values added via the Cloud Admin in the Variables tab of the environment configuration. This method is advised where configurations are secure and/or specific to the environment and need to be locked (cannot be changed in Magento Admin).
+2.|`.magento.app.yaml`|Values added here also lock out the value in Magento Admin. This method is useful when values need to be consistent across all environments. **Should not** be used for sensitive values.
+3.|`app/etc/env.php`|Values stored here are added by using the Magento `app:config:dump` command. [System specific]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-config-mgmt-export.html#sensitive-or-system-specific-settings) values are added to `env.php`. Sensitive settings can be added to `env.php` using the `magento config:sensitive:set command`. This file is **not** in source control.
+4.|`app/etc/config.php`|Values stored here are added by using the Magento `app:config:dump` command. Shared configuration values are added to `config.php` (see above for `env.php`).
+5.|Database|Value stored here are added by setting configurations in the Magento Admin UI. Note that configurations set by any of the preceding methods will be locked (greyed out) in Admin UI and will not be changeable
+6.|`config.xml`|Many configurations have default values set in a module's `config.xml`. If Magento cannot find any value set by the preceding methods, it will fallback to the default value, if set.
+
 ## Procedure to manage your settings
 
 The following illustrates a high-level overview of this process:
@@ -162,18 +171,6 @@ This process **overwrites** the store configuration; only do the following if th
    ```
 
 1. Add, commit, and push code changes to update a remote environment.
-
-## Configuration Hierarchy
-
-With Cloud Commerce there are several ways to set admin configurations and it is import to understand the order of priority, if a setting is added in two or more ways, the highest priority method takes precedence.
-
-The current hierarchy is as follows, the highest priority is top of the list.
-
--  Cloud Admin UI
--  .magento.app.yaml
--  env.php
--  config.php
--  Database
 
 <!-- link definitions -->
 
