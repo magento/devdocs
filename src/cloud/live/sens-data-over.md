@@ -163,6 +163,18 @@ This process **overwrites** the store configuration; only do the following if th
 
 1. Add, commit, and push code changes to update a remote environment.
 
+## Configuration Hierarchy
+
+With Cloud Commerce there are several ways to set admin configurations and it is import to understand the order of priority, if a setting is added in two or more ways, the highest priority method takes precedence.
+
+The current hierarchy is as follows, the highest priority is top of the list.
+
+-  Cloud Admin UI
+-  .magento.app.yaml
+-  env.php
+-  config.php
+-  Database
+
 <!-- link definitions -->
 
 [admin]: {{ site.baseurl }}/cloud/project/user-admin.html
