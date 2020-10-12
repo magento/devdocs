@@ -24,6 +24,18 @@ extensions:
           2.3.6: compatible
           2.4.0: compatible
           2.4.1: supported
+      -
+        name: 4.2.0
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.3.6: compatible
+          2.4.0: compatible
+          2.4.1: supported
 
       -
         name: 4.2.0
@@ -356,9 +368,8 @@ extensions:
           2.3.4: compatible
           2.3.5-p1: compatible
           2.3.6: compatible
-          2.4.0: compatible
+          2.4.0: not supported
           2.4.1: compatible
-      
       -
         name: 3.0.2
         support:
@@ -369,7 +380,7 @@ extensions:
           2.3.4: compatible
           2.3.5-p1: compatible
           2.3.6: compatible
-          2.4.0: compatible
+          2.4.0: not supported
           2.4.1: compatible
       -
         name: 3.0.1
@@ -381,7 +392,7 @@ extensions:
           2.3.4: compatible
           2.3.5-p1: compatible
           2.3.6: compatible
-          2.4.0: compatible
+          2.4.0: not supported
           2.4.1: compatible
       -
         name: 3.0.0
