@@ -92,3 +92,7 @@ content='All cron data is also written to the `cron_schedule` table in the Magen
 
 To see records in the table, log in to the Magento database on the command line and enter `SELECT * from cron_schedule;`.'
 %}
+
+## Related topics
+
+[Custom cron job and cron group reference]({{ page.baseurl }}/config-guide/cron/custom-cron-ref.html)
