@@ -358,6 +358,12 @@ The following validation rules are available:
 
 | Rule                            | Description                                                                                                             |
 |---------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| `alphanumeric`                  | Allows letters, numbers, spaces or underscores only                                                                     |
+| `integer`                       | Enter a positive or negative non-decimal number                                                                         |
+| `letters-only`                  | Allows letters only. For example, fooBAR                                                                                |
+| `no-whitespace`                 | Disallows white spaces.                                                                                                 |
+| `time`                          | Allows a valid time, between 00:00 and 23:59. For example 15, 15:05 or 15:05:48                                         |
+| `time12h`                       | Allows a valid time in 12 hours format, between 00:00 am and 12:00 pm. For example 3 am, 11:30 pm, 02:15:00 pm          |
 | `validate-no-html-tags`         | HTML tags are not allowed.                                                                                              |
 | `validate-select`               | Select an option.                                                                                                       |
 | `validate-no-empty`             | Empty Value                                                                                                             |
