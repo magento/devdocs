@@ -1,11 +1,115 @@
 title: Whats New on Devdocs
-description: 
+description:
   This page contains recent changes that we think you'd like to know about.
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Sep 14 12:24:21 2020
+updated: Thu Oct 8 16:38:25 2020
 entries:
+- description: Added [deprecation notice](https://devdocs.magento.com/cloud/configure/import-url-rewrites.html)
+    for `magento/url-rewrite-import-export` module, which is no longer supported for
+    Magento 2.4.x or later.
+  versions: 2.x
+  type: Technical
+  date: October 8, 2020
+  link: https://github.com/magento/devdocs/pull/8014
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Added information about using Elasticsearch on a different server to
+    the [Elasticsearch](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/elasticsearch.html#es-arch)
+    topic.
+  versions: 2.4.x
+  type: Major Update
+  date: October 7, 2020
+  link: https://github.com/magento/devdocs/pull/7980
+  contributor: rafaelstz
+  profile: https://github.com/rafaelstz
+- description: Added documentation for the [`consumers_wait_for_messages`](https://devdocs.magento.com/guides/v2.4/config-guide/prod/config-reference-envphp.html#consumers_wait_for_messages)
+    setting in the `env.php` file.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: October 7, 2020
+  link: https://github.com/magento/devdocs/pull/8010
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Updated the [system.xml reference](https://devdocs.magento.com/guides/v2.4/config-guide/prod/config-reference-systemxml.html)
+    topic in the _Configuration Guide_ to add the Field type reference table to describe
+    the available values for the Field `type` attribute.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: October 1, 2020
+  link: https://github.com/magento/devdocs/pull/7948
+  contributor: BarnyShergold
+  profile: https://github.com/BarnyShergold
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.6 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: September 30, 2020
+  link: https://github.com/magento/devdocs/pull/7966
+  contributor: ilima-ebay
+  profile: https://github.com/ilima-ebay
+- description: Added a [warning](https://devdocs.magento.com/cloud/env/variables-deploy.html#redis_use_slave_connection)
+    about enabling the `REDIS_USE_SLAVE_CONNECTION` deploy variable for Cloud projects
+    that use split architecture.
+  versions: 2.x
+  type: Technical
+  date: September 30, 2020
+  link: https://github.com/magento/devdocs/pull/7964
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added the Import section to the [Contribution Guide](https://devdocs.magento.com/contributor-guide/contributing.html#import).
+  versions: 2.x
+  type: Major Update
+  date: September 24, 2020
+  link: https://github.com/magento/devdocs/pull/7886
+  contributor: sidolov
+  profile: https://github.com/sidolov
+- description: Added an optional step to show how to add default values in the [Creating
+    a dynamic row system config](https://devdocs.magento.com/guides/v2.4/ext-best-practices/tutorials/dynamic-row-system-config.html)
+    tutorial topic in the _Extension Best Practices_ guide.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: September 23, 2020
+  link: https://github.com/magento/devdocs/pull/7918
+  contributor: BarnyShergold
+  profile: https://github.com/BarnyShergold
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.5 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: September 22, 2020
+  link: https://github.com/magento/devdocs/pull/7913
+  contributor: Rykh
+  profile: https://github.com/Rykh
+- description: Added a new Magento [Lifecycle policy](https://devdocs.magento.com/release/lifecycle-policy.html)
+    topic.
+  versions: 2.x
+  type: New Topic
+  date: September 22, 2020
+  link: https://github.com/magento/devdocs/pull/7904
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Updated Fastly set up and Site launch documentation in the Cloud Guide
+    to reflect change from shared certificates for Fastly for each project to have
+    a unique Domain-Validated SSL/TLS certificate issued by Let's Encrypt. Also, updated
+    DNS configuration instructions for adding domains, CNAME, and A records.<br/><br/>Moved
+    documentation for Fastly cache customization options to a new Custom cache configuration
+    topic. Added instructions for managing domains and enabling maintenance mode using
+    the Fastly CDN module for Magento 2. See Custom cache configuration.
+  versions: 2.x
+  type: Major Update
+  date: September 17, 2020
+  link: https://github.com/magento/devdocs/pull/7885
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Described how to disable [GraphQL introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#introspection-queries).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: September 15, 2020
+  link: https://github.com/magento/devdocs/pull/7863
+  contributor: thiaramus
+  profile: https://github.com/thiaramus
 - description: Added the [Simple product data types](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/simple-product.html)
     topic to the _GraphQL Developer Guide_.
   versions: 2.3.x, 2.4.x
@@ -2123,7 +2227,7 @@ entries:
   type: Major update
   date: October 1, 2019
   link: https://github.com/magento/devdocs/pull/5422
-- description: Added the "Disabling an Observer" section to the [Events and Observers](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/events-and-observers.html) 
+- description: Added the "Disabling an Observer" section to the [Events and Observers](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/events-and-observers.html)
     topic in the _PHP Developer Guide_.
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -6281,4 +6385,4 @@ entries:
   versions: 2.x
   type: New
   date: Oct 7 2016
-  
+

@@ -892,6 +892,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  `php bin/magento cron:run` no longer processes items from the change log table multiple times. Previously, when you had more than 100000 new versions in the change log table, actions could be called several times for the same `entity id`.
 
+*  The `php bin/magento setup:cron:run` command has now been removed. Also, remove references to this file in crontabs when upgrading.
+
+*  The `update/cron.php` file has been removed in Magento 2.4.0, if this file exists on your installation, it can be safely removed. Also, remove references to this file in crontabs when upgrading.
+
 <!--- MC-30544-->
 
 *  The Update Attribute action now correctly updates the timestamp of a product’s `updated_at column` from `catalog_product_entity` when you update the product from the Admin edit product page.
