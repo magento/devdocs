@@ -38,7 +38,6 @@ The Magento-specific annotations for integration tests are applied in the follow
 1. `@magentoAdminConfigFixture`
 1. `@magentoConfigFixture`
 
-
 This order is necessary to meet the requirement of setting up the store-scoped configuration values for fixture stores (stores that are created by data fixtures).
 
 <!-- LINK DEFINITIONS -->
