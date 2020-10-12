@@ -31,9 +31,11 @@ If you add a product to the shopping cart as a registered customer, be sure to s
 
 ## Add a simple product into the shopping cart
 
-`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-
 The following mutation adds a **simple product** into shopping cart.
+
+Replace `{ CART_ID }` with the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+
+In this example, we will add the Aim Analog Watch from the default Luma catalog to the cart. Note that is the SKU that determines the product added.
 
 **Request:**
 
@@ -46,7 +48,7 @@ mutation {
         {
           data: {
             quantity: 1
-            sku: "simple-product"
+            sku: "24-MG04"
           }
         }
       ]
@@ -75,9 +77,9 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "508",
+            "id": "5",
             "product": {
-              "sku": "simple-product",
+              "sku": "24-MG04",
               "stock_status": "IN_STOCK"
             },
             "quantity": 1
@@ -92,6 +94,7 @@ mutation {
 ## Add a virtual product into the shopping cart
 
 The following mutation adds a **virtual product** into shopping cart.
+In this example, we add the Beginner's Yoga video download product (SKU 240-LV04).
 
 **Request:**
 
@@ -104,7 +107,7 @@ mutation {
         {
           data: {
             quantity: 1
-            sku: "virtual-product"
+            sku: "240-LV04"
           }
         }
       ]
@@ -133,9 +136,17 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "509",
+            "id": "5",
             "product": {
-              "sku": "virtual-product",
+              "sku": "24-MG04",
+              "stock_status": "IN_STOCK"
+            },
+            "quantity": 1
+          },
+          {
+            "id": "6",
+            "product": {
+              "sku": "240-LV04",
               "stock_status": "IN_STOCK"
             },
             "quantity": 1
@@ -146,6 +157,8 @@ mutation {
   }
 }
 ```
+
+The response lists all items currently in the cart, including the just-added video download.
 
 ## Verify this step {#verify-step}
 

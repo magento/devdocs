@@ -47,6 +47,7 @@ The customer created in the previous step does not have an active cart. The foll
 ```
 
 In the subsequent tutorial steps, the unique shopping cart identifier `pXVxnNg4PFcK1lD60O5evqF7f4SkiRR1` will be listed as `{ CART_ID }`.
+Copy this ID somewhere so you can paste it in for subsequent steps.
 
 ## Create a guest cart
 
@@ -71,6 +72,7 @@ mutation {
 ```
 
 In the subsequent tutorial steps, the unique shopping cart identifier `A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h` will be listed as `{ CART_ID }`.
+Copy this ID somewhere so you can paste it in for subsequent steps.
 
 ## Verify this step {#verify-step}
 
