@@ -408,6 +408,9 @@ If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the
 -  **Default**—`false`
 -  **Version**—Magento 2.1.16 and later
 
+{:.bs-callout-warning}
+Do not enable this variable on scaled architecture (split architecture) projects. It causes Redis connection errors. Redis slaves are still active but will not be used for Redis reads. As an alternative, we recommend the following: use Magento 2.3.5 or later on Cloud projects with a scaled architecture, implement a new Redis backend configuration, and implement L2 caching for Redis.
+
 Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _read-only_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
 ```yaml

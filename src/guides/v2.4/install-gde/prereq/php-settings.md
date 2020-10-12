@@ -41,18 +41,22 @@ Magento requires a set of extensions to be installed:
 <!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
-In the command line, type:
+{:.procedure}
+To verify installed extensions:
 
-```bash
-php -m
-```
+1. List installed modules.
 
-to see the list of installed modules. Verify that the listed extensions are installed.
-If any modules are missing, they are added using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.4 modules can be added with:
+   ```bash
+   php -m
+   ```
 
-```bash
- yum -y install php74u-pdo php74u-mysqlnd php74u-opcache php74u-xml php74u-gd php74u-devel php74u-mysql php74u-intl php74u-mbstring php74u-bcmath php74u-json php74u-iconv php74u-soap
-```
+1. Verify that all required extensions are installed.
+
+1. Add any missing modules using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.4 modules can be added with:
+
+   ```bash
+    yum -y install php74u-pdo php74u-mysqlnd php74u-opcache php74u-xml php74u-gd php74u-devel php74u-mysql php74u-intl php74u-mbstring php74u-bcmath php74u-json php74u-iconv php74u-soap
+   ```
 
 {:.bs-callout-info}
 The `bcmath` extension is required for {{site.data.var.ee}} only.
@@ -69,9 +73,18 @@ PHP Warning:  date(): It is not safe to rely on the system's timezone settings. 
 
    Our detailed recommendations are:
 
-   -  Compiling code or deploying static assets, `756M`
-      -  Installing and updating Magento components from Magento Marketplace, `2G`
-      -  Testing, `~3-4G`
+   -  Compiling code or deploying static assets, `1G`
+   -  Debugging, `2G`
+   -  Testing, `~3-4G`
+
+-  Increase the values for the PHP `realpath_cache_size` and `realpath_cache_ttl` to recommended settings:
+
+   ```conf
+   realpath_cache_size=10M
+   realpath_cache_ttl=7200
+   ```
+
+   These settings allow PHP processes to cache paths to files instead of looking them up each time a page loads. See [Performance Tuning](https://www.php.net/manual/en/ini.core.php) in the PHP documentation.
 
 -  Enable [`opcache.save_comments`](https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments){:target="_blank"}, which is required for Magento 2.1 and later.
 
@@ -80,7 +93,7 @@ PHP Warning:  date(): It is not safe to rely on the system's timezone settings. 
    Magento 2.1 and later use PHP code comments for code generation.
 
 {:.bs-callout-info}
-To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and the PHP web server plug-in's configuration. For more information, see the next section.
+To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and the PHP web server plug-in configuration. For more information, see the next section.
 
 ## Step 1: Find PHP configuration files {#php-required-find}
 
@@ -136,7 +149,8 @@ To set PHP options:
    ```
 
 1. Add the time zone setting you found in step 2.
-1. Change the value of `memory_limit` to one of the values at the beginning of this section.
+
+1. Change the value of `memory_limit` to one of the values recommended at the beginning of this section.
 
    For example,
 
@@ -144,7 +158,22 @@ To set PHP options:
    memory_limit=2G
    ```
 
+1. Add or update the `realpath_cache` configuration to match the following values:
+
+   ```conf
+   ;
+   ; Increase realpath cache size
+   ;
+   realpath_cache_size = 10M
+
+   ;
+   ; Increase realpath cache ttl
+   ;
+   realpath_cache_ttl = 7200
+   ```
+
 1. Save your changes and exit the text editor.
+
 1. Open the other `php.ini` (if they are different) and make the same changes in it.
 
 ## Step 3: Set OPcache options {#php-required-opcache}

@@ -7,16 +7,20 @@ functional_areas:
 
 ## Create a new page layout in custom theme
 
-If an existing page layout does not meet your requirements, then you can create a new page layout in Magento.
+When an existing page layout does not meet your requirements, create a new page layout in Magento.
 
-For example, if a new page is going to be designed as `3-columns-double-footer` layout, you may create the new layout in the following way. Create a custom page-layout XML file in following directory `app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/page_layout/3-columns-double-footer.xml`.
+If the new page has a `3-columns-double-footer` layout, create a custom page-layout XML file: `app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/page_layout/3-columns-double-footer.xml`.
 
 ```xml
 <?xml version="1.0"?>
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
     <update handle="3columns"/>
     <referenceContainer name="page.wrapper">
-        <container name="footer-bottom" as="footer-bottom" after="-" label="Footer Bottom" htmlTag="footer" htmlClass="page-footer-bottom"/>
+        <container name="footer-bottom" as="footer-bottom" after="footer" label="Footer Bottom" htmlTag="footer" htmlClass="page-footer-bottom">
+            <container name="footer-bottom-content" as="footer-bottom-content" htmlTag="div" htmlClass="footer content">
+                <block class="Magento\Framework\View\Element\Template" name="report.bugs.bottom" template="Magento_Theme::html/bugreport.phtml"/>
+            </container>
+        </container>
     </referenceContainer>
 </layout>
 ```
@@ -33,7 +37,8 @@ Add the newly created page layout to the `layouts.xml` file of the theme directo
     </layout>
 </page_layouts>
 ```
- {:.bs-callout-info}
+
+{:.bs-callout-info}
 Note that the value of the new layout `id` attribute should match the name of the newly created page-layout XML file.
 
 Clean the cache by going to **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
@@ -47,3 +52,8 @@ bin/magento cache:clean
 The new page layout displays in all `Layout` dropdowns.
 
 ![Custom page layout]({{ site.baseurl }}/common/images/fdg/custom_layout_admin_backend.png)
+
+On the storefront, there is a new footer for those pages that use the `3 Columns Double Footer` layout.
+
+![Storefront two footers layout]({{ site.baseurl }}/common/images/fdg/custom_layout_footer_bottom.png)
+
