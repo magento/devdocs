@@ -29,11 +29,15 @@ The Magento-specific annotations for integration tests are applied in the follow
 
 1. `@magentoAppIsolation`
 1. `@magentoDbIsolation`
+1. `@magentoDataFixtureBeforeTransaction`
 1. `@magentoDataFixture`
+1. `@magentoIndexerDimensionMode`
 1. `@magentoComponentsDir`
 1. `@magentoAppArea`
 1. `@magentoCache`
+1. `@magentoAdminConfigFixture`
 1. `@magentoConfigFixture`
+
 
 This order is necessary to meet the requirement of setting up the store-scoped configuration values for fixture stores (stores that are created by data fixtures).
 
