@@ -65,7 +65,7 @@ Priority|Configuration<br/>Method|Description
 1.|Cloud Admin UI|Values added via the Cloud Admin in the Variables tab of the environment configuration. This method is advised where configurations are secure and/or specific to the environment and need to be locked (cannot be changed in Magento Admin).
 2.|`.magento.app.yaml`|Values added here also lock out the value in Magento Admin. This method is useful when values need to be consistent across all environments. **Should not** be used for sensitive values.
 3.|`app/etc/env.php`|Values stored here are added by using the Magento `app:config:dump` command. [System specific]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-config-mgmt-export.html#sensitive-or-system-specific-settings) values are added to `env.php`. Sensitive settings can be added to `env.php` using the `magento config:sensitive:set command`. This file is **not** in source control.
-4.|`app/etc/config.php`|Values stored here are added by using the Magento `app:config:dump` command. Shared configuration values are added to `config.php` (see above for `env.php`).
+4.|`app/etc/config.php`|Values stored here are added by using the Magento `app:config:dump` command. Shared configuration values are added to `config.php` (see above for `env.php`). This file **should** be in source control.
 5.|Database|Value stored here are added by setting configurations in the Magento Admin UI. Note that configurations set by any of the preceding methods will be locked (greyed out) in Admin UI and will not be changeable
 6.|`config.xml`|Many configurations have default values set in a module's `config.xml`. If Magento cannot find any value set by the preceding methods, it will fallback to the default value, if set.
 
