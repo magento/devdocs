@@ -120,7 +120,7 @@ The `CompanyTeamCreateInput` object contains the following attributes:
 Attribute |  Data Type | Description
 --- | --- | ---
 `name` | String! | Team Name. This is required attribute.
-`description` | String | Team Description.
+`description` | String | Team description.
 `target_id` | ID | A target structure element ID within a company's structure for a team to be assigned to.
 
 ### Output attributes
@@ -201,9 +201,9 @@ The `CompanyTeamUpdateInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id` | ID! | The encoded team id for updating. This is required attribute.
-`name` | String | Team Name.
-`description` | String | Team Description.
+`id` | ID! | The encoded team ID for updating. This is required attribute.
+`name` | String | Team name.
+`description` | String | Team description.
 
 ### Output attributes
 
@@ -263,7 +263,7 @@ The `deleteCompanyTeam` mutation requires the following input:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id` | ID! | The encoded team id to delete.
+`id` | ID! | The encoded team ID to delete.
 
 You can get the team id using GraphQl query `company`
 
@@ -372,7 +372,7 @@ The `CompanyStructureUpdateInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`tree_id` | ID! | Company Structure element's hierarchical ID that is being moved to another parent. Required.
+`tree_id` | ID! | Company structure element's hierarchical ID that is being moved to another parent. Required.
 `parent_tree_id` | ID! | A target parent element tree ID within a Company's Structure. Required.
 
 ### Output attributes
