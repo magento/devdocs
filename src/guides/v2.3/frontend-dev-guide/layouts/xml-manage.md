@@ -360,16 +360,17 @@ There are two ways to set the template for a block:
 
 -  using the `template` attribute
 -  using the `<argument>` instruction
+-  using the `<action method="setTemplate">` instruction
 
 Both approaches are demonstrated in the following examples of changing the template of the page title block.
 
-**Example 1:**
+**Example 1:** using the `template` attribute
 
 ```xml
  <referenceBlock name="page.main.title" template="%Namespace_Module::new_template.phtml%"/>
 ```
 
-**Example 2:**
+**Example 2:** using the `<argument>` instruction
 
 ```xml
  <referenceBlock name="page.main.title">
@@ -379,13 +380,25 @@ Both approaches are demonstrated in the following examples of changing the templ
  </referenceBlock>
 ```
 
-In both examples, the template is specified according to the following:
+**Example 3:** using the `<action method="setTemplate">` instruction
+
+```xml
+ <referenceBlock name="page.main.title">
+   <action method="setTemplate">
+     <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
+   </action>
+ </referenceBlock>
+```
+
+In the above examples, the template is specified according to the following:
 
 -  `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
--  `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
+-  `new_template.phtml`: the path to the template relative to the `templates` directory. For example: `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
 
 {:.bs-callout-info}
-Template values specified as attributes have higher priority during layout generation, than the ones specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block.
+The highest priority template is one with setTemplate action `<action method="setTemplate">`. Second priority has the attribute specified as `<referenceBlock name="..." template="..."/>`, and the lowest priority has the template using `<argument>`.
+
+It means, that if for a certain block, a template is set as an attribute, it will override the value you specify in `<argument>` for the same block. In the case where we have `<action method="setTemplate">` construction - it will override the values that you specified in the template attribute `<referenceBlock name="..." template="..."/>` and the value you specified using `<argument>`.
 
 ## Modify block arguments {#layout_markup_modify-block}
 
