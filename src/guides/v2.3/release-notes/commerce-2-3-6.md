@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.6 Release Notes
 ---
 
-Magento Commerce 2.3.6 offers
+Magento Commerce 2.3.6 offers significant platform upgrades, substantial security changes, and performance improvements.
 
 This release includes over 160 functional fixes to the core product and over 15 security enhancements.
 
@@ -35,9 +35,7 @@ This release includes the following security enhancements:
 
 #### Over 15 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.5) have been ported to 1.14.4.5 and 1.9.4.5, as appropriate.
-
-With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an [Adobe Security bulletin](https://helpx.adobe.com/security/products/magento/apsb20-22.html).
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security Updates Available for Magento](https://helpx.adobe.com/security/products/magento/apsb20-59.html) for a discussion of these fixed issues.
 
 #### Security enhancements and fixes to core code
 
@@ -89,6 +87,10 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 <!--- MC-32281-->
 
 *  Administrators with restricted access to one website only in a multi-site deployment can now preview a Scheduled Update for that website. Previously, the staging preview used the default store by default, and if the user did not have access to the default store, Magento threw an exception.
+
+### Amazon Pay
+
+*  Clicking **Return to standard checkout** just before completing checkout with Amazon Pay now returns the shopper to the checkout page that displays all payment methods available to her. Previously, no payment methods were displayed.
 
 ### Analytics
 
@@ -142,7 +144,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35204-->
 
-*  Shoppers can now purchase a virtual gift card using PayPal Braintree without defining a shipment address. Previously. Magento threw an error.
+*  Shoppers can now purchase a virtual gift card using PayPal Braintree without defining a shipment address. Previously, Magento threw an error.
 
 <!--- MC-32160-->
 
@@ -156,11 +158,11 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35781-->
 
-*  Merchants with multiple websites can now use REST to create and update products while preserving image and image-role inheritance. Previously, when a merchant used REST to create and update products, and a product was updated for store view, the default image roles were loaded and saved for that store view. As a result, the store-view image roles stopped inheriting from the default scope after update.
+*  Merchants with multiple websites can now use the REST API to create and update products while preserving image and image-role inheritance. Previously, when a merchant used the REST API to create and update products, and a product was updated for store view, the default image roles were loaded and saved for that store view. As a result, the store-view image roles stopped inheriting from the default scope after update.
 
 <!--- MC-35575-->
 
-*  Magento now successfully updates attributes labeled `Product Type`. Previously, because the `product_type` attribute is reserved in Magento core code, Magento displayed this message when you tried to update a `Product Type` attribute: `An attribute with the same code (product_type) already exists.`
+*  Magento now successfully updates attributes labeled `Product Type`. Previously, because the `product_type` attribute is reserved in Magento core code, Magento displayed this message when you tried to update it: `An attribute with the same code (product_type) already exists.`
 
 <!--- MC-35366-->
 
@@ -262,7 +264,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-32314-->
 
-*  Magento now honors the customer group settings when you create a new customer from the Admin in a multi-site deployment.
+*  Magento now honors customer group settings when you create a new customer from the Admin in a multi-site deployment.
 
 <!--- MC-32178-->
 
@@ -316,6 +318,18 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 *  The format of the State/Province drop-down menu is now consistent across the Admin.
 
+### dotdigital
+
+*  dotdigital now has a Content Security Policy whitelist for specific domains used by this module.
+
+*  Contacts are no longer resubscribed when their `last_subscribed_at` value is `null`.
+
+*  Deletion of automation enrollments and abandoned carts from their respective report grids now works as expected.
+
+*  Handling of the API response dotdigital receives when processing resubscribes has been improved.
+
+*  dotdigital now catches exceptions that are thrown by `unserialize()` to protect against unserializable data being stored for custom attributes.
+
 ### Downloadable
 
 <!--- MC-34259-->
@@ -350,7 +364,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-33759-->
 
-*  `sales_order_shipment_track_save_commit_after` is now triggered as expected when you use REST to create a shipment.
+*  `sales_order_shipment_track_save_commit_after` is now triggered as expected when you use the REST API to create a shipment.
 
 <!--- MC-33007-->
 
@@ -384,7 +398,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-17438-->
 
-*  You can now use REST to update YouTube videos (PUT `rest/V1/products/{SKU}`). Previously, Magento displayed a thumbnail for the video, but the video player did not load when you clicked the **Play** button. [GitHub-23194](https://github.com/magento/magento2/issues/23194)
+*  You can now use the REST API to update YouTube videos (PUT `rest/V1/products/{SKU}`). Previously, Magento displayed a thumbnail for the video, but the video player did not load when you clicked the **Play** button. [GitHub-23194](https://github.com/magento/magento2/issues/23194)
 
 <!--- MC-32147-->
 
@@ -466,11 +480,21 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-22212-->
 
-*  Deadlocks no longer occur when the import process executes a bulk insert and the re-index process simultaneously executes a large insert from select. Previously, Magento displayed this error:`PDOException: SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock`. [GitHub-8933](https://github.com/magento/magento2/issues/8933)
+*  Deadlocks no longer occur when the import process executes a bulk insert and the re-index process simultaneously executes a large insert from select. Previously, Magento displayed this error: `PDOException: SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock`. [GitHub-8933](https://github.com/magento/magento2/issues/8933)
 
 <!--- MC-35080-->
 
 *  Customer address `region_id`  is no longer assigned a `NULL` value when you import customer addresses using a CSV file (`entity type = "customer address"` and `import behavior = "add/update”`) from which certain field values have been deleted.
+
+### Klarna
+
+*  Magento now correctly refunds a Klarna order when the order contains a product that has been deleted. Previously, Magento threw a fatal error.
+
+*  Default configuration settings for Klarna remain set as expected when you change the configuration scope to a different website. Previously, changing scope resulted in clearing all Klarna settings.
+
+*  The checkout page now opens as expected when a shopper’s cart contains a downloadable product. Previously, the checkout page was blank.
+
+*  Fraud notification messages have been improved.
 
 ### Layered navigation
 
@@ -528,7 +552,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-31843-->
 
-*  Bulk order update through REST now updates order status as expected. Previously, Magento threw this error: `report.ERROR: Property "AdditionalInformation" does not have accessor method "setAdditionalInformation" in class "Magento\Sales\Api\Data\OrderPaymentInterface".`
+*  Bulk order update through the REST API now updates order status as expected. Previously, Magento threw this error: `report.ERROR: Property "AdditionalInformation" does not have accessor method "setAdditionalInformation" in class "Magento\Sales\Api\Data\OrderPaymentInterface".`
 
 ### Product alert
 
@@ -564,11 +588,11 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35730-->
 
-*  The New Shipment email generated by REST now contains the same shipping and customer information as shipments that are created manually from the Admin. Previously, this email did not contain the customer name, tracking information, products ordered, and other order information.
+*  The New Shipment email generated by the REST API now contains the same shipping and customer information as shipments that are created manually from the Admin. Previously, this email did not contain the customer name, tracking information, products ordered, and other order information.
 
 <!--- MC-35554-->
 
-*  Magento no longer assigns a status of `Complete` after invoicing to an order that requires zero payment.
+*  Magento no longer assigns a status of `Complete` after invoicing an order that requires zero payment.
 
 <!--- MC-35309-->
 
@@ -680,7 +704,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35326-->
 
-*  You can now use REST to add a `text_swatch` type of product attribute. Previously, Magento did not add the option to the attribute and displayed an error.
+*  You can now use the REST API to add a `text_swatch` type of product attribute. Previously, Magento did not add the option to the attribute and displayed an error.
 
 <!--- MC-33118-->
 
@@ -690,7 +714,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-34965-->
 
-*  Loading of product details pages has been optimized. We’ve added indices for database tables that optimize target rule conditions queries for many cases.
+*  Loading of product details pages has been optimized. Indices for database tables that optimize target rule conditions queries for many cases have been added.
 
 <!--- MC-32774-->
 
@@ -732,6 +756,24 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 *  Magento no longer changes a product’s URL in all stores when a merchant changes a product URL for one store in a multi-site deployment. Previously, if a merchant changed a URL key for one store view, Magento changed the URL for all stores.
 
+### Vertex
+
+*  Taxes are now calculated as expected on orders that contain both physical and virtual products.
+
+*  Vertex now processes products with a price of 0 as expected. Previously, administrators could not create an order with a total of 0.
+
+*  The checkout process now successfully progresses from shipping to payment when using Internet Explorer 11.x with Vertex. Previously, Magento threw a JavaScript error when the shopper tried to proceed from shipping to payment.
+
+*  The process of submitting an invoice to Vertex has been been optimized, and performance has improved.
+
+*  Tax details are now included as expected in the database.
+
+*  Log rotation  now works as expected in production mode.
+
+*  Vertex now calculates taxes correctly when a default ZIP code is provided for tax calculation.
+
+*  Updating the billing address with Vertex's recommendation no longer updates the fields on the shipping address.
+
 ### Visual Merchandiser
 
 <!--- MC-35000-->
@@ -742,7 +784,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35299-->
 
-*  Invoices created using REST now include gift card information similar to the invoices that are created in the Admin. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
+*  Invoices created using the REST API now include gift card information similar to the invoices that are created in the Admin. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
 
 <!--- MC-34654-->
 
@@ -784,7 +826,9 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 *  You can now navigate and modify wishlists from the cart in deployments running Internet Explorer 11.x. Previously, you could not create, edit, or move a wishlist in this environment.
 
-## Known issue
+## Known issues
+
+**Issue**: Merchants upgrading their stores from 2.3.5-p2 to 2.3.6 will note that two module versions downgrade. These messages reflect the incomplete delivery of two security fixes to the 2.3.x quarterly patches. The fixes for these low severity issues are missing from 2.3.6. These fixes will be merged along with the other security fixes in our next quarterly release (Q12021).
 
 **Issue**: Merchants cannot log in to dotdigital from the Admin when dotdigital is enabled. See the [It's impossible to login in the dotdigital via admin panel when dotdigital account is enabled](https://support.magento.com/hc/en-us/articles/360050092291) Knowledge Base article.<!--- BUNDLE-2704-->
 
