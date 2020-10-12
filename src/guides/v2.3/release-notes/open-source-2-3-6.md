@@ -63,7 +63,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 ### Amazon Pay
 
-*  Clicking **Return to standard checkout** just before completing checkout with Amazon Pay now returns the shopper to the checkout page that displays all payment methods available to her. Previously, no payment methods were displayed.
+*  Clicking **Return to standard checkout** just before completing checkout with Amazon Pay now returns the shopper to the checkout page that displays all payment methods available the shopper. Previously, no payment methods were displayed.
 
 ### Analytics
 
