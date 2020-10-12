@@ -93,13 +93,13 @@ This release adds GraphQL coverage for the following features:
 
 *  **Product reviews**. Customers and guests can write product reviews. Customers can retrieve their product review histories.<!--- MC-32349-->
 
-*  **Gift options**. All customers and guests can add a gift message to their order. On {{site.data.var.ee}}  installations, they can also add gift wrapping, gift receipts, and printed cards to the order.<!--- MC-32345-->
+*  **Gift options**. All customers and guests can add a gift message to their order. On {{site.data.var.ee}} installations, they can also add gift wrapping, gift receipts, and printed cards to the order.<!--- MC-32345-->
 
 *  **Reward points**. On {{site.data.var.ee}} installations, customers can apply or remove reward points to their carts. They can also view their reward point history.<!--- MC-23366-->
 
 *  **Order history**. All customers can view details about their order histories, including invoices, shipping, and refunds.<!--- MC-20635-->
 
-*  **Add to cart**. Customers can add the following product types to their cart:  `Simple`, `Configurable`, `Bundled`, `Grouped`, `Virtual`, `Gift Card`, and `Downloadable`. <!--- MC-21513-->
+*  **Add to cart**. Customers can add the following product types to their cart: `Simple`, `Configurable`, `Bundled`, `Grouped`, `Virtual`, `Gift Card`, and `Downloadable`. <!--- MC-21513-->
 
 *  **Stored payment methods**. Logged-in customers can now store payment details (including Braintree credit card and Braintree with PayPal) in My Account. <!--- MC-32348 35945 35946-->
 
@@ -165,7 +165,8 @@ To reduce creation of fraudulent or spam accounts, merchants can now enable Goog
 
 #### Expanded logging of Admin actions
 
-Admin actions taken in the Company modules are now logged in the Admin Actions Log. Actions are logged from all relevant company modules: `Company`, `NegotiableQuote`, `CompanyCredit`, `SharedCatalog`.  <!--- BUNDLE-180 181 182 183 -->
+Admin actions taken in the Company modules are now logged in the Admin Actions Log. Actions are logged from all relevant company modules: `Company`, `NegotiableQuote`, `CompanyCredit`, `SharedCatalog`.
+<!--- BUNDLE-180 181 182 183 -->
 
 This release also includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
@@ -204,7 +205,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36231-->
 
-*  Magento now displays an informative error message when some themes are not deployed after running `setup:static-content:deploy`. Previously, when deployment completed successfully but not all packages were deployed, Magento did not display an error. When the  `setup:static-content:deploy` command is executed with enabled parallel processing and each theme requires more time to be deployed then the specified maximum execution time, this command can finish successfully, although themes are not deployed.
+*  Magento now displays an informative error message when some themes are not deployed after running `setup:static-content:deploy`. Previously, when deployment completed successfully but not all packages were deployed, Magento did not display an error. When the `setup:static-content:deploy` command is executed with enabled parallel processing and each theme requires more time to be deployed then the specified maximum execution time, this command can finish successfully, although themes are not deployed.
 
 <!--- MC-35001-->
 
@@ -256,7 +257,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7724 -->
 
-*  The  **Create Permanent Redirect for old URL** setting is now disabled by default for categories. _Fix submitted by Vadim Malesh in pull request [28752](https://github.com/magento/magento2/pull/28752)_. [GitHub-24922](https://github.com/magento/magento2/issues/24922)
+*  The **Create Permanent Redirect for old URL** setting is now disabled by default for categories. _Fix submitted by Vadim Malesh in pull request [28752](https://github.com/magento/magento2/pull/28752)_. [GitHub-24922](https://github.com/magento/magento2/issues/24922)
 
 ### AdminGWS
 
@@ -292,7 +293,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7976 -->
 
-*  Clicking on the links in the **Used in** section of the image Details page now displays a grid that displays  all entities that are filtered by the image. The asset filter is also set and displayed correctly. Previously, Magento did not display the asset title in the **Applied filters** section. _Fix submitted by Nazar Klovanych in pull request [29367](https://github.com/magento/magento2/pull/29367)_. [GitHub-1694](https://github.com/magento/adobe-stock-integration/issues/1694)
+*  Clicking on the links in the **Used in** section of the image Details page now displays a grid that displays all entities that are filtered by the image. The asset filter is also set and displayed correctly. Previously, Magento did not display the asset title in the **Applied filters** section. _Fix submitted by Nazar Klovanych in pull request [29367](https://github.com/magento/magento2/pull/29367)_. [GitHub-1694](https://github.com/magento/adobe-stock-integration/issues/1694)
 
 <!-- ENGCOM-7976 -->
 
@@ -360,7 +361,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7499-->
 
-*  Merchants can now create a credit memo for bundle products that provides a refund without requiring the return of the product.  Previously, Magento threw an error. _Fix submitted by Dzung Nguyen in pull request [27455](https://github.com/magento/magento2/pull/27455)_. [GitHub-23440](https://github.com/magento/magento2/issues/23440)
+*  Merchants can now create a credit memo for bundle products that provides a refund without requiring the return of the product. Previously, Magento threw an error. _Fix submitted by Dzung Nguyen in pull request [27455](https://github.com/magento/magento2/pull/27455)_. [GitHub-23440](https://github.com/magento/magento2/issues/23440)
 
 <!--- ENGCOM-7655-->
 
@@ -382,7 +383,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7073-->
 
-*  Varnish no longer throws a `Connection reset by peer` error when a large catalog is reindexed on schedule. _Fix submitted by Matthew O'Loughlin  in pull request [26256](https://github.com/magento/magento2/pull/8815)_. [GitHub-26255](https://github.com/magento/magento2/issues/8815)
+*  Varnish no longer throws a `Connection reset by peer` error when a large catalog is reindexed on schedule. _Fix submitted by Matthew O'Loughlin in pull request [26256](https://github.com/magento/magento2/pull/8815)_. [GitHub-26255](https://github.com/magento/magento2/issues/8815)
 
 <!--- ENGCOM-8019-->
 
@@ -424,7 +425,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-23992-->
 
-*  Magento no longer throws an exception when a shopper tries to  unset the persistence cookie after beginning checkout and then navigating to the storefront home page. Previously, when the shopper clicked the **Not you?** link on the home page, Magento threw this exception: `The shipping address is missing. Set the address and try again`. [GitHub-24218](https://github.com/magento/magento2/issues/24218)
+*  Magento no longer throws an exception when a shopper tries to unset the persistence cookie after beginning checkout and then navigating to the storefront home page. Previously, when the shopper clicked the **Not you?** link on the home page, Magento threw this exception: `The shipping address is missing. Set the address and try again`. [GitHub-24218](https://github.com/magento/magento2/issues/24218)
 
 <!--- MC-33899-->
 
@@ -456,7 +457,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-5629-->
 
-*  Guest checkout is now disabled as expected when a  cart contains downloadable products when the **Shareable** and **Disable Guest Checkout if Cart Contains Downloadable Items** settings are disabled. _Fix submitted by Rani Priya in pull request [23972](https://github.com/magento/magento2/pull/23972)_. [GitHub-23971](https://github.com/magento/magento2/issues/23971)
+*  Guest checkout is now disabled as expected when a cart contains downloadable products when the **Shareable** and **Disable Guest Checkout if Cart Contains Downloadable Items** settings are disabled. _Fix submitted by Rani Priya in pull request [23972](https://github.com/magento/magento2/pull/23972)_. [GitHub-23971](https://github.com/magento/magento2/issues/23971)
 
 <!--- ENGCOM-7949-->
 
@@ -498,7 +499,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7513-->
 
-*  `children_count` values now remain positive when an administrator deletes categories. Previously, when an administrator deleted categories, the  `children_count` for remaining categories was negative. _Fix submitted by Vitaliy Prokopov in pull request [28044](https://github.com/magento/magento2/pull/28044)_. [GitHub-27969](https://github.com/magento/magento2/issues/27969)
+*  `children_count` values now remain positive when an administrator deletes categories. Previously, when an administrator deleted categories, the `children_count` for remaining categories was negative. _Fix submitted by Vitaliy Prokopov in pull request [28044](https://github.com/magento/magento2/pull/28044)_. [GitHub-27969](https://github.com/magento/magento2/issues/27969)
 
 <!--- MC-34314-->
 
@@ -514,7 +515,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7854 -->
 
-*  The `{products(filter: {sku: {eq: "some sku"}}) {…}` query now returns values that have been converted into the expected currency. Previously,  `price_tiers.final_price.value` displayed special prices  in the base currency. _Fix submitted by Petkovski Marjan in pull request [28890](https://github.com/magento/magento2/pull/28890)_. [GitHub-26121](https://github.com/magento/magento2/issues/26121)
+*  The `{products(filter: {sku: {eq: "some sku"}}) {…}` query now returns values that have been converted into the expected currency. Previously, `price_tiers.final_price.value` displayed special prices in the base currency. _Fix submitted by Petkovski Marjan in pull request [28890](https://github.com/magento/magento2/pull/28890)_. [GitHub-26121](https://github.com/magento/magento2/issues/26121)
 
 ### Catalog Rule
 
@@ -558,7 +559,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7680-->
 
-*  The `lib/internal/Magento/Framework/App/Request/Http.php` file has been simplified by optimizing logic and  removing redundant variable assignments and over-usage of returns within a function. _Fix submitted by Chris Snedaker in pull request [28608](https://github.com/magento/magento2/pull/28608)_. [GitHub-29381](https://github.com/magento/magento2/issues/29381)
+*  The `lib/internal/Magento/Framework/App/Request/Http.php` file has been simplified by optimizing logic and removing redundant variable assignments and over-usage of returns within a function. _Fix submitted by Chris Snedaker in pull request [28608](https://github.com/magento/magento2/pull/28608)_. [GitHub-29381](https://github.com/magento/magento2/issues/29381)
 
 <!--- ENGCOM-7925-->
 
@@ -584,7 +585,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7602-->
 
-*  Magento no longer throws an error during  store view creation when the new store view contains a CMS page with the same URL key as a page in a different store view. _Fix submitted by Vadim Malesh in pull request [28421](https://github.com/magento/magento2/pull/28421)_. [GitHub-28357](https://github.com/magento/magento2/issues/28357)
+*  Magento no longer throws an error during store view creation when the new store view contains a CMS page with the same URL key as a page in a different store view. _Fix submitted by Vadim Malesh in pull request [28421](https://github.com/magento/magento2/pull/28421)_. [GitHub-28357](https://github.com/magento/magento2/issues/28357)
 
 <!--- MC-35480-->
 
@@ -618,7 +619,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7214-->
 
-*  The configuration options attribute of a parent product are no longer assigned to a new configurable product’s `size` attribute.  _Fix submitted by Abel Truong in pull request [27339](https://github.com/magento/magento2/pull/27339)_. [GitHub-26449](https://github.com/magento/magento2/issues/26449)
+*  The configuration options attribute of a parent product are no longer assigned to a new configurable product’s `size` attribute. _Fix submitted by Abel Truong in pull request [27339](https://github.com/magento/magento2/pull/27339)_. [GitHub-26449](https://github.com/magento/magento2/issues/26449)
 
 ### Cookies
 
@@ -630,7 +631,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35884-->
 
-*  Message queue consumer configuration has been extended with new parameters that help control consumers and save server resources and that potentially decrease consumer queue CPU consumption.  See [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
+*  Message queue consumer configuration has been extended with new parameters that help control consumers and save server resources and that potentially decrease consumer queue CPU consumption. See [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
 
 <!--- ENGCOM-7863-->
 
@@ -638,7 +639,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7193-->
 
-*   `sales_clean_quotes` no longer loads all expired quotes at once. Previously, Magento failed with this fatal error because all expired quotes were loaded simultaneously: `PHP Fatal error:  Allowed memory size of 2147483648 bytes exhausted (tried to allocate 20480 bytes) in /path/to/magento2/vendor/magento/framework/Model/AbstractModel.php on line 359`,
+*   `sales_clean_quotes` no longer loads all expired quotes at once. Previously, Magento failed with this fatal error because all expired quotes were loaded simultaneously: `PHP Fatal error: Allowed memory size of 2147483648 bytes exhausted (tried to allocate 20480 bytes) in /path/to/magento2/vendor/magento/framework/Model/AbstractModel.php on line 359`,
 
 ### CSS
 
@@ -756,7 +757,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7715 -->
 
-*  A product’s `stock_item` data is updated and downloadable product links and samples are preserved as expected when you use a REST PUT call to update `stock_item` values. Previously, after the product update, the product no longer contained links to download content.  _Fix submitted by Vadim Malesh in pull request [28799](https://github.com/magento/magento2/pull/28799)_. [GitHub-21811](https://github.com/magento/magento2/issues/21811)
+*  A product’s `stock_item` data is updated and downloadable product links and samples are preserved as expected when you use a REST PUT call to update `stock_item` values. Previously, after the product update, the product no longer contained links to download content. _Fix submitted by Vadim Malesh in pull request [28799](https://github.com/magento/magento2/pull/28799)_. [GitHub-21811](https://github.com/magento/magento2/issues/21811)
 
 <!--- MC-29905-->
 
@@ -932,7 +933,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7834 -->
 
-*  Selecting a toolbar option  from  product page **Developer tools**  >  **Network**  when running the Chrome browser no longer initializes `toolbar.js` twice. _Fix submitted by Paweł Tylek in pull request [28838](https://github.com/magento/magento2/pull/28838)_. [GitHub-25934](https://github.com/magento/magento2/issues/25934)
+*  Selecting a toolbar option from product page **Developer tools**  >  **Network** when running the Chrome browser no longer initializes `toolbar.js` twice. _Fix submitted by Paweł Tylek in pull request [28838](https://github.com/magento/magento2/pull/28838)_. [GitHub-25934](https://github.com/magento/magento2/issues/25934)
 
 <!--- ENGCOM-7420-->
 
@@ -972,7 +973,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7508 -->
 
-*  Customers and guests can write product reviews. Customers can also retrieve their product review histories. See [Create a product review](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query](https://devdocs.magento.com/guides/v2.4/graphql/queries/product-review-ratings-metadata.html for information on retrieving information about the reviews infrastructure.  _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
+*  Customers and guests can write product reviews. Customers can also retrieve their product review histories. See [Create a product review](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query](https://devdocs.magento.com/guides/v2.4/graphql/queries/product-review-ratings-metadata.html for information on retrieving information about the reviews infrastructure. _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
 
 <!-- ENGCOM-7838 -->
 
@@ -992,7 +993,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7512 -->
 
-*  GraphQL now uses only an authorization token to retrieve a type of user and its ID.  Previously, GraphQL used an active customer's cookies to retrieve this information when the authorization token was empty. _Fix submitted by Alexander Taranovsky in pull request [27373](https://github.com/magento/magento2/pull/27373)_. [GitHub-28040](https://github.com/magento/magento2/issues/28040)
+*  GraphQL now uses only an authorization token to retrieve a type of user and its ID. Previously, GraphQL used an active customer's cookies to retrieve this information when the authorization token was empty. _Fix submitted by Alexander Taranovsky in pull request [27373](https://github.com/magento/magento2/pull/27373)_. [GitHub-28040](https://github.com/magento/magento2/issues/28040)
 
 <!-- ENGCOM-7839 32949-->
 
@@ -1094,7 +1095,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7073-->
 
-*  `Magento_CacheInvalidate` now handles large tag patterns correctly when doing a `PURGE`. `sendPurgeRequest` has been refactored to handle an array of tags instead of requiring the caller to use `implode()`. _Fix submitted by Matthew O'Loughlin  in pull request [26256](https://github.com/magento/magento2/pull/26256)_. [GitHub-26255](https://github.com/magento/magento2/issues/26255)
+*  `Magento_CacheInvalidate` now handles large tag patterns correctly when doing a `PURGE`. `sendPurgeRequest` has been refactored to handle an array of tags instead of requiring the caller to use `implode()`. _Fix submitted by Matthew O'Loughlin in pull request [26256](https://github.com/magento/magento2/pull/26256)_. [GitHub-26255](https://github.com/magento/magento2/issues/26255)
 
 <!--- MC-30568-->
 
@@ -1304,7 +1305,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34714-->
 
-*  Exporting the Newsletter Subscribers list using the `EXCEL XML`  option now results in the export of all rows as expected. Previously, exported data included only the page pagination value, not all rows.
+*  Exporting the Newsletter Subscribers list using the `EXCEL XML` option now results in the export of all rows as expected. Previously, exported data included only the page pagination value, not all rows.
 
 <!--- ENGCOM-7522-->
 
@@ -1356,7 +1357,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34152-->
 
-*  Merchants can now successfully cancel orders that were authorized using PayPal. Previously, Magento did not cancel the order and displayed this error:  `Declined: 10601-Authorization has expired`.
+*  Merchants can now successfully cancel orders that were authorized using PayPal. Previously, Magento did not cancel the order and displayed this error: `Declined: 10601-Authorization has expired`.
 
 <!--- MC-33330-->
 
@@ -1364,7 +1365,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 ### Performance
 
-*  Three new configuration settings support a decrease in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources.  See [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
+*  Three new configuration settings support a decrease in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
 
 <!--- MC-31617-->
 
@@ -1429,11 +1430,11 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35633-->
 
-*  Shipments created through the POST `/rest/V1/shipment` endpoint now update orders properly. Previously,  Magento created a shipment, but shipment status remained in the processing state.
+*  Shipments created through the POST `/rest/V1/shipment` endpoint now update orders properly. Previously, Magento created a shipment, but shipment status remained in the processing state.
 
 <!-- ENGCOM-7639 -->
 
-*  Credit memos now display the payment method that is derived from the scope of the store in which the order was made.  Previously, credit memos displayed the name as defined the default store scope. _Fix submitted by Ledian Hymetllari in pull request [27582](https://github.com/magento/magento2/pull/27582)_. [GitHub-27570](https://github.com/magento/magento2/issues/27570)
+*  Credit memos now display the payment method that is derived from the scope of the store in which the order was made. Previously, credit memos displayed the name as defined the default store scope. _Fix submitted by Ledian Hymetllari in pull request [27582](https://github.com/magento/magento2/pull/27582)_. [GitHub-27570](https://github.com/magento/magento2/issues/27570)
 
 ### Search
 
@@ -1525,7 +1526,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7720-->
 
-*  Swagger now generates a valid response code when you enter valid customer access details. Previously, Swagger did not generate a response code when valid customer access information was entered, and Magento displayed this error:  `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later`. _Fix submitted by Vadim Malesh in pull request [28822](https://github.com/magento/magento2/pull/28822)_. [GitHub-27098](https://github.com/magento/magento2/issues/27098)
+*  Swagger now generates a valid response code when you enter valid customer access details. Previously, Swagger did not generate a response code when valid customer access information was entered, and Magento displayed this error: `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later`. _Fix submitted by Vadim Malesh in pull request [28822](https://github.com/magento/magento2/pull/28822)_. [GitHub-27098](https://github.com/magento/magento2/issues/27098)
 
 ### Swatches
 
@@ -1675,7 +1676,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7770-->
 
-*  The total number of canceled items on the canceled order view page  is now correctly identified on the canceled order view page. Previously, this field was labeled **Total Due**. _Fix submitted by Madhu Rajawat in pull request [27516](https://github.com/magento/magento2/pull/27516)_. [GitHub-26191](https://github.com/magento/magento2/issues/26191)
+*  The total number of canceled items on the canceled order view page is now correctly identified on the canceled order view page. Previously, this field was labeled **Total Due**. _Fix submitted by Madhu Rajawat in pull request [27516](https://github.com/magento/magento2/pull/27516)_. [GitHub-26191](https://github.com/magento/magento2/issues/26191)
 
 <!-- ENGCOM-7579 -->
 
@@ -1784,7 +1785,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35838-->
 
-*  Merchants with multiple websites can now use the REST API to create and update products while preserving  image and image-role inheritance. Previously, when a merchant used the REST API to create and update products, and a product was updated for store view, and the default image roles were loaded and saved for that store view. As a result, the store-view image roles stopped inheriting from the default scope after update.
+*  Merchants with multiple websites can now use the REST API to create and update products while preserving image and image-role inheritance. Previously, when a merchant used the REST API to create and update products, and a product was updated for store view, and the default image roles were loaded and saved for that store view. As a result, the store-view image roles stopped inheriting from the default scope after update.
 
 <!--- MC-36419-->
 
@@ -1885,7 +1886,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 ## Known issues
 
 **Issue**: Users without administrator privileges cannot currently set up their personal 2FA access. 2FA as implemented in Magento includes two ACL roles. One role affects global system configuration and it is needed only when configuring the system. The second ACL role affects individual user 2FA accounts. An admin user must configure this second type of 2FA ACL.
-**Workaround**:  After the user has logged in and seen the Access denied screen, they can visit `https://<magento store>/<admin_path>/tfa/tfa/requestconfig/` to force configuration.
+**Workaround**: After the user has logged in and seen the Access denied screen, they can visit `https://<magento store>/<admin_path>/tfa/tfa/requestconfig/` to force configuration.
 
 **Issue**: Merchants cannot log in to dotdigital from the Admin in Safari when dotdigital is enabled. See the [It's impossible to login in the dotdigital via admin panel when dotdigital account is enabled](https://support.magento.com/hc/en-us/articles/360050092291) Knowledge Base article.<!--- BUNDLE-2704-->
 
@@ -1897,7 +1898,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 **Issue**: Magento briefly displays an error message on the billing page of the checkout workflow when PayPal Braintree payment and multiple addresses shipment are selected. See the [Magento 2.4.1 known issue: error popping up on Checkout with PayPal Braintree](https://support.magento.com/hc/en-us/articles/360050253211) Knowledge Base article.
 
-**Issue**:  Magento displays a non-informative error message when a guest customer tries to place an order with PayPal through Braintree when guest checkout is disabled.  See the [Magento 2.4.1 known issue: non-informative error message during guest checkout using Paypal through Braintree](https://support.magento.com/hc/en-us/articles/360050368111) Knowledge Base article.
+**Issue**: Magento displays a non-informative error message when a guest customer tries to place an order with PayPal through Braintree when guest checkout is disabled. See the [Magento 2.4.1 known issue: non-informative error message during guest checkout using Paypal through Braintree](https://support.magento.com/hc/en-us/articles/360050368111) Knowledge Base article.
 
 ## Community contributions
 
