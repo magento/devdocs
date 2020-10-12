@@ -60,6 +60,8 @@ All system configurations are set during build and deploy according to the follo
 1. If an environment variable does not exist, use the configuration from a `MAGENTO_CLOUD_RELATIONSHIPS` name-value pair in the [`.magento.app.yaml` file][app-yaml]. Ignore the default configuration.
 1. If an environment variable does not exist and `MAGENTO_CLOUD_RELATIONSHIPS` does not contain a name-value pair, remove all customized configuration and use the values from the default configuration.
 
+If the same setting is configured in multiple places, Magento relies on the following configuration hierarchy to determine which value to apply to the environment :
+
 Priority|Configuration<br/>Method|Description
 ---|---|---
 1.|Cloud Admin UI|Values added via the Cloud Admin in the Variables tab of the environment configuration. This method is advised where configurations are secure and/or specific to the environment and need to be locked (cannot be changed in Magento Admin).
