@@ -805,49 +805,61 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 ### GraphQL
 
-<!-- ENGCOM-7661 -->
+<!-- ENGCOM-7661 7662 7559 MC-35646 32345-->
 
-*  Shoppers can select gift message options during checkout. See [`setGiftOptionsOnCart` mutation](https://devdocs.magento.com/guides/graphql/mutations/set-gift-options.html) and [`updateCartItems` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-cart-items.html). _Fix submitted by Oleh Usik in pull request [28519](https://github.com/magento/magento2/pull/28105)_. [GitHub-253](https://github.com/magento/magento2/issues/28519)
+*  Shoppers can select gift message and wrapping options during checkout. GraphQL now covers gift message options for different types of cart items. See [`setGiftOptionsOnCart` mutation](https://devdocs.magento.com/guides/graphql/mutations/set-gift-options.html) and [`updateCartItems` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-cart-items.html). _Fix submitted by Oleh Usik in pull requests [28519](https://github.com/magento/magento2/pull/28105), [27956](https://github.com/magento/magento2/pull/27956), [28072](https://github.com/magento/magento2/pull/28072), [28072](https://github.com/magento/magento2/pull/28072), and 246 in private repo partners-magento2ee_. [GitHub-253](https://github.com/magento/magento2/issues/28519)
+
+<!-- ENGCOM-7508 -->
+
+*  Customers and guests can write product reviews. Customers can also retrieve their product review histories. See [Create a product review](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query](https://devdocs.magento.com/guides/v2.4/graphql/queries/product-review-ratings-metadata.html for information on retrieving information about the reviews infrastructure.  _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
+
+<!-- ENGCOM-7838 -->
+
+*  GraphQL now supports reward points information in the My Account page. Shoppers can retrieve information about their reward points and access reward history. See [cart](https://devdocs.magento.com/guides/v2.4/graphql/queries/cart.html), [customer](https://devdocs.magento.com/guides/v2.4/graphql/queries/customer.html), and [storeConfig](https://devdocs.magento.com/guides/v2.4/graphql/queries/store-config.html). _Fix submitted by Petkovski Marjan in pull request 277 in private repo partners-magento2ee and Dmitriy Gallyamov in pull requests 284 and 281 in private repo partners-magento2ee_. [GitHub-28769](https://github.com/magento/magento2/issues/28769), [GitHub-28835](https://github.com/magento/magento2/issues/28835), [GitHub-28833](https://github.com/magento/magento2/issues/28833)
+
+<!-- ENGCOM-7968 -->
+
+*  The [`addProductsToCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)
+
+<!-- ENGCOM-7801 7816-->
+
+*  GraphQL queries for related products now return values for related products that were created from target rules. Previously, queries for related products (up-sell and cross-sell) only returned values if the related products were added from the product settings. _Fix submitted by Ulzii in pull request 288 in private repo partners-magento2ee_. [GitHub-28566](https://github.com/magento/magento2/issues/28566)
+
+<!-- ENGCOM-7841 -->
+
+*  GraphQL now supports applying and removing reward points to and from the cart. See [`applyRewardPointsToCart`](https://devdocs.magento.com/v2.4/graphql/mutations/apply-reward-points.html) and [`removeRewardPointsFromCart`](https://devdocs.magento.com/v2.4/graphql/mutations/remove-reward-points.html) for a discussion of managing reward points within a cart. _Fix submitted by Petkovski Marjan in pull request 285 in private repo partners-magento2ee_. [GitHub-28834](https://github.com/magento/magento2/issues/28834)
 
 <!-- ENGCOM-7512 -->
 
 *  GraphQL now uses only an authorization token to retrieve a type of user and its ID.  Previously, GraphQL used an active customer's cookies to retrieve this information when the authorization token was empty. _Fix submitted by Alexander Taranovsky in pull request [27373](https://github.com/magento/magento2/pull/27373)_. [GitHub-28040](https://github.com/magento/magento2/issues/28040)
 
-<!-- ENGCOM-7662 7559-->
-
-*  GraphQL now covers gift messages to different types of cart items (gift messages, gift wrapping, gift receipts, and printed cards). See [`setGiftOptionsOnCart` mutation](https://devdocs.magento.com/guides/graphql/mutations/set-gift-options.html). _Fix submitted by Oleh Usik in pull requests [27956](https://github.com/magento/magento2/pull/27956) and [28072](https://github.com/magento/magento2/pull/28072)_. [GitHub-28519](https://github.com/magento/magento2/issues/28519)
-
-<!-- ENGCOM-7508 -->
-
-*  Customers and guests can write product reviews. Customers can retrieve their product review histories. _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
-
-<!-- ENGCOM-7968 -->
-
-*  Customers can add the following product types to their cart: `Simple`, `Configurable`, `Bundled`, `Grouped`, `Virtual`, `Gift Card`, and `Downloadable`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)
-
-<!-- ENGCOM-7839 -->
+<!-- ENGCOM-7839 32949-->
 
 *  The schema for the `createCustomer` mutation now matches validation requirements. _Fix submitted by Michał Derlatka in pull request [28888](https://github.com/magento/magento2/pull/28888)_. [GitHub-28570](https://github.com/magento/magento2/issues/28570)
 
 <!-- ENGCOM-7750 -->
 
-*  The GraphQL `updateCustomer` no longer allows you to set any `INT` value in the `gender` argument. _Fix submitted by Alexander Taranovsky in pull request [28487](https://github.com/magento/magento2/pull/28487)_. [GitHub-28481](https://github.com/magento/magento2/issues/28481)
+*  The GraphQL `updateCustomer` no longer allows you to set an invalid `INT` value in the `gender` argument. _Fix submitted by Alexander Taranovsky in pull request [28487](https://github.com/magento/magento2/pull/28487)_. [GitHub-28481](https://github.com/magento/magento2/issues/28481)
+
+<!-- ENGCOM-7663 -->
+
+*  You can use the `subscribeEmailToNewsletter` mutation to subscribe customers to a newsletter. See [`subscribeEmailToNewsletter` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/subscribe-email-to-newsletter.html). _Fix submitted by Alexander Taranovsky in pull request [27586](https://github.com/magento/magento2/pull/27586)_. [GitHub-27337](https://github.com/magento/magento2/issues/27337)
 
 <!-- ENGCOM-7216 -->
 
-*  Removed redundant logic in the `SetShippingMethodsOnCart` mutation resolver. _Fix submitted by Alexander Taranovsky in pull request [27349](https://github.com/magento/magento2/pull/27349)_. [GitHub-28262](https://github.com/magento/magento2/issues/28262)
+*  Removed redundant logic in the `setShippingMethodsOnCart` mutation resolver. _Fix submitted by Alexander Taranovsky in pull request [27349](https://github.com/magento/magento2/pull/27349)_. [GitHub-28262](https://github.com/magento/magento2/issues/28262)
 
 <!-- ENGCOM-7638 -->
 
 *  Added test coverage for the `Please provide Email of sender` error associated with the `sendEmailToFriend` mutation. _Fix submitted by Alexander Taranovsky in pull request [28034](https://github.com/magento/magento2/pull/28034)_. [GitHub-28138](https://github.com/magento/magento2/issues/28138)
 
+<!-- ENGCOM-7743 34485-->
+
+*  The `products` query now returns product attribute option labels for the default store view as expected. Previously, this query returned the product attribute option labels that were set for the Admin. _Fix submitted by Dmitriy Gallyamov in pull request [28647](https://github.com/magento/magento2/pull/28647)_. [GitHub-28568](https://github.com/magento/magento2/issues/28568)
+
 <!-- ENGCOM-7743 -->
 
-*  The `myProducts` GraphQL query now returns product attribute option labels for the default store view as expected. _Fix submitted by Dmitriy Gallyamov in pull request [28647](https://github.com/magento/magento2/pull/28647)_. [GitHub-28568](https://github.com/magento/magento2/issues/28568)
-
-<!-- ENGCOM-7743 -->
-
-*  Custom attribute aggregations now return store-specific option values. _Fix submitted by Dmitriy Gallyamov in pull request [28647](https://github.com/magento/magento2/pull/28647)_. [GitHub-28572](https://github.com/magento/magento2/issues/28572)### Images
+*  Custom attribute aggregations now return store-specific option values. _Fix submitted by Dmitriy Gallyamov in pull request [28647](https://github.com/magento/magento2/pull/28647)_. [GitHub-28572](https://github.com/magento/magento2/issues/28572)
 
 <!-- ENGCOM-7707 -->
 
@@ -855,29 +867,23 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7729 -->
 
-*  The GraphQL `categoryList` query now returns the correct response when using fragments. _Fix submitted by Ulzii in pull request [28710](https://github.com/magento/magento2/pull/28710)_. [GitHub-28584](https://github.com/magento/magento2/issues/28584)
-
-<!-- ENGCOM-7732 -->
-
-*  GraphQL product search now considers configured category permissions. Previously, product search ignored the **Enable** setting (**Stores**  >  **Configuration**  >  **Catalog**  >  **Catalog** > **Category Permissions**). _Fix submitted by Petkovski Marjan in pull request [28757](https://github.com/magento/magento2/pull/28757)_. [GitHub-28563](https://github.com/magento/magento2/issues/28563)
-
-<!-- ENGCOM-7985 -->
-
-*  GraphQL now supports placing an order for a bundle product with option type `radio` and `dropdown` with multiple choices. Previously, Magento displayed a message about invalid input for `BundleItem.type: radio/dropdown`. _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/magento/magento2/pull/29256)_. [GitHub-26110](https://github.com/magento/magento2/issues/26110)
-
-<!--- MC-32949-->
-
-*  The GraphQL schema for the `createCustomer` mutation now matches validation requirements. [GitHub-28570](https://github.com/magento/magento2/issues/28570)
-
-<!--- MC-31084-->
-
-*  You can now add a product to a cart using `addSimpleProduct` when other items in the cart are out-of-stock. Previously, Magento returned this error: `Some of the products are out of stock`. [GitHub-26683](https://github.com/magento/magento2/issues/26683)
+*  The `categoryList` query now returns the correct response when using fragments. _Fix submitted by Ulzii in pull request [28710](https://github.com/magento/magento2/pull/28710)_. [GitHub-28584](https://github.com/magento/magento2/issues/28584)
 
 <!--- MC-34187-->
 
 *  The new `availableStores` query returns a list of `StoreConfigs` for other stores available under the same website (based on the current store). It does not expose the list of websites. See [`availableStores` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html). [GitHub-28569](https://github.com/magento/magento2/issues/28569)
 
-*  The default GraphQL `Category` method now sorts by category position as expected. _Fix submitted by Derrik Nyomo in pull request [29301](https://github.com/magento/magento2/pull/29301)_. [GitHub-104](https://github.com/magento/catalog-storefront/issues/104)
+<!-- ENGCOM-7810 MC-34187-->
+
+*  The `availableStores` query now returns only codes for the stores under the same website as the current store. _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
+
+<!-- ENGCOM-7732 7733-->
+
+*  GraphQL product search now considers configured category permissions. Previously, product search ignored the **Enable** setting (**Stores**  >  **Configuration**  >  **Catalog**  >  **Catalog** > **Category Permissions**). _Fix submitted by Petkovski Marjan in pull request [28757](https://github.com/magento/magento2/pull/28757) and pull request 271 in private repo `partners-magento2ee`_. [GitHub-28563](https://github.com/magento/magento2/issues/28563
+
+<!--- MC-31084-->
+
+*  You can now add a product to a cart using `addSimpleProductToCart` when other items in the cart are out-of-stock. Previously, Magento returned this error: `Some of the products are out of stock`. [GitHub-26683](https://github.com/magento/magento2/issues/26683)
 
 ### Images
 

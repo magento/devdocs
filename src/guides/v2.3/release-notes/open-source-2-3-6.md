@@ -13,12 +13,6 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.
 
 We are adding support for PHP 7.4.x in Magento 2.3.7, which is scheduled for release in Q2 2021. This support will introduce breaking changes to Magento 2.3.x deployments.  How will this affect your store? See the [PHP 7.4 support for Magento 2.3.x release line](https://community.magento.com/t5/Magento-DevBlog/PHP-7-4-support-for-Magento-2-3-x-release-line/ba-p/458946) DevBlog post.
 
-## Security-only patch available
-
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.6) provides. Patch 2.3.5.1 (Composer package 2.3.5-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.5. All hot fixes that were applied to the 2.3.5 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
-
-For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.4-p2), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security-only patches include security bug fixes only, not the additional security enhancements that are included in the full patch.
-
 ## Highlights
 
 Look for the following highlights in this release:
@@ -417,7 +411,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 ### Klarna
 
-*  Magento now correctly refunds a Klarnorder when the order contains a product that has been deleted. Previously, Magento threw a fatal error.
+*  Magento now correctly refunds a Klarna order when the order contains a product that has been deleted. Previously, Magento threw a fatal error.
 
 *  Default configuration settings for Klarna remain set as expected when you change the configuration scope to a different website. Previously, changing scope resulted in clearing all Klarna settings.
 
