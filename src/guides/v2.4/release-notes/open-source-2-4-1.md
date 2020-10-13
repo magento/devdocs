@@ -1566,7 +1566,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7665 -->
 
-*  Using GET `/rest/storeview2/V1/customers/me` now honors **Share Customer Accounts** setting (Admin **Stores** >  **Configuration**  >  **Customers**  >  **Customer Configuration**  > **Account Sharing Options**) when retrieving user information. _Fix submitted by Pavel Bystritsky in pull request [28213](https://github.com/magento/magento2/pull/28213)_. [GitHub-26089](https://github.com/magento/magento2/issues/26089)
+*  Using GET `V1/customers/me` now honors **Share Customer Accounts** setting (Admin **Stores** >  **Configuration**  >  **Customers**  >  **Customer Configuration**  > **Account Sharing Options**) when retrieving user information. _Fix submitted by Pavel Bystritsky in pull request [28213](https://github.com/magento/magento2/pull/28213)_. [GitHub-26089](https://github.com/magento/magento2/issues/26089)
 
 <!-- ENGCOM-7563 -->
 
