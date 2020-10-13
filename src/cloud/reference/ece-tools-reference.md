@@ -20,7 +20,7 @@ php ./vendor/bin/ece-tools list
 ```terminal
 Available commands:
   build                    Builds application
-  db-dump                  Creates backup of database
+  db-dump                  Creates backups of databases
   deploy                   Deploys application
   help                     Displays help for a command
   list                     Lists commands
@@ -33,6 +33,9 @@ Available commands:
  build
   build:generate           Generates all necessary files for build stage
   build:transfer           Transfer generated files into init directory
+ cloud
+  cloud:config:create      Create .magento.env.yaml file from provided configuration. Overwrite file if exists.
+  cloud:config:update      Update .magento.env.yaml file with provided configuration. Create file if not exists.
  config
   config:dump              [dump] Dump configuration for static content deployment.
  cron
@@ -44,14 +47,19 @@ Available commands:
   dev:git:update-composer  Updates composer for deployment from git.
  env
   env:config:show          Display encoded cloud configuration environment variables
+ error
+  error:show               Display info about error by error id or info about all errors from the last deployment
  module
   module:refresh           Refresh config to enable newly added modules
+ schema
+  schema:generate          Generate the schema dist file
  wizard
   wizard:ideal-state       Verifies ideal state of configuration
   wizard:master-slave      Verifies master-slave configuration
   wizard:scd-on-build      Verifies SCD on build configuration
   wizard:scd-on-demand     Verifies SCD on demand configuration
   wizard:scd-on-deploy     Verifies SCD on deploy configuration
+  wizard:split-db-state    Verifies ability to split DB and whether DB was already split or not.
 ```
 {:.no-copy}
 
