@@ -282,6 +282,7 @@ Replace variables in the command with the following values as needed for your en
 -  `dbEngine`–Specify the database type, either `MariaDB` or `MySQL`.
 
 -  `dbEngineVersion`–Specify the version of the database engine for the instance.
+
 For example, append the following text to the PR comment to deploy an instance with PHP 7.4, Elasticsearch version 7, and MariaDB version 10.4.
 
 ```text
