@@ -238,7 +238,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7265-->
 
-*  Executing `php bin/magento setup:upgrade` now completes as expected. Previously, Magento displayed printed array content for caches. _Fix submitted by Sathish Subramanian in pull request [27567](https://github.com/magento/magento2/pull/27567)_. [GitHub-27091](https://github.com/magento/magento2/issues/27091)
+*  Executing `bin/magento setup:upgrade` now completes as expected. Previously, Magento displayed printed array content for caches. _Fix submitted by Sathish Subramanian in pull request [27567](https://github.com/magento/magento2/pull/27567)_. [GitHub-27091](https://github.com/magento/magento2/issues/27091)
 
 <!--- ENGCOM-7853-->
 
