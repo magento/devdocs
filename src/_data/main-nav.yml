@@ -179,8 +179,6 @@
     - label: Web API Functional Testing
       url: /get-started/web-api-functional-testing.html
 
--
-
 - label: Functional Areas
   children:
 
