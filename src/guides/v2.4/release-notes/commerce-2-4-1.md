@@ -63,7 +63,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Reduction in the size of network transfers between Redis and Magento**. Plugin list configuration is now generated during the execution of the `bin/magento di:compile` command. This configuration information is written to generated metadata folders based on scope. Previously, this information was stored in cache. Resulting performance improvements include a decrease in network cache size and execution time for many scenarios.<!--- MC-31617-->
 
-*  **Enhanced message queue consumer performance**. Three new configuration settings support a decrease in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
+*  **Enhanced message queue consumer performance**. Three new configuration settings support a decrease in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
 
 *  **Improved execution time** for `bin/magento` commands.
 
@@ -85,7 +85,7 @@ The New Media Gallery is now enabled by default in the Admin. Merchants can now
 
 ### Page Builder
 
-Page Builder now supports full screen mode, which supports easier editing of content and provides a consistent experience editing content across the Admin. <!--- PB-543-->
+Page Builder now supports full screen mode, which supports easier editing of content and provides a consistent experience editing content across the Admin. See [Workspace](https://docs.magento.com/user-guide/cms/page-builder-workspace.html). <!--- PB-543-->
 
 ### GraphQL
 
@@ -138,6 +138,8 @@ Improvements to order approval and rejection include the following:
 
 *  Examples of how to configure Order Approval rules are provided on the Rule Configuration page. <!--- BUNDLE-103 -->
 
+See [Approval rules](https://docs.magento.com/user-guide/customers/account-dashboard-approval-rules.html)
+
 #### B2B shipping methods enhancements
 
 B2B merchants can now control shipping methods that are offered to each Company. Merchants can configure the following from the Admin:<!--- BUNDLE-160 161 162 -->
@@ -158,6 +160,8 @@ B2B merchants can now control shipping methods that are offered to each Company.
 *  Merchants can now directly view all quotes associated with a user from the customer’s detail page. <!--- BUNDLE-139 -->
 *  Merchants can now filter the Customers Now Online grid by Company. <!--- BUNDLE-137 -->
 *  Admins can now filter customers in the Admin by Sales Rep. <!--- BUNDLE-110 -->
+
+See [B2B Features](https://docs.magento.com/user-guide/configuration/general/b2b-features.html).
 
 #### Enhanced security on storefront
 
@@ -640,7 +644,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35884-->
 
-*  Message queue consumer configuration has been extended with new parameters that help control consumers and save server resources and that potentially decrease consumer queue CPU consumption. See [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
+*  Message queue consumer configuration has been extended with new parameters that help control consumers and save server resources and that potentially decrease consumer queue CPU consumption. See [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
 
 <!--- ENGCOM-7863-->
 
@@ -1362,7 +1366,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 ### Performance
 
-*  Three new configuration settings support a decrease in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See [Configure message queues]({{page.baseurl}}/guides/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
+*  Three new configuration settings support a decrease in consumer queue CPU consumption. These optional parameters provide increased control over consumers and save server resources. See [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html) for a description of the `maxIdleTime`, `sleep`, and `onlySpawnWhenMessageAvailable` parameters.
 
 <!--- MC-31617-->
 
