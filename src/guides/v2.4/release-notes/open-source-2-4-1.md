@@ -1384,7 +1384,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- ENGCOM-7829-->
 
-*  Magento now checks area (frontend or `adminhtml`) before rendering inline translation markup. Previously, making an API call to `/rest/V1/integration/admin/token` with bad credentials while inline translation was enabled results in the inclusion of inline translation markup around the error message in the API response. _Fix submitted by Zach Nanninga in pull request [28856](https://github.com/magento/magento2/pull/28856)_. [GitHub-28656](https://github.com/magento/magento2/issues/28656)
+*  Magento now checks area (frontend or `adminhtml`) before rendering inline translation markup. Previously, making an API call to `POST /V1/integration/admin/token` with bad credentials while inline translation was enabled results in the inclusion of inline translation markup around the error message in the API response. _Fix submitted by Zach Nanninga in pull request [28856](https://github.com/magento/magento2/pull/28856)_. [GitHub-28656](https://github.com/magento/magento2/issues/28656)
 
 <!--- ENGCOM-7536-->
 
