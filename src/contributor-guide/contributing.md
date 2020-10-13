@@ -250,75 +250,72 @@ Admins access will be shared via comment on GitHub.
 
 ### Customize deployed instances {#customize-deployed-instances}
 
-In some cases a custom environment is necessary in order to test an issue, or a pull request, to achieve such a need there are a set of commands that, combined with the [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr), will allow you to customize your deployed instance environment.
+In some cases a custom environment is required to test an issue or a pull request. You can create a custom environment by appending custom configuration settings to the PR comment to [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr).
 
 #### Magento Edition:
 
-By appending the text below to [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr) commands you will be able to specify which edition you would like to have deployed.
+Append the following text to your PR comment to specify the Magento Commerce edition to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
 ```text
 with edition {$edition}
 ```
 
-For `edition`, the supported values are `ee` to deploy Magento Commerce edition or `b2b` to deploy the Magento Commerce with B2B modules.
+For`edition`, use either of the following values:
+
+-  `ee` deploys the Magento Commerce edition
+-  `b2b` deploys Magento Commerce with B2B modules.
 
 #### Environment:
 
-By appending the text below to [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr) commands you will be able to specify different versions of the applications/services running on the instance.
+Append the following text to your PR comment to specify the version for applications and services to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
 ```text
-with env[ironment] PHP {$phpVersion}, search-engine ElasticSearch {$searchEngineVersion}, database {$dbEngine} {$dbEngineVersion}
+with env PHP {$phpVersion}, search-engine ElasticSearch {$searchEngineVersion}, database {$dbEngine} {$dbEngineVersion}
 ```
 
-You can replace the variables above with the following:
+Replace variables in the command with the following values as needed for your environment:
 
--  For `phpVersion`, you can set the PHP version that you want the instance to run on.
+-  `phpVersion`–Specify the PHP version for the instance.
 
--  For `searchEngineVersion`, you can set the Elasticsearch version that you want the instance to run.
+-  `searchEngineVersion`–Specify the Elasticsearch version for the instance.
 
--  For `dbEngine`, you can choose between `MariaDB` or `MySQL`.
+-  `dbEngine`–Specify the database type, either `MariaDB` or `MySQL`.
 
--  For `dbEngineVersion`, you can replace with the version of the database engine that you chose.
-
-As an example you can have an environment defined as shown below:
+-  `dbEngineVersion`–Specify the version of the database engine for the instance.
+For example, append the following text to the PR comment to deploy an instance with PHP 7.4, Elasticsearch version 7, and MariaDB version 10.4.
 
 ```text
 with env PHP 7.4, search-engine Elasticsearch 7, database MariaDB 10.4
 ```
 
-Please be aware, these features should be only used in specific cases  and the general recommendation is not to change the default environment.
+{:.bs-callout-info}
+We generally recommend that you deploy the default environment. Use the custom configuration options only when you require a special configuration to test specfic use cases.
 
 #### Add Extensions:
 
-By appending the text below to [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr) commands you will be able to specify extensions that you would like to add to your instance.
+Append the following text to your PR comment to specify extensions to add to an instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
 ```text
 with extensions {$extensionRepo}
 ```
 
-For `extensionRepo`, you can specify extension repositories that will be additionally used when compiling your instance. You can also define the branch by using the pattern: org/repo-name:branch-name.
-
-With this feature you can specify multiple modules by separating each module with comma. As an example:
+For `extensionRepo`, specify one or more extension repositories to include when compiling your instance.  If you specify multiple repositories, use a comma after each repository. You can specify a specific branch in a repository using the pattern: `org/repo-name:branch-name`.  For example:
 
 ```text
 with extensions magento/security-package:1.0-develop, magento/security-package-ee
-```
 
 #### Remove Extensions:
 
-By appending the text below to [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr) commands you will be able to specify extensions that you would like to be removed on your instance.
+Append the following text to your PR comment to specify extensions any extensions that you want to remove from the instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
 ```text
 without extensions {$extensionRepo}
 ```
 
-For `extensionRepo`, you can specify extension repositories that will be removed when compiling your instance.
-
-With such a feature you can specify multiple modules by separating each module with comma. As an example:
+For `extensionRepo`, specify one or more extension repositories to remove before compiling your instance.  If you specify multiple repositories, use a comma after each repository. For example:
 
 ```text
 without extensions magento/adobe-stock-integration
-```
 
 ### Combine multiple pull requests {#combine-pr}
 
