@@ -261,7 +261,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 ### Amazon Pay
 
-*  Amazon Pay now check whether a user is already logged in before rendering payment options.
+*  Amazon Pay now checks whether a user is already logged in before rendering payment options.
 
 *  Issues with multi-factor authentication and abandoned carts have been resolved.
 
