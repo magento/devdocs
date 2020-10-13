@@ -70,22 +70,22 @@ Make any corrections, commit, and push the changes. If you do not receive an err
 
 ## Create configuration file from CLI
 
-Sometimes it requires to generate the configuration file `.magento.env.yaml` from CLI, for this purpose `ece-tools` contains two CLI commands.
+Sometimes it is required to generate the configuration file `.magento.env.yaml` from CLI, for this purpose `ece-tools` contains two CLI commands.
 
 ```bash
 php ./vendor/bin/ece-tools cloud:config:create     # Creates a new configuration file
 php ./vendor/bin/ece-tools cloud:config:update     # Updates values in the configuration file
 ```
 
-Both commands accepts one argument - configuration in JSON format.
+Both commands accept one argument - configured in JSON format.
 
-For example, the next command
+For example, the next command :
 
 ```bash
 php vendor/bin/ece-tools cloud:config:create '{"stage":{"build":{"SCD_THREADS":5}, "deploy":{"CLEAN_STATIC_FILES":false}}}'
 ```
 
-will create the next configuration file `.magento.env.yaml`
+will create a new configuration file `.magento.env.yaml`
 
 ```yaml
 stage:
@@ -95,13 +95,13 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-If after that you run `cloud:config:update` command 
+If after that you run `cloud:config:update` command :
 
 ```bash
 php vendor/bin/ece-tools cloud:config:update '{"stage":{"build":{"SCD_THREADS":3, "SCD_COMPRESSION_TIMEOUT":1000}}}'
 ```
 
-The configuration file will contain updated values
+The configuration file will contain updated values :
 
 ```yaml
 stage:
