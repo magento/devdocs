@@ -37,14 +37,14 @@ Available commands:
   cloud:config:create      Create .magento.env.yaml file from provided configuration. Overwrite file if it exists
   cloud:config:update      Update .magento.env.yaml file with provided configuration. Create file if it does not exist
  config
-  config:dump              [dump] Dump configuration for static content deployment.
+  config:dump              [dump] Dump configuration for static content deployment
  cron
   cron:disable             Disable all Magento cron processes and kills currently running
   cron:enable              Enable Magento cron processes
   cron:kill                Kill all Magento cron processes
-  cron:unlock              Unlock cron jobs that stuck in "running" state.
+  cron:unlock              Unlock cron jobs that stuck in "running" state
  dev
-  dev:git:update-composer  Updates composer for deployment from git.
+  dev:git:update-composer  Updates composer for deployment from git
  env
   env:config:show          Display encoded cloud configuration environment variables
  error
