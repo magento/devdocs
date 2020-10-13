@@ -70,7 +70,7 @@ Make any corrections, commit, and push the changes. If you do not receive an err
 
 ## Create configuration file from CLI
 
-Sometimes it is required to generate the configuration file `.magento.env.yaml` from CLI, for this purpose `ece-tools` contains two CLI commands.
+You can use the following `ece-tools` CLI commands to generate a `.magento.env.yaml` configuration file for a Cloud environment.
 
 ```bash
 php ./vendor/bin/ece-tools cloud:config:create     # Creates a new configuration file
