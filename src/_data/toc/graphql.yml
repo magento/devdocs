@@ -213,6 +213,11 @@ pages:
         - label: createBraintreeClientToken mutation
           url: /graphql/mutations/create-braintree-client-token.html
 
+        - label: createCompany mutation
+          url: /graphql/mutations/create-company.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
 
@@ -346,6 +351,11 @@ pages:
 
         - label: updateCartItems mutation
           url: /graphql/mutations/update-cart-items.html
+
+        - label: updateCompany mutation
+          url: /graphql/mutations/update-company.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
 
         - label: updateCustomer mutation
           url: /graphql/mutations/update-customer.html
