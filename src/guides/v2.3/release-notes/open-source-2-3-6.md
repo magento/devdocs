@@ -345,7 +345,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-17438-->
 
-*  You can now use the REST API to update YouTube videos (PUT `rest/V1/products/{SKU}`). Previously, Magento displayed a thumbnail for the video, but the video player did not load when you clicked the **Play** button. [GitHub-23194](https://github.com/magento/magento2/issues/23194)
+*  You can now use the `PUT /V1/products/:sku` endpoint to update links to YouTube videos. Previously, Magento displayed a thumbnail for the video, but the video player did not load when you clicked the **Play** button. [GitHub-23194](https://github.com/magento/magento2/issues/23194)
 
 <!--- MC-32147-->
 
