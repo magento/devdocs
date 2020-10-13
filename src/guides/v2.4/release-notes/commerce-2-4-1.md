@@ -1310,7 +1310,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34714-->
 
-*  Exporting the Newsletter Subscribers list using the `EXCEL XML` option now results in the export of all rows as expected. Previously, exported data included only the page pagination value, not all rows.
+*  Exporting the Newsletter Subscribers list using the `Excel XML` option now results in the export of all rows as expected. Previously, exported data included only the page pagination value, not all rows.
 
 <!--- ENGCOM-7522-->
 
