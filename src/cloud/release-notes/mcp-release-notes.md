@@ -27,6 +27,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 -  **Redis patches for Magento 2.3.0 - 2.3.5, 2.4.0**–Updated the Redis patches to support adding products to a category when implementing a Level 2 cache. <!--MCLOUD-6659-->
 
 -  **Braintree VBE patch**–Fixes an issue that generated an error when an Administrator tried to view a Braintree Settlement Report. <!--MCLOUD-6684-->
+
 -  Now, the `ece-patches apply` command uses the Unix Patch command to apply patches if Git is not available on the host system. <!--MCLOUD-7069-->
 
 ## v1.0.6
