@@ -77,15 +77,13 @@ php ./vendor/bin/ece-tools cloud:config:create     # Creates a new configuration
 php ./vendor/bin/ece-tools cloud:config:update     # Updates values in the configuration file
 ```
 
-Both commands accept one argument - configured in JSON format.
-
-For example, the next command :
+Both commands require a single argument, a JSON-formatted array that specifies a value for at least one build, deploy, or post-deploy variable. For example, the following command sets values for the `SCD_THREADS` and `CLEAN_STATIC_FILES` variables.
 
 ```bash
 php vendor/bin/ece-tools cloud:config:create '{"stage":{"build":{"SCD_THREADS":5}, "deploy":{"CLEAN_STATIC_FILES":false}}}'
 ```
 
-will create a new configuration file `.magento.env.yaml`
+This command creates a new .magento.env.yaml file with the following settings:
 
 ```yaml
 stage:
@@ -95,13 +93,13 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-If after that you run `cloud:config:update` command :
+You can use the cloud:config:update command to update the new file. For example, the following command changes the `SCD_THREADS` value and adds the `SCD_COMPRESSION_TIMEOUT` configuration:
 
 ```bash
 php vendor/bin/ece-tools cloud:config:update '{"stage":{"build":{"SCD_THREADS":3, "SCD_COMPRESSION_TIMEOUT":1000}}}'
 ```
 
-The configuration file will contain updated values :
+The updated file contains the following configuration:
 
 ```yaml
 stage:
