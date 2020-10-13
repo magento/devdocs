@@ -44,7 +44,7 @@ Security improvements for this release include:
    *  Place Order storefront page and REST and GraphQL endpoints <!--- MC-36067-->
    *  Payment-related REST and GraphQL endpoints.<!--- MC-36064-->
 
-   CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks.
+   CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks. See [CAPTCHA](https://docs.magento.com/user-guide/stores/security-captcha.html).
 
 *  **Support for the SameSite attribute for cookies**. To support the Google Chrome enforcement of the new cookie classification system, Magento classes that handle cookies have been updated to support the `SameSite` cookie attribute. This attribute is set to `Lax` by default but can be explicitly overridden. <!--- MC-35389-->
 
@@ -85,7 +85,7 @@ The New Media Gallery is now enabled by default in the Admin. Merchants can now
 
 This release adds GraphQL coverage for the following features:
 
-*  **Product reviews**. Customers and guests can write product reviews. Customers can retrieve their product review histories. See [Create a product review]({{page.baseurl}}/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query]({{page.baseurl}}/graphql/queries/product-review-ratings-metadata.html for information on retrieving information about the reviews infrastructure. <!--- MC-32349-->
+*  **Product reviews**. Customers and guests can write product reviews. Customers can retrieve their product review histories. See [Create a product review]({{page.baseurl}}/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query]({{page.baseurl}}/graphql/queries/product-review-ratings-metadata.html) for information on retrieving information about the reviews infrastructure.<!--- MC-32349-->
 
 *  **Gift options**. All customers and guests can add a gift message to their order. Customers can also add gift wrapping, gift receipts, and printed cards to the order. See [`setGiftOptionsOnCart` mutation]({{page.baseurl}}/graphql/mutations/set-gift-options.html) and [`updateCartItems` mutation]({{page.baseurl}}/graphql/mutations/update-cart-items.html)<!--- MC-32345-->
 
@@ -95,7 +95,7 @@ This release adds GraphQL coverage for the following features:
 
 *  **Stored payment methods**. Logged-in customers can now store payment details (including Braintree credit card and Braintree with PayPal) in My Account. <!--- MC-32348 35945 35946-->
 
-See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on this and other enhancements.
+See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
 ### PWA Studio
 
@@ -119,11 +119,17 @@ MFTF 3.1.0 is now available. See [Magento Functional Testing Framework Changelog
 
 See the following articles for updates on features and changes for this release:
 
-[Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html)
-[Braintree](https://docs.magento.com/user-guide/payment/braintree.html)
-[Klarna](https://docs.magento.com/user-guide/payment/klarna.html)
-[Vertex Cloud](https://docs.magento.com/user-guide/tax/vertex.html)
-[Yotpo Product Reviews](https://docs.magento.com/user-guide/marketing/yotpo-reviews-intro.html)
+*  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html)
+
+*  [Braintree](https://docs.magento.com/user-guide/payment/braintree.html)
+
+*  [dotdigital Engagement Cloud](https://docs.magento.com/user-guide/marketing/dotdigital/engagement-cloud.html)
+
+*  [Klarna](https://docs.magento.com/user-guide/payment/klarna.html)
+
+*  [Vertex Cloud](https://docs.magento.com/user-guide/tax/vertex.html)
+
+*  [Yotpo Product Reviews](https://docs.magento.com/user-guide/marketing/yotpo-reviews-intro.html)
 
 ## Fixed issues
 
@@ -629,7 +635,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- ENGCOM-7757-->
 
-*  Shoppers can now download samples of downloadable products that are out-of-stock. Previously, when a shopper tried to download a sample, Magento opened a new tab, did not display an informative message, and the download process did not begin. _Fix submitted by Vadim Malesh in pull request [28898](https://github.com/magento/magento2/pull/28898)_. [GitHub-23638](https://github.com/magento/magento2/issues/23638)
+*  Shoppers can now download samples of downloadable products that are out-of-stock. Previously, when a shopper tried to download a sample, Magento opened a new tab, but did not display an informative message or begin the download process. _Fix submitted by Vadim Malesh in pull request [28898](https://github.com/magento/magento2/pull/28898)_. [GitHub-23638](https://github.com/magento/magento2/issues/23638)
 
 <!--- ENGCOM-7796-->
 
@@ -701,7 +707,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- MC-34257-->
 
-*  `sales_order_shipment_track_save_commit_after` is now triggered as expected when you use the REST API to create a shipment.
+*  `sales_order_shipment_track_save_commit_after` is now triggered as expected when you used the REST API to create a shipment.
 
 <!--- MC-33898-->
 
@@ -813,11 +819,19 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7508 -->
 
-*  Customers and guests can write product reviews. Customers can also retrieve their product review histories. See [Create a product review](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query](https://devdocs.magento.com/guides/v2.4/graphql/queries/product-review-ratings-metadata.html for information on retrieving information about the reviews infrastructure. _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
+*  Customers and guests can write product reviews. Customers can also retrieve their product review histories. See [Create a product review](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query](https://devdocs.magento.com/guides/v2.4/graphql/queries/product-review-ratings-metadata.html) for information on retrieving information about the reviews infrastructure. _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
 
 <!-- ENGCOM-7968 -->
 
 *  The [`addProductsToCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)
+
+<!--- MC-34187-->
+
+*  The new `availableStores` query returns a list of `StoreConfigs` for other stores available under the same website (based on the current store). It does not expose the list of websites. See [`availableStores` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html). [GitHub-28569](https://github.com/magento/magento2/issues/28569)
+
+<!-- ENGCOM-7810 MC-34187-->
+
+*  The `availableStores` query now returns codes only for the stores under the same website as the current store. _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
 
 <!-- ENGCOM-7512 -->
 
@@ -858,14 +872,6 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 <!-- ENGCOM-7729 -->
 
 *  The `categoryList` query now returns the correct response when using fragments. _Fix submitted by Ulzii in pull request [28710](https://github.com/magento/magento2/pull/28710)_. [GitHub-28584](https://github.com/magento/magento2/issues/28584)
-
-<!--- MC-34187-->
-
-*  The new `availableStores` query returns a list of `StoreConfigs` for other stores available under the same website (based on the current store). It does not expose the list of websites. See [`availableStores` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html). [GitHub-28569](https://github.com/magento/magento2/issues/28569)
-
-<!-- ENGCOM-7810 MC-34187-->
-
-*  The `availableStores` query now returns codes only for the stores under the same website as the current store. _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
 
 <!-- ENGCOM-7732 7733-->
 
@@ -915,7 +921,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- MC-34657-->
 
-*  Imported CVS files now capture related product information as expected. Previously, related product information was not consistently uploaded the first time the CVS file was imported.
+*  Imported CSV files now capture related product information as expected. Previously, related product information was not consistently uploaded the first time the CSV file was imported.
 
 <!--- MC-37424-->
 
@@ -1592,6 +1598,13 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 *  Added a test for sharing a customer's wish list with more than the allowed number of emails. _Fix submitted by Dmitry Tsymbal in pull request [28641](https://github.com/magento/magento2/pull/28641)_. [GitHub-28720](https://github.com/magento/magento2/issues/28720)
 
+<!--- MC-36250-->
+
+*  Administrators can now configure a configurable product that has been added by a customer to a wish list from a non-default store. Previously, when the customer had also added the configurable product from a non-default store, Magento threw an error.
+<!--- ENGCOM-7660-->
+
+*  Added a test for sharing a customer's wish list with more than the allowed number of emails. _Fix submitted by Dmitry Tsymbal in pull request [28641](https://github.com/magento/magento2/pull/28641)_. [GitHub-28720](https://github.com/magento/magento2/issues/28720)
+
 <!--- ENGCOM-7674-->
 
 *  Added a test for deleting items from a customer’s wish list as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28632](https://github.com/magento/magento2/pull/28632)_. [GitHub-28721](https://github.com/magento/magento2/issues/28721)
@@ -1600,25 +1613,25 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 *  Added a test for disabling wish list functionality. _Fix submitted by Dmitry Tsymbal in pull request [28635](https://github.com/magento/magento2/pull/28635)_. [GitHub-28744](https://github.com/magento/magento2/issues/28744)
 
+<!--- ENGCOM-7580-->
+
+*  Added a test for using invalid email addresses when sharing customer wish lists. `StorefrontShareWishlistEntityTest` has been refactored. `StorefrontCustomerShareWishlistActionGroup` has been deprecated. _Fix submitted by Dmitry Tsymbal in pull request [28330](https://github.com/magento/magento2/pull/28330)_. [GitHub-28377](https://github.com/magento/magento2/issues/28377)
+
 <!--- ENGCOM-7717-->
 
 *  Added a test for sharing a customer's wish list that exceeds the allowed text length limit. _Fix submitted by Dmitry Tsymbal in pull request [28812](https://github.com/magento/magento2/pull/28812)_. [GitHub-28969](https://github.com/magento/magento2/issues/28969)
-
-<!--- MC-36250-->
-
-*  Administrators can now configure a configurable product that has been added by a customer to a wish list from a non-default store. Previously, when the customer had also added the configurable product from a non-default store, Magento threw an error.
 
 ## Known issues
 
 **Issue**: Users without administrator privileges cannot currently set up their personal 2FA access. 2FA as implemented in Magento includes two ACL roles. One role affects global system configuration and it is needed only when configuring the system. The second ACL role affects individual user 2FA accounts. An admin user must configure this second type of 2FA ACL. **Workaround**:  After the user has logged in and seen the Access denied screen, they can visit `https://<magento store>/<admin_path>/tfa/tfa/requestconfig/` to force configuration. Note: We do not recommend disabling security settings. However, this workaround is effective only when Admin URL secret keys are disabled.
 
-**Issue**: Merchants cannot log in to dotdigital from the Admin in Safari when dotdigital is enabled. See the [It's impossible to login in the dotdigital via admin panel when dotdigital account is enabled](https://support.magento.com/hc/en-us/articles/360050092291) Knowledge Base article.<!--- BUNDLE-2704-->
+**Issue**: Merchants cannot log in to dotdigital from the Admin in Safari when dotdigital is enabled. See the [It's impossible to login in the dotdigital via admin panel when dotdigital account is enabled](https://support.magento.com/hc/en-us/articles/360050092291) Knowledge Base article.
 
-**Issue**: Vertex address validation does not work during payment when the shopper selects a shipping address that differs from the billing address. The issue will be fixed in Magento 2.4.2. See the [Magento 2.4.1 known issue: Vertex Address Validation message does not disappear after updating address](https://support.magento.com/hc/en-us/articles/360050139631) Knowledge Base article.<!--- BUNDLE-2733-->
+**Issue**: Vertex address validation does not work during payment when the shopper selects a shipping address that differs from the billing address. The issue will be fixed in Magento 2.4.2. See the [Magento 2.4.1 known issue: Vertex Address Validation message does not disappear after updating address](https://support.magento.com/hc/en-us/articles/360050139631) Knowledge Base article. 
 
 **Issue**: Magento displays an empty page when a merchant saves a dotdigital Page Builder form on the Safari browser. **Workaround**: Reload the page to apply your changes. See the [Magento 2.4.1 known issue: empty page after saving dotdigital Page Builder form](https://support.magento.com/hc/en-us/articles/360049819092) Knowledge Base article.
 
-**Issue**: Under certain conditions, Magento automatically signs in customers to previously used Amazon accounts rather prompting them to log in during checkout with Amazon Pay. See the [Magento 2.4.1 known issue: unable to change Amazon account in Google Chrome](https://support.magento.com/hc/en-us/articles/360049814152) Knowledge Base article.<!--- BUNDLE-2743—>
+**Issue**: Under certain conditions, Magento automatically signs in customers to previously used Amazon accounts rather prompting them to log in during checkout with Amazon Pay. See the [Magento 2.4.1 known issue: unable to change Amazon account in Google Chrome](https://support.magento.com/hc/en-us/articles/360049814152) Knowledge Base article.
 
 **Issue**: Magento briefly displays an error message on the billing page of the checkout workflow when PayPal Braintree payment and multiple addresses shipment are selected. See the [Magento 2.4.1 known issue: error popping up on Checkout with PayPal Braintree](https://support.magento.com/hc/en-us/articles/360050253211) Knowledge Base article.
 

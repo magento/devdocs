@@ -426,13 +426,13 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35077-->
 
-*  The products query now returns all expected data for grouped products. Previously, `product_links` was an empty array.
+*  The products query now returns all expected data for grouped products. Previously,  `product_links` was an empty array.
 
 ### Image
 
 <!--- MC-31707-->
 
-*  Magento now displays `.png` images as expected after upload.
+*  Magento now displays PNG images as expected after upload.
 
 ### Import/export
 
@@ -454,7 +454,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-34639-->
 
-*  Imported `.cvs` files now capture related product information as expected. Previously, related product information was not consistently uploaded the first time the `.cvs` file was imported.
+*  Imported CSV files now capture related product information as expected. Previously, related product information was not consistently uploaded the first time the CSV file was imported.
 
 <!--- MC-33625-->
 
@@ -726,7 +726,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-20127-->
 
-*  Inline translation now works as expected on the storefront when **Admin** > **Stores** > **Configuration** > **Advanced** > **Developer** > **Translate Inline** > **Enabled for Storefront** is set.
+*  Inline translation now works as expected on the storefront when Admin **Stores** > **Configuration** > **Advanced** > **Developer** > **Translate Inline** > **Enabled for Storefront** is set.
 
 ### UI
 
