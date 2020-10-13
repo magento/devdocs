@@ -506,7 +506,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-34616-->
 
-*  Exporting the Newsletter Subscribers list using the `EXCEL XML` option now results in the export of all rows as expected. Previously, exported data included only the page pagination value, not all rows.
+*  Exporting the Newsletter Subscribers list using the `Excel XML` option now results in the export of all rows as expected. Previously, exported data included only the page pagination value, not all rows.
 
 <!--- MC-34540-->
 
