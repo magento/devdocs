@@ -91,15 +91,15 @@ Page Builder now supports full screen mode, which supports easier editing of con
 
 This release adds GraphQL coverage for the following features:
 
-*  **Product reviews**. Customers and guests can write product reviews. Customers can retrieve their product review histories.<!--- MC-32349-->
+*  **Product reviews**. Customers and guests can write product reviews. Customers can retrieve their product review histories. See [Create a product review]({{page.baseurl}}/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query]({{page.baseurl}}/graphql/queries/product-review-ratings-metadata.html for information on retrieving information about the reviews infrastructure.<!--- MC-32349-->
 
-*  **Gift options**. All customers and guests can add a gift message to their order. On {{site.data.var.ee}} installations, they can also add gift wrapping, gift receipts, and printed cards to the order.<!--- MC-32345-->
+*  **Gift options**. All customers and guests can add a gift message to their order. On {{site.data.var.ee}} installations, they can also add gift wrapping, gift receipts, and printed cards to the order. See [`setGiftOptionsOnCart` mutation]({{page.baseurl}}/graphql/mutations/set-gift-options.html) and [`updateCartItems` mutation]({{page.baseurl}}/graphql/mutations/update-cart-items.html) <!--- MC-32345-->
 
-*  **Reward points**. On {{site.data.var.ee}} installations, customers can apply or remove reward points to their carts. They can also view their reward point history.<!--- MC-23366-->
+*  **Reward points**. Customers can apply or remove reward points to their carts. They can also view their reward point history. See [`applyRewardPointsToCart`]({{page.baseurl}}/graphql/mutations/apply-reward-points.html) and [`removeRewardPointsFromCart`]({{page.baseurl}}/graphql/mutations/remove-reward-points.html) for a discussion of managing reward points within a cart.<!--- MC-23366-->
 
 *  **Order history**. All customers can view details about their order histories, including invoices, shipping, and refunds.<!--- MC-20635-->
 
-*  **Add to cart**. Customers can add the following product types to their cart: `Simple`, `Configurable`, `Bundled`, `Grouped`, `Virtual`, `Gift Card`, and `Downloadable`. <!--- MC-21513-->
+*  **Add to cart**. The [`addProductsToCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)  <!--- MC-21513-->
 
 *  **Stored payment methods**. Logged-in customers can now store payment details (including Braintree credit card and Braintree with PayPal) in My Account. <!--- MC-32348 35945 35946-->
 
@@ -161,7 +161,7 @@ B2B merchants can now control shipping methods that are offered to each Company.
 
 #### Enhanced security on storefront
 
-To reduce creation of fraudulent or spam accounts, merchants can now enable Google reCAPTCHA on the New Company Request form on the storefront. <!--- BUNDLE-154 -->
+To reduce creation of fraudulent or spam accounts, merchants can now enable Google reCAPTCHA on the New Company Request form on the storefront. See [reCAPTCHA](https://docs.magento.com/user-guide/configuration/security/google-recaptcha-storefront.html).<!--- BUNDLE-154 -->
 
 #### Expanded logging of Admin actions
 
@@ -243,10 +243,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Magento no longer displays the Backup menu when the Backup feature is disabled. _Fix submitted by Eden Duong in pull request [29222](https://github.com/magento/magento2/pull/29222)_. [GitHub-29280](https://github.com/magento/magento2/issues/29280)
 
-<!--- ENGCOM-8006-->
-
-*  Magento no longer throws an exception when a merchant tries to save a product with its associated image when the Media Gallery is disabled. _Fix submitted by Nazar Klovanych in pull request [29492](https://github.com/magento/magento2/pull/29492)_. [GitHub-1750](https://github.com/magento/adobe-stock-integration/issues/1750)
-
 <!--- ENGCOM-7987-->
 
 *  Catalog image helper initialization now uses the product model instead of `DataObject`. _Fix submitted by jmonteros422 in pull request [29435](https://github.com/magento/magento2/pull/29435)_. [GitHub-1711](https://github.com/magento/adobe-stock-integration/issues/1711)
@@ -269,7 +265,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Magento no longer throws an error when an administrator with restricted roles for specific websites tries to create a subcategory from the Admin.
 
-### Adobe Stock
+### Adobe Stock Integration
 
 <!--- ENGCOM-7776-->
 
@@ -310,6 +306,22 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!-- ENGCOM-7976 -->
 
 *  Information about images that are used by different entities (for example, `page` and `category`) is now listed corrected in the image Details page. _Fix submitted by Nazar Klovanych in pull request [29367](https://github.com/magento/magento2/pull/29367)_. [GitHub-1747](https://github.com/magento/adobe-stock-integration/issues/1747)
+
+<!--- ENGCOM-7778-->
+
+*  You can now use the new `UrlFilterApplier` component to apply filters on product,`cms_page`, and `cms_block` grids using the GET URL parameter. _Fix submitted by Gabriel da Gama in pull request [28932](https://github.com/magento/magento2/pull/28932)_. [GitHub-1501](https://github.com/magento/adobe-stock-integration/issues/1501)
+
+<!--- ENGCOM-8019-->
+
+*  Clicking on links in the **Used in** section for an image in the Media Gallery now opens the grid of entities that are filtered by the image as expected. Previously, the image title was not displayed in the applied filters section of the grid. _Fix submitted by Nazar Klovanych in pull request [29429](https://github.com/magento/magento2/pull/29429)_. [GitHub-1694](https://github.com/magento/adobe-stock-integration/issues/1694)
+
+<!--- ENGCOM-8019-->
+
+*  Magento now adds tags correctly when you edit multiple images successively in the Media Gallery. _Fix submitted by Nazar Klovanych in pull request [29429](https://github.com/magento/magento2/pull/29429)_. [GitHub-1755](https://github.com/magento/adobe-stock-integration/issues/1755)
+
+<!--- ENGCOM-8015-->
+
+*  Magento now removes tags for Adobe Stock images after a merchant deletes the tags and saves the image details. Previously, tags were not deleted until the page was refreshed. _Fix submitted by Honeymay Louiese Ignacio in pull request [29400](https://github.com/magento/magento2/pull/29400)_. [GitHub-1703](https://github.com/magento/adobe-stock-integration/issues/1703)
 
 ### Amazon Pay
 
@@ -384,14 +396,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- ENGCOM-7073-->
 
 *  Varnish no longer throws a `Connection reset by peer` error when a large catalog is reindexed on schedule. _Fix submitted by Matthew O'Loughlin in pull request [26256](https://github.com/magento/magento2/pull/8815)_. [GitHub-26255](https://github.com/magento/magento2/issues/8815)
-
-<!--- ENGCOM-8019-->
-
-*  Clicking on links in the **Used in** section for an image in the Media Gallery now opens the grid of entities that are filtered by the image as expected. Previously, the image title was not displayed in the applied filters section of the grid. _Fix submitted by Nazar Klovanych in pull request [29429](https://github.com/magento/magento2/pull/29429)_. [GitHub-1694](https://github.com/magento/adobe-stock-integration/issues/1694)
-
-<!--- ENGCOM-8019-->
-
-*  Magento now adds tags correctly when you edit multiple images successively in the Media Gallery. _Fix submitted by Nazar Klovanych in pull request [29429](https://github.com/magento/magento2/pull/29429)_. [GitHub-1755](https://github.com/magento/adobe-stock-integration/issues/1755)
 
 <!--- MC-29069-->
 
@@ -939,8 +943,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Magento now adds an admin user’s ACL role ID to the product category tree cache ID. This will limit the category trees that an admin with limited scope can see as expected. _Fix submitted by quangdo-aligent in pull request [27429](https://github.com/magento/magento2/pull/27429)_. [GitHub-28306](https://github.com/magento/magento2/issues/28306)
 
-*  The default GraphQL `Category` method now sorts by category position as expected. _Fix submitted by Derrik Nyomo in pull request [29301](https://github.com/magento/magento2/pull/29301)_. [GitHub-104](https://github.com/magento/catalog-storefront/issues/104)
-
 ### Gift cards
 
 <!--- MC-36118-->
@@ -976,8 +978,8 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 *  Customers and guests can write product reviews. Customers can also retrieve their product review histories. See [Create a product review](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query](https://devdocs.magento.com/guides/v2.4/graphql/queries/product-review-ratings-metadata.html for information on retrieving information about the reviews infrastructure. _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
 
 <!-- ENGCOM-7800 7841-->
- 
-* Customers can apply or remove reward points to their carts. They can also view their reward point history. See [`applyRewardPointsToCart`](https://devdocs.magento.com/v2.4/graphql/mutations/apply-reward-points.html) and [`removeRewardPointsFromCart`](https://devdocs.magento.com/v2.4/graphql/mutations/remove-reward-points.html) for a discussion of managing reward points within a cart. _Fix submitted by Dmitriy Gallyamov in pull requests 284 and 281 in private repo partners-magento2ee_. [GitHub-28835](https://github.com/magento/magento2/issues/28835), [GitHub-28833](https://github.com/magento/magento2/issues/28833)
+
+*  Customers can apply or remove reward points to their carts. They can also view their reward point history. See [`applyRewardPointsToCart`](https://devdocs.magento.com/v2.4/graphql/mutations/apply-reward-points.html) and [`removeRewardPointsFromCart`](https://devdocs.magento.com/v2.4/graphql/mutations/remove-reward-points.html) for a discussion of managing reward points within a cart. _Fix submitted by Dmitriy Gallyamov in pull requests 284 and 281 in private repo partners-magento2ee_. [GitHub-28835](https://github.com/magento/magento2/issues/28835), [GitHub-28833](https://github.com/magento/magento2/issues/28833)
 
 <!-- ENGCOM-7968 -->
 
@@ -997,7 +999,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7750 -->
 
-*  The GraphQL `updateCustomer` no longer allows you to set an invalid `INT` value in the `gender` argument. _Fix submitted by Alexander Taranovsky in pull request [28487](https://github.com/magento/magento2/pull/28487)_. [GitHub-28481](https://github.com/magento/magento2/issues/28481)
+*  `updateCustomer` no longer allows you to set an invalid `INT` value in the `gender` argument. _Fix submitted by Alexander Taranovsky in pull request [28487](https://github.com/magento/magento2/pull/28487)_. [GitHub-28481](https://github.com/magento/magento2/issues/28481)
 
 <!-- ENGCOM-7663 -->
 
@@ -1042,6 +1044,8 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- MC-31084-->
 
 *  You can now add a product to a cart using `addSimpleProductToCart` when other items in the cart are out-of-stock. Previously, Magento returned this error: `Some of the products are out of stock`. [GitHub-26683](https://github.com/magento/magento2/issues/26683)
+
+*  The default GraphQL `Category` method now sorts by category position as expected. _Fix submitted by Derrik Nyomo in pull request [29301](https://github.com/magento/magento2/pull/29301)_. [GitHub-104](https://github.com/magento/catalog-storefront/issues/104)
 
 ### Images
 
@@ -1126,10 +1130,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- ENGCOM-7817-->
 
 *  GraphQL product search now considers Category Permissions configuration. _Fix submitted by Cristian Partica in pull request [5]in private repo partners-magento2-infrastructure_.
-
-<!--- ENGCOM-7778-->
-
-*  You can now use the new `UrlFilterApplier` component to apply filters on product,`cms_page`, and `cms_block` grids using the GET URL parameter. _Fix submitted by Gabriel da Gama in pull request [28932](https://github.com/magento/magento2/pull/28932)_. [GitHub-1501](https://github.com/magento/adobe-stock-integration/issues/1501)
 
 <!--- ENGCOM-7713-->
 
@@ -1224,6 +1224,10 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!-- ENGCOM-7972 -->
 
 *  Added tests to cover the **Used In** links for an image in the Media gallery. _Fix submitted by Nazar Klovanych in pull request [29392](https://github.com/magento/magento2/pull/29392)_. [GitHub-1963](https://github.com/magento/adobe-stock-integration/issues/1693)
+
+<!--- ENGCOM-8006-->
+
+*  Magento no longer throws an exception when a merchant tries to save a product with its associated image when the Media Gallery is disabled. _Fix submitted by Nazar Klovanych in pull request [29492](https://github.com/magento/magento2/pull/29492)_. [GitHub-1750](https://github.com/magento/adobe-stock-integration/issues/1750)
 
 ### MFTF
 
@@ -1700,10 +1704,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- ENGCOM-7967-->
 
 *  The title of the order failure page has been rewritten for accuracy. Previously, when a shopper canceled an order, Magento displayed a page with this title: `We received your order!`. _Fix submitted by Angelo Romano in pull request [29410](https://github.com/magento/magento2/pull/29410)_. [GitHub-29416](https://github.com/magento/magento2/issues/29416)
-
-<!--- ENGCOM-8015-->
-
-*  Magento now removes tags for Adobe Stock images after a merchant deletes the tags and saves the image details. Previously, tags were not deleted until the page was refreshed. _Fix submitted by Honeymay Louiese Ignacio in pull request [29400](https://github.com/magento/magento2/pull/29400)_. [GitHub-1703](https://github.com/magento/adobe-stock-integration/issues/1703)
 
 <!--- ENGCOM-7770-->
 

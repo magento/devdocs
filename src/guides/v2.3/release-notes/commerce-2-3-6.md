@@ -41,7 +41,7 @@ Additional security enhancements include:
 
 *  Payment-related REST and GraphQL endpoints.<!--- MC-36064-->
 
-CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks.
+CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks. See [CAPTCHA](https://docs.magento.com/user-guide/stores/security-captcha.html).
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
@@ -542,12 +542,6 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 *  You can now successfully use PayPal Express to pay for an order when persistent checkout cart is enabled and the **Clear Persistence on Sign Out** setting is set to **no**. Previously, Magento redirected you to the Login page.
 
-### Performance
-
-<!--- MC-31843-->
-
-*  Bulk order update through the REST API now updates order status as expected. Previously, Magento threw this error: `report.ERROR: Property "AdditionalInformation" does not have accessor method "setAdditionalInformation" in class "Magento\Sales\Api\Data\OrderPaymentInterface".`
-
 ### Product alert
 
 <!--- MC-31962-->
@@ -787,6 +781,10 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 <!--- MC-33529-->
 
 *  You can now use POST `http://<domain>/rest/V1/categories/` to create or update a category. Previously, Magento did not save the value if the `default_sort_by` value was set as an array. When the `default_sort_by` value was set as a string, Magento threw this error: `Error occurred during \"custom_attributes\" processing. Attribute \"default_sort_by\" has invalid value. The \"string\" value's type is invalid. The \"string[]\" type was expected. Verify and try again.`
+
+<!--- MC-31843-->
+
+*  Bulk order update through the REST API now updates order status as expected. Previously, Magento threw this error: `report.ERROR: Property "AdditionalInformation" does not have accessor method "setAdditionalInformation" in class "Magento\Sales\Api\Data\OrderPaymentInterface".`
 
 ### Website Restriction
 
