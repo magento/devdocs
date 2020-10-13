@@ -952,7 +952,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36118-->
 
-*  Gift card Accounts now capture order numbers as expected. Previously, the **More information** field in the History tab for the selected gift account did not display order IDs.
+*  Gift card accounts now capture order numbers as expected. Previously, the **More information** field in the History tab for the selected gift account did not display order IDs.
 
 <!--- MC-34519-->
 
