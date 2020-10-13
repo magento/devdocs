@@ -99,7 +99,7 @@ This release adds GraphQL coverage for the following features:
 
 *  **Order history**. All customers can view details about their order histories, including invoices, shipping, and refunds.<!--- MC-20635-->
 
-*  **Add to cart**. The [`addProductsToCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)  <!--- MC-21513-->
+*  **Add to cart**. The [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)  <!--- MC-21513-->
 
 *  **Stored payment methods**. Logged-in customers can now store payment details (including Braintree credit card and Braintree with PayPal) in My Account. <!--- MC-32348 35945 35946-->
 
@@ -980,11 +980,11 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7661 7662 7559 MC-35646 32345-->
 
-*  Shoppers can select gift message and wrapping options during checkout. GraphQL now covers gift message options for different types of cart items. See [`setGiftOptionsOnCart` mutation](https://devdocs.magento.com/guides/graphql/mutations/set-gift-options.html) and [`updateCartItems` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-cart-items.html). _Fix submitted by Oleh Usik in pull requests [28519](https://github.com/magento/magento2/pull/28105), [27956](https://github.com/magento/magento2/pull/27956), [28072](https://github.com/magento/magento2/pull/28072), [28072](https://github.com/magento/magento2/pull/28072), and 246 in private repo partners-magento2ee_. [GitHub-253](https://github.com/magento/magento2/issues/28519)
+*  Shoppers can select gift message and wrapping options during checkout. GraphQL now covers gift message options for different types of cart items. See [`setGiftOptionsOnCart` mutation]({{page.baseurl}}/graphql/mutations/set-gift-options.html) and [`updateCartItems` mutation]({{page.baseurl}}/graphql/mutations/update-cart-items.html). _Fix submitted by Oleh Usik in pull requests [28519](https://github.com/magento/magento2/pull/28105), [27956](https://github.com/magento/magento2/pull/27956), [28072](https://github.com/magento/magento2/pull/28072), [28072](https://github.com/magento/magento2/pull/28072), and 246 in private repo partners-magento2ee_. [GitHub-253](https://github.com/magento/magento2/issues/28519)
 
 <!-- ENGCOM-7508 -->
 
-*  Customers and guests can write product reviews. Customers can also retrieve their product review histories. See [Create a product review](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query](https://devdocs.magento.com/guides/v2.4/graphql/queries/product-review-ratings-metadata.html) for information on retrieving information about the reviews infrastructure. _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
+*  Customers and guests can write product reviews. Customers can also retrieve their product review histories. See [Create a product review]({{page.baseurl}}/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query]({{page.baseurl}}/graphql/queries/product-review-ratings-metadata.html) for information on retrieving information about the reviews infrastructure. _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
 
 <!-- ENGCOM-7800 7841-->
 
@@ -992,7 +992,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7968 -->
 
-*  The [`addProductsToCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)
+*  The [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)
 
 <!-- ENGCOM-7801 7816-->
 
@@ -1000,7 +1000,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34187-->
 
-*  The new `availableStores` query returns a list of configuration attributes for multiple stores available under the same website (based on the current store). It does not expose the list of websites. See [`availableStores` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html). _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
+*  The new `availableStores` query returns a list of configuration attributes for multiple stores available under the same website (based on the current store). It does not expose the list of websites. See [`availableStores` query]({{page.baseurl}}/graphql/queries/available-stores.html). _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
 
 <!-- ENGCOM-7512 -->
 
@@ -1016,7 +1016,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7663 -->
 
-*  You can use the `subscribeEmailToNewsletter` mutation to subscribe customers to a newsletter. See [`subscribeEmailToNewsletter` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/subscribe-email-to-newsletter.html). _Fix submitted by Alexander Taranovsky in pull request [27586](https://github.com/magento/magento2/pull/27586)_. [GitHub-27337](https://github.com/magento/magento2/issues/27337)
+*  You can use the `subscribeEmailToNewsletter` mutation to subscribe customers to a newsletter. See [`subscribeEmailToNewsletter` mutation]({{page.baseurl}}/graphql/mutations/subscribe-email-to-newsletter.html). _Fix submitted by Alexander Taranovsky in pull request [27586](https://github.com/magento/magento2/pull/27586)_. [GitHub-27337](https://github.com/magento/magento2/issues/27337)
 
 <!-- ENGCOM-7216 -->
 
