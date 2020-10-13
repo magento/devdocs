@@ -1574,7 +1574,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7618 -->
 
-*  You can now specify a single field when updating a customer with the PUT `V1/customers/:id endpoint`. Previously, the endpoint required you to specify the customer email and other fields that are required to create a customer. _Fix submitted by Vadim Malesh in pull request [28332](https://github.com/magento/magento2/pull/28332)_. [GitHub-21237](https://github.com/magento/magento2/issues/21237)
+*  You can now specify a single field when updating a customer with the PUT `V1/customers/:id` endpoint. Previously, the endpoint required you to specify the customer email and other fields that are required to create a customer. _Fix submitted by Vadim Malesh in pull request [28332](https://github.com/magento/magento2/pull/28332)_. [GitHub-21237](https://github.com/magento/magento2/issues/21237)
 
 ### Wish list
 
