@@ -655,7 +655,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35299-->
 
-*  Invoices created using the REST API now include gift card information similar to the invoices that are created in the Admin. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
+*  Invoices created using the REST API now include gift card information similar to the invoices that are created in the Admin. Previously, using POST `/V1/order/:id/invoice` to invoice the order did not display the gift card code or gift card amount applied.
 
 <!--- MC-34654-->
 
