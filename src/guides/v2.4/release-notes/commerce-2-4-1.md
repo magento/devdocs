@@ -988,7 +988,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7800 7841-->
 
-*  Customers can apply or remove reward points to their carts. They can also view their reward point history. See [`applyRewardPointsToCart`](https://devdocs.magento.com/v2.4/graphql/mutations/apply-reward-points.html) and [`removeRewardPointsFromCart`](https://devdocs.magento.com/v2.4/graphql/mutations/remove-reward-points.html) for a discussion of managing reward points within a cart. _Fix submitted by Dmitriy Gallyamov in pull requests 284 and 281 in private repo partners-magento2ee_. [GitHub-28835](https://github.com/magento/magento2/issues/28835), [GitHub-28833](https://github.com/magento/magento2/issues/28833)
+*  Customers can apply or remove reward points to their carts. They can also view their reward point history. See [`applyRewardPointsToCart`]({{page.baseurl}}/graphql/mutations/apply-reward-points.html) and [`removeRewardPointsFromCart`]({{page.baseurl}}/graphql/mutations/remove-reward-points.html) for a discussion of managing reward points within a cart. _Fix submitted by Dmitriy Gallyamov in pull requests 284 and 281 in private repo partners-magento2ee_. [GitHub-28835](https://github.com/magento/magento2/issues/28835), [GitHub-28833](https://github.com/magento/magento2/issues/28833)
 
 <!-- ENGCOM-7968 -->
 
