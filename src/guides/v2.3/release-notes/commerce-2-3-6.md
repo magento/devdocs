@@ -692,7 +692,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-35326-->
 
-*  You can now use the REST API to add a `text_swatch` type of product attribute. Previously, Magento did not add the option to the attribute and displayed an error.
+*  You can now use the `POST /V1/products/attributes` to add a `text_swatch` type of product attribute. Previously, Magento did not add the option to the attribute and displayed an error.
 
 <!--- MC-33118-->
 
