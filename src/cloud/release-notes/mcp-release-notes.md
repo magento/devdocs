@@ -22,7 +22,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 <!--Add release notes below-->
 
 ## v1.0.7
-*Release date: October 13, 2020*<br/>
+*Release date: October 14, 2020*<br/>
 
 -  **Redis patches for Magento 2.3.0 - 2.3.5, 2.4.0**–Updated the Redis patches to support adding products to a category when implementing a Level 2 cache. <!--MCLOUD-6659-->
 
