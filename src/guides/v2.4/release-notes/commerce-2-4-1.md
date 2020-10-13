@@ -975,9 +975,9 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Customers and guests can write product reviews. Customers can also retrieve their product review histories. See [Create a product review](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query](https://devdocs.magento.com/guides/v2.4/graphql/queries/product-review-ratings-metadata.html for information on retrieving information about the reviews infrastructure. _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
 
-<!-- ENGCOM-7838 -->
-
-*  GraphQL now supports reward points information in the My Account page. Shoppers can retrieve information about their reward points and access reward history. See [cart](https://devdocs.magento.com/guides/v2.4/graphql/queries/cart.html), [customer](https://devdocs.magento.com/guides/v2.4/graphql/queries/customer.html), and [storeConfig](https://devdocs.magento.com/guides/v2.4/graphql/queries/store-config.html). _Fix submitted by Petkovski Marjan in pull request 277 in private repo partners-magento2ee and Dmitriy Gallyamov in pull requests 284 and 281 in private repo partners-magento2ee_. [GitHub-28769](https://github.com/magento/magento2/issues/28769), [GitHub-28835](https://github.com/magento/magento2/issues/28835), [GitHub-28833](https://github.com/magento/magento2/issues/28833)
+<!-- ENGCOM-7800 7841-->
+ 
+* Customers can apply or remove reward points to their carts. They can also view their reward point history. See [`applyRewardPointsToCart`](https://devdocs.magento.com/v2.4/graphql/mutations/apply-reward-points.html) and [`removeRewardPointsFromCart`](https://devdocs.magento.com/v2.4/graphql/mutations/remove-reward-points.html) for a discussion of managing reward points within a cart. _Fix submitted by Dmitriy Gallyamov in pull requests 284 and 281 in private repo partners-magento2ee_. [GitHub-28835](https://github.com/magento/magento2/issues/28835), [GitHub-28833](https://github.com/magento/magento2/issues/28833)
 
 <!-- ENGCOM-7968 -->
 
@@ -986,10 +986,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!-- ENGCOM-7801 7816-->
 
 *  GraphQL queries for related products now return values for related products that were created from target rules. Previously, queries for related products (up-sell and cross-sell) only returned values if the related products were added from the product settings. _Fix submitted by Ulzii in pull request 288 in private repo partners-magento2ee_. [GitHub-28566](https://github.com/magento/magento2/issues/28566)
-
-<!-- ENGCOM-7841 -->
-
-*  GraphQL now supports applying and removing reward points to and from the cart. See [`applyRewardPointsToCart`](https://devdocs.magento.com/v2.4/graphql/mutations/apply-reward-points.html) and [`removeRewardPointsFromCart`](https://devdocs.magento.com/v2.4/graphql/mutations/remove-reward-points.html) for a discussion of managing reward points within a cart. _Fix submitted by Petkovski Marjan in pull request 285 in private repo partners-magento2ee_. [GitHub-28834](https://github.com/magento/magento2/issues/28834)
 
 <!-- ENGCOM-7512 -->
 
@@ -1037,7 +1033,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7810 MC-34187-->
 
-*  The `availableStores` query now returns only codes for the stores under the same website as the current store. _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
+*  The `availableStores` query now returns codes only for the stores under the same website as the current store. _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
 
 <!-- ENGCOM-7732 7733-->
 
@@ -1538,6 +1534,15 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Magento now displays tier prices as expected for configurable product variations.
 
+### TargetRule
+
+<!--- MC-36162-->
+
+*  The performance of the product page under the following conditions has improved:
+
+   *  The target rule module is installed
+   *  Linked product functionality (related, up-sell and cross-sell products) is implemented
+
 ### Tax
 
 <!--- MC-36049-->
@@ -1583,6 +1588,32 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- MC-34397-->
 
 *  Themes that are added in User Agent Rules are now affected as expected when you run `bin/magento catalog:images:resize`. Previously, only themes that were assigned to stores were affected when `bin/magento catalog:images:resize` was run.
+
+### Translation and locales
+
+<!--- MC-20372-->
+
+*  Magento no longer throws an error when an administrator changes the **Date** field during Admin product creation or save when the Admin locale is Chinese or Japanese. [GitHub-24696](https://github.com/magento/magento2/issues/24696)
+
+<!--- ENGCOM-7829-->
+
+*  Magento now checks area (frontend or `adminhtml`) before rendering inline translation markup. Previously, making an API call to `/rest/V1/integration/admin/token` with bad credentials while inline translation was enabled results in the inclusion of inline translation markup around the error message in the API response. _Fix submitted by Zach Nanninga in pull request [28856](https://github.com/magento/magento2/pull/28856)_. [GitHub-28656](https://github.com/magento/magento2/issues/28656)
+
+<!--- ENGCOM-7536-->
+
+*  Bulgarian regions have been added to the `directory_country_region` table. _Fix submitted by Nikola Lardev in pull request [27957](https://github.com/magento/magento2/pull/27957)_. [GitHub-28215](https://github.com/magento/magento2/issues/28215)
+
+<!--- ENGCOM-7535-->
+
+*  The titles and buttons on the Admin **Customers**  >  **Add New Address** and **Edit Product**  >  **Advanced Inventory** modals can now be translated. _Fix submitted by Sathish Subramanian in pull request [28174](https://github.com/magento/magento2/pull/28174)_. [GitHub-28201](https://github.com/magento/magento2/issues/28201)
+
+<!--- ENGCOM-7521-->
+
+*  The term FPT can now be translated on Admin  **Stores**  > **Configuration**  > **Sales**  > **Tax**  > **Fixed Product Taxes**. _Fix submitted by Vadim Malesh in pull request [28108](https://github.com/magento/magento2/pull/28108)_. [GitHub-5477](https://github.com/magento/magento2/issues/5477)
+
+<!-- ENGCOM-7631 -->
+
+*  The **Ship here** button label on the checkout workflow shipping address modal has been changed to match the camel case used for other buttons. This case now matches the case that is used in the translation files. Previously, because of the mismatch in case, this label was not translated. _Fix submitted by WK in pull request [28547](https://github.com/magento/magento2/pull/28547)_. [GitHub-28685](https://github.com/magento/magento2/issues/28685)
 
 ### UI
 
@@ -1702,17 +1733,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  An `Uncaught ReferenceError` error no longer appears in the dev console when you add a new tag and move the mouse cursor over it. _Fix submitted by Nazar Klovanych in pull request [29392](https://github.com/magento/magento2/pull/29392)_. [GitHub-1700](https://github.com/magento/magento2/issues/1700)
 
-### TargetRule
-
-<!--- MC-36162-->
-
-*  The performance of the product page under the following conditions has improved:
-
-   *  The target rule module is installed
-   *  Linked product functionality (related, up-sell and cross-sell products) is implemented
-
-### Test
-
 <!--- ENGCOM-7635-->
 
 *  Removed an unused `AdminAnalytics` test (`TrackingScriptTest`). _Fix submitted by Lukasz Bajsarowicz in pull request [28605](https://github.com/magento/magento2/pull/28605)_. [GitHub-28850](https://github.com/magento/magento2/issues/28850)
@@ -1720,32 +1740,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!-- ENGCOM-7142 -->
 
 *  Issues with the serialization and unserialization of static properties when running consecutive tests have been resolved. _Fix submitted by Pavel Bystritsky in pull request [26175](https://github.com/magento/magento2/pull/26175)_. [GitHub-28319](https://github.com/magento/magento2/issues/28319), [GitHub-29313](https://github.com/magento/magento2/issues/29313)
-
-### Translation and locales
-
-<!--- MC-20372-->
-
-*  Magento no longer throws an error when an administrator changes the **Date** field during Admin product creation or save when the Admin locale is Chinese or Japanese. [GitHub-24696](https://github.com/magento/magento2/issues/24696)
-
-<!--- ENGCOM-7829-->
-
-*  Magento now checks area (frontend or `adminhtml`) before rendering inline translation markup. Previously, making an API call to `/rest/V1/integration/admin/token` with bad credentials while inline translation was enabled results in the inclusion of inline translation markup around the error message in the API response. _Fix submitted by Zach Nanninga in pull request [28856](https://github.com/magento/magento2/pull/28856)_. [GitHub-28656](https://github.com/magento/magento2/issues/28656)
-
-<!--- ENGCOM-7536-->
-
-*  Bulgarian regions have been added to the `directory_country_region` table. _Fix submitted by Nikola Lardev in pull request [27957](https://github.com/magento/magento2/pull/27957)_. [GitHub-28215](https://github.com/magento/magento2/issues/28215)
-
-<!--- ENGCOM-7535-->
-
-*  The titles and buttons on the Admin **Customers**  >  **Add New Address** and **Edit Product**  >  **Advanced Inventory** modals can now be translated. _Fix submitted by Sathish Subramanian in pull request [28174](https://github.com/magento/magento2/pull/28174)_. [GitHub-28201](https://github.com/magento/magento2/issues/28201)
-
-<!--- ENGCOM-7521-->
-
-*  The term FPT can now be translated on Admin  **Stores**  > **Configuration**  > **Sales**  > **Tax**  > **Fixed Product Taxes**. _Fix submitted by Vadim Malesh in pull request [28108](https://github.com/magento/magento2/pull/28108)_. [GitHub-5477](https://github.com/magento/magento2/issues/5477)
-
-<!-- ENGCOM-7631 -->
-
-*  The **Ship here** button label on the checkout workflow shipping address modal has been changed to match the camel case used for other buttons. This case now matches the case that is used in the translation files. Previously, because of the mismatch in case, this label was not translated. _Fix submitted by WK in pull request [28547](https://github.com/magento/magento2/pull/28547)_. [GitHub-28685](https://github.com/magento/magento2/issues/28685)
 
 ### URL rewrites
 

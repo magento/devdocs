@@ -807,27 +807,15 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7661 7662 7559 MC-35646 32345-->
 
-*  Shoppers can select gift message and wrapping options during checkout. GraphQL now covers gift message options for different types of cart items. See [`setGiftOptionsOnCart` mutation](https://devdocs.magento.com/guides/graphql/mutations/set-gift-options.html) and [`updateCartItems` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-cart-items.html). _Fix submitted by Oleh Usik in pull requests [28519](https://github.com/magento/magento2/pull/28105), [27956](https://github.com/magento/magento2/pull/27956), [28072](https://github.com/magento/magento2/pull/28072), [28072](https://github.com/magento/magento2/pull/28072), and 246 in private repo partners-magento2ee_. [GitHub-253](https://github.com/magento/magento2/issues/28519)
+*  Shoppers can select gift message options during checkout. GraphQL now covers gift message options for different types of cart items. See [`setGiftOptionsOnCart` mutation](https://devdocs.magento.com/guides/graphql/mutations/set-gift-options.html) and [`updateCartItems` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-cart-items.html). _Fix submitted by Oleh Usik in pull requests [28519](https://github.com/magento/magento2/pull/28105), [27956](https://github.com/magento/magento2/pull/27956), [28072](https://github.com/magento/magento2/pull/28072), [28072](https://github.com/magento/magento2/pull/28072). [GitHub-28519](https://github.com/magento/magento2/issues/28519)
 
 <!-- ENGCOM-7508 -->
 
 *  Customers and guests can write product reviews. Customers can also retrieve their product review histories. See [Create a product review](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-product-review.html) and [productReviewRatingsMetadata query](https://devdocs.magento.com/guides/v2.4/graphql/queries/product-review-ratings-metadata.html for information on retrieving information about the reviews infrastructure. _Fix submitted by Eduard Chitoraga in pull request [27882](https://github.com/magento/magento2/pull/27882)_. [GitHub-28523](https://github.com/magento/magento2/issues/28523)
 
-<!-- ENGCOM-7838 -->
-
-*  GraphQL now supports reward points information in the My Account page. Shoppers can retrieve information about their reward points and access reward history. See [cart](https://devdocs.magento.com/guides/v2.4/graphql/queries/cart.html), [customer](https://devdocs.magento.com/guides/v2.4/graphql/queries/customer.html), and [storeConfig](https://devdocs.magento.com/guides/v2.4/graphql/queries/store-config.html). _Fix submitted by Petkovski Marjan in pull request 277 in private repo partners-magento2ee and Dmitriy Gallyamov in pull requests 284 and 281 in private repo partners-magento2ee_. [GitHub-28769](https://github.com/magento/magento2/issues/28769), [GitHub-28835](https://github.com/magento/magento2/issues/28835), [GitHub-28833](https://github.com/magento/magento2/issues/28833)
-
 <!-- ENGCOM-7968 -->
 
 *  The [`addProductsToCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)
-
-<!-- ENGCOM-7801 7816-->
-
-*  GraphQL queries for related products now return values for related products that were created from target rules. Previously, queries for related products (up-sell and cross-sell) only returned values if the related products were added from the product settings. _Fix submitted by Ulzii in pull request 288 in private repo partners-magento2ee_. [GitHub-28566](https://github.com/magento/magento2/issues/28566)
-
-<!-- ENGCOM-7841 -->
-
-*  GraphQL now supports applying and removing reward points to and from the cart. See [`applyRewardPointsToCart`](https://devdocs.magento.com/v2.4/graphql/mutations/apply-reward-points.html) and [`removeRewardPointsFromCart`](https://devdocs.magento.com/v2.4/graphql/mutations/remove-reward-points.html) for a discussion of managing reward points within a cart. _Fix submitted by Petkovski Marjan in pull request 285 in private repo partners-magento2ee_. [GitHub-28834](https://github.com/magento/magento2/issues/28834)
 
 <!-- ENGCOM-7512 -->
 
@@ -875,7 +863,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7810 MC-34187-->
 
-*  The `availableStores` query now returns only codes for the stores under the same website as the current store. _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
+*  The `availableStores` query now returns codes only for the stores under the same website as the current store. _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
 
 <!-- ENGCOM-7732 7733-->
 
