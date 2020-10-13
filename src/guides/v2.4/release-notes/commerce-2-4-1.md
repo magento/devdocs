@@ -386,7 +386,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7985 MC-29908-->
 
-*  GraphQL now supports placing an order for a bundle product with option type `radio` and `dropdown` with multiple choices Previously, Magento displayed a message about invalid input for `BundleItem.type: radio/dropdown`. _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/magento/magento2/pull/29256)_. [GitHub-26110](https://github.com/magento/magento2/issues/26110)
+*  GraphQL now supports placing an order for a bundle product with option type `radio` and `dropdown` with multiple choices. Previously, Magento displayed a message about invalid input for `BundleItem.type: radio/dropdown`. _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/magento/magento2/pull/29256)_. [GitHub-26110](https://github.com/magento/magento2/issues/26110)
 
 ### Cache
 
