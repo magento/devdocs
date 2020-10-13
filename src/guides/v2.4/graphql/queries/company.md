@@ -190,4 +190,4 @@ query{
 
 The `company` object returns the `Company` object.
 
-<!--- include graphql/company.md -->
+{% include graphql/company.md %}
