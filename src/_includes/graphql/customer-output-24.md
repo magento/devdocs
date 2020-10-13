@@ -31,3 +31,13 @@ Attribute |  Data Type | Description
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer's Tax/VAT number (for corporate customers)
 `wishlist` | Wishlist! | Contains the contents of the customer's wish lists
+
+For B2B, company users can have the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`job_title` | String | The job title for a B2B company user
+`role`| CompanyRole | The role name and permissions assigned to the company user
+`status` | CompanyUserStatusEnum | Indicates whether the company user is ACTIVE or INACTIVE
+`team` | CompanyTeam | The team the company user is assigned to
+`telephone` | String | The phone number of the company user
