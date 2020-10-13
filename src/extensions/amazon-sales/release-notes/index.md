@@ -5,7 +5,7 @@ title: Amazon Sales Channel Release Notes
 {:.bs-callout .bs-callout-warning}
 Amazon Sales Channel versions 4.0.0 and 4.1.0 are only supported for Magento 2.3.x versions.<br/>Amazon Sales Channel version 4.2.0 is compatible with Magento 2.3.x versions but is only supported for Magento 2.4.x versions.
 
-**Amazon Sales Channel** can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x. We no longer support the extension on Magento 2.1, Magento 2.2, or Magento 1. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to list and sell products from your Magento catalog on Amazon.
+**Amazon Sales Channel** can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x and 2.4.x. We no longer support the extension on Magento 2.1, Magento 2.2, or Magento 1. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to list and sell products from your Magento catalog on Amazon.
 
 See the following documentation:
 
@@ -20,6 +20,24 @@ The release notes include:
 -  {:.bug}Known issues
 
 See [Upcoming Releases](https://devdocs.magento.com/release/) for versioning, support, and compatibility.
+
+### v4.3.0
+
+Amazon Sales Channel 4.3.0 is compatible with versions 2.3.x but only supported for versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+This version of Amazon Sales Channel includes the following improvements and fixes.
+
+-  {:.fix}<!--CHAN-xxxx-->The _Order Details_ feature has been redesigned and no longer relies on the _Import Orders_ setting. Order details now appear in the Amazon Sales Channel interface for all orders.
+
+-  {:.fix}In the _Marketing_ menu in the Admin, the name has been changed from _Amazon_ to _Amazon Sales Channel_.
+
+-  {:.bug}**Important**: Known issues with Magento 2.4.0 compatibility are resolved in the Magento 2.4.1 release.
+
+   -  Amazon cron processes in `error` state
+
+   -  Installation with Magento 2.4.0 fails when creating stores in the database
+
+   -  Creating product fails when MSI is installed
 
 ### v4.2.0
 
