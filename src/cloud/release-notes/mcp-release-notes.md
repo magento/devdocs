@@ -28,7 +28,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 
 -  **Braintree VBE patch**–Fixes an issue that generated an error when an Administrator tried to view a Braintree Settlement Report. <!--MCLOUD-6684-->
 
--  Now, the `ece-patches apply` command uses the Unix Patch command to apply patches if Git is not available on the host system. <!--MCLOUD-7069-->
+-  Now, the `ece-patches apply` command uses the Unix `patch` command to apply patches if Git is not available on the host system. <!--MCLOUD-7069-->
 
 ## v1.0.6
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
