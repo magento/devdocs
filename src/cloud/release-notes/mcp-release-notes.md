@@ -24,7 +24,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 ## v1.0.7
 *Release date: October 14, 2020*<br/>
 
--  **Redis patches for Magento 2.3.0 - 2.3.5, 2.4.0**–Updated the Redis patches to support adding products to a category when implementing a Level 2 cache. <!--MCLOUD-6659-->
+-  **Redis patches for Magento 2.3.0 to 2.3.5, 2.4.0**–Updated the Redis patches to support adding products to a category when implementing a Level 2 cache. <!--MCLOUD-6659-->
 
 -  **Braintree VBE patch**–Fixes an issue that generated an error when an Administrator tried to view a Braintree Settlement Report. <!--MCLOUD-6684-->
 
