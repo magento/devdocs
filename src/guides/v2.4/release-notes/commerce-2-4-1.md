@@ -1238,7 +1238,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7963 -->
 
-*  The `AdminSubmitAdvancedInventoryFormActionGroup` , `AdminClickOnAdvancedInventoryLinkActionGroup`, and  `AdminSetStockStatusConfigActionGroup` action groups are now used within tests according to best practice. _Fix submitted by Oleh USIA in pull request [29386](https://github.com/magento/magento2/pull/29386)_. [GitHub-29420](https://github.com/magento/magento2/issues/29420)
+*  The `AdminSubmitAdvancedInventoryFormActionGroup`, `AdminClickOnAdvancedInventoryLinkActionGroup`, and  `AdminSetStockStatusConfigActionGroup` action groups are now used within tests according to best practice. _Fix submitted by Oleh USIA in pull request [29386](https://github.com/magento/magento2/pull/29386)_. [GitHub-29420](https://github.com/magento/magento2/issues/29420)
 
 <!-- ENGCOM-7964 -->
 
