@@ -1562,7 +1562,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7612 -->
 
-*  Using the REST API to update order information no longer overwrites existing item information. Previously, values in `info_buyRequest` were changed. _Fix submitted by Vadim Malesh in pull request [28483](https://github.com/magento/magento2/pull/28483)_. [GitHub-22431](https://github.com/magento/magento2/issues/22431)
+*  Using various REST endpoints to update orders that contain custom option no longer deletes the custom option information. Previously, values in `info_buyRequest` were deleted. _Fix submitted by Vadim Malesh in pull request [28483](https://github.com/magento/magento2/pull/28483)_. [GitHub-22431](https://github.com/magento/magento2/issues/22431)
 
 <!-- ENGCOM-7665 -->
 
