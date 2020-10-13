@@ -43,13 +43,13 @@ A `<tab>`-Tag references to either an existing or a new tab in the system config
 
 A `<tab>`-Tag can have the following attributes:
 
-| Attribute   | Description                                                                                                                                         | Type     | Required |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
-| `id`        | Defines the identifier that is used referencing the section.                                                                                        | `typeId` | required |
-| `translate` | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
-| `type`      | Defines the input type of the rendered HTML element—defaults to `text`.                                                                             | `string` | optional |
-| `sortOrder` | Defines the sort order of the section. High numbers push the section to the bottom of the page; low numbers push the section to the top.           | `float`  | optional |
-| `class`     | Adds a defined CSS class to the rendered tab HTML element.                                                                                          | `string` | optional |
+| Attribute   | Description                                                                                                                              | Type     | Required |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
+| `id`        | Defines the identifier that is used referencing the section.                                                                             | `typeId` | required |
+| `translate` | Defines the field that should be translatable. Provide `label` to make the label translatable.                                           | `string` | optional |
+| `type`      | Defines the input type of the rendered HTML element—defaults to `text`.                                                                  | `string` | optional |
+| `sortOrder` | Defines the sort order of the section. High numbers push the section to the bottom of the page; low numbers push the section to the top. | `float`  | optional |
+| `class`     | Adds a defined CSS class to the rendered tab HTML element.                                                                               | `string` | optional |
 
 ### Tab node reference
 
@@ -96,7 +96,7 @@ A `<section>`-Tag can have the following attributes:
 | `showInWebsite` | Defines whether the section is shown on website level. Specify `1` to show the section and `0` to hide the section.                                | `int`    | optional |
 | `canRestore`    | Defines if the  section can be restored to default.                                                                                                | `int`    | optional |
 | `advanced`      | Deprecated since 100.0.2.                                                                                                                          | `bool`   | optional |
-| `extends`       | By providing an identifier of another section, the content of this node will extend the section that you referenced.                               | `string` | optional |
+| `extends`       | By providing an identifier of another section, the content of this node extends the section that you referenced.                               | `string` | optional |
 
 ### Section node reference
 
@@ -109,7 +109,7 @@ A `<section>`-Tag can have the following children:
 | `tab`            | References the associated tab. Expects the ID of the tab.                                                             | `typeTabId`         |
 | `header_css`     | Neither used nor evaluated at the time of this writing.                                                               | `string`            |
 | `resource`       | References an ACL resource to provide permission settings for this section.                                           | `typeAclResourceId` |
-| `group`          | Define one or more subgroups.                                                                                        | `typeGroup`         |
+| `group`          | Define one or more subgroups.                                                                                         | `typeGroup`         |
 | `frontend_model` | Specifies a different frontend model to change the rendering and modify the output.                                   | `typeModel`         |
 | `include`        | Used to include additional `system_include.xsd` compatible files. Usually used to structure large `system.xml` files. | `includeType`       |
 
@@ -155,7 +155,7 @@ A `<group>`-Tag can have the following attributes:
 | `showInWebsite` | Defines whether the group is shown on website level. Specify `1` to show the group and `0` to hide the group.                                      | `int`    | optional |
 | `canRestore`    | Defines if the group can be restored to default.                                                                                                   | `int`    | optional |
 | `advanced`      | Deprecated since 100.0.2.                                                                                                                          | `bool`   | optional |
-| `extends`       | By providing an identifier of another group, the content of this node will extend the section that you referenced.                                 | `string` | optional |
+| `extends`       | By providing an identifier of another group, the content of this node extends the section that you referenced.                                 | `string` | optional |
 
 ### Group node reference
 
@@ -173,10 +173,10 @@ A `<group>`-Tag can have the following children:
 | `demo_link`                 | Not extensible. See below.                                                                                                                                                                | `typeUrl`     |
 | `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` HTML can be applied.                                                                                                      | `string`      |
 | `hide_in_single_store_mode` | Whether the group should be visible in single store mode. `1` hides the group; `0` shows the group.                                                                                       | `int`         |
-| `field`                     | Define one or more fields that should be available under this group.                                                                                                                        | `field`       |
-| `group`                     | Define one or more subgroups.                                                                                                                                                            | `unbounded`   |
+| `field`                     | Define one or more fields that should be available under this group.                                                                                                                      | `field`       |
+| `group`                     | Define one or more subgroups.                                                                                                                                                             | `unbounded`   |
 | `depends`                   | Can be used to declare dependencies on other fields. Is used to show specific fields/groups only when a given field has a value of `1`. This node expects a `section/group/field`-string. | `depends`     |
-| `attribute`                 | Custom attributes can be used by frontend models. Ususaly used to make a given frontend model more dynamic.                                                                               | `attribute`   |
+| `attribute`                 | Custom attributes can be used by frontend models. Usually used to make a given frontend model more dynamic.                                                                               | `attribute`   |
 | `include`                   | Used to include additional `system_include.xsd` compatible files. Usually used to structure large `system.xml` files.                                                                     | `includeType` |
 
 {:.bs-callout-warning}
@@ -231,22 +231,41 @@ A `<field>`-Tag can have the following attributes:
 | `advanced`      | Deprecated since 100.0.2.                                                                                                                          | `bool`   | optional |
 | `extends`       | By providing an identifier of another field, the content of this node will extend the section that you referenced.                                 | `string` | optional |
 
+### Field type reference
+
+A `<field>`-Tag can have the following values for the `type=""` attribute:
+
+| Type            | Description                                                                                                                                                                                                                   |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `text`          | Standard, single row text field                                                                                                                                                                                               |
+| `textarea`      | Text block                                                                                                                                                                                                                    |
+| `select`        | Normal dropdown, may need a custom `source_model`. Also used for `Yes/No` selections. See `Magento\Search\Model\Adminhtml\System\Config\Source\Engine` for an example.                                                                     |
+| `multiselect`   | Like `select` but multiple options are valid.                                                                                                                                                                              |
+| `button`        | A button that triggers an immediate event. Requires custom front-end model to define the button text and the action. See `Magento\ScheduledImportExport\Block\Adminhtml\System\Config\Clean` for an example. |
+| `obscure`       | A text field with the value encrypted and displayed as `****`.  Changing the type using "Inspect Element" in the browser does not reveal the value.                                                                                             |
+| `password`      | Like `obscure` except that the hidden value is not encrypted, and forcibly changing the type using "Inspect Element" in the browser does reveal the value.                                                                                 |
+| `file`          | Allows a file to be uploaded for processing.                                                                                                                                                                                   |
+| `label`         | Displays a label instead of an editable field. Use this type when a field is editable only on specific scopes, for example Store View level only.                                                                     |
+| `time`          | Control to set time using three dropdowns–Hour, minute and second.                                                                                                                                         |
+| `allowspecific` | A multiselect list of specific countries. Requires a `source_model` such as `Magento\Shipping\Model\Config\Source\Allspecificcountries`                                                                               |
+| `image`         | Allows an image to be uploaded.                                                                                                                                                                                                                                                                                                                                   |
+
 ### Field node reference
 
 A `<field>`-Tag can have the following children:
 
 | Node                        | Description                                                                                                                                                                               | Type             |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
-| `label`                     | Defines the label that is displayed in the frontend.                                                                                                                                      | `string`         |
-| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` HTML can be applied.                                                                                                      | `string`         |
-| `tooltip`                   | Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.                                        | `string`         |
+| `label`                     | Defines the label that displays in the frontend.                                                                                                                                      | `string`         |
+| `comment`                   | Adds a comment below the group label. Use `<![CDATA[//]]>` to apply HTML formatting   | `string`         |
+| `tooltip`                   | Frontend element to provide contextual help for the field. Displays as a small icon beside the field.                                        | `string`         |
 | `hint`                      | Displays additional information. Only available with specific `frontend_model`.                                                                                                           | `string`         |
 | `frontend_class`            | Adds a defined CSS class to the rendered section HTML element.                                                                                                                            | `string`         |
 | `frontend_model`            | Specifies a different frontend model to change the rendering and modify the output.                                                                                                       | `typeModel`      |
 | `backend_model`             | Specifies a different backend model to modify the configured values.                                                                                                                      | `typeModel`      |
 | `source_model`              | Specifies a different source model that provides a specific set of values.                                                                                                                | `typeModel`      |
 | `config_path`               | Can be used to overwrite the generic config path of a field.                                                                                                                              | `typeConfigPath` |
-| `validate`                  | Define different validation rules (comma separated). Full reference list of available validation rules is listed below.                                                                  | `string`         |
+| `validate`                  | Define different validation rules (comma separated). Full reference list of available validation rules is listed below.                                                                   | `string`         |
 | `can_be_empty`              | Used when `type` is `multiselect` to specify that a field can be empty.                                                                                                                   | `int`            |
 | `if_module_enabled`         | Used to display a field only when a given module is enabled.                                                                                                                              | `typeModule`     |
 | `base_url`                  | Used in combination with `upload_dir` for file uploads.                                                                                                                                   | `typeUrl`        |
@@ -337,25 +356,25 @@ The following example validates a field and adds several different validation ru
 
 The following validation rules are available:
 
-| Rule                            | Description                                                                                                                      |
-|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| `validate-no-html-tags`         | HTML tags are not allowed.                                                                                                       |
-| `validate-select`               | Select an option.                                                                                                         |
-| `validate-no-empty`             | Empty Value                                                                                                                      |
-| `validate-alphanum-with-spaces` | Use letters (a-z or A-Z), numbers (0-9), or spaces only in this field.                                                |
+| Rule                            | Description                                                                                                             |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| `validate-no-html-tags`         | HTML tags are not allowed.                                                                                              |
+| `validate-select`               | Select an option.                                                                                                       |
+| `validate-no-empty`             | Empty Value                                                                                                             |
+| `validate-alphanum-with-spaces` | Use letters (a-z or A-Z), numbers (0-9), or spaces only in this field.                                                  |
 | `validate-data`                 | Use letters (a-z or A-Z), numbers (0-9), or underscores (_) only in this field. The first character should be a letter. |
-| `validate-street`               | Use letters (a-z or A-Z), numbers (0-9), spaces, and “#” only in this field.                                               |
-| `validate-phoneStrict`          | Enter a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                                   |
-| `validate-phoneLax`             | Enter a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                                   |
-| `validate-fax`                  | Enter a valid fax number. For example, 123-456-7890.                                                                              |
-| `validate-email`                | Enter a valid email address. For example, johndoe@domain.com.                                                                     |
-| `validate-emailSender`          | Enter a valid email address. For example, johndoe@domain.com.                                                                     |
-| `validate-password`             | Enter 6 or more characters. Leading and trailing spaces will be ignored.                                                  |
-| `validate-admin-password`       | Enter 7 or more characters, using both numeric and alphabetic.                                                            |
-| `validate-url`                  | Enter a valid URL. Protocol is required (http://, https:// or ftp://).                                                    |
-| `validate-clean-url`            | Enter a valid URL. For example, http://www.example.com or www.example.com.                                                 |
-| `validate-xml-identifier`       | Enter a valid XML-identifier. For example, something_1, block5, id-4.                                                             |
-| `validate-ssn`                  | Enter a valid social security number. For example, 123-45-6789.                                                                   |
-| `validate-zip-us`               | Enter a valid ZIP code. For example, 90602 or 90602-1234.                                                                         |
-| `validate-date-au`              | Use this date format: dd/mm/yyyy. For example, 17/03/2006 for the 17th of March, 2006.                                     |
-| `validate-currency-dollar`      | Enter a valid $ amount. For example, $100.00.                                                                              |
+| `validate-street`               | Use letters (a-z or A-Z), numbers (0-9), spaces, and “#” only in this field.                                            |
+| `validate-phoneStrict`          | Enter a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                                |
+| `validate-phoneLax`             | Enter a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                                |
+| `validate-fax`                  | Enter a valid fax number. For example, 123-456-7890.                                                                    |
+| `validate-email`                | Enter a valid email address. For example, johndoe@domain.com.                                                           |
+| `validate-emailSender`          | Enter a valid email address. For example, johndoe@domain.com.                                                           |
+| `validate-password`             | Enter 6 or more characters. Leading and trailing spaces will be ignored.                                                |
+| `validate-admin-password`       | Enter 7 or more characters, using both numeric and alphabetic.                                                          |
+| `validate-url`                  | Enter a valid URL. Protocol is required (http://, https:// or ftp://).                                                  |
+| `validate-clean-url`            | Enter a valid URL. For example, http://www.example.com or www.example.com.                                              |
+| `validate-xml-identifier`       | Enter a valid XML-identifier. For example, something_1, block5, id-4.                                                   |
+| `validate-ssn`                  | Enter a valid social security number. For example, 123-45-6789.                                                         |
+| `validate-zip-us`               | Enter a valid ZIP code. For example, 90602 or 90602-1234.                                                               |
+| `validate-date-au`              | Use this date format: dd/mm/yyyy. For example, 17/03/2006 for the 17th of March, 2006.                                  |
+| `validate-currency-dollar`      | Enter a valid $ amount. For example, $100.00.                                                                           |
