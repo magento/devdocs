@@ -79,6 +79,7 @@ query{
   }
 }
 ```
+
 ### Return the company structure
 
 The following query returns the customer's company structure.
