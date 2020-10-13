@@ -843,7 +843,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7750 -->
 
-*  `updateCustomer` no longer allows you to set an invalid `INT` value in the `gender` argument. _Fix submitted by Alexander Taranovsky in pull request [28487](https://github.com/magento/magento2/pull/28487)_. [GitHub-28481](https://github.com/magento/magento2/issues/28481)
+*  The `updateCustomer` mutation no longer allows you to set an invalid `INT` value in the `gender` argument. _Fix submitted by Alexander Taranovsky in pull request [28487](https://github.com/magento/magento2/pull/28487)_. [GitHub-28481](https://github.com/magento/magento2/issues/28481)
 
 <!-- ENGCOM-7663 -->
 
