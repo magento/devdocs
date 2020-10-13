@@ -942,7 +942,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7834 -->
 
-*  Selecting a toolbar option from product page **Developer tools**  >  **Network** when running the Chrome browser no longer initializes `toolbar.js` twice. _Fix submitted by Paweł Tylek in pull request [28838](https://github.com/magento/magento2/pull/28838)_. [GitHub-25934](https://github.com/magento/magento2/issues/25934)
+*  Selecting a toolbar option from **Developer tools**  >  **Network**  on a product page when running the Chrome browser no longer initializes `toolbar.js` twice. _Fix submitted by Paweł Tylek in pull request [28838](https://github.com/magento/magento2/pull/28838)_. [GitHub-25934](https://github.com/magento/magento2/issues/25934)
 
 <!--- ENGCOM-7420-->
 
@@ -996,11 +996,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34187-->
 
-*  The new `availableStores` query returns a list of `StoreConfigs` for other stores available under the same website (based on the current store). It does not expose the list of websites. See [`availableStores` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html). [GitHub-28569](https://github.com/magento/magento2/issues/28569)
-
-<!-- ENGCOM-7810 MC-34187-->
-
-*  The `availableStores` query now returns codes only for the stores under the same website as the current store. _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
+*  The new `availableStores` query returns a list of configuration attributes for multiple stores available under the same website (based on the current store). It does not expose the list of websites. See [`availableStores` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html). _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
 
 <!-- ENGCOM-7512 -->
 
@@ -1131,10 +1127,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- ENGCOM-7484-->
 
 *  Plugins have been migrated out of the Magento Framework to follow the Magento best practice of prohibiting plugins in the Framework namespace. _Fix submitted by Lukasz Bajsarowicz in pull request [27965](https://github.com/magento/magento2/pull/27965)_. [GitHub-27962](https://github.com/magento/magento2/issues/27962)
-
-<!--- ENGCOM-7817-->
-
-*  GraphQL product search now considers Category Permissions configuration. _Fix submitted by Cristian Partica in pull request [5]in private repo partners-magento2-infrastructure_.
 
 <!--- ENGCOM-7713-->
 
@@ -1531,7 +1523,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7720-->
 
-*  Swagger now generates a valid response code when you enter valid customer access details. Previously, Swagger did not generate a response code when valid customer access information was entered, and Magento displayed this error: `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later`. _Fix submitted by Vadim Malesh in pull request [28822](https://github.com/magento/magento2/pull/28822)_. [GitHub-27098](https://github.com/magento/magento2/issues/27098)
+*  You can now generate a customer token with Swagger. Previously, Swagger did not generate a response code when valid customer access information was entered, and Magento displayed this error: `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later`. _Fix submitted by Vadim Malesh in pull request [28822](https://github.com/magento/magento2/pull/28822)_. [GitHub-27098](https://github.com/magento/magento2/issues/27098)
 
 ### Swatches
 

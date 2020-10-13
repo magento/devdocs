@@ -805,7 +805,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7834 -->
 
-*  Selecting a toolbar option from product page **Developer tools**  >  **Network**  when running the Chrome browser no longer initializes `toolbar.js` twice. _Fix submitted by Paweł Tylek in pull request [28838](https://github.com/magento/magento2/pull/28838)_. [GitHub-25934](https://github.com/magento/magento2/issues/25934)
+*  Selecting a toolbar option from **Developer tools**  >  **Network**  on a product page when running the Chrome browser no longer initializes `toolbar.js` twice. _Fix submitted by Paweł Tylek in pull request [28838](https://github.com/magento/magento2/pull/28838)_. [GitHub-25934](https://github.com/magento/magento2/issues/25934)
 
 <!--- ENGCOM-7420-->
 
@@ -827,11 +827,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- MC-34187-->
 
-*  The new `availableStores` query returns a list of `StoreConfigs` for other stores available under the same website (based on the current store). It does not expose the list of websites. See [`availableStores` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html). [GitHub-28569](https://github.com/magento/magento2/issues/28569)
-
-<!-- ENGCOM-7810 MC-34187-->
-
-*  The `availableStores` query now returns codes only for the stores under the same website as the current store. _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
+*  The new `availableStores` query returns a list of configuration attributes for multiple stores available under the same website (based on the current store). It does not expose the list of websites. See [`availableStores` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html). _Fix submitted by Dmitriy Gallyamov in pull request [28794](https://github.com/magento/magento2/pull/28794)_. [GitHub-28569](https://github.com/magento/magento2/issues/28569)
 
 <!-- ENGCOM-7512 -->
 
@@ -1601,6 +1597,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 <!--- MC-36250-->
 
 *  Administrators can now configure a configurable product that has been added by a customer to a wish list from a non-default store. Previously, when the customer had also added the configurable product from a non-default store, Magento threw an error.
+
 <!--- ENGCOM-7660-->
 
 *  Added a test for sharing a customer's wish list with more than the allowed number of emails. _Fix submitted by Dmitry Tsymbal in pull request [28641](https://github.com/magento/magento2/pull/28641)_. [GitHub-28720](https://github.com/magento/magento2/issues/28720)
@@ -1627,7 +1624,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 **Issue**: Merchants cannot log in to dotdigital from the Admin in Safari when dotdigital is enabled. See the [It's impossible to login in the dotdigital via admin panel when dotdigital account is enabled](https://support.magento.com/hc/en-us/articles/360050092291) Knowledge Base article.
 
-**Issue**: Vertex address validation does not work during payment when the shopper selects a shipping address that differs from the billing address. The issue will be fixed in Magento 2.4.2. See the [Magento 2.4.1 known issue: Vertex Address Validation message does not disappear after updating address](https://support.magento.com/hc/en-us/articles/360050139631) Knowledge Base article. 
+**Issue**: Vertex address validation does not work during payment when the shopper selects a shipping address that differs from the billing address. The issue will be fixed in Magento 2.4.2. See the [Magento 2.4.1 known issue: Vertex Address Validation message does not disappear after updating address](https://support.magento.com/hc/en-us/articles/360050139631) Knowledge Base article.
 
 **Issue**: Magento displays an empty page when a merchant saves a dotdigital Page Builder form on the Safari browser. **Workaround**: Reload the page to apply your changes. See the [Magento 2.4.1 known issue: empty page after saving dotdigital Page Builder form](https://support.magento.com/hc/en-us/articles/360049819092) Knowledge Base article.
 

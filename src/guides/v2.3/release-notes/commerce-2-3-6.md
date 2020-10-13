@@ -784,7 +784,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 <!--- MC-31843-->
 
-*  Bulk order update through the REST API now updates order status as expected. Previously, Magento threw this error: `report.ERROR: Property "AdditionalInformation" does not have accessor method "setAdditionalInformation" in class "Magento\Sales\Api\Data\OrderPaymentInterface".`
+*  Bulk order updates using `PUT /async/bulk/V1/orders/:id` now update the order status as expected. Previously, Magento threw this error: `report.ERROR: Property "AdditionalInformation" does not have accessor method "setAdditionalInformation" in class "Magento\Sales\Api\Data\OrderPaymentInterface".`
 
 ### Website Restriction
 
