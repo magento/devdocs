@@ -105,7 +105,7 @@ Use the following format to configure redirect requests which append the path su
 http://{default}/:
     type: upstream
     redirects:
-    paths: { "/from": { to: "https://{default}/to", append_suffix: false }
+    paths: "/from": { to: "https://{default}/to", append_suffix: false }
 ```
 
 This configuration works as follows:
