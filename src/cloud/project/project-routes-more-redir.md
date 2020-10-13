@@ -12,6 +12,10 @@ The following demonstrates how to manage redirection rules on your {{site.data.v
 
 {% include cloud/note-route-all-placeholder.md %}
 
+{:.bs-callout-warning}
+In Magento Commerce Cloud, large numbers of non-regex redirects/rewrites should not be done at the Nginx layer as it can cause performance issues. If the size of your `routes.yaml` file is 32KB or larger, you should offload your non-regex redirects/rewrites to Fastly.
+The article [Offload non-regex redirects to Fastly instead of Nginx](https://support.magento.com/hc/en-us/articles/360035192891-Offload-non-regex-redirects-to-Fastly-instead-of-Nginx-routes-) explains how this can be achieved.
+
 ## Whole-route redirects {#cloud-route-whole}
 
 Using whole-route redirects, you can define simple routes using the `routes.yaml` file. For example, you can redirect from an apex domain to a `www` subdomain as follows:
