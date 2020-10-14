@@ -93,7 +93,19 @@ This release adds GraphQL coverage for the following features:
 
 *  **Add to cart**. The [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)  <!--- MC-21513-->
 
-*  **Stored payment methods**. Logged-in customers can now store payment details (including Braintree credit card and Braintree with PayPal) in My Account. <!--- MC-32348 35945 35946-->
+*  **Stored payment methods**. Logged-in customers can now store payment details (including Braintree credit card and Braintree with PayPal) in My Account.
+
+*  **Support for wish lists in Magento Open Source**. Added support for Open Source wish lists. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list.
+
+*  **Improved management of customer accounts**. We have added the [`createCustomerV2`]({{page.baseurl}}/graphql/mutations/create-customer-v2.html) and [`updateCustomerV2`]({{page.baseurl}}/graphql/mutations/update-customer-v2.html) mutations to manage customer accounts. These new mutations require different input objects than the `createCustomer` and `updateCustomer` mutations. To change a customer's email address, use the new [`updateCustomerEmail`]({{page.baseurl}}/graphql/mutations/update-customer-email.html) mutation.
+
+*  **Support for Payflow Pro Vault**. Added GraphQL Vault support for the [Payflow Pro Vault]({{page.baseurl}}/graphql/payment-methods/payflow-pro-vault.html) payment method. _Fix submitted by Oleh Usik in pull request [28821](https://github.com/magento/magento2/pull/28821)_. [GitHub-28520](https://github.com/magento/magento2/issues/28520)
+
+*  Updated the GraphQL [`storeConfig` query]({{page.baseurl}}/v2.4/graphql/queries/store-config.html) to include new customer configuration settings. _Fix submitted by Oleh Usik in pull request [27876](https://github.com/magento/magento2/pull/27876)_. [GitHub-28521](https://github.com/magento/magento2/issues/28521)
+
+*  Added the [`requestPasswordResetEmail` mutation]({{page.baseurl}}/graphql/mutations/request-password-reset-email.html), which triggers the password reset email for the provided email address. _Fix submitted by Oleh Usik in pull request [27876](https://github.com/magento/magento2/pull/27876)_. [GitHub-28521](https://github.com/magento/magento2/issues/28521)
+
+*  **Klarna GraphQL**. Added or updated topics on Klarna GraphQL in [Klarna's payment method]({{page.baseurl}}/graphql/payment-methods/klarna.html) and [`createKlarnaPaymentsSession`]({{page.baseurl}}/graphql/mutations/create-klarna-payments-session.html)
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -835,7 +847,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7839 32949-->
 
-*  The schema for the `createCustomer` mutation now matches validation requirements. _Fix submitted by Michał Derlatka in pull request [28888](https://github.com/magento/magento2/pull/28888)_. [GitHub-28570](https://github.com/magento/magento2/issues/28570)
+*  We have added the [`createCustomerV2`]({{page.baseurl}}/graphql/mutations/create-customer-v2.html) and [`updateCustomerV2`]({{page.baseurl}}/graphql/mutations/update-customer-v2.html) mutations to manage customer accounts. These new mutations require different input objects than the `createCustomer` and `updateCustomer` mutations. To change a customer's email address, use the new [`updateCustomerEmail`]({{page.baseurl}}/graphql/mutations/update-customer-email.html) mutation. _Fix submitted by Michał Derlatka in pull request [28888](https://github.com/magento/magento2/pull/28888)_. [GitHub-28570](https://github.com/magento/magento2/issues/28570)
 
 <!-- ENGCOM-7750 -->
 
@@ -878,6 +890,22 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 *  You can now add a product to a cart using `addSimpleProductToCart` when other items in the cart are out-of-stock. Previously, Magento returned this error: `Some of the products are out of stock`. [GitHub-26683](https://github.com/magento/magento2/issues/26683)
 
 *  The default GraphQL `Category` method now sorts by category position as expected. _Fix submitted by Derrik Nyomo in pull request [29301](https://github.com/magento/magento2/pull/29301)_. [GitHub-104](https://github.com/magento/catalog-storefront/issues/104)
+
+*  Added support for  wish lists in Magento Open Source. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list. _Fix submitted by Eduard Chitoraga in pull request [28205](https://github.com/magento/magento2/pull/28205)_. [GitHub-28551](https://github.com/magento/magento2/issues/28551)
+
+*  We have added the [`createCustomerV2`]({{page.baseurl}}/graphql/mutations/create-customer-v2.html) and [`updateCustomerV2`]({{page.baseurl}}/graphql/mutations/update-customer-v2.html) mutations to manage customer accounts. These new mutations require different input objects than the `createCustomer` and `updateCustomer` mutations. To change a customer's email address, use the new [`updateCustomerEmail`]({{page.baseurl}}/graphql/mutations/update-customer-email.html) mutation.
+
+*  Added GraphQL Vault support for the [Payflow Pro Vault]({{page.baseurl}}/graphql/payment-methods/payflow-pro-vault.html) payment method. _Fix submitted by Oleh Usik in pull request [28821](https://github.com/magento/magento2/pull/28821)_. [GitHub-28520](https://github.com/magento/magento2/issues/28520)
+
+*  Updated the GraphQL [`storeConfig` query]({{page.baseurl}}/v2.4/graphql/queries/store-config.html) to include new customer configuration settings. _Fix submitted by Oleh Usik in pull request [27876](https://github.com/magento/magento2/pull/27876)_. [GitHub-28521](https://github.com/magento/magento2/issues/28521)
+
+*  Added the [`resetPassword` mutation]({{page.baseurl}}/graphql/mutations/reset-password.html). _Fix submitted by Oleh Usik in pull request [27876](https://github.com/magento/magento2/pull/27876)_. [GitHub-28521](https://github.com/magento/magento2/issues/28521)
+
+*  Added the [`resetPassword` mutation]({{page.baseurl}}/graphql/mutations/reset-password.html). _Fix submitted by Oleh Usik in pull request [27876](https://github.com/magento/magento2/pull/27876)_. [GitHub-28521](https://github.com/magento/magento2/issues/28521)
+
+*  Added the [`requestPasswordResetEmail` mutation]({{page.baseurl}}/graphql/mutations/request-password-reset-email.html), which triggers the password reset email for the provided email address. _Fix submitted by Oleh Usik in pull request [27876](https://github.com/magento/magento2/pull/27876)_. [GitHub-28521](https://github.com/magento/magento2/issues/28521)
+
+*  Added or updated topics on Klarna GraphQL in [Klarna's payment method]({{page.baseurl}}/graphql/payment-methods/klarna.html) and[`createKlarnaPaymentsSession`]({{page.baseurl}}/graphql/mutations/create-klarna-payments-session.html)
 
 ### Images
 
@@ -1117,7 +1145,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 *  Added test for deleting a CMS page as an Admin user. _Fix submitted by Dmitry Tsymbal in pull request [28112](https://github.com/magento/magento2/pull/28112)_. [GitHub-28202](https://github.com/magento/magento2/issues/28202)
 
-*  Added the `StorefrontShareCustomerWishlistActionGroup` test for customer wishlist sharing with invalid email addresses. The existing test for wishlist sharing (`StorefrontShareWishlistEntityTest`) has been refactored. `StorefrontCustomerShareWishlistActionGroup` has been deprecated.
+*  Added the `StorefrontShareCustomerWishlistActionGroup` test for customer wish list sharing with invalid email addresses. The existing test for wish list sharing (`StorefrontShareWishlistEntityTest`) has been refactored. `StorefrontCustomerShareWishlistActionGroup` has been deprecated.
 
 <!-- ENGCOM-7682 -->
 
