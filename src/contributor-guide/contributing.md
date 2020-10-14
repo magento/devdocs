@@ -206,7 +206,7 @@ When you want to verify an issue or pull request, use the `instance` command to 
 @magento give me {$version} instance
 ```
 
-For `version`, the currently supported values are the latest [version tags](https://github.com/magento/magento2/tags) and the 2.4-develop branch. For example, 
+Replace `{$version}` with the version tag for the version required. The currently supported values are the latest [version tags](https://github.com/magento/magento2/tags) and the 2.4-develop branch. For example, 
 
 ```text
 @magento give me 2.4.0 instance
@@ -264,7 +264,7 @@ Append the following text to your PR comment to specify the Magento Commerce edi
 with edition {$edition}
 ```
 
-For`edition`, use either of the following values:
+Replace `{$edition}` with either of the following values:
 
 -  `ee` deploys the Magento Commerce edition
 -  `b2b` deploys Magento Commerce with B2B modules.
@@ -285,13 +285,13 @@ with env PHP {$phpVersion}, search-engine ElasticSearch {$searchEngineVersion}, 
 
 Replace variables in the command with the following values as needed for your environment:
 
--  `phpVersion`–Specify the PHP version for the instance.
+-  `{$phpVersion}`–Specify the PHP version for the instance.
 
--  `searchEngineVersion`–Specify the Elasticsearch version for the instance.
+-  `{$searchEngineVersion}`–Specify the Elasticsearch version for the instance.
 
--  `dbEngine`–Specify the database type, either `MariaDB` or `MySQL`.
+-  `{$dbEngine}`–Specify the database type, either `MariaDB` or `MySQL`.
 
--  `dbEngineVersion`–Specify the version of the database engine for the instance.
+-  `{$dbEngineVersion}`–Specify the version of the database engine for the instance.
 
 For example, append the following text to the PR comment to deploy an instance with PHP 7.4, Elasticsearch version 7, and MariaDB version 10.4.
 
@@ -310,7 +310,7 @@ Append the following text to your PR comment to specify extensions to add to an 
 with extensions {$extensionRepo}
 ```
 
-For `extensionRepo`, specify one or more extension repositories to include when compiling your instance.  If you specify multiple repositories, use a comma after each repository. You can specify a specific branch in a repository using the pattern: `org/repo-name:branch-name`.  For example:
+Replace `{$extensionRepo}` with one or more extension repositories to include when compiling your instance.  If you specify multiple repositories, use a comma after each repository. You can specify a specific branch in a repository using the pattern: `org/repo-name:branch-name`.  For example:
 
 ```text
 with extensions magento/security-package:1.0-develop, magento/security-package-ee
@@ -324,7 +324,7 @@ Append the following text to your PR comment to specify extensions that you want
 without extensions {$extensionRepo}
 ```
 
-For `extensionRepo`, specify one or more extension repositories to remove before compiling your instance.  If you specify multiple repositories, use a comma after each repository. For example:
+Replace `{$extensionRepo}` with one or more extension repositories to remove before compiling your instance.  If you specify multiple repositories, use a comma after each repository. For example:
 
 ```text
 without extensions magento/adobe-stock-integration
