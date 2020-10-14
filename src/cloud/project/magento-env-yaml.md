@@ -67,3 +67,45 @@ When a failure occurs because of an unexpected value in the `.magento.env.yaml` 
 ```
 
 Make any corrections, commit, and push the changes. If you do not receive an error message, then the changes to your configuration file pass the validation.
+
+## Create configuration file from CLI
+
+You can use the following `ece-tools` CLI commands to generate a `.magento.env.yaml` configuration file for a Cloud environment.
+
+```bash
+php ./vendor/bin/ece-tools cloud:config:create     # Creates a new configuration file
+php ./vendor/bin/ece-tools cloud:config:update     # Updates values in the configuration file
+```
+
+Both commands require a single argument, a JSON-formatted array that specifies a value for at least one build, deploy, or post-deploy variable. For example, the following command sets values for the `SCD_THREADS` and `CLEAN_STATIC_FILES` variables.
+
+```bash
+php vendor/bin/ece-tools cloud:config:create '{"stage":{"build":{"SCD_THREADS":5}, "deploy":{"CLEAN_STATIC_FILES":false}}}'
+```
+
+This command creates a new .magento.env.yaml file with the following settings:
+
+```yaml
+stage:
+  build:
+    SCD_THREADS: 5
+  deploy:
+    CLEAN_STATIC_FILES: false
+```
+
+You can use the cloud:config:update command to update the new file. For example, the following command changes the `SCD_THREADS` value and adds the `SCD_COMPRESSION_TIMEOUT` configuration:
+
+```bash
+php vendor/bin/ece-tools cloud:config:update '{"stage":{"build":{"SCD_THREADS":3, "SCD_COMPRESSION_TIMEOUT":1000}}}'
+```
+
+The updated file contains the following configuration:
+
+```yaml
+stage:
+  build:
+    SCD_THREADS: 3
+    SCD_COMPRESSION_TIMEOUT: 1000
+  deploy:
+    CLEAN_STATIC_FILES: false
+```
