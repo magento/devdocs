@@ -252,7 +252,7 @@ Admins access will be shared via comment on GitHub.
 
 In some cases a custom environment is required to test an issue or a pull request. You can create a custom environment by appending custom configuration settings to the PR comment to [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
-#### Magento Edition:
+#### Magento edition
 
 Append the following text to your PR comment to specify the Magento Commerce edition to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
@@ -265,7 +265,7 @@ For`edition`, use either of the following values:
 -  `ee` deploys the Magento Commerce edition
 -  `b2b` deploys Magento Commerce with B2B modules.
 
-#### Environment:
+#### Environment
 
 Append the following text to your PR comment to specify the version for applications and services to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
@@ -292,7 +292,7 @@ with env PHP 7.4, search-engine Elasticsearch 7, database MariaDB 10.4
 {:.bs-callout-info}
 We generally recommend that you deploy the default environment. Use the custom configuration options only when you require a special configuration to test specfic use cases.
 
-#### Add Extensions:
+#### Add extensions
 
 Append the following text to your PR comment to specify extensions to add to an instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
@@ -306,7 +306,7 @@ For `extensionRepo`, specify one or more extension repositories to include when 
 with extensions magento/security-package:1.0-develop, magento/security-package-ee
 ```
 
-#### Remove Extensions:
+#### Remove extensions
 
 Append the following text to your PR comment to specify extensions that you want to remove from the instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
