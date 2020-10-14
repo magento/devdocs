@@ -178,6 +178,9 @@ Weeks 12 to 22 | One backup per month
 -  **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after which, the RPO is 6 hours (maximum time to last backup).
 -  **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
 
+{:.tip}
+The automatic backups are intended for disaster recovery. During development, we highly recommend that you use the Snapshot option to create a snapshot of your environment as a first step after accessing your {{site.data.var.ece}} project. We also recommend creating snapshots before you apply any major changes to your environment. See [Snapshots and backup management](https://devdocs.magento.com/cloud/project/project-webint-snap.html). If you fail to create a snapshot, see [Reset an environment on Cloud] article in the _Magento Help Center_ for information on restoring your environment.
+
 ### Production technology stack
 
 The Production environment has three virtual machines (VMs) behind an Elastic Load Balancer managed by an HAProxy per VM. Each VM includes the following technologies:
