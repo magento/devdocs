@@ -59,8 +59,11 @@ Edit the `/app/etc/env.php` file to configure the cron job `consumers_runner`.
 ```
 
 *  `cron_run` - A boolean value that enables or disables the `consumers_runner` cron job (default = `true`).
-*  `max_messages` - The maximum number of messages each consumer must process before terminating (default = `10000`). Although we do not recommend it, you can use 0 to prevent the consumer from terminating.
+*  `max_messages` - The maximum number of messages each consumer must process before terminating (default = `10000`). Although we do not recommend it, you can use 0 to prevent the consumer from terminating. See [`consumers_wait_for_messages`]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html#consumers_wait_for_messages) to configure how consumers process messages from the message queue.
 *  `consumers` - An array of strings specifying which consumer(s) to run. An empty array runs *all* consumers.
+
+   {:.bs-callout-info}
+   If your {{ site.data.var.ee }} store is hosted on the Cloud platform, use the [`CONSUMERS_WAIT_FOR_MAX_MESSAGES`]({{ site.baseurl }}/cloud/env/variables-deploy.html#consumers_wait_for_max_messages) to configure how consumers process messages from the message queue.
 
 {% include config/message-queue-consumers.md %}
 

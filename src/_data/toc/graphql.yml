@@ -69,6 +69,21 @@ pages:
         - label: categoryList query
           url: /graphql/queries/category-list.html
 
+        - label: checkCompanyAdminEmail query
+          url: /graphql/queries/check-company-admin-email.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: checkCompanyEmail query
+          url: /graphql/queries/check-company-email.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: checkCompanyUserEmail query
+          url: /graphql/queries/check-company-admin-email.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: checkoutAgreements query
           url: /graphql/queries/checkout-agreements.html
 
@@ -77,6 +92,11 @@ pages:
 
         - label: cmsPage query
           url: /graphql/queries/cms-page.html
+
+        - label: company query
+          url: /graphql/queries/company.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
         
         - label: countries query
           url: /graphql/queries/directory-countries.html
@@ -192,6 +212,11 @@ pages:
 
         - label: createBraintreeClientToken mutation
           url: /graphql/mutations/create-braintree-client-token.html
+
+        - label: createCompany mutation
+          url: /graphql/mutations/create-company.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
 
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
@@ -326,6 +351,11 @@ pages:
 
         - label: updateCartItems mutation
           url: /graphql/mutations/update-cart-items.html
+
+        - label: updateCompany mutation
+          url: /graphql/mutations/update-company.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
 
         - label: updateCustomer mutation
           url: /graphql/mutations/update-customer.html
