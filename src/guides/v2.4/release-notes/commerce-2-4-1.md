@@ -1070,7 +1070,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Added GraphQL Vault support for the [Payflow Pro Vault]({{page.baseurl}}/graphql/payment-methods/payflow-pro-vault.html) payment method. _Fix submitted by Oleh Usik in pull request [28821](https://github.com/magento/magento2/pull/28821)_. [GitHub-28520](https://github.com/magento/magento2/issues/28520)
 
-*  Updated the GraphQL [`storeConfig` query]({{page.baseurl}}/v2.4/graphql/queries/store-config.html) to include new customer configuration settings. _Fix submitted by Oleh Usik in pull request [27876](https://github.com/magento/magento2/pull/27876)_. [GitHub-28521](https://github.com/magento/magento2/issues/28521)
+*  Updated the GraphQL [`storeConfig` query]({{page.baseurl}}/graphql/queries/store-config.html) to include new customer configuration settings. _Fix submitted by Oleh Usik in pull request [27876](https://github.com/magento/magento2/pull/27876)_. [GitHub-28521](https://github.com/magento/magento2/issues/28521)
 
 *  Added the [`resetPassword` mutation]({{page.baseurl}}/graphql/mutations/reset-password.html). _Fix submitted by Oleh Usik in pull request [27876](https://github.com/magento/magento2/pull/27876)_. [GitHub-28521](https://github.com/magento/magento2/issues/28521)
 
