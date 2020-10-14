@@ -820,6 +820,8 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 ## Known issues
 
+**Issue**: The new CAPTCHA feature for checkout does not work as expected on the Place Order page when using third-party payment providers. Merchants running Magento 2.3.6 or 2.4.1 who have enabled CAPTCHA protection on the Place Order storefront page will see this error when checking out using a third-party payment provider such as PayPal: `Please provide CAPTCHA code and try again`. A fix for this issue be available in the next few weeks, and will be included in our next quarterly patch (Q12021). Please contact Support for additional information.
+
 **Issue**: Merchants upgrading their stores from 2.3.5-p2 to 2.3.6 will note that two module versions downgrade. These messages reflect the incomplete delivery of two security fixes to the 2.3.x quarterly patches. These fixes for low severity issues are included in Magento 2.3.5-p2, 2.4.1, and 2.4.0-p1 but are missing from Magento 2.3.6. No hot fixes will be provided. These fixes will be merged along with the other security fixes in Magento 2.3.6-p1, which is scheduled for Q12021.
 
 **Issue**: Merchants cannot log in to dotdigital from the Admin when dotdigital is enabled. See the [It's impossible to login in the dotdigital via admin panel when dotdigital account is enabled](https://support.magento.com/hc/en-us/articles/360050092291) Knowledge Base article.<!--- BUNDLE-2704-->
