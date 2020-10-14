@@ -45,7 +45,7 @@ Because {{site.data.var.ece}} supports only the Magento production and maintenan
 
 Sensitive values are _not_ stored in the `app/etc/config.php` file. Any sensitive configurations export to the `app/etc/config.php` file during the `config:dump` process. We recommend using environment variables to store sensitive values. For an example, see [Add Magento authentication keys][auth].
 
-You can also set sensitive values using the Magento CLI command `bin/magento config:sensitive:set`. See [Sensitive or system-specific settings].
+You can also set sensitive values using the Magento CLI command `bin/magento config:sensitive:set`. See [Sensitive or system-specific settings] in the _Configuration Guide_.
 
 ### SCD performance
 
@@ -66,12 +66,12 @@ If the same setting is configured in multiple places, Magento relies on the foll
 
 |Priority|Configuration<br/>Method|Description|
 |---|---|---|
-|3 | `app/etc/env.php` | Environment-specific configuration values stored here are added by using the Magento `app:config:dump` command. Set the system-specific and sensitive values using environment variables or the Magento CLI. See [Sensitive data](#sensitive-data). The `env.php` file is **not** included in source control.|
-|6 | `config.xml` | Many configurations have default values set in a the `config.xml` file for a module. If Magento cannot find any value set by any of the preceding methods, it falls back to the default value, if set.|
-|1 |Project Web UI<br>environment variables | Values added from the _Variables_ tab of environment configuration in the Project Web UI. We recommend specifying values here for sensitive or environment-specific configurations. Settings specified here cannot be edited from the Magento Admin. See [Environment configuration variables][].|
+|1 | Project Web UI<br>environment variables | Values added from the _Variables_ tab of environment configuration in the Project Web UI. We recommend specifying values here for sensitive or environment-specific configurations. Settings specified here cannot be edited from the Magento Admin. See [Environment configuration variables][].|
 |2 | `.magento.app.yaml` | Values added in the `variables` section of the `.magento.app.yaml` file. We recommend specifying values here to ensure consistent configuration across all environments. **Do not specify sensitive values in the `.magento.app.yaml` file.** See [Application settings][app-yaml].|
-|5 | Database | Values stored here are added by setting configurations in the Magento Admin. Note that configurations set using any of the preceding methods are locked (greyed out) and cannot be edited from the Magento Admin.|
+|3 | `app/etc/env.php` | Environment-specific configuration values stored here are added by using the Magento `app:config:dump` command. Set the system-specific and sensitive values using environment variables or the Magento CLI. See [Sensitive data](#sensitive-data). The `env.php` file is **not** included in source control.|
 |4 | `app/etc/config.php` | Values stored here are added by using the Magento `app:config:dump` command. Shared configuration values are added to `config.php`. Set shared configuration from the Magento Admin or using the Magento CLI. See [Consistent configuration](#consistent-configuration). The `config.php` file is included in source control.|
+|5 | Database | Values stored here are added by setting configurations in the Magento Admin. Note that configurations set using any of the preceding methods are locked (greyed out) and cannot be edited from the Magento Admin.|
+|6 | `config.xml` | Many configurations have default values set in a the `config.xml` file for a module. If Magento cannot find any value set by any of the preceding methods, it falls back to the default value, if set.|
 
 ## Procedure to manage your settings
 
