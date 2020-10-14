@@ -178,7 +178,7 @@ Weeks 12 to 22 | One backup per month
 -  **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after which, the RPO is 6 hours (maximum time to last backup).
 -  **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
 
-{:.tip}
+{:.bs-callout-tip}
 On Pro Staging and Production environments, you must submit a support ticket to restore an environment from an automatic backup. You can backup the database and code for your Production and Staging environments using CLI commands. See [Dump your database]({{  site.baseurl }}/cloud/project/project-webint-snap.html#db-dumpump] and [bin/magento setup:backup]({{site.baseurl }}/guides/v2.4/reference/cli/magento-commerce.htm#setupbackup). For Integration environments, we highly recommend that you create a snapshot as a first step after accessing your {{site.data.var.ece}} project and before applying any major changes. See [Snapshots and backup management](https://devdocs.magento.com/cloud/project/project-webint-snap.html).
 
 ### Production technology stack
