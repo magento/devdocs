@@ -310,7 +310,7 @@ Append the following text to your PR comment to specify extensions to add to an 
 with extensions {$extensionRepo}
 ```
 
-Replace `{$extensionRepo}` with one or more extension repositories to include when compiling your instance.  If you specify multiple repositories, use a comma after each repository. You can specify a specific branch in a repository using the pattern: `org/repo-name:branch-name`.  For example:
+Replace `{$extensionRepo}` with one or more extension repositories to include when compiling your instance.  If you specify multiple repositories, use a comma after each repository. You can specify a specific branch in a repository using the pattern: `org/repo-name:branch-name`. For example:
 
 ```text
 with extensions magento/security-package:1.0-develop, magento/security-package-ee
@@ -324,7 +324,7 @@ Append the following text to your PR comment to specify extensions that you want
 without extensions {$extensionRepo}
 ```
 
-Replace `{$extensionRepo}` with one or more extension repositories to remove before compiling your instance.  If you specify multiple repositories, use a comma after each repository. For example:
+Replace `{$extensionRepo}` with one or more extension repositories to remove before compiling your instance. If you specify multiple repositories, use a comma after each repository. For example:
 
 ```text
 without extensions magento/adobe-stock-integration
