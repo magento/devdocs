@@ -10,9 +10,9 @@ landing-page: GraphQL Developer's Guide
 
 As of Magento 2.3.4, GraphQL provides the following features:
 
-*  Support for all product types, payment methods, and shipping methods
-*  Achieved <.5 sec average response times with 500 concurrent requests
-*  Redesigned a feature rich layered navigation
+-  Support for all product types, payment methods, and shipping methods
+-  Achieved <.5 sec average response times with 500 concurrent requests
+-  Redesigned a feature rich layered navigation
 
 ## Where we're going
 
@@ -20,12 +20,12 @@ The `graphql-ce` Community Engineering repository has been archived. Development
 
 For the 2.4.0 and 2.4.1 releases, Magento teams are working toward completing GraphQL coverage for Business to Consumer (B2C) uses cases, with emphasis on the following:
 
-*  Reorders
-*  Inventory Management store pickups
-*  Order history for logged in customers
-*  Replace product-specific mutations that add products to a cart with a single mutation that can handle all product types
-*  Gift wrapping and messages
-*  Saved payment methods
+-  Reorders
+-  Inventory Management store pickups
+-  Order history for logged in customers
+-  Replace product-specific mutations that add products to a cart with a single mutation that can handle all product types
+-  Gift wrapping and messages
+-  Saved payment methods
 
 We also expect to begin adding coverage for B2B scenarios.
 

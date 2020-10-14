@@ -94,9 +94,9 @@ Sign in as a customer to the website using the email `john.doe@example.com` and 
 
 ## Add Authorization header
 
-To continue this tutorial, the token that was just generated needs to be sent as a header in your GraphQL browser. 
-Headers can usually be set in your GraphQL browser so they can be sent automatically
-The name of the header is `Authorization` and the value is `Bearer <token>`. 
+To continue this tutorial, the token that was just generated needs to be sent as a header in your GraphQL browser.
+Headers can usually be set in your GraphQL browser so they can be sent automatically.
+The name of the header is `Authorization` and the value is `Bearer <token>`.
 
 ```text
 Authorization Bearer <token>

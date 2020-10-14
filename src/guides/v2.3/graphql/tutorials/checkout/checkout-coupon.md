@@ -39,9 +39,8 @@ For **Rule Information**:
 
 For **Actions**
 
-- Apply: Percent of product price discount
-- Discount Amount: 20
-
+-  Apply: Percent of product price discount
+-  Discount Amount: 20
 
 Save this rule.
 The `Coupon Code` value is the name of the coupon the end user enters.
