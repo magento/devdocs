@@ -34,38 +34,37 @@ To ensure the stability of your customizations and prevent upgrades from overwri
       *  `@{baseDir}` stands for the `app/design/frontend/<you_vendor_name>/<your_theme_name>/web` directory.
       *  `<path_to_font_file>` includes the font file name, but without the extension. For example, `@font-path: '@{baseDir}fonts/Luma-Icons'` for the font stored in `web/fonts/Luma-Icons.woff`.
 
-   The mixin generates the CSS, which includes the font. The following example shows how to generate CSS for the Open Sans font in the Blank theme:
+The mixin generates the CSS, which includes the font. The following example shows how to generate CSS for the Open Sans font in the Blank theme:
 
-   ```css
-   @font-face {
-       font-family: 'Open Sans';
+```css
+@font-face {
+  font-family: 'Open Sans';
        src: url('../fonts/opensans/light/opensans-300.eot');
        src: url('../fonts/opensans/light/opensans-300.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/light/opensans-300.woff2') format('woff2'), url('../fonts/opensans/light/opensans-300.woff') format('woff'), url('../fonts/opensans/light/opensans-300.ttf') format('truetype'), url('../fonts/opensans/light/opensans-300.svg#Open Sans') format('svg');
-       font-weight: 300;
-       font-style: normal;
-       font-display: swap;
+   font-weight: 300;
+   font-style: normal;
+   font-display: swap;
    }
-   ```
+```
 
-   `@font-format` and `@font-type` are optional but they are both related. If you need to specify a format, enclose it in single quotes. For example, `@font-format: 'ttf'` with `@font-type: 'truetype'` for TrueType Fonts. The available types are: "woff", "woff2", "ttf", "eot", "otf", and "svg"
+`@font-format` and `@font-type` are optional but they are both related. If you need to specify a format, enclose it in single quotes. For example, `@font-format: 'ttf'` with `@font-type: 'truetype'` for TrueType Fonts. The available types are: "woff", "woff2", "ttf", "eot", "otf", and "svg"
 
-   ```less
-   .lib-font-face(
-       @family-name:'<custom_font_name>',
-       @font-path: '@{baseDir}fonts/<path_to_font_file>',
-       @font-format: '<ttf|woff|woff2|eot|otf|svg>',
-       @font-weight: <font_weight>,
-       @font-style: <font_style>,
-       @font-display: <auto|block|fallback|optional|swap>,
-       @font-type: <font_type>
-   );
-   ```
+```less
+.lib-font-face(
+   @family-name:'<custom_font_name>',
+   @font-path: '@{baseDir}fonts/<path_to_font_file>',
+   @font-format: '<ttf|woff|woff2|eot|otf|svg>',
+   @font-weight: <font_weight>,
+   @font-style: <font_style>,
+   @font-display: <auto|block|fallback|optional|swap>,
+   @font-type: <font_type>
+);
+```
 
-   `@font-display: swap` is declared by default for Magento Blank theme in `app/design/frontend/Magento/blank/web/css/source/_typography.less`.
+`@font-display: swap` is declared by default for Magento Blank theme in `app/design/frontend/Magento/blank/web/css/source/_typography.less`.
 
-   Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.
-
-   For more information about font-face, refer to this article [Font-face][https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face]{:target="_blank"}.
+Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.
+For more information about font-face, refer to this article [Font-face][https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face]{:target="_blank"}.
 
 ## `<font>` head type
 
