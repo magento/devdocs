@@ -206,7 +206,11 @@ When you want to verify an issue or pull request, use the `instance` command to 
 @magento give me {$version} instance
 ```
 
-For `version`, the currently supported values are latest [version tags](https://github.com/magento/magento2/tags) and the 2.4-develop branch.
+For `version`, the currently supported values are the latest [version tags](https://github.com/magento/magento2/tags) and the 2.4-develop branch. For example, 
+
+```text
+@magento give me 2.4.0 instance
+```
 
 **Actions:** The following actions complete the command:
 
@@ -264,6 +268,12 @@ For`edition`, use either of the following values:
 
 -  `ee` deploys the Magento Commerce edition
 -  `b2b` deploys Magento Commerce with B2B modules.
+
+For example, append the following text to the PR comment to deploy a {{site.data.var.ee}} instance with B2B modules:
+
+```text
+with edition b2b
+```
 
 #### Environment
 
