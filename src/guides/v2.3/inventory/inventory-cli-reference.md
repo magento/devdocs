@@ -94,7 +94,11 @@ Command options:
 
 -  `-r`, `--raw` - Returns raw output.
 
-If the format of the request is incorrect, the following message displays: Error while parsing argument "your_incorrect_format_argument". Given argument does not match pattern "/(?P<increment_id>.*):(?P<sku>.*):(?P<quantity>.*):(?P<stock_id>.*)/".
+If the format of the request is incorrect, the following message displays: 
+
+```terminal
+Error while parsing argument "your_incorrect_format_argument". Given argument does not match pattern "/(?P<increment_id>.*):(?P<sku>.*):(?P<quantity>.*):(?P<stock_id>.*)/".
+```
 
 As the command creates reservations, it displays messages indicating the updates by SKU, order, and stock.
 
