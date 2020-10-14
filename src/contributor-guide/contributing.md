@@ -250,7 +250,7 @@ Admins access will be shared via comment on GitHub.
 
 ### Customize deployed instances {#customize-deployed-instances}
 
-In some cases a custom environment is required to test an issue or a pull request. You can create a custom environment by appending custom configuration settings to the PR comment to [Deploy vanilla Magento instance](#vanilla-pr) or [Deploy instance based on PR changes](#deploy-pr).
+In some cases a custom environment is required to test an issue or a pull request. You can create a custom environment by appending custom configuration settings to the PR comment to [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
 #### Magento Edition:
 
@@ -304,10 +304,11 @@ For `extensionRepo`, specify one or more extension repositories to include when 
 
 ```text
 with extensions magento/security-package:1.0-develop, magento/security-package-ee
+```
 
 #### Remove Extensions:
 
-Append the following text to your PR comment to specify extensions any extensions that you want to remove from the instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+Append the following text to your PR comment to specify extensions that you want to remove from the instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
 ```text
 without extensions {$extensionRepo}
@@ -317,6 +318,7 @@ For `extensionRepo`, specify one or more extension repositories to remove before
 
 ```text
 without extensions magento/adobe-stock-integration
+```
 
 ### Combine multiple pull requests {#combine-pr}
 
