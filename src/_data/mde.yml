@@ -11,6 +11,16 @@ extensions:
     name: Amazon Sales Channel
     versions:
       -
+        name: 4.3.0
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.4.0: compatible
+      -
         name: 4.2.0
         support:
           2.3.0: compatible
