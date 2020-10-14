@@ -13,7 +13,7 @@ You must have [environment-level, Admin role privileges][admin] to complete conf
 
 ## Consistent configuration
 
-The database contains default configurations for your Magento store. When you update configurations in the {{site.data.var.ece}} environments using the Magento Admin panel or the Magento CLI command  `bin/magento config:set`, your configuration changes apply to the `app/etc/config.php` file. You can then use this file to manage and synchronize the Magento application configuration for your local environment and across each Cloud environment.
+The database contains default configurations for your Magento store. When you update configurations in the {{site.data.var.ece}} environments using the Magento Admin panel or the Magento CLI `bin/magento config:set` command, your configuration changes apply to the `app/etc/config.php` file. You can then use this file to manage and synchronize the Magento application configuration for your local environment and across each Cloud environment.
 
 Use the `{{site.data.var.ct}}` command in the remote environment to generate a `config.php` file:
 
