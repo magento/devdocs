@@ -13,7 +13,6 @@ functional_areas:
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
-
 The procedure for creating a cart varies for logged-in customers and guests.
 
 The `customerCart` query returns the active cart for the logged-in customer. If the cart does not exist, the query creates one. You must specify the customer’s authorization token in the headers. Otherwise, the query fails. ["Get customer authorization token"]({{ page.baseurl }}/graphql/authorization-tokens.html) describes these tokens.

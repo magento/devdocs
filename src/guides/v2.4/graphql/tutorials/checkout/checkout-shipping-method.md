@@ -22,21 +22,22 @@ The `setShippingMethodsOnCart` mutation defines the delivery methods for your or
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-{:.bs-callout .bs-callout-info}
+`carrier_code` and `method_code` come from the results of the mutation on the previous step.
+
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 **Request:**
 
-The following mutation query assigns UPS "Ground" method.
+The following mutation query assigns Table Rate method.
 
-```text
+```graphql
 mutation {
   setShippingMethodsOnCart(input: {
     cart_id: "{ CART_ID }"
     shipping_methods: [
       {
-        carrier_code: "ups"
-        method_code: "GND"
+        carrier_code: "tablerate"
+          method_code: "bestway"
       }
     ]
   }) {
@@ -64,10 +65,10 @@ mutation {
         "shipping_addresses": [
           {
             "selected_shipping_method": {
-              "carrier_code": "ups",
-              "method_code": "GND",
-              "carrier_title": "United Parcel Service",
-              "method_title": "Ground"
+              "carrier_code": "tablerate",
+              "method_code": "bestway",
+              "carrier_title": "Best Way",
+              "method_title": "Table Rate"
             }
           }
         ]

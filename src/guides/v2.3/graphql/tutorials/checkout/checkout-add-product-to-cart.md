@@ -31,11 +31,11 @@ If you add a product to the shopping cart as a registered customer, be sure to s
 
 ## Add a simple product into the shopping cart
 
-The following mutation adds a **simple product** into shopping cart.
+The following mutation adds a simple product into shopping cart. Simple products are items without sizes or colors, for example.
 
 Replace `{ CART_ID }` with the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-In this example, we will add the Aim Analog Watch from the default Luma catalog to the cart. Note that is the SKU that determines the product added.
+In this example, we will add the Aim Analog Watch (SKU 24-MG04) from the default Luma catalog to the cart. Note that is the SKU that determines the product added.
 
 **Request:**
 
@@ -93,7 +93,7 @@ mutation {
 
 ## Add a virtual product into the shopping cart
 
-The following mutation adds a **virtual product** into shopping cart.
+The following mutation adds a virtual product into shopping cart.
 In this example, we add the Beginner's Yoga video download product (SKU 240-LV04).
 
 **Request:**
@@ -162,6 +162,56 @@ The response lists all items currently in the cart, including the just-added vid
 
 ## Verify this step {#verify-step}
 
+There are two ways to verify the cart:
+
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
 1. Go to the shopping cart. All the items you added are displayed.
+
+Or, run a `customerCart` query:
+
+```graphql
+{
+  customerCart {
+    id
+    items {
+      id
+      product {
+        name
+        sku
+      }
+      quantity
+    }
+  }
+}
+```
+
+and the result should list the products that were added above:
+
+```json
+{
+  "data": {
+    "customerCart": {
+      "id": "1zzTAR53GzjRY7RPe1OsAPyzbjJcvkGD",
+      "items": [
+        {
+          "id": "7",
+          "product": {
+            "name": "Aim Analog Watch",
+            "sku": "24-MG04"
+          },
+          "quantity": 1
+        },
+        {
+          "id": "8",
+          "product": {
+            "name": "Beginner's Yoga",
+            "sku": "240-LV04"
+          },
+          "quantity": 1
+        }
+      ]
+    }
+  }
+}
+```

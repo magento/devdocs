@@ -20,12 +20,42 @@ Use [applyCouponToCart]({{ page.baseurl }}/graphql/mutations/apply-coupon.html) 
 
 `{ COUPON_CODE }` is an existing Magento coupon code. It cannot be generated with GraphQL.
 
-**Request:**
+## Create a coupon
 
-{:.bs-callout .bs-callout-info}
+Since coupons cannot be generated with GraphQL, it needs to be done in the admin.
+
+Creating a coupon is described in [Coupon Codes](https://docs.magento.com/user-guide/marketing/price-rules-cart-coupon.html).
+For the purpose of this tutorial, create a Cart Price Rule with:
+
+For **Rule Information**:
+
+-  Rule Name: Watch Coupon
+-  Websites: Main Website
+-  Customer Groups: Select all of them
+-  Coupon: Specific Coupon
+-  Coupon Code: Watch20
+-  Uses per Coupon: 5
+-  Uses per Customer: 5
+
+For **Actions**
+
+- Apply: Percent of product price discount
+- Discount Amount: 20
+
+
+Save this rule.
+The `Coupon Code` value is the name of the coupon the end user enters.
+To verify the coupon works, create an order with a product using guest checkout.
+When checking out, enter `Watch20` in the Apply Discount Code field and press the Apply Discount button.
+The discount should be applied in the cart.
+
+When the coupon is set up, we can apply via GraphQL.
+
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
-```text
+**Request:**
+
+```graphql
 mutation {
   applyCouponToCart(
     input: {
@@ -49,23 +79,32 @@ mutation {
   "data": {
     "applyCouponToCart": {
       "cart": {
-        "applied_coupons": {
-          "code": "{ COUPON_CODE }"
-        }
+        "applied_coupons": [
+          {
+            "code": "Watch20"
+          }
+        ]
       }
     }
   }
 }
 ```
 
+## Verify this step {#verify-step}
+
+1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
+
+1. Go to Checkout.
+
+1. The discount is displayed in the Order Summary block.
+
+## Remove a coupon
+
 Use [removeCouponFromCart]({{ page.baseurl }}/graphql/mutations/remove-coupon.html) to remove a discount coupon from the shopping cart.
 
 **Request:**
 
-{:.bs-callout .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
-
-```text
+```graphql
 mutation {
   removeCouponFromCart(input: { cart_id: "{ CART_ID }" }) {
     cart {
@@ -92,11 +131,3 @@ mutation {
   }
 }
 ```
-
-## Verify this step {#verify-step}
-
-1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
-
-1. Go to Checkout.
-
-1. The discount is displayed in the Order Summary block.

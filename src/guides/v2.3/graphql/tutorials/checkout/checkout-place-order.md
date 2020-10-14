@@ -18,12 +18,11 @@ The `placeOrder` mutation places an order.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
+Send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
+
 **Request:**
 
-{:.bs-callout .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
-
-```text
+```graphql
 mutation {
   placeOrder(input: {cart_id: "{ CART_ID }"}) {
     order {

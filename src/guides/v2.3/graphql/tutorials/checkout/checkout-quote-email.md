@@ -23,7 +23,7 @@ If you place an order as a guest user, you must set a quote email address. Use t
 
 **Request:**
 
-```text
+```graphql
 mutation {
   setGuestEmailOnCart(input: {
     cart_id: "{ CART_ID }"

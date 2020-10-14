@@ -25,53 +25,42 @@ Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/mutations/set-billi
 
 ## Add a new billing address
 
-The following mutation adds a new billing address. `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+Similar to the previous step, we will add a billing address to the customer. `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html). In this example, the `default_billing` parameter is set to `true`. The street address is also different, so we can see that different addresses are being created.
+
+Send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 **Request:**
 
-{:.bs-callout .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
-
 ```graphql
 mutation {
-  setBillingAddressOnCart(
-    input: {
-      cart_id: "{ CART_ID }"
-      billing_address: {
-        address: {
-          firstname: "John"
-          lastname: "Doe"
-          company: "Company Name"
-          street: ["320 N Crescent Dr", "Beverly Hills"]
-          city: "Los Angeles"
-          region: "CA"
-          postcode: "90210"
-          country_code: "US"
-          telephone: "123-456-0000"
-          save_in_address_book: false
-        }
-      }
+  createCustomerAddress(input: {
+    region: {
+      region: "Arizona"
+      region_code: "AZ"
+      region_id: 4
     }
-  ) {
-    cart {
-      billing_address {
-        firstname
-        lastname
-        company
-        street
-        city
-        region{
-          code
-          label
-        }
-        postcode
-        telephone
-        country {
-          code
-          label
-        }
-      }
+    country_code: US
+    street: ["123 Stone Ave."]
+    telephone: "7777777777"
+    postcode: "77777"
+    city: "Phoenix"
+    firstname: "Bob"
+    lastname: "Loblaw"
+    default_shipping: false
+    default_billing: true
+  }) {
+    id
+    region {
+      region
+      region_code
     }
+    country_code
+    street
+    telephone
+    postcode
+    city
+    default_shipping
+    default_billing
   }
 }
 ```
@@ -81,41 +70,37 @@ mutation {
 ```json
 {
   "data": {
-    "setBillingAddressOnCart": {
-      "cart": {
-        "billing_address": {
-          "firstname": "John",
-          "lastname": "Doe",
-          "company": "Company Name",
-          "street": [
-            "320 N Crescent Dr",
-            "Beverly Hills"
-          ],
-          "city": "Los Angeles",
-          "region": {
-            "code": "CA",
-            "label": "California"
-          },
-          "postcode": "90210",
-          "telephone": "123-456-0000",
-          "country": {
-            "code": "US",
-            "label": "US"
-          }
-        }
-      }
+    "createCustomerAddress": {
+      "id": 3,
+      "region": {
+        "region": "Arizona",
+        "region_code": "AZ"
+      },
+      "country_code": "US",
+      "street": [
+        "123 Stone Ave."
+      ],
+      "telephone": "7777777777",
+      "postcode": "77777",
+      "city": "Phoenix",
+      "default_shipping": false,
+      "default_billing": true
     }
   }
 }
 ```
 
-## Add a new address for billing and shipping
+## Same address for billing and shipping
 
-The following mutation includes the `same_as_shipping` attribute, which allows the same address to be used for billing and shipping.
+So far, we have created separate billing and shipping addresses and added them to the customer record.
+
+A common scenario is using the same address for both billing and shipping. A common pattern offers the ability to use the same address for both.
+
+The following mutation includes the `same_as_shipping` attribute, which allows the same address to be used for billing and shipping on the cart.
 
 **Request:**
 
-```text
+```graphql
 mutation {
   setBillingAddressOnCart(
     input: {
@@ -220,17 +205,18 @@ mutation {
         ]
       }
     }
-  }
-}
 ```
+
+We can confirm that the same address is specified for both addresses.
 
 ## Use an existing customer address
 
+If you wish to change one of the addresses to use existing addresses, that is as follows.
 First, query the customer to return the list of address IDs.
 
 **Request:**
 
-```text
+```graphql
 query {
   customer {
     addresses {
@@ -244,14 +230,20 @@ query {
 
 **Response:**
 
-```text
+```json
+{
   "data": {
     "customer": {
       "addresses": [
         {
           "id": 2,
-          "default_billing": true,
+          "default_billing": false,
           "default_shipping": true
+        },
+        {
+          "id": 3,
+          "default_billing": true,
+          "default_shipping": false
         }
       ]
     }
@@ -263,9 +255,11 @@ Set `{ CUSTOMER_ADDRESS_ID }` to an `id` returned in the query.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
+Using the results from above, we can set the `{ CUSTOMER_ADDRESS_ID}` to `3` to use the default billing address.
+
 **Request:**
 
-```text
+```graphql
 mutation {
   setBillingAddressOnCart(
     input: {
@@ -306,20 +300,19 @@ mutation {
     "setBillingAddressOnCart": {
       "cart": {
         "billing_address": {
-          "firstname": "John",
-          "lastname": "Doe",
-          "company": "Company Name",
+          "firstname": "Bob",
+          "lastname": "Loblaw",
+          "company": null,
           "street": [
-            "320 N Crescent Dr",
-            "Beverly Hills"
+            "123 Stone Ave."
           ],
-          "city": "Los Angeles",
+          "city": "Phoenix",
           "region": {
-            "code": "CA",
-            "label": "California"
+            "code": "AZ",
+            "label": "Arizona"
           },
-          "postcode": "90210",
-          "telephone": "123-456-0000",
+          "postcode": "77777",
+          "telephone": "7777777777",
           "country": {
             "code": "US",
             "label": "US"
@@ -330,6 +323,8 @@ mutation {
   }
 }
 ```
+
+The "123 Stone Ave." was the default billing address we created at the beginning of this page.
 
 ## Verify this step {#verify-step}
 
