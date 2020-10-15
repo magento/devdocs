@@ -45,7 +45,7 @@ Because {{site.data.var.ece}} supports only the Magento production and maintenan
 
 Sensitive values are _not_ stored in the `app/etc/config.php` file. Any sensitive configurations export to the `app/etc/config.php` file during the `config:dump` process. We recommend using environment variables to store sensitive values. For an example, see [Add Magento authentication keys][auth].
 
-You can also set sensitive values using the Magento CLI command `bin/magento config:sensitive:set`. See [Sensitive or system-specific settings] in the _Configuration Guide_.
+You can also set sensitive values using the Magento CLI command : `bin/magento config:sensitive:set`, see [Sensitive or system-specific settings] in the _Configuration Guide_.
 
 ### SCD performance
 
