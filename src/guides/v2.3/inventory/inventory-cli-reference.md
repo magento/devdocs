@@ -53,7 +53,7 @@ Command options:
 
 -  `-c`, `--complete-orders` - Returns inconsistencies for completed orders. Incorrect reservations may still be on hold for completed orders.
 -  `-i`, `--incomplete-orders` - Returns inconsistencies for incomplete orders (partially shipped, unshipped). Incorrect reservations may hold too much or not enough salable quantity for the orders.
--  `-b`, `--bunchsize` - Defines how many orders to load at once.
+-  `-b`, `--bunch-size` - Defines how many orders to load at once.
 -  `-r`, `--raw` - Raw output.
 
 Responses using `-r` return in `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>` format:
