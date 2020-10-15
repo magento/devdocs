@@ -134,7 +134,9 @@ After updates complete, run the list command to verify:
 
 ```bash
 bin/magento inventory:reservation:list-inconsistencies -r
+```
 
+```terminal
 No order inconsistencies were found.
 ```
 
