@@ -205,22 +205,25 @@ pages:
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
 
-        - label: companyTeam mutations
-          url: /graphql/mutations/company-team-mutations.html
-          edition: ee-only
+        - label: createCompanyTeam mutation
+          url: /graphql/mutations/create-company-team.html
+          edition: b2b-only
           exclude_versions: ["2.3"]
-          children:
-            - label: createCompanyTeam mutation
-              url: /graphql/mutations/company-team-mutations.html#createcompanyteam-mutation
 
-            - label: updateCompanyTeam mutation
-              url: /graphql/mutations/company-team-mutations.html#updatecompanyteam-mutation
+        - label: updateCompanyTeam mutation
+          url: /graphql/mutations/update-company-team.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
 
-            - label: deleteCompanyTeam mutation
-              url: /graphql/mutations/company-team-mutations.html#deletecompanyteam-mutation
+        - label: deleteCompanyTeam mutation
+          url: /graphql/mutations/delete-company-team.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
 
-            - label: updateCompanyStructure mutation
-              url: /graphql/mutations/company-team-mutations.html#updatecompanystructure-mutation
+        - label: updateCompanyStructure mutation
+          url: /graphql/mutations/update-company-structure.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
 
         - label: copyProductsToWishlist mutation
           url: /graphql/mutations/copy-products-to-wishlist.html
