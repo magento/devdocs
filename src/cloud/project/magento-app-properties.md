@@ -75,18 +75,20 @@ See [Services]({{ site.baseurl }}/cloud/project/services.html) for a full list o
 
 The `web` property defines how your application is exposed to the web (in HTTP). It determines how the web application serves content— from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
 
-You can specify the following attributes for the `web` property:
+You can specify the following key values for the `web` property _locations_:
 
 Attribute | Description
 --------- | -----------
+`allow` | Serve files that do not match a rule. Default value = `true`
+`blacklist` | Files that should never be served. Has no effect on static files.
+`expires` | The number of seconds to cache `whitelist` content in the browser. This attribute enables the `cache-control` and `expires` headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files.
+`index` | Static files to serve your application, such as the `index.html` file. This key expects a collection. You must include the static file(s) in the `whitelist` as an index file: `- \.html$`
+`passthru` | The URL used in the event that a static file or PHP file cannot be found. Typically, this URL is the front controller for your applications, such as `/index.php` or `/app.php`.
 `root` | The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
-`passthru` | The URL used in the event that a static file or PHP file cannot be found. This URL is typically the front controller for your applications, often `/index.php` or `/app.php`.
-`index` | Static files, such as `index.html`, to serve your application. This key expects a collection. You must include the static file(s) in the whitelist as an index file, like `- \.html$`.
-`blacklist` | A list of files that should never be executed. Has no effect on static files.
-`whitelist` | A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
-`expires` | The number of seconds to cache whitelisted content in the browser. This attribute enables the cache-control and expires headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files.
+`scripts` | Allow loading scripts in this location. Set the value to `true` to allow scripts.
+`whitelist` | A list of static files that can be served. Dynamic files, such as PHP files, are treated as static files, where the source code is served and not run.
 
-Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow access to everything not on a specific list, we accept a _whitelist_, which means that any request that does not match triggers a 404 error and passes through to the  URL specified by the `passthru` attribute.
+Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow access to everything not on a specific list, we accept a _whitelist_, which means that any request that does not match triggers a 404 error and passes through to the URL specified by the `passthru` attribute.
 
 Our default configuration allows the following:
 
