@@ -1,0 +1,14 @@
+---
+title: Magento_Amqp
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Amqp/README.md
+last_modified_at: '2019-08-19 00:22:19 +0100'
+content: |-
+  Magento_Amqp module provides functionality to publish/consume messages with the Advanced Message Queuing Protocol (AMQP).
+
+  ## Extensibility
+
+  Extension developers can interact with the Magento_Amqp module. For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html).
+
+  [The Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_Amqp module.
