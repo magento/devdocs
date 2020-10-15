@@ -23,7 +23,7 @@ As of Magento 2.4, all installations must be configured to use [Elasticsearch][]
 
 ## Supported versions {#es-spt-versions}
 
-You must install and configure Elasticsearch 7.6.x before upgrading to Magento 2.4.0.
+You must install and configure Elasticsearch 7.x before upgrading to Magento 2.4.x.
 
 {:.bs-callout-info}
 Magento does not support Elasticsearch 2.x, 5.x, and 6.x.
@@ -75,14 +75,14 @@ The tasks discussed in this section require the following:
 
 *  [Firewall and SELinux](#firewall-selinux)
 *  [Install the Java Software Development Kit (JDK)](#prereq-java)
-*  [Install Elasticsearch](#es-install-es6)
+*  [Install Elasticsearch](#es-install-es7)
 *  [Upgrading Elasticsearch](#es-upgrade6)
 
 {% include config/solr-elastic-selinux.md %}
 
 {% include config/install-java8.md %}
 
-### Install Elasticsearch  {#es-install-es6}
+### Install Elasticsearch  {#es-install-es7}
 
 Follow [Installing Elasticsearch][] for your platform-specific steps.
 
