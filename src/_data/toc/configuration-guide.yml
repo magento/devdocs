@@ -283,6 +283,14 @@ pages:
         - label: Tutorial—Set up multiple websites with Apache
           url: /config-guide/multi-site/ms_apache.html
 
+    - label: Remote storage
+      url: /config-guide/remote-storage/config-remote-storage.html
+      exclude_versions: ["2.3"]
+      children:
+
+        - label: Configure AWS S3 adapter
+          url: /config-guide/remote-storage/config-remote-storage-aws-s3.html
+
     - label: Set up a custom cron job and cron group
       url: /config-guide/cron/custom-cron.html
       children:
