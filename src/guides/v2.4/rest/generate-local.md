@@ -60,6 +60,23 @@ To return the complete JSON schema, specify the `?services=all` parameter in the
 
 The base URL for returning the asynchronous schema is `http://<magento_host>/rest/<store_code>/async/schema`.
 
+## Security
+
+By default, the `/swagger` endpoint is open on Magneto instances. Leaving it open on a public instance could potentially expose system information that should not be readable. 
+
+To close off the `/swagger` endpoint, disable the following modules:
+
+-  Swagger
+-  SwaggerWebapi
+-  SwaggerWebapiAsync
+
+To ensure proper functionality, always test Magento instances after disabling modules.
+
+You may also use web server rewrite rules to redirect users trying to access the endpoint:
+
+-  [nginx rewrite module](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite)
+-  [apache mod_rewrite](https://httpd.apache.org/docs/2.4/rewrite/)
+
 {:.ref-header}
 Related topics
 
