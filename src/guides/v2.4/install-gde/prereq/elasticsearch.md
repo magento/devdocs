@@ -23,7 +23,7 @@ As of Magento 2.4, all installations must be configured to use [Elasticsearch][]
 
 ## Supported versions {#es-spt-versions}
 
-You must install and configure Elasticsearch 7.x before upgrading to Magento 2.4.x.
+You must install and configure Elasticsearch 7.6.x before upgrading to Magento 2.4.x.
 
 {:.bs-callout-info}
 Magento does not support Elasticsearch 2.x, 5.x, and 6.x.
