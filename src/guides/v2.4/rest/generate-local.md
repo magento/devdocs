@@ -80,4 +80,5 @@ You may also use web server rewrite rules to redirect users trying to access the
 {:.ref-header}
 Related topics
 
+[Restricting access to anonymous web APIs]({{ page.baseurl }}/rest/anonymous-api-security.html)
 [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html)
