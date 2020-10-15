@@ -4,7 +4,7 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Wed Oct 14 18:21:58 2020
+updated: Wed Oct 14 19:40:51 2020
 entries:
 - description: Added release notes to describe the Magento 2.3.6 and Magento 2.4.1
     release notes. See [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
@@ -155,8 +155,7 @@ entries:
 - description: The GraphQL [`customer` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/customer.html)
     now returns detailed information about any order in the logged-in customer's order
     history.  The query can now replicate what is displayed in the My Orders page
-    in the storefront. The `customerOrders` query has been deprecated in favor of
-    the `customer` query.
+    in the storefront.
   versions: 2.4.1
   type: Major Update
   date: June 24, 2020
