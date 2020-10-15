@@ -1,7 +1,7 @@
 ---
 title: Magento_Backup
 source_repo: magento2ce
-release: 2.4.0
+release: 2.4.1
 github_path: app/code/Magento/Backup/README.md
 last_modified_at: '2019-09-16 12:24:25 -0300'
 content: "The Magento_Backup module allows administrators to perform backups and rollbacks.

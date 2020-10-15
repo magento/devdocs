@@ -1,7 +1,7 @@
 ---
 title: Magento_OfflineShipping
 source_repo: magento2ce
-release: 2.4.0
+release: 2.4.1
 github_path: app/code/Magento/OfflineShipping/README.md
 last_modified_at: '2014-10-31 09:04:08 -0700'
 content: |+
@@ -11,4 +11,3 @@ content: |+
   *Table Rates
   *Store Pickup
 
-...
