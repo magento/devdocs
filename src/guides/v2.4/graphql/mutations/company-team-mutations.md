@@ -19,7 +19,7 @@ The main mutations for this provided below:
 
 ## createCompanyTeam mutation
 
-Use this mutation to create a new team for your company.
+Use the `createCompanyTeam` mutation to create a new team for your company.
 
 ### Syntax
 
@@ -71,7 +71,7 @@ mutation {
 }
 ```
 
-In the next example, the team will be created in the parent team assigned from `target_id` field.
+This example creates a child team of the parent team specified in the `target_id` field.
 
 **Request:**
 
@@ -119,9 +119,9 @@ The `CompanyTeamCreateInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`name` | String! | Team Name. This is required attribute.
-`description` | String | Team description.
-`target_id` | ID | A target structure element ID within a company's structure for a team to be assigned to.
+`description` | String | An optional description of the team
+`name` | String! | The display name of the team
+`target_id` | ID | The ID of a node within a company's structure. This ID will be the parent of the created team
 
 ### Output attributes
 
@@ -129,7 +129,7 @@ The `CreateCompanyTeamOutput` output object contains the following attribute:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`team` | CompanyTeam! | Contains the company team data.
+`team` | CompanyTeam! | Contains company team data
 
 #### CompanyTeam attributes {#CompanyTeam}
 
@@ -137,7 +137,7 @@ Attribute |  Data Type | Description
 
 ## updateCompanyTeam mutation
 
-Use this mutation to update the company team data.
+Use the `updateCompanyTeam` mutation to update the company team data.
 
 ### Syntax
 
@@ -153,7 +153,7 @@ mutation {
 
 ### Example usage
 
-The following example shows how to update a team data of the customer's company.
+The following example updates the name and description of a company team.
 
 **Request:**
 
@@ -201,9 +201,9 @@ The `CompanyTeamUpdateInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id` | ID! | The encoded team ID for updating. This is required attribute.
-`name` | String | Team name.
-`description` | String | Team description.
+`description` | String | An optional description of the team
+`id` | ID! | The encoded team ID for updating
+`name` | String | The display name of the team
 
 ### Output attributes
 
@@ -211,11 +211,12 @@ The `UpdateCompanyTeamOutput` output object contains the following attribute:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`team` | [CompanyTeam!](#CompanyTeam) | Contains the company team data.
+`team` | [CompanyTeam!](#CompanyTeam) | Contains company team data
 
 ## deleteCompanyTeam mutation
 
-Use this mutation to delete a company team by ID.
+Use the `deleteCompanyTeam` mutation to delete a company team by ID. You can get the team ID with the [`company` query]({{page.baseurl}}/graphql/queries/company.html).
+
 
 ### Syntax
 
@@ -231,7 +232,7 @@ mutation {
 
 ### Example usage
 
-The following example shows how to delete a team of the customer's company.
+The following example deletes the specified team.
 
 **Request:**
 
@@ -263,9 +264,7 @@ The `deleteCompanyTeam` mutation requires the following input:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id` | ID! | The encoded team ID to delete.
-
-You can get the team id using GraphQl query `company`
+`id` | ID! | The encoded team ID to delete
 
 ### Output attributes
 
@@ -273,7 +272,7 @@ The `deleteCompanyTeam` mutation returns a Boolean value that indicates whether 
 
 ## updateCompanyStructure mutation
 
-Use this mutation to update the company structure element's parent node assignment.
+Use the `updateCompanyStructure` mutation to change the parent node of a company team.
 
 ### Syntax
 
@@ -372,8 +371,8 @@ The `CompanyStructureUpdateInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`tree_id` | ID! | Company structure element's hierarchical ID that is being moved to another parent. Required.
-`parent_tree_id` | ID! | A target parent element tree ID within a Company's Structure. Required.
+`parent_tree_id` | ID! | The ID of a company that will be the new parent
+`tree_id` | ID! | The ID of the company team that is being moved to another parent
 
 ### Output attributes
 
@@ -381,4 +380,4 @@ The `UpdateCompanyStructureOutput` output object contains the following attribut
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`company` | [Company!](#company-link-from-company-query) | Contains the company data.
+`company` | [Company!](#company-link-from-company-query) | Contains company data
