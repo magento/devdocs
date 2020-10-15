@@ -1,7 +1,7 @@
 ---
 title: Magento_PurchaseOrder
 source_repo: magento2b2b
-release: 1.2.0
+release: 1.3.0
 github_path: app/code/Magento/PurchaseOrder/README.md
 last_modified_at: '2020-05-13 11:51:49 -0500'
 content: "\n​\n## Overview\n​\nThe PurchaseOrder module contains functionality for
