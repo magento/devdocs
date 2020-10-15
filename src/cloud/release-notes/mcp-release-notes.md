@@ -19,6 +19,22 @@ To ensure that your project has all required patches, update to the [latest vers
 {:.bs-callout-info}
 See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instructions on applying patches to your Magento projects.
 
+<!--Add release notes below-->
+
+## v1.0.8
+*Release date: October 14, 2020*<br/>
+
+-  **Compatibility updates for {{site.data.var.mcp-package}}**–Updated the `symfony` and `semver` version constraints in the `composer.json` file for compatibility with Magento 2.4.1 and later releases.<!--MCLOUD-7111-->
+
+## v1.0.7
+*Release date: October 14, 2020*<br/>
+
+-  **Redis patches for Magento 2.3.0 to 2.3.5, 2.4.0**–Updated the Redis patches to support adding products to a category when implementing a Level 2 cache. <!--MCLOUD-6659-->
+
+-  **Braintree VBE patch**–Fixes an issue that generated an error when an Administrator tried to view a Braintree Settlement Report. <!--MCLOUD-6684-->
+
+-  Now, the `ece-patches apply` command uses the Unix `patch` command to apply patches if Git is not available on the host system. <!--MCLOUD-7069-->
+
 ## v1.0.6
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
