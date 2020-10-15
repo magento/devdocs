@@ -11,14 +11,14 @@ entries:
     and  [2.3 Release Information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).
   versions: 2.3.6, 2.4.1
   type: Major Update
-  date: October 14, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/8036
   contributor: jfrontain
   profile: https://github.com/jfrontain
 - description: Fixed invalid `env.php` code sample for [message queue configuration](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/message-queues/message-queues.html).
   versions: 2.3.6
   type: Technical
-  date: October 12, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7896
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
@@ -27,14 +27,14 @@ entries:
     GraphQL mutation.
   versions: 2.4.1
   type: New Topic
-  date: September 24, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7891
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
 - description: Added release notes for [Inventory Management](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html).
   versions: 2.4.1
   type: Major Update
-  date: September 23, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7925
   contributor: sidolov
   profile: https://github.com/sidolov
@@ -44,7 +44,7 @@ entries:
     forms.
   versions: 2.3.6, 2.4.1
   type: New Topic
-  date: September 21, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7906
   contributor: keharper
   profile: https://github.com/keharper
@@ -53,14 +53,14 @@ entries:
     query provides the context needed for a store switcher.
   versions: 2.4.1
   type: New Topic
-  date: September 17, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7853
   contributor: keharper
   profile: https://github.com/keharper
 - description: Added 2.4.1 beta [release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
   versions: 2.4.1
   type: Major Update
-  date: September 9, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7846
   contributor: jfrontain
   profile: https://github.com/jfrontain
@@ -69,7 +69,7 @@ entries:
     mutation instead of single-purpose mutations such as `addSimpleProductsToCart`.
   versions: 2.4.1
   type: New Topic
-  date: August 31, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7774
   contributor: andrewbess
   profile: https://github.com/andrewbess
@@ -79,7 +79,7 @@ entries:
     to retrieve information about the reviews infrastructure.
   versions: 2.4.1
   type: New Topic
-  date: August 28, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7775
   contributor: keharper
   profile: https://github.com/keharper
@@ -89,7 +89,7 @@ entries:
     from a wish list in GraphQL.
   versions: 2.4.1
   type: New Topic
-  date: August 25, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7770
   contributor: keharper
   profile: https://github.com/keharper
@@ -100,7 +100,7 @@ entries:
     products.
   versions: 2.4.1
   type: New Topic
-  date: August 19, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7745
   contributor: keharper
   profile: https://github.com/keharper
@@ -112,7 +112,7 @@ entries:
     mutation.
   versions: 2.4.1
   type: New Topic
-  date: August 19, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7673
   contributor: keharper
   profile: https://github.com/keharper
@@ -124,7 +124,7 @@ entries:
     queries also return information related to reward points.
   versions: 2.4.1
   type: New Topic
-  date: August 17, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7662
   contributor: keharper
   profile: https://github.com/keharper
@@ -132,7 +132,7 @@ entries:
     payment method.
   versions: 2.4.1
   type: New Topic
-  date: August 14, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7714
   contributor: keharper
   profile: https://github.com/keharper
@@ -140,7 +140,7 @@ entries:
     for Elasticsearch 6.x.
   versions: 2.3.6
   type: Technical
-  date: July 15, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7512
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
@@ -148,7 +148,7 @@ entries:
     to the _GraphQL Developer Guide_.
   versions: 2.4.1
   type: New Topic
-  date: July 6, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7422
   contributor: atwixfirster
   profile: https://github.com/atwixfirster
@@ -158,7 +158,7 @@ entries:
     in the storefront.
   versions: 2.4.1
   type: Major Update
-  date: June 24, 2020
+  date: October 15, 2020
   link: https://github.com/magento/devdocs/pull/7436
   contributor: keharper
   profile: https://github.com/keharper
