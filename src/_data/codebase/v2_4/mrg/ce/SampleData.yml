@@ -1,9 +1,9 @@
 ---
 title: Magento_SampleData
 source_repo: magento2ce
-release: 2.4.0
+release: 2.4.1
 github_path: app/code/Magento/SampleData/README.md
-last_modified_at: '2020-06-15 12:15:30 -0500'
+last_modified_at: '2020-06-16 18:27:26 +0100'
 content: |
   Magento sample data includes a sample store, complete with more than 250 products (about 200 of them are configurable products), categories, promotional price rules, CMS pages, banners, and so on. Sample data uses the Luma theme on the storefront.
 

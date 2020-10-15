@@ -1,0 +1,8 @@
+---
+title: Magento_Captcha
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Captcha/README.md
+last_modified_at: '2014-07-11 11:30:21 -0700'
+content: The Captcha module allows applying Turing test in the process of user authentication
+  or similar tasks.

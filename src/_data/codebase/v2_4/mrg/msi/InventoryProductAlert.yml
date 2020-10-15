@@ -1,7 +1,7 @@
 ---
 title: Magento_InventoryProductAlert
 source_repo: inventory
-release: 1.2.0
+release: 1.2.1
 github_path: InventoryProductAlert/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: |+
@@ -19,4 +19,3 @@ content: |+
 
   There are no extension points or service contracts for this module.
 
-...
