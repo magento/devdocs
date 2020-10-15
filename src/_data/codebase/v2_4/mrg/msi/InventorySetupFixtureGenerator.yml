@@ -1,7 +1,7 @@
 ---
 title: Magento_InventorySetupFixtureGenerator
 source_repo: inventory
-release: 1.2.0
+release: 1.2.1
 github_path: InventorySetupFixtureGenerator/README.md
 last_modified_at: '2018-12-24 14:41:45 +0200'
 content: "The `InventorySetupFixtureGenerator` module customizes the process of Inventory
