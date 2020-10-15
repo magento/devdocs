@@ -20,6 +20,13 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+### v1.2.1
+{{site.data.var.im}} 1.2.1 (module version: `magento/inventory-metapackage = 1.2.1`) is supported with version 2.4.1 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.fix} Fixed known issue related to `inventory_cleanup_reservations` cron job, addressed issue related to In-Store Pickup functionality for bundle products, general improvements to stock calculation, bundle product support and backorders functionality.
+
+-  {:.new} **Functional tests.** Introduced new functional tests to provide additional coverage for In-Store Pickup functionality.
+
 ### v1.2.0
 
 {{site.data.var.im}} 1.2.0 (module version: `magento/inventory-metapackage = 1.2.0`) is supported with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
@@ -44,6 +51,13 @@ The release notes include:
    SELECT GROUP_CONCAT(reservation_id) FROM inventory_reservation GROUP BY stock_id, sku HAVING SUM(quantity) = 0;
    DELETE FROM inventory_reservation where reservation_id IN (result_of_the_first_query);
    ```
+
+### v1.1.6
+{{site.data.var.im}} 1.1.6 (module version: `inventory-composer-metapackage = 1.1.6`) is supported with version 2.3.6 and compatible with version 2.3.5, 2.3.4, 2.3.3, 2.3.2, 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.new} **Asynchronous stock re-indexing.** Added the ability to asynchronously re-index stock and improved the performance of several critical scenarios.
+
+-  {:.fix} Bug fixes to resolve issues related to backorders, credit memos, low stock report grid, fixes connected to "resolve inconsistencies" CLI tool and general improvements.
 
 ### v1.1.5
 

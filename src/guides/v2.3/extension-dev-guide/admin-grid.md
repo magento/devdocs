@@ -114,6 +114,9 @@ The UI component `dev_grid_category_listing` must be defined separately in a fil
        <argument name="data" xsi:type="array">
          <item name="config" xsi:type="array">
            <item name="update_url" xsi:type="url" path="mui/index/render"/>
+           <item name="storageConfig" xsi:type="array">
+             <item name="indexField" xsi:type="string">entity_id</item>
+           </item>
          </item>
        </argument>
    </argument>
@@ -192,6 +195,13 @@ The UI component `dev_grid_category_listing` must be defined separately in a fil
          <filter>text</filter>
          <bodyTmpl>ui/grid/cells/text</bodyTmpl>
          <label translate="true">Name</label>
+      </settings>
+    </column>
+    <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+      <settings>
+        <filter>dateRange</filter>
+        <dataType>date</dataType>
+        <label translate="true">Created</label>
       </settings>
     </column>
     <actionsColumn name="actions" class="Dev\Grid\Ui\Component\Category\Listing\Column\Actions" sortOrder="200">
