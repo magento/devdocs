@@ -37,14 +37,14 @@ To optimize your Redis instance to your needs, you get best results when using a
 For sessions, it's recommended to enable persistence. This can either be done by regular RDB snapshots or by using the AOF persistence logs.
 You can get the details advantages and disadvantages on the [Redis Persistence documentation](https://redis.io/topics/persistence).
 
-For the cache instance, you should make sure, the instance is set up big enough to store your whole Magento cache in it. 
+For the cache instance, you should make sure, the instance is set up big enough to store your whole Magento cache in it.
 The required size depends on different factors (like number of products and store views) but the required size of the file system cache gives you the order of
 magnitude. Persistence is not required here as the Magento cache can be restored. See also [Redis cache guide](https://redis.io/topics/lru-cache).
 
 For performance tuning you can also enable these settings for asynchronous deletion. This will not change the behavior of Redis (see also
 [redis news](http://antirez.com/news/93).
 
-```
+```ini
 lazyfree-lazy-eviction yes
 lazyfree-lazy-expire yes
 lazyfree-lazy-server-del yes
@@ -52,7 +52,7 @@ replica-lazy-flush yes
 ```
 From redis 6.x onwards, you can also set
 
-```
+```ini
 lazyfree-lazy-user-del yes
 ```
 
