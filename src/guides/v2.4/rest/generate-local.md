@@ -62,7 +62,7 @@ The base URL for returning the asynchronous schema is `http://<magento_host>/res
 
 ## Security
 
-By default, the `/swagger` endpoint is open on Magento instances. Leaving it open on a public instance could potentially expose system information that should not be readable. 
+By default, the `/swagger` endpoint is open on Magento instances. Leaving it open on a public instance could potentially expose system information that should not be readable.
 
 To close off the `/swagger` endpoint, disable the following modules:
 
