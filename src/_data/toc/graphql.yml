@@ -218,6 +218,11 @@ pages:
           edition: b2b-only
           exclude_versions: ["2.3"]
 
+        - label: createCompanyTeam mutation
+          url: /graphql/mutations/create-company-team.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
 
@@ -248,6 +253,11 @@ pages:
         - label: createWishlist mutation
           url: /graphql/mutations/create-wishlist.html
           edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: deleteCompanyTeam mutation
+          url: /graphql/mutations/delete-company-team.html
+          edition: b2b-only
           exclude_versions: ["2.3"]
 
         - label: deleteCustomerAddress mutation
@@ -354,6 +364,16 @@ pages:
 
         - label: updateCompany mutation
           url: /graphql/mutations/update-company.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: updateCompanyStructure mutation
+          url: /graphql/mutations/update-company-structure.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: updateCompanyTeam mutation
+          url: /graphql/mutations/update-company-team.html
           edition: b2b-only
           exclude_versions: ["2.3"]
 
