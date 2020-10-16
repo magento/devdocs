@@ -309,4 +309,4 @@ Next steps
 *  [Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
 *  [Set up your build system]({{ page.baseurl }}/config-guide/deployment/pipeline/build-system.html)
 *  [Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)
-*  [config-cli-config-set]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set
+*  [config-cli-config-set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set)
