@@ -8,6 +8,10 @@ b2b_only: true
 
 Use the `createCompanyTeam` mutation to create a new team for your company.
 
+The `target_id` input attribute allows you to specify which node in the company structure will be the parent node of the company team. If you do not specify a value, the team will be assigned to the top-level (root) node of the company structure.
+
+You can get the `target_id` with the [`company`]({{page.baseurl}}/graphql/queries/company.html) query.
+
 ## Syntax
 
 ```graphql
@@ -109,8 +113,6 @@ Attribute |  Data Type | Description
 `description` | String | An optional description of the team
 `name` | String! | The display name of the team
 `target_id` | ID | The ID of a node within a company's structure. This ID will be the parent of the created team
-
-You can get the `target_id` with the [`company`]({{page.baseurl}}/graphql/queries/company.html) query.
 
 ## Output attributes
 
