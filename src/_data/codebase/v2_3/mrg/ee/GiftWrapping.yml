@@ -1,0 +1,10 @@
+---
+title: Magento_GiftWrapping
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/GiftWrapping/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  Magento\GiftWrapping module  provides functionality that allows customer to add gift wrapping to the items purchased
+  from the store as gifts and charge it individually. Magento\GiftWrapping module extends functionality of gift
+  messages by combining gift messages with gift wrapping functionality

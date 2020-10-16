@@ -197,6 +197,13 @@ The UI component `dev_grid_category_listing` must be defined separately in a fil
          <label translate="true">Name</label>
       </settings>
     </column>
+    <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+      <settings>
+        <filter>dateRange</filter>
+        <dataType>date</dataType>
+        <label translate="true">Created</label>
+      </settings>
+    </column>
     <actionsColumn name="actions" class="Dev\Grid\Ui\Component\Category\Listing\Column\Actions" sortOrder="200">
        <argument name="data" xsi:type="array">
           <item name="config" xsi:type="array">

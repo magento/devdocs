@@ -46,36 +46,39 @@ Perform the following actions:
 1. Decode the message using topic name taken from the `\Magento\Framework\MessageQueue\ConsumerConfigurationInterface`.
 1. Invoke callback  `Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
 
-## Override topic configuration
+## Change message queue from MySQL to AMQP
 
 The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.
 
 ```php
 'queue' => [
     'topics' => [
-        'customer.created' => [
-            'schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'response_schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'publisher' = 'default-rabitmq'
+        'product_action_attribute.update' => [
+            'publisher' => 'amqp-magento'
+        ]
+    ],
+    'config' => [
+        'publishers' => [
+            'product_action_attribute.update' => [
+                'connections' => [
+                    'amqp' => [
+                        'name' => 'amqp',
+                        'exchange' => 'magento',
+                        'disabled' => false
+                    ],
+                    'db' => [
+                        'name' => 'db',
+                        'disabled' => true
+                    ]
+                ]
+            ]
+        ]
+    ],
+    'consumers' => [
+        'product_action_attribute.update' => [
+            'connection' => 'amqp',
         ],
-        'order.created' => [
-            'schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'response_schema' => [
-                'schema_type' => 'object',
-                'schema_value' => 'string'
-            ],
-            'publisher' = 'default-rabitmq'
-        ],
-     ],
+    ],
 ],
 ```
 
