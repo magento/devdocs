@@ -46,9 +46,10 @@ Specify one or more of the following HTTP headers in your web API calls:
 
 HTTP header | Description | Syntax
 --- | --- | ---
-`Authorization` | Required. Specifies the authentication token that proves you as the owner of a Magento account. You specify the token in the `Authorization` request header with the `Bearer` HTTP authorization scheme. | `Authorization: Bearer <TOKEN>` <br/><br/>`<TOKEN>` is the authentication token returned by the Magento token service. See [Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html).
+`Authorization` | Required, except for calls made on behalf of a guest. Specifies the authentication token that proves you as the owner of a Magento account. You specify the token in the `Authorization` request header with the `Bearer` HTTP authorization scheme. | `Authorization: Bearer <TOKEN>` <br/><br/>`<TOKEN>` is the authentication token returned by the Magento token service. See [Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html).
 `Accept` | Optional. Specifies the format of the response body. Default is `JSON`. | `Accept: application/<FORMAT>` <br/><br/>`<FORMAT>` is either `JSON` or `XML`.
 `Content-Type` | Required for operations with a request body. Specifies the format of the request body. | `Content-Type:application/<FORMAT>` <br/><br/>`<FORMAT>` is either `JSON` or `XML`.
+`X-Captcha` | A shopper-entered CAPTCHA value. It is required when a shopper enters a CAPTCHA value on the frontend, unless an integration token is provided. Forms requiring CAPTCHA values are configured at **Stores** > **Configuration** > **Customers** > **Customer Configuration** > **CAPTCHA** > **Forms**. | String
 
 ### Call payload {#payload}
 
