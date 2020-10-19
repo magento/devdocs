@@ -1,7 +1,7 @@
 ---
 title: Magento_SharedCatalog
 source_repo: magento2b2b
-release: 1.2.0
+release: 1.3.0
 github_path: app/code/Magento/SharedCatalog/README.md
 last_modified_at: '2019-09-24 19:57:14 -0500'
 content: "## Overview\n\nThe Magento_SharedCatalog modules defines the visibility
