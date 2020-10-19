@@ -40,7 +40,7 @@ You can get details of the advantages and disadvantages of RDB and AOF on the [R
 RDB (Redis Database File) snapshots store the complete database in a dump file after a given time, when a minimum number of keys have changed since the last save.
 This can be configured with the `save` setting inside `redis.conf`.
 
-AOF (Append Only File) stores each write operation send to redis in a journal file. This file ẃill be read by Redis on restart to restore the the original dataset.
+AOF (Append Only File) stores each write operation sent to Redis in a journal file. This file ẃill be read by Redis on restart to restore the original dataset.
 
 It's possible, to enable both RDB ands AOF the same time.
 
