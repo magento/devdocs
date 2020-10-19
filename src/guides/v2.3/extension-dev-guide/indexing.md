@@ -84,8 +84,8 @@ The following figure shows the logic for partial reindexing.
 
 Depending on whether an index data is up to date, an indexer status value is one of the following :
 
--  Database Status : Seen when viewing the SQL table `indexer_state`.
--  Admin Status : Seen when viewing the indexer grid in Magento Admin or when running the index status from CLI.
+*  Database Status : Seen when viewing the SQL table `indexer_state`.
+*  Admin Status : Seen when viewing the indexer grid in Magento Admin or when running the index status from CLI.
 
 Database Status|Admin Status|Description
 valid|Ready|data is synchronized, no reindex required
