@@ -35,7 +35,7 @@ Depending on your installation, you can usually find your Redis configuration at
 To optimize your Redis instance to your needs, you get best results when using a dedicated instance for each sessions, Magento cache and FPC.
 
 For sessions, it's recommended to enable persistence. This can either be done by regular RDB snapshots or by using the AOF persistence logs.
-You can get the details advantages and disadvantages on the [Redis Persistence documentation](https://redis.io/topics/persistence).
+You can get details of the advantages and disadvantages of RDB and AOF on the [Redis Persistence documentation](https://redis.io/topics/persistence).
 
 For the cache instance, you should make sure, the instance is set up big enough to store your whole Magento cache in it.
 The required size depends on different factors (like number of products and store views) but the required size of the file system cache gives you the order of
