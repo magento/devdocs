@@ -37,6 +37,13 @@ To optimize your Redis instance to your needs, you get best results when using a
 For sessions, it's recommended to enable persistence. This can either be done by regular RDB snapshots or by using the AOF persistence logs.
 You can get details of the advantages and disadvantages of RDB and AOF on the [Redis Persistence documentation](https://redis.io/topics/persistence).
 
+RDB (Redis Database File) snapshots store the complete database in a dump file after a given time, when a minimum number of keys have changed since the last save.
+This can be configured with the `save` setting inside `redis.conf`.
+
+AOF (Append Only File) stores each write operation send to redis in a journal file. This file ẃill be read by Redis on restart to restore the the original dataset.
+
+It's possible, to enable both RDB ands AOF the same time.
+
 For the cache instance, you should make sure the instance is set up to be large enough to store your whole Magento cache.
 The required size depends on different factors (like number of products and store views) but the required size of the file system cache gives you the order of
 magnitude. Persistence is not required here as the Magento cache can be restored. See also [Redis cache guide](https://redis.io/topics/lru-cache).
