@@ -65,6 +65,9 @@ pages:
         - label: Retrieve filtered search responses
           url: /rest/retrieve-filtered-responses.html
 
+        - label: Protected endpoints
+          url: /rest/protected-endpoints.html
+
         - label: Restricting access to anonymous web APIs
           url: /rest/anonymous-api-security.html
 
