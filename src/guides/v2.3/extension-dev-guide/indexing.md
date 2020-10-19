@@ -82,15 +82,15 @@ The following figure shows the logic for partial reindexing.
 
 ### Indexer status {#m2devgde-indexing-status}
 
-Depending on whether an index data is up to date, an indexer status value is one of the following :
-
-*  Database Status : Seen when viewing the SQL table `indexer_state`.
-*  Admin Status : Seen when viewing the indexer grid in Magento Admin or when running the index status from CLI.
+Depending on whether index data is up to date, an indexer status value is one of the following :
 
 Database Status|Admin Status|Description
-valid|Ready|data is synchronized, no reindex required
-invalid|Reindex Required|the original data was changed, the index should be updated
-working|Processing|indexing is in progress
+`valid`|Ready|Data is synchronized, no reindex required
+`invalid`|Reindex Required|The original data was changed, the index should be updated
+`working`|Processing|Indexing is in progress
+
+The database status can be seen when viewing the SQL table `indexer_state`.
+The admin status can be seen when viewing the indexer grid in Magento Admin or when running the index status from the CLI.
 
 The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the [Admin](https://glossary.magento.com/admin) panel in **System >** Tools **> Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
