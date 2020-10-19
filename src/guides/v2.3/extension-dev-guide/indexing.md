@@ -82,7 +82,7 @@ The following figure shows the logic for partial reindexing.
 
 ### Indexer status {#m2devgde-indexing-status}
 
-Depending on whether index data is up to date, an indexer status value is one of the following :
+Depending on whether index data is up to date, an indexer status value is one of the following:
 
 Database Status|Admin Status|Description
 `valid`|Ready|Data is synchronized, no reindex required
