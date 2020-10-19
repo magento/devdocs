@@ -42,7 +42,7 @@ This can be configured with the `save` setting inside `redis.conf`.
 
 AOF (Append Only File) stores each write operation sent to Redis in a journal file. This file ẃill be read by Redis on restart to restore the original dataset.
 
-It's possible, to enable both RDB ands AOF the same time.
+It's possible to enable both RDB and AOF at the same time.
 
 For the cache instance, you should make sure the instance is set up to be large enough to store your whole Magento cache.
 The required size depends on different factors (like number of products and store views) but the required size of the file system cache gives you the order of
