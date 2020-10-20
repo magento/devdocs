@@ -31,7 +31,7 @@ For detailed information of the process, see [Starter Develop and Deploy Workflo
 
 ## Pro plan deployment {#pro}
 
-Pro comes with a large Integration environment with eight active branches and environments including `master`, Staging, and Production. When you create your project, code is ready to branch, develop, and push for building and deploying your site. Although the Integration environment can have many branches, Staging and Production have only one branch: the deployed Git `master`.
+Pro comes with a large Integration environment with two active branches and environments including `master`, Staging, and Production. When you create your project, code is ready to branch, develop, and push for building and deploying your site. Although the Integration environment can have many branches, Staging and Production have only one branch: the deployed Git `master`.
 
 1. Create development branches from the Integration `master` branch.
 1. Develop on local: custom modules, Magento extensions, 3rd party integrations, and configurations.

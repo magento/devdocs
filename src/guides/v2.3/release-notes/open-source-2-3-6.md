@@ -685,6 +685,8 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 **Issue**: Merchants upgrading their stores from 2.3.5-p2 to 2.3.6 will note that two module versions downgrade. These messages reflect the incomplete delivery of two security fixes to the 2.3.x quarterly patches. These fixes for low severity issues are included in Magento 2.3.5-p2, 2.4.1, and 2.4.0-p1 but are missing from Magento 2.3.6. No hot fixes will be provided. These fixes will be merged along with the other security fixes in Magento 2.3.6-p1, which is scheduled for Q12021.
 
+**Issue**:  The **Submit** button on the Create New Account page remains disabled if a shopper has entered invalid data. This prevents shoppers from re-attempting to create an account after making an error.  [GitHub-30513](https://github.com/magento/magento2/issues/30513)
+
 **Issue**: Merchants cannot log in to dotdigital from the Admin when dotdigital is enabled. See the [It's impossible to login in the dotdigital via admin panel when dotdigital account is enabled](https://support.magento.com/hc/en-us/articles/360050092291) Knowledge Base article.<!--- BUNDLE-2704-->
 
 ### System requirements
