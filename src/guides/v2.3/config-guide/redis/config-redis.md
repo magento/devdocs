@@ -34,11 +34,14 @@ Depending on your installation, you can usually find your Redis configuration in
 
 To optimize the Redis instance for your requirements, you get best results by using a dedicated instance for each session, Magento cache and FPC.
 
-For sessions, we recommend that you enable persistence to copy Redis data to disk using either of the following persistence options: regular Redis Database Backup (RDB) snapshots, or Append Only File (AOF) persistence logs.
+For sessions, we recommend that you enable persistence to copy Redis data to disk using either of the following persistence options: regular Redis Database 
+Backup (RDB) snapshots, or Append Only File (AOF) persistence logs.
 
--  RDB (Redis Database Backup) snapshots store the complete database in a dump file after a given time, when a minimum number of keys have changed since the last save. Use the `save` setting inside the `redis.conf` file to configure this setting.
+* RDB (Redis Database Backup) snapshots store the complete database in a dump file after a given time, when a minimum number of keys have changed since the 
+last save. Use the `save` setting inside the `redis.conf` file to configure this setting.
 
--  AOF (Append Only File) stores each write operation sent to Redis in a journal file. Redis reads this file on restart only and uses it to restore the original dataset.
+* AOF (Append Only File) stores each write operation sent to Redis in a journal file. Redis reads this file on restart only and uses it to restore the 
+original dataset.
 
 You can also enable both the RDB and AOF options at the same time. For additional details including the advantages and disadvantages of the persistence options, see the [Redis Persistence documentation](https://redis.io/topics/persistence).
 
