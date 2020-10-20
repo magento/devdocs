@@ -1,4 +1,3 @@
-
 ---
 group: release-notes
 title: Magento Commerce 2.3.6 Release Notes
