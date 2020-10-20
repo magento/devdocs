@@ -30,7 +30,7 @@ Installing and configuring the Redis software is beyond the scope of this guide.
 
 ## Set up redis configuration {#config-redis-setup}
 
-Depending on your installation, you can usually find your Redis configuration at /etc/redis/redis.conf or /etc/redis/`port`.conf
+Depending on your installation, you can usually find your Redis configuration in one of the following files: `/etc/redis/redis.conf` or `/etc/redis/<port>.conf`
 
 To optimize the Redis instance for your requirements, you get best results by using a dedicated instance for each session, Magento cache and FPC.
 
