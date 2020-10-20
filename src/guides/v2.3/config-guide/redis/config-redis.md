@@ -32,7 +32,7 @@ Installing and configuring the Redis software is beyond the scope of this guide.
 
 Depending on your installation, you can usually find your Redis configuration at /etc/redis/redis.conf or /etc/redis/`port`.conf
 
-To optimize your Redis instance to your needs, you get best results when using a dedicated instance for each sessions, Magento cache and FPC.
+To optimize the Redis instance for your requirements, you get best results by using a dedicated instance for each session, Magento cache and FPC.
 
 For sessions, it's recommended to enable persistence. This can either be done by regular RDB snapshots or by using the AOF persistence logs.
 You can get details of the advantages and disadvantages of RDB and AOF on the [Redis Persistence documentation](https://redis.io/topics/persistence).
