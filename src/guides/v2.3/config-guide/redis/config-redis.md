@@ -34,15 +34,13 @@ Depending on your installation, you can usually find your Redis configuration at
 
 To optimize the Redis instance for your requirements, you get best results by using a dedicated instance for each session, Magento cache and FPC.
 
-For sessions, it's recommended to enable persistence. This can either be done by regular RDB snapshots or by using the AOF persistence logs.
-You can get details of the advantages and disadvantages of RDB and AOF on the [Redis Persistence documentation](https://redis.io/topics/persistence).
+For sessions, we recommend that you enable persistence to copy Redis data to disk using either of the following persistence options: regular Redis Database Backup (RDB) snapshots, or Append Only File (AOF) persistence logs.
 
-RDB (Redis Database Backup) snapshots store the complete database in a dump file after a given time, when a minimum number of keys have changed since the last save.
-This can be configured with the `save` setting inside `redis.conf`.
+-  RDB (Redis Database Backup) snapshots store the complete database in a dump file after a given time, when a minimum number of keys have changed since the last save. Use the `save` setting inside the `redis.conf` file to configure this setting.
 
-AOF (Append Only File) stores each write operation sent to Redis in a journal file. This file ẃill be read by Redis on restart to restore the original dataset.
+-  AOF (Append Only File) stores each write operation sent to Redis in a journal file. Redis reads this file on restart only and uses it to restore the original dataset.
 
-It's possible to enable both RDB and AOF at the same time.
+You can also enable both the RDB and AOF options at the same time. For additional details including the advantages and disadvantages of the persistence options, see the [Redis Persistence documentation](https://redis.io/topics/persistence).
 
 For the cache instance, set up the instance so that it is large enough to store your entire Magento cache.
 Size requirements depend on different factors like the number of products and store views, but the size requirement for the the file system cache gives you the order of magnitude. Persistence is not required for the cache instance because the Magento cache can be restored. See also [Redis cache guide](https://redis.io/topics/lru-cache).
