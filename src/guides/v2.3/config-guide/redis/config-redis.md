@@ -57,7 +57,7 @@ lazyfree-lazy-expire yes
 lazyfree-lazy-server-del yes
 replica-lazy-flush yes
 ```
-From redis 6.x onwards, you can also set
+On Redis 6.x and later, you can also add the following value:
 
 ```ini
 lazyfree-lazy-user-del yes
