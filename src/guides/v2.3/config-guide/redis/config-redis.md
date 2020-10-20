@@ -42,7 +42,7 @@ For sessions, we recommend that you enable persistence to copy Redis data to dis
 You can also enable both the RDB and AOF options at the same time. For additional details including the advantages and disadvantages of the persistence options, see the [Redis Persistence documentation](https://redis.io/topics/persistence).
 
 For the cache instance, set up the instance so that it is large enough to store your entire Magento cache.
-Size requirements depend on different factors like the number of products and store views, but the size requirement for the the file system cache gives you the order of magnitude. Persistence is not required for the cache instance because the Magento cache can be restored. See also [Redis cache guide](https://redis.io/topics/lru-cache).
+Size requirements depend on different factors like the number of products and store views. When you have your Magento Cache previously put into your file system, you can check out the size of the cache folder for a good starting point to set up your Redis instance. For example, when you have a 5 GB 'var/cache' folder your Redis instance should have a similar size available. Persistence is not required for the cache instance because the Magento cache can be restored. See also [Redis cache guide](https://redis.io/topics/lru-cache).
 
 For performance tuning, you can also enable the following settings for asynchronous deletion. These settings do not change the behavior of Redis. See also [redis news](http://antirez.com/news/93) for details about asynchronous deletion.
 
