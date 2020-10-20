@@ -29,7 +29,7 @@ After you enable and verify that Fastly works with the default settings, you can
 
 ## Get Fastly credentials {#cloud-fastly-creds}
 
-During project provisioning, Magento adds your project to the [Fastly service account]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-service-account-and-credentials) for {{ site.data.var.ece }} and adds the Fastly account credentials to the Staging and Production environment configuration.
+During project provisioning, Magento adds your project to the [Fastly service account]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-service-account-and-credentials) for {{ site.data.var.ece }} and creates Fastly account credentials for the Starter `master` and Pro Staging and Production environments. Each environment has unique credentials.
 
 You need the Fastly credentials to configure Fastly CDN services from the Magento Admin UI and to submit Fastly API requests.
 
@@ -41,7 +41,7 @@ Use the following methods to find and save the Fastly service ID and API token f
 {:.procedure}
 To view your Fastly credentials:
 
--  IaaS-mounted shared directory—On Pro projects, use SSH to connect to your server and get the Fastly credentials from the `/mnt/shared/fastly_tokens.txt` file.
+-  IaaS-mounted shared directory—On Pro projects, use SSH to connect to your server and get the Fastly credentials from the `/mnt/shared/fastly_tokens.txt` file. Staging and Production environments have unique credentials. You must get the credentials for each environment.
 
 -  Local workspace—From the command line, use the Magento Cloud CLI to [list and review]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html) Fastly environment variables.
 
