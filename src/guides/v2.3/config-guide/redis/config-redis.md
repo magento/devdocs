@@ -46,7 +46,7 @@ For the cache instance, set up the instance so that it is large enough to store 
 Size requirements depend on different factors like the number of products and store views, but the size requirement for the the file system cache gives you the order of magnitude. Persistence is not required for the cache instance because the Magento cache can be restored. See also [Redis cache guide](https://redis.io/topics/lru-cache).
 
 For performance tuning, you can also enable the following settings for asynchronous deletion. These settings do not change the behavior of Redis.
-[redis news](http://antirez.com/news/93).
+See also [redis news](http://antirez.com/news/93) for details about asynchronous deletion.
 
 ```ini
 lazyfree-lazy-eviction yes
