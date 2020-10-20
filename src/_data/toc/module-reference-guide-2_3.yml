@@ -3,7 +3,7 @@ pages:
   - label: Introduction
     url: /mrg/intro.html
   
-  - label: Open Source (v2.3.5)
+  - label: Open Source (v2.3.6)
     include_versions: ["2.3"]
     children:
     
@@ -102,6 +102,9 @@ pages:
     
       - label: CatalogRuleConfigurable
         url: /mrg/ce/CatalogRuleConfigurable.html
+    
+      - label: CatalogRuleGraphQl
+        url: /mrg/ce/CatalogRuleGraphQl.html
     
       - label: CatalogSearch
         url: /mrg/ce/CatalogSearch.html
@@ -506,12 +509,18 @@ pages:
         url: /mrg/ce/WishlistGraphQl.html
     
   
-  - label: Commerce (v2.3.5)
+  - label: Commerce (v2.3.6)
     include_versions: ["2.3"]
     children:
     
       - label: AdminGws
         url: /mrg/ee/AdminGws.html
+    
+      - label: AdminGwsConfigurableProduct
+        url: /mrg/ee/AdminGwsConfigurableProduct.html
+    
+      - label: AdminGwsStaging
+        url: /mrg/ee/AdminGwsStaging.html
     
       - label: AdvancedCatalog
         url: /mrg/ee/AdvancedCatalog.html
@@ -760,7 +769,7 @@ pages:
         url: /mrg/ee/Worldpay.html
     
   
-  - label: B2B (v1.1.5)
+  - label: B2B (v1.1.6)
     include_versions: ["2.3"]
     children:
     
@@ -831,7 +840,7 @@ pages:
         url: /mrg/b2b/SharedCatalog.html
     
   
-  - label: Inventory Management (v1.1.5)
+  - label: Inventory Management (v1.1.6)
     include_versions: ["2.3"]
     children:
     
