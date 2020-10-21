@@ -31,7 +31,7 @@ The following example creates the `Frequently Ordered Products` requisition list
 
 **Request:**
 
-``` graphql
+```graphql
 mutation {
   createRequisitionList(
     name: "Frequently Ordered Products",
