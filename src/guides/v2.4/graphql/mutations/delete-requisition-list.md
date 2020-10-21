@@ -26,7 +26,7 @@ mutation {
 
 ## Example usage
 
-The following example deletes the requisition list with uid 4.
+The following example deletes the requisition list with `uid` 4.
 
 **Request:**
 
