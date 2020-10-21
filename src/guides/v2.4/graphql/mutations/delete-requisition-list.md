@@ -66,7 +66,7 @@ The `deleteRequisitionListOutput` object returns the `uid` of the new requisitio
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`result` | Boolean | Requisition list deleted or not
+`result` | Boolean | Indicates whether the requisition list was deleted
 
 ## Related topics
 
