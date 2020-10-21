@@ -82,7 +82,7 @@ web:
             # The public directory of the app, relative to its root.
 ```
 
-You can specify the following key values for each `locations` block:
+You can fine-tune your `locations` configuration using the following key values for each `locations` block:
 
 Attribute | Description
 --------- | -----------
