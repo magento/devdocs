@@ -32,7 +32,7 @@ The following example renames the `Frequently Ordered Products` requisition list
 
 **Request:**
 
-``` graphql
+```graphql
 mutation {
   renameRequisitionList(
     uid: 4
