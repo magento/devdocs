@@ -81,7 +81,6 @@ Attribute |  Data Type | Description
 `name` | String! | The requisition list name
 `uid` | ID! | The ID of the new requisition list
 
-
 ## Related topics
 
 *  [createRequisitionList mutation]({{page.baseurl}}/graphql/mutations/create-requisition-list.html)
