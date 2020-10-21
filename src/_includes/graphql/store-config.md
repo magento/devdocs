@@ -87,7 +87,7 @@ Attribute | Data Type | Description | Default or example value
 `title_suffix` | String | A suffix that appears after the title to create a two-or three part title | null
 `website_id` | Integer | The ID number assigned to the parent website | `1`
 `weight_unit` | String | The weight unit for products | `lbs`, `kgs`, or similar
-`welcome` | String | Text that appears in the header of the page and includes the name of customers who are logged in | Default welcome msg
+`welcome` | String | Text that appears in the header of the page and includes the name of customers who are logged in | Default welcome msg!
 
 ### SendFriendConfiguration attributes {#SendFriendConfiguration}
 
