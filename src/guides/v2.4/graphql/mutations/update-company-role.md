@@ -147,7 +147,7 @@ mutation {
 You can change or add permissions to the company role using "permissions" attribute.
 
 {:.bs-callout-warning}
-Pay attention, to add new or change current permissions, you also must transmit the current permissions. You must transmit all necessary permissions every time you use the "permissions" attribute.
+Pay attention, to add new or change current permissions, you also must send the current permissions. You must send all necessary permissions every time you use the "permissions" attribute. The company role permissions are rewrited completely from the "permissions" attribute.
 
 ## Input attributes
 
@@ -161,7 +161,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `id` | ID! | The encoded company role ID for updating
 `name` | String | Role name.
-`permissions` | [String] | A list of Role permission resources. Required array value for a field with strings as values of array.
+`permissions` | [String!] | A list of role permission resources.
 
 ### Available permissions
 

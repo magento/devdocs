@@ -1,4 +1,4 @@
-Magento 2 looks for available company permissions information for each module in that module's `etc/company_acl.xml` file. Depending on the enables the modules of your system, you might have the following permissions by Magento modules.
+Magento 2 collects information about available company permissions from `etc/company_acl.xml` file of every module. You may use the following built-in permissions for restricting access on the company role level.
 
 #### The module `Magento_Company`:
 

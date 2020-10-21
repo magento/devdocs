@@ -61,3 +61,7 @@ Attribute |  Data Type | Description
 ## Output attributes
 
 The `deleteCompanyRole` mutation returns a Boolean value that indicates whether the operation was successful.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`success` | Boolean | A value of `true` indicates the company role has been deleted successfully, otherwise a value returns `false`
