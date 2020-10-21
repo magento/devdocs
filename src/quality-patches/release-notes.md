@@ -16,8 +16,26 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 -  {:.bug}Known issues -->
 
 {:.bs-callout-info}
-See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) for instructions on applying patches to your Magento projects.
+See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
+
+## v1.0.7
+
+-  **MDVA-30972** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where custom order status was changed to Processing after partial shipment creation using WebApi.
+-  **MDVA-30428** _(for Magento `>=2.3.4 <2.3.5`)_—Fixes the issue where customers cannot add a product to wishlist if this product is assigned to a custom inventory source.
+-  **MDVA-30594** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where an order with multiple addresses could not be saved during checkout when FPT is configured.
+-  **MDVA-29148** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue when creating a product via an API call, the product custom attribute of "\Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend" (like Multiselect) type does not use its default value if no value was provided in the payload.
+-  **MDVA-30837** _(for Magento `>=2.3.1 <2.3.5`)_—Added a configuration setting "Include Tax to Amount": Yes/No in Free Shipping method configuration. When "Include Tax to Amount" is set to Yes Minimum Order Amount is calculated as = Subtotal + Tax. When "Include Tax to Amount" is set to No Minimum Order Amount is calculated as = Subtotal
+-  **MDVA-25028** _(for Magento `>=2.3.2 <2.3.3 || >=2.3.5 <2.3.6`)_—Fixes the issue when orders that are placed using PayPal Payflow Pro are not set to Suspected Fraud status when fraud filters are triggered.
+-  **MDVA-31224** _(for Magento `>=2.3.3 <2.3.5`)_—Improves the performance of the catalog_product_price re-index operation for bundle products.
+-  **MDVA-31321** _(for Magento `>=2.3.2 <2.3.5`)_—Fixes a blank page (error) when "Show All" is selected. Elasticsearch returns large list of product ids. In this scenario the order by clause gets converted to an incorrect SQL format.
+-  **MDVA-30815** _(for Magento `>=2.3.2 <2.3.4`)_—Fixes the issue where when you changed how many search results should be displayed on the search results page, Magento displayed a blank page. Elasticsearch now correctly displays results from category pages when you change the number of search results viewed per page.
+-  **MDVA-30782** _(for Magento `>=2.3.5 <2.4.2`)_—Fixes the issue where Dynamic Block is displayed regardless of cart rule.
+-  **MDVA-31021** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where performance issues exists in module-catalog-import-export/Model/Import/Product/Option.php. If there are more than ~100k records in catalog_product_option table, a new CSV with single product takes less than 10 sec to validate.
+-  **MDVA-31007** _(for Magento `>=2.3.5 <2.3.6 || >=2.4.0 <2.4.1`)_—Fixes the issue where custom address attributes are not correctly displayed in the order details page in the my account area and in the backend.
+-  **MDVA-29389** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue with Advanced Reporting where the analytics_collect_data cronjob says: "Port must be configured within host parameter (like localhost:3306)".
+-  **MDVA-31343** _(for Magento `>=2.3.4 <2.3.6`)_—Fixes the issue with the removed body class "page-layout-category-full-width" when a category is scheduled.
+-  **MDVA-30945** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where you receive a fatal error message when updating carts "Call to a member function getValue() on null in module-configurable-product CartItemProcessor.php".
 
 ## v1.0.6
 

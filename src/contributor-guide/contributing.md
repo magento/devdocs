@@ -206,7 +206,11 @@ When you want to verify an issue or pull request, use the `instance` command to 
 @magento give me {$version} instance
 ```
 
-For `version`, the currently supported values are latest [version tags](https://github.com/magento/magento2/tags) and the 2.4-develop branch.
+Replace `{$version}` with the version tag for the version required. The currently supported values are the latest [version tags](https://github.com/magento/magento2/tags) and the 2.4-develop branch. For example:
+
+```text
+@magento give me 2.4.0 instance
+```
 
 **Actions:** The following actions complete the command:
 
@@ -247,6 +251,84 @@ Admins access will be shared via comment on GitHub.
 -  [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers)
 -  Magento EngCom Team
 -  [Contributor]({{ site.baseurl }}/contributor-guide/contributors.html)
+
+### Customize deployed instances {#customize-deployed-instances}
+
+In some cases a custom environment is required to test an issue or a pull request. You can create a custom environment by appending custom configuration settings to the PR comment to [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+#### Magento edition
+
+Append the following text to your PR comment to specify the Magento Commerce edition to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+```text
+with edition {$edition}
+```
+
+Replace `{$edition}` with either of the following values:
+
+-  `ee` deploys the Magento Commerce edition
+-  `b2b` deploys Magento Commerce with B2B modules.
+
+For example, append the following text to the PR comment to deploy a {{site.data.var.ee}} instance with B2B modules:
+
+```text
+with edition b2b
+```
+
+#### Environment
+
+Append the following text to your PR comment to specify the version for applications and services to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+```text
+with env PHP {$phpVersion}, search-engine ElasticSearch {$searchEngineVersion}, database {$dbEngine} {$dbEngineVersion}
+```
+
+Replace variables in the command with the following values as needed for your environment:
+
+-  `{$phpVersion}`–Specify the PHP version for the instance.
+
+-  `{$searchEngineVersion}`–Specify the Elasticsearch version for the instance.
+
+-  `{$dbEngine}`–Specify the database type, either `MariaDB` or `MySQL`.
+
+-  `{$dbEngineVersion}`–Specify the version of the database engine for the instance.
+
+For example, append the following text to the PR comment to deploy an instance with PHP 7.4, Elasticsearch version 7, and MariaDB version 10.4.
+
+```text
+with env PHP 7.4, search-engine Elasticsearch 7, database MariaDB 10.4
+```
+
+{:.bs-callout-info}
+We generally recommend that you deploy the default environment. Use the custom configuration options only when you require a special configuration to test specfic use cases.
+
+#### Add extensions
+
+Append the following text to your PR comment to specify extensions to add to an instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+```text
+with extensions {$extensionRepo}
+```
+
+Replace `{$extensionRepo}` with one or more extension repositories to include when compiling your instance.  If you specify multiple repositories, use a comma after each repository. You can specify a specific branch in a repository using the pattern: `org/repo-name:branch-name`. For example:
+
+```text
+with extensions magento/security-package:1.0-develop, magento/security-package-ee
+```
+
+#### Remove extensions
+
+Append the following text to your PR comment to specify extensions that you want to remove from the instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+```text
+without extensions {$extensionRepo}
+```
+
+Replace `{$extensionRepo}` with one or more extension repositories to remove before compiling your instance. If you specify multiple repositories, use a comma after each repository. For example:
+
+```text
+without extensions magento/adobe-stock-integration
+```
 
 ### Combine multiple pull requests {#combine-pr}
 

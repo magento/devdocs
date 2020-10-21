@@ -278,7 +278,7 @@ Attribute | Data type | Description
 
 ### ProductInterface attributes {#ProductInterface}
 
-The `items` object contains information about each product that match the search criteria. [ProductInterface]({{page.baseurl}}/graphql/product/product-interface.html) describes the possible contents of this object.
+The `items` object contains information about each product that match the search criteria. [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html) describes the possible contents of this object.
 
 ### SearchResultPageInfo attributes {#SearchResultPageInfo}
 

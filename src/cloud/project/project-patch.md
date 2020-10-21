@@ -14,7 +14,7 @@ functional_areas:
 Both packages improve the integration of all {{site.data.var.ee}} versions with Cloud environments and support quick delivery of critical, optional, and custom fixes. You can use these packages to apply, revert, and view general information about all individual patches that are available for Magento.
 
 {:.bs-callout-tip}
-You can use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) and [{{ site.data.var.mcp-prod }}](#standalone) packages as stand-alone packages for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects. We recommend using the Magento Quality Patches package for non-Cloud projects.
+You can use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) and [{{ site.data.var.mcp-prod }}](#standalone) packages as stand-alone packages for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects. We recommend using the Magento Quality Patches package for non-Cloud projects.
 
 When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses {{ site.data.var.mcp-package }} and `magento/quality-patches` to check for pending patches and applies them automatically in the following order:
 
@@ -82,20 +82,17 @@ Magento 2 Enterprise Edition, version 2.3.5.0
 The status table contains the following types of information:
 
 -  **Type**:
-
    -  `Optional`—All patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations. For {{ site.data.var.ece }}, all MQP patches are optional.
    -  `Required`—All patches from the {{ site.data.var.mcp-prod }} package are required for Cloud customers.
    -  `Deprecated`—The individual patch is marked as deprecated by Magento and we recommend reverting it if you have applied it. After you revert a deprecated patch, it will no longer be displayed in the status table.
    -  `Custom`—All patches from the 'm2-hotfixes' directory.
 
 -  **Status**:
-
    -  `Applied`—The patch has been applied.
    -  `Not applied`—The patch has not been applied.
    -  `N/A`—The status of the patch cannot be defined due to conflicts.
 
 -  **Details**:
-
    -  `Affected components`—The list of affected Magento modules.
    -  `Required patches`—The list of required patches (dependencies).
    -  `Recommended replacement`—The patch that is a recommended replacement for a deprecated patch.
@@ -124,7 +121,6 @@ To apply individual patches in a local development environment:
    ```
 
    The `ece-patches apply` command applies patches in the following order:
-
    -  Required patches
    -  Optional individual patches
    -  Custom patches from the `/m2-hotfixes` directory
@@ -205,7 +201,7 @@ To apply and test a custom patch on a Cloud environment:
 
 ## Apply patches to a non-Cloud project {#standalone}
 
-Use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) package for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
+Use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) package for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
 
 ## Revert a patch in a local environment
 
