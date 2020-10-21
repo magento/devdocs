@@ -2,6 +2,8 @@
 group: graphql
 title: createRequisitionList mutation
 b2b_only: true
+contributor_name: Zilker Technology
+contributor_link: https://www.ztech.io/
 ---
 The `createRequisitionList` mutation creates a requisition list for the logged in customer.
 
@@ -9,8 +11,6 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 
 {:.bs-callout-info}
 Use the [`storeConfig` query]({{page.baseurl}}/graphql/queries/store-config.html) with the `btob_website_configuration_requisition_list_active` attribute to determine whether requisition lists are supported.
-
-*  `btob_website_configuration_requisition_list_active`
 
 ## Syntax
 
@@ -41,6 +41,7 @@ mutation {
       uid
       name
       description
+    }
   }
 }
 ```
@@ -67,8 +68,8 @@ The `createRequisitionList` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`name` | String! | The name of the customer's requisition list
 `description`| String | Description of the customer's requisition list
+`name` | String! | The name of the customer's requisition list
 
 ## Output attributes
 
@@ -76,9 +77,9 @@ The `createRequisitionListOutput` object returns the `uid` of the new requisitio
 
 Attribute |  Data Type | Description
 --- | --- | ---
+`description` | String | The requisition list description
 `name` | String! | The requisition list name
 `uid` | ID! | The ID of the new requisition list
-`description` | String | The requisition list description
 
 ## Related topics
 
