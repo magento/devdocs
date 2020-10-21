@@ -6,10 +6,10 @@ redirect_from: /marketplace/sellers/completing-your-extension.html
 
 Before you can submit your extension to Magento Marketplace, the code must be complete, tested, and packaged. For technical information, see the Magento DevDocs for additional technical information for developing extensions and more:
 
--  [PHP Developer Guide]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html)
--  [Best Practices for Extension Developers]({{ site.baseurl }}/guides/v2.3/ext-best-practices/bk-ext-best-practices.html)
--  [Magento Web APIs]({{ site.baseurl }}/guides/v2.3/get-started/bk-get-started-api.html)
--  [Frontend Developer Guide]({{ site.baseurl }}/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html)
+-  [PHP Developer Guide]({{ site.baseurl }}/guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html)
+-  [Best Practices for Extension Developers]({{ site.baseurl }}/guides/v2.4/ext-best-practices/bk-ext-best-practices.html)
+-  [Magento Web APIs]({{ site.baseurl }}/guides/v2.4/get-started/bk-get-started-api.html)
+-  [Frontend Developer Guide]({{ site.baseurl }}/guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html)
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/extension-prep.png){: .zoom}
 _Building and Submitting an Extension_
@@ -19,7 +19,7 @@ Magento Marketplace does not support encrypted extensions at this time.
 
 ## Build your extension
 
-1. Before submitting your extension review, see the [Technical Review Guidelines]({{ site.baseurl }}/marketplace/sellers/technical-review-guidelines.html) and the [Marketing Review Guidelines]({{ site.baseurl }}/marketplace/sellers/marketing-review-guidelines.html).
+1. Before submitting your extension for Marketplace review, see the [Technical Review Guidelines]({{ site.baseurl }}/marketplace/sellers/technical-review-guidelines.html) and the [Marketing Review Guidelines]({{ site.baseurl }}/marketplace/sellers/marketing-review-guidelines.html).
 
 1. Use the [CodeSniffer][1] tool to verify that your code meets Marketplace guidelines.
 
