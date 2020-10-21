@@ -28,7 +28,7 @@ mutation {
 
 ## Example usage
 
-The following example renames the `Frequently Ordered Products` requisition list.
+The following example renames the `Frequently Ordered Products` requisition list and updates its description.
 
 **Request:**
 
