@@ -3,7 +3,7 @@ group: graphql
 title: renameRequisitionList mutation
 b2b_only: true
 ---
-The `renameRequisitionList` mutation rename a requisition list of the logged in customer.
+The `renameRequisitionList` mutation updates the name and, optionally, the description of a requisition list.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
