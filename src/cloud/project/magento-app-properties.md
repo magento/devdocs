@@ -91,7 +91,7 @@ Attribute | Description
 `index` | List the static files to serve your application, such as the `index.html` file. This key expects a collection. This only works if access to the file or files is "allowed" by the `allow` or `rules` key for this location.
 `rules` | Specify overrides for a location. Use a regular expression to match a request. If an incoming request matches the rule, then regular handling of the request is overridden by the keys used in the rule.
 `passthru` | Set the URL used in the event that a static file or PHP file cannot be found. Typically, this URL is the front controller for your applications, such as `/index.php` or `/app.php`.
-`root` | Set the path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
+`root` | Set the path relative to the root of the application that is exposed on the web. The public directory (location "/") for a Cloud project is set to "pub" by default.
 `scripts` | Allow loading scripts in this location. Set the value to `true` to allow scripts.
 
 Our default configuration allows the following:
