@@ -1,0 +1,8 @@
+---
+title: Magento_InventoryRequisitionList
+source_repo: inventory
+release: 1.1.6
+github_path: InventoryRequisitionList/README.md
+last_modified_at: '2019-08-02 00:04:37 -0500'
+content: The Magento_InventoryRequisitionList allows the customer to use the new inventory
+  management (MSI).
