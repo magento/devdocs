@@ -58,7 +58,7 @@ The `deleteRequisitionList` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`uid` | ID! | The ID of the new requisition list
+`uid` | ID! | The ID of the requisition list to delete
 
 ## Output attributes
 
