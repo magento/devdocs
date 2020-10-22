@@ -6,15 +6,13 @@ contributor_link: https://www.atwix.com/
 b2b_only: true
 ---
 
-The createCompanyUser mutation allows an existing company user with the role contained "Magento_Company::users_edit" permission to create a new company user. The specified email address determines how Magento processes the request.
+The `createCompanyUser` mutation allows an existing company user who is assigned a role that contains the `Magento_Company::users_edit` permission to create a new company user. The specified email address determines how Magento processes the request.
 
-If the email address is unique for the website?/store?/store view?, Magento immediately creates the company user.
+-  If the email address is unique for the website?, Magento immediately creates the company user.
 
-If the email address belongs to a customer who is not a company user, Magento sends an invitation to join the company organization to the customer. When the customer accepts the invitation, Magento adds the customer to the company organization.
+-  If the email address belongs to a customer who is not a company user, Magento sends an invitation to join the company organization to the customer. When the customer accepts the invitation, Magento adds the customer to the company organization.
 
-If the email address belongs to an existing company user with the same company, Magento returns the error "A customer with the same email already assigned to company".
-
-If the email address belongs to a customer who is part of another company organization, Magento returns the error "A customer with the same email already assigned to company".
+-  If the email address belongs to a customer who is part of any company organization, Magento returns the error "A customer with the same email already assigned to company".
 
 The `target_id` input attribute allows you to specify which node in the company structure will be the parent node of the company user. If you do not specify a value, the user will be assigned to the top-level (root) node of the company structure.
 
@@ -155,12 +153,12 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `email` | String! | The company user's email address
 `firstname` | String! | The company user's first name
-`lastname` | String! | The company user's last name
 `job_title` | String! | The company user's job title or function
+`lastname` | String! | The company user's last name
 `role_id` | ID! | The role ID to assign to the company user
 `status` | CompanyUserStatusEnum! | Indicates whether the company user is ACTIVE or INACTIVE
-`telephone` | String! | The company user's phone number
 `target_id` | ID | The ID of a node within a company's structure. This ID will be the parent of the created company user
+`telephone` | String! | The company user's phone number
 
 ## Output attributes
 

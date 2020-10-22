@@ -141,11 +141,11 @@ The `CompanyUserUpdateInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id` | ID! | The encoded user ID of the company user to be updated
 `email` | String | The company user's email address
 `firstname` | String | The company user's first name
-`lastname` | String | The company user's last name
+`id` | ID! | The encoded user ID of the company user to be updated
 `job_title` | String | The company user's job title or function
+`lastname` | String | The company user's last name
 `role_id` | ID | The ID of the role assigned to the company user
 `status` | CompanyUserStatusEnum | Indicates whether the company user is ACTIVE or INACTIVE
 `telephone` | String | The company user's phone number
