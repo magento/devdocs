@@ -34,7 +34,7 @@ mutation {
 
 ## Example usage
 
-The following example shows the minimal payload to add a company user. Because a `targit_id` is not specified, Magento places the new company user at the top node of the company structure.
+The following example shows the minimal payload to add a company user. Because a `target_id` is not specified, Magento places the new company user at the top node of the company structure.
 
 **Request:**
 
