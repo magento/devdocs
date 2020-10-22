@@ -8,7 +8,7 @@ b2b_only: true
 
 The `createCompanyUser` mutation allows an existing company user who is assigned a role that contains the `Magento_Company::users_edit` permission to create a new company user. The specified email address determines how Magento processes the request.
 
--  If the email address is unique for the website?, Magento immediately creates the company user.
+-  If the email address is unique for the website, Magento immediately creates the company user.
 
 -  If the email address belongs to a customer who is not a company user, Magento sends an invitation to join the company organization to the customer. When the customer accepts the invitation, Magento adds the customer to the company organization.
 
@@ -31,6 +31,8 @@ mutation {
 ```
 
 ## Example usage
+
+### Create a company user (minimal payload)
 
 The following example shows the minimal payload to add a company user. Because a `target_id` is not specified, Magento places the new company user at the top node of the company structure.
 
@@ -71,6 +73,7 @@ mutation {
   }
 }
 ```
+### Create a company user in a specific location in the company structure
 
 This example creates a new company user of the parent company team specified in the `target_id` field.
 
