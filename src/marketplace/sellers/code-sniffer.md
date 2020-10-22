@@ -12,7 +12,7 @@ Code Sniffer is a static test that allows to detect violations of the [Magento C
 It is typical for Magento project to use source code from several vendors. By adopting [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) we solve two problems:
 
 1. Identify common coding errors and pitfalls on early stage before code execution.
-2. Standardize and unify the way how code is written so it may be easily read by engineers from different organizations.
+1. Standardize and unify the way how code is written so it may be easily read by engineers from different organizations.
 
 ## When we test?
 
@@ -37,7 +37,7 @@ If PHPCS finds any errors, the provided extension's version is rejected.
 
 ## How read an error report?
 
-All detected errors are self-explained and has reference to location in a code where they were detected. 
+All detected errors are self-explained and has reference to location in a code where they were detected.
 
 Magento Coding Standard constantly evolves so please reference to [its implementation](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/ruleset.xml) for up-to-date list of implemented rules.
 

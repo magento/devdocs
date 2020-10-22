@@ -14,7 +14,7 @@ Technical review begins right at the moment of uploading extension package at [D
 
 ### Extension Package Verification
 
-The submitted package must be a Magento module, theme, language pack, or metapackage, that meets Composer packaging and format requirements: 
+The submitted package must be a Magento module, theme, language pack, or metapackage, that meets Composer packaging and format requirements:
 
 1. Code submitted as a zip archive.
 1. Submitted package does not exceed 30 MB.
@@ -82,9 +82,10 @@ In addition, cacheable pages are accessed to ensure that they are served directo
 
 _More details:_ [Installation and Varnish Test]({{ site.baseurl }}/marketplace/sellers/installation-and-varnish-test.html)
 
-_See also:_ 
-- [Configure and Use Varnish]({{ site.baseurl }}/guides/v2.4/config-guide/varnish/config-varnish.html)
-- [Magento System Requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html)
+_See also:_
+
+-  [Configure and Use Varnish]({{ site.baseurl }}/guides/v2.4/config-guide/varnish/config-varnish.html)
+-  [Magento System Requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html)
 
 ### Quality Assurance: Pass Manual QA
 
@@ -95,42 +96,47 @@ Manual QA may be skipped if [Semantic Version Check]({{ site.baseurl }}/marketpl
 #### Documentation and resources
 The documentation provided with the extension is used during manual QA and should comply with the next requirements:
 
--  User guide should be submitted in one of the following formats:
-    -  A PDF that describes the extension setup and features.
-    -  A PDF containing a link to a wiki or a similar page that describes the extension setup and features.
--  Extension documentation should cover all features of the extension. 
--  Extension documentation should not direct users to make purchases on sites other than Marketplace.
+1. User guide should be submitted in one of the following formats:
 
-_See also:_
--  [Polishing your Marketplace submission: 7 tips from the Marketplace EQP team](https://community.magento.com/t5/Magento-DevBlog/Polishing-your-Marketplace-submission-7-tips-from-the/ba-p/142382)
+   -  A PDF that describes the extension setup and features.
+   -  A PDF containing a link to a wiki or a similar page that describes the extension setup and features.
+
+1. Extension documentation should cover all features of the extension.
+1. Extension documentation should not direct users to make purchases on sites other than Marketplace.
+
+_See also:_ [Polishing your Marketplace submission: 7 tips from the Marketplace EQP team](https://community.magento.com/t5/Magento-DevBlog/Polishing-your-Marketplace-submission-7-tips-from-the/ba-p/142382)
 
 #### Manual QA checklist
 
 To pass Manual QA, the extension must meet the following requirements:
 
--  Installs with Composer
--  Compiles without errors using the following command: [`deploy:mode:set production`](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html#change-to-production-mode)
--  Extension has all supportive documentation that complies with [Documentation guides](#Documentation and Resources)
--  Works with each version of Magento that is shown as supported in the extension product profile.
-    -  Basic Magento functionality works as expected with the installed extension.
-    -  Basic test suite includes, but not limited to the next scenarios:
-       - Create order as guest user (Simple product, Configurable product)
-       - Create a new customer
-       - Create order as (Simple product, Configurable product)
-       - Place an order via "Check Out with Multiple Addresses"
-       - Create re-order from previously created order
-       - Add product to Wishlist
-       - Add product to Comparison list
-       - As store admin: Create Invoice, Shipping, Credit Memo
-       - As store admin: Create new order (re-order)
-       - As store admin: Create new product with images (Simple product, Configurable product)
-       - As store admin: Create new product category
--  Works with each version of PHP that is supported by the Magento version that is shown as supported in the extension product profile.
--  Has all functionality that is described in the extension documentation and vice versa.
--  Does not crash with unhandled errors.
--  Does not hang when invalid data is submitted.
+1. Installs with Composer
+1. Compiles without errors using the following command: [`deploy:mode:set production`](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html#change-to-production-mode)
+1. Extension has all supportive documentation that complies with [Documentation guides](#Documentation and Resources)
+1. Works with each version of Magento that is shown as supported in the extension product profile.
+
+   -  Basic Magento functionality works as expected with the installed extension.
+   -  Basic test suite includes, but not limited to the next scenarios:
+
+      -  Create order as guest user (Simple product, Configurable product)
+      -  Create a new customer
+      -  Create order as (Simple product, Configurable product)
+      -  Place an order via "Check Out with Multiple Addresses"
+      -  Create re-order from previously created order
+      -  Add product to Wishlist
+      -  Add product to Comparison list
+      -  As store admin: Create Invoice, Shipping, Credit Memo
+      -  As store admin: Create new order (re-order)
+      -  As store admin: Create new product with images (Simple product, Configurable product)
+      -  As store admin: Create new product category
+
+1. Works with each version of PHP that is supported by the Magento version that is shown as supported in the extension product profile.
+1. Has all functionality that is described in the extension documentation and vice versa.
+1. Does not crash with unhandled errors.
+1. Does not hang when invalid data is submitted.
 
 _See also:_
+
 -  [Install an Extension via Composer](https://devdocs.magento.com/cloud/howtos/install-components.html#install-an-extension)
 -  [General CLI installation](https://devdocs.magento.com/extensions/install/)
 
@@ -138,15 +144,15 @@ _See also:_
 
 Extension that claimed support of Magento Page Builder is the subject for additional checks:
 
--  New and extended content types can be dragged to the stage, edited, duplicated, moved, hidden, saved, and deleted from the stage without errors.
--  New and extended content types are rendered on the storefront without errors.
--  Extensions that use Page Builder should also ensure that all Page Builder content creation functions work correctly. This includes, but is not limited to, all the functions previously described for new and extended content types rendered in the Admin stage and the storefront.
+1. New and extended content types can be dragged to the stage, edited, duplicated, moved, hidden, saved, and deleted from the stage without errors.
+1. New and extended content types are rendered on the storefront without errors.
+1. Extensions that use Page Builder should also ensure that all Page Builder content creation functions work correctly. This includes, but is not limited to, all the functions previously described for new and extended content types rendered in the Admin stage and the storefront.
 
 #### Exit criteria for testing
 
--  At least one major issue found in Magento functionality which was affected by an installed extension.
--  Blocking issue found and it affects entire extension functionality.
-    -  For big extensions, where functionality not concentrated in one particular area we can switch to the not affected area and continue to test it in order to provide more errors to the developer. At the same time, we can stop testing once we have found 2 blockers in separate areas of an extension. 
+1. At least one major issue found in Magento functionality which was affected by an installed extension.
+1. Blocking issue found and it affects entire extension functionality.
+1. For big extensions, where functionality not concentrated in one particular area we can switch to the not affected area and continue to test it in order to provide more errors to the developer. At the same time, we can stop testing once we have found 2 blockers in separate areas of an extension.
 
 [3]: https://opensource.org/licenses/OSL-3.0
 [4]: http://rosenlaw.com/OSL3.0-explained.htm

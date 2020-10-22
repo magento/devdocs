@@ -20,7 +20,7 @@ Magento Marketplace uses version information to fast-track the extension validat
 For this check to be applied, the following conditions must be met:
 
 1. A new submission must update an already existing version of an extension that has been previously published to the Marketplace storefront.
-2. The extension developer must declare the new submission is a "PATCH" level change.
+1. The extension developer must declare the new submission is a "PATCH" level change.
 
 ## What we are looking for?
 
@@ -39,7 +39,7 @@ Magento SemVer is a static analysis tool that validates the change level of Mage
 Magento SemVer can:
 
 1. Detect, PATCH, MINOR and MAJOR change levels and suggest the appropriate change level for a new version.
-2. Validate an update against a desired change level.
+1. Validate an update against a desired change level.
 
 ## How read an error report?
 
@@ -49,7 +49,7 @@ The error report will list minor and major changes detected in an extension's so
 
 To perform a check we run Magento SemVer as following:
 
-```
+```bash
 php magento-semver/bin/svc compare <path-to-latest-published-extension-version> <path-to-submitted-extension-version> 1
 ```
 
