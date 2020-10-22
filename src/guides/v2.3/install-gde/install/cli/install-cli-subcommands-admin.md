@@ -50,7 +50,7 @@ Where the following table defines parameters and values:
 Example of usage:
 
 ```bash
-bin/magento admin:user:create --admin-firstname=John --admin-lastname=Doe --admin-email=j.doe@example.com --admin-user=j.doe --admin-password=A0b9%t3g
+bin/magento admin:user:create --admin-firstname=John --admin-lastname=Doe --admin-email=j.doe@example.com --admin-user=j.doe --admin-password='A0b9%t3g'
 ```
 
 ```terminal
