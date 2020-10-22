@@ -73,6 +73,7 @@ mutation {
   }
 }
 ```
+
 ### Create a company user in a specific location in the company structure
 
 This example creates a new company user of the parent company team specified in the `target_id` field.
