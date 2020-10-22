@@ -6,7 +6,7 @@ contributor_link: https://www.atwix.com/
 b2b_only: true
 ---
 
-Use the `updateCompanyUser` mutation to update the company user data.
+Use the `updateCompanyUser` mutation to update an existing company user.
 
 You can get the user ID and role ID with the [`company`]({{page.baseurl}}/graphql/queries/company.html) query.
 
@@ -24,7 +24,7 @@ mutation {
 
 ## Example usage
 
-The following example updates the data of existing company user.
+The following example changes the job title of the specified company user.
 
 **Request:**
 
@@ -77,7 +77,7 @@ mutation {
 }
 ```
 
-This example assigns the company user to other role and deactivates them.
+This example deactivates the company user and assigns a different role.
 
 **Request:**
 
@@ -141,14 +141,14 @@ The `CompanyUserUpdateInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id` | ID! | The encoded user ID for updating
-`email` | String | Company user's email address
-`firstname` | String | Company user's first name
-`lastname` | String | Company user's last name
-`job_title` | String | Company user's job title
-`role_id` | ID | Company user's role ID
+`id` | ID! | The encoded user ID of the company user to be updated
+`email` | String | The company user's email address
+`firstname` | String | The company user's first name
+`lastname` | String | The company user's last name
+`job_title` | String | The company user's job title or function
+`role_id` | ID | The ID of the role assigned to the company user
 `status` | CompanyUserStatusEnum | Indicates whether the company user is ACTIVE or INACTIVE
-`telephone` | String | Company user's phone number
+`telephone` | String | The company user's phone number
 
 ## Output attributes
 
@@ -166,6 +166,6 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
-`You do not have authorization to perform this action.` | The user with ID provided in the `input`.`id` argument not available to your company.
+`You do not have authorization to perform this action.` | The user with the ID provided in the `input`.`id` argument is not assigned to your company.
 `No such entity with roleId = xxx` | The company role with ID `xxx` doesn't exist.
-`A customer with the same email address already exists in an associated website` | The email provided in the `input`.`email` argument has already exist to another user.
+`A customer with the same email address already exists in an associated website` | The email provided in the `input`.`email` argument belongs to another user.
