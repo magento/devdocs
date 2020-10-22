@@ -40,6 +40,81 @@ Installation & Varnish Test always use latest patch version of Magento for relea
 
 Versions of all other software required by Magento are most up-to-date compatible version on the day of Magento release.
 
+## Additional Magento Configuration
+Varnish Test requires [Varnish as a caching application](https://devdocs.magento.com/guides/v2.4/config-guide/varnish/config-varnish-magento.html). The test checks a presence of the **X-EQP-Cache** HTTP header set by Varnish and analyses its value on page loads. For that the next additional instruction has to be added to the **vcl_deliver** function:
+```
+sub vcl_deliver {
+    if (resp.http.x-varnish ~ " ") {
+        set resp.http.X-EQP-Cache = "HIT";
+    } else {
+        set resp.http.X-EQP-Cache = "MISS";
+    }
+    ...
+}
+```
+Also the test uses the [setup:performance:generate-fixtures command](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-perf-data.html) to install sample products to run the test against:
+```bash
+bin/magento setup:performance:generate-fixtures ./varnish-config/profile.xml
+```
+The content of the *./varnish-config/profile.xml* file is:
+```xml
+<?xml version="1.0"?>
+<config xmlns:xi="http://www.w3.org/2001/XInclude">
+    <profile>
+        <admin_users>1</admin_users> <!-- Number of admin users to generate -->
+        <websites>1</websites> <!-- Number of websites to generate -->
+        <store_groups>1</store_groups> <!--Number of stores-->
+        <store_views>1</store_views> <!-- Number of store views -->
+        <assign_entities_to_all_websites>0</assign_entities_to_all_websites> <!-- Whether to assign all products per each website -->
+        <simple_products>10</simple_products> <!-- Simple products count -->
+        <categories>2</categories> <!-- Number of categories to generate -->
+        <configs> <!-- Config variables and values -->
+            <config>
+                <path>admin/security/use_form_key</path>
+                <scope>default</scope>
+                <scopeId>0</scopeId>
+                <value>0</value>
+            </config>
+            <config>
+                <path>system/full_page_cache/caching_application</path>
+                <scope>default</scope>
+                <scopeId>0</scopeId>
+                <value>2</value>
+            </config>
+        </configs>
+    </profile>
+</config>
+```
+
+## Varnish Test Execution
+Varnish Test subsequently runs the next commands and analyses the **X-EQP-Cache** HTTP header's value:
+1. As it is a fresh Magento installation, on the first request all the next responses have to contain the "X-EQP-Cache" header with the "MISS" value:
+    - GET "https://magento2.local/simple-product-1.html"
+    - GET "https://magento2.local/simple-product-2.html"
+    - GET "https://magento2.local/simple-product-3.html"
+    - GET "https://magento2.local/category-1.html"
+    - GET "https://magento2.local/category-2.html"
+    - GET "https://magento2.local/"
+2. On the second request the "X-EQP-Cache" header's value has to be "HIT":
+    - GET "https://magento2.local/simple-product-1.html"
+    - GET "https://magento2.local/simple-product-2.html"
+    - GET "https://magento2.local/simple-product-3.html"
+    - GET "https://magento2.local/category-1.html"
+    - GET "https://magento2.local/category-2.html"
+    - GET "https://magento2.local/"
+3. Then the test updates product prices and checks that the FPC cache is cleared:
+    - PUT "https://magento2.local/rest/V1/products/product_dynamic_1" with "{"product":{"price":"999.99"}}"
+    - PUT "https://magento2.local/rest/V1/products/product_dynamic_2" with "{"product":{"price":"999.99"}}"
+    - PUT "https://magento2.local/rest/V1/products/product_dynamic_3" with "{"product":{"price":"999.99"}}"
+4. The FPC cache has to be cleared, therefore the test expects that the "X-EQP-Cache" header's value is "MISS" for next requests:
+    - GET "https://magento2.local/simple-product-1.html"
+    - GET "https://magento2.local/simple-product-2.html"
+    - GET "https://magento2.local/simple-product-3.html"
+5. On the second request the "X-EQP-Cache" header's value has to be "HIT":
+    - GET "https://magento2.local/simple-product-1.html"
+    - GET "https://magento2.local/simple-product-2.html"
+    - GET "https://magento2.local/simple-product-3.html"
+
 ## How read an error report?
 
 For the installation part of this test we returns logs of Magento CLI commands. The easiest way to reproduce an error is run failed command on local environment.
@@ -47,7 +122,7 @@ For the installation part of this test we returns logs of Magento CLI commands. 
 For Varnish tests we specify:
 1. Brief description of the failed scenario
 2. Expected and actual cache behavior (HIT or MISS for cached page)
-To debug such kind of error it is recommended to have locally installed Magento with configured Varnish cache and checking corresponding HHTP headers.
+To debug such kind of error it is recommended to have locally installed Magento with configured Varnish cache and checking corresponding HTTP headers.
 
 ## Troubleshooting
 
