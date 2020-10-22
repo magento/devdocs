@@ -16,6 +16,7 @@ Attribute | Data Type | Description | Default or example value
 `base_media_url` | String | The fully-qualified URL that specifies the location of user media files | `http://magentohost.example.com/pub/media/`
 `base_static_url` | String | The fully-qualified URL that specifies the location of static view files | `http://magentohost.example.com/pub/static/`
 `base_url` | String | The store's fully-qualified base URL | `http://magentohost.example.com/`
+`btob_website_configuration_requisition_list_active` | String | Indicates if requisition lists are enabled.  Possible values: 1 (Yes) and 0 (No) | 0
 `cart_gift_wrapping` | String | Indicates if gift wrapping prices are displayed on the Shopping Cart page. Possible values: 1 (Yes) and 0 (No) | 1
 `cart_printed_card` | String | Indicates if printed card prices are displayed on the Shopping Cart page. Possible values: 1 (Yes) and 0 (No) | 1
 `catalog_default_sort_by` | String | The default sort order of the search results list | `position`
