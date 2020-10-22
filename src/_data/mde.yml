@@ -310,6 +310,18 @@ extensions:
     name: Product Recommendations
     versions:
       -
+        name: 3.0.8
+        support:
+          2.3.0: supported
+          2.3.1: supported
+          2.3.2: supported
+          2.3.3: supported
+          2.3.4: supported
+          2.3.5-p1: supported
+          2.3.6: supported
+          2.4.0: supported
+          2.4.1: supported
+      -
         name: 3.0.6
         support:
           2.3.0: supported
