@@ -119,9 +119,9 @@ pages:
       url: /marketplace/sellers/copy-paste-detector.html
       versionless: true
 
-      - label: Semantic Version Check
-        url: /marketplace/sellers/semantic-version-check.html
-        versionless: true
+    - label: Semantic Version Check
+      url: /marketplace/sellers/semantic-version-check.html
+      versionless: true
 
 - label: Submit for Marketing Review
   url: /marketplace/sellers/submit-for-marketing-review.html
