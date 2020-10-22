@@ -1,4 +1,7 @@
-# Copy Paste Detector
+---
+group: marketplace-sellers
+title: Copy Paste Detector
+---
 
 ## Overview
 
@@ -24,7 +27,7 @@ Copy Past Detector include but not limited to [PHPCPD](https://github.com/sebast
 
 ## How read an error report?
 
-
+Copy Past Detector will provide a list of places in your extension code that were identified as duplicate. If the extension is found to duplicate Magento code, review the list, and remove each instance of duplicate code. Then, upload a new package and resubmit the extension.Any extension that is found to duplicate code from another extension will be rejected.
 
 ## Troubleshooting
 

@@ -1,4 +1,7 @@
-# Semantic Version Check
+---
+group: marketplace-sellers
+title: Semantic Version Check
+---
 
 ## Overview
 

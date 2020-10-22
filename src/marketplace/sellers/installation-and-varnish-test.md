@@ -1,4 +1,7 @@
-# Installation & Varnish Test
+---
+group: marketplace-sellers
+title: Installation & Varnish Test
+---
 
 ## Overview
 
@@ -40,8 +43,10 @@ Installation & Varnish Test always use latest patch version of Magento for relea
 
 Versions of all other software required by Magento are most up-to-date compatible version on the day of Magento release.
 
-## Additional Magento Configuration
+### Additional Magento Configuration
+
 Varnish Test requires [Varnish as a caching application](https://devdocs.magento.com/guides/v2.4/config-guide/varnish/config-varnish-magento.html). The test checks a presence of the **X-EQP-Cache** HTTP header set by Varnish and analyses its value on page loads. For that the next additional instruction has to be added to the **vcl_deliver** function:
+
 ```
 sub vcl_deliver {
     if (resp.http.x-varnish ~ " ") {
@@ -52,11 +57,15 @@ sub vcl_deliver {
     ...
 }
 ```
+
 Also the test uses the [setup:performance:generate-fixtures command](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-perf-data.html) to install sample products to run the test against:
+
 ```bash
-bin/magento setup:performance:generate-fixtures ./varnish-config/profile.xml
+magento setup:performance:generate-fixtures ./varnish-config/profile.xml
 ```
+
 The content of the *./varnish-config/profile.xml* file is:
+
 ```xml
 <?xml version="1.0"?>
 <config xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -86,34 +95,36 @@ The content of the *./varnish-config/profile.xml* file is:
 </config>
 ```
 
-## Varnish Test Execution
+### Varnish Test Execution
+
 Varnish Test subsequently runs the next commands and analyses the **X-EQP-Cache** HTTP header's value:
+
 1. As it is a fresh Magento installation, on the first request all the next responses have to contain the "X-EQP-Cache" header with the "MISS" value:
-    - GET "https://magento2.local/simple-product-1.html"
-    - GET "https://magento2.local/simple-product-2.html"
-    - GET "https://magento2.local/simple-product-3.html"
-    - GET "https://magento2.local/category-1.html"
-    - GET "https://magento2.local/category-2.html"
-    - GET "https://magento2.local/"
+    - GET "https://\<magento-host\>/simple-product-1.html"
+    - GET "https://\<magento-host\>/simple-product-2.html"
+    - GET "https://\<magento-host\>/simple-product-3.html"
+    - GET "https://\<magento-host\>/category-1.html"
+    - GET "https://\<magento-host\>/category-2.html"
+    - GET "https://\<magento-host\>/"
 2. On the second request the "X-EQP-Cache" header's value has to be "HIT":
-    - GET "https://magento2.local/simple-product-1.html"
-    - GET "https://magento2.local/simple-product-2.html"
-    - GET "https://magento2.local/simple-product-3.html"
-    - GET "https://magento2.local/category-1.html"
-    - GET "https://magento2.local/category-2.html"
-    - GET "https://magento2.local/"
+    - GET "https://\<magento-host\>/simple-product-1.html"
+    - GET "https://\<magento-host\>/simple-product-2.html"
+    - GET "https://\<magento-host\>/simple-product-3.html"
+    - GET "https://\<magento-host\>/category-1.html"
+    - GET "https://\<magento-host\>/category-2.html"
+    - GET "https://\<magento-host\>/"
 3. Then the test updates product prices and checks that the FPC cache is cleared:
-    - PUT "https://magento2.local/rest/V1/products/product_dynamic_1" with "{"product":{"price":"999.99"}}"
-    - PUT "https://magento2.local/rest/V1/products/product_dynamic_2" with "{"product":{"price":"999.99"}}"
-    - PUT "https://magento2.local/rest/V1/products/product_dynamic_3" with "{"product":{"price":"999.99"}}"
+    - PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_1" with "{"product":{"price":"999.99"}}"
+    - PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_2" with "{"product":{"price":"999.99"}}"
+    - PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_3" with "{"product":{"price":"999.99"}}"
 4. The FPC cache has to be cleared, therefore the test expects that the "X-EQP-Cache" header's value is "MISS" for next requests:
-    - GET "https://magento2.local/simple-product-1.html"
-    - GET "https://magento2.local/simple-product-2.html"
-    - GET "https://magento2.local/simple-product-3.html"
+    - GET "https://\<magento-host\>/simple-product-1.html"
+    - GET "https://\<magento-host\>/simple-product-2.html"
+    - GET "https://\<magento-host\>/simple-product-3.html"
 5. On the second request the "X-EQP-Cache" header's value has to be "HIT":
-    - GET "https://magento2.local/simple-product-1.html"
-    - GET "https://magento2.local/simple-product-2.html"
-    - GET "https://magento2.local/simple-product-3.html"
+    - GET "https://\<magento-host\>/simple-product-1.html"
+    - GET "https://\<magento-host\>/simple-product-2.html"
+    - GET "https://\<magento-host\>/simple-product-3.html"
 
 ## How read an error report?
 

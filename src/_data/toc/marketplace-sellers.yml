@@ -103,9 +103,25 @@ pages:
       url: /marketplace/sellers/technical-review-guidelines.html
       versionless: true
 
-    - label: Code Validation
-      url: /marketplace/sellers/code-validation.html
+    - label: Malware Scan
+      url: /marketplace/sellers/malware-scan.html
       versionless: true
+
+    - label: Code Sniffer
+      url: /marketplace/sellers/code-sniffer.html
+      versionless: true
+
+    - label: Installation and Varnish Test
+      url: /marketplace/sellers/installation-and-varnish-test.html
+      versionless: true
+
+    - label: Copy Paste Detector
+      url: /marketplace/sellers/copy-paste-detector.html
+      versionless: true
+
+      - label: Semantic Version Check
+        url: /marketplace/sellers/semantic-version-check.html
+        versionless: true
 
 - label: Submit for Marketing Review
   url: /marketplace/sellers/submit-for-marketing-review.html
@@ -152,13 +168,4 @@ pages:
 
     - label: Analytics
       url: /marketplace/sellers/analytics.html
-      versionless: true
-
-- label: Technical Reference
-  url: /marketplace/sellers/technical-reference.html
-  versionless: true
-  children:
-
-    - label: Packaging v1.x Extensions
-      url: /marketplace/sellers/packaging-v1x-extensions.html
       versionless: true
