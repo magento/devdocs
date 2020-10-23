@@ -35,7 +35,7 @@ The following mutation adds a simple product into the shopping cart.
 
 Replace `{ CART_ID }` with the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-In this example, we will add the Aim Analog Watch (SKU 24-MG04) from the default Luma catalog to the cart. Note that is the SKU that determines the product added.
+In this example, we will add the Aim Analog Watch (SKU 24-MG04) from the default Luma catalog to the cart. The SKU identifies the product to be added.
 
 **Request:**
 
@@ -93,8 +93,8 @@ mutation {
 
 ## Add a virtual product into the shopping cart
 
-The following mutation adds a virtual product into shopping cart.
-In this example, we add the Beginner's Yoga video download product (SKU 240-LV04).
+The following mutation adds a virtual product into the shopping cart.
+In this example, we add the Beginner's Yoga video downloadable product (SKU 240-LV04).
 
 **Request:**
 

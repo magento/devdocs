@@ -22,7 +22,7 @@ Use [applyCouponToCart]({{ page.baseurl }}/graphql/mutations/apply-coupon.html) 
 
 ## Create a coupon
 
-Since coupons cannot be generated with GraphQL, it needs to be done in the admin.
+Coupons must be generated from the Admin.
 
 Creating a coupon is described in [Coupon Codes](https://docs.magento.com/user-guide/marketing/price-rules-cart-coupon.html).
 For the purpose of this tutorial, create a Cart Price Rule with:

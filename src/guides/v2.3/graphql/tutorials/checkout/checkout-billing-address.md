@@ -324,7 +324,7 @@ mutation {
 }
 ```
 
-The "123 Stone Ave." was the default billing address we created at the beginning of this page.
+The value of the `street` attribute ("123 Stone Ave.") is the default billing address we created at the beginning of this page.
 
 ## Verify this step {#verify-step}
 

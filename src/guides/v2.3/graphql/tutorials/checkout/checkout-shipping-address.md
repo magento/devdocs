@@ -217,7 +217,7 @@ mutation {
 }
 ```
 
-Note here that we requested and recieved the available shipping methods here. We will need one of those values when setting the shipping method.
+The response includes the available shipping methods. We will need one of those values when setting the delivery method.
 
 ## Verify this step {#verify-step}
 
