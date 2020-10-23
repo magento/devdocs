@@ -88,18 +88,13 @@ mutation {
 }
 ```
 
+## Add Authorization header
+
+To send requests on behalf of the customer, you must supply the generated token as a header in your GraphQL browser.
+The name of the header is `Authorization` and the value is `Bearer <token>`.
+
 ## Verify this step {#verify-step}
 
 Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`. You should be successfully logged in.
-
-## Add Authorization header
-
-To continue this tutorial, the token that was just generated needs to be sent as a header in your GraphQL browser.
-Headers can usually be set in your GraphQL browser so they can be sent automatically.
-The name of the header is `Authorization` and the value is `Bearer <token>`.
-
-```text
-Authorization Bearer <token>
-```
 
 [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) describes the mutation further.
