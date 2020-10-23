@@ -205,6 +205,8 @@ mutation {
         ]
       }
     }
+  }
+}
 ```
 
 We can confirm that the same address is specified for both addresses.
