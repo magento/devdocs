@@ -79,11 +79,6 @@ pages:
           edition: b2b-only
           exclude_versions: ["2.3"]
 
-        - label: checkCompanyRoleName query
-          url: /graphql/queries/check-company-role-name.html
-          edition: b2b-only
-          exclude_versions: ["2.3"]
-
         - label: checkCompanyUserEmail query
           url: /graphql/queries/check-company-admin-email.html
           edition: b2b-only
@@ -139,6 +134,11 @@ pages:
         - label: giftCardAccount query
           url: /graphql/queries/giftcard-account.html
           edition: ee-only
+
+        - label: isCompanyRoleNameAvailable query
+          url: /graphql/queries/is-company-role-name-available.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
 
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html

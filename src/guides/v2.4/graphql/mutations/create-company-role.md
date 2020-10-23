@@ -57,11 +57,11 @@ mutation {
       permissions {
         id
         text
-        sortOrder
+        sort_order
         children {
           id
           text
-          sortOrder
+          sort_order
         }
       }
     }
@@ -82,22 +82,22 @@ mutation {
           {
             "id": "Magento_Company::index",
             "text": "All",
-            "sortOrder": 100,
+            "sort_order": 100,
             "children": [
               {
                 "id": "Magento_Company::view",
-                "text": null,
-                "sortOrder": 100
+                "text": "Company Profile",
+                "sort_order": 100
               },
               {
                 "id": "Magento_Company::user_management",
-                "text": null,
-                "sortOrder": 200
+                "text": "Company User Management",
+                "sort_order": 200
               },
               {
                 "id": "Magento_Company::credit",
-                "text": null,
-                "sortOrder": 500
+                "text": "Company Credit",
+                "sort_order": 500
               }
             ]
           }

@@ -42,15 +42,15 @@ mutation {
       permissions {
         id
         text
-        sortOrder
+        sort_order
         children {
           id
           text
-          sortOrder
+          sort_order
           children {
             id
             text
-            sortOrder
+            sort_order
           }
         }
       }
@@ -72,66 +72,66 @@ mutation {
           {
             "id": "Magento_Company::index",
             "text": "All",
-            "sortOrder": 100,
+            "sort_order": 100,
             "children": [
               {
                 "id": "Magento_Company::view",
-                "text": null,
-                "sortOrder": 100,
+                "text": "Company Profile",
+                "sort_order": 100,
                 "children": [
                   {
                     "id": "Magento_Company::view_account",
-                    "text": null,
-                    "sortOrder": 100
+                    "text": "Account Information (View)",
+                    "sort_order": 100
                   },
                   {
                     "id": "Magento_Company::view_address",
-                    "text": null,
-                    "sortOrder": 200
+                    "text": "Legal Address (View)",
+                    "sort_order": 200
                   },
                   {
                     "id": "Magento_Company::contacts",
-                    "text": null,
-                    "sortOrder": 300
+                    "text": "Contacts (View)",
+                    "sort_order": 300
                   },
                   {
                     "id": "Magento_Company::payment_information",
-                    "text": null,
-                    "sortOrder": 400
+                    "text": "Payment Information (View)",
+                    "sort_order": 400
                   },
                   {
                     "id": "Magento_Company::shipping_information",
-                    "text": null,
-                    "sortOrder": 450
+                    "text": "Shipping Information (View)",
+                    "sort_order": 450
                   }
                 ]
               },
               {
                 "id": "Magento_Company::user_management",
-                "text": null,
-                "sortOrder": 200,
+                "text": "Company User Management",
+                "sort_order": 200,
                 "children": [
                   {
                     "id": "Magento_Company::roles_view",
-                    "text": null,
-                    "sortOrder": 100
+                    "text": "View roles and permissions",
+                    "sort_order": 100
                   },
                   {
                     "id": "Magento_Company::users_view",
-                    "text": null,
-                    "sortOrder": 300
+                    "text": "View users and teams",
+                    "sort_order": 300
                   }
                 ]
               },
               {
                 "id": "Magento_Company::credit",
-                "text": null,
-                "sortOrder": 500,
+                "text": "Company Credit",
+                "sort_order": 500,
                 "children": [
                   {
                     "id": "Magento_Company::credit_history",
-                    "text": null,
-                    "sortOrder": 500
+                    "text": "View",
+                    "sort_order": 500
                   }
                 ]
               }

@@ -1,12 +1,12 @@
 ---
 group: graphql
-title: checkCompanyUserEmail query
+title: isCompanyRoleNameAvailable query
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 b2b_only: true
 ---
 
-The `checkCompanyRoleName` query checks whether a company role name is valid for creating into a company.
+The `isCompanyRoleNameAvailable` query checks whether a company role name is valid for creating into a company.
 
 The query returns a `false` value if the specified role name has already found in a company.
 
@@ -14,10 +14,10 @@ The query returns a `false` value if the specified role name has already found i
 
 ```graphql
 {
-    checkCompanyRoleName(
+    isCompanyRoleNameAvailable(
         name: String!
     ) {
-        isNameValid
+        is_role_name_available
     }
 }
 ```
@@ -30,8 +30,8 @@ The following example checks whether the company role named "Company Admin" can 
 
 ```graphql
 query {
-  checkCompanyRoleName(name: "Company Admin") {
-    isNameValid
+  isCompanyRoleNameAvailable(name: "Company Admin") {
+    is_role_name_available
   }
 }
 ```
@@ -41,8 +41,8 @@ query {
 ```json
 {
   "data": {
-    "checkCompanyRoleName": {
-      "isNameValid": false
+    "isCompanyRoleNameAvailable": {
+      "is_role_name_available": false
     }
   }
 }
@@ -58,4 +58,4 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`isNameValid` | Boolean | A value of `true` indicates the company role name is available
+`is_role_name_available` | Boolean | A value of `true` indicates the company role name is available
