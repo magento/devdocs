@@ -148,7 +148,7 @@ You cannot create a branch from the Production environment branch. You must push
 
 Rather than running a traditional, active-passive master or a master-slave setup, {{site.data.var.ece}} runs a redundant architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.
 
-Because of our unique, redundant hardware, we can provide you with three gateway servers. Most external services enable you to [whitelist](https://glossary.magento.com/whitelist) multiple IP addresses, so having more than one fixed IP address is not a problem.
+Because of our unique, redundant hardware, we can provide you with three gateway servers. Most external services enable you to add multiple addresses to an [allowlist](https://glossary.magento.com/whitelist) multiple IP addresses, so having more than one fixed IP address is not a problem.
 
 The three gateways map to the three servers in your Production environment cluster and retain static IP addresses. It is fully redundant and highly available at every level:
 
