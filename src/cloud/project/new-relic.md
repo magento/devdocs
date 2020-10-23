@@ -291,7 +291,7 @@ To review the Managed Alerts for {{ site.data.var.ee }} policy:
       ![Generated alert policies]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-managed-alerts-for-magento.png){:width="650px"}
 
       {:.bs-callout-info}
-      If the Managed Alerts for {{ site.data.var.ee }} alert policy is not available, see the [Managed Alerts for Magento Commerce][] article in the _Magento Help Center_.
+      If the Managed Alerts for {{ site.data.var.ee }} alert policy is not available, see [Managed Alerts for Magento Commerce][]  in the _Magento Help Center_.
 
 1. Click **Managed Alerts for Magento Commerce** to review the alert conditions defined in the policy.
 
