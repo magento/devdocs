@@ -5,35 +5,35 @@ title: Copy Paste Detector
 
 ## Overview
 
-Copy Past Detector check validates that implementation of the submitted extension is unique and not duplicate code from already known extension.
+The Copy Paste Detector check validates that implementation of the submitted extension is unique and not duplicated code from an already known extension.
 
-## Why we test?
+## Why testing is done
 
-At Magento, an Adobe company, we take seriously about authorship. So while supporting open collaboration we strictly guard our community from malicious members and forbid any kind of plagiarism.
+At Magento, an Adobe company, we take authorship seriously. So while supporting an open collaboration, we strictly guard our community from malicious members and forbid any kind of plagiarism.
 
-## When we test?
+## When do we test?
 
 All submissions is subject of Copy Past Detector check regardless of extension type and scope of changes.
 
-## What we are looking for?
+## What is being checked
 
-Copy Past Detector perform static analysis of source code and tries to detect similar code snippets.
+Copy Paste Detector performs a static analysis of the source code and tries to detect similar code snippets.
 
-If we detect a lot of similarities between submitted extension an previously known extension we may mark check as failed if there are strong evidences of plagiarism or schedule submissions for human code review if there are some concerns regarding code fragments but expert judgement is required for final decision.
+If the Detector find  many similarities between the submitted extension and a previously known extension, we may mark the check as failed if there are strong evidences of plagiarism. We may schedule submissions for human code review if there are some concerns regarding code fragments, but expert judgement is required for the final decision.
 
-## What tools and environment we are using?
+##  Tools and environments used
 
-Copy Past Detector include but not limited to [PHPCPD](https://github.com/sebastianbergmann/phpcpd). On top of PHPCPD we use proprietary solution to search for duplicates across multiple extensions and their versions ignoring irrelevant implementation details such as variable, class and method names, etc.
+Copy Paste Detector includes, but is not limited to, [PHPCPD](https://github.com/sebastianbergmann/phpcpd). On top of PHPCPD we use a proprietary solution to search for duplicates across multiple extensions and their versions ignoring irrelevant implementation details such as variables, classes and method names, etc.
 
-## How read an error report?
+## Reading an error report
 
-Copy Past Detector will provide a list of places in your extension code that were identified as duplicate. If the extension is found to duplicate Magento code, review the list, and remove each instance of duplicate code. Then, upload a new package and resubmit the extension.Any extension that is found to duplicate code from another extension will be rejected.
+Copy Paste Detector will provide a list of places in your extension code that were identified as duplicates. If the extension is found to duplicate Magento code, review the list and remove each instance of duplicated code. Then, upload a new package and resubmit the extension. Any extension that is found to duplicate code from another extension will be rejected.
 
 ## Troubleshooting
 
-Implementing solution for detecting plagiarism in source code is not a trivial task. So we expect that sometimes our solution will give incorrect result:
+Implementing a solution for detecting plagiarism in source code is not a trivial task. So we expect that sometimes our solution will give an incorrect result :
 
--  We may not detect copy paste if code was changed significantly or only idea of the extension are taken. We are still consider such use-case as a plagiarism and hope here on original extension authors and Magento community to report such unworthy behavior.
+-  We may not detect 'copy paste' if the code was changed significantly or only the concept of the extension was copied. We are still considering such use-cases as plagiarism and hope the the original extension authors and Magento community will report such behavior.
 
 -  We may claim as duplication code fragment that follow some common pattern. To reduce amount of such false-negative results we perform manual code review. But as we all humans mistakes still may happens.
 

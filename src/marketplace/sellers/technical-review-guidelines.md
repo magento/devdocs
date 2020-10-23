@@ -42,9 +42,9 @@ The submitted package must be a Magento module, theme, language pack, or metapac
 
 Additional requirements for package declarations are applied depending on the package type:
 
-1. Magento modules (packages with type `magento2-module`) must have a valid `etc/module.xml` and `registration.php` files. Configured [autoloading](https://getcomposer.org/doc/04-schema.md#autoload) in `comopser.json`: `autoload.files` must include at least a `registration.php` file and `autoload.psr-4` is expected to declare at least one namespace.
-1. Magento themes (package type `magento2-theme`) must have a valid `theme.xml` and `registration.php` files. Registration file must be included in the `autoload.files` section of `composer.json`. `autoload.psr-4` must not be used for these types of packages.
-1. Magento language packages (type `magento2-language`) must have a valid `language.xml` and `registration.php` files. Registration file must be included in the `autoload.files` section of `composer.json`. `autoload.psr-4` must not be used for these types of packages.
+1. Magento modules (packages with type `magento2-module`) must have valid `etc/module.xml` and `registration.php` files. Configured [autoloading](https://getcomposer.org/doc/04-schema.md#autoload) in `composer.json`: `autoload.files` must include at least a `registration.php` file and a `autoload.psr-4` is expected to declare at least one namespace.
+1. Magento themes (package type `magento2-theme`) must have valid `theme.xml` and `registration.php` files. Registration file must be included in the `autoload.files` section of `composer.json`. `autoload.psr-4` must not be used for these types of packages.
+1. Magento language packages (type `magento2-language`) must have valid `language.xml` and `registration.php` files. Registration file must be included in the `autoload.files` section of `composer.json`. `autoload.psr-4` must not be used for these types of packages.
 1. Packages of type `metapackage` must declare at least one dependency in the `require` section.
 
 _See also:_
@@ -58,7 +58,7 @@ After accepting package for Technical Review series of automated checks and manu
 
 ### Code Sniffer: Check code quality/syntax
 
-The Marketplace coding standard review uses a custom set of coding sniffs. If the submitted code fails to pass the review, a technical report is generated that describes each issue found, and its location in the codebase.
+The Marketplace coding standard review uses a custom set of coding sniffs. If the submitted code fails to pass the review, a technical report is generated that describes each issue found and its location in the codebase.
 
 _More details:_ [Code Sniffer]({{ site.baseurl }}/marketplace/sellers/code-sniffer.html)
 
@@ -76,9 +76,9 @@ _See also:_ [OSL 3.0: A Better License for Open Source Software][4]
 
 ### Installation and Varnish Test: Verify that product installs and caching works correctly
 
-Extensions for Magento are installed with Varnish Cache enabled for each supported version of PHP, and switched from development to [production mode]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html). If you have shared packages and dependencies required for your extension, also test installs and usage with those packages.
+Extensions for Magento are installed with Varnish Cache enabled for each supported version of PHP and switched from development to [production mode]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html). If you have shared packages and dependencies required for your extension, also test installs and usage with those packages.
 
-In addition, cacheable pages are accessed to ensure that they are served directory from Varnish Cache. You will be notified if your extension fails the test.
+In addition, cacheable pages are accessed to ensure that they are served directly from Varnish Cache. You will be notified if your extension fails the test.
 
 _More details:_ [Installation and Varnish Test]({{ site.baseurl }}/marketplace/sellers/installation-and-varnish-test.html)
 
@@ -91,7 +91,7 @@ _See also:_
 
 This check verifies that the extension installs without error, is configurable (as applicable), and operates as expected.
 
-Manual QA may be skipped if [Semantic Version Check]({{ site.baseurl }}/marketplace/sellers/semantic-version-check.html) confirms that only patch-level changes were introduced in new version of already listed extension.
+Manual QA may be skipped if [Semantic Version Check]({{ site.baseurl }}/marketplace/sellers/semantic-version-check.html) confirms that only patch-level changes were introduced in a new version of an already listed extension.
 
 #### Documentation and resources
 The documentation provided with the extension is used during manual QA and should comply with the next requirements:
@@ -116,7 +116,7 @@ To pass Manual QA, the extension must meet the following requirements:
 1. Works with each version of Magento that is shown as supported in the extension product profile.
 
    -  Basic Magento functionality works as expected with the installed extension.
-   -  Basic test suite includes, but not limited to the next scenarios:
+   -  Basic test suite includes, but not limited to the following scenarios :
 
       -  Create order as guest user (Simple product, Configurable product)
       -  Create a new customer
@@ -144,7 +144,7 @@ _See also:_
 
 Extension that claimed support of Magento Page Builder is the subject for additional checks:
 
-1. New and extended content types can be dragged to the stage, edited, duplicated, moved, hidden, saved, and deleted from the stage without errors.
+1. New and extended content types can be dragged to the stage, edited, duplicated, moved, hidden, saved and deleted from the stage without errors.
 1. New and extended content types are rendered on the storefront without errors.
 1. Extensions that use Page Builder should also ensure that all Page Builder content creation functions work correctly. This includes, but is not limited to, all the functions previously described for new and extended content types rendered in the Admin stage and the storefront.
 
@@ -152,7 +152,7 @@ Extension that claimed support of Magento Page Builder is the subject for additi
 
 1. At least one major issue found in Magento functionality which was affected by an installed extension.
 1. Blocking issue found and it affects entire extension functionality.
-1. For big extensions, where functionality not concentrated in one particular area we can switch to the not affected area and continue to test it in order to provide more errors to the developer. At the same time, we can stop testing once we have found 2 blockers in separate areas of an extension.
+1. For big extensions, where functionality is not concentrated in one particular area we can switch to the unaffected area and continue to test it in order to provide more errors to the developer. At the same time, we can stop testing once we have found 2 blockers in separate areas of an extension.
 
 [3]: https://opensource.org/licenses/OSL-3.0
 [4]: http://rosenlaw.com/OSL3.0-explained.htm

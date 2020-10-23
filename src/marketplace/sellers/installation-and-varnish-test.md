@@ -7,45 +7,45 @@ title: Installation & Varnish Test
 
 Installation & Varnish Test is automated EQP check that ensures compatibility of submitted extension with claimed Magento versions and editions.
 
-## Why we test?
+## What testing is for
 
-Magento is a complex and highly extensible software. To ensure that 3rd party extension is production-ready we check that it is possible to install extension in [production mode](https://devdocs.magento.com/guides/v2.4/config-guide/bootstrap/magento-modes.html) and it does not affect caching mechanism for most critical scenarios so customers will enjoy performant storefront.
+Magento is a complex and highly extensible platform. To ensure that 3rd party extensions are production-ready we check that it is possible to install the extension in [production mode](https://devdocs.magento.com/guides/v2.4/config-guide/bootstrap/magento-modes.html) and it does not affect the caching mechanism for the most critical scenarios so users will experience a performant storefront.
 
-## When we test?
+## When testing is done
 
-Installation and Varnish Test is mandatory for all submission regardless of extension type and scope of changes. Only extensions that passed Installation and Varnish Test may be listed at [Magento Marketplace](https://marketplace.magento.com/).
+Installation and Varnish Testing is mandatory for all submissions regardless of extension type and scope of changes. Only extensions that have passed Installation and Varnish Test may be listed on the [Magento Marketplace](https://marketplace.magento.com/).
 
-## What we are looking for?
+## What is being checked
 
-As reflected in a test name we check 2 main areas:
+As reflected in a test name, two main areas are checked :
 
-1. Magento with submitted extension may be installed and switched to production mode. This check consists of following steps:
+1. Magento with the submitted extension may be installed and switched to production mode. This check consists of the following steps :
 
-    -  Extension may be added into [Magento project](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html#get-the-magento-software) with [Composer](https://getcomposer.org/)
+    -  The extension can be added to the [Magento project](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html#get-the-magento-software) with [Composer](https://getcomposer.org/)
 
-    -  Magento may be installed with enabled extension
+    -  Magento can be installed with the enabled extension
     -  It is possible to [compile Magento code](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-compiler.htm)
     -  It is possible to [deploy static content](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-static-view.html)
-    -  Production mode [may be enabled](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html)
-    -  It is possible to [reindex all data](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html) with installed extension
+    -  Production mode [can be enabled](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html)
+    -  It is possible to [reindex all data](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html) with the installed extension
 
-1. Most critical pages are available for a user and cache works as expected:
+1. Critical pages are available for a user and the cache works as expected :
 
-    -  Acceptance test validate that product and category pages properly cached
-    -  Acceptance test validate that product and category pages cache is reset when product is edited
+    -  Acceptance testing validates that product and category pages are properly cached
+    -  Acceptance testing validates that the product and category page cache is reset when a product is edited
     -  Different product types are validated
 
-## What tools and environment we are using?
+## Tools and environments used
 
-Our test infrastructure follow [recommended setup](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html) for Magento environment. You may use [Magento Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html) to create similar.
+Our test infrastructure follows the [recommended setup](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html) for the Magento environment. You may use [Magento Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html) to create a similar environment.
 
-Installation & Varnish Test always use latest patch version of Magento for release line claimed as supported. For each supported release line we perform entire test suite on all compatible PHP versions.
+Installation & Varnish Tests always use the latest patch version of Magento for release line claimed as supported. For each supported release line the entire test suite is performed on all compatible PHP versions.
 
 Versions of all other software required by Magento are most up-to-date compatible version on the day of Magento release.
 
 ### Additional Magento Configuration
 
-Varnish Test requires [Varnish as a caching application](https://devdocs.magento.com/guides/v2.4/config-guide/varnish/config-varnish-magento.html). The test checks a presence of the **X-EQP-Cache** HTTP header set by Varnish and analyses its value on page loads. For that the next additional instruction has to be added to the **vcl_deliver** function:
+Varnish Test requires [Varnish as a caching application](https://devdocs.magento.com/guides/v2.4/config-guide/varnish/config-varnish-magento.html). The test checks for the presence of the **X-EQP-Cache** HTTP header set by Varnish and analyses its value on page loads. For this, the next additional instruction has to be added to the **vcl_deliver** function:
 
 ```vcl
 sub vcl_deliver {
@@ -58,7 +58,7 @@ sub vcl_deliver {
 }
 ```
 
-Also the test uses the [setup:performance:generate-fixtures command](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-perf-data.html) to install sample products to run the test against:
+The test also uses the [setup:performance:generate-fixtures command](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-perf-data.html) to install sample products to run the test against :
 
 ```bash
 magento setup:performance:generate-fixtures ./varnish-config/profile.xml
@@ -126,19 +126,20 @@ Varnish Test subsequently runs the next commands and analyses the **X-EQP-Cache*
     -  GET "https://\<magento-host\>/simple-product-2.html"
     -  GET "https://\<magento-host\>/simple-product-3.html"
 
-## How read an error report?
+## Reading the error report
 
-For the installation part of this test we returns logs of Magento CLI commands. The easiest way to reproduce an error is run failed command on local environment.
+For the installation part of this test, the logs of the Magento CLI commands are returned. The easiest way to reproduce an error is run a failed command on the local environment.
 
-For Varnish tests we specify:
+For Varnish tests specify :
 
-1. Brief description of the failed scenario
+1.  A brief description of the failed scenario
 1. Expected and actual cache behavior (HIT or MISS for cached page)
 
-To debug such kind of error it is recommended to have locally installed Magento with configured Varnish cache and checking corresponding HTTP headers.
+To debug this kind of error, it is recommended to have a locally installed Magento with Varnish cache configured 
+ and to check the corresponding HTTP headers.
 
 ## Troubleshooting
 
-If your submission failed on the Installation and Varnish Test and after attempt to reproduce it locally please [create a Support ticket](https://marketplacesupport.magento.com/hc/en-us) so we will be able to assist you or fix a bug on our end. Please specify your Submission ID in a ticket.
+If the submission failed on the Installation and Varnish Test and after attempting to reproduce it locally, [create a Support ticket](https://marketplacesupport.magento.com/hc/en-us) so support will be able to assist or fix the a bug. Ensure that the relevant Submission ID is included on the ticket.
 
-We also always glad for feedback and communication at [Magento Community Engineering Slack](https://magentocommeng.slack.com/archives/C7SL5CGDN) #marketplace channel.
+Feedback and communication on [Magento Community Engineering Slack](https://magentocommeng.slack.com/archives/C7SL5CGDN) #marketplace channel is always welcome.
