@@ -69,21 +69,6 @@ pages:
         - label: categoryList query
           url: /graphql/queries/category-list.html
 
-        - label: checkCompanyAdminEmail query
-          url: /graphql/queries/check-company-admin-email.html
-          edition: b2b-only
-          exclude_versions: ["2.3"]
-
-        - label: checkCompanyEmail query
-          url: /graphql/queries/check-company-email.html
-          edition: b2b-only
-          exclude_versions: ["2.3"]
-
-        - label: checkCompanyUserEmail query
-          url: /graphql/queries/check-company-admin-email.html
-          edition: b2b-only
-          exclude_versions: ["2.3"]
-
         - label: checkoutAgreements query
           url: /graphql/queries/checkout-agreements.html
 
@@ -134,6 +119,21 @@ pages:
         - label: giftCardAccount query
           url: /graphql/queries/giftcard-account.html
           edition: ee-only
+
+        - label: isCompanyAdminEmailAvailable query
+          url: /graphql/queries/is-company-admin-email-available.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: isCompanyEmailAvailable query
+          url: /graphql/queries/is-company-email-available.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: isCompanyUserEmailAvailable query
+          url: /graphql/queries/is-company-user-email-available.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
 
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html

@@ -18,7 +18,7 @@ Attribute | Data type | Description
 `team(id: ID!)` | CompanyTeam | Returns the specified company team
 `user(id: ID!)` | Customer | Returns the specified company user
 `users(filter: CompanyUsersFilterInput, pageSize: Int = 20, currentPage: Int = 1)`| CompanyUsers | Returns the company users that match the specified filter
-`vat_id` | String | The value-added tax number that is assigned to the company by some jurisdictions for tax reporting purposes
+`vat_tax_id` | String | The value-added tax number that is assigned to the company by some jurisdictions for tax reporting purposes
 
 ### CompanyAclResource attributes {#CompanyAclResource}
 
@@ -28,7 +28,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `children` | [CompanyAclResource!] | An array of sub-resources
 `id` | ID! | The ID assigned to the ACL resource
-`sortOrder` | Int | ACL resource sort order
+`sort_order` | Int | ACL resource sort order
 `text` | String | The label assigned to the ACL resource
 
 ### CompanyAdmin attributes {#CompanyAdmin}
@@ -74,9 +74,9 @@ The `CompanyRoles` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [CompanyRole] | A list of company roles that match the specified filter criteria
+`items` | [CompanyRole]! | A list of company roles that match the specified filter criteria
 `page_info` | SearchResultPageInfo | Pagination meta data
-`total_count` | Int | The total number of roles matching the specified filter
+`total_count` | Int! | The total number of roles matching the specified filter
 
 ### CompanySalesRepresentative attributes {#CompanySalesRepresentative}
 
@@ -94,6 +94,6 @@ The `CompanyUsers` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [[Customer]]({{page.baseurl}}/graphql/queries/customer.html) | An array of `CompanyUser` objects that match the specified search criteria
+`items` | [[Customer]!]({{page.baseurl}}/graphql/queries/customer.html) | An array of `CompanyUser` objects that match the specified search criteria
 `page_info` | SearchResultPageInfo | Pagination meta data
-`total_count` | Int | The number of objects returned
+`total_count` | Int! | The number of objects returned
