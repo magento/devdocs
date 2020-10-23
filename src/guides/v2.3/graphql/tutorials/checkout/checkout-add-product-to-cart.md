@@ -162,56 +162,6 @@ The response lists all items currently in the cart, including the just-added vid
 
 ## Verify this step {#verify-step}
 
-There are two ways to verify the cart:
-
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
 1. Go to the shopping cart. All the items you added are displayed.
-
-Or, run a `customerCart` query:
-
-```graphql
-{
-  customerCart {
-    id
-    items {
-      id
-      product {
-        name
-        sku
-      }
-      quantity
-    }
-  }
-}
-```
-
-and the result should list the products that were added above:
-
-```json
-{
-  "data": {
-    "customerCart": {
-      "id": "1zzTAR53GzjRY7RPe1OsAPyzbjJcvkGD",
-      "items": [
-        {
-          "id": "7",
-          "product": {
-            "name": "Aim Analog Watch",
-            "sku": "24-MG04"
-          },
-          "quantity": 1
-        },
-        {
-          "id": "8",
-          "product": {
-            "name": "Beginner's Yoga",
-            "sku": "240-LV04"
-          },
-          "quantity": 1
-        }
-      ]
-    }
-  }
-}
-```
