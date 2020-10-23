@@ -110,7 +110,7 @@ query {
 
 **Response:**
 
-```text
+```json
 {
   "data": {
     "customer": {
