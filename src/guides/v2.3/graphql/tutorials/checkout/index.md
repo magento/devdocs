@@ -19,7 +19,7 @@ This tutorial describes how to place an order through GraphQl. Customers can mak
 -  As a logged-in user
 -  As a guest user who does not create an account
 
-The 10-step tutorial generally takes 30 minutes.
+The **10-step tutorial** generally takes **30 minutes**.
 
 Magento GraphQL is designed to run queries and perform actions on behalf of a customer. Magento GraphQL does not perform backend tasks, such as manage invoices or shipments.
 
