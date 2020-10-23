@@ -299,7 +299,7 @@ To review the Managed Alerts for {{ site.data.var.ee }} policy:
 
 ### Configure notification channels
 
-To use the Managed Alerts for {{ site.data.var.ee }} policy to monitor your Production sites, you must configure at least one notification channel and map it to the alert policy.
+To use the Managed Alerts for {{ site.data.var.ee }} to monitor your Production sites, you must configure at least one notification channel and map it to the alert policy.
 
 Notifications about performance issues go to all channels associated with an alert policy when conditions on the application or infrastructure trigger an alert. You also receive notifications when an issue is acknowledged and closed.
 
