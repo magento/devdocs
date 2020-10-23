@@ -250,7 +250,7 @@ For further information and examples, see [Introduction to New Relic Logs][New R
 ### Monitor performance with Managed Alerts
 
 Adobe provides the Managed Alerts for {{ site.data.var.ee }} alert policy to track performance metrics.
-Based on industry best practices, the policy includes a collection of alerts that set thresholds to trigger  warning and critical notifications when site infrastructure or application issues affect performance. The Managed Alerts policy tracks the following metrics on Production environments only:
+Based on industry best practices, the policy includes a collection of alerts that set thresholds to trigger warning and critical notifications when site infrastructure or application issues affect performance. The Managed Alerts policy tracks the following metrics on Production environments only:
 
 | Metric | Data collection | Availability
 |:--------|:------------------------|:-------------
