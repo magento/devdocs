@@ -1,0 +1,8 @@
+---
+title: Magento_MsrpGroupedProduct
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/MsrpGroupedProduct/README.md
+last_modified_at: '2019-03-02 19:21:49 -0600'
+content: "**MsrpGroupedProduct** provides type and resolver information for the Msrp
+  module from the GroupedProduct module."
