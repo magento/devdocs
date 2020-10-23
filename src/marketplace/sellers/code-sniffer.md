@@ -7,7 +7,7 @@ title: Code Sniffer
 
 Code Sniffer is a static test that allows the detection of violations of the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) and prevents common issues by static code analysis.
 
-## Why testing is done
+## What testing is for
 
 It is typical for a Magento project to use source code from several vendors. By adopting [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) we solve two problems :
 
@@ -22,7 +22,7 @@ Code Sniffer is mandatory for extensions of any type. The entire code base of a 
 
 Code Sniffer validates that the implementation of the submitted extension adheres to the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/).
 
-## What tools and environments are being used
+## Tools and environments used
 
 Our Code Sniffer is based on the [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and uses [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) as a ruleset.
 
@@ -35,7 +35,7 @@ phpcs --standard=Magento2 --extensions=php,phtml --error-severity=10 --ignore-an
 ```
 If PHPCS finds any errors, the provided extension's version is rejected.
 
-## How error reports are read
+## Reading the error report
 
 All detected errors are self-explanatory and have references to the locations in the code where they were detected.
 

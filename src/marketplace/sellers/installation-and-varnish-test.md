@@ -37,11 +37,9 @@ As reflected in a test name, two main areas are checked :
 
 ## Tools and environments used
 
-Our test infrastructure follows the [recommended setup](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html) for the Magento environment. You may use [Magento Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html) to create a similar environment.
+Our test infrastructure follows the [recommended setup](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html) for the Magento installation. Installation & Varnish Tests always run on the most up-to-date version of software compatible with Magento release. You may use [Magento Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html) to create a similar environment.
 
 Installation & Varnish Tests always use the latest patch version of Magento for release line claimed as supported. For each supported release line the entire test suite is performed on all compatible PHP versions.
-
-Versions of all other software required by Magento are most up-to-date compatible version on the day of Magento release.
 
 ### Additional Magento Configuration
 
@@ -132,11 +130,10 @@ For the installation part of this test, the logs of the Magento CLI commands are
 
 For Varnish tests specify :
 
-1.  A brief description of the failed scenario
+1. A brief description of the failed scenario
 1. Expected and actual cache behavior (HIT or MISS for cached page)
 
-To debug this kind of error, it is recommended to have a locally installed Magento with Varnish cache configured 
- and to check the corresponding HTTP headers.
+To debug this kind of error, it is recommended to have a locally installed Magento with Varnish cache configured and to check the corresponding HTTP headers.
 
 ## Troubleshooting
 

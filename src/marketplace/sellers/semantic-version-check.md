@@ -7,7 +7,7 @@ title: Semantic Version Check
 
 The Semantic Version Check (SVC) is a quality check that validates the change level of an extension submission against the change level declared by the extension developer.
 
-## Why we test?
+## What testing is for
 
 [Semantic Versioning](https://semver.org/) is a good way to communicate what kind of changes were introduced between software releases. This way, clients may estimate the risk level of upgrading a particular software package and how much effort is required to adopt the new version.
 
@@ -15,14 +15,14 @@ Magento follows Semantic Versioning and encourages all 3rd-party vendors to appl
 
 Magento Marketplace uses version information to fast-track the extension validation process for submissions that introduce patch level changes, as these are expected to be backwards compatible bug fixes without any new functionality.
 
-## When we test?
+## When testing is done
 
 For this check to be applied, the following conditions must be met:
 
 1. A new submission must update an already existing version of an extension that has been previously published to the Marketplace storefront.
 1. The extension developer must declare the new submission as a "PATCH" level change.
 
-## What we are looking for?
+## What is being checked
 
 The SemVer check will analyze and determine the change level of the new submission and validate if, in fact, the change level is a "PATCH" level change.
 
@@ -30,7 +30,7 @@ If the submission is a "PATCH" level change, the submission is fast-tracked and 
 
 A failed SemVer check has no impact on extension approval. If a submission receives Manual QA approval, then the extension will be published.
 
-## What tools and environment we are using?
+## Tools and environments used
 
 The Semantic Version Check is implemented using the publicly available, [magento/magento-semver](https://github.com/magento/magento-semver) tool.
 
@@ -41,7 +41,7 @@ Magento SemVer can:
 1. Detect, PATCH, MINOR and MAJOR change levels and suggest the appropriate change level for a new version.
 1. Validate an update against a desired change level.
 
-## How read an error report?
+## Reading the error report
 
 The error report will list minor and major changes detected in an extension's source. To fix an error, the implementation should be refactored so it no longer introduces non-patch level changes.
 

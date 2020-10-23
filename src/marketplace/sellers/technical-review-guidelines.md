@@ -7,10 +7,10 @@ During technical review, your code is examined to detect the presence of viruses
 
 ## Submission
 
-Technical review begins right at the moment of uploading extension package at [Developer Portal](https://developer.magento.com/) and consists of 2 steps mandatory for generating submission id and triggering the further extension check:
+The technical review begins right at the moment of uploading the extension package at [Developer Portal](https://developer.magento.com/) and consists of 2 steps that are mandatory to generate submission id and triggering the further extension check:
 
-1. [Malware Scan]({{ site.baseurl }}/marketplace/sellers/malware-scan.html) &mdash; ensures that uploaded packages does not contain viruses or malware software.
-1. Extension Package Verification &mdash; checks that uploaded package is a [Composer](https://getcomposer.org/) packages with Magento extension.
+1. [Malware Scan]({{ site.baseurl }}/marketplace/sellers/malware-scan.html) &mdash; ensures that uploaded packages do not contain viruses or malware software.
+1. Extension Package Verification &mdash; checks that uploaded file is a zip archive which is a [Composer](https://getcomposer.org/) packages with Magento extension.
 
 ### Extension Package Verification
 

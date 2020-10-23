@@ -7,11 +7,11 @@ title: Copy Paste Detector
 
 The Copy Paste Detector check validates that implementation of the submitted extension is unique and not duplicated code from an already known extension.
 
-## Why testing is done
+## What testing is for
 
-At Magento, an Adobe company, we take authorship seriously. So while supporting an open collaboration, we strictly guard our community from malicious members and forbid any kind of plagiarism.
+Only original extensions may be listed at [Magento Marketplace](https://marketplace.magento.com/). If the submitted extension contains a lot of code fragments from Magento or another extension available at Magento Marketplace this is considered plagiarism and extension publication is rejected.
 
-## When do we test?
+## When testing is done
 
 All submissions is subject of Copy Past Detector check regardless of extension type and scope of changes.
 
@@ -21,7 +21,7 @@ Copy Paste Detector performs a static analysis of the source code and tries to d
 
 If the Detector find  many similarities between the submitted extension and a previously known extension, we may mark the check as failed if there are strong evidences of plagiarism. We may schedule submissions for human code review if there are some concerns regarding code fragments, but expert judgement is required for the final decision.
 
-##  Tools and environments used
+## Tools and environments used
 
 Copy Paste Detector includes, but is not limited to, [PHPCPD](https://github.com/sebastianbergmann/phpcpd). On top of PHPCPD we use a proprietary solution to search for duplicates across multiple extensions and their versions ignoring irrelevant implementation details such as variables, classes and method names, etc.
 
