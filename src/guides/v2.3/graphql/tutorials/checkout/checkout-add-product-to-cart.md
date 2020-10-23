@@ -31,7 +31,7 @@ If you add a product to the shopping cart as a registered customer, be sure to s
 
 ## Add a simple product into the shopping cart
 
-The following mutation adds a simple product into shopping cart. Simple products are items without sizes or colors, for example.
+The following mutation adds a simple product into the shopping cart.
 
 Replace `{ CART_ID }` with the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
