@@ -25,7 +25,7 @@ Magento Marketplace does not support encrypted extensions at this time.
 
    Testing your extension in advance reduces the time it takes to pass Technical Review. For a list of code sniffer rules, see [Magento Extension Quality Program Coding Standard][2].
 
-1. Prepare, validate, and zip your extension as described in [Packaging a Component]({{site.baseurl}}/guides/v2.4/extension-dev-guide/package/
+1. Prepare, validate, and zip your extension as described in [Packaging a Component]({{site.baseurl}}/guides/v2.4/extension-dev-guide/package/package_module.html).
 1. Prepare the following preliminary documentation:
 
    -  Release notes in text format
