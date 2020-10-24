@@ -73,7 +73,7 @@ mutation {
 }
 ```
 
-This example shows how you can execute the previous request without `destination_cart_id`.
+The following example executes the previous request without specifying `destination_cart_id`.
 
 **Request:**
 
@@ -127,7 +127,7 @@ mutation {
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`destination_cart_id` | String | The ID of the logged-in customer's cart. If you do not specify a value the ID will be gotten automatically by the logged-in customer.
+`destination_cart_id` | String | The ID of the logged-in customer's cart. If you do not specify a value, the mutation determines the customer's cart ID and uses that value.
 `source_cart_id` | String! | The ID of the guest cart
 
 ## Output attributes
@@ -152,4 +152,4 @@ Error | Description
 `Required parameter "source_cart_id" is missing` | The `source_cart_id` attribute contains an empty value.
 `The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table, or you tried to merge two guest carts.
 `The current user cannot perform operations on cart` | The authorized customer tried to merge a guest cart into the cart of another customer.
-`Could not create empty cart for customer` | The system could not create an empty cart for logged-in customer
+`Could not create empty cart for customer` | The system could not create an empty cart for the logged-in customer
