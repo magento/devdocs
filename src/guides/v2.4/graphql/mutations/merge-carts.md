@@ -7,11 +7,18 @@ The `mergeCarts` mutation transfers the contents of a guest cart into the cart o
 
 The mutation retains any items that were already in the logged-in customer's cart. If both the guest and customer carts contain the same item, `mergeCarts` adds the quantities. Upon success, the mutation deletes the original guest cart.
 
-Use the [`customerCart` query]({{page.baseurl}}/graphql/queries/customer-cart.html) to determine the value of the `destination_cart_id` attribute.
-
 ## Syntax
 
-`mergeCarts(source_cart_id: String!, destination_cart_id: String!): Cart!`
+```graphql
+mutation {
+    mergeCarts(
+        source_cart_id: String!
+        destination_cart_id: String
+    ) {
+        Cart!
+    }
+}
+```
 
 ## Example usage
 
@@ -21,7 +28,60 @@ In the following example, the customer had one Overnight Duffle in the cart (`CY
 
 ```graphql
 mutation {
-  mergeCarts(source_cart_id: "mPKE05OOtcxErbk1Toej6gw6tcuxvT9O", destination_cart_id: "CYmiiQRjPVc2gJUc5r7IsBmwegVIFO43") {
+  mergeCarts(
+    source_cart_id: "mPKE05OOtcxErbk1Toej6gw6tcuxvT9O",
+    destination_cart_id: "CYmiiQRjPVc2gJUc5r7IsBmwegVIFO43"
+  ) {
+    items {
+      id
+      product {
+        name
+        sku
+      }
+      quantity
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "mergeCarts": {
+      "items": [
+        {
+          "id": "14",
+          "product": {
+            "name": "Overnight Duffle",
+            "sku": "24-WB07"
+          },
+          "quantity": 2
+        },
+        {
+          "id": "17",
+          "product": {
+            "name": "Radiant Tee",
+            "sku": "WS12"
+          },
+          "quantity": 1
+        }
+      ]
+    }
+  }
+}
+```
+
+This example shows how you can execute the previous request without `destination_cart_id`.
+
+**Request:**
+
+```graphql
+mutation {
+  mergeCarts(
+    source_cart_id: "mPKE05OOtcxErbk1Toej6gw6tcuxvT9O"
+  ) {
     items {
       id
       product {
@@ -67,7 +127,7 @@ mutation {
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`destination_cart_id` | String! | The ID of the logged-in customer's cart
+`destination_cart_id` | String | The ID of the logged-in customer's cart. If you do not specify a value the ID will be gotten automatically by the logged-in customer.
 `source_cart_id` | String! | The ID of the guest cart
 
 ## Output attributes
@@ -89,7 +149,7 @@ Attribute |  Data Type | Description
 Error | Description
 --- | ---
 `Current user does not have an active cart.` | The `mergeCarts` mutation deactivates the guest cart specified in the `source_cart_id` after merging. The guest cannot make any further operations with it.
-`Required parameter "destination_cart_id" is missing` | The `destination_cart_id` attribute contains an empty value.
 `Required parameter "source_cart_id" is missing` | The `source_cart_id` attribute contains an empty value.
 `The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table, or you tried to merge two guest carts.
 `The current user cannot perform operations on cart` | The authorized customer tried to merge a guest cart into the cart of another customer.
+`Could not create empty cart for customer` | The system could not create an empty cart for logged-in customer
