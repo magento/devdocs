@@ -7,14 +7,14 @@ During technical review, your code is examined to detect the presence of viruses
 
 ## Submission
 
-The technical review begins right at the moment of uploading the extension package at [Developer Portal](https://developer.magento.com/) and consists of 2 steps that are mandatory to generate submission id and triggering the further extension check:
+The technical review begins as soon as you upload an extension package at [Developer Portal](https://developer.magento.com/) and consists of two mandatory steps to generate the submission id and trigger further extension testing:
 
 1. [Malware Scan]({{ site.baseurl }}/marketplace/sellers/malware-scan.html) &mdash; ensures that uploaded packages do not contain viruses or malware software.
-1. Extension Package Verification &mdash; checks that uploaded file is a zip archive which is a [Composer](https://getcomposer.org/) packages with Magento extension.
+1. Extension Package Verification &mdash; checks that the uploaded file is a zip archive which is a [Composer](https://getcomposer.org/) package with Magento extension.
 
 ### Extension Package Verification
 
-The submitted package must be a Magento module, theme, language pack, or metapackage, that meets Composer packaging and format requirements:
+Package submissions must contain a Magento module, theme, language pack, or metapackage that meets Composer packaging and format requirements:
 
 1. Code submitted as a zip archive.
 1. Submitted package does not exceed 30 MB.
@@ -37,14 +37,14 @@ The submitted package must be a Magento module, theme, language pack, or metapac
    -  `magento/product-community-edition`
    -  `magento/magento2-ee-base`
    -  `magento/product-enterprise-edition`
-1. The package does not use `*` as a version restriction for Magento packages (packages with `magento` vendor). Version restriction should be specified according to [recommendations]({{ site.baseurl }}/guides/v2.4/extension-dev-guide/versioning/dependencies.html?itm_source=devdocs&itm_medium=quick_search&itm_campaign=federated_search&itm_term=versio#determine-module-dependency).
+1. The package does not use `*` as a version restriction for Magento packages (packages with `magento` vendor). You must specify version restriction according to the [recommendations]({{ site.baseurl }}/guides/v2.4/extension-dev-guide/versioning/dependencies.html#determine-module-dependency) in the _Magento PHP Developer Guide_.
 1. [Require inline aliases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in the `composer.json` file.
 
-Additional requirements for package declarations are applied depending on the package type:
+Additional requirements for package declarations are applied based on the package type:
 
-1. Magento modules (packages with type `magento2-module`) must have valid `etc/module.xml` and `registration.php` files. Configured [autoloading](https://getcomposer.org/doc/04-schema.md#autoload) in `composer.json`: `autoload.files` must include at least a `registration.php` file and a `autoload.psr-4` is expected to declare at least one namespace.
-1. Magento themes (package type `magento2-theme`) must have valid `theme.xml` and `registration.php` files. Registration file must be included in the `autoload.files` section of `composer.json`. `autoload.psr-4` must not be used for these types of packages.
-1. Magento language packages (type `magento2-language`) must have valid `language.xml` and `registration.php` files. Registration file must be included in the `autoload.files` section of `composer.json`. `autoload.psr-4` must not be used for these types of packages.
+1. Magento modules (packages with type `magento2-module`) must have valid `etc/module.xml` and `registration.php` files. Configured [autoloading](https://getcomposer.org/doc/04-schema.md#autoload) in `composer.json`: `autoload.files` must include at least a `registration.php` file and the `autoload.psr-4` section must declare at least one namespace.
+1. Magento themes (package type `magento2-theme`) must have valid `theme.xml` and `registration.php` files. Registration file must be included in the `autoload.files` section of `composer.json`. These types of packages must not include an `autoload.psr-4` declaration.
+1. Magento language packages (type `magento2-language`) must have valid `language.xml` and `registration.php` files. A registration file must be included in the `autoload.files` section of `composer.json`. These types of packages must not include an `autoload.psr-4` declaration.
 1. Packages of type `metapackage` must declare at least one dependency in the `require` section.
 
 _See also:_
@@ -54,11 +54,11 @@ _See also:_
 
 ## Extension Validation and QA
 
-After accepting package for Technical Review series of automated checks and manual checks are scheduled.
+After accepting a package for Technical Review, a series of automated checks and manual checks are scheduled.
 
 ### Code Sniffer: Check code quality/syntax
 
-The Marketplace coding standard review uses a custom set of coding sniffs. If the submitted code fails to pass the review, a technical report is generated that describes each issue found and its location in the codebase.
+The Marketplace coding standard review uses a custom set of coding sniffs. If the submitted code fails the review, Magento generates a technical report that describes each issue found and its location in the codebase.
 
 _More details:_ [Code Sniffer]({{ site.baseurl }}/marketplace/sellers/code-sniffer.html)
 
@@ -74,9 +74,9 @@ _More details:_ [Copy Paste Detector]({{ site.baseurl }}/marketplace/sellers/cop
 
 _See also:_ [OSL 3.0: A Better License for Open Source Software][4]
 
-### Installation and Varnish Test: Verify that product installs and caching works correctly
+### Installation and Varnish Tests: Verify that product installs and caching works correctly
 
-Extensions for Magento are installed with Varnish Cache enabled for each supported version of PHP and switched from development to [production mode]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html). If you have shared packages and dependencies required for your extension, also test installs and usage with those packages.
+Extensions for Magento are installed with Varnish Cache enabled for each supported version of PHP and switched from development to [production mode]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html). If you have shared packages and dependencies required for your extension, the Installation test also tests Magento installation and usage with those packages included.
 
 In addition, cacheable pages are accessed to ensure that they are served directly from Varnish Cache. You will be notified if your extension fails the test.
 
@@ -91,18 +91,19 @@ _See also:_
 
 This check verifies that the extension installs without error, is configurable (as applicable), and operates as expected.
 
-Manual QA may be skipped if [Semantic Version Check]({{ site.baseurl }}/marketplace/sellers/semantic-version-check.html) confirms that only patch-level changes were introduced in a new version of an already listed extension.
+Manual QA can be skipped if the [Semantic Version Check]({{ site.baseurl }}/marketplace/sellers/semantic-version-check.html) confirms that only patch-level changes were introduced in a new version of an already listed extension.
 
 #### Documentation and resources
-The documentation provided with the extension is used during manual QA and should comply with the next requirements:
+Magento uses the documentation provided with the extension during manual QA. The submitted documentation must comply with the following requirements:
 
-1. User guide should be submitted in one of the following formats:
+1. Submit the user guide in one of the following formats:
 
    -  A PDF that describes the extension setup and features.
    -  A PDF containing a link to a wiki or a similar page that describes the extension setup and features.
 
-1. Extension documentation should cover all features of the extension.
-1. Extension documentation should not direct users to make purchases on sites other than Marketplace.
+1. Extension documentation must cover all features of the extension.
+
+1. Extension documentation must not direct users to make purchases on sites other than Marketplace.
 
 _See also:_ [Polishing your Marketplace submission: 7 tips from the Marketplace EQP team](https://community.magento.com/t5/Magento-DevBlog/Polishing-your-Marketplace-submission-7-tips-from-the/ba-p/142382)
 
@@ -110,13 +111,13 @@ _See also:_ [Polishing your Marketplace submission: 7 tips from the Marketplace 
 
 To pass Manual QA, the extension must meet the following requirements:
 
-1. Installs with Composer
+1. Installs with Composer.
 1. Compiles without errors using the following command: [`deploy:mode:set production`](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html#change-to-production-mode)
-1. Extension has all supportive documentation that complies with [Documentation guides](#Documentation and Resources)
-1. Works with each version of Magento that is shown as supported in the extension product profile.
+1. Extension has all supporting documentation that complies with the [documentation requirements](#Documentation and Resources)
+1. Works with each version of Magento that the extension claims to support in the extension product profile.
 
    -  Basic Magento functionality works as expected with the installed extension.
-   -  Basic test suite includes, but not limited to the following scenarios :
+   -  Basic test suite includes, but is not limited to the following scenarios:
 
       -  Create order as guest user (Simple product, Configurable product)
       -  Create a new customer
@@ -130,7 +131,7 @@ To pass Manual QA, the extension must meet the following requirements:
       -  As store admin: Create new product with images (Simple product, Configurable product)
       -  As store admin: Create new product category
 
-1. Works with each version of PHP that is supported by the Magento version that is shown as supported in the extension product profile.
+1. Works with each version of PHP that is supported by the Magento version that the extension claims to support in the extension product profile.
 1. Has all functionality that is described in the extension documentation and vice versa.
 1. Does not crash with unhandled errors.
 1. Does not hang when invalid data is submitted.
@@ -140,18 +141,18 @@ _See also:_
 -  [Install an Extension via Composer](https://devdocs.magento.com/cloud/howtos/install-components.html#install-an-extension)
 -  [General CLI installation](https://devdocs.magento.com/extensions/install/)
 
-#### Additional checks  For Page Builder extensions
+#### Additional checks for Page Builder extensions
 
-Extension that claimed support of Magento Page Builder is the subject for additional checks:
+Extensions that claim to support Magento Page Builder are subject to the following additional checks:
 
-1. New and extended content types can be dragged to the stage, edited, duplicated, moved, hidden, saved and deleted from the stage without errors.
+1. New and extended content types can be dragged to the stage, edited, duplicated, moved, hidden, saved, and deleted from the stage without errors.
 1. New and extended content types are rendered on the storefront without errors.
-1. Extensions that use Page Builder should also ensure that all Page Builder content creation functions work correctly. This includes, but is not limited to, all the functions previously described for new and extended content types rendered in the Admin stage and the storefront.
+1. Extensions that use Page Builder must also support correct operation of all Page Builder content creation functions. This includes, but is not limited to, all the functions previously described for new and extended content types rendered in the Admin stage and the storefront.
 
 #### Exit criteria for testing
 
 1. At least one major issue found in Magento functionality which was affected by an installed extension.
-1. Blocking issue found and it affects entire extension functionality.
+1. Blocking issue found that affects entire extension functionality.
 1. For big extensions, where functionality is not concentrated in one particular area we can switch to the unaffected area and continue to test it in order to provide more errors to the developer. At the same time, we can stop testing once we have found 2 blockers in separate areas of an extension.
 
 [3]: https://opensource.org/licenses/OSL-3.0
