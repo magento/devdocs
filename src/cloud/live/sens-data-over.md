@@ -13,7 +13,7 @@ You must have [environment-level, Admin role privileges][admin] to complete conf
 
 ## Consistent configuration
 
-The database contains default configurations for your Magento store. When you update configurations in the {{site.data.var.ece}} environments using the Magento Admin panel, your configuration changes apply to the `app/etc/config.php` file. You can then use this file to manage and synchronize the Magento application configuration for your local environment and across each Cloud environment.
+The database contains default configurations for your Magento store. When you update configurations in the {{site.data.var.ece}} environments using the Magento Admin panel or the Magento CLI `bin/magento config:set` command, your configuration changes apply to the `app/etc/config.php` file. You can then use this file to manage and synchronize the Magento application configuration for your local environment and across each Cloud environment.
 
 Use the `{{site.data.var.ct}}` command in the remote environment to generate a `config.php` file:
 
@@ -43,7 +43,9 @@ Because {{site.data.var.ece}} supports only the Magento production and maintenan
 
 ### Sensitive data
 
-Sensitive values are _not_ stored in the `app/etc/config.php` file. Any sensitive configurations export to the `app/etc/config.php` file during the `config:dump` process. We recommend using environment variables to store sensitive values. For an example, see [Add Magento authentication keys][auth].
+Sensitive values are _not_ stored in the `app/etc/config.php` file. Any sensitive configurations export to the `app/etc/env.php` file when you use the `bin/magento app:config:dump` Magento CLI command. For Cloud projects, we recommend using {{ site.data.var.ece }} environment variables to store sensitive values. For an example, see [Add Magento authentication keys][auth].
+
+You can also set sensitive values using the Magento CLI command: `bin/magento config:sensitive:set`, see [Sensitive or system-specific settings] in the _Configuration Guide_.
 
 ### SCD performance
 
@@ -59,6 +61,17 @@ All system configurations are set during build and deploy according to the follo
 1. If an environment variable exists, use the custom configuration and ignore the default configuration.
 1. If an environment variable does not exist, use the configuration from a `MAGENTO_CLOUD_RELATIONSHIPS` name-value pair in the [`.magento.app.yaml` file][app-yaml]. Ignore the default configuration.
 1. If an environment variable does not exist and `MAGENTO_CLOUD_RELATIONSHIPS` does not contain a name-value pair, remove all customized configuration and use the values from the default configuration.
+
+If the same setting is configured in multiple places, Magento relies on the following configuration hierarchy to determine which value to apply to the environment :
+
+|Priority|Configuration<br/>Method|Description|
+|---|---|---|
+|1 | Project Web UI<br>environment variables | Values added from the _Variables_ tab of environment configuration in the Project Web UI. We recommend specifying values here for sensitive or environment-specific configurations. Settings specified here cannot be edited from the Magento Admin. See [Environment configuration variables][].|
+|2 | `.magento.app.yaml` | Values added in the `variables` section of the `.magento.app.yaml` file. We recommend specifying values here to ensure consistent configuration across all environments. **Do not specify sensitive values in the `.magento.app.yaml` file.** See [Application settings][app-yaml].|
+|3 | `app/etc/env.php` | Environment-specific configuration values stored here are added by using the Magento `app:config:dump` command. Set the system-specific and sensitive values using environment variables or the Magento CLI. See [Sensitive data](#sensitive-data). The `env.php` file is **not** included in source control.|
+|4 | `app/etc/config.php` | Values stored here are added by using the Magento `app:config:dump` command. Shared configuration values are added to `config.php`. Set shared configuration from the Magento Admin or using the Magento CLI. See [Consistent configuration](#consistent-configuration). The `config.php` file is included in source control.|
+|5 | Database | Values stored here are added by setting configurations in the Magento Admin. Note that configurations set using any of the preceding methods are locked (greyed out) and cannot be edited from the Magento Admin.|
+|6 | `config.xml` | Many configurations have default values set in a the `config.xml` file for a module. If Magento cannot find any value set by any of the preceding methods, it falls back to the default value, if set.|
 
 ## Procedure to manage your settings
 
@@ -170,8 +183,10 @@ This process **overwrites** the store configuration; only do the following if th
 [app-yaml]: {{ site.baseurl }}/cloud/project/magento-app.html
 [commerce-dump]: {{ site.baseurl }}/guides/v2.3/reference/cli/magento-commerce.html#appconfigdump
 [env-yaml]: {{ site.baseurl }}/cloud/project/magento-env-yaml.html
+[environment configuration variables]: {{ site.baseurl }}/cloud/project/projects.html#environment-configuration-variables
 [export]: {{ site.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html
 [Optimize deployment]: {{ site.baseurl }}/cloud/deploy/optimize-cloud-deployment.html
 [Pipeline deployment]: {{ site.baseurl }}/guides/v2.3/config-guide/deployment/pipeline/technical-details.html
 [quick]: {{ site.baseurl }}/cloud/env/variables-build.html#scd_strategy
 [scd]: {{ site.baseurl }}/cloud/deploy/static-content-deployment.html
+[Sensitive or system-specific settings]: {{ site.baseurl }}/guides/v2.4/config-guide/prod/config-reference-sens.html

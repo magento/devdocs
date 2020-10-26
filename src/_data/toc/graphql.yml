@@ -69,21 +69,6 @@ pages:
         - label: categoryList query
           url: /graphql/queries/category-list.html
 
-        - label: checkCompanyAdminEmail query
-          url: /graphql/queries/check-company-admin-email.html
-          edition: b2b-only
-          exclude_versions: ["2.3"]
-
-        - label: checkCompanyEmail query
-          url: /graphql/queries/check-company-email.html
-          edition: b2b-only
-          exclude_versions: ["2.3"]
-
-        - label: checkCompanyUserEmail query
-          url: /graphql/queries/check-company-admin-email.html
-          edition: b2b-only
-          exclude_versions: ["2.3"]
-
         - label: checkoutAgreements query
           url: /graphql/queries/checkout-agreements.html
 
@@ -135,8 +120,23 @@ pages:
           url: /graphql/queries/giftcard-account.html
           edition: ee-only
 
+        - label: isCompanyAdminEmailAvailable query
+          url: /graphql/queries/is-company-admin-email-available.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: isCompanyEmailAvailable query
+          url: /graphql/queries/is-company-email-available.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: isCompanyRoleNameAvailable query
           url: /graphql/queries/is-company-role-name-available.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: isCompanyUserEmailAvailable query
+          url: /graphql/queries/is-company-user-email-available.html
           edition: b2b-only
           exclude_versions: ["2.3"]
 
@@ -233,6 +233,11 @@ pages:
           edition: b2b-only
           exclude_versions: ["2.3"]
 
+        - label: createCompanyUser mutation
+          url: /graphql/mutations/create-company-user.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
 
@@ -260,6 +265,11 @@ pages:
           url: /graphql/mutations/create-product-review.html
           exclude_versions: ["2.3"]
 
+        - label: createRequisitionList mutation
+          url: /graphql/mutations/create-requisition-list.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
         - label: createWishlist mutation
           url: /graphql/mutations/create-wishlist.html
           edition: ee-only
@@ -275,6 +285,11 @@ pages:
           edition: b2b-only
           exclude_versions: ["2.3"]
 
+        - label: deleteCompanyUser mutation
+          url: /graphql/mutations/delete-company-user.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
 
@@ -285,6 +300,11 @@ pages:
 
         - label: deletePaymentToken mutation
           url: /graphql/mutations/delete-payment-token.html
+
+        - label: deleteRequisitionList mutation
+          url: /graphql/mutations/delete-requisition-list.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
 
         - label: generateCustomerToken mutation
           url: /graphql/mutations/generate-customer-token.html
@@ -329,6 +349,11 @@ pages:
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
           edition: ee-only
+
+        - label: renameRequisitionList mutation
+          url: /graphql/mutations/rename-requisition-list.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
 
         - label: reorderItems mutation
           url: /graphql/mutations/reorder-items.html
@@ -394,6 +419,11 @@ pages:
 
         - label: updateCompanyTeam mutation
           url: /graphql/mutations/update-company-team.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: updateCompanyUser mutation
+          url: /graphql/mutations/update-company-user.html
           edition: b2b-only
           exclude_versions: ["2.3"]
 
