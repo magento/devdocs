@@ -24,7 +24,7 @@ Code Sniffer validates that the implementation of the submitted extension adhere
 
 ## Tools and environments used
 
-The Magento Code Sniffer is based on the [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and uses [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) as a ruleset.
+The Magento EQP Code Sniffer is based on the [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and uses [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) as a ruleset.
 
 You can complete Code Sniffer testing in a development environment by using Composer to install PHPCS and the Magento Coding Standard as a global dependency for a particular project.
 
