@@ -111,7 +111,7 @@ pages:
       url: /marketplace/sellers/code-sniffer.html
       versionless: true
 
-    - label: Installation and Varnish Test
+    - label: Installation and Varnish Tests
       url: /marketplace/sellers/installation-and-varnish-test.html
       versionless: true
 
