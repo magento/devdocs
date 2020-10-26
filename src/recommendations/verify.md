@@ -35,7 +35,7 @@ To ensure events are firing on pages across your site (home, product, checkout, 
 
 Install the [Snowplow Analytics Debugger extension for Chrome](https://chrome.google.com/webstore/detail/snowplow-analytics-debugg/jbnlcgeengmijcghameodeaenefieedm). This extension displays the events being collected and sent to Magento.
 
-1. Make sure you disable any ad blockers on your browser and accept cookies on the site. 
+1. Make sure you disable any ad blockers on your browser and accept cookies on the site.
 
 1. In Chrome, choose **Customize and control Google Chrome** (the three vertical dots in the upper right corner of the browser) then select **More Tools** > **Developer Tools**.
 
