@@ -20,12 +20,13 @@ All extension submissions must pass the mandatory Installation and Varnish tests
 The Installation and Varnish tests complete the following checks:
 
 1. Successful installation of Magento with the submitted extension and ability to switch to production mode–This check includes the following steps:
+
    -  Verify ability to add the extension to the [Magento project](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html#get-the-magento-software) with [Composer](https://getcomposer.org/).
    -  After adding and enabling the extension, verify successful Magento installation.
    -  Verify that you can [compile Magento code](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-compiler.htm).
   -  Verify that you can [deploy static content](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-static-view.html).
    -  Verify that you can [enable Magento Production mode](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html).
-   - Check that you can [reindex all data](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html) with the installed extension.
+   -  Check that you can [reindex all data](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html) with the installed extension.
 
 1. Check availability of critical pages and correct cache processing–This check includes the following steps:
 
@@ -96,24 +97,24 @@ magento setup:performance:generate-fixtures ./varnish-config/profile.xml
 The Varnish test subsequently issues a series of requests, and then analyzes the value of the `X-EQP-Cache` HTTP header:
 
 1. Check the value of the `X-EQP-Cache` header by submitting the following series of requests two times to the same URL to verify the cache operation.
-    -  On the first set of requests against a fresh installation, the test verifies that each response returns the `X-EQP-Cache` header with the `MISS` value because the page has never been cached.
-    -  On the second set of requests, the test verifies that each response returns the `X-EQP-Cache` header with the `HIT` value because the page was added to the cache after the initial request.
-        -  GET "https://\<magento-host\>/simple-product-1.html"
-        -  GET "https://\<magento-host\>/simple-product-2.html"
-        -  GET "https://\<magento-host\>/simple-product-3.html"
-        -  GET "https://\<magento-host\>/category-1.html"
-        -  GET "https://\<magento-host\>/category-2.html"
-        -  GET "https://\<magento-host\>/"
+   -  On the first set of requests against a fresh installation, the test verifies that each response returns the `X-EQP-Cache` header with the `MISS` value because the page has never been cached.
+   -  On the second set of requests, the test verifies that each response returns the `X-EQP-Cache` header with the `HIT` value because the page was added to the cache after the initial request.
+      -  GET "https://\<magento-host\>/simple-product-1.html"
+      -  GET "https://\<magento-host\>/simple-product-2.html"
+      -  GET "https://\<magento-host\>/simple-product-3.html"
+      -  GET "https://\<magento-host\>/category-1.html"
+      -  GET "https://\<magento-host\>/category-2.html"
+      -  GET "https://\<magento-host\>/"
 1. After updating product prices, the test runs the following requests to verify that the FPC cache is cleared:
-    -  PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_1" with "{"product":{"price":"999.99"}}"
-    -  PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_2" with "{"product":{"price":"999.99"}}"
-    -  PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_3" with "{"product":{"price":"999.99"}}"
+   -  PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_1" with `{"product":{"price":"999.99"}}`
+   -  PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_2" with `{"product":{"price":"999.99"}}`
+   -  PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_3" with `{"product":{"price":"999.99"}}`
 1. After the FPC cache has been cleared, verify the cache operation again by submitting the following series of requests two times to the same URL to verify the cache operation.
-    -  On the first set of requests, the test verifies that each response returns the `X-EQP-Cache` header with the `MISS` value because the cache was cleared and the page has not been cached yet.
-    -  On the second set of requests, the test verifies that each response returns the `X-EQP-Cache` header with the `HIT` value because the page was added to the cache after the previous request.
-        -  GET "https://\<magento-host\>/simple-product-1.html"
-        -  GET "https://\<magento-host\>/simple-product-2.html"
-        -  GET "https://\<magento-host\>/simple-product-3.html"
+   -  On the first set of requests, the test verifies that each response returns the `X-EQP-Cache` header with the `MISS` value because the cache was cleared and the page has not been cached yet.
+   -  On the second set of requests, the test verifies that each response returns the `X-EQP-Cache` header with the `HIT` value because the page was added to the cache after the previous request.
+      -  GET "https://\<magento-host\>/simple-product-1.html"
+      -  GET "https://\<magento-host\>/simple-product-2.html"
+      -  GET "https://\<magento-host\>/simple-product-3.html"
 
 ## Reading the error report
 

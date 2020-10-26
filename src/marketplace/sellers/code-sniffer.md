@@ -39,9 +39,9 @@ If PHPCS finds any errors, the extension in `<path-to-extension>`  is rejected.
 
 All detected errors are self-explanatory and have references to the locations in the code where they were detected.
 
-The Magento Coding Standard evolves continuously and the rules change. You can find the most current version with an up-to-date list of implemented rules in the [Magento Coding Standard GitHub repository](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/ruleset.xml). 
+The Magento Coding Standard evolves continuously and the rules change. You can find the most current version with an up-to-date list of implemented rules in the [Magento Coding Standard GitHub repository](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/ruleset.xml).
 
-According to the Magento Coding Standard, Code Sniffer classifies detected violations in the following type categories: 
+According to the Magento Coding Standard, Code Sniffer classifies detected violations in the following type categories:
 
 | Type | Severity | Description |
 |------|----------|-------------|
