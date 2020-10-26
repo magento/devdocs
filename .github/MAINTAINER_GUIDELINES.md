@@ -4,12 +4,13 @@ In general, the same [guidelines](https://devdocs.magento.com/contributor-guide/
 
 ## General expectations
 
--  Self assign issues/pull requests (mostly pull requests)
-   -  Review and approve or request changes
-   -  Enforce the use of the issue/pull requests template
-   -  Ask contributors to link to the code base to validate documentation updates when applicable
-   -  Ask contributors not to contribute to unsupported versions of documentation when applicable
--  If a DevDocs maintainer creates a pull request, it must be reviewed by another maintainer or DevDocs admin
+-  Self assign issues/pull requests (mostly pull requests). See the [Pull Request Process wiki topic](https://github.com/magento/devdocs/wiki/Pull-Request-Process) to learn more.
+   -  Review and approve, or request changes.
+   -  Enforce the use of the issue/pull request template.
+   -  Ask contributors to link to the code base to validate documentation updates when applicable.
+   -  Ask contributors not to contribute to unsupported versions of documentation when applicable.
+   -  Ask contributors to add a [`whatsnew`](https://github.com/magento/devdocs/wiki/Pull-Request-Process) to their `New Topic`, `Major Update`, or `Technical` labeled PRs.
+-  If a DevDocs maintainer creates a pull request, it must be reviewed by another maintainer or DevDocs admin.
 
 ## Labels
 
@@ -23,11 +24,20 @@ Here is a brief summary of the most important labels:
 -  `Editorial`: Typos, grammatical inconsistencies, or minor rewrites
 -  `small changes`: See [Small changes workflow](#small-changes-workflow)
 
+PRs with the `Internal Dev` label were created by Magento/Adobe employees and will be handled by the Documentation team only.
+
 We also use version labels when appropriate (for example, 2.3.x).
 
 As a maintainer, we expect you to add or remove labels according to these guidelines.
 
 See https://github.com/magento/devdocs/labels for all labels and their descriptions.
+
+## Communicating internally and externally
+
+There may be instances in which a maintainer has questions about a specific PR or issue. There are proper channels for communicating internally (Magento) and externally (contributors):
+
+-  Externally: Questions, revisions, or other conversation with the contributor must happen within the applicable PR or issue. Tag the contributor, if needed, to get their attention.
+-  Internally: Questions for the Magento Documentation team about a PR or issue can happen as a comment in the applicable PR or issue or within the #devdocs_maintainers channel in Magento Community Engineering Slack. If your question pertains to a specific team member, you can tag their name to initiate the conversation.
 
 ## Testing
 
