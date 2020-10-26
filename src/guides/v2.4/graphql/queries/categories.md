@@ -182,7 +182,7 @@ Attribute | Data type | Description
 
 ### CategoryFilterInput object
 
-{% include graphql/category-filter-input-24.md %}
+{% include graphql/category-filter-input.md %}
 
 ## Output attributes {#Categories}
 
