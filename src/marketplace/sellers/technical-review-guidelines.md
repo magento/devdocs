@@ -113,7 +113,7 @@ To pass Manual QA, the extension must meet the following requirements:
 
 1. Installs with Composer.
 1. Compiles without errors using the following command: [`deploy:mode:set production`](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html#change-to-production-mode)
-1. Extension has all supporting documentation that complies with the [documentation requirements](#Documentation and Resources)
+1. Extension has all supporting documentation that complies with the [documentation requirements](#documentation-and-resources)
 1. Works with each version of Magento that the extension claims to support in the extension product profile.
 
    -  Basic Magento functionality works as expected with the installed extension.
