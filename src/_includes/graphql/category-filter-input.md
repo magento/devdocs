@@ -4,6 +4,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `ids` | FilterEqualTypeInput | Filters by the specified category IDs
 `name` | FilterMatchTypeInput | Filters by the display name of the category
+`parent_id` | FilterEqualTypeInput | Filters by parent category ID
 `url_key` | FilterEqualTypeInput | Filters by the part of the URL that identifies the category
 `url_path` | FilterEqualTypeInput | Filters by the URL path for the category
 
