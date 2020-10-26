@@ -5,7 +5,7 @@ title: Code Sniffer
 
 ## Overview
 
-Code Sniffer is a static test that allows the detection of violations of the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) and prevents common issues by static code analysis.
+Code Sniffer is a static test that uses static code analysis to detect violations of the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) to prevent common coding errors.
 
 ## What testing is for
 
