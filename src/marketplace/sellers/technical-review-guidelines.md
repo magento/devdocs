@@ -80,7 +80,7 @@ Extensions for Magento are installed with Varnish Cache enabled for each support
 
 In addition, cacheable pages are accessed to ensure that they are served directly from Varnish Cache. You will be notified if your extension fails the test.
 
-_More details:_ [Installation and Varnish Test]({{ site.baseurl }}/marketplace/sellers/installation-and-varnish-test.html)
+_More details:_ [Installation and Varnish Tests]({{ site.baseurl }}/marketplace/sellers/installation-and-varnish-tests.html)
 
 _See also:_
 

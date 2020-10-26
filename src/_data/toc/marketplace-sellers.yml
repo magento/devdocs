@@ -112,7 +112,7 @@ pages:
       versionless: true
 
     - label: Installation and Varnish Tests
-      url: /marketplace/sellers/installation-and-varnish-test.html
+      url: /marketplace/sellers/installation-and-varnish-tests.html
       versionless: true
 
     - label: Copy Paste Detector
