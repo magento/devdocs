@@ -18,7 +18,7 @@ If the new page has a `3-columns-double-footer` layout, create a custom page-lay
     <referenceContainer name="page.wrapper">
         <container name="footer-bottom" as="footer-bottom" after="footer" label="Footer Bottom" htmlTag="footer" htmlClass="page-footer-bottom">
             <container name="footer-bottom-content" as="footer-bottom-content" htmlTag="div" htmlClass="footer content">
-                <block class="Magento\Framework\View\Element\Template" name="report.bugs.bottom" template="Magento_Theme::html/bugreport.phtml"/>
+                <block name="report.bugs.bottom" template="Magento_Theme::html/bugreport.phtml"/>
             </container>
         </container>
     </referenceContainer>

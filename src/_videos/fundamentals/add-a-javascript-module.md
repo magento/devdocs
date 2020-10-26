@@ -155,7 +155,7 @@ And the add the file `catalog_product_view.xml`:
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" template="Learning_Js::hello.phtml" />
+            <block name="js_hello" template="Learning_Js::hello.phtml" />
         </referenceContainer>
     </body>
 </page>

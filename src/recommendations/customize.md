@@ -61,7 +61,7 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     <?xml version="1.0"?>
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
         <referenceBlock name="page.wrapper">
-            <block class="Magento\Framework\View\Element\Template" before="-" name="product_recommendations_fetcher" template="Magento_ProductRecommendationsStorefront::fetcher.phtml" />
+            <block before="-" name="product_recommendations_fetcher" template="Magento_ProductRecommendationsStorefront::fetcher.phtml" />
         </referenceBlock>
         <body>
             <referenceBlock name="main.content">
@@ -85,7 +85,7 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     <?xml version="1.0"?>
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
         <referenceBlock name="page.wrapper">
-            <block class="Magento\Framework\View\Element\Template" before="-" name="product_recommendations_fetcher" template="Magento_ProductRecommendationsStorefront::fetcher.phtml" />
+            <block before="-" name="product_recommendations_fetcher" template="Magento_ProductRecommendationsStorefront::fetcher.phtml" />
         </referenceBlock>
         <body>
             <referenceBlock name="product.info.media">
