@@ -47,15 +47,15 @@ The error report lists minor and major changes detected in the extension source 
 
 ## Troubleshooting
 
-To perform a check, the Magento SemVer is run as follows :
+The Magento Semver uses the following command to check an extension:
 
 ```bash
 php magento-semver/bin/svc compare <path-to-latest-published-extension-version> <path-to-submitted-extension-version> 1
 ```
 
-This command may be executed for any environment with PHP 7.2.29 and above.
+This command requires an environment with PHP version 7.2.29 or later.
 
-If any issues are detected with the Semantic Version Check, [create a Support ticket](https://marketplacesupport.magento.com/hc/en-us) so support will be able assist you. Specify the relevant Submission ID in the ticket.
+If the Semantic Version check detects any issues, [create a Magento Support ticket](https://marketplacesupport.magento.com/hc/en-us) to request assistance. Specify the relevant Submission ID in the ticket.
 
 As the check is solely based on [Magento SemVer open source project](https://github.com/magento/magento-semver), submitting an issue or pull request on GitHub is highly recommended.
 
