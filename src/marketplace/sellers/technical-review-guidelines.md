@@ -9,8 +9,8 @@ During technical review, your code is examined to detect the presence of viruses
 
 The technical review begins as soon as you upload an extension package at [Developer Portal](https://developer.magento.com/) and consists of two mandatory steps to generate the submission id and trigger further extension testing:
 
-1. [Malware Scan]({{ site.baseurl }}/marketplace/sellers/malware-scan.html) &mdash; ensures that uploaded packages do not contain viruses or malware software.
-1. Extension Package Verification &mdash; checks that the uploaded file is a zip archive which is a [Composer](https://getcomposer.org/) package with Magento extension.
+1. [Malware Scan]({{ site.baseurl }}/marketplace/sellers/malware-scan.html) &mdash; Ensures that uploaded packages do not contain viruses or malware software.
+1. Extension Package Verification &mdash; Checks that the uploaded file is a zip archive which is a [Composer](https://getcomposer.org/) package with Magento extension.
 
 ### Extension Package Verification
 
@@ -43,8 +43,8 @@ Package submissions must contain a Magento module, theme, language pack, or meta
 Additional requirements for package declarations are applied based on the package type:
 
 1. Magento modules (packages with type `magento2-module`) must have valid `etc/module.xml` and `registration.php` files. Configured [autoloading](https://getcomposer.org/doc/04-schema.md#autoload) in `composer.json`: `autoload.files` must include at least a `registration.php` file and the `autoload.psr-4` section must declare at least one namespace.
-1. Magento themes (package type `magento2-theme`) must have valid `theme.xml` and `registration.php` files. Registration file must be included in the `autoload.files` section of `composer.json`. These types of packages must not include an `autoload.psr-4` declaration.
-1. Magento language packages (type `magento2-language`) must have valid `language.xml` and `registration.php` files. A registration file must be included in the `autoload.files` section of `composer.json`. These types of packages must not include an `autoload.psr-4` declaration.
+1. Magento themes (package type `magento2-theme`) must have valid `theme.xml` and `registration.php` files. You must include the registration file in the `autoload.files` section of `composer.json`.  Do not include an `autoload.psr-4` declaration in a theme package.
+1. Magento language packages (type `magento2-language`) must have valid `language.xml` and `registration.php` files. You must include the registration file in the `autoload.files` section of `composer.json`. Do not include an `autoload.psr-4` declaration in a language package.
 1. Packages of type `metapackage` must declare at least one dependency in the `require` section.
 
 _See also:_
@@ -145,7 +145,7 @@ _See also:_
 
 Extensions that claim to support Magento Page Builder are subject to the following additional checks:
 
-1. New and extended content types can be dragged to the stage, edited, duplicated, moved, hidden, saved, and deleted from the stage without errors.
+1. New and extended content types can be dragged to the stage, edited, duplicated, moved, hidden, saved and deleted from the stage without errors.
 1. New and extended content types are rendered on the storefront without errors.
 1. Extensions that use Page Builder must also support correct operation of all Page Builder content creation functions. This includes, but is not limited to, all the functions previously described for new and extended content types rendered in the Admin stage and the storefront.
 

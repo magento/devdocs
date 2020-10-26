@@ -5,11 +5,11 @@ title: Installation & Varnish Tests
 
 ## Overview
 
-The Installation and Varnish tests are automated EQP checks to ensure that the submitted extension version is compatibility with the Magento versions and the editions that it claims to support.
+The Installation and Varnish tests are automated EQP checks to ensure that the submitted extension version is compatible with the Magento versions and the editions that it claims to support.
 
 ## What testing is for
 
-Magento is a complex, highly extensible platform. To ensure that third-party extensions are production-ready, the Magento and Varnish tests verify successful installation with the extension included, ability to switch to Magento  [production mode](https://devdocs.magento.com/guides/v2.4/config-guide/bootstrap/magento-modes.html), and that the extension does not affect the caching mechanism for the most critical scenarios. The caching check ensures that the Magento storefront provides a high performance customer experience.
+Magento is a complex, highly extensible platform. To ensure that third-party extensions are production-ready, the Installation and Varnish tests verify successful installation with the extension included, ability to switch to Magento  [production mode](https://devdocs.magento.com/guides/v2.4/config-guide/bootstrap/magento-modes.html), and that the extension does not affect the caching mechanism for the most critical scenarios. The caching check ensures that the Magento storefront provides a high performance customer experience.
 
 ## When testing is done
 
@@ -36,7 +36,7 @@ The Installation and Varnish tests complete the following checks:
 
 ## Tools and environments used
 
-The Magento test infrastructure follows the [recommended setup](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html) for the Magento installation.The Installation and Varnish tests always runs on the most up-to-date version of software compatible with the Magento release. You can use [Magento Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html) to create a similar environment.
+The Magento test infrastructure follows the [recommended setup](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html) for the Magento installation. The Installation and Varnish tests always runs on the most up-to-date version of software compatible with the Magento release. You can use [Magento Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html) to create a similar environment.
 
 The Installation and Varnish tests always use the latest patch version for the Magento release line that the submitted extension claims to support. For each supported release line, the entire test suite is performed on all compatible PHP versions.
 
@@ -94,7 +94,7 @@ magento setup:performance:generate-fixtures ./varnish-config/profile.xml
 
 ### Varnish Test Execution
 
-The Varnish test subsequently issues a series of requests, and then analyzes the value of the `X-EQP-Cache` HTTP header:
+The Varnish test issues a series of requests, and then analyzes the value of the `X-EQP-Cache` HTTP header:
 
 1. Check the value of the `X-EQP-Cache` header by submitting the following series of requests two times to the same URL to verify the cache operation.
    -  On the first set of requests against a fresh installation, the test verifies that each response returns the `X-EQP-Cache` header with the `MISS` value because the page has never been cached.
@@ -125,10 +125,10 @@ The Varnish test provides the following information about failures:
 -  A brief description of the failed scenario
 -  Expected and actual cache behavior (HIT or MISS for cached page)
 
-To debug Varnish test errors, we recommend using a locally installed Magento version with the Varnish cache configured  to submit requests and check the HTTP headers in the response.
+To debug Varnish test errors, we recommend using a locally installed Magento version with the Varnish cache configured to submit requests and check the HTTP headers in the response.
 
 ## Troubleshooting
 
-If the extension submission fails Installation and Varnish testing, and you cannot reproduce and troubleshoot the issues locally, [create a Support ticket](https://marketplacesupport.magento.com/hc/en-us) to request assistance. Ensure that the relevant Submission ID is included on the ticket.
+If the extension submission fails Installation and Varnish testing, and you cannot reproduce or troubleshoot the issues locally, [create a Support ticket](https://marketplacesupport.magento.com/hc/en-us) to request assistance. Ensure that the relevant Submission ID is included on the ticket.
 
 We always welcome feedback and discussion on the [Magento Community Engineering Slack](https://magentocommeng.slack.com/archives/C7SL5CGDN) #marketplace channel.

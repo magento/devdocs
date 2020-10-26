@@ -9,17 +9,17 @@ The Copy Paste Detector check validates that implementation of the submitted ext
 
 ## What testing is for
 
-Only original extensions can be listed in the [Magento Marketplace](https://marketplace.magento.com/). If the submitted extension contains a lot of code fragments from Magento or from another extension available in the Magento Marketplace, the extension submission is rejected on the grounds that the content is plagiarized.
+Only original extensions can be listed in the [Magento Marketplace](https://marketplace.magento.com/). We test submitted extensions to detect duplication of code from Magento or from another extension available in the Magento Marketplace. If duplication is extensive, the extension submission is rejected on the grounds that the content is plagiarized.
 
 ## When testing is done
 
-All submissions is subject of Copy Past Detector check regardless of extension type and scope of changes.
+All submissions are subject to the Copy Past Detector check regardless of extension type and scope of changes.
 
 ## What is being checked
 
 Copy Paste Detector performs a static analysis of the source code and tries to detect similar code snippets.
 
-If the Detector identifies many similarities between the submitted extension and a previously known extension, we may mark the check as failed if there are strong evidences of plagiarism. We can also schedule problematic submissions for human code review if there are concerns regarding code fragments, but expert judgement is required for the final decision.
+If the Detector identifies many similarities between the submitted extension and a previously known extension, we may mark the check as failed if there is strong evidence of plagiarism. We can also schedule problematic submissions for human code review if there are concerns regarding code fragments. Expert judgement is required to make final decisions about plagiarism.
 
 ## Tools and environments used
 
@@ -37,6 +37,6 @@ Implementing a solution for detecting plagiarism in source code is not a trivial
 
 -  We might incorrectly identify code fragments that follow a common pattern as duplicates.  To prevent an extension submission from being rejected due to incorrect results, we also perform manual code review. Even with manual reviews, we can still make mistakes.
 
-If you notice that an extension submission that is rejected or approved based on inaccurate information from the Copy Paste Detector, [create a Marketplace Support ticket](https://marketplacesupport.magento.com/hc/en-us) so that we can resolve your case and keep our community healthy. Please specify your Submission ID in a ticket.
+If you notice an extension submission that is rejected or approved based on inaccurate information from the Copy Paste Detector, [create a Marketplace Support ticket](https://marketplacesupport.magento.com/hc/en-us) so that we can resolve your case and keep our community healthy. Please specify your Submission ID in a ticket.
 
 We always welcome feedback and discussion on the [Magento Community Engineering Slack](https://magentocommeng.slack.com/archives/C7SL5CGDN) #marketplace channel.

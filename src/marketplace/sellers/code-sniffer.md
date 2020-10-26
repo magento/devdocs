@@ -37,7 +37,7 @@ If PHPCS finds any errors, the extension in `<path-to-extension>`  is rejected.
 
 ## Reading the error report
 
-All detected errors are self-explanatory and have references to the locations in the code where they were detected.
+All detected errors include a description of the problem with references to the locations in the code where the errors were detected.
 
 The Magento Coding Standard evolves continuously and the rules change. You can find the most current version with an up-to-date list of implemented rules in the [Magento Coding Standard GitHub repository](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/ruleset.xml).
 

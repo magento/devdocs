@@ -11,7 +11,7 @@ The Semantic Version Check (SVC) is a quality check that validates the change le
 
 [Semantic Versioning](https://semver.org/) is a good way to communicate what kind of changes were introduced between software releases. Clients can use this information to estimate the risk level of upgrading a particular software package and to determine how much effort is required to adopt the new version.
 
-Magento follows Semantic Versioning and encourages all 3rd-party vendors to apply this versioning strategy for their Magento extensions as well.
+Magento follows Semantic Versioning and encourages all third-party vendors to apply this versioning strategy for their Magento extensions as well.
 
 Magento Marketplace uses version information to fast-track the extension validation process for submissions that introduce patch level changes, as these are expected to be backwards compatible bug fixes without any new functionality.
 
@@ -24,11 +24,11 @@ For the Semantic Version check to be applied, the extension submission must meet
 
 ## What is being checked
 
-The SemVer check analyzes the submission to determine the change level of the new submission and to verify whether the change level qualifies as a "PATCH" level change.
+The Semantic Version check analyzes the submission to determine the change level of the new submission and to verify whether the change level qualifies as a "PATCH" level change.
 
 If the submission is a "PATCH" level change, the submission is fast-tracked and is exempt from the Manual QA process. Otherwise, this check fails.
 
-A failed SemVer check has no impact on extension approval. If a submission receives Manual QA approval, then the extension will be published.
+A failed Semantic Version check has no impact on extension approval. If a submission receives Manual QA approval, then the extension will be published.
 
 ## Tools and environments used
 
@@ -38,7 +38,7 @@ Magento SemVer is a static analysis tool that validates the change level of Mage
 
 Magento SemVer can:
 
-1. Detect, PATCH, MINOR and MAJOR change levels and suggest the appropriate change level for a new version.
+1. Detect PATCH, MINOR and MAJOR change levels and suggest the appropriate change level for a new version.
 1. Validate an update against a desired change level.
 
 ## Reading the error report
@@ -47,7 +47,7 @@ The error report lists minor and major changes detected in the extension source 
 
 ## Troubleshooting
 
-The Magento Semver uses the following command to check an extension:
+The Magento Semantic Version check uses the following command to check an extension:
 
 ```bash
 php magento-semver/bin/svc compare <path-to-latest-published-extension-version> <path-to-submitted-extension-version> 1
