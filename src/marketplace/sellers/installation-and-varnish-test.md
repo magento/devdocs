@@ -93,34 +93,27 @@ magento setup:performance:generate-fixtures ./varnish-config/profile.xml
 
 ### Varnish Test Execution
 
-Varnish Test subsequently runs the next commands and analyses the **X-EQP-Cache** HTTP header's value:
+The Varnish test subsequently issues a series of requests, and then analyzes the value of the `X-EQP-Cache` HTTP header:
 
-1. As it is a fresh Magento installation, on the first request all the next responses have to contain the "X-EQP-Cache" header with the "MISS" value:
-    -  GET "https://\<magento-host\>/simple-product-1.html"
-    -  GET "https://\<magento-host\>/simple-product-2.html"
-    -  GET "https://\<magento-host\>/simple-product-3.html"
-    -  GET "https://\<magento-host\>/category-1.html"
-    -  GET "https://\<magento-host\>/category-2.html"
-    -  GET "https://\<magento-host\>/"
-1. On the second request the "X-EQP-Cache" header's value has to be "HIT":
-    -  GET "https://\<magento-host\>/simple-product-1.html"
-    -  GET "https://\<magento-host\>/simple-product-2.html"
-    -  GET "https://\<magento-host\>/simple-product-3.html"
-    -  GET "https://\<magento-host\>/category-1.html"
-    -  GET "https://\<magento-host\>/category-2.html"
-    -  GET "https://\<magento-host\>/"
-1. Then the test updates product prices and checks that the FPC cache is cleared:
+1. Check the value of the `X-EQP-Cache` header by submitting the following series of requests two times to the same URL to verify the cache operation.
+    -  On the first set of requests against a fresh installation, the test verifies that each response returns the `X-EQP-Cache` header with the `MISS` value because the page has never been cached.
+    -  On the second set of requests, the test verifies that each response returns the `X-EQP-Cache` header with the `HIT` value because the page was added to the cache after the initial request.
+        -  GET "https://\<magento-host\>/simple-product-1.html"
+        -  GET "https://\<magento-host\>/simple-product-2.html"
+        -  GET "https://\<magento-host\>/simple-product-3.html"
+        -  GET "https://\<magento-host\>/category-1.html"
+        -  GET "https://\<magento-host\>/category-2.html"
+        -  GET "https://\<magento-host\>/"
+1. After updating product prices, the test runs the following requests to verify that the FPC cache is cleared:
     -  PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_1" with "{"product":{"price":"999.99"}}"
     -  PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_2" with "{"product":{"price":"999.99"}}"
     -  PUT "https://\<magento-host\>/rest/V1/products/product_dynamic_3" with "{"product":{"price":"999.99"}}"
-1. The FPC cache has to be cleared, therefore the test expects that the "X-EQP-Cache" header's value is "MISS" for next requests:
-    -  GET "https://\<magento-host\>/simple-product-1.html"
-    -  GET "https://\<magento-host\>/simple-product-2.html"
-    -  GET "https://\<magento-host\>/simple-product-3.html"
-1. On the second request the "X-EQP-Cache" header's value has to be "HIT":
-    -  GET "https://\<magento-host\>/simple-product-1.html"
-    -  GET "https://\<magento-host\>/simple-product-2.html"
-    -  GET "https://\<magento-host\>/simple-product-3.html"
+1. After the FPC cache has been cleared, verify the cache operation again by submitting the following series of requests two times to the same URL to verify the cache operation.
+    -  On the first set of requests, the test verifies that each response returns the `X-EQP-Cache` header with the `MISS` value because the cache was cleared and the page has not been cached yet.
+    -  On the second set of requests, the test verifies that each response returns the `X-EQP-Cache` header with the `HIT` value because the page was added to the cache after the previous request.
+        -  GET "https://\<magento-host\>/simple-product-1.html"
+        -  GET "https://\<magento-host\>/simple-product-2.html"
+        -  GET "https://\<magento-host\>/simple-product-3.html"
 
 ## Reading the error report
 
