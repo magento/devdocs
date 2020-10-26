@@ -206,7 +206,7 @@ When you want to verify an issue or pull request, use the `instance` command to 
 @magento give me {$version} instance
 ```
 
-Replace `{$version}` with the version tag or branch. The currently supported values are, the latest released version and the `2.4-develop` branch. For example:
+Replace `{$version}` with the version tag or branch. The following values are supported: the version tag for the latest release and `2.4-develop` for the development branch.
 
 ```text
 @magento give me 2.4.0 instance
