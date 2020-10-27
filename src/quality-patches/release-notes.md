@@ -20,6 +20,7 @@ See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) f
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
 ## v1.0.8
+
 -  **MDVA-31242** _(for Magento `>=2.3.0 <2.4.1` with B2B extension)_—Fixes the issue where a wrong currency sign is displayed in Credit Memo grid.
 -  **MDVA-31295** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where reward points are not calculated when a partial order is completed and items are taxed.
 -  **MDVA-30112** _(for Magento `>=2.3.4 <2.4.2`)_—Fixes the issue where if the number of orders exceeds the "bunch-size" value, Magento considers the orders with "pending" status as inconsistencies.
