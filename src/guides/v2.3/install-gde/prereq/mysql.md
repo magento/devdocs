@@ -415,7 +415,7 @@ To configure a MySQL database instance:
    If this setting is not enabled, `setup:db:status` will always report that `Declarative Schema is not up to date`.
 
 {:.bs-callout-info}
-`explicit_defaults_for_timestamp` is itself deprecated because its only purpose is to permit control over deprecated TIMESTAMP behaviors that are to be removed in a future MySQL release. When removal of those behaviors occurs, `explicit_defaults_for_timestamp` will have no purpose and will be removed as well.
+The `explicit_defaults_for_timestamp` setting is deprecated. This setting controls deprecated TIMESTAMP behaviors that will be removed in a future MySQL release.  When those behaviors are removed, the `explicit_defaults_for_timestamp` setting will be removed as well.
 
 {:.bs-callout-warning}
 On Magento Cloud Commerce (MariaDB), the setting for `explicit_defaults_for_timestamp` defaults to *OFF*
