@@ -23,5 +23,5 @@ To help you implement product recommendations on your storefront, use the follow
 
 1. **Create and Deploy recommendations to your production storefront**
    -  **Why** - Now now that you have deployed the data collection JavaScript to production, modified the product recommendations template, and tested recommendations using actual shopper behavior, you are now ready to create and deploy recommendations on production.
-   -  **How** - [Create product recommendations](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html)
+   -  **How** - [Create product recommendations](https://docs.magento.com/user-guide/marketing/create-new-rec.html)
    -  **Notes** - While this is the final step in implementing recommendations, there are [further actions you can take](https://docs.magento.com/user-guide/marketing/recommendation-best-practices.html) to make sure recommendations increase conversions, boost revenue, and stimulate shopper engagement.
