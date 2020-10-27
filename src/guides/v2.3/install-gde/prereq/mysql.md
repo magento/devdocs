@@ -418,7 +418,7 @@ To configure a MySQL database instance:
 The `explicit_defaults_for_timestamp` setting is deprecated. This setting controls deprecated TIMESTAMP behaviors that will be removed in a future MySQL release.  When those behaviors are removed, the `explicit_defaults_for_timestamp` setting will be removed as well.
 
 {:.bs-callout-warning}
-On Magento Cloud Commerce (MariaDB), the setting for `explicit_defaults_for_timestamp` defaults to *OFF*
+On Magento projects deployed on the Cloud platform, the `explicit_defaults_for_timestamp` setting for MySQL (MariaDB) defaults to *OFF*
 
 {:.ref-header}
 Related topics
