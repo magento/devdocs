@@ -17,10 +17,15 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 {:.bs-callout-info}
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
-## v2002.1.2
+## v2002.1.3
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
 <!--Add release notes below-->
+
+-  {:new}Added a Cloud build variable called `SKIP_COMPOSER_DUMP_AUTOLOAD`, to skip the running of `composer dump-autoload` when deploying a Cloud project to the Cloud Docker environment. Running the `composer dump-autoload` command causes an error when running some Magento commands such as `bin/magento deploy:mode:set production` or `bin/magento -n setup:upgrade`. These commands can be run on writable systems, for example in the magento-cloud-docker test container. So we added a possibility to skip it.
+
+## v2002.1.2
+*Release date: August 5, 2020*<br/>
 
 **Validation and log improvements**–
 
