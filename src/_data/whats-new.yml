@@ -526,7 +526,7 @@ entries:
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
 - description: Standardized [release terminology](https://devdocs.magento.com/release/policy/)
-    related to patch releases, hotfixes, invdividual fixes, and custom patches.
+    related to patch releases, hotfixes, individual fixes, and custom patches.
   versions: 2.4.0
   type: Major Update
   date: July 27, 2020
