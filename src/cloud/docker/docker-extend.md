@@ -274,12 +274,9 @@ BASH
 ...
 ```
 
-[multiple compose files]: https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files
-[service versions]: https://devdocs.magento.com/cloud/docker/docker-containers.html#service-containers
 [Docker build sources]: https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources
-[multiple compose files]: https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files
-[service versions]: https://devdocs.magento.com/cloud/docker/docker-containers.html#service-containers
-[Docker build sources]: https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources
-[PHP, Docker Official Images]: https://hub.docker.com/_/php
-[PECL]: https://pecl.php.net/
 [ExtensionResolver.php]: https://github.com/magento/magento-cloud-docker/tree/develop/src/Compose/Php
+[PECL]: https://pecl.php.net/
+[PHP, Docker Official Images]: https://hub.docker.com/_/php
+[multiple compose files]: https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files
+[service versions]: https://devdocs.magento.com/cloud/docker/docker-containers.html#service-containers
