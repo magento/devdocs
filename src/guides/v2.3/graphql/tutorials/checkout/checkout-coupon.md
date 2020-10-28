@@ -43,7 +43,7 @@ For **Actions**
 -  Discount Amount: 20
 
 Save this rule.
-The `Coupon Code` value is the name of the coupon the end user enters.
+The **Coupon Code** value is the name of the coupon the end user enters.
 To verify the coupon works, create an order with a product using guest checkout.
 When checking out, enter `Watch20` in the Apply Discount Code field and press the Apply Discount button.
 The discount should be applied in the cart.
