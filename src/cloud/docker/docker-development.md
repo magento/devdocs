@@ -40,7 +40,23 @@ You can use the Docker environment to emulate the {{site.data.var.ece}} Integrat
 -  [Docker architecture and common commands]({{site.baseurl}}/cloud/docker/docker-containers.html)
 -  [Launch Docker development environment]({{site.baseurl}}/cloud/docker/docker-config.html)
 
+## Getting support for {{site.data.var.mcd-prod}}
+
+{{site.data.var.mcd-prod}} is a Magento Community Engineering project supported by the Magento developer community. You have several options to get support and learn more about {{site.data.var.mcd-prod}} and Magento local development.
+
+-  **[Magento Community Engineering Slack organization]**–For support, questions, or discussion, chat with us in the **#cloud-docker** and **#cloud** channels. To join, send a request to _engcom@magento.com_ or [sign yourself up] using Slack.
+
+-  **[{{site.data.var.mcd-package}} GitHub repository]**–Visit the GitHub repository to read discussions about current issues, check current development, and submit issues or pull requests to improve the project.
+
+-  **Magento Cloud Community Engineering demos**–Magento hosts Cloud demo session where you can learn about developing Magento on the Cloud platform, including information about local development with {{site.data.var.mcd-prod}}. For a schedule and recordings of previous demos, see the [Magento Cloud Community Engineering Demo Schedule].
+
+<!--Link definitions-->
+
 [config docker]: {{site.baseurl}}/cloud/docker/docker-config.html
 [Magento authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
+[Magento Community Engineering Slack organization]: https://magentocommeng.slack.com/
 [Set up an account]: {{site.baseurl}}/cloud/before/before-workspace.html#newaccount
+[sign yourself up]: https://tinyurl.com/engcom-slack
+[Magento Cloud Community Engineering demo schedule]: https://spark.adobe.com/page/PbxJoujH7oRTc/
+[{{site.data.var.mcd-package}} GitHub repository]: https://github.com/magento/magento-cloud-docker
 [Resolve issues with encryption key]: {{site.baseurl}}/cloud/trouble/trouble-crypt-key-variable.html
