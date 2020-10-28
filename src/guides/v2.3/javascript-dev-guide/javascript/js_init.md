@@ -25,7 +25,7 @@ In Magento 2, you have two options for specifying declarative notation:
 
 -  Using the `data-mage-init` attribute
 
-   > This is used to target a specific HTML element. It is easier to implement and is commonly used for jQuery UI widgets. This method can only be implemented on the specified HTML tag. For example, `<nav data-mage-init='{ "<component_name>": {...} }'></nav>`. This is preferred for its concise syntax, and direct access to the HTML element.
+   > This is used to target a specific HTML element. It is easier to implement and is commonly used for jQuery UI widgets. This method can only be implemented on the specified HTML tag. For example, `<nav data-mage-init='{"<component_name>": {...}}'></nav>`. This is preferred for its concise syntax, and direct access to the HTML element.
 
 -  Using the `<script type="text/x-magento-init"> ... </script>` tag
 
@@ -36,7 +36,7 @@ In Magento 2, you have two options for specifying declarative notation:
 Use the `data-mage-init` attribute to insert a JS component in a specified HTML element. The following example inserts a JS component in the `<nav/>` element:
 
 ```html
-<nav data-mage-init='{ "<component_name>": {...} }'></nav>
+<nav data-mage-init='{"<component_name>": {...}}'></nav>
 ```
 
 When the Javascript is inserted into the specified element, the script is called only for this particular element. It is not automatically called for other elements of this type on the page.
@@ -132,6 +132,9 @@ require([
 });
 </script>
 ```
+
+{:.bs-callout-tip}
+For better control when scripts are executed, it is recommended that developers use the declarative syntax over the imperative. When using imperative syntax, it can mean that the ability to leverage any existing JS classes is lost and it can block the rendering of the page.
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 
