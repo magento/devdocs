@@ -102,14 +102,14 @@ To add a new PHP extension:
       ```php?start_inline=1
       public static function getConfig(): array
       ...
-  
+
       'bcmath' => [
           '>=7.0' => [self::EXTENSION_TYPE => self::EXTENSION_TYPE_CORE],
        ],
        ...
       ```
       {:.no-copy}
-  
+
       In this case, the `bcmath` PHP core extension installs from `docker-php-source` image.
 
       {:.bs-callout-info}
