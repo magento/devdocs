@@ -113,7 +113,7 @@ To add a new PHP extension:
       In this case, the `bcmath` PHP core extension installs from `docker-php-source` images.
 
       {:.bs-callout-info}
-      The configuration you specify depends on the location of the extension source files and installation method. You can add PHP core extensions from the official Docker PHP images, from the PECL repository, or using an installation script.  For details on the configuration attributes and format for the `getConfig` method, see [PHP extension configuration reference](php-extension-configuration-reference).
+      The configuration you specify depends on the location of the extension source files and installation method. You can add PHP core extensions from the official Docker PHP images, from the PECL repository, or using an installation script.  For details on the configuration attributes and format for the `getConfig` method, see [PHP extension configuration reference](#php-extension-configuration-reference).
 
 1. Enable the extension by default, or by adding it to the `.magento.app.yaml` file:
 
