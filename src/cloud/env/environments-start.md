@@ -112,7 +112,7 @@ To activate an inactive environment, use the `magento-cloud environment:activate
 
 The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ site.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int). These IP addresses are stable, but might change. We always notify customers before making any IP address changes.
 
-If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
+If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your allowlist.
 
 ### AWS regions
 
