@@ -343,7 +343,7 @@ pages:
               versionless: true
 
             - label: IP allow list
-              url: /cloud/cdn/fastly-vcl-whitelist.html
+              url: /cloud/cdn/fastly-vcl-allowlist.html
               versionless: true
 
             - label: IP block list
