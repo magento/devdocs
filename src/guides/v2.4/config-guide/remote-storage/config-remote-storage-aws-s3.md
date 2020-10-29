@@ -15,14 +15,16 @@ Magento highly discourages the use of public buckets because it poses a serious 
 Prerequisites for using the AWS S3 adapter:
 
 1. Create a private bucket for AWS S3.
+
 1. (_Optionally_) Generate access keys and secret keys.
+
 1. Configure Magento to use the private bucket.
 
 ## Nginx configuration
 
 Nginx requires additional configuration to perform Authentication with the `proxy_pass` directive.
 
-We recommend using the `[ngx_aws_auth]` module.
+We recommend using the [`ngx_aws_auth`][] module.
 
 <!-- link definitions -->
 [AWS S3]: https://aws.amazon.com/s3

@@ -27,7 +27,7 @@ The default storage location is the local filesystem. A _storage adapter_ allows
 
 -  [Amazon Simple Storage Service (Amazon S3)][AWS S3]
 
-The 'remote-storage' command in the Magento CLI enables the remote storage module and allows you to set the storage service parameters. Minimally, you must supply the storage adapter type (or name), the container name, and the region. For example, to enable AWS S3 remote storage:
+The 'remote-storage' command in the Magento CLI enables the remote storage module and allows you to set the storage service parameters. Minimally, you must supply the storage driver, the object storage name, and the storage location. For example, to enable AWS S3 remote storage:
 
 ```bash
 bin/magento remote-storage:enable aws-s3 region-name bucket-name [optional prefix] --access-key=<optional-access-key> --secret-key=<optional-secret-key>
@@ -37,11 +37,11 @@ The following table lists the parameters available for configuring the storage a
 
 | Command line Parameter | Parameter name | Meaning | Default value |
 |--- |--- |--- |--- |
-| `remote-storage-adapter` | adapter | Name of adapter to use | none |
-| `remote-storage-bucket` | bucket | Bucket name | none |
-| `remote-storage-key` | access key | Optional access key | empty |
-| `remote-storage-prefix` | prefix | Optional prefix (location inside of bucket) | empty |
+| `remote-storage-driver` | driver | Name of adapter to use | none |
+| `remote-storage-bucket` | bucket | Object storage or container name | none |
+| `remote-storage-prefix` | prefix | Optional prefix (location inside of object storage) | empty |
 | `remote-storage-region` | region | Region name | none |
+| `remote-storage-key` | access key | Optional access key | empty |
 | `remote-storage-secret` | secret key | Optional secret key | empty |
 
 ## Configure image resizing
