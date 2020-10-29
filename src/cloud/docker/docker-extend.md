@@ -154,7 +154,7 @@ To add a new PHP extension:
    -  On the command line, navigate to the FPM image directory `magento-cloud-docker/images/php/fpm`:
 
       ```bash
-      cd  ../../../images/php/fpm
+      cd ../../../images/php/fpm
       ```
 
    -  Add each required `.ini` file to the `etc` directory.
