@@ -20,9 +20,31 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 ## v2002.1.3
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
-<!--Add release notes below-->
+**Infrastructure updates**–
 
--  {:new}Added a Cloud build variable called `SKIP_COMPOSER_DUMP_AUTOLOAD`, to skip the running of `composer dump-autoload` when deploying a Cloud project to the Cloud Docker environment. Running the `composer dump-autoload` command causes an error when running some Magento commands such as `bin/magento deploy:mode:set production` or `bin/magento -n setup:upgrade`. These commands can be run on writable systems, for example in the magento-cloud-docker test container. So we added a possibility to skip it.
+-  {:.new}Added ece-tools support for the read-only `pub/static` directory when static content is set to deploy in the build stage.<!--MC-37699-->
+
+-  {:.fix}Updated the ece-tools `composer.json` to add a required dependency for the Magento Quality Patches package. This fixes a circular dependency that existed between the ece-tools and magento-cloud-patches packages. <!--MCLOUD-6910-->
+
+**Validation and log improvements**–
+
+-  {:.new}Added search-engine validation to ensure that `elasticsearch` is set for Magento Commerce Cloud 2.4 and later. If the validation fails, the deployment is stopped with an error message suggesting fixes for the issue.<!--MCLOUD-6937-->
+
+-  {:.fix}Fixed the database validation for Commerce Cloud Pro to ensure the MySql version and the Magento version are compatible.<!--MCLOUD-7098-->
+
+-  {:.fix}Updated the cloud.log to include the concurrent requests limit for sending requests during cache warmup. This value is configured in in the WARM_UP_CONCURRENCY post-deploy variable. <!--MCLOUD-5563-->
+
+-  {:.fix}Updated the Elasticsearch compatibility error message to show the supported versions of Elasticsearch. The error message now provides the specific Elasticsearch versions to install in your Cloud infrastructure so that it is compatible with the Elasticsearch module used by your version of Magento.<!--MCLOUD-6698-->
+
+**CLI command updates**–
+
+-  {:.new}Added CLI commands (`cloud:config:create` and `cloud:config:update`) to create and update the `.magento.env.yaml` file with a configuration that can include one or more build, deploy, and post-deploy variables.<!--MCLOUD-7072-->
+
+**Environment variable updates**–
+
+-  {:.new}Added error message for invalid MAGE_MODE environment variable setting. The only valid value is `production`. Before this fix, MAGE_MODE could be set to `developer` without deployment errors, only to cause errors later when trying to write to read-only files.<!--MCLOUD-6708-->
+
+-  {:.new}Added a `SKIP_COMPOSER_DUMP_AUTOLOAD` build variable. Setting the variable to `true` stops Magento from running the `composer dump-autoload` command during a Cloud Docker installation. The variable is only relevant to Cloud Docker containers with writable file systems. In such cases, skipping the command can prevent errors from other commands trying to access code from the deleted `generated` directory. <!--MCLOUD-6939-->
 
 ## v2002.1.2
 *Release date: August 5, 2020*<br/>
@@ -92,7 +114,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
       {:.no-copy}
       <!--MCLOUD-4077-->
 
-   -  {:.new}**Added validation for Zend Framework dependencies**–Added compoer dependency validation for the Zend Framework which has migrated to the Laminas project. If the required dependencies are missing, the following error message displays during the build process.
+   -  {:.new}**Added validation for Zend Framework dependencies**–Added composer dependency validation for the Zend Framework which has migrated to the Laminas project. If the required dependencies are missing, the following error message displays during the build process.
 
       ```text
       Required configuration is missing from the autoload section of the composer.json file.
