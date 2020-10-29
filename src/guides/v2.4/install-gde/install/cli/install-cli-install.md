@@ -66,7 +66,7 @@ The install command uses the following format:
 magento setup:install --<option>=<value> ... --<option>=<value>
 ```
 
-The following tables describe the installation option names and values. For example installation commands. see [Sample localhost installations](#install-cli-example).
+The following tables describe the installation option names and values. For example installation commands. See [Sample localhost installations](#install-cli-example).
 
 {:.bs-callout-info}
 Any options that contain spaces or special characters must be enclosed in either single or double quotes.
@@ -112,6 +112,9 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--cleanup-database`|To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.|No|
 |`--db-init-statements`|Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to this one before you set any values.<br><br>Default is `SET NAMES utf8;`.|No|
 |`--sales-order-increment-prefix`|Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.|No|
+
+{:.bs-callout-tip}
+To enable remote storage services during installation, see [Configure Remote Storage]({{ page.baseurl }}/config-guide/remote-storage/config-remote-storage.html)
 
 **Elasticsearch configuration options:**
 
