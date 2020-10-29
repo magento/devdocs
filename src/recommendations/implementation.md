@@ -7,7 +7,7 @@ ee_only: True
 To help you implement product recommendations on your storefront, use the following workflow:
 
 1. **Deploy data collection to production**
-   -  **Why** - The more data you collect the more accurate your recommendations will be. As soon as you start collecting data, you can pull that data into your non-production environment and experiment with different recommendation types on different pages.
+   -  **Why** - Product Recommendations are made up of two main data sources: [catalog and behavioral]({{ page.baseurl }}/recommendations/product-recs.html#types-of-data). By deploying data collection to production, you are enabling a JavaScript to collect the behavioral data. The more data you collect the more accurate your recommendations will be. As soon as you start collecting data, you can pull that data into your non-production environment and experiment with different recommendation types on different pages.
    -  **How** - [Install and configure the Product Recommendations module]({{ page.baseurl }}/recommendations/install-configure.html).
    -  **Notes** - Deploying data collection will not change your storefront's appearance or your shopper's experience. Only creating and deploying recommendation units will alter the customer experience on your storefront. Make sure you test on your non-production environment before deploying to production. Also, do not create recommendation units until you customize your template. See the next step.
 
