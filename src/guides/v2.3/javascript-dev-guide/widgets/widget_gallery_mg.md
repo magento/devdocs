@@ -2,10 +2,12 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Magnifier widget
+contributor_name: Jennifer Lindner
+contributor_link: https://github.com/jenlindner
 ---
 
-Magnifier is a [widget](https://glossary.magento.com/widget) that allows displaying images in 100% scaled size in separate dedicated layer.
-In Magento it is used by the [gallery]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html) widget for zooming the product images on product pages.
+Magnifier is a [widget](https://glossary.magento.com/widget) that allows displaying images in 100% scaled size in a separate dedicated layer.
+In Magento it is used by the [gallery]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html) widget for zooming the product images on product pages. It must be enabled with a local edit in the theme configuration file `view.xml`.
 
 ## Initialize magnifier {#magnifier_init}
 
@@ -96,16 +98,31 @@ Possible values:
 *  `outside`
 *  `inside`
 
-## Configure magnifier options in `view.xml`
+## Enable Magnifier and configure options in `view.xml`
 
-Magnifier options can be set in the `view.xml` configuration file of a theme. The file is conventionally located in the `<theme_dir>/etc/` directory.
+ `view.xml` is a theme configuration file that enables the Magnifier widget. The file is conventionally located in the `<theme_dir>/etc/` directory.
 
-The general magnifier options are set as follows:
+The enabling boolean option looks like this:
 
 ```xml
 <var name="magnifier">
-    <var name="%magnifier_option1%">%option1_value%</var>
-    <var name="%magnifier_option2%">%option2_value%</var>
+   <var name="enabled">true</var> <!-- Turn on/off magnifier (true/false) -->
+</var>
+...
+```
+
+Several other Magnifier options can also be set in `view.xml`.
+
+The options settings look like this:
+
+```xml
+<var name="magnifier">
+  <var name="fullscreenzoom">20</var> <!-- Zoom for fullscreen (integer) -->
+  <var name="top"></var> <!-- Top position of magnifier -->
+  <var name="left"></var> <!-- Left position of magnifier -->
+  <var name="width"></var> <!-- Width of magnifier block -->
+  <var name="height"></var> <!-- Height of magnifier block -->
+  <var name="eventType">hover</var> <!-- Action that activates zoom (hover/click) -->
 ...
 </var>
 ```
