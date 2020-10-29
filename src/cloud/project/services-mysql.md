@@ -8,7 +8,7 @@ redirect_from:
   - /cloud/project/project-conf-files_services-mysql.html  
 ---
 
-The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.0-10.1, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
+The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.2-10.4, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
 
 {% include install/maria-db.md %}
 
@@ -155,10 +155,10 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
       mysql -h database.internal -u <username>
       ```
 
-   -  For Pro, use the following command with db, username, and password retrieved from the `$MAGENTO_CLOUD_RELATIONSHIPS` variable.
+   -  For Pro, use the following command with hostname, port number, username, and password retrieved from the `$MAGENTO_CLOUD_RELATIONSHIPS` variable.
 
       ```bash
-      mysql -h<db> -P<number> -u<username> -p<password>
+      mysql -h <hostname> -P <number> -u <username> -p <password>
       ```
 
 ## Connect to secondary database

@@ -1,13 +1,13 @@
 ---
 title: Magento_RequisitionList
 source_repo: magento2b2b
-release: 1.2.0
+release: 1.3.0
 github_path: app/code/Magento/RequisitionList/README.md
 last_modified_at: '2017-02-15 17:02:23 +0300'
 content: "## Overview\n\nThe Magento_RequisitionList module allows a customer to create
   multiple lists of frequently-purchased items and use those lists for order placement.
   This feature is available for both logged-in users and guests.\n \nRequisitionList
-  functionality is similiar to wish lists, but it has the following differences: \n\n*
+  functionality is similar to wish lists, but it has the following differences: \n\n*
   A requisition list is not purged after sending items to the shopping cart. It can
   be used to place multiple orders.\n\n* The UI for requisition lists has been modified
   to a compact view in order to display large number of items. \n\nThe merchant can

@@ -28,7 +28,7 @@ ct-repo: magento/ece-tools
 ct-release: 2002.1.2
 mcp-prod: Magento Cloud Patches
 mcp-package: magento/magento-cloud-patches
-mcp-release: 1.0.6
+mcp-release: 1.0.8
 mcd-package: magento/magento-cloud-docker
 mcd-prod: Magento Cloud Docker
 mcd-release: 1.1.2

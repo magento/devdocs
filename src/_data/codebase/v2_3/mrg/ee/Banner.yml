@@ -1,0 +1,8 @@
+---
+title: Magento_Banner
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/Banner/README.md
+last_modified_at: '2018-01-12 13:34:20 +0200'
+content: "The Banner module allows creating and managing dynamic blocks and widgets
+  in Magento application. \nThe Dynamic Block content can be specified by Store View."

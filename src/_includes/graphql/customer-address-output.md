@@ -1,4 +1,4 @@
-### CustomerAddress attributes {#customerAddressOutput}
+### Address attributes (CustomerAddress) {#customerAddressOutput}
 
 The values assigned to attributes such as `firstname` and `lastname` in this object may be different from those defined in the `Customer` object.
 
@@ -29,7 +29,7 @@ Attribute |  Data Type | Description
 `telephone` | String | The telephone number
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 
-### CustomerAddressAttribute attributes {#customerAddressAttributeOutput}
+#### CustomerAddressAttribute attributes {#customerAddressAttributeOutput}
 
 The `CustomerAddressAttribute` output data type has been deprecated because the contents are not applicable for GraphQL. It can contain the following attributes:
 
@@ -38,7 +38,7 @@ Attribute |  Data Type | Description
 `attribute_code` | String | Attribute code
 `value` | String | Attribute value
 
-### CustomerAddressRegion attributes {#customerAddressRegionOutput}
+#### CustomerAddressRegion attributes {#customerAddressRegionOutput}
 
 The `customerAddressRegion` output returns the following attributes:
 
