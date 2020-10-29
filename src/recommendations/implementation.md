@@ -1,6 +1,6 @@
 ---
 group: product-recommendations
-title: Implementation Steps
+title: How to Implement Product Recommendations
 ee_only: True
 ---
 
@@ -17,7 +17,7 @@ To help you implement product recommendations on your storefront, use the follow
    -  **Notes** - By customizing the template you can specify your stylesheet, overwrite where a recommendation unit will appear on a page, and so on.
 
 1. **Test recommendations on your non-production environment**
-   -  **Why** - It is always a best practice to test a new technology on your non-production environment before you deploy to production. Testing recommendations on your non-production environment allows you to play with different recommendation unit types, positioning, and pages. If you already deployed the data collection in production, you can pull recommendations based on that behavioral data while testing in your non-production environment, so that recommendation results are based on the shopping behavior of actual customers.
+   -  **Why** - It is always a best practice to test a new technology on your non-production environment before you deploy to production. Testing recommendations on your non-production environment allows you to play with different recommendation unit types, positioning, and pages. You can pull recommendations based on behavioral data already gathered while testing in your non-production environment, so that recommendation results are based on the shopping behavior of actual customers.
    -  **How** - [Fetch behavioral data from your production environment]({{ page.baseurl }}/recommendations/test.html)
    -  **Notes** - Ensure your non-production environment catalog is largely the same as the one that you have in production. Using similar catalogs ensures that the products returned in the recommendation units closely mimic those on production.
 
