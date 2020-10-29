@@ -24,8 +24,8 @@ Prerequisites for using the AWS S3 adapter:
 
 Nginx requires additional configuration to perform Authentication with the `proxy_pass` directive.
 
-We recommend using the [`ngx_aws_auth`][] module.
+We recommend using the [`ngx_aws_auth`][ngx repo] module.
 
 <!-- link definitions -->
 [AWS S3]: https://aws.amazon.com/s3
-[ngx_aws_auth]: https://github.com/anomalizer/ngx_aws_auth
+[ngx repo]: https://github.com/anomalizer/ngx_aws_auth
