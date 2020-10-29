@@ -749,7 +749,7 @@ entries:
   type: New Topic
   date: June 23, 2020
   link: https://github.com/magento/devdocs/pull/7425
-- description: Added Microsoft Edge to the list of [supported browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirement.html)
+- description: Added Microsoft Edge to the list of [supported browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     for 2.4.0, which was mistakenly removed.
   versions: 2.4.0
   type: Technical
