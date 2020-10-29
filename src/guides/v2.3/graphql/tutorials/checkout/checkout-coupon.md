@@ -29,18 +29,18 @@ For the purpose of this tutorial, create a Cart Price Rule with:
 
 For **Rule Information**:
 
--  Rule Name: Watch Coupon
--  Websites: Main Website
--  Customer Groups: Select all of them
--  Coupon: Specific Coupon
--  Coupon Code: Watch20
--  Uses per Coupon: 5
--  Uses per Customer: 5
+-  **Rule Name**: Watch Coupon
+-  **Websites**: Main Website
+-  **Customer Groups**: Select all of them
+-  **Coupon**: Specific Coupon
+-  **Coupon Code**: Watch20
+-  **Uses per Coupon**: 5
+-  **Uses per Customer**: 5
 
 For **Actions**
 
--  Apply: Percent of product price discount
--  Discount Amount: 20
+-  **Apply**: Percent of product price discount
+-  **Discount Amount**: 20
 
 Save this rule.
 The **Coupon Code** value is the name of the coupon the end user enters.

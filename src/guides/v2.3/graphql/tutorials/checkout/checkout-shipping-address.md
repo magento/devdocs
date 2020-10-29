@@ -17,12 +17,13 @@ contributor_link: https://www.atwix.com/
 Use the [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-address.html) mutation to set a shipping address. You can set the shipping address in the following ways:
 
 *  Add a new shipping address
-*  Assign the shipping address to be the same as the billing address
 *  Use an address already defined in the logged-in customer's address book
 
-## Create a new shipping address
+This tutorial covers both methods.
 
-In this step, we use the `createCustomerAddress` mutation to add a shipping address to the customer record. Then we can use it in the cart.
+## Add shipping address to the cart
+
+In this step, we use the `setShippingAddressesOnCart` mutation to add a shipping address to the cart. 
 
 Send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
@@ -30,34 +31,48 @@ Send the customer's authorization token in the `Authorization` parameter of the 
 
 ```graphql
 mutation {
-  createCustomerAddress(input: {
-    region: {
-      region: "Arizona"
-      region_code: "AZ"
-      region_id: 4
+  setShippingAddressesOnCart(
+    input: {
+      cart_id: "{ CART_ID }"
+      shipping_addresses: [
+        {
+          address: {
+            firstname: "Bob"
+            lastname: "Loblaw"
+            company: "Magento"
+            street: ["123 Main Street"]
+            city: "Phoenix"
+            region: "AZ"
+            postcode: "78758"
+            country_code: "US"
+            telephone: "8675309"
+            save_in_address_book: false
+          },
+          pickup_location_code: "txspeqs"
+        }
+      ]
     }
-    country_code: US
-    street: ["123 Main Street"]
-    telephone: "7777777777"
-    postcode: "77777"
-    city: "Phoenix"
-    firstname: "Bob"
-    lastname: "Loblaw"
-    default_shipping: true
-    default_billing: false
-  }) {
-    id
-    region {
-      region
-      region_code
+  ) {
+    cart {
+      shipping_addresses {
+        firstname
+        lastname
+        company
+        street
+        city
+        region {
+          code
+          label
+        }
+        postcode
+        telephone
+        country {
+          code
+          label
+        }
+        pickup_location_code
+      }
     }
-    country_code
-    street
-    telephone
-    postcode
-    city
-    default_shipping
-    default_billing
   }
 }
 ```
