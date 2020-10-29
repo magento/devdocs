@@ -205,11 +205,7 @@ Use the following attributes to specify the PHP extension configuration in the `
 | `EXTENSION_TYPE_INSTALLATION_SCRIPT` | For extensions that install using a command sequence. See the _Other extensions_ section on the [PHP, Docker Official Images] page in Docker Hub.
 | `EXTENSION_TYPE` | Specifies whether the extension installed from the Docker PHP images, the PECL repository, or using an installation script. Valid values: `EXTENSION_TYPE_CORE`, `EXTENSION_TYPE_PECL`, or `EXTENSION_TYPE_INSTALLATION_SCRIPT`<br> For details on core and PECL extensions, see [How to install more PHP extensions][PHP, Docker Official Images] in Docker Hub.
 `EXTENSION_OS_DEPENDENCIES` | For PHP core or PECL extensions, specifies Linux package dependencies. These packages install in the order listed before installing the extension.
-<<<<<<< HEAD
 `EXTENSION_CONFIGURE_OPTIONS` | For PHP core extensions, specifies any configuration options to apply when Docker configures the PHP extension using the `docker-php-ext-configure` command.  See **PHP Core extensions** in the _How to install more PHP extensions_ section of the [PHP, Docker Official Images] page in Docker Hub.
-=======
-`EXTENSION_CONFIGURE_OPTIONS` | For PHP core extensions, specifies any configuration options to apply when Docker configures the PHP extension using the `docker-php-ext-configure` command.  See the _PHP Core Extensions_ section on the [PHP, Docker Official Images] page in Docker Hub.
->>>>>>> 8726e1a4f3f17741ac6b081dce77220a57576249
 `EXTENSION_PACKAGE_NAME` | Specifies the extension package name. This value is used to generate the installation command.
 `EXTENSION_INSTALLATION_SCRIPT` | For extension type `EXTENSION_TYPE_INSTALLATION_SCRIPT`, specifies the Bash script to install the extension.
 
