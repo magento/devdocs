@@ -8,11 +8,12 @@ Vendor Bundled Extensions (VBEs) are third-party extensions that we have thoroug
 
 Current VBEs include:
 
--  [Amazon Pay](https://docs.magento.com/m2/ce/user_guide/payment/amazon-pay.html)
--  [dotdigital](https://docs.magento.com/m2/ce/user_guide/marketing/engagement-cloud.html) (formerly Dotmailer)
--  [Klarna](https://docs.magento.com/m2/ce/user_guide/payment/klarna.html)
--  [Vertex](https://docs.magento.com/m2/ce/user_guide/tax/vertex.html)
--  [Yotpo](https://docs.magento.com/m2/ce/user_guide/marketing/yotpo-reviews-intro.html)
+-  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html)
+-  [dotdigital](https://docs.magento.com/user-guide/marketing/engagement-cloud.html) (formerly Dotmailer)
+-  [Klarna](https://docs.magento.com/user-guide/payment/klarna.html)
+-  [Vertex](https://docs.magento.com/user-guide/tax/vertex.html)
+-  [Yotpo](https://docs.magento.com/user-guide/marketing/yotpo-reviews-intro.html)
+-  [Braintree](https://docs.magento.com/user-guide/payment/braintree.html) (formerly part of core Magento)
 
 {:.bs-callout-info}
 Installing or upgrading Magento also installs VBEs, but you may need to set up an account with a vendor to configure and use an extension.
