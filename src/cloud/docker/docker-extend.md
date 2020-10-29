@@ -196,11 +196,7 @@ Use the following attributes to specify the PHP extension configuration in the `
 | Configuration option | Description
 | -------------------- | ------------
 | PHP version constraint | Specifies the extension versions to install. If different versions have different installation requirements, you must add the configuration for each version.
-<<<<<<< HEAD
 | `EXTENSION_TYPE_CORE` | Extension that can be installed from a `docker-php-source` image. See **PHP Core extensions** in the _How to install more PHP extensions_ section of the [PHP, Docker Official Images] page in Docker Hub.
-=======
-| `EXTENSION_TYPE_CORE` | Extension that can be installed from a `docker-php-source` image. See [PHP, Docker Official Images] in Docker Hub.
->>>>>>> 8726e1a4f3f17741ac6b081dce77220a57576249
 | `EXTENSION_TYPE_PECL` | Extensions that can be installed from the [PECL] repository. See **PECL extensions** in the _How to install more PHP extensions_ section of the [PHP, Docker Official Images] page in Docker Hub.
 | `EXTENSION_TYPE_INSTALLATION_SCRIPT` | For extensions that install using a command sequence. See the _Other extensions_ section on the [PHP, Docker Official Images] page in Docker Hub.
 | `EXTENSION_TYPE` | Specifies whether the extension installed from the Docker PHP images, the PECL repository, or using an installation script. Valid values: `EXTENSION_TYPE_CORE`, `EXTENSION_TYPE_PECL`, or `EXTENSION_TYPE_INSTALLATION_SCRIPT`<br> For details on core and PECL extensions, see [How to install more PHP extensions][PHP, Docker Official Images] in Docker Hub.
