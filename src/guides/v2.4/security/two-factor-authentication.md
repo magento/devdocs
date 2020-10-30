@@ -68,7 +68,7 @@ Two-Factor Authentication is implemented for Magento Web APIs with the following
 
 ## Magento Functional Testing Framework
 
-MFTF uses Google Authenticator to execute tests with 2FA enabled. The following steps summarize how to configure MFTF with an encoded shared secret. For more information, see [Configuring MFTF for Two-Factor Authentication (2FA)][12].
+MFTF uses Google Authenticator to execute tests with 2FA enabled. The following steps summarize how to configure MFTF with an encoded shared secret. For more information, see [Configuring MFTF for Two-Factor Authentication (2FA)](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html#magento-functional-testing-framework).
 
 1. Select Google Authenticator as the 2FA provider:
 
@@ -82,7 +82,7 @@ MFTF uses Google Authenticator to execute tests with 2FA enabled. The following 
    bin/magento config:set twofactorauth/google/otp_window 60
    ```
 
-1. Generate a Base32-encoded string for the shared secret value.  For example, encoding the string `abcd` with the online [Base32 Encode][13] tool returns the value `MFRGGZDF`. Use the following key to add the encoded value to the MFTF `.credentials` file:
+1. Generate a Base32-encoded string for the shared secret value.  For example, encoding the string `abcd` with the online [Base32 Encode](https://emn178.github.io/online-tools/base32_encode.html) tool returns the value `MFRGGZDF`. Use the following key to add the encoded value to the MFTF `.credentials` file:
 
    ```bash
    magento/tfa/OTP_SHARED_SECRET=MFRGGZDF
