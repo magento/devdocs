@@ -12,7 +12,7 @@ This article describes the basic concepts you need to know to create layouts for
 
 In Magento, the basic components of page design are layouts, containers, and blocks. A *layout* represents the structure of a web page (1). *Containers* represent the placeholders within that web page structure (2). And *blocks* represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.
 
-The objective is to create a structured, common set of layout instructions to render pages. Most pages on a website can be categorized as a 1 column, 2 column, or 3 column layout. These page layouts can be applied to a page from within the admin panel.
+The objective is to create a structured, common set of layout instructions to render pages. Most pages on a website can be categorized as a 1 column, 2 column or 3 column layout. These page layouts can be applied to a page from within the admin panel.
 
 ![web page sample layout][layout]
 
