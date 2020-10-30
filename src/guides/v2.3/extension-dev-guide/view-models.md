@@ -133,7 +133,7 @@ The following is an example of the view model initialization in the `app/code/Ma
 
 ```php
 /** @var $viewModel /Magento/Catalog/ViewModel/Product/Listing/PreparePostData */
-/** @var $escaper-> \Magento\Framework\Escaper */
+/** @var $escaper /Magento/Framework/Escaper */
 $viewModel = $block->getViewModel();
 $postArray = $viewModel->getPostData(
     $escaper->escapeUrl($block->getAddToCartUrl($_item)),
