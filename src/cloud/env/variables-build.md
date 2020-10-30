@@ -203,7 +203,9 @@ stage:
 
 ### `SKIP_COMPOSER_DUMP_AUTOLOAD`
 
-Do not run the composer dump-autoload command.
+Set to `true` to skip the `composer dump-autoload` command during a Cloud Docker installation. The variable is only relevant to Cloud Docker containers with writable file systems. In such cases, skipping this command prevents errors from other commands trying to access code from the deleted `generated` directory.
+
+When Magento runs `composer dump-autoload`, it creates autoload files with links to generated classes in the `generated` folder. In production environments with read-only files systems, this is not a problem. But for Cloud Docker installations with writable file systems, you can run the `bin/magento -n setup:upgrade` command without the `--keep-generated` option, which deletes the `generated` directory. At this point, the next command fails because autoload contains links to deleted files.
 
 -  **Default**— _Not set_
 -  **Version**—Magento 2.1.4 and later
