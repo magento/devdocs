@@ -73,10 +73,11 @@ Template `Vendor/Module/view/adminhtml/templates/template.phtml`:
 ```php
 <?php
 /** @var Magento\Backend\Block\Template $block */
+/** @var Magento\Framework\Escaper $escaper */
 ?>
 
 <div>
-    <b><?= $block->escapeHtml(__('Custom template.')); ?></b>
+    <b><?= $escaper->escapeHtml(__('Custom template.')); ?></b>
 </div>
 ```
 

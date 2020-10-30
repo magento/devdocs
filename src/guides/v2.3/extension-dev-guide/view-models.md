@@ -59,11 +59,11 @@ You can access the public methods for the view model class in the template:
 <?php
 
 /** @var $viewModel \OrangeCompany\Catalog\ViewModel\MyNewViewModel */
-
+/** @var $escaper \Magento\Framework\Escaper */
 $viewModel = $block->getViewModel();
 
 ?>
-<h1><?= $block->escapeHtml($viewModel->getTitle()); ?></h1>
+<h1><?= $escaper->escapeHtml($viewModel->getTitle()); ?></h1>
 ```
 
 ## Examples of view models
@@ -133,9 +133,10 @@ The following is an example of the view model initialization in the `app/code/Ma
 
 ```php
 /** @var $viewModel /Magento/Catalog/ViewModel/Product/Listing/PreparePostData */
+/** @var $escaper-> \Magento\Framework\Escaper */
 $viewModel = $block->getViewModel();
 $postArray = $viewModel->getPostData(
-    $block->escapeUrl($block->getAddToCartUrl($_item)),
+    $escaper->escapeUrl($block->getAddToCartUrl($_item)),
     ['product' => $_item->getEntityId()]
 );
 ```

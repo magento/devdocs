@@ -155,17 +155,17 @@ This example shows how to initialize the quickSearch widget and pass options dur
                     }'
               type="text"
               name="q"
-              placeholder="<?= $block->escapeHtmlAttr(__('Search entire store here...')) ?>"
+              placeholder="<?= $escaper->escapeHtmlAttr(__('Search entire store here...')) ?>"
               class="input-text"/>
          <div id="search_results" class="search-autocomplete"></div>
       </div>
   </div>
   <div class="actions">
     <button type="submit"
-            title="<?= $block->escapeHtml(__('Search')) ?>"
+            title="<?= $escaper->escapeHtml(__('Search')) ?>"
             class="action search"
             aria-label="Search">
-      <span><?= $block->escapeHtml(__('Search')) ?></span>
+      <span><?= $escaper->escapeHtml(__('Search')) ?></span>
     </button>
   </div>
 </form>

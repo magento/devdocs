@@ -73,8 +73,8 @@ require([
             }
         },
         messages: {
-            'price[to]': {'greater-than-equals-to': '<?= $block->escapeJs(__('Please enter a valid price range.')) ?>'},
-            'price[from]': {'less-than-equals-to': '<?= $block->escapeJs(__('Please enter a valid price range.')) ?>'}
+            'price[to]': {'greater-than-equals-to': '<?= $escaper->escapeJs(__('Please enter a valid price range.')) ?>'},
+            'price[from]': {'less-than-equals-to': '<?= $escaper->escapeJs(__('Please enter a valid price range.')) ?>'}
         }
     });
 });

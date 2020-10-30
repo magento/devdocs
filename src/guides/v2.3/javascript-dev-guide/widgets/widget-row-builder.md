@@ -213,7 +213,7 @@ This example shows the row builder container, which adds a new row when you clic
         <div class="field name required">
             <label for="field-name<%- data._index_ %>" class="label"><span>Item <%- data._index_ %> Field</span></label>
             <div class="control">
-                <input name="field[name][<%- data._index_ %>]" type="text" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" class="input-text"
+                <input name="field[name][<%- data._index_ %>]" type="text" title="<?= $escaper->escapeHtmlAttr(__('Name')) ?>" class="input-text"
                        id="field-name<%- data._index_ %>"/>
             </div>
         </div>
