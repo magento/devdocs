@@ -17,6 +17,9 @@ require 'colorator'
 # Require helper methods from the 'lib' directory
 Dir.glob('lib/**/*.rb') { |file| require_relative(file) }
 
+# Instantiate Docfile data for usage in tasks
+@content_map = DocConfig.new.content_map
+
 desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]
 
@@ -66,23 +69,39 @@ task check: %w[check:image_optim check:mdl]
 
 desc 'Generate data for a news digest. Default timeframe is a week since today. For other period, use "since" argument: since="jul 4"'
 task :whatsnew do
-  date = ENV['since']
-  print 'Generating data for the weekly digest: $ '.magenta
-  if date.nil? or date.empty?
-    sh 'bin/whatsup_github'
-  elsif date.is_a? String
-    sh 'bin/whatsup_github', 'since', ENV['since'].to_s
+  since = ENV['since']
+  current_file = 'src/_data/whats-new.yml'
+  generated_file = 'tmp/whats-new.yml'
+  current_data = YAML.load_file current_file
+  last_update = current_data['updated']
+
+  print 'Generating data for the What\'s New digest: $ '.magenta
+
+  # Generate tmp/whats-new.yml
+  if since.nil? || since.empty?
+    sh 'bin/whatsup_github', 'since', last_update
+  elsif since.is_a? String
+    sh 'bin/whatsup_github', 'since', since
   else
-    puts 'The "since" argument must be a string. Example: "jul 4"'
+    abort 'The "since" argument must be a string. Example: "jul 4"'
   end
+
+  # Merge generated tmp/whats-new.yml with existing src/_data/whats-new.yml
+  generated_data = YAML.load_file generated_file
+  current_data['updated'] = generated_data['updated']
+  current_data['entries'].prepend(generated_data['entries']).flatten!
+  current_data['entries'].uniq! { |entry| entry['link'] }
+
+  puts "Writing updates to #{current_file}"
+  File.write current_file, current_data.to_yaml
 end
 
 desc 'Generate index for Algolia'
 task index: %w[init] do
   puts 'Generating index for Algolia ...'
   sh 'bin/jekyll',
-        'algolia',
-          '--config=_config.yml,_config.index.yml'
+     'algolia',
+     '--config=_config.yml,_config.index.yml'
 end
 
 desc 'Convert HTML text to kramdown in your terminal'

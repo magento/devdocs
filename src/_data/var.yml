@@ -28,13 +28,13 @@ ct-repo: magento/ece-tools
 ct-release: 2002.1.2
 mcp-prod: Magento Cloud Patches
 mcp-package: magento/magento-cloud-patches
-mcp-release: 1.0.6
+mcp-release: 1.0.8
 mcd-package: magento/magento-cloud-docker
 mcd-prod: Magento Cloud Docker
-mcd-release: 1.1.1
+mcd-release: 1.1.2
 mcc-prod: Magento Cloud Components
 mcc-package: magento/magento-cloud-components
-mcc-release: 1.0.6
+mcc-release: 1.0.7
 
 
 # TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx

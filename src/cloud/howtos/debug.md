@@ -13,7 +13,7 @@ functional_areas:
 Xdebug is an extension for debugging your PHP. The following explains how to configure Xdebug and PhpStorm to debug in your local environment. You can use the IDE of your choice. See the vendor documentation for those applications for further configuration information.
 
 {:.bs-callout-info}
-You can configure Xdebug to run in the {{site.data.var.mcd-prod}} environment for local debugging without changing your {{site.data.var.ece}} project configuration. See [Configure Xdebug for Docker]{{site.baseurl}}/cloud/docker/docker-development-debug.html).
+You can configure Xdebug to run in the {{site.data.var.mcd-prod}} environment for local debugging without changing your {{site.data.var.ece}} project configuration. See [Configure Xdebug for Docker]({{site.baseurl}}/cloud/docker/docker-development-debug.html).
 
 To set up Xdebug, you need to [configure](#configure-xdebug) a file in your Git repository, configure your IDE, and set up port forwarding. You can configure settings in the `magento.app.yaml` file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.
 

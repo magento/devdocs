@@ -43,7 +43,7 @@ Magento fully supports PHP 7.3 and 7.4. There are several factors to account for
 
 We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:
 
-<!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
+<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Adding more extensions increases library load times.
@@ -58,7 +58,18 @@ The presence of any profiling and debugging extensions can negatively impact the
 
 To guarantee successful execution of all Magento instances without dumping data or code to disk, set the memory limit as follows:
 
-`memory_limit=768MB`
+`memory_limit=1G`
+
+For debugging, increase this value to 2G.
+
+#### Realpath_cache configuration
+
+To improve Magento performance, add or update the following recommended `realpath_cache` settings in the `php.ini` file. This configuration allows PHP processes to cache paths to files instead of looking them up each time a page loads. See [Performance Tuning](https://www.php.net/manual/en/ini.core.php) in the PHP documentation.
+
+```text
+realpath_cache_size=10M
+realpath_cache_ttl=7200
+```
 
 #### ByteCode
 

@@ -94,7 +94,7 @@ let settings = <?= $myJson ?>
 
 Pass in an optional array of allowed tags that will not be escaped.
 
-If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `target`, `style` and `title`. Any other attribute for that allowed tag will be escaped.
+If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `style` and `title`. Any other attribute for that allowed tag will be escaped.
 
 `embed`, `iframe`, `video`, `source`, `object`, `audio`, `script` and `img` tags are not allowed, regardless of the content of this array.
 
@@ -193,8 +193,8 @@ To check your .phtml template for XSS vulnerabilities, use the _Magento2.Securit
 This sniff finds all _echo_ calls in PHTML-templates and determines if the output is properly escaped.
 It covers the following cases:
 
--  /_ @noEscape _/ before output. Output does not require escaping. Test is green.
--  /_ @escapeNotVerified _/ before output. Output escaping is not checked and should be verified. Test is green.
+-  `/_ @noEscape _/` before output. Output does not require escaping. Test is green.
+-  `/_ @escapeNotVerified _/` before output. Output escaping is not checked and should be verified. Test is green.
 -  Methods which contain "html" in their names (for example echo $object->{suffix}Html{postfix}()). Data is ready for the HTML output. Test is green.
 -  AbstractBlock methods `escapeHtml`, `escapeHtmlAttr`, `escapeUrl`, `escapeJs` are allowed. Test is green.
 -  Type casting and php function `count()` are allowed (for example `echo (int)$var`, `(bool)$var`, `count($var)`). Test is green.

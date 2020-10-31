@@ -15,7 +15,7 @@ In the following example, we will change the description of an existing field (`
 
 The simplified structure of the query schema to get products is:
 
-```text
+```graphql
 schema {
     query: Query
     ...
@@ -42,7 +42,8 @@ interface ProductInterface {
 We need to extend the `ProductInterface`, since that is the schema object for a product. We can do this by creating a `schema.graphqls` file in our custom module's (`OrangeCo/CustomGQL`) `etc` directory.
 
 `OrangeCo_CustomGQL/etc/schema.graphqls`
-```
+
+```graphql
 interface ProductInterface {
     attribute_set_id: Int
         @doc(description: "ID of the attribute set assigned to the product")
@@ -95,6 +96,35 @@ class ProductAttributeSetNameResolver implements ResolverInterface
     {
         return $this->setRepository->get($value['attribute_set_id'])->getAttributeSetName();
     }
+}
+```
+
+## Extend configuration data
+
+You can add your own configuration to the `storeConfig` query within your own module.
+
+To do this, configure the constructor argument `extendedConfigData` in the `argument` node in your area-specific `etc/graphql/di.xml` file.
+
+The following example adds an array-item to the `extendedConfigData` array within the construct of the `StoreConfigDataProvider`.
+
+```xml
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+  <type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
+    <arguments xsi:type="array">
+      <argument name="extendedConfigData">
+        <item name="section_group_field" xsi:type="string">section/group/field</item>
+      </argument>
+    </arguments>
+  </type>
+</config>
+```
+
+You must also extend the type `storeConfig` within in the `etc/schema.graphqls` file, as shown below:
+
+```graphql
+type StoreConfig {
+    section_group_field : String  @doc(description: "Extended Config Data - section/group/field")
 }
 ```
 

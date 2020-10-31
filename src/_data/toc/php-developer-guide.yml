@@ -201,33 +201,38 @@ pages:
         - label: Message Queues
           children:
 
+            - label: Asynchronous Message Queue configuration files
+              url: /extension-dev-guide/message-queues/async-message-queue-config-files.html
+
+            - label: Bulk operations
+              url: /extension-dev-guide/message-queues/bulk-operations.html
+
+            - label: Configure message Queues
+              url: /extension-dev-guide/message-queues/config-mq.html
+
+            - label: Example bulk operations implementation
+              url: /extension-dev-guide/message-queues/implement-bulk.html
+
+            - label: Handling outdated in-memory object states
+              url: /extension-dev-guide/message-queues/refresh-config.html              
+
             - label: Message queues overview
               url: /extension-dev-guide/message-queues/message-queues.html
 
             - label: Message queues and stores
               url: /extension-dev-guide/message-queues/message-queues-stores.html
 
-            - label: Configure message Queues
-              url: /extension-dev-guide/message-queues/config-mq.html
-
-            - label: Handling outdated in-memory object states
-              url: /extension-dev-guide/message-queues/refresh-config.html
-            
             - label: Migrate message queue configuration
               url: /extension-dev-guide/message-queues/queue-migration.html
-              
-            - label: Bulk operations
-              url: /extension-dev-guide/message-queues/bulk-operations.html
-
-            - label: Example bulk operations implementation
-              url: /extension-dev-guide/message-queues/implement-bulk.html
-
 
         - label: Adding extension attributes to entity
           url: /extension-dev-guide/extension_attributes/adding-attributes.html
          
         - label: Adding an admin grid
           url: /extension-dev-guide/admin-grid.html
+
+        - label: Price adjustments
+          url: /extension-dev-guide/price-adjustments.html
 
         - label: Searching with repositories
           url: /extension-dev-guide/searching-with-repositories.html
@@ -279,8 +284,12 @@ pages:
         - label: Check the Magento version
           url: /extension-dev-guide/versioning/check-version.html
 
+        - label: Codebase changes
+          url: /extension-dev-guide/versioning/codebase-changes.html
+
         - label: Module version dependencies
           url: /extension-dev-guide/versioning/dependencies.html
 
-        - label: Codebase changes
-          url: /extension-dev-guide/versioning/codebase-changes.html
+        - label: MFTF test versioning and backward compatibility policy
+          url: /extension-dev-guide/versioning/mftf-tests-codebase-changes.html
+          exclude_versions: ["2.3"]

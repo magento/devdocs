@@ -1,0 +1,9 @@
+---
+title: Magento_Sitemap
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Sitemap/README.md
+last_modified_at: '2014-07-11 11:30:21 -0700'
+content: |-
+  The Sitemap module allows managing the Magento application sitemap and
+  [sitemap.xml](http://en.wikipedia.org/wiki/Sitemaps) for searching engines.

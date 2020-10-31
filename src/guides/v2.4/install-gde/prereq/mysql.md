@@ -1,8 +1,6 @@
 ---
 group: installation-guide
 title: MySQL
-redirect_from:
-  - guides/v2.3/install-gde/trouble/tshoot_mysql_table-open-cache.html
 ---
 
 ## Help if you are just starting out {#mysql-help-beginner}
@@ -112,7 +110,6 @@ To properly update MySQL from version 5.7 to version 8, you must follow these st
 
 1. Update MySQL to version 8.
 1. Import the backed-up data into MySQL.
-1. In the Magento admin, set the database engine to MySQL 8.
 1. Clean the cache:
 
    ```bash
@@ -174,6 +171,8 @@ To configure a MySQL database instance:
 
    *  For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
 
+   *  {% include install/maria-db.md %}
+
 1. In order for MySQL `TIMESTAMP` fields to follow the preferences and composition expected by Magento's declarative schema architecture, the system variable `explicit_defaults_for_timestamp` must be set to `on`.
 
    References;
@@ -182,6 +181,12 @@ To configure a MySQL database instance:
    *  [MariaDB](https://mariadb.com/kb/en/server-system-variables/#explicit_defaults_for_timestamp)
 
    If this setting is not enabled, `setup:db:status` will always report that `Declarative Schema is not up to date`.
+
+{:.bs-callout-info}
+The `explicit_defaults_for_timestamp` setting is deprecated. This setting controls deprecated TIMESTAMP behaviors that will be removed in a future MySQL release. When those behaviors are removed, the `explicit_defaults_for_timestamp` setting will be removed as well.
+
+{:.bs-callout-warning}
+On Magento projects deployed on the Cloud platform, the `explicit_defaults_for_timestamp` setting for MySQL (MariaDB) defaults to *OFF*
 
 {:.ref-header}
 Related topics

@@ -173,7 +173,7 @@ When you move the database from one environment to another without an installati
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-If you defined a database in the [relationships property]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
+If you defined a database in the [relationships property]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
 
 ```yaml
 stage:
@@ -382,23 +382,34 @@ stage:
 ### `REDIS_BACKEND`
 
 -  **Default**—`Cm_Cache_Backend_Redis`
--  **Version**—Magento 2.3.5 and later
+-  **Version**—Magento 2.3.0 and later
 
 Specifies the backend model configuration for the Redis cache.
 
-Magento version 2.3.5 and later includes the following backend models:
+Magento version 2.3.0 and later includes the following backend models:
 
 -  `Cm_Cache_Backend_Redis`
 -  `\Magento\Framework\Cache\Backend\Redis`
 -  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
 
+The example how to set `REDIS_BACKEND`
+
+```yaml
+stage:
+  deploy:
+    REDIS_BACKEND: '\Magento\Framework\Cache\Backend\RemoteSynchronizedCache'
+```
+
 {:.bs-callout-info}
-See [L2 caching in the Magento application]({{site.baseurl}}/guides/v2.3/config-guide/cache/two-level-cache.html) for details on selecting the backend model for Redis caching.
+If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, then {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.3/config-guide/cache/two-level-cache.html) in the _Magento Configuration Guide_.
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
 -  **Version**—Magento 2.1.16 and later
+
+{:.bs-callout-warning}
+Do not enable this variable on scaled architecture (split architecture) projects. It causes Redis connection errors. Redis slaves are still active but will not be used for Redis reads. As an alternative, we recommend the following: use Magento 2.3.5 or later on Cloud projects with a scaled architecture, implement a new Redis backend configuration, and implement L2 caching for Redis.
 
 Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _read-only_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
@@ -496,7 +507,7 @@ stage:
 
 Allows you to increase the maximum expected execution time for static content deployment.
 
-By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
+By default, Magento Commerce sets the maximum expected execution to 900 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
 
 ```yaml
 stage:
@@ -643,7 +654,12 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
- Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
+Enable or disable the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for `bin/magento` CLI commands performed during the deployment phase.
+
+{:.bs-callout}
+To use the VERBOSE_COMMANDS setting to control the detail in command output for both successful and failed `bin/magento` CLI commands, you must set [MIN_LOGGING_LEVEL]({{ site.baseurl }}/cloud/env/variables-global.html#min_logging_level) `debug`.
+
+Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
 
 ```yaml
 stage:

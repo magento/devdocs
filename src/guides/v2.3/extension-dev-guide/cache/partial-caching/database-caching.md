@@ -162,6 +162,7 @@ Use the following steps:
 1. In a web browser, go to any cacheable page (such as the [storefront](https://glossary.magento.com/storefront) front door page).
 
  If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must [enable developer mode].)
+
 1. Enter the following commands:
 
    ```bash

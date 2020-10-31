@@ -13,18 +13,17 @@ All of the requirements described here apply to the latest patch release of Mage
 ## Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
-Magento is not supported on:
-
-*  Windows OS
-*  Mac OS
+Magento is not supported on Microsoft Windows and macOS.
 
 ## Memory requirement
 
 Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
 
-## Composer (latest stable version)
+## Composer
 
 [Composer][] is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
+
+Magento does not support Composer 2.x.
 
 ## Web servers
 
@@ -46,12 +45,7 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 
 ## PHP
 
-*  PHP ~7.3.0
-
-{:.bs-callout-warning}
-PHP 7.1 has reached [End of Life](https://www.php.net/supported-versions.php). To maintain PCI compliance, Magento should not be run on unsupported software.
-Installing from GitHub will no longer work with Magento 2.3.4/PHP 7.1.
-The only way to install 2.3.4 with PHP 7.1.x is with Composer.
+{% include install/php-versions-2.3.md %}
 
 ### Required PHP extensions
 
@@ -59,9 +53,9 @@ The only way to install 2.3.4 with PHP 7.1.x is with Composer.
 The [PHP installation instructions][] include a step for installing these extensions.
 
 {:.bs-callout-warning}
-If you install Magento via cloning from the [github](https://github.com/magento/magento2) repository then make sure you have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) installed on your instance.
+If you install Magento via cloning from the [GitHub](https://github.com/magento/magento2) repository then make sure you have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) installed on your instance.
 
-<!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
+<!--{% assign packages = site.data.codebase.v2_3.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Refer to [official PHP documentation][] for installation details.
@@ -110,18 +104,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 *  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.x (tested with 6.3.1)
 *  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
-   {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
-
-   *  Elasticsearch 6.8.x
-
-      Magento 2.3 supports [Elasticsearch PHP client][]{:target="_blank"} version 6.8.
-
-   *  Elasticsearch 7.x.x
-
-      {:.bs-callout-warning}
-      Magento no longer provides support for Elasticsearch [2.x and 5.x][] as they are End of Life.
-
-      Follow the instructions in [Change Elasticsearch Module][].
+   {% include config/es-version-23.md %}
 
 *  RabbitMQ 3.8.x (compatible with 2.0 and later)
 
@@ -177,5 +160,4 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 [Varnish]: {{page.baseurl}}/config-guide/varnish/config-varnish.html
 [Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-overview.html
 [Elasticsearch PHP client]: https://github.com/elastic/elasticsearch-php
-[2.x and 5.x]: https://www.elastic.co/support/eol
 [RabbitMQ]: {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html

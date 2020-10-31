@@ -8,7 +8,7 @@ functional_areas:
   - Services
 ---
 
-{{ site.data.var.ece }} projects include access to New Relic services to help manage, monitor, and troubleshoot your applications and infrastructure by collecting, viewing, and analyzing data from your {{ site.data.var.ece }} project.
+{{ site.data.var.ece }} projects include access to the following New Relic services to help manage, monitor, and troubleshoot your applications and infrastructure by collecting, viewing, and analyzing data from your {{ site.data.var.ece }} project.
 
 -  [New Relic APM](#new-relic-apm) (Pro and Starter)
 -  [New Relic Infrastructure](#new-relic-infrastructure) (Pro, Production environment only)
@@ -22,7 +22,7 @@ functional_areas:
 -  **Database query monitoring**—Locate and monitor database queries affecting performance.
 -  **App Map**—View all application dependencies within your Magento site, extensions, and external services.
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event. See [Apdex score].
--  **Adobe-generated alert policies**–Monitor application and infrastructure performance using alert policies that monitor key performance indicators like apdex score, disk space, and error rate based on industry best practices. See [Monitor performance using alerts](#monitor-performance-with-alert-policies).
+-  **Managed Alerts for Magento Commerce**–Use this New Relic alert policy to monitor application and infrastructure performance based on industry best practices. See [Monitor performance with the Managed Alerts for {{ site.data.var.ee }} alert policy](#monitor-performance-with-managed-alerts).
 
 Your {{site.data.var.ece}} project includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
@@ -31,7 +31,7 @@ Your {{site.data.var.ece}} project includes the software for the New Relic APM s
 {{site.data.var.ece}} Pro projects include the [New Relic Infrastructure (NRI)][New Relic infrastructure] service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring. This service is available on Production and Staging environments.
 
 {:.bs-callout-info}
-For Pro accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, submit a [support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to request installation.
+For Pro accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, [submit a Magento Support ticket] to request installation.
 
 ## New Relic Logs
 
@@ -52,7 +52,7 @@ As soon as your project is connected to New Relic, you can use the New Relic Log
 
 See [View and analyze logs](#view-and-analyze-log-data).
 
-## Manage your New Relic account
+## Manage New Relic account
 
 When Magento provisions your {{site.data.var.ece}} project, the License Owner receives an email from New Relic with credentials and instructions for accessing the New Relic account. If you did not receive the email, use the License Owner email address to [reset the New Relic password].
 
@@ -80,13 +80,13 @@ To add a user:
 
 1. Ask the new user to check their email for a New Relic notification with account information.
 
-## Set up the New Relic service
+## Set up New Relic
 
 Pro environments are preconfigured to use New Relic services.
 
 For Starter environments, you must check the `.magento.app.yaml` file to verify that the `runtime` section includes the New Relic extension. If the extension has not been configured, add the following:
 
-> .magento.app.yaml
+> `.magento.app.yaml`
 
 ```yaml
 runtime:
@@ -95,11 +95,11 @@ runtime:
 ```
 
 {:.bs-callout-warning}
-If you upgrade the PHP version on your {{site.data.var.ece}} project, you must submit a Magento Support ticket to update the New Relic service.
+If you upgrade the PHP version on your {{site.data.var.ece}} project, you must [submit a Magento Support ticket] to update the New Relic service.
 
 ## Connect to New Relic
 
-To connect a Cloud environment to New Relic, you must add the New Relic license key to the environment.
+To connect a Cloud environment to New Relic, add the New Relic license key to the environment.
 
 -  For Pro accounts, Magento adds the license key to your Cloud environments during the provisioning process. You can log in to your New Relic account to verify connectivity between your Magento Commerce site and New Relic.
 
@@ -107,19 +107,18 @@ To connect a Cloud environment to New Relic, you must add the New Relic license 
 
 ### Configure New Relic for Starter environments
 
-For Starter environments, you must add the New Relic license key to the environment configuration to enable the New Relic integration. We recommend adding the key to the Staging and Production (master) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the [New Relic reporting] topic in the _Magento User Guide_.
+For Starter environments, enable the New Relic integration by adding the New Relic license key to the environment configuration. We recommend adding the key to the Staging and Production (master) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the [New Relic reporting] topic in the _Magento Commerce User Guide_.
 
 {:.bs-callout-warning}
 Updating the environment configuration triggers a redeployment, which takes your site offline until deployment completes. For Production environments, we recommend completing this work during off-peak hours to avoid service disruptions. See [Working with variables].
 
-{:.procedure}
-Prerequisites
+**Prerequisites:**
 
 -  Log in credentials for the Magento account page, or for the New Relic account associated with your project
 -  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or credentials to access the [Magento Admin](https://docs.magento.com/m2/ce/user_guide/system/permissions.html) for the environment.
 
 {:.procedure}
-To configure New Relic on a Starter environment:
+To configure New Relic for Starter environments:
 
 1. Find your New Relic license key from your Magento Cloud account page, or [from your New Relic account page]:
 
@@ -133,7 +132,7 @@ To configure New Relic on a Starter environment:
 
    -  Copy the license key.
 
-1. Add the New Relic license key to an environment using the Magento Cloud CLI, or [add it from the Magento Admin]:
+1. Add the New Relic license key to an environment using the Magento Cloud CLI, or [add it from the Magento Admin].
 
    -  Change to the environment that needs the license key.
 
@@ -145,7 +144,7 @@ To configure New Relic on a Starter environment:
 
 1. [Log in to New Relic][New Relic login] to verify that you can view data from the Magento Cloud environment. (See [Investigate performance](#investigate-performance).)
 
-### Remove New Relic license key from a Starter environment
+### Remove license key from a Starter environment
 
 If three active Starter environments already use the same New Relic license key, and you want to configure New Relic reporting on a different environment, you must remove the key from one of the configured environments before you can reuse it.
 
@@ -248,75 +247,96 @@ The following example shows a New Relic Insights dashboard created from queries 
 
 For further information and examples, see [Introduction to New Relic Logs][New Relic Logs] and [Introduction to New Relic Insights][New Relic Insights].
 
-### Monitor performance with alert policies
+### Monitor performance with Managed Alerts
 
-Adobe provides a set of New Relic alert policies for {{ site.data.var.ece }} Pro and Starter Production environments to track the following key performance metrics:
+Adobe provides the Managed Alerts for {{ site.data.var.ee }} alert policy to track performance metrics.
+Based on industry best practices, the policy includes a collection of alerts that set thresholds to trigger warning and critical notifications when site infrastructure or application issues affect performance. The Managed Alerts policy tracks the following metrics on Production environments only:
 
--  [Apdex score]
--  error rate
--  disk space (available on Pro Production environments only)
+| Metric | Data collection | Availability
+|:--------|:------------------------|:-------------
+| [Apdex score] | APM   | Pro and Starter
+| error rate    | APM   | Pro and Starter
+| disk space    | NRI   | Pro
+| CPU usage     | NRI   | Pro
+| memory usage  | NRI   | Pro
 
-Based on industry best practices, these policies set thresholds for warning and critical conditions that affect performance. When your site experiences an infrastructure or application issue that triggers an alert threshold, New Relic sends alert notifications so that you can proactively address the issue. To use these policies, you must configure notification channels to receive the alert messages.
+When site infrastructure or application conditions trigger an alert threshold, New Relic sends alert notifications so that you can proactively address the issue.  See [Managed Alerts for Magento Commerce] in the _Magento Help Center_ for details about alert thresholds and troubleshooting steps to resolve the issues that triggered the alert.
 
 {:.bs-callout-info}
 For Pro Staging and Integration environments and Starter environments, use [Health notifications] to monitor disk space.
 
-{:.procedure}
-Prerequisites
+**Prerequisites:**
 
 -  Credentials to log in to the [New Relic account] for your Cloud project
 -  Verify that your Cloud environment is [connected to New Relic](#connect-to-new-relic)
+-  Configure at least one [notification channel](#configure-notification-channels) to receive the alert notifications
 
 {:.procedure}
-To review Adobe-generated alert policies:
+To review the Managed Alerts for {{ site.data.var.ee }} policy:
 
-1. Use your Project Owner New Relic credentials to [log in to your New Relic account][New Relic login].
+1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. From the navigation menu, select  **Alerts**  > **Alert Policies**.
+1. Locate the _Managed Alerts for Magento Commerce_ policy:
 
-1. In the Search Policies field, search for _Adobe Generated Policy_.
+   -  In the top navigation menu, click **Alerts & AI** to open the _Applied Intelligence_ page.
 
-1. You should see a set of policies like the ones below:
+   -  In the left navigation, click **Policies**.
 
-   ![Generated alert policies]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-alert-policies.png){:width="650px"}
+   -  At the top of the page, select the account and project from the drop-down menu if needed.
 
-   {:.bs-callout-info}
-   If you do not see these alert policies, submit a Magento support ticket. Include your project ID in the ticket. These policies are available on Pro and Starter Production environments only.
+      ![Select account and project]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-select-account.png){:width="650px"}
 
-1. Click an alert policy name to review the threshold conditions that trigger alerts.
+   -  In the _Policy_ list, you should see the **Managed Alerts for Magento Commerce** policy.
+
+      ![Generated alert policies]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-managed-alerts-for-magento.png){:width="650px"}
+
+      {:.bs-callout-info}
+      If the Managed Alerts for {{ site.data.var.ee }} alert policy is not available, see [Managed Alerts for Magento Commerce][] in the _Magento Help Center_.
+
+1. Click **Managed Alerts for Magento Commerce** to review the alert conditions defined in the policy.
+
+   ![Managed alerts list]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-magento-alert-conditions.png){:width="650px"}
 
 ### Configure notification channels
 
-To use the Adobe-generated alert policies to monitor your Production sites, you must configure notification channels and map them to alert policies. Notifications about performance issues go to all channels associated with an alert policy when conditions on the application or infrastructure trigger an alert. You also receive notifications when an issue is acknowledged and closed.
+To use Managed Alerts for {{ site.data.var.ee }} to monitor your Production sites, you must configure at least one notification channel and map it to the alert policy.
+
+Notifications about performance issues go to all channels associated with an alert policy when conditions on the application or infrastructure trigger an alert. You also receive notifications when an issue is acknowledged and closed.
 
 New Relic provides templates for configuring different types of notification channels including email, Slack, PagerDuty, webhooks, and more. See the [Instructions for specific notification channels] in the New Relic documentation to review the prerequisites for using each type.
-
-The following instructions describe the high level steps to configure a notification channel to receive alert messages triggered by an alert policy.
 
 {:.procedure}
 To configure a notification channel:
 
 1. Choose a notification channel type, and complete any [prerequisite steps] required to connect the channel with the New Relic service.
 
-1. [Log in to your New Relic account][New Relic login].
+1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. Navigate to the _New Relic APM_ page.
+1. Create a new notification channel.
 
-1. On the _New Relic APM Applications_ page, open the application for your Cloud environment.
+   -  In the top navigation menu, click **Alerts & AI** to open the _Applied Intelligence_ page.
 
-1. On the _Alerts_ page, click **New notification channel**.
+   -  In the left navigation, click **Notification channels**.
 
-   ![New Relic notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-notification-channels.png){:width="650px"}
+   -  On the *Notification channels* page, click the **New notification channel**.
 
-1. On the _Create a new notification channel_ page, choose the channel type from the **Select a channel type** dropdown menu.
+      ![New Relic notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-add-notification-channel.png){:width="650px"}
 
-1. Configure the settings for the channel, and then click **Create channel**.
+   -  On the *Create notification channel* page, select the channel type and complete the steps to configure, create, save, and send a test notification to verify that the channel works.
 
-1. On the _Channel details_ page, click **Send a test notification** to verify that the channel works.
+      ![New Relic create notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-create-notification-channel.png){:width="650px"}
 
-1. To specify the alerts to send to the channel, click the **Alert policies** tab.
+1. Specify the alerts to send to the channel.
 
-1. On the _Alert policies_ page, click **Add alert** to select and add an alert policy.
+   -  On the *Notification channels* page, click **Alert policies**.
+
+   -  On the *Alert policies* tab, click **Add alert policies**.
+
+      ![New Relic create notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-add-alerts-to-notification-channel.png){:width="650px"}
+
+   -  Select the **Managed Alerts for {{ site.data.var.ee }}** alert policy.
+
+   -  Click **Save changes**.
 
 See the following New Relic documentation topics for additional information:
 
@@ -325,13 +345,13 @@ See the following New Relic documentation topics for additional information:
 -  [Configure notification channels using the New Relic API]
 
 {:.bs-callout-warning}
-The Adobe-generated policies have default notification channels configured to notify Magento teams that support {{ site.data.var.ece }} customers.  Do not modify the configuration for these default channels, and do not remove any alert policies assigned to them.
+The alerts in the Managed Alerts for Magento Commerce policy have default notification channels configured to notify Magento teams that support {{ site.data.var.ece }} customers.  Do not modify the configuration for these default channels, and do not remove any alert policies assigned to them.
 
-### Create Alert Policies
+### Create alert policies
 
-Do not modify the Adobe-generated alert policies. We will automatically regenerate and improve them over time, which will overwrite any customizations you make.
+Do not modify any alerts included in the Managed Alerts for Magento Commerce policy. We update and improve the alert conditions in this policy over time, which overwrites any customizations you add to the policy.
 
-If you want to modify the thresholds of an alert condition, create a new alert policy. Then, copy the alert condition to the new policy. See [Update policies or conditions] in the New Relic documentation.
+Instead of modifying an existing alert, you can create a new alert policy. Then, copy the alert conditions to the new policy. See [Update policies or conditions] in the New Relic documentation.
 
 {:.bs-callout-tip}
 See [Alerts concepts and workflow] in the New Relic documentation for more detailed information about Alerts, alert policies, and notification channels.
@@ -353,7 +373,8 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [Instructions for specific notification channels]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
 [Magento Admin credentials]: https://docs.magento.com/m2/ce/user_guide/system/permissions.html
 [Magento Partnership Owner Account]: https://account.newrelic.com/accounts/1311131/users
-[New Relic account]: #manage-your-new-relic-account
+[Managed Alerts for Magento Commerce]: https://support.magento.com/hc/en-us/articles/360045806832
+[New Relic account]: #manage-new-relic-account
 [New Relic APM]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
 [New Relic APM Overview]: https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page-view-transaction-apdex-usage-data
 [New Relic ONE UI]: https://docs.newrelic.com/docs/new-relic-one/use-new-relic-one/get-started/new-relic-one-core-ui-components
@@ -366,8 +387,9 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [New Relic query syntax for logs]: https://docs.newrelic.com/docs/logs/new-relic-logs/ui-data/query-syntax-logs
 [New Relic reporting]: https://docs.magento.com/m2/ce/user_guide/configuration/general/new-relic-reporting.html
 [prerequisite steps]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
-[Troubleshoot performance using New Relic]: https://support.magento.com/hc/en-us/articles/360042149832#low_user_satisfaction
 [reset the New Relic password]: https://rpm.newrelic.com/forgot_password
+[submit a Magento Support ticket]: {{ site.baseurl }}/cloud/trouble/trouble.html
+[Troubleshoot performance using New Relic]: https://support.magento.com/hc/en-us/articles/360042149832#low_user_satisfaction
 [Update the account owner]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [Update policies or conditions]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/configuring-alert-policies/update-or-disable-policies-conditions
 [View your license key]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding

@@ -6,7 +6,7 @@ title: setShippingAddressesOnCart mutation
 The `setShippingAddressesOnCart` mutation sets one or more shipping addresses on a specific cart. The shipping address does not need to be specified in the following circumstances:
 
 *  The cart contains only virtual items
-*  When you defined the billing address, you set the `same_for_shipping` attribute to `true`. Magento assigns the same address as the shipping address.
+*  When you defined the billing address, you set the `same_as_shipping` attribute to `true`. Magento assigns the same address as the shipping address.
 
 ## Syntax
 
@@ -134,6 +134,6 @@ Attribute |  Data Type | Description
 
 ### Cart object {#CartObject}
 
-{% include graphql/cart-object.md %}
+{% include graphql/cart-object-24.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.

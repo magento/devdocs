@@ -29,11 +29,6 @@ by creating pull requests, or open a discussion by creating an issue.
 
 For more information, see our [Contributors Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
 
-## Contact us {#contact-us}
-
-Feel free to contact the documentation team directly at
-[DL-Magento-Doc-Feedback@magento.com](mailto:DL-Magento-Doc-Feedback@magento.com)
-
 {:.ref-header}
 Related topics
 

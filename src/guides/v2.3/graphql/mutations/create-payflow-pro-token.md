@@ -9,7 +9,15 @@ See [Paypal Payflow Pro payment method]({{page.baseurl}}/graphql/payment-methods
 
 ## Syntax
 
-`createPayflowProToken(input: PayflowProTokenInput): CreatePayflowProTokenOutput`
+```graphql
+mutation {
+  createPayflowProToken(
+    input: PayflowProTokenInput
+  ) {
+    CreatePayflowProTokenOutput
+  }
+}
+```
 
 ## Example usage
 

@@ -17,14 +17,14 @@ To ensure the stability of your customizations and prevent upgrades from overwri
     {:.bs-callout-info}
     To add _external_ fonts, add font references to the page configuration file as described in [Include static resources (JavaScript, CSS, fonts)]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css).
 
-1. If you build a theme using the Magento UI library, declare the font by adding the `.lib-font-face` [mixin](https://glossary.magento.com/mixin) to the `app/design/frontend/<your_vendor_name>/<your_theme_name>/web/css/source/_typography.less` file:
+1. If you build a theme using the Magento UI library, declare the custom font by adding the `.lib-font-face` [mixin](https://glossary.magento.com/mixin) to the `app/design/frontend/<your_vendor_name>/<your_theme_name>/web/css/source/_typography.less` file:
 
-   ```css
+   ```less
    .lib-font-face(
-       @family-name:'<any_font_name>',
+       @family-name:'<custom_font_name>',
        @font-path: '@{baseDir}fonts/<path_to_font_file>',
        @font-weight: <font_weight>,
-       @font-style: <font_style>
+       @font-style: <font_style>,
        @font-display: <auto|block|fallback|optional|swap>
    );
    ```
@@ -42,14 +42,29 @@ To ensure the stability of your customizations and prevent upgrades from overwri
        src: url('../fonts/opensans/light/opensans-300.eot');
        src: url('../fonts/opensans/light/opensans-300.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/light/opensans-300.woff2') format('woff2'), url('../fonts/opensans/light/opensans-300.woff') format('woff'), url('../fonts/opensans/light/opensans-300.ttf') format('truetype'), url('../fonts/opensans/light/opensans-300.svg#Open Sans') format('svg');
        font-weight: 300;
-       font-style: normal
+       font-style: normal;
        font-display: swap;
    }
+   ```
+
+   `@font-format` is optional. If you need to specify a format, enclose it in single quotes. For example, `@font-format: 'ttf'` for TrueType Fonts. The available types are: "woff", "woff2", "ttf", "eot", "otf", and "svg"
+
+   ```less
+   .lib-font-face(
+       @family-name:'<custom_font_name>',
+       @font-path: '@{baseDir}fonts/<path_to_font_file>',
+       @font-format: '<ttf|woff|woff2|eot|otf|svg>',
+       @font-weight: <font_weight>,
+       @font-style: <font_style>,
+       @font-display: <auto|block|fallback|optional|swap>
+   );
    ```
 
    `@font-display: swap` is declared by default for Magento Blank theme in `app/design/frontend/Magento/blank/web/css/source/_typography.less`.
 
    Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.
+
+   For more information about font-face, refer to this article [Font-face][https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face]{:target="_blank"}.
 
 ## `<font>` head type
 
@@ -83,6 +98,8 @@ To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/
 @icons__font-path: '@{baseDir}fonts/Theme-Icons'; //  Add you fonts in your-theme/web/fonts
 @icons__font-name: 'Theme-Icons';
 ```
+
+With uploaded icons from IcoMoon, a "404 error `woff2` file icon not found" may occur in the console. This means the `woff2` file is missing from the IcoMoon package. You just need copy the `woff` file to `woff2`.
 
 {:.bs-callout-info}
 If your theme does not use the Magento UI library, include the font in your theme's CSS files using the `@font-face` CSS rule.

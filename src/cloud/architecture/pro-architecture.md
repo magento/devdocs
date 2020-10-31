@@ -148,7 +148,7 @@ You cannot create a branch from the Production environment branch. You must push
 
 Rather than running a traditional, active-passive master or a master-slave setup, {{site.data.var.ece}} runs a redundant architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.
 
-Because of our unique, redundant hardware, we can provide you with three gateway servers. Most external services enable you to [whitelist](https://glossary.magento.com/whitelist) multiple IP addresses, so having more than one fixed IP address is not a problem.
+Because of our unique, redundant hardware, we can provide you with three gateway servers. Most external services enable you to add multiple IP addresses to an [allowlist](https://glossary.magento.com/whitelist), so having more than one fixed IP address is not a problem.
 
 The three gateways map to the three servers in your Production environment cluster and retain static IP addresses. It is fully redundant and highly available at every level:
 
@@ -177,6 +177,9 @@ Weeks 12 to 22 | One backup per month
 
 -  **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after which, the RPO is 6 hours (maximum time to last backup).
 -  **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
+
+{:.bs-callout-tip}
+On Pro Staging and Production environments, you must submit a support ticket to restore an environment from an automatic backup. You can backup the database and code for your Production and Staging environments using CLI commands. See [Dump your database]({{site.baseurl}}/cloud/project/project-webint-snap.html#db-dump) and [bin/magento setup:backup]({{site.baseurl }}/guides/v2.4/reference/cli/magento-commerce.html#setupbackup). For Integration environments, we highly recommend that you create a snapshot as a first step after accessing your {{site.data.var.ece}} project and before applying any major changes. See [Snapshots and backup management]({{site.baseurl}}/cloud/project/project-webint-snap.html).
 
 ### Production technology stack
 
@@ -221,17 +224,17 @@ On Pro plan projects, the Master branch provides an active PaaS environment with
 
 {{site.data.var.ece}} uses the Debian GNU/Linux operating system and the [NGINX](https://glossary.magento.com/nginx) web server. You cannot upgrade this software, but you can configure versions for the following:
 
--  [PHP]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)
--  [MySQL]({{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
--  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
--  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
--  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+-  [PHP]({{ site.baseurl }}/cloud/project/magento-app.html)
+-  [MySQL]({{ site.baseurl }}/cloud/project/services-mysql.html)
+-  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
+-  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
+-  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
 
 For the Staging and Production environments, we recommend installing the latest version of the Fastly CDN module. See [Fastly in Cloud]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
 Edit the following YAML files to configure specific software versions to use in your implementation.
 
--  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
--  [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html)—url processing
--  [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
+-  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—application build and deployment
+-  [`routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)—url processing
+-  [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—supported services
 -  [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2 and later

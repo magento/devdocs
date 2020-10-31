@@ -7,7 +7,15 @@ Use the `addConfigurableProductsToCart` mutation to add configurable products to
 
 ## Syntax
 
-`mutation: {addConfigurableProductsToCart(input: AddConfigurableProductsToCartInput) {AddConfigurableProductsToCartOutput}}`
+```graphql
+mutation {
+  addConfigurableProductsToCart(
+    input: AddConfigurableProductsToCartInput
+  ) {
+    AddConfigurableProductsToCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -145,4 +153,4 @@ Error | Description
 
 ## Related topics
 
--  [Configurable product data types]({{page.baseurl}}/graphql/product/configurable-product.html)
+-  [Configurable product data types]({{page.baseurl}}/graphql/interfaces/configurable-product.html)

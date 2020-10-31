@@ -28,7 +28,7 @@ To provide you with a simple way to restrict access to the file system in produc
 
 For an overview, see [Overview of ownership and permissions]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
-For details about ownership and permissions in development and production, see [Magento ownership and permissions in development and production]({{page.baseurl}}).
+For details about ownership and permissions in development and production, see [Magento ownership and permissions in development and production]({{page.baseurl}}/config-guide/prod/prod_file-sys-perms.html).
 
 ### Improved prevention of clickjacking exploits
 
