@@ -51,7 +51,7 @@ The following example shows how to copy `sales_convert_quote`.`demo` to `sales_o
 </config>
 ```
 
-Use the `targetField` attribute to specify the destination field. The following example, shows how to copy `sales_convert_quote`.`demo` to `sales_order`.`order_demo`.
+Use the `targetField` attribute to specify the destination field. The following example shows how to copy `sales_convert_quote`.`demo` to `sales_order`.`order_demo`.
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -66,7 +66,7 @@ Use the `targetField` attribute to specify the destination field. The following 
 </config>
 ```
 
-Define a new `aspect` if you need to copy a field of a source table into couple fields of a destination table.
+Define a new `aspect` if you need to copy a field of a source table into multiple fields in a destination table.
 
 The following example shows how to copy `sales_convert_quote`.`demo` into
 
