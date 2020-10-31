@@ -77,7 +77,7 @@ Packages of type `metapackage` must declare at least one dependency in the `requ
 
 All code and marketing content that is submitted to Magento Marketplace is checked for plagiarism to ensure that it has not been copied from existing Marketplace extensions or from the Magento codebase.
 
-If the extension contains source code from the Community Edition, the extension must be licensed under [Open Source License v. 3.0][3] and properly credit Adobe, Inc.
+If the extension contains source code from the Open Source Edition, the extension must be licensed under [Open Source License v. 3.0][3] and properly credit Adobe, Inc.
 
 _See also:_ [OSL 3.0: A Better License for Open Source Software][4]
 
