@@ -22,6 +22,8 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 **Infrastructure updates**–
 
+-  {:.new}Added support for Elasticsearch 7.9 and Redis 6 for compatibility with upcoming Magento releases.<!--MCLOUD-7191-->
+
 -  {:.new}Added ece-tools support for the read-only `pub/static` directory when static content is set to deploy in the build stage.<!--MC-37699-->
 
 -  {:.fix}Updated the ece-tools `composer.json` to add a required dependency for the Magento Quality Patches package. This fixes a circular dependency that existed between the ece-tools and magento-cloud-patches packages.<!--MCLOUD-6910-->
