@@ -30,11 +30,11 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}Added search-engine validation to ensure that `elasticsearch` is set for Magento Commerce Cloud 2.4 and later. If the validation fails, the deployment is stopped with an error message suggesting fixes for the issue.<!--MCLOUD-6937-->
 
--  {:.new}Added error message for invalid MAGE_MODE environment variable setting. The only valid value is `production`. Before this fix, MAGE_MODE could be set to `developer` without deployment errors, only to cause errors later when trying to write to read-only files.<!--MCLOUD-6708-->
+-  {:.new}Added error message for invalid `MAGE_MODE` environment variable setting. The only valid value is `production`. Before this fix, `MAGE_MODE` could be set to `developer` without deployment errors, only to cause errors later when trying to write to read-only files.<!--MCLOUD-6708-->
 
--  {:.fix}Fixed validations for Redis, RabbitMQ and MySql services to ensure these versions are compatible with the Magento version. Valid versions of these services are now written to the `cloud.log`.<!--MCLOUD-7098-->
+-  {:.fix}Fixed validation for Redis, RabbitMQ and MySql services to ensure these versions are compatible with the Magento version. Valid versions of these services are now written to the `cloud.log`.<!--MCLOUD-7098-->
 
--  {:.fix}Updated the `cloud.log` to include the concurrent requests limit for sending requests during cache warmup. This value is configured in in the WARM_UP_CONCURRENCY post-deploy variable. <!--MCLOUD-5563-->
+-  {:.fix}Updated the `cloud.log` to include the concurrent requests limit for sending requests during cache warmup. This value is configured in in the `WARM_UP_CONCURRENCY` post-deploy variable. <!--MCLOUD-5563-->
 
 -  {:.fix}Updated the Elasticsearch compatibility error message to show the supported versions of Elasticsearch. The error message now provides the specific Elasticsearch versions to install in your Cloud infrastructure so that it is compatible with the Elasticsearch module used by your version of Magento.<!--MCLOUD-6698-->
 
@@ -44,7 +44,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 **Environment variable updates**–
 
--  {:.new}Added a `SKIP_COMPOSER_DUMP_AUTOLOAD` build variable. Setting the variable to `true` stops Magento from running the `composer dump-autoload` command during a Cloud Docker installation. The variable is only relevant to Cloud Docker containers with writable file systems. In such cases, skipping the command can prevent errors from other commands trying to access code from the deleted `generated` directory.<!--MCLOUD-6939-->
+-  {:.new}Added the `SKIP_COMPOSER_DUMP_AUTOLOAD` build variable. Setting the variable to `true` stops Magento from running the `composer dump-autoload` command during a {{ site.data.var.mcd-prod }} installation. The variable is only relevant to {{ site.data.var.mcd-prod }} containers with writable file systems. In such cases, skipping the command prevents errors from other commands trying to access code from the deleted `generated` directory.<!--MCLOUD-6939-->
 
 ## v2002.1.2
 *Release date: August 5, 2020*<br/>
