@@ -12,8 +12,7 @@ In Magento it is used by the [gallery]({{ page.baseurl }}/javascript-dev-guide/w
 ## Initialize magnifier {#magnifier_init}
 
 The magnifier widget is initialized as described in [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#init_phtml).
-
-When initializing the gallery Widget on an HTML element, magnifier initialization is also available. Following is the example of gallery initialization with magnifier:
+The following is the example of gallery initialization with the magnifier:
 
 ```javascript
 <script type="text/x-magento-init">
@@ -48,7 +47,7 @@ When initializing the gallery Widget on an HTML element, magnifier initializatio
 
 ### `enabled` {#opt_enabled}
 
-Enable magnifier.
+Enables the magnifier.
 
 **Type**: Boolean
 
@@ -111,9 +110,7 @@ The enabling boolean option looks like this:
 ...
 ```
 
-Several other Magnifier options can also be set in `view.xml`.
-
-The options settings look like this:
+Several other Magnifier options are set in `view.xml`:
 
 ```xml
 <var name="magnifier">
