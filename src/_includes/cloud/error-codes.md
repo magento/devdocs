@@ -2,7 +2,7 @@
 
 ## Critical Errors
 
-Critical errors indicate a problem with the Magento Commerce Cloud project configuration that causes deployment failure, for example incorrect, unsupported, or missing configuration for required settings. Before you can deploy, you must update the configuration to resolve these errors.
+Critical errors indicate a problem with the {{ site.data.var.ece }} project configuration that causes deployment failure, for example incorrect, unsupported, or missing configuration for required settings. Before you can deploy, you must update the configuration to resolve these errors.
 
 ### Build stage
 
@@ -102,7 +102,7 @@ Critical errors indicate a problem with the Magento Commerce Cloud project confi
 
 ## Warning Errors
 
-Warning errors indicate a problem with the Magento Commerce Cloud project configuration such as incorrect, deprecated, unsupported, or missing configuration settings for optional features that can affect site operation. Although a warning does not cause deployment failure, you should review warning messages and update the configuration to resolve them.
+Warning errors indicate a problem with the {{ site.data.var.ece }} project configuration such as incorrect, deprecated, unsupported, or missing configuration settings for optional features that can affect site operation. Although a warning does not cause deployment failure, you should review warning messages and update the configuration to resolve them.
 
 ### Build stage
 
