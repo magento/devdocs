@@ -206,7 +206,11 @@ When you want to verify an issue or pull request, use the `instance` command to 
 @magento give me {$version} instance
 ```
 
-For `version`, the currently supported values are latest [version tags](https://github.com/magento/magento2/tags) and the 2.4-develop branch.
+Replace `{$version}` with the version tag or branch. The following values are supported: the version tag for the latest release and `2.4-develop` for the development branch.
+
+```text
+@magento give me 2.4.0 instance
+```
 
 **Actions:** The following actions complete the command:
 
@@ -248,6 +252,57 @@ Admins access will be shared via comment on GitHub.
 -  Magento EngCom Team
 -  [Contributor]({{ site.baseurl }}/contributor-guide/contributors.html)
 
+### Customize deployed instances {#customize-deployed-instances}
+
+In some cases a custom environment is required to test an issue or a pull request. You can create a custom environment by appending custom configuration settings to the PR comment to [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+#### Magento edition
+
+Append the following text to your PR comment to specify the Magento Commerce edition to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+```text
+with edition {$edition}
+```
+
+Replace `{$edition}` with either of the following values:
+
+-  `ee` deploys the Magento Commerce edition
+-  `b2b` deploys Magento Commerce with B2B modules.
+
+For example, append the following text to the PR comment to deploy a {{site.data.var.ee}} instance with B2B modules:
+
+```text
+with edition b2b
+```
+
+#### Add extensions
+
+Append the following text to your PR comment to specify extensions to add to an instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+```text
+with extensions {$extensionRepo}
+```
+
+Replace `{$extensionRepo}` with one or more extension repositories to include when compiling your instance.  If you specify multiple repositories, use a comma after each repository. You can specify a specific branch in a repository using the pattern: `org/repo-name:branch-name`. For example:
+
+```text
+with extensions magento/security-package:1.0-develop, magento/security-package-ee
+```
+
+#### Remove extensions
+
+Append the following text to your PR comment to specify extensions that you want to remove from the instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+```text
+without extensions {$extensionRepo}
+```
+
+Replace `{$extensionRepo}` with one or more extension repositories to remove before compiling your instance. If you specify multiple repositories, use a comma after each repository. For example:
+
+```text
+without extensions magento/adobe-stock-integration
+```
+
 ### Combine multiple pull requests {#combine-pr}
 
 To optimize the pull request queue, enter a command with a series of related pull request numbers to merge and test the code. If all tests pass, the entered PRs are merged into the current PR.
@@ -260,7 +315,7 @@ To optimize the pull request queue, enter a command with a series of related pul
 
 The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into the current pull request. For example: `@magento combine 1234 1238 1239`.
 
-**actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
+**Actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
 
 -  Current pull request allows changes from maintainers.
 -  All mentioned pull requests are open.
@@ -272,6 +327,43 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 -  [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers)
 -  Magento EngCom Team
+
+### Import source code to specific repository {#import}
+
+The import command provides the ability to copy a contributor's code or pull request into an internal fork.  The internal team can then proceed with additional fixes or delivery.
+
+**Command:** To import code or a pull request, a member of the Magento team controlling the pull request enters the following command:
+
+```text
+@magento import {code|pr} to {organizationName}/{repositoryName}
+```
+
+**Usage Examples:**
+
+-  To import the code only use
+
+```text
+@magento import code to magento-team/magento2
+@magento import code to https://github.com/magento-team/magento2
+```
+
+-  To import the pull request use
+
+```text
+@magento import pr to magento-team/magento2
+@magento import pull request to magento-team/magento2
+@magento import pr to https://github.com/magento-team/magento2
+@magento import pull request to https://github.com/magento-team/magento2
+```
+
+**Actions:**
+
+-  Code: A branch with a copy of the contributor's source code is created within the target repository.
+-  PR: A copy of the pull request is created within the target repository.
+
+**Permissions:**
+
+-  Magento team
 
 ## Report an issue {#report}
 

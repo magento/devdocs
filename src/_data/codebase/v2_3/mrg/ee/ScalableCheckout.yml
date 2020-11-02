@@ -1,0 +1,10 @@
+---
+title: Magento_ScalableCheckout
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/ScalableCheckout/README.md
+last_modified_at: '2015-02-04 13:08:45 +0200'
+content: |-
+  Magento\ScalableCheckout module provides ability for system extension (Checkout can be configured to work with separate DataBase).
+  Extraction of Checkout tables to separate database will guarantee better scalability for Magento,
+  and will allow main server to be optimised for read operations which will reduce latency.

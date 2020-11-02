@@ -1,7 +1,7 @@
 ---
 title: Magento_InventoryInStorePickupWebapiExtension
 source_repo: inventory
-release: 1.2.0
+release: 1.2.1
 github_path: InventoryInStorePickupWebapiExtension/README.md
 last_modified_at: '2019-09-17 09:16:51 +0300'
 content: "The `InventoryInStorePickupWebapiExtension`  is a part of `InStorePickup`

@@ -9,6 +9,75 @@ These release notes can include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## Magento B2B - Version 1.3.0
+
+This release includes improvements to order approvals, shipping methods, shopping cart, and logging of Admin actions.
+
+-  {:.new} B2B order approvals have been enhanced to improve usability and to allow for bulk actions on purchase orders.
+
+-  {:.new} B2B merchants can now control shipping methods that are offered to each Company.<!--- BUNDLE-160 161 162 -->
+
+-  {:.new} Merchants can now allow users to clear the contents of their shopping cart in a single action and can configure this ability independently on each website <!--- BUNDLE-108 -->
+
+-  {:.new} B2B buyers can now add individual items or the entire contents of their shopping cart directly to a requisition list. <!--- BUNDLE-145 144-->
+
+-  {:.new} B2B merchants can create orders from the Admin on behalf of customers using Payment on Account as the payment method. <!--- BUNDLE-166 178-->
+
+-  {:.new} Merchants can now directly view all quotes associated with a user from the customer’s detail page. <!--- BUNDLE-139 -->
+
+-  {:.new} Merchants can now filter the Customers Now Online grid by Company. <!--- BUNDLE-137 -->
+
+-  {:.new} Admins can now filter customers in the Admin by Sales Rep. <!--- BUNDLE-110 -->
+
+-  {:.new} To reduce creation of fraudulent or spam accounts, merchants can now enable Google reCAPTCHA on the New Company Request form on the storefront. <!--- BUNDLE-154 -->
+
+-  {:.new} Admin actions taken in the Company modules are now logged in the Admin Actions Log. Actions are logged from all relevant company modules: `Company`, `NegotiableQuote`, `CompanyCredit`, `SharedCatalog`.  <!--- BUNDLE-180 181 182 183 -->
+
+-  {:.fix} Magento no longer displays the **Delete customer** button on the **Customers** page when the logged-in administrator does not have rights to delete customers in deployments where B2B is installed. <!--- MC-35655-->
+-  {:.fix} Customer group is no longer automatically changed for a customer who is assigned to a Company when you edit the customer on the Customer grid. <!--- MC-35254-->
+
+-  {:.fix} When a merchant creates a new shared catalog, permissions are now automatically set to **Allow** for the **Display Product Prices** and **Add to Cart** features in categories when the customer group has been assigned this access in catalog permission settings. Previously, these settings were automatically set to **Deny** even when catalog permissions were set to **Allow**.<!--- MC-34792-->
+
+-  {:.fix} Shared catalog category permissions are no longer overwritten when a product is edited from the product edit page.<!--- MC-34777-->
+
+-  {:.fix} Magento now sends an email notification confirming that a customer has permission to exceed the designated credit limit when a merchant enables the **Allow To Exceed Credit Limit** setting. Previously, the notification email sent by Magento indicated that the customer did not have permission to exceed the limit. <!--- MC-34584-->
+
+-  {:.fix} The HTML container that surrounds product price on requisition lists is now rendered correctly for the children of bundled products. <!--- MC-36331-->
+
+-  {:.fix} Merchants can now designate the language in which company user email is sent when creating a new company in multi-language deployments. Previously, the drop-down menu the enables merchants to select the appropriate store view and language was not displayed.  <!--- MC-35777-->
+
+-  {:.fix} Custom customer address attributes fields are now displayed as expected in the storefront checkout workflow. <!--- MC-35607-->
+
+-  {:.fix} The B2B Features tab (Admin **Stores** > **Configuration** > **General** ) now opens correctly. <!--- MC-35458-->Guests can now use QuickOrder to add products to their cart and then successfully remove items. Previously, when a shopper used QuickOrder to add multiple products to their cart, and then removed a product, the product was not removed. <!--- MC-35327-->
+
+-  {:.fix} A company can now be updated using the REST API PUT `/V1/company/:companyId` request without specifying the `region_id` when state is configured as **not required**. Previously, even though `region_id` was not required, Magento threw an error if it was not specified. <!--- MC-35304-->
+
+-  {:.fix} When you create or update a B2B Company using the REST API (`http://magento.local/rest/V1/company/2`, where `2` represents the company ID), the response now includes the settings for `applicable_payment_method` or `available_payment_methods` as expected. <!--- MC-35248-->
+
+-  {:.fix} Magento no longer displays a 404 page when a merchant uses the **Enter** button instead of clicking the **Save** button when creating a requisition list on the storefront.<!--- MC-35094-->
+
+-  {:.fix} Category permissions no longer change when a new product is assigned to a public shared catalog. Previously, category permissions were duplicated. <!--- MC-34386-->
+
+-  {:.fix} The REST API endpoint PUT `rest/default/V1/company/{id}`, which is used to update Company email, is no longer case-sensitive. <!--- MC-34308-->
+
+-  {:.fix} Disabling reward modules no longer affects B2B features on customer accounts. Previously, when reward modules were disabled, the following B2B-related tabs were not displayed: Company Profile, Company Users, and Roles and Permissions.<!--- MC-34191-->
+
+-  {:.fix} Magento now uses the correct sender name on email notifications when changes are made to company accounts. Previously, Magento used the general contact sender name defined in the default scope for all emails. <!--- MC-33917-->
+
+-  {:.fix} You can now successfully implement multishipping for orders that contain both physical and virtual products. <!--- MC-33818-->
+
+-  {:.fix} Merchants can now create company users from the Company Users section in My Account and Company Structure pages in deployments where **Access Restriction** is enabled and **Restriction Mode** is set to **Sales: Login Only**. Previously, Magento threw this error when a merchant tried to create a user: Can not register new customer due to restrictions are enabled. <!--- MC-33608-->
+
+-  {:.fix} Magento no longer resets a customer’s customer group to the default when a customer saves their account information. <!--- MC-33554-->
+
+-  {:.fix} Magento no longer throws a fatal error when an administrator assigns a customer who has an active shopping cart to a customer group. <!--- MC-33313-->
+
+-  {:.fix} Magento now provides an `addToCart` DataLayer event for Quick Order and Requisition lists pages.  <!--- MC-33295-->
+
+-  {:.fix} Notification emails that are sent to sales representatives assigned to a company now include the assigned corporate logo. Previously, the notification email included the default LUMA logo, not the uploaded corporate logo. <!--- MC-33232-->
+
+-  {:.fix} A requisition list now includes all grouped products and quantities that have been added to the list. Previously, when a merchant navigated to a requisition list after adding products to it from a product detail page, Magento displayed this error: `1 product(s) require your attention - Options were updated. Please review available configurations`. <!--- MC-32877-->
+
 ## Magento B2B - Version 1.2.0
 
 -  {:.new} [Storefront Order Search](https://github.com/magento/partners-magento2b2b/pull/16) added thanks to contribution by [Marek Mularczyk]( https://github.com/mmularski) from [Divante](https://www.divante.com/) and community members.

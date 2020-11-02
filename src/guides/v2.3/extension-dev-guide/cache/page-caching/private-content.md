@@ -62,7 +62,7 @@ All properties are available in the template.
 
 Specify actions that trigger cache invalidation for private content blocks in a `sections.xml` configuration file in the `Vendor/ModuleName/etc/frontend` directory. Magento invalidates the cache on a POST or PUT request.
 
-Customer sections was designed to cache private data in browser storage. This means that any customer section will no be updated until proper action was made.
+Customer sections was designed to cache private data in browser storage. This means that any customer section will not be updated until proper action was made.
 
 The are some exception cases:
 
