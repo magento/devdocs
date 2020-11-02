@@ -14,18 +14,15 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Use the [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-address.html) mutation to set a shipping address. You can set the shipping address in the following ways:
-
-*  Add a new shipping address
-*  Use an address already defined in the logged-in customer's address book
-
-This tutorial covers both methods.
+Use the [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-address.html) mutation to set a shipping address. 
 
 ## Add shipping address to the cart
 
 In this step, we use the `setShippingAddressesOnCart` mutation to add a shipping address to the cart. 
 
-Send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
+If using guest checkout, run the following example.
+
+If using a logged in customer, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 **Request:**
 
@@ -33,22 +30,21 @@ Send the customer's authorization token in the `Authorization` parameter of the 
 mutation {
   setShippingAddressesOnCart(
     input: {
-      cart_id: "{ CART_ID }"
+      cart_id: "{{ CART_ID }}"
       shipping_addresses: [
         {
           address: {
-            firstname: "Bob"
-            lastname: "Loblaw"
-            company: "Magento"
-            street: ["123 Main Street"]
-            city: "Phoenix"
-            region: "AZ"
-            postcode: "78758"
+            firstname: "John"
+            lastname: "Doe"
+            company: "Company Name"
+            street: ["320 N Crescent Dr", "Beverly Hills"]
+            city: "Los Angeles"
+            region: "CA"
+            postcode: "90210"
             country_code: "US"
-            telephone: "8675309"
+            telephone: "123-456-0000"
             save_in_address_book: false
-          },
-          pickup_location_code: "txspeqs"
+          }
         }
       ]
     }
@@ -70,7 +66,6 @@ mutation {
           code
           label
         }
-        pickup_location_code
       }
     }
   }
@@ -84,146 +79,28 @@ mutation {
 ```json
 {
   "data": {
-    "createCustomerAddress": {
-      "id": 2,
-      "region": {
-        "region": "Arizona",
-        "region_code": "AZ"
-      },
-      "country_code": "US",
-      "street": [
-        "123 Main Street"
-      ],
-      "telephone": "7777777777",
-      "postcode": "77777",
-      "city": "Phoenix",
-      "default_shipping": true,
-      "default_billing": false
-    }
-  }
-}
-```
-
-## Use the existing customer's address
-
-Now that the customer has a shipping address, we can apply it to the cart.
-First, query the customer to return a list of address IDs.
-
-**Request:**
-
-```graphql
-query {
-  customer {
-    addresses {
-      id
-      default_billing
-      default_shipping
-    }
-  }
-}
-```
-
-**Response:**
-
-```json
-{
-  "data": {
-    "customer": {
-      "addresses": [
-        {
-          "id": 2,
-          "default_billing": false,
-          "default_shipping": true
-        }
-      ]
-    }
-  }
-}
-```
-
-Set `{ CUSTOMER_ADDRESS_ID }` to the `id` returned in the query.
-
-`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-
-**Request:**
-
-```graphql
-mutation {
-  setShippingAddressesOnCart(
-    input: {
-      cart_id: "{ CART_ID }
-      shipping_addresses: {
-          customer_address_id: { CUSTOMER_ADDRESS_ID }
-      }
-    }
-  ) {
-    cart {
-      shipping_addresses {
-        firstname
-        lastname
-        company
-        street
-        city
-        region {
-          code
-          label
-        }
-        postcode
-        telephone
-        country
-        {
-          code
-          label
-        }
-        available_shipping_methods {
-          carrier_title
-          carrier_code
-          method_code
-        }
-      }
-    }
-  }
-}
-```
-
-**Response:**
-
-```json
-{
-  "data": {
     "setShippingAddressesOnCart": {
       "cart": {
         "shipping_addresses": [
           {
-            "firstname": "Bob",
-            "lastname": "Loblaw",
-            "company": null,
+            "firstname": "John",
+            "lastname": "Doe",
+            "company": "Company Name",
             "street": [
-              "123 Stone Ave."
+              "320 N Crescent Dr",
+              "Beverly Hills"
             ],
-            "city": "Phoenix",
+            "city": "Los Angeles",
             "region": {
-              "code": "AZ",
-              "label": "Arizona"
+              "code": "CA",
+              "label": "California"
             },
-            "postcode": "77777",
-            "telephone": "7777777777",
+            "postcode": "90210",
+            "telephone": "123-456-0000",
             "country": {
               "code": "US",
               "label": "US"
-            },
-            "available_shipping_methods": [
-              {
-                "carrier_title": "Flat Rate",
-                "carrier_code": "flatrate",
-                "method_code": "flatrate"
-              },
-              {
-                "carrier_title": "Best Way",
-                "carrier_code": "tablerate",
-                "method_code": "bestway"
-              }
-            ]
+            }
           }
         ]
       }
@@ -232,7 +109,7 @@ mutation {
 }
 ```
 
-The response includes the available shipping methods. We will need one of those values when setting the delivery method.
+`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 ## Verify this step {#verify-step}
 
