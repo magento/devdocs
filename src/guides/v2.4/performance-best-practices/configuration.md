@@ -63,6 +63,9 @@ The **Developer** tab and options are only available in [Developer mode]({{ page
 
 When you activate the **Enable JavaScript Bundling** option, you allow Magento to merge all JS resources into one or a set of bundles that are loaded in storefront pages. Bundling JS results in fewer requests to the server, which improves page performance. It also helps the browser cache JS resources on the first call and reuse them for all further browsing. This option also brings lazy evaluation, as all JS is loaded as text. It initiates analysis and evaluation of code only after specific actions are triggered on the page. However, this setting is not recommended for stores where the first page load time is extremely critical, because all JS content will be loaded on the first call.
 
+{:.bs-callout-info}
+See [CSS and Javascript file optimization on Magento Commerce Cloud and Magento Commerce](https://support.magento.com/hc/en-us/articles/360044482152) in the _Magento Help Center_ for more information about optimizing CSS and Javascript.
+
 ### Bundling tips
 
 *  Magento recommends that you use third-party tools for minification and bundling (like [r.js](http://requirejs.org/)). Magento built-in mechanisms are not optimal and are shipped as fallback alternatives.

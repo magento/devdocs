@@ -81,7 +81,7 @@ To get started as a developer in a {{site.data.var.ece}} project, you need to se
 
 *  Set up a [local Docker development environment]({{ site.baseurl }}/cloud/docker/docker-development.html).
 
-   Magento Commerce Cloud environments are **Read Only**, including all Starter environments and all Pro Integration, Staging, and Production environments. In a local development environment, you can write and test code prior to pushing it to an Integration environment for further testing, followed by deployment to Staging and Production.
+   {{ site.data.var.ece }} environments are **Read Only**, including all Starter environments and all Pro Integration, Staging, and Production environments. In a local development environment, you can write and test code prior to pushing it to an Integration environment for further testing, followed by deployment to Staging and Production.
 
    In the local development environment, you develop in branches to add modules, extensions, third-party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ site.baseurl }}/cloud/architecture/starter-develop-deploy-workflow.html) or [Pro]({{ site.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
 
