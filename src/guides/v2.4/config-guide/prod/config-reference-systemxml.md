@@ -376,7 +376,7 @@ The following validation rules are available:
 | `validate-select`               | Enforces a that the select option chosen not have a `null` value, string value of `none`, or string length of 0.        |
 | `validate-no-empty`             | Disallows an empty value (equivalent validation as `requried-entry`).<br>Validation failure message: "Empty value."     |
 | `validate-alphanum-with-spaces` | Allows usage of letters (a-z or A-Z), numbers (0-9), or spaces only.                                                    |
-| `validate-data`                 | Allows usage of letters (a-z or A-Z), numbers (0-9), or underscores (_) only.<br>The first character must be a letter.<br>(Must match expression: `/^[A-Za-z]+[A-Za-z0-9_]+$/`)<br>Validation failure message: "Please use only letters (a-z or A-Z), numbers (0-9) or underscore (_) in this field, and the first character should be a letter."  |
+| `validate-data`                 | Allows usage of letters (a-z or A-Z), numbers (0-9), or underscores (\_) only.<br>The first character must be a letter.<br>(Must match expression: `/^[A-Za-z]+[A-Za-z0-9_]+$/`)<br>Validation failure message: "Please use only letters (a-z or A-Z), numbers (0-9) or underscore (\_) in this field, and the first character should be a letter."  |
 | `validate-street`               | Allows usage of letters (a-z or A-Z), numbers (0-9), spaces, and “#” only.                                              |
 | `validate-phoneStrict`          | Allows a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                               |
 | `validate-phoneLax`             | Allows a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                               |
