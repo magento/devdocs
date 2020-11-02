@@ -369,8 +369,8 @@ The following validation rules are available:
 | `time`                          | Allows a valid time in 24-hour format, between 00:00 and 23:59. For example `15`, `15:05` or `15:05:48`.                |
 | `time12h`                       | Allows a valid time in 12-hour format, between 12:00 am and 11:59:59 pm. For example `3 am`, `11:30 pm`, `02:15:00 pm`. |
 | `mobileUK`                      | Allows a (UK) mobile phone number.                                                                                      |
-| `phoneUS`                       | Allows a (US) phone number.                                                                                             |
 | `phoneUK`                       | Allows a (UK) phone number.                                                                                             |
+| `phoneUS`                       | Allows a (US) phone number.                                                                                             |
 | `required-entry`                | Disallows an empty value (equivalent validation as `validate-no-empty`).<br>Validation failure message: "This is a required field." |
 | `validate-no-html-tags`         | Disallows usage of HTML tags.                                                                                           |
 | `validate-select`               | Enforces a that the select option chosen not have a `null` value, string value of `none`, or string length of 0.        |
