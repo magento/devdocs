@@ -19,9 +19,11 @@ Magento is not supported on Microsoft Windows and macOS.
 
 Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
 
-## Composer (latest stable version)
+## Composer
 
 [Composer][] is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
+
+Magento does not support Composer 2.x.
 
 ## Web servers
 
