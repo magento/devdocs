@@ -11,13 +11,13 @@ When you trigger a data resync from the command line, it can take up to an hour 
 The following command reindexes the product data from the Magento catalog and resyncs it to Magento SaaS services:
 
 ```bash
-saascatalog:resync --feed products
+bin/magento saascatalog:resync --feed products
 ```
 
 If you do not want to run a full reindex of the products, you can instead sync the product data that has already been generated:
 
 ```bash
-saascatalog:resync --feed products --no-reindex
+bin/magento saascatalog:resync --feed products --no-reindex
 ```
 
 |Parameter|Description|
