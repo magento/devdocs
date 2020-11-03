@@ -1,4 +1,4 @@
-<!-Note: This topic is auto-generated from the https://github.com/magento/ece-tools/blob/e3b13ca023afe324cd93d0caa2fd62d5683b60b9/config/schema.error.yaml source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to the magento/ece-tools repository.->
+<!--Note: This topic is auto-generated from the https://github.com/magento/ece-tools/blob/e3b13ca023afe324cd93d0caa2fd62d5683b60b9/config/schema.error.yaml source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to the magento/ece-tools repository.-->
 
 ## Critical Errors
 
