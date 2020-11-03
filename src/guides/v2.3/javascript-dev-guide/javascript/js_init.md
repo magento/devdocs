@@ -134,7 +134,7 @@ require([
 ```
 
 {:.bs-callout-tip}
-For better control when scripts are executed, it is recommended that developers use the declarative syntax over the imperative. When using imperative syntax, it can mean that the ability to leverage any existing JS classes is lost and it can block the rendering of the page.
+For better control when scripts are executed, use a declarative syntax rather than an imperative syntax. When using imperative syntax, the ability to leverage existing JS classes is lost and can block the rendering of the page.
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 
