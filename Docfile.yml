@@ -13,7 +13,7 @@ content_map:
 -
   directory: src/mftf/v2
   repository: magento/magento2-functional-testing-framework
-  branch: 2.6.5
+  branch: 2.x-develop
   filter: true
 -
   directory: src/page-builder
