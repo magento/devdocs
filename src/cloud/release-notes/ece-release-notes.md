@@ -33,7 +33,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 -  {:.new}Added search-engine validation to ensure that `elasticsearch` is set for {{site.data.var.ece }} 2.4 and later. If the validation fails, the deployment is stopped with an error message suggesting fixes for the issue.<!--MCLOUD-6937-->
 
 -  {:.new}Added Elasticsearch validation to check the compatibility between the Elasticsearch service version and the Magento version.<!--MCLOUD-7193-->
--
+
 -  {:.new}Updated the Elasticsearch compatibility error message to show the versions of Elasticsearch that are compatible with the Magento Elasticsearch module. The error message now provides the specific Elasticsearch versions to install in your Cloud infrastructure so that it is compatible with the Elasticsearch module used by your version of Magento.<!--MCLOUD-6698-->
 
 -  {:.new}Added error message for invalid `MAGE_MODE` environment variable setting. The only valid value is `production`. Before this fix, `MAGE_MODE` could be set to `developer` without deployment errors, only to cause errors later when trying to write to read-only files.<!--MCLOUD-6708-->
