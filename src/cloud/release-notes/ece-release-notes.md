@@ -22,23 +22,25 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 **Infrastructure updates**–
 
--  {:.new}Added support for Elasticsearch 7.9 and Redis 6 for compatibility with upcoming Magento releases.<!--MCLOUD-7191-->
-
 -  {:.new}Added ece-tools support for the read-only `pub/static` directory when static content is set to deploy in the build stage.<!--MC-37699-->
 
 -  {:.fix}Updated the ece-tools `composer.json` to add a required dependency for the Magento Quality Patches package. This fixes a circular dependency that existed between the ece-tools and magento-cloud-patches packages.<!--MCLOUD-6910-->
 
+-  {:.new}Added support for Elasticsearch 7.9 and Redis 6 for compatibility with upcoming Magento releases.<!--MCLOUD-7191-->
+
 **Validation and log improvements**–
 
--  {:.new}Added search-engine validation to ensure that `elasticsearch` is set for Magento Commerce Cloud 2.4 and later. If the validation fails, the deployment is stopped with an error message suggesting fixes for the issue.<!--MCLOUD-6937-->
+-  {:.new}Added search-engine validation to ensure that `elasticsearch` is set for {{site.data.var.ece }} 2.4 and later. If the validation fails, the deployment is stopped with an error message suggesting fixes for the issue.<!--MCLOUD-6937-->
+
+-  {:.new}Added Elasticsearch validation to check the compatibility between the Elasticsearch service version and the Magento version.<!--MCLOUD-7193-->
+-
+-  {:.new}Updated the Elasticsearch compatibility error message to show the versions of Elasticsearch that are compatible with the Magento Elasticsearch module. The error message now provides the specific Elasticsearch versions to install in your Cloud infrastructure so that it is compatible with the Elasticsearch module used by your version of Magento.<!--MCLOUD-6698-->
 
 -  {:.new}Added error message for invalid `MAGE_MODE` environment variable setting. The only valid value is `production`. Before this fix, `MAGE_MODE` could be set to `developer` without deployment errors, only to cause errors later when trying to write to read-only files.<!--MCLOUD-6708-->
 
 -  {:.fix}Fixed validation for Redis, RabbitMQ and MySql services to ensure these versions are compatible with the Magento version. Valid versions of these services are now written to the `cloud.log`.<!--MCLOUD-7098-->
 
 -  {:.fix}Updated the `cloud.log` to include the concurrent requests limit for sending requests during cache warmup. This value is configured in in the `WARM_UP_CONCURRENCY` post-deploy variable. <!--MCLOUD-5563-->
-
--  {:.fix}Updated the Elasticsearch compatibility error message to show the supported versions of Elasticsearch. The error message now provides the specific Elasticsearch versions to install in your Cloud infrastructure so that it is compatible with the Elasticsearch module used by your version of Magento.<!--MCLOUD-6698-->
 
 **CLI command updates**–
 
