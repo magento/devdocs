@@ -8,7 +8,7 @@ Magento compiles catalog data into tables using indexers. This process is automa
 The commands used to sync catalog data are part of the `magento/saas-export` module. See [Install and configure Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html) for more information.
 
 {:.bs-callout-info}
-When you trigger a data resync from the command line, it can take up to an hour for the data to update. 
+When you trigger a data resync from the command line, it can take up to an hour for the data to update.
 
 The following command reindexes the product data from the Magento catalog and resyncs it to Magento SaaS services:
 
