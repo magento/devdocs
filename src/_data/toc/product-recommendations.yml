@@ -4,7 +4,7 @@ pages:
   url: /recommendations/product-recs.html
   versionless: true
 
-- label: How to Implement Product Recommendations
+- label: How to Implement
   url: /recommendations/implementation.html
   versionless: true
 

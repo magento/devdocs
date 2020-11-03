@@ -1,6 +1,6 @@
 ---
 group: product-recommendations
-title: How to Implement Product Recommendations
+title: Implementation Steps
 ee_only: True
 ---
 
@@ -25,17 +25,11 @@ To help you implement product recommendations on your storefront, use the follow
    See [Customize]({{ page.baseurl }}/recommendations/customize.html) to learn how to complete this step.
 
 1. **Test recommendations on your non-production environment**
+   -  **Why** - It is always a best practice to test a new technology on your non-production environment before you deploy to production. Testing recommendations on your non-production environment allows you to play with different recommendation unit types, positioning, and pages. If you already deployed the data collection in production, you can pull recommendations based on that behavioral data while testing in your non-production environment, so that recommendation results are based on the shopping behavior of actual customers.
+   -  **How** - [Fetch behavioral data from your production environment]({{ page.baseurl }}/recommendations/test.html)
+   -  **Notes** - Ensure your non-production environment catalog is largely the same as the one that you have in production. Using similar catalogs ensures that the products returned in the recommendation units closely mimic those on production.
 
-   It is always a best practice to test a new technology on your non-production environment before you deploy to production. Testing recommendations on your non-production environment allows you to play with different recommendation unit types, positioning, and pages. You can pull recommendations based on behavioral data already gathered on production while testing in your non-production environment, so that recommendation results are based on the shopping behavior of actual customers.
-
-   {:.bs-callout-tip}
-   Ensure your non-production environment catalog is largely the same as the one that you have in production. Using similar catalogs ensures that the products returned in the recommendation units closely mimic those on production.
-
-   See [Fetch behavioral data from your production environment]({{ page.baseurl }}/recommendations/test.html) to learn how to complete this step.
-
-1. **Create and deploy recommendations to your production storefront**
-
-   Now that you have deployed the behavioral data collection in production, modified the product recommendations template, and tested recommendations using actual shopper behavior, you are now ready to promote all code to production and [create shopper-facing product recommendations](https://docs.magento.com/user-guide/marketing/create-new-rec.html).
-
-   {:.bs-callout-tip}
-   While this is the final step in implementing recommendations, there are [further actions you can take](https://docs.magento.com/user-guide/marketing/recommendation-best-practices.html) to make sure product recommendations increase conversions, boost revenue, and stimulate shopper engagement.
+1. **Create and Deploy recommendations to your production storefront**
+   -  **Why** - Now that you have deployed the behavioral data collection in production, modified the product recommendations template, and tested recommendations using actual shopper behavior, you are now ready to promote all code to production and create product recommendations for your customers.
+   -  **How** - Promote any code changes to production and [create product recommendations](https://docs.magento.com/user-guide/marketing/create-new-rec.html)
+   -  **Notes** - While this is the final step in implementing recommendations, there are [further actions you can take](https://docs.magento.com/user-guide/marketing/recommendation-best-practices.html) to make sure product recommendations increase conversions, boost revenue, and stimulate shopper engagement.
