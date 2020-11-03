@@ -1,461 +1,574 @@
 label: GraphQL Developer Guide
 pages:
 
-    - label: Overview
-      url: /graphql/index.html
+  - label: Overview
+    url: /graphql/index.html
 
-    - label: Implementation
-      children:
-        - label: GraphQL requests
-          url: /graphql/send-request.html
+  - label: Implementation
+    children:
+      - label: GraphQL requests
+        url: /graphql/send-request.html
 
-        - label: Authorization tokens
-          url: /graphql/authorization-tokens.html
+      - label: Authorization tokens
+        url: /graphql/authorization-tokens.html
 
-        - label: Protected mutations
-          url: /graphql/protected-mutations.html
+      - label: Protected mutations
+        url: /graphql/protected-mutations.html
 
-        - label: GraphQL caching
-          url: /graphql/caching.html
+      - label: GraphQL caching
+        url: /graphql/caching.html
 
-        - label: Filtering with custom attributes
-          url: /graphql/custom-filters.html
+      - label: Filtering with custom attributes
+        url: /graphql/custom-filters.html
 
-    - label: Development
-      children:
-        - label: Define the GraphQL schema for a module
-          url: /graphql/develop/create-graphqls-file.html
+  - label: Development
+    children:
+      - label: Define the GraphQL schema for a module
+        url: /graphql/develop/create-graphqls-file.html
 
-        - label: Resolvers
-          url: /graphql/develop/resolvers.html
+      - label: Resolvers
+        url: /graphql/develop/resolvers.html
 
-        - label: Extend an existing GraphQL schema
-          url: /graphql/develop/extend-existing-schema.html
+      - label: Extend an existing GraphQL schema
+        url: /graphql/develop/extend-existing-schema.html
 
-        - label: Identity class
-          url: /graphql/develop/identity-class.html
+      - label: Identity class
+        url: /graphql/develop/identity-class.html
 
-        - label: Create a custom urlResolver service
-          url: /graphql/develop/create-custom-url-resolver.html
+      - label: Create a custom urlResolver service
+        url: /graphql/develop/create-custom-url-resolver.html
 
-        - label: Debugging GraphQL queries
-          url: /graphql/develop/debugging.html
+      - label: Debugging GraphQL queries
+        url: /graphql/develop/debugging.html
 
-        - label: Exception handling
-          url: /graphql/develop/exceptions.html
+      - label: Exception handling
+        url: /graphql/develop/exceptions.html
 
-    - label: Functional testing
-      url: /graphql/functional-testing.html
+  - label: Functional testing
+    url: /graphql/functional-testing.html
 
-    - label: Queries
-      children:
-        - label: Using queries
-          url: /graphql/queries/index.html
+  - label: Queries
+    children:
+      - label: Using queries
+        url: /graphql/queries/index.html
 
-        - label: availableStores query
-          url: /graphql/queries/available-stores.html
-          exclude_versions: ["2.3"]
+      - label: availableStores query
+        url: /graphql/queries/available-stores.html
+        exclude_versions: ["2.3"]
 
-        - label: cart query
-          url: /graphql/queries/cart.html
+      - label: cart query
+        url: /graphql/queries/cart.html
 
-        - label: categories query
-          url: /graphql/queries/categories.html
-          exclude_versions: ["2.3"]
+      - label: categories query
+        url: /graphql/queries/categories.html
+        exclude_versions: ["2.3"]
 
-        - label: category query
-          url: /graphql/queries/category.html
+      - label: category query
+        url: /graphql/queries/category.html
 
-        - label: categoryList query
-          url: /graphql/queries/category-list.html
+      - label: categoryList query
+        url: /graphql/queries/category-list.html
 
-        - label: checkoutAgreements query
-          url: /graphql/queries/checkout-agreements.html
+      - label: checkoutAgreements query
+        url: /graphql/queries/checkout-agreements.html
 
-        - label: cmsBlocks query
-          url: /graphql/queries/cms-blocks.html
+      - label: cmsBlocks query
+        url: /graphql/queries/cms-blocks.html
 
-        - label: cmsPage query
-          url: /graphql/queries/cms-page.html
-        
-        - label: countries query
-          url: /graphql/queries/directory-countries.html
-          
-        - label: country query
-          url: /graphql/queries/directory-country.html
-          
-        - label: currency query
-          url: /graphql/queries/directory-currency.html
+      - label: cmsPage query
+        url: /graphql/queries/cms-page.html
 
-        - label: customAttributeMetadata query
-          url: /graphql/queries/custom-attribute-metadata.html
+      - label: company query
+        url: /graphql/queries/company.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: customer query
-          url: /graphql/queries/customer.html
+      - label: countries query
+        url: /graphql/queries/directory-countries.html
 
-        - label: customerCart query
-          url: /graphql/queries/customer-cart.html
+      - label: country query
+        url: /graphql/queries/directory-country.html
 
-        - label: customerDownloadableProducts query
-          url: /graphql/queries/customer-downloadable-products.html
+      - label: currency query
+        url: /graphql/queries/directory-currency.html
 
-        - label: customerOrders query
-          url: /graphql/queries/customer-orders.html
+      - label: customAttributeMetadata query
+        url: /graphql/queries/custom-attribute-metadata.html
 
-        - label: customerPaymentTokens query
-          url: /graphql/queries/customer-payment-tokens.html
+      - label: customer query
+        url: /graphql/queries/customer.html
 
-        - label: getHostedProUrl query
-          url: /graphql/queries/get-hosted-pro-url.html
+      - label: customerCart query
+        url: /graphql/queries/customer-cart.html
 
-        - label: getPayflowLinkToken query
-          url: /graphql/queries/get-payflow-link-token.html
+      - label: customerDownloadableProducts query
+        url: /graphql/queries/customer-downloadable-products.html
 
-        - label: giftCardAccount query
-          url: /graphql/queries/giftcard-account.html
-          edition: ee-only
+      - label: customerOrders query
+        url: /graphql/queries/customer-orders.html
 
-        - label: isEmailAvailable query
-          url: /graphql/queries/is-email-available.html
+      - label: customerPaymentTokens query
+        url: /graphql/queries/customer-payment-tokens.html
 
-        - label: productReviewRatingsMetadata query
-          url: /graphql/queries/product-review-ratings-metadata.html
-          exclude_versions: ["2.3"]
+      - label: getHostedProUrl query
+        url: /graphql/queries/get-hosted-pro-url.html
 
-        - label: products query
-          url: /graphql/queries/products.html
+      - label: getPayflowLinkToken query
+        url: /graphql/queries/get-payflow-link-token.html
 
-        - label: pickupLocations query
-          url: /graphql/queries/pickup-locations.html
-          exclude_versions: ["2.3"]
+      - label: giftCardAccount query
+        url: /graphql/queries/giftcard-account.html
+        edition: ee-only
 
-        - label: storeConfig query
-          url: /graphql/queries/store-config.html
+      - label: giftRegistry query
+        url: /graphql/queries/gift-registry.html
+        edition: ee-only
 
-        - label: urlResolver query
-          url: /graphql/queries/url-resolver.html
+      - label: giftRegistryTypes query
+        url: /graphql/queries/gift-registry-types.html
+        edition: ee-only
 
-        - label: wishlist query
-          url: /graphql/queries/wishlist.html
-        
-    - label: Mutations
-      children:
-        - label: Using mutations
-          url: /graphql/mutations/index.html
+      - label: isCompanyAdminEmailAvailable query
+        url: /graphql/queries/is-company-admin-email-available.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: addProductsToCart mutation
-          url: /graphql/mutations/add-products-to-cart.html
-          exclude_versions: ["2.3"]
+      - label: isCompanyEmailAvailable query
+        url: /graphql/queries/is-company-email-available.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: addBundleProductsToCart mutation
-          url: /graphql/mutations/add-bundle-products.html
+      - label: isCompanyUserEmailAvailable query
+        url: /graphql/queries/is-company-user-email-available.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: addConfigurableProductsToCart mutation
-          url: /graphql/mutations/add-configurable-products.html
+      - label: isEmailAvailable query
+        url: /graphql/queries/is-email-available.html
 
-        - label: addDownloadableProductsToCart mutation
-          url: /graphql/mutations/add-downloadable-products.html
+      - label: productReviewRatingsMetadata query
+        url: /graphql/queries/product-review-ratings-metadata.html
+        exclude_versions: ["2.3"]
 
-        - label: addProductsToWishlist mutation
-          url: /graphql/mutations/add-products-to-wishlist.html
-          exclude_versions: ["2.3"]
+      - label: products query
+        url: /graphql/queries/products.html
 
-        - label: addSimpleProductsToCart mutation
-          url: /graphql/mutations/add-simple-products.html
+      - label: pickupLocations query
+        url: /graphql/queries/pickup-locations.html
+        exclude_versions: ["2.3"]
 
-        - label: addVirtualProductsToCart mutation
-          url: /graphql/mutations/add-virtual-products.html
+      - label: storeConfig query
+        url: /graphql/queries/store-config.html
 
-        - label: applyCouponToCart mutation
-          url: /graphql/mutations/apply-coupon.html
+      - label: urlResolver query
+        url: /graphql/queries/url-resolver.html
 
-        - label: applyGiftCardToCart mutation
-          url: /graphql/mutations/apply-giftcard.html
-          edition: ee-only
+      - label: wishlist query
+        url: /graphql/queries/wishlist.html
 
-        - label: applyRewardPointsToCart mutation
-          url: /graphql/mutations/apply-reward-points.html
-          edition: ee-only
-          exclude_versions: ["2.3"]
+  - label: Mutations
+    children:
+      - label: Using mutations
+        url: /graphql/mutations/index.html
 
-        - label: applyStoreCreditToCart mutation
-          url: /graphql/mutations/apply-store-credit.html
-          edition: ee-only
+      - label: addProductsToCart mutation
+        url: /graphql/mutations/add-products-to-cart.html
+        exclude_versions: ["2.3"]
 
-        - label: changeCustomerPassword mutation
-          url: /graphql/mutations/change-customer-password.html
+      - label: addBundleProductsToCart mutation
+        url: /graphql/mutations/add-bundle-products.html
 
-        - label: createBraintreeClientToken mutation
-          url: /graphql/mutations/create-braintree-client-token.html
+      - label: addConfigurableProductsToCart mutation
+        url: /graphql/mutations/add-configurable-products.html
 
-        - label: createCustomer mutation
-          url: /graphql/mutations/create-customer.html
+      - label: addDownloadableProductsToCart mutation
+        url: /graphql/mutations/add-downloadable-products.html
 
-        - label: createCustomerV2 mutation
-          url: /graphql/mutations/create-customer-v2.html
-          exclude_versions: ["2.3"]
+      - label: addProductsToWishlist mutation
+        url: /graphql/mutations/add-products-to-wishlist.html
+        exclude_versions: ["2.3"]
 
-        - label: createCustomerAddress mutation
-          url: /graphql/mutations/create-customer-address.html
+      - label: addSimpleProductsToCart mutation
+        url: /graphql/mutations/add-simple-products.html
 
-        - label: createEmptyCart mutation
-          url: /graphql/mutations/create-empty-cart.html
+      - label: addVirtualProductsToCart mutation
+        url: /graphql/mutations/add-virtual-products.html
 
-        - label: createKlarnaPaymentsSession mutation
-          url: /graphql/mutations/create-klarna-payments-session.html
-          exclude_versions: ["2.3"]
+      - label: applyCouponToCart mutation
+        url: /graphql/mutations/apply-coupon.html
 
-        - label: createPayflowProToken mutation
-          url: /graphql/mutations/create-payflow-pro-token.html
+      - label: applyGiftCardToCart mutation
+        url: /graphql/mutations/apply-giftcard.html
+        edition: ee-only
 
-        - label: createPayPalExpressToken mutation
-          url: /graphql/mutations/create-paypal-express-token.html
+      - label: applyRewardPointsToCart mutation
+        url: /graphql/mutations/apply-reward-points.html
+        edition: ee-only
+        exclude_versions: ["2.3"]
 
-        - label: createProductReview mutation
-          url: /graphql/mutations/create-product-review.html
-          exclude_versions: ["2.3"]
+      - label: applyStoreCreditToCart mutation
+        url: /graphql/mutations/apply-store-credit.html
+        edition: ee-only
 
-        - label: deleteCustomerAddress mutation
-          url: /graphql/mutations/delete-customer-address.html
+      - label: changeCustomerPassword mutation
+        url: /graphql/mutations/change-customer-password.html
 
-        - label: deletePaymentToken mutation
-          url: /graphql/mutations/delete-payment-token.html
+      - label: copyProductsToWishlist mutation
+        url: /graphql/mutations/copy-products-to-wishlist.html
+        edition: ee-only
+        exclude_versions: ["2.3"]
 
-        - label: generateCustomerToken mutation
-          url: /graphql/mutations/generate-customer-token.html
+      - label: createBraintreeClientToken mutation
+        url: /graphql/mutations/create-braintree-client-token.html
 
-        - label: handlePayflowProResponse mutation
-          url: /graphql/mutations/handle-payflow-pro-response.html
+      - label: createCompany mutation
+        url: /graphql/mutations/create-company.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: mergeCarts mutation
-          url: /graphql/mutations/merge-carts.html
+      - label: createCompanyTeam mutation
+        url: /graphql/mutations/create-company-team.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: placeOrder mutation
-          url: /graphql/mutations/place-order.html
+      - label: createCompanyUser mutation
+        url: /graphql/mutations/create-company-user.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: redeemGiftCardBalanceAsStoreCredit mutation
-          url: /graphql/mutations/redeem-giftcard-balance.html
-          edition: ee-only
+      - label: createCustomer mutation
+        url: /graphql/mutations/create-customer.html
 
-        - label: removeCouponFromCart mutation
-          url: /graphql/mutations/remove-coupon.html
+      - label: createCustomerV2 mutation
+        url: /graphql/mutations/create-customer-v2.html
+        exclude_versions: ["2.3"]
 
-        - label: removeGiftCardFromCart mutation
-          url: /graphql/mutations/remove-giftcard.html
-          edition: ee-only
+      - label: createCustomerAddress mutation
+        url: /graphql/mutations/create-customer-address.html
 
-        - label: removeItemFromCart mutation
-          url: /graphql/mutations/remove-item.html
+      - label: createEmptyCart mutation
+        url: /graphql/mutations/create-empty-cart.html
 
-        - label: removeProductsFromWishlist mutation
-          url: /graphql/mutations/remove-products-from-wishlist.html
-          exclude_versions: ["2.3"]
+      - label: createKlarnaPaymentsSession mutation
+        url: /graphql/mutations/create-klarna-payments-session.html
+        exclude_versions: ["2.3"]
 
-        - label: removeRewardPointsFromCart mutation
-          url: /graphql/mutations/remove-reward-points.html
-          edition: ee-only
-          exclude_versions: ["2.3"]
+      - label: createPayflowProToken mutation
+        url: /graphql/mutations/create-payflow-pro-token.html
 
-        - label: removeStoreCreditFromCart mutation
-          url: /graphql/mutations/remove-store-credit.html
-          edition: ee-only
+      - label: createPayPalExpressToken mutation
+        url: /graphql/mutations/create-paypal-express-token.html
 
-        - label: reorderItems mutation
-          url: /graphql/mutations/reorder-items.html
-          exclude_versions: ["2.3"]
+      - label: createProductReview mutation
+        url: /graphql/mutations/create-product-review.html
+        exclude_versions: ["2.3"]
 
-        - label: requestPasswordResetEmail mutation
-          url: /graphql/mutations/request-password-reset-email.html
-          exclude_versions: ["2.3"]
+      - label: createRequisitionList mutation
+        url: /graphql/mutations/create-requisition-list.html
+        edition: b2b-only
+        exclude_versions: [ "2.3" ]
 
-        - label: revokeCustomerToken mutation
-          url: /graphql/mutations/revoke-customer-token.html
+      - label: createWishlist mutation
+        url: /graphql/mutations/create-wishlist.html
+        edition: ee-only
+        exclude_versions: ["2.3"]
 
-        - label: resetPassword mutation
-          url: /graphql/mutations/reset-password.html
-          exclude_versions: ["2.3"]
+      - label: deleteCompanyTeam mutation
+        url: /graphql/mutations/delete-company-team.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: sendEmailToFriend mutation
-          url: /graphql/mutations/send-email-to-friend.html
+      - label: deleteCompanyUser mutation
+        url: /graphql/mutations/delete-company-user.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: setBillingAddressesOnCart mutation
-          url: /graphql/mutations/set-billing-address.html
+      - label: deleteCustomerAddress mutation
+        url: /graphql/mutations/delete-customer-address.html
 
-        - label: setGiftOptionsOnCart mutation
-          url: /graphql/mutations/set-gift-options.html
-          exclude_versions: ["2.3"]
+      - label: deleteWishlist mutation
+        url: /graphql/mutations/delete-wishlist.html
+        edition: ee-only
+        exclude_versions: ["2.3"]
 
-        - label: setGuestEmailOnCart mutation
-          url: /graphql/mutations/set-guest-email.html
+      - label: deletePaymentToken mutation
+        url: /graphql/mutations/delete-payment-token.html
 
-        - label: setPaymentMethodAndPlaceOrder mutation
-          url: /graphql/mutations/set-payment-place-order.html
+      - label: deleteRequisitionList mutation
+        url: /graphql/mutations/delete-requisition-list.html
+        edition: b2b-only
+        exclude_versions: [ "2.3" ]
 
-        - label: setPaymentMethodOnCart mutation
-          url: /graphql/mutations/set-payment-method.html
+      - label: generateCustomerToken mutation
+        url: /graphql/mutations/generate-customer-token.html
 
-        - label: setShippingAddressesOnCart mutation
-          url: /graphql/mutations/set-shipping-address.html
+      - label: handlePayflowProResponse mutation
+        url: /graphql/mutations/handle-payflow-pro-response.html
 
-        - label: setShippingMethodsOnCart mutation
-          url: /graphql/mutations/set-shipping-method.html
+      - label: mergeCarts mutation
+        url: /graphql/mutations/merge-carts.html
 
-        - label: subscribeEmailToNewsletter mutation
-          url: /graphql/mutations/subscribe-email-to-newsletter.html
-          exclude_versions: ["2.3"]
+      - label: moveProductsToWishlist mutation
+        url: /graphql/mutations/move-products-to-wishlist.html
+        edition: ee-only
+        exclude_versions: ["2.3"]
 
-        - label: updateCartItems mutation
-          url: /graphql/mutations/update-cart-items.html
+      - label: placeOrder mutation
+        url: /graphql/mutations/place-order.html
 
-        - label: updateCustomer mutation
-          url: /graphql/mutations/update-customer.html
+      - label: redeemGiftCardBalanceAsStoreCredit mutation
+        url: /graphql/mutations/redeem-giftcard-balance.html
+        edition: ee-only
 
-        - label: updateCustomerEmail mutation
-          url: /graphql/mutations/update-customer-email.html
-          exclude_versions: ["2.3"]
+      - label: removeCouponFromCart mutation
+        url: /graphql/mutations/remove-coupon.html
 
-        - label: updateCustomerV2 mutation
-          url: /graphql/mutations/update-customer-v2.html
-          exclude_versions: ["2.3"]
+      - label: removeGiftCardFromCart mutation
+        url: /graphql/mutations/remove-giftcard.html
+        edition: ee-only
 
-        - label: updateCustomerAddress mutation
-          url: /graphql/mutations/update-customer-address.html
+      - label: removeItemFromCart mutation
+        url: /graphql/mutations/remove-item.html
 
-        - label: updateProductsInWishlist mutation
-          url: /graphql/mutations/update-products-in-wishlist.html
-          exclude_versions: ["2.3"]
+      - label: removeProductsFromWishlist mutation
+        url: /graphql/mutations/remove-products-from-wishlist.html
+        exclude_versions: ["2.3"]
 
-    - label: Interfaces
-      children:
-        - label: Product interface implementations
-          url: /graphql/interfaces/product-interface-implementations.html
+      - label: removeRewardPointsFromCart mutation
+        url: /graphql/mutations/remove-reward-points.html
+        edition: ee-only
+        exclude_versions: ["2.3"]
 
-        - label: ProductInterface attributes
-          url: /graphql/interfaces/product-interface.html
+      - label: removeStoreCreditFromCart mutation
+        url: /graphql/mutations/remove-store-credit.html
+        edition: ee-only
 
-        - label: CategoryInterface attributes
-          url: /graphql/interfaces/category-interface.html
+      - label: renameRequisitionList mutation
+        url: /graphql/mutations/rename-requisition-list.html
+        edition: b2b-only
+        exclude_versions: [ "2.3" ]
 
-        - label: CustomizableOptionInterface
-          url: /graphql/interfaces/customizable-option-interface.html
+      - label: reorderItems mutation
+        url: /graphql/mutations/reorder-items.html
+        exclude_versions: ["2.3"]
 
-        - label: Bundle product data types
-          url: /graphql/interfaces/bundle-product.html
+      - label: requestPasswordResetEmail mutation
+        url: /graphql/mutations/request-password-reset-email.html
+        exclude_versions: ["2.3"]
 
-        - label: Configurable product data types
-          url: /graphql/interfaces/configurable-product.html
+      - label: revokeCustomerToken mutation
+        url: /graphql/mutations/revoke-customer-token.html
 
-        - label: Downloadable product data types
-          url: /graphql/interfaces/downloadable-product.html
+      - label: resetPassword mutation
+        url: /graphql/mutations/reset-password.html
+        exclude_versions: ["2.3"]
 
-        - label: GiftCardProduct data types
-          url: /graphql/interfaces/gift-card-product.html
+      - label: sendEmailToFriend mutation
+        url: /graphql/mutations/send-email-to-friend.html
 
-        - label: GroupedProduct data types
-          url: /graphql/interfaces/grouped-product.html
+      - label: setBillingAddressesOnCart mutation
+        url: /graphql/mutations/set-billing-address.html
 
-        - label: Simple product data types
-          url: /graphql/interfaces/simple-product.html
+      - label: setGiftOptionsOnCart mutation
+        url: /graphql/mutations/set-gift-options.html
+        exclude_versions: ["2.3"]
 
-        - label: Virtual product data types
-          url: /graphql/interfaces/virtual-product.html
+      - label: setGuestEmailOnCart mutation
+        url: /graphql/mutations/set-guest-email.html
 
-        - label: CreditMemoItemInterface attributes and implementations
-          url: /graphql/interfaces/credit-memo-item-interface.html
-          exclude_versions: ["2.3"]
+      - label: setPaymentMethodAndPlaceOrder mutation
+        url: /graphql/mutations/set-payment-place-order.html
 
-        - label: InvoiceItemInterface attributes and implementations
-          url: /graphql/interfaces/invoice-item-interface.html
-          exclude_versions: ["2.3"]
+      - label: setPaymentMethodOnCart mutation
+        url: /graphql/mutations/set-payment-method.html
 
-        - label: OrderItemInterface attributes and implementations
-          url: /graphql/interfaces/order-item-interface.html
-          exclude_versions: ["2.3"]
+      - label: setShippingAddressesOnCart mutation
+        url: /graphql/mutations/set-shipping-address.html
 
-        - label: ShipmentItemInterface attributes and implementations
-          url: /graphql/interfaces/shipment-item-interface.html
-          exclude_versions: ["2.3"]
+      - label: setShippingMethodsOnCart mutation
+        url: /graphql/mutations/set-shipping-method.html
 
-    - label: Payment methods
-      children:
+      - label: subscribeEmailToNewsletter mutation
+        url: /graphql/mutations/subscribe-email-to-newsletter.html
+        exclude_versions: ["2.3"]
 
-        - label: Authorize.Net
-          url: /graphql/payment-methods/authorize-net.html
-          include_versions: ["2.3"]
+      - label: updateCartItems mutation
+        url: /graphql/mutations/update-cart-items.html
 
-        - label: Braintree
-          url: /graphql/payment-methods/braintree.html
+      - label: updateCompany mutation
+        url: /graphql/mutations/update-company.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: Braintree Vault
-          url: /graphql/payment-methods/braintree-vault.html
+      - label: updateCompanyStructure mutation
+        url: /graphql/mutations/update-company-structure.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: Klarna
-          url: /graphql/payment-methods/klarna.html
-          exclude_versions: ["2.3"]
+      - label: updateCompanyTeam mutation
+        url: /graphql/mutations/update-company-team.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: PayPal Express Checkout
-          url: /graphql/payment-methods/paypal-express-checkout.html
+      - label: updateCompanyUser mutation
+        url: /graphql/mutations/update-company-user.html
+        edition: b2b-only
+        exclude_versions: ["2.3"]
 
-        - label: Express Checkout for other PayPal solutions
-          url: /graphql/payment-methods/payflow-express.html
-          
-        - label: PayPal Payflow Link
-          url: /graphql/payment-methods/payflow-link.html
-          
-        - label: PayPal Payflow Pro
-          url: /graphql/payment-methods/payflow-pro.html
+      - label: updateCustomer mutation
+        url: /graphql/mutations/update-customer.html
 
-        - label: PayPal Payflow Pro Vault
-          url: /graphql/payment-methods/payflow-pro-vault.html
-          exclude_versions: ["2.3"]
+      - label: updateCustomerEmail mutation
+        url: /graphql/mutations/update-customer-email.html
+        exclude_versions: ["2.3"]
 
-        - label: PayPal Payments Advanced
-          url: /graphql/payment-methods/payments-advanced.html
+      - label: updateCustomerV2 mutation
+        url: /graphql/mutations/update-customer-v2.html
+        exclude_versions: ["2.3"]
 
-        - label: PayPal Website Payments Pro Hosted Solution
-          url: /graphql/payment-methods/hosted-pro.html
+      - label: updateCustomerAddress mutation
+        url: /graphql/mutations/update-customer-address.html
 
-    - label: Tutorial
-      class: tutorial
-      children:
+      - label: updateProductsInWishlist mutation
+        url: /graphql/mutations/update-products-in-wishlist.html
+        exclude_versions: ["2.3"]
 
-        - label: GraphQL checkout tutorial
-          url: /graphql/tutorials/checkout/index.html
+      - label: updateWishlist mutation
+        url: /graphql/mutations/update-wishlist.html
+        edition: ee-only
+        exclude_versions: ["2.3"]
 
-        - label: Step 1. Create a customer
-          url: /graphql/tutorials/checkout/checkout-customer.html
+  - label: Interfaces
+    children:
+      - label: Product interface implementations
+        url: /graphql/interfaces/product-interface-implementations.html
 
-        - label: Step 2. Create an empty cart
-          url: /graphql/tutorials/checkout/checkout-shopping-cart.html
+      - label: ProductInterface attributes
+        url: /graphql/interfaces/product-interface.html
 
-        - label: Step 3. Add products to the cart
-          url: /graphql/tutorials/checkout/checkout-add-product-to-cart.html
+      - label: CategoryInterface attributes
+        url: /graphql/interfaces/category-interface.html
 
-        - label: Step 4. Set the shipping address
-          url: /graphql/tutorials/checkout/checkout-shipping-address.html
+      - label: CustomizableOptionInterface
+        url: /graphql/interfaces/customizable-option-interface.html
 
-        - label: Step 5. Set the billing address
-          url: /graphql/tutorials/checkout/checkout-billing-address.html
+      - label: Bundle product data types
+        url: /graphql/interfaces/bundle-product.html
 
-        - label: Step 6. Set the shipping method
-          url: /graphql/tutorials/checkout/checkout-shipping-method.html
-          include_versions: ["2.3"]
+      - label: Configurable product data types
+        url: /graphql/interfaces/configurable-product.html
 
-        - label: Step 6. Set the delivery method
-          url: /graphql/tutorials/checkout/checkout-shipping-method.html
-          exclude_versions: ["2.3"]
+      - label: Downloadable product data types
+        url: /graphql/interfaces/downloadable-product.html
 
-        - label: Step 7. Apply a coupon
-          url: /graphql/tutorials/checkout/checkout-coupon.html
+      - label: GiftCardProduct data types
+        url: /graphql/interfaces/gift-card-product.html
 
-        - label: Step 8. Set email on the cart
-          url: /graphql/tutorials/checkout/checkout-quote-email.html
+      - label: GroupedProduct data types
+        url: /graphql/interfaces/grouped-product.html
 
-        - label: Step 9. Set the payment method
-          url: /graphql/tutorials/checkout/checkout-payment-method.html
+      - label: Simple product data types
+        url: /graphql/interfaces/simple-product.html
 
-        - label: Step 10. Place the order
-          url: /graphql/tutorials/checkout/checkout-place-order.html
- 
-    - label: Release Notes
-      url: /graphql/release-notes.html
+      - label: Virtual product data types
+        url: /graphql/interfaces/virtual-product.html
+
+      - label: CreditMemoItemInterface attributes and implementations
+        url: /graphql/interfaces/credit-memo-item-interface.html
+        exclude_versions: ["2.3"]
+
+      - label: InvoiceItemInterface attributes and implementations
+        url: /graphql/interfaces/invoice-item-interface.html
+        exclude_versions: ["2.3"]
+
+      - label: OrderItemInterface attributes and implementations
+        url: /graphql/interfaces/order-item-interface.html
+        exclude_versions: ["2.3"]
+
+      - label: ShipmentItemInterface attributes and implementations
+        url: /graphql/interfaces/shipment-item-interface.html
+        exclude_versions: ["2.3"]
+
+  - label: Payment methods
+    children:
+
+      - label: Authorize.Net
+        url: /graphql/payment-methods/authorize-net.html
+        include_versions: ["2.3"]
+
+      - label: Braintree
+        url: /graphql/payment-methods/braintree.html
+
+      - label: Braintree Vault
+        url: /graphql/payment-methods/braintree-vault.html
+
+      - label: Klarna
+        url: /graphql/payment-methods/klarna.html
+        exclude_versions: ["2.3"]
+
+      - label: PayPal Express Checkout
+        url: /graphql/payment-methods/paypal-express-checkout.html
+
+      - label: Express Checkout for other PayPal solutions
+        url: /graphql/payment-methods/payflow-express.html
+
+      - label: PayPal Payflow Link
+        url: /graphql/payment-methods/payflow-link.html
+
+      - label: PayPal Payflow Pro
+        url: /graphql/payment-methods/payflow-pro.html
+
+      - label: PayPal Payflow Pro Vault
+        url: /graphql/payment-methods/payflow-pro-vault.html
+        exclude_versions: ["2.3"]
+
+      - label: PayPal Payments Advanced
+        url: /graphql/payment-methods/payments-advanced.html
+
+      - label: PayPal Website Payments Pro Hosted Solution
+        url: /graphql/payment-methods/hosted-pro.html
+
+  - label: Tutorial
+    class: tutorial
+    children:
+
+      - label: GraphQL checkout tutorial
+        url: /graphql/tutorials/checkout/index.html
+
+      - label: Step 1. Create a customer
+        url: /graphql/tutorials/checkout/checkout-customer.html
+
+      - label: Step 2. Create an empty cart
+        url: /graphql/tutorials/checkout/checkout-shopping-cart.html
+
+      - label: Step 3. Add products to the cart
+        url: /graphql/tutorials/checkout/checkout-add-product-to-cart.html
+
+      - label: Step 4. Set the shipping address
+        url: /graphql/tutorials/checkout/checkout-shipping-address.html
+
+      - label: Step 5. Set the billing address
+        url: /graphql/tutorials/checkout/checkout-billing-address.html
+
+      - label: Step 6. Set the shipping method
+        url: /graphql/tutorials/checkout/checkout-shipping-method.html
+        include_versions: ["2.3"]
+
+      - label: Step 6. Set the delivery method
+        url: /graphql/tutorials/checkout/checkout-shipping-method.html
+        exclude_versions: ["2.3"]
+
+      - label: Step 7. Apply a coupon
+        url: /graphql/tutorials/checkout/checkout-coupon.html
+
+      - label: Step 8. Set email on the cart
+        url: /graphql/tutorials/checkout/checkout-quote-email.html
+
+      - label: Step 9. Set the payment method
+        url: /graphql/tutorials/checkout/checkout-payment-method.html
+
+      - label: Step 10. Place the order
+        url: /graphql/tutorials/checkout/checkout-place-order.html
+
+  - label: Release Notes
+    url: /graphql/release-notes.html

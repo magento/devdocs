@@ -16,6 +16,7 @@ Attribute | Data Type | Description | Default or example value
 `base_media_url` | String | The fully-qualified URL that specifies the location of user media files | `http://magentohost.example.com/pub/media/`
 `base_static_url` | String | The fully-qualified URL that specifies the location of static view files | `http://magentohost.example.com/pub/static/`
 `base_url` | String | The store's fully-qualified base URL | `http://magentohost.example.com/`
+`btob_website_configuration_requisition_list_active` | String | Indicates if requisition lists are enabled.  Possible values: 1 (Yes) and 0 (No) | 0
 `cart_gift_wrapping` | String | Indicates if gift wrapping prices are displayed on the Shopping Cart page. Possible values: 1 (Yes) and 0 (No) | 1
 `cart_printed_card` | String | Indicates if printed card prices are displayed on the Shopping Cart page. Possible values: 1 (Yes) and 0 (No) | 1
 `catalog_default_sort_by` | String | The default sort order of the search results list | `position`
@@ -31,6 +32,7 @@ Attribute | Data Type | Description | Default or example value
 `default_keywords` | String | A series of keywords that describe your store, each separated by a comma | `Magento, Varien, E-commerce`
 `default_title` | String | The title that appears at the title bar of each page when viewed in a browser | Magento Enterprise Edition
 `demonotice` | Int | Controls the display of the demo store notice at the top of the page. Options: `0` (No) or `1` (Yes) | 0
+`enable_multiple_wishlists` | String | Indicates whether customers can have multiple wish lists. Possible values: 1 (Yes) and 0 (No) | 1
 `front` | String | Indicates the landing page that is associated with the base URL | `cms`
 `grid_per_page` | Int | The default number of products per page in Grid View | `9`
 `grid_per_page_values` | String | A list of numbers that define how many products can be displayed in List View  | `9,15,30`
@@ -58,7 +60,8 @@ Attribute | Data Type | Description | Default or example value
 `magento_reward_points_register` | String | The number of points a customer gets for registering | null
 `magento_reward_points_review_limit` | String | The maximum number of reviews that qualify for  rewards. A null value indicates no limit | null
 `magento_reward_points_review` | String | The number of points for writing a review | null
-`magento_wishlist_general_is_enabled` | String | Indicates whether wish lists are enabled (1) or disabled (0)
+`magento_wishlist_general_is_enabled` | String | Indicates whether wish lists are enabled (1) or disabled (0) | 1
+`maximum_number_of_wishlists` | String | If multiple wish lists are enabled, the maximum number of wish lists the customer can have | 5
 `minimum_password_length` | String | The minimum number of characters required for a valid password. <br/>Configuration path: customer/password/minimum_password_length | 6
 `no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs | `cms/noroute/index`
 `payment_payflowpro_cc_vault_active` | String | Payflow Pro vault status | `0` (inactive) or `1` (active)
