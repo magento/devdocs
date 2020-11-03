@@ -92,8 +92,8 @@ Where the following notation is used:
 -  `<your_namespace>.<your_widget_name>` - the name of your custom [widget](https://glossary.magento.com/widget). According to the jQuery widgets naming convention, this value must contain a [namespace](https://glossary.magento.com/namespace) and name.
 -  `mage.<widget.name>` - the name of the Magento widget that you extend.
 
-{:.bs-callout-warning}
-When using custom JS, it is recommended that minimal dependencies should be used in custom JS. Additional dependencies will cause higher load requests which can block the rendering of the website. The more dependencies that are defined, the more requests the browser will make.
+{:.bs-callout-note}
+When using custom JS, try to keep dependencies to a minimum. Additional dependencies demand more web requests, which can slow rendering.
 
 {:.bs-callout-tip}
 All jQuery UI components for frontend and base areas are located in `lib/web/jquery/ui-modules` dir. They can be used in JS widgets by `jquery-ui-modules` path mapping like `jquery-ui-modules/widget` and `jquery-ui-modules/slider`.
