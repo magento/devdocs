@@ -195,7 +195,7 @@ When Magento runs `composer dump-autoload`, it creates autoload files with links
 
 ```yaml
 stage:
-   build:
+  build:
     SKIP_COMPOSER_DUMP_AUTOLOAD: true
 ```
 
