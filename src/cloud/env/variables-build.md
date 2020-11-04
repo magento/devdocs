@@ -184,6 +184,21 @@ stage:
 {:.bs-callout-info}
 Because Baler is currently in alpha release, we do not recommend using it in Production environments.
 
+### `SKIP_COMPOSER_DUMP_AUTOLOAD`
+
+-  **Default**— _Not set_
+-  **Version**—Magento 2.1.4 and later
+
+Set to `true` to skip the `composer dump-autoload` command during a {{ site.data.var.mcd-prod }} installation. This variable is only relevant for {{ site.data.var.mcd-prod }}  containers with writable file systems. In such cases, skipping the command prevents errors from other commands trying to access code from the deleted `generated` directory.
+
+When Magento runs `composer dump-autoload`, it creates autoload files with links to generated classes in the `generated` folder. In production environments with read-only files systems, this is not a problem. However, for {{ site.data.var.mcd-prod }} installations with writable file systems (created when using `./vendor/bin/ece-docker build:compose --with-test` for testing and development), you can run the `bin/magento -n setup:upgrade` command without the `--keep-generated` option, which deletes the `generated` directory. After that, the `composer dump-autoload` command fails because the autoload contains links to files in the deleted directory.
+
+```yaml
+stage:
+   build:
+    SKIP_COMPOSER_DUMP_AUTOLOAD: true
+```
+
 ### `SKIP_SCD`
 
 -  **Default**— _Not set_
@@ -199,21 +214,6 @@ On the build phase, we recommend setting `SKIP_SCD: false` so that the static co
 stage:
   build:
     SKIP_SCD: false
-```
-
-### `SKIP_COMPOSER_DUMP_AUTOLOAD`
-
-Set to `true` to skip the `composer dump-autoload` command during a {{ site.data.var.mcd-prod }} installation. This variable is only relevant for {{ site.data.var.mcd-prod }}  containers with writable file systems. In such cases, skipping the command prevents errors from other commands trying to access code from the deleted `generated` directory.
-
-When Magento runs `composer dump-autoload`, it creates autoload files with links to generated classes in the `generated` folder. In production environments with read-only files systems, this is not a problem. However, for {{ site.data.var.mcd-prod }} installations with writable file systems, you can run the `bin/magento -n setup:upgrade` command without the `--keep-generated` option, which deletes the `generated` directory. After that, the `composer dump autoload` command fails because the autoload contains links to files in the deleted directory.
-
--  **Default**— _Not set_
--  **Version**—Magento 2.1.4 and later
-
-```yaml
-stage:
-   build:
-    SKIP_COMPOSER_DUMP_AUTOLOAD: true
 ```
 
 ### `VERBOSE_COMMANDS`

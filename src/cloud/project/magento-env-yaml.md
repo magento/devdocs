@@ -70,10 +70,13 @@ Make any corrections, commit, and push the changes. If you do not receive an err
 
 ## Create configuration file from CLI
 
-You can use the following `ece-tools` CLI commands to generate a `.magento.env.yaml` configuration file for a Cloud environment.
+You can generate a `.magento.env.yaml` configuration file for a Cloud environment using the following `ece-tools` CLI commands.
 
 ```bash
 php ./vendor/bin/ece-tools cloud:config:create     # Creates a new configuration file
+```
+
+```bash
 php ./vendor/bin/ece-tools cloud:config:update     # Updates values in the configuration file
 ```
 
@@ -93,7 +96,7 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-You can use the cloud:config:update command to update the new file. For example, the following command changes the `SCD_THREADS` value and adds the `SCD_COMPRESSION_TIMEOUT` configuration:
+You can use the `cloud:config:update` command to update the new file. For example, the following command changes the `SCD_THREADS` value and adds the `SCD_COMPRESSION_TIMEOUT` configuration:
 
 ```bash
 php vendor/bin/ece-tools cloud:config:update '{"stage":{"build":{"SCD_THREADS":3, "SCD_COMPRESSION_TIMEOUT":1000}}}'
