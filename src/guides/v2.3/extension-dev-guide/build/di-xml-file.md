@@ -239,7 +239,7 @@ Node Format:
 {:.bs-callout-warning}
 **Arguments on different stages**
 <br/>
-Configuration arguments are merged when they are declared on the same stage (Initial, Global or Area-Specifc), if you declare new arguments on a higher stage like Area-Specific, the arguments declared on the higher stage will replace the existing ones.
+Configuration arguments are merged when they are declared on the same stage (Initial, Global, or Area-Specifc). If you declare new arguments on a higher stage, like Area-Specific, the arguments declared on the higher stage will replace the existing ones.
 
 {:.bs-callout-info}
 **Merging and Arguments**
