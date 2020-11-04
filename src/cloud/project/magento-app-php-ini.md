@@ -54,4 +54,4 @@ cat /etc/php5/fpm/php.ini
 ```
 
 {:.bs-callout-info}
-If you use {{site.data.var.mcd-prod}} for local development, see [Docker service containers]({{site.baseurl}}//cloud/docker/docker-containers-service.html#fpm-container) for information about using a custom `php.ini` file in a Docker environment.
+If you use {{site.data.var.mcd-prod}} for local development, see [Docker service containers]({{site.baseurl}}/cloud/docker/docker-containers-service.html#fpm-container) for information about using a custom `php.ini` file in a Docker environment.
