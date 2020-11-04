@@ -5,6 +5,8 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_from:
+  - /guides/v2.4/install-gde/system-requirements-tech.html
 ---
 
 {:.bs-calloout-info}
