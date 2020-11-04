@@ -191,7 +191,7 @@ Because Baler is currently in alpha release, we do not recommend using it in Pro
 
 Set to `true` to skip the `composer dump-autoload` command during a {{ site.data.var.mcd-prod }} installation. This variable is only relevant for {{ site.data.var.mcd-prod }}  containers with writable file systems. In such cases, skipping the command prevents errors from other commands trying to access code from the deleted `generated` directory.
 
-When Magento runs `composer dump-autoload`, it creates autoload files with links to generated classes in the `generated` folder. In production environments with read-only files systems, this is not a problem. However, for {{ site.data.var.mcd-prod }} installations with writable file systems (created when using `./vendor/bin/ece-docker build:compose --with-test` for testing and development), you can run the `bin/magento -n setup:upgrade` command without the `--keep-generated` option, which deletes the `generated` directory. After that, the `composer dump-autoload` command fails because the autoload contains links to files in the deleted directory.
+When Magento runs `composer dump-autoload`, it creates autoload files with links to generated classes in the `generated` folder. In production environments with read-only files systems, this is not a problem. However, for {{ site.data.var.mcd-prod }} installations with writable file systems (created only for testing and development using `./vendor/bin/ece-docker build:compose --with-test`), you can run the `bin/magento -n setup:upgrade` command without the `--keep-generated` option, which deletes the `generated` directory. After that, the `composer dump-autoload` command fails because the autoload contains links to files in the deleted directory.
 
 ```yaml
 stage:
