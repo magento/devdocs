@@ -373,7 +373,7 @@ The following validation rules are available:
 | `phoneUS`                       | Allows a (US) phone number.                                                                                             |
 | `required-entry`                | Disallows an empty value (equivalent validation as `validate-no-empty`).<br>Validation failure message: "This is a required field." |
 | `validate-no-html-tags`         | Disallows usage of HTML tags.                                                                                           |
-| `validate-select`               | Enforces a that the select option chosen not have a `null` value, string value of `none`, or string length of 0.        |
+| `validate-select`               | Enforces that the select option chosen not have a `null` value, string value of `none` or string length of 0.        |
 | `validate-no-empty`             | Disallows an empty value (equivalent validation as `requried-entry`).<br>Validation failure message: "Empty value."     |
 | `validate-alphanum-with-spaces` | Allows usage of letters (a-z or A-Z), numbers (0-9), or spaces only.                                                    |
 | `validate-data`                 | Allows usage of letters (a-z or A-Z), numbers (0-9), or underscores (\_) only.<br>The first character must be a letter.<br>(Must match expression: `/^[A-Za-z]+[A-Za-z0-9_]+$/`)<br>Validation failure message: "Please use only letters (a-z or A-Z), numbers (0-9) or underscore (\_) in this field, and the first character should be a letter."  |
