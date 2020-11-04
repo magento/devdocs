@@ -30,7 +30,7 @@ If using a logged in customer, send the customer's authorization token in the `A
 mutation {
   setShippingAddressesOnCart(
     input: {
-      cart_id: "{{ CART_ID }}"
+      cart_id: "{ CART_ID }"
       shipping_addresses: [
         {
           address: {
@@ -40,10 +40,11 @@ mutation {
             street: ["320 N Crescent Dr", "Beverly Hills"]
             city: "Los Angeles"
             region: "CA"
+            region_id: 12
             postcode: "90210"
             country_code: "US"
             telephone: "123-456-0000"
-            save_in_address_book: false
+            save_in_address_book: true
           }
         }
       ]
