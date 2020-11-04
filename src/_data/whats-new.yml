@@ -4,8 +4,179 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Wed Oct 14 19:58:40 2020
+updated: Wed Nov 4 10:06:34 2020
 entries:
+- description: Added information about two hot fixes available for Magento 2.3.6 and
+    Magento 2.4.1. See [Magento 2.3.x release information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)
+    and [Magento 2.4.x release information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+  versions: 2.3.4, 2.3.6
+  type: Major Update
+  date: October 29, 2020
+  link: https://github.com/magento/devdocs/pull/8150
+  contributor: jfrontain
+  profile: https://github.com/jfrontain
+- description: Updated Magento Cloud Docker instructions for adding custom PHP extensions.
+    See [Add a PHP extension](https://devdocs.magento.com/cloud/docker/docker-extend.html#add-a-new-php-extension)
+    in the _Cloud Guide_.
+  versions: 2.x
+  type: Technical
+  date: October 29, 2020
+  link: https://github.com/magento/devdocs/pull/8145
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.8 Magento Quality Patch (MQP) package release.
+  versions: ''
+  type: Major Update
+  date: October 28, 2020
+  link: https://github.com/magento/devdocs/pull/8140
+  contributor: Rykh
+  profile: https://github.com/Rykh
+- description: Specified that Magento supports the latest 1.x version of Composer
+    in the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html).
+  versions: 2.3.x, 2.4.x
+  type: Technical
+  date: October 28, 2020
+  link: https://github.com/magento/devdocs/pull/8142
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Updated the _Installation Guide_ to indicate that the `explicit_defaults_for_timestamp`
+    setting for MySQL has been deprecated. See [Configuring the Magento database instance](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/mysql.html#instgde-prereq-mysql-config).
+  versions: 2.x
+  type: Technical
+  date: October 28, 2020
+  link: https://github.com/magento/devdocs/pull/8137
+  contributor: BarnyShergold
+  profile: https://github.com/BarnyShergold
+- description: Added detailed information about the technical review guidelines, tests,
+    tools, and processes that Magento uses to verify and validate third-party extensions
+    submitted to the Magento Marketplace Developer Portal. See [Submit for Technical
+    Review](https://devdocs.magento.com/marketplace/sellers/submit-for-technical-review.html)
+    in the _Marketplace Developer Guide_.
+  versions: 2.x
+  type: Major Update
+  date: October 27, 2020
+  link: https://github.com/magento/devdocs/pull/8133
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Added information about using the New Relic Managed Alerts for Magento
+    Commerce alert policy to monitor performance on Starter environments. See [Monitoring
+    performance with Managed Alerts](cloud/project/new-relic.html#monitor-performance-with-managed-alerts).
+  versions: 2.x
+  type: Technical
+  date: October 23, 2020
+  link: https://github.com/magento/devdocs/pull/8115
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Updated the [`web` property used in the `magento.app.yaml` properties
+    topic](https://devdocs.magento.com/cloud/project/magento-app-properties.html#web)
+    in the Cloud guide.
+  versions: 2.x
+  type: Technical
+  date: October 22, 2020
+  link: https://github.com/magento/devdocs/pull/8068
+  contributor: hguthrie
+  profile: https://github.com/hguthrie
+- description: Added Magento Community links and resources for getting support and
+    discussing issues related to Magento Cloud Docker. See [Getting support for Magento
+    Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html#getting-support-for-magento-cloud-docker).
+  versions: 2.x
+  type: Technical
+  date: October 20, 2020
+  link: https://github.com/magento/devdocs/pull/8077
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Added a new section to the [Redis installation guide](https://devdocs.magento.com/guides/v2.4/config-guide/redis/config-redis.html)
+    about how to configure Redis to work with Magento.
+  versions: ''
+  type: Major Update
+  date: October 20, 2020
+  link: https://github.com/magento/devdocs/pull/8073
+  contributor: jonashrem
+  profile: https://github.com/jonashrem
+- description: Added a Security section to the [Generate a local REST reference](https://devdocs.magento.com/guides/v2.4/rest/generate-local.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: October 16, 2020
+  link: https://github.com/magento/devdocs/pull/8064
+  contributor: dobooth
+  profile: https://github.com/dobooth
+- description: Updated the [Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html).
+  versions: 2.3.6
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/8057
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Added Magento Cloud Patches v1.0.8 release notes.
+  versions: 2.x
+  type: Technical
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/8048
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Added a configuration hierarchy table to the [Configuration management
+    for store settings](https://devdocs.magento.com/cloud/live/sens-data-over.html#configuration-logic-flow)
+    topic in the _Cloud Guide_ that describes how Magento applies configuration settings
+    that have been defined in multiple contexts.
+  versions: 2.x
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/8031
+  contributor: BarnyShergold
+  profile: https://github.com/BarnyShergold
+- description: Published all documentation updates related to the Q4 2020 Commerce
+    and Open Source releases.
+  versions: 2.3.6, 2.4.1
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/8051
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Updated reference documentation for Backward incompatible changes introduced
+    with [2.4.1](http://127.0.0.1:4000/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#240---241)
+    and [2.3.6](http://127.0.0.1:4000/guides/v2.3/release-notes/backward-incompatible-changes/reference.html#235---236)
+    releases.
+  versions: 2.3.6, 2.4.1
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/8054
+  contributor: devops-devdocs
+  profile: https://github.com/devops-devdocs
+- description: Updated `bin/magento` reference for [Commerce](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-commerce.html)
+    and [OpenSource](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html).
+  versions: 2.4.1
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/8055
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Update list of required [PHP extensions](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/php-settings.html),
+    and other [product dependencies](https://devdocs.magento.com/guides/v2.4/release-notes/packages-open-source.html).
+  versions: 2.3.6, 2.4.1
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/8065
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Updated [reference documentation](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html)
+    for the `bin/magento` tool.
+  versions: 2.3.6
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/8067
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Updated the [Backup and disaster recovery](cloud/architecture/pro-architecture.html#backup-and-disaster-recovery)
+    topic in the _Cloud Guide_ to clarify that restoring Pro Production and Staging
+    environments from backup requires a support ticket.
+  versions: 2.x
+  type: Technical
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/8044
+  contributor: meker12
+  profile: https://github.com/meker12
 - description: Added release notes to describe the Magento 2.3.6 and Magento 2.4.1
     release notes. See [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
     and  [2.3 Release Information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).
@@ -64,8 +235,8 @@ entries:
   link: https://github.com/magento/devdocs/pull/7846
   contributor: jfrontain
   profile: https://github.com/jfrontain
-- description: The [`addProductsToCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html)
-    allows you to add any type of product to the active cart. We recommend using this
+- description: Added information about the [`addProductsToCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html)
+    to add any type of product to the active cart. We recommend using this
     mutation instead of single-purpose mutations such as `addSimpleProductsToCart`.
   versions: 2.4.1
   type: New Topic
@@ -162,6 +333,31 @@ entries:
   link: https://github.com/magento/devdocs/pull/7436
   contributor: keharper
   profile: https://github.com/keharper
+- description: Published release notes for Magento Cloud Patches version 1.0.7.
+  versions: 2.x
+  type: Technical
+  date: October 14, 2020
+  link: https://github.com/magento/devdocs/pull/8037
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.7 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: October 14, 2020
+  link: https://github.com/magento/devdocs/pull/8045
+  contributor: ilima-ebay
+  profile: https://github.com/ilima-ebay
+- description: Updated the [Redirects](https://devdocs.magento.com/cloud/project/project-routes-more-redir.html)
+    topic in the _Cloud Guide_ to provide information about the `routes.yaml` file size
+    limit with link to instructions for offloading redirects to Fastly to prevent
+    performance issues.
+  versions: 2.x
+  type: Technical
+  date: October 14, 2020
+  link: https://github.com/magento/devdocs/pull/8039
+  contributor: BarnyShergold
+  profile: https://github.com/BarnyShergold
 - description: Added a [deprecation notice](https://devdocs.magento.com/cloud/configure/import-url-rewrites.html)
     for `magento/url-rewrite-import-export` module, which is no longer supported on
     Magento 2.4.x or later.
