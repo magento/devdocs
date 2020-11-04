@@ -388,7 +388,7 @@ The following validation rules are available:
 | `validate-url`                  | Allows a valid URL. Protocol is required (http://, https:// or ftp://).                                                 |
 | `validate-clean-url`            | Allows a valid URL. For example, http://www.example.com or www.example.com.                                             |
 | `validate-xml-identifier`       | Allows a valid XML-identifier. For example, something_1, block5, id-4.                                                  |
-| `validate-ssn`                  | Allows a valid social security number. For example, 123-45-6789.                                                        |
+| `validate-ssn`                  | Allows a valid (US) social security number. For example, 123-45-6789.                                                        |
 | `validate-zip-us`               | Allows a valid (US) ZIP code. For example, 90602 or 90602-1234.                                                         |
 | `validate-date-au`              | Enforces the following date format: dd/mm/yyyy. For example, 17/03/2006 for the 17th of March, 2006.                    |
 | `validate-currency-dollar`      | Allows a valid (dollar) amount. For example, $100.00.                                                                   |
