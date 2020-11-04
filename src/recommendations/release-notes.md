@@ -17,7 +17,7 @@ The release notes include:
 
 ## 3.10.0 of magento/product-recommendations for Magento Commerce 2.4.0
 
--  {:.new}Added the ability to [resync your catalog to SaaS services via command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-catalog-sync.html)
+-  {:.new}Added the ability to [resync your catalog to SaaS services via command line]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-catalog-sync.html)
 -  {:.new}Added support for database table prefixes
 -  {:.fix}Removed PHP 7.1 support
 
