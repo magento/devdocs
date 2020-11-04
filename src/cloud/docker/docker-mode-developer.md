@@ -53,7 +53,7 @@ To launch the Docker environment in developer mode:
    ```
 
    {:.bs-callout-info}
-   You can further customize the Docker Compose configuration file by adding additional options to the `build:compose` command. For example, you can set the software version for a service, or add Xdebug configuration. See [service keys][].
+   You can further customize the Docker Compose configuration file by adding additional options to the `build:compose` command. For example, you can set the software version for a service, or add Xdebug configuration. See [service keys].
 
 1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
@@ -134,6 +134,6 @@ To launch the Docker environment in developer mode:
 [magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug]
-[service key]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
+[service keys]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
 [dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [mutagen-install]: https://mutagen.io/documentation/introduction/installation/
