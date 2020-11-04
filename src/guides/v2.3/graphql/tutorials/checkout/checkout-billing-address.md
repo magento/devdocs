@@ -17,7 +17,7 @@ contributor_link: https://www.atwix.com/
 {:.bs-callout-tip}
 You must always set the billing address to place an order.
 
-Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/mutations/set-billing-address.html) mutation to set a billing address. 
+Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/mutations/set-billing-address.html) mutation to set a billing address.
 
 ## Add a billing address to the cart
 
