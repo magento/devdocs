@@ -30,25 +30,25 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 **Validation and log improvements**–
 
--  {:.new}Added search-engine validation to ensure that `elasticsearch` is set for {{site.data.var.ece }} 2.4 and later. If the validation fails, the deployment is stopped with an error message suggesting fixes for the issue.<!--MCLOUD-6937-->
+-  {:.new}Added search-engine validation to ensure that `elasticsearch` is set for {{site.data.var.ece }} 2.4 and later. If the validation fails, the deployment is stopped with a critical error message suggesting fixes for the issue. See [Critical Errors, Deploy stage]({{ site.baseurl }}/cloud/reference/ece-tools-error-reference.html#deploy-stage)<!--MCLOUD-6937-->
 
 -  {:.new}Added Elasticsearch validation to check the compatibility between the Elasticsearch service version and the Magento version.<!--MCLOUD-7193-->
 
--  {:.new}Updated the Elasticsearch compatibility error message to show the versions of Elasticsearch that are compatible with the Magento Elasticsearch module. The error message now provides the specific Elasticsearch versions to install in your Cloud infrastructure so that it is compatible with the Elasticsearch module used by your version of Magento.<!--MCLOUD-6698-->
+-  {:.new}Updated the Elasticsearch compatibility error message to show the versions of Elasticsearch that are compatible with the Magento Elasticsearch module. The error message now provides the specific Elasticsearch versions to install in your Cloud infrastructure so that it is compatible with the Elasticsearch module used by your version of Magento. See [Warning Errors, Deploy stage]({{ site.baseurl }}/cloud/reference/ece-tools-error-reference.html#deploy-stage)<!--MCLOUD-6698-->
 
--  {:.new}Added error message for invalid `MAGE_MODE` environment variable setting. The only valid value is `production`. Before this fix, `MAGE_MODE` could be set to `developer` without deployment errors, only to cause errors later when trying to write to read-only files.<!--MCLOUD-6708-->
+-  {:.new}Added warning errors `2026` and `2027` for invalid `MAGE_MODE` environment variable setting. The only valid value is `production`. Before this fix, `MAGE_MODE` could be set to `developer` without deployment errors, only to cause errors later when trying to write to read-only files. See [Warning Errors]({{ site.baseurl }}/cloud/reference/ece-tools-error-reference.html#warning-errors).<!--MCLOUD-6708-->
 
 -  {:.fix}Fixed validation for Redis, RabbitMQ and MySql services to ensure these versions are compatible with the Magento version. Valid versions of these services are now written to the `cloud.log`.<!--MCLOUD-7098-->
 
--  {:.fix}Updated the `cloud.log` to include the concurrent requests limit for sending requests during cache warmup. This value is configured in in the `WARM_UP_CONCURRENCY` post-deploy variable. <!--MCLOUD-5563-->
+-  {:.fix}Updated the `cloud.log` to include the concurrent requests limit for sending requests during cache warmup. This value is configured in in the `WARM_UP_CONCURRENCY` post-deploy variable. See [WARM_UP_CONCURRENCY]({{ site.baseurl }}/cloud/env/variables-post-deploy.html#warm_up_concurrency) <!--MCLOUD-5563-->
 
 **CLI command updates**–
 
--  {:.new}Added CLI commands (`cloud:config:create` and `cloud:config:update`) to create and update the `.magento.env.yaml` file with a configuration that can include one or more build, deploy, and post-deploy variables.<!--MCLOUD-7072-->
+-  {:.new}Added CLI commands (`cloud:config:create` and `cloud:config:update`) to create and update the `.magento.env.yaml` file with a configuration that can include one or more build, deploy, and post-deploy variables. See [Create configuration file from CLI]({{ site.baseurl }}/cloud/project/magento-env-yaml.html#create-configuration-file-from-cli).<!--MCLOUD-7072-->
 
 **Environment variable updates**–
 
--  {:.new}Added the `SKIP_COMPOSER_DUMP_AUTOLOAD` build variable. Setting the variable to `true` stops Magento from running the `composer dump-autoload` command during a {{ site.data.var.mcd-prod }} installation. The variable is only relevant to {{ site.data.var.mcd-prod }} containers with writable file systems. In such cases, skipping the command prevents errors from other commands trying to access code from the deleted `generated` directory.<!--MCLOUD-6939-->
+-  {:.new}Added the `SKIP_COMPOSER_DUMP_AUTOLOAD` build variable. Setting the variable to `true` stops Magento from running the `composer dump-autoload` command during a {{ site.data.var.mcd-prod }} installation. The variable is only relevant to {{ site.data.var.mcd-prod }} containers with writable file systems (created for testing and development using `./vendor/bin/ece-docker build:compose --with-test`). With such installations, skipping the `composer dump-autoload` command prevents errors when running other commands that try to access files from a deleted `generated` directory. See [SKIP_COMPOSER_DUMP_AUTOLOAD]({{ site.baseurl }}/cloud/env/variables-build.html#skip_composer_dump_autoload).<!--MCLOUD-6939-->
 
 ## v2002.1.2
 *Release date: August 5, 2020*<br/>
