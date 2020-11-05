@@ -1,7 +1,7 @@
 ---
 title: Magento_InventoryInStorePickup
 source_repo: inventory
-release: 1.2.0
+release: 1.2.1
 github_path: InventoryInStorePickup/README.md
 last_modified_at: '2019-03-13 12:13:26 -0500'
 content: "The `InventoryInStorePickup` module provides business logic for In-Store

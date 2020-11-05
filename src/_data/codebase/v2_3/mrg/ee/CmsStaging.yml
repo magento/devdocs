@@ -1,0 +1,37 @@
+---
+title: Magento_CmsStaging
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/CmsStaging/README.md
+last_modified_at: '2016-07-13 17:35:04 -0500'
+content: "## Magento_CmsStaging module\n\n## Overview\n\nThe Magento_CmsStaging module
+  is a part of the staging functionality in Magento EE. It enables you to create new
+  CMS Page and the CMS Block updates or add new changes to the existing store updates.
+  In other words, you can modify the CMS Pages and the CMS Blocks in updates. These
+  updates are shown on the content dashboard.\n\n## Implementation details\n\nThe
+  Magento_CmsStaging module changes the CMS Pages and CMS Blocks creation pages to
+  make them compatible with the Magento Staging Framework. This module depends on
+  the Magento_Cms module and extends its functionality. It changes the database structure
+  of the Magento_Cms module and the way in which CMS Pages/Blocks are managed.\n\n###
+  CMS Pages\n\nYou can stage the following parameters:\n\n- Enable/Disable CMS Page\n-
+  Page Title\n- Content \n    - Content Heading\n    - Content (WYSIWYG)\n- Search
+  Engine Optimization \n    - URL Key\n    - Meta Keywords\n    - Meta Description\n-
+  Design \n    - Layout\n    - Layout Update XML\n    - Theme\n\n### CMS Blocks\n\nThe
+  following parameters can be staged:\n\n- Enable/Disable CMS Block\n- Block Title\n-
+  Identifier \n- Store View\n- Content (WYSIWYG)\n\n### Installation details\n\nThe
+  Magento_CmsStaging module makes irreversible changes in a database during installation.
+  You cannot uninstall this module.\n\n## Dependencies\n\nYou can find the list of
+  modules that have dependencies on the Magento_CmsStaging module in the `require`
+  section of the `composer.json` file. The file is located in the root directory of
+  the module.\n\n## Extension points\n\nExtension points enable extension developers
+  to interact with the Magento_CmsStaging module. For more information about the Magento
+  extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_CmsStaging module.\n\n###
+  UI components\n\nYou can extend product and category updates using the UI components
+  located in the `Magento\\CmsStaging\\view\\adminhtml\\ui_component` directory. For
+  more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html).\n\n###
+  Layouts\n\nYou can extend and override layouts in the `Magento\\CmsStaging\\view\\adminhtml\\layout`
+  directory.\nFor more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).\n\n##
+  Additional information\n\nYou can track [backward incompatible changes made in a
+  Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html)."

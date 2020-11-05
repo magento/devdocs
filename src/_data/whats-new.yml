@@ -4,8 +4,164 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Thu Oct 8 18:38:18 2020
+updated: Wed Oct 14 19:58:40 2020
 entries:
+- description: Added release notes to describe the Magento 2.3.6 and Magento 2.4.1
+    release notes. See [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
+    and  [2.3 Release Information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).
+  versions: 2.3.6, 2.4.1
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/8036
+  contributor: jfrontain
+  profile: https://github.com/jfrontain
+- description: Fixed invalid `env.php` code sample for [message queue configuration](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/message-queues/message-queues.html).
+  versions: 2.3.6
+  type: Technical
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7896
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added a new overview page for [Klarna's payment method](https://devdocs.magento.com/guides/v2.4/graphql/payment-methods/klarna.html)
+    and a new reference page for Klarna's [`createKlarnaPaymentsSession`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-klarna-payments-session.html)
+    GraphQL mutation.
+  versions: 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7891
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added release notes for [Inventory Management](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html).
+  versions: 2.4.1
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7925
+  contributor: sidolov
+  profile: https://github.com/sidolov
+- description: Added a list of [REST endpoints](https://devdocs.magento.com/guides/v2.4/rest/protected-endpoints.html)
+    and a list of [GraphQL mutations](https://devdocs.magento.com/guides/v2.4/graphql/protected-mutations.html)
+    that require an `X-Captcha` header when CAPTCHA is enabled for various storefront
+    forms.
+  versions: 2.3.6, 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7906
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added the [`availableStores` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html),
+    which returns system configuration information from multiple store views. The
+    query provides the context needed for a store switcher.
+  versions: 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7853
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added 2.4.1 beta [release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+  versions: 2.4.1
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7846
+  contributor: jfrontain
+  profile: https://github.com/jfrontain
+- description: The [`addProductsToCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html)
+    allows you to add any type of product to the active cart. We recommend using this
+    mutation instead of single-purpose mutations such as `addSimpleProductsToCart`.
+  versions: 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7774
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: Added support for product reviews in GraphQL. Use the [createProductReview
+    mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-product-review.html)
+    to add a review and the [productReviewRatingsMetadata query](https://devdocs.magento.com/guides/v2.4/graphql/queries/product-review-ratings-metadata.html)
+    to retrieve information about the reviews infrastructure.
+  versions: 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7775
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added the ability to [add items](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-wishlist.html)
+    to, [update items](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-products-in-wishlist.html)
+    in, and [remove items](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-products-from-wishlist.html)
+    from a wish list in GraphQL.
+  versions: 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7770
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added the [`setGiftOptionsOnCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/set-gift-options.html)
+    to set gift messages, gift wrapping, gift receipts, and printed cards to an entire
+    order. The [`updateCartItems` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-cart-items.html)
+    has been updated to allow adding a gift message or gift wrapping to individual
+    products.
+  versions: 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7745
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: We have added the [`createCustomerV2`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-customer-v2.html)
+    and [`updateCustomerV2`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-customer-v2.html)
+    mutations to manage customer accounts. These new mutations require different input
+    objects than the `createCustomer` and `updateCustomer` mutations. To change a
+    customer's email address, use the new [`updateCustomerEmail`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-customer-email.html)
+    mutation.
+  versions: 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7673
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added GraphQL support for rewards points. Use the [`applyRewardPointsToCart`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/apply-reward-points.html)
+    and [`removeRewardPointsFromCart`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-reward-points.html)
+    mutation to manage reward points within a cart. The [cart](https://devdocs.magento.com/guides/v2.4/graphql/queries/cart.html),
+    [customer](https://devdocs.magento.com/guides/v2.4/graphql/queries/customer.html),
+    and [storeConfig](https://devdocs.magento.com/guides/v2.4/graphql/queries/store-config.html)
+    queries also return information related to reward points.
+  versions: 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7662
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added GraphQL Vault support with the [Payflow Pro Vault](https://devdocs.magento.com/guides/v2.4/graphql/payment-methods/payflow-pro-vault.html)
+    payment method.
+  versions: 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7714
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#technologies-magento-can-use)
+    for Elasticsearch 6.x.
+  versions: 2.3.6
+  type: Technical
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7512
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added the [`subscribeEmailToNewsletter` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/subscribe-email-to-newsletter.html)
+    to the _GraphQL Developer Guide_.
+  versions: 2.4.1
+  type: New Topic
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7422
+  contributor: atwixfirster
+  profile: https://github.com/atwixfirster
+- description: The GraphQL [`customer` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/customer.html)
+    now returns detailed information about any order in the logged-in customer's order
+    history.  The query can now replicate what is displayed in the My Orders page
+    in the storefront.
+  versions: 2.4.1
+  type: Major Update
+  date: October 15, 2020
+  link: https://github.com/magento/devdocs/pull/7436
+  contributor: keharper
+  profile: https://github.com/keharper
 - description: Added a [deprecation notice](https://devdocs.magento.com/cloud/configure/import-url-rewrites.html)
     for `magento/url-rewrite-import-export` module, which is no longer supported on
     Magento 2.4.x or later.
@@ -370,7 +526,7 @@ entries:
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
 - description: Standardized [release terminology](https://devdocs.magento.com/release/policy/)
-    related to patch releases, hotfixes, invdividual fixes, and custom patches.
+    related to patch releases, hotfixes, individual fixes, and custom patches.
   versions: 2.4.0
   type: Major Update
   date: July 27, 2020
@@ -418,7 +574,7 @@ entries:
   type: Major Update
   date: July 22, 2020
   link: https://github.com/magento/devdocs/pull/7576
-- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html)
+- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html)
     for MySQL, PHP, and Redis.
   versions: 2.3.x
   type: Technical
@@ -447,7 +603,7 @@ entries:
   type: Major Update
   date: July 17, 2020
   link: https://github.com/magento/devdocs/pull/7533
-- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html)
+- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     for MySQL, PHP, and Redis.
   versions: 2.4.0
   type: Technical
@@ -593,7 +749,7 @@ entries:
   type: New Topic
   date: June 23, 2020
   link: https://github.com/magento/devdocs/pull/7425
-- description: Added Microsoft Edge to the list of [supported browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements_browsers.html)
+- description: Added Microsoft Edge to the list of [supported browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     for 2.4.0, which was mistakenly removed.
   versions: 2.4.0
   type: Technical
@@ -617,7 +773,7 @@ entries:
   type: Major Update
   date: June 17, 2020
   link: https://github.com/magento/devdocs/pull/7331
-- description: Removed Internet Explorer 11 from the list of [supported web browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements_browsers.html).
+- description: Removed Internet Explorer 11 from the list of [supported web browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html).
   versions: 2.4.0
   type: Technical
   date: June 17, 2020
@@ -666,7 +822,7 @@ entries:
   type: New Topic
   date: June 12, 2020
   link: https://github.com/magento/devdocs/pull/7383
-- description: Clarified that you must install and configure [Elasticsearch 7.6.x](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html)
+- description: Clarified that you must install and configure [Elasticsearch 7.6.x](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     before upgrading to Magento 2.4.0.
   versions: 2.4.0
   type: Major Update
@@ -739,7 +895,7 @@ entries:
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7236
-- description: Updated the [supported versions of PHP](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html#php)
+- description: Updated the [supported versions of PHP](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html#php)
     to 7.3 and 7.4.
   versions: 2.4.0
   type: Major Update
@@ -918,7 +1074,7 @@ entries:
   type: Major Update
   date: April 29, 2020
   link: https://github.com/magento/devdocs/pull/7120
-- description: Updated [PHP requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#php)
+- description: Updated [PHP requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#php)
     and [packages](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html).
   versions: 2.3.5
   type: Major Update
@@ -1531,7 +1687,7 @@ entries:
   type: Technical changes
   date: January 28, 2020
   link: https://github.com/magento/devdocs/pull/6468
-- description: Updated the Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html)
+- description: Updated the Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html)
     regarding end-of-life for PHP 7.1.
   versions: 2.3.4
   type: Technical changes
@@ -3347,7 +3503,7 @@ entries:
 - description: Added information about [Elasticsearch 6](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-overview.html#es-spt-versions)
     support.<br/>Added Elasticsearch 6 information to [Configure Magento to use Elasticsearch](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/configure-magento.html)<br/>Added
     [Change Elasticsearch Client](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-downgrade.html)
-    topic.<br/>Updated the [Technologies Magento can use](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#technologies-magento-can-use)
+    topic.<br/>Updated the [Technologies Magento can use](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#technologies-magento-can-use)
     topic with new Elasticsearch 6 support.
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -3480,7 +3636,7 @@ entries:
   type: Technical changes
   date: March  5, 2019
   link: https://github.com/magento/devdocs/pull/3865
-- description: Added a section about [Required System Dependencies](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#required-system-dependencies)<br/>Added
+- description: Added a section about [Required System Dependencies](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#required-system-dependencies)<br/>Added
     a section about Unsupported Operating Systems
   versions: 2.3.x
   type: Major update
