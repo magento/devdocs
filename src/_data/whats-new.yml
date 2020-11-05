@@ -306,7 +306,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7714
   contributor: keharper
   profile: https://github.com/keharper
-- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#technologies-magento-can-use)
+- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#technologies-magento-can-use)
     for Elasticsearch 6.x.
   versions: 2.3.6
   type: Technical
@@ -770,7 +770,7 @@ entries:
   type: Major Update
   date: July 22, 2020
   link: https://github.com/magento/devdocs/pull/7576
-- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html)
+- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html)
     for MySQL, PHP, and Redis.
   versions: 2.3.x
   type: Technical
@@ -799,7 +799,7 @@ entries:
   type: Major Update
   date: July 17, 2020
   link: https://github.com/magento/devdocs/pull/7533
-- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html)
+- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     for MySQL, PHP, and Redis.
   versions: 2.4.0
   type: Technical
@@ -945,7 +945,7 @@ entries:
   type: New Topic
   date: June 23, 2020
   link: https://github.com/magento/devdocs/pull/7425
-- description: Added Microsoft Edge to the list of [supported browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements_browsers.html)
+- description: Added Microsoft Edge to the list of [supported browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     for 2.4.0, which was mistakenly removed.
   versions: 2.4.0
   type: Technical
@@ -969,7 +969,7 @@ entries:
   type: Major Update
   date: June 17, 2020
   link: https://github.com/magento/devdocs/pull/7331
-- description: Removed Internet Explorer 11 from the list of [supported web browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements_browsers.html).
+- description: Removed Internet Explorer 11 from the list of [supported web browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html).
   versions: 2.4.0
   type: Technical
   date: June 17, 2020
@@ -1018,7 +1018,7 @@ entries:
   type: New Topic
   date: June 12, 2020
   link: https://github.com/magento/devdocs/pull/7383
-- description: Clarified that you must install and configure [Elasticsearch 7.6.x](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html)
+- description: Clarified that you must install and configure [Elasticsearch 7.6.x](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     before upgrading to Magento 2.4.0.
   versions: 2.4.0
   type: Major Update
@@ -1091,7 +1091,7 @@ entries:
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7236
-- description: Updated the [supported versions of PHP](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html#php)
+- description: Updated the [supported versions of PHP](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html#php)
     to 7.3 and 7.4.
   versions: 2.4.0
   type: Major Update
@@ -1270,7 +1270,7 @@ entries:
   type: Major Update
   date: April 29, 2020
   link: https://github.com/magento/devdocs/pull/7120
-- description: Updated [PHP requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#php)
+- description: Updated [PHP requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#php)
     and [packages](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html).
   versions: 2.3.5
   type: Major Update
@@ -1883,7 +1883,7 @@ entries:
   type: Technical changes
   date: January 28, 2020
   link: https://github.com/magento/devdocs/pull/6468
-- description: Updated the Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html)
+- description: Updated the Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html)
     regarding end-of-life for PHP 7.1.
   versions: 2.3.4
   type: Technical changes
@@ -3699,7 +3699,7 @@ entries:
 - description: Added information about [Elasticsearch 6](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-overview.html#es-spt-versions)
     support.<br/>Added Elasticsearch 6 information to [Configure Magento to use Elasticsearch](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/configure-magento.html)<br/>Added
     [Change Elasticsearch Client](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-downgrade.html)
-    topic.<br/>Updated the [Technologies Magento can use](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#technologies-magento-can-use)
+    topic.<br/>Updated the [Technologies Magento can use](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#technologies-magento-can-use)
     topic with new Elasticsearch 6 support.
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -3832,7 +3832,7 @@ entries:
   type: Technical changes
   date: March  5, 2019
   link: https://github.com/magento/devdocs/pull/3865
-- description: Added a section about [Required System Dependencies](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#required-system-dependencies)<br/>Added
+- description: Added a section about [Required System Dependencies](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#required-system-dependencies)<br/>Added
     a section about Unsupported Operating Systems
   versions: 2.3.x
   type: Major update
