@@ -27,10 +27,10 @@ The default storage location is the local filesystem. A _storage adapter_ allows
 
 -  [Amazon Simple Storage Service (Amazon S3)][AWS S3]
 
-The 'remote-storage' command in the Magento CLI enables the remote storage module and allows you to set the storage service parameters. Minimally, you must supply the storage driver, the object storage name, and the storage location. For example, to enable AWS S3 remote storage:
+The `setup:config:set` command in the Magento CLI enables the remote storage module and allows you to set the storage service parameters. Minimally, you must supply the storage driver, the object storage name, and the storage location. For example, to enable AWS S3 remote storage:
 
 ```bash
-bin/magento remote-storage:enable aws-s3 region-name bucket-name [optional prefix] --access-key=<optional-access-key> --secret-key=<optional-secret-key>
+bin/magento setup:config:set --remote-storage-driver="<driver-name>" --remote-storage-bucket="<bucket-name>" --remote-storage-region="<region-name>" --remote-storage-prefix="<optional-prefix>" --access-key=<optional-access-key> --secret-key=<optional-secret-key> -n
 ```
 
 The following table lists the parameters available for configuring the storage adapter.
@@ -46,11 +46,11 @@ The following table lists the parameters available for configuring the storage a
 
 ## Configure image resizing
 
-Magento supports image resizing on the application side by default. With the Remote Storage module enabled, you can offload image resizing to the server (Nginx) side, which is a simple and efficient way to save disk resources and optimize disk usage.
+Magento supports image resizing on the application side by default. With the Remote Storage module enabled, you can offload an image resizing to the server (Nginx) side, which is a simple and efficient way to save disk resources and optimize disk usage.
 
 ### Magento configuration
 
-To perform image resizing on the Nginx side, you must configure Magento to provide the height and width arguments and the link to the image.
+To perform an image resizing on the Nginx side, you must configure Magento to provide the height and width arguments and the link to the image.
 
 {:.procedure}
 To configure Magento for server-side image resizing:
@@ -80,30 +80,24 @@ To enable Nginx to resize images:
 
 1. Create an `nginx.conf` file based on the included template `nginx.conf.sample` file. For example:
 
-   ```conf
-   ## The following section allows to offload image resizing from Magento instance to the Nginx.
-   ## Catalog image URL format should be set accordingly.
-   ## See https://docs.magento.com/m2/ee/user_guide/configuration/general/web.html#url-options
-   #   location ~* ^/media/catalog/.* {
-   #
-   #       # Replace placeholders and uncomment the line below to serve product images from public S3
-   #       # See examples of S3 authentication at https://github.com/anomalizer/ngx_aws_auth
-   #       # proxy_pass https://<bucket-name>.<region-name>.amazonaws.com;
-   #
-   #       set $width "-";
-   #       set $height "-";
-   #       if ($arg_width != '') {
-   #           set $width $arg_width;
-   #       }
-   #       if ($arg_height != '') {
-   #           set $height $arg_height;
-   #       }
-   #       image_filter resize $width $height;
-   #       image_filter_jpeg_quality 90;
-   #   }
-   ```
+```conf
+location ~* \.(ico|jpg|jpeg|png|gif|svg)$ {
+    set $width "-";
+    set $height "-";
+    if ($arg_width != '') {
+        set $width $arg_width;
+    }
+    if ($arg_height != '') {
+        set $height $arg_height;
+    }
+    image_filter resize $width $height;
+    image_filter_jpeg_quality 90;
+}
+```
 
-1. Configure a `proxy_pass` value for your specific adapter.
+1. If needed, configure a `proxy_pass` value for your specific adapter:
+
+-  [Amazon Simple Storage Service (Amazon S3)][AWS S3]
 
 <!-- link definitions -->
 [AWS S3]: {{page.baseurl}}/config-guide/remote-storage/config-remote-storage-aws-s3.html

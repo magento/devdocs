@@ -22,10 +22,31 @@ Prerequisites for using the AWS S3 adapter:
 
 ## Nginx configuration
 
-Nginx requires additional configuration to perform Authentication with the `proxy_pass` directive.
+Nginx requires an additional configuration to perform Authentication with the `proxy_pass` directive.
 
-We recommend using the [`ngx_aws_auth`][ngx repo] module.
+```
+location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+    # Proxying to AWS S3 storage. 
+    resolver 8.8.8.8;
+    set $bucket "<bucket-name>";
+    proxy_pass https://s3.amazonaws.com/$bucket$uri;
+    proxy_pass_request_body off;
+    proxy_pass_request_headers off;
+    proxy_intercept_errors on;
+    proxy_hide_header "x-amz-id-2";
+    proxy_hide_header "x-amz-request-id";
+    proxy_hide_header "x-amz-storage-class";
+    proxy_hide_header "Set-Cookie";
+    proxy_ignore_headers "Set-Cookie";
+}
+```
+
+If you're using access and secret keys instead of [AWS IAM] roles, you'll need a separate module.
+
+We recommend using the [`ngx_aws_auth`][ngx repo].
 
 <!-- link definitions -->
 [AWS S3]: https://aws.amazon.com/s3
+[AWS IAM]: https://aws.amazon.com/iam/
 [ngx repo]: https://github.com/anomalizer/ngx_aws_auth
+[remote storage]: {{page.baseurl}}/config-guide/remote-storage/config-remote-storage.html
