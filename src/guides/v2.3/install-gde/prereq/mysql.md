@@ -89,6 +89,9 @@ To install MySQL 5.7 on Ubuntu 16:
 
 1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
+   {:.bs-callout-info}}
+   The default applies to {{site.data.var.ece}} *and* on-premises projects. {{site.data.var.ece}} Pro customers must open a support ticket to increase the default. {{site.data.var.ece}} Starter customers can increase the default in the [`/etc/mysql/my.cnf`](https://support.magento.com/hc/en-us/articles/360051598831) file.
+
   {% include install/mysql_max-allowed-packet-ubuntu.md %}
 
 1. [Configure the Magento database instance](#instgde-prereq-mysql-config).
