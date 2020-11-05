@@ -114,7 +114,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--sales-order-increment-prefix`|Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.|No|
 
 {:.bs-callout-tip}
-To enable remote storage services during installation, see [Configure Remote Storage]({{ page.baseurl }}/config-guide/remote-storage/config-remote-storage.html)
+To enable remote storage services during installation, see [Configure Remote Storage]({{ page.baseurl }}/config-guide/remote-storage/config-remote-storage.html) in the _Configuration Guide_.
 
 **Elasticsearch configuration options:**
 
