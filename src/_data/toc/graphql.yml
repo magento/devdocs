@@ -120,6 +120,14 @@ pages:
           url: /graphql/queries/giftcard-account.html
           edition: ee-only
 
+        - label: giftRegistry query
+          url: /graphql/queries/gift-registry.html
+          edition: ee-only
+
+        - label: giftRegistryTypes query
+          url: /graphql/queries/gift-registry-types.html
+          edition: ee-only
+
         - label: isCompanyAdminEmailAvailable query
           url: /graphql/queries/is-company-admin-email-available.html
           edition: b2b-only
