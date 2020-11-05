@@ -147,7 +147,7 @@ mutation {
 You can change or add permissions to the company role using "permissions" attribute.
 
 {:.bs-callout-warning}
-Pay attention, to add new or change current permissions, you also must send the current permissions. You must send all necessary permissions every time you use the "permissions" attribute. The company role permissions are rewrited completely from the "permissions" attribute.
+To add new or change current permissions, you also must send all the current permissions every time you use the "permissions" attribute. The company role permissions are rewritten completely from the "permissions" attribute.
 
 ## Input attributes
 
