@@ -143,5 +143,5 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
-`User role with this name already exists. Enter a different name to save this role.` | The company cannot have multiple company roles with the same names.
+`User role with this name already exists. Enter a different name to save this role.` | The company cannot have multiple company roles with the same name.
 `Unable to set "allow" for the resource because its parent resource(s) is set to "deny".` | To allow permission for the company role, you must allow all the permissions of the parent tree.
