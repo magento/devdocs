@@ -4,14 +4,13 @@ subgroup: 3_Widgets
 title: Magnifier widget
 ---
 
-Magnifier is a [widget](https://glossary.magento.com/widget) that allows displaying images in 100% scaled size in separate dedicated layer.
-In Magento it is used by the [gallery]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html) widget for zooming the product images on product pages.
+Magnifier is a [widget](https://glossary.magento.com/widget) that allows displaying images in 100% scaled size in a separate dedicated layer.
+In Magento it is used by the [gallery]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html) widget for zooming the product images on product pages. It must be enabled in your local theme `view.xml` configuration file.
 
 ## Initialize magnifier {#magnifier_init}
 
 The magnifier widget is initialized as described in [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#init_phtml).
-
-When initializing the gallery Widget on an HTML element, magnifier initialization is also available. Following is the example of gallery initialization with magnifier:
+The following is the example of gallery initialization with the magnifier enabled:
 
 ```javascript
 <script type="text/x-magento-init">
@@ -46,7 +45,7 @@ When initializing the gallery Widget on an HTML element, magnifier initializatio
 
 ### `enabled` {#opt_enabled}
 
-Enable magnifier.
+Enables the magnifier.
 
 **Type**: Boolean
 
@@ -96,16 +95,29 @@ Possible values:
 *  `outside`
 *  `inside`
 
-## Configure magnifier options in `view.xml`
+## Enable Magnifier and configure options in `view.xml`
 
-Magnifier options can be set in the `view.xml` configuration file of a theme. The file is conventionally located in the `<theme_dir>/etc/` directory.
+ `view.xml` is a theme configuration file that enables the Magnifier widget. The file is conventionally located in the `<theme_dir>/etc/` directory.
 
-The general magnifier options are set as follows:
+The enabling option is:
 
 ```xml
 <var name="magnifier">
-    <var name="%magnifier_option1%">%option1_value%</var>
-    <var name="%magnifier_option2%">%option2_value%</var>
+   <var name="enabled">true</var> <!-- Turn on/off magnifier (true/false) -->
+</var>
+...
+```
+
+Several other Magnifier options are set in `view.xml`:
+
+```xml
+<var name="magnifier">
+  <var name="fullscreenzoom">20</var> <!-- Zoom for fullscreen (integer) -->
+  <var name="top"></var> <!-- Top position of magnifier -->
+  <var name="left"></var> <!-- Left position of magnifier -->
+  <var name="width"></var> <!-- Width of magnifier block -->
+  <var name="height"></var> <!-- Height of magnifier block -->
+  <var name="eventType">hover</var> <!-- Action that activates zoom (hover/click) -->
 ...
 </var>
 ```
