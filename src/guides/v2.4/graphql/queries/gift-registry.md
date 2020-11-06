@@ -16,11 +16,11 @@ giftRegistry(id: ID!): GiftRegistry
 
 ## Example usage
 
-The following example returns information about the gift registry with gift registry ID : 1
+The following example returns information about the gift registry with the ID of 1.
 
 **Request:**
 
-``` graphql
+```graphql
 query {
     giftRegistry(id: 1) {
       id
@@ -64,10 +64,10 @@ query {
           "first_name": "First",
           "last_name": "Last",
           "email": "first@example.com"
-      },
+      }
       "shipping_address": {
           "address_id": 1
-      },
+      }
       "type": {
           "id": 1,
           "label": "Wedding Gift Card",
@@ -90,7 +90,5 @@ Attribute |  Data Type | Description
 `id` | ID! | The ID assigned to the gift registry
 
 ## Output attributes
-{% include graphql/gift-registry.md %}
 
-### GiftRegistryDynamicAttributeMetadataInterface attributes {#giftregistrydynamicattributemetadatainterface}
-{% include graphql/gift-registry-dynamic-interface.md %}
+{% include graphql/gift-registry.md %}
