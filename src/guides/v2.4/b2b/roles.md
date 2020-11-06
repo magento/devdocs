@@ -25,47 +25,155 @@ Each of these resources contains a hierarchy of other resources. When a Company 
 
 The following table lists all the resources that are available to the customers defined with a company. To visualize the resource hierarchy, log in to a store as the Company Admin and select **Roles and Permissions**, then click the **Edit** action next to the Default User role.
 
-|-- Magento Company
+<div class="columns large-2">
+  <div class="column">
+<h3>Permission</h3>
+<ul>
+<li>All<ul>
+<li>Sales<ul>
+<li>Allow Checkout<ul>
+<li>Use Pay On Account method</li>
+</ul>
+</li>
+<li>View orders<ul>
+<li>View orders of subordinate users</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Quotes<ul>
+<li>View<ul>
+<li>Request, Edit, Delete</li>
+<li>Checkout with Quote</li>
+<li>View quotes of subordinate users</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Order Approvals<ul>
+<li>View My Purchase Orders<ul>
+<li>View for subordinates</li>
+<li>View for all company</li>
+</ul>
+</li>
+<li>Auto-approve POs created within this role</li>
+<li>Approve Purchase Orders without other approvals</li>
+<li>View Approval Rules<ul>
+<li>Create, Edit and Delete</li>
+</ul>
+</li>
+<li>Company Profile<ul>
+<li>Account Information (View)<ul>
+<li>Edit</li>
+</ul>
+</li>
+<li>Legal Address (View)<ul>
+<li>Edit</li>
+</ul>
+</li>
+<li>Contacts (View)</li>
+<li>Payment Information (View)</li>
+<li>Shipping Information (View)</li>
+</ul>
+</li>
+<li>Company User Management<ul>
+<li>View roles and permissions<ul>
+<li>Manage roles and permissions</li>
+</ul>
+</li>
+<li>View users and teams<ul>
+<li>Manage users and teams</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Company credit<ul>
+<li>view</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  
+  </div>
+  <div class="column">
+<h3>Resource - Hierarchy</h3>
+<ul>
+<li>Magento_Company::index - 1<ul>
+<li>Magento_Sales::all - 2<ul>
+<li>Magento_Sales::place_order - 3<ul>
+<li>Magento_Sales::payment_account - 4</li>
+</ul>
+</li>
+<li>Magento_Sales::view_orders - 3<ul>
+<li>Magento_Sales::view_orders_sub - 3</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Magento_NegotiableQuote::all - 2<ul>
+<li>Magento_NegotiableQuote::view_quotes - 3<ul>
+<li>Magento_NegotiableQuote::manage - 4</li>
+<li>Magento_NegotiableQuote::checkout - 4</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Magento_NegotiableQuote::view_quotes_sub - 3</li>
+</ul>
+</li>
+<li>Magento_PurchaseOrder::all - 1<ul>
+<li>Magento_PurchaseOrder:view_purchase_orders - 2<ul>
+<li>Magento_PurchaseOrder:view_purchase_orders_for_subordinates - 3</li>
+<li>Magento_PurchaseOrder:view_purchase_orders_for_company - 3</li>
+</ul>
+</li>
+<li>Magento_PurchaseOrder:autoapprove_purchase_order - 2</li>
+<li>Magento_PurchaseOrder:super_approve_purchase_order - 2</li>
+<li>Magento_PurchaseOrder:view_approval_rules - 2<ul>
+<li>Magento_PurchaseOrder:manage_approval_rules - 3</li>
+</ul>
+</li>
+<li>Magento_Company::view - 2<ul>
+<li>Magento_Company::view_account - 3<ul>
+<li>Magento_Company::edit_account - 4</li>
+</ul>
+</li>
+<li>Magento_Company::view_address - 3<ul>
+<li>Magento_Company::edit_address - 4</li>
+</ul>
+</li>
+<li>Magento_Company::contacts - 3</li>
+<li>Magento_Company::payment_information - 3</li>
+<li>Magento_Company::shipping_information - 3</li>
+</ul>
+</li>
+<li>Magento_Company::user_management - 2<ul>
+<li>Magento_Company::roles_view - 3<ul>
+<li>Magento_Company::roles_edit - 4</li>
+</ul>
+</li>
+<li>Magento_Company::users_view - 3<ul>
+<li>Magento_Company::users_edit - 4</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Magento_Company::credit - 2<ul>
+<li>Magento_Company::credit_history - 3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 
-
-Resource name | Display name | Hierarchy level
---- | --- | ---
-Magento_Company::index | All | 1
-Magento_Sales::all | Sales | 2
-Magento_Sales::place_order | Allow Checkout | 3
-Magento_Sales::payment_account | Use Pay On Account method | 4
-Magento_Sales::view_orders | View orders | 3
-Magento_Sales::view_orders_sub | View orders of subordinate users | 4
-Magento_NegotiableQuote::all | Quotes | 2
-Magento_NegotiableQuote::view_quotes | View | 3
-Magento_NegotiableQuote::manage | Request, Edit, Delete | 4
-Magento_NegotiableQuote::checkout | Checkout with Quote | 4
-Magento_NegotiableQuote::view_quotes_sub | View quotes of subordinate users | 4
-Magento_PurchaseOrder::all | Order Approvals | 1
-Magento_PurchaseOrder:view_purchase_orders | View My Purchase Orders | 2
-Magento_PurchaseOrder:view_purchase_orders_for_subordinates | View for subordinates | 3
-Magento_PurchaseOrder:view_purchase_orders_for_company | View for all company | 3
-Magento_PurchaseOrder:autoapprove_purchase_order| Auto-approve POs created within this role | 2
-Magento_PurchaseOrder:super_approve_purchase_order | Approve Purchase Orders without other approvals | 2
-Magento_PurchaseOrder:view_approval_rules | View Approval Rules | 2
-Magento_PurchaseOrder:manage_approval_rules | Create, Edit and Delete | 3
-Magento_Company::view | Company Profile | 2
-Magento_Company::view_account | Account Information (View) | 3
-Magento_Company::edit_account | Edit | 4
-Magento_Company::view_address | Legal Address (View) | 3
-Magento_Company::edit_address | Edit | 4
-Magento_Company::contacts | Contacts (View) | 3
-Magento_Company::payment_information| Payment Information (View) | 3
-Magento_Company::shipping_information| Shipping Information (View) | 3
-Magento_Company::user_management | Company User Management | 2
-Magento_Company::roles_view | View roles and permissions | 3
-Magento_Company::roles_edit | Manage roles and permissions | 4
-Magento_Company::users_view | View users and teams | 3
-Magento_Company::users_edit | Manage users and teams |  4
-Magento_Company::credit | Company credit | 2
-Magento_Company::credit_history | view | 3
-
+  </div>
+</div>
+  
 ## Manage company roles
 
 The Company Admin controls the possible actions for each customer within the company by creating common roles with embedded permissions and then assigning them to company users. In most cases, a few roles will be sufficient to cover all the different possible combinations of permissions needed for a company.
