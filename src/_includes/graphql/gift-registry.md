@@ -49,3 +49,7 @@ Attribute |  Data Type | Description
 `product` | ProductInterface | The details about the product
 `quantity` | Float! | The requested quantity of the product
 `quantity_fulfilled` | Float! | The fulfilled quantity of the product
+
+### GiftRegistryDynamicAttributeMetadataInterface attributes {#giftregistrydynamicattributemetadatainterface}
+
+{% include graphql/gift-registry-dynamic-interface.md %}
