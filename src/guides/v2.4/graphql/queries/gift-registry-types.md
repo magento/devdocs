@@ -39,11 +39,11 @@ query {
 {
   "data": {
     "giftRegistryTypes": {
-      "id": 1
-      "label": "Christmas Gift Card"
+      "id": 1,
+      "label": "Christmas Gift Card",
       "dynamic_attributes_metadata": {
           "code": "role",
-          "label": "coupon",
+          "label": "coupon"
         }
     }
   }
