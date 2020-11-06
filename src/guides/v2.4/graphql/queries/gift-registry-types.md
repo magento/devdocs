@@ -61,4 +61,5 @@ Attribute |  Data Type | Description
 `label` | String! | The display name of the gift registry type
 
 ### GiftRegistryDynamicAttributeMetadataInterface attributes {#giftregistrydynamicattributemetadatainterface}
+
 {% include graphql/gift-registry-dynamic-interface.md %}
