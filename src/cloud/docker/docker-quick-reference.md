@@ -10,7 +10,7 @@ functional_areas:
 
 ## Docker Compose
 
-Docker Compose is a tool for defining and running multi-container Docker applications. The following table lists the Docker Compose commands for building, deploying, and operating {{site.data.var.mcd-prod}}. You can also use [Magento Cloud Docker CLI](#magento-cloud-docker-cli) commands to complete Docker Compose tasks.
+Docker Compose is a tool for defining and running multi-container Docker applications. The following table lists the `docker-compose` commands for building, deploying, and operating {{site.data.var.mcd-prod}}. You can also use [Magento Cloud Docker CLI](#magento-cloud-docker-cli) commands to complete Docker Compose tasks.
 
 Action | Command
 :----- | :------
