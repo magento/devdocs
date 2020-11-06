@@ -23,11 +23,11 @@ The following query returns the attribute type for various custom and EAV attrib
     attributes: [
       {
         attribute_code: "size"
-        entity_type: "4"
+        entity_type: "catalog_product"
       }
       {
         attribute_code: "color"
-        entity_type: "4"
+        entity_type: "catalog_product"
       }
     ]
   ) {
