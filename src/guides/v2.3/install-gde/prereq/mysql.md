@@ -17,7 +17,7 @@ If you are new to all this and need some help getting started, we suggest the fo
 ## General guidelines {#instgde-prereq-mysql-intro}
 
 {:.bs-callout-info}
-See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html#database) for supported versions of MySQL.
+See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html#database) for supported versions of MySQL.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
