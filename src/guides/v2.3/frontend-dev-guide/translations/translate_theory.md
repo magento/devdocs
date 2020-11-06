@@ -133,9 +133,9 @@ To ensure that the text you add in a `.js` file is collected by the i18n tool an
    ```javascript
    $.mage.__('<string>');
    ```
-   
+
    or
-   
+
    ```javascript
    $t('<string>');
    ```
@@ -145,9 +145,9 @@ To ensure that the text you add in a `.js` file is collected by the i18n tool an
    ```javascript
    $.mage.__('Hello %1').replace('%1', yourVariable);
    ```
-   
+
    or
-   
+
    ```javascript
    $t('Hello %1').replace('%1', yourVariable);
    ```
