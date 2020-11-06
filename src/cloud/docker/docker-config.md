@@ -142,7 +142,7 @@ By default, MailHog listens on port 1025 for SMTP and port 8025 for the frontend
 
 After updating the configuration and restarting the Docker environment, you can connect to the MailHog service from `http://magento2.docker:8026`, and use port 1026 for SMTP communication.
 
-If you do not need the [MailHog] service, use the `--no-mailhog` option to generate the Docker compose configuration: 
+If you do not need the [MailHog] service, use the `--no-mailhog` option to generate the Docker compose configuration:
 
 ```bash
 ./vendor/bin/ece-docker build:compose --no-mailhog

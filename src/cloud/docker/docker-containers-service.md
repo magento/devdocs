@@ -86,8 +86,8 @@ You can change the list of plugins to install by updating the configuration for 
 services:
     elasticsearch:
         environment:
-          - 'ES_PLUGINS=analysis-stempel analysis-nori'   
-``` 
+          - 'ES_PLUGINS=analysis-stempel analysis-nori'
+```
 
 ### Troubleshooting
 

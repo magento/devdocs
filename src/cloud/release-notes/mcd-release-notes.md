@@ -16,6 +16,59 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.2.0
+*Release date: November 9, 2020*<br/>
+
+-  **Container updates–**
+
+   -  **PHP-FPM container**
+
+      -  {:.new}Added support for the gnupg PHP extension.<!--MCLOUD-5981-->
+
+   -  **Database container**
+
+      -  {:.fix}Fixed the database container health check by adding the required database password to the health check command.<!--MCLOUD-7122-->
+
+   -  **Elasticsearch container**
+
+      -  {:.new}Added support for Elasticsearch 7.9 for compatibility with upcoming Magento releases.<!--MCLOUD-7190-->
+
+      -  {:.new}Added support to use the Elasticsearch plugin configuration information from the `services.yaml` file to generate the `docker-compose.yaml` file for a {{ site.data.var.mcd-prod }} environment. See [Elasticsearch plugins]({{ site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-plugins).<!--MCLOUD-2789-->
+
+      -  {:new}Added support for the following Elasticsearch plugins: `analysis-icu`, `analysis-phonetic`, `analysis-stempel`, and `analysis-nori`.  The `analysis-icu` and `analysis-phonetic` plugins are installed by default. You can add or remove the `analysis-stempel` and `analysis-nori` plugins as needed.<!--MCLOUD-2789-->
+
+   -  **CLI container**
+
+      -  {:.new}Added the OpenSSH-client to PHP CLI containers so you can use ssh-agent forwarding for Composer if the `composer.json` file contains private git repositories that require an ssh client for various Composer commands.<!--MCLOUD-6008-->
+
+      -  {:new}Added a Magento Cloud Docker CLI command to run a script or command from the Docker PHP container, for example `./bin/magento-docker php 7.3 bin/magento list`. See [Magento Cloud Docker CLI]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#magento-cloud-docker-cli).<!--MCLOUD-5982-->
+
+-  **Test container**
+
+   -  {:.new}Added a test container for Magento application testing and added the `--with-test` option to the Docker `build:compose` command to create the container when testing Magento. See [Magento application testing](https://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html).<!--MCLOUD-6394-->
+
+-  **FPM-XDEBUG container**
+
+   -  {:.fix}Fixed the Xdebug variable configuration for the Docker ENTRYPOINT to resolve `uninitialized "with_xdebug" variable` errors in the logs. *[Fix submitted by Florent Olivaud](https://github.com/magento/magento-cloud-docker/pull/218)*<!--MCLOUD-6043-->
+
+   -  {:.fix}Added the `--set-docker-host` option to the `ece-docker build:compose` command to configure the host.docker.internal value in the Xdebug container. This option is required to use Xdebug on Linux systems. See [Configure Xdebug for Docker]({{ site.baseurl }}/cloud/docker/docker-development-debug.html).<!--MCLOUD-6430-->
+
+-  {:.new}**Email configuration updates**–Added MailHog configuration options to the ece-docker `build:compose` command to customize the HTTP and SMTP ports and to disable MailHog. See [Set up email]({{ site.baseurl }}/cloud/docker/docker-config.html#set-up-email).<!--MCLOUD-6898, MCLOUD-6660-->
+
+-  **Docker configuration changes**
+
+   -  {:.new}For {{site.data.var.mcd-prod}} 1.2.0 and later, Magento now provides Docker images for each patch version, and the Docker configuration generator creates the Docker configuration with a specified patch version instead of using the latest version. Previously, the Docker configuration generator always used the latest patch version which could break {{ site.data.var.mcd-prod}} environments built an earlier patch version.<!--MCLOUD-7093-->
+
+   -  {:.new}Updated the `build:custom:compose` command with options to specify custom images and versions when generating the Docker compose configuration file, `docker-compose.yaml`. See [Build a custom Docker Compose configuration]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html). <!--MCLOUD-7089-->
+
+   -  {:.fix}Updated the Docker host configuration to expose port 443 to enable access to Magento (https://magento2.docker) from all CLI containers.<!--MCLOUD-6806-->
+
+   -  {:.fix}Updated the build configuration to replace named volumes with regular volumes to prevent issues when deploying {{ site.data.var.mcd-prod }} on Linux or Windows Subsystem for Linux (WSL2).<!--MCLOUD-6732-->
+
+   -  {:.fix}Updated the {{site.data.var.mcd-prod}} functional tests to support Composer 2.0.<!--MCLOUD-7183-->
+
+-  {:.fix}Fixed an issue that caused the {{site.data.var.mcd-prod}} build to fail if the `app/etc/env.php` file exists.<!--MCLOUD-6732-->
+
 ## v1.1.2
 *Release date: September 9, 2020*<br/>
 

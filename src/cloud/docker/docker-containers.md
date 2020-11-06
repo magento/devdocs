@@ -54,7 +54,7 @@ The following table shows the options to customize service container configurati
 | [varnish][varnish-container] | Varnish | `--no-varnish` | 4, 6.2 | Varnish is provisioned by default. Use the `--no-varnish` option to skip Varnish service installation
 | [web][web-container] | NGINX | `--nginx` | 1.9, latest |
 
-Use the following command to view the available options for the `ece-docker build:compose` command:
+Use the following command to view all available options for the `ece-docker build:compose` command:
 
 ```bash
 ./vendor/bin/ece-docker build:compose --help
