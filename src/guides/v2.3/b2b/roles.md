@@ -38,14 +38,6 @@ Magento_NegotiableQuote::view_quotes | View | 3
 Magento_NegotiableQuote::manage | Request, Edit, Delete | 4
 Magento_NegotiableQuote::checkout | Checkout with Quote | 4
 Magento_NegotiableQuote::view_quotes_sub | View quotes of subordinate users | 4
-Magento_PurchaseOrder::all | Order Approvals | 1
-Magento_PurchaseOrder:view_purchase_orders | View My Purchase Orders | 2
-Magento_PurchaseOrder:view_purchase_orders_for_subordinates | View for subordinates | 3
-Magento_PurchaseOrder:view_purchase_orders_for_company | View for all company | 3
-Magento_PurchaseOrder:autoapprove_purchase_order| Auto-approve POs created within this role | 2
-Magento_PurchaseOrder:super_approve_purchase_order | Approve Purchase Orders without other approvals | 2
-Magento_PurchaseOrder:view_approval_rules | View Approval Rules | 2
-Magento_PurchaseOrder:manage_approval_rules | Create, Edit and Delete | 3
 Magento_Company::view | Company Profile | 2
 Magento_Company::view_account | Account Information (View) | 3
 Magento_Company::edit_account | Edit | 4
