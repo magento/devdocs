@@ -17,11 +17,11 @@ pages:
         - label: nginx
           url: /install-gde/prereq/nginx.html
 
-        - label: PHP
-          url: /install-gde/prereq/php-settings.html
-
         - label: MySQL
           url: /install-gde/prereq/mysql.html
+
+        - label: PHP
+          url: /install-gde/prereq/php-settings.html
 
         - label: Elasticsearch
           url: /install-gde/prereq/elasticsearch.html
@@ -163,37 +163,16 @@ pages:
 
             - label: Install by cloning repositories
               url: /install-gde/install/sample-data-after-clone.html
-        
-        - label: Uninstall or reinstall Magento
-          url: /install-gde/install/cli/install-cli-uninstall.html
 
-        - label: Display or change the Admin URI
-          url: /install-gde/install/cli/install-cli-adminurl.html
+    - label: Tutorials
+      children:
 
-        - label: Remove sample data modules or update sample data
-          url: /install-gde/install/cli/install-cli-sample-data-other.html
-
-        - label: Enable or disable modules
-          url: /install-gde/install/cli/install-cli-subcommands-enable.html
-
-        - label: Uninstall modules
-          url: /install-gde/install/cli/install-cli-uninstall-mods.html
-
-        - label: Create or update the deployment configuration
-          url: /install-gde/install/cli/install-cli-subcommands-deployment.html
-
-        - label: Enable or disable maintenance mode
-          url: /install-gde/install/cli/install-cli-subcommands-maint.html
+        - label: Back up and roll back the file system, media, and database
+          url: /install-gde/install/cli/install-cli-backup.html
 
         - label: Configure consumer behavior
           url: /install-gde/install/cli/install-cli-subcommands-consumers.html
-
-        - label: Create the Magento database schema
-          url: /install-gde/install/cli/install-cli-subcommands-db.html
-
-        - label: Update the Magento database schema and data
-          url: /install-gde/install/cli/install-cli-subcommands-db-upgr.html
-
+        
         - label: Configure the lock provider
           url: /install-gde/install/cli/install-cli-subcommands-lock.html
           
@@ -203,19 +182,41 @@ pages:
         - label: Create, edit, or unlock a Magento administrator account
           url: /install-gde/install/cli/install-cli-subcommands-admin.html
 
-        - label: Back up and roll back the file system, media, and database
-          url: /install-gde/install/cli/install-cli-backup.html
+        - label: Create or update the deployment configuration
+          url: /install-gde/install/cli/install-cli-subcommands-deployment.html
 
-        - label: Uninstall themes Composer packages
-          url: /install-gde/install/cli/install-cli-theme-uninstall.html
+        - label: Create the Magento database schema
+          url: /install-gde/install/cli/install-cli-subcommands-db.html
+
+        - label: Display or change the Admin URI
+          url: /install-gde/install/cli/install-cli-adminurl.html
+
+        - label: Enable or disable maintenance mode
+          url: /install-gde/install/cli/install-cli-subcommands-maint.html
+
+        - label: Enable or disable modules
+          url: /install-gde/install/cli/install-cli-subcommands-enable.html
+
+        - label: Modify docroot to improve security
+          url: /install-gde/tutorials/change-docroot-to-pub.html
+
+        - label: Remove sample data modules or update sample data
+          url: /install-gde/install/cli/install-cli-sample-data-other.html
 
         - label: Uninstall language packages
           url: /install-gde/install/cli/install-cli-uninstall-langpk.html
 
-    - label: Tutorials
-      children:
-        - label: Modify docroot to improve security
-          url: /install-gde/tutorials/change-docroot-to-pub.html
+        - label: Uninstall modules
+          url: /install-gde/install/cli/install-cli-uninstall-mods.html
+
+        - label: Uninstall or reinstall Magento
+          url: /install-gde/install/cli/install-cli-uninstall.html
+
+        - label: Update the Magento database schema and data
+          url: /install-gde/install/cli/install-cli-subcommands-db-upgr.html
+        
+        - label: Uninstall themes Composer packages
+          url: /install-gde/install/cli/install-cli-theme-uninstall.html
     
     - label: Troubleshooting
       children:
