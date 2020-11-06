@@ -3,13 +3,7 @@ pages:
 
     - label: Installation flow diagram
       url: /install-gde/install-flow-diagram.html
-
-    - label: Quick start (recommended installation)
-      url: /install-gde/composer.html
-
-    - label: Install options
-      url: /install-gde/bk-install-guide.html
-
+    
     - label: Magento system requirements
       url: /install-gde/system-requirements.html
 
@@ -73,6 +67,12 @@ pages:
 
             - label: Update installation dependencies
               url: /install-gde/install/prepare-install.html
+
+    - label: Quick start (recommended installation)
+      url: /install-gde/composer.html
+
+    - label: Install options
+      url: /install-gde/bk-install-guide.html
 
     - label: Setup Wizard Install
       include_versions: ["2.3"]
