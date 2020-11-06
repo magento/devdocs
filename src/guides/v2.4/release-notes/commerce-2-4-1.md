@@ -1537,7 +1537,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33572-->
 
-*  You can now use POST `/V1/products/special-price` to update a product’s special price without specifying `price_from` and `price_to` parameter values. Previously, the Special Price API only worked with schedule updates, and if these parameters were empty, Magento returned this error: `The Start Time for Future Update needs to be selected. Select and try again`.
+*  You can now use POST `/V1/products/special-price` to update a product’s special price without specifying a `price_to` parameter value. Previously, the Special Price API only worked with schedule updates, and if these parameters were empty, Magento returned this error: `The Start Time for Future Update needs to be selected. Select and try again`.
 
 ### Store
 
