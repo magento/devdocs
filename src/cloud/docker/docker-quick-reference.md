@@ -10,6 +10,8 @@ functional_areas:
 
 ## Docker Compose
 
+Docker Compose is a tool for defining and running multi-container Docker applications. The following table lists the Docker Compose commands for building, deploying, and operating {{site.data.var.mcd-prod}}. You can also use [Magento Cloud Docker CLI](#magento-cloud-docker-cli) commands to complete Docker Compose tasks.
+
 Action | Command
 :----- | :------
 Build and start Docker environment | `docker-compose up -d`
@@ -46,15 +48,68 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 
 ### Additional build options
 
-| Option       | Key              | Available values
-| ------------ | ---------------- | ------------------
-| [Mode][]         | `--mode`, `-m`   | production, developer
-| [File synchronization engine][] | `--sync-engine` | native (default), docker-sync, mutagen
-| Specify a custom URL for Magento | `--host`<br>`--port`
-| Specify custom HTTP and SMTP ports for MailHog | `--mailhog-http-port`<br>`--mailhog-smtp-port`
+View the available options for the `ece-docker build:compose` command:
+
+```bash
+php ./vendor/bin/ece-docker build:compose -h
+```
+
+```terminal
+Description:
+  Build docker configuration
+
+Usage:
+  build:compose [options]
+
+Options:
+      --php=PHP                                        PHP version
+      --nginx=NGINX                                    Nginx version
+      --db=DB                                          DB version
+      --db-image=DB-IMAGE                              DB image
+      --expose-db-port=EXPOSE-DB-PORT                  Expose DB port
+      --expose-db-quote-port=EXPOSE-DB-QUOTE-PORT      Expose port for DB sales
+      --expose-db-sales-port=EXPOSE-DB-SALES-PORT      Expose port for DB quote
+      --with-entrypoint                                Add DB entrypoint volume
+      --with-mariadb-conf                              Add MariaDb config volume
+      --redis=REDIS                                    Redis version
+      --es=ES                                          Elasticsearch version
+      --rmq=RMQ                                        RabbitMQ version
+      --node=NODE                                      Node.js version
+      --selenium-version=SELENIUM-VERSION              Selenium version
+      --selenium-image=SELENIUM-IMAGE                  Selenium image
+      --no-es                                          Disable Elasticsearch
+      --no-mailhog                                     Disable MailHog
+      --mailhog-http-port                              Custom HTTP port for MailHog
+      --mailhog-smtp-port                              Custom SMTP port for MailHog
+      --set-docker-host                                Sets host.docker.internal for fpm_xdebug container to
+                                                       resolve debug issue for LINUX system
+  -m, --mode=MODE                                      Mode of environment (developer, production)
+      --sync-engine=SYNC-ENGINE                        File sync engine. Works only with developer mode. Available: (docker-sync, mutagen, native)
+      --with-cron                                      Add cron container
+      --no-varnish                                     Remove Varnish container
+      --with-selenium                                  Add Selenium latest version
+      --with-test                                      Add container for running tests
+      --no-tmp-mounts                                  Remove /tmp mounted volume
+      --with-xdebug                                    Enables XDebug
+      --env-vars[=ENV-VARS]                            Cloud environment variables
+      --installation-type[=INSTALLATION-TYPE]          Sets magento installation type [default: "composer"]
+      --host[=HOST]                                    Host name
+      --port[=PORT]                                    Port
+      --tls-port                                       TLS port
+      --es-env-var=ES-ENV-VAR                          Environment variable for elasticsearch service (multiple values allowed)
+      --db-increment-increment=DB-INCREMENT-INCREMENT  "auto_increment_increment" database variable
+      --db-increment-offset=DB-INCREMENT-OFFSET        "auto_increment_offset" database variable
+  -h, --help                                           Display this help message
+  -q, --quiet                                          Do not output any message
+  -V, --version                                        Display this application version
+      --ansi                                           Force ANSI output
+      --no-ansi                                        Disable ANSI output
+  -n, --no-interaction                                 Do not ask any interactive question
+  -v|vv|vvv, --verbose                                 Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+  ```
 
 {:.bs-callout-info}
-See [Service versions] for a list of service configuration options you can add to the `ece-docker build:compose` command to customize the Cloud Docker environment configuration.
+See [Service versions] for additional information about the service configuration options for the `ece-docker build:compose` command.
 
 ## Magento Cloud Docker CLI
 
@@ -92,6 +147,16 @@ Start containers | `./bin/magento-docker start`
 Restart containers | `./bin/magento-docker restart`
 Destroy containers | `./bin/magento-docker down`
 Destroy, re-create, and start containers | `./bin/magento-docker up`
+Clears Redis cache | `./bin/magento-docker flush-redis`
+Clears Varnish cache | `./bin/magento-docker flush-varnish`
+Access database | `./bin/magento-docker ece-db`
+Run a command in a PHP container<br>Supports the following values for the PHP version: 7.1, 7.2, 7.3, 7.4| `./bin/magento-docker php <version>`
+
+Use the following command to view the magento-docker CLI command help:
+
+```bash
+./bin/magento-docker -h
+```
 
 <!--Link definitions-->
 
