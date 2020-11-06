@@ -58,4 +58,4 @@ Where:
 -  `cache_dir` is a directory where the local cache will be stored. It is suggested to use `/dev/shm/`.
 
 We recommend the use of Redis for remote caching - `\Magento\Framework\Cache\Backend\Redis`, and the File cache implementation - `Cm_Cache_Backend_File` as the local cache.
-We also recommend the use of the [`cache preload`]({{page.baseurl}/config-guide/redis/redis-pg-cache.html#redis-preload-feature) feature, as it will drastically decrease the pressure on Redis. Do not forget to add suffix ':version' for preload keys.
+We also recommend the use of the [`cache preload`]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html#redis-preload-feature) feature, as it will drastically decrease the pressure on Redis. Do not forget to add suffix ':version' for preload keys.
