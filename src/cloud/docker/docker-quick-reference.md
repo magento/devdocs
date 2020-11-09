@@ -122,7 +122,7 @@ For {{site.data.var.mcd-prod}} 1.2 and later, you have an additional option to s
 > Generate a custom `docker-compose.yaml` file
 
 ```bash
-./vendor/bin/ece-docker build:custom:compose '{"name":"magento","system":{"mode":"production","host":"magento2.test","port":"8080","db":{"increment_increment":3,"increment_offset":2},"mailhog":{"smtp_port":"1026","http_port":"8026"}},"services":{"php":{"version":"7.4","enabled":true,"extensions":{"enabled":["xsl"]}},"mysql":{"version":"10.2","image":"mariadb","enabled":true}, "mailhog": {"enabled":true}}}'
+./vendor/bin/ece-docker build:custom:compose '{"name":"magento","system":{"mode":"production","host":"magento2.test","port":"8080","db":{"increment_increment":3,"increment_offset":2},"mailhog":{"smtp_port":"1026","http_port":"8026"}},"services":{"php":{"version":"7.3","enabled":true,"extensions":{"enabled":["xsl"]}},"mysql":{"version":"10.2","image":"mariadb","enabled":true}, "mailhog": {"enabled":true}}}'
 ```
 
 This command generates the following `docker-compose.yaml` file:
@@ -273,7 +273,6 @@ networks:
 
 ```
 
-For {{site.data.var.mcd-prod}} 1.2 and later, you have an additional option to specify custom images and image versions using the `ece-docker build:custom:compose` command.
 
 #### Example 2
 
