@@ -273,7 +273,6 @@ networks:
 
 ```
 
-
 #### Example 2
 
 > Generate a custom `docker-compose.yaml` file with custom images and image versions
