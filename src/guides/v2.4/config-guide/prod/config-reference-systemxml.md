@@ -364,32 +364,32 @@ The following validation rules are available:
 | `ipv6`                          | Allows a valid IP v6 address.                                                                                           |
 | `letters-only`                  | Allows letters only. For example, `abcABC`.                                                                             |
 | `letters-with-basic-punc`       | Allows letters or punctuation only.<br>Must pass the following expression: `/^[a-z\-.,()\u0027\u0022\s]+$/i`.           |
+| `mobileUK`                      | Allows a (UK) mobile phone number.                                                                                      |
 | `no-marginal-whitespace`        | Disallows white spaces at the start or end of the value.                                                                |
 | `no-whitespace`                 | Disallows white spaces.                                                                                                 |
-| `time`                          | Allows a valid time in 24-hour format, between 00:00 and 23:59. For example `15`, `15:05` or `15:05:48`.                |
-| `time12h`                       | Allows a valid time in 12-hour format, between 12:00 am and 11:59:59 pm. For example `3 am`, `11:30 pm`, `02:15:00 pm`. |
-| `mobileUK`                      | Allows a (UK) mobile phone number.                                                                                      |
 | `phoneUK`                       | Allows a (UK) phone number.                                                                                             |
 | `phoneUS`                       | Allows a (US) phone number.                                                                                             |
 | `required-entry`                | Disallows an empty value (equivalent validation as `validate-no-empty`).<br>Validation failure message: "This is a required field." |
-| `validate-no-html-tags`         | Disallows usage of HTML tags.                                                                                           |
-| `validate-select`               | Enforces that the select option chosen not have a `null` value, string value of `none` or string length of 0.        |
-| `validate-no-empty`             | Disallows an empty value (equivalent validation as `requried-entry`).<br>Validation failure message: "Empty value."     |
+| `time`                          | Allows a valid time in 24-hour format, between 00:00 and 23:59. For example `15`, `15:05` or `15:05:48`.                |
+| `time12h`                       | Allows a valid time in 12-hour format, between 12:00 am and 11:59:59 pm. For example `3 am`, `11:30 pm`, `02:15:00 pm`. |
+| `validate-admin-password`       | Allows 7 or more characters, using both numeric and alphabetic.                                                         |
 | `validate-alphanum-with-spaces` | Allows usage of letters (a-z or A-Z), numbers (0-9), or spaces only.                                                    |
+| `validate-clean-url`            | Allows a valid URL. For example, http://www.example.com or www.example.com.                                             |
+| `validate-currency-dollar`      | Allows a valid (dollar) amount. For example, $100.00.                                                                   |
 | `validate-data`                 | Allows usage of letters (a-z or A-Z), numbers (0-9), or underscores (\_) only.<br>The first character must be a letter.<br>(Must match expression: `/^[A-Za-z]+[A-Za-z0-9_]+$/`)<br>Validation failure message: "Please use only letters (a-z or A-Z), numbers (0-9) or underscore (\_) in this field, and the first character should be a letter."  |
-| `validate-street`               | Allows usage of letters (a-z or A-Z), numbers (0-9), spaces, and “#” only.                                              |
-| `validate-phoneStrict`          | Allows a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                               |
-| `validate-phoneLax`             | Allows a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                               |
-| `validate-fax`                  | Allows a valid fax number. For example, 123-456-7890.                                                                   |
+| `validate-date-au`              | Enforces the following date format: dd/mm/yyyy. For example, 17/03/2006 for the 17th of March, 2006.                    |
 | `validate-email`                | Allows a valid email address. For example, johndoe@domain.com.                                                          |
 | `validate-emailSender`          | Allows a valid email address. For example, johndoe@domain.com.                                                          |
+| `validate-fax`                  | Allows a valid fax number. For example, 123-456-7890.                                                                   |
+| `validate-no-empty`             | Disallows an empty value (equivalent validation as `requried-entry`).<br>Validation failure message: "Empty value."     |
+| `validate-no-html-tags`         | Disallows usage of HTML tags.                                                                                           |
 | `validate-password`             | Allows 6 or more characters. Leading and trailing spaces will be ignored.                                               |
-| `validate-admin-password`       | Allows 7 or more characters, using both numeric and alphabetic.                                                         |
-| `validate-url`                  | Allows a valid URL. Protocol is required (http://, https:// or ftp://).                                                 |
-| `validate-clean-url`            | Allows a valid URL. For example, http://www.example.com or www.example.com.                                             |
-| `validate-xml-identifier`       | Allows a valid XML-identifier. For example, something_1, block5, id-4.                                                  |
+| `validate-phoneLax`             | Allows a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                               |
+| `validate-phoneStrict`          | Allows a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                               |
+| `validate-select`               | Enforces that the select option chosen not have a `null` value, string value of `none` or string length of 0.        |
 | `validate-ssn`                  | Allows a valid (US) social security number. For example, 123-45-6789.                                                        |
+| `validate-street`               | Allows usage of letters (a-z or A-Z), numbers (0-9), spaces, and “#” only.                                              |
+| `validate-url`                  | Allows a valid URL. Protocol is required (http://, https:// or ftp://).                                                 |
+| `validate-xml-identifier`       | Allows a valid XML-identifier. For example, something_1, block5, id-4.                                                  |
 | `validate-zip-us`               | Allows a valid (US) ZIP code. For example, 90602 or 90602-1234.                                                         |
-| `validate-date-au`              | Enforces the following date format: dd/mm/yyyy. For example, 17/03/2006 for the 17th of March, 2006.                    |
-| `validate-currency-dollar`      | Allows a valid (dollar) amount. For example, $100.00.                                                                   |
 | `vinUS`                         | Allows (US) vehicle identification number (VIN) value.                                                                  |
