@@ -188,7 +188,7 @@ The Selenium container enables the [Magento Functional Testing Framework (MFTF)]
 **Docker base image**: [magento/magento-cloud-docker-php][php-cloud], based on the [magento/magento-cloud-docker-php][php-cloud] Docker image<br/>
 **Ports exposed**: None<br/>
 
-The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] Docker image has a writable file system and is used for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
+The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] Docker image, has a writable file system and is used for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
 
 ## TLS container
 
