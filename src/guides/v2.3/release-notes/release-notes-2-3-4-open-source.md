@@ -55,7 +55,7 @@ The following platform upgrades help enhance website security and PCI compliance
 
 *  The core integration of the Authorize.net payment method has been deprecated. Please use the official payment integration that is available on Marketplace.
 
-**Note**: Magento 2.3.4 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Life) on December 1, 2019. We recommend updating your deployment to a supported version of PHP. See [Magento 2.3 technology stack requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html) for information about supported versions.
+**Note**: Magento 2.3.4 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Life) on December 1, 2019. We recommend updating your deployment to a supported version of PHP. See [Magento 2.3 technology stack requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html) for information about supported versions.
 
 ### Performance boosts
 
