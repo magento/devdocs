@@ -90,7 +90,17 @@ To launch the Docker environment in developer mode:
 
 1. Install Magento in your Docker environment.
 
+   -  For Magento version 2.4 and 2.4.1 only, run the following command to apply patches before you deploy.
+
+      ```bash
+      docker-compose run deploy php ./vendor/bin/ece-patches apply
+      ```
+
    -  Deploy Magento in the Docker container.
+
+      For Magento version 2.4 and 2.4.1, run the following command to apply patches before you deploy.
+
+      ```
 
       ```bash
       docker-compose run --rm deploy cloud-deploy
