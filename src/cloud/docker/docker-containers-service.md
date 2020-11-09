@@ -78,9 +78,9 @@ If your Cloud project uses Magento version 2.3.5 or earlier with MySQL search, a
 ### Elasticsearch plugins
 
 The `analysis-icu` and `analysis-phonetic` plugins are installed by default and can not be skipped.
-If you use Elasticsearch 6.5 and later, the default Elasticsearch plugins configured in `.magento/services.yaml` are installed automatically along with any custom plugins added to the `services.yaml`. When you generate the `docker-compose.yaml` file, custom plugins are added to the `ES_PLUGINS` environment configuration option.
+If you use Elasticsearch 6.5 and later, the default Elasticsearch plugins are installed automatically along with any custom plugins added to the `services.yaml`file. When you generate the `docker-compose.yaml` file, you can add additional custom plugins to the Docker environment using the `ES_PLUGINS` environment configuration option.
 
-You can change the list of plugins to install by updating the configuration for the `ES_PLUGINS` variable:
+The following example adds the `analysis-stempel` and `analysis-nori` plugins to the Docker environment.
 
 ```yaml
 services:
@@ -177,15 +177,15 @@ docker-compose run --rm redis redis-cli -h redis
 ## Selenium container
 
 **Container name**: selenium<br/>
-**Docker base image**: [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome<br/>
+**Docker base image**: [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome), based on the [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome/h) Docker image<br/>
 **Ports exposed**: `4444`<br/>
 
-The Selenium container, based on the [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome/h), enables the [Magento Functional Testing Framework (MFTF)](https://devdocs.magento.com/mftf/docs/introduction.html) for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
+The Selenium container enables the [Magento Functional Testing Framework (MFTF)](https://devdocs.magento.com/mftf/docs/introduction.html) for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
 
 ## Test container
 
 **Container name**: test<br/>
-**Docker base image**: [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image<br/>
+**Docker base image**: [magento/magento-cloud-docker-php][php-cloud], based on the [magento/magento-cloud-docker-php][php-cloud] Docker image<br/>
 **Ports exposed**: None<br/>
 
 The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] Docker image has a writable file system and is used for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
@@ -193,7 +193,7 @@ The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] D
 ## TLS container
 
 **Container name**: tls<br/>
-**Docker base image**: [magento/magento-cloud-docker-tls][tls], which is based on the [debian:jessie](https://hub.docker.com/_/debian) Docker image<br/>
+**Docker base image**: [magento/magento-cloud-docker-tls][tls], based on the [debian:jessie](https://hub.docker.com/_/debian) Docker image<br/>
 **Ports exposed**: `443`</br>
 
 The TLS termination proxy container facilitates the Varnish SSL termination over HTTPS.
@@ -209,7 +209,7 @@ To increase the timeout on this container, add the following code to the  `docke
 ## Varnish container
 
 **Container name**: varnish<br/>
-**Docker base image**: [magento/magento-cloud-docker-varnish][varnish], which is based on the [centos]<br>
+**Docker base image**: [magento/magento-cloud-docker-varnish][varnish], based on the [centos] Docker image<br>
 **Ports exposed**: `80`<br/>
 
 The Varnish container simulates Fastly and is useful for testing VCL snippets.
@@ -233,7 +233,7 @@ docker-compose exec varnish varnishadm ban req.url '~' '.'
 ## Web container
 
 **Container name**: web<br/>
-**Docker base image**: [magento/magento-cloud-docker-nginx][nginx], which is based on the [centos] Docker image<br/>
+**Docker base image**: [magento/magento-cloud-docker-nginx][nginx], based on the [centos] Docker image<br/>
 **Ports exposed**: None<br/>
 
 The Web container uses NGINX to handle web requests after TLS and Varnish. This container passes all requests to the FPM container to serve the PHP code. See [Request flow]({{site.baseurl}}/cloud/docker/docker-containers.html#request-flow).

@@ -37,7 +37,7 @@ The release notes include:
 
       -  **Run commands inside Docker PHP containers**–Now you can use the Magento Cloud Docker CLI to run commands inside PHP containers in your Docker environment without having to install PHP on the host. For example, the following command builds the configuration:  `./bin/magento-docker php 7.3 vendor/bin/ece-docker build:compose`. See [Magento Cloud Docker CLI]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#magento-cloud-docker-cli). *[Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/209).*<!--MCLOUD-5982-->
 
-      -  Added the OpenSSH-client to PHP CLI containers so you can use ssh-agent forwarding for Composer if the `composer.json` file contains private git repositories that require an ssh client for various Composer commands.<!--MCLOUD-6008-->
+      -  Added the OpenSSH-client to PHP CLI containers. Now, you can use ssh-agent forwarding for Composer if the `composer.json` file contains private git repositories that require an ssh client to use Composer commands.<!--MCLOUD-6008-->
 
    -  {:.new}**Test container**–Added a test container for Magento application testing and added the `--with-test` option to the Docker `build:compose` command to create the container only when testing Magento in the Docker environment. See [Magento application testing](https://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html).<!--MCLOUD-6394-->
 
