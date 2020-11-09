@@ -71,9 +71,9 @@ The copyItemsBetweenRequisitionList mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-source_id| ID! | The ID of the source requisition list.
 destination_id| ID! | The ID of the destination requisition list. If null, the mutation creates a new requisition list.
 itemIds| [ID!]! | An array of selected requisition list items that are to be copied from source to destination.
+source_id| ID! | The ID of the source requisition list.
 
 ## Output attributes
 
@@ -81,8 +81,8 @@ The copyItemsBetweenRequisitionList object returns the uid of the requisition li
 
 Attribute |  Data Type | Description
 --- | --- | ---
-uid | ID! | The unique ID of the modified requisition list.
 items_count | Int! | The number of products in the requisition list.
+uid | ID! | The unique ID of the modified requisition list.
 
 ## Related topics
 

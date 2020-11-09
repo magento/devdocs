@@ -61,8 +61,8 @@ The removeRequisitionListItems mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-uid| ID! | The unique ID of the requisition list to change
-items_count | [ID!]! | An array of items IDs corresponding to products to be removed from the requisition list
+items_count | [ID!]! | An array of items IDs corresponding to products to be removed from the requisition list.
+uid| ID! | The unique ID of the requisition list to change.
 
 ## Output attributes
 
@@ -70,8 +70,8 @@ The removeRequisitionListItems object returns the uid of the requisition list as
 
 Attribute |  Data Type | Description
 --- | --- | ---
-uid | ID! | The unique ID of the modified requisition list.
 items_count | Int! | The number of products in the requisition list.
+uid | ID! | The unique ID of the modified requisition list.
 
 ## Related topics
 
