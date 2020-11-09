@@ -205,6 +205,11 @@ pages:
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
 
+        - label: copyItemsBetweenRequisitionList mutation
+          url: /graphql/mutations/copy-items-between-requisition-list.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
         - label: copyProductsToWishlist mutation
           url: /graphql/mutations/copy-products-to-wishlist.html
           edition: ee-only
@@ -305,6 +310,11 @@ pages:
           edition: ee-only
           exclude_versions: ["2.3"]
 
+        - label: moveItemsBetweenRequisitionList mutation
+          url: /graphql/mutations/move-items-between-requisition-list.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
         - label: placeOrder mutation
           url: /graphql/mutations/place-order.html
 
@@ -330,6 +340,11 @@ pages:
           url: /graphql/mutations/remove-reward-points.html
           edition: ee-only
           exclude_versions: ["2.3"]
+
+        - label: removeRequisitionListItems mutation
+          url: /graphql/mutations/remove-requisition-list-items.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
 
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
