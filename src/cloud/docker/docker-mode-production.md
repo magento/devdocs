@@ -21,10 +21,12 @@ To launch the Docker environment in production mode:
 1. Install the template dependencies and add the default hostname to your `/etc/hosts` file, use the following command to run the Docker initialization script:
 
    ```bash
-   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash
+   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/<package-version>/bin/init-docker.sh | bash
    ```
 
-   If required, you can add options to the `init-docker.sh` initialization script to customize your Docker environment. Run the following command to see the available options:
+   For `<package-version>`, use the [latest release of the {{site.data.var.mcd-package}}].
+
+   You can customize the options for the `init-docker.sh` initialization script your Docker environment. For example, you can specify the PHP version (default is 7.2) and the [Docker image version] (default 1.1). We recommend using the latest version of the Magento Cloud Docker images. Run the following command to see the available options:
 
    ```bash
    curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash -s -- --help
@@ -97,6 +99,7 @@ To launch the Docker environment in production mode:
    -  [`https://magento2.docker`](https://magento2.docker)
 
 [cloud-repo]: https://github.com/magento/magento-cloud
+[Docker image version]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
 [magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [configure Xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug
