@@ -192,7 +192,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}**CLI command updates**–
 
-   -  {:.new}**New cron command**–You can now manually manage cron processing in your Magento Commerce Cloud environment using the `cron:disable` and `cron:enable` commands. Use the disable command to stop all active cron processes and disable all Magento cron jobs.  Use the enable command to re-enable cron jobs when you are ready.  See [Disable cron jobs]({{site.baseurl}}/cloud/configure/setup-cron-jobs.html#disable-cron-jobs).
+   -  {:.new}**New cron command**–You can now manually manage cron processing in your {{ site.data.var.ece }} environment using the `cron:disable` and `cron:enable` commands. Use the disable command to stop all active cron processes and disable all Magento cron jobs.  Use the enable command to re-enable cron jobs when you are ready.  See [Disable cron jobs]({{site.baseurl}}/cloud/configure/setup-cron-jobs.html#disable-cron-jobs).
 
    -  {:.new}**Improved error reporting**–Added better logging for Magento CLI command failures that occur during {{site.data.var.ct}} processing.<!--MAGECLOUD-4849-->
 
