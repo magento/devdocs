@@ -78,7 +78,7 @@ If your Cloud project uses Magento version 2.3.5 or earlier with MySQL search, a
 ### Elasticsearch plugins
 
 The `analysis-icu` and `analysis-phonetic` plugins are installed by default and can not be skipped.
-If you use Elasticsearch 6.5 and later, the default Elasticsearch plugins configured in `.magento/services.yaml` are installed automatically along with any custom plugins added to the `services.yaml`. When you generate the `docker-compose.yaml` file, custom plugins are added to the `ES_PLUGINS` environment configuration option.
+If you use Elasticsearch 6.5 and later, the default Elasticsearch plugins configured in `.magento/services.yaml` are installed automatically along with any custom plugins added to the `services.yaml` file. When you generate the `docker-compose.yaml` file, custom plugins are added to the `ES_PLUGINS` environment configuration option.
 
 You can change the list of plugins to install by updating the configuration for the `ES_PLUGINS` variable:
 
@@ -188,7 +188,7 @@ The Selenium container, based on the [selenium/standalone-chrome/](https://hub.d
 **Docker base image**: [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image<br/>
 **Ports exposed**: None<br/>
 
-The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] Docker image has a writable file system and is used for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
+The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] Docker image, has a writable file system and is used for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
 
 ## TLS container
 

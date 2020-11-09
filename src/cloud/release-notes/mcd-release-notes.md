@@ -39,7 +39,7 @@ The release notes include:
 
       -  Added the OpenSSH-client to PHP CLI containers so you can use ssh-agent forwarding for Composer if the `composer.json` file contains private git repositories that require an ssh client for various Composer commands.<!--MCLOUD-6008-->
 
-   -  {:.new}**Test container**–Added a test container for Magento application testing and added the `--with-test` option to the Docker `build:compose` command to create the container only when testing Magento in the Docker environment. See [Magento application testing](https://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html).<!--MCLOUD-6394-->
+   -  {:.new}**Test container**–Added a test container for Magento application testing, and added the `--with-test` option to the Docker `build:compose` command to create the container only when testing Magento in the Docker environment. See [Magento application testing](https://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html).<!--MCLOUD-6394-->
 
    -  {:.new}**FPM-XDEBUG container**
 
@@ -53,7 +53,7 @@ The release notes include:
 
    -  For {{site.data.var.mcd-prod}} 1.2.0 and later, Magento now provides Docker images for each patch version, and the Docker configuration generator creates the Docker configuration with a specified patch version instead of using the latest. Previously, the Docker configuration generator built the configuration using the latest patch version which could break {{ site.data.var.mcd-prod}} environments built using an earlier version.<!--MCLOUD-7093-->
 
-   -  **Specify custom images and versions in custom Magento Cloud Docker configuration**service configuration  custom environment Updated the `build:custom:compose` command with options to specify custom images and versions when generating a custum Docker compose configuration file, `docker-compose.yaml`. See [Build a custom Docker Compose configuration]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#build-a-custom-docker-compose-configuration). <!--MCLOUD-7089-->
+   -  **Specify custom images and versions in custom Magento Cloud Docker configuration**—Updated the `build:custom:compose` command with options to specify custom images and versions when generating a custom Docker compose configuration file (`docker-compose.yaml`). See [Build a custom Docker Compose configuration]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#build-a-custom-docker-compose-configuration). <!--MCLOUD-7089-->
 
    -  Updated the Docker host configuration to expose port 443 to enable access to Magento (`https://magento2.docker`) from all CLI containers.<!--MCLOUD-6806-->
 
