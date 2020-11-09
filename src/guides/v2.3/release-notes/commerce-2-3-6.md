@@ -786,6 +786,10 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 *  Bulk order updates using `PUT /async/bulk/V1/orders/:id` now update the order status as expected. Previously, Magento threw this error: `report.ERROR: Property "AdditionalInformation" does not have accessor method "setAdditionalInformation" in class "Magento\Sales\Api\Data\OrderPaymentInterface".`
 
+<!--- MC-33512-->
+
+*  You can now use POST `/V1/products/special-price` to update a product’s special price without specifying a `price_to` parameter value. Previously, attempts to set the price update without the `price_to` parameter specified were unsuccessful.
+
 ### Website Restriction
 
 <!--- MC-33471-->
