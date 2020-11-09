@@ -55,7 +55,7 @@ mutation {
       "source": {
           "uid": "4",
           "items_count": 2
-        }
+        },
       "destination": {
           "uid": "5",
           "items_count": 2
