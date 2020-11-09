@@ -1,8 +1,8 @@
-<!-Note: The error code tables in this file are auto-generated from source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to the magento/ece-tools repository.->
+<!--Note: This topic is auto-generated from the https://github.com/magento/ece-tools/blob/e3b13ca023afe324cd93d0caa2fd62d5683b60b9/config/schema.error.yaml source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to the magento/ece-tools repository.-->
 
 ## Critical Errors
 
-Critical errors indicate a problem with the Magento Commerce Cloud project configuration that causes deployment failure, for example incorrect, unsupported, or missing configuration for required settings. Before you can deploy, you must update the configuration to resolve these errors.
+Critical errors indicate a problem with the {{ site.data.var.ece }} project configuration that causes deployment failure, for example incorrect, unsupported, or missing configuration for required settings. Before you can deploy, you must update the configuration to resolve these errors.
 
 ### Build stage
 
@@ -71,9 +71,10 @@ Critical errors indicate a problem with the Magento Commerce Cloud project confi
 | 129 | install-update: reset-password | Unable to read reset password template |  |
 | 130 | install-update: cache_type | Command failed: `php ./bin/magento cache:enable` | Command `php ./bin/magento cache:enable` runs only when Magento was installed but `./app/etc/env.php` file was absent or empty at the beginning of the deployment. Check the `cloud.log` for more information. Add `VERBOSE_COMMANDS: '-vvv'` into `.magento.env.yaml` for more detailed command output. |
 | 131 | install-update | The `crypt/key`  key value does not exist in the `./app/etc/env.php` file or the `CRYPT_KEY` cloud environment variable | This error occurs if the `./app/etc/env.php` file is not present when Magento deployment begins, or if the `crypt/key` value is undefined. If you migrated the database from another environment, retrieve the crypt key value from that environment. Then, add the value to the [CRYPT_KEY](https://devdocs.magento.com/cloud/env/variables-deploy.html#crypt_key) cloud environment variable in your current environment. See [Add the Magento encryption key](https://devdocs.magento.com/cloud/setup/first-time-setup-import-import.html#encryption-key). If you accidentally removed the `./app/etc/env.php` file, use the following command to restore it from the backup files created from a previous deployment: `./vendor/bin/ece-tools backup:restore` CLI command ." |
-| 132 |  | Can not connect to the Elasticsearch service | Check that credentials for elasticsearch are correct and service is running |
+| 132 |  | Can not connect to the Elasticsearch service | Check for valid Elasticsearch credentials and verify that the  service is running |
 | 133 | validate-config | Remove Magento Braintree module configuration which is no longer supported in Magento 2.4 and later versions. | Support for the Braintree module is no longer included with Magento 2.4.0 and later. Remove the CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL variable from the variables section of the .magento.app.yaml file. For Braintree support, use an official Braintree Payments extension from the Magento Marketplace instead. |
 | 134 | validate-config | Magento 2.4.0 requires Elasticsearch service to be installed | Install Elasticsearch service |
+| 135 | validate-config | The search engine must be set to Elasticsearch for Magento >= 2.4.0 | Check the SEARCH_CONFIGURATION variable for the `engine` option. If it is configured, remove the option, or set the value to "elasticsearch". |
 
 ### Post-deploy stage
 
@@ -102,7 +103,7 @@ Critical errors indicate a problem with the Magento Commerce Cloud project confi
 
 ## Warning Errors
 
-Warning errors indicate a problem with the Magento Commerce Cloud project configuration such as incorrect, deprecated, unsupported, or missing configuration settings for optional features that can affect site operation. Although a warning does not cause deployment failure, you should review warning messages and update the configuration to resolve them.
+Warning errors indicate a problem with the {{ site.data.var.ece }} project configuration such as incorrect, deprecated, unsupported, or missing configuration settings for optional features that can affect site operation. Although a warning does not cause deployment failure, you should review warning messages and update the configuration to resolve them.
 
 ### Build stage
 
