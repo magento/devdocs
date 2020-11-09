@@ -26,7 +26,7 @@ Each of these resources contains a hierarchy of other resources. When a Company 
 The following table lists all the resources that are available to the customers defined with a company. To visualize the resource hierarchy, log in to a store as the Company Admin and select **Roles and Permissions**, then click the **Edit** action next to the Default User role.
 
 Display name | Resource name
---- | --- | ---
+--- | ---
 &emsp; All | Magento_Company::index
 &emsp; &emsp; Sales | Magento_Sales::all
 &emsp; &emsp; &emsp; Allow Checkout | Magento_Sales::place_order
