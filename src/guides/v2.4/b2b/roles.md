@@ -21,7 +21,7 @@ Within a company, customers may have different job roles, levels of responsibili
 Each of these resources contains a hierarchy of other resources. When a Company Admin grants or blocks access to a resource from the store UI, the action applies to all sub-resources, unless explicitly overridden. However, if you grant or block access using web APIs, you must specify each resource individually.
 
 {% include webapi/b2b_roles.md %}
-  
+
 ## Manage company roles
 
 The Company Admin controls the possible actions for each customer within the company by creating common roles with embedded permissions and then assigning them to company users. In most cases, a few roles will be sufficient to cover all the different possible combinations of permissions needed for a company.
