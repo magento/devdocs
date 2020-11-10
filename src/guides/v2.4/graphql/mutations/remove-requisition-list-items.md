@@ -5,14 +5,15 @@ b2b_only: true
 contributor_name: Zilker Technology
 contributor_link: https://www.ztech.io/
 ---
-The removeRequisitionListItems mutation removes items from the specified requisiton list for the logged in customer.
+The `removeRequisitionListItems` mutation removes items from the specified requisiton list for the logged in customer.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
 {:.bs-callout-info}
-Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) with the btob_website_configuration_requisition_list_active attribute to determine whether requisition lists are supported.
+Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) with the `btob_website_configuration_requisition_list_active` attribute to determine whether requisition lists are supported.
 
 ## Syntax
+
 ```graphql
 mutation {
   removeRequisitionListItems(
@@ -28,6 +29,7 @@ mutation {
 The following example removes the Frequently Ordered Products requisition list item by ID.
 
 **Request:**
+
 ``` graphql
 mutation {
   removeRequisitionListItems(
@@ -41,7 +43,9 @@ mutation {
   }
 }
 ```
+
 **Response:**
+
 ``` json
 {
   "data": {
@@ -57,7 +61,7 @@ mutation {
 
 ## Input attributes
 
-The removeRequisitionListItems mutation requires the following input.
+The `removeRequisitionListItems` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -66,7 +70,7 @@ uid| ID! | The unique ID of the requisition list to change.
 
 ## Output attributes
 
-The removeRequisitionListItems object returns the uid of the requisition list as well as the input attributes.
+The `removeRequisitionListItems` object returns the uid of the requisition list as well as the input attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---

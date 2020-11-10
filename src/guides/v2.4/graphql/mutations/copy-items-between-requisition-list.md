@@ -5,14 +5,15 @@ b2b_only: true
 contributor_name: Zilker Technology
 contributor_link: https://www.ztech.io/
 ---
-The copyItemsBetweenRequisitionList mutation copies items from one requisition list to another.
+The `copyItemsBetweenRequisitionList` mutation copies items from one requisition list to another.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
 {:.bs-callout-info}
-Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) with the btob_website_configuration_requisition_list_active attribute to determine whether requisition lists are supported.
+Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) with the `btob_website_configuration_requisition_list_active` attribute to determine whether requisition lists are supported.
 
 ## Syntax
+
 ```graphql
 mutation {
   copyItemsBetweenRequisitionList(
@@ -28,7 +29,9 @@ mutation {
 ## Example usage
 
 The following example copies items from one requisition list to another.
+
 **Request:**
+
 ``` graphql
 mutation {
   copyItemsBetweenRequisitionList(
@@ -47,7 +50,9 @@ mutation {
   }
 }
 ```
+
 **Response:**
+
 ``` json
 {
   "data": {
@@ -67,7 +72,7 @@ mutation {
 
 ## Input attributes
 
-The copyItemsBetweenRequisitionList mutation requires the following input.
+The `copyItemsBetweenRequisitionList` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -77,7 +82,7 @@ source_id| ID! | The ID of the source requisition list.
 
 ## Output attributes
 
-The copyItemsBetweenRequisitionList object returns the uid of the requisition list as well as the input attributes.
+The `copyItemsBetweenRequisitionList` object returns the uid of the requisition list as well as the input attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
