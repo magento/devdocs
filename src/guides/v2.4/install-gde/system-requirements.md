@@ -110,7 +110,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ## Technologies Magento can use
 
-*  [Redis][] version 6.x is recommended for Magento 2.4.2. Magneto 2.4.x is compatible with Redis 5.
+*  [Redis][] version 6.x is recommended for Magento 2.4.2. Magento 2.4.x is compatible with Redis 5.
 *  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.4. Magento 2.4.x is compatible with Varnish 6.x.
 
 *  RabbitMQ 3.8.x
