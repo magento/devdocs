@@ -173,7 +173,7 @@ Attribute | Data type | Description
 
 ### ProductInfoInput object {#ProductInfoInput}
 
-`ProductInfoInput` provides information about a product which should be delivered. In base implementation, the information will be used to filter Pickup Locations which do not have related source item with mentioned product.
+`ProductInfoInput` contains a list of SKUs. If this object is provided in the query, then the response contains locations where all the products are available for in-store pickup. If even one product in the list cannot be used as an in-store pickup location, that location will not be included in the response.
 
 Attribute | Data type | Description
 --- | --- | ---
