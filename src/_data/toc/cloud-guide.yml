@@ -215,13 +215,14 @@ pages:
               versionless: true
 
         - label: Launch Docker
-          children: 
-            - label: Developer mode
-              url: /cloud/docker/docker-mode-developer.html
-              versionless: true
 
+          children: 
             - label: Production mode
               url: /cloud/docker/docker-mode-production.html
+              versionless: true
+ 
+            - label: Developer mode
+              url: /cloud/docker/docker-mode-developer.html
               versionless: true
 
         - label: Functional Testing
@@ -343,7 +344,7 @@ pages:
               versionless: true
 
             - label: IP allow list
-              url: /cloud/cdn/fastly-vcl-whitelist.html
+              url: /cloud/cdn/fastly-vcl-allowlist.html
               versionless: true
 
             - label: IP block list
