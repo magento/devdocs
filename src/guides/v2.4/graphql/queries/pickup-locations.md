@@ -122,7 +122,7 @@ Attribute | Data type | Description
 `sort` | [PickupLocationSortInput](#PickupLocationSortInput) | Specifies which attribute to sort on, and whether to return the results in ascending or descending order.
 `pageSize` | Int | The maximum number of pickup locations to return at once. The attribute is optional. The default value is 20.
 `currentPage` | Int | Specifies which page of results to return. The default value is 1.
-`productsInfo` |[[ProductInfoInput]](#ProductInfoInput)| Information about products which should be delivered. The information is used to filter Pickup Locations which do not have relations with mentioned products.
+`productsInfo` |[[ProductInfoInput]](#ProductInfoInput)| Contains an array of SKUs to filter on.
 
 ### AreaInput object {#AreaInput}
 
