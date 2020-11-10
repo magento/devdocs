@@ -10,10 +10,10 @@ To help you implement product recommendations on your storefront, use the follow
 
    Deploying Product Recommendations requires two main data sources: [catalog and behavioral]({{ page.baseurl }}/recommendations/product-recs.html#types-of-data). Because production is the only environment where your shoppers' actions can captured and analyzed, it is in your best interest to start data collection on production as early as possible. You can expect higher quality recommendations when you have more data. As an added benefit, when you start collecting behavioral data on production, you can [fetch recommendations based on this production data while operating in non-production environments]({{ page.baseurl }}/recommendations/test.html). This allows you to test and experiment with different recommendations that are computed based on real shopper data collected in production.
 
+   To deploy data collection to production you need to [install and configure the Product Recommendations module]({{ page.baseurl }}/recommendations/install-configure.html) and [generate your API keys](https://docs.magento.com/user-guide/system/saas.html#apikey).
+
    {:.bs-callout-tip}
    Deploying data collection does not change your storefront's appearance or your shoppers' experience. Only creating and deploying recommendation units alters the customer experience on your storefront. Make sure you test on your non-production environment before deploying to production. Also, do not create recommendation units until you customize your template. See the next step.
-
-   See [Install and configure the Product Recommendations module]({{ page.baseurl }}/recommendations/install-configure.html) to learn how to complete this step.
 
 1. **Customize the template to match your style**
 
@@ -35,7 +35,7 @@ To help you implement product recommendations on your storefront, use the follow
 
 1. **Create and deploy recommendations to your production storefront**
 
-   Now that you have deployed the behavioral data collection in production, modified the product recommendations template, and tested recommendations using actual shopper behavior, you are now ready to promote all code to production, [generate your API keys](https://docs.magento.com/user-guide/system/saas.html#apikey), and [create shopper-facing product recommendations](https://docs.magento.com/user-guide/marketing/create-new-rec.html).
+   Now that you have deployed the behavioral data collection in production, modified the product recommendations template, and tested recommendations using actual shopper behavior, you are now ready to promote all code to production and [create shopper-facing product recommendations](https://docs.magento.com/user-guide/marketing/create-new-rec.html).
 
    {:.bs-callout-tip}
    While this is the final step in implementing recommendations, there are [further actions you can take](https://docs.magento.com/user-guide/marketing/recommendation-best-practices.html) to make sure product recommendations increase conversions, boost revenue, and stimulate shopper engagement.
