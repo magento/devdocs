@@ -260,7 +260,7 @@ All scenarios require that you comply with the [Prerequisites].
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
 [metapackage]: https://glossary.magento.com/metapackage
 [Prerequisites]: #prerequisites
-[system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
+[system requirements]: {{ page.baseurl }}/install-gde/system-requirements.html
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
 [Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
