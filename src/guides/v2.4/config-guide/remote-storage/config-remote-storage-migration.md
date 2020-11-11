@@ -6,7 +6,8 @@ functional_areas:
   - Remote Storage
 ---
 
-To migrate to remote storage, perform next actions:
+{:.procedure}
+To migrate existing media files to the remote storage:
 
 1. Enable [remote storage] with a selected adapter via CLI
 
