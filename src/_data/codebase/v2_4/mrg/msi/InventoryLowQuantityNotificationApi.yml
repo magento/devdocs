@@ -13,4 +13,4 @@ content: "The `InventoryLowQuantityNotificationApi` module provides service cont
   points and APIs that 3rd-party developers\ncan use to provide custom low quantity
   notification functionality.\n\n### Public APIs\n\nPublic APIs are defined in the
   `Api` and `Api/Data` directories.\n\n### REST endpoints\n\nThe `etc/webapi.xml`
-  file defines endpoints for managing low quantity notifications.\n"
+  file defines endpoints for managing low quantity notifications."

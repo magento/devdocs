@@ -13,4 +13,4 @@ content: "The `InventorySourceSelection` module provides source selection logic 
   cannot be deleted or disabled.\n\n## Extension points and service contracts\n\nAll
   public interfaces related to this module are located in the `InventorySourceSelectionApi`
   module. \nUse the interfaces defined in `InventorySourceSelectionApi` to extend
-  this module.\n"
+  this module."
