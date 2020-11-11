@@ -203,7 +203,7 @@ The `CreateGiftRegistryInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`dynamic_attributes` | [[GiftRegistryDynamicAttributeInput]({#GiftRegistryDynamicAttributeInput})] | Certain additional attributes are specified as a code-value pair
+`dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | Certain additional attributes are specified as a code-value pair
 `event_name` | String! | The name of the event
 `id`| ID |  An optional gift registry ID. It can be generated on the client and then be used to send multiple gift-registry related mutations in a single request
 `message` | String! | A message describing the event
