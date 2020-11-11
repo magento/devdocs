@@ -17,4 +17,4 @@ content: "## Overview\n\nThe Magento_BundleRequisitionList module enables bundle
   \n### Layouts\n \nYou can extend and override layouts in the `Magento\\BundleRequisitionList\\view\\frontend\\layout`
   directories.\n\nFor more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html).\n\n##
   Additional information\n \nYou can track [backward incompatible changes made in
-  a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html).\n"
+  a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html)."

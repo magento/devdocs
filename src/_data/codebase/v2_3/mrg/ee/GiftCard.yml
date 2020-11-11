@@ -10,4 +10,4 @@ content: "Magento_GiftCard module introduces new product type in the Magento app
   offers gift cards in Virtual, Physical, or Combination format. \nWhen a gift card
   is ordered, a unique code is generated that is emailed to a customer for virtual
   gift cards, or exported for printing to physical gift cards. \nThis unique number
-  can only be redeemed by one customer.\n"
+  can only be redeemed by one customer."

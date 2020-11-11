@@ -12,4 +12,4 @@ content: "The `InventoryDistanceBasedSourceSelectionApi` module provides service
   module contains extension points and APIs that 3rd-party developers\ncan use to
   provide custom distance based source selection algorithms.\n\n### Public APIs\n\nPublic
   APIs are defined in the `Api` and `Api/Data` directories.\n\n### REST endpoints\n\nThe
-  `etc/webapi.xml` file defines endpoints for managing distance based algorithms.\n"
+  `etc/webapi.xml` file defines endpoints for managing distance based algorithms."
