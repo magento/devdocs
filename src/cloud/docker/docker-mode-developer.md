@@ -26,13 +26,15 @@ To launch the Docker environment in developer mode:
 1. Install the template dependencies, and add the default hostname to your `/etc/hosts` file.
 
    ```bash
-   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash
+   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/<magento-cloud-docker-package-version>/bin/init-docker.sh | bash
    ```
 
-   If required, you can add options to the `init-docker.sh` initialization script to customize your Docker environment. Run the following command to see the available options:
+   For `<package-version>`, use the [latest release of the {{site.data.var.mcd-package}}].
+
+   You can customize the options for the `init-docker.sh` initialization script your Docker environment. For example, you can specify the PHP version (default is 7.2) and the [Docker image version] (default 1.1). We recommend using the latest version of the Magento Cloud Docker images. Run the following command to see the available options:
 
    ```bash
-   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash -s -- --help
+   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/<magento-cloud-package-version>/bin/init-docker.sh | bash -s -- --help
    ```
 
 1. On macOS or Windows hosts, install the selected file synchronization tool:
@@ -53,7 +55,7 @@ To launch the Docker environment in developer mode:
    ```
 
    {:.bs-callout-info}
-   You can further customize the Docker Compose configuration file by adding additional options to the `build:compose` command. For example, you can set the software version for a service, or add Xdebug configuration. See [service keys][].
+   You can further customize the Docker Compose configuration file by adding additional options to the `build:compose` command. For example, you can set the software version for a service, or add Xdebug configuration. See [service keys].
 
 1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
@@ -88,7 +90,17 @@ To launch the Docker environment in developer mode:
 
 1. Install Magento in your Docker environment.
 
+   -  For Magento version 2.4 and 2.4.1 only, run the following command to apply patches before you deploy.
+
+      ```bash
+      docker-compose run deploy php ./vendor/bin/ece-patches apply
+      ```
+
    -  Deploy Magento in the Docker container.
+
+      For Magento version 2.4 and 2.4.1, run the following command to apply patches before you deploy.
+
+      ```
 
       ```bash
       docker-compose run --rm deploy cloud-deploy
@@ -129,11 +141,15 @@ To launch the Docker environment in developer mode:
 
    -  `https://magento2.docker`
 
-[Synchronizing data in Docker]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
+<!--Link definitioons-->
+
 [cloud-repo]: https://github.com/magento/magento-cloud
-[magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
-[services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
-[xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug]
-[service key]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
+[Docker image version]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
 [dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
+[latest release of the {{site.data.var.mcd-package}}]: https://github.com/magento/magento-cloud-docker/releases
+[magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [mutagen-install]: https://mutagen.io/documentation/introduction/installation/
+[services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
+[service keys]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
+[Synchronizing data in Docker]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
+[xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug]

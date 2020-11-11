@@ -17,7 +17,7 @@ If you are new to all this and need some help getting started, we suggest the fo
 ## General guidelines {#instgde-prereq-mysql-intro}
 
 {:.bs-callout-info}
-See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html#database) for supported versions of MySQL.
+See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html#database) for supported versions of MySQL.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
@@ -88,6 +88,9 @@ To install MySQL 5.7 on Ubuntu 16:
    ```
 
 1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
+
+   {:.bs-callout-info}
+   The default value applies to {{site.data.var.ece}} *and* on-premises projects. {{site.data.var.ece}} Pro customers must open a support ticket to increase the `max_allowed_packet` value. {{site.data.var.ece}} Starter customers can increase the value by updating the configuration in the `/etc/mysql/mysql.cnf` file.
 
   {% include install/mysql_max-allowed-packet-ubuntu.md %}
 
@@ -413,6 +416,12 @@ To configure a MySQL database instance:
    *  [MariaDB](https://mariadb.com/kb/en/server-system-variables/#explicit_defaults_for_timestamp)
 
    If this setting is not enabled, `setup:db:status` will always report that `Declarative Schema is not up to date`.
+
+{:.bs-callout-info}
+The `explicit_defaults_for_timestamp` setting is deprecated. This setting controls deprecated TIMESTAMP behaviors that will be removed in a future MySQL release.  When those behaviors are removed, the `explicit_defaults_for_timestamp` setting will be removed as well.
+
+{:.bs-callout-warning}
+On Magento projects deployed on the Cloud platform, the `explicit_defaults_for_timestamp` setting for MySQL (MariaDB) defaults to *OFF*
 
 {:.ref-header}
 Related topics

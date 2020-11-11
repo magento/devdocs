@@ -56,8 +56,6 @@ This release includes improvements to order approvals, shipping methods, shoppin
 
 -  {:.fix} Magento no longer displays a 404 page when a merchant uses the **Enter** button instead of clicking the **Save** button when creating a requisition list on the storefront.<!--- MC-35094-->
 
--  {:.fix} When a merchant creates a new shared catalog, permissions are now automatically set to **Allow** for the **Display Product Prices** and **Add to Cart** features in categories when the customer group has been assigned this access in catalog permission settings. Previously, these settings were automatically set to **Deny** even when catalog permissions were set to **Allow**.<!--- MC-34792-->
-
 -  {:.fix} Category permissions no longer change when a new product is assigned to a public shared catalog. Previously, category permissions were duplicated. <!--- MC-34386-->
 
 -  {:.fix} The REST API endpoint PUT `rest/default/V1/company/{id}`, which is used to update Company email, is no longer case-sensitive. <!--- MC-34308-->
