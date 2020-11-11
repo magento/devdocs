@@ -9,7 +9,7 @@ functional_areas:
 {:.procedure}
 To migrate existing media files to the remote storage:
 
-1. Enable [remote storage] with a selected adapter via CLI
+1. Enable [remote storage] for a specific adapter using the CLI.
 
 1. Migrate existing media files using command:
 
