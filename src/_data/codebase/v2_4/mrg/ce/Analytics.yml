@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/Analytics/README.md
 last_modified_at: '2019-09-15 22:49:37 +0100'
-content: |
+content: |-
   The Magento_Analytics module integrates your Magento instance with the [Magento Business Intelligence (MBI)](https://magento.com/products/business-intelligence) to use [Advanced Reporting](https://devdocs.magento.com/guides/v2.3/advanced-reporting/modules.html) functionality.
 
   The module implements the following functionality:

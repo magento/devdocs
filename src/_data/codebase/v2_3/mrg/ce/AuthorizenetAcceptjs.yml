@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.3.6
 github_path: app/code/Magento/AuthorizenetAcceptjs/README.md
 last_modified_at: '2019-08-28 00:26:17 +0100'
-content: |
+content: |-
   The Magento_AuthorizenetAcceptjs module implements the integration with the Authorize.Net payment gateway and makes the latter available as a payment method in Magento.
 
   ## Installation details

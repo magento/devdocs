@@ -13,4 +13,4 @@ content: "The `InventoryApi` module provides Inventory Management service contra
   3rd-party developers\ncan use to provide custom inventory functionality.\n\n###
   Public APIs\n\nPublic APIs are defined in the `Api` and `Api/Data` directories.\n\n###
   REST endpoints\n\nThe `etc/webapi.xml` file defines endpoints for managing sources,
-  stocks, stock source links, and source items.\n"
+  stocks, stock source links, and source items."
