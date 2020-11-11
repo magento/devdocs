@@ -278,7 +278,7 @@ pages:
         - label: createGiftRegistry mutation
           url: /graphql/mutations/create-gift-registry.html
           edition: ee-only
-          exclude_versions: [ "2.3" ]
+          exclude_versions: ["2.3"]
 
         - label: deleteCompanyTeam mutation
           url: /graphql/mutations/delete-company-team.html
@@ -446,9 +446,9 @@ pages:
           exclude_versions: ["2.3"]
 
         - label: shareGiftRegistry mutation
-            url: /graphql/mutations/share-gift-registry.html
-            edition: ee-only
-            exclude_versions: [ "2.3" ]
+          url: /graphql/mutations/share-gift-registry.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
     - label: Interfaces
       children:
