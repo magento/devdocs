@@ -120,16 +120,6 @@ pages:
           url: /graphql/queries/giftcard-account.html
           edition: ee-only
 
-        - label: giftRegistry query
-          url: /graphql/queries/gift-registry.html
-          edition: ee-only
-          exclude_versions: ["2.3"]
-
-        - label: giftRegistryTypes query
-          url: /graphql/queries/gift-registry-types.html
-          edition: ee-only
-          exclude_versions: ["2.3"]
-
         - label: isCompanyAdminEmailAvailable query
           url: /graphql/queries/is-company-admin-email-available.html
           edition: b2b-only
@@ -274,6 +264,11 @@ pages:
           url: /graphql/mutations/create-wishlist.html
           edition: ee-only
           exclude_versions: ["2.3"]
+
+        - label: createGiftRegistry mutation
+          url: /graphql/mutations/create-gift-registry.html
+          edition: ee-only
+          exclude_versions: [ "2.3" ]
 
         - label: deleteCompanyTeam mutation
           url: /graphql/mutations/delete-company-team.html
@@ -439,6 +434,11 @@ pages:
           url: /graphql/mutations/update-wishlist.html
           edition: ee-only
           exclude_versions: ["2.3"]
+
+        - label: shareGiftRegistry mutation
+            url: /graphql/mutations/share-gift-registry.html
+            edition: ee-only
+            exclude_versions: [ "2.3" ]
 
     - label: Interfaces
       children:
