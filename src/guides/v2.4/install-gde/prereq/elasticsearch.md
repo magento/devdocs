@@ -129,4 +129,4 @@ For additional information, see [Elasticsearch documentation][]{:target="_blank"
 [Full cluster restart upgrade]: https://www.elastic.co/guide/en/elasticsearch/reference/current/restart-upgrade.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 [Installing Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
-[System Requirements]: {{page.baseurl}}//install-gde/system-requirements.html
+[System Requirements]: {{page.baseurl}}/install-gde/system-requirements.html
