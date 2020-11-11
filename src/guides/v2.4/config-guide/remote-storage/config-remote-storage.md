@@ -95,7 +95,7 @@ location ~* \.(ico|jpg|jpeg|png|gif|svg)$ {
 }
 ```
 
-1. If needed, configure a `proxy_pass` value for your specific adapter:
+1. [_Optional_] Configure a `proxy_pass` value for your specific adapter.
 
 -  [Amazon Simple Storage Service (Amazon S3)][AWS S3]
 
