@@ -11,7 +11,7 @@ To migrate existing media files to the remote storage:
 
 1. Enable [remote storage] for a specific adapter using the CLI.
 
-1. Migrate existing media files using command:
+1. Migrate existing media files.
 
 ```bash
 ./magento2ce/bin/magento remote-storage:sync
