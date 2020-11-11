@@ -14,7 +14,7 @@ redirect_to: https://support.magento.com/hc/en-us/articles/360033117152
 
 ### Symptom: The following message displays when you try to access the Magento storefront or Admin:
 
-Magento supports PHP 7.3 or later. Please read [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html).
+Magento supports PHP 7.3 or later. Please read [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 #### Solution
 
