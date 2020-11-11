@@ -123,12 +123,12 @@ pages:
         - label: giftRegistry query
           url: /graphql/queries/gift-registry.html
           edition: ee-only
-          exclude_versions: [ "2.3" ]
+          exclude_versions: ["2.3"]
 
         - label: giftRegistryTypes query
           url: /graphql/queries/gift-registry-types.html
           edition: ee-only
-          exclude_versions: [ "2.3" ]
+          exclude_versions: ["2.3"]
 
         - label: isCompanyAdminEmailAvailable query
           url: /graphql/queries/is-company-admin-email-available.html
