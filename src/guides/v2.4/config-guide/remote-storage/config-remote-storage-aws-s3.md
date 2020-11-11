@@ -24,7 +24,7 @@ Prerequisites for using the AWS S3 adapter:
 
 Nginx requires an additional configuration to perform Authentication with the `proxy_pass` directive.
 
-```
+```conf
 location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
     # Proxying to AWS S3 storage. 
     resolver 8.8.8.8;
