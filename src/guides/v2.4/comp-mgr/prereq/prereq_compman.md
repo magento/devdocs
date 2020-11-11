@@ -11,4 +11,4 @@ Complete the following tasks before upgrading Magento:
 *  [Set `ulimit` for the web server user]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman-ulimit.html)
 *  [Checklist]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman-checklist.html)
 
-After you've completed all prerequisites, continue with [upgrading Magento]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
+After you have completed all prerequisites, continue with [upgrading Magento]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
