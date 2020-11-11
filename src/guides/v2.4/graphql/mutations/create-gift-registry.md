@@ -219,7 +219,7 @@ The `AddGiftRegistryRegistrantInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`dynamic_attributes` | [[GiftRegistryDynamicAttributeInput]({#GiftRegistryDynamicAttributeInput})] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
+`dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
 `email` | String! | The email address of the registrant
 `first_name` | String! | The first name of the registrant
 `last_name` | String! | The last name of the registrant
