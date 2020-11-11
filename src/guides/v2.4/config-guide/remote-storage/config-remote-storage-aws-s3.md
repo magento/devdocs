@@ -41,7 +41,7 @@ location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
 }
 ```
 
-If you're using access and secret keys instead of [AWS IAM] roles, you'll need a separate module.
+If you use access and secret keys instead of [AWS IAM] roles, you must include the <module-name-here> module.
 
 We recommend using the [`ngx_aws_auth`][ngx repo].
 
