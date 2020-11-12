@@ -39,7 +39,7 @@ cd /var/www/html/magento2 && find var generated vendor pub/static pub/media app/
    *  [Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
    *  [Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-2. After you have set file system ownership and permissions, [install Magento]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+1. After you have set file system ownership and permissions, [install Magento]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
 
 {:.bs-callout-info}
 To further restrict permissions after installing the Magento software, you [configure a Magento umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
