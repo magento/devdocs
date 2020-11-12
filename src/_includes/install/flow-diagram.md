@@ -15,7 +15,7 @@ The diagram shows the following:
    {:.bs-callout-info}
    To be able to use the Web Setup Wizard to install or upgrade the Magento software, or to manage extensions you get from Magento Marketplace, you must either get a compressed archive or a Composer metapackage. If you clone the GitHub repository, you *cannot* use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using [Composer and Git commands]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
-2. Install the Magento software using either the Web Setup Wizard or command line.
+1. Install the Magento software using either the Web Setup Wizard or command line.
 
    {% include install/web/deprecated.md %}
 
@@ -25,4 +25,4 @@ The diagram shows the following:
 
    If the step fails because prerequisite software isn't set up correctly, review our [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html).
 
-3. Verify the installation by viewing your storefront and the Magento Admin.
+1. Verify the installation by viewing your storefront and the Magento Admin.
