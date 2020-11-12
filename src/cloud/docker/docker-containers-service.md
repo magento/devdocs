@@ -70,7 +70,7 @@ Use the `--es-env-var` option to customize the Elasticsearch container when you 
 php vendor/bin/ece-docker build:compose --es-env-var=ES_JAVA_OPTS="-Xms512m -Xmx512m" --es-env-var=node.store.allow_mmapfs=false
 ```
 
-See [Important Elasticsearch configuration][] in the Elasticsearch documentation for details about available configuration options.
+See [Important Elasticsearch configuration] in the Elasticsearch documentation for details about available configuration options.
 
 {:.bs-callout-info}
 If your Cloud project uses Magento version 2.3.5 or earlier with MySQL search, add the `--no-es` option to skip the Elasticsearch container configuration when you generate the Docker Compose configuration file: `ece-docker build:compose --no-es`.
@@ -150,7 +150,29 @@ If you use the `docker-sync` or `mutagen` file synchronization options, the `php
 
 You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the [`docker-compose.override.yml`][Docker override file]. Configuration settings in this file are applied only when you build and deploy to the Docker environment.
 
-Optionally, you can add Xdebug to your Cloud Docker environment to debug your PHP code. See [Configure XDebug for Docker][].
+Optionally, you can add Xdebug to your Cloud Docker environment to debug your PHP code. See [Configure XDebug for Docker.
+
+## MailHog container
+
+**Container name**: mailhog<br/>
+**Docker base image**: [mailhog]<br/>
+**Ports exposed**: `1026:1025`, `8026:8025`
+
+The default Magento Cloud Docker configuration includes the MailHog service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment.
+
+By default, MailHog listens on port 1025 for SMTP and port 8025 for the frontend dashboard and API (HTTP). You can change the default ports using the --mailhog-http-port and --mailhog-smtp-port options. When you build the Docker compose configuration, you can change the default ports:
+
+```bash
+./vendor/bin/ece-docker build:compose --mailhog-smtp-port=1026 --mailhog-http-port=8026
+```
+
+After updating the configuration and restarting the Docker environment, you can connect to the MailHog service from `http://magento2.docker:8026`, and use port 1026 for SMTP communication.
+
+If needed, you can disable the MailHog service when you generate the Docker compose configuration:
+
+```bash
+./vendor/bin/ece-docker build:compose --no-mailhog
+```
 
 ## RabbitMQ container
 
@@ -193,10 +215,10 @@ The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] D
 ## TLS container
 
 **Container name**: tls<br/>
-**Docker base image**: [magento/magento-cloud-docker-tls][tls], based on the [debian:jessie](https://hub.docker.com/_/debian) Docker image<br/>
-**Ports exposed**: `443`</br>
+**Docker base image**: [magento/magento-cloud-docker-nginx:1.19-1.2.0][tls]<br/>
+**Ports**: `8080:80`, `443` </br>
 
-The TLS termination proxy container facilitates the Varnish SSL termination over HTTPS.
+The TLS termination proxy container facilitates the Varnish SSL termination over HTTPS. The default port for TLS communication is `443`. If you have Varnish installed in the Docker environment, you can bypass it by using port `8080:80`.
 
 To increase the timeout on this container, add the following code to the  `docker-compose.override.yml` file:
 
@@ -206,11 +228,12 @@ To increase the timeout on this container, add the following code to the  `docke
       - TIMEOUT=600
 ```
 
+The default TLS port is 443. You can change the port number by adding the `--tls-port
+
 ## Varnish container
 
 **Container name**: varnish<br/>
 **Docker base image**: [magento/magento-cloud-docker-varnish][varnish], based on the [centos] Docker image<br>
-**Ports exposed**: `80`<br/>
 
 The Varnish container simulates Fastly and is useful for testing VCL snippets.
 
@@ -280,6 +303,8 @@ To mount the custom index.php file using volumes:
 [Docker override file]: https://docs.docker.com/compose/extends/
 [FPM]: https://php-fpm.org
 [Important Elasticsearch configuration]: https://www.elastic.co/guide/en/elasticsearch/reference/6.5/important-settings.html
+[MailHog]: https://hub.docker.com/u/mailhog
+[MailHog service]: https://github.com/mailhog/MailHog
 [Manage the database]: {{site.baseurl}}/cloud/docker/docker-manage-database.html
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb
 [mariadb]: https://hub.docker.com/_/mariadb
@@ -291,7 +316,7 @@ To mount the custom index.php file using volumes:
 [rabbitmq]: https://hub.docker.com/_/rabbitmq
 [redis]: https://hub.docker.com/_/redis
 [Service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
-[tls]: https://hub.docker.com/r/magento/magento-cloud-docker-tls
+[tls]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
 [web config]: https://github.com/magento/docker
