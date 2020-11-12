@@ -501,6 +501,10 @@ pages:
           url: /graphql/interfaces/shipment-item-interface.html
           exclude_versions: ["2.3"]
 
+        - label: WishlistItemInterface attributes and implementations
+          url: /graphql/interfaces/wishlist-item-interface.html
+          exclude_versions: ["2.3"]
+
     - label: Payment methods
       children:
 

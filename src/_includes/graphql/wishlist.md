@@ -3,7 +3,8 @@ The `Wishlist` object contains all the items in the customer's wish list.
 Attribute | Data type | Description
 --- | --- | ---
 `id` | ID | The unique identifier of the wish list
-`items` | [[WishlistItem](#WishlistItem)] | An array of items in the customer's wish list
+`items` | [[WishlistItem](#WishlistItem)] | Deprecated. Use `items_v2` instead
+`items_v2` | [WishlistItemInterface] | An array of items in the customer's wish list
 `items_count` | Int | The number of items in the wish list
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list
 `updated_at` | String | The time of the last modification to the wish list
