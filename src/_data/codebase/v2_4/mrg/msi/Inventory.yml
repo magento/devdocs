@@ -17,4 +17,4 @@ content: "The `Inventory` module is part of the new inventory infrastructure,\nw
   does not recommend using or referring to classes and other entities in the `Inventory`
   module. All public \ninterfaces and extension points related to this module are
   located in the `InventoryApi` module. \nUse the interfaces and extension points
-  defined in `InventoryApi` to extend this module.\n"
+  defined in `InventoryApi` to extend this module."

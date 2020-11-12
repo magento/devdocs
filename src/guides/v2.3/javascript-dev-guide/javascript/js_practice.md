@@ -40,7 +40,7 @@ In the `app/design/frontend/OrangeCo/orange/web/js` OrangeCo adds `orange-galler
 define([
   'jquery',
   'jquery-ui-modules/widget',
-  'mage/gallery'
+  'mage/gallery/gallery'
 ], function($){
 
   $.widget('orange.gallery', $.mage.gallery, {
@@ -59,7 +59,7 @@ OrangeCo adds the custom `app/design/OrangeCo/orange/requirejs-config.js` with t
 
 ```javascript
 var config = {
-  "map": {
+  map: {
     "*": {
       "gallery": "js/orange-gallery"
     }
@@ -115,12 +115,12 @@ In the `app/design/OrangeCo/orange` directory OrangeCo adds `requirejs-config.js
 
 ```javascript
 var config = {
-  "map": {
+  map: {
     "*": {
       "gallery": "js/orange-gallery"
     }
   },
-  "shim": {
+  shim: {
     "js/jquery.jcarousel": ["jquery"] // as jquery.jcarousel isn't an AMD module
   }
 };

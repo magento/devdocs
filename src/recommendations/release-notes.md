@@ -15,6 +15,16 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.1.0 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.new}Added the ability to [resync your catalog to SaaS services via command line]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-catalog-sync.html)
+-  {:.new}Added support for database table prefixes
+-  {:.fix}Removed PHP 7.1 support
+
+## 3.0.8 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed an issue where events were sent for data collection before the module was configured, causing invalid traffic
+
 ## 3.0.6 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.new}**(Beta)** Includes support for new [Visual similarity recommendation type](https://docs-beta.magento.com/user-guide/marketing/prex-type-visualsim.html)

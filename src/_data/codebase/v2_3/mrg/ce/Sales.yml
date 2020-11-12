@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.3.6
 github_path: app/code/Magento/Sales/README.md
 last_modified_at: '2014-10-24 14:51:44 -0700'
-content: |
+content: |-
   ## Purpose of module
 
   Magento\Sales module is responsible for order processing and appearance in system,

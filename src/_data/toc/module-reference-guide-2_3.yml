@@ -3,7 +3,7 @@ pages:
   - label: Introduction
     url: /mrg/intro.html
   
-  - label: Open Source (v2.3.6)
+  - label: Core Open Source, 2.3.6
     include_versions: ["2.3"]
     children:
     
@@ -509,7 +509,7 @@ pages:
         url: /mrg/ce/WishlistGraphQl.html
     
   
-  - label: Commerce (v2.3.6)
+  - label: Core Commerce only, 2.3.6
     include_versions: ["2.3"]
     children:
     
@@ -769,7 +769,7 @@ pages:
         url: /mrg/ee/Worldpay.html
     
   
-  - label: B2B (v1.1.6)
+  - label: B2B extension, 1.1.6
     include_versions: ["2.3"]
     children:
     
@@ -840,7 +840,7 @@ pages:
         url: /mrg/b2b/SharedCatalog.html
     
   
-  - label: Inventory Management (v1.1.6)
+  - label: Inventory Management (Open Source), 1.1.6
     include_versions: ["2.3"]
     children:
     
@@ -984,5 +984,22 @@ pages:
     
       - label: InventorySourceSelectionApi
         url: /mrg/msi/InventorySourceSelectionApi.html
+    
+  
+  - label: Page Builder (Commerce), v1.3.3
+    include_versions: ["2.3"]
+    children:
+    
+      - label: CatalogPageBuilderAnalytics
+        url: /mrg/page-builder/CatalogPageBuilderAnalytics.html
+    
+      - label: CmsPageBuilderAnalytics
+        url: /mrg/page-builder/CmsPageBuilderAnalytics.html
+    
+      - label: PageBuilder
+        url: /mrg/page-builder/PageBuilder.html
+    
+      - label: PageBuilderAnalytics
+        url: /mrg/page-builder/PageBuilderAnalytics.html
     
   
