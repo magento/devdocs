@@ -218,7 +218,11 @@ The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] D
 **Docker base image**: [magento/magento-cloud-docker-nginx:1.19-1.2.0][tls]<br/>
 **Ports**: `8080:80`, `443` </br>
 
-The TLS termination proxy container facilitates the Varnish SSL termination over HTTPS. The default port for TLS communication is `443`. If you have Varnish installed in the Docker environment, you can bypass it by using port `8080:80`.
+The TLS termination proxy container facilitates the Varnish SSL termination over HTTPS. 
+
+The default port for TLS communication is `443`. If you have Varnish installed in the Docker environment, you can bypass it by using port `8080:80`. 
+
+You can change the default port by adding the `--tls-port` option to the `ece-docker build:compose` command.
 
 To increase the timeout on this container, add the following code to the  `docker-compose.override.yml` file:
 
@@ -227,8 +231,6 @@ To increase the timeout on this container, add the following code to the  `docke
     environment:
       - TIMEOUT=600
 ```
-
-The default TLS port is 443. You can change the port number by adding the `--tls-port
 
 ## Varnish container
 
