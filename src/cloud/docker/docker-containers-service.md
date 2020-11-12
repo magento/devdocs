@@ -156,7 +156,7 @@ Optionally, you can add Xdebug to your Cloud Docker environment to debug your PH
 
 **Container name**: mailhog<br/>
 **Docker base image**: [mailhog]<br/>
-**Ports exposed**: `1026:1025`, `8026:8025`
+**Ports**: SMTP`:1025`, HTTP:`:8025`
 
 The default Magento Cloud Docker configuration includes the MailHog service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment.
 
