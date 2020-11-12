@@ -39,6 +39,8 @@ The release notes include:
 
       -  Added the OpenSSH-client to PHP CLI containers. Now, you can use ssh-agent forwarding for Composer if the `composer.json` file contains private git repositories that require an ssh client to use Composer commands.<!--MCLOUD-6008-->
 
+   -  {:.fix}**TLS container**–Now, the [TLS container]({{ site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container) is based on the `https://hub.docker.com/r/magento/magento-cloud-docker-nginx` Docker image instead of the Centos image. This change fixes issues that caused errors when sending https requests between containers in the Cloud Docker environment.<!--MCLOUD-6469-->
+
    -  {:.new}**Test container**–Added a test container for Magento application testing, and added the `--with-test` option to the Docker `build:compose` command to create the container only when testing Magento in the Docker environment. See [Magento application testing](https://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html).<!--MCLOUD-6394-->
 
    -  {:.new}**FPM-XDEBUG container**
@@ -55,7 +57,7 @@ The release notes include:
 
    -  **Specify custom images and versions in custom Magento Cloud Docker configuration**—Updated the `build:custom:compose` command with options to specify custom images and versions when generating a custom Docker compose configuration file (`docker-compose.yaml`). See [Build a custom Docker Compose configuration]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#build-a-custom-docker-compose-configuration). <!--MCLOUD-7089-->
 
-   -  Updated the Docker host configuration to expose port 443 to enable access to Magento (`https://magento2.docker`) from all CLI containers.<!--MCLOUD-6806-->
+   -  Updated the Docker host configuration to expose port 443 to enable access to Magento (`https://magento2.docker`) from all CLI containers. You can change the default port by adding the `--tls-port` option when you generate the Docker configuration file.<!--MCLOUD-6806-->
 
 -  {:.fix}Fixed an issue that caused the {{site.data.var.mcd-prod}} build to fail if the `app/etc/env.php` file exists.<!--MCLOUD-6732-->
 
