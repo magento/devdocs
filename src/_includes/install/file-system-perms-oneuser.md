@@ -33,13 +33,12 @@ To set permissions before you install the Magento software:
    cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod u+w {} + && find var vendor pub/static pub/media app/etc -type d -exec chmod u+w {} + && chmod u+x bin/magento
    ```
 
-   If you haven't done so already, get the Magento software in one of the following ways:
+   If you have not done so already, get the Magento software in one of the following ways:
 
-    *  [Compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
     *  [Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
     *  [Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-1. After you have set file system ownership and permissions, continue with any of the following:
+2. After you have set file system ownership and permissions, continue with any of the following:
 
     *  [Command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
     *  [Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)

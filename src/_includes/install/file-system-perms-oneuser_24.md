@@ -34,13 +34,12 @@ To optionally enter all commands on one line, enter the following assuming Magen
 cd /var/www/html/magento2 && find var generated vendor pub/static pub/media app/etc -type f -exec chmod u+w {} + && find var generated vendor pub/static pub/media app/etc -type d -exec chmod u+w {} + && chmod u+x bin/magento
 ```
 
-1. If you haven't done so already, get the Magento software in one of the following ways:
+1. If you have not done so already, get the Magento software in one of the following ways:
 
-   *  [Compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
    *  [Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
    *  [Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-1. After you have set file system ownership and permissions, [install Magento]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+2. After you have set file system ownership and permissions, [install Magento]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
 
 {:.bs-callout-info}
 To further restrict permissions after installing the Magento software, you [configure a Magento umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).

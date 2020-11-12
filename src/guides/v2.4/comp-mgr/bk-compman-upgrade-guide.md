@@ -25,7 +25,7 @@ This topic discusses the ways you can:
 
 The way you upgrade (that is, patch) the Magento application depends on how you installed it:
 
-*  {{ce}} and {{ee}}: If you used [Composer] to install the Magento application or if you downloaded an [archive], you must use the [command line].
+*  {{ce}} and {{ee}}: If you used [Composer] to install the Magento application.
 *  {{ce}} only: If you cloned the Magento 2 GitHub repository because you are contributing code to the {{ce}} codebase, [upgrade the software manually].
 *  If your Magento root directory is `<your Magento install directory/pub>`, you can upgrade in any of the following ways:
    *  For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
@@ -53,7 +53,6 @@ Complete the tasks discussed in [Prerequisites].
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
 
-[archive]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
 [command line]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
 [Composer]: {{ page.baseurl }}/install-gde/composer.html
 [Migration Guide]: {{ page.baseurl }}/migration/bk-migration-guide.html

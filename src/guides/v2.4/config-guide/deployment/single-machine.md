@@ -14,7 +14,7 @@ This process applies to technical users responsible for stores running on a sing
 
 ## Assumptions
 
-*  You installed Magento using [Composer][8] or a [compressed archive][7].
+*  You installed Magento using [Composer][8].
 *  You are directly applying updates to the server.
 
 {:.bs-callout-warning}
@@ -105,6 +105,5 @@ Related topics
 [4]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [5]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [6]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html
-[7]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
 [8]: {{ page.baseurl }}/install-gde/composer.html
 [10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner

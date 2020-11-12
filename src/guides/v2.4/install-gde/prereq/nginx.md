@@ -88,27 +88,25 @@ There are several ways to download the Magento software, including:
 
 *  [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 
-*  [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
-
 *  [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 For this example, we'll install using Composer and the command line.
 
 1. As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
 
-1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
+2. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
 
    ```bash
    cd /var/www/html
    ```
 
-1. Install Composer globally. You'll need Composer to update dependencies before installing Magento:
+3. Install Composer globally. You'll need Composer to update dependencies before installing Magento:
 
    ```bash
    curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
    ```
 
-1. Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
+4. Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
 
    **{{site.data.var.ce}}**
 
@@ -124,7 +122,7 @@ For this example, we'll install using Composer and the command line.
 
    When prompted, enter your [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html). Your _public key_ is your username; your _private key_ is your password.
 
-1. Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the command line can write files to the Magento file system.
+5. Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the command line can write files to the Magento file system.
 
    ```bash
    cd /var/www/html/<magento install directory>
@@ -146,7 +144,7 @@ For this example, we'll install using Composer and the command line.
    chmod u+x bin/magento
    ```
 
-1. Install Magento from the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html). This example assumes that the Magento install directory is named `magento2ee`, the `db-host` is on the same machine (`localhost`), and that the `db-name`, `db-user`, and `db-password` are all `magento`:
+6. Install Magento from the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html). This example assumes that the Magento install directory is named `magento2ee`, the `db-host` is on the same machine (`localhost`), and that the `db-name`, `db-user`, and `db-password` are all `magento`:
 
    ```bash
    bin/magento setup:install \
@@ -167,7 +165,7 @@ For this example, we'll install using Composer and the command line.
    --use-rewrites=1
    ```
 
-1. Switch to developer mode:
+7. Switch to developer mode:
 
    ```bash
    cd /var/www/html/magento2/bin
@@ -364,27 +362,25 @@ There are several ways to download the Magento software, including:
 
 *  [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 
-*  [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
-
 *  [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 For this example, we'll install using Composer and the command line.
 
 1. As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
 
-1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
+2. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
 
    ```bash
    cd /var/www/html
    ```
 
-1. Install Composer globally. You'll need Composer to update dependencies before installing Magento:
+3. Install Composer globally. You'll need Composer to update dependencies before installing Magento:
 
    ```bash
    curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
    ```
 
-1. Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
+4. Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
 
    **{{site.data.var.ce}}**
 
@@ -400,7 +396,7 @@ For this example, we'll install using Composer and the command line.
 
    When prompted, enter your [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html). Your _public key_ is your username; your _private key_ is your password.
 
-1. Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the and command line can write files to the Magento file system.
+5. Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the and command line can write files to the Magento file system.
 
    ```bash
    cd /var/www/html/<magento install directory>
@@ -422,7 +418,7 @@ For this example, we'll install using Composer and the command line.
    chmod u+x bin/magento
    ```
 
-1. Install Magento from the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html). This example assumes that the Magento install directory is named `magento2ee`, the `db-host` is on the same machine (`localhost`), and that the `db-name`, `db-user`, and `db-password` are all `magento`:
+6. Install Magento from the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html). This example assumes that the Magento install directory is named `magento2ee`, the `db-host` is on the same machine (`localhost`), and that the `db-name`, `db-user`, and `db-password` are all `magento`:
 
    ```bash
    bin/magento setup:install \
@@ -443,7 +439,7 @@ For this example, we'll install using Composer and the command line.
    --use-rewrites=1
    ```
 
-1. Switch to developer mode:
+7. Switch to developer mode:
 
    ```bash
    cd /var/www/html/magento2/bin
