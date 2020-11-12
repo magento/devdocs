@@ -14,7 +14,7 @@ Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en
 
 Installation instructions vary based on which operating system you are using. See [PHP](php-settings.html) for for information.
 
-## Help if you arejust starting out {#apache-help-beginner}
+## Help if you are just starting out {#apache-help-beginner}
 
 If you are new to all this and need some help getting started, we suggest the following:
 
