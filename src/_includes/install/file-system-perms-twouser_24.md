@@ -1,11 +1,12 @@
 Complete the following tasks in the order shown:
 
-*  [About the shared group](#mage-owner-about-group)
-*  [Step 1: Create the Magento file system owner and give the user a strong password](#mage-owner-create-user)
-*  [Step 2: Find the web server group](#install-update-depend-user-findgroup)
-*  [Step 3: Put the Magento file system owner in the web server's group](#install-update-depend-user-add2group)
-*  [Step 4: Get the Magento software](#perms-get-software)
-*  [Step 5: Set ownership and permissions for the shared group](#perms-set-two-users)
+- [About the shared group {#mage-owner-about-group}](#about-the-shared-group-mage-owner-about-group)
+- [Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}](#step-1-create-the-magento-file-system-owner-and-give-the-user-a-strong-password-mage-owner-create-user)
+- [Step 2: Find the web server user's group {#install-update-depend-user-findgroup}](#step-2-find-the-web-server-users-group-install-update-depend-user-findgroup)
+- [Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}](#step-3-put-the-magento-file-system-owner-in-the-web-servers-group-install-update-depend-user-add2group)
+- [Step 4: Get the Magento software {#perms-get-software}](#step-4-get-the-magento-software-perms-get-software)
+- [Step 5: Set ownership and permissions for the shared group {#perms-set-two-users}](#step-5-set-ownership-and-permissions-for-the-shared-group-perms-set-two-users)
+- [Next step](#next-step)
 
 ### About the shared group {#mage-owner-about-group}
 
@@ -110,9 +111,8 @@ To complete the task, restart the web server:
 
 ### Step 4: Get the Magento software {#perms-get-software}
 
-If you haven't done so already, get the Magento software in one of the following ways:
+If you have not done so already, get the Magento software in one of the following ways:
 
-*  [Compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
 *  [Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 *  [Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 

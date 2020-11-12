@@ -31,17 +31,6 @@ Consult the following table for getting started with installing {{site.data.var.
             <th>Get started link</th>
         </tr>
     <tr>
-        <td><p>Easy installation, command line, have your own server</p></td>
-        <td><p>Some technical expertise, command line access to the Magento server.</p>
-        </td>
-        <td><ol><li>Downloads a compressed file that contains the Magento software.</li>
-            <li>Extracts it on the Magento server or asks a network administrator to do so.</li>
-            <li>Installs the Magento software using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">command line</a>.</li>
-            <li>Upgrades the Magento application and extensions using Composer and the <a href="{{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html">command line</a>.</li></ol>
-        </td>
-        <td><p><a href="{{ page.baseurl }}/install-gde/prereq/zip_install.html">Easy installation (own server)</a></p></td>
-    </tr>
-    <tr>
         <td><p>Integrator, packager</p></td>
         <td><p>Wants full control over all components installed, has access to the Magento server, highly technical, might repackage {{site.data.var.ce}} with other components.</p>
         </td>
