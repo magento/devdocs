@@ -19,6 +19,18 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.0.9
+
+-  **MDVA-31363** _(for Magento `>=2.3.2 <2.4.2`)_—Fixes the issue where the Cart Price Rule with coupon does not apply via GraphQL when 'Fixed amount discount for whole cart' action is used.
+-  **MDVA-30889** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where an error occurs after invoicing a bundle with virtual and simple products as options.
+-  **MDVA-31791** _(for Magento `>=2.3.4 <2.3.5`)_—Improves the performance of the product page in cases when target rules or linked products are used.
+-  **MDVA-31168** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where the product export CSV file does not appear, and there is a memory allocation error.
+-  **MDVA-32313** _(for Magento `>=2.3.0 <2.3.4`)_—Fixes the issue where configurable products could be added to the wishlist with the wrong configuration options.
+-  **MDVA-31759** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where products are not updated with `dropdown` and `textarea` attribute values during CSV import.
+-  **MDVA-32012** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where zip codes in Korea and Argentina cannot be validated.
+-  **MDVA-31640** _(for Magento `>=2.3.1 <2.3.6 || >=2.4.0 <2.4.1`)_—Fixes the issue where a special price cannot be updated via REST API.
+-  **MDVA-28651** _(for Magento `>=2.3.0 <2.3.6 || >2.4.0` with B2B extension)_—Fixes the issue where there are performance problems with loading negotiable quotes via REST API.
+
 ## v1.0.8
 
 -  **MDVA-31242** _(for Magento `>=2.3.0 <2.4.1` with B2B extension)_—Fixes the issue where a wrong currency sign is displayed in Credit Memo grid.

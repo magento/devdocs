@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.3.6
 github_path: app/code/Magento/Reports/README.md
 last_modified_at: '2014-12-12 12:14:06 -0800'
-content: |
+content: |-
   Magento_Reports module provides ability to collect various reports such as:
    - products reports (bestsellers, low stock, most viewed, products ordered),
    - sales reports (orders, tax, invoiced, shipping, refunds, coupons, and PayPal settlement reports),
