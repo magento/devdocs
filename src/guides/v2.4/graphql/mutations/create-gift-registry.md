@@ -9,18 +9,16 @@ The `createGiftRegistry` mutation creates a gift registry for the logged in cust
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
-Some of the exceptions with the attributes used here are,
+The `id` input attribute is optional. If a value is not specified, Magento will create one. If you specify a value, then you can create a gift registry and make multiple updates in a single call.
 
-1) The id input attribute is optional. If a value is not specified, Magento will create one. If you specify a value, then you can create a gift registry and make multiple updates in a single call.
+When assigning a shipping address, you must specify only one of `address_data` or `address_id`.
 
-2) When assigning a shipping address, you must specify only one of address_data or address_id
+Only the gift registry owner can view these attributes
 
-3) Only the gift registry owner can view these attributes
-
-- created_on
-- privacy_settings
-- shipping_address
-- status
+*  `created_on`
+*  `privacy_settings`
+*  `shipping_address`
+*  `status`
 
 ## Syntax
 
@@ -203,7 +201,7 @@ The `CreateGiftRegistryInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | Certain additional attributes are specified as a code-value pair
+`dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
 `event_name` | String! | The name of the event
 `id`| ID |  An optional gift registry ID. It can be generated on the client and then be used to send multiple gift-registry related mutations in a single request
 `message` | String! | A message describing the event
@@ -239,8 +237,8 @@ The `GiftRegistryShippingAddressInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`address_data` | [CustomerAddressInput](#CustomerAddressInput) | The complete details of the address specified
-`address_id` | Int | The ID of the address specified
+`address_data` | [CustomerAddressInput](#CustomerAddressInput) | The complete details of the shipping address
+`address_id` | Int | The ID of predefined customer address
 
 ### CustomerAddressInput attributes {#CustomerAddressInput}
 
