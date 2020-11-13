@@ -21,11 +21,9 @@ To launch the Docker environment in developer mode:
 
 1. Download a Magento application template from the [Magento Cloud repository][cloud-repo] and copy the files to your {{site.data.var.mcd-prod }} project directory. Be careful to select the branch that corresponds with the Magento version.
 
-1. Change to the Magento directory: magento-cloud-<version>.
-
 1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
 
-1. Run the installation script, `init-docker.sh` to install the template dependencies and add the default hostname to your `/etc/hosts` file.
+1. Run the installation script, `init-docker.sh` to install template dependencies and add the default hostname to your `/etc/hosts` file.
 
    ```bash
    curl https://raw.githubusercontent.com/magento/magento-cloud-docker/<magento-cloud-docker-package-version>/bin/init-docker.sh | bash
