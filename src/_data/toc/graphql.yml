@@ -130,6 +130,11 @@ pages:
           edition: b2b-only
           exclude_versions: ["2.3"]
 
+        - label: isCompanyRoleNameAvailable query
+          url: /graphql/queries/is-company-role-name-available.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: isCompanyUserEmailAvailable query
           url: /graphql/queries/is-company-user-email-available.html
           edition: b2b-only
@@ -218,6 +223,11 @@ pages:
           edition: b2b-only
           exclude_versions: ["2.3"]
 
+        - label: createCompanyRole mutation
+          url: /graphql/mutations/create-company-role.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
         - label: createCompanyTeam mutation
           url: /graphql/mutations/create-company-team.html
           edition: b2b-only
@@ -263,6 +273,11 @@ pages:
         - label: createWishlist mutation
           url: /graphql/mutations/create-wishlist.html
           edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: deleteCompanyRole mutation
+          url: /graphql/mutations/delete-company-role.html
+          edition: b2b-only
           exclude_versions: ["2.3"]
 
         - label: deleteCompanyTeam mutation
@@ -394,6 +409,11 @@ pages:
 
         - label: updateCompanyStructure mutation
           url: /graphql/mutations/update-company-structure.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: updateCompanyRole mutation
+          url: /graphql/mutations/update-company-role.html
           edition: b2b-only
           exclude_versions: ["2.3"]
 

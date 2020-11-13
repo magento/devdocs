@@ -57,7 +57,7 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these functional areas: Customer Account, Catalog, CMS, OMS, Import/Export, Promotions and Targeting, Cart and Checkout, B2B, and Staging and Preview.
 
-*  **Site-Wide Analysis Tool (SWAT) integration with Magento Admin**. (SWAT) provides system insights and instrumentation for Commerce Cloud installations of Magento with 24/7 real-time performance monitoring, reports, and self-service recommendations. Merchants can use the new SWAT Admin role to securely access their SWAT Customer Detail pages through the Magento Admin. See [SWAT FAQ](https://support.magento.com/hc/en-us/articles/360048646671) for an overview. For usage information, see [SWAT](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html). <!--- SWAT-807-->
+*  **Site-Wide Analysis Tool (SWAT) integration with Magento Admin**. (SWAT) provides system insights and instrumentation for {{ site.data.var.ece }} installations of Magento with 24/7 real-time performance monitoring, reports, and self-service recommendations. Merchants can use the new SWAT Admin role to securely access their SWAT Customer Detail pages through the Magento Admin. See [SWAT FAQ](https://support.magento.com/hc/en-us/articles/360048646671) for an overview. For usage information, see [SWAT](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html). <!--- SWAT-807-->
 
 ### Performance improvements
 
@@ -1537,7 +1537,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33572-->
 
-*  You can now use POST `/V1/products/special-price` to update a product’s special price without specifying `price_from` and `price_to` parameter values. Previously, the Special Price API only worked with schedule updates, and if these parameters were empty, Magento returned this error: `The Start Time for Future Update needs to be selected. Select and try again`.
+*  You can now use POST `/V1/products/special-price` to update a product’s special price without specifying a `price_to` parameter value. Previously, attempts to set the price update without the `price_to` parameter specified were unsuccessful.
 
 ### Store
 

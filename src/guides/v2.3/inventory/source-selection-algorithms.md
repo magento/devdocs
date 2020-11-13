@@ -180,7 +180,7 @@ class InventoryRequestFactory
 Configure your module's `etc/di.xml` file to register your SSA with `SourceSelectionServiceInterface` and `GetSourceSelectionAlgorithmList`.
 
 ```xml
-<type name="Magento\InventorySourceSelection\Model\SourceSelectionService">
+<type name="Magento\InventorySourceSelectionApi\Model\SourceSelectionService">
     <arguments>
         <argument name="sourceSelectionMethods" xsi:type="array">
             <item name="minimalDeliveryCost" xsi:type="string">Some\Vendor\Namespace\SourceSelection\MinimalDeliveryCostAlgorithm</item>
