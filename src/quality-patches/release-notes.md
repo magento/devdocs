@@ -20,6 +20,7 @@ See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) f
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
 ## v1.0.10
+
 Minor fixes for patch versions
 
 ## v1.0.9
