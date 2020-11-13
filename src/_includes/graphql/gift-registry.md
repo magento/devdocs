@@ -15,7 +15,7 @@ Attribute |  Data Type | Description
 `status` | `GiftRegistryStatus!` | An enum that states whether the gift registry is ACTIVE or INACTIVE. Only the registry owner can access this attribute
 `type` | [[GiftRegistryType](#GiftRegistryType)] | Contains details about the type of gift registry
 
-### GiftRegistryDynamicAttribute attributes {#GiftRegistryDynamicAttribute} 
+### GiftRegistryDynamicAttribute attributes {#GiftRegistryDynamicAttribute}
 
 The `GiftRegistryDynamicAttribute` object implements `GiftRegistryDynamicAttributeInterface`. It also defines the following attribute.
 
