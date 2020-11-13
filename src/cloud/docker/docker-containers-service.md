@@ -156,7 +156,7 @@ Optionally, you can add Xdebug to your Cloud Docker environment to debug your PH
 
 **Container name**: mailhog<br/>
 **Docker base image**: [mailhog]<br/>
-**Ports**: SMTP`:1025`, HTTP:`:8025`
+**Ports**: SMTP:`1025`, HTTP:`8025`
 
 The default Magento Cloud Docker configuration includes the MailHog service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment.
 
@@ -215,14 +215,18 @@ The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] D
 ## TLS container
 
 **Container name**: tls<br/>
-**Docker base image**: [magento/magento-cloud-docker-nginx:1.19-1.2.0][tls]<br/>
-**Ports**: `8080:80`, `443` </br>
+**Docker base image**: [magento/magento-cloud-docker-nginx:1.19-1.2.0][tls]<br>
+**Ports**: `443` (default), `8080:80` (Varnish bypass)<br/>
 
-The TLS termination proxy container facilitates the Varnish SSL termination over HTTPS. 
+The TLS termination proxy container facilitates the Varnish SSL termination over HTTPS.
 
-The default port for TLS communication is `443`. If you have Varnish installed in the Docker environment, you can bypass it by using port `8080:80`. 
+-  The default port for TLS communication is `443`.
+-  If you have Varnish installed in the Docker environment, use port `8080:80` to bypass caching.
+-  You can change the default port when you generate the Docker configuration file:
 
-You can change the default port by adding the `--tls-port` option to the `ece-docker build:compose` command.
+   ```bash
+   ./vendor/bin/ece-docker build:compose --tls-port <port-number>
+   ```
 
 To increase the timeout on this container, add the following code to the  `docker-compose.override.yml` file:
 
@@ -244,7 +248,7 @@ The **Varnish** service is installed by default. When deployment completes, Mage
 In some cases, you might require a Docker environment without Varnish, for example to debug or run performance tests. You can generate the Docker Compose configuration without Varnish by adding the `--no-varnish` option to the `ece-docker build:compose` command.
 
 ```bash
-./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2 --no-varnish
+./vendor/bin/ece-docker build:compose --mode="developer" --php <version> --no-varnish
 ```
 
 You can specify `VARNISHD_PARAMS` and other environment variables using ENV to specify custom values for required parameters. This is usually done by adding the configuration to the `docker-compose.override.yml` file.
@@ -305,7 +309,7 @@ To mount the custom index.php file using volumes:
 [Docker override file]: https://docs.docker.com/compose/extends/
 [FPM]: https://php-fpm.org
 [Important Elasticsearch configuration]: https://www.elastic.co/guide/en/elasticsearch/reference/6.5/important-settings.html
-[MailHog]: https://hub.docker.com/u/mailhog
+[mailhog]: https://hub.docker.com/u/mailhog
 [MailHog service]: https://github.com/mailhog/MailHog
 [Manage the database]: {{site.baseurl}}/cloud/docker/docker-manage-database.html
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb
