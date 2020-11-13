@@ -69,7 +69,7 @@ docker-compose run --rm build magento-command setup:static-content:deploy
 The Cron container runs operations in the background immediately after the Docker environment starts. This container uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/magento-app-properties.html#crons). This container has no custom configuration.
 
 {:.bs-callout-info}
-To improve the overall performance in the Docker developer and production environments, the Cron container is not present by default. You can use the following command to add the Cron container to the Cloud Docker environment: `./vendor/bin/ece-docker build:compose --mode="developer" --with-cron`
+To improve overall performance in the local Docker environment, the Cron container is not present by default. You can use the following command to add the Cron container to the Cloud Docker environment: `./vendor/bin/ece-docker build:compose --mode="developer" --with-cron`
 
 For details on managing cron jobs in the Cloud Docker environment, see [Manage cron jobs].
 
