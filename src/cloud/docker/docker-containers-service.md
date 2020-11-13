@@ -150,7 +150,7 @@ If you use the `docker-sync` or `mutagen` file synchronization options, the `php
 
 You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the [`docker-compose.override.yml`][Docker override file]. Configuration settings in this file are applied only when you build and deploy to the Docker environment.
 
-Optionally, you can add Xdebug to your Cloud Docker environment to debug your PHP code. See [Configure XDebug for Docker.
+Optionally, you can add Xdebug to your Cloud Docker environment to debug your PHP code. See [Configure XDebug for Docker].
 
 ## MailHog container
 
