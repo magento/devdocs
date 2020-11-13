@@ -21,4 +21,4 @@ php ./vendor/bin/ece-docker list
 ```
 
 {:.bs-callout-info}
-The `ece-docker build:compose` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
+The `ece-docker build:compose` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option. For more information about `ece-docker build:compose` command options, see [Service configuration options]({{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options).

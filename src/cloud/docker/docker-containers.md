@@ -15,12 +15,13 @@ The [`{{site.data.var.mcd-package}}` repository][docker-repo] contains build inf
 
 The following CLI containers, most of which are based on a PHP-CLI version 7 Docker image, provide `magento-cloud` and `ece-tools` commands to perform file system operations and interact with the application:
 
-| Name       | Service   | Key  | Available Versions | Notes
+{: .docker-cli-container-table}
+| Name       | Service   | Key & options | Available Versions | Notes
 | ------------- | ---------- | ---------- | ------------------ |------------------
 | [build] | Build Container | none  | none  | PHP Container, runs build process
 | [deploy] | Deploy Container | none   | none |  PHP Container, runs the deploy process
-| [cron]| Cron Jobs | none  | none  |  PHP Container, runs cron tasks
-| [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Used gulp or other NPM based commands
+| [cron]| Cron Jobs | `--with-cron`  | none |  Optional PHP Container runs cron tasks
+| [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Optional Node container used for gulp or other NPM-based commands
 
 See [Docker CLI containers] for details.
 
@@ -44,15 +45,17 @@ The following table shows the options to customize service container configurati
 | ------------- | ---------- | ---------- | ------------------ |------------------
 | [db] | MariaDB or MySQL<br>     | `--db`, `--db-image` (MySQL)<br>`--expose-db-port`<br>`--db-increment`<br>`--db-offset`<br>`--with-entrypoint`<br>`--with-mariadb-config`|10.0, 10.1, 10.2<br>5.6, 5.7 | Use the increment and offset options to customize the [auto-increment settings][Using AUTO_INCREMENT] for replication.<br><br>Use the `--with-entrypoint` and `--with-mariadb-config` options to automatically configure database directories in the Docker environment<br><br>*Example build commands:*<br>`ece-docker build:compose --db <mariadb-version>`<br>`ece-docker build:compose --db <mysql-version> --db-image`
 | [elasticsearch] | Elasticsearch | `--es`<br>`--es-env-var`<br>`--no-es` | 1.7, 2.4, 5.2, 6.5, 6.8, 7.5, 7.6, 7.7 | Use the options to specify the Elasticsearch version,  customize Elasticsearch configuration options, or to build a Docker environment without Elasticsearch.
-| [FPM][fpm-container] | PHP FPM | `--php`<br>`--with-xdebug` | 7.0, 7.1, 7.2, 7.3, 7.4 |  Used for all incoming requests. Optionally, add Xdebug configuration to debug PHP code in the Docker environment.
-| [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Used gulp or other NPM based commands
-| [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 |
+| [fpm][fpm-container] | PHP FPM | `--php`<br>`--with-xdebug` | 7.0, 7.1, 7.2, 7.3, 7.4 |  Used for all incoming requests. Optionally, install a specific php version or add Xdebug to debug PHP code in the Docker environment.
+| [fpm_xdebug][fpm_xdebug-container] | Xdebug | `--set-docker-host` | latest | Optional container for PHP debugging<br>On Linux systems, `--set-docker-host` sets the `.host.docker.internal` value in the container `/etc/hosts` file.
+| [mailhog][mailhog-container] | MailHog |  `--no-mailhog`<br>`--mailhog-http-port`<br>`--mailhog-smtp-port` | latest | Email service to replace Sendmail service, which can cause issues in Docker environment
+| [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Node container to run gulp or other NPM based commands in the Docker environment. Use the `--node` option to install a specific node version.
+| [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 | Use the `--rmq` option to install a specific RabbitMQ version.
 | [redis][redis-container] | Redis     | `--redis` | 3.2, 4.0, 5.0 |   Standard redis container
 | [selenium][selenium-container]| Selenium | `--with-selenium`<br>`--selenium-version`<br>`--selenium-image`| Any | Enables Magento application testing using the Magento Functional Testing Framework (MFTF)
-| [test][test-container]| PHP CLI | `--with-test`| Any | Container with a writable file system for running tests
-| [tls][tls-container] | SSL Endpoint |  |   |  Terminates SSL, can be configured to pass to varnish or nginx
-| [varnish][varnish-container] | Varnish | `--no-varnish` | 4, 6.2 | Varnish is provisioned by default. Use the `--no-varnish` option to skip Varnish service installation
-| [web][web-container] | NGINX | `--nginx` | 1.9, latest |
+| [test][test-container]| PHP CLI | `--with-test`| Any | Optional container with a writable file system for running tests
+| [tls][tls-container] | SSL Endpoint | `--tls-port` | nginx 1.19-1.2.0, latest  |  Terminates SSL, can be configured to pass to varnish or nginx. Use the `--tls-port` option to change the default port (443).
+| [varnish][varnish-container] | Varnish | `--no-varnish` | 4, 6.2 | Varnish is provisioned by default. Use the `--no-varnish` option to skip Varnish service installation.
+| [web][web-container] | NGINX | `--nginx` | 1.19-1.2.0, latest | Use the `--nginx` option to install a specific nginx version.
 
 Use the following command to view all available options for the `ece-docker build:compose` command:
 
@@ -153,9 +156,11 @@ Now you can see all requests that are passing through the TLS container and chec
 [File Synchronization]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
 [docker-repo]: https://github.com/magento/magento-cloud-docker
 [nginx]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
+[mailhog-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#mailhog-container
 [node-container]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html#node-container
 [rabbitmq-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#rabbitmq-container
 [fpm-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#fpm-container
+[fpm_xdebug-container]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
 [redis-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#redis-container
 [selenium-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#selenium-container
 [test-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#test-container
@@ -172,5 +177,8 @@ Now you can see all requests that are passing through the TLS container and chec
 
 <style>
 table.docker-service-versions-table td:nth-child(3) {
+  width: 200px;
+}
+table.docker-cli-container-table td:nth-child(3) {
   width: 200px;
 }
