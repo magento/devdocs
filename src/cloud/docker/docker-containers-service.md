@@ -160,7 +160,7 @@ Optionally, you can add Xdebug to your Cloud Docker environment to debug your PH
 
 The default Magento Cloud Docker configuration includes the MailHog service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment.
 
-By default, MailHog listens on port 1025 for SMTP and port 8025 for the frontend dashboard and API (HTTP). You can change the default ports using the --mailhog-http-port and --mailhog-smtp-port options. When you build the Docker compose configuration, you can change the default ports:
+By default, MailHog listens on port 1025 for SMTP and port 8025 for the frontend dashboard and API (HTTP). You can change the default ports using the `--mailhog-http-port` and `--mailhog-smtp-port` options. When you build the Docker compose configuration, you can change the default ports:
 
 ```bash
 ./vendor/bin/ece-docker build:compose --mailhog-smtp-port=1026 --mailhog-http-port=8026
