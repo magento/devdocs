@@ -49,7 +49,7 @@ The following table shows the options to customize service container configurati
 | [fpm_xdebug][fpm_xdebug-container] | Xdebug | `--set-docker-host` | latest | Optional container for PHP debugging<br>On Linux systems, `--set-docker-host` sets the `.host.docker.internal` value in the container `/etc/hosts` file.
 | [mailhog][mailhog-container] | MailHog |  `--no-mailhog`<br>`--mailhog-http-port`<br>`--mailhog-smtp-port` | latest | Email service to replace Sendmail service, which can cause issues in Docker environment
 | [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Node container to run gulp or other NPM based commands in the Docker environment. Use the `--node` option to install a specific node version.
-| [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 | Use the `--rmq` option to install a specific nginx version.
+| [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 | Use the `--rmq` option to install a specific RabbitMQ version.
 | [redis][redis-container] | Redis     | `--redis` | 3.2, 4.0, 5.0 |   Standard redis container
 | [selenium][selenium-container]| Selenium | `--with-selenium`<br>`--selenium-version`<br>`--selenium-image`| Any | Enables Magento application testing using the Magento Functional Testing Framework (MFTF)
 | [test][test-container]| PHP CLI | `--with-test`| Any | Optional container with a writable file system for running tests
