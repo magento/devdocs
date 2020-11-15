@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/Security/README.md
 last_modified_at: '2016-01-11 17:45:47 +0300'
-content: |
+content: |-
   **Security** management module
   _Main features:_
   1. Added support for simultaneous admin user logins with ability to enable/disable the feature, review and disconnect the list of current logged in sessions

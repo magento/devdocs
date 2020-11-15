@@ -27,4 +27,4 @@ content: "## Overview\n\nThe Magento_GiftCardSharedCatalog module enables gift c
   `Magento\\GiftCardSharedCatalog\\view\\adminhtml\\ui_component` - renderer for pricing
   and structure listings\n\nFor more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html).\n\n##
   Additional information\n\nYou can track [backward incompatible changes made in a
-  Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html).\n"
+  Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html)."

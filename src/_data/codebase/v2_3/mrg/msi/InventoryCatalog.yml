@@ -12,4 +12,4 @@ content: "The `InventoryCatalog` module integrates inventory management business
   for `InventoryCatalogApi`\nis provided by a 3rd-party module, the module cannot
   be deleted or disabled.\n\n## Extension points and service contracts\n\nAll public
   interfaces related to this module are located in the `InventoryCatalogApi` module.
-  \nUse the interfaces defined in `InventoryCatalogApi` to extend this module.\n"
+  \nUse the interfaces defined in `InventoryCatalogApi` to extend this module."

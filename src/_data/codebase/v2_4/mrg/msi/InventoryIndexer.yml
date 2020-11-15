@@ -4,7 +4,7 @@ source_repo: inventory
 release: 1.2.1
 github_path: InventoryIndexer/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
-content: |
+content: |-
   The `InventoryIndexer` module provides indexation logic for Inventory Management.
 
   This module is part of the new inventory infrastructure. The

@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.3.6
 github_path: app/code/Magento/BraintreeGraphQl/README.md
 last_modified_at: '2019-09-30 15:26:35 +0100'
-content: |
+content: |-
   The Magento_BraintreeGraphQl module provides type and resolver information for the GraphQL module to pass payment information data from the client to Magento.
 
   ## Extensibility

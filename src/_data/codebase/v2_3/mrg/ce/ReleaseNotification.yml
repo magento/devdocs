@@ -45,4 +45,4 @@ content: "The **Release Notification Module** serves to provide a notification d
   will cause a clickable link to be created. The text between the brackets [text]
   will be the text that the clickable link shows.\n\n### Link Format Example:\n\nThe
   text: `https://devdocs.magento.com/ [Magento DevDocs].` will appear as [Magento
-  DevDocs](https://devdocs.magento.com/).\n"
+  DevDocs](https://devdocs.magento.com/)."
