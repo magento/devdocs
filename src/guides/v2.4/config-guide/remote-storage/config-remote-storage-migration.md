@@ -13,12 +13,9 @@ To migrate existing media files to the remote storage:
 
 1. Migrate existing media files.
 
-```bash
-./magento2ce/bin/magento remote-storage:sync
-```
+   ```bash
+   ./magento2ce/bin/magento remote-storage:sync
+   ```
 
 <!-- link definitions -->
 [remote storage]: {{page.baseurl}}/config-guide/remote-storage/config-remote-storage.html
-[nginx image filter module]: http://nginx.org/en/docs/http/ngx_http_image_filter_module.html
-[schema image]: {{site.baseurl}}/common/images/config-remote-storage-schema.png
-{:width="500px"}
