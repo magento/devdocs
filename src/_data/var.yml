@@ -21,11 +21,11 @@ mbi: Magento Business Intelligence
 # Cloud product name variables
 
 ece: Magento Commerce Cloud
-ece-release-date: November 9, 2020
+ece-release-date: Month Day, 2021
 csuite: Magento Commerce Cloud Suite
 ct: ece-tools
 ct-repo: magento/ece-tools
-ct-release: 2002.1.3
+ct-release: 2002.1.4
 mcp-prod: Magento Cloud Patches
 mcp-package: magento/magento-cloud-patches
 mcp-release: 1.0.8
