@@ -22,8 +22,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 **Environment variable updates**–
 
--  Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html) environment variable
-to enable Cloud Projects for remote storage of media files using a storage service such as AWS S3.<!--MCLOUD-7153-->
+-  Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html#remote_storage) environment variable to enable Cloud Projects for remote storage of media files using a storage service such as AWS S3.<!--MCLOUD-7153-->
 
 ## v2002.1.3
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
