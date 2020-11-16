@@ -17,6 +17,14 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 {:.bs-callout-info}
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
+## v2002.1.4
+*Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+**Environment variable updates**–
+
+-  Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html) environment variable
+to enable Cloud Projects for remote storage of media files using a storage service such as AWS S3.<!--MCLOUD-7153-->
+
 ## v2002.1.3
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
