@@ -666,3 +666,23 @@ stage:
   deploy:
     VERBOSE_COMMANDS: "-vv"
 ```
+
+### `REMOTE_STORAGE`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.4.2 and later
+
+Provide a configuration for remote storage functionality.
+
+```yaml
+stage:
+  deploy:
+    REMOTE_STORAGE:
+      driver: aws-s3 # Required
+      prefix: cloud # Optional
+      config:
+        bucket: my-bucket # Required
+        region: my-region # Required
+        key: my-key # Optional
+        secret: my-secret-key # Optional
+```
