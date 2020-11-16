@@ -672,7 +672,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.4.2 and later
 
-Configure a _storage adapter_  to store media files in a persistent remote storage container using a storage service such as AWS S3. Use this option to improve performance on Cloud projects with complex, multi-server configurations that must share resources. See [Enable storage adapter]({{site.baseurl}}/guides/v2.4/config-guide/remote-storage/config-remote-storage#enable-storage-adapter.html).
+Configure a _storage adapter_ to store media files in a persistent, remote storage container using a storage service, such as AWS S3. Use the remote storage option to improve performance on Cloud projects with complex, multi-server configurations that must share resources. See [Enable storage adapter]({{site.baseurl}}/guides/v2.4/config-guide/remote-storage/config-remote-storage#enable-storage-adapter.html).
 
 ```yaml
 stage:
