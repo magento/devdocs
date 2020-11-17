@@ -26,7 +26,7 @@ Nginx requires an additional configuration to perform Authentication with the `p
 
 ```conf
 location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
-    # Proxying to AWS S3 storage. 
+    # Proxying to AWS S3 storage.
     resolver 8.8.8.8;
     set $bucket "<bucket-name>";
     proxy_pass https://s3.amazonaws.com/$bucket$uri;
