@@ -35,23 +35,28 @@ If you use Microsoft Windows, take the following steps before continuing:
    This command adds the Xdebug configuration to your `docker-compose.yml` file.
 
    ```yaml
-      fpm_xdebug:
-       hostname: fpm_xdebug.magento2.docker
-       image: 'magento/magento-cloud-docker-php:7.3-fpm-1.1'
-       extends: generic
-       ports:
-         - '9001:9001'
-       volumes:
-         - 'mymagento-magento-sync:/app:nocopy'
-       environment:
-         - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl sodium'
-       networks:
-         magento:
-           aliases:
-             - fpm_xdebug.magento2.docker
-       depends_on:
-         db:
-           condition: service_started
+    fpm_xdebug:
+      hostname: fpm_xdebug.magento2.docker
+      image: 'magento/magento-cloud-docker-php:7.4-fpm-1.2.0'
+      extends: generic
+      volumes:
+        - '.:/app:ro,delegated'
+        - 'magento-vendor:/app/vendor:ro,delegated'
+        - 'magento-generated:/app/generated:ro,delegated'
+        - 'magento-var:/app/var:rw,delegated'
+        - 'magento-app-etc:/app/app/etc:rw,delegated'
+        - 'magento-pub-media:/app/pub/media:rw,delegated'
+        - 'magento-pub-static:/app/pub/static:rw,delegated'
+        - '.docker/mnt:/mnt:rw,delegated'
+      environment:
+        - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip xsl sodium xdebug'
+      networks:
+        magento:
+          aliases:
+            - fpm_xdebug.magento2.docker
+      depends_on:
+        db:
+          condition: service_started
    ```
    {:.no-copy}
 

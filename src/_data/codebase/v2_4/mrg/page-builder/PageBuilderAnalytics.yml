@@ -1,0 +1,9 @@
+---
+title: Magento_PageBuilderAnalytics
+source_repo: magento2-page-builder
+release: v1.5.0
+github_path: app/code/Magento/PageBuilderAnalytics/README.md
+last_modified_at: '2018-07-26 15:13:54 +0300'
+content: The Magento_PageBuilderAnalytics module configures data definitions for a
+  data collection related to the PageBuilder module entities to be used in [Advanced
+  Reporting](http://devdocs.magento.com/guides/v2.2/advanced-reporting/modules.html).

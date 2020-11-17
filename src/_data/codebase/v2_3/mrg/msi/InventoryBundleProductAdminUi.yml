@@ -10,4 +10,4 @@ content: "The `InventoryBundleProductAdminUi`extends the Magento Admin UI to add
   the MSI (Multi-Source Inventory) project in more detail.\n\n## Installation details\n\nThis
   module is installed as part of Magento Open Source. It may be disabled if the Inventory
   Management UI\nis provided by a 3rd-party system or if you run a headless version
-  of Magento.\n \n## Extensibility\n\nThere are no extension points or for this module.\n"
+  of Magento.\n \n## Extensibility\n\nThere are no extension points or for this module."

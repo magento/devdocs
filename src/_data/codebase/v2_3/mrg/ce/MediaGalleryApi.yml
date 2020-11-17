@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.3.6
 github_path: app/code/Magento/MediaGalleryApi/README.md
 last_modified_at: '2019-11-04 11:34:55 +0000'
-content: |
+content: |-
   The Magento_MediaGalleryApi module serves as application program interface (API) responsible for storing and managing media gallery asset attributes.
 
   ## Extensibility
