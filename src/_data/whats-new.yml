@@ -40,7 +40,7 @@ entries:
   contributor: dobooth
   profile: https://github.com/dobooth
 - description: Added Page Builder modules to the Module Reference Guide for [2.4](https://devdocs.magento.com/guides/v2.4/mrg/intro.html)
-    and [2.3](https://devdocs.magento.com/guides/v2.4/mrg/intro.html).
+    and [2.3](https://devdocs.magento.com/guides/v2.3/mrg/intro.html).
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: November 11, 2020
@@ -74,8 +74,8 @@ entries:
   link: https://github.com/magento/devdocs/pull/8187
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
-- description: Reorganized the system requirements pages in the Magento Installation
-    Guide to help simplify the installation process.
+- description: Reorganized the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) pages in the Magento Installation
+    Guide to to make it more coherent.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: November 5, 2020
