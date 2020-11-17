@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/MediaContentApi/README.md
 last_modified_at: '2020-04-01 17:18:20 +0100'
-content: |
+content: |-
   The Magento_MediaContentApi module provides interfaces for managing relations between content and media files used in that content.
 
   ## Extensibility
