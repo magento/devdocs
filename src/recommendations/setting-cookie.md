@@ -16,7 +16,7 @@ This may not work with third-party cookie consent solutions. It is the responsib
    `const DNT_COOKIE = "mg_dnt";`
    ```
 
--  To set the cookie to not track user events:
+-  Set the do-not-track cookie to disable data collection:
 
    ```bash
    `$.mage.cookies.set(DNT_COOKIE, true);`
