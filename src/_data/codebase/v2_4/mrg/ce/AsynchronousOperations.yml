@@ -25,4 +25,4 @@ content: "This component is designed to provide a response for a client that lau
   `bulk_details_form`\n- `bulk_details_form_modal`\n- `bulk_listing`\n- `failed_operation_listing`\n-
   `failed_operation_modal_listing`\n- `notification_area`\n- `retriable_operation_listing`\n-
   `retriable_operation_modal_listing`\n\nFor information about UI components in Magento
-  2, see [Overview of UI components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html).\n"
+  2, see [Overview of UI components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html)."

@@ -4,8 +4,84 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Wed Nov 4 10:06:34 2020
+updated: Tue Nov 17 05:06:39 2020
 entries:
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.10 Magento Quality Patch (MQP) package release.
+  versions: ''
+  type: Major Update
+  date: November 13, 2020
+  link: https://github.com/magento/devdocs/pull/8227
+  contributor: Rykh
+  profile: https://github.com/Rykh
+- description: Updated the [Service containers](https://devdocs.magento.com/cloud/docker/docker-containers-service.html)
+    topic in the Cloud Guide to provide current information about the TLS, MailHog,
+    and Xdebug containers.
+  versions: 2.x
+  type: Technical
+  date: November 13, 2020
+  link: https://github.com/magento/devdocs/pull/8216
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.9 Magento Quality Patch (MQP) package release.
+  versions: ''
+  type: Major Update
+  date: November 12, 2020
+  link: https://github.com/magento/devdocs/pull/8220
+  contributor: Rykh
+  profile: https://github.com/Rykh
+- description: Added Purchase Order resources to the [Manage Company Roles](https://devdocs.magento.com/guides/v2.4/b2b/roles.html)
+    topic.
+  versions: 2.4.x
+  type: Major Update
+  date: November 11, 2020
+  link: https://github.com/magento/devdocs/pull/8179
+  contributor: dobooth
+  profile: https://github.com/dobooth
+- description: Added Page Builder modules to the Module Reference Guide for [2.4](https://devdocs.magento.com/guides/v2.4/mrg/intro.html)
+    and [2.3](https://devdocs.magento.com/guides/v2.3/mrg/intro.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: November 11, 2020
+  link: https://github.com/magento/devdocs/pull/8215
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Published [ece-tools package 2002.1.3 release notes](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html)<br/>-
+    Added a [SKIP_COMPOSER_DUMP_AUTOLOAD build variable](https://devdocs.magento.com/cloud/env/variables-build.html).<br/>-
+    Added documentation for [new CLI commands](https://devdocs.magento.com/cloud/project/magento-env-yaml.html)
+    for creating and updating Magento environment variables in `.magento.env.yaml`.<br/>-
+    Updated [ece-tools commands](https://devdocs.magento.com/cloud/reference/ece-tools-reference.html).<br/>Published
+    [Magento Cloud Docker 1.2.0 release notes](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html)
+    and updates:<br/>-  Updated the [Set up email](https://devdocs.magento.com/cloud/docker/docker-config.html#set-up-email)
+    topic to add instructions for configuring HTTP and SMTP ports and disabling MailHog
+    in a Magento Cloud Docker environment.<br/>- Added instructions for configuring
+    the Docker host name for the Xdebug container when running Magento Cloud Docker
+    on Linux.<br/>-  Added instructions for updating the [Elasticsearch plugin configuration](/cloud/docker/docker-containers-service.html#elasticsearch-plugins)
+    in a Magento Cloud Docker environment.<br/>- Added instructions for [building
+    a custom `docker-compose.yaml` file](https://devdocs.magento.com/cloud/docker/docker-quick-reference.html#build-a-custom-docker-compose-configuration).
+  versions: 2.4.x
+  type: Major Update
+  date: November 9, 2020
+  link: https://github.com/magento/devdocs/pull/8203
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Added clarification that the default value of 16MB for the MySQL [`max_allowed_packets`](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/mysql.html)
+    setting applies to both Magento Commerce Cloud and on-premises projects.
+  versions: 2.3.x, 2.4.x
+  type: Technical
+  date: November 6, 2020
+  link: https://github.com/magento/devdocs/pull/8187
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Reorganized the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) pages in the Magento Installation
+    Guide to to make it more coherent.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: November 5, 2020
+  link: https://github.com/magento/devdocs/pull/8175
+  contributor: dobooth
+  profile: https://github.com/dobooth
 - description: Added information about two hot fixes available for Magento 2.3.6 and
     Magento 2.4.1. See [Magento 2.3.x release information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)
     and [Magento 2.4.x release information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
@@ -46,11 +122,11 @@ entries:
   link: https://github.com/magento/devdocs/pull/8137
   contributor: BarnyShergold
   profile: https://github.com/BarnyShergold
-- description: Updated the [Submit for Technical
-    Review](https://devdocs.magento.com/marketplace/sellers/submit-for-technical-review.html) topic
-    in the _Marketplace Developer Guide_ with detailed information about the technical review guidelines, tests,
-    tools, and processes that Magento uses to verify and validate third-party extensions
-    submitted to the Magento Marketplace Developer Portal.
+- description: Updated the [Submit for Technical Review](https://devdocs.magento.com/marketplace/sellers/submit-for-technical-review.html)
+    topic in the _Marketplace Developer Guide_ with detailed information about the
+    technical review guidelines, tests, tools, and processes that Magento uses to
+    verify and validate third-party extensions submitted to the Magento Marketplace
+    Developer Portal.
   versions: 2.x
   type: Major Update
   date: October 27, 2020
@@ -107,8 +183,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8057
   contributor: dshevtsov
   profile: https://github.com/dshevtsov
-- description: Published the
-    [Magento Cloud Patches v1.0.8 release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
+- description: Published the [Magento Cloud Patches v1.0.8 release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
   versions: 2.x
   type: Technical
   date: October 15, 2020
@@ -235,8 +310,8 @@ entries:
   contributor: jfrontain
   profile: https://github.com/jfrontain
 - description: Added information about the [`addProductsToCart` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html)
-    to add any type of product to the active cart. We recommend using this
-    mutation instead of single-purpose mutations such as `addSimpleProductsToCart`.
+    to add any type of product to the active cart. We recommend using this mutation
+    instead of single-purpose mutations such as `addSimpleProductsToCart`.
   versions: 2.4.1
   type: New Topic
   date: October 15, 2020
@@ -332,8 +407,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7436
   contributor: keharper
   profile: https://github.com/keharper
-- description: Published the
-    [Magento Cloud Patches version 1.0.7 release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
+- description: Published the [Magento Cloud Patches version 1.0.7 release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
   versions: 2.x
   type: Technical
   date: October 14, 2020
@@ -349,8 +423,8 @@ entries:
   contributor: ilima-ebay
   profile: https://github.com/ilima-ebay
 - description: Updated the [Redirects](https://devdocs.magento.com/cloud/project/project-routes-more-redir.html)
-    topic in the _Cloud Guide_ to provide information about the `routes.yaml` file size
-    limit with link to instructions for offloading redirects to Fastly to prevent
+    topic in the _Cloud Guide_ to provide information about the `routes.yaml` file
+    size limit with link to instructions for offloading redirects to Fastly to prevent
     performance issues.
   versions: 2.x
   type: Technical

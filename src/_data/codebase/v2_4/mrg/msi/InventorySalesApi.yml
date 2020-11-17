@@ -13,4 +13,4 @@ content: "The `InventorySalesApi` module provides service contracts for inventor
   that 3rd-party developers\ncan use to provide custom inventory catalog functionality.\n\n###
   Public APIs\n\nPublic APIs are defined in the `Api` and `Api/Data` directories.\n\n###
   REST endpoints\n\nThe `etc/webapi.xml` file defines endpoints for determining whether
-  a salable amount of products are available for purchase.\n"
+  a salable amount of products are available for purchase."
