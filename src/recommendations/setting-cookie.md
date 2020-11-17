@@ -12,18 +12,18 @@ This may not work with third-party cookie consent solutions. It is the responsib
 
 -  Name of the cookie:
 
-   ```bash
+   ```text
    `const DNT_COOKIE = "mg_dnt";`
    ```
 
 -  Set the do-not-track cookie to disable data collection:
 
-   ```bash
+   ```text
    `$.mage.cookies.set(DNT_COOKIE, true);`
    ```
 
 -  To clear the cookie when the user has accepted cookies:
 
-   ```bash
+   ```text
    `$.mage.cookies.clear(DNT_COOKIE);`
    ```
