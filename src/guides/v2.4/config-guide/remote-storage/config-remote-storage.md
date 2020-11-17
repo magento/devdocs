@@ -60,8 +60,6 @@ After you enable remote storage for a specific adapter, you can use the CLI to m
 
 ## Disable remote storage
 
-
-
 <!-- link definitions -->
 [AWS S3]: {{page.baseurl}}/config-guide/remote-storage/config-remote-storage-aws-s3.html
 [nginx-module]: http://nginx.org/en/docs/http/ngx_http_image_filter_module.html
