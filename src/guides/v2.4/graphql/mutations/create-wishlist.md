@@ -19,10 +19,7 @@ Use the [`storeConfig` query]({{page.baseurl}}/graphql/queries/store-config.html
 
 ```graphql
 mutation {
-  createWishlist(
-    name: String!
-    visibility: WishlistVisibilityEnum!
-  ) {
+  createWishlist(input: CreateWishlistInput!) {
     CreateWishlistOutput
   }
 }
@@ -61,7 +58,7 @@ mutation {
 
 ## Input attributes
 
-The `createWishlist` mutation requires the following input.
+The `CreateWishlistInput` object requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---

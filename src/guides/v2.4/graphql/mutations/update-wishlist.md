@@ -16,7 +16,7 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 ```graphql
 mutation {
   updateWishlist(
-    wishlistId: ID!
+    wishlistUid: ID!
     name: String
     visibility: WishlistVisibilityEnum
   ) {
@@ -34,7 +34,7 @@ The following example changes the name of an existing wish list.
 ``` graphql
 mutation {
   updateWishlist(
-    wishlistId: 4
+    wishlistUid: 4
     name: "My favorite things"
     visibility: PUBLIC
   ) {
@@ -67,7 +67,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `name` | String! | The ID of the customer's wish list
 `visibility`| WishlistVisibilityEnum! | Describes the visibility of the wish list. Possible values are `PRIVATE` and `PUBLIC`
-`wishlistId` | ID! | The ID of the wish list to update
+`wishlistUid` | ID! | The ID of the wish list to update
 
 ## Output attributes
 
