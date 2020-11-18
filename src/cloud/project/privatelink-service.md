@@ -64,7 +64,7 @@ Enabling PrivateLink can take up to 5 business days. Providing incomplete, or in
 
 ### Enablement workflow
 
-The following workflow outlines the enablement process for PrivateLink integration with {{site.data.var.ece}}.
+The following workflow outlines the enablement process for PrivateLink integration with {{site.data.var.ece}}.  Before you submit your support ticket, please fill out the following excel file with the necessary information. [PrivateLink Information Template] (Excel file you can download, has sample data)
 
 1. **Customer** submits a support ticket requesting PrivateLink enablement with the subject line `PrivateLink support for <company>`. Include the [data required for enablement](#prerequisites) in the ticket.
 
@@ -239,3 +239,4 @@ See your Cloud platform documentation for PrivateLink set up instructions:
 [Manage connection requests]: https://docs.microsoft.com/en-us/azure/private-link/private-link-service-overview#manage-your-connection-requests
 [private endpoint]: https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview
 [Telnet How-To]: https://www.telnet.org/htm/howto.htm
+[PrivateLink Information Template]: PrivateLink_Template_v2.xlsx
