@@ -20,7 +20,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 ## v2002.1.4
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
-- {:.new}Added support for the `opcache.enable_cli` PHP option to flush the opcache before running the deploy hook. This configuration resets the cache configuration and ensures that the current configuration settings are applied on each deployment.<!--MCLOUD-7015-->
+- {:.new}Added support for the `opcache.enable_cli` PHP option to flush the opcache before running the deploy hook. This configuration resets the cache configuration to ensure that the current configuration settings are applied on each deployment.<!--MCLOUD-7015-->
 
 **Environment variable updates**–
 
