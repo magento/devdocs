@@ -297,6 +297,9 @@ pages:
         - label: Migrate to remote storage
           url: /config-guide/remote-storage/config-remote-storage-migration.html
 
+        - label: Configure caching
+          url: /config-guide/remote-storage/config-remote-storage-caching.html
+
     - label: Set up a custom cron job and cron group
       url: /config-guide/cron/custom-cron.html
       children:
