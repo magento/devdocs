@@ -5,6 +5,29 @@ title: Magento 2.4 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
+## 2.4.1 - 2.4.2
+
+### Compare lists
+
+Magento uses the session cache to store compare lists. In version 2.4.2, Magento added GraphQL support for compare lists. Instead of relying on session cache, GraphQL now saves compare list information into the database, with each list assigned an ID. These changes are additive and do not alter the behavior of compare lists on the storefront. However, there is a chance these changes could affect third-party extensions that manage compare lists.
+
+The following methods and property have been added to the `Magento\Catalog\Model\ResourceModel\Product\Compare\Item\Collection` class. They are available to all developers, not just those working on GraphQL.
+
+```terminal
+getListId()
+getProductsByListId()
+removeCompareList()
+setListId()
+setListIdToCustomerCompareItems()
+$listId
+```
+
+This feature introduces the following database changes:
+
+-  Added the foreign key `catalog_compare_item/CATALOG_COMPARE_ITEM_LIST_ID_CATALOG_COMPARE_LIST_LIST_ID`
+-  Added the `catalog_compare_list` table
+-  Added the `catalog_compare_item/list_id` column
+
 ## 2.3.0 - 2.4
 
 ### Elasticsearch
