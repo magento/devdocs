@@ -50,17 +50,145 @@ If all your module's attributes are extension attributes for existing modules, t
 
 You must explicitly define each attribute that can be used as input in a GraphQL query. In the simplest cases, you can create a single `type` definition that includes all the input, output, and sorting attributes for an object. This might not be possible if your module performs calculations, or otherwise has attributes that aren't available at the time of the query.
 
+The following example shows the `products` query. The product query has the following attributes:
+
+```graphql
+products(
+  search: String
+  filter: ProductAttributeFilterInput
+  pageSize: Int
+  currentPage: Int
+  sort: ProductAttributeSortInput
+): Products
+```
+
+The `ProductAttributeFilterInput` object used in the `filter` attribute is a custom input type that determines which attributes will be used to narrow the results in a products query. The attributes of this object are of types `FilterEqualTypeInput` (all of these entities are defined in the `schema.graphqls` file under `CatalogGraphQl` and `ModuleGraphQl`). In other use cases, you would be required to create your own input type in the `<magento_root>/app/code/<vendor_name>/<module_name>/etc/schema.graphqls` file.
+
+The following attributes can be used as filters using the `ProductAttributeFilterInput` object.
+
+```text
+input ProductAttributeFilterInput {
+    category_id: FilterEqualTypeInput
+}
+```
+
+The `FilterEqualTypeInput` type defines a filter that matches the input exactly.
+
+```text
+input FilterEqualTypeInput {
+    in: [String]
+    eq: String
+}
+```
+
+The following example filter searches for products whose `category_id` equals 1.
+
+```text
+{
+  products(filter: {category_id: {eq: "1"}}) {
+    total_count
+    items {
+      name
+    }
+  }
+}
+```
+
+The search returns products whose `category_id` equals 1.
+
+```text
+{
+  "data": {
+    "products": {
+      "total_count": 2,
+      "items": [
+        {
+          "name": "Josie Yoga Jacket"
+        },
+        {
+          "name": "Selene Yoga Hoodie"
+        }
+      ]
+    }
+  }
+}
+```
+
 ### Specify output attributes {#specify-output-attributes}
 
 You must know the data type of each attribute, whether it is scalar or an object, and whether it can be part of an array. In addition, each attribute within an object must be defined in the same manner.
 
 In a `schema.graphqls` file, the output `Interface` defines top-level attributes. Each object returned is defined in a `type` definition.
 
+The following example shows the `products` query. The query returns a `Products` object containing the attributes of the specified data types.
+
+Attribute | Data type | Description
+--- | --- | ---
+`aggregations` | [[Aggregation]]({{ page.baseurl }}/graphql/queries/products.html#Aggregation) | Layered navigation aggregations
+`filters` | LayerFilter | **Deprecated.** Use `aggregations` instead
+`items` | [[ProductInterface]]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface) | An array of products that match the specified search criteria
+`page_info` | [SearchResultPageInfo]({{ page.baseurl }}/graphql/queries/products.html#SearchResultPageInfo) | An object that includes the `page_info` and `currentPage` values specified in the query
+`sort_fields` |  [SortFields]({{ page.baseurl }}/graphql/queries/products.html#SortFields) | An object that includes the default sort field and all available sort fields
+`total_count` | Int | The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not
+
 ### Define the output interface
 
 In many cases, the response contains data that was either not available as input, or was transformed in some manner from the input. For example, when you specify a price in an input filter, Magento evaluates it as a Float value. However, `Price` output objects contain a Float value, a currency value, and possibly minimum/maximum values and tax adjustments. You can define a `typeResolver` to point to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{ page.baseurl }}/graphql/develop/resolvers.html) for more information.
 
 Output types that represent entities that can be manipulated (created, updated, or removed) and/or can be cached on the client MUST have `id` field. The type of the field SHOULD be `ID`.
+
+The following example shows the `products` query. The `page_info` attribute contains the `SearchResultPageInfo` data type which is defined in the `schema.graphqls` file under `ModuleGraphQl`. In other use cases, you would be required to create your own output type in the `<magento_root>/app/code/<vendor_name>/<module_name>/etc/schema.graphqls` file.
+
+The SearchResultPageInfo provides navigation for the query response.
+
+```text
+type SearchResultPageInfo {
+    page_size: Int
+    current_page: Int
+    total_pages: Int
+}
+```
+
+The following example uses the `page_info` output attribute which is of `SearchResultPageInfo` type to get all the information related to the page.
+
+```text
+{
+  products(search: "Yoga pants", pageSize: 2) {
+    total_count
+    items {
+      name
+    }
+    page_info {
+      page_size
+      current_page
+    }
+  }
+}
+```
+
+The search returns 45 items, but only the first two items are returned on the current page and all the information regarding the page is returned.
+
+```text
+{
+  "data": {
+    "products": {
+      "total_count": 45,
+      "items": [
+        {
+          "name": "Josie Yoga Jacket"
+        },
+        {
+          "name": "Selene Yoga Hoodie"
+        }
+      ],
+      "page_info": {
+        "page_size": 2,
+        "current_page": 1
+      }
+    }
+  }
+}
+```
 
 ## Define mutations
 
