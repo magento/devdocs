@@ -1,12 +1,12 @@
 Complete the following tasks in the order shown:
 
-- [About the shared group {#mage-owner-about-group}](#about-the-shared-group-mage-owner-about-group)
-- [Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}](#step-1-create-the-magento-file-system-owner-and-give-the-user-a-strong-password-mage-owner-create-user)
-- [Step 2: Find the web server user's group {#install-update-depend-user-findgroup}](#step-2-find-the-web-server-users-group-install-update-depend-user-findgroup)
-- [Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}](#step-3-put-the-magento-file-system-owner-in-the-web-servers-group-install-update-depend-user-add2group)
-- [Step 4: Get the Magento software {#perms-get-software}](#step-4-get-the-magento-software-perms-get-software)
-- [Step 5: Set ownership and permissions for the shared group {#perms-set-two-users}](#step-5-set-ownership-and-permissions-for-the-shared-group-perms-set-two-users)
-- [Next step](#next-step)
+-  [About the shared group {#mage-owner-about-group}](#about-the-shared-group-mage-owner-about-group)
+-  [Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}](#step-1-create-the-magento-file-system-owner-and-give-the-user-a-strong-password-mage-owner-create-user)
+-  [Step 2: Find the web server user's group {#install-update-depend-user-findgroup}](#step-2-find-the-web-server-users-group-install-update-depend-user-findgroup)
+-  [Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}](#step-3-put-the-magento-file-system-owner-in-the-web-servers-group-install-update-depend-user-add2group)
+-  [Step 4: Get the Magento software {#perms-get-software}](#step-4-get-the-magento-software-perms-get-software)
+-  [Step 5: Set ownership and permissions for the shared group {#perms-set-two-users}](#step-5-set-ownership-and-permissions-for-the-shared-group-perms-set-two-users)
+-  [Next step](#next-step)
 
 ### About the shared group {#mage-owner-about-group}
 
@@ -55,7 +55,7 @@ Because the point of creating this user is to provide added security, make sure 
 
 To find the web server user's group:
 
-*  CentOS:
+-  CentOS:
 
    ```bash
    grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
@@ -69,7 +69,7 @@ To find the web server user's group:
 
 Typically, the user and group name are both `apache`.
 
-*  Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group.
+-  Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group.
 
 Typically, the username and the group name are both `www-data`.
 
@@ -77,8 +77,8 @@ Typically, the username and the group name are both `www-data`.
 
 To put the Magento file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
-*  CentOS: `usermod -a -G apache <username>`
-*  Ubuntu: `usermod -a -G www-data <username>`
+-  CentOS: `usermod -a -G apache <username>`
+-  Ubuntu: `usermod -a -G www-data <username>`
 
 {:.bs-callout-info}
 The `-a -G` options are important because they add `apache` or `www-data` as a _secondary_ group to the user account, which preserves the user's _primary_ group. Adding a secondary group to a user account helps [restrict file ownership and permissions](#perms-set-two-users) to ensure members of a shared group only have access to certain files.
@@ -106,15 +106,15 @@ Typically, the username and primary group name are the same.
 
 To complete the task, restart the web server:
 
-*  Ubuntu: `service apache2 restart`
-*  CentOS: `service httpd restart`
+-  Ubuntu: `service apache2 restart`
+-  CentOS: `service httpd restart`
 
 ### Step 4: Get the Magento software {#perms-get-software}
 
 If you have not done so already, get the Magento software in one of the following ways:
 
-*  [Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
-*  [Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+-  [Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
+-  [Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 ### Step 5: Set ownership and permissions for the shared group {#perms-set-two-users}
 
