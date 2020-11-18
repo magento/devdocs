@@ -28,6 +28,8 @@ Magento highly discourages the use of public buckets because it poses a serious 
 
 Nginx requires an additional configuration to perform Authentication with the `proxy_pass` directive. Add the following proxy information to the `nginx.conf` file:
 
+>nginx.conf
+
 ```conf
 location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
     # Proxying to AWS S3 storage.

@@ -11,11 +11,9 @@ The Remote Storage module provides the option to store media files in a persiste
 
 ![schema image]
 
-The default storage location is the local filesystem. A _storage adapter_ allows you to connect to a storage service and store your files anywhere. Magento supports configuring the following storage services:
+## Remote storage options
 
--  [Amazon Simple Storage Service (Amazon S3)][AWS S3]
-
-You can configure remote storage using the following CLI option:
+You can configure remote storage using the `remote-storage` option with the `setup` CLI command. The `remote-storage` option uses the following syntax:
 
 ```text
 --remote-storage-<parameter-name>="<parameter-value>"
@@ -23,20 +21,26 @@ You can configure remote storage using the following CLI option:
 
 The `parameter-name` refers to the specific remote storage parameter name. The following table lists the parameters available for configuring remote storage:
 
-| Command line Parameter | Parameter name | Meaning | Default value |
+| Command line Parameter | Parameter name | Description | Default value |
 |--- |--- |--- |--- |
-| `remote-storage-driver` | driver | Name of adapter to use<br>Possible values:<br>**file**: Disables remote storage and uses the local filesystem.<br>**aws-s3**: Use the Amazon Simple Storage Service (Amazon S3) | none |
+| `remote-storage-driver` | driver | Adapter name<br>Possible values:<br>**file**: Disables remote storage and uses the local filesystem<br>**aws-s3**: Use the [Amazon Simple Storage Service (Amazon S3)][AWS S3] | none |
 | `remote-storage-bucket` | bucket | Object storage or container name | none |
 | `remote-storage-prefix` | prefix | Optional prefix (location inside of object storage) | empty |
 | `remote-storage-region` | region | Region name | none |
 | `remote-storage-key` | access key | Optional access key | empty |
 | `remote-storage-secret` | secret key | Optional secret key | empty |
 
+### Storage adapters
+
+The default storage location is the local filesystem. A _storage adapter_ allows you to connect to a storage service and store your files anywhere. Magento supports configuring the following storage services:
+
+-  [Amazon Simple Storage Service (Amazon S3)][AWS S3]
+
 ## Enable remote storage
 
-You can install the Remote storage module during a new Magento installation or add it to an existing Magento instance using `remote-storage` parameter name-and-value pairs with `setup` CLI commands. Minimally, you must supply the storage driver, bucket, and region.
+You can install remote storage during a new Magento installation or add it to an existing Magento instance using `remote-storage` parameter name-and-value pairs with `setup` CLI commands. Minimally, you must supply the storage driver, bucket, and region.
 
-The following examples enable the Remote storage module with an AWS S3 storage adapter in the US:
+The following examples enable the remote storage with an AWS S3 storage adapter in the US:
 
 -  Install new Magento with remote storage
 
