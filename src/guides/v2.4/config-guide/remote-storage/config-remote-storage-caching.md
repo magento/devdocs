@@ -7,15 +7,15 @@ functional_areas:
   - Setup
 ---
 
-Remote storage provide a cache layer for external API calls. The caching is based on [Flysytem cache] provided adapters.
+Remote storage provides a cache layer for external API calls. The caching is based on [Flysystem cache] provided adapters.
 
 ## Memory cache
 
-Memory cache is enabled by default and provides per-request cache.
+Memory cache is enabled by default and provides per request cache.
 
 ## Redis cache
 
-A persistent cache stored in Redis and requires an active Redis service and additional configuration
+A persistent cache stored in Redis that requires an active Redis service and additional configuration
 
 ### Redis cache with predis extension.
 
@@ -28,7 +28,7 @@ To use Redis cache with [predis/predis] extension, perform next steps:
 composer require predis/predis
 ```
 
-2. Add a configuration to `app/etc/env.php` file:
+2. Add a configuration to the `app/etc/env.php` file:
 
 ```php
 [
@@ -46,5 +46,5 @@ composer require predis/predis
 ];
 ```
 
-[Flysytem cache]: https://flysystem.thephpleague.com/v1/docs/advanced/caching
+[Flysystem cache]: https://flysystem.thephpleague.com/v1/docs/advanced/caching
 [predis/predis]: https://github.com/predis/predis
