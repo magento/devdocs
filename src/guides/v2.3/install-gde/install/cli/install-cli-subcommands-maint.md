@@ -114,7 +114,7 @@ Then, copy the following files:
 
 *  `pub/errors/default/503.phtml` to `pub/errors/sub/503.phtml`
 *  `pub/errors/default/css/styles.css` to `pub/errors/default/css/styles.css`
-*   Make your edits in these files.
+*  Make your edits in these files.
 
 Make sure, the Directory name has to match the URL parameter.
 
