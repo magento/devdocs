@@ -29,7 +29,7 @@ To configure Magento for server-side image resizing:
 
 1. Click **Save Config**.
 
-1. Continue to the [Nginx configuration](#nginx-configuration).
+1. Continue to the [Nginx configuration](#configure-nginx).
 
 ## Configure Nginx
 
