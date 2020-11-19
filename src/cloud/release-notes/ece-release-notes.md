@@ -22,18 +22,6 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.fix}Fixed an issue that caused deployment failure when the search engine specified in the `SEARCH_CONFIGURATION` environment variable is a value other than `elasticsearch`.<!--MCLOUD-7283-->
 
--  {:.fix}Updated the database service validation to support Magento projects configured with a [custom database connection]({{ site.baseurl }}/cloud/env/variables-deploy.html#database_configuration) to the Amazon Aurora MySQL database. This fix resolves the following types of deploy errors that can occur on projects with custom connections to Aurora:<!--MCLOUD-7269-->
-
-   ```terminal
-   Version of service `mysql` is not detected
-   ```
-
-   ```terminal
-   The current configuration is not compatible with this version of Magento.
-   Magento 2.4.1.0 does not support version "5.7" for service "mysql".
-   Service version should satisfy ">=10.2 <10.5" constraint.
-   ```
-
 ## v2002.1.3
 *Release date: November 9, 2020*<br/>
 
