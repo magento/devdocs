@@ -85,6 +85,48 @@ where
 
 `--none` clears the list.
 
+
+## For Multistore setups
+
+When we need different layout and localized content, general speculation is that there is not an out of the box feature. But, there is one. The error processor accepts an parameter to change the error page template.
+
+```
+if (isset($_GET['skin'])) {
+    $this->_setSkin($_GET['skin']);
+}
+```
+
+This can be passed via rewrite rule in .htaccess and needs no further changes.
+
+
+## For $_GET['skin'] parameter
+
+- Check if the `.maintenance.flag` exists.
+- Check for the host (or any other form like the ENV variables)
+- Set the parameter.
+
+
+## Rewrite rule in .htaccess
+
+```
+RewriteCond %{DOCUMENT_ROOT}/var/.maintenance.flag -f
+RewriteCond %{HTTP_HOST} ^sub.example.com$
+RewriteCond %{QUERY_STRING} !(^|&)skin=sub(&|$) [NC]
+RewriteRule ^ %{REQUEST_URI}?skin=sub [L]
+```
+
+Then, copy the following files:
+
+- `pub/errors/default/503.phtml` to `pub/errors/sub/503.phtml`
+- `pub/errors/default/css/styles.css` to `pub/errors/default/css/styles.css`
+-  Make your edits in these files.
+
+Make sure, the Directory name has to match the URL parameter.
+
+{:.bs-callout-info}
+The nginx setting should be added for multistore setups.
+
+
 {:.ref-header}
 Related topics
 
