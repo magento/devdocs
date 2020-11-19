@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Configure Remote Storage
+title: Configure remote storage
 functional_areas:
   - Configuration
   - System

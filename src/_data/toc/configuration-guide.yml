@@ -294,6 +294,9 @@ pages:
         - label: Configure AWS S3 adapter
           url: /config-guide/remote-storage/config-remote-storage-aws-s3.html
 
+        - label: Configure caching
+          url: /config-guide/remote-storage/config-remote-storage-caching.html
+
         - label: Configure image resizing
           url: /config-guide/remote-storage/config-remote-storage-image-resize.html
 

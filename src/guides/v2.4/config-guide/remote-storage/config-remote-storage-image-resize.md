@@ -8,7 +8,11 @@ functional_areas:
 
 Magento supports image resizing on the application side by default. With the Remote Storage module enabled, you can offload image resizing to the server side using Nginx, which is a simple and efficient way to save disk resources and optimize disk usage.
 
-## Configure Magento
+The following diagram shows the process to store an image using Nginx, and whether the image requires resizing before it is stored in the cache. The resizing is determined by the parameters included in the URL, such as height and width.
+
+![image resize]
+
+## Configure URL format in Magento
 
 To perform an image resizing on the server side, you must configure Magento to provide the height and width arguments and a link to the image.
 
@@ -27,9 +31,9 @@ To configure Magento for server-side image resizing:
 
 1. Continue to the [Nginx configuration](#nginx-configuration).
 
-## Nginx configuration
+## Configure Nginx
 
-To continue the configuration to perform server-side image resizing, you must prepare the `nginx.conf` file and provide a `proxy_pass` value for your chosen adapter.
+To continue the configuration to perform the server-side image resizing, you must prepare the `nginx.conf` file and provide a `proxy_pass` value for your chosen adapter.
 
 {:.procedure}
 To enable Nginx to resize images:
@@ -64,4 +68,6 @@ To enable Nginx to resize images:
 <!-- link definitions -->
 
 [AWS S3]: {{page.baseurl}}/config-guide/remote-storage/config-remote-storage-aws-s3.html
+[image resize]: {{site.baseurl}}/common/images/config-remote-storage-nginx-image-resize.png
+{:width="1000px"}
 [nginx-module]: http://nginx.org/en/docs/http/ngx_http_image_filter_module.html
