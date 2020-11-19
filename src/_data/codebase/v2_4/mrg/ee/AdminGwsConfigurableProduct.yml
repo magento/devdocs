@@ -4,7 +4,7 @@ source_repo: magento2ee
 release: 2.4.1
 github_path: app/code/Magento/AdminGwsConfigurableProduct/README.md
 last_modified_at: '2020-06-03 18:39:45 +0300'
-content: |
+content: |-
   <h2>Magento_AdminGwsConfigurableProduct module</h2>
 
   ## Overview

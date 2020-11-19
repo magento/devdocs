@@ -4,7 +4,7 @@ source_repo: magento2ee
 release: 2.3.6
 github_path: app/code/Magento/GiftCardStaging/README.md
 last_modified_at: '2016-07-13 17:35:04 -0500'
-content: |
+content: |-
   ## Magento_GiftCardStaging module
 
   ## Overview
