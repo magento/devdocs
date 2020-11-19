@@ -194,6 +194,20 @@ stage:
       _merge: true
 ```
 
+The following example overwrites the default database connection with custom connection settings for an Amazon Aurora MySQL database:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      connection:
+        default:
+          username: aurora_user
+          host: aurora_host
+          dbname: aurora_dbname
+          password: aurora_password
+```
+
 Also, you can configure a table prefix.
 
 {:.bs-callout-warning}
