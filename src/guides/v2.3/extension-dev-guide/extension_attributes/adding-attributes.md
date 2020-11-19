@@ -106,10 +106,10 @@ Likewise, the `afterSave` plugin should manipulate the entity data before return
 ```php
 public function afterSave
 (
-     \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-     \Magento\Catalog\Api\Data\ProductInterface $result, /** result from the save call **/
-     \Magento\Catalog\Api\Data\ProductInterface $entity  /** original parameter to the call **/
-     /** other parameter not required **/
+    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
+    \Magento\Catalog\Api\Data\ProductInterface $result, /** result from the save call **/
+    \Magento\Catalog\Api\Data\ProductInterface $entity  /** original parameter to the call **/
+    /** other parameter not required **/
 ) {
     $extensionAttributes = $entity->getExtensionAttributes(); /** get original extension attributes from entity **/
     $ourCustomData = $extensionAttributes->getOurCustomData();
