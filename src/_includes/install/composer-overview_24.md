@@ -7,4 +7,4 @@ We use [Composer](https://getcomposer.org/) to manage Magento components and the
 -  Use the Magento software in a production environment
 
 {:.bs-callout-info}
-You can also [download](https://magento.com/tech-resources/download) an archive file for a specific version of Magento in either ZIP or TAR format. Installing Magento from an archive lacks the advantages of using Composer. Contributing developers should use the [git-based]({{ page.baseurl }}/install/cli/dev_options.html) installation method.
+You can also [download](https://magento.com/tech-resources/download) an archive file for a specific version of Magento in either ZIP or TAR format. Installing Magento from an archive lacks the advantages of using Composer. Contributing developers should use the [git-based]({{ page.baseurl }}/install-gde/cli/dev_options.html) installation method.
