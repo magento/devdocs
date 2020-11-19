@@ -105,12 +105,10 @@ This can be passed via rewrite rule in .htaccess and needs no further changes.
 
 ## Rewrite rule in .htaccess {#instgde-cli-multistore-rewrite-rule}
 
-
 *  RewriteCond `%{DOCUMENT_ROOT}/var/.maintenance.flag -f`
 *  RewriteCond `%{HTTP_HOST} ^sub.example.com$`
 *  RewriteCond `%{QUERY_STRING} !(^|&)skin=sub(&|$)` [NC]
 *  RewriteRule `^ %{REQUEST_URI}?skin=sub` [L]
-
 
 Then, copy the following files:
 
