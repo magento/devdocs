@@ -15,9 +15,9 @@ Remote storage provides a cache layer for external API calls. The caching is bas
 ## Set up persistent Redis cache
 
 {:.procedure}
-To use Redis cache with [predis/predis] extension:
+To use Redis cache with [predis/predis][predis] extension:
 
-1. Add the [predis/predis] extension to the require section of your `composer.json` file.
+1. Add the `predis/predis` extension to the require section of your `composer.json` file.
 
    ```bash
    composer require predis/predis
@@ -43,4 +43,4 @@ To use Redis cache with [predis/predis] extension:
 
 <!-- link definitions -->
 [Flysystem cache]: https://flysystem.thephpleague.com/v1/docs/advanced/caching
-[predis/predis]: https://github.com/predis/predis
+[predis]: https://github.com/predis/predis

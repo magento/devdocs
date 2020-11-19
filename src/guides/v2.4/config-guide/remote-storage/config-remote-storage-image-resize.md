@@ -69,5 +69,5 @@ To enable Nginx to resize images:
 
 [AWS S3]: {{page.baseurl}}/config-guide/remote-storage/config-remote-storage-aws-s3.html
 [image resize]: {{site.baseurl}}/common/images/config-remote-storage-nginx-image-resize.png
-{:width="1000px"}
+{:width="800"}
 [nginx-module]: http://nginx.org/en/docs/http/ngx_http_image_filter_module.html

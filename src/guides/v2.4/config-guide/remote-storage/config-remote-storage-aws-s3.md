@@ -12,17 +12,18 @@ The [Amazon Simple Storage Service (Amazon S3)][AWS S3] is an object storage ser
 {:.bs-callout-warning}
 Magento highly discourages the use of public buckets because it poses a serious security risk.
 
-**Prerequisites for using the AWS S3 adapter**:
+{:.procedure}
+To enable remote storage with the AWS S3 adapter:
 
-1. Create a _private_ bucket for AWS S3.
+1. Log in to your Amazon S3 dashboard and create a _private_ bucket.
 
 1. Set up [AWS IAM][] roles. Alternatively, generate access and secret keys.
 
-1. Configure Magento to use the private bucket.
+1. Configure Magento to use the private bucket. See [Remote storage options][options] for a full list of parameters.
 
-## Configure AWS S3
-
-## Configure Magento
+   ```bash
+   bin/magento setup:config:set --remote-storage-driver="aws-s3" --remote-storage-bucket="<bucket-name>" --remote-storage-region="<region-name>" --remote-storage-prefix="<optional-prefix>" --access-key=<optional-access-key> --secret-key=<optional-secret-key> -n
+   ```
 
 ## Configure Nginx
 
@@ -54,4 +55,5 @@ If you use access and secret keys instead of [AWS IAM][] roles, you must include
 <!-- link definitions -->
 [AWS S3]: https://aws.amazon.com/s3
 [AWS IAM]: https://aws.amazon.com/iam/
+[options]: {{page.baseurl}}/config-guide/remote-storage/config-remote-storage.html#remote-storage-options
 [ngx repo]: https://github.com/anomalizer/ngx_aws_auth
