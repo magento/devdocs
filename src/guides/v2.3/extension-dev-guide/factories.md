@@ -81,13 +81,14 @@ $block = $this->blockFactory->create();
 
 For classes that require parameters, the automatically generated `create()` function accepts an array of parameters that it passes on to the `ObjectManager` to create the target class.
 
-The example below shows the construction of a `Magento\Search\Model\Autocomplete\Item` object by passing in an array of parameters to a factory:
+The example below shows the construction of a `\Magento\Framework\FlagFactory` object by passing in an array of parameters to a factory:
+
 ```php
-$resultItem = $this->itemFactory->create([
-  'title' => $item->getQueryText(),
-  'num_results' => $item->getNumResults(),
-]);
+$flag = $this->flagFactory->create([
+  'data' =>  ['flag_code' => 'something']
 ```
+
+The `Flag` class has a `$data` constructor parameter which corresponds to the data key in the `create` array above.
 
 ### Interfaces
 
