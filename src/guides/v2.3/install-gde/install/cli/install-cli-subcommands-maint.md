@@ -87,7 +87,7 @@ where
 
 ## For Multistore setups {#instgde-cli-multistore}
 
-When we need different layout and localized content, general speculation is that there is not an out of the box feature. But, there is one. The error processor accepts an parameter to change the error page template.
+If we want to setup multiple stores with different layout and localized content for each and every store, we have to use an out of the box feature to achieve it. That is by passing the `$_GET['skin']` parameter to the intended processor. For example, in a sample scenario, The error processor accepts an parameter to change the error page template. Here, we have considered a `503` type error template file for which we have provided the localized content. Below are the general steps to follow,
 
 ```php
 if (isset($_GET['skin'])) {
@@ -97,13 +97,13 @@ if (isset($_GET['skin'])) {
 
 This can be passed via rewrite rule in .htaccess and needs no further changes.
 
-## For $_GET['skin'] parameter {#instgde-cli-multistore-getskin}
+# For $_GET['skin'] parameter {#instgde-cli-multistore-getskin}
 
 *  Check if the `.maintenance.flag` exists.
 *  Check for the host (or any other form like the ENV variables)
 *  Set the parameter.
 
-## Rewrite rule in .htaccess {#instgde-cli-multistore-rewrite-rule}
+# Rewrite rule in .htaccess {#instgde-cli-multistore-rewrite-rule}
 
 *  RewriteCond `%{DOCUMENT_ROOT}/var/.maintenance.flag -f`
 *  RewriteCond `%{HTTP_HOST} ^sub.example.com$`
@@ -113,13 +113,14 @@ This can be passed via rewrite rule in .htaccess and needs no further changes.
 Then, copy the following files:
 
 *  `pub/errors/default/503.phtml` to `pub/errors/sub/503.phtml`
-*  `pub/errors/default/css/styles.css` to `pub/errors/default/css/styles.css`
-*  Make your edits in these files.
+*  `pub/errors/default/css/styles.css` to `pub/errors/sub/styles.css`
 
-Make sure, the Directory name has to match the URL parameter.
+Make your edits in these files.
+
+Make sure, the Directory name has to match the URL parameter. Here it indicates the directory `sub` which is specified as a parameter in the rewrite rule above (`skin=sub`)
 
 {:.bs-callout-info}
-The nginx setting should be added for multistore setups.
+The [nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html) setting should be added for multistore setups.
 
 {:.ref-header}
 Related topics
