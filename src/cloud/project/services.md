@@ -259,7 +259,7 @@ To downgrade a service version by renaming an existing service:
 
      ```yaml
      mysql:
-         type: mysql:10.3
+         type: mysql:10.4
          disk: 2048
      ```
 
@@ -267,7 +267,7 @@ To downgrade a service version by renaming an existing service:
 
      ```yaml
      mysql2:
-          type: mysql:10.2
+          type: mysql:10.3
           disk: 2048
      ```
 
@@ -298,10 +298,10 @@ To downgrade a service by creating an additional service:
 
    ```yaml
    mysql:
-       type: mysql:10.3
+       type: mysql:10.4
        disk: 2048
    mysql2:
-       type: mysql:10.2
+       type: mysql:10.3
        disk: 2048
    ```
 
