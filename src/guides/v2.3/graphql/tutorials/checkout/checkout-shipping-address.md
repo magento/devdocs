@@ -14,37 +14,33 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Use the [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-address.html) mutation to set a shipping address. You can set the shipping address in the following ways:
+Use the [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-address.html) mutation to set a shipping address.
 
-*  Add a new shipping address
-*  Assign the shipping address to be the same as the billing address
-*  Use an address already defined in the logged-in customer's address book
+## Add shipping address to the cart
 
-## Create a new shipping address
+In this step, we use the `setShippingAddressesOnCart` mutation to add a shipping address to the cart.
 
-The following mutation adds a shipping address to the quote.
+If using guest checkout, run the following example.
 
-`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+If using a logged in customer, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 **Request:**
 
-{:.bs-callout .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
-
-```text
+```graphql
 mutation {
   setShippingAddressesOnCart(
     input: {
-      cart_id: "{ CART_ID }"
+      cart_id: "hD5ac9d7N5539DMVhs5uIzwS04hsD3vy"
       shipping_addresses: [
         {
           address: {
             firstname: "John"
             lastname: "Doe"
             company: "Company Name"
-            street: ["320 N Crescent Dr", "Beverly Hills"]
+            street: ["3320 N Crescent Dr", "Beverly Hills"]
             city: "Los Angeles"
             region: "CA"
+            region_id: 12
             postcode: "90210"
             country_code: "US"
             telephone: "123-456-0000"
@@ -71,6 +67,12 @@ mutation {
           code
           label
         }
+        available_shipping_methods{
+          carrier_code
+          carrier_title
+          method_code
+          method_title
+        }
       }
     }
   }
@@ -92,7 +94,7 @@ mutation {
             "lastname": "Doe",
             "company": "Company Name",
             "street": [
-              "320 N Crescent Dr",
+              "3320 N Crescent Dr",
               "Beverly Hills"
             ],
             "city": "Los Angeles",
@@ -105,7 +107,21 @@ mutation {
             "country": {
               "code": "US",
               "label": "US"
-            }
+            },
+            "available_shipping_methods": [
+              {
+                "carrier_code": "flatrate",
+                "carrier_title": "Flat Rate",
+                "method_code": "flatrate",
+                "method_title": "Fixed"
+              },
+              {
+                "carrier_code": "tablerate",
+                "carrier_title": "Best Way",
+                "method_code": "bestway",
+                "method_title": "Table Rate"
+              }
+            ]
           }
         ]
       }
@@ -113,131 +129,10 @@ mutation {
   }
 }
 ```
-
-## Assign the shipping address to be the same as the billing address
-
-[Add a new address for billing and shipping]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-billing-address.html) shows how to do this.
-
-## Use the existing customer's address
-
-First, query the customer to return a list of address IDs.
-
-**Request:**
-
-```text
-query {
-  customer {
-    addresses {
-      id
-      default_billing
-      default_shipping
-    }
-  }
-}
-```
-
-**Response:**
-
-```text
-{
-  "data": {
-    "customer": {
-      "addresses": [
-        {
-          "id": 2,
-          "default_billing": true,
-          "default_shipping": false
-        },
-        {
-          "id": 3,
-          "default_billing": false,
-          "default_shipping": false
-        },
-        {
-          "id": 4,
-          "default_billing": false,
-          "default_shipping": true
-        }
-      ]
-    }
-  }
-}
-```
-
-Set `{ CUSTOMER_ADDRESS_ID }` to an `id` returned in the query.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-**Request:**
-
-```text
-mutation {
-  setShippingAddressesOnCart(
-    input: {
-      cart_id: "{ CART_ID }"
-      shipping_addresses: {
-          customer_address_id: { CUSTOMER_ADDRESS_ID }
-      }
-    }
-  ) {
-    cart {
-      shipping_addresses {
-        firstname
-        lastname
-        company
-        street
-        city
-        region {
-          code
-          label
-        }
-        postcode
-        telephone
-        country
-        {
-          code
-          label
-        }
-      }
-    }
-  }
-}
-```
-
-**Response:**
-
-```json
-{
-  "data": {
-    "setShippingAddressesOnCart": {
-      "cart": {
-        "shipping_addresses": [
-          {
-            "firstname": "John",
-            "lastname": "Doe",
-            "company": "Company Name",
-            "street": [
-              "320 N Crescent Dr",
-              "Beverly Hills"
-            ],
-            "city": "Los Angeles",
-            "region": {
-              "code": "CA",
-              "label": "California"
-            },
-            "postcode": "90210",
-            "telephone": "123-456-0000",
-            "country": {
-              "code": "US",
-              "label": "US"
-            }
-          }
-        ]
-      }
-    }
-  }
-}
-```
+Note the `available_shipping_methods` in the response. We will use this information in a later step.
 
 ## Verify this step {#verify-step}
 

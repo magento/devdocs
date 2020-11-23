@@ -13,7 +13,6 @@ functional_areas:
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
-
 The procedure for creating a cart varies for logged-in customers and guests.
 
 The `customerCart` query returns the active cart for the logged-in customer. If the cart does not exist, the query creates one. You must specify the customer’s authorization token in the headers. Otherwise, the query fails. ["Get customer authorization token"]({{ page.baseurl }}/graphql/authorization-tokens.html) describes these tokens.
@@ -47,6 +46,7 @@ The customer created in the previous step does not have an active cart. The foll
 ```
 
 In the subsequent tutorial steps, the unique shopping cart identifier `pXVxnNg4PFcK1lD60O5evqF7f4SkiRR1` will be listed as `{ CART_ID }`.
+Copy the value of the id attribute. Use this value in subsequent steps wherever the { CART_ID } variable is specified.
 
 ## Create a guest cart
 
@@ -71,6 +71,7 @@ mutation {
 ```
 
 In the subsequent tutorial steps, the unique shopping cart identifier `A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h` will be listed as `{ CART_ID }`.
+Copy the value of the id attribute. Use this value in subsequent steps wherever the { CART_ID } variable is specified.
 
 ## Verify this step {#verify-step}
 
