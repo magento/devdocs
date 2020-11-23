@@ -30,21 +30,21 @@ If using a logged in customer, send the customer's authorization token in the `A
 mutation {
   setShippingAddressesOnCart(
     input: {
-      cart_id: "{ CART_ID }"
+      cart_id: "hD5ac9d7N5539DMVhs5uIzwS04hsD3vy"
       shipping_addresses: [
         {
           address: {
             firstname: "John"
             lastname: "Doe"
             company: "Company Name"
-            street: ["320 N Crescent Dr", "Beverly Hills"]
+            street: ["3320 N Crescent Dr", "Beverly Hills"]
             city: "Los Angeles"
             region: "CA"
             region_id: 12
             postcode: "90210"
             country_code: "US"
             telephone: "123-456-0000"
-            save_in_address_book: true
+            save_in_address_book: false
           }
         }
       ]
@@ -67,6 +67,12 @@ mutation {
           code
           label
         }
+        available_shipping_methods{
+          carrier_code
+          carrier_title
+          method_code
+          method_title
+        }
       }
     }
   }
@@ -88,7 +94,7 @@ mutation {
             "lastname": "Doe",
             "company": "Company Name",
             "street": [
-              "320 N Crescent Dr",
+              "3320 N Crescent Dr",
               "Beverly Hills"
             ],
             "city": "Los Angeles",
@@ -101,7 +107,21 @@ mutation {
             "country": {
               "code": "US",
               "label": "US"
-            }
+            },
+            "available_shipping_methods": [
+              {
+                "carrier_code": "flatrate",
+                "carrier_title": "Flat Rate",
+                "method_code": "flatrate",
+                "method_title": "Fixed"
+              },
+              {
+                "carrier_code": "tablerate",
+                "carrier_title": "Best Way",
+                "method_code": "bestway",
+                "method_title": "Table Rate"
+              }
+            ]
           }
         ]
       }
@@ -111,6 +131,8 @@ mutation {
 ```
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+
+Note the `available_shipping_methods` in the response. We will use this information in the next step.
 
 ## Verify this step {#verify-step}
 

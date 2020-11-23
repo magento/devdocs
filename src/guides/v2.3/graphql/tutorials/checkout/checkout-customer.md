@@ -88,7 +88,7 @@ mutation {
 }
 ```
 
-## Add Authorization header
+## Specify an Authorization header
 
 To send requests on behalf of the customer, you must supply the generated token as a header in your GraphQL browser.
 The name of the header is `Authorization` and the value is `Bearer <token>`.

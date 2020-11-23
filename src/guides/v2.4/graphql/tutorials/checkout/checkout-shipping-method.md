@@ -22,7 +22,7 @@ The `setShippingMethodsOnCart` mutation defines the delivery methods for your or
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-The `carrier_code` and `method_code` values come from the results of the mutation on the previous step.
+The `carrier_code` and `method_code` values come from the response of the `setShippingAddressesOnCart` mutation on the [Set the shipping address](checkout-shipping-address.html) step.
 
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
@@ -37,7 +37,7 @@ mutation {
     shipping_methods: [
       {
         carrier_code: "tablerate"
-          method_code: "bestway"
+        method_code: "bestway"
       }
     ]
   }) {
