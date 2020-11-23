@@ -46,19 +46,21 @@ Attribute | Data type | Description
 `comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the order
 `created_at` | String | Deprecated. Use the `order_date` attribute instead
 `credit_memos` | [[CreditMemo](#CreditMemo)] | Contains a list of credit memos for the order
-`grand_total` | Float  | Deprecated. Use the `totals.grand_total` attribute instead
 `gift_message` | [GiftMessage](#GiftMessage) | The entered gift message for the order
 `gift_receipt_included` | Boolean! | Indicates if the customer requested a gift receipt for the order
 `gift_wrapping` | [GiftWrapping](#GiftWrapping) | The selected gift wrapping for the order
+`grand_total` | Float  | Deprecated. Use the `totals.grand_total` attribute instead
 `id` | ID! | Unique identifier for the order
 `increment_id` | String | Deprecated. Use the `id` attribute instead
 `invoices` | [[Invoice](#Invoice)]! | Contains a list of invoices for the order
 `items` | [[OrderItemInterface](#OrderItemInterface)] | An array containing the items purchased in this order
+`items_eligible_for_return` | [[OrderItemInterface](#OrderItemInterface)] | A list of order items eligible to be in a return request
 `number` | String! | The order number
 `order_date` | String! | The date the order was placed
 `order_number` | String! | Deprecated. Use the `number` attribute instead
 `payment_methods` | [[PaymentMethod](#PaymentMethod)] | Payment details for the order
 `printed_card_included` | Boolean! | Indicates if the customer requested a printed card for the order
+`returns (pageSize = 20 Int, currentPage = 1 Int)` | [Returns](#Returns) | Return requests associated with this order.
 `shipments` | [[OrderShipment](#OrderShipment)] | Shipment list for the order
 `shipping_address` | [OrderAddress](#OrderAddress) | Shipping address for the order
 `shipping_method` | String | Shipping method for the order

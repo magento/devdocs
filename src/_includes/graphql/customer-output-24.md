@@ -26,6 +26,8 @@ Attribute |  Data Type | Description
 `middlename` |String | The customer's middle name
 `orders(<FilterCriteria>)` | {{ customeroutput_text }} | A list of the customer's placed orders{{ crossref_text }}
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
+`return(uid: ID!)` | Return | Gets details about the specified return request
+`returns(pageSize: Int = 20 currentPage: Int = 1)` | Returns | Information about the customer's return requests
 `reviews(pageSize: Int = 20 currentPage: Int = 1)` | ProductReviews! | The list of reviews of the product
 `reward_points` | RewardPoints | Details about the customer's reward points
 `suffix` | String | A value such as Sr., Jr., or III
