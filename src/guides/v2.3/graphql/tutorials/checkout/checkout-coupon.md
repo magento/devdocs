@@ -30,6 +30,7 @@ For the purpose of this tutorial, create a Cart Price Rule with:
 For **Rule Information**:
 
 -  **Rule Name**: Watch Coupon
+-  **Active**: Yes
 -  **Websites**: Main Website
 -  **Customer Groups**: Select all of them
 -  **Coupon**: Specific Coupon
@@ -48,7 +49,7 @@ To verify the coupon works, create an order with a product using guest checkout.
 When checking out, enter `Watch20` in the Apply Discount Code field and press the Apply Discount button.
 The discount should be applied in the cart.
 
-When the coupon is set up, we can apply via GraphQL.
+When the coupon is set up, we can apply it via GraphQL. Replace the `{ CART_ID }` with your generated ID and replace the `{ COUPON_CODE }` with `Watch20` below.
 
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
