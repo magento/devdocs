@@ -18,9 +18,9 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-label | String! | A description of the attribute
-uid | ID! | The encoded ID of a custom attribute
-value | String! | A JSON-encoded value of the attribute
+`label` | String! | A description of the attribute
+`uid` | ID! | The encoded ID of a custom attribute
+`value` | String! | A JSON-encoded value of the attribute
 
 #### ReturnComment attributes {#ReturnComment}
 
