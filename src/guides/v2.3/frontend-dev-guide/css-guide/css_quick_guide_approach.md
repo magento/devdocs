@@ -26,14 +26,14 @@ To extend the parent theme's styles in your theme:
 
 1. Add your Less code in this file.
 
-However, the above only works if the theme's parent is a Blank. Consider a theme Theme A which is the child of Blank. Theme A has two children, B and C. A global style rule is added to the `_extend.less` file of theme A. This extends its parent Blank. Theme B and C also have their own `_extend.less` files. Now, Theme B and C will override the parent's (Theme A), rather than extending it further. So, Theme B & Theme C are extending their grandparent (Blank) and overriding their parent (Theme A) in this setup.
+However, the above only works if the theme's parent is a Blank. Consider a Theme A which is the child of Blank. Theme A has two children, B and C. A global style rule is added to the `_extend.less` file of theme A. This extends its parent Blank. Theme B and C also have their own `_extend.less` files. Theme B and C will override the parent (Theme A), rather than extending it further. Theme B & Theme C are extending their grandparent (Blank) and overriding their parent (Theme A) in this setup.
 
-In case of subsequent descendants of the child theme, you can avoid this behaviour by following these steps:
+In case of subsequent descendants of the child theme, you can avoid this behavior by following these steps:
 
 1. Create a `_extend-child.less` in both your parent and child themes.
 1. Keep `_extend-child.less` empty in your parent theme and add it too your parent theme's `_extend.less` file.
-1. Add a `@import '_extend-child.less'`; rule to the end of your parent's theme's `_extend.less` file.
-1. In your child theme add `@import` or style rules in `_extend-child.less` to extend parent theme's CSS.
+1. Add a `@import '_extend-child.less'` rule to the end of your parent's theme's `_extend.less` file.
+1. In your child theme, add `@import` or style rules in `_extend-child.less` to extend parent theme's CSS.
 
    ```tree
    app/design/frontend/Vendor/
