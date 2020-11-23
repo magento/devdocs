@@ -132,7 +132,7 @@ mutation {
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-Note the `available_shipping_methods` in the response. We will use this information in the next step.
+Note the `available_shipping_methods` in the response. We will use this information in a later step.
 
 ## Verify this step {#verify-step}
 
