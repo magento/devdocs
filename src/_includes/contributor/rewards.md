@@ -56,7 +56,8 @@ Special achievement | 20 | Contribution earns recognition in a specific category
 Test coverage | 10 | Contribution contains a fix or improvement and new tests or test cases.
 MFTF test coverage| 10 | Contribution contains MFTF tests.
 Bug fix | 10 | Contribution fixes one or more known GitHub issues.
-Author of Ported Issue | 5 | Additional points for a contribution that ports (up port or back port) a previous PR across release lines by another contributor
+Author of Ported Issue | 5 | Additional points for a contribution that ports (up port or back port) a previous PR across release lines by another contributor.
+Category of Expertise | 5 | Additional points for a contribution that required deeper investigation and expertise.
 Issue Triage: Confirmed | 5 | A public issue report is verified and confirmed. The description contains all the required information needed to easily reproduce the issue with the provided steps.
 Issue Triage: Rejected/Closed | 4 | A public issue report is verified and closed/rejected because it is not a bug or cannot be reproduce using the provided steps in the description on the supported Magento versions.
 

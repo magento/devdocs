@@ -4,7 +4,7 @@ source_repo: inventory
 release: 1.2.1
 github_path: InventoryGraphQl/README.md
 last_modified_at: '2019-03-30 16:15:21 +0100'
-content: |
+content: |-
   The `InventoryGraphQl` provides type information for the GraphQl module
                          to generate inventory stock fields for product information endpoints.
 

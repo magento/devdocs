@@ -10,4 +10,4 @@ content: "The `InventoryGroupedProduct` module integrates inventory management b
   the MSI (Multi-Source Inventory) project in more detail.\n\n## Installation details\n\nThis
   module is installed as part of Magento Open Source. It cannot be deleted or disabled.\n
   \n## Extension points and service contracts\n\nThere are no extension points or
-  service contracts for this module.\n"
+  service contracts for this module."

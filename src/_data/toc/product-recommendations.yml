@@ -4,6 +4,10 @@ pages:
   url: /recommendations/product-recs.html
   versionless: true
 
+- label: How to Implement Product Recommendations
+  url: /recommendations/implementation.html
+  versionless: true
+
 - label: Install and Configure Recommendations
   url: /recommendations/install-configure.html
   versionless: true
@@ -14,6 +18,10 @@ pages:
 
 - label: Verify Event Collection
   url: /recommendations/verify.html
+  versionless: true
+
+- label: Handle Cookie Restrictions
+  url: /recommendations/setting-cookie.html
   versionless: true
 
 - label: Test Recommendations
