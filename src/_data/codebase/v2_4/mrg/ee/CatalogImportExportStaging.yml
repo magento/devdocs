@@ -4,7 +4,7 @@ source_repo: magento2ee
 release: 2.4.1
 github_path: app/code/Magento/CatalogImportExportStaging/README.md
 last_modified_at: '2016-04-07 09:45:21 -0500'
-content: |
+content: |-
   <h2>Magento_CatalogImportExportStaging module</h2>
 
   ## Overview

@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.3.6
 github_path: app/code/Magento/CurrencySymbol/README.md
 last_modified_at: '2014-12-12 12:14:06 -0800'
-content: |+
+content: |-
   **CurrencySymbol** enables the creation of custom currencies and management of currency conversion rates.
 
   ## Controllers
@@ -17,4 +17,3 @@ content: |+
   ### Currency Symbol Controllers
   ***CurrencySymbol\Controller\Adminhtml\System\Currencysymbol\Reset.php*** resets all custom currency symbols.
   ***CurrencySymbol\Controller\Adminhtml\System\Currencysymbol\Save.php*** creates custom currency symbols.
-

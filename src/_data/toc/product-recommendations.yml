@@ -20,6 +20,10 @@ pages:
   url: /recommendations/verify.html
   versionless: true
 
+- label: Handle Cookie Restrictions
+  url: /recommendations/setting-cookie.html
+  versionless: true
+
 - label: Test Recommendations
   url: /recommendations/test.html
   versionless: true

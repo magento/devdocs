@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/Quote/README.md
 last_modified_at: '2015-01-06 12:45:10 +0200'
-content: |
+content: |-
   ## Purpose of module
 
 

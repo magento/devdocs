@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/AmqpStore/README.md
 last_modified_at: '2019-08-27 01:59:34 +0100'
-content: |
+content: |-
   The Magento_AmqpStore module provides the ability to specify a store before publishing messages with the Advanced Message Queuing Protocol (AMQP).
 
   ## Extensibility

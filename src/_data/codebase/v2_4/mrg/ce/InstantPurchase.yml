@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/InstantPurchase/README.md
 last_modified_at: '2019-08-06 14:40:28 -0500'
-content: |
+content: |-
   ## Overview
 
   Instant Purchase feature allows the Customer to place the order in seconds without going through full checkout. Once clicked, system places the order using default shipping and billing addresses and stored payment method. Order is placed and customer gets confirmation message in notification area.
