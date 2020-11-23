@@ -36,7 +36,7 @@ To set up and run MFTF tests in a Cloud Docker environment:
 1. Generate the `docker-compose.yml` file.
 
    ```bash
-   ./vendor/bin/ece-docker build:compose --with-selenium
+   ./vendor/bin/ece-docker build:compose --with-selenium --with-test
    ```
 
 1. Start the {{site.data.var.mcd-prod}} environment. Optionally, you can set up {{site.data.var.mcd-prod}} to work in [Developer Mode].

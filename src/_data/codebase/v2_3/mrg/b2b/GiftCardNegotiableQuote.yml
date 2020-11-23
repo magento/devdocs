@@ -4,7 +4,7 @@ source_repo: magento2b2b
 release: 1.1.6
 github_path: app/code/Magento/GiftCardNegotiableQuote/README.md
 last_modified_at: '2017-04-10 10:33:01 +0300'
-content: |
+content: |-
   ## Overview
 
   The Magento_GiftCardNegotiableQuote module enables gift cards to be displayed in a negotiable quote in an B2B environment. This module extends Magento_NegotiableQuote and Magento_GiftCard modules.

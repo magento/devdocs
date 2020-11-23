@@ -48,7 +48,7 @@ To install and configure `php-fpm`:
    ```
 
    {:.bs-callout-info}
-   This command installs the latest available version of PHP 7.2.X. See [Magento 2.3.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for supported PHP versions.
+   This command installs the latest available version of PHP 7.2.X. See [Magento 2.3.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported PHP versions.
 
 1. Open the `php.ini` files in an editor:
 

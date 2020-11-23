@@ -121,7 +121,7 @@ To check the `auto-load:psr-4` configuration:
           "Magento\\Framework\\": "lib/internal/Magento/Framework/",
           "Magento\\Setup\\": "setup/src/Magento/Setup/",
           "Magento\\": "app/code/Magento/",
-          "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/",
+          "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
        },
    ```
    {:.no-copy}

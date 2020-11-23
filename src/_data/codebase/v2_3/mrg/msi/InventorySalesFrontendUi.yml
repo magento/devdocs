@@ -10,4 +10,4 @@ content: "The `InventorySalesFrontendUi` module extends Magento's frontend UI wi
   the MSI (Multi-Source Inventory) project in more detail.\n\n## Installation details\n\nThis
   module is installed as part of Magento Open Source. You can remove it if you run
   a headless version of Magento.\n\n## Extension points and service contracts\n\nThere
-  are no extension points or service contracts for this module.\n"
+  are no extension points or service contracts for this module."
