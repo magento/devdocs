@@ -49,7 +49,7 @@ The ReturnItem object provides details about an individual item in a return requ
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`custom_attributes` | [[CustomAttribute]](#CustomAttribute) Return item custom attributes that are visible on the storefront
+`custom_attributes` | [[CustomAttribute]](#CustomAttribute) | Return item custom attributes that are visible on the storefront
 `order_item` | [OrderItemInterface!]({{page.baseurl}}/graphql/interfaces/order-item-interface.html) | Provides access to the product being returned, including information about selected and entered options
 `quantity` | Float! | The quantity of the item the merchant authorized to be returned
 `request_quantity` | Float! | The quantity of the item requested to be returned
