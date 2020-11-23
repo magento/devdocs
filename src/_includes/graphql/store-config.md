@@ -70,7 +70,7 @@ Attribute | Data Type | Description | Default or example value
 `product_reviews_enabled` | String | Indicates whether product reviews are enabled. Possible values: 1 (Yes) and 0 (No) | 1
 `product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
 `required_character_classes_number` | String | The number of different character classes required in a password (lowercase, uppercase, digits, special characters). <br/>Configuration path: customer/password/required_character_classes_number | 2
-`returns_enabled` | String! | Indicates whether RMA is enabled on the storefront. Possible values: enabled/disabled | disabled
+`returns_enabled` | String! | Indicates whether RMA is enabled on the storefront. Possible values: enabled/disabled | Disabled
 `root_category_id` | Int | The ID of the root category | 2
 `sales_fixed_product_tax_display_setting` | [FixedProductTaxDisplaySettings](#FixedProductTaxDisplaySettings) | Corresponds to the **Display Prices In Sales Modules** field. It indicates how Fixed Product Taxes information is displayed on cart, checkout, and order pages | FPT_DISABLED
 `sales_gift_wrapping` | String | Indicates if gift wrapping prices are displayed on the Orders page. Possible values: 1 (Yes) and 0 (No) | 1

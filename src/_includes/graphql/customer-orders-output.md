@@ -60,7 +60,7 @@ Attribute | Data type | Description
 `order_number` | String! | Deprecated. Use the `number` attribute instead
 `payment_methods` | [[PaymentMethod](#PaymentMethod)] | Payment details for the order
 `printed_card_included` | Boolean! | Indicates if the customer requested a printed card for the order
-`returns (pageSize = 20 Int, currentPage = 1 Int)` | [Returns](#Returns) | Return requests associated with this order.
+`returns (pageSize = 20 Int, currentPage = 1 Int)` | [Returns](#Returns) | Return requests associated with this order
 `shipments` | [[OrderShipment](#OrderShipment)] | Shipment list for the order
 `shipping_address` | [OrderAddress](#OrderAddress) | Shipping address for the order
 `shipping_method` | String | Shipping method for the order

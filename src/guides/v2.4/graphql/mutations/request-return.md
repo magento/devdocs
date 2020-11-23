@@ -19,6 +19,7 @@ Use the [`storeConfig` query]({{page.baseurl}}/graphql/queries/store-config.html
 ```graphql
 mutation {
 requestReturn(input: RequestReturnInput!): RequestReturnOutput
+}
 ```
 
 ## Example usage
