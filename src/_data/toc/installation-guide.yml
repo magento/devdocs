@@ -1,7 +1,7 @@
 label: Installation Guide
 pages:
 
-    - label: Installation flow diagram
+    - label: Installation flow
       url: /install-gde/install-flow-diagram.html
     
     - label: Magento system requirements
