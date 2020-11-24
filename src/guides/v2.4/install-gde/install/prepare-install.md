@@ -17,7 +17,7 @@ We now use [Composer](http://getcomposer.org) to resolve dependencies before you
 1. [Create the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) so Composer writes files to the web server docroot as the correct user.
 1. Run the [<code>composer install</code> command](#install-composer-install) from your Magento root directory (for example, `/var/www/magento2/`).
 
-The Magento root directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click [here]({{ page.baseurl }}/install-gde/basics/basics_docroot.html).
+The Magento root directory is a subdirectory of your web server's docroot.
 
 If the following error displays, see [troubleshooting](https://support.magento.com/hc/en-us/articles/360033818091):
 

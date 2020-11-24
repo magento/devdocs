@@ -14,14 +14,6 @@ Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en
 
 Installation instructions vary based on which operating system you are using. See [PHP](php-settings.html) for for information.
 
-## Help if you are just starting out {#apache-help-beginner}
-
-If you are new to all this and need some help getting started, we suggest the following:
-
-*  [Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-*  [What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
-*  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
-
 ## Ubuntu 16
 
 The following section describes how to install Magento 2.x on Ubuntu 16 using nginx, PHP, and MySQL.
