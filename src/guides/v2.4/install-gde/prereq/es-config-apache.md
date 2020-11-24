@@ -67,7 +67,7 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
    ```terminal
    HTTP/1.1 200 OK
-   Date: Tue, 23 Feb 2019 20:38:03 GMT
+   Date: Sat, 23 Feb 2019 20:38:03 GMT
    Content-Type: application/json; charset=UTF-8
    Content-Length: 389
    Connection: keep-alive
