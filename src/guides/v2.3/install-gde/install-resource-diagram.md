@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 01_resource
 title: Installation flow diagram
 menu_title: Installation flow diagram

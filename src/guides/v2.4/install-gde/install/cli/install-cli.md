@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Install the Magento software using the command line
 functional_areas:
   - Install

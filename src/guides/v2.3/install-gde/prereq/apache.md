@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Apache
 functional_areas:
   - Install

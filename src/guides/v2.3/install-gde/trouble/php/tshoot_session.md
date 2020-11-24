@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 03_install
 title: During installation, exception SessionHandler::read()
 menu_title: During installation, exception SessionHandler::read()

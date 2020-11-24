@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Create, edit, or unlock a Magento administrator account
 functional_areas:
   - Install

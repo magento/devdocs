@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Contributing developers&mdash;update, reinstall Magento
 functional_areas:
   - Install

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Installation quick reference (tutorial)
 functional_areas:
   - Install

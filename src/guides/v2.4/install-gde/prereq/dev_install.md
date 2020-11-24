@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: (Contributor) Clone the Magento repository
 functional_areas:
   - Install

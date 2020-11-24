@@ -23,16 +23,6 @@ pages:
         - label: PHP
           url: /install-gde/prereq/php-settings.html
 
-        - label: Elasticsearch
-          url: /install-gde/prereq/elasticsearch.html
-          children:
-
-            - label: Configure nginx and Elasticsearch
-              url: /install-gde/prereq/es-config-nginx.html
-
-            - label: Configure Apache and Elasticsearch
-              url: /install-gde/prereq/es-config-apache.html      
-
         - label: Get your authentication keys
           url: /install-gde/prereq/connect-auth.html
 
@@ -72,6 +62,45 @@ pages:
 
     - label: Install options
       url: /install-gde/bk-install-guide.html
+
+    - label: Setup Wizard Install
+      children:
+        - label: Installation roadmap (reference)
+          url: /install-gde/install-roadmap_web.html
+
+        - label: Install optional sample data modules
+          url: /install-gde/install/web/install-web-sample-data.html
+          children:
+
+            - label: Install using Composer
+              url: /install-gde/install/web/install-web-sample-data-composer.html
+
+            - label: Install by cloning repositories
+              url: /install-gde/install/web/install-web-sample-data-clone.html
+
+        - label: Setup Wizard installation
+          url: /install-gde/install/web/install-web.html
+          children:
+            - label: Step 1. Readiness check
+              url: /install-gde/install/web/install-web_1-readiness.html
+
+            - label: Step 2. Add a Database
+              url: /install-gde/install/web/install-web_2-db.html
+
+            - label: Step 3. Web Configuration
+              url: /install-gde/install/web/install-web_3-web-conf.html
+
+            - label: Step 4. Customize Your Store
+              url: /install-gde/install/web/install-web_4-customize-store.html
+
+            - label: Step 5. Create Admin Account
+              url: /install-gde/install/web/install-web_5-create-admin.html
+
+            - label: Step 6. Install
+              url: /install-gde/install/web/install-web_6-install.html
+
+        - label: Post-installation
+          url: /install-gde/continue-to-verify.html
 
     - label: Command Line Installation
       url: /install-gde/install/cli/install-cli.html
@@ -186,3 +215,6 @@ pages:
 
             - label: Cannot write to the var/generation directory
               url: /install-gde/trouble/tshoot_var-gen-perms.html
+
+            - label: Installation dependencies not met
+              url: /install-gde/trouble/tshoot_install_depend.html

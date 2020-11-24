@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Optional software
 functional_areas:
   - Install

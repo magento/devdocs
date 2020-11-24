@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 03_install
 title: During installation, xdebug maximum function nesting level error
 menu_title: During installation, xdebug maximum function nesting level error

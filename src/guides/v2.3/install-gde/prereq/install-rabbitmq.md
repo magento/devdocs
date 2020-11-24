@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: RabbitMQ
 functional_areas:
   - Install

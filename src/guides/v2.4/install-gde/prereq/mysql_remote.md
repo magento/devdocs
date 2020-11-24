@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Set up a remote MySQL database connection
 functional_areas:
   - Install
