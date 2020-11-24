@@ -104,7 +104,8 @@ The `CartItemUpdateInput` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_item_id` | Int! | The unique ID assigned when a customer places an item in the cart
+`cart_item_id` | Int | Deprecated. Use `cart_item_uid` instead. The unique ID assigned when a customer places an item in the cart
+`cart_item_uid` | ID! | The unique IDS for an object implementing `CartItemInterface`
 `customizable_options` | [CustomizableOptionInput!] | An array that defines customizable options for the product
 `gift_message` | [GiftMessageInput](#GiftMessageInput) | Gift message details for the cart item
 `gift_wrapping_id` | ID | The unique identifier of the gift wrapping to be used for the cart item

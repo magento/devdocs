@@ -695,10 +695,11 @@ The `CartItemInterface` can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id` | String | ID of the item
+`id` | String | Deprecated. Use `uid` instead. ID of the item
 `prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
+`uid` | ID! | The unique ID for the CartItemInterface object
 
 ### CartItemPrices object {#CartItemPrices}
 

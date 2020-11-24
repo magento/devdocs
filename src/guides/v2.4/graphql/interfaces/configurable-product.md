@@ -49,12 +49,14 @@ The `ConfigurableProductOptions` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `attribute_code` | String | A string that identifies the attribute
-`attribute_id` | String | Deprecated. Use `attribute_id_v2` instead
-`attribute_id_v2` | Int | The ID assigned to the attribute
-`id` | Int | The configurable option ID number assigned by the system
+`attribute_id` | String | Deprecated. Use `attribute_uid` instead
+`attribute_id_v2` | Int | Deprecated. Use `attribute_uid` instead. The ID assigned to the attribute
+`attribute_uid` | ID! | The unique ID assigned to the attribute
+`id` | Int | Deprecated. Use `uid` instead. The configurable option ID number assigned by the system
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
 `position` | Int | A number that indicates the order in which the attribute is displayed
-`product_id` | Int | This is the same as a product's 'id' field
+`product_id` | Int | Deprecated. This attribute is not needed and its value can be obtained from its parent
+`uid` | ID! | The unique ID for a ConfigurableProductOptions object
 `use_default` | Boolean | Indicates whether the option is the default
 `values` | [[ConfigurableProductOptionsValues]](#configProdOptionsValues) | An array that defines the `value_index` codes assigned to the configurable product
 
@@ -69,7 +71,8 @@ Attribute | Type | Description
 `store_label` | String | The label of the product on the current store
 `swatch_data` | [SwatchDataInterface](#swatchDataInterface) | Details about swatches that can be displayed for configurable product options
 `use_default_value` | Boolean | Indicates whether to use the default_label
-`value_index` | Int | A unique index number assigned to the configurable product option
+`uid` | ID! | The unique ID assigned to the configurable product option value
+`value_index` | Int | Deprecated. Use `uid` instead. A unique index number assigned to the configurable product option
 
 ### SwatchDataInterface {#swatchDataInterface}
 

@@ -58,7 +58,8 @@ By default, you can use the following attributes as filters. To define a custom 
 
 Attribute | Data type | Description
 --- | --- | ---
-`category_id` | FilterEqualTypeInput | Filters by category ID
+`category_id` | FilterEqualTypeInput | Deprecated. Use `category_uid` instead. Filters by category ID
+`category_uid` | FilterEqualTypeInput | Filters by the unique ID of a category for objects that implement `CategoryInterface`
 `description` | FilterMatchTypeInput | Filters on the Description attribute
 `name` | FilterMatchTypeInput | Filters on the Product Name attribute
 `price` | FilterRangeTypeInput | Filters on the Price attribute
@@ -254,7 +255,7 @@ Attribute | Data type | Description
 
 ### Aggregation attributes {#Aggregation}
 
-Each aggregation within the `aggregations` object is a separate bucket that contains the attribute code and label for each filterable option (such as price, category ID, and custom attributes). It also includes the number of products within the filterable option that match the specified search criteria.
+Each aggregation within the `aggregations` object is a separate bucket that contains the attribute code and label for each filterable option (such as price, category UID, and custom attributes). It also includes the number of products within the filterable option that match the specified search criteria.
 
 {:.bs-callout-info}
 To enable a custom attribute to return layered navigation and aggregation data from the Admin, set the **Stores** > Attributes > **Product** > <attribute name> > **Storefront Properties** > **Use in Layered Navigation** field to **Filterable (with results)** or **Filterable (no results)**.
