@@ -731,11 +731,11 @@ For mixins grouping use the double underscore "__" prefix.
 **Example:**
 
 ```css
-.extend__clearfix (...) {
+.extend__clearfix(...) {
     ...
 }
 
-.vendor-prefix__flex-direction (...) {
+.vendor-prefix__flex-direction(...) {
     ...
 }
 ```
