@@ -17,8 +17,13 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 {:.bs-callout-info}
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
-## v2002.1.3
+## v2002.1.4
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+-  {:.fix}Fixed an issue that caused deployment failure when the search engine specified in the `SEARCH_CONFIGURATION` environment variable is a value other than `elasticsearch`.<!--MCLOUD-7283-->
+
+## v2002.1.3
+*Release date: November 9, 2020*<br/>
 
 **Infrastructure updates**–
 

@@ -12,4 +12,4 @@ content: "The `InventorySales` module integrates Inventory Management business l
   for `InventorySalesApi`\nis provided by a 3rd-party module, the module cannot be
   deleted or disabled.\n\n## Extension points and service contracts\n\nAll public
   interfaces related to this module are located in the `InventorySalesApi` module.
-  \nUse the interfaces defined in `InventorySalesApi` to extend this module.\n"
+  \nUse the interfaces defined in `InventorySalesApi` to extend this module."

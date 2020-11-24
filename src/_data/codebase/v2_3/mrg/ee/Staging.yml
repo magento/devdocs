@@ -4,7 +4,7 @@ source_repo: magento2ee
 release: 2.3.6
 github_path: app/code/Magento/Staging/README.md
 last_modified_at: '2016-10-19 18:10:05 +0300'
-content: |
+content: |-
   ## Overview
   Magento_Staging module is used for setting up, previewing and managing future store updates.
 

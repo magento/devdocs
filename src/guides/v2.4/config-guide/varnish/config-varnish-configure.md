@@ -172,13 +172,13 @@ tcp        0      0 ::1:48509                   :::*                        LIST
 
 The preceding shows Varnish running on port 80 and Apache running on port 8080.
 
-If you don't see output for `varnishd`, make sure Varnish is running.
+If you do not see output for `varnishd`, make sure Varnish is running.
 
 [More information about netstat options](http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html)
 
 ## Install the Magento 2 software {#config-varnish-install}
 
-Install the Magento 2 software if you haven't already done so. When prompted for a Base URL, use the Varnish host and port 80 (for Varnish) because Varnish receives all incoming HTTP requests.
+Install the Magento 2 software if you have not already done so. When prompted for a Base URL, use the Varnish host and port 80 (for Varnish) because Varnish receives all incoming HTTP requests.
 
 Possible error installing Magento:
 

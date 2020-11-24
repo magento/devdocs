@@ -12,4 +12,4 @@ content: "The `InventoryConfigurableProductAdminUi`extends the Magento Admin UI 
   Management UI\nis provided by a 3rd-party system or if you run a headless version
   of Magento.\n \n## Extensibility\n\nThe `InventoryConfigurableProductAdminUi` module
   contains several extension points.\n\n### UI Components\n\nThe `view/adminhtml/ui_component`
-  directory contains extensible UI components.\n"
+  directory contains extensible UI components."
