@@ -17,7 +17,7 @@ functional_areas:
 This section discusses how to configure Apache as an *unsecure* proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with Apache](#es-ws-secure-apache).
 
 {:.bs-callout-info}
-The reason the proxy is not secured in this example is it's easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.
+The reason the proxy is not secured in this example is that it is easier to set up and verify. You can use TLS with this proxy. If you wish to do so, make sure you add the proxy information to your secure virtual host configuration.
 
 ### Set up a proxy for Apache 2.4 {#es-apache-proxy-24}
 
@@ -67,7 +67,7 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
    ```terminal
    HTTP/1.1 200 OK
-   Date: Tue, 23 Feb 2016 20:38:03 GMT
+   Date: Tue, 23 Feb 2019 20:38:03 GMT
    Content-Type: application/json; charset=UTF-8
    Content-Length: 389
    Connection: keep-alive

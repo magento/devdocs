@@ -40,7 +40,6 @@ You can either checkout a release branch or a development branch:
 
 You can checkout a specific release branch after cloning the latest code.
 
-{:.bs-callout-info}
 Refer to [GitHub's documentation][]{:target="_blank"} for instructions on cloning a repository.
 
 ### Creating an authorization file {#instgde-prereq-compose-clone-auth}

@@ -33,7 +33,7 @@ Use the following guidelines to configure remote database connections if your we
 
 ### Resolving connection issues
 
-If you have issues connecting to either host, first ping the other host to make sure it's reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
+If you have issues connecting to either host, first ping the other host to make sure it is reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
 
 ## Create the remote connection {#instgde-prereq-mysql-remote-create}
 

@@ -11,14 +11,6 @@ functional_areas:
 
 Magento supports Apache 2.4.x.
 
-## Help if you are just starting out {#apache-help-beginner}
-
-If you are new to all this and need some help getting started, we suggest the following:
-
-*  [Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-*  [What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
-*  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
-
 ## Important: Apache required directives {#apache-required-directives}
 
 1. Set `AllowEncodedSlashes` in the server config (globally) or in the virtual host configurations to avoid decoding the encoded slashes that may cause issues for URLs. For instance, when retrieving products with a slash in the SKU via the API, you will not want that converted. The sample block is not complete and other directives will be required.
@@ -65,8 +57,8 @@ apache2 -v
 The result displays similar to the following:
 
 ```terminal
-Server version: Apache/2.2.22 (Ubuntu)
-Server built: Jul 22 2014 14:35:32
+Server version: Apache/2.4.04 (Ubuntu)
+Server built: Jul 22 2020 14:35:32
 ```
 
 *  If Apache is *not* installed, see:

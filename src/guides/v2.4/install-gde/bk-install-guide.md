@@ -10,11 +10,9 @@ redirect_from:
   - /guides/v2.4/install-gde/continue-to-install.html 
 ---
 
-You are among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation.
+You are among the 240,000 merchants worldwide who put their trust in our eCommerce software. We have gathered some information to help you get started with Magento and with your Magento installation.
 
 We have some resources here to help get you started using the eCommerce platform of the future---Magento 2.
-
-It’s what we do.
 
 ## How to get the Magento software {#install-get-software}
 
