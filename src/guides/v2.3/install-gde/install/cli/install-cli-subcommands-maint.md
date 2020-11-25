@@ -101,18 +101,21 @@ This can also be added a rewrite rule in the `.htaccess` file that will append a
 
 ### $_GET['skin'] parameter {#instgde-cli-multistore-getskin}
 
-*  Check if the `.maintenance.flag` exists
-*  Note the host address, that refers to the `HTTP_HOST`, or any other variable such as ENV variables
-*  Set the parameter by using the rewrite rules below.
+To use the `skin` parameter:
 
-### Rewrite rule in .htaccess {#instgde-cli-multistore-rewrite-rule}
+1. Check if the `.maintenance.flag` exists
+1. Note the host address, that refers to the `HTTP_HOST`, or any other variable such as ENV variables
+1. Check if the `skin` parameter exists
+1. Set the parameter by using the rewrite rules below.
+
+This is what it looks like as a rewrite rule:
 
 *  RewriteCond `%{DOCUMENT_ROOT}/var/.maintenance.flag -f`
 *  RewriteCond `%{HTTP_HOST} ^sub.example.com$`
 *  RewriteCond `%{QUERY_STRING} !(^|&)skin=sub(&|$)` [NC]
 *  RewriteRule `^ %{REQUEST_URI}?skin=sub` [L]
 
-Then, copy the following files:
+Copy the following files:
 
 *  `pub/errors/default/503.phtml` to `pub/errors/sub/503.phtml`
 *  `pub/errors/default/css/styles.css` to `pub/errors/sub/styles.css`
