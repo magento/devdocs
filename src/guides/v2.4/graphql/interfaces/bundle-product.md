@@ -71,7 +71,7 @@ The following query returns information about bundle product `24-WG080`, which i
       items{
          sku
          __typename
-         id
+         uid
          name
           ... on BundleProduct {
           dynamic_sku
@@ -87,7 +87,6 @@ The following query returns information about bundle product `24-WG080`, which i
             position
             sku
             options {
-              id
               uid
               quantity
               position
@@ -97,7 +96,7 @@ The following query returns information about bundle product `24-WG080`, which i
               can_change_quantity
               label
               product {
-                id
+                uid
                 name
                 sku
                 __typename
@@ -120,7 +119,7 @@ The following query returns information about bundle product `24-WG080`, which i
         {
           "sku": "24-WG080",
           "__typename": "BundleProduct",
-          "id": 46,
+          "uid": "NDY=",
           "name": "Sprite Yoga Companion Kit",
           "dynamic_sku": true,
           "dynamic_price": true,
@@ -137,7 +136,6 @@ The following query returns information about bundle product `24-WG080`, which i
               "sku": "24-WG080",
               "options": [
                 {
-                  "id": 1,
                   "uid": "YnVuZGxlLzEvMS8x",
                   "quantity": 1,
                   "position": 1,
@@ -147,14 +145,13 @@ The following query returns information about bundle product `24-WG080`, which i
                   "can_change_quantity": true,
                   "label": "Sprite Stasis Ball 55 cm",
                   "product": {
-                    "id": 26,
+                    "uid": "MjY=",
                     "name": "Sprite Stasis Ball 55 cm",
                     "sku": "24-WG081-blue",
                     "__typename": "SimpleProduct"
                   }
                 },
                 {
-                  "id": 2,
                   "uid": "YnVuZGxlLzEvMi8x",
                   "quantity": 1,
                   "position": 2,
@@ -164,14 +161,13 @@ The following query returns information about bundle product `24-WG080`, which i
                   "can_change_quantity": true,
                   "label": "Sprite Stasis Ball 65 cm",
                   "product": {
-                    "id": 29,
+                    "uid": "Mjk=",
                     "name": "Sprite Stasis Ball 65 cm",
                     "sku": "24-WG082-blue",
                     "__typename": "SimpleProduct"
                   }
                 },
                 {
-                  "id": 3,
                   "uid": "YnVuZGxlLzEvMy8x",
                   "quantity": 1,
                   "position": 3,
@@ -181,7 +177,7 @@ The following query returns information about bundle product `24-WG080`, which i
                   "can_change_quantity": true,
                   "label": "Sprite Stasis Ball 75 cm",
                   "product": {
-                    "id": 32,
+                    "uid": "MzI=",
                     "name": "Sprite Stasis Ball 75 cm",
                     "sku": "24-WG083-blue",
                     "__typename": "SimpleProduct"
@@ -198,7 +194,6 @@ The following query returns information about bundle product `24-WG080`, which i
               "sku": "24-WG080",
               "options": [
                 {
-                  "id": 4,
                   "uid": "YnVuZGxlLzIvNC8x",
                   "quantity": 1,
                   "position": 1,
@@ -208,7 +203,7 @@ The following query returns information about bundle product `24-WG080`, which i
                   "can_change_quantity": true,
                   "label": "Sprite Foam Yoga Brick",
                   "product": {
-                    "id": 21,
+                    "uid": "MjE=",
                     "name": "Sprite Foam Yoga Brick",
                     "sku": "24-WG084",
                     "__typename": "SimpleProduct"
@@ -225,7 +220,6 @@ The following query returns information about bundle product `24-WG080`, which i
               "sku": "24-WG080",
               "options": [
                 {
-                  "id": 5,
                   "uid": "YnVuZGxlLzMvNS8x",
                   "quantity": 1,
                   "position": 1,
@@ -235,14 +229,13 @@ The following query returns information about bundle product `24-WG080`, which i
                   "can_change_quantity": true,
                   "label": "Sprite Yoga Strap 6 foot",
                   "product": {
-                    "id": 33,
+                    "uid": "MzM=",
                     "name": "Sprite Yoga Strap 6 foot",
                     "sku": "24-WG085",
                     "__typename": "SimpleProduct"
                   }
                 },
                 {
-                  "id": 6,
                   "uid": "YnVuZGxlLzMvNi8x",
                   "quantity": 1,
                   "position": 2,
@@ -252,14 +245,13 @@ The following query returns information about bundle product `24-WG080`, which i
                   "can_change_quantity": true,
                   "label": "Sprite Yoga Strap 8 foot",
                   "product": {
-                    "id": 34,
+                    "uid": "MzQ=",
                     "name": "Sprite Yoga Strap 8 foot",
                     "sku": "24-WG086",
                     "__typename": "SimpleProduct"
                   }
                 },
                 {
-                  "id": 7,
                   "uid": "YnVuZGxlLzMvNy8x",
                   "quantity": 1,
                   "position": 3,
@@ -269,7 +261,7 @@ The following query returns information about bundle product `24-WG080`, which i
                   "can_change_quantity": true,
                   "label": "Sprite Yoga Strap 10 foot",
                   "product": {
-                    "id": 35,
+                    "uid": "MzU=",
                     "name": "Sprite Yoga Strap 10 foot",
                     "sku": "24-WG087",
                     "__typename": "SimpleProduct"
@@ -286,7 +278,6 @@ The following query returns information about bundle product `24-WG080`, which i
               "sku": "24-WG080",
               "options": [
                 {
-                  "id": 8,
                   "uid": "YnVuZGxlLzQvOC8x",
                   "quantity": 1,
                   "position": 1,
@@ -296,7 +287,7 @@ The following query returns information about bundle product `24-WG080`, which i
                   "can_change_quantity": true,
                   "label": "Sprite Foam Roller",
                   "product": {
-                    "id": 22,
+                    "uid": "MjI=",
                     "name": "Sprite Foam Roller",
                     "sku": "24-WG088",
                     "__typename": "SimpleProduct"

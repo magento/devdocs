@@ -48,11 +48,13 @@ Attribute | Type | Description
 
 The following query returns information about gift card product `GiftCard25`. (It is not defined in the sample data.)
 
+**Request:**
+
 ```graphql
 {
   products(filter: { sku: { eq: "GiftCard25" } }) {
     items {
-      id
+      uid
       __typename
       name
       sku
@@ -73,6 +75,41 @@ The following query returns information about gift card product `GiftCard25`. (I
           website_value
         }
       }
+    }
+  }
+}
+```
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "uid": "MjA0OQ==",
+          "__typename": "GiftCardProduct",
+          "name": "GiftCard25",
+          "sku": "GiftCard25",
+          "allow_message": true,
+          "message_max_length": 255,
+          "allow_open_amount": false,
+          "open_amount_min": null,
+          "open_amount_max": null,
+          "is_returnable": "2",
+          "is_redeemable": true,
+          "giftcard_type": "VIRTUAL",
+          "giftcard_amounts": [
+            {
+              "value_id": 2,
+              "website_id": 0,
+              "value": 25,
+              "attribute_id": 129,
+              "website_value": 25
+            }
+          ]
+        }
+      ]
     }
   }
 }

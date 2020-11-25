@@ -226,7 +226,7 @@ The following query returns information about the customizable options configure
 {
   products(filter: {sku: {eq: "xyz"}}) {
     items {
-      id
+      uid
       name
       sku
       __typename
@@ -251,7 +251,7 @@ The following query returns information about the customizable options configure
     "products": {
       "items": [
         {
-          "id": 1,
+          "uid": "Mw==",
           "name": "T-shirt",
           "sku": "xyz",
           "__typename": "SimpleProduct",

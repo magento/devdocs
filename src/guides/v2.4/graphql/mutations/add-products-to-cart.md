@@ -69,7 +69,6 @@ mutation {
   ) {
     cart {
       items {
-        id
         product {
           name
           sku
@@ -90,7 +89,6 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "346",
             "product": {
               "name": "Strive Shoulder Pack",
               "sku": "24-MB04"
@@ -180,27 +178,26 @@ In this example, the mutation specifies the size and color as selected options. 
 ```graphql
 mutation {
   addProductsToCart(
-    cartId: "HbpLADRmSo5h2dCdF85O5wCaVnrworKL"
+    cartId: "2m3Wpue1L3bNARhErAKbZ8Lb7czvgq6R"
     cartItems: [
       {
         quantity: 1
         sku: "WSH12"
-        selected_options: ["Y29uZmlndXJhYmxlLzkzLzUz","Y29uZmlndXJhYmxlLzE0NC8xNzE="]
+        selected_options: ["Y29uZmlndXJhYmxlLzkzLzUz","Y29uZmlndXJhYmxlLzE2MS8xNzQ="]
       }
     ]
   ) {
     cart {
       items {
-        id
         product {
           name
           sku
         }
         ... on ConfigurableCartItem {
           configurable_options {
-            id
+            configurable_product_option_uid
             option_label
-            value_id
+            configurable_product_option_value_uid
             value_label
           }
         }
@@ -220,26 +217,25 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "24",
             "product": {
               "name": "Erika Running Short",
               "sku": "WSH12"
             },
             "configurable_options": [
               {
-                "id": 93,
+                "configurable_product_option_uid": "Y29uZmlndXJhYmxlLzIwNDgvOTM=",
                 "option_label": "Color",
-                "value_id": 53,
+                "configurable_product_option_value_uid": "Y29uZmlndXJhYmxlLzkzLzUz",
                 "value_label": "Green"
               },
               {
-                "id": 144,
+                "configurable_product_option_uid": "Y29uZmlndXJhYmxlLzIwNDgvMTYx",
                 "option_label": "Size",
-                "value_id": 171,
+                "configurable_product_option_value_uid": "Y29uZmlndXJhYmxlLzE2MS8xNzQ=",
                 "value_label": "28"
               }
             ],
-            "quantity": 2
+            "quantity": 1
           }
         ]
       }
@@ -257,13 +253,13 @@ The following example adds a simple product with a customizable option to the ca
 ```graphql
 mutation {
   addProductsToCart(
-    cartId: "8k0Q4MpH2IGahWrTRtqM61YV2MtLPApz"
+    cartId: "2m3Wpue1L3bNARhErAKbZ8Lb7czvgq6R"
     cartItems: [
       {
         quantity: 1
         sku: "24-WG03"
         entered_options: [{
-          uid: "Y3VzdG9tLW9wdGlvbi81Mg=="
+          uid: "Y3VzdG9tLW9wdGlvbi8x"
           value: "Congrats, Julie!"
         }]
       }
@@ -271,17 +267,16 @@ mutation {
   ) {
     cart {
       items {
-        id
         product {
           name
           sku
         }
         ... on SimpleCartItem {
           customizable_options {
-            id
+            customizable_option_uid
             label
             values {
-              id
+              customizable_option_value_uid
               value
             }
           }
@@ -302,19 +297,19 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "350",
+            "id": "19",
             "product": {
               "name": "Clamber Watch",
               "sku": "24-WG03"
             },
             "customizable_options": [
               {
-                "id": 52,
-                "label": "Congrats, Julie!",
+                "customizable_option_uid": "Y3VzdG9tLW9wdGlvbi8x",
+                "label": "Engraving",
                 "values": [
                   {
-                    "id": 1184,
-                    "value": ""
+                    "customizable_option_value_uid": "Y3VzdG9tLW9wdGlvbi8x",
+                    "value": "Congrats, Julie!"
                   }
                 ]
               }

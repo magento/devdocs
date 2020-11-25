@@ -14,7 +14,7 @@ Setting the quantity to `0` removes an item from the cart.
 
 ## Example usage
 
-The following example changes the quantity of cart item `13`. The new quantity is `3`.
+The following example changes the quantity of cart item `MjQ=`. The new quantity is `3`.
 
 **Request:**
 
@@ -22,10 +22,10 @@ The following example changes the quantity of cart item `13`. The new quantity i
 mutation {
   updateCartItems(
     input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
+      cart_id: "2m3Wpue1L3bNARhErAKbZ8Lb7czvgq6R",
       cart_items: [
         {
-          cart_item_id: 13
+          cart_item_uid: "MjQ="
           quantity: 3
         }
       ]
@@ -33,7 +33,7 @@ mutation {
   ){
     cart {
       items {
-        id
+        uid
         product {
           name
         }
@@ -59,23 +59,23 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "13",
+            "uid": "MjI=",
             "product": {
-              "name": "Strive Shoulder Pack"
-            },
-            "quantity": 3
-          },
-          {
-            "id": "14",
-            "product": {
-              "name": "Affirm Water Bottle "
+              "name": "Erika Running Short"
             },
             "quantity": 1
+          },
+          {
+            "uid": "MjQ=",
+            "product": {
+              "name": "Voyage Yoga Bag"
+            },
+            "quantity": 3
           }
         ],
         "prices": {
           "grand_total": {
-            "value": 103,
+            "value": 152.63,
             "currency": "USD"
           }
         }

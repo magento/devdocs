@@ -217,7 +217,7 @@ The following query shows the status of a cart that is ready to be converted int
       ],
       "items": [
         {
-          "id": "14",
+          "uid": "Mg==",
           "product": {
             "name": "Strive Shoulder Pack",
             "sku": "24-MB04"
@@ -225,7 +225,7 @@ The following query shows the status of a cart that is ready to be converted int
           "quantity": 2
         },
         {
-          "id": "17",
+          "uid": "17",
           "product": {
             "name": "Savvy Shoulder Tote",
             "sku": "24-WB05"
@@ -276,7 +276,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
   cart(cart_id: "v7jYJUjvPeHbdMJRcOfZIeQhs2Xc2ZKT") {
     email
     items {
-      id
+      uid
       prices {
         total_item_discount {
           value
@@ -324,7 +324,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
       "email": "roni_cost@example.com",
       "items": [
         {
-          "id": "43",
+          "uid": "MjY=",
           "prices": {
             "total_item_discount": {
               "value": 37.7
@@ -403,7 +403,7 @@ The cart in the example contains 12 units of `24-UG05` and 8 units of `24-UG-01`
 query {
   cart(cart_id: "v7jYJUjvPeHbdMJRcOfZIeQhs2Xc2ZKT"){
     items {
-      id
+      uid
       quantity
       product{
         name
@@ -454,7 +454,7 @@ query {
     "cart": {
       "items": [
         {
-          "id": "65",
+          "uid": "NjU=",
           "quantity": 12,
           "product": {
             "name": "Go-Get'r Pushup Grips",
@@ -489,7 +489,7 @@ query {
           }
         },
         {
-          "id": "66",
+          "uid": "NjY=",
           "quantity": 8,
           "product": {
             "name": "Quest Lumaflex&trade; Band",

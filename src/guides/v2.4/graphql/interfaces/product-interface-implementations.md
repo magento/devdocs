@@ -32,4 +32,4 @@ To return attributes that are specific to a product type, append a structure sim
 
 For example, to return `GroupedProduct` attributes, construct your query like this:
 
-{% include graphql/grouped-product-sample.md %}
+{% include graphql/grouped-product-sample-24.md %}

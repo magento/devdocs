@@ -63,7 +63,7 @@ mutation {
         message
       }
       gift_wrapping {
-        id
+        uid
       }
       gift_receipt_included
       printed_card_included
@@ -107,7 +107,7 @@ mutation {
             "message": "Happy Birthday!"
         }
         "gift_wrapping": {
-          "id": "2"
+          "uid": "Mg=="
         },
         "gift_receipt_included": true,
         "printed_card_included": false,

@@ -170,6 +170,7 @@ The following `products` query returns `ConfigurableProduct` information about t
     }
   }
 }
+
 ```
 
 **Response:**
@@ -182,7 +183,7 @@ The following `products` query returns `ConfigurableProduct` information about t
     "products": {
       "items": [
         {
-          "id": 1050,
+          "uid": "MTA1Mg==",
           "attribute_set_id": 9,
           "name": "Mona Pullover Hoodlie",
           "sku": "WH01",
@@ -197,78 +198,76 @@ The following `products` query returns `ConfigurableProduct` information about t
           },
           "categories": [
             {
-              "id": 8
+              "uid": "OA=="
             },
             {
-              "id": 21
+              "uid": "MjI="
             },
             {
-              "id": 24
+              "uid": "MjU="
             },
             {
-              "id": 34
+              "uid": "MzU="
             }
           ],
           "configurable_options": [
             {
-              "id": 147,
-              "attribute_id_v2": 93,
+              "uid": "Y29uZmlndXJhYmxlLzEwNTIvOTM=",
+              "attribute_uid": "OTM=",
               "label": "Color",
               "position": 1,
               "use_default": false,
               "attribute_code": "color",
               "values": [
                 {
-                  "value_index": 53,
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
                   "label": "Green"
                 },
                 {
-                  "value_index": 56,
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU2",
                   "label": "Orange"
                 },
                 {
-                  "value_index": 57,
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
                   "label": "Purple"
                 }
-              ],
-              "product_id": 1050
+              ]
             },
             {
-              "id": 146,
-              "attribute_id_v2": 144,
+              "uid": "Y29uZmlndXJhYmxlLzEwNTIvMTYx",
+              "attribute_uid": "MTYx",
               "label": "Size",
               "position": 0,
               "use_default": false,
               "attribute_code": "size",
               "values": [
                 {
-                  "value_index": 166,
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNjk=",
                   "label": "XS"
                 },
                 {
-                  "value_index": 167,
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzA=",
                   "label": "S"
                 },
                 {
-                  "value_index": 168,
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzE=",
                   "label": "M"
                 },
                 {
-                  "value_index": 169,
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzI=",
                   "label": "L"
                 },
                 {
-                  "value_index": 170,
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzM=",
                   "label": "XL"
                 }
-              ],
-              "product_id": 1050
+              ]
             }
           ],
           "variants": [
             {
               "product": {
-                "id": 1035,
+                "uid": "MTAzNw==",
                 "name": "Mona Pullover Hoodlie-XS-Green",
                 "sku": "WH01-XS-Green",
                 "attribute_set_id": 9,
@@ -290,16 +289,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 53
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjY=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNjk=",
                   "label": "XS",
                   "code": "size",
-                  "value_index": 166
+                  "value_index": 169
                 }
               ]
             },
             {
               "product": {
-                "id": 1036,
+                "uid": "MTAzOA==",
                 "name": "Mona Pullover Hoodlie-XS-Orange",
                 "sku": "WH01-XS-Orange",
                 "attribute_set_id": 9,
@@ -321,16 +320,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 56
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjY=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNjk=",
                   "label": "XS",
                   "code": "size",
-                  "value_index": 166
+                  "value_index": 169
                 }
               ]
             },
             {
               "product": {
-                "id": 1037,
+                "uid": "MTAzOQ==",
                 "name": "Mona Pullover Hoodlie-XS-Purple",
                 "sku": "WH01-XS-Purple",
                 "attribute_set_id": 9,
@@ -352,16 +351,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 57
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjY=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNjk=",
                   "label": "XS",
                   "code": "size",
-                  "value_index": 166
+                  "value_index": 169
                 }
               ]
             },
             {
               "product": {
-                "id": 1038,
+                "uid": "MTA0MA==",
                 "name": "Mona Pullover Hoodlie-S-Green",
                 "sku": "WH01-S-Green",
                 "attribute_set_id": 9,
@@ -383,16 +382,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 53
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjc=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzA=",
                   "label": "S",
                   "code": "size",
-                  "value_index": 167
+                  "value_index": 170
                 }
               ]
             },
             {
               "product": {
-                "id": 1039,
+                "uid": "MTA0MQ==",
                 "name": "Mona Pullover Hoodlie-S-Orange",
                 "sku": "WH01-S-Orange",
                 "attribute_set_id": 9,
@@ -414,16 +413,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 56
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjc=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzA=",
                   "label": "S",
                   "code": "size",
-                  "value_index": 167
+                  "value_index": 170
                 }
               ]
             },
             {
               "product": {
-                "id": 1040,
+                "uid": "MTA0Mg==",
                 "name": "Mona Pullover Hoodlie-S-Purple",
                 "sku": "WH01-S-Purple",
                 "attribute_set_id": 9,
@@ -445,16 +444,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 57
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjc=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzA=",
                   "label": "S",
                   "code": "size",
-                  "value_index": 167
+                  "value_index": 170
                 }
               ]
             },
             {
               "product": {
-                "id": 1041,
+                "uid": "MTA0Mw==",
                 "name": "Mona Pullover Hoodlie-M-Green",
                 "sku": "WH01-M-Green",
                 "attribute_set_id": 9,
@@ -476,16 +475,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 53
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjg=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzE=",
                   "label": "M",
                   "code": "size",
-                  "value_index": 168
+                  "value_index": 171
                 }
               ]
             },
             {
               "product": {
-                "id": 1042,
+                "uid": "MTA0NA==",
                 "name": "Mona Pullover Hoodlie-M-Orange",
                 "sku": "WH01-M-Orange",
                 "attribute_set_id": 9,
@@ -507,16 +506,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 56
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjg=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzE=",
                   "label": "M",
                   "code": "size",
-                  "value_index": 168
+                  "value_index": 171
                 }
               ]
             },
             {
               "product": {
-                "id": 1043,
+                "uid": "MTA0NQ==",
                 "name": "Mona Pullover Hoodlie-M-Purple",
                 "sku": "WH01-M-Purple",
                 "attribute_set_id": 9,
@@ -538,16 +537,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 57
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjg=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzE=",
                   "label": "M",
                   "code": "size",
-                  "value_index": 168
+                  "value_index": 171
                 }
               ]
             },
             {
               "product": {
-                "id": 1044,
+                "uid": "MTA0Ng==",
                 "name": "Mona Pullover Hoodlie-L-Green",
                 "sku": "WH01-L-Green",
                 "attribute_set_id": 9,
@@ -569,16 +568,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 53
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjk=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzI=",
                   "label": "L",
                   "code": "size",
-                  "value_index": 169
+                  "value_index": 172
                 }
               ]
             },
             {
               "product": {
-                "id": 1045,
+                "uid": "MTA0Nw==",
                 "name": "Mona Pullover Hoodlie-L-Orange",
                 "sku": "WH01-L-Orange",
                 "attribute_set_id": 9,
@@ -600,16 +599,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 56
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjk=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzI=",
                   "label": "L",
                   "code": "size",
-                  "value_index": 169
+                  "value_index": 172
                 }
               ]
             },
             {
               "product": {
-                "id": 1046,
+                "uid": "MTA0OA==",
                 "name": "Mona Pullover Hoodlie-L-Purple",
                 "sku": "WH01-L-Purple",
                 "attribute_set_id": 9,
@@ -631,16 +630,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 57
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjk=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzI=",
                   "label": "L",
                   "code": "size",
-                  "value_index": 169
+                  "value_index": 172
                 }
               ]
             },
             {
               "product": {
-                "id": 1047,
+                "uid": "MTA0OQ==",
                 "name": "Mona Pullover Hoodlie-XL-Green",
                 "sku": "WH01-XL-Green",
                 "attribute_set_id": 9,
@@ -662,16 +661,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 53
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNzA=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzM=",
                   "label": "XL",
                   "code": "size",
-                  "value_index": 170
+                  "value_index": 173
                 }
               ]
             },
             {
               "product": {
-                "id": 1048,
+                "uid": "MTA1MA==",
                 "name": "Mona Pullover Hoodlie-XL-Orange",
                 "sku": "WH01-XL-Orange",
                 "attribute_set_id": 9,
@@ -693,16 +692,16 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 56
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNzA=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzM=",
                   "label": "XL",
                   "code": "size",
-                  "value_index": 170
+                  "value_index": 173
                 }
               ]
             },
             {
               "product": {
-                "id": 1049,
+                "uid": "MTA1MQ==",
                 "name": "Mona Pullover Hoodlie-XL-Purple",
                 "sku": "WH01-XL-Purple",
                 "attribute_set_id": 9,
@@ -724,10 +723,10 @@ The following `products` query returns `ConfigurableProduct` information about t
                   "value_index": 57
                 },
                 {
-                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNzA=",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MS8xNzM=",
                   "label": "XL",
                   "code": "size",
-                  "value_index": 170
+                  "value_index": 173
                 }
               ]
             }
@@ -738,7 +737,6 @@ The following `products` query returns `ConfigurableProduct` information about t
   }
 }
 ```
-
 {% endcollapsible %}
 
 ### Return swatch information

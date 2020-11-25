@@ -69,7 +69,7 @@ The following query returns information about downloadable product `240-LV04`, w
 {
   products(filter: { sku: { eq: "240-LV04" } }) {
     items {
-      id
+      uid
       name
       sku
       __typename
@@ -110,7 +110,7 @@ The following query returns information about downloadable product `240-LV04`, w
     "products": {
       "items": [
         {
-          "id": 47,
+          "uid": "NDc=",
           "name": "Beginner's Yoga",
           "sku": "240-LV04",
           "__typename": "DownloadableProduct",
