@@ -143,7 +143,7 @@ For more information about `phpmyadmin`, see the [phpmyadmin home page](http://w
 
 For more detailed information about installation, see the [phpmyadmin installation documentation](http://docs.phpmyadmin.net/en/latest/setup.html#quick-install){:target="_blank"}.
 
-{:.bs-callout-info}
+{:.bs-callout-warning}
 Use phpmyadmin in a development system _only_. It can be a security issue in production.
 
 1. To use phpmyadmin, enter the following command in your browser's address or location field:
