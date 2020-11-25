@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 02_access
 title: Cannot access Magento software in a web browser
 menu_title: Cannot access Magento software in a web browser

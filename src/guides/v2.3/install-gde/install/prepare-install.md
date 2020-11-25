@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Update installation dependencies
 functional_areas:
   - Install

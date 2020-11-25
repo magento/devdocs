@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Installation flow diagram
 functional_areas:
   - Install

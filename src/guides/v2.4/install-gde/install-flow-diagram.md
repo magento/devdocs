@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Installation flow
 functional_areas:
   - Install

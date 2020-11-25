@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: How to get the Magento software
 landing-page: Installation Guide
 functional_areas:

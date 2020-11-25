@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 01_resource
 title: Helpful resources
 menu_title: Helpful resources

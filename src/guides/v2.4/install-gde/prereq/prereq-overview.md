@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Prerequisites
 functional_areas:
   - Install

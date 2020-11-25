@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Wizard
 title: Step 1. Readiness check
 menu_title: Step 1. Readiness check

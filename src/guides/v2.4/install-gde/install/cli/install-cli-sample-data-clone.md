@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Install by cloning repositories
 functional_areas:
   - Install

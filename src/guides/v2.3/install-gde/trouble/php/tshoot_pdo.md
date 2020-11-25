@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: During installation, fatal PDO error displays
 functional_areas:
   - Install

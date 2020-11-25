@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 99_app
 title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_title: Appendix&mdash;Magento file system ownership and appendix (legacy)

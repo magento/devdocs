@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Install Magento using Composer
 functional_areas:
   - Install

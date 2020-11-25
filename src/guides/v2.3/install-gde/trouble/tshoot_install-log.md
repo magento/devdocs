@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 03_install
 title: Installation fails; cannot create install.log
 menu_title: Installation fails; cannot create install.log

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Access issues
 functional_areas:
   - Install

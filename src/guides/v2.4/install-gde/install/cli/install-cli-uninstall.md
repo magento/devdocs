@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Uninstall or reinstall Magento
 functional_areas:
   - Install

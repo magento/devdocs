@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 10_php
 title: During installation, PHP date warning
 menu_title: During installation, PHP date warning

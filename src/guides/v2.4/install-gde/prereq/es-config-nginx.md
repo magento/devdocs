@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Configure nginx and Elasticsearch
 redirect_from: 
   - guides/v2.4/config-guide/elasticsearch/es-config-nginx.html
