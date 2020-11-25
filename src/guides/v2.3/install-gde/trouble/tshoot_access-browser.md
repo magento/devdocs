@@ -28,9 +28,9 @@ Try the following:
 
 *  Make sure [Apache server rewrites]({{ page.baseurl }}/install-gde/prereq/apache.html) are enabled.
 
-   If Apache server rewrites are set incorrectly, static files aren't served from the correct location.
+   If Apache server rewrites are set incorrectly, static files are not served from the correct location.
 
-*  Likely an issue with the base URL you entered during the installation. You specify the base URL as the value of `--base-url=` when installing Magento from the command line or as the value of the **Your Store Address** field on the Web Configuration page of the web installer.
+*  Likely an issue with the base URL you entered during the installation. You specify the base URL as the value of `--base-url=` when installing Magento from the command line.
 
    The base URL *must* start with the scheme (such as `http://`) and end with a trailing slash (/). Run the installer again with a valid value and try accessing Magento afterward.
 
