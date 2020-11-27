@@ -15,7 +15,7 @@ Return the contents of a CMS page:
 
 ## Example usage
 
-You need to add CMS Page identifier value to retrieve content of the specific CMS Page. The following query returns information about the "404 Not Found" CMS page:
+You must include the CMS page identifier value to retrieve the content of a specific CMS page. The following query returns information about the "404 Not Found" CMS page:
 
 **Request:**
 
