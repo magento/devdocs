@@ -30,7 +30,7 @@ Each {{site.data.var.ee}} version requires a different constraint based on the f
 -  For `current_version`, specify the Magento version to install.
 -  For `next_version`, specify the next patch version after the value specified in `current_version`.
 
-If you want to install Magento `2.3.5-p2` you still should set `current_version` as `2.3.5` and constraint `">=2.3.5 <2.3.6"` will install the latest available package for 2.3.5
+If you want to install Magento `2.3.5-p2`, set `current_version` to `2.3.5` and the `next_version` to `2.3.6`. The constraint `">=2.3.5 <2.3.6"` installs the latest available package for 2.3.5.
 
 You can always find the latest metapackage constraint in the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json).
 
