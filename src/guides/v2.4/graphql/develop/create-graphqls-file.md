@@ -62,7 +62,8 @@ products(
 ): Products
 ```
 
-The `ProductAttributeFilterInput` object used in the `filter` attribute is a custom input type that determines which attributes can be used to narrow the results in a `products` query. The attributes of this object are of type `FilterEqualTypeInput`. (These entities are defined in the `/etc/schema.graphqls` files of the `GraphQl` and `CatalogGraphQl` modules`). In other use cases, you would be required to create your own input type in the `<magento_root>/app/code/<vendor_name>/<module_name>/etc/schema.graphqls` file.
+The `ProductAttributeFilterInput` object used in the `filter` attribute is a custom input type that determines which attributes can be used to narrow the results in a `products` query. The attributes of this object are of types `FilterEqualTypeInput`. (These entities are defined in the `/etc/schema.graphqls` files of the `GraphQl` and `CatalogGraphQl` modules`). In other use cases, you would be required to create your own input type in the `<magento_root>/app/code/<vendor_name>/<module_name>/etc/schema.graphqls` file.
+
 The following attributes can be used as filters using the `ProductAttributeFilterInput` object.
 
 ```graphql
@@ -139,7 +140,7 @@ The following example shows the `products` query. The `page_info` attribute cont
 
 The SearchResultPageInfo provides navigation for the query response.
 
-```graphql
+```text
 type SearchResultPageInfo {
     page_size: Int
     current_page: Int
@@ -198,7 +199,7 @@ A mutation definition contains the following information:
 
 The following mutation creates a customer.
 
-```graphql
+```text
 type Mutation {
     createCustomer (input: CustomerInput!): CustomerOutput @resolver(class: "\\Magento\\CustomerGraphQl\\Model\\Resolver\\CreateCustomer") @doc(description:"Create customer account")
 }
@@ -220,7 +221,7 @@ You can describe any attribute, type definition, or other entity within a `schem
 
 For example:
 
-```graphql
+```text
 sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")
 url_key: String @doc(description: "The url key assigned to the product")
 product_count: Int @doc(description: "The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not")
@@ -230,7 +231,7 @@ Use the `@deprecated` directive to deprecate attributes and enum values. The Gra
 
 For example:
 
-```graphql
+```text
 type Query {
     cmsPage (
         id: Int @doc(description: "Id of the CMS page") @deprecated(reason: "Use `identifier`") @doc(description: "The CMS page ...")
@@ -244,7 +245,7 @@ The `@cache` directive defines whether the results of certain queries can be cac
 
 Define cachable queries in the following manner:
 
-```graphql
+```text
 @cache(cacheIdentity: "Magento\\CmsGraphQl\\Model\\Resolver\\Block\\Identity")
 ```
 
