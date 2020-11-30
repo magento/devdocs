@@ -184,6 +184,9 @@ To update your DNS configuration for development:
    | mcstaging.your-domain.com | prod.magentocloud.map.fastly.net
 
    When the CNAME records are live, Magento provisions certificates and uploads the SSL/TLS certificates.
+   
+   {:.bs-callout-info}
+   If you plan to use apex domains (`your-domain.com`) for your Production environment, you must configure A records to point to the Fastly server IP addresses. See [Update DNS configuration with production settings]({{ site.baseurl }}/cloud/live/site-launch-checklist.html#dns).
 
 1. Add ACME challenge CNAME records for domain validation and pre-provisioning of Production SSL/TLS certificates, for example:
 
