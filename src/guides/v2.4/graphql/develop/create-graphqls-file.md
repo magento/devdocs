@@ -50,7 +50,7 @@ If all your module's attributes are extension attributes for existing modules, t
 
 You must explicitly define each attribute that can be used as input in a GraphQL query. In the simplest cases, you can create a single `type` definition that includes all the input, output, and sorting attributes for an object. This might not be possible if your module performs calculations, or otherwise has attributes that aren't available at the time of the query.
 
-The following example shows the `products` query. The product query has the following attributes:
+The following example shows the `products` query, which has multiple optional attributes:
 
 ```graphql
 products(
@@ -62,11 +62,10 @@ products(
 ): Products
 ```
 
-The `ProductAttributeFilterInput` object used in the `filter` attribute is a custom input type that determines which attributes will be used to narrow the results in a products query. The attributes of this object are of types `FilterEqualTypeInput` (all of these entities are defined in the `schema.graphqls` file under `CatalogGraphQl` and `ModuleGraphQl`). In other use cases, you would be required to create your own input type in the `<magento_root>/app/code/<vendor_name>/<module_name>/etc/schema.graphqls` file.
-
+The `ProductAttributeFilterInput` object used in the `filter` attribute is a custom input type that determines which attributes can be used to narrow the results in a `products` query. The attributes of this object are of type `FilterEqualTypeInput`. (These entities are defined in the `/etc/schema.graphqls` files of the `GraphQl` and `CatalogGraphQl` modules`). In other use cases, you would be required to create your own input type in the `<magento_root>/app/code/<vendor_name>/<module_name>/etc/schema.graphqls` file.
 The following attributes can be used as filters using the `ProductAttributeFilterInput` object.
 
-```text
+```graphql
 input ProductAttributeFilterInput {
     category_id: FilterEqualTypeInput
 }
@@ -74,7 +73,7 @@ input ProductAttributeFilterInput {
 
 The `FilterEqualTypeInput` type defines a filter that matches the input exactly.
 
-```text
+```graphql
 input FilterEqualTypeInput {
     in: [String]
     eq: String
@@ -83,7 +82,7 @@ input FilterEqualTypeInput {
 
 The following example filter searches for products whose `category_id` equals 1.
 
-```text
+```graphql
 {
   products(filter: {category_id: {eq: "1"}}) {
     total_count
@@ -96,7 +95,7 @@ The following example filter searches for products whose `category_id` equals 1.
 
 The search returns products whose `category_id` equals 1.
 
-```text
+```json
 {
   "data": {
     "products": {
@@ -125,7 +124,6 @@ The following example shows the `products` query. The query returns a `Products`
 Attribute | Data type | Description
 --- | --- | ---
 `aggregations` | [[Aggregation]]({{ page.baseurl }}/graphql/queries/products.html#Aggregation) | Layered navigation aggregations
-`filters` | LayerFilter | **Deprecated.** Use `aggregations` instead
 `items` | [[ProductInterface]]({{ page.baseurl }}/graphql/queries/products.html#ProductInterface) | An array of products that match the specified search criteria
 `page_info` | [SearchResultPageInfo]({{ page.baseurl }}/graphql/queries/products.html#SearchResultPageInfo) | An object that includes the `page_info` and `currentPage` values specified in the query
 `sort_fields` |  [SortFields]({{ page.baseurl }}/graphql/queries/products.html#SortFields) | An object that includes the default sort field and all available sort fields
@@ -141,7 +139,7 @@ The following example shows the `products` query. The `page_info` attribute cont
 
 The SearchResultPageInfo provides navigation for the query response.
 
-```text
+```graphql
 type SearchResultPageInfo {
     page_size: Int
     current_page: Int
@@ -151,7 +149,7 @@ type SearchResultPageInfo {
 
 The following example uses the `page_info` output attribute which is of `SearchResultPageInfo` type to get all the information related to the page.
 
-```text
+```graphql
 {
   products(search: "Yoga pants", pageSize: 2) {
     total_count
@@ -168,7 +166,7 @@ The following example uses the `page_info` output attribute which is of `SearchR
 
 The search returns 45 items, but only the first two items are returned on the current page and all the information regarding the page is returned.
 
-```text
+```json
 {
   "data": {
     "products": {
@@ -200,7 +198,7 @@ A mutation definition contains the following information:
 
 The following mutation creates a customer.
 
-``` text
+```graphql
 type Mutation {
     createCustomer (input: CustomerInput!): CustomerOutput @resolver(class: "\\Magento\\CustomerGraphQl\\Model\\Resolver\\CreateCustomer") @doc(description:"Create customer account")
 }
@@ -222,7 +220,7 @@ You can describe any attribute, type definition, or other entity within a `schem
 
 For example:
 
-```text
+```graphql
 sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")
 url_key: String @doc(description: "The url key assigned to the product")
 product_count: Int @doc(description: "The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not")
@@ -232,7 +230,7 @@ Use the `@deprecated` directive to deprecate attributes and enum values. The Gra
 
 For example:
 
-```text
+```graphql
 type Query {
     cmsPage (
         id: Int @doc(description: "Id of the CMS page") @deprecated(reason: "Use `identifier`") @doc(description: "The CMS page ...")
@@ -246,7 +244,7 @@ The `@cache` directive defines whether the results of certain queries can be cac
 
 Define cachable queries in the following manner:
 
-```text
+```graphql
 @cache(cacheIdentity: "Magento\\CmsGraphQl\\Model\\Resolver\\Block\\Identity")
 ```
 
