@@ -62,7 +62,7 @@ products(
 ): Products
 ```
 
-The `ProductAttributeFilterInput` object used in the `filter` attribute is a custom input type that determines which attributes can be used to narrow the results in a `products` query. The attributes of this object are of types `FilterEqualTypeInput`. (These entities are defined in the `/etc/schema.graphqls` files of the `GraphQl` and `CatalogGraphQl` modules`). In other use cases, you would be required to create your own input type in the `<magento_root>/app/code/<vendor_name>/<module_name>/etc/schema.graphqls` file.
+The `ProductAttributeFilterInput` object used in the `filter` attribute is a custom input type that determines which attributes can be used to narrow the results in a `products` query. The attributes of this object are of type `FilterEqualTypeInput`. (These entities are defined in the `etc/schema.graphqls` files of the `GraphQl` and `CatalogGraphQl` modules). In other use cases, you would be required to create your own input type in the `<magento_root>/app/code/<vendor_name>/<module_name>/etc/schema.graphqls` file.
 
 The following attributes can be used as filters using the `ProductAttributeFilterInput` object.
 
