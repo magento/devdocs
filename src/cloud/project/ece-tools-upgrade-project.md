@@ -27,9 +27,8 @@ Each {{site.data.var.ee}} version requires a different constraint based on the f
 >=current_version <next_version
 ```
 
-where `current_version` is the version of Magento you want to be installed
-
-and `next_version` is the next patch version after your `current_version`.
+-  For `current_version`, specify the Magento version to install.
+-  For `next_version`, specify the next patch version after the value specified in `current_version`.
 
 If you want to install Magento `2.3.5-p2` you still should set `current_version` as `2.3.5` and constraint `">=2.3.5 <2.3.6"` will install the latest available package for 2.3.5
 
