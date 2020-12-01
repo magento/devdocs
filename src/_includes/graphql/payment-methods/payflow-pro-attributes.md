@@ -8,7 +8,7 @@ Attribute |  Data Type | Description
 
 ### CreditCardDetailsInput object
 
-The `CreditCardDetailsInput` object must contain all the attributes listed below. Magento supports the following values for `cc_type`. The merchant's payment processor might support only a subset of these values.
+Magento supports the following values for the `cc_type` attribute. The merchant's payment processor might support only a subset of these values.
 
 *  `AE` - American Express
 *  `AU` - Aura
@@ -16,12 +16,14 @@ The `CreditCardDetailsInput` object must contain all the attributes listed below
 *  `DN` - Diners Club
 *  `ELO` - Elo
 *  `HC` - Hipercard
+*  `JCB` - JCB
 *  `MC` - MasterCard
 *  `MD` - Maestro Domestic
 *  `MI` - Maestro International
-*  `JCB` - JCB
 *  `UN` - UnionPay
 *  `VI` - Visa
+
+The `CreditCardDetailsInput` object must contain all the attributes listed below.
 
 Attribute |  Data Type | Description
 --- | --- | ---
