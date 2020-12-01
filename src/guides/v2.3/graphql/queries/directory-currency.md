@@ -61,7 +61,7 @@ The `currency` object provides the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`available_currency_codes` | [String] | An array of currencies accepted by the store. A Value will be three letter currency code like USD, EUR.
+`available_currency_codes` | [String] | An array of three-letter currency codes accepted by the store, such as `USD` and `EUR`
 `base_currency_code` | String | The base currency set for the store, such as USD
 `base_currency_symbol` | String | The symbol for the specified base currency, such as $
 `default_display_currency_code` | String | Specifies if the currency code is set as the store's default
