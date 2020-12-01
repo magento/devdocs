@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-Remote storage provides a cache layer for external API calls. The caching is based on the [Flysystem caching solution], which provides cache adapters. Remote storage includes the following cache types:
+Remote storage provides a cache layer for external API calls. The caching is based on the [Flysystem caching solution][flysystem], which provides cache adapters. Remote storage includes the following cache types:
 
 -  **Memory cache**—Memory cache is enabled by default and provides per-request cache.
 -  **Redis cache**—Redis cache is a persistent cache that is stored in Redis and requires an active Redis service with additional configuration.
@@ -42,5 +42,5 @@ To use Redis cache with [predis/predis][predis] extension:
    ```
 
 <!-- link definitions -->
-[Flysystem cache]: https://flysystem.thephpleague.com/v1/docs/advanced/caching
+[flysystem]: https://flysystem.thephpleague.com/v1/docs/advanced/caching
 [predis]: https://github.com/predis/predis
