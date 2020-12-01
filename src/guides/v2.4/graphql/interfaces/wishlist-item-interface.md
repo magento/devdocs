@@ -71,7 +71,7 @@ Attribute | Data type | Description
 
 The GroupedProductWishlistItem data type does not extend the `WishlistItemInterface`.
 
-### SimpleWishlistItem attributes (#SimpleWishlistItem)
+### SimpleWishlistItem attributes {#SimpleWishlistItem}
 
 The SimpleWishlistItem data type does not extend the `WishlistItemInterface`.
 

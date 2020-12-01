@@ -191,10 +191,6 @@ pages:
         - label: addVirtualProductsToCart mutation
           url: /graphql/mutations/add-virtual-products.html
 
-        - label: addWishlistItemsToCart mutation
-          url: /graphql/mutations/add-wishlist-to-cart.html
-          exclude_versions: ["2.3"]
-
         - label: applyCouponToCart mutation
           url: /graphql/mutations/apply-coupon.html
 
@@ -214,8 +210,8 @@ pages:
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
 
-        - label: copyProductsToWishlist mutation
-          url: /graphql/mutations/copy-products-to-wishlist.html
+        - label: copyProductsBetweenWishlists mutation
+          url: /graphql/mutations/copy-products-between-wishlists.html
           edition: ee-only
           exclude_versions: ["2.3"]
 
@@ -319,8 +315,8 @@ pages:
         - label: mergeCarts mutation
           url: /graphql/mutations/merge-carts.html
 
-        - label: moveProductsToWishlist mutation
-          url: /graphql/mutations/move-products-to-wishlist.html
+        - label: moveProductsBetweenWishlists mutation
+          url: /graphql/mutations/move-products-between-wishlists.html
           edition: ee-only
           exclude_versions: ["2.3"]
 
