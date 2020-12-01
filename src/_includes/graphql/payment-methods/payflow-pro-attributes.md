@@ -23,7 +23,7 @@ Magento supports the following values for the `cc_type` attribute. The merchant'
 *  `UN` - UnionPay
 *  `VI` - Visa
 
-The `CreditCardDetailsInput` object must contain all the attributes listed below.
+The `CreditCardDetailsInput` object must contain all of the attributes listed below.
 
 Attribute |  Data Type | Description
 --- | --- | ---
