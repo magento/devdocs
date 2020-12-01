@@ -79,7 +79,7 @@ After you have reset file system permissions:
    bin/magento setup:upgrade
    ```
 
-{% include install/sampledata/file-sys-perms-digest.md %}
+{% include install/sampledata/file-sys-perms-digest-24.md %}
 
 <!-- Link definitions -->
 [Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
