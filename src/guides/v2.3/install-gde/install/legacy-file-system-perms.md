@@ -39,7 +39,7 @@ Changing modes affects permissions and ownership the following subdirectories in
 
 ```text
 var/view_preprocessed
-var/generation
+generated
 var/di
 ```
 
