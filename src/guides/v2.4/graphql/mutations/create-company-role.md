@@ -11,6 +11,7 @@ The `createCompanyRole` mutation defines a new company role. To create a role, y
 {% include webapi/b2b_roles.md %}
 
 Also, you can get the list of all resources defined within the company using [`company`]({{page.baseurl}}/graphql/queries/company.html) query.
+
 ## Syntax
 
 ```graphql
