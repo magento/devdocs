@@ -16,9 +16,6 @@ functional_areas:
 
 Checkout, orders, and product data can all each use a separate master databases that you can optionally replicate. This separation independently scales load from [website](https://glossary.magento.com/website) checkouts, order management activities, website browsing, and merchandising activities, depending on your needs.  These changes provide considerable flexibility in how the database tier can be scaled.
 
-{:.bs-callout-info}
-{{site.data.var.ece}} does _not_ support this feature at this time.
-
 The `ResourceConnections` class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the [Command Query Responsibility Segregation (CQRS)](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation) database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.
 
 If you set up optional database replication, you get the following advantages:
