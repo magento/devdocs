@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-The Remote Storage module provides the option to store media files in a persistent, remote storage container using a storage service, such as AWS S3 or Azure Blob Storage. By default, Magento stores media files in the same filesystem that contains the application. This is not efficient for complex, multi-server configurations, which can result in degraded performance when sharing resources. With this module, you can store `pub/media` and `var` folder files on remote object storage and take advantage of server-side image resizing.
+The Remote Storage module provides the option to store media files and schedule imports/exports in a persistent, remote storage container using a storage service, such as AWS S3 or Azure Blob Storage. By default, Magento stores media files in the same filesystem that contains the application. This is not efficient for complex, multi-server configurations, which can result in degraded performance when sharing resources. With this module, you can store `pub/media` files and import and export-related `var` files in remote object storage and take advantage of server-side image resizing.
 
 ![schema image]
 
@@ -61,6 +61,8 @@ After you enable remote storage for a specific adapter, you can use the CLI to m
 ```bash
 ./magento2ce/bin/magento remote-storage:sync
 ```
+
+This functionality only migrates files in the `pub/media` directory, _not_ the import and export-related files in the `var` directory.
 
 <!-- link definitions -->
 [AWS S3]: {{page.baseurl}}/config-guide/remote-storage/config-remote-storage-aws-s3.html
