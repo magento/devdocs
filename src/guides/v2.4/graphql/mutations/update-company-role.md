@@ -8,9 +8,9 @@ b2b_only: true
 
 Use the `updateCompanyRole` mutation to update the company role and permissions.
 
-{% include webapi/b2b_roles.md %}
-
 You can get the role ID and the list of all resources defined within the company using [`company`]({{page.baseurl}}/graphql/queries/company.html) query.
+
+{% include webapi/b2b_roles.md %}
 
 ## Syntax
 
