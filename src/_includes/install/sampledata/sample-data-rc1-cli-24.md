@@ -65,12 +65,12 @@ After you have reset file system permissions:
 
 1. If you have not done so already, log in to your Magento server as, or switch to, the Magento file system owner.
 1. Change to your Magento installation directory.
-1. Manually clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
+1. Manually clear the `var/cache`, `var/page_cache`, and `generated` directories.
 
    A sample command follows:
 
    ```bash
-   rm -rf var/cache/* var/page_cache/* var/generation/*
+   rm -rf var/cache/* var/page_cache/* generated/*
    ```
 
 1. Upgrade Magento:
