@@ -159,6 +159,7 @@ Attribute |  Data Type | Description
 `entity` | CompanyStructureEntity | A union of [CompanyTeam](#CompanyTeam) and [Customer]({{page.baseurl}}/graphql/queries/customer.html) objects
 `id` | ID! | The ID of the item in the hierarchy
 `parent_id` | ID | The ID of the parent item in the hierarchy
+
 ### CompanyTeam attributes {#CompanyTeam}
 
 {% include graphql/company-team.md %}
