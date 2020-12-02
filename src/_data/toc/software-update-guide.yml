@@ -21,6 +21,16 @@ pages:
         - label: Update and upgrade checklist
           url: /comp-mgr/prereq/prereq_compman-checklist.html
 
+    - label: Safe Upgrade Tool
+      url: /comp-mgr/sut/sut-welcome-guide.html
+      children:
+
+        - label: Check prerequisites for the safe upgrade tool
+          url: /comp-mgr/sut/prereq-sut-checklist.html
+
+        - label: Use the safe upgrade tool
+          url: /comp-mgr/sut/sut-welcome-guide.html
+
     - label: Magento Marketplace example
       url: /comp-mgr/marketplace/marketplace.html
       include_versions: ["2.3"]
