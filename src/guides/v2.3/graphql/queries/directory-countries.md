@@ -3,7 +3,7 @@ group: graphql
 title: countries query
 ---
 
-Use the `countries` query to return all countries in which the entity can do business. Do not confuse with [Country]({{page.baseurl}}/graphql/queries/directory-country.html) query, it is a separate query to retrieve information about a specific country by two-letter country code.
+Use the `countries` query to return all countries in which the entity can do business. Do not confuse with the [Country]({{page.baseurl}}/graphql/queries/directory-country.html) query, it is a separate query to retrieve an information about a specific country by two-letter country code.
 
 ## Syntax
 
