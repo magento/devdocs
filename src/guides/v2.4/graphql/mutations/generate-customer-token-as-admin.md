@@ -48,7 +48,7 @@ The `generateCustomerTokenAsAdmin` mutation requires the following input attribu
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`customer_email` | String | The customer's email address
+`customer_email` | String! | The customer's email address
 
 ## Output attributes
 
@@ -56,7 +56,7 @@ The `generateCustomerTokenAsAdmin` mutation returns a valid customer token as th
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`customer_token` | String | The customer token
+`customer_token` | String! | The customer token
 
 ## Related topics
 
