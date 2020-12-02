@@ -191,12 +191,16 @@
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
 
+    - label: Inventory Management
+      url: /inventory/index.html
+    
     - label: Magento Marketplace
       url: /marketplace/sellers/getting-started.html
       versionless: true
 
-    - label: Inventory Management
-      url: /inventory/index.html
+    - label: Magento Payments
+      url: /magento-payments/payments.html
+      versionless: true
 
     - label: Order Management
       url: http://omsdocs.magento.com/en/
