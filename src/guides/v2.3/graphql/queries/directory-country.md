@@ -5,7 +5,7 @@ redirect_from:
   - /guides/v2.3/graphql/reference/directory.html
 ---
 
-Use the `country` query to retrieve information about a specific country.
+Use the `country` query to retrieve information about a specific country. Dont confuse with [countries]({{page.baseurl}}/graphql/queries/directory-countries.html) query that will be used to retrieve list of all the available country in the system.
 
 ## Syntax
 
@@ -13,7 +13,7 @@ Use the `country` query to retrieve information about a specific country.
 
 ## Example usage
 
-The following query returns information about Australia.
+The following query returns information about Australia. You must have to pass `id` as two-letter abbreviation of the country to retrieve country detalis.
 
 **Request:**
 
