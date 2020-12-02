@@ -4,8 +4,7 @@ title: Prerequisites for the safe upgrade tool
 functional_areas:
   - Upgrade
 ---
-
-Before you upgrade from Magento 2.3.x to Magento 2.4, you must check whether you are using MySQL, Elasticsearch, or a third-party extension as your catalog search engine in your Magento 2.3.x instance. The result determines what you must do **before** upgrading to Magento 2.4.
+Before you upgrade to Magento 2.4, you must check whether you are using MySQL, Elasticsearch, or a third-party extension as your catalog search engine in your magento instance. The result determines what you must do **before** upgrading to Magento 2.4.
 
 The minimum requisites to run the Safe Upgrade Tool (SUT) are:
 

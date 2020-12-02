@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Safe upgrade tool
+title: Safe upgrade tool developer guide
 functional_areas:
   - Upgrade
 ---
@@ -20,7 +20,7 @@ SUT should run in any operating system. It is not required to run the tool where
 
 ## Memory limitations
 
-The usage of memory depends entirely on the magento instance you are running. If you are running a system with large 3rd party modules and files, expect SUT to require a high RAM amount.
+The usage of memory depends entirely on the magento instance you are running. If you are running a system with large third-party modules and files, expect SUT to require a high RAM amount.
 
 See the [SUT usage](https://github.com/magento-commerce/safe-upgrade-tool#sut-usage) topic for more information.
 

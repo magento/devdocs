@@ -31,6 +31,9 @@ pages:
         - label: Use the safe upgrade tool
           url: /comp-mgr/sut/sut-welcome-guide.html
 
+        - label: Safe upgrade tool developer guide
+          url: /comp-mgr/sut/sut-dev-guide.html
+
     - label: Magento Marketplace example
       url: /comp-mgr/marketplace/marketplace.html
       include_versions: ["2.3"]
