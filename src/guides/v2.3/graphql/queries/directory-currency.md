@@ -11,7 +11,7 @@ Use the `currency` query to return information about the store's currency config
 
 ## Example usage
 
-The following query returns the currency for the current instance of Magento:
+The following query returns the currency for the current instance of Magento with single currency USD:
 
 **Request:**
 
@@ -45,6 +45,55 @@ query {
         "USD"
       ],
       "exchange_rates": [
+        {
+          "currency_to": "USD",
+          "rate": 1
+        }
+      ]
+    }
+  }
+}
+```
+
+The following query returns the currency for the current instance of Magento with multiple currency such as USD and EURO. Default(Base) Currency for the store is US Dollar(USD). GraphQL query will be same but response will be different based on available currency. List of arrays of the currency will be displayed in available_currency_codes attribute while exchange_rates attribute contains the array of currency_to and rate vaule for respective currency.
+
+**Request:**
+
+```graphql
+query {
+    currency {
+        base_currency_code
+        base_currency_symbol
+        default_display_currency_code
+        default_display_currency_symbol
+        available_currency_codes
+        exchange_rates {
+            currency_to
+            rate
+        }
+    }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "currency": {
+      "base_currency_code": "USD",
+      "base_currency_symbol": "$",
+      "default_display_currency_code": "USD",
+      "default_display_currency_symbol": "$",
+      "available_currency_codes": [
+        "EUR",
+        "USD"
+      ],
+      "exchange_rates": [
+        {
+          "currency_to": "EUR",
+          "rate": 0.7067
+        },
         {
           "currency_to": "USD",
           "rate": 1
