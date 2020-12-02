@@ -294,6 +294,9 @@ pages:
         - label: generateCustomerToken mutation
           url: /graphql/mutations/generate-customer-token.html
 
+        - label: generateCustomerTokenAsAdmin mutation
+          url: /graphql/mutations/generate-customer-token-as-admin.html
+
         - label: handlePayflowProResponse mutation
           url: /graphql/mutations/handle-payflow-pro-response.html
 
