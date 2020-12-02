@@ -11,12 +11,7 @@ The customer must have enabled the `allow_remote_shopping_assistance` feature wh
 ## Syntax
 
 ```graphql
-mutation {
-    generateCustomerTokenAsAdmin(input: GenerateCustomerTokenAsAdminInput!) 
-        {
-            GenerateCustomerTokenAsAdminOutput
-        }
-}
+mutation {generateCustomerTokenAsAdmin(input: GenerateCustomerTokenAsAdminInput!) {GenerateCustomerTokenAsAdminOutput}}
 ```
 
 ## Example usage
