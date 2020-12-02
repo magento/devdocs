@@ -1,0 +1,28 @@
+label: Magento Payments
+versionless: true
+pages:
+- label: Introduction
+  url: /magento-payments/payments.html
+  versionless: true
+
+- label: Architecture
+  url: /magento-payments/architecture.html
+  versionless: true
+
+- label: Installing Magento Payments
+  url: /magento-payments/installing-payments.html
+  versionless: true
+  children:
+
+    - label: Configure Magento Payments
+      url: /magento-payments/configure-payments.html
+      versionless: true
+
+- label: Security
+  url: /magento-payments/security.html
+  versionless: true
+  children:
+
+    - label: Storing and managing info
+      url: /magento-payments/managing-info.html
+      versionless: true
