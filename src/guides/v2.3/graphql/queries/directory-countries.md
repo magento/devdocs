@@ -3,7 +3,7 @@ group: graphql
 title: countries query
 ---
 
-Use the `countries` query to return all countries in which the entity can do business.
+Use the `countries` query to return all countries in which the entity can do business. Don't Confuse with [Country]({{page.baseurl}}/graphql/queries/directory-country.html) query, its sepearate query to retrieve information about a specific country by two-letter country code.
 
 ## Syntax
 
@@ -34,7 +34,7 @@ query {
 
 **Response:**
 
-In this example, the response is intentionally truncated.
+In this example, the response is intentionally truncated. Here `available_regions` attribute value will be null if country doesn't have any regions available otherwise it will be an array of regions for the respective country. 
 
 ```json
 {
