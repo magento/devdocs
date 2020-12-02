@@ -55,7 +55,7 @@ query {
 }
 ```
 
-The following query returns the currency for the current instance of Magento with multiple currency such as USD and EURO. Default(Base) Currency for the store is US Dollar(USD). GraphQL query will be same but response will be different based on available currency. List of arrays of the currency will be displayed in available_currency_codes attribute while exchange_rates attribute contains the array of currency_to and rate vaule for respective currency.
+The following query returns the currency for the current instance of Magento with multiple currencies such as USD and EURO. The default(base) currency for the store is US Dollar(USD). The GraphQL query will be same , but the response will be different based on the available currency. A list of arrays of the currency will be displayed in the `available_currency_codes` attribute while the `exchange_rates` attribute contains the array of `currency_to` and rate value for the respective currency.
 
 **Request:**
 
