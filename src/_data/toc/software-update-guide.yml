@@ -22,23 +22,23 @@ pages:
           url: /comp-mgr/prereq/prereq_compman-checklist.html
 
     - label: Safe Upgrade Tool
-      url: /comp-mgr/sut/sut.html
+      url: /sut/sut.html
       children:
 
         - label: Check prerequisites for the safe upgrade tool
-          url: /comp-mgr/sut/prereq-sut-checklist.html
+          url: /sut/prereq-sut-checklist.html
 
         - label: Install the safe upgrade tool
-          url: /comp-mgr/sut/sut-welcome-guide.html
+          url: /sut/sut-welcome-guide.html
 
         - label: Use the safe upgrade tool
-          url: /comp-mgr/sut/use-sut-guide.html
+          url: /sut/use-sut-guide.html
 
         - label: Developer information for the safe upgrade tool
-          url: /comp-mgr/sut/sut-dev-guide.html
+          url: /sut/sut-dev-guide.html
 
         - label: Track the safe upgrade tool
-          url: /comp-mgr/sut/sut-tracking.html
+          url: /sut/sut-tracking.html
 
     - label: Magento Marketplace example
       url: /comp-mgr/marketplace/marketplace.html

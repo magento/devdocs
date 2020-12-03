@@ -31,7 +31,7 @@ A main use case for SUT describes the regular process for a magento partner to u
 
 ## Prerequisites
 
-See the [prerequisites checklist for SUT]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/prereq-sut-checklist.html) for the minimum requisites required to run SUT.
+See the [prerequisites checklist for SUT]({{page.baseurl}}/guides/sut/prereq-sut-checklist.html) for the minimum requisites required to run SUT.
 
 {:.bs-callout .bs-callout-info}
 SUT should run in any operating system. It is not required to run the tool where your magento instance is located.
@@ -85,4 +85,4 @@ To install _Node.js_ in your system, check the [_Node.js_](https://nodejs.dev/le
 
 Magento recommends that you contact your search engine vendor to determine whether your extension is fully compatible with Magento 2.4.
 
-See the [use SUT guide]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/use-sut-guide.html) for information about executing the SUT tool.
+See the [use SUT guide]({{page.baseurl}}/guides/sut/use-sut-guide.html) for information about executing the SUT tool.

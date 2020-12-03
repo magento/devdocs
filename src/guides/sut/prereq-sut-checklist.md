@@ -21,4 +21,4 @@ The minimum requisites to run SUT are:
 {:.bs-callout .bs-callout-info}
 SUT should run in any operating system. It is not required to run the tool where your magento instance is located.
 
-Refer to the [Safe upgrade tool installation guide]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/sut-welcome-guide.html) for full instructions on how to install these prerequisites.
+Refer to the [Safe upgrade tool installation guide]({{page.baseurl}}/guides/sut/sut-welcome-guide.html) for full instructions on how to install these prerequisites.
