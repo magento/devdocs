@@ -28,10 +28,13 @@ pages:
         - label: Check prerequisites for the safe upgrade tool
           url: /comp-mgr/sut/prereq-sut-checklist.html
 
-        - label: Use the safe upgrade tool
+        - label: Install the safe upgrade tool
           url: /comp-mgr/sut/sut-welcome-guide.html
 
-        - label: Safe upgrade tool developer guide
+        - label: Use the safe upgrade tool
+          url: /comp-mgr/sut/use-sut-guide.html
+
+        - label: Developer mode for the safe upgrade tool
           url: /comp-mgr/sut/sut-dev-guide.html
 
     - label: Magento Marketplace example

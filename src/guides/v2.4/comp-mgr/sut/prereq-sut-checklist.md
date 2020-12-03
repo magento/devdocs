@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Prerequisites for the safe upgrade tool
+title: Check prerequisites for the safe upgrade tool
 functional_areas:
   - Upgrade
 ---

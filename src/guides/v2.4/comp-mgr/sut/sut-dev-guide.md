@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Safe upgrade tool developer guide
+title: Developer mode for the safe upgrade tool
 functional_areas:
   - Upgrade
 ---
@@ -131,7 +131,3 @@ SUT Tracking is a small AWS lambda done with GO, the code is inside sut-tracking
 ### SUT Tracking develop and deploy
 
 More information in https://github.com/magento-commerce/safe-upgrade-tool-tracking
-
-## Third-party extensions
-
-Magento recommends that you contact your search engine vendor to determine whether your extension is fully compatible with Magento 2.4.
