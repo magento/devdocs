@@ -136,3 +136,5 @@ In order to distribute SUT:
 ## SUT tracking
 
 SUT tracking is a small AWS lambda done with GO. The code is available in the the [SUT github repository](https://github.com/magento-commerce/safe-upgrade-tool), inside the `sut-tracking` folder.
+
+See the [Track the safe upgrade tool guide]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/sut-tracking.html) for detailed information about SUT tracking. 

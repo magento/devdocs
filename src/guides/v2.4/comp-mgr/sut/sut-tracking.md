@@ -9,39 +9,41 @@ SUT tracking is a small AWS lambda done with GO. The code is available in the [S
 
 ## SUT tracking develop and deploy
 
-This is a lambda implemented in GOLANG to receive tracking requests from SUT https://github.com/magento-commerce/safe-upgrade-tool and store it in NewRelic.
+This is a lambda implemented in GOLANG to receive tracking requests from SUT and it is stored in NewRelic.
 
 ## Requirements
-### ASW Sam Cli
-```
-brew install aws-sam-cli
-```
-### ASW Cli
-```
-curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-sudo installer -pkg AWSCLIV2.pkg -target /
-```
+
+In order to install the requirements for the SUT tracking execute the following command:
+
+`brew install aws-sam-cli`
+
+Then, run:
+
+`curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" sudo installer -pkg AWSCLIV2.pkg -target /`
+
 ## Development
-```
-sam build
-sam local start-api
-```
-Lambda will run in http://127.0.0.1:3000/ 
+
+To develop SUT tracking, run:
+
+`sam build sam local start-api`
+
+Then, lambda will run in a `http://127.0.0.1:3000/` environment.
 
 ## Deploy
-- Go to KLAM https://klam.corp.adobe.com/ 
-- Go to CLI > Bash -> Copy content and paste in the console
-- Edit template.yaml and set NEW_RELIC_API_KEY with a valid new relic api key.
-- Deploy:
-```
-sam deploy --guided
-```
-OR
-```
-sam deploy
-```
+
+In order to deploy the SUT tracking:
+
+1. Go to KLAM https://klam.corp.adobe.com/ 
+1. Go to CLI > Bash -> copy content of your terminal and paste it in the console
+1. Then, edit the `template.yaml` file and set the `NEW_RELIC_API_KEY` with a valid newrelic api key.
+1. Finally, deploy SUT tracking by executing one of these commands:
+
+    `sam deploy --guided`
+
+    `sam deploy`
 
 ## Delete app
-```
- aws cloudformation delete-stack --stack-name sut-tracking
-```
+
+You can delete the SUT tracking by executing the following command:
+
+`aws cloudformation delete-stack --stack-name sut-tracking`
