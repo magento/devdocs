@@ -24,6 +24,7 @@ This file can be edited to customize the response according to your installation
 In this example, SUT uses `MRayMock` as the `MRayInterface` implementation. Then, the responses of the methods `api()` and `modules()` come from:
 
 * `dev/mray_mock_files/api.json`
+
 * `dev/mray_mock_files/modules.json`
 
 {:.bs-callout .bs-callout-info}
@@ -36,7 +37,9 @@ See the [magento extensions](https://docs.magento.com/user-guide/magento/magento
 To run the unit tests, you could execute one of the following commands:
 
 * `vendor/bin/phpunit tests/unit`
+
 * `vendor/bin/phpunit -c tests/unit/phpunit.xml.dist tests/unit`
+
 * `vendor/bin/phpunit -c tests/unit/phpunit.xml.dist --testsuite=unit-tests`
 
 ## Integration testing
@@ -44,6 +47,7 @@ To run the unit tests, you could execute one of the following commands:
 To run the integration tests, you could execute one of the following commands:
 
 * `vendor/bin/phpunit -c tests/integration/phpunit.xml.dist tests/integration`
+
 * `vendor/bin/phpunit -c tests/integration/phpunit.xml.dist --testsuite=integration-tests`
 
 ## Acceptance testing
@@ -55,6 +59,7 @@ To run the integration tests, you could execute one of the following commands:
 Thenn, to run the acceptance tests, you could execute one of the following commands:
 
 * `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
+
 * `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
 
 ## JS unit testing for graphql
