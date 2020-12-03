@@ -219,8 +219,8 @@ The Breadcrumb object can contain the following attributes.
 
 Attribute | Data type | Description
 --- | --- | ---
-`category_id` | `Int` | Category ID
-`category_name` | `String` | Category name
-`category_level` | `Int` | Category level
-`category_url_key` | `String` | Category URL key
-`category_url_path` | `String` | Category URL path
+`category_id` | Int | Category ID
+`category_name` | String | Category name
+`category_level` | Int | Category level
+`category_url_key` | String | Category URL key
+`category_url_path` | String | Category URL path
