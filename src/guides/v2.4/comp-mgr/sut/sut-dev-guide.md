@@ -117,16 +117,15 @@ In order to distribute SUT:
 
 1. Go to the [Magento create repo](https://repo.magento.com/admin/packagist/web/ceeerelease/create) topic and create a new release with the following parameters:
 
-    * Name: magento/safe-upgrade-tool-VERSION
-    * Availability Groups: By now it's internal
+  * Name: `magento/safe-upgrade-tool-VERSION`
 
-1. Go to the [Magento upload repo](https://repo.magento.com/admin/upload_m2_version) topic to upload the `sut.zip` with the following parameters:
+2. Go to the [Magento upload repo](https://repo.magento.com/admin/upload_m2_version) topic to upload the `sut.zip` with the following parameters:
 
-    * Extension package: `sut.zip`
-    * Release: `magento/safe-upgrade-tool-VERSION`
-    * Edition: CE
+  * Extension package: `sut.zip`
+  * Release: `magento/safe-upgrade-tool-VERSION`
+  * Edition: CE
 
-1. Finally, go to the [Magento version repo](https://repo.magento.com/admin/packagist/web/version/list) topic to check that the new version has been created.
+3. Finally, go to the [Magento version repo](https://repo.magento.com/admin/packagist/web/version/list) topic to check that the new version has been created.
 
 ## SUT tracking
 
