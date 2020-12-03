@@ -38,7 +38,7 @@ Check that you have the **Magento access keys** in your system. If you do not ha
 
 Then, you will be able to create the **Magento access keys**.
 
-See the [Access keys guide]({{page.baseurl}}/marketplace/sellers/profile-information.html#access-keys) topic for more information on creating access keys.
+See the [Access keys guide]({{page.baseurl}}/marketplace/sellers/profile-information.html) topic for more information on creating access keys.
 
 Once you create the access keys, add them to your `auth.json` file, which is located by default in your `~/.composer` folder.
 
