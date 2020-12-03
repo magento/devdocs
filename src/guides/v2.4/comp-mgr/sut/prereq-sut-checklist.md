@@ -4,9 +4,10 @@ title: Prerequisites for the safe upgrade tool
 functional_areas:
   - Upgrade
 ---
-Before you upgrade to Magento 2.4, you must check whether you are using MySQL, Elasticsearch, or a third-party extension as your catalog search engine in your magento instance. The result determines what you must do **before** upgrading to Magento 2.4.
 
-The minimum requisites to run the Safe Upgrade Tool (SUT) are:
+Before you upgrade, running the Safe Upgrade Tool (SUT) determines what you must do **before** upgrading.
+
+The minimum requisites to run SUT are:
 
 | **Requisites** | **Constraints** |
 |----------------|-----------------|
@@ -20,4 +21,4 @@ The minimum requisites to run the Safe Upgrade Tool (SUT) are:
 {:.bs-callout .bs-callout-info}
 SUT should run in any operating system. It is not required to run the tool where your magento instance is located.
 
-Refer to [`Safe upgrade tool welcome guide`]({{ page.baseurl }}/guides/v2.4/comp-mgr/sut/sut-welcome-guide.html) for full instructions on how to install these prerequisites.
+Refer to the [Safe upgrade tool welcome guide]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/sut-welcome-guide.html) for full instructions on how to install these prerequisites.
