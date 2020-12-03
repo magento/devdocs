@@ -83,7 +83,7 @@ The **complexity score** is a figure that indicates how difficult is to upgrade 
 
 > Example of a **complexity score** message
 
-*The lower this number is, the easier is to perform the upgrade*
+_The lower this number is, the easier is to perform the upgrade_
 
 {:.bs-callout .bs-callout-info}
 Its lowest value will be 0, but it doesn't necessarily need to be a number between 0 and 100.
@@ -117,7 +117,7 @@ In order to distribute SUT:
 
 1. Go to the [Magento create repo](https://repo.magento.com/admin/packagist/web/ceeerelease/create) topic and create a new release with the following parameters:
 
-*  Name: `magento/safe-upgrade-tool-VERSION`
+   *  Name: `magento/safe-upgrade-tool-VERSION`
 
 1. Go to the [Magento upload repo](https://repo.magento.com/admin/upload_m2_version) topic to upload the `sut.zip` with the following parameters:
 
