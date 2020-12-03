@@ -119,7 +119,7 @@ In order to distribute SUT:
 
   Name: `magento/safe-upgrade-tool-VERSION`
 
-2. Go to the [Magento upload repo](https://repo.magento.com/admin/upload_m2_version) topic to upload the `sut.zip` with the following parameters:
+1. Go to the [Magento upload repo](https://repo.magento.com/admin/upload_m2_version) topic to upload the `sut.zip` with the following parameters:
 
   Extension package: `sut.zip`
   Release: `magento/safe-upgrade-tool-VERSION`

@@ -35,13 +35,12 @@ In order to deploy the SUT tracking:
 
 1. Go to [KLAM](https://klam.corp.adobe.com/)
 1. Navigate to `CLI` > `Bash`
-2. Copy the content and paste it in your console
-3. Then, edit the `template.yaml` file and set the `NEW_RELIC_API_KEY` with a valid newrelic api key
-4. Finally, deploy SUT tracking by executing one of these commands:
+1. Copy the content and paste it in your console
+1. Then, edit the `template.yaml` file and set the `NEW_RELIC_API_KEY` with a valid newrelic api key
+1. Finally, deploy SUT tracking by executing one of these commands:
 
-    `sam deploy --guided`
-
-    `sam deploy`
+  `sam deploy --guided`
+  `sam deploy`
 
 ## Delete app
 
