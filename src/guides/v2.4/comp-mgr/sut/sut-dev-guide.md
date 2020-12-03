@@ -79,11 +79,7 @@ In case you have a MacOS system:
 
 ## Complexity score
 
-The **complexity score** is a figure that indicates how difficult is to upgrade from the current version to the new one:
-
-> Example of a **complexity score** message
-
-_The lower this number is, the easier is to perform the upgrade_
+The **complexity score** is a figure that indicates how difficult is to upgrade from the current version to the new one. The lower this number is, the easier is to perform the upgrade.
 
 {:.bs-callout .bs-callout-info}
 Its lowest value will be 0, but it doesn't necessarily need to be a number between 0 and 100.
