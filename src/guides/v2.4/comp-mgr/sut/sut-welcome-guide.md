@@ -13,28 +13,18 @@ The goal of SUT is to identify which potential problems you will have to fix wit
 
 ## SUT Workflow
 
-The following diagram shows how workflow of the SUT tool is expected to function:
+The following diagram shows the expected workflow of running SUT:
 
 > Example of the SUT workflow
 
-![Diagram SUT](imag/mvp-diagram.png)
+![SUT Diagram](img/mvp-diagram.png)
 
 ## Prerequisites
 
-See the [prerequisites checklist for SUT](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html) for the minimum requisites required to run SUT.
+See the [prerequisites checklist for SUT]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/prereq-sut-checklist.html) for the minimum requisites required to run SUT.
 
 {:.bs-callout .bs-callout-info}
 SUT should run in any operating system. It is not required to run the tool where your magento instance is located.
-
-## Memory limitations
-
-The usage of memory depends entirely on the magento instance you are running. If you are running a system with large third-party modules and files, expect SUT to require a high RAM amount.
-
-See the [SUT usage](https://github.com/magento-commerce/safe-upgrade-tool#sut-usage) topic for more information.
-
-## Documentation
-
-See the [readme](https://github.com/magento-commerce/safe-upgrade-tool/blob/develop/docs/README.md) file for more technical information on SUT.
 
 ## SUT installation 
 
@@ -76,6 +66,12 @@ If the **Magento access keys** are not correctly configured, SUT will not be ful
 To install _Node.js_ in your system, check the [_Node.js_](https://nodejs.dev/learn/how-to-install-nodejs) page for more information.
 
 ## SUT usage
+
+### Memory limitations
+
+When running SUT, the usage of memory depends entirely on the magento instance you are running. If you are running a system with large third-party modules and files, expect SUT to require a high RAM amount.
+
+See the [SUT usage](https://github.com/magento-commerce/safe-upgrade-tool#sut-usage) topic for more information.
 
 ### Executing the tool
 
