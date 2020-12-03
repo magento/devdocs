@@ -1,28 +1,36 @@
 ---
 group: software-update-guide
-title: Developer mode for the safe upgrade tool
+title: Developer information for the safe upgrade tool
 functional_areas:
   - Upgrade
 ---
 
+This topic contains information for developers who want to know more technical information about the Magento Safe Upgrade Tool (SUT). With this knowledge you can familiarize yourself with SUT in order to customize any of the existing components in the tool.
+
 ## M-Ray integration
 
-The integration with M-Ray is done through the interface: `Sut\Domain\MRay\MRayInterface`.
+The integration with M-Ray is done through:
 
-Its implementation is injected through `config/services.yaml` and its value decides where the response of methods
-`api()` and `modules()` comes from.
+`Sut\Domain\MRay\MRayInterface`
 
-You can edit this file to customize the response according to your needs.
-Just replace the value assigned to `Sut\Domain\MRay\MRayInterface`.
+Its implementation is through the `config/services.yaml` file. Its value decides where the response of methods `api()` and `modules()` comes from.
 
-For instance, you can do the following: `Sut\Domain\MRay\MRayInterface : "@sut_mray_mock"`
+This file can be edited to customize the response according to your installation. Just replace the value assigned to `Sut\Domain\MRay\MRayInterface`:
 
-In this case, SUT is going to use `MRayMock` as the `MRayInterface` implementation 
-and the response of the methods `api()` and `modules()` will come 
-from `dev/mray_mock_files/api.json` and `dev/mray_mock_files/modules.json`.
+> Example of a custom value
 
-**Note**: When you make changes in `services.yaml`,
-don't forget to delete the cache folder (`var/cache`) to apply them.
+`Sut\Domain\MRay\MRayInterface : "@sut_mray_mock"`
+
+In this example, SUT uses `MRayMock` as the `MRayInterface` implementation. Then, the responses of the methods `api()` and `modules()` come 
+from:
+
+- `dev/mray_mock_files/api.json`
+- `dev/mray_mock_files/modules.json`
+
+{:.bs-callout .bs-callout-info}
+When you make changes in `services.yaml`, delete the cache folder (`var/cache`) to correctly apply them.
+
+See the [magento extensions](https://docs.magento.com/user-guide/magento/magento-extensions.html) topic for more information on extensions developed and released by Magento.
 
 ## Unit testing
 

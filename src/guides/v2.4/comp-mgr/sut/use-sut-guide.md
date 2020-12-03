@@ -5,7 +5,7 @@ functional_areas:
   - Upgrade
 ---
 
-SUT is a CLI tool that checks a magento instance against a specific version by analysing all the non-magento modules installed in it.
+Magento Safe Upgrade Tool (SUT) is a CLI tool that checks a magento instance against a specific version by analysing all the non-magento modules installed in it.
 
 SUT identifies which potential problems you have to fix within your customized code when trying to upgrade to a newer magento version. 
 
