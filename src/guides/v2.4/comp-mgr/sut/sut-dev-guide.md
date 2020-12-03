@@ -62,76 +62,77 @@ Thenn, to run the acceptance tests, you could execute one of the following comma
 
 - `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
 
-## JS Unit testing for graphql
+## JS unit testing for graphql
 
-We used the framework **jest** to create these tests: 
+We used the **jest** framework to create these JS unit tests:
+
 `https://jestjs.io/docs/en/getting-started.html`
 
-To run the js unit tests for graphql you need to have NodeJS installed:
+{:.bs-callout .bs-callout-info}
+To run the js unit tests for graphql you need to have NodeJS installed.
 
-Go inside `graphql-schema-compatibility` folder and run `npm install` 
+### Node.js
 
-Then you can execute `npm run unit-test` or `jest`
+To install _Node.js_ in your system, check the [_Node.js_](https://nodejs.dev/learn/how-to-install-nodejs) page for more information.
 
-The tests are inside `graphql-schema-compatibility/test/js/unit`
+In case you have MacOS:
 
-The string schemas for testing are inside `dev/graphql_schemas`
+1. Go inside `graphql-schema-compatibility` folder and run `npm install` 
+1. Then, you can execute `npm run unit-test` or `jest`
+1. The tests are inside `graphql-schema-compatibility/test/js/unit`
+1. The string schemas for testing are inside `dev/graphql_schemas`
 
 ## Complexity score
 
-The **complexity score** is a figure that indicates how difficult is to upgrade from the current version to the new one. 
-*The lower this number is, the easier is to perform the upgrade*. 
+The **complexity score** is a figure that indicates how difficult is to upgrade from the current version to the new one:
 
+> Example of a **complexity score** message
+
+*The lower this number is, the easier is to perform the upgrade*
+
+{:.bs-callout .bs-callout-info}
 Its lowest value will be 0, but it doesn't necessarily need to be a number between 0 and 100.
 
-This score is based on the results extracted from the analysis: number of issues identified and severity of them.
+This score is based on the results extracted from the analysis:
 
-SUT calculates this score according to the following **formulae**: 
+- Number of issues identified
+- Severity of issues identified
+
+SUT calculates this score according to the following formula: 
+
+> Complexity score formula
 
 ``Complexity Score = 2 * (# of errors) + 1 * (# of warnings)``
 
-## SUT Packaging and distribution
+## SUT packaging
 
-### Packaging
-To package just execute
-``
-bin/package VERSION
-``
-Example:
-``
-bin/package 0.0.1
-``
+1. To package SUT execute:
 
-This will generate a `sut.zip` file that we should upload to https://repo.magento.com
+`bin/package VERSION`
 
-### Distribution
+> An exampple of SUT packaging
 
-Go to https://repo.magento.com/admin/packagist/web/ceeerelease/create and create new release with next parameters:
+`bin/package 0.0.1`
 
- - Name: magento/safe-upgrade-tool-VERSION
- - Availability Groups: By now it's internal
+1. This generates a `sut.zip` file that we it is uploaded to the [Magento repo page](https://repo.magento.com).
 
-![Create Release](images/createrelease.png)
+## SUT distribution
 
-Go to https://repo.magento.com/admin/upload_m2_version to upload the `sut.zip` with next parameters:
+In order to distribute SUT:
 
- - Extension package: `sut.zip`
- - Release: magento/safe-upgrade-tool-VERSION
- - Edition: CE
+1. Go to the [Magento create repo](https://repo.magento.com/admin/packagist/web/ceeerelease/create) topic and create a new release with the following parameters:
 
-![Create Release](images/uploadversion.png)
+    - Name: magento/safe-upgrade-tool-VERSION
+    - Availability Groups: By now it's internal
 
-Finally, go to https://repo.magento.com/admin/packagist/web/version/list to check that the new version has been created.
+1. Go to the [Magento upload repo](https://repo.magento.com/admin/upload_m2_version) topic to upload the `sut.zip` with the following parameters:
 
-![Create Release](images/versions.png)
+   - Extension package: `sut.zip`
+   - Release: `magento/safe-upgrade-tool-VERSION`
+   - Edition: CE
 
+1. Finally, go to the [Magento version repo](https://repo.magento.com/admin/packagist/web/version/list) topic to check that the new version has been created.
 
-For more information: https://wiki.corp.magento.com/x/8wiiBw
+## SUT tracking
 
-## SUT Tracking
-
-SUT Tracking is a small AWS lambda done with GO, the code is inside sut-tracking folder.
-
-### SUT Tracking develop and deploy
-
-More information in https://github.com/magento-commerce/safe-upgrade-tool-tracking
+SUT tracking is a small AWS lambda done with GO. The code is available in the the [SUT github repository](https://github.com/magento-commerce/safe-upgrade-tool), inside the `sut-tracking` folder.

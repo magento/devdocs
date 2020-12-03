@@ -9,6 +9,20 @@ Welcome to the Magento Safe Upgrade Tool (SUT).
 
 SUT is a CLI tool that checks a magento instance against a specific version by analysing all the non-magento modules installed in it.
 
+## Who is SUT for?
+
+One of the main use cases we are taking into account describes a regular process for a partner to upgrade one of their Magento stores. This is how the process will be:
+
+1. A partner's engineer, Larissa, will download the Safe Upgrade Tool and execute it during the beta phase of the newest Magento release. 
+
+- After she runs the tool she will see that there are several customized areas broken in the inventory and catalog modules and she will also get a complexity score of X. With this information, she will be able to understand the complexity of the upgrade and will be able to relay this information back to the account manager who will then create a timeline and cost for the Magento upgrade which will allow them to get the ecomm manager's approval. Merchants will love having this information 5 weeks before GA.
+
+2. With the merchant's approval, Larissa will work on the required code modifications to fix the 2 modules that were broken.
+
+3. With Magento pre-releases Larissa will run the Safe Upgrade tool one more time to ensure there were no new issues and her code changes fixed the problems found in Beta. Everything check’s out and she will push the code to Staging where the automated tests will confirm all tests are green which will allow them to release the latest Magento version to Production the same day as Magento pre-release is released.
+
+We’ve seeing a trend with Magento partners around fixed annual pricing for upgrades. Examples are Kensium, Wagento, and BlueAcorn https://www.wagento.com/lp/no-hassle-updates-magento-2. We believe this complexity score will help with this trend and allow for easier planning and budgeting. We could easily see in the future that all complexity scores under a certain threshold are automatically approved with no merchant intervention for an easier upgrade for all parties involved.
+
 ## SUT Workflow
 
 The following diagram shows the expected workflow when running SUT:
