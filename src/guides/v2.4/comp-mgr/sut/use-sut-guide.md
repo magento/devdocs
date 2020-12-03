@@ -78,7 +78,7 @@ encountered:
 
 > Example with a list of errors/warnings
 
-```json
+```php
 File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
 ------------------------------------------------------------------
 
@@ -104,7 +104,7 @@ The lower this number is, the easier is to perform the upgrade.
 
 > Example of a summary report
 
-```json
+```php
  ------------------------ --------
   Installed version        2.3.5
   Magento version          2.4.1
@@ -124,7 +124,7 @@ Regarding the GraphQL schema compatibility comparison, the output would be very 
 
 > Example with a list of errors/warnings for GraphQL
 
-```json
+```php
  *   [ERROR] FIELD_CHANGED_KIND: ConfigurableProduct.gender changed type from Int to String.
  *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
 ```
