@@ -34,7 +34,7 @@ pages:
         - label: Use the safe upgrade tool
           url: /comp-mgr/sut/use-sut-guide.html
 
-        - label: Developer mode for the safe upgrade tool
+        - label: Developer information for the safe upgrade tool
           url: /comp-mgr/sut/sut-dev-guide.html
 
     - label: Magento Marketplace example
