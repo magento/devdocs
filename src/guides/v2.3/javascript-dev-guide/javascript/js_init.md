@@ -23,19 +23,19 @@ Using the declarative notation to insert a JS component prepares all the configu
 
 In Magento 2, you have two options for specifying declarative notation:
 
--  Using the `data-mage-init` attribute
+- Using the `data-mage-init` attribute
 
    > This is used to target a specific HTML element. It is easier to implement and is commonly used for jQuery UI widgets. This method can only be implemented on the specified HTML tag. For example, `<nav data-mage-init='{ "<component_name>": {...} }'></nav>`. This is preferred for its concise syntax, and direct access to the HTML element.
 
--  Using the `<script type="text/x-magento-init"> ... </script>` tag
+- Using the `<script type="text/x-magento-init"> ... </script>` tag
 
    > This is used to target either a CSS selector or `*`. If the CSS selector matches multiple HTML elements, the script will run for each matched HTML element. For `*`, no HTML element is selected and the script will run once with the HTML DOM as its target. This method can be implemented from anywhere in the codebase to target any HTML element. This is preferred when direct access to the HTML element is restricted, or when there is no target HTML element.
 
-    Consider the example of adding a custom carousel JS
+Consider the example of adding a custom carousel JS
 
-    - Copy `<carousel_name>.carousel.js` to app/design/frontend/`<package_name>`/`<theme_name>`/web/js/`<carousel_name>`/
+- Copy `<carousel_name>.carousel.js` to app/design/frontend/`<package_name>`/`<theme_name>`/web/js/`<carousel_name>`/
 
-    - Add your requirejs module at app/design/frontend/`<package_name>`/`<theme_name>`/web/js/carousel.js
+- Add your requirejs module at app/design/frontend/`<package_name>`/`<theme_name>`/web/js/carousel.js
     
     ```javascript
     define([
@@ -47,8 +47,8 @@ In Magento 2, you have two options for specifying declarative notation:
         };
     });
     ```
-
-    - Add requirejs config to app/design/frontend/`<package_name>`/`<theme_name>`/requirejs-config.js.
+  
+- Add requirejs config to app/design/frontend/`<package_name>`/`<theme_name>`/requirejs-config.js
 
     ```javascript
     var config = {
@@ -60,9 +60,9 @@ In Magento 2, you have two options for specifying declarative notation:
         }
     };
     ```
-    You now have two options for specifying declarative notation:
+ You now have two options for specifying declarative notation:
 
-    - use the `data-mage-init` attribute to insert the carousel in a certain element:
+ - use the `data-mage-init` attribute to insert the carousel in a certain element:
 
     ```html
     <div data-mage-init='{"carousel":{"option": value}}'>
@@ -72,7 +72,7 @@ In Magento 2, you have two options for specifying declarative notation:
     </div>
     ```
 
-    - use with `<script type="text/x-magento-init"/>`:
+ - use with `<script type="text/x-magento-init"/>`:
 
     ```html
     <div id="<carousel_name>" class="carousel">
