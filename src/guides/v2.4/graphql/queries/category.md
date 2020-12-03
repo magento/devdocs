@@ -205,8 +205,22 @@ Attribute | Data type | Description
 
 ## Output attributes {#Categories}
 
+### CategoryTree object
+
 The query returns a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/interfaces/category-interface.html). The `CategoryTree` object can contain the following attribute, as we as all attributes defined in `CategoryInterface`:
 
 Attribute | Data type | Description
 --- | --- | ---
 `children` | `CategoryTree` | An array containing the next level of subcategories. By default, you can specify up to 10 levels of child categories
+
+## Breadcrumb object {#Breadcrumb}
+
+The Breadcrumb object can contain the following attributes.
+
+Attribute | Data type | Description
+--- | --- | ---
+`category_id` | `Int` | Category ID
+`category_name` | `Int` | Category name
+`category_level` | `Int` | Category level
+`category_url_key` | `Int` | Category URL key
+`category_url_path` | `Int` | Category URL path
