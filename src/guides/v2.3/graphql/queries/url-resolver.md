@@ -79,7 +79,7 @@ The following query returns information about the URL containing `gear/bags.html
 }
 ```
 
-### URL Resolver for the Category type
+### URL Resolver for CMS Page
 
 The following query returns information about the URL containing `no-route` for the type CMS Page.
 
@@ -117,7 +117,7 @@ The `urlResolver` query contains the following attribute.
 
 Attribute | Type | Description
 --- | --- | ---
-`url` | String | The requested URL. To query for product and category pages, the `url` value must contain the URL key and suffix. For Category page queries. the `url` value must contain the full path of the URL key. For CMS page queries, the `url` value must contain the URL key only.
+`url` | String | The requested URL. To query for product and category pages, the `url` value must contain the URL key and suffix. For Category page queries, the `url` value must contain the full path of the URL key. For CMS page queries, the `url` value must contain the URL key only.
 
 ## Output attributes
 
