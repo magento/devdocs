@@ -36,33 +36,31 @@ See the [magento extensions](https://docs.magento.com/user-guide/magento/magento
 
 To run the unit tests, you could execute one of the following commands:
 
-`vendor/bin/phpunit tests/unit`
+- `vendor/bin/phpunit tests/unit`
 
-`vendor/bin/phpunit -c tests/unit/phpunit.xml.dist tests/unit`
+- `vendor/bin/phpunit -c tests/unit/phpunit.xml.dist tests/unit`
 
-`vendor/bin/phpunit -c tests/unit/phpunit.xml.dist --testsuite=unit-tests`
+- `vendor/bin/phpunit -c tests/unit/phpunit.xml.dist --testsuite=unit-tests`
 
 ## Integration testing
 
 To run the integration tests, you could execute one of the following commands:
 
-`vendor/bin/phpunit -c tests/integration/phpunit.xml.dist tests/integration`
+- `vendor/bin/phpunit -c tests/integration/phpunit.xml.dist tests/integration`
 
-`vendor/bin/phpunit -c tests/integration/phpunit.xml.dist --testsuite=integration-tests`
+- `vendor/bin/phpunit -c tests/integration/phpunit.xml.dist --testsuite=integration-tests`
 
 ## Acceptance testing
 
-Before executing this, you should need to set the magento url in the phpunit configuration file:
+1. Before executing the acceptance tests, you need to set the magento url in the `phpunit` configuration file.
+1. Copy the default file in `tests/acceptance/phpunit.xml` (without the .dist suffix)
+1. Change the `TESTS_BASE_URL` to point to the magento url you want to test
 
-- Copy the default file in `tests/acceptance/phpunit.xml` (without the .dist suffix)
+Thenn, to run the acceptance tests, you could execute one of the following commands:
 
-- Change the `TESTS_BASE_URL` to point to the magento url you want to test
+- `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
 
-To run the acceptance tests, you could execute one of the following commands:
-
-`vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
-
-`vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
+- `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
 
 ## JS Unit testing for graphql
 
