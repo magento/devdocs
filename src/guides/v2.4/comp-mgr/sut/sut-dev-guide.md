@@ -36,19 +36,16 @@ See the [magento extensions](https://docs.magento.com/user-guide/magento/magento
 
 To run the unit tests, you could execute one of the following commands:
 
-- `vendor/bin/phpunit tests/unit`
-
-- `vendor/bin/phpunit -c tests/unit/phpunit.xml.dist tests/unit`
-
-- `vendor/bin/phpunit -c tests/unit/phpunit.xml.dist --testsuite=unit-tests`
+* `vendor/bin/phpunit tests/unit`
+* `vendor/bin/phpunit -c tests/unit/phpunit.xml.dist tests/unit`
+* `vendor/bin/phpunit -c tests/unit/phpunit.xml.dist --testsuite=unit-tests`
 
 ## Integration testing
 
 To run the integration tests, you could execute one of the following commands:
 
-- `vendor/bin/phpunit -c tests/integration/phpunit.xml.dist tests/integration`
-
-- `vendor/bin/phpunit -c tests/integration/phpunit.xml.dist --testsuite=integration-tests`
+* `vendor/bin/phpunit -c tests/integration/phpunit.xml.dist tests/integration`
+* `vendor/bin/phpunit -c tests/integration/phpunit.xml.dist --testsuite=integration-tests`
 
 ## Acceptance testing
 
@@ -58,9 +55,8 @@ To run the integration tests, you could execute one of the following commands:
 
 Thenn, to run the acceptance tests, you could execute one of the following commands:
 
-- `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
-
-- `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
+* `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
+* `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
 
 ## JS unit testing for graphql
 
@@ -95,8 +91,8 @@ Its lowest value will be 0, but it doesn't necessarily need to be a number betwe
 
 This score is based on the results extracted from the analysis:
 
-- Number of issues identified
-- Severity of issues identified
+* Number of issues identified
+* Severity of issues identified
 
 SUT calculates this score according to the following formula: 
 
@@ -122,14 +118,14 @@ In order to distribute SUT:
 
 1. Go to the [Magento create repo](https://repo.magento.com/admin/packagist/web/ceeerelease/create) topic and create a new release with the following parameters:
 
-    - Name: magento/safe-upgrade-tool-VERSION
-    - Availability Groups: By now it's internal
+    * Name: magento/safe-upgrade-tool-VERSION
+    * Availability Groups: By now it's internal
 
 1. Go to the [Magento upload repo](https://repo.magento.com/admin/upload_m2_version) topic to upload the `sut.zip` with the following parameters:
 
-    - Extension package: `sut.zip`
-    - Release: `magento/safe-upgrade-tool-VERSION`
-    - Edition: CE
+    * Extension package: `sut.zip`
+    * Release: `magento/safe-upgrade-tool-VERSION`
+    * Edition: CE
 
 1. Finally, go to the [Magento version repo](https://repo.magento.com/admin/packagist/web/version/list) topic to check that the new version has been created.
 

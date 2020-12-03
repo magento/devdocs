@@ -63,9 +63,9 @@ There are some limitations running that command:
 
 You can also get a full report containing both _PHP-related_ errors and GraphQL. In this case, you need to provide at least the following options:
 
-* --schema1=SCHEMA1
-* --schema2=SCHEMA2
-* INSTALLATION_DIR
+* `--schema1=SCHEMA1`
+* `--schema2=SCHEMA2`
+* `INSTALLATION_DIR`
 
 > Example of a bin/sut command
 
