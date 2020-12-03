@@ -67,7 +67,7 @@ query {
         "store_name": "Default Store View"
       },
       {
-        "id": 1,
+        "id": 2,
         "code": "de",
         "website_id": 1,
         "locale": "de_DE",
