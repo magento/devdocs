@@ -22,7 +22,7 @@ pages:
           url: /comp-mgr/prereq/prereq_compman-checklist.html
 
     - label: Safe Upgrade Tool
-      url: /comp-mgr/sut/sut-welcome-guide.html
+      url: /comp-mgr/sut/sut.html
       children:
 
         - label: Check prerequisites for the safe upgrade tool

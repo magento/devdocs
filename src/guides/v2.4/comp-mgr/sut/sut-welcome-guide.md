@@ -5,7 +5,7 @@ functional_areas:
   - Upgrade
 ---
 
-Welcome to the Magento Safe Upgrade Tool (SUT).
+Welcome to the Magento Safe Upgrade Tool (SUT) page.
 
 SUT is a CLI tool that checks a magento instance against a specific version by analysing all the non-magento modules installed in it.
 
@@ -85,4 +85,4 @@ To install _Node.js_ in your system, check the [_Node.js_](https://nodejs.dev/le
 
 Magento recommends that you contact your search engine vendor to determine whether your extension is fully compatible with Magento 2.4.
 
-See the [use SUT guide]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/use-sut-guide.html) for information about running SUT.
+See the [use SUT guide]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/use-sut-guide.html) for information about executing the SUT tool.
