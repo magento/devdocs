@@ -17,8 +17,6 @@ Running the tool will return a list of errors and warnings that you will have to
 
 When running SUT, the usage of memory depends entirely on the magento instance you are running. If you are running a system with large third-party modules and files, expect SUT to require a high RAM amount.
 
-See the [SUT usage](https://github.com/magento-commerce/safe-upgrade-tool#sut-usage) topic for more information.
-
 ### Executing the tool
 
 Execute the tool by running the following command:
@@ -54,7 +52,7 @@ You need to provide the version as a parameter when running the command:
 
 `bin/sut upgrade:check INSTALLATION_DIR -c 2.4.1`.
 
-There are some limitations:
+There are some limitations running that command:
 
 - This parameter refers to any tag that identifies a specific version of Magento.
 - It is a requirement to provide this one explicitly; providing only the value of it will not work.
@@ -69,7 +67,7 @@ You can also get a full report containing both _PHP-related_ errors and GraphQL.
 - --schema2=SCHEMA2
 - INSTALLATION_DIR
 
-> Example of bin/sut command
+> Example of a bin/sut command
 
 `bin/sut upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.1 INSTALLATION_DIR`
 
@@ -80,7 +78,7 @@ encountered:
 
 > Example with a list of errors/warnings
 
-```
+```json
 File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
 ------------------------------------------------------------------
 
@@ -88,7 +86,7 @@ File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
  * [WARNING] Line 6: Importing Magento @deprecated class 'Magento\Catalog\Model\ProductRepository'
 ```
 
-Apart from that, the report also includes a detailed _summary_:
+The report also includes a detailed summary:
 
 -  *Installed Version*: the version currently installed.
 -  *Magento Version*: the version you want to upgrade to.
@@ -104,9 +102,9 @@ Apart from that, the report also includes a detailed _summary_:
 
 The lower this number is, the easier is to perform the upgrade.
 
-> Example of a summary
+> Example of a summary report
 
-```
+```json
  ------------------------ --------
   Installed version        2.3.5
   Magento version          2.4.1
@@ -122,11 +120,11 @@ The lower this number is, the easier is to perform the upgrade.
  ------------------------ --------
 ```
 
-Regarding the GraphQL schema compatibility comparison, the output would be very similar to the previous one:
+Regarding the GraphQL schema compatibility comparison, the output would be very similar:
 
 > Example with a list of errors/warnings for GraphQL
 
-```
+```json
  *   [ERROR] FIELD_CHANGED_KIND: ConfigurableProduct.gender changed type from Int to String.
  *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
 ```

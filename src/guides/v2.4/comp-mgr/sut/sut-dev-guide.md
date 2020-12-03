@@ -122,8 +122,6 @@ Finally, go to https://repo.magento.com/admin/packagist/web/version/list to chec
 
 For more information: https://wiki.corp.magento.com/x/8wiiBw
 
-
-
 ## SUT Tracking
 
 SUT Tracking is a small AWS lambda done with GO, the code is inside sut-tracking folder.
