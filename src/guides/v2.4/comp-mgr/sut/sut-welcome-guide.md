@@ -40,9 +40,9 @@ SUT should run in any operating system. It is not required to run the tool where
 
 In order to install SUT, it is required that you check/install the necessary prerequisites mentioned earlier:
 
-- Magento access keys
-- Composer
-- Node.js
+* Magento access keys
+* Composer
+* Node.js
 
 ### Magento access keys
 

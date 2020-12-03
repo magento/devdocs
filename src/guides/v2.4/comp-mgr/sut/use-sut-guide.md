@@ -7,7 +7,7 @@ functional_areas:
 
 Magento Safe Upgrade Tool (SUT) is a CLI tool that checks a magento instance against a specific version by analysing all the non-magento modules installed in it.
 
-SUT identifies which potential problems you have to fix within your customized code when trying to upgrade to a newer magento version. 
+SUT identifies which potential problems you have to fix within your customized code when trying to upgrade to a newer magento version.
 
 Running the tool will return a list of errors and warnings that you will have to take into account to complete the upgrade to the desired version.
 
@@ -50,22 +50,22 @@ You need to provide the version as a parameter when running the command:
 
 > Providing the version
 
-`bin/sut upgrade:check INSTALLATION_DIR -c 2.4.1`.
+`bin/sut upgrade:check INSTALLATION_DIR -c 2.4.1`
 
 There are some limitations running that command:
 
-- This parameter refers to any tag that identifies a specific version of Magento.
-- It is a requirement to provide this one explicitly; providing only the value of it will not work.
-- Provide the tag version without any quotation marks (neither single nor double): ~~'2.4.1-develop'~~.
-- You should NOT provide older versions than the one you have currently installed, nor older than 2.3, which is the oldest one supported at the moment.
+* This parameter refers to any tag that identifies a specific version of Magento.
+* It is a requirement to provide this one explicitly; providing only the value of it will not work.
+* Provide the tag version without any quotation marks (neither single nor double): ~~'2.4.1-develop'~~.
+* You should NOT provide older versions than the one you have currently installed, nor older than 2.3, which is the oldest one supported at the moment.
 
 #### Full report
 
 You can also get a full report containing both _PHP-related_ errors and GraphQL. In this case, you need to provide at least the following options:
 
-- --schema1=SCHEMA1
-- --schema2=SCHEMA2
-- INSTALLATION_DIR
+* --schema1=SCHEMA1
+* --schema2=SCHEMA2
+* INSTALLATION_DIR
 
 > Example of a bin/sut command
 
@@ -88,17 +88,17 @@ File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
 
 The report also includes a detailed summary:
 
--  *Installed Version*: the version currently installed.
--  *Magento Version*: the version you want to upgrade to.
--  *Running time*: amount of time the analysis took to build the report (mm:ss).
--  *Checked modules*: amount of modules installed in the current magento version examined during the analysis.
--  *PHP errors found*: amount of PHP errors.
--  *PHP warnings found*: amount of PHP warnings.
--  *GraphQL errors found*: amount of GraphQL errors.
--  *GraphQL warnings found*: amount of GraphQL warnings.
--  *Total errors found*: total amount of errors found.
--  *Total warnings found*: total amount of warnings found.
--  *Complexity score*: a figure that indicates how difficult is to upgrade from the current version to the new one.
+* *Installed Version*: the version currently installed
+* *Magento Version*: the version you want to upgrade to
+* *Running time*: amount of time the analysis took to build the report (mm:ss)
+* *Checked modules*: amount of modules installed in the current magento version examined during the analysis
+* *PHP errors found*: amount of PHP errors
+* *PHP warnings found*: amount of PHP warnings
+* *GraphQL errors found*: amount of GraphQL errors
+* *GraphQL warnings found*: amount of GraphQL warnings
+* *Total errors found*: total amount of errors found
+* *Total warnings found*: total amount of warnings found
+* *Complexity score*: a figure that indicates how difficult is to upgrade from the current version to the new one
 
 The lower this number is, the easier is to perform the upgrade.
 
