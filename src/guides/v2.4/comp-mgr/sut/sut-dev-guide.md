@@ -21,11 +21,10 @@ This file can be edited to customize the response according to your installation
 
 `Sut\Domain\MRay\MRayInterface : "@sut_mray_mock"`
 
-In this example, SUT uses `MRayMock` as the `MRayInterface` implementation. Then, the responses of the methods `api()` and `modules()` come 
-from:
+In this example, SUT uses `MRayMock` as the `MRayInterface` implementation. Then, the responses of the methods `api()` and `modules()` come from:
 
-- `dev/mray_mock_files/api.json`
-- `dev/mray_mock_files/modules.json`
+* `dev/mray_mock_files/api.json`
+* `dev/mray_mock_files/modules.json`
 
 {:.bs-callout .bs-callout-info}
 When you make changes in `services.yaml`, delete the cache folder (`var/cache`) to correctly apply them.
@@ -71,9 +70,9 @@ To run the js unit tests for graphql you need to have NodeJS installed.
 
 To install _Node.js_ in your system, check the [_Node.js_](https://nodejs.dev/learn/how-to-install-nodejs) page for more information.
 
-In case you have MacOS:
+In case you have a MacOS system:
 
-1. Go inside `graphql-schema-compatibility` folder and run `npm install` 
+1. Go inside `graphql-schema-compatibility` folder and run `npm install`
 1. Then, you can execute `npm run unit-test` or `jest`
 1. The tests are inside `graphql-schema-compatibility/test/js/unit`
 1. The string schemas for testing are inside `dev/graphql_schemas`
@@ -94,7 +93,7 @@ This score is based on the results extracted from the analysis:
 * Number of issues identified
 * Severity of issues identified
 
-SUT calculates this score according to the following formula: 
+SUT calculates this score according to the following formula:
 
 > Complexity score formula
 
@@ -133,4 +132,4 @@ In order to distribute SUT:
 
 SUT tracking is a small AWS lambda done with GO. The code is available in the the [SUT github repository](https://github.com/magento-commerce/safe-upgrade-tool), inside the `sut-tracking` folder.
 
-See the [Track the safe upgrade tool guide]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/sut-tracking.html) for detailed information about SUT tracking. 
+See the [Track the safe upgrade tool guide]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/sut-tracking.html) for detailed information about SUT tracking.
