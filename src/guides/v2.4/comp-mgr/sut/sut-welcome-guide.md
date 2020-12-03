@@ -21,7 +21,7 @@ The following diagram shows the expected workflow when running SUT:
 
 A main use case for SUT describes the regular process for a magento partner to upgrade one of their Magento instances:
 
-1. A partner's software engineer downloads the SUT and executes it during the beta phase of the newest Magento release. 
+1. A partner's software engineer downloads the SUT and executes it during the beta phase of the newest Magento release.
 1. Then, the engineer sees that there are several customized areas broken in the inventory and catalog modules, and she also gets a complexity score of X. See the [Developer information for the safe upgrade tool guide]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/use-sut-guide.html) for more information on the complexity score.
 1. With this information, the engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's account manager.
 1. The account manager creates a timeline and cost for the Magento upgrade which allows them to get their managers approval.
@@ -36,7 +36,7 @@ See the [prerequisites checklist for SUT]({{page.baseurl}}/guides/v2.4/comp-mgr/
 {:.bs-callout .bs-callout-info}
 SUT should run in any operating system. It is not required to run the tool where your magento instance is located.
 
-## SUT installation 
+## SUT installation
 
 In order to install SUT, it is required that you check/install the necessary prerequisites mentioned earlier:
 
@@ -72,7 +72,7 @@ The **public key** corresponds to the _username_ whereas the **private key** is 
 
 ### Composer
 
-Clone this repository and, from the **safe-upgrade-tool** folder run `composer install` in your terminal to install its dependencies. 
+Clone this repository and, from the **safe-upgrade-tool** folder run `composer install` in your terminal to install its dependencies.
 
 {:.bs-callout .bs-callout-warning}
 If the **Magento access keys** are not correctly configured, SUT will not be fully installed and you will get errors when running the `composer install` command in your terminal.

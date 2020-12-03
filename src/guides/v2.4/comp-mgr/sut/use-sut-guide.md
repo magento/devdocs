@@ -73,8 +73,7 @@ You can also get a full report containing both _PHP-related_ errors and GraphQL.
 
 ### Output
 
-It provides a report identifying the affected non-magento modules, the severity and the description of the problem for every issue 
-encountered:
+It provides a report identifying the affected non-magento modules, the severity and the description of the problem for every issue encountered:
 
 > Example with a list of errors/warnings
 
