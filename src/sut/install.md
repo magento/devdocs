@@ -22,12 +22,12 @@ The following diagram shows the expected workflow when running SUT:
 A main use case for SUT describes the regular process for a magento partner to upgrade one of their Magento instances:
 
 1. A partner's software engineer downloads the SUT and executes it during the beta phase of the newest Magento release.
-2. Then, the engineer sees that there are several customized areas broken in the inventory and catalog modules, and she also gets a complexity score of X. See the [Developer information guide]({{page.baseurl}}/sut/developer.html) for more information on the complexity score.
-3. With this information, the engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's account manager.
-4. The account manager creates a timeline and cost for the Magento upgrade which allows them to get their managers approval.
-5. With their managers approval, the software engineer works on the required code modifications to fix the broken modules.
-6. With Magento pre-releases, run the SUT tool one more time to ensure there were no new issues and her code changes fixed the problems found during the beta phase.
-7. Everything check’s out and she will push the code to Staging where the automated tests will confirm all tests are green which will allow them to release the latest Magento version to Production the same day as Magento pre-release is released.
+1. Then, the engineer sees that there are several customized areas broken in the inventory and catalog modules, and she also gets a complexity score of X. See the [Developer information guide]({{page.baseurl}}/sut/developer.html) for more information on the complexity score.
+1. With this information, the engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's account manager.
+1. The account manager creates a timeline and cost for the Magento upgrade which allows them to get their managers approval.
+1. With their managers approval, the software engineer works on the required code modifications to fix the broken modules.
+1. With Magento pre-releases, run the SUT tool one more time to ensure there were no new issues and her code changes fixed the problems found during the beta phase.
+1. Everything check’s out and she will push the code to Staging where the automated tests will confirm all tests are green which will allow them to release the latest Magento version to Production the same day as Magento pre-release is released.
 
 ## Prerequisites
 
