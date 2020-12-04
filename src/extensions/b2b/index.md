@@ -14,12 +14,12 @@ For {{site.data.var.ece}} projects, see [Set up Magento B2B module]({{ site.base
 
 1. Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
 
-{:.bs-callout-info}
-Compatible Magento B2B version must be provided in the command.
-
    ```bash
    composer require magento/extension-b2b:<version>
    ```
+
+   {:.bs-callout-info}
+   You must specify a compatible Magento B2B version in the command.
 
    If you get an error when trying to install the B2B module for a local instance of {{site.data.var.ee}} for example:
 
@@ -63,7 +63,7 @@ Compatible Magento B2B version must be provided in the command.
    ```
 
  {:.bs-callout-info}
-  Note: In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the commands above. Magento does not prompt you to run the compile command in Developer mode.
+ In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the commands above. Magento does not prompt you to run the compile command in Developer mode.
 
 {:.bs-callout-info}
 After completing the installation, you must follow the [post-installation steps](#configure-b2b).
