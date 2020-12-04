@@ -8,6 +8,7 @@ The `CartItemInterface` has the following implementations:
 *  [BundleCartItem](#BundleCartItem)
 *  [ConfigurableCartItem](#ConfigurableCartItem)
 *  [DownloadableCartItem](#DownloadableCartItem)
+*  [GiftCardCartItem](#GiftCardCartItem)
 *  [SimpleCartItem](#SimpleCartItem)
 *  [VirtualCartItem](#VirtualCartItem)
 
@@ -125,6 +126,18 @@ Attribute | Data type | Description
 `customizable_options` | [[SelectedCustomizableOption]](#SelectedCustomizableOption) | An array of customizable options the shopper chose for the downloadable product
 `links` | [[DownloadableProductLinks]]({{page.baseurl}}/graphql/interfaces/downloadable-product.html#DownloadableProductLinks) | An array containing information about the links associated with the selected downloadable product
 `samples` | [[DownloadableProductSamples]]({{page.baseurl}}/graphql/interfaces/downloadable-product.html#DownloadableProductSamples) | An array containing information about samples of the selected downloadable product
+
+## GiftCardCartItem implementation {#GiftCardCartItem}
+
+The `GiftCardCartItem` object adds the following attributes to the `CartItemInterface`.
+
+`amount` | Money! | The amount and currency of the gift card
+`customizable_options` | [[SelectedCustomizableOption]](#SelectedCustomizableOption) | An array of customizations made to the gift card
+`message` | String | A message to the recipient
+`recipient_email` | String | The email of the person receiving the gift card
+`recipient_name` | String! | The name of the person receiving the gift card
+`sender_email` | String | The email of the sender
+`sender_name` | String! | The name of the sender
 
 ## SimpleCartItem implementation {#SimpleCartItem}
 

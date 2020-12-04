@@ -158,7 +158,7 @@ Attribute |  Data Type | Description
 `cart_id` | String! | The unique ID that identifies the shopper's cart
 `gift_message` | [GiftMessageInput](#GiftMessageInput) | Gift message details for the cart
 `gift_receipt_included` | Boolean! | Indicates whether the customer requested a gift receipt for the cart
-`gift_wrapping_id` | ID | The unique identifier of the gift wrapping to be used for the cart
+`gift_wrapping_id` | ID | The unique ID for a `GiftWrapping` object to be used for the cart
 `printed_card_included` | Boolean! | Indicates whether the customer requested a printed card for the cart
 
 ### GiftMessageInput {#GiftMessageInput}

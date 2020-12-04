@@ -38,8 +38,8 @@ The `GiftCardAmounts` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `attribute_id` | Int | An internal attribute ID
-`uid` | String | A string that encodes option details
-`value_id` | Int | An ID that is  assigned to each unique gift card amount
+`uid` | ID! | The unique ID for a `GiftCardAmounts` object
+`value_id` | Int | Deprecated. Use `uid` instead. An ID that is  assigned to each unique gift card amount
 `value` | Float | The value of the gift card
 `website_value` | Float |The value of the gift card
 `website_id` | Int | ID of the website that generated the gift card
@@ -68,7 +68,7 @@ The following query returns information about gift card product `GiftCard25`. (I
         is_redeemable
         giftcard_type
         giftcard_amounts {
-          value_id
+          uid
           website_id
           value
           attribute_id
@@ -101,7 +101,7 @@ The following query returns information about gift card product `GiftCard25`. (I
           "giftcard_type": "VIRTUAL",
           "giftcard_amounts": [
             {
-              "value_id": 2,
+              "value_id": "Mg==",
               "website_id": 0,
               "value": 25,
               "attribute_id": 129,
