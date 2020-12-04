@@ -68,8 +68,8 @@ To install Node.js on your system, see the Node.js [documentation](https://nodej
 The following instructions are for MacOS systems:
 
 1. Open a terminal and navigate to the `graphql-schema-compatibility/` directory.
-1. Install project dependencies: 
- 
+1. Install project dependencies:
+
       ```bash
       npm install
       ```
@@ -106,7 +106,7 @@ The SUT calculates this score according to the following formula:
 
 A package is essentially a directory containing something. It contains a package description which has a name and a version. The name and the version are used to identify the package.
 
-It is possible to create a `sut.zip` file of the SUT to distribute it with partners. In order to upload it, you need first to create a package: 
+It is possible to create a `sut.zip` file of the SUT to distribute it with partners. In order to upload it, you need first to create a package:
 
 1. To package the SUT execute the following command:
 
