@@ -70,4 +70,4 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
-`No such entity with cartId` | If you provide invalid cartId.
+`No such entity with cartId` | If invalid `cartId` is provided
