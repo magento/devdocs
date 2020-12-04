@@ -9,7 +9,7 @@ Welcome to the Magento Safe Upgrade Tool (SUT) page.
 
 SUT is a CLI tool that checks a magento instance against a specific version by analysing all the non-magento modules installed in it.
 
-## SUT Workflow
+## Workflow
 
 The following diagram shows the expected workflow when running SUT:
 
@@ -17,7 +17,7 @@ The following diagram shows the expected workflow when running SUT:
 
 ![SUT Diagram](img/mvp-diagram.png)
 
-### Who is SUT for?
+### Who is the SUT for?
 
 A main use case for SUT describes the regular process for a magento partner to upgrade one of their Magento instances:
 
@@ -33,7 +33,7 @@ A main use case for SUT describes the regular process for a magento partner to u
 
 See the [prerequisites checklist for SUT]({{page.baseurl}}/sut/prerequisites.html) for the minimum requisites required to run SUT.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 SUT should run in any operating system. It is not required to run the tool where your magento instance is located.
 
 ## Install
@@ -54,7 +54,7 @@ See the [Access keys guide]({{page.baseurl}}/marketplace/sellers/profile-informa
 
 Once you create the access keys, add them to your `auth.json` file, which is located by default in your `~/.composer` folder.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Check your **COMPOSER_HOME** environment variable to see where the `auth.json` file is located.
 
 The **public key** corresponds to the _username_ whereas the **private key** is the _password_:
@@ -74,7 +74,7 @@ The **public key** corresponds to the _username_ whereas the **private key** is 
 
 Clone this repository and, from the **safe-upgrade-tool** folder run `composer install` in your terminal to install its dependencies.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 If the **Magento access keys** are not correctly configured, SUT will not be fully installed and you will get errors when running the `composer install` command in your terminal.
 
 ### Node.js

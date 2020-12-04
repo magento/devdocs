@@ -25,7 +25,7 @@ Execute the tool by running the following command:
 
 `bin/sut upgrade:check INSTALLATION_DIR`.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 It is recommended to run `php -d memory_limit=-1 /bin/sut` to avoid memory limitations, as described earlier.
 
 `INSTALLATION_DIR` is the directory where the Magento instance is located.
