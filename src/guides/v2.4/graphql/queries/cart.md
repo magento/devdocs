@@ -691,7 +691,7 @@ The `CartItemInterface` has the following implementations:
 *  SimpleCartItem
 *  VirtualCartItem
 
-See [`CartItemInterface`]({{page.baseurl}}/graphql/interfaces/cart-item/interface.html) for details.
+See [`CartItemInterface`]({{page.baseurl}}/graphql/interfaces/cart-item-interface.html) for details.
 
 ### CartItemQuantity object {#CartItemQuantity}
 
