@@ -69,7 +69,7 @@ The `storeConfig` query can return `base` and `extended` store configuration set
 
 ### Query a store's theme
 
-The following query returns information about the store's default title, keywords, and welcome text.
+The following query returns information about the store's default title, keywords, description, welcome and copyright text.
 
 **Request:**
 
@@ -78,9 +78,12 @@ The following query returns information about the store's default title, keyword
   storeConfig {
     default_title
     default_keywords
+    default_description
     welcome
+    copyright
   }
 }
+
 ```
 
 **Response:**
@@ -91,7 +94,9 @@ The following query returns information about the store's default title, keyword
     "storeConfig": {
       "default_title": "Magento Enterprise Edition",
       "default_keywords": "Magento, Varien, E-commerce",
-      "welcome": "Default welcome msg!"
+      "default_description": null,
+      "welcome": "Default welcome msg!",
+      "copyright": "Copyright © 2013-present Magento, Inc. All rights reserved."
     }
   }
 }
@@ -151,6 +156,9 @@ The following query returns information about the store's catalog configuration.
     grid_per_page
     list_per_page
     catalog_default_sort_by
+    root_category_id
+    product_reviews_enabled
+    allow_guests_to_write_product_reviews
   }
 }
 ```
@@ -170,6 +178,9 @@ The following query returns information about the store's catalog configuration.
       "grid_per_page": 9,
       "list_per_page": 10,
       "catalog_default_sort_by": "position"
+      "root_category_id": 2,
+      "product_reviews_enabled": "1",
+      "allow_guests_to_write_product_reviews": "1"
     }
   }
 }
@@ -230,6 +241,32 @@ The following query returns enumeration values that indicate the store's fixed p
       "category_fixed_product_tax_display_setting": "EXCLUDE_FPT_WITHOUT_DETAILS",
       "product_fixed_product_tax_display_setting": "EXCLUDE_FPT_AND_INCLUDE_WITH_DETAILS",
       "sales_fixed_product_tax_display_setting": "INCLUDE_FPT_WITHOUT_DETAILS"
+    }
+  }
+}
+```
+
+### Query a store's CMS configurationt
+
+The following query returns information about the store's payment payflowpro cc vault value active or not.
+
+**Request:**
+
+```graphql
+{
+  storeConfig {
+    payment_payflowpro_cc_vault_active
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "storeConfig": {
+      "payment_payflowpro_cc_vault_active": "0"
     }
   }
 }
