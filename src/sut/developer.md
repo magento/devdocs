@@ -59,50 +59,73 @@ To run the integration tests, execute one of the following commands:
 We used the [Jest](https://jestjs.io/docs/en/getting-started.html) framework to create these JS unit tests:
 
 {:.bs-callout-info}
-To run the js unit tests for graphql you need to have NodeJS installed.
+To run JS unit tests for GraphQL, you must have Node.js installed.
 
 ### Node.js
 
-To install _Node.js_ in your system, check the [_Node.js_](https://nodejs.dev/learn/how-to-install-nodejs) page for more information.
+To install Node.js on your system, see the Node.js [documentation](https://nodejs.dev/learn/how-to-install-nodejs).
 
-In case you have a MacOS system:
+The following instructions are for MacOS systems:
 
-1. Go inside `graphql-schema-compatibility` folder and run `npm install`
-1. Then, you can execute `npm run unit-test` or `jest`
-1. The tests are inside `graphql-schema-compatibility/test/js/unit`
-1. The string schemas for testing are inside `dev/graphql_schemas`
+1. Open a terminal and navigate to the `graphql-schema-compatibility/` directory.
+1. Install project dependencies: 
+ 
+      ```bash
+      npm install
+      ```
+
+1. Run unit tests or `jest`:
+
+   ```bash
+   npm run unit-test
+   ```
+
+The tests are inside `graphql-schema-compatibility/test/js/unit`.
+
+The string schemas for testing are inside `dev/graphql_schemas`.
 
 ## Complexity score
 
-The **complexity score** is a figure that indicates how difficult is to upgrade from the current version to the new one. The lower this number is, the easier is to perform the upgrade.
+The **complexity score** is a figure that indicates how difficult an upgrade from the current version to the new one might be. Lower numbers indicate easier upgrades.
 
 {:.bs-callout-info}
-Its lowest value will be 0, but it doesn't necessarily need to be a number between 0 and 100.
+Its lowest value can be 0.
 
 This score is based on the results extracted from the analysis:
 
 *  Number of issues identified
 *  Severity of issues identified
 
-SUT calculates this score according to the following formula:
+The SUT calculates this score according to the following formula:
 
 ### Complexity score formula
 
-``Complexity Score = 2 * (# of errors) + 1 * (# of warnings)``
+`Complexity Score = 2 * (# of errors) + 1 * (# of warnings)`
 
 ## Packaging
 
-1. To package SUT execute:
+A package is essentially a directory containing something. It contains a package description which has a name and a version. The name and the version are used to identify the package.
+
+It is possible to create a `sut.zip` file of the SUT to distribute it with partners. In order to upload it, you need first to create a package: 
+
+1. To package the SUT execute the following command:
 
 `bin/package VERSION`
 
-### An exampple of packaging
+### An example of a package
 
 `bin/package 0.0.1`
 
-1. This generates a `sut.zip` file that we it is uploaded to the [Magento repo page](https://repo.magento.com).
+1. This generates an `sut.zip` file that you can upload (or distribute) to the [Magento Composer repository](https://repo.magento.com).
+
+{:.bs-callout-warning}
+A repository is a package source. Composer will look in all your repositories to find the packages your SUT requires.
+
+For more information about Composer, see the [Introduction to Magento Composer](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/intro/intro-composer.html) topic.
 
 ## Distribution
+
+One the SUT package is generated. You can upload it to the Magento Composer repository.
 
 In order to distribute SUT:
 
@@ -120,6 +143,6 @@ In order to distribute SUT:
 
 ## Tracking
 
-SUT tracking is a small AWS lambda done with GO. The code is available in the the [SUT github repository](https://github.com/magento-commerce/safe-upgrade-tool), inside the `sut-tracking` folder.
+SUT tracking is a small AWS Lambda function handler written in Go. The code is available in the the [SUT tracking github repository](https://github.com/magento-commerce/safe-upgrade-tool-tracking), inside the `sut-tracking/` directory.
 
-See the [Tracking guide]({{page.baseurl}}/sut/tracking.html) for detailed information about SUT tracking.
+See [Tracking]({{page.baseurl}}/sut/tracking.html).

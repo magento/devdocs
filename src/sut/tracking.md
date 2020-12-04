@@ -9,7 +9,9 @@ SUT tracking is a small AWS lambda done with GO. The code is available in the [S
 
 ## SUT tracking develop and deploy
 
-This is a lambda implemented in GOLANG to receive tracking requests from SUT and it is stored in NewRelic.
+This is a lambda implemented in GOLANG to receive tracking requests from SUT and it is stored in New Relic.
+
+For more information on New Relic, see [New Relic services]({{page.baseurl}}/cloud/project/new-relic.html) topic.
 
 ## Requirements
 
