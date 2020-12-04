@@ -200,7 +200,7 @@ If you use the ElasticSuite third-party plugin, you must [update the `{{site.dat
 When setting up ElasticSuite, add the configuration settings to the `ELASTICSUITE_CONFIGURATION` deploy variable. This configuration saves the settings across deployments.
 
 ### Remove plugins for Elasticsearch
-Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` does not uninstall or disable them as you might expect. You must take the additional step of reindexing your Elasticsearch data. This is intentional to prevent possible loss or corruption of data that depends on these plugins.
+Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` does not uninstall or disable them as you might expect. You must take the additional step of reindexing your Elasticsearch data. This behavior is intentional to prevent possible loss or corruption of data that depends on these plugins.
 
 **To remove Elasticsearch plugins:**
 
