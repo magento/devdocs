@@ -210,7 +210,7 @@ The `AttributeInput` input object requires the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces
-`entity_type` | String | The type of entity that defines the attribute such as catalog_product, catalog_category, customer
+`entity_type` | String | The type of entity that defines the attribute, such as `catalog_product`, `catalog_category`, or `customer`
 
 ## Output attributes
 
@@ -221,7 +221,7 @@ Attribute |  Data Type | Description
 `attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces
 `attribute_options` | [`AttributeOption`] | An array of attribute options
 `attribute_type` | String | The data type of the attribute
-`entity_type` | String | The type of entity that defines the attribute such as `catalog_product`, `catalog_category`, or `customer`
+`entity_type` | String | The type of entity that defines the attribute, such as `catalog_product`, `catalog_category`, or `customer`
 `input_type` | String | The frontend input type of the attribute
 
 ### AttributeOption object
