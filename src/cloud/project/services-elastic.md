@@ -182,9 +182,9 @@ If you need to restart the [Elasticsearch](https://www.elastic.co) service, you 
 
 -  After you set up the Elasticsearch service for your project, use the Magento Admin UI to test the Elasticsearch connection and customize Elasticsearch settings for {{ site.data.var.ee }}.
 
-### Elasticsearch plugins
+### Add plugins for Elasticsearch
 
-Optionally, you can add Elasticsearch plugins by adding the `configuration:plugins` section to the `.magento/services.yaml` file. For example, the following code enables the ICU analysis and Phonetic analysis plugins.
+Optionally, you can add plugins for Elasticsearch by adding the `configuration:plugins` section to the Elasticsearch service in the `.magento/services.yaml` file. For example, the following code enables the ICU analysis and Phonetic analysis plugins.
 
 ```yaml
 elasticsearch:
@@ -198,6 +198,33 @@ elasticsearch:
 
 If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{ site.baseurl }}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
 When setting up ElasticSuite, add the configuration settings to the `ELASTICSUITE_CONFIGURATION` deploy variable. This configuration saves the settings across deployments.
+
+### Remove plugins for Elasticsearch
+Removing the plugin entries from `elasticsearch:` in `magento/services.yaml` does not uninstall or disable them as you might expect. This is intentional to prevent possible loss or corruption of data that depends on these plugins. To disable an Elasticsearch plugin, you must take the additional step of reindexing your Elasticsearch data as follows:
+
+**To disable Elasticsearch plugins from your Magento instance:**
+
+1. Remove the Elasticsearch plugin entries from your `magento/services.yaml` file.
+
+1. Reindex the Catalog Search index:
+
+    ```bash
+    bin/magento indexer:reindex catalogsearch_fulltext
+    ```
+
+1. Clean the cache:
+
+    ```bash
+    bin/magento cache:clean
+    ```
+
+**To uninstall Elasticsearch plugins permanently:**
+
+1. Remove the Elasticsearch plugin entries from your `magento/services.yaml` file.
+
+1. Commit the service changes to your Cloud repo.
+
+Uninstalling an Elasticsearch plugin is not strictly necessary. A disabled plugin has very little impact on the server. If you think you may use the plugin again, disabling the plugin is the least intrusive option for your environment.
 
 {:.bs-callout-tip}
 For details on using or troubleshooting the Elasticsuite plugin with Magento, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
