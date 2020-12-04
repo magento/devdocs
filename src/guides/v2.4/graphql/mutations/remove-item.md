@@ -54,7 +54,7 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "13",
+            "uid": "NDA=",
             "product": {
               "name": "Strive Shoulder Pack"
             },

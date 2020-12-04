@@ -22,7 +22,7 @@ The following query returns information about the URL containing `joust-duffle-b
 ```graphql
 {
   urlResolver(url: "joust-duffle-bag.html") {
-    entity_id
+    entity_uid
     relative_url
     redirectCode
     type
@@ -36,7 +36,7 @@ The following query returns information about the URL containing `joust-duffle-b
 {
   "data": {
     "urlResolver": {
-      "entity_uid": null,
+      "entity_uid": "MQ==",
       "relative_url": "joust-duffle-bag.html",
       "redirectCode": 0,
       "type": "PRODUCT"

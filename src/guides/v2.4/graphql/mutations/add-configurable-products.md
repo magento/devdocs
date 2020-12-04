@@ -36,7 +36,7 @@ mutation {
   ) {
     cart {
       items {
-        id
+        uid
         quantity
         product {
           name
@@ -62,7 +62,7 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "5",
+            "uid": "Mzc=",
             "quantity": 2,
             "product": {
               "name": "Teton Pullover Hoodie",

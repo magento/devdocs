@@ -1102,18 +1102,18 @@ The following query shows how to get related products, up-sells, and cross-sells
 {
   products(filter: { sku: { eq: "24-WB06" } }) {
     items {
-      id
+      uid
       name
       related_products {
-        id
+        uid
         name
       }
       upsell_products {
-        id
+        uid
         name
       }
       crosssell_products {
-        id
+        uid
         name
       }
     }
@@ -1129,62 +1129,131 @@ The following query shows how to get related products, up-sells, and cross-sells
     "products": {
       "items": [
         {
-          "id": 11,
+          "uid": "MTE=",
           "name": "Endeavor Daytrip Backpack",
-          "related_products": [],
+          "related_products": [
+            {
+              "uid": "MTU=",
+              "name": "Affirm Water Bottle "
+            },
+            {
+              "uid": "MTg=",
+              "name": "Pursuit Lumaflex&trade; Tone Band"
+            },
+            {
+              "uid": "MTY=",
+              "name": "Dual Handle Cardio Ball"
+            },
+            {
+              "uid": "MTc=",
+              "name": "Zing Jump Rope"
+            }
+          ],
           "upsell_products": [
             {
-              "id": 1,
+              "uid": "MQ==",
               "name": "Joust Duffle Bag"
             },
             {
-              "id": 3,
+              "uid": "Mw==",
               "name": "Crown Summit Backpack"
             },
             {
-              "id": 4,
+              "uid": "NA==",
               "name": "Wayfarer Messenger Bag"
             },
             {
-              "id": 5,
+              "uid": "NQ==",
               "name": "Rival Field Messenger"
             },
             {
-              "id": 6,
+              "uid": "Ng==",
               "name": "Fusion Backpack"
             },
             {
-              "id": 7,
+              "uid": "Nw==",
               "name": "Impulse Duffle"
             },
             {
-              "id": 12,
+              "uid": "MTI=",
               "name": "Driven Backpack"
             },
             {
-              "id": 13,
+              "uid": "MTM=",
               "name": "Overnight Duffle"
             },
             {
-              "id": 14,
+              "uid": "MTQ=",
               "name": "Push It Messenger Bag"
             }
           ],
           "crosssell_products": [
             {
-              "id": 18,
+              "uid": "MTI=",
+              "name": "Driven Backpack"
+            },
+            {
+              "uid": "OA==",
+              "name": "Voyage Yoga Bag"
+            },
+            {
+              "uid": "Ng==",
+              "name": "Fusion Backpack"
+            },
+            {
+              "uid": "Nw==",
+              "name": "Impulse Duffle"
+            },
+            {
+              "uid": "OQ==",
+              "name": "Compete Track Tote"
+            },
+            {
+              "uid": "Mw==",
+              "name": "Crown Summit Backpack"
+            },
+            {
+              "uid": "MTQ=",
+              "name": "Push It Messenger Bag"
+            },
+            {
+              "uid": "MQ==",
+              "name": "Joust Duffle Bag"
+            },
+            {
+              "uid": "MTA=",
+              "name": "Savvy Shoulder Tote"
+            },
+            {
+              "uid": "Mg==",
+              "name": "Strive Shoulder Pack"
+            },
+            {
+              "uid": "NA==",
+              "name": "Wayfarer Messenger Bag"
+            },
+            {
+              "uid": "MTM=",
+              "name": "Overnight Duffle"
+            },
+            {
+              "uid": "NQ==",
+              "name": "Rival Field Messenger"
+            },
+            {
+              "uid": "MTg=",
               "name": "Pursuit Lumaflex&trade; Tone Band"
             },
             {
-              "id": 21,
+              "uid": "MjE=",
               "name": "Sprite Foam Yoga Brick"
             },
             {
-              "id": 32,
+              "uid": "MzI=",
               "name": "Sprite Stasis Ball 75 cm"
             },
             {
-              "id": 45,
+              "uid": "NDU=",
               "name": "Set of Sprite Yoga Straps"
             }
           ]
@@ -1212,7 +1281,7 @@ query {
     total_count
     items {
       sku
-      id
+      uid
       name
       image {
         url
@@ -1251,19 +1320,19 @@ query {
       "items": [
         {
           "sku": "24-MB01",
-          "id": 1,
+          "uid": "MQ==",
           "name": "Joust Duffle Bag",
           "image": {
-            "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/fd3509f20f1e8c87464fb5042a4927e6/m/b/mb01-blue-0.jpg",
+            "url": "http://h3.test/media/catalog/product/cache/f2894681b4002ea001bba48638ea0dbc/m/b/mb01-blue-0.jpg",
             "label": "Joust Duffle Bag"
           },
           "small_image": {
-            "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/fd3509f20f1e8c87464fb5042a4927e6/m/b/mb01-blue-0.jpg",
+            "url": "http://h3.test/media/catalog/product/cache/f2894681b4002ea001bba48638ea0dbc/m/b/mb01-blue-0.jpg",
             "label": "Joust Duffle Bag"
           },
           "media_gallery": [
             {
-              "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/07660f0f9920886e0f9d3257a9c68f26/m/b/mb01-blue-0.jpg",
+              "url": "http://h3.test/media/catalog/product/cache/f2894681b4002ea001bba48638ea0dbc/m/b/mb01-blue-0.jpg",
               "label": "Image"
             }
           ]
