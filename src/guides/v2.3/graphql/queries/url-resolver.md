@@ -15,9 +15,9 @@ The `urlResolver` query returns the canonical URL for a specified product, categ
 
 ## Example usage
 
-### URL Resolver for the Product type
+### URL resolver for a product
 
-The following query returns information about the URL containing `joust-duffle-bag.html` for the type Product.
+The following query returns information about the URL containing `joust-duffle-bag.html` for a product.
 
 **Request:**
 
@@ -47,9 +47,9 @@ The following query returns information about the URL containing `joust-duffle-b
 }
 ```
 
-### URL Resolver for the Category type
+### URL resolver for a category
 
-The following query returns information about the URL containing `gear/bags.html` for the type Category.
+The following query returns information about the URL containing `gear/bags.html` for category page.
 
 **Request:**
 
@@ -79,9 +79,9 @@ The following query returns information about the URL containing `gear/bags.html
 }
 ```
 
-### URL Resolver for CMS Page
+### URL resolver for a CMS page
 
-The following query returns information about the URL containing `no-route` for the type CMS Page.
+The following query returns information about the URL containing `no-route` for a CMS page.
 
 **Request:**
 
@@ -117,7 +117,7 @@ The `urlResolver` query contains the following attribute.
 
 Attribute | Type | Description
 --- | --- | ---
-`url` | String | The requested URL. To query for product and category pages, the `url` value must contain the URL key and suffix. For Category page queries, the `url` value must contain the full path of the URL key. For CMS page queries, the `url` value must contain the URL key only.
+`url` | String | The requested URL. To query for product and category pages, the `url` value must contain the URL key and suffix. For category page queries, the `url` value must contain the full path of the URL key. For CMS page queries, the `url` value must contain the URL key only.
 
 ## Output attributes
 
