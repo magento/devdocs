@@ -23,22 +23,28 @@ pages:
 
     - label: Safe Upgrade Tool
       url: /sut/sut.html
+      versionless: true
       children:
 
         - label: Check prerequisites for the safe upgrade tool
           url: /sut/prereq-sut-checklist.html
+          versionless: true
 
         - label: Install the safe upgrade tool
           url: /sut/sut-welcome-guide.html
+          versionless: true
 
         - label: Use the safe upgrade tool
           url: /sut/use-sut-guide.html
+          versionless: true
 
         - label: Developer information for the safe upgrade tool
           url: /sut/sut-dev-guide.html
+          versionless: true
 
         - label: Track the safe upgrade tool
           url: /sut/sut-tracking.html
+          versionless: true
 
     - label: Magento Marketplace example
       url: /comp-mgr/marketplace/marketplace.html
