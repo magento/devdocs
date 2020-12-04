@@ -205,6 +205,20 @@ Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` do
 **To remove Elasticsearch plugins:**
 
 1. Remove the Elasticsearch plugin entries from your `.magento/services.yaml` file.
+1. Add, commit, and push your code changes.
+
+   ```bash
+   git add -A
+   ```
+
+   ```bash
+   git commit -m "Remove Elasticsearch plugin"
+   ```
+
+   ```bash
+   git push origin <branch-name>
+   ```
+
 1. Commit the `.magento/services.yaml` changes to your Cloud repo.
 1. Reindex the Catalog Search index:
 
