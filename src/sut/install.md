@@ -13,8 +13,6 @@ SUT is a CLI tool that checks a magento instance against a specific version by a
 
 The following diagram shows the expected workflow when running SUT:
 
-> Example of the SUT workflow
-
 ![SUT Diagram](img/mvp-diagram.png)
 
 ### Who is the SUT for?
@@ -59,7 +57,7 @@ Check your **COMPOSER_HOME** environment variable to see where the `auth.json` f
 
 The **public key** corresponds to the _username_ whereas the **private key** is the _password_:
 
-> Example of Magento access keys
+### Example of Magento access keys
 
 ```json
     "http-basic": {

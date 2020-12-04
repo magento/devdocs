@@ -17,7 +17,7 @@ Its implementation is through the `config/services.yaml` file. Its value decides
 
 Edit this file to customize the response according to your installation. Just replace the value assigned to `Sut\Domain\MRay\MRayInterface`:
 
-> Example of a custom value
+### Example of a custom value
 
 `Sut\Domain\MRay\MRayInterface : "@sut_mray_mock"`
 
@@ -56,9 +56,7 @@ To run the integration tests, execute one of the following commands:
 
 ## JS unit testing for GraphQL
 
-We used the **jest** framework to create these JS unit tests:
-
-`https://jestjs.io/docs/en/getting-started.html`
+We used the [Jest](https://jestjs.io/docs/en/getting-started.html) framework to create these JS unit tests:
 
 {:.bs-callout-info}
 To run the js unit tests for graphql you need to have NodeJS installed.
@@ -88,7 +86,7 @@ This score is based on the results extracted from the analysis:
 
 SUT calculates this score according to the following formula:
 
-> Complexity score formula
+### Complexity score formula
 
 ``Complexity Score = 2 * (# of errors) + 1 * (# of warnings)``
 
@@ -98,7 +96,7 @@ SUT calculates this score according to the following formula:
 
 `bin/package VERSION`
 
-> An exampple of SUT packaging
+### An exampple of packaging
 
 `bin/package 0.0.1`
 

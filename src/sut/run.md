@@ -21,8 +21,6 @@ When running SUT, the usage of memory depends entirely on the magento instance y
 
 Execute the tool by running the following command:
 
-> Run SUT
-
 `bin/sut upgrade:check INSTALLATION_DIR`.
 
 {:.bs-callout-info}
@@ -36,8 +34,6 @@ Run `bin/sut --help` to get all the different possibilities and options availabl
 
 SUT also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
 
-> Run SUT GraphQL
-
 `bin/sut graphql:compare https://domain1.com/graphql https://domain2.com/graphql`
 
 ### Arguments and options
@@ -47,8 +43,6 @@ SUT also provides the option to introspect two GraphQL endpoints and compare the
 You can compare your current Magento 2 installation with Magento versions `>=2.3`.
 
 You need to provide the version as a parameter when running the command:
-
-> Providing the version
 
 `bin/sut upgrade:check INSTALLATION_DIR -c 2.4.1`
 
@@ -67,7 +61,7 @@ You can also get a full report containing both _PHP-related_ errors and GraphQL.
 *  `--schema2=SCHEMA2`
 *  `INSTALLATION_DIR`
 
-> Example of a bin/sut command
+#### Example of a bin/sut command
 
 `bin/sut upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.1 INSTALLATION_DIR`
 
@@ -75,7 +69,7 @@ You can also get a full report containing both _PHP-related_ errors and GraphQL.
 
 It provides a report identifying the affected non-magento modules, the severity and the description of the problem for every issue encountered:
 
-> Example with a list of errors/warnings
+#### Example with a list of errors/warnings
 
 ```php
 File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
@@ -101,7 +95,7 @@ The report also includes a detailed summary:
 
 The lower this number is, the easier is to perform the upgrade.
 
-> Example of a summary report
+#### Example of a summary report
 
 ```php
  ------------------------ --------
@@ -121,7 +115,7 @@ The lower this number is, the easier is to perform the upgrade.
 
 Regarding the GraphQL schema compatibility comparison, the output would be very similar:
 
-> Example with a list of errors/warnings for GraphQL
+#### Example with a list of errors/warnings for GraphQL
 
 ```php
  *   [ERROR] FIELD_CHANGED_KIND: ConfigurableProduct.gender changed type from Int to String.
