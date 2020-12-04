@@ -7,7 +7,7 @@ redirect_from:
 
 Use the `country` query to retrieve information about a specific country. 
 
-The [countries]({{page.baseurl}}/graphql/queries/directory-countries.html) query is used to retrieve a list of countries available in the system.
+Use the [countries]({{page.baseurl}}/graphql/queries/directory-countries.html) query is used to retrieve a list of countries available in the system.
 
 ## Syntax
 
