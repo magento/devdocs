@@ -200,31 +200,25 @@ If you use the ElasticSuite third-party plugin, you must [update the `{{site.dat
 When setting up ElasticSuite, add the configuration settings to the `ELASTICSUITE_CONFIGURATION` deploy variable. This configuration saves the settings across deployments.
 
 ### Remove plugins for Elasticsearch
-Removing the plugin entries from `elasticsearch:` in `magento/services.yaml` does not uninstall or disable them as you might expect. This is intentional to prevent possible loss or corruption of data that depends on these plugins. To disable an Elasticsearch plugin, you must take the additional step of reindexing your Elasticsearch data as follows:
+Removing the plugin entries from `elasticsearch:` in `magento/services.yaml` does not uninstall or disable them as you might expect. You must take the additional step of reindexing your Elasticsearch data. This is intentional to prevent possible loss or corruption of data that depends on these plugins.
 
-**To disable Elasticsearch plugins from your Magento instance:**
+**To remove Elasticsearch plugins:**
 
 1. Remove the Elasticsearch plugin entries from your `magento/services.yaml` file.
 
-1. Reindex the Catalog Search index:
+2. Reindex the Catalog Search index:
 
     ```bash
     bin/magento indexer:reindex catalogsearch_fulltext
     ```
 
-1. Clean the cache:
+3. Clean the cache:
 
     ```bash
     bin/magento cache:clean
     ```
 
-**To uninstall Elasticsearch plugins permanently:**
-
-1. Remove the Elasticsearch plugin entries from your `magento/services.yaml` file.
-
-1. Commit the service changes to your Cloud repo.
-
-Uninstalling an Elasticsearch plugin is not strictly necessary. A disabled plugin has very little impact on the server. If you think you may use the plugin again, disabling the plugin is the least intrusive option for your environment.
+4. Commit the service changes to your Cloud repo.
 
 {:.bs-callout-tip}
 For details on using or troubleshooting the Elasticsuite plugin with Magento, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
