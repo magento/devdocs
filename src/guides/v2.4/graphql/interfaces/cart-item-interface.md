@@ -100,7 +100,7 @@ The `ConfigurableCartItem` object adds the following attributes to the `CartItem
 Attribute | Data type | Description
 --- | --- | ---
 `configurable_options` | [[SelectedConfigurableOption!]!](#SelectedConfigurableOption) | An array of configurable options
-`customizable_options` | [[SelectedCustomizableOption]](#SelectedCustomizableOption) | An array of customizable options the shopper chose for the configurable product 
+`customizable_options` | [[SelectedCustomizableOption]](#SelectedCustomizableOption) | An array of customizable options the shopper chose for the configurable product
 
 ### SelectedConfigurableOption attributes {#SelectedConfigurableOption}
 
