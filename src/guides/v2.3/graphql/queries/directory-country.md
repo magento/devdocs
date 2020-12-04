@@ -5,7 +5,7 @@ redirect_from:
   - /guides/v2.3/graphql/reference/directory.html
 ---
 
-Use the `country` query to retrieve information about a specific country. 
+Use the `country` query to retrieve information about a specific country.
 
 Use the [countries]({{page.baseurl}}/graphql/queries/directory-countries.html) query to retrieve a list of countries available in the system.
 
