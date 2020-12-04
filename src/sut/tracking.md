@@ -23,7 +23,7 @@ In order to install the necessary requirements:
    brew install aws-sam-cli
    ```
 
-2. Install:
+1. Install:
 
    ```bash
    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" sudo installer -pkg AWSCLIV2.pkg -target /
