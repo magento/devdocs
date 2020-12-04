@@ -1,11 +1,11 @@
 ---
 group: software-update-guide
-title: Developer information for the safe upgrade tool
+title: Developer information
 functional_areas:
   - Upgrade
 ---
 
-This topic contains information for developers who want to know more technical information about the Magento Safe Upgrade Tool (SUT). With this knowledge you can familiarize yourself with SUT in order to customize any of the existing components in the tool.
+This topic contains information for developers who want to know more technical information about the Magento Safe Upgrade Tool (SUT). You can use this knowledge to customize the SUT's components.
 
 ## M-Ray integration
 
@@ -127,4 +127,4 @@ In order to distribute SUT:
 
 SUT tracking is a small AWS lambda done with GO. The code is available in the the [SUT github repository](https://github.com/magento-commerce/safe-upgrade-tool), inside the `sut-tracking` folder.
 
-See the [Track the safe upgrade tool guide]({{page.baseurl}}/sut/sut-tracking.html) for detailed information about SUT tracking.
+See the [Tracking guide]({{page.baseurl}}/sut/tracking.html) for detailed information about SUT tracking.

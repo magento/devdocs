@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Track the safe upgrade tool
+title: Tracking
 functional_areas:
   - Upgrade
 ---

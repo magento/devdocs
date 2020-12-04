@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Install the safe upgrade tool
+title: Install
 functional_areas:
   - Upgrade
 ---
@@ -22,21 +22,21 @@ The following diagram shows the expected workflow when running SUT:
 A main use case for SUT describes the regular process for a magento partner to upgrade one of their Magento instances:
 
 1. A partner's software engineer downloads the SUT and executes it during the beta phase of the newest Magento release.
-1. Then, the engineer sees that there are several customized areas broken in the inventory and catalog modules, and she also gets a complexity score of X. See the [Developer information for the safe upgrade tool guide]({{page.baseurl}}/guides/v2.4/comp-mgr/sut/use-sut-guide.html) for more information on the complexity score.
-1. With this information, the engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's account manager.
-1. The account manager creates a timeline and cost for the Magento upgrade which allows them to get their managers approval.
-1. With their managers approval, the software engineer works on the required code modifications to fix the broken modules.
-1. With Magento pre-releases, run the SUT tool one more time to ensure there were no new issues and her code changes fixed the problems found during the beta phase.
-1. Everything check’s out and she will push the code to Staging where the automated tests will confirm all tests are green which will allow them to release the latest Magento version to Production the same day as Magento pre-release is released.
+2. Then, the engineer sees that there are several customized areas broken in the inventory and catalog modules, and she also gets a complexity score of X. See the [Developer information guide]({{page.baseurl}}/sut/developer.html) for more information on the complexity score.
+3. With this information, the engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's account manager.
+4. The account manager creates a timeline and cost for the Magento upgrade which allows them to get their managers approval.
+5. With their managers approval, the software engineer works on the required code modifications to fix the broken modules.
+6. With Magento pre-releases, run the SUT tool one more time to ensure there were no new issues and her code changes fixed the problems found during the beta phase.
+7. Everything check’s out and she will push the code to Staging where the automated tests will confirm all tests are green which will allow them to release the latest Magento version to Production the same day as Magento pre-release is released.
 
 ## Prerequisites
 
-See the [prerequisites checklist for SUT]({{page.baseurl}}/sut/prereq-sut-checklist.html) for the minimum requisites required to run SUT.
+See the [prerequisites checklist for SUT]({{page.baseurl}}/sut/prerequisites.html) for the minimum requisites required to run SUT.
 
 {:.bs-callout .bs-callout-info}
 SUT should run in any operating system. It is not required to run the tool where your magento instance is located.
 
-## SUT installation
+## Install
 
 In order to install SUT, it is required that you check/install the necessary prerequisites mentioned earlier:
 
@@ -85,4 +85,4 @@ To install _Node.js_ in your system, check the [_Node.js_](https://nodejs.dev/le
 
 Magento recommends that you contact your search engine vendor to determine whether your extension is fully compatible with Magento 2.4.
 
-See the [use SUT guide]({{page.baseurl}}/sut/use-sut-guide.html) for information about executing the SUT tool.
+See the [Run the tool guide]({{page.baseurl}}/sut/run.html) for information about executing the SUT tool.
