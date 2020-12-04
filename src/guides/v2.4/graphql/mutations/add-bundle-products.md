@@ -220,9 +220,9 @@ Attribute | Type | Description
 
 ### CustomizableOptionInput object {#customOptionInput}
 
-The `CustomizableOptionInput` object must contain the following attributes:
+The `CustomizableOptionInput` object can contain the following attributes:
 
-{% include graphql/customizable-option-input.md %}
+{% include graphql/customizable-option-input-24.md %}
 
 ## Output attributes
 

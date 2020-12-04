@@ -12,7 +12,7 @@ Attribute |  Data Type | Description
 `gift_message` | [GiftMessage][GiftMessage] | A gift message added to the cart
 `gift_receipt_included` | Boolean! | Indicates if the customer requested a gift receipt for the cart
 `gift_wrapping` | GiftWrapping | The selected gift wrapping for the cart
-`id` | ID! | The ID of the cart
+`id` | ID! | The unique ID of the cart
 `is_virtual` | Boolean! | Indicates whether the cart contains only virtual products
 `items` | [[CartItemInterface]][CartItemInterface] | Contains the items in the customer's cart
 `prices` | [CartPrices][CartPrices] | Contains subtotals and totals

@@ -691,27 +691,7 @@ The `CartItemInterface` has the following implementations:
 *  SimpleCartItem
 *  VirtualCartItem
 
-The `CartItemInterface` can contain the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`id` | String | Deprecated. Use `uid` instead. ID of the item
-`prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | Contains attributes that are common to all types of products
-`quantity` | Float | The number of items in the cart
-`uid` | ID! | The unique ID for the CartItemInterface object
-
-### CartItemPrices object {#CartItemPrices}
-
-The `CartItemPrices` object can contain the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`discounts`| [Discount] | An array of discounts to be applied to the cart item
-`price` | Money! | The price of the item before any discounts were applied
-`row_total` | Money! | The value of the `price` multiplied by the quantity of the item
-`row_total_including_tax` | Money! | The value of `row_total` plus the tax applied to the item
-`total_item_discount` | Money | The total of all discounts applied to the item
+See [`CartItemInterface`]({{base.url/graphql/interfaces/cart-item/interface.html}}) for details.
 
 ### CartItemQuantity object {#CartItemQuantity}
 

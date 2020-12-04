@@ -32,14 +32,14 @@ The `BundleItem` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`option_id` | Int | An ID assigned to each type of item in a bundle product
+`option_id` | Int | Deprecated. Use `uid` instead. An ID assigned to each type of item in a bundle product
 `options`  | [BundleItemOption] | An array of additional options for this bundle item
 `position` | Int | The relative position of this item compared to the other bundle items
 `required` | Boolean | Indicates whether the item must be included in the bundle
 `sku` | String | The SKU of the bundle product
 `title` | String | The display name of the item
 `type` | String | The input type that the customer uses to select the item. Examples include radio button and checkbox.
-
+`uid` | ID | The unique ID for a `BundleItem` object
 ## BundleItemOption object
 
 The `BundleItemOption` object contains the following attributes:
@@ -47,7 +47,7 @@ The `BundleItemOption` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `can_change_quantity` | Boolean | Indicates whether the customer can change the number of items for this option
-`id` | Int | The ID assigned to the bundled item option
+`id` | Int | Deprecated. Use `uid` instead. The ID assigned to the bundled item option
 `is_default` | Boolean | Indicates whether this option is the default option
 `label` | String | The text that identifies the bundled item option
 `position` | Int | When a bundle item contains multiple options, the relative position of this option compared to the other options
@@ -56,7 +56,7 @@ Attribute | Type | Description
 `product` | [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html) | Contains details about this product option
 `qty` | Float | Deprecated. Use `quantity` instead
 `quantity` | Float | Indicates the quantity of this specific bundle item
-`uid` | ID! | A string that encodes option details
+`uid` | ID! | The unique ID for a `BundleItemOption` object
 
 ## Sample Query
 
@@ -80,7 +80,7 @@ The following query returns information about bundle product `24-WG080`, which i
           price_view
           ship_bundle_items
           items {
-            option_id
+            uid
             title
             required
             type
@@ -128,7 +128,7 @@ The following query returns information about bundle product `24-WG080`, which i
           "ship_bundle_items": "TOGETHER",
           "items": [
             {
-              "option_id": 1,
+              "uid": "YnVuZGxlLzE=",
               "title": "Sprite Stasis Ball",
               "required": true,
               "type": "radio",
@@ -186,7 +186,7 @@ The following query returns information about bundle product `24-WG080`, which i
               ]
             },
             {
-              "option_id": 2,
+              "uid": "YnVuZGxlLzI=",
               "title": "Sprite Foam Yoga Brick",
               "required": true,
               "type": "radio",
@@ -212,7 +212,7 @@ The following query returns information about bundle product `24-WG080`, which i
               ]
             },
             {
-              "option_id": 3,
+              "uid": "YnVuZGxlLzM=",
               "title": "Sprite Yoga Strap",
               "required": true,
               "type": "radio",
@@ -270,7 +270,7 @@ The following query returns information about bundle product `24-WG080`, which i
               ]
             },
             {
-              "option_id": 4,
+              "uid": "YnVuZGxlLzQ=",
               "title": "Sprite Foam Roller",
               "required": true,
               "type": "radio",

@@ -41,7 +41,7 @@ Attribute | Data type | Description
 `category_id` | Int | Deprecated. Use `category_uid` instead. An ID that uniquely identifies the category
 `category_level` | Int | Indicates the depth of the category within the tree
 `category_name` | String |  The display name of the category
-`category_uid` | ID! | The unique identifier for an object implementing `CategoryInterface`
+`category_uid` | ID! | The unique ID for a `Breadcrumb` object
 `category_url_key` | String | The url key assigned to the category
 
 ### CategoryProducts object

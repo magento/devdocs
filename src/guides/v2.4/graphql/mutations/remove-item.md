@@ -83,7 +83,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `cart_item_id` | Int | Deprecated. Use `cart_item_uid` instead. The unique ID assigned when a customer places an item in the cart
-`cart_item_uid` | ID! | The unique ID for an object implementing `CartItemInterface`
+`cart_item_uid` | ID! | The unique ID for a `CartItemInterface` object
 
 ## Output attributes
 

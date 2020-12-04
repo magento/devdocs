@@ -50,7 +50,7 @@ Attribute | Data type | Description
 `gift_message` | [GiftMessage](#GiftMessage) | The entered gift message for the order
 `gift_receipt_included` | Boolean! | Indicates if the customer requested a gift receipt for the order
 `gift_wrapping` | [GiftWrapping](#GiftWrapping) | The selected gift wrapping for the order
-`id` | ID! | Unique identifier for the order
+`id` | ID! | The unique ID for a `CustomerOrder` object
 `increment_id` | String | Deprecated. Use the `id` attribute instead
 `invoices` | [[Invoice](#Invoice)]! | Contains a list of invoices for the order
 `items` | [[OrderItemInterface](#OrderItemInterface)] | An array containing the items purchased in this order
@@ -74,7 +74,7 @@ The `CreditMemo` object contains details about credit memos applied to an order.
 Attribute | Data type | Description
 --- | --- | ---
 `comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the credit memo
-`id` | ID! | The unique ID of the credit memo
+`id` | ID! | The unique ID of the `CreditMemo` object
 `items` | [[CreditMemoItemInterface](#CreditMemoItemInterface)] | An array containing details about refunded items
 `number` | String! | The sequential credit memo number
 `total` | [CreditMemoTotal](#CreditMemoTotal) | Contains details about the total refunded amount
@@ -127,7 +127,7 @@ The `Invoice` object provides details about a customer invoice.
 Attribute | Data type | Description
 --- | --- | ---
 `comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the invoice
-`id` | ID! | The internal ID of the invoice
+`id` | ID! | The internal ID of the `Invoice` object
 `items` | [[InvoiceItemInterface](#InvoiceItemInterface)]! | Contains details about invoiced products
 `number` | String! | The sequential number of the invoice
 `total` | [InvoiceTotal](#InvoiceTotal)! | Invoice total amount details
@@ -163,7 +163,7 @@ The ItemSelectedBundleOption object contains a list of bundle options that are a
 
 Attribute | Data type | Description
 --- | --- | ---
-`id` | ID! | The unique identifier of the option
+`id` | ID! | The unique identifier of the ItemSelectedBundleOption object
 `label` | String! | The label of the option
 `values` | [[ItemSelectedBundleOptionValue!](#ItemSelectedBundleOptionValue)]! | A list of products that represent the values of the parent option
 
@@ -171,7 +171,7 @@ Attribute | Data type | Description
 
 Attribute | Data type | Description
 --- | --- | ---
-`id` | ID! | The unique identifier of the option
+`id` | ID! | The unique identifier of the ItemSelectedBundleOptionValue object
 `price` | Money! | The price of the child bundle product
 `product_name` | String! | The name of the child bundle product
 `product_sku` | String! | The SKU of the child bundle product
@@ -228,7 +228,7 @@ Attribute | Data type | Description
 Attribute | Data type | Description
 --- | --- | ---
 `comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments added to the shipment
-`id` | ID! | The unique ID of the shipment
+`id` | ID! | The unique ID of the OrderShipment object
 `items` | [[ShipmentItemInterface](#ShipmentItemInterface)] | Contains items included in the shipment
 `number` | String! | The sequential credit shipment number
 `tracking` | [[ShipmentTracking](#ShipmentTracking)] | Contains shipment tracking detail

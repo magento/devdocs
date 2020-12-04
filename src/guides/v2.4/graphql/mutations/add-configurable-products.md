@@ -110,16 +110,13 @@ Attribute | Type | Description
 
 The `CustomizableOptionInput` object contains the following attributes:
 
-Attribute | Type | Description
---- | --- | ---
-`id` | Int | The ID of the customizable option
-`value` | String | The value of the customizable option. For example, if color was the customizable option, a possible value could be `black`
+{% include graphql/customizable-option-input-24.md %}
 
 ### CartItemInput object {#cartItemInput}
 
 The `CartItemInput` object must contain the following attributes:
 
-{% include graphql/cart-item-input.md %}
+{% include graphql/cart-item-input-24.md %}
 
 ## Output attributes
 
