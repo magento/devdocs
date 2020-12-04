@@ -7,45 +7,59 @@ functional_areas:
 
 SUT tracking is a small AWS lambda done with GO. The code is available in the [SUT github repository](https://github.com/magento-commerce/safe-upgrade-tool), inside the `sut-tracking` folder.
 
-## SUT tracking develop and deploy
+## Develop and deploy
 
-This is a lambda implemented in GOLANG to receive tracking requests from SUT and it is stored in New Relic.
+This is a Lambda function handler implemented in GOLANG to receive tracking requests from the SUT and is stored in New Relic.
 
 For more information on New Relic, see [New Relic services]({{page.baseurl}}/cloud/project/new-relic.html) topic.
 
 ## Requirements
 
-In order to install the requirements for the SUT tracking execute the following command:
+In order to install the necessary requirements:
 
-`brew install aws-sam-cli`
+1. Install dependencies for the SUT tracking functionality:
 
-Then, run:
+   ```bash
+   brew install aws-sam-cli
+   ```
 
-`curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" sudo installer -pkg AWSCLIV2.pkg -target /`
+2. Install:
 
-## Development
+   ```bash
+   curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" sudo installer -pkg AWSCLIV2.pkg -target /
+   ```
 
-To develop SUT tracking, run:
+### Develop
 
-`sam build sam local start-api`
+To develop SUT tracking:
 
-Then, lambda will run in a `http://127.0.0.1:3000/` environment.
+1. Run:
 
-## Deploy
+   ```bash
+   sam build sam local start-api
+   ```
+
+1. Lambda will run on `http://127.0.0.1:3000/`.
+
+### Deploy
 
 In order to deploy the SUT tracking:
 
 1. Go to [KLAM](https://klam.corp.adobe.com/)
-1. Navigate to `CLI` > `Bash`
-1. Copy the content and paste it in your console
-1. Then, edit the `template.yaml` file and set the `NEW_RELIC_API_KEY` with a valid newrelic api key
-1. Finally, deploy SUT tracking by executing one of these commands:
+1. Navigate to `CLI` > `Bash`.
+1. Copy the content and paste it in your console.
+1. Edit the `template.yaml` file and set the `NEW_RELIC_API_KEY` value to a valid New Relic API key.
+1. Deploy SUT tracking by executing one of the following commands:
 
-  `sam deploy --guided`
-  `sam deploy`
+   ```bash
+   `sam deploy --guided`
+   `sam deploy`
+   ```
 
 ## Delete app
 
 You can delete the SUT tracking by executing the following command:
 
+```bash
 `aws cloudformation delete-stack --stack-name sut-tracking`
+```

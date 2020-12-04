@@ -76,9 +76,9 @@ The following instructions are for MacOS systems:
 
 1. Run unit tests or `jest`:
 
-   ```bash
-   npm run unit-test
-   ```
+      ```bash
+      npm run unit-test
+      ```
 
 The tests are inside `graphql-schema-compatibility/test/js/unit`.
 
