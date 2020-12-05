@@ -82,7 +82,7 @@ The `AddReturnCommentInput` object must contain the following attributes:
 Attribute |  Data Type | Description
 --- | --- | ---
 `comment_text` | String! | The text added to the return request
-`return_uid` | ID! | The encoded ID of the return request
+`return_uid` | ID! | The unique ID of a `Return` object
 
 ## Output attributes
 

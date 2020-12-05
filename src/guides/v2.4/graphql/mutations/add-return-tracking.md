@@ -63,8 +63,8 @@ The `AddReturnTrackingInput` object must contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`carrier_uid`| ID! | The encoded ID of the selected shipping carrier
-`return_uid` | ID! | The encoded ID of the return request
+`carrier_uid`| ID! | The unique ID of a `ReturnShippingCarrier` object
+`return_uid` | ID! | The unique ID of a `Return` object
 `tracking_number` | String! | The shipping tracking number for this return request
 
 ## Output attributes

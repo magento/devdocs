@@ -12,15 +12,7 @@ Attribute |  Data Type | Description
 `order` | [CustomerOrder]({{page.baseurl}}/graphql/queries/customer.html#orders) | The order associated with the return
 `shipping` | [ReturnShipping](#ReturnShipping) | Shipping information for the return
 `status` |  ReturnStatus | An enum indicating the status of the return request. Possible values are APPROVED, AUTHORIZED, CLOSED, DENIED, PARTIALLY_APPROVED, PARTIALLY_AUTHORIZED, PARTIALLY_RECEIVED, PARTIALLY_REJECTED, PENDING, PROCESSED_AND_CLOSED, RECEIVED, and REJECTED
-`uid` | ID! | The encoded ID of a return request
-
-#### CustomAttribute attributes {#CustomAttribute}
-
-Attribute |  Data Type | Description
---- | --- | ---
-`label` | String! | A description of the attribute
-`uid` | ID! | The encoded ID of a custom attribute
-`value` | String! | A JSON-encoded value of the attribute
+`uid` | ID! | The unique ID of a `Return` object
 
 #### ReturnComment attributes {#ReturnComment}
 
@@ -31,7 +23,15 @@ Attribute |  Data Type | Description
 `author_name` | String! | The name or author who posted the comment
 `created_at` | String! | The date and time the comment was posted
 `text` | String! | The contents of the comment
-`uid` | ID! | An encoded ID assigned to the comment
+`uid` | ID! | The unique ID of a `ReturnComment` object
+
+#### ReturnCustomAttribute attributes {#ReturnCustomAttribute}
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`label` | String! | A description of the attribute
+`uid` | ID! | The unique ID of a `ReturnCustomAttribute` attribute
+`value` | String! | A JSON-encoded value of the attribute
 
 #### ReturnCustomer attributes {#ReturnCustomer}
 
@@ -49,12 +49,12 @@ The ReturnItem object provides details about an individual item in a return requ
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`custom_attributes` | [[CustomAttribute]](#CustomAttribute) | Return item custom attributes that are visible on the storefront
+`custom_attributes` | [[ReturnCustomAttribute]](#ReturnCustomAttribute) | Return item custom attributes that are visible on the storefront
 `order_item` | [OrderItemInterface!]({{page.baseurl}}/graphql/interfaces/order-item-interface.html) | Provides access to the product being returned, including information about selected and entered options
 `quantity` | Float! | The quantity of the item the merchant authorized to be returned
 `request_quantity` | Float! | The quantity of the item requested to be returned
 `status`| ReturnItemStatus! | An enum indicating the return status of the item. Possible values are APPROVED, AUTHORIZED, DENIED, PENDING, RECEIVED, and REJECTED
-`uid`| ID! | The encoded ID of an item in a return request
+`uid`| ID! | The unique ID of an item of a `Return` object
 
 #### ReturnShipping attributes {#ReturnShipping}
 
@@ -63,7 +63,7 @@ The ReturnShipping object can contain the merchant's shipping address and tracki
 Attribute |  Data Type | Description
 --- | --- | ---
 `address`| [ReturnShippingAddress](#ReturnShippingAddress) | The merchant-defined return shipping address
-`tracking(uid: ID)` | [[ReturnShippingTracking](#ReturnShippingTracking)] | If a single UID is specified, contains a single tracking record. Otherwise, contains all tracking information
+`tracking(uid: ID)` | [[ReturnShippingTracking](#ReturnShippingTracking)] | The unique ID for a `ReturnShippingTracking` object. If a single UID is specified, contains a single tracking record. Otherwise, contains all tracking information
 
 #### ReturnShippingAddress attributes {#ReturnShippingAddress}
 
@@ -86,7 +86,7 @@ The ReturnShippingCarrier object contains details about the shipping carrier use
 Attribute |  Data Type | Description
 --- | --- | ---
 `label` | String! | A description of the shipping carrier
-`uid` | ID! | An encoded ID assigned to the shipping carrier
+`uid` | ID! | The unique ID of a `ReturnShippingCarrier` object
 
 #### ReturnShippingTracking attributes {#ReturnShippingTracking}
 
@@ -97,7 +97,7 @@ Attribute |  Data Type | Description
 `carrier` | [ReturnShippingCarrier!](#ReturnShippingCarrier) | Contains details of a shipping carrier
 `status` | [ReturnShippingTrackingStatus](#ReturnShippingTrackingStatus) | Contains details about the status of a shipment
 `tracking_number` | String! | A tracking number assigned by the carrier
-`uid` | ID! | An encoded ID assigned to the tracking item
+`uid` | ID! | The unique ID assigned of a `ReturnShippingTracking` object
 
 #### ReturnShippingTrackingStatus attributes {#ReturnShippingTrackingStatus}
 
