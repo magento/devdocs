@@ -14,14 +14,20 @@ To determine whether wish lists are enabled, specify the `magento_wishlist_gener
 
 ## Syntax
 
-`mutation: addProductsToWishlist(wishlistId: ID!, wishlistItems: [WishlistItemInput!]!): AddProductsToWishlistOutput`
+```graphql
+`mutation {
+  addProductsToWishlist(
+    wishlistId: ID!, 
+    wishlistItems: [WishlistItemInput!]!
+  ){ 
+  AddProductsToWishlistOutput
+  }
+}
+```
 
 ## Example usage
 
 The following example adds a simple product (`24-MB01`), a configurable product (`WJ01-M-Red`), and a bundle product (`24-WG080`) to the customer's wish list. The SKU `WG-09` is invalid, and error information is returned in the `user_errors` object.
-
-{:.bs-callout-info}
-In Magento 2.4.1, the `addProductsToWishlist` mutation does not return `selected_options` or `entered_options` objects. Support for these objects will be provided in a future release.
 
 To determine the value of the `wishlistId` attribute, run the `customer` query and check the value of `wishlist.id` in the response.
 
@@ -30,7 +36,7 @@ To determine the value of the `wishlistId` attribute, run the `customer` query a
 ``` graphql
 mutation {
   addProductsToWishlist(
-  wishlistId: 1
+  wishlistId: 4
   wishlistItems: [
     {
       sku: "24-MB01"
@@ -59,28 +65,30 @@ mutation {
     wishlist {
       id
       items_count
-      items {
-        id
-        qty
-        product {
-          name
-          sku
+      items_v2 {
+        items {
           id
-          price_range {
-            minimum_price {
-              regular_price {
-                currency
-                value
+          quantity
+          product {
+            name
+            sku
+            uid
+            price_range {
+              minimum_price {
+                regular_price {
+                  currency
+                  value
+                }
+              }
+              maximum_price {
+                regular_price {
+                  currency
+                  value
+                }
               }
             }
-            maximum_price {
-              regular_price {
-                currency
-                value
-              }
-            }
-          }
         }
+      }
       }
     }
     user_errors {
@@ -98,79 +106,81 @@ mutation {
   "data": {
     "addProductsToWishlist": {
       "wishlist": {
-        "id": "1",
+        "id": "4",
         "items_count": 3,
-        "items": [
-          {
-            "id": 16,
-            "qty": 1,
-            "product": {
-              "name": "Joust Duffle Bag",
-              "sku": "24-MB01",
-              "id": 1,
-              "price_range": {
-                "minimum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 34
+        "items_v2": {
+          "items": [
+            {
+              "id": "26",
+              "quantity": 1,
+              "product": {
+                "name": "Joust Duffle Bag",
+                "sku": "24-MB01",
+                "uid": "MQ==",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 34
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 34
+                    }
                   }
-                },
-                "maximum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 34
+                }
+              }
+            },
+            {
+              "id": "27",
+              "quantity": 1,
+              "product": {
+                "name": "Stellar Solar Jacket",
+                "sku": "WJ01",
+                "uid": "MTIyNg==",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 75
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 75
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "28",
+              "quantity": 1,
+              "product": {
+                "name": "Sprite Yoga Companion Kit",
+                "sku": "24-WG080",
+                "uid": "NTI=",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 61
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 77
+                    }
                   }
                 }
               }
             }
-          },
-          {
-            "id": 17,
-            "qty": 1,
-            "product": {
-              "name": "Stellar Solar Jacket",
-              "sku": "WJ01",
-              "id": 1226,
-              "price_range": {
-                "minimum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 75
-                  }
-                },
-                "maximum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 75
-                  }
-                }
-              }
-            }
-          },
-          {
-            "id": 18,
-            "qty": 1,
-            "product": {
-              "name": "Sprite Yoga Companion Kit",
-              "sku": "24-WG080",
-              "id": 46,
-              "price_range": {
-                "minimum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 61
-                  }
-                },
-                "maximum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 77
-                  }
-                }
-              }
-            }
-          }
-        ]
+          ]
+        }
       },
       "user_errors": [
         {

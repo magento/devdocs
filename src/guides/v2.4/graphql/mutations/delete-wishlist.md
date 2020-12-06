@@ -23,8 +23,10 @@ The following example deletes a wish list.
 **Request:**
 
 ``` graphql
-mutation {
-  deleteWishlist(wishlistId: 3)
+mutation{
+  deleteWishlist(wishlistId: 5){
+    status
+  }
 }
 ```
 
@@ -33,7 +35,9 @@ mutation {
 ```json
 {
   "data": {
-    "deleteWishlist": true
+    "deleteWishlist": {
+      "status": true
+    }
   }
 }
 ```

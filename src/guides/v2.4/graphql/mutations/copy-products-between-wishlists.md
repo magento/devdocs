@@ -48,7 +48,7 @@ mutation{
         items {
           id
           product {
-            id
+            uid
             sku
             name
           }
@@ -76,7 +76,7 @@ mutation{
             {
               "id": "8",
               "product": {
-                "id": 51,
+                "uid": "NDk=",
                 "sku": "240-LV08",
                 "name": "Advanced Pilates & Yoga (Strength)"
               }
@@ -84,7 +84,7 @@ mutation{
             {
               "id": "9",
               "product": {
-                "id": 18,
+                "uid": "MTg=",
                 "sku": "24-UG02",
                 "name": "Pursuit Lumaflex&trade; Tone Band"
               }
@@ -92,7 +92,7 @@ mutation{
             {
               "id": "10",
               "product": {
-                "id": 1452,
+                "uid": "MTQ1MA==",
                 "sku": "WS04",
                 "name": "Layla Tee"
               }
@@ -100,7 +100,7 @@ mutation{
             {
               "id": "11",
               "product": {
-                "id": 1564,
+                "uid": "MTU2Mg==",
                 "sku": "WS12",
                 "name": "Radiant Tee"
               }
@@ -108,7 +108,7 @@ mutation{
             {
               "id": "12",
               "product": {
-                "id": 1612,
+                "uid": "MTYxMA==",
                 "sku": "WB01",
                 "name": "Electra Bra Top"
               }
@@ -116,23 +116,23 @@ mutation{
             {
               "id": "13",
               "product": {
-                "id": 1644,
+                "uid": "MTY0Mg==",
                 "sku": "WB03",
                 "name": "Celeste Sports Bra"
               }
             },
             {
-              "id": "14",
+              "id": "15",
               "product": {
-                "id": 1724,
+                "uid": "MTcyMg==",
                 "sku": "WT03",
                 "name": "Nora Practice Tank"
               }
             },
             {
-              "id": "15",
+              "id": "16",
               "product": {
-                "id": 1692,
+                "uid": "MTY5MA==",
                 "sku": "WT01",
                 "name": "Bella Tank"
               }
@@ -163,7 +163,7 @@ The WishlistItemCopyInput object contains the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `quantity` | Float | The quantity of this item to move to the destination wish list. This value cannot be greater than the quantity in the source wish list
-`wishlist_item_id` | ID! | The ID of the item to be copied
+`wishlist_item_id` | ID! | The unique ID of the `WishlistItemInterface` object to be copied
 
 ## Output attributes
 
@@ -173,7 +173,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `destination_wishlist` | [Wishlist!](#Wishlist) | The destination wish list containing the copied products
 `source_wishlist` | [Wishlist!](#Wishlist) | The wish list that the products were copied from
-`user_errors` | [[WishListUserInputError!](#WishListUserInputError)] | An array of errors encountered while copying products in a wish list
+`user_errors` | [[WishListUserInputError!](#WishListUserInputError)] | An array of errors encountered while copying products to a wish list
 
 ### Wishlist attributes {#Wishlist}
 

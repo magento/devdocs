@@ -65,7 +65,7 @@ The `updateWishlist` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`name` | String! | The ID of the customer's wish list
+`name` | String! | The unique ID of `Wishlist` object
 `visibility`| WishlistVisibilityEnum! | Describes the visibility of the wish list. Possible values are `PRIVATE` and `PUBLIC`
 `wishlistUid` | ID! | The ID of the wish list to update
 

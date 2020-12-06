@@ -34,7 +34,7 @@ The `ConfigurableWishlistItem` object defines the following attributes that are 
 Attribute | Data type | Description
 --- | --- | ---
 `child_sku` | String! | The SKU of the simple product corresponding to a set of selected configurable options
-`configurable_options` | [SelectedConfigurableOption!] An array of selected configurable options
+`configurable_options` | [SelectedConfigurableOption!] | An array of selected configurable options
 
 ### DownloadableWishlistItem attributes {#DownloadableWishlistItem}
 
@@ -88,7 +88,7 @@ The following mutation adds a downloadable product to the cart and returns detai
 ```graphql
 mutation {
   addProductsToWishlist(
-    wishlistId: 0,
+    wishlistId: 3,
     wishlistItems: [
       {
         sku: "240-LV06"
@@ -106,7 +106,7 @@ mutation {
       items_count
       updated_at
       items_v2 {
-        id
+        uid
         description
         quantity
         added_at
@@ -140,7 +140,7 @@ mutation {
         "updated_at": "2020-11-12 03:01:46",
         "items_v2": [
           {
-            "id": "14",
+            "uid": "MTQ=",
             "description": null,
             "quantity": 1,
             "added_at": "2020-11-12 03:01:46",
@@ -148,21 +148,21 @@ mutation {
               {
                 "uid": "ZG93bmxvYWRhYmxlLzM=",
                 "title": "Yoga Adventure",
-                "sample_url": "http://hbb2b.test/downloadable/download/linkSample/link_id/3/"
+                "sample_url": "http://example.com/downloadable/download/linkSample/link_id/3/"
               }
             ],
             "samples": [
               {
                 "title": "Trailer #1",
-                "sample_url": "http://hbb2b.test/downloadable/download/sample/sample_id/7/"
+                "sample_url": "http://example.com/downloadable/download/sample/sample_id/7/"
               },
               {
                 "title": "Trailer #2",
-                "sample_url": "http://hbb2b.test/downloadable/download/sample/sample_id/8/"
+                "sample_url": "http://example.com/downloadable/download/sample/sample_id/8/"
               },
               {
                 "title": "Trailer #3",
-                "sample_url": "http://hbb2b.test/downloadable/download/sample/sample_id/9/"
+                "sample_url": "http://example.com/downloadable/download/sample/sample_id/9/"
               }
             ]
           }

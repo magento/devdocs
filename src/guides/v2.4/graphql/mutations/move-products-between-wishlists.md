@@ -46,7 +46,7 @@ mutation{
         items {
           id
           product {
-            id
+            uid
             sku
             name
           }
@@ -59,7 +59,7 @@ mutation{
         items {
           id
           product {
-            id
+            uid
             sku
             name
           }
@@ -87,7 +87,7 @@ mutation{
             {
               "id": "8",
               "product": {
-                "id": 51,
+                "uid": "NDk=",
                 "sku": "240-LV08",
                 "name": "Advanced Pilates & Yoga (Strength)"
               }
@@ -95,7 +95,7 @@ mutation{
             {
               "id": "10",
               "product": {
-                "id": 1452,
+                "uid": "MTQ1MA==",
                 "sku": "WS04",
                 "name": "Layla Tee"
               }
@@ -103,7 +103,7 @@ mutation{
             {
               "id": "11",
               "product": {
-                "id": 1564,
+                "uid": "MTU2Mg==",
                 "sku": "WS12",
                 "name": "Radiant Tee"
               }
@@ -111,7 +111,7 @@ mutation{
             {
               "id": "12",
               "product": {
-                "id": 1612,
+                "uid": "MTYxMA==",
                 "sku": "WB01",
                 "name": "Electra Bra Top"
               }
@@ -119,23 +119,23 @@ mutation{
             {
               "id": "13",
               "product": {
-                "id": 1644,
+                "uid": "MTY0Mg==",
                 "sku": "WB03",
                 "name": "Celeste Sports Bra"
               }
             },
             {
-              "id": "14",
+              "id": "15",
               "product": {
-                "id": 1724,
+                "uid": "MTcyMg==",
                 "sku": "WT03",
                 "name": "Nora Practice Tank"
               }
             },
             {
-              "id": "15",
+              "id": "16",
               "product": {
-                "id": 1692,
+                "uid": "MTY5MA==",
                 "sku": "WT01",
                 "name": "Bella Tank"
               }
@@ -150,7 +150,7 @@ mutation{
             {
               "id": "1",
               "product": {
-                "id": 13,
+                "uid": "MTM=",
                 "sku": "24-WB07",
                 "name": "Overnight Duffle"
               }
@@ -158,7 +158,7 @@ mutation{
             {
               "id": "2",
               "product": {
-                "id": 10,
+                "uid": "MTA=",
                 "sku": "24-WB05",
                 "name": "Savvy Shoulder Tote"
               }
@@ -166,7 +166,7 @@ mutation{
             {
               "id": "3",
               "product": {
-                "id": 11,
+                "uid": "MTE=",
                 "sku": "24-WB06",
                 "name": "Endeavor Daytrip Backpack"
               }
@@ -174,7 +174,7 @@ mutation{
             {
               "id": "4",
               "product": {
-                "id": 1100,
+                "uid": "MTA5OA==",
                 "sku": "WH04",
                 "name": "Miko Pullover Hoodie"
               }
@@ -182,7 +182,7 @@ mutation{
             {
               "id": "5",
               "product": {
-                "id": 1228,
+                "uid": "MTIyNg==",
                 "sku": "WJ01",
                 "name": "Stellar Solar Jacket"
               }
@@ -190,7 +190,7 @@ mutation{
             {
               "id": "6",
               "product": {
-                "id": 1724,
+                "uid": "MTcyMg==",
                 "sku": "WT03",
                 "name": "Nora Practice Tank"
               }
@@ -198,15 +198,15 @@ mutation{
             {
               "id": "7",
               "product": {
-                "id": 1692,
+                "uid": "MTY5MA==",
                 "sku": "WT01",
                 "name": "Bella Tank"
               }
             },
             {
-              "id": "16",
+              "id": "17",
               "product": {
-                "id": 18,
+                "uid": "MTg=",
                 "sku": "24-UG02",
                 "name": "Pursuit Lumaflex&trade; Tone Band"
               }
@@ -237,7 +237,7 @@ The WishlistItemMoveInput object contains the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `quantity` | Float | The quantity of this item to move to the destination wish list. This value cannot be greater than the quantity in the source wish list
-`wishlist_item_id` | ID! | The ID of the item to be moved
+`wishlist_item_id` | ID! | The unique ID of the `WishlistItemInterface` item to be moved
 
 ## Output attributes
 
