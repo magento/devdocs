@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/MediaGallery/README.md
 last_modified_at: '2019-11-04 11:34:55 +0000'
-content: |
+content: |-
   The Magento_MediaGallery module is responsible for storing and managing media gallery assets attributes.
 
   ## Installation details

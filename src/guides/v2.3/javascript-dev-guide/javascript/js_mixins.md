@@ -169,8 +169,8 @@ var config = {
          'Magento_Ui/js/grid/controls/columns': {
              'OrangeCompany_Sample/js/columns-mixin': true
          },
-         "Magento_Ui/js/modal/modal": {
-             "OrangeCompany_Sample/js/modal-widget-mixin": true
+         'Magento_Ui/js/modal/modal': {
+             'OrangeCompany_Sample/js/modal-widget-mixin': true
          },
          'Magento_Checkout/js/model/step-navigator': {
              'OrangeCompany_Sample/js/model/step-navigator-mixin': true
