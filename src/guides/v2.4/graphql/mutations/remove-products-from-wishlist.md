@@ -12,7 +12,7 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 ```graphql
 mutation {
   removeProductsFromWishlist(
-    wishlistId: ID! 
+    wishlistId: ID!
     wishlistItemsIds: [ID!]!
   ) {
     RemoveProductsFromWishlistOutput
