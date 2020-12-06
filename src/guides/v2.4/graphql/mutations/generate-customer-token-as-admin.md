@@ -1,7 +1,6 @@
 ---
 group: graphql
 title: generateCustomerTokenAsAdmin mutation
-b2b_only: true
 contributor_name: EY 
 ---
 
