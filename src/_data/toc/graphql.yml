@@ -296,6 +296,7 @@ pages:
 
         - label: generateCustomerTokenAsAdmin mutation
           url: /graphql/mutations/generate-customer-token-as-admin.html
+          exclude_versions: ["2.3"]
 
         - label: handlePayflowProResponse mutation
           url: /graphql/mutations/handle-payflow-pro-response.html
