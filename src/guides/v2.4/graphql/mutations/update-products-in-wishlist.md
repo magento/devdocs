@@ -16,7 +16,7 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 ```graphql
 mutation {
   updateProductsInWishlist(
-    wishlistId: ID! 
+    wishlistId: ID!
     wishlistItems: [WishlistItemUpdateInput!]!
   ){
       UpdateProductsInWishlistOutput

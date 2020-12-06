@@ -17,9 +17,9 @@ To determine whether wish lists are enabled, specify the `magento_wishlist_gener
 ```graphql
 `mutation {
   addProductsToWishlist(
-    wishlistId: ID!, 
+    wishlistId: ID!,
     wishlistItems: [WishlistItemInput!]!
-  ){ 
+  ){
   AddProductsToWishlistOutput
   }
 }
