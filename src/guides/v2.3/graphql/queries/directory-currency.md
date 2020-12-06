@@ -11,7 +11,7 @@ Use the `currency` query to return information about the store's currency config
 
 ## Example usage
 
-The following query returns the currency for the current instance of Magento:
+The following query returns currency information for an instance of Magento that is configured for multiple currencies, USD and EUR. The default (base) currency for the store is US Dollar (USD). The response includes a list of currencies in the `available_currency_codes` attribute as well as a set of exchange rates.
 
 **Request:**
 
@@ -42,9 +42,14 @@ query {
       "default_display_currency_code": "USD",
       "default_display_currency_symbol": "$",
       "available_currency_codes": [
+        "EUR",
         "USD"
       ],
       "exchange_rates": [
+        {
+          "currency_to": "EUR",
+          "rate": 0.7067
+        },
         {
           "currency_to": "USD",
           "rate": 1
