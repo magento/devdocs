@@ -37,7 +37,7 @@ After migration, Customer Segments must be resaved from the [Admin](https://glos
 
 The tool does not migrate timezone settings, so you must manually configure the timezone after migration at **Stores** > **Configuration** > **Locale Options** > **Timezone**.
 By default, Magento stores time data in UTC-0 zone in the database and displays it according to current Timezone settings.
-If time data already saved in the database in the zone different from UTC-0, developer or administrator need to convert the existing time to UTC-0 using the Data Migration Tool’s \Migration\Handler\Timezone handler.
+If time data has already been saved in the database in a zone other than UTC-0, you must convert the existing time to UTC-0 using the Data Migration Tool’s `\Migration\Handler\Timezone` handler.
 
 In the following example, the Magento 1 has been wrongly saving time in UTC-7 to the database, for example, due to faulty 3rd party extension. To convert the customer account creation time to UTC-0 upon migration properly, add the following rule to map-customer.xml:
 
