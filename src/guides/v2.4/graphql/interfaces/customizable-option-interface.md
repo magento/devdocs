@@ -236,15 +236,6 @@ The following query returns information about the customizable options configure
           sort_order
           option_id
         }
-        ... on CustomizableFieldOption {
-            textField: value {
-              uid
-              sku
-              price
-              price_type
-              max_characters
-            }
-          }
       }
     }
   }
@@ -279,9 +270,10 @@ The following query returns information about the customizable options configure
 ```
 
 The following query returns information about the customizable options configured for the product with a `sku` of `xyz` with Custom Option type Text Field.
+
 - Custom option Option Type is text field with required field.
-- Option Title is Favorite Color.
-- Price is $5, Price Type is Fixed, Option SKU favoriteColorSku and Max. Characters is 20.
+- Option Title is `Favorite Color`.
+- Price is `$5`, Price Type is `Fixed`, Option SKU is `favoriteColorSku` and Max. Characters is `20`.
 
 **Request:**
 
