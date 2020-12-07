@@ -57,4 +57,3 @@ Look for the `X-Frame-Options` value in the headers.
 
 *  [mozilla.org](https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options)
 *  [security.stackexchange.com](http://security.stackexchange.com/questions/67889/why-do-browsers-enforce-the-same-origin-security-policy-on-iframes)
-*  [KeyCDN blog](https://www.keycdn.com/blog/x-frame-options)
