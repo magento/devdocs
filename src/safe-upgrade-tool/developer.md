@@ -70,15 +70,15 @@ The following instructions are for MacOS systems:
 1. Open a terminal and navigate to the `graphql-schema-compatibility/` directory.
 1. Install project dependencies:
 
-      ```bash
-      npm install
-      ```
+   ```bash
+   npm install
+   ```
 
 1. Run unit tests or `jest`:
 
-      ```bash
-      npm run unit-test
-      ```
+   ```bash
+   npm run unit-test
+   ```
 
 The tests are inside `graphql-schema-compatibility/test/js/unit`.
 
@@ -89,7 +89,7 @@ The string schemas for testing are inside `dev/graphql_schemas`.
 The **complexity score** is a figure that indicates how difficult an upgrade from the current version to the new one might be. Lower numbers indicate easier upgrades.
 
 {:.bs-callout-info}
-Its lowest value can be 0.
+Complexity scores range between 0 and 100.
 
 This score is based on the results extracted from the analysis:
 
@@ -110,7 +110,9 @@ It is possible to create a `sut.zip` file of the SUT to distribute it with partn
 
 1. To package the SUT execute the following command:
 
-`bin/package VERSION`
+   ```bash
+   bin/package VERSION`
+   ```
 
 ### An example of a package
 
@@ -145,4 +147,4 @@ In order to distribute SUT:
 
 SUT tracking is a small AWS Lambda function handler written in Go. The code is available in the the [SUT tracking github repository](https://github.com/magento-commerce/safe-upgrade-tool-tracking), inside the `sut-tracking/` directory.
 
-See [Tracking]({{csite.baseurlc}}/safe-upgrade-tool/tracking.html).
+See [Tracking]({{ site.baseurl }}/safe-upgrade-tool/tracking.html).

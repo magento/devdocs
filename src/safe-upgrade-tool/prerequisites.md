@@ -19,6 +19,6 @@ The minimum requirements to run the SUT are:
 {:style="table-layout:auto;"}
 
 {:.bs-callout-info}
-You can run the SUT in any operating system. There is no requirement to run the SUT where your Magento instance is located. For example, you can install SUT in another server, and run it against where your magento instance is located.
+You can run the SUT in any operating system. There is no requirement to run the SUT where your Magento instance is located. For example, you can install SUT on another server and point it at your Magento installation on another server.
 
 Refer to the [SUT installation]({{ site.baseurl }}/safe-upgrade-tool/install.html#install).
