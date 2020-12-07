@@ -271,9 +271,9 @@ The following query returns information about the customizable options configure
 
 The following query returns information about the customizable options configured for the product with a `sku` of `xyz` with Custom Option type Text Field.
 
-- Custom option Option Type is text field with required field.
-- Option Title is `Favorite Color`.
-- Price is `$5`, Price Type is `Fixed`, Option SKU is `favoriteColorSku` and Max. Characters is `20`.
+*  Custom option Option Type is text field with required field.
+*  Option Title is `Favorite Color`.
+*  Price is `$5`, Price Type is `Fixed`, Option SKU is `favoriteColorSku` and Max. Characters is `20`.
 
 **Request:**
 
