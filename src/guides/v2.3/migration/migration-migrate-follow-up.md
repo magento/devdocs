@@ -33,11 +33,13 @@ Reference numbers for Orders, Invoices, Shipments, Credit Memos, and RMA migrate
 
 After migration, Customer Segments must be resaved from the [Admin](https://glossary.magento.com/admin) Panel to get them up and running.
 
-### Configure time zone offset
+### Configure time zone
 
-If your Magento 1 server has the time zone set to anything other than UTC, you must configure the offset to migrate timestamp fields. To transform time to a different time zone, use the Data Migration Tool's `\Migration\Handler\Timezone` handler.
+The tool does not migrate Timezone settings and administrator should manually configure them after the migration at Magento 2 Admin panel > Stores > Configuration > Locale Options > Timezone.
+By default, Magento stores time data in UTC-0 zone in the database and displays it according to current Timezone settings.
+If time data already saved in the database in the zone different from UTC-0, developer or administrator need to convert the existing time to UTC-0 using the Data Migration Tool’s \Migration\Handler\Timezone handler.
 
-In the following example, the Magento 1 server timezone is UTC-7. To convert the customer account creation date properly, add the following rule to `map-customer.xml`:
+In the following example, the Magento 1 has been wrongly saving time in UTC-7 to the database, for example, due to faulty 3rd party extension. To convert the customer account creation time to UTC-0 upon migration properly, add the following rule to map-customer.xml:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
