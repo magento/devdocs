@@ -35,7 +35,7 @@ After migration, Customer Segments must be resaved from the [Admin](https://glos
 
 ### Configure time zone
 
-The tool does not migrate Timezone settings and administrator should manually configure them after the migration at Magento 2 Admin panel > Stores > Configuration > Locale Options > Timezone.
+The tool does not migrate timezone settings, so you must manually configure the timezone after migration at **Stores** > **Configuration** > **Locale Options** > **Timezone**.
 By default, Magento stores time data in UTC-0 zone in the database and displays it according to current Timezone settings.
 If time data already saved in the database in the zone different from UTC-0, developer or administrator need to convert the existing time to UTC-0 using the Data Migration Tool’s \Migration\Handler\Timezone handler.
 
