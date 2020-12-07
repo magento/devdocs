@@ -278,7 +278,7 @@ The following query returns breadcrumb information about categories that have th
 
 ### Return the categoryList by url_key filters
 
-The following query returns information about categories by `url_key` filters. You have to pass the `url_key` value without a suffix and with either the `eq` or `in` keywords. Get the categoryList response from the `Gear` category.
+The following query returns information about the Gear category using a `url_key` filter. You must pass the `url_key` value without a suffix and specify either the `eq` or `in` keyword.
 
 **Request:**
 
@@ -318,7 +318,7 @@ The following query returns information about categories by `url_key` filters. Y
 
 ### Return the categoryList by url_path filters
 
-The following query returns information about categories by `url_path` filters. You have to pass the `url_path` value without a suffix and with either the `eq` or `in` keywords. Get the categoryList response from the `Gear -> Bags` category.
+The following query returns information about the Gear > Bags` category using the `url_path` filter. Do not specify a suffix in the `url_path` value. The `url_path` filter accepts either the `eq` or `in` keyword.
 
 **Request:**
 
