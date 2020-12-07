@@ -22,28 +22,28 @@ pages:
           url: /comp-mgr/prereq/prereq_compman-checklist.html
 
     - label: Safe Upgrade Tool
-      url: /sut/introduction.html
+      url: /safe-upgrade-tool/introduction.html
       versionless: true
       children:
 
         - label: Prerequisites
-          url: /sut/prerequisites.html
+          url: /safe-upgrade-tool/prerequisites.html
           versionless: true
 
         - label: Install
-          url: /sut/install.html
+          url: /safe-upgrade-tool/install.html
           versionless: true
 
         - label: Run the tool
-          url: /sut/run.html
+          url: /safe-upgrade-tool/run.html
           versionless: true
 
         - label: Developer information
-          url: /sut/developer.html
+          url: /safe-upgrade-tool/developer.html
           versionless: true
 
         - label: Tracking
-          url: /sut/tracking.html
+          url: /safe-upgrade-tool/tracking.html
           versionless: true
 
     - label: Magento Marketplace example

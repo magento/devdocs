@@ -119,9 +119,9 @@ It is possible to create a `sut.zip` file of the SUT to distribute it with partn
 1. This generates an `sut.zip` file that you can upload (or distribute) to the [Magento Composer repository](https://repo.magento.com).
 
 {:.bs-callout-info}
-A repository is a package source. Composer will look in all your repositories to find the packages your SUT requires. If you need access to this repository, submit a [Magento Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) to request permissions.
+A repository is a package source. Composer will look in all your repositories to find the packages your SUT requires. If you need access to this repository, submit a [Magento Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to request permissions.
 
-For more information about Composer, see the [Introduction to Magento Composer]({{page.baseurl}}/guides/v2.4/extension-dev-guide/intro/intro-composer.html) topic.
+For more information about Composer, see the [Introduction to Magento Composer]({{ site.baseurl }}/guides/v2.4/extension-dev-guide/intro/intro-composer.html) topic.
 
 ## Distribution
 
@@ -145,4 +145,4 @@ In order to distribute SUT:
 
 SUT tracking is a small AWS Lambda function handler written in Go. The code is available in the the [SUT tracking github repository](https://github.com/magento-commerce/safe-upgrade-tool-tracking), inside the `sut-tracking/` directory.
 
-See [Tracking]({{page.baseurl}}/sut/tracking.html).
+See [Tracking]({{csite.baseurlc}}/safe-upgrade-tool/tracking.html).

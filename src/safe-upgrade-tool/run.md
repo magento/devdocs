@@ -122,4 +122,4 @@ Regarding the GraphQL schema compatibility comparison, the output would be very 
  *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
 ```
 
-See the [Developer information guide]({{page.baseurl}}/sut/developer.html) for detailed technical information about SUT.
+See the [Developer information guide]({{ site.baseurl }}/safe-upgrade-tool/developer.html) for detailed technical information about SUT.
