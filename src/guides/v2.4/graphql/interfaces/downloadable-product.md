@@ -13,12 +13,12 @@ The `DownloadableProduct` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`downloadable_product_links` | [`DownloadableProductLinks`] | An array containing information about the links for this downloadable product
-`downloadable_product_samples` | [`DownloadableProductSamples`] | An array containing information about samples of this downloadable product
+`downloadable_product_links` | [[DownloadableProductLinks]](#downloadableProductLinks) | An array containing information about the links for this downloadable product
+`downloadable_product_samples` | [[DownloadableProductSamples]](#downloadableProductSamples)  | An array containing information about samples of this downloadable product
 `links_purchased_separately` | Int | A value of 1 indicates that each link in the array must be purchased separately
 `links_title` | String | The heading above the list of downloadable products
 
-### DownloadableProductSamples object
+### DownloadableProductSamples object {#downloadableProductSamples}
 
 The `DownloadableProductSamples` object contains the following attributes:
 
@@ -31,7 +31,7 @@ Attribute | Type | Description
 `sort_order` | Int | A number indicating the sort order
 `title` | String | The display name of the sample
 
-### DownloadableProductLinks object
+### DownloadableProductLinks object {#downloadableProductLinks}
 
 The `DownloadableProductLinks` object contains the following attributes:
 

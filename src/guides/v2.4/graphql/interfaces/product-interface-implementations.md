@@ -15,6 +15,7 @@ Product type | Implements | Has product-specific attributes?
 [GroupedProduct]({{ page.baseurl }}/graphql/interfaces/grouped-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html), [PhysicalProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/interfaces/customizable-option-interface.html) | Yes
 [SimpleProduct]({{ page.baseurl }}/graphql/interfaces/simple-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html), [PhysicalProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/interfaces/customizable-option-interface.html) | No
 [VirtualProduct]({{ page.baseurl }}/graphql/interfaces/virtual-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html),  [CustomizableProductInterface]({{ page.baseurl }}/graphql/interfaces/customizable-option-interface.html) | No
+[GiftCardProduct]({{ page.baseurl }}/graphql/interfaces/gift-card-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html),  [PhysicalProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html#PhysicalProductInterface),[CustomizableProductInterface]({{ page.baseurl }}/graphql/interfaces/customizable-option-interface.html) | Yes
 
 ## Query for product-specific attributes
 

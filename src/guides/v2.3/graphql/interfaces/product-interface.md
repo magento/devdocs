@@ -2,7 +2,7 @@
 group: graphql
 title: ProductInterface attributes
 redirect_from:
-   - /guides/v2.3/graphql/product/product-interface.html
+  - /guides/v2.3/graphql/product/product-interface.html
 ---
 
 Any type that implements `ProductInterface` contains all the base attributes necessary for the frontend of the product model.
@@ -17,6 +17,7 @@ The `items` that are returned in a `ProductInterface` array can also contain att
    -  [DownloadableProduct]({{ page.baseurl }}/graphql/interfaces/downloadable-product.html)
    -  [GroupedProduct]({{ page.baseurl }}/graphql/interfaces/grouped-product.html)
    -  [VirtualProduct]({{ page.baseurl }}/graphql/interfaces/virtual-product.html)
+   -  [GiftCardProduct]({{ page.baseurl }}/graphql/interfaces/gift-card-product.html)
 
 ## ProductInterface attributes
 
