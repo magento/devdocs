@@ -8,12 +8,22 @@ The release notes contain updates to the following Product Recommendations modul
 
 -  Product Recommendations metapackage: `magento/product-recommendations`
 -  Page Builder support in Product Recommendations (optional) module: `magento/module-page-builder-product-recommendations`
--  **(Beta)** Visual similarity recommendation type support for Product Recommendations (optional) module: `magento/module-visual-product-recommendations`
+-  Visual similarity recommendation type support for Product Recommendations (optional) module: `magento/module-visual-product-recommendations`
 
 The release notes include:
 
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
+
+## 3.2.0 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.new}Added the ability to [resync your catalog to SaaS services using a dashboard](https://docs.magento.com/user-guide/system/catalog-sync.html)
+-  {:.new}Added the ability to specify [inclusion and exclusion filters](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html) for your recommendations.
+-  {:.new}Added support for the new [Visual similarity recommendation type](https://docs.magento.com/user-guide/marketing/prex-type-visualsim.html)
+
+## 1.2.0 of magento/module-page-builder-product-recommendations for Page Builder for Magento Commerce 2.4.0 and later
+
+-  {:.new}Added support for the 3.2.0+ version of the `magento/product-recommendations` module.
 
 ## 3.1.0 of magento/product-recommendations for Magento Commerce 2.4.0
 
