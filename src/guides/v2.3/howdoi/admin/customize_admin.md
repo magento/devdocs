@@ -126,7 +126,7 @@ Your custom fields and field sets will be available for all configuration scopes
 
 Your `design_config_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to add your customizations.
 
-To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration.
+To customize an existing entity, declare only those options; the values of which are customized. Do not copy its entire configuration.
 
 For example, if you only want to rename the **Other Settings** field set, your form configuration must contain the following:
 
