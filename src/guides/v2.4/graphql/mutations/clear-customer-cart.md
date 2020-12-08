@@ -58,7 +58,6 @@ The `clearCustomerCart` mutation requires the following input.
 Attribute |  Data Type | Description
 --- | --- | ---
 `cartUid`| String! | Indicates whether cart was cleared.
-`cart`| Cart | Indicates whether cart was cleared.
 
 ## Output attributes
 
