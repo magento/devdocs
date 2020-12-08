@@ -1,5 +1,5 @@
 ---
-title: Install Magento using Composer
+title: Quick start install using Composer
 functional_areas:
   - Install
   - System
