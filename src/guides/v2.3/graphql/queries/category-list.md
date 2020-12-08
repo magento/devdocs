@@ -318,7 +318,7 @@ The following query returns information about the Gear category using a `url_key
 
 ### Return the categoryList by url_path filters
 
-The following query returns information about the Gear > Bags` category using the `url_path` filter. Do not specify a suffix in the `url_path` value. The `url_path` filter accepts either the `eq` or `in` keyword.
+The following query returns information about the Gear > Bags category using the `url_path` filter. Do not specify a suffix in the `url_path` value. The `url_path` filter accepts either the `eq` or `in` keyword.
 
 **Request:**
 
