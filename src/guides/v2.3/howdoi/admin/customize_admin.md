@@ -12,7 +12,7 @@ The location of your customizations appears here:
 ## Environment and technologies
 
 -  {{ site.data.var.ee }}
--  Magento Commerce (Cloud)
+-  {{ site.data.var.ece }}
 -  Magento Open Source
 
 ## Prerequisites
