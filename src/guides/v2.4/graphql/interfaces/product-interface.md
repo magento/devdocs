@@ -15,9 +15,9 @@ The `items` that are returned in a `ProductInterface` array can also contain att
    -  [BundleProduct]({{ page.baseurl }}/graphql/interfaces/bundle-product.html)
    -  [ConfigurableProduct]({{ page.baseurl }}/graphql/interfaces/configurable-product.html)
    -  [DownloadableProduct]({{ page.baseurl }}/graphql/interfaces/downloadable-product.html)
+   -  [GiftCardProduct]({{ page.baseurl }}/graphql/interfaces/gift-card-product.html)
    -  [GroupedProduct]({{ page.baseurl }}/graphql/interfaces/grouped-product.html)
    -  [VirtualProduct]({{ page.baseurl }}/graphql/interfaces/virtual-product.html)
-   -  [GiftCardProduct]({{ page.baseurl }}/graphql/interfaces/gift-card-product.html)
 
 ## ProductInterface attributes
 
