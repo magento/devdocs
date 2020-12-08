@@ -126,7 +126,7 @@ Following is a summary of the process:
    ```
 
    {:.bs-callout-info}
-   Style the output text by using `<error>`, `<info>`, or `<comment>` tags. See [Symfony](https://symfony.com/doc/master/console/coloring.html){:target="_blank"} docummentation for more information about styling.
+   Style the output text by using `<error>`, `<info>`, or `<comment>` tags. See [Symfony](https://symfony.com/doc/master/console/coloring.html){:target="_blank"} documentation for more information about styling.
 
 1. Declare your Command class in `Magento\Framework\Console\CommandListInterface` and configure the command name using dependency injection (`<your component root dir>/etc/di.xml`):
 

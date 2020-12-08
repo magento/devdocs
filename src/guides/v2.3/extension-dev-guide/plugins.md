@@ -95,7 +95,7 @@ Use the following method names for the `_construct` method in the plugin class:
 
 Magento runs all before methods ahead of the call to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
 
-You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return a `null` value.
+You can use before methods to change the arguments of an observed method by returning a modified argument. If there are any arguments, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return a `null` value.
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 

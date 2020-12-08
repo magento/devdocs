@@ -135,7 +135,7 @@ Routes allow you to set redirects or upstream settings for applications for your
    1. Enter the **Upstream** route.
    1. Use the toggle to enable or disable the **Cache** for the route.
    1. Enter the cookies to list: No cookies, All cookies, or Specify a specific cookie. You can enter multiple specific cookies.
-   1. For Headers to Whitelist, select Default Headers or Specify a header. You can enter multiple headers.
+   1. To add Headers to an allowlist, select Default Headers or Specify a header. You can enter multiple headers.
    1. Use the toggle to enable or disable the Server-Side Includes (**SSI**).
 
 1. To configure a Redirect, enter a URL to **Redirect to**. You can use `{default}` in the URL, which is a placeholder for the default domain.

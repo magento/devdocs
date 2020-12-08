@@ -12,7 +12,7 @@ When security vulnerabilities are discovered by researchers, proper reporting ch
 Magento merchants can enter their contact information for [security issue reporting](https://docs.magento.com/user-guide/stores/security-issue-reporting.html) from the Magento _Admin_. For developers, the `Magento_Securitytxt` module provides the following functionality:
 
 -  Allows security configurations to be saved from the _Admin_.
--  Contains a router to match application action class for requests to the `well-known/security.txt` and `.well-known/security.txt.sig` files.
+-  Contains a router to match application action class for requests to the `.well-known/security.txt` and `.well-known/security.txt.sig` files.
 -  Serves the content of the `.well-known/security.txt` and `.well-known/security.txt.sig` files.
 
 A valid `security.txt` file might look like the following:

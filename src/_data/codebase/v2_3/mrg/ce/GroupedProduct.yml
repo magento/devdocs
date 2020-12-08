@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.3.6
 github_path: app/code/Magento/GroupedProduct/README.md
 last_modified_at: '2014-12-12 12:14:06 -0800'
-content: |
+content: |-
   Magento_GroupedProduct module provides ability to offer several standalone products for sale as a group on the same Product Detail page.
   It can offer variations of a product, or group them by season or theme to create a coordinated set.
   Products can be purchased separately or as a set.

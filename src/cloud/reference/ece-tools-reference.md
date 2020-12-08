@@ -19,39 +19,45 @@ php ./vendor/bin/ece-tools list
 
 ```terminal
 Available commands:
-  build                    Builds application
-  db-dump                  Creates backup of database
-  deploy                   Deploys application
-  help                     Displays help for a command
-  list                     Lists commands
-  patch                    Applies custom patches
+  build                    Builds application.
+  db-dump                  Creates database backups.
+  deploy                   Deploys application.
+  help                     Displays help for a command.
+  list                     Lists commands.
+  patch                    Applies custom patches.
   post-deploy              Performs after deploy operations.
-  run                      Execute scenario(s)
+  run                      Execute scenario(s).
  backup
-  backup:list              Shows the list of backup files
+  backup:list              Shows the list of backup files.
   backup:restore           Restore important configuration files. Run backup:list to show the list of backup files
- build
-  build:generate           Generates all necessary files for build stage
-  build:transfer           Transfer generated files into init directory
+ build.
+  build:generate           Generates all necessary files for build stage.
+  build:transfer           Transfers generated files into init directory.
+ cloud
+  cloud:config:create      Creates a `.magento.env.yaml` file with the specified build, deploy, and post-deploy variable configuration. Overwrites any existing `.magento,.env.yaml` file.
+  cloud:config:update      Updates the existing `.magento.env.yaml` file with the specified configuration. Creates `.magento.env.yaml` file if it does not exist.
  config
   config:dump              [dump] Dump configuration for static content deployment.
  cron
-  cron:disable             Disable all Magento cron processes and kills currently running
-  cron:enable              Enable Magento cron processes
-  cron:kill                Kill all Magento cron processes
+  cron:disable             Disable all Magento cron processes and kills currently running.
+  cron:enable              Enable Magento cron processes.
+  cron:kill                Kill all Magento cron processes.
   cron:unlock              Unlock cron jobs that stuck in "running" state.
  dev
   dev:git:update-composer  Updates composer for deployment from git.
  env
-  env:config:show          Display encoded cloud configuration environment variables
+  env:config:show          Display encoded cloud configuration environment variables.
+ error
+  error:show               Display info about error by error id or info about all errors from the last deployment.
  module
-  module:refresh           Refresh config to enable newly added modules
+  module:refresh           Refresh config to enable newly added modules.
  wizard
-  wizard:ideal-state       Verifies ideal state of configuration
-  wizard:master-slave      Verifies master-slave configuration
-  wizard:scd-on-build      Verifies SCD on build configuration
-  wizard:scd-on-demand     Verifies SCD on demand configuration
-  wizard:scd-on-deploy     Verifies SCD on deploy configuration
+  wizard:ideal-state       Verifies ideal state of configuration.
+  wizard:master-slave      Verifies master-slave configuration.
+  wizard:scd-on-build      Verifies SCD on build configuration.
+  wizard:scd-on-demand     Verifies SCD on demand configuration.
+  wizard:scd-on-deploy     Verifies SCD on deploy configuration.
+  wizard:split-db-state    Verifies ability to split DB and whether DB was already split or not.
 ```
 {:.no-copy}
 

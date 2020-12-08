@@ -8,7 +8,7 @@ redirect_from:
   - /cloud/project/project-conf-files_services-mysql.html  
 ---
 
-The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.0-10.1, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
+The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.2-10.4, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
 
 {% include install/maria-db.md %}
 
@@ -163,4 +163,4 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
 
 ## Connect to secondary database
 
-In some cases, you might need to connect to the secondary database, for example to improve database performance or resolve database locking issues. If this configuration is required, use `"port" : 3304` to establish the connection. See the [Magento Commerce Cloud database best practice](https://support.magento.com/hc/en-us/articles/360049045351) article in the _Magento Help Center_.
+In some cases, you might need to connect to the secondary database, for example to improve database performance or resolve database locking issues. If this configuration is required, use `"port" : 3304` to establish the connection. See the [{{ site.data.var.ece }} database best practice](https://support.magento.com/hc/en-us/articles/360049045351) article in the _Magento Help Center_.
