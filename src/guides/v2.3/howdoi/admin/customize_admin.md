@@ -11,7 +11,7 @@ The location of your customizations appears here:
 
 ## Environment and technologies
 
--  Magento Commerce
+-  {{ site.data.var.ee }}
 -  Magento Commerce (Cloud)
 -  Magento Open Source
 
