@@ -1,6 +1,5 @@
 ---
 group: how-do-i
-subgroup: admin-customize-page
 title: Customize Magento Admin Design
 menu_order: 3
 ---
