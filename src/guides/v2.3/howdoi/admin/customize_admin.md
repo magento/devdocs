@@ -25,7 +25,7 @@ The location of your customizations appears here:
  {:.bs-callout-info}
 The following walk-through uses version 2.1.0 and later.
 
-In Magento out of the box, when you navigate to **CONTENT > Design > Configuration** in Admin, the first page that opens displays a grid with the available configuration scopes and assigned themes. It looks like following:
+On a default Magento installation, when you navigate to **CONTENT > Design > Configuration** in Admin, the first page that opens displays a grid with the available configuration scopes and assigned themes. It looks like following:
 
 ![Design Configuration]({{ site.baseurl }}/common/images/design_conf1.png)
 
