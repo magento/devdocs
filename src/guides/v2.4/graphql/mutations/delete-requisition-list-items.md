@@ -1,11 +1,10 @@
 ---
 group: graphql
-title: removeRequisitionListItems mutation
+title: deleteRequisitionListItems mutation
 b2b_only: true
-contributor_name: Zilker Technology
-contributor_link: https://www.ztech.io/
+contributor_name: EY
 ---
-The `removeRequisitionListItems` mutation removes items from the specified requisiton list for the logged in customer.
+The `deleteRequisitionListItems` mutation removes items from the specified requisiton list for the logged in customer.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
@@ -16,11 +15,11 @@ Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) 
 
 ```graphql
 mutation {
-  removeRequisitionListItems(
-    uid: ID!
-    items: [ID!]!
+  deleteRequisitionListItems(
+    requisitionListUid: ID!
+    requisitionListItemUids: [ID!]!
   ) {
-    RemoveRequisitionListItemsOutput
+    DeleteRequisitionListItemsOutput
   }
 }
 ```
@@ -32,11 +31,11 @@ The following example removes the Frequently Ordered Products requisition list i
 
 ``` graphql
 mutation {
-  removeRequisitionListItems(
-    uid: "4",
-    items: ["2","3"]
+  deleteRequisitionListItems(
+    requisitionListUid: "4",
+    requisitionListItemUids: ["2","3"]
   ) {
-    list {
+    requisition_list {
       uid
       items_count
     }
@@ -49,8 +48,8 @@ mutation {
 ``` json
 {
   "data": {
-    "removeRequisitionListItems": {
-      "list": {
+    "deleteRequisitionListItems": {
+      "requisition_list": {
           "uid": "4",
           "items_count": 0
         }
@@ -61,21 +60,20 @@ mutation {
 
 ## Input attributes
 
-The `removeRequisitionListItems` mutation requires the following input.
+The `deleteRequisitionListItems` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-items | [ID!]! | An array of items IDs corresponding to products to be removed from the requisition list.
-uid| ID! | The unique ID of the requisition list to change.
+`requisitionListItemUids`| [ID!]! | An array of UIDs representing products to be removed from the requisition list.
+`requisitionListUid`| ID! | The unique ID of the requisition list.
 
 ## Output attributes
 
-The `removeRequisitionListItems` object returns the uid of the requisition list as well as the input attributes.
+The `deleteRequisitionListItems` object returns the uid of the requisition list as well as the input attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-items_count | Int! | The number of products in the requisition list.
-uid | ID! | The unique ID of the modified requisition list.
+`requisition_list` | RequisitionList | The requisition list after removing items.
 
 ## Related topics
 
