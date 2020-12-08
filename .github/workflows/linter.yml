@@ -22,6 +22,8 @@ on:
     paths-ignore:
       - '**.html'
       - '**.xml'
+    paths:
+      - '**.md'
 
 ###############
 # Set the Job #
@@ -50,7 +52,7 @@ jobs:
       - name: Lint Code Base
         uses: github/super-linter@v3
         env:
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: master
           VALIDATE_HTML: false
           MARKDOWN_CONFIG_FILE: .markdownlint.json
