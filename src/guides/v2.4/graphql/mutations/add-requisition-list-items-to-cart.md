@@ -48,7 +48,7 @@ mutation {
 {
   "data": {
     "addRequisitionListItemsToCart": {
-        status: "true"
+        "status": "true"
     }
   }
 }

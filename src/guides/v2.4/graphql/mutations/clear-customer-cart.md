@@ -45,7 +45,7 @@ mutation {
 {
   "data": {
     "clearCustomerCart": {
-        status: "true"
+        "status": "true"
     }
   }
 }
