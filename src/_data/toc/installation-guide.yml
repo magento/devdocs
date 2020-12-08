@@ -60,13 +60,6 @@ pages:
         - label: Get the Magento software
           url: /install-gde/bk-install-guide.html
 
-        - label: (Contributor) Clone the Magento repository
-          url: /install-gde/prereq/dev_install.html
-          children:
-
-            - label: Update installation dependencies
-              url: /install-gde/install/prepare-install.html
-
     - label: Quick start (recommended installation)
       url: /install-gde/composer.html
 
@@ -83,9 +76,15 @@ pages:
         - label: Install the Magento software
           url: /install-gde/install/cli/install-cli-install.html
 
-        - label: Contributing developers—update, reinstall Magento
+        - label: (Contributor) Update or reinstall Magento
           url: /install-gde/install/cli/dev_options.html
           children:
+
+            - label: Clone the Magento repository
+              url: /install-gde/prereq/dev_install.html
+
+            - label: Update installation dependencies
+              url: /install-gde/install/prepare-install.html
 
             - label: Update the Magento application
               url: /install-gde/install/cli/dev_update-magento.html

@@ -1,5 +1,5 @@
 ---
-title: (Contributor) Clone the Magento repository
+title: Clone the Magento repository
 functional_areas:
   - Install
   - System
