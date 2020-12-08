@@ -169,7 +169,7 @@ For reference, view the form configuration files of these Magento modules:
 ## Add fields’ metadata
 If in the design configuration form you add new fields, `<your_module_dir>/etc/di.xml`, you must specify their parent field sets and the path in the database. You can also declare the backend model used for processing the field values. If you do not specify any model, the default `Magento\Framework\App\Config\Value` model is used.
 
-The field declaration in a `di.xml` looks like the following:
+The field declaration in a `di.xml` file looks like the following:
 
 ```xml
 ...
