@@ -166,7 +166,7 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [ProductReview]! | An array of product reviews
+`items` | [[ProductReview]](#ProductReview)! | An array of product reviews
 `page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
 
 #### ProductReview object {#ProductReview}
