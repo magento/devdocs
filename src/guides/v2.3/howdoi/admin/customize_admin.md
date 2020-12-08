@@ -13,7 +13,7 @@ The location of your customizations appears here:
 
 -  {{ site.data.var.ee }}
 -  {{ site.data.var.ece }}
--  Magento Open Source
+-  {{ site.data.var.ce }}
 
 ## Prerequisites
 
