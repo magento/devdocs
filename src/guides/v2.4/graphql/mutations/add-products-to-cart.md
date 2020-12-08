@@ -365,8 +365,8 @@ Attribute |  Data Type | Description
 
 Code | Error | Description
 --- | --- | ---
-`CART_ID_INVALID` | `Could not find a cart with ID` | A requested cart id is invalid.
+`CART_ID_INVALID` | `Could not find a cart with ID` | The specified cart ID is invalid.
 `PRODUCT_NOT_FOUND` | `Could not find a product with SKU "XXX"` | A product with the SKU specified in the argument `data`.`sku` does not exist.
 `NOT_SALABLE` | `Product that you are trying to add is not available.` | A requested product is not available
-`INSUFFICIENT_STOCK` | `This product is out of stock` | A requested product is out of stock
-`UNDEFINED` | `UNDEFINED` | An error message is not matched with any code
+`INSUFFICIENT_STOCK` | `This product is out of stock` | The requested product is out of stock
+`UNDEFINED` | `UNDEFINED` | The error message does not match any error code
