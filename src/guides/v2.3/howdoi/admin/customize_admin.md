@@ -1,7 +1,6 @@
 ---
 group: how-do-i
 title: Customize Magento Admin Design
-menu_order: 3
 ---
 
 Learn how to customize (add, delete, change) the configuration options available in the Magento Admin. These options define the various aspects of storefront design.
