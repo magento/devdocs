@@ -181,9 +181,17 @@ pages:
         - label: addDownloadableProductsToCart mutation
           url: /graphql/mutations/add-downloadable-products.html
 
+        - label: addProductsToRequisitionList mutation
+          url: /graphql/mutations/add-products-to-requisition-list.html
+          exclude_versions: [ "2.3" ]
+
         - label: addProductsToWishlist mutation
           url: /graphql/mutations/add-products-to-wishlist.html
           exclude_versions: ["2.3"]
+
+        - label: addRequisitionListItemsToCart mutation
+          url: /graphql/mutations/add-requisition-list-items-to-cart.html
+          exclude_versions: [ "2.3" ]
 
         - label: addSimpleProductsToCart mutation
           url: /graphql/mutations/add-simple-products.html
@@ -209,6 +217,10 @@ pages:
 
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
+
+        - label: clearCustomerCart mutation
+          url: /graphql/mutations/clear-customer-cart.html
+          exclude_versions: [ "2.3" ]
 
         - label: copyProductsToWishlist mutation
           url: /graphql/mutations/copy-products-to-wishlist.html
@@ -448,6 +460,10 @@ pages:
         - label: updateProductsInWishlist mutation
           url: /graphql/mutations/update-products-in-wishlist.html
           exclude_versions: ["2.3"]
+
+        - label: updateRequisitionListItems mutation
+          url: /graphql/mutations/update-requisition-list-items.html
+          exclude_versions: [ "2.3" ]
 
         - label: updateWishlist mutation
           url: /graphql/mutations/update-wishlist.html
