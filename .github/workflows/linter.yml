@@ -19,9 +19,9 @@ on:
     branches:
       - master
       - 2.*-develop
-    paths-ignore:
-      - '**.html'
-      - '**.xml'
+#     paths-ignore:
+#       - '**.html'
+#       - '**.xml'
     paths:
       - '**.md'
 
