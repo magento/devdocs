@@ -146,7 +146,7 @@ For example, if you only want to rename the **Other Settings** field set, your f
 </form>
 ```
 
-To delete an existing field, or field set, in your `design_config_form.xml` use the following syntax:
+To delete an existing field, or field set, in your `design_config_form.xml` file, use the following syntax:
 
 ```xml
 ...
