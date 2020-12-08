@@ -35,7 +35,7 @@ When you click **Edit** in any of the scope records, the page with available des
 
 Both the grid and the configuration form are implemented using UI components.
 
-To change the grid view, you need to [customize the grid](#customize-the-grid) configuration by adding a custom `design_config_listing.xml` to your module.
+To change the grid view, you must [customize the grid](#customize-the-grid) configuration by adding a custom `design_config_listing.xml` file to your module.
 
 To change the available design settings you need to [customize the grid](#customize-the-grid) configuration by adding your custom `design_config_form.xml` in your module. If you add a new field, you must also declare it in `di.xml` on how it is processed and saved.
 
