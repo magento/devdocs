@@ -43,12 +43,11 @@ Consider the example of adding a custom carousel JS
    };
    });
    ```
-
--  Add requirejs config to app/design/frontend/`<package_name>`/`<theme_name>`/requirejs-config.js
+-  Add RequireJS config to `app/design/frontend/<package_name>/<theme_name>/requirejs-config.js`
 
     ```javascript
     var config = {
-    map:{
+    map: {
         '*': {
             'carousel': 'js/carousel',
             '<carousel_name>': 'js/<carousel_name>/<carousel_name>.carousel'
