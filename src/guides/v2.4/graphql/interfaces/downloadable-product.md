@@ -18,7 +18,7 @@ Attribute | Type | Description
 `links_purchased_separately` | Int | A value of 1 indicates that each link in the array must be purchased separately
 `links_title` | String | The heading above the list of downloadable products
 
-### DownloadableProductSamples object {#downloadableProductSamples}
+### DownloadableProductSamples object {#DownloadableProductSamples}
 
 The `DownloadableProductSamples` object contains the following attributes:
 
