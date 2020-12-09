@@ -39,7 +39,7 @@ mutation {
       requisitionListItem: ["2","3"]
     ) {
     requisition_list {
-      uid,
+      uid
       items_count
     }
   }
@@ -67,9 +67,9 @@ The `copyItemsBetweenRequisitionLists` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`destinationRequisitionListUid`| ID | The unique ID of the destination requisition list. If null new requisition list will be created.
-`requisitionListItem`| [[CopyItemsBetweenRequisitionListsInput](#copyItemsBetweenRequisitionListsInput)] | An array of selected requisition list items that are to be copied from source to destination.
-`sourceRequisitionListUid`| ID! | The unique ID of the source requisition list.
+`destinationRequisitionListUid`| ID | The unique ID of the destination requisition list. If null, a new requisition list will be created
+`requisitionListItem`| [[CopyItemsBetweenRequisitionListsInput](#copyItemsBetweenRequisitionListsInput)] | An array of selected requisition list items that are to be copied
+`sourceRequisitionListUid`| ID! | The unique ID of the source requisition list
 
 ## Output attributes
 
@@ -79,7 +79,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `requisition_list` | [[RequisitionList](#requisitionList)] | The destination requisition list after the items were copied.
 
-### CopyItemsBetweenRequisitionListsInput attributes {#copyItemsBetweenRequisitionListsInput}
+### CopyItemsBetweenRequisitionListsInput attributes {#CopyItemsBetweenRequisitionListsInput}
 
 The `CopyItemsBetweenRequisitionListsInput` type contains the list of products to copy from one requisition list to other.
 

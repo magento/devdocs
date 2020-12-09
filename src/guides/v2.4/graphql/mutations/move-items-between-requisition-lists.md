@@ -75,8 +75,8 @@ The `moveItemsBetweenRequisitionLists` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`destinationRequisitionListUid`| ID! | The unique ID of the destination requisition list. If null new requisition list will be created.
-`requisitionListItem`| [[MoveItemsBetweenRequisitionListsInput](#moveItemsBetweenRequisitionListsInput)]  | An array of selected requisition list items that are to be moved from source to destination list.
+`destinationRequisitionListUid`| ID! | The unique ID of the destination requisition list. If null, a new requisition list will be created
+`requisitionListItem`| [[MoveItemsBetweenRequisitionListsInput](#moveItemsBetweenRequisitionListsInput)]  | An array of selected requisition list items that are to be moved from the source to the destination list
 `sourceRequisitionListUid`| ID! | The unique ID of the source requisition list.
 
 ## Output attributes
