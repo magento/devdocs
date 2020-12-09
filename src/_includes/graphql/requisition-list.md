@@ -8,4 +8,3 @@ Attribute |  Data Type | Description
 `name` | String! | The requisition list name
 `uid` | ID! | The unique requisition list ID
 `updated_at` | String | The time of the last modification of the requisition list
-
