@@ -63,9 +63,6 @@ pages:
     - label: Quick start (recommended installation)
       url: /install-gde/composer.html
 
-    - label: Install options
-      url: /install-gde/bk-install-guide.html
-
     - label: Command Line Installation
       url: /install-gde/install/cli/install-cli.html
       children:
