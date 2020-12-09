@@ -1,5 +1,5 @@
 ---
-title: Quick start install using Composer
+title: Quick start install (non-contributor)
 functional_areas:
   - Install
   - System
