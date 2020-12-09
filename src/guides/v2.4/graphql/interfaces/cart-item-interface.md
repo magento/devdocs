@@ -22,7 +22,7 @@ Attribute |  Data Type | Description
 `prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
-`uid` | ID! | The unique ID for the CartItemInterface object
+`uid` | ID! | The unique ID for the `CartItemInterface` object
 
 ### CartItemPrices object {#CartItemPrices}
 
