@@ -5,7 +5,7 @@ functional_areas:
   - Upgrade
 ---
 
-The [Magento Quality Package (MQP) package][] delivers individual patches developed by Magento and allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}. See the [Apply Patches]({{ site.baseurl }}/cloud/project/project-patch.html) topic in the _Cloud Guide_ for details on installing and using  MQP for Magento Commerce Cloud.
+The [Magento Quality Package (MQP) package][] delivers individual patches developed by Magento and allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}. See the [Apply Patches]({{ site.baseurl }}/cloud/project/project-patch.html) topic in the _Cloud Guide_ for details on installing and using  MQP for {{ site.data.var.ece }}.
 
 {:.bs-callout-warning}
 We do not recommend using the MQP package to apply large numbers of patches because it increases the complexity of your code, which makes upgrading to a new version of Magento more difficult.

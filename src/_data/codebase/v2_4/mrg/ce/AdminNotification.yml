@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/AdminNotification/README.md
 last_modified_at: '2019-08-19 00:16:18 +0100'
-content: |
+content: |-
   The Magento_AdminNotification module provides the ability to alert administrators via system messages and provides a message inbox for surveys and notifications.
 
   ## Installation details

@@ -34,6 +34,7 @@ As a work-around, complete the following:
 
    ```shell
    update core_config_data set value=0 where path ='dev/template/minify_html'
+   ```
 
 1. Flush all caches.
 

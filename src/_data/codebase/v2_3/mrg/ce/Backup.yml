@@ -16,4 +16,4 @@ content: "The Magento_Backup module allows administrators to perform backups and
   directory:   \n\n`backup_index_block`\n`backup_index_disabled`\n`backup_index_grid`\n`backup_index_index`\n\nFor
   more information about layouts in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html).\n\n##
   Additional information\n\nFor information about significant changes in patch releases,
-  see [2.3.x Release information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).\n"
+  see [2.3.x Release information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)."

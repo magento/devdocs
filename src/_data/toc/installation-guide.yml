@@ -6,6 +6,9 @@ pages:
     - label: Installation flow diagram
       url: /install-gde/install-flow-diagram.html
 
+    - label: Magento system requirements
+      url: /install-gde/system-requirements.html
+
     - label: Just the basics
       children:
 
@@ -41,25 +44,6 @@ pages:
 
             - label: Installation roadmap (reference)
               url: /install-gde/install-roadmap_part1.html
-
-        - label: Magento system requirements
-          url: /install-gde/system-requirements.html
-          children:
-
-            - label: Magento technology stack requirements
-              url: /install-gde/system-requirements-tech.html
-
-            - label: Supported browsers
-              url: /install-gde/system-requirements_browsers.html
-
-            - label: Transport Layer Security (TLS) requirements
-              children:
-
-                - label: TLS 1.2 requirement for PayPal
-                  url: /install-gde/system-requirements_tls1-2.html
-
-                - label: TLS requirement for repo.magento.com
-                  url: /install-gde/system-requirements_repo-tls1-2.html
 
         - label: Prerequisites
           url: /install-gde/prereq/prereq-overview.html
