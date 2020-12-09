@@ -58,6 +58,7 @@ Consider the example of adding a custom carousel JS:
     ```
 
 You now have two options for specifying declarative notation:
+
 -  use the `data-mage-init` attribute to insert the carousel in a certain element:
 
     ```html
