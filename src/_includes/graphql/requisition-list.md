@@ -6,5 +6,6 @@ Attribute |  Data Type | Description
 `items` | RequistionListItems | An array of products added to the requisition list
 `items_count` | Int! | The number of items in the list
 `name` | String! | The requisition list name
-`updated_at` | String | The time of the last modification of the requisition list
 `uid` | ID! | The unique requisition list ID
+`updated_at` | String | The time of the last modification of the requisition list
+
