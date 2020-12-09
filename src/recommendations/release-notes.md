@@ -17,11 +17,11 @@ The release notes include:
 
 ## 3.2.0 of magento/product-recommendations for Magento Commerce 2.4.0
 
--  {:.new}Added the ability to [resync your catalog to SaaS services from the Admin](https://docs.magento.com/user-guide/system/catalog-sync.html)
+-  {:.new}Added the ability to [monitor and manage](https://docs.magento.com/user-guide/system/catalog-sync.html) the catalog sync process from the Admin Panel.
 -  {:.new}Added the ability to specify [inclusion and exclusion filters](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html) for your recommendations.
 -  {:.new}Added the [Visual similarity recommendation type](https://docs.magento.com/user-guide/marketing/prex-type-visualsim.html)
 
-## 1.2.0 of magento/module-page-builder-product-recommendations for Page Builder for Magento Commerce 2.4.0 and later
+## 1.2.1 of magento/module-page-builder-product-recommendations for Page Builder for Magento Commerce 2.4.0 and later
 
 -  {:.new}Added support for the 3.2.0+ version of the `magento/product-recommendations` module.
 

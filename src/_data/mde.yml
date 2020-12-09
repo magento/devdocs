@@ -310,7 +310,7 @@ extensions:
     name: Product Recommendations
     versions:
       -
-        name: 3.2.0
+        name: 3.2.1
         support:
           2.3.0: supported
           2.3.1: supported
