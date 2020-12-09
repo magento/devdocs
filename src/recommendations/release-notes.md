@@ -18,7 +18,7 @@ The release notes include:
 ## 3.2.0 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.new}Added the ability to [monitor and manage](https://docs.magento.com/user-guide/system/catalog-sync.html) the catalog sync process from the Admin Panel.
--  {:.new}Added the ability to specify [inclusion and exclusion filters](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html) for your recommendations.
+-  {:.new}Added [inclusion and exclusion filters](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html) to control what products can and cannot be displayed in recommendations.
 -  {:.new}Added the [Visual similarity recommendation type](https://docs.magento.com/user-guide/marketing/prex-type-visualsim.html)
 
 ## 1.2.1 of magento/module-page-builder-product-recommendations for Page Builder for Magento Commerce 2.4.0 and later
