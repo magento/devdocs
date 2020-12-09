@@ -13,7 +13,7 @@ The release notes include:
 
 ## v3.1.3
 
--  {:.fix}Some users who upgraded from an older version of Magento to one of the latest versions found that the `yotpo_rich_snippets` table was not created. This issue is now fixed and the `yotpo_rich_snippets` table should display correctly.
+-  {:.fix}Some users who upgraded from an older version of Magento, to one of the latest versions, found that the `yotpo_rich_snippets` table was not created. This issue is now fixed and the `yotpo_rich_snippets` table should display correctly.
 
 -  {:.fix}We have improved the mechanism for syncing orders to Yotpo. If an order fails to sync for any reason, this order will be skipped and the process will continue to sync the next order.
 
