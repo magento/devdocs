@@ -75,7 +75,6 @@ Attribute |  Data Type | Description
 `requisitionListItems`| [[RequisitionListItemsInput](#RequisitionListItemsInput)!]! | An array of products to be added to the requisition list
 `requisitionListUid`| ID! | The unique ID of the requisition list
 
-
 ## Output attributes
 
 The `addProductsToRequisitionList` object returns the requisition list object.
