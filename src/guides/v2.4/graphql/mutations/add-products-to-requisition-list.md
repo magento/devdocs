@@ -72,8 +72,8 @@ The `addProductsToRequisitionList` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisitionListUid`| ID | The unique ID of the requisition list
-`requisitionListItems`| [[RequisitionListItemsInput](#RequisitionListItemsInput)] | An array of products to be added to the requisition list
+`requisitionListUid`| ID! | The unique ID of the requisition list
+`requisitionListItems`| [[RequisitionListItemsInput](#RequisitionListItemsInput)!]! | An array of products to be added to the requisition list
 
 ## Output attributes
 
