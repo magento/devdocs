@@ -34,7 +34,7 @@ In Magento 2, you have two options for specifying declarative notation:
 Consider the example of adding a custom carousel JS:
 
 -  Copy `<carousel_name>.carousel.js` to `app/design/frontend/<package_name>/<theme_name>/web/js/<carousel_name>/`
--  Add your RequireJS module at `app/design/frontend/<package_name>/<theme_name>/web/js/carousel.js` 
+-  Add your RequireJS module at `app/design/frontend/<package_name>/<theme_name>/web/js/carousel.js`
 
    ```javascript
     define(['jquery','<carousel_name>'], function($)
