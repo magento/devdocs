@@ -67,27 +67,27 @@ The `copyItemsBetweenRequisitionLists` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`destinationRequisitionListUid`| ID | The unique ID of the destination requisition list. If null new requisition list will be created.
-`requisitionListItem`| [[CopyItemsBetweenRequisitionListsInput](#copyItemsBetweenRequisitionListsInput)] | An array of selected requisition list items that are to be copied from source to destination.
-`sourceRequisitionListUid`| ID! | The unique ID of the source requisition list.
+`destinationRequisitionListUid`| ID | The unique ID of the destination requisition list. If null new requisition list will be created
+`requisitionListItem`| [[CopyItemsBetweenRequisitionListsInput](#CopyItemsBetweenRequisitionListsInput)] | An array of selected requisition list items that are to be copied from source to destination
+`sourceRequisitionListUid`| ID! | The unique ID of the source requisition list
 
 ## Output attributes
 
-The `copyItemsBetweenRequisitionLists` object returns the requisition list object to which the products were copied to.
+The `copyItemsBetweenRequisitionLists` mutation returns the requisition list object to which the products were copied to.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisition_list` | [[RequisitionList](#requisitionList)] | The destination requisition list after the items were copied.
+`requisition_list` | [[RequisitionList](#RequisitionList)] | The destination requisition list after the items were copied
 
-### CopyItemsBetweenRequisitionListsInput attributes {#copyItemsBetweenRequisitionListsInput}
+### CopyItemsBetweenRequisitionListsInput attributes {#CopyItemsBetweenRequisitionListsInput}
 
 The `CopyItemsBetweenRequisitionListsInput` type contains the list of products to copy from one requisition list to other.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisitionListItemUids` | [ID!]! | An array of IDs representing products copied from one requisition list to another.
+`requisitionListItemUids` | [ID!]! | An array of IDs representing products copied from one requisition list to another
 
-### RequisitionList attributes {#requisitionList}
+### RequisitionList attributes {#RequisitionList}
 {% include graphql/requisition-list.md %}
 
 ## Related topics

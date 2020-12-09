@@ -25,7 +25,7 @@ mutation {
 ```
 ## Example usage
 
-The following example removes the Frequently Ordered Products requisition list item by ID.
+The following example removes the specified items from the requisition list.
 
 **Request:**
 
@@ -64,8 +64,8 @@ The `deleteRequisitionListItems` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisitionListItemUids`| [ID!]! | An array of UIDs representing products to be removed from the requisition list.
-`requisitionListUid`| ID! | The unique ID of the requisition list.
+`requisitionListItemUids`| [ID!]! | An array of UIDs representing products to be removed from the requisition list
+`requisitionListUid`| ID! | The unique ID of the requisition list
 
 ## Output attributes
 
@@ -73,7 +73,7 @@ The `deleteRequisitionListItems` object returns the uid of the requisition list 
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisition_list` | RequisitionList | The requisition list after removing items.
+`requisition_list` | RequisitionList | The requisition list after removing items
 
 ## Related topics
 

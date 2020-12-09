@@ -75,9 +75,9 @@ The `moveItemsBetweenRequisitionLists` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`destinationRequisitionListUid`| ID! | The unique ID of the destination requisition list. If null new requisition list will be created.
-`requisitionListItem`| [[MoveItemsBetweenRequisitionListsInput](#moveItemsBetweenRequisitionListsInput)]  | An array of selected requisition list items that are to be moved from source to destination list.
-`sourceRequisitionListUid`| ID! | The unique ID of the source requisition list.
+`destinationRequisitionListUid`| ID! | The unique ID of the destination requisition list. If null new requisition list will be created
+`requisitionListItem`| [[MoveItemsBetweenRequisitionListsInput](#MoveItemsBetweenRequisitionListsInput)]  | An array of selected requisition list items that are to be moved from source to destination list
+`sourceRequisitionListUid`| ID! | The unique ID of the source requisition list
 
 ## Output attributes
 
@@ -85,18 +85,18 @@ The `moveItemsBetweenRequisitionLists` object returns the source requisition lis
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`destination_requisition_list` | [[RequisitionList](#requisitionList)] | The destination requisition list after moving items.
-`source_requisition_list` | [[RequisitionList](#requisitionList)] | The source requisition list after moving items.
+`destination_requisition_list` | [[RequisitionList](#RequisitionList)] | The destination requisition list after moving items
+`source_requisition_list` | [[RequisitionList](#RequisitionList)] | The source requisition list after moving items
 
-### MoveItemsBetweenRequisitionListsInput attributes {#moveItemsBetweenRequisitionListsInput}
+### MoveItemsBetweenRequisitionListsInput attributes {#MoveItemsBetweenRequisitionListsInput}
 
 The `MoveItemsBetweenRequisitionListsInput` type contains the list of products to move from one requisition list to other.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisitionListItemUids` | [ID!]! | An array of IDs representing products moved from one requisition list to another.
+`requisitionListItemUids` | [ID!]! | An array of IDs representing products moved from one requisition list to another
 
-### RequisitionList attributes {#requisitionList}
+### RequisitionList attributes {#RequisitionList}
 {% include graphql/requisition-list.md %}
 
 ## Related topics
