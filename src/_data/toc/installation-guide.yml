@@ -63,11 +63,11 @@ pages:
     - label: Quick start install (non-contributor)
       url: /install-gde/composer.html
 
-    - label: Command Line Installation
+    - label: Command Line install (contributor)
       url: /install-gde/install/cli/install-cli.html
       children:
 
-        - label: Get started with the command-line installation
+        - label: Prepare your system for install
           url: /install-gde/install/cli/install-cli-subcommands.html
 
         - label: Install the Magento software
