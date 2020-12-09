@@ -72,8 +72,9 @@ The `addProductsToRequisitionList` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisitionListUid`| ID! | The unique ID of the requisition list
 `requisitionListItems`| [[RequisitionListItemsInput](#RequisitionListItemsInput)!]! | An array of products to be added to the requisition list
+`requisitionListUid`| ID! | The unique ID of the requisition list
+
 
 ## Output attributes
 
@@ -89,11 +90,11 @@ The `RequisitionListItemsInput` type contains the list of products to add in req
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`sku` | String! | The product SKU
-`quantity` | Float | The quantity of the product to add
-`parent_sku` | String | For configurable products, the SKU of the parent product
-`selected_options` | [String!] | An array of selected option IDs
 `entered_options` | [EnteredOptionInput!] | An array of customer entered option IDs
+`parent_sku` | String | For configurable products, the SKU of the parent product
+`quantity` | Float | The quantity of the product to add
+`selected_options` | [String!] | An array of selected option IDs
+`sku` | String! | The product SKU
 
 ### RequisitionList attributes {#RequisitionList}
 

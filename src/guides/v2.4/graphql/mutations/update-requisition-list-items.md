@@ -72,8 +72,8 @@ The `updateRequisitionListItems` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisitionListUid`| ID! | The unique ID of the requisition list
 `requisitionListItems`| [[UpdateRequisitionListItemsInput](#UpdateRequisitionListItemsInput)!]! | An array of products to be updated in the requisition list
+`requisitionListUid`| ID! | The unique ID of the requisition list
 
 ## Output attributes
 
@@ -89,10 +89,10 @@ The `UpdateRequisitionListItemsInput` type contains the list of products to be u
 
 Attribute |  Data Type | Description
 --- | --- | ---
+`entered_options` | [EnteredOptionInput!] | An array of customer entered option IDs
 `item_id` | ID! | The ID of the requisition list item to update
 `quantity` | Float | The new quantity of the item
 `selected_options` | [String!] | An array of selected option IDs
-`entered_options` | [EnteredOptionInput!] | An array of customer entered option IDs
 
 ### RequisitionList attributes {#RequisitionList}
 

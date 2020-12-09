@@ -65,8 +65,8 @@ The `clearCustomerCart` object returns the status and cart object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`status` | Boolean! | The requisition list after the items were added
 `cart` | [Cart](#CartObject) | The cart after clearing items
+`status` | Boolean! | The requisition list after the items were added
 
 ### Cart object {#CartObject}
 

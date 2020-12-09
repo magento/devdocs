@@ -60,8 +60,8 @@ The `addRequisitionListItemsToCart` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisitionListUid`| ID | The unique ID of the requisition list
 `requisitionListItemUids`| [ID!] | An array of UIDs presenting products to be added to the cart. If no UIDs are specified, all items in the requisition list will be added to the cart
+`requisitionListUid`| ID | The unique ID of the requisition list
 
 ## Output attributes
 
@@ -69,9 +69,9 @@ The `addRequisitionListItemsToCart` object returns the status, cart and errors o
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`status` | Boolean! | Indicates whether the attempt to add items to the requisition list was successful
 `add_requisition_list_items_to_cart_user_errors` | [[AddRequisitionListItemToCartUserError!](#AddRequisitionListItemToCartUserError)] | Indicates why the attempt to add items to the requistion list was not successful
 `cart` | [Cart](#CartObject) | The cart after adding requisition list items.
+`status` | Boolean! | Indicates whether the attempt to add items to the requisition list was successful
 
 ### AddRequisitionListItemToCartUserError attributes {#AddRequisitionListItemToCartUserError}
 
@@ -86,10 +86,10 @@ Attribute |  Data Type | Description
 
 Type | Description
 --- | --- | ---
+`LOW_QUANTITY` | The one of the item's quantity is low
+`OPTIONS_UPDATED` | The options has been updated
 `OUT_OF_STOCK` | The one of the items is out of stock
 `UNAVAILABLE_SKU` | The one of the items SKU is unavailable
-`OPTIONS_UPDATED` | The options has been updated
-`LOW_QUANTITY` | The one of the item's quantity is low
 
 ### Cart object {#CartObject}
 
