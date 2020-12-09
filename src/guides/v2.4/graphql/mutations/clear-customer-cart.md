@@ -57,7 +57,7 @@ The `clearCustomerCart` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cartUid`| String! | Indicates whether cart was cleared.
+`cartUid`| String! | Indicates whether cart was cleared
 
 ## Output attributes
 
@@ -65,10 +65,10 @@ The `clearCustomerCart` object returns the status and cart object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`status` | Boolean! | The requisition list after the items were added.
-`cart` | [Cart](#cartObject) | The cart after clearing items.
+`status` | Boolean! | The requisition list after the items were added
+`cart` | [Cart](#CartObject) | The cart after clearing items
 
-### Cart object {#cartObject}
+### Cart object {#CartObject}
 
 The `Cart` object can contain the following attributes.
 

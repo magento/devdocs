@@ -72,8 +72,8 @@ The `addProductsToRequisitionList` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisitionListUid`| ID | The unique ID of the requisition list.
-`requisitionListItems`| [[RequisitionListItemsInput](#requisitionListItemsInput)] | An array of products to be added to the requisition list.
+`requisitionListUid`| ID | The unique ID of the requisition list
+`requisitionListItems`| [[RequisitionListItemsInput](#RequisitionListItemsInput)] | An array of products to be added to the requisition list
 
 ## Output attributes
 
@@ -81,21 +81,21 @@ The `addProductsToRequisitionList` object returns the requisition list object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisition_list` | [[RequisitionList](#requisitionList)] | The requisition list after the items were added.
+`requisition_list` | [[RequisitionList](#RequisitionList)] | The requisition list after the items were added
 
-### RequisitionListItemsInput attributes {#requisitionListItemsInput}
+### RequisitionListItemsInput attributes {#RequisitionListItemsInput}
 
 The `RequisitionListItemsInput` type contains the list of products to add in requisition list.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`sku` | String! | The product SKU.
-`quantity` | Float | The quantity of the product to add.
-`parent_sku` | String | For configurable products, the SKU of the parent product.
-`selected_options` | [String!] | An array of selected option IDs.
-`entered_options` | [EnteredOptionInput!] | An array of customer entered option IDs.
+`sku` | String! | The product SKU
+`quantity` | Float | The quantity of the product to add
+`parent_sku` | String | For configurable products, the SKU of the parent product
+`selected_options` | [String!] | An array of selected option IDs
+`entered_options` | [EnteredOptionInput!] | An array of customer entered option IDs
 
-### RequisitionList attributes {#requisitionList}
+### RequisitionList attributes {#RequisitionList}
 
 The `RequisitionList` object can contain the following attributes.
 
