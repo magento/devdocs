@@ -121,6 +121,19 @@ extensions:
           2.4.1: not supported
           2.4.2: not supported
   -
+    name: Braintree
+    versions:
+      -
+        name: 4.1.0
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: not supported
+          2.3.5-p1: not supported
+          2.4.0: supported
+  -
     name: dotdigital
     versions:
       -
