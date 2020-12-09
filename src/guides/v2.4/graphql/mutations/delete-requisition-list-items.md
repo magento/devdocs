@@ -69,7 +69,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `deleteRequisitionListItems` object returns the uid of the requisition list as well as the input attributes.
+The `deleteRequisitionListItems` object returns the requisition list after the deletion of items.
 
 Attribute |  Data Type | Description
 --- | --- | ---
