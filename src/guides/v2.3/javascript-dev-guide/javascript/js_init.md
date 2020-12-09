@@ -44,6 +44,7 @@ Consider the example of adding a custom carousel JS:
             $(element).<carousel_name>(config);
         };
     });
+
 1. Add the RequireJS config to the `app/design/frontend/<package_name>/<theme_name>/requirejs-config.js` file.
 
     ```javascript
