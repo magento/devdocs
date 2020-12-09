@@ -11,4 +11,4 @@ content: "The `InventoryDistanceBasedSourceSelection` module implements logic fo
   module is installed as part of Magento Open Source.\n\n## Extension points and service
   contracts\n\nAll public interfaces related to this module are located in the `InventoryDistanceBasedSourceSelectionApi`
   module. \nUse the interfaces defined in `InventoryDistanceBasedSourceSelectionApi`
-  to extend this module.\n"
+  to extend this module."

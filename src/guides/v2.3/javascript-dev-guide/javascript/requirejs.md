@@ -15,13 +15,13 @@ All configuration is done in the `requirejs-config.js` file. It has a single roo
 
 ```javascript
 var config = {
-    'map': {...},
-    'paths': {...},
-    'deps':[...],
-    'shim': {...},
-    'config': {
-        'mixins': {...},
-        'text': {...}
+    map: {...},
+    paths: {...},
+    deps: [...],
+    shim: {...},
+    config: {
+        mixins: {...},
+        text: {...}
     }
 }
 ```
@@ -101,8 +101,8 @@ The `mixins` configuration is used to overwrite component methods of an AMD modu
 In this snippet, `Vendor_Module/js/module-mixin` will overwrite the existing component methods in `Vendor_Module/js/module` with the specified component methods. It is a convention to name the mixin by appending a `-mixin` to the original `path/to/js`, although not required.
 
 ```javascript
-'config': {
-    'mixins': {
+config: {
+    mixins: {
         'Vendor_Module/js/module': {
             'Vendor_Module/js/module-mixin': true
         }
@@ -119,8 +119,8 @@ The `text` configuration is used to set the security request headers using the [
 Without [Cross Origin Resource Sharing (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) it is not possible to add the `X-Requested-With` header to a cross domain XHR request. Set this header to tell the server that the request was initiated from the same domain.
 
 ```javascript
-'config': {
-    'text': {
+config: {
+    text: {
         'headers': {
             'X-Requested-With': 'XMLHttpRequest'
         }
