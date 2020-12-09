@@ -139,6 +139,9 @@ To add an SSH key using the CLI:
    ```bash
    magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
    ```
+   
+{:.bs-callout-tip}
+You can list and delete SSH keys using the Magento Cloud CLI commands `magento-cloud ssh-key:list` and `magento-cloud ssh-key:delete`.
 
 ### Add a key using the Project Web Interface {#add-key-web}
 
@@ -164,6 +167,9 @@ To add an SSH key using the Project Web Interface:
    ![Add SSH key]({{ site.baseurl }}/common/images/cloud/cloud_ssh-key-add.png)
 
 1. Follow the prompts on your screen to complete the task.
+
+{:.bs-callout-tip}
+You can view and manage SSH keys on your account in Account settings. In the upper right corner of the Project Web interface, click click <your-user-name> > Account Settings.
 
 ## Set global Git variables
 
