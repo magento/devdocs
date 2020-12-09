@@ -33,8 +33,8 @@ In Magento 2, you have two options for specifying declarative notation:
 
 Consider the example of adding a custom carousel JS:
 
--  Copy `<carousel_name>.carousel.js` to `app/design/frontend/<package_name>/<theme_name>/web/js/<carousel_name>/`
--  Add your RequireJS module at `app/design/frontend/<package_name>/<theme_name>/web/js/carousel.js`
+1. Copy the `<carousel_name>.carousel.js` file to the `app/design/frontend/<package_name>/<theme_name>/web/js/<carousel_name>/` directory.
+1. Add your RequireJS module at `app/design/frontend/<package_name>/<theme_name>/web/js/carousel.js`.
 
    ```javascript
     define(['jquery','<carousel_name>'], function($)
@@ -44,8 +44,7 @@ Consider the example of adding a custom carousel JS:
             $(element).<carousel_name>(config);
         };
     });
-   ```
--  Add RequireJS config to `app/design/frontend/<package_name>/<theme_name>/requirejs-config.js`
+1. Add the RequireJS config to the `app/design/frontend/<package_name>/<theme_name>/requirejs-config.js` file.
 
     ```javascript
     var config = {
@@ -60,7 +59,7 @@ Consider the example of adding a custom carousel JS:
 
 You now have two options for specifying declarative notation:
 
--  use the `data-mage-init` attribute to insert the carousel in a certain element:
+-  Use the `data-mage-init` attribute to insert the carousel in a certain element:
 
     ```html
     <div data-mage-init='{"carousel":{"option": value}}'>
@@ -69,7 +68,8 @@ You now have two options for specifying declarative notation:
         <div class="item">Item n</div>
     </div>
     ```
--  use with `<script type="text/x-magento-init"/>`:
+
+-  Use with `<script type="text/x-magento-init"/>`:
 
     ```html
     <div id="<carousel_name>" class="carousel">
