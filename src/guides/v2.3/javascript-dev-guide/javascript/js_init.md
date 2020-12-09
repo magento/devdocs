@@ -37,10 +37,12 @@ Consider the example of adding a custom carousel JS
 -  Add your requirejs module at app/design/frontend/`<package_name>`/`<theme_name>`/web/js/carousel.js
    
    ```javascript
-   define(['jquery','<carousel_name>'], function($) {
-   return function(config, element) {
-   $(element).<carousel_name>(config);
-   };
+   define(['jquery','<carousel_name>'], function($) 
+   {
+        return function(config, element)
+        {
+            $(element).<carousel_name>(config);
+        };
    });
    ```
 -  Add RequireJS config to `app/design/frontend/<package_name>/<theme_name>/requirejs-config.js`
