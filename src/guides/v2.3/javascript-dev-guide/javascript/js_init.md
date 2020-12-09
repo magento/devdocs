@@ -31,7 +31,7 @@ In Magento 2, you have two options for specifying declarative notation:
 
    > This is used to target either a CSS selector or `*`. If the CSS selector matches multiple HTML elements, the script will run for each matched HTML element. For `*`, no HTML element is selected and the script will run once with the HTML DOM as its target. This method can be implemented from anywhere in the codebase to target any HTML element. This is preferred when direct access to the HTML element is restricted, or when there is no target HTML element.
 
-Consider the example of adding a custom carousel JS
+Consider the example of adding a custom carousel JS:
 
 -  Copy `<carousel_name>.carousel.js` to `app/design/frontend/<package_name>/<theme_name>/web/js/<carousel_name>/`
 -  Add your RequireJS module at `app/design/frontend/<package_name>/<theme_name>/web/js/carousel.js`
@@ -50,13 +50,14 @@ Consider the example of adding a custom carousel JS
     var config = {
     map: {
         '*': {
-            'carousel': 'js/carousel',
-            '<carousel_name>': 'js/<carousel_name>/<carousel_name>.carousel'
+                'carousel': 'js/carousel',
+                '<carousel_name>': 'js/<carousel_name>/<carousel_name>.carousel'
              }
         }
     };
     ```
- You now have two options for specifying declarative notation:
+
+You now have two options for specifying declarative notation:
 -  use the `data-mage-init` attribute to insert the carousel in a certain element:
 
     ```html
@@ -77,9 +78,8 @@ Consider the example of adding a custom carousel JS
 
     <script type="text/x-magento-init">
         {
-            "#<carousel_name>":
-            {
-            "carousel": {"option": value}
+            "#<carousel_name>": {
+                "carousel": {"option": value}
             }
         }
     </script>
