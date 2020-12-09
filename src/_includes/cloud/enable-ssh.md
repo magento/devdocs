@@ -139,6 +139,7 @@ To add an SSH key using the CLI:
    ```bash
    magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
    ```
+
 {:.bs-callout-tip}
 You can list and delete SSH keys using the Magento Cloud CLI commands `magento-cloud ssh-key:list` and `magento-cloud ssh-key:delete`.
 
