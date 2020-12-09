@@ -25,15 +25,15 @@ Types of changes:
 
 The approach of defining what each release should include was taken from [Semantic Versioning](https://semver.org/).
 
-   3-component version numbers
-   ---------------------------
-   ```text
-    X.Y.Z
-    | | |
-    | | +-- Backward Compatible changes (bug fixes)
-    | +---- Backward Compatible changes (new features)
-    +------ Backward Incompatible changes
-   ```
+3-component version numbers:
+
+```text
+   X.Y.Z
+   | | |
+   | | +-- Backward Compatible changes (bug fixes)
+   | +---- Backward Compatible changes (new features)
+   +------ Backward Incompatible changes
+```
 
 ### Z release
 
