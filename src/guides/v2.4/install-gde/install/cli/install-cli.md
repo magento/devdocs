@@ -37,7 +37,7 @@ The basic steps for updating or reinstalling your Magento application are:
 1. [Update the Magento application]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html).
 1. [Add/update components]({{ page.baseurl }}/install-gde/install/cli/dev_add-update.html).
 1. [Change versions of the Magento software]({{ page.baseurl }}/install-gde/install/cli/dev_downgrade.html) after cloning.
-1. [Reinstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/dev_reinstall.html).
+1. _(Update or reinstall only)_ [Reinstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/dev_reinstall.html).
 
 Follow these processes in this section's topics to update or reinstall your Magento application software.
 
