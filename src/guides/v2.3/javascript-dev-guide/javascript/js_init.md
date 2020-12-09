@@ -50,10 +50,10 @@ Consider the example of adding a custom carousel JS:
     var config = {
         map: {
             '*': {
-                'carousel': 'js/carousel',
-                '<carousel_name>': 'js/<carousel_name>/<carousel_name>.carousel'
+                    'carousel': 'js/carousel',
+                    '<carousel_name>': 'js/<carousel_name>/<carousel_name>.carousel'
+                }
             }
-        }
     };
     ```
 
