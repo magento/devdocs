@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.4.2 Release Notes
 ---
 
-Magento Open Source 2.4.1 introduces enhancements to performance and security. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page.
+Magento Open Source 2.4.2 introduces enhancements to performance and security. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page.
 
 This release includes over  new fixes to core code, and over security enhancements. It includes the resolution of almost  GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
@@ -53,7 +53,6 @@ This release contains enhancements to core quality, which improve the quality of
 This release includes Adobe Stock Integration v2.1.0.
 
 ### New Media Gallery
-
 
 ### GraphQL
 
