@@ -34,9 +34,9 @@ The following example moves items from one requisition list to another.
 ``` graphql
 mutation {
   moveItemsBetweenRequisitionLists(
-      sourceRequisitionListUid: "4"
-      destinationRequisitionListUid: "5"
-      requisitionListItem: ["2","3"]
+      sourceRequisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
+      destinationRequisitionListUid: "W16uZmlndXJhYmxlLakzLzUz"
+      requisitionListItemUids: ["2","3"]
     ) {
       source_requisition_list {
         uid
@@ -57,11 +57,11 @@ mutation {
   "data": {
     "moveItemsBetweenRequisitionLists": {
       "source_requisition_list": {
-          "uid": "4",
+          "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
           "items_count": 0
         },
       "destination_requisition_list": {
-          "uid": "5",
+          "uid": "W16uZmlndXJhYmxlLakzLzUz",
           "items_count": 2
         }
     }

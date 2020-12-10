@@ -34,9 +34,9 @@ The following example copies items from one requisition list to another.
 ``` graphql
 mutation {
   copyItemsBetweenRequisitionLists(
-      sourceRequisitionListUid: "4",
-      destinationRequisitionListUid: "5",
-      requisitionListItem: ["2","3"]
+      sourceRequisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz",
+      destinationRequisitionListUid: "W16uZmlndXJhYmxlLakzLzUz",
+      requisitionListItemUids: ["2","3"]
     ) {
     requisition_list {
       uid
@@ -53,7 +53,7 @@ mutation {
   "data": {
     "copyItemsBetweenRequisitionLists": {
       "requisition_list": {
-          "uid": "4",
+          "uid": "W16uZmlndXJhYmxlLakzLzUz",
           "items_count": 2
         }
     }
