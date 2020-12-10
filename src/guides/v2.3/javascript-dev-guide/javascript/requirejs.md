@@ -75,7 +75,7 @@ var config = {
 };
 ```
 
--Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/` and copy the contents of the input.html file from the `module_ui` template file. 
+-Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/` and copy the contents of the input.html file from the `module_ui` template file.
 
 {:.bs-callout-info}
 The path for `Magento_Ui/templates` is set to be `ui/template` in the requirejs-config.js module of `module_ui`, hence `ui/template` is used for specifying the path. If no paths are set, `<module_name>/templates` should be used.
