@@ -65,24 +65,23 @@ paths: {
 Consider the example of overwriting an HTML file in the adminhtml.
 In this example, the `max-length` value of the text-box in the `adminhtml` is altered. The HTML file is located at `vendor/magento/module_ui/view/base/web/templates/form/element/input.html`
 
--  Create a `requirejs-config.js` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/`
+1. Create a `requirejs-config.js` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/`
 
-```javascript
-var config = {
-    paths: {
-        'ui/template/form/element/input': '<vendor_name>_<module_name>/template/form/element/input'
-    }
-};
-```
+    ```javascript
+    var config = {
+        paths: {
+            'ui/template/form/element/input': '<vendor_name>_<module_name>/template/form/element/input'
+        }
+    };
+    ```
 
--  Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/` and copy the contents of the `input.html` file from the `module_ui` template file.
+2. Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/` and copy the contents of the `input.html` file from the `module_ui` template file.
+3. Change the maxlength value to be `512` which was originally set to be `256`.
+4. Run the Magento setup upgrade and setup compile commands.
+5. Confirm the modification by inspecting the element source code and check the `maxlength` value which should have changed to `512` as specified in the template.
 
 {:.bs-callout-info}
 The path for `Magento_Ui/templates` is set to be `ui/template` in the `requirejs-config.js` module of `module_ui`, hence `ui/template` is used for specifying the path. If no paths are set, `<module_name>/templates` should be used.
-
--  Change the maxlength value to be `512` which was originally set to be `256`.
--  Run the Magento setup upgrade and setup compile commands.
--  Confirm the modification by inspecting the element source code and check the `maxlength` value which should have changed to `512` as specified in the template.
 
 ### deps {#requirejs-config-deps}
 
