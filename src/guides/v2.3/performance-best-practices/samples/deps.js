@@ -1,6 +1,8 @@
 'use strict'
 const page = require('webpage').create()
 const system = require('system')
+const phantom = require('phantomjs')
+
 let address
 if (system.args.length === 1) {
   console.log('Usage: $phantomjs deps.js url')
