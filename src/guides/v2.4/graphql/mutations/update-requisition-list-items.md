@@ -26,7 +26,7 @@ mutation {
 
 ## Example usage
 
-The following example updates products in a requisition list.
+The following example updates the specified product's quantity in the requisition list.
 
 **Request:**
 
@@ -38,14 +38,18 @@ mutation {
         {
             item_id: "1"
             quantity: 2
-            selected_options: ["Y29uZmlndXJhYmxlLzkzLzUz","Y29uZmlndXJhYmxlLzE0NC8xNzE="]
-            entered_options: ["2","3"]
         }
       ]
     ) {
     requisition_list {
-      uid,
+      uid
       items_count
+      items {
+        items {
+            uid
+            quantity
+        }
+      }
     }
   }
 }
@@ -59,7 +63,13 @@ mutation {
     "updateRequisitionListItems": {
       "requisition_list": {
           "uid": "1",
-          "items_count": 1
+          "items_count": 1,
+          "items": {
+            "items": {
+                "uid": "1",
+                "quantity": 2
+            }
+          }
         }
     }
   }

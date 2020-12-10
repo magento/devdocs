@@ -44,7 +44,7 @@ mutation {
       ]
     ) {
     requisition_list {
-      uid,
+      uid
       items_count
     }
   }
