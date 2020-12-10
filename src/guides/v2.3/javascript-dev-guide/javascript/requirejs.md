@@ -84,8 +84,6 @@ The path for `Magento_Ui/templates` is set to be `ui/template` in the requirejs-
 - Run the Magento setup upgrade and setup compile commands.
 - Notice the modification by inspecting the element source code and having a look at the `maxlength` value which is changed to 512 as specified in the template.
 
-![]({{ site.baseurl }}/common/images/js/max_length.png)
-
 ### deps {#requirejs-config-deps}
 
 The `deps` configuration is used to add a dependency. It can either be used directly under `var config = {}` or under a [shim configuration](#requirejs-config-shim). Adding modules under an independent `deps` configuration will load the specified modules in all pages.
