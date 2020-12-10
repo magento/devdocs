@@ -4,7 +4,7 @@ title: addRequisitionListItemsToCart mutation
 b2b_only: true
 contributor_name: EY
 ---
-The `addRequisitionListItemsToCart` mutation adds requisition list items to cart.
+The `addRequisitionListItemsToCart` mutation adds requisition list items to the cart.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
@@ -61,7 +61,7 @@ The `addRequisitionListItemsToCart` mutation requires the following input.
 Attribute |  Data Type | Description
 --- | --- | ---
 `requisitionListItemUids`| [ID!] | An array of UIDs presenting products to be added to the cart. If no UIDs are specified, all items in the requisition list will be added to the cart
-`requisitionListUid`| ID | The unique ID of the requisition list
+`requisitionListUid`| ID! | The unique ID of the requisition list
 
 ## Output attributes
 

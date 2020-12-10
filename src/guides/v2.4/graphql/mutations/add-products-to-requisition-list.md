@@ -4,7 +4,7 @@ title: addProductsToRequisitionList mutation
 b2b_only: true
 contributor_name: EY
 ---
-The `addProductsToRequisitionList` mutation adds products to requisition list.
+The `addProductsToRequisitionList` mutation adds products to a requisition list.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
@@ -26,7 +26,7 @@ mutation {
 
 ## Example usage
 
-The following example adds products to requisition list.
+The following example adds products to a requisition list.
 
 **Request:**
 
@@ -85,7 +85,7 @@ Attribute |  Data Type | Description
 
 ### RequisitionListItemsInput attributes {#RequisitionListItemsInput}
 
-The `RequisitionListItemsInput` type contains the list of products to add in requisition list.
+The `RequisitionListItemsInput` type contains the list of products to add to a requisition list.
 
 Attribute |  Data Type | Description
 --- | --- | ---
