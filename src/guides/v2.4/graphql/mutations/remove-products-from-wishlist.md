@@ -153,5 +153,5 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
-`The current user cannot perform operations on wishlist` | An unauthorized user (guest) tried to add a item to wishlist, or an authorized user (customer) tried to add a item to wishlist of another customer.
-`The wishlist was not found.` | Provided field `wishlistId` is invalid or not exists for the customer.
+`The current user cannot perform operations on wishlist` | An unauthorized user (guest) tried to add an item to a wishlist, or an authorized user (customer) tried to add an item to a wishlist of another customer.
+`The wishlist was not found.` | Provided field `wishlistId` is invalid or does not exist for the customer.
