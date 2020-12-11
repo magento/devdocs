@@ -112,9 +112,9 @@ interface AdapterInterface
    ```bash
    vendor/bin/phpunit --config ./dev/tests/api-functional/phpunit_rest.xml
    ```
-   
+
    or
-   
+
    ```bash
    vendor/bin/phpunit --config ./dev/tests/api-functional/phpunit_soap.xml
    ```
