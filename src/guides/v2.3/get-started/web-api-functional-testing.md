@@ -117,6 +117,6 @@ interface AdapterInterface
    
    Run `phpunit` using the `/dev/tests/api-functional/phpunit_rest.xml` configuration file:
    
-    ```bash
+   ```bash
    vendor/bin/phpunit --config ./dev/tests/api-functional/phpunit_rest.xml
    ```
