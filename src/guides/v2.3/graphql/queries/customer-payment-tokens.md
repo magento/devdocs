@@ -64,6 +64,12 @@ query {
 
 {% include graphql/customer-payment-tokens.md %}
 
+## Errors
+
+Error | Description
+--- | ---
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
+
 ## Related topics
 
 [deletePaymentToken mutation]({{page.baseurl}}/graphql/mutations/delete-payment-token.html)

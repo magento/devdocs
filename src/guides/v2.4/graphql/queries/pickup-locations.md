@@ -78,6 +78,9 @@ Because `pageSize` is set to 1 and distance by `distance` is applied, result wil
 
 **Response:**
 
+If the Pickup location is not available for the given search term, the response will be empty.
+For the available Pickup location, the response would look like:
+
 ```json
 {
   "data": {
@@ -130,8 +133,8 @@ Use the `AreaInput` to apply filtration by distance. All attributes are required
 
 Attribute | Data type | Description
 --- | --- | ---
-`radius` | Int! | The radius to the search, in kilometers.
-`search_term` | String! | A combination of either the region, city, or postcode, a colon, and the country code. This value determines the location to use as the center of the search radius.  For example, `Austin:US`.
+`radius` | Int! | The radius to the search, in kilometers
+`search_term` | String! | A combination of either the region, city, or postcode, a colon, and the country code. This value determines the location to use as the center of the search radius.  Valid search terms include Texas:US, Austin:US, and 78740:US. The two-letter country code must be uppercase
 
 ### PickupLocationFilterInput object {#PickupLocationFilterInput}
 

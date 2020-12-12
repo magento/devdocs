@@ -22,8 +22,6 @@ Complete the following steps to enable, configure, and test Fastly early in your
 -  Update DNS configuration to route traffic to the Fastly service
 -  Test Fastly caching
 
-When you are ready to launch your Production site, you must update your DNS configuration to point your production domains to the Fastly service and complete additional configuration tasks. See [Launch checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html).
-
 {:.bs-callout-info}
 After you enable and verify that Fastly works with the default settings, you can customize cache configuration settings and enable additional options such as image optimization, edge modules, and custom VCL code. See [Customize cache configuration]({{ site.baseurl }}/cloud/cdn/configure-fastly-customize-cache.html).
 
@@ -163,8 +161,8 @@ These are the default pre-production URLs available as soon as your project is p
 
 You must update your DNS configuration to route traffic from your store URLs to the Fastly service. When you update the configuration, Magento automatically provisions the required SSL/TLS certificates and uploads them to your Cloud environments. This provisioning can take up to 12 hours.
 
-{:.bs-callout-tip}
-Check with your [DNS registrar](https://lookup.icann.org/) for information about updating the DNS configuration.
+{:.bs-callout-info}
+When you are ready to launch your Production site, you must update the DNS configuration again to point your production domains to the Fastly service and complete additional configuration tasks. See [Launch checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html).
 
 **Prerequisites:**
 
@@ -173,6 +171,7 @@ Check with your [DNS registrar](https://lookup.icann.org/) for information about
 -  Provide a list of top-level and subdomains for each environment to your Customer Technical Advisor (CTA) or submit them in a Magento Support ticket.
 -  Wait for confirmation that the specified domains have been added to your Cloud environments.
 -  On Starter projects, add the domains to your Fastly service configuration. See [Manage domains]({{ site.baseurl }}/cloud/cdn/configure-fastly-customize-cache.html#manage-domains).
+-  For information about updating the DNS configuration, check with your [DNS registrar](https://lookup.icann.org/) for the correct method for your domain service.
 
 {:.procedure}
 To update your DNS configuration for development:
@@ -185,6 +184,9 @@ To update your DNS configuration for development:
    | mcstaging.your-domain.com | prod.magentocloud.map.fastly.net
 
    When the CNAME records are live, Magento provisions certificates and uploads the SSL/TLS certificates.
+
+   {:.bs-callout-info}
+   If you plan to use apex domains (`your-domain.com`) for your Production site, you must configure DNS address records (A records) to point to the Fastly server IP addresses. See [Update DNS configuration with production settings]({{ site.baseurl }}/cloud/live/site-launch-checklist.html#dns).
 
 1. Add ACME challenge CNAME records for domain validation and pre-provisioning of Production SSL/TLS certificates, for example:
 
@@ -207,7 +209,7 @@ To update your DNS configuration for development:
 
    -  Use the Magento CLI to change the base URL for your store.
 
-      ```
+      ```bash
       php bin/magento setup:store-config:set --base-url="https://mcstaging.your-domain.com/"
       ```
 
