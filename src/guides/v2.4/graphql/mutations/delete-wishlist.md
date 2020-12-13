@@ -24,8 +24,13 @@ The following example deletes a wish list.
 
 ``` graphql
 mutation{
-  deleteWishlist(wishlistId: 5){
+  deleteWishlist(wishlistId: 3){
     status
+    wishlists {
+      id
+      name
+      items_count
+    }
   }
 }
 ```
@@ -36,7 +41,19 @@ mutation{
 {
   "data": {
     "deleteWishlist": {
-      "status": true
+      "status": true,
+      "wishlists": [
+        {
+          "id": "1",
+          "name": "Vacation Wants",
+          "items_count": 7
+        },
+        {
+          "id": "2",
+          "name": "Lose the Muffintop",
+          "items_count": 6
+        }
+      ]
     }
   }
 }

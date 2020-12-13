@@ -69,19 +69,19 @@ Attribute | Data type | Description
 
 ### GroupedProductWishlistItem attributes {#GroupedProductWishlistItem}
 
-The GroupedProductWishlistItem data type does not extend the `WishlistItemInterface`.
+The GroupedProductWishlistItem data type does not provide additional attributes to the `WishlistItemInterface`.
 
 ### SimpleWishlistItem attributes {#SimpleWishlistItem}
 
-The SimpleWishlistItem data type does not extend the `WishlistItemInterface`.
+The SimpleWishlistItem data type does not provide additional attributes to the `WishlistItemInterface`.
 
 ### VirtualWishlistItem attributes {#VirtualWishlistItem}
 
-The VirtualWishlistItem data type does not extend the `WishlistItemInterface`.
+The VirtualWishlistItem data type does not provide additional attributes to the `WishlistItemInterface`.
 
 ## Example usage
 
-The following mutation adds a downloadable product to the cart and returns detailed information about the product.
+The following mutation adds a downloadable product to a wish list and returns detailed information about the product.
 
 **Request:**
 
@@ -107,7 +107,6 @@ mutation {
       updated_at
       items_v2 {
         uid
-        description
         quantity
         added_at
         ... on DownloadableWishlistItem {
@@ -141,7 +140,6 @@ mutation {
         "items_v2": [
           {
             "uid": "MTQ=",
-            "description": null,
             "quantity": 1,
             "added_at": "2020-11-12 03:01:46",
             "links_v2": [

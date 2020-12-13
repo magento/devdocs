@@ -36,43 +36,53 @@ To determine the value of the `wishlistId` attribute, run the `customer` query a
 ``` graphql
 mutation {
   addProductsToWishlist(
-  wishlistId: 4
-  wishlistItems: [
-    {
-      sku: "24-MB01"
-      quantity: 1
-    }
-    {
-      sku: "WG-09"
-      quantity: 1
-    }
-    {
-      parent_sku: "WJ01"
-      sku: "WJ01-M-Red"
-      quantity: 1
-    }
-    {
-      sku: "24-WG080"
-      quantity: 1
-      selected_options: [
-        "YnVuZGxlLzEvMS8x"
-        "YnVuZGxlLzIvNC8x"
-        "YnVuZGxlLzMvNy8x"
-        "YnVuZGxlLzQvOC8x"
-      ]
-    }
-  ]){
+    wishlistId: 4
+    wishlistItems: [
+      {
+        sku: "24-MB01"
+        quantity: 1 
+      }
+      {
+        sku: "WG-09"
+        quantity: 1
+        }
+      {
+        parent_sku: "WJ01"
+        sku: "WJ01-M-Red"
+        quantity: 1
+      }
+      {
+        sku: "24-WG080"
+        quantity: 1
+        selected_options: [
+          "YnVuZGxlLzEvMS8x"
+          "YnVuZGxlLzIvNC8x"
+          "YnVuZGxlLzMvNy8x"
+          "YnVuZGxlLzQvOC8x"
+        ]
+      }
+    ]
+  ) {
     wishlist {
       id
       items_count
-      items_v2 {
+      items_v2 (currentPage: 1, pageSize: 8 ) {
         items {
           id
           quantity
+          ... on BundleWishlistItem {
+            bundle_options {
+              values {
+                id
+                label
+                quantity
+              }
+            }
+          }
           product {
+            uid
             name
             sku
-            uid
             price_range {
               minimum_price {
                 regular_price {
@@ -87,8 +97,8 @@ mutation {
                 }
               }
             }
+          }
         }
-      }
       }
     }
     user_errors {
@@ -111,12 +121,12 @@ mutation {
         "items_v2": {
           "items": [
             {
-              "id": "26",
+              "id": "20",
               "quantity": 1,
               "product": {
+                "uid": "MQ==",
                 "name": "Joust Duffle Bag",
                 "sku": "24-MB01",
-                "uid": "MQ==",
                 "price_range": {
                   "minimum_price": {
                     "regular_price": {
@@ -134,12 +144,12 @@ mutation {
               }
             },
             {
-              "id": "27",
+              "id": "21",
               "quantity": 1,
               "product": {
+                "uid": "MTIyNg==",
                 "name": "Stellar Solar Jacket",
                 "sku": "WJ01",
-                "uid": "MTIyNg==",
                 "price_range": {
                   "minimum_price": {
                     "regular_price": {
@@ -157,12 +167,50 @@ mutation {
               }
             },
             {
-              "id": "28",
+              "id": "22",
               "quantity": 1,
+              "bundle_options": [
+                {
+                  "values": [
+                    {
+                      "id": 1,
+                      "label": "Sprite Stasis Ball 55 cm",
+                      "quantity": 1
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "id": 4,
+                      "label": "Sprite Foam Yoga Brick",
+                      "quantity": 1
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "id": 7,
+                      "label": "Sprite Yoga Strap 10 foot",
+                      "quantity": 1
+                    }
+                  ]
+                },
+                {
+                  "values": [
+                    {
+                      "id": 8,
+                      "label": "Sprite Foam Roller",
+                      "quantity": 1
+                    }
+                  ]
+                }
+              ],
               "product": {
+                "uid": "NTI=",
                 "name": "Sprite Yoga Companion Kit",
                 "sku": "24-WG080",
-                "uid": "NTI=",
                 "price_range": {
                   "minimum_price": {
                     "regular_price": {

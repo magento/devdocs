@@ -148,7 +148,7 @@ mutation{
 
 ## Input attributes
 
-The `copyProductsToWishlist` mutation requires the following input.
+The `copyProductsBetweenWishlists` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
