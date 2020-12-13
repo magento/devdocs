@@ -40,7 +40,7 @@ mutation {
     wishlistItems: [
       {
         sku: "24-MB01"
-        quantity: 1 
+        quantity: 1
       }
       {
         sku: "WG-09"
