@@ -37,10 +37,10 @@ To get a list of all components used on the current page, you can use this code:
 require('uiRegistry').get(function(component){console.log(component.name)});
 ```
 
-### Asynchronous way of retrieving UI components from the registry
+### Asynchronous method of retrieving UI components from the registry
 
 {:.bs-callout-info}
-This way is **Recommended**, for the good performance.
+This is the **recommended** method for best performance.
 
 ```js
 module('trigger', true);
