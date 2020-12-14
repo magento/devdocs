@@ -15,7 +15,7 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.
 
 ## Security-only patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.4.1-p1) provides. Patch 2.4.0.12 (Composer package 2.4.1-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.4.1. All hot fixes that were applied to the 2.4.1 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release provides (for example, Magento 2.4.1-p1). Patch 2.4.0.12 (Composer package 2.4.1-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.4.1. All hot fixes that were applied to the 2.4.1 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
 
 For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.4.1-p1), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security-only patches include security bug fixes only, not the additional security enhancements that are included in the full patch.
 
@@ -238,11 +238,11 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-34264-->
 
-*  The shipping method estimator now works as expected when custom address attributes are present on the shipping step of the checkout workflow. Previously, Magento displayed this error message: `{"message":"Error occurred during \"custom_attributes\" processing. A custom attribute is specified with a missing attribute code. Verify the code and try again."}` [GitHub-27505](https://github.com/magento/magento2/issues/27505)
+*  The shipping method estimator now works as expected when custom address attributes are present on the shipping step of the checkout workflow. Previously, Magento displayed this error message: `{"message":"Error occurred during \"custom_attributes\" processing. A custom attribute is specified with a missing attribute code. Verify the code and try again."}` [GitHub-27505](https://github.com/magento/magento2/issues/27505)
 
 <!--- MC-35783-->
 
-*  Magento now displays the `You have no items in your shopping cart` message in the minicart as expected when a shopper removes the only item in their cart. Previously, cart data was not updated for 'checkout/cart/removeFailed' when a shopper removed the single item, and Magento displayed this message: `1 product requires your attention`.
+*  Magento now displays the `You have no items in your shopping cart` message in the mini cart as expected when a shopper removes the only item in their cart. Previously, cart data was not updated for 'checkout/cart/removeFailed' when a shopper removed the single item, and Magento displayed this message: `1 product requires your attention`.
 
 <!--- MC-36088-->
 
@@ -650,7 +650,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
    *  the `catalogsearch_fulltext` and `catalog_product_price` partial indexers were executed on a large catalog until these indexers completed execution.
 
-   *  the partial indexer was executed on either `catalog_category_product` or `catalog_product_category` indices, and at the same time a full reindex was executed on one of those indices. These two indexing processes could conflict, which resulted in products missing from category pages.
+   *  the partial indexer was executed on either `catalog_category_product` or `catalog_product_category` indices, and at the same time a full re-index was executed on one of those indices. These two indexing processes could conflict, which resulted in products missing from category pages.
 
    *  `bin/magento indexer:reindex inventory` was executed on a large catalog, products were missing from category pages until the `catalogsearch_fulltext` partial indexer completed execution.
 
@@ -686,7 +686,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8229 -->
 
-*  Attribute Repository code validation now respects `Magento\Eav\Model\Entity\Attribute::ATTRIBUTE_CODE_MAX_LENGTH` rather than a hardcoded value. [GitHub-29017](https://github.com/magento/magento2/issues/29017)
+*  Attribute Repository code validation now respects `Magento\Eav\Model\Entity\Attribute::ATTRIBUTE_CODE_MAX_LENGTH` rather than a hard coded value. [GitHub-29017](https://github.com/magento/magento2/issues/29017)
 
 ### Klarna
 
@@ -862,7 +862,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- MC-36647 -->
 
-*  Shoppers can no longer place an order after their session cookie has expired when persistent cart is enabled. Instead, Magento displays the login page so that the shopper can log in. Previously, Magento placed the order. Magento did not properly validate the persistent customer when `PHPSESSID `had expired, and `customerSession` was re-created from the persistent information.
+*  Shoppers can no longer place an order after their session cookie has expired when persistent cart is enabled. Instead, Magento displays the login page so that the shopper can log in. Previously, Magento placed the order. Magento did not properly validate the persistent customer when `PHPSESSID`had expired, and `customerSession` was re-created from the persistent information.
 
 <!--- MC-39127-->
 
@@ -920,7 +920,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36755-->
 
-*  Magento no longer archives an order before processing it. Previously, multiselect action on the Admin order grid affected unselected orders.
+*  Magento no longer archives an order before processing it. Previously, multi-select action on the Admin order grid affected unselected orders.
 
 <!--- MC-37371-->
 
@@ -1050,7 +1050,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-37761-->
 
-*   Orders being shipped to multiple addresses can now be saved during checkout when FPT is configured. Previously, after completing an order for multiple addresses, Magento displayed a blank page instead of the order success page.
+*  Orders being shipped to multiple addresses can now be saved during checkout when FPT is configured. Previously, after completing an order for multiple addresses, Magento displayed a blank page instead of the order success page.
 
 ### Test
 
@@ -1192,7 +1192,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-33732 -->
 
-* You can now use POST `http://&lt;domain&gt;/rest/V1/categories/` to create or update a category. Previously, Magento did not save the value if the `default_sort_by` value was set as an array. When the `default_sort_by` value was set as a string, Magento threw this error: `Error occurred during \"custom_attributes\" processing. Attribute \"default_sort_by\" has invalid value. The \"string\" value's type is invalid. The \"string[]\" type was expected. Verify and try again.`
+*  You can now use POST `http://&lt;domain&gt;/rest/V1/categories/` to create or update a category. Previously, Magento did not save the value if the `default_sort_by` value was set as an array. When the `default_sort_by` value was set as a string, Magento threw this error: `Error occurred during \"custom_attributes\" processing. Attribute \"default_sort_by\" has invalid value. The \"string\" value's type is invalid. The \"string[]\" type was expected. Verify and try again.`
 
 <!--- MC-35740 -->
 
