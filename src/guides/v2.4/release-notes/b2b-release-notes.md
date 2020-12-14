@@ -33,7 +33,7 @@ These release notes can include:
 
 -  {:.fix} Magento now displays the Create Requisition List popup as expected when you select the Create New Requisition List tab on the storefront. <!--- MC-37915-->
 
--  {:.fix} Requisition lists now include all grouped products and quantities that have been added to the list. Previously, when a merchant navigated to a requisition list after adding products to it from a product detail page, Magento displayed this error: `1 product(s) require your attention - Options were updated. Please review available configurations`. [GitHub-59](https://github.com/magento/partners-magento2b2b/issues/59)	<!--- MC-37621-->
+-  {:.fix} Requisition lists now include all grouped products and quantities that have been added to the list. Previously, when a merchant navigated to a requisition list after adding products to it from a product detail page, Magento displayed this error: `1 product(s) require your attention - Options were updated. Please review available configurations`. [GitHub-59](https://github.com/magento/partners-magento2b2b/issues/59) <!--- MC-37621-->
 
 -  {:.fix} The correct store view is now associated with the relevant website when you create a new company in a multi-site deployment. Previously, you could not create a company, and Magento displayed this error: `The store view is not in the associated website`. <!--- MC-37488-->
 
@@ -51,7 +51,7 @@ These release notes can include:
 
 -  {:.fix} Magento now sends new company user registration emails from the Magento store's address. Previously, this email was sent from the company administrator’s address. <!--- MC-36480-->
 
--  {:.fix} Magento now checks custom attributes for duplication of reserved company attribute names before permitting a merchant to save a new attribute.	<!--- MC-36282-->
+-  {:.fix} Magento now checks custom attributes for duplication of reserved company attribute names before permitting a merchant to save a new attribute. <!--- MC-36282-->
 
 ## Magento B2B - Version 1.3.0
 
