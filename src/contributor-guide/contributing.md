@@ -206,7 +206,7 @@ When you want to verify an issue or pull request, use the `instance` command to 
 @magento give me {$version} instance
 ```
 
-Replace `{$version}` with the version tag for the version required. The currently supported values are the latest [version tags](https://github.com/magento/magento2/tags) and the 2.4-develop branch. For example:
+Replace `{$version}` with the version tag or branch. The following values are supported: the version tag for the latest release and `2.4-develop` for the development branch.
 
 ```text
 @magento give me 2.4.0 instance
@@ -274,33 +274,6 @@ For example, append the following text to the PR comment to deploy a {{site.data
 ```text
 with edition b2b
 ```
-
-#### Environment
-
-Append the following text to your PR comment to specify the version for applications and services to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
-
-```text
-with env PHP {$phpVersion}, search-engine ElasticSearch {$searchEngineVersion}, database {$dbEngine} {$dbEngineVersion}
-```
-
-Replace variables in the command with the following values as needed for your environment:
-
--  `{$phpVersion}`–Specify the PHP version for the instance.
-
--  `{$searchEngineVersion}`–Specify the Elasticsearch version for the instance.
-
--  `{$dbEngine}`–Specify the database type, either `MariaDB` or `MySQL`.
-
--  `{$dbEngineVersion}`–Specify the version of the database engine for the instance.
-
-For example, append the following text to the PR comment to deploy an instance with PHP 7.4, Elasticsearch version 7, and MariaDB version 10.4.
-
-```text
-with env PHP 7.4, search-engine Elasticsearch 7, database MariaDB 10.4
-```
-
-{:.bs-callout-info}
-We generally recommend that you deploy the default environment. Use the custom configuration options only when you require a special configuration to test specfic use cases.
 
 #### Add extensions
 

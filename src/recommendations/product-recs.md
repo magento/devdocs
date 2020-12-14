@@ -30,6 +30,8 @@ When you install the `magento/product-recommendations` module, Adobe Sensei aggr
 
 Read the following topics to get started with Product Recommendations:
 
+-  [How to Implement Product Recommendations]({{ page.baseurl }}/recommendations/implementation.html)
+
 -  [Install and configure Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html)
 
 -  [Create Product Recommendations](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html)
