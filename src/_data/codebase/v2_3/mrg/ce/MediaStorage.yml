@@ -4,7 +4,5 @@ source_repo: magento2ce
 release: 2.3.6
 github_path: app/code/Magento/MediaStorage/README.md
 last_modified_at: '2015-02-26 14:04:15 +0200'
-content: 'The Magento_MediaStorage module implements functionality related with upload
+content: The Magento_MediaStorage module implements functionality related with upload
   media files and synchronize it by database.
-
-'

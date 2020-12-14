@@ -31,6 +31,12 @@ If you know a unique property value of a component that you need to find, you ca
 var component = registry.get('property = propertyValue');
 ```
 
+To get a list of all components used on the current page, you can use this code:
+
+```js
+require('uiRegistry').get(function(component){console.log(component.name)});
+```
+
 ### Asynchronous way of retrieving UI components from the registry 
 
 {:.bs-callout-info}

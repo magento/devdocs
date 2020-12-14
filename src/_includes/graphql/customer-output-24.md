@@ -11,6 +11,7 @@
 Attribute |  Data Type | Description
 --- | --- | ---
 `addresses` | {{ customeraddress_text }}  | An array containing the customer's shipping and billing addresses
+`allow_remote_shopping_assistance` | Boolean! | Indicates whether the customer has enabled remote shopping assistance
 `created_at` | String | Timestamp indicating when the account was created
 `date_of_birth` | String | The customer's date of birth
 `default_billing` | String | The ID assigned to the billing address
