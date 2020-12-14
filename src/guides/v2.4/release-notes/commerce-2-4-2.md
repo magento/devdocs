@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.4.2 Release Notes
 ---
 
-Magento Commerce 2.4.2 introduces enhancements to performance and security plus significant additions to the B2B feature set. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page. B2B improvements focus on the order approval process, B2B shipping methods, expanded logging of Admin actions, and enhanced security on storefront.
+Magento Commerce 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. B2B improvements focus on support for online payments for purchase orders. Elasticsearch 7.9.x and Redis 6.x are now supported.
 
 This release includes over 280 new fixes to core code, and over 30 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
@@ -62,13 +62,15 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Redis 6.x is now supported**. Magento 2.4.x remains compatible with Redis 5.x. <!--- MC-34853-->
 
-The ability to configure a Magento installation to use a split database has been deprecated in this release. Merchants who currently use split database should start planning to move to a single database or use an alternative approach.  See the DevBlog post for a discussion of how to revert to a single database deployment. <!--- MC-38429 39001-->
+The ability to configure a Magento installation to use a split database has been deprecated in this release. Merchants who currently use split database should start planning to move to a single database or use an alternative approach. See the DevBlog post for a discussion of how to revert to a single database deployment. <!--- MC-38429 39001-->
 
-### Performance improvements
+### Performance enhancements
+
+This release includes code enhancements that boost API performance and Admin response time for deployments with large catalogs. Multiple scalability enhancements enable Magento 2.4.2 to natively support complex catalogs up to 20x larger than in previous releases.
 
 ### Adobe Stock Integration
 
-This release includes Adobe Stock Integration v2.1.0.
+This release includes Adobe Stock Integration v2.1.1.
 
 ### Page Builder
 
@@ -94,6 +96,30 @@ This release includes enhancements to Page Builder content migration and Page Bu
 
 This release adds GraphQL coverage for the following features:
 
+*  Localization to support updated and consistent information across stores for tasks including changing language, cart, and currency. <!--- MC-37801-->
+
+*  Setting catalog permissions for products based on customer group. <!--- MC-37388-->
+
+*  Implementation of consistent object IDs for all GraphQL object types. <!--- MC-36346-->
+
+*  Optimization of the GraphQL product data retrieval for configurable products with many variants. <!--- MC-36138-->
+
+*  Introduction of a schema that merchants can add to a shopper’s account to permit the shopper to view and manage their returns. <!--- MC-34596-->
+
+*  Ability to determine if a product is staged and to view its associated campaign information. <!--- MC-33897-->
+
+*  Creation of multiple wishlists and ability to add products to wishlists. <!--- MC-32356-->
+
+This release also adds GraphQL support for exposing this B2B functionality:
+
+*  company storefront <!--- MC-33861-->
+
+*  company credit <!--- MC-33862-->
+
+*  shared catalog storefront <!--- MC-33864-->
+
+*  requisition list storefront <!--- MC-34312-->
+
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
 ### PWA Studio
@@ -114,9 +140,9 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 ### B2B
 
-Magento 2.4.2 introduces B2B v1.4.0. This release includes support for online payments for purchase orders as well as multiple bug fixes.
+Magento 2.4.2 introduces B2B v1.3.1. This release includes support for online payments for purchase orders as well as multiple bug fixes.
 
-Purchase orders can now be completed using online payment methods. B2B buyers are prompted to select their preferred payment method for each purchase order during the initial checkout (#232). After the purchase order has been approved, buyers are prompted to enter payment details to convert the purchase order to a final order.
+**Purchase orders can now be completed using online payment methods**. B2B buyers are prompted to select their preferred payment method for each purchase order during the initial checkout (#232). After the purchase order has been approved, buyers are prompted to enter payment details to convert the purchase order to a final order.
 
 To support a complete workflow for accepting online payments, this feature also:
 
@@ -133,8 +159,6 @@ To support a complete workflow for accepting online payments, this feature also:
 *  Prevents discount codes from being added or removed at the final payment step, which ensures that the order total amount remains unchanged for approved purchase orders.
 
 *  Allows buyers to change the payment method during the final payment step to maintain flexibility and increase conversion.
-
-*  Blocks unexpected changes to the shipping amount and purchase order total when the buyer enters payment details.
 
 This release also includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
@@ -154,6 +178,16 @@ This release also includes multiple bug fixes. See [B2B Release Notes]({{page.ba
 
 **Web-optimized images in content**. Merchants can now use web-optimized image rendition in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
 
+### AWS S3 support enhancements
+
+Amazon Simple Storage Service (AWS S3) support has been enhanced to include support for:
+
+*  object storage and future extensibility
+
+*  storing media files on AWS S3
+
+Support for AWS S3 has been added to all modules including B2B, PageBuilder, and Adobe Stock Integration.
+
 ### Magento Functional Testing Framework (MFTF)
 
 MFTF 3.2.0 is now available. This release introduces error tolerance in both tests and test suit generation.  Additional enhancements and bug fixes are described in the [Magento Functional Testing Framework Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md).
@@ -162,7 +196,7 @@ MFTF 3.2.0 is now available. This release introduces error tolerance in both te
 
 See the following articles for updates on features and changes for this release:
 
-*  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html). Amazon Pay is deprecated in this release and will be removed in Magento 2.5.0. Magento 2.4.3 and higher will contain only updates for compatibility and fixes for major bugs.
+*  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html). Amazon Pay has been deprecated in this release and will be removed in Magento 2.5.0. Magento 2.4.3 and higher will contain only updates for compatibility and fixes for major bugs.
 
 *  [Braintree](https://docs.magento.com/user-guide/payment/braintree.html)
 
@@ -177,8 +211,6 @@ See the following articles for updates on features and changes for this release:
 ## Fixed issues
 
 We have fixed hundreds of issues in the Magento 2.4.2 core code.
-<!--- MC-36113-->
-<!-- ENGCOM-7976 -->
 
 ### Installation, upgrade, deployment
 
@@ -188,7 +220,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7280 -->
 
-Magento now displays an error message that identifies the path that was used to create the patch if an error occurs when running `setup:db:generate-patch`. [GitHub-27523](https://github.com/magento/magento2/issues/27523)
+*  Magento now displays an error message that identifies the path that was used to create the patch if an error occurs when running `setup:db:generate-patch`. [GitHub-27523](https://github.com/magento/magento2/issues/27523)
 
 <!-- ENGCOM-8029 -->
 
@@ -196,7 +228,7 @@ Magento now displays an error message that identifies the path that was used to 
 
 <!-- ENGCOM-8184 -->
 
-The minimum required PHP version in `bootstrap.php` has been updated. [GitHub-30004](https://github.com/magento/magento2/issues/30004)
+*  The minimum required PHP version in `bootstrap.php` has been updated. [GitHub-30004](https://github.com/magento/magento2/issues/30004)
 
 <!--- MC-38788-->
 
@@ -204,7 +236,7 @@ The minimum required PHP version in `bootstrap.php` has been updated. [GitHub-30
 
 <!--- MC-36785-->
 
-You can now set a YouTube API key from the command line as expected. Previously, Magento returned this error when you tried to execute `bin/magento config:sensitive:set catalog/product_video/youtube_api_key`: `There are no sensitive configurations to fill`.
+*  You can now set a YouTube API key from the command line as expected. Previously, Magento returned this error when you tried to execute `bin/magento config:sensitive:set catalog/product_video/youtube_api_key`: `There are no sensitive configurations to fill`.
 
 ### AdminGWS
 
@@ -266,7 +298,7 @@ You can now set a YouTube API key from the command line as expected. Previously,
 
 <!--- MC-38460 -->
 
-*  Magento now assigns correct product prices when you re-order simple products that are part of a bundle product with a custom price. Previously, setting a custom price on a bundle product resulted in incorrect prices on attached simple products when reordered. [GitHub-30343](https://github.com/magento/magento2/issues/30343)	
+*  Magento now assigns correct product prices when you re-order simple products that are part of a bundle product with a custom price. Previously, setting a custom price on a bundle product resulted in incorrect prices on attached simple products when reordered. [GitHub-30343](https://github.com/magento/magento2/issues/30343)
 
 ### Cart and checkout
 
@@ -336,7 +368,7 @@ You can now set a YouTube API key from the command line as expected. Previously,
 
 <!--- MC-37321-->
 
-*  All new records in the `quote` table for guests are now assigned a value of 1 in the `customer_is_guest field`. Previously, for each new guest who added a product into cart, the record was assigned a 0 in the `quote.customer_is_guest` field.
+*  All new records in the `quote` table for guests are now assigned a value of 1 in the `customer_is_guest field`. Previously, for each new guest who added a product into cart, the record was assigned a 0 in the`quote.customer_is_guest` field.
 
 ### Catalog
 
@@ -484,15 +516,15 @@ You can now set a YouTube API key from the command line as expected. Previously,
 
 ### cron
 
-<!--- MC-37306-->
+<!--- MC-37712-->
 
-*  Sitemaps that are generated by `cron` now include the correct image URL. Previously, the generated cached image path was incorrect in multi-store deployments.
+*  The System Message list now accurately reflects product updates after `cron` has run and Magento has updated products as scheduled.
 
 ### Custom customer attributes
 
 <!--- MC-23545-->
 
-*  Magento now displays customer attributes of type `file` on the Account Information page after creation. Previously, when you tired to save a new attribute of this type, Magento displayed these errors: `The "newAttribute" attribute value is empty. Set the attribute and try again` and `’Validation is failed`.
+*  Magento now displays customer attributes of type `file` on the Account Information page after creation. Previously, when you tried to save a new attribute of this type, Magento displayed these errors: `The "newAttribute" attribute value is empty. Set the attribute and try again` and `’Validation is failed`.
 
 <!--- MC-23544-->
 
@@ -525,7 +557,7 @@ You can now set a YouTube API key from the command line as expected. Previously,
 <!--- MC-34650-->
 
 *  Magento now saves custom customer attribute values for B2B users as expected. Previously, custom customer attributes created for adding or editing company users were not bound with the Add New User form, and as a result, attribute values were not saved. In addition, the custom date attribute was derived from the database as a string and was not converted to proper date format for storefront display.
-  
+
 ### Customer
 
 <!--- MC-35771-->
@@ -602,6 +634,10 @@ You can now set a YouTube API key from the command line as expected. Previously,
 
 *  Email sent to customers that contain partial invoices now includes accurate item subtotals. Previously, the subtotal in this email was the total of the ordered quantity, not the total amount of the invoiced quantity.
 
+<!--- MC-38337-->
+
+*  Magento now sends email reminders to all relevant customers with valid email addresses. Previously, Magento stopped sending reminder emails to customers after encountering one invalid address.
+
 ### Frameworks
 
 <!--- MC-37369-->
@@ -627,7 +663,9 @@ You can now set a YouTube API key from the command line as expected. Previously,
 *  The following improvements have been made to the `LoginAsCustomer` modules:
 
    *  Replaced the `around` plugin with `after`
+
    *  Removed redundant code
+
    *  Replaced `(bool)->getValue()` with `isSetFlag`. [GitHub-29689](https://github.com/magento/magento2/issues/29689)
 
 <!-- ENGCOM-8117 -->
@@ -645,10 +683,6 @@ You can now set a YouTube API key from the command line as expected. Previously,
 <!-- ENGCOM-7994 -->
 
 *  Magento now passes exceptions that occur when a layout is rendered in production mode to `var/report`. [GitHub-29606](https://github.com/magento/magento2/issues/29606)
-
-<!--- MC-37712-->
-
-*  The System Message list now accurately reflects product updates after `cron` has run and Magento has updated products as scheduled.
 
 ### Gift cards
 
@@ -673,8 +707,6 @@ You can now set a YouTube API key from the command line as expected. Previously,
 <!--- MC-38781-->
 
 *  Google Tag Manager configurable product options now update as expected in the datalayer after you edit a configurable product options in the cart. Previously, the data for the `removeFromCart` event was incorrectly rewritten when the product option was changed, and the quantity remained the same.
-
-### GraphQL
 
 ### Grouped products
 
@@ -744,11 +776,11 @@ You can now set a YouTube API key from the command line as expected. Previously,
 
 *  We have resolved issues with the manual indexer that had resulted in either empty category pages or reduced product count on category pages. Issues with incomplete category pages or product count occurred when:
 
-   * the `catalogsearch_fulltext` and `catalog_product_price` partial indexers were executed on a large catalog until these indexers completed execution.
+   *  the `catalogsearch_fulltext` and `catalog_product_price` partial indexers were executed on a large catalog until these indexers completed execution.
 
-   * the partial indexer was executed on either `catalog_category_product` or `catalog_product_category` indices, and at the same time a full reindex was executed on one of those indices. These two indexing processes could conflict, which resulted in products missing from category pages.
+   *  the partial indexer was executed on either `catalog_category_product` or `catalog_product_category` indices, and at the same time a full reindex was executed on one of those indices. These two indexing processes could conflict, which resulted in products missing from category pages.
 
-   * `bin/magento indexer:reindex inventory` was executed on a large catalog, products were missing from category pages until the `catalogsearch_fulltext` partial indexer completed execution.
+   *  `bin/magento indexer:reindex inventory` was executed on a large catalog, products were missing from category pages until the `catalogsearch_fulltext` partial indexer completed execution.
 
 <!--- MC-39700-->
 
@@ -806,126 +838,81 @@ You can now set a YouTube API key from the command line as expected. Previously,
 
 *  The Tags drop-down menu is now empty as expected after you remove tags from an image in the Media Gallery.  [GitHub-1703](https://github.com/magento/adobe-stock-integration/issues/1703)
 
-### Mail
-
-<!--- MC-38337-->
-
-*  Magento now sends email reminders to all relevant customers with valid email addresses. Previously, Magento stopped sending reminder emails to customers after encountering one invalid address.
-
 ### MFTF
 
 <!-- ENGCOM-8359 -->
 
 *  Replaced repetitive actions with action groups in `CheckStaticBlocksTest`. [GitHub-30561](https://github.com/magento/magento2/issues/30561)
 
-<!-- ENGCOM-8439 -->
-
-*  Added `AdminClickAddProductToggleAndSelectProductTypeActionGroup` [GitHub-30917](https://github.com/magento/magento2/issues/30917)
-
-<!-- ENGCOM-8454 -->
-
-*  Added `StorefrontCheckoutClickSaveAddressButtonActionGroup`. [GitHub-30916](https://github.com/magento/magento2/issues/30916)
-
-<!-- ENGCOM-8432 -->
-
-*  Added `AdminOpenCurrencyRatesPageActionGroup`. [GitHub-30783](https://github.com/magento/magento2/issues/30783)
-
 <!-- ENGCOM-8267 -->
 
 *  `AdminUpdateCategoryAndMakeInactiveTest` and `VerifyChildCategoriesShouldNotIncludeInMenuTest` have been refactored to comply with MFTF best practices. [GitHub-30058](https://github.com/magento/magento2/issues/30058)
-
-<!-- ENGCOM-8128 -->
-
-*  Added `AdminOpenCatalogSearchTermIndexPageActionGroup`. [GitHub-29844](https://github.com/magento/magento2/issues/29844)
 
 <!-- ENGCOM-8458 -->
 
 *  Removed duplicated `AdminOpenCMSBlocksGridActionGroup`. [GitHub-30896](https://github.com/magento/magento2/issues/30896)
 
-<!-- ENGCOM-8123 -->
-
-*  Added `AdminOpenIndexManagementPageActionGroup`. [GitHub-29825](https://github.com/magento/magento2/issues/29825)
-
 <!-- ENGCOM-8156 -->
 
 *  Replaced `AdminOpentCmsBlockActionGroup` with AdminOpenCmsBlockActionGroup. [GitHub-29839](https://github.com/magento/magento2/issues/29839)
 
-#### New action groups
+<!-- ENGCOM-8226 -->
 
-<!-- ENGCOM-8121 -->
-
-*  Added `AssertStorefrontCustomerLogoutSuccessPageActionGroup`. [GitHub-29841](https://github.com/magento/magento2/issues/29841)
-
-<!-- ENGCOM-8259 -->
-
-Added `AdminOpenConfigurationStoresPageActionGroup`.  [GitHub-29848](https://github.com/magento/magento2/issues/29848)
-
-<!-- ENGCOM-8394 -->
-Added `ReloadPageActionGroup`. [GitHub-30683](https://github.com/magento/magento2/issues/30683)
-
-<!-- ENGCOM-8203 -->
-Added `StorefrontClickRefundTabCustomerOrderViewActionGroup`.[GitHub-30032](https://github.com/magento/magento2/issues/30032)
-
-<!-- ENGCOM-8115 -->
-Added `AdminOpenAdminThreeDSecurePageActionGroup`. [GitHub-29845](https://github.com/magento/magento2/issues/29845)
-
-<!-- ENGCOM-8043 -->
-
-AdminCustomerClickFirstRowEditLinkActionGroup  [GitHub-29501](https://github.com/magento/magento2/issues/29501)
+*  Deprecated `GoToAttributeGridPageActionGroup`. [GitHub-30103](https://github.com/magento/magento2/issues/30103)
 
 <!-- ENGCOM-8061 -->
 
-Added action groups to the `Analytics` module. [GitHub-29500](https://github.com/magento/magento2/issues/29500)
-
-<!-- ENGCOM-8113 -->
-
-Added `StorefrontClickAddToCartButtonActionGroup`. [GitHub-29823](https://github.com/magento/magento2/issues/29823)
-
-<!-- ENGCOM-8192 -->
-
-Added `AdminDeleteTaxRateActionGroup`. [GitHub-29940](https://github.com/magento/magento2/issues/29940)
-
-<!-- ENGCOM-8126 -->
-Added `AdminOpenWebConfigurationPageActionGroup`. [GitHub-29846](https://github.com/magento/magento2/issues/29846)
-
-<!-- ENGCOM-8114 -->
-
-Added `AdminOpenGeneralConfigurationPageActionGroup`. [GitHub-29847](https://github.com/magento/magento2/issues/29847)
-
-<!-- ENGCOM-8226 -->
-
-Deprecated `GoToAttributeGridPageActionGroup`. [GitHub-30103](https://github.com/magento/magento2/issues/30103)
-
-<!-- ENGCOM-8023 -->
-
-AdminOrderClickSubmitOrderActionGroup [GitHub-29649](https://github.com/magento/magento2/issues/29649)
-
-<!-- ENGCOM-8209 -->
-
-Added `AdminOpenCatalogProductPageActionGroup`. [GitHub-29941](https://github.com/magento/magento2/issues/29941)
-
-<!-- ENGCOM-8210 -->
-
-Added `AdminClickInvoiceButtonIntoOrderActionGroup`. [GitHub-25399](https://github.com/magento/magento2/issues/25399)
+*  Added action groups to the `Analytics` module. [GitHub-29500](https://github.com/magento/magento2/issues/29500)
 
 <!-- ENGCOM-7334 -->
 
-Added AdminGridBulkActionGroup.
-Added AdminGridColumnShowActionGroup.
-
-Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSuccessPageAsGuestTest to cancel created orders after the tests run. [GitHub-28324](https://github.com/magento/magento2/issues/28324)
+*  Updated `CheckCheckoutSuccessPageAsRegisterCustomerTest` and `CheckCheckoutSuccessPageAsGuestTest` to cancel created orders after tests run. [GitHub-28324](https://github.com/magento/magento2/issues/28324)
 
 <!-- ENGCOM-8214 -->
-Removed AdminNavigateToPageGridActionGroup due to redundancy.[GitHub-29838](https://github.com/magento/magento2/issues/29838)
 
-<!-- ENGCOM-7334 -->
+*  Removed `AdminNavigateToPageGridActionGroup` due to redundancy.[GitHub-29838](https://github.com/magento/magento2/issues/29838)
 
-Added AdminGridBulkActionGroup.
-Added AdminGridColumnShowActionGroup.
+#### New action groups
 
-Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSuccessPageAsGuestTest to cancel created orders after the tests run. [GitHub-28324](https://github.com/magento/magento2/issues/28324)
+*  `AssertStorefrontCustomerLogoutSuccessPageActionGroup`. [GitHub-29841](https://github.com/magento/magento2/issues/29841) <!-- ENGCOM-8121 -->
 
-#### New tests
+*  `AdminOpenConfigurationStoresPageActionGroup`. [GitHub-29848](https://github.com/magento/magento2/issues/29848) <!-- ENGCOM-8259 -->
+
+*  `ReloadPageActionGroup`. [GitHub-30683](https://github.com/magento/magento2/issues/30683) <!-- ENGCOM-8394 -->
+
+*  `StorefrontClickRefundTabCustomerOrderViewActionGroup`.[GitHub-30032](https://github.com/magento/magento2/issues/30032) <!-- ENGCOM-8203 -->
+
+*  `AdminOpenAdminThreeDSecurePageActionGroup`. [GitHub-29845](https://github.com/magento/magento2/issues/29845) <!-- ENGCOM-8115 -->
+
+*  `AdminCustomerClickFirstRowEditLinkActionGroup`  [GitHub-29501](https://github.com/magento/magento2/issues/29501) <!-- ENGCOM-8043 -->
+
+*  `StorefrontClickAddToCartButtonActionGroup`. [GitHub-29823](https://github.com/magento/magento2/issues/29823) <!-- ENGCOM-8113 -->
+
+*  `AdminDeleteTaxRateActionGroup`. [GitHub-29940](https://github.com/magento/magento2/issues/29940) <!-- ENGCOM-8192 -->
+
+*  `AdminOpenWebConfigurationPageActionGroup`. [GitHub-29846](https://github.com/magento/magento2/issues/29846) <!-- ENGCOM-8126 -->
+
+*  `AdminOpenGeneralConfigurationPageActionGroup`. [GitHub-29847](https://github.com/magento/magento2/issues/29847) <!-- ENGCOM-8114 -->
+
+*  `AdminOrderClickSubmitOrderActionGroup` [GitHub-29649](https://github.com/magento/magento2/issues/29649) <!-- ENGCOM-8023 -->
+
+*  `AdminOpenCatalogProductPageActionGroup`. [GitHub-29941](https://github.com/magento/magento2/issues/29941) <!-- ENGCOM-8209 -->
+
+*  `AdminClickInvoiceButtonIntoOrderActionGroup`. [GitHub-25399](https://github.com/magento/magento2/issues/25399) <!-- ENGCOM-8210 -->
+
+*  `AdminGridBulkActionGroup` [GitHub-28324](https://github.com/magento/magento2/issues/28324)<!-- ENGCOM-7334 -->
+
+*  `AdminGridColumnShowActionGroup` [GitHub-28324](https://github.com/magento/magento2/issues/28324)<!-- ENGCOM-7334 -->
+
+*  `AdminOpenIndexManagementPageActionGroup`. [GitHub-29825](https://github.com/magento/magento2/issues/29825) <!-- ENGCOM-8123 -->
+
+*  `AdminOpenCatalogSearchTermIndexPageActionGroup`. [GitHub-29844](https://github.com/magento/magento2/issues/29844) <!-- ENGCOM-8128 -->
+
+*  `AdminClickAddProductToggleAndSelectProductTypeActionGroup` [GitHub-30917](https://github.com/magento/magento2/issues/30917) <!-- ENGCOM-8439 -->
+
+*  `StorefrontCheckoutClickSaveAddressButtonActionGroup`. [GitHub-30916](https://github.com/magento/magento2/issues/30916) <!-- ENGCOM-8454 -->
+
+*  `AdminOpenCurrencyRatesPageActionGroup`. [GitHub-30783](https://github.com/magento/magento2/issues/30783) <!-- ENGCOM-8432 -->
 
 ### Newsletter
 
@@ -936,10 +923,6 @@ Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSucce
 <!-- ENGCOM-8034 -->
 
 *  Magento now re-sends newsletter subscription confirmation if the shopper does not confirm their newsletter subscription. [GitHub-28422](https://github.com/magento/magento2/issues/28422)
-
-### Orders
-
-### Page Builder
 
 ### Payment methods
 
@@ -1021,8 +1004,6 @@ Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSucce
 
 *  Magento no longer displays the contents of a customer’s cart after the customers session expires. Previously, Magento displayed this error when a guest customer tried to check out when persistent shopping cart was enabled: `No such entity with cartid = 0`.
 
-### Quote
-
 ### Reports
 
 <!--- MC-36652-->
@@ -1059,7 +1040,7 @@ Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSucce
 
 <!--- MC-37145-->
 
-*  The number of ratings displayed on **Stores** > **Attribute** > **Rating** now matches the ratings count in a multi-site deployment. [GitHub-30258](https://github.com/magento/magento2/issues/30258)	
+*  The number of ratings displayed on **Stores** > **Attribute** > **Rating** now matches the ratings count in a multi-site deployment. [GitHub-30258](https://github.com/magento/magento2/issues/30258)
 
 <!--- MC-37117-->
 
@@ -1201,6 +1182,10 @@ Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSucce
 
 ### Sitemap
 
+<!--- MC-37306-->
+
+*  Sitemaps that are generated by `cron` now include correct image URLs. Previously, the generated cached image path was incorrect in multi-store deployments.
+
 ### Staging
 
 <!--- MC-34988 -->
@@ -1229,10 +1214,6 @@ Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSucce
 
 *  The Admin and main store switcher now reflect changes made to the store sort order in the Admin.  [GitHub-13401](https://github.com/magento/magento2/issues/13401)
 
-### Swagger
-
-### Swatches
-
 ### TargetRule
 
 <!--- MC-34998-->
@@ -1258,10 +1239,10 @@ Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSucce
 <!--- MC-37364-->
 
 *  `bin/magento dev:tests:run` now launches the following tests as expected: all, unit, integration, integration-all, static, static-all, integrity, legacy, and default.
-	
+
 <!--- MC-38488-->
 
-`AdminMediaGalleryInsertLargeImageFileSizeTest` has been refactored.
+*  `AdminMediaGalleryInsertLargeImageFileSizeTest` has been refactored.
 
 <!-- ENGCOM-8158 -->
 
@@ -1377,10 +1358,6 @@ Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSucce
 
 *  Magento now preserves an attribute’s value when you move the attribute from one group to another.
 
-### URL rewrites
-
-### Varnish
-
 ### Vault
 
 <!--- MC-39109-->
@@ -1396,8 +1373,6 @@ Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSucce
 *  Vertex address validation no longer adds the Address Edit page to the full-page cache in certain conditions.
 
 *  Vertex-calculated tax is now considered when free shipping is configured for an amount inclusive of tax.
-
-### Visual Merchandiser
 
 ### Web API framework
 
@@ -1425,8 +1400,6 @@ Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSucce
 
 *  The `rest/all/V1/categories` and `rest/all/V1/categories?rootCategoryId=2` calls now return populated `name` and `product_count` fields as expected for all categories in the tree. Previously, the category field values were empty. The table name resolver plugin returned an incorrect table name for fetching the count of products by category.
 
-### Website restrictions
-
 ### Wishlist
 
 <!--- MC-33626-->
@@ -1447,7 +1420,7 @@ Updated CheckCheckoutSuccessPageAsRegisterCustomerTest and CheckCheckoutSucce
 
 ## Known issue
 
-**Issue**: Payment-specific discounts persist during checkout for a purchase order even when the buyer changes payment method during checkout. As a result, customers may receive a discount that they are not entitled to. This occurs because a payment-specific cart rule is still applied despite the change in payment method. **Workaround**: None. <!-- KB-827 -->
+**Issue**: Discounts for a specific payment method persist during checkout for a purchase order even when the buyer changes payment method during final checkout. As a result, customers may receive a discount that they are not entitled to. This occurs because a cart rule for the original payment method is still applied despite the change in payment method. **Workaround**: None. <!-- KB-827 -->
 
 ## Community contributions
 
