@@ -24,6 +24,7 @@ These release notes can include:
 -  {:.fix} Magento no longer displays multiple identical warning messages when you add an unconfigured product with customizable options to a Requisition List from a Category page. <!--- MC-38342-->
 
 -  {:.fix} New and duplicated products are now visible as expected on the category page when B2B shared catalogs are enabled. <!--- MC-38307-->
+
 -  {:.fix} Magento now maintains the correct `store_id` that is associated with a company administrator when the customer group for a company is updated. Previously, the `store_id` changed to the default store when the group was updated. <!--- MC-38196-->
 
 -  {:.fix} Magento now saves a grouped product to a requisition list as a list of simple products in the same way as it adds a grouped product to a shopping cart. Previously, due to how Magento saved grouped products, the link for a grouped product from the requisition list always redirected to simple products and not to the grouped product. <!--- MC-38049-->
