@@ -20,29 +20,29 @@ Magento stores the hashed data version in Redis, with the suffix ':version' appe
 
 ```php
 'cache' => [
-    [
+    'frontend' => [
         'default' => [
-             'backend' => '\\Magento\\Framework\\Cache\\Backend\\RemoteSynchronizedCache',
-             'backend_options' => [
-                 'remote_backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
-                 'remote_backend_options' => [
-                     'persistent' => 0,
-                     'server' => 'localhost',
-                     'database' => '0',
-                     'port' => '6370',
-                     'password' => '',
-                     'compress_data' => '1',
-                 ],
-                 'local_backend' => 'Cm_Cache_Backend_File',
-                 'local_backend_options' => [
-                     'cache_dir' => '/dev/shm/'
-                 ]
-             ],
-             'frontend_options' => [
-                 'write_control' => false,
-             ],
-             'use_stale_cache' => false,
-         ]
+          'backend' => '\\Magento\\Framework\\Cache\\Backend\\RemoteSynchronizedCache',
+            'backend_options' => [
+                'remote_backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
+                'remote_backend_options' => [
+                    'persistent' => 0,
+                    'server' => 'localhost',
+                    'database' => '0',
+                    'port' => '6370',
+                    'password' => '',
+                    'compress_data' => '1',
+                ],
+                'local_backend' => 'Cm_Cache_Backend_File',
+                'local_backend_options' => [
+                    'cache_dir' => '/dev/shm/'
+                ]
+            ],
+            'frontend_options' => [
+                'write_control' => false,
+            ],
+            'use_stale_cache' => false,
+        ]
     ],
     'type' => [
         'default' => ['frontend' => 'default'],

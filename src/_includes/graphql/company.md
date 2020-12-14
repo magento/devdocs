@@ -2,27 +2,29 @@ The `Company` object can contain the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`acl_resources` [CompanyAclResource] | Returns the list of all resources defined within the company
+`acl_resources` | [[CompanyAclResource]](#CompanyAclResource) | Returns the list of all resources defined within the company
 `company_admin` | [Customer]({{page.baseurl}}/graphql/queries/customer.html) | An object containing information about the company administrator
+`credit` | CompanyCredit! | The company credit balance
+`credit_history(filter: CompanyCreditHistoryFilterInput, pageSize: Int = 20, currentPage: Int = 1)` | CompanyCreditHistory! | A history of company credit operations
 `email` | String | The email address of the company contact
 `id` | ID! | The ID assigned to the company
-`legal_address` | CompanyLegalAddress | The address where the company is registered to conduct business
+`legal_address` | [CompanyLegalAddress](#CompanyLegalAddress) | The address where the company is registered to conduct business
 `legal_name` | String | The full legal name of the company
 `name` | String | The name of the company
-`payment_methods` | [String] The list of payment methods available to a company
+`payment_methods` | [String] | The list of payment methods available to a company
 `reseller_id` | String | The resale number that is assigned to the company for tax reporting purposes
-`role(id: ID!)` | CompanyRole | Returns information about the specified company role
-`roles(pageSize: Int = 20, currentPage: Int = 1 )` | CompanyRoles! | Returns the list of company roles
-`sales_representative` |  CompanySalesRepresentative | The company sales representative
-`structure(rootId: ID = 0 depth: Int = 10 )` | CompanyStructure | Returns the company structure of teams and customers in depth-first order
-`team(id: ID!)` | CompanyTeam | Returns the specified company team
-`user(id: ID!)` | Customer | Returns the specified company user
-`users(filter: CompanyUsersFilterInput, pageSize: Int = 20, currentPage: Int = 1)`| CompanyUsers | Returns the company users that match the specified filter
-`vat_tax_id` | String | The value-added tax number that is assigned to the company by some jurisdictions for tax reporting purposes
+`role(id: ID!)` | [CompanyRole](#CompanyRole) | Returns information about the specified company role
+`roles(pageSize: Int = 20, currentPage: Int = 1 )` | [CompanyRoles!](#CompanyRoles) | Returns the list of company roles
+`sales_representative` |  [CompanySalesRepresentative](#CompanySalesRepresentative) | The company sales representative
+`structure(rootId: ID = 0 depth: Int = 10 )` | [CompanyStructure](#CompanyStructure) | Returns the company structure of teams and customers in depth-first order
+`team(id: ID!)` | [CompanyTeam](#CompanyTeam) | Returns the specified company team
+`user(id: ID!)` | [Customer]({{page.baseurl}}/graphql/queries/customer.html) | Returns the specified company user
+`users(filter: CompanyUsersFilterInput, pageSize: Int = 20, currentPage: Int = 1)`| [CompanyUsers](#CompanyUsers) | Returns the company users that match the specified filter
+`vat_id` | String | The value-added tax number that is assigned to the company by some jurisdictions for tax reporting purposes
 
 ### CompanyAclResource attributes {#CompanyAclResource}
 
-The `CompanyAclResource` object can contain the following attributes:
+The `CompanyAclResource` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -33,7 +35,7 @@ Attribute |  Data Type | Description
 
 ### CompanyAdmin attributes {#CompanyAdmin}
 
-The `CompanyAdmin` object can contain the following attributes:
+The `CompanyAdmin` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -44,9 +46,61 @@ Attribute |  Data Type | Description
 `job_title` | String | The job title of the company administrator
 `lastname` | String! | The company administrator's last name
 
+### CompanyCredit {#CompanyCredit}
+
+The `CompanyCredit` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`available_credit` | Money! | The amount of company credit available
+`credit_limit` | Money! | The company's credit limit
+`outstanding_balance` | Money! | The outstanding company credit amount
+
+### CompanyCreditHistory attributes {#CompanyCreditHistory}
+
+The `CompanyCreditHistory` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`items` | [[CompanyCreditOperation]!](#CompanyCreditOperation) | An array of company credit operations
+`page_info` | SearchResultPageInfo! | Metadata for pagination rendering
+`total_count` | Int | The number of the company credit operations matching the specified filter
+
+### CompanyCreditHistoryFilterInput attributes {#CompanyCreditHistoryFilterInput}
+
+The `CompanyCreditHistoryFilterInput` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`custom_reference_number` | String | Filters by the purchase order number associated with the company credit operation
+`operation_type` | CompanyCreditOperationType | An enum that defines the type of the company credit operation. Possible values are ADMIN and CUSTOMER
+`updated_by` | String | Filters by the name of the person submitting the company credit operation
+
+### CompanyCreditOperation attributes {#CompanyCreditOperation}
+
+The `CompanyCreditOperation` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount` | Money | The amount of the company credit operation
+`balance` | [CompanyCredit!](#CompanyCredit) | The credit balance after the company credit operation
+`custom_reference_number` | String | The purchase order number associated with the company credit operation
+`date` | String! | The date the operation was performed
+`type` | CompanyCreditOperationType! | The type of the company credit operation. Possible values are ALLOCATION, PURCHASE, REFUND, REIMBURSEMENT, REVERT, UPDATE
+`updated_by` | [CompanyCreditOperationUser!](#CompanyCreditOperationUser) | The company user submitting the company credit operation
+
+### CompanyCreditOperationUser attributes {#CompanyCreditOperationUser}
+
+The `CompanyCreditOperationUser` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`name` | String! | The name of the company user submitting the company credit operation
+`type` | CompanyCreditOperationUserType! | The type of the company user submitting the company credit operation. Possible values are ADMIN and CUSTOMER
+
 ### CompanyLegalAddress attributes {#CompanyLegalAddress}
 
-The `CompanyLegalAddress` object can contain the following attributes:
+The `CompanyLegalAddress` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -59,7 +113,7 @@ Attribute |  Data Type | Description
 
 ### CompanyRole attributes {#CompanyRole}
 
-The `CompanyRole` object can contain the following attributes:
+The `CompanyRole` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -70,7 +124,7 @@ Attribute |  Data Type | Description
 
 ### CompanyRoles attributes {#CompanyRoles}
 
-The `CompanyRoles` object can contain the following attributes:
+The `CompanyRoles` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -80,7 +134,7 @@ Attribute |  Data Type | Description
 
 ### CompanySalesRepresentative attributes {#CompanySalesRepresentative}
 
-The `CompanySalesRepresentative` object can contain the following attributes:
+The `CompanySalesRepresentative` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -88,9 +142,30 @@ Attribute |  Data Type | Description
 `firstname` | String! | The company sales representative's first name
 `lastname` | String! | The company sales representative's last name
 
+### CompanyStructure attributes {#CompanyStructure}
+
+The `CompanyStructure` object can contain the following attribute.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`items` | [CompanyStructureItem] | An array of elements in a company structure
+
+### CompanyStructureItem attributes {#CompanyStructureItem}
+
+The `CompanyStructureItem` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`entity` | CompanyStructureEntity | A union of [CompanyTeam](#CompanyTeam) and [Customer]({{page.baseurl}}/graphql/queries/customer.html) objects
+`id` | ID! | The ID of the item in the hierarchy
+`parent_id` | ID | The ID of the parent item in the hierarchy
+
+### CompanyTeam attributes {#CompanyTeam}
+
+{% include graphql/company-team.md %}
 ### CompanyUsers attributes {#CompanyUsers}
 
-The `CompanyUsers` object can contain the following attributes:
+The `CompanyUsers` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---

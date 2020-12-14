@@ -130,23 +130,7 @@ echo "127.0.0.1 magento2.test" | sudo tee -a /etc/hosts
 
 ## Set up email
 
-The default {{ site.data.var.mcd-prod }} configuration includes the [MailHog] service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment.
-
-When the MailHog service is installed, go to the following URL to open the service and view outgoing emails: `http://magento2.docker:8025`
-
-By default, MailHog listens on port 1025 for SMTP and port 8025 for the frontend dashboard and API. You can change the default ports using the `--mailhog-http-port` and `--mailhog-smtp-port` options.
-
-```bash
-./vendor/bin/ece-docker build:compose --mailhog-smtp-port=1026 --mailhog-http-port=8026
-```
-
-After updating the configuration and restarting the Docker environment, you can connect to the MailHog service from `http://magento2.docker:8026`, and use port 1026 for SMTP communication.
-
-If you do not need the [MailHog] service, use the `--no-mailhog` option to generate the Docker compose configuration:
-
-```bash
-./vendor/bin/ece-docker build:compose --no-mailhog
-```
+The default {{ site.data.var.mcd-prod }} configuration includes the [MailHog] service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment. See [MailHog service].
 
 [php]: https://www.php.net/manual/en/install.php
 [Composer]: https://getcomposer.org
@@ -161,3 +145,4 @@ If you do not need the [MailHog] service, use the `--no-mailhog` option to gener
 [refresh]: {{site.baseurl}}/cloud/docker/docker-containers.html#rebuild-a-clean-environment
 [Docker Hub PHP Image Tag]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
 [MailHog]: https://github.com/mailhog/MailHog
+[MailHog service]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#mailhog-container

@@ -77,7 +77,7 @@ To build a dependency on the third-party plugin, specify a [shim](http://require
 
     ```javascript
     var config = {
-        "shim": {
+        shim: {
            "3-rd-party-plugin": ["jquery"]
         }
     };

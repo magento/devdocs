@@ -25,4 +25,4 @@ content: "## Overview\n\nThe Magento_CompanyShipping module allows a merchant to
   or \"company shipping methods\"? -->\n\n* `Magento\\CompanyShipping\\view\\frontend\\ui_component`
   - company form\n\nFor more information, see [UI Form Component](http://devdocs.magento.com/guides/v2.4/ui_comp_guide/components/ui-form.html).\n\n##
   Additional information\n \nYou can track [backward incompatible changes made in
-  a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.4/release-notes/changes/b2b_changes.html).\n"
+  a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.4/release-notes/changes/b2b_changes.html)."

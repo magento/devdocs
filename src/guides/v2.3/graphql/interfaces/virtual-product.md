@@ -7,8 +7,8 @@ contributor_link: https://www.atwix.com/
 
 The `VirtualProduct` data type implements the following interfaces:
 
--  `ProductInterface`
--  `CustomizableProductInterface`
+-  [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html)
+-  [CustomizableProductInterface]({{page.baseurl}}/graphql/interfaces/customizable-option-interface.html)
 
 All `VirtualProduct` attributes are defined in the implemented interfaces.
 

@@ -10,4 +10,4 @@ content: "The `InventorySetupFixtureGenerator` module customizes the process of 
   the MSI (Multi-Source Inventory) project in more detail.\n\n## Installation details\n\nThis
   module is installed as part of Magento Open Source. Unless a custom implementation
   \nfor Inventory Data generation is provided by a 3rd-party module, the module cannot
-  be deleted or disabled.\n"
+  be deleted or disabled."
