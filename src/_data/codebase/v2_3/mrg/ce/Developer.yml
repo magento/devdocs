@@ -1,0 +1,8 @@
+---
+title: Magento_Developer
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Developer/README.md
+last_modified_at: '2015-01-15 14:33:14 -0600'
+content: The Magento_Developer module provides functionality to make it easier to
+  develop in Magento 2.

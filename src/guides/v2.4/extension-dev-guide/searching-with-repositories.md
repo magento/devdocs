@@ -227,12 +227,11 @@ class ProductCategoryFilter implements CustomFilterInterface
     {
         $value = $filter->getValue();
         $conditionType = $filter->getConditionType() ?: 'in';
+        $filterValue = [$value];
         if (($conditionType === 'in' || $conditionType === 'nin') && is_string($value)) {
-            $value = explode(',', $value);
-        } else {
-            $value = [$value];
+            $filterValue = explode(',', $value);
         }
-        $categoryFilter = [$conditionType => $value];
+        $categoryFilter = [$conditionType => $filterValue];
 
         /** @var Collection $collection */
         $collection->addCategoriesFilter($categoryFilter);
@@ -507,3 +506,6 @@ The `di.xml` configuration file excerpt below shows how you can create a virtual
       </arguments>
   </type>
 ```
+
+{:.bs-callout-info}
+When building an EAV Model that needs to implement the `Repository::getList` method, use the EAV Filter Processor; otherwise the custom filters will not be added to the collection.

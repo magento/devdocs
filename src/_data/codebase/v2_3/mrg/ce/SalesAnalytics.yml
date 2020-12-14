@@ -1,0 +1,8 @@
+---
+title: Magento_SalesAnalytics
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/SalesAnalytics/README.md
+last_modified_at: '2019-08-06 14:40:28 -0500'
+content: The Magento_SalesAnalytics module configures data definitions for a data
+  collection related to the Sales module entities to be used in [Advanced Reporting](https://devdocs.magento.com/guides/v2.3/advanced-reporting/modules.html).

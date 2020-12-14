@@ -1,0 +1,8 @@
+---
+title: Magento_GroupedCatalogInventory
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/GroupedCatalogInventory/README.md
+last_modified_at: '2018-11-27 16:04:57 -0600'
+content: Magento_GroupedCatalogInventory contains behavior related to the inventory
+  status of items within grouped products.

@@ -1,0 +1,9 @@
+---
+title: Magento_CustomerGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/CustomerGraphQl/README.md
+last_modified_at: '2018-01-16 13:17:37 -0600'
+content: |-
+  **CustomerGraphQl** provides type and resolver information for the GraphQl module
+  to generate customer information endpoints.

@@ -1,0 +1,8 @@
+---
+title: Magento_InventoryVisualMerchandiser
+source_repo: inventory
+release: 1.2.1
+github_path: InventoryVisualMerchandiser/README.md
+last_modified_at: '2020-07-27 17:15:03 +0300'
+content: The Magento_InventoryVisualMerchandiser module adds multi-sourcing capabilities
+  to the VisualMerchandiser module

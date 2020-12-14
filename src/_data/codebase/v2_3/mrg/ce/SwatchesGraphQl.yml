@@ -1,0 +1,9 @@
+---
+title: Magento_SwatchesGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/SwatchesGraphQl/README.md
+last_modified_at: '2018-01-16 16:07:17 -0600'
+content: |-
+  **SwatchesGraphQl** provides type information for the GraphQl module
+  to generate swatches fields for catalog and product information endpoints.

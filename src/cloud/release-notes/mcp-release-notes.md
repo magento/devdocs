@@ -21,6 +21,11 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 
 <!--Add release notes below-->
 
+## v1.0.8
+*Release date: October 14, 2020*<br/>
+
+-  **Compatibility updates for {{site.data.var.mcp-package}}**–Updated the `symfony` and `semver` version constraints in the `composer.json` file for compatibility with Magento 2.4.1 and later releases.<!--MCLOUD-7111-->
+
 ## v1.0.7
 *Release date: October 14, 2020*<br/>
 

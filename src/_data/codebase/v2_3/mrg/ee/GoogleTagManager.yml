@@ -1,0 +1,8 @@
+---
+title: Magento_GoogleTagManager
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/GoogleTagManager/README.md
+last_modified_at: '2015-06-22 19:55:26 +0300'
+content: Magento_GoogleTagManager is a module for integration with Google Tag Manager
+  service.

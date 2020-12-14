@@ -55,7 +55,7 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>
             <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production. The <a href="{{ site.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-managed-alerts">Managed alerts for {{ site.data.var.ee }} policy</a> implements monitoring best practices to proactively notify you about application and infrastructure issues affecting site performance.
           </li>
-          <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for {{site.data.var.ee}}</li>
+          <li>Platform-as-a-service (PaaS) based Integration development environments (2 total active environments) optimized for {{site.data.var.ee}}</li>
           <li>Infrastructure-as-a-Service (IaaS)—dedicated virtual infrastructure for Production environments and for Staging environments</li>
         </ul>
       </td>
@@ -107,6 +107,6 @@ The [Starter plan architecture]({{ site.baseurl }}/cloud/architecture/starter-ar
 The [Pro plan architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) has a global master with three environments:
 
 -  **Integration**—The Integration environment provides a testable environment that includes a database, web server, caching, some services, environment variables, and configurations. You can develop, deploy, and test your code before merging to the Staging environment.
-   -  _Inactive_—You can have an unlimited number of inactive branches based on the Integration environment.
+   -  _Inactive_—You can have an unlimited number of inactive branches based on the Integration environment, but only one active branch (not including Integration itself).
 -  **Staging**—The Staging environment is for pre-Production testing and includes a database, web server, caching, third-party services, environment variables, configurations, and services, such as Fastly.
 -  **Production**—The Production environment includes a three-node, high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and third-party services.

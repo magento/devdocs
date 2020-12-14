@@ -1,0 +1,8 @@
+---
+title: Magento_Theme
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Theme/README.md
+last_modified_at: '2014-07-11 11:30:21 -0700'
+content: The Theme module contains common infrastructure that provides an ability
+  to apply and use themes in Magento application.

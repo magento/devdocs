@@ -46,7 +46,7 @@ The following diagram shows the contribution workflow:
 
    In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use a version-specific integration branch, such as `develop`.
 
-1. Complete the pull request template.
+1. Complete the pull request template. Review the [Pull Request Process page](https://github.com/magento/devdocs/wiki/Pull-Request-Process) to learn how to complete a PR (with info about completing the template, adding a `whatsnew`, and more.)
 
     **We will close your pull request if you do not complete the template.**
 
@@ -63,7 +63,7 @@ The following guidelines may answer most of your questions and help you get star
 -  Write content using Markdown. See the [Templates](#templates) section for examples.
 -  Review existing [pull requests](https://github.com/magento/devdocs/pulls) and [issues](https://github.com/magento/devdocs/issues) to avoid duplicating work.
 -  For large contributions, or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This helps prevent duplicate or unnecessary work.
--  Do not make global find-and-replace changes without first creating an issue and discussing it with us. Global changes can have unintended consequences.
+-  Do not make global find-and-replace changes without first [creating an issue](https://github.com/magento/devdocs/issues/new/choose) and discussing it with us. Global changes can have unintended consequences.
 -  Do not make changes to content in the [`_data/codebase`](https://github.com/magento/devdocs/tree/master/src/_data/codebase) directory, which contains auto-generated data from Magento source code. Any manual changes will be lost when the file regenerates.
 -  Combine multiple small changes (such as minor editorial and technical changes) into a single pull request. This helps us efficiently and effectively facilitate your contribution.
 -  Familiarize yourself with the organization and conventions of our existing documentation before creating a pull request. Changes that are consistent with our style and conventions have a higher acceptance rate.
@@ -110,7 +110,6 @@ We provide templates to help you get started writing new content and understandi
 The Markdown (.md) file's metadata is a set of YAML key-value pairs. The metadata section is located at the top of each file. For more info, see the [Basic Template](https://devdocs.magento.com/contributor-guide/templates/basic_template.html).
 
 ```yaml
-
 ---
 group:
 title:

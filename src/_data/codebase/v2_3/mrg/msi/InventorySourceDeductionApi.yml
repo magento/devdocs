@@ -1,0 +1,11 @@
+---
+title: Magento_InventorySourceDeductionApi
+source_repo: inventory
+release: 1.1.6
+github_path: InventorySourceDeductionApi/README.md
+last_modified_at: '2018-11-09 00:12:40 +0200'
+content: "The `InventorySourceDeductionApi` module provides service contracts for
+  managing source deductuions when products are sold. \n\nThis module is part of the
+  new inventory infrastructure. The\n[Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html)\ndescribes
+  the MSI (Multi-Source Inventory) project in more detail.\n\n## Installation details\n\nThis
+  module is installed as part of Magento Open Source. It cannot be deleted or disabled."

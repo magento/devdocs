@@ -1,0 +1,19 @@
+---
+title: Magento_Backup
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Backup/README.md
+last_modified_at: '2019-09-16 12:24:25 -0300'
+content: "The Magento_Backup module allows administrators to perform backups and rollbacks.
+  Types of backups include system, database and media backups. This module relies
+  on the Cron module to schedule backups.\n\nThe Magento_Backup module does not affect
+  the storefront.\n\nFor more information about this module, see [Magento Backups](https://docs.magento.com/m2/ce/user_guide/system/backups.html)\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_Backup module.
+  For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_Backup module.\n\n### Layouts\n\nThis
+  module introduces the following layouts and layout handles in the `view/adminhtml/layout`
+  directory:   \n\n`backup_index_block`\n`backup_index_disabled`\n`backup_index_grid`\n`backup_index_index`\n\nFor
+  more information about layouts in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html).\n\n##
+  Additional information\n\nFor information about significant changes in patch releases,
+  see [2.3.x Release information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)."

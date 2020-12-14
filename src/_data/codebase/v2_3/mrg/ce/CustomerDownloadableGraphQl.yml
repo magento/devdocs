@@ -1,0 +1,9 @@
+---
+title: Magento_CustomerDownloadableGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/CustomerDownloadableGraphQl/README.md
+last_modified_at: '2019-06-25 22:45:10 +0200'
+content: |-
+  **CustomerDownloadableGraphQl** provides type and resolver information for the GraphQl module
+  to generate downloadable product information.

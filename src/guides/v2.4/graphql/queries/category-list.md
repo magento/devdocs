@@ -12,6 +12,7 @@ The `categoryList` query supports the following types of filters. You can specif
 
 -  Category ID
 -  Category name
+-  Parent category ID
 -  URL key
 -  URL path
 
@@ -42,7 +43,12 @@ The following query returns information about category IDs `11` and `20` and two
 
 ```graphql
 {
-  categoryList(filters: {ids: {in: ["11", "20"]}}) {
+  categoryList(
+    filters: {
+      ids: {in: ["11", "20"]}
+      parent_id: {in: ["2"]}
+    }
+  ) {
     children_count
     children {
       id

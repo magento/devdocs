@@ -1,7 +1,7 @@
 ---
 title: Magento_InventoryInStorePickupQuote
 source_repo: inventory
-release: 1.2.0
+release: 1.2.1
 github_path: InventoryInStorePickupQuote/README.md
 last_modified_at: '2019-06-03 14:53:32 +0300'
 content: "The `InventoryInStorePickupQuote` module provides business logic for In-Store

@@ -1,0 +1,17 @@
+---
+title: Magento_Deploy
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Deploy/README.md
+last_modified_at: '2019-07-16 21:19:40 +0100'
+content: "## Purpose of module\n\nDeploy is a module that holds collection of services
+  and command line tools to help with Magento application deployment. \nTo execute
+  this command, please, run \"bin/magento setup:static-content:deploy\" from the Magento
+  root directory.\nDeploy module contains 2 additional commands that allows switching
+  between application modes (for instance from \ndevelopment to\nproduction) and show
+  current application mode. To change the mode run \"bin/magento deploy:mode:set [mode]\".\nWhere
+  mode can be one of the following:\n - development\n - production\nWhen switching
+  to production mode, you can pass optional parameter skip-compilation to do not compile
+  static files, CSS \nand do not run the compilation process.\n\n# Deployment\n##
+  System requirements\n\n## Install\nThe Magento_Deploy module is installed automatically
+  (using the native Magento install mechanism) without any additional actions."

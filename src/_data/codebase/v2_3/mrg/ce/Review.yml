@@ -1,0 +1,7 @@
+---
+title: Magento_Review
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Review/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: Magento_Review module functionality allows to write reviews for products.

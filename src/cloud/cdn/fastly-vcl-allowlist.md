@@ -1,8 +1,6 @@
 ---
 group: cloud-guide
 title: Custom VCL for allowing requests
-redirect_from:
-   - /cloud/configure/fastly-vcl-whitelist.html
 functional_areas:
   - Cloud
   - Setup
@@ -89,11 +87,11 @@ In the code sample, the condition `!req.http.Fastly-FF` is important when using 
 
 After reviewing and updating the code for your environment, use either of the following methods to add the custom VCL snippet to your Fastly service configuration:
 
--  [Add the custom VCL snippet from the Magento Admin](#add-whitelist-vcl). This method is recommended if you can access the Magento Admin UI. (Requires [Fastly CDN module for Magento 2 version 1.2.58]({{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade) or later.)
+-  [Add the custom VCL snippet from the Magento Admin](#add-the-custom-vcl-snippet). This method is recommended if you can access the Magento Admin UI. (Requires [Fastly CDN module for Magento 2 version 1.2.58]({{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade) or later.)
 
 -  Save the JSON code example to a file (for example, `allowlist.json`) and [upload it using the Fastly API]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api). Use this method if you cannot access the Magento Admin UI.
 
-## Add the custom VCL snippet {#add-whitelist-vcl}
+## Add the custom VCL snippet
 
 {% include cloud/admin-ui-login-step.md %}
 
@@ -114,7 +112,7 @@ After reviewing and updating the code for your environment, use either of the fo
    -  Add the **VCL** snippet content:
 
       ```conf
-      if ((req.url ~ "^/admin") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 "Forbidden"}
+      if ((req.url ~ "^/admin") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 "Forbidden";}
       ```
 
 1. Click **Create** to generate the VCL snippet file with the name pattern `type_priority_name.vcl`, for example `recv_5_allowlist.vcl`

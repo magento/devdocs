@@ -1,0 +1,9 @@
+---
+title: Magento_CustomerBalance
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/CustomerBalance/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  The Magento_CustomerBalance module enables customers to have a non-monetary balance in store credits associated to their accounts.
+  Store credit can be used by customers for shopping in the store and by the store administrator for making refunds.

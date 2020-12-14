@@ -1,0 +1,9 @@
+---
+title: Magento_CustomerFinance
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/CustomerFinance/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  The Magento\CustomerFinance module handles the import and export of the store credit and reward customer data.
+  It extends Magento_CustomerImportExport and joins the basic customer data with reward and customer balance information to enable to import/export of customer data with reward and store credit data.

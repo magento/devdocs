@@ -1,0 +1,8 @@
+---
+title: Magento_LoginAsCustomerAssistance
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/LoginAsCustomerAssistance/README.md
+last_modified_at: '2020-08-05 17:47:02 +0300'
+content: The Magento_LoginAsCustomerAssistance module provides possibility to enable/disable
+  LoginAsCustomer functionality per Customer.

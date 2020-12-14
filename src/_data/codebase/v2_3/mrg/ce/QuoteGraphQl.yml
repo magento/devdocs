@@ -1,0 +1,9 @@
+---
+title: Magento_QuoteGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/QuoteGraphQl/README.md
+last_modified_at: '2018-07-31 14:11:47 +0200'
+content: |-
+  **QuoteGraphQl** provides type and resolver information for the GraphQl module
+  to generate quote (cart) information endpoints. Also provides endpoints for modifying a quote.

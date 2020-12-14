@@ -1,0 +1,9 @@
+---
+title: Magento_GroupedProductGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/GroupedProductGraphQl/README.md
+last_modified_at: '2018-01-29 15:12:49 -0600'
+content: |-
+  **GroupedProductGraphQl** provides type and resolver information for the GraphQl module
+  to generate grouped product information.

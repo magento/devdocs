@@ -1,0 +1,9 @@
+---
+title: Magento_CatalogSearch
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/CatalogSearch/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: |-
+  Magento_CatalogSearch module is an extension of Magento_Catalog module that allows to use search engine for product searching capabilities.
+  The module implements Magento_Search library interfaces.

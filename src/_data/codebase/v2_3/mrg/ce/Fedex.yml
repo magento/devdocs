@@ -1,0 +1,7 @@
+---
+title: Magento_Fedex
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Fedex/README.md
+last_modified_at: '2014-10-31 09:04:08 -0700'
+content: The Magento_Fedex implements the integration with the FedEx shipping carrier.

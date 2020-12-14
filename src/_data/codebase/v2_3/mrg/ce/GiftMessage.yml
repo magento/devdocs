@@ -1,0 +1,8 @@
+---
+title: Magento_GiftMessage
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/GiftMessage/README.md
+last_modified_at: '2014-10-24 14:51:44 -0700'
+content: Magento\GiftMessage module allows to add a message to order or to each ordered
+  item either on frontend or backend.

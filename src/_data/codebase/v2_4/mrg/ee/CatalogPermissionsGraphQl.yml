@@ -1,0 +1,8 @@
+---
+title: Magento_CatalogPermissionsGraphQl
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/CatalogPermissionsGraphQl/README.md
+last_modified_at: '2020-06-21 10:09:05 +0200'
+content: Magento_CatalogPermissionsGraphQL feature allows to apply Magento_CatalogPermissions
+  features to product queries in GraphQl area

@@ -58,13 +58,25 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchVersionInterface;
 
+/**
+ * Class add customer example attribute to customer
+ */
 class AddCustomerExampleAttribute implements DataPatchInterface
 {
-
+    /**
+     * @var ModuleDataSetupInterface
+     */
     private $moduleDataSetup;
 
+    /**
+     * @var CustomerSetupFactory
+     */
     private $customerSetupFactory;
 
+    /**
+     * @param ModuleDataSetupInterface $moduleDataSetup
+     * @param CustomerSetupFactory $customerSetupFactory
+     */
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         CustomerSetupFactory $customerSetupFactory
@@ -73,6 +85,9 @@ class AddCustomerExampleAttribute implements DataPatchInterface
         $this->customerSetupFactory = $customerSetupFactory;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function apply()
     {
         $customerSetup = $this->customerSetupFactory->create(['setup' => $this->moduleDataSetup]);
@@ -82,7 +97,7 @@ class AddCustomerExampleAttribute implements DataPatchInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public static function getDependencies()
     {
@@ -91,6 +106,9 @@ class AddCustomerExampleAttribute implements DataPatchInterface
         ];
     }
 
+    /**
+     * @inheritdoc
+     */
     public function getAliases()
     {
         return [];

@@ -9,6 +9,7 @@ The `categories` query supports the following types of filters. You can specify 
 
 -  Category ID
 -  Category name
+-  Parent category ID
 -  URL key
 -  URL path
 
@@ -33,7 +34,14 @@ The following query returns the top-level categories (as well as two levels of c
 
 ```graphql
 {
-  categories(filters: {ids: {in: ["3", "9", "11", "20", "37", "38"]}} pageSize:3 currentPage: 2){
+  categories(
+    filters: {
+      ids: {in: ["3", "9", "11", "20", "37", "38"]}
+      parent_id: {in: ["2"]}
+    }
+    pageSize:3
+    currentPage: 2
+  ) {
     total_count
     items {
       id

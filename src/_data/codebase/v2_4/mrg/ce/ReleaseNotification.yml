@@ -1,7 +1,7 @@
 ---
 title: Magento_ReleaseNotification
 source_repo: magento2ce
-release: 2.4.0
+release: 2.4.1
 github_path: app/code/Magento/ReleaseNotification/README.md
 last_modified_at: '2019-09-06 19:55:12 +0300'
 content: "The **Release Notification Module** serves to provide a notification delivery
@@ -45,4 +45,4 @@ content: "The **Release Notification Module** serves to provide a notification d
   will cause a clickable link to be created. The text between the brackets [text]
   will be the text that the clickable link shows.\n\n### Link Format Example:\n\nThe
   text: `https://devdocs.magento.com/ [Magento DevDocs].` will appear as [Magento
-  DevDocs](https://devdocs.magento.com/).\n"
+  DevDocs](https://devdocs.magento.com/)."
