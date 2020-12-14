@@ -40,7 +40,7 @@ require('uiRegistry').get(function(component){console.log(component.name)});
 ### Asynchronous way of retrieving UI components from the registry
 
 {:.bs-callout-info}
-This way is **Recommended** for the good performance.
+This way is **Recommended**, for the good performance.
 
 ```js
 module('trigger', true);
