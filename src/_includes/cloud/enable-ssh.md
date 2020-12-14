@@ -119,6 +119,7 @@ You can add SSH keys to your account in any of the following ways:
 
 -  Using the [{{site.data.var.ece}} CLI](#add-key-cli)
 -  Using the [{{site.data.var.ece}} Web Interface](#add-key-web)
+-  Using the [{{site.data.var.ece}} Cloud account Dashboard](#add-key-cloud)
 
 ### Add a key using the CLI {#add-key-cli}
 
@@ -164,6 +165,19 @@ To add an SSH key using the Project Web Interface:
    ![Add SSH key]({{ site.baseurl }}/common/images/cloud/cloud_ssh-key-add.png)
 
 1. Follow the prompts on your screen to complete the task.
+
+### Add a key using the Cloud Account Dashboard {#add-key-cloud}
+
+You will add your SSH public key to your Cloud account.
+
+1. Go to https://accounts.magento.cloud
+1. Click on 'Account Settings'.
+1. Under SSH keys, click on 'Add a public key'.
+1. Have another user on the project (with the Contributor role - at minimum) to redeploy each active environment you will have access to. 
+1. This will upload your SSH key to the environment.
+
+### Updating your SSH key
+If you have added a new SSH key into your Cloud account, you will have to redeploy each active environment that you currently have access to - this will install/upload your new key to the environment.
 
 ## Set global Git variables
 
