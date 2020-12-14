@@ -14,7 +14,7 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 ```graphql
 mutation {
   deleteRequisitionList(
-    uid: ID!
+    requisitionListUid: ID!
   ) {
     deleteRequisitionListOutput
   }
@@ -30,7 +30,7 @@ The following example deletes the requisition list with `uid` 4.
 ```graphql
 mutation {
   deleteRequisitionList(
-    uid: "4"
+    requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
   ) {
     list {
       uid
@@ -49,7 +49,7 @@ mutation {
   "data": {
     "deleteRequisitionList": {
       "list": {
-        "uid": "4",
+        "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
         "name": "Frequently Ordered Products",
         "description": "Frequently ordered products list"
       },
@@ -65,7 +65,7 @@ The `deleteRequisitionList` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`uid` | ID! | The ID of the requisition list to delete
+`requisitionListUid` | ID! | The ID of the requisition list to delete
 
 ## Output attributes
 

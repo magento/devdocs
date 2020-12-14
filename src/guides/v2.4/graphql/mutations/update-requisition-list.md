@@ -69,7 +69,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `description`| String | Description of the customer's requisition list
 `name` | String! | The name of the customer's requisition list
-`uid` | ID! | The ID of the new requisition list
+`requisitionListUid` | ID! | The ID of the new requisition list
 
 ## Output attributes
 
