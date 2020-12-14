@@ -73,15 +73,16 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `createRequisitionListOutput` object returns the `uid` of the new requisition list as well as the input attributes.
+The `createRequisitionList` mutation returns the new requisition list after creating a list for the logged in customer.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`description` | String | The requisition list description
-`name` | String! | The requisition list name
-`uid` | ID! | The ID of the new requisition list
+`requisition_list` | [[RequisitionList](#RequisitionList)] | The created requisition list
+
+### RequisitionList attributes {#RequisitionList}
+{% include graphql/requisition-list.md %}
 
 ## Related topics
 
-*  [renameRequisitionList mutation]({{page.baseurl}}/graphql/mutations/rename-requisition-list.html)
+*  [updateRequisitionList mutation]({{page.baseurl}}/graphql/mutations/update-requisition-list.html)
 *  [deleteRequisitionList mutation]({{page.baseurl}}/graphql/mutations/delete-requisition-list.html)

@@ -32,7 +32,12 @@ mutation {
   deleteRequisitionList(
     uid: "4"
   ) {
-    result
+    list {
+      uid
+      name
+      description
+    }
+    status
   }
 }
 ```
@@ -43,7 +48,12 @@ mutation {
 {
   "data": {
     "deleteRequisitionList": {
-      "result": true
+      "list": {
+        "uid": "4",
+        "name": "Frequently Ordered Products",
+        "description": "Frequently ordered products list"
+      },
+      "status": true
     }
   }
 }
@@ -59,13 +69,17 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `deleteRequisitionListOutput` object returns the `uid` of the new requisition list as well as the input attributes.
+The `deleteRequisitionList` mutation returns the new requisition list after deleting a list for the logged in customer.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`result` | Boolean | Indicates whether the requisition list was deleted
+`requisition_list` | [[RequisitionList](#RequisitionList)] | The requisition list after removing a list
+`status` | Boolean | Indicates whether the request to delete the requisition list was successful
+
+### RequisitionList attributes {#RequisitionList}
+{% include graphql/requisition-list.md %}
 
 ## Related topics
 
 *  [createRequisitionList mutation]({{page.baseurl}}/graphql/mutations/create-requisition-list.html)
-*  [renameRequisitionList mutation]({{page.baseurl}}/graphql/mutations/rename-requisition-list.html)
+*  [updateRequisitionList mutation]({{page.baseurl}}/graphql/mutations/update-requisition-list.html)
