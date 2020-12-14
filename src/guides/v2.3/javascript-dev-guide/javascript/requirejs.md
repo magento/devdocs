@@ -62,7 +62,7 @@ paths: {
 }
 ```
 
-Consider    the example of overwriting an HTML file in the adminhtml.
+Consider the example of overwriting an HTML file in the adminhtml.
 In this example, the `max-length` value of the text-box in the `adminhtml` is altered. The HTML file is located at `vendor/magento/module_ui/view/base/web/templates/form/element/input.html`.
 
 1. Create a `requirejs-config.js` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/` and add the following code:
