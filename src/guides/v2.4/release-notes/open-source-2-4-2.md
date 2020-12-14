@@ -76,17 +76,17 @@ This release includes Adobe Stock Integration v2.1.1.
 
 This release adds GraphQL coverage for the following features:
 
-*  Localization to support updated and consistent information across stores for tasks including changing language, cart, and currency. <!--- MC-37801-->
+*  GraphQL now honors catalog permissions. Magento restricts which items are returned for a `products` query, based on the shopper's customer group <!--- MC-37388-->
 
-*  Setting catalog permissions for products based on customer group. <!--- MC-37388-->
+*  Added the `generateCustomerTokenAsAdmin` mutation and updated the `Customer` object to support remote purchasing assistance.
 
-*  Implementation of consistent object IDs for all GraphQL object types. <!--- MC-36346-->
+*  Added localization support across stores to support tasks such as changing languages, carts, and currencies. <!--- MC-37801-->
 
-*  Optimization of the GraphQL product data retrieval for configurable products with many variants. <!--- MC-36138-->
+*  The GraphQL schema has been enhanced to optimize product data retrieval for configurable products with many variants. <!--- MC-36138-->
 
-*  Ability to determine if a product is staged and to view its associated campaign information. <!--- MC-33897-->
+*  Integer type object IDs have been deprecated in favor of `uid` attributes of type ID. <!--- MC-36346-->
 
-*  Creation of multiple wishlists and ability to add products to wishlists. <!--- MC-32356-->
+*  Added the `staging` attribute to the `ProductInterface` and `CategoryInterface` to determine if a product is staged and to view its associated campaign information. <!--- MC-33897-->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
