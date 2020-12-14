@@ -34,7 +34,7 @@ The following example adds items to the cart.
 mutation {
   addRequisitionListItemsToCart
       (
-        requisitionListUid: "1"
+        requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
         requisitionListItemUids: ["1","2"]
       ) {
       status
@@ -85,7 +85,7 @@ Attribute |  Data Type | Description
 ### AddRequisitionListItemToCartUserErrorType {#AddRequisitionListItemToCartUserErrorType}
 
 Type | Description
---- | --- | ---
+--- | ---
 `LOW_QUANTITY` | The one of the item's quantity is low
 `OPTIONS_UPDATED` | The options has been updated
 `OUT_OF_STOCK` | The one of the items is out of stock

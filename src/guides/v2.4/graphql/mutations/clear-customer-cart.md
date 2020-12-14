@@ -25,7 +25,7 @@ mutation {
 
 ## Example usage
 
-The following example adds products to requisition list.
+The following example clear's the customer's cart.
 
 **Request:**
 

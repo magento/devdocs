@@ -33,13 +33,12 @@ The following example adds products to a requisition list.
 ``` graphql
 mutation {
   addProductsToRequisitionList(
-      requisitionListUid: "1",
+      requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
       requisitionListItems: [
         {
             sku: "sku"
             quantity: 1
             selected_options: ["Y29uZmlndXJhYmxlLzkzLzUz","Y29uZmlndXJhYmxlLzE0NC8xNzE="]
-            entered_options: ["2","3"]
         }
       ]
     ) {
@@ -75,14 +74,6 @@ Attribute |  Data Type | Description
 `requisitionListItems`| [[RequisitionListItemsInput](#RequisitionListItemsInput)!]! | An array of products to be added to the requisition list
 `requisitionListUid`| ID! | The unique ID of the requisition list
 
-## Output attributes
-
-The `addProductsToRequisitionList` object returns the requisition list object.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`requisition_list` | [[RequisitionList](#RequisitionList)] | The requisition list after the items were added
-
 ### RequisitionListItemsInput attributes {#RequisitionListItemsInput}
 
 The `RequisitionListItemsInput` type contains the list of products to add to a requisition list.
@@ -94,6 +85,14 @@ Attribute |  Data Type | Description
 `quantity` | Float | The quantity of the product to add
 `selected_options` | [String!] | An array of selected option IDs
 `sku` | String! | The product SKU
+
+## Output attributes
+
+The `addProductsToRequisitionList` object returns the requisition list object.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`requisition_list` | [[RequisitionList](#RequisitionList)] | The requisition list after the items were added
 
 ### RequisitionList attributes {#RequisitionList}
 

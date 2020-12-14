@@ -33,10 +33,10 @@ The following example updates the specified product's quantity in the requisitio
 ``` graphql
 mutation {
   updateRequisitionListItems(
-      requisitionListUid: "1",
+      requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz",
       requisitionListItems: [
         {
-            item_id: "1"
+            item_id: "W29uZmlndXJhYmxlLzkzLzUz"
             quantity: 2
         }
       ]
@@ -85,14 +85,6 @@ Attribute |  Data Type | Description
 `requisitionListItems`| [[UpdateRequisitionListItemsInput](#UpdateRequisitionListItemsInput)!]! | An array of products to be updated in the requisition list
 `requisitionListUid`| ID! | The unique ID of the requisition list
 
-## Output attributes
-
-The `updateRequisitionListItems` object returns the requisition list object.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`requisition_list` | [[RequisitionList](#RequisitionList)] | The requisition list after the items were updated
-
 ### UpdateRequisitionListItemsInput attributes {#UpdateRequisitionListItemsInput}
 
 The `UpdateRequisitionListItemsInput` type contains the list of products to be updated in the requisition list.
@@ -103,6 +95,14 @@ Attribute |  Data Type | Description
 `item_id` | ID! | The ID of the requisition list item to update
 `quantity` | Float | The new quantity of the item
 `selected_options` | [String!] | An array of selected option IDs
+
+## Output attributes
+
+The `updateRequisitionListItems` object returns the requisition list object.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`requisition_list` | [[RequisitionList](#RequisitionList)] | The requisition list after the items were updated
 
 ### RequisitionList attributes {#RequisitionList}
 
