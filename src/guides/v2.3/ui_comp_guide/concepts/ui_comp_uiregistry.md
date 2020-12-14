@@ -31,6 +31,18 @@ If you know a unique property value of a component that you need to find, you ca
 var component = registry.get('property = propertyValue');
 ```
 
+### Asynchronous way of retrieving UI components from the registry 
+
+{:.bs-callout-info}
+This way is **Recommended** for the good performance.
+
+```js
+module('trigger', true);
+var component = () => registry.get('componentName', function (component) {
+    component.trigger(true);
+});
+```
+
 **Examples:**
 
 The following code shows how to get a component by a full component name:
