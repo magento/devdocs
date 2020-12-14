@@ -174,7 +174,6 @@ You will add your SSH public key to your Cloud account.
 1. Click on 'Account Settings'.
 1. Under SSH keys, click on 'Add a public key'.
 1. Have another user on the project (with the Contributor role - at minimum) to redeploy each active environment you have access to. This will upload your SSH key to the environment.
-1. This will upload your SSH key to the environment.
 
 ### Updating your SSH key
 If you have added a new SSH key into your Cloud account, you will have to redeploy each active environment that you currently have access to - this will install/upload your new key to the environment.
