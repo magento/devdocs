@@ -56,11 +56,11 @@ This release contains enhancements to core quality, which improve the quality of
 
 ### Platform enhancements
 
-*  **Elasticsearch 7.9.x is now supported**. Although we recommend running Elasticsearch 7.9.x, Magento 2.4.x remains compatible with Elasticsearch 7.4.x. <!--- MC-36867-->
+*  [**Elasticsearch 7.9.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html#elasticsearch}). Although we recommend running Elasticsearch 7.9.x, Magento 2.4.x remains compatible with Elasticsearch 7.4.x. <!--- MC-36867-->
 
-*  Magento 2.4.2 has been tested with Varnish 6.4. Magento 2.4.x remains compatible with Varnish 6.x.
+*  Magento 2.4.2 has been tested with [Varnish 6.4]({{ page.baseurl }}/install-gde/system-requirements.html#technologies-magento-can-use). Magento 2.4.x remains compatible with Varnish 6.x.
 
-*  **Redis 6.x is now supported**. Magento 2.4.x remains compatible with Redis 5.x. <!--- MC-34853-->
+*  [**Redis 6.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html#technologies-magento-can-use). Magento 2.4.x remains compatible with Redis 5.x. <!--- MC-34853-->
 
 The ability to configure a Magento installation to use a split database has been deprecated in this release. Merchants who currently use split database should start planning to move to a single database or use an alternative approach. See the DevBlog post for a discussion of how to revert to a single database deployment. <!--- MC-38429 39001-->
 
@@ -98,7 +98,7 @@ This release adds GraphQL coverage for the following features:
 
 *  GraphQL now honors catalog permissions. Magento restricts which items are returned for a `products` query, based on the shopper's customer group <!--- MC-37388-->
 
-*  Added the `generateCustomerTokenAsAdmin` mutation and updated the `Customer` object to support remote purchasing assistance.
+*  Added the [`generateCustomerTokenAsAdmin`]({{ page.baseurl }}/graphql/mutations/generate-customer-token-as-admin.html) mutation and updated the `Customer` object to support remote purchasing assistance.
 
 *  Added localization support across stores to support tasks such as changing languages, carts, and currencies. <!--- MC-37801-->
 
@@ -108,7 +108,7 @@ This release adds GraphQL coverage for the following features:
 
 *  Added the `staging` attribute to the `ProductInterface` and `CategoryInterface` to determine if a product is staged and to view its associated campaign information. <!--- MC-33897-->
 
-*  Added support for multiple wish lists. You can use GraphQL to create, delete, and rename wish lists as well as move or copy items between them. <!--- MC-32356-->
+*  Added support for multiple wish lists. You can use GraphQL to [create]({{ page.baseurl }}/graphql/mutations/create-wishlist.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-wishlist.html), and [rename]({{ page.baseurl }}/graphql/mutations/update-wishlist.html) wish lists as well as [move]({{ page.baseurl }}/graphql/mutations/move-products-to-wishlist.html) or [copy]({{ page.baseurl }}/graphql/mutations/copy-products-to-wishlist.html) items between them. <!--- MC-32356-->
 
 *  Added support for returned merchandise authorizations (RMA) <!--- MC-34596-->
 
@@ -116,7 +116,7 @@ This release adds GraphQL coverage for the following features:
    *  Companies, including administrators, users, roles, and structure <!--- MC-33861-->
    *  Company credit <!--- MC-33862-->
    *  Shared catalogs <!--- MC-33864-->
-   *  Requisition lists  <!--- MC-34312-->
+   *  [Create]({{ page.baseurl }}/graphql/mutations/create-requisition-list.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-requisition-list.html), and [rename]({{ page.baseurl }}/graphql/mutations/rename-requisition-list.html) requisition lists  <!--- MC-34312-->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -140,7 +140,7 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 Magento 2.4.2 introduces B2B v1.3.1. This release includes support for online payments for purchase orders as well as multiple bug fixes.
 
-**Purchase orders can now be completed using online payment methods**. B2B buyers are prompted to select their preferred payment method for each purchase order during the initial checkout (#232). After the purchase order has been approved, buyers are prompted to enter payment details to convert the purchase order to a final order.
+**Purchase orders can now be completed using online payment methods**. B2B buyers are prompted to select their preferred payment method for each [purchase order](https://docs-beta.magento.com/user-guide/stores/b2b-purchase-order-flow.html) during the initial checkout (#232). After the purchase order has been approved, buyers are prompted to enter payment details to convert the purchase order to a final order.
 
 To support a complete workflow for accepting online payments, this feature also:
 
@@ -174,15 +174,15 @@ This release also includes multiple bug fixes. See [B2B Release Notes]({{page.ba
 
 *  Manage folder structure.
 
-**Web-optimized images in content**. Merchants can now use web-optimized image rendition in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
+**Web-optimized images in content**. Merchants can now use [web-optimized image rendition](https://docs-beta.magento.com/user-guide/cms/media-gallery-image-optimization.html) in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
 
 ### AWS S3 support enhancements
 
 Amazon Simple Storage Service (AWS S3) support has been enhanced to include support for:
 
-*  object storage and future extensibility
+*  Object storage and future extensibility
 
-*  storing media files on AWS S3
+*  [Storing media files]((https://docs-beta.magento.com/user-guide/system/data-import-product-images.html#method-3-import-images-with-remote-storage) on AWS S3
 
 Support for AWS S3 has been added to all modules including B2B, PageBuilder, and Adobe Stock Integration.
 
@@ -204,7 +204,7 @@ See the following articles for updates on features and changes for this release:
 
 *  [Vertex Cloud](https://docs.magento.com/user-guide/tax/vertex.html)
 
-*  [Yotpo Product Reviews](https://docs.magento.com/user-guide/marketing/yotpo-reviews-intro.html)
+*  [Yotpo Product Reviews]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html)
 
 ## Fixed issues
 
