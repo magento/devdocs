@@ -78,7 +78,7 @@ In this example, the `max-length` value of the text-box in the `adminhtml` is al
 1. Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/` and copy the contents of the `input.html` file from the `module_ui` template file.
 1. Change the maxlength value to `512`, which was originally set to `256`.
 1. Upgrade the Magento application using `bin/magento setup:upgrade`.
-1. Generate the dependency injection configuration using `bin/magento setup:di:compile`.   
+1. Generate the dependency injection configuration using `bin/magento setup:di:compile`.
 1. Confirm the modification by inspecting the element source code and check the `maxlength` value, which should be `512` as specified in the template.
 
 {:.bs-callout-info}
