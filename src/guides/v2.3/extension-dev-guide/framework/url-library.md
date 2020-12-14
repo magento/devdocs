@@ -25,7 +25,7 @@ The [`Magento\Framework\Url\EncoderInterface`]({{ site.mage2bloburl }}/{{ page.g
 
 The [`Magento\Framework\Url\DecoderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url/DecoderInterface.php){:target="_blank"} provides a method to `decode` the base64 encoded URL provided to it and also decodes the special characters described in the table below.
 
-|Special Character|Encoded Value|
+|Special Character|Decoded Value|
 |--- |--- |
 | `-` | `+` |
 | `_` | `/` |
@@ -49,7 +49,12 @@ private $encoder;
  */
 private $decoder;
 
-
+/**
+  * QuickCartTaxInput constructor.
+  *
+  * @param EncoderInterface $encoder
+  * @param DecoderInterface $decoder
+  */
 public function __construct(
     EncoderInterface $encoder,
     DecoderInterface $decoder
@@ -59,19 +64,26 @@ public function __construct(
 }
 
 /**
- * Encodes URL to base64 format and escapes special characters
+ * Encodes URL to base64 format and escapes special characters.
+ *
+ * @param string $url
+ *
+ * @return string
  */
-public function encodeURL($url)
+public function encodeURL($url): string
 {
   return $this->encoder->encode($url);
 }
 
 /**
- * Decodes URL from base64 format and special characters
+ * Decodes URL from base64 format and special characters.
+ *
+ * @param string $encodedUrl
+ *
+ * @return string
  */
-public function decodeURL($encodedUrl)
+public function decodeURL($encodedUrl): string
 {
   return $this->decoder->decode($encodedUrl);
 }
-...
 ```
