@@ -20,7 +20,7 @@ The goal of this standard is to unify usage of code DocBlocks for all files, not
 
 The following is assumed by default:
 
-*  Formatting according to the [phpDocumentor](https://docs.phpdoc.org/latest/references/phpdoc/basic-syntax.html#what-is-a-docblock){:target="_blank"} standard
+*  Formatting according to the [phpDocumentor](https://docs.phpdoc.org/latest/guide/references/phpdoc/basic-syntax.html#basic-syntax) standard
 *  Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.
 
 ## General principles
