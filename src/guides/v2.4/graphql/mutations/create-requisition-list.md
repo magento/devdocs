@@ -33,11 +33,12 @@ The following example creates the `Frequently Ordered Products` requisition list
 
 ```graphql
 mutation {
-  createRequisitionList(
-    name: "Frequently Ordered Products",
+  createRequisitionList(input:{
+    name: "Frequently Ordered Products"
     description: "Frequently ordered products list"
+  }
   ) {
-    list {
+    requisition_list {
       uid
       name
       description
@@ -52,7 +53,7 @@ mutation {
 {
   "data": {
     "createRequisitionList": {
-      "list": {
+      "requisition_list": {
           "uid": "4",
           "name": "Frequently Ordered Products",
           "description": "Frequently ordered products list"
@@ -73,7 +74,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `createRequisitionList` mutation returns the new requisition list after creating a list for the logged in customer.
+The `createRequisitionList` mutation returns the new requisition list.
 
 Attribute |  Data Type | Description
 --- | --- | ---

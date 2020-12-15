@@ -32,12 +32,12 @@ mutation {
   deleteRequisitionList(
     requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
   ) {
-    list {
+    status
+    requisition_list {
       uid
       name
       description
     }
-    status
   }
 }
 ```
@@ -48,12 +48,12 @@ mutation {
 {
   "data": {
     "deleteRequisitionList": {
-      "list": {
+      "status": true,
+      "requisition_list": {
         "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
         "name": "Frequently Ordered Products",
         "description": "Frequently ordered products list"
-      },
-      "status": true
+      }
     }
   }
 }
@@ -69,11 +69,11 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `deleteRequisitionList` mutation returns the new requisition list after deleting a list for the logged in customer.
+The `deleteRequisitionList` mutation returns the status of the operation, and the requisition list, if it was successfully deleted.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisition_list` | [[RequisitionList](#RequisitionList)] | The requisition list after removing a list
+`requisition_list` | [[RequisitionList](#RequisitionList)] | The requisition list, if the operation was successful
 `status` | Boolean | Indicates whether the request to delete the requisition list was successful
 
 ### RequisitionList attributes {#RequisitionList}

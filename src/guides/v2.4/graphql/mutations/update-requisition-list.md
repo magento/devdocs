@@ -31,12 +31,13 @@ The following example renames the `Frequently Ordered Products` requisition list
 
 ```graphql
 mutation {
-  updateRequisitionList(
-    requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
-    name: "Frequently Ordered Essential Products",
+  updateRequisitionList(input:{
+    name: "Frequently Ordered Essential Products"
     description: "Frequently ordered essential products list"
+  }
+    requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
   ) {
-    list {
+    requisition_list {
       uid
       name
       description
@@ -51,7 +52,7 @@ mutation {
 {
   "data": {
     "updateRequisitionList": {
-      "list": {
+      "requisition_list": {
           "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
           "name": "Frequently Ordered Essential Products",
           "description": "Frequently ordered essential products list"
