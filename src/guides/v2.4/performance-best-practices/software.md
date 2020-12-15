@@ -26,8 +26,8 @@ See [Magento technology stack requirements]({{page.baseurl}}/install-gde/system-
 
 Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" TCP connections. To enable these kernel settings, set the following values in `/etc/sysctl.conf`:
 
- {:.bs-callout-info}
- Enabling net.ipv4.tcp_tw_reuse is useless for incoming connections.
+{:.bs-callout-info}
+Enabling net.ipv4.tcp_tw_reuse is useless for incoming connections.
  
 ```terminal
 net.ipv4.tcp_tw_reuse = 1
