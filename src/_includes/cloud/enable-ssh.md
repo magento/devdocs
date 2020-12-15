@@ -18,7 +18,7 @@ For more information on SSH keys, see the following:
 An existing SSH key pair is typically located in the `.ssh` subdirectory of the user home directory. This folder is hidden and may not display in the File Manager or Finder if your system is not configured to display hidden files and folders.
 
 {:.procedure}
-Check for SSH keys:
+To check for SSH keys:
 
 1. In the terminal, list the contents of your SSH directory.
 
@@ -69,7 +69,7 @@ To add an SSH key using the CLI:
 
 1. Open a terminal application on your local workstation.
 
-1. If you haven't done so already, log in (or switch to) the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
+1. If you have not done so already, log in (or switch to) the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
 
 1. Log in to your project:
 
@@ -84,14 +84,14 @@ To add an SSH key using the CLI:
    ```
 
 {:.bs-callout-tip}
-You can list and delete SSH keys using the Magento Cloud CLI commands `magento-cloud ssh-key:list` and `magento-cloud ssh-key:delete`.
+You can list and delete SSH keys using the Magento Cloud CLI commands `ssh-key:list` and `ssh-key:delete`.
 
 ### Add your SSH key using the Project Web Interface {#add-key-web}
 
-You will select and add your SSH public key to each environment in your account.
+You must add your SSH public key to your account. After you add the key, you must redeploy all active environments on your account to install the key.
 
 -  Starter: Add to Master (Production) and any environments you create by branching from Master
--  Pro: Add the key to Staging, Production, and Integration environments
+-  Pro: Add the key to the Staging, Production, and Integration environments
 
 {:.procedure}
 To add an SSH key using the Project Web interface:
@@ -106,7 +106,7 @@ To add an SSH key using the Project Web interface:
 
 1. Login and access your project through the [Project Web Interface](https://accounts.magento.cloud).
 
-1. In your selected branch, an icon displays if the environment does not have an SSH key.
+1. In your project, look for the **No SSH key** icon to the right of the command field. This icon is visible when the project does not contain an SSH key.
 
    ![No SSH key]({{ site.baseurl }}/common/images/cloud/cloud_ssh-key-install.png)
 
