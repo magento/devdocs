@@ -2450,7 +2450,7 @@ entries:
   date: October 8, 2019
   link: https://github.com/magento/devdocs/pull/5586
 - description: Updated the REST schema for [2.3.3](https://devdocs.magento.com/redoc/2.3/)
-    and [2.2.10](https://devdocs.magento.com/swagger/index_22.html).
+    and [2.2.10](https://devdocs.magento.com/swagger/index.html).
   versions: 2.2.10, 2.3.3
   type: Major update
   date: October 8, 2019
@@ -3170,7 +3170,7 @@ entries:
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4824
 - description: Updated the REST schema for [2.3.2](https://devdocs.magento.com/redoc/2.3/)
-    and [2.2.9](https://devdocs.magento.com/swagger/index_22.html).
+    and [2.2.9](https://devdocs.magento.com/swagger/index.html).
   versions: 2.2.9, 2.3.2
   type: Major update
   date: June 22, 2019
