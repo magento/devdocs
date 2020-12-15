@@ -17,7 +17,7 @@ Remote storage provides a cache layer for external API calls. The caching is bas
 {:.procedure}
 To use Redis cache with [predis/predis][predis] extension:
 
-1. Add the `predis/predis` extension to the require section of your `composer.json` file.
+1. Add the `predis/predis` extension to the `require` section of your `composer.json` file.
 
    ```bash
    composer require predis/predis
