@@ -28,7 +28,7 @@ Operating system configurations and optimizations are similar for Magento as oth
 
 {:.bs-callout-info}
 Enabling net.ipv4.tcp_tw_reuse is useless for incoming connections.
- 
+
 ```terminal
 net.ipv4.tcp_tw_reuse = 1
 ```
