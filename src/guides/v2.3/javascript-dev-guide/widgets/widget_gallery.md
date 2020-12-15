@@ -79,7 +79,7 @@ Example of declarative initialization:
                     "<breakpoint_name>": {
                         "conditions": {
                             "max-width": "767px"
-                        }
+                        },
                         "options": {}
                     }
                 }

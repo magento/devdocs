@@ -15,6 +15,7 @@ The `items` that are returned in a `ProductInterface` array can also contain att
    -  [BundleProduct]({{ page.baseurl }}/graphql/interfaces/bundle-product.html)
    -  [ConfigurableProduct]({{ page.baseurl }}/graphql/interfaces/configurable-product.html)
    -  [DownloadableProduct]({{ page.baseurl }}/graphql/interfaces/downloadable-product.html)
+   -  [GiftCardProduct]({{ page.baseurl }}/graphql/interfaces/gift-card-product.html)
    -  [GroupedProduct]({{ page.baseurl }}/graphql/interfaces/grouped-product.html)
    -  [VirtualProduct]({{ page.baseurl }}/graphql/interfaces/virtual-product.html)
 
@@ -60,6 +61,7 @@ Attribute | Data type | Description
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
+`staged` | Boolean! | Indicates whether the product is staged for a future campaign
 `stock_status` | ProductStockStatus | The status of the stock. `ProductStockStatus` is an enumeration that can have the value of `IN_STOCK` or `OUT_OF_STOCK`. This attribute is defined in the `InventoryGraphQl` module.
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the `SwatchesGraphQl` module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
