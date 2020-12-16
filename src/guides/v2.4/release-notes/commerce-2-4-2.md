@@ -62,7 +62,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  [**Redis 6.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html#technologies-magento-can-use). Magento 2.4.x remains compatible with Redis 5.x. <!--- MC-34853-->
 
-The ability to configure a Magento installation to use a split database has been deprecated in this release. Merchants who currently use split database should start planning to move to a single database or use an alternative approach. See the DevBlog post for a discussion of how to revert to a single database deployment. <!--- MC-38429 39001-->
+The ability to configure a Magento installation to use a split database has been deprecated in this release. Merchants who currently use split database should start planning to move to a single database or use an alternative approach. <!--- MC-38429 39001-->
 
 ### Performance enhancements
 
