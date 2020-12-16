@@ -25,7 +25,7 @@ mutation {
 
 ## Example usage
 
-The following example clear's the customer's cart.
+The following example clears the customer's cart.
 
 **Request:**
 
