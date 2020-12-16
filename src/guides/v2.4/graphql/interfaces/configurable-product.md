@@ -20,7 +20,7 @@ The `ConfigurableProduct` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `configurable_options` | [[ConfigurableProductOptions]](#configProdOptions) | An array of linked simple product items
-`configurable_product_options_selection(configurableOptionValueUids: [ID!])` | [ConfigurableProductOptionsSelection](#ConfigurableProductOptionsSelection) | Metadata for the specified configurable options selection
+`configurable_product_options_selection(configurableOptionValueUids: [ID!])` | [ConfigurableProductOptionsSelection](#ConfigurableProductOptionsSelection) | Contains media gallery items and other details about selected configurable product options as well as details about remaining selectable options. We recommend filtering by one or more `uid` values to prevent loading a large amount of media gallery data
 `variants` | ConfigurableVariant | An array of variants of products
 
 ### ConfigurableAttributeOption object
@@ -33,6 +33,15 @@ Field | Type | Description
 `label` | String | A string that describes the configurable attribute option
 `uid` | ID! | A string that encodes option details
 `value_index` | Int | A unique index number assigned to the configurable product option
+
+### ConfigurableOptionAvailableForSelection attributes {#ConfigurableOptionAvailableForSelection}
+
+The `ConfigurableOptionAvailableForSelection` object describes configurable options that have been and can be selected.
+
+Attribute | Type | Description
+--- | --- | ---
+`attribute_code` | String! | An attribute code that uniquely identifies a configurable option
+`option_value_uids` | [ID!]! | Any array of IDs that can be selected
 
 ### ConfigurableProductOptions {#configProdOptions}
 
@@ -50,6 +59,16 @@ Attribute | Type | Description
 `use_default` | Boolean | Indicates whether the option is the default
 `values` | [[ConfigurableProductOptionsValues]](#configProdOptionsValues) | An array that defines the `value_index` codes assigned to the configurable product
 
+### ConfigurableProductOptionsSelection attributes {#ConfigurableProductOptionsSelection}
+
+The `ConfigurableProductOptionsSelection` object contains metadata corresponding to the selectable configurable options for a product. It is meant to be used in a `products` query to restrict which media gallery items are displayed as the shopper selects configurable product options. [Limit the number of retrieved media gallery items](#media-gallery-example) demonstrates its use.
+
+Attribute | Type | Description
+--- | --- | ---
+`media_gallery` | [MediaGalleryInterface!] | Product images and videos corresponding to the specified configurable options selection
+`options_available_for_selection` | [[ConfigurableOptionAvailableForSelection!]](#ConfigurableOptionAvailableForSelection) | Lists the options that have been selected and the options that are available as a result of the previous selections
+`variant` | SimpleProduct | The simple product represented by the selected configurable options. This object will be null until the shopper selects an option for each attribute
+
 ### ConfigurableProductOptionsValues {#configProdOptionsValues}
 
 The `ConfigurableProductOptionsValues` object contains the following attribute:
@@ -62,25 +81,6 @@ Attribute | Type | Description
 `swatch_data` | [SwatchDataInterface](#swatchDataInterface) | Details about swatches that can be displayed for configurable product options
 `use_default_value` | Boolean | Indicates whether to use the default_label
 `value_index` | Int | A unique index number assigned to the configurable product option
-
-### ConfigurableProductOptionsSelection attributes {#ConfigurableProductOptionsSelection}
-
-The `ConfigurableProductOptionsSelection` object contains metadata corresponding to the selectable configurable options for a product. It is meant to be used in a `products` query to restrict which media gallery are displayed as the shopper selects configurable product options. [Limit the number of retrieved media gallery items](#media-gallery-example) demonstrates its use.
-
-Attribute | Type | Description
---- | --- | ---
-`media_gallery` | [MediaGalleryInterface!] | Product images and videos corresponding to the specified configurable options selection
-`options_available_for_selection` | [[ConfigurableOptionAvailableForSelection!]](#ConfigurableOptionAvailableForSelection) | Configurable options available for further selection based on current selection
-`variant` | SimpleProduct | Variant represented by the specified configurable options selection. It is expected to be null, until selections are made for each configurable option
-
-### ConfigurableOptionAvailableForSelection attributes {#ConfigurableOptionAvailableForSelection}
-
-The `ConfigurableOptionAvailableForSelection` object describes configurable options that can be selected.
-
-Attribute | Type | Description
---- | --- | ---
-`attribute_code` | String! | An attribute code that uniquely identifies configurable option
-`option_value_uids` | [ID!]! | Configurable option values available for further selection
 
 ### ConfigurableVariant object
 
