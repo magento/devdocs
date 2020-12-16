@@ -124,7 +124,7 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 ### Magento Functional Testing Framework (MFTF)
 
-MFTF 3.2.0 is now available. This release introduces error tolerance in both tests and test suit generation.  Additional enhancements and bug fixes are described in the [Magento Functional Testing Framework Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md).
+MFTF 3.2.1 is now available. This release introduces error tolerance in both tests and test suit generation. Additional enhancements and bug fixes are described in the [Magento Functional Testing Framework Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md).
 
 ### Vendor Developed Extensions
 
@@ -1236,7 +1236,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Open Source 2.4.2 using Composer.
+You can install Magento Open Source 2.4.2 using [Composer]({{ page.baseur l}}/install-gde/composer.html).
 
 ## Migration toolkits
 

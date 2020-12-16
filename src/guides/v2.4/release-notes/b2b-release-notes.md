@@ -11,11 +11,11 @@ These release notes can include:
 
 ## Magento B2B - Version 1.3.1
 
--  {:.fix} Adding a configurable product to the shopping cart directly from a requisition list when this product was used in a prior order no longer returns a system error.
+-  {:.fix} Adding a configurable product to the shopping cart directly from a requisition list when this product was used in a prior order no longer returns a system error. [GitHub-302](https://github.com/magento/partners-magento2b2b/issues/302)
 
--  {:.fix} Magento now displays the Requires My Approval tab correctly for purchase orders when a split database configuration is deployed.
+-  {:.fix} Magento now displays the Requires My Approval tab correctly for purchase orders when a split database configuration is deployed. [GitHub-259](https://github.com/magento/partners-magento2b2b/issues/259)
 
--  {:.fix} Magento now displays details about bundle products and gift card when you view purchase orders.
+-  {:.fix} Magento now displays details about bundle products and gift card when you view purchase orders. [GitHub-213](https://github.com/magento/partners-magento2b2b/issues/213)
 
 -  {:.fix} Shoppers are now redirected as expected after logging into their account while browsing in a store where **Website Restriction** is enabled and **Restriction Mode** is set to **Private Sales: Login Only**. Previously, shoppers were redirected to the store home page. <!--- MC-38934-->
 

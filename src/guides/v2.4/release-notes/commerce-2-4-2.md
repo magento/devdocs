@@ -29,7 +29,7 @@ Look for the following highlights in this release.
 
 ### Substantial security enhancements
 
-This release includes over  security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.1-p1 and Magento 2.3.6-p1.
+This release includes over 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.1-p1 and Magento 2.3.6-p1.
 
 #### Over 35 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
@@ -68,30 +68,6 @@ The ability to configure a Magento installation to use a split database has been
 
 This release includes code enhancements that boost API performance and Admin response time for deployments with large catalogs. Multiple scalability enhancements enable Magento 2.4.2 to natively support complex catalogs up to 20x larger than in previous releases.
 
-### Adobe Stock Integration
-
-This release includes Adobe Stock Integration v2.1.1.
-
-### Page Builder
-
-This release includes enhancements to Page Builder content migration and Page Builder CSS customization:
-
-*  Developers can now style content type output differently per viewport without using the `!important` directive.
-
-*  Content migrated to Page Builder is no longer padded with default inline styling.
-
-*  Row content type is no longer a required container.
-
-*  Predefined margins and paddings are no longer required for content types.
-
-*  The new mobile viewport switcher and viewport scope for form field values lets users and developers
-
-   *  View content on different viewports when authoring.
-
-   *  Optimize minimum height field parameter on different content types for each viewport. (Only one parameter (min height) is supported out of the box. Custom development required to enable mobile optimization for other content parameters.)
-
-   *  Add field scope to custom fields and field sets (developers).
-
 ### GraphQL
 
 This release adds GraphQL coverage for the following features:
@@ -116,25 +92,9 @@ This release adds GraphQL coverage for the following features:
    *  Companies, including administrators, users, roles, and structure <!--- MC-33861-->
    *  Company credit <!--- MC-33862-->
    *  Shared catalogs <!--- MC-33864-->
-   *  [Create]({{ page.baseurl }}/graphql/mutations/create-requisition-list.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-requisition-list.html), and [rename]({{ page.baseurl }}/graphql/mutations/rename-requisition-list.html) requisition lists  <!--- MC-34312-->
+   *  [Create]({{ page.baseurl }}/graphql/mutations/create-requisition-list.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-requisition-list.html), and update requisition lists  <!--- MC-34312-->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
-
-### PWA Studio
-
-This release of PWA Studio includes:
-
-*  Internationalization and localization. Venia now provides support for multiple languages and currencies.
-
-*  Support for multiple stores.
-
-*  Enhanced extensibility.
-
-*  Performance optimizations. Client-side performance has been enhanced with Google Lighthouse.
-
-*  Introduction of My Account for Venia. This introduction of My Account features including order history (details), address book, and saved payments.
-
-For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 
 ### B2B
 
@@ -159,6 +119,46 @@ To support a complete workflow for accepting online payments, this feature also:
 *  Allows buyers to change the payment method during the final payment step to maintain flexibility and increase conversion.
 
 This release also includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
+
+### PWA Studio
+
+This release of PWA Studio includes:
+
+*  Internationalization and localization. Venia now provides support for multiple languages and currencies.
+
+*  Support for multiple stores.
+
+*  Enhanced extensibility.
+
+*  Performance optimizations. Client-side performance has been enhanced with Google Lighthouse.
+
+*  Introduction of My Account for Venia. This introduction of My Account features including order history (details), address book, and saved payments.
+
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
+
+### Page Builder
+
+This release includes enhancements to Page Builder content migration and Page Builder CSS customization:
+
+*  Developers can now style content type output differently per viewport without using the `!important` directive.
+
+*  Content migrated to Page Builder is no longer padded with default inline styling.
+
+*  Row content type is no longer a required container.
+
+*  Predefined margins and paddings are no longer required for content types.
+
+*  The new mobile viewport switcher and viewport scope for form field values lets users and developers perform these actions:
+
+   *  View content on different viewports when authoring.
+
+   *  Optimize minimum height field parameter on different content types for each viewport. (Only one parameter (min height) is supported out of the box. Custom development required to enable mobile optimization for other content parameters.)
+
+   *  Add field scope to custom fields and field sets (developers).
+
+### Adobe Stock Integration
+
+This release includes Adobe Stock Integration v2.1.1.
 
 ### Media Gallery
 
@@ -188,7 +188,7 @@ Support for AWS S3 has been added to all modules including B2B, PageBuilder, an
 
 ### Magento Functional Testing Framework (MFTF)
 
-MFTF 3.2.0 is now available. This release introduces error tolerance in both tests and test suit generation.  Additional enhancements and bug fixes are described in the [Magento Functional Testing Framework Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md).
+MFTF 3.2.1 is now available. This release introduces error tolerance in both tests and test suit generation. Additional enhancements and bug fixes are described in the [Magento Functional Testing Framework Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md).
 
 ### Vendor Developed Extensions
 
@@ -1416,9 +1416,13 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Shoppers can now successfully move a product from one wishlist to another.
 
-## Known issue
+## Known issues
 
 **Issue**: Discounts for a specific payment method persist during checkout for a purchase order even when the buyer changes payment method during final checkout. As a result, customers may receive a discount that they are not entitled to. This occurs because a cart rule for the original payment method is still applied despite the change in payment method. **Workaround**: None. <!-- KB-827 -->
+
+**Issue**: Magento does not display a product under a category or in search results when shared catalogs are enabled for B2B, and a product has been created but not assigned to a shared catalog in stores implementing the Luma theme. However, GraphQL products queries return these unassigned products with an incomplete set of attributes. **Workaround**: We will provide a fix for this issue no later than 2.4.3. <!--- MC-39522-->
+
+**Issue**: The `deleteRequisitionListOutput` query returns details about the deleted requisition list instead of the remaining requisition lists. <!--- MC-39894-->
 
 ## Community contributions
 
@@ -1446,7 +1450,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.4.2 using Composer.
+You can install Magento Commerce 2.4.2 using [Composer]({{ page.baseur l}}/install-gde/composer.html).
 
 ## Migration tool kits
 
