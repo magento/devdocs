@@ -87,7 +87,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
 
 {% endcollapsible %}
 
-## Step 2 Create an InstallData script
+## Step 2 Create an InstallData script {#instgde-cli-multistore}
 
 Next, we need to create the InstallData script.
 Because adding an attribute technically adds records into several tables, such as `eav_attribute` and `catalog_eav_attribute,` this is data manipulation, not a schema change.
@@ -337,3 +337,41 @@ backend model has executed successfully, so now we’ll set it to Wool and save 
 
 Having saved the product, we’ll now move to the frontend.
 It should be visible and in bold text.
+
+## Product Attribute Option Creation
+
+A product attribute of type multiselect or select will present selectable options to the user. These options may be added manually through the admin panel, or by upgrade script. The script process is slightly different depending on whether the options are being added at the moment of attribute creation or whether the options are being added at a later time to an existing attribute.
+
+### ADD OPTIONS ALONG WITH A NEW PRODUCT ATTRIBUTE
+
+Basic instructions for creating a product attribute by setup or upgrade script can be found [in DevDocs]{#instgde-cli-multistore}. Before scripting the attribute creation, pick one of these two use cases for your options:
+
+* You want a set of options which cannot be modified by a user through the admin panel, and which can only be changed through a future code push.
+* You want a set of options which can be modified, added, or deleted through the admin panel by any user with admin access and proper authorization.
+
+In the case of Use Case 1 (an 'immutable' set of options), follow Magento's instructions entitled "Step 3: Add a source model." You will create a model that contains and dynamically, on block rendering, returns your attribute's selectable options to the client.
+
+In the case of Use Case 2 (a 'mutable' set of options), review Magento's article entitled "EAV and extension attributes," noting especially the attribute option entitled option. Also make certain to declare 'Magento\Eav\Model\Entity\Attribute\Source\Table' as the value for the 'source' attribute option. This ensures that Magento will store options in the appropriate database table.
+
+Investigating \Magento\Eav\Setup\EavSetup.php::addAttribute() and \Magento\Eav\Setup\EavSetup.php::addAttributeOptions() reveals that you may add a series of options with the following array:
+'option' => ['values' => ['Option 1', 'Option 2', 'Option 3', etc.]]
+
+Alternatively, you may designate a specific option sorting order as follows:
+'option' => ['values' => [8 => 'Option 1', 3 => 'Option 2', 11 => 'Option 3', etc.]]
+
+It's worth noting that store_id is hardcoded to default to 0 with no good way to change this other than overriding the class or using the plugin to intercept the database insert method, which would probably be a performance killer as often as that gets called.
+
+ADD OPTIONS TO AN EXISTING PRODUCT ATTRIBUTE
+For relevant background, review the preceding section on adding options at the same time as a new product attribute.
+
+Adding options to an 'immutable' set of options is as simple as modifying your custom source model with the additional options you wish to provide.
+
+Adding options to a 'mutable' set of options leverages the same EavSetup object as you use when creating an attribute with options, but requires an additional step because EavSetup needs to know to which attribute you want to assign new options. This is an example of how you might do this:
+Assign an array of new options to a variable:
+$options = ['attribute_id' => null, 'values' => 'Option 1', 'Option 2', etc]];
+
+Update your array with the attribute ID from the database:
+$options['attribute_id'] = $eavSetup->getAttributeId($eavSetup->getEntityTypeId('catalog_product'), 'your_attribute_code');
+
+Add your options:
+$eavSetup->addAttributeOption($options);
