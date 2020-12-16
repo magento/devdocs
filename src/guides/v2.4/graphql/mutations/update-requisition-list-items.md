@@ -4,7 +4,7 @@ title: updateRequisitionListItems mutation
 b2b_only: true
 contributor_name: EY
 ---
-The `updateRequisitionListItems` mutation updates products in requisition list.
+The `updateRequisitionListItems` mutation updates products in a requisition list.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
@@ -26,7 +26,7 @@ mutation {
 
 ## Example usage
 
-The following example updates the specified product's quantity in the requisition list.
+The following example updates the quantity of an item in a requisition list.
 
 **Request:**
 
