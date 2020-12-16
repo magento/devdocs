@@ -86,10 +86,10 @@ Attribute |  Data Type | Description
 
 Type | Description
 --- | ---
-`LOW_QUANTITY` | The one of the item's quantity is low
-`OPTIONS_UPDATED` | The options has been updated
-`OUT_OF_STOCK` | The one of the items is out of stock
-`UNAVAILABLE_SKU` | The one of the items SKU is unavailable
+`LOW_QUANTITY` | The quantity of one of the items is low
+`OPTIONS_UPDATED` | The options have been updated
+`OUT_OF_STOCK` | One of the items is out of stock
+`UNAVAILABLE_SKU` | One of the items SKU is unavailable
 
 ### Cart object {#CartObject}
 
