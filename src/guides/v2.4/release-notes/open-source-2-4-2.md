@@ -33,7 +33,7 @@ This release includes over 35 security fixes and platform security improvements.
 
 #### Over 35 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security Updates Available for Magento](https://helpx.adobe.com/security/products/magento/apsb20-59.html) for a discussion of these fixed issues.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene.
 
 #### Additional security enhancements
 
@@ -176,7 +176,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- ENGCOM-8020-->
 
-*  Added support for reading `exif_image.png` or `exif-image.jpeg` metadata. _Fix submitted by Nazar Klovanych in pull request [29576](https://github.com/magento/magento2/pull/29576)_. [GitHub-1449](https://github.com/magento/adobe-stock-integration/issues/1449)
+*  Added support for reading `exif_image.png` or `exif-image.jpeg` metadata. [GitHub-1449](https://github.com/magento/adobe-stock-integration/issues/1449)
 
 ### Analytics
 
@@ -362,7 +362,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8101 -->
 
-*  Remove unnecessary spaces in `app/code/Magento/Contact/view/frontend/templates/form.phtml`. [GitHub-29779](https://github.com/magento/magento2/issues/29779)
+*  Removed unnecessary spaces in `app/code/Magento/Contact/view/frontend/templates/form.phtml`. [GitHub-29779](https://github.com/magento/magento2/issues/29779)
 
 <!-- ENGCOM-7967 -->
 
@@ -370,7 +370,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8028 -->
 
-*  ChangeQuoteControl has been refactored. [GitHub-29673](https://github.com/magento/magento2/issues/29673)
+*  `ChangeQuoteControl` has been refactored. [GitHub-29673](https://github.com/magento/magento2/issues/29673)
 
 <!-- ENGCOM-8027 -->
 
@@ -1022,7 +1022,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  The Admin and main store switcher now reflect changes made to the store sort order in the Admin.  [GitHub-13401](https://github.com/magento/magento2/issues/13401)
 
-### TargetRule
+### Target rules
 
 <!--- MC-34998-->
 
@@ -1066,7 +1066,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8017 -->
 
-*  Added test coverage for the AdminAnalytics module. [GitHub-29500](https://github.com/magento/magento2/issues/29500)
+*  Added test coverage for the `AdminAnalytics` module. [GitHub-29500](https://github.com/magento/magento2/issues/29500)
 
 <!-- ENGCOM-8266 -->
 
