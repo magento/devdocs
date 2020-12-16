@@ -346,8 +346,8 @@ A product attribute of type multiselect or select will present selectable option
 
 Basic instructions for creating a product attribute by setup or upgrade script can be found [in DevDocs]{#instgde-cli-multistore}. Before scripting the attribute creation, pick one of these two use cases for your options:
 
-* You want a set of options which cannot be modified by a user through the admin panel, and which can only be changed through a future code push.
-* You want a set of options which can be modified, added, or deleted through the admin panel by any user with admin access and proper authorization.
+*  You want a set of options which cannot be modified by a user through the admin panel, and which can only be changed through a future code push.
+*  You want a set of options which can be modified, added, or deleted through the admin panel by any user with admin access and proper authorization.
 
 In the case of Use Case 1 (an 'immutable' set of options), follow Magento's instructions entitled "Step 3: Add a source model." You will create a model that contains and dynamically, on block rendering, returns your attribute's selectable options to the client.
 
