@@ -56,6 +56,9 @@ The presence of any profiling and debugging extensions can negatively impact the
 
 ### PHP Settings
 
+{:.bs-callout-info}
+In Magento cloud environments **opcache.enable_cli** setting has to be set to 0, without that the changes in `.magento.env.yaml` are not get updated into the `app/etc/env.php` file.
+
 To guarantee successful execution of all Magento instances without dumping data or code to disk, set the memory limit as follows:
 
 `memory_limit=1G`
