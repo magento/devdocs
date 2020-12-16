@@ -144,11 +144,11 @@ This release includes enhancements to Page Builder content migration and Page Bu
 
 *  Content migrated to Page Builder is no longer padded with default inline styling.
 
-*  Row content type is no longer a required container.
+*  Page Builder no longer requires all content types to be placed within a row. The [Page Builder stage](https://docs-beta.magento.com/user-guide/cms/page-builder-workspace.html#stage) is now initially blank and supports adding the following content types directly to the stage: Rows, Columns, Tabs, HTML Code, Blocks, Dynamic Blocks.
 
 *  Predefined margins and paddings are no longer required for content types.
 
-*  The new mobile viewport switcher and viewport scope for form field values lets users and developers perform these actions:
+*  The new mobile [viewport switcher](https://docs-beta.magento.com/user-guide/cms/page-builder-workspace.html#viewports) and viewport scope for form field values lets users and developers perform these actions:
 
    *  View content on different viewports when authoring.
 
