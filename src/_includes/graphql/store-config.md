@@ -93,7 +93,7 @@ Attribute | Data Type | Description | Default or example value
 `title_suffix` | String | A suffix that appears after the title to create a two-or three part title | null
 `website_code` | ID | The unique ID for the website | `base`
 `website_id` | Integer | Deprecated. The field should not be used on the storefront. The ID number assigned to the parent website | `1`
-`website_name` | ID | The label assigned to the website | Main Website
+`website_name` | String | The label assigned to the website | Main Website
 `weight_unit` | String | The weight unit for products | `lbs`, `kgs`, or similar
 `welcome` | String | Text that appears in the header of the page and includes the name of customers who are logged in | Default welcome msg!
 
