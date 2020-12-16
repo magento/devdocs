@@ -43,7 +43,7 @@ The examples and instructions in the {{ site.data.var.ece }} documentation expla
 
 You can create and manage custom VCL snippets from the Magento Admin UI or by using the Fastly API:
 
--  [Magento Admin UI](#manage-custom-vcl-snippets-from-the-magento-admin-ui)—We recommend using the Magento Admin UI to manage custom VCL snippets because it automates the process to validate and upload the custom snippet and apply your changes to the Fastly service configuration. Additionally, you can view and edit the custom VCL snippets added to the Fastly service configuration from the Admin UI. 
+-  [Magento Admin UI](#manage-custom-vcl-snippets-from-the-magento-admin-ui)—We recommend using the Magento Admin UI to manage custom VCL snippets because it automates the process to validate and upload the custom snippet and apply your changes to the Fastly service configuration. Additionally, you can view and edit the custom VCL snippets added to the Fastly service configuration from the Admin UI.
 
 {:.bs-callout-info}
 You must use the Fastly API to [delete custom VCL snippets](https://devdocs.magento.com/cloud/cdn/cloud-vcl-custom-snippets.html#manage-vcl), or you can delete the contents of the snippet in the  Magento Admin UI and upload an empty snippet. See [Delete a custom snippet](https://devdocs.magento.com/cloud/cdn/fastly-vcl-badreferer.html#delete-the-custom-vcl-snippet).
