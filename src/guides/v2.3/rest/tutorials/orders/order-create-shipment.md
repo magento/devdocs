@@ -37,7 +37,7 @@ where `3` is the order id.
 
 **Payload:**
 
-The `notify` field used to send shipment email. The `tracks` array optionally allows you to include one or more tracking numbers for the [shipment](https://glossary.magento.com/shipment).
+The `notify` field is used to trigger Magento to send the shipment email. The `tracks` array optionally allows you to include one or more tracking numbers for the [shipment](https://glossary.magento.com/shipment).
 
 {% collapsible Show code sample %}
 
