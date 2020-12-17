@@ -20,7 +20,7 @@ The `ConfigurableProduct` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `configurable_options` | [[ConfigurableProductOptions]](#configProdOptions) | An array of linked simple product items
-`configurable_product_options_selection(configurableOptionValueUids: [ID!])` | [ConfigurableProductOptionsSelection](#ConfigurableProductOptionsSelection) | Contains media gallery items and other details about selected configurable product options as well as details about remaining selectable options. We recommend filtering by one or more `uid` values to prevent loading a large amount of media gallery data
+`configurable_product_options_selection(configurableOptionValueUids: [ID!])` | [ConfigurableProductOptionsSelection](#ConfigurableProductOptionsSelection) | Contains media gallery items and other details about selected configurable product options as well as details about remaining selectable options. Magento recommends you filter by one or more `uid` values to prevent loading a large amount of media gallery data
 `variants` | ConfigurableVariant | An array of variants of products
 
 ### ConfigurableAttributeOption object
@@ -36,7 +36,7 @@ Field | Type | Description
 
 ### ConfigurableOptionAvailableForSelection attributes {#ConfigurableOptionAvailableForSelection}
 
-The `ConfigurableOptionAvailableForSelection` object describes configurable options that have been and can be selected.
+The `ConfigurableOptionAvailableForSelection` object describes configurable options that have been selected and can be selected as a result of the previous selections.
 
 Attribute | Type | Description
 --- | --- | ---
@@ -61,12 +61,12 @@ Attribute | Type | Description
 
 ### ConfigurableProductOptionsSelection attributes {#ConfigurableProductOptionsSelection}
 
-The `ConfigurableProductOptionsSelection` object contains metadata corresponding to the selectable configurable options for a product. It is meant to be used in a `products` query to restrict which media gallery items are displayed as the shopper selects configurable product options. [Limit the number of retrieved media gallery items](#media-gallery-example) demonstrates its use.
+The `ConfigurableProductOptionsSelection` object contains metadata corresponding to the selectable configurable options for a product. Use this object in a `products` query to minimize the number of media gallery items that are displayed as the shopper selects configurable product options. [Limit the number of retrieved media gallery items](#media-gallery-example) demonstrates its use.
 
 Attribute | Type | Description
 --- | --- | ---
 `media_gallery` | [MediaGalleryInterface!] | Product images and videos corresponding to the specified configurable options selection
-`options_available_for_selection` | [[ConfigurableOptionAvailableForSelection!]](#ConfigurableOptionAvailableForSelection) | Lists the options that have been selected and the options that are available as a result of the previous selections
+`options_available_for_selection` | [[ConfigurableOptionAvailableForSelection!]](#ConfigurableOptionAvailableForSelection) | Lists the options selected and the options available as a result of the previous selections
 `variant` | SimpleProduct | The simple product represented by the selected configurable options. This object will be null until the shopper selects an option for each attribute
 
 ### ConfigurableProductOptionsValues {#configProdOptionsValues}
@@ -88,7 +88,7 @@ The `ConfigurableVariant` object contains the following attributes:
 
 Field | Type | Description
 --- | --- | ---
-`attributes` | ConfigurableAttributeOption | ConfigurableAttributeOption contains the value_index (and other related information) assigned to a configurable product option
+`attributes` | ConfigurableAttributeOption | The `value_index` (and other related information) assigned to a configurable product option
 `product` | SimpleProduct | An array of linked simple products
 
 ### SwatchDataInterface {#swatchDataInterface}
@@ -764,7 +764,7 @@ This example shows how the the media gallery items change as a shopper selects c
 
 #### Step 1. Get the images on the parent page
 
-The following query returns media gallery information on the parent configurable and the `uid` values of each configurable option.
+The following query returns media gallery information on the parent configurable product and the `uid` values of each configurable option.
 
 Note that file names of the images are `ms10-blue_main_1.jpg`, `ms10-blue_alt1_1.jpg`, and `ms10-blue_back_1.jpg`.
 
@@ -873,9 +873,9 @@ query {
 
 In this example, the shopper has selected the red variant. The query has been expanded to include the `configurable_product_options_selection` object, which filters on the `uid` of the red variant. Within that object, notice:
 
--  The `options_available_for_selection` shows that all of the `size` attributes can still be selected, and that the red variant has been selected.
+-  The `options_available_for_selection` shows that all available `size` attributes with the red variant can be selected.
 -  The `media_gallery` object contains the `ms10-red_main_1.jpg` image, which can then be displayed with the parent images.
--  The `variant` object is null, because the shopper has not selected a size. The variant is not fully defined until a value for all of the selectable attributes.
+-  The `variant` object is null, because the shopper has not selected a size. The variant is not fully defined until the shopper makes a selection for all attributes.
 
 **Request:**
 
@@ -1027,10 +1027,10 @@ query {
 
 #### Step 3. Select the size
 
-In this example, the shopper has selected the Medium option for the size attribute. The query adds the corresponding `uid` to the `configurable_product_options_selection` filter.
+In this example, the shopper has selected the Medium option for the size attribute. Therefore, the query adds the corresponding `uid` to the `configurable_product_options_selection` filter.
 
 -  The `options_available_for_selection` shows that a `size` and a `color` option has been selected.
--  The Luma sample data doesn't include any images that are specific to a size, so the content of the `media_gallery` object is unchanged.
+-  The Luma sample data does not include any images that are specific to a size, so the content of the `media_gallery` object is unchanged.
 -  The `variant` object contains a few details about the selected variant.
 
 **Request:**
