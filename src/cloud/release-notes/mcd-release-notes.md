@@ -16,6 +16,19 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.2.1
+*Release date: December 21, 2020*<br/>
+
+-  {:.fix}Fixed PHP-FPM container health check by changing the `WEB_PORT` from `80` to `8080`.<!--MCLOUD-7232-->
+
+-  {:.fix}Fixed an error with invalid volume naming in developer mode.<!--MCLOUD-7442-->
+
+-  {:.new}Added the ability to change the value of the parameters "worker_processes" (option "--nginx-worker-processes" ) and "worker_connections" (option "--nginx-worker-processes" ) for services "tls" and "web". The parameter 'worker_process' retains the ability to set the value "auto".
+
+-  {:.new}Added the ability to create a configuration without the "tls" service.
+
+-  {:.new}Reduced the value of memory consumed by the NGINX process for 'tls' and 'web' services
+
 ## v1.2.0
 *Release date: November 9, 2020*<br/>
 
