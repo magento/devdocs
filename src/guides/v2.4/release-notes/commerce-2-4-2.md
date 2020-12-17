@@ -91,7 +91,6 @@ This release adds GraphQL coverage for the following features:
 *  Added support for the following B2B features:
    *  Companies, including administrators, users, roles, and structure <!--- MC-33861-->
    *  Company credit <!--- MC-33862-->
-   *  Shared catalogs <!--- MC-33864-->
    *  [Create]({{ page.baseurl }}/graphql/mutations/create-requisition-list.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-requisition-list.html), and update requisition lists  <!--- MC-34312-->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
