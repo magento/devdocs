@@ -56,23 +56,23 @@ The following example uses the `POST V1/categories` call to assign four custom a
     "custom_attributes":[
          {
             "attribute_code":"description",
-            "value":"Women category description"
+            "value":"Women's category description"
          },
          {
             "attribute_code":"meta_title",
-            "value":"Women meta title"
+            "value":"Women's meta title"
          },
          {
             "attribute_code":"meta_keywords",
-            "value":"Women meta keywords"
+            "value":"Women's meta keywords"
          },
          {
             "attribute_code":"meta_description",
-            "value":"Women meta description"
+            "value":"Women's meta description"
          },
          {
             "attribute_code":"url_key",
-            "value":"women-test-key"
+            "value":"womens-test-key"
          }
       ]
     }
@@ -80,6 +80,7 @@ The following example uses the `POST V1/categories` call to assign four custom a
 ```
 
 ## Response
+
 ```json
 {
     "id": 42,
@@ -97,19 +98,19 @@ The following example uses the `POST V1/categories` call to assign four custom a
     "custom_attributes": [
         {
             "attribute_code": "description",
-            "value": "Women category description"
+            "value": "Women's category description"
         },
         {
             "attribute_code": "meta_title",
-            "value": "Women meta title"
+            "value": "Women's meta title"
         },
         {
             "attribute_code": "meta_keywords",
-            "value": "Women meta keywords"
+            "value": "Women's meta keywords"
         },
         {
             "attribute_code": "meta_description",
-            "value": "Women meta description"
+            "value": "Women's meta description"
         },
         {
             "attribute_code": "is_anchor",
@@ -125,11 +126,11 @@ The following example uses the `POST V1/categories` call to assign four custom a
         },
         {
             "attribute_code": "url_key",
-            "value": "women-test-key"
+            "value": "womens-test-key"
         },
         {
             "attribute_code": "url_path",
-            "value": "women-test-key"
+            "value": "womens-test-key"
         }
     ]
 }
