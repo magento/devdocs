@@ -35,7 +35,7 @@ mutation {
     name: "Frequently Ordered Essential Products"
     description: "Frequently ordered essential products list"
   }
-    requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
+    requisitionListUid: "Mw=="
   ) {
     requisition_list {
       uid
@@ -53,8 +53,8 @@ mutation {
   "data": {
     "updateRequisitionList": {
       "requisition_list": {
-          "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
-          "name": "Frequently Ordered Essential Products",
+          "uid": "Mw=="
+          "name": "Frequently Ordered Essential Products"
           "description": "Frequently ordered essential products list"
         }
     }
@@ -81,6 +81,7 @@ Attribute |  Data Type | Description
 `requisition_list` | [[RequisitionList](#RequisitionList)] | The updated requisition list
 
 ### RequisitionList attributes {#RequisitionList}
+
 {% include graphql/requisition-list.md %}
 
 ## Related topics
