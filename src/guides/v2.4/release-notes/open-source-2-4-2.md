@@ -142,6 +142,12 @@ See the following articles for updates on features and changes for this release:
 
 *  [Yotpo Product Reviews]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html)
 
+### AWS S3 support for the file storage
+
+This release adds a new functionality which allows using an AWS S3 remote storage for media files and import/export files.
+
+For more information see a [remote storage]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html documentation.
+
 ## Fixed issues
 
 We have fixed hundreds of issues in the Magento 2.4.2 core code.
