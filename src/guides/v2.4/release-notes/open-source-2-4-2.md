@@ -142,11 +142,15 @@ See the following articles for updates on features and changes for this release:
 
 *  [Yotpo Product Reviews]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html)
 
-### AWS S3 support for the file storage
+### AWS S3 support enhancements
 
-This release adds a new functionality which allows using an AWS S3 remote storage for media files and import/export files.
+Amazon Simple Storage Service (AWS S3) support has been enhanced to include support for:
 
-For more information see a [remote storage]({{ site.baseurl }}/guides/v2.4/config-guide/remote-storage/config-remote-storage.html) documentation.
+*  Object storage and future extensibility
+
+*  [Storing media files]({{ page.baseurl }}/config-guide/remote-storage/config-remote-storage.html) on AWS S3
+
+Support for AWS S3 has been added to all modules including B2B, PageBuilder, and Adobe Stock Integration.
 
 ## Fixed issues
 
