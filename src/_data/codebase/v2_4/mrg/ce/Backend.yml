@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/Backend/README.md
 last_modified_at: '2020-03-26 15:07:34 +0200'
-content: |
+content: |-
   The Magento_Backend module contains common infrastructure and assets for other modules to be defined and used in their
   administration user interface (UI).
 

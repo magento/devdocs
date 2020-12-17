@@ -268,3 +268,75 @@ The following query returns information about the customizable options configure
   }
 }
 ```
+
+The following query returns information about the customizable options configured for the product with a `sku` of `xyz` with Custom Option type Text Field.
+
+*  Custom option Option Type is text field with required field.
+*  Option Title is `Favorite Color`.
+*  Price is `$5`, Price Type is `Fixed`, Option SKU is `favoriteColorSku` and Max. Characters is `20`.
+
+**Request:**
+
+```graphql
+{
+  products(filter: { sku: { eq: "xyz" } }) {
+    items {
+      id
+      name
+      sku
+      __typename
+      ... on CustomizableProductInterface {
+        options {
+          title
+          required
+          sort_order
+          option_id
+          ... on CustomizableFieldOption {
+            value {
+              uid
+              sku
+              price
+              price_type
+              max_characters
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "id": 10,
+          "name": "Savvy Shoulder Tote",
+          "sku": "24-WB05",
+          "__typename": "SimpleProduct",
+          "options": [
+            {
+              "title": "Favorite Color",
+              "required": true,
+              "sort_order": 2,
+              "option_id": 2,
+              "value": {
+                "uid": "Y3VzdG9tLW9wdGlvbi8y",
+                "sku": "favoriteColorSku",
+                "price": 5,
+                "price_type": "FIXED",
+                "max_characters": 20
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
