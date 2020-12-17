@@ -93,9 +93,9 @@ searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00&
 searchCriteria[filter_groups][0][filters][0][condition_type]=gt
 ```
 
-## Simple search using a in conditions type
+## Simple search using an `in` conditions type
 
-The following search finds all the products that are provided in the value field. Using `in` conditions type, you have to pass comma separated values to get in to the response.
+The following search finds all the products that are provided in the value field. To use the `in` conditions type, value field will be comma separated list.
 
 ```http
 GET <host>/rest/<store_code>/V1/products?
@@ -105,9 +105,9 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=in
 ```
 The query returns 5 items.
 
-## Simple search using a nin conditions type
+## Simple search using a `nin` conditions type
 
-The following search finds all the products that are not in the value field. Using `nin` conditions type, you have to pass comma separated value to get in the response.
+The following search finds all the products that are not in the value field. To use the `nin` conditions type, value field will be comma separated list.
 
 ```http
 GET <host>/rest/<store_code>/V1/products?
