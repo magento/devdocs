@@ -5,6 +5,7 @@ b2b_only: true
 contributor_name: Zilker Technology
 contributor_link: https://www.ztech.io/
 ---
+
 The `deleteRequisitionList` mutation deletes a requisition list of the logged in customer.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
@@ -23,14 +24,14 @@ mutation {
 
 ## Example usage
 
-The following example deletes the requisition list with `uid` 4.
+The following example deletes a requisition list.
 
 **Request:**
 
 ```graphql
 mutation {
   deleteRequisitionList(
-    requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
+    requisitionListUid: "Mw=="
   ) {
     status
     requisition_list {
@@ -50,8 +51,8 @@ mutation {
     "deleteRequisitionList": {
       "status": true,
       "requisition_list": {
-        "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
-        "name": "Frequently Ordered Products",
+        "uid": "Mw=="
+        "name": "Frequently Ordered Products"
         "description": "Frequently ordered products list"
       }
     }
@@ -73,10 +74,11 @@ The `deleteRequisitionList` mutation returns the status of the operation, and th
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisition_list` | [[RequisitionList](#RequisitionList)] | The requisition list, if the operation was successful
+`requisition_list` | [[RequisitionList](#RequisitionList)] | Details about the deleted requisition list
 `status` | Boolean | Indicates whether the request to delete the requisition list was successful
 
 ### RequisitionList attributes {#RequisitionList}
+
 {% include graphql/requisition-list.md %}
 
 ## Related topics
