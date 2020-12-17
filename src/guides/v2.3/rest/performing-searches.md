@@ -93,6 +93,29 @@ searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00&
 searchCriteria[filter_groups][0][filters][0][condition_type]=gt
 ```
 
+## Simple search using a in conditions type
+
+The following search finds all the products that are provided in the value field. Using `in` conditions type, you have to pass comma separated values to get in to the response.
+
+```http
+GET <host>/rest/<store_code>/V1/products?
+searchCriteria[filter_groups][0][filters][0][field]=entity_id&
+searchCriteria[filter_groups][0][filters][0][value]=1,2,3,4,5&
+searchCriteria[filter_groups][0][filters][0][condition_type]=in
+```
+The query returns 5 items.
+
+## Simple search using a nin conditions type
+
+The following search finds all the products that are not in the value field. Using `nin` conditions type, you have to pass comma separated value to get in the response.
+
+```http
+GET <host>/rest/<store_code>/V1/products?
+searchCriteria[filter_groups][0][filters][0][field]=entity_id&
+searchCriteria[filter_groups][0][filters][0][value]=1,2,3,4,5&
+searchCriteria[filter_groups][0][filters][0][condition_type]=nin
+```
+
 ### Logical OR search
 
 The following example searches for all products whose names contain the string `Leggings` or `Parachute`. The instances of `%25` in the example are converted into the SQL wildcard character `%`.
