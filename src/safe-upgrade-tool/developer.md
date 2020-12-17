@@ -9,7 +9,6 @@ This topic contains information for developers who want to know more technical i
 
 ## M-Ray integration
 
-
 M-Ray integration is an internal integration solution.
 
 The integration with M-Ray is done through:
@@ -134,7 +133,7 @@ For more information about Composer, see the [Introduction to Magento Composer](
 
 ## Distribution
 
-One the SUT package is generated. You can upload it to the [Magento Composer repository](https://repo.magento.com).
+Once the SUT package is generated, you can upload it to the [Magento Composer repository](https://repo.magento.com).
 
 In order to distribute SUT:
 
@@ -142,10 +141,10 @@ In order to distribute SUT:
 
    *  Name: `magento/safe-upgrade-tool-VERSION`
 
-2. Go to the [Magento upload repo](https://repo.magento.com/admin/upload_m2_version) topic to upload the `sut.zip` with the following parameters:
+1. Go to the [Magento upload repo](https://repo.magento.com/admin/upload_m2_version) topic to upload the `sut.zip` with the following parameters:
 
    *  Extension package: `sut.zip`
    *  Release: `magento/safe-upgrade-tool-VERSION`
    *  Edition: CE
 
-3. Finally, go to the [Magento version repo](https://repo.magento.com/admin/packagist/web/version/list) topic to check that the new version has been created.
+1. Finally, go to the [Magento version repo](https://repo.magento.com/admin/packagist/web/version/list) topic to check that the new version has been created.
