@@ -183,6 +183,7 @@ pages:
 
         - label: addProductsToRequisitionList mutation
           url: /graphql/mutations/add-products-to-requisition-list.html
+          edition: ee-only
           exclude_versions: [ "2.3" ]
 
         - label: addProductsToWishlist mutation
@@ -191,6 +192,7 @@ pages:
 
         - label: addRequisitionListItemsToCart mutation
           url: /graphql/mutations/add-requisition-list-items-to-cart.html
+          edition: ee-only
           exclude_versions: [ "2.3" ]
 
         - label: addSimpleProductsToCart mutation
@@ -479,6 +481,7 @@ pages:
 
         - label: updateRequisitionListItems mutation
           url: /graphql/mutations/update-requisition-list-items.html
+          edition: ee-only
           exclude_versions: [ "2.3" ]
 
         - label: updateWishlist mutation
