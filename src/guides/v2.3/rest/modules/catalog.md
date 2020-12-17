@@ -43,6 +43,8 @@ Third-party modules may define other custom attributes.
 
 The following example uses the `POST V1/categories` call to assign four custom attributes to the "My New Category" category.
 
+## Request
+
 ```json
 {
 "category": {
@@ -74,5 +76,61 @@ The following example uses the `POST V1/categories` call to assign four custom a
          }
       ]
     }
+}
+```
+
+## Response
+```json
+{
+    "id": 42,
+    "parent_id": 2,
+    "name": "My New Category",
+    "is_active": true,
+    "position": 8,
+    "level": 2,
+    "children": "",
+    "created_at": "2020-12-17 10:38:01",
+    "updated_at": "2020-12-17 10:38:01",
+    "path": "1/2/42",
+    "available_sort_by": [],
+    "include_in_menu": true,
+    "custom_attributes": [
+        {
+            "attribute_code": "description",
+            "value": "Women category description"
+        },
+        {
+            "attribute_code": "meta_title",
+            "value": "Women meta title"
+        },
+        {
+            "attribute_code": "meta_keywords",
+            "value": "Women meta keywords"
+        },
+        {
+            "attribute_code": "meta_description",
+            "value": "Women meta description"
+        },
+        {
+            "attribute_code": "is_anchor",
+            "value": "1"
+        },
+        {
+            "attribute_code": "path",
+            "value": "1/2/42"
+        },
+        {
+            "attribute_code": "children_count",
+            "value": "0"
+        },
+        {
+            "attribute_code": "url_key",
+            "value": "women-test-key"
+        },
+        {
+            "attribute_code": "url_path",
+            "value": "women-test-key"
+        }
+    ]
 }
 ```
