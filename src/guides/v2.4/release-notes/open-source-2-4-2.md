@@ -146,7 +146,7 @@ See the following articles for updates on features and changes for this release:
 
 This release adds a new functionality which allows using an AWS S3 remote storage for media files and import/export files.
 
-For more information see a [remote storage]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html documentation.
+For more information see a [remote storage]({{ site.baseurl }}/guides/v2.4/config-guide/remote-storage/config-remote-storage.html) documentation.
 
 ## Fixed issues
 
