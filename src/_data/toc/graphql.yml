@@ -382,11 +382,6 @@ pages:
           url: /graphql/mutations/remove-store-credit.html
           edition: ee-only
 
-        - label: renameRequisitionList mutation
-          url: /graphql/mutations/rename-requisition-list.html
-          edition: b2b-only
-          exclude_versions: [ "2.3" ]
-
         - label: reorderItems mutation
           url: /graphql/mutations/reorder-items.html
           exclude_versions: ["2.3"]
@@ -476,6 +471,11 @@ pages:
         - label: updateProductsInWishlist mutation
           url: /graphql/mutations/update-products-in-wishlist.html
           exclude_versions: ["2.3"]
+
+        - label: updateRequisitionList mutation
+          url: /graphql/mutations/update-requisition-list.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
 
         - label: updateRequisitionListItems mutation
           url: /graphql/mutations/update-requisition-list-items.html

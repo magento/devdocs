@@ -5,6 +5,7 @@ b2b_only: true
 contributor_name: Zilker Technology
 contributor_link: https://www.ztech.io/
 ---
+
 The `deleteRequisitionList` mutation deletes a requisition list of the logged in customer.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
@@ -14,7 +15,7 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 ```graphql
 mutation {
   deleteRequisitionList(
-    uid: ID!
+    requisitionListUid: ID!
   ) {
     deleteRequisitionListOutput
   }
@@ -23,16 +24,21 @@ mutation {
 
 ## Example usage
 
-The following example deletes the requisition list with `uid` 4.
+The following example deletes a requisition list.
 
 **Request:**
 
 ```graphql
 mutation {
   deleteRequisitionList(
-    uid: "4"
+    requisitionListUid: "Mw=="
   ) {
-    result
+    status
+    requisition_list {
+      uid
+      name
+      description
+    }
   }
 }
 ```
@@ -43,7 +49,12 @@ mutation {
 {
   "data": {
     "deleteRequisitionList": {
-      "result": true
+      "status": true,
+      "requisition_list": {
+        "uid": "Mw=="
+        "name": "Frequently Ordered Products"
+        "description": "Frequently ordered products list"
+      }
     }
   }
 }
@@ -55,17 +66,22 @@ The `deleteRequisitionList` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`uid` | ID! | The ID of the requisition list to delete
+`requisitionListUid` | ID! | The ID of the requisition list to delete
 
 ## Output attributes
 
-The `deleteRequisitionListOutput` object returns the `uid` of the new requisition list as well as the input attributes.
+The `deleteRequisitionList` mutation returns the status of the operation, and the requisition list, if it was successfully deleted.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`result` | Boolean | Indicates whether the requisition list was deleted
+`requisition_list` | [[RequisitionList](#RequisitionList)] | Details about the deleted requisition list
+`status` | Boolean | Indicates whether the request to delete the requisition list was successful
+
+### RequisitionList attributes {#RequisitionList}
+
+{% include graphql/requisition-list.md %}
 
 ## Related topics
 
 *  [createRequisitionList mutation]({{page.baseurl}}/graphql/mutations/create-requisition-list.html)
-*  [renameRequisitionList mutation]({{page.baseurl}}/graphql/mutations/rename-requisition-list.html)
+*  [updateRequisitionList mutation]({{page.baseurl}}/graphql/mutations/update-requisition-list.html)
