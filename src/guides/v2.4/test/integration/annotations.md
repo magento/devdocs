@@ -20,7 +20,7 @@ Data Fixture|`@magentoDataFixture`|`@magentoDataFixture <script_filename>|<metho
 Data Fixture Before Transaction|`@magentoDataFixtureBeforeTransaction`|`@magentoDataFixtureBeforeTransaction <script_filename>|<method_name>`|Points to a class or a method which creates testing entities (fixtures) for test execution before the transaction has begun. You will need to implement a rollback file for changes made here. (e.g. Fixture file my_fixture.php would also require a my_fixture_rollback.php that reverts the original fixture's changed.)
 Application Area|`@magentoAppArea`|`@magentoAppArea adminhtml|frontend|global`|Configures test environment in the context of specified application area.
 Enable/Disable Cache|`@magentoCache`|`@magentoCache <type>|all enabled|disabled`|Enables or disables certain cache segment or all of them to prevent isolation problems.
-Indexer Dimension Mode|`@magentoIndexerDimensionMode`|`@magentoIndexerDimensionMode <indexer> <mode>`|Sets the indexer dimension mode for the test run. More information can be found in the [DevBlog](https://community.magento.com/t5/Magento-DevBlog/Indexers-parallelization-and-optimization/ba-p/104922_).
+Indexer Dimension Mode|`@magentoIndexerDimensionMode`|`@magentoIndexerDimensionMode <indexer> <mode>`|Sets the indexer dimension mode for the test run. More information can be found in the [DevBlog](https://community.magento.com/t5/Magento-DevBlog/Indexers-parallelization-and-optimization/ba-p/104922).
 Register Components|`@magentoComponentsDir`|`@magentoComponentsDir <dir_path>`|Registers fixture components from specified directory (recursively). Unregisters the components after the test is finished.
 
 ### Applying annotations
