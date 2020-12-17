@@ -538,6 +538,7 @@ pages:
 
         - label: RequisitionListItemInterface attributes and implementations
           url: /graphql/interfaces/requisition-list-item-interface.html
+          edition: b2b-only
           exclude_versions: ["2.3"]
 
         - label: ShipmentItemInterface attributes and implementations
