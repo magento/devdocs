@@ -54,8 +54,8 @@ mutation {
   "data": {
     "createRequisitionList": {
       "requisition_list": {
-          "uid": "4",
-          "name": "Frequently Ordered Products",
+          "uid": "Mw=="
+          "name": "Frequently Ordered Products"
           "description": "Frequently ordered products list"
         }
     }
@@ -81,6 +81,7 @@ Attribute |  Data Type | Description
 `requisition_list` | [[RequisitionList](#RequisitionList)] | The created requisition list
 
 ### RequisitionList attributes {#RequisitionList}
+
 {% include graphql/requisition-list.md %}
 
 ## Related topics
