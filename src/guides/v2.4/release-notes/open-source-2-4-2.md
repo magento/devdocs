@@ -142,6 +142,16 @@ See the following articles for updates on features and changes for this release:
 
 *  [Yotpo Product Reviews]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html)
 
+### AWS S3 support enhancements
+
+Amazon Simple Storage Service (AWS S3) support has been enhanced to include support for:
+
+*  Object storage and future extensibility
+
+*  [Storing media files]({{ page.baseurl }}/config-guide/remote-storage/config-remote-storage.html) on AWS S3
+
+Support for AWS S3 has been added to all modules including B2B, PageBuilder, and Adobe Stock Integration.
+
 ## Fixed issues
 
 We have fixed hundreds of issues in the Magento 2.4.2 core code.
