@@ -1,7 +1,7 @@
 ---
 title: Magento_GiftCardRequisitionList
 source_repo: magento2b2b
-release: 1.2.0
+release: 1.3.0
 github_path: app/code/Magento/GiftCardRequisitionList/README.md
 last_modified_at: '2017-04-10 10:33:01 +0300'
 content: "## Overview\n\nThe Magento_GiftCardRequisitionList module enables gift cards
@@ -15,4 +15,4 @@ content: "## Overview\n\nThe Magento_GiftCardRequisitionList module enables gift
   at any time.\n\n## Structure\n\n[Learn about a typical file structure for a Magento
   2 module](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/build/module-file-structure.html).\n\n##
   Additional information\n\nYou can track [backward incompatible changes made in a
-  Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html).\n"
+  Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html)."

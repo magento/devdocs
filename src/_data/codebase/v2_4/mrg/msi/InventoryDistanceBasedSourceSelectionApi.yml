@@ -1,7 +1,7 @@
 ---
 title: Magento_InventoryDistanceBasedSourceSelectionApi
 source_repo: inventory
-release: 1.2.0
+release: 1.2.1
 github_path: InventoryDistanceBasedSourceSelectionApi/README.md
 last_modified_at: '2018-12-28 10:54:19 +0100'
 content: "The `InventoryDistanceBasedSourceSelectionApi` module provides service contracts
@@ -12,4 +12,4 @@ content: "The `InventoryDistanceBasedSourceSelectionApi` module provides service
   module contains extension points and APIs that 3rd-party developers\ncan use to
   provide custom distance based source selection algorithms.\n\n### Public APIs\n\nPublic
   APIs are defined in the `Api` and `Api/Data` directories.\n\n### REST endpoints\n\nThe
-  `etc/webapi.xml` file defines endpoints for managing distance based algorithms.\n"
+  `etc/webapi.xml` file defines endpoints for managing distance based algorithms."

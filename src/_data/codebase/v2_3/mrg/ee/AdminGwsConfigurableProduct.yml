@@ -1,0 +1,30 @@
+---
+title: Magento_AdminGwsConfigurableProduct
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/AdminGwsConfigurableProduct/README.md
+last_modified_at: '2020-06-02 14:53:14 +0300'
+content: |-
+  <h2>Magento_AdminGwsConfigurableProduct module</h2>
+
+  ## Overview
+
+  The Magento_AdminGwsConfigurableProduct module is a part of the restricted admin user permissions functionality in Magento EE. It extends the Magento_AdminGws module functionality for configurable product.
+
+  ## Implementation Details
+
+  The Magento_AdminGwsConfigurableProduct module:
+
+   * adds plugin on `\Magento\Magento_AdminGwsConfigurableProduct\Plugin\PermissionsDataChecker` to check permissions for current user.
+
+  ## Dependencies
+
+  You can find the list of modules the Magento_AdminGwsConfigurableProduct module depends on in the `require` section of the `composer.json` file located in the same directory as this `README.md` file.
+
+  ## Extension Points
+
+  The Magento_AdminGwsConfigurableProduct module does not provide any specific extension points.
+
+  ## Additional information
+
+  For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com).

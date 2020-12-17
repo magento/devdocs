@@ -242,7 +242,7 @@ content='
 
 *  To use values you set in the `$_ENV` array, you must set `variables_order = "EGPCS"` in your `php.ini` file. For details, see [PHP documentation](http://us.php.net/manual/en/ini.core.php#ini.variables-order).
 
-*  For Magento Commerce Cloud, if you are attempting to override Magento configuration settings using the [Project Web Interface]((https://devdocs.magento.com/guides/v2.3/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
+*  For Magento Commerce Cloud, if you are attempting to override Magento configuration settings using the [Project Web Interface](https://devdocs.magento.com/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
 
 ![Environment variable example](https://devdocs.magento.com/common/images/cloud/cloud_env_var_example.png)'
 

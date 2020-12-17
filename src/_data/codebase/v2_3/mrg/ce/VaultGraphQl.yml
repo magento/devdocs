@@ -1,0 +1,10 @@
+---
+title: Magento_VaultGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/VaultGraphQl/README.md
+last_modified_at: '2019-01-22 15:13:27 -0500'
+content: |-
+  **VaultGraphQl** provides type and resolver information for the GraphQl module
+  to generate Vault (stored payment information) information endpoints. This module also
+  provides mutations for modifying a payment token.

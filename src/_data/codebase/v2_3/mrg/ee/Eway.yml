@@ -1,0 +1,8 @@
+---
+title: Magento_Eway
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/Eway/README.md
+last_modified_at: '2015-07-29 19:08:38 +0300'
+content: The Magento_Eway module implements the integration with the Eway payment
+  gateway and makes the latter available as a payment method in Magento.

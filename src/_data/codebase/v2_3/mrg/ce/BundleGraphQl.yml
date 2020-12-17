@@ -1,0 +1,9 @@
+---
+title: Magento_BundleGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/BundleGraphQl/README.md
+last_modified_at: '2018-01-24 11:57:46 -0600'
+content: |-
+  **BundleGraphQl** provides type and resolver information for the GraphQl module
+  to generate bundle product information.

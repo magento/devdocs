@@ -1,0 +1,8 @@
+---
+title: Magento_Widget
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Widget/README.md
+last_modified_at: '2014-07-11 11:30:21 -0700'
+content: The Widget module allows Magento application to be extended with custom widget
+  blocks.

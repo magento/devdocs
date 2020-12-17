@@ -1,0 +1,9 @@
+---
+title: Magento_Email
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Email/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: |-
+  **Email** enables you to manage email templates, which are used when you send email through the
+  *\Magento\Framework\Mail\TransportInterface* implementations.

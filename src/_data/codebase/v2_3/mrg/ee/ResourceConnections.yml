@@ -1,0 +1,28 @@
+---
+title: Magento_ResourceConnections
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/ResourceConnections/README.md
+last_modified_at: '2015-08-25 12:44:48 +0300'
+content: "Magento\\ResourceConnections module adds a mechanism to segregate database
+  connections between master and slave \ndatabase servers based on the request type.\n\nFor
+  each master database connection (except the indexer connection) that are configured
+  in db/connection section \nof app/etc/env.php you can add one slave connection that
+  can be configured in db/slave_connection.\nConfiguration format is the same as db/connection.
+  Slave connection name must be the same as associated master \nconnection name. To
+  enable slave connections for specific resources create a slave connection configuration
+  \nby adding slave_connection node as below:\n\n```php\n<?php\nreturn array (\n    //...\n
+  \   'db' =>\n        array (\n            'connection' =>\n                array
+  (\n                    'default' =>\n                        array (\n                            'host'
+  => 'default-master-host',\n                            'dbname' => 'magento',\n
+  \                           'username' => 'magento',\n                            'password'
+  => 'magento',\n                            'active' => '1',\n                        ),\n
+  \               ),\n            'slave_connection' =>\n                array (\n
+  \                   'default' =>\n                        array (\n                            'host'
+  => 'default-slave-host',\n                            'dbname' => 'magento',\n                            'username'
+  => 'read_only',\n                            'password' => 'password',\n                            'active'
+  => '1',\n                ),\n        ),\n        'table_prefix' => '',\n    ),\n
+  \   //.......\n```\nTo add slave connection for resources other than 'default' repeat
+  the step and add to db/slave_connection \nnew element with same name and slave configuration
+  for specified resource. \nConfig structure retains backward compatibility if module
+  is turned off.\n\nWARNING: 'indexer' connection is not designed to have slave configuration."

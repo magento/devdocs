@@ -1,0 +1,8 @@
+---
+title: Magento_ReviewGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/ReviewGraphQl/README.md
+last_modified_at: '2020-05-06 14:36:44 +0300'
+content: "**ReviewGraphQl** provides endpoints for getting and creating the Product
+  reviews by guest and logged in customers."

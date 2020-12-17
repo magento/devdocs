@@ -136,7 +136,7 @@ The directories and files structure described below is the most extended one. It
       </td>
       <td colspan="1">required for a theme, but optional if it exists in the parent theme</td>
       <td colspan="1">
-        This file contains configuration for all storefront product images and thumbnails.
+        This file contains configurations for all storefront product images and thumbnails. It also contains product page, gallery widget configurations such as navigation options, fullscreen options and breakpoint conditions.
       </td>
     </tr>
     <tr>
@@ -197,7 +197,7 @@ The directories and files structure described below is the most extended one. It
         optional
       </td>
       <td colspan="1">
-        Theme fonts.
+        Contains theme fonts and customized icons.
       </td>
     </tr>
     <tr>

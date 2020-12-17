@@ -1,0 +1,9 @@
+---
+title: Magento_GiftWrappingGraphQl
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/GiftWrappingGraphQl/README.md
+last_modified_at: '2020-05-12 17:54:53 +0300'
+content: |-
+  **Magento_GiftWrappingGraphQl** provides type and resolver information for the GraphQl module
+  to generate GiftWrapping information for order and cart.

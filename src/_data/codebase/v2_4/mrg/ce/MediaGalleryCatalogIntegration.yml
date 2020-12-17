@@ -1,0 +1,7 @@
+---
+title: Magento_MediaGalleryCatalogIntegration
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/MediaGalleryCatalogIntegration/README.md
+last_modified_at: '2020-08-03 11:01:09 +0100'
+content: The purpose of this module is for extending catalog image uploader functionality.

@@ -63,3 +63,26 @@ Assuming your Redis relationship is named `redis`, you can access it using the `
    ```bash
    redis-cli -h redis.internal
    ```
+
+## Get installed Redis version
+
+Use the following command to get the Redis version installed on an Integration environment:
+
+```bash
+redis-cli -h redis.internal info | grep version
+```
+
+```terminal
+redis_version:5.0.0
+gcc_version:6.3.0
+```
+
+To get the Redis version installed on a Staging or Production environment, use the `redis-server` command:
+
+```bash
+redis-server -v
+```
+
+```terminal
+Redis server v=5.0.5 sha=947ee0b5:0 malloc=jemalloc-5.1.0 bits=64 build=c1ca234caf5bd678
+```

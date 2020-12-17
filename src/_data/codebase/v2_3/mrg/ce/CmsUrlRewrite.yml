@@ -1,0 +1,10 @@
+---
+title: Magento_CmsUrlRewrite
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/CmsUrlRewrite/README.md
+last_modified_at: '2017-03-07 16:04:38 -0600'
+content: "## Overview\n \nThe Magento_CmsUrlRewrite module adds support for URL rewrite
+  rules for CMS pages. See also Magento_UrlRewrite module. \n\nThe module adds and
+  removes URL rewrite rules as CMS pages are added or removed by a user.\nThe rules
+  can be edited by an admin user as any other URL rewrite rule."

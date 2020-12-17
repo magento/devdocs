@@ -1,0 +1,9 @@
+---
+title: Magento_WeeeGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/WeeeGraphQl/README.md
+last_modified_at: '2018-01-17 17:11:48 -0600'
+content: |-
+  **WeeeGraphQl** provides type information for the GraphQl module
+  to generate wee tax fields for catalog and product information endpoints.

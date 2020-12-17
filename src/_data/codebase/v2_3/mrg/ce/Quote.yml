@@ -1,0 +1,17 @@
+---
+title: Magento_Quote
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Quote/README.md
+last_modified_at: '2015-01-06 12:45:10 +0200'
+content: |-
+  ## Purpose of module
+
+
+  # Deployment
+  ## System requirements
+
+  The Magento_Quote module does not have any specific system requirements.
+
+  ## Install
+  The Magento_Quote module is installed automatically (using the native Magento install mechanism) without any additional actions.

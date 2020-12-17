@@ -1,0 +1,9 @@
+---
+title: Magento_Contact
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Contact/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: Magento_Contact module provides an implementation of "Contact Us" feature
+  based on sending email message, allows to configure email recipients, email template,
+  etc...

@@ -16,8 +16,83 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 -  {:.bug}Known issues -->
 
 {:.bs-callout-info}
-See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) for instructions on applying patches to your Magento projects.
+See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
+
+## v1.0.13
+
+-  **MDVA-30858** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue with PayPal Settlement reports not being available under Reports > Sales > PayPal Settlement as expected.
+-  **MCP-87** _(for Magento `>=2.3.1 <2.4.2`)_—Improved indexation time for category product and stock indexers for large profiles.
+-  **MDVA-33106** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where the rescheduled product changes are erased after the cron 'run' command is executed.
+-  **MDVA-19391** _(for Magento `>=2.3.0 <2.3.5`)_—Fixes the issue where analytics_collect_data is throwing an error due to NULL description records in the catalog_category_entity_text table.
+-  **MDVA-20376** _(for Magento `>=2.3.2 <2.3.4`)_—Fixes the issue with the 'No such entity with customerId = 1' error in the exception.log for logged in customers after order placement.
+-  **MDVA-23764** _(for Magento `>=2.3.2 <2.3.5`)_—Fixes the bug in JsFooterPlugin.php that affects the display of dynamic blocks.
+-  **MDVA-13203** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where the 'Integrity constrain violation search_tmp_* table' error appears after a full reindex.
+-  **MDVA-23426** _(for Magento `>=2.3.3 <2.3.5`)_—Fixes the issue where notification emails sent by Magento contain a blank body with content being added as attachment.
+-  **MDVA-22150** _(for Magento `>=2.3.1 <2.3.4`)_—Fixes the issue where customers with a configurable product in cart and a coupon applied, cannot login if that configurable product is disabled in Admin.
+-  **MDVA-32545** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where invoices are not sent out automatically when creating orders from Admin.
+-  **MDVA-32714** _(for Magento `>=2.3.4 <2.4.1`)_—Fixes the issue where customer group price is not working in GraphQL product query.
+
+## v1.0.12
+
+-  **MDVA-31399** _(for Magento `>=2.3.2 <2.4.2`)_—Adds the "Subtotal (Incl. Tax)" option to price rule conditions.
+-  **MDVA-31236** _(for Magento `>=2.4.0 <2.4.2`)_—Fixes the issue where Magento Admins with custom resource access are not able to set up 2FA or log in.
+-  **MDVA-30845** _(for Magento `>=2.3.5 <2.3.7`)_—Fixes the issue where the "Sorry, no quotes are available for this order at this time" error is displayed when failing to connect to UPS XML/USPS/DHL, and no other shipping method is available.
+-  **MDVA-32133** _(for Magento `>=2.4.0 <2.4.1`)_—Fixes the issue where media gallery is not loading from Page Builder in certain cases.
+-  **MDVA-12304** _(for Magento `>=2.3.0 <2.4.2`)_—Increases the maximum number of cookies from 50 to 200.
+-  **MDVA-32632** _(for Magento `>=2.3.2 <2.3.5`)_—Fixes the issue where orders appear in the payment system, but not in Magento.
+-  **MDVA-32449** _(for Magento `>=2.3.0 <2.3.6 || 2.4.0 || >=2.4.1 <2.4.2` with B2B extension)_—Fixes the issue where the order history loads very slowly or does not load at all.
+-  **MDVA-32739** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where enabling Asynchronous Email Notifications sends out old sales emails.
+
+## v1.0.11
+
+-  **MC-38509** _(for Magento `2.3.6, 2.4.1`)_—Fixes the issue where the "Create an Account" button stays disabled after correcting invalid data in the "Create New Customer Account" form.
+-  **MDVA-31006** _(for Magento `2.3.0, 2.3.1`)_—Fixes the issue where duplicated orders appear after placing an order using Paypal Express payment.
+-  **MDVA-25602** _(for Magento `2.3.0`)_—Fixes issue with PayPal Payflow Pro payment method and treating cookies as SameSite=Lax by default in the Chrome 80 browser and API response redirect to customer login page.
+
+## v1.0.10
+
+Minor fixes for patch versions
+
+## v1.0.9
+
+-  **MDVA-31363** _(for Magento `>=2.3.2 <2.4.2`)_—Fixes the issue where the Cart Price Rule with coupon does not apply via GraphQL when 'Fixed amount discount for whole cart' action is used.
+-  **MDVA-30889** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where an error occurs after invoicing a bundle with virtual and simple products as options.
+-  **MDVA-31791** _(for Magento `>=2.3.4 <2.3.5`)_—Improves the performance of the product page in cases when target rules or linked products are used.
+-  **MDVA-31168** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where the product export CSV file does not appear, and there is a memory allocation error.
+-  **MDVA-32313** _(for Magento `>=2.3.0 <2.3.4`)_—Fixes the issue where configurable products could be added to the wishlist with the wrong configuration options.
+-  **MDVA-31759** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where products are not updated with `dropdown` and `textarea` attribute values during CSV import.
+-  **MDVA-32012** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where zip codes in Korea and Argentina cannot be validated.
+-  **MDVA-31640** _(for Magento `>=2.3.1 <2.3.6 || >=2.4.0 <2.4.1`)_—Fixes the issue where a special price cannot be updated via REST API.
+-  **MDVA-28651** _(for Magento `>=2.3.0 <2.3.6 || >2.4.0` with B2B extension)_—Fixes the issue where there are performance problems with loading negotiable quotes via REST API.
+
+## v1.0.8
+
+-  **MDVA-31242** _(for Magento `>=2.3.0 <2.4.1` with B2B extension)_—Fixes the issue where a wrong currency sign is displayed in Credit Memo grid.
+-  **MDVA-31295** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where reward points are not calculated when a partial order is completed and items are taxed.
+-  **MDVA-30112** _(for Magento `>=2.3.4 <2.4.2`)_—Fixes the issue where if the number of orders exceeds the "bunch-size" value, Magento considers the orders with "pending" status as inconsistencies.
+-  **MDVA-31150** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where the store credit and gift card balances are not returned by the GET Invoice Rest API call, when the invoice was posted by Rest API call and the order was partially paid by store credit and gift card accounts.
+-  **MDVA-30963** _(for Magento `>=2.3.2 <2.4.2`)_—Fixes the issue where products filtering results set to only contain values specified for "All store views" scope in Admin, include products with values overridden on the store view level.
+-  **MDVA-29954** _(for Magento `>=2.3.0 <2.3.6 || 2.4.0 || 2.4.2` with B2B extension)_—Fixes the issue where the "New Company Registration Request" and "You've been linked to a company" emails are sent from the wrong address.
+-  **MDVA-28357** _(for Magento `>=2.3.2 <2.3.6 || >=2.4.0 <2.4.1`)_—Replaces the standard analyzer with a custom analyzer with keyword tokenizer for the SKU field in the ElasticSearch index, to make wildcard search queries work with SKUs containing a hyphen ("-").
+
+## v1.0.7
+
+-  **MDVA-30972** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where custom order status was changed to Processing after partial shipment creation using WebApi.
+-  **MDVA-30428** _(for Magento `>=2.3.4 <2.3.5`)_—Fixes the issue where customers cannot add a product to wishlist if this product is assigned to a custom inventory source.
+-  **MDVA-30594** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where an order with multiple addresses could not be saved during checkout when FPT is configured.
+-  **MDVA-29148** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue when creating a product via an API call, the product custom attribute of "\Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend" (like Multiselect) type does not use its default value if no value was provided in the payload.
+-  **MDVA-30837** _(for Magento `>=2.3.1 <2.3.5`)_—Added a configuration setting "Include Tax to Amount": Yes/No in Free Shipping method configuration. When "Include Tax to Amount" is set to Yes Minimum Order Amount is calculated as = Subtotal + Tax. When "Include Tax to Amount" is set to No Minimum Order Amount is calculated as = Subtotal
+-  **MDVA-25028** _(for Magento `>=2.3.2 <2.3.3 || >=2.3.5 <2.3.6`)_—Fixes the issue when orders that are placed using PayPal Payflow Pro are not set to Suspected Fraud status when fraud filters are triggered.
+-  **MDVA-31224** _(for Magento `>=2.3.3 <2.3.5`)_—Improves the performance of the catalog_product_price re-index operation for bundle products.
+-  **MDVA-31321** _(for Magento `>=2.3.2 <2.3.5`)_—Fixes a blank page (error) when "Show All" is selected. Elasticsearch returns large list of product ids. In this scenario the order by clause gets converted to an incorrect SQL format.
+-  **MDVA-30815** _(for Magento `>=2.3.2 <2.3.4`)_—Fixes the issue where when you changed how many search results should be displayed on the search results page, Magento displayed a blank page. Elasticsearch now correctly displays results from category pages when you change the number of search results viewed per page.
+-  **MDVA-30782** _(for Magento `>=2.3.5 <2.4.2`)_—Fixes the issue where Dynamic Block is displayed regardless of cart rule.
+-  **MDVA-31021** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where performance issues exists in module-catalog-import-export/Model/Import/Product/Option.php. If there are more than ~100k records in catalog_product_option table, a new CSV with single product takes less than 10 sec to validate.
+-  **MDVA-31007** _(for Magento `>=2.3.5 <2.3.6 || >=2.4.0 <2.4.1`)_—Fixes the issue where custom address attributes are not correctly displayed in the order details page in the my account area and in the backend.
+-  **MDVA-29389** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue with Advanced Reporting where the analytics_collect_data cronjob says: "Port must be configured within host parameter (like localhost:3306)".
+-  **MDVA-31343** _(for Magento `>=2.3.4 <2.3.6`)_—Fixes the issue with the removed body class "page-layout-category-full-width" when a category is scheduled.
+-  **MDVA-30945** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where you receive a fatal error message when updating carts "Call to a member function getValue() on null in module-configurable-product CartItemProcessor.php".
 
 ## v1.0.6
 

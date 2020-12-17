@@ -1,0 +1,8 @@
+---
+title: Magento_TargetRuleGraphQl
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/TargetRuleGraphQl/README.md
+last_modified_at: '2020-06-25 18:20:29 +0200'
+content: "#Magento_TargetRuleGraphQl \n\nMagento_TargetRuleGraphQl module provides
+  the rules for showing related products."

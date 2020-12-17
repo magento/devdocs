@@ -1,0 +1,9 @@
+---
+title: Magento_AdminAnalytics
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/AdminAnalytics/README.md
+last_modified_at: '2019-08-08 11:00:49 -0500'
+content: The Magento\AdminAnalytics module gathers information about the features
+  Magento administrators use. This information will be used to help improve the user
+  experience on the Magento Admin.

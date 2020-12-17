@@ -64,7 +64,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
 
    Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.
 
-   For more information about font-face, refer to this article [Font-face][https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face]{:target="_blank"}.
+   For more information about font-face, refer to this article [Font-face](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face){:target="_blank"}.
 
 ## `<font>` head type
 
@@ -98,6 +98,8 @@ To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/
 @icons__font-path: '@{baseDir}fonts/Theme-Icons'; //  Add you fonts in your-theme/web/fonts
 @icons__font-name: 'Theme-Icons';
 ```
+
+With uploaded icons from IcoMoon, a "404 error `woff2` file icon not found" may occur in the console. This means the `woff2` file is missing from the IcoMoon package. You just need copy the `woff` file to `woff2`.
 
 {:.bs-callout-info}
 If your theme does not use the Magento UI library, include the font in your theme's CSS files using the `@font-face` CSS rule.

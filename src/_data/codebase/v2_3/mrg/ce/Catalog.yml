@@ -1,0 +1,13 @@
+---
+title: Magento_Catalog
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Catalog/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: |-
+  Magento_Catalog module functionality is represented by the following sub-systems:
+   - Products Management. It includes CRUD operation of product, product media, product attributes, etc...
+   - Category Management. It includes CRUD operation of category, category attributes
+
+  Catalog module provides mechanism for creating new product type in the system.
+  Catalog module provides API filtering that allows to limit product selection with advanced filters.

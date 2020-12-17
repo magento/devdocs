@@ -49,6 +49,7 @@ Attribute | Type | Description
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price assigned to this option
 `sku` | String | The Stock Keeping Unit for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableCheckboxOption object
 
@@ -60,7 +61,7 @@ Attribute | Type | Description
 
 ### CustomizableCheckboxValue object
 
-`CustomizableCheckboxValue`  defines the attributes of a product whose page contains a customized set of checkbox values.
+`CustomizableCheckboxValue` defines the attributes of a product whose page contains a customized set of checkbox values.
 
 Attribute | Type | Description
 --- | --- | ---
@@ -70,6 +71,7 @@ Attribute | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableDateOption object
 
@@ -89,6 +91,7 @@ Attribute | Type | Description
 `price` | Float | The price assigned to this option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `sku` | String | The Stock Keeping Unit for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableDropDownOption object
 
@@ -110,6 +113,7 @@ Attribute | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableFieldOption object
 
@@ -130,6 +134,7 @@ Attribute | Type | Description
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price of the custom value
 `sku` | String | The Stock Keeping Unit for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableFileOption object
 
@@ -158,6 +163,7 @@ Attribute | Type | Description
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price assigned to this option
 `sku` | String | The Stock Keeping Unit for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableMultipleOption object
 
@@ -179,6 +185,7 @@ Attribute | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableRadioOption object
 
@@ -200,6 +207,7 @@ Attribute | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option## CustomizableRadioOption object
+`uid` | ID! | A string that encodes option details
 
 `CustomizableRadioOption` contains information about a set of radio buttons that are defined as part of a customizable option.
 
@@ -252,6 +260,78 @@ The following query returns information about the customizable options configure
               "required": false,
               "sort_order": 1,
               "option_id": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+The following query returns information about the customizable options configured for the product with a `sku` of `xyz` with Custom Option type Text Field.
+
+*  Custom option Option Type is text field with required field.
+*  Option Title is `Favorite Color`.
+*  Price is `$5`, Price Type is `Fixed`, Option SKU is `favoriteColorSku` and Max. Characters is `20`.
+
+**Request:**
+
+```graphql
+{
+  products(filter: { sku: { eq: "xyz" } }) {
+    items {
+      id
+      name
+      sku
+      __typename
+      ... on CustomizableProductInterface {
+        options {
+          title
+          required
+          sort_order
+          option_id
+          ... on CustomizableFieldOption {
+            value {
+              uid
+              sku
+              price
+              price_type
+              max_characters
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "id": 10,
+          "name": "Savvy Shoulder Tote",
+          "sku": "24-WB05",
+          "__typename": "SimpleProduct",
+          "options": [
+            {
+              "title": "Favorite Color",
+              "required": true,
+              "sort_order": 2,
+              "option_id": 2,
+              "value": {
+                "uid": "Y3VzdG9tLW9wdGlvbi8y",
+                "sku": "favoriteColorSku",
+                "price": 5,
+                "price_type": "FIXED",
+                "max_characters": 20
+              }
             }
           ]
         }

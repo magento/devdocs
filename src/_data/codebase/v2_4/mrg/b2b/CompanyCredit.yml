@@ -1,7 +1,7 @@
 ---
 title: Magento_CompanyCredit
 source_repo: magento2b2b
-release: 1.2.0
+release: 1.3.0
 github_path: app/code/Magento/CompanyCredit/README.md
 last_modified_at: '2020-05-08 16:01:36 -0500'
 content: "## Overview\n\nThe Magento_CompanyCredit module adds the \"Payment on Account\"
@@ -33,4 +33,4 @@ content: "## Overview\n\nThe Magento_CompanyCredit module adds the \"Payment on 
   - balance history listing\n\nFor more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html)
   and [UI Form Component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-form.html)\n\n##
   Additional information\n \nYou can track [backward incompatible changes made in
-  a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html).\n"
+  a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html)."

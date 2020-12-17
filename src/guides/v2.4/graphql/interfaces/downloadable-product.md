@@ -13,12 +13,12 @@ The `DownloadableProduct` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`downloadable_product_links` | [`DownloadableProductLinks`] | An array containing information about the links for this downloadable product
-`downloadable_product_samples` | [`DownloadableProductSamples`] | An array containing information about samples of this downloadable product
+`downloadable_product_links` | [[DownloadableProductLinks]](#DownloadableProductLinks) | An array containing information about the links for this downloadable product
+`downloadable_product_samples` | [[DownloadableProductSamples]](#DownloadableProductSamples)  | An array containing information about samples of this downloadable product
 `links_purchased_separately` | Int | A value of 1 indicates that each link in the array must be purchased separately
 `links_title` | String | The heading above the list of downloadable products
 
-### DownloadableProductSamples object
+### DownloadableProductSamples object {#DownloadableProductSamples}
 
 The `DownloadableProductSamples` object contains the following attributes:
 
@@ -31,7 +31,7 @@ Attribute | Type | Description
 `sort_order` | Int | A number indicating the sort order
 `title` | String | The display name of the sample
 
-### DownloadableProductLinks object
+### DownloadableProductLinks object {#DownloadableProductLinks}
 
 The `DownloadableProductLinks` object contains the following attributes:
 
@@ -47,6 +47,7 @@ Attribute | Type | Description
 `sample_url` | String | The URL to the downloadable sample
 `sort_order` | Int | A number indicating the sort order
 `title` | String | The display name of the link
+`uid` | ID! | A string that encodes option details
 
 ## Example usage
 
@@ -83,11 +84,11 @@ The following query returns information about downloadable product `240-LV04`, w
       ... on DownloadableProduct {
         links_title
         links_purchased_separately
-
         downloadable_product_links {
           sample_url
           sort_order
           title
+          uid
           price
         }
         downloadable_product_samples {
@@ -112,7 +113,7 @@ The following query returns information about downloadable product `240-LV04`, w
           "id": 47,
           "name": "Beginner's Yoga",
           "sku": "240-LV04",
-          "__typename": "downloadable",
+          "__typename": "DownloadableProduct",
           "price_range": {
             "minimum_price": {
               "regular_price": {
@@ -125,9 +126,10 @@ The following query returns information about downloadable product `240-LV04`, w
           "links_purchased_separately": 0,
           "downloadable_product_links": [
             {
-              "sample_url": null,
+              "sample_url": "http://example.com/downloadable/download/linkSample/link_id/1/",
               "sort_order": 1,
               "title": "Beginner's Yoga",
+              "uid": "ZG93bmxvYWRhYmxlLzE=",
               "price": 6
             }
           ],
@@ -135,17 +137,17 @@ The following query returns information about downloadable product `240-LV04`, w
             {
               "title": "Trailer #1",
               "sort_order": 1,
-              "sample_url": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
+              "sample_url": "http://example.com/downloadable/download/sample/sample_id/1/"
             },
             {
               "title": "Trailer #2",
               "sort_order": 1,
-              "sample_url": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
+              "sample_url": "http://example.com/downloadable/download/sample/sample_id/2/"
             },
             {
               "title": "Trailer #3",
               "sort_order": 1,
-              "sample_url": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
+              "sample_url": "http://example.com/downloadable/download/sample/sample_id/3/"
             }
           ]
         }

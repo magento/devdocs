@@ -10,7 +10,7 @@ functional_areas:
 You can easily migrate to the {{site.data.var.ece}} platform without losing SEO rankings and traffic. Use the `magento/url-rewrite-import-export` module to redirect traffic from your old, indexed URLs to new URLs.
 
 {:.bs-callout-info}
-This module supports PHP versions 7.0.13 and later patch releases and all 7.1.x and 7.2.x patch releases. The module is available for Magento version 2.2.x and 2.3.x only.
+This module supports PHP versions 7.0.13 and later patch releases and all 7.1.x and 7.2.x patch releases. The module is available for Magento version 2.2.x and 2.3.x only. It is deprecated for version 2.4.x and later.
 
 {:.procedure}
 To install the URL rewrite module:

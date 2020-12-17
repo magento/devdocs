@@ -1,0 +1,23 @@
+---
+title: Magento_ReviewStaging
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/ReviewStaging/README.md
+last_modified_at: '2016-07-04 18:13:15 +0300'
+content: "## Magento_ReviewStaging module\n\n## Overview\n\nThe Magento_ReviewStaging
+  module is a part of the staging functionality in Magento EE. It displays the Product
+  Reviews grid on the Schedule Update form.\n\n## Implementation details\n\nThe Magento_ReviewStaging
+  module extends the following Magento_Review module functionality to be used in staging
+  mode:\n\n- Adds Product Reviews grid on the Schedule Update form. \n\nNOTE You cannot
+  create an update for a product review.\n\n## Dependencies\n\nYou can find the list
+  of modules that have dependencies on the Magento_ReviewStaging module in the `require`
+  section of the `composer.json` file. The file is located in the root directory of
+  the module.\n\n## Extension points\n\nExtension points enable extension developers
+  to interact with the Magento_ReviewStaging module. For more information about the
+  Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_ReviewStaging module.\n\n###
+  Layouts\n\nYou can extend and override layouts in the `Magento\\ReviewStaging\\view\\adminhtml\\layout`
+  directory.\nFor more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).\n\n##
+  Additional information\n\nYou can track [backward incompatible changes made in a
+  Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html)."

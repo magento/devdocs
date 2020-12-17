@@ -574,7 +574,7 @@ The top-level `Cart` object is listed first. All interfaces and child objects ar
 
 The `Cart` object can contain the following attributes.
 
-{% include graphql/cart-object.md %}
+{% include graphql/cart-object-24.md %}
 
 ### AppliedCoupon object {#AppliedCoupon}
 
@@ -682,13 +682,22 @@ Attribute |  Data Type | Description
 
 ### CartItemInterface {#CartItemInterface}
 
+The `CartItemInterface` has the following implementations:
+
+*  BundleCartItem
+*  ConfigurableCartItem
+*  DownloadableCartItem
+*  GiftCardCartItem
+*  SimpleCartItem
+*  VirtualCartItem
+
 The `CartItemInterface` can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | String | ID of the item
 `prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | Contains attributes that are common to all types of products
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
 
 ### CartItemPrices object {#CartItemPrices}
@@ -697,7 +706,7 @@ The `CartItemPrices` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`discounts`| [Discount] | An array of discounts to be applied to the cart item
+`discounts`| [[Discount]](#Discount) | An array of discounts to be applied to the cart item
 `price` | Money! | The price of the item before any discounts were applied
 `row_total` | Money! | The value of the `price` multiplied by the quantity of the item
 `row_total_including_tax` | Money! | The value of `row_total` plus the tax applied to the item
@@ -719,8 +728,9 @@ The `CartPrices` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
-`discount` | CartDiscount | Deprecated. Use `discounts` instead
-`discounts` | [Discount] | An array containing all discounts applied to the cart
+`discount` | [CartDiscount](#CartDiscount) | Deprecated. Use `discounts` instead
+`discounts` | [[Discount]](#Discount) | An array containing all discounts applied to the cart
+`gift_options` | [GiftOptionsPrices](#GiftOptionsPrices) | The list of prices for the selected gift options
 `grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
 `subtotal_excluding_tax` | Money | Subtotal without taxes
 `subtotal_including_tax` | Money | Subtotal with taxes
@@ -747,6 +757,33 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money! | The amount of the discount applied to the cart
 `label` | String! | The description of the discount
+
+### GiftMessage object {#GiftMessage}
+
+{% include graphql/gift-message.md %}
+
+### GiftOptionsPrices object {#GiftOptionsPrices}
+
+The `GiftOptionsPrices` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`gift_wrapping_for_items` | Money | The price of the gift wrapping for all individual order items
+`gift_wrapping_for_order` | Money | The price of the gift wrapping for the whole order
+`printed_card` | Money | The price of the printed card
+
+### GiftWrapping object {#GiftWrapping}
+
+{% include graphql/gift-wrapping.md %}
+
+### RewardPointsAmount {#RewardPointsAmount}
+
+The `RewardPointsAmount` object must contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`points` | Float! | The amount of reward points, in points
+`money` | Money! | The amount of reward points, in the store's currency
 
 ### SelectedPaymentMethod object {#SelectedPaymentMethod}
 
@@ -788,5 +825,7 @@ Attribute |  Data Type | Description
 
 *  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
 *  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
+*  [setShippingAddressesOnCart mutation]({{page.baseurl}}/graphql/mutations/set-shipping-address.html)
+*  [setShippingMethodsOnCart mutation]({{page.baseurl}}/graphql/mutations/set-shipping-method.html)
 *  [setBillingAddressOnCart mutation]({{page.baseurl}}/graphql/mutations/set-billing-address.html)
 *  [setPaymentMethodOnCart mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)

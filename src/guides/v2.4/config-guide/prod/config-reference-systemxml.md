@@ -249,6 +249,22 @@ A `<field>`-Tag can have the following values for the `type=""` attribute:
 | `time`          | Control to set time using three dropdowns–Hour, minute and second.                                                                                                                                         |
 | `allowspecific` | A multiselect list of specific countries. Requires a `source_model` such as `Magento\Shipping\Model\Config\Source\Allspecificcountries`                                                                               |
 | `image`         | Allows an image to be uploaded.                                                                                                                                                                                                                                                                                                                                   |
+| `note`          | Allows an informational note to be added to the page. This type requires a `frontend_model` to render the note. |
+
+It is also possible to create a custom field type. This is often done when a special button, with an action, is required. To do this requires two main elements:
+
+-  Creating a block in the `adminhtml` area
+-  Setting the `type=""` to the path to this block
+
+The block itself requires, at a minimum, a `__construct` method and a `getElementalHtml()` method. The [Magento_OfflineShipping]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/OfflineShipping) is a simple example of a custom type.
+
+For example, in the OfflineShipping module, the Export button is defined in `Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export` and the field definition looks like:
+
+```xml
+<field id="export" translate="label" type="Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export" sortOrder="5" showInDefault="0" showInWebsite="1" showInStore="0">
+    <label>Export</label>
+</field>
+```
 
 ### Field node reference
 
@@ -358,6 +374,12 @@ The following validation rules are available:
 
 | Rule                            | Description                                                                                                             |
 |---------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| `alphanumeric`                  | Allows letters, numbers, spaces or underscores only.                                                                    |
+| `integer`                       | Enter a positive or negative non-decimal number.                                                                         |
+| `letters-only`                  | Allows letters only. For example, `abcABC`.                                                                                |
+| `no-whitespace`                 | Disallows white spaces.                                                                                                 |
+| `time`                          | Allows a valid time in 24-hour format, between 00:00 and 23:59. For example `15`, `15:05` or `15:05:48`.                                        |
+| `time12h`                       | Allows a valid time in 12-hour format, between 12:00 am and 11:59:59 pm. For example `3 am`, `11:30 pm`, `02:15:00 pm`.          |
 | `validate-no-html-tags`         | HTML tags are not allowed.                                                                                              |
 | `validate-select`               | Select an option.                                                                                                       |
 | `validate-no-empty`             | Empty Value                                                                                                             |

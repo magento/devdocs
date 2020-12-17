@@ -1,0 +1,10 @@
+---
+title: Magento_VersionsCmsUrlRewrite
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/VersionsCmsUrlRewrite/README.md
+last_modified_at: '2020-01-20 12:07:09 +0200'
+content: "The Versions CMS Url Rewrite Module ties up the Store Switcher program with
+  implementation of the Hierarchy structure. See also Magento_UrlRewrite and Magento_VersionsCms
+  modules. \n\nExtends the Store Switcher program and makes it take into account nodes
+  from the Hierarchy structure."

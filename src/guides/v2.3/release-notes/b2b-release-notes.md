@@ -3,7 +3,37 @@ group: release-notes
 title: B2B Release Notes
 ---
 
-### B2B
+## B2B
+
+The release notes for the B2B extension captures additions and bug fixes that Magento has added during a release cycle.
+
+### Magento 2.3.6 -- Magento B2B
+
+<!--- MC-32757-->
+
+*  An SQL error no longer occurs when a merchant assigns a category to a shared catalog in a deployment where B2B is installed. Previously, Magento threw this exception: `SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'THEN -2 END), IF(grant_catalog_category_view = 0, NULL, grant_catalog_category_v' at line 1`
+
+<!--- MC-35078-->
+
+*  Magento no longer displays a 404 page when a merchant uses the **Enter** button instead of clicking the **Save** button when creating a requisition list on the storefront.
+
+<!--- MC-35011-->
+
+*  When you create or update a B2B Company using the REST API (`http://magento.local/rest/V1/company/2`, where `2` represents the company ID), the response now includes the settings for `applicable_payment_method` or `available_payment_methods` as expected.
+
+<!--- MC-34571-->
+
+*  Magento now sends an email notification confirming that a customer has permission to exceed the designated credit limit when a merchant enables the **Allow To Exceed Credit Limit** setting. Previously, the notification email sent by Magento indicated that the customer did not have permission to exceed the limit.
+
+<!--- MC-33293-->
+
+*  Magento now provides an `addToCart` DataLayer event for Quick Order and Requisition lists pages.
+
+<!--- MC-32872-->
+
+*  Requisition lists now include all grouped products and quantities that have been added to the list. Previously, when a merchant navigated to a requisition list after adding products to it from a product detail page, Magento displayed this error: `1 product(s) require your attention - Options were updated. Please review available configurations`. [GitHub-59](https://github.com/magento/partners-magento2b2b/issues/59)
+
+### Magento 2.3.5 -- Magento B2B
 
 <!--- MC-30049-->
 

@@ -1,0 +1,22 @@
+---
+title: Magento_B2b
+source_repo: magento2b2b
+release: 1.1.6
+github_path: app/code/Magento/B2b/README.md
+last_modified_at: '2017-02-15 17:02:23 +0300'
+content: "## Overview\n\nThe Magento_b2b module is the base module for B2B. It must
+  be present on all B2B installations.\n\nThis module also provides several B2B branding
+  elements. For example, it adds a link to B2B customer support in Admin, and it displays
+  \"B2B Edition\" at the bottom of the site. Also, the module adds the configuration
+  page for B2B settings where an admin user can enable or disable a B2B feature. Disabling
+  a B2B feature in store configurations disables this feature for the storefront only,
+  and it is still available in the admin panel.\n\n## Installation details\n\nThis
+  module must be installed to use and to configure the other B2B modules. It can be
+  uninstalled after other B2B modules are uninstalled.\n\n## Structure\n \n[Learn
+  about a typical file structure for a Magento 2 module](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/build/module-file-structure.html).\n
+  \n## Extensibility\n \nExtension developers can interact with the Magento_B2b module.
+  For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html).\n
+  \n[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_B2b module.\n \n \n## Additional
+  information\n \nYou can track [backward incompatible changes made in a Magento B2b
+  mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html)."

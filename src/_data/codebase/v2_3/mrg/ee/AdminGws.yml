@@ -1,0 +1,9 @@
+---
+title: Magento_AdminGws
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/AdminGws/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: "**AdminGws** provides configuration management within the Global, Website,
+  and Store data scopes. Restrictions can be \nimposed on various system elements
+  through configurations that are applied at the desired level."

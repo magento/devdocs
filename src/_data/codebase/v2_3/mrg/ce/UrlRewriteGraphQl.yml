@@ -1,0 +1,10 @@
+---
+title: Magento_UrlRewriteGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/UrlRewriteGraphQl/README.md
+last_modified_at: '2018-01-17 11:18:15 -0600'
+content: |-
+  **UrlRewriteGraphQl** provides type information for the GraphQl module
+  to generate url rewrites from entities that implement such rewrites,
+  like categories, products or cms and other 3rd party modules.

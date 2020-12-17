@@ -1,0 +1,11 @@
+---
+title: Magento_WebapiSecurity
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/WebapiSecurity/README.md
+last_modified_at: '2016-03-22 15:38:49 -0500'
+content: |-
+  **WebapiSecurity** enables access management of some Web API resources.
+  If checkbox is enabled in backend through: Stores -> Configuration -> Services -> Magento Web API -> Web Api Security
+  then the security of all of the services outlined in app/code/Magento/WebapiSecurity/etc/di.xml would be loosened. You may modify this list to customize which services should follow this behavior.
+  By loosening the security, these services would allow access anonymously (by anyone).

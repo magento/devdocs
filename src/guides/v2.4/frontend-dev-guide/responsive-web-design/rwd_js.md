@@ -16,9 +16,6 @@ The Blank and Luma themes use the following scripts to responsively relocate pag
 -  [`menu.js`]
 -  [`matchMedia.js`], used by `menu.js`
 
-{:.bs-callout-info}
-`responsive.js` no longer exists since 2.4 code-base update
-
 The script files are located in the file system as follows:
 
 ```tree
@@ -27,10 +24,6 @@ The script files are located in the file system as follows:
     ├── mage/
        ├── menu.js
 ```
-
-See one of the following sections for more information:
-
--  [menu.js](#fedg_rwd_js_nav)
 
 ## menu.js {#fedg_rwd_js_nav}
 
