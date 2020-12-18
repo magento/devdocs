@@ -74,8 +74,8 @@ Because DI configuration is used to inject a proxy, proxies can be dropped in to
 
 As a practical example of a proxy, you can see the [StoreManager]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/Model/StoreManager.php){:target="_blank"} class and then see the generated `StoreManager` proxy class.
 
-Real Example from the Magento core code, We are passing `storeManager` argument as proxy to the `Magento\Store\Model\Resolver\Store` class.
-Define StoreManagerInterface as proxy class by adding `Proxy` Class at the end of original class in the `di.xml` file. `Magento\Store\Model\StoreManagerInterface\Proxy` 
+The following excerpt from the Magento code passes the `storeManager` argument as a proxy to the `Magento\Store\Model\Resolver\Store` class. The `StoreManagerInterface` model is defined as a proxy class by adding `Proxy` at the end of original class in the `di.xml` file.
+
 ```xml
 <type name="Magento\Store\Model\Resolver\Store">
     <arguments>
