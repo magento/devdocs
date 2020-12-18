@@ -33,21 +33,27 @@ The following example updates the quantity of an item in a requisition list.
 ``` graphql
 mutation {
   updateRequisitionListItems(
-      requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz",
-      requisitionListItems: [
-        {
-            item_id: "W29uZmlndXJhYmxlLzkzLzUz"
-            quantity: 2
-        }
-      ]
-    ) {
+    requisitionListUid: "Mg==",
+    requisitionListItems: [
+      {
+          item_id: "Mw=="
+          quantity: 2
+      }
+    ]
+    ){
     requisition_list {
       uid
+      name
       items_count
       items {
         items {
+          uid
+          quantity 
+          product {
             uid
-            quantity
+            name
+            sku
+          }
         }
       }
     }
@@ -59,18 +65,27 @@ mutation {
 
 ``` json
 {
+{
   "data": {
     "updateRequisitionListItems": {
       "requisition_list": {
-          "uid": "1",
-          "items_count": 1,
-          "items": {
-            "items": {
-                "uid": "1",
-                "quantity": 2
+        "uid": "Mg==",
+        "name": "Frequently Ordered Products",
+        "items_count": 1,
+        "items": {
+          "items": [
+            {
+              "uid": "Mw==",
+              "quantity": 2,
+              "product": {
+                "uid": "NTk2",
+                "name": "Logan  HeatTec&reg; Tee",
+                "sku": "MS10"
+              }
             }
-          }
+          ]
         }
+      }
     }
   }
 }

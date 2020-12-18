@@ -27,23 +27,28 @@ mutation {
 
 ## Example usage
 
-The following example moves items from one requisition list to another.
+The following example moves an item from one requisition list to another.
 
 **Request:**
 
 ``` graphql
 mutation {
   moveItemsBetweenRequisitionLists(
-      sourceRequisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
-      destinationRequisitionListUid: "W16uZmlndXJhYmxlLakzLzUz"
-      requisitionListItemUids: ["2","3"]
-    ) {
+      sourceRequisitionListUid: "Mg=="
+      destinationRequisitionListUid: "Mw=="
+      requisitionListItem: {
+        requisitionListItemUids: 
+          ["MTI="]
+        }
+        ) {
       source_requisition_list {
         uid
+        name
         items_count
       }
       destination_requisition_list {
         uid
+        name
         items_count
       }
   }
@@ -57,13 +62,15 @@ mutation {
   "data": {
     "moveItemsBetweenRequisitionLists": {
       "source_requisition_list": {
-          "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
-          "items_count": 0
-        },
+        "uid": "Mg==",
+        "name": "Frequently Ordered Products",
+        "items_count": 3
+      },
       "destination_requisition_list": {
-          "uid": "W16uZmlndXJhYmxlLakzLzUz",
-          "items_count": 2
-        }
+        "uid": "Mw==",
+        "name": "Rarely ordered items",
+        "items_count": 2
+      }
     }
   }
 }

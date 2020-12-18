@@ -32,8 +32,8 @@ The following example removes the specified items from the requisition list.
 ``` graphql
 mutation {
   deleteRequisitionListItems(
-    requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz",
-    requisitionListItemUids: ["2","3"]
+    requisitionListUid: "Mg==",
+    requisitionListItemUids: ["NA==","NQ=="]
   ) {
     requisition_list {
       uid
@@ -50,9 +50,9 @@ mutation {
   "data": {
     "deleteRequisitionListItems": {
       "requisition_list": {
-          "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
-          "items_count": 0
-        }
+        "uid": "Mg==",
+        "items_count": 1
+      }
     }
   }
 }

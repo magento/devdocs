@@ -33,17 +33,30 @@ The following example adds products to a requisition list.
 ``` graphql
 mutation {
   addProductsToRequisitionList(
-      requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
+      requisitionListUid: "Mg=="
       requisitionListItems: [
         {
-            sku: "sku"
+            sku: "MS10"
             quantity: 1
-            selected_options: ["Y29uZmlndXJhYmxlLzkzLzUz","Y29uZmlndXJhYmxlLzE0NC8xNzE="]
+            selected_options: ["Y29uZmlndXJhYmxlLzkzLzUw","Y29uZmlndXJhYmxlLzE2MC8xNjg"]
         }
       ]
     ) {
     requisition_list {
       uid
+      items {
+        items {
+          ... on RequisitionListItemInterface {
+            uid
+            product {
+              uid
+              sku
+              name
+            }
+            quantity
+          }
+        }
+      }
       items_count
     }
   }
@@ -57,9 +70,22 @@ mutation {
   "data": {
     "addProductsToRequisitionList": {
       "requisition_list": {
-          "uid": "1",
-          "items_count": 1
-        }
+        "uid": "Mg==",
+        "items": {
+          "items": [
+            {
+              "uid": "Mw==",
+              "product": {
+                "uid": "NTk2",
+                "sku": "MS10",
+                "name": "Logan  HeatTec&reg; Tee"
+              },
+              "quantity": 1
+            }
+          ]
+        },
+        "items_count": `
+      }
     }
   }
 }

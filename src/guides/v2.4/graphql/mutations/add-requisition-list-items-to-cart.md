@@ -32,13 +32,24 @@ The following example adds items to the cart.
 
 ``` graphql
 mutation {
-  addRequisitionListItemsToCart
-      (
-        requisitionListUid: "Y29uZmlndXJhYmxlLzkzLzUz"
-        requisitionListItemUids: ["1","2"]
-      ) {
-      status
-     }
+  addRequisitionListItemsToCart (
+    requisitionListUid: "Mg=="
+    requisitionListItemUids: 
+    ["Mw==", "Ng==", "Nw=="]
+  ) 
+  {
+    status
+    cart {
+      items {
+        uid
+        product {
+          uid
+          sku
+          name
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -48,7 +59,35 @@ mutation {
 {
   "data": {
     "addRequisitionListItemsToCart": {
-        "status": "true"
+      "status": true,
+      "cart": {
+        "items": [
+          {
+            "uid": "NQ==",
+            "product": {
+              "uid": "NTk2",
+              "sku": "MS10",
+              "name": "Logan  HeatTec&reg; Tee"
+            }
+          },
+          {
+            "uid": "Nw==",
+            "product": {
+              "uid": "MTI=",
+              "sku": "24-WB03",
+              "name": "Driven Backpack"
+            }
+          },
+          {
+            "uid": "OA==",
+            "product": {
+              "uid": "Mg==",
+              "sku": "24-MB04",
+              "name": "Strive Shoulder Pack"
+            }
+          }
+        ]
+      }
     }
   }
 }
