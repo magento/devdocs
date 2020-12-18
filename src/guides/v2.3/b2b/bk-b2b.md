@@ -8,8 +8,8 @@ menu_order: 1
 menu_node: parent
 ee_only: True
 functional_areas:
-- B2B
-- Integration
+  - B2B
+  - Integration
 ---
 
 Unlike the standard business-to-consumer model, {{site.data.var.b2b}} (Business to Business) is designed to meet the needs of sellers (Magento merchants) whose customers are primarily companies—possibly with complex organizational structures and multiple users with various roles and levels of permission.
