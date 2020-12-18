@@ -91,7 +91,6 @@ This release adds GraphQL coverage for the following features:
 *  Added support for the following B2B features:
    *  Companies, including administrators, users, roles, and structure <!--- MC-33861-->
    *  Company credit <!--- MC-33862-->
-   *  Shared catalogs <!--- MC-33864-->
    *  [Create]({{ page.baseurl }}/graphql/mutations/create-requisition-list.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-requisition-list.html), and update requisition lists  <!--- MC-34312-->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
@@ -1419,8 +1418,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 ## Known issues
 
 **Issue**: Discounts for a specific payment method persist during checkout for a purchase order even when the buyer changes payment method during final checkout. As a result, customers may receive a discount that they are not entitled to. This occurs because a cart rule for the original payment method is still applied despite the change in payment method. **Workaround**: None. <!-- KB-827 -->
-
-**Issue**: Magento does not display a product under a category or in search results when shared catalogs are enabled for B2B, and a product has been created but not assigned to a shared catalog in stores implementing the Luma theme. However, GraphQL products queries return these unassigned products with an incomplete set of attributes. **Workaround**: We will provide a fix for this issue no later than 2.4.3. <!--- MC-39522-->
 
 **Issue**: The `deleteRequisitionListOutput` query returns details about the deleted requisition list instead of the remaining requisition lists. <!--- MC-39894-->
 
