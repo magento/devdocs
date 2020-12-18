@@ -78,6 +78,12 @@ POST   /V1/negotiable-carts/:cartId/giftCards
 DELETE /V1/negotiable-carts/:cartId/giftCards/:giftCardCode
 ```
 
+### PurchaseOrder
+
+```terminal
+POST   /V1/carts/mine/po-payment-information
+```
+
 ### SharedCatalog
 
 ```terminal
@@ -135,6 +141,12 @@ negotiableQuotePaymentInformationManagementV1
 negotiableQuoteShipmentEstimationV1
 negotiableQuoteShippingInformationManagementV1
 negotiableQuoteShippingMethodManagementV1
+```
+
+### PurchaseOrder
+
+```terminal
+purchaseOrderPurchaseOrderPaymentInformationManagementV1
 ```
 
 ### SharedCatalog
