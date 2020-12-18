@@ -47,34 +47,38 @@ The following example uses the `POST V1/categories` call to assign four custom a
 
 ```json
 {
-"category": {
-    "parent_id": 2,
-    "name": "My New Category",
-    "is_active": true,
-    "level": 2,
-    "include_in_menu": true,
-    "custom_attributes":[
-         {
-            "attribute_code":"description",
-            "value":"Women's category description"
-         },
-         {
-            "attribute_code":"meta_title",
-            "value":"Women's meta title"
-         },
-         {
-            "attribute_code":"meta_keywords",
-            "value":"Women's meta keywords"
-         },
-         {
-            "attribute_code":"meta_description",
-            "value":"Women's meta description"
-         },
-         {
-            "attribute_code":"url_key",
-            "value":"womens-test-key"
-         }
-      ]
+    "category": {
+        "parent_id": 2,
+        "name": "Kids",
+        "is_active": true,
+        "level": 2,
+        "include_in_menu": true,
+        "custom_attributes": [
+            {
+                "attribute_code": "description",
+                "value": "kids category description"
+            },
+            {
+                "attribute_code": "meta_title",
+                "value": "Kids meta title"
+            },
+            {
+                "attribute_code": "meta_keywords",
+                "value": "Kids meta keywords"
+            },
+            {
+                "attribute_code": "meta_description",
+                "value": "Kids meta description"
+            },
+            {
+                "attribute_code": "url_key",
+                "value": "kids"
+            },
+            {
+                "attribute_code": "url_path",
+                "value": "kids"
+            }
+        ]
     }
 }
 ```
@@ -85,32 +89,32 @@ The following example uses the `POST V1/categories` call to assign four custom a
 {
     "id": 42,
     "parent_id": 2,
-    "name": "My New Category",
+    "name": "Kids",
     "is_active": true,
-    "position": 8,
+    "position": 9,
     "level": 2,
     "children": "",
-    "created_at": "2020-12-17 10:38:01",
-    "updated_at": "2020-12-17 10:38:01",
-    "path": "1/2/42",
+    "created_at": "2020-12-18 08:50:47",
+    "updated_at": "2020-12-18 08:50:47",
+    "path": "1/2/43",
     "available_sort_by": [],
     "include_in_menu": true,
     "custom_attributes": [
         {
             "attribute_code": "description",
-            "value": "Women's category description"
+            "value": "kids category description"
         },
         {
             "attribute_code": "meta_title",
-            "value": "Women's meta title"
+            "value": "Kids meta title"
         },
         {
             "attribute_code": "meta_keywords",
-            "value": "Women's meta keywords"
+            "value": "Kids meta keywords"
         },
         {
             "attribute_code": "meta_description",
-            "value": "Women's meta description"
+            "value": "Kids meta description"
         },
         {
             "attribute_code": "is_anchor",
@@ -118,7 +122,7 @@ The following example uses the `POST V1/categories` call to assign four custom a
         },
         {
             "attribute_code": "path",
-            "value": "1/2/42"
+            "value": "1/2/43"
         },
         {
             "attribute_code": "children_count",
@@ -126,11 +130,11 @@ The following example uses the `POST V1/categories` call to assign four custom a
         },
         {
             "attribute_code": "url_key",
-            "value": "womens-test-key"
+            "value": "kids"
         },
         {
             "attribute_code": "url_path",
-            "value": "womens-test-key"
+            "value": "kids"
         }
     ]
 }
