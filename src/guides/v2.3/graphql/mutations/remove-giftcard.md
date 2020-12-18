@@ -83,4 +83,4 @@ Attribute |  Data Type | Description
 Error | Description
 --- | ---
 `Could not find a cart with ID \"xxxxx\"` | The ID provided in the `cart_id` field is invalid or the cart does not exist for the customer.
-`The gift card couldn't be deleted from the quote.` | The value provided in the `gift_card_code` field is invalid or the giftCard with that specific ID does not exist in the cart.
+`The gift card couldn't be deleted from the quote.` | The value provided in the `gift_card_code` field is invalid or the gift card with that specific ID does not exist in the cart.
