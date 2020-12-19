@@ -28,21 +28,27 @@ var config = {
 
 ### map {#requirejs-config-map}
 
-The `map` configuration maps (connects) any real AMD modules that calls `define()`, to the specified alias. In the snippet below, `*` means all loaded RequireJS modules can use the specified alias.
+The `map` configuration maps (connects) any real AMD modules that calls `define()`, to the specified alias. In the snippet below, `*` means all loaded RequireJS modules can use the specified alias, and the second mapping applies only in the context of `Vendor_Module/js/amd-module`. So, both types of contexts can be applied: either a global context, or a module specific context.
 
 ```javascript
 map: {
     '*': {
         alias: 'Vendor_Module/js/complex/path/amd-module'
+    },
+    'Vendor_Module/js/amd-module': {
+        alias-two: 'Vendor_Module/js/complex/path/amd-module-two'
     }
 }
 ```
 
-Now we can use our `Vendor_Module/js/complex/path/module` using `alias` in any RequireJS module or config file without needing to type the entire path. For example, in Magento, `catalogAddToCart` is mapped to `Magento_Catalog/js/catalog-add-to-cart` and can be used anywhere as a RequireJS module name.
+Now we can use our `Vendor_Module/js/complex/path/module` using `alias` in any RequireJS module or config file without needing to type the entire path. For example, in Magento, `catalogAddToCart` is mapped to `Magento_Catalog/js/catalog-add-to-cart` and can be used anywhere as a RequireJS module name. In the next example, `catalogAddToCart` is mapped to `Magento_Catalog/js/catalog-add-to-cart` only in the context of the `discountCode` module.
 
 ```javascript
 map: {
     '*': {
+        catalogAddToCart: 'Magento_Catalog/js/catalog-add-to-cart'
+    },
+    'discountCode': {
         catalogAddToCart: 'Magento_Catalog/js/catalog-add-to-cart'
     }
 }
