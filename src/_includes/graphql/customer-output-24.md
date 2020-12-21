@@ -2,10 +2,16 @@
 {% assign customeraddress_text = '[CustomerAddress](#customerAddressOutput)' %}
 {% assign customeroutput_text = '[CustomerOrders](#customerOrders)' %}
 {% assign crossref_text = '. See [`orders` input attributes](#orders) for details' %}
+{% assign productreview_text = '[ProductReviews](#ProductReviews)!' %}
+{% assign rewardpoints_text = '[RewardPoints](#RewardPoints)' %}
+{% assign wishlist_text = '[Wishlist](#Wishlist)!' %}
 {% else %}
 {% assign customeraddress_text = 'CustomerAddress' %}
 {% assign customeroutput_text = '[CustomerOrders]' %}
 {% assign crossref_text = '' %}
+{% assign productreview_text = '[ProductReviews]!' %}
+{% assign rewardpoints_text = '[RewardPoints]' %}
+{% assign wishlist_text = '[Wishlist]!' %}
 {% endif %}
 
 Attribute |  Data Type | Description
@@ -27,12 +33,12 @@ Attribute |  Data Type | Description
 `middlename` |String | The customer's middle name
 `orders(filter CustomerOrdersFilterInput, currentPage = 1 Int, pageSize = 20 Int)` | {{ customeroutput_text }} | A list of the customer's placed orders{{ crossref_text }}
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
-`reviews(pageSize: Int = 20 currentPage: Int = 1)` | ProductReviews! | The list of reviews of the product
-`reward_points` | RewardPoints | Details about the customer's reward points
+`reviews(pageSize: Int = 20 currentPage: Int = 1)` | {{ productreview_text }} | The list of reviews of the product
+`reward_points` | {{ rewardpoints_text }} | Details about the customer's reward points
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer's Tax/VAT number (for corporate customers)
 `wishlist` | Wishlist! | Deprecated. Use `wishlist_v2` instead. Contains the contents of the customer's wish lists
-`wishlist_v2(id ID!)` | Wishlist | Retrieve the specified wish list identified by the unique ID for a Wishlist object
+`wishlist_v2(id ID!)` | {{ wishlist_text }} | Retrieve the specified wish list identified by the unique ID for a Wishlist object
 
 For B2B, company administrators and users can have the following attributes.
 
