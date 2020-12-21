@@ -19,7 +19,7 @@ The release notes include:
 ## v1.2.1
 *Release date: December 21, 2020*<br/>
 
--  {:.new}<!--MCLOUD-7259-->**NGINX command options.** Added build command options to change the number of NGINX `worker_processes` and NGINX `worker_connections` for TLS and Web services. The `worker_process` parameter retains the ability to set the value to `auto`. Examples:
+-  {:.new}<!--MCLOUD-7259-->**NGINX command options**–Added build command options to change the number of NGINX `worker_processes` and NGINX `worker_connections` for TLS and Web services. The `worker_process` parameter retains the ability to set the value to `auto`. Examples:
 
     ```terminal
     ./vendor/bin/ece-docker build:compose --nginx-worker-processes=2
