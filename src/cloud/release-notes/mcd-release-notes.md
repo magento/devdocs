@@ -32,13 +32,13 @@ The release notes include:
    ./vendor/bin/ece-docker build:compose --no-tls
    ```
 
--  {:.new}<!--MCLOUD-7259-->**NGINX memory consumption**. Reduced the memory consumed by the NGINX process for TLS and Web services.
+-  {:.new}<!--MCLOUD-7259-->**NGINX memory consumption**–Reduced the memory consumed by the NGINX process for TLS and Web services.
 
--  {:.new}<!--No ticket -->**Blackfire**. Disabled Blackfire PHP extension by default in the Cloud Docker image.
+-  {:.new}<!--No ticket -->**Blackfire**–Disabled Blackfire PHP extension by default in the Cloud Docker image.
 
--  {:.fix}<!--MCLOUD-7232-->**PHP-FPM container**. Fixed PHP-FPM container health check by changing the `WEB_PORT` from `80` to `8080`.
+-  {:.fix}<!--MCLOUD-7232-->**PHP-FPM container**–Fixed PHP-FPM container health check by changing the `WEB_PORT` from `80` to `8080`.
 
--  {:.fix}<!--MCLOUD-7442-->**Invalid volume naming**. Fixed an error with invalid volume naming in developer mode.
+-  {:.fix}<!--MCLOUD-7442-->**Invalid volume naming**–Fixed an error with invalid volume naming in developer mode.
 
 ## v1.2.0
 *Release date: November 9, 2020*<br/>
