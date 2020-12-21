@@ -353,9 +353,6 @@ pages:
         - label: Set up optional database replication
           url: /config-guide/multi-master/multi-master_slavedb.html
 
-    - label: Revert from a split database to a single database
-      url: /config-guide/revert-split-database.html
-
     - label: Custom Logging
       url: /config-guide/log/log-intro.html
       children:
