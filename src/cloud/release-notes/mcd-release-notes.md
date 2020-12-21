@@ -21,14 +21,14 @@ The release notes include:
 
 -  {:.new}<!--MCLOUD-7259-->**NGINX command options.** Added build command options to change the number of NGINX `worker_processes` and NGINX `worker_connections` for TLS and Web services. The `worker_process` parameter retains the ability to set the value to `auto`. Examples:
 
-    ```bash
+    ```terminal
     ./vendor/bin/ece-docker build:compose --nginx-worker-processes=2
     ./vendor/bin/ece-docker build:compose --nginx-worker-connections=2048
     ```
 
 -  {:.new}<!--MCLOUD-7259-->**TLS command option.** Added build command option to create a configuration without the TLS service. Example:
 
-   ```bash
+   ```terminal
    ./vendor/bin/ece-docker build:compose --no-tls
    ```
 
