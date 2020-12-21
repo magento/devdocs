@@ -67,6 +67,3 @@ To verify that your single database implementation is working properly, perform 
 1. Verify that foreign keys have been restored. For example, the `QUOTE_STORE_ID_STORE_STORE_ID` key in the `quote` database table.
 1. Verify that customers can place orders from the storefront.
 1. Verify that orders created before reverting the split database to a single database are available in the Admin.
-
-{:.bs-callout-tip}
-After configuration, the single `magento_main` database should contain 435 tables.
