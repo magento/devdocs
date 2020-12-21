@@ -14,7 +14,7 @@ The [split database]({{ page.baseurl }}/config-guide/multi-master/multi-master.h
 
 Reverting from a split database to a single database implementation involves creating backups of the `magento_quote` and `magento_sales` databases before loading them into the single `magento_main` database.
 
-In this example, all three databases are installed on the same host named `magento2-mysql`.
+In this example, we log in to all three databases, which are installed on the same host (`magento2-mysql`) as the "root" user. You must replace these values with the appropriate values for your databases.
 
 1. Create a backup of the `magento_quote` database:
 
