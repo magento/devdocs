@@ -24,8 +24,7 @@ To ensure events are firing on pages across your site (home, product, checkout, 
 
 1. Make sure you disable any ad blockers on your browser and accept cookies on the site.
 1. In Chrome, choose **Customize and control Google Chrome** (the three vertical dots in the upper right corner of the browser) then select **More Tools** > **Developer Tools**.
-1. Choose the **Network** tab then select the **XHR** type.
-1. Filter for `tp2`.
+1. Choose the **Network** tab and filter for `tp2`.
 1. Reload the page.
 1. You should see calls under `tp2` in the **Name** column.
 

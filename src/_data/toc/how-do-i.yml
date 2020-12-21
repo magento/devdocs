@@ -55,3 +55,6 @@ pages:
 
       - label: Customize the list of shipping methods
         url: /howdoi/checkout/checkout_shipping_methods.html
+
+  - label: Customize Magento Admin design
+    url: /howdoi/admin/customize_admin.html

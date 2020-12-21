@@ -85,6 +85,48 @@ where
 
 `--none` clears the list.
 
+## Multistore setups
+
+If you want to setup multiple stores with a different layout and localized content for each store, pass the `$_GET['skin']` parameter to the intended processor In the following example, we are using a `503` type error template file, which requires localized content.
+
+The constructor of the `Error_Processor` class accepts a `skin` GET parameter to change layout:
+
+```php
+if (isset($_GET['skin'])) {
+    $this->_setSkin($_GET['skin']);
+}
+```
+
+This can also be added to a rewrite rule in the `.htaccess` file that will append a `skin` parameter to the URL.
+
+### $_GET['skin'] parameter
+
+To use the `skin` parameter:
+
+1. Check if the `.maintenance.flag` exists.
+1. Note the host address, that refers to the `HTTP_HOST`, or any other variable such as ENV variables.
+1. Check if the `skin` parameter exists.
+1. Set the parameter by using the rewrite rules below.
+
+See the following for examples of rewrite rules:
+
+*  RewriteCond `%{DOCUMENT_ROOT}/var/.maintenance.flag -f`
+*  RewriteCond `%{HTTP_HOST} ^sub.example.com$`
+*  RewriteCond `%{QUERY_STRING} !(^|&)skin=sub(&|$)` [NC]
+*  RewriteRule `^ %{REQUEST_URI}?skin=sub` [L]
+
+Copy the following files:
+
+*  `pub/errors/default/503.phtml` to `pub/errors/sub/503.phtml`
+*  `pub/errors/default/css/styles.css` to `pub/errors/sub/styles.css`
+
+Edit these files to provide localized content in the `503.phtml` file and custom styling in the `styles.css` file.
+
+Ensure your paths point to your `errors` directory. The directory name must match the URL parameter indicated in the RewriteRule. In the previous example, the `sub` directory is used, which is specified as a parameter in the RewriteRule (`skin=sub`)
+
+{:.bs-callout-info}
+The [nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html) setting must be added for multistore setups.
+
 {:.ref-header}
 Related topics
 

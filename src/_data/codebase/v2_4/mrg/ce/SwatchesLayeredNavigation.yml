@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/SwatchesLayeredNavigation/README.md
 last_modified_at: '2016-03-10 13:38:33 +0200'
-content: |
+content: |-
   ## Overview
 
   The **Magento_SwatchesLayeredNavigation** module enables LayeredNavigation functionality for Swatch attributes

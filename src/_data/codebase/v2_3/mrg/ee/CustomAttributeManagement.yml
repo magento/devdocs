@@ -4,7 +4,7 @@ source_repo: magento2ee
 release: 2.3.6
 github_path: app/code/Magento/CustomAttributeManagement/README.md
 last_modified_at: '2014-12-17 18:31:49 +0000'
-content: |
+content: |-
   Magento_CustomAttributeManagement implements user-defined attributes management which provides ability to manage attributes of customers and their address.
   Admin user can manage attributes on UI level without assistance of programmer.
   Admin user can create new, modify, and remove attributes, control attributes properties and visibility on frontend.

@@ -13,4 +13,4 @@ content: "The `InventoryReservations` module provides logic for handling product
   interfaces related to this module are located in the `InventoryReservationsApi`
   module. \nUse the interfaces defined in `InventoryReservationsApi` to extend this
   module.\n\n## Additional information\n\nThe `InventoryReservations` module creates
-  the `inventory_cleanup_reservations` cron job.\n"
+  the `inventory_cleanup_reservations` cron job."
