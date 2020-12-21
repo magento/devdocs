@@ -61,6 +61,7 @@ Attribute | Data type | Description
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
+`staged` | Boolean! | Indicates whether the product is staged for a future campaign
 `stock_status` | ProductStockStatus | The status of the stock. `ProductStockStatus` is an enumeration that can have the value of `IN_STOCK` or `OUT_OF_STOCK`. This attribute is defined in the `InventoryGraphQl` module.
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the `SwatchesGraphQl` module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
@@ -167,7 +168,7 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [ProductReview]! | An array of product reviews
+`items` | [[ProductReview]](#ProductReview)! | An array of product reviews
 `page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
 
 #### ProductReview object {#ProductReview}
