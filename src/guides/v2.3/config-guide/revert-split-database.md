@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Configure a single database from a split database
+title: Revert from a split database to a single database
 ee_only: true
 functional_areas:
   - Configuration
@@ -8,7 +8,7 @@ functional_areas:
   - Setup
 ---
 
-The [split database]({{ page.baseurl }}/config-guide/multi-master/multi-master.html) feature was deprecated in version 2.4.2 of {{ site.data.var.ee }} and {{ site.data.var.ce }}. Follow these instructions to revert from a split database to a single database implementation.
+The [split database]({{ page.baseurl }}/config-guide/multi-master/multi-master.html) feature was deprecated in version 2.4.2 of {{ site.data.var.ee }}. Follow these instructions to revert from a split database to a single database implementation.
 
 ## Revert a split database implementation
 
@@ -52,8 +52,7 @@ In this example, we log in to all three databases, which are installed on the sa
    mysql -h "magento2-mysql" -u root -p -e "DROP DATABASE magento_quote;"
    ```
 
-1. Remove the deployment configuration for `checkout` and `sales` in the `connections` section of the `env.php` file.
-1. Remove the deployment configuration for `checkout` and `sales` in the `resources` section of the `env.php` file.
+1. Remove the deployment configuration for `checkout` and `sales` in the `connections` and `resources` sections of the `env.php` file.
 1. Restore foreign keys:
 
    ```bash
