@@ -56,4 +56,3 @@ The new page layout displays in all `Layout` dropdowns.
 On the storefront, there is a new footer for those pages that use the `3 Columns Double Footer` layout.
 
 ![Storefront two footers layout]({{ site.baseurl }}/common/images/fdg/custom_layout_footer_bottom.png)
-

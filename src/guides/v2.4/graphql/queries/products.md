@@ -411,12 +411,11 @@ The search returns 45 items, but only the first two items are returned on the cu
 }
 ```
 
-### Full text search with filter
+### Full text search with filter by price attribute
 
 The following sample query returns a list of products that meets the following criteria:
 
 -  The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
--  The SKU begins with `24-MB`
 -  The price is less than $50.
 
 The response for each item includes the `name`, `sku`, and `price` only. Up to 25 results are returned at a time, in decreasing order of price.
@@ -498,6 +497,68 @@ The response for each item includes the `name`, `sku`, and `price` only. Up to 2
       "total_count": 3,
       "page_info": {
         "page_size": 25
+      }
+    }
+  }
+}
+```
+
+### Query with filter by SKU attribute
+
+The following sample query returns product by SKU. You have to pass SKU value to return product information.
+
+**Request:**
+
+```graphql
+{
+  products(filter: { sku: { eq: "24-MB01" } }) {
+    items {
+      name
+      sku
+      url_key
+      stock_status
+      price_range {
+        minimum_price {
+          regular_price {
+            value
+            currency
+          }
+        }
+      }
+    }
+    total_count
+    page_info {
+      page_size
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Joust Duffle Bag",
+          "sku": "24-MB01",
+          "url_key": "joust-duffle-bag",
+          "stock_status": "IN_STOCK",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 34,
+                "currency": "USD"
+              }
+            }
+          }
+        }
+      ],
+      "total_count": 1,
+      "page_info": {
+        "page_size": 20
       }
     }
   }

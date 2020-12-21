@@ -6,7 +6,11 @@ contributor_link: https://www.atwix.com/
 b2b_only: true
 ---
 
-Use the `createCompanyRole` mutation to create a new company role and permissions.
+The `createCompanyRole` mutation defines a new company role. To create a role, you must provide an array of permissions that determine which resources the user can access.
+
+{% include webapi/b2b_roles.md %}
+
+Also, you can get the list of all resources defined within the company using the [`company`]({{page.baseurl}}/graphql/queries/company.html) query.
 
 ## Syntax
 
@@ -120,12 +124,6 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `name` | String! | Role name.
 `permissions` | [String!]! | A list of Role permission resources. Required array value for a field with strings as values of array.
-
-### Available permissions
-
-{% include b2b/company/company-acl.md %}
-
-Also, you can get the list of all resources defined within the company using [`company`]({{page.baseurl}}/graphql/queries/company.html) query.
 
 ## Output attributes
 
