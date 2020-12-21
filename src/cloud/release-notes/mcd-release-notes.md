@@ -26,7 +26,7 @@ The release notes include:
     ./vendor/bin/ece-docker build:compose --nginx-worker-connections=2048
     ```
 
--  {:.new}<!--MCLOUD-7259-->**TLS command option.** Added build command option to create a configuration without the TLS service. Example:
+-  {:.new}<!--MCLOUD-7259-->**TLS command option**–Added build command option to create a configuration without the TLS service. Example:
 
    ```terminal
    ./vendor/bin/ece-docker build:compose --no-tls
