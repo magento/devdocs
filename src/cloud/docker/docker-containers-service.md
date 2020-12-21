@@ -269,7 +269,7 @@ docker-compose exec varnish varnishadm ban req.url '~' '.'
 
 The Web container uses NGINX to handle web requests after TLS and Varnish. This container passes all requests to the FPM container to serve the PHP code. See [Request flow]({{site.baseurl}}/cloud/docker/docker-containers.html#request-flow).
 
-This container provides two NGINX configuration options:
+This container provides two NGINX configuration options for building the Docker configuration:
 
 -  `--nginx-worker-processes` to set the number of worker processes for NGINX. The default is `1`.
 -  `--nginx-worker-connections` to set the maximum number of connections that each worker process can handle simultaneously. The default is `1024`.
