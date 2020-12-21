@@ -9,7 +9,7 @@ The `copyItemsBetweenRequisitionLists` mutation copies items from one requisitio
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
 {:.bs-callout-info}
-Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) with the `is_requisition_list_active` attribute to determine whether requisition lists are supported.
+Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) with the `is_requisition_list_active` attribute to determine whether requisition lists are enabled.
 
 ## Syntax
 
@@ -77,14 +77,6 @@ Attribute |  Data Type | Description
 `requisitionListItem`| [[CopyItemsBetweenRequisitionListsInput](#CopyItemsBetweenRequisitionListsInput)] | An array of selected requisition list items that are to be copied
 `sourceRequisitionListUid`| ID! | The unique ID of the source requisition list
 
-## Output attributes
-
-The `copyItemsBetweenRequisitionLists` mutation returns the requisition list object to which the products were copied to.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`requisition_list` | [[RequisitionList](#RequisitionList)] | The destination requisition list after the items were copied
-
 ### CopyItemsBetweenRequisitionListsInput attributes {#CopyItemsBetweenRequisitionListsInput}
 
 The `CopyItemsBetweenRequisitionListsInput` type contains the list of products to copy from one requisition list to other.
@@ -92,6 +84,14 @@ The `CopyItemsBetweenRequisitionListsInput` type contains the list of products t
 Attribute |  Data Type | Description
 --- | --- | ---
 `requisitionListItemUids` | [ID!]! | An array of IDs representing products copied from one requisition list to another
+
+## Output attributes
+
+The `copyItemsBetweenRequisitionLists` mutation returns the requisition list object to which the products were copied to.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`requisition_list` | [[RequisitionList](#RequisitionList)] | The destination requisition list after the items were copied
 
 ### RequisitionList attributes {#RequisitionList}
 {% include graphql/requisition-list.md %}

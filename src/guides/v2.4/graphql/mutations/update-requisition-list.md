@@ -9,6 +9,9 @@ The `updateRequisitionList` mutation updates the name and, optionally, the descr
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
+{:.bs-callout-info}
+Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) with the `is_requisition_list_active` attribute to determine whether requisition lists are enabled.
+
 ## Syntax
 
 ```graphql

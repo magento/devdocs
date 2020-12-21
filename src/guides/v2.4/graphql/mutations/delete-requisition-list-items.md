@@ -9,7 +9,7 @@ The `deleteRequisitionListItems` mutation removes items from the specified requi
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
 {:.bs-callout-info}
-Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) with the `is_requisition_list_active` attribute to determine whether requisition lists are supported.
+Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) with the `is_requisition_list_active` attribute to determine whether requisition lists are enabled.
 
 ## Syntax
 
@@ -73,8 +73,11 @@ The `deleteRequisitionListItems` object returns the requisition list after the d
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisition_list` | RequisitionList | The requisition list after removing items
+`requisition_list` | [RequisitionList](#RequisitionList) | The requisition list after removing items
 
+### RequisitionList attributes {#RequisitionList}
+
+{% include graphql/requisition-list.md %}
 ## Related topics
 
 *  [updateRequisitionList mutation]({{page.baseurl}}/graphql/mutations/update-requisition-list.html)

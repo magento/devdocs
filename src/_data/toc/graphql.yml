@@ -183,7 +183,7 @@ pages:
 
         - label: addProductsToRequisitionList mutation
           url: /graphql/mutations/add-products-to-requisition-list.html
-          edition: ee-only
+          edition: b2b-only
           exclude_versions: [ "2.3" ]
 
         - label: addProductsToWishlist mutation
@@ -192,7 +192,7 @@ pages:
 
         - label: addRequisitionListItemsToCart mutation
           url: /graphql/mutations/add-requisition-list-items-to-cart.html
-          edition: ee-only
+          edition: b2b-only
           exclude_versions: [ "2.3" ]
 
         - label: addSimpleProductsToCart mutation
@@ -313,23 +313,23 @@ pages:
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
 
+        - label: deleteRequisitionList mutation
+          url: /graphql/mutations/delete-requisition-list.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
         - label: deleteRequisitionListItems mutation
           url: /graphql/mutations/delete-requisition-list-items.html
           edition: b2b-only
           exclude_versions: [ "2.3" ]
 
+        - label: deletePaymentToken mutation
+          url: /graphql/mutations/delete-payment-token.html
+
         - label: deleteWishlist mutation
           url: /graphql/mutations/delete-wishlist.html
           edition: ee-only
           exclude_versions: ["2.3"]
-
-        - label: deletePaymentToken mutation
-          url: /graphql/mutations/delete-payment-token.html
-
-        - label: deleteRequisitionList mutation
-          url: /graphql/mutations/delete-requisition-list.html
-          edition: b2b-only
-          exclude_versions: [ "2.3" ]
 
         - label: generateCustomerToken mutation
           url: /graphql/mutations/generate-customer-token.html
@@ -481,7 +481,7 @@ pages:
 
         - label: updateRequisitionListItems mutation
           url: /graphql/mutations/update-requisition-list-items.html
-          edition: ee-only
+          edition: b2b-only
           exclude_versions: [ "2.3" ]
 
         - label: updateWishlist mutation

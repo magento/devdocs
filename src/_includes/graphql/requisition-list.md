@@ -15,6 +15,6 @@ The `RequistionListItems` object contains the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [RequisitionListItemInterface]! | An array of items in the requisition list
+`items` | [[RequisitionListItemInterface]!]({{page.baseurl}}/graphql/interfaces/requisition-list-item-interface.html) | An array of items in the requisition list
 `page_info` | SearchResultPageInfo  | Contains pagination metadata
 `total_pages` | Int! | The number of pages returned
