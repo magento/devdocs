@@ -15,7 +15,7 @@ The integration with M-Ray is done through:
 
 `Sut\Domain\MRay\MRayInterface`
 
-Its implementation is through the `config/services.yaml` file. Its value decides where the response of methods `api()` and `modules()` comes from.
+It is implemented through the `config/services.yaml` file. Its value decides where the response of methods `api()` and `modules()` comes from.
 
 Edit this file to customize the response according to your installation. Just replace the value assigned to `Sut\Domain\MRay\MRayInterface`:
 
@@ -53,8 +53,8 @@ To run the integration tests, execute one of the following commands:
 1. Change the `TESTS_BASE_URL` value to point to the Magento URL that you want to test.
 1. To run the acceptance tests, execute one of the following commands:
 
-*  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
-*  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
+   *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
+   *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
 
 ## JS unit testing for GraphQL
 
@@ -108,11 +108,9 @@ The SUT calculates this score according to the following formula:
 
 A package is essentially a directory containing something. It contains a package description which has a name and a version. The name and the version are used to identify the package.
 
-It is possible to create a `sut.zip` file of the SUT to distribute it with partners as a composer package.
+It is possible to create a `sut.zip` file of the SUT to distribute it as a Composer package.
 
-In order to upload it to be able to distribute it, you need first to create the package:
-
-1. To package the SUT execute the following command:
+1. To package the SUT, execute the following command:
 
    ```bash
    bin/package VERSION`
