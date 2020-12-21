@@ -66,6 +66,7 @@ The following table lists the top-level attributes of the `customer` object. See
 {% include graphql/customer-output-24.md %}
 
 ## Errors
+
 Error | Description
 --- | ---
 `"input" value should be specified` | The `input` argument is empty.
