@@ -54,7 +54,8 @@ Related topics
 Complete the tasks discussed in [Prerequisites].
 
  {:.bs-callout-info}
-See the [Safe upgrade tool section]({{ site.baseurl }}/safe-upgrade-tool/introduction.html) for more information on the new CLI magento tool that helps you update your magento software.
+See the [Safe Upgrade Tool]({{site.baseurl}}/safe-upgrade-tool/introduction.html) for more information about the new Magento CLI tool that helps you update your Magento software.
+
 <!-- ABBREVIATIONS -->
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
