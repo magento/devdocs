@@ -81,8 +81,10 @@ Options:
       --no-mailhog                                     Disable MailHog
       --mailhog-http-port                              Custom HTTP port for MailHog
       --mailhog-smtp-port                              Custom SMTP port for MailHog
-      --set-docker-host                                Sets host.docker.internal for fpm_xdebug container to
-                                                       resolve debug issue for LINUX system
+      --set-docker-host_xdebug                         Sets host.docker.internal for fpm_xdebug container
+                                                       to resolve debug issue for LINUX system
+      --nginx-worker-processes                         The number of NGINX worker processes
+      --nginx-connection-processes                     The maximum number of connections that each worker process can handle simultaneously
   -m, --mode=MODE                                      Mode of environment (developer, production)
       --sync-engine=SYNC-ENGINE                        File sync engine. Works only with developer mode. Available: (docker-sync, mutagen, native)
       --with-cron                                      Add cron container
@@ -95,6 +97,7 @@ Options:
       --installation-type[=INSTALLATION-TYPE]          Sets magento installation type [default: "composer"]
       --host[=HOST]                                    Host name
       --port[=PORT]                                    Port
+      --no-tls                                         Disable TLS
       --tls-port                                       TLS port
       --es-env-var=ES-ENV-VAR                          Environment variable for elasticsearch service (multiple values allowed)
       --db-increment-increment=DB-INCREMENT-INCREMENT  "auto_increment_increment" database variable

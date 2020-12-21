@@ -23,11 +23,11 @@ The release notes include:
 
 -  {:.fix}Fixed an error with invalid volume naming in developer mode.<!--MCLOUD-7442-->
 
--  {:.new}Added the ability to change the value of the parameters `worker_processes` (option `--nginx-worker-processes`) and `worker_connections` (option `--nginx-worker-processes` ) for the tls and web services . The parameter 'worker_process' retains the ability to set the value `auto`.
+-  {:.new}Added options to change the value of NGINX `worker_processes` (option: `--nginx-worker-processes`) and NGINX `worker_connections` (option: `--nginx-worker-processes` ) for tls and web services. The parameter `worker_process` retains the ability to set the value `auto`.<!--MCLOUD-7259-->
 
--  {:.new}Added the ability to create a configuration without the tls service.
+-  {:.new}Added options to create a configuration without the tls service (option: `--no-tls`).<!--MCLOUD-7259-->
 
--  {:.new}Reduced the value of memory consumed by the NGINX process for tls and web services
+-  {:.new}Reduced the memory consumed by the NGINX process for tls and web services.<!--MCLOUD-7259-->
 
 ## v1.2.0
 *Release date: November 9, 2020*<br/>
