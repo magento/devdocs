@@ -50,7 +50,7 @@ mutation {
     "deleteRequisitionList": {
       "status": true,
       "requisition_lists": {
-        "uid": "Mg=="
+        "uid": "Mg==",
         "name": "Rarely ordered items"
       }
     }
