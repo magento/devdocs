@@ -1,6 +1,7 @@
 ---
 group: graphql
 title: RequisitionListItemInterface attributes and implementations
+b2b_only: true
 ---
 
 `RequisitionListItemInterface` provides details about items in a requisition list. It has the following implementations:
@@ -55,7 +56,7 @@ Attribute |  Data Type | Description
 
 ### GiftCardRequisitionListItem attributes {#GiftCardRequisitionListItem}
 
-The `GiftCardRequisitionListItem` implementation adds the following attributes.
+The `GiftCardRequisitionListItem` implementation adds the following attribute.
 
 Attribute |  Data Type | Description
 --- | --- | ---
