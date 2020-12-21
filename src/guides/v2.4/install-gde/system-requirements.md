@@ -29,7 +29,8 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 [Composer][] is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
 
-Magento does not support Composer 2.x.
+*  Magento 2.4.2 and later is compatible with Composer 1.x and 2.x.
+*  Magento 2.4.1 and earlier is compatible with Composer 1.x only.
 
 ## Web servers
 
