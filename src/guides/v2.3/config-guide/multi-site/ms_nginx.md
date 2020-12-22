@@ -76,7 +76,7 @@ This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}
        include /var/www/html/magento2/nginx.conf;
    }
    ```
-
+   
 1. Save your changes to the files and exit the text editor.
 1. Verify the server configuration:
 
@@ -125,6 +125,11 @@ To create multiple virtual hosts:
        include /var/www/html/magento2/nginx.conf;
    }
    ```
+
+   {:.bs-callout-info}
+   The `map` directive might not work correctly since it runs only once for the same variable. And since the variables are evaluated only when they are used, the mere declaration even of a large number of `map` variables does not add any extra costs to request processing. So, instead of using `map` directive, we will set variable directly like, ```
+   set $MAGE_RUN_TYPE store;
+   set $MAGE_RUN_CODE fr;```
 
 1. Create another file named `german.mysite.mg` in the same directory with the following contents:
 
