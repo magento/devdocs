@@ -15,6 +15,7 @@ The `items` that are returned in a `ProductInterface` array can also contain att
    -  [BundleProduct]({{ page.baseurl }}/graphql/interfaces/bundle-product.html)
    -  [ConfigurableProduct]({{ page.baseurl }}/graphql/interfaces/configurable-product.html)
    -  [DownloadableProduct]({{ page.baseurl }}/graphql/interfaces/downloadable-product.html)
+   -  [GiftCardProduct]({{ page.baseurl }}/graphql/interfaces/gift-card-product.html)
    -  [GroupedProduct]({{ page.baseurl }}/graphql/interfaces/grouped-product.html)
    -  [VirtualProduct]({{ page.baseurl }}/graphql/interfaces/virtual-product.html)
 
@@ -32,7 +33,7 @@ Attribute | Data type | Description
 `crosssell_products` | [ProductInterface] | An array of cross-sell products
 `description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
-`id` | Int | The ID number assigned to the product
+`id` | Int | Deprecated. Use `uid` instead. The ID number assigned to the product
 `image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the main image on the product page
 `is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the `RmaGraphQl` module.
 `manufacturer` | Int | A number representing the product's manufacturer
@@ -60,6 +61,7 @@ Attribute | Data type | Description
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
+`staged` | Boolean! | Indicates whether the product is staged for a future campaign
 `stock_status` | ProductStockStatus | The status of the stock. `ProductStockStatus` is an enumeration that can have the value of `IN_STOCK` or `OUT_OF_STOCK`. This attribute is defined in the `InventoryGraphQl` module.
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the `SwatchesGraphQl` module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
@@ -67,6 +69,7 @@ Attribute | Data type | Description
 `tier_price` | Float | Deprecated. Use `price_tiers` instead
 `tier_prices` | [ProductTierPrices] | Deprecated. Use `price_tiers` instead
 `type_id` | String | Deprecated. Use the GraphQL `__typename` meta attribute instead
+`uid` | ID! | The unique ID for objects implementing `ProductInterface`
 `updated_at` | String | The timestamp indicating when the product was last updated
 `upsell_products` | [ProductInterface] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
@@ -166,7 +169,7 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [ProductReview]! | An array of product reviews
+`items` | [[ProductReview]](#ProductReview)! | An array of product reviews
 `page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
 
 #### ProductReview object {#ProductReview}
@@ -217,11 +220,12 @@ Attribute | Type | Description
 `content` | ProductMediaGalleryEntriesContent | Contains a [ProductMediaGalleryEntriesContent](#ProductMediaGalleryEntriesContent) object
 `disabled` | Boolean | Whether the image is hidden from view
 `file` | String | The path of the image on the server
-`id` | Int | The identifier assigned to the object
+`id` | Int | Deprecated. Use `uid` instead. The identifier assigned to the object
 `label` | String | The "alt" text displayed on the UI when the user points to the image
 `media_type` | String | `image` or `video`
 `position` | Int | The media item's position after it has been sorted
 `types` | [String] | Array of image types. It can have the following values: `image`, `small_image`, `thumbnail`
+`uid` | ID! | The unique ID for `MediaGalleryEntry` objects
 `video_content` | ProductMediaGalleryEntriesVideoContent | Contains a [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) object
 
 #### ProductMediaGalleryEntriesContent object {#ProductMediaGalleryEntriesContent}

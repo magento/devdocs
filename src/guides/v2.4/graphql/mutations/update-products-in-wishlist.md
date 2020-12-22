@@ -13,7 +13,16 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 
 ## Syntax
 
-`mutation: updateProductsInWishlist(wishlistId: ID! wishlistItems: [WishlistItemUpdateInput!]!): UpdateProductsInWishlistOutput`
+```graphql
+mutation {
+  updateProductsInWishlist(
+    wishlistId: ID!
+    wishlistItems: [WishlistItemUpdateInput!]!
+  ){
+      UpdateProductsInWishlistOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -24,47 +33,40 @@ The following example changes the quantity of the product represented by wish li
 ``` graphql
 mutation {
   updateProductsInWishlist(
-  wishlistId: 1
+  wishlistId: 2
   wishlistItems: [
     {
-      wishlist_item_id: 16
+      wishlist_item_id: 10
       quantity: 2
     }
     {
-      wishlist_item_id: 17
+      wishlist_item_id: 11
       description: "I love this!"
     }
   ]){
     wishlist {
       id
       items_count
-      items {
-        id
-        qty
-        product {
-          name
-          sku
+      items_v2 {
+        items {
           id
-          ... on BundleProduct {
-            items {
-              sku
-              options {
-                id
-                uid
+          quantity
+          product {
+            name
+            sku
+            uid
+            price_range {
+              minimum_price {
+                regular_price {
+                  currency
+                  value
+                }
               }
-            }
-          }
-          price_range {
-            minimum_price {
-              regular_price {
-                currency
-                value
-              }
-            }
-            maximum_price {
-              regular_price {
-                currency
-                value
+              maximum_price {
+                regular_price {
+                  currency
+                  value
+                }
               }
             }
           }
@@ -86,79 +88,196 @@ mutation {
   "data": {
     "updateProductsInWishlist": {
       "wishlist": {
-        "id": "1",
-        "items_count": 3,
-        "items": [
-          {
-            "id": 16,
-            "qty": 2,
-            "product": {
-              "name": "Joust Duffle Bag",
-              "sku": "24-MB01",
-              "id": 1,
-              "price_range": {
-                "minimum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 34
+        "id": "2",
+        "items_count": 8,
+        "items_v2": {
+          "items": [
+            {
+              "id": "8",
+              "quantity": 1,
+              "product": {
+                "name": "Advanced Pilates & Yoga (Strength)",
+                "sku": "240-LV08",
+                "uid": "NDk=",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 18
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 18
+                    }
                   }
-                },
-                "maximum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 34
+                }
+              }
+            },
+            {
+              "id": "10",
+              "quantity": 1,
+              "product": {
+                "name": "Layla Tee",
+                "sku": "WS04",
+                "uid": "MTQ1MA==",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 29
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 29
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "11",
+              "quantity": 1,
+              "product": {
+                "name": "Radiant Tee",
+                "sku": "WS12",
+                "uid": "MTU2Mg==",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 22
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 22
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "12",
+              "quantity": 1,
+              "product": {
+                "name": "Electra Bra Top",
+                "sku": "WB01",
+                "uid": "MTYxMA==",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 39
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 39
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "13",
+              "quantity": 1,
+              "product": {
+                "name": "Celeste Sports Bra",
+                "sku": "WB03",
+                "uid": "MTY0Mg==",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 39
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 39
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "15",
+              "quantity": 2,
+              "product": {
+                "name": "Nora Practice Tank",
+                "sku": "WT03",
+                "uid": "MTcyMg==",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 39
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 39
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "24",
+              "quantity": 2,
+              "product": {
+                "name": "Layla Tee",
+                "sku": "WS04",
+                "uid": "MTQ1MA==",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 29
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 29
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "25",
+              "quantity": 1,
+              "product": {
+                "name": "Radiant Tee",
+                "sku": "WS12",
+                "uid": "MTU2Mg==",
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 22
+                    }
+                  },
+                  "maximum_price": {
+                    "regular_price": {
+                      "currency": "USD",
+                      "value": 22
+                    }
                   }
                 }
               }
             }
-          },
-          {
-            "id": 17,
-            "qty": 1,
-            "product": {
-              "name": "Stellar Solar Jacket",
-              "sku": "WJ01",
-              "id": 1226,
-              "price_range": {
-                "minimum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 75
-                  }
-                },
-                "maximum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 75
-                  }
-                }
-              }
-            }
-          },
-          {
-            "id": 18,
-            "qty": 1,
-            "product": {
-              "name": "Sprite Yoga Companion Kit",
-              "sku": "24-WG080",
-              "id": 46,
-              "price_range": {
-                "minimum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 61
-                  }
-                },
-                "maximum_price": {
-                  "regular_price": {
-                    "currency": "USD",
-                    "value": 77
-                  }
-                }
-              }
-            }
-          }
-        ]
+          ]
+        }
       },
       "user_errors": []
     }
@@ -207,3 +326,10 @@ Attribute |  Data Type | Description
 ### WishListUserInputError attributes {#WishListUserInputError}
 
 {% include graphql/wishlist-user-input-errors.md %}
+
+## Errors
+
+Error | Description
+--- | ---
+`The current user cannot perform operations on wishlist` | An unauthorized user (guest) tried to add an item to a wishlist, or an authorized user (customer) tried to add an item to a wishlist of another customer.
+`The wishlist was not found.` | The value provifed in the `wishlistId` field is invalid or does not exist for the customer.

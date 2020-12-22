@@ -481,27 +481,24 @@ query {
 ```
 ### Retrieve the customer's wish list
 
-The following query returns the customer's wish list:
+The following query returns the customer's wish lists. {{site.data.var.ee}} allows customers to have multiple wish lists.
 
 **Request:**
 
 ```graphql
 {
   customer {
-    wishlist {
-      items {
-        id
-        description
-        qty
-        product {
-          sku
-          name
-          price_range {
-            maximum_price {
-              regular_price {
-                value
-              }
-            }
+    wishlists {
+      id
+      name
+      items_count
+      items_v2 {
+        items {
+          id
+          product {
+            uid
+            name
+            sku
           }
         }
       }
@@ -516,42 +513,146 @@ The following query returns the customer's wish list:
 {
   "data": {
     "customer": {
-      "wishlist": {
-        "items": [
-          {
-            "id": 1,
-            "description": "I need this",
-            "qty": 1,
-            "product": {
-              "sku": "24-WG080",
-              "name": "Sprite Yoga Companion Kit",
-              "price_range": {
-                "maximum_price": {
-                  "regular_price": {
-                    "value": 77
-                  }
+      "wishlists": [
+        {
+          "id": "1",
+          "name": "Vacation Wants",
+          "items_count": 10,
+          "items_v2": {
+            "items": [
+              {
+                "id": "1",
+                "product": {
+                  "uid": "MTM=",
+                  "name": "Overnight Duffle",
+                  "sku": "24-WB07"
+                }
+              },
+              {
+                "id": "2",
+                "product": {
+                  "uid": "MTA=",
+                  "name": "Savvy Shoulder Tote",
+                  "sku": "24-WB05"
+                }
+              },
+              {
+                "id": "3",
+                "product": {
+                  "uid": "MTE=",
+                  "name": "Endeavor Daytrip Backpack",
+                  "sku": "24-WB06"
+                }
+              },
+              {
+                "id": "4",
+                "product": {
+                  "uid": "MTA5OA==",
+                  "name": "Miko Pullover Hoodie",
+                  "sku": "WH04"
+                }
+              },
+              {
+                "id": "5",
+                "product": {
+                  "uid": "MTIyNg==",
+                  "name": "Stellar Solar Jacket",
+                  "sku": "WJ01"
+                }
+              },
+              {
+                "id": "6",
+                "product": {
+                  "uid": "MTcyMg==",
+                  "name": "Nora Practice Tank",
+                  "sku": "WT03"
+                }
+              },
+              {
+                "id": "7",
+                "product": {
+                  "uid": "MTY5MA==",
+                  "name": "Bella Tank",
+                  "sku": "WT01"
+                }
+              },
+              {
+                "id": "17",
+                "product": {
+                  "uid": "MTg=",
+                  "name": "Pursuit Lumaflex&trade; Tone Band",
+                  "sku": "24-UG02"
+                }
+              },
+              {
+                "id": "18",
+                "product": {
+                  "uid": "MQ==",
+                  "name": "Joust Duffle Bag",
+                  "sku": "24-MB01"
+                }
+              },
+              {
+                "id": "20",
+                "product": {
+                  "uid": "NTI=",
+                  "name": "Sprite Yoga Companion Kit",
+                  "sku": "24-WG080"
                 }
               }
-            }
-          },
-          {
-            "id": 2,
-            "description": null,
-            "qty": 1,
-            "product": {
-              "sku": "24-UG04",
-              "name": "Zing Jump Rope",
-              "price_range": {
-                "maximum_price": {
-                  "regular_price": {
-                    "value": 12
-                  }
-                }
-              }
-            }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "id": "2",
+          "name": "Lose the Muffintop",
+          "items_count": 5,
+          "items_v2": {
+            "items": [
+              {
+                "id": "8",
+                "product": {
+                  "uid": "NDk=",
+                  "name": "Advanced Pilates & Yoga (Strength)",
+                  "sku": "240-LV08"
+                }
+              },
+              {
+                "id": "10",
+                "product": {
+                  "uid": "MTQ1MA==",
+                  "name": "Layla Tee",
+                  "sku": "WS04"
+                }
+              },
+              {
+                "id": "11",
+                "product": {
+                  "uid": "MTU2Mg==",
+                  "name": "Radiant Tee",
+                  "sku": "WS12"
+                }
+              },
+              {
+                "id": "12",
+                "product": {
+                  "uid": "MTYxMA==",
+                  "name": "Electra Bra Top",
+                  "sku": "WB01"
+                }
+              },
+              {
+                "id": "13",
+                "product": {
+                  "uid": "MTY0Mg==",
+                  "name": "Celeste Sports Bra",
+                  "sku": "WB03"
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }
@@ -628,7 +729,7 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [ProductReview]! | An array of product reviews
+`items` | [[ProductReview]](#ProductReview)! | An array of product reviews
 `page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
 
 ### Return attributes {#Return}
@@ -643,7 +744,7 @@ The Returns object contains an array of [Return](#Return) objects.
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [[WishlistItem](#wishlistitem)] | An array of items in the customer's wish list
+`items` | [[WishlistItem]](#wishlistitem) | An array of items in the customer's wish list
 `items_count` | Int | The number of items in the wish list
 `id` | ID | The unique identifier of the wish list
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list
