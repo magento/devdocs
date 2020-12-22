@@ -88,7 +88,7 @@ This release adds GraphQL coverage for the following features:
 
 *  Added the `staging` attribute to the [`ProductInterface`]({{ page.baseurl }}/graphql/interfaces/product-interface.html) and [`CategoryInterface`]({{ page.baseurl }}/graphql/interfaces/category-interface.html) to determine if a product is staged and to view its associated campaign information. <!--- MC-33897-->
 
-*  Added support for multiple wish lists. You can use GraphQL to [create]({{ page.baseurl }}/graphql/mutations/create-wishlist.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-wishlist.html), and [rename]({{ page.baseurl }}/graphql/mutations/update-wishlist.html) wish lists as well as [move]({{ page.baseurl }}/graphql/mutations/move-products-to-wishlist.html) or [copy]({{ page.baseurl }}/graphql/mutations/copy-products-to-wishlist.html) items between them. <!--- MC-32356-->
+*  Added support for multiple wish lists. You can use GraphQL to [create]({{ page.baseurl }}/graphql/mutations/create-wishlist.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-wishlist.html), and [rename]({{ page.baseurl }}/graphql/mutations/update-wishlist.html) wish lists as well as [move]({{ page.baseurl }}/graphql/mutations/move-products-between-wishlists.html) or [copy]({{ page.baseurl }}/graphql/mutations/copy-products-between-wishlists.html) items between them. <!--- MC-32356-->
 
 *  Added support for returned merchandise authorizations (RMA) <!--- MC-34596-->
 
