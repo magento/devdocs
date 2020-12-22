@@ -90,7 +90,7 @@ This release adds GraphQL coverage for the following features:
 
 *  Added support for multiple wish lists. You can use GraphQL to [create]({{ page.baseurl }}/graphql/mutations/create-wishlist.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-wishlist.html), and [rename]({{ page.baseurl }}/graphql/mutations/update-wishlist.html) wish lists as well as [move]({{ page.baseurl }}/graphql/mutations/move-products-between-wishlists.html) or [copy]({{ page.baseurl }}/graphql/mutations/copy-products-between-wishlists.html) items between them. <!--- MC-32356-->
 
-*  Added support for returned merchandise authorizations (RMA) <!--- MC-34596-->
+*  Added support for returned merchandise authorizations (RMA). Shoppers can [request a return]({{page.baseurl}}/graphql/mutations/request-return.html). If the merchant accepts the request, the shopper can perform tasks such as [adding a comment]({{page.baseurl}}/graphql/mutations/add-return-comment.html) and [add tracking information]({{page.baseurl}}/graphql/mutations/add-return-tracking.html). <!--- MC-34596-->
 
 *  Added support for the following B2B features:
    *  Companies, including administrators, users, roles, and structure <!--- MC-33861-->
