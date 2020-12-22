@@ -40,6 +40,8 @@ The release notes include:
 
 -  {:.fix}<!--MCLOUD-7442-->**Invalid volume naming**–Fixed an error with invalid volume naming in developer mode.
 
+-  {:.fix}<!--Issue 295-->**NGINX upstream port**—Updated the Docker NGINX 1.19 image to use port 8080 to avoid an infinite loop. *[Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/296).*
+
 ## v1.2.0
 *Release date: November 9, 2020*<br/>
 
