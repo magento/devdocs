@@ -37,9 +37,11 @@ mutation {
     requisitionListUid: "Mw=="
   ) {
     status
-    requisition_list {
-      uid
-      name
+    requisition_lists {
+      items {
+        uid
+        name
+      }
     }
   }
 }
@@ -53,8 +55,10 @@ mutation {
     "deleteRequisitionList": {
       "status": true,
       "requisition_lists": {
-        "uid": "Mg==",
-        "name": "Rarely ordered items"
+        "items": {
+          "uid": "Mg==",
+          "name": "Rarely ordered items"
+        }
       }
     }
   }
@@ -71,12 +75,22 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `deleteRequisitionList` mutation returns the status of the operation, and the requisition list, if it was successfully deleted.
+The `deleteRequisitionList` mutation returns the status of the operation and any undeleted requisition lists.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`requisition_lists` | [[RequisitionList](#RequisitionList)] | Contains the customer's remaining requisition lists
+`requisition_lists` | [[RequisitionLists](#RequisitionLists)] | Contains the customer's remaining requisition lists
 `status` | Boolean | Indicates whether the request to delete the requisition list was successful
+
+### RequisitionLists attributes {#RequisitionLists}
+
+The RequisitionLists object contains array of requisition list items and pagination information.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`items` | [[RequisitionList](#RequisitionList)] | An array of requisition lists
+`page_info` | SearchResultPageInfo | Contains pagination metadata
+`total_count` | Int | The number of returned requisition lists
 
 ### RequisitionList attributes {#RequisitionList}
 

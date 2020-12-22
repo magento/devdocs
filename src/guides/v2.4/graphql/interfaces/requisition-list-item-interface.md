@@ -52,7 +52,7 @@ The `ConfigurableRequisitionListItem` implementation adds the following attribut
 Attribute |  Data Type | Description
 --- | --- | ---
 `links`| [DownloadableProductLinks] | An array of links for downloadable products in the requisition list
-`samples` | [DownloadableProductSamples] An array of links to downloadable product samples
+`samples` | [DownloadableProductSamples] | An array of links to downloadable product samples
 
 ### GiftCardRequisitionListItem attributes {#GiftCardRequisitionListItem}
 
