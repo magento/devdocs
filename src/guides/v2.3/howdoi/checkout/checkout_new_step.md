@@ -213,7 +213,7 @@ Create a mixin as follows:
        'ko'
    ], function (ko) {
        'use strict';
-   
+
        var mixin = {
 
            initialize: function () {
