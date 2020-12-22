@@ -7,9 +7,9 @@ redirect_from:
 
 The `ConfigurableProduct` data type implements the following interfaces:
 
--  `ProductInterface`
--  `PhysicalProductInterface`
--  `CustomizableProductInterface`
+-  [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html)
+-  [PhysicalProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html#PhysicalProductInterface)
+-  [CustomizableProductInterface]({{page.baseurl}}/graphql/interfaces/customizable-option-interface.html)
 
 Attributes that are specific to configurable products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
 
@@ -20,16 +20,8 @@ The `ConfigurableProduct` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `configurable_options` | [[ConfigurableProductOptions]](#configProdOptions) | An array of linked simple product items
+`configurable_product_options_selection(configurableOptionValueUids: [ID!])` | [ConfigurableProductOptionsSelection](#ConfigurableProductOptionsSelection) | Contains media gallery items and other details about selected configurable product options as well as details about remaining selectable options. Magento recommends you filter by one or more `uid` values to prevent loading a large amount of media gallery data
 `variants` | ConfigurableVariant | An array of variants of products
-
-### ConfigurableVariant object
-
-The `ConfigurableVariant` object contains the following attributes:
-
-Field | Type | Description
---- | --- | ---
-`attributes` | ConfigurableAttributeOption | ConfigurableAttributeOption contains the value_index (and other related information) assigned to a configurable product option
-`product` | SimpleProduct | An array of linked simple products
 
 ### ConfigurableAttributeOption object
 
@@ -41,6 +33,15 @@ Field | Type | Description
 `label` | String | A string that describes the configurable attribute option
 `uid` | ID! | The unique ID for a `ConfigurableAttributeOption` object
 `value_index` | Int | A unique index number assigned to the configurable product option
+
+### ConfigurableOptionAvailableForSelection attributes {#ConfigurableOptionAvailableForSelection}
+
+The `ConfigurableOptionAvailableForSelection` object describes configurable options that have been selected and can be selected as a result of the previous selections.
+
+Attribute | Type | Description
+--- | --- | ---
+`attribute_code` | String! | An attribute code that uniquely identifies a configurable option
+`option_value_uids` | [ID!]! | Any array of IDs that can be selected
 
 ### ConfigurableProductOptions {#configProdOptions}
 
@@ -60,6 +61,16 @@ Attribute | Type | Description
 `use_default` | Boolean | Indicates whether the option is the default
 `values` | [[ConfigurableProductOptionsValues]](#configProdOptionsValues) | An array that defines the `value_index` codes assigned to the configurable product
 
+### ConfigurableProductOptionsSelection attributes {#ConfigurableProductOptionsSelection}
+
+The `ConfigurableProductOptionsSelection` object contains metadata corresponding to the selectable configurable options for a product. Use this object in a `products` query to minimize the number of media gallery items that are displayed as the shopper selects configurable product options. [Limit the number of retrieved media gallery items](#media-gallery-example) demonstrates its use.
+
+Attribute | Type | Description
+--- | --- | ---
+`media_gallery` | [MediaGalleryInterface!] | Product images and videos corresponding to the specified configurable options selection
+`options_available_for_selection` | [[ConfigurableOptionAvailableForSelection!]](#ConfigurableOptionAvailableForSelection) | Lists the options selected and the options available as a result of the previous selections
+`variant` | SimpleProduct | The simple product represented by the selected configurable options. This object will be null until the shopper selects an option for each attribute
+
 ### ConfigurableProductOptionsValues {#configProdOptionsValues}
 
 The `ConfigurableProductOptionsValues` object contains the following attribute:
@@ -73,6 +84,15 @@ Attribute | Type | Description
 `use_default_value` | Boolean | Indicates whether to use the default_label
 `uid` | ID! | The unique ID for a `ConfigurableProductOptionsValues` object
 `value_index` | Int | Deprecated. Use `uid` instead. A unique index number assigned to the configurable product option
+
+### ConfigurableVariant object
+
+The `ConfigurableVariant` object contains the following attributes:
+
+Field | Type | Description
+--- | --- | ---
+`attributes` | ConfigurableAttributeOption | The `value_index` (and other related information) assigned to a configurable product option
+`product` | SimpleProduct | An array of linked simple products
 
 ### SwatchDataInterface {#swatchDataInterface}
 
@@ -738,6 +758,429 @@ The following `products` query returns `ConfigurableProduct` information about t
 }
 ```
 {% endcollapsible %}
+
+### Limit the number of retrieved media gallery items {#media-gallery-example}
+
+This example shows how the the media gallery items change as a shopper selects configurable options for the product with the SKU `MS10`. The configurable product attributes in the Luma sample data are limited to size and color, and these attributes have a small number of options (five and three, respectively). However, some storefronts will have products with dozens of selectable options. Returning detailed information about all media gallery items in such a storefront would create performance issues.
+
+#### Step 1. Get the images on the parent page
+
+The following query returns media gallery information on the parent configurable product and the `uid` values of each configurable option.
+
+Note that file names of the images are `ms10-blue_main_1.jpg`, `ms10-blue_alt1_1.jpg`, and `ms10-blue_back_1.jpg`.
+
+**Request:**
+
+```graphql
+query {
+  products(search: "MS10" ) {
+    items {
+      ... on ConfigurableProduct {
+        media_gallery {
+          url
+          label
+          position
+        }
+        configurable_options {
+          attribute_code
+          values {
+            label
+            uid
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "media_gallery": [
+            {
+              "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-blue_main_1.jpg",
+              "label": "",
+              "position": 1
+            },
+            {
+              "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-blue_alt1_1.jpg",
+              "label": "",
+              "position": 2
+            },
+            {
+              "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-blue_back_1.jpg",
+              "label": "",
+              "position": 3
+            }
+          ],
+          "configurable_options": [
+            {
+              "attribute_code": "color",
+              "values": [
+                {
+                  "label": "Black",
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzQ5"
+                },
+                {
+                  "label": "Blue",
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUw"
+                },
+                {
+                  "label": "Red",
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4"
+                }
+              ]
+            },
+            {
+              "attribute_code": "size",
+              "values": [
+                {
+                  "label": "XS",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjY="
+                },
+                {
+                  "label": "S",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjc="
+                },
+                {
+                  "label": "M",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjg="
+                },
+                {
+                  "label": "L",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjk="
+                },
+                {
+                  "label": "XL",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzA="
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+#### Step 2. Select the color
+
+In this example, the shopper has selected the red variant. The query has been expanded to include the `configurable_product_options_selection` object, which filters on the `uid` of the red variant. Within that object, notice:
+
+-  The `options_available_for_selection` shows that all available `size` attributes with the red variant can be selected.
+-  The `media_gallery` object contains the `ms10-red_main_1.jpg` image, which can then be displayed with the parent images.
+-  The `variant` object is null, because the shopper has not selected a size. The variant is not fully defined until the shopper makes a selection for all attributes.
+
+**Request:**
+
+```graphql
+query {
+  products(search: "MS10" ) {
+    items {
+      ... on ConfigurableProduct {
+        media_gallery {
+          url
+          label
+          position
+        }
+        configurable_options {
+          uid
+          attribute_code
+          values {
+            label
+            uid
+          }
+        }
+        configurable_product_options_selection(configurableOptionValueUids: ["Y29uZmlndXJhYmxlLzkzLzU4"]) {
+          options_available_for_selection {
+            attribute_code
+            option_value_uids
+          }
+          media_gallery {
+            url
+            label
+            position
+          }
+          variant {
+            uid
+            sku
+            name
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "media_gallery": [
+            {
+              "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-blue_main_1.jpg",
+              "label": "",
+              "position": 1
+            },
+            {
+              "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-blue_alt1_1.jpg",
+              "label": "",
+              "position": 2
+            },
+            {
+              "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-blue_back_1.jpg",
+              "label": "",
+              "position": 3
+            }
+          ],
+          "configurable_options": [
+            {
+              "uid": "Y29uZmlndXJhYmxlLzYwMi85Mw==",
+              "attribute_code": "color",
+              "values": [
+                {
+                  "label": "Black",
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzQ5"
+                },
+                {
+                  "label": "Blue",
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUw"
+                },
+                {
+                  "label": "Red",
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4"
+                }
+              ]
+            },
+            {
+              "uid": "Y29uZmlndXJhYmxlLzYwMi8xNjA=",
+              "attribute_code": "size",
+              "values": [
+                {
+                  "label": "XS",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjY="
+                },
+                {
+                  "label": "S",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjc="
+                },
+                {
+                  "label": "M",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjg="
+                },
+                {
+                  "label": "L",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjk="
+                },
+                {
+                  "label": "XL",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzA="
+                }
+              ]
+            }
+          ],
+          "configurable_product_options_selection": {
+            "options_available_for_selection": [
+              {
+                "attribute_code": "size",
+                "option_value_uids": [
+                  "Y29uZmlndXJhYmxlLzE2MC8xNjY=",
+                  "Y29uZmlndXJhYmxlLzE2MC8xNjc=",
+                  "Y29uZmlndXJhYmxlLzE2MC8xNjg=",
+                  "Y29uZmlndXJhYmxlLzE2MC8xNjk=",
+                  "Y29uZmlndXJhYmxlLzE2MC8xNzA="
+                ]
+              },
+              {
+                "attribute_code": "color",
+                "option_value_uids": [
+                  "Y29uZmlndXJhYmxlLzkzLzU4"
+                ]
+              }
+            ],
+            "media_gallery": [
+              {
+                "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-red_main_1.jpg",
+                "label": "",
+                "position": 1
+              }
+            ],
+            "variant": null
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+#### Step 3. Select the size
+
+In this example, the shopper has selected the Medium option for the size attribute. Therefore, the query adds the corresponding `uid` to the `configurable_product_options_selection` filter.
+
+-  The `options_available_for_selection` shows that a `size` and a `color` option has been selected.
+-  The Luma sample data does not include any images that are specific to a size, so the content of the `media_gallery` object is unchanged.
+-  The `variant` object contains a few details about the selected variant.
+
+**Request:**
+
+```graphql
+query {
+  products(search: "MS10" ) {
+    items {
+      ... on ConfigurableProduct {
+        media_gallery {
+          url
+          label
+          position
+        }
+        configurable_options {
+          uid
+          attribute_code
+          values {
+            label
+            uid
+          }
+        }
+        configurable_product_options_selection(configurableOptionValueUids: ["Y29uZmlndXJhYmxlLzkzLzU4", "Y29uZmlndXJhYmxlLzE2MC8xNjg="]) {
+          options_available_for_selection {
+            attribute_code
+            option_value_uids
+          }
+          media_gallery {
+            url
+            label
+            position
+          }
+          variant {
+            uid
+            sku
+            name
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "media_gallery": [
+            {
+              "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-blue_main_1.jpg",
+              "label": "",
+              "position": 1
+            },
+            {
+              "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-blue_alt1_1.jpg",
+              "label": "",
+              "position": 2
+            },
+            {
+              "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-blue_back_1.jpg",
+              "label": "",
+              "position": 3
+            }
+          ],
+          "configurable_options": [
+            {
+              "uid": "Y29uZmlndXJhYmxlLzYwMi85Mw==",
+              "attribute_code": "color",
+              "values": [
+                {
+                  "label": "Black",
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzQ5"
+                },
+                {
+                  "label": "Blue",
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUw"
+                },
+                {
+                  "label": "Red",
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4"
+                }
+              ]
+            },
+            {
+              "uid": "Y29uZmlndXJhYmxlLzYwMi8xNjA=",
+              "attribute_code": "size",
+              "values": [
+                {
+                  "label": "XS",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjY="
+                },
+                {
+                  "label": "S",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjc="
+                },
+                {
+                  "label": "M",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjg="
+                },
+                {
+                  "label": "L",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNjk="
+                },
+                {
+                  "label": "XL",
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzA="
+                }
+              ]
+            }
+          ],
+          "configurable_product_options_selection": {
+            "options_available_for_selection": [
+              {
+                "attribute_code": "size",
+                "option_value_uids": [
+                  "Y29uZmlndXJhYmxlLzE2MC8xNjg="
+                ]
+              },
+              {
+                "attribute_code": "color",
+                "option_value_uids": [
+                  "Y29uZmlndXJhYmxlLzkzLzU4"
+                ]
+              }
+            ],
+            "media_gallery": [
+              {
+                "url": "http://<host>/media/catalog/product/cache/816455256c48217ab8c5c822a6039d1a/m/s/ms10-red_main_1.jpg",
+                "label": "",
+                "position": 1
+              }
+            ],
+            "variant": {
+              "uid": "NTg5",
+              "sku": "MS10-M-Red",
+              "name": "Logan  HeatTec&reg; Tee-M-Red"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
 
 ### Return swatch information
 

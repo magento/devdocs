@@ -61,6 +61,7 @@ The following table lists the attributes you can use as input for the `createCus
 
 Attribute |  Data Type | Description
 --- | --- | ---
+`allow_remote_shopping_assistance` | Boolean | Indicates whether the customer has enabled remote shopping assistance
 `date_of_birth` | String | The customer’s date of birth
 `dob` | String | Deprecated. Use `date_of_birth` instead. The customer’s date of birth
 `email` | String! | The customer’s email address

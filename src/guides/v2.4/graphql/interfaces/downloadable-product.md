@@ -13,8 +13,8 @@ The `DownloadableProduct` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`downloadable_product_links` | [`DownloadableProductLinks`] | An array containing information about the links for this downloadable product
-`downloadable_product_samples` | [`DownloadableProductSamples`] | An array containing information about samples of this downloadable product
+`downloadable_product_links` | [[DownloadableProductLinks]](#DownloadableProductLinks) | An array containing information about the links for this downloadable product
+`downloadable_product_samples` | [[DownloadableProductSamples]](#DownloadableProductSamples)  | An array containing information about samples of this downloadable product
 `links_purchased_separately` | Int | A value of 1 indicates that each link in the array must be purchased separately
 `links_title` | String | The heading above the list of downloadable products
 

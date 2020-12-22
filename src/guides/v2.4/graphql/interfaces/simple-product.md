@@ -7,9 +7,9 @@ contributor_link: https://www.atwix.com/
 
 The `SimpleProduct` data type implements the following interfaces:
 
--  `ProductInterface`
--  `PhysicalProductInterface`
--  `CustomizableProductInterface`
+-  [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html)
+-  [PhysicalProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html#PhysicalProductInterface)
+-  [CustomizableProductInterface]({{page.baseurl}}/graphql/interfaces/customizable-option-interface.html)
 
 Attributes that are specific to the simple products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
 

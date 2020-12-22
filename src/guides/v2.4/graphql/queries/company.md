@@ -187,6 +187,182 @@ query{
 }
 ```
 
+### Return the company credit history
+
+The following query returns a company's current company credit balance as well as a record of all company credit events.
+
+**Request:**
+
+```graphql
+query{
+  company{
+    name
+    id
+    credit {
+      available_credit {
+        value
+        currency
+      }
+      credit_limit {
+        value
+        currency
+      }
+      outstanding_balance {
+        value
+        currency
+      }
+    }
+    credit_history{
+      items {
+        date
+        type
+        amount {
+          value
+          currency
+        }
+        balance {
+          outstanding_balance {
+            value
+            currency
+          }
+          available_credit {
+            value
+            currency
+          }
+          credit_limit {
+            value
+            currency
+          }
+        }
+      }
+    }
+
+    payment_methods
+
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "company": {
+      "name": "TestCo",
+      "id": "MQ==",
+      "credit": {
+        "available_credit": {
+          "value": 436,
+          "currency": "USD"
+        },
+        "credit_limit": {
+          "value": 500,
+          "currency": "USD"
+        },
+        "outstanding_balance": {
+          "value": -64,
+          "currency": "USD"
+        }
+      },
+      "credit_history": {
+        "items": [
+          {
+            "date": "2020-12-02 16:38:11",
+            "type": "ALLOCATION",
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            },
+            "balance": {
+              "outstanding_balance": {
+                "value": 0,
+                "currency": "USD"
+              },
+              "available_credit": {
+                "value": 500,
+                "currency": "USD"
+              },
+              "credit_limit": {
+                "value": 500,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "date": "2020-12-02 17:05:12",
+            "type": "PURCHASE",
+            "amount": {
+              "value": -192,
+              "currency": "USD"
+            },
+            "balance": {
+              "outstanding_balance": {
+                "value": -192,
+                "currency": "USD"
+              },
+              "available_credit": {
+                "value": 308,
+                "currency": "USD"
+              },
+              "credit_limit": {
+                "value": 500,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "date": "2020-12-02 17:27:57",
+            "type": "PURCHASE",
+            "amount": {
+              "value": -64,
+              "currency": "USD"
+            },
+            "balance": {
+              "outstanding_balance": {
+                "value": -256,
+                "currency": "USD"
+              },
+              "available_credit": {
+                "value": 244,
+                "currency": "USD"
+              },
+              "credit_limit": {
+                "value": 500,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "date": "2020-12-02 17:35:47",
+            "type": "REIMBURSEMENT",
+            "amount": {
+              "value": 192,
+              "currency": "USD"
+            },
+            "balance": {
+              "outstanding_balance": {
+                "value": -64,
+                "currency": "USD"
+              },
+              "available_credit": {
+                "value": 436,
+                "currency": "USD"
+              },
+              "credit_limit": {
+                "value": 500,
+                "currency": "USD"
+              }
+            }
+          }
+        ]
+      },
+      "payment_methods": []
+    }
+  }
+}
+```
+
 ## Output attributes
 
 The `company` object returns the `Company` object.

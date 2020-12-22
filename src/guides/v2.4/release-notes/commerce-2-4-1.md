@@ -664,7 +664,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7193-->
 
-*   `sales_clean_quotes` no longer loads all expired quotes at once. Previously, Magento failed with this fatal error because all expired quotes were loaded simultaneously: `PHP Fatal error: Allowed memory size of 2147483648 bytes exhausted (tried to allocate 20480 bytes) in /path/to/magento2/vendor/magento/framework/Model/AbstractModel.php on line 359`,
+*  `sales_clean_quotes` no longer loads all expired quotes at once. Previously, Magento failed with this fatal error because all expired quotes were loaded simultaneously: `PHP Fatal error: Allowed memory size of 2147483648 bytes exhausted (tried to allocate 20480 bytes) in /path/to/magento2/vendor/magento/framework/Model/AbstractModel.php on line 359`,
 
 ### CSS
 

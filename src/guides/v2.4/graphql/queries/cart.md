@@ -709,8 +709,8 @@ The `CartPrices` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
-`discount` | CartDiscount | Deprecated. Use `discounts` instead
-`discounts` | [Discount] | An array containing all discounts applied to the cart
+`discount` | [CartDiscount](#CartDiscount) | Deprecated. Use `discounts` instead
+`discounts` | [[Discount]](#Discount) | An array containing all discounts applied to the cart
 `gift_options` | [GiftOptionsPrices](#GiftOptionsPrices) | The list of prices for the selected gift options
 `grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
 `subtotal_excluding_tax` | Money | Subtotal without taxes
@@ -806,5 +806,7 @@ Attribute |  Data Type | Description
 
 *  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
 *  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
+*  [setShippingAddressesOnCart mutation]({{page.baseurl}}/graphql/mutations/set-shipping-address.html)
+*  [setShippingMethodsOnCart mutation]({{page.baseurl}}/graphql/mutations/set-shipping-method.html)
 *  [setBillingAddressOnCart mutation]({{page.baseurl}}/graphql/mutations/set-billing-address.html)
 *  [setPaymentMethodOnCart mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)

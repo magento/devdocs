@@ -34,6 +34,8 @@ The following query returns the attribute type for various custom and EAV attrib
     items {
       attribute_code
       attribute_type
+      entity_type
+      input_type
       attribute_options {
        value
        label
@@ -41,6 +43,7 @@ The following query returns the attribute type for various custom and EAV attrib
     }
   }
 }
+
 ```
 
 **Response:**
@@ -53,6 +56,8 @@ The following query returns the attribute type for various custom and EAV attrib
         {
           "attribute_code": "size",
           "attribute_type": "Int",
+          "entity_type": "catalog_product",
+          "input_type": "select",
           "attribute_options": [
             {
               "value": "91",
@@ -139,6 +144,8 @@ The following query returns the attribute type for various custom and EAV attrib
         {
           "attribute_code": "color",
           "attribute_type": "Int",
+          "entity_type": "catalog_product",
+          "input_type": "select",
           "attribute_options": [
             {
               "value": "49",
@@ -203,7 +210,7 @@ The `AttributeInput` input object requires the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces
-`entity_type` | String | The type of entity that defines the attribute
+`entity_type` | String | The type of entity that defines the attribute, such as `catalog_product`, `catalog_category`, or `customer`
 
 ## Output attributes
 
@@ -214,7 +221,7 @@ Attribute |  Data Type | Description
 `attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces
 `attribute_options` | [`AttributeOption`] | An array of attribute options
 `attribute_type` | String | The data type of the attribute
-`entity_type` | String | The type of entity that defines the attribute
+`entity_type` | String | The type of entity that defines the attribute, such as `catalog_product`, `catalog_category`, or `customer`
 `input_type` | String | The frontend input type of the attribute
 
 ### AttributeOption object

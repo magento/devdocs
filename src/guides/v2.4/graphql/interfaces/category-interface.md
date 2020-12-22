@@ -27,6 +27,7 @@ Attribute | Type | Description
 `position` | Int | The position of the category relative to other categories at the same level in tree
 `product_count` | Int | The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not
 `products(<attributes>)` | CategoryProducts | The list of products assigned to the category
+`staged` | Boolean! | Indicates whether the category is staged for a future campaign
 `uid` | ID! | The unique ID for an object implementing `CategoryInterface`
 `updated_at` | String | Timestamp indicating when the category was updated
 `url_key` | String | The URL key assigned to the category

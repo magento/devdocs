@@ -31,6 +31,64 @@ In Magento 2, you have two options for specifying declarative notation:
 
    > This is used to target either a CSS selector or `*`. If the CSS selector matches multiple HTML elements, the script will run for each matched HTML element. For `*`, no HTML element is selected and the script will run once with the HTML DOM as its target. This method can be implemented from anywhere in the codebase to target any HTML element. This is preferred when direct access to the HTML element is restricted, or when there is no target HTML element.
 
+Consider the example of adding a custom carousel JS:
+
+1. Copy the `<carousel_name>.carousel.js` file to the `app/design/frontend/<package_name>/<theme_name>/web/js/<carousel_name>/` directory.
+1. Add your RequireJS module at `app/design/frontend/<package_name>/<theme_name>/web/js/carousel.js`.
+
+   ```javascript
+    define(['jquery','<carousel_name>'], function($)
+    {
+        return function(config, element)
+        {
+            $(element).<carousel_name>(config);
+        };
+    });
+   ```
+
+1. Add the RequireJS config to the `app/design/frontend/<package_name>/<theme_name>/requirejs-config.js` file.
+
+    ```javascript
+    var config = {
+        map: {
+            '*': {
+                    'carousel': 'js/carousel',
+                    '<carousel_name>': 'js/<carousel_name>/<carousel_name>.carousel'
+                }
+            }
+    };
+    ```
+
+You now have two options for specifying declarative notation:
+
+-  Use the `data-mage-init` attribute to insert the carousel in a certain element:
+
+    ```html
+    <div data-mage-init='{"carousel":{"option": value}}'>
+        <div class="item">Item 1</div>
+        ...
+        <div class="item">Item n</div>
+    </div>
+    ```
+
+-  Use with `<script type="text/x-magento-init"/>`:
+
+    ```html
+    <div id="<carousel_name>" class="carousel">
+        <div class="item">Item 1</div>
+        ...
+        <div class="item">Item n</div>
+    </div>
+
+    <script type="text/x-magento-init">
+        {
+            "#<carousel_name>": {
+                "carousel": {"option": value}
+            }
+        }
+    </script>
+    ```
+
 #### Declarative notation using the `data-mage-init` attribute {#data_mage_init}
 
 Use the `data-mage-init` attribute to insert a JS component in a specified HTML element. The following example inserts a JS component in the `<nav/>` element:
