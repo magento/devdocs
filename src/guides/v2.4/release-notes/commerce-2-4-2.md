@@ -43,7 +43,7 @@ Security improvements for this release include:
 
 *  Magento now displays messages that identify potentially malicious content in product and category description fields when the user tries to save values in these fields.
 
-*  File system operations across Magento components have been standardized and hardened to prevent malicious uploads.
+*  File system operations across Magento components have been standardized and hardened to prevent malicious uploads.
 
 *  Core Content Security Policy (CSP) violations have been fixed.
 
@@ -62,7 +62,11 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  [**Redis 6.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html#technologies-magento-can-use). Magento 2.4.x remains compatible with Redis 5.x. <!--- MC-34853-->
 
-The ability to configure a Magento installation to use a split database has been deprecated in this release. Merchants who currently use split database should start planning to move to a single database or use an alternative approach. <!--- MC-38429 39001-->
+*  Magento 2.4.2 is now compatible with **Composer 2.x**. We recommend that merchants migrate to Composer 2.x. Although you can install this release using Composer 1.x, Composer 1.x will soon reach end-of-life. For an overview of Composer 2.x features, see [Composer 2.0 is now available!](https://blog.packagist.com/composer-2-0-is-now-available/)
+
+The ability to configure a Magento installation to use a split database has been deprecated in this release. Merchants who currently use split database should start planning to revert to or migrate to a single database or use an alternative approach. See the [Deprecation of split database functionality in Magento Commerce](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Split-Database-in-Magento-Commerce/ba-p/465187) DevBlog post for an overview of this issue.  See [Revert from a split database to a single database]({{ page.baseurl }}/config-guide/revert-split-database.html) for migration instructions.
+
+<!--- MC-38429 39001-->
 
 ### Performance enhancements
 
@@ -84,7 +88,7 @@ This release adds GraphQL coverage for the following features:
 
 *  Added the `staging` attribute to the [`ProductInterface`]({{ page.baseurl }}/graphql/interfaces/product-interface.html) and [`CategoryInterface`]({{ page.baseurl }}/graphql/interfaces/category-interface.html) to determine if a product is staged and to view its associated campaign information. <!--- MC-33897-->
 
-*  Added support for multiple wish lists. You can use GraphQL to [create]({{ page.baseurl }}/graphql/mutations/create-wishlist.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-wishlist.html), and [rename]({{ page.baseurl }}/graphql/mutations/update-wishlist.html) wish lists as well as [move]({{ page.baseurl }}/graphql/mutations/move-products-to-wishlist.html) or [copy]({{ page.baseurl }}/graphql/mutations/copy-products-to-wishlist.html) items between them. <!--- MC-32356-->
+*  Added support for multiple wish lists. You can use GraphQL to [create]({{ page.baseurl }}/graphql/mutations/create-wishlist.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-wishlist.html), and [rename]({{ page.baseurl }}/graphql/mutations/update-wishlist.html) wish lists as well as [move]({{ page.baseurl }}/graphql/mutations/move-products-between-wishlists.html) or [copy]({{ page.baseurl }}/graphql/mutations/copy-products-between-wishlists.html) items between them. <!--- MC-32356-->
 
 *  Added support for returned merchandise authorizations (RMA) <!--- MC-34596-->
 

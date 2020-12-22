@@ -230,8 +230,8 @@ pages:
           edition: b2b-only
           exclude_versions: [ "2.3" ]
 
-        - label: copyProductsToWishlist mutation
-          url: /graphql/mutations/copy-products-to-wishlist.html
+        - label: copyProductsBetweenWishlists mutation
+          url: /graphql/mutations/copy-products-between-wishlists.html
           edition: ee-only
           exclude_versions: ["2.3"]
 
@@ -344,8 +344,8 @@ pages:
         - label: mergeCarts mutation
           url: /graphql/mutations/merge-carts.html
 
-        - label: moveProductsToWishlist mutation
-          url: /graphql/mutations/move-products-to-wishlist.html
+        - label: moveProductsBetweenWishlists mutation
+          url: /graphql/mutations/move-products-between-wishlists.html
           edition: ee-only
           exclude_versions: ["2.3"]
 
@@ -500,7 +500,7 @@ pages:
         - label: CategoryInterface attributes
           url: /graphql/interfaces/category-interface.html
 
-        - label: CustomizableOptionInterface
+        - label: CustomizableOptionInterface attributes
           url: /graphql/interfaces/customizable-option-interface.html
 
         - label: Bundle product data types
@@ -524,6 +524,10 @@ pages:
         - label: Virtual product data types
           url: /graphql/interfaces/virtual-product.html
 
+        - label: CartItemInterface attributes and implementations
+          url: /graphql/interfaces/cart-item-interface.html
+          exclude_versions: ["2.3"]
+
         - label: CreditMemoItemInterface attributes and implementations
           url: /graphql/interfaces/credit-memo-item-interface.html
           exclude_versions: ["2.3"]
@@ -545,6 +549,9 @@ pages:
           url: /graphql/interfaces/shipment-item-interface.html
           exclude_versions: ["2.3"]
 
+        - label: WishlistItemInterface attributes and implementations
+          url: /graphql/interfaces/wishlist-item-interface.html
+          exclude_versions: ["2.3"]
 
     - label: Payment methods
       children:

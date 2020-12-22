@@ -36,7 +36,7 @@ The following query returns the top-level categories (as well as two levels of c
 {
   categories(
     filters: {
-      ids: {in: ["3", "9", "11", "20", "37", "38"]}
+      ids: {in: ["3", "9", "12", "21", "38", "39"]}
       parent_id: {in: ["2"]}
     }
     pageSize:3
@@ -44,19 +44,19 @@ The following query returns the top-level categories (as well as two levels of c
   ) {
     total_count
     items {
-      id
+      uid
       level
       name
       path
       children_count
       children {
-        id
+        uid
         level
         name
         path
         children_count
         children {
-          id
+          uid
           level
           name
           path
@@ -81,80 +81,59 @@ The following query returns the top-level categories (as well as two levels of c
       "total_count": 6,
       "items": [
         {
-          "id": 20,
+          "uid": "Mw==",
           "level": 2,
-          "name": "Women",
-          "path": "1/2/20",
-          "children_count": "8",
+          "name": "Gear",
+          "path": "1/2/3",
+          "children_count": "3",
           "children": [
             {
-              "id": 22,
+              "uid": "NA==",
               "level": 3,
-              "name": "Bottoms",
-              "path": "1/2/20/22",
-              "children_count": "2",
-              "children": [
-                {
-                  "id": 27,
-                  "level": 4,
-                  "name": "Pants",
-                  "path": "1/2/20/22/27"
-                },
-                {
-                  "id": 28,
-                  "level": 4,
-                  "name": "Shorts",
-                  "path": "1/2/20/22/28"
-                }
-              ]
+              "name": "Bags",
+              "path": "1/2/3/4",
+              "children_count": "0",
+              "children": []
             },
             {
-              "id": 21,
+              "uid": "NQ==",
               "level": 3,
-              "name": "Tops",
-              "path": "1/2/20/21",
-              "children_count": "4",
-              "children": [
-                {
-                  "id": 23,
-                  "level": 4,
-                  "name": "Jackets",
-                  "path": "1/2/20/21/23"
-                },
-                {
-                  "id": 24,
-                  "level": 4,
-                  "name": "Hoodies & Sweatshirts",
-                  "path": "1/2/20/21/24"
-                },
-                {
-                  "id": 25,
-                  "level": 4,
-                  "name": "Tees",
-                  "path": "1/2/20/21/25"
-                },
-                {
-                  "id": 26,
-                  "level": 4,
-                  "name": "Bras & Tanks",
-                  "path": "1/2/20/21/26"
-                }
-              ]
+              "name": "Fitness Equipment",
+              "path": "1/2/3/5",
+              "children_count": "0",
+              "children": []
+            },
+            {
+              "uid": "Ng==",
+              "level": 3,
+              "name": "Watches",
+              "path": "1/2/3/6",
+              "children_count": "0",
+              "children": []
             }
           ]
         },
         {
-          "id": 37,
+          "uid": "OQ==",
           "level": 2,
-          "name": "Sale",
-          "path": "1/2/37",
-          "children_count": "0",
-          "children": []
+          "name": "Training",
+          "path": "1/2/9",
+          "children_count": "1",
+          "children": [
+            {
+              "uid": "MTA=",
+              "level": 3,
+              "name": "Video Download",
+              "path": "1/2/9/10",
+              "children_count": "0",
+              "children": []
+            }
+          ]
         },
         {
-          "id": 38,
+          "uid": "Mzg=",
           "level": 2,
-          "name": "What's New",
+          "name": "Sale",
           "path": "1/2/38",
           "children_count": "0",
           "children": []
