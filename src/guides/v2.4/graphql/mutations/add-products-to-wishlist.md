@@ -282,3 +282,10 @@ Attribute |  Data Type | Description
 ### WishListUserInputError attributes {#WishListUserInputError}
 
 {% include graphql/wishlist-user-input-errors.md %}
+
+## Errors
+
+Error | Description
+--- | ---
+`The current user cannot perform operations on wishlist` | An unauthorized user (guest) tried to add an item to a wishlist, or an authorized user (customer) tried to add an item to a wishlist belonging to another customer.
+`The wishlist was not found.` | The value provided in the  `wishlistId` field is invalid or does not exist for the customer.

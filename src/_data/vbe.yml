@@ -13,7 +13,7 @@ extensions:
     name: Amazon
     versions:
       -
-        name: t.b.d
+        name: 4.2.0
         support:
           2.3.0: not supported
           2.3.1: not supported
@@ -124,7 +124,7 @@ extensions:
     name: Braintree
     versions:
       -
-        name: t.b.d
+        name: 4.2.1
         support:
           2.3.0: not supported
           2.3.1: not supported
@@ -163,7 +163,7 @@ extensions:
     name: dotdigital
     versions:
       -
-        name: t.b.d
+        name: 4.10.0
         support:
           2.3.0: not supported
           2.3.1: not supported
@@ -274,7 +274,7 @@ extensions:
     name: Klarna
     versions:
       -
-        name: t.b.d
+        name: 8.2.0
         support:
           2.3.0: not supported
           2.3.1: not supported
@@ -385,7 +385,7 @@ extensions:
     name: Vertex
     versions:
       -
-        name: t.b.d
+        name: 4.2.0
         support:
           2.3.0: not supported
           2.3.1: not supported

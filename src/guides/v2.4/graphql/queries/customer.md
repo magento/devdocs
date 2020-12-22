@@ -514,141 +514,225 @@ The following query returns the customer's wish lists. {{site.data.var.ee}} allo
       "wishlists": [
         {
           "id": "1",
-          "name": "Vacation Wants",
-          "items_count": 10,
-          "items_v2": {
-            "items": [
-              {
-                "id": "1",
-                "product": {
-                  "uid": "MTM=",
-                  "name": "Overnight Duffle",
-                  "sku": "24-WB07"
-                }
-              },
-              {
-                "id": "2",
-                "product": {
-                  "uid": "MTA=",
-                  "name": "Savvy Shoulder Tote",
-                  "sku": "24-WB05"
-                }
-              },
-              {
-                "id": "3",
-                "product": {
-                  "uid": "MTE=",
-                  "name": "Endeavor Daytrip Backpack",
-                  "sku": "24-WB06"
-                }
-              },
-              {
-                "id": "4",
-                "product": {
-                  "uid": "MTA5OA==",
-                  "name": "Miko Pullover Hoodie",
-                  "sku": "WH04"
-                }
-              },
-              {
-                "id": "5",
-                "product": {
-                  "uid": "MTIyNg==",
-                  "name": "Stellar Solar Jacket",
-                  "sku": "WJ01"
-                }
-              },
-              {
-                "id": "6",
-                "product": {
-                  "uid": "MTcyMg==",
-                  "name": "Nora Practice Tank",
-                  "sku": "WT03"
-                }
-              },
-              {
-                "id": "7",
-                "product": {
-                  "uid": "MTY5MA==",
-                  "name": "Bella Tank",
-                  "sku": "WT01"
-                }
-              },
-              {
-                "id": "17",
-                "product": {
-                  "uid": "MTg=",
-                  "name": "Pursuit Lumaflex&trade; Tone Band",
-                  "sku": "24-UG02"
-                }
-              },
-              {
-                "id": "18",
-                "product": {
-                  "uid": "MQ==",
-                  "name": "Joust Duffle Bag",
-                  "sku": "24-MB01"
-                }
-              },
-              {
-                "id": "20",
-                "product": {
-                  "uid": "NTI=",
-                  "name": "Sprite Yoga Companion Kit",
-                  "sku": "24-WG080"
+          "items_v2": [
+            {
+              "id": "1",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "24-WB07",
+                "name": "Overnight Duffle",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 45
+                    }
+                  }
                 }
               }
-            ]
-          }
+            },
+            {
+              "id": "2",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "24-WB05",
+                "name": "Savvy Shoulder Tote",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 32
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "3",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "24-WB06",
+                "name": "Endeavor Daytrip Backpack",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 33
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "4",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WH04",
+                "name": "Miko Pullover Hoodie",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 69
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "5",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WJ01",
+                "name": "Stellar Solar Jacket",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 75
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "6",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WT03",
+                "name": "Nora Practice Tank",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 39
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "7",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WT01",
+                "name": "Bella Tank",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 29
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "items_count": 7,
+          "sharing_code": "4fAZAjxZJJ2UQdtPE1nsiQkTqaqICw2x"
         },
         {
           "id": "2",
-          "name": "Lose the Muffintop",
-          "items_count": 5,
-          "items_v2": {
-            "items": [
-              {
-                "id": "8",
-                "product": {
-                  "uid": "NDk=",
-                  "name": "Advanced Pilates & Yoga (Strength)",
-                  "sku": "240-LV08"
-                }
-              },
-              {
-                "id": "10",
-                "product": {
-                  "uid": "MTQ1MA==",
-                  "name": "Layla Tee",
-                  "sku": "WS04"
-                }
-              },
-              {
-                "id": "11",
-                "product": {
-                  "uid": "MTU2Mg==",
-                  "name": "Radiant Tee",
-                  "sku": "WS12"
-                }
-              },
-              {
-                "id": "12",
-                "product": {
-                  "uid": "MTYxMA==",
-                  "name": "Electra Bra Top",
-                  "sku": "WB01"
-                }
-              },
-              {
-                "id": "13",
-                "product": {
-                  "uid": "MTY0Mg==",
-                  "name": "Celeste Sports Bra",
-                  "sku": "WB03"
+          "items_v2": [
+            {
+              "id": "8",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "240-LV08",
+                "name": "Advanced Pilates & Yoga (Strength)",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 18
+                    }
+                  }
                 }
               }
-            ]
-          }
+            },
+            {
+              "id": "9",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "24-UG02",
+                "name": "Pursuit Lumaflex&trade; Tone Band",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 16
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "10",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WS04",
+                "name": "Layla Tee",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 29
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "11",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WS12",
+                "name": "Radiant Tee",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 22
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "12",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WB01",
+                "name": "Electra Bra Top",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 39
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "13",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WB03",
+                "name": "Celeste Sports Bra",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 39
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "items_count": 6,
+          "sharing_code": "yvZFq8xifW8iur20MRA59rsTjKPuSXht"
         }
       ]
     }
@@ -723,7 +807,7 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [ProductReview]! | An array of product reviews
+`items` | [[ProductReview]](#ProductReview)! | An array of product reviews
 `page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
 
 #### ProductReview object {#ProductReview}
@@ -734,7 +818,7 @@ Attribute |  Data Type | Description
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [[WishlistItem](#wishlistitem)] | An array of items in the customer's wish list
+`items` | [[WishlistItem]](#wishlistitem) | An array of items in the customer's wish list
 `items_count` | Int | The number of items in the wish list
 `id` | ID | The unique identifier of the wish list
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list
