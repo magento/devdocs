@@ -76,7 +76,7 @@ This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}
        include /var/www/html/magento2/nginx.conf;
    }
    ```
-   
+
 1. Save your changes to the files and exit the text editor.
 1. Verify the server configuration:
 
