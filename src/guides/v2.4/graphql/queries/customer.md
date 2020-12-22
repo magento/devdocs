@@ -486,11 +486,10 @@ The following query returns the customer's wish list:
 ```graphql
 {
   customer {
-    wishlist {
-      items {
+    wishlists {
+      items_v2 {
         id
         description
-        qty
         product {
           sku
           name
@@ -514,42 +513,230 @@ The following query returns the customer's wish list:
 {
   "data": {
     "customer": {
-      "wishlist": {
-        "items": [
-          {
-            "id": 1,
-            "description": "I need this",
-            "qty": 1,
-            "product": {
-              "sku": "24-WG080",
-              "name": "Sprite Yoga Companion Kit",
-              "price_range": {
-                "maximum_price": {
-                  "regular_price": {
-                    "value": 77
+      "wishlists": [
+        {
+          "id": "1",
+          "items_v2": [
+            {
+              "id": "1",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "24-WB07",
+                "name": "Overnight Duffle",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 45
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "2",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "24-WB05",
+                "name": "Savvy Shoulder Tote",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 32
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "3",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "24-WB06",
+                "name": "Endeavor Daytrip Backpack",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 33
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "4",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WH04",
+                "name": "Miko Pullover Hoodie",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 69
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "5",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WJ01",
+                "name": "Stellar Solar Jacket",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 75
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "6",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WT03",
+                "name": "Nora Practice Tank",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 39
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "7",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WT01",
+                "name": "Bella Tank",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 29
+                    }
                   }
                 }
               }
             }
-          },
-          {
-            "id": 2,
-            "description": null,
-            "qty": 1,
-            "product": {
-              "sku": "24-UG04",
-              "name": "Zing Jump Rope",
-              "price_range": {
-                "maximum_price": {
-                  "regular_price": {
-                    "value": 12
+          ],
+          "items_count": 7,
+          "sharing_code": "4fAZAjxZJJ2UQdtPE1nsiQkTqaqICw2x"
+        },
+        {
+          "id": "2",
+          "items_v2": [
+            {
+              "id": "8",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "240-LV08",
+                "name": "Advanced Pilates & Yoga (Strength)",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 18
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "9",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "24-UG02",
+                "name": "Pursuit Lumaflex&trade; Tone Band",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 16
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "10",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WS04",
+                "name": "Layla Tee",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 29
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "11",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WS12",
+                "name": "Radiant Tee",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 22
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "12",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WB01",
+                "name": "Electra Bra Top",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 39
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "13",
+              "description": null,
+              "quantity": 1,
+              "product": {
+                "sku": "WB03",
+                "name": "Celeste Sports Bra",
+                "price_range": {
+                  "maximum_price": {
+                    "regular_price": {
+                      "value": 39
+                    }
                   }
                 }
               }
             }
-          }
-        ]
-      }
+          ],
+          "items_count": 6,
+          "sharing_code": "yvZFq8xifW8iur20MRA59rsTjKPuSXht"
+        }
+      ]
     }
   }
 }
