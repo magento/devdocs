@@ -1,1 +1,0 @@
-../../../v2.2/payments-integrations/cardinal/cardinal.md

@@ -1,0 +1,1 @@
+../../../v2.3/extension-dev-guide/extension_attributes/adding-attributes.md

@@ -1,27 +1,28 @@
 content_map:
+
 -
-  directory: guides/m1x
-  repository: magento/devdocs-m1
-  branch: master
-  filter: false
--
-  directory: mbi
+  directory: src/mbi
   repository: magento/devdocs-mbi
   branch: master
   filter: true
 -
-  directory: mftf
+  directory: src/mftf
   repository: magento/magento2-functional-testing-framework
   branch: master
   filter: true
 -
-  directory: page-builder
-  repository: magento/magento2-page-builder
-  branch: 1.1-develop
+  directory: src/mftf/v2
+  repository: magento/magento2-functional-testing-framework
+  branch: 2.x-develop
   filter: true
 -
-  directory: page-builder-migration
+  directory: src/page-builder
+  repository: magento/magento2-page-builder-docs
+  branch: master
+  filter: true
+-
+  directory: src/page-builder-migration
   repository: magento/magento2-page-builder-data-migration
   branch: 1.0.0-release
   filter: true
-  
+

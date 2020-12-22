@@ -1,0 +1,9 @@
+---
+title: Magento_StoreGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/StoreGraphQl/README.md
+last_modified_at: '2018-04-09 17:36:37 -0500'
+content: |-
+  **StoreGraphQl** provides type information for the GraphQl module
+  to generate store fields information endpoints.

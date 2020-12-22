@@ -1,0 +1,10 @@
+---
+title: Magento_NegotiableQuoteWeee
+source_repo: magento2b2b
+release: 1.3.0
+github_path: app/code/Magento/NegotiableQuoteWeee/README.md
+last_modified_at: '2020-02-13 12:57:22 +0200'
+content: |-
+  ## NegotiableQuoteWeee module Overview
+
+  NegotiableQuoteWeee module extends Weee if it is enabled in configuration and it adds fpt attributes to negotiable quote.

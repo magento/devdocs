@@ -1,0 +1,11 @@
+---
+title: Magento_Tinymce3Banner
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/Tinymce3Banner/README.md
+last_modified_at: '2018-05-14 12:30:39 -0500'
+content: Tinymce3Banner module allows to update banner widget images on Wysiwyg. We
+  have updated the TinyMCE module to the latest available version, 4.6.4. TinyMCE
+  v4.6.4 provides backwards-compatibility for modified editor modules to prevent the
+  loss of functionality. With TinyMCE4 you can update banner widget images using the
+  WYSIWYG. The TinyMCE3 module is now deprecated and will be removed in a future release.

@@ -1,0 +1,10 @@
+label: Advanced Reporting
+pages:
+  - label: Overview
+    url: /advanced-reporting/overview.html
+  - label: Modules
+    url: /advanced-reporting/modules.html
+  - label: Data collection
+    url: /advanced-reporting/data-collection.html
+  - label: Report XML
+    url: /advanced-reporting/report-xml.html

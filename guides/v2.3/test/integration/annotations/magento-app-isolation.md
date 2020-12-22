@@ -1,1 +1,0 @@
-../../../../../guides/v2.2/test/integration/annotations/magento-app-isolation.md

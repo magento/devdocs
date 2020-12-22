@@ -1,1 +1,0 @@
-../../../../v2.2/rest/tutorials/configurable-product/config-product-intro.md

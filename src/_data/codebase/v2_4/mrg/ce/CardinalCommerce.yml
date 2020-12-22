@@ -1,0 +1,8 @@
+---
+title: Magento_CardinalCommerce
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/CardinalCommerce/README.md
+last_modified_at: '2019-06-11 13:12:54 -0500'
+content: The CardinalCommerce module provides a possibility to enable 3-D Secure 2.0
+  support for payment methods.

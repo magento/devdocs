@@ -1,0 +1,10 @@
+---
+title: Magento_AdvancedCheckout
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/AdvancedCheckout/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  Magento\AdvanceCheckout extends Magento_Checkout with following functions: adding product to cart by entering SKU on
+  frontend, uploading list of SKUs to add products to cart on frontend and ability for admin to manage customer's shopping
+  cart.

@@ -1,0 +1,9 @@
+---
+title: Magento_SendFriend
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/SendFriend/README.md
+last_modified_at: '2015-06-02 12:45:34 +0300'
+content: The Magento_SendFriend implements the functionality behind the "Email to
+  a Friend" link on a product page, which allows to share favorite products with others
+  by clicking the link.

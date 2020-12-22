@@ -1,0 +1,1 @@
+../../../../v2.3/extension-dev-guide/cache/partial-caching/create-cache-type.md

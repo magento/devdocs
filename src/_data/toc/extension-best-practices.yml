@@ -1,0 +1,73 @@
+label: Extension Best Practices
+pages:
+    - label: Introduction
+      url: /ext-best-practices/bk-ext-best-practices.html
+
+    - label: Admin
+      url: /ext-best-practices/admin/admin-best-practices.html
+      children:
+
+        - label: Admin Panel Placement and Design
+          url: /ext-best-practices/admin/placement-and-design.html
+
+        - label: Admin FAQ
+          url: /ext-best-practices/admin/ext-best-practices_admin_FAQ.html
+
+    - label: Extension Coding
+      url: /ext-best-practices/extension-coding/coding-best-practices.html
+      children:
+
+        - label: Programming best practices
+          url: /ext-best-practices/extension-coding/common-programming-bp.html
+
+        - label: Working with the Architecture
+          url: /ext-best-practices/extension-coding/working-with-arch-bp.html
+
+        - label: Security, performance, and data handling
+          url: /ext-best-practices/extension-coding/security-performance-data-bp.html
+
+        - label: Observers best practices
+          url: /ext-best-practices/extension-coding/observers-bp.html
+
+        - label: Coding FAQ
+          url: /ext-best-practices/extension-coding/coding-faq.html
+
+    - label: Storefront
+      url: /ext-best-practices/storefront/storefront-best-practices.html
+
+    - label: Security
+      children:
+
+        - label: Writing secure code
+          url: /ext-best-practices/security/writing-secure-code.html
+
+    - label: Tutorials
+      children:
+
+        - label: Copying fieldsets
+          url: /ext-best-practices/tutorials/copy-fieldsets.html
+
+        - label: Serialized to JSON data upgrade
+          url: /ext-best-practices/tutorials/serialized-to-json-data-upgrade.html
+
+        - label: Modify Image Library folder permissions
+          url: /ext-best-practices/tutorials/modify-image-library-permissions/
+
+        - label: Creating a Magento admin page
+          url: /ext-best-practices/extension-coding/example-module-adminpage.html
+
+        - label: Creating a dynamic row system config
+          url: /ext-best-practices/tutorials/dynamic-row-system-config.html
+
+        - label: Creating a custom import entity
+          url: /ext-best-practices/tutorials/custom-import-entity.html
+
+        - label: Creating a custom widget
+          url: /ext-best-practices/tutorials/custom-widget.html
+
+        - label: Creating an Access Control List (ACL) rule
+          url: /ext-best-practices/tutorials/create-access-control-list-rule.html
+
+        - label: Creating an integration with an external API
+          url: /ext-best-practices/tutorials/create-integration-with-api.html
+          

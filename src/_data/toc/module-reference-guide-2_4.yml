@@ -1,0 +1,1176 @@
+label: Module Reference Guide
+pages:
+  - label: Introduction
+    url: /mrg/intro.html
+  
+  - label: Core Open Source, 2.4.1
+    include_versions: ["2.4"]
+    children:
+    
+      - label: AdminAnalytics
+        url: /mrg/ce/AdminAnalytics.html
+    
+      - label: AdminNotification
+        url: /mrg/ce/AdminNotification.html
+    
+      - label: AdvancedPricingImportExport
+        url: /mrg/ce/AdvancedPricingImportExport.html
+    
+      - label: AdvancedSearch
+        url: /mrg/ce/AdvancedSearch.html
+    
+      - label: Amqp
+        url: /mrg/ce/Amqp.html
+    
+      - label: AmqpStore
+        url: /mrg/ce/AmqpStore.html
+    
+      - label: Analytics
+        url: /mrg/ce/Analytics.html
+    
+      - label: AsynchronousOperations
+        url: /mrg/ce/AsynchronousOperations.html
+    
+      - label: Authorization
+        url: /mrg/ce/Authorization.html
+    
+      - label: Backend
+        url: /mrg/ce/Backend.html
+    
+      - label: Backup
+        url: /mrg/ce/Backup.html
+    
+      - label: Bundle
+        url: /mrg/ce/Bundle.html
+    
+      - label: BundleGraphQl
+        url: /mrg/ce/BundleGraphQl.html
+    
+      - label: BundleImportExport
+        url: /mrg/ce/BundleImportExport.html
+    
+      - label: CacheInvalidate
+        url: /mrg/ce/CacheInvalidate.html
+    
+      - label: Captcha
+        url: /mrg/ce/Captcha.html
+    
+      - label: CardinalCommerce
+        url: /mrg/ce/CardinalCommerce.html
+    
+      - label: Catalog
+        url: /mrg/ce/Catalog.html
+    
+      - label: CatalogAnalytics
+        url: /mrg/ce/CatalogAnalytics.html
+    
+      - label: CatalogCmsGraphQl
+        url: /mrg/ce/CatalogCmsGraphQl.html
+    
+      - label: CatalogCustomerGraphQl
+        url: /mrg/ce/CatalogCustomerGraphQl.html
+    
+      - label: CatalogGraphQl
+        url: /mrg/ce/CatalogGraphQl.html
+    
+      - label: CatalogInventory
+        url: /mrg/ce/CatalogInventory.html
+    
+      - label: CatalogInventoryGraphQl
+        url: /mrg/ce/CatalogInventoryGraphQl.html
+    
+      - label: CatalogRule
+        url: /mrg/ce/CatalogRule.html
+    
+      - label: CatalogRuleConfigurable
+        url: /mrg/ce/CatalogRuleConfigurable.html
+    
+      - label: CatalogRuleGraphQl
+        url: /mrg/ce/CatalogRuleGraphQl.html
+    
+      - label: CatalogSearch
+        url: /mrg/ce/CatalogSearch.html
+    
+      - label: CatalogUrlRewriteGraphQl
+        url: /mrg/ce/CatalogUrlRewriteGraphQl.html
+    
+      - label: CatalogWidget
+        url: /mrg/ce/CatalogWidget.html
+    
+      - label: Checkout
+        url: /mrg/ce/Checkout.html
+    
+      - label: CheckoutAgreements
+        url: /mrg/ce/CheckoutAgreements.html
+    
+      - label: CheckoutAgreementsGraphQl
+        url: /mrg/ce/CheckoutAgreementsGraphQl.html
+    
+      - label: Cms
+        url: /mrg/ce/Cms.html
+    
+      - label: CmsGraphQl
+        url: /mrg/ce/CmsGraphQl.html
+    
+      - label: CmsUrlRewrite
+        url: /mrg/ce/CmsUrlRewrite.html
+    
+      - label: CmsUrlRewriteGraphQl
+        url: /mrg/ce/CmsUrlRewriteGraphQl.html
+    
+      - label: Config
+        url: /mrg/ce/Config.html
+    
+      - label: ConfigurableProduct
+        url: /mrg/ce/ConfigurableProduct.html
+    
+      - label: ConfigurableProductGraphQl
+        url: /mrg/ce/ConfigurableProductGraphQl.html
+    
+      - label: ConfigurableProductSales
+        url: /mrg/ce/ConfigurableProductSales.html
+    
+      - label: Contact
+        url: /mrg/ce/Contact.html
+    
+      - label: Cookie
+        url: /mrg/ce/Cookie.html
+    
+      - label: Cron
+        url: /mrg/ce/Cron.html
+    
+      - label: Csp
+        url: /mrg/ce/Csp.html
+    
+      - label: CurrencySymbol
+        url: /mrg/ce/CurrencySymbol.html
+    
+      - label: Customer
+        url: /mrg/ce/Customer.html
+    
+      - label: CustomerAnalytics
+        url: /mrg/ce/CustomerAnalytics.html
+    
+      - label: CustomerDownloadableGraphQl
+        url: /mrg/ce/CustomerDownloadableGraphQl.html
+    
+      - label: CustomerGraphQl
+        url: /mrg/ce/CustomerGraphQl.html
+    
+      - label: CustomerImportExport
+        url: /mrg/ce/CustomerImportExport.html
+    
+      - label: Deploy
+        url: /mrg/ce/Deploy.html
+    
+      - label: Developer
+        url: /mrg/ce/Developer.html
+    
+      - label: Dhl
+        url: /mrg/ce/Dhl.html
+    
+      - label: Directory
+        url: /mrg/ce/Directory.html
+    
+      - label: DirectoryGraphQl
+        url: /mrg/ce/DirectoryGraphQl.html
+    
+      - label: Downloadable
+        url: /mrg/ce/Downloadable.html
+    
+      - label: DownloadableGraphQl
+        url: /mrg/ce/DownloadableGraphQl.html
+    
+      - label: DownloadableImportExport
+        url: /mrg/ce/DownloadableImportExport.html
+    
+      - label: Eav
+        url: /mrg/ce/Eav.html
+    
+      - label: EavGraphQl
+        url: /mrg/ce/EavGraphQl.html
+    
+      - label: Elasticsearch
+        url: /mrg/ce/Elasticsearch.html
+    
+      - label: Elasticsearch6
+        url: /mrg/ce/Elasticsearch6.html
+    
+      - label: Elasticsearch7
+        url: /mrg/ce/Elasticsearch7.html
+    
+      - label: Email
+        url: /mrg/ce/Email.html
+    
+      - label: EncryptionKey
+        url: /mrg/ce/EncryptionKey.html
+    
+      - label: Fedex
+        url: /mrg/ce/Fedex.html
+    
+      - label: GiftMessage
+        url: /mrg/ce/GiftMessage.html
+    
+      - label: GiftMessageGraphQl
+        url: /mrg/ce/GiftMessageGraphQl.html
+    
+      - label: GoogleAdwords
+        url: /mrg/ce/GoogleAdwords.html
+    
+      - label: GoogleAnalytics
+        url: /mrg/ce/GoogleAnalytics.html
+    
+      - label: GoogleOptimizer
+        url: /mrg/ce/GoogleOptimizer.html
+    
+      - label: GraphQl
+        url: /mrg/ce/GraphQl.html
+    
+      - label: GraphQlCache
+        url: /mrg/ce/GraphQlCache.html
+    
+      - label: GroupedCatalogInventory
+        url: /mrg/ce/GroupedCatalogInventory.html
+    
+      - label: GroupedProduct
+        url: /mrg/ce/GroupedProduct.html
+    
+      - label: GroupedProductGraphQl
+        url: /mrg/ce/GroupedProductGraphQl.html
+    
+      - label: ImportExport
+        url: /mrg/ce/ImportExport.html
+    
+      - label: Indexer
+        url: /mrg/ce/Indexer.html
+    
+      - label: InstantPurchase
+        url: /mrg/ce/InstantPurchase.html
+    
+      - label: Integration
+        url: /mrg/ce/Integration.html
+    
+      - label: LayeredNavigation
+        url: /mrg/ce/LayeredNavigation.html
+    
+      - label: LoginAsCustomer
+        url: /mrg/ce/LoginAsCustomer.html
+    
+      - label: LoginAsCustomerAdminUi
+        url: /mrg/ce/LoginAsCustomerAdminUi.html
+    
+      - label: LoginAsCustomerApi
+        url: /mrg/ce/LoginAsCustomerApi.html
+    
+      - label: LoginAsCustomerAssistance
+        url: /mrg/ce/LoginAsCustomerAssistance.html
+    
+      - label: LoginAsCustomerFrontendUi
+        url: /mrg/ce/LoginAsCustomerFrontendUi.html
+    
+      - label: LoginAsCustomerLog
+        url: /mrg/ce/LoginAsCustomerLog.html
+    
+      - label: LoginAsCustomerPageCache
+        url: /mrg/ce/LoginAsCustomerPageCache.html
+    
+      - label: LoginAsCustomerQuote
+        url: /mrg/ce/LoginAsCustomerQuote.html
+    
+      - label: LoginAsCustomerSales
+        url: /mrg/ce/LoginAsCustomerSales.html
+    
+      - label: Marketplace
+        url: /mrg/ce/Marketplace.html
+    
+      - label: MediaContent
+        url: /mrg/ce/MediaContent.html
+    
+      - label: MediaContentApi
+        url: /mrg/ce/MediaContentApi.html
+    
+      - label: MediaContentCatalog
+        url: /mrg/ce/MediaContentCatalog.html
+    
+      - label: MediaContentCms
+        url: /mrg/ce/MediaContentCms.html
+    
+      - label: MediaContentSynchronization
+        url: /mrg/ce/MediaContentSynchronization.html
+    
+      - label: MediaContentSynchronizationApi
+        url: /mrg/ce/MediaContentSynchronizationApi.html
+    
+      - label: MediaContentSynchronizationCatalog
+        url: /mrg/ce/MediaContentSynchronizationCatalog.html
+    
+      - label: MediaContentSynchronizationCms
+        url: /mrg/ce/MediaContentSynchronizationCms.html
+    
+      - label: MediaGallery
+        url: /mrg/ce/MediaGallery.html
+    
+      - label: MediaGalleryApi
+        url: /mrg/ce/MediaGalleryApi.html
+    
+      - label: MediaGalleryCatalog
+        url: /mrg/ce/MediaGalleryCatalog.html
+    
+      - label: MediaGalleryCatalogIntegration
+        url: /mrg/ce/MediaGalleryCatalogIntegration.html
+    
+      - label: MediaGalleryCatalogUi
+        url: /mrg/ce/MediaGalleryCatalogUi.html
+    
+      - label: MediaGalleryCmsUi
+        url: /mrg/ce/MediaGalleryCmsUi.html
+    
+      - label: MediaGalleryIntegration
+        url: /mrg/ce/MediaGalleryIntegration.html
+    
+      - label: MediaGalleryMetadata
+        url: /mrg/ce/MediaGalleryMetadata.html
+    
+      - label: MediaGalleryMetadataApi
+        url: /mrg/ce/MediaGalleryMetadataApi.html
+    
+      - label: MediaGallerySynchronization
+        url: /mrg/ce/MediaGallerySynchronization.html
+    
+      - label: MediaGallerySynchronizationApi
+        url: /mrg/ce/MediaGallerySynchronizationApi.html
+    
+      - label: MediaGallerySynchronizationMetadata
+        url: /mrg/ce/MediaGallerySynchronizationMetadata.html
+    
+      - label: MediaGalleryUi
+        url: /mrg/ce/MediaGalleryUi.html
+    
+      - label: MediaGalleryUiApi
+        url: /mrg/ce/MediaGalleryUiApi.html
+    
+      - label: MediaStorage
+        url: /mrg/ce/MediaStorage.html
+    
+      - label: MessageQueue
+        url: /mrg/ce/MessageQueue.html
+    
+      - label: MsrpConfigurableProduct
+        url: /mrg/ce/MsrpConfigurableProduct.html
+    
+      - label: MsrpGroupedProduct
+        url: /mrg/ce/MsrpGroupedProduct.html
+    
+      - label: Multishipping
+        url: /mrg/ce/Multishipping.html
+    
+      - label: MysqlMq
+        url: /mrg/ce/MysqlMq.html
+    
+      - label: NewRelicReporting
+        url: /mrg/ce/NewRelicReporting.html
+    
+      - label: Newsletter
+        url: /mrg/ce/Newsletter.html
+    
+      - label: NewsletterGraphQl
+        url: /mrg/ce/NewsletterGraphQl.html
+    
+      - label: OfflinePayments
+        url: /mrg/ce/OfflinePayments.html
+    
+      - label: OfflineShipping
+        url: /mrg/ce/OfflineShipping.html
+    
+      - label: PageCache
+        url: /mrg/ce/PageCache.html
+    
+      - label: Payment
+        url: /mrg/ce/Payment.html
+    
+      - label: Paypal
+        url: /mrg/ce/Paypal.html
+    
+      - label: PaypalCaptcha
+        url: /mrg/ce/PaypalCaptcha.html
+    
+      - label: PaypalGraphQl
+        url: /mrg/ce/PaypalGraphQl.html
+    
+      - label: Persistent
+        url: /mrg/ce/Persistent.html
+    
+      - label: ProductAlert
+        url: /mrg/ce/ProductAlert.html
+    
+      - label: ProductVideo
+        url: /mrg/ce/ProductVideo.html
+    
+      - label: Quote
+        url: /mrg/ce/Quote.html
+    
+      - label: QuoteAnalytics
+        url: /mrg/ce/QuoteAnalytics.html
+    
+      - label: QuoteBundleOptions
+        url: /mrg/ce/QuoteBundleOptions.html
+    
+      - label: QuoteConfigurableOptions
+        url: /mrg/ce/QuoteConfigurableOptions.html
+    
+      - label: QuoteDownloadableLinks
+        url: /mrg/ce/QuoteDownloadableLinks.html
+    
+      - label: QuoteGraphQl
+        url: /mrg/ce/QuoteGraphQl.html
+    
+      - label: RelatedProductGraphQl
+        url: /mrg/ce/RelatedProductGraphQl.html
+    
+      - label: ReleaseNotification
+        url: /mrg/ce/ReleaseNotification.html
+    
+      - label: Reports
+        url: /mrg/ce/Reports.html
+    
+      - label: RequireJs
+        url: /mrg/ce/RequireJs.html
+    
+      - label: Review
+        url: /mrg/ce/Review.html
+    
+      - label: ReviewAnalytics
+        url: /mrg/ce/ReviewAnalytics.html
+    
+      - label: ReviewGraphQl
+        url: /mrg/ce/ReviewGraphQl.html
+    
+      - label: Robots
+        url: /mrg/ce/Robots.html
+    
+      - label: Rss
+        url: /mrg/ce/Rss.html
+    
+      - label: Rule
+        url: /mrg/ce/Rule.html
+    
+      - label: Sales
+        url: /mrg/ce/Sales.html
+    
+      - label: SalesAnalytics
+        url: /mrg/ce/SalesAnalytics.html
+    
+      - label: SalesGraphQl
+        url: /mrg/ce/SalesGraphQl.html
+    
+      - label: SalesInventory
+        url: /mrg/ce/SalesInventory.html
+    
+      - label: SalesRule
+        url: /mrg/ce/SalesRule.html
+    
+      - label: SalesSequence
+        url: /mrg/ce/SalesSequence.html
+    
+      - label: SampleData
+        url: /mrg/ce/SampleData.html
+    
+      - label: Search
+        url: /mrg/ce/Search.html
+    
+      - label: Security
+        url: /mrg/ce/Security.html
+    
+      - label: SendFriend
+        url: /mrg/ce/SendFriend.html
+    
+      - label: SendFriendGraphQl
+        url: /mrg/ce/SendFriendGraphQl.html
+    
+      - label: Shipping
+        url: /mrg/ce/Shipping.html
+    
+      - label: Sitemap
+        url: /mrg/ce/Sitemap.html
+    
+      - label: Store
+        url: /mrg/ce/Store.html
+    
+      - label: StoreGraphQl
+        url: /mrg/ce/StoreGraphQl.html
+    
+      - label: Swagger
+        url: /mrg/ce/Swagger.html
+    
+      - label: SwaggerWebapi
+        url: /mrg/ce/SwaggerWebapi.html
+    
+      - label: SwaggerWebapiAsync
+        url: /mrg/ce/SwaggerWebapiAsync.html
+    
+      - label: Swatches
+        url: /mrg/ce/Swatches.html
+    
+      - label: SwatchesGraphQl
+        url: /mrg/ce/SwatchesGraphQl.html
+    
+      - label: SwatchesLayeredNavigation
+        url: /mrg/ce/SwatchesLayeredNavigation.html
+    
+      - label: Tax
+        url: /mrg/ce/Tax.html
+    
+      - label: TaxGraphQl
+        url: /mrg/ce/TaxGraphQl.html
+    
+      - label: Theme
+        url: /mrg/ce/Theme.html
+    
+      - label: ThemeGraphQl
+        url: /mrg/ce/ThemeGraphQl.html
+    
+      - label: Tinymce3
+        url: /mrg/ce/Tinymce3.html
+    
+      - label: Translation
+        url: /mrg/ce/Translation.html
+    
+      - label: Ui
+        url: /mrg/ce/Ui.html
+    
+      - label: Ups
+        url: /mrg/ce/Ups.html
+    
+      - label: UrlRewrite
+        url: /mrg/ce/UrlRewrite.html
+    
+      - label: UrlRewriteGraphQl
+        url: /mrg/ce/UrlRewriteGraphQl.html
+    
+      - label: User
+        url: /mrg/ce/User.html
+    
+      - label: Usps
+        url: /mrg/ce/Usps.html
+    
+      - label: Variable
+        url: /mrg/ce/Variable.html
+    
+      - label: Vault
+        url: /mrg/ce/Vault.html
+    
+      - label: VaultGraphQl
+        url: /mrg/ce/VaultGraphQl.html
+    
+      - label: Version
+        url: /mrg/ce/Version.html
+    
+      - label: Webapi
+        url: /mrg/ce/Webapi.html
+    
+      - label: WebapiAsync
+        url: /mrg/ce/WebapiAsync.html
+    
+      - label: WebapiSecurity
+        url: /mrg/ce/WebapiSecurity.html
+    
+      - label: Weee
+        url: /mrg/ce/Weee.html
+    
+      - label: WeeeGraphQl
+        url: /mrg/ce/WeeeGraphQl.html
+    
+      - label: Widget
+        url: /mrg/ce/Widget.html
+    
+      - label: Wishlist
+        url: /mrg/ce/Wishlist.html
+    
+      - label: WishlistAnalytics
+        url: /mrg/ce/WishlistAnalytics.html
+    
+      - label: WishlistGraphQl
+        url: /mrg/ce/WishlistGraphQl.html
+    
+  
+  - label: Core Commerce only, 2.4.1
+    include_versions: ["2.4"]
+    children:
+    
+      - label: AdminGws
+        url: /mrg/ee/AdminGws.html
+    
+      - label: AdminGwsConfigurableProduct
+        url: /mrg/ee/AdminGwsConfigurableProduct.html
+    
+      - label: AdminGwsStaging
+        url: /mrg/ee/AdminGwsStaging.html
+    
+      - label: AdvancedCatalog
+        url: /mrg/ee/AdvancedCatalog.html
+    
+      - label: AdvancedCheckout
+        url: /mrg/ee/AdvancedCheckout.html
+    
+      - label: AdvancedRule
+        url: /mrg/ee/AdvancedRule.html
+    
+      - label: AdvancedSalesRule
+        url: /mrg/ee/AdvancedSalesRule.html
+    
+      - label: Banner
+        url: /mrg/ee/Banner.html
+    
+      - label: BannerCustomerSegment
+        url: /mrg/ee/BannerCustomerSegment.html
+    
+      - label: BundleImportExportStaging
+        url: /mrg/ee/BundleImportExportStaging.html
+    
+      - label: BundleStaging
+        url: /mrg/ee/BundleStaging.html
+    
+      - label: CatalogEvent
+        url: /mrg/ee/CatalogEvent.html
+    
+      - label: CatalogImportExportStaging
+        url: /mrg/ee/CatalogImportExportStaging.html
+    
+      - label: CatalogInventoryStaging
+        url: /mrg/ee/CatalogInventoryStaging.html
+    
+      - label: CatalogPermissions
+        url: /mrg/ee/CatalogPermissions.html
+    
+      - label: CatalogPermissionsGraphQl
+        url: /mrg/ee/CatalogPermissionsGraphQl.html
+    
+      - label: CatalogRuleStaging
+        url: /mrg/ee/CatalogRuleStaging.html
+    
+      - label: CatalogStaging
+        url: /mrg/ee/CatalogStaging.html
+    
+      - label: CatalogStagingGraphQl
+        url: /mrg/ee/CatalogStagingGraphQl.html
+    
+      - label: CatalogUrlRewriteStaging
+        url: /mrg/ee/CatalogUrlRewriteStaging.html
+    
+      - label: CheckoutAddressSearch
+        url: /mrg/ee/CheckoutAddressSearch.html
+    
+      - label: CheckoutAddressSearchGiftRegistry
+        url: /mrg/ee/CheckoutAddressSearchGiftRegistry.html
+    
+      - label: CheckoutStaging
+        url: /mrg/ee/CheckoutStaging.html
+    
+      - label: CmsStaging
+        url: /mrg/ee/CmsStaging.html
+    
+      - label: ConfigurableProductStaging
+        url: /mrg/ee/ConfigurableProductStaging.html
+    
+      - label: CustomAttributeManagement
+        url: /mrg/ee/CustomAttributeManagement.html
+    
+      - label: CustomerBalance
+        url: /mrg/ee/CustomerBalance.html
+    
+      - label: CustomerBalanceGraphQl
+        url: /mrg/ee/CustomerBalanceGraphQl.html
+    
+      - label: CustomerCustomAttributes
+        url: /mrg/ee/CustomerCustomAttributes.html
+    
+      - label: CustomerFinance
+        url: /mrg/ee/CustomerFinance.html
+    
+      - label: CustomerSegment
+        url: /mrg/ee/CustomerSegment.html
+    
+      - label: DownloadableStaging
+        url: /mrg/ee/DownloadableStaging.html
+    
+      - label: ElasticsearchCatalogPermissions
+        url: /mrg/ee/ElasticsearchCatalogPermissions.html
+    
+      - label: Enterprise
+        url: /mrg/ee/Enterprise.html
+    
+      - label: GiftCard
+        url: /mrg/ee/GiftCard.html
+    
+      - label: GiftCardAccount
+        url: /mrg/ee/GiftCardAccount.html
+    
+      - label: GiftCardAccountGraphQl
+        url: /mrg/ee/GiftCardAccountGraphQl.html
+    
+      - label: GiftCardGraphQl
+        url: /mrg/ee/GiftCardGraphQl.html
+    
+      - label: GiftCardImportExport
+        url: /mrg/ee/GiftCardImportExport.html
+    
+      - label: GiftCardStaging
+        url: /mrg/ee/GiftCardStaging.html
+    
+      - label: GiftMessageStaging
+        url: /mrg/ee/GiftMessageStaging.html
+    
+      - label: GiftRegistry
+        url: /mrg/ee/GiftRegistry.html
+    
+      - label: GiftWrapping
+        url: /mrg/ee/GiftWrapping.html
+    
+      - label: GiftWrappingGraphQl
+        url: /mrg/ee/GiftWrappingGraphQl.html
+    
+      - label: GiftWrappingStaging
+        url: /mrg/ee/GiftWrappingStaging.html
+    
+      - label: GoogleOptimizerStaging
+        url: /mrg/ee/GoogleOptimizerStaging.html
+    
+      - label: GoogleTagManager
+        url: /mrg/ee/GoogleTagManager.html
+    
+      - label: GroupedProductStaging
+        url: /mrg/ee/GroupedProductStaging.html
+    
+      - label: Invitation
+        url: /mrg/ee/Invitation.html
+    
+      - label: LayeredNavigationStaging
+        url: /mrg/ee/LayeredNavigationStaging.html
+    
+      - label: Logging
+        url: /mrg/ee/Logging.html
+    
+      - label: LoginAsCustomerLogging
+        url: /mrg/ee/LoginAsCustomerLogging.html
+    
+      - label: LoginAsCustomerWebsiteRestriction
+        url: /mrg/ee/LoginAsCustomerWebsiteRestriction.html
+    
+      - label: MediaContentCatalogStaging
+        url: /mrg/ee/MediaContentCatalogStaging.html
+    
+      - label: MsrpStaging
+        url: /mrg/ee/MsrpStaging.html
+    
+      - label: MultipleWishlist
+        url: /mrg/ee/MultipleWishlist.html
+    
+      - label: PaymentStaging
+        url: /mrg/ee/PaymentStaging.html
+    
+      - label: PersistentHistory
+        url: /mrg/ee/PersistentHistory.html
+    
+      - label: PricePermissions
+        url: /mrg/ee/PricePermissions.html
+    
+      - label: ProductVideoStaging
+        url: /mrg/ee/ProductVideoStaging.html
+    
+      - label: PromotionPermissions
+        url: /mrg/ee/PromotionPermissions.html
+    
+      - label: QuoteGiftCardOptions
+        url: /mrg/ee/QuoteGiftCardOptions.html
+    
+      - label: Reminder
+        url: /mrg/ee/Reminder.html
+    
+      - label: ResourceConnections
+        url: /mrg/ee/ResourceConnections.html
+    
+      - label: ReviewStaging
+        url: /mrg/ee/ReviewStaging.html
+    
+      - label: Reward
+        url: /mrg/ee/Reward.html
+    
+      - label: RewardGraphQl
+        url: /mrg/ee/RewardGraphQl.html
+    
+      - label: RewardStaging
+        url: /mrg/ee/RewardStaging.html
+    
+      - label: Rma
+        url: /mrg/ee/Rma.html
+    
+      - label: RmaGraphQl
+        url: /mrg/ee/RmaGraphQl.html
+    
+      - label: RmaStaging
+        url: /mrg/ee/RmaStaging.html
+    
+      - label: SalesArchive
+        url: /mrg/ee/SalesArchive.html
+    
+      - label: SalesRuleStaging
+        url: /mrg/ee/SalesRuleStaging.html
+    
+      - label: ScalableCheckout
+        url: /mrg/ee/ScalableCheckout.html
+    
+      - label: ScalableInventory
+        url: /mrg/ee/ScalableInventory.html
+    
+      - label: ScalableOms
+        url: /mrg/ee/ScalableOms.html
+    
+      - label: ScheduledImportExport
+        url: /mrg/ee/ScheduledImportExport.html
+    
+      - label: SearchStaging
+        url: /mrg/ee/SearchStaging.html
+    
+      - label: Staging
+        url: /mrg/ee/Staging.html
+    
+      - label: StagingGraphQl
+        url: /mrg/ee/StagingGraphQl.html
+    
+      - label: Support
+        url: /mrg/ee/Support.html
+    
+      - label: Swat
+        url: /mrg/ee/Swat.html
+    
+      - label: TargetRule
+        url: /mrg/ee/TargetRule.html
+    
+      - label: TargetRuleGraphQl
+        url: /mrg/ee/TargetRuleGraphQl.html
+    
+      - label: Tinymce3Banner
+        url: /mrg/ee/Tinymce3Banner.html
+    
+      - label: VersionsCms
+        url: /mrg/ee/VersionsCms.html
+    
+      - label: VersionsCmsUrlRewrite
+        url: /mrg/ee/VersionsCmsUrlRewrite.html
+    
+      - label: VisualMerchandiser
+        url: /mrg/ee/VisualMerchandiser.html
+    
+      - label: WebsiteRestriction
+        url: /mrg/ee/WebsiteRestriction.html
+    
+      - label: WeeeStaging
+        url: /mrg/ee/WeeeStaging.html
+    
+  
+  - label: B2B extension, 1.3.0
+    include_versions: ["2.4"]
+    children:
+    
+      - label: B2b
+        url: /mrg/b2b/B2b.html
+    
+      - label: BundleNegotiableQuote
+        url: /mrg/b2b/BundleNegotiableQuote.html
+    
+      - label: BundleRequisitionList
+        url: /mrg/b2b/BundleRequisitionList.html
+    
+      - label: BundleSharedCatalog
+        url: /mrg/b2b/BundleSharedCatalog.html
+    
+      - label: CheckoutAddressSearchNegotiableQuote
+        url: /mrg/b2b/CheckoutAddressSearchNegotiableQuote.html
+    
+      - label: CheckoutAgreementsNegotiableQuote
+        url: /mrg/b2b/CheckoutAgreementsNegotiableQuote.html
+    
+      - label: Company
+        url: /mrg/b2b/Company.html
+    
+      - label: CompanyCredit
+        url: /mrg/b2b/CompanyCredit.html
+    
+      - label: CompanyPayment
+        url: /mrg/b2b/CompanyPayment.html
+    
+      - label: CompanyShipping
+        url: /mrg/b2b/CompanyShipping.html
+    
+      - label: ConfigurableNegotiableQuote
+        url: /mrg/b2b/ConfigurableNegotiableQuote.html
+    
+      - label: ConfigurableRequisitionList
+        url: /mrg/b2b/ConfigurableRequisitionList.html
+    
+      - label: ConfigurableSharedCatalog
+        url: /mrg/b2b/ConfigurableSharedCatalog.html
+    
+      - label: GiftCardNegotiableQuote
+        url: /mrg/b2b/GiftCardNegotiableQuote.html
+    
+      - label: GiftCardRequisitionList
+        url: /mrg/b2b/GiftCardRequisitionList.html
+    
+      - label: GiftCardSharedCatalog
+        url: /mrg/b2b/GiftCardSharedCatalog.html
+    
+      - label: GroupedRequisitionList
+        url: /mrg/b2b/GroupedRequisitionList.html
+    
+      - label: GroupedSharedCatalog
+        url: /mrg/b2b/GroupedSharedCatalog.html
+    
+      - label: NegotiableQuote
+        url: /mrg/b2b/NegotiableQuote.html
+    
+      - label: NegotiableQuoteSharedCatalog
+        url: /mrg/b2b/NegotiableQuoteSharedCatalog.html
+    
+      - label: NegotiableQuoteWeee
+        url: /mrg/b2b/NegotiableQuoteWeee.html
+    
+      - label: OrderHistorySearch
+        url: /mrg/b2b/OrderHistorySearch.html
+    
+      - label: PurchaseOrder
+        url: /mrg/b2b/PurchaseOrder.html
+    
+      - label: PurchaseOrderRule
+        url: /mrg/b2b/PurchaseOrderRule.html
+    
+      - label: QuickOrder
+        url: /mrg/b2b/QuickOrder.html
+    
+      - label: RequisitionList
+        url: /mrg/b2b/RequisitionList.html
+    
+      - label: SharedCatalog
+        url: /mrg/b2b/SharedCatalog.html
+    
+  
+  - label: Inventory Management (Open Source), 1.2.1
+    include_versions: ["2.4"]
+    children:
+    
+      - label: Inventory
+        url: /mrg/msi/Inventory.html
+    
+      - label: InventoryAdminUi
+        url: /mrg/msi/InventoryAdminUi.html
+    
+      - label: InventoryAdvancedCheckout
+        url: /mrg/msi/InventoryAdvancedCheckout.html
+    
+      - label: InventoryApi
+        url: /mrg/msi/InventoryApi.html
+    
+      - label: InventoryBundleImportExport
+        url: /mrg/msi/InventoryBundleImportExport.html
+    
+      - label: InventoryBundleProduct
+        url: /mrg/msi/InventoryBundleProduct.html
+    
+      - label: InventoryBundleProductAdminUi
+        url: /mrg/msi/InventoryBundleProductAdminUi.html
+    
+      - label: InventoryBundleProductIndexer
+        url: /mrg/msi/InventoryBundleProductIndexer.html
+    
+      - label: InventoryCache
+        url: /mrg/msi/InventoryCache.html
+    
+      - label: InventoryCatalog
+        url: /mrg/msi/InventoryCatalog.html
+    
+      - label: InventoryCatalogAdminUi
+        url: /mrg/msi/InventoryCatalogAdminUi.html
+    
+      - label: InventoryCatalogApi
+        url: /mrg/msi/InventoryCatalogApi.html
+    
+      - label: InventoryCatalogSearch
+        url: /mrg/msi/InventoryCatalogSearch.html
+    
+      - label: InventoryConfigurableProduct
+        url: /mrg/msi/InventoryConfigurableProduct.html
+    
+      - label: InventoryConfigurableProductAdminUi
+        url: /mrg/msi/InventoryConfigurableProductAdminUi.html
+    
+      - label: InventoryConfigurableProductIndexer
+        url: /mrg/msi/InventoryConfigurableProductIndexer.html
+    
+      - label: InventoryConfiguration
+        url: /mrg/msi/InventoryConfiguration.html
+    
+      - label: InventoryConfigurationApi
+        url: /mrg/msi/InventoryConfigurationApi.html
+    
+      - label: InventoryDistanceBasedSourceSelection
+        url: /mrg/msi/InventoryDistanceBasedSourceSelection.html
+    
+      - label: InventoryDistanceBasedSourceSelectionAdminUi
+        url: /mrg/msi/InventoryDistanceBasedSourceSelectionAdminUi.html
+    
+      - label: InventoryDistanceBasedSourceSelectionApi
+        url: /mrg/msi/InventoryDistanceBasedSourceSelectionApi.html
+    
+      - label: InventoryElasticsearch
+        url: /mrg/msi/InventoryElasticsearch.html
+    
+      - label: InventoryExportStock
+        url: /mrg/msi/InventoryExportStock.html
+    
+      - label: InventoryExportStockApi
+        url: /mrg/msi/InventoryExportStockApi.html
+    
+      - label: InventoryGraphQl
+        url: /mrg/msi/InventoryGraphQl.html
+    
+      - label: InventoryGroupedProduct
+        url: /mrg/msi/InventoryGroupedProduct.html
+    
+      - label: InventoryGroupedProductAdminUi
+        url: /mrg/msi/InventoryGroupedProductAdminUi.html
+    
+      - label: InventoryGroupedProductIndexer
+        url: /mrg/msi/InventoryGroupedProductIndexer.html
+    
+      - label: InventoryImportExport
+        url: /mrg/msi/InventoryImportExport.html
+    
+      - label: InventoryInStorePickup
+        url: /mrg/msi/InventoryInStorePickup.html
+    
+      - label: InventoryInStorePickupAdminUi
+        url: /mrg/msi/InventoryInStorePickupAdminUi.html
+    
+      - label: InventoryInStorePickupApi
+        url: /mrg/msi/InventoryInStorePickupApi.html
+    
+      - label: InventoryInStorePickupFrontend
+        url: /mrg/msi/InventoryInStorePickupFrontend.html
+    
+      - label: InventoryInStorePickupGraphQl
+        url: /mrg/msi/InventoryInStorePickupGraphQl.html
+    
+      - label: InventoryInStorePickupMultishipping
+        url: /mrg/msi/InventoryInStorePickupMultishipping.html
+    
+      - label: InventoryInStorePickupQuote
+        url: /mrg/msi/InventoryInStorePickupQuote.html
+    
+      - label: InventoryInStorePickupQuoteGraphQl
+        url: /mrg/msi/InventoryInStorePickupQuoteGraphQl.html
+    
+      - label: InventoryInStorePickupSales
+        url: /mrg/msi/InventoryInStorePickupSales.html
+    
+      - label: InventoryInStorePickupSalesAdminUi
+        url: /mrg/msi/InventoryInStorePickupSalesAdminUi.html
+    
+      - label: InventoryInStorePickupSalesApi
+        url: /mrg/msi/InventoryInStorePickupSalesApi.html
+    
+      - label: InventoryInStorePickupShipping
+        url: /mrg/msi/InventoryInStorePickupShipping.html
+    
+      - label: InventoryInStorePickupShippingAdminUi
+        url: /mrg/msi/InventoryInStorePickupShippingAdminUi.html
+    
+      - label: InventoryInStorePickupShippingApi
+        url: /mrg/msi/InventoryInStorePickupShippingApi.html
+    
+      - label: InventoryInStorePickupWebapiExtension
+        url: /mrg/msi/InventoryInStorePickupWebapiExtension.html
+    
+      - label: InventoryIndexer
+        url: /mrg/msi/InventoryIndexer.html
+    
+      - label: InventoryLowQuantityNotification
+        url: /mrg/msi/InventoryLowQuantityNotification.html
+    
+      - label: InventoryLowQuantityNotificationAdminUi
+        url: /mrg/msi/InventoryLowQuantityNotificationAdminUi.html
+    
+      - label: InventoryLowQuantityNotificationApi
+        url: /mrg/msi/InventoryLowQuantityNotificationApi.html
+    
+      - label: InventoryMultiDimensionalIndexerApi
+        url: /mrg/msi/InventoryMultiDimensionalIndexerApi.html
+    
+      - label: InventoryProductAlert
+        url: /mrg/msi/InventoryProductAlert.html
+    
+      - label: InventoryRequisitionList
+        url: /mrg/msi/InventoryRequisitionList.html
+    
+      - label: InventoryReservationCli
+        url: /mrg/msi/InventoryReservationCli.html
+    
+      - label: InventoryReservations
+        url: /mrg/msi/InventoryReservations.html
+    
+      - label: InventoryReservationsApi
+        url: /mrg/msi/InventoryReservationsApi.html
+    
+      - label: InventorySales
+        url: /mrg/msi/InventorySales.html
+    
+      - label: InventorySalesAdminUi
+        url: /mrg/msi/InventorySalesAdminUi.html
+    
+      - label: InventorySalesApi
+        url: /mrg/msi/InventorySalesApi.html
+    
+      - label: InventorySalesFrontendUi
+        url: /mrg/msi/InventorySalesFrontendUi.html
+    
+      - label: InventorySetupFixtureGenerator
+        url: /mrg/msi/InventorySetupFixtureGenerator.html
+    
+      - label: InventoryShipping
+        url: /mrg/msi/InventoryShipping.html
+    
+      - label: InventoryShippingAdminUi
+        url: /mrg/msi/InventoryShippingAdminUi.html
+    
+      - label: InventorySourceDeductionApi
+        url: /mrg/msi/InventorySourceDeductionApi.html
+    
+      - label: InventorySourceSelection
+        url: /mrg/msi/InventorySourceSelection.html
+    
+      - label: InventorySourceSelectionApi
+        url: /mrg/msi/InventorySourceSelectionApi.html
+    
+      - label: InventoryVisualMerchandiser
+        url: /mrg/msi/InventoryVisualMerchandiser.html
+    
+  
+  - label: Page Builder (Commerce), v1.5.0
+    include_versions: ["2.4"]
+    children:
+    
+      - label: CatalogPageBuilderAnalytics
+        url: /mrg/page-builder/CatalogPageBuilderAnalytics.html
+    
+      - label: CmsPageBuilderAnalytics
+        url: /mrg/page-builder/CmsPageBuilderAnalytics.html
+    
+      - label: PageBuilder
+        url: /mrg/page-builder/PageBuilder.html
+    
+      - label: PageBuilderAdminAnalytics
+        url: /mrg/page-builder/PageBuilderAdminAnalytics.html
+    
+      - label: PageBuilderAnalytics
+        url: /mrg/page-builder/PageBuilderAnalytics.html
+    
+  

@@ -1,1 +1,0 @@
-../../../../guides/v2.2/architecture/archi_perspectives/domain_layer.md

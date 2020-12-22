@@ -1,1 +1,0 @@
-../../../../guides/v2.2/ext-best-practices/storefront/storefront-best-practices.md

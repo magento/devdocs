@@ -1,0 +1,9 @@
+---
+title: Magento_ConfigurableProductGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/ConfigurableProductGraphQl/README.md
+last_modified_at: '2018-01-16 13:17:37 -0600'
+content: |-
+  **ConfigurableProductGraphQl** provides type and resolver information for the GraphQl module
+  to generate configurable product information.

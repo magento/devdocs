@@ -4,12 +4,12 @@ Share your knowledge with the community by contributing to Magento DevDocs!
 You can contribute by creating an issue or pull request (PR) on our [DevDocs](https://github.com/magento/devdocs) GitHub repository.
 We welcome all types of contributions; from minor typo fixes to new topics.
 
-DevDocs staff members and [Community Maintainers](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributors.html#/community-maintainers) review issues and pull requests on a regular basis. We do our best to address all issues as soon as possible, but working through the backlog takes time. We appreciate your patience.
+DevDocs staff members and [Community Maintainers](https://devdocs.magento.com/contributor-guide/contributors.html#/community-maintainers) review issues and pull requests on a regular basis. We do our best to address all issues as soon as possible, but working through the backlog takes time. We appreciate your patience.
 
 ## Rewards for contributions
 
 DevDocs works with Magento Community Engineering teams and projects.
-As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#points).
+As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.com/contributor-guide/contributing.html#points).
 
 If you write and contribute a full topic, we will add your name (or your company's name) at the top of the DevDocs page and link it to your blog or website!
 
@@ -19,10 +19,12 @@ If you write and contribute a full topic, we will add your name (or your company
 
 1. Make sure you have a [GitHub account](https://github.com/signup/free).
 
-    **Note for partners:** Add [2FA](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#two-factor) protection when contributing to Magento repositories.
+    **Note for partners:** Add [2FA](https://devdocs.magento.com/contributor-guide/contributing.html#two-factor) protection when contributing to Magento repositories.
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the [DevDocs repository](https://github.com/magento/devdocs). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
 1. Review the [DevDocs guidelines](#contribution-guidelines).
+
+**Note:** If you use a fork instead of a branch, please set permissions to allow maintainers to edit and update the PR. See [Allowing changes to a pull request branch created from a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork) in the _GitHub documentation_.
 
 ## Contribute documentation
 
@@ -44,7 +46,7 @@ The following diagram shows the contribution workflow:
 
    In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use a version-specific integration branch, such as `develop`.
 
-1. Complete the pull request template.
+1. Complete the pull request template. Review the [Pull Request Process page](https://github.com/magento/devdocs/wiki/Pull-Request-Process) to learn how to complete a PR (with info about completing the template, adding a `whatsnew`, and more.)
 
     **We will close your pull request if you do not complete the template.**
 
@@ -52,7 +54,7 @@ The following diagram shows the contribution workflow:
 
     **We will close your pull request if you do not respond to feedback in two weeks.**
 
-**Note:** If you have not signed the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement), the pull request provides a link. Magento requires a signed form and agreement to the terms for contribution.
+**Note:** If you have not signed the [Adobe Contributor License Agreement](https://opensource.adobe.com/cla.html), the pull request provides a link. You must sign the CLA before we can accept your contribution.
 
 ## Contribution guidelines
 
@@ -61,16 +63,19 @@ The following guidelines may answer most of your questions and help you get star
 -  Write content using Markdown. See the [Templates](#templates) section for examples.
 -  Review existing [pull requests](https://github.com/magento/devdocs/pulls) and [issues](https://github.com/magento/devdocs/issues) to avoid duplicating work.
 -  For large contributions, or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This helps prevent duplicate or unnecessary work.
--  Do not make global find-and-replace changes without first creating an issue and discussing it with us. Global changes can have unintended consequences.
+-  Do not make global find-and-replace changes without first [creating an issue](https://github.com/magento/devdocs/issues/new/choose) and discussing it with us. Global changes can have unintended consequences.
+-  Do not make changes to content in the [`_data/codebase`](https://github.com/magento/devdocs/tree/master/src/_data/codebase) directory, which contains auto-generated data from Magento source code. Any manual changes will be lost when the file regenerates.
 -  Combine multiple small changes (such as minor editorial and technical changes) into a single pull request. This helps us efficiently and effectively facilitate your contribution.
 -  Familiarize yourself with the organization and conventions of our existing documentation before creating a pull request. Changes that are consistent with our style and conventions have a higher acceptance rate.
 
    -  If you need to update the site navigation, ask for help in Slack ([#devdocs](https://magentocommeng.slack.com/messages/CAN932A3H)).
 
--  Ensure that you update the correct version(s) of documentation (v2.2, v2.3). If you are not sure what directory to put your content in, just do your best. We can help re-locate it (if necessary) during the review process.
+-  Ensure that you update the correct version(s) of documentation (v2.3). If you are not sure what directory to put your content in, just do your best. We can help re-locate it (if necessary) during the review process.
 -  Review your work for basic typos, formatting errors, or ambiguous sentences before opening a pull request.
 -  Revise pull requests according to review feedback. We will close pull requests that require an inordinate amount of time to review and process (especially for minor changes) if you fail to make revisions according to review feedback.
 -  Do not directly contact DevDocs team members or maintainers on Slack to review your pull request unless it has been open for more than five days. We have a process and queue for pull requests that everyone must follow.
+-  Get recognized on the DevDocs web site for writing new topics! Add your name and a link to your company website or GitHub profile to the file metadata so that we can display it on the page. See [Edit metadata](#edit-metadata).
+-  We no longer recognize individual community members who contribute features to the Magento 2 codebase in the corresponding feature topic(s) on the DevDocs website. Magento recognizes these contributions in more appropriate channels (for example, the [Magento DevBlog](https://community.magento.com/t5/Magento-DevBlog/bg-p/devblog)).
 
 ## Tips for writing content
 
@@ -94,21 +99,22 @@ _(Optional)_ To review your changes in HTML output, follow the instructions in t
 
 We provide templates to help you get started writing new content and understanding Markdown formatting:
 
--  **General topic template** - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/basic_template.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
+-  **General topic template** - [Markdown](https://github.com/magento/devdocs/blob/master/contributor-guide/templates/basic_template.md) | [HTML](https://devdocs.magento.com/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
 -  **Tutorial templates**: These templates provide example formats and styles for step-by-step instructions (like how-tos). Each file adds navigation buttons when content is generated. Templates include:
-   -  First introduction topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/tutorial-template-first.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-first.html): Introduction to a tutorial for prerequisites and listing steps
-   -  Middle topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/tutorial-template-middle.md) |  [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-middle.html): Use for each step in a tutorial.
-   -  Final step topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/tutorial-template-last.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-last.html): Use for the last step of the tutorial.
+   -  First introduction topic - [Markdown](https://github.com/magento/devdocs/blob/master/contributor-guide/templates/tutorial-template-first.md) | [HTML](https://devdocs.magento.com/contributor-guide/templates/tutorial-template-first.html): Introduction to a tutorial for prerequisites and listing steps
+   -  Middle topic - [Markdown](https://github.com/magento/devdocs/blob/master/contributor-guide/templates/tutorial-template-middle.md) |  [HTML](https://devdocs.magento.com/contributor-guide/templates/tutorial-template-middle.html): Use for each step in a tutorial.
+   -  Final step topic - [Markdown](https://github.com/magento/devdocs/blob/master/contributor-guide/templates/tutorial-template-last.md) | [HTML](https://devdocs.magento.com/contributor-guide/templates/tutorial-template-last.html): Use for the last step of the tutorial.
 
 ### Edit metadata
 
-The Markdown (.md) file's metadata is a set of YAML key-value pairs. The metadata section is located at the top of each file. For more info, see the [Basic Template](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/basic_template.html).
+The Markdown (.md) file's metadata is a set of YAML key-value pairs. The metadata section is located at the top of each file. For more info, see the [Basic Template](https://devdocs.magento.com/contributor-guide/templates/basic_template.html).
 
 ```yaml
-
 ---
-group: install2
-title: Continue with your installation
+group:
+title:
+contributor_name:
+contributor_link:
 ---
 ```
 
@@ -118,45 +124,8 @@ title: Continue with your installation
 | ------------- | ---------- |
 | `group`       | Defines the topic's guide or section. Use the table of contents `.yml` file name. This loads your left-side navigation. We will help during the PR process to add new files to the `.yml` file. |
 | `title`       | Sets the title of the page in the HTML metadata and the main title on the page.  |
-
-## Symbolic links
-
-We use symbolic links for topics that are the same across versions of Magento. A file is symlinked if the entire content of the file is a path to the original version, such as [ext-best-practices/tutorials/serialized-to-json-data-upgrade.md](https://github.com/magento/devdocs/blob/master/guides/v2.3/ext-best-practices/tutorials/serialized-to-json-data-upgrade.md). Note that some editors will automatically follow symlinks so it might not be clear if a file is symlinked or not. Check the file on Github directly to be sure.
-
-### Create a symbolic link
-
-When you create a new topic (create a new `.md` file) and its content is the same for 2.2 and 2.3 versions, create a symbolic link.
-
-For example, if you created a new file for v.2.2---`guides/v2.2/install-gde/new-doc-topic.md`---and its content is the same for v.2.3, use the command below to create the symbolic link.
-
-```bash
-cd <DEVDOCS_REPOSITORY_ROOT_DIR>
-```
-
-```bash
-ln -s guides/v2.2/install-gde/new-doc-topic.md guides/v2.3/install-gde/new-doc-topic.md
-```
-
-If you have an image that is identical between versions, it should placed in `/common/images`. Please optimize images before committing them to the repository.
-If done correctly, the symbolic link path will start with 3 or 4 instances of `../`, as the above example shows.
-
-### Remove a symbolic link
-
-If your changes are unique to a specific version, remove the symbolic link and add a new file. Copy and paste a previous version of the topic to get started.
-
-The removal should use the `git rm` command specifically. Deleting the file through the regular file system might cause issues with the repository.
-
-For example:
-
-```bash
-git rm guides/v2.3/install-gde/composer.md
-```
-
-```bash
-cp guides/v2.2/install-gde/composer.md guides/v2.3/install-gde/composer.md
-```
-
-Once you have the copy in place, you can edit it with the version-specific information.
+| `contributor_name` | Sets the name of the contributor who wrote the topic and displays it on the page. |
+| `contributor_link` | Creates a link to the contributor's GitHub profile or company website. |
 
 ## Report an issue
 
@@ -181,6 +150,5 @@ Have a question? Need help? Magento DevDocs, Maintainers, and other Contributors
 
 -  [Slack](https://magentocommeng.slack.com/messages/CAN932A3H) ([Join us](http://tinyurl.com/engcom-slack))
 -  [Twitter @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
--  [E-mail](mailto:DL-Magento-Doc-Feedback@magento.com)
 
 Thank you for contributing your brilliance to Magento DevDocs!!

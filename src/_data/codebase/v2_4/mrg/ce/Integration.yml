@@ -1,0 +1,11 @@
+---
+title: Magento_Integration
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Integration/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: |-
+  **Integration** enables third-party services to call the Web API by using access tokens.
+  It provides an admin UI that enables manual creation of integrations. Extensions can also provide a configuration
+  file so that an integration can be automatically pre-configured. The module also contains the data
+  model for request and access token management.

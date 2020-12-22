@@ -1,1 +1,0 @@
-../../../../../guides/v2.2/pattern-library/controls/buttons/buttons.md

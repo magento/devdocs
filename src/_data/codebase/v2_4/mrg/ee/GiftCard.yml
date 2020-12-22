@@ -1,0 +1,13 @@
+---
+title: Magento_GiftCard
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/GiftCard/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: "Magento_GiftCard module introduces new product type in the Magento application
+  called GiftCard Product.\nThis module extends existing functionality of Magento_Catalog
+  module by adding new product type.\n\nThis product option enables store owner to
+  offers gift cards in Virtual, Physical, or Combination format. \nWhen a gift card
+  is ordered, a unique code is generated that is emailed to a customer for virtual
+  gift cards, or exported for printing to physical gift cards. \nThis unique number
+  can only be redeemed by one customer."

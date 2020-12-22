@@ -1,1 +1,0 @@
-../../../../guides/v2.2/cloud/project/magento-env-yaml.md

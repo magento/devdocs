@@ -1,0 +1,1 @@
+../../../../v2.3/test/integration/annotations/magento-app-area.md

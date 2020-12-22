@@ -1,0 +1,10 @@
+---
+title: Magento_Enterprise
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/Enterprise/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: The Enterprise module switches the store to Enterprise edition by adding
+  a link to Enterprise customer support in Admin Panel, switching notifications from
+  Community to Enterprise-related ones, some small enhancements like displaying "Enterprise
+  Edition" in the bottom of the site, etc.

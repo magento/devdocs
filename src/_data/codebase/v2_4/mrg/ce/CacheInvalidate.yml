@@ -1,0 +1,9 @@
+---
+title: Magento_CacheInvalidate
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/CacheInvalidate/README.md
+last_modified_at: '2015-04-13 17:31:45 -0500'
+content: |-
+  The CacheInvalidate module is used to invalidate the Varnish cache if it is configured.
+  It listens for events that request the cache to be flushed or cause the cache to be invalid, then sends Varnish a purge request using cURL.

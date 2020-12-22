@@ -1,0 +1,8 @@
+---
+title: Magento_Vault
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Vault/README.md
+last_modified_at: '2015-12-02 14:06:21 +0200'
+content: The Magento_Vault module implements the integration with the Vault payment
+  gateway and makes the latter available as a payment method in Magento.

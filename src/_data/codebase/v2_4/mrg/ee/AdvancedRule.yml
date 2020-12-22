@@ -1,0 +1,7 @@
+---
+title: Magento_AdvancedRule
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/AdvancedRule/README.md
+last_modified_at: '2015-11-20 12:14:51 -0600'
+content: AdvancedRule module enhances the performance of rule processing.

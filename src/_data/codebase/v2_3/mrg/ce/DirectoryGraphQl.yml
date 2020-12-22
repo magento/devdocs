@@ -1,0 +1,9 @@
+---
+title: Magento_DirectoryGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/DirectoryGraphQl/README.md
+last_modified_at: '2019-01-31 09:12:38 -0500'
+content: |-
+  **DirectoryGraphQl** provides type and resolver information for the GraphQl module
+  to generate directory information endpoints.

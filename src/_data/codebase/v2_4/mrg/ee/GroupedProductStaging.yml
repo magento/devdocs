@@ -1,0 +1,28 @@
+---
+title: Magento_GroupedProductStaging
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/GroupedProductStaging/README.md
+last_modified_at: '2016-07-04 18:13:15 +0300'
+content: |-
+  ## Magento_GroupedProductStaging module
+
+  ## Overview
+
+  The Magento_GroupedProductStaging module is a part of the staging functionality in Magento EE. It enables you to stage products assigned to grouped product.
+
+  ## Implementation details
+
+  The Magento_GroupedProductStaging module extends functionality of the Magento_GroupedProduct to be used in staging. It adds Grouped Products field set to the Schedule Update form of a product.
+
+  ## Dependencies
+
+  You can find the list of modules that have dependencies on the Magento_GroupedProductStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
+
+  ## Extension points
+
+  [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GroupedProductStaging module.
+
+  ## Additional information
+
+  You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

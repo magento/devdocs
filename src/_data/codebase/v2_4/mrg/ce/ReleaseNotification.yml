@@ -1,0 +1,48 @@
+---
+title: Magento_ReleaseNotification
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/ReleaseNotification/README.md
+last_modified_at: '2019-09-06 19:55:12 +0300'
+content: "The **Release Notification Module** serves to provide a notification delivery
+  platform for displaying new features of a Magento installation or upgrade as well
+  as any other required release notifications.\n\n## Purpose and Content\n\n* Provides
+  a method of notifying administrators of changes, features, and functionality being
+  introduced in a Magento release.\n* Displays a modal containing a high level overview
+  of the features included in the installed or upgraded release of Magento upon the
+  initial login of each administrator into the Admin Panel for a given Magento version.\n*
+  The modal is enabled with pagination functionality to allow for easy navigation
+  between each modal page.\n* Each modal page includes detailed information about
+  a highlighted feature of the Magento release or other notification.\n* Release Notification
+  modal content is determined and provided by Magento Marketing.\n\n## Content Retrieval\n\nRelease
+  notification content is maintained by Magento for each Magento version, edition,
+  and locale. To retrieve the content, a response is returned from a request with
+  the following parameters:\n\n*  **version** = The Magento version that the client
+  has installed (ex. 2.3.0).\n*  **edition** = The Magento edition that the client
+  has installed (ex. Community).\n*  **locale** = The chosen locale of the admin user
+  (ex. en_US).\n\nThe module will make three attempts to retrieve content for the
+  parameters in the order listed:\n\n1. Version/Edition/Locale\n2. Version/Edition/en_US
+  (default locale)\n3. Version (default file for a Magento version)\n\nIf there is
+  no content to be retrieved after these requests, the release notification modal
+  will not be displayed to the admin user.\n\n## Content Guidelines\n\nThe modal system
+  in the ReleaseNotification module can have up to four modal pages. The admin user
+  can navigate between pages using the \"< Prev\" and \"Next >\" buttons at the bottom
+  of the modal. The last modal page will have a \"Done\" button that will close the
+  modal and record that the admin user has seen the notification. \n\nEach modal page
+  can have the following optional content:\n\n* Main Content\n    * Title\n    * URL
+  to the image to be displayed alongside the title\n    * Text body\n    * Bullet
+  point list\n* Sub Headings (highlighted overviews of the content to be detailed
+  on subsequent modal pages) - one to three Sub Headings may be displayed\n    * Sub
+  heading title\n    * URL to the image to be display before the sub heading title\n
+  \   * Sub heading content\n* Footer\n    * Footer content text\n\nThe Sub Heading
+  section is ideally used on the first modal page as a way to describe one to three
+  highlighted features that will be presented in greater detail on the following modal
+  pages. It is recommended to use the Main Content -> Text Body and Bullet Point lists
+  as the paragraph and list content displayed on a highlighted feature's detail modal
+  page.\n\nA clickable link to internal or external content in any text field will
+  be created by using the following format and opened in a new browser tab. Providing
+  the URL for the link followed by the text to be displayed for that link in brackets
+  will cause a clickable link to be created. The text between the brackets [text]
+  will be the text that the clickable link shows.\n\n### Link Format Example:\n\nThe
+  text: `https://devdocs.magento.com/ [Magento DevDocs].` will appear as [Magento
+  DevDocs](https://devdocs.magento.com/)."

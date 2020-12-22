@@ -1,0 +1,10 @@
+---
+title: Magento_Robots
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Robots/README.md
+last_modified_at: '2017-06-15 17:15:28 +0300'
+content: "The Robots module provides the following functionalities: \n* contains a
+  router to match application action class for requests to the `robots.txt` file;\n*
+  allows obtaining the content of the `robots.txt` file depending on the settings
+  of the current website."

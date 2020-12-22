@@ -1,0 +1,8 @@
+---
+title: Magento_LoginAsCustomer
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/LoginAsCustomer/README.md
+last_modified_at: '2020-04-15 04:18:57 -0500'
+content: The Magento_LoginAsCustomer module is responsible for ability to login into
+  customer account using the admin panel.

@@ -1,0 +1,8 @@
+---
+title: Magento_Worldpay
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/Worldpay/README.md
+last_modified_at: '2015-07-07 12:08:21 +0300'
+content: The Magento_Worldpay module implements the integration with the Worldpay
+  payment gateway and makes the latter available as a payment method in Magento.

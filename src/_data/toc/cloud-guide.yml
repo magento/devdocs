@@ -1,0 +1,642 @@
+label: Magento Commerce Cloud
+project-webint-basiclabel: Magento Commerce Cloud Guide
+pages:
+    - label: Overview
+      url: /cloud/bk-cloud.html
+      versionless: true
+      children:
+        - label: Onboarding tasks
+          url: /cloud/onboarding/onboarding-tasks.html
+          versionless: true
+
+    - label: Architecture
+      url: /cloud/architecture/cloud-architecture.html
+      versionless: true
+      children:
+        - label: Starter architecture
+          url: /cloud/architecture/starter-architecture.html
+          versionless: true
+
+        - label: Starter develop and deploy workflow
+          url: /cloud/architecture/starter-develop-deploy-workflow.html
+          versionless: true
+
+        - label: Pro architecture
+          url: /cloud/architecture/pro-architecture.html
+          versionless: true
+
+        - label: Pro develop and deploy workflow
+          url: /cloud/architecture/pro-develop-deploy-workflow.html
+          versionless: true
+
+        - label: Scaled architecture
+          url: /cloud/architecture/scaled-architecture.html
+          versionless: true
+
+    - label: Technologies and requirements
+      url: /cloud/requirements/cloud-requirements.html
+      versionless: true
+      children:
+        - label: Composer
+          url: /cloud/reference/cloud-composer.html
+          versionless: true
+
+        - label: Magento Cloud CLI
+          url: /cloud/reference/cli-ref-topic.html
+          versionless: true
+
+        -  label: ece-tools package
+           url: /cloud/reference/ece-tools-reference.html
+           versionless: true
+
+        - label: Git
+          url: /cloud/reference/git-integration.html
+          versionless: true
+
+        - label: SSH and sFTP
+          url: /cloud/env/environments-ssh.html
+          versionless: true
+
+        - label: PrivateLink
+          url: /cloud/project/privatelink-service.html
+          versionless: true
+
+        - label: New Relic
+          url: /cloud/project/new-relic.html
+          versionless: true
+
+        - label: SendGrid
+          url: /cloud/project/sendgrid.html
+          versionless: true
+
+    - label: Manage your project
+      url: /cloud/project/projects.html
+      versionless: true
+      children:
+
+        - label: Configure your project
+          url: /cloud/project/project-webint-basic.html
+          versionless: true
+
+        - label: Project structure
+          url: /cloud/project/project-start.html
+          versionless: true
+
+        - label: Manage user access
+          url: /cloud/project/user-admin.html
+          versionless: true
+
+        - label: Enable MFA for SSH
+          url: /cloud/project/project-enable-mfa-enforcement.html
+          versionless: true
+
+        - label: Manage branches with the Interface
+          url: /cloud/project/project-webint-branch.html
+          versionless: true
+
+        - label: Manage branches with the CLI
+          url: /cloud/env/environments-start.html
+          versionless: true
+
+        - label: Manage disk space
+          url: /cloud/project/manage-disk-space.html
+          versionless: true
+
+        - label: Monitor performance
+          url: /cloud/project/monitor-performance.html
+          versionless: true
+
+        - label: View logs
+          url: /cloud/project/log-locations.html
+          versionless: true
+
+        - label: Snapshots and backup management
+          url: /cloud/project/project-webint-snap.html
+          versionless: true
+
+        - label: Restore an environment
+          url: /cloud/env/restore-environment.html
+          versionless: true
+
+        - label: Profile database queries
+          url: /cloud/project/profile-database-queries.html
+          versionless: true
+
+    - label: Local development setup
+      url: /cloud/setup/first-time-setup.html
+      versionless: true
+      children:
+        - label: Prepare for manual setup
+          url: /cloud/before/before-workspace.html
+          versionless: true
+          children:
+            - label: Install Magento prerequisites
+              url: /cloud/before/before-workspace-magento-prereqs.html
+              versionless: true
+
+            - label: Enable SSH keys
+              url: /cloud/before/before-workspace-ssh.html
+              versionless: true
+
+            - label: Set up the Magento file system owner
+              url: /cloud/before/before-workspace-file-sys-owner.html
+              versionless: true
+
+            - label: Clone and branch the project
+              url: /cloud/before/before-setup-env-2_clone.html
+              versionless: true
+
+            - label: Install Magento
+              url: /cloud/before/before-setup-env-install.html
+              versionless: true
+
+            - label: First time deployment
+              url: /cloud/setup/first-time-deploy.html
+              versionless: true
+
+        - label: Optional - Configure Xdebug
+          url: /cloud/howtos/debug.html
+          versionless: true
+
+        - label: Optional - Install sample data
+          url: /cloud/howtos/sample-data.html
+          versionless: true
+
+    - label: Docker development
+      url: /cloud/docker/docker-development.html
+      versionless: true
+      children:
+        - label: Docker container architecture
+          url: /cloud/docker/docker-containers.html
+          versionless: true
+          children:
+            - label: Service containers
+              url: /cloud/docker/docker-containers-service.html
+              versionless: true
+    
+            - label: CLI containers
+              url: /cloud/docker/docker-containers-cli.html
+              versionless: true
+              
+            - label: Synchronizing data
+              url: /cloud/docker/docker-syncing-data.html
+              versionless: true
+              
+        - label: Configure Docker
+          url: /cloud/docker/docker-config.html
+          versionless: true
+          children:
+            - label: Xdebug for Docker
+              url: /cloud/docker/docker-development-debug.html
+              versionless: true
+
+            - label: Set up multiple websites or stores
+              url: /cloud/docker/docker-multi-website.html
+              versionless: true
+
+            - label: Manage the database
+              url: /cloud/docker/docker-manage-database.html
+              versionless: true
+
+            - label: Enable split database solution
+              url: /cloud/docker/docker-split-db.html
+              versionless: true
+
+            - label: Manage cron jobs
+              url: /cloud/docker/docker-manage-cron-jobs.html
+              versionless: true
+  
+            - label: Extend Docker
+              url: /cloud/docker/docker-extend.html
+              versionless: true
+
+            - label: Add Blackfire.io service
+              url:  /cloud/docker/docker-config-blackfire-io.html
+              versionless: true
+
+        - label: Launch Docker
+
+          children: 
+            - label: Production mode
+              url: /cloud/docker/docker-mode-production.html
+              versionless: true
+ 
+            - label: Developer mode
+              url: /cloud/docker/docker-mode-developer.html
+              versionless: true
+
+        - label: Functional Testing
+          children:
+            - label: Magento application testing
+              url: /cloud/docker/docker-test-app-mftf.html
+              versionless: true
+
+            - label: Magento Cloud code testing
+              url: /cloud/docker/docker-test-magecloud-pkg-code.html
+              versionless: true
+
+        - label: Docker quick reference
+          url: /cloud/docker/docker-quick-reference.html
+          versionless: true
+          
+    - label: Integrations
+      url: /cloud/integrations/cloud-integrations.html
+      versionless: true
+      children:
+        - label: Bitbucket integration
+          url: /cloud/integrations/bitbucket-integration.html
+          versionless: true
+
+        - label: GitHub integration
+          url: /cloud/integrations/github-integration.html
+          versionless: true
+
+        - label: GitLab integration
+          url: /cloud/integrations/gitlab-integration.html
+          versionless: true
+
+        - label: Health notifications
+          url: /cloud/integrations/health-notifications.html
+          versionless: true
+
+    - label: Import existing code into a project
+      url: /cloud/setup/first-time-setup-import-first-steps.html
+      versionless: true
+      children:
+        - label: Prepare your existing Magento Commerce system
+          url: /cloud/setup/first-time-setup-import-prepare.html
+          versionless: true
+
+        - label: Import Magento Commerce code
+          url: /cloud/setup/first-time-setup-import-import.html
+          versionless: true
+
+    - label: Configure your store
+      url: /cloud/configure/configuration-overview.html
+      versionless: true
+      children:
+        - label: Best practices for store configuration
+          url: /cloud/configure/configure-best-practices.html
+          versionless: true
+
+        - label: Set up PayPal
+          url: /cloud/live/paypal-onboarding.html
+          versionless: true
+
+        - label: Set up Magento B2B
+          url: /cloud/configure/setup-b2b.html
+          versionless: true
+
+        - label: Set up cron jobs
+          url: /cloud/configure/setup-cron-jobs.html
+          versionless: true
+
+        - label: Set up multiple Cloud websites or stores
+          url: /cloud/project/project-multi-sites.html
+          versionless: true
+
+        - label: Install, manage, and upgrade modules
+          url: /cloud/howtos/install-components.html
+          versionless: true
+
+        - label: Install a theme
+          url: /cloud/howtos/custom-theme.html
+          versionless: true
+
+        - label: Import URL Rewrites
+          url: /cloud/configure/import-url-rewrites.html
+          versionless: true
+
+    - label: Configure Fastly services
+      url: /cloud/cdn/cloud-fastly.html
+      versionless: true
+      children:
+        - label: Set up Fastly
+          url: /cloud/cdn/configure-fastly.html
+          versionless: true
+          children:
+            - label: Customize cache configuration
+              url: /cloud/cdn/configure-fastly-customize-cache.html
+              versionless: true
+            - label: Customize error and maintenance pages
+              url: /cloud/cdn/cloud-fastly-custom-response.html
+              versionless: true
+              
+        - label: Web Application Firewall
+          url: /cloud/cdn/fastly-waf-service.html
+          versionless: true
+
+        - label: Image Optimization
+          url: /cloud/cdn/fastly-image-optimization.html
+          versionless: true
+
+        - label: Custom VCL snippets
+          url: /cloud/cdn/cloud-vcl-custom-snippets.html
+          versionless: true
+
+          children:
+            - label: Reroute requests to a CMS backend
+              url: /cloud/cdn/fastly-vcl-wordpress.html
+              versionless: true
+
+            - label: Block referral spam
+              url: /cloud/cdn/fastly-vcl-badreferer.html
+              versionless: true
+
+            - label: IP allow list
+              url: /cloud/cdn/fastly-vcl-allowlist.html
+              versionless: true
+
+            - label: IP block list
+              url: /cloud/cdn/fastly-vcl-blocking.html
+              versionless: true
+
+            - label: Bypass Fastly cache
+              url: /cloud/cdn/fastly-vcl-bypass-to-origin.html
+              versionless: true
+
+        - label: Fastly troubleshooting
+          url: /cloud/cdn/trouble-fastly.html
+          versionless: true
+
+    - label: Configure environments
+      url: /cloud/env/environments.html
+      versionless: true
+      children:
+        - label: Application
+          url: /cloud/project/magento-app.html
+          versionless: true
+          children:
+            - label: Properties
+              url: /cloud/project/magento-app-properties.html
+              versionless: true
+
+            - label: Variables
+              url: /cloud/project/magento-app-variables.html
+              versionless: true
+
+            - label: PHP application
+              url: /cloud/project/magento-app-php-application.html
+              versionless: true
+
+            - label: Workers
+              url: /cloud/project/magento-app-workers.html
+              versionless: true
+
+            - label: Set cache for static files
+              url: /cloud/project/set-cache.html
+              versionless: true
+
+        - label: Build and deploy
+          url: /cloud/project/magento-env-yaml.html
+          versionless: true
+
+          children:
+            - label: Set up notifications
+              url: /cloud/env/setup-notifications.html
+              versionless: true
+
+            - label: Logging handlers
+              url: /cloud/env/log-handlers.html
+              versionless: true
+
+        - label: Routes
+          url: /cloud/project/routes.html
+          versionless: true
+          children:
+            - label: Caching
+              url: /cloud/project/project-routes-more-cache.html
+              versionless: true
+
+            - label: Redirects
+              url: /cloud/project/project-routes-more-redir.html
+              versionless: true
+
+            - label: Server side includes
+              url: /cloud/project/project-routes-more-ssi.html
+              versionless: true
+
+        - label: Services
+          url: /cloud/project/services.html
+          versionless: true
+          children:
+            - label: Set up MySQL service
+              url: /cloud/project/services-mysql.html
+              versionless: true
+
+            - label: Set up Redis service
+              url: /cloud/project/services-redis.html
+              versionless: true
+
+            - label: Set up Elasticsearch service
+              url: /cloud/project/services-elastic.html
+              versionless: true
+    
+            - label: Set up RabbitMQ service
+              url: /cloud/project/services-rabbit.html
+              versionless: true
+
+        - label: PHP (php.ini)
+          url: /cloud/project/magento-app-php-ini.html
+          versionless: true
+
+        - label: Environment variables
+          url: /cloud/env/variables-intro.html
+          versionless: true
+          children:
+            - label: ADMIN variables
+              url: /cloud/env/environment-vars_magento.html
+              versionless: true
+
+            - label: Global variables
+              url: /cloud/env/variables-global.html
+              versionless: true
+
+            - label: Build variables
+              url: /cloud/env/variables-build.html
+              versionless: true
+
+            - label: Cloud variables
+              url: /cloud/env/variables-cloud.html
+              versionless: true
+
+            - label: Deploy variables
+              url: /cloud/env/variables-deploy.html
+              versionless: true
+
+            - label: Post-deploy variables
+              url: /cloud/env/variables-post-deploy.html
+              versionless: true
+
+            - label: Working with variables
+              url: /cloud/env/working-with-variables.html
+              versionless: true
+
+
+    - label: Configuration management for store settings
+      url: /cloud/live/sens-data-over.html
+      versionless: true
+      children:
+        - label: Example of managing system-specific settings
+          url: /cloud/live/sens-data-initial.html
+          versionless: true
+
+    - label: Optimize deployment
+      url: /cloud/deploy/optimize-cloud-deployment.html
+      versionless: true
+      children:
+        - label: Cloud deployment process
+          url: /cloud/deploy/cloud-deployment-process.html
+          versionless: true
+
+        - label: Scenario-based deployment
+          url: /cloud/deploy/scenario-based-deployment.html
+          versionless: true
+
+        - label: Zero downtime deployment
+          url: /cloud/deploy/reduce-downtime.html
+          versionless: true
+
+        - label: Static content deployment
+          url: /cloud/deploy/static-content-deployment.html
+          versionless: true
+
+        - label: Smart wizards
+          url: /cloud/deploy/smart-wizards.html
+          versionless: true
+    - label: Deploy your store
+      url: /cloud/live/stage-prod-live.html
+      versionless: true
+      children:
+        - label: Deployment process
+          url: /cloud/reference/discover-deploy.html
+          versionless: true
+
+        - label: Continuous deployment
+          url: /cloud/deploy/continuous-deployment.html
+          versionless: true
+
+        - label: Protective block
+          url: /cloud/live/live-prot.html
+          versionless: true
+
+        - label: Build and deploy on local
+          url: /cloud/live/live-sanity-check.html
+          versionless: true
+
+        - label: Prepare to deploy to Staging and Production
+          url: /cloud/live/stage-prod-migrate-prereq.html
+          versionless: true
+
+        - label: Deploy code and migrate static files and data
+          url: /cloud/live/stage-prod-migrate.html
+          versionless: true
+
+        - label: Test deployment
+          url: /cloud/live/stage-prod-test.html
+          versionless: true
+
+        - label: Error message reference for ece-tools
+          url: /cloud/reference/ece-tools-error-reference.html
+          versionless: true
+
+    - label: Site launch
+      url: /cloud/live/live.html
+      versionless: true
+      children:
+        - label: Launch checklist
+          url: /cloud/live/go-live-checklist.html
+          versionless: true
+
+        - label: Launch steps
+          url: /cloud/live/launch-steps.html
+          versionless: true
+
+    - label: Troubleshooting
+      url: /cloud/trouble/trouble.html
+      versionless: true
+      children:
+        
+        - label: Troubleshoot deployment
+          url: /cloud/trouble/troubleshoot-deployment.html
+          versionless: true
+
+        - label: Incorrect credentials
+          url: /cloud/trouble/trouble_ce-creds.html
+          versionless: true
+
+        - label: Resolve issues with a new project
+          url: /cloud/trouble/trouble_proj-startover.html
+          versionless: true
+
+        - label: Component deployment failure
+          url: /cloud/trouble/trouble_comp-deploy-fail.html
+          versionless: true
+
+        - label: Resolve issues with encryption key
+          url: /cloud/trouble/trouble-crypt-key-variable.html
+          versionless: true
+
+        - label: Resolve issues with HTML minification
+          url: /cloud/trouble/trouble-error-html-minification.html
+          versionless: true
+
+        - label: Resolve issues with Google Analytics during deployment
+          url: /cloud/trouble/trouble-google-analytics-deploy.html
+          versionless: true
+
+        - label: Site availability
+          url: /cloud/trouble/site-availability.html
+          versionless: true
+
+        - label: Add site map and search engine robots
+          url: /cloud/trouble/robots-sitemap.html
+          versionless: true
+
+        - label: Theme troubleshooting
+          url: /cloud/trouble/theme-troubleshooting.html
+          versionless: true
+
+    - label: Upgrades and patches
+      url: /cloud/project/project-upgrade-parent.html
+      versionless: true
+      children:
+        - label: Update ece-tools version
+          url: /cloud/project/ece-tools-update.html
+          versionless: true
+
+        - label: Apply patches
+          url: /cloud/project/project-patch.html
+          versionless: true
+
+        - label: Upgrade Magento version
+          url: /cloud/project/project-upgrade.html
+          versionless: true
+
+        - label: Upgrade to use ece-tools
+          url: /cloud/project/ece-tools-upgrade-project.html
+          versionless: true
+
+    - label: Release notes
+      url: /cloud/release-notes/cloud-tools.html
+      versionless: true
+      children:
+        - label: ece-tools
+          url: /cloud/release-notes/ece-release-notes.html
+          versionless: true
+
+        - label: Magento Cloud Patches
+          url: /cloud/release-notes/mcp-release-notes.html
+          versionless: true
+
+        - label: Magento Cloud Docker
+          url: /cloud/release-notes/mcd-release-notes.html
+          versionless: true
+
+        - label: Magento Cloud Components
+          url: /cloud/release-notes/mcc-release-notes.html
+          versionless: true
+
+        - label: Backward incompatible changes
+          url: /cloud/release-notes/backward-incompatible-changes.html
+          versionless: true

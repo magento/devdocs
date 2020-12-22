@@ -1,0 +1,10 @@
+---
+title: Magento_CheckoutAddressSearchGiftRegistry
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/CheckoutAddressSearchGiftRegistry/README.md
+last_modified_at: '2019-04-05 18:54:17 -0500'
+content: |-
+  ## CheckoutAddressSearchGiftRegistry module Overview
+
+  CheckoutAddressSearchGiftRegistry module extends Magento_GiftRegistry and adds search customer shipping and billing addresses functionality on checkout to gift registry only if customer address search is enabled in configuration.

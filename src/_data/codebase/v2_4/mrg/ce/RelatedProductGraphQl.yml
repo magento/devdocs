@@ -1,0 +1,8 @@
+---
+title: Magento_RelatedProductGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/RelatedProductGraphQl/README.md
+last_modified_at: '2019-05-08 12:53:00 -0500'
+content: "**RelatedProductGraphQl** provides endpoints for getting  Cross Sell / Related/
+  Up Sell products data."

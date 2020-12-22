@@ -1,0 +1,7 @@
+---
+title: Magento_Version
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Version/README.md
+last_modified_at: '2015-01-29 16:15:56 -0600'
+content: Magento\Version Allows to get Magento version and edition by HTTP GET request

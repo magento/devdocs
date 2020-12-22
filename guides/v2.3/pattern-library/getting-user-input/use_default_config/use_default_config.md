@@ -1,1 +1,0 @@
-../../../../../guides/v2.2/pattern-library/getting-user-input/use_default_config/use_default_config.md

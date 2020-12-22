@@ -1,8 +1,0 @@
----
-title: Magento_AuthorizenetGraphQl
-source_repo: magento2ce
-release: 2.3.3
-github_path: app/code/Magento/AuthorizenetGraphQl/README.md
-last_modified_at: '2019-05-15 15:18:12 -0500'
-content: " **AuthorizenetGraphQl** defines the data types needed to pass payment information
-  data from the client to Magento.\n"

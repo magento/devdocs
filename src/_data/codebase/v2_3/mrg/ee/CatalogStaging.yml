@@ -1,0 +1,131 @@
+---
+title: Magento_CatalogStaging
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/CatalogStaging/README.md
+last_modified_at: '2016-07-13 17:35:04 -0500'
+content: |-
+  <h2>Magento_CatalogStaging module</h2>
+
+  ## Overview
+
+  The Magento_CatalogStaging module is a part of the staging functionality in Magento EE. It enables you to create new catalog updates or add new changes to the existing store updates. In other words, you can modify the category and product entity attributes in updates. These updates are shown on the content dashboard.
+
+  ## Implementation Details
+
+  The Magento_CatalogStaging module extends the Magento_Catalog module functionality. It changes a category and product creation page, and related database tables to make them compatible with the Magento Staging Framework.
+
+  The following fields are removed from the Magento_Catalog module forms:
+
+  - Category form:
+    - Schedule design update from
+    - Schedule design update to
+
+  - Product form:
+    - Set as new from
+    - Set as new to
+    - Schedule design update from
+    - Schedule design update to
+    - Special price from
+    - Special price to
+
+  They are all related to the time period attributes, and now can be set using staging functionality, when you schedule a new update as:
+
+  - Special price
+  - Schedule design update
+  - Set product as new
+
+  ### Category Staging
+
+  The Magento_CatalogStaging module enables you to stage the following category attributes:
+
+  - Enable/disable Category
+  - Include in Menu
+  - Category Name
+  - Content
+      - Category Image
+      - Description
+      - CMS Blocks
+  - Display Settings
+      - Display Mode
+      - Anchor
+      - Product Sorting
+      - Layered Navigation Price Step
+  - Search Engine Optimization
+      - Meta Title
+      - Meta Keywords
+      - Meta Description
+  - Design
+      - Layout
+      - Layout Update XML
+      - New Theme
+
+  The following category attributes cannot be staged:
+
+  - Assignment of Products to a Category
+  - URL
+
+  ### Product Staging
+
+  The Magento_CatalogStaging module enables you to stage the following product attributes:
+
+  - Attribute Set
+  - Product Name
+  - Price
+  - Weight attributes
+  - Visibility
+  - New(flag)
+  - Country of Manufacture
+  - Description
+  - Websites(assignment)
+  - Design
+    - Layout
+    - Display Product Options In
+    - Layout Update XML
+  - Related Products, Up-Sells, and Cross-Sells
+
+  Also, you can stage any other attribute added in Admin.
+
+  The following product attributes cannot be staged:
+
+  - Quantity
+  - URL Key
+  - SKU
+
+  ### Installation Details
+
+  The Magento_CatalogStaging module makes irreversible changes in a database during installation. It means, that you cannot uninstall this module.
+
+  ## Dependencies
+
+  You can find the list of modules that have dependencies with the Magento_CatalogStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
+
+  ## Extension Points
+
+  Extension points enable extension developers to interact with the Magento_CatalogStaging module. You can interact with the Magento_CatalogStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
+
+  [Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CatalogStaging module.
+
+  ### UI components
+
+  You can extend product and category updates using the UI components located in the `Magento\CatalogStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html).
+
+  ### Layouts
+
+  You can extend and override layouts in the `Magento\CatalogStaging\view\adminhtml\layout` directory.
+  For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).
+
+  ### Events
+
+  You can use the following events:
+
+  - `catalog_category_prepare_save` event in the `\Magento\CatalogStaging\Model\Category\Hydrator::hydrate()` method. Parameters:
+    - `category` is a category to be saved (`\Magento\Catalog\Model\Category` class).
+    - `request` is a request object with the `\Magento\Framework\App\RequestInterface` interface.
+  - `controller_action_catalog_product_save_entity_after` event in the `\Magento\CatalogStaging\Model\Product\Hydrator::hydrate()` method. Parameters:
+    - `controller` is a hydrator object (`\Magento\CatalogStaging\Model\Product\Hydrator`).
+    - `product` is a product object (`\Magento\Catalog\Model\Product` class.
+
+  ## Additional information
+
+  For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

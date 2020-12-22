@@ -1,0 +1,9 @@
+---
+title: Magento_CatalogEvent
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/CatalogEvent/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  Magento_CatalogEvent module is designed for creating campaigns that encourage customers to buy products with lower prices.
+  There are three types of the catalog events: upcoming, open, closed.

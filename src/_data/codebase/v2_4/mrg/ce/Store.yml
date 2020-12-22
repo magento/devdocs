@@ -1,0 +1,11 @@
+---
+title: Magento_Store
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Store/README.md
+last_modified_at: '2014-10-24 14:51:44 -0700'
+content: |-
+  The Store module provides one of the basic and major features of a content management system for e-commerce web
+  sites by creating and managing a store for the customers to conduct online-shopping. Stores can be combined in groups,
+  and are linked to a specific website. All store related configurations (currency, locale, scope etc.), management and
+  storage maintenance are covered under this module.

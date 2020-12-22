@@ -1,0 +1,1 @@
+../../v2.3/frontend-dev-guide/cache_for_frontdevs.md

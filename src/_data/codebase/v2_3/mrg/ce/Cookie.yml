@@ -1,0 +1,8 @@
+---
+title: Magento_Cookie
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Cookie/README.md
+last_modified_at: '2015-01-28 16:50:13 -0600'
+content: Magento_Cookie module allows enabling and configuring HTTP cookie related
+  settings for the store. These settings are available in the store administration.

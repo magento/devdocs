@@ -1,0 +1,14 @@
+---
+title: Magento_CheckoutAddressSearch
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/CheckoutAddressSearch/README.md
+last_modified_at: '2019-04-10 17:47:51 -0500'
+content: |-
+  ## CheckoutAddressSearch module Overview
+
+  CheckoutAddressSearch module extends Magento_Checkout and adds functionality to search customer shipping and billing addresses with ui-select component.
+
+  It prevents loading and rendering of all customer addresses on checkout.
+
+  This feature is disabled by default and can be configured in Magento Admin Sales Checkout options. Default limit of addresses after which address search is enabled is 10 and it can be configured in Magento Admin.

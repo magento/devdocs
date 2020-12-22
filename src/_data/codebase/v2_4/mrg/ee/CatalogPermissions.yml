@@ -1,0 +1,13 @@
+---
+title: Magento_CatalogPermissions
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/CatalogPermissions/README.md
+last_modified_at: '2015-05-14 15:09:36 +0300'
+content: |-
+  Magento_CatalogPermissions feature allows to restrict the following permissions:
+  - Browse categories
+  - Display product prices
+  - Add to cart
+  - Catalog search
+  The permissions can be restricted for specific customer groups and guest users.

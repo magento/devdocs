@@ -1,3 +1,6 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
 # frozen_string_literal: true
 
 module LinkChecker
@@ -14,9 +17,7 @@ module LinkChecker
         @link = create_element(node)
         line = node.line
 
-        if slash?
-          return add_issue('Remove double forward slashes from URLs', line: line)
-        end
+        return add_issue('Remove double forward slashes from URLs', line: line) if slash?
       end
     end
   end

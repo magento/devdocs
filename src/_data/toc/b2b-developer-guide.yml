@@ -1,0 +1,75 @@
+label: B2B Developer Guide
+pages:
+
+    - label: Introduction
+      url: /b2b/bk-b2b.html
+      edition: ee-only
+
+    - label: Integrate with B2B using REST
+      url: /b2b/integrations.html
+      children:
+
+            - label: Company
+              children:
+
+                - label: Integrate with the Company module
+                  url: /b2b/company.html
+
+                - label: Manage company objects
+                  url: /b2b/company-object.html
+
+                - label: Manage company users
+                  url: /b2b/company-users.html
+
+                - label: Manage company roles
+                  url: /b2b/roles.html
+
+                - label: Manage company structures
+                  url: /b2b/company-structures.html
+
+            - label: Company credit
+              children:
+
+                - label: Integrate with the CompanyCredit module
+                  url: /b2b/company-credit.html
+
+                - label: Manage company credit
+                  url: /b2b/credit-manage.html
+
+            - label: Shared Catalog
+              children:
+
+                - label: Integrate with the SharedCatalog module
+                  url: /b2b/shared-catalog.html
+
+                - label: Manage shared catalogs
+                  url: /b2b/shared-cat-manage.html
+
+                - label: Assign categories and products
+                  url: /b2b/shared-cat-product-assign.html
+
+                - label: Assign companies
+                  url: /b2b/shared-cat-company.html
+
+            - label: Negotiable Quotes
+              children:
+
+                - label: Integrate with the NegotiableQuote module
+                  url: /b2b/negotiable-quote.html
+
+                - label: Manage negotiable quotes
+                  url: /b2b/negotiable-manage.html
+
+                - label: Update a negotiable quote
+                  url: /b2b/negotiable-update.html
+
+                - label: Negotiable quote checkout
+                  url: /b2b/negotiable-checkout.html
+
+                - label: Place a negotiable quote order
+                  url: /b2b/negotiable-order-workflow.html
+
+    - label: Develop B2B extensions
+      url: /b2b/extensions.html
+    - label: B2B Release Notes
+      url: /release-notes/b2b-release-notes.html

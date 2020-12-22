@@ -1,8 +1,6 @@
 # Jekyll Algolia settings for indexing https://community.algolia.com/jekyll-algolia/options.html
 algolia:
   files_to_exclude:
-    - guides/m1x/**/*.html
-    - guides/m1x/**/*.md
     - swagger
     - redoc
   # Index HTML elements, especially code samples.

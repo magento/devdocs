@@ -1,0 +1,30 @@
+---
+title: Magento_BundleImportExportStaging
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/BundleImportExportStaging/README.md
+last_modified_at: '2017-05-26 18:23:26 +0300'
+content: |-
+  <h2>Magento_BundleImportExportStaging module</h2>
+
+  ## Overview
+
+  The Magento_BundleImportExportStaging module is a part of the staging functionality in Magento EE. It extends the Magento_BundleImportExport module functionality to be used in staging mode.
+
+  ## Implementation Details
+
+  The Magento_BundleImportExportStaging module:
+
+   * adds plugin on `\Magento\BundleImportExport\Model\Import\Product\Type\Bundle\RelationsDataSaver` to add sequence information to bundle product relations (options, selections, etc.)
+
+  ## Dependencies
+
+  You can find the list of modules the Magento_BundleImportExportStaging module depends on in the `require` section of the `composer.json` file located in the same directory as this `README.md` file.
+
+  ## Extension Points
+
+  The Magento_BundleImportExportStaging module does not provide any specific extension points.
+
+  ## Additional information
+
+  For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com).

@@ -1,0 +1,13 @@
+---
+title: Magento_GiftRegistry
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/GiftRegistry/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  Magento\GiftRegistry module that allows to create sets of gifts specified for specific holiday(Birthday, Wedding, etc).
+  It resembles wishlist, but there are differences. You can describe Gift Registry as a wishlist of products you would
+  like to share with other people so they could purchase anything from the list. Customer can even set some shipping
+  address to a gift registry, thus anyone who follows this list with a purchase would automatically have that shipping
+  address set by default during checkout. Customer can manage his gift registries in his profile. The gift registry can be
+  shared or stay private. Every gift registry has system attributes and can have custom attributes.

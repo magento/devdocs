@@ -1,0 +1,1 @@
+../../../v2.3/graphql/queries/get-payflow-link-token.md

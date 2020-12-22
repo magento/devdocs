@@ -1,0 +1,7 @@
+---
+title: Magento_MysqlMq
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/MysqlMq/README.md
+last_modified_at: '2018-02-21 14:27:42 +0200'
+content: "**MysqlMq** provides message queue implementation based on MySQL."

@@ -1,0 +1,1 @@
+../../../v2.3/javascript-dev-guide/javascript/product-frontend-storage.md

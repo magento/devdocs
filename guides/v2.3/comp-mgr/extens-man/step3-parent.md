@@ -1,1 +1,0 @@
-../../../v2.2/comp-mgr/extens-man/step3-parent.md

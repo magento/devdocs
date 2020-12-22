@@ -1,0 +1,8 @@
+---
+layout: null
+---
+User-agent: *
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
+Disallow: /guides/v2.2/
+Disallow: /guides/v2.3/mtf/
+Disallow: /guides/v2.4/mtf/

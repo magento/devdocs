@@ -1,0 +1,8 @@
+---
+title: Magento_Cybersource
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/Cybersource/README.md
+last_modified_at: '2015-06-19 14:49:00 +0300'
+content: The Magento_Cybersource module implements the integration with the Cybersource
+  payment gateway and makes the latter available as a payment method in Magento.

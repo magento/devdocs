@@ -1,0 +1,41 @@
+label: Product Recommendations
+pages:
+- label: Overview
+  url: /recommendations/product-recs.html
+  versionless: true
+
+- label: How to Implement Product Recommendations
+  url: /recommendations/implementation.html
+  versionless: true
+
+- label: Install and Configure Recommendations
+  url: /recommendations/install-configure.html
+  versionless: true
+
+- label: Recommendation Events
+  url: /recommendations/events.html
+  versionless: true
+
+- label: Verify Event Collection
+  url: /recommendations/verify.html
+  versionless: true
+
+- label: Handle Cookie Restrictions
+  url: /recommendations/setting-cookie.html
+  versionless: true
+
+- label: Test Recommendations
+  url: /recommendations/test.html
+  versionless: true
+
+- label: Customize Recommendations
+  url: /recommendations/customize.html
+  versionless: true
+
+- label: Recommendations SDK
+  url: /recommendations/recs-api.html
+  versionless: true
+
+- label: Release Notes
+  url: /recommendations/release-notes.html
+  versionless: true

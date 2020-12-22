@@ -1,0 +1,9 @@
+---
+title: Magento_Newsletter
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Newsletter/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: Magento_Newsletter module allows clients to subscribe for information about
+  new promotions and discounts and allows store administrators to send newsletters
+  to clients subscribed for them.

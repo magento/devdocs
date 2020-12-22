@@ -1,0 +1,9 @@
+---
+title: Magento_RmaGraphQl
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/RmaGraphQl/README.md
+last_modified_at: '2018-01-16 16:07:42 -0600'
+content: |-
+  **RmaGraphQl** provides type information for the GraphQl module
+  to generate rma fields for catalog and product information endpoints.

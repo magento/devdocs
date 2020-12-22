@@ -1,0 +1,9 @@
+---
+title: Magento_ScheduledImportExport
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/ScheduledImportExport/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  Magento_ScheduledImportExport functionality allows to simplify routine of importing and/or exporting data in the store by automating this process.
+  Admin user can create a rule for importing or exporting new data (which could be Products, Customers and Customer Addresses) and specify date and time of the operation.

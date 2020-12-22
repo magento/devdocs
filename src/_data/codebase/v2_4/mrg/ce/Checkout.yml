@@ -1,0 +1,10 @@
+---
+title: Magento_Checkout
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Checkout/README.md
+last_modified_at: '2014-10-24 14:51:44 -0700'
+content: |-
+  Magento\Checkout module allows merchant to register sale transaction with the customer. Module implements consumer flow
+  that includes such actions like adding products to cart, providing shipping and billing information and confirming
+  the purchase.

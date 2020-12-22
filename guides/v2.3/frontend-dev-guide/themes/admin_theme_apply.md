@@ -1,1 +1,0 @@
-../../../../guides/v2.2/frontend-dev-guide/themes/admin_theme_apply.md

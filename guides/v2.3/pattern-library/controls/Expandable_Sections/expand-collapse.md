@@ -1,1 +1,0 @@
-../../../../../guides/v2.2/pattern-library/controls/Expandable_Sections/expand-collapse.md

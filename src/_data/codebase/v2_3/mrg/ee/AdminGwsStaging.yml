@@ -1,0 +1,30 @@
+---
+title: Magento_AdminGwsStaging
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/AdminGwsStaging/README.md
+last_modified_at: '2020-03-19 10:46:04 -0500'
+content: |-
+  <h2>Magento_AdminGwsStaging module</h2>
+
+  ## Overview
+
+  The Magento_AdminGwsStaging module is a part of the staging functionality in Magento EE. It extends the Magento_AdminGws module functionality to be used in staging mode.
+
+  ## Implementation Details
+
+  The Magento_AdminGwsStaging module:
+
+   * adds plugin on `\Magento\AdminGwsStaging\Plugin\PreviewUrlBuilder` to add default store view the current user has access to.
+
+  ## Dependencies
+
+  You can find the list of modules the Magento_AdminGwsStaging module depends on in the `require` section of the `composer.json` file located in the same directory as this `README.md` file.
+
+  ## Extension Points
+
+  The Magento_AdminGwsStaging module does not provide any specific extension points.
+
+  ## Additional information
+
+  For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com).

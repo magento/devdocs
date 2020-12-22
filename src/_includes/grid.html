@@ -1,0 +1,10 @@
+<div class="columns {% if include.large %}large-{{include.large}}{% endif %}">
+  {% for section in include.sections %}
+    <div class="column">
+      <a href="{{ site.baseurl }}{{ section.url }}" class="card">
+        <h3 class="no_toc">{{ section.title }}</h3>
+        <p>{{ section.content }}</p>
+      </a>
+    </div>
+  {% endfor %}
+  </div>

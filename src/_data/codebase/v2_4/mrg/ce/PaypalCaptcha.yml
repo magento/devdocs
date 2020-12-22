@@ -1,0 +1,8 @@
+---
+title: Magento_PaypalCaptcha
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/PaypalCaptcha/README.md
+last_modified_at: '2019-03-21 15:00:40 -0500'
+content: The PayPal Captcha module provides a possibility to enable Captcha validation
+  on Payflow Pro payment form.

@@ -1,0 +1,1 @@
+../../../v2.3/rest/modules/catalog-pricing.md

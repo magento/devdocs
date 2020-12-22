@@ -1,0 +1,31 @@
+---
+title: Magento_PurchaseOrderRule
+source_repo: magento2b2b
+release: 1.3.0
+github_path: app/code/Magento/PurchaseOrderRule/README.md
+last_modified_at: '2020-05-13 14:36:51 -0500'
+content: "​\n## Overview\n​\nThe PurchaseOrderRule module contains functionality for
+  creating and enforcing approval rules for purchase orders. Companies in a B2B environment
+  can use these rules to enforce purchasing guidelines and limits.\n​\nWith this module
+  installed, you may create rules such as:\n​\n-  Purchase orders over $X require
+  approvals from a manager.\n-  Purchase orders containing more than $Y unique products
+  require approval.\n-  Purchase orders with shipping charges greater than $Z require
+  approval.\n​\n## Installation details\n​\nThe PurchaseOrderRule module has dependencies
+  on the following modules:\n​\n-  Magento_Company\n-  Magento_Customer\n-  Magento_Directory\n-
+  \ Magento_Payment\n-  Magento_PurchaseOrder\n-  Magento_Quote\n-  Magento_Rule\n-
+  \ Magento_SalesRule\n-  Magento_Shipping\n-  Magento_Theme\n-  Magento_Ui\n​\n\nwhich
+  must be installed and enabled first. This module does not create any backward incompatible
+  changes. It can be uninstalled or deactivated at any time.\n​\n## Structure\n​\n[Learn
+  about a typical file structure for a Magento 2 module](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html).\n​\n##
+  Extensibility\n\n​Extension developers can interact with the Magento_PurchaseOrderRule
+  module. For more information about the Magento extension mechanism, see [Magento
+  plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n
+  \n[The Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_PurchaseOrderRule module.\n
+  \n### Layouts\n\nThis module introduces the following layouts and layout handles
+  in the `view/frontend/layout` directory:\n\n- `purchaseorderrule_create_index`\n-
+  `purchaseorderrule_edit_index`\n- `purchaseorderrule_form`\n- `purchaseorderrule_index_index`\n​\n###
+  UI components\n​\nYou can extend the purchase order rule listings using the `purchase_order_rule_listing.xml`
+  and `require_my_approval_purchaseorder_listing.xml` configuration files.\n \n##
+  Additional information\n​\nCheck the [B2B release notes](https://devdocs.magento.com/guides/v2.4/release-notes/b2b-release-notes.html)
+  for more information on new changes."

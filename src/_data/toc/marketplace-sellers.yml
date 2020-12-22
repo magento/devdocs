@@ -1,0 +1,171 @@
+label: Marketplace Sellers
+versionless: true
+pages:
+- label: Getting Started
+  url: /marketplace/sellers/getting-started.html
+  versionless: true
+  children:
+
+    - label: Before You Begin
+      url: /marketplace/sellers/before-you-begin.html
+      versionless: true
+
+    - label: Extension Quality Program
+      url: /marketplace/sellers/extension-quality-program.html
+      versionless: true
+
+- label: Seller Overview
+  url: /marketplace/sellers/seller-overview.html
+  versionless: true
+  children:
+
+    - label: Your Seller Account
+      url: /marketplace/sellers/account-setup.html
+      versionless: true
+
+    - label: Account Setup Process
+      url: /marketplace/sellers/account-setup-process.html
+      versionless: true
+
+    - label: Register as a Developer
+      url: /marketplace/sellers/developer-register.html
+      versionless: true
+
+- label: Marketplace Developer Portal
+  url: /marketplace/sellers/developer-portal.html
+  versionless: true
+  children:
+
+    - label: Profile Information
+      url: /marketplace/sellers/profile-information.html
+      versionless: true
+
+    - label: Company Profile
+      url: /marketplace/sellers/profile-company.html
+      versionless: true
+
+    - label: Personal Profile
+      url: /marketplace/sellers/profile-personal.html
+      versionless: true
+
+- label: Extensions
+  url: /marketplace/sellers/extensions.html
+  versionless: true
+  children:
+
+    - label: Create an Extension
+      url: /marketplace/sellers/extension-create.html
+      versionless: true
+
+    - label: Specify the Version
+      url: /marketplace/sellers/extension-version.html
+      versionless: true
+
+- label: Complete the Extension Information
+  url: /marketplace/sellers/extension-information.html
+  versionless: true
+  children:
+  
+    - label: Add Extension Content
+      url: /marketplace/sellers/content.html
+      versionless: true
+
+    - label: Establish Your Brand
+      url: /marketplace/sellers/branding.html
+      versionless: true
+
+    - label: Define the Business Value
+      url: /marketplace/sellers/business-value.html
+      versionless: true
+
+    - label: Update Extension Information
+      url: /marketplace/sellers/extension-update-information.html
+      versionless: true
+
+- label: Themes
+  url: /marketplace/sellers/themes.html
+  versionless: true
+ 
+- label: Shared Packages
+  url: /marketplace/sellers/shared-packages.html
+  versionless: true
+
+- label: Review Process
+  url: /marketplace/sellers/submit-for-review.html
+  versionless: true
+
+- label: Submit for Technical Review
+  url: /marketplace/sellers/submit-for-technical-review.html
+  versionless: true
+  children:
+
+    - label: Technical Review Guidelines
+      url: /marketplace/sellers/technical-review-guidelines.html
+      versionless: true
+
+    - label: Malware Scan
+      url: /marketplace/sellers/malware-scan.html
+      versionless: true
+
+    - label: Code Sniffer
+      url: /marketplace/sellers/code-sniffer.html
+      versionless: true
+
+    - label: Installation and Varnish Tests
+      url: /marketplace/sellers/installation-and-varnish-tests.html
+      versionless: true
+
+    - label: Copy Paste Detector
+      url: /marketplace/sellers/copy-paste-detector.html
+      versionless: true
+
+    - label: Semantic Version Check
+      url: /marketplace/sellers/semantic-version-check.html
+      versionless: true
+
+- label: Submit for Marketing Review
+  url: /marketplace/sellers/submit-for-marketing-review.html
+  versionless: true
+  children:
+
+    - label: Marketing Review Guidelines
+      url: /marketplace/sellers/marketing-review-guidelines.html
+      versionless: true
+
+    - label: Product Descriptions
+      url: /marketplace/sellers/product-descriptions.html
+      versionless: true
+
+    - label: Video Tips
+      url: /marketplace/sellers/video-tips.html
+      versionless: true
+
+    - label: Image Tips
+      url: /marketplace/sellers/image-tips.html
+      versionless: true
+
+    - label: Preview Your Submission
+      url: /marketplace/sellers/marketing-submission-preview.html
+      versionless: true
+
+- label: View the Results
+  url: /marketplace/sellers/review-report.html
+  versionless: true
+  children:
+
+    - label: Resubmit an Extension
+      url: /marketplace/sellers/extension-resubmit.html
+      versionless: true
+
+- label: Manage Sales
+  url: /marketplace/sellers/sales.html
+  versionless: true
+  children:
+
+    - label: Revenue Share
+      url: /marketplace/sellers/revenue-share.html
+      versionless: true
+
+    - label: Analytics
+      url: /marketplace/sellers/analytics.html
+      versionless: true

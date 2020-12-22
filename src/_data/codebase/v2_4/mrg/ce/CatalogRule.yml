@@ -1,0 +1,8 @@
+---
+title: Magento_CatalogRule
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/CatalogRule/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: Magento_CatalogRule module is responsible for one of the types of price rules
+  in Magento. Catalog Rules are applied to products before they are added to the cart.

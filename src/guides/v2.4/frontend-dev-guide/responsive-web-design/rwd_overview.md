@@ -1,0 +1,1 @@
+../../../v2.3/frontend-dev-guide/responsive-web-design/rwd_overview.md

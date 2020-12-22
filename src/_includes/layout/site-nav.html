@@ -1,0 +1,38 @@
+{% if site.environment == "public" %}
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google.gtm }}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+{% endif %}
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="{% if page.guide_version == site.version or page.guide_version == nil %}{{ site.baseurl }}{% else %}{{ page.baseurl }}{% endif %}/">
+      <img class="logo-image" src="{{ site.baseurl }}/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">{{ site.logo }}</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      {% include layout/navigation.html %}
+    </div>
+
+    <div class="nav-actions">
+      {% include layout/version-switcher.html %}
+
+      {% include layout/app-switcher.html %}
+
+      {% include layout/quick-search.html %}
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>

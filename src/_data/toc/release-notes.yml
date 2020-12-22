@@ -1,0 +1,119 @@
+label: Release Information
+pages:
+    - label: Introduction
+      url: /release-notes/bk-release-notes.html
+
+    - label: 2.4 Release Notes
+      include_versions: ["2.4"]
+      children:
+
+        - label: Magento Open Source 2.4.1 Release Notes
+          url: /release-notes/open-source-2-4-1.html
+
+        - label: Magento Commerce 2.4.1 Release Notes
+          url: /release-notes/commerce-2-4-1.html
+
+        - label: Magento Open Source 2.4.0 Release Notes
+          url: /release-notes/release-notes-2-4-0-open-source.html
+
+        - label: Magento Commerce 2.4.0 Release Notes
+          url: /release-notes/release-notes-2-4-0-commerce.html
+
+        - label: Magento B2B Release Notes
+          url: /release-notes/b2b-release-notes.html
+
+
+    - label: 2.3 Release Notes
+      include_versions: ["2.3"]
+      children:
+
+        - label: Component Status
+          url: /release-notes/component-status.html
+
+        - label: Magento Open Source 2.3.6 Release Notes
+          url: /release-notes/open-source-2-3-6.html
+
+        - label: Magento Commerce 2.3.6 Release Notes
+          url: /release-notes/commerce-2-3-6.html
+
+        - label: Magento Open Source 2.3.5 Release Notes
+          url: /release-notes/release-notes-2-3-5-open-source.html
+
+        - label: Magento Commerce 2.3.5 Release Notes
+          url: /release-notes/release-notes-2-3-5-commerce.html
+
+        - label: Magento Open Source 2.3.4 Release Notes
+          url: /release-notes/release-notes-2-3-4-open-source.html
+
+        - label: Magento Commerce 2.3.4 Release Notes
+          url: /release-notes/release-notes-2-3-4-commerce.html
+
+        - label: Magento Open Source 2.3.3 Release Notes
+          url: /release-notes/release-notes-2-3-3-open-source.html
+
+        - label: Magento Commerce 2.3.3 Release Notes
+          url: /release-notes/release-notes-2-3-3-commerce.html
+
+        - label: Magento Open Source 2.3.2 Release Notes
+          url: /release-notes/ReleaseNotes2.3.2OpenSource.html
+
+        - label: Magento Commerce 2.3.2 Release Notes
+          url: /release-notes/ReleaseNotes2.3.2Commerce.html
+
+        - label: Magento Open Source 2.3.1 Release Notes
+          url: /release-notes/ReleaseNotes2.3.1OpenSource.html
+
+        - label: Magento Commerce 2.3.1 Release Notes
+          url: /release-notes/ReleaseNotes2.3.1Commerce.html
+
+        - label: Magento Open Source 2.3.0 Release Notes
+          url: /release-notes/ReleaseNotes2.3.0OpenSource.html
+
+        - label: Magento Commerce 2.3.0 Release Notes
+          url: /release-notes/ReleaseNotes2.3.0Commerce.html
+  
+    - label: Backward incompatible changes
+      children:
+
+        - label: Highlights
+          url: /release-notes/backward-incompatible-changes/index.html
+
+        - label: Reference
+          url: /release-notes/backward-incompatible-changes/reference.html
+
+    - label: Packages
+      children:
+
+        - label: Magento Open Source packages
+          url: /release-notes/packages-open-source.html
+
+        - label: Magento Commerce packages
+          url: /release-notes/packages-commerce.html
+
+        - label: Magento Commerce Cloud packages
+          url: /release-notes/packages-cloud.html
+
+    - label: B2B
+      url: /release-notes/b2b-release-notes.html
+
+    - label: GraphQL
+      url: /graphql/release-notes.html
+
+    - label: Inventory Management
+      url: /inventory/release-notes.html
+
+    - label: Page Builder
+      url: /page-builder/docs/release-notes.html
+      versionless: true
+    
+    - label: Sales Channels
+      children:
+      
+        - label: Amazon
+          url: /extensions/amazon-sales/release-notes/
+          versionless: true
+
+    - label: Product Recommendations
+      url: /recommendations/release-notes.html
+      versionless: true
+

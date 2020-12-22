@@ -1,0 +1,9 @@
+---
+title: Magento_CustomerCustomAttributes
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/CustomerCustomAttributes/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  The Magento_CustomerCustomAttributes module handles user-defined customer and customer address attributes.
+  User-defined attributes are the ones, which are created by a store administrator additionally to the default ones.

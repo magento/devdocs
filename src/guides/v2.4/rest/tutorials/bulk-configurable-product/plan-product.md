@@ -1,0 +1,1 @@
+../../../../v2.3/rest/tutorials/bulk-configurable-product/plan-product.md

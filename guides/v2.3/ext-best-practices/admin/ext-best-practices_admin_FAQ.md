@@ -1,1 +1,0 @@
-../../../../guides/v2.2/ext-best-practices/admin/ext-best-practices_admin_FAQ.md

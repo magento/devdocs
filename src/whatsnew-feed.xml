@@ -1,0 +1,27 @@
+---
+layout: none
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    {% assign whatsnew = site.data.whats-new %}
+        {% assign page_link = site.url | append: site.baseurl | append: whatsnew.link %}
+    <title>{{ whatsnew.title }}</title>
+    <description>{{ whatsnew.description }}</description>
+    <link href="{{ page_link }}"/>
+    <updated>{{ whatsnew.updated | date_to_rfc822 }}</updated>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+        {% for entry in whatsnew.entries limit: 20 %}
+        {% assign link = entry.link %}
+                {% unless link %}
+                        {% assign link = page_link %}
+                {% endunless %}
+        <entry>
+                <title>{{ entry.type }}</title>
+                <updated>{{ entry.date | date_to_rfc822 }}</updated>
+                <link href="{{ link }}"/>
+                <summary>{{ entry.description | strip | markdownify| xml_escape }} </summary>
+        </entry>
+        {% endfor %}
+</feed>

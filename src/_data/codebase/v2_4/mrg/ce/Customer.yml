@@ -1,0 +1,9 @@
+---
+title: Magento_Customer
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Customer/README.md
+last_modified_at: '2015-08-27 15:34:05 -0500'
+content: "The Magento_Customer module serves to handle the customer data (Customer,
+  Customer Address and Customer Group entities) both in the admin panel and the storefront.
+  \nFor customer passwords, the module implements upgrading hashes."

@@ -1,0 +1,8 @@
+---
+title: Magento_PricePermissions
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/PricePermissions/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: Magento_PricePermissions module allows to restrict such admin rights as changing
+  or reading product price, changing product status.

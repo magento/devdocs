@@ -1,0 +1,11 @@
+---
+title: Magento_ScalableOms
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/ScalableOms/README.md
+last_modified_at: '2015-05-15 13:27:50 +0300'
+content: |-
+  Magento\ScalableOms (Order Management System) module provides ability for system extension
+  (Sales can be configured to work with separate database).
+  Extraction of Sales tables to separate database will guarantee better scalability for Magento,
+  and will allow main server to be optimised for read operations which will reduce latency.

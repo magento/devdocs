@@ -1,1 +1,0 @@
-../../../v2.2/payments-integrations/base-integration/payment-action.md

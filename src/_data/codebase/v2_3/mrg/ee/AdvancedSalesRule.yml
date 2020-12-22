@@ -1,0 +1,7 @@
+---
+title: Magento_AdvancedSalesRule
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/AdvancedSalesRule/README.md
+last_modified_at: '2015-11-20 12:14:51 -0600'
+content: AdvancedSalesRule module enhances the performance of sale rule processing.

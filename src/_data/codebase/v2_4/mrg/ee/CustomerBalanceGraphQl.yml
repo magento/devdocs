@@ -1,0 +1,9 @@
+---
+title: Magento_CustomerBalanceGraphQl
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/CustomerBalanceGraphQl/README.md
+last_modified_at: '2019-07-16 10:30:00 -0500'
+content: |-
+  The **CustomerBalanceGraphQl** provides type and resolver information for enabling customers to have a non-monetary balance in store credits associated to their accounts.
+  Store credit can be used by customers for shopping in the store and by the store administrator for making refunds.

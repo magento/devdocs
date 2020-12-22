@@ -1,0 +1,8 @@
+---
+title: Magento_Invitation
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/Invitation/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: The Magento_Invitation module enables invitation sending, referral tracking
+  and generating invitation reports.

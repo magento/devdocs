@@ -1,0 +1,9 @@
+---
+title: Magento_Directory
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Directory/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: |-
+  **Directory** enables the management of countries and regions recognized by the store and associated data
+  like the country code and currency rates. Also, enables conversion of prices to a specified currency format.

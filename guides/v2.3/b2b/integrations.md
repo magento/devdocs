@@ -1,1 +1,0 @@
-../../v2.2/b2b/integrations.md

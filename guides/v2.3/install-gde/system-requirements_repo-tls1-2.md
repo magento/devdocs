@@ -1,1 +1,0 @@
-../../../guides/v2.2/install-gde/system-requirements_repo-tls1-2.md

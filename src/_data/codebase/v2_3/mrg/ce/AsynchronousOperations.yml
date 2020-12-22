@@ -1,0 +1,28 @@
+---
+title: Magento_AsynchronousOperations
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/AsynchronousOperations/README.md
+last_modified_at: '2019-08-27 01:56:24 +0100'
+content: "This component is designed to provide a response for a client that launched
+  the bulk operation as soon as possible and postpone handling of operations moving
+  them to the background handler.\n\n## Installation details\n\nThe Magento_AsynchronousOperations
+  module creates the following tables in the database:\n\n- `magento_bulk`\n- `magento_operation`\n-
+  `magento_acknowledged_bulk`\n\nBefore disabling or uninstalling this module, note
+  that the following modules depends on this module:\n\n- Magento_WebapiAsync \n\nFor
+  information about module installation in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_AsynchronousOperations
+  module. For more information about the Magento extension mechanism, see [Magento
+  plug-ins](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_AsynchronousOperations
+  module.\n\n### Layouts\n\nThis module introduces the following layouts and layout
+  handles in the `view/adminhtml/layout` directory:\n\n- `bulk_bulk_details`\n- `bulk_bulk_details_modal`\n-
+  `bulk_index_index`\n\nFor more information about layouts in Magento 2, see the [Layout
+  documentation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html).\n\n###
+  UI components\n\nYou can extend Magento_AsynchronousOperations module using the
+  following configuration files in the `view/adminhtml/ui_component/` directory:\n\n-
+  `bulk_details_form`\n- `bulk_details_form_modal`\n- `bulk_listing`\n- `failed_operation_listing`\n-
+  `failed_operation_modal_listing`\n- `notification_area`\n- `retriable_operation_listing`\n-
+  `retriable_operation_modal_listing`\n\nFor information about UI components in Magento
+  2, see [Overview of UI components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html)."

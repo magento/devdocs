@@ -1,0 +1,10 @@
+---
+title: Magento_Tinymce3
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Tinymce3/README.md
+last_modified_at: '2018-05-14 17:18:09 -0500'
+content: We have updated the TinyMCE module to the latest available version, 4.6.4.
+  TinyMCE v4.6.4 provides backwards-compatibility for modified editor modules to prevent
+  the loss of functionality. The TinyMCE3 module is now deprecated and will be removed
+  in a future release.

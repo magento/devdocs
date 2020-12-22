@@ -1,0 +1,20 @@
+---
+title: Magento_CatalogInventoryStaging
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/CatalogInventoryStaging/README.md
+last_modified_at: '2016-07-04 18:13:15 +0300'
+content: "## Magento_CatalogInventoryStaging module\n\n## Overview\n\nThe Magento_CatalogInventoryStaging
+  module is a part of the staging functionality in Magento EE. It extends the Magento_CatalogInventory
+  module functionality, adding the capability to monitor the \"Stock Status\" field
+  on the Schedule Update form of a product. \n\n## Implementation details\n\nThe Magento_CatalogInventoryStaging
+  module adds the disabled \"Stock Status\" field on the Schedule Update form of a
+  product during form rendering.\n\n## Dependencies\n\nYou can find the list of modules
+  that have dependencies on the Magento_CatalogInventoryStaging module in the `require`
+  section of the `composer.json` file. The file is located in the root directory of
+  the module.\n\n## Extension points\n\nYou can interact with the Magento_CatalogInventoryStaging
+  module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_CatalogInventoryStaging
+  module.\n\n## Additional information\n\nYou can track [backward incompatible changes
+  made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html)."

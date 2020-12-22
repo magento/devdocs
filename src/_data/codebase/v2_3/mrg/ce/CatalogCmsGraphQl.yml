@@ -1,0 +1,8 @@
+---
+title: Magento_CatalogCmsGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/CatalogCmsGraphQl/README.md
+last_modified_at: '2019-10-11 12:20:01 -0500'
+content: "**CatalogCmsGraphQl** provides type and resolver information for GraphQL
+  attributes that have dependencies on the Catalog and Cms modules."

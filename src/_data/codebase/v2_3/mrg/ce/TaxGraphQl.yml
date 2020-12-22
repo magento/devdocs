@@ -1,0 +1,9 @@
+---
+title: Magento_TaxGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/TaxGraphQl/README.md
+last_modified_at: '2018-01-16 16:07:17 -0600'
+content: |-
+  **TaxGraphQl** provides type information for the GraphQl module
+  to generate tax fields for catalog and product information endpoints.

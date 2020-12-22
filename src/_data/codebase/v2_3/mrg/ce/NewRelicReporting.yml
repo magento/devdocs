@@ -1,0 +1,9 @@
+---
+title: Magento_NewRelicReporting
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/NewRelicReporting/README.md
+last_modified_at: '2015-10-01 16:15:45 +0300'
+content: "Module Magento\\NewRelicReporting implements integration New Relic APM and
+  New Relic Insights with Magento, giving \nreal-time visibility into business and
+  performance metrics for data-driven decision making."

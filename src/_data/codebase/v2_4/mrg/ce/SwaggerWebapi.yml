@@ -1,0 +1,8 @@
+---
+title: Magento_SwaggerWebapi
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/SwaggerWebapi/README.md
+last_modified_at: '2018-03-23 17:48:45 +1300'
+content: The Magento_SwaggerWebapi module provides the implementation of the REST
+  Webapi module with Magento_Swagger.

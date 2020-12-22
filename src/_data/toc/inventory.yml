@@ -1,0 +1,62 @@
+label:  Inventory Management Guide
+versions:  ["2.3"]
+pages:
+
+    - label: Overview
+      url: /inventory/index.html
+
+    - label: Inventory management architecture
+      url: /inventory/architecture.html
+
+    - label: Reservations
+      url: /inventory/reservations.html
+
+    - label: Source selection algorithms
+      url: /inventory/source-selection-algorithms.html
+
+    - label: Inventory CLI reference
+      url: /inventory/inventory-cli-reference.html
+
+    - label: Inventory API reference
+      url: /inventory/inventory-api-reference.html
+
+    - label: Order processing with Inventory Management tutorial
+      class: tutorial
+      url: /rest/tutorials/inventory/index.html
+
+    - label: Inventory REST endpoints
+      children:
+        - label: Manage sources
+          url: /rest/modules/inventory/manage-sources.html
+
+        - label: Manage stocks
+          url: /rest/modules/inventory/manage-stocks.html
+
+        - label: Link and unlink stocks and sources
+          url: /rest/modules/inventory/link-stocks-sources.html
+
+        - label: Manage source items
+          url: /rest/modules/inventory/manage-source-items.html
+
+        - label: Perform bulk actions
+          url: /rest/modules/inventory/bulk-inventory.html
+
+        - label: Manage low-quantity notifications
+          url: /rest/modules/inventory/manage-low-quantity.html
+
+        - label: Check salable quantities
+          url: /rest/modules/inventory/check-salable-quantity.html
+
+        - label: Manage source selection algorithms
+          url: /rest/modules/inventory/manage-source-selection.html
+
+        - label: In-Store Pickup
+          url: /rest/modules/inventory/in-store-pickup.html
+          exclude_versions: ["2.3"]
+
+    - label: Manage Inventory Management modules
+      url: /extensions/inventory-management/
+      versionless: true
+
+    - label: Release notes
+      url: /inventory/release-notes.html

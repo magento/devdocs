@@ -1,0 +1,1 @@
+../../../../v2.3/install-gde/install/cli/install-cli-uninstall-langpk.md

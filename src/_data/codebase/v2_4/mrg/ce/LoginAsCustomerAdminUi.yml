@@ -1,0 +1,7 @@
+---
+title: Magento_LoginAsCustomerAdminUi
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/LoginAsCustomerAdminUi/README.md
+last_modified_at: '2020-05-21 22:39:24 -0500'
+content: The Magento_LoginAsCustomerAdminUi module provides UI for Admin Panel

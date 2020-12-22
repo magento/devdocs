@@ -1,0 +1,45 @@
+# Prior to Q3 2017, we weren't using variables for Magento product names. When Magento leadership announced
+# a product renaming initiative, the Devdocs team decided to replace plain text instances of old product
+# names with variables that would automatically pull in the new product name.
+
+# Here's a reference of old-to-new Magento product names for future reference:
+
+# Community Edition (CE)          ---> Open Source
+# Enterprise Edition (EE)         ---> Commerce
+# Enterprise Cloud Edition (ECE)  ---> Commerce Cloud
+# Enterprise Edition for B2B      ---> Commerce for B2B
+
+#NOTE: The new product name variables use the old product name abbreviations (e.g., ce, ee, ece, b2b).
+
+# Product Name variables
+
+ce: Magento Open Source
+ee: Magento Commerce
+b2b: Magento Commerce for B2B
+mbi: Magento Business Intelligence
+
+# Cloud product name variables
+
+ece: Magento Commerce Cloud
+ece-release-date: November 19, 2020
+csuite: Magento Commerce Cloud Suite
+ct: ece-tools
+ct-repo: magento/ece-tools
+ct-release: 2002.1.4
+mcp-prod: Magento Cloud Patches
+mcp-package: magento/magento-cloud-patches
+mcp-release: 1.0.8
+mcd-package: magento/magento-cloud-docker
+mcd-prod: Magento Cloud Docker
+mcd-release: 1.2.0
+mcc-prod: Magento Cloud Components
+mcc-package: magento/magento-cloud-components
+mcc-release: 1.0.7
+
+
+# TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
+# is the variable value.
+
+# Magento-developed extension (MDE) variables
+
+im: Inventory Management

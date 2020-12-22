@@ -1,0 +1,1 @@
+../../../../guides/v2.3/ext-best-practices/tutorials/create-integration-with-api.md

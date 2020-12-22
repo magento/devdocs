@@ -1,0 +1,8 @@
+---
+title: Magento_SwaggerWebapiAsync
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/SwaggerWebapiAsync/README.md
+last_modified_at: '2018-03-23 17:48:46 +1300'
+content: The Magento_SwaggerWebapiAsync module provides the implementation of the
+  Asynchronous WebApi module with Magento_Swagger.

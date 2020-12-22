@@ -1,0 +1,10 @@
+---
+title: Magento_PromotionPermissions
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/PromotionPermissions/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  Magento\PromotionPermission module provides the possibility to an admin user to manage access of promotions and product
+  prices in the Admin Panel. An admin user can set the following access rights for promotions and product prices: edit,
+  read, without any permissions.

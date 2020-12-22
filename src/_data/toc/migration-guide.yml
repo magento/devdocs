@@ -1,0 +1,67 @@
+label: Migration Guide
+pages:
+    - label: Overview
+      url: /migration/bk-migration-guide.html
+      children:
+
+        - label: How migration works
+          url: /migration/migration-overview-how.html
+
+        - label: Best practices and benchmarking
+          url: /migration/migration-overview-practices.html
+
+        - label: Versions supported
+          url: /migration/migration-overview-supported.html
+
+    - label: Creating a migration plan
+      url: /migration/migration-plan.html
+
+    - label: Data Migration Tool
+      url: /migration/migration-tool.html
+      children:
+
+        - label: Preconditions
+          url: /migration/migration-tool-preconditions.html
+
+        - label: Install Data Migration Tool
+          url: /migration/migration-tool-install.html
+
+        - label: Upgrade Data Migration Tool
+          url: /migration/migration-tool-upgrade.html
+
+        - label: Configure migration
+          url: /migration/migration-tool-configure.html
+
+        - label: Extend the tool
+          url: /migration/extend-the-tool.html
+
+    - label: Migrate using Data Migration Tool
+      url: /migration/migration-migrate.html
+      children:
+
+        - label: Migrate settings
+          url: /migration/migration-migrate-settings.html
+
+        - label: Migrate data
+          url: /migration/migration-migrate-data.html
+
+        - label: Migrate changes
+          url: /migration/migration-migrate-delta.html
+
+        - label: Follow-up (info and steps)
+          url: /migration/migration-migrate-follow-up.html
+
+    - label: Data that needs to be migrated manually
+      url: /migration/migration-manually.html
+
+    - label: After Migration
+      url: /migration/migration-migrate-after.html
+
+    - label: Data Migration Tool Technical Specification
+      url: /migration/migration-tool-internal-spec.html
+
+    - label: Troubleshooting
+      url: https://support.magento.com/hc/en-us/articles/360033020451
+
+    - label: Changelog
+      url: https://github.com/magento/data-migration-tool/blob/2.3/CHANGELOG.md

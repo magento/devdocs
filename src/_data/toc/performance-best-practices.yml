@@ -1,0 +1,28 @@
+label: Performance Best Practices
+pages:
+    - label: Introduction
+      url: /performance-best-practices/introduction.html
+
+    - label: Hardware recommendations
+      url: /performance-best-practices/hardware.html
+
+    - label: Software recommendations
+      url: /performance-best-practices/software.html
+
+    - label: Reference architecture
+      url: /performance-best-practices/reference-architecture.html
+
+    - label: Development environment recommendations
+      url: /performance-best-practices/development-environment.html
+
+    - label: Configuration best practices
+      url: /performance-best-practices/configuration.html
+
+    - label: Deployment flow
+      url: /performance-best-practices/deployment-flow.html
+
+    - label: Advanced setup
+      url: /performance-best-practices/advanced-setup.html
+
+    - label: Advanced JavaScript bundling
+      url: /performance-best-practices/advanced-js-bundling.html

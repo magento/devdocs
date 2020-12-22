@@ -1,0 +1,10 @@
+---
+title: Magento_OrderHistorySearch
+source_repo: magento2b2b
+release: 1.3.0
+github_path: app/code/Magento/OrderHistorySearch/README.md
+last_modified_at: '2019-05-31 11:16:34 +0200'
+content: "## Overview\n\nThe Magento_OrderHistorySearch module serves to handle advanced
+  orders filtering on customer account.\n\n## Installation details\n \n...\n \n##
+  Structure\n \n...\n \n## Extensibility\n \n...\n\n### Layouts\n \n...\n \n### UI
+  components\n\n...\n\n## Additional information\n \n..."

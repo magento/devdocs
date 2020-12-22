@@ -1,1 +1,0 @@
-../../../guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.md

@@ -1,0 +1,9 @@
+---
+title: Magento_Elasticsearch6
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Elasticsearch6/README.md
+last_modified_at: '2019-02-27 13:06:48 +0100'
+content: |-
+  Magento\Elasticsearch module allows to use Elastic search engine (v6) for product searching capabilities.
+  The module implements Magento\Search library interfaces.

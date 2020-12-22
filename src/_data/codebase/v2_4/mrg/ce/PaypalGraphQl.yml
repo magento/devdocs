@@ -1,0 +1,8 @@
+---
+title: Magento_PaypalGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/PaypalGraphQl/README.md
+last_modified_at: '2019-05-23 10:50:05 -0500'
+content: "**PaypalGraphQl** provides resolver information for using Paypal payment
+  methods via GraphQl."

@@ -1,0 +1,7 @@
+---
+title: Magento_SendFriendGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/SendFriendGraphQl/README.md
+last_modified_at: '2018-11-19 20:18:31 +0200'
+content: "**SendFriendGraphQl** provides support of GraphQL for SendFriend functionality."

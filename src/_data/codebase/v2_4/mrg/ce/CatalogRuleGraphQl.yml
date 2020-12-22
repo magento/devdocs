@@ -1,0 +1,8 @@
+---
+title: Magento_CatalogRuleGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/CatalogRuleGraphQl/README.md
+last_modified_at: '2020-03-16 09:03:11 -0500'
+content: The *Magento_CatalogRuleGraphQl* module applies catalog rules to products
+  for GraphQL requests.

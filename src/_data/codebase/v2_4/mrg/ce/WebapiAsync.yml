@@ -1,0 +1,9 @@
+---
+title: Magento_WebapiAsync
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/WebapiAsync/README.md
+last_modified_at: '2018-03-20 12:57:53 +0200'
+content: "**WebapiAsync** Extends Webapi extension and provide functional to process
+  asynchronous requests. It handle asynchronous requests, schedule, publish and consum
+  bulk operations from queue."

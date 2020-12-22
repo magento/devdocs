@@ -1,0 +1,9 @@
+---
+title: Magento_CheckoutAgreementsGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/CheckoutAgreementsGraphQl/README.md
+last_modified_at: '2019-03-20 17:00:47 +0200'
+content: |-
+  **CheckoutAgreementsGraphQl** provides type information for the GraphQl module
+  to generate Checkout Agreements fields for Checkout Agreements information endpoints.

@@ -1,0 +1,9 @@
+---
+title: Magento_Logging
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/Logging/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  The Logging module is used for logging actions done in the backend by administrators. Information such as time of action, type of action and administrator who performed the action is recorded.
+  By default all actions are recorded. Rules can be configured only to identify specific kinds of actions.

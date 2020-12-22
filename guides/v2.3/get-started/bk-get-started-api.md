@@ -1,1 +1,0 @@
-../../../guides/v2.2/get-started/bk-get-started-api.md

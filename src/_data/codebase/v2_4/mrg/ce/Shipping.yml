@@ -1,0 +1,9 @@
+---
+title: Magento_Shipping
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Shipping/README.md
+last_modified_at: '2014-10-31 09:04:08 -0700'
+content: |-
+  The Magento_Shipping module provides the abstract models and interfaces for a shipping carrier integration, including the web interface for the Shipment entity.
+  You need to extend these abstractions if you are adding new shipping carrier integration.

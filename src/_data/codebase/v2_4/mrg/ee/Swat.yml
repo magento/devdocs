@@ -1,0 +1,7 @@
+---
+title: Magento_Swat
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/Swat/README.md
+last_modified_at: '2020-07-22 13:02:05 -0500'
+content: Magento_Swat module provides access to the Site-Wide Analysis Tool

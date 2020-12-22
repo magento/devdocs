@@ -1,0 +1,77 @@
+label: Testing
+pages:
+    - label: Introduction
+      url: /test/testing.html
+
+    - label: Integration testing
+      children:
+
+        - label: Running integration tests
+          url: /test/integration/integration_test_execution.html
+
+        - label: Using DocBlock annotations
+          url: /test/integration/annotations.html
+          children:
+
+          - label: '@depends'
+            url: /test/integration/annotations/depends.html
+
+          - label: '@magentoAppArea'
+            url: /test/integration/annotations/magento-app-area.html
+
+          - label: '@magentoAppIsolation'
+            url: /test/integration/annotations/magento-app-isolation.html
+
+          - label: '@magentoCache'
+            url: /test/integration/annotations/magento-cache.html
+
+          - label: '@magentoComponentsDir'
+            url: /test/integration/annotations/magento-components-dir.html
+
+          - label: '@magentoConfigFixture'
+            url: /test/integration/annotations/magento-config-fixture.html
+
+          - label: '@magentoDataFixture'
+            url: /test/integration/annotations/magento-data-fixture.html
+
+          - label: '@magentoDbIsolation'
+            url: /test/integration/annotations/magento-db-isolation.html
+
+    - label: JavaScript Unit Testing
+      children:
+
+        - label: Jasmine
+          url: /test/js/jasmine.html
+
+    - label: PHP Unit Testing
+      children:
+
+        - label: Running Unit Tests
+          url: /test/unit/unit_test_execution.html
+
+        - label: Running Unit Tests in CLI
+          url: /test/unit/unit_test_execution_cli.html
+
+        - label: Running Unit Tests in PhpStorm
+          url: /test/unit/unit_test_execution_phpstorm.html
+
+        - label: Writing Testable Code
+          url: /test/unit/writing_testable_code.html
+
+        - label: Using DocBlock annotations
+          children:
+
+            - label: '@dataProvider'
+              url: /test/unit/annotations/data-provider.html
+
+    - label: Static Testing
+      children:
+
+        - label: Running Static Tests
+          url: /test/static/static_test_execution.html
+
+    - label: Semantic Version Checker
+      children:
+
+        - label: Running SVC tool
+          url: /test/svc/semver_test_execution.html

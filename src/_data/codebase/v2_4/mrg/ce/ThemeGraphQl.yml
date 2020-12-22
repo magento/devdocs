@@ -1,0 +1,9 @@
+---
+title: Magento_ThemeGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/ThemeGraphQl/README.md
+last_modified_at: '2018-12-06 10:59:37 -0500'
+content: |-
+  **ThemeGraphQl** provides type information for the GraphQl module
+  to generate theme fields information endpoints.

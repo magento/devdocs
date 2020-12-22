@@ -1,0 +1,300 @@
+label: Installation Guide
+pages:
+    - label: How to get the Magento software
+      url: /install-gde/bk-install-guide.html
+
+    - label: Installation flow diagram
+      url: /install-gde/install-flow-diagram.html
+
+    - label: Magento system requirements
+      url: /install-gde/system-requirements.html
+
+    - label: Just the basics
+      children:
+
+        - label: Is the Magento software installed already?
+          url: /install-gde/basics/basics_magento-installed.html
+
+        - label: What operating system is my server running?
+          url: /install-gde/basics/basics_os-version.html
+
+        - label: How do I log in to my Magento server using a terminal, command prompt, or SSH?
+          url: /install-gde/basics/basics_login.html
+
+        - label: What's the difference between a module and a component?
+          url: /install-gde/basics/basics_module.html
+
+        - label: What is the software that the Magento server needs to run?
+          url: /install-gde/basics/basics_software.html
+
+        - label: What is a docroot?
+          url: /install-gde/basics/basics_docroot.html
+
+    - label: Getting Started
+      children:
+        - label: Helpful resources
+          url: /install-gde/install-resources-parent.html
+          children:
+
+            - label: Installation quick reference (tutorial)
+              url: /install-gde/install-quick-ref.html
+
+            - label: Installation flow diagram
+              url: /install-gde/install-resource-diagram.html
+
+            - label: Installation roadmap (reference)
+              url: /install-gde/install-roadmap_part1.html
+
+        - label: Prerequisites
+          url: /install-gde/prereq/prereq-overview.html
+          children:
+
+            - label: Apache
+              url: /install-gde/prereq/apache.html
+
+            - label: nginx
+              url: /install-gde/prereq/nginx.html
+
+            - label: PHP
+              url: /install-gde/prereq/php-settings.html
+
+            - label: MySQL
+              url: /install-gde/prereq/mysql.html
+
+            - label: Elasticsearch
+              url: /install-gde/prereq/elasticsearch.html
+              exclude_versions: ["2.3"]
+              children:
+
+                - label: Configure nginx and Elasticsearch
+                  url: /install-gde/prereq/es-config-nginx.html
+
+                - label: Configure Apache and Elasticsearch
+                  url: /install-gde/prereq/es-config-apache.html      
+
+            - label: Get your authentication keys
+              url: /install-gde/prereq/connect-auth.html
+
+            - label: Magento file system ownership and permissions
+              children:
+
+                - label: Overview of ownership and permissions
+                  url: /install-gde/prereq/file-sys-perms-over.html
+
+                - label: Set pre-installation ownership and permissions
+                  url: /install-gde/prereq/file-system-perms.html
+
+            - label: RabbitMQ
+              url: /install-gde/prereq/install-rabbitmq.html
+              
+            - label: Set up a remote MySQL database connection
+              url: /install-gde/prereq/mysql_remote.html
+
+            - label: SELinux and iptables
+              url: /install-gde/prereq/security.html
+
+            - label: Optional software
+              url: /install-gde/prereq/optional.html
+
+        - label: Get the Magento software
+          url: /install-gde/install/get-software.html
+
+        - label: Install Magento using Composer
+          url: /install-gde/composer.html
+
+        - label: (Easy) Install the Magento archive on your server
+          url: /install-gde/prereq/zip_install.html
+
+        - label: (Contributor) Clone the Magento repository
+          url: /install-gde/prereq/dev_install.html
+          children:
+
+            - label: Update installation dependencies
+              url: /install-gde/install/prepare-install.html
+
+        - label: Get help with your installation
+          url: /install-gde/install/get-help.html
+
+        - label: Install options
+          url: /install-gde/continue-to-install.html
+
+    - label: Setup Wizard Install
+      include_versions: ["2.3"]
+      children:
+        - label: Installation roadmap (reference)
+          url: /install-gde/install-roadmap_web.html
+
+        - label: Install optional sample data modules
+          url: /install-gde/install/web/install-web-sample-data.html
+          children:
+
+            - label: Install using Composer
+              url: /install-gde/install/web/install-web-sample-data-composer.html
+
+            - label: Install by cloning repositories
+              url: /install-gde/install/web/install-web-sample-data-clone.html
+
+        - label: Setup Wizard installation
+          url: /install-gde/install/web/install-web.html
+          include_versions: ["2.3"]
+          children:
+            - label: Step 1. Readiness check
+              url: /install-gde/install/web/install-web_1-readiness.html
+
+            - label: Step 2. Add a Database
+              url: /install-gde/install/web/install-web_2-db.html
+
+            - label: Step 3. Web Configuration
+              url: /install-gde/install/web/install-web_3-web-conf.html
+
+            - label: Step 4. Customize Your Store
+              url: /install-gde/install/web/install-web_4-customize-store.html
+
+            - label: Step 5. Create Admin Account
+              url: /install-gde/install/web/install-web_5-create-admin.html
+
+            - label: Step 6. Install
+              url: /install-gde/install/web/install-web_6-install.html
+
+        - label: Post-installation
+          url: /install-gde/continue-to-verify.html
+          include_versions: ["2.3"]
+
+    - label: Command Line Installation
+      children:
+
+        - label: Installation roadmap (reference)
+          url: /install-gde/install-roadmap_cli.html
+
+        - label: Install the Magento software using the command line
+          url: /install-gde/install/cli/install-cli.html
+          children:
+
+            - label: Get started with the command-line installation
+              url: /install-gde/install/cli/install-cli-subcommands.html
+
+            - label: Install the Magento software
+              url: /install-gde/install/cli/install-cli-install.html
+
+            - label: Uninstall or reinstall Magento
+              url: /install-gde/install/cli/install-cli-uninstall.html
+
+            - label: Display or change the Admin URI
+              url: /install-gde/install/cli/install-cli-adminurl.html
+
+            - label: Remove sample data modules or update sample data
+              url: /install-gde/install/cli/install-cli-sample-data-other.html
+
+            - label: Enable or disable modules
+              url: /install-gde/install/cli/install-cli-subcommands-enable.html
+
+            - label: Uninstall modules
+              url: /install-gde/install/cli/install-cli-uninstall-mods.html
+
+            - label: Create or update the deployment configuration
+              url: /install-gde/install/cli/install-cli-subcommands-deployment.html
+
+            - label: Enable or disable maintenance mode
+              url: /install-gde/install/cli/install-cli-subcommands-maint.html
+
+            - label: Configure consumer behavior
+              url: /install-gde/install/cli/install-cli-subcommands-consumers.html
+
+            - label: Create the Magento database schema
+              url: /install-gde/install/cli/install-cli-subcommands-db.html
+
+            - label: Update the Magento database schema and data
+              url: /install-gde/install/cli/install-cli-subcommands-db-upgr.html
+
+            - label: Configure the lock provider
+              url: /install-gde/install/cli/install-cli-subcommands-lock.html
+              
+            - label: Configure the store
+              url: /install-gde/install/cli/install-cli-subcommands-store.html
+
+            - label: Create, edit, or unlock a Magento administrator account
+              url: /install-gde/install/cli/install-cli-subcommands-admin.html
+
+            - label: Back up and roll back the file system, media, and database
+              url: /install-gde/install/cli/install-cli-backup.html
+
+            - label: Uninstall themes Composer packages
+              url: /install-gde/install/cli/install-cli-theme-uninstall.html
+
+            - label: Uninstall language packages
+              url: /install-gde/install/cli/install-cli-uninstall-langpk.html
+
+        - label: Install optional sample data modules
+          url: /install-gde/install/cli/install-cli-sample-data.html
+          children:
+
+            - label: Install using Composer
+              url: /install-gde/install/cli/install-cli-sample-data-composer.html
+
+            - label: Install by cloning repositories
+              url: /install-gde/install/cli/install-cli-sample-data-clone.html
+
+        - label: Contributing developers—update, reinstall Magento
+          url: /install-gde/install/cli/dev_options.html
+          children:
+
+            - label: Update the Magento application
+              url: /install-gde/install/cli/dev_update-magento.html
+
+            - label: Add or update components
+              url: /install-gde/install/cli/dev_add-update.html
+
+            - label: Change to a released version
+              url: /install-gde/install/cli/dev_downgrade.html
+
+            - label: Reinstall the Magento software
+              url: /install-gde/install/cli/dev_reinstall.html
+
+        - label: Post-installation
+          url: /install-gde/continue-to-verify_cli.html
+
+    - label: Post Installation
+      children:
+        - label: Verify the installation
+          url: /install-gde/install/verify.html
+
+        - label: Configure the Magento application
+          url: /install-gde/install/post-install-config.html
+
+        - label: Optionally set a umask
+          url: /install-gde/install/post-install-umask.html
+
+        - label: Appendix—Magento file system ownership and appendix (legacy)
+          url: /install-gde/install/legacy-file-system-perms.html
+
+        - label: Install sample data after Magento
+          url: /install-gde/install/sample-data-after-magento.html
+          children:
+
+            - label: Install using Composer
+              url: /install-gde/install/sample-data-after-composer.html
+
+            - label: Install by cloning repositories
+              url: /install-gde/install/sample-data-after-clone.html
+
+    - label: Troubleshooting
+      children:
+
+        - label: Access issues
+          children:
+
+            - label: 503 (Service Unavailable) errors accessing Magento software in a web browser
+              url: /install-gde/trouble/php/tshoot_mod_access_compat.html
+
+            - label: Cannot write to the var/generation directory
+              url: /install-gde/trouble/tshoot_var-gen-perms.html
+
+            - label: Installation dependencies not met
+              url: /install-gde/trouble/tshoot_install_depend.html
+              include_versions: ["2.3"]
+
+
+    - label: How Tos
+      children:
+        - label: Modify docroot to improve security
+          url: /install-gde/tutorials/change-docroot-to-pub.html

@@ -1,1 +1,0 @@
-../../v2.2/install-gde/bk-install-guide.md

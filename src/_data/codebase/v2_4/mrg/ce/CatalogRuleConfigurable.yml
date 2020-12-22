@@ -1,0 +1,9 @@
+---
+title: Magento_CatalogRuleConfigurable
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/CatalogRuleConfigurable/README.md
+last_modified_at: '2015-09-07 17:18:34 +0300'
+content: Magento_CatalogRuleConfigurable module is an extension of Magento_CatalogRule
+  and Magento_ConfigurableProduct modules that handle catalog rule indexer for configurable
+  product

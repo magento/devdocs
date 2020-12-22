@@ -1,0 +1,8 @@
+---
+title: Magento_NewsletterGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/NewsletterGraphQl/README.md
+last_modified_at: '2020-05-07 00:32:47 +0300'
+content: The Magento_NewsletterGraphQl module allows a shopper to subscribe to a newsletter
+  using GraphQL.

@@ -1,0 +1,1 @@
+../../../v2.3/frontend-dev-guide/templates/template-email.md

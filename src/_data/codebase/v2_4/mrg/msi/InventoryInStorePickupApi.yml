@@ -1,0 +1,30 @@
+---
+title: Magento_InventoryInStorePickupApi
+source_repo: inventory
+release: 1.2.1
+github_path: InventoryInStorePickupApi/README.md
+last_modified_at: '2019-02-11 13:03:35 +1030'
+content: |-
+  The `InventoryInStorePickupApi` module provides service contracts for In-Store Pickup functionality.
+
+  This module is part of the new inventory infrastructure. The
+  [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html)
+  describes the MSI (Multi-Source Inventory) project in more detail.
+
+  ## Installation details
+
+  This module is installed as part of Magento Open Source. Unless a custom implementation for `InventoryInStorePickupApi`
+  is provided by a 3rd-party module, the module cannot be deleted or disabled.
+
+  ## Extensibility
+
+  The `InventoryInStorePickupApi` module contains extension points and APIs that 3rd-party developers
+  can use to provide customization of In-Store Pickup functionality
+
+  ### Public APIs
+
+  Public APIs are defined in the `Api` and `Api/Data` directories.
+
+  ### REST endpoints
+
+  The `etc/webapi.xml` file defines endpoints for configuring in store pickup for sources.

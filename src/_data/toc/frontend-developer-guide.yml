@@ -1,0 +1,196 @@
+label: Frontend Developer Guide
+pages:
+    - label: Introduction
+      url: /frontend-dev-guide/bk-frontend-dev-guide.html
+
+    - label: Conventional notations used in this Guide
+      url: /frontend-dev-guide/conventions.html
+
+    - label: Magento cache overview
+      url: /frontend-dev-guide/cache_for_frontdevs.html
+
+    - label: Theme development best practices
+      url: /frontend-dev-guide/theme-best-practice.html
+
+    - label: Themes
+      url: /frontend-dev-guide/themes/theme-overview.html
+      children:
+
+        - label: Install a third-party storefront theme
+          url: /frontend-dev-guide/themes/theme-install.html
+
+        - label: Uninstall a storefront theme
+          url: /frontend-dev-guide/themes/theme-uninstall.html
+
+        - label: Create an Admin theme
+          url: /frontend-dev-guide/themes/admin_theme_create.html
+
+        - label: Apply an Admin theme
+          url: /frontend-dev-guide/themes/admin_theme_apply.html
+
+        - label: Create a new storefront theme
+          url: /frontend-dev-guide/themes/theme-create.html
+
+        - label: Apply and configure a storefront theme
+          url: /frontend-dev-guide/themes/theme-apply.html
+
+        - label: Locate templates, layouts, and styles
+          url: /frontend-dev-guide/themes/debug-theme.html
+
+        - label: Magento theme structure
+          url: /frontend-dev-guide/themes/theme-structure.html
+
+        - label: Theme inheritance
+          url: /frontend-dev-guide/themes/theme-inherit.html
+
+        - label: Adding custom favicons
+          url: /frontend-dev-guide/themes/favicon.html
+
+        - label: Configure theme properties
+          url: /frontend-dev-guide/themes/theme-images.html
+
+        - label: Configure product video
+          url: /frontend-dev-guide/themes/product-video.html
+
+        - label: JavaScript Bundling
+          url: /frontend-dev-guide/themes/js-bundling.html
+
+    - label: Layout
+      url: /frontend-dev-guide/layouts/layout-overview.html
+      children:
+
+        - label: Layout instructions
+          url: /frontend-dev-guide/layouts/xml-instructions.html
+
+        - label: Layout file types
+          url: /frontend-dev-guide/layouts/layout-types.html
+
+        - label: Product layouts
+          url: /frontend-dev-guide/layouts/product-layouts.html
+
+        - label: Create a new layout
+          url: /frontend-dev-guide/layouts/layout-create.html
+
+        - label: Extend a layout
+          url: /frontend-dev-guide/layouts/layout-extend.html
+
+        - label: Override a layout
+          url: /frontend-dev-guide/layouts/layout-override.html
+
+        - label: Common layout customization tasks
+          url: /frontend-dev-guide/layouts/xml-manage.html
+
+        - label: Customizing layout illustration
+          url: /frontend-dev-guide/layouts/layout-practice.html
+
+    - label: Templates
+      url: /frontend-dev-guide/templates/template-overview.html
+      children:
+
+        - label: Templates basic concepts
+          url: /frontend-dev-guide/templates/template-override.html
+
+        - label: Templates customization walkthrough
+          url: /frontend-dev-guide/templates/template-walkthrough.html
+
+        - label: Templates customization sample
+          url: /frontend-dev-guide/templates/template-sample.html
+
+        - label: Email templates
+          url: /frontend-dev-guide/templates/template-email.html
+
+    - label: Cascading style sheets (CSS)
+      url: /frontend-dev-guide/css-topics/css-overview.html
+      children:
+
+        - label: Include CSS
+          url: /frontend-dev-guide/css-topics/css-themes.html
+
+        - label: CSS and LESS preprocessing
+          url: /frontend-dev-guide/css-topics/css-preprocess.html
+
+        - label: Compile LESS using Grunt
+          url: /frontend-dev-guide/css-topics/css_debug.html
+
+        - label: Magento UI library
+          url: /frontend-dev-guide/css-topics/theme-ui-lib.html
+
+        - label: Using jQuery UI styles
+          url: /frontend-dev-guide/css-topics/css-jquery.html
+
+        - label: Customizing styles illustration
+          url: /frontend-dev-guide/css-topics/css-practice.html
+
+        - label: Using custom fonts
+          url: /frontend-dev-guide/css-topics/using-fonts.html
+
+        - label: CSS critical path
+          url: /frontend-dev-guide/css-topics/css-critical-path.html
+
+        - label: Using custom CSS preprocessor
+          children:
+
+            - label: Add custom CSS preprocessor
+              url: /frontend-dev-guide/css-topics/custom_preprocess.html
+
+            - label: Use Sass preprocessor and Gulp task runner
+              url: /frontend-dev-guide/css-topics/gulp-sass.html
+
+    - label: Quick start guide to styles
+      url: /frontend-dev-guide/css-guide/css_quick_guide_overview.html
+      children:
+
+        - label: Simple ways to customize a theme's styles
+          url: /frontend-dev-guide/css-guide/css_quick_guide_approach.html
+
+        - label: Simple style changes with client-side LESS compilation vs. server-side
+          url: /frontend-dev-guide/css-guide/css_quick_guide_mode.html
+
+    - label: How to Make Your Theme Responsive and Mobile
+      url: /frontend-dev-guide/responsive-web-design/rwd_overview.html
+      children:
+
+        - label: CSS in responsive design
+          url: /frontend-dev-guide/responsive-web-design/rwd_css.html
+
+        - label: JavaScript in Magento responsive design
+          url: /frontend-dev-guide/responsive-web-design/rwd_js.html
+
+        - label: Create a responsive mobile theme based on a default theme
+          url: /frontend-dev-guide/responsive-web-design/rwd_mobile.html
+
+        - label: Customizing RWD illustration
+          url: /frontend-dev-guide/responsive-web-design/rwd_practice.html
+
+        - label: Add a custom breakpoint
+          url: /frontend-dev-guide/responsive-web-design/rwd-breakpoints.html
+
+    - label: Translations
+      url: /frontend-dev-guide/translations/xlate.html
+      children:
+
+        - label: Use translation dictionary to customize strings
+          url: /frontend-dev-guide/translations/theme_dictionary.html
+
+        - label: Translate theme strings
+          url: /frontend-dev-guide/translations/translate_theory.html
+
+        - label: Example theme translation dictionary
+          url: /frontend-dev-guide/translations/translate_practice.html
+
+    - label: Form validation
+      url: /frontend-dev-guide/validations/form-validation.html
+      children:
+
+        - label: Custom validation rule
+          url: /frontend-dev-guide/validations/custom-validation.html
+
+        - label: Custom Form validation
+          url: /frontend-dev-guide/validations/custom-form-validation.html
+
+    - label: Tools
+      url: /frontend-dev-guide/tools/tools_overview.html
+      children:
+
+        - label: Using Grunt for Magento tasks
+          url: /frontend-dev-guide/tools/using_grunt.html

@@ -1,0 +1,9 @@
+---
+title: Magento_GiftCardGraphQl
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/GiftCardGraphQl/README.md
+last_modified_at: '2018-01-30 15:41:07 -0600'
+content: |-
+  **GiftCardGraphQl** provides type and resolver information for the GraphQl module
+  to generate giftcard product information.

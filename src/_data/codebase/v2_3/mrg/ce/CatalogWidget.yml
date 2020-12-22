@@ -1,0 +1,9 @@
+---
+title: Magento_CatalogWidget
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/CatalogWidget/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: |-
+  **CatalogWidget** contains various widgets that extend Catalog module functionality:
+  - Product List widget provides widget that contains product list created using rule based filter.

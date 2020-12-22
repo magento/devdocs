@@ -1,0 +1,36 @@
+{%- if page.guide_version == nil -%}
+{%- assign search_version = site.version -%}
+{% else %}
+{%- assign search_version = page.guide_version -%}
+{%- endif -%}
+
+<form
+  class="spectrum-Search search-form"
+  action="{{ site.baseurl }}/guides/v{{ search_version }}/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+

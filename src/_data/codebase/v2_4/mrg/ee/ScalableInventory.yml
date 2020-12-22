@@ -1,0 +1,10 @@
+---
+title: Magento_ScalableInventory
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/ScalableInventory/README.md
+last_modified_at: '2015-09-01 17:12:45 +0300'
+content: |-
+  Magento\ScalableInventory module provides ability for system extension (CatalogInventory can be configured to work with separate quantity storage).
+  Extraction of quantity updates to separate storage will guarantee better scalability for Magento,
+  and will allow main server to be optimised for read operations which will reduce latency.

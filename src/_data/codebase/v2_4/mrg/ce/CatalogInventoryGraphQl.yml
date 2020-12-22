@@ -1,0 +1,9 @@
+---
+title: Magento_CatalogInventoryGraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/CatalogInventoryGraphQl/README.md
+last_modified_at: '2018-07-18 16:40:53 +0200'
+content: |-
+  **CatalogInventoryGraphQl** provides type information for the GraphQl module
+  to generate inventory stock fields for product information endpoints.

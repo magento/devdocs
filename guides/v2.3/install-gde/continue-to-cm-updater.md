@@ -1,1 +1,0 @@
-../../../guides/v2.2/install-gde/continue-to-cm-updater.md

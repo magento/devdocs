@@ -1,0 +1,1 @@
+../../../v2.3/payments-integrations/base-integration/integration-intro.md

@@ -1,0 +1,8 @@
+---
+title: Magento_Swatches
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Swatches/README.md
+last_modified_at: '2015-07-28 12:18:39 +0300'
+content: Magento_Swatches module is replacing default product attributes text values
+  with swatch images, for more convenient product displaying and selection.

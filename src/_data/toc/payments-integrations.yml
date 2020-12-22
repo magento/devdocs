@@ -1,0 +1,92 @@
+label: Payment Provider Gateway
+pages:
+    - label: Introduction
+      url: /payments-integrations/bk-payments-integrations.html
+
+    - label: Magento payment provider gateway
+      url: /payments-integrations/payment-gateway/payment-gateway-intro.html
+      children:
+
+        - label: Payment provider gateway structure
+          url: /payments-integrations/payment-gateway/payment-gateway-structure.html
+
+        - label: Gateway Command
+          url: /payments-integrations/payment-gateway/gateway-command.html
+
+        - label: Gateway Command Pool
+          url: /payments-integrations/payment-gateway/command-pool.html
+
+        - label: Request Builder
+          url: /payments-integrations/payment-gateway/request-builder.html
+
+        - label: Gateway Client
+          url: /payments-integrations/payment-gateway/gateway-client.html
+
+        - label: Response Validator
+          url: /payments-integrations/payment-gateway/response-validator.html
+
+        - label: Response Handler
+          url: /payments-integrations/payment-gateway/response-handler.html
+
+        - label: Error Code Mapping
+          url: /payments-integrations/payment-gateway/error-code-mapper.html
+
+    - label: Adding a new payment integration (payment method)
+      url: /payments-integrations/base-integration/integration-intro.html
+      children:
+
+        - label: Payment method module configuration
+          url: /payments-integrations/base-integration/module-configuration.html
+
+        - label: Payment method configuration
+          url: /payments-integrations/base-integration/payment-option-config.html
+
+        - label: Payment method facade
+          url: /payments-integrations/base-integration/facade-configuration.html
+
+        - label: Payment info rendering in Admin checkout
+          url: /payments-integrations/base-integration/formblocktype.html
+
+        - label: Add a payment action
+          url: /payments-integrations/base-integration/payment-action.html
+
+        - label: Get payment information from frontend to backend
+          url: /payments-integrations/base-integration/get-payment-info.html
+
+        - label: Configure payment method by area
+          url: /payments-integrations/base-integration/admin-integration.html
+
+    - label: Adding vault integration
+      url: /payments-integrations/vault/vault-intro.html
+      children:
+
+        - label: Add vault to module dependencies
+          url: /payments-integrations/vault/module-configuration.html
+
+        - label: Vault payment configuration
+          url: /payments-integrations/vault/vault-payment-configuration.html
+
+        - label: Vault DI configuration
+          url: /payments-integrations/vault/vault-di.html
+
+        - label: Enable vault
+          url: /payments-integrations/vault/enabler.html
+
+        - label: Payment Token
+          url: /payments-integrations/vault/payment-token.html
+
+        - label: Token UI component provider
+          url: /payments-integrations/vault/token-ui-component-provider.html
+
+        - label: Display the stored information
+          url: /payments-integrations/vault/customer-stored-payments.html
+
+        - label: Vault implementation for Admin
+          url: /payments-integrations/vault/admin-integration.html
+
+    - label: Signifyd fraud protection
+      url: /payments-integrations/signifyd/signifyd.html
+      include_versions: ["2.3"]
+
+    - label: CardinalCommerce 3-D Secure
+      url: /payments-integrations/cardinal/cardinal.html

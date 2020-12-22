@@ -1,0 +1,1 @@
+../../../../v2.3/ext-best-practices/tutorials/modify-image-library-permissions/index.md

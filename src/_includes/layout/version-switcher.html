@@ -1,0 +1,30 @@
+{% if page.layout == 'home' %}
+{% assign versions = site.versions %}
+{% else %}
+{% assign versions = page.versions %}
+{% endif %}
+
+{%- if versions.size > 1 -%}
+<div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento {{ page.guide_version }}</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			{% for version in versions %}
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="{{ site.baseurl }}{{ version.url }}">Magento {{ version.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	
+</div>
+{%- elsif versions.size == 1 -%}
+<div class="version-switcher spectrum-Dropdown">
+	<button class="dropdown-toggle spectrum-FieldButton spectrum-Dropdown-trigger" disabled>
+		<span class="spectrum-Dropdown-label">Magento {{ page.guide_version }}</span>
+	</button>
+</div>
+{%- endif -%}

@@ -1,0 +1,18 @@
+---
+title: Magento_InventoryMultiDimensionalIndexerApi
+source_repo: inventory
+release: 1.1.6
+github_path: InventoryMultiDimensionalIndexerApi/README.md
+last_modified_at: '2018-11-09 00:12:40 +0200'
+content: "The `InventoryMultiDimensionalIndexerApi` module  provides functionality
+  for creating and handling multi-dimension indexes.\n\nThis module is part of the
+  new inventory infrastructure. The\n[Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html)\ndescribes
+  the MSI (Multi-Source Inventory) project in more detail.\n\n## Installation details\n\nThis
+  module is installed as part of Magento Open Source. It cannot be deleted or disabled.\n\n\n##
+  Extension points\n\nThe library introduces a set of extension points which split
+  a monolithic index by the specified dimension (Scope), creating \nan independent
+  index (i.e. dedicated MySQL table) per dimension. The library also provides a mechanism
+  for resolving \nindex names based on the provided scope. The multi-dimension indexes
+  are introduced for the sake of data scalability\nand the ability to reindex data
+  in the scope of particular dimension only.\n\nAn aliasing mechanism guarantees zero
+  downtime to make Front-End responsive while Full Reindex being processed."

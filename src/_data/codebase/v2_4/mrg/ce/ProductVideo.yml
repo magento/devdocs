@@ -1,0 +1,8 @@
+---
+title: Magento_ProductVideo
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/ProductVideo/README.md
+last_modified_at: '2015-09-11 16:19:20 +0300'
+content: The Magento_ProductVideo module implements functionality related with linking
+  video files from external resources to product.

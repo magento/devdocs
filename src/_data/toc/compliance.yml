@@ -1,0 +1,42 @@
+label: Security and Compliance
+pages:
+    - label: Security
+      versionless: true
+      url: /security/security-and-compliance.html
+      children:
+
+      - label: Content Security Policy Overview
+        versionless: true
+        url: /security/content-security-policy-overview.html
+
+    - label: Industry Compliance
+      versionless: true
+      url: /compliance/industry-compliance.html
+
+    - label: Privacy Regulations
+    
+      children:
+
+        - label: CCPA
+          versionless: true
+          url: /compliance/privacy/ccpa.html
+
+        - label: GDPR
+          versionless: true
+          url: /compliance/privacy/gdpr.html
+
+        - label: PI Reference (M2.x)
+          versionless: true
+          url: /compliance/privacy/pi-data-reference-m2.html
+
+        - label: PI Reference (M1.x)
+          versionless: true
+          url: /compliance/privacy/pi-data-reference-m1.html
+
+    - label: Compliance tools
+      versionless: true
+      children:
+
+        - label: Magento Privacy JavaScript Library
+          versionless: true
+          url: /compliance/privacy/magento-privacy-js-library.html

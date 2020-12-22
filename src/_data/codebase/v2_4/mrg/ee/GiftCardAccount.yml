@@ -1,0 +1,9 @@
+---
+title: Magento_GiftCardAccount
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/GiftCardAccount/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: The Magento_GiftCardAccount module is responsible for gift card balances,
+  for both gift cards created by a store administrator and gift cards sold as gift
+  card products.

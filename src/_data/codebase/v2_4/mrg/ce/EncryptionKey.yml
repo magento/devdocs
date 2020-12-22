@@ -1,0 +1,8 @@
+---
+title: Magento_EncryptionKey
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/EncryptionKey/README.md
+last_modified_at: '2015-08-27 15:34:05 -0500'
+content: The Magento_EncryptionKey module provides an advanced encryption model to
+  protect passwords and other sensitive data.

@@ -1,0 +1,8 @@
+---
+title: Magento_CatalogInventory
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/CatalogInventory/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: Magento_CatalogInventory module allows retrieve and update stock attributes,
+  such as status and quantity.

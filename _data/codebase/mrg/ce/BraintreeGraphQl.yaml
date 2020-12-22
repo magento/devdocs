@@ -1,9 +1,0 @@
----
-title: Magento_BraintreeGraphQl
-source_repo: magento2ce
-release: 2.3.3
-github_path: app/code/Magento/BraintreeGraphQl/README.md
-last_modified_at: '2019-02-23 12:30:05 -0500'
-content: |-
-  **BraintreeGraphQl** provides type and resolver for method additional
-  information.

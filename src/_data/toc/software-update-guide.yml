@@ -1,0 +1,140 @@
+label: Software Update Guide
+pages:
+
+    - label: Magento upgrade overview
+      url: /comp-mgr/bk-compman-upgrade-guide.html
+
+    - label: Prerequisites
+      url: /comp-mgr/prereq/prereq_compman.html
+      children:
+
+        - label: Check the catalog search engine
+          url: /comp-mgr/prereq/prereq-elasticsearch.html
+          exclude_versions: ["2.3"]
+
+        - label: Set ulimit for the web server user
+          url: /comp-mgr/prereq/prereq_compman-ulimit.html
+
+        - label: Set up cron for update and upgrade
+          url: /comp-mgr/prereq/prereq_cron.html
+
+        - label: Update and upgrade checklist
+          url: /comp-mgr/prereq/prereq_compman-checklist.html
+
+    - label: Magento Marketplace example
+      url: /comp-mgr/marketplace/marketplace.html
+      include_versions: ["2.3"]
+
+    - label: Run the Module Manager
+      url: /comp-mgr/module-man/compman-checklist.html
+      include_versions: ["2.3"]
+      children:
+
+        - label: Start the Module Manager
+          url: /comp-mgr/module-man/compman-start.html
+
+        - label: Step 1. Readiness check
+          url: /comp-mgr/module-man/compman-readiness.html
+
+        - label: Step 2. Back up the file system and database
+          url: /comp-mgr/module-man/compman-backup.html
+
+        - label: Enable/Disable
+          url: /comp-mgr/module-man/modman-enable-disable.html
+
+    - label: Upgrade from Magento Open Source to Magento Commerce
+      url: /comp-mgr/upgrader/ce-ee-upgrade-start.html
+      include_versions: ["2.3"]
+
+    - label: Upgrade Magento
+      url: /comp-mgr/cli/cli-upgrade.html
+      exclude_versions: ["2.3"]
+      children:
+
+        - label: Upgrade with sample data
+          url: /comp-mgr/cli/cli-rc1-samp.html
+
+    - label: Command-line upgrade
+      url: /comp-mgr/cli/cli-upgrade.html
+      include_versions: ["2.3"]
+      children:
+
+        - label: Upgrade using the custom script
+          url: /comp-mgr/cli/upgrade-with-script.html
+          exclude_versions: ["2.4"]
+          
+        - label: Upgrade using the Composer plugin
+          url: /comp-mgr/cli/upgrade-with-plugin.html
+
+        - label: Upgrade with sample data
+          url: /comp-mgr/cli/cli-rc1-samp.html
+
+    - label: Upgrade modules
+      url: /comp-mgr/upgrade-module.html
+      exclude_versions: ["2.3"]
+
+    - label: Manage modules
+      url: /comp-mgr/manage-module.html
+      exclude_versions: ["2.3"]
+
+    - label: Run System Upgrade
+      url: /comp-mgr/upgrader/upgrade-checklist.html
+      include_versions: ["2.3"]
+      children:
+
+        - label: Start System Upgrade
+          url: /comp-mgr/upgrader/upgrade-start.html
+
+        - label: Step 1. Select versions to upgrade
+          url: /comp-mgr/upgrader/upgrade-main-pg.html
+
+        - label: Step 2. Readiness check
+          url: /comp-mgr/upgrader/upgrade-readiness.html
+
+        - label: Step 3. Back up the file system and database
+          url: /comp-mgr/upgrader/upgrade-backup.html
+
+        - label: Step 4. Upgrade
+          url: /comp-mgr/upgrader/upgrade.html
+
+    - label: Apply patches
+      url: /comp-mgr/patching.html
+      children:
+
+       - label: Magento Quality Patches
+         url: /comp-mgr/patching/mqp.html
+         children:
+
+           - label: MQP release notes
+             url: /quality-patches/release-notes.html
+             versionless: true
+
+       - label: Command Line
+         url: /comp-mgr/patching/command-line.html
+         children:
+
+       - label: Composer
+         url: /comp-mgr/patching/composer.html
+         children:
+
+    - label: Update the updater application
+      url: /comp-mgr/updater/update-updater.html
+      include_versions: ["2.3"]
+
+    - label: Troubleshooting
+      url: /comp-mgr/trouble/tshoot.html
+      children:
+
+        - label: Sorry, we can't take that action right now
+          url: /comp-mgr/trouble/cman/were-sorry.html
+          include_versions: ["2.3"]
+
+        - label: Your current search engine is not supported
+          url: /comp-mgr/trouble/current-search-engine.html
+          exclude_versions: ["2.3"]
+
+        - label: Roll back after update failure
+          url: /comp-mgr/trouble/cman/update-fail.html
+
+        - label: Maintenance mode options for upgrade
+          url: /comp-mgr/trouble/cman/maint-mode.html

@@ -1,0 +1,62 @@
+label: Architecture Guide
+pages:
+    - label: Introduction
+      url: /architecture/bk-architecture.html
+
+    - label: Architectural basics
+      url: /architecture/archi_perspectives/ABasics_intro.html
+      children:
+
+        - label: Architectural diagrams
+          url: /architecture/archi_perspectives/arch_diagrams.html
+
+        - label: Frontend customization
+          url: /architecture/frontend_custom_strategies.html
+
+        - label: Security overview
+          url: /architecture/security_intro.html
+
+    - label: Architectural layers
+      url: /architecture/archi_perspectives/ALayers_intro.html
+      children:
+
+        - label: Domain layer
+          url: /architecture/archi_perspectives/domain_layer.html
+
+        - label: Persistence layer
+          url: /architecture/archi_perspectives/persist_layer.html
+        
+        - label: Presentation layer
+          url: /architecture/archi_perspectives/present_layer.html
+
+        - label: Service layer
+          url: /architecture/archi_perspectives/service_layer.html
+
+    - label: Coding Standards
+      url: /coding-standards/bk-coding-standards.html
+
+    - label: Magento Framework
+      url: /architecture/archi_perspectives/framework.html
+
+    - label: Modules and Extensibility
+      url: /architecture/extensibility.html
+      children:
+
+        - label: Module overview
+          url: /architecture/archi_perspectives/components/modules/mod_intro.html
+
+        - label: Modules and areas
+          url: /architecture/archi_perspectives/components/modules/mod_and_areas.html
+
+        - label: Module relationships
+          url: /architecture/archi_perspectives/components/modules/mod_relationships.html
+
+        - label: Module dependencies
+          url: /architecture/archi_perspectives/components/modules/mod_depend.html
+
+    - label: Technical vision
+      url: /architecture/archi_perspectives/tech-vision.html
+      children:
+
+        - label: Web Api
+          url: /get-started/bk-get-started-api.html

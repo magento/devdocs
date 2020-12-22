@@ -1,0 +1,9 @@
+---
+title: Magento_Downloadable
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Downloadable/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: |-
+  Magento_Downloadable module introduces new product type in the Magento application called Downloadable Product.
+  This module is designed to extend existing functionality of Magento_Catalog module by adding new product type.

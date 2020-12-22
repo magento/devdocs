@@ -1,0 +1,20 @@
+---
+title: Magento_Inventory
+source_repo: inventory
+release: 1.2.1
+github_path: Inventory/README.md
+last_modified_at: '2018-11-09 00:12:40 +0200'
+content: "The `Inventory` module is part of the new inventory infrastructure,\nwhich
+  replaces the legacy `CatalogInventory` module with new and expanded features and
+  APIs for Inventory Management.  \n \nThe [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html)\ndescribes
+  the MSI (Multi-Source Inventory) project in more detail.\n\nAll Inventory Management
+  modules follow the \n[Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle).\n[Inventory
+  management architecture](https://devdocs.magento.com/guides/v2.3/inventory/architecture.html)
+  \nprovides additional insight about the overall structure of these modules.\n\n##
+  Installation details\n\nThis module is installed as part of Magento Open Source.
+  Unless a custom implementation for `InventoryApi` is provided\nby a 3rd-party module,
+  the module cannot be deleted or disabled.\n\n## Extension points and service contracts\n\nMagento
+  does not recommend using or referring to classes and other entities in the `Inventory`
+  module. All public \ninterfaces and extension points related to this module are
+  located in the `InventoryApi` module. \nUse the interfaces and extension points
+  defined in `InventoryApi` to extend this module."

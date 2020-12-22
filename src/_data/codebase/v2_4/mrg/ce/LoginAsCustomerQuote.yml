@@ -1,0 +1,8 @@
+---
+title: Magento_LoginAsCustomerQuote
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/LoginAsCustomerQuote/README.md
+last_modified_at: '2020-05-21 22:39:24 -0500'
+content: The Magento_LoginAsCustomerQuote module is responsible for communication
+  between Magento_LoginAsCustomer and shopping cart state.

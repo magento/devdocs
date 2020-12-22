@@ -1,0 +1,10 @@
+---
+title: Magento_VersionsCms
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/VersionsCms/README.md
+last_modified_at: '2017-04-14 11:20:03 -0500'
+content: |-
+  The Versions CMS module adds a hierarchy feature for CMS pages.
+
+  The hierarchy feature organizes CMS pages as a hierarchy tree that allows parent/child relationships between pages.

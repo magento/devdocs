@@ -1,0 +1,10 @@
+---
+title: Magento_PersistentHistory
+source_repo: magento2ee
+release: 2.3.6
+github_path: app/code/Magento/PersistentHistory/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  Magento\PersistentHistory module extends functionality of Magento\Persistent by providing ability to keep track of
+  products added to  wishlist, recently ordered items, currently compared products, comparison history, recently viewed
+  products and customer group membership and segmentation.

@@ -1,0 +1,8 @@
+---
+title: Magento_Marketplace
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/Marketplace/README.md
+last_modified_at: '2015-10-02 13:02:03 +0300'
+content: The Magento_Marketplace module allows to display partners of Magento in the
+  backend.

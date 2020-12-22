@@ -1,0 +1,50 @@
+<!-- Main Navigation -->
+{%- assign sections = site.data.main-nav -%}
+
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+{%- for section in sections -%}
+{%- assign subsections = section.children -%}
+
+  {%- if section.label -%}
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">{{ section.label }}</span>
+
+    {%- if subsections -%}
+      <div class="nav-popup spectrum-Popover">
+
+      {%- capture nav -%}
+        {%- for subsection in subsections -%}
+          {%- assign subchildren = subsection.children -%}
+          {%- if subchildren -%}
+            <div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">{{ subsection.label }}</div>
+              <ul class="spectrum-Menu">
+              {%- for item in subchildren -%}
+                {%- include layout/nav-item.html section=item menuClass="spectrum-Menu" itemClass="spectrum-Menu-item" labelClass="spectrum-Menu-itemLabel" -%}
+              {%- endfor-%}
+              </ul>
+            </div>
+          {%- else if -%}
+            {%- include layout/nav-item.html section=subsection menuClass="spectrum-Menu" itemClass="spectrum-Menu-item" labelClass="spectrum-Menu-itemLabel" -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+
+      {%- if subchildren -%}
+        {{ nav }}
+      {%- else if -%}
+        <ul>{{ nav }}</ul>
+      {%- endif -%}
+
+      </div>
+    {%- endif -%}
+
+  </li>
+  {%- else if -%}
+  <li class="nav-main-separator"></li>
+  {%- endif -%}
+
+{%- endfor -%}
+
+</ul><!-- /.nav-main -->

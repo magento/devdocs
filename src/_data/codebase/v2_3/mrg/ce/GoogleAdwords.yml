@@ -1,0 +1,7 @@
+---
+title: Magento_GoogleAdwords
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/GoogleAdwords/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: GoogleAdwords is a module designed for integration of Google Adwords service.

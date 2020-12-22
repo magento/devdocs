@@ -1,0 +1,61 @@
+{% include layout/header.html %}
+
+<div class="content-container">
+    <div id="redoc-container"></div>
+</div>
+
+<style>
+redoc[spec-url] table {
+  table-layout: auto;
+}
+
+redoc[spec-url] .menu-subitems .menu-item-title{
+  text-transform: none;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"> </script>
+<script>
+    Redoc.init('{{ page.specUrl }}', {
+        scrollYOffset: '.site-nav',
+        hideHostname: true,
+        sortPropsAlphabetically: true,
+        pathInMiddlePanel: true,
+        hideDownloadButton: true,
+        showExtensions: true,
+        nativeScrollbars: true,
+        lazyRendering: true,
+        theme: {
+            colors: {
+                tonalOffset: 0.2,
+                primary: {
+                    main: '#2b2b2c',
+                },
+                success: {
+                    main: '#008000',
+                    light: '#ecf7ed',
+                },
+                error: {
+                    main: '#cc0000',
+                },
+                responses: {
+                    success: {
+                        backgroundColor: '#ecf7ed',
+                    },
+                    error: {
+                        backgroundColor: '#ffebeb',
+                    }
+                }
+            },
+            typography: {
+                fontFamily: '',
+                headings: {
+                    fontFamily: '',
+                }
+            },
+        }
+    }, document.getElementById('redoc-container'))
+
+</script>
+
+{% include layout/footer.html %}

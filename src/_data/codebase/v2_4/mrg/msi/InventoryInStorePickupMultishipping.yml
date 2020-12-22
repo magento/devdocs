@@ -1,0 +1,19 @@
+---
+title: Magento_InventoryInStorePickupMultishipping
+source_repo: inventory
+release: 1.2.1
+github_path: InventoryInStorePickupMultishipping/README.md
+last_modified_at: '2019-09-12 15:55:31 +0300'
+content: |-
+  The `InventoryInStorePickupMultishipping` module provides business logic for In-Store Pickup functionality on Multishipping Checkout.
+  In-Store Pickup Delivery is not available for Multishipping for now.
+  Module provide plugin to disable active Multishipping mode when customer will visit the checkout.
+
+  This module is part of the new inventory infrastructure. The
+  [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html)
+  describes the MSI (Multi-Source Inventory) project in more detail.
+
+  ## Installation details
+
+  This module is installed as part of Magento Open Source. Unless a custom implementation for `InventoryInStorePickupMultishipping`
+  is provided by a 3rd-party module, the module cannot be deleted or disabled.

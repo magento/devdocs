@@ -1,3 +1,6 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
 # frozen_string_literal: true
 
 # The hook runs html-proofer with options defined in the
@@ -30,7 +33,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
     if url_ignore
       url_ignore.push(jekyll_excludes_as_regex).flatten!.uniq!
     else
-      checks_config['html-proofer'].merge!(url_ignore: jekyll_excludes_as_regex)
+      checks_config['html-proofer'][:url_ignore] = jekyll_excludes_as_regex
     end
 
     # Read configuration options for html-proofer

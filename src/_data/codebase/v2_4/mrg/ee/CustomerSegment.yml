@@ -1,0 +1,9 @@
+---
+title: Magento_CustomerSegment
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/CustomerSegment/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: |-
+  The Magento_CustomerSegment module enables customer segmentation, allowing the creation of customer groups based on characteristics like shopping cart content, orders history, address, and so on.
+  This allows dynamically targeting different content and promotions for those groups. Various components of a website, such as promotions and banners, can be personalized depending on the customer segment of a customer browsing the store at the moment.

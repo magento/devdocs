@@ -1,0 +1,292 @@
+label: UI Components Guide
+pages:
+    - label: Overview of UI components
+      url: /ui_comp_guide/bk-ui_comps.html
+
+    - label: Components
+      children:
+
+        - label: ActionDelete component
+          url: /ui_comp_guide/components/ui-actiondelete.html
+
+        - label: ActionsColumn component
+          url: /ui_comp_guide/components/ui-actionscolumn.html
+
+        - label: Bookmarks component
+          url: /ui_comp_guide/components/ui-bookmarks.html
+
+        - label: Button component
+          url: /ui_comp_guide/components/ui-button.html
+
+        - label: Checkbox component
+          url: /ui_comp_guide/components/ui-checkbox.html
+
+        - label: CheckboxToggleNotice component
+          url: /ui_comp_guide/components/ui-checkbox-toggle-notice.html
+
+        - label: Checkboxset component
+          url: /ui_comp_guide/components/ui-checkboxset.html
+
+        - label: ColorPicker component
+          url: /ui_comp_guide/components/ui-colorpicker.html
+
+        - label: Column component
+          url: /ui_comp_guide/components/ui-column.html
+
+        - label: Columns component
+          url: /ui_comp_guide/components/ui-columns.html
+
+        - label: ColumnsEditor component
+          url: /ui_comp_guide/components/ui-columns-editor.html
+
+        - label: ColumnsEditorRecord component
+          url: /ui_comp_guide/components/ui-columns-editor-record.html
+
+        - label: ColumnsEditorView component
+          url: /ui_comp_guide/components/ui-columns-editor-view.html
+
+        - label: ColumnsEditingBulk component
+          url: /ui_comp_guide/components/ui-columns-editing-bulk.html
+
+        - label: ColumnsEditingClient component
+          url: /ui_comp_guide/components/ui-columns-editing-client.html
+
+        - label: ColumnsResize component
+          url: /ui_comp_guide/components/ui-columns-resize.html
+          exclude_versions: ["2.2"]
+
+        - label: ColumnsControls component
+          url: /ui_comp_guide/components/ui-columnscontrols.html
+
+        - label: Container component
+          url: /ui_comp_guide/components/ui-container.html
+
+        - label: Date component
+          url: /ui_comp_guide/components/ui-date.html
+
+        - label: DateColumn component
+          url: /ui_comp_guide/components/ui-datecolumn.html
+
+        - label: DragAndDrop component
+          url: /ui_comp_guide/components/ui-draganddrop.html
+
+        - label: DynamicRows component
+          url: /ui_comp_guide/components/ui-dynamicrows.html
+
+        - label: DynamicRowsDragAndDrop component
+          url: /ui_comp_guide/components/ui-dynamicrows-dnd.html
+
+        - label: DynamicRowsRecord component
+          url: /ui_comp_guide/components/ui-dynamicrows-record.html
+
+        - label: Email component
+          url: /ui_comp_guide/components/ui-email.html
+
+        - label: Expandable column component
+          url: /ui_comp_guide/components/ui-expandable-column.html
+
+        - label: ExportButton component
+          url: /ui_comp_guide/components/ui-exportbutton.html
+
+        - label: Fieldset component
+          url: /ui_comp_guide/components/ui-fieldset.html
+
+        - label: File component
+          url: /ui_comp_guide/components/ui-file.html
+
+        - label: FileUploader component
+          url: /ui_comp_guide/components/ui-fileuploader.html
+
+        - label: Filters component
+          url: /ui_comp_guide/components/ui-filters.html
+
+        - label: FiltersChips component
+          url: /ui_comp_guide/components/ui-filterschips.html
+
+        - label: Form component
+          url: /ui_comp_guide/components/ui-form.html
+
+        - label: FormDataProvider component
+          url: /ui_comp_guide/components/ui-form-data-provider.html
+
+        - label: GridDataProvider component
+          url: /ui_comp_guide/components/ui-grid-data-provider.html
+
+        - label: Hidden component
+          url: /ui_comp_guide/components/ui-hidden.html
+
+        - label: HtmlContent component
+          url: /ui_comp_guide/components/ui-htmlcontent.html
+
+        - label: ImagePreview component
+          url: /ui_comp_guide/components/ui-image-preview.html
+
+        - label: ImageUploader component
+          url: /ui_comp_guide/components/image-uploader/
+
+        - label: Input component
+          url: /ui_comp_guide/components/ui-input.html
+
+        - label: InsertForm component
+          url: /ui_comp_guide/components/ui-insertform.html
+
+        - label: InsertListing component
+          url: /ui_comp_guide/components/ui-insertlisting.html
+
+        - label: LinkColumn component
+          url: /ui_comp_guide/components/ui-linkcolumn.html
+
+        - label: Listing (grid) component
+          url: /ui_comp_guide/components/ui-listing-grid.html
+
+        - label: Masonry (grid) component
+          url: /ui_comp_guide/components/ui-masonry.html
+
+        - label: MassActions component
+          url: /ui_comp_guide/components/ui-massactions.html
+
+        - label: Modal component
+          url: /ui_comp_guide/components/ui-modal.html
+
+        - label: Multiline component
+          url: /ui_comp_guide/components/ui-multiline.html
+
+        - label: Multiselect component
+          url: /ui_comp_guide/components/ui-multiselect.html
+
+        - label: MultiselectColumn component
+          url: /ui_comp_guide/components/ui-multiselectcolumn.html
+
+        - label: Nav component
+          url: /ui_comp_guide/components/ui-nav.html
+
+        - label: OnOffColumn component
+          url: /ui_comp_guide/components/ui-onoffcolumn.html
+
+        - label: Paging component
+          url: /ui_comp_guide/components/ui-paging.html
+
+        - label: Radioset component
+          url: /ui_comp_guide/components/ui-radioset.html
+
+        - label: Range component
+          url: /ui_comp_guide/components/ui-range.html
+
+        - label: Search component
+          url: /ui_comp_guide/components/ui-search.html
+
+        - label: Select component
+          url: /ui_comp_guide/components/ui-select.html
+
+        - label: SelectColumn component
+          url: /ui_comp_guide/components/ui-selectcolumn.html
+
+        - label: Sizes component
+          url: /ui_comp_guide/components/ui-sizes.html
+
+        - label: SortBy component
+          url: /ui_comp_guide/components/ui-sortby.html
+          exclude_versions: ["2.3"]
+
+        - label: Tab component
+          url: /ui_comp_guide/components/ui-tab.html
+
+        - label: Text component
+          url: /ui_comp_guide/components/ui-text.html
+
+        - label: Textarea component
+          url: /ui_comp_guide/components/ui-textarea.html
+
+        - label: ThumbnailColumn component
+          url: /ui_comp_guide/components/ui-thumbnailcolumn.html
+
+        - label: TimelineColumns component
+          url: /ui_comp_guide/components/ui-timeline-columns.html
+
+        - label: ListingToolbar component
+          url: /ui_comp_guide/components/ui-toolbar.html
+
+        - label: TreeMassActions component
+          url: /ui_comp_guide/components/ui-treemassactions.html
+
+        - label: UrlInput component
+          url: /ui_comp_guide/components/ui-urlinput.html
+
+        - label: UI-select component
+          url: /ui_comp_guide/components/ui-secondary-uiselect.html
+
+        - label: WYSIWYG component
+          url: /ui_comp_guide/components/ui-wysiwyg.html
+          children:
+
+            - label: Add Custom Editor
+              url: /ui_comp_guide/components/wysiwyg/add-custom-editor/
+
+            - label: Configure the TinyMCE editor
+              url: /ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html
+
+            - label: Extension Points
+              url: /ui_comp_guide/components/wysiwyg/extension-points/
+
+    - label: Concepts
+      children:
+
+        - label: Configuration flow of UI components
+          url: /ui_comp_guide/concepts/ui_comp_config_flow_concept.html
+
+        - label: About XML configuration of UI components
+          url: /ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html
+
+        - label: Providing Data to UI Components
+          url: /ui_comp_guide/concepts/ui_comp_data_source.html
+
+        - label: About PHP modifiers in UI components
+          url: /ui_comp_guide/concepts/ui_comp_modifier_concept.html
+
+        - label: Template Literals
+          url: /ui_comp_guide/concepts/ui_comp_template_literals.html
+
+        - label: Magento custom Knockout.js bindings
+          url: /ui_comp_guide/concepts/knockout-bindings.html
+
+        - label: Magento binding syntax
+          url: /ui_comp_guide/concepts/magento-bindings.html
+
+        - label: About the uiClass library
+          url: /ui_comp_guide/concepts/ui_comp_uiclass_concept.html
+
+        - label: About the uiElement class
+          url: /ui_comp_guide/concepts/ui_comp_uielement_concept.html
+
+        - label: About the uiCollection class
+          url: /ui_comp_guide/concepts/ui_comp_uicollection_concept.html
+
+        - label: The uiLayout service object
+          url: /ui_comp_guide/concepts/ui_comp_uilayout_concept.html
+
+        - label: Linking properties of UI components
+          url: /ui_comp_guide/concepts/ui_comp_linking_concept.html
+
+        - label: uiRegistry
+          url: /ui_comp_guide/concepts/ui_comp_uiregistry.html
+
+    - label: How Tos
+      children:
+
+        - label: Create and display a category attribute with UI components
+          url: /ui_comp_guide/howto/add_category_attribute.html
+
+        - label: Update the page URL type
+          url: /ui_comp_guide/howto/update-url-type.html
+
+        - label: Render prices on the frontend
+          url: /ui_comp_guide/howto/price_rendering.html
+
+        - label: Declare a custom UI component
+          url: /ui_comp_guide/howto/new_component_declaration.html
+
+    - label: Troubleshoot
+      children:
+
+        - label: Debug UI components JavaScript
+          url: /ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html

@@ -1,0 +1,53 @@
+{% include layout/header.html %}
+
+<div class="content-container">
+
+  {% include layout/sidebar.html %}
+
+	<section class="content">
+		<div class="content-wrap">
+      <header class="content-header">
+        {% include layout/page-header.html %}
+      </header>
+      <main>
+        {{ content }}
+        
+        <hr />
+        <div class="spectrum-ButtonGroup">
+          {% assign steps = site.pages | where: "guide_version", page.guide_version | where: "level3_subgroup", page.level3_subgroup | sort: "menu_order" %}
+          {% assign first_step = steps[0] %}
+          {%- for step in steps -%}
+            {% if step.url == page.url %}{% assign index = forloop.index %}{% endif %}
+          {%- endfor -%}
+          {% assign steps_size = steps | size %}
+          {% if index == 1 %}
+            <a href="{{ site.baseurl }}{{ steps[index].url }}" class="spectrum-Button spectrum-Button--cta">Begin Tutorial</a>
+          {% else %}
+            {% assign next_i = index %}
+            {% assign prev_i = index | minus: 2 %}
+            
+            <a href="{{ site.baseurl }}{{ steps[prev_i].url }}" class="spectrum-Button spectrum-Button--primary">Previous</a>
+            {% if index != steps_size %}
+            <a href="{{ site.baseurl }}{{ steps[next_i].url }}" class="spectrum-Button spectrum-Button--cta">Next</a>
+            {% endif %}
+
+          {% endif %}
+        </div>
+        <!-- /.spectrum-ButtonGroup -->
+      </main>
+
+      <footer class="content-footer">
+				{% include layout/content-footer.html %}
+			</footer>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		{% include layout/page-info.html %}
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+{% include layout/footer.html %}

@@ -1,0 +1,1 @@
+../../../../../v2.3/config-guide/deployment/pipeline/example/environment-variables.md

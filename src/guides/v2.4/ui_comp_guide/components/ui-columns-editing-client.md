@@ -1,0 +1,1 @@
+../../../v2.3/ui_comp_guide/components/ui-columns-editing-client.md

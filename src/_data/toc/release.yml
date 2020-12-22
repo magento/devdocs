@@ -1,0 +1,18 @@
+label: Release Information
+pages:
+
+  - label: Upcoming releases
+    url: /release/
+    versionless: true
+
+  - label: Release policy
+    url: /release/policy
+    versionless: true
+  
+  - label: Lifecycle policy
+    url: /release/lifecycle-policy.html
+    versionless: true
+  
+  - label: Availability
+    url: /release/availability.html
+    versionless: true

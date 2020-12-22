@@ -1,0 +1,1 @@
+../../../v2.3/extension-dev-guide/prepare/ext-repo-structure.md

@@ -1,0 +1,11 @@
+---
+title: Magento_User
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/User/README.md
+last_modified_at: '2015-08-27 15:34:05 -0500'
+content: |-
+  **User** enables admin users to manage and assign roles to administrators and other non-customer users,
+  reset user passwords, and invalidate access tokens.
+  Different roles can be assigned to different users to define their permissions.
+  For admin passwords, it enables setting lifetimes and locking them when expired or when a specified numbers of failures have occurred. It allows preventing password brute force attacks for system backend.

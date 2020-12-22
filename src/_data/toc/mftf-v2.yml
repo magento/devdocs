@@ -1,0 +1,193 @@
+label: Magento Functional Testing Framework Guide (v2)
+pages:
+
+  - label: Introduction
+    url: /mftf/v2/docs/introduction.html
+    versionless: true
+
+  - label: Getting started
+    url: /mftf/v2/docs/getting-started.html
+    versionless: true
+
+  - label: Configuration
+    url: /mftf/v2/docs/configuration.html
+    versionless: true
+
+  - label: Credentials
+    url: /mftf/v2/docs/credentials.html
+    versionless: true
+
+  - label: Data
+    url: /mftf/v2/docs/data.html
+    versionless: true
+
+  - label: Debugging
+    url: /mftf/v2/docs/debugging.html
+    versionless: true
+
+  - label: Extending
+    url: /mftf/v2/docs/extending.html
+    versionless: true
+
+  - label: Git vs. Composer installation
+    url: /mftf/v2/docs/guides/git-vs-composer-install.html
+    versionless: true
+
+  - label: Merge points for extensions
+    url: /mftf/v2/docs/merge_points/introduction.html
+    versionless: true
+    children:
+
+      - label: Extend action groups
+        url: /mftf/v2/docs/merge_points/extend-action-groups.html
+        versionless: true
+
+      - label: Extend data
+        url: /mftf/v2/docs/merge_points/extend-data.html
+        versionless: true
+
+      - label: Extend tests
+        url: /mftf/v2/docs/merge_points/extend-tests.html
+        versionless: true
+
+      - label: Merge action groups
+        url: /mftf/v2/docs/merge_points/merge-action-groups.html
+        versionless: true
+
+      - label: Merge data
+        url: /mftf/v2/docs/merge_points/merge-data.html
+        versionless: true
+
+      - label: Merge pages
+        url: /mftf/v2/docs/merge_points/merge-pages.html
+        versionless: true
+        
+      - label: Merge sections
+        url: /mftf/v2/docs/merge_points/merge-sections.html
+        versionless: true
+
+      - label: Merge tests
+        url: /mftf/v2/docs/merge_points/merge-tests.html
+        versionless: true
+
+  - label: Merging
+    url: /mftf/v2/docs/merging.html
+    versionless: true
+
+  - label: Metadata
+    url: /mftf/v2/docs/metadata.html
+    versionless: true
+
+  - label: Page
+    url: /mftf/v2/docs/page.html
+    versionless: true
+
+  - label: Reference
+    versionless: true
+    children:
+
+      - label: Codecept CLI
+        url: /mftf/v2/docs/commands/codeception.html
+        versionless: true
+
+      - label: MFTF CLI
+        url: /mftf/v2/docs/commands/mftf.html
+        versionless: true
+
+  - label: Reporting
+    url: /mftf/v2/docs/reporting.html
+    versionless: true
+
+  - label: Section
+    url: /mftf/v2/docs/section.html
+    versionless: true
+    children:
+
+      - label: Parameterized selectors
+        url: /mftf/v2/docs/section/parameterized-selectors.html
+        versionless: true
+
+      - label: Locator functions
+        url: /mftf/v2/docs/section/locator-functions.html
+        versionless: true
+
+  - label: Suite
+    url: /mftf/v2/docs/suite.html
+    versionless: true
+
+  - label: Test basics
+    url: /mftf/v2/docs/test.html
+    versionless: true
+    children:
+
+      - label: Annotations
+        url: /mftf/v2/docs/test/annotations.html
+        versionless: true
+
+      - label: Actions
+        url: /mftf/v2/docs/test/actions.html
+        versionless: true
+
+      - label: Action groups
+        url: /mftf/v2/docs/test/action-groups.html
+        versionless: true
+
+      - label: Assertions
+        url: /mftf/v2/docs/test/assertions.html
+        versionless: true
+
+  - label: Test writing
+    versionless: true
+    children:
+
+      - label: Best practices
+        url: /mftf/v2/docs/best-practices.html
+        versionless: true
+
+      - label: Preparing a test for MFTF
+        url: /mftf/v2/docs/test-prep.html
+        versionless: true
+
+      - label: Selectors
+        url: /mftf/v2/docs/guides/selectors.html
+        versionless: true
+      
+      - label: Test isolation
+        url: /mftf/v2/docs/guides/test-isolation.html
+        versionless: true
+
+      - label: Test modularity
+        url: /mftf/v2/docs/guides/test-modularity.html
+        versionless: true
+
+      - label: Tips and tricks
+        url: /mftf/v2/docs/tips-tricks.html
+        versionless: true
+
+      - label: Using suites
+        url: /mftf/v2/docs/guides/using-suites.html
+        versionless: true
+
+  - label: Troubleshooting
+    url: /mftf/v2/docs/troubleshooting.html
+    versionless: true 
+
+  - label: Update MFTF
+    url: /mftf/v2/docs/update.html
+    versionless: true
+
+  - label: Versioning
+    url: /mftf/v2/docs/versioning.html
+    versionless: true
+
+  - label: Contribution guidelines
+    url: https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md
+    versionless: true
+
+  - label: Changelog
+    url: https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md
+    versionless: true
+
+  - label: Magento Functional Testing Framework Guide (v3)
+    url: /mftf/docs/introduction.html
+    versionless: true

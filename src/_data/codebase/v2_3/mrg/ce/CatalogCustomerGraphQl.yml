@@ -1,0 +1,8 @@
+---
+title: Magento_CatalogCustomerGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/CatalogCustomerGraphQl/README.md
+last_modified_at: '2019-09-19 13:05:37 -0500'
+content: "**CatalogCustomerGraphQl** provides type and resolver information for GraphQL
+  attributes that have dependences on the Catalog and Customer modules."

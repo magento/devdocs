@@ -1,0 +1,8 @@
+---
+title: Magento_QuoteDownloadableLinks
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/QuoteDownloadableLinks/README.md
+last_modified_at: '2020-05-07 17:17:41 +0200'
+content: "**QuoteDownloadableLinks** provides data provider for creating buy request
+  for links of downloadable products."

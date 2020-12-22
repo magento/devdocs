@@ -1,0 +1,9 @@
+---
+title: Magento_Elasticsearch7
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Elasticsearch7/README.md
+last_modified_at: '2020-03-06 11:22:29 -0600'
+content: |-
+  Magento\Elasticsearch7 module allows to use Elastic search engine (v7) for product searching capabilities.
+  The module implements Magento\Search library interfaces.

@@ -1,1 +1,0 @@
-../../../../guides/v2.2/extension-dev-guide/build/composer-integration.md

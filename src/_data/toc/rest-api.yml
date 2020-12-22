@@ -1,0 +1,279 @@
+label: REST API Reference
+pages:
+    - label: Overview
+      url: /rest/bk-rest.html
+
+    - label: Quick reference
+      children:
+
+        - label: REST Endpoints (ReDoc)
+          url: https://devdocs.magento.com/redoc/2.3/
+          include_versions: ["2.3"]
+          children:
+
+            - label: Admin REST endpoints
+              url: https://magento.redoc.ly/2.3.6-admin/
+              include_versions: ["2.3"]
+
+            - label: Customer REST endpoints
+              url: https://magento.redoc.ly/2.3.6-customer/
+              include_versions: ["2.3"]
+
+            - label: Guest REST endpoints
+              url: https://magento.redoc.ly/2.3.6-guest/
+              include_versions: ["2.3"]
+
+            - label: Asynchronous Admin REST endpoints
+              url: https://devdocs.magento.com/redoc/2.3/async-admin-rest-api.html
+              include_versions: ["2.3"]
+
+            - label: Asynchronous Customer REST endpoints
+              url: https://devdocs.magento.com/redoc/2.3/async-customer-rest-api.html
+              include_versions: ["2.3"]
+
+            - label: Asynchronous Guest REST endpoints
+              url: https://devdocs.magento.com/redoc/2.3/async-guest-rest-api.html
+              include_versions: ["2.3"]
+
+        - label: REST Endpoints (ReDoc)
+          include_versions: ["2.4"]
+          children:
+
+            - label: Admin REST endpoints
+              url: https://magento.redoc.ly/2.4.1-admin/
+              include_versions: ["2.4"]
+
+            - label: Customer REST endpoints
+              url: https://magento.redoc.ly/2.4.1-customer/
+              include_versions: ["2.4"]
+
+            - label: Guest REST endpoints
+              url: https://magento.redoc.ly/2.4.1-guest/
+              include_versions: ["2.4"]
+
+        - label: Generate a local API reference
+          url: /rest/generate-local.html
+
+    - label: Use REST endpoints
+      children:
+        - label: Search using REST
+          url: /rest/performing-searches.html
+
+        - label: Search with the /search endpoint
+          url: /rest/search-endpoint.html
+
+        - label: Retrieve filtered search responses
+          url: /rest/retrieve-filtered-responses.html
+
+        - label: Protected endpoints
+          url: /rest/protected-endpoints.html
+
+        - label: Restricting access to anonymous web APIs
+          url: /rest/anonymous-api-security.html
+
+        - label: Asynchronous web endpoints
+          url: /rest/asynchronous-web-endpoints.html
+
+        - label: Bulk endpoints
+          url: /rest/bulk-endpoints.html
+
+        - label: Bulk operation status endpoints
+          url: /rest/operation-status-endpoints.html
+
+        - label: Search for the status of a bulk operation
+          url: /rest/operation-status-search.html
+
+        - label: API usage notes
+          url: /rest/notes.html
+
+    - label: Tutorials
+      url: /rest/tutorials/index.html
+      children:
+
+      - label: Prerequisite tasks
+        children:
+
+          - label: Generate an admin token
+            url: /rest/tutorials/prerequisite-tasks/create-admin-token.html
+
+      - label: Order processing
+        class: tutorial
+        children:
+
+          - label: Order processing tutorial
+            url: /rest/tutorials/orders/order-intro.html
+
+          - label: Step 1. Configure the store
+            url: /rest/tutorials/orders/order-config-store.html
+
+          - label: Step 2. Get the admin token
+            url: /rest/tutorials/orders/order-admin-token.html
+
+          - label: Step 3. Create a customer
+            url: /rest/tutorials/orders/order-create-customer.html
+          
+          - label: Step 4. Create a quote
+            url: /rest/tutorials/orders/order-create-quote.html
+
+          - label: Step 5. Add items to the cart
+            url: /rest/tutorials/orders/order-add-items.html
+
+          - label: Step 6. Prepare for checkout
+            url: /rest/tutorials/orders/order-prepare-checkout.html
+            
+          - label: Step 7. Create an order
+            url: /rest/tutorials/orders/order-create-order.html
+
+          - label: Step 8. Create an invoice
+            url: /rest/tutorials/orders/order-create-invoice.html
+
+          - label: Step 9. Create a shipment
+            url: /rest/tutorials/orders/order-create-shipment.html
+
+          - label: Step 10. Issue a partial refund
+            url: /rest/tutorials/orders/order-issue-refund.html
+
+      - label: Order processing with Inventory Management
+        class: tutorial
+        children:
+
+          - label: Order processing with Inventory Management tutorial
+            url: /rest/tutorials/inventory/index.html
+
+          - label: Step 1. Configure your environment
+            url: /rest/tutorials/inventory/configure-environment.html
+
+          - label: Step 2. Create sources
+            url: /rest/tutorials/inventory/create-sources.html
+
+          - label: Step 3. Create stocks
+            url: /rest/tutorials/inventory/create-stock.html
+
+          - label: Step 4. Link stocks and sources
+            url: /rest/tutorials/inventory/assign-source-to-stock.html
+
+          - label: Step 5. Reassign products to custom sources
+            url: /rest/tutorials/inventory/reassign-products-to-another-source.html
+
+          - label: Step 6. Create a customer and generate a customer token
+            url: /rest/tutorials/inventory/create-customer.html
+
+          - label: Step 7. Create a cart and add products to it
+            url: /rest/tutorials/inventory/create-cart-add-products.html
+
+          - label: Step 8. Prepare for checkout
+            url: /rest/tutorials/inventory/prepare-for-checkout.html
+
+          - label: Step 9. Create an order
+            url: /rest/tutorials/inventory/create-order.html
+
+          - label: Step 10. Create an invoice
+            url: /rest/tutorials/inventory/create-invoice.html
+
+          - label: Step 11. Run the Source Selection Algorithms
+            url: /rest/tutorials/inventory/run-ssa.html
+
+          - label: Step 12. Create a shipment
+            url: /rest/tutorials/inventory/create-shipment.html
+
+          - label: Step 13. Bulk transfer products
+            url: /rest/tutorials/inventory/bulk-transfer-products.html
+
+          - label: Step 14. Create an order for in-store pickup (optional)
+            url: /rest/tutorials/inventory/in-store-pickup.html
+            exclude_versions: ["2.3"]
+
+      - label: Create configurable products
+        class: tutorial
+        children:
+
+          - label: Create configurable products tutorial
+            url: /rest/tutorials/configurable-product/config-product-intro.html
+
+          - label: Step 1. Plan the product
+            url: /rest/tutorials/configurable-product/plan-product.html
+
+          - label: Step 2. Create the configurable product
+            url: /rest/tutorials/configurable-product/create-configurable-product.html
+
+          - label: Step 3. Create the simple products
+            url: /rest/tutorials/configurable-product/create-simple-products.html
+
+          - label: Step 4. Define configurable product options
+            url: /rest/tutorials/configurable-product/define-config-product-options.html
+
+          - label: Step 5. Create the personalization option
+            url: /rest/tutorials/configurable-product/create-personalization-option.html
+
+      - label: Create a configurable product using bulk APIs
+        class: tutorial
+        children:
+
+          - label: Create a configurable product using bulk APIs tutorial
+            url: /rest/tutorials/bulk-configurable-product/config-product-intro.html
+            
+          - label: Step 1. Plan the product
+            url: /rest/tutorials/bulk-configurable-product/plan-product.html
+
+          - label: Step 2. Create the configurable and simple products
+            url: /rest/tutorials/bulk-configurable-product/create-configurable-simple-products.html
+
+          - label: Step 3. Define configurable product options
+            url: /rest/tutorials/bulk-configurable-product/define-config-product-options.html
+
+          - label: Step 4. Create the personalization option
+            url: /rest/tutorials/bulk-configurable-product/create-personalization-option.html
+
+      - label: Create and manage grouped products
+        class: tutorial
+        url: /rest/tutorials/grouped-product/create-and-manage-grouped-products.html
+
+    - label: Modules
+      children:
+
+        - label: Catalog
+          children:
+
+            - label: General notes
+              url: /rest/modules/catalog.html
+
+            - label: Manage prices for multiple products
+              url: /rest/modules/catalog-pricing.html
+        
+        - label: Sales
+          children:
+
+            - label: Refunds
+              url: /rest/modules/sales/refunds.html
+
+        - label: Inventory
+          children:
+
+            - label: Manage sources
+              url: /rest/modules/inventory/manage-sources.html
+
+            - label: Manage stocks
+              url: /rest/modules/inventory/manage-stocks.html
+
+            - label: Link and unlink stocks and sources
+              url: /rest/modules/inventory/link-stocks-sources.html
+
+            - label: Manage source items
+              url: /rest/modules/inventory/manage-source-items.html
+
+            - label: Perform bulk actions
+              url: /rest/modules/inventory/bulk-inventory.html
+
+            - label: Manage low-quantity notifications
+              url: /rest/modules/inventory/manage-low-quantity.html
+
+            - label: Check salable quantities
+              url: /rest/modules/inventory/check-salable-quantity.html
+
+            - label: Manage source selection algorithms
+              url: /rest/modules/inventory/manage-source-selection.html
+
+            - label: In-Store Pickup
+              url: /rest/modules/inventory/in-store-pickup.html
+              exclude_versions: ["2.3"]
+              

@@ -1,0 +1,11 @@
+---
+title: Magento_Config
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/Config/README.md
+last_modified_at: '2019-09-03 18:23:54 +0300'
+content: |-
+  The Config module is designed to implement system configuration functionality.
+  It provides mechanisms to add, edit, store and retrieve the configuration data for each scope (there can be a default scope as well as scopes for each website and store).
+
+  Modules can add items to be configured on the system configuration page by creating system.xml files in their etc/adminhtml directories. These system.xml files get merged to populate the forms in the config page.

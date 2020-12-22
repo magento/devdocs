@@ -1,0 +1,1 @@
+../../../v2.3/graphql/mutations/revoke-customer-token.md

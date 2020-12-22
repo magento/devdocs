@@ -1,1 +1,0 @@
-../../../../../guides/v2.2/pattern-library/filters/data-table-filters/filtering.md

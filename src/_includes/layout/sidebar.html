@@ -1,0 +1,21 @@
+<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		{% assign toc = site.data.toc[page.group] %}
+
+		<h4 class="guide-title">{{ toc.label }}</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel">
+		    {%- for entry in toc.pages -%}
+		    	{% include layout/nav-item.html section=entry itemClass="spectrum-SideNav-item" menuClass="spectrum-SideNav" labelClass="spectrum-SideNav-itemLink" -%}
+		    {%- endfor -%}
+		  </ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->

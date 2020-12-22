@@ -1,0 +1,16 @@
+---
+title: Magento_InventoryInStorePickupQuote
+source_repo: inventory
+release: 1.2.1
+github_path: InventoryInStorePickupQuote/README.md
+last_modified_at: '2019-06-03 14:53:32 +0300'
+content: "The `InventoryInStorePickupQuote` module provides business logic for In-Store
+  Pickup implementation in order placement flow.\n\nThis module is part of the new
+  inventory infrastructure. The\n[Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html)\ndescribes
+  the MSI (Multi-Source Inventory) project in more detail.\n\n## Installation details\n\nThis
+  module is installed as part of Magento Open Source. Unless a custom implementation
+  for `InventoryInStorePickupQuote`\nis provided by a 3rd-party module, the module
+  cannot be deleted or disabled.\n\n## Extension points and service contracts\n\nAll
+  public interfaces related to this module are located in the `InventoryInStorePickupQuote`
+  module. \nUse the interfaces defined in `InventoryInStorePickupQuote` to extend
+  this module."

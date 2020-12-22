@@ -1,0 +1,12 @@
+---
+title: Magento_OfflinePayments
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/OfflinePayments/README.md
+last_modified_at: '2014-10-31 09:04:08 -0700'
+content: |-
+  The Magento_OfflinePayments module implements the payment methods which do not require interaction with a payment gateway (so called offline methods). These methods are the following:
+  *Bank transfer
+  *Cash on delivery
+  *Check / Money Order
+  *Purchase order

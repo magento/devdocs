@@ -1,0 +1,9 @@
+---
+title: Magento_GiftCardImportExport
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/GiftCardImportExport/README.md
+last_modified_at: '2015-08-18 15:10:06 +0300'
+content: |-
+  Magento_GiftCardImportExport module introduces import and export form GiftCard Product.
+  This module extends existing functionality of Magento_CatalogImportExport module by adding new product type.

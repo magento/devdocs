@@ -1,1 +1,0 @@
-../../../v2.2/ui_comp_guide/howto/add_category_attribute.md

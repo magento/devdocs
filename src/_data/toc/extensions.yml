@@ -1,0 +1,52 @@
+label: Magento Extensions Guide
+pages:
+
+  - label: Introduction
+    url: /extensions/
+    versionless: true
+
+  - label: Install extensions
+    url: /extensions/install/
+    versionless: true
+
+  - label: Amazon Sales Channel
+    versionless: true
+    children:
+    - label: Install
+      url: /extensions/amazon-sales/
+      versionless: true
+
+    - label: Release Notes
+      url: /extensions/amazon-sales/release-notes/
+      versionless: true
+
+  - label: B2B
+    versionless: true
+    children:
+    - label: Install
+      url: /extensions/b2b/
+      versionless: true
+
+  - label: Inventory Management
+    versionless: true
+    children:
+    - label: Install
+      url: /extensions/inventory-management/
+      versionless: true
+
+    - label: Release Notes
+      url: /inventory/release-notes.html
+
+  - label: Google reCAPTCHA
+    children:
+    - label: Install
+      url: /security/google-recaptcha.html
+
+  - label: Two-Factor Authentication
+    children:
+    - label: Install
+      url: /security/two-factor-authentication.html
+
+  - label: Vendor Bundled Extensions (VBEs)
+    url: /extensions/vendor/
+    versionless: true

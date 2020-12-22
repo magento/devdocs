@@ -1,0 +1,8 @@
+---
+title: Magento_SalesInventory
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/SalesInventory/README.md
+last_modified_at: '2016-09-21 16:39:44 +0300'
+content: Magento_SalesInventory module allows retrieve and update stock attributes
+  related to Magento_Sales, such as status and quantity.

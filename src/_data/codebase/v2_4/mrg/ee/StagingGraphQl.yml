@@ -1,0 +1,9 @@
+---
+title: Magento_StagingGraphQl
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/StagingGraphQl/README.md
+last_modified_at: '2020-01-14 14:07:38 -0600'
+content: |-
+  **StagingGraphQl** provides type information for the GraphQl module
+  to stage and preview entities.

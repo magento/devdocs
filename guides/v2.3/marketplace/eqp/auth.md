@@ -1,1 +1,0 @@
-../../../../guides/v2.2/marketplace/eqp/auth.md

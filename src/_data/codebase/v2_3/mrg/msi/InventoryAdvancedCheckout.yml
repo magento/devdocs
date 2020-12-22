@@ -1,0 +1,12 @@
+---
+title: Magento_InventoryAdvancedCheckout
+source_repo: inventory
+release: 1.1.6
+github_path: InventoryAdvancedCheckout/README.md
+last_modified_at: '2019-08-02 00:04:37 -0500'
+content: |-
+  ## Magento_InventoryAdvancedCheckout
+
+  ## Overview
+
+  The Magento_InventoryAdvancedCheckout module adds multi-sourcing capabilities to the AdvancedCheckout module allowing Order By SKU feature to work correctly with multiple inventory sources enabled.

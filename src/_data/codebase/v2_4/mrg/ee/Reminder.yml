@@ -1,0 +1,8 @@
+---
+title: Magento_Reminder
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/Reminder/README.md
+last_modified_at: '2014-12-17 18:31:49 +0000'
+content: Magento_Reminder module provides functionality for sending reminder emails
+  to customers according to pre-configured rules.

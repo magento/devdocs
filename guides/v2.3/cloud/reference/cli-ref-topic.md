@@ -1,1 +1,0 @@
-../../../../guides/v2.2/cloud/reference/cli-ref-topic.md

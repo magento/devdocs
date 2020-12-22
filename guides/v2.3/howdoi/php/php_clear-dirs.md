@@ -1,1 +1,0 @@
-../../../v2.2/howdoi/php/php_clear-dirs.md

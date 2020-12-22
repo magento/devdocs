@@ -1,0 +1,7 @@
+---
+title: Magento_MessageQueue
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/MessageQueue/README.md
+last_modified_at: '2018-02-21 14:27:13 +0200'
+content: "**MessageQueue** provides support of Advanced Message Queuing Protocol"

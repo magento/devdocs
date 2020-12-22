@@ -1,0 +1,8 @@
+---
+title: Magento_QuoteGiftCardOptions
+source_repo: magento2ee
+release: 2.4.1
+github_path: app/code/Magento/QuoteGiftCardOptions/README.md
+last_modified_at: '2020-08-10 17:53:55 +0300'
+content: "**QuoteGiftCardOptions** defines the data provider that creates buy requests
+  for gift card products."

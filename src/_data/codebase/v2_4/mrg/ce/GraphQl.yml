@@ -1,0 +1,10 @@
+---
+title: Magento_GraphQl
+source_repo: magento2ce
+release: 2.4.1
+github_path: app/code/Magento/GraphQl/README.md
+last_modified_at: '2017-10-25 11:14:11 -0500'
+content: "**GraphQl** provides the framework for the application to expose GraphQL
+  compliant web services. It exposes an area for\nGraphQL services and resolves request
+  data based on the generated schema. It also maps this response to a JSON object
+  \nfor the client to read."

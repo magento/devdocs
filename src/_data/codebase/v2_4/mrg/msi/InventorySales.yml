@@ -1,0 +1,15 @@
+---
+title: Magento_InventorySales
+source_repo: inventory
+release: 1.2.1
+github_path: InventorySales/README.md
+last_modified_at: '2018-11-09 00:12:40 +0200'
+content: "The `InventorySales` module integrates Inventory Management business logic
+  into Magento's sales logic.\n\nThis module is part of the new inventory infrastructure.
+  The\n[Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html)\ndescribes
+  the MSI (Multi-Source Inventory) project in more detail.\n\n## Installation details\n
+  \nThis module is installed as part of Magento Open Source. Unless a custom implementation
+  for `InventorySalesApi`\nis provided by a 3rd-party module, the module cannot be
+  deleted or disabled.\n\n## Extension points and service contracts\n\nAll public
+  interfaces related to this module are located in the `InventorySalesApi` module.
+  \nUse the interfaces defined in `InventorySalesApi` to extend this module."

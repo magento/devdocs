@@ -1,1 +1,0 @@
-../../../v2.2/config-guide/varnish/tshoot-varnish-503.md

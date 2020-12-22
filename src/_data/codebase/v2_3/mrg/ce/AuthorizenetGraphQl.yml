@@ -1,0 +1,14 @@
+---
+title: Magento_AuthorizenetGraphQl
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/AuthorizenetGraphQl/README.md
+last_modified_at: '2019-08-28 00:38:47 +0100'
+content: |-
+  The Magento_AuthorizenetGraphQl module defines the data types needed to pass payment information data from the client to Magento.
+
+  ## Extensibility
+
+  Extension developers can interact with the Magento_AuthorizenetGraphQl module. For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html).
+
+  [The Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_AuthorizenetGraphQl module.

@@ -1,0 +1,24 @@
+---
+title: Magento_SalesSequence
+source_repo: magento2ce
+release: 2.3.6
+github_path: app/code/Magento/SalesSequence/README.md
+last_modified_at: '2015-03-20 16:50:43 +0200'
+content: |-
+  ## Purpose of module
+
+  Magento\SalesSequence module is responsible for sequences processing in Sales module,
+  Magento\SalesSequence module manages sequences for next system entities and flows:
+  * order;
+  * invoice;
+  * shipment;
+  * credit memos;
+  Magento\SalesSequence module is required for Magento\Sales module.
+
+  # Deployment
+  ## System requirements
+
+  The Magento_SalesSequence module does not have any specific system requirements.
+
+  ## Install
+  The Magento_SalesSequence module is installed automatically (using the native Magento install mechanism) without any additional actions.

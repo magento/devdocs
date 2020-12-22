@@ -1,0 +1,18 @@
+---
+title: Magento_InventoryInStorePickupGraphQl
+source_repo: inventory
+release: 1.2.1
+github_path: InventoryInStorePickupGraphQl/README.md
+last_modified_at: '2019-08-23 14:20:40 +0300'
+content: |-
+  The `InventoryInStorePickupGraphQl` module provides GraphQl coverage of `InventoryInStorePickupApi` API.
+  Module provide possibility to search and filter Pickup Locations with GraphQl requests.
+
+  This module is part of the new inventory infrastructure. The
+  [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html)
+  describes the MSI (Multi-Source Inventory) project in more detail.
+
+  ## Installation details
+
+  This module is installed as part of Magento Open Source. Unless a custom implementation for `InventoryInStorePickupGraphQl`
+  is provided by a 3rd-party module, the module cannot be deleted or disabled.
