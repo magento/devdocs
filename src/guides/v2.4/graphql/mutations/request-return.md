@@ -18,7 +18,7 @@ Use the [`storeConfig` query]({{page.baseurl}}/graphql/queries/store-config.html
 
 ```graphql
 mutation {
-requestReturn(input: RequestReturnInput!): RequestReturnOutput
+  requestReturn(input: RequestReturnInput!): RequestReturnOutput
 }
 ```
 
@@ -28,7 +28,7 @@ The following example requests a product return. At this point, the merchant has
 
 **Request:**
 
-``` graphql
+```graphql
 mutation{
   requestReturn(input: {
     order_uid: "NQ=="
