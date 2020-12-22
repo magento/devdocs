@@ -38,6 +38,7 @@ mutation {
   ) {
     status
     requisition_lists {
+      total_count
       items {
         uid
         name
@@ -55,10 +56,13 @@ mutation {
     "deleteRequisitionList": {
       "status": true,
       "requisition_lists": {
-        "items": {
-          "uid": "Mg==",
-          "name": "Rarely ordered items"
-        }
+        "total_count": 1
+        "items": [
+          {
+            "uid": "Mg==",
+            "name": "Frequently Ordered Products"
+          }
+        ]
       }
     }
   }
