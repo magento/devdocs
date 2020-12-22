@@ -6,8 +6,52 @@ title: B2B Release Notes
 The release notes for the B2B extension captures additions and bug fixes that Magento has added during a release cycle.
 These release notes can include:
 
--  {:.new}New features
--  {:.fix}Fixes and improvements
+-  {:.new} New features
+-  {:.fix} Fixes and improvements
+
+## Magento B2B - Version 1.3.1
+
+-  {:.fix} Adding a configurable product to the shopping cart directly from a requisition list when this product was used in a prior order no longer returns a system error. [GitHub-302](https://github.com/magento/partners-magento2b2b/issues/302)
+
+-  {:.fix} Magento now displays the Requires My Approval tab correctly for purchase orders when a split database configuration is deployed. [GitHub-259](https://github.com/magento/partners-magento2b2b/issues/259)
+
+-  {:.fix} Magento now displays details about bundle products and gift card when you view purchase orders. [GitHub-213](https://github.com/magento/partners-magento2b2b/issues/213)
+
+-  {:.fix} Shoppers are now redirected as expected after logging into their account while browsing in a store where **Website Restriction** is enabled and **Restriction Mode** is set to **Private Sales: Login Only**. Previously, shoppers were redirected to the store home page. <!--- MC-38934-->
+
+-  {:.fix} Order history now loads as expected in a company administrator's My account page in deployments with a B2B company hierarchy that contains many customers (greater than 13000). Previously, order history loaded very slowly or not at all, and Magento displayed a 503 error. <!--- MC-38830-->
+
+-  {:.fix} Magento no longer displays multiple identical warning messages when you add an unconfigured product with customizable options to a Requisition List from a Category page. <!--- MC-38342-->
+
+-  {:.fix} New and duplicated products are now visible as expected on the category page when B2B shared catalogs are enabled. <!--- MC-38307-->
+
+-  {:.fix} Magento now maintains the correct `store_id` that is associated with a company administrator when the customer group for a company is updated. Previously, the `store_id` changed to the default store when the group was updated. <!--- MC-38196-->
+
+-  {:.fix} Magento now saves a grouped product to a requisition list as a list of simple products in the same way as it adds a grouped product to a shopping cart. Previously, due to how Magento saved grouped products, the link for a grouped product from the requisition list always redirected to simple products and not to the grouped product. <!--- MC-38049-->
+
+-  {:.fix} You can now filter orders by the **Company Name** field when exporting order information in CSV format. Previously, Magento logged an error in `var/export/{file-id}`. <!--- MC-37785-->
+
+-  {:.fix} Magento now displays the Create Requisition List popup as expected when you select the Create New Requisition List tab on the storefront. <!--- MC-37915-->
+
+-  {:.fix} Requisition lists now include all grouped products and quantities that have been added to the list. Previously, when a merchant navigated to a requisition list after adding products to it from a product detail page, Magento displayed this error: `1 product(s) require your attention - Options were updated. Please review available configurations`. [GitHub-59](https://github.com/magento/partners-magento2b2b/issues/59) <!--- MC-37621-->
+
+-  {:.fix} The correct store view is now associated with the relevant website when you create a new company in a multi-site deployment. Previously, you could not create a company, and Magento displayed this error: `The store view is not in the associated website`. <!--- MC-37488-->
+
+-  {:.fix} Ordering products by SKU using Quick Order no longer results in duplicate product quantities in the CSV file. <!--- MC-37427-->
+
+-  {:.fix} The **Add to Cart** button is no longer blocked when the Enter Multiple SKUs section of the Quick Order page contains an empty value. Instead, Magento now displays a message prompting you to enter valid SKUs. <!--- MC-37387-->
+
+-  {:.fix} Magento now displays this message on the product page when you submit a product review from a requisition list: `You submitted your review for moderation`. The review also appears on the Pending Reviews page (Admin **Marketing** > **Pending Reviews**). Previously, although Magento added the review to the list of pending reviews, it threw a 404 error on the product page. <!--- MC-37119-->
+
+-  {:.fix} The performance of the `sharedCatalogUpdateCategoryPermissions` consumer has been improved. After creating a shared catalog, the catalog permission indexer now uses only the customer group ID from the shared catalog, not all customer groups. <!--- MC-36770-->
+
+-  {:.fix} Custom customer address attribute fields that are associated with a shopper’s non-default address are now saved as expected in the storefront checkout workflow. <!--- MC-36630-->
+
+-  {:.fix} Orders for products that belong to a store’s default shared catalog can now be placed for shoppers through the Admin REST API (`rest/V1/carts/{{CART_ID}}/items`) as expected. Magento now checks if the product was assigned to a public catalog before shared catalog permissions validation in `\Magento\SharedCatalog\Plugin\Quote\Api\ValidateAddProductToCartPlugin::beforeSave`. Previously, Magento did not add the product to the shopper’s cart and threw this error: `No such shared catalog entity`. <!--- MC-36535-->
+
+-  {:.fix} Magento now sends new company user registration emails from the Magento store's address. Previously, this email was sent from the company administrator’s address. <!--- MC-36480-->
+
+-  {:.fix} Magento now checks custom attributes for duplication of reserved company attribute names before permitting a merchant to save a new attribute. <!--- MC-36282-->
 
 ## Magento B2B - Version 1.3.0
 

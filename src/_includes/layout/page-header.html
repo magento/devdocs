@@ -25,6 +25,13 @@
   </div>
   {% endif %}
 
+  {% if page.url contains "config-guide/multi-master/" or page.url contains "cloud/docker/docker-split-db" %}
+  <div class="message-banner">
+    The split database feature was <a href="https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-split-database-functionality-in-Magento-Commerce/ba-p/465187">deprecated</a> in version 2.4.2 of {{ site.data.var.ee }}. See <a href="https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html">Revert from a split database to a single database</a>.
+  </div>
+
+  {% endif %}
+
   <h1 class="page-title">{{ page.title }}</h1>
 
   {% if page.subtitle %}

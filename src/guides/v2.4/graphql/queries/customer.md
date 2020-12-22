@@ -723,7 +723,7 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [ProductReview]! | An array of product reviews
+`items` | [[ProductReview]](#ProductReview)! | An array of product reviews
 `page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
 
 #### ProductReview object {#ProductReview}
@@ -734,7 +734,7 @@ Attribute |  Data Type | Description
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [[WishlistItem](#wishlistitem)] | An array of items in the customer's wish list
+`items` | [[WishlistItem]](#wishlistitem) | An array of items in the customer's wish list
 `items_count` | Int | The number of items in the wish list
 `id` | ID | The unique identifier of the wish list
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list

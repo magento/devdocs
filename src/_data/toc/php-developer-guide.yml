@@ -265,6 +265,9 @@ pages:
         - label: Array Manager
           url: /extension-dev-guide/framework/array-manager.html
 
+        - label: URL Library
+          url: /extension-dev-guide/framework/url-library.html
+
     - label: Security
       children:
 
