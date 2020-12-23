@@ -50,8 +50,6 @@ GroupedRequisitionList | Enables grouped products to be displayed in a requisiti
 GroupedSharedCatalog | Enables grouped products to be added to a shared catalog in an B2B environment. | No
 NegotiableQuote | Allows a buyer and a seller (admin user) to negotiate product and/or shipping prices before the buyer places an order. | Yes
 NegotiableQuoteSharedCatalog | Enables the `NegotiableQuote` module to interact with a `SharedCatalog` in an B2B environment. | No
-PurchaseOrder | Allows buyers and seller to create a purchase order. | Yes
-PurchaseOrderRule | Allows creating and enforcing approval rules for purchase orders. | No
 QuickOrder | Allows buyers to create a new order from a list of multiple SKUs. | No
 RequisitionList | Allows a buyer to create multiple lists of frequently-purchased items and use those lists for order placement. | No
 SharedCatalog | Defines the visibility of products and prices in the catalog and in B2B quotes for different company accounts. | Yes
