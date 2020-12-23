@@ -16,7 +16,6 @@ Attribute | Data Type | Description | Default or example value
 `base_media_url` | String | The fully-qualified URL that specifies the location of user media files | `http://magentohost.example.com/pub/media/`
 `base_static_url` | String | The fully-qualified URL that specifies the location of static view files | `http://magentohost.example.com/pub/static/`
 `base_url` | String | The store's fully-qualified base URL | `http://magentohost.example.com/`
-`btob_website_configuration_requisition_list_active` | String | Indicates if requisition lists are enabled.  Possible values: 1 (Yes) and 0 (No) | 0
 `cart_gift_wrapping` | String | Indicates if gift wrapping prices are displayed on the Shopping Cart page. Possible values: 1 (Yes) and 0 (No) | 1
 `cart_printed_card` | String | Indicates if printed card prices are displayed on the Shopping Cart page. Possible values: 1 (Yes) and 0 (No) | 1
 `catalog_default_sort_by` | String | The default sort order of the search results list | `position`
@@ -42,6 +41,7 @@ Attribute | Data Type | Description | Default or example value
 `id` | Int | Deprecated. Use `store_code` instead. The ID number assigned to the store | `1`
 `is_default_store` | Boolean | Indicates whether the store view has been designated as the default within the store group | true or false
 `is_default_store_group` | Boolean | Indicates whether the store group has been designated as the default within the website | true or false
+`is_requisition_list_active` | String | Indicates if requisition lists are enabled.  Possible values: 1 (Yes) and 0 (No) | 0
 `list_mode` | String  | The format of the search results list | `grid-list`
 `list_per_page` | Int | The default number of products per page in List View | `10`
 `list_per_page_values` | String | A list of numbers that define how many products can be displayed in List View | `5,10,15,20,25`

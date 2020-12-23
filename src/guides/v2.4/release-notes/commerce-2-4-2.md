@@ -93,9 +93,9 @@ This release adds GraphQL coverage for the following features:
 *  Added support for returned merchandise authorizations (RMA). Shoppers can [request a return]({{page.baseurl}}/graphql/mutations/request-return.html). If the merchant accepts the request, the shopper can perform tasks such as [adding a comment]({{page.baseurl}}/graphql/mutations/add-return-comment.html) and [add tracking information]({{page.baseurl}}/graphql/mutations/add-return-tracking.html). <!--- MC-34596-->
 
 *  Added support for the following B2B features:
-   *  Companies, including administrators, users, roles, and structure <!--- MC-33861-->
-   *  Company credit <!--- MC-33862-->
-   *  [Create]({{ page.baseurl }}/graphql/mutations/create-requisition-list.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-requisition-list.html), and update requisition lists  <!--- MC-34312-->
+   *  Companies. You can add company [administrators]({{page.baseurl}}/graphql/mutations/create-company.html), [users]({{page.baseurl}}/graphql/mutations/create-company-user.html), [roles]({{page.baseurl}}/graphql/mutations/create-company-role.html), and [teams]({{page.baseurl}}/graphql/mutations/create-company-team.html). <!--- MC-33861-->
+   *  Company credit. The [company query]({{page.baseurl}}/graphql/queries/company.html) includes details about the company's credit history. <!--- MC-33862-->
+   *  Requisition lists. You can [create]({{page.baseurl}}/graphql/mutations/create-requisition-list.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-requisition-list.html), and [update]({{page.baseurl}}/graphql/mutations/update-requisition-list.html) requisition lists. Support also includes the ability to [add]({{page.baseurl}}/graphql/mutations/add-products-to-requisition-list.html), [update]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html), [delete]({{page.baseurl}}/graphql/mutations/delete-requisition-list-items.html), [copy]({{page.baseurl}}/graphql/mutations/copy-items-between-requisition-lists.html), and [move]({{page.baseurl}}/graphql/mutations/move-items-between-requisition-lists.html) items within a requisition list as well as add requisition list items [into the cart]({{page.baseurl}}/graphql/mutations/add-requisition-list-items-to-cart.html). <!--- MC-34312-->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 

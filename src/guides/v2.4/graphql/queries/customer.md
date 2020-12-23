@@ -740,26 +740,6 @@ Attribute |  Data Type | Description
 
 The Returns object contains an array of [Return](#Return) objects.
 
-### Wishlist attributes {#Wishlist}
-
-Attribute | Data type | Description
---- | --- | ---
-`items` | [[WishlistItem]](#wishlistitem) | An array of items in the customer's wish list
-`items_count` | Int | The number of items in the wish list
-`id` | ID | The unique identifier of the wish list
-`sharing_code` | String | An encrypted code that Magento uses to link to the wish list
-`updated_at` | String | The time of the last modification to the wish list
-
-#### WishlistItem attributes {#wishlistitem}
-
-Attribute | Data type | Description
---- | --- | ---
-`added_at` | String | The time when the customer added the item to the wish list
-`description` | String | The customer's comment about this item
-`id` | Int | The wish list item ID
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
-`qty` | Float | The quantity of this wish list item
-
 ### Store credit attributes
 
 In {{site.data.var.ee}}, the merchant can assign store credit to customers. Magento maintains the history of all changes to the balance of store credit available to the customer. The customer must be logged in to access the store credit history and balance.
@@ -804,6 +784,33 @@ Attribute |  Data Type | Description
 ### Wishlist attributes {#Wishlist}
 
 {% include graphql/wishlist.md %}
+
+## B2B output attributes {#B2b}
+
+If B2B is installed the `Customer` object can contain additional information.
+
+### RequisitionListFilterInput attributes {#RequisitionListFilterInput}
+
+The `RequisitionListFilterInput` object defines filters that limit the number of requisition lists returned.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`name` | FilterMatchTypeInput | Filter by the display name of the requisition list
+`uids` | FilterEqualTypeInput | Filter requisition lists by one or more requisition list IDs
+
+### RequisitionList attributes {#RequisitionList}
+
+{% include graphql/requisition-list.md %}
+
+### RequisitionLists attributes {#RequisitionList}
+
+The RequisitionLists object contains an array of requisition lists.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`items` | [[RequisitionList]](#RequisitionList) | An array of requisition lists
+`page_info` | SearchResultPageInfo | Contains pagination metadata
+`total_count` | Int | The number of returned requisition lists
 
 ## Related topics
 
