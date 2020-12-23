@@ -74,7 +74,7 @@ The following call returns information about the logged-in customer. Provide the
   }
 }
 ```
-### Retrieve a summary of the customer's order history
+### Retrieve a summary of the customer's order history {#order-history}
 
 The following example returns a summary of the logged-in customer's previous orders.
 
@@ -172,7 +172,7 @@ query {
 }
 ```
 
-### Retrieve detailed information about a specific order
+### Retrieve detailed information about a specific order {#order-details}
 
 The following example returns details about one of the customer's previous orders.
 
@@ -209,6 +209,7 @@ These topics contain examples with fragments and provide even more details:
           quantity_ordered
           quantity_invoiced
           quantity_shipped
+          eligible_for_return
         }
         carrier
         shipments {
@@ -289,10 +290,9 @@ These topics contain examples with fragments and provide even more details:
         "items": [
           {
             "id": "MQ==",
-            "carrier": "Flat Rate",
             "number": "000000001",
-            "order_date": "2020-03-18 17:25:20",
-            "status": "Complete",
+            "order_date": "2020-11-14 22:25:48",
+            "status": "Processing",
             "items": [
               {
                 "product_name": "Iris Workout Top",
@@ -304,9 +304,11 @@ These topics contain examples with fragments and provide even more details:
                 },
                 "quantity_ordered": 1,
                 "quantity_invoiced": 1,
-                "quantity_shipped": 1
+                "quantity_shipped": 1,
+                "eligible_for_return": true
               }
             ],
+            "carrier": "Flat Rate",
             "shipments": [
               {
                 "id": "MDAwMDAwMDAx",
@@ -717,6 +719,10 @@ Attribute |  Data Type | Description
 
 {% include graphql/customer-orders-output.md %}
 
+#### ProductReview object {#ProductReview}
+
+{% include graphql/product-review.md %}
+
 #### ProductReviews object {#ProductReviews}
 
 `ProductReviews` contains an array of reviews written about the product.
@@ -726,9 +732,13 @@ Attribute |  Data Type | Description
 `items` | [[ProductReview]](#ProductReview)! | An array of product reviews
 `page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
 
-#### ProductReview object {#ProductReview}
+### Return attributes {#Return}
 
-{% include graphql/product-review.md %}
+{% include graphql/return.md %}
+
+### Returns attributes {#Returns}
+
+The Returns object contains an array of [Return](#Return) objects.
 
 ### Store credit attributes
 
