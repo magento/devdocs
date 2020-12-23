@@ -12,6 +12,29 @@ Google reCAPTCHA provides a greater level of security for both the storefront an
 
 Google reCAPTCHA reduces potential user error when entering a Captcha code and encourages cart conversion without adding hurdles during checkout.
 
+## Types of Google reCAPTCHA
+
+There are three different types of reCAPTCHA available. They are,
+
+-  reCAPTCHA v3
+-  reCAPTCHA v2 ("I'm not a robot" Checkbox)
+-  reCAPTCHA v2 (Invisible reCAPTCHA badge)
+
+### reCAPTCHA v3
+
+reCAPTCHA v3 allows you to verify if an interaction is legitimate without any user interaction. It is a pure JavaScript API returning a score, giving you the ability to take action in the context of your site. For instance, requiring additional factors of authentication, sending a post to moderation, or throttling bots that may be scraping content.
+
+### reCAPTCHA v2 ("I'm not a robot" Checkbox)
+
+The "I'm not a robot" Checkbox requires the user to click a checkbox indicating the user is not a robot. This will either pass the user immediately (with No CAPTCHA) or challenge them to validate whether or not they are human. This is the simplest option to integrate with and only requires two lines of HTML to render the checkbox.
+
+### reCAPTCHA v2 (Invisible reCAPTCHA badge)
+
+The invisible reCAPTCHA badge does not require the user to click on a checkbox, instead it is invoked directly when the user clicks on an existing button on your site or can be invoked via a JavaScript API call. The integration requires a JavaScript callback when reCAPTCHA verification is complete. By default only the most suspicious traffic will be prompted to solve a captcha. To alter this behavior edit your site security preference under advanced settings.
+
+{:.bs-callout-info}
+reCAPTCHA v1 has been shut down since March 2018.
+
 ## Install Module
 
 The Google reCAPTCHA extension is bundled and installed with {{site.data.var.ce}} and {{site.data.var.ee}} 2.3.x.
