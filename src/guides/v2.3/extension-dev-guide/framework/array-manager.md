@@ -13,11 +13,16 @@ The library is primarily used to handle data from UI components within [DataProv
 |Method|Description|
 |--- |--- |
 | `exists` | Checks if the node exists in a given associative array |
-| `get` | Returns the value of the key (or node) at the end of the path, `null` is returned if the node hasn't been found. |
+| `find` | Finds node in nested array and saves its index and parent node reference |
+| `findPaths` | Get matching paths for elements with specified indexes |
+| `get` | Returns the value of the key (or node) at the end of the path, `null` is returned if the node hasn't been found |
 | `move` | Moves a value from one path to another |
+| `merge` | Merge value with node and return modified data |
+| `populate` | Populate nested array if possible and needed |
 | `remove` | Removes node and returns modified array |
 | `replace` | Updates the existing nodes and returns the modified array |
 | `set` | Set value into node and returns modified data |
+| `slicePath` | Retrieve slice of specified path |
 
 ### Example 1
 
@@ -126,6 +131,16 @@ if ($this->arrayManager->get('response/status', $data) === 'OK') {
         ...
     }
 }
+
+...
+```
+
+You can use the  `Magento\Framework\Stdlib\ArrayManager` library to populate array from the given path:
+
+```php
+...
+
+$this->arrayManager->populate('response/result/items', $data)
 
 ...
 ```
