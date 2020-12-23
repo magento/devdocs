@@ -10,7 +10,7 @@ The `createRequisitionList` mutation creates a requisition list for the logged i
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
 {:.bs-callout-info}
-Use the [`storeConfig` query]({{page.baseurl}}/graphql/queries/store-config.html) with the `btob_website_configuration_requisition_list_active` attribute to determine whether requisition lists are supported.
+Use the [`storeConfig` query]({{page.baseurl}}/graphql/queries/store-config.html) with the `is_requisition_list_active` attribute to determine whether requisition lists are enabled.
 
 ## Syntax
 
@@ -33,11 +33,12 @@ The following example creates the `Frequently Ordered Products` requisition list
 
 ```graphql
 mutation {
-  createRequisitionList(
-    name: "Frequently Ordered Products",
+  createRequisitionList(input:{
+    name: "Frequently Ordered Products"
     description: "Frequently ordered products list"
+  }
   ) {
-    list {
+    requisition_list {
       uid
       name
       description
@@ -52,9 +53,9 @@ mutation {
 {
   "data": {
     "createRequisitionList": {
-      "list": {
-          "uid": "4",
-          "name": "Frequently Ordered Products",
+      "requisition_list": {
+          "uid": "Mw=="
+          "name": "Frequently Ordered Products"
           "description": "Frequently ordered products list"
         }
     }
@@ -73,15 +74,17 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `createRequisitionListOutput` object returns the `uid` of the new requisition list as well as the input attributes.
+The `createRequisitionList` mutation returns the new requisition list.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`description` | String | The requisition list description
-`name` | String! | The requisition list name
-`uid` | ID! | The ID of the new requisition list
+`requisition_list` | [[RequisitionList](#RequisitionList)] | The created requisition list
+
+### RequisitionList attributes {#RequisitionList}
+
+{% include graphql/requisition-list.md %}
 
 ## Related topics
 
-*  [renameRequisitionList mutation]({{page.baseurl}}/graphql/mutations/rename-requisition-list.html)
+*  [updateRequisitionList mutation]({{page.baseurl}}/graphql/mutations/update-requisition-list.html)
 *  [deleteRequisitionList mutation]({{page.baseurl}}/graphql/mutations/delete-requisition-list.html)

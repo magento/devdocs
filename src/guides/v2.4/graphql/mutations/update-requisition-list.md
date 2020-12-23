@@ -1,24 +1,27 @@
 ---
 group: graphql
-title: renameRequisitionList mutation
+title: updateRequisitionList mutation
 b2b_only: true
 contributor_name: Zilker Technology
 contributor_link: https://www.ztech.io/
 ---
-The `renameRequisitionList` mutation updates the name and, optionally, the description of a requisition list.
+The `updateRequisitionList` mutation updates the name and, optionally, the description of a requisition list.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
+
+{:.bs-callout-info}
+Use the [storeConfig query]({{page.baseurl}}/graphql/queries/store-config.html) with the `is_requisition_list_active` attribute to determine whether requisition lists are enabled.
 
 ## Syntax
 
 ```graphql
 mutation {
-  renameRequisitionList(
-    uid: ID!
+  updateRequisitionList(
+    requisitionListUid: ID!
     name: String!
     description: String
   ) {
-    renameRequisitionListOutput
+    updateRequisitionListOutput
   }
 }
 ```
@@ -31,12 +34,13 @@ The following example renames the `Frequently Ordered Products` requisition list
 
 ```graphql
 mutation {
-  renameRequisitionList(
-    uid: "4"
-    name: "Frequently Ordered Essential Products",
+  updateRequisitionList(input:{
+    name: "Frequently Ordered Essential Products"
     description: "Frequently ordered essential products list"
+  }
+    requisitionListUid: "Mw=="
   ) {
-    list {
+    requisition_list {
       uid
       name
       description
@@ -50,10 +54,10 @@ mutation {
 ```json
 {
   "data": {
-    "renameRequisitionList": {
-      "list": {
-          "uid": "4",
-          "name": "Frequently Ordered Essential Products",
+    "updateRequisitionList": {
+      "requisition_list": {
+          "uid": "Mw=="
+          "name": "Frequently Ordered Essential Products"
           "description": "Frequently ordered essential products list"
         }
     }
@@ -63,23 +67,25 @@ mutation {
 
 ## Input attributes
 
-The `renameRequisitionList` mutation requires the following input.
+The `updateRequisitionList` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `description`| String | Description of the customer's requisition list
 `name` | String! | The name of the customer's requisition list
-`uid` | ID! | The ID of the new requisition list
+`requisitionListUid` | ID! | The ID of the new requisition list
 
 ## Output attributes
 
-The `renameRequisitionListOutput` object returns the `uid` of the new requisition list as well as the input attributes.
+The `updateRequisitionList` mutation returns the new requisition list after updating a list.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`description` | String | The requisition list description
-`name` | String! | The requisition list name
-`uid` | ID! | The ID of the new requisition list
+`requisition_list` | [[RequisitionList](#RequisitionList)] | The updated requisition list
+
+### RequisitionList attributes {#RequisitionList}
+
+{% include graphql/requisition-list.md %}
 
 ## Related topics
 
