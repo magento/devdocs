@@ -24,9 +24,9 @@ s2.example.com IN CNAME <s2.example.sendgrid.net>
 {: .bs-callout-tip}
 You can find Sendgrid details for your account in the Onboarding UI. Use the `https://cloud.magento.com/project/_project-id_/setup/project_details` URL and select the **Project Details** > **Hosting Info** tab.
 
-For Magento Commerce Cloud Pro, the CNAME records resolve to the Domain Keys Identified Mail (DKIM) and Sender Policy Framework (SPF) records managed by SendGrid, so that spam filters are less likely to inhibit your messages.
+For {{site.data.var.ece}} Pro, the CNAME records resolve to the Domain Keys Identified Mail (DKIM) and Sender Policy Framework (SPF) records managed by SendGrid, so that spam filters are less likely to inhibit your messages.
 
 {: .bs-callout-info}
-**SendGrid DKIM signatures** are not available in Cloud Starter. They are only available in Commerce Cloud Pro.
+**SendGrid DKIM signatures** are not available in Commerce Cloud Starter. They are only available in Commerce Cloud Pro.
 
 Magento does not support allowlists, but you can review the [Sender Policy Framework (SPF)](https://sendgrid.com/docs/Glossary/spf.html) guidelines to improve delivery.
