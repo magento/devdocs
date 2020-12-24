@@ -65,6 +65,17 @@ The following table lists the top-level attributes of the `customer` object. See
 
 {% include graphql/customer-output-24.md %}
 
+## Errors
+
+Error | Description
+--- | ---
+`"input" value should be specified` | The `input` argument is empty.
+`"Email" is not a valid email address.` | The value provided in the `input`.`email` argument has an invalid format.
+`Provide the current "password" to change "email".` | To change an email address, specify the correct customer password in the `password` argument.
+`A customer with the same email address already exists in an associated website.` | You cannot apply a new email address to a current customer because another user has the same email address.
+`Invalid login or password.` | The value specified in the `password` argument is incorrect.
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
+
 ## Related topics
 
 *  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
