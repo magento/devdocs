@@ -1,24 +1,22 @@
 ---
 group: php-developer-guide
-title: DateTime Library
+title: DateTime library
 contributor_name: Rakesh Jesadiya
 contributor_link: https://github.com/RakeshJesadiya
 ---
 
-## Overview
-
-This DateTime library provides utilities to work with formatting of date time. Provided methods in this library are described below.
+This DateTime library provides utilities to work with date and time formatting. Provided methods in this library are described below.
 
 ## Usage
 
 |Method|Description|
 |--- |--- |
-| `formatDate` | Format date to internal format |
-| `isEmptyDate` | Check whether sql date is empty |
+| `formatDate` | Format the date to the Magento internal format |
+| `isEmptyDate` | Check whether provided date value is empty or null |
 
 ### Example
 
-The following example shows how to Format current date and time to internal format.
+The following example shows how to format the current date and time into the Magento internal format.
 
 ```php
 <?php
