@@ -127,7 +127,7 @@ To create multiple virtual hosts:
    ```
 
    {:.bs-callout-info}
-   The `map` directive might not work correctly since it runs only once for the same variable. And since the variables are evaluated only when they are used, the mere declaration even of a large number of `map` variables does not add any extra costs to request processing. So, instead of using `map` directive, we will set variable directly like, ```set $MAGE_RUN_TYPE store; set $MAGE_RUN_CODE fr;```
+   The `map` directive might not work correctly, because it runs only once for the same variable. The variables are evaluated only when they are used, and as a result, the mere declaration even of a large number of `map` variables does not add any extra costs to request processing. Instead of using a `map` directive, the following example sets a variable directly, like `set $MAGE_RUN_TYPE store; set $MAGE_RUN_CODE fr;`
 
 1. Create another file named `german.mysite.mg` in the same directory with the following contents:
 
