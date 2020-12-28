@@ -94,3 +94,11 @@ Attribute |  Data Type | Description
  {% include graphql/cart-object-24.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`Could not find a cart with ID \"xxxxx\"` | The ID provided in the `cart_id` field is invalid or the cart does not exist for the customer.
+`The cart isn't active` | The cart with the given cart id is unavailable as the items would have been purchased and the cart id becomes inactive.
+`Field removeRewardPointsFromCart.cart_id of required type String! was not provided` | The value specified in the `removeRewardPointsFromCart.cart_id` argument is empty.
