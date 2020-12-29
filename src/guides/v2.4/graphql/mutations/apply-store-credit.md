@@ -103,6 +103,8 @@ Attribute |  Data Type | Description
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
 
+## Errors
+
 Error | Description
 --- | ---
 `Could not find a cart with ID \"xxxxx\"` | The ID provided in the `cart_id` field is invalid or the cart does not exist for the customer.
