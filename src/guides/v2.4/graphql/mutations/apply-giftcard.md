@@ -108,4 +108,3 @@ Error | Description
 `Required parameter \"gift_card_code\" is missing` | The value provided in the field `gift_card_code` is empty.
 `Field ApplyGiftCardToCartInput.cart_id of required type String! was not provided.` | The required field `cart_id` is not provided.
 `Required parameter \"cart_id\" is missing` | The value provided in the field `cart_id` is empty.
-
