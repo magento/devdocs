@@ -102,9 +102,9 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
-`The gift card code couldn't be added. Verify your information and try again.` | The `gift_card_code` specified is incorrect.
+`The gift card code couldn't be added. Verify your information and try again.` | The specified `gift_card_code` is incorrect.
 `Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
-`Field ApplyGiftCardToCartInput.gift_card_code of required type String! was not provided.` | The required field `gift_card_code` is not provided.
+`Field ApplyGiftCardToCartInput.gift_card_code of required type String! was not provided.` | The required field `gift_card_code` was not provided.
 `Required parameter \"gift_card_code\" is missing` | The value provided in the field `gift_card_code` is empty.
-`Field ApplyGiftCardToCartInput.cart_id of required type String! was not provided.` | The required field `cart_id` is not provided.
+`Field ApplyGiftCardToCartInput.cart_id of required type String! was not provided.` | The required field `cart_id` was not provided.
 `Required parameter \"cart_id\" is missing` | The value provided in the field `cart_id` is empty.
