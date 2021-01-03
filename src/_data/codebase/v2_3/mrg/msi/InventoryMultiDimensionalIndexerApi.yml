@@ -15,4 +15,4 @@ content: "The `InventoryMultiDimensionalIndexerApi` module  provides functionali
   for resolving \nindex names based on the provided scope. The multi-dimension indexes
   are introduced for the sake of data scalability\nand the ability to reindex data
   in the scope of particular dimension only.\n\nAn aliasing mechanism guarantees zero
-  downtime to make Front-End responsive while Full Reindex being processed.\n"
+  downtime to make Front-End responsive while Full Reindex being processed."

@@ -1,1 +1,8 @@
-../../../v2.3/comp-mgr/cli/cli-rc1-samp.md
+---
+group: software-update-guide
+title: Command-line upgrade with sample data
+functional_areas:
+  - Upgrade
+---
+
+{%include install/sampledata/sample-data-rc1-cli-24.md %}

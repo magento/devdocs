@@ -175,7 +175,9 @@ Now we need to bind our plugin to `ProductInterface`:
 
 ## Extension Attributes Configuration:
 
-For scalar attributes we can use next configuration:
+The file that holds these extension attributes must reside under the `/etc` folder of your module.
+
+For scalar attributes, we can use the following configuration:
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
@@ -185,6 +187,8 @@ For scalar attributes we can use next configuration:
     </extension_attributes>
 </config>
 ```
+
+Here, the scalar attributes indicate the simple form of attribute representation, such as an integer or a string. Specify the class or interface of the extension attributes inside the "for" attribute of the `<extension_attributes>` tag. In this case, it is the ProductInterface. The attribute is specified with a unique code and its type.
 
 For non-scalar attributes:
 
@@ -196,6 +200,8 @@ For non-scalar attributes:
 </config>
 ```
 
+Here, the non-scalar attributes indicate data objects such as the instance of a class. In the above example, the CustomDataInterface object is added as an extension attribute.
+
 For array extension attributes:
 
 ```xml
@@ -205,6 +211,8 @@ For array extension attributes:
     </extension_attributes>
 </config>
 ```
+
+The array extension attributes are just an extension of the scalar attributes where a range of values can be represented as an attribute. The `[]` symbol indicates the attribute type is an array.
 
 The array indicator `[]` can also be appended to non-scalar types.
 

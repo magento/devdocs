@@ -109,7 +109,7 @@ Related topics
 <!-- Link definitions -->
 [PHP Developer Guide]: {{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html
 [Magento Marketplace]: https://marketplace.magento.com/
-[Technology Stack]: {{page.baseurl}}/install-gde/system-requirements-tech.html
+[Technology Stack]: {{page.baseurl}}/install-gde/system-requirements.html
 [Plug-ins]: {{page.baseurl}}/extension-dev-guide/plugins.html
 [Service layer]: {{page.baseurl}}/architecture/archi_perspectives/service_layer.html
 [Getting Started with Magento Web APIs]: {{page.baseurl}}/get-started/bk-get-started-api.html
