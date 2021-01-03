@@ -134,3 +134,9 @@ Attribute |  Data Type | Description
 ## Related topics
 
 [Products endpoint]({{page.baseurl}}/graphql/queries/products.html)
+
+## Errors
+
+Error | Description
+--- | ---
+`Field urlResolver.url of type String! is required but not provided.` | The value specified in the `urlResolver.url` argument is empty.
