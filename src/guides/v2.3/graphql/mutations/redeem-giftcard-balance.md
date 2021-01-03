@@ -85,5 +85,5 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
-`Gift card not found` | The specified `gift_card_code` value does not exist in the `giftcardaccount` table or the amount is already redeemed.
+`Gift card not found` | The specified `gift_card_code` value does not exist in the `giftcardaccount` table or the amount has been already redeemed.
 `Field GiftCardAccountInput.gift_card_code of required type String! was not provided` | The value specified in the `GiftCardAccountInput.gift_card_code` argument is empty.
