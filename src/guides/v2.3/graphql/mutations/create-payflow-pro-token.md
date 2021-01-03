@@ -109,8 +109,8 @@ Attribute |  Data Type | Description
 Error | Description
 --- | ---
 `Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
-`Field PayflowProTokenInput.cart_id of required type String! was not provided.` | The `cart_id` attribute which is required is not provided.
-`Field PayflowProTokenInput.urls of required type PayflowProUrlInput! was not provided.` | The `urls` attribute which is required is not provided.
-`Field PayflowProUrlInput.return_url of required type String! was not provided.` | The attribute `return_url` of PayflowProUrlInput object type is not provided.
-`Field PayflowProUrlInput.error_url of required type String! was not provided.` | The attribute `error_url` of PayflowProUrlInput object type is not provided.
-`Field PayflowProUrlInput.cancel_url of required type String! was not provided.` | The attribute `cancel_url` of PayflowProUrlInput object type is not provided.
+`Field PayflowProTokenInput.cart_id of required type String! was not provided.` | You must specify the `cart_id` attribute.
+`Field PayflowProTokenInput.urls of required type PayflowProUrlInput! was not provided.` | You must specify the `urls` attribute.
+`Field PayflowProUrlInput.return_url of required type String! was not provided.` | You must specify the `return_url` attribute.
+`Field PayflowProUrlInput.error_url of required type String! was not provided.` | You must specify the `error_url` attribute.
+`Field PayflowProUrlInput.cancel_url of required type String! was not provided.` | You must specify the `cancel_url` attribute.
