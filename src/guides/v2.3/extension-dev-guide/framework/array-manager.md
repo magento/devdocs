@@ -15,9 +15,9 @@ The library is primarily used to handle data from UI components within [DataProv
 | `exists` | Checks if the node exists in a given associative array |
 | `find` | Finds a node in a nested array and saves its index and parent node reference |
 | `findPaths` | Gets matching paths for elements with specified indexes. |
-| `get` | Returns the value of the key (or node) at the end of the path, `null` is returned if the node could not be found. |
+| `get` | Returns the value of the key (or node) at the end of the path. `null` is returned if the node could not be found. |
 | `move` | Moves a value from one path to another |
-| `merge` | Merges a value with a node and return the modified data. |
+| `merge` | Merges a value with a node and returns the modified data. |
 | `populate` | Populates a nested array, if possible and necessary. |
 | `remove` | Removes a node and returns the modified array. |
 | `replace` | Updates the existing nodes and returns the modified array |
