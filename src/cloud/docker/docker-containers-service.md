@@ -218,6 +218,8 @@ The Test container, based on the [magento/magento-cloud-docker-php][php-cloud] D
 **Docker base image**: [magento/magento-cloud-docker-nginx:1.19-1.2.0][tls]<br>
 **Ports**: `443` (default), `8080:80` (Varnish bypass)<br/>
 
+By default, the TLS container is included with the Docker Compose configuration. However, you can generate a configuration without TLS by adding the `--no-tls` option to the `ece-docker build:compose` command.
+
 The TLS termination proxy container facilitates the Varnish SSL termination over HTTPS.
 
 -  The default port for TLS communication is `443`.
@@ -266,6 +268,11 @@ docker-compose exec varnish varnishadm ban req.url '~' '.'
 **Ports exposed**: None<br/>
 
 The Web container uses NGINX to handle web requests after TLS and Varnish. This container passes all requests to the FPM container to serve the PHP code. See [Request flow]({{site.baseurl}}/cloud/docker/docker-containers.html#request-flow).
+
+This container provides two NGINX configuration options for building the Docker configuration:
+
+-  `--nginx-worker-processes` to set the number of worker processes for NGINX. The default is `1`.
+-  `--nginx-worker-connections` to set the maximum number of connections that each worker process can handle simultaneously. The default is `1024`.
 
 The NGINX configuration for this container is the standard Magento [nginx config], which includes the configuration to auto-generate NGINX certificates for the container. You can customize the NGINX configuration by mounting a new configuration file using a volume.
 
