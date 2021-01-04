@@ -24,7 +24,7 @@ View models can be used by passing the view model class as an argument to a temp
 ```xml
 <block name="orangeco.new.viewmodel" template="OrangeCompany_Catalog::example.phtml">
     <arguments>
-        <argument name="view_model" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+        <argument name="viewModel" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
     </arguments>
 </block>
 ```
@@ -34,7 +34,7 @@ In the following example, the same view model is used with an existing block in 
 ```xml
 <referenceBlock name="checkout.cart.item.renderers.default">
     <arguments>
-        <argument name="view_model" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+        <argument name="viewModel" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
     </arguments>
 </referenceBlock>
 ```
@@ -78,7 +78,7 @@ The view model class is passed as an argument to the `product.info.upsell` block
 <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell" template="Magento_Catalog::product/list/items.phtml">
     <arguments>
         <argument name="type" xsi:type="string">upsell</argument>
-        <argument name="view_model" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
+        <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
     </arguments>
 </block>
 ```
