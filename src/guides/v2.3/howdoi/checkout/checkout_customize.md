@@ -154,7 +154,7 @@ To disable the component in your `checkout_index_index.xml` use the following in
 
 ## Remove a component {#remove}
 
-If you want to keep a component from being rendered, you need to create a layout processor. A layout processor consists of a class, implementing
+To keep a component from being rendered, create a layout processor. A layout processor consists of a class, implementing
 the `\Magento\Checkout\Block\Checkout\LayoutProcessorInterface` interface, and thus a `LayoutProcessorInterface::process($jsLayout)` method.
 
 ```php
@@ -179,7 +179,7 @@ class OurLayoutProcessor implements LayoutProcessorInterface
 }
 ```
 
-Once created you can add the layout processor through Dependency Injection (DI).
+Once created, add the layout processor through Dependency Injection (DI).
 
 ```xml
 <?xml version="1.0"?>
@@ -194,7 +194,7 @@ Once created you can add the layout processor through Dependency Injection (DI).
 </config>
 ```
 
-If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.
+To use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.
 
 {:.bs-callout-info}
-Disable vs remove a component: If you disable a component, it is loaded but not rendered. If you remove a component, it is removed and not loaded.
+Disable vs remove a component: A disabled component is loaded but not rendered. If you remove a component, it is removed and not loaded.
