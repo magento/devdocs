@@ -31,12 +31,6 @@ Set a value for `X-Frame-Options` in `<magento_root>/app/etc/env.php`. Following
 'x-frame-options' => 'SAMEORIGIN',
 ```
 
-If you want to allow any website to load page, you can use `*`:
-
-```php
-'x-frame-options' => '*',
-```
-
 We require you to edit `env.php` because it's more secure than setting a value in the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 ## Verify your setting for `X-Frame-Options`

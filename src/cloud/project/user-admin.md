@@ -27,7 +27,7 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 ## Add user authentication requirements
 
-For added security, Magento provides project-level MFA enforcement to require two-factor authentication for SSH access to {{ site.data.var.ece }} project source code and environments. See [MFA enforcement for SSH].
+For added security, Magento provides project-level MFA enforcement to require two-factor authentication for SSH access to {{ site.data.var.ece }} project source code and environments. See [Enable MFA for SSH].
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable two-factor authentication (TFA) on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for TFA and SSH access](#update-account-security-settings).
 
@@ -44,7 +44,7 @@ To add a user to a project or environment, you need the email address associated
 
 ### Manage users with the CLI {#cloud-user-mg-cli}
 
-You can use the {{site.data.var.ece}} command line client to manage users and integrate this with any other automated system.
+Use the {{site.data.var.ece}} command line client to manage users and integrate this with any other automated system.
 
 Available commands:
 
@@ -175,7 +175,7 @@ After you add a user to a Cloud project, ask the user to review their account se
 
 -  Enable two-factor authentication (TFA)
 
-   Magento recommends adding two-factor authentication to all accounts to meet security and compliance standards. Projects configured with [MFA enforcement][] require two-factor authentication for all accounts that require SSH access to {{site.data.var.ece}} projects.
+   Magento recommends adding two-factor authentication to all accounts to meet security and compliance standards. Projects configured with [MFA enforcement][Enable MFA for SSH] require two-factor authentication on accounts that use SSH to access the projects.
 
 -  Enable SSH keys
 
@@ -183,9 +183,9 @@ After you add a user to a Cloud project, ask the user to review their account se
 
 -  Create an API token
 
-   You can generate an API token on your account that can be used for secure SSH access to an environment. You need the token to enable authentication workflows for automated processes.
+   Users can generate an API token that can be used for secure SSH access to an environment. You need the token to enable authentication workflows for automated processes.
 
-   On projects with MFA enforcement enabled, you must use the API token to authenticate SSH access requests from automated accounts to bypass authentication workflows which require two-factor authentication.
+   On projects with MFA enforcement enabled, you must use the API token to authenticate SSH access requests from automated accounts. The token allows automated processes to bypass authentication workflows which require two-factor authentication.
 
 ### Enable TFA for Cloud accounts
 
@@ -319,5 +319,5 @@ To create an API token:
 [FreeOTP (Android)]: https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp
 [GAuth Authenticator (Firefox OS, desktop, others)]: https://github.com/gbraad/gauth
 [Google Authenticator (Android/iPhone/BlackBerry)]: https://support.google.com/accounts/answer/1066447?hl=en
-[MFA enforcement]: {{ site.baseurl }}/cloud/project/project-enable-mfa-enforcement.html
+[Enable MFA for SSH]: {{ site.baseurl }}/cloud/project/project-enable-mfa-enforcement.html
 [snapshots]: {{ site.baseurl }}/cloud/project/project-webint-snap.html

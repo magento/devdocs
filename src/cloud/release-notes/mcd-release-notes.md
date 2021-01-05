@@ -16,6 +16,32 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.2.1
+*Release date: December 21, 2020*<br/>
+
+-  {:.new}<!--MCLOUD-7259-->**NGINX command options**–Added build command options to change the number of NGINX `worker_processes` and NGINX `worker_connections` for TLS and Web services. The `worker_process` parameter retains the ability to set the value to `auto`. Examples:
+
+    ```terminal
+    ./vendor/bin/ece-docker build:compose --nginx-worker-processes=2
+    ./vendor/bin/ece-docker build:compose --nginx-worker-connections=2048
+    ```
+
+-  {:.new}<!--MCLOUD-7259-->**TLS command option**–Added build command option to create a configuration without the TLS service. Example:
+
+   ```terminal
+   ./vendor/bin/ece-docker build:compose --no-tls
+   ```
+
+-  {:.new}<!--MCLOUD-7259-->**NGINX memory consumption**–Reduced the memory consumed by the NGINX process for TLS and Web services.
+
+-  {:.new}<!--No ticket -->**Blackfire**–Disabled Blackfire PHP extension by default in the Cloud Docker image.
+
+-  {:.fix}<!--MCLOUD-7232-->**PHP-FPM container**–Fixed PHP-FPM container health check by changing the `WEB_PORT` from `80` to `8080`.
+
+-  {:.fix}<!--MCLOUD-7442-->**Invalid volume naming**–Fixed an error with invalid volume naming in developer mode.
+
+-  {:.fix}<!--Issue 295-->**NGINX upstream port**—Updated the Docker NGINX 1.19 image to use port 8080 to avoid an infinite loop. *[Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/296).*
+
 ## v1.2.0
 *Release date: November 9, 2020*<br/>
 
