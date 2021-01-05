@@ -42,10 +42,6 @@ pages:
           url: /safe-upgrade-tool/developer.html
           versionless: true
 
-        - label: Tracking
-          url: /safe-upgrade-tool/tracking.html
-          versionless: true
-
     - label: Magento Marketplace example
       url: /comp-mgr/marketplace/marketplace.html
       include_versions: ["2.3"]
