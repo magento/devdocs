@@ -4,8 +4,17 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Wed Dec 16 16:19:47 2020
+updated: Mon Jan 4 22:34:52 2021
 entries:
+- description: Added a new topic with instructions for [reverting from a split database
+    to a single database](https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html)
+    implementation.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: December 21, 2020
+  link: https://github.com/magento/devdocs/pull/8422
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
 - description: Added an [example](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/requirejs.html)
     of overwriting a Knockout JS .html template file in the `requirejs-config.js`
     file.
