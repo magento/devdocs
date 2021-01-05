@@ -19,10 +19,7 @@ Use the [`storeConfig` query]({{page.baseurl}}/graphql/queries/store-config.html
 
 ```graphql
 mutation {
-  createWishlist(
-    name: String!
-    visibility: WishlistVisibilityEnum!
-  ) {
+  createWishlist(input: CreateWishlistInput!) {
     CreateWishlistOutput
   }
 }
@@ -36,12 +33,16 @@ The following example creates the `My favorites` public wish list.
 
 ``` graphql
 mutation {
-  createWishlist(
+  createWishlist(input: {
     name: "My favorites"
     visibility: PUBLIC
+    }
   ) {
-    uid
-    visibility
+    wishlist {
+      id
+      name
+      visibility
+    }
   }
 }
 ```
@@ -52,8 +53,11 @@ mutation {
 {
   "data": {
     "createWishlist": {
-      "uid": "4",
-      "visibility": "PUBLIC"
+      "wishlist": {
+        "id": "3",
+        "name": "My favorites",
+        "visibility": "PUBLIC"
+      }
     }
   }
 }
@@ -61,7 +65,7 @@ mutation {
 
 ## Input attributes
 
-The `createWishlist` mutation requires the following input.
+The `CreateWishlistInput` object requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -70,10 +74,6 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `CreateWishlistOutput` object returns the `uid` of the new wish list as well as the input attributes.
+The `createWishlist` mutation returns the Wishlist object.
 
-Attribute |  Data Type | Description
---- | --- | ---
-`name` | String! | The wish list name
-`uid` | ID! | The ID of the new wish list
-`visibility` | WishlistVisibilityEnum! | The wish list visibility. Possible values are `PRIVATE` and `PUBLIC`
+{% include graphql/wishlist.md %}
