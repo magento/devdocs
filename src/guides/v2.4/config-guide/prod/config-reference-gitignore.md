@@ -1,1 +1,1 @@
-../../../v2.3/config-guide/prod/config-reference-gitignore.md
+../../../v2.4/config-guide/prod/config-reference-gitignore.md
