@@ -36,6 +36,8 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
 
 **etc/fieldset.xml:**
 
+The following example shows how to copy `sales_convert_quote`.`demo` to `sales_order`.`demo`.
+
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
@@ -43,6 +45,42 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
     <fieldset id="sales_convert_quote">
       <field name="demo">
         <aspect name="to_order" />
+      </field>
+    </fieldset>
+  </scope>
+</config>
+```
+
+Use the `targetField` attribute to specify the destination field. The following example shows how to copy `sales_convert_quote`.`demo` to `sales_order`.`order_demo`.
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
+  <scope id="global">
+    <fieldset id="sales_convert_quote">
+      <field name="demo">
+        <aspect name="to_order" targetField="order_demo"/>
+      </field>
+    </fieldset>
+  </scope>
+</config>
+```
+
+Define a new `aspect` if you need to copy a field of a source table into multiple fields in a destination table.
+
+The following example shows how to copy `sales_convert_quote`.`demo` into
+
+-  `sales_order`.`demo`
+-  `sales_order`.`order_demo`
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
+  <scope id="global">
+    <fieldset id="sales_convert_quote">
+      <field name="demo">
+        <aspect name="to_order"/>
+        <aspect name="to_demo_order" targetField="order_demo"/>
       </field>
     </fieldset>
   </scope>
@@ -108,7 +146,6 @@ class SaveOrderBeforeSalesModelQuoteObserver implements ObserverInterface
       return $this;
     }
 }
-
 ```
 
 In the code, an instance of the `Copy` class is obtained from the constructor using [dependency injection][2].

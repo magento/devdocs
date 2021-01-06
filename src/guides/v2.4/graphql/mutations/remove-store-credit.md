@@ -95,3 +95,10 @@ Attribute |  Data Type | Description
 {% include graphql/cart-object-24.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`Please specify a valid customer.` | The mutation requires a valid authorization token.
+`Required parameter "cart_id" is missing` | The value specified in `cart_id` is empty.

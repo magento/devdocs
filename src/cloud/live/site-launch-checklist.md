@@ -77,7 +77,7 @@ To update DNS configuration for site launch:
 
    -  Use the Magento CLI to change the base URL for your store.
 
-      ```
+      ```bash
       php bin/magento setup:store-config:set --base-url="https://www.your-domain.com/"
       ```
 
