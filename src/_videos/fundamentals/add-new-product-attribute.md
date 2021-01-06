@@ -341,7 +341,7 @@ It should be visible and in bold text.
 ## Product Attribute Option Creation
 
 A product attribute of type multiselect or select will present selectable options to the user. These options may be added manually through the admin panel, or by upgrade script. The script process is slightly different depending on whether the options are being added at the moment of attribute creation or whether the options are being added at a later time to an existing attribute.
- 
+
 ### Add options to a new prouduct attribute {#AddOptionsAlongNewProductAttribute}
 
 Basic instructions for creating a product attribute by setup or upgrade script can be found [above](#CreateProductAttributeByUpgradeScript). Before scripting the attribute creation, pick one of these two use cases for your options:
