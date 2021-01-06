@@ -37,7 +37,7 @@ JS resources are accessed using relative paths.
 **Example 1:**
 
 *  File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
-*  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance [theme](https://glossary.magento.com/theme) and [locale](https://glossary.magento.com/locale).
+*  File published to `pub/static`: `pub/static/frontend/<Vendor>/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance [theme](https://glossary.magento.com/theme) and [locale](https://glossary.magento.com/locale).
 *  Called in script:
 
     ```javascript
