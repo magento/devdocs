@@ -6,7 +6,7 @@ functional_areas:
   - Setup
 ---
 
-You can configure a GitLab repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your GitLab repository with your Magento Commerce Cloud account.
+You can configure a GitLab repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your GitLab repository with your {{ site.data.var.ece }} account.
 
 {% include cloud/note-private-repo.md %}
 

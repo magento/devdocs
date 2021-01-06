@@ -13,4 +13,4 @@ content: "The `InventoryConfiguration` module implements logic for inventory man
   be deleted or disabled.\n\n## Extension points and service contracts\n\nAll public
   interfaces related to this module are located in the `InventoryConfigurationApi`
   module. \nUse the interfaces defined in `InventoryConfigurationApi` to extend this
-  module.\n"
+  module."

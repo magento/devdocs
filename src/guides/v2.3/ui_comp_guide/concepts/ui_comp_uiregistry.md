@@ -21,14 +21,20 @@ var registry = require('uiRegistry');
 Now we have `uiRegistry` instance in the `registry` variable. We can use it to get an instance of any component.
 
 ```js
-var component = registry.get('%componentName%');
+var component = registry.get('componentName');
 ```
 
 The `uiRegistry` instance allows you to search for components using property values.
 If you know a unique property value of a component that you need to find, you can use the following code to get the component:
 
 ```js
-var component = registry.get('%property% = %propertyValue%');
+var component = registry.get('property = propertyValue');
+```
+
+To get a list of all components used on the current page, you can use this code:
+
+```js
+require('uiRegistry').get(function(component){console.log(component.name)});
 ```
 
 **Examples:**

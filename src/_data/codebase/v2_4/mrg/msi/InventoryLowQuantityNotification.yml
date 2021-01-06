@@ -13,4 +13,4 @@ content: "The `InventoryLowQuantityNotification` module integrates Inventory Man
   module cannot be deleted or disabled.\n\n## Extension points and service contracts\n\nAll
   public interfaces related to this module are located in the `InventoryLowQuantityNotificationApi`
   module. \nUse the interfaces defined in `InventoryLowQuantityNotificationApi` to
-  extend this module.\n"
+  extend this module."

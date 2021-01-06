@@ -37,7 +37,9 @@ Package submissions must contain a Magento module, theme, language pack, or meta
    -  `magento/product-community-edition`
    -  `magento/magento2-ee-base`
    -  `magento/product-enterprise-edition`
+
 1. The package does not use `*` as a version restriction for Magento packages (packages with `magento` vendor). You must specify version restriction according to the [recommendations]({{ site.baseurl }}/guides/v2.4/extension-dev-guide/versioning/dependencies.html#determine-module-dependency) in the _Magento PHP Developer Guide_.
+
 1. [Require inline aliases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in the `composer.json` file.
 
 Additional requirements for package declarations are applied based on the package type:
@@ -68,7 +70,7 @@ _See also:_ [Coding Standards]({{ site.baseurl }}/guides/v2.4/coding-standards/b
 
 All code and marketing content that is submitted to Magento Marketplace is checked for plagiarism to ensure that it has not been copied from existing Marketplace extensions or from the Magento codebase.
 
-If the extension contains source code from the Community Edition of Magento, the extension must be licensed under [Open Source License v. 3.0][3] and properly credit Adobe, Inc.
+If the extension contains source code from the Open Source Edition, the extension must be licensed under [Open Source License v. 3.0][3] and properly credit Adobe, Inc.
 
 _More details:_ [Copy Paste Detector]({{ site.baseurl }}/marketplace/sellers/copy-paste-detector.html)
 

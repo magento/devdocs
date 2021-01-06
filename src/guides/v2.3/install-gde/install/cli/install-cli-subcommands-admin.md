@@ -44,7 +44,7 @@ Where the following table defines parameters and values:
 |`--admin-lastname`|Magento administrator user's last name.|Yes|
 |`--admin-email`|Magento administrator user's e-mail address.|Yes|
 |`--admin-user`|Magento administrator username.|Yes|
-|`--admin-password`|Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. <br><br>We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`.|Yes|
+|`--admin-password`|Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. <br><br>We recommend a longer, more complex password. If the password string contains special characters that require literal interpretation (such as backslashes or spaces), enclose the password in single quotations.|Yes|
 |`--magento-init-params`|Add to any command to customize Magento initialization parameters<br/><br/>For example: `MAGE_MODE=developer&MAGE_DIRS[base][path]=/var/www/example.com&MAGE_DIRS[cache][path]=/var/tmp/cache`|No|
 
 Example of usage:

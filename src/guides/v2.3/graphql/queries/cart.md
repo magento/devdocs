@@ -696,7 +696,7 @@ The `CartItemPrices` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`discounts`| [Discount] | An array of discounts to be applied to the cart item
+`discounts`| [[Discount]](#Discount) | An array of discounts to be applied to the cart item
 `price` | Money! | The price of the item before any discounts were applied
 `row_total` | Money! | The value of the `price` multiplied by the quantity of the item
 `row_total_including_tax` | Money! | The value of `row_total` plus the tax applied to the item
@@ -718,8 +718,8 @@ The `CartPrices` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
-`discount` | CartDiscount | Deprecated. Use `discounts` instead
-`discounts` | [Discount] | An array containing all discounts applied to the cart
+`discount` | [CartDiscount](#CartDiscount) | Deprecated. Use `discounts` instead
+`discounts` | [[Discount]](#Discount) | An array containing all discounts applied to the cart
 `grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
 `subtotal_excluding_tax` | Money | Subtotal without taxes
 `subtotal_including_tax` | Money | Subtotal with taxes
@@ -786,6 +786,8 @@ Attribute |  Data Type | Description
 
 *  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
 *  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
+*  [setShippingAddressesOnCart mutation]({{page.baseurl}}/graphql/mutations/set-shipping-address.html)
+*  [setShippingMethodsOnCart mutation]({{page.baseurl}}/graphql/mutations/set-shipping-method.html)
 *  [setBillingAddressOnCart mutation]({{page.baseurl}}/graphql/mutations/set-billing-address.html)
 *  [setPaymentMethodOnCart mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)
 
