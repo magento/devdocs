@@ -4,7 +4,7 @@ The diagram shows the following:
 
 1. Set up your server environment.
 
-   Install the prerequisite software, including PHP, Apache, MySQL, and Elasticsearch. Consult the [system requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for specific information.
+   Install the prerequisite software, including PHP, Apache, MySQL, and Elasticsearch. Consult the [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for specific information.
 
 1. Get the Magento software.
 
