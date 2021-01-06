@@ -13,4 +13,4 @@ content: "Magento_GoogleOptimizer module implements functionality of Google Expe
   categories on different store views.\nThis functionality can be switched on and
   off on the configuration page (Stores -> Configuration -> General -> Google Api
   -> Google Analytics).\nAlso this functionality depends on Google Analytics module
-  and configuration options.\n"
+  and configuration options."

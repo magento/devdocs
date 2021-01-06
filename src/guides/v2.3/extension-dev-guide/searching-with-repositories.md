@@ -507,3 +507,6 @@ The `di.xml` configuration file excerpt below shows how you can create a virtual
       </arguments>
   </type>
 ```
+
+{:.bs-callout-info}
+When building an EAV Model that needs to implement the `Repository::getList` method, use the EAV Filter Processor; otherwise the custom filters will not be added to the collection.

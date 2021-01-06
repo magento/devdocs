@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.4.1
 github_path: app/code/Magento/MediaContentSynchronizationApi/README.md
 last_modified_at: '2020-08-03 11:01:09 +0100'
-content: |
+content: |-
   The Magento_MediaContentSynchronizationApi module is responsible for the media gallery data synchronization implementation API.
 
   ## Extensibility
