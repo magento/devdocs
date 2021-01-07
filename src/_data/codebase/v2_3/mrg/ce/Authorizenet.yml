@@ -26,4 +26,4 @@ content: "The Magento_Authorizenet module implements the integration with the Au
   module introduces the following layouts and layout handles in the `view/frontend/layout`
   directory:\n\n- `authorizenet_directpost_payment_backendresponse`\n- `authorizenet_directpost_payment_redirect`\n-
   `authorizenet_directpost_payment_response`\n\nFor more information about layouts
-  in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html).\n"
+  in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html)."

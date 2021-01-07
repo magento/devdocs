@@ -5,7 +5,7 @@ title: Technology stack
 
 ## Overview
 
-This page summarizes the technologies we use. For more detailed information, see the [System Requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
+This page summarizes the technologies we use. For more detailed information, see the [System Requirements]({{page.baseurl}}/install-gde/system-requirements.html).
 
 Magento's highly modular structure includes the following open-source technologies.
 

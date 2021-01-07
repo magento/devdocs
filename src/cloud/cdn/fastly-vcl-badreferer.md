@@ -73,7 +73,7 @@ Before creating a snippet based on this example, review the values to determine 
 
 -  `name` — Name for the VCL snippet. For this example, we used `block_bad_referrer`.
 
--  `dynamic` — Value 0 indicates a [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets) to upload to the versioned VCL for the Fastly configuration.
+-  `dynamic` — Value 0 indicates a [regular snippet](https://docs.fastly.com/en/guides/using-regular-vcl-snippets) to upload to the versioned VCL for the Fastly configuration.
 
 -  `priority` — Determines when the VCL snippet runs. The priority  is `5` to run this snippet code before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50. You must set the priority for each custom snippet higher or lower than 50 depending on when you want your snippet to run. Snippets with lower priority numbers run first.
 
