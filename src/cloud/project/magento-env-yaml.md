@@ -115,7 +115,7 @@ stage:
 
 ## Validate configuration file
 
-To validate the configuration file before pushing it to the environment you can use the next command:
+To validate the configuration file before pushing it to the environment you can use the command:
 
 ```bash
 php ./vendor/bin/ece-tools cloud:config:validate
