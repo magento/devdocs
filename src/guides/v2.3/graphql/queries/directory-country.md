@@ -110,3 +110,10 @@ The query returns a single `Country` object.
 
 *  [countries query]({{page.baseurl}}/graphql/queries/directory-countries.html)
 *  [currency query]({{page.baseurl}}/graphql/queries/directory-currency.html)
+
+## Errors
+
+Error | Description
+--- | ---
+`Country \"id\" value should be specified"` | The Country ID value must be specified to find the mapped country.
+`The country isn't available` | There is no country mapped to the given country-id.
