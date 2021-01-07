@@ -30,13 +30,13 @@ The following example adds items to the cart.
 
 **Request:**
 
-``` graphql
+```graphql
 mutation {
   addRequisitionListItemsToCart (
     requisitionListUid: "Mg=="
-    requisitionListItemUids: 
+    requisitionListItemUids:
     ["Mw==", "Ng==", "Nw=="]
-  ) 
+  )
   {
     status
     cart {
