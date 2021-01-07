@@ -31,13 +31,13 @@ The following example moves an item from one requisition list to another.
 
 **Request:**
 
-``` graphql
+```graphql
 mutation {
   moveItemsBetweenRequisitionLists(
       sourceRequisitionListUid: "Mg=="
       destinationRequisitionListUid: "Mw=="
       requisitionListItem: {
-        requisitionListItemUids: 
+        requisitionListItemUids:
           ["MTI="]
         }
         ) {
