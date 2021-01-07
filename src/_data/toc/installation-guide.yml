@@ -91,6 +91,9 @@ pages:
         - label: Reinstall the Magento software
           url: /install-gde/install/cli/dev_reinstall.html
 
+    - label: Advanced install
+      url: /install-gde/advanced-install.html
+
     - label: Post Installation
       url: /install-gde/continue-to-verify_cli.html
       children:
