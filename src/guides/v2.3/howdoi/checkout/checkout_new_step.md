@@ -7,7 +7,7 @@ subtitle: Customize Checkout
 menu_order: 1
 level3_subgroup: checkout-tutorial
 functional_areas:
-- Checkout
+  - Checkout
 ---
 
 This topic describes how to create the [frontend](https://glossary.magento.com/frontend) part of the component, implementing a checkout step, and how to add it to the checkout flow.
