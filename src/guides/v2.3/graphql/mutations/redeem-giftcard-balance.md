@@ -80,3 +80,10 @@ Attribute |  Data Type | Description
 `balance` | Money | The remaining balance of the gift card, including the currency
 `code` | String | The gift card code
 `expiration_date` | String | The date when the gift card expires, if any
+
+## Errors
+
+Error | Description
+--- | ---
+`Gift card not found` | The specified `gift_card_code` value does not exist in the `giftcardaccount` table or the amount has been already redeemed.
+`Field GiftCardAccountInput.gift_card_code of required type String! was not provided` | The value specified in the `GiftCardAccountInput.gift_card_code` argument is empty.
