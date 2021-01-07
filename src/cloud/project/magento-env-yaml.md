@@ -112,3 +112,13 @@ stage:
   deploy:
     CLEAN_STATIC_FILES: false
 ```
+
+## Validate configuration file
+
+To validate the configuration file before pushing it to the environment you can use the next command:
+
+```bash
+php ./vendor/bin/ece-tools cloud:config:validate
+```
+
+The command will show a list of problems in the `.magento.env.yaml` file if the configuration is not valid. 
