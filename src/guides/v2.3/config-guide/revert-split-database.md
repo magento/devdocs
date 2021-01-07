@@ -8,9 +8,7 @@ functional_areas:
   - Setup
 ---
 
-The [split database]({{ page.baseurl }}/config-guide/multi-master/multi-master.html) feature was deprecated in version 2.4.2 of {{ site.data.var.ee }}. Follow these instructions to revert from a split database to a single database implementation.
-
-## Revert a split database implementation
+For {{ site.data.var.ee }} customers who have implemented [Split Database]({{ page.baseurl }}/config-guide/multi-master/multi-master.html), the following topic describes how to revert or migrate back to a single database. We recommend that {{ site.data.var.ee }} merchants currently using Split Database who are upgrading to 2.4.2 and above review these steps, as well as our [announcement](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Split-Database-in-Magento-Commerce/ba-p/465187) on the planned deprecation of Split Database.
 
 Reverting from a split database to a single database implementation involves creating backups of the `magento_quote` and `magento_sales` databases before loading them into the single `magento_main` database.
 
