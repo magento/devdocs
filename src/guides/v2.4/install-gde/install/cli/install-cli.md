@@ -1,5 +1,5 @@
 ---
-title: Command Line install (contributor)
+title: Advanced install
 functional_areas:
   - Install
   - System
@@ -39,7 +39,7 @@ The basic steps for updating or reinstalling your Magento application are:
 1. [Change versions of the Magento software]({{ page.baseurl }}/install-gde/install/cli/dev_downgrade.html) after cloning.
 1. _(Update or reinstall only)_ [Reinstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/dev_reinstall.html).
 
-Follow these processes in this section's topics to update or reinstall your Magento application software.
+Follow the processes in this section's topics to do an initial install, update, or reinstall your Magento application software.
 
  {:.bs-callout-info}
 If you are not a contributing developer, use our [Updating the Magento application and components topic]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html) to perform updates or upgrades or our [Quick start install (non-contributor) topic]({{ page.baseurl }}/install-gde/composer.html) to perform a brand new install.

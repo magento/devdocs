@@ -63,7 +63,20 @@ pages:
     - label: Quick start install (non-contributor)
       url: /install-gde/composer.html
 
-    - label: Command Line install (contributor)
+    - label: Quick start install (contributor)
+      url: /install-gde/contrib-git.html
+      children:
+
+        - label: Clone the Magento repository
+          url: /install-gde/prereq/dev_install.html
+        
+        - label: Change to a released version
+          url: /install-gde/install/cli/dev_downgrade.html
+
+        - label: Update installation dependencies
+          url: /install-gde/install/prepare-install.html
+
+    - label: Advanced install
       url: /install-gde/install/cli/install-cli.html
       children:
 
@@ -73,26 +86,11 @@ pages:
         - label: Install the Magento software
           url: /install-gde/install/cli/install-cli-install.html
 
-        - label: Clone the Magento repository
-          url: /install-gde/prereq/dev_install.html
-
-        - label: Update installation dependencies
-          url: /install-gde/install/prepare-install.html
-
         - label: Update the Magento application
           url: /install-gde/install/cli/dev_update-magento.html
 
         - label: Add or update components
           url: /install-gde/install/cli/dev_add-update.html
-
-        - label: Change to a released version
-          url: /install-gde/install/cli/dev_downgrade.html
-
-        - label: Reinstall the Magento software
-          url: /install-gde/install/cli/dev_reinstall.html
-
-    - label: Advanced install
-      url: /install-gde/advanced-install.html
 
     - label: Post Installation
       url: /install-gde/continue-to-verify_cli.html
