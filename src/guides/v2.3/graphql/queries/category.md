@@ -212,3 +212,10 @@ The query returns a `CategoryTree` object, which implements [`CategoryInterface`
 Attribute | Data type | Description
 --- | --- | ---
 `children` | `CategoryTree` | An array containing the next level of subcategories. By default, you can specify up to 10 levels of child categories
+
+## Errors
+
+Error | Description
+--- | ---
+`Category doesn't exist` | The specified category-id value does not exist.
+`Field \"category\" argument \"id\" requires type Int, found "XXX" ` | The given category-id is not of type `int`, which is the required type.
