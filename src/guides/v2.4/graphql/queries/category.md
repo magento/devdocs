@@ -215,5 +215,5 @@ Attribute | Data type | Description
 
 Error | Description
 --- | ---
-`Category doesn't exist` | The specified category-id value does not exist.
-`Field \"category\" argument \"id\" requires type Int, found "XXX" ` | The given category-id is not of type `int`, which is the required type.
+`Category doesn't exist` | The specified category ID value does not exist.
+`Field "category" argument "id" requires type Int, found "XXX"` | The specified `id` argument value has the wrong type.
