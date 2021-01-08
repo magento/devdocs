@@ -5,17 +5,20 @@ functional_areas:
   - Upgrade
 ---
 
-The Magento Safe Upgrade Tool (SUT) is a command line (CLI) tool that checks a Magento instance against a specific version by analyzing all the non-Magento modules installed on it.
+The Magento Safe Upgrade Tool ALPHA (SUT) is a command line (CLI) tool that checks a Magento instance against a specific version by analyzing all the non-Magento modules installed on it.
 
-potential problems that must be fixed in your custom code before attempting to upgrade to a newer version of Magento.
+The SUT identifies potential problems that must be fixed in your custom code before attempting to upgrade to a newer version of Magento.
 
 The tool returns a list of errors and warnings that you must address before upgrading to a new version of Magento.
+
+{:.bs-callout-warning}
+At the moment this is an ALPHA version with limited scope, only validating PHP Magento APIs and GraphQL schema.
 
 ## Use SUT
 
 ### Memory limitations
 
-The SUT uses memory on your Magento instance to run—even if you installed the SUT on a different machine. If you are running a system with large third-party modules and files, the SUT requires a high amount of RAM.
+The SUT uses memory on your Magento instance to run — even if you installed the SUT on a different machine. If you are running a system with large third-party modules and files, the SUT requires a high amount of RAM.
 
 ### Executing the tool
 
@@ -43,6 +46,8 @@ The SUT also provides the option to introspect two GraphQL endpoints and compare
 ```bash
 bin/sut graphql:compare https://domain1.com/graphql https://domain2.com/graphql
 ```
+
+You must have running "instance before" and "instance after" the upgrade.
 
 ### Arguments and options
 

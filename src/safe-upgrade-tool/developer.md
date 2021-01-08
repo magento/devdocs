@@ -5,13 +5,13 @@ functional_areas:
   - Upgrade
 ---
 
-This topic contains information for developers who want to know more technical information about the Magento Safe Upgrade Tool (SUT). It is focused on developers who work closely with the Magento source code. You can use this knowledge to customize the SUT's components.
+This topic contains information for developers who want to know more technical information about the Magento Safe Upgrade Tool ALPHA (SUT). It is focused on developers who work closely with the Magento source code. You can use this knowledge to customize the SUT's components.
 
-## M-Ray integration
+## Magento API index integration
 
-M-Ray integration is an internal integration solution.
+Magento API index integration is an internal integration solution that comprehends a set of tools to explore Magento Extensions developed by Magento, an Adobe Company, Magento Partners and 3rd party vendors based on static code analysis.
 
-The integration with M-Ray is done through:
+The integration with Magento API index is done through:
 
 `Sut\Domain\MRay\MRayInterface`
 
@@ -103,46 +103,3 @@ The SUT calculates this score according to the following formula:
 ### Complexity score formula
 
 `Complexity Score = 2 * (# of errors) + 1 * (# of warnings)`
-
-## Packaging
-
-A package is essentially a directory containing something. It contains a package description which has a name and a version. The name and the version are used to identify the package.
-
-It is possible to create a `sut.zip` file of the SUT to distribute it as a Composer package.
-
-1. To package the SUT, execute the following command:
-
-   ```bash
-   bin/package VERSION`
-   ```
-
-### An example of a package
-
-`bin/package 0.0.1`
-
-1. This generates an `sut.zip` file that you can upload (or distribute with) to the [Magento Composer repository](https://repo.magento.com).
-
-{:.bs-callout-info}
-A repository is a package source. Composer will look in all your repositories to find the packages your SUT requires.
-
-If you need access to the [Magento Composer repository](https://repo.magento.com), submit a [Magento Support ticket]({{site.baseurl}}/cloud/trouble/trouble.html) to request permissions and an account.
-
-For more information about Composer, see the [Introduction to Magento Composer]({{site.baseurl}}/guides/v2.4/extension-dev-guide/intro/intro-composer.html) topic.
-
-## Distribution
-
-Once the SUT package is generated, you can upload it to the [Magento Composer repository](https://repo.magento.com).
-
-In order to distribute SUT:
-
-1. Go to the [Magento create repo](https://repo.magento.com/admin/packagist/web/ceeerelease/create) topic and create a new release with the following parameters:
-
-   *  Name: `magento/safe-upgrade-tool-VERSION`
-
-1. Go to the [Magento upload repo](https://repo.magento.com/admin/upload_m2_version) topic to upload the `sut.zip` with the following parameters:
-
-   *  Extension package: `sut.zip`
-   *  Release: `magento/safe-upgrade-tool-VERSION`
-   *  Edition: CE
-
-1. Finally, go to the [Magento version repo](https://repo.magento.com/admin/packagist/web/version/list) topic to check that the new version has been created.
