@@ -121,4 +121,11 @@ Use the following CLI command to validate the `.magento.env.yaml` configuration 
 php ./vendor/bin/ece-tools cloud:config:validate
 ```
 
-The command will show a list of problems in the `.magento.env.yaml` file if the configuration is not valid. 
+The command will show a list of problems in the `.magento.env.yaml` file if the configuration is not valid, for example:
+
+```yaml
+Environment configuration is not valid. Correct the following items in your .magento.env.yaml file:
+The SCD_THREADS variable contains an invalid value of type string. Use the following type: integer.
+The SCD_STRATEGY variable contains an invalid value fast. Use one of the available value options: compact, quick, standard.
+The NOT_EXIST_OPTION variable is not allowed in configuration.
+``` 
