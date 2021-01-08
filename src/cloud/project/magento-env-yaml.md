@@ -115,7 +115,7 @@ stage:
 
 ## Validate configuration file
 
-To validate the configuration file before pushing it to the environment you can use the command:
+Use the following CLI command to validate the `.magento.env.yaml` configuration file before pushing changes to the remote Cloud environment.
 
 ```bash
 php ./vendor/bin/ece-tools cloud:config:validate
