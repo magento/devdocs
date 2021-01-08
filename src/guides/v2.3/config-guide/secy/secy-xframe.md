@@ -31,12 +31,6 @@ Set a value for `X-Frame-Options` in `<magento_root>/app/etc/env.php`. Following
 'x-frame-options' => 'SAMEORIGIN',
 ```
 
-If you want to allow any website to load page, you can use `*`:
-
-```php
-'x-frame-options' => '*',
-```
-
 We require you to edit `env.php` because it's more secure than setting a value in the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 ## Verify your setting for `X-Frame-Options`
@@ -57,4 +51,3 @@ Look for the `X-Frame-Options` value in the headers.
 
 *  [mozilla.org](https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options)
 *  [security.stackexchange.com](http://security.stackexchange.com/questions/67889/why-do-browsers-enforce-the-same-origin-security-policy-on-iframes)
-*  [MSDN blog](http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx)

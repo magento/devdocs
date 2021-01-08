@@ -14,11 +14,11 @@ See [Token-based authentication][] for instructions on requesting and using secu
 
 Each of the following links lead to a list of REST endpoints specific to a user type:
 
-*  [Admin REST API endpoints](https://magento.redoc.ly/2.3.5-admin/)—Available using an admin security token.
+*  [Admin REST API endpoints](https://magento.redoc.ly/2.3.6-admin/)—Available using an admin security token.
 
-*  [Customer REST API endpoints](https://magento.redoc.ly/2.3.5-customer/)—Available using a customer security token.
+*  [Customer REST API endpoints](https://magento.redoc.ly/2.3.6-customer/)—Available using a customer security token.
 
-*  [Guest REST API endpoints](https://magento.redoc.ly/2.3.5-guest/)—Available for anonymous users.
+*  [Guest REST API endpoints](https://magento.redoc.ly/2.3.6-guest/)—Available for anonymous users.
 
 ## Asynchronous endpoints
 

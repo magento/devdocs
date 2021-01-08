@@ -33,25 +33,28 @@ The following example shows the `setPaymentMethodOnCart` mutation constructed fo
 
 ```graphql
 mutation {
-  setPaymentMethodOnCart(input: {
-    cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
-    payment_method: {
-      code: "payflowpro"
-      payflowpro: {
+  setPaymentMethodOnCart(
+    input: {
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
+      payment_method: {
+        code: "payflowpro"
+        payflowpro: {
           cc_details: {
-          cc_exp_month: 12
-          cc_exp_year: 2021
-          cc_last_4: 1111
-          cc_type: "VI"
+            cc_exp_month: 12
+            cc_exp_year: 2021
+            cc_last_4: 1111
+            cc_type: "VI"
+          }
         }
       }
     }
-  })
-  {
+  ) {
     cart {
       selected_payment_method {
         code
+        title
       }
+    }
   }
 }
 ```
@@ -65,6 +68,7 @@ mutation {
       "cart": {
         "selected_payment_method": {
           "code": "payflowpro"
+          "title": "Payflow Pro"
         }
       }
     }

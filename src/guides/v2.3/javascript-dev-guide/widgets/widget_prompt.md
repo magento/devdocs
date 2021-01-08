@@ -20,7 +20,7 @@ The prompt widget can be initialized with or without binding to a certain elemen
 
 ```javascript
 $('#prompt_init').prompt({
-    title: 'Prompt title',
+    title: $.mage.__('Prompt title'),
     actions: {
         confirm: function(){}, //callback on 'Ok' button click
         cancel: function(){}, //callback on 'Cancel' button click
@@ -33,12 +33,13 @@ $('#prompt_init').prompt({
 
 ```javascript
 require([
+    'jquery',
     'Magento_Ui/js/modal/prompt'
-], function(prompt) { // Variable that represents the `prompt` function
+], function($, prompt) { // Variable that represents the `prompt` function
 
     prompt({
-        title: 'Some title',
-        content: 'Some content',
+        title: $.mage.__('Some title'),
+        content: $.mage.__('Some content'),
         actions: {
             confirm: function(){},
             cancel: function(){},
@@ -223,9 +224,9 @@ The prompt widget implements the following events:
         'use strict';
 
         $('.prompt-modal-content').prompt({
-            title: 'Prompt Title',
+            title: $.mage.__('Prompt Title'),
             modalClass: 'prompt',
-            value: 'Value by default',
+            value: $.mage.__('Value by default'),
             validation: true,
             promptField: '[data-role="promptField"]',
             validationRules: ['required-entry'],
@@ -269,10 +270,10 @@ The prompt widget implements the following events:
         'use strict';
 
         prompt({
-            title: 'Prompt Title',
-            content: $('.prompt-modal-content'),
+            title: $.mage.__('Prompt Title'),
+            content: $.mage.__($('.prompt-modal-content')),
             modalClass: 'prompt',
-            value: 'Value by default',
+            value: $.mage.__('Value by default'),
             validation: true,
             promptField: '[data-role="promptField"]',
             validationRules: ['required-entry'],

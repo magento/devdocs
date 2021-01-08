@@ -144,10 +144,12 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
 `Could not add the product with SKU configurable to the shopping cart: The product that was requested doesn't exist. Verify the product and try again.` | The simple product with the SKU specified in the `data`.`sku` attribute does not exist.
 `Could not find a product with SKU "XXX"` | The configurable product with SKU specified in the `parent_sku` argument does not exist.
 `Could not find specified product.` | The simple product specified in the `data`.`sku` argument is not assigned to the configurable product provided in the `parent_sku` attribute.
 `Required parameter "cart_id" is missing` | The `cart_id` argument was omitted or contains an empty value.
+`Required parameter "cart_items" is missing` | The `cart_items` argument was omitted or contains an empty array.
 `Required parameter "email" is missing` | The `email` argument was omitted or contains an empty value.
 `The requested qty is not available` | The requested quantity specified `data`.`quantity` is not available.
 

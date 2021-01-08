@@ -13,4 +13,4 @@ content: "The `InventoryCatalogApi` module provides service contracts for defaul
   APIs that 3rd-party developers\ncan use to provide custom inventory catalog functionality.\n\n###
   Public APIs\n\nPublic APIs are defined in the `Api` directory.\n\n### REST endpoints\n\nThe
   `etc/webapi.xml` file defines endpoints for assigning, unassigning, and transferring
-  sources in bulk.\n"
+  sources in bulk."

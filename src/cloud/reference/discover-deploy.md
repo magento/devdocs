@@ -31,10 +31,10 @@ A set of YAML configuration files located in the project root directory define y
 
 For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files.
 
--  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—defines how to build and deploy Magento, including services, hooks, cron jobs, and more.
+-  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—defines how to build and deploy Magento, including user access, service mapping (relationships), hooks, cron jobs, and more.
 -  [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
 -  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)—defines how Magento processes an incoming URL.
--  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
+-  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—defines the services Magento uses by name and version. For example, this file can include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
 -  [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html)—defines the [system-specific settings]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data) Magento uses to configure your store. Magento generates this file if it does not detect it during the build phase. See [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) for information on how to use this file to manage and synchronize the Magento application configuration across your Cloud environments.
 
 ## Required files for your Git branch {#requiredfiles}

@@ -4,5 +4,5 @@ source_repo: magento2ce
 release: 2.3.6
 github_path: app/code/Magento/SalesRule/README.md
 last_modified_at: '2014-10-24 14:51:44 -0700'
-content: "SalesRule module is responsible for managing and processing Promotion Shopping
-  Cart Rules.\n\n"
+content: SalesRule module is responsible for managing and processing Promotion Shopping
+  Cart Rules.
