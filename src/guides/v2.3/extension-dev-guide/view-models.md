@@ -60,7 +60,7 @@ You can access the public methods for the view model class in the template:
 
 /** @var $viewModel \OrangeCompany\Catalog\ViewModel\MyNewViewModel */
 
-$viewModel = $block->getViewModel();
+$viewModel = $block->getData('viewModel');
 
 ?>
 <h1><?= $block->escapeHtml($viewModel->getTitle()); ?></h1>
@@ -78,7 +78,7 @@ The view model class is passed as an argument to the `product.info.upsell` block
 <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell" template="Magento_Catalog::product/list/items.phtml">
     <arguments>
         <argument name="type" xsi:type="string">upsell</argument>
-        <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
+        <argument name="view_model" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
     </arguments>
 </block>
 ```
@@ -139,3 +139,5 @@ $postArray = $viewModel->getPostData(
     ['product' => $_item->getEntityId()]
 );
 ```
+{:.bs-callout-info}
+If you use `argument name="view_model"` you can access it using `$viewModel = $block->getViewModel();` Or You can use `argument name="viewModel"` and can access `$viewModel = $block->getData('viewModel');`
