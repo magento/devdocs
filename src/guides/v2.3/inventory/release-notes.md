@@ -27,7 +27,7 @@ The release notes include:
 
 -  {:.fix} Improved cart page performance during quantity update on B2B.
 
--  {:.fix} Several bug fixes targeted to resolve issues with in-store pickup, mass updates and inventory threshold. 
+-  {:.fix} Several bug fixes targeted to resolve issues with in-store pickup, mass updates and inventory threshold.
 
 -  {:.new} **Functional tests.** Introduced new functional tests and provided fixes for existing tests to make them more stable.
 
