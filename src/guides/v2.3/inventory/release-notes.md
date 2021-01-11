@@ -31,7 +31,6 @@ The release notes include:
 
 -  {:.new} **Functional tests.** Introduced new functional tests and provided fixes for existing tests to make them more stable.
 
-
 ### v1.2.1
 {{site.data.var.im}} 1.2.1 (module version: `magento/inventory-metapackage = 1.2.1`) is supported with version 2.4.1 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
