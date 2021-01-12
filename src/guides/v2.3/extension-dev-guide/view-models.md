@@ -24,7 +24,7 @@ View models can be used by passing the view model class as an argument to a temp
 ```xml
 <block name="orangeco.new.viewmodel" template="OrangeCompany_Catalog::example.phtml">
     <arguments>
-        <argument name="viewModel" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+        <argument name="view_model" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
     </arguments>
 </block>
 ```
@@ -34,7 +34,7 @@ In the following example, the same view model is used with an existing block in 
 ```xml
 <referenceBlock name="checkout.cart.item.renderers.default">
     <arguments>
-        <argument name="viewModel" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+        <argument name="view_model" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
     </arguments>
 </referenceBlock>
 ```
