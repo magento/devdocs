@@ -18,7 +18,7 @@ At the moment this is an ALPHA version with limited scope, only validating PHP M
 
 ### Memory limitations
 
-The SUT uses memory on your Magento instance to run — even if you installed the SUT on a different machine. If you are running a system with large third-party modules and files, the SUT requires a high amount of RAM.
+The SUT uses memory on your Magento instance to run — even if you installed the SUT on a different machine. If you are running a system with large third-party modules and files, the SUT requires a high amount of RAM, for example at least 2GB RAM.
 
 ### Executing the tool
 
