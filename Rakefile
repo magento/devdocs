@@ -78,13 +78,14 @@ task :whatsnew do
   print 'Generating data for the What\'s New digest: $ '.magenta
 
   # Generate tmp/whats-new.yml
-  if since.nil? || since.empty?
-    sh 'bin/whatsup_github', 'since', last_update
-  elsif since.is_a? String
-    sh 'bin/whatsup_github', 'since', since
-  else
-    abort 'The "since" argument must be a string. Example: "jul 4"'
-  end
+  report =
+    if since.nil? || since.empty?
+      `bin/whatsup_github since '#{last_update}'`
+    elsif since.is_a? String
+      `bin/whatsup_github since #{since}`
+    else
+      abort 'The "since" argument must be a string. Example: "jul 4"'
+    end
 
   # Merge generated tmp/whats-new.yml with existing src/_data/whats-new.yml
   generated_data = YAML.load_file generated_file
@@ -94,6 +95,9 @@ task :whatsnew do
 
   puts "Writing updates to #{current_file}"
   File.write current_file, current_data.to_yaml
+
+  abort report if report.include? 'MISSING whatsnew'
+  puts report
 end
 
 desc 'Generate index for Algolia'

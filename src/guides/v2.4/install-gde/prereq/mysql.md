@@ -38,7 +38,7 @@ Magento 2.4 requires a clean installation of MySQL 8.0. Follow the links below f
 
 If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
-{:.bs-callout-info}}
+{:.bs-callout-info}
 The default value applies to {{site.data.var.ece}} *and* on-premises projects. {{site.data.var.ece}} Pro customers must open a support ticket to increase the `max_allowed_packet` value. {{site.data.var.ece}} Starter customers can increase the value by updating the configuration in the `/etc/mysql/mysql.cnf` file.
 
   {% include install/mysql_max-allowed-packet-ubuntu.md %}

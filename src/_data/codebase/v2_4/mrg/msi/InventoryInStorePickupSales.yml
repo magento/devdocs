@@ -13,4 +13,4 @@ content: "The `InventoryInStorePickupSales` module provides business logic for I
   cannot be deleted or disabled.\n\n## Extension points and service contracts\n\nAll
   public interfaces related to this module are located in the `InventoryInStorePickupSalesApi`
   module. \nUse the interfaces defined in `InventoryInStorePickupSalesApi` to extend
-  this module.\n"
+  this module."

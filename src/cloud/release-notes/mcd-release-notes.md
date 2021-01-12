@@ -16,6 +16,32 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.2.1
+*Release date: December 21, 2020*<br/>
+
+-  {:.new}<!--MCLOUD-7259-->**NGINX command options**–Added build command options to change the number of NGINX `worker_processes` and NGINX `worker_connections` for TLS and Web services. The `worker_process` parameter retains the ability to set the value to `auto`. Examples:
+
+    ```terminal
+    ./vendor/bin/ece-docker build:compose --nginx-worker-processes=2
+    ./vendor/bin/ece-docker build:compose --nginx-worker-connections=2048
+    ```
+
+-  {:.new}<!--MCLOUD-7259-->**TLS command option**–Added build command option to create a configuration without the TLS service. Example:
+
+   ```terminal
+   ./vendor/bin/ece-docker build:compose --no-tls
+   ```
+
+-  {:.new}<!--MCLOUD-7259-->**NGINX memory consumption**–Reduced the memory consumed by the NGINX process for TLS and Web services.
+
+-  {:.new}<!--No ticket -->**Blackfire**–Disabled Blackfire PHP extension by default in the Cloud Docker image.
+
+-  {:.fix}<!--MCLOUD-7232-->**PHP-FPM container**–Fixed PHP-FPM container health check by changing the `WEB_PORT` from `80` to `8080`.
+
+-  {:.fix}<!--MCLOUD-7442-->**Invalid volume naming**–Fixed an error with invalid volume naming in developer mode.
+
+-  {:.fix}<!--Issue 295-->**NGINX upstream port**—Updated the Docker NGINX 1.19 image to use port 8080 to avoid an infinite loop. *[Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/296).*
+
 ## v1.2.0
 *Release date: November 9, 2020*<br/>
 
@@ -39,6 +65,8 @@ The release notes include:
 
       -  Added the OpenSSH-client to PHP CLI containers. Now, you can use ssh-agent forwarding for Composer if the `composer.json` file contains private git repositories that require an ssh client to use Composer commands.<!--MCLOUD-6008-->
 
+   -  {:.fix}**TLS container**–Now, the [TLS container]({{ site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container) is based on the `https://hub.docker.com/r/magento/magento-cloud-docker-nginx` Docker image instead of the Centos image. This change fixes issues that caused errors when sending HTTPS requests between containers in the Cloud Docker environment.<!--MCLOUD-6469-->
+
    -  {:.new}**Test container**–Added a test container for Magento application testing, and added the `--with-test` option to the Docker `build:compose` command to create the container only when testing Magento in the Docker environment. See [Magento application testing](https://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html).<!--MCLOUD-6394-->
 
    -  {:.new}**FPM-XDEBUG container**
@@ -55,7 +83,7 @@ The release notes include:
 
    -  **Specify custom images and versions in custom Magento Cloud Docker configuration**—Updated the `build:custom:compose` command with options to specify custom images and versions when generating a custom Docker compose configuration file (`docker-compose.yaml`). See [Build a custom Docker Compose configuration]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#build-a-custom-docker-compose-configuration). <!--MCLOUD-7089-->
 
-   -  Updated the Docker host configuration to expose port 443 to enable access to Magento (`https://magento2.docker`) from all CLI containers.<!--MCLOUD-6806-->
+   -  Updated the Docker host configuration to expose port 443 to enable access to Magento (`https://magento2.docker`) from all CLI containers. You can change the default port by adding the `--tls-port` option when you generate the Docker configuration file.<!--MCLOUD-6806-->
 
 -  {:.fix}Fixed an issue that caused the {{site.data.var.mcd-prod}} build to fail if the `app/etc/env.php` file exists.<!--MCLOUD-6732-->
 

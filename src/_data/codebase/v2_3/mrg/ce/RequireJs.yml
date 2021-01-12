@@ -4,7 +4,7 @@ source_repo: magento2ce
 release: 2.3.6
 github_path: app/code/Magento/RequireJs/README.md
 last_modified_at: '2014-11-28 11:40:11 -0800'
-content: |
+content: |-
   ## Purpose of module
 
   The Magento\RequireJs module introduces support for RequireJs JavaScript library and provides infrastructure for other modules to have them declared related configuration for RequireJs library.
