@@ -16,7 +16,6 @@ Attribute | Data Type | Description | Default or example value
 `base_media_url` | String | The fully-qualified URL that specifies the location of user media files | `http://magentohost.example.com/pub/media/`
 `base_static_url` | String | The fully-qualified URL that specifies the location of static view files | `http://magentohost.example.com/pub/static/`
 `base_url` | String | The store's fully-qualified base URL | `http://magentohost.example.com/`
-`btob_website_configuration_requisition_list_active` | String | Indicates if requisition lists are enabled.  Possible values: 1 (Yes) and 0 (No) | 0
 `cart_gift_wrapping` | String | Indicates if gift wrapping prices are displayed on the Shopping Cart page. Possible values: 1 (Yes) and 0 (No) | 1
 `cart_printed_card` | String | Indicates if printed card prices are displayed on the Shopping Cart page. Possible values: 1 (Yes) and 0 (No) | 1
 `catalog_default_sort_by` | String | The default sort order of the search results list | `position`
@@ -25,7 +24,7 @@ Attribute | Data Type | Description | Default or example value
 `cms_home_page` | String | Returns the name of the CMS page that identifies the home page for the store | `home`
 `cms_no_cookies` | String | Identifies a specific CMS page that appears when cookies are not enabled for the browser | `enable-cookies`
 `cms_no_route` | String | Identifies a specific CMS page that you want to appear when a 404 “Page Not Found” error occurs | `no-route`
-`code` | String | A unique identifier for the store | `default`
+`code` | String | Deprecated. Use `store_code` instead. A unique identifier for the store | `default`
 `copyright` | String | The copyright statement that appears at the bottom of each page | Copyright &#169; 2013-present Magento, Inc. All rights reserved.
 `default_description` | String | The description that provides a summary of your site for search engine listings and should not be more than 160 characters in length | null
 `default_display_currency_code` | String | The code representing the currency displayed on the store | `USD`
@@ -39,7 +38,10 @@ Attribute | Data Type | Description | Default or example value
 `head_includes` | String | Contains scripts that must be included in the HTML before the closing `<head>` tag | `<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"{{MEDIA_URL}}styles.css\" />`
 `head_shortcut_icon` | String | Uploads the small graphic image that appears in the address bar and tab of the browser | null
 `header_logo_src` | String | The path to the logo that appears in the header | null
-`id` | Int | The ID number assigned to the store | `1`
+`id` | Int | Deprecated. Use `store_code` instead. The ID number assigned to the store | `1`
+`is_default_store` | Boolean | Indicates whether the store view has been designated as the default within the store group | true or false
+`is_default_store_group` | Boolean | Indicates whether the store group has been designated as the default within the website | true or false
+`is_requisition_list_active` | String | Indicates if requisition lists are enabled.  Possible values: 1 (Yes) and 0 (No) | 0
 `list_mode` | String  | The format of the search results list | `grid-list`
 `list_per_page` | Int | The default number of products per page in List View | `10`
 `list_per_page_values` | String | A list of numbers that define how many products can be displayed in List View | `5,10,15,20,25`
@@ -70,7 +72,9 @@ Attribute | Data Type | Description | Default or example value
 `product_reviews_enabled` | String | Indicates whether product reviews are enabled. Possible values: 1 (Yes) and 0 (No) | 1
 `product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
 `required_character_classes_number` | String | The number of different character classes required in a password (lowercase, uppercase, digits, special characters). <br/>Configuration path: customer/password/required_character_classes_number | 2
-`root_category_id` | Int | The ID of the root category | 2
+`returns_enabled` | String! | Indicates whether RMA is enabled on the storefront. Possible values: enabled/disabled | Disabled
+`root_category_id` | Int | Deprecated. Use `root_category_uid` instead. The ID of the root category | 2
+`root_category_uid` | Int | The unique ID for the root category object implementing `CategoryInterface` | 2
 `sales_fixed_product_tax_display_setting` | [FixedProductTaxDisplaySettings](#FixedProductTaxDisplaySettings) | Corresponds to the **Display Prices In Sales Modules** field. It indicates how Fixed Product Taxes information is displayed on cart, checkout, and order pages | FPT_DISABLED
 `sales_gift_wrapping` | String | Indicates if gift wrapping prices are displayed on the Orders page. Possible values: 1 (Yes) and 0 (No) | 1
 `sales_printed_card` | String | Indicates if printed card prices are displayed on the Orders page. Possible values: 1 (Yes) and 0 (No) | 1
@@ -80,12 +84,18 @@ Attribute | Data Type | Description | Default or example value
 `secure_base_url` | String | The store's fully-qualified secure base URL | `https://magentohost.example.com/`
 `send_friend` | [SendFriendConfiguration](#SendFriendConfiguration) | Email to a Friend configuration | Not applicable
 `show_cms_breadcrumbs` | Int | Determines if a breadcrumb trail appears on all CMS pages in the catalog. Options: `0` (No) or `1` (Yes) | 1
-`store_name` | String | The store's name | `My Store`
+`store_code` | ID | The unique ID of the store view. In the Admin, this is called the Store View Code. When making a GraphQL call, assign this value to the `Store` header to provide the scope | `default`
+`store_group_code` | ID | The unique ID assigned to the store group. In the Admin, this is called the Store Name | `main_website_store`
+`store_group_name` | String | The label assigned to the store group | Main Website Store
+`store_name` | String | The label assigned to the store view | Default Store View
+`store_sort_order` | Int | The store view sort order | 10
 `timezone` | String | The store's time zone | `America/Chicago`
 `title_prefix` | String | A prefix that appears before the title to create a two- or three-part title | null
 `title_separator` | String | Identifies the character that separates the category name and subcategory in the browser title bar | `-`
 `title_suffix` | String | A suffix that appears after the title to create a two-or three part title | null
-`website_id` | Integer | The ID number assigned to the parent website | `1`
+`website_code` | ID | The unique ID for the website | `base`
+`website_id` | Integer | Deprecated. The field should not be used on the storefront. The ID number assigned to the parent website | `1`
+`website_name` | String | The label assigned to the website | Main Website
 `weight_unit` | String | The weight unit for products | `lbs`, `kgs`, or similar
 `welcome` | String | Text that appears in the header of the page and includes the name of customers who are logged in | Default welcome msg!
 

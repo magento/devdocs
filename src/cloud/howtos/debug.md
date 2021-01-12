@@ -91,7 +91,7 @@ To configure PhpStorm to work with Xdebug:
 
 1. In your PhpStorm project, open the settings panel.
 
-   -  _Mac OS X_—Select **File** > **Preferences**.
+   -  _Mac OS X_—Select **PhpStorm** > **Preferences**.
    -  _Windows/Linux_—Select **File** > **Settings**.
 
 1. In the _Settings_ panel, expand and locate the **Languages & Frameworks** > **PHP** > **Servers** section.

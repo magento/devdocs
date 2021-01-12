@@ -181,8 +181,28 @@ pages:
         - label: addDownloadableProductsToCart mutation
           url: /graphql/mutations/add-downloadable-products.html
 
+        - label: addProductsToRequisitionList mutation
+          url: /graphql/mutations/add-products-to-requisition-list.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
         - label: addProductsToWishlist mutation
           url: /graphql/mutations/add-products-to-wishlist.html
+          exclude_versions: ["2.3"]
+
+        - label: addRequisitionListItemsToCart mutation
+          url: /graphql/mutations/add-requisition-list-items-to-cart.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
+        - label: addReturnComment mutation
+          url: /graphql/mutations/add-return-comment.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: addReturnTracking mutation
+          url: /graphql/mutations/add-return-tracking.html
+          edition: ee-only
           exclude_versions: ["2.3"]
 
         - label: addSimpleProductsToCart mutation
@@ -210,8 +230,18 @@ pages:
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
 
-        - label: copyProductsToWishlist mutation
-          url: /graphql/mutations/copy-products-to-wishlist.html
+        - label: clearCustomerCart mutation
+          url: /graphql/mutations/clear-customer-cart.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
+        - label: copyItemsBetweenRequisitionLists mutation
+          url: /graphql/mutations/copy-items-between-requisition-lists.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
+        - label: copyProductsBetweenWishlists mutation
+          url: /graphql/mutations/copy-products-between-wishlists.html
           edition: ee-only
           exclude_versions: ["2.3"]
 
@@ -293,18 +323,23 @@ pages:
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
 
-        - label: deleteWishlist mutation
-          url: /graphql/mutations/delete-wishlist.html
-          edition: ee-only
-          exclude_versions: ["2.3"]
-
-        - label: deletePaymentToken mutation
-          url: /graphql/mutations/delete-payment-token.html
-
         - label: deleteRequisitionList mutation
           url: /graphql/mutations/delete-requisition-list.html
           edition: b2b-only
           exclude_versions: [ "2.3" ]
+
+        - label: deleteRequisitionListItems mutation
+          url: /graphql/mutations/delete-requisition-list-items.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
+        - label: deletePaymentToken mutation
+          url: /graphql/mutations/delete-payment-token.html
+
+        - label: deleteWishlist mutation
+          url: /graphql/mutations/delete-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: generateCustomerToken mutation
           url: /graphql/mutations/generate-customer-token.html
@@ -319,10 +354,15 @@ pages:
         - label: mergeCarts mutation
           url: /graphql/mutations/merge-carts.html
 
-        - label: moveProductsToWishlist mutation
-          url: /graphql/mutations/move-products-to-wishlist.html
+        - label: moveProductsBetweenWishlists mutation
+          url: /graphql/mutations/move-products-between-wishlists.html
           edition: ee-only
           exclude_versions: ["2.3"]
+
+        - label: moveItemsBetweenRequisitionLists mutation
+          url: /graphql/mutations/move-items-between-requisition-lists.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
 
         - label: placeOrder mutation
           url: /graphql/mutations/place-order.html
@@ -345,6 +385,11 @@ pages:
           url: /graphql/mutations/remove-products-from-wishlist.html
           exclude_versions: ["2.3"]
 
+        - label: removeReturnTracking mutation
+          url: /graphql/mutations/remove-return-tracking.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: removeRewardPointsFromCart mutation
           url: /graphql/mutations/remove-reward-points.html
           edition: ee-only
@@ -354,11 +399,6 @@ pages:
           url: /graphql/mutations/remove-store-credit.html
           edition: ee-only
 
-        - label: renameRequisitionList mutation
-          url: /graphql/mutations/rename-requisition-list.html
-          edition: b2b-only
-          exclude_versions: [ "2.3" ]
-
         - label: reorderItems mutation
           url: /graphql/mutations/reorder-items.html
           exclude_versions: ["2.3"]
@@ -367,12 +407,17 @@ pages:
           url: /graphql/mutations/request-password-reset-email.html
           exclude_versions: ["2.3"]
 
-        - label: revokeCustomerToken mutation
-          url: /graphql/mutations/revoke-customer-token.html
+        - label: requestReturn mutation
+          url: /graphql/mutations/request-return.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: resetPassword mutation
           url: /graphql/mutations/reset-password.html
           exclude_versions: ["2.3"]
+
+        - label: revokeCustomerToken mutation
+          url: /graphql/mutations/revoke-customer-token.html
 
         - label: sendEmailToFriend mutation
           url: /graphql/mutations/send-email-to-friend.html
@@ -449,6 +494,16 @@ pages:
           url: /graphql/mutations/update-products-in-wishlist.html
           exclude_versions: ["2.3"]
 
+        - label: updateRequisitionList mutation
+          url: /graphql/mutations/update-requisition-list.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
+        - label: updateRequisitionListItems mutation
+          url: /graphql/mutations/update-requisition-list-items.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
         - label: updateWishlist mutation
           url: /graphql/mutations/update-wishlist.html
           edition: ee-only
@@ -465,7 +520,7 @@ pages:
         - label: CategoryInterface attributes
           url: /graphql/interfaces/category-interface.html
 
-        - label: CustomizableOptionInterface
+        - label: CustomizableOptionInterface attributes
           url: /graphql/interfaces/customizable-option-interface.html
 
         - label: Bundle product data types
@@ -489,6 +544,10 @@ pages:
         - label: Virtual product data types
           url: /graphql/interfaces/virtual-product.html
 
+        - label: CartItemInterface attributes and implementations
+          url: /graphql/interfaces/cart-item-interface.html
+          exclude_versions: ["2.3"]
+
         - label: CreditMemoItemInterface attributes and implementations
           url: /graphql/interfaces/credit-memo-item-interface.html
           exclude_versions: ["2.3"]
@@ -501,8 +560,17 @@ pages:
           url: /graphql/interfaces/order-item-interface.html
           exclude_versions: ["2.3"]
 
+        - label: RequisitionListItemInterface attributes and implementations
+          url: /graphql/interfaces/requisition-list-item-interface.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: ShipmentItemInterface attributes and implementations
           url: /graphql/interfaces/shipment-item-interface.html
+          exclude_versions: ["2.3"]
+
+        - label: WishlistItemInterface attributes and implementations
+          url: /graphql/interfaces/wishlist-item-interface.html
           exclude_versions: ["2.3"]
 
     - label: Payment methods

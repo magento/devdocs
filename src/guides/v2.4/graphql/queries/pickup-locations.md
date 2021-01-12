@@ -221,3 +221,10 @@ Attribute | Data type | Description
 `current_page` | Int | Specifies which page of results to return
 `page_size` | Int | Specifies the maximum number of items to return
 `total_pages` | Int | Total pages
+
+## Errors
+
+Error | Description
+--- | ---
+`Field AreaInput.radius of required type Int! was not provided` | The value specified in the `AreaInput.radius` argument is empty.
+`Field AreaInput.search_term of required type String! was not provided` | The value specified in the `AreaInput.search_term` argument is empty.

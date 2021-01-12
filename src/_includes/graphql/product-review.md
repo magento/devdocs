@@ -5,8 +5,8 @@ Attribute |  Data Type | Description
 `average_rating` | Float! | The average rating for product review
 `created_at` | String! | Date indicating when the review was created
 `nickname` | String! | The customer's nickname. Defaults to the customer name, if logged in
-`product` | ProductInterface! | Contains details about the reviewed product
-`ratings_breakdown` | [ProductReviewRating!]! | An array of ratings by rating category, such as quality, price, and value
+`product` | [ProductInterface!]({{ page.baseurl }}/graphql/interfaces/product-interface.html)| Contains details about the reviewed product
+`ratings_breakdown` | [[ProductReviewRating!]](#ProductReviewRating)! | An array of ratings by rating category, such as quality, price, and value
 `summary` | String! | The summary (title) of the review
 `text` | String! | The review text
 
