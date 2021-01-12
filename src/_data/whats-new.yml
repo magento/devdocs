@@ -14,6 +14,16 @@ entries:
   link: https://github.com/magento/devdocs/pull/8488
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
+- description: "- [Cloud Docker 1.2.1 release notes](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html).<br/>-
+    New Cloud Docker build command option for generating a Docker configuration without
+    a [TLS container](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#tls-container).<br/>-
+    New Cloud Docker build commands for configuring NGINX for the [Web container](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#web-container)."
+  versions: ''
+  type: Major Update
+  date: December 22, 2020
+  link: https://github.com/magento/devdocs/pull/8429
+  contributor: bdenham
+  profile: https://github.com/bdenham
 - description: Added a new topic with instructions for [reverting from a split database
     to a single database](https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html)
     implementation.
