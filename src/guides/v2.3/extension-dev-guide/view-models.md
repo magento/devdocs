@@ -78,7 +78,7 @@ The view model class is passed as an argument to the `product.info.upsell` block
 <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell" template="Magento_Catalog::product/list/items.phtml">
     <arguments>
         <argument name="type" xsi:type="string">upsell</argument>
-        <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
+        <argument name="view_model" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
     </arguments>
 </block>
 ```
