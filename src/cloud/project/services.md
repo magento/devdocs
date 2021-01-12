@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Setup
 redirect_from:
-  - /cloud/project/project-conf-files_services.html  
+  - /cloud/project/project-conf-files_services.html
 ---
 
 The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
@@ -170,13 +170,13 @@ The following table lists the services used in {{site.data.var.ece}} and their v
 {:.error-table}
 Service   |  Magento 2.4  |Magento 2.3  | Magento 2.2
 --------- | ------------- |-------------| ------------
-`elasticsearch` | 7.7 | **Magento version 2.3.5 and later**— 5.2, 6.5, 6.8, 7.5, 7.7<br>**Magento version 2.3.1 to 2.3.4**— 5.2, 6.5<br>**Magento version 2.3.0**— 5.2  | **Magento version 2.2.8 and later**— 5.2, 6.5 <br>**Magento version 2.2.0 to 2.2.7**— 5.2
+`elasticsearch` | 7.7, 7.9 | **Magento version 2.3.5 and later**— 5.2, 6.5, 6.8, 7.5, 7.7, 7.9<br>**Magento version 2.3.1 to 2.3.4**— 5.2, 6.5<br>**Magento version 2.3.0**— 5.2  | **Magento version 2.2.8 and later**— 5.2, 6.5 <br>**Magento version 2.2.0 to 2.2.7**— 5.2
 `mariadb` | 10.2, 10.3, 10.4 | **Magento version 2.3.0 to 2.3.5**–10.1 to 10.2<br> | 10.1 to 10.2
 `nginx`   | | 1.9           | 1.9
 `node`    | | 6, 8, 10, 11  | 6, 8, 10, 11
 `php`     | 7.3, 7.4 | **Magento version 2.3.4 and later**— 7.1, 7.2, 7.3<br>**Magento version 2.3.3**— 7.1, 7.2, 7.3<br>**Magento version 2.3.0 to 2.3.2**—  7.1, 7.2 | **Magento version 2.2.10 and later**—  7.1, 7.2<br>**Magento version 2.2.5 to 2.2.9**— 7.0, 7.1<br>**Magento version 2.2.4 and earlier**— 7.0.2, 7.0.4, ~7.0.6, 7.1<br><br>**Note:** Beginning with {{ site.data.var.ct }} v2002.1.0, you must use PHP version 7.1.3 or later for both Magento 2.2 and 2.3.
 `rabbitmq`| 3.8 | **Magento version 2.3.5**–3.8<br>**Magento version 2.3.3 - 2.3.4**— 3.7, 3.8<br>**Magento version 2.3.0 to 2.3.3**— 3.7     | 3.5
-`redis`   | 5.x| **Magento version 2.3.1 - 2.3.5**–4.x, 5.x<br>**Magento version 2.3.0**— 3.2, 4.0 | 3.2, 4.0, 5.0
+`redis`   | 5.x, 6.x | **Magento version 2.3.1 - 2.3.7**–4.x, 5.x, 6.x<br>**Magento version 2.3.0**— 3.2, 4.0 | 3.2, 4.0, 5.0, 6.x
 `varnish` | 6.x | **Magento version 2.3.3 to 2.3.5**— 4.0, 5.0, 6.2<br>**Magento version 2.3.0 to 2.3.2**— 4.0, 5.0 | 4.0, 5.0<br>**Note:** On Cloud projects, you must use the [Fastly service]({{site.baseurl}}/cloud/cdn/cloud-fastly.html) for caching. Varnish is available only for local development.
 
 {:.bs-callout-info}
