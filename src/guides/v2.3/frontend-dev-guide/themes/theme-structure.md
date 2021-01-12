@@ -292,7 +292,7 @@ Dynamic view files are located in a theme directory as follows:
 
 ```tree
 <theme_dir>/
-├── Magento_<module>/
+├── <Vendor>_<module>/
 │   ├── web/
 │   │   ├── css/
 │   │   │   ├── source/
