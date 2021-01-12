@@ -137,8 +137,8 @@ The `CompanyLegalAddressCreateInput` object can contain the following attributes
 Attribute |  Data Type | Description
 --- | --- | ---
 `city` | String! | The city where the company is registered to conduct business
-`country_id` | CountryCodeEnum! | Company's country ID. See the [`countries` query]({{page.baseurl}}/graphql/queries/directory-countries.html)
-`postcode` | String! | The ZIP/postal code of the company
+`country_id` | CountryCodeEnum! | The company's country ID. See the [`countries` query]({{page.baseurl}}/graphql/queries/directory-countries.html)
+`postcode` | String! | The postal code of the company
 `region` | CustomerAddressRegionInput! | An object containing the region name and/or region ID where the company is registered to conduct business
 `street` | [String!]! | An array of strings that define the street address where the company is registered to conduct business
 `telephone` | String! | The primary phone number of the company
