@@ -14,7 +14,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8488
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
-- description: Published release notes for [Cloud Docker 1.2.1 release notes](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html).
+- description: Published release notes for [Cloud Docker 1.2.1 release notes](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v121).
   versions: 2.4.x
   type: Major Update
   date: December 22, 2020
