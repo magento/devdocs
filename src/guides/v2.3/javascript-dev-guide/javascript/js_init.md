@@ -99,7 +99,7 @@ Use the `data-mage-init` attribute to insert a JS component in a specified HTML 
 
 When the Javascript is inserted into the specified element, the script is called only for this particular element. It is not automatically called for other elements of this type on the page.
 
-##### How `data-mage-init` is processed {#init_process}
+#### How `data-mage-init` is processed {#init_process}
 
 On DOM ready, the `data-mage-init` attribute is parsed to extract component names and configuration to be applied to the element. Depending on the type of the inserted JS component, processing is performed as follows:
 
