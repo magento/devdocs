@@ -3,5 +3,5 @@ The `CompanyTeam` object contains details about a company team. It contains the 
 Attribute |  Data Type | Description
 --- | --- | ---
 `description` | String | An optional description of the team
-`id` | ID! | A string that contains the encoded team ID
+`id` | ID! | The unique ID for a `CompanyTeam` object
 `name` | String | The display name of the team

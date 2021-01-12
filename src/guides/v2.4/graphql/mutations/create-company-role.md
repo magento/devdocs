@@ -122,8 +122,8 @@ The `CompanyRoleCreateInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`name` | String! | Role name.
-`permissions` | [String!]! | A list of Role permission resources. Required array value for a field with strings as values of array.
+`name` | String! | The name of the role to create
+`permissions` | [String!]! | A list of resources the role can access
 
 ## Output attributes
 
