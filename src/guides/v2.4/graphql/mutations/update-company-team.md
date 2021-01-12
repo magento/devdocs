@@ -71,7 +71,7 @@ The `CompanyTeamUpdateInput` object contains the following attributes:
 Attribute |  Data Type | Description
 --- | --- | ---
 `description` | String | An optional description of the team
-`id` | ID! | The encoded team ID for updating
+`id` | ID! | The unique ID for a `CompanyTeam` object
 `name` | String | The display name of the team
 
 You can get the team ID with the [`company`]({{page.baseurl}}/graphql/queries/company.html) query.

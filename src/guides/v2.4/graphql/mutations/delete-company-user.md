@@ -64,7 +64,7 @@ The `deleteCompanyUser` mutation returns a Boolean value that indicates whether 
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`success` | Boolean! | A value of `true` indicates the company user has been deactivated successfully, otherwise a value returns `false`
+`success` | Boolean! | Indicates whether the company user has been deactivated successfully (`true` or `false`)
 
 ## Errors
 
