@@ -91,7 +91,7 @@ The string schemas for testing are inside `dev/graphql_schemas`.
 The **complexity score** is a figure that indicates how difficult an upgrade from the current version to the new one might be. Lower numbers indicate easier upgrades.
 
 {:.bs-callout-info}
-Complexity scores range between 0 and 100.
+Complexity scores range between 0 and ∞.
 
 This score is based on the results extracted from the analysis:
 
@@ -103,3 +103,6 @@ The SUT calculates this score according to the following formula:
 ### Complexity score formula
 
 `Complexity Score = 2 * (# of errors) + 1 * (# of warnings)`
+
+{:.bs-callout-warning}
+These are absolute values.
