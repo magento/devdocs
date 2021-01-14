@@ -30,22 +30,18 @@ pages:
         - label: Prerequisites
           url: /safe-upgrade-tool/prerequisites.html
           versionless: true
-          edition: ee-only
 
         - label: Install
           url: /safe-upgrade-tool/install.html
           versionless: true
-          edition: ee-only
 
         - label: Run the tool
           url: /safe-upgrade-tool/run.html
           versionless: true
-          edition: ee-only
 
         - label: Developer information
           url: /safe-upgrade-tool/developer.html
           versionless: true
-          edition: ee-only
 
     - label: Magento Marketplace example
       url: /comp-mgr/marketplace/marketplace.html
