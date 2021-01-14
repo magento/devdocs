@@ -104,11 +104,18 @@ The following examples illustrate how to define a custom batch size for configur
 </type>
 ```
 
-### Setting batch size through environment variables.
+### Setting batch size with environment variables
 
-Starting from 2.4.3 its possible to configure the batch size through the environment variables or in `app/etc/env.php` file for `cataloginventory_stock`, `catalog_category_product`, `catalogsearch_fulltext`, `catalog_product_price`, `catalogpermissions_category`, `inventory` indexers.
+Starting in Magento 2.4.3, it is possible to configure the batch size with the environment variables, or in `app/etc/env.php` for the following indexers:
 
-Example of configuration in `app/etc/env.php`
+-  `cataloginventory_stock`
+-  `catalog_category_product`
+-  `catalogsearch_fulltext`
+-  `catalog_product_price`
+-  `catalogpermissions_category`
+-  `inventory`
+
+Here is an example of the configuration in `app/etc/env.php`
 
 ```php
 <?php
@@ -136,8 +143,8 @@ return [
 ];
 ```
 
-Size for `catalog_category_product`, `catalogpermissions_category`, `catalogpermissions_category` batches can be setup for all product types only.
-Size for `cataloginventory_stock`, `catalog_product_price`, `inventory` can be set up for each product type. Also, if there is no batch size for a specific product type, the `default` value will be used. It is recommended to set the `default` value for each indexer so that there can be different batch sizes per product type.
+The batches size for `catalog_category_product`, `catalogpermissions_category`, `catalogpermissions_category` will be set for all product types.
+Batch size for `cataloginventory_stock`, `catalog_product_price`, `inventory` can be set up for each product type. If no batch size is set for a specific product type, the `default` value is used. We recommend setting the `default` value for each indexer to allow for different batch sizes per product type.
 
 ## Indexer Table Switching
 
