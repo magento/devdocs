@@ -104,6 +104,41 @@ The following examples illustrate how to define a custom batch size for configur
 </type>
 ```
 
+### Setting batch size through environment variables.
+
+Starting from 2.4.3 its possible to configure the batch size through the environment variables or in `app/etc/env.php` file for `cataloginventory_stock`, `catalog_category_product`, `catalogsearch_fulltext`, `catalog_product_price`, `catalogpermissions_category`, `inventory` indexers.
+
+Example of configuration in `app/etc/env.php`
+
+```php
+<?php
+return [
+    'indexer' => [
+        'batch_size' => [
+            'cataloginventory_stock' => [
+                'simple' => 200
+            ],
+            'catalog_category_product' => 666,
+            'catalogsearch_fulltext' => 333,
+            'catalog_product_price' => [
+                'simple' => 200,
+                'default' => 500,
+                'configurable' => 666
+            ],
+            'catalogpermissions_category' => 999,
+            'inventory' => [
+                'simple' => 210,
+                'default' => 510,
+                'configurable' => 616
+            ]
+        ]
+    ]
+];
+```
+
+Size for `catalog_category_product`, `catalogpermissions_category`, `catalogpermissions_category` batches can be setup for all product types only.
+Size for `cataloginventory_stock`, `catalog_product_price`, `inventory` can be set up for each product type. Also, if there is no batch size for a specific product type, the `default` value will be used. It is recommended to set the `default` value for each indexer so that there can be different batch sizes per product type.
+
 ## Indexer Table Switching
 
 Magento optimizes certain indexer processes to prevent deadlocks and wait locks caused by read/write collisions on the same table. In these cases, Magento uses separate tables for performing read operations and reindexing. As a result of this table switching process, customers are not impacted when you run a full reindex. For example, when `catalog_product_price` is reindexing, customers won't be slowed down as they navigate on Categories pages, search products, or user layer navigation filters with price filters.
