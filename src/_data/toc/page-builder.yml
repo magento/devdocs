@@ -74,6 +74,29 @@ pages:
     url: /page-builder/docs/create-custom-content-type/summary.html
     versionless: true
 
+- label: 'Style content types'
+  versionless: true
+  children:
+  - label: How Page Builder styles content
+    url: /page-builder/docs/styling/how-pagebuilder-styles-content.html
+    versionless: true
+
+  - label: How to override styles
+    url: /page-builder/docs/styling/how-to-override-pagebuilder-styles.html
+    versionless: true
+
+  - label: Use themes to override styles
+    url: /page-builder/docs/styling/use-themes-to-override-styles.html
+    versionless: true
+
+  - label: Use modules to override styles
+    url: /page-builder/docs/styling/use-modules-to-override-styles.html
+    versionless: true
+
+  - label: Use HTML Code to override styles
+    url: /page-builder/docs/styling/use-htmlcode-to-override-styles.html
+    versionless: true
+
 - label: How-Tos
   versionless: true
   children:
