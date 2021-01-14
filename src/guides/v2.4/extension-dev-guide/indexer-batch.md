@@ -135,7 +135,7 @@ return [
 ];
 ```
 Size for `catalog_category_product`, `catalogpermissions_category`, `catalogpermissions_category` batches can be setup for all product type only,
-Size for `cataloginventory_stock`, `catalog_product_price`, `inventory` can be set up for each product type. Also, if there is no batch size for specific product type, `default` value will be used. We suggest setting `default` value for each indexer that can have different batch sizes per product type.
+Size for `cataloginventory_stock`, `catalog_product_price`, `inventory` can be set up for each product type. Also, if there is no batch size for a specific product type, the `default` value will be used. It is recommended to set the `default` value for each indexer so that there can be different batch sizes per product type.
 
 ## Indexer Table Switching
 
