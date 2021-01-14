@@ -19,7 +19,7 @@ As of Magento 2.4.0, GraphQL provides the following features:
 
 The `graphql-ce` Community Engineering repository has been archived.
 
-For the 2.4.1 and 2.4.2 releases, Magento and Community teams are working toward completing GraphQL coverage for Business to Consumer (B2C) uses cases, with emphasis on the following:
+For the 2.4.1 and 2.4.2 releases, Magento and Community teams are working toward completing GraphQL coverage for Business to Consumer (B2C) use cases, with emphasis on the following:
 
 *  Order history for logged in customers
 *  Replace product-specific mutations that add products to a cart with a single mutation that can handle all product types
