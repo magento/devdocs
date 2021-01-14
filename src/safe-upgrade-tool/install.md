@@ -1,6 +1,7 @@
 ---
 group: software-update-guide
 title: Install
+ee_only: True
 functional_areas:
   - Upgrade
 ---

@@ -1,6 +1,7 @@
 ---
 group: software-update-guide
 title: Introduction
+ee_only: True
 functional_areas:
   - Upgrade
 ---

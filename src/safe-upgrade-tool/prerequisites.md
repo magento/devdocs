@@ -1,6 +1,7 @@
 ---
 group: software-update-guide
 title: Prerequisites
+ee_only: True
 functional_areas:
   - Upgrade
 ---

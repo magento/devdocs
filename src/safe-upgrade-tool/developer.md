@@ -1,6 +1,7 @@
 ---
 group: software-update-guide
 title: Developer information
+ee_only: True
 functional_areas:
   - Upgrade
 ---
