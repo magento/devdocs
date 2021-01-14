@@ -60,10 +60,10 @@ pages:
         - label: Get the Magento software
           url: /install-gde/bk-install-guide.html
 
-    - label: Quick start install (non-contributor)
+    - label: Quick start install
       url: /install-gde/composer.html
 
-    - label: Quick start install (contributor)
+    - label: Contributor install
       url: /install-gde/contrib-git.html
       children:
 
@@ -79,12 +79,6 @@ pages:
     - label: Advanced install
       url: /install-gde/install/cli/install-cli.html
       children:
-
-        - label: Prepare your system for install
-          url: /install-gde/install/cli/install-cli-subcommands.html
-
-        - label: Install the Magento software
-          url: /install-gde/install/cli/install-cli-install.html
 
         - label: Update the Magento application
           url: /install-gde/install/cli/dev_update-magento.html

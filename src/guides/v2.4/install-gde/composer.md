@@ -1,5 +1,5 @@
 ---
-title: Quick start install (non-contributor)
+title: Quick start install
 functional_areas:
   - Install
   - System
@@ -14,11 +14,19 @@ redirect_from:
 
 Before you continue, you must do the following:
 
--  Set up a server that meets our [system requirements][]
--  Create the [Magento file system owner][]
--  [Install Composer][]{:target="_blank"}
--  Obtain [authentication keys][] for the Magento code repository
+-  Set up a server that meets our [system requirements][].
+-  Complete all [prerequisite tasks][].
+-  Create and switch to the [Magento file system owner](#instgde-cli-before).
+-  [Install Composer][]{:target="_blank"}.
+-  Obtain [authentication keys][] for the Magento code repository.
 
+## Log in as file system owner {#instgde-cli-before}
+
+Learn about ownership, permissions, and the Magento file system owner in our [Overview of ownership and permissions topic]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html). 
+
+To switch to the Magento file system owner:
+{% include install/first-steps-cli.md %}
+In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 ## Get the metapackage
 
 To get the Magento metapackage:
@@ -115,6 +123,31 @@ You can customize the Admin URI with the `--backend-frontname` option. However, 
 {:.bs-callout-tip}
 For a full description of the CLI install options, refer to [Install the Magento software from the command line][].
 
+## Command summary {#instgde-cli-summary}
+{% include install/cli_help-commands.md %}
+
+The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
+
+|Command|Description|Prerequisites|
+|--- |--- |--- |
+|`magento setup:install`|Installs the Magento software|None|
+|`magento setup:uninstall`|Removes the Magento software.|Magento software installed|
+|`magento setup:upgrade`|Updates the Magento software.|Deployment configuration|
+|`magento maintenance:{enable/disable}`|Enables or disables maintenance mode (in maintenance mode, only exempt IP addresses can access the Magento Admin or storefront).|Magento software installed|
+|`magento setup:config:set`|Creates or updates the deployment configuration.|None|
+|`magento module:{enable/disable}`|Enable or disable modules.|None|
+|`magento setup:store-config:set`|Sets storefront-related options, such as base URL, language, timezone, and so on.|Deployment configuration
+Database (simplest way is to use magento setup:upgrade)|
+|`magento setup:db-schema:upgrade`|Updates the Magento database schema.|Deployment configuration|
+|`magento setup:db-data:upgrade`|Updates the Magento database data.|Deployment configuration|
+|`magento setup:db:status`|Checks if the database is up-to-date with the code.|Deployment configuration|
+|`magento admin:user:create`|Creates a Magento administrator.|All of the following:<br><br>Deployment configuration<br><br>Enable at minimum the Magento_User and Magento_Authorization modules<br><br>Database (simplest way is to use magento setup:upgrade)|
+|`magento list`|Lists all available commands.|None|
+|`magento help`|Provides help for the specified command.|None|
+
+### Common arguments {#instgde-cli-subcommands-common}
+{% include install/cli_common-commands.md %}
+
 <!-- Link Definitions -->
 [Magento Marketplace]: https://marketplace.magento.com/customer/accessKeys/
 [Modify docroot for security]: {{page.baseurl}}/install-gde/tutorials/change-docroot-to-pub.html
@@ -124,4 +157,4 @@ For a full description of the CLI install options, refer to [Install the Magento
 [authentication keys]: {{page.baseurl}}/install-gde/prereq/connect-auth.html
 [Install Composer]: https://getcomposer.org/download/
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements.html
-[Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
+[prerequisite tasks]: {{ page.baseurl }}/install-gde/prereq/prereq-overview.html
