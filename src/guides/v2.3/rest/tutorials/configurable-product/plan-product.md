@@ -53,8 +53,8 @@ We'll make several calls to find the values needed to create the product
 
 The sample data provides multiple attribute sets, including Default, Top, and Bottom. To assign the Top attribute set to the product, we need to know the corresponding `attribute_set_id`.
 
-Use the following call to search for the attribute set named `Top` and entity_type_id equals to 4.
-By default, the `catalog_product` entity has the entity_type_id value as 4.
+Use the following call to search for the attribute set named `Top` and `entity_type_id` equals to `4`.
+By default, the `catalog_product` entity has the `entity_type_id` value as `4`.
 
 **Endpoint:**
 
@@ -158,7 +158,7 @@ GET <host>/rest/default/V1/products/attribute-sets/9/attributes
 ]
 ```
 
-The response contains almost 3,000 lines and above is the little bit of response from the endpoint. The following table provides a summary of the attributes that are relevant in this tutorial.
+The response contains almost 3,000 lines and the above is a part of the response from the endpoint. The following table provides a summary of the attributes that are relevant in this tutorial.
 
 Admin label | Selected value | Attribute ID | attribute_code  | Attribute value
 --- | --- | --- | --- | ---
