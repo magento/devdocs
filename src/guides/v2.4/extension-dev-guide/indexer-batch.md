@@ -108,12 +108,12 @@ The following examples illustrate how to define a custom batch size for configur
 
 Starting in Magento 2.4.3, it is possible to configure the batch size with the environment variables, or in `app/etc/env.php` for the following indexers:
 
--  `cataloginventory_stock`
--  `catalog_category_product`
--  `catalogsearch_fulltext`
--  `catalog_product_price`
--  `catalogpermissions_category`
--  `inventory`
+*  `cataloginventory_stock`
+*  `catalog_category_product`
+*  `catalogsearch_fulltext`
+*  `catalog_product_price`
+*  `catalogpermissions_category`
+*  `inventory`
 
 Here is an example of the configuration in `app/etc/env.php`
 
