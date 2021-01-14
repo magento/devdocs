@@ -106,7 +106,7 @@ The following examples illustrate how to define a custom batch size for configur
 
 ### Setting batch size through environment variables.
 
-Starting from 2.4.2 its possbile to configure batch size through environmaent variables or in `app/etc/env.php` file for `cataloginventory_stock`, `catalog_category_product`, `catalogsearch_fulltext`, `catalog_product_price`, `catalogpermissions_category`, `inventory` indexers.
+Starting from 2.4.2 its possible to configure the batch size through the environment variables or in `app/etc/env.php` file for `cataloginventory_stock`, `catalog_category_product`, `catalogsearch_fulltext`, `catalog_product_price`, `catalogpermissions_category`, `inventory` indexers.
 
 Example of configuration in `app/etc/env.php`
 ```php
