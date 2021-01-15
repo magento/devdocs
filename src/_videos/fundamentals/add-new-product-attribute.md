@@ -355,13 +355,13 @@ For use case `2` (a 'mutable' set of options), see ["EAV and extension attribute
 
 With `\Magento\Eav\Setup\EavSetup.php::addAttribute()` and `\Magento\Eav\Setup\EavSetup.php::addAttributeOptions()` you can add a series of options with the following array:
 
-```
-'option' => ['values' => ['Option 1', 'Option 2', 'Option 3', etc.]]
+```php
+'option' => ['values' => ['Option 1', 'Option 2', 'Option 3', etc.]];
 ```
 
 Alternatively, you may designate a specific option sorting order as follows:
 
-```
+```php
 'option' => ['values' => [8 => 'Option 1', 3 => 'Option 2', 11 => 'Option 3', etc.]]
 ```
 
@@ -373,18 +373,18 @@ Alternatively, you may designate a specific option sorting order as follows:
 
 1. Assign an array of new options to a variable:
 
-```
+```php
    $options = ['attribute_id' => null, 'values' => 'Option 1', 'Option 2', etc]];
 ```
 
 1. Update your array with the attribute ID from the database:
 
-```
+```php
    $options['attribute_id'] = $eavSetup->getAttributeId($eavSetup->getEntityTypeId('catalog_product'), 'your_attribute_code');
 ```
 
 1. Add your options:
 
-```
+```php
    $eavSetup->addAttributeOption($options);
 ```
