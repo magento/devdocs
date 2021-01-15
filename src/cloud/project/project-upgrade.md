@@ -16,18 +16,18 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. Befo
 
 Review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. Your upgrade tasks may include the following:
 
--  Update your PHP version Elasticsearch version, and other services
--  Convert an older configuration management file
--  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
--  Upgrade third-party extensions to the latest supported version
--  Update the `.gitignore` file
+-  Update PHP, Elasticsearch, and other services for compatibility with new Magento version. See [Change service version].
+-  Convert an older configuration management file.
+-  Update the `.magento.app.yaml` file with new settings for hooks and environment variables.
+-  Upgrade third-party extensions to the latest supported version.
+-  Update the `.gitignore` file.
 
 {:.bs-callout-info}
 If you upgrade the PHP version, you must also submit a Support ticket to update the New Relic service.
 
 ### Configuration management
 
-If you are upgrading from 2.1.4 or later to 2.2.x or later and use [Configuration Management], you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly like the `config.local.php` file, but it has different configuration settings that include a list of your enabled modules and additional configuration options.
+This upgrade is required only when you upgrade from {{site.data.var.ee}} 2.1.4 or later to 2.2.x or later and use [Configuration Management]. In this case, you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly like the `config.local.php` file, but it has different configuration settings that include a list of your enabled modules and additional configuration options.
 
 {:.procedure}
 To create a temporary `config.php` file:
@@ -302,6 +302,7 @@ To resolve the error:
 <!--Link definitions-->
 [.magento.app.yaml]: {{site.baseurl}}/cloud/project/magento-app.html
 [Configuration Management]: {{site.baseurl}}/cloud/live/sens-data-over.html
+[Change service version]: {{site.baseurl}}/project/services.html#change-service-version
 [Examine the logs]: {{site.baseurl}}/cloud/project/log-locations.html
 [extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/magento-app.html#configure-php-options
 [Fastly CDN module for Magento 2]: {{site.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
