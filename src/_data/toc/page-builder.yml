@@ -98,7 +98,7 @@ pages:
     versionless: true
 
   - label: Configure styling options
-    url: /page-builder/docs/how-to/how-to-configure-styling-options.html
+    url: /page-builder/docs/styling/how-to-configure-styling-options.html
     versionless: true
 
 - label: 'Customize content types'
@@ -128,7 +128,7 @@ pages:
     url: /page-builder/docs/customize/how-to-add-additional-configurations.html
     versionless: true
 
-- label: 'Create responsive content types'
+- label: 'Create responsive content'
   versionless: true
   children:
   - label: How viewports work
