@@ -9,7 +9,7 @@ functional_areas:
 
 {% include install/composer-clone.md %}
 
-## Clone the Magento repository {#instgde-prereq-compose-clone}
+## Clone the repo {#instgde-prereq-compose-clone}
 
 This section discusses how to get current code by cloning [Magento's GitHub repository][]{:target="_blank"} and checking out branches.
 You can either checkout a release branch or a development branch:
