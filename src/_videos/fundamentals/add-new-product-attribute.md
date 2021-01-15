@@ -346,8 +346,8 @@ A product attribute of type multiselect or select will present selectable option
 
 Basic instructions for creating a product attribute by setup or upgrade script can be found [above](#CreateProductAttributeByUpgradeScript). Before scripting the attribute creation, pick one of these two use cases for your options:
 
-1.  You want a set of options which cannot be modified by a user through the admin panel and which can only be changed through a future code push.
-1.  You want a set of options which can be modified, added or deleted through the admin panel.
+1. You want a set of options which cannot be modified by a user through the admin panel and which can only be changed through a future code push.
+1. You want a set of options which can be modified, added or deleted through the admin panel.
 
 For use case `1` (an 'immutable' set of options), follow the above instructions ["Add a source model"](#AddSourceModel). You will create a model that contains and dynamically returns the attribute's selectable options to the client.
 
