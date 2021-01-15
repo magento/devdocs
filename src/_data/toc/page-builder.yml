@@ -97,23 +97,61 @@ pages:
     url: /page-builder/docs/styling/use-htmlcode-to-override-styles.html
     versionless: true
 
-- label: How-Tos
-  versionless: true
-  children:
   - label: Configure styling options
     url: /page-builder/docs/how-to/how-to-configure-styling-options.html
     versionless: true
 
+- label: 'Customize content types'
+  versionless: true
+  children:
   - label: Add an appearance
-    url: /page-builder/docs/how-to/how-to-add-appearance.html
-    versionless: true
-
-  - label: Upgrade content types
-    url: /page-builder/docs/how-to/how-to-use-upgrade-library.html
+    url: /page-builder/docs/customize/how-to-add-appearance.html
     versionless: true
 
   - label: Customize the panel
-    url: /page-builder/docs/how-to/how-to-customize-panel.html
+    url: /page-builder/docs/customize/how-to-customize-panel.html
+    versionless: true
+
+  - label: Add a custom toolbar
+    url: /page-builder/docs/customize/how-to-add-custom-toolbar.html
+    versionless: true
+
+  - label: Customize selectors
+    url: /page-builder/docs/customize/how-to-customize-selectors.html
+    versionless: true
+
+  - label: Add icons and images
+    url: /page-builder/docs/customize/how-to-add-icons-images.html
+    versionless: true
+
+  - label: Add additional configurations
+    url: /page-builder/docs/customize/how-to-add-additional-configurations.html
+    versionless: true
+
+- label: 'Create responsive content types'
+  versionless: true
+  children:
+  - label: How viewports work
+    url: /page-builder/docs/viewports/how-viewports-work.html
+    versionless: true
+
+  - label: How to add viewports
+    url: /page-builder/docs/viewports/how-to-add-viewports.html
+    versionless: true
+
+  - label: How to use viewports
+    url: /page-builder/docs/viewports/how-to-use-viewports.html
+    versionless: true
+
+  - label: How to change viewports
+    url: /page-builder/docs/viewports/how-to-change-viewports.html
+    versionless: true
+
+- label: How-Tos
+  versionless: true
+  children:
+  - label: Upgrade content types
+    url: /page-builder/docs/how-to/how-to-use-upgrade-library.html
     versionless: true
 
   - label: Add an image uploader
@@ -128,32 +166,12 @@ pages:
     url: /page-builder/docs/how-to/how-to-add-text-editor.html
     versionless: true
 
-  - label: Add a custom toolbar
-    url: /page-builder/docs/how-to/how-to-add-custom-toolbar.html
-    versionless: true
-
-  - label: Add icons and images
-    url: /page-builder/docs/how-to/how-to-add-icons-images.html
-    versionless: true
-
-  - label: Change breakpoints
-    url: /page-builder/docs/how-to/how-to-change-breakpoints.html
-    versionless: true
-
-  - label: Add additional configurations
-    url: /page-builder/docs/how-to/how-to-add-additional-configurations.html
-    versionless: true
-
   - label: Add a block chooser
     url: /page-builder/docs/how-to/how-to-add-block-chooser.html
     versionless: true
 
   - label: Use full-width layouts
     url: /page-builder/docs/how-to/how-to-use-full-width-layouts.html
-    versionless: true
-
-  - label: Customize selectors
-    url: /page-builder/docs/how-to/how-to-customize-selectors.html
     versionless: true
 
   - label: Apply product conditions
@@ -164,9 +182,9 @@ pages:
     url: /page-builder/docs/how-to/how-to-use-server-side-previews.html
     versionless: true
 
-#  - label: How to create a container content type
-#    url: /page-builder/docs/how-to/how-to-create-container-content-type.html
-#    versionless: true
+  # - label: Create container content types
+  #   url: /page-builder/docs/how-to/how-to-create-container-content-type.html
+  #   versionless: true
 
   - label: Use Page Builder for product attributes
     url: /page-builder/docs/how-to/how-to-use-pagebuilder-for-product-attributes.html
