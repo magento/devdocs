@@ -80,9 +80,6 @@ pages:
       url: /install-gde/install/cli/install-cli.html
       children:
 
-        - label: Update the Magento application
-          url: /install-gde/install/cli/dev_update-magento.html
-
         - label: Add or update components
           url: /install-gde/install/cli/dev_add-update.html
 
