@@ -80,6 +80,9 @@ pages:
       url: /comp-mgr/manage-module.html
       exclude_versions: ["2.3"]
 
+    - label: Add or update components
+      url: /install-gde/install/cli/dev_add-update.html
+
     - label: Run System Upgrade
       url: /comp-mgr/upgrader/upgrade-checklist.html
       include_versions: ["2.3"]

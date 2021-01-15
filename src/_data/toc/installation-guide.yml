@@ -80,9 +80,6 @@ pages:
       url: /install-gde/install/cli/install-cli.html
       children:
 
-        - label: Add or update components
-          url: /install-gde/install/cli/dev_add-update.html
-
     - label: Post Installation
       url: /install-gde/continue-to-verify_cli.html
       children:

@@ -5,25 +5,6 @@ functional_areas:
   - System
   - Setup
 ---
-
-{:.bs-callout-tip}
-Totally lost? Need a helping hand? Try our [Quick start install]({{ page.baseurl }}/install-gde/composer.html) or [Contributor install]({{ page.baseurl }}/install-gde/contrib-git.html) guides.
-
-## Intended audience {#integrator-aud}
-
-The audience for this topic is anyone who contributes to the {{site.data.var.ce}} codebase.
-You should be highly technical, understand [Composer](https://glossary.magento.com/composer) and Git commands, and be able to upgrade the Magento system software and extensions using those commands. If that isn't you, go back and [choose another starting point]({{ page.baseurl }}/install-gde/bk-install-guide.html).
-
-{:.bs-callout-warning}
-If you clone the Magento 2 GitHub repository, you _cannot_ use the Magento software in a production environment.
-You cannot have a live store that accepts orders and so on.
-
-## Prerequisites
-
-{% include install/prereq.md %}
-
-{% include install/composer-overview_24.md %}
-
 ## Install Composer {#instgde-prereq-compose-install}
 
 {% include install/composer-clone.md %}
