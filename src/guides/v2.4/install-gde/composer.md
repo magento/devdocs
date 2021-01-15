@@ -148,6 +148,9 @@ Database (simplest way is to use magento setup:upgrade)|
 ### Common arguments {#instgde-cli-subcommands-common}
 {% include install/cli_common-commands.md %}
 
+{:.bs-callout-info}
+Hooray! You've completed the quick install. Need more advanced help? Check out our [Advanced install]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) guide.
+
 <!-- Link Definitions -->
 [Magento Marketplace]: https://marketplace.magento.com/customer/accessKeys/
 [Modify docroot for security]: {{page.baseurl}}/install-gde/tutorials/change-docroot-to-pub.html

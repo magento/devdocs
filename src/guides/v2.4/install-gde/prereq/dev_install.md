@@ -7,7 +7,7 @@ functional_areas:
 ---
 
 {:.bs-callout-tip}
-Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
+Totally lost? Need a helping hand? Try our [Quick start install]({{ page.baseurl }}/install-gde/composer.html) or [Contributor install]({{ page.baseurl }}/install-gde/contrib-git.html) guides.
 
 ## Intended audience {#integrator-aud}
 
