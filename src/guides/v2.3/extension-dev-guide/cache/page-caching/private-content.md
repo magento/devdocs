@@ -67,7 +67,7 @@ Customer sections was designed to cache private data in browser storage. This me
 The are some exception cases:
 
 -  Store and website switching, after any of these action customer section `cart` will be updated.
--  Customer cart lifetime option `section_data_lifetime` which is 60 minutes by default. After scheduled time passes section `cart` will be updated.
+-  Customer cart lifetime option `section_data_lifetime` which is 60 minutes by default. After scheduled time passes, section `cart` will be updated.
 
 {: .bs-callout-info }
 Product information will not be simultaneously updated in customer cart (product name, price, product enabled/disabled). Information will be updated after what comes first: `section_data_lifetime` time passed or an action that the update cart triggered.
