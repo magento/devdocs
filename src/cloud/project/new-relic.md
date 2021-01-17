@@ -259,6 +259,8 @@ Based on industry best practices, the policy includes a collection of alerts tha
 | disk space    | NRI   | Pro
 | CPU usage     | NRI   | Pro
 | memory usage  | NRI   | Pro
+| Redis         | NRI   | Pro
+| MariaDB       | NRI   | Pro
 
 When site infrastructure or application conditions trigger an alert threshold, New Relic sends alert notifications so that you can proactively address the issue.  See [Managed Alerts for Magento Commerce] in the _Magento Help Center_ for details about alert thresholds and troubleshooting steps to resolve the issues that triggered the alert.
 
