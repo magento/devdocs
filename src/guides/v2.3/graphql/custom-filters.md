@@ -7,7 +7,7 @@ As of Magento 2.3.4, the `filter` attribute of the [`products`]({{page.baseurl}}
 
 ## Prerequisites
 
-You have several options when enabling a custom attribute (or any attribute that is not listed by default in the `ProductAttributeFilterInput` object) for filtering. Navigate to the attribute's **Storefront Properties** page (**Stores** > Attributes > **Product** > <attribute name> > **Storefront Properties**) in the Admin, then perform one or both of the following actions:
+You have several options when enabling a custom attribute (or any attribute that is not listed by default in the `ProductAttributeFilterInput` object) for filtering. Navigate to the attribute's **Storefront Properties** page (**Stores** > Attributes > **Product** > Edit Any Attribute > **Storefront Properties**) in the Admin, then perform one or both of the following actions:
 
 -  Set the **Use in Layered Navigation** field to **Filterable (with results)** or **Filterable (no results)**. This field allows the attribute to be used as a filter and returns layered navigation and aggregation data. If this field is set to **No**, then the attribute will not return layered navigation and aggregation data.
 
@@ -25,13 +25,84 @@ The [`filter`]({{page.baseurl}}/graphql/queries/products.html#ProductFilterInput
 
 In this example, the custom attribute `volume` was assigned to the `bags` attribute group. Running the [`customAttributeMetadata` query]({{page.baseurl}}/graphql/queries/custom-attribute-metadata.html) on this custom attribute reveals that the `label` and `value` values for the attribute's options are as follows:
 
+**Endpoint:**
+
+```
+http://<host_url>/graphql/customAttributeMetadata
+```
+
+**Request:**
+
+```graphql
+{
+  customAttributeMetadata(
+    attributes: [
+      {
+        attribute_code: "volume"
+        entity_type: "catalog_product"
+      }
+    ]
+  ) {
+    items {
+      attribute_code
+      attribute_type
+      entity_type
+      input_type
+      attribute_options {
+       value
+       label
+     }
+    }
+  }
+}
+```
+
+**Response:**
+
+```graphql
+{
+  "data": {
+    "customAttributeMetadata": {
+      "items": [
+        {
+          "attribute_code": "volume",
+          "attribute_type": "Int",
+          "entity_type": "catalog_product",
+          "input_type": "select",
+          "attribute_options": [
+            {
+              "value": "216",
+              "label": "Large"
+            },
+            {
+              "value": "217",
+              "label": "Medium"
+            },
+            {
+              "value": "218",
+              "label": "Small"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
 `label` | `value`
 --- | ---
 `Large` | `216`
 `Medium` | `217`
 `Small` | `218`
 
-In this scenario, a `products` search filtered to return items where the `volume` attribute is set to `Large` would be similar to the following:
+In this scenario, a [`products`]({{page.baseurl}}/guides/v2.4/graphql/custom-filters.html) search filtered to return items where the `volume` attribute is set to `Large` would be similar to the following:
+
+**Endpoint:**
+
+```
+http://<host_url>/graphql/products
+```
 
 **Request:**
 
