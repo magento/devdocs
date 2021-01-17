@@ -27,7 +27,7 @@ In this example, the custom attribute `volume` was assigned to the `bags` attrib
 
 **Endpoint:**
 
-```
+```http
 http://<host_url>/graphql/customAttributeMetadata
 ```
 
@@ -100,7 +100,7 @@ In this scenario, a [`products`]({{page.baseurl}}/guides/v2.4/graphql/custom-fil
 
 **Endpoint:**
 
-```
+```http
 http://<host_url>/graphql/products
 ```
 
