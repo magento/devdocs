@@ -188,9 +188,9 @@ We should now be able to use the Slick library, for example, on any list that we
 <script>
     require([
         'jquery',
-        'slick'
+        'slick',
+        'domReady!'
     ], function ($) {
-        $(document).ready(function () {
             $(".my-list").slick({
                 dots: true,
                 infinite: true,
@@ -198,7 +198,6 @@ We should now be able to use the Slick library, for example, on any list that we
                 slidesToShow: 4,
                 slidesToScroll: 1
             });
-        });
     });
 </script>
 ```
