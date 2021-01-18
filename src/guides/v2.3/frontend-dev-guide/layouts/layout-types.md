@@ -20,7 +20,7 @@ This article gives a comprehensive description of each layout file type.
 
 ## Page layout {#layout-types-page}
 
-Page layout declares the wireframe of a page inside the `<body>` section, for example one-column layout or two-column layout.
+Page layout declares the wireframe of a page inside the `<body>` section, for example, one-column layout or two-column layout.
 
 Allowed layout instructions:
 
