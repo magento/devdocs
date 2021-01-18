@@ -186,19 +186,19 @@ We should now be able to use the Slick library, for example, on any list that we
 </ul>
 
 <script>
-    require([
-        'jquery',
-        'slick',
-        'domReady!'
-    ], function ($) {
-            $(".my-list").slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 4,
-                slidesToScroll: 1
-            });
-    });
+   require([
+      'jquery',
+      'slick',
+      'domReady!'
+   ], function ($) {
+      $(".my-list").slick({
+         dots: true,
+         infinite: true,
+         speed: 300,
+         slidesToShow: 4,
+         slidesToScroll: 1
+      });
+   });
 </script>
 ```
 
