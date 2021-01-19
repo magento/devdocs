@@ -19,5 +19,9 @@ The minimum requirements to run the SUT are:
 | MC or Magento Open Source | none |
 {:style="table-layout:auto;"}
 
-{:.bs-callout-info}
-You can run the SUT in any operating system. There is no requirement to run the SUT where your Magento instance is located. It is necessary for SUT to have access to the source code of the Magento instance. For example, you can install SUT on one server and point it at your Magento installation on another server. Refer to the [install]({{site.baseurl}}/safe-upgrade-tool/install.html#install).
+{:.bs-callout-warning}
+It is recommended to avoid naming SUT modules with the same name, as a segmentation fault error can occur.
+
+You can run the SUT in any operating system. There is no requirement to run the SUT where your Magento instance is located.
+
+It is necessary for SUT to have access to the source code of the Magento instance. For example, you can install SUT on one server and point it at your Magento installation on another server. Refer to the [install]({{site.baseurl}}/safe-upgrade-tool/install.html#install) for more information.

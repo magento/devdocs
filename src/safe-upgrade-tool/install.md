@@ -31,10 +31,23 @@ The following use case describes the typical process for a Magento partner to up
 
 ## Prerequisites
 
-See [prerequisites]({{ site.baseurl }}/safe-upgrade-tool/prerequisites.html).
+See [prerequisites]({{site.baseurl}}/safe-upgrade-tool/prerequisites.html) for more information.
 
 {:.bs-callout-info}
 You can run the SUT in any operating system. There is no requirement to run the SUT where your Magento instance is located. It is necessary for SUT to have access to the source code of the Magento instance. For example, you can install the SUT on one server and point it at your Magento installation on another server.
+
+### Recommended actions
+
+It is recommended to avoid naming SUT modules with the same name, as a segmentation fault error can occur.
+
+If this segmentation error takes place, solve it by:
+
+*  Avoid analyzing a set of modules if there are 2 modules with the same name.
+*  Analyze modules separately with the option -m:
+
+    ```bash
+    bin/sut upgrade:check /(instance_path) --coming-version=2.4.1 -m /(module_path)
+    ```
 
 ## Install
 
@@ -44,11 +57,11 @@ To install the SUT, you must install the necessary prerequisites:
 *  Composer
 *  Node.js (only required to check GraphQL compatibility)
 
-Refer to the [SUT installation]({{ site.baseurl }}/safe-upgrade-tool/install.html#install).
+Refer to the [SUT installation]({{site.baseurl}}/safe-upgrade-tool/install.html#install).
 
 ### Magento access keys
 
-You must have [Magento access keys]({{ site.baseurl }}/marketplace/sellers/profile-information.html#access-keys) to use the SUT. Add your Magento access keys to your `auth.json` file, which is located at `~/.composer` by default.
+You must have [Magento access keys]({{site.baseurl}}/marketplace/sellers/profile-information.html#access-keys) to use the SUT. Add your Magento access keys to your `auth.json` file, which is located at `~/.composer` by default.
 
 {:.bs-callout-warning}
 Check your **COMPOSER_HOME** environment variable to see where the `auth.json` file is located.
