@@ -97,7 +97,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |prices[N].installation_price|string|GET, POST, PUT|marketing|no|The value for the installation price of this package|A number, with up to two decimal places, eg 123.45|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
 |priority|string|GET, POST, PUT|-|no|The priority for this submission|`high`, `medium`, `low`|
-|process_as_patch|boolean|GET, POST, PUT|technical|yes|A flag to indicate the submission should follow the [expedited process for patch releases.](https://community.magento.com/t5/Magento-DevBlog/New-Expedited-Marketplace-Submission-Path/ba-p/77303)|`true`, `false`|
+|process_as_patch|string|GET, POST, PUT|technical|yes|A flag to indicate the submission should follow the [expedited process for patch releases.](https://community.magento.com/t5/Magento-DevBlog/New-Expedited-Marketplace-Submission-Path/ba-p/77303)|`yes`, `no`, `unknown`|
 |release_notes|substring|GET, POST, PUT|technical|yes|The release notes for the package submission.|Free text|
 |requested_launch_date|DateTime|POST, PUT|marketing|yes|When the package should be released to the store. If not supplied, it will be released to the store after all checks have passed.|`YYYY-MM-DD HH:MM:SS`|
 |shared_packages|array|GET, POST, PUT|technical|no|The list of artifact objects. Listing here enables the "access rights" to these shared packages when a buyer purchases this package.|Each shared package is specified by file_upload_id, or sku and version. See [Object Details](#object-details)|
