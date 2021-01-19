@@ -122,9 +122,10 @@ By default, this command creates backups for all database connections that are s
 You can also backup only selected databases by appending the database names to the command, for example:
 
 ```bash
-php vendor/bin/ece-tools -- main sales ```
+php vendor/bin/ece-tools -- main sales
+```
 
-For help, use the command: ```php vendor/bin/ece-tools db-dump --help ```
+For help, use the command: `php vendor/bin/ece-tools db-dump --help`
 
 {:.procedure}
 To create a database dump:
