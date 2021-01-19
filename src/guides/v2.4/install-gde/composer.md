@@ -22,7 +22,7 @@ Before you continue, you must do the following:
 
 ## Log in as file system owner {#instgde-cli-before}
 
-Learn about ownership, permissions, and the Magento file system owner in our [Overview of ownership and permissions topic]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html). 
+Learn about ownership, permissions, and the Magento file system owner in our [Overview of ownership and permissions topic]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 To switch to the Magento file system owner:
 {% include install/first-steps-cli.md %}
