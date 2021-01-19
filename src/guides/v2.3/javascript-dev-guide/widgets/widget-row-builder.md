@@ -54,6 +54,50 @@ The following example shows a PHTML file using the script:
 </script>
 ```
 
+The following example shows a PHTML file using the script with some data:
+
+```html
+<script>
+    require([
+        'jquery',
+        'rowBuilder'
+    ], function ($) {
+        'use strict';
+
+        var data = {
+            formData: [
+                ["field1-name1", "field2-name1", "field3-name1"],
+                ["field1-name2", "field2-name2", "field3-name2"],
+                ["field1-name3", "field2-name3", "field3-name3"],
+                ["field1-name4", "field2-name4", "field3-name4"],
+            ],
+            templateFields: [
+                "field1-name", "field2-name", "field3-name"
+            ]
+        };
+
+        $(".row-builder-package-manager").rowBuilder({
+            "rowTemplate": "#row-template",
+            "rowContainer": "#row-container",
+            "rowParentElem": "<div></div>",
+            "remEventSelector": "a",
+            "btnRemoveSelector": ".action.remove",
+            "formDataPost": data
+        });
+    });
+</script>
+```
+
+This is provided during widget instantiation. For example:
+
+```
+formDataPost : {"formData":formData,"templateFields":['field1-name','field2-name'] }
+```
+
+-`"formData"` is the multi-dimensional array of form field values : [['a','b'],['c','b']] received from the server and encoded
+
+-`"templateFields"` are the input fields in the template with index suffixed after the field name. For example, `field1-name{index}`, `field2-name{index}`, `field3-name{index}`
+
 ## Options
 
 The PopupWindow widget has the following options:
