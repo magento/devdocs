@@ -63,6 +63,8 @@ Magento Component Health Index is a test which analyses Magento code quality and
 -  Magento-specific code quality indicators (MSCQ)
 -  Legacy API usage indicators (LAI)
 
+Additional information on Magento Automated Testing can be found on [Magento 2 project wiki](https://github.com/magento/magento2/wiki/Magento-Automated-Testing).
+
 ## Running tests for a pull request {#run-pull-request-tests}
 
 Automated tests can be triggered manually with an appropriate comment:
