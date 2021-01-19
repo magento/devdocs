@@ -60,44 +60,25 @@ pages:
         - label: Get the Magento software
           url: /install-gde/bk-install-guide.html
 
-        - label: (Contributor) Clone the Magento repository
-          url: /install-gde/prereq/dev_install.html
-          children:
-
-            - label: Update installation dependencies
-              url: /install-gde/install/prepare-install.html
-
-    - label: Quick start (recommended installation)
+    - label: Quick start install
       url: /install-gde/composer.html
 
-    - label: Install options
-      url: /install-gde/bk-install-guide.html
-
-    - label: Command Line Installation
-      url: /install-gde/install/cli/install-cli.html
+    - label: Contributor install
+      url: /install-gde/contrib-git.html
       children:
 
-        - label: Get started with the command-line installation
-          url: /install-gde/install/cli/install-cli-subcommands.html
+        - label: Clone the Magento repository
+          url: /install-gde/prereq/dev_install.html
+        
+        - label: Change to a released version
+          url: /install-gde/install/cli/dev_downgrade.html
 
-        - label: Install the Magento software
-          url: /install-gde/install/cli/install-cli-install.html
+        - label: Update installation dependencies
+          url: /install-gde/install/prepare-install.html
 
-        - label: Contributing developers—update, reinstall Magento
-          url: /install-gde/install/cli/dev_options.html
-          children:
-
-            - label: Update the Magento application
-              url: /install-gde/install/cli/dev_update-magento.html
-
-            - label: Add or update components
-              url: /install-gde/install/cli/dev_add-update.html
-
-            - label: Change to a released version
-              url: /install-gde/install/cli/dev_downgrade.html
-
-            - label: Reinstall the Magento software
-              url: /install-gde/install/cli/dev_reinstall.html
+    - label: Advanced install
+      url: /install-gde/install/cli/install-cli.html
+      children:
 
     - label: Post Installation
       url: /install-gde/continue-to-verify_cli.html

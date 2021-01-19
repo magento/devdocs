@@ -67,4 +67,4 @@ The optional `--keep-generated` option should be used _only_ in limited circumst
 [install the Magento software]: {{ page.baseurl }}/install-gde/install/cli/install-cli-install.html
 [Common arguments]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common
 [Reinstall Magento Software]: {{ page.baseurl }}/install-gde/install/cli/dev_reinstall.html
-[Install the Magento software using the command line]: {{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento
+[Install the Magento software using the command line]: {{ page.baseurl }}/install-gde/install/cli/install-cli.html

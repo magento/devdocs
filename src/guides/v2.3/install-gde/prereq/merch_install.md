@@ -26,7 +26,7 @@ Magento requires the following software to run:
 *  Database: MySQL
 
  {:.bs-callout-info}
-We recommend you contact GoDaddy support to verify all the system requirements are configured and get their assistance if any of the software is not installed.
+We recommend you contact GoDaddy support to verify all the system requirements are installed and get their assistance if any of the software is not installed.
 
 For complete details, see [System requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
