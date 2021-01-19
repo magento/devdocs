@@ -6,7 +6,7 @@ menu_order: 5
 menu_node:
 functional_areas:
   - Upgrade
-redirect_from: /guides/v.24/install-gde/install/cli/dev_add-update.html
+redirect_from: /guides/v2.4/install-gde/install/cli/dev_add-update.html
 ---
 
 A contributing developer updates components by specifying components and their versions in Magento's `composer.json`.
