@@ -1,13 +1,11 @@
 ---
-subgroup: 99_contrib
+group: software-update-guide
 title: Add or update components
 menu_title: Add or update components
 menu_order: 5
 menu_node:
 functional_areas:
-  - Install
-  - System
-  - Setup
+  - Upgrade
 ---
 
 A contributing developer updates components by specifying components and their versions in Magento's `composer.json`.
