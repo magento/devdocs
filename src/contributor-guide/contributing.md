@@ -154,7 +154,7 @@ For complete information about contributing to Magento projects, see the [Beginn
 -  Fix/implement the functionality
 -  Cover the changes with tests
 -  Open a pull request
--  Launch tests and ensure they are green (see more details on pull request tests [here]({{ site.baseurl }}/contributor-guide/pull-request-tests))
+-  Launch tests and ensure they are green (see more details on [pull request tests]({{ site.baseurl }}/contributor-guide/pull-request-tests))
 
 ## Squash commits {#squash-commits}
 

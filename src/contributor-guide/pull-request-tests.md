@@ -9,20 +9,20 @@ The following topics are included in this guide:
 -  [Running tests for a pull request](#run-pull-request-tests)
 -  [Related pull requests](#related-pull-requests)
 
-## Magento Automated Testing {#magento-automated-testing}
+## Magento Automated Testing
 
-Magento Automated Testing is a testing infrastructure that allows to run the set of all required Magento Automated Tests against code in Pull Requests. It can be triggered via a comment in a pull request. The running tests are represented both as Pull Request statuses and as Pull Requests checks.
+Magento Automated Testing infrastructure runs all required automated tests against code in pull requests. You can trigger automated tests by adding a comment to a pull request. Tests are represented both as pull request statuses and checks.
 
-Below there's information about all kinds of tests available currently.
+The following sections describe the different kinds of tests that are currently available.
 
 ### Semantic Version Checker
 
-Semantic Version Checker is a test that compares the changed code against the mainline and detects levels of code changes. It shows a list of changes grouped by the class (level) of changes (MAJOR, MINOR, PATCH) with explanation of the change (Class was removed, [public] Method implementation changed, [private] Property has been removed etc.) The allowed level is PATCH.
-Please see the [Backward Compatibility Development Guide](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/index.html) for more information
+Semantic Version Checker is a test that compares the changed code against the mainline and detects levels of code changes. It shows a list of changes grouped by the class (level) of changes (MAJOR, MINOR, PATCH) with an explanation of the change (Class was removed, [public] Method implementation changed, [private] Property has been removed etc.) The allowed level is PATCH.
+See [Backward Compatibility Development](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/index.html) for more information.
 
 ### Functional Tests
 
-Functional Tests are PHPUnit-based tests that check Magento functional behavior from the perspective of a user. They press buttons and links in browser, fill and submit forms, look and check what is displayed in the browser's window like real users.
+Functional Tests are PHPUnit-based tests that check Magento functional behavior from the perspective of a user. They click buttons and links in a browser, fill and submit forms, verify what is displayed in the browser window like real users.
 
 ### Sample Data Tests
 
@@ -30,18 +30,19 @@ Sample Data Tests are functional tests that run on Magento with Sample Data incl
 
 ### Unit Tests
 
-Unit tests are PHPUnit-based (for PHP) and Jasmine-based (for JS) tests which check the behavior of single methods of Magento classes. The purpose is to validate that each unit of Magento performs as designed.
+Unit tests are PHPUnit-based (for PHP) and Jasmine-based (for JS) tests that check the behavior of single methods of Magento classes. The purpose is to validate that each unit of Magento performs as designed.
 
 ### Integration Tests
 
-Integration Tests are PHPUnit-based tests that check the behaviour of group of Magento components. They include three types of tests:
+Integration Tests are PHPUnit-based tests that check the behavior of a group of Magento components. They include three types of tests:
 
--  Standard Integration tests which check Magento behavior on installed instance.
--  Setup Integration tests which check Magento behavior during the installation process.
--  Integration Integrity tests which check the consistency of installed Magento instance (configuration files, DB schemes etc.)
+-  Standard Integration tests that check Magento behavior on an installed instance.
+-  Setup Integration tests that check Magento behavior during the installation process.
+-  Integration Integrity tests that check the consistency of an installed Magento instance (for example, configuration files and database schemes).
 
 ### WebAPI Tests
-WebAPI Tests are functional tests that check the behavior of Magento Web API endpoints. They send requests to endpoints of installed Magento instance and and then check the response received and the state of the instance. Currently they include three kinds of tests:
+
+WebAPI Tests are functional tests that check the behavior of Magento Web API endpoints. They send requests to endpoints of an installed Magento instance and and then check the response received and the state of the instance. Currently they include three kinds of tests:
 
 -  SOAP Web API tests
 -  REST Web API tests
@@ -49,28 +50,28 @@ WebAPI Tests are functional tests that check the behavior of Magento Web API end
 
 ### Static Tests
 
-Static Tests are set of different checks that analyze each single file of Magento code base separately. Most of them analyze the whole Magento code base whereas some run only against the change set.
+Static Tests are a set of different checks that analyze every single file of the Magento code base separately. Most of them analyze the whole Magento code base, whereas some run only against the change set.
 
 ### Database Compare
 
-Database Compare is a test which compares DB schema and data between freshly installed Magento instance (from the PR code) and another instance which was upgraded to the PR code from the pre-previous latest minor release Magento version.
+Database Compare is a test that compares the database schema and data between a freshly installed Magento instance (from the pull request code) and another instance that was upgraded to the PR code from the latest minor release version of Magento.
 
 ### Magento Component Health Index
 
-Magento Component Health Index is a test which analyses Magento code quality and calculates weighted health index (100 is great, lower is worse) per Magento Component (module). The index is calculated based on 3 groups of indicators:
+Magento Component Health Index is a test that analyses Magento code quality and calculates a weighted health index (100 is great, lower is worse) for each Magento Component (module). The index is calculated based on three groups of indicators:
 
--  General code quality indicators (GCQI). The metrics described [here](http://pdepend.org/documentation/software-metrics/index.html)
+-  [General code quality indicators (GCQI)](http://pdepend.org/documentation/software-metrics/index.html)
 -  Magento-specific code quality indicators (MSCQ)
 -  Legacy API usage indicators (LAI)
 
-Additional information on Magento Automated Testing can be found on [Magento 2 project wiki](https://github.com/magento/magento2/wiki/Magento-Automated-Testing).
+Additional information on Magento Automated Testing can be found on the [Magento 2 project wiki](https://github.com/magento/magento2/wiki/Magento-Automated-Testing).
 
-## Running tests for a pull request {#run-pull-request-tests}
+## Running tests for a pull request
 
 Automated tests can be triggered manually with an appropriate comment:
 
--  `@magento run all tests` - run or re-run all required tests against the PR changes
--  `@magento run <test-build(s)>` - run or re-run specific test build(s)
+-  `@magento run all tests`—run or re-run all required tests against the pull request changes
+-  `@magento run <test-build(s)>`—run or re-run specific test build(s)
 
 For example: `@magento run Unit Tests` or `@magento run Unit Tests,Integration Tests`
 
@@ -82,9 +83,9 @@ The build progress and test results are indicated by check runs under the pull r
 
 Click on the "Details" link to see the results summary and links to corresponding Allure reports.
 
-## Related pull requests {#related-pull-requests}
+## Related pull requests
 
-When the contribution requires changes to more than one repository merged simultaneously, such pull requests should be linked using "Related Pull Requests" description section.
+When a contribution requires changes to more than one repository merged simultaneously, such pull requests should be linked using the "Related Pull Requests" description section.
 
 The related pull requests should be specified in the pull request description in the following format:
 
@@ -95,7 +96,7 @@ https://github.com/<organization>/<repository>/pull/<pull request number>
 <!-- related pull request placeholder -->
 ```
 
-When the tests are launched against a pull request that contains links to related pull request in the description the related pull requests branches will be used as a code base for the tests instead of mainline.
+When the tests are launched against a pull request that contains links to related pull request in the description, the related pull requests branches will be used as a code base for the tests instead of mainline.
 Check runs will be updated for each of the related pull requests.
 
-Related pull requests are delivered to magento repositories simultaneously.
+Related pull requests are delivered to Magento repositories simultaneously.
