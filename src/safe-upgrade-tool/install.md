@@ -38,7 +38,7 @@ See [prerequisites]({{site.baseurl}}/safe-upgrade-tool/prerequisites.html) for m
 {:.bs-callout-info}
 You can run the SUT in any operating system. There is no requirement to run the SUT where your Magento instance is located. It is necessary for SUT to have access to the source code of the Magento instance. For example, you can install the SUT on one server and point it at your Magento installation on another server.
 
-If you are running SUT against a Magento customized instance with large third-party modules and files, the tool might require a high amount of RAM, at least 2GB RAM.
+If you are running SUT against a Magento instance with large modules and files, the tool might require a high amount of RAM, at least 2GB RAM.
 
 ### Recommended actions
 
