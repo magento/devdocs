@@ -22,12 +22,12 @@ The following diagram shows the expected workflow when running the SUT:
 The following use case describes the typical process for a Magento partner to upgrade a client's Magento instance:
 
 1. A partner's Software Engineer downloads the SUT package from the [Magento repository](https://repo.magento.com/) and executes it during the beta phase of the newest Magento release.
-2. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer information guide]({{site.baseurl}}/safe-upgrade-tool/developer.html) for more information on the complexity score.
-3. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
-4. The Account Manager creates a timeline and cost for the Magento upgrade, which allows them to get their manager's approval.
-5. With their manager's approval, the Software Engineer works on the required code modifications to fix the broken modules.
-6. The Software Engineer runs the SUT tool one more time with a Magento pre-release to ensure there are no new issues and that their code changes fixed the problems found during the beta phase.
-7. Everything check’s out and the Software Engineer pushes the code to a staging environment where regression tests confirm all tests are green, which allows them to release the latest Magento version to production the same day that the Magento pre-release is released.
+1. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer information guide]({{site.baseurl}}/safe-upgrade-tool/developer.html) for more information on the complexity score.
+1. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
+1. The Account Manager creates a timeline and cost for the Magento upgrade, which allows them to get their manager's approval.
+1. With their manager's approval, the Software Engineer works on the required code modifications to fix the broken modules.
+1. The Software Engineer runs the SUT tool one more time with a Magento pre-release to ensure there are no new issues and that their code changes fixed the problems found during the beta phase.
+1. Everything check’s out and the Software Engineer pushes the code to a staging environment where regression tests confirm all tests are green, which allows them to release the latest Magento version to production the same day that the Magento pre-release is released.
 
 ![SUT audience](img/audience-sut.png)
 
