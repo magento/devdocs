@@ -54,9 +54,53 @@ The following example shows a PHTML file using the script:
 </script>
 ```
 
-The following example shows a PHTML file using the script with some data:
+The following example shows a PHTML file using the script with some data for a couple of fields:
 
 ```html
+<div class="row-builder-example">
+    <div id="max-rows-message" style="display: none;" class="message notice limit" role="alert">
+        <span>Number of rows exceeded.</span>
+    </div>
+    <button type="button" id="add-row-button" class="action add">
+        <span>Add Item</span>
+    </button>
+    <div id="row-container"></div>
+</div>
+
+<script id="row-template" type="text/x-magento-template">
+    <div>
+        <div class="field name required">
+            <label for="field1-name<%- data._index_ %>" class="label"><span>Item <%- data._index_ %> Field</span></label>
+            <div class="control">
+                <input name="field1[name][<%- data._index_ %>]" type="text" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" class="input-text"
+                       id="field1-name<%- data._index_ %>"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label for="field2-name<%- data._index_ %>" class="label"><span>Item <%- data._index_ %> Field</span></label>
+            <div class="control">
+                <input name="field2[name][<%- data._index_ %>]" type="text" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" class="input-text"
+                       id="field2-name<%- data._index_ %>"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label for="field3-name<%- data._index_ %>" class="label"><span>Item <%- data._index_ %> Field</span></label>
+            <div class="control">
+                <input name="field3[name][<%- data._index_ %>]" type="text" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" class="input-text"
+                       id="field3-name<%- data._index_ %>"/>
+            </div>
+        </div>
+        <div class="actions-toolbar">
+            <div class="secondary">
+                <a href="#" id="btn-remove<%- data._index_ %>" class="action remove"
+                   title="Remove Item">
+                    <span>Remove Item</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</script>
+
 <script>
     require([
         'jquery',
@@ -90,8 +134,8 @@ The following example shows a PHTML file using the script with some data:
 
 This is provided during widget instantiation. For example:
 
-```
-formDataPost : {"formData":formData,"templateFields":['field1-name','field2-name'] }
+```text
+formDataPost : {"formData": ["field1-name1", "field2-name1", "field3-name1"], "templateFields":['field1-name','field2-name','field3-name']]}
 ```
 
 -`"formData"` is the multi-dimensional array of form field values : [['a','b'],['c','b']] received from the server and encoded
