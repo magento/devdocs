@@ -87,8 +87,9 @@ To clone the Magento sample data GitHub repository using the SSH protocol:
 
 1. See [Set file system permissions and ownership](#samp-data-perms).
 
-1. ```bash
-   <magento_root>/bin/magento setup:upgrade
+1. Run the following command:
+   ```bash
+   bin/magento setup:upgrade
    ```
 
 ### Clone with HTTPS {#instgde-prereq-compose-clone-https}
