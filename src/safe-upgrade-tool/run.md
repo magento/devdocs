@@ -17,12 +17,6 @@ At the moment this is an ALPHA version with limited scope, only validating PHP M
 
 ## Use SUT
 
-### Memory limitations
-
-If you are running a system with large third-party modules and files, the SUT requires a high amount of RAM, at least 2GB RAM.
-
-### Executing the tool
-
 Execute the tool by running the following command:
 
 ```bash
@@ -30,7 +24,7 @@ bin/sut upgrade:check INSTALLATION_DIR
 ```
 
 {:.bs-callout-info}
-We recommend running `php -d memory_limit=-1 /bin/sut` to avoid memory limitations.
+We recommend running `php -d memory_limit=-1 /bin/sut` to avoid memory limitations. As well, it is recommended to use the `-m` command to run the tool against a specific module.
 
 The `INSTALLATION_DIR` value is the directory where your Magento instance is located.
 
@@ -140,4 +134,4 @@ Regarding the GraphQL schema compatibility comparison, the output would be very 
  *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
 ```
 
-See [Developer information]({{ site.baseurl }}/safe-upgrade-tool/developer.html).
+See [Developer information]({{site.baseurl}}/safe-upgrade-tool/developer.html) for more information.

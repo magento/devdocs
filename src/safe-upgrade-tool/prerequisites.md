@@ -15,12 +15,10 @@ The minimum requirements to run the SUT are:
 | PHP version| >= 7.3 |
 | Composer | none |
 | Node.js | An optional requirement. Only required to check GraphQL compatibility. |
+| Memory limitations | At least 2GB RAM |
 | Magento Access keys | none |
 | MC or Magento Open Source | none |
 {:style="table-layout:auto;"}
-
-{:.bs-callout-warning}
-It is recommended to avoid naming SUT modules with the same name, as a segmentation fault error can occur.
 
 You can run the SUT in any operating system. There is no requirement to run the SUT where your Magento instance is located.
 
