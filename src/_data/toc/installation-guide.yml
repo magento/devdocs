@@ -157,13 +157,5 @@ pages:
           url: /install-gde/install/cli/install-cli-theme-uninstall.html
     
     - label: Troubleshooting
-      children:
+      url: /install-gde/trouble/troubleshooting.html
 
-        - label: Access issues
-          children:
-
-            - label: 503 (Service Unavailable) errors accessing Magento software in a web browser
-              url: /install-gde/trouble/php/tshoot_mod_access_compat.html
-
-            - label: Cannot write to the var/generation directory
-              url: /install-gde/trouble/tshoot_var-gen-perms.html

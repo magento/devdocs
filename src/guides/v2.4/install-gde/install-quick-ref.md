@@ -129,6 +129,6 @@ php magento deploy:mode:set developer
 [command line]: {{page.baseurl }}/install-gde/install/cli/install-cli.html
 [Get your authentication keys]: {{page.baseurl }}/install-gde/prereq/connect-auth.html
 [Magento software archive]: {{page.baseurl }}/install-gde/install/get-software.html
-[Readiness check issues]:{{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_main.html
+[Readiness check issues]:{{ page.baseurl }}/install-gde/trouble/troubleshooting.html#readiness
 [Verify the installation]: {{page.baseurl }}/install-gde/install/verify.html
 [component management and system upgrade]: {{page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html
