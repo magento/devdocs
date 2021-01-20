@@ -11,6 +11,10 @@ These release notes can include:
 
 ## Magento B2B - Version 1.3.1
 
+-  {:.fix} Creating a company through the REST API now dispatches notification emails as expected to designated administrators and customers. <!--- MC-35629-->
+
+-  {:.fix} You can now successfully run `bin/magento setup:upgrade`  after defining a new default customer group after installing the B2B module. Previously, when you ran this command, Magento did not install the B2B module and displayed this error: `Module 'Magento_Company': Unable to apply data patch Magento\Company\Setup\Patch\Data\AddAccessViolationPageAndAssignB2CCustomers for module Magento_Company. Original exception message: Area code is not set`. This was caused by an incorrect default group code during the initialization of the shared catalog module.<!--- MC-36274-->
+
 -  {:.fix} Adding a configurable product to the shopping cart directly from a requisition list when this product was used in a prior order no longer returns a system error. [GitHub-302](https://github.com/magento/partners-magento2b2b/issues/302)
 
 -  {:.fix} Magento now displays the Requires My Approval tab correctly for purchase orders when a split database configuration is deployed. [GitHub-259](https://github.com/magento/partners-magento2b2b/issues/259)
@@ -52,6 +56,8 @@ These release notes can include:
 -  {:.fix} Magento now sends new company user registration emails from the Magento store's address. Previously, this email was sent from the company administrator’s address. <!--- MC-36480-->
 
 -  {:.fix} Magento now checks custom attributes for duplication of reserved company attribute names before permitting a merchant to save a new attribute. <!--- MC-36282-->
+
+-  {:.fix} The `credit_history` query now returns the specified company’s credit history for both the originally allocated amount and the purchased amount. Previously, this query returned an error. [GitHub-29990](https://github.com/magento/magento2/issues/29990)
 
 ## Magento B2B - Version 1.3.0
 
