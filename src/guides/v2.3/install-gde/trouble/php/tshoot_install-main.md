@@ -17,5 +17,4 @@ functional_areas:
 *  [During installation, exception SessionHandler::read()](https://support.magento.com/hc/en-us/articles/360033427272)
 *  [Errors installing optional sample data](https://support.magento.com/hc/en-us/articles/360033824571)
 *  [Installation fails; cannot create install.log](https://support.magento.com/hc/en-us/articles/360033461912)
-*  [Download fails because of changes in Composer](https://support.magento.com/hc/en-us/articles/360033818091)
 *  [During installation, xdebug maximum function nesting level error](https://support.magento.com/hc/en-us/articles/360034238512)
