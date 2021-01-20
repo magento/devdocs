@@ -3,12 +3,6 @@ group: contributor-guide
 title: Pull Request Tests
 ---
 
-The following topics are included in this guide:
-
--  [Magento Automated Testing](#magento-automated-testing)
--  [Running tests for a pull request](#run-pull-request-tests)
--  [Related pull requests](#related-pull-requests)
-
 ## Magento Automated Testing
 
 Magento Automated Testing infrastructure runs all required automated tests against code in pull requests. You can trigger automated tests by adding a comment to a pull request. Tests are represented both as pull request statuses and checks.
@@ -42,7 +36,7 @@ Integration Tests are PHPUnit-based tests that check the behavior of a group of 
 
 ### WebAPI Tests
 
-WebAPI Tests are functional tests that check the behavior of Magento Web API endpoints. They send requests to endpoints of an installed Magento instance and and then check the response received and the state of the instance. Currently they include three kinds of tests:
+WebAPI Tests are functional tests that check the behavior of Magento Web API endpoints. They send requests to endpoints of an installed Magento instance and then check the response received and the state of the instance. Currently they include three kinds of tests:
 
 -  SOAP Web API tests
 -  REST Web API tests
