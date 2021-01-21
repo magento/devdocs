@@ -4,8 +4,38 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jan 4 22:34:52 2021
+updated: Mon Jan 18 15:45:43 2021
 entries:
+- description: SendGrid DKIM signatures are available only on Magento Commerce Cloud
+    Pro projects.  For more information on SendGrid, see https://devdocs.magento.com/cloud/project/sendgrid.html.
+  versions: 2.4.x
+  type: Major Update
+  date: January 14, 2021
+  link: https://github.com/magento/devdocs/pull/8440
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: New Relic Alerts now include Redis and MariaDB. See https://devdocs.magento.com/cloud/project/new-relic.html#monitor-performance-with-managed-alerts.
+  versions: 2.4.x
+  type: Major Update
+  date: January 12, 2021
+  link: https://github.com/magento/devdocs/pull/8503
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Added a [legal disclaimer](https://devdocs.magento.com/compliance/privacy/pi-data-reference-m2.html#customer-data)
+    to references of the `date_of_birth` attribute of the `customer` database entity.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 8, 2021
+  link: https://github.com/magento/devdocs/pull/8488
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Published release notes for [Cloud Docker 1.2.1](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v121).
+  versions: 2.4.x
+  type: Major Update
+  date: December 22, 2020
+  link: https://github.com/magento/devdocs/pull/8429
+  contributor: bdenham
+  profile: https://github.com/bdenham
 - description: Added a new topic with instructions for [reverting from a split database
     to a single database](https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html)
     implementation.
