@@ -148,11 +148,13 @@ Review the following supported and accepted pull request rules. We defined these
 
 For complete information about contributing to Magento projects, see the [Beginner Guides](https://github.com/magento/magento2/wiki/Getting-Started) on the Magento 2 repository. These guides help you:
 
+-  Select an issue to work on and self-assign
 -  Fork a repository
 -  Create a branch
--  Find and work issues
--  Create tests
--  Submit a pull request
+-  Fix/implement the functionality
+-  Cover the changes with tests
+-  Open a pull request
+-  Launch tests and ensure they are green (see more details on [pull request tests]({{ site.baseurl }}/contributor-guide/pull-request-tests.html))
 
 ## Squash commits {#squash-commits}
 

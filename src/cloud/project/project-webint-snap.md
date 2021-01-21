@@ -123,8 +123,9 @@ You can also backup only selected databases by appending the database names to t
 
 ```bash
 php vendor/bin/ece-tools -- main sales
+```
 
-For help, use the command: ```php vendor/bin/ece-tools db-dump --help ```
+For help, use the command: `php vendor/bin/ece-tools db-dump --help`
 
 {:.procedure}
 To create a database dump:
