@@ -106,7 +106,7 @@ The following examples illustrate how to define a custom batch size for configur
 
 ### Setting batch size with environment variables
 
-Starting in Magento 2.4.3, it is possible to configure the batch size with the environment variables, or in `app/etc/env.php` for the following indexers:
+As of Magento 2.4.3, it is possible to configure the batch size with environment variables, or in `app/etc/env.php`, for the following indexers:
 
 *  `cataloginventory_stock`
 *  `catalog_category_product`
