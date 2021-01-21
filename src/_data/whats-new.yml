@@ -1659,7 +1659,7 @@ entries:
   type: Technical
   date: April 9, 2020
   link: https://github.com/magento/devdocs/pull/7016
-- description: Fixed a config entry in the the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
+- description: Fixed a config entry in the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
     topic.
   versions: 2.3.x
   type: Technical
