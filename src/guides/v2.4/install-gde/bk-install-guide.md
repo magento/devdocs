@@ -54,7 +54,7 @@ Consult the following table for getting started with installing {{site.data.var.
 
 ## Useful information
 
-At any time during your installation, take advantage of our [installation quick reference (tutorial)] or [installation roadmap (reference)]. They're really easy to use; the tutorial walks you through a sample installation. The roadmap provides links to common tasks throughout the guide.
+At any time during your installation, take advantage of our [installation roadmap (reference)]. The roadmap provides links to common tasks throughout the guide.
 
 Use the links on the left side of the page to navigate topics in each part of the installation.
 
@@ -68,6 +68,5 @@ You'll also need `root` privileges to create the [Magento file system owner] and
 
 <!-- LINK DEFINITIONS -->
 
-[installation quick reference (tutorial)]: {{ page.baseurl }}/install-gde/install-quick-ref.html
 [installation roadmap (reference)]: {{ page.baseurl }}/install-gde/install-roadmap_part1.html
 [Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
