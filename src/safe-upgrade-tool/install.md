@@ -31,6 +31,12 @@ The following use case describes the typical process for a Magento partner to up
 
 ![SUT audience](img/audience-sut.png)
 
+#### Contact Slack
+
+To connect with the team about SUT, contact us on the [Magento Safe Upgrade Tool Engineering Slack channel][]. If you are interested in joining Slack, send us a request at [sut@adobe.com](mailto:sut@adobe.com).
+
+We have [channels][] for each project. See the [Resources]({{site.baseurl}}/community/resources/resources.html) page for more information.
+
 ## Prerequisites
 
 See [prerequisites]({{site.baseurl}}/safe-upgrade-tool/prerequisites.html) for more information.
