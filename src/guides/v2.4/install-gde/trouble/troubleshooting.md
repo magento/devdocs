@@ -11,14 +11,13 @@ Known issues and workarounds are documented in Knowledge Base articles.
 
 ## General
 
-*  [Error after logging in to the Magento Admin](https://support.magento.com/hc/en-us/articles/360033771391)
-*  [Exceptions during installation](https://support.magento.com/hc/en-us/articles/360033432231)
-*  [Known issues that affect installation](https://support.magento.com/hc/en-us/articles/360034242212)
-*  [Errors installing optional sample data](https://support.magento.com/hc/en-us/articles/360033824571)
-*  [During installation, Reflection Exception error](https://support.magento.com/hc/en-us/articles/360034633551)
-*  [After installing, images and stylesheets do not load; only text displays](https://support.magento.com/hc/en-us/articles/360032994352)
-*  [Cannot write to the generated/code directory]({{ page.baseurl }}/install-gde/trouble/tshoot_var-gen-perms.html)
-
+*   [Error after logging in to the Magento Admin](https://support.magento.com/hc/en-us/articles/360033771391)
+*   [Exceptions during installation](https://support.magento.com/hc/en-us/articles/360033432231)
+*   [Known issues that affect installation](https://support.magento.com/hc/en-us/articles/360034242212)
+*   [Errors installing optional sample data](https://support.magento.com/hc/en-us/articles/360033824571)
+*   [During installation, Reflection Exception error](https://support.magento.com/hc/en-us/articles/360034633551)
+*   [After installing, images and stylesheets do not load; only text displays](https://support.magento.com/hc/en-us/articles/360032994352)
+*   [Cannot write to the generated/code directory]({{ page.baseurl }}/install-gde/trouble/tshoot_var-gen-perms.html)
 
 ## Git
 
