@@ -157,5 +157,4 @@ pages:
           url: /install-gde/install/cli/install-cli-theme-uninstall.html
     
     - label: Troubleshooting
-      url: /install-gde/trouble/troubleshooting.html
-
+      url: https://support.magento.com/hc/en-us/categories/115000200533-Troubleshooting
