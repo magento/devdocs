@@ -29,7 +29,7 @@ We recommend running the following command to avoid memory limitations:
 php -d memory_limit=-1 /bin/sut
 ```
 
-As well, it is recommended to use the `-m` command to run the tool against a specific module.
+We also recommend using the `-m` command to run the tool against a specific module.
 
 To see SUT command options and help:
 
