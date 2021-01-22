@@ -101,7 +101,7 @@ The tool pre-processes (including compilation) and publishes the static view fil
 {:.bs-callout-info}
 Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use the -f option: `bin/magento setup:static-content:deploy -f`. Read more about the command in the [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) section.
 
-All errors occurring during `.less` files compilation are handled by the [`wikimedia/less.php`]([LESS PHP library]) third party library.
+All errors occurring during `.less` files compilation are handled by the [LESS PHP library][] third party library.
 
 {:.bs-callout-info}
 Since Magento 2.3.3, `oyegorge/less.php` has been replaced by `wikimedia/less.php`
