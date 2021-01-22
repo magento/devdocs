@@ -94,11 +94,9 @@ The admin status can be seen when viewing the indexer grid in Magento Admin or w
 
 The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the [Admin](https://glossary.magento.com/admin) panel in **System >** Tools **> Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
-### Using application lock mode for reindex process
+### Using application lock mode for reindex processes
 
-Starting from 2.4.3 its possible to enable using application lock mode for reindex process through the environment variables or in `app/etc/env.php`.
-
-Example of configuration in `app/etc/env.php`
+Starting with 2.4.3, you can enable `use_application_lock` mode for reindexing through the use of environment variables, or in `app/etc/env.php`:
 
 ```php
 <?php
@@ -109,10 +107,11 @@ return [
 ];
 ```
 
-Using this mode will allow to get the correct status of the indexer in case of a failure in the completion of its process.
+In case of a failure, this mode will return the correct status of the indexer.
 
-Since this mode expands the functionality of checking the status, the current status can be obtained only through viewing the indexer grid in Magento Admin or when running the index status from the CLI.
-When this option is used, the values in the SQL table `indexer_state` may indicate an irrelevant status value.
+The current status can be obtained from the indexer grid in Magento Admin or through the index status in the CLI.
+
+When this option is used, the values in the SQL table `indexer_state` may not be up to date.
 
 ### Indexing modes {#m2devgde-indexing-modes}
 
