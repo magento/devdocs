@@ -23,8 +23,8 @@ For all of the static configuration installations below involving the PHPStorm P
 JSCS is deprecated in PHPStorm 2020.2. You must install the JSCS plugin.
 
 {:.procedure}
-
 To install the JSCS plugin:
+
 1. Go to PHPStorm preferences > Languages & Frameworks > JavaScript > Code Quality Tools > JSCS.
 1. Check **Enable**, if it is unchecked.
 1. Enter the path to your node binary (the result of outputting `which node` in your terminal).
