@@ -36,7 +36,7 @@ We recommend using the following best practices when developing themes:
 1. Magento has a set of [coding standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html) for both back-end and front-end technologies. Refer to them when needed.
 1. Do not repeat work while styling. Instead, create a class or mixin and call them when needed.
 1. While styling any custom module, add the styling within the module, instead of adding it to the design theme. This way, the style will not be loaded unless the module is called. For example `app/code/Company/Module/view/frontend/web/css/source/_module.less`.
-1. While styling a custom theme, add styles to seperate less files, instead of appending to a single file. This way, styles are easier to track down and debug.
+1. While styling a custom theme, add styles to separate less files, instead of appending to a single file. This way, styles are easier to track down and debug.
 
    As a reference, check `[Magento_Blank_Theme_Path]/web/css/_styles.less`:
 
