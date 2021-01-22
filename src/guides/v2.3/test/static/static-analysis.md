@@ -44,7 +44,7 @@ See the image below for example configuration:
 
 ![ESLint]({{site.baseurl}}/common/images/static-eslint.png)
 
-To verify it works, in any JS file add `/** Hello world */` as a doc comment to any method you should see warning about the comment being on one line
+To verify it works, in any JS file add `/** Hello world */` as a doc comment to any method, you should see a warning about the comment being on one line.
 
 ## PHPCS
 
