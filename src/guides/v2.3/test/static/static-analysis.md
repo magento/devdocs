@@ -70,7 +70,7 @@ To verify it works, add the following PHP snippet: `$base = basename($_SERVER['S
 1. Go to PHPStorm preferences > Languages & Frameworks > PHP > Quality Tools > Mess Detector.
 1. Click the `...` button to bring up another configuration modal.
 1. Enter the PHP Mess Detector path: `[magento_root]/vendor/phpmd/phpmd/src/bin/phpmd`
-1. Go to PHPStorm preferences > Editor > Inspections, and in the adjacent window go to  > PHP > Quality Tools > PHP Mess Detector validation.
+1. Go to PHPStorm preferences > Editor > Inspections and in the adjacent window go to  > PHP > Quality Tools > PHP Mess Detector validation.
 1. Under custom rulesets, add the path to the PHPMD ruleset Magento uses: `[magento_root]/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml`
 
 See the image below for example configuration:
