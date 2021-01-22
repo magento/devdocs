@@ -19,6 +19,18 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.0.14
+
+-  **MDVA-31969** _(for Magento `>=2.3.3 <2.3.5, >=2.4.0 <2.4.2`)_—Fixes the issue with duplicated images after product import from a .csv file.
+-  **MDVA-33382** _(for Magento `>=2.3.0 <2.4.2`)_-Fixes the issues with indexers invalidation after products removal from a category.
+-  **MDVA-28511** _(for Magento `>=2.3.5 <2.3.6`)_-Fixes the issue where it is not possible to complete PayPal checkout, if the Name field contains certain characters (like accented capital letters).
+-  **MDVA-31519** _(for Magento `>=2.3.5 <2.3.6`)_-Fixes the issue with wait timeouts in guest checkout when a site-wide sales rule is in use.
+-  **MDVA-33281** _(for Magento `>=2.3.4 <2.3.6`)_-Fixes the issue where there is a fatal error in 'inventory:reservation:list-inconsistencies' because of wrong SKU parameter type.
+-  **MDVA-24201** _(for Magento `>=2.3.0 <2.3.5`)_-Fixes the issue where prices do not reflect the scheduled cart price rule until manually re-indexed.
+-  **MDVA-32694** _(for Magento `>=2.3.0 <2.3.6 || >= 2.4.0 <2.4.2`)_-Fixes the issue where an admin user cannot add a product to a negotiable quote, if it is related to a not default store.
+-  **MDVA-33516** _(for Magento `>=2.3.0 <2.3.6`)_-Fixes the issue where editing a bundle product in a requisition list leads to an error.
+-  **MDVA-33975** _(for Magento `>=2.3.4 <2.4.2`)_—Fixes multiple issues related to price calculation in GraphQL requests.
+
 ## v1.0.13
 
 -  **MDVA-30858** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue with PayPal Settlement reports not being available under Reports > Sales > PayPal Settlement as expected.
