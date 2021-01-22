@@ -14,7 +14,7 @@ Magento application provides a built-in Less UI library, which you can optionall
 
 To customize [storefront](https://glossary.magento.com/storefront) styles, you need to [create a custom design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html). Then you can use one of the following approaches:
 
-*  If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files.
+*  If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files. For example, to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files.
 *  Create your own Less files using the built-in Less preprocessor.
 *  Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
 
