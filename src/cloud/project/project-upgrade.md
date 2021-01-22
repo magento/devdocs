@@ -29,7 +29,7 @@ If you upgrade the PHP version, you must also submit a Support ticket to update 
 
 Older versions of {{site.data.var.ee}}, such as 2.1.4 or later to 2.2.x or later, used a `config.local.php` file for Configuration Management. {{site.data.var.ee}} version 2.2.0 and later use the `config.php` file, which works exactly like the `config.local.php` file, but it has different configuration settings that include a list of your enabled modules and additional configuration options.
 
-When upgrading from an older version, you must migrate the the `config.local.php` file to use the newer `config.php` file. Use the following steps to backup your configuration file and create a new one.
+When upgrading from an older version, you must migrate the `config.local.php` file to use the newer `config.php` file. Use the following steps to backup your configuration file and create a new one.
 
 {:.procedure}
 To create a temporary `config.php` file:
