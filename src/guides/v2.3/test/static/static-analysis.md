@@ -12,7 +12,7 @@ This document provides setup steps to get most static analyzers that are used in
 
 ## Before you begin
 
-If you haven't already, make sure that node and npm are installed. Then, in the Magento root directory, run `npm install`.  After installation, ensure there is a `node_modules` directory in the root of your project before proceeding.
+If you have not already, verify that `node` and `npm` are installed. Then, in the Magento root directory, run `npm install`.  After installation, ensure there is a `node_modules` directory in the root of your project before proceeding.
 
 {:bs-callout-info}
 For all of the static configuration installations below involving the PHPStorm Preferences dialog, make sure you are clicking the "Apply" button before clicking "OK" to close the Preferences dialog.
