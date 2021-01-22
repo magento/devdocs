@@ -67,7 +67,7 @@ composer create-project magento/safe-upgrade-tool sut  --repository https://repo
 As SUT is an independent tool, if you try to run:
 
 ```bash
-composer require magento/safe-upgrade-tool 
+composer require magento/safe-upgrade-tool
 ```
 
 It might add the SUT as a dependency for a Magento project.
