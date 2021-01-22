@@ -15,6 +15,3 @@ The SUT returns a list of errors and warnings that you must address before upgra
 It is distributed as a Composer package with every release of a Magento version. See [Developer]({{site.baseurl}}/safe-upgrade-tool/developer.html) topic for more information.
 
 Refer to the [Install]({{site.baseurl}}/safe-upgrade-tool/install.html) for first steps with SUT.
-
-{:.bs-callout-warning}
-At the moment this is an ALPHA version with limited scope, available for all Magento Commerce merchants, only validating PHP Magento APIs and GraphQL schema.

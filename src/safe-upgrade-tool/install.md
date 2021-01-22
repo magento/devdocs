@@ -8,20 +8,17 @@ functional_areas:
 
 The Safe Upgrade Tool ALPHA (SUT) is a command line (CLI) tool that checks a Magento instance against a specific version by analyzing all the non-Magento modules installed on it.
 
-{:.bs-callout-warning}
-At the moment this is an ALPHA version with limited scope, available for all Magento Commerce merchants, only validating PHP Magento APIs and GraphQL schema.
-
 ## Workflow
 
 The following diagram shows the expected workflow when running the SUT:
 
 ![SUT Diagram](img/mvp-diagram-v2.png)
 
-### Who is the SUT for?
+## Who is the SUT for?
 
 The following use case describes the typical process for a Magento partner to upgrade a client's Magento instance:
 
-1. A partner's Software Engineer downloads the SUT package from the [Magento repository](https://repo.magento.com/) and executes it during the beta phase of the newest Magento release.
+1. A partner's Software Engineer downloads the SUT package from the [Magento repository](https://repo.magento.com/) and executes it during the beta phase of the newest Magento release. See the [Download SUT section]({{site.baseurl}}/safe-upgrade-tool/install.html#download-sut) for more information.
 1. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer information guide]({{site.baseurl}}/safe-upgrade-tool/developer.html) for more information on the complexity score.
 1. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
 1. The Account Manager creates a timeline and cost for the Magento upgrade, which allows them to get their manager's approval.
@@ -31,7 +28,7 @@ The following use case describes the typical process for a Magento partner to up
 
 ![SUT audience](img/audience-sut.png)
 
-#### Contact SUT
+### Contact SUT
 
 To connect with the SUT team:
 
@@ -53,11 +50,27 @@ If you are running SUT against a Magento instance with large modules and files, 
 
 Magento best practice is not to have 2 modules with the same name, if this happens SUT will show a segmentation fault error in which case you have to analyze each module independently with the option `-m`:
 
-  ```bash
-  bin/sut upgrade:check /(instance_path) --coming-version=2.4.1 -m /(module_path)
-  ```
+```bash
+bin/sut upgrade:check /(instance_path) --coming-version=2.4.1 -m /(module_path)
+```
 
 If you get memory issues while executing SUT it is recommended to use the `-m` command to run the tool against a specific module.
+
+## Download SUT
+
+To download SUT, run the following command:
+
+```bash
+composer create-project magento/safe-upgrade-tool sut  --repository https://repo.magento.com
+```
+
+As SUT is an independent tool, if you try to run:
+
+```bash
+composer require magento/safe-upgrade-tool
+```
+
+It might add the SUT as a dependency for a Magento project.
 
 ## Install
 
