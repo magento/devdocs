@@ -12,9 +12,6 @@ The SUT identifies potential problems that must be fixed in your custom code bef
 
 The tool returns a list of errors and warnings that you must address before upgrading to a new version of Magento.
 
-{:.bs-callout-warning}
-At the moment this is an ALPHA version with limited scope, only validating PHP Magento APIs and GraphQL schema.
-
 ## Use SUT
 
 Execute the tool by running the following command:
@@ -24,9 +21,15 @@ bin/sut upgrade:check INSTALLATION_DIR
 ```
 
 {:.bs-callout-info}
-We recommend running `php -d memory_limit=-1 /bin/sut` to avoid memory limitations. As well, it is recommended to use the `-m` command to run the tool against a specific module.
-
 The `INSTALLATION_DIR` value is the directory where your Magento instance is located.
+
+We recommend running the following command to avoid memory limitations:
+
+```bash
+php -d memory_limit=-1 /bin/sut
+```
+
+As well, it is recommended to use the `-m` command to run the tool against a specific module.
 
 To see SUT command options and help:
 
