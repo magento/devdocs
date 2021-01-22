@@ -9,7 +9,7 @@ redirect_from:
   - /guides/v2.4/install-gde/system-requirements-tech.html
 ---
 
-{:.bs-calloout-info}
+{:.bs-callout-info}
 If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/services.html#service-versions) in the _Cloud Guide_.
 
 ## Operating systems (Linux x86-64)
@@ -29,7 +29,8 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 [Composer][] is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
 
-Magento does not support Composer 2.x.
+*  Magento 2.4.2 and later is compatible with Composer 1.x and 2.x.
+*  Magento 2.4.1 and earlier is compatible with Composer 1.x only.
 
 ## Web servers
 
@@ -88,7 +89,7 @@ Magento no longer supports Elasticsearch [2.x, 5.x, and 6.x][].
 
 *  A valid [security certificate][] is required for HTTPS.
 *  Self-signed SSL certificates are not supported.
-*  Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.2 or later:
+*  Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.2 or later.
 
 ### Required system dependencies
 

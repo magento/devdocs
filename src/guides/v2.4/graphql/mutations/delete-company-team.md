@@ -59,3 +59,7 @@ Attribute |  Data Type | Description
 ## Output attributes
 
 The `deleteCompanyTeam` mutation returns a Boolean value that indicates whether the operation was successful.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`success` | Boolean | Indicates whether the company team has been deleted successfully (`true` or `false`)

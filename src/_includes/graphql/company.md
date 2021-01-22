@@ -7,20 +7,20 @@ Attribute | Data type | Description
 `credit` | CompanyCredit! | The company credit balance
 `credit_history(filter: CompanyCreditHistoryFilterInput, pageSize: Int = 20, currentPage: Int = 1)` | CompanyCreditHistory! | A history of company credit operations
 `email` | String | The email address of the company contact
-`id` | ID! | The ID assigned to the company
+`id` | ID! | The unique ID of a `Company` object
 `legal_address` | [CompanyLegalAddress](#CompanyLegalAddress) | The address where the company is registered to conduct business
 `legal_name` | String | The full legal name of the company
 `name` | String | The name of the company
 `payment_methods` | [String] | The list of payment methods available to a company
 `reseller_id` | String | The resale number that is assigned to the company for tax reporting purposes
-`role(id: ID!)` | [CompanyRole](#CompanyRole) | Returns information about the specified company role
+`role(id: ID!)` | [CompanyRole](#CompanyRole) | Returns a company role filtered by the unique ID for a `CompanyRole` object
 `roles(pageSize: Int = 20, currentPage: Int = 1 )` | [CompanyRoles!](#CompanyRoles) | Returns the list of company roles
 `sales_representative` |  [CompanySalesRepresentative](#CompanySalesRepresentative) | The company sales representative
 `structure(rootId: ID = 0 depth: Int = 10 )` | [CompanyStructure](#CompanyStructure) | Returns the company structure of teams and customers in depth-first order
-`team(id: ID!)` | [CompanyTeam](#CompanyTeam) | Returns the specified company team
-`user(id: ID!)` | [Customer]({{page.baseurl}}/graphql/queries/customer.html) | Returns the specified company user
-`users(filter: CompanyUsersFilterInput, pageSize: Int = 20, currentPage: Int = 1)`| [CompanyUsers](#CompanyUsers) | Returns the company users that match the specified filter
-`vat_id` | String | The value-added tax number that is assigned to the company by some jurisdictions for tax reporting purposes
+`team(id: ID!)` | [CompanyTeam](#CompanyTeam) | Returns company team data filtered by the unique ID for a `CompanyTeam` object
+`user(id: ID!)` | [Customer]({{page.baseurl}}/graphql/queries/customer.html) | Returns a company user filtered by the unique ID for a `Customer` object
+`users(filter: CompanyUsersFilterInput, pageSize: Int = 20, currentPage: Int = 1)`| [CompanyUsers](#CompanyUsers) | Returns a list of company users based on activity status
+`vat_tax_id` | String | The value-added tax number that is assigned to the company by some jurisdictions for tax reporting purposes
 
 ### CompanyAclResource attributes {#CompanyAclResource}
 
@@ -29,8 +29,8 @@ The `CompanyAclResource` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `children` | [CompanyAclResource!] | An array of sub-resources
-`id` | ID! | The ID assigned to the ACL resource
-`sort_order` | Int | ACL resource sort order
+`id` | ID! | The unique ID for a `CompanyAclResource` object
+`sort_order` | Int | The sort order of an ACL resource
 `text` | String | The label assigned to the ACL resource
 
 ### CompanyAdmin attributes {#CompanyAdmin}
@@ -42,7 +42,7 @@ Attribute |  Data Type | Description
 `email` | String! | The email address of the company administrator
 `firstname` | String! | The company administrator's first name
 `gender` | Int | The company administrator's gender (Male - 1, Female - 2, Not Specified - 3)
-`id` | ID! | The ID assigned to the company administrator
+`id` | ID! | The unique ID for a `CompanyAdmin` object
 `job_title` | String | The job title of the company administrator
 `lastname` | String! | The company administrator's last name
 
@@ -105,8 +105,8 @@ The `CompanyLegalAddress` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `city` | String! | The city where the company is registered to conduct business
-`country_id` | CountryCodeEnum! | Company's country ID. See the [`countries` query]({{page.baseurl}}/graphql/queries/directory-countries.html)
-`postcode` | String! | The ZIP/postal code of the company
+`country_code` | CountryCodeEnum! | Company's country ID. See the [`countries` query]({{page.baseurl}}/graphql/queries/directory-countries.html)
+`postcode` | String! | The company's postal code
 `region` | CustomerAddressRegionInput! | An object containing the region name and/or region ID where the company is registered to conduct business
 `street` | [String!]! | An array of strings that define the street address where the company is registered to conduct business
 `telephone` | String! | The primary phone number of the company.
@@ -117,7 +117,7 @@ The `CompanyRole` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id`| ID! | The ID assigned to the role
+`id`| ID! | The unique ID for a `CompanyRole` object
 `name` | String | The name assigned to the role
 `permissions` | [CompanyAclResource] | A list of permission resources defined for a role
 `users_count` | Int | The total number of users assigned the specified role
@@ -129,7 +129,7 @@ The `CompanyRoles` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `items` | [CompanyRole]! | A list of company roles that match the specified filter criteria
-`page_info` | SearchResultPageInfo | Pagination meta data
+`page_info` | SearchResultPageInfo | Pagination metadata
 `total_count` | Int! | The total number of roles matching the specified filter
 
 ### CompanySalesRepresentative attributes {#CompanySalesRepresentative}
@@ -157,8 +157,8 @@ The `CompanyStructureItem` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `entity` | CompanyStructureEntity | A union of [CompanyTeam](#CompanyTeam) and [Customer]({{page.baseurl}}/graphql/queries/customer.html) objects
-`id` | ID! | The ID of the item in the hierarchy
-`parent_id` | ID | The ID of the parent item in the hierarchy
+`id` | ID! | The unique ID for a `CompanyStructureItem` object
+`parent_id` | ID | The ID of the parent item in the company hierarchy
 
 ### CompanyTeam attributes {#CompanyTeam}
 
@@ -169,6 +169,6 @@ The `CompanyUsers` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`items` | [[Customer]!]({{page.baseurl}}/graphql/queries/customer.html) | An array of `CompanyUser` objects that match the specified search criteria
-`page_info` | SearchResultPageInfo | Pagination meta data
+`items` | [[Customer]!]({{page.baseurl}}/graphql/queries/customer.html) | An array of `CompanyUser` objects that match the specified filter criteria
+`page_info` | SearchResultPageInfo | Pagination metadata
 `total_count` | Int! | The number of objects returned

@@ -259,7 +259,7 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
    -  Log in with your username and password.
 
-   -  When prompted, enter the two-factor authentication code for the magento.cloufrom the authenticator application on your mobile device
+   -  When prompted, enter the two-factor authentication code for the `accounts.magento.cloud` entry from the authenticator application on your mobile device.
 
 ### Manage TFA configuration and recovery codes
 
