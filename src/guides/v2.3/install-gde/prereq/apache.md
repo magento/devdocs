@@ -69,7 +69,7 @@ Server built: Jul 22 2020 14:35:32
 The following sections discusses how to install or upgrade Apache:
 
 *  Install Apache
-*  Upgrade to Apache 2.4 on Ubuntu 12 to use PHP 7.3+
+*  Upgrade to Apache 2.4 on Ubuntu to use PHP 7.3.
 
 ### Installing Apache on Ubuntu {#install-prereq-apache-ubuntu-install}
 
