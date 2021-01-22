@@ -90,7 +90,7 @@ In this example, the custom attribute `volume` was assigned to the `bags` attrib
 `Medium` | `217`
 `Small` | `218`
 
-In this scenario, a [`products`]({{page.baseurl}}/guides/v2.4/graphql/queries/products.html) search filtered to return items where the `volume` attribute is set to `Large` would be similar to the following:
+In this scenario, a [`products`]({{page.baseurl}}/graphql/queries/products.html) search filtered to return items where the `volume` attribute is set to `Large` would be similar to the following:
 
 **Request:**
 
