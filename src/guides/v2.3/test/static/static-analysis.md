@@ -57,7 +57,7 @@ To verify it works, in any JS file add `/** Hello world */` as a doc comment to 
 1. Go to the [Magento Coding Standard GitHub Repository](https://github.com/magento/magento-coding-standard)
 1. Follow instructions within the README to install the Magento Coding Standard for PHPCS.  Verify it is installed with `vendor/bin/phpcs -i`.  You should see `Magento2` in the output.
 1. Go to PHPStorm preferences > Editor > Inspections, and in the adjacent window go to PHP > Quality Tools > PHP_CodeSniffer validation.
-1. Under Coding Standard dropdown, select Magento2.
+1. Under Coding Standard dropdown, select `Magento2`.
 
 See the image below for example configuration:
 
