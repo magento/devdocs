@@ -14,7 +14,7 @@ Previous step
 To migrate your database and static files to Staging and Production:
 
 -  [Deploy code](#code)
--  [Migrate static files](#cloud-live-migrate-static)
+-  [Migrate static files](#migrate-static-files)
 -  [Migrate the database](#cloud-live-migrate-db)
 
 If you encounter errors or need to change project configuration, complete the required updates in your local environment. Then, push the code changes to the Integration environment to deploy and test before pushing to Staging and Production environments.
@@ -27,7 +27,8 @@ You can use the [Project Web Interface](#interface) or [SSH and CLI commands](#s
 
 The Project Web Interface provides features to create, manage, and deploy code in Integration, Staging, and Production environments for Starter and Pro plans.
 
-For Pro projects, deploy the Integration branch you created to Staging and Production:
+{:.procedure}
+For Pro projects, deploy the Integration branch to Staging and Production:
 
 1. [Log in](https://accounts.magento.cloud) to your project.
 1. Select the Integration branch.
@@ -35,13 +36,14 @@ For Pro projects, deploy the Integration branch you created to Staging and Produ
 1. Select the Staging branch.
 1. Select the **Merge** option to deploy to Production.
 
-For Starter, deploy the development branch you created to Staging and Production:
+{:.procedure}
+For Starter, deploy the development branch you created to Staging and Production (master):
 
 1. [Log in](https://accounts.magento.cloud) to your project.
 1. Select the prepared code branch.
 1. Select the **Merge** option to deploy to Staging. Complete all testing.
 1. Select the Staging branch.
-1. Select the **Merge** option to deploy to Production.
+1. Select the **Merge** option to deploy to Master.
 
 ![Use the merge option to deploy]({{ site.baseurl }}/common/images/cloud/cloud_project-merge.png)
 
@@ -54,7 +56,7 @@ You can use the [Magento Cloud CLI commands]({{ site.baseurl }}/cloud/reference/
 -  [Build and deploy on local]({{ site.baseurl }}/cloud/live/live-sanity-check.html)
 -  [Prepare to deploy to Staging and Production]({{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
-#### Step 1:  Deploy and test the Integration environment:
+#### Step 1:  Deploy and test the Integration environment
 
 1. After logging into the project, check out the Integration environment:
 
@@ -112,7 +114,7 @@ You can use the [Magento Cloud CLI commands]({{ site.baseurl }}/cloud/reference/
 
 1. Complete site testing.
 
-#### Step 3: Deploy to Production:
+#### Step 3: Deploy to Production
 
 1. Check out, synchronize, and create a snapshot of your local Production environment.
 
@@ -124,13 +126,46 @@ You can use the [Magento Cloud CLI commands]({{ site.baseurl }}/cloud/reference/
 
 1. Complete site testing.
 
-## Migrate static files {#cloud-live-migrate-static}
+## Migrate static files
 
-You migrate [static files](https://glossary.magento.com/static-files) from your `pub/media` directory to Staging or Production.
+[Static files](https://glossary.magento.com/static-files) are stored in `mounts`. You can list the mounts available in your project using the `magento-cloud` CLI:
 
-We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync). The rsync utility uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed. Rsync also supports compression.
+```bash
+magento-cloud mount:list
+```
 
-Use the following command to migrate files:
+There are two methods for migrating files from a source mount location, such as your local environment, to a destination mount location. Both methods use the `rsync` utility, but we recommend using the `magento-cloud` CLI.
+
+### Migrate files using the CLI
+
+You can use the `mount:upload` and `mount:download` CLI commands to migrate files. Both commands use the `rsync` utility, but the CLI provides options and prompts tailored to the {{site.data.var.ece}} environment.
+
+The following example uploads files from a local `pub/media/` folder to the remote `pub/media/` folder for the current environment:
+
+```bash
+magento-cloud mount:upload --source /path/to/project/pub/media/ --mount pub/media/
+```
+
+Sample response:
+
+```terminal
+Uploading files from pub/media to the remote mount pub/media
+
+Are you sure you want to continue? [Y/n] Y
+
+  building file list ...   done
+  ./
+  sample-file.jpeg
+  
+  sent 8.43K bytes  received 48 bytes  3.39K bytes/sec
+  total size is 154.57K  speedup is 18.23
+```
+
+Use the `--help` option for the `mount:upload` and `mount:download` commands to see more options. For example, there is a `--delete` option to remove extraneous files during the migration.
+
+### Migrate files using rsync
+
+Alternatively, you can use the `rsync` utility to migrate files.
 
 ```bash
 rsync -azvP <source> <destination>
@@ -143,19 +178,13 @@ This command uses the following options:
 -  `v`–verbose
 -  `P`–partial progress
 
-For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
-
-To migrate static files from your local machine, use the `rsync` command to copy the `pub/media` directory from your local Magento server to staging or production:
-
-```bash
-rsync -azvP local_machine/pub/media/ <environment_ssh_link@ssh.region.magento.cloud>:pub/media/
-```
+See the [rsync man page](http://linux.die.net/man/1/rsync).
 
 {:.procedure}
 To migrate static files from remote-to-remote environments directly (fast approach):
 
 {:.bs-callout-info}
-To transfer media from remote-to-remote environments directly, you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).
+To transfer media from remote-to-remote environments directly, you must enable SSH agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).
 
 1. [Open an SSH connection]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh) to the source environment.
 
@@ -165,7 +194,7 @@ To transfer media from remote-to-remote environments directly, you must enable s
    ssh -A <environment_ssh_link@ssh.region.magento.cloud>
    ```
 
-1. Use the `rsync` command to copy the `pub/media` directory from your current environment to  another remote environment:
+1. Use the `rsync` command to copy the `pub/media` directory from your current environment to a different remote environment:
 
    ```bash
    rsync -azvP pub/media/ <destination_environment_ssh_link@ssh.region.magento.cloud>:pub/media/
