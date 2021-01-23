@@ -156,7 +156,7 @@ Are you sure you want to continue? [Y/n] Y
   building file list ...   done
   ./
   sample-file.jpeg
-  
+
   sent 8.43K bytes  received 48 bytes  3.39K bytes/sec
   total size is 154.57K  speedup is 18.23
 ```
