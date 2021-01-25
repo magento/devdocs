@@ -132,7 +132,7 @@ You can use the [Magento Cloud CLI commands]({{ site.baseurl }}/cloud/reference/
 
 ### Migrate files using the CLI
 
-You can use the `mount:upload` and `mount:download` CLI commands to migrate files. Both commands use the `rsync` utility, but the CLI provides options and prompts tailored to the {{site.data.var.ece}} environment. For example, if you use the simple command, the CLI prompts you to select which mount or mounts to upload or download.
+You can use the `mount:upload` and `mount:download` CLI commands to migrate files between the local and remote environment. Both commands use the `rsync` utility, but the CLI commands provide options and prompts tailored to the {{site.data.var.ece}} environment. For example, if you use the simple command with no options, the CLI prompts you to select which mount or mounts to upload or download.
 
 ```bash
 magento-cloud mount:download
@@ -197,21 +197,20 @@ This command uses the following options:
 
 See the [rsync man page](http://linux.die.net/man/1/rsync).
 
-{:.procedure}
-To migrate static files from remote-to-remote environments directly (fast approach):
-
 {:.bs-callout-info}
 To transfer media from remote-to-remote environments directly, you must enable SSH agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).
 
-1. Use SSH to log in to the source environment. Do not use the `magento-cloud` CLI.
+{:.procedure}
+To migrate static files from remote-to-remote environments directly (fast approach):
 
+1. Use SSH to log in to the source environment. Do not use the `magento-cloud` CLI. Using the `-A` option is very important because it enables forwarding of the authentication agent connection.
+
+   {:.bs-callout-tip}
    To find the **SSH access** link in your Project Web Interface, select the environment and click **Access Site**.
 
    ```bash
    ssh -A <environment_ssh_link@ssh.region.magento.cloud>
    ```
-
-   Using the `-A` option is very important because it enables forwarding of the authentication agent connection.
 
 1. Use the `rsync` command to copy the `pub/media` directory from your source environment to a different remote environment.
 
