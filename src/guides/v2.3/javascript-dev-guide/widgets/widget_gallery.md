@@ -580,3 +580,46 @@ api.updateOptions([{
 [Fotorama widget]: http://fotorama.io/
 [lib/web/mage/gallery/gallery.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
 [lib/web/magnifier/magnify.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/magnifier/magnify.js
+
+## Code sample
+
+This example shows a use case for a gallery widget on any page.
+
+```html
+<div class="image-gallery"></div>
+ 
+<script>
+require ([
+    'jquery',
+    'mage/gallery/gallery'
+], function ($, gallery) {
+    $(function () {
+        $('.image-gallery').each(function (index, element) {
+            gallery({
+                options: {
+                    "nav": "false",
+                    "loop": "true",
+                    "arrows": "true"
+                },
+                data: [
+                    { img: "<image_url_1>" },
+                    { img: "<image_url_2>" },
+                    { img: "<image_url_3>" }
+                ],
+                fullscreen: {
+                    "navdir": "horizontal"
+                },
+                "breakpoints": {
+                    "<breakpoint_name>": {
+                        "conditions": {
+                            "max-width": "767px"
+                        },
+                        "options": {}
+                    }
+                }
+            }, element);
+        });
+    });
+});
+</script>
+```
