@@ -198,6 +198,18 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Added support for reading `exif_image.png` or `exif-image.jpeg` metadata. [GitHub-1449](https://github.com/magento/adobe-stock-integration/issues/1449)
 
+<!-- ENGCOM-8194 8094 8147-->
+
+*  The content displayed when you click the Default View bookmark for the Media Gallery is no longer filtered. Previously, the default view contained a filter that was applied from `url-filter` applier. [GitHub-1813](https://github.com/magento/adobe-stock-integration/issues/1813), [GitHub-1789](https://github.com/magento/adobe-stock-integration/issues/1789), [GitHub-1780](https://github.com/magento/adobe-stock-integration/issues/1780)
+
+<!-- ENGCOM-8070 -->
+
+*  Logic has been removed from the WYSIWYG OnInsert controller (`Magento\Cms\Controller\Adminhtml\Wysiwyg\Images\OnInsert::execute()` ) and added to the `Model\Wysiwyg\Images\PrepareImage::execute()` model. [GitHub-1504](https://github.com/magento/adobe-stock-integration/issues/1504)
+
+<!-- ENGCOM-8081 -->
+
+*  Area emulation has been removed from the `media-content:sync` command (`\Magento\MediaContentSynchronization\Console\Command\Synchronize::execute`). [GitHub-1784](https://github.com/magento/adobe-stock-integration/issues/1784)
+
 ### Analytics
 
 <!--- MC-37137-->
@@ -528,6 +540,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Changed `@param string $attribute` to  `@param AbstractAttribute|string[]|string $attribute` in `EntityAbstract.php`. [GitHub-30191](https://github.com/magento/magento2/issues/30191)
 
+<!-- ENGCOM-8056 -->
+
+*  `rl` has been corrected to `url` in  `\Magento\Framework\Filter\Template\Tokenizer\Parameter`.  [GitHub-29185 ](https://github.com/magento/magento2/issues/29185)
+
 ### Configurable products
 
 <!--- MC-35016-->
@@ -550,11 +566,19 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Storefront product pages now display tier prices without taxes as expected. [GitHub-12225](https://github.com/magento/magento2/issues/12225)
 
+<!-- ENGCOM-8134 8174-->
+
+*  MSRP prices for configurable products are now converted to the chosen currency correctly. Previously, Magento displayed prices in the wrong currency and threw this error:  `Call to a member function setAppliedTaxes() on null`. [GitHub-26526](https://github.com/magento/magento2/issues/26526), [GitHub-29603](https://github.com/magento/magento2/issues/29603)
+
 ### cron
 
 <!--- MC-37712-->
 
 *  The System Message list now accurately reflects product updates after `cron` has run and Magento has updated products as scheduled.
+
+<!-- ENGCOM-8164 -->
+
+*  An index based on `schedule_id` and `status` has been added to the `cron_schedule` table. [GitHub-29601](https://github.com/magento/magento2/issues/29601)
 
 ### Custom customer attributes
 
@@ -663,6 +687,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!--- MC-38337-->
 
 *  Magento now sends email reminders to all relevant customers with valid email addresses. Previously, Magento stopped sending reminder emails to customers after encountering one invalid address.
+
+<!-- ENGCOM-7517 -->
+
+*  Sending sales email in asynchronous mode now works as  expected after a product is removed from a catalog. Previously, asynchronous email sending was blocked, and Magento displayed this error:  `main.ERROR: Cron Job sales_send_order_invoice_emails has an error: Call to a member function getData() on null. Statistics: {"sum":0,"count":1,"realmem":0,"emalloc":0,"realmem_start":73400320,"emalloc_start":37177640} [] []main.CRITICAL: Error when running a cron job {"exception":"[object] (RuntimeException(code: 0): Error when running a cron job at /var/www/html/vendor/magento/module-cron/Observer/ProcessCronQueueObserver.php:327, Error(code: 0): Call to a member function getData() on null at /var/www/html/vendor/magento/module-catalog/Helper/Image.php:502)"} []`. [GitHub-26878](https://github.com/magento/magento2/issues/26878)
 
 ### Frameworks
 
@@ -786,6 +814,38 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  You can now remove a filter from the Product Categories page. Previously, when you tried to delete the filter, Magento did not let you remove the filter and displayed this error:  `Something went wrong`. [GitHub-8538](https://github.com/magento/magento2/issues/8538)
 
+<!-- ENGCOM-8050 -->
+
+*  `Magento\Framework\MessageQueue\ConfigInterface` can now be instantiated when optional module `Magento_MessageQueue` is disabled. Previously, Magento threw this error: `PHP Fatal error:  Uncaught Error: Cannot instantiate interface Magento\Framework\MessageQueue\ConfigInterface in /var/www/magento2/magento2/lib/internal/Magento/Framework/ObjectManager/Factory/AbstractFactory.php:121`. [GitHub-26080](https://github.com/magento/magento2/issues/26080)
+
+<!-- ENGCOM-7312 -->
+
+*  Logic that determines when Magento can retrieve email value from persistent storage has been improved. Previously, Magento displayed populated password fields on the checkout page when an unregistered user returned to the checkout page after first completing the email field. [GitHub-26903](https://github.com/magento/magento2/issues/26903)
+
+<!-- ENGCOM-7777 -->
+
+*  A missing `aclResource` attribute has been added to the Admin header `AdminNotification` toolbar block. Previously, the Admin notification toolbar entry was visible even when the Admin user does not have role resource permissions to see it. [GitHub-29067](https://github.com/magento/magento2/issues/29067)
+
+<!-- ENGCOM-8093 -->
+
+*  Customer data is now retrieved as expected when you execute a custom login controller. Previously,reloading all `customer-data` sections by wildcard (*) caused requests to `customer/section/load` to return a 400. [GitHub-28428](https://github.com/magento/magento2/issues/28428)
+
+<!-- ENGCOM-8022 -->
+
+*  The framework/database/select `where` functions now handle the `type` correctly. [GitHub-29590](https://github.com/magento/magento2/issues/29590)
+
+<!-- ENGCOM-8260 -->
+
+*  Issues with `array_merge` in loops has been fixed throughout the codebase, which improves static content deployment. [GitHub-30183](https://github.com/magento/magento2/issues/30183)
+
+<!-- ENGCOM-8445 -->
+
+*  The default Admin session lifetime has been moved from the encryption module to the security module. [GitHub-30859](https://github.com/magento/magento2/issues/30859)
+
+<!-- ENGCOM-8425 -->
+
+*  Magento now checks for private constants in a class and displays a warning if there are any static:: calls to them. Previously, Magento threw this error: `Undefined class constant`.
+
 ### GraphQL
 
 <!--- MC-37615-->
@@ -882,6 +942,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  The limit of 90 characters for image file names  in `vendor/magento/framework/File/Uploader.php` has been removed.  Previously, directory and file name length could not exceed 255 characters. Magento imported products with images whose file name exceeded this limit, but did not import the image file. [GitHub-29377](https://github.com/magento/magento2/issues/29377)
 
+<!-- ENGCOM-8153 -->
+
+*  Coupon codes can now be successfully exported to CSV or XML. Previously, Magento displayed a 404 error when you clicked **Export CSV** or **Export XML** when you tried to export coupons. [GitHub-29277](https://github.com/magento/magento2/issues/29277)
+
 ### Index
 
 <!--- MC-38003-->
@@ -906,6 +970,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Comments in database tables now accurately reflect table status after re-indexing (`bin/magento indexer:reindex`). Previously, table comments after re-indexing contained the same values that comments contained after a fresh installation.
 
+<!-- ENGCOM-7542 -->
+
+*  The `SELECT entity_id IN` statement has been improved  in deployments implementing  MariaDB v.10.3.18, which has improved the performance of catalog category indexing. [GitHub-25199](https://github.com/magento/magento2/issues/25199)
+
 ### Infrastructure
 
 <!--- MC-34353-->
@@ -916,9 +984,9 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Issues with the calculation of remainders for decimal values for product quantities have been corrected in the relevant JavaScript library. Magento previously calculated decimal fractions of more than two digits incorrectly and subsequently displayed an incorrect message.
 
-<!--- MC-38993-->
+<!--- MC-38993 ENGCOM-8473-->
 
-*  The `\Magento\Authorization\Model\Rules::update` method has been deprecated.
+*  The `\Magento\Authorization\Model\Rules::update` method has been deprecated.  [GitHub-29128](https://github.com/magento/magento2/issues/29128)
 
 <!-- ENGCOM-8000 -->
 
@@ -980,6 +1048,12 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Removed the dependency on the PayPal module. [GitHub-29421](https://github.com/magento/magento2/issues/29421)
 
+### Logging
+
+<!-- ENGCOM-8443 -->
+
+*  Admin action logs correctly log before-change values as expected.  Previously, when you saved store configuration values, the `Magento_Logging` module correctly registered new values, but did not display previous ones. The values in the column Value Before Change displayed values of N/A regardless of whether this was the first change or the next, or when the default value was returned. [GitHub-26943](https://github.com/magento/magento2/issues/26943)
+
 ### Media Gallery
 
 <!-- ENGCOM-8014 -->
@@ -997,6 +1071,30 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8015 -->
 
 *  The Tags drop-down menu is now empty as expected after you remove tags from an image in the Media Gallery.  [GitHub-1703](https://github.com/magento/adobe-stock-integration/issues/1703)
+
+<!-- ENGCOM-8146 -->
+
+*  Batch processing for Media Gallery synchronization queue messages is now supported. [GitHub-1724](https://github.com/magento/adobe-stock-integration/issues/1724)
+
+<!-- ENGCOM-8064 -->
+
+*  Magento now displays a 404 page as expected when you try to open the Media Gallery  when **Enhanced Media Gallery** is disabled. [GitHub-1760](https://github.com/magento/adobe-stock-integration/issues/1760)
+
+<!-- ENGCOM-8072 -->
+
+*  `MediaGalleryMetadata` now skips the segment reader if an exception occurs and instead parse and displays image metadata as expected. Previously, the image metadata was empty due to an exception from the `exif_read_data` segment reader. [GitHub-1782](https://github.com/magento/adobe-stock-integration/issues/1782)
+
+<!-- ENGCOM-8069 -->
+
+*  Folder name length no longer prevents an image from being uploaded to the Media Gallery. MediaGallery now sets path column as type `text`. [GitHub-1778](https://github.com/magento/adobe-stock-integration/issues/1778)
+
+<!-- ENGCOM-8217 -->
+
+*  Image uploader now displays the correct image size when a rendition is inserted from Media Gallery. [GitHub-1806](https://github.com/magento/adobe-stock-integration/issues/1806)
+
+<!-- ENGCOM-8467 -->
+
+*  Path verification has been added to the `Mediagallery` uploader plugin. Previously, validation failed, and Magento did not import products when **Enable Old Media Gallery** is disabled. [GitHub-30649](https://github.com/magento/magento2/issues/30649)
 
 ### MFTF
 
@@ -1040,9 +1138,25 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Added test for deleting a CMS block from a grid by an administrator. [GitHub-30372](https://github.com/magento/magento2/issues/30372)
 
+<!-- ENGCOM-7933 -->
+
+*  Added test for applying a shopping cart rule to a single bundle item. [GitHub-28921](https://github.com/magento/magento2/issues/28921)
+
+<!-- ENGCOM-8075 -->
+
+*  Added tests to check whether **Used In** information for a Media Gallery image is displayed after the entity was deleted. [GitHub-1774](https://github.com/magento/adobe-stock-integration/issues/1774)
+
 <!-- ENGCOM-8280 -->
 
 *  An issue with `StorefrontProductListWidgetWithSharedCatalogTest` that caused the test to be skipped has been resolved. [GitHub-322](https://github.com/magento/partners-magento2b2b/issues/322)
+
+<!-- ENGCOM-8122 -->
+
+*  Implemented `ActionGroup` to navigate to the checkout page. [GitHub-29843](https://github.com/magento/magento2/issues/29843)
+
+<!-- ENGCOM-8124 -->
+
+*  Implemented `AdminOpenCreateNewCMSPageActionGroup` to navigate to create new CMS page. [GitHub-29824](https://github.com/magento/magento2/issues/29824)
 
 <!-- ENGCOM-8268 -->
 
@@ -1092,9 +1206,11 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  `AdminClickGetShippingMethodsAndRatesActionGroup`. [GitHub-30782](https://github.com/magento/magento2/issues/30782) <!-- ENGCOM-8436 -->
 
-*  `AdminSelectFixedShippingMethodActionGroup`. [GitHub-30782](https://github.com/magento/magento2/issues/30782) <!-- ENGCOM-8436 --> 
+*  `AdminSelectFixedShippingMethodActionGroup`. [GitHub-30782](https://github.com/magento/magento2/issues/30782) <!-- ENGCOM-8436 -->
 
 *  `StorefrontClickProceedToCheckoutActionGroup`. [GitHub-30926](https://github.com/magento/magento2/issues/30926) <!-- ENGCOM-8438 -->
+
+*  `StorefrontOpenMyAccountPageActionGroup`. [GitHub-29842](https://github.com/magento/magento2/issues/29842) <!-- ENGCOM-8143 -->
 
 ### Newsletter
 
@@ -1105,6 +1221,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8034 -->
 
 *  Magento now re-sends newsletter subscription confirmation if the shopper does not confirm their newsletter subscription. [GitHub-28422](https://github.com/magento/magento2/issues/28422)
+
+<!-- ENGCOM-8429 -->
+
+*  You can now edit a customer account as expected when the customer is subscribed to a queued newsletter. [GitHub-30645](https://github.com/magento/magento2/issues/30645)
 
 ### Payment methods
 
@@ -1141,6 +1261,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!--- MC-39442-->
 
 *  Clicking the **PayPal** button during checkout no longer triggers a redundant `web-api` call. Previously, two requests were triggered, which doubled the charge for the product.
+
+<!-- ENGCOM-8173 -->
+
+*  Guest shoppers can now place PayPal orders when **Automatic Assignment to Customer Group** is enabled. The payment is processed on the PayPal gateway, the order is created in Magento, and shopper sees the order thank-you page. Previously, the order was processed successfully on the PayPal gateway, but the order was not created in Magento. The shopper was instead ire-directed to the order review page, where Magento displayed this error: `Failed address validation: %1" error`. [GitHub-25399](https://github.com/magento/magento2/issues/25399)
 
 ### Performance
 
@@ -1348,6 +1472,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Search is now disabled as expected for a selected customer group from the products query when the **Disallow Catalog Search By** configuration setting in the general Category Permissions is enabled. [GitHub-29927](https://github.com/magento/magento2/issues/29927)
 
+<!-- ENGCOM-8466 -->
+
+*  Search results no longer include multiple quotations of the same word. [GitHub-30104](https://github.com/magento/magento2/issues/30104)
+
 ### Shipping
 
 <!--- MC-38247 -->
@@ -1386,6 +1514,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  The shipment tracking link in the shipment confirmation email sent to customers now works as expected. Previously, this link returned a 404 error.
 
+<!-- ENGCOM-8025 -->
+
+*  Magento now displays an informative error message when a shopper checks out using multiple addresses, then removes all products other than a virtual product. [GitHub-25595](https://github.com/magento/magento2/issues/25595)
+
 ### Sitemap
 
 <!--- MC-37306-->
@@ -1417,6 +1549,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!--- MC-37761-->
 
 *  Orders being shipped to multiple addresses can now be saved during checkout when FPT is configured. Previously, after completing an order for multiple addresses, Magento displayed a blank page instead of the order success page.
+
+<!-- ENGCOM-8158 -->
+
+*  Storefront product detail pages now display old and new prices with and without tax as expected. [GitHub-27500](https://github.com/magento/magento2/issues/27500), [GitHub-11998](https://github.com/magento/magento2/issues/11998)
 
 ### Test
 
@@ -1460,6 +1596,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  The currency availability test for Company credit has been automated.
 
+<!-- ENGCOM-7762 -->
+
+*  Header values that include URLs are now parsed properly in ApiFunctional TestFramework. [GitHub-26425](https://github.com/magento/magento2/issues/26425)
+
 ### Theme
 
 <!--- MC-37630 -->
@@ -1477,6 +1617,14 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8285 -->
 
 *  Added collapsible navigation functionality to the Blank theme in mobile view. [GitHub-30237](https://github.com/magento/magento2/issues/30237)
+
+<!-- ENGCOM-7803 -->
+
+*  Web font loading for themes has been optimized.  [GitHub-29526](https://github.com/magento/magento2/issues/29526)
+
+<!-- ENGCOM-8419 -->
+
+*  Deployment of specific themes for multiple locales has been optimized, which improves deployment that use a single theme with different locales. [GitHub-30184](https://github.com/magento/magento2/issues/30184)
 
 ### Translation and locales
 
@@ -1566,6 +1714,22 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Filter visibility now works with column visibility as expected in Admin grids.  [GitHub-30345](https://github.com/magento/magento2/issues/30345)
 
+<!-- ENGCOM-8152 -->
+
+*  UI select component options are no longer visible when `this.disabled(true)` is set. [GitHub-29098](https://github.com/magento/magento2/issues/29098)
+
+<!-- ENGCOM-7901 -->
+
+*  The `@font-family-name__base` variable  is no longer used when loading the Open Sans font. [GitHub-29515](https://github.com/magento/magento2/issues/29515)
+
+<!-- ENGCOM-8120 -->
+
+*  The WAI-ARIA attribute `aria-atomic="true”` has been added to the error container tag. [GitHub-29560](https://github.com/magento/magento2/issues/29560)
+
+<!-- ENGCOM-8175 -->
+
+*  UI Component grids now display an accurate count of selected items. Previously, grids indicated a wrong number of selections when a search by keyword selected all  grid items, and the shopper subsequently deselected some items before selecting the header checkbox. [GitHub-29968](https://github.com/magento/magento2/issues/29968)
+
 ### Vault
 
 <!--- MC-39109-->
@@ -1588,9 +1752,9 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 ### Web API framework
 
-<!--- MC-23904 -->
+<!--- MC-23904 ENGCOM-8421-->
 
-*  You can now use the REST API to refund an invoice that has a zero quantity of products and zero shipping charges (for example, {“items": [{"qty": 0, "orderItemId": 6, "extensionAttributes": {}}], "appendComment": false, "notify": true, "isOnline": true, "arguments": {"adjustment_negative": 0.0, "adjustment_positive": 0.99, "shipping_amount": 0}}.) Previously, Magento threw this error: `You can't create a creditmemo without products`.
+*  You can now use the REST API to refund an invoice that has a zero quantity of products and zero shipping charges (for example, {“items": [{"qty": 0, "orderItemId": 6, "extensionAttributes": {}}], "appendComment": false, "notify": true, "isOnline": true, "arguments": {"adjustment_negative": 0.0, "adjustment_positive": 0.99, "shipping_amount": 0}}.) Previously, Magento threw this error: `You can't create a creditmemo without products`. [GitHub-23069](https://github.com/magento/magento2/issues/23069)
 
 <!--- MC-33732 -->
 
@@ -1625,6 +1789,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8062 -->
 
 *  Magento now displays selected configurable product attribute options in the wishlist page as expected.  [GitHub-24091](https://github.com/magento/magento2/issues/24091),  [GitHub-22503](https://github.com/magento/magento2/issues/22503)
+
+<!-- ENGCOM-7779 -->
+
+*  Implemented `ActionInterface` for \Magento\Wishlist\Controller\Shared\Allcart. [GitHub-29537](https://github.com/magento/magento2/issues/29537)
 
 ## Known issue
 
