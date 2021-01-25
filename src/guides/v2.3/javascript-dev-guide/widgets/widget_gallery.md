@@ -623,3 +623,13 @@ require ([
 });
 </script>
 ```
+
+The breakpoints options are set in the `view.xml` configuration file of a theme. The file is conventionally located in `<theme_dir>/etc`.
+
+```xml
+<var name="breakpoints">
+    <var name="%breakpoints_option1%">%option1_value%</var>
+    <var name="%breakpoints_option2%">%option2_value%</var>
+...
+</var>
+```
