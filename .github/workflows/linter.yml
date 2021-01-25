@@ -11,18 +11,11 @@ name: Lint Code Base
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
 #
 
-#############################
-# Start the job on all push #
-#############################
+###################################
+# Start the job on a pull request #
+###################################
 on:
-  pull_request:
-    branches:
-      - master
-      - 2.*-develop
-    paths-ignore:
-      - '**.md'
-      - '**.html'
-      - '**.xml'
+  pull_request
 
 ###############
 # Set the Job #
@@ -54,4 +47,5 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
           VALIDATE_HTML: false
-          VALIDATE_MARKDOWN: false
+          VALIDATE_OPENAPI: false
+          MARKDOWN_CONFIG_FILE: .markdownlint.json
