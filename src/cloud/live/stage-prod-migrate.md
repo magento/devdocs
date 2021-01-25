@@ -128,7 +128,7 @@ You can use the [Magento Cloud CLI commands]({{ site.baseurl }}/cloud/reference/
 
 ## Migrate static files
 
-[Static files](https://glossary.magento.com/static-files) are stored in `mounts`. There are two methods for migrating files from a source mount location, such as your local environment, to a destination mount location. Both methods use the `rsync` utility, but we recommend using the `magento-cloud` CLI for moving files between the local and remote environment.
+[Static files](https://glossary.magento.com/static-files) are stored in `mounts`. There are two methods for migrating files from a source mount location, such as your local environment, to a destination mount location. Both methods use the `rsync` utility, but we recommend using the `magento-cloud` CLI for moving files between the local and remote environment. And we recommend using the `rsync` method when moving files from a remote source to a different remote location.
 
 ### Migrate files using the CLI
 
