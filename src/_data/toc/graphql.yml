@@ -318,6 +318,9 @@ pages:
         - label: deleteCompanyRole mutation
           url: /graphql/mutations/delete-company-role.html
           edition: b2b-only
+        - label: createGiftRegistry mutation
+          url: /graphql/mutations/create-gift-registry.html
+          edition: ee-only
           exclude_versions: ["2.3"]
 
         - label: deleteCompanyTeam mutation
@@ -516,6 +519,11 @@ pages:
 
         - label: updateWishlist mutation
           url: /graphql/mutations/update-wishlist.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: shareGiftRegistry mutation
+          url: /graphql/mutations/share-gift-registry.html
           edition: ee-only
           exclude_versions: ["2.3"]
 
