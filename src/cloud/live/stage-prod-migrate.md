@@ -128,19 +128,36 @@ You can use the [Magento Cloud CLI commands]({{ site.baseurl }}/cloud/reference/
 
 ## Migrate static files
 
-[Static files](https://glossary.magento.com/static-files) are stored in `mounts`. You can list the mounts available in your project using the `magento-cloud` CLI:
-
-```bash
-magento-cloud mount:list
-```
-
-There are two methods for migrating files from a source mount location, such as your local environment, to a destination mount location. Both methods use the `rsync` utility, but we recommend using the `magento-cloud` CLI.
+[Static files](https://glossary.magento.com/static-files) are stored in `mounts`. There are two methods for migrating files from a source mount location, such as your local environment, to a destination mount location. Both methods use the `rsync` utility, but we recommend using the `magento-cloud` CLI for moving files between the local and remote environment.
 
 ### Migrate files using the CLI
 
-You can use the `mount:upload` and `mount:download` CLI commands to migrate files. Both commands use the `rsync` utility, but the CLI provides options and prompts tailored to the {{site.data.var.ece}} environment.
+You can use the `mount:upload` and `mount:download` CLI commands to migrate files. Both commands use the `rsync` utility, but the CLI provides options and prompts tailored to the {{site.data.var.ece}} environment. For example, if you use the simple command, the CLI prompts you to select which mount or mounts to upload or download.
 
-The following example uploads files from a local `pub/media/` folder to the remote `pub/media/` folder for the current environment:
+```bash
+magento-cloud mount:download
+```
+
+Sample response:
+
+```terminal
+Enter a number to choose a mount to download from:
+  [0] app/etc
+  [1] pub/static
+  [2] var
+  [3] pub/media
+  [4] All mounts
+ > 3
+
+Target directory: ~/pub/media/
+
+Downloading files from the remote mount pub/media to pub/media
+
+Are you sure you want to continue? [Y/n] Y
+```
+
+{:.procedure}
+To upload files from a local `pub/media/` folder to the remote `pub/media/` folder for the current environment:
 
 ```bash
 magento-cloud mount:upload --source /path/to/project/pub/media/ --mount pub/media/
@@ -174,7 +191,7 @@ rsync -azvP <source> <destination>
 This command uses the following options:
 
 -  `a`–archive
--  `z`–compress
+-  `z`–compress files during the migration
 -  `v`–verbose
 -  `P`–partial progress
 
@@ -186,19 +203,23 @@ To migrate static files from remote-to-remote environments directly (fast approa
 {:.bs-callout-info}
 To transfer media from remote-to-remote environments directly, you must enable SSH agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).
 
-1. [Open an SSH connection]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh) to the source environment.
+1. Use SSH to log in to the source environment. Do not use the `magento-cloud` CLI.
 
-   To find the **SSH access** link in your Project Web Interface, select the environment and click **Access Site**. The syntax for the SSH command is as follows:
+   To find the **SSH access** link in your Project Web Interface, select the environment and click **Access Site**.
 
    ```bash
    ssh -A <environment_ssh_link@ssh.region.magento.cloud>
    ```
 
-1. Use the `rsync` command to copy the `pub/media` directory from your current environment to a different remote environment:
+   Using the `-A` option is very important because it enables forwarding of the authentication agent connection.
+
+1. Use the `rsync` command to copy the `pub/media` directory from your source environment to a different remote environment.
 
    ```bash
    rsync -azvP pub/media/ <destination_environment_ssh_link@ssh.region.magento.cloud>:pub/media/
    ```
+
+1. Log in to the other remote environment to verify the files migrated successfully.
 
 ## Migrate the database {#cloud-live-migrate-db}
 
