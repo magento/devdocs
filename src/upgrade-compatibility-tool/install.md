@@ -104,7 +104,7 @@ The **public key** corresponds to the _username_ whereas the **private key** is 
 
 ### Composer
 
-Clone the [upgrade-compatibility-tool](https://github.com/magento-commerce/safe-upgrade-tool) repository and run `composer install` in your terminal to install dependencies.
+Clone the Upgrade Compatibility Tool repository and run `composer install` in your terminal to install dependencies.
 
 {:.bs-callout-warning}
 If the **Magento access keys** are not correctly configured, the Upgrade Compatibility Tool will not install and you will get errors when running the `composer install` command.
