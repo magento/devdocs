@@ -2053,8 +2053,9 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 **Issue**: Buyers are redirected to the shopping cart when trying to place an order from a purchase order using PayPal Express Checkout when **In-Context Mode** is disabled. <!--- B2B-1604-->
 
-**Issue**: Magento randomly When attempting to create a purchase order and navigating to the initial checkout page, a bad request can occasionally be observed in the browser console when a buyer creates a purchase order and navigates to the checkout page. The buyer can still place the purchase order. Magento displays this error when a buyer has previously created a different purchase order with an online payment method before navigating to checkout page without completing the purchase. **Workaround**: None. <!--- B2B-1605-->
+**Issue**: Magento sometimes displays a 404 error when a buyer creates a purchase order and then navigates to the checkout page. This error occurs when a buyer has previously created a different purchase order with an online payment method before navigating to the checkout page without completing the previous purchase. The buyer can still place the purchase order. **Workaround**: None. <!--- B2B-1605-->
 
+**Issue**: Discounts for a specific payment method persist during checkout for a purchase order even when the buyer changes payment method during final checkout. As a result, customers may receive a discount that they are not entitled to. This occurs because a cart rule for the original payment method is still applied despite the change in payment method. **Workaround**: None. <!-- B2B-1012 -->
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
