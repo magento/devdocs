@@ -955,7 +955,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8260 -->
 
-*  Issues with `array_merge` in loops has been fixed throughout the codebase, which improves static content deployment. [GitHub-30183](https://github.com/magento/magento2/issues/30183)
+*  Inefficient use of `array_merge` in loops has been refactored throughout the codebase, improving performance in several places, including in the static content deployment process. [GitHub-30183](https://github.com/magento/magento2/issues/30183)
 
 <!-- ENGCOM-8445 -->
 
@@ -1849,7 +1849,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8419 -->
 
-*  Deployment of specific themes for multiple locales has been optimized, which improves deployment that use a single theme with different locales. [GitHub-30184](https://github.com/magento/magento2/issues/30184)
+*  A new `--no-parent` flag was added to the `bin/magento setup:static-content:deploy` command that prevents the parent(s) of a theme from being compiled. This new flag you can significantly improve the performance of the static content deployment process by avoiding  unnecessary compilation. Note that this new flag does not work when using the `compact` strategy. [GitHub-30184](https://github.com/magento/magento2/issues/30184)
 
 ### Translation and locales
 
@@ -2042,8 +2042,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 ## Known issues
 
 **Issue**: The `deleteRequisitionListOutput` query returns details about the deleted requisition list instead of the remaining requisition lists. <!--- MC-39894-->
-
-**Issue**: Shoppers cannot add a configurable product to their cart from a non-default store view in a multi-store deployment. Magento displays this error: `Could not add item to cart. Please check required options and try again`. **Workaround**: None. [GitHub-31660](https://github.com/magento/magento2/issues/31660)<!--- PWA-1298-->
 
 **Issue**: Merchants must activate the Fastly Force TLS functionality from the Admin to enable the global HTTP to HTTPS redirect for all store pages. See the [Redirect HTTP to HTTPS for all pages on Cloud (Force TLS)](https://support.magento.com/hc/en-us/articles/360006296953) Knowledge Base article. <!--- MC-39988-->
 
