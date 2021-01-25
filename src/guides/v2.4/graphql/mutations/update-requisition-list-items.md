@@ -30,7 +30,7 @@ The following example updates the quantity of an item in a requisition list.
 
 **Request:**
 
-``` graphql
+```graphql
 mutation {
   updateRequisitionListItems(
     requisitionListUid: "Mg==",
@@ -48,7 +48,7 @@ mutation {
       items {
         items {
           uid
-          quantity 
+          quantity
           product {
             uid
             name
@@ -63,7 +63,7 @@ mutation {
 
 **Response:**
 
-``` json
+```json
 {
 {
   "data": {

@@ -11,9 +11,7 @@ These release notes can include:
 
 ## Magento B2B - Version 1.3.1
 
--  {:.fix} Creating a company through the REST API now dispatches notification emails as expected to designated administrators and customers. <!--- MC-35629-->
-
--  {:.fix} You can now successfully run `bin/magento setup:upgrade`  after defining a new default customer group after installing the B2B module. Previously, when you ran this command, Magento did not install the B2B module and displayed this error: `Module 'Magento_Company': Unable to apply data patch Magento\Company\Setup\Patch\Data\AddAccessViolationPageAndAssignB2CCustomers for module Magento_Company. Original exception message: Area code is not set`. This was caused by an incorrect default group code during the initialization of the shared catalog module.<!--- MC-36274-->
+-  {:.new} Online payment methods are now supported for purchase orders.
 
 -  {:.fix} Adding a configurable product to the shopping cart directly from a requisition list when this product was used in a prior order no longer returns a system error. [GitHub-302](https://github.com/magento/partners-magento2b2b/issues/302)
 

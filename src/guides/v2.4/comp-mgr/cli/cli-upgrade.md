@@ -18,6 +18,8 @@ You can upgrade your Magento application from the command line if you installed 
 {:.bs-callout-info}
 Do not use this method to upgrade if you cloned the Magento 2 GitHub repository. Instead, see [Update the Magento application][] for upgrade instructions.
 
+The following instructions show you how to upgrade Magento using Composer. Magento 2.4.2 introduced support for Composer 2. If you are attempting to upgrade from Magento <2.4.1, you must first upgrade to a version of Magento that is compatible with Composer 2 (for example, 2.4.2) using Composer 1 _before_ upgrading to Composer 2 for Magento >2.4.2 upgrades.
+
 ## Before you begin {#prerequisites}
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:

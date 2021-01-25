@@ -70,6 +70,9 @@ pages:
         - label: Running Static Tests
           url: /test/static/static_test_execution.html
 
+        - label: Setting up for Static Analysis
+          url: /test/static/static-analysis.html
+
     - label: Semantic Version Checker
       children:
 

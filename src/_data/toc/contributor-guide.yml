@@ -14,6 +14,10 @@ pages:
           url: /contributor-guide/backward-compatible-development/
           versionless: true
 
+        - label: Pull Request Tests
+          url: /contributor-guide/pull-request-tests.html
+          versionless: true
+
     - label: Docs Contributions
       children:
         - label: Contribution Guidelines
