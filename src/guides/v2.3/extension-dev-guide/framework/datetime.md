@@ -45,8 +45,9 @@ use Magento\Framework\Stdlib\DateTime;
      * @return string
      */
     public function getFormatDate(): string
-    {        
+    {
     return $this->dataTime->formatDate(time());
     }
 
 ...
+```
