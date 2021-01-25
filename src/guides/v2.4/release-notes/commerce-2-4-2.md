@@ -151,7 +151,7 @@ This release includes enhancements to Page Builder content migration and Page Bu
 
 *  The new mobile [viewport switcher](https://docs-beta.magento.com/user-guide/cms/page-builder-workspace.html#viewports) and viewport scope for form field values lets users and developers perform these actions:
 
-   *  View content on different viewports when authoring.
+   *  View content on different view ports when authoring.
 
    *  Optimize minimum height field parameter on different content types for each viewport. (Only one parameter (min height) is supported out of the box. Custom development required to enable mobile optimization for other content parameters.)
 
@@ -343,7 +343,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-35783-->
 
-*  Magento now displays the `You have no items in your shopping cart` message in the minicart as expected when a shopper removes the only item in their cart. Previously, cart data was not updated for 'checkout/cart/removeFailed' when a shopper removed the single item, and Magento displayed this message: `1 product requires your attention`.
+*  Magento now displays the `You have no items in your shopping cart` message in the mini cart as expected when a shopper removes the only item in their cart. Previously, cart data was not updated for 'checkout/cart/removeFailed' when a shopper removed the single item, and Magento displayed this message: `1 product requires your attention`.
 
 <!--- MC-36088-->
 
@@ -609,7 +609,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8478 -->
 
-*  Corrected the pluralization of “item” in the minicart and checkout order summary. [GitHub-29920](https://github.com/magento/magento2/issues/29920)
+*  Corrected the pluralization of “item” in the mini cart and checkout order summary. [GitHub-29920](https://github.com/magento/magento2/issues/29920)
 
 <!-- ENGCOM-8309 -->
 
@@ -1465,7 +1465,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8258 -->
 
-`getPageLayoutsConfig` is now saved in cache, which has improved config builder performance. [GitHub-29546](https://github.com/magento/magento2/issues/29546)
+*  `getPageLayoutsConfig` is now saved in cache, which has improved config builder performance. [GitHub-29546](https://github.com/magento/magento2/issues/29546)
 
 ### Persistent
 
@@ -1575,7 +1575,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36755-->
 
-*  Magento no longer archives an order before processing it. Previously, multiselect action on the Admin order grid affected unselected orders.
+*  Magento no longer archives an order before processing it. Previously, multi select action on the Admin order grid affected unselected orders.
 
 <!--- MC-37371-->
 
@@ -2041,9 +2041,19 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 ## Known issues
 
-**Issue**: Discounts for a specific payment method persist during checkout for a purchase order even when the buyer changes payment method during final checkout. As a result, customers may receive a discount that they are not entitled to. This occurs because a cart rule for the original payment method is still applied despite the change in payment method. **Workaround**: None. <!-- KB-827 -->
-
 **Issue**: The `deleteRequisitionListOutput` query returns details about the deleted requisition list instead of the remaining requisition lists. <!--- MC-39894-->
+
+**Issue**: Shoppers cannot add a configurable product to their cart from a non-default store view in a multi-store deployment. Magento displays this error: `Could not add item to cart. Please check required options and try again`. **Workaround**: None. [GitHub-31660](https://github.com/magento/magento2/issues/31660)<!--- PWA-1298-->
+
+**Issue**: Merchants must activate the Fastly Force TLS functionality from the Admin to enable the global HTTP to HTTPS redirect for all store pages. See the [Redirect HTTP to HTTPS for all pages on Cloud (Force TLS)](https://support.magento.com/hc/en-us/articles/360006296953) Knowledge Base article. <!--- MC-39988-->
+
+### B2B known issues
+
+**Issue**: B2B buyers can use online payment methods to bypass the usual purchase order flow. This scenario can occur if the buyer can reduce their entire checkout total to a 0 — for example, by a promo code or gift card —  and subsequently remove the code or gift card. Even under those conditions, Magento still places the order for the correct amount based on the prices of the items in their assigned catalog. <!--- B2B-1603-->
+
+**Issue**: Buyers are redirected to the shopping cart when trying to place an order from a purchase order using PayPal Express Checkout when **In-Context Mode** is disabled. <!--- B2B-1604-->
+
+**Issue**: Magento randomly When attempting to create a purchase order and navigating to the initial checkout page, a bad request can occasionally be observed in the browser console when a buyer creates a purchase order and navigates to the checkout page. The buyer can still place the purchase order. Magento displays this error when a buyer has previously created a different purchase order with an online payment method before navigating to checkout page without completing the purchase. **Workaround**: None. <!--- B2B-1605-->
 
 ## Community contributions
 

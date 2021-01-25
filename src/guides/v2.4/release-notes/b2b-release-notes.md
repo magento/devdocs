@@ -57,6 +57,8 @@ These release notes can include:
 
 -  {:.fix} The `credit_history` query now returns the specified company’s credit history for both the originally allocated amount and the purchased amount. Previously, this query returned an error. [GitHub-29990](https://github.com/magento/magento2/issues/29990)
 
+-  {:.fix} The **Company** and  **Job Title** fields on the Edit Account Information page are no longer editable. [GitHub-312](https://github.com/magento/partners-magento2b2b/issues/312)
+
 ## Magento B2B - Version 1.3.0
 
 This release includes improvements to order approvals, shipping methods, shopping cart, and logging of Admin actions.

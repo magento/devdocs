@@ -514,7 +514,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8478 -->
 
-*  Corrected the pluralization of “item” in the minicart and checkout order summary. [GitHub-29920](https://github.com/magento/magento2/issues/29920)
+*  Corrected the pluralization of “item” in the mini cart and checkout order summary. [GitHub-29920](https://github.com/magento/magento2/issues/29920)
 
 <!-- ENGCOM-8309 -->
 
@@ -1310,7 +1310,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8258 -->
 
-`getPageLayoutsConfig` is now saved in cache, which has improved config builder performance. [GitHub-29546](https://github.com/magento/magento2/issues/29546)
+*  `getPageLayoutsConfig` is now saved in cache, which has improved config builder performance. [GitHub-29546](https://github.com/magento/magento2/issues/29546)
 
 ### Persistent
 
@@ -1794,9 +1794,11 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Implemented `ActionInterface` for \Magento\Wishlist\Controller\Shared\Allcart. [GitHub-29537](https://github.com/magento/magento2/issues/29537)
 
-## Known issue
+## Known issues
 
-**Issue**: Discounts for a specific payment method persist during checkout for a purchase order even when the buyer changes payment method during final checkout. As a result, customers may receive a discount that they are not entitled to. This occurs because a cart rule for the original payment method is still applied despite the change in payment method. **Workaround**: None. <!-- KB-827 -->
+**Issue**: The `deleteRequisitionListOutput` query returns details about the deleted requisition list instead of the remaining requisition lists. <!--- MC-39894-->
+
+**Issue**: Shoppers cannot add a configurable product to their cart from a non-default store view in a multi-store deployment. Magento displays this error: `Could not add item to cart. Please check required options and try again`. **Workaround**: None. [GitHub-31660](https://github.com/magento/magento2/issues/31660)<!--- PWA-1298-->
 
 ## Community contributions
 
