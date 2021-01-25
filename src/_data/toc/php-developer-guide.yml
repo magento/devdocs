@@ -251,37 +251,39 @@ pages:
 
     - label: Configuration
       children:
-        - label: Sensitive Environment Settings
-          url: /extension-dev-guide/configuration/sensitive-and-environment-settings.html
 
         - label: Configuration Importers
           url: /extension-dev-guide/configuration/importers.html
 
+        - label: Sensitive Environment Settings
+          url: /extension-dev-guide/configuration/sensitive-and-environment-settings.html
+
     - label: Framework
       children:
-        - label: Serialize Library
-          url: /extension-dev-guide/framework/serializer.html
 
         - label: Array Manager
           url: /extension-dev-guide/framework/array-manager.html
 
-        - label: URL Library
-          url: /extension-dev-guide/framework/url-library.html
-
         - label: DateTime Library
           url: /extension-dev-guide/framework/datetime.html
+
+        - label: Serialize Library
+          url: /extension-dev-guide/framework/serializer.html
+
+        - label: URL Library
+          url: /extension-dev-guide/framework/url-library.html
 
     - label: Security
       children:
 
-        - label: XSS Prevention
-          url: /extension-dev-guide/xss-protection.html
+        - label: Content Security Policies
+          url: /extension-dev-guide/security/content-security-policies.html
 
         - label: Non-secure functions
           url: /extension-dev-guide/security/non-secure-functions.html
 
-        - label: Content Security Policies
-          url: /extension-dev-guide/security/content-security-policies.html
+        - label: XSS Prevention
+          url: /extension-dev-guide/xss-protection.html
 
     - label: Versioning
       url: /extension-dev-guide/versioning/
