@@ -26,7 +26,7 @@ The following use case describes the typical process for a Magento partner to up
 1. The Software Engineer runs the Upgrade Compatibility Tool one more time with a Magento pre-release to ensure there are no new issues and that their code changes fixed the problems found during the beta phase.
 1. Everything check’s out and the Software Engineer pushes the code to a staging environment where regression tests confirm all tests are green, which allows them to release the latest Magento version to production the same day that the Magento pre-release is released.
 
-![Upgrade Compatibility Tool audience](img/audience-sut.png)
+![Upgrade Compatibility Tool audience](img/audience-uct.png)
 
 ### Contact Upgrade Compatibility Tool
 
@@ -51,7 +51,7 @@ If you are running the Upgrade Compatibility Tool against a Magento instance wit
 Magento best practice is not to have 2 modules with the same name, if this happens the Upgrade Compatibility Tool will show a segmentation fault error in which case you have to analyze each module independently with the option `-m`:
 
 ```bash
-bin/sut upgrade:check /(instance_path) --coming-version=2.4.1 -m /(module_path)
+bin/uct upgrade:check /(instance_path) --coming-version=2.4.1 -m /(module_path)
 ```
 
 If you get memory issues while executing the Upgrade Compatibility Tool it is recommended to use the `-m` command to run the tool against a specific module.
@@ -61,7 +61,7 @@ If you get memory issues while executing the Upgrade Compatibility Tool it is re
 To download the Upgrade Compatibility Tool, run the following command:
 
 ```bash
-composer create-project magento/upgrade-compatibility-tool sut  --repository https://repo.magento.com
+composer create-project magento/upgrade-compatibility-tool uct  --repository https://repo.magento.com
 ```
 
 As the Upgrade Compatibility Tool is an independent tool, if you try to run:

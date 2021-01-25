@@ -17,7 +17,7 @@ The tool returns a list of errors and warnings that you must address before upgr
 Execute the tool by running the following command:
 
 ```bash
-bin/sut upgrade:check INSTALLATION_DIR
+bin/uct upgrade:check INSTALLATION_DIR
 ```
 
 {:.bs-callout-info}
@@ -26,7 +26,7 @@ The `INSTALLATION_DIR` value is the directory where your Magento instance is loc
 We recommend running the following command to avoid memory limitations:
 
 ```bash
-php -d memory_limit=-1 /bin/sut
+php -d memory_limit=-1 /bin/uct
 ```
 
 We also recommend using the `-m` command to run the tool against a specific module.
@@ -34,7 +34,7 @@ We also recommend using the `-m` command to run the tool against a specific modu
 To see Upgrade Compatibility Tool command options and help:
 
 ```bash
-bin/sut --help
+bin/uct --help
 ```
 
 ### GraphQL schema compatibility verification
@@ -42,7 +42,7 @@ bin/sut --help
 The Upgrade Compatibility Tool also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
 
 ```bash
-bin/sut graphql:compare https://domain1.com/graphql https://domain2.com/graphql
+bin/uct graphql:compare https://domain1.com/graphql https://domain2.com/graphql
 ```
 
 You must have running `instance before` and `instance after` the upgrade.
@@ -56,7 +56,7 @@ You can compare your current Magento installation with Magento versions `>=2.3`.
 You must provide the version as a parameter when running the command:
 
 ```bash
-bin/sut upgrade:check INSTALLATION_DIR -c 2.4.1
+bin/uct upgrade:check INSTALLATION_DIR -c 2.4.1
 ```
 
 There are some limitations when running the previous command:
@@ -74,10 +74,10 @@ You can also get a full report containing both _PHP-related_ errors and GraphQL.
 *  `--schema2=SCHEMA2`
 *  `INSTALLATION_DIR`
 
-#### Example of a bin/sut command
+#### Example of a bin/uct command
 
 ```bash
-bin/sut upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.1 INSTALLATION_DIR
+bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.1 INSTALLATION_DIR
 ```
 
 ### Output
