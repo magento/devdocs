@@ -46,6 +46,7 @@ ConfigurableSharedCatalog |Enables configurable products to be added to a shared
 GiftCardNegotiableQuote | Enables gift cards to be displayed in a negotiable quote in an B2B environment | No
 GiftCardRequisitionList | Enables gift cards to be displayed in a requisition list | No
 GiftCardSharedCatalog | Enables gift cards to be added to a shared catalog in an B2B environment. | No
+GroupedRequisitionList | Enables grouped products to be displayed in a requisition list | No
 GroupedSharedCatalog | Enables grouped products to be added to a shared catalog in an B2B environment. | No
 NegotiableQuote | Allows a buyer and a seller (admin user) to negotiate product and/or shipping prices before the buyer places an order. | Yes
 NegotiableQuoteSharedCatalog | Enables the `NegotiableQuote` module to interact with a `SharedCatalog` in an B2B environment. | No

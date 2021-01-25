@@ -406,7 +406,7 @@ Prefix Dropdown Options | `customer/address/prefix_options` | <!-- ![Not EE-only
 Show Middle Name (initial) | `customer/address/middlename_show` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Show Suffix | `customer/address/suffix_show` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Suffix Dropdown Options | `customer/address/suffix_options` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Show Date of Birth | `customer/address/dob_show` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Show Date of Birth | `customer/address/dob_show`<br>In keeping with current security and privacy best practices, be sure you are aware of any potential legal and security risks associated with the storage of customers’ full date of birth (month, day, year) along with other personal identifiers, such as full name, before collecting or processing such data.| <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Show Tax/VAT Number | `customer/address/taxvat_show` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Show Gender | `customer/address/gender_show` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Enable Store Credit Functionality | `customer/magento_customerbalance/is_enabled` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |

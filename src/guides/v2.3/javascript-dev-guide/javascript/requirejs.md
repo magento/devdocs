@@ -28,21 +28,27 @@ var config = {
 
 ### map {#requirejs-config-map}
 
-The `map` configuration maps (connects) any real AMD modules that calls `define()`, to the specified alias. In the snippet below, `*` means all loaded RequireJS modules can use the specified alias.
+The `map` configuration maps (connects) any real AMD modules that calls `define()`, to the specified alias. In the snippet below, `*` means all loaded RequireJS modules can use the specified alias. The second mapping applies only in the context of `Vendor_Module/js/amd-module`. So, both types of contexts can be applied: either a global context, or a module specific context.
 
 ```javascript
 map: {
     '*': {
         alias: 'Vendor_Module/js/complex/path/amd-module'
+    },
+    'Vendor_Module/js/amd-module': {
+        alias-two: 'Vendor_Module/js/complex/path/amd-module-two'
     }
 }
 ```
 
-Now we can use our `Vendor_Module/js/complex/path/module` using `alias` in any RequireJS module or config file without needing to type the entire path. For example, in Magento, `catalogAddToCart` is mapped to `Magento_Catalog/js/catalog-add-to-cart` and can be used anywhere as a RequireJS module name.
+Now we can use our `Vendor_Module/js/complex/path/module` using `alias` in any RequireJS module or config file without needing to type the entire path. For example, in Magento, `catalogAddToCart` is mapped to `Magento_Catalog/js/catalog-add-to-cart` and can be used anywhere as a RequireJS module name. In the next example, `catalogAddToCart` is mapped to `Magento_Catalog/js/catalog-add-to-cart` only in the context of the `discountCode` module.
 
 ```javascript
 map: {
     '*': {
+        catalogAddToCart: 'Magento_Catalog/js/catalog-add-to-cart'
+    },
+    'discountCode': {
         catalogAddToCart: 'Magento_Catalog/js/catalog-add-to-cart'
     }
 }
@@ -61,6 +67,38 @@ paths: {
     'another-alias': 'https://some-library.com/file'
 }
 ```
+
+Consider the example of overwriting an HTML file in the adminhtml.
+In this example, the `max-length` value of the text-box in the `adminhtml` is altered. The HTML file is located at `vendor/magento/module_ui/view/base/web/templates/form/element/input.html`.
+
+1. Create a `requirejs-config.js` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/` and add the following code:
+
+    ```javascript
+    var config = {
+        paths: {
+            'ui/template/form/element/input': '<vendor_name>_<module_name>/template/form/element/input'
+        }
+    };
+    ```
+
+1. Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/` and copy the contents of the `input.html` file from the `module_ui` template file.
+1. Change the maxlength value to `512`, which was originally set to `256`.
+1. Upgrade the Magento application:
+
+   ```bash
+   bin/magento setup:upgrade
+   ```
+
+1. Generate the dependency injection configuration:
+
+   ```bash
+   bin/magento setup:di:compile
+   ```
+
+1. Confirm the modification by inspecting the element source code and check the `maxlength` value, which should be `512` as specified in the template.
+
+{:.bs-callout-info}
+The path for `Magento_Ui/templates` is set to be `ui/template` in the `requirejs-config.js` module of `module_ui`, hence `ui/template` is used for specifying the path. If no paths are set, `<module_name>/templates` should be used.
 
 ### deps {#requirejs-config-deps}
 

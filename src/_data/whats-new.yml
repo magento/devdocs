@@ -4,8 +4,157 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Tue Nov 17 05:06:39 2020
+updated: Mon Jan 18 15:45:43 2021
 entries:
+- description: SendGrid DKIM signatures are available only on Magento Commerce Cloud
+    Pro projects.  For more information on SendGrid, see https://devdocs.magento.com/cloud/project/sendgrid.html.
+  versions: 2.4.x
+  type: Major Update
+  date: January 14, 2021
+  link: https://github.com/magento/devdocs/pull/8440
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: New Relic Alerts now include Redis and MariaDB. See https://devdocs.magento.com/cloud/project/new-relic.html#monitor-performance-with-managed-alerts.
+  versions: 2.4.x
+  type: Major Update
+  date: January 12, 2021
+  link: https://github.com/magento/devdocs/pull/8503
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Added a [legal disclaimer](https://devdocs.magento.com/compliance/privacy/pi-data-reference-m2.html#customer-data)
+    to references of the `date_of_birth` attribute of the `customer` database entity.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 8, 2021
+  link: https://github.com/magento/devdocs/pull/8488
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Published release notes for [Cloud Docker 1.2.1](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v121).
+  versions: 2.4.x
+  type: Major Update
+  date: December 22, 2020
+  link: https://github.com/magento/devdocs/pull/8429
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Added a new topic with instructions for [reverting from a split database
+    to a single database](https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html)
+    implementation.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: December 21, 2020
+  link: https://github.com/magento/devdocs/pull/8422
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added an [example](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/requirejs.html)
+    of overwriting a Knockout JS .html template file in the `requirejs-config.js`
+    file.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: December 14, 2020
+  link: https://github.com/magento/devdocs/pull/8367
+  contributor: sathiyaaa
+  profile: https://github.com/sathiyaaa
+- description: Added [descriptions](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/framework/serializer.html)
+    for the JsonHexTag, Base64Json, and FormData serializer implementations.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: December 14, 2020
+  link: https://github.com/magento/devdocs/pull/8382
+  contributor: drpayyne
+  profile: https://github.com/drpayyne
+- description: Added a new topic describing the [URL Library](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/framework/url-library.html).
+  versions: 2.4.x
+  type: New Topic
+  date: December 14, 2020
+  link: https://github.com/magento/devdocs/pull/8384
+  contributor: drpayyne
+  profile: https://github.com/drpayyne
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.13 Magento Quality Patch (MQP) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: December 10, 2020
+  link: https://github.com/magento/devdocs/pull/8375
+  contributor: Rykh
+  profile: https://github.com/Rykh
+- description: Added an [explanation and example](http://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/requirejs.html)
+    of passing parameters to JavaScript using the `data-mage-init` HTML attribute.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: December 9, 2020
+  link: https://github.com/magento/devdocs/pull/8311
+  contributor: sathiyaaa
+  profile: https://github.com/sathiyaaa
+- description: Added a new topic describing how to [customize the Magento Admin design](https://devdocs.magento.com/guides/v2.4/howdoi/admin/customize_admin.html).
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: December 8, 2020
+  link: https://github.com/magento/devdocs/pull/8351
+  contributor: BarnyShergold
+  profile: https://github.com/BarnyShergold
+- description: Added an [explanation and example](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-maint.html)
+    of using the `$_GET['skin']` parameter to set a different layout and localized
+    content for each store in a multistore setup.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: December 7, 2020
+  link: https://github.com/magento/devdocs/pull/8247
+  contributor: dineshvb
+  profile: https://github.com/dineshvb
+- description: Instructions on how to remove plugins from the [Elasticsearch service](https://devdocs.magento.com/cloud/project/services-elastic.html#additional-search-configuration).
+  versions: 2.4.x
+  type: Technical
+  date: December 4, 2020
+  link: https://github.com/magento/devdocs/pull/8336
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Added detailed examples to [Define the GraphQL schema for a module](https://devdocs.magento.com/guides/v2.4/graphql/develop/create-graphqls-file.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: November 30, 2020
+  link: https://github.com/magento/devdocs/pull/8232
+  contributor: sathiyaaa
+  profile: https://github.com/sathiyaaa
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.12 Magento Quality Patch (MQP) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: November 26, 2020
+  link: https://github.com/magento/devdocs/pull/8271
+  contributor: ilima-ebay
+  profile: https://github.com/ilima-ebay
+- description: Updated Composer package versions to correct 2.4.x [sample data upgrade
+    instructions](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-rc1-samp.html).
+  versions: 2.4.x
+  type: Technical
+  date: November 24, 2020
+  link: https://github.com/magento/devdocs/pull/8259
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Simplified and updated the [GraphQL tutorial](https://devdocs.magento.com/guides/v2.4/graphql/tutorials/checkout/index.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: November 23, 2020
+  link: https://github.com/magento/devdocs/pull/8046
+  contributor: dobooth
+  profile: https://github.com/dobooth
+- description: Published [ece-tools 2002.1.4 package release notes](https://devdocs.magento.com/cloud/release-notes/cloud-tools.html).
+    This release fixes search engine and database validation issues that can cause
+    deployment failure.
+  versions: 2.x
+  type: Technical
+  date: November 19, 2020
+  link: https://github.com/magento/devdocs/pull/8249
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.10 Magento Quality Patch (MQP) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: November 19, 2020
+  link: https://github.com/magento/devdocs/pull/8252
+  contributor: viktym
+  profile: https://github.com/viktym
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
     for the 1.0.10 Magento Quality Patch (MQP) package release.
   versions: ''
@@ -74,8 +223,8 @@ entries:
   link: https://github.com/magento/devdocs/pull/8187
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
-- description: Reorganized the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) pages in the Magento Installation
-    Guide to to make it more coherent.
+- description: Reorganized the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    pages in the Magento Installation Guide to to make it more coherent.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: November 5, 2020
@@ -1510,7 +1659,7 @@ entries:
   type: Technical
   date: April 9, 2020
   link: https://github.com/magento/devdocs/pull/7016
-- description: Fixed a config entry in the the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
+- description: Fixed a config entry in the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
     topic.
   versions: 2.3.x
   type: Technical
