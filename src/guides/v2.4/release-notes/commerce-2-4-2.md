@@ -2049,7 +2049,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 ### B2B known issues
 
-**Issue**: B2B buyers can use online payment methods to bypass the usual purchase order flow. This scenario can occur if the buyer can reduce their entire checkout total to a 0 — for example, by a promo code or gift card —  and subsequently remove the code or gift card. Even under those conditions, Magento still places the order for the correct amount based on the prices of the items in their assigned catalog. <!--- B2B-1603-->
+**Issue**: B2B buyers can use online payment methods to bypass the usual purchase order flow. This scenario can occur if the buyer can reduce their entire checkout total to a 0 — for example, by a promo code or gift card —  and subsequently remove the code or gift card. Even under those conditions, Magento still places the order for the correct amount based on the prices of the items in their assigned catalog. **Workaround**: Disable gift cards and coupon codes when online payment methods are enabled for purchase order approval. <!--- B2B-1603-->
 
 **Issue**: Buyers are redirected to the shopping cart when trying to place an order from a purchase order using PayPal Express Checkout when **In-Context Mode** is disabled. <!--- B2B-1604-->
 
