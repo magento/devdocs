@@ -583,7 +583,7 @@ api.updateOptions([{
 
 ## Code sample
 
-This example shows a use case for a gallery widget on any page.
+This example shows a use case for a gallery widget on any page:
 
 ```html
 <div class="image-gallery"></div>
@@ -624,7 +624,7 @@ require ([
 </script>
 ```
 
-The breakpoints options are set in the `view.xml` configuration file of a theme. The file is conventionally located in `<theme_dir>/etc`.
+The breakpoints options are set in the `view.xml` configuration file of a theme. The file is located in `<theme_dir>/etc`.
 
 ```xml
 <var name="breakpoints">
