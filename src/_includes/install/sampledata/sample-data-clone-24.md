@@ -41,8 +41,6 @@ To clone the Magento sample data GitHub repository using the SSH protocol:
 
    Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
 
-   Need [help locating the docroot?]({{ page.baseurl }}/install-gde/basics/basics_docroot.html)
-
 1. Enter `git clone` and paste the value you obtained from step 1.
 
    An example follows:
