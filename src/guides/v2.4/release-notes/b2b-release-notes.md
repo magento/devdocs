@@ -55,6 +55,20 @@ These release notes can include:
 
 -  {:.fix} Magento now checks custom attributes for duplication of reserved company attribute names before permitting a merchant to save a new attribute. <!--- MC-36282-->
 
+-  {:.fix} The `credit_history` query now returns the specified company’s credit history for both the originally allocated amount and the purchased amount. Previously, this query returned an error. [GitHub-29990](https://github.com/magento/magento2/issues/29990)
+
+-  {:.fix} The **Company** and  **Job Title** fields on the Edit Account Information page are no longer editable. [GitHub-312](https://github.com/magento/partners-magento2b2b/issues/312)
+
+### B2B known issues
+
+**Issue**: B2B buyers can use online payment methods to bypass the usual purchase order flow. This scenario can occur if the buyer can reduce their entire checkout total to a 0 — for example, by a promo code or gift card —  and subsequently remove the code or gift card. Even under those conditions, Magento still places the order for the correct amount based on the prices of the items in their assigned catalog. **Workaround**: Disable gift cards and coupon codes when online payment methods are enabled for purchase order approval. <!--- B2B-1603-->
+
+**Issue**: Buyers are redirected to the shopping cart when trying to place an order from a purchase order using PayPal Express Checkout when **In-Context Mode** is disabled. <!--- B2B-1604-->
+
+**Issue**: Magento sometimes displays a 404 error when a buyer creates a purchase order and then navigates to the checkout page. This error occurs when a buyer has previously created a different purchase order with an online payment method before navigating to the checkout page without completing the previous purchase. The buyer can still place the purchase order. **Workaround**: None. <!--- B2B-1605-->
+
+**Issue**: Discounts for a specific payment method persist during checkout for a purchase order even when the buyer changes payment method during final checkout. As a result, customers may receive a discount that they are not entitled to. This occurs because a cart rule for the original payment method is still applied despite the change in payment method. **Workaround**: None. <!-- B2B-1012 -->
+
 ## Magento B2B - Version 1.3.0
 
 This release includes improvements to order approvals, shipping methods, shopping cart, and logging of Admin actions.
