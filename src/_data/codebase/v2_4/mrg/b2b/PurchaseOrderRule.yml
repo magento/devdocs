@@ -28,4 +28,4 @@ content: "​\n## Overview\n​\nThe PurchaseOrderRule module contains functiona
   UI components\n​\nYou can extend the purchase order rule listings using the `purchase_order_rule_listing.xml`
   and `require_my_approval_purchaseorder_listing.xml` configuration files.\n \n##
   Additional information\n​\nCheck the [B2B release notes](https://devdocs.magento.com/guides/v2.4/release-notes/b2b-release-notes.html)
-  for more information on new changes.\n"
+  for more information on new changes."

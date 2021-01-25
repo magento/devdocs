@@ -28,7 +28,7 @@ We support and deploy the following services:
 -  [`elasticsearch`]({{ site.baseurl }}/cloud/project/services-elastic.html)
 -  [`rabbitmq`]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 
-You can view default versions and disk values in the the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, and `elasticsearch` services defined in the `services.yaml` configuration file:
+You can view default versions and disk values in the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, and `elasticsearch` services defined in the `services.yaml` configuration file:
 
 ```yaml
 mysql:
@@ -259,7 +259,7 @@ To downgrade a service version by renaming an existing service:
 
      ```yaml
      mysql:
-         type: mysql:10.3
+         type: mysql:10.4
          disk: 2048
      ```
 
@@ -267,7 +267,7 @@ To downgrade a service version by renaming an existing service:
 
      ```yaml
      mysql2:
-          type: mysql:10.2
+          type: mysql:10.3
           disk: 2048
      ```
 
@@ -298,10 +298,10 @@ To downgrade a service by creating an additional service:
 
    ```yaml
    mysql:
-       type: mysql:10.3
+       type: mysql:10.4
        disk: 2048
    mysql2:
-       type: mysql:10.2
+       type: mysql:10.3
        disk: 2048
    ```
 

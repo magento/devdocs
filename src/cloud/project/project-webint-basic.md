@@ -98,7 +98,7 @@ To set environment specific variables in the Project Web Interface:
 
    ![Set environment variables]({{ site.baseurl }}/common/images/cloud/cloud_env-var.png)
 
-1. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
+1. As needed, select options for **JSON value**, **Enabled**, **Inheritable by child environments** and **Sensitive**. If you do not have Super User access, you may only see the JSON value option.
 1. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 {:.bs-callout-warning}
