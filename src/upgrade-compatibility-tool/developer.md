@@ -14,17 +14,17 @@ Magento API index integration is an internal integration solution that comprehen
 
 The integration with Magento API index is done through:
 
-`uct\Domain\MRay\MRayInterface`
+`sut\Domain\MRay\MRayInterface`
 
 It is implemented through the `config/services.yaml` file. Its value decides where the response of methods `api()` and `modules()` comes from.
 
-Edit this file to customize the response according to your installation. Just replace the value assigned to `uct\Domain\MRay\MRayInterface`:
+Edit this file to customize the response according to your installation. Just replace the value assigned to `sut\Domain\MRay\MRayInterface`:
 
 ### Example of a custom value
 
-`uct\Domain\MRay\MRayInterface : "@uct_mray_mock"`
+`sut\Domain\MRay\MRayInterface : "@sut_mray_mock"`
 
-In the previous example, the Upgrade Compatibility Tool uses `@uct_mray_mock` as the `MRayInterface` implementation. The responses from the `api()` and `modules()` methods come from the following files:
+In the previous example, the Upgrade Compatibility Tool uses `@sut_mray_mock` as the `MRayInterface` implementation. The responses from the `api()` and `modules()` methods come from the following files:
 
 *  `dev/mray_mock_files/api.json`
 *  `dev/mray_mock_files/modules.json`
