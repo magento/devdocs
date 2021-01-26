@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Magento 2.4 system requirements
 functional_areas:
   - Install

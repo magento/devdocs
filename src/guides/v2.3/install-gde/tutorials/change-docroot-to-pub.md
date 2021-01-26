@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Modify docroot to improve security
 ---
 
@@ -14,7 +13,7 @@ Within the `magento2` folder are:
 The Magento app is served from `/var/www/html/magento2/pub`. The rest of the Magento file system is vulnerable because it is accessible from a browser.
 Setting the webroot to the `pub/` directory prevents site visitors from accessing the Web Setup Wizard and other sensitive areas of the Magento file system from a browser.
 
-This topic describes how to change the Apache [docroot]({{ page.baseurl }}/install-gde/basics/basics_docroot.html) on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
+This topic describes how to change the Apache docroot on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
 
 {:.bs-callout-warning}
 If you're accustomed to using the Web Setup Wizard during development, be aware that you will not be able to access it when serving files from the `pub/` directory.
