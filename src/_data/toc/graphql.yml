@@ -125,8 +125,23 @@ pages:
           edition: ee-only
           exclude_versions: ["2.3"]
 
+        - label: giftRegistryEmailSearch query
+          url: /graphql/queries/gift-registry-email-search.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: giftRegistryIdSearch query
+          url: /graphql/queries/gift-registry-id-search.html
+          edition: ee_only
+          exclude_versions: ["2.3"]
+
         - label: giftRegistryTypes query
           url: /graphql/queries/gift-registry-types.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: giftRegistryTypeSearch query
+          url: /graphql/queries/gift-registry-type-search.html
           edition: ee-only
           exclude_versions: ["2.3"]
 
