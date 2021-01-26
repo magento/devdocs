@@ -50,10 +50,21 @@ If you are running the Upgrade Compatibility Tool against a Magento instance wit
 
 Magento best practices recommend to avoid having 2 modules with the same name, if this happens the Upgrade Compatibility Tool shows a segmentation fault error.
 
-To avoid this segmentation fault error it is recommended to run the Upgrade Compatibility Tool to analyze each specific module independently including the option `-m`:
+To avoid this segmentation fault error it is recommended to run the `bin` command with the added option `-m`:
 
 ```bash
-bin/uct upgrade:check /(magento_instance_path) --coming-version=2.4.1 -m /(magento_module_path)
+bin/uct upgrade:check /INSTALLATION_DIR/<instance-name> --coming-version=2.4.1 -m /vendor/<vendor-name>/<module-name>
+```
+
+{:.bs-callout-info}
+The `INSTALLATION_DIR` value is the directory where your Magento instance is located.
+
+The `-m` option allows the Upgrade Compatibility Tool to analyze each specific module independently to avoid encountering 2 modules with the same name in your Magento instance.
+
+This command option also allows the Upgrade Compatibility Tool to analyze a folder containing several modules:
+
+```bash
+bin/uct upgrade:check /INSTALLATION_DIR/<instance-name> --coming-version=2.4.1 -m /vendor/<vendor-name>/
 ```
 
 This recommended command also helps with memory issues that can occurr when executing the Upgrade Compatibility Tool.
