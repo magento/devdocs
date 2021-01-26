@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 03_install
 title: Installation stops at about 70%
 menu_title: Installation stops at about 70%

@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-This topic contains information for developers who want to know more technical information about the Magento Safe Upgrade Tool ALPHA (SUT). It is focused on developers who work closely with the Magento source code. You can use this knowledge to customize the SUT's components.
+This topic contains information for developers who want to know more technical information about the Upgrade Compatibility Tool ALPHA. It is focused on developers who work closely with the Magento source code. You can use this knowledge to customize the tool's components.
 
 ## Magento API index integration
 
@@ -14,17 +14,17 @@ Magento API index integration is an internal integration solution that comprehen
 
 The integration with Magento API index is done through:
 
-`Sut\Domain\MRay\MRayInterface`
+`sut\Domain\MRay\MRayInterface`
 
 It is implemented through the `config/services.yaml` file. Its value decides where the response of methods `api()` and `modules()` comes from.
 
-Edit this file to customize the response according to your installation. Just replace the value assigned to `Sut\Domain\MRay\MRayInterface`:
+Edit this file to customize the response according to your installation. Just replace the value assigned to `sut\Domain\MRay\MRayInterface`:
 
 ### Example of a custom value
 
-`Sut\Domain\MRay\MRayInterface : "@sut_mray_mock"`
+`sut\Domain\MRay\MRayInterface : "@sut_mray_mock"`
 
-In the previous example, the SUT uses `@sut_mray_mock` as the `MRayInterface` implementation. The responses from the `api()` and `modules()` methods come from the following files:
+In the previous example, the Upgrade Compatibility Tool uses `@sut_mray_mock` as the `MRayInterface` implementation. The responses from the `api()` and `modules()` methods come from the following files:
 
 *  `dev/mray_mock_files/api.json`
 *  `dev/mray_mock_files/modules.json`
@@ -59,7 +59,7 @@ To run the integration tests, execute one of the following commands:
 
 ## JS unit testing for GraphQL
 
-We used the [Jest](https://jestjs.io/docs/en/getting-started.html) framework to create these JS unit tests:
+The [Jest](https://jestjs.io/docs/en/getting-started.html) framework was used to create these JS unit tests:
 
 {:.bs-callout-info}
 To run JS unit tests for GraphQL, you must have Node.js installed.
@@ -99,7 +99,7 @@ This score is based on the results extracted from the analysis:
 *  Number of issues identified
 *  Severity of issues identified
 
-The SUT calculates this score according to the following formula:
+The Upgrade Compatibility Tool calculates this score according to the following formula:
 
 ### Complexity score formula
 

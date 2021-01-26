@@ -4,8 +4,56 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jan 18 15:45:43 2021
+updated: Mon Jan 25 15:38:42 2021
 entries:
+- description: Added the [DateTime library](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/framework/datetime.html)
+    topic to the _PHP Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: January 25, 2021
+  link: https://github.com/magento/devdocs/pull/8439
+  contributor: RakeshJesadiya
+  profile: https://github.com/RakeshJesadiya
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.14 Magento Quality Patch (MQP) package release.
+  versions: ''
+  type: Major Update
+  date: January 22, 2021
+  link: https://github.com/magento/devdocs/pull/8541
+  contributor: abukatar
+  profile: https://github.com/abukatar
+- description: Added the [Setting up static analysis](https://devdocs.magento.com/guides/v2.4/test/static/static-analysis.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: January 22, 2021
+  link: https://github.com/magento/devdocs/pull/8547
+  contributor: dobooth
+  profile: https://github.com/dobooth
+- description: Added the [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html)
+    topics to the Software Update Guide section.
+  versions: ''
+  type: Major Update, New Topic
+  date: January 21, 2021
+  link: https://github.com/magento/devdocs/pull/8314
+  contributor: danidelcar
+  profile: https://github.com/danidelcar
+- description: Added the 'Product Attribute Option Creation' section to the [How to
+    Add a New Product Attribute](https://devdocs.magento.com/videos/fundamentals/add-new-product-attribute/)  topic.
+  versions: ''
+  type: Major Update
+  date: January 20, 2021
+  link: https://github.com/magento/devdocs/pull/8395
+  contributor: dineshvb
+  profile: https://github.com/dineshvb
+- description: Added a new topic describing how contributors can work with [pull request
+    tests](https://devdocs.magento.com/contributor-guide/pull-request-tests.html).
+  versions: ''
+  type: New Topic
+  date: January 20, 2021
+  link: https://github.com/magento/devdocs/pull/8483
+  contributor: sivaschenko
+  profile: https://github.com/sivaschenko
 - description: SendGrid DKIM signatures are available only on Magento Commerce Cloud
     Pro projects.  For more information on SendGrid, see https://devdocs.magento.com/cloud/project/sendgrid.html.
   versions: 2.4.x

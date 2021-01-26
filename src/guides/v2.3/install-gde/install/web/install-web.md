@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Wizard
 title: Setup Wizard installation
 menu_title: Setup Wizard installation
