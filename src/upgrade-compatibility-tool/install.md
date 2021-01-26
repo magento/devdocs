@@ -33,7 +33,7 @@ The following use case describes the typical process for a Magento partner to up
 To connect with the Upgrade Compatibility Tool team:
 
 1. Contact us on the Engineering Slack channel [Upgrade Compatibility Tool](https://magentocommeng.slack.com/archives/C019Y143U9F).
-2. Send us an email at [uct@adobe.com](mailto:uct@adobe.com).
+1. Send us an email at [uct@adobe.com](mailto:uct@adobe.com).
 
 See the [Resources]({{site.baseurl}}/community/resources/resources.html) page for more information.
 
