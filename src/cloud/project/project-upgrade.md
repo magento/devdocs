@@ -304,7 +304,7 @@ To resolve the error:
 <!--Link definitions-->
 [.magento.app.yaml]: {{site.baseurl}}/cloud/project/magento-app.html
 [Configuration Management]: {{site.baseurl}}/cloud/live/sens-data-over.html
-[Change service version]: {{site.baseurl}}/project/services.html#change-service-version
+[Change service version]: {{site.baseurl}}/cloud/project/services.html#change-service-version
 [Examine the logs]: {{site.baseurl}}/cloud/project/log-locations.html
 [extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/magento-app.html#configure-php-options
 [Fastly CDN module for Magento 2]: {{site.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
