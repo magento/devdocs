@@ -47,7 +47,7 @@ entries:
   contributor: dineshvb
   profile: https://github.com/dineshvb
 - description: Added a new topic describing how contributors can work with [pull request
-    tests](https://devdocs.magento.com/contributor-guide/pull-request-tests).
+    tests](https://devdocs.magento.com/contributor-guide/pull-request-tests.html).
   versions: ''
   type: New Topic
   date: January 20, 2021
