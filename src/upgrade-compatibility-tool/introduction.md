@@ -14,4 +14,4 @@ The Upgrade Compatibility Tool returns a list of errors and warnings that you mu
 
 It is distributed as a Composer package with every release of a Magento version. See [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) topic for more information.
 
-Refer to the [Install]({{site.baseurl}}/upgrade-compatibility-tools/install.html) for first steps with the Upgrade Compatibility Tool.
+Refer to the [Install]({{site.baseurl}}/upgrade-compatibility-tool/install.html) for first steps with the Upgrade Compatibility Tool.
