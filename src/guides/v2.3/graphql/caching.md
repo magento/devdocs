@@ -121,7 +121,7 @@ Fastly will cache only GET requests which contains query parameter in request ur
 ### Example
 
 ```text
-http://example.com/graphql?a=1&query={ products(filter: {sku: {eq: "Test"}}) { items { name } } }&variables={}
+http://example.com/graphql?query={ products(filter: {sku: {eq: "Test"}}) { items { name } } }&variables={}
 ....
 ```
 
