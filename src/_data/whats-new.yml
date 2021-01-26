@@ -30,7 +30,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8547
   contributor: dobooth
   profile: https://github.com/dobooth
-- description: Added the [Safe Upgrade Tool](https://devdocs.magento.com/safe-upgrade-tool/introduction.html)
+- description: Added the [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html)
     topics to the Software Update Guide section.
   versions: ''
   type: Major Update, New Topic

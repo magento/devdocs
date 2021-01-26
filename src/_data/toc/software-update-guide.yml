@@ -21,26 +21,26 @@ pages:
         - label: Update and upgrade checklist
           url: /comp-mgr/prereq/prereq_compman-checklist.html
 
-    - label: Safe Upgrade Tool
-      url: /safe-upgrade-tool/introduction.html
+    - label: Upgrade Compatibility Tool
+      url: /upgrade-compatibility-tool/introduction.html
       versionless: true
       edition: ee-only
       children:
 
         - label: Prerequisites
-          url: /safe-upgrade-tool/prerequisites.html
+          url: /upgrade-compatibility-tool/prerequisites.html
           versionless: true
 
         - label: Install
-          url: /safe-upgrade-tool/install.html
+          url: /upgrade-compatibility-tool/install.html
           versionless: true
 
         - label: Run the tool
-          url: /safe-upgrade-tool/run.html
+          url: /upgrade-compatibility-tool/run.html
           versionless: true
 
         - label: Developer information
-          url: /safe-upgrade-tool/developer.html
+          url: /upgrade-compatibility-tool/developer.html
           versionless: true
 
     - label: Magento Marketplace example

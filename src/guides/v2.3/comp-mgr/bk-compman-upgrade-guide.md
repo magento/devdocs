@@ -54,7 +54,7 @@ Related topics
 Complete the tasks discussed in [Prerequisites].
 
  {:.bs-callout-info}
-See the [Safe Upgrade Tool ALPHA]({{site.baseurl}}/safe-upgrade-tool/introduction.html) for more information about the new Magento CLI tool that helps you update your Magento software.
+See the [Upgrade Compatibility Tool ALPHA]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html) page for more information about the new Magento command line tool that helps you update your Magento software.
 
 <!-- ABBREVIATIONS -->
 
