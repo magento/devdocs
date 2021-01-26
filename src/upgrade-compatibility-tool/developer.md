@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-This topic contains information for developers who want to know more technical information about the Magento Upgrade Compatibility Tool ALPHA. It is focused on developers who work closely with the Magento source code. You can use this knowledge to customize the tool's components.
+This topic contains information for developers who want to know more technical information about the Upgrade Compatibility Tool ALPHA. It is focused on developers who work closely with the Magento source code. You can use this knowledge to customize the tool's components.
 
 ## Magento API index integration
 

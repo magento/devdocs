@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-The Magento Upgrade Compatibility Tool ALPHA is a command line tool that checks a Magento instance against a specific version by analyzing all the non-Magento modules installed on it.
+The Upgrade Compatibility Tool ALPHA is a command line tool that checks a Magento instance against a specific version by analyzing all the non-Magento modules installed on it.
 
 The Upgrade Compatibility Tool identifies potential problems that must be fixed in your custom code before attempting to upgrade to a newer version of Magento.
 
