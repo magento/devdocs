@@ -109,14 +109,14 @@ To enable GraphQL caching on Fastly:
 
 [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) describes how to perform both of these tasks.
 
-By default Faslty module for Magento provides follwing VCL configuration for GraphQL caching:
+By default, the Faslty module for Magento provides the follwing VCL configuration for GraphQL caching:
 
 ```text
 if (req.request == "GET" && req.url.path ~ "/graphql" && req.url.qs ~ "query=") {
 ....
 ```
 
-Fastly will cache only GET requests which contains query parameter in request url.
+Fastly will only cache GET requests that contain a query parameter in the request url.
 
 ### Example
 
@@ -126,7 +126,7 @@ http://example.com/graphql?query={ products(filter: {sku: {eq: "Test"}}) { items
 ```
 
 {:.bs-callout-info}
-Be aware, if you calling GraphQL queries by transferring query body not in the url (e.g. as --data-raw '{"query" .... }'), then request will not be cached.
+If you call GraphQL queries in the query body rather than the url (e.g. as --data-raw '{"query" .... }'), the request is not cached.
 
 ## X-Magento-Vary
 
