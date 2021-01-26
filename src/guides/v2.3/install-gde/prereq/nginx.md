@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Prerequisites
 title: nginx
 menu_title: nginx
@@ -13,15 +12,6 @@ functional_areas:
 Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en/linux_packages.html#mainline){:target="_blank"}). You must also install the latest version of `php-fpm`.
 
 Installation instructions vary based on which operating system you are using. See [PHP](php-settings.html) for for information.
-
-## Help if you're just starting out {#apache-help-beginner}
-
-If you're new to all this and need some help getting started, we suggest the following:
-
-*  [Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-*  [What is the software that the Magento server needs to run?]({{page.baseurl }}/install-gde/basics/basics_software.html)
-*  [What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
-*  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Ubuntu 16
 
@@ -88,8 +78,6 @@ Refer to [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html) for more infor
 There are several ways to download the Magento software, including:
 
 *  [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
-
-*  [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
 
 *  [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
@@ -368,11 +356,9 @@ There are several ways to download the Magento software, including:
 
 *  [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 
-*  [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
-
 *  [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-For this example, we'll install using Composer and the command line.
+For this example, we will install using Composer and the command line.
 
 {:.bs-callout-info}
 You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.

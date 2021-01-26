@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Getting Started
 title: Installation flow diagram
 menu_title: Installation flow diagram

@@ -6,11 +6,13 @@ menu_order: 2
 menu_node:
 functional_areas:
   - Upgrade
+redirect_from:
+  - guides/v2.4/install-gde/install/cli/dev_update-magento.html
 ---
 
-This topic discusses how a contributing developer can update the Magento application without reinstalling it. To perform an upgrade if you're *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
+This topic discusses how a contributing developer can update the Magento application without reinstalling it. To perform an upgrade if you are *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
 
-To update the Magento software if you're a contributing developer:
+To update the Magento software if you are a contributing developer:
 
 1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Save any changes you made to `composer.json` because the following steps will overwrite it:
