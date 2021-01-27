@@ -116,7 +116,7 @@ if (req.request == "GET" && req.url.path ~ "/graphql" && req.url.qs ~ "query=") 
 ....
 ```
 
-Fastly will only cache GET requests that contain a query parameter in the request url.
+Fastly will only cache GET requests that contain a query parameter in the request URL.
 
 ### Example
 
