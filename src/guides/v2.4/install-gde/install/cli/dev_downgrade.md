@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Change to a released version
 functional_areas:
   - Install

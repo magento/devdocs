@@ -40,7 +40,7 @@ See [Patches available in MQP tool](https://support.magento.com/hc/en-us/section
 -  **MDVA-20376** _(for Magento `>=2.3.2 <2.3.4`)_—Fixes the issue with the 'No such entity with customerId = 1' error in the exception.log for logged in customers after order placement.
 -  **MDVA-23764** _(for Magento `>=2.3.2 <2.3.5`)_—Fixes the bug in JsFooterPlugin.php that affects the display of dynamic blocks.
 -  **MDVA-13203** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where the 'Integrity constrain violation search_tmp_* table' error appears after a full reindex.
-d-  **MDVA-23426** _(for Magento `>=2.3.3 <2.3.5`)_—Fixes the issue where notification emails sent by Magento contain a blank body with content being added as attachment.
+-  **MDVA-23426** _(for Magento `>=2.3.3 <2.3.5`)_—Fixes the issue where notification emails sent by Magento contain a blank body with content being added as attachment.
 -  **MDVA-22150** _(for Magento `>=2.3.1 <2.3.4`)_—Fixes the issue where customers with a configurable product in cart and a coupon applied, cannot login if that configurable product is disabled in Admin.
 -  **MDVA-32545** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where invoices are not sent out automatically when creating orders from Admin.
 -  **MDVA-32714** _(for Magento `>=2.3.4 <2.4.1`)_—Fixes the issue where customer group price is not working in GraphQL product query.

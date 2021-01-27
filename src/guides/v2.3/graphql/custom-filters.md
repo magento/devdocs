@@ -25,13 +25,72 @@ The [`filter`]({{page.baseurl}}/graphql/queries/products.html#ProductFilterInput
 
 In this example, the custom attribute `volume` was assigned to the `bags` attribute group. Running the [`customAttributeMetadata` query]({{page.baseurl}}/graphql/queries/custom-attribute-metadata.html) on this custom attribute reveals that the `label` and `value` values for the attribute's options are as follows:
 
+**Request:**
+
+```graphql
+{
+  customAttributeMetadata(
+    attributes: [
+      {
+        attribute_code: "volume"
+        entity_type: "catalog_product"
+      }
+    ]
+  ) {
+    items {
+      attribute_code
+      attribute_type
+      entity_type
+      input_type
+      attribute_options {
+       value
+       label
+     }
+    }
+  }
+}
+```
+
+**Response:**
+
+```graphql
+{
+  "data": {
+    "customAttributeMetadata": {
+      "items": [
+        {
+          "attribute_code": "volume",
+          "attribute_type": "Int",
+          "entity_type": "catalog_product",
+          "input_type": "select",
+          "attribute_options": [
+            {
+              "value": "216",
+              "label": "Large"
+            },
+            {
+              "value": "217",
+              "label": "Medium"
+            },
+            {
+              "value": "218",
+              "label": "Small"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
 `label` | `value`
 --- | ---
 `Large` | `216`
 `Medium` | `217`
 `Small` | `218`
 
-In this scenario, a `products` search filtered to return items where the `volume` attribute is set to `Large` would be similar to the following:
+In this scenario, a [`products`]({{page.baseurl}}/graphql/queries/products.html) search filtered to return items where the `volume` attribute is set to `Large` would be similar to the following:
 
 **Request:**
 
