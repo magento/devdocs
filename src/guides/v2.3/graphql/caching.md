@@ -126,7 +126,7 @@ http://example.com/graphql?query={ products(filter: {sku: {eq: "Test"}}) { items
 ```
 
 {:.bs-callout-info}
-If you call GraphQL queries in the query body rather than the url (e.g. as --data-raw '{"query" .... }'), the request is not cached.
+If you call GraphQL queries in the query body rather than the URL (for example, as `--data-raw '{"query" .... }'`), the request is not cached.
 
 ## X-Magento-Vary
 
