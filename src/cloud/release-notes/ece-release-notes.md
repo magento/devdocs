@@ -24,12 +24,12 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 **Environment variable updates**–
 
--  {:.new}Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html#remote_storage) environment variable to enable Cloud Projects for remote storage of media files using a storage service such as AWS S3.<!--MCLOUD-7153-->
+-  {:.fix}Fixed an issue that caused deployment failure when the search engine specified in the `SEARCH_CONFIGURATION` environment variable is a value other than `elasticsearch`.<!--MCLOUD-7283-->
 
 
 
 ## v2002.1.3
-*Release date: {{ site.data.var.ece-release-date }}*<br/>
+*Release date: November 9, 2020*<br/>
 
 **Infrastructure updates**–
 

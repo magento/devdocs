@@ -15,9 +15,9 @@ The `urlResolver` query returns the canonical URL for a specified product, categ
 
 ## Example usage
 
-### Query the URL's information
+### URL resolver for a product
 
-The following query returns information about the URL containing `joust-duffle-bag.html`.
+The following query returns information about the URL containing `joust-duffle-bag.html` for a product.
 
 **Request:**
 
@@ -47,13 +47,77 @@ The following query returns information about the URL containing `joust-duffle-b
 }
 ```
 
+### URL resolver for a category
+
+The following query returns information about the URL containing `gear/bags.html` for category page.
+
+**Request:**
+
+```graphql
+{
+  urlResolver(url: "gear/bags.html") {
+    id
+    relative_url
+    redirectCode
+    type
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "urlResolver": {
+      "id": 4,
+      "relative_url": "gear/bags.html",
+      "redirectCode": 0,
+      "type": "CATEGORY"
+    }
+  }
+}
+```
+
+### URL resolver for a CMS page
+
+The following query returns information about the URL containing `no-route` for a CMS page.
+
+**Request:**
+
+```graphql
+{
+  urlResolver(url: "no-route") {
+    id
+    relative_url
+    redirectCode
+    type
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "urlResolver": {
+      "id": 1,
+      "relative_url": "no-route",
+      "redirectCode": 0,
+      "type": "CMS_PAGE"
+    }
+  }
+}
+```
+
 ## Input attributes
 
 The `urlResolver` query contains the following attribute.
 
 Attribute | Type | Description
 --- | --- | ---
-`url` | String | The requested URL. To query for product and category pages, the `url` value must contain the URL key and suffix. For CMS page queries, the `url` value must contain the URL key only.
+`url` | String | The requested URL. To query for product and category pages, the `url` value must contain the URL key and suffix. For category page queries, the `url` value must contain the full path of the URL key. For CMS page queries, the `url` value must contain the URL key only.
 
 ## Output attributes
 
@@ -70,3 +134,9 @@ Attribute |  Data Type | Description
 ## Related topics
 
 [Products endpoint]({{page.baseurl}}/graphql/queries/products.html)
+
+## Errors
+
+Error | Description
+--- | ---
+`Field urlResolver.url of type String! is required but not provided.` | The value specified in the `urlResolver.url` argument is empty.

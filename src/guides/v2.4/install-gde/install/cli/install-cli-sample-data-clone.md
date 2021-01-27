@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Install by cloning repositories
 functional_areas:
   - Install
@@ -8,7 +7,7 @@ functional_areas:
 redirect_from: /guides/v2.4/install-gde/install/web/install-web-sample-data-clone.html
 ---
 
-{% include install/sampledata/sample-data-clone.md %}
+{% include install/sampledata/sample-data-clone-24.md %}
 
 ### Install the Magento software
 

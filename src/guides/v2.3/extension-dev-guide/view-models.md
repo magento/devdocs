@@ -12,10 +12,10 @@ A view model is an abstraction of the view exposing public properties and comman
 Use this approach anytime you need to inject functionality into template files and your code does not need to be backwards compatible with Magento.
 
  {:.bs-callout-info}
-View models are available in Magento 2.2 onwards. If your code must be compatible with older versions of Magento, consider adding your logic to blocks. For more information about backward compatibility, see [Backward compatibility]({{ site.baseurl }}/contributor-guide/backward-compatible-development/).
+View models are available in Magento 2.2 onwards. If your code must be compatible with older versions of Magento, consider adding your logic to blocks. For more information, see [Backward compatibility]({{ site.baseurl }}/contributor-guide/backward-compatible-development/).
 
  {:.bs-callout-info}
-The use of helpers in templates is discouraged. It is recommeneded to use view models instead.
+The use of helpers in templates is discouraged. It is recommended to use view models instead.
 
 ## How to write view models
 
@@ -24,7 +24,7 @@ View models can be used by passing the view model class as an argument to a temp
 ```xml
 <block name="orangeco.new.viewmodel" template="OrangeCompany_Catalog::example.phtml">
     <arguments>
-        <argument name="view_model" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+        <argument name="viewModel" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
     </arguments>
 </block>
 ```
@@ -34,7 +34,7 @@ In the following example, the same view model is used with an existing block in 
 ```xml
 <referenceBlock name="checkout.cart.item.renderers.default">
     <arguments>
-        <argument name="view_model" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+        <argument name="viewModel" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
     </arguments>
 </referenceBlock>
 ```
@@ -78,7 +78,7 @@ The view model class is passed as an argument to the `product.info.upsell` block
 <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell" template="Magento_Catalog::product/list/items.phtml">
     <arguments>
         <argument name="type" xsi:type="string">upsell</argument>
-        <argument name="view_model" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
+        <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
     </arguments>
 </block>
 ```

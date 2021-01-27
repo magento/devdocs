@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Magento 2.3 technology stack requirements
 functional_areas:
   - Install
@@ -163,4 +162,3 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 [Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-overview.html
 [Elasticsearch PHP client]: https://github.com/elastic/elasticsearch-php
 [RabbitMQ]: {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html
-
