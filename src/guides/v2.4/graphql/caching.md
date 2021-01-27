@@ -109,7 +109,7 @@ To enable GraphQL caching on Fastly:
 
 [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) describes how to perform both of these tasks.
 
-By default, the Faslty module for Magento provides the follwing VCL configuration for GraphQL caching:
+By default, the Fastly module for Magento provides the following VCL configuration for GraphQL caching:
 
 ```text
 if (req.request == "GET" && req.url.path ~ "/graphql" && req.url.qs ~ "query=") {
