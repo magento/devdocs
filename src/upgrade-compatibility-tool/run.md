@@ -2,6 +2,8 @@
 group: software-update-guide
 title: Run the tool
 ee_only: True
+redirect from:
+  - /safe-upgrade-tool/run.html
 functional_areas:
   - Upgrade
 ---

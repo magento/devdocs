@@ -2,6 +2,8 @@
 group: software-update-guide
 title: Install
 ee_only: True
+redirect from:
+  - /safe-upgrade-tool/install.html
 functional_areas:
   - Upgrade
 ---
