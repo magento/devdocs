@@ -2,6 +2,8 @@
 group: software-update-guide
 title: Prerequisites
 ee_only: True
+redirect from:
+  - /safe-upgrade-tool/prerequisites.html
 functional_areas:
   - Upgrade
 ---

@@ -272,7 +272,7 @@ entries:
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
 - description: Reorganized the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
-    pages in the Magento Installation Guide to to make it more coherent.
+    pages in the Magento Installation Guide to make it more coherent.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: November 5, 2020
