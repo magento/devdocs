@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 01_resource
 title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 02_config-hosted
 title: Configure a database and a database user
 menu_title: Configure a database and a database user
