@@ -1,6 +1,6 @@
 ---
 group: contributor-guide
-title: Maintainer Handbook
+title: Maintainer's Handbook
 ---
 
 This document aims to describe the activities performed by a Community Maintainer, provide some insights and description on the tools integrated with our GitHub that helps our Maintainers during their journey.
