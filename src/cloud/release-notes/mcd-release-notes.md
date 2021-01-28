@@ -17,7 +17,7 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 
 ## v1.2.2
-*Release date: no info*<br/>
+*Release date: TBD*<br/>
 
 - {:.new}<!--MCLOUD-7476--> Added a `--custom-registry` option for using your own images registry.
 
