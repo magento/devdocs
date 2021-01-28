@@ -27,7 +27,7 @@ build:
 ```
 
 {:.bs-callout-warning}
-Yor registry must have all needed images.
+Your registry must include all referenced images.
 
 
 Use the following command to list the {{site.data.var.mcd-prod}} `ece-docker` commands:
