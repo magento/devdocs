@@ -34,7 +34,7 @@ The `giftRegistryIdSearch` query requires the `giftRegistryUid` attribute as inp
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`giftRegistryUid` | String! | The ID of the gift registry.
+`giftRegistryUid` | ID! | The unique ID of the gift registry to search for
 
 ## Output attributes
 
