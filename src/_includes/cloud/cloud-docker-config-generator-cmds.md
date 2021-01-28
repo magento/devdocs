@@ -15,7 +15,7 @@ For example, the following command starts the Docker configuration generator in 
 ./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
 ```
 
-Using the `--custom-registry` options all images in the docker-compose.yaml will have the name of your custom registry, for example:
+Using the `--custom-registry` option assigns your custom registry name to all images in the `docker-compose.yaml` file. For example:
 
 ```yaml
 ...
