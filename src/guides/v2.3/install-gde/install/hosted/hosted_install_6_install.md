@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 03_install
 title: Step 6. Install
 menu_title: Step 6. Install

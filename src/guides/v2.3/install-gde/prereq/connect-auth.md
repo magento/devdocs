@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Prerequisites
 title: Get your authentication keys
 menu_title: Get your authentication keys

@@ -2,22 +2,24 @@
 group: software-update-guide
 title: Run the tool
 ee_only: True
+redirect from:
+  - /safe-upgrade-tool/run.html
 functional_areas:
   - Upgrade
 ---
 
-The Magento Safe Upgrade Tool ALPHA (SUT) is a command line (CLI) tool that checks a Magento instance against a specific version by analyzing all the non-Magento modules installed on it.
+The Upgrade Compatibility Tool ALPHA is a command line tool that checks a Magento instance against a specific version by analyzing all the non-Magento modules installed on it.
 
-The SUT identifies potential problems that must be fixed in your custom code before attempting to upgrade to a newer version of Magento.
+The Upgrade Compatibility Tool identifies potential problems that must be fixed in your custom code before attempting to upgrade to a newer version of Magento.
 
 The tool returns a list of errors and warnings that you must address before upgrading to a new version of Magento.
 
-## Use SUT
+## Use the Upgrade Compatibility Tool
 
 Execute the tool by running the following command:
 
 ```bash
-bin/sut upgrade:check INSTALLATION_DIR
+bin/uct upgrade:check INSTALLATION_DIR
 ```
 
 {:.bs-callout-info}
@@ -26,26 +28,26 @@ The `INSTALLATION_DIR` value is the directory where your Magento instance is loc
 We recommend running the following command to avoid memory limitations:
 
 ```bash
-php -d memory_limit=-1 /bin/sut
+php -d memory_limit=-1 /bin/uct
 ```
 
 We also recommend using the `-m` command to run the tool against a specific module.
 
-To see SUT command options and help:
+To see Upgrade Compatibility Tool command options and help:
 
 ```bash
-bin/sut --help
+bin/uct --help
 ```
 
 ### GraphQL schema compatibility verification
 
-The SUT also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
+The Upgrade Compatibility Tool also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
 
 ```bash
-bin/sut graphql:compare https://domain1.com/graphql https://domain2.com/graphql
+bin/uct graphql:compare https://domain1.com/graphql https://domain2.com/graphql
 ```
 
-You must have running "instance before" and "instance after" the upgrade.
+You must have running `instance before` and `instance after` the upgrade.
 
 ### Arguments and options
 
@@ -56,7 +58,7 @@ You can compare your current Magento installation with Magento versions `>=2.3`.
 You must provide the version as a parameter when running the command:
 
 ```bash
-bin/sut upgrade:check INSTALLATION_DIR -c 2.4.1
+bin/uct upgrade:check INSTALLATION_DIR -c 2.4.1
 ```
 
 There are some limitations when running the previous command:
@@ -74,15 +76,15 @@ You can also get a full report containing both _PHP-related_ errors and GraphQL.
 *  `--schema2=SCHEMA2`
 *  `INSTALLATION_DIR`
 
-#### Example of a bin/sut command
+#### Example of a bin/uct command
 
 ```bash
-bin/sut upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.1 INSTALLATION_DIR
+bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.1 INSTALLATION_DIR
 ```
 
 ### Output
 
-The SUT provides a report identifying the affected non-Magento modules and the severity and description of the problem for every issue encountered:
+The Upgrade Compatibility Tool provides a report identifying the affected non-Magento modules and the severity and description of the problem for every issue encountered:
 
 #### Example with a list of errors/warnings
 
@@ -137,4 +139,4 @@ Regarding the GraphQL schema compatibility comparison, the output would be very 
  *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
 ```
 
-See [Developer information]({{site.baseurl}}/safe-upgrade-tool/developer.html) for more information.
+See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) for more information.

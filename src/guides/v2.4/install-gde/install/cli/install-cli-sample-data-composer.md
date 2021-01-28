@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Install using Composer
 functional_areas:
   - Install
