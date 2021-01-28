@@ -5,6 +5,7 @@ Action | Command
 Builds the Docker environment in [production mode][mode] by default and verifies configured service versions. | `./vendor/bin/ece-docker build:compose`
 Builds the docker environment in [developer mode][mode]. | `./vendor/bin/ece-docker build:compose --mode="developer"`
 Builds the docker environment in [production mode][mode]. |`.vendor/bin/ece-docker build:compose --mode="production"`
+Builds the docker environment using the custom images registry. |`.vendor/bin/ece-docker build:compose --custom-registry=="my-registry.example.com"`
 Convert PHP configuration files to Docker ENV files. | `.vendor/bin/ece-docker image:generate:php`
 Builds a custom `docker-compose.yaml` file | `./vendor/bin/ece-docker build:custom:compose`
 
@@ -13,6 +14,21 @@ For example, the following command starts the Docker configuration generator in 
 ```bash
 ./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
 ```
+
+Using the `--custom-registry` option assigns your custom registry name to all images in the `docker-compose.yaml` file. For example:
+
+```yaml
+...
+build:
+    hostname: build.magento2.docker
+    image: 'my-registry.example.com/magento/magento-cloud-docker-php:7.2-cli-226'
+    extends: generic
+...
+```
+
+{:.bs-callout-warning}
+Your registry must include all referenced images.
+
 
 Use the following command to list the {{site.data.var.mcd-prod}} `ece-docker` commands:
 
