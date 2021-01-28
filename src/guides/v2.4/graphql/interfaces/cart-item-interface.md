@@ -101,7 +101,7 @@ The `ConfigurableCartItem` object adds the following attributes to the `CartItem
 Attribute | Data type | Description
 --- | --- | ---
 `configurable_options` | [[SelectedConfigurableOption!]!](#SelectedConfigurableOption) | An array of configurable options
-`configured_variant` | [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html) | Product details of the cart item
+`configured_variant` | [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html) | Returns details about a child configurable product that are different than the parent product. This attribute always returns child information, including the child product image, even if the `storeConfig.configurable_thumbnail_source` attribute is set to `parent`
 `customizable_options` | [[SelectedCustomizableOption]](#SelectedCustomizableOption) | An array of customizable options the shopper chose for the configurable product
 
 ### SelectedConfigurableOption attributes {#SelectedConfigurableOption}
