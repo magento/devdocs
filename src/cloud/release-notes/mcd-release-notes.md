@@ -22,7 +22,7 @@ The release notes include:
 - {:.new}<!--MCLOUD-7476--> Added a `--custom-registry` option for using your own images registry.
 
     ```terminal
-    ./vendor/bin/ece-docker build:compose --custom-gegistry=my-registry.examle.com
+    ./vendor/bin/ece-docker build:compose --custom-registry=my-registry.example.com
     ```
 
 ## v1.2.1
