@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 02_access
 title: Cannot write to the generated/code directory
 menu_title: Cannot write to the generated/code directory

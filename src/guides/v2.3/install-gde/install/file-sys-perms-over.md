@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Prerequisites
 title: Overview of ownership and permissions
 menu_title: Overview of ownership and permissions

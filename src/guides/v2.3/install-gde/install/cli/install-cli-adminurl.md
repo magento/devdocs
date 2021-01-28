@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Display or change the Admin URI
 functional_areas:
   - Install

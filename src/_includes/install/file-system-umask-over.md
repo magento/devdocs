@@ -2,9 +2,6 @@
 
 Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and permissions.
 
-{:.bs-callout-info}
-If you're using an Magento version 2.0.5 or earlier, see [Appendix---Magento file system ownership and appendix (legacy)]({{ page.baseurl }}/install-gde/install/legacy-file-system-perms.html) instead of this topic. In version 2.0.6 and later, Magento does not explicitly set file or directory permissions.
-
 This topic provides some basic information about our ownership and permissions guidelines. For additional information, see:
 
 *  [Set pre-installation ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html)
