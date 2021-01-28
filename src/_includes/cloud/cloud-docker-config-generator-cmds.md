@@ -21,7 +21,7 @@ Using the `--custom-registry` option assigns your custom registry name to all im
 ...
 build:
     hostname: build.magento2.docker
-    image: 'my-registry.examle.com/magento/magento-cloud-docker-php:7.2-cli-226'
+    image: 'my-registry.example.com/magento/magento-cloud-docker-php:7.2-cli-226'
     extends: generic
 ...
 ```
