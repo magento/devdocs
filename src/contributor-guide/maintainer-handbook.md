@@ -9,11 +9,11 @@ This document aims to describe the activities performed by a Community Maintaine
 
 Within our GitHub organization there are many repositories that our Maintainers can interact with, the repository that has most activity is the [magento2](https://github.com/magento/magento2), but depending on your interest you may also interact with some of our other repositories, like:
 
-- [pwa-studio](https://github.com/magento/pwa-studio)
-- [magento2-phpstorm-plugin](https://github.com/magento/magento2-phpstorm-plugin)
-- [inventory](https://github.com/magento/inventory)
-- [adobe-stock-integration](https://github.com/magento/adobe-stock-integration)
-- and [many others](https://github.com/magento)
+-  [pwa-studio](https://github.com/magento/pwa-studio)
+-  [magento2-phpstorm-plugin](https://github.com/magento/magento2-phpstorm-plugin)
+-  [inventory](https://github.com/magento/inventory)
+-  [adobe-stock-integration](https://github.com/magento/adobe-stock-integration)
+-  and [many others](https://github.com/magento)
 
 Because most of our contributions are to [magento2](https://github.com/magento/magento2) repository, we have created several GitHub projects to help us to manage these contributions.
 
@@ -99,6 +99,5 @@ We gather our Community Maintainers on our Slack channel, once you are on-boarde
 
 Currently, we have two meetings that we encourage our Maintainers to participate and engage with the Community Engineering team:
 
-•	Maintainer’s Call – Schedule to happen once a month.
-•	[Community Contributions Triage](https://github.com/magento/magento2/wiki/Public-Triage-Meeting) – Schedule to happen twice a week.
-
+-  Maintainer’s Call – Schedule to happen once a month.
+-  [Community Contributions Triage](https://github.com/magento/magento2/wiki/Public-Triage-Meeting) – Schedule to happen twice a week.
