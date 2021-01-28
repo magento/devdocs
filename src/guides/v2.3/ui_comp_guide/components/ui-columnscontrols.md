@@ -25,22 +25,51 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 
 ## Examples
 
-### Add ColumnsControls component to Listing basic component
+### You can simply change "minVisible" and "maxVisible" values in the JS file.
 
-```xml
-<listing>
-    ...
-    <listingToolbar>
-        ...
-         <columnsControls name="columns_controls">
-            <settings>
-                <minVisible>1</minVisible>
-                <maxVisible>3</maxVisible>
-            </settings>
-         </columnsControls>
-    </listingToolbar>
-    ...
-</listing>
+For this, you have to override the vendor JS file in your custom module.
+
+vendor file js path :
+/vendor/magento/module-ui/view/base/web/js/grid/controls/columns.js
+
+#### For override JS file follow step Below: 
+
+#### First step : 
+/app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/requirejs-config.js
+
+```js 
+
+var config = {
+    map: {
+        '*': {
+            'Magento_Ui/js/grid/controls/columns':'VENDOR_NAME_MODULE_NAME/js/grid/controls/columns'
+        }
+    }
+}
+
+```
+
+#### Second step :
+/app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/web/js/grid/controls/columns.js
+(In this JS change "minVisible" and "maxVisible" values as per your requirement)
+
+```js
+return Collection.extend({
+        defaults: {
+            template: 'ui/grid/controls/columns',
+            minVisible: 1,
+            maxVisible: 4,
+            viewportSize: 18,
+            displayArea: 'dataGridActions',
+            columnsProvider: 'ns = ${ $.ns }, componentType = columns',
+            imports: {
+                addColumns: '${ $.columnsProvider }:elems'
+            },
+            templates: {
+                headerMsg: $t('${ $.visible } out of ${ $.total } visible')
+            }
+        }
+    });
 ```
 
 #### Result
