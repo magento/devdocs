@@ -24,10 +24,10 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 ## v1.0.9
 *Release date: February 1, 2021*<br/>
 
--  {:.fix} Fixed compatibility issue with PHP 7.4.
--  {:.fix} Fixed issue where deprecated patches become visible after applying a replacement patch containing the entire contents of the deprecated patch. This happened when applying a patch that combined several patches into one.<!--MC-40626-->
--  {:.fix} Fixed issue where the layered navigation filter was only displayed when a product was present on the listing page with Shared Catalog enabled.<!--MCLOUD-6923-->
--  {:.fix} Fixed an issue in which the `git apply` command silently failed to apply patches in some environments.<!--MC-40529-->
+-  {:.fix} **Compatibility with PHP 7.4**—Fixed a compatibility issue with PHP 7.4.
+-  {:.fix} **Deprecated patches become visible**—Fixed issue in which deprecated patches become visible is the patches table after applying a replacement patch that contains the entire contents of the deprecated patch. This could happen if you applied a patch that combined several other patches.<!--MC-40626-->
+-  {:.fix} **Layered navigation**—Fixed the issue that prevented the layered navigation from showing all options when the B2B Shared Catalog was enabled.<!--MCLOUD-6923-->
+-  {:.fix} **Silent failures when applying patches**—Fixed an issue in which the `git apply` command silently failed to apply patches in some environments.<!--MC-40529-->
 
 ## v1.0.8
 *Release date: October 14, 2020*<br/>
