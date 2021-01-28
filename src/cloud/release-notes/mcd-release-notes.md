@@ -19,7 +19,7 @@ The release notes include:
 ## v1.2.2
 *Release date: no info*<br/>
 
-- {:.new}<!--MCLOUD-7476--> Added option `--custom-registy` to use own images registry
+- {:.new}<!--MCLOUD-7476--> Added a `--custom-registry` option for using your own images registry.
 
     ```terminal
     ./vendor/bin/ece-docker build:compose --custom-gegistry=my-registry.examle.com
