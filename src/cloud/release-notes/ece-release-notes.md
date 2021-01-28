@@ -17,17 +17,19 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 {:.bs-callout-info}
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
-## v2002.1.5
+## v2002.1.4
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+- {:.new}Added support for the `opcache.enable_cli` PHP option to flush the opcache before running the deploy hook. This configuration resets the cache configuration to ensure that the current configuration settings are applied on each deployment.<!--MCLOUD-7015-->
 
 **Environment variable updates**–
 
--  {:.fix}Fixed an issue that caused deployment failure when the search engine specified in the `SEARCH_CONFIGURATION` environment variable is a value other than `elasticsearch`.<!--MCLOUD-7283-->
+-  {:.new}Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html#remote_storage) environment variable to enable Cloud Projects for remote storage of media files using a storage service such as AWS S3.<!--MCLOUD-7153-->
 
 ## v2002.1.4
 *Release date: November 19, 2020*<br/>
 
-- {:.new}Added support for the `opcache.enable_cli` PHP option to flush the opcache before running the deploy hook. This configuration resets the cache configuration to ensure that the current configuration settings are applied on each deployment.<!--MCLOUD-7015-->
+-  {:.fix}Fixed an issue that caused deployment failure when the search engine specified in the `SEARCH_CONFIGURATION` environment variable is a value other than `elasticsearch`.<!--MCLOUD-7283-->
 
 ## v2002.1.3
 *Release date: November 9, 2020*<br/>
