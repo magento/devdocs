@@ -21,6 +21,14 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 
 <!--Add release notes below-->
 
+## v1.0.9
+*Release date: February 1, 2021*<br/>
+
+-  {:.fix} Fixed compatibility issue with PHP 7.4.
+-  {:.fix} Fixed issue where deprecated patches become visible after applying a replacement patch containing the entire contents of the deprecated patch. This happened when applying a patch that combined several patches into one.<!--MC-40626-->
+-  {:.fix} Fixed issue where the layered navigation filter was only displayed when a product was present on the listing page with Shared Catalog enabled.<!--MCLOUD-6923-->
+-  {:.fix} Fixed an issue in which the `git apply` command silently failed to apply patches in some environments.<!--MC-40529-->
+
 ## v1.0.8
 *Release date: October 14, 2020*<br/>
 
