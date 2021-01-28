@@ -16,6 +16,15 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.2.2
+*Release date: no info*<br/>
+
+- {:.new}<!--MCLOUD-7476--> Added option `--custom-registy` to use own images registry
+
+    ```terminal
+    ./vendor/bin/ece-docker build:compose --custom-gegistry=my-registry.examle.com
+    ```
+
 ## v1.2.1
 *Release date: December 21, 2020*<br/>
 
