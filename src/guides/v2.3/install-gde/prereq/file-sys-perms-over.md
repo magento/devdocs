@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Overview of ownership and permissions
 functional_areas:
   - Install
