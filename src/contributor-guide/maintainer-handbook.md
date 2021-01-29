@@ -7,7 +7,7 @@ This document describes activities performed by a community maintainer, provides
 
 ### Magento repositories and projects
 
-Within our GitHub organization there are numerous repositories that our maintainers interact with. The repository that has most activity is [magento2](https://github.com/magento/magento2). Depending on your interest, you might also interact with some of our other repositories, such as:
+Our maintainers work on numerous repositories within the Magento Github organization. The repository that has most activity is [magento2](https://github.com/magento/magento2). Depending on your interest, you might also interact with some of our other repositories, such as:
 
 -  [pwa-studio](https://github.com/magento/pwa-studio)
 -  [magento2-phpstorm-plugin](https://github.com/magento/magento2-phpstorm-plugin)
