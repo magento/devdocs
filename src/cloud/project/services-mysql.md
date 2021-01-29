@@ -25,7 +25,7 @@ MariaDB 10.1 is the last version that support XtraDB as the storage engine. Vers
    ```yaml
    mysql:
        type: mysql:<version>
-       disk: 2048
+       disk: 5120
    ```
 
    {:.bs-callout-tip}
@@ -69,8 +69,8 @@ If no endpoints are defined, a single endpoint named `mysql` has `admin` access 
 
 ```yaml
 mysql:
-    type: mysql:10.2
-    disk: 2048
+    type: mysql:10.3
+    disk: 5120
     configuration:
         schemas:
             - main
