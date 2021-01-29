@@ -59,8 +59,8 @@ As described on our [Definition of Done]({{ site.baseurl }}/contributor-guide/co
 
 -  Guarantee the changes are properly covered
 -  Ensure the type of test used to cover the changes is appropriate
--  Add the appropriate label to the pull request 
-  
+-  Add the appropriate label to the pull request
+
 If the pull request is not covered by tests, the maintainer should advise the contributor on how to add proper test coverage.
 
 ![Test coverage]({{ site.baseurl }}/contributor-guide/img/test-coverage-labels.png)
