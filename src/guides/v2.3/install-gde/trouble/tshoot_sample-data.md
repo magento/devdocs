@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 03_install
 title: Errors installing optional sample data
 menu_title: Errors installing optional sample data

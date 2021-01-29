@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Post-installation
 functional_areas:
   - Install

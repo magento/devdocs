@@ -28,7 +28,7 @@ We support and deploy the following services:
 -  [`elasticsearch`]({{ site.baseurl }}/cloud/project/services-elastic.html)
 -  [`rabbitmq`]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 
-You can view default versions and disk values in the the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, and `elasticsearch` services defined in the `services.yaml` configuration file:
+You can view default versions and disk values in the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, and `elasticsearch` services defined in the `services.yaml` configuration file:
 
 ```yaml
 mysql:

@@ -171,7 +171,7 @@ parentElement.appendChild(newDiv);
 
 #### UI component data providers
 
-UI component data providers pass dynamic (user generated) data to UI components. The data they return is being rendered in order to support component dynamic linking. Since user data is supposed to be treated a a literal value which is not refering to any other component, rendering of these properties must be disabled. See [UI component data providers](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_data_source.html) to read more about data providers and component linking.
+UI component data providers pass dynamic (user generated) data to UI components. The data they return is being rendered in order to support component dynamic linking. Since user data is supposed to be treated as a literal value which is not refering to any other component, rendering of these properties must be disabled. See [UI component data providers](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_data_source.html) to read more about data providers and component linking.
 
 ```php
 $uiData = ['linkProperty' => '${ $.otherComponent.value }'];
