@@ -8,7 +8,7 @@ group: release
 -  **MAJOR release**—2
 -  **MINOR release**—2.4
 -  **PATCH release**—2.4.1
-   -  **SECURITY release**—2.4.1-p1
+   -  **SECURITY patch release**—2.4.1-p1
       -  Security bug fix
       -  Security enhancement
 -  **Hotfix**
@@ -37,35 +37,35 @@ The following guidelines apply to patch releases:
 -  On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues and high-impact quality issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes.
 -  Patch releases may include new features as long as they are not expected to break other code. The new feature can be included in core Magento code or as an extension, such as Magento Page Builder.
 
-## SECURITY release
+## SECURITY patch release
 
-**Security Bug Fix**: A software code change that resolves an identified security issue and delivers expected results in an affected product area.  These fixes are generally backward compatible.
+**Security Bug Fix**: A software code change that resolves an identified security issue and delivers expected results in an affected product area. These fixes are generally backward compatible.
 
-**Security Enhancement**: A software improvement or configuration change to proactively improve security within the Magento application. These security enhancements help address security risks that impact the security posture of the Magento application but may be backward incompatible.
+**Security Enhancement**: A software improvement or configuration change to proactively improve security within the Magento application. These security enhancements help address security risks that impact the security posture of the {{site.data.var.ee}} application but may be backward incompatible.
 
-With Security Patch releases, you can keep your site more secure without applying additional quality fixes and enhancements that are contained within a full quarterly patch release. Security Patch releases are appended with ‘-pN’, where N is the incremental patch version beginning with 1 (for example, 2.3.5-p1). Security Patch releases can also include hotfixes required to address critical issues that affect the Magento Commerce application.
+With security patch releases, you can keep your site more secure without applying additional quality fixes and enhancements that are contained within a full quarterly patch release. Security patch releases are appended with ‘-pN’, where N is the incremental patch version beginning with 1 (for example, 2.3.5-p1). Security patch releases can also include hotfixes required to address critical issues that affect the {{site.data.var.ee}} application.
 
-Each Security Patch release is based on the prior full patch release, hence it contains quality and security fixes from prior patch release and  security fixes created between the prior full Patch release and the Security Patch release.
+Each security patch release is based on the prior full patch release, hence it contains quality and security fixes from prior patch release and security fixes created between the prior full patch release and the security patch release.
 
-With the announcement of our [updated life cycle policy](https://magento.com/blog/updated-lifecycle-policy-magento-releases) [10/1/2020], our Security Patch releases are differentiated based on whether they are applicable to the latest-supported minor release or a part of a still-supported previous minor release line:
+With the announcement of our [updated life cycle policy](https://magento.com/blog/updated-lifecycle-policy-magento-releases) [10/1/2020], our security patch releases are differentiated based on whether they are applicable to the latest-supported minor release or a part of a still-supported previous minor release line:
 
--  **Security Patch releases for the Latest-Supported Minor release**:
+-  **Security patch releases for the latest-supported minor release**:
 
-   -  The Security Patch release for the latest-supported Minor release (currently Magento Commerce 2.4) includes:
+   -  The security patch release for the latest-supported Minor release (currently {{site.data.var.ee}} 2.4) includes:
 
-      -  Security bug fixes that have been created since the previous full Patch release.
+      -  Security bug fixes that have been created since the previous full patch release.
 
-      -  These Security Patch releases can also include hotfixes required to address critical issues that may affect the Magento Commerce application.
+      -  These security patch releases can also include hotfixes required to address critical issues that may affect the {{site.data.var.ee}} application.
 
-   -  The Security Patch release for the latest-supported Minor release (currently Magento Commerce 2.4) does not typically include security enhancements. Instead, these are included in the full comprehensive Patch release for the latest-supported Minor release.
+   -  The security patch release for the latest-supported minor release (currently {{site.data.var.ee}} 2.4) does not typically include security enhancements. Instead, these are included in the full comprehensive patch release for the latest-supported minor release.
 
--  **Security Patch releases for Supported Previous Minor releases**:
+-  **Security patch releases for supported previous minor releases**:
 
-   -  The Security Patch release for a previous Minor release that is still supported (currently Magento Commerce 2.3) includes:
+   -  The security patch release for a previous minor release that is still supported (currently {{site.data.var.ee}} 2.3) includes:
 
-      -  Security bug fixes that have been created since the previous Patch or Security Patch release, as well as new security enhancements.
+      -  Security bug fixes that have been created since the previous patch or security patch release, as well as new security enhancements.
 
-      -  These Security Patch releases can also include hotfixes required to address critical issues that affect the Magento Commerce application.
+      -  These security patch releases can also include hotfixes required to address critical issues that affect the {{site.data.var.ee}} application.
 
       |                                                                                | Security Bug | Security Enhancement |
       |--------------------------------------------------------------------------------|--------------|----------------------|
