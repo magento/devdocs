@@ -689,10 +689,14 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 <referenceBlock name="customer-account-navigation-return-history-link" remove="true"/>
 ```
 
-## Create cms-page/product/category-specific layouts
+## Create cms-page/product/category-specific selectable layouts
 
 As of Magento 2.3.4, merchants can select layout updates to be applied to specific Category/Product/CMS Page pages on the frontend. These layout
 updates are made by creating layout XML files following specific naming conventions.
+
+{:.bs-callout-info}
+Selectable layout updates can only be loaded from the global store theme and work only in the single website with single theme configurations.
+If a specific entity like cms-page/product/category will have individual theme applied at the design configuration tab, selected theme will have priority over selected layout update.
 
 For Categories:
 
