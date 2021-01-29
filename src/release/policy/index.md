@@ -51,7 +51,7 @@ With the announcement of our [updated life cycle policy](https://magento.com
 
 -  **Security patch releases for the latest-supported minor release**:
 
-   -  The security patch release for the latest-supported Minor release (currently {{site.data.var.ee}} 2.4) includes:
+   -  The security patch release for the latest-supported minor release (currently {{site.data.var.ee}} 2.4) includes:
 
       -  Security bug fixes that have been created since the previous full patch release.
 
