@@ -20,11 +20,23 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 ## v2002.1.5
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
--  {:.new}Added support for the `opcache.enable_cli` PHP option to flush the opcache before running the deploy hook. This configuration resets the cache configuration to ensure that the current configuration settings are applied on each deployment.<!--MCLOUD-7015-->
+-  {:.new}**Remote storage**—Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html#remote_storage) environment variable to enable Cloud Projects for remote storage of media files using a storage service such as AWS S3.<!--MCLOUD-7153-->
 
-**Environment variable updates**–
+-  {:.new}**Flushing the opcache**—Added support for the `opcache.enable_cli` PHP option to flush the opcache before running the deploy hook. This configuration resets the cache configuration to ensure that the current configuration settings are applied on each deployment.<!--MCLOUD-7015-->
 
--  {:.new}Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html#remote_storage) environment variable to enable Cloud Projects for remote storage of media files using a storage service such as AWS S3.<!--MCLOUD-7153-->
+-  {:.new}**Validation of Aurora DB**—Updated database service validation to be compatible with the Aurora database.<!--MCLOUD-7269-->
+
+-  {:.new}**SCD_NO_PARENT**—Added configuration `SCD_NO_PARENT` (for Magento >=2.4.2) to manage generation of SCD for parent themes.<!--MCLOUD-7284-->
+
+-  {:.fix}**Memory limits and commands**—Fixed an issue where `php vendor/bin/ece-tools` commands would not work if the size of the `cloud.log` file exceeded the PHP memory_limit. Instead of reading the entire `cloud.log` file into memory, we now only read a smaller subset of data from the log file.<!--MCLOUD-7275--><!--MCLOUD-7400-->
+
+-  {:.fix}**Custom database connections**—Fixed a `.magento.env.yaml` configuration issue in which custom database connections defined for `DATABASE_CONFIGURATION` were not being used. The connection settings were not being added to `app/etc/env.php`.<!--MCLOUD-7426-->
+
+-  {:.fix}**Empty error logs**—Fixed an issue that caused deployments to fail if the `cloud.error.log` was empty.<!--MCLOUD-7296-->
+
+-  {:.fix}**MariaDB 10.3 validation**—Fixed validation of MariaDB 10.3 for Magento 2.3.6-p1.<!--MCLOUD-7416-->
+
+-  {:.fix}**Cache flush logs**—Added additional logs to indicate the start and finish of the `cache:flush` step.<!--MCLOUD-7503-->
 
 ## v2002.1.4
 *Release date: November 19, 2020*<br/>

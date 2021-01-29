@@ -75,6 +75,19 @@ stage:
 
 {% include cloud/note-increase-scd-max-execution-time-variable.md%}
 
+### `SCD_NO_PARENT`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.3.0 and later
+
+Set to `true` to prevent generating static content for parent themes during the build and deployment phases. When this option is set to `true`, less static content is generated, which improves your overall build and deployment times.
+
+```yaml
+stage:
+  global:
+    SCD_NO_PARENT: true
+```
+
 ### `SCD_USE_BALER`
 
 -  **Default**—_Not set_

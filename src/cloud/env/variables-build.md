@@ -86,6 +86,21 @@ stage:
     SCD_COMPRESSION_TIMEOUT: 800
 ```
 
+### `SCD_NO_PARENT`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.3.0 and later
+
+Set to `true` to prevent generating static content for parent themes during the build phase.
+
+On the build phase, we recommend setting `SCD_NO_PARENT: false` so that static content for the parent themes is generated during the build phase where the process will not impact site deployment or cause unnecessary site downtime. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
+
+```yaml
+stage:
+  build:
+    SCD_NO_PARENT: false
+```
+
 ### `SCD_MATRIX`
 
 -  **Default**—_Not set_
