@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Required PHP settings
 functional_areas:
   - Install

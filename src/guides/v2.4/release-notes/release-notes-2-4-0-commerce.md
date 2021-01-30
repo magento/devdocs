@@ -716,7 +716,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6992-->
 
-*  The logic that is responsible  for updating configurable product product images has been improved. Previously,  simple products associated with a configurable product displayed only the default image associated with the configurable product, and  Magento sometimes displayed the wrong main image for the product. _Fix submitted by Sergiy Vasiutynskyi in pull request [26560](https://github.com/magento/magento2/pull/26560)_. [GitHub-26473](https://github.com/magento/magento2/issues/26473), [GitHub-26856](https://github.com/magento/magento2/issues/26856), [GitHub-26858](https://github.com/magento/magento2/issues/26858)
+*  The logic that is responsible  for updating configurable product images has been improved. Previously,  simple products associated with a configurable product displayed only the default image associated with the configurable product, and  Magento sometimes displayed the wrong main image for the product. _Fix submitted by Sergiy Vasiutynskyi in pull request [26560](https://github.com/magento/magento2/pull/26560)_. [GitHub-26473](https://github.com/magento/magento2/issues/26473), [GitHub-26856](https://github.com/magento/magento2/issues/26856), [GitHub-26858](https://github.com/magento/magento2/issues/26858)
 
 <!--- ENGCOM-6520-->
 
