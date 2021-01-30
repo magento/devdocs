@@ -36,7 +36,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.fix}**MariaDB 10.3 validation**—Fixed validation of MariaDB 10.3 for Magento 2.3.6-p1.<!--MCLOUD-7416-->
 
--  {:.fix}**Cache flush logs**—Added additional logs to indicate the start and finish of the `cache:flush` step.<!--MCLOUD-7503-->
+-  {:.fix}**Cache:flush**—Added additional log entries to indicate the start and finish of the `cache:flush` step.<!--MCLOUD-7503-->
 
 ## v2002.1.4
 *Release date: November 19, 2020*<br/>
