@@ -9,7 +9,7 @@ The tag *scope* provides a mechanism for a cache type.
 
 ## Cache type configuration {#m2devgde-cache-type-configuration}
 
-Declare a new cache type in the `etc/cache.xml` file with the following attributes:
+Declare a new cache type in the `<module_dir>/etc/cache.xml` file with the following attributes:
 
 | Attribute | Required? | Description |
 | --- | --- | --- |
@@ -83,3 +83,51 @@ You must specify the following parameters:
 
 [tagscope]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php
 [type]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/Cache/Type/Notification.php
+
+## Examples {#m2devgde-cache-type-model}
+
+A cache type `translate` is declared in the Magento_Translation module using the `cache.xml` configuration file.
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Cache/etc/cache.xsd">
+    <type name="translate" translate="label,description" instance="Magento\Framework\App\Cache\Type\Translate">
+        <label>Translations</label>
+        <description>Translation files</description>
+    </type>
+</config>
+```
+
+Translate cache type model class is defined in `Magento\Framework\App\Cache\Type\Translate.php` class. It must extends `Magento\Framework\Cache\Frontend\Decorator\TagScope` class.
+
+```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+namespace Magento\Framework\App\Cache\Type;
+
+/**
+ * System / Cache Management / Cache type "Translations"
+ */
+class Translate extends \Magento\Framework\Cache\Frontend\Decorator\TagScope
+{
+    /**
+     * Cache type code unique among all cache types
+     */
+    const TYPE_IDENTIFIER = 'translate';
+
+    /**
+     * Cache tag used to distinguish the cache type from all other cache
+     */
+    const CACHE_TAG = 'TRANSLATE';
+
+    /**
+     * @param FrontendPool $cacheFrontendPool
+     */
+    public function __construct(FrontendPool $cacheFrontendPool)
+    {
+        parent::__construct($cacheFrontendPool->get(self::TYPE_IDENTIFIER), self::CACHE_TAG);
+    }
+}
+```
