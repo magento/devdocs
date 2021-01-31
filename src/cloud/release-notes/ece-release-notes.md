@@ -26,7 +26,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}**Validation of Aurora DB**—Updated database service validation to be compatible with the Aurora database.<!--MCLOUD-7269-->
 
--  {:.new}**SCD_NO_PARENT**—Added configuration `SCD_NO_PARENT` (for Magento >=2.4.2) to manage generation of SCD for parent themes.<!--MCLOUD-7284-->
+-  {:.new}**New SCD_NO_PARENT configuration**—Added a new configuration—`SCD_NO_PARENT` (for Magento >=2.4.2)—to manage the generation of static content for parent themes.<!--MCLOUD-7284-->
 
 -  {:.fix}**Memory limits and commands**—Fixed an issue where `php vendor/bin/ece-tools` commands would not work if the size of the `cloud.log` file exceeded the PHP memory_limit. Instead of reading the entire `cloud.log` file into memory, we now only read a smaller subset of data from the log file.<!--MCLOUD-7275--><!--MCLOUD-7400-->
 
@@ -36,7 +36,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.fix}**MariaDB 10.3 validation**—Fixed validation of MariaDB 10.3 for Magento 2.3.6-p1.<!--MCLOUD-7416-->
 
--  {:.fix}**Cache:flush**—Added additional log entries to indicate the start and finish of the `cache:flush` step.<!--MCLOUD-7503-->
+-  {:.fix}**Cache:flush logging**—Added additional log entries to indicate the start and finish of the `cache:flush` step.<!--MCLOUD-7503-->
 
 ## v2002.1.4
 *Release date: November 19, 2020*<br/>
