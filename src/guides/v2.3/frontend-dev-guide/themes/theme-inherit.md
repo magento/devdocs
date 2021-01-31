@@ -169,3 +169,27 @@ To override the instructions from an ancestor theme layout file:
 To override module [layout instructions](https://glossary.magento.com/layout-instructions) (base layout):
 
 *  Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/base` directory.
+
+**Example:**
+
+OrangeCo decided they should modify the product page layout completely to meet the new design, defined in `<Magento_Catalog_module_dir>/view/frontend/layout/catalog_product_view.xml`
+To do this, they added an overriding layout in `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/override/base/catalog_product_view.xml` with the required customization.
+
+```xml
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="mage/gallery/gallery.css"/>
+    </head>
+    <update handle="catalog_product_opengraph" />
+    <update handle="page_calendar"/>
+    <body>
+        <referenceBlock name="breadcrumbs" template="Magento_Catalog::product/breadcrumbs.phtml">
+            <arguments>
+                <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\Breadcrumbs</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
+```
+
+For more information about overriding layout refer to the [Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html) article.
