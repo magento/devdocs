@@ -26,7 +26,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}**Validation of Aurora DB**—Updated the database service validation so that it is compatible with the Aurora database.<!--MCLOUD-7269-->
 
--  {:.new}**New SCD_NO_PARENT configuration**—Added a new configuration—`SCD_NO_PARENT` (for Magento >=2.4.2)—to manage the generation of static content for parent themes.<!--MCLOUD-7284-->
+-  {:.new}**SCD_NO_PARENT environment variable**—Added the `SCD_NO_PARENT` environment variable (for Magento >=2.4.2) to manage the generation of static content for parent themes.<!--MCLOUD-7284-->
 
 -  {:.fix}**Memory limits and commands**—Fixed an issue where `php vendor/bin/ece-tools` commands would not work if the size of the `cloud.log` file exceeded the PHP memory_limit. Instead of reading the entire `cloud.log` file into memory, we now only read a smaller subset of data from the log file.<!--MCLOUD-7275--><!--MCLOUD-7400-->
 

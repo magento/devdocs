@@ -540,7 +540,7 @@ stage:
 ### `SCD_NO_PARENT`
 
 -  **Default**—`false`
--  **Version**—Magento 2.3.0 and later
+-  **Version**—Magento 2.4.2 and later
 
 On the deploy phase, we recommend setting `SCD_NO_PARENT: true` so that the generation of static content for parent themes does not occur during the deploy phase. This setting minimizes deployment time and prevents site downtime that can occur if the static content build fails during the deployment. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
 

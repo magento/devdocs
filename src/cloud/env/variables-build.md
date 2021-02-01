@@ -89,7 +89,7 @@ stage:
 ### `SCD_NO_PARENT`
 
 -  **Default**—`false`
--  **Version**—Magento 2.3.0 and later
+-  **Version**—Magento 2.4.2 and later
 
 Set to `true` to prevent generating static content for parent themes during the build phase.
 
