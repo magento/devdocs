@@ -42,3 +42,7 @@ pages:
     - label: Maintainers
       url: /contributor-guide/maintainers.html
       versionless: true
+      children:
+        - label: Maintainer's Handbook
+          url: /contributor-guide/maintainer-handbook.html
+          versionless: true

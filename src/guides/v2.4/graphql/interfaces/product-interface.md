@@ -25,11 +25,11 @@ The following table defines the `ProductInterface` attributes and objects.
 
 Attribute | Data type | Description
 --- | --- | ---
-`attribute_set_id` | Int | The attribute set assigned to the product
+`attribute_set_id` | Int | Deprecated. This field should not be used on the storefront. The attribute set assigned to the product
 `canonical_url` | String  | The relative canonical URL. This value is returned only if the system setting **Use Canonical Link Meta Tag For Products** is enabled
 `categories` | [[CategoryInterface]]({{ page.baseurl }}/graphql/interfaces/category-interface.html) | The categories assigned to the product. See [CategoryInterface attributes]({{ page.baseurl }}/graphql/interfaces/category-interface.html) for more information
 `country_of_manufacture` | String | The product's country of origin
-`created_at` | String | Timestamp indicating when the product was created
+`created_at` | String | Deprecated. This field should not be used on the storefront. Timestamp indicating when the product was created
 `crosssell_products` | [ProductInterface] | An array of cross-sell products
 `description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
@@ -43,8 +43,8 @@ Attribute | Data type | Description
 `meta_keyword` | String | A comma-separated list of keywords that are visible only to search engines
 `meta_title` | String | A string that is displayed in the title bar and tab of the browser and in search results lists
 `name` | String | The product name. Customers use this name to identify the product.
-`new_from_date` | String | The beginning date for new product listings, and determines if the product is featured as a new product
-`new_to_date` | String | The end date for new product listings
+`new_from_date` | String | Deprecated. This field should not be used on the storefront. The beginning date for new product listings, and determines if the product is featured as a new product
+`new_to_date` | String | Deprecated. This field should not be used on the storefront. The end date for new product listings
 `only_x_left_in_stock` | Float | The "Only X left Threshold" assigned to the product. This attribute is defined in the `InventoryGraphQl` module.
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
 `price` | ProductPrices | Deprecated. Use `price_range` instead
@@ -58,7 +58,7 @@ Attribute | Data type | Description
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
 `small_image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the small image used on catalog pages
-`special_from_date` | String | The beginning date that a product has a special price
+`special_from_date` | String | Deprecated. This field should not be used on the storefront. The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
 `staged` | Boolean! | Indicates whether the product is staged for a future campaign
@@ -70,7 +70,7 @@ Attribute | Data type | Description
 `tier_prices` | [ProductTierPrices] | Deprecated. Use `price_tiers` instead
 `type_id` | String | Deprecated. Use the GraphQL `__typename` meta attribute instead
 `uid` | ID! | The unique ID for objects implementing `ProductInterface`
-`updated_at` | String | The timestamp indicating when the product was last updated
+`updated_at` | String | Deprecated. This field should not be used on the storefront. The timestamp indicating when the product was last updated
 `upsell_products` | [ProductInterface] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | Deprecated. Use `canonical_url` instead
