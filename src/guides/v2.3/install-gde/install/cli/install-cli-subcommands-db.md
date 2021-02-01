@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Create the Magento database schema
 functional_areas:
   - Install

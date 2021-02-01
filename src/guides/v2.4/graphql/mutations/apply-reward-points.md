@@ -134,3 +134,10 @@ Attribute |  Data Type | Description
  {% include graphql/cart-object-24.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`Required parameter "cart_id" is missing` | The mutation does not contain a `cart_id` argument.
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.

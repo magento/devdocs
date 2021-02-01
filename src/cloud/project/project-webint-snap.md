@@ -123,8 +123,9 @@ You can also backup only selected databases by appending the database names to t
 
 ```bash
 php vendor/bin/ece-tools -- main sales
+```
 
-For help, use the command: ```php vendor/bin/ece-tools db-dump --help ```
+For help, use the command: `php vendor/bin/ece-tools db-dump --help`
 
 {:.procedure}
 To create a database dump:
@@ -147,7 +148,7 @@ To create a database dump:
 
     ```terminal
     php vendor/bin/ece-tools db-dump
-    The db-dump operation switches the site to maintenance mode, stops all active cron jobs and consumer queue processes, and     disables cron jobs before starting the the dump process.
+    The db-dump operation switches the site to maintenance mode, stops all active cron jobs and consumer queue processes, and     disables cron jobs before starting the dump process.
     Your site will not receive any traffic until the operation completes.
     Do you wish to proceed with this process? (y/N)? y
     2020-01-28 16:38:08] INFO: Starting backup.

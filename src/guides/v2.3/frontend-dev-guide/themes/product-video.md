@@ -83,4 +83,4 @@ Example:
 </config>
 ```
 
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module.
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module.

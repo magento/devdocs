@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Back up and roll back the file system, media, and database
 functional_areas:
   - Install
