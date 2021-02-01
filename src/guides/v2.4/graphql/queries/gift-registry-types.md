@@ -130,10 +130,10 @@ The `giftRegistryTypes` array returns the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`dynamic_attributes_metadata` | [[GiftRegistryDynamicAttributeMetadataInterface](#giftregistrydynamicattributemetadataInterface)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
-`id` | ID! | The ID assigned to the gift registry
+`dynamic_attributes_metadata` | [[GiftRegistryDynamicAttributeMetadataInterface](#GiftRegistryDynamicAttributeMetadataInterface)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
 `label` | String! | The display name of the gift registry type
+`uid` | ID! | The unique ID assigned to the gift registry
 
-### GiftRegistryDynamicAttributeMetadataInterface attributes {#giftregistrydynamicattributemetadataInterface}
+### GiftRegistryDynamicAttributeMetadataInterface attributes {#GiftRegistryDynamicAttributeMetadataInterface}
 
 {% include graphql/gift-registry-dynamic-interface.md %}

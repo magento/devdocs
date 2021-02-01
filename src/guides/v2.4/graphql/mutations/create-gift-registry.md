@@ -2,8 +2,7 @@
 group: graphql
 title: createGiftRegistry mutation
 ee_only: true
-contributor_name: Zilker Technology
-contributor_link: https://www.ztech.io/
+contributor_name: EY
 ---
 The `createGiftRegistry` mutation creates a gift registry for the logged in customer.
 

@@ -2,8 +2,7 @@
 group: graphql
 title: giftRegistry query
 ee_only: true   
-contributor_name: Zilker Technology
-contributor_link: https://www.ztech.io/
+contributor_name: EY
 ---
 
 The `giftRegistry` query retrieves details about the specified gift registry. Use the [`customer` query]({{page.baseurl}}/graphql/queries/customer.html) to return a list of valid `uid` values.
@@ -201,7 +200,7 @@ The `giftRegistry` query requires the gift registry ID.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id` | ID! | The ID assigned to the gift registry
+`uid` | ID! | The unique ID assigned to the gift registry
 
 ## Output attributes
 
