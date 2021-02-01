@@ -601,7 +601,7 @@ An order ID, such as `83`
 
 ### Return payment information
 
-This call returns returns payment information and all information from the `totals` object.
+This call payment information and all information from the `totals` object.
 
 **Sample Usage:**
 
