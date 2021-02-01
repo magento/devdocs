@@ -22,11 +22,13 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}**Remote storage**—Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html#remote_storage) environment variable to enable Cloud Projects for remote storage of media files using a storage service, such as AWS S3.<!--MCLOUD-7153-->
 
+-  {:.new}**New cloud:config:validate command**—Added command `php vendor/bin/ece-tools cloud:config:validate` to validate the `.magento.env.yaml` configuration before pushing changes to the remote Cloud environment.
+
 -  {:.new}**Flushing the opcache**—Added support for the `opcache.enable_cli` PHP option to flush the OPcache before running the deploy hook. This configuration resets the cache configuration to ensure that the current configuration settings are applied on each deployment.<!--MCLOUD-7015-->
 
 -  {:.new}**Validation of Aurora DB**—Updated the database service validation so that it is compatible with the Aurora database.<!--MCLOUD-7269-->
 
--  {:.new}**SCD_NO_PARENT environment variable**—Added the `SCD_NO_PARENT` environment variable (for Magento >=2.4.2) to manage the generation of static content for parent themes.<!--MCLOUD-7284-->
+-  {:.new}**New SCD_NO_PARENT environment variable**—Added the `SCD_NO_PARENT` environment variable (for Magento >=2.4.2) to manage the generation of static content for parent themes.<!--MCLOUD-7284-->
 
 -  {:.fix}**Memory limits and commands**—Fixed an issue where `php vendor/bin/ece-tools` commands would not work if the size of the `cloud.log` file exceeded the PHP memory_limit. Instead of reading the entire `cloud.log` file into memory, we now only read a smaller subset of data from the log file.<!--MCLOUD-7275--><!--MCLOUD-7400-->
 
