@@ -2,10 +2,10 @@
 group: graphql
 title: shareGiftRegistry mutation
 ee_only: true
-contributor_name: Zilker Technology
-contributor_link: https://www.ztech.io/
+contributor_name: EY
 ---
-The `shareGiftRegistry` mutation allows the logged in customer to share a gift registry.
+
+The `shareGiftRegistry` mutation sends an invitation to a list email addresses to shop from the customer's gift registry.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
@@ -14,7 +14,7 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 ```graphql
 mutation {
   shareGiftRegistry(
-    id: ID!
+    giftRegistryUid: ID!
     sender: ShareGiftRegistrySenderInput!
     invitees: [ShareGiftRegistryInviteeInput!]!
   ) {
@@ -30,28 +30,23 @@ The following example creates a gift registry.
 **Request:**
 
 ```graphql
-mutation {
+mutation{
   shareGiftRegistry(
-    id: <gift_registry_id>,
+    giftRegistryUid: "W9YcRai9JmzGglqP3p0USodTTM3BmjjY", 
     sender: {
-      name: "Sender name here",
-      message: "Message here"
-    },
-    invitees: [
-    {
-      name: "Invitee 1",
-      email: "invitee@mail.com"
-    },
-    {
-      name: "Invitee 2",
-      email: "invitee2@mail.com"
-    },
-    {
-      name: "Invitee 3",
-      email: "invitee3@mail.com"
+      name: "Roni Costello"
+      message: "Help us celebrate Theo's 45th Birthday"
     }
-  ]
-  ) {
+    invitees: [
+      {
+        name: "Brenda Vazquez"
+        email: "brenda@example.com"
+      }
+      {
+        name: "Alex Brunner"
+        email: "alex1@example.com"
+      }
+    ]){
     is_shared
   }
 }
@@ -71,15 +66,17 @@ mutation {
 
 ## Input attributes
 
+The `shareGiftRegistry` mutation requires the following input attributes.
+
 Attribute |  Data Type | Description
 --- | --- | ---
-`id`| ID! | ID of the gift registry to be shared
+`giftRegistryUid`| ID! | The unique ID of the gift registry to be shared
 `invitees`| [[ShareGiftRegistryInviteeInput!](#ShareGiftRegistryinviteeInput)]! | A list of people invited to participate in the event
 `sender`| [ShareGiftRegistrySenderInput!](#ShareGiftRegistrySenderInput) | Information about the invitation sender
 
 ### ShareGiftRegistrySenderInput attributes {#ShareGiftRegistrySenderInput}
 
-The `ShareGiftRegistrySenderInput` object contains the following attributes:
+The `ShareGiftRegistrySenderInput` object contains the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -88,7 +85,7 @@ Attribute |  Data Type | Description
 
 ### ShareGiftRegistryInviteeInput attributes {#ShareGiftRegistryinviteeInput}
 
-The `ShareGiftRegistryInviteeInput` object contains the following attributes:
+The `ShareGiftRegistryInviteeInput` object contains the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -96,6 +93,8 @@ Attribute |  Data Type | Description
 `name`| String! | Name of the invitee
 
 ## Output attributes
+
+The `ShareGiftRegistryOutput` object contains the following attribute.
 
 Attribute |  Data Type | Description
 --- | --- | ---
