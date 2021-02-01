@@ -93,7 +93,7 @@ stage:
 
 Set to `true` to prevent generating static content for parent themes during the build phase.
 
-On the build phase, we recommend setting `SCD_NO_PARENT: false` so that static content for the parent themes is generated during the build phase where the process will not impact site deployment or cause unnecessary site downtime. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
+We recommend setting `SCD_NO_PARENT: false` during the build phase so that generating static content for the parent themes does not impact site deployment or cause unnecessary site downtime. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
 
 ```yaml
 stage:
