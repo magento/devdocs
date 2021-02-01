@@ -22,7 +22,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}**Remote storage**—Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html#remote_storage) environment variable to enable Cloud Projects for remote storage of media files using a storage service, such as AWS S3.<!--MCLOUD-7153-->
 
--  {:.new}**New cloud:config:validate command**—Added command `php vendor/bin/ece-tools cloud:config:validate` to validate the `.magento.env.yaml` configuration before pushing changes to the remote Cloud environment.
+-  {:.new}**New cloud:config:validate command**—Added command `php vendor/bin/ece-tools cloud:config:validate` to validate the `.magento.env.yaml` configuration before pushing changes to the remote Cloud environment.<!--MCLOUD-7120-->
 
 -  {:.new}**Flushing the opcache**—Added support for the `opcache.enable_cli` PHP option to flush the OPcache before running the deploy hook. This configuration resets the cache configuration to ensure that the current configuration settings are applied on each deployment.<!--MCLOUD-7015-->
 
