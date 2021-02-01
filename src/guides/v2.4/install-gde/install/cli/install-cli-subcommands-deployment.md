@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 05_Command-line installation
 title: Create or update the deployment configuration
 menu_title: Create or update the deployment configuration
