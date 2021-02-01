@@ -13,9 +13,9 @@ The `id` input attribute is optional. If a value is not specified, Magento will 
 
 When assigning a shipping address, you must specify only one of `address_data` or `address_id`.
 
-Only the gift registry owner can view these attributes
+Only the gift registry owner can view the following output attributes:
 
-*  `created_on`
+*  `created_at`
 *  `privacy_settings`
 *  `shipping_address`
 *  `status`
@@ -40,64 +40,98 @@ The following example creates a gift registry.
 
 ```graphql
 mutation {
-    createGiftRegistry(
-        giftRegistry: {
-            event_name: "My Wedding Event",
-            message: "My wedding message"
-            privacy_settings: PRIVATE
-            status: ACTIVE
-            type_id: "3"
-            shipping_address: {
-                address_id: 1
-            }
-            registrants: [
-                {
-                    first_name: "First"
-                    last_name: "Last"
-                    email: "first@mail.com"
-                    dynamic_attributes: [
-                        {
-                            code: "role"
-                            value: "bride"
-                        }
-                    ]
-                },
-                {
-                    first_name: "Second"
-                    last_name: "Last 2"
-                    email: "second@mail.com"
-                    dynamic_attributes: [
-                        {
-                            code: "role"
-                            value: "partner"
-                        }
-                    ]
-                }
-            ]
-            dynamic_attributes: [
-                {
-                    code: "number_of_guests"
-                    value: "101"
-                },
-                {
-                    code: "event_date"
-                    value: "2022-12-12"
-                },
-                {
-                    code: "event_country"
-                    value: "MD"
-                },
-                {
-                    code: "event_location"
-                    value: "Unknown"
-                }
-            ]
+  createGiftRegistry(
+    giftRegistry: {
+      giftRegistryTypeUid: "Mw=="
+      event_name: "Bill and Julie's wedding"
+      message: "Help us celebrate Bill and Julie's wedding, which will be held on May 1, 2021"
+      privacy_settings: PRIVATE
+      status: ACTIVE
+      shipping_address: {
+        address_id: 1
+      }
+      registrants: [
+        {
+          firstname: "Julie"
+          lastname: "Mao"
+          email: "juliemao@example.com"
+          dynamic_attributes: [{ 
+            code: "role"
+            value: "Bride" }]
         }
-    ) {
-        gift_registry {
-            event_name
+        {
+          firstname: "Bill"
+          lastname: "Preston"
+          email: "bpreston@example.com"
+          dynamic_attributes: [{ 
+            code: "role"
+            value: "Groom" }]
         }
+      ]
+      dynamic_attributes: [
+        {
+          code: "number_of_guests"
+          value: "101" 
+        }
+        {
+          code: "event_date"
+          value: "2021-05-01" 
+        }
+        { 
+          code: "event_country"
+          value: "US"
+        }
+        {
+          code: "event_location"
+          value: "Ann Arbor, MI"
+        }
+      ]
     }
+  ) {
+    gift_registry {
+      uid
+      event_name
+      message
+      owner_name
+      privacy_settings
+      status
+      registrants {
+        uid
+        firstname
+        lastname
+        email
+        dynamic_attributes {
+          code
+          label
+          value
+        }
+      }
+      type {
+        uid
+        label
+      }
+      items {
+        uid
+        product {
+          uid
+          sku
+          name
+        }
+        quantity
+        quantity_fulfilled
+      }
+      shipping_address {
+        firstname
+        lastname
+        street
+        region {
+          region
+        }
+        postcode
+        country_code 
+      }
+    }
+  }
 }
 ```
 
@@ -107,88 +141,62 @@ mutation {
 {
   "data": {
     "createGiftRegistry": {
-        "gift_registry": {
-              "id": 1,
-              "event_name": "My Wedding Event",
-              "type": {
-                  "id": 3,
-                  "label": "bridal_registry",
-                  "dynamic_attributes_metadata": [
-                       {
-                        "code": 1,
-                        "input_type": "sample_input_type",
-                        "attribute_group": "att_group",
-                        "label": "metadata of dynamic attributes",
-                        "is_required": true,
-                        "sort_order": 0
-                       } ]
-                  },
-              "message": "My wedding message",
-              "created_on": "22 September 2020",
-              "privacy_settings": "PRIVATE",
-              "status": "ACTIVE",
-              "owner_name": "Owner",
-              "registrants": [
-                  {
-                      "id": 1,
-                      "first_name": "First",
-                      "last_name": "Last",
-                      "email": "first@mail.com",
-                      "dynamic_attributes": [
-                          {
-                              "code": "role",
-                              "value": "bride"
-                          }
-                      ]
-                  },
-                  {
-                      "first_name": "Second",
-                      "last_name": "Last 2",
-                      "email": "second@mail.com",
-                      "dynamic_attributes": [
-                          {
-                              "code": "role",
-                              "value": "partner"
-                          }
-                      ]
-                  }
-              ],
-              "shipping_address": {
-                   "address_id": 1
-              },
-              "dynamic_attributes": [
-                  {
-                      "code": "number_of_guests",
-                      "value": "101"
-                  }, {
-                      "code": "event_date",
-                      "value": "2022-12-12"
-                  }, {
-                      "code": "event_country",
-                      "value": "MD"
-                }, {
-                      "code": "event_location",
-                      "value": "Unknown"
-                }
-              ],
-              "items": [
-                 {
-                   "id": "P1",
-                   "quantity": 2,
-                   "quantity_fulfilled": 2,
-                   "added_on": "22 September 2020"
-                 },
-                 {
-                   "id": "P2",
-                   "quantity": 4,
-                   "quantity_fulfilled": 2,
-                   "added_on": "22 September 2020"
-                 }
-              ]
+      "gift_registry": {
+        "uid": "8AiEhYjJ86JRAkgH8u5wOKvOGYOai5wl",
+        "event_name": "Bill and Julie's wedding",
+        "message": "Help us celebrate Bill and Julie's wedding, which will be held on May 1, 2021",
+        "owner_name": "Veronica Costello",
+        "privacy_settings": "PRIVATE",
+        "status": "ACTIVE",
+        "registrants": [
+          {
+            "uid": "Mw==",
+            "firstname": "Julie",
+            "lastname": "Mao",
+            "email": "juliemao@example.com",
+            "dynamic_attributes": [
+              {
+                "code": "role",
+                "label": "Role",
+                "value": "Bride"
               }
+            ]
+          },
+          {
+            "uid": "NA==",
+            "firstname": "Bill",
+            "lastname": "Preston",
+            "email": "bpreston@example.com",
+            "dynamic_attributes": [
+              {
+                "code": "role",
+                "label": "Role",
+                "value": "Groom"
+              }
+            ]
+          }
+        ],
+        "type": {
+          "uid": "Mw==",
+          "label": "Wedding"
+        },
+        "items": [],
+        "shipping_address": {
+          "firstname": "Veronica",
+          "lastname": "Costello",
+          "street": [
+            "6146 Honey Bluff Parkway"
+          ],
+          "region": {
+            "region": "Michigan"
+          },
+          "postcode": "49628-7978",
+          "country_code": "US"
         }
-     }
+      }
+    }
   }
+}
 ```
 
 ## Input attributes
@@ -203,13 +211,13 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
 `event_name` | String! | The name of the event
-`id`| ID |  An optional gift registry ID. It can be generated on the client and then be used to send multiple gift-registry related mutations in a single request
+`giftRegistryTypeUid` | ID! | The ID of the selected event type
+`giftRegistryUid` | ID | An optional gift registry ID. It can be generated on the client and then be used to send multiple gift-registry related mutations in a single request
 `message` | String! | A message describing the event
 `privacy_settings` | GiftRegistryPrivacySettings! | Indicates whether the registry is PRIVATE or PUBLIC
 `registrants` | [[AddGiftRegistryRegistrantInput!](#AddGiftRegistryRegistrantInput)]! | The list of people who receive notifications about the registry
 `shipping_address` | [GiftRegistryShippingAddressInput](#GiftRegistryShippingAddressInput) | The address for shipping the gift registry. Specify either the `address_data` object or the `address_id` attribute. Validation fails if both are provided
 `status` | GiftRegistryStatus! | An enum that states whether the gift registry is ACTIVE or INACTIVE. Only the registry owner can access this attribute
-`type_id` | String! | The type of the event
 
 ### AddGiftRegistryRegistrantInput attributes {#AddGiftRegistryRegistrantInput}
 
@@ -219,8 +227,8 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
 `email` | String! | The email address of the registrant
-`first_name` | String! | The first name of the registrant
-`last_name` | String! | The last name of the registrant
+`firstname` | String! | The first name of the registrant
+`lastname` | String! | The last name of the registrant
 
 ### GiftRegistryDynamicAttributeInput attributes {#GiftRegistryDynamicAttributeInput}
 
@@ -238,7 +246,7 @@ The `GiftRegistryShippingAddressInput` object contains the following attributes:
 Attribute |  Data Type | Description
 --- | --- | ---
 `address_data` | [CustomerAddressInput](#CustomerAddressInput) | The complete details of the shipping address
-`address_id` | Int | The ID of predefined customer address
+`address_id` | ID | The ID of predefined customer address
 
 ### CustomerAddressInput attributes {#CustomerAddressInput}
 

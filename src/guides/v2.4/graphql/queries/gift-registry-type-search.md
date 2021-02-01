@@ -4,8 +4,7 @@ title: giftRegistryTypeSearch query
 ee_only: true   
 ---
 
-The `giftRegistryTypeSearch` query returns a list of gift registries that match the specified registrant name and, optionally, registry type ID.
-
+The `giftRegistryTypeSearch` query returns a list of gift registries that match the specified registrant name and, optionally, registry type ID. Use the [`giftRegistryTypes` query]({{page.baseurl}}/graphql/queries/gift-registry-types.html) to return list of registry type IDs.
 
 ## Syntax
 
@@ -19,18 +18,38 @@ giftRegistryTypeSearch(
 
 ## Example usage
 
-The following example
+The following example returns all gift registries in which the specified person is a registrant.
 
 **Request:**
 
 ```graphql
-
+query{
+  giftRegistryTypeSearch(firstName: "Stacey", lastName: "Gaines"){
+    event_date
+    event_title
+    gift_registry_uid
+    name
+    type
+  }
+}
 ```
 
 **Response:**
 
 ```json
-
+{
+  "data": {
+    "giftRegistryTypeSearch": [
+      {
+        "event_date": "2021-01-28",
+        "event_title": "Theo's 45th Birthday",
+        "gift_registry_uid": "W9YcRai9JmzGglqP3p0USodTTM3BmjjY",
+        "name": "Stacey Gaines",
+        "type": "Birthday"
+      }
+    ]
+  }
+}
 ```
 
 ## Input attributes

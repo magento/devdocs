@@ -21,13 +21,15 @@ The following example returns information about the list of available gift regis
 **Request:**
 
 ```graphql
-query {
-  giftRegistryTypes {
-    id
+query{
+  giftRegistryTypes{
     label
+    uid
     dynamic_attributes_metadata {
-      code
       label
+      input_type
+      is_required
+      code
     }
   }
 }
@@ -38,14 +40,86 @@ query {
 ```json
 {
   "data": {
-    "giftRegistryTypes": {
-      "id": 1,
-      "label": "Christmas Gift Card",
-      "dynamic_attributes_metadata": {
-          "code": "role",
-          "label": "coupon"
-        }
-    }
+    "giftRegistryTypes": [
+      {
+        "label": "Birthday",
+        "uid": "MQ==",
+        "dynamic_attributes_metadata": [
+          {
+            "label": "Country",
+            "input_type": "country",
+            "is_required": true,
+            "code": "event_country"
+          },
+          {
+            "label": "Event Date",
+            "input_type": "date",
+            "is_required": true,
+            "code": "event_date"
+          }
+        ]
+      },
+      {
+        "label": "Baby Registry",
+        "uid": "Mg==",
+        "dynamic_attributes_metadata": [
+          {
+            "label": "Role",
+            "input_type": "select",
+            "is_required": true,
+            "code": "role"
+          },
+          {
+            "label": "Country",
+            "input_type": "country",
+            "is_required": true,
+            "code": "event_country"
+          },
+          {
+            "label": "Baby Gender",
+            "input_type": "select",
+            "is_required": true,
+            "code": "baby_gender"
+          }
+        ]
+      },
+      {
+        "label": "Wedding",
+        "uid": "Mw==",
+        "dynamic_attributes_metadata": [
+          {
+            "label": "Role",
+            "input_type": "select",
+            "is_required": true,
+            "code": "role"
+          },
+          {
+            "label": "Country",
+            "input_type": "country",
+            "is_required": true,
+            "code": "event_country"
+          },
+          {
+            "label": "Wedding Date",
+            "input_type": "date",
+            "is_required": true,
+            "code": "event_date"
+          },
+          {
+            "label": "Location",
+            "input_type": "text",
+            "is_required": true,
+            "code": "event_location"
+          },
+          {
+            "label": "Number of Guests",
+            "input_type": "text",
+            "is_required": true,
+            "code": "number_of_guests"
+          }
+        ]
+      }
+    ]
   }
 }
 ```
