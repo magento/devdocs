@@ -720,7 +720,7 @@ Component name must meaningful. It can contain the `primary`, `secondary`, `tert
 
 ### Location
 
-[Theme](https://glossary.magento.com/theme) mixins (except extends) should be located in the `source/utilities` directory.
+[Theme](https://glossary.magento.com/theme) mixins (except extends) should be located in the `web/css/source` directory. For more details, refer to [Css Theme][].
 
 ### Naming
 
@@ -782,3 +782,6 @@ Use single quotes.
 ```css
 @import "source/lib/_lib.less";
 ```
+
+<!-- Link definitions -->
+[Css Theme]: {{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html
