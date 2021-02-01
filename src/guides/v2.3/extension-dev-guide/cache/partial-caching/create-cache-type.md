@@ -97,7 +97,7 @@ A cache type `translate` is declared in the Magento_Translation module using the
 </config>
 ```
 
-Translate cache type model class is defined in `Magento\Framework\App\Cache\Type\Translate.php` class. It must extends `Magento\Framework\Cache\Frontend\Decorator\TagScope` class.
+Translate cache type model class is defined in `Magento\Framework\App\Cache\Type\Translate.php` class. It must extend the `Magento\Framework\Cache\Frontend\Decorator\TagScope` class.
 
 ```php
 <?php
@@ -118,7 +118,7 @@ class Translate extends \Magento\Framework\Cache\Frontend\Decorator\TagScope
     const TYPE_IDENTIFIER = 'translate';
 
     /**
-     * Cache tag used to distinguish the cache type from all other cache
+     * Cache tag used to distinguish the cache type from all other caches
      */
     const CACHE_TAG = 'TRANSLATE';
 
