@@ -32,12 +32,12 @@ For this, you have to override the vendor JS file in your custom module.
 vendor file js path :
 /vendor/magento/module-ui/view/base/web/js/grid/controls/columns.js
 
-#### For override JS file follow step Below: 
+#### For override JS file follow step Below:
 
-#### First step : 
+#### First step :
 /app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/requirejs-config.js
 
-```js 
+```js
 
 var config = {
     map: {
