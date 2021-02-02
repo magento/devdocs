@@ -111,7 +111,7 @@ On DOM ready, the `data-mage-init` attribute is parsed to extract component name
   };
   ```
 
-Where `<component_name>` native Magento JS component, for example: `menu`, `collapsible`, `tooltip` ... 
+Where `<component_name>` native Magento JS component, for example: `menu`, `collapsible`, `tooltip` ...
 
 ```html
 <nav data-mage-init='{"tooltip": {"content": "<?= /* @noEscape */ $content ?>"}}'></nav>
