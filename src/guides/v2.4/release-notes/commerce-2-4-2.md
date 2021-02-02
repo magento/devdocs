@@ -5,7 +5,7 @@ title: Magento Commerce 2.4.2 Release Notes
 
 Magento Commerce 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. B2B improvements focus on support for online payments for purchase orders. Elasticsearch 7.9.x and Redis 6.x are now supported.
 
-This release includes over 280 new fixes to core code and over 30 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
+This release includes over 280 new fixes to core code and 35 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
 All known issues identified in Magento 2.4.1 have been fixed in this release.
 
@@ -567,25 +567,15 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 ### Cleanup
 
-<!-- ENGCOM-8101 -->
-
-*  Removed unnecessary spaces in `app/code/Magento/Contact/view/frontend/templates/form.phtml`. [GitHub-29779](https://github.com/magento/magento2/issues/29779)
+#### Typo and grammar cleanup
 
 <!-- ENGCOM-7967 -->
 
 *  The title of the Order Failure page has been revised for accuracy. Previously, this page was titled, **We received your order!** [GitHub-29416](https://github.com/magento/magento2/issues/29416)
 
-<!-- ENGCOM-8028 -->
+<!-- ENGCOM-8101 -->
 
-*  `ChangeQuoteControl` has been refactored. [GitHub-29673](https://github.com/magento/magento2/issues/29673)
-
-<!-- ENGCOM-8027 -->
-
-*  AccessChangeQuoteControl and its unit tests have been refactored. [GitHub-29672](https://github.com/magento/magento2/issues/29672)
-
-<!-- ENGCOM-8053 -->
-
-*  Corrected the code style of the return type declaration in `app/code/Magento/Captcha/CustomerData/Captcha.php`. [GitHub-29712](https://github.com/magento/magento2/issues/29712)
+*  Removed unnecessary spaces in `app/code/Magento/Contact/view/frontend/templates/form.phtml`. [GitHub-29779](https://github.com/magento/magento2/issues/29779)
 
 <!-- ENGCOM-7716 -->
 
@@ -594,6 +584,44 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8058 -->
 
 *  Corrected grammar in the PHPDoc for the `framework/Registry.php` file. [GitHub-29661](https://github.com/magento/magento2/issues/29661)
+
+<!-- ENGCOM-8273 -->
+
+*  Removed extraneous whitespace from `app/code/Magento/Catalog/Helper/Product/View.php`. [GitHub-30601](https://github.com/magento/magento2/issues/30601)
+
+<!-- ENGCOM-8181 -->
+
+*  Corrected typo in function name in `app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js`. [GitHub-29987](https://github.com/magento/magento2/issues/29987)
+
+<!-- ENGCOM-8478 -->
+
+*  Corrected the pluralization of “item” in the mini cart and checkout order summary. [GitHub-29920](https://github.com/magento/magento2/issues/29920)
+
+<!-- ENGCOM-8309 -->
+
+*  Removed whitespace in inline elements in markup layered navigation filters. [GitHub-30448](https://github.com/magento/magento2/issues/30448)
+
+<!-- ENGCOM-8056 -->
+
+*  `rl` has been corrected to `url` in  `\Magento\Framework\Filter\Template\Tokenizer\Parameter`.  [GitHub-29185 ](https://github.com/magento/magento2/issues/29185)
+
+#### Code cleanup
+
+<!--- MC-37922-->
+
+*  An extraneous HTML `<br>` tag has been removed from the Check Data message area of the  **System**  >  **Import** page.
+
+<!-- ENGCOM-8028 -->
+
+*  `ChangeQuoteControl` has been refactored. [GitHub-29673](https://github.com/magento/magento2/issues/29673)
+
+<!-- ENGCOM-8027 -->
+
+*  `AccessChangeQuoteControl` and its unit tests have been refactored. [GitHub-29672](https://github.com/magento/magento2/issues/29672)
+
+<!-- ENGCOM-8053 -->
+
+*  Corrected the code style of the return type declaration in `app/code/Magento/Captcha/CustomerData/Captcha.php`. [GitHub-29712](https://github.com/magento/magento2/issues/29712)
 
 <!-- ENGCOM-8288 -->
 
@@ -607,14 +635,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  A redundant fieldset in the Sale Rule form has been removed. [GitHub-29599](https://github.com/magento/magento2/issues/29599)
 
-<!--- MC-37922-->
-
-*  An extraneous HTML `<br>` tag has been removed from the Check Data message area of the  **System**  >  **Import** page.
-
-<!-- ENGCOM-8273 -->
-
-*  Removed extraneous whitespace from `app/code/Magento/Catalog/Helper/Product/View.php`. [GitHub-30601](https://github.com/magento/magento2/issues/30601)
-
 <!-- ENGCOM-8448 -->
 
 *  Unnecessary code has been removed from the `hierarchy/edit.phtml` template.
@@ -622,18 +642,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8446 -->
 
 *  Corrected PHPdoc comment in `app/code/Magento/CatalogImportExport/Model/Export/Product.php`. [GitHub-30833](https://github.com/magento/magento2/issues/30833)
-
-<!-- ENGCOM-8181 -->
-
-*  Corrected typo in function name in `app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js`. [GitHub-29987](https://github.com/magento/magento2/issues/29987)
-
-<!-- ENGCOM-8478 -->
-
-*  Corrected the pluralization of “item” in the mini cart and checkout order summary. [GitHub-29920](https://github.com/magento/magento2/issues/29920)
-
-<!-- ENGCOM-8309 -->
-
-*  Removed whitespace in inline elements in markup layered navigation filters. [GitHub-30448](https://github.com/magento/magento2/issues/30448)
 
 <!-- ENGCOM-8277 -->
 
@@ -655,13 +663,13 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Changed `@param string $attribute` to  `@param AbstractAttribute|string[]|string $attribute` in `EntityAbstract.php`. [GitHub-30191](https://github.com/magento/magento2/issues/30191)
 
-<!-- ENGCOM-8056 -->
-
-*  `rl` has been corrected to `url` in  `\Magento\Framework\Filter\Template\Tokenizer\Parameter`.  [GitHub-29185 ](https://github.com/magento/magento2/issues/29185)
-
 <!-- ENGCOM-8142 -->
 
 *  Invalid tags (for example, `@package` and `@subpackage`) have been removed from docblocks throughout the code base. [GitHub-30061](https://github.com/magento/magento2/issues/30061)
+
+<!-- ENGCOM-8117 -->
+
+*  Unused parameters in the construct of the `AdvancedPricing` class have been removed. [GitHub-29531](https://github.com/magento/magento2/issues/29531)
 
 ### Configurable products
 
@@ -692,6 +700,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8234 -->
 
 *  Merchants can now save a store-specific text swatch attribute option label with a value  of 0 (zero). Previously, a value of 0 was replaced with the Admin label option value. [GitHub-30073](https://github.com/magento/magento2/issues/30073)
+
+<!-- ENGCOM-8117 -->
+
+*  Unused parameters in the construct of the `AdvancedPricing` class have been removed. [GitHub-29531](https://github.com/magento/magento2/issues/29531)
 
 ### cron
 
@@ -883,14 +895,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
    *  Replaced `(bool)->getValue()` with `isSetFlag`. [GitHub-29689](https://github.com/magento/magento2/issues/29689)
 
-<!-- ENGCOM-8117 -->
-
-*  Unused parameters in the construct of the `AdvancedPricing` class have been removed. [GitHub-29531](https://github.com/magento/magento2/issues/29531)
-
-<!-- ENGCOM-8018 -->
-
-*  Magento now downloads inline translations JavaScript modules only when they are enabled.  [GitHub-29553](https://github.com/magento/magento2/issues/29553)
-
 <!-- ENGCOM-8093 -->
 
 *  Reloading all customer-data sections by wildcard (*) no longer causes requests to `customer/section/load` to throw a 400 error. [GitHub-28154](https://github.com/magento/magento2/issues/28154)
@@ -985,7 +989,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8260 -->
 
-*  Inefficient use of `array_merge` in loops has been refactored throughout the codebase, improving performance in several places, including in the static content deployment process. [GitHub-30183](https://github.com/magento/magento2/issues/30183)
+*  Inefficient use of `array_merge` in loops has been improved throughout the codebase, improving performance in several places, including in the static content deployment process. [GitHub-30183](https://github.com/magento/magento2/issues/30183)
 
 <!-- ENGCOM-8445 -->
 
@@ -2064,6 +2068,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8380 -->
 
 *  The grid search input placeholder can now be translated. [GitHub-30510](https://github.com/magento/magento2/issues/30510)
+
+<!-- ENGCOM-8018 -->
+
+*  Magento now downloads inline translations JavaScript modules only when they are enabled.  [GitHub-29553](https://github.com/magento/magento2/issues/29553)
 
 ### UI
 
