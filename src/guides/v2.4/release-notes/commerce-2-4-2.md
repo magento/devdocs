@@ -1183,8 +1183,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  CMYK images colors  are now rendered correctly. When the Imagick adapter now detects that an opened image has a CMYK colorspace, the colorspace is converted  to SRGB. Previously, these images were rendered with inverted colors. [GitHub-22375](https://github.com/magento/magento2/issues/22375)
 
-<!--- MC-37042-->
-
 <!-- ENGCOM-8251 -->
 
 *  Boolean values are no longer set for `image_with_border.phtml`. Redundant `max-width` and `height` setting have been removed from `.product-image-photo`. (These values are already set globally on the image through  the reset styles.) [GitHub-30186](https://github.com/magento/magento2/issues/30186)
