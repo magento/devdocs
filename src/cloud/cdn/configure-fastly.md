@@ -157,6 +157,9 @@ During the initial Fastly setup process, you can use the following URLs to confi
 -  Starter projects:
    -  `mcprod.<your-domain>.com`
 
+{:.bs-callout-info}
+You cannot specify a custom domain in Staging for your Starter project.
+
 These are the default pre-production URLs available as soon as your project is provisioned. The value for `"your-domain"` is the domain name you specified during the onboarding process.
 
 You must update your DNS configuration to route traffic from your store URLs to the Fastly service. When you update the configuration, Magento automatically provisions the required SSL/TLS certificates and uploads them to your Cloud environments. This provisioning can take up to 12 hours.
