@@ -2197,31 +2197,31 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-23904 ENGCOM-8421-->
 
-*  You can now use the REST API to refund an invoice that has a zero quantity of products and zero shipping charges (for example, {“items": [{"qty": 0, "orderItemId": 6, "extensionAttributes": {}}], "appendComment": false, "notify": true, "isOnline": true, "arguments": {"adjustment_negative": 0.0, "adjustment_positive": 0.99, "shipping_amount": 0}}.) Previously, Magento threw this error: `You can't create a creditmemo without products`. [GitHub-23069](https://github.com/magento/magento2/issues/23069)
+*  You can now use POST `V1/invoice/:invoiceId/refund` to refund an invoice that has a zero quantity of products and zero shipping charges (for example, {“items": [{"qty": 0, "orderItemId": 6, "extensionAttributes": {}}], "appendComment": false, "notify": true, "isOnline": true, "arguments": {"adjustment_negative": 0.0, "adjustment_positive": 0.99, "shipping_amount": 0}}.) Previously, Magento threw this error: `You can't create a creditmemo without products`. [GitHub-23069](https://github.com/magento/magento2/issues/23069)
 
 <!--- MC-33732 -->
 
-*  You can now use POST `http://&lt;domain&gt;/rest/V1/categories/` to create or update a category. Previously, Magento did not save the value if the `default_sort_by` value was set as an array. When the `default_sort_by` value was set as a string, Magento threw this error: `Error occurred during \"custom_attributes\" processing. Attribute \"default_sort_by\" has invalid value. The \"string\" value's type is invalid. The \"string[]\" type was expected. Verify and try again.`
+*  You can now use POST `V1/categories` to create or update a category. Previously, Magento did not save the value if the `default_sort_by` value was set as an array. When the `default_sort_by` value was set as a string, Magento threw this error: `Error occurred during \"custom_attributes\" processing. Attribute \"default_sort_by\" has invalid value. The \"string\" value's type is invalid. The \"string[]\" type was expected. Verify and try again.`
 
 <!--- MC-35740 -->
 
-*  Using POST `/rest/V1/invoices/{id}/capture` to capture payment information now works as expected. Previously, Magento authorized the order but captured it only on the payment gateway's site.
+*  Using POST `V1/invoices/:id/capture` to capture payment information now works as expected. Previously, Magento authorized the order but captured it only on the payment gateway's site.
 
 <!--- MC-37794 -->
 
-*  You can now use the REST API to correctly create a partial shipment of an order. Previously, using `rest/V1/order/{order_id}/ship` returned the wrong number of shipped products.
+*  When you use POST `V1/order/:orderId/ship` to create a partial shipment, the endpoint returns the correct number of shipped products.
 
 <!--- MC-38425-->
 
-*  Invoices created using POST `/rest/V1/order/{order_id}/invoice` now accurately reflect partial payment by store credit. Previously, when an order was partially paid for with store credit, the invoice was created without taking into account store credit.
+*  Invoices created using POST `V1/order/orderID/invoice` now accurately reflect partial payment by store credit. Previously, when an order was partially paid for with store credit, the invoice was created without taking into account store credit.
 
 <!--- MC-36830-->
 
-*  The `rest/all/V1/categories` and `rest/all/V1/categories?rootCategoryId=2` calls now return populated `name` and `product_count` fields as expected for all categories in the tree. Previously, the category field values were empty. The table name resolver plugin returned an incorrect table name for fetching the count of products by category.
+*  The GET `rest/all/V1/categories` and GET `rest/all/V1/categories?rootCategoryId=2` calls now return populated `name` and `product_count` fields as expected for all categories in the tree. Previously, the category field values were empty. The table name resolver plugin returned an incorrect table name for fetching the count of products by category.
 
 <!-- ENGCOM-8286 -->
 
-*  Category API now supports `save_rewrites_history` for categories. [GitHub-29174](https://github.com/magento/magento2/issues/29174), [GitHub-30240](https://github.com/magento/magento2/issues/30240)
+*  The PUT `V1/categories/:id` endpoint now stores the data needed to create 301 redirects for category URL keys  when the `save_rewrites_history` custom attribute is provided. [GitHub-29174](https://github.com/magento/magento2/issues/29174), [GitHub-30240](https://github.com/magento/magento2/issues/30240)
 
 ### Wishlist
 
