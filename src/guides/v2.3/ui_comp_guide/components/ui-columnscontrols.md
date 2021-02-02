@@ -25,20 +25,17 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 
 ## Examples
 
-### Change "minVisible" and "maxVisible" values in the JS file.
+### Changing "minVisible" and "maxVisible" values in the javascript file.
 
-For this, you have to override the vendor JS file in your custom module.
+For this, you have to override the vendor JS file in your custom module:
 
-vendor file js path :
-/vendor/magento/module-ui/view/base/web/js/grid/controls/columns.js
+`/vendor/magento/module-ui/view/base/web/js/grid/controls/columns.js`
 
-#### To override the JS file follow the step below:
+#### Step one: override the javascript file
 
-#### First step :
-/app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/requirejs-config.js
+In `/app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/requirejs-config.js`, add the following:
 
-```js
-
+```javascript
 var config = {
     map: {
         '*': {
@@ -46,12 +43,11 @@ var config = {
         }
     }
 }
-
 ```
 
-#### Second step :
-/app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/web/js/grid/controls/columns.js
-(In this JS change "minVisible" and "maxVisible" values as per your requirement)
+#### Step two: set the custom values
+
+In `/app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/web/js/grid/controls/columns.js`, change the "minVisible" and "maxVisible" values as per your requirement:
 
 ```js
 return Collection.extend({
