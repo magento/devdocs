@@ -253,6 +253,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  URL generation for a new store now works as expected when the store is created using `setup:config:import`. Previously, URL rewrites were not generated in production environments. [GitHub-30025](https://github.com/magento/magento2/issues/30025)
 
+<!-- ENGCOM-8230 -->
+
+*  Magento no longer displays this question when you run `./bin/magento setup:install` to connect to existing database: `Overwrite the existing configuration for db-ssl-verify?[Y/n]`. [GitHub-29612](https://github.com/magento/magento2/issues/29612)
+
 ### AdminGWS
 
 <!--- MC-37040-->
@@ -278,6 +282,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!--- MC-36406-->
 
 *  Magento no longer displays the **Add Attribute** button (**Stores** > **Attributes** ) or **Add Attribute Set** button (**Stores** > **Attributes** > **Customer** ) when the logged-in administrator lacks the appropriate permissions to create these entities. Previously, Magento threw a 404 error when a website administrator who did not have the appropriate permissions tried to create an **Attribute Set** or **Customer** attribute.
+
+<!-- ENGCOM-8230 -->
+
+*  Magento no longer throws this error when you try to change `backend-frontname` using the `ssh` container after installing Magento. [GitHub-26762](https://github.com/magento/magento2/issues/26762)
 
 ### Adobe Stock Integration
 
@@ -1047,7 +1055,35 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Magento no longer throws an `Undefined class constant` error when an `Interceptor` is generated during plug-in creation. [GitHub-28981](https://github.com/magento/magento2/issues/28981), [GitHub-29879](https://github.com/magento/magento2/issues/29879)
 
-### Gift cards
+<!-- ENGCOM-8108 -->
+
+*  Magento now correctly handles messaging and logging for asynchronous bulk operations. Previously, although products were updated, the `magento_operation` and `queue_message_status` tables were not updated correctly, and system messages were incorrect. [GitHub-29718](https://github.com/magento/magento2/issues/29718)
+
+<!-- ENGCOM-8388 -->
+
+*  A shopper is now redirected to the Set a New Password page as expected when they click **Set a New Password** in the Reset Password email when **Require Emails Confirmation** is enabled for the store. Previously, the shopper was redirected back  to the Forgot Your Password button on the login page. [GitHub-27954](https://github.com/magento/magento2/issues/27954)
+
+<!-- ENGCOM-8337 -->
+
+*  Corrected array to string conversion error when saving row system configuration with default values. [GitHub-30314](https://github.com/magento/magento2/issues/30314)
+
+<!-- ENGCOM-8440 -->
+
+*  You can now set arguments for message queues. [GitHub-30216](https://github.com/magento/magento2/issues/30216)
+
+<!-- ENGCOM-8384 -->
+
+*  The base file collector now respects `AppState->emulateAreaCode()`. [GitHub-39656](https://github.com/magento/magento2/issues/29656)
+
+<!-- ENGCOM-8441 -->
+
+*  The new `BlockByIdentifier` class supports retrieving a layout block based on CMS block identifier. As a result, when a CMS block is removed from cache, Magento clears the layout block cache is also cleaned. [GitHub-28309](https://github.com/magento/magento2/issues/28309)
+
+<!-- ENGCOM-8385 -->
+
+*  Corrected problems with numeric argument conversion in queues. Previously, when you declared a queue with numeric `type` arguments in the `queue_topology.xml`, the argument value was cast to string. [GitHub-29615](https://github.com/magento/magento2/issues/29615)
+
+## Gift cards
 
 <!--- MC-38989-->
 
@@ -1886,6 +1922,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8253 -->
 
 *  You can now create a shipping label as expected for a partial order. Previously, when you tried to create a shipping label for only one item from an order, Magento added all products to the package, and validation failed. [GitHub-29552](https://github.com/magento/magento2/issues/29552)
+
+<!-- ENGCOM-8154 -->
+
+*  Validation for the shipping method is no longer bypassed when calling `/V1/guest-carts/:cartId/totals-information`. [GitHub-25147](https://github.com/magento/magento2/issues/25147)
 
 ### Sitemap
 
