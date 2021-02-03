@@ -126,7 +126,11 @@ return [
                 'simple' => 200
             ],
             'catalog_category_product' => 666,
-            'catalogsearch_fulltext' => 333,
+            'catalogsearch_fulltext' => [
+                'partial_reindex' => 100,
+                'mysql_get' => 500,
+                'elastic_save' => 500
+            ],
             'catalog_product_price' => [
                 'simple' => 200,
                 'default' => 500,
@@ -144,6 +148,13 @@ return [
 ```
 
 The batches size for `catalog_category_product`, `catalogpermissions_category`, `catalogpermissions_category` will be set for all product types.
+
+Batch size for `catalogsearch_fulltext` can be set different parameters.
+
+* `partial_reindex` - represent how many product will be proceeded in partial reindex.
+* `elastic_save` - represent how many product will be saved as batch into Elastic.
+* `mysql_get` - represent how many searchable product will be retrived from Mysql.
+
 Batch size for `cataloginventory_stock`, `catalog_product_price`, `inventory` can be set up for each product type. If no batch size is set for a specific product type, the `default` value is used. We recommend setting the `default` value for each indexer to allow for different batch sizes per product type.
 
 ## Indexer Table Switching
