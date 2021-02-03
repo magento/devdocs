@@ -157,6 +157,10 @@ This release includes enhancements to Page Builder content migration and Page Bu
 
    *  Add field scope to custom fields and field sets (developers).
 
+### Interactive In-Product Guidance
+
+Interactive In-Product Guidance provides merchants with usage tips and information from within the Admin on new feature announcements, walk-through guides, on-boarding information, and tool tips.  **Administrators must opt-in from the Admin to receive in-product guidance if this feature is not enabled**. See [Usage Data Collection](https://docs.magento.com/user-guide/stores/admin.html) and [Admin Usage](https://docs.magento.com/user-guide/configuration/advanced/admin.html#admin-usage).
+
 ### Adobe Stock Integration
 
 This release includes Adobe Stock Integration v2.1.1.
