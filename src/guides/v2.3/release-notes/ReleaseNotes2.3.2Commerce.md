@@ -720,7 +720,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-98621-->
 
-*  Scope assigned to prices in Catalog Price Scope (set in **Configuration** > **Price**) are now maintained when price is set to empty. Previously, you could not leave leave special prices empty.
+*  Scope assigned to prices in Catalog Price Scope (set in **Configuration** > **Price**) are now maintained when price is set to empty. Previously, you could not leave special prices empty.
 
 <!--- ENGCOM-3810-->
 

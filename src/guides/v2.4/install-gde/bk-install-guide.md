@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: How to get the Magento software
 landing-page: Installation Guide
 functional_areas:
@@ -10,11 +9,9 @@ redirect_from:
   - /guides/v2.4/install-gde/continue-to-install.html 
 ---
 
-You are among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation.
+You are among the 240,000 merchants worldwide who put their trust in our eCommerce software. We have gathered some information to help you get started with Magento and with your Magento installation.
 
 We have some resources here to help get you started using the eCommerce platform of the future---Magento 2.
-
-It’s what we do.
 
 ## How to get the Magento software {#install-get-software}
 
@@ -30,17 +27,6 @@ Consult the following table for getting started with installing {{site.data.var.
             <th>High-level installation and upgrade steps</th>
             <th>Get started link</th>
         </tr>
-    <tr>
-        <td><p>Easy installation, command line, have your own server</p></td>
-        <td><p>Some technical expertise, command line access to the Magento server.</p>
-        </td>
-        <td><ol><li>Downloads a compressed file that contains the Magento software.</li>
-            <li>Extracts it on the Magento server or asks a network administrator to do so.</li>
-            <li>Installs the Magento software using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">command line</a>.</li>
-            <li>Upgrades the Magento application and extensions using Composer and the <a href="{{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html">command line</a>.</li></ol>
-        </td>
-        <td><p><a href="{{ page.baseurl }}/install-gde/prereq/zip_install.html">Easy installation (own server)</a></p></td>
-    </tr>
     <tr>
         <td><p>Integrator, packager</p></td>
         <td><p>Wants full control over all components installed, has access to the Magento server, highly technical, might repackage {{site.data.var.ce}} with other components.</p>
@@ -68,7 +54,7 @@ Consult the following table for getting started with installing {{site.data.var.
 
 ## Useful information
 
-At any time during your installation, take advantage of our [installation quick reference (tutorial)] or [installation roadmap (reference)]. They're really easy to use; the tutorial walks you through a sample installation. The roadmap provides links to common tasks throughout the guide.
+At any time during your installation, take advantage of our [installation roadmap (reference)]. The roadmap provides links to common tasks throughout the guide.
 
 Use the links on the left side of the page to navigate topics in each part of the installation.
 
@@ -82,6 +68,5 @@ You'll also need `root` privileges to create the [Magento file system owner] and
 
 <!-- LINK DEFINITIONS -->
 
-[installation quick reference (tutorial)]: {{ page.baseurl }}/install-gde/install-quick-ref.html
 [installation roadmap (reference)]: {{ page.baseurl }}/install-gde/install-roadmap_part1.html
 [Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html

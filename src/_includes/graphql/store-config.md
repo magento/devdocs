@@ -25,6 +25,7 @@ Attribute | Data Type | Description | Default or example value
 `cms_no_cookies` | String | Identifies a specific CMS page that appears when cookies are not enabled for the browser | `enable-cookies`
 `cms_no_route` | String | Identifies a specific CMS page that you want to appear when a 404 “Page Not Found” error occurs | `no-route`
 `code` | String | Deprecated. Use `store_code` instead. A unique identifier for the store | `default`
+`configurable_thumbnail_source` | String | Determines which thumbnail should be used in the cart for configurable products. Possible values: `parent` or `itself` (child) | `parent`
 `copyright` | String | The copyright statement that appears at the bottom of each page | Copyright &#169; 2013-present Magento, Inc. All rights reserved.
 `default_description` | String | The description that provides a summary of your site for search engine listings and should not be more than 160 characters in length | null
 `default_display_currency_code` | String | The code representing the currency displayed on the store | `USD`
