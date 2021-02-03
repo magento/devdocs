@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Enable or disable modules
 functional_areas:
   - Install

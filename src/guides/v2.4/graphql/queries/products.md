@@ -1051,12 +1051,12 @@ In the following example, a catalog price rule that provides a 10% discount on a
                 "currency": "USD"
               },
               "final_price": {
-                "value": 61,
+                "value": 54.9,
                 "currency": "USD"
               },
               "discount": {
-                "amount_off": 0,
-                "percent_off": 0
+                "amount_off": 6.1,
+                "percent_off": 10
               }
             },
             "maximum_price": {
@@ -1065,12 +1065,12 @@ In the following example, a catalog price rule that provides a 10% discount on a
                 "currency": "USD"
               },
               "final_price": {
-                "value": 77,
+                "value": 69.3,
                 "currency": "USD"
               },
               "discount": {
-                "amount_off": 0,
-                "percent_off": 0
+                "amount_off": 7.7,
+                "percent_off": 10
               }
             }
           }

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Optional software
 functional_areas:
   - Install
@@ -11,7 +10,7 @@ redirect_from:
 
 ## Magento optional software {#install-optional-intro}
 
-We strongly recommend you install NTP because otherwise, cron-related tasks might not perform properly. (Server dates could be in the past or future, for example.)
+We strongly recommend you install NTP to ensure that cron-related tasks perform properly. (Server dates could be in the past or future, for example.)
 
 The other optional utilities discussed in this topic might assist you with your installation; however, they are not required to install or use Magento.
 
@@ -135,7 +134,7 @@ If a 404 (Not Found) error displays, check the following:
 
    [Help for CentOS](http://wiki.centos.org/HowTos/Network/IPTables){:target="_blank"}
 
-## Install phpmyadmin {#install-optional-phpmyadmin}
+## phpmyadmin {#install-optional-phpmyadmin}
 
 `phpmyadmin` is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to `phpmyadmin` as the MySQL database administrative user.
 
@@ -145,90 +144,6 @@ For more detailed information about installation, see the [phpmyadmin installati
 
 {:.bs-callout-info}
 Use phpmyadmin in a development system _only_. It can be a security issue in production.
-
-## Install phpmyadmin on Ubuntu {#install-optional-phpmyadmin-ubuntu}
-
-To install phpmyadmin on Ubuntu:
-
-1. Use the following command:
-
-   ```bash
-   apt-get install phpmyadmin
-   ```
-
-1. Follow the prompts on your screen to complete the installation.
-
-1. To use phpmyadmin, enter the following URL in your browser's address or location field:
-
-   ```http
-   http://<web server host or IP>/phpmyadmin
-   ```
-
-1. When prompted, log in using your MySQL database `root` or administrative user's username and password.
-
-## Install phpmyadmin on CentOS {#install-optional-phpmyadmin-centos}
-
-To install phpmyadmin on CentOS:
-
-1. Download the epel RPM for the version of CentOS you're using. A sample follows.
-
-   ```bash
-   cd /tmp
-   ```
-
-   ```bash
-   wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-   ```
-
-   ```bash
-   rpm -ivh epel-release-6-8.noarch.rpm
-   ```
-
-1. Install `phpmyadmin` as follows:
-
-   ```bash
-   yum -y install phpmyadmin
-   ```
-
-1. Authorize access to phpmyadmin from your machine's IP address.
-
-   Open the following file for editing:
-
-   ```bash
-   vim /etc/httpd/conf.d/phpMyAdmin.conf
-   ```
-
-1. Replace the following IP address with your IP address
-
-   ```conf
-   Require ip localhost
-   ```
-
-   For example,
-
-   ```conf
-   Require ip 192.51.100.101
-   ```
-
-1. Replace the following IP with your IP address:
-
-   ```conf
-   Allow from localhost
-   ```
-
-   For example,
-
-   ```conf
-   Allow from 192.51.100.101
-   ```
-
-1. Save your changes to `/etc/httpd/conf.d/phpMyAdmin.conf` and exit the text editor.
-
-1. Restart Apache.
-
-   ```bash
-   service httpd Restart
-   ```
 
 1. To use phpmyadmin, enter the following command in your browser's address or location field:
 
