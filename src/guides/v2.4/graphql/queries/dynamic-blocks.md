@@ -3,16 +3,17 @@ group: graphql
 title: dynamicBlocks query
 ---
 
-Dynamic blocks can be inserted in CMS pages and blocks using widgets. The `dynamicBlocks` query returns the content of dynamic blocks that implement the Dynamic Blocks Rotator widget.
+The `dynamicBlocks` query returns a list of dynamic blocks that have been placed in a Dynamic Blocks Rotator inline widget and meet the specified criteria.
 
-The `type` input attribute is required and indicates the type of dynamic block that can be displayed in the widget. The attribute can have one of the following values:
+When a Dynamic Blocks Rotator inline widget is created, the Magento administrator can select the following options:
 
-Value | Description
---- | ---
-CART_PRICE_RULE_RELATED | Includes only dynamic blocks that are associated with a cart price rule
-CATALOG_PRICE_RULE_RELATED | Includes only dynamic blocks that are associated with a catalog price rule.
-SPECIFIED | Includes only specific dynamic blocks
+*  **Specified Dynamic Blocks**
+*  **Cart Price Rule Related**
+*  **Catalog Price Rule Related**
 
+Widgets defined with the **Specified Dynamic Blocks** option affect CMS page rendering. The other two options are used for rendering cart, product, and catalog pages and are not applicable for PWA applications. Therefore, in most cases, your query should assign the value of `SPECIFIED` to the `type` input attribute.
+
+Magento GraphQL supports the **Display all instead of rotating** rotation mode only.
 ## Syntax
 
 ```graphql
@@ -25,7 +26,7 @@ dynamic_blocks(
 
 ## Example usage
 
-The following query returns all catalog price rule dynamic blocks that can be placed in a header or footer.
+The following query returns all dynamic blocks of type `SPECIFIED`. The returned item is a a dynamic block containing only text. The second item contains a PNG file.
 
 **Request:**
 
@@ -33,11 +34,7 @@ The following query returns all catalog price rule dynamic blocks that can be pl
 {
   dynamicBlocks(input: 
   {
-    type: CATALOG_PRICE_RULE_RELATED
-    locations: [
-      HEADER
-      FOOTER
-    ]
+    type: SPECIFIED
   })
   {
     items {
@@ -66,7 +63,13 @@ The following query returns all catalog price rule dynamic blocks that can be pl
         {
           "uid": "MQ==",
           "content": {
-            "html": "<h3>Save 10% on all Gear</h3>\r\n<p>(Some restrictions may apply)</p>"
+            "html": "<h2><strong>SAVE 20%</strong></h2>\r\n<p>(some restrictions apply)</p>\r\n<p>&nbsp;</p>"
+          }
+        },
+        {
+          "uid": "Mg==",
+          "content": {
+            "html": "<p><img src=\"{{media url=&quot;wysiwyg/save20.png&quot;}}\" alt=\"save 20% red\"></p>"
           }
         }
       ],
@@ -75,10 +78,42 @@ The following query returns all catalog price rule dynamic blocks that can be pl
         "page_size": 20,
         "total_pages": 1
       },
-      "total_count": 1
+      "total_count": 2
     }
   }
 }
+```
+
+**cmsPage query response:**
+
+The [`cmsPage` query]({{page.baseurl}}/graphql/queries/cms-page.html) would return the following code for a CMS page that contains the dynamic block in this example with the `uid` of `MQ==`. The response has been reformatted for readability.
+
+```html
+<div class=\"widget block block-banners\"
+  data-bind=\"scope: 'banner'\"
+  data-banner-id=\"833e4819d6c46ab41e9910f17dc04f72329cb84f1b0dc3aa76d43bcb11d605a6\"
+  data-types=\"\"
+  data-display-mode=\"fixed\"
+  data-ids=\"1\"
+  data-rotate=\"\"
+  data-store-id=\"1\"
+  data-uids=\"MQ==\">\n
+
+  <ul class=\"banner-items\"
+    data-bind=\"afterRender: registerBanner\">\n
+    
+    <!-- ko foreach: getItems833e4819d6c46ab41e9910f17dc04f72329cb84f1b0dc3aa76d43bcb11d605a6() -->\n   
+    
+    <li class=\"banner-item\" 
+      data-bind=\"attr: {'data-banner-id': $data.bannerId}\">\n
+      
+      <div class=\"banner-item-content\" data-bind=\"bindHtml: $data.html\"></div>\n
+      
+    </li>\n
+    
+    <!-- /ko -->\n
+  </ul>\n
+</div>
 ```
 
 ## Input attributes
@@ -86,7 +121,7 @@ The following query returns all catalog price rule dynamic blocks that can be pl
 Attribute | Data type | Description
 --- | --- | ---
 `dynamic_block_uids` | [ID] | An array of dynamic block UIDs to filter on
-`locations` | [DynamicBlockLocationEnum] |An array indicating the locations the dynamic block can be placed. The possible values are CONTENT, HEADER, FOOTER, LEFT, and RIGHT
+`locations` | [DynamicBlockLocationEnum] | An array indicating the locations the dynamic block can be placed. The possible values are CONTENT, HEADER, FOOTER, LEFT, and RIGHT. If this attribute is not specified, the query returns all locations
 `type` | DynamicBlockTypeEnum! | A value indicating the type of dynamic block to filter on. The possible values are CART_PRICE_RULE_RELATED, CATALOG_PRICE_RULE_RELATED, and SPECIFIED
 ## Output attributes
 
