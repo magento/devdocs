@@ -11,8 +11,8 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 ```graphql
 mutation {
   addWishlistItemsToCart (
-    wishlistUid: ID
-    wishlistItemUids: [ID!]
+    wishlistId: ID!
+    wishlistItemIds: [ID!]
   ) {
     AddWishlistItemsToCartOutput
   }
@@ -28,8 +28,8 @@ The following example adds items to the cart.
 ```graphql
 mutation {
   addWishlistItemsToCart(
-    wishlistUid: "Mg==" 
-    wishlistItemUids: ["OA==" "OQ=="])
+    wishlistId: 2 
+    wishlistItemIds: [9 11])
   {
     status
     add_wishlist_items_to_cart_user_errors {
@@ -59,8 +59,8 @@ The `addWishlistItemsToCart` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`wishlistItemUids`| [ID!] | An array of UIDs presenting products to be added to the cart. If no UIDs are specified, all items in the wish list will be added to the cart
-`wishlistUid`| ID! | The unique ID of the wish list
+`wishlistItemIds`| [ID!] | An array of UIDs presenting products to be added to the cart. If no UIDs are specified, all items in the wish list will be added to the cart
+`wishlistId`| ID! | The unique ID of the wish list
 
 ## Output attributes
 
