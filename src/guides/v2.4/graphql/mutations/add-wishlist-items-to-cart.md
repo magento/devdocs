@@ -59,7 +59,7 @@ The `addWishlistItemsToCart` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`wishlistItemIds`| [ID!] | An array of UIDs presenting products to be added to the cart. If no UIDs are specified, all items in the wish list will be added to the cart
+`wishlistItemIds`| [ID!] | An array of IDs presenting products to be added to the cart. If no IDs are specified, all items in the wish list will be added to the cart
 `wishlistId`| ID! | The unique ID of the wish list
 
 ## Output attributes
