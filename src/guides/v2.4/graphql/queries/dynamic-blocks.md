@@ -5,7 +5,7 @@ title: dynamicBlocks query
 
 The `dynamicBlocks` query returns a list of dynamic blocks that have been placed in a Dynamic Blocks Rotator inline widget and meet the specified criteria.
 
-When a Dynamic Blocks Rotator inline widget is created, the Magento administrator can select the following options:
+When a [Dynamic Blocks Rotator inline widget is created](https://docs.magento.com/user-guide/cms/dynamic-blocks.html), the Magento administrator can select the following options:
 
 *  **Specified Dynamic Blocks**
 *  **Cart Price Rule Related**
