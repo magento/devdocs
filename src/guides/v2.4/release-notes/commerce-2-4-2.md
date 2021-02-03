@@ -1633,6 +1633,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Performance issues in `module-catalog-import-export/Model/Import/Product/Option.php` have been addressed. The time required to export or import more than 100,000 records has been reduced. See the [Import/Export takes longer than expected with large numbers of product options](https://support.magento.com/hc/en-us/articles/360050695772) Knowledge Base article.
 
+<!--- MC-37799-->
+
+*  `Magento_Csp/Model/BlockCache` has been refactored to reduce both memory consumption and the generation of needlessly large cached strings. Previously, pages that included dynamically whitelisted scripts and styles often experienced from performance issues. [GitHub-29964](https://github.com/magento/magento2/issues/29964)
+
 <!-- MC-37816 -->
 
 *  We have improved the performance of scheduled exports of catalogs that include more than 100,000 products using consumers.
