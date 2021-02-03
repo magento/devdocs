@@ -696,7 +696,7 @@ updates are made by creating layout XML files following specific naming conventi
 
 {:.bs-callout-info}
 Selectable layout updates can only be loaded from the global store theme and work only in the single website with single theme configurations.
-If a specific entity like cms-page/product/category will have individual theme applied at the design configuration tab, selected theme will have priority over selected layout update.
+If a specific entity like `cms-page/product/category` has an individual theme applied in the design configuration tab, the selected theme will have priority over the selected layout update.
 
 For Categories:
 
