@@ -2,7 +2,7 @@
 group: software-update-guide
 title: Developer information
 ee_only: True
-redirect from:
+redirect_from:
   - /safe-upgrade-tool/developer.html
 functional_areas:
   - Upgrade
