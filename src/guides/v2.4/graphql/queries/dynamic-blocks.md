@@ -5,6 +5,9 @@ title: dynamicBlocks query
 
 The `dynamicBlocks` query returns a list of dynamic blocks that have been placed in a Dynamic Blocks Rotator inline widget and meet the specified criteria.
 
+{:.bs-callout-info}
+The Banner functionality was removed from Magento 2.4.0 and replaced with dynamic blocks.
+
 When a [Dynamic Blocks Rotator inline widget is created](https://docs.magento.com/user-guide/cms/dynamic-blocks.html), the Magento administrator can select the following options:
 
 *  **Specified Dynamic Blocks**
@@ -13,7 +16,9 @@ When a [Dynamic Blocks Rotator inline widget is created](https://docs.magento.co
 
 Widgets defined with the **Specified Dynamic Blocks** option affect CMS page rendering. The other two options are used for rendering cart, product, and catalog pages and are not applicable for PWA applications. Therefore, in most cases, your query should assign the value of `SPECIFIED` to the `type` input attribute.
 
+{:.bs-callout-info}
 Magento GraphQL supports the **Display all instead of rotating** rotation mode only.
+
 ## Syntax
 
 ```graphql
