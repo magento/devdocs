@@ -103,9 +103,9 @@ define([
             }
 
             var attribute = shippingAddress.customAttributes.find(
-                    function (element) {
-                      return element.attribute_code === 'custom_field';
-                    }
+                function (element) {
+                    return element.attribute_code === 'custom_field';
+                }
             );
 
             shippingAddress['extension_attributes']['custom_field'] = attribute.value;
