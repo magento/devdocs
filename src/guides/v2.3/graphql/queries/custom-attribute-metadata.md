@@ -239,7 +239,7 @@ Error | Description
 --- | ---
 `Field "customAttributeMetadata" argument "attributes" of type "[AttributeInput!]!" is required but not provided` | The `attributes` array parameter is required.
 `The attribute with a "xxxx" attributeCode doesn't exist. Verify the attribute and try again` | The given `attribue_code` parameter is invalid.
-`Invalid entity_type specified: "xxxx" ` | The given `entity_type` is invalid.
-`Missing attribute_code for the input entity_type: "xxxx" `| There is no value mentioned for the `attribute_code` parameter for the given `entity_type` parameter.
-`Missing entity_type for the input attribute_code: "xxxx" ` | There is no value mentioned for the `entity_type` parameter for the given `attribute_code` parameter.
+`Invalid entity_type specified: "xxxx"` | The given `entity_type` is invalid.
+`Missing attribute_code for the input entity_type: "xxxx"`| There is no value mentioned for the `attribute_code` parameter for the given `entity_type` parameter.
+`Missing entity_type for the input attribute_code: "xxxx"` | There is no value mentioned for the `entity_type` parameter for the given `attribute_code` parameter.
 `Missing attribute_code/entity_type for the input Empty AttributeInput` | There are no values mentioned for both `attribute_code` and `entity_type` parameters.
