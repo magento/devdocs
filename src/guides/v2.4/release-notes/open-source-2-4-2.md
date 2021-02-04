@@ -78,11 +78,11 @@ This release includes Adobe Stock Integration v2.1.1.
 
 This release adds GraphQL coverage for the following features:
 
-*  GraphQL now honors catalog permissions. Magento restricts which items are returned for a `products` query, based on the shopper's customer group <!--- MC-37388-->
-
 *  Added the [`generateCustomerTokenAsAdmin`]({{ page.baseurl }}/graphql/mutations/generate-customer-token-as-admin.html) mutation and updated the `Customer` object to support remote purchasing assistance.
 
 *  Added localization support across stores to support tasks such as changing languages, carts, and currencies. <!--- MC-37801-->
+
+*  Added support for unions in Magento GraphQL. [GitHub-29425](https://github.com/magento/magento2/issues/29425) <!-- ENGCOM-8291 -->
 
 *  The GraphQL schema has been enhanced to optimize product data retrieval for configurable products with many variants. <!--- MC-36138-->
 
@@ -166,11 +166,11 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36472-->
 
-*  Merchants can now successfully upgrade an Open Source deployment that runs MySQL 8.x to  a Commerce deployment. Previously, Magento threw an exception when AUTO_INCREMENT values reverted to initial values for all tables where `row_id` was added during upgrade.
+*  Merchants can now successfully upgrade an Open Source deployment that runs MySQL 8.x to a Commerce deployment. Previously, Magento threw an exception when `AUTO_INCREMENT` values reverted to initial values for all tables where `row_id` was added during upgrade.
 
 <!-- ENGCOM-7280 -->
 
-*  Magento now displays an error message that identifies the path that was used to create the patch if an error occurs when running `setup:db:generate-patch`. [GitHub-27523](https://github.com/magento/magento2/issues/27523)
+*  Magento now displays an error message that identifies the path that was used to create the patch if an error occurs when running `bin/magento/setup:db:generate-patch`. [GitHub-27523](https://github.com/magento/magento2/issues/27523)
 
 <!-- ENGCOM-8029 -->
 
@@ -182,7 +182,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-38788-->
 
-*  You can now execute `setup:upgrade` after installing sample data. Previously, when you tried to execute `setup:upgrade`, Magento displayed this error: `unable to apply data patch magento\catalogrulesampledata\setup\patch\data\installcatalogrulesampledata for module magento_catalogrulesampledata`. Magento also displayed this error in the system log: `main.ERROR: Sample Data error: Unable to unserialize value. Error: Syntax error`. [GitHub-30685](https://github.com/magento/magento2/issues/30685)
+*  You can now execute `bin/magento/setup:upgrade` after installing sample data. Previously, when you tried to execute `bin/magento/setup:upgrade`, Magento displayed this error: `unable to apply data patch magento\catalogrulesampledata\setup\patch\data\installcatalogrulesampledata for module magento_catalogrulesampledata`. Magento also displayed this error in the system log: `main.ERROR: Sample Data error: Unable to unserialize value. Error: Syntax error`. [GitHub-30685](https://github.com/magento/magento2/issues/30685)
 
 <!--- MC-36785-->
 
@@ -194,15 +194,15 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8243 -->
 
-*  URL generation for a new store now works as expected when the store is created using `setup:config:import`. Previously, URL rewrites were not generated in production environments. [GitHub-30025](https://github.com/magento/magento2/issues/30025)
+*  URL generation for a new store now works as expected when the store is created using `bin/magento setup:config:import`. Previously, URL rewrites were not generated in production environments. [GitHub-30025](https://github.com/magento/magento2/issues/30025)
 
 <!-- ENGCOM-8230 -->
 
-*  Magento no longer throws this error when you try to change `backend-frontname` using the `ssh` container after installing Magento. [GitHub-26762](https://github.com/magento/magento2/issues/26762)
+*  Magento no longer throws an error when you try to change `backend-frontname` using the `ssh` container after installing Magento. [GitHub-26762](https://github.com/magento/magento2/issues/26762)
 
 <!-- ENGCOM-8230 -->
 
-*  Magento no longer displays this question when you run `./bin/magento setup:install` to connect to existing database: `Overwrite the existing configuration for db-ssl-verify?[Y/n]`. [GitHub-29612](https://github.com/magento/magento2/issues/29612)
+*  Magento no longer displays this question when you run `bin/magento setup:install` to connect to existing database: `Overwrite the existing configuration for db-ssl-verify?[Y/n]`. [GitHub-29612](https://github.com/magento/magento2/issues/29612)
 
 ### Adobe Stock Integration
 
@@ -216,7 +216,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8070 -->
 
-*  Logic has been removed from the WYSIWYG OnInsert controller (`Magento\Cms\Controller\Adminhtml\Wysiwyg\Images\OnInsert::execute()` ) and added to the `Model\Wysiwyg\Images\PrepareImage::execute()` model. [GitHub-1504](https://github.com/magento/adobe-stock-integration/issues/1504)
+*  Logic has been removed from the WYSIWYG OnInsert controller (`Magento\Cms\Controller\Adminhtml\Wysiwyg\Images\OnInsert::execute()`) and added to the `Model\Wysiwyg\Images\PrepareImage::execute()` model. [GitHub-1504](https://github.com/magento/adobe-stock-integration/issues/1504)
 
 <!-- ENGCOM-8081 -->
 
@@ -238,7 +238,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 ### Braintree
 
-*  Shoppers can now use Apple Pay to successfully place an order for virtual products. Previously, Magento threw this error:  `There are no shipping methods available for you right now. Please try again or use an alternative payment method`.
+*  Shoppers can now use Apple Pay to successfully place an order for virtual products. Previously, Magento threw this error: `There are no shipping methods available for you right now. Please try again or use an alternative payment method`.
 
 *  The default PayPal Express Checkout payment method now works as expected with the Braintree Credit Card payment method. Previously, Magento did not display the **PayPal** button when the Braintree Credit Card payment method was enabled.
 
@@ -328,7 +328,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8091 -->
 
-*  The **Submit** button on the Review & Payments  section of the checkout workflow has been moved to inside `<form id="purchaseorder-form"...></form>`, which makes implicit form submission possible without altering any JavaScript. [GitHub-27925](https://github.com/magento/magento2/issues/27925)
+*  The **Submit** button on the Review & Payments section of the checkout workflow has been moved to inside `<form id="purchaseorder-form"...></form>`, which makes implicit form submission possible without altering any JavaScript. [GitHub-27925](https://github.com/magento/magento2/issues/27925)
 
 <!-- ENGCOM-8428 -->
 
@@ -366,7 +366,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-37745-->
 
-*  Partial re-indexing of large catalogs now works as expected. Previously, products randomly disappeared from the storefront category page  during re-indexing with the `catalogsearch_fulltext` partial indexer.
+*  Partial re-indexing of large catalogs now works as expected. Previously, products randomly disappeared from the storefront category page during re-indexing with the `catalogsearch_fulltext` partial indexer.
 
 <!--- MC-35123-->
 
@@ -392,11 +392,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  The **Add to Cart** functionality now works as expected whenever the **Add to Cart** button ia available to click. Previously, if you clicked this button multiple times while waiting for a product page to load, Magento threw this error: `Invalid Form Key. Please refresh the page`.
 
-<!--- MC-36835-->
-
-*  Magento no longer flushes category cache when you add or save a disabled product to a category. Previously, Magento flushed the cache for related categories despite the product status, which affected server performance.
-
-<!--- MC-37006-->
+<!--- MC-37006 36835-->
 
 *  Magento no longer flushes category cache when a merchant adds or removes disabled products to or from a category. Previously, Magento flushed the cache for related categories despite product status. Categories were also unassigned when a category was saved, which led to flushing of category cache.
 
@@ -458,11 +454,11 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7997 -->
 
-*  The **Sales**  >  **Order** or  **Catalog**  >  product grid now lists all relevant store, not just the most recently created store.  [GitHub-29267](https://github.com/magento/magento2/issues/29267)
+*  The product grids on the **Sales** > **Orders** and **Catalog** > **Products** pages now list all relevant stores, not just the most recently created store. [GitHub-29267](https://github.com/magento/magento2/issues/29267)
 
 <!-- ENGCOM-6698 -->
 
-*  Product repository now uses `store_id` when available to save attribute values for an existing product.  Previously, the product repository class overrode the product store ID and always assigned the default store ID.  [GitHub-29933](https://github.com/magento/magento2/issues/29933)
+*  Product repository now uses `store_id` when available to save attribute values for an existing product.  Previously, the product repository class overrode the product store ID and always assigned the default store ID. [GitHub-29933](https://github.com/magento/magento2/issues/29933)
 
 ### Catalog Rule
 
@@ -487,7 +483,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7716 -->
 
-*  Corrected typo in `setup:config:set`. [GitHub-28802](https://github.com/magento/magento2/issues/28802)
+*  Corrected a typo in the help message for the `bin/magento/setup:config:set` subcommand.[GitHub-28802](https://github.com/magento/magento2/issues/28802)
 
 <!-- ENGCOM-8058 -->
 
@@ -499,7 +495,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8181 -->
 
-*  Corrected typo in function name in `app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js`. [GitHub-29987](https://github.com/magento/magento2/issues/29987)
+*  Corrected a typo in a function name in `app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js`. [GitHub-29987](https://github.com/magento/magento2/issues/29987)
 
 <!-- ENGCOM-8478 -->
 
@@ -511,7 +507,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8056 -->
 
-*  `rl` has been corrected to `url` in  `\Magento\Framework\Filter\Template\Tokenizer\Parameter`.  [GitHub-29185 ](https://github.com/magento/magento2/issues/29185)
+*  `rl` has been corrected to `url` in  `\Magento\Framework\Filter\Template\Tokenizer\Parameter`. [GitHub-29185 ](https://github.com/magento/magento2/issues/29185)
 
 #### Code cleanup
 
@@ -533,11 +529,11 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8288 -->
 
-*  Corrected position of the button list on the New Attribute page.
+*  Corrected the position of the button list on the New Attribute page.
 
 <!-- ENGCOM-8315 -->
 
-*  Added correct block class for the frontend `viewModel` reference example for the `\Magento\Framework\View\Element\Template` class. [GitHub-30450](https://github.com/magento/magento2/issues/30450)
+*  Added the correct block class for the frontend `viewModel` reference example for the `\Magento\Framework\View\Element\Template` class. [GitHub-30450](https://github.com/magento/magento2/issues/30450)
 
 <!-- ENGCOM-8090 -->
 
@@ -569,7 +565,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8263 -->
 
-*  Changed `@param string $attribute` to  `@param AbstractAttribute|string[]|string $attribute` in `EntityAbstract.php`. [GitHub-30191](https://github.com/magento/magento2/issues/30191)
+*  Changed `@param string $attribute` to `@param AbstractAttribute|string[]|string $attribute` in `EntityAbstract.php`. [GitHub-30191](https://github.com/magento/magento2/issues/30191)
 
 <!-- ENGCOM-8142 -->
 
@@ -685,7 +681,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-35812-->
 
-*  Magento now displays a message as expected when a shopper creates a guest account when the **Require Emails Confirmation setting is enabled** and `Magento\Customer\Controller\Account\CreatePost` has been overridden. Previously, Magento did not permit this type of customization of the user registration process, and under these conditions, a user's email confirmation status was considered complete, the new user was automatically logged in, and no error message was shown.
+*  Magento now displays a message as expected when a shopper creates a guest account when the **Require Emails Confirmation** setting is enabled and `Magento\Customer\Controller\Account\CreatePost` has been overridden. Previously, Magento did not permit this type of customization of the user registration process, and under these conditions, a user's email confirmation status was considered complete, the new user was automatically logged in, and no error message was shown.
 
 <!-- ENGCOM-8039 -->
 
@@ -709,7 +705,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7679 -->
 
-*  Magento no longer lists a downloadable product in My Download Products tab after the order that it belongs to has been partially refunded. [GitHub-28388](https://github.com/magento/magento2/issues/28388
+*  Magento no longer lists a downloadable product in My Download Products tab after the order that it belongs to has been partially refunded. [GitHub-28388](https://github.com/magento/magento2/issues/28388)
 
 ### EAV
 
@@ -815,7 +811,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8395 -->
 
-*  Magento now opens the New Attribute page as expected when a merchant clicks the **Create New Attribute** button twice during product creation.  Previously, Magento displayed an empty page and threw an error. [GitHub-30361](https://github.com/magento/magento2/issues/30361)
+*  Magento now opens the New Attribute page as expected when a merchant clicks the **Create New Attribute** button twice during product creation. Previously, Magento displayed an empty page and threw an error. [GitHub-30361](https://github.com/magento/magento2/issues/30361)
 
 <!-- ENGCOM-8426 -->
 
@@ -839,7 +835,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8031 -->
 
-*  The `\Magento\Catalog\Model\ImageUploader` class has been refactored to use the new `moveFileFromTmp`  method. [GitHub-29598](https://github.com/magento/magento2/issues/29598)
+*  The `\Magento\Catalog\Model\ImageUploader` class has been refactored to use the new `moveFileFromTmp` method. [GitHub-29598](https://github.com/magento/magento2/issues/29598)
 
 <!-- ENGCOM-8178 -->
 
@@ -851,7 +847,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8132 -->
 
-*  Magento now correctly parses text that contains }} in the widget content field. [GitHub-12087](https://github.com/magento/magento2/issues/12087)
+*  Magento now correctly parses text that contains `}}` in the widget content field. [GitHub-12087](https://github.com/magento/magento2/issues/12087)
 
 <!-- ENGCOM-8098 -->
 
@@ -868,10 +864,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-7777 -->
 
 *  A missing `aclResource` attribute has been added to the Admin header `AdminNotification` toolbar block. Previously, the Admin notification toolbar entry was visible even when the Admin user does not have role resource permissions to see it. [GitHub-29067](https://github.com/magento/magento2/issues/29067)
-
-<!-- ENGCOM-8093 -->
-
-*  Customer data is now retrieved as expected when you execute a custom login controller. Previously, reloading all `customer-data` sections by wildcard (*) caused requests to `customer/section/load` to return a 400. [GitHub-28428](https://github.com/magento/magento2/issues/28428)
 
 <!-- ENGCOM-8022 -->
 
@@ -891,7 +883,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8326 -->
 
-*  Added support for symlinked Magento `root` in errors pages and maintenance mode. Previously,  if the Magento `root` or `magento/pub` were symlinked into a different directory,  the error processor (`Magento\Framework\Error\Processor`) did not generate a correct view file URL. [GitHub-30296](https://github.com/magento/magento2/issues/30296)
+*  Added support for symlinked Magento `root` in errors pages and maintenance mode. Previously,  if the Magento `root` or `magento/pub` were symlinked into a different directory, the error processor (`Magento\Framework\Error\Processor`) did not generate a correct view file URL. [GitHub-30296](https://github.com/magento/magento2/issues/30296)
 
 <!-- ENGCOM-8087 -->
 
@@ -933,13 +925,9 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  The `FlushCacheByTags` class has been updated to use after plugins instead of around plugins. [GitHub-29558](https://github.com/magento/magento2/issues/29558)
 
-<!-- ENGCOM-8079 -->
-
-*  The `FlushCacheByTags` class has been updated to use after plugins instead of around plugins. [GitHub-29558](https://github.com/magento/magento2/issues/29558)
-
 <!-- ENGCOM-8370 -->
 
-*  `checkout_index_index.xml` file code has been enhanced by the removal of `sortOrder` from `messages`, `authentication`, `progressBar`, `estimation`, and `sidebar checkout` components. [GitHub-30550](https://github.com/magento/magento2/issues/30550)
+*  Code in the `checkout_index_index.xml` file has been enhanced by the removal of `sortOrder` from `messages`, `authentication`, `progressBar`, `estimation`, and `sidebar checkout` components. [GitHub-30550](https://github.com/magento/magento2/issues/30550)
 
 <!-- ENGCOM-8379 -->
 
@@ -947,7 +935,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8030 -->
 
-*  The URL rewrite generator now sets the  category object `url_key`, `url_path`, and  `store_id` to default store values when saving category URL rewrites for global scope. Previously, it saved `url_key`, `url_path`, and `store_id` with the values of the last processed store ID. [GitHub-29585](https://github.com/magento/magento2/issues/29585)### Grouped products
+*  The URL rewrite generator now sets the  category object `url_key`, `url_path`, and  `store_id` to default store values when saving category URL rewrites for the global scope. Previously, it saved `url_key`, `url_path`, and `store_id` with the values of the last processed store ID. [GitHub-29585](https://github.com/magento/magento2/issues/29585)### Grouped products
 
 <!--- MC-35361-->
 
@@ -1007,7 +995,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8441 -->
 
-*  The new `BlockByIdentifier` class supports retrieving a layout block based on CMS block identifier. As a result, when a CMS block is removed from cache, Magento clears the layout block cache is also cleaned. [GitHub-28309](https://github.com/magento/magento2/issues/28309)
+*  The new `BlockByIdentifier` class supports retrieving a layout block based on CMS block identifier. As a result, when a CMS block is removed from cache, Magento also clears the layout block cache. [GitHub-28309](https://github.com/magento/magento2/issues/28309)
 
 <!-- ENGCOM-8385 -->
 
@@ -1022,10 +1010,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8422 -->
 
 *  The `urlResolver` query no longer returns NULL when a custom  CMS node and page are specified as input. [GitHub-30474](https://github.com/magento/magento2/issues/30474)
-
-<!-- ENGCOM-8291 -->
-
-*  Unions are now supported in Magento GraphQL. [GitHub-29425](https://github.com/magento/magento2/issues/29425)
 
 <!--- MC-38209 ENGCOM-8386-->
 
@@ -1057,7 +1041,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8430 PWA-1107-->
 
-*  Deprecated several attributes in the `ProductInterface` and `CategoryInterface`, because they should not be used on the storefront. [GitHub-30625](https://github.com/magento/magento2/issues/30625)
+*  Deprecated several attributes in the `ProductInterface` and `CategoryInterface` to prevent their use the storefront. [GitHub-30625](https://github.com/magento/magento2/issues/30625)
 
 *  Prices are now hidden from products query results when the category permissions are set to hide them. [GitHub-29926](https://github.com/magento/magento2/issues/29926)
 
@@ -1069,9 +1053,9 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  GraphQL response time for add to cart operations has improved.
 
-<!--- MC-36898 -->
+<!--- MC-36648 -->
 
-*  GraphQL add to cart mutations now honor catalog permissions. [GitHub-30179](https://github.com/magento/magento2/issues/30179)
+*  The mutations that add products to a cart now honor catalog permissions. [GitHub-30179](https://github.com/magento/magento2/issues/30179)
 
 <!-- ENGCOM-8099 -->
 
@@ -1083,11 +1067,15 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8172 -->
 
-*  The `productDetail` query no longer returns an error when the queried product has a disabled related product. [GitHub-28892](https://github.com/magento/magento2/issues/28892)
+*  The `products` query no longer returns an error when the queried product has a disabled related product. [GitHub-28892](https://github.com/magento/magento2/issues/28892)
 
 <!--- MC-37395 -->
 
-*  The GraphQL `cart` query now returns prices that have been converted into the correct currency (the default display currency). Previously, the query returned the item price value in base currency, and the currency code was returned as default display currency.
+*  The `cart` query now returns prices that have been converted into the correct currency (the default display currency). Previously, the query returned the item price value in base currency, and the currency code was returned as default display currency.
+
+<!--- MC-37388-->
+
+*  GraphQL now honors catalog permissions. Magento restricts which items are returned for a `products` query, based on the shopper's customer group.
 
 ### Images
 
@@ -1097,7 +1085,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8116 -->
 
-*  The dependency on the `fileinfo` extension has been removed from the CMS module. Previously, Magento threw an error when you tried to upload an image using the image uploader, which is launched when you click the Insert Image button when adding content. [GitHub-24332](https://github.com/magento/magento2/issues/24332), [GitHub-16531](https://github.com/magento/magento2/issues/16531), [GitHub-29852](https://github.com/magento/magento2/issues/29852)
+*  The dependency on the `fileinfo` extension has been removed from the CMS module. Previously, Magento threw an error when you tried to upload an image using the image uploader, which is launched when you click the **Insert Image** button when adding content. [GitHub-24332](https://github.com/magento/magento2/issues/24332), [GitHub-16531](https://github.com/magento/magento2/issues/16531), [GitHub-29852](https://github.com/magento/magento2/issues/29852)
 
 <!-- ENGCOM-8020 -->
 
@@ -1105,11 +1093,11 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8296 -->
 
-*  CMYK images colors  are now rendered correctly. When the Imagick adapter now detects that an opened image has a CMYK colorspace, the colorspace is converted  to SRGB. Previously, these images were rendered with inverted colors. [GitHub-22375](https://github.com/magento/magento2/issues/22375)
+*  CMYK images colors are now rendered correctly. When the Imagick adapter now detects that an opened image has a CMYK colorspace, the colorspace is converted  to SRGB. Previously, these images were rendered with inverted colors. [GitHub-22375](https://github.com/magento/magento2/issues/22375)
 
 <!-- ENGCOM-8251 -->
 
-*  Boolean values are no longer set for `image_with_border.phtml`. Redundant `max-width` and `height` setting have been removed from `.product-image-photo`. (These values are already set globally on the image through  the reset styles.) [GitHub-30186](https://github.com/magento/magento2/issues/30186)
+*  Boolean values are no longer set for `image_with_border.phtml`. Redundant `max-width` and `height` setting have been removed from `.product-image-photo`. (These values are already set globally on the image through the reset styles.) [GitHub-30186](https://github.com/magento/magento2/issues/30186)
 
 ### Import/export
 
@@ -1187,7 +1175,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7542 -->
 
-*  The `SELECT entity_id IN` statement has been improved  in deployments implementing  MariaDB v.10.3.18, which has improved the performance of catalog category indexing. [GitHub-25199](https://github.com/magento/magento2/issues/25199)
+*  The `SELECT entity_id IN` statement has been improved in deployments implementing  MariaDB v.10.3.18, which has improved the performance of catalog category indexing. [GitHub-25199](https://github.com/magento/magento2/issues/25199)
 
 <!-- ENGCOM-8237 -->
 
@@ -1217,7 +1205,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7914 -->
 
-*  The `RequireJS` resolver no longer fails to detect blocked resources. Previously, the resolver did not correctly detect whether all resources on a page were loaded or handled appropriately, and the page kept loading.  [GitHub-28116](https://github.com/magento/magento2/issues/28116)
+*  The `RequireJS` resolver no longer fails to detect blocked resources. Previously, the resolver did not correctly detect whether all resources on a page were loaded or handled appropriately, and the page kept loading. [GitHub-28116](https://github.com/magento/magento2/issues/28116)
 
 <!-- ENGCOM-8229 -->
 
@@ -1399,15 +1387,15 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7804 -->
 
-*  Added test for enabling email to a friend in the Admin. [GitHub-29145](https://github.com/magento/magento2/issues/29145)
+*  Added a test for enabling email to a friend in the Admin. [GitHub-29145](https://github.com/magento/magento2/issues/29145)
 
 <!-- ENGCOM-8316 -->
 
-*  Added test for deleting a CMS block from a grid by an administrator. [GitHub-30372](https://github.com/magento/magento2/issues/30372)
+*  Added a test for deleting a CMS block from a grid by an administrator. [GitHub-30372](https://github.com/magento/magento2/issues/30372)
 
 <!-- ENGCOM-7933 -->
 
-*  Added test for applying a shopping cart rule to a single bundle item. [GitHub-28921](https://github.com/magento/magento2/issues/28921)
+*  Added a test for applying a shopping cart rule to a single bundle item. [GitHub-28921](https://github.com/magento/magento2/issues/28921)
 
 <!-- ENGCOM-8075 -->
 
@@ -1507,7 +1495,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8173 -->
 
-*  Guest shoppers can now place PayPal orders when **Automatic Assignment to Customer Group** is enabled. The payment is processed on the PayPal gateway, the order is created in Magento, and shopper sees the order thank-you page. Previously, the order was processed successfully on the PayPal gateway, but the order was not created in Magento. The shopper was instead ire-directed to the order review page, where Magento displayed this error: `Failed address validation: %1" error`. [GitHub-25399](https://github.com/magento/magento2/issues/25399)
+*  Guest shoppers can now place PayPal orders when **Automatic Assignment to Customer Group** is enabled. The payment is processed on the PayPal gateway, the order is created in Magento, and the shopper sees the order thank-you page. Previously, the order was processed successfully on the PayPal gateway, but the order was not created in Magento. The shopper was instead re-directed to the order review page, where Magento displayed this error: `Failed address validation: %1" error`. [GitHub-25399](https://github.com/magento/magento2/issues/25399)
 
 ### Performance
 
@@ -1731,7 +1719,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-35194-->
 
-*  The fields that describe the UPS delivery method on Admin **Stores** >  **Configuration** > **Sales** > **Delivery Methods** are now enabled as expected.
+*  The fields that describe the UPS delivery method on Admin **Stores** > **Configuration** > **Sales** > **Delivery Methods** are now enabled as expected.
 
 <!--- MC-35633-->
 
@@ -1897,7 +1885,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36836 -->
 
-*  The Admin Orders grid date picker grid now works as expected when the Admin locale is Arabic (`ar_SA - Saudi Arabia`).
+*  The Admin Orders grid date picker now works as expected when the Admin locale is Arabic (`ar_SA - Saudi Arabia`).
 
 <!--- MC-38476 -->
 
@@ -2041,7 +2029,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-23904 ENGCOM-8421-->
 
-*  You can now use POST `V1/invoice/:invoiceId/refund` to refund an invoice that has a zero quantity of products and zero shipping charges (for example, {“items": [{"qty": 0, "orderItemId": 6, "extensionAttributes": {}}], "appendComment": false, "notify": true, "isOnline": true, "arguments": {"adjustment_negative": 0.0, "adjustment_positive": 0.99, "shipping_amount": 0}}.) Previously, Magento threw this error: `You can't create a creditmemo without products`. [GitHub-23069](https://github.com/magento/magento2/issues/23069)
+*  You can now use POST `V1/invoice/:invoiceId/refund` to refund an invoice that has a zero quantity of products and zero shipping charges (for example, `{“items": [{"qty": 0, "orderItemId": 6, "extensionAttributes": {}}], "appendComment": false, "notify": true, "isOnline": true, "arguments": {"adjustment_negative": 0.0, "adjustment_positive": 0.99, "shipping_amount": 0}}.` ) Previously, Magento threw this error: `You can't create a creditmemo without products`. [GitHub-23069](https://github.com/magento/magento2/issues/23069)
 
 <!--- MC-33732 -->
 
@@ -2057,7 +2045,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-38425-->
 
-*  Invoices created using POST `V1/order/orderID/invoice` now accurately reflect partial payment by store credit. Previously, when an order was partially paid for with store credit, the invoice was created without taking into account store credit.
+*  Invoices created using POST `V1/order/:orderID/invoice` now accurately reflect partial payment by store credit. Previously, when an order was partially paid for with store credit, the invoice was created without taking the store credit into account.
 
 <!--- MC-36830-->
 
@@ -2095,7 +2083,8 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 **Issue**: Magento creates an order in Braintree as expected when a shopper clicks **Pay with Venmo**, but does not create the order in the Admin. See the [Magento 2.4.2 known issue: Braintree Venmo payment does not work](https://support.magento.com/hc/en-us/articles/360054662652/) Knowledge Base article.  <!--- BUNDLE-2894-->
 
-**Issue**: You cannot use the `addConfigurableProductToCart` GraphQL mutation to add a configurable product to a cart in a non-default store view in a multi-store deployment that runs Inventory. (Luma storefronts are not affected.) Magento displays this error: `Could not add item to cart. Please check required options and try again`. **Workaround**: None. [GitHub-31660](https://github.com/magento/magento2/issues/31660)<!--- PWA-1298-->
+**Issue**: You cannot use the `addConfigurableProductToCart` GraphQL mutation to add a configurable product to a cart in a non-default store view in a multi-store deployment that runs Inventory. (Luma storefronts are not affected.) Magento displays this error: `Could not add item to cart. Please check required options and try again`. **Workaround**: Use the `addProductsToCart` mutation instead. [GitHub-31660](https://github.com/magento/magento2/issues/31660)<!--- PWA-1298-->
+
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
