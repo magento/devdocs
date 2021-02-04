@@ -85,7 +85,7 @@ You must specify the following parameters:
 
 To store data in a serialized form into a custom cache should be made the steps:
 
-* Pass the argument to the constructor `Magento\Framework\App\CacheInterface` $cache of a necessary class (Repository, Model, Block, etc)
+*  Pass the argument to the constructor `Magento\Framework\App\CacheInterface` $cache of a necessary class (Repository, Model, Block, etc)
 
 ```php
 /**
@@ -99,7 +99,7 @@ public function __construct(CacheInterface $cache, SerializerInterface $serializ
 }
 ```
 
-* Store data in the cache
+*  Store data in the cache
 
 ```php
 $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
@@ -126,7 +126,7 @@ $data = $this->serializer->unserialize($this->cache->load($cacheKey));
 
 To invalidate custom cache type should be made the steps:
 
-* Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` $typeList of a necessary class (Repository, Model, Block, etc)
+*  Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` $typeList of a necessary class (Repository, Model, Block, etc)
 
 ```php
 /**
@@ -138,7 +138,7 @@ public function __construct(TypeListInterface $typeList)
 }
 ```
 
-* Invalidate the cache
+*  Invalidate the cache
 
 ```php
 $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
@@ -150,8 +150,8 @@ $this->typeList->invalidate($cacheKey);
 
 The custom cache type can be flushed in the following ways:
 
-* Go to System -> Cache Management and flush the custom cache type
-* Programatically, using the TypeList.
+*  Go to System -> Cache Management and flush the custom cache type
+*  Programatically, using the TypeList.
 
 ```php
 $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
