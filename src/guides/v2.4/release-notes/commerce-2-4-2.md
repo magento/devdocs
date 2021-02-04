@@ -807,6 +807,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Magento now assigns a shopper to the correct customer group when the shopper places an order with a non-default customer group in a store where **Enable Automatic Assignment to Customer Group** is enabled. [GitHub-26976](https://github.com/magento/magento2/issues/26976)
 
+<!--- MC-39783-->
+
+*  The Admin customers grid is now available as expected when the non-default website is deleted in a multi-site deployment when indexes are set to **Update by Schedule**. Previously, Magento did not display the grid and threw this error:  `[2020-12-09 11:31:54] report.CRITICAL: The website with id 2 that was requested wasn't found. Verify the website and try again. \{"exception":"[object] (Magento\\Framework\\Exception\\NoSuchEntityException(code: 0): The website with id 2 that was requested wasn't found. Verify the website and try again. at /var/www/html/magento24ee/vendor/magento/module-store/Model/WebsiteRepository.php:110)”}`
+
 ### dotdigital
 
 *  Error handling has been improved when retrieving lists of programs from dotdigital Engagement Cloud.
@@ -1175,6 +1179,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  GraphQL add to cart mutations now honor catalog permissions. [GitHub-30179](https://github.com/magento/magento2/issues/30179)
 
+<!--- MC-36946 -->
+
+*  GraphQL response time for add to cart operations has improved.
+
 <!-- ENGCOM-8099 -->
 
 *  The `products` query now returns tier price values as expected. [GitHub-29168](https://github.com/magento/magento2/issues/29168)
@@ -1186,6 +1194,10 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8172 -->
 
 *  The `productDetail` query no longer returns an error when the queried product has a disabled related product. [GitHub-28892](https://github.com/magento/magento2/issues/28892)
+
+<!--- MC-37395 -->
+
+*  The GraphQL `cart` query now returns prices that have been converted into the correct currency (the default display currency). Previously, the query returned the item price value in base currency, and the currency code was returned as default display currency.
 
 ### Grouped products
 
