@@ -81,5 +81,83 @@ You must specify the following parameters:
 *  `%cache_type_id%` defines the unique identifier of a cache type.
 *  `%CACHE_TYPE_TAG%` defines the unique tag to be used in the cache type scoping.
 
+## Store data into custom cache type {#m2devgde-store-data-cache-type}
+
+To store data in a serialized form into a custom cache should be made the steps:
+
+* Pass the argument to the constructor `Magento\Framework\App\CacheInterface` $cache of a necessary class (Repository, Model, Block, etc)
+
+```php
+/**
+ * @param CacheInterface $cache
+ * @param SerializerInterface $serializer
+ */
+public function __construct(CacheInterface $cache, SerializerInterface $serializer)
+{
+    $this->cache = $cache;
+    $this->serializer = $serializer;
+}
+```
+
+* Store data in the cache
+
+```php
+$cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
+$cacheTag  = \VendorName\ModuleName\Model\Cache\Type\CacheType::CACHE_TAG;
+
+$storeData = $this->cache->save(
+    $this->serializer->serialize($cacheData),
+    $cacheKey,
+    [$cacheTag],
+    86400
+);
+```
+## Retrieve data from custom cache type {#m2devgde-retrieve-data-cache-type}
+
+Retrieve data in the cache
+
+```php
+$cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
+
+$data = $this->serializer->unserialize($this->cache->load($cacheKey));
+```
+
+## Invalidate custom cache type {#m2devgde-invalidate-cache-type}
+
+To invalidate custom cache type should be made the steps:
+
+* Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` $typeList of a necessary class (Repository, Model, Block, etc)
+
+```php
+/**
+ * @param TypeListInterface $typeList
+ */
+public function __construct(TypeListInterface $typeList)
+{
+    $this->typeList = $typeList;
+}
+```
+
+* Invalidate the cache
+
+```php
+$cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
+
+$this->typeList->invalidate($cacheKey);
+```
+
+## Flush custom cache type {#m2devgde-flush-cache-type}
+
+The custom cache type can be flushed in the following ways:
+
+* Go to System -> Cache Management and flush the custom cache type
+* Programatically, using the TypeList.
+
+```php
+$cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
+
+$this->typeList->cleanType($cacheKey);
+```
+
 [tagscope]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php
 [type]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/Cache/Type/Notification.php
