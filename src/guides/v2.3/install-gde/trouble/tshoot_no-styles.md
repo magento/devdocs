@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: After installing, images and stylesheets do not load; only text displays, no graphics
 functional_areas:
   - Install

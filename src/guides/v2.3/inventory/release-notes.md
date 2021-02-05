@@ -20,6 +20,17 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+### v1.2.2
+{{site.data.var.im}} 1.2.2 (module version: `magento/inventory-metapackage = 1.2.2`) is supported with version 2.4.2 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.fix} Fixed several issues related to the composite product visibility on the frontend.
+
+-  {:.fix} Improved cart page performance during quantity update on B2B.
+
+-  {:.fix} Several bug fixes targeted to resolve issues with in-store pickup, mass updates, and inventory threshold.
+
+-  {:.new} **Functional tests.** Introduced new functional tests and provided fixes for existing tests to make them more stable.
+
 ### v1.2.1
 {{site.data.var.im}} 1.2.1 (module version: `magento/inventory-metapackage = 1.2.1`) is supported with version 2.4.1 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 

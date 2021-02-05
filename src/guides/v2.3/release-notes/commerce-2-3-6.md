@@ -752,7 +752,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 *  The checkout process now successfully progresses from shipping to payment when using Internet Explorer 11.x with Vertex. Previously, Magento threw a JavaScript error when the shopper tried to proceed from shipping to payment.
 
-*  The process of submitting an invoice to Vertex has been been optimized, and performance has improved.
+*  The process of submitting an invoice to Vertex has been optimized, and performance has improved.
 
 *  Tax details are now included as expected in the database.
 

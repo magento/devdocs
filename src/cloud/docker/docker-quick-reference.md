@@ -54,60 +54,6 @@ View the available options for the `ece-docker build:compose` command:
 php ./vendor/bin/ece-docker build:compose -h
 ```
 
-```terminal
-Description:
-  Build docker configuration
-
-Usage:
-  build:compose [options]
-
-Options:
-      --php=PHP                                        PHP version
-      --nginx=NGINX                                    Nginx version
-      --db=DB                                          DB version
-      --db-image=DB-IMAGE                              DB image
-      --expose-db-port=EXPOSE-DB-PORT                  Expose DB port
-      --expose-db-quote-port=EXPOSE-DB-QUOTE-PORT      Expose port for DB sales
-      --expose-db-sales-port=EXPOSE-DB-SALES-PORT      Expose port for DB quote
-      --with-entrypoint                                Add DB entrypoint volume
-      --with-mariadb-conf                              Add MariaDb config volume
-      --redis=REDIS                                    Redis version
-      --es=ES                                          Elasticsearch version
-      --rmq=RMQ                                        RabbitMQ version
-      --node=NODE                                      Node.js version
-      --selenium-version=SELENIUM-VERSION              Selenium version
-      --selenium-image=SELENIUM-IMAGE                  Selenium image
-      --no-es                                          Disable Elasticsearch
-      --no-mailhog                                     Disable MailHog
-      --mailhog-http-port                              Custom HTTP port for MailHog
-      --mailhog-smtp-port                              Custom SMTP port for MailHog
-      --set-docker-host                                Sets host.docker.internal for fpm_xdebug container to
-                                                       resolve debug issue for LINUX system
-  -m, --mode=MODE                                      Mode of environment (developer, production)
-      --sync-engine=SYNC-ENGINE                        File sync engine. Works only with developer mode. Available: (docker-sync, mutagen, native)
-      --with-cron                                      Add cron container
-      --no-varnish                                     Remove Varnish container
-      --with-selenium                                  Add Selenium latest version
-      --with-test                                      Add container for running tests
-      --no-tmp-mounts                                  Remove /tmp mounted volume
-      --with-xdebug                                    Enables XDebug
-      --env-vars[=ENV-VARS]                            Cloud environment variables
-      --installation-type[=INSTALLATION-TYPE]          Sets magento installation type [default: "composer"]
-      --host[=HOST]                                    Host name
-      --port[=PORT]                                    Port
-      --tls-port                                       TLS port
-      --es-env-var=ES-ENV-VAR                          Environment variable for elasticsearch service (multiple values allowed)
-      --db-increment-increment=DB-INCREMENT-INCREMENT  "auto_increment_increment" database variable
-      --db-increment-offset=DB-INCREMENT-OFFSET        "auto_increment_offset" database variable
-  -h, --help                                           Display this help message
-  -q, --quiet                                          Do not output any message
-  -V, --version                                        Display this application version
-      --ansi                                           Force ANSI output
-      --no-ansi                                        Disable ANSI output
-  -n, --no-interaction                                 Do not ask any interactive question
-  -v|vv|vvv, --verbose                                 Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
-  ```
-
 {:.bs-callout-info}
 See [Service versions] for additional information about the service configuration options for the `ece-docker build:compose` command.
 
@@ -278,7 +224,7 @@ networks:
 > Generate a custom `docker-compose.yaml` file with custom images and image versions
 
 ```bash
-./vendor/bin/ece-docker build:custom:compose '{"name":"magento","system":{"mode":"production","host":"magento2.test","port":"8080","db":{"increment_increment":3,"increment_offset":2},"mailhog":{"smtp_port":"1026","http_port":"8026"}},"services":{"php":{"image":"php-v1","version":"7.4","enabled":true},"php-cli":{"image-pattern":"%s:%s-cli"},"php-fpm":{"image-pattern":"%s:%s-fpm"},"mysql":{"image":"mariadb-v1","version":"10.3","image-pattern":"%s:%s","enabled":true},"redis":{"image":"redis-v1","enabled":"true","version":"5"},"elasticsearch":{"image":"elasticsearch-v1","image-pattern":"%s:%s","enabled":true,"version":"7.6"},"varnish":{"image":"varnish-v1","image-pattern":"%s:%s","enabled":true,"version":"6.2"},"nginx":{"image":"nginx-v1","version":"1.19","image-pattern":"%s:%s","enabled":"true"},"test":{"enabled":true}},"mounts":{"var":{"path":"var"},"app-etc":{"path":"app\/etc"},"pub-media":{"path":"pub\/media"},"pub-static":{"path":"pub\/static"}}}'
+./vendor/bin/ece-docker build:custom:compose '{"name":"magento","system":{"mode":"production","host":"magento2.test","port":"8080","db":{"increment_increment":3,"increment_offset":2},"mailhog":{"smtp_port":"1026","http_port":"8026"}},"services":{"php":{"image":"php-v1","version":"7.4","enabled":true,"extensions":{"enabled":["xsl"]}},"php-cli":{"image-pattern":"%s:%s-cli"},"php-fpm":{"image-pattern":"%s:%s-fpm"},"mysql":{"image":"mariadb-v1","version":"10.3","image-pattern":"%s:%s","enabled":true},"redis":{"image":"redis-v1","enabled":"true","version":"5"},"elasticsearch":{"image":"elasticsearch-v1","image-pattern":"%s:%s","enabled":true,"version":"7.6"},"varnish":{"image":"varnish-v1","image-pattern":"%s:%s","enabled":true,"version":"6.2"},"nginx":{"image":"nginx-v1","version":"1.19","image-pattern":"%s:%s","enabled":"true"},"test":{"enabled":true}},"mounts":{"var":{"path":"var"},"app-etc":{"path":"app\/etc"},"pub-media":{"path":"pub\/media"},"pub-static":{"path":"pub\/static"}}}'
 ```
 
 This command generates the following images in the Docker environment:

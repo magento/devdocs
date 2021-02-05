@@ -465,7 +465,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- ENGCOM-7698-->
 
-*  `localStorage` polyfill has been moved from from `base` to `frontend`. _Fix submitted by Ihor Sviziev in pull request [28749](https://github.com/magento/magento2/pull/28749)_. [GitHub-28900](https://github.com/magento/magento2/issues/28900)
+*  `localStorage` polyfill has been moved from `base` to `frontend`. _Fix submitted by Ihor Sviziev in pull request [28749](https://github.com/magento/magento2/pull/28749)_. [GitHub-28900](https://github.com/magento/magento2/issues/28900)
 
 <!--- ENGCOM-7753-->
 
@@ -561,7 +561,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- ENGCOM-7193-->
 
-*   `sales_clean_quotes` no longer loads all expired quotes at once. Previously, Magento failed with this fatal error because all expired quotes were loaded simultaneously: `PHP Fatal error: Allowed memory size of 2147483648 bytes exhausted (tried to allocate 20480 bytes) in /path/to/magento2/vendor/magento/framework/Model/AbstractModel.php on line 359`,
+*  `sales_clean_quotes` no longer loads all expired quotes at once. Previously, Magento failed with this fatal error because all expired quotes were loaded simultaneously: `PHP Fatal error: Allowed memory size of 2147483648 bytes exhausted (tried to allocate 20480 bytes) in /path/to/magento2/vendor/magento/framework/Model/AbstractModel.php on line 359`,
 
 ### CSS
 

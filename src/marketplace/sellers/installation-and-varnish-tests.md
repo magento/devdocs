@@ -21,10 +21,10 @@ The Installation and Varnish tests complete the following checks:
 
 1. Successful installation of Magento with the submitted extension and ability to switch to production mode–This check includes the following steps:
 
-   -  Verify ability to add the extension to the [Magento project](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html#get-the-magento-software) with [Composer](https://getcomposer.org/).
+   -  Verify ability to add the extension to the Magento project with [Composer](https://getcomposer.org/).
    -  After adding and enabling the extension, verify successful Magento installation.
    -  Verify that you can [compile Magento code](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-compiler.html).
-  -  Verify that you can [deploy static content](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-static-view.html).
+   -  Verify that you can [deploy static content](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-static-view.html).
    -  Verify that you can [enable Magento Production mode](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html).
    -  Check that you can [reindex all data](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html) with the installed extension.
 
@@ -36,7 +36,7 @@ The Installation and Varnish tests complete the following checks:
 
 ## Tools and environments used
 
-The Magento test infrastructure follows the [recommended setup](https://devdocs.magento.com/guides/v2.4/install-gde/install-quick-ref.html) for the Magento installation. The Installation and Varnish tests always runs on the most up-to-date version of software compatible with the Magento release. You can use [Magento Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html) to create a similar environment.
+The Magento test infrastructure follows the recommended setup for the Magento installation. The Installation and Varnish tests always runs on the most up-to-date version of software compatible with the Magento release. You can use [Magento Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html) to create a similar environment.
 
 The Installation and Varnish tests always use the latest patch version for the Magento release line that the submitted extension claims to support. For each supported release line, the entire test suite is performed on all compatible PHP versions.
 

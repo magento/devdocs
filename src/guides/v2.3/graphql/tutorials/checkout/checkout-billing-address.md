@@ -17,20 +17,15 @@ contributor_link: https://www.atwix.com/
 {:.bs-callout-tip}
 You must always set the billing address to place an order.
 
-Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/mutations/set-billing-address.html) mutation to set a billing address. You can set the billing address in the following ways:
+Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/mutations/set-billing-address.html) mutation to set a billing address.
 
-*  Add a new billing address
-*  Add a new billing address and set it as the shipping addresses
-*  Use an address from the logged-in customer's address book
+## Add a billing address to the cart
 
-## Add a new billing address
+Similar to the shipping address, add a billing address to the cart. `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html). The street address is also different, so we can see that different addresses are being created.
 
-The following mutation adds a new billing address. `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+Send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 **Request:**
-
-{:.bs-callout .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 ```graphql
 mutation {
@@ -42,13 +37,14 @@ mutation {
           firstname: "John"
           lastname: "Doe"
           company: "Company Name"
-          street: ["320 N Crescent Dr", "Beverly Hills"]
+          street: ["64 Strawberry Dr", "Beverly Hills"]
           city: "Los Angeles"
           region: "CA"
+          region_id: 12
           postcode: "90210"
           country_code: "US"
           telephone: "123-456-0000"
-          save_in_address_book: false
+          save_in_address_book: true
         }
       }
     }
@@ -88,229 +84,7 @@ mutation {
           "lastname": "Doe",
           "company": "Company Name",
           "street": [
-            "320 N Crescent Dr",
-            "Beverly Hills"
-          ],
-          "city": "Los Angeles",
-          "region": {
-            "code": "CA",
-            "label": "California"
-          },
-          "postcode": "90210",
-          "telephone": "123-456-0000",
-          "country": {
-            "code": "US",
-            "label": "US"
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-## Add a new address for billing and shipping
-
-The following mutation includes the `same_as_shipping` attribute, which allows the same address to be used for billing and shipping.
-
-**Request:**
-
-```text
-mutation {
-  setBillingAddressOnCart(
-    input: {
-      cart_id: "{ CART_ID }"
-      billing_address: {
-        address: {
-          firstname: "John"
-            lastname: "Doe"
-            company: "Company Name"
-            street: ["320 N Crescent Dr", "Beverly Hills"]
-            city: "Los Angeles"
-            region: "CA"
-            postcode: "90210"
-            country_code: "US"
-            telephone: "123-456-0000"
-            save_in_address_book: false
-          }
-          same_as_shipping: true
-      }
-    }
-  ) {
-    cart {
-      billing_address {
-        firstname
-        lastname
-        company
-        street
-        city
-        region{
-          code
-          label
-        }
-        postcode
-        telephone
-        country {
-          code
-          label
-        }
-      }
-      shipping_addresses {
-        firstname
-        lastname
-        company
-        street
-        city
-        postcode
-        telephone
-        country {
-          code
-          label
-        }
-      }
-    }
-  }
-}
-```
-
-**Response:**
-
-```json
-{
-  "data": {
-    "setBillingAddressOnCart": {
-      "cart": {
-        "billing_address": {
-          "firstname": "John",
-          "lastname": "Doe",
-          "company": "Company Name",
-          "street": [
-            "320 N Crescent Dr",
-            "Beverly Hills"
-          ],
-          "city": "Los Angeles",
-          "region": {
-            "code": "CA",
-            "label": "California"
-          },
-          "postcode": "90210",
-          "telephone": "123-456-0000",
-          "country": {
-            "code": "US",
-            "label": "US"
-          }
-        },
-        "shipping_addresses": [
-          {
-            "firstname": "John",
-            "lastname": "Doe",
-            "company": "Company Name",
-            "street": [
-              "320 N Crescent Dr",
-              "Beverly Hills"
-            ],
-            "city": "Los Angeles",
-            "postcode": "90210",
-            "telephone": "123-456-0000",
-            "country": {
-              "code": "US",
-              "label": "US"
-            }
-          }
-        ]
-      }
-    }
-  }
-}
-```
-
-## Use an existing customer address
-
-First, query the customer to return the list of address IDs.
-
-**Request:**
-
-```text
-query {
-  customer {
-    addresses {
-      id
-      default_billing
-      default_shipping
-    }
-  }
-}
-```
-
-**Response:**
-
-```text
-  "data": {
-    "customer": {
-      "addresses": [
-        {
-          "id": 2,
-          "default_billing": true,
-          "default_shipping": true
-        }
-      ]
-    }
-  }
-}
-```
-
-Set `{ CUSTOMER_ADDRESS_ID }` to an `id` returned in the query.
-
-`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-
-**Request:**
-
-```text
-mutation {
-  setBillingAddressOnCart(
-    input: {
-      cart_id: "{ CART_ID }"
-      billing_address: {
-          customer_address_id: { CUSTOMER_ADDRESS_ID }
-      }
-    }
-  ) {
-    cart {
-      billing_address {
-        firstname
-        lastname
-        company
-        street
-        city
-        region{
-          code
-          label
-        }
-        postcode
-        telephone
-        country {
-          code
-          label
-        }
-      }
-    }
-  }
-}
-```
-
-**Response:**
-
-```json
-{
-  "data": {
-    "setBillingAddressOnCart": {
-      "cart": {
-        "billing_address": {
-          "firstname": "John",
-          "lastname": "Doe",
-          "company": "Company Name",
-          "street": [
-            "320 N Crescent Dr",
+            "64 Strawberry Dr",
             "Beverly Hills"
           ],
           "city": "Los Angeles",

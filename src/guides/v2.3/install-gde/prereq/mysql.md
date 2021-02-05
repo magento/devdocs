@@ -1,18 +1,8 @@
 ---
-group: installation-guide
 title: MySQL
 redirect_from:
   - guides/v2.3/install-gde/trouble/tshoot_mysql_table-open-cache.html
 ---
-
-## Help if you are just starting out {#mysql-help-beginner}
-
-If you are new to all this and need some help getting started, we suggest the following:
-
-*  [Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-*  [What is the software that the Magento server needs to run?]({{page.baseurl }}/install-gde/basics/basics_software.html)
-*  [What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
-*  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## General guidelines {#instgde-prereq-mysql-intro}
 
@@ -89,7 +79,7 @@ To install MySQL 5.7 on Ubuntu 16:
 
 1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
-   {:.bs-callout-info}}
+   {:.bs-callout-info}
    The default value applies to {{site.data.var.ece}} *and* on-premises projects. {{site.data.var.ece}} Pro customers must open a support ticket to increase the `max_allowed_packet` value. {{site.data.var.ece}} Starter customers can increase the value by updating the configuration in the `/etc/mysql/mysql.cnf` file.
 
   {% include install/mysql_max-allowed-packet-ubuntu.md %}
