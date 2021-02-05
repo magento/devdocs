@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Set pre-installation ownership and permissions
 functional_areas:
   - Install

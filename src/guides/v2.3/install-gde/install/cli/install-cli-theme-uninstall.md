@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Uninstall themes Composer packages
 functional_areas:
   - Install

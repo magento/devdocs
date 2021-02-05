@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 05_readiness
 title: Readiness check issues
 menu_title: Readiness check issues
