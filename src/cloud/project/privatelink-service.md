@@ -154,7 +154,7 @@ To test the connection to the VPC endpoint service:
    ```
    {:.no-copy}
 
-1. Run the following command to to ensure the service is listening on VM:
+1. Run the following command to ensure the service is listening on VM:
 
    ```bash
    netstat -na |grep <port>
