@@ -28,12 +28,12 @@ We support and deploy the following services:
 -  [`elasticsearch`]({{ site.baseurl }}/cloud/project/services-elastic.html)
 -  [`rabbitmq`]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 
-You can view default versions and disk values in the the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, and `elasticsearch` services defined in the `services.yaml` configuration file:
+You can view default versions and disk values in the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, and `elasticsearch` services defined in the `services.yaml` configuration file:
 
 ```yaml
 mysql:
     type: mysql:<version>
-    disk: 2048
+    disk: 5120
 
 redis:
     type: redis:<version>
@@ -88,7 +88,7 @@ The `type` value specifies the service name and version. For example:
 
 ```yaml
 mysql:
-    type: mysql:10.2
+    type: mysql:10.3
 ```
 
 Use [`Service versions`](#service-versions) table to see supported services and their versions
@@ -99,8 +99,8 @@ The `disk` value specifies the size of the persistent disk storage (in MB) to al
 
 ```yaml
 mysql:
-    type: mysql:10.2
-    disk: 2048
+    type: mysql:10.3
+    disk: 5120
 ```
 
 The current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services.
@@ -138,7 +138,7 @@ To verify relationships in local environment:
    database:
        -
    ...
-           type: 'mysql:10.2'
+           type: 'mysql:10.3'
            port: 3306
    ```
 
@@ -218,7 +218,7 @@ You can upgrade the installed service version by updating the service configurat
    ```yaml
    mysql:
        type: mysql:10.3
-       disk: 2048
+       disk: 5120
    ```
 
 1. Add, commit, and push your code changes.
@@ -260,7 +260,7 @@ To downgrade a service version by renaming an existing service:
      ```yaml
      mysql:
          type: mysql:10.4
-         disk: 2048
+         disk: 5120
      ```
 
    > New `services.yaml` definition
@@ -268,7 +268,7 @@ To downgrade a service version by renaming an existing service:
      ```yaml
      mysql2:
           type: mysql:10.3
-          disk: 2048
+          disk: 5120
      ```
 
 1. Update the relationships in the `.magento.app.yaml` file.
@@ -299,10 +299,10 @@ To downgrade a service by creating an additional service:
    ```yaml
    mysql:
        type: mysql:10.4
-       disk: 2048
+       disk: 5120
    mysql2:
        type: mysql:10.3
-       disk: 2048
+       disk: 5120
    ```
 
 1. Change the relationships configuration in the `.magento.app.yaml` file to use the new service.
