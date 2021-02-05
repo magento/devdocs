@@ -127,9 +127,10 @@ The `CompareList` output object contains the following attribute:
 
 {% include graphql/compare-list-output.md %}
 
+## Related topics
 
-
-
-
-
-Dt9sQI4SqeyZfgKyPEK7xuNEghaZDeqo
+*  [compareList query]({{page.baseurl}}/graphql/queries/compare-list.html)
+*  [addProductsToCompareList mutation]({{page.baseurl}}/graphql/mutations/add-products-to-compare-list.html)
+*  [assignCompareListToCustomer mutation]({{page.baseurl}}/graphql/mutations/assign-compare-list-to-customer.html)
+*  [deleteCompareList mutation]({{page.baseurl}}/graphql/mutations/delete-compare-list.html)
+*  [removeProductsFromCompareList mutation]({{page.baseurl}}/graphql/mutations/remove-products-from-compare-list.html)

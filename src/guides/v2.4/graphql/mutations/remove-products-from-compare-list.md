@@ -1,20 +1,20 @@
 ---
 group: graphql
-title: addProductsToCompareList mutation
+title: removeProductsFromCompareList mutation
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `addProductsToCompareList` mutation adds products to the comparison list.
+The `removeProductsFromCompareList` mutation removes products from the comparison list.
 
-You must specify the compare list unique ID along with the list of product ID to add the products to the comparison list.
+You must specify the compare list unique ID along with the list of product ID to remove products from the comparison list.
 
 ## Syntax
 
 ```graphql
 mutation {
-    addProductsToCompareList(
-        input: AddProductsToCompareListInput
+    removeProductsFromCompareList(
+        input: RemoveProductsFromCompareListInput
     ) {
         CompareList
     }
@@ -23,16 +23,16 @@ mutation {
 
 ## Example usage
 
-The following example shows how to add two products into the existing comparison list with unique ID "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD".
+The following example removes two products with ID "1" and "2" from the comparison list with unique ID "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD".
 
 **Request:**
 
 ```graphql
 mutation {
-  addProductsToCompareList(
+  removeProductsFromCompareList(
     input: {
       uid: "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD",
-      products: ["3", "4"]
+      products: ["1", "2"]
     }
   ) {
     uid
@@ -60,9 +60,9 @@ mutation {
 ```json
 {
   "data": {
-    "addProductsToCompareList": {
+    "removeProductsFromCompareList": {
       "uid": "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD",
-      "item_count": 4,
+      "item_count": 2,
       "attributes": [
         {
           "code": "sku",
@@ -82,26 +82,6 @@ mutation {
         }
       ],
       "items": [
-        {
-          "uid": "1",
-          "product": {
-            "sku": "24-MB01",
-            "name": "Joust Duffle Bag",
-            "description": {
-              "html": "<p>The sporty Joust Duffle Bag can't be beat - not in the gym, not on the luggage carousel, not anywhere. Big enough to haul a basketball or soccer ball and some sneakers with plenty of room to spare, it's ideal for athletes with places to go.<p>\n<ul>\n<li>Dual top handles.</li>\n<li>Adjustable shoulder strap.</li>\n<li>Full-length zipper.</li>\n<li>L 29\" x W 13\" x H 11\".</li>\n</ul>"
-            }
-          }
-        },
-        {
-          "uid": "2",
-          "product": {
-            "sku": "24-MB04",
-            "name": "Strive Shoulder Pack",
-            "description": {
-              "html": "<p>Convenience is next to nothing when your day is crammed with action. So whether you're heading to class, gym, or the unbeaten path, make sure you've got your Strive Shoulder Pack stuffed with all your essentials, and extras as well.</p>\n<ul>\n<li>Zippered main compartment.</li>\n<li>Front zippered pocket.</li>\n<li>Side mesh pocket.</li>\n<li>Cell phone pocket on strap.</li>\n<li>Adjustable shoulder strap and top carry handle.</li>\n</ul>"
-            }
-          }
-        },
         {
           "uid": "3",
           "product": {
@@ -130,15 +110,15 @@ mutation {
 
 ## Input attributes
 
-The `AddProductsToCompareListInput` input object defines the product IDs for comparing that will be added to the existing comparison list provided by the unique ID.
+The `RemoveProductsFromCompareListInput` input object defines the product IDs that should be removed from the existing comparison list provided by the unique ID.
 
-### AddProductsToCompareListInput attributes {#addProductsToCompareListInput}
+### RemoveProductsFromCompareListInput attributes {#removeProductsFromCompareListInput}
 
-The `AddProductsToCompareListInput` object contains the following attributes:
+The `RemoveProductsFromCompareListInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`products` | [ID]! | An array of product IDs to add to the compare list
+`products` | [ID]! | An array of product IDs to remove from the compare list
 `uid` | ID! | The unique identifier of the compare list to modify
 
 ## Output attributes
@@ -150,7 +130,7 @@ The `CompareList` output object contains the following attribute:
 ## Related topics
 
 *  [compareList query]({{page.baseurl}}/graphql/queries/compare-list.html)
+*  [addProductsToCompareList mutation]({{page.baseurl}}/graphql/mutations/add-products-to-compare-list.html)
 *  [assignCompareListToCustomer mutation]({{page.baseurl}}/graphql/mutations/assign-compare-list-to-customer.html)
 *  [createCompareList mutation]({{page.baseurl}}/graphql/mutations/create-compare-list.html)
 *  [deleteCompareList mutation]({{page.baseurl}}/graphql/mutations/delete-compare-list.html)
-*  [removeProductsFromCompareList mutation]({{page.baseurl}}/graphql/mutations/remove-products-from-compare-list.html)

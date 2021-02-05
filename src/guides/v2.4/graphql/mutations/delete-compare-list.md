@@ -65,5 +65,8 @@ Attribute |  Data Type | Description
 
 ## Related topics
 
-*  [createRequisitionList mutation]({{page.baseurl}}/graphql/mutations/create-requisition-list.html)
-*  [renameRequisitionList mutation]({{page.baseurl}}/graphql/mutations/rename-requisition-list.html)
+*  [compareList query]({{page.baseurl}}/graphql/queries/compare-list.html)
+*  [addProductsToCompareList mutation]({{page.baseurl}}/graphql/mutations/add-products-to-compare-list.html)
+*  [assignCompareListToCustomer mutation]({{page.baseurl}}/graphql/mutations/assign-compare-list-to-customer.html)
+*  [createCompareList mutation]({{page.baseurl}}/graphql/mutations/create-compare-list.html)
+*  [removeProductsFromCompareList mutation]({{page.baseurl}}/graphql/mutations/remove-products-from-compare-list.html)
