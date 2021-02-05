@@ -1,9 +1,9 @@
 Attribute |  Data Type | Description
 --- | --- | ---
 `attributes` | [[ComparableAttribute]](#comparableAttributeObjectOutput) | An array of attributes that can be used for comparing products
-`item_count` | Int! | Count of the comparing products
-`items` | [[ComparableItem]](#comparableItemObjectOutput) | An array of the comparing products
-`uid` | ID! | The unique ID assigned to the compare list
+`item_count` | Int! | The number of items in the compare lists
+`items` | [[ComparableItem]](#comparableItemObjectOutput) | An array of products to compare
+`uid` | ID! | The unique ID of a `CompareList` object
 
 ### ComparableAttribute object {#comparableAttributeObjectOutput}
 
@@ -12,7 +12,7 @@ The `ComparableAttribute` object outputs attributes which available to compariso
 Attribute |  Data Type | Description
 --- | --- | ---
 `code` | String! | An attribute code that is enabled for product comparisons
-`label` | String! | An attribute label that is enabled for product comparisons
+`label` | String! | The label of the attribute code.
 
 ### ComparableItem object {#comparableItemObjectOutput}
 
@@ -22,7 +22,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `attributes` | [[ProductAttribute]!](#productAttributeObjectOutput) | An array of product attributes that can be used to compare products
 `product` | [ProductInterface!]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | Contains details about a product in a compare list
-`uid` | ID! | The unique ID of the item in a compare list
+`uid` | ID! | The unique ID of a `ComparableItem` object
 
 ### ProductAttribute object {#productAttributeObjectOutput}
 
