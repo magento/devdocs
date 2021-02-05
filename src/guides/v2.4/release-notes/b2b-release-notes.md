@@ -90,7 +90,7 @@ This release includes improvements to order approvals, shipping methods, shoppin
 -  {:.fix} Clicking on the **Clear All** Button now expands all the filters, rather than collapsing them.
 -  {:.fix} Product SKU/Name is now included in the Order History search filter summary.
 -  {:.fix} Sorting Indicator is now displayed properly in the My Purchase Orders Grid.
--  {:.fix} Now, you can click the Approve, Cancel, Reject, and Purchase Purchase Order buttons only once. Previously, you could click the button multiple times.
+-  {:.fix} Now, you can click the Approve, Cancel, Reject, and Purchase Order buttons only once. Previously, you could click the button multiple times.
 -  {:.fix} The Purchase Order Approve, Reject, Cancel, and Validate buttons now render correctly on mobile devices.
 -  {:.fix} Previously, approving a Purchase Order with a discount that has expired placed the order at the full amount and did not update the Purchase Order total. This now works correctly.
 -  {:.fix} A bug was introduced in 2.3.4 where custom extension attributes would not be copied from the Customer Address to the Quote Address. This bug has been fixed.

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 03_install
 title: Unknown module Magento_BundleSampleData
 menu_title: Unknown module Magento_BundleSampleData

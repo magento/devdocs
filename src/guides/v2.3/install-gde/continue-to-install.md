@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Z_continue
 title: Installation Options
 menu_title: Next&mdash;Installation part 2, installing

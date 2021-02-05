@@ -4,8 +4,171 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jan 4 22:34:52 2021
+updated: Thu Feb 4 15:51:53 2021
 entries:
+- description: Updated the note about [supported PHP versions](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#php).
+  versions: 2.3.x
+  type: Technical
+  date: February 2, 2021
+  link: https://github.com/magento/devdocs/pull/8613
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: New Relic log file names are now stored in the `filePath` field, with
+    full paths to the log file. See [View and analyze log data](https://devdocs.magento.com/cloud/project/new-relic.html#view-and-analyze-log-data),
+    step 4, for querying the logs.
+  versions: 2.4.x
+  type: Major Update
+  date: February 2, 2021
+  link: https://github.com/magento/devdocs/pull/8614
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Cloud Patches 1.0.9 [release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
+  versions: 2.4.x
+  type: Major Update
+  date: February 1, 2021
+  link: https://github.com/magento/devdocs/pull/8577
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: "[Release notes](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v200215)
+    for ECE-Tools 2002.1.5."
+  versions: 2.4.x
+  type: Major Update
+  date: February 1, 2021
+  link: https://github.com/magento/devdocs/pull/8578
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.15 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: February 1, 2021
+  link: https://github.com/magento/devdocs/pull/8607
+  contributor: ilima-ebay
+  profile: https://github.com/ilima-ebay
+- description: Added an example use case of the [gallery widget](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/widgets/widget_gallery.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 29, 2021
+  link: https://github.com/magento/devdocs/pull/8556
+  contributor: DashukVolodymyr
+  profile: https://github.com/DashukVolodymyr
+- description: Default disk space for the application and database in cloud templates
+    were updated from 2GB to 5GB.
+  versions: 2.4.x
+  type: Major Update
+  date: January 29, 2021
+  link: https://github.com/magento/devdocs/pull/8588
+  contributor: oshmyheliuk
+  profile: https://github.com/oshmyheliuk
+- description: Added the [Maintainer's Handbook](https://devdocs.magento.com/contributor-guide/maintainer-handbook.html)
+    topic.
+  versions: 2.x
+  type: New Topic
+  date: January 29, 2021
+  link: https://github.com/magento/devdocs/pull/8580
+  contributor: gabrieldagama
+  profile: https://github.com/gabrieldagama
+- description: Added more information about security releases to our [release policy](https://devdocs.magento.com/release/policy/).
+  versions: 2.x
+  type: Major Update
+  date: January 27, 2021
+  link: https://github.com/magento/devdocs/pull/8575
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Updated the [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html)
+    topic with the latest name and acronym changes.
+  versions: ''
+  type: Major Update
+  date: January 26, 2021
+  link: https://github.com/magento/devdocs/pull/8553
+  contributor: danidelcar
+  profile: https://github.com/danidelcar
+- description: Reorganized the [Installation Guide](https://devdocs.magento.com/guides/v2.4/install-gde/install-flow-diagram.html)
+    to improve usability.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 25, 2021
+  link: https://github.com/magento/devdocs/pull/8558
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added the [DateTime library](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/framework/datetime.html)
+    topic to the _PHP Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: January 25, 2021
+  link: https://github.com/magento/devdocs/pull/8439
+  contributor: RakeshJesadiya
+  profile: https://github.com/RakeshJesadiya
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.14 Magento Quality Patch (MQP) package release.
+  versions: ''
+  type: Major Update
+  date: January 22, 2021
+  link: https://github.com/magento/devdocs/pull/8541
+  contributor: abukatar
+  profile: https://github.com/abukatar
+- description: Added the [Setting up static analysis](https://devdocs.magento.com/guides/v2.4/test/static/static-analysis.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: January 22, 2021
+  link: https://github.com/magento/devdocs/pull/8547
+  contributor: dobooth
+  profile: https://github.com/dobooth
+- description: Added the [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html)
+    topics to the Software Update Guide section.
+  versions: ''
+  type: Major Update, New Topic
+  date: January 21, 2021
+  link: https://github.com/magento/devdocs/pull/8314
+  contributor: danidelcar
+  profile: https://github.com/danidelcar
+- description: Added the 'Product Attribute Option Creation' section to the [How to
+    Add a New Product Attribute](https://devdocs.magento.com/videos/fundamentals/add-new-product-attribute/)  topic.
+  versions: ''
+  type: Major Update
+  date: January 20, 2021
+  link: https://github.com/magento/devdocs/pull/8395
+  contributor: dineshvb
+  profile: https://github.com/dineshvb
+- description: Added a new topic describing how contributors can work with [pull request
+    tests](https://devdocs.magento.com/contributor-guide/pull-request-tests.html).
+  versions: ''
+  type: New Topic
+  date: January 20, 2021
+  link: https://github.com/magento/devdocs/pull/8483
+  contributor: sivaschenko
+  profile: https://github.com/sivaschenko
+- description: SendGrid DKIM signatures are available only on Magento Commerce Cloud
+    Pro projects.  For more information on SendGrid, see https://devdocs.magento.com/cloud/project/sendgrid.html.
+  versions: 2.4.x
+  type: Major Update
+  date: January 14, 2021
+  link: https://github.com/magento/devdocs/pull/8440
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: New Relic Alerts now include Redis and MariaDB. See https://devdocs.magento.com/cloud/project/new-relic.html#monitor-performance-with-managed-alerts.
+  versions: 2.4.x
+  type: Major Update
+  date: January 12, 2021
+  link: https://github.com/magento/devdocs/pull/8503
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Added a [legal disclaimer](https://devdocs.magento.com/compliance/privacy/pi-data-reference-m2.html#customer-data)
+    to references of the `date_of_birth` attribute of the `customer` database entity.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 8, 2021
+  link: https://github.com/magento/devdocs/pull/8488
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Published release notes for [Cloud Docker 1.2.1](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v121).
+  versions: 2.4.x
+  type: Major Update
+  date: December 22, 2020
+  link: https://github.com/magento/devdocs/pull/8429
+  contributor: bdenham
+  profile: https://github.com/bdenham
 - description: Added a new topic with instructions for [reverting from a split database
     to a single database](https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html)
     implementation.
@@ -194,7 +357,7 @@ entries:
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
 - description: Reorganized the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
-    pages in the Magento Installation Guide to to make it more coherent.
+    pages in the Magento Installation Guide to make it more coherent.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: November 5, 2020
@@ -1629,7 +1792,7 @@ entries:
   type: Technical
   date: April 9, 2020
   link: https://github.com/magento/devdocs/pull/7016
-- description: Fixed a config entry in the the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
+- description: Fixed a config entry in the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
     topic.
   versions: 2.3.x
   type: Technical
