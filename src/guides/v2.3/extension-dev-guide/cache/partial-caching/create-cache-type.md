@@ -83,9 +83,9 @@ You must specify the following parameters:
 
 ## Store data in a custom cache type {#m2devgde-store-data-cache-type}
 
-To store data in a serialized form in a custom cache, follow these steps:
+To store serialized data in a custom cache, follow these steps:
 
-*  Pass the argument to the constructor `Magento\Framework\App\CacheInterface` `$cache` of a required class (Repository, Model, Block, etc)
+1. Pass the argument to the constructor `Magento\Framework\App\CacheInterface` `$cache` of a required class (Repository, Model, Block, etc).
 
 ```php
 /**
@@ -99,7 +99,7 @@ public function __construct(CacheInterface $cache, SerializerInterface $serializ
 }
 ```
 
-*  Store data in the cache
+1. Store data in the cache.
 
 ```php
 $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
@@ -115,7 +115,7 @@ $storeData = $this->cache->save(
 
 ## Retrieve data from custom cache type {#m2devgde-retrieve-data-cache-type}
 
-Retrieve data from the cache
+Retrieve data from the cache with:
 
 ```php
 $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
@@ -127,7 +127,7 @@ $data = $this->serializer->unserialize($this->cache->load($cacheKey));
 
 To invalidate a custom cache type, follow these steps:
 
-*  Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` `$typeList` of a required class (Repository, Model, Block, etc)
+1. Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` `$typeList` of a required class (Repository, Model, Block, etc)
 
 ```php
 /**
@@ -139,7 +139,7 @@ public function __construct(TypeListInterface $typeList)
 }
 ```
 
-*  Invalidate the cache
+1. Invalidate the cache
 
 ```php
 $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
