@@ -31,7 +31,7 @@ dynamic_blocks(
 
 ## Example usage
 
-The following query returns all dynamic blocks of type `SPECIFIED`. The returned item is a a dynamic block containing only text. The second item contains a PNG file.
+The following query returns all dynamic blocks of type `SPECIFIED`. The returned item is a dynamic block containing only text. The second item contains a PNG file.
 
 **Request:**
 
@@ -91,7 +91,7 @@ The following query returns all dynamic blocks of type `SPECIFIED`. The returned
 
 **cmsPage query response:**
 
-The [`cmsPage` query]({{page.baseurl}}/graphql/queries/cms-page.html) would return the following code for a CMS page that contains the dynamic block in this example with the `uid` of `MQ==`. The response has been reformatted for readability.
+The following code illustrates the definition of the dynamic block with the `uid` of `MQ==`, as returned by the [`cmsPage` query]({{page.baseurl}}/graphql/queries/cms-page.html). The response has been reformatted for readability.
 
 ```html
 <div class=\"widget block block-banners\"
@@ -112,8 +112,7 @@ The [`cmsPage` query]({{page.baseurl}}/graphql/queries/cms-page.html) would retu
     <li class=\"banner-item\" 
       data-bind=\"attr: {'data-banner-id': $data.bannerId}\">\n
       
-      <div class=\"banner-item-content\" data-bind=\"bindHtml: $data.html\"></div>\n
-      
+      <div class=\"banner-item-content\" data-bind=\"bindHtml: $data.html\"></div>\n 
     </li>\n
     
     <!-- /ko -->\n
@@ -128,6 +127,7 @@ Attribute | Data type | Description
 `dynamic_block_uids` | [ID] | An array of dynamic block UIDs to filter on
 `locations` | [DynamicBlockLocationEnum] | An array indicating the locations the dynamic block can be placed. The possible values are CONTENT, HEADER, FOOTER, LEFT, and RIGHT. If this attribute is not specified, the query returns all locations
 `type` | DynamicBlockTypeEnum! | A value indicating the type of dynamic block to filter on. The possible values are CART_PRICE_RULE_RELATED, CATALOG_PRICE_RULE_RELATED, and SPECIFIED
+
 ## Output attributes
 
 The `DynamicBlocks` output object contains the following attributes.
