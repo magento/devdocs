@@ -193,7 +193,7 @@ Support for AWS S3 has been added to all modules including B2B, PageBuilder, an
 
 ### Magento Functional Testing Framework (MFTF)
 
-MFTF 3.2.1 is now available. This release introduces error tolerance in both tests and test suit generation. Additional enhancements and bug fixes are described in the [Magento Functional Testing Framework Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md).
+MFTF 3.2.1 is now available. This release introduces error tolerance in both tests and test suite generation. Additional enhancements and bug fixes are described in the [Magento Functional Testing Framework Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md).
 
 ### Order Management System (OMS)
 
@@ -235,7 +235,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8029 -->
 
-*  `block_html`, `full_page`, and `layout` caches are now disabled as expected after `setup:upgrade` execution. [GitHub-28186](https://github.com/magento/magento2/issues/28186)
+*  `block_html`, `full_page`, and `layout` caches are now disabled as expected after `bin/magento/setup:upgrade` execution. [GitHub-28186](https://github.com/magento/magento2/issues/28186)
 
 <!-- ENGCOM-8184 -->
 
@@ -435,7 +435,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8442 -->
 
-*  Magento now correctly updates a cart’s item subtotal when a shopper clicks **Update Shopping Cart** when checking out with multiple addresses. [GitHub-30408](https://github.com/magento/magento2/issues/30408)
+*  Magento now correctly updates a cart’s item subtotal when a shopper clicks **Update Shopping Cart** while checking out with multiple addresses. [GitHub-30408](https://github.com/magento/magento2/issues/30408)
 
 <!-- ENGCOM-8283 -->
 
@@ -443,7 +443,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8215 -->
 
-*  Magento now renders product names that contain special characters correctly in the mini cart.[GitHub-29075](https://github.com/magento/magento2/issues/29075)
+*  Magento now renders product names that contain special characters correctly in the mini cart. [GitHub-29075](https://github.com/magento/magento2/issues/29075)
 
 <!-- ENGCOM-8308 -->
 
@@ -587,7 +587,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7716 -->
 
-*  Corrected a typo in the help message for the `bin/magento/setup:config:set` subcommand.[GitHub-28802](https://github.com/magento/magento2/issues/28802)
+*  Corrected a typo in the help message for the `bin/magento/setup:config:set` subcommand. [GitHub-28802](https://github.com/magento/magento2/issues/28802)
 
 <!-- ENGCOM-8058 -->
 
@@ -1013,7 +1013,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8079 -->
 
-*  The `FlushCacheByTags` class has been updated to use after plugins instead of around plugins. [GitHub-29558](https://github.com/magento/magento2/issues/29558)
+*  The `FlushCacheByTags` class has been updated to use after-plugins instead of around-plugins. [GitHub-29558](https://github.com/magento/magento2/issues/29558)
 
 <!-- ENGCOM-8358 -->
 
@@ -1061,7 +1061,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8388 -->
 
-*  A shopper is now redirected to the Set a New Password page as expected when they click **Set a New Password** in the Reset Password email when **Require Emails Confirmation** is enabled for the store. Previously, the shopper was redirected back to the Forgot Your Password button on the login page. [GitHub-27954](https://github.com/magento/magento2/issues/27954)
+*  A shopper is now redirected to the Set a New Password page as expected when they click **Set a New Password** in the Reset Password email when **Require Emails Confirmation** is enabled for the store. Previously, the shopper was redirected back to the **Forgot Your Password** button on the login page. [GitHub-27954](https://github.com/magento/magento2/issues/27954)
 
 <!-- ENGCOM-8337 -->
 
@@ -1189,7 +1189,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-37388-->
 
-*  GraphQL now honors catalog permissions. Magento restricts which items are returned for a `products` query, based on the shopper's customer group.
+*  GraphQL now honors catalog permissions. Magento restricts which items are returned for a `products` query based on the shopper's customer group.
 
 ### Grouped products
 
@@ -1229,7 +1229,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8251 -->
 
-*  Boolean values are no longer set for `image_with_border.phtml`. Redundant `max-width` and `height` setting have been removed from `.product-image-photo`. (These values are already set globally on the image through the reset styles.) [GitHub-30186](https://github.com/magento/magento2/issues/30186)
+*  Boolean values are no longer set for `image_with_border.phtml`. Redundant `max-width` and `height` settings have been removed from `.product-image-photo`. (These values are already set globally on the image through the reset styles.) [GitHub-30186](https://github.com/magento/magento2/issues/30186)
 
 ### Import/export
 
@@ -1695,7 +1695,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- MC-36647 -->
 
-*  Shoppers can no longer place an order after their session cookie has expired when persistent cart is enabled. Instead, Magento displays the login page so that the shopper can log in. Previously, Magento placed the order. Magento did not properly validate the persistent customer when `PHPSESSID`had expired, and `customerSession` was re-created from the persistent information.
+*  Shoppers can no longer place an order after their session cookie has expired when persistent cart is enabled. Instead, Magento displays the login page so that the shopper can log in. Previously, Magento placed the order. Magento did not properly validate the persistent customer when `PHPSESSID` had expired, and `customerSession` was re-created from the persistent information.
 
 <!--- MC-39127-->
 
@@ -2095,7 +2095,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36836 -->
 
-*  The Admin Orders grid date picker grid now works as expected when the Admin locale is Arabic (`ar_SA - Saudi Arabia`).
+*  The Admin Orders grid Date Picker now works as expected when the Admin locale is Arabic (`ar_SA - Saudi Arabia`).
 
 <!--- MC-38476 -->
 
