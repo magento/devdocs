@@ -81,11 +81,11 @@ You must specify the following parameters:
 *  `%cache_type_id%` defines the unique identifier of a cache type.
 *  `%CACHE_TYPE_TAG%` defines the unique tag to be used in the cache type scoping.
 
-## Store data into custom cache type {#m2devgde-store-data-cache-type}
+## Store data in a custom cache type {#m2devgde-store-data-cache-type}
 
-To store data in a serialized form into a custom cache should be made the steps:
+To store data in a serialized form in a custom cache, follow these steps:
 
-*  Pass the argument to the constructor `Magento\Framework\App\CacheInterface` $cache of a necessary class (Repository, Model, Block, etc)
+*  Pass the argument to the constructor `Magento\Framework\App\CacheInterface` `$cache` of a required class (Repository, Model, Block, etc)
 
 ```php
 /**
@@ -112,9 +112,10 @@ $storeData = $this->cache->save(
     86400
 );
 ```
+
 ## Retrieve data from custom cache type {#m2devgde-retrieve-data-cache-type}
 
-Retrieve data in the cache
+Retrieve data from the cache
 
 ```php
 $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
@@ -124,9 +125,9 @@ $data = $this->serializer->unserialize($this->cache->load($cacheKey));
 
 ## Invalidate custom cache type {#m2devgde-invalidate-cache-type}
 
-To invalidate custom cache type should be made the steps:
+To invalidate a custom cache type, follow these steps:
 
-*  Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` $typeList of a necessary class (Repository, Model, Block, etc)
+*  Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` `$typeList` of a required class (Repository, Model, Block, etc)
 
 ```php
 /**
@@ -151,7 +152,7 @@ $this->typeList->invalidate($cacheKey);
 The custom cache type can be flushed in the following ways:
 
 *  Go to System -> Cache Management and flush the custom cache type
-*  Programatically, using the TypeList.
+*  Programmatically, using the TypeList.
 
 ```php
 $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
