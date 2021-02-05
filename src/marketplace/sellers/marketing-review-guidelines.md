@@ -10,7 +10,7 @@ From a marketing perspective, all submissions to Magento Marketplace must solve 
 We have made an investment in the presentation of Magento Marketplace. In return, we ask that you put forth an effort to present your solutions in a professional manner. If we see room for improvement, we’ll reach out to you before listing your extension on Magento Marketplace.
 
 *  Your product must have a professional presentation with clear descriptions, images, and screenshots.
-*  The product name should indicate the purpose of the extension or theme.
+*  The product name must indicate the purpose of the extension or theme.
 *  The product description should be well-written, and provide an overview of the features and benefits.
 *  Use only high-quality screenshots, images, and video to accompany the listing.
 
