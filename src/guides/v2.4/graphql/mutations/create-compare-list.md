@@ -5,9 +5,9 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `createCompareList` mutation creates a new compare list that contains the product(s) with provided IDs from `input` attribute.
+The `createCompareList` mutation creates a new compare list that contains products with IDs specified in the `input` attribute.
 
-Luma uses a widget to display the product name, price, and other information. If you want to present this information without a widget, you can set the product attributes to be comparable at `Stores` > `Attributes` > `Product`.
+Luma uses a widget to display the product name, price, and other information. If you want to present this information without a widget, you can set the product attributes to be comparable at **Stores** > Attributes > **Product**.
 
 ## Syntax
 
@@ -23,9 +23,7 @@ mutation {
 
 ## Example usage
 
-### Create a compare list of two products
-
-The following example shows how to create a comparison list of two products.
+The following example shows how to create a comparison list containing two products.
 
 **Request:**
 
@@ -119,11 +117,11 @@ The `CreateCompareListInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`products` | [ID] | An array of product IDs to add to the compare list
+`products` | [ID!] | An array of product IDs to add to the compare list
 
 ## Output attributes
 
-The `CompareList` output object contains the following attribute:
+The `CompareList` output object contains the following attributes:
 
 {% include graphql/compare-list-output.md %}
 
