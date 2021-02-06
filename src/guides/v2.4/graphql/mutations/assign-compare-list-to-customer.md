@@ -128,9 +128,9 @@ Attribute |  Data Type | Description
 `compare_list` | CompareList | A value of `true` indicates the compare list has been assigned successfully, otherwise a value returns `false`
 `result` | Boolean! | A value of `true` indicates the compare list has been assigned successfully
 
-### CompareList attributes 
+### CompareList attributes
 
-The `CompareList` output object contains the following attribute:
+The `CompareList` output object contains the following attributes:
 
 {% include graphql/compare-list-output.md %}
 
