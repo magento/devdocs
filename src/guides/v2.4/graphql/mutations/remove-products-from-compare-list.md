@@ -5,9 +5,9 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `removeProductsFromCompareList` mutation removes products from the comparison list.
+The `removeProductsFromCompareList` mutation removes products from a comparison list.
 
-You must specify the compare list unique ID along with the list of product ID to remove products from the comparison list.
+You must specify the unique ID of a compare list along with the list of product IDs to be removed from the comparison list.
 
 ## Syntax
 
@@ -110,7 +110,7 @@ mutation {
 
 ## Input attributes
 
-The `RemoveProductsFromCompareListInput` input object defines the product IDs that should be removed from the existing comparison list provided by the unique ID.
+The `RemoveProductsFromCompareListInput` input object defines the comparison list to be modified.
 
 ### RemoveProductsFromCompareListInput attributes {#removeProductsFromCompareListInput}
 
@@ -123,7 +123,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `CompareList` output object contains the following attribute:
+The `CompareList` output object contains the following attributes:
 
 {% include graphql/compare-list-output.md %}
 
