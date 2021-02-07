@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Use the `compareList` query to retrieve information about comparison list by provided unique ID.
+The `compareList` query retrieves information about a list of products so that the shopper can compare those products.
 
 ## Syntax
 
@@ -17,14 +17,14 @@ compareList(
 
 ## Example usage
 
-The following query returns the information about comparison list with unique ID "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD":
+The following query returns the information about products in the comparison list with the unique ID of "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD":
 
 **Request:**
 
 ```graphql
 {
     compareList(
-        uid: "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD",
+        uid: "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD"
     ) {
         uid
         item_count
@@ -101,7 +101,7 @@ The following query returns the information about comparison list with unique ID
 
 ## Input attributes
 
-The `compareList` query requires the following input.
+The `compareList` query requires the following input:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -109,7 +109,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `CompareList` output object contains the following attribute:
+The `CompareList` output object contains the following attributes:
 
 {% include graphql/compare-list-output.md %}
 
