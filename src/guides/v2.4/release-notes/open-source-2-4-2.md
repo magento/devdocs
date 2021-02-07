@@ -52,7 +52,7 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 ### Infrastructure improvements
 
-This release contains enhancements to core quality, which improve the quality of the Framework and these functional areas: Customer Account, Catalog, CMS, OMS, Import/Export, Promotions and Targeting, Cart and Checkout, and Staging and Preview.
+This release contains enhancements to core quality, which improve the quality of the Framework and these functional areas: Customer Account, Catalog, CMS, OMS, Import/Export, Promotions and Targeting, and Cart and Checkout.
 
 ### Platform enhancements
 
@@ -151,8 +151,6 @@ Amazon Simple Storage Service (AWS S3) support has been enhanced to include supp
 *  Object storage and future extensibility
 
 *  [Storing media files]({{ page.baseurl }}/config-guide/remote-storage/config-remote-storage.html) on AWS S3
-
-Support for AWS S3 has been added to all modules including B2B, PageBuilder, and Adobe Stock Integration.
 
 ## Fixed issues
 
@@ -775,7 +773,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  The following improvements have been made to the `LoginAsCustomer` modules:
 
-   *  Replaced the `around` plugin with `after`
+   *  Replaced the `around` plug-in with `after`
 
    *  Removed redundant code
 
@@ -923,7 +921,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8079 -->
 
-*  The `FlushCacheByTags` class has been updated to use after-plugins instead of around plugins. [GitHub-29558](https://github.com/magento/magento2/issues/29558)
+*  The `FlushCacheByTags` class has been updated to use after-plug-ins instead of around plug-ins. [GitHub-29558](https://github.com/magento/magento2/issues/29558)
 
 <!-- ENGCOM-8370 -->
 
@@ -1053,10 +1051,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  GraphQL response time for add to cart operations has improved.
 
-<!--- MC-36648 -->
-
-*  The mutations that add products to a cart now honor catalog permissions. [GitHub-30179](https://github.com/magento/magento2/issues/30179)
-
 <!-- ENGCOM-8099 -->
 
 *  The `products` query now returns tier price values as expected. [GitHub-29168](https://github.com/magento/magento2/issues/29168)
@@ -1076,6 +1070,38 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!--- MC-37388-->
 
 *  GraphQL now honors catalog permissions. Magento restricts which items are returned for a `products` query based on the shopper's customer group.
+
+<!--- MC-39690-->
+
+*  Added the `customizable_option` attribute to multiple data types that implement the `CartItemInterface`.
+
+<!--- MC-39744-->
+
+*  Added attributes for the `storeConfig` query to return store, store group, and website information.
+
+<!--- MC-37414-->
+
+*  Reinstated the `SelectedCustomizableOption.type` attribute. In addition, the `customizable_options` attribute within various implementations of the `CartItemInterface` are now non-null.
+
+<!--- MC-23860-->
+
+*  The search functionality of the `products` query no longer returns items in which category permissions have been enabled.
+
+<!--- MC-37726-->
+
+*  The `products` query returns the correct currency for store views that have multiple currencies.
+
+<!--- MC-37727-->
+
+*  Labels for `products` query filters now return translated values, when applicable for non default store views.
+
+<!--- MC-37728-->
+
+*  Fixed store currency amounts on gift cards in the cart.
+
+<!--- MC-38443-->
+
+*  Added the `ConfigurableProductOptionsSelection` data type, which contains metadata corresponding to the selectable configurable options for a product. Use this object in a `products` query to minimize the number of media gallery items that are displayed as the shopper selects configurable product options.
 
 ### Images
 
@@ -1301,7 +1327,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8467 -->
 
-*  Path verification has been added to the `Mediagallery` uploader plugin. Previously, validation failed, and Magento did not import products when **Enable Old Media Gallery** was disabled. [GitHub-30649](https://github.com/magento/magento2/issues/30649)
+*  Path verification has been added to the `Mediagallery` uploader plug-in. Previously, validation failed, and Magento did not import products when **Enable Old Media Gallery** was disabled. [GitHub-30649](https://github.com/magento/magento2/issues/30649)
 
 <!-- ENGCOM-8057 -->
 
@@ -1363,10 +1389,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Removed `AdminNavigateToPageGridActionGroup` due to redundancy. [GitHub-29838](https://github.com/magento/magento2/issues/29838)
 
-<!-- ENGCOM-8280 -->
-
-*  An issue with `StorefrontProductListWidgetWithSharedCatalogTest` that caused the test to be skipped has been resolved. [GitHub-322](https://github.com/magento/partners-magento2b2b/issues/322)
-
 <!-- ENGCOM-8122 -->
 
 *  Implemented `ActionGroup` to navigate to the checkout page. [GitHub-29843](https://github.com/magento/magento2/issues/29843)
@@ -1378,10 +1400,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-8268 -->
 
 *  Corrected issues with skip in MFTF tests for CMS page for Media Gallery. [GitHub-30164](https://github.com/magento/magento2/issues/30164)
-
-<!-- B2B-831 -->
-
-*  Meaningful titles and descriptions have been added to MFTF tests for the `Company`, `CompanyCredit`, `CompanyPayment`, `CompanyShipping`, and `ConfigurableSharedCatalog` modules. [GitHub-30164](https://github.com/magento/magento2/issues/30164)
 
 #### New tests
 
@@ -1835,10 +1853,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  Corrected issues with the GraphQL `testRequestCacheTagsForCategoryListOnMultipleIds` test. [GitHub-29372](https://github.com/magento/magento2/issues/29372)
 
-<!-- ENGCOM-8327 -->
-
-*  The currency availability test for Company credit has been automated.
-
 <!-- ENGCOM-7762 -->
 
 *  Header values that include URLs are now parsed properly in ApiFunctional TestFramework. [GitHub-26425](https://github.com/magento/magento2/issues/26425)
@@ -2049,7 +2063,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36830-->
 
-*  The GET `rest/all/V1/categories` and GET `rest/all/V1/categories?rootCategoryId=2` calls now return populated `name` and `product_count` fields as expected for all categories in the tree. Previously, the category field values were empty. The table name resolver plugin returned an incorrect table name for fetching the count of products by category.
+*  The GET `rest/all/V1/categories` and GET `rest/all/V1/categories?rootCategoryId=2` calls now return populated `name` and `product_count` fields as expected for all categories in the tree. Previously, the category field values were empty. The table name resolver plug-in returned an incorrect table name for fetching the count of products by category.
 
 <!-- ENGCOM-8286 -->
 

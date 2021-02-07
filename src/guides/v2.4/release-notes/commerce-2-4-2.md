@@ -901,7 +901,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 *  The following improvements have been made to the `LoginAsCustomer` modules:
 
-   *  Replaced the `around` plugin with `after`
+   *  Replaced the `around` plug-in with `after`
 
    *  Removed redundant code
 
@@ -1013,7 +1013,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8079 -->
 
-*  The `FlushCacheByTags` class has been updated to use after-plugins instead of around-plugins. [GitHub-29558](https://github.com/magento/magento2/issues/29558)
+*  The `FlushCacheByTags` class has been updated to use after-plug-ins instead of around-plug-ins. [GitHub-29558](https://github.com/magento/magento2/issues/29558)
 
 <!-- ENGCOM-8358 -->
 
@@ -1190,6 +1190,38 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!--- MC-37388-->
 
 *  GraphQL now honors catalog permissions. Magento restricts which items are returned for a `products` query based on the shopper's customer group.
+
+<!--- MC-39690-->
+
+*  Added the `customizable_option` attribute to multiple data types that implement the `CartItemInterface`.
+
+<!--- MC-39744-->
+
+*  Added attributes for the `storeConfig` query to return store, store group, and website information.
+
+<!--- MC-37414-->
+
+*  Reinstated the `SelectedCustomizableOption.type` attribute. In addition, the `customizable_options` attribute within various implementations of the `CartItemInterface` are now non-null.
+
+<!--- MC-23860-->
+
+*  The search functionality of the `products` query no longer returns items in which category permissions have been enabled.
+
+<!--- MC-37726-->
+
+*  The `products` query returns the correct currency for store views that have multiple currencies.
+
+<!--- MC-37727-->
+
+*  Labels for `products` query filters now return translated values, when applicable for non default store views.
+
+<!--- MC-37728-->
+
+*  Fixed store currency amounts on gift cards in the cart.
+
+<!--- MC-38443-->
+
+*  Added the `ConfigurableProductOptionsSelection` data type, which contains metadata corresponding to the selectable configurable options for a product. Use this object in a `products` query to minimize the number of media gallery items that are displayed as the shopper selects configurable product options.
 
 ### Grouped products
 
@@ -1437,7 +1469,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8467 -->
 
-*  Path verification has been added to the `Mediagallery` uploader plugin. Previously, validation failed, and Magento did not import products when **Enable Old Media Gallery** was disabled. [GitHub-30649](https://github.com/magento/magento2/issues/30649)
+*  Path verification has been added to the `Mediagallery` uploader plug-in. Previously, validation failed, and Magento did not import products when **Enable Old Media Gallery** was disabled. [GitHub-30649](https://github.com/magento/magento2/issues/30649)
 
 <!-- ENGCOM-8057 -->
 
@@ -2271,7 +2303,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36830-->
 
-*  The GET `rest/all/V1/categories` and GET `rest/all/V1/categories?rootCategoryId=2` calls now return populated `name` and `product_count` fields as expected for all categories in the tree. Previously, the category field values were empty. The table name resolver plugin returned an incorrect table name for fetching the count of products by category.
+*  The GET `rest/all/V1/categories` and GET `rest/all/V1/categories?rootCategoryId=2` calls now return populated `name` and `product_count` fields as expected for all categories in the tree. Previously, the category field values were empty. The table name resolver plug-in returned an incorrect table name for fetching the count of products by category.
 
 <!-- ENGCOM-8286 -->
 
