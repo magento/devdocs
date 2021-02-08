@@ -388,7 +388,9 @@ The following example shows how to initialize the modal widget and pass options 
 The following example shows a PHTML file using the script:
 
 ```html
-<button id="button">Click me</button>
+<button id="button">
+    <span><?= $block->escapeHtml(__('Click me')) ?></span>
+</button>
 
 <div id="modal">
     <div class="modal-body-content">
