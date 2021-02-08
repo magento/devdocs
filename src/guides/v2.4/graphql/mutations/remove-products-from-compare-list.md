@@ -5,9 +5,9 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `removeProductsFromCompareList` mutation removes products from a comparison list.
+The `removeProductsFromCompareList` mutation removes products from a compare list.
 
-You must specify the unique ID of a compare list along with the list of product IDs to be removed from the comparison list.
+You must specify the unique ID of a compare list along with the list of product IDs to be removed from the compare list.
 
 ## Syntax
 
@@ -23,7 +23,7 @@ mutation {
 
 ## Example usage
 
-The following example removes two products with ID "1" and "2" from the comparison list with unique ID "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD".
+The following example removes two products from the compare list with the unique ID "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD".
 
 **Request:**
 
