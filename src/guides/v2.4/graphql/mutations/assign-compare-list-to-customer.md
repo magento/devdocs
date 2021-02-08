@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `assignCompareListToCustomer` mutation assigns the specified compare list to the logged-in customer. Use this mutation when a customer creates a compare list as a guest, but subsequently logs in.
+The `assignCompareListToCustomer` mutation assigns the specified comparison list to the logged-in customer. Use this mutation when a customer creates a comparison list as a guest, but subsequently logs in.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
@@ -23,7 +23,7 @@ mutation {
 
 ## Example usage
 
-The following example assigns the compare list with a `uid` value of `sssXyGZkTFksdPnxNoK1ut6OiV4bbchD` to the logged-in customer.
+The following example assigns the comparison list with a `uid` value of `sssXyGZkTFksdPnxNoK1ut6OiV4bbchD` to the logged-in customer.
 
 **Request:**
 
@@ -117,7 +117,7 @@ The `assignCompareListToCustomer` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`uid` | ID! | The unique ID of the compare list to assign
+`uid` | ID! | The unique ID of the comparison list to assign
 
 ## Output attributes
 
@@ -125,8 +125,8 @@ The `AssignCompareListToCustomerOutput` object contains the result of the assign
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`compare_list` | CompareList | A value of `true` indicates the compare list has been assigned successfully, otherwise a value returns `false`
-`result` | Boolean! | A value of `true` indicates the compare list has been assigned successfully
+`compare_list` | CompareList | A value of `true` indicates the comparison list has been assigned successfully, otherwise a value returns `false`
+`result` | Boolean! | A value of `true` indicates the comparison list has been assigned successfully
 
 ### CompareList attributes
 

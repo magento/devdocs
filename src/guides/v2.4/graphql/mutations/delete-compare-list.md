@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `deleteCompareList` mutation deletes the specified compare list.
+The `deleteCompareList` mutation deletes the specified comparison list.
 
 ## Syntax
 

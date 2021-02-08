@@ -105,7 +105,7 @@ The `compareList` query requires the following input:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`uid` | ID! | The unique ID of the compare list
+`uid` | ID! | The unique ID of the comparison list
 
 ## Output attributes
 

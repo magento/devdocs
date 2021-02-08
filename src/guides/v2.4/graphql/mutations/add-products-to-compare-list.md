@@ -7,7 +7,7 @@ contributor_link: https://www.atwix.com/
 
 The `addProductsToCompareList` mutation adds products to the comparison list.
 
-You must specify the unique ID of the compare list as well as a list of product IDs to be added to the comparison list.
+You must specify the unique ID of the comparison list as well as a list of product IDs to be added to the comparison list.
 
 ## Syntax
 
@@ -138,7 +138,7 @@ The `AddProductsToCompareListInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`products` | [ID]! | An array of product IDs to add to the compare list
+`products` | [ID]! | An array of product IDs to add to the comparison list
 `uid` | ID! | The unique ID of a `CompareList` object
 
 ## Output attributes
