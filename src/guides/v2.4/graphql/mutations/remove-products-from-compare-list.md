@@ -118,7 +118,7 @@ The `RemoveProductsFromCompareListInput` object contains the following attribute
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`products` | [ID]! | An array of product IDs to remove from the comparison list
+`products` | [ID!]! | An array of product IDs to remove from the comparison list
 `uid` | ID! | The unique identifier of the comparison list to modify
 
 ## Output attributes

@@ -125,10 +125,10 @@ The `AssignCompareListToCustomerOutput` object contains the result of the assign
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`compare_list` | CompareList | A value of `true` indicates the comparison list has been assigned successfully, otherwise a value returns `false`
+`compare_list` | [CompareList](#CompareList) | A value of `true` indicates the comparison list has been assigned successfully, otherwise a value returns `false`
 `result` | Boolean! | A value of `true` indicates the comparison list has been assigned successfully
 
-### CompareList attributes
+### CompareList attributes {#CompareList}
 
 The `CompareList` output object contains the following attributes:
 
