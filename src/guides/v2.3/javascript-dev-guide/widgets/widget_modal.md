@@ -394,8 +394,8 @@ The following example shows a PHTML file using the script:
 
 <div id="modal">
     <div class="modal-body-content">
-         <h2><?= $block->escapeHtml(__('Title')) ?></h2>
-         <p><?= $block->escapeHtml(__('Content')) ?></p>
+        <h2><?= $block->escapeHtml(__('Title')) ?></h2>
+        <p><?= $block->escapeHtml(__('Content')) ?></p>
     </div>
 </div>
 
