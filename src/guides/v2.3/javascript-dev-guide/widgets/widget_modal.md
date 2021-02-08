@@ -385,6 +385,45 @@ The following example shows how to initialize the modal widget and pass options 
 </div>
 ```
 
+The following example shows a PHTML file using the script:
+
+```html
+<button id="button">Click me</button>
+
+<div id="modal">
+    <div class="modal-body-content">
+        <h2>Title</h2>
+        <p>Content</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/modal"
+    ],function($, modal) {
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            title: 'Main title',
+            buttons: [{
+                text: $.mage.__('Ok'),
+                class: '',
+                click: function () {
+                    this.closeModal();
+                }
+            }]
+        };
+
+        var popup = modal(options, $('#modal'));
+        $("#button").click(function() {
+            $('#modal').modal('openModal');
+        });
+    });
+</script>
+```
+
 ### Result
 
 The result is a modal and a button (_Click Here_) that opens the modal.
