@@ -153,7 +153,7 @@ Batch size for `catalogsearch_fulltext` can be set using different parameters.
 
 * `partial_reindex` - represents how many products will be processed in a partial reindex.
 * `elastic_save` - represent how many product will be saved as batch into Elastic.
-* `mysql_get` - represent how many searchable product will be retrived from Mysql.
+* `mysql_get` - represents how many searchable products will be retrieved from Mysql.
 
 Batch size for `cataloginventory_stock`, `catalog_product_price`, `inventory` can be set up for each product type. If no batch size is set for a specific product type, the `default` value is used. We recommend setting the `default` value for each indexer to allow for different batch sizes per product type.
 
