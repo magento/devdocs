@@ -21,13 +21,13 @@ The extension title should fulfill the following guidelines:
 *  Choose a title that is descriptive and concise. The extension title can be up to five words in length and must be in English.
 *  Do not include the version number, developer name, or any reference to Magento in the title.
    *  Do not use _Magento_ or _M2_.
-*  Do not include the words _"Extension"_, _"Module"_ or _"Plugin"_.
+*  Do not include the words _Extension_, _Module_ or _Plugin_.
    *  The words, _Connector_ and _Integration_ can be used if applicable.
 *  Use _&_ instead of _And_, such as in _Order & Save_ (not _Order and Save_).
 * Capitalize the first letter of each word, such as _Mass Order Export_ (not _Mass order export_).
    *  Do not use all capital letters.
-*  Do not use punctuation unless it’s part of the actual company name. (_"InstantSearch+"_, _"Yahoo!"_)
-   *  _"/"_ and _"-"_ are acceptable in certain circumstances. (_"Two-Factor"_, _"Import / Export"_)
+*  Do not use punctuation unless it’s part of the actual company name, such as _InstantSearch+_ or _Yahoo!_.
+   *  _/_ and _-_ are acceptable in certain circumstances, such as for _Two-Factor_ or _Import / Export_.
 *  Do not add underscores between words in the package name, such as (_Extension_Title_).
 *  Do not use the Developer Name in the title, such as _Print Order PDF_ (not _Fooman Print Order PDF_).
    *  If the developer is the same name as the service being integrated, you may use the develop name in the title. For instance, if Visa submits an integration, they should include _Visa_ since it’s the name of the service.
@@ -46,7 +46,7 @@ The extension icon should fulfill the following guidelines:
 *  Do not specify the extension version.
 *  Limit the use of the word _Pro_.
 *  Less is more. Avoid minute detail that is hard to understand.
-*  For 1st party companies, we recommend using the same image you use on Twitter, LinkedIn, etc.
+*  For first-party companies, we recommend using the same image you use on Twitter, LinkedIn, etc.
 
 ## Long description
 
