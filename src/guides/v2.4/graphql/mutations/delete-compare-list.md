@@ -5,7 +5,10 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `deleteCompareList` mutation deletes the specified comparison list.
+The `deleteCompareList` mutation deletes the specified comparison list. Run this mutation in the following circumstances:
+
+*  When the guest or customer clears all entries from the comparison list.
+*  After a guest's session expires.
 
 ## Syntax
 

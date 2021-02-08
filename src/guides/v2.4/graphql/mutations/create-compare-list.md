@@ -117,7 +117,7 @@ The `CreateCompareListInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`products` | [ID!] | An array of product IDs to add to the comparison list
+`products` | [ID!] | An array of product `id` values to add to the comparison list. Note that these are not `uid` values
 
 ## Output attributes
 
