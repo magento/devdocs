@@ -21,7 +21,7 @@ mutation {
 
 ## Example usage
 
-The following example deletes the comparison list that has a `uid` value of `sssXyGZkTFksdPnxNoK1ut6OiV4bbchD`.
+The following example deletes the comparison list with a `uid` value of `sssXyGZkTFksdPnxNoK1ut6OiV4bbchD`.
 
 **Request:**
 

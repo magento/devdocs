@@ -23,7 +23,7 @@ mutation {
 
 ## Example usage
 
-The following example shows how to add two products into the existing comparison list with unique ID "sssXyGZkTFksdPnxNoK1ut6OiV4bbchD".
+The following example shows how to add two products to the existing comparison list with the `uid` value of `sssXyGZkTFksdPnxNoK1ut6OiV4bbchD`.
 
 **Request:**
 

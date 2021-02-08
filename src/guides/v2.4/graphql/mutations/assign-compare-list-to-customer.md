@@ -121,11 +121,11 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `AssignCompareListToCustomerOutput` object contains the result of the assigning process and comparison list.
+The `AssignCompareListToCustomerOutput` object contains the result of the assigning process and the comparison list.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`compare_list` | [CompareList](#CompareList) | A value of `true` indicates the comparison list has been assigned successfully, otherwise a value returns `false`
+`compare_list` | [CompareList](#CompareList) | The contents of the comparison list
 `result` | Boolean! | A value of `true` indicates the comparison list has been assigned successfully
 
 ### CompareList attributes {#CompareList}
