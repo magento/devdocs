@@ -85,9 +85,7 @@ This release adds GraphQL coverage for the following features:
 
 *  Added support for unions in Magento GraphQL. [GitHub-29425](https://github.com/magento/magento2/issues/29425) <!-- ENGCOM-8291 -->
 
-*  Added support for compare lists. Shoppers can create and delete compare lists, and add and remove items to the compare lists. In addition, shoppers that create a compare list can log in as a customer and retain their compare lists.
-
-*  Added the [`generateCustomerTokenAsAdmin`]({{ page.baseurl }}/graphql/mutations/generate-customer-token-as-admin.html) mutation and updated the `Customer` object to support remote purchasing assistance.
+*  Added support for [comparison lists]({{ page.baseurl }}/graphql/queries/compare-list.html). Shoppers can [create]({{ page.baseurl }}/graphql/mutations/create-compare-list.html) and [delete]({{ page.baseurl }}/graphql/mutations/delete-compare-list.html) comparison lists, and [add]({{ page.baseurl }}/graphql/mutations/add-products-to-compare-list.html) and [remove]({{ page.baseurl }}/graphql/mutations/remove-products-from-compare-list.html) items to the comparison lists. In addition, shoppers that create a compare list as a guest can log in as a customer and [retain]({{ page.baseurl }}/graphql/mutations/assign-compare-list-to-customer.html) their comparison lists.
 
 *  Added the [`generateCustomerTokenAsAdmin`]({{ page.baseurl }}/graphql/mutations/generate-customer-token-as-admin.html) mutation and updated the `Customer` object to support remote purchasing assistance.
 
