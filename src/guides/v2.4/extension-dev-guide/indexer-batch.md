@@ -149,7 +149,7 @@ return [
 
 The batches size for `catalog_category_product`, `catalogpermissions_category`, `catalogpermissions_category` will be set for all product types.
 
-Batch size for `catalogsearch_fulltext` can be set different parameters.
+Batch size for `catalogsearch_fulltext` can be set using different parameters.
 
 * `partial_reindex` - represent how many product will be proceeded in partial reindex.
 * `elastic_save` - represent how many product will be saved as batch into Elastic.
