@@ -78,7 +78,7 @@ This release includes Adobe Stock Integration v2.1.1.
 
 This release adds GraphQL coverage for the following features:
 
-*  Added the [`generateCustomerTokenAsAdmin`]({{ page.baseurl }}/graphql/mutations/generate-customer-token-as-admin.html) mutation and updated the `Customer` object to support remote purchasing assistance.
+*  Added support for compare lists. Shoppers can create and delete compare lists, and add and remove items to the compare lists. In addition, shoppers that create a compare list can log in as a customer and retain their compare lists.
 
 *  Added localization support across stores to support tasks such as changing languages, carts, and currencies. <!--- MC-37801-->
 
@@ -473,7 +473,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7967 -->
 
-*  The title of the Order Failure page has been revised for accuracy. Previously, this page was titled, **We received your order!** [GitHub-29416](https://github.com/magento/magento2/issues/29416)
+*  The title of the Order Failure page has been revised for accuracy. Previously, this page was titled: **We received your order!**.  [GitHub-29416](https://github.com/magento/magento2/issues/29416)
 
 <!-- ENGCOM-8101 -->
 
@@ -841,7 +841,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8135 -->
 
-*  Corrected validation logic for the **Customer Token Lifetime (hours)**  and **Admin Token Lifetime (hours)** fields  on the Admin **Stores**  >  **Configurations** >  **Services**  > **OAuth** page. [GitHub-29502](https://github.com/magento/magento2/issues/29502
+*  Corrected validation logic for the **Customer Token Lifetime (hours)**  and **Admin Token Lifetime (hours)** fields  on the Admin **Stores**  >  **Configurations** >  **Services**  > **OAuth** page. [GitHub-29502](https://github.com/magento/magento2/issues/29502)
 
 <!-- ENGCOM-8132 -->
 
@@ -869,7 +869,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8260 -->
 
-*  Inefficient use of `array_merge` in loops has been improved throughout the codebase, improving performance in several places, including in the static content deployment process. [GitHub-30183](https://github.com/magento/magento2/issues/30183)
+*  Inefficient use of `array_merge` in loops has been improved throughout the codebase, which has improved performance in several places, including in the static content deployment process. [GitHub-30183](https://github.com/magento/magento2/issues/30183)
 
 <!-- ENGCOM-8445 -->
 
@@ -877,7 +877,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8425 -->
 
-*  Magento now checks for private constants in a class and displays a warning if there are any static:: calls to them. Previously, Magento threw this error: `Undefined class constant`.
+*  Magento now checks for private constants in a class and displays a warning if there are any `static::` calls to them. Previously, Magento threw this error: `Undefined class constant`.
 
 <!-- ENGCOM-8326 -->
 
@@ -885,7 +885,9 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8087 -->
 
-*  Added missing `order_data` array to `EmailSender` classes. This brings these classes into alignment with Magento’s recommendation to use scalar variables instead of objects within the email templates. [GitHub-29604](https://github.com/magento/magento2/issues/29604)### GraphQL
+*  Added missing `order_data` array to `EmailSender` classes. This brings these classes into alignment with Magento’s recommendation to use scalar variables instead of objects within the email templates. [GitHub-29604](https://github.com/magento/magento2/issues/29604)
+
+### GraphQL
 
 <!--- MC-37615-->
 
@@ -1039,7 +1041,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8430 PWA-1107-->
 
-*  Deprecated several attributes in the `ProductInterface` and `CategoryInterface` to prevent their use the storefront. [GitHub-30625](https://github.com/magento/magento2/issues/30625)
+*  Deprecated several attributes in the `ProductInterface` and `CategoryInterface` to prevent their use on the storefront. [GitHub-30625](https://github.com/magento/magento2/issues/30625)
 
 *  Prices are now hidden from products query results when the category permissions are set to hide them. [GitHub-29926](https://github.com/magento/magento2/issues/29926)
 
@@ -1839,7 +1841,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8041 -->
 
-*  `dev/tests/integration/testsuite/Magento/Customer/Controller/AccountTest` has been improved. (assert is now based on `XPath` selector instead of `assertStringContainsString`.) [GitHub-29700](https://github.com/magento/magento2/issues/29700)
+*  `dev/tests/integration/testsuite/Magento/Customer/Controller/AccountTest` has been improved. (`assert` is now based on `XPath` selector instead of `assertStringContainsString`.) [GitHub-29700](https://github.com/magento/magento2/issues/29700)
 
 <!-- ENGCOM-8017 -->
 
@@ -1855,7 +1857,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7762 -->
 
-*  Header values that include URLs are now parsed properly in ApiFunctional TestFramework. [GitHub-26425](https://github.com/magento/magento2/issues/26425)
+*  Header values that include URLs are now parsed properly in `ApiFunctional TestFramework`. [GitHub-26425](https://github.com/magento/magento2/issues/26425)
 
 <!--- MC-35798 8109-->
 
@@ -1867,13 +1869,17 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 ### Theme
 
+<!-- ENGCOM-8419 -->
+
+*  A new `--no-parent` flag was added to the `bin/magento setup:static-content:deploy` command that prevents the parent(s) of a theme from being compiled. This new flag you can significantly improve the performance of the static content deployment process by avoiding  unnecessary compilation. Note that this new flag does not work when using the `compact` strategy. [GitHub-30184](https://github.com/magento/magento2/issues/30184)
+
 <!--- MC-37630 -->
 
 *  Design configuration no longer generates DDL operations. Previously, when the design configuration was updated, Magento generated DDL statements that could trigger MySQL errors.
 
 <!-- ENGCOM-8112 -->
 
-*  Redundant code in the `Magento_ConfigurableProduct` module in the backend theme has been removed.  [GitHub-29857](https://github.com/magento/magento2/issues/29857)
+*  Redundant code in the `Magento_ConfigurableProduct` module in the Admin theme has been removed.  [GitHub-29857](https://github.com/magento/magento2/issues/29857)
 
 <!-- ENGCOM-8144 -->
 
@@ -1886,10 +1892,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-7803 -->
 
 *  Web font loading for themes has been optimized.  [GitHub-29526](https://github.com/magento/magento2/issues/29526)
-
-<!-- ENGCOM-8419 -->
-
-*  A new `--no-parent` flag was added to the `bin/magento setup:static-content:deploy` command that prevents the parent(s) of a theme from being compiled. This new flag you can significantly improve the performance of the static content deployment process by avoiding  unnecessary compilation. Note that this new flag does not work when using the `compact` strategy. [GitHub-30184](https://github.com/magento/magento2/issues/30184)
 
 <!-- ENGCOM-8068 -->
 
@@ -2023,7 +2025,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-39109-->
 
-*  The Vault module now recognizes payment method codes from the request for the payment information management service. Previously, when a shopper placed an order using a saved Braintree credit card, Magento threw this error even when a valid payment method was used: `The requested Payment Method is not available`.
+*  The `Vault` module now recognizes payment method codes from the request for the payment information management service. Previously, when a shopper placed an order using a saved Braintree credit card, Magento threw this error even when a valid payment method was used: `The requested Payment Method is not available`.
 
 <!-- ENGCOM-7977 -->
 

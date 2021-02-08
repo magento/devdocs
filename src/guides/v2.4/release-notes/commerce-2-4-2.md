@@ -74,7 +74,7 @@ This release includes code enhancements that boost API performance and Admin res
 
 This release adds GraphQL coverage for the following features:
 
-*  Added support for multiple wish lists. You can use GraphQL to [create]({{ page.baseurl }}/graphql/mutations/create-wishlist.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-wishlist.html), and [rename]({{ page.baseurl }}/graphql/mutations/update-wishlist.html) wish lists as well as [move]({{ page.baseurl }}/graphql/mutations/move-products-between-wishlists.html) or [copy]({{ page.baseurl }}/graphql/mutations/copy-products-between-wishlists.html) items between them. <!--- MC-32356-->
+*  Added support for multiple wishlists. You can use GraphQL to [create]({{ page.baseurl }}/graphql/mutations/create-wishlist.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-wishlist.html), and [rename]({{ page.baseurl }}/graphql/mutations/update-wishlist.html) wishlists as well as [move]({{ page.baseurl }}/graphql/mutations/move-products-between-wishlists.html) or [copy]({{ page.baseurl }}/graphql/mutations/copy-products-between-wishlists.html) items between them. <!--- MC-32356-->
 
 *  Added support for returned merchandise authorizations (RMA). Shoppers can [request a return]({{page.baseurl}}/graphql/mutations/request-return.html). If the merchant accepts the request, the shopper can perform tasks such as [adding a comment]({{page.baseurl}}/graphql/mutations/add-return-comment.html) and [add tracking information]({{page.baseurl}}/graphql/mutations/add-return-tracking.html). <!--- MC-34596-->
 
@@ -84,6 +84,10 @@ This release adds GraphQL coverage for the following features:
    *  Requisition lists. You can [create]({{page.baseurl}}/graphql/mutations/create-requisition-list.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-requisition-list.html), and [update]({{page.baseurl}}/graphql/mutations/update-requisition-list.html) requisition lists. Support also includes the ability to [add]({{page.baseurl}}/graphql/mutations/add-products-to-requisition-list.html), [update]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html), [delete]({{page.baseurl}}/graphql/mutations/delete-requisition-list-items.html), [copy]({{page.baseurl}}/graphql/mutations/copy-items-between-requisition-lists.html), and [move]({{page.baseurl}}/graphql/mutations/move-items-between-requisition-lists.html) items within a requisition list as well as add requisition list items [into the cart]({{page.baseurl}}/graphql/mutations/add-requisition-list-items-to-cart.html). <!--- MC-34312-->
 
 *  Added support for unions in Magento GraphQL. [GitHub-29425](https://github.com/magento/magento2/issues/29425) <!-- ENGCOM-8291 -->
+
+*  Added support for compare lists. Shoppers can create and delete compare lists, and add and remove items to the compare lists. In addition, shoppers that create a compare list can log in as a customer and retain their compare lists.
+
+*  Added the [`generateCustomerTokenAsAdmin`]({{ page.baseurl }}/graphql/mutations/generate-customer-token-as-admin.html) mutation and updated the `Customer` object to support remote purchasing assistance.
 
 *  Added the [`generateCustomerTokenAsAdmin`]({{ page.baseurl }}/graphql/mutations/generate-customer-token-as-admin.html) mutation and updated the `Customer` object to support remote purchasing assistance.
 
@@ -579,7 +583,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7967 -->
 
-*  The title of the Order Failure page has been revised for accuracy. Previously, this page was titled, **We received your order!** [GitHub-29416](https://github.com/magento/magento2/issues/29416)
+*  The title of the Order Failure page has been revised for accuracy. Previously, this page was titled: **We received your order!**.  [GitHub-29416](https://github.com/magento/magento2/issues/29416)
 
 <!-- ENGCOM-8101 -->
 
@@ -997,7 +1001,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8260 -->
 
-*  Inefficient use of `array_merge` in loops has been improved throughout the codebase, improving performance in several places, including in the static content deployment process. [GitHub-30183](https://github.com/magento/magento2/issues/30183)
+*  Inefficient use of `array_merge` in loops has been improved throughout the codebase, which has improved performance in several places, including in the static content deployment process. [GitHub-30183](https://github.com/magento/magento2/issues/30183)
 
 <!-- ENGCOM-8445 -->
 
@@ -1155,7 +1159,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8430 PWA-1107-->
 
-*  Deprecated several attributes in the `ProductInterface` and `CategoryInterface` to prevent their use the storefront. [GitHub-30625](https://github.com/magento/magento2/issues/30625)
+*  Deprecated several attributes in the `ProductInterface` and `CategoryInterface` to prevent their use on the storefront. [GitHub-30625](https://github.com/magento/magento2/issues/30625)
 
 *  Prices are now hidden from products query results when the category permissions are set to hide them. [GitHub-29926](https://github.com/magento/magento2/issues/29926)
 
@@ -2067,7 +2071,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-8041 -->
 
-*  `dev/tests/integration/testsuite/Magento/Customer/Controller/AccountTest` has been improved. (assert is now based on `XPath` selector instead of `assertStringContainsString`.) [GitHub-29700](https://github.com/magento/magento2/issues/29700)
+*  `dev/tests/integration/testsuite/Magento/Customer/Controller/AccountTest` has been improved. (`assert` is now based on `XPath` selector instead of `assertStringContainsString`.) [GitHub-29700](https://github.com/magento/magento2/issues/29700)
 
 <!-- ENGCOM-8017 -->
 
@@ -2087,13 +2091,17 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!-- ENGCOM-7762 -->
 
-*  Header values that include URLs are now parsed properly in ApiFunctional TestFramework. [GitHub-26425](https://github.com/magento/magento2/issues/26425)
+*  Header values that include URLs are now parsed properly in `ApiFunctional TestFramewor`k. [GitHub-26425](https://github.com/magento/magento2/issues/26425)
 
 <!-- ENGCOM-8382 -->
 
 *  `—no-tablespaces` has been added to all occurrences of `mysqldump`, which permits integration tests to run without the `PROCESS` privilege (required since MySQL 5.7.31 / 8.0.21 to run `mysqldump` by default). [GitHub-30566](https://github.com/magento/magento2/issues/30566)
 
 ### Theme
+
+<!-- ENGCOM-8419 -->
+
+*  A new `--no-parent` flag was added to the `bin/magento setup:static-content:deploy` command that prevents the parent(s) of a theme from being compiled. This new flag you can significantly improve the performance of the static content deployment process by avoiding  unnecessary compilation. Note that this new flag does not work when using the `compact` strategy. [GitHub-30184](https://github.com/magento/magento2/issues/30184)
 
 <!--- MC-37630 -->
 
@@ -2114,10 +2122,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 <!-- ENGCOM-7803 -->
 
 *  Web font loading for themes has been optimized.  [GitHub-29526](https://github.com/magento/magento2/issues/29526)
-
-<!-- ENGCOM-8419 -->
-
-*  A new `--no-parent` flag was added to the `bin/magento setup:static-content:deploy` command that prevents the parent(s) of a theme from being compiled. This new flag you can significantly improve the performance of the static content deployment process by avoiding  unnecessary compilation. Note that this new flag does not work when using the `compact` strategy. [GitHub-30184](https://github.com/magento/magento2/issues/30184)
 
 <!-- ENGCOM-8068 -->
 
@@ -2267,7 +2271,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-39109-->
 
-*  The Vault module now recognizes payment method codes from the request for the payment information management service. Previously, when a shopper placed an order using a saved Braintree credit card, Magento threw this error even when a valid payment method was used: `The requested Payment Method is not available`.
+*  The `Vault` module now recognizes payment method codes from the request for the payment information management service. Previously, when a shopper placed an order using a saved Braintree credit card, Magento threw this error even when a valid payment method was used: `The requested Payment Method is not available`.
 
 ### Vertex
 
