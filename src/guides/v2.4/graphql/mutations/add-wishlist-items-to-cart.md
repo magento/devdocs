@@ -29,7 +29,7 @@ The following example adds items to the cart.
 mutation {
   addWishlistItemsToCart(
     wishlistId: 2 
-    wishlistItemIds: [9 11])
+    wishlistItemIds: [9, 11])
   {
     status
     add_wishlist_items_to_cart_user_errors {
@@ -68,24 +68,27 @@ The `addWishlistItemsToCart` mutation returns the status of the operation as wel
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`add_wishlist_items_to_cart_user_errors` | [[CartUserInputError!](#CartUserInputError)] | Indicates why the attempt to add items to the wish list was not successful
+`add_wishlist_items_to_cart_user_errors` | [[WishlistCartUserInputError!](#WishlistCartUserInputError)] | Indicates why the attempt to add items to the wish list was not successful
 `status` | Boolean! | Indicates whether the attempt to add items to the cart was successful
+`wishlist` | [Wishlist!](#Wishlist) | Contains the wish list with all items that were successfully added
+### WishlistCartUserInputError attributes {#WishlistCartUserInputError}
 
-### CartUserInputError attributes {#CartUserInputError}
-
-The `CartUserInputError` type contains a list of errors that indicate why the attempt to add items to the cart was not successful.
+The `WishlistCartUserInputError` type contains a list of errors that indicate why the attempt to add items to the cart was not successful.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`code` | [CartUserInputErrorType!!](#CartUserInputErrorType) | The Error type
-`message` | String! | A description of the error
+`code` | [WishlistCartUserInputErrorType!](#WishlistCartUserInputErrorType) | An error code that describes the error encountered.
+`message` | String! | A localized error message
 
-### CartUserInputErrorType! {#CartUserInputErrorType!}
+### WishlistCartUserInputErrorType! {#WishlistCartUserInputErrorType!}
 
 Type | Description
 --- | ---
-`CART_ID_INVALID` | The specified cart ID is invalid.
-`PRODUCT_NOT_FOUND` | A product with the SKU specified in the argument `data`.`sku` does not exist.
-`NOT_SALABLE` | A requested product is not available
 `INSUFFICIENT_STOCK` | The requested product is out of stock
+`NOT_SALABLE` | A requested product is not available
+`PRODUCT_NOT_FOUND` | A product with the specified ID does not exist.
 `UNDEFINED` | The error message does not match any error code
+
+### Wishlist attributes {#Wishlist}
+
+{% include graphql/wishlist.md %}
