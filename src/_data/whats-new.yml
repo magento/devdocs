@@ -4,8 +4,249 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Thu Feb 4 15:51:53 2021
+updated: Tue Feb 9 12:25:39 2021
 entries:
+- description: Added [release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
+    for Magento Commerce and Open Source 2.4.2.
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8611
+  contributor: jfrontain
+  profile: https://github.com/jfrontain
+- description: Added support for [comparison lists](https://devdocs.magento.com/guides/v2.4/graphql/queries/compare-list.html).
+    Shoppers can [create](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-compare-list.html)
+    and [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-compare-list.html)
+    comparison lists, and [add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-compare-list.html)
+    and [remove](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-products-from-compare-list.html)
+    items to the comparison lists. In addition, shoppers that create a comparison
+    list as a guest can log in as a customer and [retain](https://devdocs.magento.com/guides/v2.4/graphql/mutations/assign-compare-list-to-customer.html)
+    their comparison lists.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8646
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added examples of adding bundle products to the [`addProductsToCart`
+    mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8506
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Published release notes for [Inventory](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html)
+    1.2.2.
+  versions: ''
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8500
+  contributor: sidolov
+  profile: https://github.com/sidolov
+- description: Added information about Composer 2 compatibility in [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    and [upgrade scenarios](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8474
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added full GraphQL support for B2B requisition lists. With GraphQL,
+    you can perform the following tasks:<br/>[Create](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-requisition-list.html),
+    [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-requisition-list.html),
+    and [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-requisition-list.html)
+    requisition lists.<br/>[Add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-requisition-list.html),
+    [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-requisition-list-items.html),
+    and [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-requisition-list-items.html)
+    items in a requisition list.<br/>[Copy](https://devdocs.magento.com/guides/v2.4/graphql/mutations/copy-items-between-requisition-lists.html)
+    and [move](https://devdocs.magento.com/guides/v2.4/graphql/mutations/move-items-between-requisition-lists.html)
+    items between requisition lists.<br/>Add requisition list items to the [cart](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-requisition-list-items-to-cart.html).<br/>[Clear](https://devdocs.magento.com/guides/v2.4/graphql/mutations/clear-customer-cart.html)
+    the customer cart.<br/>Return details about requisition lists using the [customer
+    query](https://devdocs.magento.com/guides/v2.4/graphql/queries/customer.html).
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8428
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added GraphQL support for returned merchandise authorizations (RMA).
+    See the [requestReturn mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/request-return.html),
+    [addReturnComment mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-return-comment.html),
+    [addReturnTracking mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-return-tracking.html),
+    and [removeReturnTracking mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-return-tracking.html)
+    for details.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8258
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: In GraphQL, we've deprecated many `id` fields that were of type `Int`
+    in favor of `uid` fields of type `ID`. These changes primarily affect the product
+    and cart sections of the schema.
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8273
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added documentation for the GraphQL [WishlistItemInterface](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/wishlist-item-interface.html).
+  versions: 2.4.x
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8221
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.4/config-guide/multi-master/multi-master.html)
+    for the split database feature.
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8424
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Updated the [availability](https://devdocs.magento.com/release/availability.html)
+    and [compatibility](https://devdocs.magento.com/extensions/vendor/) of Magento-developed
+    extensions (MDEs) and vendor-bundled extensions (VBEs).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8412
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added 2.4.2 beta [release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8388
+  contributor: jfrontain
+  profile: https://github.com/jfrontain
+- description: Add new [configuration instructions for the Remote storage module](https://devdocs.magento.com/guides/v2.4/config-guide/remote-storage/config-remote-storage.html)
+    and AWS S3 adapter to the _Configuration guide_.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8254
+  contributor: hguthrie
+  profile: https://github.com/hguthrie
+- description: Added an [example](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/concepts/ui_comp_uiregistry.html)
+    of asynchronously retrieving UI components from the registry.
+  versions: 2.4.2
+  type: Technical
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8383
+  contributor: chiranjeevi-cj
+  profile: https://github.com/chiranjeevi-cj
+- description: Added a new [release notes page](https://devdocs.magento.com/extensions/vendor/yotpo/release-notes.html)
+    for the Yotpo vendor bundled extension (VBE).
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8358
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added a new topic describing the [`generateCustomerTokenAsAdmin`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/generate-customer-token-as-admin.html)
+    GraphQL mutation.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8303
+  contributor: sathiyaaa
+  profile: https://github.com/sathiyaaa
+- description: 'Added the following mutations in support of B2B companies: [createCompanyRole](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-company-role.html),
+    [updateCompanyRole](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company-role.html),
+    [deleteCompanyRole](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-company-role.html),
+    and [isCompanyRoleNameAvailable](https://devdocs.magento.com/guides/v2.4/graphql/queries/is-company-role-name-available.html)
+    query.'
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8097
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: 'Added the following queries in support of B2B companies: [isCompanyEmailAvailable](https://devdocs.magento.com/guides/v2.4/graphql/queries/is-company-email-available.html),
+    [isCompanyAdminEmailAvailable](https://devdocs.magento.com/guides/v2.4/graphql/queries/is-company-admin-email-available.html),
+    and [isCompanyUserEmailAvailable](https://devdocs.magento.com/guides/v2.4/graphql/queries/is-company-user-email-available.html).'
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8120
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: 'Added the following mutations in support of B2B companies: [createCompanyUser](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-company-user.html),
+    [updateCompanyUser](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company-user.html),
+    [deleteCompanyUser](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-company-user.html).'
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8104
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: Added mutations to [add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-requisition-list.html) and [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-requisition-list.html) B2B requisition lists.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8093
+  contributor: dani97
+  profile: https://github.com/dani97
+- description: Added a new section about [configuring garbage collection](https://devdocs.magento.com/guides/v2.4/config-guide/sessions.html)
+    in Magento to clean up expired sessions.
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8053
+  contributor: victorpetryk
+  profile: https://github.com/victorpetryk
+- description: 'Added the following mutations in support of B2B companies: [createCompanyTeam](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-company-team.html),
+    [updateCompanyTeam](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company-team.html),
+    [deleteCompanyTeam](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-company-team.html),
+    [updateCompanyStructure](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company-structure.html).'
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8028
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: Added the B2B [`createCompany` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-company.html)
+    and [`updateCompany` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company.html).
+    Existing customers and guests can request to create a company, but only approved
+    company administrators can update the company.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/7949
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added the [company query](https://devdocs.magento.com/guides/v2.4/graphql/queries/company.html)
+    for B2B.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/7984
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added the `useCurrentGroup` input parameter to the [`availableStores`
+    query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8001
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added support for multiple wishlists in Magento Commerce. You can use
+    GraphQL to [create](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-wishlist.html),
+    [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-wishlist.html),
+    and [rename](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-wishlist.html)
+    wishlists as well as [move](https://devdocs.magento.com/guides/v2.4/graphql/mutations/move-products-between-wishlists.html)
+    or [copy](https://devdocs.magento.com/guides/v2.4/graphql/mutations/copy-products-between-wishlists.html)
+    items between them.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/7888
+  contributor: keharper
+  profile: https://github.com/keharper
 - description: Updated the note about [supported PHP versions](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#php).
   versions: 2.3.x
   type: Technical
