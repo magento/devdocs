@@ -510,7 +510,7 @@ Let us say that we want to add functionality to a core template with custom logi
 <body>
   <referenceBlock name="checkout.cart.item.renderers.default">
     <arguments>
-      <argument name="viewModel" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
+      <argument name="view_model" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
     </arguments>
   </referenceBlock>
 </body>
@@ -539,7 +539,7 @@ Then, in the `cart/item/default.phtml` file, use the viewModel:
 
 ```php
 /** @var \Vendor\CustomModule\ViewModel\Class $viewModel */
-$viewModel = $block->getData('viewModel');
+$viewModel = $block->getViewModel();
 
 $viewModel->canShowAdditionalData();
 ```
