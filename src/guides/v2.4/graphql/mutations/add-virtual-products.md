@@ -100,13 +100,13 @@ Attribute |  Data Type | Description
 
 The `CartItemInput` object must contain the following attributes:
 
-{% include graphql/cart-item-input.md %}
+{% include graphql/cart-item-input-24.md %}
 
 ### CustomizableOptionInput object {#CustomizableOptionInputVirtual}
 
-The `CustomizableOptionInput` object must contain the following attributes:
+The `CustomizableOptionInput` object can contain the following attributes:
 
-{% include graphql/customizable-option-input.md %}
+{% include graphql/customizable-option-input-24.md %}
 
 ### VirtualProductCartItemInput object {#VirtualProductCartItemInput}
 

@@ -20,9 +20,11 @@ The `storeConfig` query can return `base` and `extended` store configuration set
 ```graphql
 {
   storeConfig {
-    id
-    code
-    website_id
+    store_code
+    store_name
+    is_default_store
+    store_group_code
+    is_default_store_group
     locale
     base_currency_code
     default_display_currency_code
@@ -46,22 +48,24 @@ The `storeConfig` query can return `base` and `extended` store configuration set
 {
   "data": {
     "storeConfig": {
-      "id": 1,
-      "code": "default",
-      "website_id": 1,
+      "store_code": "default",
+      "store_name": "Default Store View",
+      "is_default_store": true,
+      "store_group_code": "main_website_store",
+      "is_default_store_group": true,
       "locale": "en_US",
       "base_currency_code": "USD",
       "default_display_currency_code": "USD",
       "timezone": "America/Chicago",
       "weight_unit": "lbs",
-      "base_url": "http://magentohost.example.com/",
-      "base_link_url": "http://magentohost.example.com/",
-      "base_static_url": "http://magentohost.example.com/pub/static/version1536249714/",
-      "base_media_url": "http://magentohost.example.com/pub/media/",
-      "secure_base_url": "http://magentohost.example.com/",
-      "secure_base_link_url": "http://magentohost.example.com/",
-      "secure_base_static_url": "http://magentohost.example.com/pub/static/version1536249714/",
-      "secure_base_media_url": "http://magentohost.example.com/pub/media/"
+      "base_url": "http://example.com/",
+      "base_link_url": "http://example.com/",
+      "base_static_url": "http://example.com/pub/static/version1606976517/",
+      "base_media_url": "http://example.com/pub/media/",
+      "secure_base_url": "http://example.com/",
+      "secure_base_link_url": "http://example.com/",
+      "secure_base_static_url": "http://example.com/pub/static/version1606976517/",
+      "secure_base_media_url": "http://example.com/pub/media/"
     }
   }
 }
