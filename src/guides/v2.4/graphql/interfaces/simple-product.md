@@ -33,10 +33,10 @@ The following query returns information about simple product `24-MB01`, which is
     items {
       sku
       __typename
-      id
+      uid
       name
       categories {
-        id
+        uid
         name
         path
       }
@@ -58,6 +58,7 @@ The following query returns information about simple product `24-MB01`, which is
     }
   }
 }
+
 ```
 
 {% collapsible Response %}
@@ -70,16 +71,16 @@ The following query returns information about simple product `24-MB01`, which is
         {
           "sku": "24-MB01",
           "__typename": "SimpleProduct",
-          "id": 1,
+          "uid": "MQ==",
           "name": "Joust Duffle Bag",
           "categories": [
             {
-              "id": 3,
+              "uid": "Mw==",
               "name": "Gear",
               "path": "1/2/3"
             },
             {
-              "id": 4,
+              "uid": "NA==",
               "name": "Bags",
               "path": "1/2/3/4"
             }
