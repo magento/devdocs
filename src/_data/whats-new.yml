@@ -183,10 +183,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8104
   contributor: andrewbess
   profile: https://github.com/andrewbess
-- description: Added mutations to [add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-requisition-list.html),
-    [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-requisition-list.html),
-    and [rename](https://devdocs.magento.com/guides/v2.4/graphql/mutations/rename-requisition-list.html)
-    B2B requisition lists.
+- description: Added mutations to [add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-requisition-list.html) and [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-requisition-list.html) B2B requisition lists.
   versions: 2.4.2
   type: New Topic
   date: February 9, 2021
