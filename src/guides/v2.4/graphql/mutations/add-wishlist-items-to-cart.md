@@ -149,7 +149,7 @@ Attribute |  Data Type | Description
 
 Type | Description
 --- | ---
-`INSUFFICIENT_STOCK` | The requested product is out of stock
+`INSUFFICIENT_STOCK` | The requested quanity of a product is greater than the quantity available
 `NOT_SALABLE` | A requested product is not available
 `PRODUCT_NOT_FOUND` | A product with the specified ID does not exist.
 `UNDEFINED` | The error message does not match any error code
