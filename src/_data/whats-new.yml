@@ -122,7 +122,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8388
   contributor: jfrontain
   profile: https://github.com/jfrontain
-- description: Add new [configuration instructions for the Remote storage module](https://devdocs.magento.com/guides/v2.4//config-guide/remote-storage/config-remote-storage.html)
+- description: Add new [configuration instructions for the Remote storage module](https://devdocs.magento.com/guides/v2.4/config-guide/remote-storage/config-remote-storage.html)
     and AWS S3 adapter to the _Configuration guide_.
   versions: 2.4.2
   type: New Topic
