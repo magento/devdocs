@@ -18,7 +18,7 @@ The following diagram shows the expected workflow when running the Upgrade Compa
 
 ## Who is the Upgrade Compatibility Tool for?
 
-![Upgrade Compatibility Tool audience](img/audience-uct-v2.png)
+![Upgrade Compatibility Tool audience](img/audience-uct-v2.png){:height="80%" width="80%"}
 
 The following use case describes the typical process for a Magento partner to upgrade a client's Magento instance:
 
@@ -30,7 +30,7 @@ The following use case describes the typical process for a Magento partner to up
 1. The Software Engineer runs the Upgrade Compatibility Tool one more time with a Magento pre-release to ensure there are no new issues and that their code changes fixed the problems found during the beta phase.
 1. Everything check’s out and the Software Engineer pushes the code to a staging environment where regression tests confirm all tests are green, which allows them to release the latest Magento version to production the same day that the Magento pre-release is released.
 
-![Upgrade Compatibility Tool in development](img/upgrade-compatibility-tool-development.png)
+![Upgrade Compatibility Tool in development](img/upgrade-compatibility-tool-development.png){:height="80%" width="80%"}
 
 ### Contact Upgrade Compatibility Tool
 
