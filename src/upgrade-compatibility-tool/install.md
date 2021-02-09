@@ -14,7 +14,7 @@ The Upgrade Compatibility Tool ALPHA is a command line tool that checks a Magent
 
 The following diagram shows the expected workflow when running the Upgrade Compatibility Tool:
 
-![Upgrade Compatibility Tool Diagram](img/mvp-diagram-v3.png)
+![Upgrade Compatibility Tool Diagram](img/mvp-diagram-v3.png){:height="80%" width="80%"}
 
 ## Who is the Upgrade Compatibility Tool for?
 
