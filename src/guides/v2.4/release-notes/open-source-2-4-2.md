@@ -100,13 +100,11 @@ This release of PWA Studio includes:
 
 *  Internationalization and localization. Venia now provides support for multiple languages and currencies.
 
-*  Support for multiple stores.
+*  Improved extensibility framework to support code changes through extensions.
 
-*  Enhanced extensibility.
+*  Initial components for My Account related features such as Wishlist, Saved Payments, Address Book, and Order History.
 
-*  Performance optimizations. Client-side performance has been enhanced with Google Lighthouse.
-
-*  Introduction of My Account for Venia. This introduction of My Account features including order history (details), address book, and saved payments.
+*  Various performance optimizations and bug fixes.
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 
