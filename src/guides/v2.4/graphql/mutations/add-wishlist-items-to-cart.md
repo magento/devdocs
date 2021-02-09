@@ -21,20 +21,33 @@ mutation {
 
 ## Example usage
 
-The following example adds items to the cart.
+The following example moves two items from a wishlist to the cart.
 
 **Request:**
 
 ```graphql
 mutation {
   addWishlistItemsToCart(
-    wishlistId: 2 
-    wishlistItemIds: [9, 11])
+    wishlistId: 1
+    wishlistItemIds: [2, 3])
   {
     status
     add_wishlist_items_to_cart_user_errors {
       code
       message
+    }
+    wishlist {
+      id
+      items_v2 {
+        items {
+          id
+          product {
+            uid
+            sku
+            name
+          }
+        }
+      }
     }
   }
 }
@@ -47,7 +60,54 @@ mutation {
   "data": {
     "addWishlistItemsToCart": {
       "status": true,
-      "add_wishlist_items_to_cart_user_errors": []
+      "add_wishlist_items_to_cart_user_errors": [],
+      "wishlist": {
+        "id": "1",
+        "items_v2": {
+          "items": [
+            {
+              "id": "1",
+              "product": {
+                "uid": "MTM=",
+                "sku": "24-WB07",
+                "name": "Overnight Duffle"
+              }
+            },
+            {
+              "id": "4",
+              "product": {
+                "uid": "MTEwMA==",
+                "sku": "WH04",
+                "name": "Miko Pullover Hoodie"
+              }
+            },
+            {
+              "id": "5",
+              "product": {
+                "uid": "MTIyOA==",
+                "sku": "WJ01",
+                "name": "Stellar Solar Jacket"
+              }
+            },
+            {
+              "id": "6",
+              "product": {
+                "uid": "MTcyNA==",
+                "sku": "WT03",
+                "name": "Nora Practice Tank"
+              }
+            },
+            {
+              "id": "7",
+              "product": {
+                "uid": "MTY5Mg==",
+                "sku": "WT01",
+                "name": "Bella Tank"
+              }
+            }
+          ]
+        }
+      }
     }
   }
 }
@@ -71,6 +131,11 @@ Attribute |  Data Type | Description
 `add_wishlist_items_to_cart_user_errors` | [[WishlistCartUserInputError!](#WishlistCartUserInputError)] | Indicates why the attempt to add items to the wish list was not successful
 `status` | Boolean! | Indicates whether the attempt to add items to the cart was successful
 `wishlist` | [Wishlist!](#Wishlist) | Contains the wish list with all items that were successfully added
+
+### Wishlist attributes {#Wishlist}
+
+{% include graphql/wishlist.md %}
+
 ### WishlistCartUserInputError attributes {#WishlistCartUserInputError}
 
 The `WishlistCartUserInputError` type contains a list of errors that indicate why the attempt to add items to the cart was not successful.
@@ -88,7 +153,3 @@ Type | Description
 `NOT_SALABLE` | A requested product is not available
 `PRODUCT_NOT_FOUND` | A product with the specified ID does not exist.
 `UNDEFINED` | The error message does not match any error code
-
-### Wishlist attributes {#Wishlist}
-
-{% include graphql/wishlist.md %}
