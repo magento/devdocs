@@ -2,7 +2,7 @@
 group: software-update-guide
 title: Introduction
 ee_only: True
-redirect from:
+redirect_from:
   - /safe-upgrade-tool/introduction.html
 functional_areas:
   - Upgrade

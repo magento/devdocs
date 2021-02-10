@@ -111,6 +111,20 @@ On DOM ready, the `data-mage-init` attribute is parsed to extract component name
   };
   ```
 
+Where `<component_name>` is a native Magento JS component, for example: `menu`, `collapsible`, `tooltip` ...
+
+```html
+<nav data-mage-init='{"tooltip": {"content": "<?= /* @noEscape */ $content ?>"}}'></nav>
+```
+
+Or a custom JS component, implemented with a component path: `Vendor_Module/js/component`, or as an alias declared in `requirejs-config.js`.
+
+```html
+<nav data-mage-init='{"Vendor_Module/js/component": {"status":"<?= /* @noEscape */ $block->getStatus(); ?>"}}'></nav>
+```
+
+Read more about [locate JS components](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/js_debug.html).
+
 -  If a function is returned, the initializer passes the <code>config</code> and <code>element</code> values to this function. For example:
 
   ```javascript
