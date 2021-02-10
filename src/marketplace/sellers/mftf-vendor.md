@@ -24,9 +24,9 @@ Functional testing in this way helps ensure that the experience of the end-user 
 
 MFTF Vendor-Supplied Tests are run only where:
 
-- There are MFTF tests included in the submission in the correct    directory ("Tests/Mftf")
-- Only for MFTF v3.0 or greater
-- Only for Magento v2.4.0 or greater
+-  There are MFTF tests included in the submission in the correct    directory ("Tests/Mftf")
+-  Only for MFTF v3.0 or greater
+-  Only for Magento v2.4.0 or greater
 
 
 ## What is being checked
@@ -52,24 +52,24 @@ The Allure results returned to Marketplace can be downloaded and displayed as an
  
 
 ## Troubleshooting
- - Ensure that your tests generate, execute and pass in the specified environment configuration
+-  Ensure that your tests generate, execute and pass in the specified environment configuration
 
- - Tests must be in the correct directory structure to be identified and executed
+-  Tests must be in the correct directory structure to be identified and executed
 
- - Within your extension, there must be a `Test` directory. This directory must contain an `Mftf` directory
+-  Within your extension, there must be a `Test` directory. This directory must contain an `Mftf` directory
 
- - MFTF within this directory should follow the standard directory structure, separating ActionGroups, Tests, Pages, Sections etc into their own directories
+-  MFTF within this directory should follow the standard directory structure, separating ActionGroups, Tests, Pages, Sections etc into their own directories
 
- - Give that tests will be executed with Magento MFTF tests available for merging etc, please ensure that they will operate as expected in this configuration E.g. Ensure that test names do not clash with existing Magento tests
- - Ensure that if you are extending from, or merging onto, an existing Magento test (or relying upon it's entities), that it is required as a composer prerequisite
+-  Give that tests will be executed with Magento MFTF tests available for merging etc, please ensure that they will operate as expected in this configuration E.g. Ensure that test names do not clash with existing Magento tests
 
- - Remember that MFTF tests will be part of the final package that is made available to your customers
+-  Ensure that if you are extending from, or merging onto, an existing Magento test (or relying upon it's entities), that it is required as a composer prerequisite
 
- - Don't include any sensitive or confidential data in test comments or code
+-  Remember that MFTF tests will be part of the final package that is made available to your customers
 
- - If necessary, include a README or other instructions, within the `Test` directory, to explain any setup steps or caveats on running your MFTF tests
+-  Don't include any sensitive or confidential data in test comments or code
 
- - Ensure that any necessary credentials, user authorization (e.g. to communicate via API key to your backend) is explained and supported via Credential management in Tests
+-  If necessary, include a README or other instructions, within the `Test` directory, to explain any setup steps or caveats on running your MFTF tests
 
- - Always follow the [MFTF Best Practices] (https://devdocs.magento.com/mftf/docs/best-practices.html) and use the [MFTF Tips & Tricks](https://devdocs.magento.com/mftf/docs/tips-tricks.html).
- 
+-  Ensure that any necessary credentials, user authorization (e.g. to communicate via API key to your backend) is explained and supported via Credential management in Tests
+
+-  Always follow the [MFTF Best Practices] (https://devdocs.magento.com/mftf/docs/best-practices.html) and use the [MFTF Tips & Tricks](https://devdocs.magento.com/mftf/docs/tips-tricks.html).
