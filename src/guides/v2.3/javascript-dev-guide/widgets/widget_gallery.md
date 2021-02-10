@@ -587,7 +587,6 @@ This example shows a use case for a gallery widget on any page:
 
 ```html
 <div class="image-gallery"></div>
- 
 <script>
 require ([
     'jquery',
