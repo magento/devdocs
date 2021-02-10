@@ -24,7 +24,7 @@ The extension title should fulfill the following guidelines:
 *  Do not include the words _Extension_, _Module_ or _Plugin_.
    *  The words, _Connector_ and _Integration_ can be used if applicable.
 *  Use _&_ instead of _And_, such as in _Order & Save_ (not _Order and Save_).
-* Capitalize the first letter of each word, such as _Mass Order Export_ (not _Mass order export_).
+*  Capitalize the first letter of each word, such as _Mass Order Export_ (not _Mass order export_).
    *  Do not use all capital letters.
 *  Do not use punctuation unless it’s part of the actual company name, such as _InstantSearch+_ or _Yahoo!_.
    *  _/_ and _-_ are acceptable in certain circumstances, such as for _Two-Factor_ or _Import / Export_.
