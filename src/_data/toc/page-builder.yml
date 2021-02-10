@@ -101,24 +101,24 @@ pages:
     url: /page-builder/docs/styling/how-to-configure-styling-options.html
     versionless: true
 
-- label: 'Create responsive content'
-  versionless: true
-  children:
-  - label: How viewports work
-    url: /page-builder/docs/viewports/how-viewports-work.html
-    versionless: true
+# - label: 'Create responsive content'
+#   versionless: true
+#   children:
+#   - label: How viewports work
+#     url: /page-builder/docs/viewports/how-viewports-work.html
+#     versionless: true
 
-  - label: How to add viewports
-    url: /page-builder/docs/viewports/how-to-add-viewports.html
-    versionless: true
+#   - label: How to add viewports
+#     url: /page-builder/docs/viewports/how-to-add-viewports.html
+#     versionless: true
 
-  - label: How to use viewports
-    url: /page-builder/docs/viewports/how-to-use-viewports.html
-    versionless: true
+#   - label: How to use viewports
+#     url: /page-builder/docs/viewports/how-to-use-viewports.html
+#     versionless: true
 
-  - label: How to change viewports
-    url: /page-builder/docs/viewports/how-to-change-viewports.html
-    versionless: true
+#   - label: How to change viewports
+#     url: /page-builder/docs/viewports/how-to-change-viewports.html
+#     versionless: true
 
 - label: 'Customize content types'
   versionless: true
