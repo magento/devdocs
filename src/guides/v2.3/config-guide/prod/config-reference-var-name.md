@@ -140,7 +140,7 @@ To get these values from the database:
 1. Use the following SQL queries to find the relevant values:
 
    ```shell
-   SELECT * FROM STORES;
+   SELECT * FROM STORE;
    SELECT * FROM STORE_WEBSITE;
    ```
 
