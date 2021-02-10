@@ -59,7 +59,7 @@
   children:
 
     - label: Installation Guide
-      url: /install-gde/bk-install-guide.html
+      url: /install-gde/install-flow-diagram.html
 
     - label: Magento Extensions Guide
       url: /extensions/

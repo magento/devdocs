@@ -40,7 +40,7 @@ magento-cloud mount:size
 Sample response:
 
 ```terminal
-Checking disk usage for all mounts on <project>-<branch>-mymagento@ssh.us.magento.cloud...
+Checking disk usage for all mounts on <project>-<environment>-mymagento@ssh.us.magento.cloud...
 
 +------------+-----------+---------+-----------+-----------+--------+
 | Mount(s)   | Size(s)   | Disk    | Used      | Available | % Used |
