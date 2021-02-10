@@ -33,13 +33,13 @@ The Magento test infrastructure will execute Magento supplied MFTF tests in the 
 ## Reading the error report
 
 -  MFTF returns two types of results
-    -  Simplified results showing the status of each test executed
-    -  Allure results (as XML)
-    -  See [MFTF Reporting](https://devdocs.magento.com/mftf/docs/reporting.html)  for further information
+   -  Simplified results showing the status of each test executed
+   -  Allure results (as XML)
+   -  See [MFTF Reporting](https://devdocs.magento.com/mftf/docs/reporting.html)  for further information
 -  Test failures will be due to either:
-    -  MFTF test flow being broken due to changes to Magento user flows as intended by the extension under test. These can be fixed by using Vendor-Supplied MFTF Tests.
-    -  An failure in Magento user flows due to an unintended side-effect of the extension under test. This may be a type of regression bug and will be tested and verified by manual QA as part of EQP technical review.
--  The Allure results returned to Marketplace can be downloaded and displayed as an Allure report for simple consumption and identification of failure points. 
+   -  MFTF test flow being broken due to changes to Magento user flows as intended by the extension under test. These can be fixed by using Vendor-Supplied MFTF Tests.
+   -  An failure in Magento user flows due to an unintended side-effect of the extension under test. This may be a type of regression bug and will be tested and verified by manual QA as part of EQP technical review.
+-  The Allure results returned to Marketplace can be downloaded and displayed as an Allure report for simple consumption and identification of failure points.
 
 ## Troubleshooting
 
@@ -53,4 +53,4 @@ The Magento test infrastructure will execute Magento supplied MFTF tests in the 
 -  Don't include any sensitive or confidential data in test comments or code
 -  If necessary, include a README or other instructions, within the `Test` directory, to explain any setup steps or caveats on running your MFTF tests
 -  Ensure that any necessary credentials, user authorization (e.g. to communicate via API key to your backend) is explained and supported via Credential management in Tests
--  Always follow the [MFTF Best Practices] (https://devdocs.magento.com/mftf/docs/best-practices.html) and use the [MFTF Tips & Tricks](https://devdocs.magento.com/mftf/docs/tips-tricks.html).
+-  Always follow the [MFTF Best Practices](https://devdocs.magento.com/mftf/docs/best-practices.html) and use the [MFTF Tips & Tricks](https://devdocs.magento.com/mftf/docs/tips-tricks.html).

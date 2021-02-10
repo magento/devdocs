@@ -35,6 +35,7 @@ The Magento test infrastructure will execute vendor supplied MFTF tests in the m
 
 ## Reading the error report
 MFTF returns two types of results:
+
 1. Simplified results showing the status of each test executed
 1. Allure results (as XML)
 
@@ -42,17 +43,18 @@ See [MFTF Reporting](https://devdocs.magento.com/mftf/docs/reporting.html) for f
 
 To diagnose a test failure, you should first ascertain if you can replicate the failure on your local development environment. If you cannot, this indicates a configuration and/or environment difference.
 
-The Allure results returned to Marketplace can be downloaded and displayed as an Allure report for simple consumption and identification of failure points. 
+The Allure results returned to Marketplace can be downloaded and displayed as an Allure report for simple consumption and identification of failure points.
  
 ## Troubleshooting
+
 -  Ensure that your tests generate, execute and pass in the specified environment configuration
 -  Tests must be in the correct directory structure to be identified and executed
 -  Within your extension, there must be a `Test` directory. This directory must contain an `Mftf` directory
 -  MFTF within this directory should follow the standard directory structure, separating ActionGroups, Tests, Pages, Sections, etc into their own directories
 -  Given that tests will be executed with Magento MFTF tests available for merging, please ensure that they will operate as expected in this configuration, e.g. Ensure that test names do not clash with existing Magento tests
--  -  Ensure that if you are extending from, or merging into, an existing Magento test (or relying upon its entities), that it is required as a composer prerequisite
+-  Ensure that if you are extending from, or merging into, an existing Magento test (or relying upon its entities), that it is required as a composer prerequisite
 -  Remember that MFTF tests will be part of the final package that is made available to your customers
 -  Do not include any sensitive or confidential data in test comments or code
 -  If necessary, include a README, or other instructions, within the `Test` directory, to explain any setup steps or caveats on running your MFTF tests
 -  Ensure that any necessary credentials, user authorization (e.g. to communicate via API key to your backend) is explained and supported via Credential management in Tests
--  Always follow the [MFTF Best Practices] (https://devdocs.magento.com/mftf/docs/best-practices.html) and use the [MFTF Tips & Tricks](https://devdocs.magento.com/mftf/docs/tips-tricks.html).
+-  Always follow the [MFTF Best Practices](https://devdocs.magento.com/mftf/docs/best-practices.html) and use the [MFTF Tips & Tricks](https://devdocs.magento.com/mftf/docs/tips-tricks.html).
