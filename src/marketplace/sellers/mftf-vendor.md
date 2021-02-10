@@ -44,7 +44,7 @@ See [MFTF Reporting](https://devdocs.magento.com/mftf/docs/reporting.html) for f
 To diagnose a test failure, you should first ascertain if you can replicate the failure on your local development environment. If you cannot, this indicates a configuration and/or environment difference.
 
 The Allure results returned to Marketplace can be downloaded and displayed as an Allure report for simple consumption and identification of failure points.
- 
+
 ## Troubleshooting
 
 -  Ensure that your tests generate, execute and pass in the specified environment configuration
