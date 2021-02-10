@@ -14,6 +14,7 @@ GraphQL allows you to make multiple queries in a single call. If you specify any
 
 Magento caches the following queries:
 
+*  `categories`
 *  `category` (deprecated)
 *  `categoryList`
 *  `cmsBlocks`
@@ -33,7 +34,7 @@ Magento explicitly disallows caching the following queries.
 *  `customerOrders`
 *  `customerPaymentTokens`
 *  `storeConfig`
-*  `wishlist`
+*  `wishlist` (deprecated)
 
 [Define the GraphQL schema for a module]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) describes the syntax of a valid query.
 
