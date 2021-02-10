@@ -18,48 +18,52 @@ Magento stores the hashed data version in Redis, with the suffix ':version' appe
 
 ## Configuration example
 
+Put this into the `app/etc/env.php` file or replace existed cache section.
+
 ```php
 'cache' => [
     'frontend' => [
         'default' => [
-          'backend' => '\\Magento\\Framework\\Cache\\Backend\\RemoteSynchronizedCache',
+            'backend' => '\\Magento\\Framework\\Cache\\Backend\\RemoteSynchronizedCache',
             'backend_options' => [
                 'remote_backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
                 'remote_backend_options' => [
                     'persistent' => 0,
                     'server' => 'localhost',
                     'database' => '0',
-                    'port' => '6370',
+                    'port' => '6379',
                     'password' => '',
                     'compress_data' => '1',
                 ],
                 'local_backend' => 'Cm_Cache_Backend_File',
                 'local_backend_options' => [
                     'cache_dir' => '/dev/shm/'
-                ]
+                ],
+                'use_stale_cache' => false,
             ],
             'frontend_options' => [
                 'write_control' => false,
             ],
-            'use_stale_cache' => false,
         ]
     ],
     'type' => [
         'default' => ['frontend' => 'default'],
     ],
-]
+],
 ```
 
 Where:
 
--  `backend` is the remote L2 cache implementation.
--  `remote_backend` is the remote cache implementation: Redis or MySQL.
--  `remote_backend_options` are Redis or MySQL-specific options.
--  `local_backend` is the local cache implementation: `Cm_Cache_Backend_File` or the APC adapter.
--  `cache_dir` is a directory where the local cache will be stored. It is suggested to use `/dev/shm/`.
--  `use_stale_cache` is a flag that enable\disables the stale cache mechanism.
+-  `backend` is the L2 cache implementation.
+-  `backend_options` are the L2 cache configuration.
+    -  `remote_backend` is the remote cache implementation: Redis or MySQL.
+    -  `remote_backend_options` are the remote cache configuration.
+    -  `local_backend` is the local cache implementation: `Cm_Cache_Backend_File` or the APC adapter.
+    -  `local_backend_options` are the local cache configuration.
+        -  `cache_dir` __a file cache specific option.__ Is a directory where the local cache will be stored.
+    -  `use_stale_cache` is a flag that enable\disables the stale cache mechanism.
 
-We recommend the use of Redis for remote caching - `\Magento\Framework\Cache\Backend\Redis`, and the File cache implementation - `Cm_Cache_Backend_File` as the local cache.
+We recommend the use of Redis for remote caching - `\Magento\Framework\Cache\Backend\Redis`, and the File cache implementation - `Cm_Cache_Backend_File` as the local cache storing data in shared memory - `'local_backend_options' => ['cache_dir' => '/dev/shm/']`.
 We also recommend the use of the [`cache preload`](https://devdocs.magento.com/guides/v2.4/config-guide/redis/redis-pg-cache.html#redis-preload-feature) feature, as it will drastically decrease the pressure on Redis. Do not forget to add suffix ':version' for preload keys.
 
 ## Stale cache options

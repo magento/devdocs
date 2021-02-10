@@ -47,44 +47,11 @@ stage:
       _merge: true
       frontend:
         default:
-          backend:
+          backend_options:
             database: 10
         page_cache:
-          backend:
+          backend_options:
             database: 11
-```
-
-If the _REDIS_BACKEND_ variable specifies  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`for the backend model, you must use the following configuration structure:
-
-```php
-'cache' => [
-    'frontend' => [
-        'default' => [
-             'backend' => '\\Magento\\Framework\\Cache\\Backend\\RemoteSynchronizedCache',
-             'backend_options' => [
-                 'remote_backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
-                 'remote_backend_options' => [
-                     'persistent' => 0,
-                     'server' => 'localhost',
-                     'database' => '0',
-                     'port' => '6370',
-                     'password' => '',
-                     'compress_data' => '1',
-                 ],
-                 'local_backend' => 'Cm_Cache_Backend_File',
-                 'local_backend_options' => [
-                     'cache_dir' => '/dev/shm/'
-                 ]
-             ],
-             'frontend_options' => [
-                 'write_control' => false,
-             ],
-         ]
-    ],
-    'type' => [
-        'default' => ['frontend' => 'default'],
-    ],
-]
 ```
 
 ### `CLEAN_STATIC_FILES`
@@ -401,7 +368,7 @@ stage:
 ```
 
 {:.bs-callout-info}
-If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, then {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.3/config-guide/cache/two-level-cache.html) in the _Magento Configuration Guide_.
+If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, then {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html) in the _Magento Configuration Guide_. For overriding the generated cache configuration use the [CACHE_CONFIGURATION]({{site.baseurl}}/cloud/env/variables-deploy.html#cache_configuration) deploy variable.
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
