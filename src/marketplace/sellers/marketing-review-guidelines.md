@@ -68,7 +68,7 @@ Extension documentation should fulfill the following guidelines:
 
 The price of your extension is included as part of the marketing information. To learn more, see [Enter Pricing Information]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html).
 
-*  Items listed on thr Magento Marketplace can be offered for free or sold as commercial products.
+*  Items listed on the Magento Marketplace can be offered for free or sold as commercial products.
 *  The price of items offered for sale on the Magento Marketplace can range anywhere from $25.00 to $999,999.00, and must reflect fair market value.
 *  All purchases are paid for in US currency.
 *  Items sold on the Magento Marketplace are subject to a revenue-sharing fee that is paid by the developer.
