@@ -18,7 +18,7 @@ Magento stores the hashed data version in Redis, with the suffix ':version' appe
 
 ## Configuration example
 
-Put this into the `app/etc/env.php` file or replace existed cache section.
+Put this into the `app/etc/env.php` file or replace the existing cache section.
 
 ```php
 'cache' => [
@@ -55,15 +55,15 @@ Put this into the `app/etc/env.php` file or replace existed cache section.
 Where:
 
 -  `backend` is the L2 cache implementation.
--  `backend_options` are the L2 cache configuration.
+-  `backend_options` is the L2 cache configuration.
    -  `remote_backend` is the remote cache implementation: Redis or MySQL.
-   -  `remote_backend_options` are the remote cache configuration.
+   -  `remote_backend_options` is the remote cache configuration.
    -  `local_backend` is the local cache implementation: `Cm_Cache_Backend_File` or the APC adapter.
-   -  `local_backend_options` are the local cache configuration.
-      -  `cache_dir` __a file cache specific option.__ Is a directory where the local cache will be stored.
+   -  `local_backend_options` is the local cache configuration.
+      -  `cache_dir` __a file cache specific option.__ Is the directory where the local cache will be stored.
    -  `use_stale_cache` is a flag that enable\disables the stale cache mechanism.
 
-We recommend the use of Redis for remote caching - `\Magento\Framework\Cache\Backend\Redis`, and the File cache implementation - `Cm_Cache_Backend_File` as the local cache storing data in shared memory - `'local_backend_options' => ['cache_dir' => '/dev/shm/']`.
+We recommend the use of Redis for remote caching - `\Magento\Framework\Cache\Backend\Redis`, and the File cache implementation - `Cm_Cache_Backend_File` as the local cache for storing data in shared memory - `'local_backend_options' => ['cache_dir' => '/dev/shm/']`.
 We also recommend the use of the [`cache preload`](https://devdocs.magento.com/guides/v2.4/config-guide/redis/redis-pg-cache.html#redis-preload-feature) feature, as it will drastically decrease the pressure on Redis. Do not forget to add suffix ':version' for preload keys.
 
 ## Stale cache options
