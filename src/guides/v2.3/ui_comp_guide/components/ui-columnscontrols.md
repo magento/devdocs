@@ -23,11 +23,11 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 *  [`app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js)
 *  [`app/code/Magento/Ui/view/base/web/templates/grid/controls/columns.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/controls/columns.html)
 
-## Examples
+## Example
 
 ### Changing "minVisible" and "maxVisible" values in the javascript file.
 
-For this, you have to override the vendor JS file in your custom module:
+To change attribute values, override the vendor JS file in a custom module:
 
 `/vendor/magento/module-ui/view/base/web/js/grid/controls/columns.js`
 
@@ -47,7 +47,7 @@ var config = {
 
 #### Step two: set the custom values
 
-In `/app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/web/js/grid/controls/columns.js`, change the "minVisible" and "maxVisible" values as per your requirement:
+In `/app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/web/js/grid/controls/columns.js`, change the "minVisible" and "maxVisible" values as needed:
 
 ```js
 return Collection.extend({
