@@ -92,7 +92,7 @@ Attribute | Type | Description
 `price` | Float | The price assigned to this option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `sku` | String | The Stock Keeping Unit for this option
-`type` | CustomizableDateTypeEnum | `date`, `date_time`, or `time`
+`type` | CustomizableDateTypeEnum | `DATE`, `DATE_TIME`, or `TIME`
 `uid` | ID! | The unique ID for a `CustomizableDateValue` object
 
 ## CustomizableDropDownOption object
