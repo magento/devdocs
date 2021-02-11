@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 02_sample
 title: Install optional sample data modules
 menu_title: Install optional sample data modules
