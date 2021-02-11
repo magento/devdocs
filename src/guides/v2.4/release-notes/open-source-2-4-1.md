@@ -219,10 +219,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Images in the Adobe Stock images grid are now properly aligned after filters have been cleared. _Fix submitted by Nazar Klovanych in pull request [28366](https://github.com/magento/magento2/pull/28366)_. [GitHub-824](https://github.com/magento/adobe-stock-integration/issues/824), [GitHub-972](https://github.com/magento/adobe-stock-integration/issues/972)
 
-<!--- ENGCOM-8020-->
-
-*  Added support for reading `exif_image.png` or `exif-image.jpeg` metadata. _Fix submitted by Nazar Klovanych in pull request [29576](https://github.com/magento/magento2/pull/29576)_. [GitHub-1449](https://github.com/magento/adobe-stock-integration/issues/1449)
-
 <!-- ENGCOM-7709 -->
 
 *  The **Used in** field of the Adobe Stock gallery image details page now accurately identifies if the image is associated with a product. _Fix submitted by Nazar Klovanych in pull request [28798](https://github.com/magento/magento2/pull/28798)_. [GitHub-1474](https://github.com/magento/adobe-stock-integration/issues/1474)
@@ -265,7 +261,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-8019-->
 
-*  Magento now adds tags correctly when you edit multiple images successively in the Media Gallery. _Fix submitted by Nazar Klovanych in pull request [29429](https://github.com/magento/magento2/pull/29429)_. [GitHub-1755](https://github.com/magento/adobe-stock-integration/issues/1755
+*  Magento now adds tags correctly when you edit multiple images successively in the Media Gallery. _Fix submitted by Nazar Klovanych in pull request [29429](https://github.com/magento/magento2/pull/29429)_. [GitHub-1755](https://github.com/magento/adobe-stock-integration/issues/1755)
 
 <!--- ENGCOM-8015-->
 
@@ -465,7 +461,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- ENGCOM-7698-->
 
-*  `localStorage` polyfill has been moved from from `base` to `frontend`. _Fix submitted by Ihor Sviziev in pull request [28749](https://github.com/magento/magento2/pull/28749)_. [GitHub-28900](https://github.com/magento/magento2/issues/28900)
+*  `localStorage` polyfill has been moved from `base` to `frontend`. _Fix submitted by Ihor Sviziev in pull request [28749](https://github.com/magento/magento2/pull/28749)_. [GitHub-28900](https://github.com/magento/magento2/issues/28900)
 
 <!--- ENGCOM-7753-->
 
@@ -883,7 +879,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7732 7733-->
 
-*  GraphQL product search now considers configured category permissions. Previously, product search ignored the **Enable** setting (**Stores**  >  **Configuration**  >  **Catalog**  >  **Catalog** > **Category Permissions**). _Fix submitted by Petkovski Marjan in pull request [28757](https://github.com/magento/magento2/pull/28757) and pull request 271 in private repo `partners-magento2ee`_. [GitHub-28563](https://github.com/magento/magento2/issues/28563
+*  GraphQL product search now considers configured category permissions. Previously, product search ignored the **Enable** setting (**Stores**  >  **Configuration**  >  **Catalog**  >  **Catalog** > **Category Permissions**). _Fix submitted by Petkovski Marjan in pull request [28757](https://github.com/magento/magento2/pull/28757) and pull request 271 in private repo `partners-magento2ee`_. [GitHub-28563](https://github.com/magento/magento2/issues/28563)
 
 <!--- MC-31084-->
 

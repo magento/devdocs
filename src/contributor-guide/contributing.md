@@ -118,7 +118,7 @@ We also recommend creating a personal access token for your account to use when 
 
 ## Questions or enhancement requests? {#question}
 
-We capture code-related issues in the the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [Magento DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
+We capture code-related issues in the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [Magento DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
 
 Submit feature requests or enhancement suggestions to the [Magento 2 Feature Requests and Improvements forum](https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests). For details about how requests are managed, see [Improvements to GitHub Management](https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96).
 
@@ -148,11 +148,13 @@ Review the following supported and accepted pull request rules. We defined these
 
 For complete information about contributing to Magento projects, see the [Beginner Guides](https://github.com/magento/magento2/wiki/Getting-Started) on the Magento 2 repository. These guides help you:
 
+-  Select an issue to work on and self-assign
 -  Fork a repository
 -  Create a branch
--  Find and work issues
--  Create tests
--  Submit a pull request
+-  Fix/implement the functionality
+-  Cover the changes with tests
+-  Open a pull request
+-  Launch tests and ensure they are green (see more details on [pull request tests]({{ site.baseurl }}/contributor-guide/pull-request-tests.html))
 
 ## Squash commits {#squash-commits}
 

@@ -44,7 +44,7 @@ You can clean generated static view files in any of the following ways:
 -  In the [Magento Admin](https://glossary.magento.com/magento-admin). Go to **System** > **Tools** > **Cache Management** and click **Flush [Static Files](https://glossary.magento.com/static-files) Cache**.
 
     {:.bs-callout-info}
-   This option is only available in `developer` mode. Refer to the [static view files overview]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) for more information.
+   This option is only available in `developer` mode. Refer to the [static view files overview]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) for more information. For more details about the Magento modes, see [Magento Modes]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
 
 -  Manually by clearing the `pub/static` and `var/view_preprocessed` directories and subdirectories _except_ for `pub/static/.htaccess`.
 

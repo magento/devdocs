@@ -2,6 +2,7 @@
 group: architecture-guide
 title: Module overview
 menu_title: Module overview
+redirect_from: guides/v2.3/install-gde/basics/basics_module.html
 ---
 
 ## What is a Magento module? {#arch-modules-overview}
