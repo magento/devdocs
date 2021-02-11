@@ -665,6 +665,12 @@ The `customer` object can contain the following attributes:
 
 {% include graphql/customer-output-24.md %}
 
+### CompareList attributes {#CompareList}
+
+The `CompareList` object can contain the following attributes:
+
+{% include graphql/compare-list-output.md %}
+
 ### CustomerAddress attributes {#customerAddressOutput}
 
 The values assigned to attributes such as `firstname` and `lastname` in this object may be different from those defined in the `Customer` object.

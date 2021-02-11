@@ -47,6 +47,7 @@ Attribute |  Data Type | Description
 `is_required` | Boolean! | Indicates whether the customizable option is required
 `label` | String! | The display name of the selected customizable option
 `sort_order` | Int! | A value indicating the order to display this option
+`type` | String! | The type of `CustomizableOptionInterface` object
 `values` | [[SelectedCustomizableOptionValue!]!](#SelectedCustomizableOptionValue) | An array of selectable values
 
 ### SelectedCustomizableOptionValue attributes {#SelectedCustomizableOptionValue}
@@ -133,7 +134,7 @@ Attribute | Data type | Description
 The `GiftCardCartItem` object adds the following attributes to the `CartItemInterface`.
 
 `amount` | Money! | The amount and currency of the gift card
-`customizable_options` | [[SelectedCustomizableOption]](#SelectedCustomizableOption) | An array of customizations made to the gift card
+`customizable_options` | [[SelectedCustomizableOption]!](#SelectedCustomizableOption) | An array of customizations made to the gift card
 `message` | String | A message to the recipient
 `recipient_email` | String | The email of the person receiving the gift card
 `recipient_name` | String! | The name of the person receiving the gift card
@@ -146,7 +147,7 @@ The `SimpleCartItem` object adds the following attributes to the `CartItemInterf
 
 Attribute | Data type | Description
 --- | --- | ---
-`customizable_options` | [[SelectedCustomizableOption]](#SelectedCustomizableOption) | An array of customizable options the shopper chose for the simple product
+`customizable_options` | [[SelectedCustomizableOption]!](#SelectedCustomizableOption) | An array of customizable options the shopper chose for the simple product
 
 ## VirtualCartItem implementation {#VirtualCartItem}
 
@@ -154,7 +155,7 @@ The `VirtualCartItem` object adds the following attributes to the `CartItemInter
 
 Attribute | Data type | Description
 --- | --- | ---
-`customizable_options` | [[SelectedCustomizableOption]](#SelectedCustomizableOption) | An array of customizable options the shopper chose for the virtual product
+`customizable_options` | [[SelectedCustomizableOption]!](#SelectedCustomizableOption) | An array of customizable options the shopper chose for the virtual product
 
 ## Example usage
 
