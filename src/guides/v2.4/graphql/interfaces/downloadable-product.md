@@ -18,7 +18,7 @@ Attribute | Type | Description
 `links_purchased_separately` | Int | A value of 1 indicates that each link in the array must be purchased separately
 `links_title` | String | The heading above the list of downloadable products
 
-### DownloadableProductSamples object {#DownloadableProductSamples}
+### DownloadableProductSamples attributes {#DownloadableProductSamples}
 
 The `DownloadableProductSamples` object contains the following attributes:
 
@@ -31,13 +31,13 @@ Attribute | Type | Description
 `sort_order` | Int | A number indicating the sort order
 `title` | String | The display name of the sample
 
-### DownloadableProductLinks object {#DownloadableProductLinks}
+### DownloadableProductLinks attributes {#DownloadableProductLinks}
 
 The `DownloadableProductLinks` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`id` | Int | Deprecated. This information should not be exposed on frontend
+`id` | Int | Deprecated. Use `uid` instead
 `is_shareable` | Boolean | Deprecated. This attribute is not applicable for GraphQL
 `link_type` | DownloadableFileTypeEnum | Deprecated. Use `sample_url` instead
 `number_of_downloads` | Int | Deprecated. This attribute is not applicable for GraphQL
@@ -47,7 +47,7 @@ Attribute | Type | Description
 `sample_url` | String | The URL to the downloadable sample
 `sort_order` | Int | A number indicating the sort order
 `title` | String | The display name of the link
-`uid` | ID! | A string that encodes option details
+`uid` | ID! | The unique ID for a `DownloadableProductLinks` object
 
 ## Example usage
 
@@ -69,7 +69,7 @@ The following query returns information about downloadable product `240-LV04`, w
 {
   products(filter: { sku: { eq: "240-LV04" } }) {
     items {
-      id
+      uid
       name
       sku
       __typename
@@ -110,7 +110,7 @@ The following query returns information about downloadable product `240-LV04`, w
     "products": {
       "items": [
         {
-          "id": 47,
+          "uid": "NDc=",
           "name": "Beginner's Yoga",
           "sku": "240-LV04",
           "__typename": "DownloadableProduct",
