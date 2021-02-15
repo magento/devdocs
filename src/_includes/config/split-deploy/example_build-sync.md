@@ -10,6 +10,12 @@ To update your build system:
    git pull mconfig m2.2_deploy
    ```
 
+1. Run upgrade Magento:
+
+   ```bash
+   php bin/magento setup:upgrade
+   ```
+
 1. Compile code:
 
    ```bash
