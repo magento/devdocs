@@ -10,22 +10,22 @@ To update your build system:
    git pull mconfig m2.2_deploy
    ```
 
-1. Run upgrade Magento:
+1. Run the upgrade command:
 
    ```bash
-   php bin/magento setup:upgrade
+   bin/magento setup:upgrade
    ```
 
 1. Compile code:
 
    ```bash
-   php bin/magento setup:di:compile
+   bin/magento setup:di:compile
    ```
 
 1. After code has been compiled, generate static view files:
 
    ```bash
-   php bin/magento setup:static-content:deploy -f
+   bin/magento setup:static-content:deploy -f
    ```
 
 1. Check the changes into source control.
