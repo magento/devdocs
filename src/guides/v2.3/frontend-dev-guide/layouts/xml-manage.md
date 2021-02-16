@@ -356,13 +356,13 @@ In the admin area, this is implemented for [global search]({{ site.mage2bloburl 
 
 ## Set the template used by a block {#set_template}
 
-There are Three ways to set the template for a block:
+There are three ways to set the template for a block:
 
 -  using the `template` attribute
 -  using the `<argument>` instruction
 -  using the `<action method="setTemplate">` instruction
 
-All approaches are demonstrated in the following examples of changing the template of the page title block.
+Each approach is demonstrated in the following examples:
 
 **Example 1:** using the `template` attribute
 
