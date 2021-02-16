@@ -24,8 +24,6 @@ You cannot have a live store that accepts orders and so on.
 
 {% include install/composer-overview.md %}
 
-{% include install/web/deprecated.md %}
-
 ## Install Composer {#instgde-prereq-compose-install}
 
 {% include install/composer-clone.md %}

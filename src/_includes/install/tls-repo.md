@@ -17,11 +17,3 @@ The following error displays if you attempt to run `composer create-project` to 
 The "https://repo.magento.com/packages.json" file could not be downloaded: Failed to enable crypto
 failed to open stream: operation failed
 ```
-
-### Using the Web Setup Wizard
-
-{% include install/web/deprecated.md %}
-
-Actions like saving your authentication credentials or synchronizing with Magento Marketplace fail with the following error:
-
-![SSL connect error]({{ site.baseurl }}/common/images/install_ssl-connect-error.png)

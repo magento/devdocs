@@ -69,4 +69,4 @@ See the [Upgrade Compatibility Tool ALPHA]({{site.baseurl}}/upgrade-compatibilit
 {:target="_blank"}
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [Upgrade from Open Source to Commerce]: {{ page.baseurl }}/comp-mgr/upgrader/ce-ee-upgrade-start.html
-[upgrade the software manually]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html
+[upgrade the software manually]: {{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html

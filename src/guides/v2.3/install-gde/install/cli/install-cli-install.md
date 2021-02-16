@@ -1,8 +1,5 @@
 ---
-subgroup: 05_Command-line installation
 title: Install the Magento software
-menu_title: Install the Magento software
-menu_order: 4
 functional_areas:
   - Install
   - System

@@ -16,8 +16,6 @@ functional_areas:
 
 {% include install/composer-overview.md %}
 
-{% include install/web/deprecated.md %}
-
 ## Prerequisites
 
 Before you continue, you must do the following:
@@ -127,21 +125,6 @@ You can customize the Admin URI with the `--backend-frontname` option. However, 
 
 {:.bs-callout-tip}
 For a full description of the CLI install options, refer to [Install the Magento software from the command line][].
-
-### Web Setup Wizard
-
-{% include install/web/deprecated.md %}
-
-As an alternative to the CLI, use your browser to navigate to Magento's setup wizard:
-
-```terminal
-http://<Magento-host-or-IP>/<path-to-magento-root>/setup
-```
-
-For example: `http://localhost/magento2ee/setup`
-
-{:.bs-callout-warning}
-You cannot use the Web Setup Wizard if your docroot is set to the `pub/` directory. See [Modify docroot for security][].
 
 <!-- Link Definitions -->
 [Magento Marketplace]: https://marketplace.magento.com/customer/accessKeys/
