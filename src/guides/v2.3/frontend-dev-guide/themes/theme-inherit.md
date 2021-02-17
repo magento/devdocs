@@ -23,7 +23,7 @@ For comprehensive information about developing theme components, see subsequent 
 A parent theme is specified in the child theme `theme.xml` declaration file.
 
 Example:
-The Orange theme by SampleCompany inherits from the Magento Blank theme. The inheritance is declared in `app/design/frontend/SampleCompany/orange/theme.xml` as follows:
+The Orange theme by ExampleCorp inherits from the Magento Blank theme. The inheritance is declared in `app/design/frontend/ExampleCorp/orange/theme.xml` as follows:
 
 ```xml
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
