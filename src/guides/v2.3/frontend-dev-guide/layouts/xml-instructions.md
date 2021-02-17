@@ -331,7 +331,7 @@ There are examples of all argument types.
 -  The *object* type:
 
 ```xml
-<argument name="viewModel" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
+<argument name="view_model" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
 ```
 
 The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\Framework\View\Element\Block\ArgumentInterface` interface.
@@ -406,7 +406,7 @@ $someString = $block->getData('some_string'); //or $block->getSomeString()
 $isActive = $block->getData('is_active'); //or $block->getIsActive()
 
 /** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */
-$viewModel = $block->getData('viewModel'); //or $block->getViewModel()
+$viewModel = $block->getData('view_model'); //or $block->getViewModel()
 
 /** @var string|int|float $someNumber */
 $someNumber = $block->getData('some_number'); //or $block->getSomeNumber()

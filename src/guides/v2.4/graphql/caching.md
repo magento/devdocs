@@ -14,6 +14,7 @@ GraphQL allows you to make multiple queries in a single call. If you specify any
 
 Magento caches the following queries:
 
+*  `categories`
 *  `category` (deprecated)
 *  `categoryList`
 *  `cmsBlocks`
@@ -33,7 +34,7 @@ Magento explicitly disallows caching the following queries.
 *  `customerOrders`
 *  `customerPaymentTokens`
 *  `storeConfig`
-*  `wishlist`
+*  `wishlist` (deprecated)
 
 [Define the GraphQL schema for a module]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) describes the syntax of a valid query.
 
@@ -108,6 +109,25 @@ To enable GraphQL caching on Fastly:
 1. Upload the updated VCL code to the Fastly servers.
 
 [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) describes how to perform both of these tasks.
+
+By default, the Fastly module for Magento provides the following VCL configuration for GraphQL caching:
+
+```text
+if (req.request == "GET" && req.url.path ~ "/graphql" && req.url.qs ~ "query=") {
+....
+```
+
+Fastly will only cache GET requests that contain a query parameter in the request URL.
+
+### Example
+
+```text
+http://example.com/graphql?query={ products(filter: {sku: {eq: "Test"}}) { items { name } } }&variables={}
+....
+```
+
+{:.bs-callout-info}
+If you call GraphQL queries in the query body rather than the url (for example, as `--data-raw '{"query" .... }'`), the request is not cached.
 
 ## X-Magento-Vary
 

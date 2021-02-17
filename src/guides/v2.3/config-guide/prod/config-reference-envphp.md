@@ -112,7 +112,7 @@ You can learn more about it at [Encryption Key][encryption-key].
 
 ## db
 
-All database configurations are availble in this node.
+All database configurations are available in this node.
 
 ```conf
 'db' => [
@@ -181,7 +181,7 @@ Learn more about [Magento Modes][magento-modes].
 
 ## queue
 
-Message queue releated configurations are availble in this node.
+Message queue releated configurations are available in this node.
 
 ```conf
 'queue' => [

@@ -61,7 +61,8 @@ The following table lists the attributes you can use as input for the `createCus
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`date_of_birth` | String | The customer’s date of birth
+`allow_remote_shopping_assistance` | Boolean | Indicates whether the customer has enabled remote shopping assistance
+`date_of_birth` | String | The customer’s date of birth. In keeping with current security and privacy best practices, be sure you are aware of any potential legal and security risks associated with the storage of customers’ full date of birth (month, day, year) along with other personal identifiers, such as full name, before collecting or processing such data.
 `dob` | String | Deprecated. Use `date_of_birth` instead. The customer’s date of birth
 `email` | String! | The customer’s email address
 `firstname` | String! | The customer’s first name
