@@ -34,9 +34,8 @@ To optionally enter all commands on one line, enter the following assuming Magen
 cd /var/www/html/magento2 && find var generated vendor pub/static pub/media app/etc -type f -exec chmod u+w {} + && find var generated vendor pub/static pub/media app/etc -type d -exec chmod u+w {} + && chmod u+x bin/magento
 ```
 
-1. If you haven't done so already, get the Magento software in one of the following ways:
+1. If you have not done so already, get the Magento software in one of the following ways:
 
-   *  [Compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
    *  [Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
    *  [Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 

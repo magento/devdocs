@@ -356,13 +356,13 @@ In the admin area, this is implemented for [global search]({{ site.mage2bloburl 
 
 ## Set the template used by a block {#set_template}
 
-There are two ways to set the template for a block:
+There are three ways to set the template for a block:
 
 -  using the `template` attribute
 -  using the `<argument>` instruction
 -  using the `<action method="setTemplate">` instruction
 
-Both approaches are demonstrated in the following examples of changing the template of the page title block.
+Each approach is demonstrated in the following examples:
 
 **Example 1:** using the `template` attribute
 
@@ -510,7 +510,7 @@ Let us say that we want to add functionality to a core template with custom logi
 <body>
   <referenceBlock name="checkout.cart.item.renderers.default">
     <arguments>
-      <argument name="viewModel" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
+      <argument name="view_model" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
     </arguments>
   </referenceBlock>
 </body>
@@ -539,7 +539,7 @@ Then, in the `cart/item/default.phtml` file, use the viewModel:
 
 ```php
 /** @var \Vendor\CustomModule\ViewModel\Class $viewModel */
-$viewModel = $block->getData('viewModel');
+$viewModel = $block->getViewModel();
 
 $viewModel->canShowAdditionalData();
 ```
@@ -689,10 +689,14 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 <referenceBlock name="customer-account-navigation-return-history-link" remove="true"/>
 ```
 
-## Create cms-page/product/category-specific layouts
+## Create cms-page/product/category-specific selectable layouts
 
 As of Magento 2.3.4, merchants can select layout updates to be applied to specific Category/Product/CMS Page pages on the frontend. These layout
 updates are made by creating layout XML files following specific naming conventions.
+
+{:.bs-callout-info}
+Selectable layout updates can only be loaded from the global store theme and work only in the single website with single theme configurations.
+If a specific entity like `cms-page/product/category` has an individual theme applied in the design configuration tab, the selected theme will have priority over the selected layout update.
 
 For Categories:
 
