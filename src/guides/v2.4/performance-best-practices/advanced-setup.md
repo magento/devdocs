@@ -27,6 +27,12 @@ For example, if you are running a profile similar to B2B Medium, you can overrid
  {:.bs-callout-info}
 We have not enabled batching for the catalog rules indexer. Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time. In this case, editing your MySQL configuration file and allocating more memory to the TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration values (the default is 16M for both) will improve performance for this indexer, but will result in MySQL consuming more RAM.
 
+### Limit customer groups and shared catalogs by websites
+
+Big number of product SKUs, websites and customer groups or shared catalogs impacts indexation time of Product Price and Catalog Rule indexers because all websites are assigned to all customer groups (shared catalogs) by default. 
+
+To decrease indexation time it's possible to [exclude certain websites from customer groups (shared catalogs)]({{page.baseurl}}/extension-dev-guide/indexer-optimization.html#customer-group-limitations-by-websites).
+
 ## Set up Redis
 
 Sometimes one Redis instance is not enough to serve incoming requests. There are several solutions that we can recommend to address this situation.
