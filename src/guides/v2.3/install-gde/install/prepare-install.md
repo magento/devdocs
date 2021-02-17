@@ -58,10 +58,5 @@ If so, create [`auth.json`]({{ page.baseurl }}/install-gde/prereq/dev_install.ht
 
 {% include install/file-system-perms-before.md %}
 
-{:.ref-header}
-Related topics
-
-Install the Magento software:
-
-*  [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-*  [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+{:.bs-callout-info}
+Hooray! You've completed the contributor install. Need more advanced help? Check out our [Advanced install]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) guide.
