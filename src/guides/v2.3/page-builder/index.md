@@ -26,12 +26,11 @@ The following links provide quick access to our [Page Builder GitHub code exampl
 
 ## How-Tos (just a few)
 
--  [How to customize the Page Builder panel]({{ site.baseurl }}/page-builder/docs/how-to/how-to-customize-panel.html)
+-  [How to customize the Page Builder panel]({{ site.baseurl }}/page-builder/docs/customize/how-to-customize-panel.html)
 -  [How to add an image uploader]({{ site.baseurl }}/page-builder/docs/how-to/how-to-add-image-uploader.html)
 -  [How to add a storefront widget]({{ site.baseurl }}/page-builder/docs/how-to/how-to-add-storefront-widget.html)
--  [How to add a custom toolbar]({{ site.baseurl }}/page-builder/docs/how-to/how-to-add-custom-toolbar.html)
--  [How to add icons and images]({{ site.baseurl }}/page-builder/docs/how-to/how-to-add-icons-images.html)
--  [How to change breakpoints]({{ site.baseurl }}/page-builder/docs/how-to/how-to-change-breakpoints.html)
+-  [How to add a custom toolbar]({{ site.baseurl }}/page-builder/docs/customize/how-to-add-custom-toolbar.html)
+-  [How to add icons and images]({{ site.baseurl }}/page-builder/docs/customize/how-to-add-icons-images.html)
 
 ## Reference
 

@@ -74,7 +74,7 @@ To override parent styles (that is, override default Magento UI [library](https:
 
    It is important to remember that your `_theme.less` overrides the parent `_theme.less`.
 
-1. Copy all variables you need from the parent `_theme.less`, including those which will not be changed. For example if your theme inherits from Blank, the `_theme.less` you should copy from is located at `<Magento_Blank_theme_dir>/web/css/source/_theme.less`.
+1. Copy all variables you need from the parent `_theme.less`, including those which will not be changed. For example, if your theme inherits from Blank, the `_theme.less` you should copy from is located at `<Magento_Blank_theme_dir>/web/css/source/_theme.less`.
 1. Make the necessary changes.
 
 The drawback of this approach is that you need to monitor and manually update your files whenever the parent's `_theme.less` is updated.
