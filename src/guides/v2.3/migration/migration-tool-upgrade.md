@@ -25,7 +25,7 @@ Before upgrading the Data Migration Tool, you must:
 
 ### Upgrade your Magento software {#data-migrate-upgr-magento}
 
-If you haven't already done so, run the [System Upgrade utility]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html) to upgrade the Magento software.
+If you haven't already done so, [upgrade Magento]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html) to upgrade the Magento software.
 
 ### Back up the `vendor/magento/data-migration-tool` directory
 
