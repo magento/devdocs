@@ -146,8 +146,8 @@ To add an extending layout file:
 
 **Example:**
 
-SampleCo decided they should remove the "copyright" from the footer, defined in `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`
-To do this, they added an extending layout in `app/design/frontend/SampleCo/orange/Magento_Theme/layout/default.xml` :
+ExampleCorp decided they should remove the "copyright" from the footer, defined in `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`
+To do this, they added an extending layout in `app/design/frontend/ExampleCorp/orange/Magento_Theme/layout/default.xml` :
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
