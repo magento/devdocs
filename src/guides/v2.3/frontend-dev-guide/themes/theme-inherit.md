@@ -132,9 +132,9 @@ The layouts processing mechanism does not involve fallback. The system collects 
 
 1. Current theme layouts: `<theme_dir>/<Vendor>_<Module>/layout/`
 
-1. Ancestor themes layouts, starting from the most distant ancestor, recursively until a theme with no parent is reached: `<parent_theme_dir>/<Vendor>_<Module>/layout/`
+1. Ancestor theme layouts, starting from the most distant ancestor, recursively until a theme with no parent is reached: `<parent_theme_dir>/<Vendor>_<Module>/layout/`
 
-1. All modules layout files in sequence defined in app/etc/config.php respecting the component load order. For each module:
+1. All module layout files in sequence, defined in `app/etc/config.php` respecting the component load order. For each module:
     *  Layout files for the `base` area: `<module_dir>/view/base/layout/`
     *  Layout files for the `frontend` area: `<module_dir>/view/frontend/layout/`
 
