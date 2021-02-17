@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 02_access
 title: Installation dependencies not met
 menu_title: Installation dependencies not met

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 03_install
 title: Step 4. Customize your store
 menu_title: Step 4. Customize your store

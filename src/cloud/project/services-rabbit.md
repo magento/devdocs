@@ -20,7 +20,7 @@ If you prefer using an existing AMQP-based service, like RabbitMQ, instead of re
 {:.procedure}
 To enable RabbitMQ:
 
-1. Add the required name, type, and disk value (in MB) to the `.magento/services.yaml` file along with the the installed RabbitMQ version.
+1. Add the required name, type, and disk value (in MB) to the `.magento/services.yaml` file along with the installed RabbitMQ version.
 
    ```yaml
    rabbitmq:
@@ -125,7 +125,7 @@ For debugging purposes, it is useful to directly connect to a service instance i
    ssh -L 15672:localhost:15672 <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
    ```
 
-1. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber>` using the port number, username, and password information from the MAGENTO_CLOUD_RELATIONSHIP variable.
+1. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber>` using the port number, username, and password information from the MAGENTO_CLOUD_RELATIONSHIPS variable.
 
 ### Connect from the application {#cloud-rabbitmq-conn-cont}
 
