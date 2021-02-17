@@ -41,11 +41,11 @@ Consult the following table for getting started with installing {{site.data.var.
         <td><p>Contributing developer</p></td>
         <td><p>Contributes to the Magento codebase, files bugs, and customizes the Magento software. Highly technical, has their own Magento development server, understands Composer and GitHub.</p>
             <p>You <em>cannot</em> use Magento in a production environment.</p>
-      <p>You must upgrade using <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Composer and Git commands</a>.</p></td>
+      <p>You must upgrade using <a href="{{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html">Composer and Git commands</a>.</p></td>
         <td><ol><li>Clones the Magento 2 GitHub repository.</li>
             <li>Uses Composer to update package dependencies.</li>
             <li>Installs the Magento software using <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">command line</a>.</li>
-            <li>Upgrades the Magento software using <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Composer and Git commands</a>.</li>
+            <li>Upgrades the Magento software using <a href="{{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html">Composer and Git commands</a>.</li>
             <li>Customizes code under the <code>app/code</code> directory.</li></ol></td>
         <td><p><a href="{{ page.baseurl }}/install-gde/prereq/dev_install.html">Clone the Magento repository</a></p></td>
     </tr>

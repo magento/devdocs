@@ -20,7 +20,7 @@ Before you use these commands, you must [install the Magento software][].
 To update the Magento software:
 
 *  If you installed the software from an archive or if you used 'composer-create-project', see the [Upgrade Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
-*  If you are a contributing developer (that is, you used `git clone`), see [Contributing developers—update, reinstall Magento][].
+*  If you are a contributing developer (that is, you used `git clone`), see [Update the Magento application][].
 
 ## Reinstall the Magento software {#instgde-install-magento-reinstall}
 
@@ -63,7 +63,7 @@ The optional `--keep-generated` option should be used _only_ in limited circumst
 *  [Install the Magento software using the command line][]
 
 <!-- Link Definitions -->
-[Contributing developers—update, reinstall Magento]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html
+[Update the Magento application]: {{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html
 [install the Magento software]: {{ page.baseurl }}/install-gde/install/cli/install-cli-install.html
 [Common arguments]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common
 [Reinstall Magento Software]: {{ page.baseurl }}/install-gde/install/cli/dev_reinstall.html

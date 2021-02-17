@@ -82,4 +82,4 @@ Modify Magento's `composer.json` to reference the `https://repo.magento.com` rep
 
 If you installed the Magento software by cloning the Magento repository, you cannot use the System Upgrade utility to upgrade it.
 
-Instead, see one of the options discussed in [Contributing developers—update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
+Instead, see one of the options discussed in [Update the Magento application]({{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html).

@@ -1,13 +1,10 @@
 ---
-subgroup: W_continue
 title:
-menu_title: Next&mdash;Installation part 3, post-installation
-menu_node: parent
-menu_order: 1
 functional_areas:
   - Install
   - System
   - Setup
+redirect_from: /guides/v2.3/install-gde/continue-to-verify.html
 ---
 
 ## Now that you've finished your installation
