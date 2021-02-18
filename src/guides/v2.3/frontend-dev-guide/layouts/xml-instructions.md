@@ -61,7 +61,7 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | A fully-qualified class name, such as `Vendor\Module\Block\Class`. Defaults to `Magento\Framework\View\Element\Template`. | no |
-| `display` | Prevents a block from displaying (the associated PHP classes are still loaded). | `true` or `false` | no |
+| `display` | Prevents a block from displaying (the associated PHP classes are still loaded). | `true` or `false`. Defaults to `true`. | no |
 | `name` | Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code> | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive. | no |
 | `before` | Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-) | no |
 | `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-) | no |
@@ -225,6 +225,12 @@ Sets the declared block or container element as a child of another element in th
 | `as` | Alias name for the element in the new location. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `after` or `before` | Specifies the element's position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings. | Element name | no |
 
+Sample of usage in the page layout:
+
+```xml
+<move element="product.info.options.wrapper" destination="bundle.product.options.wrapper" before="-" />
+```
+
 ### remove {#fedg_layout_xml-instruc_ex_rmv}
 
 `<remove>` is used only to remove the static resources linked in a page `<head>` section.
@@ -256,6 +262,12 @@ Includes a certain layout file.
 
 The specified [handle] is "included" and executed recursively.
 
+Sample of usage in the page layout:
+
+```xml
+<update handle="customer_account"/>
+```
+
 ### argument {#argument}
 
  {:.bs-callout-info}
@@ -267,7 +279,7 @@ Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments)
 |:------- |:------ |:------ |:------ |
 | `name` | Argument name. | unique | yes |
 | `shared` | If false, creates a new instance of the block. | `false` | no |
-| `translate` | | `true` or `false` | no |
+| `translate` | Specify whether the string is translatable or not | `true` or `false` | no |
 | `xsi:type` | Argument type. | `string`, `boolean`, `object`, `number`, `null`, `array`, `options`, `url`, `helper` | yes |
 
 To pass multiple arguments use the following construction:
