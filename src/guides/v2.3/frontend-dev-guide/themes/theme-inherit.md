@@ -23,7 +23,7 @@ For comprehensive information about developing theme components, see subsequent 
 A parent theme is specified in the child theme `theme.xml` declaration file.
 
 Example:
-The Orange theme by SampleCompany inherits from the Magento Blank theme. The inheritance is declared in `app/design/frontend/SampleCompany/orange/theme.xml` as follows:
+The Orange theme by ExampleCorp inherits from the Magento Blank theme. The inheritance is declared in `app/design/frontend/ExampleCorp/orange/theme.xml` as follows:
 
 ```xml
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
@@ -129,13 +129,13 @@ You can find out what exactly code changes are required to perform this and othe
 
 The layouts processing mechanism does not involve fallback. The system collects [layout](https://glossary.magento.com/layout) files in the following order:
 
-1. All modules layout files in sequence defined in `app/etc/config.php` respecting the [component load order]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html). For each module:
-
-   *  Layout files for the `base` area: `<module_dir>/view/base/layout/`
-   *  Layout files for the `frontend` area: `<module_dir>/view/frontend/layout/`
-
-1. Ancestor theme layouts, starting from the most distant ancestor, recursively until a theme with no child is reached: `<parent_theme_dir>/<Vendor>_<Module>/layout/`
 1. Current theme layouts: `<theme_dir>/<Vendor>_<Module>/layout/`
+
+1. Ancestor theme layouts, starting from the most distant ancestor, recursively until a theme with no parent is reached: `<parent_theme_dir>/<Vendor>_<Module>/layout/`
+
+1. All module layout files in sequence, defined in `app/etc/config.php` respecting the component load order. For each module:
+    *  Layout files for the `base` area: `<module_dir>/view/base/layout/`
+    *  Layout files for the `frontend` area: `<module_dir>/view/frontend/layout/`
 
 Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme extending layout files.
 
@@ -145,13 +145,13 @@ To add an extending layout file:
 
 **Example:**
 
-SampleCompany decided they should remove the "Report bugs" link from the footer, defined in `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`
-To do this, they added an extending layout in `app/design/frontend/SampleCompany/orange/Magento_Theme/layout/default.xml` :
+ExampleCorp decided they should remove the "copyright" from the footer, defined in `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`
+To do this, they added an extending layout in `app/design/frontend/ExampleCorp/orange/Magento_Theme/layout/default.xml` :
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
     </body>
 </page>
 ```
