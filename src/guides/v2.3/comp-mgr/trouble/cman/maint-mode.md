@@ -1,10 +1,6 @@
 ---
 group: software-update-guide
-subgroup: 50_trouble
 title: Maintenance mode options for upgrade
-menu_title: Maintenance mode options for upgrade
-menu_node:
-menu_order: 200
 functional_areas:
   - Upgrade
 ---
@@ -97,7 +93,7 @@ To redirect traffic to a custom maintenance page:
    touch <web server docroot>/maintenance.enable
    ```
 
-1. [Upgrade your system]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
+1. [Upgrade your system]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
 1. Test your site to make sure it functions correctly.
 1. After the upgrade is done, delete `maintenance.enable`.
 
@@ -157,7 +153,7 @@ To redirect traffic to a custom maintenance page:
    service nginx reload
    ```
 
-1. [Upgrade your system]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
+1. [Upgrade your system]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
 1. Test your site to make sure it functions correctly.
 1. After the upgrade is done, delete or rename `maintenance.enable`
 1. Reload the nginx configuration:

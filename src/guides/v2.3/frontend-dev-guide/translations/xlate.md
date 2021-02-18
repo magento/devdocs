@@ -128,8 +128,8 @@ Magento enables you to create the following types of language packages:
       |__/frontend
         |__/<Vendor>
           |__/<theme>
-       |__/i18n
-         |-- pt_BR.csv
+            |__/i18n
+              |-- pt_BR.csv
    ```
 
 *  Language packages that contain a entire dictionary in one directory.
