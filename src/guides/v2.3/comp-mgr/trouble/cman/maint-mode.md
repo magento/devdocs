@@ -65,7 +65,7 @@ To redirect traffic to a custom maintenance page:
 1. Update your Apache configuration to do the following:
 
    *  Redirect all traffic to the maintenance page
-   *  Whitelist certain IPs so an administrator can run the System Upgrade utility to upgrade the Magento software.
+   *  Whitelist certain IPs so an administrator can upgrade the Magento software.
 
    The following example whitelists 192.0.2.110.
 

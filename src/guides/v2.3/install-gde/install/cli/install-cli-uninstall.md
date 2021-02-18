@@ -19,7 +19,7 @@ Before you use these commands, you must [install the Magento software][].
 
 To update the Magento software:
 
-*  If you installed the software from an archive or if you used 'composer-create-project', use the Component Manager or System Upgrade utilities.
+*  If you installed the software from an archive or if you used 'composer-create-project', see the [Upgrade Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
 *  If you are a contributing developer (that is, you used `git clone`), see [Update the Magento application][].
 
 ## Reinstall the Magento software {#instgde-install-magento-reinstall}
@@ -27,7 +27,7 @@ To update the Magento software:
 The way you reinstall the Magento application from the command line depends on your role:
 
 *  If you installed the software from an archive or if you used 'composer-create-project', see [Reinstall Magento Software][].
-*  If you're a contributing developer (that is, you started using `git clone`), see [Update the Magento application][].
+*  If you're a contributing developer (that is, you started using `git clone`), see [Reinstall Magento Software][].
 
 ## Uninstall the Magento software {#instgde-install-uninstall}
 
@@ -61,12 +61,10 @@ The optional `--keep-generated` option should be used _only_ in limited circumst
 ## Install the Magento software
 
 *  [Install the Magento software using the command line][]
-*  [Install the Magento software using the Setup Wizard][]
 
 <!-- Link Definitions -->
-[Update the Magennto application]: {{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html
+[Update the Magento application]: {{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html
 [install the Magento software]: {{ page.baseurl }}/install-gde/install/cli/install-cli-install.html
 [Common arguments]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common
 [Reinstall Magento Software]: {{ page.baseurl }}/install-gde/install/cli/dev_reinstall.html
-[Install the Magento software using the command line]: {{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento
-[Install the Magento software using the Setup Wizard]: {{ page.baseurl }}/install-gde/install/web/install-web.html
+[Install the Magento software using the command line]: {{ page.baseurl }}/install-gde/install/cli/install-cli.html

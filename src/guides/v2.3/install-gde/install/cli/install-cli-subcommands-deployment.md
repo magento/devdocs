@@ -1,9 +1,5 @@
 ---
-subgroup: 05_Command-line installation
 title: Create or update the deployment configuration
-menu_title: Create or update the deployment configuration
-menu_node:
-menu_order: 9
 functional_areas:
   - Install
   - System
@@ -57,7 +53,6 @@ The following table discusses the meanings of installation parameters and values
 If applicable, continue your Magento software installation:
 
 *  [Command line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)
-*  [Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
 {:.ref-header}
 Related topics
