@@ -203,16 +203,18 @@ To migrate a database:
 
 1. Create a database dump file in `gzip` format:
 
-   For Starter environments and Pro Integration environments:
-
-   ```bash
-   mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
-   ```
-
-   For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and username):
-
    ```bash
    mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
+   ```
+
+   For Starter environments and Pro Integration environments, use `main` as the name of the database.
+
+   For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and username).
+
+   If you have configured two-factor authentication it's better to exclude related tables to avoid reconfiguring it after database migration:
+
+   ```bash
+   mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction --triggers --ignore-table=tfa_user_config --ignore-table=tfa_country_codes <database name> | gzip - > /tmp/database.sql.gz
    ```
 
 1. Transfer the database dump to another remote environment with the `rsync` command:
