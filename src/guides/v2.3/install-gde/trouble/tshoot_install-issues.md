@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 20_other
 title: Known issues that affect installation
 menu_title: Known issues that affect installation

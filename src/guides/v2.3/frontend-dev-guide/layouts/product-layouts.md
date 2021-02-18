@@ -69,4 +69,4 @@ Layout file | Description
 `wishlist_index_configure_id_{id}.xml` | Layout from this file is applied to the specific product by `Entity ID` value. E.g. `wishlist_index_configure_id_45.xml`
 `wishlist_index_configure_sku_{sku}.xml` | Layout from this file is applied to the specific product by `SKU` value. E.g. `wishlist_index_configure_sku_24-WG080.xml`
 
-For setting a custom layout on specific category, product, and CMS pages, see [Common layout customization tasks]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#create-cms-pageproductcategory-specific-layouts).
+For setting a custom layout on specific category, product, and CMS pages, see [Common layout customization tasks]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#create-cms-pageproductcategory-specific-selectable-layouts).

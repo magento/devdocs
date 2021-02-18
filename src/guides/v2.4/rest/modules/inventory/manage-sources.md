@@ -57,6 +57,7 @@ Name | Description | Type | Requirements
 
 **In-Store Pickup functionality enhance Sources with next extension attributes:**
 Name | Description | Type | Requirements
+--- | --- | --- | ---
 `is_pickup_location_active` | Indicates whether a source can be used as a pickup location | Boolean | Optional
 `frontend_name` | The pickup location name. This value is used only on the Storefront. | String | Optional
 `frontend_description` | The pickup location description. It is used only on the Storefront. | String | Optional

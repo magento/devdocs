@@ -18,7 +18,7 @@ Plugins can not be used on following:
 *  Final classes
 *  Non-public methods
 *  Class methods (such as static methods)
-*  `__construct`
+*  `__construct` and `__destruct`
 *  Virtual types
 *  Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 
