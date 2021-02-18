@@ -211,7 +211,7 @@ To migrate a database:
 
    For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and username).
 
-   If you have configured two-factor authentication it's better to exclude related tables to avoid reconfiguring it after database migration:
+   If you have configured two-factor authentication on the target environment, it is better to exclude related 2FA tables to avoid reconfiguring it after database migration:
 
    ```bash
    mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction --triggers --ignore-table=tfa_user_config --ignore-table=tfa_country_codes <database name> | gzip - > /tmp/database.sql.gz
