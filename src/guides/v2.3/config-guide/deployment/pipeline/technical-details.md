@@ -112,6 +112,19 @@ On your development system:
 
 1. Add your modified code and the shared configuration to source control.
 
+1. For clear generated php code, static assets files while in development developers can use commands below.
+
+   ```bash
+      rm -r var/view_preprocessed/*
+      rm -r pub/static/*/*
+      rm -r generated/*/*
+   ```
+
+In developer mode after run above commands to clear assets, Magento will automatic generated files for use
+
+{:.bs-callout-warning}
+Be carefully with above approach when accidentally delete file .htaccess in folder generated or pub may cause breaks deploy process
+
 ### Build system
 
 The build system compiles code and generates static view files for themes registered in Magento. It doesn't need a connection to the Magento database; it needs only the Magento codebase.
@@ -122,6 +135,9 @@ On your build system:
 1. Use the `magento setup:di:compile` command to compile code.
 1. Use the `magento setup:static-content:deploy -f` command to update static file view files.
 1. Check the updates into source control.
+
+{:.bs-callout-info}
+For deploys static view files reference [here]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
 
 ### Production system
 
