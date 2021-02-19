@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Wizard
 title: Step 5. Create Admin Account
 menu_title: Step 5. Create Admin Account
