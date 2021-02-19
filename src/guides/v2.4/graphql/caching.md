@@ -14,6 +14,7 @@ GraphQL allows you to make multiple queries in a single call. If you specify any
 
 Magento caches the following queries:
 
+*  `categories`
 *  `category` (deprecated)
 *  `categoryList`
 *  `cmsBlocks`
@@ -33,7 +34,7 @@ Magento explicitly disallows caching the following queries.
 *  `customerOrders`
 *  `customerPaymentTokens`
 *  `storeConfig`
-*  `wishlist`
+*  `wishlist` (deprecated)
 
 [Define the GraphQL schema for a module]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) describes the syntax of a valid query.
 
@@ -109,6 +110,25 @@ To enable GraphQL caching on Fastly:
 
 [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) describes how to perform both of these tasks.
 
+By default, the Fastly module for Magento provides the following VCL configuration for GraphQL caching:
+
+```text
+if (req.request == "GET" && req.url.path ~ "/graphql" && req.url.qs ~ "query=") {
+....
+```
+
+Fastly will only cache GET requests that contain a query parameter in the request URL.
+
+### Example
+
+```text
+http://example.com/graphql?query={ products(filter: {sku: {eq: "Test"}}) { items { name } } }&variables={}
+....
+```
+
+{:.bs-callout-info}
+If you call GraphQL queries in the query body rather than the url (for example, as `--data-raw '{"query" .... }'`), the request is not cached.
+
 ## X-Magento-Vary
 
 The `X-Magento-Vary` cache cookie is not supported for GraphQL. The `Store` and `Content-Currency`  headers, along with the content language (which is deduced) determine the context.
@@ -126,6 +146,7 @@ Header | Description
 
 Magento invalidates the cache when any of the following events occur:
 
-*  When a change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
-*  When system configuration changes
-*  When an administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command
+*  A change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
+*  The `Preview-Version` header is specified in a query that supports caching.
+*  The system configuration changes.
+*  An administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command.

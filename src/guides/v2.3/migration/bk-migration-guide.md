@@ -21,8 +21,6 @@ We have developed the **Magento 2 Data Migration Tool** to help you efficiently 
 ### Extensions and custom code {#migrate-extensions-code}
 We have been working hard with the development community to help you use your Magento 1 extensions in Magento 2. Now we are proud to present the [Magento Marketplace](https://marketplace.magento.com/){:target="_blank"}, where you can download or purchase the latest versions of your favorite extensions.
 
-Also, we have developed the [Code Migration Toolkit](https://github.com/magento/code-migration){:target="_blank"}, which will help to port your extensions and custom code to Magento 2, significantly reducing your efforts.
-
 More information on developing extensions for Magento 2 is available in the [PHP Developer Guide]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html){:target="_blank"}.
 
 ### Themes and customizations {#migrate-themes-customizations}

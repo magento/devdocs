@@ -25,10 +25,11 @@ Magento has not implemented all possible customizable product options for GraphQ
 
 Attribute | Type | Description
 --- | --- | ---
-`option_id` | Int |  The ID assigned to the option
+`option_id` | Int |  Deprecated. Use `uid` instead. The ID assigned to the option
 `required` | Boolean | Indicates whether the option is required
 `sort_order` | Int | The order in which the option is displayed
 `title` |  String | The display name for this option
+`uid` | ID! | The unique identifier for the `CustomizableOptionInterface` object
 
 ## CustomizableAreaOption object
 
@@ -49,7 +50,7 @@ Attribute | Type | Description
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price assigned to this option
 `sku` | String | The Stock Keeping Unit for this option
-`uid` | ID! | A string that encodes option details
+`uid` | ID! | The unique ID for a `CustomizableAreaValue` object
 
 ## CustomizableCheckboxOption object
 
@@ -91,7 +92,7 @@ Attribute | Type | Description
 `price` | Float | The price assigned to this option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `sku` | String | The Stock Keeping Unit for this option
-`uid` | ID! | A string that encodes option details
+`uid` | ID! | The unique ID for a `CustomizableDateValue` object
 
 ## CustomizableDropDownOption object
 
@@ -113,7 +114,7 @@ Attribute | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option
-`uid` | ID! | A string that encodes option details
+`uid` | ID! | The unique ID for a `CustomizableDropDownValue` object
 
 ## CustomizableFieldOption object
 
@@ -134,7 +135,7 @@ Attribute | Type | Description
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price of the custom value
 `sku` | String | The Stock Keeping Unit for this option
-`uid` | ID! | A string that encodes option details
+`uid` | ID! | The unique ID for a `CustomizableFieldValue` object
 
 ## CustomizableFileOption object
 
@@ -163,7 +164,7 @@ Attribute | Type | Description
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price assigned to this option
 `sku` | String | The Stock Keeping Unit for this option
-`uid` | ID! | A string that encodes option details
+`uid` | ID! | The unique ID for a `CustomizableFileValue` object
 
 ## CustomizableMultipleOption object
 
@@ -185,7 +186,7 @@ Attribute | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option
-`uid` | ID! | A string that encodes option details
+`uid` | ID! | The unique ID for a `CustomizableMultipleValue` object
 
 ## CustomizableRadioOption object
 
@@ -206,8 +207,8 @@ Attribute | Type | Description
 `price` | Float | The price assigned to this option
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
-`title` | String | The display name for this option## CustomizableRadioOption object
-`uid` | ID! | A string that encodes option details
+`title` | String | The display name for this option
+`uid` | ID! | The unique ID for a `CustomizableRadioValue` object
 
 `CustomizableRadioOption` contains information about a set of radio buttons that are defined as part of a customizable option.
 
@@ -225,7 +226,7 @@ The following query returns information about the customizable options configure
 {
   products(filter: {sku: {eq: "xyz"}}) {
     items {
-      id
+      uid
       name
       sku
       __typename
@@ -234,7 +235,7 @@ The following query returns information about the customizable options configure
           title
           required
           sort_order
-          option_id
+          uid
         }
       }
     }
@@ -250,7 +251,7 @@ The following query returns information about the customizable options configure
     "products": {
       "items": [
         {
-          "id": 1,
+          "uid": "Mw==",
           "name": "T-shirt",
           "sku": "xyz",
           "__typename": "SimpleProduct",
@@ -259,7 +260,7 @@ The following query returns information about the customizable options configure
               "title": "Image",
               "required": false,
               "sort_order": 1,
-              "option_id": 1
+              "uid": "Mx=="
             }
           ]
         }
