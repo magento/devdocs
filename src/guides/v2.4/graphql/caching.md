@@ -146,6 +146,7 @@ Header | Description
 
 Magento invalidates the cache when any of the following events occur:
 
-*  When a change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
-*  When system configuration changes
-*  When an administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command
+*  A change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
+*  The `Preview-Version` header is specified in a query that supports caching.
+*  The system configuration changes.
+*  An administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command.
