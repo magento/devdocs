@@ -71,7 +71,7 @@ If module context is not defined for a file:
 
 If module context is defined for a file:
 
-1. Current theme module static files `<theme_dir>/<Namespace>_<Module>/web/`.Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
+1. Current theme module static files `<theme_dir>/<Namespace>_<Module>/web/`.Example: `app/design/frontend/SampleCompany/orange/Magento_Catalog/web/`
 1. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
 
    *  `<parent_theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
