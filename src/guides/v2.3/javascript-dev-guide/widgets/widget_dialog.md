@@ -200,10 +200,10 @@ The following example shows a PHTML file using the script and custom CSS classes
 ```html
 <div class="dropdown-wrap">
     <button class="dropdown-button">
-        <span><?= $block->escapeHtml(__('Dropdown open button')) ?></span>
+        <span><?= $escaper->escapeHtml(__('Dropdown open button')) ?></span>
     </button>
     <div id="dropdown-dialog" data-role="dropdownDialog">
-        <?= $block->escapeHtml(__('Dropdown content')) ?>
+        <?= $escaper->escapeHtml(__('Dropdown content')) ?>
     </div>
 </div>
 
