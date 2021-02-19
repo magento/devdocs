@@ -173,4 +173,4 @@ To remove the Github integration:
    magento-cloud integration:delete <project-ID>
    ```
 
-Also, you can remove the Github integration by logging in to your Github account and revoking the OAuth grant on the account _Settings_ page.
+Also, you can remove the Github integration by logging in to your Github account and removing the web hook in the _Webhooks_ tab of the repository _Settings_.
