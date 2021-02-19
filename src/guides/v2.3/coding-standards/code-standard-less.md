@@ -726,7 +726,7 @@ Component name must meaningful. It can contain the `primary`, `secondary`, `tert
 
 For [mixin](https://glossary.magento.com/mixin) naming apply the class naming rules.
 
-For mixins grouping use the double underscore "__" prefix.
+For mixins grouping use the double underscore "__" prefix
 
 **Example:**
 
@@ -739,6 +739,86 @@ For mixins grouping use the double underscore "__" prefix.
     ...
 }
 ```
+
+Here are common situations when different elements use a similar set of CSS properties
+
+In a .css file, it was necessary to copy such properties for each element. In a .less file, it can be done by reusing the CSS rule – using mixins.
+
+For example, Many elements on the page will have similar animation. For this, you can create an .animation-1 class with a set of animation properties:
+
+```css
+.animation-1 {
+    transition: 300ms ease-in-out;
+    -moz-transition: 300ms ease-in-out;
+    -webkit-transition: 300ms ease-in-out;
+    -o-transition: 300ms ease-in-out;
+}
+```
+
+And then apply this mixin in places where it is necessary:
+
+```css
+.example-1 {
+   .animation-1();
+   width: 100%;
+}
+```
+
+As a result, after compiling the .less file into a .css file, the .example-1 element will have the following:
+
+```css
+.animation-1 {
+   transition: 300ms ease-in-out;
+   -moz-transition: 300ms ease-in-out;
+   -webkit-transition: 300ms ease-in-out;
+   -o-transition: 300ms ease-in-out;
+}
+.example-1 {
+   transition: 300ms ease-in-out;
+   -moz-transition: 300ms ease-in-out;
+   -webkit-transition: 300ms ease-in-out;
+   -o-transition: 300ms ease-in-out;
+   width: 100%;
+}
+```
+
+### Mixins with parameters
+
+There are also mixins with parameters. Calling these mixins, we pass them parameter values. Creating such mixin, we recommend setting parameter values by default (since there might occur problems when calling the mixin without specifying the parameter value). Let’s make a mixin with parameters from the example above and see how to call it:
+
+```css
+.animation-1 (
+    @animation-speed: 300ms,
+    @animation-type: ease-in-out
+) {
+    transition: @animation-speed @animation-type;
+    -moz-transition: @animation-speed @animation-type;
+    -webkit-transition: @animation-speed @animation-type;
+    -o-transition: @animation-speed @animation-type;
+}
+.example-1 {
+    .animation-1(
+        @animation-speed: 1500ms
+    );
+}
+```
+
+Mixin parameters are set in parentheses (there can be one or several parameters) with default values (default values are set after a colon).
+
+Calling a mixin in parentheses, we indicate the value of those mixin parameters that will differ from the default values. If we didn’t specify any parameters adding a mixin as – .animation-1, the mixin would be added with standard parameter values.
+
+As a result, after compiling the .less file into a .css file, the .example-1 element will have the following:
+
+```css
+.example-1 {
+   transition: 1500ms ease-in-out;
+   -moz-transition: 1500ms ease-in-out;
+   -webkit-transition: 1500ms ease-in-out;
+   -o-transition: 1500ms ease-in-out;
+}
+```
+
+Magento has an agreement to name mixin parameters with @_ instead of @. So, the @animation-speed parameter from the example above would be named as @animation-speed.
 
 ## Extends
 
