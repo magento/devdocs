@@ -10,4 +10,3 @@ functional_areas:
 redirect_to: https://support.magento.com/hc/en-us/articles/360033546411
 ---
 
-{% include install/trouble/rc_php-version.md %}

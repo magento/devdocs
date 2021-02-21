@@ -29,7 +29,7 @@ Magento Marketplace requires more than one component to be packaged as a *metapa
 
 A metapackage requires or suggests components that we refer to as *shared packages*. You can use a shared package in multiple metapackages if you wish. (If you use shared packages, Marketplace requires that *all* components in a metapackage be shared packages.)
 
-For example, you might want to list two metapackages in the Magento Marketplace---a standard package and a premium package. All of the standard package components could be shared packages used by the premium package. Among other things, this enables merchants to easily upgrade from your standard package to your premium package using the <a href="#gloss-compman">Magento Component Manager</a>.
+For example, you might want to list two metapackages in the Magento Marketplace---a standard package and a premium package. All of the standard package components could be shared packages used by the premium package.
 
 Merchants do not need to understand that, under the covers, some packages are shared.
 
@@ -41,15 +41,3 @@ Related topics
 
 *  [metapackages]({{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage)
 *  [component types in `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
-
-### Component Manager {#gloss-compman}
-
-Merchants use the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) (part of the Magento Admin) to do any of the following:
-
-*  Install, uninstall
-*  Update
-*  Enable, disable
-
-If you package and upload your components as discussed in this guide and in the <em>Marketplace User Guide</em>, merchants can easily update your components after you publish them.
-
-For details, see [Install extensions]({{ site.baseurl }}/extensions/install/).

@@ -16,7 +16,7 @@ To run cron in a web browser, see [Secure cron.php to run in a browser]({{ page.
 
 This section discusses how to create or remove your Magento crontab (that is, the configuration for Magento cron jobs).
 
-{% include config/setup-cron_2.2_about.md %}
+{% include config/setup-cron_about.md %}
 
 {% include config/setup-cron_2.3_how-to.md %}
 
