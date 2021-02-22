@@ -19,9 +19,7 @@ If you expect a store's load to change, you can manually increase the number of 
 
 ### PHP
 
-Magento 2 has differing PHP memory requirements, based on how your system is deployed.  In general, if you are setting up a single server store and plan on using the web setup wizard, we recommend configuring PHP memory for 2G.  If you are setting up a site using pipeline deployment, we recommend 2 GB on your build server and 1 GB on your web nodes.
-
-{% include install/web/deprecated.md %}
+Magento 2 has differing PHP memory requirements, based on how your system is deployed.  In general, if you are setting up a single server store, we recommend configuring PHP memory for 2G.  If you are setting up a site using pipeline deployment, we recommend 2 GB on your build server and 1 GB on your web nodes.
 
 Scenarios and expected PHP memory requirements:
 
@@ -29,7 +27,6 @@ Scenarios and expected PHP memory requirements:
 *  Webnode serving admin pages with a large catalog: 1 GB
 *  Magento 2 cron indexing a site with a large catalog: >256 MB (See [advanced-setup]({{ page.baseurl }}/performance-best-practices/advanced-setup.html) to tune for optimal performance.)
 *  Magento 2 compile and deploy of static assets: 756 MB
-*  Magento 2 using the web setup wizard to install or upgrade a store with several 3rd party extensions: 2 GB
 *  Magento 2 performance toolkit profile generation: >1 GB PHP RAM, >16 MB MySQL TMP_TABLE_SIZE & MAX_HEAP_TABLE_SIZE settings
 
 ### MySQL

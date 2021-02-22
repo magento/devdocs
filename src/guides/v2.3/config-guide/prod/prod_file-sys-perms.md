@@ -19,7 +19,7 @@ The sections that follow discuss requirements for one or two Magento file system
 
    Instead, you have separate users:
 
-   *  The web server user, which runs the Magento Admin (including Setup Wizard) and storefront.
+   *  The web server user, which runs the Magento Admin and storefront.
 
    *  A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
@@ -105,7 +105,7 @@ To make files and directories writable so you can update components and upgrade 
 <p id="mage-owner-two"></p>{% collapsibleh2 Production file system ownership for private hosting (two users) %}
 If you use your own server (including a hosting provider's private server setup), there are two users:
 
-*  The web server user, which runs the Magento Admin (including the Setup Wizard) and storefront.
+*  The web server user, which runs the Magento Admin and storefront.
 
    Linux systems typically do not provide a shell for this user; you cannot log in to the Magento server as, or switch to, the web server user.
 

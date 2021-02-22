@@ -101,11 +101,11 @@ This adds an IE conditional comment in the generated HTML, like in the following
 
 ```html
 <!--[if IE 9]>
-<link rel="stylesheet" type="text/css" media="all" href="<your_store_web_address>/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<your_store_web_address>/pub/static/frontend/ExampleCorp/orange/en_US/css/ie-9.css" />
 <![endif]-->
 ```
 
-In this example, `orange` is a custom theme created by the OrangeCo vendor.
+In this example, `orange` is a custom theme created by the ExampleCorp vendor.
 
 ## Remove static resources (JavaScript, CSS, fonts) {#layout_markup_css_remove}
 
@@ -356,13 +356,13 @@ In the admin area, this is implemented for [global search]({{ site.mage2bloburl 
 
 ## Set the template used by a block {#set_template}
 
-There are two ways to set the template for a block:
+There are three ways to set the template for a block:
 
 -  using the `template` attribute
 -  using the `<argument>` instruction
 -  using the `<action method="setTemplate">` instruction
 
-Both approaches are demonstrated in the following examples of changing the template of the page title block.
+Each approach is demonstrated in the following examples:
 
 **Example 1:** using the `template` attribute
 
@@ -482,7 +482,7 @@ In the Magento Blank theme these elements are located as follows:
 ![]({{site.baseurl}}/common/images/layout_image1.png)
 
 Place the stock availability and SKU blocks after product price block on a product page, and move the review block out of the product-info-price container.
-To do this, add the extending `catalog_product_view.xml` in the `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/` directory:
+To do this, add the extending `catalog_product_view.xml` in the `app/design/frontend/ExampleCorp/orange/Magento_Catalog/layout/` directory:
 
 ```xml
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -560,17 +560,17 @@ Here is an example of how a css class can be added to `<body>` tag on product vi
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Catalog\Helper\Product\View">
         <plugin name="add_custom_body_class_to_product_page"
-                type="OrangeCompany\Learning\Plugin\AddBodyClassToProductPagePlugin"/>
+                type="ExampleCorp\Learning\Plugin\AddBodyClassToProductPagePlugin"/>
     </type>
 </config>
 ```
 
-> `OrangeCompany/Learning/Plugin/AddBodyClassToProductPagePlugin.php`
+> `ExampleCorp/Learning/Plugin/AddBodyClassToProductPagePlugin.php`
 
 ```php
 <?php
 
-namespace OrangeCompany\Learning\Plugin;
+namespace ExampleCorp\Learning\Plugin;
 
 use Magento\Catalog\Helper\Product\View as ProductViewHelper;
 use Magento\Framework\View\Result\Page;
@@ -689,10 +689,14 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 <referenceBlock name="customer-account-navigation-return-history-link" remove="true"/>
 ```
 
-## Create cms-page/product/category-specific layouts
+## Create cms-page/product/category-specific selectable layouts
 
 As of Magento 2.3.4, merchants can select layout updates to be applied to specific Category/Product/CMS Page pages on the frontend. These layout
 updates are made by creating layout XML files following specific naming conventions.
+
+{:.bs-callout-info}
+Selectable layout updates can only be loaded from the global store theme and work only in the single website with single theme configurations.
+If a specific entity like `cms-page/product/category` has an individual theme applied in the design configuration tab, the selected theme will have priority over the selected layout update.
 
 For Categories:
 

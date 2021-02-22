@@ -43,10 +43,10 @@ In the Blank theme, the buttons of the `.action.primary` class, so called *prima
 
 ![The default view of a product page, with the orange Add to Cart button]
 
-OrangeCo wants to change the color of the primary buttons to orange. To achieve this, they do the following:
+ExampleCorp wants to change the color of the primary buttons to orange. To achieve this, they do the following:
 
 1. Create a new Orange theme, which inherits from the Blank [theme](https://glossary.magento.com/theme).
-1. In the Orange theme directory add the overriding `app/design/frontend/OrangeCo/orange/web/css/source/_theme.less` file with the following code:
+1. In the Orange theme directory add the overriding `app/design/frontend/ExampleCorp/orange/web/css/source/_theme.less` file with the following code:
 
    ```less
    //  Primary button
@@ -58,7 +58,7 @@ OrangeCo wants to change the color of the primary buttons to orange. To achieve 
    @button-primary__hover__border: 1px solid @color-orange-red2;
    ```
 
-When OrangeCo [applies their theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the primary buttons will look like on the following image:
+When ExampleCorp [applies their theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the primary buttons will look like on the following image:
 
 ![The customized view of a product page, with the grey Add to Cart button]
 

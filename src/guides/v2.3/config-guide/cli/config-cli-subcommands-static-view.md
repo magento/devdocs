@@ -346,11 +346,7 @@ ERROR: You need to install the Magento application before running this utility.
 
 Use the following steps:
 
-1. Install the Magento software in any of the following ways:
-
-   -  [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-   -  [Setup wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
-
+1. Install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
 1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the Magento file system owner.
 1. Delete the contents of `<magento_root>/pub/static` directory, except for the `.htaccess` file. Do not delete this file.
 1. [Run the static view files deployment tool](#config-cli-subcommands-staticview).
