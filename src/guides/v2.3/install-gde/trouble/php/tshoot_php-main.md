@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 10_php
 title: PHP errors
 menu_title: PHP errors

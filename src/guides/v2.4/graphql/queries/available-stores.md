@@ -3,14 +3,15 @@ group: graphql
 title: availableStores query
 ---
 
-The `availableStores` query returns configuration information about all store views that have the same parent website. Use this query to implement a store switcher.
+The `availableStores` query returns configuration information about multiple store views. Use this query to implement a store switcher.
 
-{:.bs-callout-tip}
-Specify the [Store header]({{ page.baseurl }}/graphql/send-request.html) to determine the scope of the call.
+If the `useCurrentGroup` input argument is set to `true`, then the `availableStores` query returns configuration information about store views that have the same parent _store_. If the input argument is not specified or is set to `false`, the query returns values for all store views with the same parent _website_.
+
+Specify the [Store header]({{ page.baseurl }}/graphql/send-request.html) to determine the scope of the call. Without this header, the query returns values for the default store view and other store views with the same parent _store_.
 
 ## Syntax
 
-`availableStores: [StoreConfig]`
+`availableStores(useCurrentGroup: Boolean): [StoreConfig]`
 
 ## Example usage
 
@@ -19,10 +20,12 @@ The following query returns information about the store's basic catalog configur
 
 ```graphql
 query {
-  availableStores {
-    id
-    code
-    website_id
+  availableStores(useCurrentGroup: true) {
+    store_code
+    store_name
+    is_default_store
+    store_group_code
+    is_default_store_group
     locale
     base_currency_code
     default_display_currency_code
@@ -36,7 +39,6 @@ query {
     secure_base_link_url
     secure_base_static_url
     secure_base_media_url
-    store_name
   }
 }
 ```
@@ -48,9 +50,11 @@ query {
   "data": {
     "availableStores": [
       {
-        "id": 1,
-        "code": "default",
-        "website_id": 1,
+        "store_code": "default",
+        "store_name": "Default Store View",
+        "is_default_store": true,
+        "store_group_code": "main_website_store",
+        "is_default_store_group": true,
         "locale": "en_US",
         "base_currency_code": "USD",
         "default_display_currency_code": "USD",
@@ -63,13 +67,14 @@ query {
         "secure_base_url": "http://example.com/",
         "secure_base_link_url": "http://example.com/",
         "secure_base_static_url": "http://example.com/pub/static/version1606976517/",
-        "secure_base_media_url": "http://example.com/pub/media/",
-        "store_name": "Default Store View"
+        "secure_base_media_url": "http://example.com/pub/media/"
       },
       {
-        "id": 2,
-        "code": "de",
-        "website_id": 1,
+        "store_code": "de",
+        "store_name": "Europe Store View",
+        "is_default_store": false,
+        "store_group_code": "main_website_store",
+        "is_default_store_group": true,
         "locale": "de_DE",
         "base_currency_code": "USD",
         "default_display_currency_code": "EUR",
@@ -82,13 +87,18 @@ query {
         "secure_base_url": "http://example.com/",
         "secure_base_link_url": "http://example.com/",
         "secure_base_static_url": "http://example.com/pub/static/version1606976517/",
-        "secure_base_media_url": "http://example.com/pub/media/",
-        "store_name": "Europe Store View"
+        "secure_base_media_url": "http://example.com/pub/media/"
       }
     ]
   }
 }
 ```
+
+## Input attributes
+
+Attribute | Data type | Description
+--- | --- | ---
+`useCurrentGroup` | Boolean | Filter store views by current store group
 
 ## Output attributes
 

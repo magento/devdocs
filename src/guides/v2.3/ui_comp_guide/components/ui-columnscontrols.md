@@ -23,24 +23,49 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 *  [`app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js)
 *  [`app/code/Magento/Ui/view/base/web/templates/grid/controls/columns.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/controls/columns.html)
 
-## Examples
+## Example
 
-### Add ColumnsControls component to Listing basic component
+### Changing "minVisible" and "maxVisible" values in the javascript file.
 
-```xml
-<listing>
-    ...
-    <listingToolbar>
-        ...
-         <columnsControls name="columns_controls">
-            <settings>
-                <minVisible>1</minVisible>
-                <maxVisible>3</maxVisible>
-            </settings>
-         </columnsControls>
-    </listingToolbar>
-    ...
-</listing>
+To change attribute values, override the vendor JS file in a custom module:
+
+`/vendor/magento/module-ui/view/base/web/js/grid/controls/columns.js`
+
+#### Step one: override the javascript file
+
+In `/app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/requirejs-config.js`, add the following:
+
+```javascript
+var config = {
+    map: {
+        '*': {
+            'Magento_Ui/js/grid/controls/columns':'VENDOR_NAME_MODULE_NAME/js/grid/controls/columns'
+        }
+    }
+}
+```
+
+#### Step two: set the custom values
+
+In `/app/code/[VENDOR_NAME]/[MODULE_NAME]/view/base/web/js/grid/controls/columns.js`, change the "minVisible" and "maxVisible" values as needed:
+
+```js
+return Collection.extend({
+        defaults: {
+            template: 'ui/grid/controls/columns',
+            minVisible: 1,
+            maxVisible: 4,
+            viewportSize: 18,
+            displayArea: 'dataGridActions',
+            columnsProvider: 'ns = ${ $.ns }, componentType = columns',
+            imports: {
+                addColumns: '${ $.columnsProvider }:elems'
+            },
+            templates: {
+                headerMsg: $t('${ $.visible } out of ${ $.total } visible')
+            }
+        }
+    });
 ```
 
 #### Result

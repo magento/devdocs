@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-Now that you're using the `default.vcl` generated for you by Magento, you can perform some final verifications to make sure Varnish is working.
+Now that you are using the `default.vcl` generated for you by Magento, you can perform some final verifications to make sure Varnish is working.
 
 ### Verify HTTP response headers {#config-varnish-final-verify-headers}
 

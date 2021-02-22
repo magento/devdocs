@@ -32,10 +32,10 @@ The following query returns information about virtual product.
     items {
       sku
       __typename
-      id
+      uid
       name
       categories {
-        id
+        uid
         name
         path
       }
@@ -69,13 +69,13 @@ The following query returns information about virtual product.
         {
           "sku": "test-virtual-product",
           "__typename": "VirtualProduct",
-          "id": 2047,
-          "name": "Test Virtual Product",
+          "uid": "MjA1MA==",
+          "name": "test-virtual-product",
           "categories": [
             {
-              "id": 37,
+              "uid": "Mzg=",
               "name": "Sale",
-              "path": "1/2/37"
+              "path": "1/2/38"
             }
           ],
           "price_range": {
