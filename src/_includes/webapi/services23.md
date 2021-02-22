@@ -81,15 +81,15 @@ bundleProductOptionTypeListV1
 ```http
 catalogAttributeSetManagementV1
 catalogAttributeSetRepositoryV1
-catalogBasePriceStorageV1 *
+catalogBasePriceStorageV1
 catalogCategoryAttributeOptionManagementV1
 catalogCategoryAttributeRepositoryV1
 catalogCategoryLinkManagementV1
 catalogCategoryLinkRepositoryV1
-catalogCategoryListV1 *
+catalogCategoryListV1
 catalogCategoryManagementV1
 catalogCategoryRepositoryV1
-catalogCostStorageV1 *
+catalogCostStorageV1
 catalogProductAttributeGroupRepositoryV1
 catalogProductAttributeManagementV1
 catalogProductAttributeMediaGalleryManagementV1
@@ -102,13 +102,13 @@ catalogProductLinkManagementV1
 catalogProductLinkRepositoryV1
 catalogProductLinkTypeListV1
 catalogProductMediaAttributeManagementV1
-catalogProductRenderListV1 *
+catalogProductRenderListV1
 catalogProductRepositoryV1
 catalogProductTierPriceManagementV1
 catalogProductTypeListV1
 catalogProductWebsiteLinkRepositoryV1
-catalogSpecialPriceStorageV1 *
-catalogTierPriceStorageV1 *
+catalogSpecialPriceStorageV1
+catalogTierPriceStorageV1
 ```
 
 ### CatalogInventory
