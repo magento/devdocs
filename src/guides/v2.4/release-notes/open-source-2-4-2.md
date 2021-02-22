@@ -33,7 +33,7 @@ This release includes over 35 security fixes and platform security improvements.
 
 #### Over 35 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb21-08.html) for a discussion of these fixed issues.
 
 #### Additional security enhancements
 
@@ -100,13 +100,11 @@ This release of PWA Studio includes:
 
 *  Internationalization and localization. Venia now provides support for multiple languages and currencies.
 
-*  Support for multiple stores.
+*  Improved extensibility framework to support code changes through extensions.
 
-*  Enhanced extensibility.
+*  Initial components for My Account related features such as Wishlist, Saved Payments, Address Book, and Order History.
 
-*  Performance optimizations. Client-side performance has been enhanced with Google Lighthouse.
-
-*  Introduction of My Account for Venia. This introduction of My Account features including order history (details), address book, and saved payments.
+*  Various performance optimizations and bug fixes.
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 

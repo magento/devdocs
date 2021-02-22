@@ -33,7 +33,7 @@ This release includes over 35 security fixes and platform security improvements.
 
 #### Over 35 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb21-08.html) for a discussion of these fixed issues.
 
 #### Additional security enhancements
 
@@ -80,7 +80,7 @@ This release adds GraphQL coverage for the following features:
 
 *  Added support for the following B2B features:
    *  Companies. You can add company [administrators]({{page.baseurl}}/graphql/mutations/create-company.html), [users]({{page.baseurl}}/graphql/mutations/create-company-user.html), [roles]({{page.baseurl}}/graphql/mutations/create-company-role.html), and [teams]({{page.baseurl}}/graphql/mutations/create-company-team.html). <!--- MC-33861-->
-   *  Company credit. The [company query]({{page.baseurl}}/graphql/queries/company.html) includes details about the company's credit history. The `ConfigurableOptionsSelectionMetadata` and `ConfigurableOptionAvailableForSelection` data types have been added to the schema to provide this functionality.<!--- MC-33862-->
+   *  Company credit. The [company query]({{page.baseurl}}/graphql/queries/company.html) includes details about the company's credit history. <!--- MC-33862-->
    *  Requisition lists. You can [create]({{page.baseurl}}/graphql/mutations/create-requisition-list.html), [delete]({{ page.baseurl }}/graphql/mutations/delete-requisition-list.html), and [update]({{page.baseurl}}/graphql/mutations/update-requisition-list.html) requisition lists. Support also includes the ability to [add]({{page.baseurl}}/graphql/mutations/add-products-to-requisition-list.html), [update]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html), [delete]({{page.baseurl}}/graphql/mutations/delete-requisition-list-items.html), [copy]({{page.baseurl}}/graphql/mutations/copy-items-between-requisition-lists.html), and [move]({{page.baseurl}}/graphql/mutations/move-items-between-requisition-lists.html) items within a requisition list as well as add requisition list items [into the cart]({{page.baseurl}}/graphql/mutations/add-requisition-list-items-to-cart.html). <!--- MC-34312-->
 
 *  Added support for unions in Magento GraphQL. [GitHub-29425](https://github.com/magento/magento2/issues/29425) <!-- ENGCOM-8291 -->
@@ -129,13 +129,11 @@ This release of PWA Studio includes:
 
 *  Internationalization and localization. Venia now provides support for multiple languages and currencies.
 
-*  Support for multiple stores.
+*  Improved extensibility framework to support code changes through extensions.
 
-*  Enhanced extensibility.
+*  Initial components for My Account related features such as Wishlist, Saved Payments, Address Book, and Order History.
 
-*  Performance optimizations. Client-side performance has been enhanced with Google Lighthouse.
-
-*  Introduction of My Account for Venia. This introduction of My Account features including order history (details), address book, and saved payments.
+*  Various performance optimizations and bug fixes.
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 
