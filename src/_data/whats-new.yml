@@ -4,8 +4,24 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Feb 15 15:38:38 2021
+updated: Mon Feb 22 15:44:42 2021
 entries:
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.16 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: February 18, 2021
+  link: https://github.com/magento/devdocs/pull/8706
+  contributor: Rykh
+  profile: https://github.com/Rykh
+- description: New documentation on extending Page Builder content types and more
+    documentation about Page Builder appearances.
+  versions: 2.4.2, 2.4.x
+  type: Major Update
+  date: February 17, 2021
+  link: https://github.com/magento/devdocs/pull/8702
+  contributor: bdenham
+  profile: https://github.com/bdenham
 - description: Updated the example in the [ColumnsControl component](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/components/ui-columnscontrols.html)
     topic.
   versions: 2.3.x, 2.4.x
