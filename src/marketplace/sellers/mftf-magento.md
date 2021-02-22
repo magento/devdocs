@@ -47,8 +47,8 @@ The Magento test infrastructure will execute Magento supplied MFTF tests in the 
 -  Tests must be in the correct directory structure to be identified and executed
 -  Within your extension, there must be a `Test` directory. This directory must contain an `Mftf` directory
 -  MFTF within this directory should follow the standard directory structure, separating ActionGroups, Tests, Pages, Sections etc into their own directories
--  Give that tests will be executed with Magento MFTF tests available for merging etc, please ensure that they will operate as expected in this configuration e.g. Ensure that test names do not clash with existing Magento tests
--  Ensure that if you are extending from, or merging into, an existing Magento test (or relying upon it's entities), that it is required as a composer prerequisite
+-  Given that tests will be executed with Magento MFTF tests available for merging etc, please ensure that they will operate as expected in this configuration e.g. Ensure that test names do not clash with existing Magento tests
+-  Ensure that if you are extending from, or merging into, an existing Magento test (or relying upon its entities), that it is required as a composer prerequisite
 -  Remember that MFTF tests will be part of the final package that is made available to your customers
 -  Do not include any sensitive or confidential data in test comments or code
 -  If necessary, include a README or other instructions, within the `Test` directory, to explain any setup steps or caveats on running your MFTF tests
