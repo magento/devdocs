@@ -130,7 +130,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `add_wishlist_items_to_cart_user_errors` | [[WishlistCartUserInputError!](#WishlistCartUserInputError)] | Indicates why the attempt to add items to the wish list was not successful
 `status` | Boolean! | Indicates whether the attempt to add items to the cart was successful
-`wishlist` | [Wishlist!](#Wishlist) | Contains the wish list with all items that were successfully added
+`wishlist` | [Wishlist!](#Wishlist) | The wish list after moving items to the cart
 
 ### Wishlist attributes {#Wishlist}
 
