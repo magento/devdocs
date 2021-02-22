@@ -12,23 +12,27 @@ pages:
     url: /page-builder/docs/getting-started/install-pagebuilder.html
     versionless: true
 
-  - label: View Page Builder
-    url: /page-builder/docs/getting-started/view-pagebuilder.html
-    versionless: true
-
   - label: Install Page Builder Examples
     url: /page-builder/docs/getting-started/install-pagebuilder-examples.html
+    versionless: true
+
+  - label: View Page Builder
+    url: /page-builder/docs/getting-started/view-pagebuilder.html
     versionless: true
 
 - label: 'Configure Page Builder'
   versionless: true
   children:
-  - label: Upgrade content types
-    url: /page-builder/docs/configure-pagebuilder/upgrade-content-types.html
-    versionless: true
-
   - label: Configure the panel
     url: /page-builder/docs/configure-pagebuilder/configure-panel.html
+    versionless: true
+
+  - label: Deactivate Page Builder
+    url: /page-builder/docs/configure-pagebuilder/deactivate-pagebuilder.html
+    versionless: true
+
+  - label: Upgrade content types
+    url: /page-builder/docs/configure-pagebuilder/upgrade-content-types.html
     versionless: true
 
   - label: Use full-width layouts
@@ -37,10 +41,6 @@ pages:
 
   - label: Use Page Builder for product attributes
     url: /page-builder/docs/configure-pagebuilder/use-pagebuilder-for-product-attributes.html
-    versionless: true
-
-  - label: Deactivate Page Builder
-    url: /page-builder/docs/configure-pagebuilder/deactivate-pagebuilder.html
     versionless: true
 
 - label: 'Extend content types'
@@ -150,12 +150,16 @@ pages:
 - label: 'Customize content types'
   versionless: true
   children:
-  - label: Add custom toolbar
-    url: /page-builder/docs/customize-content-types/add-custom-toolbar.html
+  - label: Add additional data
+    url: /page-builder/docs/customize-content-types/add-additional-data.html
     versionless: true
 
-  - label: Add visual selector
-    url: /page-builder/docs/customize-content-types/add-visual-selector.html
+  - label: Add block chooser
+    url: /page-builder/docs/customize-content-types/add-block-chooser.html
+    versionless: true
+
+  - label: Add custom toolbar
+    url: /page-builder/docs/customize-content-types/add-custom-toolbar.html
     versionless: true
 
   - label: Add icons and images
@@ -174,12 +178,8 @@ pages:
     url: /page-builder/docs/customize-content-types/add-text-editor.html
     versionless: true
 
-  - label: Add block chooser
-    url: /page-builder/docs/customize-content-types/add-block-chooser.html
-    versionless: true
-
-  - label: Add additional data
-    url: /page-builder/docs/customize-content-types/add-additional-data.html
+  - label: Add visual selector
+    url: /page-builder/docs/customize-content-types/add-visual-selector.html
     versionless: true
 
   - label: Apply product conditions
