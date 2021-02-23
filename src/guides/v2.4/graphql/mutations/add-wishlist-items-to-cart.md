@@ -145,7 +145,7 @@ Attribute |  Data Type | Description
 `code` | [WishlistCartUserInputErrorType!](#WishlistCartUserInputErrorType) | An error code that describes the error encountered.
 `message` | String! | A localized error message
 
-### WishlistCartUserInputErrorType! {#WishlistCartUserInputErrorType!}
+### WishlistCartUserInputErrorType! {#WishlistCartUserInputErrorType}
 
 Type | Description
 --- | ---
