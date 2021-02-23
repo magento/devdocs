@@ -131,7 +131,7 @@ To launch the Docker environment in developer mode:
 <!--Link definitions-->
 
 [{{site.data.var.mcd-prod}} Docker image]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
-[installation steps]: {{site.baseurl}}/docker/docker-installation.html
+[installation steps]: {{site.baseurl}}/cloud/docker/docker-installation.html
 [dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [latest release of the {{site.data.var.mcd-package}}]: https://github.com/magento/magento-cloud-docker/releases
 [magento-creds]: {{site.baseurl}}/cloud/setup/first-time-setup-import-prepare.html#auth-json

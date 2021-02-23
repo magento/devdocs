@@ -12,7 +12,7 @@ redirect_from:
 {{site.data.var.mcd-prod}} uses Docker Compose to build and deploy Magento to a multi-container Docker application. You can generate the Docker Compose configuration to build and deploy Docker from the following sources:
 
 -  [{{site.data.var.ece}} project configuration files] for Cloud projects
--  [Unified configuration](.magento.docker.yml) for on-premises projects
+-  [Unified configuration] for on-premises projects
 -  [CLI configuration] using `ece-docker build:compose` command options
 -  [Custom Docker Compose configuration file] supports Magento installation for both Cloud and on-premises projects
 
