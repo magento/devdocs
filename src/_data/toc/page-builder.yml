@@ -1,249 +1,263 @@
 label: Page Builder
 versionless: true
 pages:
+
 - label: What is Page Builder?
   url: /page-builder/docs/
   versionless: true
 
-- label: 'Getting started'
-  versionless: true
-  children:
-  - label: Install Page Builder
-    url: /page-builder/docs/getting-started/install-pagebuilder.html
-    versionless: true
-
-  - label: Install Page Builder Examples
-    url: /page-builder/docs/getting-started/install-pagebuilder-examples.html
-    versionless: true
-
-  - label: View Page Builder
-    url: /page-builder/docs/getting-started/view-pagebuilder.html
-    versionless: true
-
-- label: 'Configure Page Builder'
-  versionless: true
-  children:
-  - label: Configure the panel
-    url: /page-builder/docs/configure-pagebuilder/configure-panel.html
-    versionless: true
-
-  - label: Deactivate Page Builder
-    url: /page-builder/docs/configure-pagebuilder/deactivate-pagebuilder.html
-    versionless: true
-
-  - label: Upgrade content types
-    url: /page-builder/docs/configure-pagebuilder/upgrade-content-types.html
-    versionless: true
-
-  - label: Use full-width layouts
-    url: /page-builder/docs/configure-pagebuilder/add-full-width-layouts.html
-    versionless: true
-
-  - label: Use Page Builder for product attributes
-    url: /page-builder/docs/configure-pagebuilder/use-pagebuilder-for-product-attributes.html
-    versionless: true
-
-- label: 'Extend content types'
-  versionless: true
-  children:
-  - label: Introduction
-    url: /page-builder/docs/extend-content-types/introduction.html
-    versionless: true
-
-  - label: Extend appearances
-    url: /page-builder/docs/extend-content-types/extend-appearances.html
-    versionless: true
-
-  - label: Extend more appearances
-    url: /page-builder/docs/extend-content-types/extend-more-appearances.html
-    versionless: true
-
-  - label: Add appearances
-    url: /page-builder/docs/extend-content-types/add-appearances.html
-    versionless: true
-
-- label: 'Create content types'
-  versionless: true
-  children:
-  - label: Introduction
-    url: /page-builder/docs/create-content-types/introduction.html
-    versionless: true
-
-  - label: Add configuration
-    url: /page-builder/docs/create-content-types/add-configuration.html
-    versionless: true
-
-  - label: Add templates
-    url: /page-builder/docs/create-content-types/add-templates.html
-    versionless: true
-
-  - label: Add components
-    url: /page-builder/docs/create-content-types/add-components.html
-    versionless: true
-
-  - label: Add a form
-    url: /page-builder/docs/create-content-types/add-form.html
-    versionless: true
-
-  - label: Add styles
-    url: /page-builder/docs/create-content-types/add-styles.html
-    versionless: true
-
-  - label: Add an icon
-    url: /page-builder/docs/create-content-types/add-icon.html
-    versionless: true
-
-  - label: Workflow tips
-    url: /page-builder/docs/create-content-types/workflow-tips.html
-    versionless: true
-
-- label: 'Style content types'
-  versionless: true
-  children:
-  - label: How Page Builder styles content
-    url: /page-builder/docs/style-content-types/how-pagebuilder-styles-content.html
-    versionless: true
-
-  - label: Override Page Builder styles
-    url: /page-builder/docs/style-content-types/override-pagebuilder-styles.html
-    versionless: true
-
-  - label: Use Themes to override styles
-    url: /page-builder/docs/style-content-types/use-themes-to-override-styles.html
-    versionless: true
-
-  - label: Use Modules to override styles
-    url: /page-builder/docs/style-content-types/use-modules-to-override-styles.html
-    versionless: true
-
-  - label: Use HTML Code to override styles
-    url: /page-builder/docs/style-content-types/use-htmlcode-to-override-styles.html
-    versionless: true
-
-# - label: 'Add responsive layouts'
-#   versionless: true
-#   children:
-#   - label: Introduction to viewports and breakpoints
-#     url: /page-builder/docs/add-responsive-layouts/introduction.html
-#     versionless: true
-
-#   - label: Responsive configuration
-#     url: /page-builder/docs/add-responsive-layouts/responsive-configurations.html
-#     versionless: true
-
-#   - label: Add viewports to stage
-#     url: /page-builder/docs/add-responsive-layouts/add-viewports.html
-#     versionless: true
-
-#   - label: Use viewports in forms
-#     url: /page-builder/docs/add-responsive-layouts/use-viewports.html
-#     versionless: true
-
-#   - label: Use breakpoints in widgets
-#     url: /page-builder/docs/add-responsive-layouts/use-breakpoints.html
-#     versionless: true
-
-#   - label: Change breakpoints
-#     url: /page-builder/docs/add-responsive-layouts/change-breakpoints.html
-#     versionless: true
-
-- label: 'Customize content types'
-  versionless: true
-  children:
-  - label: Add additional data
-    url: /page-builder/docs/customize-content-types/add-additional-data.html
-    versionless: true
-
-  - label: Add block chooser
-    url: /page-builder/docs/customize-content-types/add-block-chooser.html
-    versionless: true
-
-  - label: Add custom toolbar
-    url: /page-builder/docs/customize-content-types/add-custom-toolbar.html
-    versionless: true
-
-  - label: Add icons and images
-    url: /page-builder/docs/customize-content-types/add-icons-images.html
-    versionless: true
-
-  - label: Add image uploader
-    url: /page-builder/docs/customize-content-types/add-image-uploader.html
-    versionless: true
-
-  - label: Add storefront widget
-    url: /page-builder/docs/customize-content-types/add-storefront-widget.html
-    versionless: true
-
-  - label: Add text editor
-    url: /page-builder/docs/customize-content-types/add-text-editor.html
-    versionless: true
-
-  - label: Add visual selector
-    url: /page-builder/docs/customize-content-types/add-visual-selector.html
-    versionless: true
-
-  - label: Apply product conditions
-    url: /page-builder/docs/customize-content-types/apply-product-conditions.html
-    versionless: true
-
-  - label: Render server-side preview
-    url: /page-builder/docs/customize-content-types/render-server-side-preview.html
-    versionless: true
-
-  # - label: Create container content types
-  #   url: /page-builder/docs/customize-content-types/create-container-content-type.html
-  #   versionless: true
-
-- label: BlueFoot content migration
-  versionless: true
-  children:
-  - label: Overview of content migration
-    url: /page-builder-migration/docs/
-    versionless: true
-
-  - label: Install the migration module
-    url: /page-builder-migration/docs/install-migration-module.html
-    versionless: true
-
-  - label: Run the migration module
-    url: /page-builder-migration/docs/run-migration-module.html
-    versionless: true
-
-  - label: How content migration works
-    url: /page-builder-migration/docs/how-content-migration-works.html
-    versionless: true
-
-  - label: Migrate content from custom blocks
-    url: /page-builder-migration/docs/migrate-content-custom-blocks.html
-    versionless: true
-
-  - label: Migrate other BlueFoot content
-    url: /page-builder-migration/docs/migrate-other-bluefoot-content.html
-    versionless: true
-
-- label: Reference
-  versionless: true
-  children:
-  - label: Architecture
-    url: /page-builder/docs/reference/architecture.html
-    versionless: true
-
-  - label: Configurations
-    url: /page-builder/docs/reference/configurations.html
-    versionless: true
-
-  - label: Datastore
-    url: /page-builder/docs/reference/data-store.html
-    versionless: true
-
-  - label: Events
-    url: /page-builder/docs/reference/events.html
-    versionless: true
-
-  - label: Knockout bindings
-    url: /page-builder/docs/reference/knockout-bindings.html
-    versionless: true
-
 - label: Release notes
   url: /page-builder/docs/release-notes.html
+  versionless: true
+
+- label: Example code
+  url: /page-builder/docs/getting-started/install-pagebuilder-examples.html
+  versionless: true
+
+- label: 'Content types'
+  versionless: true
+  children:
+
+    - label: 'Create'
+      versionless: true
+      children:
+
+        - label: Introduction
+          url: /page-builder/docs/create-content-types/introduction.html
+          versionless: true
+
+        - label: Add configuration
+          url: /page-builder/docs/create-content-types/add-configuration.html
+          versionless: true
+
+        - label: Add templates
+          url: /page-builder/docs/create-content-types/add-templates.html
+          versionless: true
+
+        - label: Add components
+          url: /page-builder/docs/create-content-types/add-components.html
+          versionless: true
+
+        - label: Add a form
+          url: /page-builder/docs/create-content-types/add-form.html
+          versionless: true
+
+        - label: Add styles
+          url: /page-builder/docs/create-content-types/add-styles.html
+          versionless: true
+
+        - label: Add an icon
+          url: /page-builder/docs/create-content-types/add-icon.html
+          versionless: true
+
+        - label: Workflow tips
+          url: /page-builder/docs/create-content-types/workflow-tips.html
+          versionless: true
+
+    - label: 'Customize'
+      versionless: true
+      children:
+
+        - label: Add additional data
+          url: /page-builder/docs/customize-content-types/add-additional-data.html
+          versionless: true
+
+        - label: Add block chooser
+          url: /page-builder/docs/customize-content-types/add-block-chooser.html
+          versionless: true
+
+        - label: Add custom toolbar
+          url: /page-builder/docs/customize-content-types/add-custom-toolbar.html
+          versionless: true
+
+        - label: Add icons and images
+          url: /page-builder/docs/customize-content-types/add-icons-images.html
+          versionless: true
+
+        - label: Add image uploader
+          url: /page-builder/docs/customize-content-types/add-image-uploader.html
+          versionless: true
+
+        - label: Add storefront widget
+          url: /page-builder/docs/customize-content-types/add-storefront-widget.html
+          versionless: true
+
+        - label: Add text editor
+          url: /page-builder/docs/customize-content-types/add-text-editor.html
+          versionless: true
+
+        - label: Add visual selector
+          url: /page-builder/docs/customize-content-types/add-visual-selector.html
+          versionless: true
+
+        - label: Apply product conditions
+          url: /page-builder/docs/customize-content-types/apply-product-conditions.html
+          versionless: true
+
+        - label: Configure the panel
+          url: /page-builder/docs/configure-pagebuilder/configure-panel.html
+          versionless: true
+
+        - label: Render server-side preview
+          url: /page-builder/docs/customize-content-types/render-server-side-preview.html
+          versionless: true
+
+    - label: 'Extend'
+      versionless: true
+      children:
+
+        - label: Introduction
+          url: /page-builder/docs/extend-content-types/introduction.html
+          versionless: true
+
+        - label: Extend appearances
+          url: /page-builder/docs/extend-content-types/extend-appearances.html
+          versionless: true
+
+        - label: Extend more appearances
+          url: /page-builder/docs/extend-content-types/extend-more-appearances.html
+          versionless: true
+
+        - label: Add appearances
+          url: /page-builder/docs/extend-content-types/add-appearances.html
+          versionless: true
+
+    # - label: Container content types
+    #   url: /page-builder/docs/customize-content-types/create-container-content-type.html
+    #   versionless: true
+
+    - label: 'Style'
+      versionless: true
+      children:
+
+        - label: Introduction
+          url: /page-builder/docs/style-content-types/how-pagebuilder-styles-content.html
+          versionless: true
+
+        - label: Override styles
+          url: /page-builder/docs/style-content-types/override-pagebuilder-styles.html
+          versionless: true
+
+        - label: Use Themes
+          url: /page-builder/docs/style-content-types/use-themes-to-override-styles.html
+          versionless: true
+
+        - label: Use Modules
+          url: /page-builder/docs/style-content-types/use-modules-to-override-styles.html
+          versionless: true
+
+        - label: Use HTML Code
+          url: /page-builder/docs/style-content-types/use-htmlcode-to-override-styles.html
+          versionless: true
+
+    - label: 'Responsive'
+      versionless: true
+      children:
+
+      - label: Introduction
+        url: /page-builder/docs/control-layout/introduction.html
+        versionless: true
+
+      # - label: Configure layouts
+      #   url: /page-builder/docs/control-layout/configurations.html
+      #   versionless: true
+
+      # - label: Use media queries
+      #   url: /page-builder/docs/control-layout/configurations.html
+      #   versionless: true
+
+      - label: Add viewports
+        url: /page-builder/docs/control-layout/add-viewports.html
+        versionless: true
+
+      # - label: Use viewports
+      #   url: /page-builder/docs/control-layout/use-viewports.html
+      #   versionless: true
+
+      - label: Add breakpoints
+        url: /page-builder/docs/control-layout/add-viewports.html
+        versionless: true
+
+      - label: Use breakpoints
+        url: /page-builder/docs/control-layout/use-breakpoints.html
+        versionless: true
+
+      - label: Change breakpoints and viewports
+        url: /page-builder/docs/control-layout/change-breakpoints-viewports.html
+        versionless: true
+
+- label: Architecture
+  versionless: true
+  children:
+
+    - label: Overview
+      url: /page-builder/docs/reference/architecture.html
+      versionless: true
+
+    - label: Configurations
+      url: /page-builder/docs/reference/configurations.html
+      versionless: true
+
+    - label: Datastore
+      url: /page-builder/docs/reference/data-store.html
+      versionless: true
+
+    - label: Events
+      url: /page-builder/docs/reference/events.html
+      versionless: true
+
+    - label: Knockout bindings
+      url: /page-builder/docs/reference/knockout-bindings.html
+      versionless: true
+
+- label: 'Administration'
+  versionless: true
+  children:
+
+    - label: Deactivate Page Builder
+      url: /page-builder/docs/configure-pagebuilder/deactivate-pagebuilder.html
+      versionless: true
+
+    - label: Upgrade content types
+      url: /page-builder/docs/configure-pagebuilder/upgrade-content-types.html
+      versionless: true
+
+    - label: Use full-width layouts
+      url: /page-builder/docs/configure-pagebuilder/add-full-width-layouts.html
+      versionless: true
+
+    - label: Use for product attributes
+      url: /page-builder/docs/configure-pagebuilder/use-pagebuilder-for-product-attributes.html
+      versionless: true
+
+- label: BlueFoot migration
+  versionless: true
+  children:
+
+    - label: Overview of content migration
+      url: /page-builder-migration/docs/
+      versionless: true
+
+    - label: Install the migration module
+      url: /page-builder-migration/docs/install-migration-module.html
+      versionless: true
+
+    - label: Run the migration module
+      url: /page-builder-migration/docs/run-migration-module.html
+      versionless: true
+
+    - label: How content migration works
+      url: /page-builder-migration/docs/how-content-migration-works.html
+      versionless: true
+
+    - label: Migrate content from custom blocks
+      url: /page-builder-migration/docs/migrate-content-custom-blocks.html
+      versionless: true
+
+    - label: Migrate other BlueFoot content
+      url: /page-builder-migration/docs/migrate-other-bluefoot-content.html
+      versionless: true
+
+- label: Contributors
+  url: /page-builder/docs/getting-started/install-pagebuilder.html
   versionless: true
