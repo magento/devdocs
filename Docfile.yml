@@ -18,5 +18,5 @@ content_map:
 -
   directory: src/page-builder
   repository: magento/magento2-page-builder-docs
-  branch: file-reorg
+  branch: master
   filter: true
