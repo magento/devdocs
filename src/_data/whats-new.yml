@@ -640,7 +640,7 @@ entries:
     the Docker host name for the Xdebug container when running Magento Cloud Docker
     on Linux.<br/>-  Added instructions for updating the [Elasticsearch plugin configuration](/cloud/docker/docker-containers-service.html#elasticsearch-plugins)
     in a Magento Cloud Docker environment.<br/>- Added instructions for [building
-    a custom `docker-compose.yaml` file](https://devdocs.magento.com/cloud/docker/docker-quick-reference.html#build-a-custom-docker-compose-configuration).
+    a custom `docker-compose.yaml` file](https://devdocs.magento.com/cloud/docker/docker-config-sources.html#build-a-custom-docker-compose-configuration).
   versions: 2.4.x
   type: Major Update
   date: November 9, 2020
