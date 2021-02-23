@@ -44,7 +44,7 @@ pages:
               include_versions: ["2.4"]
 
             - label: Customer REST endpoints
-              url: https://magento.redoc.ly/2.4.1-customer/
+              url: https://magento.redoc.ly/2.4.2-customer/
               include_versions: ["2.4"]
 
             - label: Guest REST endpoints
