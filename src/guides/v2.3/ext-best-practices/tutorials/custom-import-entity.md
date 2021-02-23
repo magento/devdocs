@@ -29,7 +29,7 @@ Declare the new import entity:
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_ImportExport:etc/import.xsd">
-    <entity name="learning" label="Learning Courses Import" model="OrangeCompany\Learning\Model\Import\Courses"
+    <entity name="learning" label="Learning Courses Import" model="ExampleCorp\Learning\Model\Import\Courses"
             behaviorModel="Magento\ImportExport\Model\Source\Import\Behavior\Basic" />
 </config>
 ```
@@ -54,12 +54,12 @@ As we extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:t
 -  `getEntityTypeCode` - EAV entity type code getter
 -  `validateRow` - Validating the row
 
-> `OrangeCompany/Learning/Model/Import/Courses.php`
+> `ExampleCorp/Learning/Model/Import/Courses.php`
 
 {% collapsible File content for Courses.php %}
 
 ```php
-namespace OrangeCompany\Learning\Model\Import;
+namespace ExampleCorp\Learning\Model\Import;
 
 use Exception;
 use Magento\Framework\App\ResourceConnection;
@@ -426,7 +426,7 @@ The validation rules will be checking for a required **name** and a greater than
 
 To add the ability to download a sample csv file for our new entity, create the following file:
 
-``OrangeCompany/Learning/Files/Sample/learning.csv``
+``ExampleCorp/Learning/Files/Sample/learning.csv``
 
 With the following content:
 
@@ -449,7 +449,7 @@ Next, register the sample file for our entity.
     <type name="Magento\ImportExport\Model\Import\SampleFileProvider">
         <arguments>
             <argument name="samples" xsi:type="array">
-                <item name="learning" xsi:type="string">OrangeCompany_Learning</item>
+                <item name="learning" xsi:type="string">ExampleCorp_Learning</item>
             </argument>
         </arguments>
     </type>

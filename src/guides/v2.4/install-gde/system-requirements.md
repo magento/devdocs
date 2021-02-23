@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Magento 2.4 system requirements
 functional_areas:
   - Install
@@ -9,7 +8,7 @@ redirect_from:
   - /guides/v2.4/install-gde/system-requirements-tech.html
 ---
 
-{:.bs-calloout-info}
+{:.bs-callout-info}
 If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/services.html#service-versions) in the _Cloud Guide_.
 
 ## Operating systems (Linux x86-64)
@@ -29,7 +28,8 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 [Composer][] is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
 
-Magento does not support Composer 2.x.
+*  Magento 2.4.2 and later is compatible with Composer 1.x and 2.x.
+*  Magento 2.4.1 and earlier is compatible with Composer 1.x only.
 
 ## Web servers
 
@@ -77,7 +77,9 @@ For more information, see [Required PHP settings][].
 
 ## Elasticsearch
 
-As of Magento 2.4.0, MySQL is no longer used for search. You must use [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html). Magento is tested with Elasticsearch 7.6.x. You can use other versions at your discretion, but we recommend using the tested version of Elasticsearch.
+As of Magento 2.4.0, MySQL is no longer used for search. You must use [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
+For Magento 2.4.2, it is recommended to use Elasticsearch 7.9.x.
+Magento 2.4.x is compatible with Elasticsearch 7.4 and above.
 
 {:.bs-callout-warning}
 Magento no longer supports Elasticsearch [2.x, 5.x, and 6.x][].
@@ -86,7 +88,7 @@ Magento no longer supports Elasticsearch [2.x, 5.x, and 6.x][].
 
 *  A valid [security certificate][] is required for HTTPS.
 *  Self-signed SSL certificates are not supported.
-*  Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.2 or later:
+*  Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.2 or later.
 
 ### Required system dependencies
 
@@ -108,8 +110,8 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ## Technologies Magento can use
 
-*  [Redis][] version 5.0 is recommended and used in testing for page caching and session storage
-*  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.x (tested with 6.3.1)
+*  [Redis][] version 6.x is recommended for Magento 2.4.2. Magento 2.4.x is compatible with Redis 5.
+*  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.4. Magento 2.4.x is compatible with Varnish 6.x.
 
 *  RabbitMQ 3.8.x
 
