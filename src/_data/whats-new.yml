@@ -2042,7 +2042,7 @@ entries:
   date: April 16, 2020
   link: https://github.com/magento/devdocs/pull/7024
 - description: 'New Page Builder topic on how to configure three different options
-    for styling elements in your content types: [Add more appearances](https://devdocs.magento.com/page-builder/docs/extend-content-types/extend-more-appearances.html).'
+    for styling elements in your content types: [Add more appearances](https://devdocs.magento.com/page-builder/docs/content-types/extend/extend-more-appearances.html).'
   versions: 2.3.x
   type: New Topic
   date: April 15, 2020
