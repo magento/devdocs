@@ -18,34 +18,6 @@ pages:
   versionless: true
   children:
 
-    - label: 'Control layouts'
-      versionless: true
-      children:
-
-      - label: Introduction
-        url: /page-builder/docs/control-layouts/introduction.html
-        versionless: true
-
-      - label: Configurations
-        url: /page-builder/docs/control-layouts/configurations.html
-        versionless: true
-
-      - label: Add viewports
-        url: /page-builder/docs/control-layouts/add-viewports.html
-        versionless: true
-
-      - label: Use viewports
-        url: /page-builder/docs/control-layouts/use-viewports.html
-        versionless: true
-
-      - label: Change breakpoints
-        url: /page-builder/docs/control-layouts/change-breakpoints.html
-        versionless: true
-
-      - label: Use breakpoints
-        url: /page-builder/docs/control-layouts/use-breakpoints.html
-        versionless: true
-
     - label: 'Create'
       versionless: true
       children:
@@ -177,6 +149,42 @@ pages:
         - label: Use HTML Code
           url: /page-builder/docs/style-content-types/use-htmlcode-to-override-styles.html
           versionless: true
+
+    - label: 'Responsive'
+      versionless: true
+      children:
+
+      - label: Introduction
+        url: /page-builder/docs/control-layout/introduction.html
+        versionless: true
+
+      # - label: Configure layouts
+      #   url: /page-builder/docs/control-layout/configurations.html
+      #   versionless: true
+
+      # - label: Use media queries
+      #   url: /page-builder/docs/control-layout/configurations.html
+      #   versionless: true
+
+      - label: Add viewports
+        url: /page-builder/docs/control-layout/add-viewports.html
+        versionless: true
+
+      # - label: Use viewports
+      #   url: /page-builder/docs/control-layout/use-viewports.html
+      #   versionless: true
+
+      - label: Add breakpoints
+        url: /page-builder/docs/control-layout/add-viewports.html
+        versionless: true
+
+      - label: Use breakpoints
+        url: /page-builder/docs/control-layout/use-breakpoints.html
+        versionless: true
+
+      - label: Change breakpoints and viewports
+        url: /page-builder/docs/control-layout/change-breakpoints-viewports.html
+        versionless: true
 
 - label: Architecture
   versionless: true
