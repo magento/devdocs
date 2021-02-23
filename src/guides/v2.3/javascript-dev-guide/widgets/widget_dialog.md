@@ -198,6 +198,10 @@ This example uses some CSS classes that are used for minicart.
 The following example shows a PHTML file using the script and custom CSS classes that are not styled:
 
 ```html
+<?php
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+
 <div class="dropdown-wrap">
     <button class="dropdown-button">
         <span><?= $escaper->escapeHtml(__('Dropdown open button')) ?></span>
