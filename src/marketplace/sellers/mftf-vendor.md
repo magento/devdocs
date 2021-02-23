@@ -11,7 +11,7 @@ For information on how to setup, create and modify MFTF tests, see [MFTF Devdocs
 
 ## What testing is for
 
-To ensure that Extension submissions perform the expected behavior for a user, MFTF tests are used to describe and confirm the functionality expected via browser-based testing against an operational Magento instance.
+To ensure that extension submissions perform the expected behavior for a user, MFTF tests are used to describe and confirm the functionality expected via browser-based testing against an operational Magento instance.
 
 MFTF runs tests in a browser, using Selenium and Codeception, to emulate user behavior. MFTF tests are designed to be extensible and be used in conjunction with Magento developed MFTF code coverage. This allows vendor supplied extension MFTF tests to describe the behavior of the extension and to integrate with existing suites of MFTF coverage, leveraging reusable tests elements and modifying existing test flows as necessary.
 
@@ -56,5 +56,5 @@ The Allure results returned to Marketplace can be downloaded and displayed as an
 -  Remember that MFTF tests will be part of the final package that is made available to your customers
 -  Do not include any sensitive or confidential data in test comments or code
 -  If necessary, include a README, or other instructions, within the `Test` directory, to explain any setup steps or caveats on running your MFTF tests
--  Ensure that any necessary credentials, user authorization (e.g. to communicate via API key to your backend) is explained and supported via Credential management in Tests
+-  Ensure that any necessary credentials, user authorization (e.g. to communicate via API key to your backend) is explained and supported via credential management in tests
 -  Always follow the [MFTF Best Practices](https://devdocs.magento.com/mftf/docs/best-practices.html) and use the [MFTF Tips & Tricks](https://devdocs.magento.com/mftf/docs/tips-tricks.html).
