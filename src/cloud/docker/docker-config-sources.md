@@ -16,7 +16,7 @@ You can create the Docker Compose configuration to build and deploy the Docker c
 -  [CLI configuration](#cli-configuration) using `ece-docker build:compose` command options
 -  [Custom Docker Compose configuration file](#build-a-custom-docker-compose-configuration) supports Magento installation for both Cloud and on-premises projects
 
-{:bs-callout-info}
+{:.bs-callout-info}
 When you build the Docker Compose configuration file, the `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save customizations for the Docker Compose configuration in a `docker-compose.override.yml` file.  If the `docker-compose.override.yml` file is present, then the override configuration merges with the base configuration. See [Override configuration].
 
 ## Magento Commerce Cloud configuration
@@ -24,15 +24,15 @@ When you build the Docker Compose configuration file, the `ece-docker build:comp
 You need the following {{site.data.var.ece}} project configuration files to emulate a Cloud project in the Docker environment.
 
 -  [.magento.app.yaml]
--  [.magento/services.yaml]
+-  [.magento/services.yaml][services.yaml]
 
 Typically, these files supply the configuration settings in the generated `docker-compose.yml` file when you build and deploy a Cloud Docker environment from a {{site.data.var.ece}} project directory.
 
 ## Unified configuration
 
-If you do not have {{site.data.var.ece}} configuration files or don't want to use them, {{site.data.var.mcd-prod}} supports a unified configuration file, `.magento.docker.yml`.
+If you do not have or want to use the {{site.data.var.ece}} configuration files, {{site.data.var.mcd-prod}} supports a unified configuration file, `.magento.docker.yml`. For example, use this configuration source to create a Docker development environment for on-premises projects.
 
-This file includes the following sections:
+The universal configuration file, `.magento.docker.yml` includes the following sections:
 
 ```conf
 services: [] # List of services
@@ -203,7 +203,7 @@ See [Service configuration options] for additional information about the service
 
 ## Build a custom Docker Compose configuration
 
-Instead of building the `docker-compose.yaml` file using the {{site.data.var.ece }} project configuration. You can use the `ece-docker build:custom:compose` CLI command to build a custom `docker-compose.yaml` file with the configuration you supply. The CLI configuration is the quickest way to change some settings in a desired environnment.
+Instead of building the `docker-compose.yaml` file using the {{site.data.var.ece }} project configuration. You can use the `ece-docker build:custom:compose` CLI command to build a custom `docker-compose.yaml` file with the configuration you supply. The CLI configuration is the quickest way to change some settings in a desired environment.
 
 You provide the configuration as a JSON array as shown in [Example 1](#example-1).
 
@@ -403,7 +403,7 @@ services:
 
 [hooks]: https://devdocs.magento.com/cloud/project/magento-app-properties.html#hooks
 [.magento.app.yaml]: {{site.baseurl}}/cloud/project/magento-app.html
-[.magento.services.yaml]: {{site.baseurl}}/cloud/project/services.html
+[services.yaml]: {{site.baseurl}}/cloud/project/services.html
 [mounts]: https://devdocs.magento.com/cloud/project/magento-app-properties.html#mounts
 [available services]: {{site.baseurl}}/cloud/project/services.html#service-versions
 [Override configuration]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html#override-configuration

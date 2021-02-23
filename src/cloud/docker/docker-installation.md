@@ -14,7 +14,7 @@ On-premises installation requires the stand-alone {{ site.data.var.mcd-package }
 
 ## Initialize the Magento project
 
-{{ site.data.var.mcd-prod }} supports installation of both {{site.data.var.ece}} and {{site.data.var.ee}} projects. The initialization steps are different for each project type.
+{{ site.data.var.mcd-prod }} supports {{site.data.var.ee}} installation for both Cloud and on-premises projects. The initialization steps are different for each project type.
 
 ### Magento Commerce Cloud projects
 
@@ -109,7 +109,7 @@ Before you use {{site.data.var.mcd-prod}}, you must update the `etc/hosts` file 
 {:.procedure}
 Update and install manually:
 
-1. To make Cloud Docker recognizable on the local machine add the default `magento2.docker` host to hosts file:
+1. To make Cloud Docker recognizable on the local machine, add the default `magento2.docker` host to the hosts file:
 
    ```bash
    echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts

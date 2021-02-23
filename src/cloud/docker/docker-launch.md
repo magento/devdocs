@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Use and manage the Docker environment
+title: Use the Docker environment
 functional_areas:
   - Cloud
   - Setup

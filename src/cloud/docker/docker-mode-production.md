@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Production mode
+title: Start the Docker environment
 functional_areas:
   - Cloud
   - Setup
@@ -11,28 +11,14 @@ Production mode is the default configuration setting for launching the Docker en
 
 {%include cloud/note-docker-config-reference-link.md%}
 
+## Prerequisites
+
+Complete the [installation steps].
+
 {:.procedure}
 To launch the Docker environment in production mode:
 
-1. Download a Magento application template from the [Magento Cloud repository][cloud-repo] and copy the files to your Magento Cloud Docker project directory. Be careful to select the branch that corresponds with the Magento version.
-
-1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
-
-1. Run the installation script, `init-docker.sh` to install the template dependencies and add the default hostname to your `/etc/hosts` file.
-
-   ```bash
-   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/<magento-cloud-docker-package-version>/bin/init-docker.sh | bash
-   ```
-
-   For `<package-version>`, use the [latest release of the {{site.data.var.mcd-package}}].
-
-   You can customize the options for the `init-docker.sh` initialization script your Docker environment. For example, you can specify the PHP version (default is 7.2) and the [{{site.data.var.mcd-prod}} Docker image] (default 1.1). We recommend using the latest version. Run the following command to see the available options:
-
-   ```bash
-   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/<package-version>/bin/init-docker.sh | bash -s -- --help
-   ```
-
-1. In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version][services].
+1. In your local environment, start the Docker configuration generator. You can use the service configuration options, such as `--php`, to [specify a version][services].
 
    ```bash
    ./vendor/bin/ece-docker build:compose
@@ -94,13 +80,21 @@ To launch the Docker environment in production mode:
 
 1. Access the local Magento Cloud template by opening one of the following URLs in a browser:
 
-   -  [`http://magento2.docker`](http://magento2.docker)
+   -  `http://magento2.docker`
 
-   -  [`https://magento2.docker`](https://magento2.docker)
+   -  `https://magento2.docker`
 
-[cloud-repo]: https://github.com/magento/magento-cloud
-[{{site.data.var.mcd-prod}} Docker image]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
+1. Use the default credentials to log in to the Admin at the following URL: `https://magento2.docker/admin`
+
+   -  username=`Admin`
+   -  password=`123123q`
+
+1. Access the default email service at the following URL: `http://magento2.docker:8025`
+
+<!--Link definitions-->
+[Configuration sources]: {{site.baseurl}}/docker/docker-config.html
+[installation steps]: {{site.baseurl}}/docker/docker-installation.html
 [latest release of the {{site.data.var.mcd-package}}]: https://github.com/magento/magento-cloud-docker/releases
-[magento-creds]: {{site.baseurl}}/cloud/setup/first-time-setup-import-prepare.html#auth-json
+
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [configure Xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug

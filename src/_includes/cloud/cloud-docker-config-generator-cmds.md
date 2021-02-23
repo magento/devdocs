@@ -1,4 +1,4 @@
-You use the following commands to generate the Docker configuration files and build your environment.
+Use the {{site.data.var.mcd-prod}} `.vendor/bin/ece-docker build:compose` CLI commands to generate the Docker configuration files and build your environment.
 
 Action | Command
 :----- | :------
