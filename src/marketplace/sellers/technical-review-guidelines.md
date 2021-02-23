@@ -89,6 +89,18 @@ _See also:_
 -  [Configure and Use Varnish]({{ site.baseurl }}/guides/v2.4/config-guide/varnish/config-varnish.html)
 -  [Magento System Requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html)
 
+### MFTF Magento Supplied Tests
+
+Extensions for Magento are tested with the Magento Functional Testing Framework with a set of tests from the Magento codebase. The tests are executed for each supported version of PHP.
+
+_More_details:_ [MFTF Magento Supplied Tests]({{ site.baseurl }}/marketplace/sellers/mftf-magento.html)
+
+### MFTF Vendor Supplied Tests
+
+Extensions for Magento will execute any MFTF tests that are included in the extension submission. The tests are executed for each supported version of PHP. The MFTF tests and associated code from the supported Magento version is available to the vendor supplied tests.
+
+_More_details:_ [MFTF Magento Supplied Tests]({{ site.baseurl }}/marketplace/sellers/mftf-magento.html)
+
 ### Quality Assurance: Pass Manual QA
 
 This check verifies that the extension installs without error, is configurable (as applicable), and operates as expected.
