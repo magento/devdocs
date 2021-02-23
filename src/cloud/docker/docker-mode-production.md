@@ -92,9 +92,8 @@ To launch the Docker environment in production mode:
 1. Access the default email service at the following URL: `http://magento2.docker:8025`
 
 <!--Link definitions-->
-[Configuration sources]: {{site.baseurl}}/docker/docker-config.html
-[installation steps]: {{site.baseurl}}/docker/docker-installation.html
-[latest release of the {{site.data.var.mcd-package}}]: https://github.com/magento/magento-cloud-docker/releases
-
-[services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [configure Xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug
+[Configuration sources]: {{site.baseurl}}/docker/docker-config.html
+[installation steps]: {{site.baseurl}}/cloud/docker/docker-installation.html
+[latest release of the {{site.data.var.mcd-package}}]: https://github.com/magento/magento-cloud-docker/releases
+[services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
