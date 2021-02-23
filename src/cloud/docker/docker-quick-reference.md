@@ -6,9 +6,7 @@ functional_areas:
   - Docker
 ---
 
-This Quick Reference provides information about using Docker Compose commands, the Docker Compose configuration generator, and the {{site.data.var.mcd-prod}} CLI to use, configure, and manage your Magento Docker environment.
-
-See the following topics for more detailed instructions to set up, use, configure, and manage your Magento Docker local development environment.
+This Quick Reference provides information about using Docker Compose commands, the Docker Compose configuration generator, and the {{site.data.var.mcd-prod}} CLI to configure, deploy, and use your Docker environment for Magento development. See the following topics for more detailed instructions:
 
 -  [Install prerequisities]
 -  [Use Docker]
