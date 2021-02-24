@@ -110,11 +110,11 @@ pages:
           url: /page-builder/docs/content-types/extend/introduction.html
           versionless: true
 
-        - label: Extend appearances
+        - label: Extend an appearance
           url: /page-builder/docs/content-types/extend/extend-appearances.html
           versionless: true
 
-        - label: Extend more appearances
+        - label: Extend another appearance
           url: /page-builder/docs/content-types/extend/extend-more-appearances.html
           versionless: true
 
@@ -171,7 +171,7 @@ pages:
       #   versionless: true
 
       - label: Add breakpoints
-        url: /page-builder/docs/content-types/responsive/add-viewports.html
+        url: /page-builder/docs/content-types/responsive/add-breakpoints.html
         versionless: true
 
       - label: Use breakpoints
