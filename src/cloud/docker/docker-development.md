@@ -15,11 +15,14 @@ functional_areas:
 -  **Multiple sync options**-Provides three file synchronization options (native, mutagen and docker-sync) for best performance
 -  **Extensibility**-Use a standard Docker configuration file to extend and customize your development environment
 
+{:.bs-callout-info}
+{{site.data.var.mcd-prod}} is a Magento Community Engineering project supported by the Magento developer community. For details and support information, see [Get support for {{site.data.var.mcd-prod}}][].
+
 ## Host Operating Systems
 
 The Cloud Docker environment supports Linux, macOS, and Windows operating systems. The containers should run on any Docker host, but some of the set up scripts require you to install PHP and Composer.
 
-## Requirements
+## Prerequisites
 
 -  [Git] for interaction between your local system and {{site.data.var.ece}} source repositories
 -  [Docker] for Mac 2.2.0.0 or later or Docker for Linux
@@ -37,17 +40,17 @@ You can configure Docker resources from the [Docker Desktop].
 
 ### PHP and Composer
 
-{{site.data.var.mcd-prod}} does not require PHP and Composer to be installed locally. To perform PHP and Composer operations, you can use the Cloud Docker installation script [init-docker.sh].
+{{site.data.var.mcd-prod}} does not require PHP and Composer to be installed locally. We provide an installation script [init-docker.sh] to perform PHP and Composer operations.
 
-The script runs the following command to install the template dependencies and sets the PHP version and the {{site.data.var.mcd-prod}} image version.
+The `init-docker.sh` script runs the following command which installs the template dependencies and sets both the PHP version and the {{site.data.var.mcd-prod}} image version.
 
 ```bash
 docker run --rm -e "MAGENTO_ROOT=/app" -v "$(pwd)":/app -v ~/.composer/cache:/root/.composer/cache "magento/magento-cloud-docker-php:${PHP_VERSION}-cli-${IMAGE_VERSION}" composer install --ansi
 ```
 
-The script provides options to specify the PHP version and {{site.data.var.mcd-prod}} image version, and adds the default hostname to your `/etc/hosts` file.
+The script option settings determine the PHP version and {{site.data.var.mcd-prod}} image version. The script also adds the default hostname to your `/etc/hosts` file.
 
-> `init.docker.sh` options
+> `init-docker.sh` options
 
 {: .install-script-options}
 Option | Description
@@ -72,7 +75,7 @@ Run the script to install PHP 7.3 and skip adding the domain to the `etc/hosts` 
 bin/init-docker.sh --php 7.3 --add-host no
 ```
 
-On initial project installation, you can use cURL to install the template dependencies. See [Update the hosts file and install dependencies].
+On initial project installation, you can use cURL to run the installation script and install the template dependencies. See [Update the hosts file and install dependencies].
 
 ### Web server configuration
 
@@ -101,16 +104,6 @@ Prior to setting up a local workspace, gather the following credentials and acco
 
    When importing an existing Magento system only, capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see [Resolve issues with encryption key]
 
-## Getting support for {{site.data.var.mcd-prod}}
-
-{{site.data.var.mcd-prod}} is a Magento Community Engineering project supported by the Magento developer community. You have several options to get support and learn more about {{site.data.var.mcd-prod}} and Magento local development.
-
--  **[Magento Community Engineering Slack organization]**–For support, questions, or discussion, chat with us in the **#cloud-docker** and **#cloud** channels. To join, send a request to _engcom@adobe.com_ or [sign yourself up] using Slack.
-
--  **[{{site.data.var.mcd-package}} GitHub repository]**–Visit the GitHub repository to read discussions about current issues, check current development, and submit issues or pull requests to improve the project.
-
--  **Magento Cloud Community Engineering demos**–Magento hosts Cloud demo session where you can learn about developing Magento on the Cloud platform, including information about local development with {{site.data.var.mcd-prod}}. For a schedule and recordings of previous demos, see the [Magento Cloud Community Engineering Demo Schedule].
-
 <!--Link definitions-->
 
 [Git]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -122,12 +115,11 @@ Prior to setting up a local workspace, gather the following credentials and acco
 [mutagen]: https://mutagen.io/documentation/introduction/installation
 [Magento authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [Magento Cloud template]: https://github.com/magento/magento-cloud
-[Magento Cloud Community Engineering demo schedule]: https://spark.adobe.com/page/PbxJoujH7oRTc/
-[Magento Community Engineering Slack organization]: https://magentocommeng.slack.com/
 [Set up an account]: {{site.baseurl}}/cloud/before/before-workspace.html#newaccount
 [Resolve issues with encryption key]: {{site.baseurl}}/cloud/trouble/trouble-crypt-key-variable.html
 [Update the hosts file and install dependencies]: {{site.baseurl}}/cloud/docker/docker-installation.html#update-the-hosts-file-and-install-dependencies
 [{{site.data.var.mcd-package}} GitHub repository]: https://github.com/magento/magento-cloud-docker
+[Get support for {{site.data.var.mcd-prod}}]: {{site.baseurl}}/cloud/docker/docker-troubleshooting.html
 
 <style>
 table.install-script-options td:nth-child(1) {
