@@ -1,8 +1,1 @@
----
-group: software-update-guide
-title: Upgrade modules
-functional_areas:
-  - Upgrade
----
-
-{% include upgrade/module.md %}
+../../v2.3/comp-mgr/upgrade-module.md

@@ -104,6 +104,59 @@ The following examples illustrate how to define a custom batch size for configur
 </type>
 ```
 
+### Setting batch size with environment variables
+
+As of Magento 2.4.3, it is possible to configure the batch size with environment variables, or in `app/etc/env.php`, for the following indexers:
+
+*  `cataloginventory_stock`
+*  `catalog_category_product`
+*  `catalogsearch_fulltext`
+*  `catalog_product_price`
+*  `catalogpermissions_category`
+*  `inventory`
+
+Here is an example of the configuration in `app/etc/env.php`
+
+```php
+<?php
+return [
+    'indexer' => [
+        'batch_size' => [
+            'cataloginventory_stock' => [
+                'simple' => 200
+            ],
+            'catalog_category_product' => 666,
+            'catalogsearch_fulltext' => [
+                'partial_reindex' => 100,
+                'mysql_get' => 500,
+                'elastic_save' => 500
+            ],
+            'catalog_product_price' => [
+                'simple' => 200,
+                'default' => 500,
+                'configurable' => 666
+            ],
+            'catalogpermissions_category' => 999,
+            'inventory' => [
+                'simple' => 210,
+                'default' => 510,
+                'configurable' => 616
+            ]
+        ]
+    ]
+];
+```
+
+The batches size for `catalog_category_product`, `catalogpermissions_category`, `catalogpermissions_category` will be set for all product types.
+
+Batch size for `catalogsearch_fulltext` can be set using different parameters.
+
+*  `partial_reindex` - represents how many products will be processed in a partial reindex.
+*  `elastic_save` - represents how many products will be saved as a batch into Elasticsearch.
+*  `mysql_get` - represents how many searchable products will be retrieved from Mysql.
+
+Batch size for `cataloginventory_stock`, `catalog_product_price`, `inventory` can be set up for each product type. If no batch size is set for a specific product type, the `default` value is used. We recommend setting the `default` value for each indexer to allow for different batch sizes per product type.
+
 ## Indexer Table Switching
 
 Magento optimizes certain indexer processes to prevent deadlocks and wait locks caused by read/write collisions on the same table. In these cases, Magento uses separate tables for performing read operations and reindexing. As a result of this table switching process, customers are not impacted when you run a full reindex. For example, when `catalog_product_price` is reindexing, customers won't be slowed down as they navigate on Categories pages, search products, or user layer navigation filters with price filters.
