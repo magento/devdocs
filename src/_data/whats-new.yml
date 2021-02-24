@@ -4,8 +4,80 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Feb 15 15:38:38 2021
+updated: Wed Feb 24 13:17:33 2021
 entries:
+- description: Reorganized [Page Builder documentation](https://devdocs.magento.com/page-builder/docs/index.html)
+    to improve discovery and access to topics of interest.
+  versions: 2.4.x
+  type: Major Update
+  date: February 24, 2021
+  link: https://github.com/magento/devdocs/pull/8732
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: New Page Builder topics on how to create responsive content. Learn
+    about viewports, breakpoints, and how to use them to make your content responsive.
+    The new topics include:<br/>- [Introduction to viewports for responsive content](https://devdocs.magento.com/page-builder/docs/content-types/responsive/introduction.html)<br/>-
+    [Add viewports](https://devdocs.magento.com/page-builder/docs/content-types/responsive/add-viewports.html)<br/>-
+    [Add breakpoints](https://devdocs.magento.com/page-builder/docs/content-types/responsive/add-breakpoints.html)<br/>-
+    [Use breakpoints](https://devdocs.magento.com/page-builder/docs/content-types/responsive/use-breakpoints.html)<br/>-
+    [Change breakpoints and viewports](https://devdocs.magento.com/page-builder/docs/content-types/responsive/change-breakpoints-viewports.html)
+  versions: 2.4.x
+  type: Major Update
+  date: February 23, 2021
+  link: https://github.com/magento/devdocs/pull/8727
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: In the Cloud guide, clarified the section about [Migrating static files](https://devdocs.magento.com/cloud/live/stage-prod-migrate.html#migrate-static-files)
+    after deploying code. The CLI method is preferred for local to remote environments,
+    but the `rysnc` method from one remote environment to another requires forwarding
+    of the authentication agent when using a SSH.
+  versions: 2.x
+  type: Technical
+  date: February 22, 2021
+  link: https://github.com/magento/devdocs/pull/8552
+  contributor: hguthrie
+  profile: https://github.com/hguthrie
+- description: New Page Builder topics on how to style content types. Learn how Page
+    Builder styles content and how to override these styles to control Page Builder's
+    appearance from your themes. The new topics include:<br/>- [How Page Builder styles
+    content](https://devdocs.magento.com/page-builder/docs/content-types/style/introduction.html)<br/>-
+    [Override Page Builder styles](https://devdocs.magento.com/page-builder/docs/content-types/style/override-pagebuilder-styles.html)<br/>-
+    [Use themes to override styles](https://devdocs.magento.com/page-builder/docs/content-types/style/use-themes-to-override-styles.html)<br/>-
+    [Use modules to override styles](https://devdocs.magento.com/page-builder/docs/content-types/style/use-modules-to-override-styles.html)<br/>-
+    [Use HTML Code to override styles](https://devdocs.magento.com/page-builder/docs/content-types/style/use-htmlcode-to-override-styles.html)
+  versions: 2.4.x
+  type: Major Update
+  date: February 22, 2021
+  link: https://github.com/magento/devdocs/pull/8714
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Updated the [`magento-cloud` CLI reference](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-cloud.html)
+    (v1.38.0).
+  versions: 2.x
+  type: Major Update
+  date: February 22, 2021
+  link: https://github.com/magento/devdocs/pull/8724
+  contributor: hguthrie
+  profile: https://github.com/hguthrie
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.16 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: February 18, 2021
+  link: https://github.com/magento/devdocs/pull/8706
+  contributor: Rykh
+  profile: https://github.com/Rykh
+- description: New Page Builder topics on how to [extend content types](https://devdocs.magento.com/page-builder/docs/content-types/extend/introduction.html).  Learn
+    how to add new features, styles, and behaviors to existing content types in these
+    topics:<br/>-  [Extend an appearance](https://devdocs.magento.com/page-builder/docs/content-types/extend/extend-appearances.html)<br/>-  [Extend
+    another appearance](https://devdocs.magento.com/page-builder/docs/content-types/extend/extend-more-appearances.html)<br/>-  [Add
+    appearances](https://devdocs.magento.com/page-builder/docs/content-types/extend/add-appearances.html)
+  versions: 2.4.2, 2.4.x
+  type: Major Update
+  date: February 17, 2021
+  link: https://github.com/magento/devdocs/pull/8702
+  contributor: bdenham
+  profile: https://github.com/bdenham
 - description: Updated the example in the [ColumnsControl component](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/components/ui-columnscontrols.html)
     topic.
   versions: 2.3.x, 2.4.x
