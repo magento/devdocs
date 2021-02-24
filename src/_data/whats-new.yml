@@ -27,7 +27,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8727
   contributor: bdenham
   profile: https://github.com/bdenham
-- description: In the Cloud guide, clarified the section about [Migrating static files](https://devdocs.magento.com/cloud/live/stage-prod-migrate.html#cloud-live-migrate-static)
+- description: In the Cloud guide, clarified the section about [Migrating static files](https://devdocs.magento.com/cloud/live/stage-prod-migrate.html#migrate-static-files)
     after deploying code. The CLI method is preferred for local to remote environments,
     but the `rysnc` method from one remote environment to another requires forwarding
     of the authentication agent when using a SSH.
