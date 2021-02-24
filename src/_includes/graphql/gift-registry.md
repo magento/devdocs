@@ -3,7 +3,7 @@ The `GiftRegistry` object returns the following attributes:
 Attribute |  Data Type | Description
 --- | --- | ---
 `created_at` | String! | The date on which the gift registry was created. Only the registry owner can access this attribute
-`dynamic_attributes` | [GiftRegistryDynamicAttribute] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
+`dynamic_attributes` | [[GiftRegistryDynamicAttribute]](#GiftRegistryDynamicAttribute) | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
 `event_name` | String! | The name the customer assigned to the event
 `items` | [[GiftRegistryItemInterface](#GiftRegistryItemInterface)] | An array of products added to the gift registry
 `message` | String! | The message text the customer entered to describe the event
@@ -21,7 +21,7 @@ The `GiftRegistryDynamicAttribute` object implements `GiftRegistryDynamicAttribu
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`group` | GiftRegistryDynamicAttributeGroup | An enum that categorizes the dynamic attribute set. The possible values are EVENT_INFORMATION, PRIVACY_SETTINGS, REGISTRANT, GENERAL_INFORMATION, DETAILED_INFORMATION, and SHIPPING_ADDRESS.
+`group` | GiftRegistryDynamicAttributeGroup! | An enum that categorizes the dynamic attribute set. The possible values are EVENT_INFORMATION, PRIVACY_SETTINGS, REGISTRANT, GENERAL_INFORMATION, DETAILED_INFORMATION, and SHIPPING_ADDRESS.
 
 ### GiftRegistryDynamicAttributeInterface attributes {#GiftRegistryDynamicAttributeInterface}
 
@@ -33,17 +33,44 @@ Attribute |  Data Type | Description
 `label` | String! | The display name of the dynamic attribute
 `value` | String! | A corresponding value for the code
 
+### GiftRegistryDynamicAttributeMetadataInterface {#GiftRegistryDynamicAttributeMetadataInterface}
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`attribute_group` | String! | Indicates which group of the dynamic attribute a member of
+`code` | ID! | The internal ID of the dynamic attribute
+`input_type` | String! | The input type of the dynamic attribute
+`is_required` | Boolean! | Indicates whether the dynamic attribute is required
+`label` | String! | The display name of the dynamic attribute
+`sort_order` | Int | The order in which to display the dynamic attribute
+### GiftRegistryItemInterface attributes {#GiftRegistryItemInterface}
+
+This `GiftRegistryItemInterface` contains the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`created_at` | String! | The date the product was added to the gift registry
+`note` | String | A brief message about the gift registry item
+`product` | [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html) | The details about the product
+`quantity` | Float! | The requested quantity of the product
+`quantity_fulfilled` | Float! | The fulfilled quantity of the product
+`uid` | ID! | The unique ID assigned to the gift registry item
+
 ### GiftRegistryRegistrant attributes {#GiftRegistryRegistrant}
 
 The `GiftRegistryRegistrant` object contains the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`dynamic_attributes_metadata` | [[GiftRegistryDynamicAttributeMetadataInterface](#GiftRegistryDynamicAttributeMetadataInterface)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
+`dynamic_attributes` | [[GiftRegistryRegistrantDynamicAttribute](#GiftRegistryRegistrantDynamicAttribute)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
 `email` | String! | The email address of the registrant. Only the registry owner can access this attribute
-`first_name` | String! | The first name of the registrant
-`id` | ID! | The ID assigned to the registrant
-`last_name` | String! | The last name of the registrant
+`firstname` | String! | The first name of the registrant
+`lastname` | String! | The last name of the registrant
+`uid` | ID! | The unique ID assigned to the registrant
+
+### GiftRegistryRegistrantDynamicAttribute attributes {#GiftRegistryRegistrantDynamicAttribute}
+
+The `GiftRegistryRegistrantDynamicAttribute` data type implements the `GiftRegistryDynamicAttributeInterface`. It does not introduce any additional attributes.
 
 ### GiftRegistryType attributes {#GiftRegistryType}
 
@@ -52,22 +79,9 @@ The `GiftRegistryType` object contains the following attributes:
 Attribute | Data type | Description
 --- | --- | ---
 `dynamic_attributes_metadata` | [[GiftRegistryDynamicAttributeMetadataInterface](#GiftRegistryDynamicAttributeMetadataInterface)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
-`id` | ID! | The ID assigned to the gift registry
 `label` | String! | The display name of the gift registry type
+`uid` | ID! | The unique ID assigned to the gift registry type
 
-### GiftRegistryItemInterface attributes {#GiftRegistryItemInterface}
-
-This `GiftRegistryItemInterface` contains the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`added_on` | String! | The date the product was added to the gift registry
-`id` | String! | The ID assigned to the gift registry item
-`note` | String | A brief message about the gift registry item
-`product` | [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html) | The details about the product
-`quantity` | Float! | The requested quantity of the product
-`quantity_fulfilled` | Float! | The fulfilled quantity of the product
-
-### GiftRegistryDynamicAttributeMetadataInterface attributes {#GiftRegistryDynamicAttributeMetadataInterface}
+### GiftRegistryDynamicAttribute attributes {#GiftRegistryDynamicAttribute}
 
 {% include graphql/gift-registry-dynamic-interface.md %}

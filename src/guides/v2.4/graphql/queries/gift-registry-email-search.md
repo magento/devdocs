@@ -14,7 +14,7 @@ giftRegistryEmailSearch(email: String!): [GiftRegistrySearchResult]
 
 ## Example usage
 
-The following example returns details about gift registries in which `staceyg@example.com` is a registrant.  
+The following example returns details about gift registries in which `staceyg@example.com` is a registrant.
 
 **Request:**
 

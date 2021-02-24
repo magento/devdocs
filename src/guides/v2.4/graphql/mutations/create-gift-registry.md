@@ -141,7 +141,7 @@ mutation {
   "data": {
     "createGiftRegistry": {
       "gift_registry": {
-        "uid": "8AiEhYjJ86JRAkgH8u5wOKvOGYOai5wl",
+        "uid": "D0R6d2B7aZWOQuuWftHZ0iwuexQPgaei",
         "event_name": "Bill and Julie's wedding",
         "message": "Help us celebrate Bill and Julie's wedding, which will be held on May 1, 2021",
         "owner_name": "Veronica Costello",
@@ -149,7 +149,7 @@ mutation {
         "status": "ACTIVE",
         "registrants": [
           {
-            "uid": "Mw==",
+            "uid": "NQ==",
             "firstname": "Julie",
             "lastname": "Mao",
             "email": "juliemao@example.com",
@@ -162,7 +162,7 @@ mutation {
             ]
           },
           {
-            "uid": "NA==",
+            "uid": "Ng==",
             "firstname": "Bill",
             "lastname": "Preston",
             "email": "bpreston@example.com",
@@ -194,8 +194,6 @@ mutation {
         }
       }
     }
-  }
-}
 ```
 
 ## Input attributes

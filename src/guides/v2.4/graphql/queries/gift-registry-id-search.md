@@ -14,7 +14,7 @@ giftRegistryIdSearch(giftRegistryUid: String!): [GiftRegistrySearchResult]
 
 ## Example usage
 
-The following example
+The following example returns details about the specified gift registry.
 
 **Request:**
 

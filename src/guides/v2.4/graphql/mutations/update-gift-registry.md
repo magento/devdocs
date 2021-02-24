@@ -27,10 +27,9 @@ The following example changes the privacy, the message, and the event date for a
 **Request:**
 
 ```graphql
-
 mutation{
   updateGiftRegistry(
-    giftRegistryUid: "8AiEhYjJ86JRAkgH8u5wOKvOGYOai5wl", 
+    giftRegistryUid: "D0R6d2B7aZWOQuuWftHZ0iwuexQPgaei", 
     giftRegistry: {
       privacy_settings: PUBLIC
       message: "Help us celebrate Bill and Julie's wedding, which will be held on May 8, 2021"
@@ -63,7 +62,7 @@ mutation{
   "data": {
     "updateGiftRegistry": {
       "gift_registry": {
-        "uid": "8AiEhYjJ86JRAkgH8u5wOKvOGYOai5wl",
+        "uid": "D0R6d2B7aZWOQuuWftHZ0iwuexQPgaei",
         "event_name": "Bill and Julie's wedding",
         "message": "Help us celebrate Bill and Julie's wedding, which will be held on May 8, 2021",
         "status": "ACTIVE",
@@ -113,7 +112,6 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
 `event_name` | String | The name of the event
-`giftRegistryTypeUid` | ID! | The ID of the selected event type
 `message` | String | A message describing the event
 `privacy_settings` | GiftRegistryPrivacySettings! | Indicates whether the registry is PRIVATE or PUBLIC
 `shipping_address` | [GiftRegistryShippingAddressInput](#GiftRegistryShippingAddressInput) | The address for shipping the gift registry. Specify either the `address_data` object or the `address_id` attribute. Validation fails if both are provided
@@ -135,7 +133,7 @@ The `GiftRegistryShippingAddressInput` object contains the following attributes:
 Attribute |  Data Type | Description
 --- | --- | ---
 `address_data` | [CustomerAddressInput](#CustomerAddressInput) | The complete details of the shipping address
-`address_id` | ID | The ID of predefined customer address
+`address_id` | ID | The ID of a pre-defined customer address
 
 ### CustomerAddressInput attributes {#CustomerAddressInput}
 
