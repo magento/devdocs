@@ -245,7 +245,7 @@ When creating a new table, remember to [generate]({{ page.baseurl}}/extension-de
 
 ### Drop a table
 
-In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file.
+In the following example, the `declarative_table` table was completely removed from the `db_schema.xml` file.
 
 ```diff
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

@@ -50,7 +50,7 @@ mutation {
 
 These examples show the minimal payload for adding products, including those with customizable options.
 
-### Add a product to a cart
+### Add a simple product to a cart
 
 The following example adds a simple product to a cart.
 
@@ -69,7 +69,6 @@ mutation {
   ) {
     cart {
       items {
-        id
         product {
           name
           sku
@@ -90,7 +89,6 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "346",
             "product": {
               "name": "Strive Shoulder Pack",
               "sku": "24-MB04"
@@ -180,27 +178,26 @@ In this example, the mutation specifies the size and color as selected options. 
 ```graphql
 mutation {
   addProductsToCart(
-    cartId: "HbpLADRmSo5h2dCdF85O5wCaVnrworKL"
+    cartId: "2m3Wpue1L3bNARhErAKbZ8Lb7czvgq6R"
     cartItems: [
       {
         quantity: 1
         sku: "WSH12"
-        selected_options: ["Y29uZmlndXJhYmxlLzkzLzUz","Y29uZmlndXJhYmxlLzE0NC8xNzE="]
+        selected_options: ["Y29uZmlndXJhYmxlLzkzLzUz","Y29uZmlndXJhYmxlLzE2MS8xNzQ="]
       }
     ]
   ) {
     cart {
       items {
-        id
         product {
           name
           sku
         }
         ... on ConfigurableCartItem {
           configurable_options {
-            id
+            configurable_product_option_uid
             option_label
-            value_id
+            configurable_product_option_value_uid
             value_label
           }
         }
@@ -220,26 +217,25 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "24",
             "product": {
               "name": "Erika Running Short",
               "sku": "WSH12"
             },
             "configurable_options": [
               {
-                "id": 93,
+                "configurable_product_option_uid": "Y29uZmlndXJhYmxlLzIwNDgvOTM=",
                 "option_label": "Color",
-                "value_id": 53,
+                "configurable_product_option_value_uid": "Y29uZmlndXJhYmxlLzkzLzUz",
                 "value_label": "Green"
               },
               {
-                "id": 144,
+                "configurable_product_option_uid": "Y29uZmlndXJhYmxlLzIwNDgvMTYx",
                 "option_label": "Size",
-                "value_id": 171,
+                "configurable_product_option_value_uid": "Y29uZmlndXJhYmxlLzE2MS8xNzQ=",
                 "value_label": "28"
               }
             ],
-            "quantity": 2
+            "quantity": 1
           }
         ]
       }
@@ -248,22 +244,25 @@ mutation {
 }
 ```
 
-### Add a product with entered options
+### Add a simple product with entered options
 
 The following example adds a simple product with a customizable option to the cart. The customizable option allows the shopper to specify a message for engraving.
+
+{:.bs-callout-info}
+The customizable option is not part of the Luma sample data.
 
 **Request:**
 
 ```graphql
 mutation {
   addProductsToCart(
-    cartId: "8k0Q4MpH2IGahWrTRtqM61YV2MtLPApz"
+    cartId: "2m3Wpue1L3bNARhErAKbZ8Lb7czvgq6R"
     cartItems: [
       {
         quantity: 1
         sku: "24-WG03"
         entered_options: [{
-          uid: "Y3VzdG9tLW9wdGlvbi81Mg=="
+          uid: "Y3VzdG9tLW9wdGlvbi8x"
           value: "Congrats, Julie!"
         }]
       }
@@ -271,17 +270,16 @@ mutation {
   ) {
     cart {
       items {
-        id
         product {
           name
           sku
         }
         ... on SimpleCartItem {
           customizable_options {
-            id
+            customizable_option_uid
             label
             values {
-              id
+              customizable_option_value_uid
               value
             }
           }
@@ -302,19 +300,19 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "350",
+            "id": "19",
             "product": {
               "name": "Clamber Watch",
               "sku": "24-WG03"
             },
             "customizable_options": [
               {
-                "id": 52,
-                "label": "Congrats, Julie!",
+                "customizable_option_uid": "Y3VzdG9tLW9wdGlvbi8x",
+                "label": "Engraving",
                 "values": [
                   {
-                    "id": 1184,
-                    "value": ""
+                    "customizable_option_value_uid": "Y3VzdG9tLW9wdGlvbi8x",
+                    "value": "Congrats, Julie!"
                   }
                 ]
               }
@@ -322,6 +320,200 @@ mutation {
             "quantity": 1
           }
         ]
+      }
+    }
+  }
+}
+```
+
+## Add a bundle product with selected options to a cart
+
+The following example adds the Sprite Yoga Companion Kit bundle product to the cart. The bundle product is comprised of four simple products, and the selected simple products are specified with a value in the `selected_options` array. Use the `products` query to determine these UID values. Note that each UID value is an encoded value representing the following string:
+
+`bundle/<bundle_option_id>/<bundle_option_selection_id>/<quantity>`
+
+Because the encoded value includes the quantity, the schema does not contain a `quantity` attribute for individual simple products.
+
+In this example, the UID values are encoded versions of these strings:
+
+```text
+bundle/1/1/1
+bundle/2/4/1
+bundle/3/5/1
+bundle/4/8/1
+```
+
+**Request:**
+
+```graphql
+mutation {
+  addProductsToCart(
+    cartId: "ELwvX8VJinGJ9Q2vOXSiCTS4gvCDKP8U"
+    cartItems: [
+      {
+        quantity: 1
+        sku: "24-WG080"
+        selected_options: [
+          "YnVuZGxlLzEvMS8x"
+          "YnVuZGxlLzIvNC8x"
+          "YnVuZGxlLzMvNS8x"
+          "YnVuZGxlLzQvOC8x"
+        ]
+      }
+    ]
+  ) {
+    cart {
+      items {
+        uid
+        product {
+          name
+          sku
+        }
+        quantity
+        ... on BundleCartItem {
+          bundle_options {
+            uid
+            label
+            type
+            values {
+              id
+              label
+              price
+              quantity
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "addProductsToCart": {
+      "cart": {
+        "items": [
+          {
+            "uid": "MTQ=",
+            "product": {
+              "name": "Sprite Yoga Companion Kit",
+              "sku": "24-WG080"
+            },
+            "quantity": 1,
+            "bundle_options": [
+              {
+                "uid": "YnVuZGxlLzE=",
+                "label": "Sprite Stasis Ball",
+                "type": "radio",
+                "values": [
+                  {
+                    "id": 1,
+                    "label": "Sprite Stasis Ball 55 cm",
+                    "price": 23,
+                    "quantity": 1
+                  }
+                ]
+              },
+              {
+                "uid": "YnVuZGxlLzI=",
+                "label": "Sprite Foam Yoga Brick",
+                "type": "radio",
+                "values": [
+                  {
+                    "id": 4,
+                    "label": "Sprite Foam Yoga Brick",
+                    "price": 5,
+                    "quantity": 1
+                  }
+                ]
+              },
+              {
+                "uid": "YnVuZGxlLzM=",
+                "label": "Sprite Yoga Strap",
+                "type": "radio",
+                "values": [
+                  {
+                    "id": 5,
+                    "label": "Sprite Yoga Strap 6 foot",
+                    "price": 14,
+                    "quantity": 1
+                  }
+                ]
+              },
+              {
+                "uid": "YnVuZGxlLzQ=",
+                "label": "Sprite Foam Roller",
+                "type": "radio",
+                "values": [
+                  {
+                    "id": 8,
+                    "label": "Sprite Foam Roller",
+                    "price": 19,
+                    "quantity": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+### Add a bundle product with entered options to the cart
+
+For `entered_options`, the `uid` attribute contains the encoded entered value. The `value` attribute defines the quantity. If the `BundleProduct.items.options.can_change_quantity` attribute is `false`, then the bundle product definition sets the quantity for the simple product. Otherwise, the shopper decides the quantity.
+
+The Luma sample data does not provide any bundle products with entered options. The following snippet shows how to construct the mutation.
+
+```graphql
+mutation {
+  addProductsToCart(
+    cartId: "ELwvX8VJinGJ9Q2vOXSiCTS4gvCDKP8U"
+    cartItems: [
+      {
+        quantity: 1
+        sku: "bundle1"
+        entered_options: [
+          {
+            uid: "EncodedEnteredValue1"
+            value: 1
+          }
+        ]
+        selected_options: [
+          "EncodedSelectedValue1"
+          "EncodedSelectedValue2"
+        ]
+      }
+    ]
+  ) {
+    cart {
+      items {
+        uid
+        product {
+          name
+          sku
+        }
+        quantity
+        ... on BundleCartItem {
+          bundle_options {
+            uid
+            label
+            type
+            values {
+              id
+              label
+              price
+              quantity
+            }
+          }
+        }
       }
     }
   }
@@ -341,7 +533,7 @@ Attribute |  Data Type | Description
 
 The `CartItemInput` object must contain the following attributes:
 
-{% include graphql/cart-item-input.md %}
+{% include graphql/cart-item-input-24.md %}
 
 ### EnteredOptionInput object {#EnteredOptionInput}
 

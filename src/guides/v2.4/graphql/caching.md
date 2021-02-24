@@ -14,6 +14,7 @@ GraphQL allows you to make multiple queries in a single call. If you specify any
 
 Magento caches the following queries:
 
+*  `categories`
 *  `category` (deprecated)
 *  `categoryList`
 *  `cmsBlocks`
@@ -33,7 +34,7 @@ Magento explicitly disallows caching the following queries.
 *  `customerOrders`
 *  `customerPaymentTokens`
 *  `storeConfig`
-*  `wishlist`
+*  `wishlist` (deprecated)
 
 [Define the GraphQL schema for a module]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) describes the syntax of a valid query.
 
@@ -145,6 +146,7 @@ Header | Description
 
 Magento invalidates the cache when any of the following events occur:
 
-*  When a change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
-*  When system configuration changes
-*  When an administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command
+*  A change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
+*  The `Preview-Version` header is specified in a query that supports caching.
+*  The system configuration changes.
+*  An administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command.
