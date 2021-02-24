@@ -57,9 +57,9 @@ The `name` parameter is required. The topic definition must include either a `re
 Parameter | Description
 --- | ---
 name | A string that uniquely identifies the topic. A topic name should be a series of strings that are separated by periods. The leftmost string should be the most general, and each string afterward should narrow the scope. For example, to describe actions for tending to pets, you might create names such as `cat.white.feed` and `dog.retriever.walk`. Wildcards are not supported in the `communication.xml` file.
-request | Specifies the data structure that’s used to define a message and is needed when publishing any messages through Magento.
+request | Specifies the data structure that’s used to define a message. It is needed when publishing any messages through Magento.
 response | Specifies the format of the response. This parameter is required if you are defining a synchronous topic. Omit this parameter if you are defining an asynchronous topic.
-schema | Schema describes the message structure. Use the Data Interface format from the Service Contracts. Besides, there is another way to specify a service method signature:`<module>\Api\<ServiceName>::<methodName>` (Magento\Customer\Api\CustomerRepositoryInterface::save).
+schema | Describes the message structure. Use the Data Interface format from the Service Contracts. Besides, there is another way to specify a service method signature:`<module>\Api\<ServiceName>::<methodName>` (Magento\Customer\Api\CustomerRepositoryInterface::save).
 
 ### handler element
 {:.no_toc}
@@ -74,7 +74,7 @@ disabled | Determines whether this handler is disabled. The default value is `fa
 
 ### `queue_consumer.xml` {#queueconsumerxml}
 
-As for consumer elements, they map the message receiver to a specific queue. Such parameters as class and method indicate what elements of the Magento 2 Message Queue Framework receive and process the message.
+Consumer elements map the message receiver to a specific queue. Parameters such as class and method indicate which elements of the Message Queue Framework receive and process the message.
 
 The `queue_consumer.xml` file contains one or more `consumer` elements:
 
@@ -231,7 +231,12 @@ The following illustrates an `arguments` block:
 
 ### `queue_publisher.xml` {#queuepublisherxml}
 
-The publisher element performs two vital actions: iit configures the type of connection and the same time sets up the exchange to publish to. Magento 2 uses only one exchange out of the box, but multiple exchanges are possible. As for the name of every exchange, it is a part of publisher configuration.
+The publisher element performs two vital actions:
+
+*  It configures the type of connection.
+*  It sets up the exchange to publish to.
+
+Magento uses only one exchange out of the box, but multiple exchanges are possible. The name of every exchange is a part of the publisher configuration.
 
 The `queue_publisher.xml` file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:
 
@@ -253,7 +258,7 @@ The `queue_publisher.xml` file defines which connection and exchange to use to p
 ```
 
 #### `publisher` element
-{:.no_toc}  
+{:.no_toc}
 
 | Attribute            | Description |
 | -------------------- | ----------- |
