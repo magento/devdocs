@@ -7,7 +7,7 @@ title: MFTF Magento-supplied Tests
 
 The Magento Functional Testing Framework (MFTF) is a browser-based acceptance testing framework used to validate the functionality of a Magento site. Running Magento-supplied MFTF tests aids Extension Quality Program (EQP) QA efforts in assessing critical functionality of a Magento instance with the extension installed.
 
-For information on how to setup, create and modify MFTF tests, see [Introduction to the Magento Functional Testing Framework](https://devdocs.magento.com/mftf/docs/introduction.html)
+For information on how to setup, create and modify MFTF tests, see [Introduction to the Magento Functional Testing Framework][1]
 
 ## What testing is for
 
@@ -22,15 +22,16 @@ Magento-supplied MFTF tests are run on all Marketplace extension submissions on:
 -  Magento in 2.3 and 2.4 release lines
 -  Open source and Commerce editions
 
-The Magento test infrastructure executes Magento-supplied MFTF tests in the most up-to-date version of Magento in the 2.4.x and 2.3.x release lines, as well as the most up-to-date software compatible with that release. The test infrastructure follows the recommended setup for a Magento installation, MFTF setup, and system configuration. You can use [Magento Cloud Docker](https://github.com/magento/magento-cloud-docker) to create a similar environment.
+The Magento test infrastructure executes Magento-supplied MFTF tests in the most up-to-date version of Magento in the 2.4.x and 2.3.x release lines, as well as the most up-to-date software compatible with that release. The test infrastructure follows the recommended setup for a Magento installation, MFTF setup, and system configuration. You can use [Magento Cloud Docker][2] to create a similar environment.
 
 ## Reading the error report
 
--  MFTF returns two types of results
+MFTF returns two types of results:
+
    -  Simplified results showing the status of each test executed
    -  Allure XML results
   
-See [MFTF Reporting](https://devdocs.magento.com/mftf/docs/reporting.html) for further information.
+See [MFTF Reporting][3] for further information.
 
 -  Test failures are generally due to:
    -  The MFTF test flow being breaking due to changes to Magento user flows as intended by the extension under test. These can be fixed by using vendor-supplied MFTF Tests.
@@ -47,4 +48,12 @@ See [MFTF Reporting](https://devdocs.magento.com/mftf/docs/reporting.html) for f
 -  The MFTF tests will be part of the final package that is made available to your customers. Do not include any sensitive or confidential data in test comments or code
 -  If necessary, include a README, or other instructions, within the `Test` directory, to explain any setup steps or caveats for running your MFTF tests
 -  Ensure that any necessary credentials or user authorization (e.g. to communicate via API key to your backend) is explained and supported via credential management in tests
--  Always follow the [MFTF Best Practices](https://devdocs.magento.com/mftf/docs/best-practices.html) and use the [MFTF Tips & Tricks](https://devdocs.magento.com/mftf/docs/tips-tricks.html).
+-  Always follow the [MFTF Best Practices][4] and use the [MFTF Tips & Tricks][5].
+
+<!-- Link definitions -->
+
+[1]: {{site.baseurl}}/mftf/docs/introduction.html
+[2]: https://github.com/magento/magento-cloud-docker
+[3]: {{site.baseurl}}/mftf/docs/reporting.html
+[4]: {{site.baseurl}}/mftf/docs/best-practices.html
+[5]: {{site.baseurl}}/mftf/docs/tips-tricks.html
