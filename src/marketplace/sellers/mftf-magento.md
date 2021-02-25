@@ -21,14 +21,14 @@ The MFTF tests are run as a regular part of the installation and Varnish testing
 
 ## What is being checked
 
-MFTF tests are functional tests: tests that verify the proper functioning of basic Magneto workflows. It is meant to mimic the same code paths that the end user would take, by automating the clicks and data entry that the user would do. The Magento codebase contains thousands of MFTF tests.
+MFTF tests verify the proper functioning of basic Magneto workflows. They are meant to mimic the same code paths that the end user would take, by automating the clicks and data entry that the user would do. The Magento codebase contains thousands of MFTF tests.
 
 ## Tools and environments used
 
 Magento-supplied MFTF tests are run on all Marketplace extension submissions on:
 
 -  Magento in 2.3 and 2.4 release lines
--  Open source and Commerce editions
+-  Open Source and Commerce editions
 
 The Magento test infrastructure executes Magento-supplied MFTF tests in the most up-to-date version of Magento in the 2.4.x and 2.3.x release lines, as well as the most up-to-date software compatible with that release. The test infrastructure follows the recommended setup for a Magento installation, MFTF setup, and system configuration. You can use [Magento Cloud Docker][2] to create a similar environment.
 
@@ -55,7 +55,7 @@ See [MFTF Reporting][3] for further information.
 -  If you are extending from, or merging into, an existing Magento test (or relying upon its entities), it must be required as a Composer prerequisite
 -  The MFTF tests will be part of the final package that is made available to your customers. Do not include any sensitive or confidential data in test comments or code
 -  If necessary, include a README, or other instructions, within the `Test` directory, to explain any setup steps or caveats for running your MFTF tests
--  Ensure that any necessary credentials or user authorization (e.g. to communicate via API key to your backend) is explained and supported via credential management in tests
+-  Ensure that any necessary credentials or user authorization (for example, to communicate via API key to your backend) is explained and supported via credential management in tests
 -  Always follow the [MFTF Best Practices][4] and use the [MFTF Tips & Tricks][5].
 
 <!-- Link definitions -->
