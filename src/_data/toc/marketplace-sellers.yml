@@ -115,11 +115,11 @@ pages:
       url: /marketplace/sellers/installation-and-varnish-tests.html
       versionless: true
 
-    - label: MFTF Magento Supplied Tests
+    - label: MFTF Magento-supplied Tests
       url: /marketplace/sellers/mftf-magento.html
       versionless: true
 
-    - label: MFTF Vendor Supplied Tests
+    - label: MFTF Vendor-supplied Tests
       url: /marketplace/sellers/mftf-vendor.html
       versionless: true
 
