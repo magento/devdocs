@@ -28,8 +28,8 @@ The Magento test infrastructure executes Magento-supplied MFTF tests in the most
 
 MFTF returns two types of results:
 
-   -  Simplified results showing the status of each test executed
-   -  Allure XML results
+-  Simplified results showing the status of each test executed
+-  Allure XML results
   
 See [MFTF Reporting][3] for further information.
 
