@@ -23,7 +23,7 @@ MFTF tests are run as a regular part of the installation and Varnish process.
 
 ## What is being checked
 
-MFTF tests verify the proper functioning of the workflows that the extension introduces. They are meant to mimic the same code paths that the end user would take, by automating the clicks and data entry that the user would do. Providing comprehensive MFTF test coverage helps to speed up the EQP QA process. 
+MFTF tests verify the proper functioning of the workflows that the extension introduces. They are meant to mimic the same code paths that the end user would take, by automating the clicks and data entry that the user would do. Providing comprehensive MFTF test coverage helps to speed up the EQP QA process.
 
 ## Tools and environments used
 
