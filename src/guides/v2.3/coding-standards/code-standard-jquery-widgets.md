@@ -112,6 +112,7 @@ There are 2 ways to do it:
   ```html
   <div id="element-id" data-mage-init='{"Vendor_Module/js/myfile":{}}'></div>
   ```
+
 *  Using a script type "text/x-magento-init" attribute.For example:
 
   ```html
@@ -123,6 +124,7 @@ There are 2 ways to do it:
   } 
   </script>
   ```
+
 *  In these cases the path to the file is:
 
   Vendor/Module/view/frontend/web/js/jsfilename.js
@@ -140,10 +142,13 @@ There are 2 ways to do it:
       });
     });
   ```
+
 ### Initializing a component on a selector with parameters
+
 When a component is initialized, it is also important to send parameters to it, which are determined mostly dynamically in php.
 
 *  data-mage-init
+
   ```html
   <div id="element-id" data-mage-init='{"Vendor_Module/js/myfile":{"parameter":"value","status":<?php echo $block->getStatus(); ?>
   }}'></div>
