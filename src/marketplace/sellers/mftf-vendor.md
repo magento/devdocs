@@ -17,6 +17,14 @@ MFTF runs tests in a browser, using Selenium and Codeception to emulate the user
 
 Functional testing in this way ensures that the experience of the end-user is as intended by the extension developer, allowing for the customizability and extensibility of Magento as a platform.
 
+## When testing is done
+
+MFTF tests are run as a regular part of the installation and Varnish process.
+
+## What is being checked
+
+MFTF tests are functional tests: tests that verify the proper functioning of the workflows that the extension introduces. It is meant to mimic the same code paths that the end user would take, by automating the clicks and data entry that the user would do. The more MFTF tests that are included means less manual work the EQP QA team has to do.
+
 ## Tools and environments used
 
 The Magento test infrastructure executes vendor-supplied MFTF tests in the most recent version of Magento in the 2.4.x release line, as well as the most up-to-date software compatible with that release. The test infrastructure uses the recommended setup for Magento installation with the standard MFTF setup and configuration. You can use the [Magento Cloud Docker][2] image to create a similar environment.

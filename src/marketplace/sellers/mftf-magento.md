@@ -15,6 +15,14 @@ Magento-supplied MFTF tests validate critical user flows via browser-based testi
 
 MFTF runs tests in a browser, using Selenium and Codeception, to emulate user behavior. MFTF tests are designed to be extensible and can be used in conjunction with other Magento-developed MFTF code coverage or your own vendor-supplied tests. The results of this testing will inform QA about the state of the extension and allow them to prioritize manual testing.
 
+## When testing is done
+
+The MFTF tests are run as a regular part of the installation and Varnish testing process.
+
+## What is being checked
+
+MFTF tests are functional tests: tests that verify the proper functioning of basic Magneto workflows. It is meant to mimic the same code paths that the end user would take, by automating the clicks and data entry that the user would do. The Magento codebase contains thousands of MFTF tests.
+
 ## Tools and environments used
 
 Magento-supplied MFTF tests are run on all Marketplace extension submissions on:
@@ -28,9 +36,9 @@ The Magento test infrastructure executes Magento-supplied MFTF tests in the most
 
 MFTF returns two types of results:
 
-   -  Simplified results showing the status of each test executed
-   -  Allure XML results
-  
+-  Simplified results showing the status of each test executed
+-  Allure XML results
+
 See [MFTF Reporting][3] for further information.
 
 -  Test failures are generally due to:
