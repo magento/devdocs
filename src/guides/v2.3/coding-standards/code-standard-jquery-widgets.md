@@ -103,6 +103,67 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
    })(jQuery);
    ```
 
+### Initializing a component on a selector
+
+There are 2 ways to do it:
+
+* Initializing the component in the data-mage-init attribute. For example:
+
+  ```html
+  <div id="element-id" data-mage-init='{"Vendor_Module/js/myfile":{}}'></div>
+  ```
+* Using a script type "text/x-magento-init" attribute. For example:
+
+  ```html
+  <script type="text/x-magento-init">
+  {
+     "#element-id": { 
+         "Vendor_Module/js/myfile": {} 
+     } 
+  } 
+  </script>
+  ```
+* In these cases the path to the file is:
+
+  Vendor/Module/view/frontend/web/js/jsfilename.js
+
+  Which contains your code:
+
+  ```javascript
+  define(['uiComponent'],
+    function (Component) {
+      'use strict';
+      return Component.extend({
+        initialize: function (config, node) {
+          // some code
+        }
+      });
+    });
+  ```
+### Initializing a component on a selector with parameters
+When a component is initialized, it is also important to send parameters to it, which are determined mostly dynamically in php.
+
+* data-mage-init
+  ```html
+  <div id="element-id" data-mage-init='{"Vendor_Module/js/myfile":{"parameter":"value","status":<?php echo $block->getStatus(); ?>
+  }}'></div>
+  ```
+
+* Using a script type "text/x-magento-init" attribute. For example:
+
+  ```html
+  <script type="text/x-magento-init">
+  {
+     "#element-id": { 
+         "Vendor_Module/js/myfile1": {
+             "parameter":"value",
+             "status":<?php echo $block->getStatus(); ?>
+         } 
+     }
+  } 
+  </script>
+  ```
+
 ## Development standards
 
 *  Widgets should comply with the [single responsibility principle][single-responsibility-principle]{:target="_blank"}.
