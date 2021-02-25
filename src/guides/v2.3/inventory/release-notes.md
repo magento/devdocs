@@ -5,7 +5,7 @@ title: Release Notes
 
 **{{site.data.var.im}} (provided by the [Magento Inventory (was MSI)](https://github.com/magento/inventory) project)** is available with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} 2.3.x. Merchants can use {{site.data.var.im}} to manage inventory for all product types in a single warehouse and across complex shipping networks. Manage these locations as sources, tracking on-hand inventory quantities per product. Stocks connect these sources with sales channels (websites) to provide an accurate salable quantity, calculating available on-hand products, pending orders (reservations), and configured thresholds. {{site.data.var.im}} also updates order and shipment options, giving you full control over your inventory and deductions at the source level.
 
-{{site.data.var.im}} is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel ([self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+{{site.data.var.im}} is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel ([self signup](https://opensource.magento.com/slack)) to discuss the project.
 
 See the following documentation:
 
