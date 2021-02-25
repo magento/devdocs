@@ -1,60 +1,56 @@
 ---
 group: marketplace-sellers
-title: MFTF Vendor Supplied Tests
+title: MFTF Vendor-supplied Tests
 ---
 
 ## Overview
 
-The Magento Functional Testing Framework vendor supplied Tests are a browser-based user acceptance testing framework used to validate the functionality on an operating Magento site. Running vendor supplied MFTF tests helps ensure that the extension functionality is operating as expected for the end user.
+The Magento Functional Testing Framework (MFTF) is a browser-based acceptance testing framework used to validate the functionality of a Magento site. Running vendor-supplied MFTF tests helps to ensure that the extension functionality is operating as expected for the end user.
 
-For information on how to setup, create and modify MFTF tests, see [MFTF Devdocs](https://devdocs.magento.com/mftf/docs/introduction.html)
+For information on how to setup, create and modify MFTF tests, see [Introduction to the Magento Functional Testing Framework](https://devdocs.magento.com/mftf/docs/introduction.html).
 
 ## What testing is for
 
-To ensure that extension submissions perform the expected behavior for a user, MFTF tests are used to describe and confirm the functionality expected via browser-based testing against an operational Magento instance.
+To ensure that extension submissions perform correctly for a user, MFTF tests are used to mimic the functionality expected via browser-based testing against a Magento instance.
 
-MFTF runs tests in a browser, using Selenium and Codeception, to emulate user behavior. MFTF tests are designed to be extensible and be used in conjunction with Magento developed MFTF code coverage. This allows vendor supplied extension MFTF tests to describe the behavior of the extension and to integrate with existing suites of MFTF coverage, leveraging reusable tests elements and modifying existing test flows as necessary.
+MFTF runs tests in a browser, using Selenium and Codeception to emulate the user behavior. MFTF tests are designed to be extensible and used in conjunction with existing MFTF code coverage. This allows vendor-supplied MFTF tests to describe the behavior of the extension and to integrate with the existing suites of MFTF coverage, leveraging reusable tests elements and modifying existing test flows as necessary.
 
-Functional testing in this way helps ensure that the experience of the end-user is as described and intended by the extension developer, allowing for the customizability and extensibility of Magento as a platform.
-
-## When testing is done
-
-MFTF vendor supplied Tests are run only where:
-
--  There are MFTF tests included in the submission in the correct directory (`Tests/Mftf`)
--  Only for MFTF v3.0 or greater
--  Only for Magento v2.4.0 or greater
-
-## What is being checked
-
-Vendor supplied MFTF tests will be run on an installed Magento instance of the type listed above. These tests will help verify that the functionality intended is testable and working on a Magento environment. The results of this testing can be used to inform Marketplace QA resources about the state of the extension and what level of effort will be required in manually verifying the extension. A higher level of vendor supplied MFTF coverage will allow manual QA efforts to be focussed and potentially accelerate the progression of the extension through the Technical Review process.
+Functional testing in this way ensures that the experience of the end-user is as intended by the extension developer, allowing for the customizability and extensibility of Magento as a platform.
 
 ## Tools and environments used
 
-The Magento test infrastructure will execute vendor supplied MFTF tests in the most up-to-date version of Magento in the 2.4.x release line, as well as the most up-to-date software compatible with that release. The test infrastructure follows the recommended setup for Magento installation and MFTF setup and configuration. You can use Magento Cloud Docker to create a similar environment.
+The Magento test infrastructure executes vendor-supplied MFTF tests in the most recent version of Magento in the 2.4.x release line, as well as the most up-to-date software compatible with that release. The test infrastructure uses the recommended setup for Magento installation with the standard MFTF setup and configuration. You can use the [Magento Cloud Docker](https://github.com/magento/magento-cloud-docker) image to create a similar environment.
+
+-  The MFTF version will be v3.0 or higher
+-  It will be tested on Magento v2.4.0 or higher
+
+See [System Requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) for more information on supported software.
+
+## What is being checked
+
+Vendor-supplied MFTF tests are run on a Magento instance with the specifications listed above. These tests help verify that the functionality intended is testable and working on a Magento environment. The results of this testing is used to inform Marketplace QA about the state of the extension and what level of effort is required to manually verify the extension. A higher level of vendor-supplied MFTF coverage allows the manual QA efforts to be more focused and accelerates the extension through the Technical Review process
 
 ## Reading the error report
+
 MFTF returns two types of results:
 
 1. Simplified results showing the status of each test executed
-1. Allure results (as XML)
+1. Allure XML results
 
 See [MFTF Reporting](https://devdocs.magento.com/mftf/docs/reporting.html) for further information.
 
-To diagnose a test failure, you should first ascertain if you can replicate the failure on your local development environment. If you cannot, this indicates a configuration and/or environment difference.
+To diagnose a test failure, first ascertain if you can replicate the failure on your local environment. If you cannot, this indicates a configuration and/or environmental difference.
 
 The Allure results returned to Marketplace can be downloaded and displayed as an Allure report for simple consumption and identification of failure points.
 
 ## Troubleshooting
 
 -  Ensure that your tests generate, execute and pass in the specified environment configuration
--  Tests must be in the correct directory structure to be identified and executed
--  Within your extension, there must be a `Test` directory. This directory must contain an `Mftf` directory
--  MFTF within this directory should follow the standard directory structure, separating ActionGroups, Tests, Pages, Sections, etc into their own directories
--  Given that tests will be executed with Magento MFTF tests available for merging, please ensure that they will operate as expected in this configuration, e.g. Ensure that test names do not clash with existing Magento tests
--  Ensure that if you are extending from, or merging into, an existing Magento test (or relying upon its entities), that it is required as a composer prerequisite
--  Remember that MFTF tests will be part of the final package that is made available to your customers
--  Do not include any sensitive or confidential data in test comments or code
--  If necessary, include a README, or other instructions, within the `Test` directory, to explain any setup steps or caveats on running your MFTF tests
--  Ensure that any necessary credentials, user authorization (e.g. to communicate via API key to your backend) is explained and supported via credential management in tests
+-  Tests must be in the `Test/Mftf` directory within the extension
+-  MFTF tests within this directory must follow the standard directory structure, separating ActionGroups, Tests, Pages, Sections, etc into their own directories
+-  Ensure that tests names do not clash with existing Magento tests
+-  If you are extending from, or merging into, an existing Magento test (or relying upon its entities), it must be required as a Composer prerequisite
+-  The MFTF tests will be part of the final package that is made available to your customers. Do not include any sensitive or confidential data in test comments or code
+-  If necessary, include a README, or other instructions, within the `Test` directory, to explain any setup steps or caveats for running your MFTF tests
+-  Ensure that any necessary credentials or user authorization (e.g. to communicate via API key to your backend) is explained and supported via credential management in tests
 -  Always follow the [MFTF Best Practices](https://devdocs.magento.com/mftf/docs/best-practices.html) and use the [MFTF Tips & Tricks](https://devdocs.magento.com/mftf/docs/tips-tricks.html).
