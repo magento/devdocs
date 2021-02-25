@@ -40,7 +40,7 @@ You can configure Docker resources from the [Docker Desktop].
 
 ### PHP and Composer
 
-{{site.data.var.mcd-prod}} does not require PHP and Composer to be installed locally. We provide an installation script [init-docker.sh] to perform PHP and Composer operations.
+{{site.data.var.mcd-prod}} does not require PHP and Composer to be installed locally. We provide an installation script, [init-docker.sh] to perform PHP and Composer operations.
 
 The `init-docker.sh` script runs the following command which installs the template dependencies and sets both the PHP version and the {{site.data.var.mcd-prod}} image version.
 
@@ -48,7 +48,7 @@ The `init-docker.sh` script runs the following command which installs the templa
 docker run --rm -e "MAGENTO_ROOT=/app" -v "$(pwd)":/app -v ~/.composer/cache:/root/.composer/cache "magento/magento-cloud-docker-php:${PHP_VERSION}-cli-${IMAGE_VERSION}" composer install --ansi
 ```
 
-The script option settings determine the PHP version and {{site.data.var.mcd-prod}} image version. The script also adds the default hostname to your `/etc/hosts` file.
+The script option settings determine the PHP version and {{site.data.var.mcd-prod}} image version. The script also adds the default hostname, `magento2.docker` to your `/etc/hosts` file.
 
 > `init-docker.sh` options
 
@@ -57,8 +57,8 @@ Option | Description
 :----- | :------
 `-p`, `--php` | PHP version (for installing dependencies). You must specify a PHP version that is compatible with the {{site.data.var.ee}} version deployed to the Cloud Docker envrionment. Defaults to `7.2`
 `-i`, `--image` |  {{site.data.var.mcd-prod}} image version (for installing dependencies). Defaults to `1.1`
-`--host` | domain name to add to /etc/hosts. Defaults to `magento2.docker`
-`--add-host` | Add domain name to /etc/hosts file. Defaults to `true`
+`--host` | domain name to add to /etc/hosts. Defaults to `magento2.docker`.
+`--add-host` | Add domain name to /etc/hosts file. Defaults to true (`yes`).
 `-h`, `--help` | Get help
 
 **Examples:**

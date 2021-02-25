@@ -13,14 +13,8 @@ redirect_from:
 
 -  [{{site.data.var.ece}} project configuration files] for Cloud projects
 -  [Unified configuration] for on-premises projects
--  [CLI configuration] using `ece-docker build:compose` command options
+-  [CLI configuration] using `ece-docker build:compose` command options to override configuration values at runtime
 -  [Custom Docker Compose configuration file] supports Magento installation for both Cloud and on-premises projects
-
-If you have multiple configuration sources, the settings are applied using the following inheritance model.
-
-TBD: CONFIG PREFERENCE LEFT TO RIGHT
-
-> CLI -> Custom config -> Universal config -> Magento Cloud services and app config
 
 {:.bs-callout-info}
 When you build the Docker Compose configuration file, the `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save customizations for the Docker Compose configuration in a `docker-compose.override.yml` file.  If the `docker-compose.override.yml` file is present, then the override configuration merges with the base configuration. See [Override configuration].

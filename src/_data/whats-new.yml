@@ -734,7 +734,7 @@ entries:
   profile: https://github.com/hguthrie
 - description: Added Magento Community links and resources for getting support and
     discussing issues related to Magento Cloud Docker. See [Getting support for Magento
-    Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html#getting-support-for-magento-cloud-docker).
+    Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-troubleshooting.html).
   versions: 2.x
   type: Technical
   date: October 20, 2020

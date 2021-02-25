@@ -166,7 +166,7 @@ pages:
       url: /cloud/docker/docker-development.html
       versionless: true
       children:
-        - label: Install prerequisites
+        - label: Install
           url: /cloud/docker/docker-installation.html
           versionless: true
           children:
@@ -234,10 +234,6 @@ pages:
             - label: CLI containers
               url: /cloud/docker/docker-containers-cli.html
               versionless: true
-              
-            - label: Synchronizing data
-              url: /cloud/docker/docker-syncing-data.html
-              versionless: true
 
         - label: Functional Testing
           children:
@@ -253,7 +249,7 @@ pages:
           url: /cloud/docker/docker-quick-reference.html
           versionless: true
 
-        - label: Troubleshooting
+        - label: Get support for Cloud Docker
           url: /cloud/docker/docker-troubleshooting.html
           versionless: true
         

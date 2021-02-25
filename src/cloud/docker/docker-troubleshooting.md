@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Cloud Docker Troubleshooting
+title: Get support for Magento Cloud Docker
 functional_areas:
   - Cloud
   - Configuration
@@ -14,7 +14,9 @@ functional_areas:
 
 -  **Magento Cloud Community Engineering demos**–Magento hosts Cloud demo session where you can learn about developing Magento on the Cloud platform, including information about local development with {{site.data.var.mcd-prod}}. For a schedule and recordings of previous demos, see the [Magento Cloud Community Engineering Demo Schedule].
 
-## Fix Elasticsearch map count error
+## Troubleshooting
+
+**Fix Elasticsearch map count error:**
 
 When you launch the Docker environment on some Linux systems, the Elasticsearch service fails to start and the following error displays:
 
@@ -46,4 +48,5 @@ To permanently update the system setting for `vm.max_map_count`:
 
 [Magento Cloud Community Engineering demo schedule]: https://spark.adobe.com/page/PbxJoujH7oRTc/
 [Magento Community Engineering Slack organization]: https://magentocommeng.slack.com/
-[sign yourself up]: https://magentocommeng.slack.com/ssb/redirect
+[sign yourself up]: https://opensource.magento.com/slack
+[{{site.data.var.mcd-package}} GitHub repository]: https://github.com/magento/magento-cloud-docker

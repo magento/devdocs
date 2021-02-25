@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Install prerequisites
+title: Install Magento
 functional_areas:
   - Cloud
   - Configuration
@@ -8,7 +8,7 @@ functional_areas:
 
 {{site.data.var.mcd-prod}} is one of the {{site.data.var.csuite}} packages designed to deploy and manage local {{site.data.var.ee}} Docker environments for both Cloud and on-premises projects.
 
-If you are using {{ site.data.var.ee }} on Cloud, you most likely have the {{ site.data.var.mcd-package }} installed together with the {{site.data.var.ct-repo}} package.
+If you are using {{ site.data.var.ee }} on Cloud, you most likely have the {{ site.data.var.mcd-package }} package installed together with the {{site.data.var.ct-repo}} package.
 
 On-premises installation requires the stand-alone {{ site.data.var.mcd-package }} available in the [Magento Cloud Docker GitHub repository](https://github.com/magento/magento-cloud-docker).
 
