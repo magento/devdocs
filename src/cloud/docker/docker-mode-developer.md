@@ -121,12 +121,12 @@ To launch the Docker environment in developer mode:
 
    -  `https://magento2.docker`
 
-1. Use the default credentials to log in to the Admin at the following URL: `https://magento2.docker/admin`
+1. Use the default credentials to log in to the Admin: `https://magento2.docker/admin`
 
-   -  username=`Admin`
-   -  password=`123123q`
+   -  username: `Admin`
+   -  password: `123123q`
 
-1. Access the default email service at the following URL: `http://magento2.docker:8025`
+1. Access the default email service: `http://magento2.docker:8025`
 
 <!--Link definitions-->
 

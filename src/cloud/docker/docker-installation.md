@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Install prerequisites
+title: Install Magento
 functional_areas:
   - Cloud
   - Configuration

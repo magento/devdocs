@@ -11,16 +11,17 @@ redirect_from:
 
 `{{site.data.var.mcd-prod}}` deploys Magento to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You have the option to deploy a Docker environment in developer mode, which provides an active development environment with full, writable filesystem permissions.
 
-You use the `ece-docker build:compose` command to generate the Docker Compose configuration from a Docker Compose configuration file and to deploy {{site.data.var.ece}} to a local Docker environment. The configuration file can be generated from multiple sources depending on your requirements. See [Configure sources]
+You use the `ece-docker build:compose` command to generate the Docker Compose configuration file from specified configuration settings and to deploy {{site.data.var.ece}} to a local Docker environment. You supply the configuration settings from multiple sources depending on your requirements. See [Configure sources].
 
 {:.bs-callout-warning }
-When you run the `ece-docker build:compose` command, it regenerates the `docker-compose,yml` configuration file and overwrites the existing `docker-compose.yml` configuration file. You can save custom configuration across builds by adding the settings to a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference][docker-reference].
+When you run the `ece-docker build:compose` command, it regenerates the `docker-compose.yml` configuration file and overwrites the existing `docker-compose.yml` configuration file. You can save custom configuration across builds by adding the settings to a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference][docker-reference].
 
 ## Set the launch mode
 
 You can launch a Docker environment in production or developer mode by setting the `mode` option on the `ece-docker build:compose` command:
 
 -  **Production mode**—The `--mode="production"` setting supports an active production environment with read-only filesystem permissions. This is the default configuration setting for launching a Docker environment. Selecting this option builds the Docker environment in production mode and verifies configured service versions. See [Production mode launch instructions][prod-mode].
+
 -  **Developer mode**—The `--mode="developer"` setting supports an active development environment with full, writable filesystem permissions. Selecting this option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations. See [Developer mode launch instructions][dev-mode].
 
 For example, the following command starts the Docker configuration generator for the developer mode:
@@ -56,6 +57,7 @@ Use the following command to stop and remove the Docker configuration:
 This command removes all components of your local Docker instance including containers, networks, volumes, and images except for the persistent database and the `magento-sync` volume. See [Rebuild a clean environment][refresh].
 
 <!--Link definitions-->
+[Configure sources]: {{site.baseurl}}/cloud/docker/docker-config-sources.html
 [docker-reference]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html
 [prod-mode]: {{site.baseurl}}/cloud/docker/docker-mode-production.html
 [dev-mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html

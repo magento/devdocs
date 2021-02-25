@@ -86,8 +86,8 @@ To launch the Docker environment in production mode:
 
 1. Use the default credentials to log in to the Admin at the following URL: `https://magento2.docker/admin`
 
-   -  username=`Admin`
-   -  password=`123123q`
+   -  username: `Admin`
+   -  password: `123123q`
 
 1. Access the default email service at the following URL: `http://magento2.docker:8025`
 
