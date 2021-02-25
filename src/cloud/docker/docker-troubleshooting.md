@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-<<<<<<< HEAD
-title: Cloud Docker Troubleshooting
-=======
 title: Get support for Magento Cloud Docker
->>>>>>> a14dd737cff9067c4d0a8926a2248d61efaba64f
 functional_areas:
   - Cloud
   - Configuration
@@ -52,9 +48,5 @@ To permanently update the system setting for `vm.max_map_count`:
 
 [Magento Cloud Community Engineering demo schedule]: https://spark.adobe.com/page/PbxJoujH7oRTc/
 [Magento Community Engineering Slack organization]: https://magentocommeng.slack.com/
-<<<<<<< HEAD
-[sign yourself up]: https://magentocommeng.slack.com/ssb/redirect
-=======
 [sign yourself up]: https://opensource.magento.com/slack
 [{{site.data.var.mcd-package}} GitHub repository]: https://github.com/magento/magento-cloud-docker
->>>>>>> a14dd737cff9067c4d0a8926a2248d61efaba64f
