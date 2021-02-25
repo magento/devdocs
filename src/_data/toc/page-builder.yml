@@ -14,6 +14,46 @@ pages:
   url: /page-builder/docs/pagebuilder-examples.html
   versionless: true
 
+- label: 'Administration'
+  versionless: true
+  children:
+
+    - label: Deactivate Page Builder
+      url: /page-builder/docs/administration/deactivate-pagebuilder.html
+      versionless: true
+
+    - label: Upgrade content types
+      url: /page-builder/docs/administration/upgrade-content-types.html
+      versionless: true
+
+    - label: Use for product attributes
+      url: /page-builder/docs/administration/use-for-product-attributes.html
+      versionless: true
+
+- label: Architecture
+  versionless: true
+  children:
+
+    - label: Overview
+      url: /page-builder/docs/architecture/overview.html
+      versionless: true
+
+    - label: Configurations
+      url: /page-builder/docs/architecture/configurations.html
+      versionless: true
+
+    - label: Datastore
+      url: /page-builder/docs/architecture/data-store.html
+      versionless: true
+
+    - label: Events
+      url: /page-builder/docs/architecture/events.html
+      versionless: true
+
+    - label: Knockout bindings
+      url: /page-builder/docs/architecture/knockout-bindings.html
+      versionless: true
+
 - label: 'Content types'
   versionless: true
   children:
@@ -110,11 +150,11 @@ pages:
           url: /page-builder/docs/content-types/extend/introduction.html
           versionless: true
 
-        - label: Extend appearances
+        - label: Extend an appearance
           url: /page-builder/docs/content-types/extend/extend-appearances.html
           versionless: true
 
-        - label: Extend more appearances
+        - label: Extend another appearance
           url: /page-builder/docs/content-types/extend/extend-more-appearances.html
           versionless: true
 
@@ -122,104 +162,64 @@ pages:
           url: /page-builder/docs/content-types/extend/add-appearances.html
           versionless: true
 
-    - label: 'Style'
-      versionless: true
-      children:
-
-        - label: Introduction
-          url: /page-builder/docs/content-types/style/introduction.html
-          versionless: true
-
-        - label: Override styles
-          url: /page-builder/docs/content-types/style/override-pagebuilder-styles.html
-          versionless: true
-
-        - label: Use Themes
-          url: /page-builder/docs/content-types/style/use-themes-to-override-styles.html
-          versionless: true
-
-        - label: Use Modules
-          url: /page-builder/docs/content-types/style/use-modules-to-override-styles.html
-          versionless: true
-
-        - label: Use HTML Code
-          url: /page-builder/docs/content-types/style/use-htmlcode-to-override-styles.html
-          versionless: true
-
-    - label: 'Responsive'
-      versionless: true
-      children:
-
-      - label: Introduction
-        url: /page-builder/docs/content-types/responsive/introduction.html
-        versionless: true
-
-      # - label: Configure layouts
-      #   url: /page-builder/docs/content-types/responsive/configurations.html
-      #   versionless: true
-
-      # - label: Use media queries
-      #   url: /page-builder/docs/content-types/responsive/configurations.html
-      #   versionless: true
-
-      - label: Add viewports
-        url: /page-builder/docs/content-types/responsive/add-viewports.html
-        versionless: true
-
-      # - label: Use viewports
-      #   url: /page-builder/docs/content-types/responsive/use-viewports.html
-      #   versionless: true
-
-      - label: Add breakpoints
-        url: /page-builder/docs/content-types/responsive/add-viewports.html
-        versionless: true
-
-      - label: Use breakpoints
-        url: /page-builder/docs/content-types/responsive/use-breakpoints.html
-        versionless: true
-
-      - label: Change breakpoints and viewports
-        url: /page-builder/docs/content-types/responsive/change-breakpoints-viewports.html
-        versionless: true
-
-- label: Architecture
+- label: 'Styles'
   versionless: true
   children:
 
-    - label: Overview
-      url: /page-builder/docs/architecture/overview.html
+    - label: Introduction
+      url: /page-builder/docs/styles/introduction.html
       versionless: true
 
-    - label: Configurations
-      url: /page-builder/docs/architecture/configurations.html
+    - label: Override styles
+      url: /page-builder/docs/styles/override-pagebuilder-styles.html
       versionless: true
 
-    - label: Datastore
-      url: /page-builder/docs/architecture/data-store.html
+    - label: Use Themes
+      url: /page-builder/docs/styles/use-themes-to-override-styles.html
       versionless: true
 
-    - label: Events
-      url: /page-builder/docs/architecture/events.html
+    - label: Use Modules
+      url: /page-builder/docs/styles/use-modules-to-override-styles.html
       versionless: true
 
-    - label: Knockout bindings
-      url: /page-builder/docs/architecture/knockout-bindings.html
+    - label: Use HTML Code
+      url: /page-builder/docs/styles/use-htmlcode-to-override-styles.html
       versionless: true
 
-- label: 'Administration'
+- label: 'Viewports'
   versionless: true
   children:
 
-    - label: Deactivate Page Builder
-      url: /page-builder/docs/administration/deactivate-pagebuilder.html
+    - label: Introduction
+      url: /page-builder/docs/viewports/introduction.html
       versionless: true
 
-    - label: Upgrade content types
-      url: /page-builder/docs/administration/upgrade-content-types.html
+    # - label: Configure layouts
+    #   url: /page-builder/docs/viewports/configurations.html
+    #   versionless: true
+
+    # - label: Use media queries
+    #   url: /page-builder/docs/viewports/configurations.html
+    #   versionless: true
+
+    - label: Add viewports
+      url: /page-builder/docs/viewports/add-viewports.html
       versionless: true
 
-    - label: Use for product attributes
-      url: /page-builder/docs/administration/use-for-product-attributes.html
+    # - label: Use viewports
+    #   url: /page-builder/docs/viewports/use-viewports.html
+    #   versionless: true
+
+    - label: Add breakpoints
+      url: /page-builder/docs/viewports/add-breakpoints.html
+      versionless: true
+
+    - label: Use breakpoints
+      url: /page-builder/docs/viewports/use-breakpoints.html
+      versionless: true
+
+    - label: Change breakpoints and viewports
+      url: /page-builder/docs/viewports/change-breakpoints-viewports.html
       versionless: true
 
 - label: BlueFoot migration
