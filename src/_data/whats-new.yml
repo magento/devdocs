@@ -16,11 +16,11 @@ entries:
   profile: https://github.com/bdenham
 - description: New Page Builder topics on how to create responsive content. Learn
     about viewports, breakpoints, and how to use them to make your content responsive.
-    The new topics include:<br/>- [Introduction to viewports for responsive content](https://devdocs.magento.com/page-builder/docs/content-types/responsive/introduction.html)<br/>-
-    [Add viewports](https://devdocs.magento.com/page-builder/docs/content-types/responsive/add-viewports.html)<br/>-
-    [Add breakpoints](https://devdocs.magento.com/page-builder/docs/content-types/responsive/add-breakpoints.html)<br/>-
-    [Use breakpoints](https://devdocs.magento.com/page-builder/docs/content-types/responsive/use-breakpoints.html)<br/>-
-    [Change breakpoints and viewports](https://devdocs.magento.com/page-builder/docs/content-types/responsive/change-breakpoints-viewports.html)
+    The new topics include:<br/>- [Introduction to viewports for responsive content](https://devdocs.magento.com/page-builder/docs/viewports/introduction.html)<br/>-
+    [Add viewports](https://devdocs.magento.com/page-builder/docs/viewports/add-viewports.html)<br/>-
+    [Add breakpoints](https://devdocs.magento.com/page-builder/docs/viewports/add-breakpoints.html)<br/>-
+    [Use breakpoints](https://devdocs.magento.com/page-builder/docs/viewports/use-breakpoints.html)<br/>-
+    [Change breakpoints and viewports](https://devdocs.magento.com/page-builder/docs/viewports/change-breakpoints-viewports.html)
   versions: 2.4.x
   type: Major Update
   date: February 23, 2021
@@ -40,11 +40,11 @@ entries:
 - description: New Page Builder topics on how to style content types. Learn how Page
     Builder styles content and how to override these styles to control Page Builder's
     appearance from your themes. The new topics include:<br/>- [How Page Builder styles
-    content](https://devdocs.magento.com/page-builder/docs/content-types/style/introduction.html)<br/>-
-    [Override Page Builder styles](https://devdocs.magento.com/page-builder/docs/content-types/style/override-pagebuilder-styles.html)<br/>-
-    [Use themes to override styles](https://devdocs.magento.com/page-builder/docs/content-types/style/use-themes-to-override-styles.html)<br/>-
-    [Use modules to override styles](https://devdocs.magento.com/page-builder/docs/content-types/style/use-modules-to-override-styles.html)<br/>-
-    [Use HTML Code to override styles](https://devdocs.magento.com/page-builder/docs/content-types/style/use-htmlcode-to-override-styles.html)
+    content](https://devdocs.magento.com/page-builder/docs/styles/introduction.html)<br/>-
+    [Override Page Builder styles](https://devdocs.magento.com/page-builder/docs/styles/override-pagebuilder-styles.html)<br/>-
+    [Use themes to override styles](https://devdocs.magento.com/page-builder/docs/styles/use-themes-to-override-styles.html)<br/>-
+    [Use modules to override styles](https://devdocs.magento.com/page-builder/docs/styles/use-modules-to-override-styles.html)<br/>-
+    [Use HTML Code to override styles](https://devdocs.magento.com/page-builder/docs/styles/use-htmlcode-to-override-styles.html)
   versions: 2.4.x
   type: Major Update
   date: February 22, 2021
