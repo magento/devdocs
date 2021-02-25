@@ -107,12 +107,12 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
 
 There are 2 ways to do it:
 
-* Initializing the component in the data-mage-init attribute. For example:
+*  Initializing the component in the data-mage-init attribute.For example:
 
   ```html
   <div id="element-id" data-mage-init='{"Vendor_Module/js/myfile":{}}'></div>
   ```
-* Using a script type "text/x-magento-init" attribute. For example:
+*  Using a script type "text/x-magento-init" attribute.For example:
 
   ```html
   <script type="text/x-magento-init">
@@ -123,7 +123,7 @@ There are 2 ways to do it:
   } 
   </script>
   ```
-* In these cases the path to the file is:
+*  In these cases the path to the file is:
 
   Vendor/Module/view/frontend/web/js/jsfilename.js
 
@@ -143,13 +143,13 @@ There are 2 ways to do it:
 ### Initializing a component on a selector with parameters
 When a component is initialized, it is also important to send parameters to it, which are determined mostly dynamically in php.
 
-* data-mage-init
+*  data-mage-init
   ```html
   <div id="element-id" data-mage-init='{"Vendor_Module/js/myfile":{"parameter":"value","status":<?php echo $block->getStatus(); ?>
   }}'></div>
   ```
 
-* Using a script type "text/x-magento-init" attribute. For example:
+*  Using a script type "text/x-magento-init" attribute. For example:
 
   ```html
   <script type="text/x-magento-init">
