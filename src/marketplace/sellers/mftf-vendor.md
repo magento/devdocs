@@ -19,7 +19,11 @@ Functional testing in this way ensures that the experience of the end-user is as
 
 ## When testing is done
 
-MFTF tests are run as a regular part of the installation and Varnish process.
+MFTF vendor supplied tests are run only where:
+
+-  There are MFTF tests included in the submission in the correct directory (`Tests/Mftf`)
+-  Only for MFTF v3.0 or greater
+-  Only for Magento v2.4.0 or greater
 
 ## What is being checked
 
@@ -28,9 +32,6 @@ MFTF tests verify the proper functioning of the workflows that the extension int
 ## Tools and environments used
 
 The Magento test infrastructure executes vendor-supplied MFTF tests in the most recent version of Magento in the 2.4.x release line, as well as the most up-to-date software compatible with that release. The test infrastructure uses the recommended setup for Magento installation with the standard MFTF setup and configuration. You can use the [Magento Cloud Docker][2] image to create a similar environment.
-
--  The MFTF version will be v3.0 or higher
--  It will be tested on Magento v2.4.0 or higher
 
 See [System Requirements][3] for more information on supported software.
 
