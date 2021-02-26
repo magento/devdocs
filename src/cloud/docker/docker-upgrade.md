@@ -12,9 +12,8 @@ We recommend that you use the latest version of {{site.data.var.mcd-prod}}. The 
 {:.bs-callout-info}
 {{site.data.var.mcd-prod}} releases sometimes introduce changes to the `docker-compose.yml` file. If you have any custom changes in the `docker-compose.yml` file, move them to the [`docker-compose.override.yml`][Override configuration] file.
 
-
 {:.procedure}
-To update the {{site.data.var.mcd-prod}} package for on-premises projects:
+To update the {{site.data.var.mcd-prod}} package:
 
 1. On your local workstation, update the {{site.data.var.mcd-prod}} package using Composer.
 
@@ -35,8 +34,6 @@ To update the {{site.data.var.mcd-prod}} package for on-premises projects:
    ```bash
    git push origin <branch-name>
    ```
-
-1. Preserve custom configuration.
 
 After you upgrade to the latest version of the {{site.data.var.mcd-prod}}, you can [use the Docker environment] again.
 
