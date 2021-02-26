@@ -24,12 +24,6 @@ namespace :update do
     update_dir 'src/page-builder'
   end
 
-  desc 'Update Page Builder Migration docs'
-  task :pbm do
-    puts 'Updating Page Builder Migration docs'.magenta
-    update_dir 'src/page-builder-migration'
-  end
-
   desc 'Update MFTF docs'
   task :mftf do
     puts 'Updating MFTF docs:'.magenta
