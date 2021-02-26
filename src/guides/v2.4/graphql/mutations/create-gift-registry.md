@@ -52,8 +52,8 @@ mutation {
       registrants: [
         {
           firstname: "Julie"
-          lastname: "Mao"
-          email: "juliemao@example.com"
+          lastname: "Rao"
+          email: "julierao@example.com"
           dynamic_attributes: [{ 
             code: "role"
             value: "Bride" }]
@@ -141,7 +141,7 @@ mutation {
   "data": {
     "createGiftRegistry": {
       "gift_registry": {
-        "uid": "D0R6d2B7aZWOQuuWftHZ0iwuexQPgaei",
+        "uid": "iSJHFdAtF8YBM5ALgNyNIgQmnbOW9t69",
         "event_name": "Bill and Julie's wedding",
         "message": "Help us celebrate Bill and Julie's wedding, which will be held on May 1, 2021",
         "owner_name": "Veronica Costello",
@@ -149,10 +149,10 @@ mutation {
         "status": "ACTIVE",
         "registrants": [
           {
-            "uid": "NQ==",
+            "uid": "OQ==",
             "firstname": "Julie",
-            "lastname": "Mao",
-            "email": "juliemao@example.com",
+            "lastname": "Rao",
+            "email": "julierao@example.com",
             "dynamic_attributes": [
               {
                 "code": "role",
@@ -162,7 +162,7 @@ mutation {
             ]
           },
           {
-            "uid": "Ng==",
+            "uid": "MTA=",
             "firstname": "Bill",
             "lastname": "Preston",
             "email": "bpreston@example.com",
@@ -194,6 +194,8 @@ mutation {
         }
       }
     }
+  }
+}
 ```
 
 ## Input attributes
