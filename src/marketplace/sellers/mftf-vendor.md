@@ -19,7 +19,7 @@ Functional testing in this way ensures that the experience of the end-user is as
 
 ## When testing is done
 
-MFTF vendor supplied Tests are run only where:
+MFTF vendor supplied tests are run only where:
 
 -  There are MFTF tests included in the submission in the correct directory (`Tests/Mftf`)
 -  Only for MFTF v3.0 or greater
