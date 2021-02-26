@@ -27,13 +27,44 @@ The following example removes a registrant from the specified gift registry.
 **Request:**
 
 ```graphql
-
+mutation{
+  removeGiftRegistryRegistrants(
+      giftRegistryUid: "W9YcRai9JmzGglqP3p0USodTTM3BmjjY", 
+      registrantsUid: "OA=="
+    ){
+    gift_registry {
+      uid
+      registrants {
+        uid
+        firstname
+        lastname
+        email
+      }
+    }
+  }
+}
 ```
 
 **Response:**
 
 ```json
-
+{
+  "data": {
+    "removeGiftRegistryRegistrants": {
+      "gift_registry": {
+        "uid": "W9YcRai9JmzGglqP3p0USodTTM3BmjjY",
+        "registrants": [
+          {
+            "uid": "Mg==",
+            "firstname": "Stacey",
+            "lastname": "Gaines",
+            "email": "staceyg@example.com"
+          }
+        ]
+      }
+    }
+  }
+}
 ```
 
 ## Input attributes
