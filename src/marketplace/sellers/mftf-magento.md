@@ -17,10 +17,10 @@ MFTF runs tests in a browser, using Selenium and Codeception, to emulate user be
 
 ## When testing is done
 
-MFTF Magento supplied Tests will be run for all Marketplace extension submissions for:
+MFTF Magento supplied tests will be run for all Marketplace extension submissions for:
 
--  Magento in 2.3 and 2.4 release lines
--  OpenSource and Commerce editions
+-  Magento 2.3 and 2.4 release lines
+-  Open Source and Commerce editions
 
 ## What is being checked
 
