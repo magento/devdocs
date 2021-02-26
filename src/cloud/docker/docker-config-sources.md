@@ -118,7 +118,7 @@ Array variables must be encoded with base64 encoding for JSON.
 
 ### Mounts
 
-The [mounts] section consists of path parameters named mounts:
+The [mounts] section specifies the path parameters for named mounts:
 
 ```yaml
 # The mounts that will be performed when the package is deployed.
@@ -152,11 +152,11 @@ See [Service configuration options] for additional information about the service
 
 Instead of building the `docker-compose.yaml` file using the {{site.data.var.ece }} project configuration. You can use the `ece-docker build:custom:compose` CLI command to build a custom `docker-compose.yaml` file with the configuration you supply. The CLI configuration is the quickest way to change some settings in a desired environment.
 
-You provide the configuration as a JSON array as shown in [Example 1](#example-1).
+You provide the configuration as a JSON array as shown in *Example 1*.
 
-For {{site.data.var.mcd-prod}} 1.2 and later, you have an additional option to specify custom images and image versions using the `ece-docker build:custom:compose` command as shown in [Example 2](#example-2).
+For {{site.data.var.mcd-prod}} 1.2 and later, you have an additional option to specify custom images and image versions using the `ece-docker build:custom:compose` command as shown in *Example 2*.
 
-### Example: Custom `docker-compose.yaml` file
+### Example 1: Custom `docker-compose.yaml` file
 
 ```bash
 ./vendor/bin/ece-docker build:custom:compose '{"name":"magento","system":{"mode":"production","host":"magento2.test","port":"8080","db":{"increment_increment":3,"increment_offset":2},"mailhog":{"smtp_port":"1026","http_port":"8026"}},"services":{"php":{"version":"7.3","enabled":true,"extensions":{"enabled":["xsl"]}},"mysql":{"version":"10.2","image":"mariadb","enabled":true}, "mailhog": {"enabled":true}}}'

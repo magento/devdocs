@@ -107,7 +107,7 @@ When you initialize a {{site.data.var.ee}} project for Docker development, you m
 Before you use {{site.data.var.mcd-prod}}, you must update the `etc/hosts` file and install required dependencies. You can do this manually, or using a Magento installation script.
 
 {:.procedure}
-Update and install manually:
+To update and install manually:
 
 1. To make Cloud Docker recognizable on the local machine, add the default `magento2.docker` host to the hosts file.
 
