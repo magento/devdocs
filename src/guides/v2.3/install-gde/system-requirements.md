@@ -21,13 +21,15 @@ Magento is not supported on Microsoft Windows and macOS.
 Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
 
 ## Supported browsers
+
 {% include browsers/supported-browsers.md %}
 
 ## Composer
 
 [Composer][] is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
 
-Magento does not support Composer 2.x.
+Magento 2.3.7 supports Composer 2.x.
+Magento will work with Composer 1.x but it is not longer in development and upgrading to Composer 2 is recommended.
 
 ## Web servers
 
@@ -102,8 +104,8 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ## Technologies Magento can use
 
-*  [Redis][] version 5.0 is recommended and used in testing for page caching and session storage.
-*  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.x (tested with 6.3.1)
+*  [Redis][] version 6.0.10 is recommended and used in testing for page caching and session storage.
+*  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.5 (tested with 6.5.1)
 *  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
    {% include config/es-version-23.md %}
@@ -126,7 +128,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug][].
 
 *  [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"} (for PHP < 7.2)
-*  PHPUnit (as a command-line tool) 6.2.0
+*  PHPUnit (as a command-line tool) 9.0.0
 
 <!-- Link Definitions -->
 [`mcrypt`]: http://php.net/manual/en/book.mcrypt.php
