@@ -17,18 +17,16 @@ MFTF runs tests in a browser, using Selenium and Codeception, to emulate user be
 
 ## When testing is done
 
-The MFTF tests are run as a regular part of the installation and Varnish testing process.
+MFTF Magento supplied Tests will be run for all Marketplace extension submissions for:
+
+-  Magento in 2.3 and 2.4 release lines
+-  OpenSource and Commerce editions
 
 ## What is being checked
 
 MFTF tests verify the proper functioning of basic Magneto workflows. They are meant to mimic the same code paths that the end user would take, by automating the clicks and data entry that the user would do. The Magento codebase contains thousands of MFTF tests.
 
 ## Tools and environments used
-
-Magento-supplied MFTF tests are run on all Marketplace extension submissions on:
-
--  Magento in 2.3 and 2.4 release lines
--  Open Source and Commerce editions
 
 The Magento test infrastructure executes Magento-supplied MFTF tests in the most up-to-date version of Magento in the 2.4.x and 2.3.x release lines, as well as the most up-to-date software compatible with that release. The test infrastructure follows the recommended setup for a Magento installation, MFTF setup, and system configuration. You can use [Magento Cloud Docker][2] to create a similar environment.
 
