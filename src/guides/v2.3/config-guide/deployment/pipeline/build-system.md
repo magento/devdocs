@@ -25,7 +25,6 @@ You can have one build system that meets the following requirements:
 
 The build system does _not_ need any of the following:
 
--  Magento database connection
 -  Magento software installed (only the code must be present)
 
 {:.bs-callout-info}
