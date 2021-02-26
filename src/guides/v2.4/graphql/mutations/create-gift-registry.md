@@ -200,10 +200,6 @@ mutation {
 
 The `CreateGiftRegistryInput` input object defines the gift registry.
 
-### CreateGiftRegistryInput attributes
-
-The `CreateGiftRegistryInput` object contains the following attributes:
-
 Attribute |  Data Type | Description
 --- | --- | ---
 `dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair

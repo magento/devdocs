@@ -3,7 +3,7 @@ group: graphql
 title: updateGiftRegistryRegistrants mutation
 
 ---
-The `updateGiftRegistryRegistrants` mutation .
+The `updateGiftRegistryRegistrants` mutation updates properties of one or more registrants of the specified gify registry.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
@@ -22,18 +22,59 @@ mutation {
 
 ## Example usage
 
-The following example updates a registrant to the specified gift registry.
+The following example updates a registrant's e-mail address.
 
 **Request:**
 
 ```graphql
-
+mutation{
+  updateGiftRegistryRegistrants(
+      giftRegistryUid: "W9YcRai9JmzGglqP3p0USodTTM3BmjjY", 
+      registrants: {
+          giftRegistryRegistrantUid: "OA=="
+          email: "new-email@example.com"
+        }
+    )
+    {
+    gift_registry {
+      uid
+      registrants {
+        uid
+        firstname
+        lastname
+        email
+      }
+    }
+  }
+}
 ```
 
 **Response:**
 
 ```json
-
+{
+  "data": {
+    "updateGiftRegistryRegistrants": {
+      "gift_registry": {
+        "uid": "W9YcRai9JmzGglqP3p0USodTTM3BmjjY",
+        "registrants": [
+          {
+            "uid": "Mg==",
+            "firstname": "Stacey",
+            "lastname": "Gaines",
+            "email": "staceyg@example.com"
+          },
+          {
+            "uid": "OA==",
+            "firstname": "Monica",
+            "lastname": "Resendez",
+            "email": "new-email@example.com"
+          }
+        ]
+      }
+    }
+  }
+}
 ```
 
 ## Input attributes
@@ -42,20 +83,24 @@ The `updateGiftRegistryRegistrants` mutation requires the following input.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
-`email` | String! | The email address of the registrant
-`firstname` | String! | The first name of the registrant
-`lastname` | String! | The last name of the registrant
+`giftRegistryRegistrantUid` | ID! | The unique ID of a `giftRegistryRegistrant` object
+`registrants` | [UpdateGiftRegistryRegistrantInput!]! | An array of registrants to update
 
-giftRegistryRegistrantUid: ID! @doc(description: "The unique ID of a `giftRegistryRegistrant` object")
-firstname: String @doc(description: "The updated first name of the registrant")
-lastname: String @doc(description: "The updated last name of the registrant")
-email: String @doc(description: "The updated email address of the registrant")
-dynamic_attributes: [GiftRegistryDynamicAttributeInput] @doc(description: "As a result of the update, only the values of provided attributes will be affected. If the attribute is missing in the request, its value will not be changed")
+### UpdateGiftRegistryRegistrantInput attributes
+
+The `UpdateGiftRegistryRegistrantInput` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`dynamic_attributes` | [[GiftRegistryDynamicAttributeInput](#GiftRegistryDynamicAttributeInput)] | As a result of the update, only the values of provided attributes will be affected. If the attribute is missing in the request, its value will not be changed
+`email` | String | The updated email address of the registrant
+`firstname` | String | The updated first name of the registrant
+`giftRegistryRegistrantUid` | ID! | The unique ID of a `giftRegistryRegistrant` object
+`lastname` | String | The updated last name of the registrant
 
 ### GiftRegistryDynamicAttributeInput attributes {#GiftRegistryDynamicAttributeInput}
 
-The `GiftRegistryDynamicAttributeInput` object contains the following attributes:
+The `GiftRegistryDynamicAttributeInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -64,7 +109,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `AddGiftRegistryRegistrantsOutput` output object contains the following attribute.
+The `UpdateGiftRegistryRegistrantsOutput` output object contains the following attribute.
 
 Attribute |  Data Type | Description
 --- | --- | ---

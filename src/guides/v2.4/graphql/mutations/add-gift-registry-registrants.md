@@ -3,10 +3,9 @@ group: graphql
 title: addGiftRegistryRegistrants mutation
 
 ---
-The `addGiftRegistryRegistrants` mutation .
+The `addGiftRegistryRegistrants` mutation add a registrant to the specified gift registry.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
-
 
 ## Syntax
 
@@ -32,15 +31,16 @@ mutation {
   addGiftRegistryRegistrants (
     giftRegistryUid: "W9YcRai9JmzGglqP3p0USodTTM3BmjjY", 
     registrants: {
-        firstname: "Monique"
+        firstname: "Monica"
         lastname: "Resendez"
-        email: "monique@example.com"
+        email: "monica@example.com"
     }
   ){
     gift_registry {
       uid
       event_name
       registrants {
+        uid
         firstname
         lastname
       }
@@ -60,11 +60,13 @@ mutation {
         "event_name": "Theo's 45th Birthday",
         "registrants": [
           {
+            "uid": "Mg==",
             "firstname": "Stacey",
             "lastname": "Gaines"
           },
           {
-            "firstname": "Monique",
+            "uid": "OA==",
+            "firstname": "Monica",
             "lastname": "Resendez"
           }
         ]
