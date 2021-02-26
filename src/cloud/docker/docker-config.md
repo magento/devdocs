@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Configure and manage your project and environment
+title: Configure and manage your Docker environment
 functional_areas:
   - Cloud
   - Setup

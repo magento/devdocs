@@ -9,11 +9,11 @@ functional_areas:
 
 {{site.data.var.mcd-prod}} provides an option to deploy {{site.data.var.ee}} to a Docker environment for development, test, and automation tasks. It includes the following features:
 
--  **Cross-platform support**—Supports Linux, macOS and Windows with WSL2
--  **Magento Cloud emulation**-Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
+-  **Cross-platform support**–Supports Linux, macOS and Windows with WSL2
+-  **Magento Cloud emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
 -  **{{site.data.var.ee}} development**–Create a local development environment for Magento on-premises projects
--  **Multiple sync options**-Provides three file synchronization options (native, mutagen and docker-sync) for best performance
--  **Extensibility**-Use a standard Docker configuration file to extend and customize your development environment
+-  **Multiple sync options**–Provides three file synchronization options (native, mutagen and docker-sync) for best performance
+-  **Extensibility**–Use a standard Docker configuration file to extend and customize your development environment
 
 {:.bs-callout-info}
 {{site.data.var.mcd-prod}} is a Magento Community Engineering project supported by the Magento developer community. For details and support information, see [Get support for {{site.data.var.mcd-prod}}][].

@@ -8,13 +8,13 @@ functional_areas:
 
 {{site.data.var.mcd-prod}} is one of the {{site.data.var.csuite}} packages designed to deploy and manage local {{site.data.var.ee}} Docker environments for both Cloud and on-premises projects.
 
-If you are using {{ site.data.var.ee }} on Cloud, you most likely have the {{ site.data.var.mcd-package }} installed together with the {{site.data.var.ct-repo}} package.
+If you are using {{ site.data.var.ee }} on Cloud, you most likely have the `{{ site.data.var.mcd-package }}` installed together with the `{{site.data.var.ct-repo}}` package.
 
-On-premises installation requires the stand-alone {{ site.data.var.mcd-package }} available in the [Magento Cloud Docker GitHub repository](https://github.com/magento/magento-cloud-docker).
+An on-premises installation requires the stand-alone `{{ site.data.var.mcd-package }}` package available in the [Magento Cloud Docker GitHub repository](https://github.com/magento/magento-cloud-docker).
 
 ## Initialize the Magento project
 
-{{ site.data.var.mcd-prod }} supports {{site.data.var.ee}} installation for both Cloud and on-premises projects. The initialization steps are different for each project type.
+{{ site.data.var.mcd-prod }} supports the {{site.data.var.ee}} installation for both Cloud and on-premises projects. The initialization steps are different for each project type.
 
 ### Magento Commerce Cloud projects
 
@@ -22,7 +22,7 @@ On-premises installation requires the stand-alone {{ site.data.var.mcd-package }
 
 1. Download a Magento application template from the [Magento Cloud repository][cloud-repo]. Be careful to select the branch that corresponds with the Magento version.
 
-1. You can also run next command to clone the latest template:
+1. Optionally, you can clone the latest template.
 
    ```bash
    git clone https://github.com/magento/magento-cloud.git <install-directory-name>
@@ -32,13 +32,13 @@ On-premises installation requires the stand-alone {{ site.data.var.mcd-package }
 
 1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
 
-### Magento Commerce projects
+### Magento Commerce On-premises projects
 
 When you initialize a {{site.data.var.ee}} project for Docker development, you must create a [.magento.docker.yml][unified configuration] configuration source file to create the Docker containers for the local environment.
 
 {:.procedure}
 
-1. Create a project using [Composer]({{site.baseurl}}/guides/v2.4/install-gde/composer.html)
+1. Create a project using [Composer]({{site.baseurl}}/guides/v2.4/install-gde/composer.html).
 
    ```bash
     composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
@@ -115,14 +115,14 @@ Update and install manually:
    echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
    ```
 
-1. Update Composer dependencies:
+1. Update the project dependencies.
 
    ```bash
    composer update
    ```
 
 {:.procedure}
-Update and install using the Magento installation script:
+To update and install using the Magento installation script:
 
 1. Install the template dependencies and add the default hostname to your `/etc/hosts` file.
 

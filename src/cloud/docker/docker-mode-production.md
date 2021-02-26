@@ -11,7 +11,7 @@ Production mode is the default configuration setting for launching the Docker en
 
 {%include cloud/note-docker-config-reference-link.md%}
 
-## Prerequisites
+**Prerequisites:**
 
 Complete the [installation steps].
 

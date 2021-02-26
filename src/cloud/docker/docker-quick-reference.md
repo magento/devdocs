@@ -36,7 +36,7 @@ The `--rm` option automatically removes containers when they stop. This setting 
 
 ## Docker Compose configuration generator
 
-{%include cloud/cloud-docker-config-generator-cmds.md%}
+Use the {{site.data.var.mcd-prod}} `.vendor/bin/ece-docker build:compose` CLI commands to generate the Docker configuration files and build your environment.
 
 ### Additional build options
 

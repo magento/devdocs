@@ -17,8 +17,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 Large files (>1 GB) can cause a period of inactivity. DB dumps and archive files—ZIP, SQL, GZ, and BZ2—are not necessary to sync. You can find exclusions to these file types in the `docker-sync.yml` and `mutagen.sh` files.
 
 {%include cloud/note-docker-config-reference-link.md%}
-
-## Prerequisites
+**Prerequisites:**
 
 -  Complete the [installation steps].
 -  [Install file synchronization tools][Synchronizing data in Docker] if needed.
