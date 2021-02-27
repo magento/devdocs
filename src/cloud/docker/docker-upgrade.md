@@ -13,7 +13,7 @@ We recommend that you use the latest version of {{site.data.var.mcd-prod}}. The 
 {{site.data.var.mcd-prod}} releases sometimes introduce changes to the `docker-compose.yml` file. If you have any custom changes in the `docker-compose.yml` file, move them to the [`docker-compose.override.yml`][Override configuration] file.
 
 {:.procedure}
-To update the {{site.data.var.mcd-prod}} package:
+To update the {{site.data.var.mcd-prod}} package for on-premises projects:
 
 1. On your local workstation, update the {{site.data.var.mcd-prod}} package using Composer.
 
@@ -35,9 +35,11 @@ To update the {{site.data.var.mcd-prod}} package:
    git push origin <branch-name>
    ```
 
-After you upgrade to the latest version of the {{site.data.var.mcd-prod}}, you can [use the Docker environment] again.
+1. Preserve custom configuration.
+
+After you upgrade to the latest version of {{site.data.var.mcd-prod}}, [stop and restart the Docker environment].
 
 <!--Link definitions-->
 
 [Override configuration]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html#override-configuration
-[use the Docker environment]: {{site.baseurl}}/cloud/docker/docker-launch.html
+[stop and restart the Docker environment]: {{site.baseurl}}/cloud/docker/docker-launch.html

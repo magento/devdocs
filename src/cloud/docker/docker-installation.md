@@ -8,17 +8,18 @@ functional_areas:
 
 {{site.data.var.mcd-prod}} is one of the {{site.data.var.csuite}} packages designed to deploy and manage local {{site.data.var.ee}} Docker environments for both Cloud and on-premises projects.
 
-If you are using {{ site.data.var.ee }} on Cloud, you most likely have the `{{ site.data.var.mcd-package }}` installed together with the `{{site.data.var.ct-repo}}` package.
+If you are using {{ site.data.var.ee }} on Cloud, you most likely have the `{{ site.data.var.mcd-package }}` package installed together with the `{{site.data.var.ct-repo}}` package.
 
-An on-premises installation requires the stand-alone `{{ site.data.var.mcd-package }}` package available in the [Magento Cloud Docker GitHub repository](https://github.com/magento/magento-cloud-docker).
+An On-premises installation requires the stand-alone `{{ site.data.var.mcd-package }}` package available in the [Magento Cloud Docker GitHub repository](https://github.com/magento/magento-cloud-docker).
 
 ## Initialize the Magento project
 
-{{ site.data.var.mcd-prod }} supports the {{site.data.var.ee}} installation for both Cloud and on-premises projects. The initialization steps are different for each project type.
+{{ site.data.var.mcd-prod }} supports the {{site.data.var.ee}} installation for both Cloud and On-premises projects. The initialization steps are different for each project type.
 
 ### Magento Commerce Cloud projects
 
 {:.procedure}
+To install a Magento Commerce Cloud project:
 
 1. Download a Magento application template from the [Magento Cloud repository][cloud-repo]. Be careful to select the branch that corresponds with the Magento version.
 
@@ -37,6 +38,7 @@ An on-premises installation requires the stand-alone `{{ site.data.var.mcd-packa
 When you initialize a {{site.data.var.ee}} project for Docker development, you must create a [.magento.docker.yml][unified configuration] configuration source file to create the Docker containers for the local environment.
 
 {:.procedure}
+To install a Magento Commerce On-premises project:
 
 1. Create a project using [Composer]({{site.baseurl}}/guides/v2.4/install-gde/composer.html).
 
@@ -54,11 +56,7 @@ When you initialize a {{site.data.var.ee}} project for Docker development, you m
    composer require --no-update --dev magento/ece-tools magento/magento-cloud-docker
    ```
 
-1. Create a default configuration file.
-
-   {{ site.data.var.mcd-prod }} requires a configuration source file to create the Docker containers for the local environment.
-
-   Create a [.magento.docker.yml][unified configuration] file with following content:
+1. Create the default configuration source file, [.magento.docker.yml][unified configuration]  to build the Docker containers for the local environment.
 
    ```yaml
    name: magento

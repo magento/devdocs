@@ -26,7 +26,7 @@ The Cloud Docker environment supports Linux, macOS, and Windows operating system
 
 -  [Git] for interaction between your local system and {{site.data.var.ece}} source repositories
 -  [Docker] for Mac 2.2.0.0 or later or Docker for Linux
--  If you want to use Developer mode on MacOS systems, you might require [mutagen] or [docker-sync] for file synchronization.
+-  Developer mode on MacOS systems might require [mutagen] or [docker-sync] for file synchronization
 
 ### Docker engine
 
@@ -57,19 +57,19 @@ Option | Description
 :----- | :------
 `-p`, `--php` | PHP version (for installing dependencies). You must specify a PHP version that is compatible with the {{site.data.var.ee}} version deployed to the Cloud Docker envrionment. Defaults to `7.2`
 `-i`, `--image` |  {{site.data.var.mcd-prod}} image version (for installing dependencies). Defaults to `1.1`
-`--host` | domain name to add to /etc/hosts. Defaults to `magento2.docker`.
-`--add-host` | Add domain name to /etc/hosts file. Defaults to true (`yes`).
+`--host` | Domain name to add to the `/etc/hosts` file. Defaults to `magento2.docker`
+`--add-host` | Add domain name to /etc/hosts file. Defaults to true (`yes`)
 `-h`, `--help` | Get help
 
 **Examples:**
 
-Run the script with default settings.
+To run the script with default settings:
 
 ```bash
 bin/init-docker.sh
 ```
 
-Run the script to install PHP 7.3 and skip adding the domain to the `etc/hosts` file
+To run the script to install PHP 7.3 and skip adding the domain to the `etc/hosts` file:
 
 ```bash
 bin/init-docker.sh --php 7.3 --add-host no

@@ -38,9 +38,7 @@ The `--rm` option automatically removes containers when they stop. This setting 
 
 Use the {{site.data.var.mcd-prod}} `.vendor/bin/ece-docker build:compose` CLI commands to generate the Docker configuration files and build your environment.
 
-### Additional build options
-
-View the available options for the `ece-docker build:compose` command:
+Use the following command to view the available build options:
 
 ```bash
 php ./vendor/bin/ece-docker build:compose -h

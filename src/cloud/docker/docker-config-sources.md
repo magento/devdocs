@@ -52,7 +52,7 @@ services:
     enabled: true|false
 ```
 
--  `services` can include `php`, `mysql`, `redis`, `elasticsearch`, `rabbitmq`,`cron` and so on
+-  `services` can include `php`, `mysql`, `redis`, `elasticsearch`, `rabbitmq`, `cron` and so on
 -  `version` specifies a [supported service version]. The version must be compatible with the Magento version you deploy.
 -  `enabled` defaults to `true` if not set
 
@@ -152,9 +152,9 @@ See [Service configuration options] for additional information about the service
 
 Instead of building the `docker-compose.yaml` file using the {{site.data.var.ece }} project configuration. You can use the `ece-docker build:custom:compose` CLI command to build a custom `docker-compose.yaml` file with the configuration you supply. The CLI configuration is the quickest way to change some settings in a desired environment.
 
-You provide the configuration as a JSON array as shown in *Example 1*.
+You provide the configuration as a JSON array as shown in [Example 1](#example-1-custom-docker-composeyaml-file).
 
-For {{site.data.var.mcd-prod}} 1.2 and later, you have an additional option to specify custom images and image versions using the `ece-docker build:custom:compose` command as shown in *Example 2*.
+For {{site.data.var.mcd-prod}} 1.2 and later, you have an additional option to specify custom images and image versions using the `ece-docker build:custom:compose` command as shown in [Example 2](#example-2-custom-docker-composeyaml-file-with-custom-images-and-image-versions).
 
 ### Example 1: Custom `docker-compose.yaml` file
 
