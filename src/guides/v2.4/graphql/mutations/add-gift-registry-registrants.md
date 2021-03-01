@@ -3,7 +3,7 @@ group: graphql
 title: addGiftRegistryRegistrants mutation
 
 ---
-The `addGiftRegistryRegistrants` mutation add a registrant to the specified gift registry.
+The `addGiftRegistryRegistrants` mutation adds a registrant to the specified gift registry.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 

@@ -3,7 +3,7 @@ group: graphql
 title: removeGiftRegistryRegistrants mutation
 
 ---
-The `removeGiftRegistryRegistrants` mutation .
+The `removeGiftRegistryRegistrants` mutation removes one or more registrants from the specified gift registry.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
