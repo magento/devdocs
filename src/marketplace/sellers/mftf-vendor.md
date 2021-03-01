@@ -41,7 +41,7 @@ Vendor-supplied MFTF tests are run on a Magento instance with the specifications
 
 ## Reading the error report
 
-MFTF returns two types of results:
+MFTF returns two types of results, displayed as `MFTF Vendor` within the developer portal::
 
 -  Simplified results showing the status of each test executed
 -  Allure XML results
