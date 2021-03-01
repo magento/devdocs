@@ -234,10 +234,6 @@ pages:
             - label: CLI containers
               url: /cloud/docker/docker-containers-cli.html
               versionless: true
-              
-            - label: Synchronizing data
-              url: /cloud/docker/docker-syncing-data.html
-              versionless: true
 
         - label: Functional Testing
           children:
