@@ -115,6 +115,14 @@ pages:
       url: /marketplace/sellers/installation-and-varnish-tests.html
       versionless: true
 
+    - label: MFTF Magento-supplied Tests
+      url: /marketplace/sellers/mftf-magento.html
+      versionless: true
+
+    - label: MFTF Vendor-supplied Tests
+      url: /marketplace/sellers/mftf-vendor.html
+      versionless: true
+
     - label: Copy Paste Detector
       url: /marketplace/sellers/copy-paste-detector.html
       versionless: true
