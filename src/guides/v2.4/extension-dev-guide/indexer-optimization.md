@@ -193,11 +193,11 @@ To disable the Product EAV indexer in the Admin, go to **Stores** > Settings > *
 
 By default, all websites are assigned to a customer group. If there are a lot of products, websites and customer groups (shared catalogs), the indexation time of product price and catalog rule indexers can be heavily increased because websites, customer groups (shared catalogs) and product SKUs are multiplied in Product Price and Catalog Rule indexers related tables.
 
-It is possible to exclude websites from a customer group (shared catalog) on [customer group create or edit page](https://docs.magento.com/user-guide/customers/customer-groups.html#create-a-customer-group). It can decrease Product Price and Catalog Rule indexation time because excluded websites do not participate in indexation. 
+It is possible to exclude websites from a customer group (shared catalog) on [customer group create/edit page](https://docs.magento.com/user-guide/customers/customer-groups.html#create-a-customer-group). It can decrease Product Price and Catalog Rule indexation time because excluded websites do not participate in indexation. 
 
 When customer group with a new excluded website is saved, Product Price, Catalog Rule and Catalog Search indexes are invalidated. If you have many products, websites and customer groups, mind to pause your indexes reindex process for a while till all websites you need are excluded from customer groups.
 
-It is not possible to exclude websites from a shared catalog on a shared catalog create or edit page. It's possible to exclude websites from customer group that is created from shared catalog.
+It is not possible to exclude websites from a shared catalog on a shared catalog create/edit page. It's possible to exclude websites from customer group that is created from shared catalog.
 
 {:.bs-callout-info}
 No websites are excluded from a customer group or shared catalog by default.
@@ -206,7 +206,8 @@ No websites are excluded from a customer group or shared catalog by default.
 You cannot exclude websites from `NOT LOGGED IN` customer group.
 
 {:.bs-callout-warning}
-When certain website is added to the excluded customer group, and the customer who belongs to this group is trying to login to the account on the excluded website, this user gets `"This website is excluded from customer's group."` warning. Customer is not allowed to login because there are no prices in index table for this user.
+When certain website is added to the excluded customer group, and the customer who belongs to this group is trying to login to the account on the excluded website, this user gets `"This website is excluded from customer's group."` warning.
+Customer is not allowed to login to the website even if [the scope of customer accounts is shared with all websites](https://docs.magento.com/user-guide/customers/account-scope.html) because there are no prices in index table for this user.
 
 {:.ref-header}
 Related topics
