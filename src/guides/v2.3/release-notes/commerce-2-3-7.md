@@ -54,122 +54,54 @@ The following platform upgrades help enhance website security and performance:
 
 ## Fixed issues
 
-We have fixed hundreds of issues in the Magento 2.3.7 core code.
+We have fixed several issues in the Magento 2.3.7 core code.
 
 ### Installation, upgrade, deployment
 
-### Adobe stock integration
-
-### Analytics
-
-### Bundle products
-
-### Cache
 
 ### Cart and checkout
 
 ### Catalog
 
-### CatalogInventory
-
-### Catalog Price Rule
-
-### Catalog widget
-
-### Cleanup and simple code refactoring
-
-### CMS content
-
-### Configurable products
-
-### Cron
-
-### Custom customer attributes
-
 ### Customer
 
-### Customer segment
+<!--- MC-38680-->
 
-### Dynamic block (formerly banner)
-
-### EAV
-
-### Email
+*  The **Create an Account** button on the Create New Account page remains active when a shopper enters invalid data. Previously, this button was disabled, which prevented shoppers from re-attempting to create an account after making an error. This was a known issue in Magento 2.4.1. [GitHub-30513](https://github.com/magento/magento2/issues/30513)
 
 ### Frameworks
+
+<!--- MC-38561-->
+
+*  Magento now deletes expired database sessions from the database `session` table as expected. [GitHub-26308](https://github.com/magento/magento2/issues/26308)
+
+<!--- MC-36776-->
+
+*  Magento now correctly converts plain text to HTML when you click **Return Html Version** when loading an email template.
 
 ### JavaScript framework
 
 ### General fixes
 
-### Gift cards
+<!--- MC-31807-->
 
-### Gift wrapping
+*  Disabling the PageBuilder module no longer affects the rendering of the product page. Previously, custom layouts on the product page disappeared when the module was disabled, and Magento displayed a blank page.
 
-### Google Tag Manager
-
-### Import/export
-
-### Index
 
 ### Infrastructure
-
-### Inventory
-
-### Layered navigation
-
-### Logging
-
-### Newsletter
-
-### Payment methods
-
 ### Performance
-
-### Return Merchandise Authorizations (RMA)
-
-### Reviews
-
-### Rewards
-
 ### Sales
 
 ### Sales Rule
-
-### Search
-
-### Shipping
-
-### Sitemap
-
-### Store
-
-### Swagger
-
-### Swatches
-
-### Target Rule
-
 ### Tax
 
-### Testing
+<!--- MC-38939-->
 
-### Theme
-
-### Translation and locales
+*  Cart price rules are now applied as expected when order subtotals are calculated without incorporating tax. The new `Subtotal (Incl. Tax)` option has been added as a cart price rule condition. [GitHub-29740](https://github.com/magento/magento2/issues/29740)
 
 ### UI
 
-### URL rewrites
-
-### Visual Merchandiser
-
 ### Web API framework
-
-### Wishlist
-
-### WYSIWYG
-
 ## Known issues
 
 ### System requirements
