@@ -80,3 +80,13 @@ To create LESS files for the adminhtml, enter the following command:
 ```bash
 bin/magento dev:source-theme:deploy --locale="en_US" --area="adminhtml" --theme="Magento/backend" css/styles css/styles-old
 ```
+
+## Common issue faced by Developer when working
+
+In the development stage, when you are working with css, Js, knockout js and knockout template, the developer faces below issues
+
+-  The changes in css , knockout js and knockout templates are not affecting on frontend when page load.
+
+-  The developer has to delete the pub static folder or run static content deploy command every time when changes in js and knockout template file.
+
+If you are facing this kind of issue in development then create symlinks
