@@ -35,10 +35,6 @@ The Magento test infrastructure executes vendor-supplied MFTF tests in the most 
 
 See [System Requirements][3] for more information on supported software.
 
-## What is being checked
-
-Vendor-supplied MFTF tests are run on a Magento instance with the specifications listed above. These tests help verify that the functionality intended is testable and working on a Magento environment. The results of this testing is used to inform Marketplace QA about the state of the extension and what level of effort is required to manually verify the extension. A higher level of vendor-supplied MFTF coverage allows the manual QA efforts to be more focused and accelerates the extension through the Technical Review process
-
 ## Reading the error report
 
 MFTF returns two types of results:
