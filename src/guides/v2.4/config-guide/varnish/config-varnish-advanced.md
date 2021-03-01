@@ -82,7 +82,7 @@ bin/magento cache:flush
 
 Saint mode is not part of the main Varnish package. It is a separately-versioned vmod that must be downloaded and installed. As a result, you should re-compile Varnish from source, as described in the following articles:
 
-*  [Installing Varnish 6.3](https://varnish-cache.org/docs/6.3/installation/install.html)
+*  [Installing Varnish 6.4](https://varnish-cache.org/docs/6.4/installation/install.html)
 *  [Installing Varnish 6.0](https://varnish-cache.org/docs/6.0/installation/install.html) (LTS)
 
 After you've recompiled, you can install the Saint mode [module](https://glossary.magento.com/module). In general, follow these steps:

@@ -56,7 +56,7 @@ You can use the Docker environment to emulate the {{site.data.var.ece}} Integrat
 [Magento authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [Magento Community Engineering Slack organization]: https://magentocommeng.slack.com/
 [Set up an account]: {{site.baseurl}}/cloud/before/before-workspace.html#newaccount
-[sign yourself up]: https://tinyurl.com/engcom-slack
+[sign yourself up]: https://opensource.magento.com/slack
 [Magento Cloud Community Engineering demo schedule]: https://spark.adobe.com/page/PbxJoujH7oRTc/
 [{{site.data.var.mcd-package}} GitHub repository]: https://github.com/magento/magento-cloud-docker
 [Resolve issues with encryption key]: {{site.baseurl}}/cloud/trouble/trouble-crypt-key-variable.html

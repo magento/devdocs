@@ -12,7 +12,7 @@ The described flow is applicable only for themes that [inherit]({{ page.baseurl 
 
 ## Changing the number of products in a row {#rwd_practice}
 
-OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a [catalog](https://glossary.magento.com/catalog) page, so that each product takes more space.
+ExampleCorp wants to make their products more visible by decreasing the quantity of products in a row displayed on a [catalog](https://glossary.magento.com/catalog) page, so that each product takes more space.
 
 In the basic Blank theme, the number of products in a row for each breakpoint is the following (for the [2-column page layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-page)):
 
@@ -20,7 +20,7 @@ In the basic Blank theme, the number of products in a row for each breakpoint is
 -  768px (tablet): three products
 -  640px and less (mobile): two products
 
-In their custom Orange theme, OrangeCo wants to have the least number of products in a row for the desktop and tablet view, namely:
+In their custom Orange theme, ExampleCorp wants to have the least number of products in a row for the desktop and tablet view, namely:
 
 -  Desktop: three products
 -  Tablet: two products
@@ -28,15 +28,15 @@ In their custom Orange theme, OrangeCo wants to have the least number of product
 
 The Orange theme inherits from the Blank theme.
 
-To change the products quantity, OrangeCo take the following steps:
+To change the products quantity, ExampleCorp take the following steps:
 
 1. Copy the [`/Magento_Catalog/web/css/source/module/_listings.less`] file.
-1. Put it in the corresponding location in their Orange theme directory: `app/design/frontend/OrangeCo/orange/Magento_Catalog/web/css/source/module/_listings.less`
+1. Put it in the corresponding location in their Orange theme directory: `app/design/frontend/ExampleCorp/orange/Magento_Catalog/web/css/source/module/_listings.less`
 1. Make the changes in the code. The following image illustrates which section of the file they change, the modified lines are highlighted:
 
 ![responsive practice 1]
 
-After OrangeCo [applies their theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the catalog page of their store looks like following:
+After ExampleCorp [applies their theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the catalog page of their store looks like following:
 
 ![responsive practice 2]
 
