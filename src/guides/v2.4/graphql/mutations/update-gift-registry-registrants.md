@@ -113,7 +113,7 @@ The `UpdateGiftRegistryRegistrantsOutput` output object contains the following a
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`gift_registry` | [GiftRegistry](#GiftRegistry) | The gift registry after adding registrants
+`gift_registry` | [GiftRegistry](#GiftRegistry) | The gift registry after updating registrants
 
 ### GiftRegistry attributes {#GiftRegistry}
 
