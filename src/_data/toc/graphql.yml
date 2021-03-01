@@ -444,6 +444,11 @@ pages:
         - label: removeGiftRegistry mutation
           url: /graphql/mutations/remove-gift-registry.html
           edition: ee-only
+          exclude_versions: ["2.3"] 
+
+        - label: removeGiftRegistryItems mutation
+          url: /graphql/mutations/remove-gift-registry-items.html
+          edition: ee-only
           exclude_versions: ["2.3"]
 
         - label: removeItemFromCart mutation
@@ -568,6 +573,11 @@ pages:
           url: /graphql/mutations/update-gift-registry.html
           edition: ee-only
           exclude_versions: ["2.3"]
+
+        - label: updateGiftRegistryItems mutation
+          url: /graphql/mutations/update-gift-registry-items.html
+          edition: ee-only
+          excude_versions: ["2.3"]
 
         - label: updateProductsInWishlist mutation
           url: /graphql/mutations/update-products-in-wishlist.html
