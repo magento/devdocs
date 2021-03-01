@@ -730,9 +730,9 @@ For mixins grouping use the double underscore "__" prefix.
 
 There are common situations when different elements use a similar set of CSS properties.
 
-In a `.css` file, it is necessary to copy such properties for each element. In a `.less` file, it can be done by reusing the CSS rule - using mixins.
+In a `.css` file, properties are duplicated for each element. In a `.less` file, it is done by reusing the CSS rule - using mixins.
 
-For example, many elements on the page will have similar animation. For this, you can create an `.animation-1` class with a set of animation properties:
+For example, many elements on the page use the same animation. For this, create an `.animation-1` class with a set of animation properties:
 
 **Example:**
 
@@ -755,7 +755,7 @@ For example, many elements on the page will have similar animation. For this, yo
 }
 ```
 
-And then apply this mixin in places where it is necessary:
+And then apply this mixin where necessary:
 
 ```css
 .example-1 {
@@ -764,7 +764,7 @@ And then apply this mixin in places where it is necessary:
 }
 ```
 
-As a result, after compiling the .less file into a .css file, the .example-1 element will have the following:
+After compiling the `.less` file into a `.css` file, the `.example-1` element has the following:
 
 ```css
 .animation-1 {
@@ -784,7 +784,7 @@ As a result, after compiling the .less file into a .css file, the .example-1 ele
 
 ### Mixins with parameters
 
-There are also mixins with parameters. When calling these mixins, we pass them parameter values. When creating this type of mixin, we recommend setting parameter values by default (since problems might occur when calling the mixin without specifying the parameter value). The example below shows how to create a mixin with parameters based on the example above and shows how to call it:
+Mixins also accept parameters. When calling these mixins, these parameter values are passed in. When creating this type of mixin, always set default values,  since issues may occur when calling the mixin without specifying the parameter value. The example below shows how to create a mixin with parameters based on the example above and shows how to call it:
 
 ```css
 .animation-1 (
@@ -803,11 +803,11 @@ There are also mixins with parameters. When calling these mixins, we pass them p
 }
 ```
 
-Mixin parameters are set in parentheses (there can be one or more parameters) with default values (default values are set after a colon).
+Mixin parameters are set in parentheses with default values.
 
-Calling a mixin in parentheses, it is necessary to indicate the value of those mixin parameters that will differ from the default values. If parameters are not specified when adding a mixin such as `.animation-1`, then the mixin would be added with standard parameter values.
+When calling a mixin in parentheses, set the required value of the mixin parameters, if they differ from the default values.
 
-As a result, after compiling the `.less` file into a `.css` file, the `.example-1` element will have the following:
+After compiling the `.less` file into a `.css` file, the `.example-1` element will have the following:
 
 ```css
 .example-1 {
