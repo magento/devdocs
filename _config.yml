@@ -139,7 +139,7 @@ defaults:
     scope:
       path: guides/v2.3/install-gde
     values:
-      group: installation-guide-2_3
+      group: installation-guide
   
   - 
     scope:
