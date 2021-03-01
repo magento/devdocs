@@ -83,4 +83,18 @@ Example:
 </config>
 ```
 
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module.
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module.
+
+## Configure product video options from Magento Admin
+
+1. On the _Admin_ sidebar, go to **Stores** > _Settings_ > **Configuration**.
+
+1. In the left panel, expand **Catalog** and choose **Catalog** underneath.
+
+1. Expand the _Product Video_ section and uncheck the **Use system value** checkbox. Then change the configuration options.
+
+![Product Video Options]({{ page.baseurl }}/frontend-dev-guide/images/config-catalog-catalog-product-video.png)
+
+1. When complete, click _Save Config_.
+
+1. When prompted, refresh the cache.
