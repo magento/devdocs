@@ -158,7 +158,7 @@ During the initial Fastly setup process, you can use the following URLs to confi
    -  `mcprod.<your-domain>.com`
 
 {:.bs-callout-info}
-You cannot specify a custom domain in Staging for your Starter project.
+You cannot specify a custom domain for a non-production environment in Starter projects.
 
 These are the default pre-production URLs available as soon as your project is provisioned. The value for `"your-domain"` is the domain name you specified during the onboarding process.
 
