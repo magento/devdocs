@@ -115,7 +115,7 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 [Fastly CDN module for Magento 2]: https://github.com/fastly/fastly-magento2
 [Fastly credentials configuration]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
 [Fastly custom VCL snippets]: {{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html
-[Fastly image]: {{site.baseurl}}/cloud/cdn/fastly-image-optimization.html
+[Fastly image optimization]: {{site.baseurl}}/cloud/cdn/fastly-image-optimization.html
 [Fastly support ticket]: https://docs.fastly.com/products/support-description-and-sla#support-requests
 [Force unencrypted requests over to TLS]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#force-tls
 [GeoIP service support]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-geoip-handling
