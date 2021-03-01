@@ -176,7 +176,7 @@ If you need help understanding the context or meaning of a UI string, or have qu
 [CrowdIn account]: https://crowdin.com/join
 [CrowdIn knowledge base]: https://support.crowdin.com/online-editor
 [engcom@magento.com]: mailto:engcom@magento.com
-[self signup]: https://tinyurl.com/engcom-slack
+[self signup]: https://opensource.magento.com/slack
 [Translations Slack channel]: https://magentocommeng.slack.com/messages/CD97DKBHS
 [Magento Marketplace]: https://marketplace.magento.com/catalogsearch/result/?q=language%20packs#q=language%20pack&idx=m2_cloud_prod_default_products&p=0&nR%5Bvisibility_search%5D%5B%3D%5D%5B0%5D=1
 [Conventional notations for paths to modules and themes]: {{page.baseurl}}/frontend-dev-guide/conventions.html

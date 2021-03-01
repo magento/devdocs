@@ -1,8 +1,5 @@
 ---
-subgroup: Prerequisites
 title: Set up a remote MySQL database connection
-menu_title: Set up a remote MySQL database connection
-menu_order: 175
 functional_areas:
   - Install
   - System
@@ -35,7 +32,7 @@ Use the following guidelines to configure remote database connections if your we
 
 ### Resolving connection issues
 
-If you have issues connecting to either host, first ping the other host to make sure it's reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
+If you have issues connecting to either host, first ping the other host to make sure it is reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
 
 ## Create the remote connection {#instgde-prereq-mysql-remote-create}
 
@@ -131,7 +128,7 @@ If your web server is clustered, enter the command on each web server host.
 
 ## Install the Magento software {#instgde-prereq-mysql-remote-install}
 
-When you install the Magento software using either the command line or Setup Wizard, you must specify the following:
+When you install the Magento software, you must specify the following:
 
 *  The Base [URL](https://glossary.magento.com/url) (also referred to as the *store address*) specifies the hostname or IP address of the *web node*
 *  Database host is the *remote database server* IP address (or load balancer if the database server is clustered)

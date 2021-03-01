@@ -114,6 +114,11 @@ pages:
         - label: customerPaymentTokens query
           url: /graphql/queries/customer-payment-tokens.html
 
+        - label: dynamicBlocks query
+          url: /graphql/queries/dynamic-blocks.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: getHostedProUrl query
           url: /graphql/queries/get-hosted-pro-url.html
 
@@ -218,6 +223,10 @@ pages:
 
         - label: addVirtualProductsToCart mutation
           url: /graphql/mutations/add-virtual-products.html
+
+        - label: addWishlistItemsToCart mutation
+          url: /graphql/mutations/add-wishlist-items-to-cart.html
+          exclude_versions: ["2.3"]
 
         - label: applyCouponToCart mutation
           url: /graphql/mutations/apply-coupon.html
@@ -451,6 +460,7 @@ pages:
 
         - label: setGiftOptionsOnCart mutation
           url: /graphql/mutations/set-gift-options.html
+          edition: ee-only
           exclude_versions: ["2.3"]
 
         - label: setGuestEmailOnCart mutation
