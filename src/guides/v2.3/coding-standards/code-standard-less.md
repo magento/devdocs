@@ -784,7 +784,7 @@ As a result, after compiling the .less file into a .css file, the .example-1 ele
 
 ### Mixins with parameters
 
-There are also mixins with parameters. When calling these mixins, we pass them parameter values. When creating this type of mixin, we recommend setting parameter values by default (since problems might occur when calling the mixin without specifying the parameter value). The example below shows how to create a mixin with parameters based on the example above and shows how to call it:
+Mixins also accept parameters. When calling these mixins, these parameter values are passed in. When creating this type of mixin, always set default values, since issues may occur when calling the mixin without specifying the parameter value. The example below shows how to create a mixin with parameters based on the example above and shows how to call it:
 
 ```css
 .animation-1 (
