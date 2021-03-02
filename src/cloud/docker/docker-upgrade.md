@@ -10,7 +10,7 @@ functional_areas:
 We recommend that you use the latest version of {{site.data.var.mcd-prod}}. The version requirement is specified in the `composer.json` file for your project. Use the following instructions for the upgrade process.
 
 {:.bs-callout-info}
-{{site.data.var.mcd-prod}} releases sometimes introduce changes to the format and options in the `docker-compose.yml` file. We recommend creating a back up of your existing `docker-compose.yml` file before upgrading, so that you can review the changes. If you have custom configurations that you want to preserve across builds, move them to the [`docker-compose.override.yml`][Override configuration] file before you rebuild or upgrade the Docker environment.
+{{site.data.var.mcd-prod}} releases sometimes introduce changes to the format and options in the `docker-compose.yml` file. We recommend creating a back up of your existing `docker-compose.yml` file before upgrading so you can review the changes. If you have custom configurations that you want to preserve across builds, move them to the [`docker-compose.override.yml`][Override configuration] file before you rebuild or upgrade the Docker environment.
 
 {:.procedure}
 To update the {{site.data.var.mcd-prod}} package for On-premises projects:
