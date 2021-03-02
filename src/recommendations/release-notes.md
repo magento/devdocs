@@ -15,6 +15,12 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.2.3 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed the "Unable to retrieve configurable product options data" error during Catalog Sync
+-  {:.fix}Fixed an issue where the store code was not being set correctly when you enabled the "Add store code to URL" configuration
+-  {:.fix}Improved detection of Admin Panel configuration changes to ensure these changes are reflected in Catalog Sync data
+
 ## 3.2.2 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.new}Added the ability to [monitor and manage](https://docs.magento.com/user-guide/system/catalog-sync.html) the catalog sync process from the Admin Panel.

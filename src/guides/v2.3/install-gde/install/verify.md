@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 01_Verify
 title: Verify the installation
 menu_title: Verify the installation

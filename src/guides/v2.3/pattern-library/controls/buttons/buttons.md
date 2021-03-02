@@ -241,7 +241,7 @@ Left/Right: 15px
 
 #### Margin Spacing
 
-Top/Bottom margin spacing should should not be less than 10px
+Top/Bottom margin spacing should not be less than 10px
 
 Left/Right margin spacing should not be less than 10px
 
@@ -309,7 +309,7 @@ Left/Right: 15px
 
 #### Margin Spacing
 
-Top/Bottom margin spacing should should not be less than 10px
+Top/Bottom margin spacing should not be less than 10px
 
 Left/Right margin spacing should not be less than 10px
 
