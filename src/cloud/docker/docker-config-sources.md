@@ -30,9 +30,9 @@ Typically, these files supply the configuration settings in the generated `docke
 
 ## Unified configuration
 
-If you do not have or want to use the {{site.data.var.ece}} configuration files, {{site.data.var.mcd-prod}} supports a unified configuration file, `.magento.docker.yml`. For example, use this configuration source to create a Docker development environment for on-premises projects.
+If you do not have or want to use the {{site.data.var.ece}} configuration files, {{site.data.var.mcd-prod}} supports a unified configuration file, `.magento.docker.yml`.
 
-The universal configuration file, `.magento.docker.yml` includes the following sections:
+This configuration file includes the following sections:
 
 ```conf
 services: [] # List of services
@@ -130,7 +130,7 @@ mounts:
   pub-media:
     path: "pub/media"
   pub-static:
-    path: "pub/static
+    path: "pub/static"
 ```
 
 The `path` is a required parameter to define a mounted volume. The value is a relative path in the container.
@@ -139,7 +139,7 @@ The `path` is a required parameter to define a mounted volume. The value is a re
 
 You can add options to the `ece-docker build:compose` command to quickly change the configuration when you build and deploy the Docker environment.
 
-View the available options for the `ece-docker build:compose` command:
+To view the available options, enter:
 
 ```bash
 php ./vendor/bin/ece-docker build:compose -h
@@ -150,7 +150,7 @@ See [Service configuration options] for additional information about the service
 
 ## Build a custom Docker Compose configuration
 
-Instead of building the `docker-compose.yaml` file using the {{site.data.var.ece }} project configuration. You can use the `ece-docker build:custom:compose` CLI command to build a custom `docker-compose.yaml` file with the configuration you supply. The CLI configuration is the quickest way to change some settings in a desired environment.
+Instead of using the {{site.data.var.ece }} project configuration to build you `docker-compose.yaml` file, you can use the `ece-docker build:custom:compose` command. Using this command with a JSON configuration is the quickest way to change your environment settings, as explained next.
 
 You provide the configuration as a JSON array as shown in [Example 1](#example-1-custom-docker-composeyaml-file).
 

@@ -7,11 +7,11 @@ functional_areas:
   - Configuration
 ---
 
-{{site.data.var.mcd-prod}} provides an option to deploy {{site.data.var.ee}} to a Docker environment for development, test, and automation tasks. It includes the following features:
+{{site.data.var.mcd-prod}} provides an option to deploy {{site.data.var.ee}} to a Docker environment for development, testing, and automation tasks. It includes the following features:
 
 -  **Cross-platform support**–Supports Linux, macOS and Windows with WSL2
 -  **Magento Cloud emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
--  **{{site.data.var.ee}} development**–Create a local development environment for Magento on-premises projects
+-  **{{site.data.var.ee}} development**–Creates a local development environment for Magento on-premises projects
 -  **Multiple sync options**–Provides three file synchronization options (native, mutagen and docker-sync) for best performance
 -  **Extensibility**–Use a standard Docker configuration file to extend and customize your development environment
 
@@ -48,7 +48,7 @@ The `init-docker.sh` script runs the following command which installs the templa
 docker run --rm -e "MAGENTO_ROOT=/app" -v "$(pwd)":/app -v ~/.composer/cache:/root/.composer/cache "magento/magento-cloud-docker-php:${PHP_VERSION}-cli-${IMAGE_VERSION}" composer install --ansi
 ```
 
-The script option settings determine the PHP version and {{site.data.var.mcd-prod}} image version. The script also adds the default hostname, `magento2.docker` to your `/etc/hosts` file.
+The script option settings determine the PHP version and {{site.data.var.mcd-prod}} image version. The script also adds the default hostname, `magento2.docker`, to your `/etc/hosts` file.
 
 > `init-docker.sh` options
 
@@ -58,7 +58,7 @@ Option | Description
 `-p`, `--php` | PHP version (for installing dependencies). You must specify a PHP version that is compatible with the {{site.data.var.ee}} version deployed to the Cloud Docker envrionment. Defaults to `7.2`
 `-i`, `--image` |  {{site.data.var.mcd-prod}} image version (for installing dependencies). Defaults to `1.1`
 `--host` | Domain name to add to the `/etc/hosts` file. Defaults to `magento2.docker`
-`--add-host` | Add domain name to /etc/hosts file. Defaults to true (`yes`)
+`--add-host` | Add domain name to `/etc/hosts` file. Defaults to true (`yes`)
 `-h`, `--help` | Get help
 
 **Examples:**
@@ -86,7 +86,7 @@ sudo apachectl stop
 ```
 
 {:.bs-callout-tip}
-If the Apache server is running when you start Docker, the following error displays when you start the Cloud Docker environment: `Cannot start service tls: Ports are not available: port is already allocated.`
+If you start your Docker environment with Apache running, you will get the following error: `Cannot start service tls: Ports are not available: port is already allocated`.
 
 ### Composer authentication keys
 
@@ -102,7 +102,7 @@ Prior to setting up a local workspace, gather the following credentials and acco
 
 -  **(Optional) Magento Encryption Key**
 
-   When importing an existing Magento system only, capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see [Resolve issues with encryption key]
+   When importing an existing Magento instance, capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see [Resolve issues with encryption key]
 
 <!--Link definitions-->
 
@@ -125,3 +125,4 @@ Prior to setting up a local workspace, gather the following credentials and acco
 table.install-script-options td:nth-child(1) {
   width: 200px;
 }
+</style>

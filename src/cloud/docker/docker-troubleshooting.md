@@ -12,7 +12,7 @@ functional_areas:
 
 -  **[{{site.data.var.mcd-package}} GitHub repository]**–Visit the GitHub repository to read discussions about current issues, check current development, and submit issues or pull requests to improve the project.
 
--  **Magento Cloud Community Engineering demos**–Magento hosts Cloud demo session where you can learn about developing Magento on the Cloud platform, including information about local development with {{site.data.var.mcd-prod}}. For a schedule and recordings of previous demos, see the [Magento Cloud Community Engineering Demo Schedule].
+-  **Magento Cloud Community Engineering demos**–Magento hosts Cloud demo sessions where you can learn about developing Magento on the Cloud platform, including information about local development with {{site.data.var.mcd-prod}}. For a schedule and recordings of previous demos, see the [Magento Cloud Community Engineering Demo Schedule].
 
 ## Troubleshooting
 

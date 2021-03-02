@@ -57,7 +57,7 @@ echo "127.0.0.1 magento2.test" | sudo tee -a /etc/hosts
 
 The default {{ site.data.var.mcd-prod }} configuration includes the [MailHog] service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment.
 
-When the MailHog service installed, go to the following URL to open the service and view outgoing emails: `http://magento2.docker:8025`
+After installing the MailHog service, go to the following URL to open the service and view outgoing emails: `http://magento2.docker:8025`
 
 <!--Link definitions-->
 

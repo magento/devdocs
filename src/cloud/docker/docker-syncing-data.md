@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-You have the option to launch a Docker environment in [developer mode][set the launch mode], which provides an active development environment with full, writable filesystem permissions.
+You have the option to launch a Docker environment in [developer mode][set the launch mode], which provides an active development environment with full, writable file system permissions.
 
 If you choose this option, the {{site.data.var.ee}} application works only if the Docker containers have access to the {{site.data.var.ee}} application data. You can provide access either by directly mapping the current working directory or by using a file synchronization tool.
 

@@ -7,7 +7,7 @@ functional_areas:
   - Docker
 ---
 
-Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions.
+Developer mode supports an active development environment with full, writable file system permissions. This option builds the Docker environment in developer mode and verifies configured service versions.
 
 On macOS and Windows systems, performance is slower in developer mode because of additional file synchronization operations. However, you can improve performance by using either `mutagen` or `docker-sync` file synchronization tools when you generate the `docker-compose.yml` configuration file. See [Synchronizing data in Docker].
 

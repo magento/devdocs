@@ -10,11 +10,11 @@ functional_areas:
 
 If you are using {{ site.data.var.ee }} on Cloud, you most likely have the `{{ site.data.var.mcd-package }}` package installed together with the `{{site.data.var.ct-repo}}` package.
 
-An On-premises installation requires the stand-alone `{{ site.data.var.mcd-package }}` package available in the [Magento Cloud Docker GitHub repository](https://github.com/magento/magento-cloud-docker).
+An on-premises installation requires the stand-alone `{{ site.data.var.mcd-package }}` package available in the [Magento Cloud Docker GitHub repository](https://github.com/magento/magento-cloud-docker).
 
 ## Initialize the Magento project
 
-{{ site.data.var.mcd-prod }} supports the {{site.data.var.ee}} installation for both Cloud and On-premises projects. The initialization steps are different for each project type.
+{{ site.data.var.mcd-prod }} supports the {{site.data.var.ee}} installation for both Cloud and on-premises projects. The initialization steps are different for each project type.
 
 ### Magento Commerce Cloud projects
 
@@ -107,7 +107,7 @@ Before you use {{site.data.var.mcd-prod}}, you must update the `etc/hosts` file 
 {:.procedure}
 To update and install manually:
 
-1. To make Cloud Docker recognizable on the local machine, add the default `magento2.docker` host to the hosts file.
+1. Add the default `magento2.docker` host to the hosts file to make Cloud Docker recognizable on the local machine.
 
    ```bash
    echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
