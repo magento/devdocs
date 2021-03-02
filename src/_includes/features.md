@@ -5,14 +5,6 @@
 {% endif %}
 
 <table class="comparison-table">
-  <!-- <thead>
-    <tr class="magento-version">
-      <th>&nbsp;</th>
-    {% for version in include.data.versions %}
-      <th>{{version}}</th>
-    {% endfor %}
-    </tr>
-  </thead> -->
   {% for features in features %}
   <tbody>
     <tr class="feature-name">

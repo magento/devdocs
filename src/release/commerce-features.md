@@ -1,5 +1,5 @@
 ---
-title: Feature comparison
+title: Commerce features
 group: release
 ---
 
