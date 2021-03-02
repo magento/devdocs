@@ -1588,6 +1588,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Shipping
 
+<!--- MC-32782-->
+
+*  You can now ship an order to multiple addresses if one of the ordered products is a virtual product. Previously, Magento successfully placed the order for the physical products, but the virtual product order was empty.
+
 <!--- MC-29276-->
 
 *  Magento now applies fixed-amount, whole-cart discounts correctly for orders being shipped to multiple addresses. Previously, this type of discount was applied multiple times when a customer checked out an order using Check Out with Multiple Addresses. [GitHub-25834](https://github.com/magento/magento2/issues/25834)
