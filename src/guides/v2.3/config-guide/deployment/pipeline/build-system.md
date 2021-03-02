@@ -22,10 +22,7 @@ You can have one build system that meets the following requirements:
 -  Must have a compatible PHP version installed
 -  Must have Composer installed
 -  It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems][].
-
-The build system does _not_ need any of the following:
-
--  Magento software installed (only the code must be present)
+-  The build system does not need Magento to be installed, but the code must be available to it.
 
 {:.bs-callout-info}
 The build machine can be on its own host or on the same host as an installed Magento system.
