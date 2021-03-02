@@ -5,18 +5,21 @@
 {% endif %}
 
 <table class="comparison-table">
-  <thead>
+  <!-- <thead>
     <tr class="magento-version">
       <th>&nbsp;</th>
     {% for version in include.data.versions %}
       <th>{{version}}</th>
     {% endfor %}
     </tr>
-  </thead>
+  </thead> -->
   {% for features in features %}
   <tbody>
     <tr class="feature-name">
-      <th colspan="{{ versionsNumber | plus: 1 }}">{{ features.name }}</th>
+      <th>{{ features.name }}</th>
+      {% for version in include.data.versions %}
+      <th>{{version}}</th>
+    {% endfor %}
     </tr>
     {% for featuresVersion in features.versions %}
     <tr class="feature-version">

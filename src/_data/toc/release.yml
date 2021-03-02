@@ -17,6 +17,6 @@ pages:
     url: /release/availability.html
     versionless: true
 
-  - label: Commerce feature comparison
+  - label: Feature comparison
     url: /release/commerce-features.html
     versionless: true
