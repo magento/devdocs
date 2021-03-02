@@ -101,7 +101,10 @@ The tool pre-processes (including compilation) and publishes the static view fil
 {:.bs-callout-info}
 Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use the -f option: `bin/magento setup:static-content:deploy -f`. Read more about the command in the [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) section.
 
-All errors occurring during `.less` files compilation are handled by the [`oyejorge/less.php`](https://github.com/oyejorge/less.php) third party library.
+All errors occurring during `.less` files compilation are handled by the [LESS PHP library][] third party library.
+
+{:.bs-callout-info}
+Since Magento 2.3.3, `oyegorge/less.php` has been replaced by `wikimedia/less.php`
 
 Errors are caught as exceptions and written to the system log (by default it is `var/log/system.log`) and displayed on the screen. For each error, the following information is written:
 
@@ -262,8 +265,9 @@ Example of how `@magento_import` is used and processed in `<Magento_Blank_theme_
    </tbody>
 </table>
 
+<!-- Link definitions -->
 [production application mode]: {{page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode
-[LESS PHP library]: https://github.com/oyejorge/less.php
+[LESS PHP library]: https://github.com/wikimedia/less.php
 [native `less.js` library]: http://lesscss.org/usage/#using-less-in-the-browser
 [Magento fallback mechanism]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static
 [publication]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview

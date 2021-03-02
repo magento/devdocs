@@ -1,6 +1,7 @@
 ---
 group: graphql
 title: setGiftOptionsOnCart mutation
+ee_only: true
 ---
 
 The `setGiftOptionsOnCart` mutation allows the buyer to set the following gift options on the cart level:
@@ -63,7 +64,7 @@ mutation {
         message
       }
       gift_wrapping {
-        id
+        uid
       }
       gift_receipt_included
       printed_card_included
@@ -107,7 +108,7 @@ mutation {
             "message": "Happy Birthday!"
         }
         "gift_wrapping": {
-          "id": "2"
+          "uid": "Mg=="
         },
         "gift_receipt_included": true,
         "printed_card_included": false,
@@ -158,7 +159,7 @@ Attribute |  Data Type | Description
 `cart_id` | String! | The unique ID that identifies the shopper's cart
 `gift_message` | [GiftMessageInput](#GiftMessageInput) | Gift message details for the cart
 `gift_receipt_included` | Boolean! | Indicates whether the customer requested a gift receipt for the cart
-`gift_wrapping_id` | ID | The unique identifier of the gift wrapping to be used for the cart
+`gift_wrapping_id` | ID | The unique ID for a `GiftWrapping` object to be used for the cart
 `printed_card_included` | Boolean! | Indicates whether the customer requested a printed card for the cart
 
 ### GiftMessageInput {#GiftMessageInput}
