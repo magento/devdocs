@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
 ---
 
-{{site.data.var.mcd-prod}} is one of the {{site.data.var.csuite}} packages designed to deploy and manage local {{site.data.var.ee}} Docker environments for both Cloud and on-premises projects.
+{{site.data.var.mcd-prod}} is one of the {{site.data.var.csuite}} packages designed to deploy and manage local {{site.data.var.ee}} Docker environments for both Cloud and On-premises projects.
 
 If you are using {{ site.data.var.ee }} on Cloud, you most likely have the `{{ site.data.var.mcd-package }}` package installed together with the `{{site.data.var.ct-repo}}` package.
 
@@ -14,7 +14,7 @@ An on-premises installation requires the stand-alone `{{ site.data.var.mcd-packa
 
 ## Initialize the Magento project
 
-{{ site.data.var.mcd-prod }} supports the {{site.data.var.ee}} installation for both Cloud and on-premises projects. The initialization steps are different for each project type.
+{{ site.data.var.mcd-prod }} supports the {{site.data.var.ee}} installation for both Cloud and On-premises projects. The initialization steps are different for each project type.
 
 ### Magento Commerce Cloud projects
 

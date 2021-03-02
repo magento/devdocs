@@ -11,7 +11,7 @@ functional_areas:
 
 -  **Cross-platform support**–Supports Linux, macOS and Windows with WSL2
 -  **Magento Cloud emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
--  **{{site.data.var.ee}} development**–Creates a local development environment for Magento on-premises projects
+-  **{{site.data.var.ee}} development**–Creates a local development environment for Magento On-premises projects
 -  **Multiple sync options**–Provides three file synchronization options (native, mutagen and docker-sync) for best performance
 -  **Extensibility**–Use a standard Docker configuration file to extend and customize your development environment
 
@@ -86,7 +86,7 @@ sudo apachectl stop
 ```
 
 {:.bs-callout-tip}
-If you start your Docker environment with Apache running, you will get the following error: `Cannot start service tls: Ports are not available: port is already allocated`.
+If you start your Docker environment with Apache running, the following error displays: `Cannot start service tls: Ports are not available: port is already allocated`
 
 ### Composer authentication keys
 

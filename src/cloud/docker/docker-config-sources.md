@@ -12,9 +12,9 @@ redirect_from:
 You can create the Docker Compose configuration to build and deploy the Docker containers for your Magento project from the following sources:
 
 -  [{{site.data.var.ece}} project configuration files](#magento-commerce-cloud-configuration) for Cloud projects
--  [Unified configuration](#unified-configuration) (`.magento.docker.yml`) for on-premises projects
+-  [Unified configuration](#unified-configuration) (`.magento.docker.yml`) for On-premises projects
 -  [CLI configuration](#cli-configuration) using `ece-docker build:compose` command options
--  [Custom Docker Compose configuration file](#build-a-custom-docker-compose-configuration) supports Magento installation for both Cloud and on-premises projects
+-  [Custom Docker Compose configuration file](#build-a-custom-docker-compose-configuration) supports Magento installation for both Cloud and On-premises projects
 
 {:.bs-callout-info}
 When you build the Docker Compose configuration file, the `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save customizations for the Docker Compose configuration in a `docker-compose.override.yml` file.  If the `docker-compose.override.yml` file is present, then the override configuration merges with the base configuration. See [Override configuration].
@@ -53,7 +53,7 @@ services:
 ```
 
 -  `services` can include `php`, `mysql`, `redis`, `elasticsearch`, `rabbitmq`, `cron` and so on
--  `version` specifies a [supported service version]. The version must be compatible with the Magento version you deploy.
+-  `version` specifies a [supported service version][Service configuration options]. The version must be compatible with the Magento version you deploy.
 -  `enabled` defaults to `true` if not set
 
 #### PHP service
@@ -139,7 +139,7 @@ The `path` is a required parameter to define a mounted volume. The value is a re
 
 You can add options to the `ece-docker build:compose` command to quickly change the configuration when you build and deploy the Docker environment.
 
-To view the available options, enter:
+Use the command help to view the available options:
 
 ```bash
 php ./vendor/bin/ece-docker build:compose -h
@@ -150,7 +150,7 @@ See [Service configuration options] for additional information about the service
 
 ## Build a custom Docker Compose configuration
 
-Instead of using the {{site.data.var.ece }} project configuration to build you `docker-compose.yaml` file, you can use the `ece-docker build:custom:compose` command. Using this command with a JSON configuration is the quickest way to change your environment settings, as explained next.
+Instead of using the {{site.data.var.ece }} project configuration to build the `docker-compose.yaml` file, you can use the `ece-docker build:custom:compose` command. Using this command with a JSON configuration is the quickest way to change your environment settings.
 
 You provide the configuration as a JSON array as shown in [Example 1](#example-1-custom-docker-composeyaml-file).
 
@@ -350,4 +350,4 @@ services:
 [mounts]: https://devdocs.magento.com/cloud/project/magento-app-properties.html#mounts
 [available services]: {{site.baseurl}}/cloud/project/services.html#service-versions
 [Override configuration]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html#override-configuration
-[supported service version]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
+[Service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options

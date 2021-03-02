@@ -12,9 +12,9 @@ redirect_from:
 {{site.data.var.mcd-prod}} uses Docker Compose to build and deploy Magento to a multi-container Docker application. You can generate the Docker Compose configuration to build and deploy Docker from the following sources:
 
 -  [{{site.data.var.ece}} project configuration files] for Cloud projects
--  [Unified configuration] for on-premises projects
+-  [Unified configuration] for On-premises projects
 -  [CLI configuration] using `ece-docker build:compose` command options to override configuration values at runtime
--  [Custom Docker Compose configuration file] supports Magento installation for both Cloud and on-premises projects
+-  [Custom Docker Compose configuration file] supports Magento installation for both Cloud and On-premises projects
 
 {:.bs-callout-info}
 When you build the Docker Compose configuration file, the `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save customizations for the Docker Compose configuration in a `docker-compose.override.yml` file.  If the `docker-compose.override.yml` file is present, then the override configuration merges with the base configuration. See [Override configuration].
@@ -57,7 +57,7 @@ echo "127.0.0.1 magento2.test" | sudo tee -a /etc/hosts
 
 The default {{ site.data.var.mcd-prod }} configuration includes the [MailHog] service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment.
 
-After installing the MailHog service, go to the following URL to open the service and view outgoing emails: `http://magento2.docker:8025`
+After you start the Docker environment, go to the following URL to access the MailHog service and view outgoing emails: `http://magento2.docker:8025`
 
 <!--Link definitions-->
 
