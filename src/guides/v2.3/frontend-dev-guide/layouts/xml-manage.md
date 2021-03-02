@@ -80,8 +80,10 @@ You can use either the `<link src="js/sample.js"/>` or the `<script src="js/samp
 
 The path to assets is specified relatively to one the following locations:
 
--  `<theme_dir>/web`-
--  `<theme_dir>/<Namespace>_<Module>/web`-
+-  CSS and LESS files are stored under `<theme_dir>/web/css/`
+-  Fonts related files are stored under `<theme_dir>/<Namespace>_<Module>/web/fonts/`
+-  Static assets like images are stored under `<theme_dir>/<Namespace>_<Module>/web/images/`
+-  JS files are stored under `<theme_dir>/<Namespace>_<Module>/web/js/`
 
 ### Adding conditional comments
 
@@ -221,6 +223,12 @@ To add a new ID to the container:
 
 ```xml
 <referenceContainer name="page.wrapper" htmlId="MyWrapper"/>
+```
+
+To remove a container from the layout:
+
+```xml
+<referenceContainer name="product.info.stock.sku" remove="true"/>
 ```
 
 ## Create a block {#xml-manage-block}
@@ -608,6 +616,8 @@ class AddBodyClassToProductPagePlugin
 ```
 
 As result, the `<body>` tag has a new `my-new-body-class` class on all product pages.
+
+For more information about the Plugins refer to the [Plugins in Magento]({{ page.baseurl }}/extension-dev-guide/plugins.html)
 
 ## Manage the 'My Account' dashboard navigation links
 
