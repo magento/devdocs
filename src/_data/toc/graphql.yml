@@ -215,6 +215,11 @@ pages:
         - label: addDownloadableProductsToCart mutation
           url: /graphql/mutations/add-downloadable-products.html
 
+        - label: addGiftRegistryRegistrants mutation
+          url: /graphql/mutations/add-gift-registry-registrants.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: addProductsToCompareList mutation
           url: /graphql/mutations/add-products-to-compare-list.html
           exclude_versions: ["2.3"]
@@ -446,6 +451,11 @@ pages:
           edition: ee-only
           exclude_versions: ["2.3"]
 
+        - label: removeGiftRegistryRegistrants mutation
+          url: /graphql/mutations/remove-gift-registry-registrants.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: removeItemFromCart mutation
           url: /graphql/mutations/remove-item.html
 
@@ -566,6 +576,11 @@ pages:
 
         - label: updateGiftRegistry mutation
           url: /graphql/mutations/update-gift-registry.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: update-gift-registry-registrants mutation
+          url: /graphql/mutations/update-gift-registry-registrants.html
           edition: ee-only
           exclude_versions: ["2.3"]
 
