@@ -146,7 +146,7 @@ This example shows the default web configuration for a Cloud project configured 
 Defines the persistent disk size of the application in MB.
 
 ```yaml
-disk: 2048
+disk: 5120
 ```
 
 The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.

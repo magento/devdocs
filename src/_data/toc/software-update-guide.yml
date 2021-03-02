@@ -21,6 +21,28 @@ pages:
         - label: Update and upgrade checklist
           url: /comp-mgr/prereq/prereq_compman-checklist.html
 
+    - label: Upgrade Compatibility Tool
+      url: /upgrade-compatibility-tool/introduction.html
+      versionless: true
+      edition: ee-only
+      children:
+
+        - label: Prerequisites
+          url: /upgrade-compatibility-tool/prerequisites.html
+          versionless: true
+
+        - label: Install
+          url: /upgrade-compatibility-tool/install.html
+          versionless: true
+
+        - label: Run the tool
+          url: /upgrade-compatibility-tool/run.html
+          versionless: true
+
+        - label: Developer information
+          url: /upgrade-compatibility-tool/developer.html
+          versionless: true
+
     - label: Magento Marketplace example
       url: /comp-mgr/marketplace/marketplace.html
       include_versions: ["2.3"]
@@ -51,6 +73,9 @@ pages:
       exclude_versions: ["2.3"]
       children:
 
+        - label: Update the Magento application
+          url: /comp-mgr/cli/dev_update-magento.html
+        
         - label: Upgrade with sample data
           url: /comp-mgr/cli/cli-rc1-samp.html
 
@@ -76,6 +101,9 @@ pages:
     - label: Manage modules
       url: /comp-mgr/manage-module.html
       exclude_versions: ["2.3"]
+
+    - label: Add or update components
+      url: /install-gde/install/cli/dev_add-update.html
 
     - label: Run System Upgrade
       url: /comp-mgr/upgrader/upgrade-checklist.html

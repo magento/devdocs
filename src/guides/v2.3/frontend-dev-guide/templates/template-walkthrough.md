@@ -34,15 +34,15 @@ If you add a new `.html` template, and then edit it, the changes will not apply 
 
 ## Walkthrough illustration: adding a message to the customer review form
 
-A small customization to illustrate the walkthrough: in their Orange theme, the OrangeCo company wants to add a short text to the product review form to encourage customers to write reviews.
+A small customization to illustrate the walkthrough: in their Orange theme, the ExampleCorp company wants to add a short text to the product review form to encourage customers to write reviews.
 
 The following image illustrates how the default review form looks like:
 
 ![Default review form]({{ site.baseurl }}/common/images/template_walk_without_text.png)
 
-To add the text, OrangeCo needs to override the default review form template in the Orange theme.
+To add the text, ExampleCorp needs to override the default review form template in the Orange theme.
 
-First, they copy the `form.phtml` template from `<Magento_Review_module_dir>/view/frontend/templates` to the corresponding subdirectory in the Orange theme directory: `app/design/frontend/OrangeCo/orange/Magento_Review/templates`.
+First, they copy the `form.phtml` template from `<Magento_Review_module_dir>/view/frontend/templates` to the corresponding subdirectory in the Orange theme directory: `app/design/frontend/ExampleCorp/orange/Magento_Review/templates`.
 
 In the theme `form.phtml` file they add the HTML snippet with the message before the `<form>`:
 

@@ -10,7 +10,7 @@ Product Recommendations are a powerful marketing tool you can use to increase co
 
 ## Architectural overview
 
-At a high level, Magento's Product Recommendations are deployed as a SaaS service. The Magento side includes the storefront, which contains the event collector and recommendations layout template, and the backend, which includes the Data Services, SaaS Export module, and the Admin UI. Adobe Sensei intelligence services are leveraged on the the SaaS services side.
+At a high level, Magento's Product Recommendations are deployed as a SaaS service. The Magento side includes the storefront, which contains the event collector and recommendations layout template, and the backend, which includes the Data Services, SaaS Export module, and the Admin UI. Adobe Sensei intelligence services are leveraged on the SaaS services side.
 
    ![Product recommendations architecture diagram]({{ page.baseurl }}/recommendations/images/arch-diag-sensei.svg)
 
