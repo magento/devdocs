@@ -4,7 +4,7 @@ title: Deploy variables
 functional_areas:
   - Cloud
   - Configuration
-redirect_from: 
+redirect_from:
   - /cloud/trouble/message-queues.html
 ---
 
@@ -425,6 +425,26 @@ You must have a Redis service configured in the `.magento.app.yaml` file and in 
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
+### `REMOTE_STORAGE`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.4.2 and later
+
+Configure a _storage adapter_ to store media files in a persistent, remote storage container using a storage service, such as AWS S3. Use the remote storage option to improve performance on Cloud projects with complex, multi-server configurations that must share resources.
+
+```yaml
+stage:
+  deploy:
+    REMOTE_STORAGE:
+      driver: aws-s3 # Required
+      prefix: cloud # Optional
+      config:
+        bucket: my-bucket # Required
+        region: my-region # Required
+        key: my-key # Optional
+        secret: my-secret-key # Optional
+```
+
 ### `RESOURCE_CONFIGURATION`
 
 -  **Default**—Not set
@@ -516,6 +536,19 @@ stage:
 ```
 
 {% include cloud/note-increase-scd-max-execution-time-variable.md%}
+
+### `SCD_NO_PARENT`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.4.2 and later
+
+On the deploy phase, we recommend setting `SCD_NO_PARENT: true` so that the generation of static content for parent themes does not occur during the deploy phase. This setting minimizes deployment time and prevents site downtime that can occur if the static content build fails during the deployment. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
+
+```yaml
+stage:
+  deploy:
+    SCD_NO_PARENT: true
+```
 
 ### `SCD_STRATEGY`
 

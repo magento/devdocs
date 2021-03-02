@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Wizard
 title: Step 6. Install
 menu_title: Step 6. Install
