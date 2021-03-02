@@ -80,7 +80,7 @@ You can use either the `<link src="js/sample.js"/>` or the `<script src="js/samp
 
 The path to assets is specified relatively to one the following locations:
 
--  CSS and LESS files are stored in the  `<theme_dir>/web/css/` directory.
+-  CSS and LESS files are stored in the `<theme_dir>/web/css/` directory.
 -  Font related files are stored in the `<theme_dir>/<Namespace>_<Module>/web/fonts/` directory.
 -  Static assets, like images, are stored in the `<theme_dir>/<Namespace>_<Module>/web/images/` directory.
 -  JS files are stored in the `<theme_dir>/<Namespace>_<Module>/web/js/` directory.
@@ -617,7 +617,7 @@ class AddBodyClassToProductPagePlugin
 
 As result, the `<body>` tag has a new `my-new-body-class` class on all product pages.
 
-For more information about Plugins refer to [Plugins in Magento]({{ page.baseurl }}/extension-dev-guide/plugins.html)
+For more information about Plugins, refer to [Plugins in Magento]({{ page.baseurl }}/extension-dev-guide/plugins.html)
 
 ## Manage the 'My Account' dashboard navigation links
 
