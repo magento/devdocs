@@ -165,6 +165,42 @@ Change prefix option in case Magento was installed with prefix in database table
 
 Configuration data is accessible via \Migration\Config class.
 
+### steps available operations {#steps}
+
+|Document|Field|
+|--- |--- |
+|step|It is the second level node inside the Steps node. It provides title to the relavent steps.|
+|integrity|It specifies the PHP class responsible for the integrity check. It compares the table field names, types, and other info to verify compatibility between Magento 1 and 2 data structures.|
+|data|It specifies the PHP class responsible for the data check. It transfers the data, table by table from Magento 1 and 2.|
+|volume|It specifies the PHP class responsible for the volume check. It compares the number of records between tables to verify that the transfer was successful.|
+|delta|It specifies the PHP class responsible for the delta check. It transfers the delta from Magento 1 to Magento 2 after the full data migration.|
+
+### source available operations {#source}
+
+|Document|Field|Required?|
+|--- |--- |--- |
+|name|Database name of the Magento 1 server.|yes|
+|host|Host IP address of the Magento 1 server|yes|
+|port|Port number of the Magento 1 server.|no|
+|user|Username of the Magento 1 database server|yes|
+|password|Password of the Magento 1 database server|yes|
+|ssl_ca|Path to SSL Certificate Authority file|no|
+|ssl_cert|Path to SSL Certificate file|no|
+|ssl_key|Path to SSL Key file|no|
+
+### destination available operations {#destination}
+
+|Document|Field|Required?|
+|--- |--- |--- |
+|name|Database name of the Magento 2 server.|yes|
+|host|Host IP address of the Magento 2 server|yes|
+|port|Port number of the Magento 2 server.|no|
+|user|Username of the Magento 2 database server|yes|
+|password|Password of the Magento 2 database server|yes|
+|ssl_ca|Path to SSL Certificate Authority file|no|
+|ssl_cert|Path to SSL Certificate file|no|
+|ssl_key|Path to SSL Key file|no|
+
 ### Connect using the TLS protocol
 
 You can also connect to a database using the TLS protocol (i.e., using public/private cryptographic keys). Add the following optional attributes to the `database` element:
