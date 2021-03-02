@@ -449,6 +449,11 @@ pages:
         - label: removeGiftRegistry mutation
           url: /graphql/mutations/remove-gift-registry.html
           edition: ee-only
+          exclude_versions: ["2.3"] 
+
+        - label: removeGiftRegistryItems mutation
+          url: /graphql/mutations/remove-gift-registry-items.html
+          edition: ee-only
           exclude_versions: ["2.3"]
 
         - label: removeGiftRegistryRegistrants mutation
@@ -579,7 +584,12 @@ pages:
           edition: ee-only
           exclude_versions: ["2.3"]
 
-        - label: update-gift-registry-registrants mutation
+        - label: updateGiftRegistryItems mutation
+          url: /graphql/mutations/update-gift-registry-items.html
+          edition: ee-only
+          excude_versions: ["2.3"]
+
+        - label: updateGiftRegistryRegistrants mutation
           url: /graphql/mutations/update-gift-registry-registrants.html
           edition: ee-only
           exclude_versions: ["2.3"]
