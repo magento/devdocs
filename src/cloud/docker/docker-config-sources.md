@@ -350,4 +350,4 @@ services:
 [mounts]: https://devdocs.magento.com/cloud/project/magento-app-properties.html#mounts
 [available services]: {{site.baseurl}}/cloud/project/services.html#service-versions
 [Override configuration]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html#override-configuration
-[Service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
+[supported service version]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
