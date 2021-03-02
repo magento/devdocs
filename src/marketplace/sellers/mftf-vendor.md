@@ -37,7 +37,7 @@ See [System Requirements][3] for more information on supported software.
 
 ## Reading the error report
 
-MFTF returns two types of results:
+MFTF returns two types of results, displayed as `MFTF Vendor` within the developer portal::
 
 -  Simplified results showing the status of each test executed
 -  Allure XML results
