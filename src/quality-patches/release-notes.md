@@ -21,13 +21,13 @@ See [Patches available in MQP tool](https://support.magento.com/hc/en-us/section
 
 ## v1.0.17
 
-- **MDVA-34012** _(for Magento `>=2.3.1 <2.4.3`)_-Fixes the issue where the "Use default value" checkbox gets cleared, after the scheduled changes are applied. The issue appears once the scheduled changes are no longer in effect.
-- **MDVA-35064** _(for Magento `>=2.3.3 <2.4.3`)_-Fixes the issue where URL rewrites are not generated for configurable products created via API.
-- **MDVA-34943** _(for Magento `>=2.3.0 <2.4.2`)_-Fixes the issue where quick order caches the previously entered SKUs.
-- **MDVA-35197** _(for Magento `>=2.3.5 <2.4.0`)_-Fixes the issue where there's an error when adding to cart using GraphQL, if previously added products become out of stock.
-- **MDVA-34850** _(for Magento `>=2.3.1 <2.4.0`)_-Fixes the issue where the out-of-stock options of a configurable product are not displayed, instead of being displayed as struck-through.
-- **MDVA-34867** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue where values for a condition field set for a scheduled update are not being saved.
-- **MDVA-35092** _(for Magento `>=2.3.5 <2.4.3`)_-Fixes the issue where users are not able to add Vimeo videos due to deprecated Vimeo API
+-  **MDVA-34012** _(for Magento `>=2.3.1 <2.4.3`)_-Fixes the issue where the "Use default value" checkbox gets cleared, after the scheduled changes are applied. The issue appears once the scheduled changes are no longer in effect.
+-  **MDVA-35064** _(for Magento `>=2.3.3 <2.4.3`)_-Fixes the issue where URL rewrites are not generated for configurable products created via API.
+-  **MDVA-34943** _(for Magento `>=2.3.0 <2.4.2`)_-Fixes the issue where quick order caches the previously entered SKUs.
+-  **MDVA-35197** _(for Magento `>=2.3.5 <2.4.0`)_-Fixes the issue where there's an error when adding to cart using GraphQL, if previously added products become out of stock.
+-  **MDVA-34850** _(for Magento `>=2.3.1 <2.4.0`)_-Fixes the issue where the out-of-stock options of a configurable product are not displayed, instead of being displayed as struck-through.
+-  **MDVA-34867** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue where values for a condition field set for a scheduled update are not being saved.
+-  **MDVA-35092** _(for Magento `>=2.3.5 <2.4.3`)_-Fixes the issue where users are not able to add Vimeo videos due to deprecated Vimeo API
 
 ## v1.0.16
 
