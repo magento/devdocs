@@ -18,7 +18,7 @@ Magento stores the hashed data version in Redis, with the suffix ':version' appe
 
 ## Configuration example
 
-Put this into the `app/etc/env.php` file or replace the existing cache section.
+Use the following example to modify or replace the existing cache section in the `app/etc/env.php` file.
 
 ```php
 'cache' => [
@@ -60,10 +60,10 @@ Where:
    -  `remote_backend_options` is the remote cache configuration.
    -  `local_backend` is the local cache implementation: `Cm_Cache_Backend_File` or the APC adapter.
    -  `local_backend_options` is the local cache configuration.
-      -  `cache_dir` __a file cache specific option.__ Is the directory where the local cache will be stored.
-   -  `use_stale_cache` is a flag that enable\disables the stale cache mechanism.
+      -  `cache_dir` __a file cache specific option.__ This is the directory where the local cache is stored.
+   -  `use_stale_cache` is a flag that enables or disables the use of stale cache.
 
-We recommend the use of Redis for remote caching - `\Magento\Framework\Cache\Backend\Redis`, and the File cache implementation - `Cm_Cache_Backend_File` as the local cache for storing data in shared memory - `'local_backend_options' => ['cache_dir' => '/dev/shm/']`.
+We recommend using Redis for remote caching (`\Magento\Framework\Cache\Backend\Redis`) and `Cm_Cache_Backend_File` for the local caching of data in shared memory, using `'local_backend_options' => ['cache_dir' => '/dev/shm/']`.
 We also recommend the use of the [`cache preload`](https://devdocs.magento.com/guides/v2.4/config-guide/redis/redis-pg-cache.html#redis-preload-feature) feature, as it will drastically decrease the pressure on Redis. Do not forget to add suffix ':version' for preload keys.
 
 ## Stale cache options
