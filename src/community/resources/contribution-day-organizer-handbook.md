@@ -3,41 +3,41 @@ group: community
 title: Contribution Day Organizer's Handbook
 ---
 
-Thank you for taking the time to organize a Magento Contribution Day! This handbook aims to answer any questions you have on the matter, but if you still have questions feel free to email the Community Engineering team: engcom@adobe.com.
+Thank you for taking the time to organize a Magento Contribution Day! This handbook aims to answer any questions you have on the matter, but if you still have questions feel free to email the Community Engineering team: `engcom@adobe.com`.
 
 ## Before the Event
 Preparation is paramount for a good Contribution Day.
 
 ### Event Goal {#event-goals}
-Contributions can come in many shapes and sizes, and it is important to fit the event to your audience. There tend to be two types of Contribution Days:
+Contributions can come in many shapes and sizes, and it is important to fit the event to your audience. There tends to be two types of Contribution Days:
 
 *  General focus Contribution Days. These events are great for getting people started in contributing. During these events, attendees will normally tackle issues that you and Magento Community Engineering can organize in preparation for the event. Another great starting place is our public [GitHub Community Backlog](https://github.com/magento/magento2/projects/20) project, but really, attendees should feel free to work on anything they desire.
 
 *  Project-specific Contribution Days. These events are tailored to one or more community driven projects (one of the many satellite projects available on [GitHub](https://github.com/magento)). Before the event the project team will prepare a list of tasks that can be worked on during the event.
 
 ### Event Date {#event-date}
-An event needs a date! Please feel free to communicate with us and let us know (ideally via e-mail: engcom@adobe.com) which dates you are thinking of running a Contribution Day. This can be helpful to understand if your planned date conflicts with other events. If possible, Magento Community Engineering would like to support your event by sending some people from our team to help participate in the event. As such, sharing the dates with us ahead of time is helpful to organize. Getting in touch with us early also helps us identify potential [co-marketing and promotional opportunities to help make your event a success!
+An event needs a date, so please feel free to communicate with us and let us know (ideally via e-mail: engcom@adobe.com) on which dates you are thinking of running a Contribution Day. This can be helpful to understand if your planned date conflicts with other events. If possible, Magento Community Engineering would like to support your event by sending some people from our team to help participate in the event. As such, sharing the dates with us ahead of time is helpful in organizing our team. Getting in touch with us early also helps us identify potential [co-marketing and promotional opportunities to help make your event a success.
 
-### Event Size & Length
-How many people do you foresee attending? Depending on the size, you may want to consider running a one or two-day event.
+### Event Attendance & Duration
+How many people do you foresee attending? Depending on the numbers, you may want to consider running a one or two-day event.
 
 ### Public or Private?
-We are big proponents of open source and transparency so we love to see events accessible to the public! That said, there are occasions where private events may be beneficial. For example, an internal Contribution Day could be used as a company developer training opportunity in order to level up your Magento developers and get them involved in the evolution of Magento.
+We are big proponents of open source and transparency so we love to see events accessible to the public. That said, there are occasions where private events may be beneficial. For example, an internal Contribution Day could be used as a company developer training opportunity in order to level up your Magento developers and get them involved in the evolution of Magento.
 
 ### Venue {#venue}
-The venue should be chosen to match the size and length of the event.
+The venue should be chosen to match the attendance and duration of the event.
 
-#### Accommodations and Routes
+#### Accommodation and Routes
 You should consider what commuting to the venue for out-of-town attendees will be like and prepare route and hotel recommendations.
 
-#### Food and Beverage
+#### Food and Beverages
 Attendees expect food and drinks to be available at the venue. Ensure that the venue can accommodate a lunch and possibly a networking/mixer/wind-down for after the main event.
 
 #### Wi-Fi
-Technical and collaborative events such as Contribution Days require good Wi-Fi. This is not optional. You need to expect that every attendee will come with one (sometimes more!) laptop as well as a mobile device and they will expect to connect to a speedy wireless network. Please put in extra consideration around making sure that the network access has a good top speed as well as the available bandwidth to support 2+ devices for each attendee.
+Technical and collaborative events such as Contribution Days require good Wi-Fi. This is not optional. You need to expect that every attendee will come with one or more laptops & mobile devices and they will expect to connect to a speedy wireless network. Please put in extra consideration around making sure that the network access has a good top speed as well as the available bandwidth to support 2+ devices for each attendee. The Wi-Fi password should be readily available to attendees, they should not have to ask or hunt around for it.
 
 #### Electricity
-Ensure your venue will have enough electrical plugs. It may be necessary to organize extension cables and power bars to be able to accommodate all attendees. If extension cords are necessary, please ensure they are not a tripping hazard by taping cables down to the floor or tucking them out of the way when possible.
+Ensure your venue will have enough electrical plugs. It may be necessary to organize extension cables and power bars to be able to accommodate all attendees. If extension cords are necessary, please ensure they are not a trip hazard by taping cables down to the floor or tucking them out of the way when possible.
 
 #### Presentations
 It is a common need to have organizers and attendees do presentations. As such you should consider how it would be possible to present at your venue. Some top considerations here are:
@@ -49,7 +49,7 @@ It is a common need to have organizers and attendees do presentations. As such y
 It is highly recommended to test a running presentation before your event to work out any technical difficulties ahead of time.
 
 #### Prizes
-(Optional) Consider arranging prizes for the best contributions made during your event. A little thank you goes a long way 😊
+(Optional) Consider arranging prizes for the best contributions made during your event. A little thank you goes a long way.
 
 ### Pricing {#pricing}
 While we'd like to encourage making events as accessible as possible, the truth is we've seen that free events have a much lower commitment rate than paid events. That is, attendees feel less committed to attending a free event than one even they paid a nominal fee for. As such, consider charging for your event, even if it is a relatively low fee (like the cost of a nice lunch).
@@ -85,7 +85,7 @@ A registration page is required for attendees to be able to reserve a spot. Regi
 Having the above information can also be useful as feedback into [issue backlog preparation](#contribution-backlog) as well as helping to shape the goal and/or agenda for the event.
 
 #### Instructions for Attendees
-Once your website and registration page is ready, you should compile materials to send to your attendees for after they register and before the event. Some foundational information that should be present in this material includes:
+Once your website and registration page is ready, you should compile materials to send to your attendees after they register and before the event. Some basic information that should be present in this material includes:
 
 *  Links to any relevant Contribution Day boards or backlogs containing issues that would be good challenges for attendees.
 
@@ -96,21 +96,21 @@ Once your website and registration page is ready, you should compile materials t
 ### Marketing and Communications {#marketing-and-communication}
 Marketing is key: if people do not know about your event, they will not come.
 
-We recommend promoting your event on social media: tweeting about the event and writing blog posts about it are two great ways to get started. If using Twitter, determine what hashtag you want to use and ensure your team is coordinated on it.
+We recommend promoting your event on social media: tweeting about the event and writing blog posts about it are two great ways to get started. If using Twitter, determine what hashtag you want to use and ensure your team is coordinated on its use.
 
-Magento Community Engineering can help co-promote your event on [Twitter](https://twitter.com/MagentoEngCom); get in touch with us via email (engcom@adobe.com) to start a conversation around co-promotion. Let us know what your marketing approach is like and we will do our best to amplify you.
+Magento Community Engineering can help co-promote your event on [Twitter](https://twitter.com/MagentoEngCom); get in touch with us via email (engcom@adobe.com) to start a conversation around co-promotion. Let us know what your marketing approach is like and we will do our best to promote you.
 
 NOTE: We generally do not help promote private / internal events.
 
-#### Communication Mediums
-What is the best way for (potential) attendees to contact you? Do you have an email? What about a Slack channel (contact the Community Engineering team and we can help get you set up with a dedicated channel for your event in our Slack)?
+#### Communication Channels
+What is the best way for (potential) attendees to contact you? Do you have an email? What about a Slack channel? Contact the Community Engineering team and we can help get you set up with a dedicated channel for your event in our Slack.
 
 #### Magento Involvement
 While we may be able to send one or more members of the Magento Community Engineering team to your event to help with running the event and guiding contributors, please note that these events are organized and run by you - not Magento. As such, **Magento should not be mentioned as a sponsor or co-organizer**. These events are first and foremost community events by the community and for the community.
 
 ### Contribution Backlog {#contribution-backlog}
 
-It is highly recommended preparing a project backlog (also known as a project board) on GitHub.com tailored to the [goals of your event](#event-goals) and your audience. This backlog would contain issues you want to encourage attendees to tackle during your event. Ideally, the issues are well related to your [event goals](#event-goals). Please work with us at the Magento Community Engineering team to tailor an appropriate backlog for your event. Another option is to use our generic and publicly-available [High Priority Community Backlog](https://github.com/magento/magento2/projects/26).
+It is highly recommended to prepare a project backlog (also known as a project board) on GitHub.com tailored to the [goals of your event](#event-goals) and your audience. This backlog would contain issues you want to encourage attendees to tackle during your event. Ideally, the issues are strongly related to your [event goals](#event-goals). Please work with us at the Magento Community Engineering team to tailor an appropriate backlog for your event. Another option is to use our generic and publicly-available [High Priority Community Backlog](https://github.com/magento/magento2/projects/26).
 
 ## During the Event
 
@@ -119,8 +119,8 @@ During the event it is good to have an agenda accessible to attendees, so they k
 
 | Time      | Title                                                                             | Details                                                                                                                                                                                                                                                                                                                                                                          |
 |-----------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 9AM-10AM  | Coffee and Introductions                                                          | Start the event off with an introduction round for the attendees, a description of the venue, Wi-Fi information, social media information (hashtags), communication mediums (i.e. Slack channel), highlight people to contact for help and key locations such as toilets, coffee and smoking areas. This helps to make sure people feel as comfortable as possible at the event. |
-| 10AM-11AM | How to contribute, find issues to work on and set up your development environment | An introduction on how to go about contributing, how to find issue to work on and how to get a local dev environment going. This is all about helping give attendees context which is especially important for first-time contributors. Unless your attendees are all veteran Magento contributors, consider having some amount of time allotted for this.                       |
+| 9AM-10AM  | Coffee and Introductions                                                          | Start the event off with an introduction round for the attendees, a description of the venue, Wi-Fi information, social media information (hashtags), communication channels (i.e. Slack channel), highlight people to contact for help and key locations such as toilets, coffee and smoking areas. This helps to make sure people feel as comfortable as possible at the event. |
+| 10AM-11AM | How to contribute, find issues to work on and set up your development environment | An introduction on how to go about contributing, how to find issues to work on and how to get a local development environment going. This is all about helping give attendees context, which is especially important for first-time contributors. Unless your attendees are all veteran Magento contributors, consider having some amount of time allotted for this.                       |
 | 11AM-1PM  | Development Time                                                                  | Get hacking!                                                                                                                                                                                                                                                                                                                                                                     |
 | 1PM-2PM   | Lunch                                                                             | nom nom                                                                                                                                                                                                                                                                                                                                                                          |
 | 2PM-4PM   | Development Time                                                                  | Get hacking!                                                                                                                                                                                                                                                                                                                                                                     |
@@ -139,7 +139,7 @@ The Magento Community Engineering team would love it if you are able to track ac
 ## After the Event
 Once the event is completed it is important to gather feedback from the attendees and to publish results and a review. This will help to build a stronger connection between the attendees and the event itself and it will also help you, as the organizer, to find out areas of improvement for the next event.
 
-We would also love to keep track of how many contributions were created as part of your event! Keeping track of pull requests issued as part of the event would be greatly appreciate on our part.
+We would also love to keep track of how many contributions were created as part of your event! Keeping track of pull requests issued as part of the event would be greatly appreciated on our part.
 
 ### Feedback {#feedback}
 One of the best ways to gather feedback is to put together a survey using a tool such as [SurveyMonkey](https://www.surveymonkey.com/). Then after the event send around this link to all the attendees so that they can fill it in. A few recommended questions to cover:
