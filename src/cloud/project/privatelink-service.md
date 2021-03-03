@@ -25,7 +25,8 @@ The PrivateLink service integration for {{site.data.var.ece}} projects includes 
 -  You cannot establish SSH connections using PrivateLink. For SSH, use the Magento SSH capabilities. See [Enable SSH keys][].
 -  Magento support does not cover troubleshooting AWS PrivateLink issues beyond initial enablement.
 -  Customers are responsible for costs associated with managing their own VPC.
--  You cannot use the HTTPS protocol to connect to Magento Commerce over PrivateLink.
+-  You cannot use the HTTPS (443) protocol to connect to Magento Commerce over PrivateLink.
+-  PrivateDNS is not available 
 
 ## PrivateLink connection types
 
@@ -61,6 +62,7 @@ Enabling PrivateLink can take up to 5 business days. Providing incomplete, or in
    -  **Magento Cloud Project ID**–Provide the {{site.data.var.ece}} Pro project ID. You can get the Project ID and other project information using the folllowing [Magento Cloud CLI][] command:  ```magento-cloud project:info```
    -  **Connection type**–Specify unidirectional or bidirectional for connection type
    -  **Service endpoint**–For bidirectional PrivateLink connections, provide the DNS URL for the VPC service endpoint that Magento must connect to, for example `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`.
+   -  **Service endopoint access granted**-Ensure that your service endpoint has the principle set to allow access to= `arn:aws:iam::402592597372:root`.  If this is not set the bi-direction connection to access the service in your VPC cannot be added and will delay the setup.
 
 ### Enablement workflow
 
@@ -89,7 +91,7 @@ The following workflow outlines the enablement process for PrivateLink integrati
 
    -  **Magento** supplies the Magento account principal (root user for AWS or Azure account) and requests access to the customer VPC endpoint service.
 
-   -  **Customer** enables Magento access to the endpoint service in customer VPC.
+   -  **Customer** enables Magento access to the endpoint service in customer VPC.  There is prereq of ensuring principle access= `arn:aws:iam::402592597372:root`
 
       -  Update the customer endpoint service configuration to accept requests initiated from Magento account. See the Cloud platform documentation for instructions:
 
