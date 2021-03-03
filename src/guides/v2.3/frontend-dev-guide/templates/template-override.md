@@ -34,7 +34,7 @@ Here is the example from `app/code/Magento/Review/view/frontend/layout/review_pr
 <block class="Magento\Review\Block\View" name="review_view" ifconfig="catalog/review/active"/>
 ```
 
-Template for the `review_view` block is not specified using the `template` attribute of the `<block>` layout instruction. Instead It is specified in the `app/code/Magento/Review/Block/View.php` block class.
+Template for the `review_view` block is not specified using the `template` attribute of the `<block>` layout instruction. Instead it is specified in the `app/code/Magento/Review/Block/View.php` block class.
 
 ```php
 protected $_template = 'Magento_Review::view.phtml';
@@ -112,7 +112,7 @@ is the same as writing
 In order to support the translation of content, the text must be wrapped inside `__('sample text')`.
 
 ```phtml
-<span><?= $block->escapeHtml(__('Back to Product Reviews')) ?></span>
+<span><?= $escaper->escapeHtml(__('Back to Product Reviews')) ?></span>
 ```
 
 ## Related reading
