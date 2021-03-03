@@ -28,4 +28,3 @@ title: Technical Reference
 
 -  [Installation]({{ site.baseurl }}/guides/v2.4/install-gde/bk-install-guide.html)
 -  [Configuration]({{ site.baseurl }}/guides/v2.4/config-guide/bk-config-guide.html)
--  [Component Manager]({{ site.baseurl }}/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html) (used by merchants to manage components)

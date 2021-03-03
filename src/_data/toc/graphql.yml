@@ -82,7 +82,11 @@ pages:
           url: /graphql/queries/company.html
           edition: b2b-only
           exclude_versions: ["2.3"]
-        
+
+        - label: compareList query
+          url: /graphql/queries/compare-list.html
+          exclude_versions: ["2.3"]
+
         - label: countries query
           url: /graphql/queries/directory-countries.html
           
@@ -109,6 +113,11 @@ pages:
 
         - label: customerPaymentTokens query
           url: /graphql/queries/customer-payment-tokens.html
+
+        - label: dynamicBlocks query
+          url: /graphql/queries/dynamic-blocks.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: getHostedProUrl query
           url: /graphql/queries/get-hosted-pro-url.html
@@ -181,6 +190,10 @@ pages:
         - label: addDownloadableProductsToCart mutation
           url: /graphql/mutations/add-downloadable-products.html
 
+        - label: addProductsToCompareList mutation
+          url: /graphql/mutations/add-products-to-compare-list.html
+          exclude_versions: ["2.3"]
+
         - label: addProductsToRequisitionList mutation
           url: /graphql/mutations/add-products-to-requisition-list.html
           edition: b2b-only
@@ -211,6 +224,10 @@ pages:
         - label: addVirtualProductsToCart mutation
           url: /graphql/mutations/add-virtual-products.html
 
+        - label: addWishlistItemsToCart mutation
+          url: /graphql/mutations/add-wishlist-items-to-cart.html
+          exclude_versions: ["2.3"]
+
         - label: applyCouponToCart mutation
           url: /graphql/mutations/apply-coupon.html
 
@@ -226,6 +243,10 @@ pages:
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
           edition: ee-only
+
+        - label: assignCompareListToCustomer mutation
+          url: /graphql/mutations/assign-compare-list-to-customer.html
+          exclude_versions: ["2.3"]
 
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
@@ -267,6 +288,10 @@ pages:
           url: /graphql/mutations/create-company-user.html
           edition: b2b-only
           exclude_versions: ["2.3"]
+
+        - label: createCompareList mutation
+          url: /graphql/mutations/create-compare-list.html
+          exclude_versions: [ "2.3" ]
 
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
@@ -320,6 +345,10 @@ pages:
           edition: b2b-only
           exclude_versions: ["2.3"]
 
+        - label: deleteCompareList mutation
+          url: /graphql/mutations/delete-compare-list.html
+          exclude_versions: [ "2.3" ]
+
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
 
@@ -370,6 +399,10 @@ pages:
         - label: redeemGiftCardBalanceAsStoreCredit mutation
           url: /graphql/mutations/redeem-giftcard-balance.html
           edition: ee-only
+
+        - label: removeProductsFromCompareList mutation
+          url: /graphql/mutations/remove-products-from-compare-list.html
+          exclude_versions: ["2.3"]
 
         - label: removeCouponFromCart mutation
           url: /graphql/mutations/remove-coupon.html
@@ -427,6 +460,7 @@ pages:
 
         - label: setGiftOptionsOnCart mutation
           url: /graphql/mutations/set-gift-options.html
+          edition: ee-only
           exclude_versions: ["2.3"]
 
         - label: setGuestEmailOnCart mutation

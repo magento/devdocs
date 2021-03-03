@@ -292,10 +292,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Images in the Adobe Stock images grid are now properly aligned after filters have been cleared. _Fix submitted by Nazar Klovanych in pull request [28366](https://github.com/magento/magento2/pull/28366)_. [GitHub-824](https://github.com/magento/adobe-stock-integration/issues/824), [GitHub-972](https://github.com/magento/adobe-stock-integration/issues/972)
 
-<!--- ENGCOM-8020-->
-
-*  Added support for reading `exif_image.png` or `exif-image.jpeg` metadata. _Fix submitted by Nazar Klovanych in pull request [29576](https://github.com/magento/magento2/pull/29576)_. [GitHub-1449](https://github.com/magento/adobe-stock-integration/issues/1449)
-
 <!-- ENGCOM-7709 -->
 
 *  The **Used in** section of the Adobe Stock gallery image details page now accurately identifies if the image is associated with a product. _Fix submitted by Nazar Klovanych in pull request [28798](https://github.com/magento/magento2/pull/28798)_. [GitHub-1474](https://github.com/magento/adobe-stock-integration/issues/1474)
@@ -1417,7 +1413,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35984-->
 
-*  The Returns page now works as expected after you create a shipping label for a Return Merchandise Authorization (RMA). Previously, merchants could not interact with any page elements on the Returns page after creating a shipping label for an RMA. This was a known issue for 2.4.0, and MC-35984-2.4.0-CE-composer.patch addressed this issue for Magento 2.4.0.
+*  The Returns page now works as expected after you create a shipping label for a Return Merchandise Authorization (RMA). Previously, merchants could not interact with any page elements on the Returns page after creating a shipping label for an RMA. This was a known issue for 2.4.0, and `MC-35984-2.4.0-CE-composer.patch` addressed this issue for Magento 2.4.0.
 
 <!--- MC-35826-->
 
