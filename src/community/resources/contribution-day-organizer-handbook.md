@@ -31,7 +31,7 @@ The venue should be chosen to match the attendance and duration of the event.
 You should consider what commuting to the venue for out-of-town attendees will be like and prepare route and hotel recommendations.
 
 #### Food and Beverages
-Attendees expect food and drinks to be available at the venue. Ensure that the venue can accommodate a lunch and possibly a networking/mixer/wind-down for after the main event. Also, consider providing information about dietary requirements, some attendees may have allergies and need food that has been prepared and served accordingly. 
+Attendees expect food and drinks to be available at the venue. Ensure that the venue can accommodate a lunch and possibly a networking/mixer/wind-down for after the main event. Also, consider providing information about dietary requirements, some attendees may have allergies and need food that has been prepared and served accordingly.
 
 #### Wi-Fi
 Technical and collaborative events such as Contribution Days require good Wi-Fi. This is not optional. You need to expect that every attendee will come with one or more laptops & mobile devices and they will expect to connect to a speedy wireless network. Please put in extra consideration around making sure that the network access has a good top speed as well as the available bandwidth to support 2+ devices for each attendee. The Wi-Fi password should be readily available to attendees, they should not have to ask or hunt around for it.
