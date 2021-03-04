@@ -240,10 +240,8 @@ The `GiftRegistryShippingAddressInput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`address_data` | [CustomerAddressInput](#CustomerAddressInput) | The complete details of the shipping address
+`address_data` | CustomerAddressInput | The complete details of the shipping address
 `address_id` | ID | The ID of predefined customer address
-
-### CustomerAddressInput attributes {#CustomerAddressInput}
 
 {% include graphql/customer-address-input.md %}
 

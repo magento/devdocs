@@ -136,4 +136,4 @@ Attribute |  Data Type | Description
 
 ### GiftRegistryDynamicAttributeMetadataInterface attributes {#GiftRegistryDynamicAttributeMetadataInterface}
 
-{% include graphql/gift-registry-dynamic-interface.md %}
+{% include graphql/gift-registry-dynamic-attribute-metadata-interface.md %}

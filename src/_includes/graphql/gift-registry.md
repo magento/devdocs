@@ -17,7 +17,7 @@ Attribute |  Data Type | Description
 
 ### GiftRegistryDynamicAttribute attributes {#GiftRegistryDynamicAttribute}
 
-The `GiftRegistryDynamicAttribute` object implements `GiftRegistryDynamicAttributeInterface`. It also defines the following attribute.
+The `GiftRegistryDynamicAttribute` object implements [`GiftRegistryDynamicAttributeInterface`](#GiftRegistryDynamicAttributeInterface). It also defines the following attribute.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -25,24 +25,12 @@ Attribute |  Data Type | Description
 
 ### GiftRegistryDynamicAttributeInterface attributes {#GiftRegistryDynamicAttributeInterface}
 
-`GiftRegistryDynamicAttributeInterface` contains the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`code` | ID! | The internal ID of the dynamic attribute
-`label` | String! | The display name of the dynamic attribute
-`value` | String! | A corresponding value for the code
+{% include graphql/gift-registry-dynamic-interface.md %}
 
 ### GiftRegistryDynamicAttributeMetadataInterface {#GiftRegistryDynamicAttributeMetadataInterface}
 
-Attribute |  Data Type | Description
---- | --- | ---
-`attribute_group` | String! | Indicates which group of the dynamic attribute a member of
-`code` | ID! | The internal ID of the dynamic attribute
-`input_type` | String! | The input type of the dynamic attribute
-`is_required` | Boolean! | Indicates whether the dynamic attribute is required
-`label` | String! | The display name of the dynamic attribute
-`sort_order` | Int | The order in which to display the dynamic attribute
+{% include graphql/gift-registry-dynamic-attribute-metadata-interface.md %}
+
 ### GiftRegistryItemInterface attributes {#GiftRegistryItemInterface}
 
 This `GiftRegistryItemInterface` contains the following attributes:
@@ -70,7 +58,7 @@ Attribute | Data type | Description
 
 ### GiftRegistryRegistrantDynamicAttribute attributes {#GiftRegistryRegistrantDynamicAttribute}
 
-The `GiftRegistryRegistrantDynamicAttribute` data type implements the `GiftRegistryDynamicAttributeInterface`. It does not introduce any additional attributes.
+The `GiftRegistryRegistrantDynamicAttribute` data type implements the [`GiftRegistryDynamicAttributeInterface`](#GiftRegistryDynamicAttributeInterface). It does not introduce any additional attributes.
 
 ### GiftRegistryType attributes {#GiftRegistryType}
 
@@ -81,7 +69,3 @@ Attribute | Data type | Description
 `dynamic_attributes_metadata` | [[GiftRegistryDynamicAttributeMetadataInterface](#GiftRegistryDynamicAttributeMetadataInterface)] | An array of attributes that define elements of the gift registry. Each attribute is specified as a code-value pair
 `label` | String! | The display name of the gift registry type
 `uid` | ID! | The unique ID assigned to the gift registry type
-
-### GiftRegistryDynamicAttribute attributes {#GiftRegistryDynamicAttribute}
-
-{% include graphql/gift-registry-dynamic-interface.md %}
