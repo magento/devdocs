@@ -62,7 +62,7 @@ Enabling PrivateLink can take up to 5 business days. Providing incomplete, or in
    -  **Magento Cloud Project ID**–Provide the {{site.data.var.ece}} Pro project ID. You can get the Project ID and other project information using the folllowing [Magento Cloud CLI][] command:  ```magento-cloud project:info```
    -  **Connection type**–Specify unidirectional or bidirectional for connection type
    -  **Service endpoint**–For bidirectional PrivateLink connections, provide the DNS URL for the VPC service endpoint that Magento must connect to, for example `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`.
-   -  **Service endopoint access granted**-Ensure that your service endpoint has the principle set to allow access to= `arn:aws:iam::402592597372:root`.  If this is not set the bi-direction connection to access the service in your VPC cannot be added and will delay the setup.
+   -  **Service endpoint access granted**-Provide the Magento account principal with access to this service endpoint: `arn:aws:iam::402592597372:root`. If this access is not provided, the bidirectional PrivateLink connection to the service in your VPC will not be added, which will delay the setup.
 
 ### Enablement workflow
 
