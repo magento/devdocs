@@ -104,14 +104,6 @@ features:
           2.2: true
           2.3: true
           2.4: true
-      -
-        name: PayPal in-context checkout
-        support:
-          2.0: false
-          2.1: true
-          2.2: true
-          2.3: true
-          2.4: true
   -
     name: Smarter, faster operations
     versions:
