@@ -297,36 +297,43 @@ For {{site.data.var.ece}} 2.1.x, you can use only [workers]({{ site.baseurl }}/c
 
 If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
-## firewall
+## firewall (Starter only)
 
-The `firewall` property provides an _outbound_ firewall that defines the `tcp` requests to allow _out_ of your Magento site. This is called egress filtering, and it provides your application with an important security measure.
+For Starter plans, the `firewall` property provides an _outbound_ firewall for your Magento application. The firewall allows only the `tcp` requests you define to allow _out_ of your Magento site. This is called egress filtering, and it provides your application with an important security measure.
 
 When you enable the outbound `firewall`, it will restrict all outbound traffic from your Magento site except for the specific IPs, IP ranges, ports, and fully qualified domain names (FQDN) that you allow to egress out of your site. Egress filtering can prevent information leaks or outbound spoofing attacks.
 
-### Example firewall
+### `firewall` configuration
 
-The following configuration shows an example of all the options you can setup for your egress filtering.
+The following example shows all the `firewall` options you can use to setup your egress filtering, followed by descriptions of each.
 
 ```config
 firewall:
   outbound:
-    - protocol: tcp
-      domains: ["metadata.google.internal.0",
-                "metadata.google.internal",
-                "feb-3-itvrhea-6ejd3ypjgdz5a.ap-4.magentosite.cloud",
-                "advancedreporting.rjmetrics.com"
-                "www.google.com",
-                "google.com",
-                "www.yahoo.com",
-                "yahoo.com"]
-      ips: ["23.62.230.91/32",
-            "23.62.230.92/30",
-            "23.62.230.96/27",
-            "23.62.230.128/27",
-            "23.62.230.160/28",
-            "23.62.230.176/30",
-            "23.62.230.180/32"]
-      ports: [80, 443]
+    -
+      domains:
+        - metadata.google.internal.0
+        - metadata.google.internal
+        - feb-3-itvrhea-6ejd3ypjgdz5a.ap-4.magentosite.cloud
+        - advancedreporting.rjmetrics.com
+        - www.yahoo.com
+        - yahoo.com
+      ports:
+        - 80
+        - 443
+      protocol: tcp
+    -
+      ips:
+        - 23.62.230.91/32
+        - 23.62.230.92/30
+        - 23.62.230.96/27
+        - 23.62.230.128/27
+        - 23.62.230.160/28
+        - 23.62.230.176/30
+        - 23.62.230.180/32
+      ports:
+        - 80
+        - 443
 ```
 
 ### protocol
