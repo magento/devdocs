@@ -60,6 +60,7 @@ The following query returns all dynamic blocks of type `SPECIFIED`. The returned
 
 **Response:**
 
+{% raw %}
 ```json
 {
   "data": {
@@ -88,6 +89,7 @@ The following query returns all dynamic blocks of type `SPECIFIED`. The returned
   }
 }
 ```
+{% endraw %}
 
 **cmsPage query response:**
 
