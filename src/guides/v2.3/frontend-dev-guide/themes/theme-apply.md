@@ -62,6 +62,8 @@ To add a permanent theme-independent logo:
 1. If caching is enabled, [clear the cache](#theme-apply-clear).
 1. To see your changes applied, reload the storefront pages.
 
+![Set store logo in Magento Admin]({{ site.baseurl }}/common/images/Logo.png)
+
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
 {:.bs-callout-warning}
@@ -75,6 +77,8 @@ A system message notifies you that invalidated cache types must be refreshed.
 
 1. Click **System** > **Cache Management**.
 1. Clear the invalid cache types.
+
+![Clear the cache from Magento Admin]({{ site.baseurl }}/common/images/Cache.png)
 
 ## Troubleshooting (if the changes do not get applied)
 
