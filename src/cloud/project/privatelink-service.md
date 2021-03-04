@@ -91,7 +91,7 @@ The following workflow outlines the enablement process for PrivateLink integrati
 
    -  **Magento** supplies the Magento account principal (root user for AWS or Azure account) and requests access to the customer VPC endpoint service.
 
-   -  **Customer** enables Magento access to the endpoint service in customer VPC.  There is prereq of ensuring principle access= `arn:aws:iam::402592597372:root`
+   -  **Customer** enables Magento access to the endpoint service in the customer VPC. This assumes that the Magento account principal has access to `arn:aws:iam::402592597372:root`, as previously described in the **Service endpoint access granted** prerequisite.
 
       -  Update the customer endpoint service configuration to accept requests initiated from Magento account. See the Cloud platform documentation for instructions:
 
