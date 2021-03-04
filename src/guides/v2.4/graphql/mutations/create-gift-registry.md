@@ -54,7 +54,7 @@ mutation {
           firstname: "Julie"
           lastname: "Rao"
           email: "julierao@example.com"
-          dynamic_attributes: [{ 
+          dynamic_attributes: [{
             code: "role"
             value: "Bride" }]
         }
@@ -62,7 +62,7 @@ mutation {
           firstname: "Bill"
           lastname: "Preston"
           email: "bpreston@example.com"
-          dynamic_attributes: [{ 
+          dynamic_attributes: [{
             code: "role"
             value: "Groom" }]
         }
@@ -70,13 +70,13 @@ mutation {
       dynamic_attributes: [
         {
           code: "number_of_guests"
-          value: "101" 
+          value: "101"
         }
         {
           code: "event_date"
-          value: "2021-05-01" 
+          value: "2021-05-01"
         }
-        { 
+        {
           code: "event_country"
           value: "US"
         }
@@ -127,7 +127,7 @@ mutation {
           region
         }
         postcode
-        country_code 
+        country_code
       }
     }
   }

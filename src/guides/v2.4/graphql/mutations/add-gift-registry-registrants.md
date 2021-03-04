@@ -29,7 +29,7 @@ The following example adds a registrant to the specified gift registry.
 ```graphql
 mutation {
   addGiftRegistryRegistrants (
-    giftRegistryUid: "W9YcRai9JmzGglqP3p0USodTTM3BmjjY", 
+    giftRegistryUid: "W9YcRai9JmzGglqP3p0USodTTM3BmjjY",
     registrants: {
         firstname: "Monica"
         lastname: "Resendez"
