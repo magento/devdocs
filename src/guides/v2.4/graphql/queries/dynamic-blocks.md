@@ -37,7 +37,7 @@ The following query returns all dynamic blocks of type `SPECIFIED`. The returned
 
 ```graphql
 {
-  dynamicBlocks(input: 
+  dynamicBlocks(input:
   {
     type: SPECIFIED
   })
