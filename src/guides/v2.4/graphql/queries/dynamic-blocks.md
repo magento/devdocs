@@ -108,15 +108,15 @@ The following code illustrates the definition of the dynamic block with the `uid
 
   <ul class=\"banner-items\"
     data-bind=\"afterRender: registerBanner\">\n
-    
-    <!-- ko foreach: getItems833e4819d6c46ab41e9910f17dc04f72329cb84f1b0dc3aa76d43bcb11d605a6() -->\n   
-    
-    <li class=\"banner-item\" 
+
+    <!-- ko foreach: getItems833e4819d6c46ab41e9910f17dc04f72329cb84f1b0dc3aa76d43bcb11d605a6() -->\n
+
+    <li class=\"banner-item\"
       data-bind=\"attr: {'data-banner-id': $data.bannerId}\">\n
-      
-      <div class=\"banner-item-content\" data-bind=\"bindHtml: $data.html\"></div>\n 
+
+      <div class=\"banner-item-content\" data-bind=\"bindHtml: $data.html\"></div>\n
     </li>\n
-    
+
     <!-- /ko -->\n
   </ul>\n
 </div>
