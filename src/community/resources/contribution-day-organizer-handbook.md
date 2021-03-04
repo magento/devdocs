@@ -110,7 +110,7 @@ While we may be able to send one or more members of the Magento Community Engine
 
 ### Contribution Backlog {#contribution-backlog}
 
-It is highly recommended to prepare a project backlog (also known as a project board) on GitHub.com tailored to the [goals of your event](#event-goals) and your audience. This backlog would contain issues you want to encourage attendees to tackle during your event. Ideally, the issues are strongly related to your [event goals](#event-goals). Please work with us at the Magento Community Engineering team to tailor an appropriate backlog for your event. Another option is to use our generic and publicly-available [High Priority Community Backlog](https://github.com/magento/magento2/projects/26).
+It is highly recommended preparing a project backlog (also known as a project board) on GitHub.com tailored to the [goals of your event](#event-goals) and your audience. This backlog would contain issues you want to encourage attendees to tackle during your event. Ideally, the issues are strongly related to your [event goals](#event-goals). Please work with us at the Magento Community Engineering team to tailor an appropriate backlog for your event. Another option is to use our generic and publicly-available [High Priority Community Backlog](https://github.com/magento/magento2/projects/26).
 
 ## During the Event
 
