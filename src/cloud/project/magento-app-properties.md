@@ -10,14 +10,14 @@ Use the following properties to build your application configuration file. The `
 
 {% include cloud/note-pro-mount-disk-config-yaml-support.md %}
 
-### `name`
+## `name`
 
 The `name` property provides the application name used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html) file to define the HTTP upstream (by default, `mymagento:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field.
 
 {:.bs-callout-warning}
 Do not change the name of the application after it has been deployed. Doing so will result in data loss.
 
-### `type` and `build`
+## type and build
 
 The `type`  and `build` properties provide information about the base container image to build and run the project.
 
@@ -34,9 +34,9 @@ build:
     flavor: composer
 ```
 
-### `access`
+## access
 
-The _access_ property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:
+The `access` property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:
 
 -  `admin`—Can change settings and execute actions in the environment. Also has _contributor_ and _viewer_ rights.
 -  `contributor`—Can push code to this environment and branch from the environment. Also has _viewer_ rights.
@@ -49,7 +49,7 @@ access:
     ssh: viewer
 ```
 
-### `relationships`
+## relationships
 
 Defines the service mapping in the application.
 
@@ -71,7 +71,7 @@ relationships:
 
 See [Services]({{ site.baseurl }}/cloud/project/services.html) for a full list of currently supported service types and endpoints.
 
-### `web`
+## web
 
 The `web` property defines how your application is exposed to the web (in HTTP), determines how the web application serves content, and controls how the application container responds to incoming requests by setting rules in each location _block_. A block represents an absolute path leading with a forward slash (`/`).
 
@@ -141,7 +141,7 @@ web:
 {:.bs-callout-info}
 This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the `web` configuration must be set up to support shared domains. See [Configure locations for shared domains]({{ site.baseurl }}/cloud/project/project-multi-sites.html#locations).
 
-### `disk`
+## disk
 
 Defines the persistent disk size of the application in MB.
 
@@ -151,7 +151,7 @@ disk: 5120
 
 The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
-### `mounts`
+## mounts
 
 An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the `magento.app.yaml` file using the `volume_id[/subpath]` syntax:
 
@@ -178,7 +178,7 @@ You can make the mount web accessible by adding it to the [`web`](#web) block of
 {:.bs-callout-warning}
 Once your Magento site has data, do not change the `subpath` portion of the mount name. This value is the unique identifier for the files area. If you change this name, you will lose all site data stored at the old location.
 
-### `dependencies`
+## dependencies
 
 Enables you to specify dependencies that your application might need during the build process.
 
@@ -200,7 +200,7 @@ nodejs:
    grunt-cli: "~0.3"
 ```
 
-### `hooks`
+## hooks
 
 Use the `hooks` section to run shell commands during the build, deploy, and post-deploy phases:
 
@@ -268,7 +268,7 @@ You must compile Sass files using `grunt` before static content deployment, whic
 
 {% include cloud/note-ece-tools-custom-deployment.md %}
 
-### `crons`
+## crons
 
 Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
 
@@ -296,3 +296,86 @@ crons:
 For {{site.data.var.ece}} 2.1.x, you can use only [workers]({{ site.baseurl }}/cloud/project/magento-app-workers.html) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
 If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html).
+
+## firewall
+
+The `firewall` property provides an _outbound_ firewall that defines the `tcp` requests to allow _out_ of your Magento site. This is called egress filtering, and it provides your application with an important security measure.
+
+When you enable the outbound `firewall`, it will restrict all outbound traffic from your Magento site except for the specific IPs, IP ranges, ports, and fully qualified domain names (FQDN) that you allow to egress out of your site. Egress filtering can prevent information leaks or outbound spoofing attacks.
+
+### Example firewall
+
+The following configuration shows an example of all the options you can setup for your egress filtering.
+
+```config
+firewall:
+  outbound:
+    - protocol: tcp
+      domains: ["metadata.google.internal.0",
+                "metadata.google.internal",
+                "feb-3-itvrhea-6ejd3ypjgdz5a.ap-4.magentosite.cloud",
+                "advancedreporting.rjmetrics.com"
+                "www.google.com",
+                "google.com",
+                "www.yahoo.com",
+                "yahoo.com"]
+      ips: ["23.62.230.91/32",
+            "23.62.230.92/30",
+            "23.62.230.96/27",
+            "23.62.230.128/27",
+            "23.62.230.160/28",
+            "23.62.230.176/30",
+            "23.62.230.180/32"]
+      ports: [80, 443]
+```
+
+### protocol
+
+
+### domains
+
+
+### ips
+
+To calculate IP address ranges: https://ipaddressguide.com/cidr
+
+### ports
+
+
+## Domains vs IP addresses
+
+Be aware that many services are behind a Content Delivery Network (CDN). For most CDNs, routing is done via domain name, not IP address, so thousands of domain names may share the same public IP addresses at the CDN. If you allow the IP address of a CDN, you will in most cases be allowing many or all of the other customers hosted behind that CDN. That has security implications and limits the usefulness of this configuration option.
+
+When you set up egress filter rule, then you are block all traffic except for the domain or IP you have specified in the rule.  It is important to have a full egress list before setting it up.
+
+## Check existing firewall configuration
+
+To check the status of your existing firewall configuration using the following command:
+
+```bash
+magento-cloud p:curl --project 6ejd3ypjgdz5a /settings | grep -i outbound
+```
+
+## Determining what to allow out
+
+A starter customer can see the DNS requests made and use this to create a list of FQDN's to use for filtering
+
+Command to parse `var/log/dns.log`:
+
+The following command parses your host's `dns.log` file to show a list of all DNS requests logged in the file. This list can be used to help identify domains that should be added to an egress filtering configuration.  This will also show DNS requests that are made but blocked by egress filtering (though there will not be an indication that it was blocked, just that a request was made).  This will not show any requests made via an IP address.
+
+```bash
+awk '($5 ~/query/)' dns.log | awk '{print $6}' | sort | uniq -c | sort -rn
+```
+
+```terminal
+Example output:
+
+70 metadata.google.internal.0
+70 metadata.google.internal
+17 feb-3-itvrhea-6ejd3ypjgdz5a.ap-4.magentosite.cloud
+8 www.yahoo.com
+6 advancedreporting.rjmetrics.com
+4 www.google.com
+3 yahoo.com
+```
