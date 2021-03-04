@@ -29,7 +29,7 @@ The following example changes the privacy, the message, and the event date for a
 ```graphql
 mutation{
   updateGiftRegistry(
-    giftRegistryUid: "D0R6d2B7aZWOQuuWftHZ0iwuexQPgaei", 
+    giftRegistryUid: "D0R6d2B7aZWOQuuWftHZ0iwuexQPgaei",
     giftRegistry: {
       privacy_settings: PUBLIC
       message: "Help us celebrate Bill and Julie's wedding, which will be held on May 8, 2021"

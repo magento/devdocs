@@ -29,7 +29,7 @@ The following example updates a registrant's e-mail address.
 ```graphql
 mutation{
   updateGiftRegistryRegistrants(
-      giftRegistryUid: "W9YcRai9JmzGglqP3p0USodTTM3BmjjY", 
+      giftRegistryUid: "W9YcRai9JmzGglqP3p0USodTTM3BmjjY",
       registrants: {
           giftRegistryRegistrantUid: "OA=="
           email: "new-email@example.com"

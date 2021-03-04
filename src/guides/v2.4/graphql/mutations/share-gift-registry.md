@@ -32,7 +32,7 @@ The following example creates a gift registry.
 ```graphql
 mutation{
   shareGiftRegistry(
-    giftRegistryUid: "W9YcRai9JmzGglqP3p0USodTTM3BmjjY", 
+    giftRegistryUid: "W9YcRai9JmzGglqP3p0USodTTM3BmjjY",
     sender: {
       name: "Roni Costello"
       message: "Help us celebrate Theo's 45th Birthday"

@@ -29,7 +29,7 @@ The following example removes an item from the specified gift registry.
 ```graphql
 mutation{
   removeGiftRegistryItems(
-    giftRegistryUid: "iSJHFdAtF8YBM5ALgNyNIgQmnbOW9t69", 
+    giftRegistryUid: "iSJHFdAtF8YBM5ALgNyNIgQmnbOW9t69",
     itemsUid: ["MTM="]
   ){
     gift_registry {
