@@ -26,7 +26,7 @@ The PrivateLink service integration for {{site.data.var.ece}} projects includes 
 -  Magento support does not cover troubleshooting AWS PrivateLink issues beyond initial enablement.
 -  Customers are responsible for costs associated with managing their own VPC.
 -  You cannot use the HTTPS protocol (port 443) to connect to Magento Commerce over PrivateLink.
--  PrivateDNS is not available 
+-  PrivateDNS is not available
 
 ## PrivateLink connection types
 
