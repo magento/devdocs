@@ -12,7 +12,6 @@ Preparation is paramount for a good Contribution Day.
 Contributions can come in many shapes and sizes, and it is important to fit the event to your audience. There tends to be two types of Contribution Days:
 
 *  General focus Contribution Days. These events are great for getting people started in contributing. During these events, attendees will normally tackle issues that you and Magento Community Engineering can organize in preparation for the event. Another great starting place is our public [GitHub Community Backlog](https://github.com/magento/magento2/projects/20) project, but really, attendees should feel free to work on anything they desire.
-
 *  Project-specific Contribution Days. These events are tailored to one or more community driven projects (one of the many satellite projects available on [GitHub](https://github.com/magento)). Before the event the project team will prepare a list of tasks that can be worked on during the event.
 
 ### Event Date {#event-date}
@@ -58,28 +57,19 @@ While we'd like to encourage making events as accessible as possible, the truth 
 Having an event page housing all the information covered above is a necessity before beginning to promote and open registration for your event. Such a page, at a minimum, should include:
 
 *  [Event goal](#event-goals)
-
 *  [Event date](#event-date)
-
 *  All the [venue information above](#venue)
-
 *  [Price](#pricing)
 
 #### Registration Page
 A registration page is required for attendees to be able to reserve a spot. Registration should track the following information:
 
 *  Name
-
 *  Email
-
 *  Company (if applicable)
-
 *  GitHub.com username
-
 *  Community status: First time contributor? Part of the Magento GitHub Community Maintainer team?
-
 *  Areas of expertise? (Frontend, backend, QA, Docs)
-
 *  Project or area they are interested in contributing to?
 
 Having the above information can also be useful as feedback into [issue backlog preparation](#contribution-backlog) as well as helping to shape the goal and/or agenda for the event. Depending on the region of the event, be aware of data regulations (e.g. GDPR) and follow its guidelines.
@@ -88,9 +78,7 @@ Having the above information can also be useful as feedback into [issue backlog 
 Once your website and registration page is ready, you should compile materials to send to your attendees after they register and before the event. Some basic information that should be present in this material includes:
 
 *  Links to any relevant Contribution Day boards or backlogs containing issues that would be good challenges for attendees.
-
 *  A friendly reminder on basic contribution guidelines. A good place to start are the generic [DevDocs Contribution Guidelines](https://devdocs.magento.com/contributor-guide/contributing.html), but specific community projects focused on during your event may have their own CONTRIBUTION.md with project-specific guidelines in addition to the generic Magento ones.
-
 *  Share any [social media promotional decisions](#marketing-and-communication) like which hashtag to use.
 
 ### Marketing and Communications {#marketing-and-communication}
@@ -131,7 +119,6 @@ During the event it is good to have an agenda accessible to attendees, so they k
 The Magento Community Engineering team would love it if you are able to track activity and contributions that arise out of your event! This helps us highlight the benefits for the community, from the community, to the Magento ecosystem and provides us with evidence for further supporting such community events in the future. We are particularly interested in understanding how a contributor's activity evolves before, during and after a Contribution Day event, so information we are most interested in is:
 
 *  Number of participants
-
 *  URLs to pull requests and issues filed during the event
 
 ## After the Event
@@ -143,17 +130,11 @@ We would also love to keep track of how many contributions were created as part 
 One of the best ways to gather feedback is to put together a survey using a tool such as [SurveyMonkey](https://www.surveymonkey.com/). Then after the event send around this link to all the attendees so that they can fill it in. A few recommended questions to cover:
 
 *  How would you rate the Contribution Day?
-
 *  What did you like about the Contribution Day?
-
 *  What did you dislike about the Contribution Day?
-
 *  Was there any information that would have been helpful before the Contribution Day?
-
 *  How likely is it that you would recommend Magento Contribution Days to a friend or colleague?
-
 *  Any comments about the facilities or environment of the event?
-
 *  Any additional comments?
 
 ### Review
