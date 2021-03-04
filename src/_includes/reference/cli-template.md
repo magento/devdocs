@@ -14,8 +14,6 @@ The initial list is auto generated using the `{{ tool }} list` command at the {{
 
 {{ intro }}
 
-## Reference
-
  {:.bs-callout-info}
 This reference is generated from the Magento codebase. To change the content, you can update the source code for the corresponding command implementation in [Magento codebase](https://github.com/magento) repository and submit your changes for review. Another way is to _Give us feedback_ (find the link at the upper right). For contribution guidelines, see [Magento Code Contributions]({{ site.baseurl] }}/contributor-guide/contributing.html).
 
@@ -23,7 +21,7 @@ This reference is generated from the Magento codebase. To change the content, yo
   {% assign arguments = command.definition.arguments %}
   {% assign options = command.definition.options %}
 
-### `{{ command.name }}`
+## `{{ command.name }}`
 
 {{ command.description }}
 
@@ -45,14 +43,12 @@ This reference is generated from the Magento codebase. To change the content, yo
 
 {% unless arguments.size == 0 %}
 
-#### Arguments
-
 {% for argument in arguments %}
   {% for item in argument %}
     {% if item.name %}
 
-##### `{{ item.name }}`
-
+### `{{ item.name }}`
+{: .no_toc }
 {{ item.description }}
 
    {% unless item.default == nil %}
@@ -78,17 +74,16 @@ This reference is generated from the Magento codebase. To change the content, yo
 
 {% unless options.size == 0 %}
 
-#### Options
-
  {% for option in options %}
  {% assign opt = option[1] %}
 
 {% if opt.shortcut contains '-' %}
 
-##### `{{ opt.name }}`, `{{ opt.shortcut }}`
+### `{{ opt.name }}`, `{{ opt.shortcut }}`
+{: .no_toc }
 {% else %}
-##### `{{ opt.name }}`
-
+### `{{ opt.name }}`
+{: .no_toc }
 {% endif %}
 
 {{ opt.description | replace: '|', '\|'}}
