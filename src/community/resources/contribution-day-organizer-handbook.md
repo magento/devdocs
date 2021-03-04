@@ -31,7 +31,7 @@ The venue should be chosen to match the attendance and duration of the event.
 You should consider what commuting to the venue for out-of-town attendees will be like and prepare route and hotel recommendations.
 
 #### Food and Beverages
-Attendees expect food and drinks to be available at the venue. Ensure that the venue can accommodate a lunch and possibly a networking/mixer/wind-down for after the main event.
+Attendees expect food and drinks to be available at the venue. Ensure that the venue can accommodate a lunch and possibly a networking/mixer/wind-down for after the main event. Also, consider providing information about dietary requirements, some attendees may have allergies and need food that has been prepared and served accordingly. 
 
 #### Wi-Fi
 Technical and collaborative events such as Contribution Days require good Wi-Fi. This is not optional. You need to expect that every attendee will come with one or more laptops & mobile devices and they will expect to connect to a speedy wireless network. Please put in extra consideration around making sure that the network access has a good top speed as well as the available bandwidth to support 2+ devices for each attendee. The Wi-Fi password should be readily available to attendees, they should not have to ask or hunt around for it.
@@ -82,7 +82,7 @@ A registration page is required for attendees to be able to reserve a spot. Regi
 
 *  Project or area they are interested in contributing to?
 
-Having the above information can also be useful as feedback into [issue backlog preparation](#contribution-backlog) as well as helping to shape the goal and/or agenda for the event.
+Having the above information can also be useful as feedback into [issue backlog preparation](#contribution-backlog) as well as helping to shape the goal and/or agenda for the event. Depending on the region of the event, be aware of data regulations (e.g. GDPR) and follow its guidelines.
 
 #### Instructions for Attendees
 Once your website and registration page is ready, you should compile materials to send to your attendees after they register and before the event. Some basic information that should be present in this material includes:
@@ -122,7 +122,7 @@ During the event it is good to have an agenda accessible to attendees, so they k
 | 9AM-10AM  | Coffee and Introductions                                                          | Start the event off with an introduction round for the attendees, a description of the venue, Wi-Fi information, social media information (hashtags), communication channels (i.e. Slack channel), highlight people to contact for help and key locations such as toilets, coffee and smoking areas. This helps to make sure people feel as comfortable as possible at the event. |
 | 10AM-11AM | How to contribute, find issues to work on and set up your development environment | An introduction on how to go about contributing, how to find issues to work on and how to get a local development environment going. This is all about helping give attendees context, which is especially important for first-time contributors. Unless your attendees are all veteran Magento contributors, consider having some amount of time allotted for this.                       |
 | 11AM-1PM  | Development Time                                                                  | Get hacking!                                                                                                                                                                                                                                                                                                                                                                     |
-| 1PM-2PM   | Lunch                                                                             | nom nom                                                                                                                                                                                                                                                                                                                                                                          |
+| 1PM-2PM   | Lunch                                                                             | Enjoy your lunch!                                                                                                                                                                                                                                                                                                                                                                          |
 | 2PM-4PM   | Development Time                                                                  | Get hacking!                                                                                                                                                                                                                                                                                                                                                                     |
 | 4PM-5PM   | Demonstrations and Presentations                                                  | It has worked well in the past to finish the event with a demonstration of the work produced during the day. This way the group sees the larger picture of the event and not just the task(s) they have taken part in directly. The final portion of this time slot can be used to celebrate top achievements and hand out any prizes, if any.                                   |
 | 5 mins    | Thank you and Wrap Up                                                             | A final note from the main organizer to wrap up the event: thank everyone for attending and remind everyone to keep an eye on their inbox for a [feedback survey](#feedback).                                                                                                                                                                                                                 |
@@ -131,8 +131,6 @@ During the event it is good to have an agenda accessible to attendees, so they k
 The Magento Community Engineering team would love it if you are able to track activity and contributions that arise out of your event! This helps us highlight the benefits for the community, from the community, to the Magento ecosystem and provides us with evidence for further supporting such community events in the future. We are particularly interested in understanding how a contributor's activity evolves before, during and after a Contribution Day event, so information we are most interested in is:
 
 *  Number of participants
-
-*  GitHub.com usernames of contributors
 
 *  URLs to pull requests and issues filed during the event
 
