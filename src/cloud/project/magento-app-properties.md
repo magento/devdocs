@@ -307,9 +307,9 @@ The firewall provides two default policies to control outbound traffic: `allow` 
 
 For Starter plans, we set the default policy to `allow`. This setting ensures that all your current outbound traffic remains unblocked until you add your egress filtering rules. We can also set the default policy to `deny` upon request.
 
-**To check your default policy**, use the following command:
+**To check your default policy**:
 
-```shell
+```bash
 magento-cloud p:curl --project PROJECT_ID /settings | grep -i outbound
 ```
 
@@ -419,11 +419,11 @@ Outbound firewall configurations are made up of rules. You can define as many ru
 
 **Each rule:**
 
--  Must start with a hyphen `-`. Add the hyphen on its own line for nice visual break between rules.
+-  Must start with a hyphen (`-`). Add the hyphen on a separate line for a nice visual break between rules.
 -  Must define at least one of the following options: `domains`, `ips`, or `ports`.
 -  Must use the `tcp` protocol. Because this is the default protocol for all rules, you can omit it from the rule.
 -  Can define `domains` or `ips`, but not both in the same rule.
--  Can include `yaml` comments (`#`) and line breaks to organize the domains, IPs, and ports allowed.
+-  Can include `yaml` comments (`#`) and line breaks to organize the domains, IP addresses, and ports allowed.
 
 ### `protocol`
 
@@ -431,7 +431,7 @@ As mentioned, TCP is the default and only protocol allowed for rules. UDP and it
 
 ### `domains`
 
-The `domains` option allows a list of fully qualified domain names [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
+The `domains` option allows a list of [fully qualified domain names (FQDN)](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
 
 If a rule defines `domains` but not `ports`, the firewall allows domain requests on any port.
 
