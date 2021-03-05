@@ -22,3 +22,8 @@
 .container > .feature > ul > li > img.img-icon {
   margin-top: -4px;
 }
+
+/* page-survey-questions button */
+.page-survey-buttons .spectrum-Button--secondary:first-child {
+    margin-right: 10px;
+}
