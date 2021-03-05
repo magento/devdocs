@@ -329,42 +329,85 @@ The following example shows all the `firewall` options you can use to add rules 
 ```config
 firewall:
   outbound:
-    -
+    - # Commonly accessed domains
       domains:
-        # Adobe Stock Integration
+        - newrelic.com
+        - fastly.com
+        - magento.com
+        - magentocommerce.com
+        - google.com
+      ports:
+        - 80         # http
+        - 443        # https
+      protocol: tcp  # Can be omitted from rules.
+
+    - # Adobe Stock Integration
+      domains:
         - account.adobe.com
         - stock.adobe.com
         - console.adobe.io
+      ports:
+        - 80
+        - 443
 
-        # Payment services
+    - # Payment services
+      domains:
         - braintreepayments.com
         - paypal.com
+      ports:
+        - 80
+        - 443
 
-        # Shipping services
+    - # Shipping services
+      domains:
         - ups.com
         - usps.com
         - ws.fedex.com
         - dhl.com
-
-        # Vertex Integrated Address Cleansing
-        - mgcsconnect.vertexsmb.com
-
-        # Google services
-        - google.com
       ports:
-        - 80    # http
-        - 443   # https
-      protocol: tcp
-    -
+        - 80
+        - 443
+
+    - # Vertex Integrated Address Cleansing
+      domains:
+        - mgcsconnect.vertexsmb.com
+      ports:
+        - 80
+        - 443
+
+    - # New Relic networks
       ips:
-        # IP addresses 23.62.230.91 to 23.62.230.180 in CIDR format
-        - 23.62.230.91/32
-        - 23.62.230.92/30
-        - 23.62.230.96/27
-        - 23.62.230.128/27
-        - 23.62.230.160/28
-        - 23.62.230.176/30
-        - 23.62.230.180/32
+        - 162.247.240.0/22  # US region accounts
+        - 185.221.84.0/22   # EU region accounts
+      ports:
+        - 443
+
+    - # New Relic endpoints
+      domains:
+        - collector*.newrelic.com      # US region accounts
+        - collector*.eu01.nr-data.net  # EU region accounts
+      ports:
+        - 443
+
+    - # Fastly IP ranges
+      -ips:
+        - 23.235.32.0/20
+        - 43.249.72.0/22
+        - 103.244.50.0/24
+        - 103.245.222.0/23
+        - 103.245.224.0/24
+        - 104.156.80.0/20
+        - 146.75.0.0/16
+        - 151.101.0.0/16
+        - 157.52.64.0/18
+        - 167.82.0.0/17
+        - 167.82.128.0/20
+        - 167.82.160.0/20
+        - 167.82.224.0/20
+        - 172.111.64.0/18
+        - 185.31.16.0/22
+        - 199.27.72.0/21
+        - 199.232.0.0/16
       ports:
         - 80
         - 443
@@ -420,7 +463,7 @@ Port `25`, the SMTP port to send email, is always blocked, without exception.
 To help you identify the domains to include in your egress filtering rules, use the following command to parse your server's `dns.log` file and show a list of all the DNS requests your site has logged:
 
 ```shell
-awk '($5 ~/query/)' var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort -rn
+awk '($5 ~/query/)' /var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort -rn
 ```
 
 This command also shows DNS requests that were made but blocked by your egress filtering rules. The output does not show which domains were blocked, only that requests were made. The output does not show any requests made using an IP address.
@@ -428,13 +471,84 @@ This command also shows DNS requests that were made but blocked by your egress f
 ```terminal
 Example output:
 
+97 magento.com
+93 magentocommerce.com
+88 google.com
 70 metadata.google.internal.0
 70 metadata.google.internal
-17 feb-3-itvrhea-6ejd3ypjgdz5a.ap-4.magentosite.cloud
-8 www.yahoo.com
+65 newrelic.com
+56 fastly.com
+17 mcprod-0vunku5xn24ip.ap-4.magentosite.cloud
 6 advancedreporting.rjmetrics.com
-4 www.google.com
-3 yahoo.com
 ```
 
 Domains, in contrast to IP addresses, are typically more specific and secure for egress filtering. For example, if you add an IP address for a service that uses a CDN, you are allowing the IP address for the CDN, which can be used by hundreds or thousands of other domains. With one IP address, you could be allowing outbound access to thousands of other servers.
+
+### Testing egress filtering rules
+
+After collecting and configuring access rules for the domains and IP addresses your site needs, it's time to push and test.
+
+The following workflow describes a simple way to test your egress filtering rules:
+
+1. Create a shell script of `curl` commands access the domains and IP addresses in your rules. You should also have commands that test access to domains and IPs that should be block.
+
+1. Configure a `post_deploy` hook in your `.magento.app.yaml` file to run the script.
+
+1. Push your `firewall` configuration and your test script to your staging branch.
+
+1. Examine the `post_deploy` output from your `curl` commands.
+
+1. SSH to the remote, refine your `firewall` rules, and run your `curl` script remotely.
+
+#### `curl` script example
+
+```shell
+# curl-tests-for-egress-filtering.sh
+
+# Use the -v option to display connection details
+
+# Check domain access
+curl -v newrelic.com
+curl -v fastly.com
+curl -v magento.com
+curl -v magentocommerce.com
+curl -v google.com
+curl -v account.adobe.com
+curl -v stock.adobe.com
+curl -v console.adobe.io
+curl -v braintreepayments.com
+curl -v paypal.com
+curl -v ups.com
+curl -v usps.com
+curl -v fedex.com
+curl -v dhl.com
+curl -v devdocs.magento.com
+
+# Check domain denials
+curl -v amazon.com
+curl -v facebook.com
+curl -v twitter.com
+
+# IP address access
+...
+
+# IP address denials
+...
+```
+
+#### `post_deploy` example
+
+```config
+hooks:
+  build: |
+      set -e
+      php ./vendor/bin/ece-tools run scenario/build/generate.xml
+      php ./vendor/bin/ece-tools run scenario/build/transfer.xml
+  deploy: "php ./vendor/bin/ece-tools run scenario/deploy.xml\n"
+  post_deploy: |
+      set -e
+      php ./vendor/bin/ece-tools run scenario/post-deploy.xml
+      echo "[$(date)] post-deploy hook end"
+      ./curl-tests-for-egress-filtering.sh
+      echo "[$(date)] curl finished"
+```
