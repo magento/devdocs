@@ -486,11 +486,11 @@ Domains, in contrast to IP addresses, are typically more specific and secure for
 
 ### Testing egress filtering rules
 
-After collecting and configuring access rules for the domains and IP addresses your site needs, it's time to push and test.
+After collecting and configuring access rules for the domains and IP addresses your site needs, it is time to push and test.
 
 The following workflow describes a simple way to test your egress filtering rules:
 
-1. Create a shell script of `curl` commands access the domains and IP addresses in your rules. You should also have commands that test access to domains and IPs that should be block.
+1. Create a shell script of `curl` commands to access the domains and IP addresses in your rules. You should include commands that test access to domains and IPs that should be blocked.
 
 1. Configure a `post_deploy` hook in your `.magento.app.yaml` file to run the script.
 
@@ -498,7 +498,7 @@ The following workflow describes a simple way to test your egress filtering rule
 
 1. Examine the `post_deploy` output from your `curl` commands.
 
-1. SSH to your site, refine your `firewall` rules, and run your `curl` script to continue testing.
+1. Use SSH to log into the remote environment , refine your `firewall` rules, and run your `curl` script to continue testing.
 
 #### `curl` script example
 
