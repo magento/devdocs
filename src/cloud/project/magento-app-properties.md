@@ -297,24 +297,30 @@ For {{site.data.var.ece}} 2.1.x, you can use only [workers]({{ site.baseurl }}/c
 
 If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
-## firewall (Starter only)
+## firewall (Starter plans only)
 
-For Starter plans, the `firewall` property adds an _outbound_ firewall to Magento applications. The firewall has no affect on incoming requests. It defines which `tcp` outbound requests can _leave_ a Magento site. This is called egress filtering. You are filtering what can egress—exit or escape—your site. And when you limit what can escape, you add a powerful security tool to your server.
+For Starter plans, the `firewall` property adds an _outbound_ firewall to Magento applications. This firewall has no affect on incoming requests. It defines which `tcp` outbound requests can _leave_ a Magento site. This is called egress filtering. The outbound firewall is filtering what can egress—exit or escape—your site. And when you limit what can escape, you add a powerful security tool to your server.
 
 ### Default restriction policies
 
-The firewall provides two default policies to control outbound traffic: `allow` and `deny`. The `allow` policy _allows_ all outbound traffic by default (before you add rules). And the `deny` policy _denies_ all outbound traffic by default. But as soon as you add one or more outbound rules, the firewall blocks **all** other outbound traffic, and your default policy is no longer active.
+The firewall provides two default policies to control outbound traffic: `allow` and `deny`. The `allow` policy _allows_ all outbound traffic by default. And the `deny` policy _denies_ all outbound traffic by default. But as soon as you add a rule, the default policy is overridden, and the firewall blocks **all** outbound traffic not allowed by the rule.
 
-For Starter plans, we set the default policy to `allow`. This setting ensures that all your current outbound traffic remains unblocked until you add your outbound firewall rules. We can also set the default policy to `deny` upon request.
+For Starter plans, we set the default policy to `allow`. This setting ensures that all your current outbound traffic remains unblocked until you add your egress filtering rules. We can also set the default policy to `deny` upon request.
 
-**To check the status of your default policy**, use the following command:
+**To check your default policy**, use the following command:
 
-```bash
+```shell
 magento-cloud p:curl --project PROJECT_ID /settings | grep -i outbound
 ```
 
+Unless you requested `deny` for your policy, the command should show your policy set to `allow`:
+
+```terminal
+"outbound_restrictions_default_policy": "allow"
+```
+
 {:.bs-callout-info}
-**Key takeaway**: When you add an outbound rule, you block all traffic except for the domains, IP addresses, or ports you add to the rule. So it is important to have a full outbound list defined and tested before adding it to your production site.
+**Key takeaway**: When you add an outbound rule, you block all outbound traffic except for the domains, IP addresses, or ports you add to the rule. So it is important to have a full outbound list defined and tested before adding it to your production site.
 
 ### `firewall` configurations
 
@@ -413,7 +419,7 @@ Port `25`, the SMTP port to send email, is always blocked, without exception.
 
 To help you identify the domains to include in your egress filtering rules, use the following command to parse your server's `dns.log` file and show a list of all the DNS requests your site has logged:
 
-```bash
+```shell
 awk '($5 ~/query/)' var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort -rn
 ```
 
