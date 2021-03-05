@@ -494,11 +494,11 @@ The following workflow describes a simple way to test your egress filtering rule
 
 1. Configure a `post_deploy` hook in your `.magento.app.yaml` file to run the script.
 
-1. Push your `firewall` configuration and your test script to your staging branch.
+1. Push your `firewall` configuration and your test script to your integration branch.
 
 1. Examine the `post_deploy` output from your `curl` commands.
 
-1. Refine your `firewall` rules, update your `curl` script, push to staging, and repeat.
+1. Refine your `firewall` rules, update your `curl` script, commit, push, and repeat.
 
 #### `curl` script example
 
