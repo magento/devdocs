@@ -17,7 +17,7 @@ The `name` property provides the application name used in the [`routes.yaml`]({{
 {:.bs-callout-warning}
 Do not change the name of the application after it has been deployed. Doing so will result in data loss.
 
-## type and build
+## `type` and `build`
 
 The `type`  and `build` properties provide information about the base container image to build and run the project.
 
@@ -34,7 +34,7 @@ build:
     flavor: composer
 ```
 
-## access
+## `access`
 
 The `access` property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:
 
@@ -49,7 +49,7 @@ access:
     ssh: viewer
 ```
 
-## relationships
+## `relationships`
 
 Defines the service mapping in the application.
 
@@ -71,7 +71,7 @@ relationships:
 
 See [Services]({{ site.baseurl }}/cloud/project/services.html) for a full list of currently supported service types and endpoints.
 
-## web
+## `web`
 
 The `web` property defines how your application is exposed to the web (in HTTP), determines how the web application serves content, and controls how the application container responds to incoming requests by setting rules in each location _block_. A block represents an absolute path leading with a forward slash (`/`).
 
@@ -141,7 +141,7 @@ web:
 {:.bs-callout-info}
 This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the `web` configuration must be set up to support shared domains. See [Configure locations for shared domains]({{ site.baseurl }}/cloud/project/project-multi-sites.html#locations).
 
-## disk
+## `disk`
 
 Defines the persistent disk size of the application in MB.
 
@@ -151,7 +151,7 @@ disk: 5120
 
 The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
-## mounts
+## `mounts`
 
 An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the `magento.app.yaml` file using the `volume_id[/subpath]` syntax:
 
@@ -178,7 +178,7 @@ You can make the mount web accessible by adding it to the [`web`](#web) block of
 {:.bs-callout-warning}
 Once your Magento site has data, do not change the `subpath` portion of the mount name. This value is the unique identifier for the files area. If you change this name, you will lose all site data stored at the old location.
 
-## dependencies
+## `dependencies`
 
 Enables you to specify dependencies that your application might need during the build process.
 
@@ -200,7 +200,7 @@ nodejs:
    grunt-cli: "~0.3"
 ```
 
-## hooks
+## `hooks`
 
 Use the `hooks` section to run shell commands during the build, deploy, and post-deploy phases:
 
@@ -268,7 +268,7 @@ You must compile Sass files using `grunt` before static content deployment, whic
 
 {% include cloud/note-ece-tools-custom-deployment.md %}
 
-## crons
+## `crons`
 
 Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
 
@@ -297,7 +297,7 @@ For {{site.data.var.ece}} 2.1.x, you can use only [workers]({{ site.baseurl }}/c
 
 If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
-## firewall (Starter plans only)
+## `firewall` (Starter plans only)
 
 For Starter plans, the `firewall` property adds an _outbound_ firewall to Magento applications. This firewall has no affect on incoming requests. It defines which `tcp` outbound requests can _leave_ a Magento site. This is called egress filtering. The outbound firewall is filtering what can egress—exit or escape—your site. And when you limit what can escape, you add a powerful security tool to your server.
 
