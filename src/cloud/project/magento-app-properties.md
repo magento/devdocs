@@ -299,31 +299,59 @@ If your project requires custom cron jobs, you can add them to the default cron 
 
 ## firewall (Starter only)
 
-For Starter plans, the `firewall` property provides an _outbound_ firewall for your Magento application. The firewall allows only the `tcp` requests you define to allow _out_ of your Magento site. This is called egress filtering, and it provides your application with an important security measure.
+For Starter plans, the `firewall` property adds an _outbound_ firewall to Magento applications. The firewall has no affect on incoming requests. It defines which `tcp` outbound requests can _leave_ a Magento site. This is called egress filtering. You are filtering what can egress—exit or escape—your site. And when you limit what can escape, you add a powerful security tool to your server.
 
-When you enable the outbound `firewall`, it will restrict all outbound traffic from your Magento site except for the specific IPs, IP ranges, ports, and fully qualified domain names (FQDN) that you allow to egress out of your site. Egress filtering can prevent information leaks or outbound spoofing attacks.
+### Default restriction policies
 
-### `firewall` configuration
+The firewall provides two default policies to control outbound traffic: `allow` and `deny`. The `allow` policy _allows_ all outbound traffic by default (before you add rules). And the `deny` policy _denies_ all outbound traffic by default. But as soon as you add one or more outbound rules, the firewall blocks **all** other outbound traffic, and your default policy is no longer active.
 
-The following example shows all the `firewall` options you can use to setup your egress filtering, followed by descriptions of each.
+For Starter plans, we set the default policy to `allow`. This setting ensures that all your current outbound traffic remains unblocked until you add your outbound firewall rules. We can also set the default policy to `deny` upon request.
+
+**To check the status of your default policy**, use the following command:
+
+```bash
+magento-cloud p:curl --project PROJECT_ID /settings | grep -i outbound
+```
+
+{:.bs-callout-info}
+**Key takeaway**: When you add an outbound rule, you block all traffic except for the domains, IP addresses, or ports you add to the rule. So it is important to have a full outbound list defined and tested before adding it to your production site.
+
+### `firewall` configurations
+
+The following example shows all the `firewall` options you can use to add rules for your egress filtering.
 
 ```config
 firewall:
   outbound:
     -
       domains:
-        - metadata.google.internal.0
-        - metadata.google.internal
-        - feb-3-itvrhea-6ejd3ypjgdz5a.ap-4.magentosite.cloud
-        - advancedreporting.rjmetrics.com
-        - www.yahoo.com
-        - yahoo.com
+        # Adobe Stock Integration
+        - account.adobe.com
+        - stock.adobe.com
+        - console.adobe.io
+
+        # Payment services
+        - braintreepayments.com
+        - paypal.com
+
+        # Shipping services
+        - ups.com
+        - usps.com
+        - ws.fedex.com
+        - dhl.com
+
+        # Vertex Integrated Address Cleansing
+        - mgcsconnect.vertexsmb.com
+
+        # Google services
+        - google.com
       ports:
-        - 80
-        - 443
+        - 80    # http
+        - 443   # https
       protocol: tcp
     -
       ips:
+        # IP addresses 23.62.230.91 to 23.62.230.180 in CIDR format
         - 23.62.230.91/32
         - 23.62.230.92/30
         - 23.62.230.96/27
@@ -336,44 +364,60 @@ firewall:
         - 443
 ```
 
-### protocol
+### Egress filtering rules
 
+Outbound firewall configurations are made up of rules. You can define as many rules as you need. The requirements for rules are as follows.
 
-### domains
+**Each rule:**
 
+-  Must start with a hyphen `-`. Add the hyphen on its own line for nice visual break between rules.
+-  Must define at least one of the following options: `domains`, `ips`, or `ports`.
+-  Must use the `tcp` protocol. Because this is the default protocol for all rules, you can omit it from the rule.
+-  Can define `domains` or `ips`, but not both in the same rule.
+-  Can include `yaml` comments (`#`) and line breaks to organize the domains, IPs, and ports allowed.
 
-### ips
+### `protocol`
 
-To calculate IP address ranges: https://ipaddressguide.com/cidr
+As mentioned, TCP is the default and only protocol allowed for rules. UDP and its ports are not allowed. For this reason, you can omit the `protocol` option from all rules. If you want to include it anyway, you must set the value to `tcp`, as shown in the first rule of the example.
 
-### ports
+### `domains`
 
+The `domains` option allows a list of fully qualified domain names [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
 
-## Domains vs IP addresses
+If a rule defines `domains` but not `ports`, the firewall allows domain requests on any port.
 
-Be aware that many services are behind a Content Delivery Network (CDN). For most CDNs, routing is done via domain name, not IP address, so thousands of domain names may share the same public IP addresses at the CDN. If you allow the IP address of a CDN, you will in most cases be allowing many or all of the other customers hosted behind that CDN. That has security implications and limits the usefulness of this configuration option.
+### `ips`
 
-When you set up egress filter rule, then you are block all traffic except for the domain or IP you have specified in the rule.  It is important to have a full egress list before setting it up.
+The `ips` option allows a list of IP addresses in the [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). You can specify single IP addresses or ranges of IP addresses.
 
-## Check existing firewall configuration
+To specify a single IP address, add the `/32` CIDR prefix to the end of your IP address:
 
-To check the status of your existing firewall configuration using the following command:
-
-```bash
-magento-cloud p:curl --project 6ejd3ypjgdz5a /settings | grep -i outbound
+```terminal
+23.62.230.91/32
 ```
 
-## Determining what to allow out
+To specify a range of IP addresses, use the [IP Range to CIDR](https://ipaddressguide.com/cidr) calculator.
 
-A starter customer can see the DNS requests made and use this to create a list of FQDN's to use for filtering
+If a rule defines `ips` but not `ports`, the firewall allows IP requests on any port.
 
-Command to parse `var/log/dns.log`:
+### `ports`
 
-The following command parses your host's `dns.log` file to show a list of all DNS requests logged in the file. This list can be used to help identify domains that should be added to an egress filtering configuration.  This will also show DNS requests that are made but blocked by egress filtering (though there will not be an indication that it was blocked, just that a request was made).  This will not show any requests made via an IP address.
+The `ports` option allows a list of ports from 1 to 65535. In the example, we added ports `80` and `443` to allow both HTTP and HTTPS requests.
+
+If a rule only defines `ports`, the firewall allows access to all domains and IP addresses for the ports defined.
+
+{:.bs-callout-info}
+Port `25`, the SMTP port to send email, is always blocked, without exception.
+
+### Finding domain names to allow
+
+To help you identify the domains to include in your egress filtering rules, use the following command to parse your server's `dns.log` file and show a list of all the DNS requests your site has logged:
 
 ```bash
-awk '($5 ~/query/)' dns.log | awk '{print $6}' | sort | uniq -c | sort -rn
+awk '($5 ~/query/)' var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort -rn
 ```
+
+This command also shows DNS requests that were made but blocked by your egress filtering rules. The output does not show which domains were blocked, only that requests were made. The output does not show any requests made using an IP address.
 
 ```terminal
 Example output:
@@ -386,3 +430,5 @@ Example output:
 4 www.google.com
 3 yahoo.com
 ```
+
+Domains, in contrast to IP addresses, are typically more specific and secure for egress filtering. For example, if you add an IP address for a service that uses a CDN, you are allowing the IP address for the CDN, which can be used by hundreds or thousands of other domains. With one IP address, you could be allowing outbound access to thousands of other servers.
