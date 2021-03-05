@@ -498,7 +498,7 @@ The following workflow describes a simple way to test your egress filtering rule
 
 1. Examine the `post_deploy` output from your `curl` commands.
 
-1. Use SSH to log into the remote environment , refine your `firewall` rules, and run your `curl` script to continue testing.
+1. Refine your `firewall` rules, update your `curl` script, push to staging, and repeat.
 
 #### `curl` script example
 
