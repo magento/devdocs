@@ -326,7 +326,7 @@ Unless you requested `deny` for your policy, the command should show your policy
 
 The following example shows all the `firewall` options you can use to add rules for your egress filtering.
 
-```config
+```yaml
 firewall:
   outbound:
     - # Commonly accessed domains
@@ -498,7 +498,7 @@ The following workflow describes a simple way to test your egress filtering rule
 
 1. Examine the `post_deploy` output from your `curl` commands.
 
-1. SSH to the remote, refine your `firewall` rules, and run your `curl` script remotely.
+1. SSH to your site, refine your `firewall` rules, and run your `curl` script to continue testing.
 
 #### `curl` script example
 
@@ -538,7 +538,7 @@ curl -v twitter.com
 
 #### `post_deploy` example
 
-```config
+```yaml
 hooks:
   build: |
       set -e
