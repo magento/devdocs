@@ -119,7 +119,7 @@ The default configuration of a UI component is declared in one of the following 
 
 In the example, the `<item name="component">...</item>` node within `<fieldset>` is omitted, because this property of the Fieldset UI component is already defined in `definition.xml`.
 
-### Example of the "fieldset" node configuration in the definition.xml
+### Example of the `fieldset` node configuration in the `definition.xml`
 
 ```xml
 <fieldset class="Magento\Ui\Component\Form\Fieldset">
