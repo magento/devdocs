@@ -84,15 +84,15 @@ web:
 
 You can fine-tune your `locations` configuration using the following key values for each `locations` block:
 
-Attribute | Description
---------- | -----------
-`allow` | Serve files that do not match "rules". Default value = `true`
-`expires` | Set the number of seconds to cache content in the browser. This key enables the `cache-control` and `expires` headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files. A negative 1 (`-1`) value results in no caching and is the default value. You can express time value with the following units:  `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days), `w` (weeks), `M` (months, 30d), or `y` (years, 365d)
-`index` | List the static files to serve your application, such as the `index.html` file. This key expects a collection. This only works if access to the file or files is "allowed" by the `allow` or `rules` key for this location.
-`rules` | Specify overrides for a location. Use a regular expression to match a request. If an incoming request matches the rule, then regular handling of the request is overridden by the keys used in the rule.
+Attribute  | Description
+-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`allow`    | Serve files that do not match "rules". Default value = `true`
+`expires`  | Set the number of seconds to cache content in the browser. This key enables the `cache-control` and `expires` headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files. A negative 1 (`-1`) value results in no caching and is the default value. You can express time value with the following units:  `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days), `w` (weeks), `M` (months, 30d), or `y` (years, 365d)
+`index`    | List the static files to serve your application, such as the `index.html` file. This key expects a collection. This only works if access to the file or files is "allowed" by the `allow` or `rules` key for this location.
+`rules`    | Specify overrides for a location. Use a regular expression to match a request. If an incoming request matches the rule, then regular handling of the request is overridden by the keys used in the rule.
 `passthru` | Set the URL used in the event that a static file or PHP file cannot be found. Typically, this URL is the front controller for your applications, such as `/index.php` or `/app.php`.
-`root` | Set the path relative to the root of the application that is exposed on the web. The public directory (location "/") for a Cloud project is set to "pub" by default.
-`scripts` | Allow loading scripts in this location. Set the value to `true` to allow scripts.
+`root`     | Set the path relative to the root of the application that is exposed on the web. The public directory (location "/") for a Cloud project is set to "pub" by default.
+`scripts`  | Allow loading scripts in this location. Set the value to `true` to allow scripts.
 
 Our default configuration allows the following:
 
@@ -328,89 +328,89 @@ The following example shows all the `firewall` options you can use to add rules 
 
 ```yaml
 firewall:
-  outbound:
-    - # Commonly accessed domains
-      domains:
-        - newrelic.com
-        - fastly.com
-        - magento.com
-        - magentocommerce.com
-        - google.com
-      ports:
-        - 80         # http
-        - 443        # https
-      protocol: tcp  # Can be omitted from rules.
+    outbound:
+        - # Common accessed domains
+            domains:
+                - newrelic.com
+                - fastly.com
+                - magento.com
+                - magentocommerce.com
+                - google.com
+            ports:
+                - 80
+                - 443
+            protocol: tcp # Can be omitted from rules.
 
-    - # Adobe Stock Integration
-      domains:
-        - account.adobe.com
-        - stock.adobe.com
-        - console.adobe.io
-      ports:
-        - 80
-        - 443
+        - # Adobe Stock integration
+            domains:
+                - account.adobe.com
+                - stock.adobe.com
+                - console.adobe.io
+            ports:
+                - 80
+                - 443
 
-    - # Payment services
-      domains:
-        - braintreepayments.com
-        - paypal.com
-      ports:
-        - 80
-        - 443
+        - # Payment services
+            domains:
+                - braintreepayments.com
+                - paypal.com
+            ports:
+                - 80
+                - 443
 
-    - # Shipping services
-      domains:
-        - ups.com
-        - usps.com
-        - ws.fedex.com
-        - dhl.com
-      ports:
-        - 80
-        - 443
+        - # Shipping services
+            domains:
+                - ups.com
+                - usps.com
+                - fedex.com
+                - dhl.com
+            ports:
+                - 80
+                - 443
 
-    - # Vertex Integrated Address Cleansing
-      domains:
-        - mgcsconnect.vertexsmb.com
-      ports:
-        - 80
-        - 443
+        - # Vertex Integrated Address Cleansing
+            domains:
+                - mgcsconnect.vertexsmb.com
+            ports:
+                - 80
+                - 443
 
-    - # New Relic networks
-      ips:
-        - 162.247.240.0/22  # US region accounts
-        - 185.221.84.0/22   # EU region accounts
-      ports:
-        - 443
+        - # New Relic networks
+            ips:
+                - 162.247.240.0/22 # US region accounts
+                - 185.221.84.0/22 # EU region accounts
+            ports:
+                - 443
 
-    - # New Relic endpoints
-      domains:
-        - collector*.newrelic.com      # US region accounts
-        - collector*.eu01.nr-data.net  # EU region accounts
-      ports:
-        - 443
+        - # New Relic endpoints
+            domains:
+                - collector.newrelic.com, # US region accounts
+                - collector.eu01.nr-data.net # EU region accounts
+            ports:
+                - 443
 
-    - # Fastly IP ranges
-      -ips:
-        - 23.235.32.0/20
-        - 43.249.72.0/22
-        - 103.244.50.0/24
-        - 103.245.222.0/23
-        - 103.245.224.0/24
-        - 104.156.80.0/20
-        - 146.75.0.0/16
-        - 151.101.0.0/16
-        - 157.52.64.0/18
-        - 167.82.0.0/17
-        - 167.82.128.0/20
-        - 167.82.160.0/20
-        - 167.82.224.0/20
-        - 172.111.64.0/18
-        - 185.31.16.0/22
-        - 199.27.72.0/21
-        - 199.232.0.0/16
-      ports:
-        - 80
-        - 443
+        - # Fastly IP ranges
+            ips:
+                - 23.235.32.0/20
+                - 43.249.72.0/22
+                - 103.244.50.0/24
+                - 103.245.222.0/23
+                - 103.245.224.0/24
+                - 104.156.80.0/20
+                - 146.75.0.0/16
+                - 151.101.0.0/16
+                - 157.52.64.0/18
+                - 167.82.0.0/17
+                - 167.82.128.0/20
+                - 167.82.160.0/20
+                - 167.82.224.0/20
+                - 172.111.64.0/18
+                - 185.31.16.0/22
+                - 199.27.72.0/21
+                - 199.232.0.0/16
+            ports:
+                - 80
+                - 443
 ```
 
 ### Egress filtering rules
@@ -419,7 +419,7 @@ Outbound firewall configurations are made up of rules. You can define as many ru
 
 **Each rule:**
 
--  Must start with a hyphen (`-`). Add the hyphen on a separate line for a nice visual break between rules.
+-  Must start with a hyphen (`-`). Adding a comment on the same line helps document and visually separate one rule from the next.
 -  Must define at least one of the following options: `domains`, `ips`, or `ports`.
 -  Must use the `tcp` protocol. Because this is the default protocol for all rules, you can omit it from the rule.
 -  Can define `domains` or `ips`, but not both in the same rule.
@@ -442,7 +442,7 @@ The `ips` option allows a list of IP addresses in the [CIDR notation](https://en
 To specify a single IP address, add the `/32` CIDR prefix to the end of your IP address:
 
 ```terminal
-23.62.230.91/32
+172.217.11.174/32  # google.com
 ```
 
 To specify a range of IP addresses, use the [IP Range to CIDR](https://ipaddressguide.com/cidr) calculator.
@@ -451,7 +451,7 @@ If a rule defines `ips` but not `ports`, the firewall allows IP requests on any 
 
 ### `ports`
 
-The `ports` option allows a list of ports from 1 to 65535. In the example, we added ports `80` and `443` to allow both HTTP and HTTPS requests.
+The `ports` option allows a list of ports from 1 to 65535. For most rules in the example, we added ports `80` and `443` to allow both HTTP and HTTPS requests. But for New Relic, we created rules that only allow access to domains and IP addresses on port `443`, [as recommended](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks#agents).
 
 If a rule only defines `ports`, the firewall allows access to all domains and IP addresses for the ports defined.
 
@@ -540,15 +540,15 @@ curl -v twitter.com
 
 ```yaml
 hooks:
-  build: |
-      set -e
-      php ./vendor/bin/ece-tools run scenario/build/generate.xml
-      php ./vendor/bin/ece-tools run scenario/build/transfer.xml
-  deploy: "php ./vendor/bin/ece-tools run scenario/deploy.xml\n"
-  post_deploy: |
-      set -e
-      php ./vendor/bin/ece-tools run scenario/post-deploy.xml
-      echo "[$(date)] post-deploy hook end"
-      ./curl-tests-for-egress-filtering.sh
-      echo "[$(date)] curl finished"
+    build: |
+        set -e
+        php ./vendor/bin/ece-tools run scenario/build/generate.xml
+        php ./vendor/bin/ece-tools run scenario/build/transfer.xml
+    deploy: "php ./vendor/bin/ece-tools run scenario/deploy.xml\n"
+    post_deploy: |
+        set -e
+        php ./vendor/bin/ece-tools run scenario/post-deploy.xml
+        echo "[$(date)] post-deploy hook end"
+        ./curl-tests-for-egress-filtering.sh
+        echo "[$(date)] curl finished"
 ```
