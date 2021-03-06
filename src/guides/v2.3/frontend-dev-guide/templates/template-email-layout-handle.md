@@ -6,18 +6,18 @@ functional_areas:
 ---
 
 {:.bs-callout-warning}
-Magento 2.3.4 restricts the way that custom variables can be used within email templates.
+Magento 2.3.4 and above restricts the way that custom variables can be used within email templates.
 See [Migrating custom email templates](template-email-migration.html) for more information.
 
 ## Email layout handle {#email-layout-handle}
 
-In the sales-related email templates (order, invoice, shipment, and credit memo email templates), layout handles are used to render the order items and grand total sections.
+In the sales related email templates (order, invoice, shipment, and credit memo email templates), layout handles are used to render the order items and grand total sections.
 
 Screenshot of the order items and the grand total section in the order email template:
 
 ![Email Order Item Details.]({{ page.baseurl }}/frontend-dev-guide/images/email-order-items-render.png)
 
-For example, the `sales_email_order_items` layout handle is specified in the `app/code/Magento/Sales/view/frontend/email/order_new.html` like below:
+For example, the `sales_email_order_items` layout handle is specified in the `app/code/Magento/Sales/view/frontend/email/order_new.html` as below:
 
 {% raw %}
 ```html
