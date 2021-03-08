@@ -53,4 +53,4 @@ After you create or install a theme, open the Magento [Admin](https://glossary.m
 
 To make sure the theme is registered, in the Magento Admin navigate to **Content** > **Design** > **Themes**. If a theme is registered, it is displayed in the list of available themes.
 
-![The registered theme in Magento Admin]({{ site.baseurl }}/common/images/Theme.png)
+![The registered theme in Magento Admin]({{ site.baseurl }}/common/images/theme.png)
