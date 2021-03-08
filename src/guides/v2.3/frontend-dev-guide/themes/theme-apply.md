@@ -44,7 +44,7 @@ To add a design exception:
 1. On the **Design Rule** tab, click **Add New User Agent Rule**.
 1. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
 
-	![Design Exception]
+	![Design Exception]({{ site.baseurl }}/common/images/user_agent_rule.png)
 
 1. Click **Save Configuration** or **Save and Continue**.
 1. If caching is enabled, [clear the cache](#theme-apply-clear).
@@ -85,4 +85,3 @@ If the changes you configure in the Admin are not applied after you clear the ca
 
 [Design Configuration page]: {{site.baseurl}}/common/images/design_conf1.png
 [Design Configuration page for a particular scope]: {{site.baseurl}}/common/images/fdg/applied_theme.png
-[Design Exception]: {{site.baseurl}}/common/images/user_agent_rule.png
