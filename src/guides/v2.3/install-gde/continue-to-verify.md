@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: ZZ_continue
 title:
 menu_title: Next&mdash;Installation part 3, post-installation
