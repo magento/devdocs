@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Configure the store
 functional_areas:
   - Install

@@ -73,7 +73,7 @@ Let's bump the major version from `2.0` to `3.0`:
 }
 ```
 
-Save the the `composer.json` file and run:
+Save the `composer.json` file and run:
 
 ```bash
 composer update magento/product-recommendations --with-dependencies

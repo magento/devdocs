@@ -44,7 +44,7 @@ This allows you to return a new instance of the target component with your modif
 
 The following is an example of a mixin that extends the `target` component with a function that introduces a new `blockVisibility` property to a column element.
 
-**File:** `OrangeCompany/Sample/view/base/web/js/columns-mixin.js`
+**File:** `ExampleCorp/Sample/view/base/web/js/columns-mixin.js`
 
 ```javascript
 define(function () {
@@ -71,7 +71,7 @@ define(function () {
 
 The following is an example of a mixin that extends the [modal widget][] with a function that adds confirmation for a modal closing.
 
-**File:** `OrangeCompany/Sample/view/base/web/js/modal-widget-mixin.js`
+**File:** `ExampleCorp/Sample/view/base/web/js/modal-widget-mixin.js`
 
 ```javascript
 define(['jquery'], function ($) {
@@ -109,7 +109,7 @@ define(['jquery'], function ($) {
 
 Another use-case for the JS mixin is when the base Javascript file returns an object. In this case, a wrapper is necessary. The following example mixin extends the `setHash` method of [step navigator object][]. Here, `this._super()` is the base method that can be called if needed.
 
-**File:** `OrangeCompany/Sample/view/frontend/web/js/model/step-navigator-mixin.js`
+**File:** `ExampleCorp/Sample/view/frontend/web/js/model/step-navigator-mixin.js`
 
 ```javascript
 define([
@@ -132,7 +132,7 @@ define([
 
 The following is an example of a mixin that adds additional functionality to the [proceed to checkout function][].
 
-**File:** `OrangeCompany/Sample/view/frontend/web/js/proceed-to-checkout-mixin.js`
+**File:** `ExampleCorp/Sample/view/frontend/web/js/proceed-to-checkout-mixin.js`
 
 ```javascript
 define([
@@ -160,23 +160,23 @@ The mixins configuration in the `requirejs-config.js` associates a target compon
 
 The following is an example of a `requirejs-config.js` file that adds the `columns-mixin`, `modal-widget-mixin`, `step-navigator-mixin`, and `proceed-to-checkout-mixin` mixins, which were defined in the previous examples, to the [grid column component][], [modal widget][], [step navigator object][], and [proceed to checkout function][].
 
-**File:** `OrangeCompany/Sample/view/base/requirejs-config.js`
+**File:** `ExampleCorp/Sample/view/base/requirejs-config.js`
 
 ```javascript
 var config = {
  config: {
      mixins: {
          'Magento_Ui/js/grid/controls/columns': {
-             'OrangeCompany_Sample/js/columns-mixin': true
+             'ExampleCorp_Sample/js/columns-mixin': true
          },
          'Magento_Ui/js/modal/modal': {
-             'OrangeCompany_Sample/js/modal-widget-mixin': true
+             'ExampleCorp_Sample/js/modal-widget-mixin': true
          },
          'Magento_Checkout/js/model/step-navigator': {
-             'OrangeCompany_Sample/js/model/step-navigator-mixin': true
+             'ExampleCorp_Sample/js/model/step-navigator-mixin': true
          },
          'Magento_Checkout/js/proceed-to-checkout': {
-             'OrangeCompany_Sample/js/proceed-to-checkout-mixin': true
+             'ExampleCorp_Sample/js/proceed-to-checkout-mixin': true
          }
      }
  }

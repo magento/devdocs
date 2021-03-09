@@ -19,12 +19,12 @@ The use of helpers in templates is discouraged. It is recommended to use view mo
 
 ## How to write view models
 
-View models can be used by passing the view model class as an argument to a template's block in the page layout configuration file. In the following example snippet, `MyNewViewModel` is the view model class of the OrangeCompany_Catalog module passed as an argument to a block.
+View models can be used by passing the view model class as an argument to a template's block in the page layout configuration file. In the following example snippet, `MyNewViewModel` is the view model class of the ExampleCorp_Catalog module passed as an argument to a block.
 
 ```xml
-<block name="orangeco.new.viewmodel" template="OrangeCompany_Catalog::example.phtml">
+<block name="examplecorp.new.viewmodel" template="ExampleCorp_Catalog::example.phtml">
     <arguments>
-        <argument name="viewModel" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+        <argument name="view_model" xsi:type="object">ExampleCorp\Catalog\ViewModel\MyNewViewModel</argument>
     </arguments>
 </block>
 ```
@@ -34,7 +34,7 @@ In the following example, the same view model is used with an existing block in 
 ```xml
 <referenceBlock name="checkout.cart.item.renderers.default">
     <arguments>
-        <argument name="viewModel" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+        <argument name="view_model" xsi:type="object">ExampleCorp\Catalog\ViewModel\MyNewViewModel</argument>
     </arguments>
 </referenceBlock>
 ```
@@ -42,7 +42,7 @@ In the following example, the same view model is used with an existing block in 
 The view model class must always implement the interface `\Magento\Framework\View\Element\Block\ArgumentInterface`. For example:
 
 ```php
-namespace OrangeCompany\Catalog\ViewModel;
+namespace ExampleCorp\Catalog\ViewModel;
 
 class MyNewViewModel implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
@@ -58,7 +58,7 @@ You can access the public methods for the view model class in the template:
 ```html
 <?php
 
-/** @var $viewModel \OrangeCompany\Catalog\ViewModel\MyNewViewModel */
+/** @var $viewModel \ExampleCorp\Catalog\ViewModel\MyNewViewModel */
 
 $viewModel = $block->getViewModel();
 
@@ -78,7 +78,7 @@ The view model class is passed as an argument to the `product.info.upsell` block
 <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell" template="Magento_Catalog::product/list/items.phtml">
     <arguments>
         <argument name="type" xsi:type="string">upsell</argument>
-        <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
+        <argument name="view_model" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
     </arguments>
 </block>
 ```

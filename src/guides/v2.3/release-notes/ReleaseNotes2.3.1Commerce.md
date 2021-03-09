@@ -2338,7 +2338,7 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 ## Known issues
 
-**Issue**:  Cart Price rules that were created with undefined end dates (that is, with the **To** field left empty) are not displayed as expected on the Staging dashboard after after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317-->
+**Issue**:  Cart Price rules that were created with undefined end dates (that is, with the **To** field left empty) are not displayed as expected on the Staging dashboard after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317-->
 
 **Issue**: The Web Setup Wizard is not available from the Admin under these conditions:
 

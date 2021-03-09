@@ -169,7 +169,7 @@ The following example builds a Customers Search request based on search criteria
                         ]
                     ]
                 ]
-            ]
+            ],
             'current_page' => 1,
             'page_size' => 10
         ],
