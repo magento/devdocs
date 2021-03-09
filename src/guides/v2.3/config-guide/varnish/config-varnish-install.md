@@ -16,7 +16,7 @@ Installing the Varnish software is beyond the scope of this guide. For more info
 *  [How to install Varnish (Tecmint)](http://www.tecmint.com/install-varnish-cache-web-accelerator)
 
 {:.bs-callout-info}
-This topic is written for Varnish on CentOS and Apache 2.2. If you are setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.<br><br>If you intend to install Varnish modules (vmods), such as saint mode, you should install Varnish by compiling the code, rather than installing from a package. See [Saint mode]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html#saint) for more details.
+This topic is written for Varnish on CentOS and Apache 2.4. If you are setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.<br><br>If you intend to install Varnish modules (vmods), such as saint mode, you should install Varnish by compiling the code, rather than installing from a package. See [Saint mode]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html#saint) for more details.
 
 ## Confirm your Varnish version {#config-varnish-version}
 
@@ -29,12 +29,12 @@ varnishd -V
 A sample follows:
 
 ```terminal
-varnishd (varnish-4.0.3 revision b8c4a34)
+varnishd (varnish-6.5.1 revision 1dae23376bb5ea7a6b8e9e4b9ed95cdc9469fb64)
 Copyright (c) 2006 Verdens Gang AS
-Copyright (c) 2006-2014 Varnish Software AS
+Copyright (c) 2006-2020 Varnish Software
 ```
 
-Make sure the version is 4.x, 5.2 or 6.x before continuing. If you are running version 3.x, you must upgrade to a supported version. Consult the Varnish installation documentation for more information.
+Make sure the version is 6.5.x before continuing. If you are running an older version, you must upgrade to a supported version. Consult the Varnish installation documentation for more information.
 
 {:.ref-header}
 Related topics
