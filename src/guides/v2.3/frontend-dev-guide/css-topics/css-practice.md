@@ -11,17 +11,17 @@ This topic features a step-by-step illustration of how to change a theme's color
 
 ## Changing theme color scheme
 
-OrangeCo created a custom theme that inherits from the Magento basic Blank theme.
+ExampleCorp created a custom theme that inherits from the Magento basic Blank theme.
 The following image illustrates how store pages look when the Blank theme is applied:
 
 ![product page when Blank applied]
 
-In their Grey theme, OrangeCo wants to change the color scheme from white to grey.
+In their Grey theme, ExampleCorp wants to change the color scheme from white to grey.
 
-The Grey theme directory is `app/design/frontend/OrangeCo/grey`.
+The Grey theme directory is `app/design/frontend/ExampleCorp/grey`.
 
-OrangeCo decided to use the Magento UI library, so to change the color scheme, they need to define new values for certain default Less variables.
-To do this, they added an overriding `_theme.less` file in the `app/design/frontend/OrangeCo/grey/web/css/source` directory, with the following content:
+ExampleCorp decided to use the Magento UI library, so to change the color scheme, they need to define new values for certain default Less variables.
+To do this, they added an overriding `_theme.less` file in the `app/design/frontend/ExampleCorp/grey/web/css/source` directory, with the following content:
 
 ```less
 //  Color nesting

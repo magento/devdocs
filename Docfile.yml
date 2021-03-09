@@ -20,9 +20,3 @@ content_map:
   repository: magento/magento2-page-builder-docs
   branch: master
   filter: true
--
-  directory: src/page-builder-migration
-  repository: magento/magento2-page-builder-data-migration
-  branch: 1.0.0-release
-  filter: true
-

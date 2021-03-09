@@ -53,7 +53,8 @@ We'll make several calls to find the values needed to create the product
 
 The sample data provides multiple attribute sets, including Default, Top, and Bottom. To assign the Top attribute set to the product, we need to know the corresponding `attribute_set_id`.
 
-Use the following call to search for the attribute set named `Top`.
+Use the following call to search for the attribute set named `Top` and `entity_type_id` equals to `4`.
+By default, the `catalog_product` entity has the `entity_type_id` value as `4`.
 
 **Endpoint:**
 
@@ -61,7 +62,10 @@ Use the following call to search for the attribute set named `Top`.
 GET <host>/rest/<store_code>/V1/eav/attribute-sets/list?
 searchCriteria[filter_groups][0][filters][0][field]=attribute_set_name&
 searchCriteria[filter_groups][0][filters][0][value]=Top&
-searchCriteria[filter_groups][0][filters][0][condition_type]=eq
+searchCriteria[filter_groups][0][filters][0][condition_type]=eq&
+searchCriteria[filter_groups][1][filters][0][field]=entity_type_id&
+searchCriteria[filter_groups][1][filters][0][value]=4&
+searchCriteria[filter_groups][1][filters][0][condition_type]=eq
 ```
 
 **Response:**
@@ -88,6 +92,15 @@ The `attribute_set_id` for the Top attribute set is `9`.
                         "condition_type": "eq"
                     }
                 ]
+            },
+            {
+                "filters": [
+                    {
+                        "field": "entity_type_id",
+                        "value": "4",
+                        "condition_type": "eq"
+                    }
+                ]
             }
         ]
     },
@@ -101,11 +114,51 @@ Use the `GET V1/products/attribute-sets/:attributeSetId/attributes` call to retu
 
 **Endpoint:**
 
-`GET <host>/rest/default/V1/products/attribute-sets/9/attributes`
+```html
+GET <host>/rest/default/V1/products/attribute-sets/9/attributes
+```
 
 **Response:**
 
-The response contains almost 3,000 lines. The following table provides a summary of the attributes that are relevant in this tutorial.
+```json
+[
+    {
+        "attribute_id": 141,
+        "attribute_code": "size",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": " ",
+                "value": ""
+            },
+            {
+                "label": "Small",
+                "value": "168"
+            },
+            {
+                "label": "Medium",
+                "value": "169"
+            },
+            {
+                "label": "Large",
+                "value": "170"
+            }
+        ],
+        "is_user_defined": true,
+        "default_frontend_label": "Size",
+        "frontend_labels": [],
+        "backend_type": "int",
+        "source_model": "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Table",
+        "default_value": "",
+        "is_unique": "0",
+        "validation_rules": []
+    }
+]
+```
+
+The response contains almost 3,000 lines and the above is a part of the response from the endpoint. The following table provides a summary of the attributes that are relevant in this tutorial.
 
 Admin label | Selected value | Attribute ID | attribute_code  | Attribute value
 --- | --- | --- | --- | ---
@@ -125,11 +178,39 @@ You must assign the product to one or more categories to enable customers to fin
 
 Use the following call to search for all categories (`id` is greater than or equal to `0`).
 
+**Endpoint:**
+
 ```html
 GET <host>/rest/default/V1/categories?
 searchCriteria[filter_groups][0][filters][0][field]=id&
 searchCriteria[filter_groups][0][filters][0][value]=1&
 searchCriteria[filter_groups][0][filters][0][condition_type]=gte
+```
+
+**Response:**
+
+```json
+{
+    "id": 2,
+    "parent_id": 1,
+    "name": "Default Category",
+    "is_active": true,
+    "position": 1,
+    "level": 1,
+    "product_count": 0,
+    "children_data": [
+        {
+            "id": 11,
+            "parent_id": 2,
+            "name": "Men",
+            "is_active": true,
+            "position": 1,
+            "level": 2,
+            "product_count": 1,
+            "children_data": []
+        }
+    ]
+}
 ```
 
 Note that women's tops and tees have different ids than men's tops and tees. The values for men's clothing are:
