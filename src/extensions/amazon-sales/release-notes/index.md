@@ -21,9 +21,27 @@ The release notes include:
 
 See [Upcoming Releases](https://devdocs.magento.com/release/) for versioning, support, and compatibility.
 
+### v4.4.0
+
+Amazon Sales Channel 4.4.0 is compatible with versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+This version of Amazon Sales Channel includes the following improvements and fixes.
+
+-  {:.new}Added support for Read-Only Mode to the configuration. See [Global Settings](https://docs.magento.com/user-guide/configuration/sales-channels/global-settings.html).
+
+-  {:.fix}Changed the data flow so that multiple copies of the same instance can fetch updates simultaneously.
+
+-  {:.fix}Changed the sync process for syncing account information. Added a cron job to sync with remote account and added the same functionality to the CLI commands.
+
+-  {:.fix}Added CLI command arguments and flags for more precise control.
+
+-  {:.fix}Corrected the Background Tasks (cron) Source in the system configuration.
+
+-  {:.fix}Corrected the issue preventing the creation of orders when the country code was set to Puerto Rico (PR).
+
 ### v4.3.0
 
-Amazon Sales Channel 4.3.0 is compatible with versions 2.3.x but only supported for versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 4.3.0 is compatible with versions 2.3.x and 2.4.0, but only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 This version of Amazon Sales Channel includes the following improvements and fixes.
 
