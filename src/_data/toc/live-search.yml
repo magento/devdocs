@@ -17,7 +17,7 @@ pages:
   versionless: true
 
 - label: Live Search API Reference
-  url: /live-search/api-reference.html
+  url: /live-search/live-search-api-reference.html
   versionless: true
 
 - label: Facets
