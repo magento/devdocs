@@ -693,3 +693,7 @@ a.image:hover {
 .message-banner p:last-child {
 	margin-bottom: 0;
 }
+
+/* Page survey button */
+
+.page-survey-buttons .spectrum-Button--secondary { margin-right: 10px; }
