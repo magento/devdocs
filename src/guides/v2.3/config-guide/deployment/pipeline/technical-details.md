@@ -39,7 +39,7 @@ Set the shared configuration in the Magento Admin in your development (or {{site
 
 ### Manage the system-specific configuration
 
-The system-specific configuration is stored in `app/config/env.php`, which should _not_ be in source control.
+The system-specific configuration is stored in `app/etc/env.php`, which should _not_ be in source control.
 
 Set the system-specific configuration in the Magento Admin in your development (or {{site.data.var.ece}} integration) system and write the configuration to `env.php` using the [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
 

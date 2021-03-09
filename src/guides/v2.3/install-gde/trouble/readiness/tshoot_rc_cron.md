@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 05_readiness
 title: cron readiness check issues
 menu_title: cron readiness check issues

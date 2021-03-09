@@ -122,7 +122,7 @@ See [Release notes]({{ page.baseurl }}/graphql/release-notes.html) for a more de
 
 ### BlueFoot to Page Builder content migration
 
-**Assistance for BlueFoot to Page Builder migration**.  The BlueFoot content migration module (PageBuilderDataMigration) enables merchants who are running Magento 2.1.x or 2.2.x with BlueFoot  to upgrade to Magento 2.3.1+ with PageBuilder 1.0 without losing their website content. This module  migrates only content created with native BlueFoot. See [Overview of content migration](https://devdocs.magento.com/page-builder-migration/docs/) for information about module installation and supported content types.
+**Assistance for BlueFoot to Page Builder migration**.  The BlueFoot content migration module (PageBuilderDataMigration) enables merchants who are running Magento 2.1.x or 2.2.x with BlueFoot  to upgrade to Magento 2.3.1+ with PageBuilder 1.0 without losing their website content. This module  migrates only content created with native BlueFoot. See [Overview of content migration](https://devdocs.magento.com/page-builder/docs/migration/overview.html) for information about module installation and supported content types.
 
 ### Vendor-developed extension enhancements
 
@@ -720,7 +720,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-98621-->
 
-*  Scope assigned to prices in Catalog Price Scope (set in **Configuration** > **Price**) are now maintained when price is set to empty. Previously, you could not leave leave special prices empty.
+*  Scope assigned to prices in Catalog Price Scope (set in **Configuration** > **Price**) are now maintained when price is set to empty. Previously, you could not leave special prices empty.
 
 <!--- ENGCOM-3810-->
 
@@ -1074,7 +1074,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-96138-->
 
-*  The transfer cart line items and transfer shipping options in the the Shipping step of checkout now work for PayPal. [GitHub-19064](https://github.com/magento/magento2/issues/19064)
+*  The transfer cart line items and transfer shipping options in the Shipping step of checkout now work for PayPal. [GitHub-19064](https://github.com/magento/magento2/issues/19064)
 
 <!--- MAGETWO-98424-->
 

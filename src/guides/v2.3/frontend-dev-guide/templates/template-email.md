@@ -296,11 +296,11 @@ To customize your logo using a theme:
 
 1. Add a file named `logo_email.png` to a `Magento_Email/web` directory in your custom theme.
 
-   For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the `app/design/frontend/OrangeCo/orange/Magento_Email/web` directory.
+   For example, if the ExampleCorp vendor wants to add a logo for their custom Orange, they must add a file in the `app/design/frontend/ExampleCorp/orange/Magento_Email/web` directory.
 
 1. Copy the `<Magento_Email_module_dir>/view/frontend/email/header.html` file into a `Magento_Email/email` directory in your theme.
 
-   For example, the OrangeCo vendor would copy the file to this location: `app/design/frontend/OrangeCo/orange/Magento_Email/email/header.html`
+   For example, the ExampleCorp vendor would copy the file to this location: `app/design/frontend/ExampleCorp/orange/Magento_Email/email/header.html`
 
    Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
 

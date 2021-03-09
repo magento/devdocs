@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Uninstall modules
 functional_areas:
   - Install
