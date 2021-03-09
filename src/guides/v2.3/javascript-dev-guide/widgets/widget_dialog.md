@@ -195,7 +195,7 @@ This example uses some CSS classes that are used for minicart.
 </div>
 ```
 
-The following example shows a PHTML file using the script and custom CSS classes that are not styled:
+The following example shows a PHTML file using the script and custom CSS classes that have no defined properties:
 
 ```php
 <?php
