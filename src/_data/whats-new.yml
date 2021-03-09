@@ -4,8 +4,577 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Wed Dec 16 16:19:47 2020
+updated: Mon Mar 1 10:21:06 2021
 entries:
+- description: Added the "Configure product video options from Magento Admin" section
+    to the [Configure product video](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/product-video.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: March 1, 2021
+  link: https://github.com/magento/devdocs/pull/8676
+  contributor: ajithkumar-maragathavel
+  profile: https://github.com/ajithkumar-maragathavel
+- description: Added the [MFTF Magento-supplied Tests](https://devdocs.magento.com/marketplace/sellers/mftf-magento.html)
+    and [MFTF Vendor-supplied Tests](https://devdocs.magento.com/marketplace/sellers/mftf-vendor.html)
+    topics to the Marketplace Sellers guide.
+  versions: ''
+  type: New Topic
+  date: February 25, 2021
+  link: https://github.com/magento/devdocs/pull/8738
+  contributor: dobooth
+  profile: https://github.com/dobooth
+- description: Reorganized [Page Builder documentation](https://devdocs.magento.com/page-builder/docs/index.html)
+    to improve discovery and access to topics of interest.
+  versions: 2.4.x
+  type: Major Update
+  date: February 24, 2021
+  link: https://github.com/magento/devdocs/pull/8732
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Added information about [configuring variables](https://devdocs.magento.com/guides/v2.4/mrg/ce/ConfigurableProduct.html)
+    through the theme `view.xml` file with the ConfigurableProduct module.
+  versions: 2.4.x
+  type: Major Update
+  date: February 24, 2021
+  link: https://github.com/magento/devdocs/pull/8735
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: New Page Builder topics on how to create responsive content. Learn
+    about viewports, breakpoints, and how to use them to make your content responsive.
+    The new topics include:<br/>- [Introduction to viewports for responsive content](https://devdocs.magento.com/page-builder/docs/viewports/introduction.html)<br/>-
+    [Add viewports](https://devdocs.magento.com/page-builder/docs/viewports/add-viewports.html)<br/>-
+    [Add breakpoints](https://devdocs.magento.com/page-builder/docs/viewports/add-breakpoints.html)<br/>-
+    [Use breakpoints](https://devdocs.magento.com/page-builder/docs/viewports/use-breakpoints.html)<br/>-
+    [Change breakpoints and viewports](https://devdocs.magento.com/page-builder/docs/viewports/change-breakpoints-viewports.html)
+  versions: 2.4.x
+  type: Major Update
+  date: February 23, 2021
+  link: https://github.com/magento/devdocs/pull/8727
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: In the Cloud guide, clarified the section about [Migrating static files](https://devdocs.magento.com/cloud/live/stage-prod-migrate.html#migrate-static-files)
+    after deploying code. The CLI method is preferred for local to remote environments,
+    but the `rysnc` method from one remote environment to another requires forwarding
+    of the authentication agent when using a SSH.
+  versions: 2.x
+  type: Technical
+  date: February 22, 2021
+  link: https://github.com/magento/devdocs/pull/8552
+  contributor: hguthrie
+  profile: https://github.com/hguthrie
+- description: New Page Builder topics on how to style content types. Learn how Page
+    Builder styles content and how to override these styles to control Page Builder's
+    appearance from your themes. The new topics include:<br/>- [How Page Builder styles
+    content](https://devdocs.magento.com/page-builder/docs/styles/introduction.html)<br/>-
+    [Override Page Builder styles](https://devdocs.magento.com/page-builder/docs/styles/override-pagebuilder-styles.html)<br/>-
+    [Use themes to override styles](https://devdocs.magento.com/page-builder/docs/styles/use-themes-to-override-styles.html)<br/>-
+    [Use modules to override styles](https://devdocs.magento.com/page-builder/docs/styles/use-modules-to-override-styles.html)<br/>-
+    [Use HTML Code to override styles](https://devdocs.magento.com/page-builder/docs/styles/use-htmlcode-to-override-styles.html)
+  versions: 2.4.x
+  type: Major Update
+  date: February 22, 2021
+  link: https://github.com/magento/devdocs/pull/8714
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Updated the [`magento-cloud` CLI reference](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-cloud.html)
+    (v1.38.0).
+  versions: 2.x
+  type: Major Update
+  date: February 22, 2021
+  link: https://github.com/magento/devdocs/pull/8724
+  contributor: hguthrie
+  profile: https://github.com/hguthrie
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.16 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: February 18, 2021
+  link: https://github.com/magento/devdocs/pull/8706
+  contributor: Rykh
+  profile: https://github.com/Rykh
+- description: New Page Builder topics on how to [extend content types](https://devdocs.magento.com/page-builder/docs/content-types/extend/introduction.html).  Learn
+    how to add new features, styles, and behaviors to existing content types in these
+    topics:<br/>-  [Extend an appearance](https://devdocs.magento.com/page-builder/docs/content-types/extend/extend-appearances.html)<br/>-  [Extend
+    another appearance](https://devdocs.magento.com/page-builder/docs/content-types/extend/extend-more-appearances.html)<br/>-  [Add
+    appearances](https://devdocs.magento.com/page-builder/docs/content-types/extend/add-appearances.html)
+  versions: 2.4.2, 2.4.x
+  type: Major Update
+  date: February 17, 2021
+  link: https://github.com/magento/devdocs/pull/8702
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Updated the example in the [ColumnsControl component](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/components/ui-columnscontrols.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: February 11, 2021
+  link: https://github.com/magento/devdocs/pull/8601
+  contributor: Santoshziffity
+  profile: https://github.com/Santoshziffity
+- description: Added 2.4.2 to the [Backward incompatible changes reference](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 10, 2021
+  link: https://github.com/magento/devdocs/pull/8660
+  contributor: devops-devdocs
+  profile: https://github.com/devops-devdocs
+- description: Updated reference documentation on [packages](https://devdocs.magento.com/guides/v2.4/release-notes/packages-commerce.html)
+    and [`bin/magento`](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-commerce.html)
+    CLI for Commerce.
+  versions: 2.4.2
+  type: Major Update
+  date: February 10, 2021
+  link: https://github.com/magento/devdocs/pull/8668
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Updated the organization of the [Page Builder docs](https://devdocs.magento.com/page-builder/docs/index.html).
+  versions: 2.4.x
+  type: Major Update
+  date: February 10, 2021
+  link: https://github.com/magento/devdocs/pull/8673
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Published all documentation updates related to the Q1 2021 Commerce
+    and Open Source releases.
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8649
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Updated the [Module Reference Guide](https://devdocs.magento.com/guides/v2.4/mrg/intro.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8659
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Updated [Open Source packages](https://devdocs.magento.com/guides/v2.4/release-notes/packages-open-source.html),
+    [Cloud Commerce packages](https://devdocs.magento.com/guides/v2.4/release-notes/packages-cloud.html),
+    [required PHP extensions](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/php-settings.html#verify-installed-extensions),  [`bin/magento`
+    OpenSource reference](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8661
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Added [release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
+    for Magento Commerce and Open Source 2.4.2.
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8611
+  contributor: jfrontain
+  profile: https://github.com/jfrontain
+- description: Added support for [comparison lists](https://devdocs.magento.com/guides/v2.4/graphql/queries/compare-list.html).
+    Shoppers can [create](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-compare-list.html)
+    and [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-compare-list.html)
+    comparison lists, and [add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-compare-list.html)
+    and [remove](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-products-from-compare-list.html)
+    items to the comparison lists. In addition, shoppers that create a comparison
+    list as a guest can log in as a customer and [retain](https://devdocs.magento.com/guides/v2.4/graphql/mutations/assign-compare-list-to-customer.html)
+    their comparison lists.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8646
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added examples of adding bundle products to the [`addProductsToCart`
+    mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-cart.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8506
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Published release notes for [Inventory](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html)
+    1.2.2.
+  versions: ''
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8500
+  contributor: sidolov
+  profile: https://github.com/sidolov
+- description: Added information about Composer 2 compatibility in [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    and [upgrade scenarios](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8474
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added full GraphQL support for B2B requisition lists. With GraphQL,
+    you can perform the following tasks:<br/>[Create](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-requisition-list.html),
+    [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-requisition-list.html),
+    and [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-requisition-list.html)
+    requisition lists.<br/>[Add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-products-to-requisition-list.html),
+    [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-requisition-list-items.html),
+    and [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-requisition-list-items.html)
+    items in a requisition list.<br/>[Copy](https://devdocs.magento.com/guides/v2.4/graphql/mutations/copy-items-between-requisition-lists.html)
+    and [move](https://devdocs.magento.com/guides/v2.4/graphql/mutations/move-items-between-requisition-lists.html)
+    items between requisition lists.<br/>Add requisition list items to the [cart](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-requisition-list-items-to-cart.html).<br/>[Clear](https://devdocs.magento.com/guides/v2.4/graphql/mutations/clear-customer-cart.html)
+    the customer cart.<br/>Return details about requisition lists using the [customer
+    query](https://devdocs.magento.com/guides/v2.4/graphql/queries/customer.html).
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8428
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added GraphQL support for returned merchandise authorizations (RMA).
+    See the [requestReturn mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/request-return.html),
+    [addReturnComment mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-return-comment.html),
+    [addReturnTracking mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-return-tracking.html),
+    and [removeReturnTracking mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-return-tracking.html)
+    for details.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8258
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: In GraphQL, we've deprecated many `id` fields that were of type `Int`
+    in favor of `uid` fields of type `ID`. These changes primarily affect the product
+    and cart sections of the schema.
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8273
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added documentation for the GraphQL [WishlistItemInterface](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/wishlist-item-interface.html).
+  versions: 2.4.x
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8221
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.4/config-guide/multi-master/multi-master.html)
+    for the split database feature.
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8424
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Updated the [availability](https://devdocs.magento.com/release/availability.html)
+    and [compatibility](https://devdocs.magento.com/extensions/vendor/) of Magento-developed
+    extensions (MDEs) and vendor-bundled extensions (VBEs).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8412
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added 2.4.2 beta [release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8388
+  contributor: jfrontain
+  profile: https://github.com/jfrontain
+- description: Add new [configuration instructions for the Remote storage module](https://devdocs.magento.com/guides/v2.4/config-guide/remote-storage/config-remote-storage.html)
+    and AWS S3 adapter to the _Configuration guide_.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8254
+  contributor: hguthrie
+  profile: https://github.com/hguthrie
+- description: Added an [example](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/concepts/ui_comp_uiregistry.html)
+    of asynchronously retrieving UI components from the registry.
+  versions: 2.4.2
+  type: Technical
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8383
+  contributor: chiranjeevi-cj
+  profile: https://github.com/chiranjeevi-cj
+- description: Added a new [release notes page](https://devdocs.magento.com/extensions/vendor/yotpo/release-notes.html)
+    for the Yotpo vendor bundled extension (VBE).
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8358
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added a new topic describing the [`generateCustomerTokenAsAdmin`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/generate-customer-token-as-admin.html)
+    GraphQL mutation.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8303
+  contributor: sathiyaaa
+  profile: https://github.com/sathiyaaa
+- description: 'Added the following mutations in support of B2B companies: [createCompanyRole](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-company-role.html),
+    [updateCompanyRole](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company-role.html),
+    [deleteCompanyRole](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-company-role.html),
+    and [isCompanyRoleNameAvailable](https://devdocs.magento.com/guides/v2.4/graphql/queries/is-company-role-name-available.html)
+    query.'
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8097
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: 'Added the following queries in support of B2B companies: [isCompanyEmailAvailable](https://devdocs.magento.com/guides/v2.4/graphql/queries/is-company-email-available.html),
+    [isCompanyAdminEmailAvailable](https://devdocs.magento.com/guides/v2.4/graphql/queries/is-company-admin-email-available.html),
+    and [isCompanyUserEmailAvailable](https://devdocs.magento.com/guides/v2.4/graphql/queries/is-company-user-email-available.html).'
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8120
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: 'Added the following mutations in support of B2B companies: [createCompanyUser](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-company-user.html),
+    [updateCompanyUser](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company-user.html),
+    [deleteCompanyUser](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-company-user.html).'
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8104
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: Added mutations to [add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-requisition-list.html)
+    and [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-requisition-list.html)
+    B2B requisition lists.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8093
+  contributor: dani97
+  profile: https://github.com/dani97
+- description: Added a new section about [configuring garbage collection](https://devdocs.magento.com/guides/v2.4/config-guide/sessions.html)
+    in Magento to clean up expired sessions.
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8053
+  contributor: victorpetryk
+  profile: https://github.com/victorpetryk
+- description: 'Added the following mutations in support of B2B companies: [createCompanyTeam](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-company-team.html),
+    [updateCompanyTeam](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company-team.html),
+    [deleteCompanyTeam](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-company-team.html),
+    [updateCompanyStructure](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company-structure.html).'
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8028
+  contributor: andrewbess
+  profile: https://github.com/andrewbess
+- description: Added the B2B [`createCompany` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-company.html)
+    and [`updateCompany` mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company.html).
+    Existing customers and guests can request to create a company, but only approved
+    company administrators can update the company.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/7949
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added the [company query](https://devdocs.magento.com/guides/v2.4/graphql/queries/company.html)
+    for B2B.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/7984
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added the `useCurrentGroup` input parameter to the [`availableStores`
+    query](https://devdocs.magento.com/guides/v2.4/graphql/queries/available-stores.html).
+  versions: 2.4.2
+  type: Major Update
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/8001
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Added support for multiple wishlists in Magento Commerce. You can use
+    GraphQL to [create](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-wishlist.html),
+    [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-wishlist.html),
+    and [rename](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-wishlist.html)
+    wishlists as well as [move](https://devdocs.magento.com/guides/v2.4/graphql/mutations/move-products-between-wishlists.html)
+    or [copy](https://devdocs.magento.com/guides/v2.4/graphql/mutations/copy-products-between-wishlists.html)
+    items between them.
+  versions: 2.4.2
+  type: New Topic
+  date: February 9, 2021
+  link: https://github.com/magento/devdocs/pull/7888
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: Updated the note about [supported PHP versions](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#php).
+  versions: 2.3.x
+  type: Technical
+  date: February 2, 2021
+  link: https://github.com/magento/devdocs/pull/8613
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: New Relic log file names are now stored in the `filePath` field, with
+    full paths to the log file. See [View and analyze log data](https://devdocs.magento.com/cloud/project/new-relic.html#view-and-analyze-log-data),
+    step 4, for querying the logs.
+  versions: 2.4.x
+  type: Major Update
+  date: February 2, 2021
+  link: https://github.com/magento/devdocs/pull/8614
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Cloud Patches 1.0.9 [release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
+  versions: 2.4.x
+  type: Major Update
+  date: February 1, 2021
+  link: https://github.com/magento/devdocs/pull/8577
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: "[Release notes](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v200215)
+    for ECE-Tools 2002.1.5."
+  versions: 2.4.x
+  type: Major Update
+  date: February 1, 2021
+  link: https://github.com/magento/devdocs/pull/8578
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.15 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: February 1, 2021
+  link: https://github.com/magento/devdocs/pull/8607
+  contributor: ilima-ebay
+  profile: https://github.com/ilima-ebay
+- description: Added an example use case of the [gallery widget](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/widgets/widget_gallery.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 29, 2021
+  link: https://github.com/magento/devdocs/pull/8556
+  contributor: DashukVolodymyr
+  profile: https://github.com/DashukVolodymyr
+- description: Default disk space for the application and database in cloud templates
+    were updated from 2GB to 5GB.
+  versions: 2.4.x
+  type: Major Update
+  date: January 29, 2021
+  link: https://github.com/magento/devdocs/pull/8588
+  contributor: oshmyheliuk
+  profile: https://github.com/oshmyheliuk
+- description: Added the [Maintainer's Handbook](https://devdocs.magento.com/contributor-guide/maintainer-handbook.html)
+    topic.
+  versions: 2.x
+  type: New Topic
+  date: January 29, 2021
+  link: https://github.com/magento/devdocs/pull/8580
+  contributor: gabrieldagama
+  profile: https://github.com/gabrieldagama
+- description: Added more information about security releases to our [release policy](https://devdocs.magento.com/release/policy/).
+  versions: 2.x
+  type: Major Update
+  date: January 27, 2021
+  link: https://github.com/magento/devdocs/pull/8575
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Updated the [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html)
+    topic with the latest name and acronym changes.
+  versions: ''
+  type: Major Update
+  date: January 26, 2021
+  link: https://github.com/magento/devdocs/pull/8553
+  contributor: danidelcar
+  profile: https://github.com/danidelcar
+- description: Reorganized the [Installation Guide](https://devdocs.magento.com/guides/v2.4/install-gde/install-flow-diagram.html)
+    to improve usability.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 25, 2021
+  link: https://github.com/magento/devdocs/pull/8558
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Added the [DateTime library](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/framework/datetime.html)
+    topic to the _PHP Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: January 25, 2021
+  link: https://github.com/magento/devdocs/pull/8439
+  contributor: RakeshJesadiya
+  profile: https://github.com/RakeshJesadiya
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.14 Magento Quality Patch (MQP) package release.
+  versions: ''
+  type: Major Update
+  date: January 22, 2021
+  link: https://github.com/magento/devdocs/pull/8541
+  contributor: abukatar
+  profile: https://github.com/abukatar
+- description: Added the [Setting up static analysis](https://devdocs.magento.com/guides/v2.4/test/static/static-analysis.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: January 22, 2021
+  link: https://github.com/magento/devdocs/pull/8547
+  contributor: dobooth
+  profile: https://github.com/dobooth
+- description: Added the [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html)
+    topics to the Software Update Guide section.
+  versions: ''
+  type: Major Update, New Topic
+  date: January 21, 2021
+  link: https://github.com/magento/devdocs/pull/8314
+  contributor: danidelcar
+  profile: https://github.com/danidelcar
+- description: Added the 'Product Attribute Option Creation' section to the [How to
+    Add a New Product Attribute](https://devdocs.magento.com/videos/fundamentals/add-new-product-attribute/)  topic.
+  versions: ''
+  type: Major Update
+  date: January 20, 2021
+  link: https://github.com/magento/devdocs/pull/8395
+  contributor: dineshvb
+  profile: https://github.com/dineshvb
+- description: Added a new topic describing how contributors can work with [pull request
+    tests](https://devdocs.magento.com/contributor-guide/pull-request-tests.html).
+  versions: ''
+  type: New Topic
+  date: January 20, 2021
+  link: https://github.com/magento/devdocs/pull/8483
+  contributor: sivaschenko
+  profile: https://github.com/sivaschenko
+- description: SendGrid DKIM signatures are available only on Magento Commerce Cloud
+    Pro projects.  For more information on SendGrid, see https://devdocs.magento.com/cloud/project/sendgrid.html.
+  versions: 2.4.x
+  type: Major Update
+  date: January 14, 2021
+  link: https://github.com/magento/devdocs/pull/8440
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: New Relic Alerts now include Redis and MariaDB. See https://devdocs.magento.com/cloud/project/new-relic.html#monitor-performance-with-managed-alerts.
+  versions: 2.4.x
+  type: Major Update
+  date: January 12, 2021
+  link: https://github.com/magento/devdocs/pull/8503
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Added a [legal disclaimer](https://devdocs.magento.com/compliance/privacy/pi-data-reference-m2.html#customer-data)
+    to references of the `date_of_birth` attribute of the `customer` database entity.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 8, 2021
+  link: https://github.com/magento/devdocs/pull/8488
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Published release notes for [Cloud Docker 1.2.1](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v121).
+  versions: 2.4.x
+  type: Major Update
+  date: December 22, 2020
+  link: https://github.com/magento/devdocs/pull/8429
+  contributor: bdenham
+  profile: https://github.com/bdenham
+- description: Added a new topic with instructions for [reverting from a split database
+    to a single database](https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html)
+    implementation.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: December 21, 2020
+  link: https://github.com/magento/devdocs/pull/8422
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
 - description: Added an [example](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/requirejs.html)
     of overwriting a Knockout JS .html template file in the `requirejs-config.js`
     file.
@@ -169,7 +738,7 @@ entries:
     the Docker host name for the Xdebug container when running Magento Cloud Docker
     on Linux.<br/>-  Added instructions for updating the [Elasticsearch plugin configuration](/cloud/docker/docker-containers-service.html#elasticsearch-plugins)
     in a Magento Cloud Docker environment.<br/>- Added instructions for [building
-    a custom `docker-compose.yaml` file](https://devdocs.magento.com/cloud/docker/docker-quick-reference.html#build-a-custom-docker-compose-configuration).
+    a custom `docker-compose.yaml` file](https://devdocs.magento.com/cloud/docker/docker-config-sources.html#build-a-custom-docker-compose-configuration).
   versions: 2.4.x
   type: Major Update
   date: November 9, 2020
@@ -185,7 +754,7 @@ entries:
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
 - description: Reorganized the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
-    pages in the Magento Installation Guide to to make it more coherent.
+    pages in the Magento Installation Guide to make it more coherent.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: November 5, 2020
@@ -263,7 +832,7 @@ entries:
   profile: https://github.com/hguthrie
 - description: Added Magento Community links and resources for getting support and
     discussing issues related to Magento Cloud Docker. See [Getting support for Magento
-    Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-development.html#getting-support-for-magento-cloud-docker).
+    Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-troubleshooting.html.
   versions: 2.x
   type: Technical
   date: October 20, 2020
@@ -1571,7 +2140,7 @@ entries:
   date: April 16, 2020
   link: https://github.com/magento/devdocs/pull/7024
 - description: 'New Page Builder topic on how to configure three different options
-    for styling elements in your content types: [How to configure styling options](https://devdocs.magento.com/page-builder/docs/how-to/how-to-configure-styling-options.html).'
+    for styling elements in your content types: [Add more appearances](https://devdocs.magento.com/page-builder/docs/content-types/extend/extend-more-appearances.html).'
   versions: 2.3.x
   type: New Topic
   date: April 15, 2020
@@ -1620,7 +2189,7 @@ entries:
   type: Technical
   date: April 9, 2020
   link: https://github.com/magento/devdocs/pull/7016
-- description: Fixed a config entry in the the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
+- description: Fixed a config entry in the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
     topic.
   versions: 2.3.x
   type: Technical

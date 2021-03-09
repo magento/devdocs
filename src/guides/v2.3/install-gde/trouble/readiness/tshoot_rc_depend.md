@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 05_readiness
 title: Component dependency readiness check issues
 menu_title: Component dependency readiness issues

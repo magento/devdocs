@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Elasticsearch
 functional_areas:
   - Configuration
@@ -23,11 +22,10 @@ As of Magento 2.4, all installations must be configured to use [Elasticsearch][]
 
 ## Supported versions {#es-spt-versions}
 
-You must install and configure Elasticsearch 7.6.x before upgrading to Magento 2.4.x.
+You must install and configure Elasticsearch before upgrading to Magento 2.4.x.
 
-Magento 2.4.x is tested with Elasticsearch 7.6.x only. You can use other 7.x versions at your discretion, but we recommend using the tested version of Elasticsearch.
+Refer to the [System Requirements][] for specific version information.
 
-{:.bs-callout-info}
 Magento does not support Elasticsearch 2.x, 5.x, and 6.x.
 
 ## Recommended configuration {#es-arch}
@@ -105,7 +103,6 @@ epoch      timestamp cluster       status node.total node.data shards pri relo i
 
 Refer to [Upgrading Elasticsearch][] for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production. Depending on your current version of Elasticsearch, a full cluster restart may or may not be required.
 
-{:.bs-callout-info}
 Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java) to check which version of JDK is installed.
 
 ## Additional resources {#es-resources}
@@ -129,3 +126,4 @@ For additional information, see [Elasticsearch documentation][]{:target="_blank"
 [Full cluster restart upgrade]: https://www.elastic.co/guide/en/elasticsearch/reference/current/restart-upgrade.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 [Installing Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
+[System Requirements]: {{page.baseurl}}/install-gde/system-requirements.html
