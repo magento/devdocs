@@ -120,10 +120,10 @@ On your development system:
    rm -r generated/*/*
    ```
 
-After running the above commands to clear the assets, Magento will generate working files.
+After running the commands to clear the assets, Magento will generate working files.
 
 {:.bs-callout-warning}
-Be carefully with above approach. Deleting the `.htacces`s file in the `generated` or `pub` folder may cause issues.
+Be careful with the above approach. Deleting the `.htacces`s file in the `generated` or `pub` folder may cause issues.
 
 ### Build system
 
