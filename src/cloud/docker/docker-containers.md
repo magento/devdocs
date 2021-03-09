@@ -182,3 +182,4 @@ table.docker-service-versions-table td:nth-child(3) {
 table.docker-cli-container-table td:nth-child(3) {
   width: 200px;
 }
+</style>
