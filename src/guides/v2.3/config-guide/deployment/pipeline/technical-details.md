@@ -112,18 +112,18 @@ On your development system:
 
 1. Add your modified code and the shared configuration to source control.
 
-1. For clear generated php code, static assets files while in development developers can use commands below.
+1. to remove generated php code and static assets files while in development, run the following commands:
 
    ```bash
-      rm -r var/view_preprocessed/*
-      rm -r pub/static/*/*
-      rm -r generated/*/*
+   rm -r var/view_preprocessed/*
+   rm -r pub/static/*/*
+   rm -r generated/*/*
    ```
 
-In developer mode after run above commands to clear assets, Magento will automatic generated files for use
+After running the above commands to clear the assets, Magento will generate working files.
 
 {:.bs-callout-warning}
-Be carefully with above approach when accidentally delete file .htaccess in folder generated or pub may cause breaks deploy process
+Be carefully with above approach. Deleting the `.htacces`s file in the `generated` or `pub` folder may cause issues.
 
 ### Build system
 
