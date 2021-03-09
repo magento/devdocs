@@ -105,15 +105,15 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
 
 ### Initializing a component on a selector
 
-There are two ways to do this:
+There are two ways to initialize a component on a selector:
 
-*  Initializing the component in the `data-mage-init` attribute. For example:
+*  Initialize the component in the `data-mage-init` attribute:
 
   ```html
   <div id="element-id" data-mage-init='{"Vendor_Module/js/myfile":{}}'></div>
   ```
 
-*  Using a script type `text/x-magento-init` attribute. For example:
+*  Use a script type `text/x-magento-init` attribute:
 
   ```html
   <script type="text/x-magento-init">
@@ -129,7 +129,7 @@ In these cases the path to the file is:
 
   `Vendor/Module/view/frontend/web/js/jsfilename.js`
 
-  Which contains your code:
+  which contains your code:
 
   ```javascript
   define(['uiComponent'],
