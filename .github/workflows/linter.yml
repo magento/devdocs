@@ -5,7 +5,7 @@
 ###########################
 ###########################
 name: Lint Code Base
-
+env: --fix
 #
 # Documentation:
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
