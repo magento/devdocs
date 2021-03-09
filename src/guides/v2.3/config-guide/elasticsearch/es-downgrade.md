@@ -12,16 +12,10 @@ functional_areas:
 
 ## Change the Elasticsearch Client version
 
-If you need to work with Elasticsearch 7.1.x, run the following command:
+If you need to work with Elasticsearch 7.x, run the following command, specifying your desired version:
 
 ```bash
 composer require "elasticsearch/elasticsearch:~7.1"
-```
-
-To work with Elasticsearch 6.8.x, run the following command:
-
-```bash
-composer require "elasticsearch/elasticsearch:~6.8"
 ```
 
 Then configure Elasticsearch within [Magento Admin][].

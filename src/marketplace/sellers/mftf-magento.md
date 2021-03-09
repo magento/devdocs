@@ -24,7 +24,7 @@ MFTF Magento supplied tests will be run for all Marketplace extension submission
 
 ## What is being checked
 
-MFTF tests verify the proper functioning of basic Magneto workflows. They are meant to mimic the same code paths that the end user would take, by automating the clicks and data entry that the user would do. The Magento codebase contains thousands of MFTF tests.
+MFTF tests verify the proper functioning of basic Magento workflows. They are meant to mimic the same code paths that the end user would take, by automating the clicks and data entry that the user would do. The Magento codebase contains thousands of MFTF tests.
 
 ## Tools and environments used
 
@@ -32,7 +32,7 @@ The Magento test infrastructure executes Magento-supplied MFTF tests in the most
 
 ## Reading the error report
 
-MFTF returns two types of results:
+MFTF returns two types of results, displayed as `MFTF Magento` within the developer portal:
 
 -  Simplified results showing the status of each test executed
 -  Allure XML results
