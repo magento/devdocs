@@ -137,7 +137,7 @@ On your build system:
 1. Check the updates into source control.
 
 {:.bs-callout-info}
-For deploys static view files reference [here]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
+Read more about deploying static view files [here]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
 
 ### Production system
 
