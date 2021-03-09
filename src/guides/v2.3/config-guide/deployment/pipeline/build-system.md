@@ -25,7 +25,7 @@ You can have one build system that meets the following requirements:
 -  The build system does not need Magento to be installed, but the code must be available to it.
 
 {:.bs-callout-warning}
-Database connection not required only in case build system used information is dumped to config.php (see [here]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)). Otherwise, connection to DB is required
+The database connection not required if it is already containted in `config.php` (see [here]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)). Otherwise, the database connection is required.
 
 {:.bs-callout-info}
 The build machine can be on its own host or on the same host as an installed Magento system.
