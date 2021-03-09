@@ -60,6 +60,20 @@ You can clean generated static view files in any of the following ways:
    rm -rf var/view_preprocessed/*
    ```
 
+   To clear the var/cache, enter the following command:
+   (Except for the page cache, all cacheable items. If you use a third-party cache storage like Redis, this directory would be void.)
+
+   ```bash
+   rm -rf  var/cache/*
+   ```
+
+   To clear the var/page_cache, enter the following command:
+   (Pages that have been cached using the full page caching mechanism. If you use a third-party HTTP accelerator like Varnish, this directory will be null.)
+
+   ```bash
+   rm -rf  var/page_cache/*
+   ```
+
 -  Several commands support an optional parameter `--clear-static-content`, which cleans generated static view files:
 
    -  [`magento module:enable` and `magento module:disable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
