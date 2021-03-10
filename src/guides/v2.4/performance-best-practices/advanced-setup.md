@@ -29,7 +29,7 @@ We have not enabled batching for the catalog rules indexer. Merchants with a lar
 
 ### Limit customer groups and shared catalogs by websites
 
-Big number of product SKUs, websites and customer groups or shared catalogs impacts indexation time of Product Price and Catalog Rule indexers because all websites are assigned to all customer groups (shared catalogs) by default. 
+Large numbers of product SKUs, websites and customer groups or shared catalogs impacts the indexation time of Product Price and Catalog Rule indexers. This is because all websites are assigned to all customer groups (shared catalogs) by default.
 
 To decrease indexation time it's possible to [exclude certain websites from customer groups (shared catalogs)]({{page.baseurl}}/extension-dev-guide/indexer-optimization.html#customer-group-limitations-by-websites).
 
