@@ -203,7 +203,7 @@ It is not possible to exclude websites from a shared catalog on a shared catalog
 No websites are excluded from a customer group or shared catalog by default.
 
 {:.bs-callout-info}
-You cannot exclude websites from `NOT LOGGED IN` customer group.
+You cannot exclude websites from the `NOT LOGGED IN` customer group.
 
 {:.bs-callout-warning}
 When certain website is added to the excluded customer group, and the customer who belongs to this group is trying to login to the account on the excluded website, this user gets `"This website is excluded from customer's group."` warning.
