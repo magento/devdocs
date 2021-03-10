@@ -191,7 +191,7 @@ To disable the Product EAV indexer in the Admin, go to **Stores** > Settings > *
 
 ## Customer group limitations by websites
 
-By default, all websites are assigned to a customer group. If there are a lot of products, websites and customer groups (shared catalogs), the indexation time of product price and catalog rule indexers can be heavily increased because websites, customer groups (shared catalogs) and product SKUs are multiplied in Product Price and Catalog Rule indexers related tables.
+By default, all websites are assigned to a customer group. If there are a lot of products, websites and customer groups (shared catalogs), the indexation time of product price and catalog rule indexers can be heavily increased because websites, customer groups (shared catalogs) and product SKUs are multiplied in Product Price and Catalog Rule indexer related tables.
 
 It is possible to exclude websites from a customer group (shared catalog) on [customer group create/edit page](https://docs.magento.com/user-guide/customers/customer-groups.html#create-a-customer-group). It can decrease Product Price and Catalog Rule indexation time because excluded websites do not participate in indexation. 
 
