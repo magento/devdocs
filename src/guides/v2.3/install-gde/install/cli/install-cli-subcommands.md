@@ -1,7 +1,6 @@
 ---
-group: installation-guide
 subgroup: 05_Command-line installation
-title: Get started with the command-line installation
+title: Prepare your system for install
 menu_title: Get started with the command-line installation
 menu_node:
 menu_order: 2
@@ -23,7 +22,8 @@ The installer is designed to be run multiple times if necessary so you can:
 *  Correct mistakes in previous installations
 *  Install Magento in a different database instance
 
-## First steps {#instgde-cli-before}
+## Log in as file system owner {#instgde-cli-before}
+
 {% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
