@@ -81,3 +81,10 @@ Attribute | Data type | Description
 ## Related topics
 
 [cmsBlocks query]({{page.baseurl}}/graphql/queries/cms-blocks.html)
+
+## Errors
+
+Error | Description
+--- | ---
+`The CMS page with the "XXXX" ID doesn't exist` | The specified CMS page ID is invalid.
+`Page id/identifier should be specified"` | The `identifier` parameter is required for identifying the CMS page.

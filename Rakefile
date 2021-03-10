@@ -74,7 +74,6 @@ task :whatsnew do
   generated_file = 'tmp/whats-new.yml'
   current_data = YAML.load_file current_file
   last_update = current_data['updated']
-
   print 'Generating data for the What\'s New digest: $ '.magenta
 
   # Generate tmp/whats-new.yml
@@ -82,7 +81,7 @@ task :whatsnew do
     if since.nil? || since.empty?
       `bin/whatsup_github since '#{last_update}'`
     elsif since.is_a? String
-      `bin/whatsup_github since #{since}`
+      `bin/whatsup_github since '#{since}'`
     else
       abort 'The "since" argument must be a string. Example: "jul 4"'
     end
