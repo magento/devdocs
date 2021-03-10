@@ -18,7 +18,7 @@ Composer is required to install and manage updates to the Live Search module.
 To install Live Search:
 
 ```text
-$   composer require magento/module-premium-search
+$   composer require magento/module-live-search
 ```
 
 ### Dependencies
@@ -40,19 +40,19 @@ To uninstall Live Search, see [Uninstall modules]({{ page.baseurl }}/guides/v2.4
 To update Live Search:
 
 ```text
-$   composer update magento/module-premium-search–with-dependencies
+$   composer update magento/module-live-search–with-dependencies
 ```
 
 To update to a major version, such as from 1.0 to 2.0, you need to edit the project’s root Composer `.json` file.
 
-1.  Open the `main.json` file and search for `magento/module-premium-search`.
+1.  Open the `main.json` file and search for `magento/module-live-search`.
 
 1.  In the `.json` file, update the version number in the code:
 
     ```text
       "require": {
         ...
-       "magento/module-premium-search": "^2.0",
+       "magento/module-live-search": "^2.0",
         ...
     }
    ```
@@ -60,5 +60,5 @@ To update to a major version, such as from 1.0 to 2.0, you need to edit the proj
 1.  **Save** `composer.json` and **Run**.
 
     ```text
-    $  composer update magento/premium-search–with-dependencies
+    $  composer update magento/live-search–with-dependencies
     ```
