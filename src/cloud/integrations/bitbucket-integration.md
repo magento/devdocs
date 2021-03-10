@@ -146,7 +146,7 @@ To create an OAuth consumer in Bitbucket:
 1. Verify the project integration.
 
    ```bash
-   magento-cloud integrations -p '<project-ID>'
+   magento-cloud integrations -p <project-ID>
    ```
 
    ```terminal
@@ -236,11 +236,11 @@ To activate a branch created with Bitbucket:
    ```terminal
    Your environments are:
    +---------------------+----------------+--------+
-   | ID                  | Name           | Status |
+   | ID                  | Name           | Status |
    +---------------------+----------------+--------+
-   | master              | Master         | Active |
+   | master              | Master         | Active |
    |  integration        | integration    | Active |
-   |    from-bitbucket * | from-bitbucket | Active |
+   |    from-bitbucket * | from-bitbucket | Active |
    +---------------------+----------------+--------+
    * - Indicates the current environment
    ```
@@ -265,7 +265,7 @@ To remove the Bitbucket integration:
 1. Delete the integration.
 
    ```bash
-   magento-cloud integration:delete <project-ID>
+   magento-cloud integration:delete <int-ID>
    ```
 
 Also, you can remove the Bitbucket integration by logging in to your Bitbucket account and revoking the OAuth grant on the account _Settings_ page.
