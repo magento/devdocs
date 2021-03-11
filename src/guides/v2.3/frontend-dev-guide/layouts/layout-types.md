@@ -20,10 +20,12 @@ This article gives a comprehensive description of each layout file type.
 
 ## Page layout {#layout-types-page}
 
-Page layout declares the wireframe of a page inside the `<body>` section, for example one-column layout or two-column layout.
+Page layout declares the wireframe of a page inside the `<body>` section. For example, one-column layout or two-column layout.
 
 Allowed layout instructions:
 
+*  `<head>`
+*  `<body>`
 *  [`<container>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont)
 *  [`<referenceContainer>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref)
 *  [`<move>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv)
