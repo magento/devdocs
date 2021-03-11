@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Indexer optimization
+redirect_from:
+  - /guides/v2.4/extension-dev-guide/indexer-batch.html
 ---
 
 ## Indexer Batching
