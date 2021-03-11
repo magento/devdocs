@@ -20,7 +20,7 @@ The client calls the search service from the storefront to retrieve (filterable,
 
 To construct a dynamic query, the search service needs to know which attributes are searchable and their weight. Live Search honors Magento search weights (1-10, where 10 is the highest priority).
 
-![Live Search indexing client search diagram]({{ page.baseurl }}/live-search/images/indexing-pipeline.png)
+![Live Search indexing client search diagram]({{ page.baseurl }}/live-search/images/indexing-pipeline.svg)
 <br />_Indexing pipeline_
 
 1. Get list of Search merchants from `registry-service`, which returns list of `environmentId`s.
@@ -37,12 +37,20 @@ To construct a dynamic query, the search service needs to know which attributes 
 
 The Live Search API allows a client to sort by any sortable product attribute by setting the [storefront property](https://docs.magento.com/user-guide/stores/attributes-product.html), `Used for sorting in product listings` to `Yes`. Depending on the theme, this setting causes the attribute to be included as an option in the [Sort by](https://docs.magento.com/user-guide/catalog/navigation-pagination.html) control on catalog pages. Up to 300 product attributes can be indexed by Live Search, with [storefront properties](https://docs.magento.com/user-guide/stores/attributes-product.html) that are searchable and filterable.
 
+The index metadata is stored in DynamoDB, accessible by Search Admin service with gRPC.
+
+![Live Search index metadata API diagram]({{ page.baseurl }}/live-search/images/index-metadata-api-diagram.svg)
+<br />_Index Metadata API_
+
+1. Indexing pipeline stores/retrieves index metadata (attribute snapshot & attributes indexed in Elasticsearch.
+
+1. Client queries index metadata (sortable, filterable) with search-service public graphQL API.
+
+1. Search-service queries `search-admin-service` with gRPC.
+
 ### Sortable attribute workflow
 
 The Live Search API endpoint returns attribute metadata that includes the sortable property setting. After an attribute is updated, it might take up to two hours for the metadata returned to sync with Magento attribute data.
-
-![Live Search indexing client search diagram]({{ page.baseurl }}/live-search/images/indexing-client-search.png)
-<br />_Client search_
 
 1.	Merchant updates attribute property to make it sortable.
 
