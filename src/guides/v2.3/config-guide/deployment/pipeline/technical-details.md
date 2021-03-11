@@ -112,7 +112,7 @@ On your development system:
 
 1. Add your modified code and the shared configuration to source control.
 
-1. to remove generated php code and static assets files while in development, run the following commands:
+1. To remove generated php code and static assets files while in development, run the following commands:
 
    ```bash
    rm -r var/view_preprocessed/*
