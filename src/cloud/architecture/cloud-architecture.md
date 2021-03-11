@@ -46,6 +46,7 @@ For comparison, each plan includes the following infrastructure features and sup
             <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> APM (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
           </li>
           <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for {{site.data.var.ee}}</li>
+          <li>Egress filtering (outbound firewall)</li>
         </ul>
       </td>
       <td>
