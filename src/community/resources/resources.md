@@ -31,7 +31,7 @@ We have [channels][] for each project, but the following channels are recommende
 [technical guidelines]: {{ site.baseurl }}/guides/v2.3/coding-standards/technical-guidelines.html
 [coding standards]: {{ site.baseurl }}/guides/v2.3/coding-standards/bk-coding-standards.html
 [Magento Community Engineering Slack]: https://magentocommeng.slack.com
-[self signup]: https://tinyurl.com/engcom-slack
+[self signup]: https://opensource.magento.com/slack
 [general]: https://magentocommeng.slack.com/messages/C4YS78WE6
 [github]: https://magentocommeng.slack.com/messages/C7KB93M32
 [public-backlog]: https://magentocommeng.slack.com/messages/CCV3J3RV5

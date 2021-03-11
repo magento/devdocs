@@ -227,7 +227,8 @@ To use the New Relic Logs application:
    {:.bs-callout-tip}
    You can also access the New Relic Logs application from the New Relic ONE home page. See [New Relic ONE core UI components][New Relic One UI].
 
-1. To review infrastructure log data for cloud services, enter the query string `has: "ident"` in the _Find logs where_ field. Then, click **Query logs**.
+1. To review infrastructure log data for cloud services, enter the query string `has: "filePath"` in the _Find logs where_ field. Then, click **Query logs**.
+   The names of the log files are stored in the `filePath` field, with full paths to the log file.
 
    ![Cloud project New Relic service log data]({{ site.baseurl }}/common/images/cloud/cloud_new-relic-log-query-has-ident.png){:width="650px"}
 
@@ -259,6 +260,8 @@ Based on industry best practices, the policy includes a collection of alerts tha
 | disk space    | NRI   | Pro
 | CPU usage     | NRI   | Pro
 | memory usage  | NRI   | Pro
+| Redis         | NRI   | Pro
+| MariaDB       | NRI   | Pro
 
 When site infrastructure or application conditions trigger an alert threshold, New Relic sends alert notifications so that you can proactively address the issue.  See [Managed Alerts for Magento Commerce] in the _Magento Help Center_ for details about alert thresholds and troubleshooting steps to resolve the issues that triggered the alert.
 

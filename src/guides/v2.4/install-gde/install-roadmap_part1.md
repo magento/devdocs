@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Installation roadmap (reference)
 functional_areas:
   - Install

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 03_install
 title: During installation, Reflection Exception error
 menu_title: During installation, Reflection Exception error
@@ -31,7 +30,7 @@ cd <your Magento install directory>/var
 ```
 
 ```bash
-rm -rf cache/* di/* generation/* page_cache/*
+rm -r cache/* generated/*/* page_cache/*
 ```
 
 #### Redis

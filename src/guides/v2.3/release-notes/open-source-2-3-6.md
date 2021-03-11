@@ -559,6 +559,12 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 *  The performance of catalog search has improved. Disabling **Enable Search Suggestions**  (**Stores**  >  **Configuration**  >  **Catalog** >  **Catalog Search**) works as expected. Previously, Magento queried the MySQL search_query table instead of Elasticsearch for autocomplete search suggestions. [GitHub-25534](https://github.com/magento/magento2/issues/25534)
 
+### Shipping
+
+<!--- MC-32819-->
+
+*  You can now ship an order to multiple addresses if one of the ordered products is a virtual product. Previously, Magento successfully placed the order for the physical products, but the virtual product order was empty.
+
 ### Sitemap
 
 <!--- MC-35182-->
@@ -635,7 +641,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 *  The checkout process now successfully progresses from shipping to payment when using Internet Explorer 11.x with Vertex. Previously, Magento threw a JavaScript error when the shopper tried to proceed from shipping to payment.
 
-*  The process of submitting an invoice to Vertex has been been optimized, and performance has improved.
+*  The process of submitting an invoice to Vertex has been optimized, and performance has improved.
 
 *  Tax details are now included as expected in the database.
 
