@@ -256,7 +256,7 @@ It is also possible to create a custom field type. This is often done when a spe
 -  Creating a block in the `adminhtml` area
 -  Setting the `type=""` to the path to this block
 
-The block itself requires, at a minimum, a `__construct` method and a `getElementalHtml()` method. The [Magento_OfflineShipping]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/OfflineShipping) is a simple example of a custom type.
+The block itself requires, at a minimum, a `__construct` method and a `getElementHtml()` method. The [Magento_OfflineShipping]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/OfflineShipping) is a simple example of a custom type.
 
 For example, in the OfflineShipping module, the Export button is defined in `Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export` and the field definition looks like:
 
