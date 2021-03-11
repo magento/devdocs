@@ -57,8 +57,6 @@ To verify installed extensions:
     yum -y install php74u-pdo php74u-mysqlnd php74u-opcache php74u-xml php74u-gd php74u-devel php74u-mysql php74u-intl php74u-mbstring php74u-bcmath php74u-json php74u-iconv php74u-soap
    ```
 
-{:.bs-callout-info}
-The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 ## Check PHP settings
 
