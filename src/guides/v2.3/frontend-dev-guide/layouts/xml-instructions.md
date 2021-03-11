@@ -148,7 +148,7 @@ The following tables give a detailed description of the results you can get usin
 | Several elements have `before` or `after` set to dash (-) | All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined. |
 | The `before` or `after` attribute's value refers to an element that is not located in the parent node of the element being defined. | The element displays at a random location that doesn't violate requirements for the correctly positioned elements. |
 
-Sample of usage in layout:
+Sample usage in a layout:
 
 ```xml
 <referenceContainer name="page.wrapper">
