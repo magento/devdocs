@@ -355,6 +355,8 @@ To set those values:
    1. Input values into the **Sender Name** and **Sender Email** fields.
    1. Click the **Save Config** button.
 
+   ![Set the store email from Magento Admin]({{ site.baseurl }}/common/images/set_store_email.png)
+
 The sales emails are configured to display all of the above values, if they're configured in the admin. If you want to add those values to other email templates, you can use the following variables:
 
 ```text
