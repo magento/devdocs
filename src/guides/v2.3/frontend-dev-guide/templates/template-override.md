@@ -26,15 +26,15 @@ The `category.image` block is rendered by the `image.phtml` template in the `cat
 
 The templates directory of `Magento_Catalog` is `app/code/Magento/Catalog/view/frontend/templates`.
 
-Templates can also be specified in the PHP Block class using the `$_template` protected variable.
+Templates may also be specified in the PHP `Block` class using the `$_template` protected variable.
 
-Here is the example from `app/code/Magento/Review/view/frontend/layout/review_product_view.xml` layout:
+Here is an example from the `app/code/Magento/Review/view/frontend/layout/review_product_view.xml` layout:
 
 ```xml
 <block class="Magento\Review\Block\View" name="review_view" ifconfig="catalog/review/active"/>
 ```
 
-Template for the `review_view` block is not specified using the `template` attribute of the `<block>` layout instruction. Instead it is specified in the `app/code/Magento/Review/Block/View.php` block class.
+The template for the `review_view` block is not specified using the `template` attribute of the `<block>` layout instruction. Instead it is specified in the `app/code/Magento/Review/Block/View.php` block class.
 
 ```php
 protected $_template = 'Magento_Review::view.phtml';
