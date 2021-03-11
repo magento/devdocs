@@ -347,6 +347,9 @@ To set those values:
    1. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields.
    1. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
    1. Click the **Save Config** button.
+
+   ![Set contact information in emails from Magento Admin]({{ site.baseurl }}/common/images/contact_information_email.png)
+
 1. To set the store email:
    1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
    1. Input values into the **Sender Name** and **Sender Email** fields.
