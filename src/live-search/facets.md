@@ -11,7 +11,7 @@ See [Facets](https://docs.magento.com/user-guide/live-search/facets.html) in the
 
 ## Types of facets
 
-There are two types of facets.
+There are two types of facets: Static and dynamic.
 
 ### Static
 
