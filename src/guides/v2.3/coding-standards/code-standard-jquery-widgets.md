@@ -118,10 +118,10 @@ There are two ways to initialize a component on a selector:
   ```html
   <script type="text/x-magento-init">
   {
-     "#element-id": { 
-         "Vendor_Module/js/myfile": {} 
-     } 
-  } 
+     "#element-id": {
+         "Vendor_Module/js/myfile": {}
+     }
+  }
   </script>
   ```
 
@@ -159,13 +159,13 @@ When a component is initialized, it is also important to send parameters to it, 
   ```html
   <script type="text/x-magento-init">
   {
-     "#element-id": { 
+     "#element-id": {
          "Vendor_Module/js/myfile1": {
              "parameter":"value",
              "status":<?php echo $block->getStatus(); ?>
-         } 
+         }
      }
-  } 
+  }
   </script>
   ```
 
