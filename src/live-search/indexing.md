@@ -21,7 +21,7 @@ The client calls the search service from the storefront to retrieve (filterable,
 To construct a dynamic query, the search service needs to know which attributes are searchable and their weight. Live Search honors Magento search weights (1-10, where 10 is the highest priority).
 
 ![Live Search indexing client search diagram]({{ page.baseurl }}/live-search/images/indexing-pipeline.svg)
-<br />_Indexing pipeline_
+_Indexing pipeline_
 
 1. Get list of Search merchants from `registry-service`, which returns list of `environmentId`s.
 
@@ -39,8 +39,8 @@ The Live Search API allows a client to sort by any sortable product attribute by
 
 The index metadata is stored in DynamoDB, accessible by Search Admin service with gRPC.
 
-![Live Search index metadata API diagram]({{ page.baseurl }}/live-search/images/index-metadata-api-diagram.svg)
-<br />_Index Metadata API_
+![Live Search index metadata API diagram]({{ page.baseurl }}/live-search/images/indexing-metadata-api.svg)
+_Indexing Metadata API_
 
 1. Indexing pipeline stores/retrieves index metadata (attribute snapshot & attributes indexed in Elasticsearch.
 
