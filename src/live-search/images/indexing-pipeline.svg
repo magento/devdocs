@@ -4,7 +4,7 @@
 	 viewBox="0 0 1358.43 872.85" style="enable-background:new 0 0 1358.43 872.85;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
-	.st1{fill:none;stroke:#B20202;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:6;}
+	.st1{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:6;}
 	.st2{fill:#FFEFE3;}
 	.st3{font-family:'OpenSans-Semibold';}
 	.st4{font-size:24px;}
@@ -12,84 +12,107 @@
 	.st6{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 	.st7{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
 	.st8{fill:#DAEADA;stroke:#000000;stroke-miterlimit:10;}
-	.st9{fill:#282828;}
-	.st10{font-family:'Wingdings2';}
-	.st11{font-size:48px;}
+	.st9{fill:#B62E35;}
+	.st10{font-family:'OpenSans-Bold';}
+	.st11{font-size:30px;}
 </style>
 <g>
+	<rect x="1.5" y="1.5" class="st0" width="1355.43" height="869.85"/>
+	<rect x="1.5" y="1.5" class="st1" width="1355.43" height="869.85"/>
+	<rect x="1.5" y="1.5" class="st2" width="1355.43" height="869.85"/>
+</g>
+<text transform="matrix(1 0 0 1 24.6325 35.5859)" class="st3 st4">Indexing Pipeline</text>
+<path class="st5" d="M296.72,529.44H64.93c-6.63,0-12-5.37-12-12V428.4c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
+	C308.72,524.06,303.35,529.44,296.72,529.44z"/>
+<text transform="matrix(1 0 0 1 89.9367 477.6777)" class="st3 st4">Registry Service</text>
+<path class="st5" d="M798.69,171.62H566.91c-6.63,0-12-5.37-12-12V70.58c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
+	C810.69,166.24,805.32,171.62,798.69,171.62z"/>
+<text transform="matrix(1 0 0 1 597.0057 109.0967)"><tspan x="0" y="0" class="st3 st4">Search Admin </tspan><tspan x="35.74" y="28.8" class="st3 st4"> Service</tspan></text>
+<g>
+	<path d="M310.72,765.11c159.61-2.43,240.8-0.19,240.8-0.19"/>
 	<g>
-		<rect x="1.5" y="1.5" class="st0" width="1355.43" height="869.85"/>
-		<rect x="1.5" y="1.5" class="st1" width="1355.43" height="869.85"/>
-		<rect x="1.5" y="1.5" class="st2" width="1355.43" height="869.85"/>
-	</g>
-	<text transform="matrix(1 0 0 1 24.6325 35.5859)" class="st3 st4">Indexing Pipeline</text>
-	<path class="st5" d="M296.72,529.44H64.93c-6.63,0-12-5.37-12-12V428.4c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
-		C308.72,524.06,303.35,529.44,296.72,529.44z"/>
-	<text transform="matrix(1 0 0 1 89.9367 477.6777)" class="st3 st4">Registry Service</text>
-	<path class="st5" d="M798.69,171.62H566.91c-6.63,0-12-5.37-12-12V70.58c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
-		C810.69,166.24,805.32,171.62,798.69,171.62z"/>
-	<text transform="matrix(1 0 0 1 597.0057 109.0967)"><tspan x="0" y="0" class="st3 st4">Search Admin </tspan><tspan x="35.74" y="28.8" class="st3 st4"> Service</tspan></text>
-	<g>
-		<path d="M310.72,765.11c159.61-2.43,240.8-0.19,240.8-0.19"/>
+		<path class="st6" d="M321.24,764.96c152.66-2.18,230.28-0.03,230.28-0.03"/>
 		<g>
-			<path class="st6" d="M321.24,764.96c152.66-2.18,230.28-0.03,230.28-0.03"/>
-			<g>
-				<polygon points="322.74,752.85 322.99,777.14 310.72,765.11 				"/>
-			</g>
+			<polygon points="322.74,752.85 322.99,777.14 310.72,765.11 			"/>
 		</g>
 	</g>
+</g>
+<g>
+	<path d="M1099.53,224.8"/>
+</g>
+<g>
+	<line x1="617.28" y1="171.62" x2="617.28" y2="416.75"/>
 	<g>
-		<path d="M1099.53,224.8"/>
-	</g>
-	<g>
-		<line x1="620.28" y1="171.62" x2="620.28" y2="416.75"/>
+		<line class="st6" x1="617.28" y1="182.13" x2="617.28" y2="416.75"/>
 		<g>
-			<line class="st6" x1="620.28" y1="182.13" x2="620.28" y2="416.75"/>
-			<g>
-				<polygon points="632.43,183.76 608.14,183.76 620.28,171.62 				"/>
-			</g>
+			<polygon points="629.43,183.76 605.14,183.76 617.28,171.62 			"/>
 		</g>
 	</g>
-	<path class="st5" d="M297.72,814.72H65.93c-6.63,0-12-5.37-12-12v-89.04c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
-		C309.72,809.35,304.35,814.72,297.72,814.72z"/>
-	<text transform="matrix(1 0 0 1 80.9367 762.962)" class="st3 st4">Metadata Service</text>
-	<path class="st7" d="M795.11,814.17H563.32c-6.63,0-12-5.37-12-12V428.75c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v373.42
-		C807.11,808.8,801.74,814.17,795.11,814.17z"/>
-	<text transform="matrix(1 0 0 1 629.3004 605.3903)"><tspan x="0" y="0" class="st3 st4">Indexing </tspan><tspan x="3.57" y="28.8" class="st3 st4">Pipeline</tspan></text>
+</g>
+<path class="st5" d="M297.72,814.72H65.93c-6.63,0-12-5.37-12-12v-89.04c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
+	C309.72,809.35,304.35,814.72,297.72,814.72z"/>
+<text transform="matrix(1 0 0 1 80.9367 762.962)" class="st3 st4">Metadata Service</text>
+<path class="st7" d="M795.11,814.17H563.32c-6.63,0-12-5.37-12-12V428.75c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v373.42
+	C807.11,808.8,801.74,814.17,795.11,814.17z"/>
+<text transform="matrix(1 0 0 1 629.3004 605.3903)"><tspan x="0" y="0" class="st3 st4">Indexing </tspan><tspan x="3.57" y="28.8" class="st3 st4">Pipeline</tspan></text>
+<g>
+	<path d="M310.72,473.48c159.61-2.43,240.8-0.19,240.8-0.19"/>
 	<g>
-		<path d="M310.72,473.48c159.61-2.43,240.8-0.19,240.8-0.19"/>
+		<path class="st6" d="M321.24,473.33c152.66-2.18,230.28-0.03,230.28-0.03"/>
 		<g>
-			<path class="st6" d="M321.24,473.33c152.66-2.18,230.28-0.03,230.28-0.03"/>
-			<g>
-				<polygon points="322.74,461.21 322.99,485.51 310.72,473.48 				"/>
-			</g>
+			<polygon points="322.74,461.21 322.99,485.51 310.72,473.48 			"/>
 		</g>
 	</g>
+</g>
+<g>
+	<line x1="743.07" y1="171.62" x2="743.07" y2="416.75"/>
 	<g>
-		<line x1="743.07" y1="171.62" x2="743.07" y2="416.75"/>
+		<line class="st6" x1="743.07" y1="182.13" x2="743.07" y2="416.75"/>
 		<g>
-			<line class="st6" x1="743.07" y1="182.13" x2="743.07" y2="416.75"/>
-			<g>
-				<polygon points="755.22,183.76 730.93,183.76 743.07,171.62 				"/>
-			</g>
+			<polygon points="755.22,183.76 730.93,183.76 743.07,171.62 			"/>
 		</g>
 	</g>
+</g>
+<g>
+	<path d="M807.65,599.48c159.61-2.43,240.8-0.19,240.8-0.19"/>
 	<g>
-		<path d="M807.65,599.48c159.61-2.43,240.8-0.19,240.8-0.19"/>
+		<path class="st6" d="M807.65,599.48c126.41-1.93,203.64-0.92,230.29-0.42"/>
 		<g>
-			<path class="st6" d="M807.65,599.48c126.41-1.93,203.64-0.92,230.29-0.42"/>
-			<g>
-				<polygon points="1036.48,586.98 1036.15,611.28 1048.46,599.3 				"/>
-			</g>
+			<polygon points="1036.48,586.98 1036.15,611.28 1048.46,599.3 			"/>
 		</g>
 	</g>
-	<path class="st8" d="M1292.24,814.17h-231.79c-6.63,0-12-5.37-12-12V428.75c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12
-		v373.42C1304.24,808.8,1298.87,814.17,1292.24,814.17z"/>
-	<text transform="matrix(1 0 0 1 1095.1937 599.4823)"><tspan x="0" y="0" class="st3 st4">Elasticsearch </tspan><tspan x="34.08" y="28.8" class="st3 st4">Cluster</tspan></text>
-	<text transform="matrix(1 0 0 1 401.7837 517.959)" class="st9 st10 st11">u</text>
-	<text transform="matrix(1 0 0 1 401.7838 808.7986)" class="st9 st10 st11">v</text>
-	<text transform="matrix(1 0 0 1 566.598 305.7886)" class="st9 st10 st11">w</text>
-	<text transform="matrix(1 0 0 1 903.4114 590.2422)" class="st9 st10 st11">x</text>
-	<text transform="matrix(1 0 0 1 752.483 305.7888)" class="st9 st10 st11">y</text>
+</g>
+<path class="st8" d="M1292.24,814.17h-231.79c-6.63,0-12-5.37-12-12V428.75c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12
+	v373.42C1304.24,808.8,1298.87,814.17,1292.24,814.17z"/>
+<text transform="matrix(1 0 0 1 1095.1937 599.4823)"><tspan x="0" y="0" class="st3 st4">Elasticsearch </tspan><tspan x="34.08" y="28.8" class="st3 st4">Cluster</tspan></text>
+<g>
+	<g>
+		<circle class="st9" cx="431.12" cy="501.52" r="18.2"/>
+	</g>
+	<text transform="matrix(1 0 0 1 421.1136 511.9034)" class="st0 st10 st11">1</text>
+</g>
+<g>
+	<g>
+		<circle class="st9" cx="923.33" cy="572.1" r="18.2"/>
+	</g>
+	<text transform="matrix(1 0 0 1 913.3288 582.4869)" class="st0 st10 st11">4</text>
+</g>
+<g>
+	<g>
+		<circle class="st9" cx="591.4" cy="288.59" r="18.2"/>
+	</g>
+	<text transform="matrix(1 0 0 1 582.3942 298.9754)" class="st0 st10 st11">3</text>
+</g>
+<g>
+	<g>
+		<circle class="st9" cx="769.18" cy="288.59" r="18.2"/>
+	</g>
+	<text transform="matrix(1 0 0 1 760.1749 298.9754)" class="st0 st10 st11">5</text>
+</g>
+<g>
+	<g>
+		<circle class="st9" cx="431.27" cy="788.79" r="18.2"/>
+	</g>
+	<text transform="matrix(1 0 0 1 422.2687 799.1707)" class="st0 st10 st11">2</text>
 </g>
 </svg>

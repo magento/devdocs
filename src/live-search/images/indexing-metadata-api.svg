@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1356.46 792.91" style="enable-background:new 0 0 1356.46 792.91;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#DAE5DA;}
+	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:6;}
+	.st2{fill:#FFEFE3;}
+	.st3{font-family:'OpenSans-Semibold';}
+	.st4{font-size:24px;}
+	.st5{fill:#F7E3E4;stroke:#000000;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st7{fill:#F3F3F3;stroke:#000000;stroke-miterlimit:10;}
+	.st8{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st9{fill:#DAEADA;stroke:#000000;stroke-miterlimit:10;}
+	.st10{fill:#DAEADA;}
+	.st11{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st12{stroke:#DAEADA;stroke-width:6;stroke-miterlimit:10;}
+	.st13{fill:#BDCCD4;}
+	.st14{fill:#B62E35;}
+	.st15{fill:#FFFFFF;}
+	.st16{font-family:'OpenSans-Bold';}
+	.st17{font-size:30px;}
+</style>
+<g>
+	<rect x="0.5" y="0.5" class="st0" width="1355.46" height="791.91"/>
+	<rect x="0.5" y="0.5" class="st1" width="1355.46" height="791.91"/>
+	<rect x="0.5" y="0.5" class="st2" width="1355.46" height="791.91"/>
+</g>
+<text transform="matrix(1 0 0 1 25.1325 33.657)" class="st3 st4">Index Metadata API</text>
+<path class="st5" d="M799.19,258.18H567.41c-6.63,0-12-5.37-12-12v-89.04c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
+	C811.19,252.8,805.82,258.18,799.19,258.18z"/>
+<text transform="matrix(1 0 0 1 603.0428 204.6562)" class="st3 st4">Search Service</text>
+<g>
+	<line x1="678.78" y1="258.18" x2="679.22" y2="388.48"/>
+	<g>
+		<line class="st6" x1="678.78" y1="258.18" x2="679.18" y2="377.97"/>
+		<g>
+			<polygon points="691.33,376.3 667.03,376.38 679.22,388.48 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<path d="M311.22,202.04c159.61-2.43,240.8-0.19,240.8-0.19"/>
+	<g>
+		<path class="st6" d="M321.74,201.89c120.19-1.71,193.87-0.75,219.78-0.26"/>
+		<g>
+			<polygon points="323.24,189.77 323.49,214.07 311.22,202.04 			"/>
+		</g>
+		<g>
+			<polygon points="540.04,189.55 539.71,213.84 552.02,201.86 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<path d="M809.15,445.04c159.61-2.43,240.8-0.19,240.8-0.19"/>
+	<g>
+		<path class="st6" d="M809.15,445.04c126.41-1.93,203.64-0.92,230.29-0.42"/>
+		<g>
+			<polygon points="1037.98,432.54 1037.65,456.84 1049.96,444.85 			"/>
+		</g>
+	</g>
+</g>
+<path class="st7" d="M297.61,309.35H65.82c-6.63,0-12-5.37-12-12V111.96c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v185.38
+	C309.61,303.98,304.24,309.35,297.61,309.35z"/>
+<text transform="matrix(1 0 0 1 146.1734 206.5049)" class="st3 st4">Client</text>
+<path class="st5" d="M795.02,501.19H563.23c-6.63,0-12-5.37-12-12v-89.04c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
+	C807.02,495.81,801.64,501.19,795.02,501.19z"/>
+<text transform="matrix(1 0 0 1 598.8788 436.4814)"><tspan x="0" y="0" class="st3 st4">Search Admin </tspan><tspan x="35.74" y="28.8" class="st3 st4"> Service</tspan></text>
+<path class="st8" d="M800.61,742.5H568.82c-6.63,0-12-5.37-12-12v-89.04c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
+	C812.61,737.13,807.24,742.5,800.61,742.5z"/>
+<text transform="matrix(1 0 0 1 629.8004 674.9499)"><tspan x="0" y="0" class="st3 st4">Indexing </tspan><tspan x="3.57" y="28.8" class="st3 st4">Pipeline</tspan></text>
+<g>
+	<line x1="679.32" y1="500.83" x2="679.76" y2="631.14"/>
+	<g>
+		<line class="st6" x1="679.36" y1="511.35" x2="679.76" y2="631.14"/>
+		<g>
+			<polygon points="691.51,512.93 667.22,513.02 679.32,500.83 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<path d="M1108.08,342.85"/>
+</g>
+<ellipse class="st9" cx="1169.77" cy="506.98" rx="117.5" ry="38"/>
+<rect x="1052.27" y="373.48" class="st9" width="235" height="134.5"/>
+<rect x="1053.27" y="454.48" class="st10" width="233.11" height="1.79"/>
+<path class="st11" d="M1287.27,389.01"/>
+<path class="st11" d="M1052.27,389.01"/>
+<g>
+	<path class="st9" d="M1052.43,395.85c0,20.99,52.61,38,117.5,38c64.89,0,117.5-17.01,117.5-38
+		C1287.43,395.64,1052.43,395.13,1052.43,395.85z"/>
+	<line class="st9" x1="1051.43" y1="395.85" x2="1288.1" y2="395.85"/>
+</g>
+<rect x="1052.27" y="377.7" class="st11" width="235" height="130.28"/>
+<text transform="matrix(1 0 0 1 1137.1693 469.1624)"><tspan x="0" y="0" class="st3 st4">DAX + </tspan><tspan x="-31.18" y="28.8" class="st3 st4">DynamoDB </tspan></text>
+<line class="st12" x1="1052.98" y1="395.48" x2="1285.89" y2="395.48"/>
+<g>
+	<path class="st9" d="M1052.43,385.05c0,20.99,52.46,38,117.17,38c64.71,0,117.17-17.01,117.17-38
+		C1286.77,384.85,1052.43,384.34,1052.43,385.05z"/>
+	<line class="st9" x1="1051.43" y1="385.05" x2="1287.43" y2="385.05"/>
+</g>
+<line class="st12" x1="1053.89" y1="385.05" x2="1286.79" y2="385.05"/>
+<line class="st13" x1="1053.36" y1="507.98" x2="1286.27" y2="507.98"/>
+<line class="st12" x1="1053.89" y1="507.98" x2="1286.79" y2="507.98"/>
+<ellipse class="st9" cx="1169.77" cy="373.98" rx="117.5" ry="38"/>
+<g>
+	<circle class="st14" cx="430.48" cy="173.81" r="18.2"/>
+</g>
+<text transform="matrix(1 0 0 1 421.5744 184.2598)" class="st15 st16 st17">2</text>
+<g>
+	<g>
+		<circle class="st14" cx="650.13" cy="566.26" r="18.2"/>
+	</g>
+	<text transform="matrix(1 0 0 1 640.6553 576.6484)" class="st15 st16 st17">1</text>
+</g>
+<g>
+	<circle class="st14" cx="649.39" cy="313.15" r="18.2"/>
+</g>
+<text transform="matrix(1 0 0 1 641.7251 323.3299)" class="st15 st16 st17">3</text>
+</svg>
