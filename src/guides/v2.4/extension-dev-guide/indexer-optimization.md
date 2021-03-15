@@ -199,7 +199,7 @@ You can exclude websites from a customer group or shared catalog on the [custome
 
 When a customer group with a new, excluded website is saved, the `Product Price`, `Catalog Rule` and `Catalog Search` indexes are invalidated. If you have a large number of products, websites, and customer groups, we recommended you pause the reindex process, until you have excluded websites from the customer groups.
 
-It is not possible to exclude websites from a shared catalog on a shared catalog create/edit page. It is possible to exclude websites from a customer group that is created from a shared catalog.
+You cannot exclude websites from a shared catalog on a shared catalog create/edit page. However, you can exclude websites from a customer group that is created from a shared catalog.
 
 {:.bs-callout-info}
 By default, no websites are excluded from a customer group or shared catalog.
