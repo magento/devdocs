@@ -18,7 +18,7 @@ You can checkout a specific branch after you clone the repository to your local 
 
 The {{site.data.var.ee}} repository requires authentication, so you must prepare the following:
 
--  **[Magento authentication key][]**—You must have an authentication key to access the {{site.data.var.ee}} repository and to enable install and update commands for your project.
+-  **[Magento authentication key][]**—You must have an authentication key to access the {{site.data.var.ee}} Composer package on `repo.magento.com` and to enable install and update commands for your project.
 
 -  **[GitHub personal access token][gh-token]**—Composer requires a _personal access token_ in the `github-oauth` property to authorize GitHub repository access. When you create this token, select all options in the `repo` scope.
 
@@ -53,7 +53,7 @@ To create an authentication file:
 1. Save your changes and exit the text editor.
 
 {:.bs-callout-warning}
-Be aware that pushing an `auth.json` file to a public repository can expose your credentials.
+Pushing an `auth.json` file to a public repository can expose your credentials.
 
 After completing the tasks discussed on this page, see [Update installation dependencies][].
 
