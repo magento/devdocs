@@ -88,7 +88,7 @@ The Upgrade Compatibility Tool provides a report identifying the affected non-Ma
 
 #### Example with a list of errors/warnings
 
-```php
+```terminal
 File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
 ------------------------------------------------------------------
 
@@ -114,7 +114,7 @@ The lower this number is, the easier is to perform the upgrade.
 
 #### Example of a summary report
 
-```php
+```terminal
  ------------------------ --------
   Installed version        2.3.5
   Magento version          2.4.1
@@ -134,9 +134,37 @@ Regarding the GraphQL schema compatibility comparison, the output would be very 
 
 #### Example with a list of errors/warnings for GraphQL
 
-```php
+```terminal
  *   [ERROR] FIELD_CHANGED_KIND: ConfigurableProduct.gender changed type from Int to String.
  *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
 ```
 
 See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) for more information.
+
+## Troubleshooting
+
+### Empty output
+
+{:.bs-callout-info}
+The `M2_VERSION` is the target Magento 2 version you want to compare with your own Magento with.
+
+After running this command 
+
+```bash
+bin/uct upgrade:check INSTALLATION_DIR -c M2_VERSION
+```
+
+if the only output is `Upgrade compatibility tool`
+
+```terminal
+$ bin/uct upgrade:check /var/www/project/magento/ -c 2.4.1
+Upgrade compatibility tool
+$
+```
+{:.no-copy}
+
+You should avoid PHP memory limitations:
+
+```bash
+php -d memory_limit=-1 /bin/uct upgrade:check INSTALLATION_DIR -c M2_VERSION
+```
