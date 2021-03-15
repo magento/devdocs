@@ -31,7 +31,7 @@ We have not enabled batching for the catalog rules indexer. Merchants with a lar
 
 A large number of product SKUs, websites, customer groups, or shared catalogs will impact the running time of the Product Price and Catalog Rule indexers. This is because by default, all websites are assigned to all customer groups (shared catalogs).
 
-To decrease indexation time, it is possible to [exclude certain websites from customer groups (shared catalogs)]({{page.baseurl}}/extension-dev-guide/indexer-optimization.html#customer-group-limitations-by-websites).
+To decrease indexation time, you can [exclude certain websites from customer groups (shared catalogs)]({{page.baseurl}}/extension-dev-guide/indexer-optimization.html#customer-group-limitations-by-websites).
 
 ## Set up Redis
 
