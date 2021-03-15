@@ -197,7 +197,7 @@ By default, all websites are assigned to a customer group. If there are a large 
 
 You can exclude websites from a customer group or shared catalog on the [customer group create/edit page](https://docs.magento.com/user-guide/customers/customer-groups.html#create-a-customer-group). Excluding websites can decrease `Product Price` and `Catalog Rule` indexing time, because excluded websites are not indexed.
 
-When a customer group with a new, excluded website is saved, the `Product Price`, `Catalog Rule` and `Catalog Search` indexes are invalidated. If you have a large number of products, websites, and customer groups, we recommended you pause the reindex process, until you have excluded websites from the customer groups.
+When a customer group with a new, excluded website is saved, the `Product Price`, `Catalog Rule` and `Catalog Search` indexes are invalidated. If you have a large number of products, websites, and customer groups, we recommended you pause the reindex process until you have excluded websites from the customer groups.
 
 You cannot exclude websites from a shared catalog on a shared catalog create/edit page. However, you can exclude websites from a customer group that is created from a shared catalog.
 
