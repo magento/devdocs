@@ -255,7 +255,7 @@ The following table explains this command's parameters and values.
     <tr>
         <td>--no-parent</td>
         <td>
-            <p>This option will be available from 2.4.2 version.It provides ability to deploy the only specific theme(s) for multiple locales, so it will improve build phase of deployment for the those who use single theme with different locales.</p>
+            <p>This option provides the ability to deploy only the specific themes for multiple locales. It improves the build phase of deployment for the those who use a single theme with different locales.</p>
         </td>
         <td>
             <p>No</p>
