@@ -115,7 +115,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 *  RabbitMQ 3.8.x
 
-   [RabbitMQ][]{:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.s
+   [RabbitMQ][]{:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
 
 ### Optional but recommended
 
