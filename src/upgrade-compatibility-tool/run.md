@@ -148,7 +148,7 @@ See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/develope
 {:.bs-callout-info}
 The `M2_VERSION` is the target Magento 2 version you want to compare with your own Magento with.
 
-After running this command
+After running this command:
 
 ```bash
 bin/uct upgrade:check INSTALLATION_DIR -c M2_VERSION
