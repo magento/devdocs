@@ -108,10 +108,10 @@ To apply individual patches in a local development environment:
 
    ```yaml
    stage:
-       build:
-           QUALITY_PATCHES:
-               - MCTEST-1002
-               - MCTEST-1003
+     build:
+       QUALITY_PATCHES:
+         - MCTEST-1002
+         - MCTEST-1003
    ```
 
 1. From the project root, apply the patches.
@@ -145,10 +145,10 @@ To apply patches in a Cloud environment:
 
    ```yaml
    stage:
-       build:
-           QUALITY_PATCHES:
-               - MCTEST-1002
-               - MCTEST-1003
+     build:
+       QUALITY_PATCHES:
+         - MCTEST-1002
+         - MCTEST-1003
    ```
 
    {:.bs-callout-info}

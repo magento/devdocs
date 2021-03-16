@@ -195,6 +195,49 @@ This example uses some CSS classes that are used for minicart.
 </div>
 ```
 
+The following example shows a PHTML file using the script and custom CSS classes that have no defined properties:
+
+```php
+<?php
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+
+<div class="dropdown-wrap">
+    <button class="dropdown-button">
+        <span><?= $escaper->escapeHtml(__('Dropdown open button')) ?></span>
+    </button>
+    <div id="dropdown-dialog" data-role="dropdownDialog">
+        <?= $escaper->escapeHtml(__('Dropdown content')) ?>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'dropdownDialog'
+        ], function($, dropdownDialog) {
+            'use strict';
+
+            $('#dropdown-dialog').dropdownDialog({
+                appendTo: '.dropdown-wrap',
+                triggerTarget: '.dropdown-button',
+                closeOnMouseLeave: false,
+                closeOnEscape: true,
+                timeout: 2000,
+                triggerClass: 'active',
+                parentClass: 'active',
+                buttons: [{
+                    text: $.mage.__('Close'),
+                    click: function () {
+                        $(this).dropdownDialog("close");
+                    }
+                }]
+            });
+        }
+    );
+</script>
+```
+
 ### Result
 
 The result is a dropdown dialog and a button (_Click Here_) that opens the dialog.

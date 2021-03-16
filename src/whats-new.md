@@ -34,7 +34,7 @@ title: What's new on DevDocs
       <th>Description</th>
       <th>Versions</th>
       <th>Type</th>
-      <th>Pull request</th>
+      <th>Source</th>
     </tr>
   </thead>
   <tbody>
@@ -43,7 +43,11 @@ title: What's new on DevDocs
       <td>{{ item.description | markdownify }}</td>
       <td>{{ item.versions }}</td>
       <td>{{ item.type }}</td>
+      {% if item.link contains "pull" %}
       <td><a href="{{ item.link }}">{{ item.link | split: "/" | last }}</a></td>
+      {% else %}
+      <td><a href="{{ item.link }}">{{ item.link | split: "/" | last | slice: 0, 6 }}</a></td>
+      {% endif %}
     </tr>
   {% endfor %}
   </tbody>
