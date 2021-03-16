@@ -169,13 +169,13 @@ Configuration data is accessible via \Migration\Config class.
 
 |Document|Field|
 |---|---|
-|step|Second level node inside the Steps node. Description of the relevant step.|
+|step|Second level node inside the Steps node. Description of the relevant step must be specified in the `title` attribute.|
 |integrity|Specifies the PHP class responsible for the integrity check. Compares the table field names, types, and other info to verify compatibility between Magento 1 and 2 data structures.|
 |data|Specifies the PHP class responsible for the data check. Transfers the data, table by table from Magento 1 to Magento 2.|
 |volume|Specifies the PHP class responsible for the volume check. Compares the number of records between tables to verify that the transfer was successful.|
 |delta|Specifies the PHP class responsible for the delta check. Transfers the delta from Magento 1 to Magento 2 after the full data migration.|
 
-### Source available operations {#source}
+### Source database information attributes {#source}
 
 |Document|Field|Required?|
 |---|---|---|
@@ -188,7 +188,7 @@ Configuration data is accessible via \Migration\Config class.
 |ssl_cert|Path to SSL Certificate file.|no|
 |ssl_key|Path to SSL Key file.|no|
 
-### Destination available operations {#destination}
+### Destination database information attributes {#destination}
 
 |Document|Field|Required?|
 |---|---|---|
