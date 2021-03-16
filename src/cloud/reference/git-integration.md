@@ -28,6 +28,7 @@ In addition to Git's requirements for [valid branch names](https://www.kernel.or
 
 *  The `/` character isn't allowed in a branch name.
 *  Branch names are not case-sensitive. Each name must be unique regardless of the case used for each letter. For example, if you have a branch named `Sprint`, you cannot create another branch named `sprint`.
+*  Branch names can only include standard ASCII characters and cannot include the extended ASCII character set or Unicode. Refer to the [ASCII Table and Description](http://www.asciitable.com/) for more information. Limit use of characters in the range of 32 to 127.
 
 ## Git branching {#branching}
 
