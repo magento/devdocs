@@ -5,11 +5,11 @@ contributor_name: Jehangir Wahid
 contributor_link: https://github.com/Jehangir-Wahid
 ---
 
-The Container [UI component](https://glossary.magento.com/ui-component) is used for wrapping fields or other ui-components with descriptive text. It may be used without any field to display a notice or description of a fieldset.
+The Container [UI component](https://glossary.magento.com/ui-component) is used for wrapping fields or other ui-components with descriptive text. It may be used without a field to display a notice or description of a fieldset.
 
 ## Configuration options
 
-Component options are set in the UI-component's configuration `.xml` file as follows:
+Component options are set in the UI-component's configuration `.xml` file.
 
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -28,7 +28,7 @@ Component options are set in the UI-component's configuration `.xml` file as fol
 
 ### Container with a component
 
-The following sample is an example of the Container component contain a `Select` component.
+The following is an example of the Container component on a `Select` component.
 The `<container>` node must be located in the scope of the `<fieldset>` node.
 
 ```xml
@@ -75,7 +75,7 @@ The `<container>` node must be located in the scope of the `<fieldset>` node.
 
 ### Container without any fields
 
-The following sample is an example of the Container component only.
+The following is an example of the Container component only.
 
 ```xml
 <fieldset name="fieldset_name">
