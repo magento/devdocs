@@ -162,10 +162,67 @@ pages:
           url: /cloud/howtos/sample-data.html
           versionless: true
 
-    - label: Docker development
+    - label: Cloud Docker development
       url: /cloud/docker/docker-development.html
       versionless: true
       children:
+        - label: Install
+          url: /cloud/docker/docker-installation.html
+          versionless: true
+          children:
+            - label: Additional tools for file synchronization
+              url: /cloud/docker/docker-syncing-data.html
+              versionless: true
+
+        - label: Upgrade
+          url: /cloud/docker/docker-upgrade.html
+          versionless: true
+              
+        - label: Use Docker
+          url: /cloud/docker/docker-launch.html
+          versionless: true
+
+          children: 
+            - label: Production mode
+              url: /cloud/docker/docker-mode-production.html
+              versionless: true
+ 
+            - label: Developer mode
+              url: /cloud/docker/docker-mode-developer.html
+              versionless: true
+
+        - label: Configure and manage
+          url: /cloud/docker/docker-config.html
+          versionless: true
+          children:
+            - label: Configuration sources
+              url: /cloud/docker/docker-config-sources.html
+              versionless: true
+
+            - label: Manage the database
+              url: /cloud/docker/docker-manage-database.html
+              versionless: true
+
+            - label: Manage cron jobs
+              url: /cloud/docker/docker-manage-cron-jobs.html
+              versionless: true
+
+            - label: Set up multiple websites or stores
+              url: /cloud/docker/docker-multi-website.html
+              versionless: true
+
+            - label: Xdebug for Docker
+              url: /cloud/docker/docker-development-debug.html
+              versionless: true
+  
+            - label: Extend Docker
+              url: /cloud/docker/docker-extend.html
+              versionless: true
+
+            - label: Add Blackfire.io service
+              url:  /cloud/docker/docker-config-blackfire-io.html
+              versionless: true
+              
         - label: Docker container architecture
           url: /cloud/docker/docker-containers.html
           versionless: true
@@ -176,53 +233,6 @@ pages:
     
             - label: CLI containers
               url: /cloud/docker/docker-containers-cli.html
-              versionless: true
-              
-            - label: Synchronizing data
-              url: /cloud/docker/docker-syncing-data.html
-              versionless: true
-              
-        - label: Configure Docker
-          url: /cloud/docker/docker-config.html
-          versionless: true
-          children:
-            - label: Xdebug for Docker
-              url: /cloud/docker/docker-development-debug.html
-              versionless: true
-
-            - label: Set up multiple websites or stores
-              url: /cloud/docker/docker-multi-website.html
-              versionless: true
-
-            - label: Manage the database
-              url: /cloud/docker/docker-manage-database.html
-              versionless: true
-
-            - label: Enable split database solution
-              url: /cloud/docker/docker-split-db.html
-              versionless: true
-
-            - label: Manage cron jobs
-              url: /cloud/docker/docker-manage-cron-jobs.html
-              versionless: true
-  
-            - label: Extend Docker
-              url: /cloud/docker/docker-extend.html
-              versionless: true
-
-            - label: Add Blackfire.io service
-              url:  /cloud/docker/docker-config-blackfire-io.html
-              versionless: true
-
-        - label: Launch Docker
-
-          children: 
-            - label: Production mode
-              url: /cloud/docker/docker-mode-production.html
-              versionless: true
- 
-            - label: Developer mode
-              url: /cloud/docker/docker-mode-developer.html
               versionless: true
 
         - label: Functional Testing
@@ -238,7 +248,11 @@ pages:
         - label: Docker quick reference
           url: /cloud/docker/docker-quick-reference.html
           versionless: true
-          
+
+        - label: Get support for Cloud Docker
+          url: /cloud/docker/docker-troubleshooting.html
+          versionless: true
+        
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html
       versionless: true
