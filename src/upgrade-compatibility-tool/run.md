@@ -154,7 +154,7 @@ After running this command:
 bin/uct upgrade:check INSTALLATION_DIR -c M2_VERSION
 ```
 
-if the only output is `Upgrade compatibility tool`
+If the only output is `Upgrade compatibility tool`
 
 ```terminal
 $ bin/uct upgrade:check /var/www/project/magento/ -c 2.4.1
