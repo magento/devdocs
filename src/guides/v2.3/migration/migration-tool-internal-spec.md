@@ -175,7 +175,7 @@ Configuration data is accessible via \Migration\Config class.
 |volume|Specifies the PHP class responsible for the volume check. Compares the number of records between tables to verify that the transfer was successful.|
 |delta|Specifies the PHP class responsible for the delta check. Transfers the delta from Magento 1 to Magento 2 after the full data migration.|
 
-### Source database information attributes {#source}
+### Source database attributes {#source}
 
 |Document|Field|Required?|
 |---|---|---|
@@ -188,7 +188,7 @@ Configuration data is accessible via \Migration\Config class.
 |ssl_cert|Path to SSL Certificate file.|no|
 |ssl_key|Path to SSL Key file.|no|
 
-### Destination database information attributes {#destination}
+### Destination database attributes {#destination}
 
 |Document|Field|Required?|
 |---|---|---|
