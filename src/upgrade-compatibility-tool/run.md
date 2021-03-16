@@ -159,7 +159,6 @@ If the only output is `Upgrade compatibility tool`
 ```terminal
 bin/uct upgrade:check /var/www/project/magento/ -c 2.4.1
 Upgrade compatibility tool
-$
 ```
 {:.no-copy}
 
