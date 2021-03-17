@@ -255,7 +255,8 @@ The following table explains this command's parameters and values.
     <tr>
         <td>--no-parent</td>
         <td>
-            <p>This option provides the ability to deploy only the specific themes for multiple locales. It improves the build phase of deployment for the those who use a single theme with different locales.</p>
+            <p>Do not generate files for the parent themes of the current theme. It is strongly recommended to use this flag if you do not explicitly use the parent theme of the current theme you are trying to deploy. This will significantly increase the speed of the process.
+This flag is available in Magento 2.4.2</p>
         </td>
         <td>
             <p>No</p>
