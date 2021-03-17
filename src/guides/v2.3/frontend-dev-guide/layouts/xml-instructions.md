@@ -148,6 +148,16 @@ The following tables give a detailed description of the results you can get usin
 | Several elements have `before` or `after` set to dash (-) | All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined. |
 | The `before` or `after` attribute's value refers to an element that is not located in the parent node of the element being defined. | The element displays at a random location that doesn't violate requirements for the correctly positioned elements. |
 
+Sample usage in a layout:
+
+```xml
+<referenceContainer name="page.wrapper">
+    <container name="header.container" as="header_container" label="Page Header Container" htmlTag="header" htmlClass="page-header" before="main.content"/>
+    <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>
+    <container name="footer-container" as="footer" after="-" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer"/>
+</referenceContainer>
+```
+
 ### action {#fedg_layout_xml-instruc_ex_act}
 
 {:.bs-callout-warning}
