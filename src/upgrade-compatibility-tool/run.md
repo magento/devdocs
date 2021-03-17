@@ -163,7 +163,7 @@ Upgrade compatibility tool
 {:.no-copy}
 
 the likely cause is a PHP memory limitation.
-Override the memory limit by setting it to `-1`:
+Override the memory limitation by setting `memory_limit` to `-1`:
 
 ```bash
 php -d memory_limit=-1 /bin/uct upgrade:check INSTALLATION_DIR -c M2_VERSION
