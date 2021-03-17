@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Update installation dependencies
 functional_areas:
   - Install
@@ -17,7 +16,7 @@ We now use [Composer](http://getcomposer.org) to resolve dependencies before you
 1. [Create the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) so Composer writes files to the web server docroot as the correct user.
 1. Run the [<code>composer install</code> command](#install-composer-install) from your Magento root directory (for example, `/var/www/magento2/`).
 
-The Magento root directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click [here]({{ page.baseurl }}/install-gde/basics/basics_docroot.html).
+The Magento root directory is a subdirectory of your web server's docroot.
 
 If the following error displays, see [troubleshooting](https://support.magento.com/hc/en-us/articles/360033818091):
 
@@ -55,13 +54,9 @@ The following error might display:
 The "https://repo.magento.com/archives/magento/composer/magento-composer-1.0.2.0.zip" file could not be downloaded (HTTP/1.1 404 Not Found)
 ```
 
-If so, create [`auth.json`]({{ page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-clone-auth) in the Magento file system owner's `<home>/.composer` directory and run `composer install` again.
+If so, create [`auth.json`]({{ page.baseurl }}/install-gde/prereq/dev_install.html) in the Magento file system owner's `<home>/.composer` directory and run `composer install` again.
 
 {% include install/file-system-perms-before_24.md %}
 
-{:.ref-header}
-Related topics
-
-Install the Magento software:
-
-*  [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+{:.bs-callout-info}
+Hooray! You've completed the contributor install. Need more advanced help? Check out our [Advanced install]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) guide.

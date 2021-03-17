@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Magento 2.3 technology stack requirements
 functional_areas:
   - Install
@@ -101,7 +100,7 @@ Magento requires the following system tools for some of its operations:
 
 Mail Transfer Agent (MTA) or an SMTP server
 
-## Technologies Magento can use
+## Recommended technologies
 
 *  [Redis][] version 5.0 is recommended and used in testing for page caching and session storage.
 *  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.x (tested with 6.3.1)
@@ -112,12 +111,6 @@ Mail Transfer Agent (MTA) or an SMTP server
 *  RabbitMQ 3.8.x (compatible with 2.0 and later)
 
    [RabbitMQ][]{:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
-
-### {{site.data.var.ee}} only
-
-*  Three master databases
-
-   These [master databases][] provide scalability advantages for different functional areas of the Magento application such as checkout, orders, and all remaining Magento2 application tables.
 
 ### Optional but recommended
 

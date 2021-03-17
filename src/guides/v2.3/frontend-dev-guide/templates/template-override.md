@@ -26,6 +26,20 @@ The `category.image` block is rendered by the `image.phtml` template in the `cat
 
 The templates directory of `Magento_Catalog` is `app/code/Magento/Catalog/view/frontend/templates`.
 
+Templates may also be specified in the PHP `Block` class using the `$_template` protected variable.
+
+Here is an example from the `app/code/Magento/Review/view/frontend/layout/review_product_view.xml` layout:
+
+```xml
+<block class="Magento\Review\Block\View" name="review_view" ifconfig="catalog/review/active"/>
+```
+
+The template for the `review_view` block is not specified using the `template` attribute of the `<block>` layout instruction. Instead, it is specified in the `app/code/Magento/Review/Block/View.php` block class.
+
+```php
+protected $_template = 'Magento_Review::view.phtml';
+```
+
 ## Template location {#template-convention}
 
  Templates are stored in the following locations:
@@ -63,7 +77,7 @@ Unlike other templates, `root.phtml` contains the `doctype` specification and co
 
 Arguments values set in a layout file are accessed in templates using the block's `get{ArgumentName}()` and `has{ArgumentName}()` methods.
 
-For example, set an argument in the block: `<argument name="store_name" xsi:type="string">OrangeCompany</argument>`.
+For example, set an argument in the block: `<argument name="store_name" xsi:type="string">ExampleCorp</argument>`.
 
 *  Get the argument value, in the template:
 
@@ -91,6 +105,14 @@ is the same as writing
 
 ```phtml
 <?php echo $block->getAdjustmentsHtml() ?>
+```
+
+## Localization
+
+In order to support the translation of content, the text must be wrapped inside `__('sample text')`.
+
+```phtml
+<span><?= $escaper->escapeHtml(__('Back to Product Reviews')) ?></span>
 ```
 
 ## Related reading
