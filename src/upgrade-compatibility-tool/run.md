@@ -146,15 +146,15 @@ See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/develope
 ### Empty output
 
 {:.bs-callout-info}
-The `M2_VERSION` is the target Magento 2 version you want to compare with your own Magento with.
+The `M2_VERSION` is the target Magento 2 version you want to compare to your Magento instance.
 
-After running this command:
+If after running this command:
 
 ```bash
 bin/uct upgrade:check INSTALLATION_DIR -c M2_VERSION
 ```
 
-If the only output is `Upgrade compatibility tool`
+the only output is `Upgrade compatibility tool`:
 
 ```terminal
 bin/uct upgrade:check /var/www/project/magento/ -c 2.4.1
@@ -162,7 +162,8 @@ Upgrade compatibility tool
 ```
 {:.no-copy}
 
-You should avoid PHP memory limitations:
+the likely cause is a PHP memory limitation.
+Override the memory limit by setting it to `-1`:
 
 ```bash
 php -d memory_limit=-1 /bin/uct upgrade:check INSTALLATION_DIR -c M2_VERSION
