@@ -56,7 +56,7 @@ bin/magento deploy:mode:set developer
 ```
 
 ```bash
-rm -rf generated/code/* generated/metadata/*
+rm -r generated/*/*
 ```
 
 ```bash

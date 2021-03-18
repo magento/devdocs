@@ -18,3 +18,6 @@ pages:
     url: /community/resources/multi-repo-docs.html
     versionless: true
     
+  - label: Contribution Day Organizer's Handbook
+    url: /community/resources/contribution-day-organizer-handbook.html
+    versionless: true

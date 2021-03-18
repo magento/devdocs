@@ -5,45 +5,64 @@ functional_areas:
   - System
   - Setup
 ---
-## Install Composer {#instgde-prereq-compose-install}
 
-{% include install/composer-clone.md %}
+You can clone the latest code from the [Magento GitHub repository][gh-repo], and use code from a release branch or a development branch.
 
-## Clone the repo {#instgde-prereq-compose-clone}
+-  A **release branch** is a _stable_, full-featured code branch officially released with a version number, such as 2.4. You _must_ use a release branch with the [Data Migration Tool][].
 
-This section discusses how to get current code by cloning [Magento's GitHub repository][]{:target="_blank"} and checking out branches.
-You can either checkout a release branch or a development branch:
+-  A **development branch**, or feature branch, is a less-stable code branch with the latest code intended as the next version or to introduce a specific feature.
 
-*  Release branches, like `2.x.0`, are more stable. You _must_ use a release branch with the [Data Migration Tool][].
+You can checkout a specific branch after you clone the repository to your local development environment. See [Cloning a repository][gh-clone] in the _GitHub Docs_.
 
-*  Development branches, like `2.x-develop`, contain the latest changes.
+## Authentication and access
 
-You can checkout a specific release branch after cloning the latest code.
+The {{site.data.var.ee}} repository requires authentication, so you must prepare the following:
 
-Refer to [GitHub's documentation][]{:target="_blank"} for instructions on cloning a repository.
+-  **[Magento authentication key][]**—You must have an authentication key to access the {{site.data.var.ee}} Composer package on `repo.magento.com` and to enable install and update commands for your project.
 
-### Creating an authorization file {#instgde-prereq-compose-clone-auth}
+-  **[GitHub personal access token][gh-token]**—Composer requires a _personal access token_ in the `github-oauth` property to authorize GitHub repository access. When you create this token, select all options in the `repo` scope.
 
-The Magento 2 GitHub repository requires you to authenticate. The `composer install` commands fails if you do not.
+## Authentication file
 
-#### Generate Magento and Github keys
+You must create an `auth.json` file that contains your {{site.data.var.ee}} [authorization credentials][] in the Magento root directory.
 
-To authenticate, you will need to generate [Magento authentication keys][] and a [Github personal access token][].
+{:.procedure}
+To create an authentication file:
 
-#### Create `auth.json`
+1. If you do not have an `auth.json` file in your Magento root directory, create one.
 
-{% include install/auth-json.md %}
+   -  Using a text editor, create an `auth.json` file in the Magento root directory.
+   -  Copy the contents of the [sample `auth.json` file][sample] into the new `auth.json` file.
 
-{:.ref-header}
-Related topics
+1. Replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials. Add the `github-oauth` section and replace the `<personal-access-token>` with the one you created for your GitHub account.
+
+   ```json
+   {
+       "http-basic": {
+           "repo.magento.com": {
+               "username": "<public-key>",
+               "password": "<private-key>"
+           }
+       }
+       "github-oauth": {
+           "github.com": "<personal-access-token>"
+       }
+   }
+   ```
+
+1. Save your changes and exit the text editor.
+
+{:.bs-callout-warning}
+Pushing an `auth.json` file to a public repository can expose your credentials.
 
 After completing the tasks discussed on this page, see [Update installation dependencies][].
 
 <!-- LINK DEFINITIONS -->
-
-[Github personal access token]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
-[Magento's GitHub repository]: https://github.com/magento/magento2
+[authorization credentials]: {{page.baseurl}}/install-gde/prereq/connect-auth.html
 [Data Migration Tool]: {{page.baseurl}}/migration/bk-migration-guide.html
-[GitHub's documentation]: https://help.github.com/articles/cloning-a-repository-from-github/
-[Magento authentication keys]: {{ page.baseurl }}/install-gde/prereq/connect-auth.html
+[gh-clone]: https://help.github.com/articles/cloning-a-repository-from-github/
+[gh-repo]: https://github.com/magento/magento2
+[gh-token]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+[Magento authentication key]: {{page.baseurl}}/install-gde/prereq/connect-auth.html
+[sample]: https://github.com/magento/magento2/blob/2.4-develop/auth.json.sample
 [Update installation dependencies]: {{page.baseurl}}/install-gde/install/prepare-install.html

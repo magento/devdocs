@@ -41,7 +41,7 @@ Name | Description | Format | Requirements
 `sku` | The SKU of the product | string | Required for setting or deleting a special price
 `skus` | An array of SKU values that is specified when retrieving a list of special prices | array | Required for retrievals
 `price_from` | The date and time the special price goes into effect. The date/time format is `YYYY-MM-DD hh:mm:ss`. The specified time must be later than the current time.  | string | Required in {{site.data.var.ee}}. Optional in {{site.data.var.ce}}.
-`price_to` | The date and time the special price ends. The date/time format is `YYYY-MM-DD hh:mm:ss` If no value is specified, the special price does not expire. | string | Optional
+`price_to` | The date and time the special price ends. The date/time format is `YYYY-MM-DD hh:mm:ss` If no value is specified, the special price does not expire. | string | Required in {{site.data.var.ee}}. Optional in {{site.data.var.ce}}.
 
 ### Set special prices
 
