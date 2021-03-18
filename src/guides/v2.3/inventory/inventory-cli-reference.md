@@ -110,6 +110,12 @@ Following reservations were created:
 - Product bike-123 was compensated by +2.000000 for stock 1
 ```
 
+If the SKU for a compensation entry includes spaces, enclose the SKU in quotation marks.
+
+```bash
+bin/magento inventory:reservation:create-compensations 172:"bike 123":+2.000000:1
+```
+
 ### Detect inconsistencies and create compensations
 
 You can detect inconsistences and immediately create compensations by using a pipe to run both the `list-inconsistencies` and `create-compensations`. Use the `-r` command option to generate and submit the raw data to `create-compensations`.

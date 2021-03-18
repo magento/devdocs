@@ -1077,7 +1077,7 @@ Grace period | `system/full_page_cache/varnish/grace_period` | <!-- ![Not EE-onl
 Export Configuration | `system/full_page_cache/varnish/export_button_version4` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Days Saved in Log | `system/bulk/lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Media Storage | `system/media_storage_configuration/media_storage` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Select Media Database | `system/media_storage_configuration/media_database` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Select Media Database | `system/media_storage_configuration/media_database` (deprecated in Magento 2.4.3)| <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Environment Update Time | `system/media_storage_configuration/configuration_update_time` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Save Files, Days | `system/magento_scheduled_import_export_log/save_days` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Enable Scheduled File History Cleaning | `system/magento_scheduled_import_export_log/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
