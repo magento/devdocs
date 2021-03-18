@@ -1,6 +1,7 @@
 ---
 group: graphql
 title: setGiftOptionsOnCart mutation
+ee_only: true
 ---
 
 The `setGiftOptionsOnCart` mutation allows the buyer to set the following gift options on the cart level:

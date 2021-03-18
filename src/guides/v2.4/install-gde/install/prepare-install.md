@@ -54,7 +54,7 @@ The following error might display:
 The "https://repo.magento.com/archives/magento/composer/magento-composer-1.0.2.0.zip" file could not be downloaded (HTTP/1.1 404 Not Found)
 ```
 
-If so, create [`auth.json`]({{ page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-clone-auth) in the Magento file system owner's `<home>/.composer` directory and run `composer install` again.
+If so, create [`auth.json`]({{ page.baseurl }}/install-gde/prereq/dev_install.html) in the Magento file system owner's `<home>/.composer` directory and run `composer install` again.
 
 {% include install/file-system-perms-before_24.md %}
 

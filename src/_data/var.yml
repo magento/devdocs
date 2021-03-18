@@ -43,3 +43,4 @@ mcc-release: 1.0.7
 # Magento-developed extension (MDE) variables
 
 im: Inventory Management
+pb: Page Builder

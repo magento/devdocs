@@ -112,7 +112,7 @@ Created integration integration-ID (type: webhook)
 You can update an existing integration. For example, change the states from `complete` to `pending` using the following:
 
 ```bash
-magento-cloud integration:update --states=pending <integration-ID>
+magento-cloud integration:update --states=pending <int-id>
 ```
 
 Sample response:
