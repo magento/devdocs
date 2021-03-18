@@ -51,13 +51,13 @@ You can clean generated static view files in any of the following ways:
    To clear the `pub/static` directory of all files except `.htaccess` (which is a hidden file), enter the following command:
 
    ```bash
-   rm -rf pub/static/*
+   rm -r pub/static/*/*
    ```
 
    To clear the `var/view_preprocessed`, enter the following command:
 
    ```bash
-   rm -rf var/view_preprocessed/*
+   rm -r var/view_preprocessed/*
    ```
 
 -  Several commands support an optional parameter `--clear-static-content`, which cleans generated static view files:
