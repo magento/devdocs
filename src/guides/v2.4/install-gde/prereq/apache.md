@@ -210,7 +210,7 @@ Installing and configuring Apache is basically a three-step process: install the
 1. Locate the block that starts with:
 
    ```conf
-   <Directory /var/www/html>
+   <Directory "/var/www/html">
    ```
 
 1. Change the value of `AllowOverride` to `All`.
@@ -218,12 +218,12 @@ Installing and configuring Apache is basically a three-step process: install the
    For example,
 
    ```conf
-   <Directory /var/www/>
+   <Directory "/var/www/">
      Options Indexes FollowSymLinks MultiViews
      AllowOverride All
      Order allow,deny
      Allow from all
-   <Directory>
+   </Directory>
    ```
 
    {:.bs-callout-info}
@@ -250,19 +250,19 @@ Failure to enable these settings typically results in no styles displaying on yo
 
 1. Locate the block that starts with:
 
-   `<Directory /var/www/html>`
+   `<Directory "/var/www/html">`
 
 1. Change the value of `AllowOverride` to `All`.
 
    For example:
 
    ```conf
-   <Directory /var/www/html>
+   <Directory "/var/www/html">
      Options Indexes FollowSymLinks MultiViews
      AllowOverride All
      Order allow,deny
      Allow from all
-   <Directory>
+   </Directory>
    ```
 
 1. Save the file and exit the text editor.
@@ -304,7 +304,7 @@ To enable website visitors to access your site, use one of the [Require directiv
 For example:
 
 ```conf
-<Directory /var/www/>
+<Directory "/var/www/">
   Options Indexes FollowSymLinks MultiViews
   AllowOverride All
   Order allow,deny
