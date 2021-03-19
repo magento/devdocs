@@ -4,8 +4,32 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Mar 1 10:21:06 2021
+updated: Tue Mar 9 13:48:07 2021
 entries:
+- description: Added the "Remove the Integration" section in the [GitHub Integration](https://devdocs.magento.com/cloud/integrations/github-integration.html)
+    topic.
+  versions: 2.x
+  type: Technical
+  date: March 9, 2021
+  link: https://github.com/magento/devdocs/pull/8554
+  contributor: SumanPitta
+  profile: https://github.com/SumanPitta
+- description: Added a [new table](https://devdocs.magento.com/release/commerce-features.html)
+    comparing the available features of each minor version of Magento 2.x.
+  versions: 2.x
+  type: New Topic
+  date: March 3, 2021
+  link: https://github.com/magento/devdocs/commit/d4b75de4ce72f6a07fc9ec263a096faa030d7e33
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.17 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: March 3, 2021
+  link: https://github.com/magento/devdocs/pull/8770
+  contributor: abukatar
+  profile: https://github.com/abukatar
 - description: Added the "Configure product video options from Magento Admin" section
     to the [Configure product video](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/product-video.html)
     topic.
@@ -1060,7 +1084,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7714
   contributor: keharper
   profile: https://github.com/keharper
-- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#technologies-magento-can-use)
+- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#recommended-technologies)
     for Elasticsearch 6.x.
   versions: 2.3.6
   type: Technical
@@ -4433,7 +4457,7 @@ entries:
 - description: Added information about [Elasticsearch 6](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-overview.html#es-spt-versions)
     support.<br/>Added Elasticsearch 6 information to [Configure Magento to use Elasticsearch](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/configure-magento.html)<br/>Added
     [Change Elasticsearch Client](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-downgrade.html)
-    topic.<br/>Updated the [Technologies Magento can use](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#technologies-magento-can-use)
+    topic.<br/>Updated the [Technologies Magento can use](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#recommended-technologies)
     topic with new Elasticsearch 6 support.
   versions: 2.2.x, 2.3.x
   type: Major update

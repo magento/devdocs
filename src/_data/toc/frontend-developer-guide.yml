@@ -99,6 +99,9 @@ pages:
         - label: Email templates
           url: /frontend-dev-guide/templates/template-email.html
 
+        - label: Email templates layout handle
+          url: /frontend-dev-guide/templates/template-email-layout-handle.html
+
     - label: Cascading style sheets (CSS)
       url: /frontend-dev-guide/css-topics/css-overview.html
       children:
