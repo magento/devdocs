@@ -19,6 +19,15 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.0.18
+
+-  **MDVA-32655** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the incorrect 'in progress' message status to the correct 'complete' message for consumer 'quoteItemCleaner' after deleting several products.
+-  **MDVA-34102** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the quantity of Default Stock is zero for disabled products on the Product Grid and Edit Product pages in the Admin area.
+-  **MDVA-35286** _(for Magento `>=2.4.0 <2.4.2`)_-Fixes the issue where there is an error if a customer has bundled products in the cart and switches from Multiple Addresses checkout to Onepage checkout.
+-  **MDVA-35312** _(for Magento `>=2.4.1-p1 <2.4.2`)_-Fixes response code 500 when an empty GraphQL request.
+-  **MDVA-34189** _(for Magento `>=2.3.4 <2.4.3`)_-Fixes 503 first byte timeout on visual merchandiser queries when loading the Admin Category page.
+-  **MDVA-34695** _(for Magento `>=2.3.0 <2.4.1`)_-Fixes negative children_count after deleting categories.
+
 ## v1.0.17
 
 -  **MDVA-34012** _(for Magento `>=2.3.1 <2.4.3`)_-Fixes the issue where the "Use default value" checkbox gets cleared, after the scheduled changes are applied. The issue appears once the scheduled changes are no longer in effect.
