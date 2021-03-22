@@ -2337,6 +2337,57 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 ## Known issues
 
+**Issue**: The `[project_root]/index.php` file has been removed, and Magento now runs from `/pub` by default for Apache configurations. Stores that are served from subfolders will not work as expected and may display 404 errors. **Workaround**: Use symlinks to emulate the installation of Magento into subfolders. The following example uses two stores (`https://shop01.com/shop/` and `https://shop02.com/shop/`) to illustrate how to use a symlink to emulate an installation in subfolders.
+
+1.Create a subdirectory for first site (`https://shop01.com/shop/`):
+
+   `mkdir magento_root/pub/shop01`
+   `cd magento_root/pub/shop01`
+
+2.Create symlinks for the store’s parent directories in the newly created directory:
+
+   `ln -s ../media media
+   ln -s ../static static
+   ln -s ../../pub pub
+   ln -s ../.htaccess .htaccess
+   ln -s ../health_check.php health_check.php`
+
+3.Create an `index.php` file inside the new directory (`magento_root/pub/shop01/index.php`) and add this content:
+
+```php
+<?php
+require realpath(__DIR__) . '/../../app/bootstrap.php';
+
+switch ($_SERVER['HTTP_HOST']) {
+    case 'shop01.com':
+    case 'www.shop01.com':
+        $params = $_SERVER;
+        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop01';
+        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
+        $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
+        $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+        $bootstrap->run($app);
+        break;
+    case 'shop02.com':
+    case 'www.shop02.com':
+        $params = $_SERVER;
+        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop02';
+        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
+        $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
+        $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+        $bootstrap->run($app);
+        break;
+
+    default:
+        $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
+        /** @var \Magento\Framework\App\Http $app */
+        $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+        $bootstrap->run($app);
+    break;
+}
+```
+4.Configure your Apache server to point to the new subdirectories.
+
 **Issue**: Merchants must activate the Fastly Force TLS functionality from the Admin to enable the global HTTP to HTTPS redirect for all store pages. See the [Redirect HTTP to HTTPS for all pages on Cloud (Force TLS)](https://support.magento.com/hc/en-us/articles/360006296953) Knowledge Base article. <!--- MC-39988-->
 
 **Issue**: You cannot use the `addConfigurableProductToCart` GraphQL mutation to add a configurable product to a cart in a non-default store view in a multi-store deployment that runs Inventory. (Luma storefronts are not affected.) Magento displays this error: `Could not add item to cart. Please check required options and try again`. **Workaround**: Use the `addProductsToCart` mutation instead. [GitHub-31660](https://github.com/magento/magento2/issues/31660)<!--- PWA-1298-->
