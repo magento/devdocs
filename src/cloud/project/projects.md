@@ -36,6 +36,9 @@ To upgrade and patch Magento, see:
 
 ## Access the Project Web Interface {#login}
 
+The Project Web Interface provides features to create, manage, and deploy code in Integration, Staging, and Production environments for Starter and Pro plans.
+
+{:.procedure}
 To access your projects and environments:
 
 1. Log in to your Magento account at [https://account.magento.com](https://account.magento.com).
