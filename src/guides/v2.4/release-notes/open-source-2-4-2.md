@@ -2097,20 +2097,23 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 **Issue**: The `[project_root]/index.php` file has been removed, and Magento now runs from `/pub` by default for Apache configurations. Stores that are served from subfolders will not work as expected and may display 404 errors. **Workaround**: Use symlinks to emulate the installation of Magento into subfolders. The following example uses two stores (`https://shop01.com/shop/` and `https://shop02.com/shop/`) to illustrate how to use a symlink to emulate an installation in subfolders.
 
-1.Create a subdirectory for first site (`https://shop01.com/shop/`):
+1. Create a subdirectory for first site (`https://shop01.com/shop/`):
 
-   `mkdir magento_root/pub/shop01`
-   `cd magento_root/pub/shop01`
+   ```bash
+   mkdir magento_root/pub/shop01
+   cd magento_root/pub/shop01
+   ```
+1. Create symlinks for the store’s parent directories in the newly created directory:
 
-2.Create symlinks for the store’s parent directories in the newly created directory:
-
-   `ln -s ../media media
+   ```bash
+   ln -s ../media media
    ln -s ../static static
    ln -s ../../pub pub
    ln -s ../.htaccess .htaccess
-   ln -s ../health_check.php health_check.php`
+   ln -s ../health_check.php health_check.php
+   ```
 
-3.Create an `index.php` file inside the new directory (`magento_root/pub/shop01/index.php`) and add this content:
+1. Create an `index.php` file inside the new directory (`magento_root/pub/shop01/index.php`) and add this content:
 
 ```php
 <?php
@@ -2144,7 +2147,8 @@ switch ($_SERVER['HTTP_HOST']) {
     break;
 }
 ```
-4.Configure your Apache server to point to the new subdirectories.
+
+1. Configure your Apache server to point to the new subdirectories.
 
 **Issue**: Magento does not submit payment information as expected when a shopper first enters a correct code into the CAPTCHA field on the Payment page but displays this error:  `There has been an error processing your request`. This occurs only when the shopper tries to place the order either without entering the CAPTCHA code or by entering it incorrectly.  **Workaround**: Refresh the page. <!--- MC-40506-->
 
