@@ -117,7 +117,7 @@ The problem is that every time the cron job `cron_consumers_runner` runs, it spa
 Meanwhile, the `onlySpawnWhenMessageAvailable` attribute first checks if there are available messages, and it spawns a new consumer process only if there are messages. It means that it does not spawn unneeded processes which take up memory, live for a very short period, and then disappear.
 
 {:.bs-callout-warning}
-Be aware, that [`consumers-wait-for-messages`]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-consumers.html) option is a global option and cannot be configured separately for each consumer like `onlySpawnWhenMessageAvailable` option.
+Be aware, that the [`consumers-wait-for-messages`]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-consumers.html) option is a global option and cannot be configured separately for each consumer, like the `onlySpawnWhenMessageAvailable` option.
 
 #### Consumer handlers
 
