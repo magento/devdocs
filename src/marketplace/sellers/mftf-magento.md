@@ -46,7 +46,6 @@ The MFTF tests executed are:
 -  AdminCreateAndEditConfigurableProductSettingsTest
 -  AdminCreateAndEditVirtualGiftCardProductSettingsTest
 
-
 ## What is being checked
 
 MFTF tests verify the proper functioning of basic Magneto workflows. They are meant to mimic the same code paths that the end user would take, by automating the clicks and data entry that the user would do. The Magento codebase contains thousands of MFTF tests.
