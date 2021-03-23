@@ -2095,21 +2095,31 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 ## Known issues
 
-**Issue**: The `[project_root]/index.php` file has been removed, and Magento now runs from `/pub` by default for Apache configurations. Stores that are served from subfolders will not work as expected and may display 404 errors. **Workaround**: Use symlinks to emulate the installation of Magento into subfolders. The following example uses two stores (`https://shop01.com/shop/` and `https://shop02.com/shop/`) to illustrate how to use a symlink to emulate an installation in subfolders.
+**Issue**: The `[magento_root]/index.php` file has been removed, and Magento now runs from `/pub` by default for Apache configurations. Stores that are served from subfolders will not work as expected and may display 404 errors. **Workaround**: Use symlinks to emulate the installation of Magento into subfolders. The following example uses two stores (`https://shop01.com/shop/` and `https://shop02.com/shop/`) to illustrate how to use a symlink to emulate an installation in subfolders.
 
 1. Create a subdirectory for first site (`https://shop01.com/shop/`):
 
    ```bash
    mkdir magento_root/pub/shop01
+   ```
+   ```bash
    cd magento_root/pub/shop01
    ```
 1. Create symlinks for the store’s parent directories in the newly created directory:
 
    ```bash
    ln -s ../media media
+   ```
+   ```bash
    ln -s ../static static
+   ```
+   ```bash
    ln -s ../../pub pub
+   ```
+   ```bash
    ln -s ../.htaccess .htaccess
+   ```
+   ```bash
    ln -s ../health_check.php health_check.php
    ```
 
