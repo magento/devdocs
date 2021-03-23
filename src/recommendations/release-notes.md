@@ -15,6 +15,11 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.2.4 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.new}Added support for [PWA Studio](https://magento.github.io/pwa-studio/product-recs)
+-  {:.new}Added the ability to [preview recommendations](https://docs.magento.com/user-guide/marketing/create-new-rec.html#preview) at creation time
+
 ## 3.2.3 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.fix}Fixed the "Unable to retrieve configurable product options data" error during Catalog Sync
