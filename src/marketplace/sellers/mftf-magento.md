@@ -7,7 +7,7 @@ title: MFTF Magento-supplied Tests
 
 The Magento Functional Testing Framework (MFTF) is a browser-based acceptance testing framework used to validate the functionality of a Magento site. Running Magento-supplied MFTF tests aids Extension Quality Program (EQP) QA efforts in assessing critical functionality of a Magento instance with the extension installed.
 
-Magento-Supplied MFTF tests are not required to pass for technical review. The outcome of this testing is used to inform QA efforts and provide feedback on functional quality.
+Magento supplied MFTF tests are not required to pass for technical review. The outcome of this testing is used to assist with QA efforts and provide feedback on functional quality.
 
 For information on how to setup, create and modify MFTF tests, see [Introduction to the Magento Functional Testing Framework][1]
 
