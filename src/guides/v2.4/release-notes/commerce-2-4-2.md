@@ -2394,7 +2394,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 1. Configure your Apache server to point to the new subdirectory. Deployment configurations can vary widely. Here’s an example server configuration:
 
-```php
+```xml
    <VirtualHost *:80>
        DocumentRoot "magento_root/pub/shop1"
        ServerName shop01.com
