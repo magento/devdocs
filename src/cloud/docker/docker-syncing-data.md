@@ -7,7 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-In a Docker development environment, the {{site.data.var.ee}} application works only if the Docker containers have access to the {{site.data.var.ee}} application data. You can provide access either by directly mapping the current working directory or by using a file synchronization tool.
+You have the option to launch a Docker environment in [developer mode][set the launch mode], which provides an active development environment with full, writable file system permissions.
+
+If you choose this option, the {{site.data.var.ee}} application works only if the Docker containers have access to the {{site.data.var.ee}} application data. You can provide access either by directly mapping the current working directory or by using a file synchronization tool.
 
 The {{site.data.var.mcd-prod}} `docker-build` command provides the `--sync-engine <type>` option to select the file synchronization behavior when you build the `docker-compose.yml` configuration file. You can select from the following options:
 
@@ -58,3 +60,4 @@ For detailed configuration instructions, see [launch Docker in developer mode].
 [docker-sync]: https://docker-sync.readthedocs.io/en/latest/#
 [dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [launch Docker in developer mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
+[set the launch mode]: {{site.baseurl}}/cloud/docker/docker-launch.html#set-the-launch-mode
