@@ -19,7 +19,7 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 | **Role** | **Scope**  | **Access** |
 |-|-|-|
 | **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Magento assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the {{ site.data.var.ece }} account.<br><br>You must submit a Magento Support ticket to modify settings or change the Account owner. |
-| **Super user** | Project | Administrator access to all project settings and Cloud environments. Super users can change settings and perform tasks on any environment, including creating and restoring [snapshots][]. |
+| **Super user** | Project | Administrator access to all project settings and Cloud environments. Super users can change settings and perform tasks on any environment, including creating and restoring [snapshots][] and managing users. |
 | **Project reader** | Project | View access to all project environments. Users with this role cannot perform tasks on any environment. However, you can configure environment-level permissions for users with this role to permit write access to a specific environment. |
 | **Admin** | Environment | Change settings and perform tasks on an environment, including merging with the parent environment |
 | **Contributor** | Environment | Push code and branch the environment |

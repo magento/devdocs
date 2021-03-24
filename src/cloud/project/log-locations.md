@@ -86,6 +86,8 @@ The following logs have a common location for all Cloud projects:
 -  **Last deployment error log**: `var/log/cloud.error.log`
 -  **Debug log**: `var/log/debug.log`
 -  **Exception log**: `var/log/exception.log`
+-  **System log**: `var/log/system.log`
+-  **Support log**: `var/log/support_report.log`
 -  **Reports**: `var/reports/`
 
 Though the `cloud.log` file contains feedback from each stage of the deployment process, logs from the deploy hook are unique to each environment. The environment-specific deploy log is in the following directories:
