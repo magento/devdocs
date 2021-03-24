@@ -90,7 +90,7 @@ mysql:
 In the preceding example, the `admin` endpoint provides admin-level access to the `main` database, the `reporter` endpoint provides read-only access, and the `importer` endpoint provides read-write access. This means that:
 
 -  The `admin` user has full control of the database.
--  The `repoter` user has SELECT privileges only.
+-  The `reporter` user has SELECT privileges only.
 -  The `importer` user has SELECT, INSERT, UPDATE, and DELETE privileges.
 
 You must add the endpoints defined in the above example to the `relationships` property of the `.magento.app.yaml` file. For example:
