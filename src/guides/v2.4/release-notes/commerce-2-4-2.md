@@ -2339,7 +2339,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 **Issue**: The `[magento_root]/index.php` file has been removed, and Magento now runs from `/pub` by default for Apache configurations. Stores that are served from subfolders will not work as expected and may display 404 errors. **Workaround**: Use symlinks to emulate the installation of Magento into subfolders. The following example uses two stores (`https://shop01.com/shop/` and `https://shop02.com/shop/`) to illustrate how to use a symlink to emulate an installation in subfolders.
 
-1. Create a subdirectory for first site (`https://shop01.com/shop/`):
+1. Create a subdirectory for `https://shop01.com/shop/`:
 
    ```bash
    mkdir magento_root/pub/shop01
@@ -2347,6 +2347,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
    ```bash
    cd magento_root/pub/shop01
    ```
+
 1. Create symlinks for the store’s parent directories in the newly created directory:
 
    ```bash
@@ -2400,7 +2401,14 @@ switch ($_SERVER['HTTP_HOST']) {
 }
 ```
 
-1. Configure your Apache server to point to the new subdirectories.
+1. Configure your Apache server to point to the new subdirectories. Deployment configurations can vary widely. Here’s an example server configuration:
+
+```php
+<VirtualHost *:80>
+    DocumentRoot "magento_root/pub/shop1"
+    ServerName shop01.com
+</VirtualHost>
+```
 
 **Issue**: Merchants must activate the Fastly Force TLS functionality from the Admin to enable the global HTTP to HTTPS redirect for all store pages. See the [Redirect HTTP to HTTPS for all pages on Cloud (Force TLS)](https://support.magento.com/hc/en-us/articles/360006296953) Knowledge Base article. <!--- MC-39988-->
 
