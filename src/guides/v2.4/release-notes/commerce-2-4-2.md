@@ -2382,15 +2382,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
            $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
            $bootstrap->run($app);
            break;
-       case 'shop02.com':
-       case 'www.shop02.com':
-           $params = $_SERVER;
-           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop02';
-           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
-           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
-           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
-           $bootstrap->run($app);
-           break;
 
        default:
            $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
@@ -2401,7 +2392,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
    }
 ```
 
-1. Configure your Apache server to point to the new subdirectories. Deployment configurations can vary widely. Here’s an example server configuration:
+1. Configure your Apache server to point to the new subdirectory. Deployment configurations can vary widely. Here’s an example server configuration:
 
 ```php
    <VirtualHost *:80>

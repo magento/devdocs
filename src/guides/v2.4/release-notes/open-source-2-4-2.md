@@ -2095,7 +2095,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 ## Known issues
 
-**Issue**: The `[magento_root]/index.php` file has been removed, and Magento now runs from `/pub` by default for Apache configurations. Stores that are served from subfolders will not work as expected and may display 404 errors. **Workaround**: Use symlinks to emulate the installation of Magento into subfolders. The following example uses `https://shop01.com/shop/` to illustrate how to use a symlink to emulate an installation in subfolders.
+**Issue**: The `[magento_root]/index.php` file has been removed, and Magento now runs from `/pub` by default for Apache configurations. Stores that are served from subfolders will not work as expected and may display 404 errors. **Workaround**: Use symlinks to emulate the installation of Magento into a subfolder. The following example uses `https://shop01.com/shop/` to illustrate how to use a symlink to emulate an installation in a subfolder.
 
 1. Create a subdirectory for `https://shop01.com/shop/`:
 
@@ -2140,15 +2140,6 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
            $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
            $bootstrap->run($app);
            break;
-       case 'shop02.com':
-       case 'www.shop02.com':
-           $params = $_SERVER;
-           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop02';
-           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
-           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
-           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
-           $bootstrap->run($app);
-           break;
 
        default:
            $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
@@ -2159,7 +2150,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
    }
 ```
 
-1. Configure your Apache server to point to the new subdirectories. Deployment configurations can vary widely. Here’s an example server configuration:
+1. Configure your Apache server to point to the new subdirectory. Deployment configurations can vary widely. Here’s an example server configuration:
 
 ```php
    <VirtualHost *:80>
