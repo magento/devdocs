@@ -2127,45 +2127,45 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 1. Create an `index.php` file inside the new directory (`magento_root/pub/shop01/index.php`) and add this content:
 
 ```php
-<?php
-require realpath(__DIR__) . '/../../app/bootstrap.php';
+   <?php
+   require realpath(__DIR__) . '/../../app/bootstrap.php';
 
-switch ($_SERVER['HTTP_HOST']) {
-    case 'shop01.com':
-    case 'www.shop01.com':
-        $params = $_SERVER;
-        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop01';
-        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
-        $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
-        $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
-        $bootstrap->run($app);
-        break;
-    case 'shop02.com':
-    case 'www.shop02.com':
-        $params = $_SERVER;
-        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop02';
-        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
-        $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
-        $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
-        $bootstrap->run($app);
-        break;
+   switch ($_SERVER['HTTP_HOST']) {
+       case 'shop01.com':
+       case 'www.shop01.com':
+           $params = $_SERVER;
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop01';
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
+           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
+           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+           $bootstrap->run($app);
+           break;
+       case 'shop02.com':
+       case 'www.shop02.com':
+           $params = $_SERVER;
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop02';
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
+           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
+           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+           $bootstrap->run($app);
+           break;
 
-    default:
-        $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
-        /** @var \Magento\Framework\App\Http $app */
-        $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
-        $bootstrap->run($app);
-    break;
-}
+       default:
+           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
+           /** @var \Magento\Framework\App\Http $app */
+           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+           $bootstrap->run($app);
+       break;
+   }
 ```
 
 1. Configure your Apache server to point to the new subdirectories. Deployment configurations can vary widely. Here’s an example server configuration:
 
 ```php
-<VirtualHost *:80>
-    DocumentRoot "magento_root/pub/shop1"
-    ServerName shop01.com
-</VirtualHost>
+   <VirtualHost *:80>
+       DocumentRoot "magento_root/pub/shop1"
+       ServerName shop01.com
+   </VirtualHost>
 ```
 
 **Issue**: Magento does not submit payment information as expected when a shopper first enters a correct code into the CAPTCHA field on the Payment page but displays this error:  `There has been an error processing your request`. This occurs only when the shopper tries to place the order either without entering the CAPTCHA code or by entering it incorrectly.  **Workaround**: Refresh the page. <!--- MC-40506-->

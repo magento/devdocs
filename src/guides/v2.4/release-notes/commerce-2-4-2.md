@@ -2369,45 +2369,45 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 1. Create an `index.php` file inside the new directory (`magento_root/pub/shop01/index.php`) and add this content:
 
 ```php
-<?php
-require realpath(__DIR__) . '/../../app/bootstrap.php';
+   <?php
+   require realpath(__DIR__) . '/../../app/bootstrap.php';
 
-switch ($_SERVER['HTTP_HOST']) {
-    case 'shop01.com':
-    case 'www.shop01.com':
-        $params = $_SERVER;
-        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop01';
-        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
-        $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
-        $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
-        $bootstrap->run($app);
-        break;
-    case 'shop02.com':
-    case 'www.shop02.com':
-        $params = $_SERVER;
-        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop02';
-        $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
-        $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
-        $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
-        $bootstrap->run($app);
-        break;
+   switch ($_SERVER['HTTP_HOST']) {
+       case 'shop01.com':
+       case 'www.shop01.com':
+           $params = $_SERVER;
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop01';
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
+           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
+           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+           $bootstrap->run($app);
+           break;
+       case 'shop02.com':
+       case 'www.shop02.com':
+           $params = $_SERVER;
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop02';
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
+           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
+           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+           $bootstrap->run($app);
+           break;
 
-    default:
-        $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
-        /** @var \Magento\Framework\App\Http $app */
-        $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
-        $bootstrap->run($app);
-    break;
-}
+       default:
+           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
+           /** @var \Magento\Framework\App\Http $app */
+           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+           $bootstrap->run($app);
+       break;
+   }
 ```
 
 1. Configure your Apache server to point to the new subdirectories. Deployment configurations can vary widely. Here’s an example server configuration:
 
 ```php
-<VirtualHost *:80>
-    DocumentRoot "magento_root/pub/shop1"
-    ServerName shop01.com
-</VirtualHost>
+   <VirtualHost *:80>
+       DocumentRoot "magento_root/pub/shop1"
+       ServerName shop01.com
+   </VirtualHost>
 ```
 
 **Issue**: Merchants must activate the Fastly Force TLS functionality from the Admin to enable the global HTTP to HTTPS redirect for all store pages. See the [Redirect HTTP to HTTPS for all pages on Cloud (Force TLS)](https://support.magento.com/hc/en-us/articles/360006296953) Knowledge Base article. <!--- MC-39988-->
