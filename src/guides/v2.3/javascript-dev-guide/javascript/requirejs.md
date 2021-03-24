@@ -69,7 +69,7 @@ paths: {
 ```
 
 {:.bs-callout-info}
-If you set a path to an array and define multiple script sources, if the first script fails to load, the next one will be used as a fallback.
+When setting a path to an array with multiple script sources, if the first script fails to load, the next is used as a fallback.
 
 ```javascript
 var config = {
@@ -83,7 +83,7 @@ var config = {
 };
 ```
 
-For external content resources should be whitelisted, otherwise Magento will raise error notices in the browser console. Reference [Content Security Policies]({{ page.baseurl }}/extension-dev-guide/security/content-security-policies.html).
+For external content, resources should be whitelisted; otherwise Magento raises error notices in the browser console. See [Content Security Policies]({{ page.baseurl }}/extension-dev-guide/security/content-security-policies.html).
 
 Consider the example of overwriting an HTML file in the adminhtml.
 In this example, the `max-length` value of the text-box in the `adminhtml` is altered. The HTML file is located at `vendor/magento/module_ui/view/base/web/templates/form/element/input.html`.
