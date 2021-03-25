@@ -19,6 +19,9 @@ Command options:
 bin/magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN]
 ```
 
+{:.bs-callout-info}
+This command creates symlinks for LESS files in `var/view_preprocessed` and `pub/static` folders during development. This process will not compile LESS files to CSS files.
+
 The following table explains this command's parameters and values.
 
 <table>
