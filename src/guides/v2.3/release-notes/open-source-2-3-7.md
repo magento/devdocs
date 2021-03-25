@@ -66,7 +66,18 @@ Interactive In-Product Guidance provides merchants with usage tips and informati
 
 ### Vendor-developed extension enhancements
 
+All Vendor-Developed Extensions (VDEs) include bug fixes, security updates, and PHP 7.4 support.
+#### Amazon Pay
+
 Amazon Pay has been deprecated.
+#### Vertex
+
+New Vertex features and enhancements include:
+
+*  **Admin Order Cleansing**. The Vertex Address Validation module now displays a button for validating and updating addresses during Admin order creation. <!--- BUNDLE-2627-->
+
+*  **Commodity Codes**. Merchants can now attach commodity codes with a type of `UNSPSC`, `NCM`, `HSN`, or `Service` to products when Vertex is enabled. This supports the staging of commodity code changes to products.  <!--- BUNDLE-2628-->
+
 ## Fixed issues
 
 We have fixed several issues in the Magento 2.3.7 core code.
