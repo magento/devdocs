@@ -61,11 +61,11 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | A fully-qualified class name, such as `Vendor\Module\Block\Class`. Defaults to `Magento\Framework\View\Element\Template`. | no |
-| `display` | Prevents a block from displaying (the associated PHP classes are still loaded). | `true` or `false` | no |
+| `display` | Prevents a block from displaying (the associated PHP classes are still loaded). | `true` or `false`. Defaults to `true`. | no |
 | `name` | Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code> | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive. | no |
 | `before` | Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-) | no |
 | `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-) | no |
-| `template` | A template that represents the functionality of the block to which this attribute is assigned. If the attribute is omitted, the block will not render any output. | `Vendor_Module::path/to/template.phtml` (Scope is already in the `templates` directory of the module) | no |
+| `template` | A template that represents the functionality of the block to which this attribute is assigned. If the attribute is omitted, the block will not render any output unless the block class (or a parent class) has the `$_template` property defined correctly. | `Vendor_Module::path/to/template.phtml` (Scope is already in the `templates` directory of the module) | no |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false`. Defaults to `true`. | no |
 | `ifconfig` | Makes the block's visibility dependent on a system configuration field. | XPath to the system configuration field. E.g. `contact/contact/enabled` | no |
@@ -148,6 +148,16 @@ The following tables give a detailed description of the results you can get usin
 | Several elements have `before` or `after` set to dash (-) | All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined. |
 | The `before` or `after` attribute's value refers to an element that is not located in the parent node of the element being defined. | The element displays at a random location that doesn't violate requirements for the correctly positioned elements. |
 
+Sample usage in a layout:
+
+```xml
+<referenceContainer name="page.wrapper">
+    <container name="header.container" as="header_container" label="Page Header Container" htmlTag="header" htmlClass="page-header" before="main.content"/>
+    <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>
+    <container name="footer-container" as="footer" after="-" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer"/>
+</referenceContainer>
+```
+
 ### action {#fedg_layout_xml-instruc_ex_act}
 
 {:.bs-callout-warning}
@@ -225,6 +235,12 @@ Sets the declared block or container element as a child of another element in th
 | `as` | Alias name for the element in the new location. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `after` or `before` | Specifies the element's position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings. | Element name | no |
 
+Sample of usage in the page layout:
+
+```xml
+<move element="product.info.options.wrapper" destination="bundle.product.options.wrapper" before="-" />
+```
+
 ### remove {#fedg_layout_xml-instruc_ex_rmv}
 
 `<remove>` is used only to remove the static resources linked in a page `<head>` section.
@@ -256,6 +272,12 @@ Includes a certain layout file.
 
 The specified [handle] is "included" and executed recursively.
 
+Sample of usage in the page layout:
+
+```xml
+<update handle="customer_account"/>
+```
+
 ### argument {#argument}
 
  {:.bs-callout-info}
@@ -267,7 +289,7 @@ Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments)
 |:------- |:------ |:------ |:------ |
 | `name` | Argument name. | unique | yes |
 | `shared` | If false, creates a new instance of the block. | `false` | no |
-| `translate` | | `true` or `false` | no |
+| `translate` | Specify whether the string is translatable or not | `true` or `false` | no |
 | `xsi:type` | Argument type. | `string`, `boolean`, `object`, `number`, `null`, `array`, `options`, `url`, `helper` | yes |
 
 To pass multiple arguments use the following construction:
@@ -319,7 +341,7 @@ There are examples of all argument types.
 -  The *object* type:
 
 ```xml
-<argument name="viewModel" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
+<argument name="view_model" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
 ```
 
 The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\Framework\View\Element\Block\ArgumentInterface` interface.
@@ -394,7 +416,7 @@ $someString = $block->getData('some_string'); //or $block->getSomeString()
 $isActive = $block->getData('is_active'); //or $block->getIsActive()
 
 /** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */
-$viewModel = $block->getData('viewModel'); //or $block->getViewModel()
+$viewModel = $block->getData('view_model'); //or $block->getViewModel()
 
 /** @var string|int|float $someNumber */
 $someNumber = $block->getData('some_number'); //or $block->getSomeNumber()

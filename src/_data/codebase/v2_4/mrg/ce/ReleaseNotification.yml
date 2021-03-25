@@ -1,9 +1,9 @@
 ---
 title: Magento_ReleaseNotification
 source_repo: magento2ce
-release: 2.4.1
+release: 2.4.2
 github_path: app/code/Magento/ReleaseNotification/README.md
-last_modified_at: '2019-09-06 19:55:12 +0300'
+last_modified_at: '2020-12-10 20:10:41 -0600'
 content: "The **Release Notification Module** serves to provide a notification delivery
   platform for displaying new features of a Magento installation or upgrade as well
   as any other required release notifications.\n\n## Purpose and Content\n\n* Provides
@@ -18,7 +18,7 @@ content: "The **Release Notification Module** serves to provide a notification d
   notification content is maintained by Magento for each Magento version, edition,
   and locale. To retrieve the content, a response is returned from a request with
   the following parameters:\n\n*  **version** = The Magento version that the client
-  has installed (ex. 2.3.0).\n*  **edition** = The Magento edition that the client
+  has installed (ex. 2.4.0).\n*  **edition** = The Magento edition that the client
   has installed (ex. Community).\n*  **locale** = The chosen locale of the admin user
   (ex. en_US).\n\nThe module will make three attempts to retrieve content for the
   parameters in the order listed:\n\n1. Version/Edition/Locale\n2. Version/Edition/en_US
@@ -45,4 +45,4 @@ content: "The **Release Notification Module** serves to provide a notification d
   will cause a clickable link to be created. The text between the brackets [text]
   will be the text that the clickable link shows.\n\n### Link Format Example:\n\nThe
   text: `https://devdocs.magento.com/ [Magento DevDocs].` will appear as [Magento
-  DevDocs](https://devdocs.magento.com/).\n"
+  DevDocs](https://devdocs.magento.com/)."

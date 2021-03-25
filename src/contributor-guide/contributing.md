@@ -23,7 +23,7 @@ The following topics are included in this guide:
 -  [Contribution awards and points](#points)
 
 {:.bs-callout-tip}
-Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://tinyurl.com/engcom-slack), in the [#general](https://magentocommeng.slack.com/messages/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/messages/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
+Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://opensource.magento.com/slack), in the [#general](https://magentocommeng.slack.com/messages/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/messages/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
 
 ## Contribute to Magento 2 code {#contribute}
 
@@ -118,7 +118,7 @@ We also recommend creating a personal access token for your account to use when 
 
 ## Questions or enhancement requests? {#question}
 
-We capture code-related issues in the the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [Magento DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
+We capture code-related issues in the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [Magento DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
 
 Submit feature requests or enhancement suggestions to the [Magento 2 Feature Requests and Improvements forum](https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests). For details about how requests are managed, see [Improvements to GitHub Management](https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96).
 
@@ -148,11 +148,13 @@ Review the following supported and accepted pull request rules. We defined these
 
 For complete information about contributing to Magento projects, see the [Beginner Guides](https://github.com/magento/magento2/wiki/Getting-Started) on the Magento 2 repository. These guides help you:
 
+-  Select an issue to work on and self-assign
 -  Fork a repository
 -  Create a branch
--  Find and work issues
--  Create tests
--  Submit a pull request
+-  Fix/implement the functionality
+-  Cover the changes with tests
+-  Open a pull request
+-  Launch tests and ensure they are green (see more details on [pull request tests]({{ site.baseurl }}/contributor-guide/pull-request-tests.html))
 
 ## Squash commits {#squash-commits}
 
@@ -206,7 +208,7 @@ When you want to verify an issue or pull request, use the `instance` command to 
 @magento give me {$version} instance
 ```
 
-Replace `{$version}` with the version tag for the version required. The currently supported values are the latest [version tags](https://github.com/magento/magento2/tags) and the 2.4-develop branch. For example:
+Replace `{$version}` with the version tag or branch. The following values are supported: the version tag for the latest release and `2.4-develop` for the development branch.
 
 ```text
 @magento give me 2.4.0 instance
@@ -274,33 +276,6 @@ For example, append the following text to the PR comment to deploy a {{site.data
 ```text
 with edition b2b
 ```
-
-#### Environment
-
-Append the following text to your PR comment to specify the version for applications and services to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
-
-```text
-with env PHP {$phpVersion}, search-engine ElasticSearch {$searchEngineVersion}, database {$dbEngine} {$dbEngineVersion}
-```
-
-Replace variables in the command with the following values as needed for your environment:
-
--  `{$phpVersion}`–Specify the PHP version for the instance.
-
--  `{$searchEngineVersion}`–Specify the Elasticsearch version for the instance.
-
--  `{$dbEngine}`–Specify the database type, either `MariaDB` or `MySQL`.
-
--  `{$dbEngineVersion}`–Specify the version of the database engine for the instance.
-
-For example, append the following text to the PR comment to deploy an instance with PHP 7.4, Elasticsearch version 7, and MariaDB version 10.4.
-
-```text
-with env PHP 7.4, search-engine Elasticsearch 7, database MariaDB 10.4
-```
-
-{:.bs-callout-info}
-We generally recommend that you deploy the default environment. Use the custom configuration options only when you require a special configuration to test specfic use cases.
 
 #### Add extensions
 

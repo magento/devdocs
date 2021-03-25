@@ -1,7 +1,7 @@
 ---
 title: Magento_InventoryApi
 source_repo: inventory
-release: 1.2.1
+release: 1.2.2
 github_path: InventoryApi/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventoryApi` module provides Inventory Management service contracts.
@@ -13,4 +13,4 @@ content: "The `InventoryApi` module provides Inventory Management service contra
   3rd-party developers\ncan use to provide custom inventory functionality.\n\n###
   Public APIs\n\nPublic APIs are defined in the `Api` and `Api/Data` directories.\n\n###
   REST endpoints\n\nThe `etc/webapi.xml` file defines endpoints for managing sources,
-  stocks, stock source links, and source items.\n"
+  stocks, stock source links, and source items."

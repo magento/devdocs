@@ -86,6 +86,21 @@ stage:
     SCD_COMPRESSION_TIMEOUT: 800
 ```
 
+### `SCD_NO_PARENT`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.4.2 and later
+
+Set to `true` to prevent generating static content for parent themes during the build phase.
+
+We recommend setting `SCD_NO_PARENT: false` during the build phase so that generating static content for the parent themes does not impact site deployment or cause unnecessary site downtime. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
+
+```yaml
+stage:
+  build:
+    SCD_NO_PARENT: false
+```
+
 ### `SCD_MATRIX`
 
 -  **Default**—_Not set_
@@ -183,6 +198,21 @@ stage:
 
 {:.bs-callout-info}
 Because Baler is currently in alpha release, we do not recommend using it in Production environments.
+
+### `SKIP_COMPOSER_DUMP_AUTOLOAD`
+
+-  **Default**— _Not set_
+-  **Version**—Magento 2.1.4 and later
+
+Set to `true` to skip the `composer dump-autoload` command during a {{ site.data.var.mcd-prod }} installation. This variable is only relevant for {{ site.data.var.mcd-prod }} containers with writable file systems. In such cases, skipping the command prevents errors from other commands trying to access code from the deleted `generated` directory.
+
+When Magento runs `composer dump-autoload`, it creates autoload files with links to generated classes in the `generated` folder. In production environments with read-only files systems, this is not a problem. However, for {{ site.data.var.mcd-prod }} installations with writable file systems (created only for testing and development using `./vendor/bin/ece-docker build:compose --with-test`), you can run the `bin/magento -n setup:upgrade` command without the `--keep-generated` option, which deletes the `generated` directory. If the directory is deleted, the `composer dump-autoload` command fails because the autoload contains links to files in the deleted directory.
+
+```yaml
+stage:
+  build:
+    SKIP_COMPOSER_DUMP_AUTOLOAD: true
+```
 
 ### `SKIP_SCD`
 

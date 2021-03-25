@@ -60,12 +60,12 @@ If the configuration is found, `uiLayout` uses that configuration instead of the
 
 ## Code samples
 
-The example module referenced in the following examples uses `OrangeCo` as its company value and `Sample` as the module name.
+The example module referenced in the following examples uses `ExampleCorp` as its company value and `Sample` as the module name.
 
 It also assumes the existence of the following files:
 
-*  `app/code/OrangeCo/Sample/view/base/web/js/my-new-component.js`
-*  `app/code/OrangeCo/Sample/view/base/web/templates/my-new-component/main-template.html`
+*  `app/code/ExampleCorp/Sample/view/base/web/js/my-new-component.js`
+*  `app/code/ExampleCorp/Sample/view/base/web/templates/my-new-component/main-template.html`
 
 ### Create a child component
 
@@ -73,7 +73,7 @@ You can use `uiLayout` to create a UI component instance that is a child of anot
 
 The following example creates an instance of the `my-new-component` component that is a child of the `uiCollection` component.
 
-**Example component file:** `app/code/OrangeCo/Sample/view/base/web/js/sample.js`
+**Example component file:** `app/code/ExampleCorp/Sample/view/base/web/js/sample.js`
 
 ``` js
 define([
@@ -86,8 +86,8 @@ define([
         defaults: {
             myNewComponentConfig: {
                 name: 'myNewComponent',
-                component: 'OrangeCo_Sample/js/my-new-component',
-                nodeTemplate: 'OrangeCo_Sample/my-new-component/main-template',
+                component: 'ExampleCorp_Sample/js/my-new-component',
+                nodeTemplate: 'ExampleCorp_Sample/my-new-component/main-template',
                 parent: '${ $.name }'
             }
         },
@@ -116,7 +116,7 @@ In the following example, a custom Table UI component is created using an existi
 
 The [`mageUtils`](https://github.com/magento/magento2/tree/2.3/lib/web/mage/utils) helper library is also used in this example to create the new component based on `myRowTemplateConfig`.
 
-**Example component file:** `app/code/OrangeCo/Sample/view/base/web/js/table.js`
+**Example component file:** `app/code/ExampleCorp/Sample/view/base/web/js/table.js`
 
 ``` js
 define([

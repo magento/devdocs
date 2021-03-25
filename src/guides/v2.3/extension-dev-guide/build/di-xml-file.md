@@ -236,6 +236,11 @@ Node Format:
 </config>
 ```
 
+{:.bs-callout-warning}
+**Arguments on different stages**
+<br/>
+Configuration arguments are merged when they are declared on the same stage (Initial, Global, or Area-Specifc). If you declare new arguments on a higher stage, like Area-Specific, the arguments declared on the higher stage will replace the existing ones.
+
 {:.bs-callout-info}
 **Merging and Arguments**
 <br/>
@@ -273,16 +278,16 @@ If you want to override a public or protected method from a core class, utilize 
 Here is an example of overriding a method from a core file:
 
 ```xml
-<!-- app/code/OrangeCompany/OverrideExample/etc/di.xml -->
+<!-- app/code/ExampleCorp/OverrideExample/etc/di.xml -->
 <config  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Checkout\Block\Onepage\Success" type="OrangeCompany\OverrideExample\Block\Onepage\Success" />
+    <preference for="Magento\Checkout\Block\Onepage\Success" type="ExampleCorp\OverrideExample\Block\Onepage\Success" />
 </config>
 ```
 
 The example below overrides the `isVisible` method from the `Magento\Checkout\Block\Onepage\Success` block class.
 
 ```php
-namespace OrangeCompany\OverrideExample\Block\Onepage;
+namespace ExampleCorp\OverrideExample\Block\Onepage;
 
 class Success extends \Magento\Checkout\Block\Onepage\Success
 {

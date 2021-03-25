@@ -7,7 +7,7 @@ functional_areas:
   - Services
 ---
 
-The SendGrid-based SMTP proxy service provides email authentication, reputation monitoring, and dedicated IP addresses. A basic set up includes 12,000 emails per month and excludes use in marketing campaigns. See [SendGrid and Magento—Email Delivery. Simplified](https://sendgrid.com/partners/magento/).
+The SendGrid-based SMTP proxy service provides email authentication and reputation monitoring. A basic set up includes 12,000 emails per month and excludes use in marketing campaigns. See [SendGrid and Magento—Email Delivery. Simplified](https://sendgrid.com/partners/magento/).
 
 Magento automates the SendGrid integration for Starter and Pro Integration environments. The Pro Production and Staging environments require manual provisioning and configuration during the IaaS hardware provisioning process.
 
@@ -24,6 +24,9 @@ s2.example.com IN CNAME <s2.example.sendgrid.net>
 {: .bs-callout-tip}
 You can find Sendgrid details for your account in the Onboarding UI. Use the `https://cloud.magento.com/project/_project-id_/setup/project_details` URL and select the **Project Details** > **Hosting Info** tab.
 
-The CNAME records resolve to the Domain Keys Identified Mail (DKIM) and Sender Policy Framework (SPF) records managed by SendGrid, so that spam filters are less likely to inhibit your messages.
+For {{site.data.var.ece}} Pro, the CNAME records resolve to the Domain Keys Identified Mail (DKIM) and Sender Policy Framework (SPF) records managed by SendGrid, so that spam filters are less likely to inhibit your messages.
 
-Magento does not support whitelisting, but you can review the [Sender Policy Framework (SPF)](https://sendgrid.com/docs/Glossary/spf.html) guidelines to improve delivery.
+{: .bs-callout-info}
+**SendGrid DKIM signatures** are not available in Commerce Cloud Starter. They are only available in Commerce Cloud Pro.
+
+Magento does not support allowlists, but you can review the [Sender Policy Framework (SPF)](https://sendgrid.com/docs/Glossary/spf.html) guidelines to improve delivery.

@@ -1,10 +1,10 @@
 ---
 title: Magento_InventoryConfigurableProduct
 source_repo: inventory
-release: 1.2.1
+release: 1.2.2
 github_path: InventoryConfigurableProduct/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
-content: |
+content: |-
   ## InventoryConfigurableProduct module
 
   The `InventoryConfigurableProduct` module integrates inventory management business logic into Magento's configurable product logic.

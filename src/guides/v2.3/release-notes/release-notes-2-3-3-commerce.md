@@ -517,7 +517,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MAGETWO-98804 -->
 
-*  Magento now displays the correct currency in the the Admin **Catalog** > **Products**  list  in deployments where websites are assigned different currencies. Previously, the products on the Admin Category page displayed the base currency even when **Product Price Scope** was set to **Per Website** and the website was assigned a different currency.
+*  Magento now displays the correct currency in the Admin **Catalog** > **Products**  list  in deployments where websites are assigned different currencies. Previously, the products on the Admin Category page displayed the base currency even when **Product Price Scope** was set to **Per Website** and the website was assigned a different currency.
 
 <!--- MAGETWO-69893-->
 
@@ -1819,7 +1819,7 @@ The following table identifies contributions from our community members. This ta
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html).
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/guides/v2.3/install-gde/system-requirements.html).
 
 ### Installation and upgrade instructions
 

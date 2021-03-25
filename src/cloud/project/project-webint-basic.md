@@ -98,7 +98,7 @@ To set environment specific variables in the Project Web Interface:
 
    ![Set environment variables]({{ site.baseurl }}/common/images/cloud/cloud_env-var.png)
 
-1. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
+1. As needed, select options for **JSON value**, **Enabled**, **Inheritable by child environments** and **Sensitive**. If you do not have Super User access, you may only see the JSON value option.
 1. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 {:.bs-callout-warning}
@@ -135,7 +135,7 @@ Routes allow you to set redirects or upstream settings for applications for your
    1. Enter the **Upstream** route.
    1. Use the toggle to enable or disable the **Cache** for the route.
    1. Enter the cookies to list: No cookies, All cookies, or Specify a specific cookie. You can enter multiple specific cookies.
-   1. For Headers to Whitelist, select Default Headers or Specify a header. You can enter multiple headers.
+   1. To add Headers to an allowlist, select Default Headers or Specify a header. You can enter multiple headers.
    1. Use the toggle to enable or disable the Server-Side Includes (**SSI**).
 
 1. To configure a Redirect, enter a URL to **Redirect to**. You can use `{default}` in the URL, which is a placeholder for the default domain.

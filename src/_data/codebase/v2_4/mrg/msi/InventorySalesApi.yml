@@ -1,7 +1,7 @@
 ---
 title: Magento_InventorySalesApi
 source_repo: inventory
-release: 1.2.1
+release: 1.2.2
 github_path: InventorySalesApi/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventorySalesApi` module provides service contracts for inventory
@@ -13,4 +13,4 @@ content: "The `InventorySalesApi` module provides service contracts for inventor
   that 3rd-party developers\ncan use to provide custom inventory catalog functionality.\n\n###
   Public APIs\n\nPublic APIs are defined in the `Api` and `Api/Data` directories.\n\n###
   REST endpoints\n\nThe `etc/webapi.xml` file defines endpoints for determining whether
-  a salable amount of products are available for purchase.\n"
+  a salable amount of products are available for purchase."

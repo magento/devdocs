@@ -1,7 +1,7 @@
 ---
 title: Magento_InventoryCatalogApi
 source_repo: inventory
-release: 1.2.1
+release: 1.2.2
 github_path: InventoryCatalogApi/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventoryCatalogApi` module provides service contracts for default
@@ -13,4 +13,4 @@ content: "The `InventoryCatalogApi` module provides service contracts for defaul
   APIs that 3rd-party developers\ncan use to provide custom inventory catalog functionality.\n\n###
   Public APIs\n\nPublic APIs are defined in the `Api` directory.\n\n### REST endpoints\n\nThe
   `etc/webapi.xml` file defines endpoints for assigning, unassigning, and transferring
-  sources in bulk.\n"
+  sources in bulk."

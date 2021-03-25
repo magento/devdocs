@@ -52,7 +52,7 @@ Add or edit a CMS page, cacheable block, or use the Magento Admin to change the 
 To only clear directories and not perform other actions, log in to the Magento server as the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and clear directories using a command like the following:
 
 ```bash
-rm -rf <magento_root>/generated/metadata/* <magento_root>/generated/code/*
+rm -r <magento_root>/generated/*/*
 ```
 
 You can also use the following command-line tools clear some directories for you. These commands perform other tasks as well; consult the linked documentation for more details.

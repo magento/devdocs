@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Prerequisites
 title: nginx
 menu_title: nginx
@@ -12,16 +11,7 @@ functional_areas:
 
 Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en/linux_packages.html#mainline){:target="_blank"}). You must also install the latest version of `php-fpm`.
 
-Installation instructions vary based on which operating system you are using. See [PHP](php-settings.html) for for information.
-
-## Help if you're just starting out {#apache-help-beginner}
-
-If you're new to all this and need some help getting started, we suggest the following:
-
-*  [Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-*  [What is the software that the Magento server needs to run?]({{page.baseurl }}/install-gde/basics/basics_software.html)
-*  [What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
-*  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
+Installation instructions vary based on which operating system you are using. See [PHP](php-settings.html) for information.
 
 ## Ubuntu 16
 
@@ -33,7 +23,7 @@ The following section describes how to install Magento 2.x on Ubuntu 16 using ng
 apt-get -y install nginx
 ```
 
-After completing the following sections and [installing Magento]({{page.baseurl }}/install-gde/prereq/nginx.html#install-magento2-ubuntu), we'll use a sample configuration file to [configure nginx]({{page.baseurl }}/install-gde/prereq/nginx.html#configure-nginx-ubuntu).
+After completing the following sections and [installing Magento]({{page.baseurl }}/install-gde/prereq/nginx.html#install-magento2-ubuntu), we will use a sample configuration file to [configure nginx]({{page.baseurl }}/install-gde/prereq/nginx.html#configure-nginx-ubuntu).
 
 ### Install and configure php-fpm
 
@@ -48,7 +38,7 @@ To install and configure `php-fpm`:
    ```
 
    {:.bs-callout-info}
-   This command installs the latest available version of PHP 7.2.X. See [Magento 2.3.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for supported PHP versions.
+   This command installs the latest available version of PHP 7.2.X. See [Magento 2.3.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported PHP versions.
 
 1. Open the `php.ini` files in an editor:
 
@@ -88,8 +78,6 @@ Refer to [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html) for more infor
 There are several ways to download the Magento software, including:
 
 *  [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
-
-*  [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
 
 *  [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
@@ -364,8 +352,6 @@ Refer to [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html) for more infor
 There are several ways to download the Magento software, including:
 
 *  [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
-
-*  [Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
 
 *  [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 

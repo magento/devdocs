@@ -273,7 +273,7 @@ The `customer` object can contain the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [[WishlistItem](#wishlistitem)] | An array of items in the customer's wish list
+`items` | [[WishlistItem]](#wishlistitem) | An array of items in the customer's wish list
 `items_count` | Int | The number of items in the wish list
 `id` | ID | The unique identifier of the wish list
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list

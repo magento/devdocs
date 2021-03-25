@@ -18,6 +18,8 @@ You can upgrade your Magento application from the command line if you installed 
 {:.bs-callout-info}
 Do not use this method to upgrade if you cloned the Magento 2 GitHub repository. Instead, see [Update the Magento application][] for upgrade instructions.
 
+The following instructions show you how to upgrade Magento using Composer. Magento 2.4.2 introduced support for Composer 2. If you are attempting to upgrade from Magento <2.4.1, you must first upgrade to a version of Magento that is compatible with Composer 2 (for example, 2.4.2) using Composer 1 _before_ upgrading to Composer 2 for Magento >2.4.2 upgrades.
+
 ## Before you begin {#prerequisites}
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
@@ -39,7 +41,7 @@ Complete the following prerequisites to prepare your environment before starting
 -  **Check the status of cron jobs**—To prevent various unexpected problems during the upgrade, wait for all active running Magento cron jobs to finish or stop them.
 -  **Install the Composer update plugin**—The [`magento/composer-root-update-plugin`][custom Composer plugin] Composer plugin resolves changes that need to be made to the root project `composer.json` file before updating to a new Magento product requirement.
 
-   The plugin partially automates the manual upgrade by identifying and helping you resolve dependency conflicts instead of requiring you to identify and fix them them manually.
+   The plugin partially automates the manual upgrade by identifying and helping you resolve dependency conflicts instead of requiring you to identify and fix them manually.
 
    To install the plugin:
 
@@ -205,7 +207,7 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 [Enable or disable maintenance mode]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
 [metapackage]: https://glossary.magento.com/metapackage
-[system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
+[system requirements]: {{ page.baseurl }}/install-gde/system-requirements.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
 [Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html

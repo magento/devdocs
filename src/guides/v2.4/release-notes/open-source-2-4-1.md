@@ -219,10 +219,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Images in the Adobe Stock images grid are now properly aligned after filters have been cleared. _Fix submitted by Nazar Klovanych in pull request [28366](https://github.com/magento/magento2/pull/28366)_. [GitHub-824](https://github.com/magento/adobe-stock-integration/issues/824), [GitHub-972](https://github.com/magento/adobe-stock-integration/issues/972)
 
-<!--- ENGCOM-8020-->
-
-*  Added support for reading `exif_image.png` or `exif-image.jpeg` metadata. _Fix submitted by Nazar Klovanych in pull request [29576](https://github.com/magento/magento2/pull/29576)_. [GitHub-1449](https://github.com/magento/adobe-stock-integration/issues/1449)
-
 <!-- ENGCOM-7709 -->
 
 *  The **Used in** field of the Adobe Stock gallery image details page now accurately identifies if the image is associated with a product. _Fix submitted by Nazar Klovanych in pull request [28798](https://github.com/magento/magento2/pull/28798)_. [GitHub-1474](https://github.com/magento/adobe-stock-integration/issues/1474)
@@ -265,7 +261,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-8019-->
 
-*  Magento now adds tags correctly when you edit multiple images successively in the Media Gallery. _Fix submitted by Nazar Klovanych in pull request [29429](https://github.com/magento/magento2/pull/29429)_. [GitHub-1755](https://github.com/magento/adobe-stock-integration/issues/1755
+*  Magento now adds tags correctly when you edit multiple images successively in the Media Gallery. _Fix submitted by Nazar Klovanych in pull request [29429](https://github.com/magento/magento2/pull/29429)_. [GitHub-1755](https://github.com/magento/adobe-stock-integration/issues/1755)
 
 <!--- ENGCOM-8015-->
 
@@ -465,7 +461,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- ENGCOM-7698-->
 
-*  `localStorage` polyfill has been moved from from `base` to `frontend`. _Fix submitted by Ihor Sviziev in pull request [28749](https://github.com/magento/magento2/pull/28749)_. [GitHub-28900](https://github.com/magento/magento2/issues/28900)
+*  `localStorage` polyfill has been moved from `base` to `frontend`. _Fix submitted by Ihor Sviziev in pull request [28749](https://github.com/magento/magento2/pull/28749)_. [GitHub-28900](https://github.com/magento/magento2/issues/28900)
 
 <!--- ENGCOM-7753-->
 
@@ -561,7 +557,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- ENGCOM-7193-->
 
-*   `sales_clean_quotes` no longer loads all expired quotes at once. Previously, Magento failed with this fatal error because all expired quotes were loaded simultaneously: `PHP Fatal error: Allowed memory size of 2147483648 bytes exhausted (tried to allocate 20480 bytes) in /path/to/magento2/vendor/magento/framework/Model/AbstractModel.php on line 359`,
+*  `sales_clean_quotes` no longer loads all expired quotes at once. Previously, Magento failed with this fatal error because all expired quotes were loaded simultaneously: `PHP Fatal error: Allowed memory size of 2147483648 bytes exhausted (tried to allocate 20480 bytes) in /path/to/magento2/vendor/magento/framework/Model/AbstractModel.php on line 359`,
 
 ### CSS
 
@@ -883,7 +879,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7732 7733-->
 
-*  GraphQL product search now considers configured category permissions. Previously, product search ignored the **Enable** setting (**Stores**  >  **Configuration**  >  **Catalog**  >  **Catalog** > **Category Permissions**). _Fix submitted by Petkovski Marjan in pull request [28757](https://github.com/magento/magento2/pull/28757) and pull request 271 in private repo `partners-magento2ee`_. [GitHub-28563](https://github.com/magento/magento2/issues/28563
+*  GraphQL product search now considers configured category permissions. Previously, product search ignored the **Enable** setting (**Stores**  >  **Configuration**  >  **Catalog**  >  **Catalog** > **Category Permissions**). _Fix submitted by Petkovski Marjan in pull request [28757](https://github.com/magento/magento2/pull/28757) and pull request 271 in private repo `partners-magento2ee`_. [GitHub-28563](https://github.com/magento/magento2/issues/28563)
 
 <!--- MC-31084-->
 
@@ -1648,9 +1644,11 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 ## Known issues
 
-**Issue**: The new CAPTCHA feature for checkout does not work as expected on the Place Order page when using third-party payment providers. Merchants running Magento 2.3.6 or 2.4.1 who have enabled CAPTCHA protection on the Place Order storefront page will see this error when checking out using a third-party payment provider such as PayPal: `Please provide CAPTCHA code and try again`. A fix for this issue be available in the next few weeks, and will be included in our next quarterly patch (Q12021). Please contact Support for additional information.
+**Issue**: The new CAPTCHA feature for checkout does not work as expected on the Place Order page when using third-party payment providers. Merchants running Magento 2.3.6 or 2.4.1 who have enabled CAPTCHA protection on the Place Order storefront page will see this error when checking out using a third-party payment provider such as PayPal: `Please provide CAPTCHA code and try again`. **Workaround**: A fix for this issue is now available. See the [Magento Commerce v2.3.6/2.4.1 CAPTCHA in checkout not working](https://support.magento.com/hc/en-us/articles/360051235772) Knowledge Base article. A fix will also be included in our next quarterly patch (Q12021).
 
 **Issue**: Users without administrator privileges cannot currently set up their personal 2FA access. 2FA as implemented in Magento includes two ACL roles. One role affects global system configuration and it is needed only when configuring the system. The second ACL role affects individual user 2FA accounts. An admin user must configure this second type of 2FA ACL. **Workaround**:  After the user has logged in and seen the Access denied screen, they can visit `https://<magento store>/<admin_path>/tfa/tfa/requestconfig/` to force configuration. Note: We do not recommend disabling security settings. However, this workaround is effective only when Admin URL secret keys are disabled.
+
+**Issue**: The **Create an Account** button on the Create New Account page remains disabled if a shopper has entered invalid data. This prevents shoppers from re-attempting to create an account after making an error. **Workaround**: Apply patch `MC-38509`. A fix will also be included in our next quarterly releases (2.4.2, 2.4.1-p1 and 2.3.6-p1), which are scheduled for release in Q1 2021. See the [2.4.1 and 2.3.6 create an account button disabled hotfix](https://support.magento.com/hc/en-us/articles/360051130212) Knowledge Base article.  [GitHub-30513](https://github.com/magento/magento2/issues/30513)
 
 **Issue**: Merchants cannot log in to dotdigital from the Admin in Safari when dotdigital is enabled. See the [It's impossible to login in the dotdigital via admin panel when dotdigital account is enabled](https://support.magento.com/hc/en-us/articles/360050092291) Knowledge Base article.
 

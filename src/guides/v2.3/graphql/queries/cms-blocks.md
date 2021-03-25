@@ -61,3 +61,10 @@ The `CmsBlocks` object contains an array of `items`, each of which can contain a
 ### CmsBlock attributes
 
 {% include graphql/cms-block-object.md %}
+
+## Errors
+
+Error | Description
+--- | ---
+`The CMS block with the "XXXX" ID doesn't exist` | The specified CMS block ID is invalid.
+`"identifiers" of CMS blocks should be specified"` | The `identifiers` array parameter is required for identifying the CMS blocks.

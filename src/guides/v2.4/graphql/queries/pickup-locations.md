@@ -43,7 +43,12 @@ Because `pageSize` is set to 1 and distance by `distance` is applied, result wil
     }
     pageSize: 1
     currentPage: 1
-    sort: {distance: ASC}
+    sort: {distance: ASC},
+    productsInfo: [
+        {
+            sku: "SKU-1"
+        }
+    ]
   ) {
     items {
       pickup_location_code
@@ -72,6 +77,9 @@ Because `pageSize` is set to 1 and distance by `distance` is applied, result wil
 ```
 
 **Response:**
+
+If the Pickup location is not available for the given search term, the response will be empty.
+For the available Pickup location, the response would look like:
 
 ```json
 {
@@ -117,6 +125,7 @@ Attribute | Data type | Description
 `sort` | [PickupLocationSortInput](#PickupLocationSortInput) | Specifies which attribute to sort on, and whether to return the results in ascending or descending order.
 `pageSize` | Int | The maximum number of pickup locations to return at once. The attribute is optional. The default value is 20.
 `currentPage` | Int | Specifies which page of results to return. The default value is 1.
+`productsInfo` |[[ProductInfoInput]](#ProductInfoInput)| Contains an array of SKUs to filter on.
 
 ### AreaInput object {#AreaInput}
 
@@ -124,8 +133,8 @@ Use the `AreaInput` to apply filtration by distance. All attributes are required
 
 Attribute | Data type | Description
 --- | --- | ---
-`radius` | Int! | The radius to the search, in kilometers.
-`search_term` | String! | A combination of either the region, city, or postcode, a colon, and the country code. This value determines the location to use as the center of the search radius.  For example, `Austin:US`.
+`radius` | Int! | The radius to the search, in kilometers
+`search_term` | String! | A combination of either the region, city, or postcode, a colon, and the country code. This value determines the location to use as the center of the search radius.  Valid search terms include Texas:US, Austin:US, and 78740:US. The two-letter country code must be uppercase
 
 ### PickupLocationFilterInput object {#PickupLocationFilterInput}
 
@@ -164,6 +173,14 @@ Attribute | Data type | Description
 `region` | SortEnum | Name of the region
 `region_id` | SortEnum | ID of the region
 `street` | SortEnum | Street of the pickup location
+
+### ProductInfoInput object {#ProductInfoInput}
+
+`ProductInfoInput` contains a list of SKUs. If this object is provided in the query, then the response contains locations where all the products are available for in-store pickup. If even one product in the list cannot be used as an in-store pickup location, that location will not be included in the response.
+
+Attribute | Data type | Description
+--- | --- | ---
+`sku` | String! | Product SKU
 
 ### PickupLocations object
 
@@ -204,3 +221,10 @@ Attribute | Data type | Description
 `current_page` | Int | Specifies which page of results to return
 `page_size` | Int | Specifies the maximum number of items to return
 `total_pages` | Int | Total pages
+
+## Errors
+
+Error | Description
+--- | ---
+`Field AreaInput.radius of required type Int! was not provided` | The value specified in the `AreaInput.radius` argument is empty.
+`Field AreaInput.search_term of required type String! was not provided` | The value specified in the `AreaInput.search_term` argument is empty.

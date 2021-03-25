@@ -29,7 +29,7 @@ When you update `{{ site.data.var.ct }}` or the {{ site.data.var.mcp-prod }} pac
 
 {% include cloud/note-upgrade.md %}
 
-The Magento Quality Patches package is a dependency for the {{ site.data.var.mcp-prod }} and {{site.data.var.ct}} packages. To apply the latest patches, you must have [the latest version of {{ site.data.var.ct }}]({{site.baseurl}}/cloud/project/ece-tools-update.html) installed.
+The Magento Quality Patches package is a dependency for the {{ site.data.var.mcp-prod }} and {{site.data.var.ct}} packages. To apply the latest patches, you must have [the latest version of {{ site.data.var.ct }}]({{site.baseurl}}/cloud/project/ece-tools-update.html) installed. The minimum required version of {{site.data.var.ct}} is 2002.1.2.
 
 ## View available patches and status
 
@@ -108,10 +108,10 @@ To apply individual patches in a local development environment:
 
    ```yaml
    stage:
-       build:
-           QUALITY_PATCHES:
-               - MCTEST-1002
-               - MCTEST-1003
+     build:
+       QUALITY_PATCHES:
+         - MCTEST-1002
+         - MCTEST-1003
    ```
 
 1. From the project root, apply the patches.
@@ -145,10 +145,10 @@ To apply patches in a Cloud environment:
 
    ```yaml
    stage:
-       build:
-           QUALITY_PATCHES:
-               - MCTEST-1002
-               - MCTEST-1003
+     build:
+       QUALITY_PATCHES:
+         - MCTEST-1002
+         - MCTEST-1003
    ```
 
    {:.bs-callout-info}

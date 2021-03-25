@@ -4,11 +4,9 @@ The diagram shows the following:
 
 1. Set up your server environment.
 
-   Install the prerequisite software, including PHP, Apache, and MySQL. Consult the [system requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for specific information.
+   Install the prerequisite software, including PHP, Apache, and MySQL. Consult the [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for specific information.
 
 1. Get the Magento software.
-
-   *  For simplicity, get a compressed {{site.data.var.ce}} or {{site.data.var.ee}} [archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html), extract it on your Magento server, and start your installation.
 
    *  If you are more technical and you are familiar with Composer, get a {{site.data.var.ce}} or {{site.data.var.ee}} {% if page.guide_version == "2.0" %} [metapackage]({{page.baseurl}}/install-gde/prereq/integrator_install.html) {% else %} [metapackage]({{page.baseurl}}/install-gde/composer.html). {% endif %}
 

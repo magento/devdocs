@@ -16,6 +16,81 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.2.1
+*Release date: December 21, 2020*<br/>
+
+-  {:.new}<!--MCLOUD-7259-->**NGINX command options**–Added build command options to change the number of NGINX `worker_processes` and NGINX `worker_connections` for TLS and Web services. The `worker_process` parameter retains the ability to set the value to `auto`. Examples:
+
+    ```terminal
+    ./vendor/bin/ece-docker build:compose --nginx-worker-processes=2
+    ./vendor/bin/ece-docker build:compose --nginx-worker-connections=2048
+    ```
+
+-  {:.new}<!--MCLOUD-7259-->**TLS command option**–Added build command option to create a configuration without the TLS service. Example:
+
+   ```terminal
+   ./vendor/bin/ece-docker build:compose --no-tls
+   ```
+
+-  {:.new}<!--MCLOUD-7259-->**NGINX memory consumption**–Reduced the memory consumed by the NGINX process for TLS and Web services.
+
+-  {:.new}<!--No ticket -->**Blackfire**–Disabled Blackfire PHP extension by default in the Cloud Docker image.
+
+-  {:.fix}<!--MCLOUD-7232-->**PHP-FPM container**–Fixed PHP-FPM container health check by changing the `WEB_PORT` from `80` to `8080`.
+
+-  {:.fix}<!--MCLOUD-7442-->**Invalid volume naming**–Fixed an error with invalid volume naming in developer mode.
+
+-  {:.fix}<!--Issue 295-->**NGINX upstream port**—Updated the Docker NGINX 1.19 image to use port 8080 to avoid an infinite loop. *[Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/296).*
+
+## v1.2.0
+*Release date: November 9, 2020*<br/>
+
+-  {:.new}**Container updates–**
+
+   -  {:.new}**PHP-FPM container**–Added support for the gnupg PHP extension. *[Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/210).*<!--MCLOUD-5981-->
+
+   -  {:.fix}**Database container**–Fixed the database container health check by adding the required database password to the health check command.<!--MCLOUD-7122-->
+
+   -  {:.new}**Elasticsearch container**
+
+      -  Added support for Elasticsearch 7.9 for compatibility with upcoming Magento releases.<!--MCLOUD-7190-->
+
+      -  **Elasticsearch plugin configuration**–Added support to use the Elasticsearch plugin configuration information from the `services.yaml` file to generate the `docker-compose.yaml` file for a {{ site.data.var.mcd-prod }} environment. See [Elasticsearch plugins]({{ site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-plugins).<!--MCLOUD-2789-->
+
+      -  **Elasticsearch plugin support**–Added support for the following Elasticsearch plugins: `analysis-icu`, `analysis-phonetic`, `analysis-stempel`, and `analysis-nori`.  The `analysis-icu` and `analysis-phonetic` plugins are installed by default. You can add or remove the `analysis-stempel` and `analysis-nori` plugins as needed.<!--MCLOUD-2789-->
+
+   -  {:.new} **CLI container**
+
+      -  **Run commands inside Docker PHP containers**–Now you can use the Magento Cloud Docker CLI to run commands inside PHP containers in your Docker environment without having to install PHP on the host. For example, the following command builds the configuration:  `./bin/magento-docker php 7.3 vendor/bin/ece-docker build:compose`. See [Magento Cloud Docker CLI]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#magento-cloud-docker-cli). *[Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/209).*<!--MCLOUD-5982-->
+
+      -  Added the OpenSSH-client to PHP CLI containers. Now, you can use ssh-agent forwarding for Composer if the `composer.json` file contains private git repositories that require an ssh client to use Composer commands.<!--MCLOUD-6008-->
+
+   -  {:.fix}**TLS container**–Now, the [TLS container]({{ site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container) is based on the `https://hub.docker.com/r/magento/magento-cloud-docker-nginx` Docker image instead of the Centos image. This change fixes issues that caused errors when sending HTTPS requests between containers in the Cloud Docker environment.<!--MCLOUD-6469-->
+
+   -  {:.new}**Test container**–Added a test container for Magento application testing, and added the `--with-test` option to the Docker `build:compose` command to create the container only when testing Magento in the Docker environment. See [Magento application testing](https://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html).<!--MCLOUD-6394-->
+
+   -  {:.new}**FPM-XDEBUG container**
+
+      -  {:.new}**Configure Xdebug on Linux**–Added the `--set-docker-host` option to the `ece-docker build:compose` command to configure the `host.docker.internal` value in the Xdebug container. This option is required to use Xdebug on Linux systems. See [Configure Xdebug for Docker]({{ site.baseurl }}/cloud/docker/docker-development-debug.html).<!--MCLOUD-6430-->
+
+      -  {:.fix}Fixed the Xdebug variable configuration for the Docker ENTRYPOINT to resolve `uninitialized "with_xdebug" variable` errors in the logs. *[Fix submitted by Florent Olivaud](https://github.com/magento/magento-cloud-docker/pull/218)*<!--MCLOUD-6043-->
+
+-  {:.new}**Docker configuration changes**
+
+   -  **MailHog configuration**–Now you can use the following `ece-docker build:compose` command options to disable MailHog and specify ports: `--no-mailhog`, `--mailhog-http-port`, and `--mailhog-smtp-port`. See [Set up email]({{ site.baseurl }}/cloud/docker/docker-config.html#set-up-email).<!--MCLOUD-6898, MCLOUD-6660-->
+
+   -  For {{site.data.var.mcd-prod}} 1.2.0 and later, Magento now provides Docker images for each patch version, and the Docker configuration generator creates the Docker configuration with a specified patch version instead of using the latest. Previously, the Docker configuration generator built the configuration using the latest patch version which could break {{ site.data.var.mcd-prod}} environments built using an earlier version.<!--MCLOUD-7093-->
+
+   -  **Specify custom images and versions in custom Magento Cloud Docker configuration**—Updated the `build:custom:compose` command with options to specify custom images and versions when generating a custom Docker compose configuration file (`docker-compose.yaml`). See [Build a custom Docker Compose configuration]({{ site.baseurl }}/cloud/docker/docker-config-sources.html#build-a-custom-docker-compose-configuration). <!--MCLOUD-7089-->
+
+   -  Updated the Docker host configuration to expose port 443 to enable access to Magento (`https://magento2.docker`) from all CLI containers. You can change the default port by adding the `--tls-port` option when you generate the Docker configuration file.<!--MCLOUD-6806-->
+
+-  {:.fix}Fixed an issue that caused the {{site.data.var.mcd-prod}} build to fail if the `app/etc/env.php` file exists.<!--MCLOUD-6732-->
+
+-  {:.fix}Updated the build configuration to replace named volumes with regular volumes to prevent issues when deploying {{ site.data.var.mcd-prod }} on Linux or Windows Subsystem for Linux (WSL2).<!--MCLOUD-6732-->
+
+-  {:.fix}Updated the {{site.data.var.mcd-prod}} functional tests to support Composer 2.0.<!--MCLOUD-7183-->
+
 ## v1.1.2
 *Release date: September 9, 2020*<br/>
 
@@ -46,7 +121,7 @@ The release notes include:
 ## v1.1.0
 *Release date: June 25, 2020*<br/>
 
--  {:.new}**Added support for the Magento split database performance solution**–Now you can configure and deploy a Magento store using the Magento Split database performance solution in the Cloud Docker environment. See [Enable split database solution]({{site.baseurl}}/cloud/docker/docker-split-db.html).<!--MCLOUD-3740-->
+-  {:.new}**Added support for the Magento split database performance solution**–Now you can configure and deploy a Magento store using the Magento Split database performance solution in the Cloud Docker environment.<!--MCLOUD-3740-->
 
 -  {:.new}**Support for {{site.data.var.ee}} and {{site.data.var.ce}} deployment**–Now you can use {{site.data.var.mcd-prod}} to deploy a local development environment for projects that are not hosted on the Magento Cloud platform.<!--MCLOUD-5667-->
 
@@ -54,7 +129,7 @@ The release notes include:
 
 -  {:.new}**Container updates**
 
-   -  {:.new}**Varnish**—Now Varnish is the default cache when you deploy Magento in a Cloud Docker environment using a supported version of the Magento Cloud application template. See [Varnish container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container).<!--MCLOUD-2634-->
+   -  **Varnish**—Now Varnish is the default cache when you deploy Magento in a Cloud Docker environment using a supported version of the Magento Cloud application template. See [Varnish container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container).<!--MCLOUD-2634-->
 
    -  Added the `--no-varnish` option to skip Varnish service installation when you generate the Cloud Docker configuration file.<!--MCLOUD-2634-->
 
@@ -80,7 +155,7 @@ The release notes include:
 
       -  Added the ability to customize the [Elasticsearch container configuration]({{ site.baseurl }}/cloud/docker/docker-containers-service.html#elasticsearch-container) when you generate the Docker compose configuration file.<!--MCLOUD-3059-->
 
-      -  Added the `--no-es` option to the service configuration options for generating the Docker Compose configuration file. Use this option to skip the Elasticsearch container installation and and use MySQL search instead. This option is supported only for Magento versions 2.3.5 and earlier.<!--MCLOUD-3766-->
+      -  Added the `--no-es` option to the service configuration options for generating the Docker Compose configuration file. Use this option to skip the Elasticsearch container installation and use MySQL search instead. This option is supported only for Magento versions 2.3.5 and earlier.<!--MCLOUD-3766-->
 
    -  {:.new}**FPM-XDEBUG container**—Added a service configuration option to install and configure Xdebug for debugging PHP in your Cloud Docker environment. See [Configure Xdebug]({{site.baseurl}}/cloud/docker/docker-development-debug.html).<!--MCLOUD-4098-->
 
