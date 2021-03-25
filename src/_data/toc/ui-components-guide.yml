@@ -285,6 +285,9 @@ pages:
         - label: Declare a custom UI component
           url: /ui_comp_guide/howto/new_component_declaration.html
 
+        - label: Show or Hide Password Checkbox
+          url: /ui_comp_guide/howto/show_or_hide_password_checkbox.html
+
     - label: Troubleshoot
       children:
 
