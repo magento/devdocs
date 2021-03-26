@@ -66,7 +66,6 @@ Interactive In-Product Guidance provides merchants with usage tips and informati
 
 All Vendor-Developed Extensions (VDEs) include bug fixes, security updates, and PHP 7.4 support.
 
-
 #### Amazon Pay
 
 Amazon Pay has been deprecated.
