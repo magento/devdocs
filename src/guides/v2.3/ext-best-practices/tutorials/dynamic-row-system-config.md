@@ -178,11 +178,11 @@ It is possible to set defaults for a dynamic row configuration, this is done by 
 Add a block to the `<default>` section of the `config.xml` file and do not include any values:
 
 ```xml
-<system>
-    <general>
+<general>
+    <quantity_ranges>
         <ranges></ranges>
-    </general>
-</system>
+    </quantity_ranges>
+</general>
 ```
 
 For each complete line of configuration, create an XML block with a repeating node that has a different value to all the others and contains XML tags for each sub-option and value.
@@ -204,8 +204,8 @@ In the following excerpt, a single row for `item1` contains 4 sub-options:
 Continue building the default block by adding 3 items to the `ranges` configuration option in the `config.xml` file:
 
 ```xml
-<system>
-    <general>
+<general>
+    <quantity_ranges>
         <ranges>
             <item1>
                 <from_qty>1</from_qty>
@@ -226,8 +226,8 @@ Continue building the default block by adding 3 items to the `ranges` configurat
                 <tax>0</tax>
             </item3>
         </ranges>
-    </general>
-</system>
+    </quantity_ranges>
+</general>
 ```
 
 To verify the default values for the configuration are correct, do the following :

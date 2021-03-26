@@ -108,7 +108,7 @@ Magento requires the following system tools for some of its operations:
 
 Mail Transfer Agent (MTA) or an SMTP server
 
-## Technologies Magento can use
+## Recommended technologies
 
 *  [Redis][] version 6.x is recommended for Magento 2.4.2. Magento 2.4.x is compatible with Redis 5.
 *  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.4. Magento 2.4.x is compatible with Varnish 6.x.
@@ -116,12 +116,6 @@ Mail Transfer Agent (MTA) or an SMTP server
 *  RabbitMQ 3.8.x
 
    [RabbitMQ][]{:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
-
-### {{site.data.var.ee}} only
-
-*  Three master databases
-
-   These [master databases][] provide scalability advantages for different functional areas of the Magento application such as checkout, orders, and all remaining Magento2 application tables.
 
 ### Optional but recommended
 
