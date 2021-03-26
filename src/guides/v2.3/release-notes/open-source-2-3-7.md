@@ -70,6 +70,7 @@ All Vendor-Developed Extensions (VDEs) include bug fixes, security updates, and 
 
 Amazon Pay has been deprecated.
 
+
 #### Vertex
 
 New Vertex features and enhancements include:
