@@ -36,7 +36,7 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 ### Platform upgrades
 
-*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.3.7 introduces support for PHP 7.4. We do not recommend running Magento 2.3.7 with PHP 7.3. Merchants can run Magento 2.3.7 with PHP 7.3, but this configuration has not tested.
+*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.3.7 introduces support for PHP 7.4. We do not recommend running Magento 2.3.7 with PHP 7.3. Merchants can run Magento 2.3.7 with PHP 7.3, but this configuration has not been tested.
 
    Magento Marketplace extension vendors must confirm that new versions of their extensions are compatible with PHP 7.4. All unit and integration tests should be run using PHPUnit 9. See the [PHP 7.4 support for Magento 2.3.x release line](https://community.magento.com/t5/Magento-DevBlog/PHP-7-4-support-for-Magento-2-3-x-release-line/ba-p/458946) DevBlog post.
 
@@ -46,7 +46,7 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 *  Varnish 6.5.1 is now supported on 2.3.x.
 
-*  Magento 2.3.7 is now compatible with Composer 2.x. We recommend that merchants migrate to Composer 2.x. Although you can install this release using Composer 1.x, Composer 1.x will soon reach end-of-life. For an overview of Composer 2.x features, see [Deprecating Packagist.org support for Composer 1.x](https://blog.packagist.com/deprecating-composer-1-support/)
+*  Magento 2.3.7 is now compatible with Composer 2.x. We recommend that merchants migrate to Composer 2.x. Although you can install this release using Composer 1.x, Composer 1.x will soon reach end-of-life. For an overview of Composer 2.x features, see [Deprecating Packagist.org support for Composer 1.x](https://blog.packagist.com/deprecating-composer-1-support/).
 
 *  [Redis 6.x is now supported](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#technologies-magento-can-use). Magento 2.3.x remains compatible with Redis 5.x.
 
@@ -65,9 +65,11 @@ Interactive In-Product Guidance provides merchants with usage tips and informati
 ### Vendor-developed extension enhancements
 
 All Vendor-Developed Extensions (VDEs) include bug fixes, security updates, and PHP 7.4 support.
+
 #### Amazon Pay
 
 Amazon Pay has been deprecated.
+
 #### Vertex
 
 New Vertex features and enhancements include:
@@ -79,6 +81,7 @@ New Vertex features and enhancements include:
 ## Fixed issues
 
 We have fixed several issues in the Magento 2.3.7 core code.
+
 ### Customer
 
 <!--- MC-38680-->
@@ -125,11 +128,7 @@ The following tests have been improved:
 
 <!--- MC-40510-->
 
-*  The Vimeo Simple API has been replaced with Vimeo [oEmbed](https://developer.vimeo.com/api/oembed) API. This corrects a problem merchants experienced trying to add Vimeo videos to a product page. Previously, Magento displayed a 404 error. [GitHub-31753](https://github.com/magento/magento2/issues/31753)
-
-### System requirements
-
-Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/system-requirements.html).
+*  The Vimeo Simple API has been replaced with the Vimeo [oEmbed](https://developer.vimeo.com/api/oembed) API. This corrects a problem merchants experienced trying to add Vimeo videos to a product page. Previously, Magento displayed a 404 error. [GitHub-31753](https://github.com/magento/magento2/issues/31753)
 
 ### Installation and upgrade instructions
 
