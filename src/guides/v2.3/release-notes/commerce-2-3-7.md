@@ -23,17 +23,13 @@ This release includes the following security enhancements:
 
 #### Over 40 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene.
 
-With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. See Adobe Security Bulletin for a discussion of these fixed issues.
+With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center.
 
 #### Security enhancements and fixes to core code
 
-This release includes 40 security fixes and platform security improvements. Additional security enhancements include:
-
-*  reCAPTCHA coverage has been expanded to web API endpoints for the same HTML forms that are covered by reCAPTCHA in the storefront. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks. <!--- MC-34472-->
-
-*  The copy-to-clipboard feature has been disabled for all storefront credit card fields. <!--- MC-38985-->
+This release includes 40 security fixes and platform security improvements. The copy-to-clipboard feature has also been disabled for all storefront credit card fields. <!--- MC-38985-->
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
@@ -53,6 +49,8 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 *  Magento 2.3.7 is now compatible with Composer 2.x. We recommend that merchants migrate to Composer 2.x. Although you can install this release using Composer 1.x, Composer 1.x will soon reach end-of-life. For an overview of Composer 2.x features, see [Deprecating Packagist.org support for Composer 1.x](https://blog.packagist.com/deprecating-composer-1-support/)
 
 *  [Redis 6.x is now supported](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#technologies-magento-can-use). Magento 2.3.x remains compatible with Redis 5.x.
+
+*  The `endroid/qr-code` library dependency has been updated to the latest version (4.x).
 
 ### Interactive In-Product Guidance
 
@@ -105,17 +103,11 @@ We have fixed several issues in the Magento 2.3.7 core code.
 
 ### MFTF
 
-<!--- MC-39116-->
+The following tests have been improved:
 
-*  Improved `StoreFrontFreeShippingRecalculationAfterCouponCodeAddedTest`.
-
-<!--- MC-40540-->
-
-*  Improved `AdminMassUpdateProductStatusStoreViewScopeTest`.
-
-<!--- MC-40353-->
-
-*  Improved `StorefrontInstantPurchaseFunctionalityTest`.
+*  `StoreFrontFreeShippingRecalculationAfterCouponCodeAddedTest` <!--- MC-39116-->
+*  `AdminMassUpdateProductStatusStoreViewScopeTest` <!--- MC-40540-->
+*  `StorefrontInstantPurchaseFunctionalityTest` <!--- MC-40353-->
 
 ### Sales
 
