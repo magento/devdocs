@@ -26,7 +26,7 @@ The following use case describes the typical process for a Magento partner to up
 1. The Account Manager creates a timeline and cost for the Magento upgrade, which allows them to get their manager's approval.
 1. With their manager's approval, the Software Engineer works on the required code modifications to fix the broken modules.
 1. The Software Engineer runs the Upgrade Compatibility Tool one more time with a Magento pre-release to ensure there are no new issues and that their code changes fixed the problems found during the beta phase.
-1. Everything check’s out and the Software Engineer pushes the code to a staging environment where regression tests confirm all tests are green, which allows them to release the latest Magento version to production the same day that the Magento pre-release is released.
+1. Everything checks out and the Software Engineer pushes the code to a staging environment where regression tests confirm all tests are green, which allows them to release the latest Magento version to production the same day that the Magento pre-release is released.
 
 ![Upgrade Compatibility Tool audience](img/audience-uct-v3.png){:height="80%" width="80%"}
 

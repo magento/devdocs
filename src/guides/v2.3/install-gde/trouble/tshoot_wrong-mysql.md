@@ -30,7 +30,7 @@ cd <your Magento install directory>/var
 ```
 
 ```bash
-rm -rf cache/* di/* generation/* page_cache/*
+rm -r cache/* generated/*/* page_cache/*
 ```
 
 #### Redis
