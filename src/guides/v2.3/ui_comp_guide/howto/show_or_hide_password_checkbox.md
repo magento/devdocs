@@ -14,9 +14,9 @@ Here is the screenshot of the "show or hide" password checkbox in the customer l
 
 ## Step 1: Add the HTML code
 
-You need to add the HTML code snippet which renders the show or hide password checkbox in the phtml template file. It uses the `scope` custom knockout binding.
+You need to add the HTML code snippet which renders the "show or hide" password checkbox in the PHTML template file. It uses the `scope` custom knockout binding.
 
-Below is the HTML code snippet
+Below is the HTML code snippet:
 
 ```phtml
 <div class="field choice" data-bind="scope: 'showPassword'">
@@ -28,9 +28,9 @@ For more information about `Scope` binding, refer to [Scope Binding]({{ page.bas
 
 ## Step 2: Add the x-magento-init script
 
-You need to initialize the show or hide password checkbox using the text/x-magento-init script. It uses the scope binding name `showPassword` to initialize the component. You need to pass the component javascript file path and the password field id prefixed with #.
+You need to initialize the "show or hide" password checkbox using the `text/x-magento-init` script. It uses the scope binding name `showPassword` to initialize the component. You need to pass the component javascript file path and the password field id prefixed with #.
 
-Below is the script snippet
+Below is the script snippet:
 
 ```phtml
 <script type="text/x-magento-init">
@@ -52,11 +52,11 @@ Below is the script snippet
 |Option|Description|Type|
 |--- |--- |--- |
 |`component`|The path to the component’s `.js` file in terms of RequireJS. Here the component path value is `Magento_Customer/js/show-password`|String|
-|`passwordSelector`|It must be equals to the id value of the password input field. i.e. `#pass`.|String|
+|`passwordSelector`|It must be equal to the id value of the password input field. i.e. `#pass`.|String|
 
 ## Example
 
-This example shows the custom implemented company login form template(phtml file) with the show or hide password checkbox.
+This example shows the custom implemented company login form template (PHTML file) with the "show or hide" password checkbox.
 
 ```phtml
 <div class="block-content" aria-labelledby="block-company-login-heading">
