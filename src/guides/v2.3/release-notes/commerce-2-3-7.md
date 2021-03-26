@@ -84,7 +84,6 @@ New Vertex features and enhancements include:
 
 We have fixed several issues in the Magento 2.3.7 core code.
 
-
 ### Customer
 
 <!--- MC-38680-->
