@@ -109,8 +109,6 @@ The `name` attribute value must be a unique among the other components on the sa
 
 All other child nodes are declared as items. `<item name="config"> ...</item>` contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use `<item name="component">...</item>` to define which JS file will be used as the Model for the Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in [`require.js`]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html) configuration.
 
-In our example, the `<item name="component">...</item>` node within `<fieldset>` is omitted, because this property of the Fieldset UI component is already defined in `definition.xml`.
-
 In this example we showed only a small part of the possible configuration.
 
 The default configuration of a UI component is declared in one of the following ways:
@@ -119,6 +117,20 @@ The default configuration of a UI component is declared in one of the following 
 *  in the [`definition.xml` file]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)
 *  in both places, in which case the configurations merge (the UI component `.js` file has priority).
 
-In the above example, the Fieldset UI component uses a merged configuration from both the `definition.xml` file and from the UI component's `.js` file.
+In the example, the `<item name="component">...</item>` node within `<fieldset>` is omitted, because this property of the Fieldset UI component is already defined in `definition.xml`.
+
+### Example of the `fieldset` node configuration in the `definition.xml`
+
+```xml
+<fieldset class="Magento\Ui\Component\Form\Fieldset">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="component" xsi:type="string">Magento_Ui/js/form/components/fieldset</item>
+        </item>
+    </argument>
+</fieldset>
+```
+
+In the example of a basic component's configuration file, the Fieldset UI component uses a merged configuration from both the `xml` file and from the UI component's `.js` file.
 
 For more information about the configuration flow, refer to  the [Configuration Flow of UI Components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html) topic.

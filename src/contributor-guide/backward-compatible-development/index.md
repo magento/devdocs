@@ -377,7 +377,7 @@ Comment:
  */
 ```
 
-Trigger a deprecation message in deprecated functions/classes to notify extensions/customizations that use them.
+It is recommended to trigger a deprecation message in deprecated functions/classes to notify extensions/customizations that use them.
 
 PHP:
 
