@@ -119,7 +119,7 @@ A particular instance of a UI component is defined primarily by the following:
 
 ## UI component used in the Adminhtml area
 
-*  Configured through dedicated XML file (view/adminhtml/ui_component/[ui_component_name.xml]). For example, the Customers grid UI component defined in `<Magento_Customer_module_dir>/view/adminhtml/ui_component/customer_listing.xml`.
+*  Configured through dedicated XML file (view/adminhtml/ui_component/[ui_component_name.xml]). For example, the Customer grid UI component defined in `<Magento_Customer_module_dir>/view/adminhtml/ui_component/customer_listing.xml`.
 
 *  Included in layout XML with uiComponent tag. For example, the `customer_listing` UI component is included in `<Magento_Customer_module_dir>/view/adminhtml/layout/customer_index_index.xml`.
 
