@@ -29,7 +29,7 @@ If you have enabled Configuration Management after dumping the configurations, y
 
 Before Configuration Management:
 
-```
+```yaml
   deploy:
     CRON_CONSUMERS_RUNNER:
       cron_run: true
@@ -42,7 +42,7 @@ Before Configuration Management:
 
 After enabling Configuration Management, move the SCD_* variables to the build stage:
 
-```
+```yaml
   deploy:
     CRON_CONSUMERS_RUNNER:
       cron_run: true
