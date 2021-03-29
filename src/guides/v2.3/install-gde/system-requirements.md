@@ -8,12 +8,7 @@ redirect_from:
   - /guides/v2.3/install-gde/system-requirements-tech.html
 ---
 
-The following sections describe third-party software required by the Magento platform.
-
--  **Core**—Describes support and compatibility for primary programming language and search, database, message broker, and caching software.
--  **Miscellaneous**—Describes support and compatibility for all other types of required and optional software.
-
-## Core
+The following table describes core third-party software required by the Magento platform, including support and compatibility for PHP, search, database, message broker, and caching software.
 
 |                  |2.3.0             |2.3.1             |2.3.2             |2.3.3                  |2.3.4                  |2.3.5                  |2.3.6   |2.3.7 |2.4.0           |2.4.1     |2.4.2     |2.4.3     |2.4.4     |2.4.5     |
 |------------------|------------------|------------------|------------------|-----------------------|-----------------------|-----------------------|--------|------|----------------|----------|----------|----------|----------|----------|
@@ -26,6 +21,8 @@ The following sections describe third-party software required by the Magento pla
 |Varnish           |4.x(EOS), 5.x(EOS)|4.x(EOS), 5.x(EOS)|4.x(EOS), 5.x(EOS)|4.x(EOS), 5.x(EOS), 6.x|4.x(EOS), 5.x(EOS), 6.x|4.x(EOS), 5.x(EOS), 6.x|6.x     |6.5.1 |6.x             |6.2       |6.2       |6.2       |6.2       |6.2       |
 
 ## Miscellaneous
+
+This section describes support and compatibility for all other types of required and optional software.
 
 {:.bs-callout-info}
 All of the following requirements apply to the latest patch release of Magento 2.3.
