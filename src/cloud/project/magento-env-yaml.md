@@ -22,6 +22,38 @@ The `.magento.env.yaml` file includes the following sections:
    -  `email`—Configure an email to send to one or more email recipients.
    -  [logging handlers]({{ site.baseurl }}/cloud/env/log-handlers.html)—Configure hardware and software application messages sent to a remote logging server.
 
+{:.bs-callout-info}
+If you have enabled Configuration Management after dumping the configurations, you should move the SCD_* variables from the deploy to the build stage.
+
+### Example
+
+Before Configuration Management:
+
+```
+  deploy:
+    CRON_CONSUMERS_RUNNER:
+      cron_run: true
+      consumers: []
+    SCD_STRATEGY: compact
+    SCD_MATRIX:
+      ...
+    REDIS_USE_SLAVE_CONNECTION: 1
+```
+
+After enabling Configuration Management, move the SCD_* variables to the build stage:
+
+```
+  deploy:
+    CRON_CONSUMERS_RUNNER:
+      cron_run: true
+      consumers: []
+    REDIS_USE_SLAVE_CONNECTION: 1
+  build:
+    SCD_STRATEGY: compact
+    SCD_MATRIX:
+      ...
+```
+
 The latest sample of the `.magento.env.yaml` file contains a detailed definition for all variables described in the following reference topics:
 
 -  [Application]({{ site.baseurl }}/cloud/env/environment-vars_magento.html)—variables control administrative credentials

@@ -51,6 +51,38 @@ You can also set sensitive values using the Magento CLI command: `bin/magento co
 
 Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the deploy phase when Magento is in Maintenance mode. The most optimal configuration is to generate static content during the build phase. See [Choosing a deploy strategy][scd].
 
+If you have enabled Configuration Management after dumping the configurations, you should move the SCD_* variables (in `.magento.env.yaml`) from the deploy to the build stage to properly enable static content generation in the build phase. 
+
+### Example
+
+Before Configuration Management:
+
+```
+  deploy:
+    CRON_CONSUMERS_RUNNER:
+      cron_run: true
+      consumers: []
+    SCD_STRATEGY: compact
+    SCD_MATRIX:
+      ...
+    REDIS_USE_SLAVE_CONNECTION: 1
+```
+
+After enabling Configuration Management, move the SCD_* variables to the build stage:
+
+```
+  deploy:
+    CRON_CONSUMERS_RUNNER:
+      cron_run: true
+      consumers: []
+    REDIS_USE_SLAVE_CONNECTION: 1
+  build:
+    SCD_STRATEGY: compact
+    SCD_MATRIX:
+      ...
+```
+
+
 {:.bs-callout-info}
 Before deploying static files, the build and deploy phases compress static content using GZIP. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
 
