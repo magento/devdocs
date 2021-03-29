@@ -1,5 +1,5 @@
 ---
-title: Magento 2.3 technology stack requirements
+title: System requirements
 functional_areas:
   - Install
   - System
@@ -7,6 +7,13 @@ functional_areas:
 redirect_from:
   - /guides/v2.3/install-gde/system-requirements-tech.html
 ---
+
+The following sections describe third-party software required by the Magento platform.
+
+-  **Core**—Describes support and compatibility for primary programming language and search, database, message broker, and caching software.
+-  **Miscellaneous**—Describes support and compatibility for all other types of required and optional software.
+
+## Core
 
 |                  |2.3.0             |2.3.1             |2.3.2             |2.3.3                  |2.3.4                  |2.3.5                  |2.3.6   |2.3.7 |2.4.0           |2.4.1     |2.4.2     |2.4.3     |2.4.4     |2.4.5     |
 |------------------|------------------|------------------|------------------|-----------------------|-----------------------|-----------------------|--------|------|----------------|----------|----------|----------|----------|----------|
