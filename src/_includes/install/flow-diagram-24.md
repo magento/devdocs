@@ -6,7 +6,7 @@ The general installation flow is as follows:
 
    Install the prerequisite software, including PHP, Apache, MySQL, and Elasticsearch. See [System requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for more information.
 
-1. Obtain [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) for the Magento code repository.
+1. Get [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) to the Magento Composer repository.
 
 1. Get the Magento software.
 
