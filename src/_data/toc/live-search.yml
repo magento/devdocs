@@ -4,27 +4,24 @@ pages:
   url: /live-search/overview.html
   versionless: true
 
-- label: Installing Live Search
+- label: Install Live Search
   url: /live-search/install.html
-  versionless: true
-
-- label: Search Admin Service
-  url: /live-search/search-admin-service.html
   versionless: true
 
 - label: Configure and Connect
   url: /live-search/config-connect.html
   versionless: true
 
+- label: Search Admin Service
+  url: /live-search/search-admin-service.html
+  versionless: true
+
 - label: Live Search SDK
   url: /live-search/live-search-sdk.html
   versionless: true
-   children:
-   - label: GraphQL Playground
-     url: /live-search/graphql-playground.html
 
-- label: Live Search API Reference
-  url: /live-search/live-search-api-reference.html
+- label: GraphQL Playground
+  url: /live-search/graphql-playground.html
   versionless: true
 
 - label: Facets
@@ -41,6 +38,10 @@ pages:
 
 - label: Indexing
   url: /live-search/indexing.html
+  versionless: true
+
+- label: Live Search API Reference
+  url: /live-search/live-search-api-reference.html
   versionless: true
 
 - label: Storefront Quick Start
