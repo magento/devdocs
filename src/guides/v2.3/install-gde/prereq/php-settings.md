@@ -175,6 +175,16 @@ To set `opcache.ini` options:
    -  Apache, CentOS: `service httpd restart`
    -  nginx, Ubuntu and CentOS: `service nginx restart`
 
+## Troubleshooting
+
+See the following Magento Support articles for help troubleshooting PHP problems:
+
+-  [PHP version error or 404 error when accessing Magento in browser](https://support.magento.com/hc/en-us/articles/360033117152-PHP-version-error-or-404-error-when-accessing-Magento-in-browser)
+-  [PHP settings errors](https://support.magento.com/hc/en-us/articles/360034599631-PHP-settings-errors)
+-  [PHP mcrypt extension not installed properly](https://support.magento.com/hc/en-us/articles/360034280132-PHP-mcrypt-extension-not-installed-properly-)
+-  [PHP version readiness check issues](https://support.magento.com/hc/en-us/articles/360033546411)
+-  [Common PHP Fatal Errors and solutions](https://support.magento.com/hc/en-us/articles/360030568432)
+
 <!-- Link Definitions -->
 
 [additional steps may be required]: https://wiki.centos.org/HowTos/php7
