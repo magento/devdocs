@@ -151,8 +151,8 @@ search.productSearch({ phrase: "yoga" });
 
 Filters can be defined as part of the query using existing product attributes that have been defined as facets in the Magento Admin. For example, to filter results by color, a color facet must be defined in Live Search, based on the existing `color` attribute. Filters support ranges for numeric attributes (for example for price) or `eq`/`in` values for numeric and text attributes.
 
-•	Only facets specified in Live Search are returned.
-•	The values of dynamic facets are returned if 10% or more of products in the result set contain the attribute.
+- Only facets specified in Live Search are returned.
+- The values of dynamic facets are returned if 10% or more of products in the result set contain the attribute.
 
 ```text
 query {

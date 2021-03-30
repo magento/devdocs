@@ -1,10 +1,14 @@
-]
+---
+group: live-search
+title: Live Search SDK
+ee_only: True
+---
 
-Live Search SDK includes a GraphQL Search API that can be used to query products and associated facets from the Magento Admin. In addition to the `productSearch query`, it also supports `categorySearch`, which is a quick way to retrieve categories only for relevant search results (recommended for fast search as you type queries). As an API counterpart/wrapper, it also provides a Javascript SDK.
+Live Search SDK includes a GraphQL Playground that can be used to query products and associated facets from the Magento Admin. In addition to the `productSearch query`, it also supports `categorySearch`, which is a quick way to retrieve categories only for relevant search results (recommended for fast search as you type queries). As an API counterpart/wrapper, it also provides a Javascript SDK.
 
 ## Requirements
 
-The API is unauthenticated, but requires an API key with the value set to “`search_gql` The following headers are required for this API:
+The GraphOL Playground API is unauthenticated, but requires an API key with the value set to “`search_gql` The following headers are required for this API:
 
 ||**Required Headers**
 |---|---|

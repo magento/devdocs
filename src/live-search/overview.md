@@ -10,7 +10,7 @@ Live Search from Magento delivers a lightning fast, super relevant, and intuitiv
 
 -  For developers, Live Search represents a next-generation service with PWA components and support for both Graph QL & JS SDK and PHP/Luma.
 
-Live Search is available for Magento Commerce out-of-the-box at no additional charge.
+Live Search is available for Magento Commerce at no additional charge.
 
 ## Architectural Overview
 

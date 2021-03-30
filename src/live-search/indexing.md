@@ -4,7 +4,7 @@ title: Indexing
 ee_only: True
 ---
 
-Product attribute properties ("metadata") determine how an attribute can be used in the catalog, its appearance and behavior in the store, and the data that is included in data transfer operations. The properties and labels associated with each attribute determine how it can be used and its presentation in the store. If you click on any of the attributes, say color, it will take you to its metadata that allows you to set specific properties that can have implications on search results, positioning, etc. The scope of attribute metadata is `website/store/store view`. 
+Product attribute properties ("metadata") determine how an attribute can be used in the catalog, its appearance and behavior in the store, and the data that is included in data transfer operations. The properties and labels associated with each attribute determine how it can be used and its presentation in the store. The scope of attribute metadata is `website/store/store view`. 
 
 Live Search dynamically indexes attributes based on product attribute metadata and supports:
 
