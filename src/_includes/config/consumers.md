@@ -6,4 +6,4 @@
 *  `1`: Consumers continue to process messages from the message queue until reaching the maximum number of messages (the value specified for `--max_messages` on the `queue:consumers:start` command) before closing the TCP connection and terminating the consumer process. If the queue empties before reaching `--max_messages` the consumer waits for more messages to arrive. If you use workers to run consumers instead of using a cron job, set this variable to `1`.
 
 {:.bs-callout-warning}
-The --consumers-wait-for-messages option is a global option and cannot be configured separately for each consumer.
+The `--consumers-wait-for-messages` option is a global option and cannot be configured separately for each consumer.
