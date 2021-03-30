@@ -123,16 +123,16 @@ A particular instance of a UI component is defined primarily by the following:
 
 *  Included in layout XML with uiComponent tag. For example, the `customer_listing` UI component is included in `<Magento_Customer_module_dir>/view/adminhtml/layout/customer_index_index.xml`.
 
-```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <update handle="formkey"/>
-    <body>
-        <referenceContainer name="content">
-            <uiComponent name="customer_listing"/>
-        </referenceContainer>
-    </body>
-</page>
-```
+  ```xml
+  <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+      <update handle="formkey"/>
+      <body>
+          <referenceContainer name="content">
+              <uiComponent name="customer_listing"/>
+          </referenceContainer>
+      </body>
+  </page>
+  ```
 
 ## Things to remember when working with UI components
 
