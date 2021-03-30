@@ -311,7 +311,9 @@ mysqldump -h <database host> --user=<database username> --password=<password> --
 
 Use this command to import the database dump file:
 
-`zcat /tmp/database.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <database_host> -u <username> -p<password> <database name>`
+```bash
+zcat /tmp/database.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <database_host> -u <username> -p <password> <database_name>
+```
 
 {:.bs-callout-info}
 After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Integration environment.
