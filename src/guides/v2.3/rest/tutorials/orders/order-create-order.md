@@ -44,7 +44,7 @@ Use the `V1/guest-carts/<cartId>/payment-information` endpoint to set the paymen
   "paymentMethod": {
     "method": "banktransfer"
   },
-  "billing_address": {
+  "billingAddress": {
     "email": "jdoe@example.com",
     "region": "New York",
     "region_id": 43,
@@ -58,7 +58,8 @@ Use the `V1/guest-carts/<cartId>/payment-information` endpoint to set the paymen
     "telephone": "512-555-1111",
     "firstname": "Jane",
     "lastname": "Doe"
-  }
+  },
+  "email": "jdoe@example.com"
 }
 ```
 
