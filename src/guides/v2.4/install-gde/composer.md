@@ -16,7 +16,7 @@ Before you continue, you must do the following:
 
 -  Complete all [prerequisite tasks][].
 -  [Install Composer][]{:target="_blank"}.
--  Obtain [authentication keys][] for the Magento code repository.
+-  Get [authentication keys][] to the Magento Composer repository.
 
 ## Log in as file system owner {#instgde-cli-before}
 
