@@ -33,8 +33,8 @@ See [Patches available in MQP tool](https://support.magento.com/hc/en-us/section
 -  **MDVA-34928** _(for Magento `>=2.3.5 <2.3.5-p2`)_-Fixes the issue where the page loader is displayed indefinitely after the store credit is removed from the payment.
 -  **MDVA-35254** _(for Magento `>=2.3.1 <2.4.3`)_-Fixes the issues with CAPTCHA during checkout.
 -  **MDVA-35569** _(for Magento `>=2.3.4 <2.4.2`)_-Fixes the issue where the "fixed product taxes" field is not being populated in GraphQL response when state is specified.
--  **MDVA-35847** _(for Magento `>=2.4.1 <2.4.3`)_-	Fixes the B2B issue where the Company Users form breaks if a custom customer attribute is used.
--  **MDVA-31307** _(for Magento `>=2.4.0 <2.4.2`)_-	Fixes the issue where there are Out of memory errors on certain categories due to problems with dynamic CSP whitelisting for cached blocks.
+-  **MDVA-35847** _(for Magento `>=2.4.1 <2.4.3`)_-Fixes the B2B issue where the Company Users form breaks if a custom customer attribute is used.
+-  **MDVA-31307** _(for Magento `>=2.4.0 <2.4.2`)_-Fixes the issue where there are Out of memory errors on certain categories due to problems with dynamic CSP whitelisting for cached blocks.
 
 ## v1.0.18
 
