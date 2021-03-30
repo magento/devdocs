@@ -27,7 +27,7 @@ See [Patches available in MQP tool](https://support.magento.com/hc/en-us/section
 -  **MDVA-35982** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue where admin users restricted to a specific website cannot create a shipment for the order placed on same website.
 -  **MDVA-35155** _(for Magento `>=2.3.0 <2.3.6`)_-Fixes the issue where it is impossible to buy a bundle product if the option title was changed.
 -  **MDVA-35910** _(for Magento `>=2.4.1 <2.4.3`)_-Fixes the issue where it is impossible to create a new customer account after disabling the Login as Customer functionality.
--  **MDVA-34474** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue with adding a product to the requisition list using API.
+-  **MDVA-34474** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue with adding a product to the requisition list using the API.
 -  **MDVA-34591** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue with an incorrect cart rule discount calculation for "Maximum Qty Discount is Applied To" and "Discount Qty Step (Buy X)".
 -  **MDVA-33704** _(for Magento `>=2.4.0 <2.4.3`)_-Fixes the issue where the "In store pickup" shipping option doesn't show up, though being configured to be available.
 -  **MDVA-34928** _(for Magento `>=2.3.5 <2.3.5-p2`)_-Fixes the issue where the page loader is displayed indefinitely after the store credit is removed from the payment.
