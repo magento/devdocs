@@ -14,9 +14,7 @@ redirect_from:
 
 Before you continue, you must do the following:
 
--  Set up a server that meets our [system requirements][].
 -  Complete all [prerequisite tasks][].
--  Create and switch to the [Magento file system owner](#instgde-cli-before).
 -  [Install Composer][]{:target="_blank"}.
 -  Obtain [authentication keys][] for the Magento code repository.
 
@@ -51,7 +49,7 @@ To get the Magento metapackage:
 
     If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
 
-    See [troubleshooting][] for help with more errors.
+    See [Troubleshooting][] for help with more errors.
 
     {% include install/pre-release.md %}
 
@@ -126,7 +124,7 @@ For a full description of the CLI install options, refer to [Install the Magento
 ## Command summary {#instgde-cli-summary}
 {% include install/cli_help-commands.md %}
 
-The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
+The following table summarizes the available commands. Commands are shown in summary form only. For more information about a command, click the link in the Command column.
 
 |Command|Description|Prerequisites|
 |--- |--- |--- |
