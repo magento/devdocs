@@ -1,0 +1,217 @@
+---
+group: graphql
+title: requestNegotiableQuote mutation
+b2b_only: true
+---
+
+The `requestNegotiableQuote` mutation initiates a negotiable quote on behalf of a company user. The company user must add all products to the cart before requesting a negotiable quote. Once the requested, neither the company user nor the Magento administrator can add new products to the quote.
+
+If the request is successful, Magento assigns the cart ID to the negotiable quote. Therefore, the same cart ID is used throughout the lifecycle of the negotiable quote. Magento generates a new cart ID if the company user starts a new order while a negotiable quote is in process.
+
+{:.bs-callout-info}
+If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can use the [`setNegotiableQuoteShippingAddresses` mutation]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-shipping-address.html) to add the address to the standard quote before or during the negotiable quote process.
+
+This query requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
+
+## Syntax
+
+```graphql
+requestNegotiableQuote(
+    input: RequestNegotiableQuoteInput!
+): RequestNegotiableQuoteOutput
+```
+
+## Example usage
+
+The following example requests a negotiable quote. The cart contains three items.
+
+**Request:**
+
+```graphql
+mutation {
+  requestNegotiableQuote (
+    input: {
+      cart_id: "NA=="
+      quote_name: "Discount request"
+      comment: {
+        comment: "Requesting a 10% discount for being a repeat customer."}
+    }
+  ){
+    quote {
+      uid
+      created_at
+      status
+      buyer {
+        firstname
+        lastname
+      }
+      comments {
+        uid
+        created_at
+        author {
+          firstname
+          lastname
+        }
+        creator_type 
+        text
+      }
+      items {
+        product {
+          uid
+          sku
+          name
+          price_range {
+            maximum_price {
+              regular_price {
+                value
+              }
+            }
+          }
+        }
+        quantity
+      }
+      prices {
+        subtotal_excluding_tax {
+          value
+        }
+        subtotal_including_tax {
+          value
+        }
+        subtotal_with_discount_excluding_tax {
+          value
+        }
+        grand_total {
+          value
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "requestNegotiableQuote": {
+      "quote": {
+        "uid": "NA==",
+        "created_at": "2021-03-25 14:16:32",
+        "status": "SUBMITTED",
+        "buyer": {
+          "firstname": "Taina",
+          "lastname": "Garofalo"
+        },
+        "comments": [
+          {
+            "uid": "NQ==",
+            "created_at": "2021-03-27 18:50:07",
+            "author": {
+              "firstname": "Taina",
+              "lastname": "Garofalo"
+            },
+            "creator_type": "BUYER",
+            "text": "Requesting a 10% discount for being a repeat customer."
+          }
+        ],
+        "items": [
+          {
+            "product": {
+              "uid": "MTY=",
+              "sku": "24-UG07",
+              "name": "Dual Handle Cardio Ball",
+              "price_range": {
+                "maximum_price": {
+                  "regular_price": {
+                    "value": 12
+                  }
+                }
+              }
+            },
+            "quantity": 1
+          },
+          {
+            "product": {
+              "uid": "NTI=",
+              "sku": "24-WG080",
+              "name": "Sprite Yoga Companion Kit",
+              "price_range": {
+                "maximum_price": {
+                  "regular_price": {
+                    "value": 77
+                  }
+                }
+              }
+            },
+            "quantity": 1
+          },
+          {
+            "product": {
+              "uid": "MTc=",
+              "sku": "24-UG04",
+              "name": "Zing Jump Rope",
+              "price_range": {
+                "maximum_price": {
+                  "regular_price": {
+                    "value": 12
+                  }
+                }
+              }
+            },
+            "quantity": 1
+          }
+        ],
+        "prices": {
+          "subtotal_excluding_tax": {
+            "value": 92
+          },
+          "subtotal_including_tax": {
+            "value": 92
+          },
+          "subtotal_with_discount_excluding_tax": {
+            "value": 92
+          },
+          "grand_total": {
+            "value": 92
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+## Input attributes
+
+The `RequestNegotiableQuoteInput` input object specifies the company user's cart ID and other information to identify a new negotiable quote.
+
+### RequestNegotiableQuoteInput attributes {#RequestNegotiableQuoteInput}
+
+The `RequestNegotiableQuoteInput` object contains the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`cart_id`| ID! | The cart ID of the buyer requesting a new negotiable quote
+`comment` | [NegotiableQuoteCommentInput!](#NegotiableQuoteCommentInput) | Comments the buyer entered to describe the request
+`quote_name` | String! | The name the buyer assigned to the negotiable quote request
+
+### NegotiableQuoteCommentInput {#NegotiableQuoteCommentInput}
+
+The `NegotiableQuoteCommentInput` object contains the following attribute.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`comment` | String! | The comment provided by the buyer
+
+## Output attributes
+
+The `RequestNegotiableQuoteOutput` output object contains the following attribute.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`quote` | NegotiableQuote! | Contains details about the negotiable quote
+
+### NegotiableQuote attributes {#NegotiableQuote}
+
+{% include graphql/negotiable-quote.md %}

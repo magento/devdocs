@@ -177,6 +177,16 @@ pages:
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
 
+        - label: negotiableQuote query
+          url: /graphql/queries/negotiable-quote.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: negotiableQuotes query
+          url: /graphql/queries/negotiable-quotes.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: productReviewRatingsMetadata query
           url: /graphql/queries/product-review-ratings-metadata.html
           exclude_versions: ["2.3"]
@@ -486,6 +496,11 @@ pages:
           url: /graphql/mutations/reorder-items.html
           exclude_versions: ["2.3"]
 
+        - label: requestNegotiableQuote mutation
+          url: /graphql/mutations/request-negotiable-quote.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: requestPasswordResetEmail mutation
           url: /graphql/mutations/request-password-reset-email.html
           exclude_versions: ["2.3"]
@@ -515,6 +530,11 @@ pages:
 
         - label: setGuestEmailOnCart mutation
           url: /graphql/mutations/set-guest-email.html
+
+        - label: setNegotiableQuoteShippingAddresses mutation
+          url: /graphql/mutations/set-negotiable-quote-shipping-address.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
 
         - label: setPaymentMethodAndPlaceOrder mutation
           url: /graphql/mutations/set-payment-place-order.html
