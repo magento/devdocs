@@ -141,7 +141,7 @@ entries:
   - 'Partner: Ziffity'
   - 'Progress: done'
   - partners-contribution
-- description: Added the [Email templates layout handle](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/templates/template-email-layout-handle.html<br/>)
+- description: Added the [Email templates layout handle](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/templates/template-email-layout-handle.html)
     topic to the Front-end Dev Guide.
   versions: 2.3.x, 2.4.x
   type: New Topic
