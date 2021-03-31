@@ -8,7 +8,7 @@ The "show or hide" password checkbox functionality is only available in Magento 
 
 This topic describes how you can implement the "show or hide" password checkbox functionality in custom forms.
 
-![Show or Hide Password Checkbox]({{ page.baseurl }}//ui_comp_guide/images/show-or-hide-password-checkbox-v2.1.png)
+![Show or Hide Password Checkbox]({{ site.baseurl }}/common/images/ui_comps/show-or-hide-password-checkbox-v2.1.png)
 
 ## Step 1: Add the HTML code
 
