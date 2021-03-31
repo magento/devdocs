@@ -86,7 +86,7 @@ bin/magento maintenance:allow-ips <ip address> .. <ip address> [--none]
 
 ## Multi-store setups
 
-If you want to setup multiple stores, each with a different layout and localized content, pass the `$_GET['skin']` parameter to the intended processor.
+If you want to set up multiple stores, each with a different layout and localized content, pass the `$_GET['skin']` parameter to the intended processor.
 In the following example, we are using a `503` type error template file, which requires localized content.
 
 The constructor of the `Error_Processor` class accepts a `skin` GET parameter to change the layout:
