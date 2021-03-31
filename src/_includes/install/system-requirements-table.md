@@ -23,6 +23,6 @@
   font-size: 14px !important;
   font-weight: bold;
   color: black;
-  /* background-color: lightgray; */
+  /*background-color: lightgray;*/
 }
 </style>
