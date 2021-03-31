@@ -1,5 +1,5 @@
-The following table describes third-party software required by the Magento platform, including support and compatibility for PHP, search, database, web server, message broker, and caching software.
 
+{:.comparison-table}
 |               | 2.3.0      | 2.3.1      | 2.3.2      | 2.3.3         | 2.3.4         | 2.3.5      | 2.3.6 | 2.3.7   | 2.4.0            | 2.4.1  | 2.4.2   | 2.4.3   | 2.4.4   | 2.4.5   |
 |---------------|------------|------------|------------|---------------|---------------|------------|-------|---------|------------------|--------|---------|---------|---------|---------|
 | Composer      | 1.x        | 1.x        | 1.x        | 1.x           | 1.x           | 1.x        | 1.x   | 2.x     | 1.x              | 1.x    | 2.x     | 2.x     | 2.x     | 2.x     |
@@ -12,3 +12,17 @@ The following table describes third-party software required by the Magento platf
 | Varnish       | 4.x, 5.x   | 4.x, 5.x   | 4.x, 5.x   | 6.2.0         | 4.x, 5.x, 6.x | 6.3.1      | 6.4.0 | 6.5.1   | 6.x              | 6.4.0  | 6.5.1   | 6.5.1   | 6.5.1   | 6.5.1   |
 | Apache        | 2.4        | 2.4        | 2.4        | 2.4           | 2.4           | 2.4        | 2.4   | 2.4     | 2.4              | 2.4    | 2.4     | 2.4     | 2.4     | 2.4     |
 | nginx         | 1.x        | 1.x        | 1.x        | 1.x           | 1.x           | 1.x        | 1.x   | 1.x     | 1.x              | 1.x    | 1.x     | 1.x     | 1.x     | 1.x     |
+
+<style>
+.comparison-table {
+  table-layout: auto;
+}
+
+.comparison-table thead th {
+  padding: 15px 15px;
+  font-size: 14px !important;
+  font-weight: bold;
+  color: black;
+  /* background-color: lightgray; */
+}
+</style>
