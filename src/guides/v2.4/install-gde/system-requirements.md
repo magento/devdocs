@@ -1,5 +1,5 @@
 ---
-title: Magento 2.4 system requirements
+title: System requirements
 functional_areas:
   - Install
   - System
