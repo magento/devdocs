@@ -8,7 +8,7 @@ Live Search is a set of standalone meta packages that replaces the standard Mage
 
 |**Package**|**Description**|
 |---|---|
-|`live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides a GraphQL playground for merchants to test queries from the Magento Admin. |
+|`live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides a read-only GraphQL playground for merchants to test queries from the Magento Admin. |
 |`LiveSearchAdapter`|Routes search requests from the storefront to the Live Search service, and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
 
 ## Requirements
@@ -22,7 +22,7 @@ Composer is required to install and manage updates to the Live Search module.
 
 ### Method 1: Workaround for 2.4.x
 
-When installing Magento 2.4.x with the `live-search` meta-package, an error occurs due to a `CatalogSearch` patch. The workaround is to install Magento first without Live Search, and then update the project’s root Composer `.json` file to require the `live-search` package.
+When installing Magento 2.4.x with the `live-search` meta-package, an error occurs due to a `CatalogSearch` patch. The temporary workaround is to install Magento first without Live Search, and then update the project’s root Composer `.json` file to require the `live-search` package.
 
 1. Install Magento 2.4.x without Live Search.
 
@@ -75,13 +75,14 @@ To update Live Search, enter the following from the command line:
 ```text
 $   composer update magento/live-search -–with-dependencies
 ```
-Syntax: After the package name enter a blank space and two hyphens, followed by `with-dependencies`'
+
+Syntax: After the package name `live-search`, enter a blank space and two hyphens, followed by `with-dependencies`'
 
 To update to a major version such as from 1.0 to 2.0, edit the project’s root Composer `.json` file as follows:
 
 1.  Open the `main.json` file and search for `magento/live-search`.
 
-1.  In the `.json` file, update the version number in the code:
+1.  In the `require` section, update the version number as follows:
 
     ```
       "require": {

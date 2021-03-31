@@ -4,7 +4,7 @@ title: Search Admin Service
 ee_only: True
 ---
 
-The Search Admin Service provides clients, such as the Magento Search Admin UI, the ability to perform copy, read, update, and delete (CRUD) operations for search configurations. Because it is queried on every search request, it provides search configuration information in a very low latency manner. See the high-level [Architectural Overview]({{ page.baseurl }}/live-search/overview.html) for how the Search Admin Service interacts with Magento Commerce.
+The Search Admin Service provides clients, such as the Magento Search Admin UI, the ability to perform copy, read, update, and delete (CRUD) operations for search configurations. Because it is queried on every search request, the service provides search configuration information in a very low latency manner. See the [Architectural Overview]({{ page.baseurl }}/live-search/overview.html) for how the Search Admin Service interacts with Magento Commerce.
 
 ## Access patterns
 
