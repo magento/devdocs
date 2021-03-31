@@ -201,7 +201,8 @@ entries:
   versions: 2.x
   type: New Topic
   date: March 3, 2021
-  link: https://github.com/magento/devdocs/commit/d4b75de4ce72f6a07fc9ec263a096faa030d7e33
+  link: https://github.com/magento-commerce/devdocs/pull/2114
+  merge_commit: d4b75de4ce72f6a07fc9ec263a096faa030d7e33
   contributor: dshevtsov
   profile: https://github.com/dshevtsov
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
