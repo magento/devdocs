@@ -56,7 +56,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 ### Platform enhancements
 
-*  [**Elasticsearch 7.9.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html#elasticsearch). Although we recommend running Elasticsearch 7.9.x, Magento 2.4.x remains compatible with Elasticsearch 7.4.x. <!--- MC-36867-->
+*  [**Elasticsearch 7.9.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). Although we recommend running Elasticsearch 7.9.x, Magento 2.4.x remains compatible with Elasticsearch 7.4.x. <!--- MC-36867-->
 
 *  Magento 2.4.2 has been tested with [Varnish 6.4]({{ page.baseurl }}/install-gde/system-requirements.html). Magento 2.4.x remains compatible with Varnish 6.x.
 

@@ -66,9 +66,7 @@ To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/a
 
 ### PHP
 
-{% include install/php-versions-2.3.md %}
-
-See [PHP][] for info on PHP requirements.
+See [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of PHP and [PHP][] for PHP requirements.
 
 ### MySQL
 
