@@ -121,7 +121,6 @@ drwxrwx---.  4 magento_user apache   4096 Jun  7 07:53 dev
 -rw-rw----.  1 magento_user apache   2926 Apr 27 21:23 Gruntfile.js
 -rw-rw----.  1 magento_user apache   7592 Apr 27 21:23 .htaccess
 -rw-rw----.  1 magento_user apache   6419 Apr 27 21:23 .htaccess.sample
--rw-rw----.  1 magento_user apache   1358 Apr 27 21:23 index.php
 drwxrwx---.  4 magento_user apache   4096 Jun  7 07:53 lib
 -rw-rw----.  1 magento_user apache  10376 Apr 27 21:23 LICENSE_AFL.txt
 -rw-rw----.  1 magento_user apache  30634 Apr 27 21:23 LICENSE_EE.txt
