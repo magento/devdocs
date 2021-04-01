@@ -4,7 +4,7 @@ title: Facets
 ee_only: True
 ---
 
-Faceting is a high-performance filtering method that uses multiple dimensions of static and dynamic attribute values as search criteria. The available facets appear in the left sidebar of search results pages, with the most commonly used facets “pinned” to the top of the list.
+Faceting is a high-performance filtering method that uses multiple dimensions of searchable static and dynamic attribute values as search criteria. The available facets appear in the left sidebar of search results pages, with the most commonly used facets “pinned” to the top of the list.
 
 {:.bs-callout-info}
 See [Facets](https://docs.magento.com/user-guide/live-search/facets.html) in the _Magento Commerce User Guide_ for information about facet setup and use.
@@ -24,6 +24,16 @@ The filter values for Price are dynamically adjusted into price buckets that are
 Dynamic facets appear only when relevant, and the selection changes according to the products returned. In the storefront Filters list, dynamic facets appear in alphabetic order after any pinned facets. To streamline search results, facets are set to `dynamic` by default.
 
 Intelligent dynamic facets measure the frequency that an attribute appears in the results list and its prevalence throughout the catalog. Live Search uses this information to determine the order of returned products. This makes it possible to return two types of dynamic facets: Those that are most significant, followed by those that are most popular.
+
+## Default attribute values
+
+The following product attributes have hardcoded values that correspond to their default [Storefront Property](https://docs.magento.com/user-guide/stores/attributes-product.html) values in the Admin.
+
+|**Property**|**Storefront Property**|**Attribute**
+|---|---|---|
+| Sortable | Used for Sorting in Product Listing | `price`|
+| Searchable | Use in Search | `price` <br />`sku`<br />`name`|
+| FilterableInSearch | Use in Layered Navigation - Filterable (with results)| `price`<br />`visibility`<br />[category_name]|
 
 ## Facet type examples
 
