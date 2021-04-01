@@ -25,6 +25,8 @@ When you submit payment information, Magento creates an order and sends an order
 {:.bs-callout-info}
 Use the `V1/guest-carts/<cartId>/payment-information` endpoint to set the payment information on behalf of a guest. Do not include an authorization token.
 
+This guest-carts endpoint also requires `email` in the payload (same level as `paymentMethod` and `billing_address`)
+
 **Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine/payment-information`
@@ -44,7 +46,7 @@ Use the `V1/guest-carts/<cartId>/payment-information` endpoint to set the paymen
   "paymentMethod": {
     "method": "banktransfer"
   },
-  "billingAddress": {
+  "billing_address": {
     "email": "jdoe@example.com",
     "region": "New York",
     "region_id": 43,
@@ -58,8 +60,7 @@ Use the `V1/guest-carts/<cartId>/payment-information` endpoint to set the paymen
     "telephone": "512-555-1111",
     "firstname": "Jane",
     "lastname": "Doe"
-  },
-  "email": "jdoe@example.com"
+  }
 }
 ```
 
