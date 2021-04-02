@@ -473,6 +473,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
+use Magento\Framework\App\Action\HttpGetActionInterface;
 
 class Index extends Action implements HttpGetActionInterface
 {
