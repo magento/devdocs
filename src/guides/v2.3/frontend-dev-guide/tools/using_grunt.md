@@ -111,7 +111,7 @@ This path is also added to your .gitignore by default.
 
 You can also use the other way to declare a custom config file:
 
-1. In your Grunt related scripts, in the file router set the alias and path to the custom configuration file. For example, for set the custom `themes.loc.js` configuration file this would look like following:
+1. In your Grunt related scripts, in the file router, set the alias and path to the custom configuration file. For example, to set the custom `themes.loc.js` configuration file, this would look like following:
 
    ```js
    filesRouter.set('themes', 'dev/tools/grunt/configs/themes.loc');
