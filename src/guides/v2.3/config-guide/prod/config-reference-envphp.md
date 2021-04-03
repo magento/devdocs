@@ -181,7 +181,7 @@ Learn more about [Magento Modes][magento-modes].
 
 ## queue
 
-Message queue releated configurations are available in this node.
+Message queue related configurations are available in this node.
 
 ```conf
 'queue' => [
@@ -196,7 +196,7 @@ Learn more about Message queue in below link [Message Queue][message-queue]
 
 ## resource
 
-Resource configuration settings are avilable in this node.
+Resource configuration settings are available in this node.
 
 ```conf
 'resource' => [
@@ -208,7 +208,7 @@ Resource configuration settings are avilable in this node.
 
 ## session
 
-Magento session related configurations are stoted in the `session` node.
+Magento session related configurations are stored in the `session` node.
 
 ```conf
 'session' => [
