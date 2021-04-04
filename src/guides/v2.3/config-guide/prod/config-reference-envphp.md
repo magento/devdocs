@@ -238,7 +238,7 @@ Magento configuration values that cannot be edited in the Magento Admin
       'secure' => [
           'base_url' => 'https://magento.test/'
       ]
-    ],
+    ]
   ]
 ```
 
