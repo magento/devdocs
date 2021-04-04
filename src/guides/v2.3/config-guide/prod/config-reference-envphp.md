@@ -257,4 +257,4 @@ Learn more configuration values that cannot be edited in the Magento Admin in [e
 [downloadable-domains]: {{ page.baseurl }}/reference/cli/magento.html#downloadabledomainsadd
 [change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
 [crons]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html
-[env-php-config-set]: {{ page.baseusr }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.md
+[env-php-config-set]: {{ page.baseusr }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html
