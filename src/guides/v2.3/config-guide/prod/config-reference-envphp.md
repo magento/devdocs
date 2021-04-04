@@ -227,6 +227,23 @@ x-frame-options header can be configured using this node.
 
 Learn more about session in [x-frame-options][x-frame-options].
 
+## system
+
+Magento configuration values local rewrite.
+
+```conf
+'system' => [
+  'default' => [
+    'web' => [
+      'secure' => [
+          'base_url' => 'https://magento.test/'
+      ]
+    ],
+  ]
+```
+
+Learn more configuration values that cannot be edited in the Magento Admin in [env-php-config-set][env-php-config-set].
+
 <!-- Link definitions -->
 [lock-provider-config]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html
 [encryption-key]: https://docs.magento.com/m2/ce/user_guide/system/encryption-key.html
@@ -240,3 +257,4 @@ Learn more about session in [x-frame-options][x-frame-options].
 [downloadable-domains]: {{ page.baseurl }}/reference/cli/magento.html#downloadabledomainsadd
 [change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
 [crons]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html
+[env-php-config-set]: {{ page.baseusr }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.md
