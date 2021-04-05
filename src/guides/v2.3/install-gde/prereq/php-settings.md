@@ -10,7 +10,8 @@ redirect_from:
 
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
 
-{% include install/php-versions-2.3.md %}
+{:.bs-callout-info}
+See [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of PHP.
 
 ## Verify PHP is installed {#centos-verify-php}
 
