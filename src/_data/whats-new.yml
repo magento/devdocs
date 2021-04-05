@@ -610,7 +610,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7888
   contributor: keharper
   profile: https://github.com/keharper
-- description: Updated the note about [supported PHP versions](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#php).
+- description: Updated the note about [supported PHP versions](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html).
   versions: 2.3.x
   type: Technical
   date: February 2, 2021
@@ -1267,7 +1267,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7714
   contributor: keharper
   profile: https://github.com/keharper
-- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#recommended-technologies)
+- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html)
     for Elasticsearch 6.x.
   versions: 2.3.6
   type: Technical
@@ -2051,7 +2051,7 @@ entries:
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7236
-- description: Updated the [supported versions of PHP](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html#php)
+- description: Updated the [supported versions of PHP](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     to 7.3 and 7.4.
   versions: 2.4.0
   type: Major Update
@@ -2230,7 +2230,7 @@ entries:
   type: Major Update
   date: April 29, 2020
   link: https://github.com/magento/devdocs/pull/7120
-- description: Updated [PHP requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#php)
+- description: Updated [PHP requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html)
     and [packages](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html).
   versions: 2.3.5
   type: Major Update
@@ -4659,7 +4659,7 @@ entries:
 - description: Added information about [Elasticsearch 6](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-overview.html#es-spt-versions)
     support.<br/>Added Elasticsearch 6 information to [Configure Magento to use Elasticsearch](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/configure-magento.html)<br/>Added
     [Change Elasticsearch Client](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-downgrade.html)
-    topic.<br/>Updated the [Technologies Magento can use](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#recommended-technologies)
+    topic.<br/>Updated the [Technologies Magento can use](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html)
     topic with new Elasticsearch 6 support.
   versions: 2.2.x, 2.3.x
   type: Major update

@@ -52,6 +52,10 @@ location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
 
 If you use access and secret keys instead of [AWS IAM][] roles, you must include the [`ngx_aws_auth`][ngx repo] Nginx module.
 
+### Permissions
+
+The S3 integration relies on being able to generate and store cached images on the local file system. Therefore, folder permissions for  `pub/media` or similar, should be the same as if you were using local storage.
+
 <!-- link definitions -->
 [AWS S3]: https://aws.amazon.com/s3
 [AWS IAM]: https://aws.amazon.com/iam/

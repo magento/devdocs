@@ -7,7 +7,7 @@ redirect_from:
 ## General guidelines {#instgde-prereq-mysql-intro}
 
 {:.bs-callout-info}
-See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html#database) for supported versions of MySQL.
+See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of MySQL.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
