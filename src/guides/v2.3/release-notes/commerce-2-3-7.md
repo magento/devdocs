@@ -42,13 +42,13 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 *  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Magento Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all unit and integration tests have been configured to be run with PHPUnit 9.
 
-*  [Elasticsearch 7.9.x is now supported](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#recommended-technologies). Although we recommend running Elasticsearch 7.9.3, Magento 2.3.x remains compatible with Elasticsearch 7.4.x.
+*  [Elasticsearch 7.9.x is now supported](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html). Although we recommend running Elasticsearch 7.9.3, Magento 2.3.x remains compatible with Elasticsearch 7.4.x.
 
 *  Varnish 6.5.1 is now supported on 2.3.x.
 
 *  Magento 2.3.7 is now compatible with Composer 2.x. We recommend that merchants migrate to Composer 2.x. Although you can install this release using Composer 1.x, Composer 1.x will soon reach end-of-life. For an overview of Composer 2.x features, see [Deprecating Packagist.org support for Composer 1.x](https://blog.packagist.com/deprecating-composer-1-support/).
 
-*  [Redis 6.x is now supported](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#recommended-technologies). Magento 2.3.x remains compatible with Redis 5.x.
+*  [Redis 6.x is now supported](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html). Magento 2.3.x remains compatible with Redis 5.x.
 
 *  The `endroid/qr-code` library dependency has been updated to the latest version (4.x).
 
