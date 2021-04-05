@@ -377,7 +377,7 @@ class Collection extends SearchResult
 
 It uses a custom collection file to add custom filters to map, and makes the grid filters work with the ID and name fields. Without `addFilterToMap`, you will not be able to search within the `name` column.
 
-The resource model class translates into `app/code/Dev/Grid/Model/ResourceModel/Category.php`:
+The resource model class translates to `app/code/Dev/Grid/Model/ResourceModel/Category.php`:
 
 ```php
 namespace Dev\Grid\Model\ResourceModel;
