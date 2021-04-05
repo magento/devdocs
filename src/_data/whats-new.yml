@@ -157,7 +157,7 @@ entries:
   - 'Partner: Ziffity'
   - 'Progress: done'
   - partners-contribution
-- description: New [egress filtering](https://devdocs.magedevteam.com/200/cloud/project/magento-app-properties.html#firewall-starter-plans-only)
+- description: New [egress filtering](https://devdocs.magento.com/cloud/project/magento-app-properties.html#firewall-starter-plans-only)
     documentation for Cloud Starter plan.
   versions: ''
   type: Major Update
