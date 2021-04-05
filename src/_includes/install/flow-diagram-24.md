@@ -1,10 +1,12 @@
 ![How Magento installation works]({{ site.baseurl }}/common/images/install-diagram-24.svg)
 
-The diagram shows the following:
+The general installation flow is as follows:
 
 1. Set up your server environment.
 
-   Install the prerequisite software, including PHP, Apache, MySQL, and Elasticsearch. Consult the [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for specific information.
+   Install the prerequisite software, including PHP, Apache, MySQL, and Elasticsearch. See [System requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for more information.
+
+1. Get [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) to the Magento Composer repository.
 
 1. Get the Magento software.
 
