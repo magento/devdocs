@@ -22,7 +22,7 @@ To enable remote storage with the AWS S3 adapter:
 1. Configure Magento to use the private bucket. See [Remote storage options][options] for a full list of parameters.
 
    ```bash
-   bin/magento setup:config:set --remote-storage-driver="aws-s3" --remote-storage-bucket="<bucket-name>" --remote-storage-region="<region-name>" --remote-storage-prefix="<optional-prefix>" --access-key=<optional-access-key> --secret-key=<optional-secret-key> -n
+   bin/magento setup:config:set --remote-storage-driver="aws-s3" --remote-storage-bucket="<bucket-name>" --remote-storage-region="<region-name>" --remote-storage-prefix="<optional-prefix>" --remote-storage-key=<optional-access-key> --remote-storage-secret=<optional-secret-key> -n
    ```
 
 ## Configure Nginx
@@ -51,6 +51,10 @@ location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
 ### Authentication
 
 If you use access and secret keys instead of [AWS IAM][] roles, you must include the [`ngx_aws_auth`][ngx repo] Nginx module.
+
+### Permissions
+
+The S3 integration relies on being able to generate and store cached images on the local file system. Therefore, folder permissions for  `pub/media` or similar, should be the same as if you were using local storage.
 
 <!-- link definitions -->
 [AWS S3]: https://aws.amazon.com/s3
