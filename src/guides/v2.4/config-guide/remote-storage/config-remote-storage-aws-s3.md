@@ -22,7 +22,7 @@ To enable remote storage with the AWS S3 adapter:
 1. Configure Magento to use the private bucket. See [Remote storage options][options] for a full list of parameters.
 
    ```bash
-   bin/magento setup:config:set --remote-storage-driver="aws-s3" --remote-storage-bucket="<bucket-name>" --remote-storage-region="<region-name>" --remote-storage-prefix="<optional-prefix>" --access-key=<optional-access-key> --secret-key=<optional-secret-key> -n
+   bin/magento setup:config:set --remote-storage-driver="aws-s3" --remote-storage-bucket="<bucket-name>" --remote-storage-region="<region-name>" --remote-storage-prefix="<optional-prefix>" --remote-storage-key=<optional-access-key> --remote-storage-secret=<optional-secret-key> -n
    ```
 
 ## Configure Nginx
