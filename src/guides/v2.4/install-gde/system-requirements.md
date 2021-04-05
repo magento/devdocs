@@ -24,7 +24,7 @@ All of the following requirements apply to the latest patch release of Magento 2
 
 Mail Transfer Agent (MTA) or an SMTP server
 
-## Operating systems (Linux x86-64)
+### Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
 Magento is not supported on Microsoft Windows and macOS.
@@ -55,7 +55,7 @@ For more information, see [Required PHP settings][].
 
 PHPUnit (as a command-line tool) 9.0.0
 
-## RAM
+### RAM
 
 Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
 
