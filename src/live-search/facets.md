@@ -7,7 +7,7 @@ ee_only: True
 Faceting is a high-performance filtering method that uses multiple dimensions of searchable static and dynamic attribute values as search criteria. The available facets appear in the left sidebar of search results pages, with the most commonly used facets “pinned” to the top of the list.
 
 {:.bs-callout-info}
-See [Facets](https://docs.magento.com/user-guide/live-search/facets.html) in the _Magento Commerce User Guide_ for information about facet setup and use.
+Go to [Facets](https://docs.magento.com/user-guide/live-search/facets.html) in the _Magento Commerce User Guide_ for information about facet setup and use from the Admin and storefront.
 
 ## Types of facets
 
@@ -25,9 +25,26 @@ Dynamic facets appear only when relevant, and the selection changes according to
 
 Intelligent dynamic facets measure the frequency that an attribute appears in the results list and its prevalence throughout the catalog. Live Search uses this information to determine the order of returned products. This makes it possible to return two types of dynamic facets: Those that are most significant, followed by those that are most popular.
 
+## Select type
+
+A facet can be either single- or multi-select, based on the [input type](https://docs.magento.com/user-guide/stores/attributes-input-types.html) that is assigned to the corresponding attribute.
+
+|**Select type**|**Description**|*
+|---|---|
+|Single select |A single-select facet offers multiple options, but allows the shopper to choose only one. Examples: Dropdown, Visual Swatch or Text Swatch|
+|Multi-select| A multi-select facet allows a shopper to choose more than one option. The logical operator that is assigned to a multi-select facet determines the product set that is returned. Options: <br />- Multi-select (or) - The returned products match any of the selected values.<br />- Multi-select (and) - The returned products match all selected facet values.
+
+### Facet aggregation
+
+Facet aggregation is performed as follows if the storefront has three facets (categories, color and price) and the shopper filters on all three (color = blue, price is from $10.00-50.00, categories = `promotions`). 
+
+- `categories` aggregation - Aggregates `categories`, applies `color` and `price` filters, but not the `categories` filter. 
+- `color` aggregation - Aggregates `color`, applies `price` and `categories` filters, but not the `color` filter.
+- `price` aggregation - aggregates `price`, applies `color` and `categories` filters, but not the `price` filter.
+
 ## Default attribute values
 
-The following product attributes have hardcoded values that correspond to their default [Storefront Property](https://docs.magento.com/user-guide/stores/attributes-product.html) values in the Admin.
+The following product attributes have hardcoded properties that correspond to their default [Storefront Property](https://docs.magento.com/user-guide/stores/attributes-product.html) settings in the Admin.
 
 |**Property**|**Storefront Property**|**Attribute**
 |---|---|---|
