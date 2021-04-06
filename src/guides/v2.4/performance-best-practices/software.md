@@ -9,7 +9,7 @@ functional_areas:
 
 We require the following software for production instances of Magento:
 
-*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html#php)
+*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html)
 *  Nginx and [PHP-FPM](https://php-fpm.org/)
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
 *  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
