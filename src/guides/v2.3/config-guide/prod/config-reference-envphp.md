@@ -230,7 +230,7 @@ Learn more about session in [x-frame-options][x-frame-options].
 
 ## system
 
-Magento configuration values that cannot be edited in the Magento Admin
+Magento configuration values that cannot be edited in the Magento Admin.
 
 ```conf
 'system' => [
