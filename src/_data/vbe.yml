@@ -5,6 +5,7 @@ versions:
   - 2.3.3
   - 2.3.4
   - 2.3.5-p1
+  - 2.3.7
   - 2.4.0
   - 2.4.1
   - 2.4.2
@@ -21,6 +22,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: supported
@@ -33,6 +35,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: supported
           2.4.2: not supported
@@ -45,7 +48,21 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: supported
+          2.4.1: not supported
+          2.4.2: not supported
+      -
+        name: 3.9.0
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: not supported
+          2.3.5-p1: not supported
+          2.3.7: supported
+          2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
       -
@@ -57,6 +74,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -69,6 +87,7 @@ extensions:
           2.3.3: not supported
           2.3.4: supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -81,6 +100,7 @@ extensions:
           2.3.3: supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -93,6 +113,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -105,6 +126,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -117,6 +139,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -132,6 +155,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: supported
@@ -144,6 +168,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: supported
           2.4.2: not supported
@@ -156,6 +181,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: supported
           2.4.1: not supported
           2.4.2: not supported
@@ -171,6 +197,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: supported
@@ -183,6 +210,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: supported
           2.4.2: not supported
@@ -195,7 +223,21 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: supported
+          2.4.1: not supported
+          2.4.2: not supported
+      -
+        name: 4.4.2
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: not supported
+          2.3.5-p1: not supported
+          2.3.7: supported
+          2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
       -
@@ -207,6 +249,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -219,6 +262,7 @@ extensions:
           2.3.3: not supported
           2.3.4: supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -231,6 +275,7 @@ extensions:
           2.3.3: supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -243,6 +288,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -255,6 +301,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -267,6 +314,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -282,6 +330,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: supported
@@ -294,6 +343,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: supported
           2.4.2: not supported
@@ -306,7 +356,21 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: supported
+          2.4.1: not supported
+          2.4.2: not supported
+      -
+        name: 7.7.0
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: not supported
+          2.3.5-p1: not supported
+          2.3.7: supported
+          2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
       -
@@ -318,6 +382,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -330,6 +395,7 @@ extensions:
           2.3.3: not supported
           2.3.4: supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -342,6 +408,7 @@ extensions:
           2.3.3: supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -354,6 +421,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -366,6 +434,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -378,6 +447,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -393,6 +463,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: supported
@@ -405,6 +476,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: supported
           2.4.2: not supported
@@ -417,7 +489,21 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: supported
+          2.4.1: not supported
+          2.4.2: not supported
+      -
+        name: 3.5.0
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: not supported
+          2.3.5-p1: not supported
+          2.3.7: supported
+          2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
       -
@@ -429,6 +515,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -441,6 +528,7 @@ extensions:
           2.3.3: not supported
           2.3.4: supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -453,6 +541,7 @@ extensions:
           2.3.3: supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -465,6 +554,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -477,6 +567,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -492,6 +583,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: supported
@@ -504,6 +596,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: supported
           2.4.2: not supported
@@ -516,7 +609,21 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: supported
+          2.4.1: not supported
+          2.4.2: not supported
+      -
+        name: 3.1.0-p1
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: not supported
+          2.3.5-p1: not supported
+          2.3.7: supported
+          2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
       -
@@ -528,6 +635,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -540,6 +648,7 @@ extensions:
           2.3.3: not supported
           2.3.4: supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported
@@ -552,6 +661,7 @@ extensions:
           2.3.3: supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.3.7: not supported
           2.4.0: not supported
           2.4.1: not supported
           2.4.2: not supported

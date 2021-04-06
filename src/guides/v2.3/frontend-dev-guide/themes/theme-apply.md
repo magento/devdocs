@@ -43,6 +43,9 @@ To add a design exception:
 1. In the configuration record corresponding to your store view, click **Edit**.
 1. On the **Design Rule** tab, click **Add New User Agent Rule**.
 1. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
+
+![Design Exception]({{ site.baseurl }}/common/images/user_agent_rule.png)
+
 1. Click **Save Configuration** or **Save and Continue**.
 1. If caching is enabled, [clear the cache](#theme-apply-clear).
 1. To see your changes applied, reload the storefront pages.
@@ -62,6 +65,8 @@ To add a permanent theme-independent logo:
 1. If caching is enabled, [clear the cache](#theme-apply-clear).
 1. To see your changes applied, reload the storefront pages.
 
+![Set store logo in Magento Admin]({{ site.baseurl }}/common/images/logo.png)
+
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
 {:.bs-callout-warning}
@@ -75,6 +80,8 @@ A system message notifies you that invalidated cache types must be refreshed.
 
 1. Click **System** > **Cache Management**.
 1. Clear the invalid cache types.
+
+![Clear the cache from Magento Admin]({{ site.baseurl }}/common/images/clear_cache.png)
 
 ## Troubleshooting (if the changes do not get applied)
 

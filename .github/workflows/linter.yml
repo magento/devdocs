@@ -21,10 +21,20 @@ on:
 # Set the Job #
 ###############
 jobs:
-
-  build:
-    # Name the Job
-    name: Lint Code Base
+  mdl:
+    name: mdl
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+    - name: Install mdl gem
+      run: gem install mdl
+    - name: Run mdl
+      run: mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .
+  super-lint:
     # Set the agent to run on
     runs-on: ubuntu-latest
 
@@ -37,6 +47,9 @@ jobs:
       ##########################
       - name: Checkout Code
         uses: actions/checkout@v2
+        with:
+          # Full git history is needed to get a proper list of changed files within `super-linter`
+          fetch-depth: 0
 
       ################################
       # Run Linter against code base #

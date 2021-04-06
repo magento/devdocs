@@ -8,7 +8,8 @@ functional_areas:
 
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
 
-{% include install/php-versions-2.4.md %}
+{:.bs-callout-info}
+See [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of PHP.
 
 ## Verify PHP is installed {#centos-verify-php}
 
@@ -56,9 +57,6 @@ To verify installed extensions:
    ```bash
     yum -y install php74u-pdo php74u-mysqlnd php74u-opcache php74u-xml php74u-gd php74u-devel php74u-mysql php74u-intl php74u-mbstring php74u-bcmath php74u-json php74u-iconv php74u-soap
    ```
-
-{:.bs-callout-info}
-The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 ## Check PHP settings
 
@@ -193,6 +191,16 @@ To set `opcache.ini` options:
    -  Apache, Ubuntu: `service apache2 restart`
    -  Apache, CentOS: `service httpd restart`
    -  nginx, Ubuntu and CentOS: `service nginx restart`
+
+## Troubleshooting
+
+See the following Magento Support articles for help troubleshooting PHP problems:
+
+-  [PHP version error or 404 error when accessing Magento in browser](https://support.magento.com/hc/en-us/articles/360033117152-PHP-version-error-or-404-error-when-accessing-Magento-in-browser)
+-  [PHP settings errors](https://support.magento.com/hc/en-us/articles/360034599631-PHP-settings-errors)
+-  [PHP mcrypt extension not installed properly](https://support.magento.com/hc/en-us/articles/360034280132-PHP-mcrypt-extension-not-installed-properly-)
+-  [PHP version readiness check issues](https://support.magento.com/hc/en-us/articles/360033546411)
+-  [Common PHP Fatal Errors and solutions](https://support.magento.com/hc/en-us/articles/360030568432)
 
 <!-- Link Definitions -->
 
