@@ -53,7 +53,7 @@ An example follows:
 
 ## Step 2: Configure the output
 
-Configure the output in your Magento application boostrap file; this might be `<magento_root>/index.php` or it could be located in a web server virtual host configuration.
+Configure the output in your Magento application bootstrap file; this might be `<magento_root>/index.php` or it could be located in a web server virtual host configuration.
 
 The following example displays results in a three-column table:
 
