@@ -129,3 +129,10 @@ The SCD_THREADS variable contains an invalid value of type string. Use the follo
 The SCD_STRATEGY variable contains an invalid value fast. Use one of the available value options: compact, quick, standard.
 The NOT_EXIST_OPTION variable is not allowed in configuration.
 ```
+
+## Configuration management optimization
+
+{:.bs-callout-info}
+If you have enabled Configuration Management after dumping the configurations, you should move the SCD_* variables from the deploy to the build stage.
+
+{% include cloud/scd-configuration-management.md %}
