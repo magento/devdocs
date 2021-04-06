@@ -161,7 +161,7 @@ GEM
     unicode-display_width (1.7.0)
     verbal_expressions (0.1.5)
     wdm (0.1.1)
-    whatsup_github (0.4.0)
+    whatsup_github (0.4.1)
       netrc (~> 0.11)
       octokit (~> 4.20)
       thor (~> 1.1)
