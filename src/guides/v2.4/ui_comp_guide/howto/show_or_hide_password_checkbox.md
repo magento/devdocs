@@ -3,9 +3,6 @@ group: ui-components-guide
 title: Show or Hide Password Checkbox
 ---
 
-{:.bs-callout-info}
-The "show or hide" password checkbox functionality is only available in Magento version 2.4.x and later.
-
 This topic describes how you can implement the "show or hide" password checkbox functionality in custom forms.
 
 ![Show or Hide Password Checkbox]({{ site.baseurl }}/common/images/ui_comps/show-or-hide-password-checkbox-v2.1.png)
