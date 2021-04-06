@@ -7,7 +7,7 @@ thread: "/whatsnew-feed.xml"
 updated: Tue Apr 6 19:04:01 2021
 entries:
 - description: Added the Permissions section in the  [Configure AWS S3 bucket for
-    remote storage](https://devdocs.magento.com/guides/v2.4/config-guide/remote-storage/config-remote-storage-aws-s3.html<br/>)
+    remote storage](https://devdocs.magento.com/guides/v2.4/config-guide/remote-storage/config-remote-storage-aws-s3.html)
     topic.
   versions: 2.4.x
   type: Major Update
