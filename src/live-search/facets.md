@@ -15,9 +15,9 @@ There are two types of facets: Static and dynamic.
 
 ### Static
 
-Price and Category are the only static facets and pinned to the top of the Filters list in the storefront. In addition, merchants can pin other commonly-used facets to the top of the list.
+Price and Category are initially the only static facets and are pinned to the top of the Filters list in the storefront. In addition, merchants can pin other commonly-used facets to the top of the list.
 
-The filter values for Price are dynamically adjusted into price buckets that are distributed according to the number of products returned and rounded to the nearest $5.00. Unlike price navigation steps, price buckets overlap the next bucket by $1.00.
+The filter values for Price are adjusted into price buckets that are distributed according to the number of products returned and rounded to the nearest $5.00. Unlike price navigation steps, price buckets overlap the next bucket by $1.00.
 
 ### Dynamic
 
