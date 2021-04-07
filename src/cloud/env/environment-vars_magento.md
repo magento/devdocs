@@ -34,4 +34,4 @@ magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
 ```
 
 {:.bs-callout-info}
-Use only letters (a-z or A-Z) or numbers (0-9) for a custom admin path. No spaces or other characters are allowed.
+The `ADMIN_URL` value accepts letters (a-z or A-Z), numbers (0-9) or underscore character (_) for a custom admin path. Spaces or other characters are **not** accepted.
