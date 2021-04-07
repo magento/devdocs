@@ -94,9 +94,6 @@ runtime:
         - newrelic
 ```
 
-{:.bs-callout-warning}
-If you upgrade the PHP version on your {{site.data.var.ece}} project, you must [submit a Magento Support ticket] to update the New Relic service.
-
 ## Connect to New Relic
 
 To connect a Cloud environment to New Relic, add the New Relic license key to the environment.
