@@ -377,6 +377,16 @@ class Collection extends SearchResult
 
 It uses a custom collection file to add custom filters to map, and makes the grid filters work with the ID and name fields. Without `addFilterToMap`, you will not be able to search within the `name` column.
 
+The resource model class translates to `app/code/Dev/Grid/Model/ResourceModel/Category.php`:
+
+```php
+namespace Dev\Grid\Model\ResourceModel;
+
+class Category extends \Magento\Catalog\Model\ResourceModel\Category
+{
+}
+```
+
 ### 5. Column Actions Class
 
 The UI grid file defines a column actions class `Dev\Grid\Ui\Component\Category\Listing\Column\Actions`.
@@ -464,6 +474,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
+use Magento\Framework\App\Action\HttpGetActionInterface;
 
 class Index extends Action implements HttpGetActionInterface
 {
