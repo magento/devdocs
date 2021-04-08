@@ -6,7 +6,7 @@ ee_only: True
 
 The GraphQL Playground is available in the Magento Admin and gives you the ability to compose and test read-only queries with actual catalog data.
 
-### Execute a query
+## Execute a query
 
 1.	In the Admin, go to **Marketing** > SEO & Search > **Live Search**.
 1.	For multiple stores, set **Scope** to the store view where the settings apply.
@@ -30,7 +30,7 @@ The GraphQL Playground is available in the Magento Admin and gives you the abili
 
 ### Create client
 
-```text
+```
 import MagentoLiveSearch from "@magento/search-sdk";
 
 const search = new MagentoLiveSearch({
@@ -44,7 +44,7 @@ const search = new MagentoLiveSearch({
 
 ### Category listing
 
-```text
+```
 categoryList {
     id
     name
@@ -61,9 +61,17 @@ categoryList {
     }
 ```
 
+### Quick search
+
+Quick Search combines category and product search into a single request.
+
+```
+search.categorySearch({ phrase: "yoga" });
+```
+
 ### Search by phrase
 
-```text
+```
 productSearch(phrase: "Bags") {
     items {
        product {
@@ -82,24 +90,9 @@ productSearch(phrase: "Bags") {
 }
 ```
 
-### Product details page
-
-```text
-product(id: 18) {
-    id
-    name
-    sku
-    media_gallery_entries {
-        url
-        media_type
-        content
-    }
-}
-```
-
 ### Category browse
 
-```text
+```
 category(id: 17) {
     products {
         items {
@@ -114,25 +107,21 @@ category(id: 17) {
 }
 ```
 
-### Quick search
-
-Quick Search combines category and product search into a single request.
-
-```text
-search.categorySearch({ phrase: "yoga" });
-```
-
 ### Category search
 
-`categorySearch` returns categories for products that match the search query. For example, you should expect pants to return categories such as mens clothing and womens clothing, and shoes to return categories such as sandals and sneakers.
+`categorySearch` returns categories for products that match the search query. For example, you should expect pants to return categories such as men's and women's clothing, and shoes to return categories such as sandals and sneakers.
 
-```text
+```
 search.categorySearch({ phrase: "yoga" });
 ```
 
-```text
+```
 query {
-  categorySearch(phrase: "pants", category_size: 10) {
+  categorySearch(
+    phrase: "running sh",
+    categorySize:3
+  )
+  {
     categories {
       name
       url
@@ -141,11 +130,26 @@ query {
 }
 ```
 
+### Product details page
+
+```
+product(id: 18) {
+    id
+    name
+    sku
+    media_gallery_entries {
+        url
+        media_type
+        content
+    }
+}
+```
+
 ### Product search
 
 `productSearch` returns catalog products that match the search query, ordered by relevance. They can also be sorted by price (`asc`/`desc`) by passing in an optional sort query parameter.
 
-```text
+```
 search.productSearch({ phrase: "yoga" });
 ```
 
@@ -154,94 +158,130 @@ Filters can be defined as part of the query using existing product attributes th
 - Only facets specified in Live Search are returned.
 - The values of dynamic facets are returned if 10% or more of products in the result set contain the attribute.
 
-```text
+#### Request example
+
+```
 query {
-  productSearch(phrase: "pants") {
+  productSearch(
+    phrase: "red pants"
+  )
+  {
     total_count
     items {
-      product {
-        __typename
-        uid
-        name
-        sku
-        description {
-          html
-        }
-        short_description {
-          html
-        }
-        meta_title
-        meta_keyword
-        meta_description
-        image {
-          url
-          label
-        }
-        small_image {
-          url
-          label
-        }
-        thumbnail {
-          url
-          label
-        }
-        price_range {
-          minimum_price {
-            regular_price {
-              value
-              currency
+        product {
+            __typename
+            uid
+            name
+            sku
+            description {
+              html
             }
-            final_price {
-              value
-              currency
+            short_description {
+              html
             }
-          }
-          maximum_price {
-            regular_price {
-              value
-              currency
+            meta_title
+            meta_keyword
+            meta_description
+            image {
+              url
+              label
             }
-            final_price {
-              value
-              currency
+            small_image {
+              url
+              label
             }
-          }
+            thumbnail {
+              url
+              label
+            }
+            price_range {
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                  }
+                  final_price {
+                    value
+                    currency
+                  }
+                }
+                maximum_price {
+                  regular_price {
+                    value
+                    currency
+                  }
+                  final_price {
+                    value
+                    currency
+                  }
+                }
+            }
+            canonical_url
+            ... on SimpleProduct {
+                weight
+            }
         }
-        canonical_url
-      }
-      highlights {
-        attribute
-        value
-        matched_words
-      }
-    }
+        highlights {
+            attribute
+            value
+            matched_words
+        }
+    }      
     facets {
-      title
-      attribute
-      buckets {
-        __typename
         title
-        ... on ScalarBucket {
-          id
-          count
+        attribute
+        buckets {
+            __typename
+            title
+            ... on ScalarBucket {
+                id
+                count
+            }
+            ... on RangeBucket {
+                from
+                to
+                count
+            }
+            ... on StatsBucket {
+                min
+                max
+            }
         }
-        ... on RangeBucket {
-          from
-          to
-          count
-        }
-        ... on StatsBucket {
-          min
-          max
-        }
-      }
     }
     suggestions
     page_info {
-      current_page
-      page_size
-      total_pages
+        current_page
+        page_size
+        total_pages
     }
   }
 }
 ```
+
+## Headers
+
+|**Function**|**Header**|
+|---|---|
+|`productSearch`| `MagentoEnvironment-Id`<br />`Magento-Website-Code`<br />`Magento-Store-Code`<br />`Magento-Store-View-Code`<br />`x-api-key` = `search_gql`|
+|`categorySearch`| (Same as above)|
+
+## Input validation
+
+|**Function**|**Input field**|**Validation**|
+|---|---|---|
+|`productSearch`| `phrase`| Max allowed: 255|
+| |`page_size`| Default: 20 if not null. Otherwise can be from 1 - 500
+| |`SearchClauseinput`|attribute|Max allowed: 255|
+| |`SearchClauseinput`|`in` and `eq`| Max allowed: 255|
+| |`ProductSearchSortinput`|attribute|Max allowed: 255|
+|`categorySearch`|phrase|Max allowed: 255|
+||`categorySize`|Default: 5 if not null. Otherwise can be from 1 - 500|
+
+## Error Codes
+
+|**Error Code**|**Query**|
+|---|---|
+|1000 |Catches any other error that is not recognized by the service.|
+|1001 |`index_not_found_exception`<br />Elasticsearch exception message|
+|1002 |`search_phase_execution_exception`<br />Elasticsearch exception message|
+|1003 |`mapper_parsing_exception`<br />Elasticsearch exception message|
