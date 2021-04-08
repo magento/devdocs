@@ -352,7 +352,7 @@ The `dataSource` name `dev_grid_category_listing_data_source` links to `Dev\Grid
  </virtualType>
 ```
 
-The collection class translates into `app/code/Dev/Grid/Ui/DataProvider/Category/Listing/Collection.php`:
+The collection class translates to `app/code/Dev/Grid/Ui/DataProvider/Category/Listing/Collection.php`:
 
 ```php
 namespace Dev\Grid\Ui\DataProvider\Category\Listing;
@@ -465,7 +465,7 @@ It gets a frontend URL for every category it lists.
 
 ### 6. Backend Controllers
 
-The main route defined in `app/code/Dev/Grid/etc/adminhtml/menu.xml` as `dev_grid/index/index` translates into `app/code/Dev/Grid/Controller/Adminhtml/Index/Index.php`:
+The main route defined in `app/code/Dev/Grid/etc/adminhtml/menu.xml` as `dev_grid/index/index` translates to `app/code/Dev/Grid/Controller/Adminhtml/Index/Index.php`:
 
 ```php
 namespace Dev\Grid\Controller\Adminhtml\Index;
@@ -514,7 +514,7 @@ class Index extends Action implements HttpGetActionInterface
 }
 ```
 
-The Ui grid file defines the custom route `dev_grid/category/massDelete` (mass delete) and translates into `app/code/Dev/Grid/Controller/Adminhtml/Category/MassDelete.php`:
+The Ui grid file defines the custom route `dev_grid/category/massDelete` (mass delete) and translates to `app/code/Dev/Grid/Controller/Adminhtml/Category/MassDelete.php`:
 
 ```php
 namespace Dev\Grid\Controller\Adminhtml\Category;
