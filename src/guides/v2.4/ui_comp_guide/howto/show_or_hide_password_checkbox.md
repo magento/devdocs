@@ -45,7 +45,7 @@ Initialize the "show or hide" password checkbox using the `text/x-magento-init` 
 |Option|Description|Type|
 |--- |--- |--- |
 |`component`|The path to the component’s `.js` file, relative to RequireJS. Here the component path value is `Magento_Customer/js/show-password`|String|
-|`passwordSelector`|The id of the password input field. i.e. `#pass`.|String|
+|`passwordSelector`|The id of the password input field, such as `#pass`.|String|
 
 ## Example
 
