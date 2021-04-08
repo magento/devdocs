@@ -258,4 +258,4 @@ Learn more in [env-php-config-set][env-php-config-set].
 [downloadable-domains]: {{ page.baseurl }}/reference/cli/magento.html#downloadabledomainsadd
 [change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
 [crons]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html
-[env-php-config-set]: {{ page.baseusr }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html
+[env-php-config-set]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html
