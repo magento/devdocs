@@ -101,7 +101,7 @@ To use a custom file for Grunt configuration:
 
    ```json
    {
-       "themes": "dev/tools/grunt/configs/local-themes"
+       "themes": "dev/tools/grunt/configs/local-themes.js"
    }
    ```
 
@@ -114,7 +114,7 @@ You can also use the other way to declare a custom config file:
 1. In your Grunt related scripts, in the file router, set the alias and path to the custom configuration file. For example, to set the custom `themes.loc.js` configuration file, this would look like the following:
 
    ```js
-   filesRouter.set('themes', 'dev/tools/grunt/configs/themes.loc');
+   filesRouter.set('themes', 'dev/tools/grunt/configs/themes.loc.js');
    ```
 
    It must be added earlier, than the `get()` method with this alias is called.
