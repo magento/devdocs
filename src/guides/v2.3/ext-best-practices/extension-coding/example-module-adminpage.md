@@ -48,7 +48,7 @@ For more information see: [`composer.json`]({{ page.baseurl }}/extension-dev-gui
       "AFL-3.0"
     ],
     "require": {
-      "php": "~7.1.3||~7.2.0||~7.3.0"
+      "php": "~7.2.0||~7.3.0"
     },
     "autoload": {
       "files": [ "registration.php" ],
