@@ -321,7 +321,7 @@ These steps are required in production mode only, not while in development mode.
 1. Deploy the static contents:
 
    ```bash
-   bin/magento setup:static-content:deploy
+   bin/magento setup:static-content:deploy -f
    ```
 
 1. Clean the cache:

@@ -217,5 +217,5 @@ define([
 1. Deploy static content:
 
    ```bash
-   bin/magento setup:static-content:deploy
+   bin/magento setup:static-content:deploy -f
    ```

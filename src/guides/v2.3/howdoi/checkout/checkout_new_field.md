@@ -216,7 +216,7 @@ class MyBlock extends Template {
 1. Next, deploy static content:
 
    ```bash
-   bin/magento setup:static-content:deploy
+   bin/magento setup:static-content:deploy -f
    ```
 
 1. Then clean the cache:
