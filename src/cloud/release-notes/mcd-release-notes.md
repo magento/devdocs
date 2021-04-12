@@ -19,17 +19,15 @@ The release notes include:
 ## v1.2.2
 *Release date: April 15, 2021*<br/>
 
--  {:.new}<!--MCLOUD-7548--> Enabled the `sodium` PHP extension by default within PHP Docker images.
--  {:.new}<!--MCLOUD-7476--> Added a `--custom-registry` option for using your own images registry.
--  {:.new}<!--MCLOUD-7466--> Enabled the `opcahe.validate_timestamps` PHP setting by default in developer mode. Enabling this setting by default fixes the issue in which file changes had no effect in Docker.
--  {:.new}<!--MCLOUD-7504--> Removed Elasticsearch versions 1.7 and 2.4 from the Elasticsearch images.
--  {:.new}<!--MCLOUD-7396--> Removed the existing certificates from the NGINX image. The NGINX certificates are now auto-generated.
-
-    ```terminal
+-  {:.new}<!--MCLOUD-7548-->**Sodium enabled by default**—Enabled the `sodium` PHP extension by default within PHP Docker images.
+-  {:.new}<!--MCLOUD-7476-->**`custom-registry` option**—Added a `--custom-registry` option to `php ./vendor/bin/ece-docker build:compose` command for using your own images registry.
+   ```terminal
     ./vendor/bin/ece-docker build:compose --custom-registry=my-registry.example.com
     ```
-
--  {:.fix}<!--MCLOUD-7457--> Fixed `build:custom:compose` command to throw an error when the specified files cannot be updated.
+-  {:.new}<!--MCLOUD-7504-->**Removed Elasticsearch versions**—Removed Elasticsearch versions 1.7 and 2.4 from the Elasticsearch images.
+-  {:.new}<!--MCLOUD-7396-->**Auto-generating NGINX certificates**—Removed the existing certificates from the NGINX image. The NGINX certificates are now auto-generated.
+-  {:.fix}<!--MCLOUD-7466-->**Enabled `opcahe.validate_timestamps`**—Enabled the `opcahe.validate_timestamps` PHP setting by default in developer mode. Enabling this setting by default fixes the issue in which file changes had no effect in Docker.
+-  {:.fix}<!--MCLOUD-7457-->**Fixed `build:custom:compose`**—Fixed `build:custom:compose` command to throw an error when the specified files cannot be updated.
 
 ## v1.2.1
 *Release date: December 21, 2020*<br/>
