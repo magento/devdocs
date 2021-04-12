@@ -19,6 +19,21 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+
+## v1.0.20
+
+-  **MDVA-36170** _(for Magento `>=2.3.4 <2.4.2`)_-This fixes the issue where the GraphqQL query is not caching by using the category cache tag.
+-  **MDVA-33168** _(for Magento `>=2.3.3 <2.4.2`)_-Fixes the issue when updating a product attribute via API all other attributes change to an empty value.
+-  **MDVA-19640** _(for Magento `>=2.3.0`)_-Fixes the issue where Advanced Reporting is not showing any data.
+-  **MDVA-11189**  _(for Magento `>=2.3.0 <2.3.5`)_-Fixes the issue when after importing a .csv file to update product stock, rows from the cataloginventory_stock table are deleted.
+-  **MDVA-26639**  _(for Magento `>=2.3.3-p1 <2.3.6`)_-Fixes the issue where if a new order confirmation email template is created, the order items are missing in the order mail.
+-  **MDVA-15546**  _(for Magento `>=2.3.0`)_-This fixes the issue where after creating an order a "Column 'entity_id' where clause is ambiguous" error displays in the exception log.
+-  **MDVA-21095**  _(for Magento `>=2.3.0 <2.3.5`)_-Fixes the issue when a query INSERT INTO search_tmp will not end after mass attribute value update.
+-  **MDVA-23845**  _(for Magento `>=2.3.2-p2 <2.3.5`)_-Fixes the issue where email templates cannot be previewed after JavaScript minification is enabled.
+-  **MDVA-22026**  _(for Magento `>=2.3.2 <2.3.4`)_-Fixes the issue where importing products from .csv file including images from external URLs fails.
+-  **MDVA-22383**  _(for Magento `>=2.3.0 <2.3.4`)_-Fixes the issue where saving a product takes a long time and the page breaks.
+-  **MC-41359**  _(for Magento `>=2.3.6-p1 <2.3.7, >=2.4.2 <2.4.3`)_-Fixes the issue of the incorrect SameSite cookie parameters settings.
+
 ## v1.0.19
 
 -  **MDVA-33614** _(for Magento `2.4.1`)_-Fixes the issue where Page Builder throws the following error: "An error has occurred while initiating Page Builder. Please consult with your technical support contact."
