@@ -65,6 +65,8 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 *  **Support for security.txt file**. This file is an industry-standard file on the server that helps security researchers report potential security issues to site administrators.
 
+*  **Enhancements to Content Security Policy (CSP) support**. `SecureHtmlRenderer` has been added to the Framework and is available in `.phtml` templates to whitelist inline `style` and `script` tags. Inline scripts and styles are not permitted with default CSP configuration, which can be overridden by XML files. <!--- MC-34433-->
+
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
