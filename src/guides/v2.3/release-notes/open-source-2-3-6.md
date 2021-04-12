@@ -38,6 +38,19 @@ This release includes over 15 security fixes and platform security improvements.
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
+## Compatibility issues upgrading from Magento 2.3.5 to 2.3.6
+
+Merchants upgrading from Magento 2.3.5 to 2.3.6 and extension developers should be aware of these code changes:
+
+*  `\Magento\Sales\Model\Order\Pdf\Invoice` class constructor arguments have changed.
+
+   *  `\Magento\Framework\Locale\ResolverInterface` dependency has been replaced with  `\Magento\Store\Model\App\Emulation`.
+
+   *  You can no longer call a parent constructor from child classes with the same arguments.
+
+*  Protected property `\Magento\Sales\Model\Order\Pdf\Invoice::_localeResolver`  has been removed and cannot be used in child classes.
+
+*  If your module contains a class that extends `\Magento\Sales\Model\Order\Pdf\Invoice` and must support both Magento 2.3.5 and 2.3.6, see the recommended solution documented in this [comment](https://github.com/magento/magento2/issues/30684#issuecomment-722602562).
 
 ## Fixed issues
 
@@ -559,6 +572,12 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 *  The performance of catalog search has improved. Disabling **Enable Search Suggestions**  (**Stores**  >  **Configuration**  >  **Catalog** >  **Catalog Search**) works as expected. Previously, Magento queried the MySQL search_query table instead of Elasticsearch for autocomplete search suggestions. [GitHub-25534](https://github.com/magento/magento2/issues/25534)
 
+### Shipping
+
+<!--- MC-32819-->
+
+*  You can now ship an order to multiple addresses if one of the ordered products is a virtual product. Previously, Magento successfully placed the order for the physical products, but the virtual product order was empty.
+
 ### Sitemap
 
 <!--- MC-35182-->
@@ -635,7 +654,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 *  The checkout process now successfully progresses from shipping to payment when using Internet Explorer 11.x with Vertex. Previously, Magento threw a JavaScript error when the shopper tried to proceed from shipping to payment.
 
-*  The process of submitting an invoice to Vertex has been been optimized, and performance has improved.
+*  The process of submitting an invoice to Vertex has been optimized, and performance has improved.
 
 *  Tax details are now included as expected in the database.
 

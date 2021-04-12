@@ -9,7 +9,7 @@ redirect_from:
 
 Your {{site.data.var.ece}} Starter architecture supports up to **four** environments, including a Master environment that contains the initial project code, the Staging environment, and up to two Integration environments.
 
-All environments are in PaaS (Platform-as-a-Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from branches pushed from your local workspace.  Each environment provide a database and web server.
+All environments are in PaaS (Platform-as-a-Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from branches pushed from your local workspace.  Each environment provides a database and web server.
 
 You can use any development and branching methodology you like. When you get initial access to your project, we strongly recommend that you create a Staging environment from the Master environment. Then, create the Integration environment by branching from Staging.
 
@@ -59,6 +59,7 @@ The Production and Staging environments include the following technologies. You 
 -  Nginx web server speaking to PHP-FPM, one instance with multiple workers
 -  Redis server
 -  Elasticsearch for searching for {{site.data.var.ece}} 2.2 and later
+-  Egress filtering (outbound firewall)
 
 ### Services {#cloud-arch-services}
 

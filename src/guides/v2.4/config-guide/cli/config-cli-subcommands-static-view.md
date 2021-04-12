@@ -44,7 +44,7 @@ To deploy static view files:
 Command options:
 
 ```bash
-bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
+bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [--no-parent] [-f|--force]
 ```
 
 The following table explains this command's parameters and values.
@@ -247,6 +247,16 @@ The following table explains this command's parameters and values.
                 <li>Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact">compact strategy</a> to conserve disk space on the server.
                 </li>
             </ul>
+        </td>
+        <td>
+            <p>No</p>
+        </td>
+    </tr>
+    <tr>
+        <td>--no-parent</td>
+        <td>
+            <p>Do not generate files for the parent themes of the current theme. It is strongly recommended to use this flag if you do not explicitly use the parent theme of the current theme you are trying to deploy. This will significantly increase the speed of the process.
+This flag is available in Magento 2.4.2</p>
         </td>
         <td>
             <p>No</p>

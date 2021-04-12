@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Install optional sample data modules
 functional_areas:
   - Install

@@ -14,8 +14,8 @@ Unless you changed Elasticsearch server settings, the defaults should work. Skip
 
 |Option|Description|
 |--- |--- |
-|**Elasticsearch Server Hostname**|Enter the fully qualified hostname or IP address of the machine running Elasticsearch.</br>{{site.data.var.ece}}: Get this value from your integration system.|
-|**Elasticsearch Server Port**|Enter the Elasticsearch web server proxy port. The default is 9200.</br>{{site.data.var.ece}}: Get this value from your integration system.|
+|**Elasticsearch Server Hostname**|Enter the fully qualified hostname or IP address of the machine running Elasticsearch. <br/> {{site.data.var.ece}}: Get this value from your integration system.|
+|**Elasticsearch Server Port**|Enter the Elasticsearch web server proxy port. The default is 9200.<br/>{{site.data.var.ece}}: Get this value from your integration system.|
 |**Elasticsearch Index Prefix**|Enter the Elasticsearch index prefix. If you use a single Elasticsearch instance for more than one Magento installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix magento2.|
 |**Enable Elasticsearch HTTP Auth**|Click **Yes** only if you enabled authentication for your Elasticsearch server. If so, provide a username and password in the provided fields.|
 

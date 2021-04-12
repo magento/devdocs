@@ -50,7 +50,7 @@ The following table shows the options to customize service container configurati
 | [mailhog][mailhog-container] | MailHog |  `--no-mailhog`<br>`--mailhog-http-port`<br>`--mailhog-smtp-port` | latest | Email service to replace Sendmail service, which can cause issues in Docker environment
 | [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Node container to run gulp or other NPM based commands in the Docker environment. Use the `--node` option to install a specific node version.
 | [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 | Use the `--rmq` option to install a specific RabbitMQ version.
-| [redis][redis-container] | Redis     | `--redis` | 3.2, 4.0, 5.0 |   Standard redis container
+| [redis][redis-container] | Redis     | `--redis` | 3.2, 5.0, 6.0 |   Standard redis container
 | [selenium][selenium-container]| Selenium | `--with-selenium`<br>`--selenium-version`<br>`--selenium-image`| Any | Enables Magento application testing using the Magento Functional Testing Framework (MFTF)
 | [test][test-container]| PHP CLI | `--with-test`| Any | Optional container with a writable file system for running tests
 | [tls][tls-container] | SSL Endpoint | `--tls-port`<br/>`--no-tls` | nginx 1.19-1.2.0, latest  |  Terminates SSL, can be configured to pass to varnish or nginx. Use the `--tls-port` option to change the default port (443).<br/>Use the `--no-tls` option to disable tls.
@@ -182,3 +182,4 @@ table.docker-service-versions-table td:nth-child(3) {
 table.docker-cli-container-table td:nth-child(3) {
   width: 200px;
 }
+</style>

@@ -97,6 +97,8 @@ Because the dropdown widget is not formatted by default, use [LESS mixin `.lib-d
 }
 ```
 
+If there is a need to customize the button and arrow, the [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) provides the ability to do this with ready-made Less mixins.
+
 [LESS mixin `.lib-dropdown()`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/css/source/lib/_dropdowns.less
 
 ## Initialize the dropdown widget {#dropdown_init}
@@ -175,8 +177,35 @@ Given class is added to the widget element when the menu is visible.
 
 **Default value**: `active`
 
+## Code sample
+
+The following example shows how to initialize the dropdown widget.
+
+```html
+<div class="customer-welcome">
+    <button
+        data-mage-init='{"dropdown":{}}'
+        data-toggle="dropdown"
+        class="action"
+        data-action="customer-menu-toggle">
+            <span><?= $block->escapeHtml(__('Dropdown open button')) ?></span>
+    </button>
+    <ul data-target="dropdown" class="dropdown-options">
+        <li>
+            <span class="item"><?= $block->escapeHtml(__('Item 1')) ?></span>
+        </li>
+        <li>
+            <span class="item"><a href="#"><?= $block->escapeHtml(__('Item 2 with link')) ?></a></span>
+        </li>
+        <li>
+            <span class="item"><?= $block->escapeHtml(__('Item 3')) ?></span>
+        </li>
+    </ul>
+</div>
+```
+
 ## Result
 
 The result is a custom select dropdown with custom content as options.
 
-![Dropdown Widget]({{ site.baseurl }}/common/images/widget/dropdown-widget-result.jpg)
+![Dropdown Widget]({{ site.baseurl }}/common/images/widget/dropdown-widget-result.png)
