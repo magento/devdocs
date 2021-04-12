@@ -1,0 +1,24 @@
+# Each line is a file pattern followed by one or more owners.
+# Learn more at: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
+
+*.rb @dshevtsov
+
+*.rake @dshevtsov
+
+*.sh @dshevtsov
+
+/* @dshevtsov
+
+/.github/linters/ @dshevtsov
+
+/.github/workflows/ @dshevtsov
+
+/bin/ @dshevtsov
+
+/docker-compose.yaml @hguthrie
+
+LICENSE.txt @jeff-matthews
+
+COPYING.txt @jeff-matthews
+
+CODEOWNERS @jeff-matthews @dshevtsov
