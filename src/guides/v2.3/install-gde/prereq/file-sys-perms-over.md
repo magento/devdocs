@@ -22,9 +22,9 @@ There are two types of Magento file system owners:
 
    Private hosting is useful if you manage a Magento server. Each user has a specific responsibility:
 
-   - The _web server user_ runs the Magento Admin and storefront.
+   -  The _web server user_ runs the Magento Admin and storefront.
 
-   - The _command-line user_ runs the Magento cron jobs and command-line utilities.
+   -  The _command-line user_ runs the Magento cron jobs and command-line utilities.
 
    Both users require the same level of permissions to the Magento file system, so it is best to use a [shared group][] and set a [`umask`](#restrict).
 
