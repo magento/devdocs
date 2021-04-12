@@ -20,13 +20,13 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 ## v2002.1.6
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
--  {:.new}<!--MCLOUD-7694--> **Redis password authentication**—Added password authentication for Redis service.
+-  {:.new}<!--MCLOUD-7694--> **Redis authentication credentials**—Added the ability to read Redis authorization credentials from the `relationships` property during the deploy phase.
 -  {:.new}<!--MCLOUD-7695--> **Elasticsearch authorization credentials**—Added the ability to read Elasticsearch authorization credentials from the `relationships` property during the deploy phase.
 -  {:.new}<!--MCLOUD-7698--> **Additional cache service**—Added `redis-session` as an additional cache service for session storage.
 -  {:.new}<!--MCLOUD-7806--> **New SPLIT_DB messages** Added a validator warning message for using the `SPLIT_DB` option with Magento 2.4.2 and later and a validator critical message for using the `SPLIT_DB` option with Magento 2.5.0 and later.
 
--  {:.fix}<!--MCLOUD-7572--> **Elasticsearch version from relationships**—Fixed Service validator to retrieve the correct version of Elasticsearch from the MAGENTO_CLOUD_RELATIONSHIP variable in cloud docker and integration environments.
--  {:.fix}<!--MCLOUD-7722--> **Cache configuration**—Fixed `CACHE_CONFIGURATION` validation issues during deployment (for custom cache connections) by allowing the `'port'` number to be added to the `'server'` value.
+-  {:.fix}<!--MCLOUD-7572--> **Elasticsearch version from relationships**—Fixed Service validator to retrieve the correct version of Elasticsearch from the `relationships` properties in Cloud Docker and integration environments.
+-  {:.fix}<!--MCLOUD-7722--> **Cache configuration**—Fixed `CACHE_CONFIGURATION` validation issues during deployment by allowing the `'port'` number to be retrieved from the `'server'` value for custom cache connections.
 -  {:.fix}<!--MCLOUD-7776--> **Upgrading to Magento 2.4.2**—Fixed the issue that required users to manually run `bin/magento setup:upgrade` to make their sites operational after upgrading to Magento 2.4.2.
 
 ## v2002.1.5
