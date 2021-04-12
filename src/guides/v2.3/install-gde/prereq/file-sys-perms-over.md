@@ -30,10 +30,10 @@ There are two types of Magento file system owners:
 
 ### Restrict access with a umask {#restrict}
 
-To tighten security, particularly in a Production environment on a shared hosting system, you can use `umask` to restrict access. A `umask`—also referred to as a _file system creation mask_—is a set of bits that controls how the file permissions are set for newly created files.
+To tighten security, particularly in a production environment on a shared hosting system, you can use `umask` to restrict access. A `umask`—also referred to as a _file system creation mask_—is a set of bits that controls how the file permissions are set for newly created files.
 
 {:.bs-callout-warning}
-File system security is complex and extremely important. We strongly recommend that you consult an experienced system administrator or network administrator before you decide the level of permissions to set. We provide a mechanism for you to use, but a permissions strategy is up to you.
+File system security is complex and extremely important. We strongly recommend that you consult an experienced system administrator or network administrator before you decide the level of permissions to set. We provide a mechanism for you to use, but creating a permissions strategy is your responsibility.
 
 Magento uses a three-bit, default mask: `002`. Subtract the Magento default mask from the UNIX defaults of 666 for files and 777 for directories.
 
