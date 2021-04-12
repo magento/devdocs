@@ -67,7 +67,8 @@ This example shows how to initialize the calendar widget, including custom param
         showButtonPanel: true,
         currentText: $t('Go Today'),
         closeText: $t('Close'),
-        showWeek: true
+        showWeek: true,
+        showOn: "both"
       });
     })
 </script>
