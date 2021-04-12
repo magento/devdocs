@@ -4,8 +4,34 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Tue Mar 30 15:40:09 2021
+updated: Tue Apr 6 19:04:01 2021
 entries:
+- description: Added the Permissions section in the  [Configure AWS S3 bucket for
+    remote storage](https://devdocs.magento.com/guides/v2.4/config-guide/remote-storage/config-remote-storage-aws-s3.html)
+    topic.
+  versions: 2.4.x
+  type: Major Update
+  date: April 5, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2194
+  merge_commit: 13da3ed5295903949376f29bf59c421a117afb41
+  contributor: dobooth
+  membership: false
+  labels:
+  - 2.4.x
+  - Major Update
+- description: Redesigned the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    page to make it easier to quickly identify supported versions of major requirements
+    across versions of Magento.
+  versions: 2.x
+  type: Major Update
+  date: April 5, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2199
+  merge_commit: 580fddd3267192ca3cc5c8de7b81999c2dbf11de
+  contributor: jeff-matthews
+  membership: false
+  labels:
+  - 2.x
+  - Major Update
 - description: Added [recommendations for improving build and deploy environment definitions](https://devdocs.magento.com/cloud/project/magento-env-yaml.html#configuration-management-optimization)
     related to [SCD performance](https://devdocs.magento.com/cloud/live/sens-data-over.html#scd-performance)
     if you have Configuration management enabled.
@@ -30,7 +56,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8846
   merge_commit: 844fd8790086f020221805ecd61bf58cc8a67441
   contributor: abukatar
-  membership: true
+  membership: false
   labels:
   - 2.x
   - Internal Dev

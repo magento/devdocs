@@ -139,7 +139,7 @@ To check Elasticsearch software compatibility:
 1. Retrieve the installed Elasticsearch service `version:number` from the service endpoint.
 
    ```bash
-   curl -XGET <elasticsearch-service-endopint-ip-address>:9200/
+   curl -XGET <elasticsearch-service-endpoint-ip-address>:9200/
    ```
 
    ```terminal
