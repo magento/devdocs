@@ -155,7 +155,6 @@ enum ActionTargetType {
     NAME
 }
  
- 
 enum RuleStatus {
     ENABLED
     DISABLED
