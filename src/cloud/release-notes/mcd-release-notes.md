@@ -24,7 +24,7 @@ The release notes include:
    ```terminal
     ./vendor/bin/ece-docker build:compose --custom-registry=my-registry.example.com
     ```
--  {:.new}<!--MCLOUD-7504-->**Removed Elasticsearch versions**—Removed Elasticsearch versions 1.7 and 2.4 from the Elasticsearch images.
+-  {:.new}<!--MCLOUD-7504-->**Removed old Elasticsearch versions**—Removed Elasticsearch versions 1.7 and 2.4 from the Elasticsearch images.
 -  {:.new}<!--MCLOUD-7396-->**Auto-generating NGINX certificates**—Removed the existing certificates from the NGINX image. The NGINX certificates are now auto-generated.
 -  {:.fix}<!--MCLOUD-7466-->**Enabled `opcahe.validate_timestamps`**—Enabled the `opcahe.validate_timestamps` PHP setting by default in developer mode. Enabling this setting by default fixes the issue in which file changes had no effect in Docker.
 -  {:.fix}<!--MCLOUD-7457-->**Fixed `build:custom:compose`**—Fixed `build:custom:compose` command to throw an error when the specified files cannot be updated.
