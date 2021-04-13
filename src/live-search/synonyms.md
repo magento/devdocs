@@ -20,7 +20,7 @@ A one-way synonym is a subset of a keyword, but with a more granular meaning. Fo
 
 ## Setup and configuration
 
-Live Search synonyms are created and maintained from the Magento Admin, and are separate from standard Magento synonyms. Live Search synonyms cannot be set up through [Live Search SDK](({{ page.baseurl }}/live-search/live-search-sdk.md )) or Live Search GraphQL, and the synonym setup has no impact on requests.
+Live Search synonyms are created and maintained from the Magento Admin, and are separate from standard Magento synonyms. Live Search synonyms cannot be set up through [Live Search SDK]({{ site.baseurl }}/live-search/live-search-sdk.html ) or Live Search GraphQL, and the synonym setup has no impact on requests.
 
 After a synonym is saved in the Admin, it can take up to two hours for the changes to propagate through the backend and for the storefront search results to reflect the change.
 

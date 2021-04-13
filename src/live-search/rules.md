@@ -13,7 +13,7 @@ See [Rules](https://docs.magento.com/user-guide/live-search/rules.html) in the _
 
 ## Example request
 
-```text
+```graphql
 mutation {
   queryRules (
     queryRules: [
@@ -130,7 +130,7 @@ mutation {
 
 ### Formal schema
 
-```text
+```json
 enum JoinOperator {
     OR
     AND
@@ -203,7 +203,7 @@ type Mutation {
 ```
 ## Get query rules request
 
-```text
+```graphql
 query queryRules {
   queryRules {
     queryRules {
@@ -233,7 +233,7 @@ query queryRules {
 ```
 ### Formal schema
 
-```text
+```json
 type QueryRulesResponse {
     id: ID!
     name: String!

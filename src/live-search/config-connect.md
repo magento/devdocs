@@ -21,14 +21,14 @@ _Magento Services_
 
 Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. The synchronization between the product catalog and the catalog service begins after Live Search is connected. The `saas-export` process can take up to 24 hours. You can verify that process is complete by looking for entries in the following tables:
 
-- `catalog_data_exporter_products`
-- `catalog_data_exporter_product_attributes`
+-  `catalog_data_exporter_products`
+-  `catalog_data_exporter_product_attributes`
 
 ### Test the connection
 
-1.  Log in to the Magento Admin and verify that you can go to **Marketing** > **Live Search**.
+1. Log in to the Magento Admin and verify that you can go to **Marketing** > **Live Search**.
 
-1.  In the storefront, verify that **Category Browse** and **Quick Search** work as described in the [Quick Tour](https://docs.magento.com/user-guide/live-search/quick-tour.html) of Live Search.
+1. In the storefront, verify that **Category Browse** and **Quick Search** work as described in the [Quick Tour](https://docs.magento.com/user-guide/live-search/quick-tour.html) of Live Search.
 
 1. If Live Search is not available in the Admin or the Category Browse / Search Results are not loading on the storefront, check the `system.log` for API communication failures or errors on the services side:
 

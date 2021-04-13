@@ -8,11 +8,11 @@ The GraphQL Playground is available in the Magento Admin and gives you the abili
 
 ## Execute a query
 
-1.	In the Admin, go to **Marketing** > SEO & Search > **Live Search**.
-1.	For multiple stores, set **Scope** to the store view where the settings apply.
-1.	Click the **GraphQL** tab.
-1.	Enter the query code.
-1.	Click **Play**.
+1. In the Admin, go to **Marketing** > SEO & Search > **Live Search**.
+1. For multiple stores, set **Scope** to the store view where the settings apply.
+1. Click the **GraphQL** tab.
+1. Enter the query code.
+1. Click **Play**.
 
    ![graphQL example]({{ page.baseurl }}/live-search/images/graphql-example.png)
    _GraphQL - example product query_
@@ -22,7 +22,7 @@ The GraphQL Playground is available in the Magento Admin and gives you the abili
 |**Scenario**|**Query**|
 |---|---|
 |Category search<br />Browse by category (includes faceted navigation with filters)|`categorySearch`|
-|Product search<br />Product Details page|`productsSearch`<br />'products` (deprecated)|
+|Product search<br />Product Details page|`productsSearch`<br />`products` (deprecated)|
 |Category navigation||`categoryList`|
 |Search by phrase (includes faceted navigation with filters, ordered by relevancy, highlights, variation preselect, suggestions.)|New query|
 
@@ -30,7 +30,7 @@ The GraphQL Playground is available in the Magento Admin and gives you the abili
 
 ### Create client
 
-```
+```text
 import MagentoLiveSearch from "@magento/search-sdk";
 
 const search = new MagentoLiveSearch({
@@ -44,7 +44,7 @@ const search = new MagentoLiveSearch({
 
 ### Category listing
 
-```
+```graphql
 categoryList {
     id
     name
@@ -65,13 +65,13 @@ categoryList {
 
 Quick Search combines category and product search into a single request.
 
-```
+```graphql
 search.categorySearch({ phrase: "yoga" });
 ```
 
 ### Search by phrase
 
-```
+```graphql
 productSearch(phrase: "Bags") {
     items {
        product {
@@ -82,7 +82,7 @@ productSearch(phrase: "Bags") {
                 url
             }
        }
-       hightlights {
+       highlights {
            attribute_code
            value
        }
@@ -92,7 +92,7 @@ productSearch(phrase: "Bags") {
 
 ### Category browse
 
-```
+```graphql
 category(id: 17) {
     products {
         items {
@@ -111,11 +111,11 @@ category(id: 17) {
 
 `categorySearch` returns categories for products that match the search query. For example, you should expect pants to return categories such as men's and women's clothing, and shoes to return categories such as sandals and sneakers.
 
-```
+```graphql
 search.categorySearch({ phrase: "yoga" });
 ```
 
-```
+```graphql
 query {
   categorySearch(
     phrase: "running sh",
@@ -132,7 +132,7 @@ query {
 
 ### Product details page
 
-```
+```graphql
 product(id: 18) {
     id
     name
@@ -149,18 +149,18 @@ product(id: 18) {
 
 `productSearch` returns catalog products that match the search query, ordered by relevance. They can also be sorted by price (`asc`/`desc`) by passing in an optional sort query parameter.
 
-```
+```graphql
 search.productSearch({ phrase: "yoga" });
 ```
 
 Filters can be defined as part of the query using existing product attributes that have been defined as facets in the Magento Admin. For example, to filter results by color, a color facet must be defined in Live Search, based on the existing `color` attribute. Filters support ranges for numeric attributes (for example for price) or `eq`/`in` values for numeric and text attributes.
 
-- Only facets specified in Live Search are returned.
-- The values of dynamic facets are returned if 10% or more of products in the result set contain the attribute.
+-  Only facets specified in Live Search are returned.
+-  The values of dynamic facets are returned if 10% or more of products in the result set contain the attribute.
 
 #### Request example
 
-```
+```graphql
 query {
   productSearch(
     phrase: "red pants"

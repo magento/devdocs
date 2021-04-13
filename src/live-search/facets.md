@@ -36,11 +36,11 @@ A facet can be either single- or multi-select, based on the [input type](https:/
 
 ### Facet aggregation
 
-Facet aggregation is performed as follows if the storefront has three facets (categories, color and price) and the shopper filters on all three (color = blue, price is from $10.00-50.00, categories = `promotions`). 
+Facet aggregation is performed as follows if the storefront has three facets (categories, color and price) and the shopper filters on all three (color = blue, price is from $10.00-50.00, categories = `promotions`).
 
-- `categories` aggregation - Aggregates `categories`, applies `color` and `price` filters, but not the `categories` filter. 
-- `color` aggregation - Aggregates `color`, applies `price` and `categories` filters, but not the `color` filter.
-- `price` aggregation - aggregates `price`, applies `color` and `categories` filters, but not the `price` filter.
+-  `categories` aggregation - Aggregates `categories`, applies `color` and `price` filters, but not the `categories` filter.
+-  `color` aggregation - Aggregates `color`, applies `price` and `categories` filters, but not the `color` filter.
+-  `price` aggregation - aggregates `price`, applies `color` and `categories` filters, but not the `price` filter.
 
 ## Default attribute values
 
@@ -63,7 +63,7 @@ A search of the Luma catalog for “bag” returns the following facet types:
 ```
 ### Example query
 
-```text
+```graphql
 query {query {
    productSearch(
       phrase: "bag",
@@ -85,7 +85,7 @@ query {query {
 
 ### Example response
 
-```test
+```json
 {
   "extensions": {
     "request-id": "gck5NeAlTFBifkXkAWIcqsw2HxPYzmIy"
@@ -176,7 +176,7 @@ brand: 4
 
 ### Live Search API response
 
-```text
+```json
 "facets": [
    {
      "title": "Price"

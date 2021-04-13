@@ -13,8 +13,8 @@ Live Search is a set of standalone meta packages that replaces the standard Mage
 
 ## Requirements
 
-- Magento 2.4.x
-- PHP 7.3 (The `catalog-data-exporter` is not compatible with previous versions of PHP.)
+-  Magento 2.4.x
+-  PHP 7.3 (The `catalog-data-exporter` is not compatible with previous versions of PHP.)
 
 ## Step 1: Install Live Search
 
@@ -28,20 +28,20 @@ When installing Magento 2.4.x with the `live-search` meta-package, an error occu
 
 1. Update `composer.json` to require the `live-search` package as follows:
 
-    ```
-      "require": {
-        ...
-        "magento/live-search": ">=1.0.0",
-        ...
-    }
+  ```json
+    "require": {
+      ...
+      "magento/live-search": ">=1.0.0",
+      ...
+  }
    ```
 
 ### Method 2: Standard procedure
 
 Enter the following from the command line:
 
-```
-$   composer require magento/live-search
+```bash
+composer require magento/live-search
 ```
 ### Dependencies
 
@@ -72,31 +72,31 @@ The following Live Search dependencies are captured by Composer:
 
 To update Live Search, enter the following from the command line:
 
-```text
-$   composer update magento/live-search -–with-dependencies
+```bash
+composer update magento/live-search -–with-dependencies
 ```
 
 Syntax: After the package name `live-search`, enter a blank space and two hyphens, followed by `with-dependencies`'
 
 To update to a major version such as from 1.0 to 2.0, edit the project’s root Composer `.json` file as follows:
 
-1.  Open the `main.json` file and search for `magento/live-search`.
+1. Open the `main.json` file and search for `magento/live-search`.
 
-1.  In the `require` section, update the version number as follows:
+1. In the `require` section, update the version number as follows:
 
-    ```
-      "require": {
-        ...
-       "magento/live-search": "^2.0",
-        ...
+   ```json
+   "require": {
+      ...
+      "magento/live-search": "^2.0",
+      ...
     }
    ```
 
-1.  **Save** `composer.json` and **Run**.
+1. **Save** `composer.json` and **Run**.
 
-    ```
-  $   composer update magento/live-search –-with-dependencies
-    ```
+  ```bash
+  composer update magento/live-search –-with-dependencies
+  ```
 
 ## Uninstall
 

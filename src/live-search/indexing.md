@@ -4,7 +4,7 @@ title: Indexing
 ee_only: True
 ---
 
-Product attribute properties ("metadata") determine how an attribute can be used in the catalog, its appearance and behavior in the store, and the data that is included in data transfer operations. The properties and labels associated with each attribute determine how it can be used and its presentation in the store. The scope of attribute metadata is `website/store/store view`. 
+Product attribute properties ("metadata") determine how an attribute can be used in the catalog, its appearance and behavior in the store, and the data that is included in data transfer operations. The properties and labels associated with each attribute determine how it can be used and its presentation in the store. The scope of attribute metadata is `website/store/store view`.
 
 Live Search dynamically indexes attributes based on product attribute metadata and supports:
 
@@ -52,19 +52,19 @@ _Indexing Metadata API_
 
 The Live Search API endpoint returns attribute metadata that includes the sortable property setting. After an attribute is updated, it might take up to two hours for the metadata returned to sync with Magento attribute data.
 
-1.	Merchant updates attribute property to make it sortable.
+1. Merchant updates attribute property to make it sortable.
 
-1.	Product feed updates metadata SaaS.
+1. Product feed updates metadata SaaS.
 
-1.	Elasticsearch (ES) indexer picks up updated attribute from metadata SaaS on a cadence, such as every hour, and updates ES index based on the attribute.
+1. Elasticsearch (ES) indexer picks up updated attribute from metadata SaaS on a cadence, such as every hour, and updates ES index based on the attribute.
 
-1.	ES indexer updates the search metadata table (dynamo table) to reflect the attribute change.
+1. ES indexer updates the search metadata table (dynamo table) to reflect the attribute change.
 
-1.	`attributeMetadata` query returns fields from the search metadata table which now includes updates to the sortable attribute.
+1. `attributeMetadata` query returns fields from the search metadata table which now includes updates to the sortable attribute.
 
 ## Example
 
-```text
+```graphql
 type SearchableAttribute {
     attribute: String!
     weight: float

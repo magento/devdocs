@@ -25,7 +25,7 @@ See [search-admin-service](https://git.corp.adobe.com/magento-datalake/search-ad
 
 `facetsConfiguration`
 
-```
+```graphql
 query {
   facetsConfiguration
   {
@@ -51,7 +51,7 @@ query {
 
 `synonym`
 
-```
+```graphql
 query {
     synonyms {
       synonymsGroups {
@@ -66,7 +66,7 @@ query {
 
 `productAttribute`
 
-```
+```graphql
 query {
   productAttributeMetadata
   {
@@ -97,7 +97,7 @@ query {
 
 `querySynonymSuggestions`
 
-```
+```graphql
 query {
     querySynonymSuggestions(words: ["olive", "emerald"]) {
     suggestions
