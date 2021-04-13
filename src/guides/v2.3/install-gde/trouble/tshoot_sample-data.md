@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: 03_install
 title: Errors installing optional sample data
 menu_title: Errors installing optional sample data
@@ -57,7 +56,7 @@ bin/magento deploy:mode:set developer
 ```
 
 ```bash
-rm -rf generated/code/* generated/metadata/*
+rm -r generated/*/*
 ```
 
 ```bash

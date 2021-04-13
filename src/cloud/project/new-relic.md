@@ -94,9 +94,6 @@ runtime:
         - newrelic
 ```
 
-{:.bs-callout-warning}
-If you upgrade the PHP version on your {{site.data.var.ece}} project, you must [submit a Magento Support ticket] to update the New Relic service.
-
 ## Connect to New Relic
 
 To connect a Cloud environment to New Relic, add the New Relic license key to the environment.
@@ -227,7 +224,8 @@ To use the New Relic Logs application:
    {:.bs-callout-tip}
    You can also access the New Relic Logs application from the New Relic ONE home page. See [New Relic ONE core UI components][New Relic One UI].
 
-1. To review infrastructure log data for cloud services, enter the query string `has: "ident"` in the _Find logs where_ field. Then, click **Query logs**.
+1. To review infrastructure log data for cloud services, enter the query string `has: "filePath"` in the _Find logs where_ field. Then, click **Query logs**.
+   The names of the log files are stored in the `filePath` field, with full paths to the log file.
 
    ![Cloud project New Relic service log data]({{ site.baseurl }}/common/images/cloud/cloud_new-relic-log-query-has-ident.png){:width="650px"}
 

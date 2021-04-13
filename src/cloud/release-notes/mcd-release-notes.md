@@ -94,7 +94,7 @@ The release notes include:
 
    -  For {{site.data.var.mcd-prod}} 1.2.0 and later, Magento now provides Docker images for each patch version, and the Docker configuration generator creates the Docker configuration with a specified patch version instead of using the latest. Previously, the Docker configuration generator built the configuration using the latest patch version which could break {{ site.data.var.mcd-prod}} environments built using an earlier version.<!--MCLOUD-7093-->
 
-   -  **Specify custom images and versions in custom Magento Cloud Docker configuration**—Updated the `build:custom:compose` command with options to specify custom images and versions when generating a custom Docker compose configuration file (`docker-compose.yaml`). See [Build a custom Docker Compose configuration]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#build-a-custom-docker-compose-configuration). <!--MCLOUD-7089-->
+   -  **Specify custom images and versions in custom Magento Cloud Docker configuration**—Updated the `build:custom:compose` command with options to specify custom images and versions when generating a custom Docker compose configuration file (`docker-compose.yaml`). See [Build a custom Docker Compose configuration]({{ site.baseurl }}/cloud/docker/docker-config-sources.html#build-a-custom-docker-compose-configuration). <!--MCLOUD-7089-->
 
    -  Updated the Docker host configuration to expose port 443 to enable access to Magento (`https://magento2.docker`) from all CLI containers. You can change the default port by adding the `--tls-port` option when you generate the Docker configuration file.<!--MCLOUD-6806-->
 
@@ -134,7 +134,7 @@ Add a MariaDB configuration volume                                              
 ## v1.1.0
 *Release date: June 25, 2020*<br/>
 
--  {:.new}**Added support for the Magento split database performance solution**–Now you can configure and deploy a Magento store using the Magento Split database performance solution in the Cloud Docker environment. See [Enable split database solution]({{site.baseurl}}/cloud/docker/docker-split-db.html).<!--MCLOUD-3740-->
+-  {:.new}**Added support for the Magento split database performance solution**–Now you can configure and deploy a Magento store using the Magento Split database performance solution in the Cloud Docker environment.<!--MCLOUD-3740-->
 
 -  {:.new}**Support for {{site.data.var.ee}} and {{site.data.var.ce}} deployment**–Now you can use {{site.data.var.mcd-prod}} to deploy a local development environment for projects that are not hosted on the Magento Cloud platform.<!--MCLOUD-5667-->
 
@@ -168,7 +168,7 @@ Add a MariaDB configuration volume                                              
 
       -  Added the ability to customize the [Elasticsearch container configuration]({{ site.baseurl }}/cloud/docker/docker-containers-service.html#elasticsearch-container) when you generate the Docker compose configuration file.<!--MCLOUD-3059-->
 
-      -  Added the `--no-es` option to the service configuration options for generating the Docker Compose configuration file. Use this option to skip the Elasticsearch container installation and and use MySQL search instead. This option is supported only for Magento versions 2.3.5 and earlier.<!--MCLOUD-3766-->
+      -  Added the `--no-es` option to the service configuration options for generating the Docker Compose configuration file. Use this option to skip the Elasticsearch container installation and use MySQL search instead. This option is supported only for Magento versions 2.3.5 and earlier.<!--MCLOUD-3766-->
 
    -  {:.new}**FPM-XDEBUG container**—Added a service configuration option to install and configure Xdebug for debugging PHP in your Cloud Docker environment. See [Configure Xdebug]({{site.baseurl}}/cloud/docker/docker-development-debug.html).<!--MCLOUD-4098-->
 

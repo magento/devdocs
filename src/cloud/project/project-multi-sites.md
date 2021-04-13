@@ -50,7 +50,7 @@ You can also use a local {{site.data.var.mcd-prod}} environment to set up multip
 Routes define how to process incoming URLs. Multiple stores with unique domains requires you to define each domain in the `routes.yaml` file. The way you configure routes depends on how you want your site to operate.
 
 {:.bs-callout-info}
-For Pro, you must create a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to set up routes in the Staging or Production environment.
+For Pro, if your route configurations are not setting properly, you can create a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) and include "enable self-service routes" in your request.
 
 {:.procedure}
 To configure routes in an integration environment:

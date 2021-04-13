@@ -26,4 +26,4 @@
 
    -  `cd <magento_root>/bin` and run them as `./magento <command name>`
    -  `<magento_root>/bin/magento <command name>`
-   -  `<magento_root>` is a subdirectory of your web server docroot. [Need help locating the docroot?]({{ page.baseurl }}/install-gde/basics/basics_docroot.html)
+   -  `<magento_root>` is a subdirectory of your web server docroot.

@@ -96,7 +96,7 @@ The menu displays as follows:
 
 ### Restrict admin controllers
 
-We can restrict the access to admin controllers by overriding the `_isAllowed` method of the `\Magento\Framework\App\Action\Action` class.
+We can restrict the access to admin controllers by overriding the `_isAllowed` method of the `\Magento\Backend\App\Action` class.
 
 Add the following to your module's `Controller/Adminhtml/Create/Index.php` file:
 

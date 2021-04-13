@@ -19,6 +19,67 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.0.19
+
+-  **MDVA-33614** _(for Magento `2.4.1`)_-Fixes the issue where Page Builder throws the following error: "An error has occurred while initiating Page Builder. Please consult with your technical support contact."
+-  **MDVA-35356** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue with incorrect store credit return after partially invoiced order cancellation.
+-  **MDVA-33289** _(for Magento `>=2.4.0 <2.4.3`)_-Fixes the issue where raw JavaScript code is displayed in the billing address UI during checkout if Google Tag Manager is enabled.
+-  **MDVA-35982** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue where admin users restricted to a specific website cannot create a shipment for the order placed on same website.
+-  **MDVA-35155** _(for Magento `>=2.3.0 <2.3.6`)_-Fixes the issue where it is impossible to buy a bundle product if the option title was changed.
+-  **MDVA-35910** _(for Magento `>=2.4.1 <2.4.3`)_-Fixes the issue where it is impossible to create a new customer account after disabling the Login as Customer functionality.
+-  **MDVA-34474** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue with adding a product to the requisition list using the API.
+-  **MDVA-34591** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue with an incorrect cart rule discount calculation for "Maximum Qty Discount is Applied To" and "Discount Qty Step (Buy X)".
+-  **MDVA-33704** _(for Magento `>=2.4.0 <2.4.3`)_-Fixes the issue where the "In store pickup" shipping option doesn't show up, though being configured to be available.
+-  **MDVA-34928** _(for Magento `>=2.3.5 <2.3.5-p2`)_-Fixes the issue where the page loader is displayed indefinitely after the store credit is removed from the payment.
+-  **MDVA-35254** _(for Magento `>=2.3.1 <2.4.3`)_-Fixes the issues with CAPTCHA during checkout.
+-  **MDVA-35569** _(for Magento `>=2.3.4 <2.4.2`)_-Fixes the issue where the "fixed product taxes" field is not being populated in GraphQL response when state is specified.
+-  **MDVA-35847** _(for Magento `>=2.4.1 <2.4.3`)_-Fixes the B2B issue where the Company Users form breaks if a custom customer attribute is used.
+-  **MDVA-31307** _(for Magento `>=2.4.0 <2.4.2`)_-Fixes the issue where there are Out of memory errors on certain categories due to problems with dynamic CSP whitelisting for cached blocks.
+
+## v1.0.18
+
+-  **MDVA-32655** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the incorrect 'in progress' message status to the correct 'complete' message for consumer 'quoteItemCleaner' after deleting several products.
+-  **MDVA-34102** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the quantity of Default Stock is zero for disabled products on the Product Grid and Edit Product pages in the Admin area.
+-  **MDVA-35286** _(for Magento `>=2.4.0 <2.4.2`)_-Fixes the issue where there is an error if a customer has bundled products in the cart and switches from Multiple Addresses checkout to Onepage checkout.
+-  **MDVA-35312** _(for Magento `>=2.4.1-p1 <2.4.2`)_-Fixes response code 500 when an empty GraphQL request.
+-  **MDVA-34189** _(for Magento `>=2.3.4 <2.4.3`)_-Fixes 503 first byte timeout on visual merchandiser queries when loading the Admin Category page.
+-  **MDVA-34695** _(for Magento `>=2.3.0 <2.4.1`)_-Fixes negative children_count after deleting categories.
+
+## v1.0.17
+
+-  **MDVA-34012** _(for Magento `>=2.3.1 <2.4.3`)_-Fixes the issue where the "Use default value" checkbox gets cleared, after the scheduled changes are applied. The issue appears once the scheduled changes are no longer in effect.
+-  **MDVA-35064** _(for Magento `>=2.3.3 <2.4.3`)_-Fixes the issue where URL rewrites are not generated for configurable products created via API.
+-  **MDVA-34943** _(for Magento `>=2.3.0 <2.4.2`)_-Fixes the issue where quick order caches the previously entered SKUs.
+-  **MDVA-35197** _(for Magento `>=2.3.5 <2.4.0`)_-Fixes the issue where there's an error when adding to cart using GraphQL, if previously added products become out of stock.
+-  **MDVA-34850** _(for Magento `>=2.3.1 <2.4.0`)_-Fixes the issue where the out-of-stock options of a configurable product are not displayed, instead of being displayed as struck-through.
+-  **MDVA-34867** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue where values for a condition field set for a scheduled update are not being saved.
+-  **MDVA-35092** _(for Magento `>=2.3.5 <2.4.3`)_-Fixes the issue where users are not able to add Vimeo videos due to deprecated Vimeo API
+
+## v1.0.16
+
+-  **MDVA-33453** _(for Magento `>=2.3.6 <2.4.3`)_—Fixes the issue where Page Builder Products content type preview breaks if matching products have different prices for each website.
+-  **MDVA-32634** _(for Magento `^2.3.1`)_—Fixes the issue when url_path of the category assigned to all store remains unchanged after moving the category in the hierarchy.
+-  **MDVA-33344** _(for Magento `^2.3.0`)_—Fixes the issue where hard coded rma_item entity default attribute set ID is used instead of the value from the database.
+-  **MDVA-34192** _(for Magento `>=2.3.4 <2.4.3`)_—Fixes the issue where it is impossible to modify/specify customer date of birth using dd/mm/yyyy format.
+-  **MDVA-34847** _(for Magento `^2.3.0`)_—Fixes store IDs type conversion to integer for SQL condition in Admin collections for Admin User with custom permissions.
+-  **MDVA-34886** _(for Magento `^2.3.2`)_—Fixes the issue where search does not return results if 'weight' product attribute is configured as searchable.
+
+## v1.0.15
+
+-  **MDVA-33559** _(for Magento `>=2.3.0 <2.4.3`)_—Fixes the issue of PayPal Payflow Pro payment failing with redirect parameter list format error.
+-  **MDVA-34023** _(for Magento `>=2.3.0 <2.4.3`)_—Fixes the issue where the error "No such entity with addressId" displays randomly on visitors' browsers.
+-  **MDVA-32759** _(for Magento `>=2.3.1 <2.4.3` with B2B extension)_—Fixes the issue where Shared Catalogs are deleting existing tier pricing.
+-  **MDVA-33482** _(for Magento `^2.3.5`)_—Fixes the issue where generating a Credit Memo against a partial invoice results in tax for the total order instead of tax for that partial invoice.
+-  **MDVA-33393** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the error "Provided countryId does not exist".
+-  **MDVA-33632** _(for Magento `>=2.3.0 <2.3.7`)_—Provides a fix where the exception message "This product is out of stock" is now displayed to admin user when trying to re-order an out of stock product.
+-  **MDVA-34469** _(for Magento `>=2.4.1 <2.4.2`)_—Fixes the issue where GraphQL mutations on a customer's cart fail when using multiple store views.
+-  **MDVA-33976** _(for Magento `>=2.3.0 <2.3.7`)_—Fixes the issue where the bundle product is shown Out Of Stock on the storefront after removing the second option from the bundle product.
+-  **MDVA-33894** _(for Magento `>=2.4.0 <2.4.1` with B2B extension)_—Fixes multiple issues for Quick Order functionality including adding and removing multiple products and SKU case sensitivity.
+-  **MDVA-27664** _(for Magento `>=2.3.4 <2.3.6`)_—Fixes the issue in the customer registration form causing an error to display: "ERROR - The Date of Birth should not be greater than today".
+-  **MDVA-33970** _(for Magento `>=2.3.4 <2.4.2`)_—Fixes the issue where there is the wrong currency sign in the Credit Memo when the price attribute's scope is set to website.
+-  **MDVA-33992** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue of B2B special pricing displaying incorrectly during checkout.
+-  **MDVA-34100** _(for Magento `>=2.3.4 <2.4.2` with B2B extension)_—Fixes the issue where a company account cannot be created from the company structure page.
+
 ## v1.0.14
 
 -  **MDVA-31969** _(for Magento `>=2.3.3 <2.3.5, >=2.4.0 <2.4.2`)_—Fixes the issue with duplicated images after product import from a .csv file.
@@ -101,7 +162,7 @@ Minor fixes for patch versions
 -  **MDVA-30815** _(for Magento `>=2.3.2 <2.3.4`)_—Fixes the issue where when you changed how many search results should be displayed on the search results page, Magento displayed a blank page. Elasticsearch now correctly displays results from category pages when you change the number of search results viewed per page.
 -  **MDVA-30782** _(for Magento `>=2.3.5 <2.4.2`)_—Fixes the issue where Dynamic Block is displayed regardless of cart rule.
 -  **MDVA-31021** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where performance issues exists in module-catalog-import-export/Model/Import/Product/Option.php. If there are more than ~100k records in catalog_product_option table, a new CSV with single product takes less than 10 sec to validate.
--  **MDVA-31007** _(for Magento `>=2.3.5 <2.3.6 || >=2.4.0 <2.4.1`)_—Fixes the issue where custom address attributes are not correctly displayed in the order details page in the my account area and in the backend.
+-  **MDVA-31007** _(for Magento `>=2.4.0 <2.4.1`)_—Fixes the issue where custom address attributes are not correctly displayed in the order details page in the my account area and in the backend.
 -  **MDVA-29389** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue with Advanced Reporting where the analytics_collect_data cronjob says: "Port must be configured within host parameter (like localhost:3306)".
 -  **MDVA-31343** _(for Magento `>=2.3.4 <2.3.6`)_—Fixes the issue with the removed body class "page-layout-category-full-width" when a category is scheduled.
 -  **MDVA-30945** _(for Magento `>=2.3.0 <2.4.2`)_—Fixes the issue where you receive a fatal error message when updating carts "Call to a member function getValue() on null in module-configurable-product CartItemProcessor.php".

@@ -65,6 +65,8 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 *  **Support for security.txt file**. This file is an industry-standard file on the server that helps security researchers report potential security issues to site administrators.
 
+*  **Enhancements to Content Security Policy (CSP) support**. `SecureHtmlRenderer` has been added to the Framework and is available in `.phtml` templates to whitelist inline `style` and `script` tags. Inline scripts and styles are not permitted with default CSP configuration, which can be overridden by XML files. <!--- MC-34433-->
+
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
@@ -716,7 +718,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6992-->
 
-*  The logic that is responsible  for updating configurable product product images has been improved. Previously,  simple products associated with a configurable product displayed only the default image associated with the configurable product, and  Magento sometimes displayed the wrong main image for the product. _Fix submitted by Sergiy Vasiutynskyi in pull request [26560](https://github.com/magento/magento2/pull/26560)_. [GitHub-26473](https://github.com/magento/magento2/issues/26473), [GitHub-26856](https://github.com/magento/magento2/issues/26856), [GitHub-26858](https://github.com/magento/magento2/issues/26858)
+*  The logic that is responsible  for updating configurable product images has been improved. Previously,  simple products associated with a configurable product displayed only the default image associated with the configurable product, and  Magento sometimes displayed the wrong main image for the product. _Fix submitted by Sergiy Vasiutynskyi in pull request [26560](https://github.com/magento/magento2/pull/26560)_. [GitHub-26473](https://github.com/magento/magento2/issues/26473), [GitHub-26856](https://github.com/magento/magento2/issues/26856), [GitHub-26858](https://github.com/magento/magento2/issues/26858)
 
 <!--- ENGCOM-6520-->
 
@@ -1727,6 +1729,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 *  The Elasticsearch versions are now identified by X.x notation instead of X.0+ notation in the Admin (**Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**). _Fix submitted by Andreas Mautz in pull request [25838](https://github.com/magento/magento2/pull/25838)_. [GitHub-25674](https://github.com/magento/magento2/issues/25674)
 
 ### Shipping
+
+<!--- MC-32782-->
+
+*  You can now ship an order to multiple addresses if one of the ordered products is a virtual product. Previously, Magento successfully placed the order for the physical products, but the virtual product order was empty.
 
 <!--- MC-29276-->
 

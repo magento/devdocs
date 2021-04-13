@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Wizard
 title: Step 4. Customize Your Store
 menu_title: Step 4. Customize Your Store

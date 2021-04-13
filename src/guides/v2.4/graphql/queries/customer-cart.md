@@ -50,7 +50,7 @@ The following query lists the products in the logged-in customer's cart:
       "id": "CYmiiQRjPVc2gJUc5r7IsBmwegVIFO43",
       "items": [
         {
-          "id": "11",
+           "uid": "MjI=",
           "product": {
             "name": "Strive Shoulder Pack",
             "sku": "24-MB04"
@@ -58,7 +58,7 @@ The following query lists the products in the logged-in customer's cart:
           "quantity": 1
         },
         {
-          "id": "12",
+          "uid": "MjQ=",
           "product": {
             "name": "Radiant Tee",
             "sku": "WS12"

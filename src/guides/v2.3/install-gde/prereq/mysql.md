@@ -1,23 +1,13 @@
 ---
-group: installation-guide
 title: MySQL
 redirect_from:
   - guides/v2.3/install-gde/trouble/tshoot_mysql_table-open-cache.html
 ---
 
-## Help if you are just starting out {#mysql-help-beginner}
-
-If you are new to all this and need some help getting started, we suggest the following:
-
-*  [Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
-*  [What is the software that the Magento server needs to run?]({{page.baseurl }}/install-gde/basics/basics_software.html)
-*  [What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
-*  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
-
 ## General guidelines {#instgde-prereq-mysql-intro}
 
 {:.bs-callout-info}
-See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html#database) for supported versions of MySQL.
+See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of MySQL.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
