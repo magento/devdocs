@@ -139,7 +139,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Improvement of up to 25-30% to Quick Order add-to-cart performance**.
 
-*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. See [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html).
+*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images.
 
 ### Adobe Stock Integration v2.0
 
@@ -1390,7 +1390,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-23383 ENGCOM-7006-->
 
-*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. See [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html). _Fix submitted by Timon de Groot in pull request [27033](https://github.com/magento/magento2/pull/27033)_. [GitHub-27032](https://github.com/magento/magento2/issues/27032)
+*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. _Fix submitted by Timon de Groot in pull request [27033](https://github.com/magento/magento2/pull/27033)_. [GitHub-27032](https://github.com/magento/magento2/issues/27032)
 
 <!--- ENGCOM-6988-->
 
