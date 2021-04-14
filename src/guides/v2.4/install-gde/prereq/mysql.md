@@ -182,10 +182,10 @@ On Magento projects deployed on the Cloud platform, the `explicit_defaults_for_t
 
 
 {:.bs-callout-warning}
-Reindexing on MariaDB 10.4 takes more time compared to other MariaDB or MySQL versions. To prevent this behavior we suggest modifying the default MariaDB configuration and setting the following parameters:
+ Reindexing on MariaDB 10.4 takes more time compared to other MariaDB or MySQL versions. To prevent this behavior we suggest modifying the default MariaDB    configuration and setting the following parameters:
 
- * optimizer_switch='rowid_filter=off'
- * optimizer_use_condition_selectivity = 1
+  *  optimizer_switch='rowid_filter=off'
+  *  optimizer_use_condition_selectivity = 1
 
 {:.ref-header}
 Related topics
