@@ -43,7 +43,7 @@ require([
 
 ## Validate the calendar widget
 
-To validate the calendar widget, required **dateFormat** parameter should be specified, as can be seen from the validate-date rule initialisation:
+To validate the calendar widget, required **dateFormat** parameter should be specified, as can be seen from the **validate-date** rule initialisation:
 
 ```javascript
 'validate-date': [
