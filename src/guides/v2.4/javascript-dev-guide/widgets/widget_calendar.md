@@ -1,1 +1,0 @@
-../../../v2.3/javascript-dev-guide/widgets/widget_calendar.md
