@@ -8,7 +8,7 @@ Live Search is a set of standalone meta packages that replaces the standard Mage
 
 |**Package**|**Description**|
 |---|---|
-|`live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides a read-only GraphQL playground for merchants to test queries from the Magento Admin. |
+|`live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides access to a read-only GraphQL playground to test queries from the Magento Admin. |
 |`LiveSearchAdapter`|Routes search requests from the storefront to the Live Search service, and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
 
 ## Requirements
