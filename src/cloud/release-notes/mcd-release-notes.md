@@ -28,6 +28,7 @@ The release notes include:
 -  {:.new}<!--MCLOUD-7396-->**Auto-generating NGINX certificates**—Removed the existing certificates from the NGINX image. The NGINX certificates are now auto-generated.
 -  {:.fix}<!--MCLOUD-7466-->**Enabled `opcahe.validate_timestamps`**—Enabled the `opcahe.validate_timestamps` PHP setting by default in developer mode. Enabling this setting by default fixes the issue in which file changes had no effect in Docker.
 -  {:.fix}<!--MCLOUD-7457-->**Fixed `build:custom:compose`**—Fixed `build:custom:compose` command to throw an error when the specified files cannot be updated.
+-  {:.fix}<!--MCLOUD-7254-->**Fixed `--sync_engine="native"` option**—Fixed the issue where in production mode (`--mode="production"`), the `--sync_engine="native"` option would not create entries for local folders in the `docker.composer.yml` file.
 
 ## v1.2.1
 *Release date: December 21, 2020*<br/>
