@@ -63,4 +63,4 @@ Although the catalog shares product data, the data that is available for search 
 |`urlKey`|
 |`category`|
 
-The data synchronization also includes any search customizations for facets, synonyms, and rules.
+The data synchronization also includes any search customizations for facets and rules.
