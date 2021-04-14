@@ -248,8 +248,8 @@ Now that Magento knows how to handle requests for the **Hello World** page, we n
 Create the necessary directories for the files by running the following commands from the module's root directory:
 
 ```bash
-mkdir -pm view/adminhtml/layout
-mkdir -pm view/adminhtml/templates
+mkdir -p view/adminhtml/layout
+mkdir -p view/adminhtml/templates
 ```
 
 These files belong in the `view/adminhtml` directory because the Magento admin area use these files during page generation.
