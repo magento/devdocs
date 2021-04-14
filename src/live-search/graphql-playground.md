@@ -21,9 +21,8 @@ The GraphQL Playground is available in the Magento Admin and gives you the abili
 
 |**Scenario**|**Query**|
 |---|---|
-|Category search<br />Browse by category (includes faceted navigation with filters)|`categorySearch`|
-|Product search<br />Product Details page|`productsSearch`<br />`products` (deprecated)|
-|Category navigation||`categoryList`|
+
+|Product search<br />Product Details page|`productSearch`<br />`products` (deprecated)|
 |Search by phrase (includes faceted navigation with filters, ordered by relevancy, highlights, variation preselect, suggestions.)|New query|
 
 ## Examples
@@ -40,33 +39,6 @@ const search = new MagentoLiveSearch({
     storeViewCode: "default",
     apiKey: "search_gql",
 });
-```
-
-### Category listing
-
-```graphql
-categoryList {
-    id
-    name
-    url_path
-    children {
-        id
-        name
-        url_path
-        children {
-            id
-            name
-            url_path
-        }
-    }
-```
-
-### Quick search
-
-Quick Search combines category and product search into a single request.
-
-```graphql
-search.categorySearch({ phrase: "yoga" });
 ```
 
 ### Search by phrase
@@ -104,29 +76,6 @@ category(id: 17) {
             }
         }
     }
-}
-```
-
-### Category search
-
-`categorySearch` returns categories for products that match the search query. For example, you should expect pants to return categories such as men's and women's clothing, and shoes to return categories such as sandals and sneakers.
-
-```graphql
-search.categorySearch({ phrase: "yoga" });
-```
-
-```graphql
-query {
-  categorySearch(
-    phrase: "running sh",
-    categorySize:3
-  )
-  {
-    categories {
-      name
-      url
-    }
-  }
 }
 ```
 
@@ -262,8 +211,8 @@ query {
 
 |**Function**|**Header**|
 |---|---|
-|`productSearch`| `MagentoEnvironment-Id`<br />`Magento-Website-Code`<br />`Magento-Store-Code`<br />`Magento-Store-View-Code`<br />`x-api-key` = `search_gql`|
-|`categorySearch`| (Same as above)|
+|`productSearch`| - `MagentoEnvironmentId`<br />- `MagentoWebsiteCode`<br />- `MagentoStoreCode`<br />- `MagentoStoreViewCode`<br />- `x-api-key:{Magento api key}`<br />- `x-gw-signature:{jwt}`|
+|`attributeMetadata`| (same as above)`|
 
 ## Input validation
 
@@ -274,8 +223,6 @@ query {
 | |`SearchClauseinput`|attribute|Max allowed: 255|
 | |`SearchClauseinput`|`in` and `eq`| Max allowed: 255|
 | |`ProductSearchSortinput`|attribute|Max allowed: 255|
-|`categorySearch`|phrase|Max allowed: 255|
-||`categorySize`|Default: 5 if not null. Otherwise can be from 1 - 500|
 
 ## Error Codes
 
