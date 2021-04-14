@@ -41,6 +41,28 @@ require([
 });
 ```
 
+## Validate the calendar widget
+
+To validate the calendar widget, required **dateFormat** parameter should be specified, as can be seen from the validate-date rule initialisation:
+
+```javascript
+'validate-date': [
+            function (value, params, additionalParams) {
+                var test = moment(value, utils.convertToMomentFormat(additionalParams.dateFormat));
+
+                return $.mage.isEmptyNoTrim(value) || test.isValid();
+            },
+            $.mage.__('Please enter a valid date.')
+
+        ];
+```
+
+The following example displays how to add date validation for the calendar widget:
+
+```javascript
+data-validate="{'required-entry': true, 'validate-date': {dateFormat: 'MM/dd/Y'}}"
+```
+
 ## Options, methods, and events {#fedg_calendar_options}
 
 Most options, methods, and events for the calendar widget correspond to the jQuery [Datepicker Widget] options.
