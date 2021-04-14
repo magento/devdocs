@@ -53,6 +53,7 @@ To validate the calendar widget, required **dateFormat** parameter should be spe
         return $.mage.isEmptyNoTrim(value) || test.isValid();
     },
     $.mage.__('Please enter a valid date.')
+];
 ```
 
 The following example displays how to add date validation for the calendar widget:
