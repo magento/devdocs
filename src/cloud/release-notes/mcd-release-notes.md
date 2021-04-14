@@ -17,7 +17,7 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 
 ## v1.2.2
-*Release date: April 15, 2021*<br/>
+*Release date: April 20, 2021*<br/>
 
 -  {:.new}<!--MCLOUD-7548-->**Sodium enabled by default**—Enabled the `sodium` PHP extension by default within PHP Docker images.
 -  {:.new}<!--MCLOUD-7476-->**`custom-registry` option**—Added a `--custom-registry` option to `php ./vendor/bin/ece-docker build:compose` command for using your own images registry.
