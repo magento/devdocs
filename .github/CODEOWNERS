@@ -1,0 +1,31 @@
+# Each line is a file pattern followed by one or more owners.
+# Learn more at: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
+
+# All .rb files
+*.rb @dshevtsov
+
+# All .rake files
+*.rake @dshevtsov
+
+# All .sh files
+*.sh @dshevtsov
+
+# All files at the root directory, non-recursively.
+/* @dshevtsov
+
+# All files at the /.github/linters/ directory and in sub-directories.
+/.github/linters/ @dshevtsov
+
+# All files at the /.github/workflows/ directory and in sub-directories.
+/.github/workflows/ @dshevtsov
+
+# All files at the /.github/bin/ directory and in sub-directories.
+/bin/ @dshevtsov
+
+/docker-compose.yaml @hguthrie
+
+LICENSE.txt @jeff-matthews
+
+COPYING.txt @jeff-matthews
+
+CODEOWNERS @jeff-matthews @dshevtsov
