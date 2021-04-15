@@ -4,6 +4,8 @@ title: Search Admin Service
 ee_only: True
 ---
 
+[//]: # This topic was removed from the YML for public beta.  Might be restored later.
+
 The Search Admin Service provides clients, such as the Magento Search Admin UI, the ability to perform copy, read, update, and delete (CRUD) operations for search configurations. Because it is queried on every search request, the service provides search configuration information in a very low latency manner. See the [Architectural Overview]({{ page.baseurl }}/live-search/overview.html) for how the Search Admin Service interacts with Magento Commerce.
 
 ## Access patterns
@@ -11,7 +13,7 @@ The Search Admin Service provides clients, such as the Magento Search Admin UI, 
 |**Client**|**Data to Access**|**Access Patterns**
 |---|---|---|
 |Magento Admin UI| Facet configuration | CRUD (per store view)<br />- Save facet configuration<br />- Read facet configuration |
-| |Synonyms configuration | CRUD (per store view)|
+| |Synonym configuration | CRUD (per store view)|
 | |Product attribute metadata (may include data unrelated to search config)| Reads list of product attribute metadata (per store view)<br />Note: This API makes it unnecessary for the UI to call the metadata service. The admin service passes the request to the metadata service.|
 | |Boost/Bury conditional rules| CRUD (per store view)<br />- Saves boost/bury conditional rules<br />- Reads all boost/bury conditional rules
 |Search Service ||- Facet configuration<br />- Boost/bury conditional rules<br />- Search attribute config (subset of attribute metadata in Metadata service)|
@@ -26,7 +28,7 @@ DynamoDB Accelerator (DAX) is used as a caching layer between the Search Admin m
 
 |**Field Name**|**Key Type**|**Data Type**|**Description**|
 |---|---|---|---|
-|Id|Partition key/Hash key|String|Composite ID of `MageId`, `EnvironmentId`, `WebsiteCode`, `StoreCode` and `StoreViewCode`.|
+|Id|Partition key/Hash key|String|Composite ID of `MageId`, `EnvironmentId`, `WebsiteCode`, `StoreCode` and `StoreViewCode`|
 |MageId||String|Magento account identifier|
 |EnvironmentId||String|Unique identifier of the Magento instance|
 |WebsiteCode||String|Website code from Magento|
