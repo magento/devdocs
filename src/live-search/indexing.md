@@ -4,13 +4,7 @@ title: Indexing
 ee_only: True
 ---
 
-Product attribute properties ("metadata") determine how an attribute can be used in the catalog, its appearance and behavior in the store, and the data that is included in data transfer operations. The properties and labels associated with each attribute determine how it can be used and its presentation in the store. The scope of attribute metadata is `website/store/store view`.
-
-Live Search dynamically indexes attributes based on product attribute metadata and supports:
-
--  Full sync of catalog data (search and rex)
--  Update sync of catalog data (search and rex)
--  Indexing ML for p-rex
+Product attribute properties ("metadata") determine how an attribute can be used in the catalog, its appearance and behavior in the store, and the data that is included in data transfer operations. The scope of attribute metadata is `website/store/store view`.
 
 The Live Search API allows a client to sort by any product attribute that has the [storefront property](https://docs.magento.com/user-guide/stores/attributes-product.html) `Use in Search` set to `Yes` in the Magento Admin.
 
@@ -40,13 +34,7 @@ The Live Search API allows a client to sort by any sortable product attribute by
 The index metadata is stored in DynamoDB, accessible by Search Admin service with gRPC.
 
 ![Live Search index metadata API diagram]({{ page.baseurl }}/live-search/images/indexing-metadata-api.svg)
-_Indexing Metadata API_
-
-1. Indexing pipeline stores/retrieves index metadata (attribute snapshot & attributes indexed in Elasticsearch.
-
-1. Client queries index metadata (sortable, filterable) with search-service public graphQL API.
-
-1. Search-service queries `search-admin-service` with gRPC.
+_Index Metadata_
 
 ### Sortable attribute workflow
 
