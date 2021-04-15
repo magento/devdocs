@@ -6,50 +6,9 @@ ee_only: True
 
 The `attributeMetadata` query returns a list of product attribute codes that can be used for sorting or filtering in a `productSearch` query. The query response can include the attribute name, display label, and a Boolean value indicating whether the attribute contain numeric values.
 
-An attribute must meet these conditions to be used for sorting:
-
--  Need
--  A
--  List
-
-An attribute must meet these conditions to be used as a filter:
-
--  Need
--  Another
--  List
-
 ## Syntax
 
 `attributeMetadata: AttributeMetadataResponse!`
-
-## Output attributes
-
-The `AttributeMetadataResponse` return object can contain the following attributes.
-
-Attribute | Data Type | Description
---- | --- | ---
-`filterableInSearch` | [[FilterableInSearchAttribute!]](#FilterableInSearchAttribute) | An array of product attributes that can be used for filtering in a `productSearch` query
-`sortable` | [[SortableAttribute!]](#SortableAttribute) | An array of product attributes that can be used for sorting in a `productSearch` query
-
-### FilterableInSearchAttribute data type {#FilterableInSearchAttribute}
-
-The `FilterableInSearchAttribute` data type can contain the following attributes.
-
-Attribute | Data Type | Description
---- | --- | ---
-`attribute` | String! | The unique identifier for an attribute code. This value should be in lowercase letters and without spaces
-`label` | String | The display name assigned to the attribute
-`numeric` | Boolean | Indicates whether this attribute can contain a numeric value, such as a price or integer
-
-### SortableAttribute data type {#SortableAttribute}
-
-The `SortableAttribute` data type can contain the following attributes.
-
-Attribute | Data Type | Description
---- | --- | ---
-`attribute` | String! | The unique identifier for an attribute code. This value should be in lowercase letters and without spaces
-`label` | String | The display name assigned to the attribute
-`numeric` | Boolean | Indicates whether this attribute can contain a numeric value, such as a price or integer
 
 ## Example usage
 
@@ -166,3 +125,32 @@ The following query returns details about all product attributes that can be use
   }
 }
 ```
+
+## Output attributes
+
+The `AttributeMetadataResponse` return object can contain the following attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`filterableInSearch` | [[FilterableInSearchAttribute!]](#FilterableInSearchAttribute) | An array of product attributes that can be used for filtering in a `productSearch` query
+`sortable` | [[SortableAttribute!]](#SortableAttribute) | An array of product attributes that can be used for sorting in a `productSearch` query
+
+### FilterableInSearchAttribute data type {#FilterableInSearchAttribute}
+
+The `FilterableInSearchAttribute` data type can contain the following attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`attribute` | String! | The unique identifier for an attribute code. This value should be in lowercase letters and without spaces
+`label` | String | The display name assigned to the attribute
+`numeric` | Boolean | Indicates whether this attribute can contain a numeric value, such as a price or integer
+
+### SortableAttribute data type {#SortableAttribute}
+
+The `SortableAttribute` data type can contain the following attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`attribute` | String! | The unique identifier for an attribute code. This value should be in lowercase letters and without spaces
+`label` | String | The display name assigned to the attribute
+`numeric` | Boolean | Indicates whether this attribute can contain a numeric value, such as a price or integer
