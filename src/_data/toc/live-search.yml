@@ -37,8 +37,14 @@ pages:
   versionless: true
 
 - label: Live Search API Reference
-  url: /live-search/live-search-api-reference.html
-  versionless: true
+  children:
+    - label: attributeMetadata query
+      url: /live-search/attribute-metadata.html
+      versionless: true
+
+    - label: productSearch query
+      url: /live-search/product-search.html
+      versionless: true
 
 - label: Storefront Quick Start
   url: /live-search/storefront-quick-start.html

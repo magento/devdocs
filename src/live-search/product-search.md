@@ -21,10 +21,10 @@ The following sections describe these attributes in detail.
 
 The `phrase` attribute contains the text that a shopper enters on the storefront. Live Search applies all configured rules, synonyms and other configuration settings to return determine the search results. All `productSearch` queries must contain the `phrase` attribute.
 
-The following example sets `Hoodie` the phrase to search for.
+The following example sets `Watch` the phrase to search for.
 
 ```graphql
-phrase: "Hoodie"
+phrase: "Watch"
 ```
 
 ### filter attribute
@@ -200,136 +200,6 @@ productSearch(
 ): ProductSearchResponse!
 ```
 
-## Input attributes
-
-The `productSearch` query accepts the following attributes as input.
-
-Attribute | Data Type | Description
---- | --- | ---
-`phrase` | String! | The text to search for
-`page_size` | Int | Specifies the maximum number of results to return at once. The default value is 20
-`current_page` | Int | Specifies which page of results to return. The default value is 1
-`filter` | [[SearchClauseInput!]](#SearchClauseInput) | Identifies which attributes to search for and return
-`sort` | [[ProductSearchSortInput!]](#ProductSearchSortInput) | Specifies which attribute to sort on, and whether to return the results in ascending or descending order
-
-### SearchClauseInput data type {#SearchClauseInput}
-
-The `SearchClauseInput` object can contain the following attributes:
-
-Attribute | Data Type | Description
---- | --- | ---
-`attribute` | String! | The attribute code of a product attribute
-`eq` | String | A string value to filter on
-`in` | [String] | An array of string values to filter on
-`range` | [SearchRangeInput](#SearchRangeInput) | A range of numeric values to filter on
-
-#### SearchRangeInput data type {#SearchRangeInput}
-
-The `SearchRangeInput` object can contain the following attributes.
-
-Attribute | Data Type | Description
---- | --- | ---
-`from` | Float | The minimum value to filter on. If not specified, the value of `0` is applied
-`to` | Float | The maximum value to filter on
-
-### ProductSearchSortInput data type {#ProductSearchSortInput}
-
-The `ProductSearchSortInput` object can contain the following attributes.
-
-Attribute | Data Type | Description
---- | --- | ---
-`attribute` | String! | The attribute code of a product attribute
-`direction` | SortEnum! | ASC (ascending) or DESC (descending)
-
-## Output attributes
-
-The `AttributeMetadataResponse` return object can contain the following attributes.
-
-Attribute | Data Type | Description
---- | --- | ---
-`facets` | [[Aggregation]](#Aggregation) | Provides details about the static and dynamic facets relevant to the search
-`items` | [[ProductSearchItem]](#ProductSearchItem) | An array of products returned by the query
-`page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | Contains information for rendering pages of search results
-`related_terms` | [String] | An array of strings that might include merchant-defined synonyms
-`suggestions` | [String] | An array of strings that include spelling variations or other suggested search terms
-`total_count` | Int | The total number of items returned
-
-### Aggregation data type {#Aggregation}
-
-Attribute | Data Type | Description
---- | --- | ---
-`attribute` | String! | The attribute code of the filter item
-`buckets` | [[Bucket]!](#Bucket) | A container that divides the data into manageable groups. For example, attributes that can have numeric values might have buckets that define price ranges
-`title` | String! | The filter name displayed in layered navigation
-`type` | AggregationType | One of `INTELLIGENT`, `PINNED`, or `POPULAR`
-
-### Bucket data type {#Bucket}
-
-The `Bucket` object defines one attribute, `title`. However, the object has three implementations that can be used to provide greater detail
-
-Attribute | Data Type | Description
---- | --- | ---
-`title` | String! | A human-readable name of a bucket
-
-#### RangeBucket implementation
-
-Implement `RangeBucket` for numeric product attributes.
-
-Attribute | Data Type | Description
---- | --- | ---
-`count` | Int! | The number of items in the bucket
-`from` | Float! | The minimum amount in a price range
-`title` | String! | The display text defining the price range
-`to` | Float | The maximum amount in a price range
-
-#### ScalarBucket implementation
-
-Implement `RangeBucket` for string and other scalar product attributes.
-
-Attribute | Data Type | Description
---- | --- | ---
-`count` | Int! | The number of items in the bucket
-`id` | ID! | An identifier that could be used for filtering and may contain non-human readable data
-`title` | String! | The display text defining the scalar value
-
-#### StatsBucket implementation
-
-Implement `StatsBucket` to retrieve statistics across multiple buckets.
-
-Attribute | Data Type | Description
---- | --- | ---
-`max` | Float! | The maximum quantity
-`min` | Float! | The minimum quantity
-`title` | String! | The display text defining the bucket
-
-### ProductSearchItem data type {#ProductSearchItem}
-
-The `ProductSearchItem` data type can contain the following attributes.
-
-Attribute | Data Type | Description
---- | --- | ---
-`appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values are `BOOST`, `BURY`, and `PIN`
-`highlights` | [[Highlight]](#Highlight) | An object that provides highlighted text for matched words
-`product`m| ProductInterface! | Contains details about the product. See [`productInterface`](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/product-interface.html) for more information
-
-#### Highlight data type {#Highlight}
-
-Attribute | Data Type | Description
---- | --- | ---
-`attribute` | String! | The product attribute that contains a match for the search phrase
-`matched_words` | [String]! | An array a strings
-`value` | String! | The matched text, enclosed within `<em></em>` tags
-
-### SearchResultPageInfo data type {#SearchResultPageInfo}
-
-The `SearchResultPageInfo` data type can contain the following attributes.
-
-Attribute | Data Type | Description
---- | --- | ---
-`current_page` | Int | Specifies which page of results to return
-`page_size` | Int | Specifies the maximum number of items to return
-`total_pages` | Int | Total pages
-
 ## Example usage
 
 The following example uses "Watch" as the search phrase.
@@ -351,8 +221,7 @@ The following example uses "Watch" as the search phrase.
       }
     ]
   ){
-    total_count
-    
+    total_count 
     facets {
       attribute
       title
@@ -777,3 +646,133 @@ The following example uses "Watch" as the search phrase.
   }
 }
 ```
+
+## Input attributes
+
+The `productSearch` query accepts the following attributes as input.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`phrase` | String! | The text to search for
+`page_size` | Int | Specifies the maximum number of results to return at once. The default value is 20
+`current_page` | Int | Specifies which page of results to return. The default value is 1
+`filter` | [[SearchClauseInput!]](#SearchClauseInput) | Identifies which attributes to search for and return
+`sort` | [[ProductSearchSortInput!]](#ProductSearchSortInput) | Specifies which attribute to sort on, and whether to return the results in ascending or descending order
+
+### SearchClauseInput data type {#SearchClauseInput}
+
+The `SearchClauseInput` object can contain the following attributes:
+
+Attribute | Data Type | Description
+--- | --- | ---
+`attribute` | String! | The attribute code of a product attribute
+`eq` | String | A string value to filter on
+`in` | [String] | An array of string values to filter on
+`range` | [SearchRangeInput](#SearchRangeInput) | A range of numeric values to filter on
+
+#### SearchRangeInput data type {#SearchRangeInput}
+
+The `SearchRangeInput` object can contain the following attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`from` | Float | The minimum value to filter on. If not specified, the value of `0` is applied
+`to` | Float | The maximum value to filter on
+
+### ProductSearchSortInput data type {#ProductSearchSortInput}
+
+The `ProductSearchSortInput` object can contain the following attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`attribute` | String! | The attribute code of a product attribute
+`direction` | SortEnum! | ASC (ascending) or DESC (descending)
+
+## Output attributes
+
+The `AttributeMetadataResponse` return object can contain the following attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`facets` | [[Aggregation]](#Aggregation) | Provides details about the static and dynamic facets relevant to the search
+`items` | [[ProductSearchItem]](#ProductSearchItem) | An array of products returned by the query
+`page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | Contains information for rendering pages of search results
+`related_terms` | [String] | An array of strings that might include merchant-defined synonyms
+`suggestions` | [String] | An array of strings that include spelling variations or other suggested search terms
+`total_count` | Int | The total number of items returned
+
+### Aggregation data type {#Aggregation}
+
+Attribute | Data Type | Description
+--- | --- | ---
+`attribute` | String! | The attribute code of the filter item
+`buckets` | [[Bucket]!](#Bucket) | A container that divides the data into manageable groups. For example, attributes that can have numeric values might have buckets that define price ranges
+`title` | String! | The filter name displayed in layered navigation
+`type` | AggregationType | One of `INTELLIGENT`, `PINNED`, or `POPULAR`
+
+### Bucket data type {#Bucket}
+
+The `Bucket` object defines one attribute, `title`. However, the object has three implementations that can be used to provide greater detail
+
+Attribute | Data Type | Description
+--- | --- | ---
+`title` | String! | A human-readable name of a bucket
+
+#### RangeBucket implementation
+
+Implement `RangeBucket` for numeric product attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`count` | Int! | The number of items in the bucket
+`from` | Float! | The minimum amount in a price range
+`title` | String! | The display text defining the price range
+`to` | Float | The maximum amount in a price range
+
+#### ScalarBucket implementation
+
+Implement `RangeBucket` for string and other scalar product attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`count` | Int! | The number of items in the bucket
+`id` | ID! | An identifier that could be used for filtering and may contain non-human readable data
+`title` | String! | The display text defining the scalar value
+
+#### StatsBucket implementation
+
+Implement `StatsBucket` to retrieve statistics across multiple buckets.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`max` | Float! | The maximum quantity
+`min` | Float! | The minimum quantity
+`title` | String! | The display text defining the bucket
+
+### ProductSearchItem data type {#ProductSearchItem}
+
+The `ProductSearchItem` data type can contain the following attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values are `BOOST`, `BURY`, and `PIN`
+`highlights` | [[Highlight]](#Highlight) | An object that provides highlighted text for matched words
+`product`m| ProductInterface! | Contains details about the product. See [`productInterface`](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/product-interface.html) for more information
+
+#### Highlight data type {#Highlight}
+
+Attribute | Data Type | Description
+--- | --- | ---
+`attribute` | String! | The product attribute that contains a match for the search phrase
+`matched_words` | [String]! | An array a strings
+`value` | String! | The matched text, enclosed within `<em></em>` tags
+
+### SearchResultPageInfo data type {#SearchResultPageInfo}
+
+The `SearchResultPageInfo` data type can contain the following attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`current_page` | Int | Specifies which page of results to return
+`page_size` | Int | Specifies the maximum number of items to return
+`total_pages` | Int | Total pages
