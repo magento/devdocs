@@ -38,15 +38,7 @@ _Index Metadata_
 
 ### Sortable attribute workflow
 
-The Live Search API endpoint returns attribute metadata that includes the sortable property setting. After an attribute is updated, it might take up to two hours for the metadata returned to sync with Magento attribute data.
-
-1. Merchant updates attribute property to make it sortable.
-
-1. Product feed updates metadata SaaS.
-
-1. Elasticsearch (ES) indexer picks up updated attribute from metadata SaaS on a cadence, such as every hour, and updates ES index based on the attribute.
-
-1. ES indexer updates the search metadata table (dynamo table) to reflect the attribute change.
+1. Elasticsearch indexer updates the search metadata table (dynamo table) to reflect the attribute change.
 
 1. `attributeMetadata` query returns fields from the search metadata table which now includes updates to the sortable attribute.
 
