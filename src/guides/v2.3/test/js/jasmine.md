@@ -73,12 +73,16 @@ Example:
 
 ```bash
 grunt spec:backend
+# or for the frontend area
+grunt spec:luma
 ```
 
 You can also run a single test:
 
 ```bash
 grunt spec:backend --file="/path/to/the/test.js"
+# or for the frontend area
+grunt spec:luma --file="/path/to/the/test.js"
 ```
 
 ## Write a test {#write-test}
