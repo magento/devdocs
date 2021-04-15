@@ -29,6 +29,8 @@ phrase: "Watch"
 
 ### filter attribute
 
+Filters can be defined as part of the query using existing product attributes that have been defined as facets in the Magento Admin. For example, to filter results by color, a color facet must be defined in Live Search, based on the existing `color` attribute.
+
 A filter consists of a product `attribute`, a comparison operator, and the value that is being searched for. Together, they help narrow down the search results, based on shopper input. For example, if you want to set up a filter for jackets based on size, you could set the product attribute to `size`. To filter on medium-sized jackets only, set the `eq` attribute to `M`. To filter on both medium- and large-sized jackets, set the `in` attribute to `["M", "L"]`. To filter on a price range, such as between $50 and $100, set the `attribute` to `price`, and assign the `range` attribute with `from` and `to` values as `50` and `100`, respectively.
 
 You can define multiple filters in the same call. The following example filters on the price and size:
@@ -48,6 +50,10 @@ filter: [
     }
 ]
 ```
+
+Only facets specified in Live Search are returned.
+
+The values of dynamic facets are returned if 10% or more of products in the result set contain the attribute.
 
 {:.bs-callout-tip}
 Use the [`attributeMetadata` query]({{site.baseurl}}/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
@@ -78,10 +84,10 @@ Use the [`attributeMetadata` query]({{site.baseurl}}/live-search/attribute-metad
 
 When you run a query, you do not know in advance how many items the query will return. The query could return a few items, or it could return hundreds. The `page_size` attribute determines how many items to return at one time. If you use the default value of 20, and there query returns 97 items, the results will be stored in four pages containing 20 items each, and one page containing 17 items.
 
-The following example sets the page size to 25.
+The following example sets the page size to 10.
 
 ```graphql
-page_size: 25
+page_size: 10
 ```
 
 ### current_page attribute
@@ -145,7 +151,7 @@ facets {
 
 ### Items list
 
-The `items` object primarily provides details about each item returned. The [`productInterface`](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and {{site.data.var.ee}}, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
+The `items` object primarily provides details about each item returned. The [`productInterface`]({{ site.gdeurl }}/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and {{site.data.var.ee}}, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
 
 The `items` object can also optionally return highlighted text that shows the matching searcg terms.
 
@@ -207,9 +213,24 @@ The following example uses "Watch" as the search phrase.
 **Request:**
 
 ```graphql
+# {
+#   attributeMetadata{
+#     sortable {
+#       attribute
+#       label
+#       numeric
+#     }
+#     filterableInSearch  {
+#       attribute
+#       label
+#       numeric
+#     }
+#   }
+# }
+
 {
   productSearch (
-    phrase: "Watch"
+    phrase: "bag"
     sort: [
       {
         attribute: "price"
@@ -220,15 +241,22 @@ The following example uses "Watch" as the search phrase.
         direction: DESC
       }
     ]
+    page_size: 9
   ){
-    total_count 
+    total_count
+    page_info {
+      current_page
+      page_size
+      total_pages
+    }
+    
     facets {
       attribute
       title
       type
       buckets {
-        __typename
         title
+        __typename
         ... on RangeBucket {
           title
           to
@@ -247,7 +275,6 @@ The following example uses "Watch" as the search phrase.
         }
       }
     }
-    
     items {
       product {
         name
@@ -274,6 +301,7 @@ The following example uses "Watch" as the search phrase.
       }
       appliedQueryRule
     }
+    suggestions
     related_terms
   }
 }
@@ -284,11 +312,16 @@ The following example uses "Watch" as the search phrase.
 ```json
 {
   "extensions": {
-    "request-id": "XYAxvc2TcVVtAfQUum8hpQVELT6KxjFI"
+    "request-id": "ok6ZAHu7z3DcyU5L7vA2IlyXOfRmQXN7"
   },
   "data": {
     "productSearch": {
-      "total_count": 9,
+      "total_count": 17,
+      "page_info": {
+        "current_page": 1,
+        "page_size": 9,
+        "total_pages": 2
+      },
       "facets": [
         {
           "attribute": "categories",
@@ -296,28 +329,46 @@ The following example uses "Watch" as the search phrase.
           "type": "PINNED",
           "buckets": [
             {
-              "__typename": "ScalarBucket",
               "title": "gear",
+              "__typename": "ScalarBucket",
               "id": "3",
-              "count": 9
+              "count": 16
             },
             {
+              "title": "gear/bags",
               "__typename": "ScalarBucket",
-              "title": "gear/watches",
-              "id": "6",
-              "count": 9
+              "id": "4",
+              "count": 14
             },
             {
-              "__typename": "ScalarBucket",
               "title": "collections",
+              "__typename": "ScalarBucket",
               "id": "7",
-              "count": 4
+              "count": 7
             },
             {
-              "__typename": "ScalarBucket",
               "title": "collections/yoga-new",
+              "__typename": "ScalarBucket",
               "id": "8",
-              "count": 4
+              "count": 3
+            },
+            {
+              "title": "gear/fitness-equipment",
+              "__typename": "ScalarBucket",
+              "id": "5",
+              "count": 2
+            },
+            {
+              "title": "men/tops-men",
+              "__typename": "ScalarBucket",
+              "id": "12",
+              "count": 1
+            },
+            {
+              "title": "men/tops-men/tanks-men",
+              "__typename": "ScalarBucket",
+              "id": "17",
+              "count": 1
             }
           ]
         },
@@ -327,24 +378,31 @@ The following example uses "Watch" as the search phrase.
           "type": "PINNED",
           "buckets": [
             {
+              "title": "0.0-10.0",
               "__typename": "RangeBucket",
-              "title": "25.0-50.0",
-              "to": 50,
-              "from": 25,
-              "count": 4
+              "to": 10,
+              "from": 0,
+              "count": 1
             },
             {
+              "title": "10.0-25.0",
               "__typename": "RangeBucket",
-              "title": "50.0-75.0",
-              "to": 75,
-              "from": 50,
+              "to": 25,
+              "from": 10,
               "count": 3
             },
             {
+              "title": "25.0-50.0",
               "__typename": "RangeBucket",
-              "title": "75.0-100.0",
-              "to": 100,
-              "from": 75,
+              "to": 50,
+              "from": 25,
+              "count": 11
+            },
+            {
+              "title": "50.0-75.0",
+              "__typename": "RangeBucket",
+              "to": 75,
+              "from": 50,
               "count": 2
             }
           ]
@@ -355,34 +413,64 @@ The following example uses "Watch" as the search phrase.
           "type": "INTELLIGENT",
           "buckets": [
             {
+              "title": "Gym",
               "__typename": "ScalarBucket",
-              "title": "Recreation",
-              "id": "Recreation",
+              "id": "Gym",
+              "count": 11
+            },
+            {
+              "title": "Yoga",
+              "__typename": "ScalarBucket",
+              "id": "Yoga",
               "count": 7
             },
             {
+              "title": "School",
               "__typename": "ScalarBucket",
-              "title": "Athletic",
-              "id": "Athletic",
+              "id": "School",
+              "count": 6
+            },
+            {
+              "title": "Travel",
+              "__typename": "ScalarBucket",
+              "id": "Travel",
               "count": 5
             },
             {
+              "title": "Urban",
               "__typename": "ScalarBucket",
-              "title": "Gym",
-              "id": "Gym",
+              "id": "Urban",
               "count": 5
             },
             {
+              "title": "Hiking",
               "__typename": "ScalarBucket",
-              "title": "Outdoor",
-              "id": "Outdoor",
+              "id": "Hiking",
               "count": 4
             },
             {
+              "title": "Overnight",
               "__typename": "ScalarBucket",
+              "id": "Overnight",
+              "count": 4
+            },
+            {
+              "title": "Trail",
+              "__typename": "ScalarBucket",
+              "id": "Trail",
+              "count": 2
+            },
+            {
+              "title": "Recreation",
+              "__typename": "ScalarBucket",
+              "id": "Recreation",
+              "count": 1
+            },
+            {
               "title": "Sports",
+              "__typename": "ScalarBucket",
               "id": "Sports",
-              "count": 4
+              "count": 1
             }
           ]
         }
@@ -390,204 +478,52 @@ The following example uses "Watch" as the search phrase.
       "items": [
         {
           "product": {
-            "name": "Didi Sport Watch",
-            "sku": "24-WG02",
+            "name": "Impulse Duffle",
+            "sku": "24-UB02",
             "price_range": {
               "maximum_price": {
                 "final_price": {
-                  "value": 92,
+                  "value": 74,
                   "currency": "USD"
                 }
               },
               "minimum_price": {
                 "final_price": {
-                  "value": 92,
+                  "value": 74,
                   "currency": "USD"
                 }
               }
             }
           },
-          "highlights": [
-            {
-              "attribute": "name",
-              "value": "Didi Sport <em>Watch</em>",
-              "matched_words": []
-            }
-          ],
+          "highlights": [],
           "appliedQueryRule": null
         },
         {
           "product": {
-            "name": "Dash Digital Watch",
-            "sku": "24-MG02",
+            "name": "Fusion Backpack",
+            "sku": "24-MB02",
             "price_range": {
               "maximum_price": {
                 "final_price": {
-                  "value": 92,
+                  "value": 59,
                   "currency": "USD"
                 }
               },
               "minimum_price": {
                 "final_price": {
-                  "value": 92,
+                  "value": 59,
                   "currency": "USD"
                 }
               }
             }
           },
-          "highlights": [
-            {
-              "attribute": "name",
-              "value": "Dash Digital <em>Watch</em>",
-              "matched_words": []
-            }
-          ],
+          "highlights": [],
           "appliedQueryRule": null
         },
         {
           "product": {
-            "name": "Cruise Dual Analog Watch",
-            "sku": "24-MG05",
-            "price_range": {
-              "maximum_price": {
-                "final_price": {
-                  "value": 55,
-                  "currency": "USD"
-                }
-              },
-              "minimum_price": {
-                "final_price": {
-                  "value": 55,
-                  "currency": "USD"
-                }
-              }
-            }
-          },
-          "highlights": [
-            {
-              "attribute": "name",
-              "value": "Cruise Dual Analog <em>Watch</em>",
-              "matched_words": []
-            }
-          ],
-          "appliedQueryRule": null
-        },
-        {
-          "product": {
-            "name": "Summit Watch",
-            "sku": "24-MG03",
-            "price_range": {
-              "maximum_price": {
-                "final_price": {
-                  "value": 54,
-                  "currency": "USD"
-                }
-              },
-              "minimum_price": {
-                "final_price": {
-                  "value": 54,
-                  "currency": "USD"
-                }
-              }
-            }
-          },
-          "highlights": [
-            {
-              "attribute": "name",
-              "value": "Summit <em>Watch</em>",
-              "matched_words": []
-            }
-          ],
-          "appliedQueryRule": null
-        },
-        {
-          "product": {
-            "name": "Clamber Watch",
-            "sku": "24-WG03",
-            "price_range": {
-              "maximum_price": {
-                "final_price": {
-                  "value": 54,
-                  "currency": "USD"
-                }
-              },
-              "minimum_price": {
-                "final_price": {
-                  "value": 54,
-                  "currency": "USD"
-                }
-              }
-            }
-          },
-          "highlights": [
-            {
-              "attribute": "name",
-              "value": "Clamber <em>Watch</em>",
-              "matched_words": []
-            }
-          ],
-          "appliedQueryRule": null
-        },
-        {
-          "product": {
-            "name": "Endurance Watch",
-            "sku": "24-MG01",
-            "price_range": {
-              "maximum_price": {
-                "final_price": {
-                  "value": 49,
-                  "currency": "USD"
-                }
-              },
-              "minimum_price": {
-                "final_price": {
-                  "value": 49,
-                  "currency": "USD"
-                }
-              }
-            }
-          },
-          "highlights": [
-            {
-              "attribute": "name",
-              "value": "Endurance <em>Watch</em>",
-              "matched_words": []
-            }
-          ],
-          "appliedQueryRule": null
-        },
-        {
-          "product": {
-            "name": "Bolo Sport Watch",
-            "sku": "24-WG01",
-            "price_range": {
-              "maximum_price": {
-                "final_price": {
-                  "value": 49,
-                  "currency": "USD"
-                }
-              },
-              "minimum_price": {
-                "final_price": {
-                  "value": 49,
-                  "currency": "USD"
-                }
-              }
-            }
-          },
-          "highlights": [
-            {
-              "attribute": "name",
-              "value": "Bolo Sport <em>Watch</em>",
-              "matched_words": []
-            }
-          ],
-          "appliedQueryRule": null
-        },
-        {
-          "product": {
-            "name": "Aim Analog Watch",
-            "sku": "24-MG04",
+            "name": "Wayfarer Messenger Bag",
+            "sku": "24-MB05",
             "price_range": {
               "maximum_price": {
                 "final_price": {
@@ -606,7 +542,7 @@ The following example uses "Watch" as the search phrase.
           "highlights": [
             {
               "attribute": "name",
-              "value": "Aim Analog <em>Watch</em>",
+              "value": "Wayfarer Messenger <em>Bag</em>",
               "matched_words": []
             }
           ],
@@ -614,18 +550,40 @@ The following example uses "Watch" as the search phrase.
         },
         {
           "product": {
-            "name": "Luma Analog Watch",
-            "sku": "24-WG09",
+            "name": "Rival Field Messenger",
+            "sku": "24-MB06",
             "price_range": {
               "maximum_price": {
                 "final_price": {
-                  "value": 43,
+                  "value": 45,
                   "currency": "USD"
                 }
               },
               "minimum_price": {
                 "final_price": {
-                  "value": 43,
+                  "value": 45,
+                  "currency": "USD"
+                }
+              }
+            }
+          },
+          "highlights": [],
+          "appliedQueryRule": null
+        },
+        {
+          "product": {
+            "name": "Push It Messenger Bag",
+            "sku": "24-WB04",
+            "price_range": {
+              "maximum_price": {
+                "final_price": {
+                  "value": 45,
+                  "currency": "USD"
+                }
+              },
+              "minimum_price": {
+                "final_price": {
+                  "value": 45,
                   "currency": "USD"
                 }
               }
@@ -634,12 +592,112 @@ The following example uses "Watch" as the search phrase.
           "highlights": [
             {
               "attribute": "name",
-              "value": "Luma Analog <em>Watch</em>",
+              "value": "Push It Messenger <em>Bag</em>",
+              "matched_words": []
+            }
+          ],
+          "appliedQueryRule": null
+        },
+        {
+          "product": {
+            "name": "Overnight Duffle",
+            "sku": "24-WB07",
+            "price_range": {
+              "maximum_price": {
+                "final_price": {
+                  "value": 45,
+                  "currency": "USD"
+                }
+              },
+              "minimum_price": {
+                "final_price": {
+                  "value": 45,
+                  "currency": "USD"
+                }
+              }
+            }
+          },
+          "highlights": [],
+          "appliedQueryRule": null
+        },
+        {
+          "product": {
+            "name": "Crown Summit Backpack",
+            "sku": "24-MB03",
+            "price_range": {
+              "maximum_price": {
+                "final_price": {
+                  "value": 38,
+                  "currency": "USD"
+                }
+              },
+              "minimum_price": {
+                "final_price": {
+                  "value": 38,
+                  "currency": "USD"
+                }
+              }
+            }
+          },
+          "highlights": [],
+          "appliedQueryRule": null
+        },
+        {
+          "product": {
+            "name": "Driven Backpack",
+            "sku": "24-WB03",
+            "price_range": {
+              "maximum_price": {
+                "final_price": {
+                  "value": 36,
+                  "currency": "USD"
+                }
+              },
+              "minimum_price": {
+                "final_price": {
+                  "value": 36,
+                  "currency": "USD"
+                }
+              }
+            }
+          },
+          "highlights": [],
+          "appliedQueryRule": null
+        },
+        {
+          "product": {
+            "name": "Joust Duffle Bag",
+            "sku": "24-MB01",
+            "price_range": {
+              "maximum_price": {
+                "final_price": {
+                  "value": 34,
+                  "currency": "USD"
+                }
+              },
+              "minimum_price": {
+                "final_price": {
+                  "value": 34,
+                  "currency": "USD"
+                }
+              }
+            }
+          },
+          "highlights": [
+            {
+              "attribute": "name",
+              "value": "Joust Duffle <em>Bag</em>",
               "matched_words": []
             }
           ],
           "appliedQueryRule": null
         }
+      ],
+      "suggestions": [
+        "bag",
+        "it messenger bag",
+        "messenger bag",
+        "voyage yoga bag"
       ],
       "related_terms": null
     }
@@ -757,7 +815,7 @@ Attribute | Data Type | Description
 --- | --- | ---
 `appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values are `BOOST`, `BURY`, and `PIN`
 `highlights` | [[Highlight]](#Highlight) | An object that provides highlighted text for matched words
-`product`m| ProductInterface! | Contains details about the product. See [`productInterface`](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/product-interface.html) for more information
+`product`m| ProductInterface! | Contains details about the product. See [`productInterface`]({{ site.gdeurl }}/graphql/interfaces/product-interface.html) for more information
 
 #### Highlight data type {#Highlight}
 
