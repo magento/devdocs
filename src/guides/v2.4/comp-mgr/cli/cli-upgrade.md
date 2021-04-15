@@ -16,7 +16,7 @@ You can upgrade your Magento application from the command line if you installed 
 -  Installing the compressed archive.
 
 {:.bs-callout-info}
-Do not use this method to upgrade if you cloned the Magento 2 GitHub repository. Instead, see [Update the Magento application][] for upgrade instructions.
+Do not use this method to upgrade if you cloned the Magento 2 GitHub repository. Instead, see [Update Magento][] for upgrade instructions.
 
 The following instructions show you how to upgrade Magento using Composer. Magento 2.4.2 introduced support for Composer 2. If you are attempting to upgrade from Magento <2.4.1, you must first upgrade to a version of Magento that is compatible with Composer 2 (for example, 2.4.2) using Composer 1 _before_ upgrading to Composer 2 for Magento >2.4.2 upgrades.
 
@@ -209,6 +209,6 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 [metapackage]: https://glossary.magento.com/metapackage
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
-[Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
+[Update Magento]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
 [Check the catalog search engine]: {{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html

@@ -1,14 +1,11 @@
 ---
 group: software-update-guide
-title: Update the Magento application
-menu_title: Update the Magento application
-menu_order: 2
-menu_node:
+title: Update Magento
 functional_areas:
   - Upgrade
 ---
 
-This topic discusses how a contributing developer can update the Magento application without reinstalling it. To perform an upgrade if you're *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
+This topic discusses how a contributing developer can update Magento without reinstalling it. To perform an upgrade if you're *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
 
 To update the Magento software if you're a contributing developer:
 
