@@ -43,7 +43,7 @@ require([
 
 ## Validate the calendar widget
 
-To validate the calendar widget, required **dateFormat** parameter should be specified, as can be seen from the **validate-date** rule initialisation:
+To validate the calendar widget, specify the required **dateFormat** parameter:
 
 ```javascript
 'validate-date': [
@@ -56,7 +56,7 @@ To validate the calendar widget, required **dateFormat** parameter should be spe
 ];
 ```
 
-The following example displays how to add date validation for the calendar widget:
+This example shows how to add date validation for a calendar widget:
 
 ```javascript
 data-validate="{'required-entry': true, 'validate-date': {dateFormat: 'MM/dd/Y'}}"
