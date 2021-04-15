@@ -21,15 +21,15 @@ Merchants can pin commonly-used facets to the top of the list.
 
 Dynamic facets appear only when relevant, and the selection changes according to the products returned. In the storefront Filters list, dynamic facets appear in alphabetic order after any pinned facets. To streamline search results, facets are set to `dynamic` by default.
 
-Intelligent facets are product attributes that our Adobe Sensei AI platform finds extremely relevant to the given product set and query. This calculation takes into account the attribute meta data of the entire catalog and determines relevance at query time to deliver the most relevant facets for any query.  
+Intelligent facets are product attributes that our Adobe Sensei AI platform finds extremely relevant to the given product set and query. This calculation takes into account the attribute meta data of the entire catalog and determines relevance at query time to deliver the most relevant facets for any query.
 
-Popular facets are product attributes that are most often present in the result set. 
+Popular facets are product attributes that are most often present in the result set.
 
 ## Select type
 
 A facet can be either single- or multi-select, based on the [input type](https://docs.magento.com/user-guide/stores/attributes-input-types.html) that is assigned to the corresponding attribute.
 
-|**Select type**|**Description**|*
+|**Select type**|**Description**|
 |---|---|
 |Single select |A single-select facet offers multiple options, but allows the shopper to choose only one. Examples: Dropdown, Visual Swatch or Text Swatch|
 |Multi-select| A multi-select facet allows a shopper to choose more than one option. The logical operator that is assigned to a multi-select facet determines the product set that is returned. Options: <br />- Multi-select (or) - The returned products match any of the selected values.<br />- Multi-select (and) - The returned products match all selected facet values.
