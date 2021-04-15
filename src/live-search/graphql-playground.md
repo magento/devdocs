@@ -1,230 +1,56 @@
 ---
 group: live-search
-title: GraphQL Playground
+title: GraphQL Support
 ee_only: True
 ---
 
-The GraphQL Playground is available in the Magento Admin and gives you the ability to compose and test read-only queries with actual catalog data.
+GraphQL is a data query language that allows the caller to specify exactly what data to return. When a customer searches for products, the overhead of returning all possible product information and removing unnecessary data leads to longer processing times and unfavorable user experiences.
 
-## Execute a query
+Live Search provides GraphQL functionality that is currently separate from the GraphQL support provided in {{site.data.var.ce}} and {{site.data.var.ee}}. Live Search GraphQL requires connecting to a different endpoint and specifying a different set of HTTP headers.
+
+You can connect to the Live Search GraphQL endpoint to test sample queries using an Integrated Development Environment (IDE) in two ways:
+
+-  Through the GraphQL Playground IDE embedded in the Magento Admin. The embedded IDE manages the endpoint URL and required HTTP headers.
+
+-  Through a standalone version of GraphQL Playground, or any other IDE, such as GraphiQL or Postman. In these applications you must specify the endpoint URL and provide a set of HTTP headers for each call.
+
+See the [GraphQL Developer Guide]({{ site.gdeurl }}/graphql/index.html) for general information about Magento GraphQL.
+
+## Run queries using the embedded GraphQL Playground in the Magento Admin
+
+{:.bs-callout-info}
+You can only run queries that are specific to Live Search in the embedded GraphQL Playground IDE.
 
 1. In the Admin, go to **Marketing** > SEO & Search > **Live Search**.
 1. For multiple stores, set **Scope** to the store view where the settings apply.
 1. Click the **GraphQL** tab.
-1. Enter the query code.
+1. Enter the query code. You can copy code samples from the Live Search API Reference topics as a starting point.
 1. Click **Play**.
 
    ![graphQL example]({{ page.baseurl }}/live-search/images/graphql-example.png)
    _GraphQL - example product query_
 
-## Scenarios
+## Run queries on a standalone GraphQL browser
 
-|**Scenario**|**Query**|
-|---|---|
+1. Set the GraphQL endpoint to `https://<host>/search/graphql`.
 
-|Product search<br />Product Details page|`productSearch`<br />`products` (deprecated)|
-|Search by phrase (includes faceted navigation with filters, ordered by relevancy, highlights, variation preselect, suggestions.)|New query|
+1. Add the following HTTP headers to all Live Search GraphQL calls:
 
-## Examples
+   Header name| Header value | Description
+   --- | --- | ---
+   Magento-Environment-Id | This value is displayed at **Stores** > **Configuration** > **Services** > **Magento Services** > **SaaS Environment** or can be obtained by running the `bin/magento config:show services_connector/services_id/environment_id` command.
+   Magento-Website-Code | The code assigned to the website associated with the active store view. For example, `base`.
+   Magento-Store-Code | The code assigned to the store associated with the active store view. For example, `main_website_store`.
+   Magento-Store-View-Code | The code assigned to the active store view. For example, `default`.
+   X-Api-Key | This value must be set to `search_gql`
 
-### Create client
+1. Enter the query code. You can copy code samples from the Live Search API Reference topics as a starting point.
 
-```text
-import MagentoLiveSearch from "@magento/search-sdk";
-
-const search = new MagentoLiveSearch({
-    environmentId: "beb38e17-2969-46bb-b294-e140ec60c212",
-    websiteCode: "base",
-    storeCode: "main_website_store",
-    storeViewCode: "default",
-    apiKey: "search_gql",
-});
-```
-
-### Search by phrase
-
-```graphql
-productSearch(phrase: "Bags") {
-    items {
-       product {
-            id
-            name
-            sku
-            thumbnail {
-                url
-            }
-       }
-       highlights {
-           attribute_code
-           value
-       }
-    }
-}
-```
-
-### Category browse
-
-```graphql
-category(id: 17) {
-    products {
-        items {
-            id
-            name
-            sku
-            thumbnail {
-                url
-            }
-        }
-    }
-}
-```
-
-### Product details page
-
-```graphql
-product(id: 18) {
-    id
-    name
-    sku
-    media_gallery_entries {
-        url
-        media_type
-        content
-    }
-}
-```
-
-### Product search
-
-`productSearch` returns catalog products that match the search query, ordered by relevance. They can also be sorted by price (`asc`/`desc`) by passing in an optional sort query parameter.
-
-```graphql
-search.productSearch({ phrase: "yoga" });
-```
-
-Filters can be defined as part of the query using existing product attributes that have been defined as facets in the Magento Admin. For example, to filter results by color, a color facet must be defined in Live Search, based on the existing `color` attribute. Filters support ranges for numeric attributes (for example for price) or `eq`/`in` values for numeric and text attributes.
-
--  Only facets specified in Live Search are returned.
--  The values of dynamic facets are returned if 10% or more of products in the result set contain the attribute.
-
-#### Request example
-
-```graphql
-query {
-  productSearch(
-    phrase: "red pants"
-  )
-  {
-    total_count
-    items {
-        product {
-            __typename
-            uid
-            name
-            sku
-            description {
-              html
-            }
-            short_description {
-              html
-            }
-            meta_title
-            meta_keyword
-            meta_description
-            image {
-              url
-              label
-            }
-            small_image {
-              url
-              label
-            }
-            thumbnail {
-              url
-              label
-            }
-            price_range {
-                minimum_price {
-                  regular_price {
-                    value
-                    currency
-                  }
-                  final_price {
-                    value
-                    currency
-                  }
-                }
-                maximum_price {
-                  regular_price {
-                    value
-                    currency
-                  }
-                  final_price {
-                    value
-                    currency
-                  }
-                }
-            }
-            canonical_url
-            ... on SimpleProduct {
-                weight
-            }
-        }
-        highlights {
-            attribute
-            value
-            matched_words
-        }
-    }      
-    facets {
-        title
-        attribute
-        buckets {
-            __typename
-            title
-            ... on ScalarBucket {
-                id
-                count
-            }
-            ... on RangeBucket {
-                from
-                to
-                count
-            }
-            ... on StatsBucket {
-                min
-                max
-            }
-        }
-    }
-    suggestions
-    page_info {
-        current_page
-        page_size
-        total_pages
-    }
-  }
-}
-```
-
-## Headers
-
-|**Function**|**Header**|
-|---|---|
-|`productSearch`| - `MagentoEnvironmentId`<br />- `MagentoWebsiteCode`<br />- `MagentoStoreCode`<br />- `MagentoStoreViewCode`<br />- `x-api-key:{Magento api key}`<br />- `x-gw-signature:{jwt}`|
-|`attributeMetadata`| (same as above)`|
-
-## Input validation
-
-|**Function**|**Input field**|**Validation**|
-|---|---|---|
-|`productSearch`| `phrase`| Max allowed: 255|
-| |`page_size`| Default: 20 if not null. Otherwise can be from 1 - 500
-| |`SearchClauseinput`|attribute|Max allowed: 255|
-| |`SearchClauseinput`|`in` and `eq`| Max allowed: 255|
-| |`ProductSearchSortinput`|attribute|Max allowed: 255|
+1. Run the the query.
 
 ## Error Codes
+
+The Live Search queries can return the following error codes when a query encounters an error.
 
 |**Error Code**|**Query**|
 |---|---|

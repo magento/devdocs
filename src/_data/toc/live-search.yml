@@ -16,7 +16,7 @@ pages:
   url: /live-search/live-search-sdk.html
   versionless: true
 
-- label: GraphQL Playground
+- label: GraphQL Support
   url: /live-search/graphql-playground.html
   versionless: true
 
