@@ -15,14 +15,11 @@ Live Search is a set of standalone meta packages that replaces the standard Mage
 
 -  Magento 2.4.x
 -  PHP 7.3 (The `catalog-data-exporter` is not compatible with previous versions of PHP.)
+-  Composer
 
 ## Step 1: Install Live Search
 
-Composer is required to install and manage updates to the Live Search module.
-
-### Method 1: Temporary Workaround
-
-When installing Magento 2.4.x with the `live-search` meta-package, an error occurs due to a `CatalogSearch` patch. The temporary workaround is to install Magento first without Live Search, and then update the project’s root Composer `.json` file to require the `live-search` package.
+Magento is installed first without Live Search, and then the project’s root Composer `.json` file is updated to require the `live-search` package.
 
 1. Install Magento 2.4.x without Live Search.
 
@@ -36,13 +33,6 @@ When installing Magento 2.4.x with the `live-search` meta-package, an error occu
   }
    ```
 
-### Method 2: Standard procedure
-
-Enter the following from the command line:
-
-```bash
-composer require magento/live-search
-```
 ### Dependencies
 
 The following Live Search dependencies are captured by Composer:
