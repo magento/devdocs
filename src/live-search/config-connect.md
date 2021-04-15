@@ -19,7 +19,7 @@ _Magento Services_
 
 ## Catalog Data Sync
 
-Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. The synchronization between the product catalog and the catalog service begins after Live Search is connected. The `saas-export` process can take up to 24 hours. You can verify that process is complete by looking for entries in the following tables:
+Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. After configuring Magento Services with your API key and Saas Environment, you must go to Live Search in the Magento Admin to trigger indexation. The synchronization between the product catalog and the catalog service begins after Live Search is connected. The `saas-export` process can take up to 24 hours. You can verify that process is complete by looking for entries in the following tables:
 
 -  `catalog_data_exporter_products`
 -  `catalog_data_exporter_product_attributes`
@@ -62,5 +62,3 @@ Although the catalog shares product data, the data that is available for search 
 |`name`|
 |`urlKey`|
 |`category`|
-
-The data synchronization also includes any search customizations for facets and rules.
