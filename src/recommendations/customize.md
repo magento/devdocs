@@ -4,7 +4,7 @@ title: Customize Recommendations
 ee_only: True
 ---
 
-When you install the Product Recommendations module, Magento creates the `ProductRecommendationsLayout` directory. This directory contains template files that you can customize to change how the recommendations appear on your storefront. Specifically, you can modify or overwrite the following template:
+When you install the Product Recommendations module, Magento creates the `ProductRecommendationsLayout` directory. This directory contains template files that you can customize to change how the recommendations appear on your storefront. Specifically, you can modify or override the following template:
 
 `<your theme>/ProductRecommendationsLayout/web/template/recommendations.html`
 
