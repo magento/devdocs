@@ -6,6 +6,8 @@ ee_only: True
 
 Faceting is a high-performance filtering method that uses multiple dimensions of searchable static and dynamic attribute values as search criteria. The available facets appear in the left sidebar of search results pages, with the most commonly used facets “pinned” to the top of the list.
 
+The [`productSearch` query]({{site.baseurl}}/live-search/product-search.html) contains an example where facets have been configured.
+
 {:.bs-callout-info}
 Go to [Facets](https://docs.magento.com/user-guide/live-search/facets.html) in the _Magento Commerce User Guide_ for information about facet setup, attribute requirements, and their use from the Admin and storefront.
 
@@ -51,94 +53,3 @@ The following product attributes have hardcoded properties that correspond to th
 | Sortable | Used for Sorting in Product Listing | `price`|
 | Searchable | Use in Search | `price` <br />`sku`<br />`name`|
 | FilterableInSearch | Use in Layered Navigation - Filterable (with results)| `price`<br />`visibility`<br />[category_name]|
-
-## Facet type examples
-
-A search of the Luma catalog for “bag” returns the following facet types:
-
-```text
-"type": "PINNED"
-"type": "INTELLIGENT"
-"type": "POPULAR"
-```
-### Example query
-
-```graphql
-query {query {
-   productSearch(
-      phrase: "bag",
-      page_size: 100,
-      sort: [{attribute: "price", direction: DESC}]  )   {
-         total_count
-         facets {
-            title
-            attribute
-            type }
-         suggestions
-         page_info {
-            current_page
-            page_size
-            total_pages  }
-         }
-      }
-```
-
-### Example response
-
-```json
-{
-  "extensions": {
-    "request-id": "gck5NeAlTFBifkXkAWIcqsw2HxPYzmIy"
-  },
-  "data": {
-    "productSearch": {
-      "total_count": 13,
-      "facets": [
-        {
-          "title": "Categories",
-          "attribute": "categories",
-          "type": "PINNED"
-        },
-        {
-          "title": "Price",
-          "attribute": "price",
-          "type": "PINNED"
-        },
-        {
-          "title": "Material",
-          "attribute": "material",
-          "type": "INTELLIGENT"
-        },
-        {
-          "title": "Color",
-          "attribute": "color",
-          "type": "INTELLIGENT"
-        },
-        {
-          "title": "Eco Collection",
-          "attribute": "eco_collection",
-          "type": "POPULAR"
-        },
-        {
-          "title": "Climate",
-          "attribute": "climate",
-          "type": "POPULAR"
-        }
-      ],
-      "suggestions": [
-        "bag",
-        "bag-orange",
-        "duffle bag",
-        "it messenger bag",
-        "wayfarer messenger bag"
-      ],
-      "page_info": {
-        "current_page": 1,
-        "page_size": 13,
-        "total_pages": 1
-      }
-    }
-  },
-  "status": 200
-}
-```

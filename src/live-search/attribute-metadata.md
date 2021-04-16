@@ -10,6 +10,15 @@ The `attributeMetadata` query returns a list of product attribute codes that can
 
 `attributeMetadata: AttributeMetadataResponse!`
 
+## Required headers
+
+You must specify the following HTTP headers to run this query. [GraphQL Support]({{site.baseurl}}/live-search/graphql-playground.html#headers-list) describes each of these headers.
+
+-  Magento-Environment-Id
+-  Magento-Website-Code
+-  Magento-Store-Code
+-  Magento-Store-View-Code
+-  X-Api-Key
 ## Example usage
 
 The following query returns details about all product attributes that can be used to define the sorting order or as a filter in a `productSearch` query.

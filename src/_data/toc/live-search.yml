@@ -12,14 +12,6 @@ pages:
   url: /live-search/config-connect.html
   versionless: true
 
-- label: Live Search SDK
-  url: /live-search/live-search-sdk.html
-  versionless: true
-
-- label: GraphQL Support
-  url: /live-search/graphql-playground.html
-  versionless: true
-
 - label: Facets
   url: /live-search/facets.html
   versionless: true
@@ -36,8 +28,12 @@ pages:
   url: /live-search/indexing.html
   versionless: true
 
-- label: Live Search API Reference
+- label: GraphQL
   children:
+    - label: GraphQL Support
+      url: /live-search/graphql-playground.html
+      versionless: true
+
     - label: attributeMetadata query
       url: /live-search/attribute-metadata.html
       versionless: true

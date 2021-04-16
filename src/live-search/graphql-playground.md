@@ -30,7 +30,7 @@ You can only run queries that are specific to Live Search in the embedded GraphQ
    ![graphQL example]({{ page.baseurl }}/live-search/images/graphql-example.png)
    _GraphQL - example product query_
 
-## Run queries on a standalone GraphQL browser
+## Run queries on a standalone GraphQL browser {#headers-list}
 
 1. Set the GraphQL endpoint to `https://<host>/search/graphql`.
 
