@@ -19,6 +19,7 @@ You must specify the following HTTP headers to run this query. [GraphQL Support]
 -  Magento-Store-Code
 -  Magento-Store-View-Code
 -  X-Api-Key
+
 ## Example usage
 
 The following query returns details about all product attributes that can be used to define the sorting order or as a filter in a `productSearch` query.
