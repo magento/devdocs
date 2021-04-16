@@ -8,7 +8,7 @@ redirect_from:
   - guides/v2.4/install-gde/prereq/zip_install.html
 ---
 
-{% include install/composer-overview_24.md %}
+{% include install/composer-overview.md %}
 
 ## Prerequisites
 
@@ -25,6 +25,7 @@ Learn about ownership, permissions, and the Magento file system owner in our [Ov
 To switch to the Magento file system owner:
 {% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
+
 ## Get the metapackage
 
 To get the Magento metapackage:
@@ -144,6 +145,7 @@ Database (simplest way is to use magento setup:upgrade)|
 |`magento help`|Provides help for the specified command.|None|
 
 ### Common arguments {#instgde-cli-subcommands-common}
+
 {% include install/cli_common-commands.md %}
 
 {:.bs-callout-info}

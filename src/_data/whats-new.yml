@@ -2204,13 +2204,6 @@ entries:
   type: Major Update
   date: May 14, 2020
   link: https://github.com/magento/devdocs/pull/7147
-- description: Added a deprecation notice about the Web Setup Wizard when [installing](https://devdocs.magento.com/guides/v2.3/install-gde/install/web/install-web.html)
-    or [upgrading](https://devdocs.magento.com/guides/v2.3/comp-mgr/upgrader/upgrade-checklist.html)
-    Magento in most places where it is mentioned.
-  versions: 2.3.x
-  type: Major Update
-  date: May 14, 2020
-  link: https://github.com/magento/devdocs/pull/7213
 - description: Added [Magento Cloud Patches version 1.0.4 release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
   versions: 2.x
   type: Major Update
@@ -2260,12 +2253,6 @@ entries:
   type: Technical
   date: May 1, 2020
   link: https://github.com/magento/devdocs/pull/7140
-- description: Added a [note](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)
-    about Composer upgrade plugin compatibility with Magento 2.3.5.
-  versions: 2.3.5
-  type: Technical
-  date: April 30, 2020
-  link: https://github.com/magento/devdocs/pull/7132
 - description: Updated all module topics according to codebase repositories at the
     Module Reference Guide.
   versions: 2.3.5
@@ -4027,12 +4014,6 @@ entries:
   type: Major update
   date: June 28, 2019
   link: https://github.com/magento/devdocs/pull/4850
-- description: Added a [new command-line upgrade method](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)
-    (yet experimental) using the Magento composer root plugin to resolve conflicts
-    in dependencies during the upgrade.
-  versions: 2.3.x
-  type: New topic
-  date: June 28, 2019
 - description: Updated the [Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html).
   versions: 2.3.2
   type: Major update
