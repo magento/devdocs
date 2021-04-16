@@ -108,8 +108,7 @@ The response to the `productSearch` query can contain details about each product
 
 ### Facets
 
-Faceting is a method of high-performance filtering that uses multiple dimensions of attribute values as search criteria. Faceted search is similar, but considerably more advanced than Magento's native
-layered navigation functionality.
+[Facets]({{site.baseurl}}/live-search/facets.html) provide a method of high-performance filtering that uses multiple dimensions of attribute values as search criteria. Faceted search is similar, but considerably more advanced than Magento's native layered navigation functionality.
 
 The `facets` object contains details about each facet that affected the search results. By default, Live Search provides **static facets** for the `categories` and `price` product attributes. These facets are pinned to the top of the Filters list in the storefront. The merchant can also pin other attributes to this list.
 
@@ -146,7 +145,6 @@ facets {
         }
     }
 }
-...
 ```
 
 ### Items list
