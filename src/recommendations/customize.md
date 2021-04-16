@@ -8,7 +8,7 @@ When you install the Product Recommendations module, Magento creates the `Produc
 
 `<your theme>/ProductRecommendationsLayout/web/template/recommendations.html`
 
-For more information about how to modify template files in Magento, refer to the [template overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/templates/template-walkthrough.html).
+For more information about how to modify template files in Magento, refer to the [template overview]({{ site.gdeurl }}/frontend-dev-guide/templates/template-walkthrough.html).
 
 If you do modify the `recommendations.html` file, you must preserve the following tags in the `recommendations.html` file to ensure Magento can successfully collect metrics for the recommendations on your storefront:
 
@@ -95,4 +95,4 @@ When you [create a recommendation](https://docs.magento.com/user-guide/marketing
 
     This change results in your recommendation unit appearing after the product image on the product detail page. If you want the recommendation unit to appear before the `product.info.media`, change the `after="-"` attribute to `before="-"`. The `pagePlacement` argument is an internal argument that should not be modified.
 
-Refer to [layout overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/layouts/layout-overview.html) for more information about the types of blocks on the page.
+Refer to [layout overview]({{ site.gdeurl }}/frontend-dev-guide/layouts/layout-overview.html) for more information about the types of blocks on the page.
