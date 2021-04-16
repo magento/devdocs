@@ -247,7 +247,6 @@ The following example uses "Watch" as the search phrase.
       page_size
       total_pages
     }
-    
     facets {
       attribute
       title

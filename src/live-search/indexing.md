@@ -38,52 +38,9 @@ _Index Metadata_
 
 ### Sortable attribute workflow
 
-1. Elasticsearch indexer updates the search metadata table (dynamo table) to reflect the attribute change.
+1. The Elasticsearch indexer updates the search metadata table (dynamo table) to reflect the attribute change.
 
-1. `attributeMetadata` query returns fields from the search metadata table which now includes updates to the sortable attribute.
-
-## Example
-
-```graphql
-type SearchableAttribute {
-    attribute: String!
-    weight: float
-}
- 
-type SortableAttribute {
-    attribute: String!
-    label: String
-    numeric: boolean
-}
- 
-type FilterableInSearchAttribute {
-    attribute: String!
-    label: String
-    numeric: boolean
-}
- 
-type AttributeMetadataResponse {
-    sortable: [SortableAttribute!]
-    filterableInSearch: [FilterableInSearchAttribute!]
-    searchable: [SearchableAttribute!]
-}
- 
-query attributeMetadata {
-  // no longer need the filter argument. The response will be derived by the selections
-  attributeMetadata () {
-    sortable {
-      label
-      attribute
-      numeric
-    },
-    filterableInSearch {
-      label
-      attribute
-      numeric
-    }
-  }
-}
-```
+1. The [`attributeMetadata` query]({{site.baseurl}}/live-search/attribute-metadata.html) returns fields from the search metadata table, which now includes updates to the sortable attribute.
 
 ## Category feed
 
