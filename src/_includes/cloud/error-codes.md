@@ -104,7 +104,7 @@ Critical errors indicate a problem with the {{ site.data.var.ece }} project conf
 
 ## Warning Errors
 
-Warning errors indicate a problem with the Magento Commerce Cloud project configuration such as incorrect, deprecated, unsupported, or missing configuration settings for optional features that can affect site operation. Although a warning does not cause deployment failure, you should review warning messages and update the configuration to resolve them.
+Warning errors indicate a problem with the {{ site.data.var.ece }} project configuration such as incorrect, deprecated, unsupported, or missing configuration settings for optional features that can affect site operation. Although a warning does not cause deployment failure, you should review warning messages and update the configuration to resolve them.
 
 ### Build stage
 
@@ -129,7 +129,7 @@ Warning errors indicate a problem with the Magento Commerce Cloud project config
 | 2003 | validate-config | The directory nesting level value for error reporting has not been configured |  |
 | 2004 | validate-config | Invalid configuration in the ./pub/errors/local.xml file. |  |
 | 2005 | validate-config | Admin data is used to create an admin user during initial installation only. Any changes to Admin data are ignored during the upgrade process. | After the initial installation, you can remove admin data from the configuration. |
-| 2006 | validate-config | Admin user was not created as admin email was not set | After installation, you can create an admin user manually:  Use ssh to connect to your environment. Then, run the `bin/magento admin:user:create` command. |
+| 2006 | validate-config | Admin user was not created as admin email was not set | After installation, you can create an admin user manually: Use ssh to connect to your environment. Then, run the `bin/magento admin:user:create` command. |
 | 2007 | validate-config | Update php version to recommended version |  |
 | 2008 | validate-config | Solr support has been deprecated in Magento 2.1. |  |
 | 2009 | validate-config | Solr is no longer supported by Magento 2.2 or later. |  |
