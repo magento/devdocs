@@ -4,13 +4,13 @@ title: Customize Recommendations
 ee_only: True
 ---
 
-When you install the Product Recommendations module, Magento creates the `ProductRecommendationsLayout` directory. This directory contains template files that you can customize to change how the recommendations appear on your storefront. Specifically, you can modify or overwrite the following template:
+When you install the Product Recommendations module, Magento creates the `ProductRecommendationsLayout` directory. This directory contains template files that you can customize to change how the recommendations appear on your storefront. Specifically, you can modify or override the following template:
 
 `<your theme>/ProductRecommendationsLayout/web/template/recommendations.html`
 
 For more information about how to modify template files in Magento, refer to the [template overview]({{ site.gdeurl }}/frontend-dev-guide/templates/template-walkthrough.html).
 
-If you do modify the `recommendations.html` file, you must preserve the following tags in the `recommendations.html` file to ensure Magento can successfully collect metrics for the recommendations on your storefront:
+If you do modify the `recommendations.html` file, you must preserve the following tags within the file to ensure Magento can successfully collect metrics for the recommendations on your storefront:
 
 |Tag|Use|
 |---|---|
@@ -19,7 +19,7 @@ If you do modify the `recommendations.html` file, you must preserve the followin
 
 In addition to the `recommendations.html` file, the `ProductRecommendationsLayout` directory contains the following subdirectories:
 
-|**Directory**|**Purpose**|
+|Directory|Purpose|
 |---|---|
 |`layout`|Contains `*.xml` files for each page type|
 |`templates`|Contains files that call the fetch and render scripts|
