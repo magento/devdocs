@@ -70,4 +70,7 @@ pages:
 
         - label: Creating an integration with an external API
           url: /ext-best-practices/tutorials/create-integration-with-api.html
+
+        - label: Sending Custom Emails
+          url: /ext-best-practices/tutorials/send-custom-email.html
           
