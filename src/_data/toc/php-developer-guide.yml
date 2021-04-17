@@ -267,6 +267,9 @@ pages:
         - label: DateTime Library
           url: /extension-dev-guide/framework/datetime.html
 
+        - label: Float Comparator
+          url: /extension-dev-guide/framework/float-comparator.html
+
         - label: Serialize Library
           url: /extension-dev-guide/framework/serializer.html
 
