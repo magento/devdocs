@@ -1,6 +1,8 @@
 ---
 group: php-developer-guide
 title: Math Random
+contributor_name: Adarsh Manickam
+contributor_link: https://github.com/drpayyne
 ---
 
 ## Overview
