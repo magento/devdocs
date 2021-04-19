@@ -28,10 +28,6 @@ pages:
   url: /live-search/indexing.html
   versionless: true
 
-- label: Release Notes
-  url: /live-search/release-notes.html
-  versionless: true
-
 - label: GraphQL
   children:
     - label: GraphQL Support
@@ -48,4 +44,8 @@ pages:
 
 - label: Storefront Quick Start
   url: /live-search/storefront-quick-start.html
+  versionless: true
+
+- label: Release Notes
+  url: /live-search/release-notes.html
   versionless: true
