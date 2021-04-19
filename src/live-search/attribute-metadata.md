@@ -4,7 +4,7 @@ title: attributeMetadata query
 ee_only: True
 ---
 
-The `attributeMetadata` query returns a list of product attribute codes that can be used for sorting or filtering in a `productSearch` query. The query response can include the attribute name, display label, and a Boolean value indicating whether the attribute contain numeric values.
+The `attributeMetadata` query returns a list of product attribute codes that can be used for sorting or filtering in a `productSearch` query. The query response can include the attribute name, display label, and a Boolean value indicating whether the attribute has a numeric value.
 
 ## Syntax
 
@@ -153,7 +153,7 @@ Attribute | Data Type | Description
 --- | --- | ---
 `attribute` | String! | The unique identifier for an attribute code. This value should be in lowercase letters and without spaces
 `label` | String | The display name assigned to the attribute
-`numeric` | Boolean | Indicates whether this attribute can contain a numeric value, such as a price or integer
+`numeric` | Boolean | Indicates whether this attribute has a numeric value, such as a price or integer
 
 ### SortableAttribute data type {#SortableAttribute}
 

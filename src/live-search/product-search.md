@@ -12,8 +12,8 @@ The `productSearch` query accepts the following attributes as input.
 
 -  `phrase` - The string of text to search for. This attribute is required.
 -  `filter` - An object that defines one or more product attributes to use to narrow the search results. In Luma, the `sku`, `price`, and `size` attributes are among the product attributes that can be used to filter query results.
--  `sort` - An object that defines one or more product attributes to use to sort the search results. The default sortable product attributes in Luma are `price`, `name`, and `position`.
--  `page_size` and `current_page` - These optional attributes allow the search results to be broken down into smaller groups so that a limited number of items are displayed at a time.
+-  `sort` - An object that defines one or more product attributes to use to sort the search results. The default sortable product attributes in Luma are `price`, `name`, and `position`. A product's position is assigned within a category.
+-  `page_size` and `current_page` - These optional attributes allow the search results to be broken down into smaller groups so that a limited number of items are displayed at a time. The default value of `page_size` is `20`, and the default value for `current_page` is `1`. In the response, counting starts at page one.
 
 The following sections describe these attributes in detail.
 
@@ -31,7 +31,7 @@ phrase: "Watch"
 
 Filters can be defined as part of the query using existing product attributes that have been defined as facets in the Magento Admin. For example, to filter results by color, a color facet must be defined in Live Search, based on the existing `color` attribute.
 
-A filter consists of a product `attribute`, a comparison operator, and the value that is being searched for. Together, they help narrow down the search results, based on shopper input. For example, if you want to set up a filter for jackets based on size, you could set the product attribute to `size`. To filter on medium-sized jackets only, set the `eq` attribute to `M`. To filter on both medium- and large-sized jackets, set the `in` attribute to `["M", "L"]`. To filter on a price range, such as between $50 and $100, set the `attribute` to `price`, and assign the `range` attribute with `from` and `to` values as `50` and `100`, respectively.
+A filter consists of a product `attribute`, a comparison operator, and the value that is being searched for. Together, they help narrow down the search results, based on shopper input. For example, if you want to set up a filter for jackets based on size, you could set the product attribute to `size`. To filter on medium-sized jackets only, set the `eq` attribute to `M`. To filter on both medium- and large-sized jackets, set the `in` attribute to `["M", "L"]`. If an attribute is numeric, you can filter on it as a price range, such as between $50 and $100. To filter on a price range, set the `attribute` to `price`, and assign the `range` attribute with `from` and `to` values as `50` and `100`, respectively.
 
 You can define multiple filters in the same call. The following example filters on the price and size:
 
@@ -46,14 +46,13 @@ filter: [
     },
     {
       attribute: "size"
-      eq: "M"
+      in: ["M", "L"]
     }
 ]
 ```
+An attribute that is passed in as part of a filter must be set to `filterableInSearch: true`. Otherwise, a 500 error will be returned.
 
 Only facets specified in Live Search are returned.
-
-The values of dynamic facets are returned if 10% or more of products in the result set contain the attribute.
 
 {:.bs-callout-tip}
 Use the [`attributeMetadata` query]({{site.baseurl}}/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
@@ -175,11 +174,6 @@ items {
           }
         }
     }
-    highlights {
-        attribute
-        value
-        matched_words
-    }
 }
 ```
 
@@ -188,8 +182,7 @@ items {
 The query response can also contain the following top-level attributes and objects:
 
 -  `page_info` - An object that lists the `page_size` and `current_page` input arguments as well as the total number of pages available
--  `related_terms` - An array of strings that might include merchant-defined synonyms
--  `suggestions` - An array of strings that include spelling variations or other suggested search terms
+-  `suggestions` - An array of strings that include the names of products and categories that exist in that catalog that are similar to the search query
 -  `total_count` - The number of products returned
 
 ## Syntax
@@ -221,21 +214,6 @@ The following example uses "Watch" as the search phrase.
 **Request:**
 
 ```graphql
-# {
-#   attributeMetadata{
-#     sortable {
-#       attribute
-#       label
-#       numeric
-#     }
-#     filterableInSearch  {
-#       attribute
-#       label
-#       numeric
-#     }
-#   }
-# }
-
 {
   productSearch (
     phrase: "bag"
@@ -301,15 +279,8 @@ The following example uses "Watch" as the search phrase.
           }
         }
       }
-      highlights {
-        attribute
-        value
-        matched_words
-      }
-      appliedQueryRule
     }
     suggestions
-    related_terms
   }
 }
 ```
@@ -319,7 +290,7 @@ The following example uses "Watch" as the search phrase.
 ```json
 {
   "extensions": {
-    "request-id": "ok6ZAHu7z3DcyU5L7vA2IlyXOfRmQXN7"
+    "request-id": "gUVUauyM294qbMJEkWaxHFmziwug423h"
   },
   "data": {
     "productSearch": {
@@ -501,9 +472,7 @@ The following example uses "Watch" as the search phrase.
                 }
               }
             }
-          },
-          "highlights": [],
-          "appliedQueryRule": null
+          }
         },
         {
           "product": {
@@ -523,9 +492,7 @@ The following example uses "Watch" as the search phrase.
                 }
               }
             }
-          },
-          "highlights": [],
-          "appliedQueryRule": null
+          }
         },
         {
           "product": {
@@ -545,15 +512,7 @@ The following example uses "Watch" as the search phrase.
                 }
               }
             }
-          },
-          "highlights": [
-            {
-              "attribute": "name",
-              "value": "Wayfarer Messenger <em>Bag</em>",
-              "matched_words": []
-            }
-          ],
-          "appliedQueryRule": null
+          }
         },
         {
           "product": {
@@ -573,9 +532,7 @@ The following example uses "Watch" as the search phrase.
                 }
               }
             }
-          },
-          "highlights": [],
-          "appliedQueryRule": null
+          }
         },
         {
           "product": {
@@ -595,15 +552,7 @@ The following example uses "Watch" as the search phrase.
                 }
               }
             }
-          },
-          "highlights": [
-            {
-              "attribute": "name",
-              "value": "Push It Messenger <em>Bag</em>",
-              "matched_words": []
-            }
-          ],
-          "appliedQueryRule": null
+          }
         },
         {
           "product": {
@@ -623,9 +572,7 @@ The following example uses "Watch" as the search phrase.
                 }
               }
             }
-          },
-          "highlights": [],
-          "appliedQueryRule": null
+          }
         },
         {
           "product": {
@@ -645,9 +592,7 @@ The following example uses "Watch" as the search phrase.
                 }
               }
             }
-          },
-          "highlights": [],
-          "appliedQueryRule": null
+          }
         },
         {
           "product": {
@@ -667,9 +612,7 @@ The following example uses "Watch" as the search phrase.
                 }
               }
             }
-          },
-          "highlights": [],
-          "appliedQueryRule": null
+          }
         },
         {
           "product": {
@@ -689,15 +632,7 @@ The following example uses "Watch" as the search phrase.
                 }
               }
             }
-          },
-          "highlights": [
-            {
-              "attribute": "name",
-              "value": "Joust Duffle <em>Bag</em>",
-              "matched_words": []
-            }
-          ],
-          "appliedQueryRule": null
+          }
         }
       ],
       "suggestions": [
@@ -705,13 +640,11 @@ The following example uses "Watch" as the search phrase.
         "it messenger bag",
         "messenger bag",
         "voyage yoga bag"
-      ],
-      "related_terms": null
+      ]
     }
   }
 }
 ```
-
 ## Input attributes
 
 The `productSearch` query accepts the following attributes as input.
@@ -821,16 +754,7 @@ The `ProductSearchItem` data type can contain the following attributes.
 Attribute | Data Type | Description
 --- | --- | ---
 `appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values are `BOOST`, `BURY`, and `PIN`
-`highlights` | [[Highlight]](#Highlight) | An object that provides highlighted text for matched words
 `product`m| ProductInterface! | Contains details about the product. See [`productInterface`]({{ site.gdeurl }}/graphql/interfaces/product-interface.html) for more information
-
-#### Highlight data type {#Highlight}
-
-Attribute | Data Type | Description
---- | --- | ---
-`attribute` | String! | The product attribute that contains a match for the search phrase
-`matched_words` | [String]! | An array a strings
-`value` | String! | The matched text, enclosed within `<em></em>` tags
 
 ### SearchResultPageInfo data type {#SearchResultPageInfo}
 
