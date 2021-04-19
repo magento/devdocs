@@ -32,6 +32,7 @@ The release notes include:
 -  {:.fix}<!--MCLOUD-7466-->**Enabled `opcahe.validate_timestamps`**—Enabled the `opcahe.validate_timestamps` PHP setting by default in developer mode. Enabling this setting by default fixes the issue in which file changes had no effect in Docker.
 -  {:.fix}<!--MCLOUD-7457-->**Fixed `build:custom:compose`**—Fixed `build:custom:compose` command to throw an error when the specified files cannot be updated.
 -  {:.fix}<!--MCLOUD-7254-->**Fixed `--sync_engine="native"` option**—Fixed the issue where in production mode (`--mode="production"`), the `--sync_engine="native"` option would not create entries for local folders in the `docker.composer.yml` file.
+-  {:.fix}<!--MCLOUD-7572-->**Added `type` to services**—Added the `type` field to every service in the `MAGENTO_CLOUD_RELATIONSHIP` variable.
 
 ## v1.2.1
 *Release date: December 21, 2020*<br/>
