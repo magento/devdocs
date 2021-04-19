@@ -114,18 +114,20 @@ pages:
     - label: Inventory Management
       url: /inventory/release-notes.html
 
+    - label: Live Search
+      url: /live-search/release-notes.html
+
     - label: Page Builder
       url: /page-builder/docs/release-notes.html
       versionless: true
-    
+
+    - label: Product Recommendations
+      url: /recommendations/release-notes.html
+      versionless: true
+
     - label: Sales Channels
       children:
       
         - label: Amazon
           url: /extensions/amazon-sales/release-notes/
           versionless: true
-
-    - label: Product Recommendations
-      url: /recommendations/release-notes.html
-      versionless: true
-
