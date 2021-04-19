@@ -19,26 +19,26 @@ _Indexing pipeline_
 
 1. Get list of Search merchants from `registry-service`, which returns list of `environmentId`s.
 
-1. Call Metadata-service api to get list of store views and their attribute metadata where the attribute metadata has changed between ts1 to ts2.
+1. Call `metadata-service` API to get list of store views and their attribute metadata where the attribute metadata has changed between `ts1` to `ts2`.
 
 1. Store attributes that need to be indexed.
 
 1. For each store view, reindex if the attribute metadata used for indexing has changed.
 
-1. Store attributes are indexed by Elasticsearch (ES).
+1. Store attributes are indexed by the Live Search query service.
 
 ## Client search
 
 The Live Search API allows a client to sort by any sortable product attribute by setting the [storefront property](https://docs.magento.com/user-guide/stores/attributes-product.html), `Used for sorting in product listings` to `Yes`. Depending on the theme, this setting causes the attribute to be included as an option in the [Sort by](https://docs.magento.com/user-guide/catalog/navigation-pagination.html) control on catalog pages. Up to 300 product attributes can be indexed by Live Search, with [storefront properties](https://docs.magento.com/user-guide/stores/attributes-product.html) that are searchable and filterable.
 
-The index metadata is stored in DynamoDB, accessible by Search Admin service with gRPC.
+The index metadata is stored in `DynamoDB`, accessible by Search Admin service with `gRPC`.
 
 ![Live Search index metadata API diagram]({{ page.baseurl }}/live-search/images/indexing-metadata-api.svg)
 _Index Metadata_
 
 ### Sortable attribute workflow
 
-1. The Elasticsearch indexer updates the search metadata table (dynamo table) to reflect the attribute change.
+1. The Live Search indexer updates the search metadata table (dynamo table) to reflect the attribute change.
 
 1. The [`attributeMetadata` query]({{site.baseurl}}/live-search/attribute-metadata.html) returns fields from the search metadata table, which now includes updates to the sortable attribute.
 
