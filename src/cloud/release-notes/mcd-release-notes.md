@@ -28,7 +28,7 @@ The release notes include:
     ./vendor/bin/ece-docker build:compose --custom-registry=my-registry.example.com
     ```
 -  {:.new}<!--MCLOUD-7504-->**Removed old Elasticsearch versions**—Removed Elasticsearch versions 1.7 and 2.4 from the Elasticsearch images.
--  {:.new}<!--MCLOUD-7396-->**Auto-generating NGINX certificates**—Removed the existing certificates from the NGINX image. The NGINX certificates are now auto-generated with each new deployment for improved SSL security.
+-  {:.new}<!--MCLOUD-7396-->**Auto-generating NGINX certificates**—Removed the existing certificates from the NGINX image. The NGINX certificates are now auto-generated with each new deployment for improved security.
 -  {:.fix}<!--MCLOUD-7466-->**Enabled `opcahe.validate_timestamps`**—Enabled the `opcahe.validate_timestamps` PHP setting by default in developer mode. Enabling this setting fixed the issue where changes to the filesystem were not recognized in Docker.
 -  {:.fix}<!--MCLOUD-7457-->**Fixed `build:custom:compose`**—Fixed `build:custom:compose` command to throw an error when files cannot be overwritten during the build process. Throwing an error prevents situations where `docker-compose up` could be using the wrong files.
 -  {:.fix}<!--MCLOUD-7254-->**Fixed `--sync_engine="native"` option**—Fixed the issue where in production mode (`--mode="production"`), the `--sync_engine="native"` option would not create any entries for local folders in the `docker.composer.yml` file.
