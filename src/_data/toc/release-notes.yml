@@ -116,6 +116,7 @@ pages:
 
     - label: Live Search
       url: /live-search/release-notes.html
+      versionless: true
 
     - label: Page Builder
       url: /page-builder/docs/release-notes.html
