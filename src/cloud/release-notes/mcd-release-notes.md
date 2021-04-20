@@ -21,7 +21,7 @@ The release notes include:
 
 -  {:.new}<!--Issue #298-->**Updated `host.docker.internal` to be platform independent**—You can now create the same Docker Compose scripts for Ubuntu, Windows, and macOS. Using Xdebug on Ubuntu no longer requires a separate environment variable. [Fix submitted by Igor Vitol](https://github.com/magento/magento-cloud-docker/pull/299).*
 -  {:.new}<!--Issue #299-->**Updated init-docker.sh**—Added `mounts` object to the `MAGENTO_CLOUD_APPLICATION` environment variable. *[Fix submitted by Chiranjeevi](https://github.com/magento/magento-cloud-docker/pull/299).*
--  {:.new}<!--Issue #300-->**Updated init-docker.sh**—Updated `init-docker.sh` script with PHP 7.4 and Magento Cloud Docker 1.2.1 versions. *[Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/300).*
+-  {:.new}<!--Issue #300-->**Updated init-docker.sh**—Updated the `init-docker.sh` script with PHP 7.4 and Magento Cloud Docker 1.2.1 versions. *[Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/300).*
 -  {:.new}<!--MCLOUD-7548-->**Sodium enabled by default**—Enabled the `sodium` PHP extension by default within PHP Docker images.
 -  {:.new}<!--MCLOUD-7476-->**`custom-registry` option**—Added a `--custom-registry` option to `php ./vendor/bin/ece-docker build:compose` command for using your own images registry.
    ```terminal
