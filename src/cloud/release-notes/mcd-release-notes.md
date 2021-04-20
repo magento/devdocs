@@ -20,17 +20,17 @@ The release notes include:
 *Release date: April 20, 2021*<br/>
 
 -  {:.new}<!--Issue #298-->**Updated `host.docker.internal` to be platform independent**—You can now create the same Docker Compose scripts for Ubuntu, Windows, and macOS. Using Xdebug on Ubuntu no longer requires a separate environment variable. [Fix submitted by Igor Vitol](https://github.com/magento/magento-cloud-docker/pull/299).*
--  {:.new}<!--Issue #299-->**Updated init-docker.sh**—Added `mounts` object to the `MAGENTO_CLOUD_APPLICATION` environment variable. *[Fix submitted by Chiranjeevi](https://github.com/magento/magento-cloud-docker/pull/299).*
+-  {:.new}<!--Issue #299-->**Updated init-docker.sh**—Added the `mounts` object to the `MAGENTO_CLOUD_APPLICATION` environment variable. *[Fix submitted by Chiranjeevi](https://github.com/magento/magento-cloud-docker/pull/299).*
 -  {:.new}<!--Issue #300-->**Updated init-docker.sh**—Updated the `init-docker.sh` script with PHP 7.4 and Magento Cloud Docker 1.2.1 versions. *[Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/300).*
 -  {:.new}<!--MCLOUD-7548-->**Sodium enabled by default**—Enabled the `sodium` PHP extension by default within PHP Docker images.
 -  {:.new}<!--MCLOUD-7476-->**`custom-registry` option**—Added a `--custom-registry` option to `php ./vendor/bin/ece-docker build:compose` command for using your own images registry.
-   ```terminal
+   ```bash
     ./vendor/bin/ece-docker build:compose --custom-registry=my-registry.example.com
     ```
 -  {:.new}<!--MCLOUD-7504-->**Removed old Elasticsearch versions**—Removed Elasticsearch versions 1.7 and 2.4 from the Elasticsearch images.
 -  {:.new}<!--MCLOUD-7396-->**Auto-generating NGINX certificates**—Removed the existing certificates from the NGINX image. The NGINX certificates are now auto-generated with each new deployment for improved security.
 -  {:.fix}<!--MCLOUD-7466-->**Enabled `opcahe.validate_timestamps`**—Enabled the `opcahe.validate_timestamps` PHP setting by default in developer mode. Enabling this setting fixed the issue where changes to the filesystem were not recognized in Docker.
--  {:.fix}<!--MCLOUD-7457-->**Fixed `build:custom:compose`**—Fixed `build:custom:compose` command to throw an error when files cannot be overwritten during the build process. Throwing an error prevents situations where `docker-compose up` could be using the wrong files.
+-  {:.fix}<!--MCLOUD-7457-->**Fixed `build:custom:compose`**—Fixed the `build:custom:compose` command to throw an error when files cannot be overwritten during the build process. Throwing an error prevents situations where `docker-compose up` could be using the wrong files.
 -  {:.fix}<!--MCLOUD-7254-->**Fixed `--sync_engine="native"` option**—Fixed the issue where in production mode (`--mode="production"`), the `--sync_engine="native"` option would not create any entries for local folders in the `docker.composer.yml` file.
 -  {:.fix}<!--MCLOUD-7572-->**Fixed service version validation errors**—Added service versions for RabbitMQ, Elasticsearch, and other services to the `type` property in the `MAGENTO_CLOUD_RELATIONSHIP` variable. Adding these versions to the `relationships` variable fixed the validation errors that occurred during the deploy phase of Magento Cloud installations.
 
