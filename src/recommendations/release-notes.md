@@ -16,6 +16,10 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.2.4 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed the "Unable to retrieve configurable product options data" error when indexing product attributes
+
 ## 3.2.3 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.new}Added the ability to [preview recommendation results](https://docs.magento.com/user-guide/marketing/create-new-rec.html#preview) at creation time. This might require that you update dependencies in the current version.
