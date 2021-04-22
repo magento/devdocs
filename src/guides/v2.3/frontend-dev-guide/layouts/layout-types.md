@@ -96,6 +96,10 @@ Override the default `wishlist_index_share.xml` in any one of the following path
 *  Override the layout in custom theme: `<custom_theme_dir>/Magento_Wishlist/layout/wishlist_index_share.xml`
 *  Override the layout in custom module: `<custom_module_dir>/view/frontend/layout/wishlist_index_share.xml`
 
+If the Magento instance has a custom-built theme applied on the storefront, then prefer overriding the layout using the custom theme.
+
+For building third-party extensions which require overriding the layout, then prefer overriding the layout using the custom module.
+
 ```xml
 <?xml version="1.0"?>
 <!--
