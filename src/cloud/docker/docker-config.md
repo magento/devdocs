@@ -53,6 +53,14 @@ Alternatively, you can run the following command to add it to the file:
 echo "127.0.0.1 magento2.test" | sudo tee -a /etc/hosts
 ```
 
+## Change Composer version
+
+You can change Composer version by adding next line in `.docker/config.env` configuration file:
+
+```
+COMPOSER_VERSION=2.0.12
+```
+
 ## Set up email
 
 The default {{ site.data.var.mcd-prod }} configuration includes the [MailHog] service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment.
