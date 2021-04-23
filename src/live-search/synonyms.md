@@ -29,6 +29,6 @@ See [Synonyms](https://docs.magento.com/user-guide/live-search/synonyms.html) in
 
 ## Known issues
 
--  Live Search synonyms are defined per store view, but are currently stored per website and identified with a combination of `environmentId` + `storeViewCode`. As a result, all websites and store views within the Magento installation share the same set of synonyms. The most recently created set of synonyms for the store view takes precedence.
+-  Live Search synonyms are defined per store view, but are currently stored per website and identified with a combination of `environmentId` + `storeViewCode`. As a result, all websites and store views within the Adobe Commerce installation share the same set of synonyms. The most recently created set of synonyms for the store view takes precedence.
 
 -  If a synonym contains multiple words, each word is treated as a separate synonym. For example, if you set up "time piece" as a synonym of "watch",  both "time" and "piece" are treated as synonyms of watch.
