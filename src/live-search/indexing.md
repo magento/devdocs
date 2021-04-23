@@ -33,14 +33,14 @@ The Live Search API allows a client to sort by any sortable product attribute by
 
 The index metadata is stored in the indexing pipeline and is accessible by the Search Service.
 
-![Live Search index metadata API diagram]({{ page.baseurl }}/live-search/images/indexing-metadata-api.svg)
+![Live Search index metadata API diagram]({{ page.baseurl }}/live-search/images/index-metadata-api.svg)
 _Index Metadata_
 
 ### Sortable attribute workflow
 
 1. Client calls Search Service.
 
-1. Search Service calls Search Admin-service.
+1. Search Service calls Search Admin Service.
 
 1. Search Service calls Indexing Pipeline.
 
