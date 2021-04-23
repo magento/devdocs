@@ -18,7 +18,6 @@ The `X-Frame-Options` header enables you to specify whether or not a browser sho
 
 {:.bs-callout-warning}
 The `ALLOW-FROM <uri>` option has been deprecated because Magento-supported browsers no longer support it. See [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility).
-[Browser Compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) provides details about this feature.
 
 {:.bs-callout-warning}
   For security reasons, Magento strongly recommends against running the Magento storefront in a frame.
