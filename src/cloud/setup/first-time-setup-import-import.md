@@ -307,7 +307,7 @@ bin/magento cache:clean
 After the [cache](https://glossary.magento.com/cache) flushes, enter `exit` to close the SSH tunnel.
 
 {:.bs-callout-tip}
-Use the [magento-cloud project:clear-build-cache]({{ site.baseurl }}/guides/v2.4/reference/cli/magento-cloud.html#projectclear-build-cache) command to clear a project's build cache (such as composer cache, etc) in the remote environment.
+Use the [magento-cloud project:clear-build-cache]({{ site.baseurl }}/guides/v2.4/reference/cli/magento-cloud.html#projectclear-build-cache) command to clear a project's build cache (such as composer cache, etc.) in the remote environment.
 
 ## Verify the import {#verify}
 
