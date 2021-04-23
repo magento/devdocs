@@ -17,7 +17,7 @@ The `X-Frame-Options` header enables you to specify whether or not a browser sho
 *  `SAMEORIGIN`: (The default Magento setting.) Page can be displayed only in a frame on the same origin as the page itself.
 
 {:.bs-callout-warning}
-`ALLOW-FROM <uri>` option has been deprecated since the browsers supported by Magento has dropped the support of it.
+The `ALLOW-FROM <uri>` option has been deprecated because Magento-supported browsers no longer support it. See [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility).
 [Browser Compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) provides details about this feature.
 
 {:.bs-callout-warning}
