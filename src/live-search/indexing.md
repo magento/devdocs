@@ -12,7 +12,7 @@ The Live Search API allows a client to sort by any product attribute that has th
 
 The client calls the search service from the storefront to retrieve (filterable, sortable) index metadata. Only searchable product attributes with the `Use in Layered Navigation` property set to `Filterable (with results)` and `Use for Sorting in Product Listing` set to `Yes`can be called by the search service.
 
-To construct a dynamic query, the search service needs to know which attributes are searchable and their weight. Live Search honors Magento search weights (1-10, where 10 is the highest priority).
+To construct a dynamic query, the search service needs to know which attributes are searchable and their weight. Live Search honors Adobe Commerce search weights (1-10, where 10 is the highest priority).
 
 ![Live Search indexing client search diagram]({{ page.baseurl }}/live-search/images/indexing-pipeline.svg)
 _Indexing pipeline_
@@ -31,16 +31,18 @@ _Indexing pipeline_
 
 The Live Search API allows a client to sort by any sortable product attribute by setting the [storefront property](https://docs.magento.com/user-guide/stores/attributes-product.html), `Used for sorting in product listings` to `Yes`. Depending on the theme, this setting causes the attribute to be included as an option in the [Sort by](https://docs.magento.com/user-guide/catalog/navigation-pagination.html) control on catalog pages. Up to 300 product attributes can be indexed by Live Search, with [storefront properties](https://docs.magento.com/user-guide/stores/attributes-product.html) that are searchable and filterable.
 
-The index metadata is stored in `DynamoDB`, accessible by Search Admin service with `gRPC`.
+The index metadata is stored in the indexing pipeline and is accessible by the Search Service.
 
 ![Live Search index metadata API diagram]({{ page.baseurl }}/live-search/images/indexing-metadata-api.svg)
 _Index Metadata_
 
 ### Sortable attribute workflow
 
-1. The Live Search indexer updates the search metadata table (dynamo table) to reflect the attribute change.
+1. Client calls Search Service.
 
-1. The [`attributeMetadata` query]({{site.baseurl}}/live-search/attribute-metadata.html) returns fields from the search metadata table, which now includes updates to the sortable attribute.
+1. Search Service calls Search Admin-service.
+
+1. Search Service calls Indexing Pipeline.
 
 ## Category feed
 

@@ -6,17 +6,17 @@ ee_only: True
 
 GraphQL is a data query language that allows the caller to specify exactly what data to return. When a customer searches for products, the overhead of returning all possible product information and removing unnecessary data leads to longer processing times and unfavorable user experiences.
 
-Live Search provides GraphQL functionality that is currently separate from the GraphQL support provided in {{site.data.var.ce}} and {{site.data.var.ee}}. Live Search GraphQL requires connecting to a different endpoint and specifying a different set of HTTP headers.
+Live Search provides GraphQL functionality that is currently separate from the GraphQL support provided in {{site.data.var.ce}} and Adobe Commerce. Live Search GraphQL requires connecting to a different endpoint and specifying a different set of HTTP headers.
 
 You can connect to the Live Search GraphQL endpoint to test sample queries using an Integrated Development Environment (IDE) in two ways:
 
--  Through the GraphQL Playground IDE embedded in the Magento Admin. The embedded IDE manages the endpoint URL and required HTTP headers.
+-  Through the GraphQL Playground IDE embedded in the Adobe Commerce Admin. The embedded IDE manages the endpoint URL and required HTTP headers.
 
 -  Through a standalone version of GraphQL Playground, or any other IDE, such as GraphiQL or Postman. In these applications you must specify the endpoint URL and provide a set of HTTP headers for each call.
 
-See the [GraphQL Developer Guide]({{ site.gdeurl }}/graphql/index.html) for general information about Magento GraphQL.
+See the [GraphQL Developer Guide]({{ site.gdeurl }}/graphql/index.html) for general information about Adobe Commerce GraphQL.
 
-## Run queries using the embedded GraphQL Playground in the Magento Admin
+## Run queries using the embedded GraphQL Playground
 
 {:.bs-callout-info}
 You can only run queries that are specific to Live Search in the embedded GraphQL Playground IDE.
@@ -52,9 +52,9 @@ You can only run queries that are specific to Live Search in the embedded GraphQ
 
 The Live Search queries can return the following error codes when a query encounters an error.
 
-|**Error Code**|**Query**|
+|**Error Code**|**Description**|
 |---|---|
 |1000 |Catches any other error that is not recognized by the service.|
-|1001 |`index_not_found_exception`<br />Elasticsearch exception message|
-|1002 |`search_phase_execution_exception`<br />Elasticsearch exception message|
-|1003 |`mapper_parsing_exception`<br />Elasticsearch exception message|
+|1001 |`index_not_found_exception`<br />Live Search exception message.|
+|1002 |`search_phase_execution_exception`<br />Live Search exception message.|
+|1003 |`mapper_parsing_exception`<br />Live Search exception message.|
