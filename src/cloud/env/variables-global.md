@@ -137,8 +137,7 @@ Use the `X_FRAME_CONFIGURATION` variable to change the [`X-Frame-Options`]({{ si
 -  `SAMEORIGIN`—(The default Magento setting.) Page can be displayed only in a frame on the same origin as the page itself.
 
 {:.bs-callout-warning}
-`ALLOW-FROM <uri>` option has been deprecated since the browsers supported by Magento has dropped the support of it.
-[Browser Compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) provides details about this feature.
+The `ALLOW-FROM <uri>` option has been deprecated because Magento-supported browsers no longer support it. See [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility).
 
 Add the `X_FRAME_CONFIGURATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
