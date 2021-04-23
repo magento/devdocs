@@ -48,7 +48,7 @@ _Index Metadata_
 
 The category feed has two new fields: `StoreCode` and `WebsiteCode`.
 
-|**DynamoDB table**|**Description**|
+|**Field**|**Description**|
 |--- |--- |
 |`Id` |Partition Key: `CategoryId`, `StoreViewCode`, `StoreCode`, `WebsiteCode`, `MageID`, `EnvironmentId`|
 |`StoreViewId`| |
