@@ -19,12 +19,14 @@ The [`Magento\Framework\Math\Random`]({{ site.mage2bloburl }}/{{ page.guide_vers
 
 ## Examples
 
+For the below examples, let's assume that the `$this->mathRandom` property is an instatiated object of the `Random` class.
+
 ### Generate a random string
 
 This example shows how to generate a random string of length 99, with the default character pool.
 
 ```php
-    $this->mathRandom->getRandomString(99);
+$this->mathRandom->getRandomString(99);
 ```
 
 ### Generate a random number
@@ -32,7 +34,7 @@ This example shows how to generate a random string of length 99, with the defaul
 This example shows how to generate a random number between 0 and 9999.
 
 ```php
-    $this->mathRandom->getRandomNumber(0, 9999);
+$this->mathRandom->getRandomNumber(0, 9999);
 ```
 
 ### Generate a random number
@@ -40,5 +42,5 @@ This example shows how to generate a random number between 0 and 9999.
 This example shows how to generate a unique hash string with a prefix.
 
 ```php
-    $this->mathRandom->getUniqueHash("my_hash_prefix");
+$this->mathRandom->getUniqueHash("my_hash_prefix");
 ```
