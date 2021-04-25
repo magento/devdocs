@@ -89,7 +89,7 @@ To configure PhpStorm to work with Xdebug:
 
 1. In the _Settings_ panel, expand and locate the **Languages & Frameworks** > **PHP** > **Servers** section.
 
-1. Click the **+** to add a server configuration. The project name is in grey at the top.
+1. Click the **+** to add a `PHP Remote Debug` server configuration. The project name is in grey at the top.
 
 1. Configure the following settings for the new server configuration:
 

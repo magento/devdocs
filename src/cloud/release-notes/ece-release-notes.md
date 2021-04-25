@@ -17,8 +17,19 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 {:.bs-callout-info}
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
-## v2002.1.5
+## v2002.1.6
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+-  {:.new}<!--MCLOUD-7694--> **Redis authentication credentials**—Added the ability to read Redis authorization credentials from the `relationships` property during the deploy phase.
+-  {:.new}<!--MCLOUD-7695--> **Elasticsearch authorization credentials**—Added the ability to read Elasticsearch authorization credentials from the `relationships` property during the deploy phase.
+-  {:.new}<!--MCLOUD-7698--> **Dedicated session storage service**—Added `redis-session` as a second option for session storage. You can use the `redis-session` service to store session information and use the `redis` service for cache to provide better performance.
+-  {:.new}<!--MCLOUD-7806--> **Deprecated SPLIT_DB messages**—Added validator warning and critical messages for the deprecated `SPLIT_DB` option for Magento 2.4.2 and its removal in Magento 2.5.0.
+-  {:.fix}<!--MCLOUD-7572--> **Elasticsearch version from relationships**—Fixed Service validator to retrieve the correct version of Elasticsearch from the `relationships` properties in Cloud Docker and integration environments.
+-  {:.fix}<!--MCLOUD-7722--> **Flexible Redis port validation**—Redis can now validate the port in a custom cache connection from the `server` URL. For example, you can add your port number to your server URL as follows: `server: 'tcp://rfs-store-simple-page-cache:26379'`. This helps prevent validation errors where the `port` option is either missing or incorrect.
+-  {:.fix}<!--MCLOUD-7776--> **Upgrading to Magento 2.4.2**—Fixed the issue that required users to manually run `bin/magento setup:upgrade` to make their sites operational after upgrading to Magento 2.4.2.
+
+## v2002.1.5
+*Release date: Feb 1, 2021*<br/>
 
 -  {:.new}**Remote storage**—Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html#remote_storage) environment variable to enable Cloud Projects for remote storage of media files using a storage service, such as AWS S3.<!--MCLOUD-7153-->
 

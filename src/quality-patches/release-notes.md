@@ -19,6 +19,15 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.0.21
+
+-  **MDVA-34665** _(for Magento `>=2.3.4 <=2.3.4-p2`)_-Fixes the issue with missing bundled products on category pages.
+-  **MDVA-36615** _(for Magento `2.4.2`)_-Fixes the issue with incorrect product count in admin product grid.
+-  **MDVA-36464** _(for Magento `>=2.4.0 <=2.4.2`)_-Fixes the issue where the email notification configuration is not working at store-view level.
+-  **MDVA-36138** _(for Magento `^2.3.2`)_-Fixes the issue where the shipping price is not adjusted and full shipping price is shown to customers if not all items in the cart qualify for the free shipping cart rule.
+-  **MDVA-36424** _(for Magento `>=1.3.0 <=1.3.3-p1 || >=2.0.0 <2.2.0`)_-Fixes the issue where media images, attached to page builder elements, disappear when the content is being edited repeatedly, if the backend base URL is different from the storefront base URL.
+-  **MDVA-35984** _(for Magento `^2.4.0`)_-Fixes the issue with incorrect product quantity and sellable quantity, after creating multiple concurrent shipments for the same product.
+
 ## v1.0.20
 
 -  **MDVA-36170** _(for Magento `>=2.3.4 <2.4.2`)_-This fixes the issue where the GraphqQL query is not caching by using the category cache tag.
