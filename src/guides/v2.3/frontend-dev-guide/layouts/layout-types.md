@@ -93,8 +93,8 @@ Use the `layout` attribute in the `page` node of a page configuration file to de
 
 Override the default `wishlist_index_share.xml` in any one of the following paths and add the `layout="3columns"` in the `page` node.
 
-*  Override the layout in custom `theme` (_in case when a custom-built theme applied on the storefront_): `<custom_theme_dir>/Magento_Wishlist/layout/wishlist_index_share.xml`
-*  Override the layout in custom `module` (_in case of building third-party extensions and need to make changes to the existing layout_): `<custom_module_dir>/view/frontend/layout/wishlist_index_share.xml`
+*  Override the layout in a custom `theme` (_in the case where a custom-built theme is applied on the storefront_): `<custom_theme_dir>/Magento_Wishlist/layout/wishlist_index_share.xml`
+*  Override the layout in custom `module` (_in case the when building third-party extensions and you need to make changes to the existing layout_): `<custom_module_dir>/view/frontend/layout/wishlist_index_share.xml`
 
 ```xml
 <?xml version="1.0"?>
