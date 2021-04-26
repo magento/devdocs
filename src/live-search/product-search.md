@@ -1,6 +1,6 @@
 ---
 group: live-search
-title: productSearch query
+title: productSearch Query
 ee_only: True
 ---
 

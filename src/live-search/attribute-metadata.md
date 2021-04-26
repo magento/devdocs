@@ -1,6 +1,6 @@
 ---
 group: live-search
-title: attributeMetadata query
+title: attributeMetadata Query
 ee_only: True
 ---
 
