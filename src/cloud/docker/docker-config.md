@@ -55,7 +55,7 @@ echo "127.0.0.1 magento2.test" | sudo tee -a /etc/hosts
 
 ## Change Composer version
 
-You can change Composer version by adding next line in `.docker/config.env` configuration file:
+You can change Composer version by adding the following line to the `.docker/config.env` configuration file:
 
 ```
 COMPOSER_VERSION=2.0.12
