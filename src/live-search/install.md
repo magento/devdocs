@@ -66,7 +66,7 @@ To update Live Search, enter the following from the command line:
 composer update magento/live-search -–with-dependencies
 ```
 
-Syntax: After the package name `live-search`, enter a blank space and two hyphens, followed by `with-dependencies`'
+Syntax: After the package name `live-search`, enter a blank space and two hyphens, followed by `with-dependencies`'.
 
 To update to a major version such as from 1.0 to 2.0, edit the project’s root Composer `.json` file as follows:
 
@@ -90,4 +90,4 @@ To update to a major version such as from 1.0 to 2.0, edit the project’s root 
 
 ## Uninstall
 
-To uninstall Live Search, see [Uninstall modules]({{ page.baseurl }}/guides/v2.4/install-gde/install/cli/install-cli-uninstall-mods.html)
+To uninstall Live Search, go to [Uninstall modules].({{ page.baseurl }}/guides/v2.4/install-gde/install/cli/install-cli-uninstall-mods.html)

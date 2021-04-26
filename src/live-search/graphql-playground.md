@@ -19,12 +19,12 @@ See the [GraphQL Developer Guide]({{ site.gdeurl }}/graphql/index.html) for gene
 ## Run queries using the embedded GraphQL Playground
 
 {:.bs-callout-info}
-You can only run queries that are specific to Live Search in the embedded GraphQL Playground IDE.
+You can run only queries that are specific to Live Search in the embedded GraphQL Playground IDE.
 
 1. In the Admin, go to **Marketing** > SEO & Search > **Live Search**.
 1. For multiple stores, set **Scope** to the store view where the settings apply.
 1. Click the **GraphQL** tab.
-1. Enter the query code. You can copy code samples from the Live Search API Reference topics as a starting point.
+1. Enter the query code. You can copy code samples from this documentation as a starting point.
 1. Click **Play**.
 
    ![graphQL example]({{ page.baseurl }}/live-search/images/graphql-example.png)

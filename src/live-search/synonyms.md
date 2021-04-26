@@ -17,15 +17,15 @@ Two-way synonyms have the same meaning and return the same search results. You c
 ### One-way
 
 A one-way synonym is a subset of a keyword, but with a more granular meaning. For example, capris and shorts are pants, but not all pants are capris or shorts. A search for pants includes capris and shorts. However, a search for shorts does not include results for capris.
-
+ 
 ## Setup and configuration
 
-Live Search synonyms are created and maintained from the Magento Admin and are separate from standard Magento synonyms. The synonym setup has no impact on requests.
+Live Search synonyms are created and maintained from the Adobe Commerce Admin and are separate from native synonyms. The synonym setup has no impact on requests.
 
 After a synonym is saved in the Admin, it can take up to two hours for the changes to index and re-cache, and for the storefront search results to reflect the change.
 
 {:.bs-callout-info}
-See [Synonyms](https://docs.magento.com/user-guide/live-search/synonyms.html) in the _Magento Commerce User Guide_ for more information about synonym setup and use from the Admin and storefront.
+Go to [Synonyms](https://docs.magento.com/user-guide/live-search/synonyms.html) in the _Adobe Commerce User Guide_ for more information about synonym setup and use from the Admin and storefront.
 
 ## Known issues
 

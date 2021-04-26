@@ -42,7 +42,7 @@ Facet aggregation is performed as follows if the storefront has three facets (ca
 
 -  `categories` aggregation - Aggregates `categories`, applies `color` and `price` filters, but not the `categories` filter.
 -  `color` aggregation - Aggregates `color`, applies `price` and `categories` filters, but not the `color` filter.
--  `price` aggregation - aggregates `price`, applies `color` and `categories` filters, but not the `price` filter.
+-  `price` aggregation - Aggregates `price`, applies `color` and `categories` filters, but not the `price` filter.
 
 ## Default attribute values
 

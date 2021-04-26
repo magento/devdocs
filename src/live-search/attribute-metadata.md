@@ -4,7 +4,7 @@ title: attributeMetadata query
 ee_only: True
 ---
 
-The `attributeMetadata` query returns a list of product attribute codes that can be used for sorting or filtering in a `productSearch` query. The query response can include the attribute name, display label, and a Boolean value indicating whether the attribute has a numeric value.
+The `attributeMetadata` query returns a list of product attribute codes that can be used for sorting or filtering in a `productSearch` query. The query response can include the attribute name, display label, and a Boolean value that indicates if the attribute has a numeric value.
 
 ## Syntax
 
