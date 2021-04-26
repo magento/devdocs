@@ -17,7 +17,7 @@ Two-way synonyms have the same meaning and return the same search results. You c
 ### One-way
 
 A one-way synonym is a subset of a keyword, but with a more granular meaning. For example, capris and shorts are pants, but not all pants are capris or shorts. A search for pants includes capris and shorts. However, a search for shorts does not include results for capris.
- 
+
 ## Setup and configuration
 
 Live Search synonyms are created and maintained from the Adobe Commerce Admin and are separate from native synonyms. The synonym setup has no impact on requests.
