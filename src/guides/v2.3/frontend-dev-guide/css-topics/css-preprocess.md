@@ -95,6 +95,17 @@ Once you save your changes, run the following command from your `<Magento_root>`
 ```bash
 bin/magento setup:static-content:deploy
 ```
+The following command generates static view files for all languages, the frontend area only: 
+
+```bash
+bin/magento setup:static-content:deploy --area frontend
+```
+
+The following command generates static view files for the backend area only: 
+
+```bash
+bin/magento setup:static-content:deploy --area adminhtml
+```
 
 The tool pre-processes (including compilation) and publishes the static view files.
 
