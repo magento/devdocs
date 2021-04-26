@@ -14,11 +14,11 @@ The `attributeMetadata` query returns a list of product attribute codes that can
 
 You must specify the following HTTP headers to run this query. [GraphQL Support]({{site.baseurl}}/live-search/graphql-playground.html#headers-list) describes each of these headers.
 
--  Magento-Environment-Id
--  Magento-Website-Code
--  Magento-Store-Code
--  Magento-Store-View-Code
--  X-Api-Key
+-  `Magento-Environment-Id`
+-  `Magento-Website-Cod`
+-  `Magento-Store-Code`
+-  `Magento-Store-View-Code`
+-  `X-Api-Key`
 
 ## Example usage
 
