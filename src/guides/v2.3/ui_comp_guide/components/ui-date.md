@@ -57,7 +57,7 @@ Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/M
 
 ## Validation
 
-There is the **validate-date** initialization rule, that describes the required **dateFormat** parameter, should be specified:
+The **validate-date** initialization rule, that describes the required **dateFormat** parameter, should be specified:
 
 ```javascript
 'validate-date': [
@@ -71,11 +71,11 @@ There is the **validate-date** initialization rule, that describes the required 
         ];
 ```
 
-The following data shows how to add date validation using a calendar widget as an example.
+The following shows how to add date validation using a calendar widget as an example.
 
-```javascript
-data-validate="{'required-entry': true, 'validate-date': {dateFormat: 'MM/dd/Y'}}"
-```
+  ```javascript
+  data-validate="{'required-entry': true, 'validate-date': {dateFormat: 'MM/dd/Y'}}"
+  ```
 
 ## Result
 
