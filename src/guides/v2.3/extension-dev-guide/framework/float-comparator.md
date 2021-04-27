@@ -19,7 +19,7 @@ The [`Magento\Framework\Math\FloatComparator`]({{ site.mage2bloburl }}/{{ page.g
 
 ## Examples
 
-For the below examples, let's assume that the `$this->floatComparator` property is an instatiated object of the `FloatComparator` class.
+In the examples below, let's assume that the `$this->floatComparator` property is an instatiated object of the `Magento\Framework\Math\FloatComparator` class.
 
 ### Check if two floats are equal
 
