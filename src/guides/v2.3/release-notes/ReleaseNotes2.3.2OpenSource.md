@@ -707,7 +707,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4695-->
 
-*  The Reporting Security Issues section of the [Magento 2 README file] (https://github.com/magento/magento2/blob/2.3-develop/README.md) has been updated to reflect the use of HackerOne for the Magento 2 Bug Bounty program. *Fix submitted by Andreas Mautz in pull request [22195](https://github.com/magento/magento2/pull/22195)*. [GitHub-22166](https://github.com/magento/magento2/issues/22166)
+*  The Reporting Security Issues section of the [Magento 2 README file] ({{ site.mage2bloburl }}/{{ page.guide_version }}/README.md) has been updated to reflect the use of HackerOne for the Magento 2 Bug Bounty program. *Fix submitted by Andreas Mautz in pull request [22195](https://github.com/magento/magento2/pull/22195)*. [GitHub-22166](https://github.com/magento/magento2/issues/22166)
 
 <!--- ENGCOM-4654-->
 
