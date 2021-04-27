@@ -59,8 +59,8 @@ Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/M
 
 The **validate-date** initialization rule, that describes the required **dateFormat** parameter, should be specified:
 
-```javascript
-'validate-date': [
+  ```javascript
+  'validate-date': [
             function (value, params, additionalParams) {
                 var test = moment(value, utils.convertToMomentFormat(additionalParams.dateFormat));
 
@@ -69,7 +69,7 @@ The **validate-date** initialization rule, that describes the required **dateFor
             $.mage.__('Please enter a valid date.')
 
         ];
-```
+  ```
 
 The following shows how to add date validation using a calendar widget as an example.
 
