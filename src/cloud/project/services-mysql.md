@@ -90,7 +90,7 @@ mysql:
 In the preceding example, the `admin` endpoint provides admin-level access to the `main` database, the `reporter` endpoint provides read-only access, and the `importer` endpoint provides read-write access. This means that:
 
 -  The `admin` user has full control of the database.
--  The `repoter` user has SELECT privileges only.
+-  The `reporter` user has SELECT privileges only.
 -  The `importer` user has SELECT, INSERT, UPDATE, and DELETE privileges.
 
 You must add the endpoints defined in the above example to the `relationships` property of the `.magento.app.yaml` file. For example:
@@ -164,3 +164,12 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
 ## Connect to secondary database
 
 In some cases, you might need to connect to the secondary database, for example to improve database performance or resolve database locking issues. If this configuration is required, use `"port" : 3304` to establish the connection. See the [{{ site.data.var.ece }} database best practice](https://support.magento.com/hc/en-us/articles/360049045351) article in the _Magento Help Center_.
+
+## Troubleshooting
+
+See the following Magento Support articles for help troubleshooting MySQL problems:
+
+-  [Checking slow queries and processes MySQL](https://support.magento.com/hc/en-us/articles/360030903091-Checking-slow-queries-and-processes-MySQL-)
+-  [Create database dump on Cloud](https://support.magento.com/hc/en-us/articles/360003254334-Create-database-dump-on-Cloud)
+-  [Data Migration Tool troubleshooting](https://support.magento.com/hc/en-us/articles/360033020451-Data-Migration-Tool-troubleshooting)
+-  [Magento upgrade: compact to dynamic tables 2.2.x, 2.3.x to 2.4.x](https://support.magento.com/hc/en-us/articles/360048389631-Magento-upgrade-compact-to-dynamic-tables-2-2-x-2-3-x-to-2-4-x-)

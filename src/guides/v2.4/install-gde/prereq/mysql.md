@@ -4,7 +4,7 @@ title: MySQL
 
 ## General guidelines {#instgde-prereq-mysql-intro}
 
-See [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html#database) for supported versions of MySQL.
+See [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of MySQL.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
@@ -179,6 +179,11 @@ The `explicit_defaults_for_timestamp` setting is deprecated. This setting contro
 
 {:.bs-callout-warning}
 On Magento projects deployed on the Cloud platform, the `explicit_defaults_for_timestamp` setting for MySQL (MariaDB) defaults to *OFF*
+
+Reindexing on MariaDB 10.4 takes more time compared to other MariaDB or MySQL versions. To speed up reindexing, we recommend setting these MariaDB configuration parameters:
+
+*  optimizer_switch='rowid_filter=off'
+*  optimizer_use_condition_selectivity = 1
 
 {:.ref-header}
 Related topics
