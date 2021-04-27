@@ -22,13 +22,14 @@ The following example returns information about the negotiable quote with the ID
 
 ```graphql
 query{
-  negotiableQuote(uid: "Mw=="){
+  negotiableQuote(uid: "kw6mLEvl6vjjPNsjtJqwpamv5o0iT1bc"){
     uid
     status
     items {
       product {
         name
         sku
+        uid
         price_range {
           maximum_price {
             regular_price {
@@ -69,13 +70,6 @@ query{
         expiration {
           new_expiration
           old_expiration
-        }
-        products_removed {
-          removed_from_catalog
-          removed_from_quote {
-            uid
-            sku
-            name
           }
         }
         total {
@@ -100,17 +94,17 @@ query{
 {
   "data": {
     "negotiableQuote": {
-      "uid": "Mw==",
+      "uid": "kw6mLEvl6vjjPNsjtJqwpamv5o0iT1bc",
       "status": "ORDERED",
       "items": [
         {
           "product": {
-            "name": "Push It Messenger Bag",
-            "sku": "24-WB04",
+            "name": "Dual Handle Cardio Ball",
+            "sku": "24-UG07",
             "price_range": {
               "maximum_price": {
                 "regular_price": {
-                  "value": 45
+                  "value": 12
                 }
               }
             }
@@ -119,12 +113,12 @@ query{
         },
         {
           "product": {
-            "name": "Rival Field Messenger",
-            "sku": "24-MB06",
+            "name": "Sprite Yoga Companion Kit",
+            "sku": "24-WG080",
             "price_range": {
               "maximum_price": {
                 "regular_price": {
-                  "value": 45
+                  "value": 77
                 }
               }
             }
@@ -133,12 +127,12 @@ query{
         },
         {
           "product": {
-            "name": "Strive Shoulder Pack",
-            "sku": "24-MB04",
+            "name": "Zing Jump Rope",
+            "sku": "24-UG04",
             "price_range": {
               "maximum_price": {
                 "regular_price": {
-                  "value": 32
+                  "value": 12
                 }
               }
             }
@@ -149,16 +143,16 @@ query{
       "comments": [
         {
           "uid": "MQ==",
-          "created_at": "2021-03-24 15:13:42",
+          "created_at": "2021-04-20 19:57:49",
           "author": {
             "firstname": "Taina",
             "lastname": "Garofalo"
           },
-          "text": "I would like a 10% discount on this order"
+          "text": "Requesting a 10% discount for being a repeat customer."
         },
         {
           "uid": "Mg==",
-          "created_at": "2021-03-25 14:16:12",
+          "created_at": "2021-04-21 16:06:51",
           "author": {
             "firstname": "John Paul",
             "lastname": "Pope"
@@ -167,7 +161,7 @@ query{
         },
         {
           "uid": "Mw==",
-          "created_at": "2021-03-25 14:18:13",
+          "created_at": "2021-04-21 16:12:48",
           "author": {
             "firstname": "Taina",
             "lastname": "Garofalo"
@@ -176,18 +170,27 @@ query{
         },
         {
           "uid": "NA==",
-          "created_at": "2021-03-25 14:21:22",
+          "created_at": "2021-04-21 17:03:36",
           "author": {
             "firstname": "John Paul",
             "lastname": "Pope"
           },
           "text": "Great! You should see a 5% discount in your cart. Shipping fees and taxes might apply."
+        },
+        {
+          "uid": "NQ==",
+          "created_at": "2021-04-21 17:54:34",
+          "author": {
+            "firstname": "Taina",
+            "lastname": "Garofalo"
+          },
+          "text": "Adding a shipping address"
         }
       ],
       "history": [
         {
           "uid": "MQ==",
-          "created_at": "2021-03-24 15:13:42",
+          "created_at": "2021-04-20 19:57:49",
           "author": {
             "firstname": "Taina",
             "lastname": "Garofalo"
@@ -195,7 +198,7 @@ query{
           "change_type": "CREATED",
           "changes": {
             "comment_added": {
-              "comment": "I would like a 10% discount on this order"
+              "comment": "Requesting a 10% discount for being a repeat customer."
             },
             "statuses": {
               "changes": [
@@ -209,10 +212,6 @@ query{
               "new_expiration": "Never",
               "old_expiration": null
             },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
-            },
             "total": {
               "new_price": null,
               "old_price": null
@@ -221,7 +220,7 @@ query{
         },
         {
           "uid": "Mg==",
-          "created_at": "2021-03-24 15:16:08",
+          "created_at": "2021-04-21 15:55:09",
           "author": {
             "firstname": "admin",
             "lastname": "admin"
@@ -241,10 +240,6 @@ query{
               "new_expiration": "Never",
               "old_expiration": null
             },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
-            },
             "total": {
               "new_price": null,
               "old_price": null
@@ -253,7 +248,7 @@ query{
         },
         {
           "uid": "Mw==",
-          "created_at": "2021-03-25 14:16:12",
+          "created_at": "2021-04-21 16:06:51",
           "author": {
             "firstname": "admin",
             "lastname": "admin"
@@ -272,12 +267,8 @@ query{
               ]
             },
             "expiration": {
-              "new_expiration": "2021-04-23",
+              "new_expiration": "Never",
               "old_expiration": null
-            },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
             },
             "total": {
               "new_price": null,
@@ -287,7 +278,7 @@ query{
         },
         {
           "uid": "NA==",
-          "created_at": "2021-03-25 14:18:13",
+          "created_at": "2021-04-21 16:12:48",
           "author": {
             "firstname": "Taina",
             "lastname": "Garofalo"
@@ -309,10 +300,6 @@ query{
               "new_expiration": "Never",
               "old_expiration": null
             },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
-            },
             "total": {
               "new_price": null,
               "old_price": null
@@ -321,7 +308,7 @@ query{
         },
         {
           "uid": "NQ==",
-          "created_at": "2021-03-25 14:18:37",
+          "created_at": "2021-04-21 17:02:18",
           "author": {
             "firstname": "admin",
             "lastname": "admin"
@@ -341,10 +328,6 @@ query{
               "new_expiration": "Never",
               "old_expiration": null
             },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
-            },
             "total": {
               "new_price": null,
               "old_price": null
@@ -353,7 +336,7 @@ query{
         },
         {
           "uid": "Ng==",
-          "created_at": "2021-03-25 14:21:22",
+          "created_at": "2021-04-21 17:03:36",
           "author": {
             "firstname": "admin",
             "lastname": "admin"
@@ -375,23 +358,19 @@ query{
               "new_expiration": "Never",
               "old_expiration": null
             },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
-            },
             "total": {
               "new_price": {
-                "value": 115.9
+                "value": 95.95
               },
               "old_price": {
-                "value": 122
+                "value": 101
               }
             }
           }
         },
         {
           "uid": "Nw==",
-          "created_at": "2021-03-25 14:45:18",
+          "created_at": "2021-04-21 17:54:08",
           "author": {
             "firstname": "Taina",
             "lastname": "Garofalo"
@@ -411,10 +390,6 @@ query{
               "new_expiration": "Never",
               "old_expiration": null
             },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
-            },
             "total": {
               "new_price": null,
               "old_price": null
@@ -423,14 +398,16 @@ query{
         },
         {
           "uid": "OA==",
-          "created_at": "2021-03-25 14:45:37",
+          "created_at": "2021-04-21 17:54:34",
           "author": {
             "firstname": "Taina",
             "lastname": "Garofalo"
           },
           "change_type": "UPDATED",
           "changes": {
-            "comment_added": null,
+            "comment_added": {
+              "comment": "Adding a shipping address"
+            },
             "statuses": {
               "changes": [
                 {
@@ -443,10 +420,6 @@ query{
               "new_expiration": "Never",
               "old_expiration": null
             },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
-            },
             "total": {
               "new_price": null,
               "old_price": null
@@ -455,7 +428,7 @@ query{
         },
         {
           "uid": "OQ==",
-          "created_at": "2021-03-25 15:03:23",
+          "created_at": "2021-04-21 18:23:56",
           "author": {
             "firstname": "admin",
             "lastname": "admin"
@@ -475,10 +448,6 @@ query{
               "new_expiration": "Never",
               "old_expiration": null
             },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
-            },
             "total": {
               "new_price": null,
               "old_price": null
@@ -487,7 +456,7 @@ query{
         },
         {
           "uid": "MTA=",
-          "created_at": "2021-03-25 16:04:11",
+          "created_at": "2021-04-21 18:24:46",
           "author": {
             "firstname": "admin",
             "lastname": "admin"
@@ -507,10 +476,6 @@ query{
               "new_expiration": "Never",
               "old_expiration": null
             },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
-            },
             "total": {
               "new_price": null,
               "old_price": null
@@ -519,7 +484,7 @@ query{
         },
         {
           "uid": "MTE=",
-          "created_at": "2021-03-25 16:05:08",
+          "created_at": "2021-04-21 18:29:29",
           "author": {
             "firstname": "Taina",
             "lastname": "Garofalo"
@@ -543,10 +508,6 @@ query{
               "new_expiration": "Never",
               "old_expiration": null
             },
-            "products_removed": {
-              "removed_from_catalog": [],
-              "removed_from_quote": []
-            },
             "total": {
               "new_price": null,
               "old_price": null
@@ -554,7 +515,7 @@ query{
           }
         }
       ],
-      "updated_at": "2021-03-25 16:05:07"
+      "updated_at": "2021-04-21 18:29:28"
     }
   }
 }
@@ -564,7 +525,7 @@ query{
 
 The `negotiableQuote` query requires a valid negotiable quote ID.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `uid` | ID! | The unique ID assigned to the negotiable quote
 

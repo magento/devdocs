@@ -11,7 +11,7 @@ If the request is successful, Magento assigns the cart ID to the negotiable quot
 {:.bs-callout-info}
 If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can use the [`setNegotiableQuoteShippingAddresses` mutation]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-shipping-address.html) to add the address to the standard quote before or during the negotiable quote process.
 
-This query requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
+This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
 ## Syntax
 
@@ -31,7 +31,7 @@ The following example requests a negotiable quote. The cart contains three items
 mutation {
   requestNegotiableQuote (
     input: {
-      cart_id: "NA=="
+      cart_id: "kw6mLEvl6vjjPNsjtJqwpamv5o0iT1bc"
       quote_name: "Discount request"
       comment: {
         comment: "Requesting a 10% discount for being a repeat customer."}
@@ -96,8 +96,8 @@ mutation {
   "data": {
     "requestNegotiableQuote": {
       "quote": {
-        "uid": "NA==",
-        "created_at": "2021-03-25 14:16:32",
+        "uid": "kw6mLEvl6vjjPNsjtJqwpamv5o0iT1bc",
+        "created_at": "2021-04-20 19:01:38",
         "status": "SUBMITTED",
         "buyer": {
           "firstname": "Taina",
@@ -105,8 +105,8 @@ mutation {
         },
         "comments": [
           {
-            "uid": "NQ==",
-            "created_at": "2021-03-27 18:50:07",
+            "uid": "MQ==",
+            "created_at": "2021-04-20 19:57:49",
             "author": {
               "firstname": "Taina",
               "lastname": "Garofalo"
@@ -164,16 +164,16 @@ mutation {
         ],
         "prices": {
           "subtotal_excluding_tax": {
-            "value": 92
+            "value": 101
           },
           "subtotal_including_tax": {
-            "value": 92
+            "value": 101
           },
           "subtotal_with_discount_excluding_tax": {
-            "value": 92
+            "value": 101
           },
           "grand_total": {
-            "value": 92
+            "value": 101
           }
         }
       }
@@ -190,7 +190,7 @@ The `RequestNegotiableQuoteInput` input object specifies the company user's cart
 
 The `RequestNegotiableQuoteInput` object contains the following attributes:
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `cart_id`| ID! | The cart ID of the buyer requesting a new negotiable quote
 `comment` | [NegotiableQuoteCommentInput!](#NegotiableQuoteCommentInput) | Comments the buyer entered to describe the request
@@ -200,7 +200,7 @@ Attribute |  Data Type | Description
 
 The `NegotiableQuoteCommentInput` object contains the following attribute.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `comment` | String! | The comment provided by the buyer
 
@@ -208,7 +208,7 @@ Attribute |  Data Type | Description
 
 The `RequestNegotiableQuoteOutput` output object contains the following attribute.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `quote` | NegotiableQuote! | Contains details about the negotiable quote
 
