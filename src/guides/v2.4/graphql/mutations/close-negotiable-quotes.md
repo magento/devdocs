@@ -86,7 +86,7 @@ The `CloseNegotiableQuotesInput` object contains the following attribute.
 
 Attribute | Data Type | Description
 --- | --- | ---
-`quote_item_uids` | [ID!]! | A list of IDs from `NegotiableQuote` objects
+`quote_item_uids` | [ID!]! | A list of unique IDs from `NegotiableQuote` objects
 
 ## Output attributes
 
@@ -94,8 +94,12 @@ The `CloseNegotiableQuotesOutput` output object contains the following attribute
 
 Attribute | Data Type | Description
 --- | --- | ---
-`quote` | NegotiableQuote! | Contains details about the negotiable quote
+`closed_quotes` | [NegotiableQuote] | An array containing the negotiable quotes that were just closed
+`negotiable_quotes (filter NegotiableQuoteFilterInput, pageSize = 20 Int, currentPage = 1 Int)` | NegotiableQuotesOutput | A list of negotiable quotes that the customer can view
 
+The `negotiable_quotes` attribute takes the following arguments.
+
+{% include graphql/negotiable-quotes-input.md %}
 ### NegotiableQuote attributes {#NegotiableQuote}
 
 {% include graphql/negotiable-quote.md %}

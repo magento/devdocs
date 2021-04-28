@@ -7,7 +7,7 @@ b2b_only: true
 The `removeNegotiableQuoteItems` mutation removes the specified products from a negotiable quote.
 
 {:.bs-callout-info}
-Removing the last product from a negotiable quote causes the quote to be in a terminal state. You cannot add products to the quote, nor can you modify the quantity of any items. You can only [close]({{page.baseurl}}/graphql/mutations/canel-negotiable-quotes.md) or [delete]() the quote.
+Removing the last product from a negotiable quote causes the quote to be in a terminal state. You cannot add products to the quote, nor can you modify the quantity of any items. You can only [close]({{page.baseurl}}/graphql/mutations/close-negotiable-quotes.html) or [delete]({{page.baseurl}}/graphql/mutations/delete-negotiable-quotes.html) the quote.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 

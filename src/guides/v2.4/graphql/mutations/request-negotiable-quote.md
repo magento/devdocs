@@ -8,8 +8,10 @@ The `requestNegotiableQuote` mutation initiates a negotiable quote on behalf of 
 
 If the request is successful, Magento assigns the cart ID to the negotiable quote. Therefore, the same cart ID is used throughout the lifecycle of the negotiable quote. Magento generates a new cart ID if the company user starts a new order while a negotiable quote is in process.
 
+If the request is successful, the negotiable quote has the SUBMITTED status.
+
 {:.bs-callout-info}
-If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can use the [`setNegotiableQuoteShippingAddresses` mutation]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-shipping-address.html) to add the address to the standard quote before or during the negotiable quote process.
+If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can use the [`setNegotiableQuoteShippingAddresses` mutation]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-shipping-address.html) to add the address to the standard quote during the negotiable quote process.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
