@@ -81,6 +81,7 @@ Attribute | Data Type | Description
 `items` | [[NegotiableQuote]!](#NegotiableQuote) | A list of negotiable quotes
 `page_info` | SearchResultPageInfo! | Contains pagination metadata
 `total_count` | Int! | The number of negotiable quotes returned
+
 ### NegotiableQuote attributes {#NegotiableQuote}
 
 {% include graphql/negotiable-quote.md %}
