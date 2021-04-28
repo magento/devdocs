@@ -58,7 +58,7 @@ ExampleCorp wants to change the color of the primary buttons to orange. To achie
    @button-primary__hover__border: 1px solid @color-orange-red2;
    ```
 
-ExampleCorp wants to change the color of the primary buttons to custom color. In the Orange theme directory add the overriding app/design/frontend/ExampleCorp/orange/web/css/source/_theme.less file with the following code:
+ExampleCorp wants to change the color of the primary buttons to a custom color. In the Orange theme directory add the overriding `app/design/frontend/ExampleCorp/orange/web/css/source/_theme.less` file with the following code:
 
    ```less
    //  Primary button
