@@ -54,7 +54,7 @@ mutation {
           firstname
           lastname
         }
-        creator_type 
+        creator_type
         text
       }
       items {

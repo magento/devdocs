@@ -33,7 +33,7 @@ The following example deletes the specified negotiable quote. The response inclu
 
 ```graphql
 mutation{
-  deleteNegotiableQuotes(input: 
+  deleteNegotiableQuotes(input:
   {
     quote_uids: ["FYGOCooAxSJnMdxI9v0cMI5EBaTPtwrr"]
   }){
@@ -54,7 +54,7 @@ mutation{
           currency
         }
       }
-    } 
+    }
     }
   }
 }
