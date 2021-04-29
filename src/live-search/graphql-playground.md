@@ -14,7 +14,7 @@ You can connect to the Live Search GraphQL endpoint to test sample queries using
 
 -  Through a standalone version of GraphQL Playground, or any other IDE, such as GraphiQL or Postman. In these applications you must specify the endpoint URL and provide a set of HTTP headers for each call.
 
-See the [GraphQL Developer Guide]({{ site.gdeurl }}/graphql/index.html) for general information about Adobe Commerce GraphQL.
+Go to the [GraphQL Developer Guide](https://devdocs-beta.magento.com/guides/v2.4/graphql/index.html) for general information about Adobe Commerce GraphQL.
 
 ## Run queries using the embedded GraphQL Playground
 

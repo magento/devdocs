@@ -25,7 +25,7 @@ Live Search synonyms are created and maintained from the Adobe Commerce Admin an
 After a synonym is saved in the Admin, it can take up to two hours for the changes to index and re-cache, and for the storefront search results to reflect the change.
 
 {:.bs-callout-info}
-Go to [Synonyms](https://docs.magento.com/user-guide/live-search/synonyms.html) in the _Adobe Commerce User Guide_ for more information about synonym setup and use from the Admin and storefront.
+Go to [Synonyms](https://docs-beta.magento.com/user-guide/live-search/synonyms.html) in the _Adobe Commerce User Guide_ for more information about synonym setup and use from the Admin and storefront.
 
 ## Known issues
 

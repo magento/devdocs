@@ -4,15 +4,15 @@ title: Configure and Connect
 ee_only: True
 ---
 
-The Adobe Commerce API key and its associated private key are required to connect Live Search to an installation of Adobe Commerce. The API key is generated and maintained in the account of the Adobe Commerce license holder who can generate the key and share it with the developer or SI. The developer can then create and manage the SaaS environments on behalf of the license-holder. For detailed instructions, see Magento Services in the [User Guide](https://docs.magento.com/user-guide/system/saas.html) and [Configuration Reference](https://docs.magento.com/user-guide/configuration/services/saas.html).
+The Adobe Commerce API key and its associated private key are required to connect Live Search to an installation of Adobe Commerce. The API key is generated and maintained in the account of the Adobe Commerce license holder who can generate the key and share it with the developer or SI. The developer can then create and manage the SaaS environments on behalf of the license-holder. For detailed instructions, see Magento Services in the [User Guide](https://docs-beta.magento.com/user-guide/system/saas.html) and [Configuration Reference](https://docs-beta.magento.com/user-guide/configuration/services/saas.html).
 
 ## Adobe Commerce license holder
 
-To generate an API key and private key, see [Magento Services](https://docs.magento.com/user-guide/system/saas.html) in the Adobe Commerce user guide.
+To generate an API key and private key, see [Magento Services](https://docs-beta.magento.com/user-guide/system/saas.html) in the Adobe Commerce user guide.
 
 ## Adobe Commerce developer or SI
 
-The developer or SI configures the Saas Environment as described in the [Magento Services](https://docs.magento.com/user-guide/configuration/services/saas.html) section of the user guide. Magento Services becomes available in the Configuration sidebar after a SaaS module is installed.
+The developer or SI configures the Saas Environment as described in the [Magento Services](https://docs-beta.magento.com/user-guide/configuration/services/saas.html) section of the user guide. Magento Services becomes available in the Configuration sidebar after a SaaS module is installed.
 
 ![Config - Magento Services]({{ page.baseurl }}/live-search/images/config-magento-services.png)
 _Magento Services_

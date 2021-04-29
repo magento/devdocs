@@ -12,7 +12,7 @@ The `attributeMetadata` query returns a list of product attribute codes that can
 
 ## Required headers
 
-You must specify the following HTTP headers to run this query. [GraphQL Support]({{site.baseurl}}/live-search/graphql-playground.html#headers-list) describes each of these headers.
+You must specify the following HTTP headers to run this query. [GraphQL Support](https://devdocs-beta.magento.com/live-search/graphql-playground.html#headers-list) describes each of these headers.
 
 -  `Magento-Environment-Id`
 -  `Magento-Website-Cod`
@@ -142,8 +142,8 @@ The `AttributeMetadataResponse` return object can contain the following fields:
 
 Field | Data Type | Description
 --- | --- | ---
-`filterableInSearch` | [[FilterableInSearchAttribute!]](#FilterableInSearchAttribute) | An array of product attributes that can be used for filtering in a `productSearch` query.
-`sortable` | [[SortableAttribute!]](#SortableAttribute) | An array of product attributes that can be used for sorting in a `productSearch` query.
+`filterableInSearch` | [FilterableInSearchAttribute](#FilterableInSearchAttribute) | An array of product attributes that can be used for filtering in a `productSearch` query.
+`sortable` | [SortableAttribute](#SortableAttribute) | An array of product attributes that can be used for sorting in a `productSearch` query.
 
 ### FilterableInSearchAttribute data type {#FilterableInSearchAttribute}
 
