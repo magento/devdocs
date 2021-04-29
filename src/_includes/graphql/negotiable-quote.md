@@ -34,6 +34,7 @@ Attribute | Data Type | Description
 new_value | String! | The new entry content
 old_value | String | The previous entry in the custom log
 title | String! | The title of the custom log entry
+
 ### NegotiableQuoteHistoryChanges attributes {#NegotiableQuoteHistoryChanges}
 
 The `NegotiableQuoteHistoryChanges` object contains details about a single change in the history of a negotiable quote.
@@ -93,6 +94,7 @@ Attribute | Data Type | Description
 --- | --- | ---
 `new_status` | NegotiableQuoteStatus! | The updated status\
 `old_status` | NegotiableQuoteStatus | The previous status. The value will be null for the first history entry in a negotiable quote
+
 ### NegotiableQuoteHistoryStatusesChange attributes {#NegotiableQuoteHistoryStatusesChange}
 
 The `NegotiableQuoteHistoryStatusesChange` object contains an array of all previous modifications to the negotiable quote.
