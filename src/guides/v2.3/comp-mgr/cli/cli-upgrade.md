@@ -16,7 +16,7 @@ You can upgrade your Magento application from the command line if you installed 
 -  Installing the compressed archive.
 
 Do not use this method to upgrade if you cloned the Magento 2 GitHub repository.
-Instead, see [Update the Magento application][] for upgrade instructions.
+Instead, see [Update Magento][] for upgrade instructions.
 
 ## Prerequisites
 
@@ -263,7 +263,7 @@ All scenarios require that you comply with the [Prerequisites].
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements.html
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
-[Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
+[Update Magento]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Upgrade using the custom composer plugin]: upgrade-with-plugin.html
 [Upgrade using the script]: upgrade-with-script.html
 [Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
