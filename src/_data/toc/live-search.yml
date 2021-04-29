@@ -31,14 +31,14 @@ pages:
 - label: GraphQL
   children:
     - label: GraphQL Support
-      url: /live-search/graphql-playground.html
+      url: /live-search/graphql-support.html
       versionless: true
 
-    - label: attributeMetadata query
+    - label: attributeMetadata Query
       url: /live-search/attribute-metadata.html
       versionless: true
 
-    - label: productSearch query
+    - label: productSearch Query
       url: /live-search/product-search.html
       versionless: true
 
