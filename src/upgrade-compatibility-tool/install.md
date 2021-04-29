@@ -20,7 +20,7 @@ The following diagram shows the expected workflow when running the Upgrade Compa
 
 The following use case describes the typical process for a Magento partner to upgrade a client's Magento instance:
 
-1. A partner's Software Engineer downloads the Upgrade Compatibility Tool package from the [Magento repository](https://repo.magento.com/) and executes it during the beta phase of the newest Magento release. See the [Download the Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/install.html) topic for more information.
+1. A partner's Software Engineer downloads the Upgrade Compatibility Tool package from the [Magento repository](https://repo.magento.com/) and executes it during the beta phase of the newest Magento release. See the [Download the Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/install.html#download-the-upgrade-compatibility-tool) topic for more information.
 1. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) guide for more information on the complexity score.
 1. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
 1. The Account Manager creates a timeline and cost for the Magento upgrade, which allows them to get their manager's approval.
