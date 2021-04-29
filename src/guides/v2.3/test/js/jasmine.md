@@ -238,6 +238,18 @@ This topic doesn't provide Jasmine test writing methodology.
 
 [Learn more about testing with Jasmine.]
 
+## Debug tests
+
+Jasmine tests can be debugged in a browser using the following steps:
+
+To keep the webserver running, set `keepalive` setting to `true` in the `dev/tests/js/jasmine/spec_runner/settings.json` file.
+
+Launch the tests with i.e. `grunt spec:luma` CLI command. Now the webserver should be started and waiting, `_SpecRunner.html` file should be generated in the project root.
+
+Go to `http://localhost:8000/_SpecRunner.html` and use the developer console to debug the tests.
+
+The array of the tests can be edited in `_SpecRunner.html` file to include only necessary files.
+
 ## Known issues and solutions
 
 ### Error: Cannot find module '&lt;module&gt;' {#cannot-find-module-error}
