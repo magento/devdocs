@@ -16,5 +16,5 @@ These release notes describe the initial release of Live Search Public Beta.
 
 To learn more about Live Search development:
 
--  [Adobe Commerce Developer Documentation]({{ page.baseurl }}/live-search/overview.html)
+-  [Adobe Commerce Developer Documentation]({{ site.baseurl }}/live-search/overview.html)
 -  [Adobe Commerce User Guide](https://docs-beta.magento.com/user-guide/live-search/overview.html)

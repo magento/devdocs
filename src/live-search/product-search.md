@@ -57,7 +57,7 @@ An attribute that is passed as part of a filter must be set to `filterableInSear
 Only facets specified in Live Search are returned.
 
 {:.bs-callout-tip}
-Use the [`attributeMetadata` query]({{site.baseurl}}/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
+Use the [`attributeMetadata` query]({{ site.baseurl }}/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
 
 #### sort
 
@@ -79,7 +79,7 @@ sort: [
 ```
 
 {:.bs-callout-tip}
-Use the [`attributeMetadata` query]({{site.baseurl}}/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
+Use the [`attributeMetadata` query]({{ site.baseurl }}/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
 
 #### page_size
 
@@ -109,7 +109,7 @@ The response to the `productSearch` query can contain details about each product
 
 ### Facets
 
-[Facets]({{site.baseurl}}/live-search/facets.html) provide a method of high-performance filtering that uses multiple dimensions of attribute values as search criteria. Faceted search is similar, but considerably more advanced than the  native layered navigation functionality.
+[Facets]({{ site.baseurl }}/live-search/facets.html) provide a method of high-performance filtering that uses multiple dimensions of attribute values as search criteria. Faceted search is similar, but considerably more advanced than the  native layered navigation functionality.
 
 The `facets` object contains details about each facet that affects the search results. By default, Live Search provides static facets for the `categories` and `price` product attributes that are pinned to the top of the Filters list in the storefront. The merchant can also pin other attributes to this list.
 
@@ -150,7 +150,7 @@ facets {
 
 ### Items list
 
-The `items` object primarily provides details about each item returned. The [`productInterface`]({{ site.gdeurl }}/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and Adobe Commerce, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
+The `items` object primarily provides details about each item returned. The [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and Adobe Commerce, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
 
 The `items` object can also optionally return highlighted text that shows the matching search terms.
 
@@ -201,7 +201,7 @@ productSearch(
 
 ## Required headers
 
-You must specify the following HTTP headers to run this query. [GraphQL Support]({{site.baseurl}}/live-search/graphql-playground.html#headers-list) describes each of these headers.
+You must specify the following HTTP headers to run this query. [GraphQL Support]({{ site.baseurl }}/live-search/graphql-support.html#headers-list) describes each of these headers.
 
 -  `Magento-Environment-Id`
 -  `Magento-Website-Code`
@@ -656,8 +656,8 @@ Field | Data Type | Description
 `phrase` | String! | The text to search for.
 `page_size` | Int | Specifies the maximum number of results to return at once. Default value: 20
 `current_page` | Int | Specifies which page of results to return. Default value: 1
-`filter` | [[SearchClauseInput!]](#SearchClauseInput) | Identifies which attributes to search for and return.
-`sort` | [[ProductSearchSortInput!]](#ProductSearchSortInput) | Specifies which attribute to sort on, and whether to return the results in ascending or descending order.
+`filter` | [SearchClauseInput](#SearchClauseInput) | Identifies which attributes to search for and return.
+`sort` | [ProductSearchSortInput](#ProductSearchSortInput) | Specifies which attribute to sort on, and whether to return the results in ascending or descending order.
 
 ### SearchClauseInput data type {#SearchClauseInput}
 
@@ -667,7 +667,7 @@ Field | Data Type | Description
 --- | --- | ---
 `attribute` | String! | The attribute code of a product attribute.
 `eq` | String | A string value to filter on.
-`in` | [String] | An array of string values to filter on.
+`in` | String | An array of string values to filter on.
 `range` | [SearchRangeInput](#SearchRangeInput) | A range of numeric values to filter on.
 
 #### SearchRangeInput data type {#SearchRangeInput}
@@ -694,11 +694,11 @@ The `AttributeMetadataResponse` return object can contain the following fields:
 
 Field | Data Type | Description
 --- | --- | ---
-`facets` | [[Aggregation]](#Aggregation) | Provides details about the static and dynamic facets relevant to the search.
-`items` | [[ProductSearchItem]](#ProductSearchItem) | An array of products returned by the query.
+`facets` | [Aggregation](#Aggregation) | Provides details about the static and dynamic facets relevant to the search.
+`items` | [ProductSearchItem](#ProductSearchItem) | An array of products returned by the query.
 `page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | Contains information for rendering pages of search results.
-`related_terms` | [String] | An array of strings that might include merchant-defined synonyms.
-`suggestions` | [String] | An array of strings that include spelling variations or other suggested search terms.
+`related_terms` | String | An array of strings that might include merchant-defined synonyms.
+`suggestions` | String | An array of strings that include spelling variations or other suggested search terms.
 `total_count` | Int | The total number of items returned.
 
 ### Aggregation data type {#Aggregation}
@@ -706,7 +706,7 @@ Field | Data Type | Description
 Field | Data Type | Description
 --- | --- | ---
 `attribute` | String! | The attribute code of the filter item.
-`buckets` | [[Bucket]!](#Bucket) | A container that divides the data into manageable groups. For example, attributes that can have numeric values might have buckets that define price ranges.
+`buckets` | [Bucket](#Bucket) | A container that divides the data into manageable groups. For example, attributes that can have numeric values might have buckets that define price ranges.
 `title` | String! | The filter name displayed in layered navigation.
 `type` | AggregationType | Identifies the data type as one of the following: `INTELLIGENT`, `PINNED`, or `POPULAR`
 
@@ -756,7 +756,7 @@ The `ProductSearchItem` data type can contain the following fields:
 Field | Data Type | Description
 --- | --- | ---
 `appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values: `BOOST`, `BURY`, and `PIN`.
-`product`m| ProductInterface! | Contains details about the product. Go to [`productInterface`]({{ site.gdeurl }}/graphql/interfaces/product-interface.html) for more information.
+`product`m| ProductInterface! | Contains details about the product. Go to [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html) for more information.
 
 ### SearchResultPageInfo data type {#SearchResultPageInfo}
 

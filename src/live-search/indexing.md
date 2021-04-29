@@ -6,7 +6,7 @@ ee_only: True
 
 Product attribute properties ("metadata") determine how an attribute can be used in the catalog, its appearance and behavior in the store, and the data that is included in data transfer operations. The scope of attribute metadata is `website/store/store view`.
 
-The Live Search API allows a client to sort by any product attribute that has the [storefront property](https://docs.magento.com/user-guide/stores/attributes-product.html) `Use in Search` set to `Yes` in the Adobe Commerce Admin.
+The Live Search API allows a client to sort by any product attribute that has the [storefront property](https://docs-beta.magento.com/user-guide/stores/attributes-product.html) `Use in Search` set to `Yes` in the Adobe Commerce Admin.
 
 ## Indexing pipeline
 
@@ -29,7 +29,7 @@ _Indexing pipeline_
 
 ## Client search
 
-The Live Search API allows a client to sort by any sortable product attribute by setting the [storefront property](https://docs.magento.com/user-guide/stores/attributes-product.html), `Used for sorting in product listings` to `Yes`. Depending on the theme, this setting causes the attribute to be included as an option in the [Sort by](https://docs.magento.com/user-guide/catalog/navigation-pagination.html) control on catalog pages. Up to 300 product attributes can be indexed by Live Search, with [storefront properties](https://docs.magento.com/user-guide/stores/attributes-product.html) that are searchable and filterable.
+The Live Search API allows a client to sort by any sortable product attribute by setting the [storefront property](https://docs-beta.magento.com/user-guide/stores/attributes-product.html), `Used for sorting in product listings` to `Yes`. Depending on the theme, this setting causes the attribute to be included as an option in the [Sort by](https://docs-beta.magento.com/user-guide/catalog/navigation-pagination.html) control on catalog pages. Up to 300 product attributes can be indexed by Live Search, with [storefront properties](https://docs-beta.magento.com/user-guide/stores/attributes-product.html) that are searchable and filterable.
 
 The index metadata is stored in the indexing pipeline and is accessible by the search service.
 

@@ -2,6 +2,9 @@
 group: live-search
 title: GraphQL Support
 ee_only: True
+redirect_from: 
+  - /live-search/graphql-playground.html
+
 ---
 
 GraphQL is a data query language that allows the caller to specify exactly what data to return. When a customer searches for products, the overhead of returning all possible product information and removing unnecessary data leads to longer processing times and unfavorable user experiences.
@@ -14,7 +17,7 @@ You can connect to the Live Search GraphQL endpoint to test sample queries using
 
 -  Through a standalone version of GraphQL Playground, or any other IDE, such as GraphiQL or Postman. In these applications you must specify the endpoint URL and provide a set of HTTP headers for each call.
 
-See the [GraphQL Developer Guide]({{ site.gdeurl }}/graphql/index.html) for general information about Adobe Commerce GraphQL.
+Go to the [GraphQL Developer Guide]({{ site.baseurl }}{{ site.gdeurl }}/graphql/index.html) for general information about Adobe Commerce GraphQL.
 
 ## Run queries using the embedded GraphQL Playground
 

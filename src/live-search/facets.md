@@ -6,10 +6,10 @@ ee_only: True
 
 Faceting is a high-performance filtering method that uses multiple dimensions of searchable static and dynamic attribute values as search criteria. The available facets appear in the left sidebar of search results pages, with the most commonly used facets “pinned” to the top of the list.
 
-The [`productSearch` query]({{site.baseurl}}/live-search/product-search.html) contains an example where facets have been configured.
+The [`productSearch` query]({{ site.baseurl }}/live-search/product-search.html) contains an example where facets have been configured.
 
 {:.bs-callout-info}
-Go to [Facets](https://docs.magento.com/user-guide/live-search/facets.html) in the _Adobe Commerce User Guide_ for information about facet setup, attribute requirements, and their use from the Admin and storefront.
+Go to [Facets](https://docs-beta.magento.com/user-guide/live-search/facets.html) in the _Adobe Commerce User Guide_ for information about facet setup, attribute requirements, and their use from the Admin and storefront.
 
 ## Types of facets
 
@@ -29,7 +29,7 @@ Popular facets are product attributes that are most often present in the result 
 
 ## Select type
 
-A facet can be either single- or multi-select, based on the [input type](https://docs.magento.com/user-guide/stores/attributes-input-types.html) that is assigned to the corresponding attribute.
+A facet can be either single- or multi-select, based on the [input type](https://docs-beta.magento.com/user-guide/stores/attributes-input-types.html) that is assigned to the corresponding attribute.
 
 |**Type**|**Description**|
 |---|---|
@@ -46,7 +46,7 @@ Facet aggregation is performed as follows if the storefront has three facets (ca
 
 ## Default attribute values
 
-The following product attributes have hardcoded properties that correspond to their default [Storefront Property](https://docs.magento.com/user-guide/stores/attributes-product.html) settings in the Admin.
+The following product attributes have hardcoded properties that correspond to their default [Storefront Property](https://docs-beta.magento.com/user-guide/stores/attributes-product.html) settings in the Admin.
 
 |**Property**|**Storefront Property**|**Attribute**
 |---|---|---|
