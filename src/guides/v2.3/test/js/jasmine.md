@@ -248,7 +248,7 @@ Launch the tests with the `grunt spec:luma` CLI command. Now the webserver shoul
 
 Go to `http://localhost:8000/_SpecRunner.html` and use the developer console to debug the tests.
 
-The array of the tests can be edited in `_SpecRunner.html` file to include only necessary files.
+The array of the tests can be edited in the `_SpecRunner.html` file to include only necessary files.
 
 ## Known issues and solutions
 
