@@ -150,7 +150,7 @@ facets {
 
 ### Items list
 
-The `items` object primarily provides details about each item returned. The [`productInterface`]({{ site.baseurl }}/guides/v2.4/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and Adobe Commerce, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
+The `items` object primarily provides details about each item returned. The [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and Adobe Commerce, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
 
 The `items` object can also optionally return highlighted text that shows the matching search terms.
 
@@ -756,7 +756,7 @@ The `ProductSearchItem` data type can contain the following fields:
 Field | Data Type | Description
 --- | --- | ---
 `appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values: `BOOST`, `BURY`, and `PIN`.
-`product`m| ProductInterface! | Contains details about the product. Go to [`productInterface`]({{ site.baseurl }}/guides/v2.4/graphql/interfaces/product-interface.html) for more information.
+`product`m| ProductInterface! | Contains details about the product. Go to [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html) for more information.
 
 ### SearchResultPageInfo data type {#SearchResultPageInfo}
 
