@@ -57,7 +57,7 @@ Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/M
 
 ## Validation
 
-The **validate-date** initialization rule, that describes the required **dateFormat** parameter, should be specified:
+The **validate-date** initialization rule that describes the required **dateFormat** parameter should be specified:
 
   ```javascript
   'validate-date': [
