@@ -57,7 +57,7 @@ An attribute that is passed as part of a filter must be set to `filterableInSear
 Only facets specified in Live Search are returned.
 
 {:.bs-callout-tip}
-Use the [`attributeMetadata` query](https://devdocs-beta.magento.com/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
+Use the [`attributeMetadata` query]({{ site.baseurl }}/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
 
 #### sort
 
@@ -79,7 +79,7 @@ sort: [
 ```
 
 {:.bs-callout-tip}
-Use the [`attributeMetadata` query](https://devdocs-beta.magento.com/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
+Use the [`attributeMetadata` query]({{ site.baseurl }}/live-search/attribute-metadata.html) to return a list of product attributes that can be used to define a filter.
 
 #### page_size
 
@@ -109,7 +109,7 @@ The response to the `productSearch` query can contain details about each product
 
 ### Facets
 
-[Facets](https://devdocs-beta.magento.com/live-search/facets.html) provide a method of high-performance filtering that uses multiple dimensions of attribute values as search criteria. Faceted search is similar, but considerably more advanced than the  native layered navigation functionality.
+[Facets]({{ site.baseurl }}/live-search/facets.html) provide a method of high-performance filtering that uses multiple dimensions of attribute values as search criteria. Faceted search is similar, but considerably more advanced than the  native layered navigation functionality.
 
 The `facets` object contains details about each facet that affects the search results. By default, Live Search provides static facets for the `categories` and `price` product attributes that are pinned to the top of the Filters list in the storefront. The merchant can also pin other attributes to this list.
 
@@ -150,7 +150,7 @@ facets {
 
 ### Items list
 
-The `items` object primarily provides details about each item returned. The [`productInterface`](https://devdocs-beta.magento.com/guides/v2.4/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and Adobe Commerce, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
+The `items` object primarily provides details about each item returned. The [`productInterface`]({{ site.baseurl }}/guides/v2.4/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and Adobe Commerce, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
 
 The `items` object can also optionally return highlighted text that shows the matching search terms.
 
@@ -201,7 +201,7 @@ productSearch(
 
 ## Required headers
 
-You must specify the following HTTP headers to run this query. [GraphQL Support](https://devdocs-beta.magento.com/live-search/graphql-support.html#headers-list) describes each of these headers.
+You must specify the following HTTP headers to run this query. [GraphQL Support]({{ site.baseurl }}/live-search/graphql-support.html#headers-list) describes each of these headers.
 
 -  `Magento-Environment-Id`
 -  `Magento-Website-Code`
@@ -756,7 +756,7 @@ The `ProductSearchItem` data type can contain the following fields:
 Field | Data Type | Description
 --- | --- | ---
 `appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values: `BOOST`, `BURY`, and `PIN`.
-`product`m| ProductInterface! | Contains details about the product. Go to [`productInterface`](https://devdocs-beta.magento.com/guides/v2.4/graphql/interfaces/product-interface.html) for more information.
+`product`m| ProductInterface! | Contains details about the product. Go to [`productInterface`]({{ site.baseurl }}/guides/v2.4/graphql/interfaces/product-interface.html) for more information.
 
 ### SearchResultPageInfo data type {#SearchResultPageInfo}
 

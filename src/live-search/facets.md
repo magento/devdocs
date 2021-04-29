@@ -6,7 +6,7 @@ ee_only: True
 
 Faceting is a high-performance filtering method that uses multiple dimensions of searchable static and dynamic attribute values as search criteria. The available facets appear in the left sidebar of search results pages, with the most commonly used facets “pinned” to the top of the list.
 
-The [`productSearch` query](https://devdocs-beta.magento.com/live-search/product-search.html) contains an example where facets have been configured.
+The [`productSearch` query]({{ site.baseurl }}/live-search/product-search.html) contains an example where facets have been configured.
 
 {:.bs-callout-info}
 Go to [Facets](https://docs-beta.magento.com/user-guide/live-search/facets.html) in the _Adobe Commerce User Guide_ for information about facet setup, attribute requirements, and their use from the Admin and storefront.

@@ -90,4 +90,4 @@ To update to a major version such as from 1.0 to 2.0, edit the project’s root 
 
 ## Uninstall
 
-To uninstall Live Search, go to [Uninstall modules](https://devdocs-beta.magento.com/guides/v2.4/install-gde/install/cli/install-cli-uninstall-mods.html).
+To uninstall Live Search, go to [Uninstall modules]({{ site.baseurl }}/guides/v2.4/install-gde/install/cli/install-cli-uninstall-mods.html).

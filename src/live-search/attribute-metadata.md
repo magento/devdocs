@@ -12,7 +12,7 @@ The `attributeMetadata` query returns a list of product attribute codes that can
 
 ## Required headers
 
-You must specify the following HTTP headers to run this query. [GraphQL Support](https://devdocs-beta.magento.com/live-search/graphql-support.html#headers-list) describes each of these headers.
+You must specify the following HTTP headers to run this query. [GraphQL Support]({{ site.baseurl }}/live-search/graphql-support.html#headers-list) describes each of these headers.
 
 -  `Magento-Environment-Id`
 -  `Magento-Website-Cod`
