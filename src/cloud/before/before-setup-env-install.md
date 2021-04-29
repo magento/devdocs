@@ -72,7 +72,7 @@ Set the `docroot` to the `/magento` directory until you complete all setup.
 
 For the Production environment, set the `docroot` to `/magento/pub`, which helps restrict access to vulnerable areas of the system. The webserver `docroot` should be set to `/magento/pub` only after Magento is installed (including any upgrades and patches), configured, and static files generated and populated in `/magento/pub`. Alternatively, you could create a subdomain (for example, `install.domain.com`) and configure your webserver `docroot` to the Magento installed root folder.
 
-## Set file system permissions and ownership{#file-system-permissions}
+## Set file system permissions and ownership {#file-system-permissions}
 
 After you have installed Magento, you need to set the file system permissions and ownership.
 
