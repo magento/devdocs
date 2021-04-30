@@ -1,1 +1,0 @@
-../../../v2.3/config-guide/mq/rabbitmq-overview.md
