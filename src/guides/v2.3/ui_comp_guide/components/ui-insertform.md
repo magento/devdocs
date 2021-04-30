@@ -9,7 +9,7 @@ The InsertForm component inserts the [Form component]({{ page.baseurl }}/ui_comp
 
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
-| `autoRender` | When set to true, the Form component is automatically rendered during InsertForm initialization. Otherwise, insertListing's `render` method should be called to render the Form. | Boolean | `false` |
+| `autoRender` | When set to true, the Form component is automatically rendered during InsertForm initialization. Otherwise, insertForm's `render` method should be called to render the Form. | Boolean | `false` |
 | `class` | Path to the PHP class responsible for the backend implementation of the component. | String | `Magento\Ui\Component\Container` |
 | `component` | The path to the component’s JS constructor file in terms of RequireJS. | String | `Magento_Ui/js/form/components/insert-form` |
 | `dataLinks`.`exports` | Enable export from the insertForm's externalValue to the inserted Form aggregated value. | Boolean | `false` |

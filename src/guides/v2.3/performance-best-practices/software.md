@@ -9,7 +9,7 @@ functional_areas:
 
 We recommend using the following software for production instances of Magento:
 
-*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html#php)
+*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html)
 *  Nginx and [PHP-FPM](https://php-fpm.org/)
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
 *  [Varnish cache]({{page.baseurl}}/config-guide/varnish/config-varnish.html)

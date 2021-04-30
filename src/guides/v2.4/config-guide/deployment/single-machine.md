@@ -97,7 +97,7 @@ Related topics
 
 *  [Enable or disable maintenance mode][4]
 *  [Command line upgrade][1]
-*  [Update the Magento application][2]
+*  [Update Magento][2]
 
 [0]: {{ page.baseurl }}/
 [1]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html

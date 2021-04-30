@@ -22,7 +22,6 @@ Here is a brief summary of the most important labels:
 -  `Major Update`: Significant new info (for example, a new section in an existing topic)
 -  `Technical`: Minor changes to technical content, code, processes, naming conventions
 -  `Editorial`: Typos, grammatical inconsistencies, or minor rewrites
--  `small changes`: See [Small changes workflow](#small-changes-workflow)
 
 PRs with the `Internal Dev` label were created by Magento/Adobe employees and will be handled by the Documentation team only.
 
@@ -54,24 +53,3 @@ https://github.com/magento/devdocs/projects
 ## Style
 
 We prefer Markdown over HTML (in most cases). You can use [kramdown](https://kramdown.gettalong.org/syntax.html) syntax for more markup features and [Liquid](https://jekyllrb.com/docs/liquid/) for in-topic scripting.
-
-## Small changes workflow
-
-Before merging a pull request to the `master` branch, it must pass automated testing. Testing takes about 10 minutes to complete for each pull request, so we created a workflow to save time for small changes.
-
--  **Individual pull requests to `master`**—15 individual pull requests to `master` x 10 minutes per pull request = 2.5 hrs of testing time
--  **Multiple pull requests using `small_changes`**—1 `small_changes` pull request (containing 15 individual pull requests) to `master` x 10 minutes = 10 minutes of testing time
-
-This workflow is for typos, formatting issues, and minor text additions or deletions. It is not for substantial new content, changes to tables, new files, or files that have been moved.
-
-Periodically, we will create a pull request from the `small_changes` branch to the `master` branch and then run tests on that pull request to save time.
-
-### Process
-
-1. Review the pull request and either approve it or request changes.
-1. Apply the `small changes` label if one of the following labels should also be applied:
-
-   -  `Editorial`
-   -  `Technical`
-
-1. That's it! A DevDocs admin will run tests and merge.

@@ -50,7 +50,7 @@ Most options, methods, and events for the calendar widget correspond to the jQue
 This example shows how to initialize the calendar widget, including custom parameters.
 
 ```html
-<div class="field">
+<div class="field date">
     <label>Date : </label>
     <input type="text" class="input-text" id="example-date" style="width: auto" name="example-date" />
 </div>
@@ -67,7 +67,8 @@ This example shows how to initialize the calendar widget, including custom param
         showButtonPanel: true,
         currentText: $t('Go Today'),
         closeText: $t('Close'),
-        showWeek: true
+        showWeek: true,
+        showOn: "both"
       });
     })
 </script>
