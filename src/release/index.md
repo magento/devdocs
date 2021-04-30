@@ -17,7 +17,7 @@ The following table provides the dates for scheduled releases in 2020 and 2021 (
 | 2021 Q2<sup>1</sup> | 2.4.2-p1<br>2.3.7             | March 30, 2021      | April 27, 2021             | May 11, 2021                                              |
 | 2021 Q3<sup>2</sup> | 2.4.3<br>2.4.2-p2<br>2.3.7-p1 | June 1, 2021        | July 27, 2021              | August 10, 2021                                           |
 | 2021 Q4<sup>3</sup> | 2.4.3-p1<br>2.3.7-p2          | None                | September 28, 2021         | October 12, 2021                                          |
-| 2022 Q1             | 2.4.4<br>2.4.3-p2<br>2.3.7-p3 | November 23, 2021   | January 18, 2022           | February 8, 2022                                          |
+| 2022 Q1             | 2.4.4<br>2.4.3-p2<br>2.3.7-p3 | TBD                 | January 18, 2022           | February 8, 2022                                          |
 | 2022 Q2             | 2.4.5<br>2.4.4-p1<br>2.3.7-p4 | March 15, 2022      | April 26, 2022             | May 10, 2022                                              |
 | 2022 Q3             | 2.4.6<br>2.4.5-p1             | June 7, 2022        | July 26, 2022              | August 9, 2022                                            |
 | 2022 Q4             | 2.4.6-p1                      | September 6, 2022   | October 11, 2022           | October 25, 2022                                          |
