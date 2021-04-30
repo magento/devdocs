@@ -190,7 +190,7 @@ The `RequestNegotiableQuoteInput` input object specifies the company user's cart
 
 ### RequestNegotiableQuoteInput attributes {#RequestNegotiableQuoteInput}
 
-The `RequestNegotiableQuoteInput` object contains the following attributes:
+The `RequestNegotiableQuoteInput` object contains the following attributes.
 
 Attribute | Data Type | Description
 --- | --- | ---
