@@ -92,7 +92,7 @@ The `NegotiableQuoteHistoryStatusChange` object contains an instance of the stat
 
 Attribute | Data Type | Description
 --- | --- | ---
-`new_status` | NegotiableQuoteStatus! | The updated status\
+`new_status` | NegotiableQuoteStatus! | The updated status
 `old_status` | NegotiableQuoteStatus | The previous status. The value will be null for the first history entry in a negotiable quote
 
 ### NegotiableQuoteHistoryStatusesChange attributes {#NegotiableQuoteHistoryStatusesChange}
