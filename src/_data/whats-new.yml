@@ -4,8 +4,23 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Apr 26 14:38:39 2021
+updated: Tue May 4 10:56:38 2021
 entries:
+- description: How to specify the [Composer version](https://devdocs.magento.com/cloud/docker/docker-config.html) 
+    (1.x, 2.x) to install in your Cloud Docker instance.
+  versions: 2.4.2, 2.4.3
+  type: Major Update
+  date: April 26, 2021
+  link: https://github.com/magento/devdocs/pull/8893
+  merge_commit: 9fdbf7cdae57316011e05c518ae0009a640ed61d
+  contributor: shiftedreality
+  membership: true
+  labels:
+  - 2.4.2
+  - 2.4.3
+  - Internal Dev
+  - Major Update
+  - 'Event: Adobe Summit Hackathon'
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
     for the 1.0.21 Magento Quality Patch (MQP) package release.
   versions: 2.3.x, 2.4.x
