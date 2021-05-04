@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-The Remote Storage module provides the option to store media files and schedule imports/exports in a persistent, remote storage container using a storage service, such as AWS S3 or Azure Blob Storage. By default, Magento stores media files in the same filesystem that contains the application. This is inefficient for complex, multi-server configurations, and can result in degraded performance when sharing resources. With the Remote Storage module, you can store media files in the `pub/media` directory and import/export files in the `var` directory of the remote object storage to take advantage of server-side image resizing.
+The Remote Storage module provides the option to store media files and schedule imports/exports in a persistent, remote storage container using a storage service, such as AWS S3, Azure Blob Storage or any S3 compatible service. By default, Magento stores media files in the same filesystem that contains the application. This is inefficient for complex, multi-server configurations, and can result in degraded performance when sharing resources. With the Remote Storage module, you can store media files in the `pub/media` directory and import/export files in the `var` directory of the remote object storage to take advantage of server-side image resizing.
 
 ![schema image]
 
@@ -23,12 +23,14 @@ The `parameter-name` refers to the specific remote storage parameter name. The f
 
 | Command line Parameter | Parameter name | Description | Default value |
 |--- |--- |--- |--- |
-| `remote-storage-driver` | driver | Adapter name<br>Possible values:<br>**file**: Disables remote storage and uses the local filesystem<br>**aws-s3**: Use the [Amazon Simple Storage Service (Amazon S3)][AWS S3] | none |
+| `remote-storage-driver` | driver | Adapter name<br>Possible values:<br>**file**: Disables remote storage and uses the local filesystem<br>**aws-s3**: Use the remote storage with [S3][AWS S3] API | none |
+| `remote-storage-endpoint` | endpoint | Endpoint of the object storage | none |
 | `remote-storage-bucket` | bucket | Object storage or container name | none |
 | `remote-storage-prefix` | prefix | Optional prefix (location inside of object storage) | empty |
 | `remote-storage-region` | region | Region name | none |
 | `remote-storage-key` | access key | Optional access key | empty |
 | `remote-storage-secret` | secret key | Optional secret key | empty |
+| `remote-storage-path-style` | path style | Optionaly use path style | 0 |
 
 ### Storage adapters
 
@@ -54,12 +56,18 @@ The following examples enable the remote storage with an AWS S3 storage adapter 
    bin/magento setup:config:set --remote-storage-driver="aws-s3" --remote-storage-bucket="myBucket" --remote-storage-region="us-east-1"
    ```
 
+-  Install new Magento with S3 compatible remote storage
+
+   ```bash
+   bin/magento setup:install --remote-storage-driver="aws-s3" -- remote-storage-endpoint="http://localhost:9000" --remote-storage-bucket="myBucket" --remote-storage-region="us-east-1" --remote-storage-path-style=1
+   ```
+
 ## Migrate content
 
 After you enable remote storage for a specific adapter, you can use the CLI to migrate existing _media_ files to the remote storage.
 
 ```bash
-./magento2ce/bin/magento remote-storage:sync
+bin/magento remote-storage:sync
 ```
 
 {:.bs-callout-info}
