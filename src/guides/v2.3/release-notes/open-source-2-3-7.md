@@ -7,6 +7,10 @@ Magento Open Source 2.3.7 offers significant platform upgrades, 40 security enha
 
 {:.bs-callout-info}
 
+PHP 7.3 reaches end of support in December 2021, and Adobe Commerce 2.3.x reaches end of support in April 2022. **We strongly recommend planning your upgrade now to Adobe Commerce 2.4.x and PHP 7.4.x to help maintain PCI compliance**.
+
+## Backward-Incompatible Changes (BiCs)
+
 Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.7 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 ## Other release information
@@ -25,7 +29,7 @@ This release includes the following security enhancements:
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene.
 
-With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center.
+With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/APSB21-30.html) for a discussion of these fixed issues.
 
 #### Security enhancements and fixes to core code
 
@@ -36,9 +40,11 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 ### Platform upgrades
 
-*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.3.7 introduces support for PHP 7.4. We do not recommend running Magento 2.3.7 with PHP 7.3. Merchants can run Magento 2.3.7 with PHP 7.3, but this configuration has not been tested.
+*  **PHP 7.4 support**. Magento 2.3.7 introduces support for PHP 7.4. Magento Marketplace extension vendors must confirm that new versions of their extensions are compatible with PHP 7.4. All unit and integration tests should be run using PHPUnit 9. See the [PHP 7.4 support for Magento 2.3.x release line](https://community.magento.com/t5/Magento-DevBlog/PHP-7-4-support-for-Magento-2-3-x-release-line/ba-p/458946) DevBlog post.
 
-   Magento Marketplace extension vendors must confirm that new versions of their extensions are compatible with PHP 7.4. All unit and integration tests should be run using PHPUnit 9. See the [PHP 7.4 support for Magento 2.3.x release line](https://community.magento.com/t5/Magento-DevBlog/PHP-7-4-support-for-Magento-2-3-x-release-line/ba-p/458946) DevBlog post.
+*  **PHP 7.3 is now deprecated.**  We do not recommend running Magento 2.3.7 with PHP 7.3. Merchants can run Magento 2.3.7 with PHP 7.3, but this configuration has not been tested. Adobe will continue to perform compatibility testing but not full functional testing with PHP 7.3. PHP 7.3 reaches end-of-life on December 6, 2021, and after that date, all deployments running PHP 7.3 will be vulnerable to security exploits.
+
+*  **Removal of PHP 7.1 and 7.2 compatibility**. You cannot run Magento 2.3.7 on PHP 7.1 or 7.2.
 
 *  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Magento Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all unit and integration tests have been configured to be run with PHPUnit 9.
 
