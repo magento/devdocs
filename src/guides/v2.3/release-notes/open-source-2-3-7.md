@@ -8,6 +8,7 @@ Magento Open Source 2.3.7 offers significant platform upgrades, 40 security enha
 {:.bs-callout-info}
 
 PHP 7.3 reaches end of support in December 2021, and Adobe Commerce 2.3.x reaches end of support in April 2022. **We strongly recommend planning your upgrade now to Adobe Commerce 2.4.x and PHP 7.4.x to help maintain PCI compliance**.
+
 ## Backward-Incompatible Changes (BiCs)
 
 Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.7 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
@@ -41,7 +42,7 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 *  **PHP 7.4 support**. Magento 2.3.7 introduces support for PHP 7.4. Magento Marketplace extension vendors must confirm that new versions of their extensions are compatible with PHP 7.4. All unit and integration tests should be run using PHPUnit 9. See the [PHP 7.4 support for Magento 2.3.x release line](https://community.magento.com/t5/Magento-DevBlog/PHP-7-4-support-for-Magento-2-3-x-release-line/ba-p/458946) DevBlog post.
 
-*  **PHP 7.3 is now deprecated.**  We do not recommend running Magento 2.3.7 with PHP 7.3. Merchants can run Magento 2.3.7 with PHP 7.3, but this configuration has not been tested. Adobe will continue to perform compatibility testing but not full functional testing with PHP 7.3. PHP 7.3 reaches end-of -life on December 6, 2021, and after that date, all deployments running PHP 7.3 will be vulnerable to security exploits.
+*  **PHP 7.3 is now deprecated.**  We do not recommend running Magento 2.3.7 with PHP 7.3. Merchants can run Magento 2.3.7 with PHP 7.3, but this configuration has not been tested. Adobe will continue to perform compatibility testing but not full functional testing with PHP 7.3. PHP 7.3 reaches end-of-life on December 6, 2021, and after that date, all deployments running PHP 7.3 will be vulnerable to security exploits.
 
 *  **Removal of PHP 7.1 and 7.2 compatibility**. You cannot run Magento 2.3.7 on PHP 7.1 or 7.2.
 
