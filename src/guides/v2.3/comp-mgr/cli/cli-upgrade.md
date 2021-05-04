@@ -207,12 +207,8 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 [metapackage]: https://glossary.magento.com/metapackage
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
-<<<<<<< HEAD
-[Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
-=======
 [Update Magento]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Upgrade using the custom composer plugin]: upgrade-with-plugin.html
 [Upgrade using the script]: upgrade-with-script.html
->>>>>>> master
 [Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
 [Check the catalog search engine]: {{ site.baseurl }}/guides/v2.4/comp-mgr/prereq/prereq-elasticsearch.html
