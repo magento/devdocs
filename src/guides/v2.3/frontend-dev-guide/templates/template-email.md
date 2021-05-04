@@ -72,8 +72,12 @@ To add the store and sales related information to a template, use system variabl
 
 System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the Store Hours (`{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`) variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information** section.
 
+![Configuration > General > Store Information section.]({{ site.baseurl }}/common/images/store_information.png)
+
 {:.bs-callout-info}
-You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > **Custom Variables**.
+You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > Other Settings >**Custom Variables**.
+
+![Add new custom variable section]({{ site.baseurl }}/common/images/custom_variables.png)
 
 To add a variable to your template content:
 
