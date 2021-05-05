@@ -30,7 +30,7 @@ Breakpoints are used in the CSS code to set up the screen width at which the des
 
 The Blank and Luma themes use Less variables to implement the following [breakpoints][breakpoints-link]:
 
-You can find the default breakpoint variables from the Magento UI library `lib/web/css/source/lib/variables/_responsive.less`.
+The default breakpoint variables are located in the Magento UI library: `lib/web/css/source/lib/variables/_responsive.less`.
 
 -  `@screen__xxs`: 320px
 -  `@screen__xs`: 480px
