@@ -75,7 +75,7 @@ System variables are placeholders which are replaced by particular values when t
 ![Configuration > General > Store Information section.]({{ site.baseurl }}/common/images/store_information.png)
 
 {:.bs-callout-info}
-You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > Other Settings >**Custom Variables**.
+You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > Other Settings > **Custom Variables**.
 
 ![Add new custom variable section]({{ site.baseurl }}/common/images/custom_variables.png)
 
