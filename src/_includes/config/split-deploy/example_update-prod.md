@@ -30,7 +30,7 @@ To update the production system:
    ```
 
    And `kill` active consumer processes.
-   
+
 1. Pull code from source control.
 
    The Git command follows:
