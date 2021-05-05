@@ -19,7 +19,7 @@ The [`Magento\Framework\Math\Random`]({{ site.mage2bloburl }}/{{ page.guide_vers
 
 ## Examples
 
-In the examples below, let's assume that the `$this->mathRandom` property is an instatiated object of the `Magento\Framework\Math\Random` class.
+In the examples below, the `$this->mathRandom` property is an instantiated object of the `Magento\Framework\Math\Random` class.
 
 ### Generate a random string
 
