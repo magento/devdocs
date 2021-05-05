@@ -48,7 +48,7 @@ There are couple of ways to define validation rules for a form field.
 <input id="field-1" ... data-validate='{"required":true}'/>
 ```
 
-### As a `data-validate` attribute rule with arguments
+### As a `data-validate` attribute with arguments
 
 ```html
 <input id="field-1" ... data-validate='{"required":true, "minlength":10}'/>
@@ -60,7 +60,7 @@ There are couple of ways to define validation rules for a form field.
 <input id="field-1" ... required="true"/>
 ```
 
-### As an attribute rule with arguments
+### As an attribute with arguments
 
 ```html
 <input id="field-1" ... required="true" minlength="15"/>
@@ -72,7 +72,7 @@ There are couple of ways to define validation rules for a form field.
 <input id="field-1" ... class="input-text required-entry"/>
 ```
 
-### As a class name rule with arguments
+### As a class name with arguments
 
 ```html
 <input id="field-1" ... class="input-text required-entry" minlength="15"/>
@@ -85,7 +85,7 @@ There are couple of ways to define validation rules for a form field.
     ...
 </form>
 ```
-### Using `data-mage-init` rule with arguments
+### Using `data-mage-init` with arguments
 
 ```html
 <form ... data-mage-init='{"validation": {"rules": {"field-1": {"required":true, "minlength":20}}}}'>
