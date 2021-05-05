@@ -13,8 +13,24 @@ To update the production system:
 
    For additional options, such as the ability to set an IP address whitelist, see [`magento maintenance:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
 
-1. If you use {{site.data.var.ee}}, stop queue workers. TBD
+1. If you use {{site.data.var.ee}}, stop queue workers.
 
+   Add changes to the app/etc/env.php:
+
+   ```bash
+   'cron_consumers_runner' => [
+           'cron_run' => false
+       ]
+   ```
+
+   Update the configuration:
+
+   ```bash
+   php bin/magento app:config:import
+   ```
+
+   And `kill` active consumer processes.
+   
 1. Pull code from source control.
 
    The Git command follows:
