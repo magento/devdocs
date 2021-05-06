@@ -22,13 +22,17 @@ This query requires a valid [customer authentication token]({{page.baseurl}}/gra
 
 ## Example usage
 
-The following example returns general information about the negotiable quotes that are accessible to the company user.
+The following example returns general information about the negotiable quotes that are accessible to the company user. The results are sorted by negotiable quote name, listed in ascending order. 
 
 **Request:**
 
 ```graphql
 query{
-  negotiableQuotes{
+  negotiableQuotes (sort: {
+    sort_field: QUOTE_NAME
+    sort_direction: ASC
+  })
+{
     items {
       uid
       name
@@ -48,19 +52,31 @@ query{
     "negotiableQuotes": {
       "items": [
         {
+          "uid": "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb",
+          "name": "April 22 request",
+          "created_at": "2021-04-22 15:59:47",
+          "status": "PENDING"
+        },
+        {
           "uid": "kw6mLEvl6vjjPNsjtJqwpamv5o0iT1bc",
           "name": "Discount request",
           "created_at": "2021-04-20 19:01:38",
           "status": "ORDERED"
         },
         {
-          "uid": "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb",
-          "name": "April 22 request",
-          "created_at": "2021-04-22 15:59:47",
-          "status": "SUBMITTED"
+          "uid": "BfYWqXwmUpL2Ra1igfrv6xyOMx89sFDu",
+          "name": "Last request",
+          "created_at": "2021-04-28 15:43:09",
+          "status": "PENDING"
+        },
+        {
+          "uid": "eywCZkG8avwW1eivuahc7oukY0ZFDC3H",
+          "name": "Latest request",
+          "created_at": "2021-04-26 16:35:48",
+          "status": "OPEN"
         }
       ],
-      "total_count": 2
+      "total_count": 4
     }
   }
 }

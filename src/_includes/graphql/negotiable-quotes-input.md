@@ -35,5 +35,5 @@ Attribute | Data Type | Description
 
 Attribute | Data Type | Description
 --- | --- | ---
-`sort_field` | NegotiableQuoteSortableField! | QUOTE_NAME (default), CREATED_AT, or UPDATED_AT
-`sort_direction` | SortEnum! | ASC (default) or DESC
+`sort_field` | NegotiableQuoteSortableField! | CREATED_AT (default), QUOTE_NAME, or UPDATED_AT
+`sort_direction` | SortEnum! | ASC or DESC (default)
