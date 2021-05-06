@@ -21,10 +21,10 @@ See [Patches available in MQP tool](https://support.magento.com/hc/en-us/section
 
 ## v1.0.22
 
--  **MDVA-36718** _(for Magento `>=2.3.0 <=2.4.2`)_-Fixes the issue where the old custom options remain after being changed via API. 
+-  **MDVA-36718** _(for Magento `>=2.3.0 <=2.4.2`)_-Fixes the issue where the old custom options remain after being changed via API.
 -  **MDVA-35773** _(for Magento `>=2.3.6 <=2.3.6-p1 || >=2.4.1 <=2.4.2`)_-Fixes the issue with the Grand Total not being shown as zero on the Invoice for orders with 100% discount.
 -  **MDVA-36833** _(for Magento `2.4.2`)_-Fixes the issue with search results showing random numbers of products per page after excluding some products from shared catalog.
--  **MDVA-37182** _(for Magento `>=2.4.1 <=2.4.2`)_-Fixes the issue with getting incorrect search results in both Elasticsearch version 6 and version 7. 
+-  **MDVA-37182** _(for Magento `>=2.4.1 <=2.4.2`)_-Fixes the issue with getting incorrect search results in both Elasticsearch version 6 and version 7.
 -  **MDVA-36253** _(for Magento `>=2.4.0 <=2.4.1-p1`)_-Fixes the issue where the wrong subtotal shows in the mini cart after item deletion.
 -  **MDVA-36853** _(for Magento `2.4.2`)_-Fixes the issue with no images appear when loading large media galleries.
 
