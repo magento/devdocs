@@ -44,25 +44,25 @@ composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimi
 
 ### Installing and using Composer 2
 
-To install and use Composer 2 in your Starter and Pro projects, you need to make three changes to your `.magento.app.yaml` configuration:
+To install and use Composer 2 in your Starter and Pro projects, you need to make three changes to your `.magento.app.yaml` configuration.
 
-1. Remove `composer` as the `build: flavor:` and add `none`. This change prevents Cloud from installing and using Composer 1.x for build tasks.
-1. Add `composer/composer: '^2.0'` as a `php` dependency to install Composer 2.
-1. Add the `composer` build tasks to a `build` hook to run the build tasks removed from `build: flavor:`.
+1. Remove `composer` as the `build: flavor:` and add `none`. This change prevents Cloud from using the default 1.x version of Composer to run build tasks.
+1. Add `composer/composer: '^2.0'` as a `php` dependency to install Composer 2.x.
+1. Add the `composer` build tasks to a `build` hook to run the build tasks using Composer 2.x.
 
-Use the following configuration fragments in your own `.magento.app.yaml` configuration.
+You can use the following configuration fragments in your own `.magento.app.yaml` configuration:
 
 ```yaml
-# Step 1: Replace composer with none.
+# 1. Change flavor to none.
 build:
     flavor: none
 
-# Step 2: Add composer ^2.0 as a php dependency.
+# 2. Add composer ^2.0 as a php dependency.
 dependencies:
     php:
-        composer/composer: '^2.0' # Installs Composer 2 in your projects.
+        composer/composer: '^2.0'
 
-# Step 3: Add a build hook to run the build tasks using Composer 2.
+# 3. Add a build hook to run the build tasks using Composer 2.x.
 hooks:
     build: |
         set -e
