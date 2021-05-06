@@ -21,6 +21,13 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 
 <!--Add release notes below-->
 
+## v1.0.10
+*Release date: May 10, 2021*<br/>
+
+-  {:.fix} **Compatibility with Magento 2.3.7**—Resolved composer dependencies conflict for installation on Magento 2.3.7.<!--MC-42131-->
+-  {:.fix} **Fixed the issue when the patch can't be applied multiple times**—Fixed the issue when the patch can't be applied multiple times if it includes the entire content of another deprecated patch.<!--MC-41912-->
+-  {:.fix} **Fix the layered navigation issue occurs with shared catalog**—Updated patch to fix the layered navigation issue.<!--MCLOUD-7742-->
+
 ## v1.0.9
 *Release date: February 1, 2021*<br/>
 
