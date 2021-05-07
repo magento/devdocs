@@ -21,8 +21,15 @@ Magento loads the configuration in the following stages:
 
 1. Initial (`app/etc/di.xml`)
 1. Global (`<moduleDir>/etc/di.xml`)
-1. Area-specific-frontend (`<moduleDir>/etc/frontend/di.xml`)
-1. Area-specific-backend (`<moduleDir>/etc/adminhtml/di.xml`)
+1. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
+
+The Areas are following:
+
+-  adminhtml
+-  frontend
+-  webapi_rest
+-  webapi_soap
+-  crontab
 
 During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
