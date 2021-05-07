@@ -37,7 +37,7 @@ The Blank and Luma themes use Less variables to implement the following [breakpo
 -  `@screen__l`: 1024px
 -  `@screen__xl`: 1440px
 
-You can find the default breakpoint variables from the Magento UI library `lib/web/css/source/lib/variables/_responsive.less`.
+The default breakpoint variables are located in the Magento UI library: `lib/web/css/source/lib/variables/_responsive.less`.
 
 You can change these breakpoints or add new ones in your custom theme. For instructions see the [Add a new breakpoint][rwd-breakpoints] topic.
 
