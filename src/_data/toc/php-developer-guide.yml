@@ -267,8 +267,14 @@ pages:
         - label: DateTime Library
           url: /extension-dev-guide/framework/datetime.html
 
+        - label: Float Comparator
+          url: /extension-dev-guide/framework/float-comparator.html
+
         - label: Serialize Library
           url: /extension-dev-guide/framework/serializer.html
+
+        - label: Math Random
+          url: /extension-dev-guide/framework/math-random.html
 
         - label: URL Library
           url: /extension-dev-guide/framework/url-library.html
