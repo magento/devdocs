@@ -25,11 +25,11 @@ Magento loads the configuration in the following stages:
 
 The Areas are following:
 
--  adminhtml
--  frontend
--  webapi_rest
--  webapi_soap
--  crontab
+*  adminhtml
+*  frontend
+*  webapi_rest
+*  webapi_soap
+*  crontab
 
 During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
