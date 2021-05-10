@@ -29,7 +29,7 @@ The following example moves all items from the cart to a gift registry.
 
 ``` graphql
 mutation {
-  moveCartItemsToGiftRegistry  ( 
+  moveCartItemsToGiftRegistry  (
       cartUid:"8k0Q4MpH2IGahWrTRtqM61YV2MtLPApz", 
       giftRegistryUid:"Owu5mdQ3uyfOAWzj8lFlHZW4uCDaMWC6"
   ) {
