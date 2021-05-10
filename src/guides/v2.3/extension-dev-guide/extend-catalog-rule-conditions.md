@@ -1,0 +1,127 @@
+---
+title: Extend Catalog Rule Conditions
+contributor_name: Ziffity
+contributor_link: https://www.ziffity.com/
+group: php-developer-guide
+---
+
+Catalog price rules can be used to offer products to buyers at a discounted price, based on a set of defined conditions. Catalog price rules do not use coupon codes, because they are triggered before a product is placed into the shopping cart.
+
+{:.bs-callout-info}
+For more information about catalog price rules, refer to [Catalog Rules](https://docs.magento.com/user-guide/marketing/price-rules-catalog.html).
+
+## Default Conditions
+
+In the `Conditions` tab, by default, the Magento comes with the following product attributes in the add conditions section.
+
+![Catalog Rule Conditions]({{ site.baseurl }}/common/images/conditions-section-v2.png)
+
+## Implementation of Existing Conditions
+
+In the `app/code/Magento/CatalogRule/etc/di.xml` configuration, the following `type` configuration is defined.
+
+```xml
+<type name="Magento\CatalogRule\Model\Rule\Condition\Combine">
+    <arguments>
+        <argument name="data" xsi:type="array">
+            <item name="form_name" xsi:type="string">catalog_rule_form</item>
+        </argument>
+    </arguments>
+</type>
+<type name="Magento\CatalogRule\Model\Rule\Condition\Product">
+    <arguments>
+        <argument name="data" xsi:type="array">
+            <item name="form_name" xsi:type="string">catalog_rule_form</item>
+        </argument>
+    </arguments>
+</type>
+```
+
+In the above configurtion, the `catalog_rule_form` is an ui component form. It is defined in the `app/code/Magento/CatalogRule/view/adminhtml/ui_component/catalog_rule_form.xml`.
+
+The `Magento\CatalogRule\Model\Rule\Condition\Combine` and the `Magento\CatalogRule\Model\Rule\Condition\Product` classes are important for the listed conditions and validations of the specified conditions.
+
+The `getNewChildSelectOptions` method from the `app/code/Magento/CatalogRule/Model/Rule/Condition/Combine.php` file is responsible for the listed conditions. It returns the array of valid lists of conditions.
+
+Below is the definition of `getNewChildSelectOptions` method:
+
+```php
+/**
+ * @return array
+ */
+public function getNewChildSelectOptions()
+{
+    $productAttributes = $this->_productFactory->create()->loadAttributeOptions()->getAttributeOption();
+    $attributes = [];
+    foreach ($productAttributes as $code => $label) {
+        $attributes[] = [
+            'value' => 'Magento\CatalogRule\Model\Rule\Condition\Product|' . $code,
+            'label' => $label,
+        ];
+    }
+    $conditions = parent::getNewChildSelectOptions();
+    $conditions = array_merge_recursive(
+        $conditions,
+        [
+            [
+                'value' => \Magento\CatalogRule\Model\Rule\Condition\Combine::class,
+                'label' => __('Conditions Combination'),
+            ],
+            ['label' => __('Product Attribute'), 'value' => $attributes]
+        ]
+    );
+    return $conditions;
+}
+```
+
+In the above example, the `$conditions` array will contain the list of valid conditions. Each item in the array will have the `value` and the `label` key with the appropriable values.
+
+The `validate` method from the `app/code/Magento/CatalogRule/Model/Rule/Condition/Product.php` file is responsible for the validations of the conditions defined in the catalog price rules.
+
+Below is the definition of `validate` method:
+
+```php
+/**
+ * Validate product attribute value for condition
+ *
+ * @param \Magento\Catalog\Model\Product|\Magento\Framework\Model\AbstractModel $model
+ * @return bool
+ */
+public function validate(\Magento\Framework\Model\AbstractModel $model)
+{
+    $attrCode = $this->getAttribute();
+    if ('category_ids' == $attrCode) {
+        return parent::validate($model);
+    }
+
+    $oldAttrValue = $model->getData($attrCode);
+    if ($oldAttrValue === null) {
+        if ($this->getOperator() === '<=>') {
+            return true;
+        }
+        return false;
+    }
+
+    $this->_setAttributeValue($model);
+
+    $result = $this->validateAttribute($model->getData($attrCode));
+    $this->_restoreOldAttrValue($model, $oldAttrValue);
+
+    return (bool)$result;
+}
+```
+
+In the above example, the `validate` method defines the logic to validate the specified conditions in the catalog price rule.
+
+Note that the `app/code/Magento/CatalogRule/Model/Rule/Condition/Product.php` class extends from the `app/code/Magento/Rule/Model/Condition/Product/AbstractProduct.php` abstract class.
+
+The `app/code/Magento/Rule/Model/Condition/Product/AbstractProduct.php` abstract class extend from the `app/code/Magento/Rule/Model/Condition/AbstractCondition.php` class.
+
+{:.bs-callout-info}
+The validation class for the catalog price rule must extend from the `Magento\Rule\Model\Condition\AbstractCondition` class.
+
+## Steps to Extend Catalog Rule Conditions
+
+*  Create the `after` plugin for the `getNewChildSelectOptions` method. Then add your custom condition to it.
+*  Add the `type` configuration in the `<custom_module_dir>/etc/di.xml` file.
+*  Create a class that extends from the `Magento\Rule\Model\Condition\AbstractCondition` class. Then define the validate method with your custom logic.

@@ -249,6 +249,9 @@ pages:
         - label: Variable Pool
           url: /extension-dev-guide/variable-pool/
 
+        - label: Extend Catalog Rule Conditions
+          url: /extension-dev-guide/extend-catalog-rule-conditions.html
+
     - label: Configuration
       children:
 
