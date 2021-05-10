@@ -422,6 +422,11 @@ pages:
         - label: mergeCarts mutation
           url: /graphql/mutations/merge-carts.html
 
+        - label: moveCartItemsToGiftRegistry mutation
+          url: /graphql/mutations/move-cart-items-to-gift-registry.md
+          edition: ee-only
+          exclude_versions: [ "2.3" ]
+
         - label: moveProductsBetweenWishlists mutation
           url: /graphql/mutations/move-products-between-wishlists.html
           edition: ee-only
