@@ -12,7 +12,7 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 
 ```graphql
 mutation {
-    moveProductsBetweenWishlists(
+    moveCartItemsToGiftRegistry (
         cartUid: ID!,
         giftRegistryUid: ID!
     ) {
@@ -107,7 +107,7 @@ The `MoveCartItemsToGiftRegistryOutput` object can contain the following attribu
 Attribute |  Data Type | Description
 --- | --- | ---
 `gift_registry` | [GiftRegistry!](#GiftRegistry) | The gift registry containing the moved items
-`status` | [Boolean!] | Indicates whether the attempt to move the cart items to the gift registry was successful
+`status` | Boolean! | Indicates whether the attempt to move the cart items to the gift registry was successful
 `user_errors` | [[GiftRegistryItemsUserError!](#GiftRegistryItemsUserError)] | An array of errors encountered while moving items from the cart to the gift registry
 
 ### GiftRegistry attributes {#GiftRegistry}
