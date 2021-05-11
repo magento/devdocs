@@ -14,7 +14,7 @@ The following steps are required to add a custom field to an offline payment met
 
 1. Create a new module.
 1. Create an `InstallSchema` script.
-1. Add a `requirejs` file to the module..
+1. Add a `requirejs` file to the module.
 1. Override the vendor files.
 1. Add an Observer.
 1. Verify that the module works.
@@ -77,7 +77,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
 
 {% endcollapsible %}
 
-## Step 2 Create an InstallSchema script
+## Step 2 Create an InstallSchema script.
 
 Next, we need to create the InstallSchema script.
 Because adding an new column technically into several tables, such as `quote_payment` and `sales_order_payment.`
@@ -96,7 +96,7 @@ class InstallSchema implements InstallSchemaInterface
 {
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
-        $setup->startSetup();   
+        $setup->startSetup();
 		$setup->getConnection()->addColumn(
             $setup->getTable('quote_payment'),
             'paymentpocomment',
@@ -122,7 +122,7 @@ class InstallSchema implements InstallSchemaInterface
 
 {% endcollapsible %}
 
-## Step 3: Add a requirejs file to module
+## Step 3: Add a requirejs file to the module
 
 Next, create the `requirejs-config.js` file:
 
@@ -225,8 +225,8 @@ define([
                 method: this.item.method,
                 'po_number': this.purchaseOrderNumber(),
                 'additional_data': {
-					 'po_number': $('#po_number').val(),
-					 'paymentpocomment': $('#purchaseorder_paymentpocomment').val(),
+                    'po_number': $('#po_number').val(),
+                    'paymentpocomment': $('#purchaseorder_paymentpocomment').val(),
                 }
             };
         },
@@ -283,30 +283,24 @@ It is also necessary to override the `purchaseorder-form.html` template file to 
             <fieldset class="fieldset payment method" data-bind='attr: {id: "payment_form_" + getCode()}'>
                 <div class="field field-number required">
                     <label for="po_number" class="label">
-                        <span><!-- ko i18n: 'Purchase Order Number'--><!-- /ko --></span>
+                    <span><!-- ko i18n: 'Purchase Order Number'--><!-- /ko -->
+                        </span>
                     </label>
                     <div class="control">
 						<div class="name-info">
-							<input type="text"
+                            <input type="text"
                                id="po_number"
                                name="payment[po_number]"
 							   placeholder="Purchase Order Number"
                                data-validate="{required:true}"
-                               data-bind='
-                                attr: {title: $t("Purchase Order Number")},
-                                value: purchaseOrderNumber'
-                               class="input-text"/>
-							
-							<input type="text" 
+                               data-bind='attr: {title: $t("Purchase Order Number")},value: purchaseOrderNumber' class="input-text"/>
+							<input type="text"
                                     id="purchaseorder_paymentpocomment"
-									name="payment[paymentpocomment]" 
+									name="payment[paymentpocomment]"
 									class="input-text"
 									placeholder="Purchase Order Comment"
 									value=""
-									data-bind="attr: {
-									title: $t('Purchase Order Comment'),
-									'data-container': getCode() + '-paymentpocomment',
-									valueUpdate: 'keyup' "/>
+									data-bind="attr: {title: $t('Purchase Order Comment'),'data-container': getCode() + '-paymentpocomment',valueUpdate: 'keyup' "/>
                         </div>
                     </div>
                 </div>
@@ -338,7 +332,7 @@ It is also necessary to override the `purchaseorder-form.html` template file to 
 
 {% endcollapsible %}
 
-## Step 5: Add a Observer.
+## Step 5: Add an Observer
 
 Next, it is necessary to create the Observer file to save the custom field data to the order. For the Observer file an `event.xml` file is required to call the observer for a particular event. For this example, the `checkout_onepage_controller_success_action` event is used.
 
@@ -347,9 +341,9 @@ Next, it is necessary to create the Observer file to save the custom field data 
 ```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
-	<event name="checkout_onepage_controller_success_action">
-		<observer name="paymentfields_paymentfields_observer_frontend_sales_orderpaymentsavebefore" instance="Learning\CustomField\Observer\Frontend\Sales\OrderPaymentSaveBefore" />
-	</event>
+    <event name="checkout_onepage_controller_success_action">
+        <observer name="paymentfields_paymentfields_observer_frontend_sales_orderpaymentsavebefore" instance="Learning\CustomField\Observer\Frontend\Sales\OrderPaymentSaveBefore" />
+    </event>
 </config>
 ```
 
@@ -358,13 +352,6 @@ Next, it is necessary to create the Observer file to save the custom field data 
 {% collapsible Show code %}
 
 ```php?start_inline=1
-<?php
-/**
- * Copyright ©  All rights reserved.
- * See COPYING.txt for license details.
- */
-declare(strict_types=1);
-
 namespace Learning\CustomField\Observer\Frontend\Sales;
 
 use Magento\Framework\Event\Observer as EventObserver;
@@ -374,7 +361,7 @@ use Magento\Framework\App\Request\DataPersistorInterface;
 
 class OrderPaymentSaveBefore implements \Magento\Framework\Event\ObserverInterface
 {
-    protected $_order;
+    protected $order;
     protected $logger;
     protected $_serialize;
     protected $quoteRepository;
@@ -385,12 +372,11 @@ class OrderPaymentSaveBefore implements \Magento\Framework\Event\ObserverInterfa
         \Psr\Log\LoggerInterface $logger,
         \Magento\Framework\Serialize\Serializer\Serialize $serialize
     ) {
-        $this->_order = $order;
+        $this->order = $order;
         $this->quoteRepository = $quoteRepository;
         $this->logger = $logger;
         $this->_serialize = $serialize;
     }
-
     /**
      * Execute observer
      *
@@ -401,16 +387,14 @@ class OrderPaymentSaveBefore implements \Magento\Framework\Event\ObserverInterfa
     {
         $orderids = $observer->getEvent()->getOrderIds();
         if(!$orderids){
-            foreach($orderids as $orderid){
+            foreach ($orderids as $orderid) {
                 $order = $this->_order->load($orderid);
                 $method = $order->getPayment()->getMethod();
                 if($method == 'purchaseorder') {
                     $quote_id = $order->getQuoteId();
                     $quote = $this->quoteRepository->get($quote_id);
-                    
                     $paymentQuote = $quote->getPayment();
                     $paymentOrder = $order->getPayment();
-                    
                     $paymentOrder->setData('paymentpocomment',$paymentQuote->getPaymentpocomment());
                     $paymentOrder->save();
                 }
@@ -418,12 +402,11 @@ class OrderPaymentSaveBefore implements \Magento\Framework\Event\ObserverInterfa
         }
     }
 }
-
 ```
 
 {% endcollapsible %}
 
-## Step 6: Verify that it works
+## Step 6: Verify that the module works
 
 Add the product to the cart and go to the checkout page and select `purchase order` payment method and check that the new custom field can be seen (Purchase Order Comment).
 
