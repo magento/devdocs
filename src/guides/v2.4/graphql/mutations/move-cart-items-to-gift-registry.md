@@ -93,7 +93,7 @@ mutation {
 
 ## Input attributes
 
-The `moveCartItemsToGiftRegistry` mutation requires the following input.
+The `moveCartItemsToGiftRegistry` mutation requires the following input:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -102,7 +102,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `MoveCartItemsToGiftRegistryOutput` object can contain the following attributes.
+The `MoveCartItemsToGiftRegistryOutput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
