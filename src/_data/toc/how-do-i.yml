@@ -57,7 +57,7 @@ pages:
         url: /howdoi/checkout/checkout_shipping_methods.html
 
       - label: Add a custom field in offline payment method
-        url: /howdoi/checkout/checkout_paymet_new_field.html
+        url: /howdoi/checkout/checkout_payment_new_field.html
 
   - label: Customize Magento Admin design
     url: /howdoi/admin/customize_admin.html
