@@ -29,7 +29,7 @@ entries:
   labels:
   - 2.3.7
   - Major Update
-- description: Added reference for 2.3.7 [backward incompatible changes (BICs)](https://devdocsmagento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html)
+- description: Added reference for 2.3.7 [backward incompatible changes (BICs)](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html)
     for beta.
   versions: 2.3.7
   type: Major Update
