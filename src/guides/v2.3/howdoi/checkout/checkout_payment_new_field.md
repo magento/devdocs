@@ -97,13 +97,13 @@ class InstallSchema implements InstallSchemaInterface
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
-		$setup->getConnection()->addColumn(
+        $setup->getConnection()->addColumn(
             $setup->getTable('quote_payment'),
             'paymentpocomment',
             [
-                'type' => 'text',
-                'nullable' => true  ,
-                'comment' => 'paymentpocomment',
+            'type' => 'text',
+            'nullable' => true,
+            'comment' => 'paymentpocomment',
             ]
         );
         $setup->getConnection()->addColumn(
@@ -283,24 +283,12 @@ It is also necessary to override the `purchaseorder-form.html` template file to 
             <fieldset class="fieldset payment method" data-bind='attr: {id: "payment_form_" + getCode()}'>
                 <div class="field field-number required">
                     <label for="po_number" class="label">
-                    <span><!-- ko i18n: 'Purchase Order Number'--><!-- /ko -->
-                        </span>
+                    <span><!-- ko i18n: 'Purchase Order Number'--><!-- /ko --></span>
                     </label>
                     <div class="control">
-						<div class="name-info">
-                            <input type="text"
-                               id="po_number"
-                               name="payment[po_number]"
-							   placeholder="Purchase Order Number"
-                               data-validate="{required:true}"
-                               data-bind='attr: {title: $t("Purchase Order Number")},value: purchaseOrderNumber' class="input-text"/>
-							<input type="text"
-                                    id="purchaseorder_paymentpocomment"
-									name="payment[paymentpocomment]"
-									class="input-text"
-									placeholder="Purchase Order Comment"
-									value=""
-									data-bind="attr: {title: $t('Purchase Order Comment'),'data-container': getCode() + '-paymentpocomment',valueUpdate: 'keyup' "/>
+                    <div class="name-info">
+                            <input type="text" id="po_number" name="payment[po_number]" placeholder="Purchase Order Number" data-validate="{required:true}"        data-bind='attr: {title: $t("Purchase Order Number")},value: purchaseOrderNumber' class="input-text"/>
+							<input type="text" id="purchaseorder_paymentpocomment" name="payment[paymentpocomment]" class="input-text" placeholder="Purchase Order Comment" value="" data-bind="attr: {title: $t('Purchase Order Comment'),'data-container': getCode() + '-paymentpocomment',valueUpdate: 'keyup' "/>
                         </div>
                     </div>
                 </div>
