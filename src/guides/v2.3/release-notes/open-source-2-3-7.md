@@ -29,7 +29,7 @@ This release includes the following security enhancements:
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene.
 
-With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/APSB21-30.html) for a discussion of these fixed issues.
+With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb21-30.html) for a discussion of these fixed issues.
 
 #### Security enhancements and fixes to core code
 
