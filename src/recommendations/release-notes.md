@@ -19,7 +19,7 @@ The release notes include:
 ## 3.2.6 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.fix}Fixed a JavaScript modal error
--  {:.fix}Fixed an issue where Fastly's WAF was incorrectly blocking a cookie
+-  {:.fix}Fixed an issue where Fastly's Web Application Firewall (WAF) was incorrectly blocking a cookie
 
 ## 3.2.5 of magento/product-recommendations for Magento Commerce 2.4.0
 
