@@ -5,20 +5,20 @@ contributor_link: https://www.ziffity.com/
 group: php-developer-guide
 ---
 
-Catalog price rules can be used to offer products to buyers at a discounted price, based on a set of defined conditions. Catalog price rules do not use coupon codes, because they are triggered before a product is placed into the shopping cart.
+Catalog price rules can be used to offer products to buyers at a discounted price, based on a set of defined conditions. Catalog price rules do not use coupon codes. The discounts are applied to the final product price in the product listing and the product description page even before adding the product to the shopping cart.
 
 {:.bs-callout-info}
 For more information about catalog price rules, refer to [Catalog Rules](https://docs.magento.com/user-guide/marketing/price-rules-catalog.html).
 
 ## Default Conditions
 
-In the `Conditions` tab, by default, the Magento comes with the following product attributes in the add conditions section.
+In the `Conditions` tab, by default, Magento comes with the following product attributes in the `add conditions` section.
 
 ![Catalog Rule Conditions]({{ site.baseurl }}/common/images/conditions-section-v2.png)
 
 ## Implementation of Existing Conditions
 
-In the `app/code/Magento/CatalogRule/etc/di.xml` configuration, the following `type` configuration is defined.
+In the `app/code/Magento/CatalogRule/etc/di.xml` configuration, the following `type` configuration is defined:
 
 ```xml
 <type name="Magento\CatalogRule\Model\Rule\Condition\Combine">
@@ -37,11 +37,11 @@ In the `app/code/Magento/CatalogRule/etc/di.xml` configuration, the following `t
 </type>
 ```
 
-In the above configurtion, the `catalog_rule_form` is an ui component form. It is defined in the `app/code/Magento/CatalogRule/view/adminhtml/ui_component/catalog_rule_form.xml`.
+In the above configuration, the `catalog_rule_form` is a UI component form. It is defined in the `app/code/Magento/CatalogRule/view/adminhtml/ui_component/catalog_rule_form.xml` file.
 
 The `Magento\CatalogRule\Model\Rule\Condition\Combine` and the `Magento\CatalogRule\Model\Rule\Condition\Product` classes are important for the listed conditions and validations of the specified conditions.
 
-The `getNewChildSelectOptions` method from the `app/code/Magento/CatalogRule/Model/Rule/Condition/Combine.php` file is responsible for the listed conditions. It returns the array of valid lists of conditions.
+The `getNewChildSelectOptions` method from the `app/code/Magento/CatalogRule/Model/Rule/Condition/Combine.php` file is responsible for the listed conditions. It returns an array of the lists of valid conditions.
 
 Below is the definition of `getNewChildSelectOptions` method:
 
@@ -74,11 +74,11 @@ public function getNewChildSelectOptions()
 }
 ```
 
-In the above example, the `$conditions` array will contain the list of valid conditions. Each item in the array will have the `value` and the `label` key with the appropriable values.
+In the above example, the `$conditions` array will contain the list of valid conditions. Each item in the array will have the `value` and the `label` key with the appropriate values.
 
 The `validate` method from the `app/code/Magento/CatalogRule/Model/Rule/Condition/Product.php` file is responsible for the validations of the conditions defined in the catalog price rules.
 
-Below is the definition of `validate` method:
+Below is the definition of the `validate` method:
 
 ```php
 /**
@@ -115,7 +115,7 @@ In the above example, the `validate` method defines the logic to validate the sp
 
 Note that the `app/code/Magento/CatalogRule/Model/Rule/Condition/Product.php` class extends from the `app/code/Magento/Rule/Model/Condition/Product/AbstractProduct.php` abstract class.
 
-The `app/code/Magento/Rule/Model/Condition/Product/AbstractProduct.php` abstract class extend from the `app/code/Magento/Rule/Model/Condition/AbstractCondition.php` class.
+The `app/code/Magento/Rule/Model/Condition/Product/AbstractProduct.php` abstract class extends from the `app/code/Magento/Rule/Model/Condition/AbstractCondition.php` class.
 
 {:.bs-callout-info}
 The validation class for the catalog price rule must extend from the `Magento\Rule\Model\Condition\AbstractCondition` class.
@@ -124,4 +124,4 @@ The validation class for the catalog price rule must extend from the `Magento\Ru
 
 *  Create the `after` plugin for the `getNewChildSelectOptions` method. Then add your custom condition to it.
 *  Add the `type` configuration in the `<custom_module_dir>/etc/di.xml` file.
-*  Create a class that extends from the `Magento\Rule\Model\Condition\AbstractCondition` class. Then define the validate method with your custom logic.
+*  Create a class that extends from the `Magento\Rule\Model\Condition\AbstractCondition` class. Then define the `validate` method with your custom logic.
