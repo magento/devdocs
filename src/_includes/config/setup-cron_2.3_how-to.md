@@ -42,7 +42,7 @@ include note.html
 type='info'
 content='The `update/cron.php` file exists in [Composer](https://glossary.magento.com/composer)- and [archive-based](https://magento.com/tech-resources/download) Magento installations. It does not exist if you installed Magento by cloning the [Magento 2 git repository](https://github.com/magento/magento2/).
 
-In [Composer-based installations](https://glossary.magento.com/composer), Magento creates the `update/` directory when you run `composer create-project`. Running `composer install` does not create the `update/` directory (if it did not exist before). See [Recreate the Magento updater](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#recreate-magento-updater).'
+In [Composer-based installations](https://glossary.magento.com/composer), Magento creates the `update/` directory when you run `composer create-project`. Running `composer install` does not create the `update/` directory (if it did not exist before). See [Recreate the Magento updater](https://devdocs.magento.com/guides/v2.3/comp-mgr/updater/update-updater.html).'
 %}
 
 Starting in Magento version 2.3.4, cron tasks are categorized into two groups:

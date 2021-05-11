@@ -1,13 +1,10 @@
 ---
-subgroup: W_continue
-title:
-menu_title: Next&mdash;Installation part 3, post-installation
-menu_node: parent
-menu_order: 1
+title: Post-installation
 functional_areas:
   - Install
   - System
   - Setup
+redirect_from: /guides/v2.3/install-gde/continue-to-verify.html
 ---
 
 ## Now that you've finished your installation
@@ -26,8 +23,8 @@ If you haven't already installed optional sample data, you can [install it now](
 
 ### Manage and upgrade components
 
-*  [Component management (install, uninstall, enable, disable, update)]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
-*  [System upgrade (upgrade the Magento software)]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
+*  [Component management (install, uninstall, enable, disable, update)]({{ page.baseurl }}/comp-mgr/manage-module.html)
+*  [System upgrade (upgrade the Magento software)]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html)
 
 ### Configure
 
