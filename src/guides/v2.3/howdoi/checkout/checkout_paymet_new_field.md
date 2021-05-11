@@ -2,7 +2,7 @@
 layout: tutorial
 group: how-do-i
 subgroup:
-title: Add a custom field in offline payment method to checkout
+title: Add a custom field in offline payment method
 subtitle: Customize Checkout
 menu_order: 3
 level3_subgroup: checkout-tutorial
@@ -13,11 +13,11 @@ functional_areas:
 We will need to take the following steps to add a custom field in offline payment method:
 
 1. Create a new module.
-1. Add an InstallData script.
+1. Create an InstallData script.
 1. Add a requirejs file in module.
+1. Override the vendor files.
 1. Add a Observer.
-1. Add a frontend model.
-1. Execute the InstallData script and verify that it works.
+1. Verify that it works.
 
 Let’s go through each step.
 
@@ -103,7 +103,7 @@ class InstallSchema implements InstallSchemaInterface
             [
                 'type' => 'text',
                 'nullable' => true  ,
-                'comment' => 'customfield',
+                'comment' => 'paymentpocomment',
             ]
         );
         $setup->getConnection()->addColumn(
@@ -112,7 +112,7 @@ class InstallSchema implements InstallSchemaInterface
             [
                 'type' => 'text',
                 'nullable' => true  ,
-                'comment' => 'customfield',
+                'comment' => 'paymentpocomment',
             ]
         );
         $setup->endSetup();
@@ -138,7 +138,7 @@ app/code/Learning/CustomField/view/frontend/requirejs-config.js
 }
 ```
 
-## Step 3: Override the vendor files
+## Step 4: Override the vendor files
 
 Next. we need to override the offline-payments.js file for change the renderer of Purchase Order payment method.
 
@@ -186,6 +186,8 @@ define(
 Here we also need to override the purchaseorder-method.js file.
 
 app/code/Learning/CustomField/view/frontend/web/js/view/payment/method-renderer/purchaseorder-method.js
+
+{% collapsible Show code %}
 
 ```js
 /**
@@ -242,9 +244,13 @@ define([
 
 ```
 
-Here we also need to override the purchaseorder-form.html template file for add our custom input field.
+{% endcollapsible %}
+
+Here we also need to override the purchaseorder-form.html template file for add our custom input field(Purchase Order Comment).
 
 app/code/Learning/CustomField/view/frontend/web/template/payment/purchaseorder-form.html
+
+{% collapsible Show code %}
 
 ```html
 <!--
@@ -330,9 +336,13 @@ app/code/Learning/CustomField/view/frontend/web/template/payment/purchaseorder-f
 </div>
 ```
 
-## Step 4: Add a Observer.
+{% endcollapsible %}
+
+## Step 5: Add a Observer.
 
 Next. we need to create the Observer file for save our custom field data in order.but for the observer file we must create one event.xml file for call observer file in any particular event.(here we use checkout_onepage_controller_success_action event)
+
+app/code/Learning/CustomField/etc/events.xml
 
 ```xml
 <?xml version="1.0"?>
@@ -344,6 +354,8 @@ Next. we need to create the Observer file for save our custom field data in orde
 ```
 
 app/code/Learning/CustomField/Observer/Frontend/Sales/OrderPaymentSaveBefore.php
+
+{% collapsible Show code %}
 
 ```php?start_inline=1
 <?php
@@ -410,3 +422,13 @@ class OrderPaymentSaveBefore implements \Magento\Framework\Event\ObserverInterfa
 }
 
 ```
+
+{% endcollapsible %}
+
+## Step 6: Verify that it works
+
+Add the product to the cart and go to the checkout page and select `purchase order` payment method and check you can see a new custom filed.(Purchase Order Comment)
+
+If you can not see `purchase order` payment method on checkout page then go to admin and enable the payment method. (Stores -> Configuration -> Sales -> Payment Methods -> Other Payment Methods -> Purchase Order -> Enabled)
+
+![Custom field in checkout page]({{ page.baseurl }}/howdoi/checkout/images/custom_field_payment.png)
