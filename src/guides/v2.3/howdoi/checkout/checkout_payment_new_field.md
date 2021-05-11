@@ -287,8 +287,8 @@ It is also necessary to override the `purchaseorder-form.html` template file to 
                     </label>
                     <div class="control">
                     <div class="name-info">
-                            <input type="text" id="po_number" name="payment[po_number]" placeholder="Purchase Order Number" data-validate="{required:true}"        data-bind='attr: {title: $t("Purchase Order Number")},value: purchaseOrderNumber' class="input-text"/>
-							<input type="text" id="purchaseorder_paymentpocomment" name="payment[paymentpocomment]" class="input-text" placeholder="Purchase Order Comment" value="" data-bind="attr: {title: $t('Purchase Order Comment'),'data-container': getCode() + '-paymentpocomment',valueUpdate: 'keyup' "/>
+                    <input type="text" id="po_number" name="payment[po_number]" placeholder="Purchase Order Number" data-validate="{required:true}"        data-bind='attr: {title: $t("Purchase Order Number")},value: purchaseOrderNumber' class="input-text"/>
+                    <input type="text" id="purchaseorder_paymentpocomment" name="payment[paymentpocomment]" class="input-text" placeholder="Purchase Order Comment" value="" data-bind="attr: {title: $t('Purchase Order Comment'),'data-container': getCode() + '-paymentpocomment',valueUpdate: 'keyup' "/>
                         </div>
                     </div>
                 </div>
