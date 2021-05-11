@@ -23,7 +23,7 @@ Magento loads the configuration in the following stages:
 1. Global (`<moduleDir>/etc/di.xml`)
 1. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
-The Areas are following:
+The areas are:
 
 *  adminhtml
 *  frontend
