@@ -83,7 +83,7 @@ entries:
   - Major Update
   - 'Progress: done'
   - Tracking
-- description: How to specify the [Composer version](https://devdocs.magento.com/cloud/docker/docker-config.html)
+- description: Indicated how to specify the [Composer version](https://devdocs.magento.com/cloud/docker/docker-config.html)
     (1.x, 2.x) to install in your Cloud Docker instance.
   versions: 2.4.2, 2.4.3
   type: Major Update
