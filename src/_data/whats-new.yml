@@ -4,9 +4,86 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Tue May 4 10:56:38 2021
+updated: Tue May 11 11:55:04 2021
 entries:
-- description: How to specify the [Composer version](https://devdocs.magento.com/cloud/docker/docker-config.html) 
+- description: Added an end-of-support (EOS) banner to all [2.3.x documentation](https://devdocs.magento.com/guides/v2.3/).
+  versions: 2.3.x
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2261
+  merge_commit: 81b72c9f88c3a698ebdc74b14811f3d45420e85c
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.3.x
+  - Major Update
+- description: Added [release notes](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)
+    for Magento Commerce and Magento Open Source 2.3.7 GA.
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2258
+  merge_commit: ddb46380380522dbd4f012f562008761b6e9f680
+  contributor: jfrontain
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Added reference for 2.3.7 [backward incompatible changes (BICs)](https://devdocsmagento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html)
+    for beta.
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2190
+  merge_commit: 23effa29af2ffe2ff42b6cea0f52c9a7d83ffb7a
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Added 2.3.7 [release notes](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)
+    for beta.
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2186
+  merge_commit: e1819acb085e9405aa721051a9a2c02dec4c5875
+  contributor: jfrontain
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Updated the [availability](https://devdocs.magento.com/release/availability.html)
+    and [compatibility](https://devdocs.magento.com/extensions/vendor/) of Magento-developed
+    extensions (MDEs) and vendor-bundled extensions (VBEs).
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2175
+  merge_commit: cf4b835592a5f82d88f4c85c8d86e4da75cd1d0d
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Removed references to the Web Setup Wizard, Component Manager, Module
+    Manager, and System Upgrade Utility because the functionality was deprecated in
+    2.3.6 and removed in 2.4.0. Updated the [installation flow diagram](https://devdocs.magento.com/guides/v2.3/install-gde/install-flow-diagram.html)
+    and optimized the [Software Update Guide](https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html).
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento/devdocs/pull/8705
+  merge_commit: aac6244d80c124339031b23fc9228b689d9b40ec
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.3.7
+  - Internal Dev
+  - Major Update
+  - 'Progress: done'
+  - Tracking
+- description: How to specify the [Composer version](https://devdocs.magento.com/cloud/docker/docker-config.html)
     (1.x, 2.x) to install in your Cloud Docker instance.
   versions: 2.4.2, 2.4.3
   type: Major Update
