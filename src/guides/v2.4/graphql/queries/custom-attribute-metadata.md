@@ -265,6 +265,7 @@ Attribute |  Data Type | Description
 `use_in_product_listing` | Boolean | Indicates whether the attribute is displayed in product listings
 `use_in_search_results_layered_navigation`| Boolean | Indicates whether the attribute can be used in layered navigation on search results pages
 `visible_on_catalog_pages`| Boolean | Indicates whether the attribute is displayed on product pages
+
 ## Errors
 
 Error | Description
