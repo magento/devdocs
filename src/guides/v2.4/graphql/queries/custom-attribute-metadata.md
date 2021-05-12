@@ -40,10 +40,16 @@ The following query returns the attribute type for various custom and EAV attrib
        value
        label
      }
+      storefront_properties {
+        use_in_product_listing
+        use_in_layered_navigation
+        use_in_search_results_layered_navigation
+        visible_on_catalog_pages
+        position
+      }
     }
   }
 }
-
 ```
 
 **Response:**
@@ -64,7 +70,7 @@ The following query returns the attribute type for various custom and EAV attrib
               "label": "55 cm"
             },
             {
-              "value": "169",
+              "value": "166",
               "label": "XS"
             },
             {
@@ -72,7 +78,7 @@ The following query returns the attribute type for various custom and EAV attrib
               "label": "65 cm"
             },
             {
-              "value": "170",
+              "value": "167",
               "label": "S"
             },
             {
@@ -80,7 +86,7 @@ The following query returns the attribute type for various custom and EAV attrib
               "label": "75 cm"
             },
             {
-              "value": "171",
+              "value": "168",
               "label": "M"
             },
             {
@@ -88,7 +94,7 @@ The following query returns the attribute type for various custom and EAV attrib
               "label": "6 foot"
             },
             {
-              "value": "172",
+              "value": "169",
               "label": "L"
             },
             {
@@ -96,7 +102,7 @@ The following query returns the attribute type for various custom and EAV attrib
               "label": "8 foot"
             },
             {
-              "value": "173",
+              "value": "170",
               "label": "XL"
             },
             {
@@ -104,42 +110,49 @@ The following query returns the attribute type for various custom and EAV attrib
               "label": "10 foot"
             },
             {
-              "value": "174",
+              "value": "171",
               "label": "28"
             },
             {
-              "value": "175",
+              "value": "172",
               "label": "29"
             },
             {
-              "value": "176",
+              "value": "173",
               "label": "30"
             },
             {
-              "value": "177",
+              "value": "174",
               "label": "31"
             },
             {
-              "value": "178",
+              "value": "175",
               "label": "32"
             },
             {
-              "value": "179",
+              "value": "176",
               "label": "33"
             },
             {
-              "value": "180",
+              "value": "177",
               "label": "34"
             },
             {
-              "value": "181",
+              "value": "178",
               "label": "36"
             },
             {
-              "value": "182",
+              "value": "179",
               "label": "38"
             }
-          ]
+          ],
+          "storefront_properties": {
+            "use_in_product_listing": true,
+            "use_in_layered_navigation": "FILTERABLE_WITH_RESULTS",
+            "use_in_search_results_layered_navigation": false,
+            "visible_on_catalog_pages": false,
+            "position": 0
+          }
         },
         {
           "attribute_code": "color",
@@ -195,7 +208,14 @@ The following query returns the attribute type for various custom and EAV attrib
               "value": "60",
               "label": "Yellow"
             }
-          ]
+          ],
+          "storefront_properties": {
+            "use_in_product_listing": true,
+            "use_in_layered_navigation": "FILTERABLE_WITH_RESULTS",
+            "use_in_search_results_layered_navigation": false,
+            "visible_on_catalog_pages": false,
+            "position": 0
+          }
         }
       ]
     }
@@ -214,7 +234,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `CustomAttributeMetadata` object is an array of `items`. The `items` object can contain the following attributes.
+The `CustomAttributeMetadata` object contains the `items` attribute field, which returns an array of `Attribute` objects. The `Attribute` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -223,7 +243,7 @@ Attribute |  Data Type | Description
 `attribute_type` | String | The data type of the attribute
 `entity_type` | String | The type of entity that defines the attribute, such as `catalog_product`, `catalog_category`, or `customer`
 `input_type` | String | The frontend input type of the attribute
-
+`storefront_properties` | [StorefrontProperties](#StorefrontProperties) | Contains details about the storefront properties configured for the attribute {#StorefrontProperties}
 ### AttributeOption object
 
 The `AttributeOption` object contains the name and value of the option.
@@ -233,6 +253,17 @@ Attribute |  Data Type | Description
 `label` | String | The name of an attribute option
 `value` | String | The value assigned to an attribute option
 
+### StorefrontProperties object {#StorefrontProperties}
+
+The `StorefrontProperties` object returns information about a product attribute. Storefront properties are configured in the Admin at **Stores** > Attributes > **Product** > <Attribute Name> > **Storefront Properties**.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`position`| Int | The relative position of the attribute in the layered navigation block
+`use_in_layered_navigation` | UseInLayeredNavigationOptions | Indicates whether the attribute is filterable with results, without results, or not at all
+`use_in_product_listing` | Boolean | Indicates whether the attribute is displayed in product listings
+`use_in_search_results_layered_navigation`| Boolean | Indicates whether the attribute can be used in layered navigation on search results pages
+`visible_on_catalog_pages`| Boolean | Indicates whether the attribute is displayed on product pages
 ## Errors
 
 Error | Description
