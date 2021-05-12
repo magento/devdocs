@@ -244,6 +244,7 @@ Attribute |  Data Type | Description
 `entity_type` | String | The type of entity that defines the attribute, such as `catalog_product`, `catalog_category`, or `customer`
 `input_type` | String | The frontend input type of the attribute
 `storefront_properties` | [StorefrontProperties](#StorefrontProperties) | Contains details about the storefront properties configured for the attribute {#StorefrontProperties}
+
 ### AttributeOption object
 
 The `AttributeOption` object contains the name and value of the option.
