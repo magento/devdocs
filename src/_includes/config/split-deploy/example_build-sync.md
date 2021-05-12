@@ -13,7 +13,7 @@ To update your build system:
 1. Upgrade Magento:
 
    ```bash
-   php bin/magento setup:upgrade
+   bin/magento setup:upgrade
    ```
 
 1. Compile code:
