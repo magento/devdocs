@@ -1,11 +1,12 @@
 ---
 group: configuration-guide
-title: L2 caching in the Magento application
+title: L2 (Level 2) caching in the Magento application
 functional_areas:
   - Configuration
   - System
   - Cache
 ---
+Level 2 cache is responsible for delivering to Level 1 cache such as memory cache.
 
 Caching enables a reduction in network traffic between the remote cache storage and Magento. A standard Magento instance transfers around 300kb per request, and traffic may quickly grow to over ~1000 requests in some situations.
 
