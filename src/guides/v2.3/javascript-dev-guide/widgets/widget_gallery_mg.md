@@ -9,7 +9,7 @@ In Magento it is used by the [gallery]({{ page.baseurl }}/javascript-dev-guide/w
 
 ![Magnifier widget]({{site.baseurl}}/common/images/magnifier-widget.png){:width="650px"}
 
-The Magnifier widget source is located in `lib/web/magnifier/magnify.js`.
+The Magnifier widget source is located in [lib/web/magnifier/magnify.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/magnifier/magnify.js).
 
 ## Initialize magnifier {#magnifier_init}
 
