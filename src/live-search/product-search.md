@@ -1,6 +1,6 @@
 ---
 group: live-search
-title: productSearch Query
+title: productSearch query
 ee_only: True
 ---
 
@@ -52,7 +52,8 @@ filter: [
     }
 ]
 ```
-An attribute that is passed as part of a filter must be set to `filterableInSearch: true`. Otherwise, a "500 error" will be returned.
+
+An attribute that must be set to `filterableInSearch: true` if it is passed in as part of the filter. Otherwise, a "500 error" will be returned.
 
 Only facets specified in Live Search are returned.
 
@@ -184,7 +185,7 @@ items {
 The query response can also contain the following top-level fields and objects:
 
 -  `page_info` - An object that lists the `page_size` and `current_page` input arguments as well as the total number of pages available.
--  `suggestions` - An array of strings that include the names of products and categories that exist in that catalog that are similar to the search query.
+-  `suggestions` - An array of strings that include the names of products and categories that exist in the catalog that are similar to the search query.
 -  `total_count` - The number of products returned.
 
 ## Syntax
@@ -653,11 +654,11 @@ The `productSearch` query accepts the following fields as input:
 
 Field | Data Type | Description
 --- | --- | ---
-`phrase` | String! | The text to search for.
+`phrase` | String! | The text to search for
 `page_size` | Int | Specifies the maximum number of results to return at once. Default value: 20
 `current_page` | Int | Specifies which page of results to return. Default value: 1
-`filter` | [SearchClauseInput](#SearchClauseInput) | Identifies which attributes to search for and return.
-`sort` | [ProductSearchSortInput](#ProductSearchSortInput) | Specifies which attribute to sort on, and whether to return the results in ascending or descending order.
+`filter` | [[SearchClauseInput!]](#SearchClauseInput) | Identifies which attributes to search for and return
+`sort` | [[ProductSearchSortInput!]](#ProductSearchSortInput) | Specifies which attribute to sort on, and whether to return the results in ascending or descending order
 
 ### SearchClauseInput data type {#SearchClauseInput}
 
@@ -665,10 +666,10 @@ The `SearchClauseInput` object can contain the following fields:
 
 Field | Data Type | Description
 --- | --- | ---
-`attribute` | String! | The attribute code of a product attribute.
-`eq` | String | A string value to filter on.
-`in` | String | An array of string values to filter on.
-`range` | [SearchRangeInput](#SearchRangeInput) | A range of numeric values to filter on.
+`attribute` | String! | The attribute code of a product attribute
+`eq` | String | A string value to filter on
+`in` | [String] | An array of string values to filter on
+`range` | [SearchRangeInput](#SearchRangeInput) | A range of numeric values to filter on
 
 #### SearchRangeInput data type {#SearchRangeInput}
 
@@ -676,8 +677,8 @@ The `SearchRangeInput` object can contain the following fields:
 
 Field | Data Type | Description
 --- | --- | ---
-`from` | Float | The minimum value to filter on. If not specified, the value of `0` is applied.
-`to` | Float | The maximum value to filter on.
+`from` | Float | The minimum value to filter on. If not specified, the value of `0` is applied
+`to` | Float | The maximum value to filter on
 
 ### ProductSearchSortInput data type {#ProductSearchSortInput}
 
@@ -685,8 +686,8 @@ The `ProductSearchSortInput` object can contain the following fields.
 
 Field | Data Type | Description
 --- | --- | ---
-`attribute` | String! | The attribute code of a product attribute.
-`direction` | SortEnum! | ASC (ascending) or DESC (descending).
+`attribute` | String! | The attribute code of a product attribute
+`direction` | SortEnum! | ASC (ascending) or DESC (descending)
 
 ## Output fields
 
@@ -694,20 +695,20 @@ The `AttributeMetadataResponse` return object can contain the following fields:
 
 Field | Data Type | Description
 --- | --- | ---
-`facets` | [Aggregation](#Aggregation) | Provides details about the static and dynamic facets relevant to the search.
-`items` | [ProductSearchItem](#ProductSearchItem) | An array of products returned by the query.
-`page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | Contains information for rendering pages of search results.
-`related_terms` | String | An array of strings that might include merchant-defined synonyms.
-`suggestions` | String | An array of strings that include spelling variations or other suggested search terms.
-`total_count` | Int | The total number of items returned.
+`facets` | [[Aggregation]](#Aggregation) | Provides details about the static and dynamic facets relevant to the search
+`items` | [[ProductSearchItem]](#ProductSearchItem) | An array of products returned by the query
+`page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | Contains information for rendering pages of search results
+`related_terms` | [String] | Reserved for future use
+`suggestions` | [String] | An array of strings that include spelling variations or other suggested search terms
+`total_count` | Int | The total number of items returned
 
 ### Aggregation data type {#Aggregation}
 
 Field | Data Type | Description
 --- | --- | ---
-`attribute` | String! | The attribute code of the filter item.
-`buckets` | [Bucket](#Bucket) | A container that divides the data into manageable groups. For example, attributes that can have numeric values might have buckets that define price ranges.
-`title` | String! | The filter name displayed in layered navigation.
+`attribute` | String! | The attribute code of the filter item
+`buckets` | [[Bucket]!](#Bucket) | A container that divides the data into manageable groups. For example, attributes that can have numeric values might have buckets that define price ranges
+`title` | String! | The filter name displayed in layered navigation
 `type` | AggregationType | Identifies the data type as one of the following: `INTELLIGENT`, `PINNED`, or `POPULAR`
 
 ### Bucket data type {#Bucket}
@@ -716,38 +717,38 @@ The `Bucket` object defines one field, `title`. However, the object has three im
 
 Field | Data Type | Description
 --- | --- | ---
-`title` | String! | A human-readable name of a bucket.
+`title` | String! | A human-readable name of a bucket
 
 #### RangeBucket implementation
 
-`RangeBucket` can be used with the following numeric product fields.
+Implement `RangeBucket` on numeric product fields.
 
 Field | Data Type | Description
 --- | --- | ---
-`count` | Int! | The number of items in the bucket.
-`from` | Float! | The minimum amount in a price range.
-`title` | String! | The display text defining the price range.
-`to` | Float | The maximum amount in a price range.
+`count` | Int! | The number of items in the bucket
+`from` | Float! | The minimum amount in a price range
+`title` | String! | The display text defining the price range
+`to` | Float | The maximum amount in a price range
 
 #### ScalarBucket implementation
 
-`ScalarBucket` can be used with the following string and other scalar product fields.
+Implement `ScalarBucket` on string and other scalar product fields.
 
 Field | Data Type | Description
 --- | --- | ---
-`count` | Int! | The number of items in the bucket.
-`id` | ID! | An identifier that can be used for filtering and may contain non-human readable data.
-`title` | String! | The display text that defines the scalar value.
+`count` | Int! | The number of items in the bucket
+`id` | ID! | An identifier that can be used for filtering and may contain non-human readable data
+`title` | String! | The display text that defines the scalar value
 
 #### StatsBucket implementation
 
-`StatsBucket` can be used to retrieve statistics across multiple buckets.
+Implement `StatsBucket` to retrieve statistics across multiple buckets.
 
 Field | Data Type | Description
 --- | --- | ---
-`max` | Float! | The maximum value.
-`min` | Float! | The minimum value.
-`title` | String! | The display text defining the bucket.
+`max` | Float! | The maximum value
+`min` | Float! | The minimum value
+`title` | String! | The display text defining the bucket
 
 ### ProductSearchItem data type {#ProductSearchItem}
 
@@ -755,8 +756,8 @@ The `ProductSearchItem` data type can contain the following fields:
 
 Field | Data Type | Description
 --- | --- | ---
-`appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values: `BOOST`, `BURY`, and `PIN`.
-`product`m| ProductInterface! | Contains details about the product. Go to [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html) for more information.
+`appliedQueryRule` | AppliedQueryRule | The query rule type that was applied to this product, if any (in preview mode only, returns null otherwise). Possible values: `BOOST`, `BURY`, and `PIN`
+`product` | ProductInterface! | Contains details about the product. Go to [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html) for more information
 
 ### SearchResultPageInfo data type {#SearchResultPageInfo}
 
@@ -764,6 +765,6 @@ The `SearchResultPageInfo` data type can contain the following fields:
 
 Field | Data Type | Description
 --- | --- | ---
-`current_page` | Int | Specifies which page of results to return.
-`page_size` | Int | Specifies the maximum number of items to return.
-`total_pages` | Int | Specifies the total number of pages returned.
+`current_page` | Int | Specifies which page of results to return
+`page_size` | Int | Specifies the maximum number of items to return
+`total_pages` | Int | Specifies the total number of pages returned
