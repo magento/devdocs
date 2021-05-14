@@ -90,7 +90,7 @@ Below is the definition of the `validate` method:
 public function validate(\Magento\Framework\Model\AbstractModel $model)
 {
     $attrCode = $this->getAttribute();
-    if ('category_ids' == $attrCode) {
+    if ('category_ids' === $attrCode) {
         return parent::validate($model);
     }
 
