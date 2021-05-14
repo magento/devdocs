@@ -94,7 +94,7 @@ Where:
    Example: [`Magento\Robots\Controller\Router`]
 *  `%sortorder%` - The sort order of this entry in the router list.
 
-## `routes.xml` 
+## `routes.xml`
 
 The `routes.xml` file maps which module to use for a URL with a specific `frontName` and area.
 The location of the `routes.xml` file in a module, either `etc/frontend` or `etc/adminhtml`, specifies where those routes are active.
