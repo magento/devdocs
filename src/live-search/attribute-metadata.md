@@ -1,6 +1,6 @@
 ---
 group: live-search
-title: attributeMetadata Query
+title: attributeMetadata query
 ee_only: True
 ---
 
@@ -142,8 +142,8 @@ The `AttributeMetadataResponse` return object can contain the following fields:
 
 Field | Data Type | Description
 --- | --- | ---
-`filterableInSearch` | [FilterableInSearchAttribute](#FilterableInSearchAttribute) | An array of product attributes that can be used for filtering in a `productSearch` query.
-`sortable` | [SortableAttribute](#SortableAttribute) | An array of product attributes that can be used for sorting in a `productSearch` query.
+`filterableInSearch` | [FilterableInSearchAttribute](#FilterableInSearchAttribute) | An array of product attributes that can be used for filtering in a `productSearch` query
+`sortable` | [SortableAttribute](#SortableAttribute) | An array of product attributes that can be used for sorting in a `productSearch` query
 
 ### FilterableInSearchAttribute data type {#FilterableInSearchAttribute}
 
@@ -151,9 +151,9 @@ The `FilterableInSearchAttribute` data type can contain the following fields:
 
 Field | Data Type | Description
 --- | --- | ---
-`attribute` | String! | The unique identifier for an attribute code. This value should be in lowercase letters and without spaces.
-`label` | String | The display name assigned to the attribute.
-`numeric` | Boolean | Indicates whether this attribute has a numeric value, such as a price or integer.
+`attribute` | String! | The unique identifier for an attribute code. This value should be in lowercase letters and without spaces
+`label` | String | The display name assigned to the attribute
+`numeric` | Boolean | Indicates whether this attribute has a numeric value, such as a price or integer
 
 ### SortableAttribute data type {#SortableAttribute}
 
@@ -161,6 +161,6 @@ The `SortableAttribute` data type can contain the following fields:
 
 Field | Data Type | Description
 --- | --- | ---
-`attribute` | String! | The unique identifier for an attribute code. This value should be in lowercase letters and without spaces.
-`label` | String | The display name assigned to the attribute.
-`numeric` | Boolean | Indicates whether this attribute can contain a numeric value, such as a price or integer.
+`attribute` | String! | The unique identifier for an attribute code. This value should be in lowercase letters and without spaces
+`label` | String | The display name assigned to the attribute
+`numeric` | Boolean | Indicates whether this attribute has a numeric value, such as a price or integer
