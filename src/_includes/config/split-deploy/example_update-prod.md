@@ -15,7 +15,7 @@ To update the production system:
 
 1. If you use {{site.data.var.ee}}, stop queue workers.
 
-   Add changes to the app/etc/env.php:
+   Set `cron_run` to `false` in `app/etc/env.php`, e.g.:
 
    ```bash
    'cron_consumers_runner' => [
@@ -29,7 +29,7 @@ To update the production system:
    php bin/magento app:config:import
    ```
 
-   And `kill` active consumer processes.
+   Finally, `kill` active consumer processes.
 
 1. Pull code from source control.
 
