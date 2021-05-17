@@ -21,6 +21,13 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 
 <!--Add release notes below-->
 
+## v1.0.10
+*Release date: May 10, 2021*<br/>
+
+-  {:.fix} **Compatibility with Magento 2.3.7**—Resolved composer dependencies conflict for installation on Magento 2.3.7.<!--MC-42131-->
+-  {:.fix} **Fixed an issue caused by applying a bundled patch multiple times**—Applying a bundled patch (one that includes other deprecated patches) more than once could revert the included deprecated packages. All patches are now applied only once. Trying to apply the same package again shows a message that the patch has already been applied..<!--MC-41912-->
+-  {:.fix} **B2B Layered navigation patch**—Fixed another issue that prevented layered navigation from showing all product options when the user enables the B2B Shared Catalog.<!--MCLOUD-7742-->
+
 ## v1.0.9
 *Release date: February 1, 2021*<br/>
 
