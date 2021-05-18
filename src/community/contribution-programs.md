@@ -15,7 +15,7 @@ When you join, you start receiving program benefits:
 -  Magento Activity Points
 -  Core Architect assistance
 -  Badges
--  Magento University rewards 
+-  Magento University rewards
 
 ### How do you join?
 
