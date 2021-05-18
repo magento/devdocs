@@ -2,9 +2,9 @@
 # Each setting is available on pages using Liquid {{ site.<config key> }}. For example, {{ site.title }}.
 # For more details about available options and defaults, refer to https://jekyllrb.com/docs/configuration/
 #
-title: Adobe Commerce Developer Documentation
+title: Adobe Commerce Developer Guide
 logo: Commerce DevDocs
-description: Adobe Commerce Developer Documentation.
+description: Adobe Commerce Developer Guide
 
 # the base protocol and domain
 url: https://devdocs.magento.com

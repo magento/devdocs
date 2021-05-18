@@ -22,7 +22,7 @@ mbi: Adobe Commerce Reporting
 
 ece: Cloud for Adobe Commerce
 ece-release-date: April 20, 2021
-csuite: Cloud Suite for Magento Commerce
+csuite: Cloud Suite for Commerce
 ct: ece-tools
 ct-repo: magento/ece-tools
 ct-release: 2002.1.6
