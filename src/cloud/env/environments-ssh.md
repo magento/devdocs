@@ -124,7 +124,7 @@ When configuring sFTP, use your SSH access destination (see [SSH to an Environme
 *  Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.
 *  Host: All content after the `@` in your SSH access destination.
 *  Port: 22, which is the default SSH port.
-*  Private Key: If necessary, let the SFTP client know where to find your private key
+*  SSH Private Key: If necessary, let the sFTP client know where to find your private key. By default, the private keys are stored in the `~/.ssh`directory. 
 
 Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.
 
