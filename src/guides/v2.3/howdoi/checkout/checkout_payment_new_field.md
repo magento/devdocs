@@ -23,54 +23,9 @@ Let’s go through each step.
 
 ## Step 1: Create a new module
 
-```bash
-cd <magento2_root>/app/code
-```
+Create a new module named `Learning/CustomField` and register it.
 
-```bash
-mkdir Learning
-```
-
-```bash
-mkdir Learning/CustomField
-```
-
-Now, create two files:
-
-`etc/module.xml`
-
-{% collapsible Show code %}
-
-```xml
-<?xml version="1.0"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-  <module name="Learning_CustomField" setup_version="0.0.1">
-    <sequence>
-      <module name="Magento_Checkout"/>
-    </sequence>
-  </module>
-</config>
-```
-
-{% endcollapsible %}
-
-`registration.php`
-
-{% collapsible Show code %}
-
-```php?start_inline=1
-<?php
-
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Learning_CustomField',
-    __DIR__
-);
-```
-
-{% endcollapsible %}
+For more information about creating a new module, refer to [Create a Module](https://devdocs.magento.com/videos/fundamentals/create-a-new-module/)
 
 ## Step 2 Create an InstallSchema script.
 
