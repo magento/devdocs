@@ -1,5 +1,5 @@
-label: Magento Commerce Cloud
-project-webint-basiclabel: Magento Commerce Cloud Guide
+label: Cloud for Adobe Commerce
+project-webint-basiclabel: Cloud Guide for Adobe Commerce
 pages:
     - label: Overview
       url: /cloud/bk-cloud.html
@@ -41,7 +41,7 @@ pages:
           url: /cloud/reference/cloud-composer.html
           versionless: true
 
-        - label: Magento Cloud CLI
+        - label: Cloud CLI for Commerce
           url: /cloud/reference/cli-ref-topic.html
           versionless: true
 
@@ -130,7 +130,7 @@ pages:
           url: /cloud/before/before-workspace.html
           versionless: true
           children:
-            - label: Install Magento prerequisites
+            - label: Install Commerce prerequisites
               url: /cloud/before/before-workspace-magento-prereqs.html
               versionless: true
 
@@ -138,7 +138,7 @@ pages:
               url: /cloud/before/before-workspace-ssh.html
               versionless: true
 
-            - label: Set up the Magento file system owner
+            - label: Set up the Commerce file system owner
               url: /cloud/before/before-workspace-file-sys-owner.html
               versionless: true
 
@@ -146,7 +146,7 @@ pages:
               url: /cloud/before/before-setup-env-2_clone.html
               versionless: true
 
-            - label: Install Magento
+            - label: Install Commerce
               url: /cloud/before/before-setup-env-install.html
               versionless: true
 
@@ -237,11 +237,11 @@ pages:
 
         - label: Functional Testing
           children:
-            - label: Magento application testing
+            - label: Commerce application testing
               url: /cloud/docker/docker-test-app-mftf.html
               versionless: true
 
-            - label: Magento Cloud code testing
+            - label: Cloud code testing for Commerce
               url: /cloud/docker/docker-test-magecloud-pkg-code.html
               versionless: true
 
@@ -277,11 +277,11 @@ pages:
       url: /cloud/setup/first-time-setup-import-first-steps.html
       versionless: true
       children:
-        - label: Prepare your existing Magento Commerce system
+        - label: Prepare your existing Adode Commerce system
           url: /cloud/setup/first-time-setup-import-prepare.html
           versionless: true
 
-        - label: Import Magento Commerce code
+        - label: Import Adode Commerce code
           url: /cloud/setup/first-time-setup-import-import.html
           versionless: true
 
@@ -297,7 +297,7 @@ pages:
           url: /cloud/live/paypal-onboarding.html
           versionless: true
 
-        - label: Set up Magento B2B
+        - label: Set up B2B for Adobe Commerce
           url: /cloud/configure/setup-b2b.html
           versionless: true
 
@@ -623,7 +623,7 @@ pages:
           url: /cloud/project/project-patch.html
           versionless: true
 
-        - label: Upgrade Magento version
+        - label: Upgrade Commerce version
           url: /cloud/project/project-upgrade.html
           versionless: true
 
@@ -639,15 +639,15 @@ pages:
           url: /cloud/release-notes/ece-release-notes.html
           versionless: true
 
-        - label: Magento Cloud Patches
+        - label: Cloud Patches for Commerce
           url: /cloud/release-notes/mcp-release-notes.html
           versionless: true
 
-        - label: Magento Cloud Docker
+        - label: Cloud Docker for Commerce
           url: /cloud/release-notes/mcd-release-notes.html
           versionless: true
 
-        - label: Magento Cloud Components
+        - label: Cloud Components for Commerce
           url: /cloud/release-notes/mcc-release-notes.html
           versionless: true
 

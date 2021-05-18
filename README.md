@@ -1,10 +1,10 @@
-# Magento Developer Documentation
+# Adobe Commerce Developer Documentation
 
-Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
+Welcome! This site contains the latest Commerce developer documentation for ongoing Magento 2.x releases (now Adobe Commerce). For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
 
 ## Contributors
 
-Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving Magento documentation.
+Our goal is to provide the Commerce community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving Commerce documentation.
 
 ![](https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
 
@@ -144,7 +144,7 @@ exclude:
 
 ## Building old versions
 
-The published website contains documentation for the latest Magento releases only. For cases, when you need to view the content as it was for an earlier release, we created [tags](https://github.com/magento/devdocs/tags) in this repository. Typically, they point at the commit when the release notes were finalized and published.
+The published website contains documentation for the latest Commerce releases only. For cases, when you need to view the content as it was for an earlier release, we created [tags](https://github.com/magento/devdocs/tags) in this repository. Typically, they point at the commit when the release notes were finalized and published.
 
 To view the list of available tags:
 

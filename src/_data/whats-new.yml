@@ -5111,7 +5111,7 @@ entries:
   type: Technical changes
   date: March  4, 2019
   link: https://github.com/magento/devdocs/pull/3863
-- description: Migrated the Magento Business Intelligence (MBI) [Import API documentation](https://devdocs.magento.com/mbi/docs/getting-started.html)
+- description: Migrated the Adobe Commerce Reporting (ACR) [Import API documentation](https://devdocs.magento.com/mbi/docs/getting-started.html)
     from the RJMetrics domain to the Magento domain.
   versions: 2.x
   type: Major update

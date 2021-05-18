@@ -245,10 +245,10 @@ pages:
         - label: Template Literals
           url: /ui_comp_guide/concepts/ui_comp_template_literals.html
 
-        - label: Magento custom Knockout.js bindings
+        - label: Commerce custom Knockout.js bindings
           url: /ui_comp_guide/concepts/knockout-bindings.html
 
-        - label: Magento binding syntax
+        - label: Commerce binding syntax
           url: /ui_comp_guide/concepts/magento-bindings.html
 
         - label: About the uiClass library

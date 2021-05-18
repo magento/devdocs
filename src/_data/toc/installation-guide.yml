@@ -4,7 +4,7 @@ pages:
     - label: Installation flow
       url: /install-gde/install-flow-diagram.html
     
-    - label: Magento system requirements
+    - label: Commerce system requirements
       url: /install-gde/system-requirements.html
 
     - label: Prerequisites
@@ -39,7 +39,7 @@ pages:
         - label: Get your authentication keys
           url: /install-gde/prereq/connect-auth.html
 
-        - label: Magento file system ownership and permissions
+        - label: Commerce file system ownership and permissions
           children:
 
             - label: Overview of ownership and permissions
@@ -60,7 +60,7 @@ pages:
         - label: Optional software
           url: /install-gde/prereq/optional.html
 
-        - label: Get the Magento software
+        - label: Get the Commerce software
           url: /install-gde/bk-install-guide.html
 
     - label: Quick start install
@@ -70,7 +70,7 @@ pages:
       url: /install-gde/contrib-git.html
       children:
 
-        - label: Clone the Magento repository
+        - label: Clone the Commerce repository
           url: /install-gde/prereq/dev_install.html
         
         - label: Change to a released version
@@ -89,7 +89,7 @@ pages:
         - label: Verify the installation
           url: /install-gde/install/verify.html
 
-        - label: Configure the Magento application
+        - label: Configure the Commerce application
           url: /install-gde/install/post-install-config.html
 
         - label: Optionally set a umask
@@ -120,13 +120,13 @@ pages:
         - label: Configure the store
           url: /install-gde/install/cli/install-cli-subcommands-store.html
 
-        - label: Create, edit, or unlock a Magento administrator account
+        - label: Create, edit, or unlock a Commerce administrator account
           url: /install-gde/install/cli/install-cli-subcommands-admin.html
 
         - label: Create or update the deployment configuration
           url: /install-gde/install/cli/install-cli-subcommands-deployment.html
 
-        - label: Create the Magento database schema
+        - label: Create the Commerce database schema
           url: /install-gde/install/cli/install-cli-subcommands-db.html
 
         - label: Display or change the Admin URI
@@ -150,10 +150,10 @@ pages:
         - label: Uninstall modules
           url: /install-gde/install/cli/install-cli-uninstall-mods.html
 
-        - label: Uninstall or reinstall Magento
+        - label: Uninstall or reinstall Commerce
           url: /install-gde/install/cli/install-cli-uninstall.html
 
-        - label: Update the Magento database schema and data
+        - label: Update the Commerce database schema and data
           url: /install-gde/install/cli/install-cli-subcommands-db-upgr.html
         
         - label: Uninstall themes Composer packages

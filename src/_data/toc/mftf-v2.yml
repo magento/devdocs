@@ -1,4 +1,4 @@
-label: Magento Functional Testing Framework Guide (v2)
+label: Commerce Functional Testing Framework Guide (v2)
 pages:
 
   - label: Introduction
@@ -188,6 +188,6 @@ pages:
     url: https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md
     versionless: true
 
-  - label: Magento Functional Testing Framework Guide (v3)
+  - label: Commerce Functional Testing Framework Guide (v3)
     url: /mftf/docs/introduction.html
     versionless: true
