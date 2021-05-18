@@ -65,9 +65,9 @@ On your production system, run the following command to import data from the con
 bin/magento app:config:import [-n, --no-interaction]
 ```
 
-Use the optional `[-n, --no-interaction]` flag to import data without any interaction.
+Use the optional `[-n, --no-interaction]` flag to import data without additional confirmations.
 
-If you enter `bin/magento app:config:import` without the optional flag, you're required to confirm the changes.
+For additional information, please, check the [Import data from configuration files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html)
 
 {% include install/sens-data.md %}
 
