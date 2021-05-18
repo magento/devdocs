@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: products query
-redirect_from:
-  - /guides/v2.3/graphql/reference/products.html
 ---
 
 The `products` query allows you to search for catalog items.
@@ -266,6 +264,7 @@ Attribute | Data type | Description
 `count` | Int | The number of filter items in the filter group
 `label` | String | The filter name displayed in layered navigation
 `options` | [AggregationOption] | Describes each aggregated filter option
+`position` | Int | The relative position of the attribute in a layered navigation block
 
 #### AggregationOption attributes {#AggregationOption}
 
