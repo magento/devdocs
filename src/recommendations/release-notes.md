@@ -16,6 +16,11 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.2.6 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed a JavaScript modal error
+-  {:.fix}Fixed an issue where Fastly's Web Application Firewall (WAF) was incorrectly blocking a cookie
+
 ## 3.2.5 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.new}Renamed Magento Services to [Commerce Services](https://docs.magento.com/user-guide/system/saas.html) and improved usability in the Admin.
