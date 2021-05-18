@@ -184,7 +184,7 @@ You must add `<your-validation-name>` like `%carrier%-rates-validation` - where 
 1. Deploy static content:
 
 ```bash
-bin/magento setup:static-content:deploy -f
+bin/magento setup:static-content:deploy
 ```
 
 1. Clean the cache:

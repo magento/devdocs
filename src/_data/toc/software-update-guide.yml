@@ -43,34 +43,8 @@ pages:
           url: /upgrade-compatibility-tool/developer.html
           versionless: true
 
-    - label: Magento Marketplace example
-      url: /comp-mgr/marketplace/marketplace.html
-      include_versions: ["2.3"]
-
-    - label: Run the Module Manager
-      url: /comp-mgr/module-man/compman-checklist.html
-      include_versions: ["2.3"]
-      children:
-
-        - label: Start the Module Manager
-          url: /comp-mgr/module-man/compman-start.html
-
-        - label: Step 1. Readiness check
-          url: /comp-mgr/module-man/compman-readiness.html
-
-        - label: Step 2. Back up the file system and database
-          url: /comp-mgr/module-man/compman-backup.html
-
-        - label: Enable/Disable
-          url: /comp-mgr/module-man/modman-enable-disable.html
-
-    - label: Upgrade from Magento Open Source to Magento Commerce
-      url: /comp-mgr/upgrader/ce-ee-upgrade-start.html
-      include_versions: ["2.3"]
-
     - label: Upgrade Magento
       url: /comp-mgr/cli/cli-upgrade.html
-      exclude_versions: ["2.3"]
       children:
 
         - label: Update the Magento application
@@ -79,51 +53,14 @@ pages:
         - label: Upgrade with sample data
           url: /comp-mgr/cli/cli-rc1-samp.html
 
-    - label: Command-line upgrade
-      url: /comp-mgr/cli/cli-upgrade.html
-      include_versions: ["2.3"]
-      children:
-
-        - label: Upgrade using the custom script
-          url: /comp-mgr/cli/upgrade-with-script.html
-          exclude_versions: ["2.4"]
-          
-        - label: Upgrade using the Composer plugin
-          url: /comp-mgr/cli/upgrade-with-plugin.html
-
-        - label: Upgrade with sample data
-          url: /comp-mgr/cli/cli-rc1-samp.html
-
     - label: Upgrade modules
       url: /comp-mgr/upgrade-module.html
-      exclude_versions: ["2.3"]
 
     - label: Manage modules
       url: /comp-mgr/manage-module.html
-      exclude_versions: ["2.3"]
 
     - label: Add or update components
       url: /install-gde/install/cli/dev_add-update.html
-
-    - label: Run System Upgrade
-      url: /comp-mgr/upgrader/upgrade-checklist.html
-      include_versions: ["2.3"]
-      children:
-
-        - label: Start System Upgrade
-          url: /comp-mgr/upgrader/upgrade-start.html
-
-        - label: Step 1. Select versions to upgrade
-          url: /comp-mgr/upgrader/upgrade-main-pg.html
-
-        - label: Step 2. Readiness check
-          url: /comp-mgr/upgrader/upgrade-readiness.html
-
-        - label: Step 3. Back up the file system and database
-          url: /comp-mgr/upgrader/upgrade-backup.html
-
-        - label: Step 4. Upgrade
-          url: /comp-mgr/upgrader/upgrade.html
 
     - label: Apply patches
       url: /comp-mgr/patching.html
@@ -150,12 +87,7 @@ pages:
       include_versions: ["2.3"]
 
     - label: Troubleshooting
-      url: /comp-mgr/trouble/tshoot.html
       children:
-
-        - label: Sorry, we can't take that action right now
-          url: /comp-mgr/trouble/cman/were-sorry.html
-          include_versions: ["2.3"]
 
         - label: Your current search engine is not supported
           url: /comp-mgr/trouble/current-search-engine.html

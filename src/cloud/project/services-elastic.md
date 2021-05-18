@@ -139,7 +139,7 @@ To check Elasticsearch software compatibility:
 1. Retrieve the installed Elasticsearch service `version:number` from the service endpoint.
 
    ```bash
-   curl -XGET <elasticsearch-service-endopint-ip-address>:9200/
+   curl -XGET <elasticsearch-service-endpoint-ip-address>:9200/
    ```
 
    ```terminal
@@ -234,3 +234,13 @@ Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` do
 
 {:.bs-callout-tip}
 For details on using or troubleshooting the Elasticsuite plugin with Magento, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
+
+## Troubleshooting
+
+See the following Magento Support articles for help troubleshooting Elasticsearch problems:
+
+-  [Elasticsearch 5 is configured, but search page does not load with "Fielddata is disabled..." error](https://support.magento.com/hc/en-us/articles/360027356612-Elasticsearch-5-is-configured-but-search-page-does-not-load-with-Fielddata-is-disabled-error)
+-  [Catalog pagination doesn't work when Elasticsearch 6.x is used](https://support.magento.com/hc/en-us/articles/360035142371)
+-  [Elasticsearch with ElasticSuite crashes or out of memory](https://support.magento.com/hc/en-us/articles/360035266131-Elasticsearch-with-ElasticSuite-crashes-or-out-of-memory)
+-  [Elasticsearch in Magento troubleshooter](https://support.magento.com/hc/en-us/articles/360040757112-Elasticsearch-in-Magento-troubleshooter)
+-  [Elasticsearch Index Status is `yellow` or `red`](https://support.magento.com/hc/en-us/articles/360039837952-Elasticsearch-Index-Status-is-yellow-or-red-)

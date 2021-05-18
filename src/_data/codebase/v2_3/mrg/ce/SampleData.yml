@@ -1,9 +1,9 @@
 ---
 title: Magento_SampleData
 source_repo: magento2ce
-release: 2.3.6
+release: 2.3.7
 github_path: app/code/Magento/SampleData/README.md
-last_modified_at: '2019-08-06 14:40:28 -0500'
+last_modified_at: '2021-03-03 15:17:15 +0100'
 content: |-
   Magento sample data includes a sample store, complete with more than 250 products (about 200 of them are configurable products), categories, promotional price rules, CMS pages, banners, and so on. Sample data uses the Luma theme on the storefront.
 
@@ -58,7 +58,7 @@ content: |-
 
   ## Install Sample Data
 
-  Once the sample data is deployed, it will be installed automatically when you install or upgrade your Magento instance either by using the Magento Setup Wizard or from the command line.
+  Once the sample data is deployed, it will be installed automatically when you install or upgrade your Magento instance by using the command line.
 
   ## Uninstall Sample Data
 

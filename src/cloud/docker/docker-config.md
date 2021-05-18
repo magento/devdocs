@@ -29,7 +29,17 @@ When you run composer with Docker commands, you must use the [Docker Hub PHP Ima
 docker run -it  -v $(pwd):/app/:delegated -v ~/.composer/:/root/.composer/:delegated magento/magento-cloud-docker-php:7.3-cli-1.1 bash -c "composer install&&chown www. /app/"
 ```
 
-This command passes in the current working directory as `/app/`, includes composer from `~/.composer/`, and runs the `composer install` command in the container. After this set up, the command  fixes the permissions on the files that have been added or changed.
+This command passes in the current working directory as `/app/`, includes composer from `~/.composer/`, and runs the `composer install` command in the container. After this set up, the command fixes the permissions on the files that have been added or changed.
+
+## Update Composer for Docker
+
+To update the Composer version in Cloud Docker, add the `COMPOSER_VERSION` variable to your `.docker/config.env` file with the version you want to use. For example, to use Composer 2.x with Magento >=2.4.2:
+
+```conf
+COMPOSER_VERSION=2.0.12
+```
+
+When you build your Docker image with this variable, Cloud Docker uses this version to run `composer self-update $COMPOSER_VERSION` for your environment.
 
 ## Run Docker on a custom host and port
 

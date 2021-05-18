@@ -8,17 +8,15 @@ redirect_from:
   - guides/v2.4/install-gde/prereq/zip_install.html
 ---
 
-{% include install/composer-overview_24.md %}
+{% include install/composer-overview.md %}
 
 ## Prerequisites
 
 Before you continue, you must do the following:
 
--  Set up a server that meets our [system requirements][].
 -  Complete all [prerequisite tasks][].
--  Create and switch to the [Magento file system owner](#instgde-cli-before).
 -  [Install Composer][]{:target="_blank"}.
--  Obtain [authentication keys][] for the Magento code repository.
+-  Get [authentication keys][] to the Magento Composer repository.
 
 ## Log in as file system owner {#instgde-cli-before}
 
@@ -27,6 +25,7 @@ Learn about ownership, permissions, and the Magento file system owner in our [Ov
 To switch to the Magento file system owner:
 {% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
+
 ## Get the metapackage
 
 To get the Magento metapackage:
@@ -51,7 +50,7 @@ To get the Magento metapackage:
 
     If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
 
-    See [troubleshooting][] for help with more errors.
+    See [Troubleshooting][] for help with more errors.
 
     {% include install/pre-release.md %}
 
@@ -126,7 +125,7 @@ For a full description of the CLI install options, refer to [Install the Magento
 ## Command summary {#instgde-cli-summary}
 {% include install/cli_help-commands.md %}
 
-The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
+The following table summarizes the available commands. Commands are shown in summary form only. For more information about a command, click the link in the Command column.
 
 |Command|Description|Prerequisites|
 |--- |--- |--- |
@@ -146,6 +145,7 @@ Database (simplest way is to use magento setup:upgrade)|
 |`magento help`|Provides help for the specified command.|None|
 
 ### Common arguments {#instgde-cli-subcommands-common}
+
 {% include install/cli_common-commands.md %}
 
 {:.bs-callout-info}

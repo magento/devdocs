@@ -1,16 +1,10 @@
 ---
-subgroup: 05_Command-line installation
 title: Install the Magento software
-menu_title: Install the Magento software
-menu_order: 4
 functional_areas:
   - Install
   - System
   - Setup
 ---
-
-{:.bs-callout-tip}
-Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
 ## Before you start your installation {#instgde-install-cli-prereq}
 

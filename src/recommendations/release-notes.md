@@ -16,6 +16,19 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.2.6 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed a JavaScript modal error
+-  {:.fix}Fixed an issue where Fastly's Web Application Firewall (WAF) was incorrectly blocking a cookie
+
+## 3.2.5 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.new}Renamed Magento Services to [Commerce Services](https://docs.magento.com/user-guide/system/saas.html) and improved usability in the Admin.
+
+## 3.2.4 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed the "Unable to retrieve configurable product options data" error when indexing product attributes
+
 ## 3.2.3 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.new}Added the ability to [preview recommendation results](https://docs.magento.com/user-guide/marketing/create-new-rec.html#preview) at creation time. This might require that you update dependencies in the current version.
@@ -26,13 +39,13 @@ The release notes include:
 ## 3.2.2 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.new}Added the ability to [preview recommendation results](https://docs.magento.com/user-guide/marketing/create-new-rec.html#preview) at creation time. This might require that you update your module to the latest version.
--  {:.new}Added the ability to [monitor and manage](https://docs.magento.com/user-guide/system/catalog-sync.html) the catalog sync process from the Admin Panel.
--  {:.new}Added [inclusion and exclusion filters](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html) to control what products can and cannot be displayed in recommendations.
+-  {:.new}Added the ability to [monitor and manage](https://docs.magento.com/user-guide/system/catalog-sync.html) the catalog sync process from the Admin Panel
+-  {:.new}Added [inclusion and exclusion filters](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html) to control what products can and cannot be displayed in recommendations
 -  {:.new}Added the [Visual similarity recommendation type](https://docs.magento.com/user-guide/marketing/prex-type-visualsim.html)
 
 ## 1.2.1 of magento/module-page-builder-product-recommendations for Page Builder for Magento Commerce 2.4.0 and later
 
--  {:.new}Added support for the 3.2.0+ version of the `magento/product-recommendations` module.
+-  {:.new}Added support for the 3.2.0+ version of the `magento/product-recommendations` module
 
 ## 3.1.0 of magento/product-recommendations for Magento Commerce 2.4.0
 

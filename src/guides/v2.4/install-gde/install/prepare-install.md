@@ -56,7 +56,7 @@ The "https://repo.magento.com/archives/magento/composer/magento-composer-1.0.2.0
 
 If so, create [`auth.json`]({{ page.baseurl }}/install-gde/prereq/dev_install.html) in the Magento file system owner's `<home>/.composer` directory and run `composer install` again.
 
-{% include install/file-system-perms-before_24.md %}
+{% include install/file-system-perms-before.md %}
 
 {:.bs-callout-info}
 Hooray! You've completed the contributor install. Need more advanced help? Check out our [Advanced install]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) guide.

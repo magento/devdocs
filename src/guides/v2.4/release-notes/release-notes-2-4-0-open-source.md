@@ -65,6 +65,8 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 *  **Support for new security.txt file**. This file is an industry-standard file on the server that helps security researchers report potential security issues to site administrators.
 
+*  **Enhancements to Content Security Policy (CSP) support**. `SecureHtmlRenderer` has been added to the Framework and is available in `.phtml` templates to whitelist inline `style` and `script` tags. Inline scripts and styles are not permitted with default CSP configuration, which can be overridden by XML files. <!--- MC-34433-->
+
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
@@ -137,7 +139,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Improvement of up to 25-30% to Quick Order add-to-cart performance**.
 
-*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. See [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html).
+*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images.
 
 ### Adobe Stock Integration v2.0
 
@@ -512,7 +514,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7151-->
 
-*  You can now use the Actions dropdown menu from the Products grid to specify whether a product has weight when you update multiple products’s attributes from the Admin.  _Fix submitted by Bartomiej Szubert in pull request [26075](https://github.com/magento/magento2/pull/26075)_. [GitHub-6310](https://github.com/magento/magento2/issues/6310)
+*  You can now use the Actions dropdown menu from the Products grid to specify whether a product has weight when you update multiple products’ attributes from the Admin.  _Fix submitted by Bartomiej Szubert in pull request [26075](https://github.com/magento/magento2/pull/26075)_. [GitHub-6310](https://github.com/magento/magento2/issues/6310)
 
 <!--- ENGCOM-7453-->
 
@@ -1388,7 +1390,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-23383 ENGCOM-7006-->
 
-*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. See [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html). _Fix submitted by Timon de Groot in pull request [27033](https://github.com/magento/magento2/pull/27033)_. [GitHub-27032](https://github.com/magento/magento2/issues/27032)
+*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. _Fix submitted by Timon de Groot in pull request [27033](https://github.com/magento/magento2/pull/27033)_. [GitHub-27032](https://github.com/magento/magento2/issues/27032)
 
 <!--- ENGCOM-6988-->
 
