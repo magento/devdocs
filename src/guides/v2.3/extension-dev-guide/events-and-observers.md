@@ -59,7 +59,7 @@ class MyClass
 
 Custom events can be dispatched by simply passing in a unique event name to the event manager when you call the `dispatch` function. Your unique event name is referenced in your module's `events.xml` file where you specify which observers will react to that event.
 
-Custom event `my_module_event_after` can be subscribed by declaring the `MyCompany/MyModule/etc/events.xml` file like below:
+The custom event `my_module_event_after` can be subscribed to by declaring the `MyCompany/MyModule/etc/events.xml` file as below:
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
@@ -73,7 +73,7 @@ Custom event `my_module_event_after` can be subscribed by declaring the `MyCompa
 
 Generally, the location of the `events.xml` file will be under the `<module-root>/etc` directory. Observers that are associated with events here will watch for these events globally. The `events.xml` file can also be defined under the `<module-root>/etc/frontend` and `<module-root>/etc/adminhtml` directories to configure observers to only watch for events in those specific areas.
 
-Make your observer as specific as it needs to be. Declare your observer in the appropriate area:
+Declare the observer in the appropriate area:
 
 | Area | File location | Description |
 | --- | --- | --- |
