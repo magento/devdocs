@@ -15,6 +15,9 @@ pages:
         - label: Protected mutations
           url: /graphql/protected-mutations.html
 
+        - label: Query security
+          url: /graphql/query-security.html
+
         - label: GraphQL caching
           url: /graphql/caching.html
 
