@@ -100,7 +100,7 @@ To set up the build system:
    ```bash
    bin/magento deploy:mode:set {mode}
    ```
-   {mode} is required. It can be either default or developer.
+   **`{mode}`** is required. It can be either `default` or `developer`
 
 {:.ref-header}
 Related topics
