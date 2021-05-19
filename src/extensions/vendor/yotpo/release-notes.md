@@ -11,6 +11,10 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+## v3.1.4
+
+-  {:.fix}Some users who upgraded from an older version of Magento, to one of the latest versions, found that the `yotpo_rich_snippets` table was not created. This issue is now fixed and the `yotpo_rich_snippets` table should display correctly.
+
 ## v3.1.3
 
 -  {:.fix}Some users who upgraded from an older version of Magento, to one of the latest versions, found that the `yotpo_rich_snippets` table was not created. This issue is now fixed and the `yotpo_rich_snippets` table should display correctly.
