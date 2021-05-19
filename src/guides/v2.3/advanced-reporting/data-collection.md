@@ -5,16 +5,16 @@ functional_areas:
     - Reports
 ---
 
-A Magento instance collects data that the Adobe Commerce Reporting) service uses to build the advanced reports. All the data are stored in an encrypted archive file which is securely transferred to ACR. Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
+An Adobe Commerce or Magento instance collects data that the Commerce Reporting service uses to build the advanced reports. All the data are stored in an encrypted archive file which is securely transferred to Commerce Reporting. Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
 
 -  Which report files must be included into the archive file.
 -  Which provider classes must collect data for each report file.
 -  Which report data configuration must be applied to collected data.
 
-You do not need to have an ACR account to use Advanced Reporting.
+You do not need to have a Commerce Reporting account to use Advanced Reporting.
 
 {:.bs-callout-warning}
-This topic serves to provide better understanding of how data collection works. Any changes in configuration files will cause issues, because the ACR service does not expect any changes of configuration in the current version.
+This topic serves to provide better understanding of how data collection works. Any changes in configuration files will cause issues, because the Commerce Reporting service does not expect any changes of configuration in the current version.
 
 ## Example
 
@@ -53,7 +53,7 @@ An example of the `etc/analytics.xml` file:
 
 The example configuration file declares the following:
 
--  The `modules.csv`, `store_config.csv`, and `stores.csv` report files must be included in the archive file prepared for the ACR service.
+-  The `modules.csv`, `store_config.csv`, and `stores.csv` report files must be included in the archive file prepared for the Commerce Reporting service.
 -  `modules.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class.
  Provided data must be configured according to the `modules` report declarations defined in the `etc/reports.xml` file.
 -  `store_config.csv` must contain data provided by the `Magento\Analytics\Model\StoreConfigurationProvider` class.
@@ -204,6 +204,3 @@ Related topics
 <!-- LINK DEFINITIONS -->
 
 [modules]: modules.html
-
-<!-- ABBREVIATIONS -->
-*[ACR]: Magento Business Analytics

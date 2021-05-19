@@ -208,7 +208,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -  {:.new}<!-- MAGECLOUD-3104 -->The compression process in deploying static content now includes all assets—natively generated or customized—and occurs during the build phase at the beginning of the [`build:transfer` section]({{ site.baseurl }}/cloud/project/magento-app-properties.html#hooks). Previously, the compression process occurred before applying custom minification and bundling of static assets. [Fix submitted by Rafael Garcia Lepper from Tryzens Limited](https://github.com/magento/ece-tools/pull/413).
 
--  {:.fix}<!-- MAGECLOUD-3035 -->Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship. Also, this fix addresses an issue that occurred during the configuration process of ACR for Starter. For Starter, this upgrade is a "must have" for using ACR.
+-  {:.fix}<!-- MAGECLOUD-3035 -->Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship. Also, this fix addresses an issue that occurred during the configuration process of Commerce Reporting for Starter. For Starter, this upgrade is a "must have" for using Commerce Reporting.
 
 -  {:.fix}<!-- MAGECLOUD-3003 -->Fixed a validation issue with the database configuration that caused the deploy process to fail.
 

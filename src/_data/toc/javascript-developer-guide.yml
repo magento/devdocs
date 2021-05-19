@@ -34,7 +34,7 @@ pages:
         - label: Using JavaScript mixins
           url: /javascript-dev-guide/javascript/js_mixins.html
 
-    - label: Commerce jQuery widgets
+    - label: jQuery widgets
       url: /javascript-dev-guide/widgets/jquery-widgets-about.html
       children:
 

@@ -47,7 +47,7 @@
 
     - label: Functional Testing
       children:
-        - label: Commerce application testing
+        - label: Application testing
           url: /cloud/docker/docker-mftf.html
           versionless: true
 
@@ -61,7 +61,7 @@
     - label: Installation Guide
       url: /install-gde/install-flow-diagram.html
 
-    - label: Commerce Extensions Guide
+    - label: Extensions Guide
       url: /extensions/
       versionless: true
 
@@ -136,7 +136,7 @@
     - label: API
       children:
 
-        - label: Get Started with Commerce Web APIs
+        - label: Get Started with our Web APIs
           url: /get-started/bk-get-started-api.html
 
         - label: REST API Reference
@@ -152,7 +152,7 @@
           url: /marketplace/eqp/v1/api.html
           versionless: true
 
-        - label: Business Intelligence API
+        - label: Commerce Reporting API
           url: /mbi/docs/getting-started.html
           versionless: true
 
@@ -160,7 +160,7 @@
 - label: Testing
   children:
 
-    - label: Commerce Testing Guide
+    - label: Application Testing Guide
       url: /test/testing.html
 
     - label: Functional Acceptance Testing (MFTF)
@@ -231,7 +231,7 @@
     - label: Customize Checkout
       url: /howdoi/checkout/checkout_overview.html
 
-    - label: Commerce Support
+    - label: Support
       url: /community/resources/support.html
       versionless: true
 

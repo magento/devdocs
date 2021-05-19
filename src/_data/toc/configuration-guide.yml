@@ -28,11 +28,11 @@ pages:
         - label: X-Frame-Options header
           url: /config-guide/secy/secy-xframe.html
 
-    - label: Commerce application initialization and bootstrap
+    - label: Application initialization and bootstrap
       url: /config-guide/bootstrap/magento-bootstrap.html
       children:
 
-        - label: About Commerce modes
+        - label: About application modes
           url: /config-guide/bootstrap/magento-modes.html
 
         - label: Customize base directory paths (MAGE_DIRS)
@@ -103,7 +103,7 @@ pages:
         - label: Code compiler
           url: /config-guide/cli/config-cli-subcommands-compiler.html
 
-        - label: Set the Commerce mode
+        - label: Set the operation mode
           url: /config-guide/cli/config-cli-subcommands-mode.html
 
         - label: Start message queue consumers
@@ -157,11 +157,10 @@ pages:
         - label: Run the support utilities (Adobe Commerce only)
           url: /config-guide/cli/config-cli-subcommands-spt-util.html
 
-    - label: Commerce configuration files
+    - label: Configuration files
       url: /config-guide/config/config-magento.html
       children:
-
-        - label: Commerce's deployment configuration
+        - label: Deployment configuration
           url: /config-guide/config/config-php.html
 
         - label: Module configuration files
@@ -185,7 +184,7 @@ pages:
             - label: Other configuration paths reference
               url: /config-guide/prod/config-reference-most.html
 
-            - label: Adobe Commerce for B2B Extension configuration paths reference
+            - label: B2B Extension configuration paths reference (Adobe Commerce only)
               url: /config-guide/prod/config-reference-b2b.html
 
             - label: .gitignore reference
@@ -223,7 +222,7 @@ pages:
       url: /config-guide/redis/config-redis.html
       children:
 
-        - label: Use Redis for the Commerce page and default cache
+        - label: Use Redis for default cache
           url: /config-guide/redis/redis-pg-cache.html
 
         - label: Use Redis for session storage
@@ -239,19 +238,19 @@ pages:
         - label: Configure Varnish and your web server
           url: /config-guide/varnish/config-varnish-configure.html
 
-        - label: Configure Commerce to use Varnish
+        - label: Configure Varnish for Commerce or Magento
           url: /config-guide/varnish/config-varnish-magento.html
 
         - label: Advanced Varnish configuration
           url: /config-guide/varnish/config-varnish-advanced.html
 
-        - label: How Commerce cache clearing works with multiple Varnish instances
+        - label: How cache clearing works with multiple Varnish instances
           url: /config-guide/varnish/use-multiple-varnish-cache.html
 
         - label: Final verification
           url: /config-guide/varnish/config-varnish-final.html
 
-        - label: How Commerce cache clearing works with Varnish
+        - label: How cache clearing works with Varnish
           url: /config-guide/varnish/use-varnish-cache.html
 
         - label: How Varnish caching works
@@ -267,7 +266,7 @@ pages:
         - label: Install, configure, verify memcached on CentOS
           url: /config-guide/memcache/memcache_centos.html
 
-        - label: Configure Commerce to use memcached
+        - label: Configure Commerce or Magento to use memcached
           url: /config-guide/memcache/memcache_magento.html
 
     - label: Multiple websites or stores
@@ -327,7 +326,7 @@ pages:
         - label: Configure Elasticsearch stopwords
           url: /config-guide/elasticsearch/es-config-stopwords.html
 
-        - label: Configure Commerce to use Elasticsearch
+        - label: Configure Commerce and Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
 
         - label: Change the Elasticsearch client
@@ -341,9 +340,9 @@ pages:
         - label: Configure Elasticsearch stopwords
           url: /config-guide/elasticsearch/es-config-stopwords.html
 
-        - label: Configure Commerce to use Elasticsearch
+        - label: Configure Commerce and Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
-         
+
     - label: Message Queues
       url: /config-guide/mq/rabbitmq-overview.html
       children:
@@ -374,7 +373,7 @@ pages:
       url: /config-guide/log/log-intro.html
       children:
 
-        - label: Commerce logging in more detail
+        - label: Logging in more detail
           url: /config-guide/log/log-magento.html
 
         - label: Example - logging database activity
