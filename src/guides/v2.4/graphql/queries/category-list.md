@@ -21,7 +21,7 @@ If you do not provide any filter input, the query returns the root category.
 The query returns a `CategoryTree` object. The top level of the `CategoryTree` object provides details about the queried category. This object includes the `children` attribute, which contains an array of its immediate subcategories.
 
 {:.bs-callout-info}
-You cannot return the entire category tree if the total number of nodes in the response exceeds the value specified in the `queryDepth` attribute defined in the GraphQL `di.xml` file. By default, this value is 20. [Query security]({{page.baseurl}}/graphql/query-security.html) further describes query depths.
+You cannot return the entire category tree if the total number of nodes in the request exceeds the value specified in the `queryDepth` attribute defined in the GraphQL `di.xml` file. By default, this value is 20. [Query security]({{page.baseurl}}/graphql/query-security.html) further describes query depths.
 
 Use the `breadcrumbs` attribute to return information about the parent categories of the queried category.
 
