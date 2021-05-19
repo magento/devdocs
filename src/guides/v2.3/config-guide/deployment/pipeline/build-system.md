@@ -87,6 +87,11 @@ To set up the build system:
    ```
 
 1. Save your changes to `.gitignore` and exit the text editor.
+1. The build system should use either [default mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#default-mode) or [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode):
+
+   ```bash
+   bin/magento deploy:mode:set default or developer
+   ```
 1. If you use Git, use the following commands to commit the change:
 
    ```bash
