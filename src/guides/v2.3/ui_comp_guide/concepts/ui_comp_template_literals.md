@@ -15,7 +15,7 @@ Template literals allow UI Components to easily assign dynamic values to class p
 
 UI Components are [associated with JavaScript classes]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) to handle behavior on the client side. These should extend one of the core classes to provide a base level of functionality. Inside the child class, a `defaults` property can be provided.
 
-The `defaults` property should be an object and is handled in a special way. Each property of `defaults` becomes a class property upon initialization. This happens in the `initConfig()` method of `lib/core/class.js`. Every item in `defaults` is passed through a `template()` function which evaluates template literals.
+The `defaults` property should be an object and is handled in a special way. Each property of `defaults` becomes a class property upon initialization. This happens in the `initConfig()` method of `magento/module-ui/view/base/web/js/lib/core/class.js`. Every item in `defaults` is passed through a `template()` function which evaluates template literals.
 
 As a result, every `defaults` child property is handled with what could be viewed as a two step process:
 

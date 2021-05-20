@@ -19,7 +19,7 @@ For {{site.data.var.ece}} projects, see [Set up Magento B2B module]({{ site.base
    ```
 
    {:.bs-callout-info}
-   You must specify a [Compatible Magento B2B version]({{ site.baseurl }}/release/availability.html#compatibility) in the command.
+   You must specify a [Compatible B2B extension version]({{ site.baseurl }}/release/availability.html#compatibility) in the command, which can be found in the left column of the compatibility table.
 
    If you get an error when trying to install the B2B module for a local instance of {{site.data.var.ee}} for example:
 

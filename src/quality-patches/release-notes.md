@@ -19,6 +19,55 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.0.22
+
+-  **MDVA-36718** _(for Magento `>=2.3.0 <=2.4.2`)_-Fixes the issue where the old custom options remain after being changed via API.
+-  **MDVA-35773** _(for Magento `>=2.3.6 <=2.3.6-p1 || >=2.4.1 <=2.4.2`)_-Fixes the issue with the Grand Total not being shown as zero on the Invoice for orders with 100% discount.
+-  **MDVA-36833** _(for Magento `2.4.2`)_-Fixes the issue with search results showing random numbers of products per page after excluding some products from shared catalog.
+-  **MDVA-37182** _(for Magento `>=2.4.1 <=2.4.2`)_-Fixes the issue with getting incorrect search results in both Elasticsearch version 6 and version 7.
+-  **MDVA-36253** _(for Magento `>=2.4.0 <=2.4.1-p1`)_-Fixes the issue where the wrong subtotal shows in the mini cart after item deletion.
+-  **MDVA-36853** _(for Magento `2.4.2`)_-Fixes the issue with no images appear when loading large media galleries.
+
+## v1.0.21
+
+-  **MDVA-34665** _(for Magento `>=2.3.4 <=2.3.4-p2`)_-Fixes the issue with missing bundled products on category pages.
+-  **MDVA-36615** _(for Magento `2.4.2`)_-Fixes the issue with incorrect product count in admin product grid.
+-  **MDVA-36464** _(for Magento `>=2.4.0 <=2.4.2`)_-Fixes the issue where the email notification configuration is not working at store-view level.
+-  **MDVA-36138** _(for Magento `^2.3.2`)_-Fixes the issue where the shipping price is not adjusted and full shipping price is shown to customers if not all items in the cart qualify for the free shipping cart rule.
+-  **MDVA-36424** _(for Magento `>=1.3.0 <=1.3.3-p1 || >=2.0.0 <2.2.0`)_-Fixes the issue where media images, attached to page builder elements, disappear when the content is being edited repeatedly, if the backend base URL is different from the storefront base URL.
+-  **MDVA-35984** _(for Magento `^2.4.0`)_-Fixes the issue with incorrect product quantity and sellable quantity, after creating multiple concurrent shipments for the same product.
+
+## v1.0.20
+
+-  **MDVA-36170** _(for Magento `>=2.3.4 <2.4.2`)_-This fixes the issue where the GraphqQL query is not caching by using the category cache tag.
+-  **MDVA-33168** _(for Magento `>=2.3.3 <2.4.2`)_-Fixes the issue when updating a product attribute via API all other attributes change to an empty value.
+-  **MDVA-19640** _(for Magento `>=2.3.0`)_-Fixes the issue where Advanced Reporting is not showing any data.
+-  **MDVA-11189**  _(for Magento `>=2.3.0 <2.3.5`)_-Fixes the issue when after importing a .csv file to update product stock, rows from the cataloginventory_stock table are deleted.
+-  **MDVA-26639**  _(for Magento `>=2.3.3-p1 <2.3.6`)_-Fixes the issue where if a new order confirmation email template is created, the order items are missing in the order mail.
+-  **MDVA-15546**  _(for Magento `>=2.3.0`)_-This fixes the issue where after creating an order a "Column 'entity_id' where clause is ambiguous" error displays in the exception log.
+-  **MDVA-21095**  _(for Magento `>=2.3.0 <2.3.5`)_-Fixes the issue when a query INSERT INTO search_tmp will not end after mass attribute value update.
+-  **MDVA-23845**  _(for Magento `>=2.3.2-p2 <2.3.5`)_-Fixes the issue where email templates cannot be previewed after JavaScript minification is enabled.
+-  **MDVA-22026**  _(for Magento `>=2.3.2 <2.3.4`)_-Fixes the issue where importing products from .csv file including images from external URLs fails.
+-  **MDVA-22383**  _(for Magento `>=2.3.0 <2.3.4`)_-Fixes the issue where saving a product takes a long time and the page breaks.
+-  **MC-41359**  _(for Magento `>=2.3.6-p1 <2.3.7, >=2.4.2 <2.4.3`)_-Fixes the issue of the incorrect SameSite cookie parameters settings.
+
+## v1.0.19
+
+-  **MDVA-33614** _(for Magento `2.4.1`)_-Fixes the issue where Page Builder throws the following error: "An error has occurred while initiating Page Builder. Please consult with your technical support contact."
+-  **MDVA-35356** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue with incorrect store credit return after partially invoiced order cancellation.
+-  **MDVA-33289** _(for Magento `>=2.4.0 <2.4.3`)_-Fixes the issue where raw JavaScript code is displayed in the billing address UI during checkout if Google Tag Manager is enabled.
+-  **MDVA-35982** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue where admin users restricted to a specific website cannot create a shipment for the order placed on same website.
+-  **MDVA-35155** _(for Magento `>=2.3.0 <2.3.6`)_-Fixes the issue where it is impossible to buy a bundle product if the option title was changed.
+-  **MDVA-35910** _(for Magento `>=2.4.1 <2.4.3`)_-Fixes the issue where it is impossible to create a new customer account after disabling the Login as Customer functionality.
+-  **MDVA-34474** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue with adding a product to the requisition list using the API.
+-  **MDVA-34591** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue with an incorrect cart rule discount calculation for "Maximum Qty Discount is Applied To" and "Discount Qty Step (Buy X)".
+-  **MDVA-33704** _(for Magento `>=2.4.0 <2.4.3`)_-Fixes the issue where the "In store pickup" shipping option doesn't show up, though being configured to be available.
+-  **MDVA-34928** _(for Magento `>=2.3.5 <2.3.5-p2`)_-Fixes the issue where the page loader is displayed indefinitely after the store credit is removed from the payment.
+-  **MDVA-35254** _(for Magento `>=2.3.1 <2.4.3`)_-Fixes the issues with CAPTCHA during checkout.
+-  **MDVA-35569** _(for Magento `>=2.3.4 <2.4.2`)_-Fixes the issue where the "fixed product taxes" field is not being populated in GraphQL response when state is specified.
+-  **MDVA-35847** _(for Magento `>=2.4.1 <2.4.3`)_-Fixes the B2B issue where the Company Users form breaks if a custom customer attribute is used.
+-  **MDVA-31307** _(for Magento `>=2.4.0 <2.4.2`)_-Fixes the issue where there are Out of memory errors on certain categories due to problems with dynamic CSP whitelisting for cached blocks.
+
 ## v1.0.18
 
 -  **MDVA-32655** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the incorrect 'in progress' message status to the correct 'complete' message for consumer 'quoteItemCleaner' after deleting several products.

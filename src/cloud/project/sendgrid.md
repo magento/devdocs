@@ -7,7 +7,7 @@ functional_areas:
   - Services
 ---
 
-The SendGrid-based SMTP proxy service provides email authentication and reputation monitoring. A basic set up includes 12,000 emails per month and excludes use in marketing campaigns. See [SendGrid and Magento—Email Delivery. Simplified](https://sendgrid.com/partners/magento/).
+The SendGrid-based SMTP proxy service provides email authentication and reputation monitoring. A basic set up includes 12,000 emails per month and excludes use in marketing campaigns.
 
 Magento automates the SendGrid integration for Starter and Pro Integration environments. The Pro Production and Staging environments require manual provisioning and configuration during the IaaS hardware provisioning process.
 

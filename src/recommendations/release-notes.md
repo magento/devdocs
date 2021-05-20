@@ -6,6 +6,7 @@ ee_only: True
 
 The release notes contain updates to the following Product Recommendations modules:
 
+-  As of March 2021, Product Recommendations are now supported in [PWA Studio](https://magento.github.io/pwa-studio/product-recs) storefronts.
 -  Product Recommendations metapackage: `magento/product-recommendations`
 -  Page Builder support in Product Recommendations (optional) module: `magento/module-page-builder-product-recommendations`
 -  Visual similarity recommendation type support for Product Recommendations (optional) module: `magento/module-visual-product-recommendations`
@@ -15,21 +16,36 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.2.6 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed a JavaScript modal error
+-  {:.fix}Fixed an issue where Fastly's Web Application Firewall (WAF) was incorrectly blocking a cookie
+
+## 3.2.5 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.new}Renamed Magento Services to [Commerce Services](https://docs.magento.com/user-guide/system/saas.html) and improved usability in the Admin.
+
+## 3.2.4 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed the "Unable to retrieve configurable product options data" error when indexing product attributes
+
 ## 3.2.3 of magento/product-recommendations for Magento Commerce 2.4.0
 
+-  {:.new}Added the ability to [preview recommendation results](https://docs.magento.com/user-guide/marketing/create-new-rec.html#preview) at creation time. This might require that you update dependencies in the current version.
 -  {:.fix}Fixed the "Unable to retrieve configurable product options data" error during Catalog Sync
 -  {:.fix}Fixed an issue where the store code was not being set correctly when you enabled the "Add store code to URL" configuration
 -  {:.fix}Improved detection of Admin Panel configuration changes to ensure these changes are reflected in Catalog Sync data
 
 ## 3.2.2 of magento/product-recommendations for Magento Commerce 2.4.0
 
--  {:.new}Added the ability to [monitor and manage](https://docs.magento.com/user-guide/system/catalog-sync.html) the catalog sync process from the Admin Panel.
--  {:.new}Added [inclusion and exclusion filters](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html) to control what products can and cannot be displayed in recommendations.
+-  {:.new}Added the ability to [preview recommendation results](https://docs.magento.com/user-guide/marketing/create-new-rec.html#preview) at creation time. This might require that you update your module to the latest version.
+-  {:.new}Added the ability to [monitor and manage](https://docs.magento.com/user-guide/system/catalog-sync.html) the catalog sync process from the Admin Panel
+-  {:.new}Added [inclusion and exclusion filters](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html) to control what products can and cannot be displayed in recommendations
 -  {:.new}Added the [Visual similarity recommendation type](https://docs.magento.com/user-guide/marketing/prex-type-visualsim.html)
 
 ## 1.2.1 of magento/module-page-builder-product-recommendations for Page Builder for Magento Commerce 2.4.0 and later
 
--  {:.new}Added support for the 3.2.0+ version of the `magento/product-recommendations` module.
+-  {:.new}Added support for the 3.2.0+ version of the `magento/product-recommendations` module
 
 ## 3.1.0 of magento/product-recommendations for Magento Commerce 2.4.0
 

@@ -1,7 +1,7 @@
 ---
 title: Magento_CmsPageBuilderAnalytics
 source_repo: magento2-page-builder
-release: v1.3.3
+release: v1.3.4
 github_path: app/code/Magento/CmsPageBuilderAnalytics/README.md
 last_modified_at: '2019-03-05 18:34:09 +0100'
 content: The Magento_CmsPageBuilderAnalytics module configures data definitions for
