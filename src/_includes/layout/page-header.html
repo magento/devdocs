@@ -41,6 +41,8 @@
   </div>
   {% endif %}
 
+  {% include layout/edition-callout.html %}
+
   <h1 class="page-title">{{ page.title }}</h1>
 
   {% if page.subtitle %}
@@ -48,8 +50,6 @@
   {% endif %}
 
   {% include layout/github-links.html %}
-
-  {% include layout/edition-callout.html %}
 
   {% if page.url contains "upgrade-compatibility-tool/" %}
   <div class="message-banner">
