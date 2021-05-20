@@ -1,12 +1,12 @@
-### Why to set ulimit
+### Why to set open files ulimit
 
 Rolling back to a previous backup can silently fail, resulting in incomplete data being written to the file system or database. (This includes all types of rollbacks, including using System Upgrade, Component Manager, or the [`magento setup:rollback`]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll) command.)
 
 In some cases, a very long query string causes the user's allocated memory space to run out of memory because of too many recursive calls.
 
-### How to set ulimit
+### How to set open files ulimit
 
-We recommend setting the [`ulimit`](http://ss64.com/bash/ulimit.html) for the Magento file system user to a value of 65536 or more.
+We recommend setting the open files [`ulimit`](http://ss64.com/bash/ulimit.html) for the Magento file system user to a value of 65536 or more.
 
 You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.
 
@@ -21,7 +21,7 @@ ulimit -s 65536
 You can change this to a larger value if needed.
 
 {:.bs-callout-info}
-The syntax for `ulimit` depends on the UNIX shell you use. The preceding setting should work with CentOS and Ubuntu with the Bash shell. However, for Mac OS, the correct setting is `ulimit -S 65532`. Consult a man page or operating system reference for more information.
+The syntax for open files `ulimit` depends on the UNIX shell you use. The preceding setting should work with CentOS and Ubuntu with the Bash shell. However, for Mac OS, the correct setting is `ulimit -S 65532`. Consult a man page or operating system reference for more information.
 
 To optionally set the value in the user's Bash shell:
 
