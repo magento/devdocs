@@ -14,7 +14,7 @@ To override these default values, create a custom module and provide a new value
 
 ## Query complexity
 
-A complex GraphQL query, such as the `cart` or `products` query, can potentially generate a heavy workload on the server. Complex queries can potentially be used to create distributed denial of service (DDoS) attacks by overloading the server with specious requests.
+A complex GraphQL query, such as the [`cart`]({{page.baseurl}}/graphql/queries/cart.html) or [`products`]({{page.baseurl}}/graphql/queries/products.html) query, can potentially generate a heavy workload on the server. Complex queries can potentially be used to create distributed denial of service (DDoS) attacks by overloading the server with specious requests.
 
 Each instance of the following items adds 1 to the complexity score:
 
