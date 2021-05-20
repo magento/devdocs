@@ -36,6 +36,12 @@ pages:
         - label: Component Status
           url: /release-notes/component-status.html
 
+        - label: Magento Open Source 2.3.7 Release Notes
+          url: /release-notes/open-source-2-3-7.html
+
+        - label: Magento Commerce 2.3.7 Release Notes
+          url: /release-notes/commerce-2-3-7.html
+          
         - label: Magento Open Source 2.3.6 Release Notes
           url: /release-notes/open-source-2-3-6.html
 

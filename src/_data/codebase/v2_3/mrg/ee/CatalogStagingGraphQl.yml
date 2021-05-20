@@ -1,7 +1,7 @@
 ---
 title: Magento_CatalogStagingGraphQl
 source_repo: magento2ee
-release: 2.3.6
+release: 2.3.7
 github_path: app/code/Magento/CatalogStagingGraphQl/README.md
 last_modified_at: '2019-11-22 09:44:16 -0600'
 content: |-
