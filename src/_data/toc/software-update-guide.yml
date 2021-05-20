@@ -1,7 +1,7 @@
 label: Software Update Guide
 pages:
 
-    - label: Magento upgrade overview
+    - label: Commerce upgrade overview
       url: /comp-mgr/bk-compman-upgrade-guide.html
 
     - label: Prerequisites
@@ -43,11 +43,11 @@ pages:
           url: /upgrade-compatibility-tool/developer.html
           versionless: true
 
-    - label: Upgrade Magento
+    - label: Upgrade Commerce
       url: /comp-mgr/cli/cli-upgrade.html
       children:
 
-        - label: Update the Magento application
+        - label: Update the Commerce application
           url: /comp-mgr/cli/dev_update-magento.html
         
         - label: Upgrade with sample data
@@ -66,7 +66,7 @@ pages:
       url: /comp-mgr/patching.html
       children:
 
-       - label: Magento Quality Patches
+       - label: Commerce Quality Patches
          url: /comp-mgr/patching/mqp.html
          children:
 

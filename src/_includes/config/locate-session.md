@@ -1,6 +1,6 @@
 ## Locate your session storage {#session-where}
 
-This topic discusses how to locate where your session files are stored. The Magento application uses the following logic to store session files:
+This topic discusses how to locate where your session files are stored. The Commerce application uses the following logic to store session files:
 
 *  If you configured memcached, sessions are stored in RAM; for more information, see [Use memcached for session storage]({{ page.baseurl }}/config-guide/memcache/memcache.html).
 *  If you configured Redis, sessions are stored on the Redis server; for more information, see [Use Redis for page caching or session storage]({{ page.baseurl }}/config-guide/redis/config-redis.html).
@@ -30,7 +30,7 @@ As a user with `root` privileges, open your `php.ini` file and search for the va
 
 ## Garbage collection configuration {#session-gc}
 
-To clean up expired sessions, Magento calls the `gc` (_garbage collection_) handler randomly according to a probability that is calculated by the `gc_probability / gc_divisor` directive. For example, if you set these directives to `1/100` respectively, it means a probability of `1%` (_probability of one call of garbage collection per 100 requests_).
+To clean up expired sessions, Commerce calls the `gc` (_garbage collection_) handler randomly according to a probability that is calculated by the `gc_probability / gc_divisor` directive. For example, if you set these directives to `1/100` respectively, it means a probability of `1%` (_probability of one call of garbage collection per 100 requests_).
 
 The garbage collection handler uses the `gc_maxlifetime` directive—the number of seconds after which the sessions will be seen as _garbage_ and potentially cleaned up.
 
@@ -48,4 +48,4 @@ You can overwrite the `session.gc_` directives from the `php.ini` file in the `<
  ),
 ```
 
-The configuration depends on the traffic and specific needs of a certain Magento application.
+The configuration depends on the traffic and specific needs of a certain Commerce application.
