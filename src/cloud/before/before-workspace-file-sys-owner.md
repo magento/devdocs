@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Set up the Magento file system owner
+title: Set up the file system owner
 functional_areas:
   - Cloud
   - Setup

@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce packages
+title: Adobe Commerce packages
 ---
 
 <!-- The 'packages' variable contains the 'packages' node of the '_data/codebase/v2_4/commerce/composer_lock.json' file
