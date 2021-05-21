@@ -1,14 +1,15 @@
 ---
 group: web-api
 subgroup: 01_Introduction
-title: Getting Started with Magento Web APIs
-landing-page: Getting Started with Web APIs
+title: Getting Started with our Web APIs
+landing-page: Getting Started with our APIs
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
 functional_areas:
   - Integration
 ---
+
 ## What are the Magento web APIs? {#whatare}
 
 The Magento web [API](https://glossary.magento.com/api) framework provides integrators and developers the means to use web services that communicate with the Magento system. Key features include:

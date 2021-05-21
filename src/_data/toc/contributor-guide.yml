@@ -6,7 +6,7 @@ pages:
       versionless: true
 
       children:
-        - label: Magento Definition of Done
+        - label: Commerce Definition of Done
           url: /contributor-guide/contributing_dod.html
           versionless: true
 

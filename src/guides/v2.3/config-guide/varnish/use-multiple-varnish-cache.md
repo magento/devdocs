@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: How Magento cache works with multiple Varnish instances
+title: How cache clearing works with multiple Varnish instances
 functional_areas:
   - Configuration
   - System

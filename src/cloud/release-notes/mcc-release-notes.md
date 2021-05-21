@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Cloud Components release notes
+title: Cloud Components for Commerce
 functional_areas:
   - Cloud
   - Setup
