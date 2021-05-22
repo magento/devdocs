@@ -13,7 +13,7 @@ functional_areas:
 The following steps are required to add a custom field to an offline payment method:
 
 1. Create a new module.
-1. Create an `InstallSchema` script.
+1. Add a `db_schema.xml` file.
 1. Add a `requirejs` file to the module.
 1. Override the vendor files.
 1. Add an Observer.
@@ -27,53 +27,25 @@ Create a new module named `Learning/CustomField` and register it.
 
 For more information about creating a new module, refer to [Create a Module](https://devdocs.magento.com/videos/fundamentals/create-a-new-module/)
 
-## Step 2 Create an InstallSchema script.
+## Step 2 Add a `db_schema.xml` file
 
-Next, we need to create the InstallSchema script.
-Because adding an new column technically into several tables, such as `quote_payment` and `sales_order_payment.`
+Add the `paymentpocomment` column in the `quote_payment` and `sales_order_payment` table using the declarative schema method.
 
-Create the file `app/code/Learning/CustomField/Setup/InstallSchema.php`:
+Create the declarative schema in the following path `app/code/Learning/CustomField/etc/db_schema.xml`:
 
 {% collapsible Show code %}
 
-```php?start_inline=1
-<?php
-
-namespace Learning\CustomField\Setup;
-
-use Magento\Framework\Setup\InstallSchemaInterface;
-use Magento\Framework\Setup\ModuleContextInterface;
-use Magento\Framework\Setup\SchemaSetupInterface;
-
-class InstallSchema implements InstallSchemaInterface
-{
-    public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
-    {
-        $setup->startSetup();
-        $setup->getConnection()->addColumn(
-            $setup->getTable('quote_payment'),
-            'paymentpocomment',
-            [
-            'type' => 'text',
-            'nullable' => true,
-            'comment' => 'paymentpocomment',
-            ]
-        );
-        $setup->getConnection()->addColumn(
-            $setup->getTable('sales_order_payment'),
-            'paymentpocomment',
-            [
-                'type' => 'text',
-                'nullable' => true  ,
-                'comment' => 'paymentpocomment',
-            ]
-        );
-        $setup->endSetup();
-    }
-}
+```xml
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="quote_payment" resource="checkout" engine="innodb" comment="Sales Flat Quote Payment">
+        <column xsi:type="text" name="paymentpocomment" nullable="true" comment="PO Comment"/>
+    </table>
+    <table name="sales_order_payment" resource="sales" engine="innodb" comment="Sales Flat Order Payment">
+        <column xsi:type="text" name="paymentpocomment" nullable="true" comment="PO Comment"/>
+    </table>
+</schema>
 ```
-
-{% endcollapsible %}
 
 ## Step 3: Add a requirejs file to the module
 
@@ -90,6 +62,8 @@ Next, create the `requirejs-config.js` file:
     }
 }
 ```
+
+{% endcollapsible %}
 
 ## Step 4: Override the vendor files
 
