@@ -1,5 +1,5 @@
 ---
-title: Magento application testing
+title: Application testing
 group: cloud-guide
 functional_areas:
   - Cloud

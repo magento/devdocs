@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Configure Magento to use memcached
+title: Configure Commerce or Magento to use memcached
 functional_areas:
   - Configuration
   - System
