@@ -3,6 +3,8 @@ layout: tutorial
 group: how-do-i
 subgroup:
 title: Add a custom field in offline payment method
+contributor_name: Ziffity
+contributor_link: https://www.ziffity.com/
 subtitle: Customize Checkout
 menu_order: 3
 level3_subgroup: checkout-tutorial
