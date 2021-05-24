@@ -17,16 +17,16 @@ Reference to [Carding Attack #28614](https://github.com/magento/magento2/issues/
 
 1. Bot attacker will create the order several times using rest endpoint `POST <host>/rest/<store_code>/V1/guest-carts/<cart-id>/payment-information`.
 
-2. To avoid card bot attack, we need to enable the default `Magento` & `Braintree` reCaptcha configuration from admin.
+1. To avoid card bot attack, we need to enable the default `Magento` & `Braintree` reCaptcha configuration from admin.
 
 ### How to enable the configuration ?
 
 1. Log in to [Admin](https://glossary.magento.com/admin).
-2. These configuration values are available in the `Magento` Admin.
+1. These configuration values are available in the `Magento` Admin.
 
-   * Go to *Stores* > *Settings* > *Configuration* > *Security* > *Google reCaptcha* > *Frontend* > *Enable* > *Yes*.
-   * Go to *Stores* > *Settings* > *Configuration* > *Security* > *Google reCaptcha* > *General* > *reCaptcha type* > *Invisible reCaptcha v2*
-   * Go to *Stores* > *Settings* > *Configuration* > *Sales* > *Payment Methods* > *Recommended Solutions* > *Braintree Payments* > *Configure* > *Advanced Braintree Settings* > *Enable ReCaptcha* > *Yes*.
+   *  Go to *Stores* > *Settings* > *Configuration* > *Security* > *Google reCaptcha* > *Frontend* > *Enable* > *Yes*.
+   *  Go to *Stores* > *Settings* > *Configuration* > *Security* > *Google reCaptcha* > *General* > *reCaptcha type* > *Invisible reCaptcha v2*
+   *  Go to *Stores* > *Settings* > *Configuration* > *Sales* > *Payment Methods* > *Recommended Solutions* > *Braintree Payments* > *Configure* > *Advanced Braintree Settings* > *Enable ReCaptcha* > *Yes*.
 
 {:.bs-callout-info}
 For More Information :- [reCaptcha Configuration](https://docs.magento.com/user-guide/stores/security-google-recaptcha.html)
