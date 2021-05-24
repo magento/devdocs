@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: MFTF Vendor-supplied Tests
 ---
 
-{:.bs-callout-info} At this stage, the MFTF Vendor-supplied check is not required to pass technical review. The pass/fail status of this check is ignored. We are still observing the behavior of this set of tests and will start requiring these tests at a later time, with sufficient notice.
+{: .bs-callout .bs-callout-info} At this stage, the MFTF Vendor-supplied check is not required to pass technical review. The pass/fail status of this check is ignored. We are still observing the behavior of this set of tests and will start requiring these tests at a later time, with sufficient notice.
 
 ## Overview
 
