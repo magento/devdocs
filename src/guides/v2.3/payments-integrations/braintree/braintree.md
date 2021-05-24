@@ -5,13 +5,13 @@ contributor_name: Ziffity
 contributor_link: https://www.ziffity.com/
 --- 
 
-Reference to [Carding Attack #28614](https://github.com/magento/magento2/issues/28614) Gene Commerce has come up with latest version [GitHub](https://github.com/genecommerce/module-braintree-magento2/releases/tag/4.0.7) 
+Reference to [Carding Attack #28614](https://github.com/magento/magento2/issues/28614) Gene Commerce has come up with latest version [GitHub](https://github.com/genecommerce/module-braintree-magento2/releases/tag/4.0.7)
 
 ### Requirements
 
 **Magento** | **PHP** | **Braintree**
 --- | --- | ---
-`< 2.x` | `> 7.x` | `>= 4.0.7`
+`2.3,2.4` | `> 7.x` | `>= 4.0.7`
 
 ### How to prevent braintree card bot attack ?
 
@@ -21,7 +21,7 @@ Reference to [Carding Attack #28614](https://github.com/magento/magento2/issues/
 
 ### How to enable the configuration ?
 
-1. Log in to [Admin](https://glossary.magento.com/admin). 
+1. Log in to [Admin](https://glossary.magento.com/admin).
 2. These configuration values are available in the `Magento` Admin.
 
    * Go to *Stores* > *Settings* > *Configuration* > *Security* > *Google reCaptcha* > *Frontend* > *Enable* > *Yes*.
