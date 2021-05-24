@@ -16,6 +16,7 @@ All extension packages have their footprint analyzed at the time of submissions.
 ## What is being checked
 
 At the moment Footptint Analyzer check is performing static package code testing to identify APIs exposed by the module. Report usually consists of the following sections:
- - Programmatic API and Data interfaces – provides information on the number of programmatic APIs found in the extension code package.
- - Web API – provides insights on the number of REST and SOAP APIs exposed by the extension package.
- - GraphQL – verifies if extension exposes any GraphQL entities
+ 
+*  Programmatic API and Data interfaces – provides information on the number of programmatic APIs found in the extension code package.
+*  Web API – provides insights on the number of REST and SOAP APIs exposed by the extension package.
+*  GraphQL – verifies if extension exposes any GraphQL entities.
