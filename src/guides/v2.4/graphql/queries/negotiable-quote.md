@@ -16,7 +16,7 @@ negotiableQuote (uid ID!): NegotiableQuote
 
 ## Example usage
 
-The following example returns information about the negotiable quote with the ID of `Mw==`. The buyer and seller agreed to a five percent discount on the order.
+The following example returns information about the negotiable quote with the UID of `kw6mLEvl6vjjPNsjtJqwpamv5o0iT1bc`. The buyer and seller agreed to a five percent discount on the order.
 
 **Request:**
 

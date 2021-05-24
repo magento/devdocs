@@ -4,7 +4,7 @@ title: sendNegotiableQuoteForReview mutation
 b2b_only: true
 ---
 
-The `sendNegotiableQuoteForReview` mutation sends the negotiable quote to the seller for review.
+The `sendNegotiableQuoteForReview` mutation sends the negotiable quote to the seller for review. If the mutation is successful, the buyer cannot modify the quote until the merchant accepts the request.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
@@ -25,7 +25,8 @@ The following example adds a comment to the specified negotiable quote.
 ```graphql
 mutation{
   sendNegotiableQuoteForReview(input: {
-    quote_uid: "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb" comment: { comment: "Thanks!"}
+    quote_uid: "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb" 
+    comment: { comment: "Thanks!"}
   }){
     quote {
       uid

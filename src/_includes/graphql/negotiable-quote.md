@@ -3,9 +3,9 @@ The `NegotiableQuote` object contains details of a negotiable quote, including i
 Attribute | Data Type | Description
 --- | --- | ---
 `buyer` | NegotiableQuoteUser! | The first and last name of the buyer
-`comments` | [NegotiableQuoteComment] | A list of comments made by the buyer and seller
+`comments` | [NegotiableQuoteComment!] | A list of comments made by the buyer and seller
 `created_at` | String | Timestamp indicating when the negotiable quote was created
-`history` | [NegotiableQuoteHistoryEntry] | A list of status and price changes for the negotiable quote
+`history` | [NegotiableQuoteHistoryEntry!] | A list of status and price changes for the negotiable quote
 `items` | [CartItemInterface] | The list of items in the negotiable quote
 `name` | String! | The title assigned to the negotiable quote
 `prices` | CartPrices | A set of subtotals and totals applied to the cart
@@ -63,7 +63,7 @@ The `NegotiableQuoteHistoryEntry` object contains details about a change to a ne
 Attribute | Data Type | Description
 --- | --- | ---
 `author` | [NegotiableQuoteUser!](#NegotiableQuoteUser) | The person who made a change in the status of the negotiable quote
-`change_type` | NegotiableQuoteHistoryEntryChangeType! | An enum that describes the why the entry in the negotiable quote history changed status. Possible values are CREATED, UPDATED, CLOSED, and UPDATED_BY_SYSTEM
+`change_type` | NegotiableQuoteHistoryEntryChangeType! | An enum that describes why the entry in the negotiable quote history changed status. Possible values are CREATED, UPDATED, CLOSED, and UPDATED_BY_SYSTEM
 `changes` | [NegotiableQuoteHistoryChanges](#NegotiableQuoteHistoryChanges) | The set of changes in the negotiable quote
 `created_at` | String | Timestamp indicating when the negotiable quote entry was created
 `uid` | ID! | The unique ID of a NegotiableQuoteHistoryEntry object
@@ -79,12 +79,12 @@ Attribute | Data Type | Description
 
 ### NegotiableQuoteHistoryProductsRemovedChange attributes {#NegotiableQuoteHistoryProductsRemovedChange}
 
-The `NegotiableQuoteHistoryProductsRemovedChange` object provides details about products removed from a negotiable quote because of an action by a buyer or seller, or because the item was removed from the shared catalog.
+The `NegotiableQuoteHistoryProductsRemovedChange` object provides details about products removed from a negotiable quote because of an action by a buyer or seller, or because the item was removed from the catalog.
 
 Attribute | Data Type | Description
 --- | --- | ---
-`removed_from_catalog_product_uids` | [ID]| A list of product IDs the seller removed from the catalog
-`removed_from_quote_products` | [[ProductInterface]]({{page.baseurl}}/graphql/interfaces/product-interface.html) | A list of products removed from the quote by either the buyer or the seller
+`products_removed_from_catalog` | [ID]| A list of product IDs the seller removed from the catalog
+`products_removed_from_quote` | [[ProductInterface]]({{page.baseurl}}/graphql/interfaces/product-interface.html) | A list of products removed from the quote by either the buyer or the seller
 
 ### NegotiableQuoteHistoryStatusChange attributes {#NegotiableQuoteHistoryStatusChange}
 
@@ -93,7 +93,7 @@ The `NegotiableQuoteHistoryStatusChange` object contains an instance of the stat
 Attribute | Data Type | Description
 --- | --- | ---
 `new_status` | NegotiableQuoteStatus! | The updated status
-`old_status` | NegotiableQuoteStatus | The previous status. The value will be null for the first history entry in a negotiable quote
+`old_status` | NegotiableQuoteStatus | The previous status. The value will be `null` for the first history entry in a negotiable quote
 
 ### NegotiableQuoteHistoryStatusesChange attributes {#NegotiableQuoteHistoryStatusesChange}
 

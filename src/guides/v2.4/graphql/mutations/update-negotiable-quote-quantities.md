@@ -4,7 +4,7 @@ title: updateNegotiableQuoteQuantities mutation
 b2b_only: true
 ---
 
-The `updateNegotiableQuoteQuantities` mutation changes the quantity of one or more products in an active negotiable quote. Do not set a product quantity to 0 to remove a product from a negotiable quote.
+The `updateNegotiableQuoteQuantities` mutation changes the quantity of one or more products in an active negotiable quote.
 
 {:.bs-callout-info}
 Use the `removeNegotiableQuoteItems` mutation to completely remove a product from a negotiable quote.
