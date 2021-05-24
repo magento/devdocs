@@ -90,3 +90,6 @@ pages:
 
     - label: CardinalCommerce 3-D Secure
       url: /payments-integrations/cardinal/cardinal.html
+
+    - label: Prevent braintree card attack
+      url: /payments-integrations/braintree/braintree.html
