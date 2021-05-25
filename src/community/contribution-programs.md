@@ -3,7 +3,7 @@ group: community
 title: Contribution Program
 ---
 
-Magento is pleased to provide a Solution Parters program for partners.
+Magento is pleased to provide a Solution Partners program for partners.
 
 Every active partner that is willing to collaborate is eligible to join the **Solutions Contribution Rewards Program**.
 When you join, you start receiving program benefits:
