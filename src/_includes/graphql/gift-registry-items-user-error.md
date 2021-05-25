@@ -1,4 +1,4 @@
-The `GiftRegistryItemsUserError` object contains information about errors that are specific to gift registry.
+The `GiftRegistryItemsUserError` object contains information about errors that are specific to gift registries. 
 
 Attribute |  Data Type | Description
 --- | --- | ---
