@@ -96,6 +96,8 @@ return [
 {:.bs-callout-info}
 Leave all the settings that do not start with `db-` and `amqp-` at their default values.
 
+`amqp` settings can be commented out if not used to avoid startup errors.
+
 You can include additional setup options—available to the `setup:install` command—in the test configuration file. A
 complete list of options is available [here]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento).
 
