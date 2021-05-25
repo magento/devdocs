@@ -2,6 +2,8 @@
 group: graphql
 title: moveCartItemsToGiftRegistry mutation
 ee_only: true
+contributor_name: Atwix
+contributor_link: https://www.atwix.com/
 ---
 
 The `moveCartItemsToGiftRegistry` mutation moves all items from the cart to a gift registry.
