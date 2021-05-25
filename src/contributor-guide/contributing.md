@@ -377,14 +377,14 @@ Before creating an issue, do the following:
 -  Check the [Developer Documentation](http://devdocs.magento.com/) and [User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html) to make sure the behavior you are reporting is really a bug, not a feature.
 -  Check the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating somebody’s work.
 -  Ensure that information you are reporting is a technical issue. Refer to the [Community Forums](https://community.magento.com/) or [Magento Stack Exchange](http://magento.stackexchange.com/) for technical questions, feature requests, etc.
--  Verify that the issue you are reporting does not relate to the Magento Commerce. GitHub is intended for Magento Open Source users to report on issues related to Open Source only. You can report Commerce-related issues one of two ways:
+-  Verify that the issue you are reporting does not relate to Magento Commerce. GitHub is intended for Magento Open Source users to report on issues related to Open Source only. You can report Commerce-related issues one of two ways:
 
    -  Use the Support portal associated with your account
    -  If you are a Partner reporting on behalf of a merchant, use the Partner portal
 
 -  Check if the issue exists on the `2.4-develop` branch with a clean Magento installation. We only accept pull requests for the `2.4-develop` branch. If the issue is not reproducible on the `2.4-develop` branch, it will be closed.
 
-If you are sure that the problem you are experiencing is a bug, file a new issue in a Github issue tracker following the recommendations below.
+If you are sure that the problem you are experiencing is a bug, file a new issue in GitHub following the recommendations below.
 
 ### Issue template
 
@@ -394,7 +394,7 @@ Note that a higher level of detail in the report increases the chance that someo
 
 ### Title
 
-The title is a vital part of bug report. A well written title should contain a clear, brief explanation of the issue, emphasizing the most important points.
+The title is a vital part of the bug report. A well written title should contain a clear, brief explanation of the issue, emphasizing the most important points.
 
 A good example:
 
@@ -413,7 +413,7 @@ Stating preconditions is very important. Provide information on:
 -  System configuration settings you have changed
 -  Detailed information on entities created (Products, Customers, etc)
 -  Magento version
--  Anything else that would help a developer replicate the bug
+-  Anything else that would help a developer reproduce the bug
 
 Example:
 
@@ -424,7 +424,7 @@ Example:
 
 #### Steps to reproduce
 
-Good replication steps are vital to a good bug. The issue is more likely to be fixed if it can be reproduced.
+Good steps to reproduce are vital to a good bug report. The issue is more likely to be fixed if it can be reproduced.
 
 Precisely describe each step required to reproduce the issue. Try to include as much information as possible; even minor details could be crucial.
 
@@ -451,7 +451,7 @@ Actual result:
 
 Additional information is often requested when the bug report is processed. You can save time by providing both Magento and browser logs, screenshots, repository branch and HEAD commit you checked out to install Magento and any other artifacts related to the issue.
 
-Once the issue created, it must pass through a series of [Magento Issue Gates](https://github.com/magento/magento2/wiki/Magento-Issue-Gates)
+Once the issue is created, it must pass through a series of [Magento Issue Gates](https://github.com/magento/magento2/wiki/Magento-Issue-Gates).
 
 ## Help triage issues  [![](https://www.codetriage.com/magento/magento2/badges/users.svg)](https://www.codetriage.com/magento/magento2) {#triage}
 
