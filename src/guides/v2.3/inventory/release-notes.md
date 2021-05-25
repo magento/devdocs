@@ -21,6 +21,7 @@ The release notes include:
 -  {:.bug}Known issues
 
 ### v1.2.3
+
 {{site.data.var.im}} 1.2.3 (module version: `magento/inventory-metapackage = 1.2.3`) is supported with version 2.4.3 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix} Fixed several issues related to the composite product visibility on the frontend.
@@ -36,6 +37,7 @@ The release notes include:
 -  {:.fix} Magento now refreshes the category product cache when a bundle product comes back in stock.
 
 ### v1.2.2
+
 {{site.data.var.im}} 1.2.2 (module version: `magento/inventory-metapackage = 1.2.2`) is supported with version 2.4.2 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix} Fixed several issues related to the composite product visibility on the frontend.
@@ -47,6 +49,7 @@ The release notes include:
 -  {:.new} **Functional tests.** Introduced new functional tests and provided fixes for existing tests to make them more stable.
 
 ### v1.2.1
+
 {{site.data.var.im}} 1.2.1 (module version: `magento/inventory-metapackage = 1.2.1`) is supported with version 2.4.1 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix} Fixed known issue related to `inventory_cleanup_reservations` cron job, addressed issue related to In-Store Pickup functionality for bundle products, general improvements to stock calculation, bundle product support and backorders functionality.
@@ -54,6 +57,7 @@ The release notes include:
 -  {:.new} **Functional tests.** Introduced new functional tests to provide additional coverage for In-Store Pickup functionality.
 
 ### v1.2.0
+
 {{site.data.var.im}} 1.2.0 (module version: `magento/inventory-metapackage = 1.2.0`) is supported with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix} Numerous bug fixes to resolve issues with source assignment, scalable environment feature support, and compatibility with PHP 7.4, MySQL 8, and PHPUNIT 9.
@@ -78,6 +82,7 @@ The release notes include:
    ```
 
 ### v1.1.6
+
 {{site.data.var.im}} 1.1.6 (module version: `inventory-composer-metapackage = 1.1.6`) is supported with version 2.3.6 and compatible with version 2.3.5, 2.3.4, 2.3.3, 2.3.2, 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix} Bug fixes to resolve issues related to backorders, credit memos, low stock report grid, fixes connected to "resolve inconsistencies" CLI tool and general improvements.
@@ -94,6 +99,7 @@ The release notes include:
 -  {:.bug} Bug fixes to prevent product oversell, "Out of stock" products visibility on the storefront, numerous fixes for scalable environment support and user interface improvements.
 
 ### v1.1.4
+
 {{site.data.var.im}} 1.1.4 (module version: `inventory-composer-metapackage = 1.1.4`) is supported with version 2.3.4 and compatible with version 2.3.3, 2.3.2, 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix}**Increased performance.** Introduced bunching logic for Inventory Reservations CLI command to reduce memory usage and avoid cases when the process is stuck without any response.
@@ -103,6 +109,7 @@ The release notes include:
 -  {:.bug} Numerous bug fixes targeted to resolve issues with credit memos, grouped products, source and stock mass actions.
 
 ### v1.1.3
+
 {{site.data.var.im}} 1.1.3 (module version: `inventory-composer-metapackage = 1.1.3`) is supported with version 2.3.3 and compatible with version 2.3.2, 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix}**Better integration with {{site.data.var.ee}} and {{site.data.var.b2b}} features.** {{site.data.var.im}} now works correctly with the following features for websites using non-default inventory sources and stocks:
@@ -115,6 +122,7 @@ The release notes include:
 -  {:.new}**Increased test coverage.** The automated Functional and Integration test coverage has increased significantly.
 
 ### v1.1.2
+
 {{site.data.var.im}} 1.1.2 (module version: `inventory-composer-metapackage = 1.1.2`) is supported with version 2.3.2 and compatible with version 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix} Added `source_code` to the response for the GET `/V1/shipments` REST endpoint. <!-- https://github.com/magento/inventory/pull/2142 -->
@@ -147,6 +155,7 @@ New modules for Inventory Management 1.1.2 Beta include:
 -  {:.new} **Export Aggregated Stock Service** - This release provides a new export aggregated stock service (retaining reservations in the system) to support external Sales Channels like Amazon, eBay, Google Shopping ads, etc.  <!-- https://github.com/magento/inventory/pull/2067 -->
 
 ### v1.1.0
+
 {{site.data.var.im}} 1.1.0 (module version: `inventory-composer-metapackage = 1.1.0`)  is supported and compatible with version 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. {{site.data.var.im}} 1.1.1 released only as a package name update, supported with version 2.3.1 and compatible with version 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix} **Added support for Elasticsearch for single and multi sources modes** — You can now configure and use Elasticsearch with custom stocks. This resolves a [known issue](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html#known-issues) in version 2.3.0 of {{site.data.var.ce}} and {{site.data.var.ee}}. See [Set up Elasticsearch service]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html) for installation information and [Elasticsearch](https://docs.magento.com/m2/ce/user_guide/catalog/search-elasticsearch.html) to configure through the Admin. <!-- PR https://github.com/magento/inventory/pull/1943 -->
@@ -164,4 +173,3 @@ New modules for Inventory Management 1.1.2 Beta include:
 -  {:.new} **Expanded source quantity list** — Merchants with a high number of sources can easily hover and view all sources per product through the Product Grid. Each product displays a minimum of five sources and matching quantities. When hovering over the sources, you can scroll through the entire list of sources and current quantities. See [Managing Inventory Quantities](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-manage-inventory-quantities.html).
 
 -  {:.bug} Known issue with Magento v2.3.1 - Asynchronous migration of data between sources will encounter issues due to changes in Asynchronous APIs with topic names reflecting PHP class and method names. We recommend using synchronous operations, setting **Run asynchronously** to "No". To configure, see [Configure Global Options](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-options-global.html) in the Magento User Guide.
-
