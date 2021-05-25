@@ -59,7 +59,7 @@ class MyClass
 
 Custom events can be dispatched by simply passing in a unique event name to the event manager when you call the `dispatch` function. Your unique event name is referenced in your module's `events.xml` file where you specify which observers will react to that event.
 
-The custom event `my_module_event_after` can be subscribed to by declaring the `MyCompany/MyModule/etc/events.xml` file as below:
+You can make the custom event `my_module_event_after` subscribable by declaring the `MyCompany/MyModule/etc/events.xml` file as below:
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
@@ -73,17 +73,17 @@ The custom event `my_module_event_after` can be subscribed to by declaring the `
 
 Generally, the location of the `events.xml` file will be under the `<module-root>/etc` directory. Observers that are associated with events here will watch for these events globally. The `events.xml` file can also be defined under the `<module-root>/etc/frontend` and `<module-root>/etc/adminhtml` directories to configure observers to only watch for events in those specific areas.
 
-Declare the observer in the appropriate area:
+Declare the observer in the appropriate area. The `global` area allows the observer to run in all areas (`adminhtml`, `crontab`, `frontend`, `graphql`, `webapi_rest`, `webapi_soap`).
 
-| Area | File location | Description |
-| --- | --- | --- |
-| `global` | `<module-dir>/etc/events.xml` | Observer will be executed in all areas: `adminhtml`, `crontab`, `frontend`, `graphql`, `webapi_rest`, `webapi_soap`. |
-| `adminhtml` | `<module-dir>/etc/adminhtml/events.xml` | Observer will be executed in the `adminhtml` area only. |
-| `crontab` | `<module-dir>/etc/crontab/events.xml` | Observer will be executed in the `crontab` area only. |
-| `frontend` | `<module-dir>/etc/frontend/events.xml` | Observer will be executed in the `frontend` area only. |
-| `graphql` | `<module-dir>/etc/graphql/events.xml` | Observer will be executed in the `graphql` area only. |
-| `webapi_rest` | `<module-dir>/etc/webapi_rest/events.xml` | Observer will be executed in the `webapi_rest` area only. |
-| `webapi_soap` | `<module-dir>/etc/webapi_soap/events.xml` | Observer will be executed in the `webapi_soap` area only. |
+| Area | File location |
+| --- | --- |
+| `global` | `<module-dir>/etc/events.xml` |
+| `adminhtml` | `<module-dir>/etc/adminhtml/events.xml` |
+| `crontab` | `<module-dir>/etc/crontab/events.xml` |
+| `frontend` | `<module-dir>/etc/frontend/events.xml` |
+| `graphql` | `<module-dir>/etc/graphql/events.xml` |
+| `webapi_rest` | `<module-dir>/etc/webapi_rest/events.xml` |
+| `webapi_soap` | `<module-dir>/etc/webapi_soap/events.xml` |
 
 ## Observers
 
