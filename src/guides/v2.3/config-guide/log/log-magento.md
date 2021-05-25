@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Magento logging in more detail
+title: Logging in more detail
 functional_areas:
   - Configuration
   - System

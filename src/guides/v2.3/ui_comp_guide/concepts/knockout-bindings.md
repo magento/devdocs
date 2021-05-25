@@ -1,9 +1,6 @@
 ---
 group: ui-components-guide
-subgroup: concepts
-title: Magento custom Knockout.js bindings
-menu_title: Magento custom Knockout.js bindings
-menu_order: 60
+title: Custom Knockout.js bindings
 ---
 
 This topic lists the custom [Knockout.js](http://knockoutjs.com/) bindings used in the core Magento files. These bindings can also be used by third-party developers.

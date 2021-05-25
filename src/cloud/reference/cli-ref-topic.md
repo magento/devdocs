@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Cloud CLI reference
+title: Cloud CLI for Commerce
 functional_areas:
   - Cloud
 ---
