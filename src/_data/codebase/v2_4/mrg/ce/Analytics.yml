@@ -5,13 +5,13 @@ release: 2.4.2
 github_path: app/code/Magento/Analytics/README.md
 last_modified_at: '2020-12-10 20:10:41 -0600'
 content: |-
-  The Magento_Analytics module integrates your Magento instance with the [Magento Business Intelligence (MBI)](https://magento.com/products/business-intelligence) to use [Advanced Reporting](https://devdocs.magento.com/guides/v2.4/advanced-reporting/modules.html) functionality.
+  The Magento_Analytics module integrates your Magento instance with the [Adobe Commerce Reporting](https://magento.com/products/business-intelligence) to use [Advanced Reporting](https://devdocs.magento.com/guides/v2.4/advanced-reporting/modules.html) functionality.
 
   The module implements the following functionality:
 
-  - Enabling subscription to Magento Business Intelligence (MBI) and automatic re-subscription
+  - Enabling subscription to Adobe Commerce Reporting and automatic re-subscription
   - Declaring the configuration schemas for report data collection
-  - Collecting the Magento instance data as reports for MBI
+  - Collecting the Magento instance data as reports for Commerce Reporting
   - Introducing API that provides the collected data
   - Extending Magento configuration with the module parameters:
     - Subscription status (enabled/disabled)
@@ -37,7 +37,7 @@ content: |-
 
   ## Subscription Process
 
-  The subscription to the MBI service is enabled during the installation process of the Analytics module. Each administrator will be notified of these new features upon their initial login to the Admin Panel.
+  The subscription to the Commerce Reporting service is enabled during the installation process of the Analytics module. Each administrator will be notified of these new features upon their initial login to the Admin Panel.
 
   ## Analytics Settings
 

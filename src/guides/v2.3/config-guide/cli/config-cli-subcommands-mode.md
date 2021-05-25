@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Set the Magento mode
+title: Set the operation mode
 functional_areas:
   - Configuration
   - System

@@ -1,10 +1,11 @@
 ---
-title: Clone the Magento repository
+title: Clone the repository
 functional_areas:
   - Install
   - System
   - Setup
 ---
+
 ## Install Composer {#instgde-prereq-compose-install}
 
 {% include install/composer-clone.md %}
