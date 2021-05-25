@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Set ulimit for the web server user
+title: Set the open files limit
 functional_areas:
   - Upgrade
 ---
