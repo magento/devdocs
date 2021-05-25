@@ -9,10 +9,8 @@ Every active partner that is willing to collaborate is eligible to join the **So
 When you join, you start receiving program benefits:
 
 -  Recognition through Magento's official communication channels
--  Magento Activity Points
--  Core Architect assistance
 -  Badges
--  Magento University rewards
+-  Adobe Digital Learning Services rewards
 
 ### How do you join?
 
