@@ -382,7 +382,7 @@ Before creating an issue, do the following:
    -  Use the Support portal associated with your account
    -  If you are a Partner reporting on behalf of a merchant, use the Partner portal
 
--  Check if the issue exists on the `2.4-develop` branch with clean Magento installation. We only accept pull requests for the `2.4-develop` branch. If the issue is not reproducible on `2.4-develop`, it will be closed.
+-  Check if the issue exists on the `2.4-develop` branch with a clean Magento installation. We only accept pull requests for the `2.4-develop` branch. If the issue is not reproducible on the `2.4-develop` branch, it will be closed.
 
 If you are sure that the problem you are experiencing is a bug, file a new issue in a Github issue tracker following the recommendations below.
 
