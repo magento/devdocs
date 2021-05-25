@@ -40,7 +40,7 @@ To update the production system:
    ```bash
    kill -9 1234
    ```
-   
+
 1. Pull code from source control.
 
    The Git command follows:
