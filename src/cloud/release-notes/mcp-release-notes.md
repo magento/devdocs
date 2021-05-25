@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Cloud Patches release notes
+title: Cloud Patches for Commerce
 functional_areas:
   - Cloud
   - Setup
