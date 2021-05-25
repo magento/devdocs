@@ -54,18 +54,18 @@ The following table discusses the meanings of installation parameters and values
 
 ## Import configuration data
 
-When you set up a production system, you should _import_ configuration settings from `config.php` and `env.php` into the database.
+When setting up a production system, it's good practice to import configuration settings from `config.php` and `env.php` into the database.
 These settings include configuration paths and values, websites, stores, store views, and themes.
 
 After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.
 
-On your production system, run the following command to import data from the configuration files (`config.php` and `env.php`) to the database:
+On the production system, run the following command to import data from the configuration files (`config.php` and `env.php`) to the database:
 
 ```bash
 bin/magento app:config:import [-n, --no-interaction]
 ```
 
-Use the optional `[-n, --no-interaction]` flag to import data without additional confirmations.
+The optional `[-n, --no-interaction]` flag allows the command to run without additional confirmations.
 
 For additional information, please, check the [Import data from configuration files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html)
 
