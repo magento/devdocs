@@ -23,14 +23,23 @@ To update the production system:
        ]
    ```
 
-   Update the configuration:
+1. Update the configuration:
 
    ```bash
-   php bin/magento app:config:import
+   bin/magento app:config:import
    ```
 
-   Finally, `kill` active consumer processes.
+1. Finally, `kill` active consumer processes.
 
+   ```bash
+   kill SIGNAL PID
+   ```
+
+    Where `SIGNAL` is the signal to be sent and `PID` is the Process ID to be killed.
+
+   ```bash
+   kill -9 1234
+   ```
 1. Pull code from source control.
 
    The Git command follows:
