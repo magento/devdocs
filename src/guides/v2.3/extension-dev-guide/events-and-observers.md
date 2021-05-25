@@ -59,7 +59,7 @@ class MyClass
 
 Custom events can be dispatched by simply passing in a unique event name to the event manager when you call the `dispatch` function. Your unique event name is referenced in your module's `events.xml` file where you specify which observers will react to that event.
 
-You can make the custom event `my_module_event_after` subscribable by declaring the `MyCompany/MyModule/etc/events.xml` file as below:
+You can make the custom event `my_module_event_after` subscribable by declaring the `MyCompany/MyModule/etc/events.xml` file as follows:
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
