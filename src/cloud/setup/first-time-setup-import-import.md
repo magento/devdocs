@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Import Magento Commerce code into a Cloud project
+title: Import code
 functional_areas:
   - Cloud
   - Setup

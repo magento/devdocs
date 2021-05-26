@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Cloud code testing
+title: Cloud code testing for Commerce
 functional_areas:
   - Cloud
   - Docker

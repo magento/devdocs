@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: B2B Release Notes
+title: Commerce B2B Release Notes
 ---
 
 ## B2B
