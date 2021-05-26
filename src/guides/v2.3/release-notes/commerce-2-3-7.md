@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce 2.3.7 Release Notes
+title: Adobe Commerce 2.3.7 Release Notes
 ---
 
 Magento Commerce 2.3.7 offers significant platform upgrades, 40 security enhancements, and 10 functional fixes for the core product.

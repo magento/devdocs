@@ -1,6 +1,6 @@
-Magento has one command-line interface that performs both installation and configuration tasks: `<magento_root>/bin/magento`. The new interface performs multiple tasks, including:
+Commerce has one command-line interface that performs both installation and configuration tasks: `<magento_root>/bin/magento`. The new interface performs multiple tasks, including:
 
--  Installing Magento (and related tasks such as creating or updating the database schema, creating the deployment configuration, and so on).
+-  Installing Commerce (and related tasks such as creating or updating the database schema, creating the deployment configuration, and so on).
 -  Clearing the cache.
 -  Managing indexes, including reindexing.
 -  Creating translation dictionaries and translation packages.

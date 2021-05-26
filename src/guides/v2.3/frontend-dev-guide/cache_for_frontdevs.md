@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Magento cache overview
+title: Cache overview
 functional_areas:
   - Frontend
 ---

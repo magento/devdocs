@@ -1,5 +1,5 @@
 ---
-title: How to get the Magento software
+title: Get the software
 landing-page: Installation Guide
 functional_areas:
   - Install

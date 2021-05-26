@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Update Magento
+title: Update the Commerce application
 functional_areas:
   - Upgrade
 redirect_from:
