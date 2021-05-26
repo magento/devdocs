@@ -32,7 +32,7 @@ The release notes include:
 
 -  {:.fix} Magento now supports three-digit canadian postal codes for in-store delivery. Six-digit codes are not supported due to limitations set by `geonames.org`.
 
--  {:.fix} Magento now displays the correct quantity of default stock for disabled products on the **Admin Product** grid and the **Admin Edit Product** page for multi-store deployments.
+-  {:.fix} The Admin now displays the correct quantity of default stock for disabled products on the **Products** grid and the **Edit Product** page for multi-store deployments.
 
 -  {:.fix} Magento now refreshes the category product cache when a bundle product comes back in stock.
 
