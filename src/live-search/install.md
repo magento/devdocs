@@ -14,7 +14,7 @@ Live Search is a set of standalone meta packages that replaces the standard Adob
 ## Requirements
 
 -  Adobe Commerce 2.4.x
--  PHP 7.3 (The `catalog-data-exporter` is not compatible with previous versions of PHP.)
+-  PHP 7.3 / 7.4
 -  Composer
 
 ## Step 1: Install Live Search
@@ -54,10 +54,12 @@ The following Live Search dependencies are captured by Composer:
    -  `Magento_ElasticSearchCatalogPermissions`
    -  `Magento_InventoryElasticSearch`
 
-   This list is current at this time of this writing, but might change as new modules are added.
+   This list is current at this time of this writing, but might change as new modules are added. If you find additional `ElasticSearch` modules in your `config.php` file, disable them also.
 
-1. If you find additional `ElasticSearch` modules in your `config.php` file, disable them also.
+1. In the `core_config_data` table, delete any entry with the `catalog/search/engine` path.
 
+{:.bs-callout-info}
+If Live Search is installed correctly, but in a headless environment, Live Search will not appear as an option in the Admin _Marketing_ menu, and storefront search results will be unclear.
 ## Update Live Search
 
 To update Live Search, enter the following from the command line:
@@ -65,8 +67,6 @@ To update Live Search, enter the following from the command line:
 ```bash
 composer update magento/live-search -–with-dependencies
 ```
-
-Syntax: After the package name `live-search`, enter a blank space and two hyphens, followed by `with-dependencies`'.
 
 To update to a major version such as from 1.0 to 2.0, edit the project’s root Composer `.json` file as follows:
 
