@@ -34,7 +34,7 @@ bin/magento config:set system/backup/functionality_enabled 1
 **Deprecation Notice:**
 Magento backup functionality is deprecated as of 2.1.16, 2.2.7, and 2.3.0. We recommend investigating additional backup technologies and binary backup tools (such as Percona XtraBackup).
 
-## Set the open files limit {#instgde-cli-ulimit}
+## Set ulimit for the web server user {#instgde-cli-ulimit}
 {% include install/ulimit.md %}
 
 ## Backing up {#instgde-cli-uninst-back}
