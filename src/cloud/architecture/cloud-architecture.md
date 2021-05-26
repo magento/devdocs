@@ -24,14 +24,14 @@ For comparison, each plan includes the following infrastructure features and sup
         <ul>
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/products/business-intelligence">Business Intelligence</a></li>
+          <li><a href="https://magento.com/products/business-intelligence">Commerce Reporting</a></li>
         </ul>
       </td>
       <td>
         <ul>
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/products/business-intelligence">Business Intelligence</a></li>
+          <li><a href="https://magento.com/products/business-intelligence">Commerce Reporting</a></li>
           <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>

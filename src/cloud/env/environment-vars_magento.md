@@ -32,3 +32,6 @@ If you need to change the Admin URL after installation, use the `magento-cloud v
 ```bash
 magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
 ```
+
+{:.bs-callout-info}
+The `ADMIN_URL` value accepts letters (a-z or A-Z), numbers (0-9) or underscore character (_) for a custom admin path. Spaces or other characters are **not** accepted.

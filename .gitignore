@@ -14,7 +14,6 @@
 _config.local.yml
 .jekyll-metadata
 .jekyll-cache
-.whatsup.yml
 
 *.bat
 /tmp/

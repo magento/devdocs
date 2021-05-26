@@ -7,7 +7,7 @@ title: What's new on DevDocs
 
 <a class="btn" href="{{ whatsnew.thread }}"><img src="{{ site.baseurl }}/assets/i/icons/rss.svg" /> RSS feed</a>
 <!-- The link enables RSS readers to recognize the whatsnew-feed thread on the page -->
-<link rel="alternate" type="application/atom+xml" title="What's new on Magento DevDocs" href= "{{ whatsnew.thread }}" />
+<link rel="alternate" type="application/atom+xml" title="What's new on DevDocs" href= "{{ whatsnew.thread }}" />
 
 {{ whatsnew.description }}
 
@@ -40,13 +40,18 @@ title: What's new on DevDocs
   <tbody>
   {% for item in date_group.items %}
     <tr>
-      <td>{{ item.description | markdownify }}</td>
+      <td>
+      {{ item.description | markdownify }}
+      {% if item.membership == false %}
+      <p><i>Community contribution by {{ item.contributor }}</i></p>
+      {% endif %}
+      </td>
       <td>{{ item.versions }}</td>
       <td>{{ item.type }}</td>
-      {% if item.link contains "pull" %}
-      <td><a href="{{ item.link }}">{{ item.link | split: "/" | last }}</a></td>
+      {% if item.link contains "-commerce" %}
+      <td><a href="https://github.com/magento/devdocs/commit/{{ item.merge_commit }}">{{ item.merge_commit | slice: 0, 6 }}</a></td>
       {% else %}
-      <td><a href="{{ item.link }}">{{ item.link | split: "/" | last | slice: 0, 6 }}</a></td>
+      <td><a href="{{ item.link }}">{{ item.link | split: "/" | last }}</a></td>
       {% endif %}
     </tr>
   {% endfor %}

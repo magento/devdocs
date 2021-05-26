@@ -56,11 +56,11 @@ This release contains enhancements to core quality, which improve the quality of
 
 ### Platform enhancements
 
-*  [**Elasticsearch 7.9.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html#elasticsearch). Although we recommend running Elasticsearch 7.9.x, Magento 2.4.x remains compatible with Elasticsearch 7.4.x. <!--- MC-36867-->
+*  [**Elasticsearch 7.9.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). Although we recommend running Elasticsearch 7.9.x, Magento 2.4.x remains compatible with Elasticsearch 7.4.x. <!--- MC-36867-->
 
-*  Magento 2.4.2 has been tested with [Varnish 6.4]({{ page.baseurl }}/install-gde/system-requirements.html#recommended-technologies). Magento 2.4.x remains compatible with Varnish 6.x.
+*  Magento 2.4.2 has been tested with [Varnish 6.4]({{ page.baseurl }}/install-gde/system-requirements.html). Magento 2.4.x remains compatible with Varnish 6.x.
 
-*  [**Redis 6.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html#recommended-technologies). Magento 2.4.x remains compatible with Redis 5.x. <!--- MC-34853-->
+*  [**Redis 6.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). Magento 2.4.x remains compatible with Redis 5.x. <!--- MC-34853-->
 
 *  Magento 2.4.2 is now compatible with **Composer 2.x**. We recommend that merchants migrate to Composer 2.x. Although you can install this release using Composer 1.x, Composer 1.x will soon reach end-of-life. For an overview of Composer 2.x features, see [Composer 2.0 is now available!](https://blog.packagist.com/composer-2-0-is-now-available/)
 
@@ -2094,6 +2094,70 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 *  Implemented `ActionInterface` for `\Magento\Wishlist\Controller\Shared\Allcart`. [GitHub-29537](https://github.com/magento/magento2/issues/29537)
 
 ## Known issues
+
+**Issue**: The `[magento_root]/index.php` file has been removed, and Magento now runs from `/pub` by default for Apache configurations. Stores that are served from subfolders will not work as expected and may display 404 errors. **Workaround**: Use symlinks to emulate the installation of Magento into a subfolder. The following example uses `https://shop01.com/shop/` to illustrate how to use a symlink to emulate an installation in a subfolder.
+
+1. Create a subdirectory for `https://shop01.com/shop/`:
+
+   ```bash
+   mkdir magento_root/pub/shop01
+   ```
+   ```bash
+   cd magento_root/pub/shop01
+   ```
+
+1. Create symlinks for the store’s parent directories in the newly created directory:
+
+   ```bash
+   ln -s ../media media
+   ```
+   ```bash
+   ln -s ../static static
+   ```
+   ```bash
+   ln -s ../../pub pub
+   ```
+   ```bash
+   ln -s ../.htaccess .htaccess
+   ```
+   ```bash
+   ln -s ../health_check.php health_check.php
+   ```
+
+1. Create an `index.php` file inside the new directory (`magento_root/pub/shop01/index.php`) and add this content:
+
+```php
+   <?php
+   require realpath(__DIR__) . '/../../app/bootstrap.php';
+
+   switch ($_SERVER['HTTP_HOST']) {
+       case 'shop01.com':
+       case 'www.shop01.com':
+           $params = $_SERVER;
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop01';
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
+           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
+           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+           $bootstrap->run($app);
+           break;
+
+       default:
+           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
+           /** @var \Magento\Framework\App\Http $app */
+           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+           $bootstrap->run($app);
+       break;
+   }
+```
+
+1. Configure your Apache server to point to the new subdirectory. Deployment configurations can vary widely. Here’s an example server configuration:
+
+```xml
+   <VirtualHost *:80>
+       DocumentRoot "magento_root/pub/shop1"
+       ServerName shop01.com
+   </VirtualHost>
+```
 
 **Issue**: Magento does not submit payment information as expected when a shopper first enters a correct code into the CAPTCHA field on the Payment page but displays this error:  `There has been an error processing your request`. This occurs only when the shopper tries to place the order either without entering the CAPTCHA code or by entering it incorrectly.  **Workaround**: Refresh the page. <!--- MC-40506-->
 

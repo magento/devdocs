@@ -17,7 +17,7 @@ The following table provides the dates for scheduled releases in 2020 and 2021 (
 | 2020 Q4             | 2.4.1<br>2.4.0-p1<br>2.3.6    | September 10, 2020<br>Available for 2.4.1 | October 1, 2020    | October 15, 2020     |
 | 2021 Q1             | 2.4.2<br>2.4.1-p1<br>2.3.6-p1 | December 17, 2020                         | January 26, 2021   | February 9, 2021     |
 | 2021 Q2<sup>1</sup> | 2.4.2-p1<br>2.3.7             | March 30, 2021                            | April 27, 2021     | May 11, 2021         |
-| 2021 Q3<sup>2</sup> | 2.4.3<br>2.4.2-p2<br>2.3.7-p1 | July 6, 2021                              | July 27, 2021      | August 10, 2021      |
+| 2021 Q3<sup>2</sup> | 2.4.3<br>2.4.2-p2<br>2.3.7-p1 | June 7, 2021                              | July 27, 2021      | August 10, 2021      |
 | 2021 Q4<sup>3</sup> | 2.4.3-p1<br>2.3.7-p2          | None                                      | September 28, 2021 | October 12, 2021     |
 
 _<sup>1</sup>If you take the 2021 Q2 2.3.x release line, you must [update to PHP 7.4](https://community.magento.com/t5/Magento-DevBlog/PHP-7-4-support-for-Magento-2-3-x-release-line/ba-p/458946) since PHP 7.3 reaches end-of-life in December 2021. There will not be a 2.4.3 release in 2021 Q2._

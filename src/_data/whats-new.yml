@@ -4,22 +4,526 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Tue Mar 9 13:48:07 2021
+updated: Mon May 17 14:45:44 2021
 entries:
+- description: Updated [Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html)
+    topics after 2.3.7 release.
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2280
+  merge_commit: 17cf69912df9a31d49658ef100333921739eb9ac
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Published all documentation updates related to the Q2 2021 Commerce
+    and Open Source releases.
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2271
+  merge_commit: e77df8c115d1f8f65b1d63226656fc7e2fae8520
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Updated [reference documentation](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html)
+    for the backward incompatible changes.
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2278
+  merge_commit: add8d250de97fd5aab31be30473be1ff00f3d59d
+  contributor: devops-devdocs
+  membership: true
+  labels:
+  - 2.3.7
+  - Automation
+  - Major Update
+- description: 'Published 2.3.7 dependencies reference: [OpenSource](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html),
+    [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/packages-commerce.html),
+    [Cloud](http://devdocs.magento.com/guides/v2.3/release-notes/packages-cloud.html).'
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2279
+  merge_commit: d6db2b0d7f8d29ac7a8a8aa629b6467f6701f5bb
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Published Magento Cloud Patches v1.0.10 [release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
+  versions: 2.3.7, 2.4.x
+  type: Major Update
+  date: May 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2265
+  merge_commit: 10495eb4c70d7138ebceb1d0b052151ad8dc7353
+  contributor: BaDos
+  membership: true
+  labels:
+  - 2.3.7
+  - 2.4.x
+  - Major Update
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.22 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: May 6, 2021
+  link: https://github.com/magento/devdocs/pull/8923
+  merge_commit: cc71f464921268285b0e718b714e2ee9b4f8f9db
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.x
+  - Internal Dev
+  - Major Update
+  - 'Progress: done'
+- description: Add instructions for [installing and using Composer 2](https://devdocs.magento.com/cloud/project/magento-app-properties.html#type-and-build)
+    in Cloud Starter and Pro projects.
+  versions: 2.4.2, 2.4.3
+  type: Major Update
+  date: May 6, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2264
+  merge_commit: ad5e36394c5ff1faef30ae2099176b4603d156ef
+  contributor: bdenham
+  membership: true
+  labels:
+  - 2.4.2
+  - 2.4.3
+  - Major Update
+  - Tracking
+- description: Added the [Float Comparator](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/framework/float-comparator.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: May 5, 2021
+  link: https://github.com/magento/devdocs/pull/8883
+  merge_commit: 92b0f92700868e3c049b3950ab63bac4acce0b69
+  contributor: drpayyne
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
+  - 'Partner: EY'
+  - 'Progress: done'
+  - partners-contribution
+- description: Added the [Math Random](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/framework/math-random.html)
+    topic to the Extension Dev Guide.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: May 5, 2021
+  link: https://github.com/magento/devdocs/pull/8882
+  merge_commit: 3f4643946e1fe49df799c90a55ed3545c0a6afda
+  contributor: drpayyne
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
+  - 'Partner: EY'
+  - 'Progress: done'
+  - partners-contribution
+- description: Added an end-of-support (EOS) banner to all [2.3.x documentation](https://devdocs.magento.com/guides/v2.3/).
+  versions: 2.3.x
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2261
+  merge_commit: 81b72c9f88c3a698ebdc74b14811f3d45420e85c
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.3.x
+  - Major Update
+- description: Added [release notes](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)
+    for Magento Commerce and Magento Open Source 2.3.7 GA.
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2258
+  merge_commit: ddb46380380522dbd4f012f562008761b6e9f680
+  contributor: jfrontain
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Added reference for 2.3.7 [backward incompatible changes (BICs)](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html)
+    for beta.
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2190
+  merge_commit: 23effa29af2ffe2ff42b6cea0f52c9a7d83ffb7a
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Added 2.3.7 [release notes](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)
+    for beta.
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2186
+  merge_commit: e1819acb085e9405aa721051a9a2c02dec4c5875
+  contributor: jfrontain
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Updated the [availability](https://devdocs.magento.com/release/availability.html)
+    and [compatibility](https://devdocs.magento.com/extensions/vendor/) of Magento-developed
+    extensions (MDEs) and vendor-bundled extensions (VBEs).
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2175
+  merge_commit: cf4b835592a5f82d88f4c85c8d86e4da75cd1d0d
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.3.7
+  - Major Update
+- description: Removed references to the Web Setup Wizard, Component Manager, Module
+    Manager, and System Upgrade Utility because the functionality was deprecated in
+    2.3.6 and removed in 2.4.0. Updated the [installation flow diagram](https://devdocs.magento.com/guides/v2.3/install-gde/install-flow-diagram.html)
+    and optimized the [Software Update Guide](https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html).
+  versions: 2.3.7
+  type: Major Update
+  date: May 11, 2021
+  link: https://github.com/magento/devdocs/pull/8705
+  merge_commit: aac6244d80c124339031b23fc9228b689d9b40ec
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.3.7
+  - Internal Dev
+  - Major Update
+  - 'Progress: done'
+  - Tracking
+- description: Indicated how to specify the [Composer version](https://devdocs.magento.com/cloud/docker/docker-config.html)
+    (1.x, 2.x) to install in your Cloud Docker instance.
+  versions: 2.4.2, 2.4.3
+  type: Major Update
+  date: April 26, 2021
+  link: https://github.com/magento/devdocs/pull/8893
+  merge_commit: 9fdbf7cdae57316011e05c518ae0009a640ed61d
+  contributor: shiftedreality
+  membership: true
+  labels:
+  - 2.4.2
+  - 2.4.3
+  - Internal Dev
+  - Major Update
+  - 'Event: Adobe Summit Hackathon'
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.21 Magento Quality Patch (MQP) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: April 23, 2021
+  link: https://github.com/magento/devdocs/pull/8895
+  merge_commit: aa7ff49fc95f200e6352d73f69c9b2d842904644
+  contributor: agorbivskyi
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - Internal Dev
+  - Major Update
+  - 'Progress: done'
+- description: Published ECE-Tools 2002.1.6 [release notes](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html).
+  versions: 2.4.2
+  type: Major Update
+  date: April 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2220
+  merge_commit: 87e5cd21a9aa25272eafbe6acfe4454a91da9485
+  contributor: bdenham
+  membership: false
+  labels:
+  - 2.4.2
+  - Major Update
+- description: Published Magento Cloud Docker 1.2.2 [release notes](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html).
+  versions: 2.4.2
+  type: Major Update
+  date: April 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2221
+  merge_commit: 5afa5ed9f2871973b25322d6247fdaa919b46157
+  contributor: bdenham
+  membership: false
+  labels:
+  - 2.4.2
+  - Major Update
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.20 Magento Quality Patch (MQP) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: April 14, 2021
+  link: https://github.com/magento/devdocs/pull/8878
+  merge_commit: b8d61c1eaee1727ae172a316bec6ff9ce24e43ae
+  contributor: Rykh
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - Internal Dev
+  - Major Update
+  - 'Progress: done'
+- description: Removed a warning in [New Relic topic](https://devdocs.magento.com/cloud/project/new-relic.html#set-up-new-relic)
+    that stated you must submit a support ticket to update the New Relic service when
+    you upgrade the PHP version. A support ticket is no longer required.
+  versions: 2.x
+  type: Technical
+  date: April 8, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2213
+  merge_commit: 6f59947a244e171c9aaceeb32a6ec3c0f93a7099
+  contributor: hguthrie
+  membership: false
+  labels:
+  - 2.x
+  - Technical
+- description: Added the [Show or Hide Password Checkbox](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/howto/show_or_hide_password_checkbox.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: April 8, 2021
+  link: https://github.com/magento/devdocs/pull/8837
+  merge_commit: 2b814fe8d22b95e6761bcf7f509831954b977a1d
+  contributor: ajithkumar-maragathavel
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
+  - 'Partner: Ziffity'
+  - 'Progress: done'
+  - partners-contribution
+- description: Added the Permissions section in the  [Configure AWS S3 bucket for
+    remote storage](https://devdocs.magento.com/guides/v2.4/config-guide/remote-storage/config-remote-storage-aws-s3.html)
+    topic.
+  versions: 2.4.x
+  type: Major Update
+  date: April 5, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2194
+  merge_commit: 13da3ed5295903949376f29bf59c421a117afb41
+  contributor: dobooth
+  membership: false
+  labels:
+  - 2.4.x
+  - Major Update
+- description: Redesigned the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    page to make it easier to quickly identify supported versions of major requirements
+    across versions of Magento.
+  versions: 2.x
+  type: Major Update
+  date: April 5, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2199
+  merge_commit: 580fddd3267192ca3cc5c8de7b81999c2dbf11de
+  contributor: jeff-matthews
+  membership: false
+  labels:
+  - 2.x
+  - Major Update
+- description: Added [recommendations for improving build and deploy environment definitions](https://devdocs.magento.com/cloud/project/magento-env-yaml.html#configuration-management-optimization)
+    related to [SCD performance](https://devdocs.magento.com/cloud/live/sens-data-over.html#scd-performance)
+    if you have Configuration management enabled.
+  versions: 2.x
+  type: Technical
+  date: March 30, 2021
+  link: https://github.com/magento/devdocs/pull/8843
+  merge_commit: 782bc3921d0f31395df1699460baa3567fee8392
+  contributor: BarnyShergold
+  membership: false
+  labels:
+  - 2.x
+  - 'Partner: Vaimo'
+  - 'Progress: done'
+  - Technical
+  - partners-contribution
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.19 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: March 30, 2021
+  link: https://github.com/magento/devdocs/pull/8846
+  merge_commit: 844fd8790086f020221805ecd61bf58cc8a67441
+  contributor: abukatar
+  membership: false
+  labels:
+  - 2.x
+  - Internal Dev
+  - Major Update
+  - 'Progress: done'
+- description: Added links to Magento Help Center troubleshooting articles for [Elasticsearch](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/elasticsearch.html),
+    [MySQL](https://devdocs.magento.com/cloud/project/services-mysql.html), [PHP](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/php-settings.html),
+    and [Redis](https://devdocs.magento.com/cloud/project/services-redis.html).
+  versions: 2.x
+  type: Major Update
+  date: March 26, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2183
+  merge_commit: 0a933a361cbcd660a4fac131c8bbf71691c2494e
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Clarified the preferred method for [accessing cloud projects](https://devdocs.magento.com/cloud/project/projects.html#login)
+    through the Project Web Interface.
+  versions: ''
+  type: Major Update
+  date: March 24, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2169
+  merge_commit: 702d97e09dec5df7082573bcca32e1646944159d
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+- description: Added information about an upgrade-related known issue to the [Magento
+    2.4.2 release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+  versions: 2.4.2
+  type: Major Update
+  date: March 24, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2170
+  merge_commit: 8fe23389fbc018f6117ccd5ca81a094ca93722f4
+  contributor: jfrontain
+  membership: true
+  labels:
+  - 2.4.2
+  - Major Update
+- description: Added information to the [Magento 2.3.6 release notes](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)
+    about code changes that might create potential upgrade issues.
+  versions: 2.3.6
+  type: Major Update
+  date: March 18, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2164
+  merge_commit: 524b3947d6cc64d900f4bd17efa859764acb4db4
+  contributor: jfrontain
+  membership: true
+  labels:
+  - 2.3.6
+  - Major Update
+- description: Added a 'Troubleshooting section' to the [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/run.html#troubleshooting)
+    topic.
+  versions: 2.x
+  type: Major Update
+  date: March 17, 2021
+  link: https://github.com/magento/devdocs/pull/8811
+  merge_commit: 7bd5a8ab009fffc302cc2de45e2f6a4a4d4f1f53
+  contributor: Dnd-Mafer
+  membership: false
+  labels:
+  - 2.x
+  - Major Update
+  - 'Progress: done'
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.18 Magento Quality Patch (MQP) package release.
+  versions: 2.x
+  type: Major Update
+  date: March 17, 2021
+  link: https://github.com/magento/devdocs/pull/8813
+  merge_commit: 073e369ebe3dfeee6c4a9befbf962c0cdfbd45a7
+  contributor: Rykh
+  membership: true
+  labels:
+  - 2.x
+  - Internal Dev
+  - Major Update
+  - 'Progress: done'
+- description: "[Contribution day organizer handbook](https://devdocs.magento.com/community/resources/contribution-day-organizer-handbook.html)."
+  versions: 2.x
+  type: New Topic
+  date: March 16, 2021
+  link: https://github.com/magento/devdocs/pull/8769
+  merge_commit: b2dcd2a3858d23382bda0b6552046afe70fe0688
+  contributor: gabrieldagama
+  membership: true
+  labels:
+  - 2.x
+  - Internal Dev
+  - New Topic
+  - 'Progress: done'
+- description: Added the 'Initializing a component on a selector' section to the [jQuery
+    widget coding standard](https://devdocs.magento.com/guides/v2.3/coding-standards/code-standard-jquery-widgets.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: March 11, 2021
+  link: https://github.com/magento/devdocs/pull/8742
+  merge_commit: c348fb18519d6493209280cf2b48fc482bd69af5
+  contributor: Santoshziffity
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - Major Update
+  - 'Partner: Ziffity'
+  - 'Progress: done'
+  - partners-contribution
+- description: Added the [Email templates layout handle](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/templates/template-email-layout-handle.html)
+    topic to the Front-end Dev Guide.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: March 11, 2021
+  link: https://github.com/magento/devdocs/pull/8781
+  merge_commit: 39346735775aaf108cbc6a83b57e8456c5a31901
+  contributor: ajithkumar-maragathavel
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
+  - 'Partner: Ziffity'
+  - 'Progress: done'
+  - partners-contribution
+- description: New [egress filtering](https://devdocs.magento.com/cloud/project/magento-app-properties.html#firewall-starter-plans-only)
+    documentation for Cloud Starter plan.
+  versions: ''
+  type: Major Update
+  date: March 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2124
+  merge_commit: 8ef2431a8ee5a933b6f305b01e28f0c9c1e27240
+  contributor: bdenham
+  membership: true
+  labels:
+  - Major Update
+  - Tracking
+- description: The [release notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/)
+    and [compatibility](https://devdocs.magento.com/release/availability.html) information
+    related to Amazon Sales Channel version 4.4.0.
+  versions: 2.x
+  type: Major Update
+  date: March 9, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2132
+  merge_commit: 2205a396533cb5eef4a5a7fccf6e469cff28fe77
+  contributor: hickskenh
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
 - description: Added the "Remove the Integration" section in the [GitHub Integration](https://devdocs.magento.com/cloud/integrations/github-integration.html)
     topic.
   versions: 2.x
   type: Technical
   date: March 9, 2021
   link: https://github.com/magento/devdocs/pull/8554
+  merge_commit: 63e219c152d44dd1f680481ee35866603a9b4652
   contributor: SumanPitta
-  profile: https://github.com/SumanPitta
+  membership: false
+  labels:
+  - 2.x
+  - Internal Dev
+  - 'Progress: done'
+  - Technical
 - description: Added a [new table](https://devdocs.magento.com/release/commerce-features.html)
     comparing the available features of each minor version of Magento 2.x.
   versions: 2.x
   type: New Topic
   date: March 3, 2021
-  link: https://github.com/magento/devdocs/commit/d4b75de4ce72f6a07fc9ec263a096faa030d7e33
+  link: https://github.com/magento-commerce/devdocs/pull/2114
+  merge_commit: d4b75de4ce72f6a07fc9ec263a096faa030d7e33
   contributor: dshevtsov
   profile: https://github.com/dshevtsov
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
@@ -427,7 +931,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7888
   contributor: keharper
   profile: https://github.com/keharper
-- description: Updated the note about [supported PHP versions](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#php).
+- description: Updated the note about [supported PHP versions](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html).
   versions: 2.3.x
   type: Technical
   date: February 2, 2021
@@ -1084,7 +1588,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7714
   contributor: keharper
   profile: https://github.com/keharper
-- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#recommended-technologies)
+- description: Added a [deprecation notice](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html)
     for Elasticsearch 6.x.
   versions: 2.3.6
   type: Technical
@@ -1868,7 +2372,7 @@ entries:
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7236
-- description: Updated the [supported versions of PHP](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html#php)
+- description: Updated the [supported versions of PHP](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     to 7.3 and 7.4.
   versions: 2.4.0
   type: Major Update
@@ -1966,13 +2470,6 @@ entries:
   type: Major Update
   date: May 14, 2020
   link: https://github.com/magento/devdocs/pull/7147
-- description: Added a deprecation notice about the Web Setup Wizard when [installing](https://devdocs.magento.com/guides/v2.3/install-gde/install/web/install-web.html)
-    or [upgrading](https://devdocs.magento.com/guides/v2.3/comp-mgr/upgrader/upgrade-checklist.html)
-    Magento in most places where it is mentioned.
-  versions: 2.3.x
-  type: Major Update
-  date: May 14, 2020
-  link: https://github.com/magento/devdocs/pull/7213
 - description: Added [Magento Cloud Patches version 1.0.4 release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
   versions: 2.x
   type: Major Update
@@ -2022,12 +2519,6 @@ entries:
   type: Technical
   date: May 1, 2020
   link: https://github.com/magento/devdocs/pull/7140
-- description: Added a [note](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)
-    about Composer upgrade plugin compatibility with Magento 2.3.5.
-  versions: 2.3.5
-  type: Technical
-  date: April 30, 2020
-  link: https://github.com/magento/devdocs/pull/7132
 - description: Updated all module topics according to codebase repositories at the
     Module Reference Guide.
   versions: 2.3.5
@@ -2047,7 +2538,7 @@ entries:
   type: Major Update
   date: April 29, 2020
   link: https://github.com/magento/devdocs/pull/7120
-- description: Updated [PHP requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#php)
+- description: Updated [PHP requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html)
     and [packages](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html).
   versions: 2.3.5
   type: Major Update
@@ -3789,12 +4280,6 @@ entries:
   type: Major update
   date: June 28, 2019
   link: https://github.com/magento/devdocs/pull/4850
-- description: Added a [new command-line upgrade method](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)
-    (yet experimental) using the Magento composer root plugin to resolve conflicts
-    in dependencies during the upgrade.
-  versions: 2.3.x
-  type: New topic
-  date: June 28, 2019
 - description: Updated the [Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html).
   versions: 2.3.2
   type: Major update
@@ -4476,7 +4961,7 @@ entries:
 - description: Added information about [Elasticsearch 6](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-overview.html#es-spt-versions)
     support.<br/>Added Elasticsearch 6 information to [Configure Magento to use Elasticsearch](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/configure-magento.html)<br/>Added
     [Change Elasticsearch Client](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-downgrade.html)
-    topic.<br/>Updated the [Technologies Magento can use](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html#recommended-technologies)
+    topic.<br/>Updated the [Technologies Magento can use](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html)
     topic with new Elasticsearch 6 support.
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -4626,7 +5111,7 @@ entries:
   type: Technical changes
   date: March  4, 2019
   link: https://github.com/magento/devdocs/pull/3863
-- description: Migrated the Magento Business Intelligence (MBI) [Import API documentation](https://devdocs.magento.com/mbi/docs/getting-started.html)
+- description: Migrated the Adobe Commerce Reporting [Import API documentation](https://devdocs.magento.com/mbi/docs/getting-started.html)
     from the RJMetrics domain to the Magento domain.
   versions: 2.x
   type: Major update

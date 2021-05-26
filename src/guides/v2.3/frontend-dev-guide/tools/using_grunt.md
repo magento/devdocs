@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Using Grunt for Magento tasks
+title: Using Grunt
 functional_areas:
   - Frontend
   - Tools
@@ -52,9 +52,9 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 
 ## Grunt configuration file {#grunt_config}
 
-Copy the contents of `themes.js` into `themes.loc.js` in the `dev/tools/grunt/configs/` directory.
+Copy the contents of `themes.js` into `local-themes.js` in the `dev/tools/grunt/configs/` directory.
 
-If installed as described above, Grunt will use the default configuration files located in the `dev/tools/grunt/configs/` directory. You can define your theme in the `themes.loc.js` file. The following shows an example of how you can define your theme.
+If installed as described above, Grunt will use the default configuration files located in the `dev/tools/grunt/configs/` directory. You can define your theme in the `local-themes.js` file. The following shows an example of how you can define your theme.
 
 ```javascript
 <theme>: {
@@ -97,11 +97,11 @@ To use a custom file for Grunt configuration:
    -  value: path to your custom file
 
    Example:
-   If your custom configuration file `themes.loc.js` is located in the `<magento_root>/dev/tools/grunt/configs` directory, the following is already set in your `grunt-config.json`:
+   If your custom configuration file `local-themes.js` is located in the `<magento_root>/dev/tools/grunt/configs` directory, the following is already set in your `grunt-config.json`:
 
    ```json
    {
-       "themes": "dev/tools/grunt/configs/themes.loc"
+       "themes": "dev/tools/grunt/configs/local-themes.js"
    }
    ```
 
@@ -111,10 +111,10 @@ This path is also added to your .gitignore by default.
 
 You can also use the other way to declare a custom config file:
 
-1. In your Grunt related scripts, in the file router set the alias and path to the default configuration file. For example, for the `themes.js` configuration file this would look like following:
+1. In your Grunt related scripts, in the file router, set the alias and path to the custom configuration file. For example, to set the custom `themes.loc.js` configuration file, this would look like the following:
 
    ```js
-   filesRouter.set('themes', 'dev/tools/grunt/configs/themes');
+   filesRouter.set('themes', 'dev/tools/grunt/configs/themes.loc.js');
    ```
 
    It must be added earlier, than the `get()` method with this alias is called.

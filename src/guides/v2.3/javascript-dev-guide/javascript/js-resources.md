@@ -1,7 +1,7 @@
 ---
 group: javascript-developer-guide
 subgroup: 1_Javascript
-title: JavaScript resources in Magento
+title: JavaScript resources in Commerce
 ---
 
 ## Overview {#m2devgde-js-resources-intro}
