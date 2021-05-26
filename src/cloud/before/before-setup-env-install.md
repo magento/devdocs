@@ -161,7 +161,7 @@ After installing Magento, run the commands for [compile]({{ site.baseurl }}/guid
 1. Deploy Magento
 
    ```bash
-   php magento setup:static:deploy
+   php magento setup:static-content:deploy
    ```
 
 Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts file.
