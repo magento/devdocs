@@ -42,10 +42,6 @@ pages:
       url: /live-search/product-search.html
       versionless: true
 
-- label: Storefront Quick Start
-  url: /live-search/storefront-quick-start.html
-  versionless: true
-
 - label: Release Notes
   url: /live-search/release-notes.html
   versionless: true
