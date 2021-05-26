@@ -30,7 +30,7 @@ The release notes include:
 
 -  {:.fix} Several bug fixes targeted to resolve issues with source creation, out of stock items, stock sourcing, sorting allocated sources, in-store delivery, and inventory commands.
 
--  {:.fix} Magento now supports three-digit canadian postal codes for in-store delivery. Six-digit codes are not supported due to limitations set by `geonames.org`.
+-  {:.fix} Magento now supports three-digit Canadian postal codes for in-store delivery. Six-digit codes are not supported due to limitations set by `geonames.org`.
 
 -  {:.fix} The Admin now displays the correct quantity of default stock for disabled products on the **Products** grid and the **Edit Product** page for multi-store deployments.
 
