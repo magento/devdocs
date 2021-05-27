@@ -10,10 +10,10 @@ pages:
       url: /javascript-dev-guide/javascript/js_overview.html
       children:
 
-        - label: JavaScript resources in Magento
+        - label: JavaScript resources in Commerce
           url: /javascript-dev-guide/javascript/js-resources.html
 
-        - label: RequireJS in Magento
+        - label: RequireJS in Commerce
           url: /javascript-dev-guide/javascript/requirejs.html
 
         - label: Calling and initializing JavaScript
@@ -34,7 +34,7 @@ pages:
         - label: Using JavaScript mixins
           url: /javascript-dev-guide/javascript/js_mixins.html
 
-    - label: Magento jQuery widgets
+    - label: jQuery widgets
       url: /javascript-dev-guide/widgets/jquery-widgets-about.html
       children:
 

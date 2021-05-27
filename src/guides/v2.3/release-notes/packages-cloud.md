@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce Cloud packages
+title: Cloud packages for Adobe Commerce
 redirect-from: /guides/v2.3/release-notes/thirdparty-mccloud.html
 ---
 

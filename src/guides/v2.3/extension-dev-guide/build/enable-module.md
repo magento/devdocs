@@ -28,7 +28,7 @@ After you have built the component and are ready to enable it in your Magento en
    bin/magento module:status <extension-name>
    ```
 
-   An extension name uses the format: <VendorName>_<ComponentName>.
+   An extension name uses the format: `<VendorName>_<ComponentName>`.
 
    Sample response:
 

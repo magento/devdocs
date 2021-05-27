@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: B2B Release Notes
+title: Commerce B2B Release Notes
 ---
 
 The release notes for the B2B extension captures additions and bug fixes that Magento has added during a release cycle.

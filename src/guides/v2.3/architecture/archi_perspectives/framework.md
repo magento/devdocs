@@ -1,7 +1,6 @@
 ---
 group: architecture-guide
-title: Magento Framework
-menu_title: Magento Framework
+title: Commerce and Magento Framework
 ---
 
 ## Overview
