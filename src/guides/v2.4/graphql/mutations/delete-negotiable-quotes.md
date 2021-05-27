@@ -115,7 +115,7 @@ The `DeleteNegotiableQuotesInput` object contains the following attribute.
 
 Attribute | Data Type | Description
 --- | --- | ---
-`quote_item_uids` | [ID!]! | An array of unique IDs indicating which items to remove from the negotiable quote
+`quote_uids` | [ID!]! | An array of unique IDs indicating which items to remove from the negotiable quote
 
 ## Output attributes
 

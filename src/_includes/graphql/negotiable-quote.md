@@ -88,7 +88,7 @@ Attribute | Data Type | Description
 
 ### NegotiableQuoteHistoryStatusChange attributes {#NegotiableQuoteHistoryStatusChange}
 
-The `NegotiableQuoteHistoryStatusChange` object contains an instance of the status changing from one value to another.
+The `NegotiableQuoteHistoryStatusChange` object returns the status changes during the quote's life cycle.
 
 Attribute | Data Type | Description
 --- | --- | ---
@@ -101,7 +101,7 @@ The `NegotiableQuoteHistoryStatusesChange` object contains an array of all previ
 
 Attribute | Data Type | Description
 --- | --- | ---
-`changes` | [NegotiableQuoteHistoryStatusChange]! | A list of status changes
+`changes` | [NegotiableQuoteHistoryStatusChange!]! | A list of status changes
 
 ### NegotiableQuoteHistoryTotalChange attributes {#NegotiableQuoteHistoryTotalChange}
 
