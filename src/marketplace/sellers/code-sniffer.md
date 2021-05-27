@@ -7,7 +7,7 @@ title: Code Sniffer
 
 Code Sniffer is a static test that uses static code analysis to detect violations of the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) to prevent common coding errors.
 
-Limited information, like the number of errors, warnings and the coding standards version used are displayed in the Quality Report section of product listing page on the Magento Marketplace.
+Limited information is displayed in the Quality Report section of the product listing page on the Magento Marketplace, including the number of errors, warnings, and the coding standards version that was used.
 
 ## What testing is for
 
