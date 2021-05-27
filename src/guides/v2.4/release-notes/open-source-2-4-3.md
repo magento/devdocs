@@ -34,11 +34,9 @@ This release includes over 35 security fixes and platform security improvements.
 #### Over 35 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb21-08.html) for a discussion of these fixed issues.
-
 #### Additional security enhancements
 
 Security improvements for this release include:
-
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
@@ -51,7 +49,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 ### Performance enhancements
 
-This release includes code enhancements that boost API performance and Admin response time for deployments with large catalogs. 
+This release includes code enhancements that boost API performance and Admin response time for deployments with large catalogs.
 
 ### Adobe Stock Integration
 
@@ -61,18 +59,12 @@ This release includes Adobe Stock Integration v2.1.1.
 
 This release adds GraphQL coverage for the following features:
 
-
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
-
 ### PWA Studio
-
-
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 
 ### Media Gallery
-
-
 ### Magento Functional Testing Framework (MFTF)
 
 MFTF 3.2.1 is now available. This release introduces error tolerance in both tests and test suite generation. Additional enhancements and bug fixes are described in the [Magento Functional Testing Framework Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md).
@@ -93,13 +85,11 @@ See the following articles for updates on features and changes for this release:
 
 *  [Yotpo Product Reviews]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html)
 
-
 ## Fixed issues
 
 We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 ### Installation, upgrade, deployment
-
 ### Adobe Stock Integration
 
 ### Analytics
@@ -111,7 +101,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 ### Cart and checkout
 
 ### Cart price rule
-
 
 ### Catalog
 
