@@ -12,19 +12,23 @@ To generate an API key and private key, see [Commerce Services](https://docs-bet
 
 ## Adobe Commerce developer or SI
 
-The developer or SI configures the SaaS Environment as described in the [Commerce Services](https://docs-beta.magento.com/user-guide/configuration/services/saas.html) section of the user guide. Commerce Services becomes available in the Configuration sidebar when a SaaS module is installed.
+The developer or SI configures the SaaS Environment as described in the Commerce Services section of the configuration. Commerce Services becomes available in the Configuration sidebar when a SaaS module is installed.
 
 ## Catalog data sync
 
-Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. After configuring Adobe Commerce Services with your API key and SaaS Environment, you must go to Live Search in the Adobe Commerce Admin and complete any [configuration action](https://docs-beta.magento.com/user-guide/live-search/onboarding.html) to trigger indexation. The synchronization between the product catalog and the catalog service begins after Live Search is connected. It can take up to 24 hours for catalog data to be exported from your Adobe Commerce instance and indexed by Live Search.
+Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. After configuring Commerce Services with your API key and SaaS Environment, you must go to Live Search in the Adobe Commerce Admin and complete any [configuration action](https://docs-beta.magento.com/user-guide/live-search/onboarding.html) to trigger indexation. The synchronization between the product catalog and the catalog service begins after Live Search is connected. 
 
-### Verify Catalog Sync
+It can take up to 24 hours to export catalog data from your Adobe Commerce instance and for it to be indexed by Live Search.
+
+### Verify catalog sync
 
 To verify that the data has been exported from your Adobe Commerce instance, look for entries in the following tables:
 
 -  `catalog_data_exporter_products`
 -  `catalog_data_exporter_product_attributes`
--  `flag` (where `flag_code` is `products-feed-version` / `product-attributes-feed-version`)
+-  flag where `flag_code` is:
+
+   `products-feed-version` / `product-attributes-feed-version`
 
 ### Test the connection
 
@@ -32,7 +36,7 @@ To verify that the data has been exported from your Adobe Commerce instance, loo
 
 1. In the storefront, verify that the **Search** box returns results correctly.
 
-1. If Live Search is not available in the Admin or if the search results are not returned in the storefront, check the `system.log` for API communication failures or errors on the services side:
+1. If Live Search is not available in the Admin or if the search results are not returned in the storefront, enter the following command to check the `system.log` for API communication failures or errors on the services side:
 
    `var/log/system.log`
 
