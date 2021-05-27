@@ -4,12 +4,12 @@ title: Install Live Search
 ee_only: True
 ---
 
-Live Search is a set of standalone meta packages that replaces the standard Adobe Commerce Search capabilities.
+Live Search is a set of standalone meta packages that replaces standard Adobe Commerce search capabilities.
 
 |**Package**|**Description**|
 |---|---|
-|`module-live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides access to a read-only GraphQL playground to test queries from the Magento Admin. |
-|`module-live-search-adapter`|Routes search requests from the storefront to the Live Search service, and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs-beta.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs-beta.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
+|`module-live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides access to a read-only GraphQL playground to test queries from the Adobe Commerce Admin. |
+|`module-live-search-adapter`|Routes search requests from the storefront to the Live Search service and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs-beta.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs-beta.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Live Search is a set of standalone meta packages that replaces the standard Adob
 
 ## Step 1: Install Live Search
 
-Adobe Commerce is installed first without Live Search, and then the project’s root Composer `.json` file is updated to require the `live-search` package.
+Adobe Commerce is installed first without Live Search. After the installation, update the project’s root Composer `.json` file to require the `live-search` package.
 
 1. Install Adobe Commerce 2.4.x without Live Search.
 
@@ -40,8 +40,8 @@ The following Live Search dependencies are captured by Composer:
 |**Dependency**|**Description**|
 |---|---|
 |Export modules|The following modules collect and sync catalog data:<br />`saas-export`<br />`module-bundle-product-exporter`<br />`module-catalog-data-exporter`<br />`module-catalog-inventory-data-exporter`<br />`module-catalog-url-rewrite-data-exporter`<br />`module-configurable-product-data-exporter`<br />`module-data-exporter`<br />`module-parent-product-data-exporter`|
-|`services-connector`|Required to configure your connection to Magento Services.|
-|`module-services-id`|Required to configure your connection to Magento Services.|
+|`services-connector`|Required to configure your connection to Commerce Services.|
+|`module-services-id`|Required to configure your connection to Commerce Services.|
 
 ## Step 2: Disable Elasticsearch modules
 
@@ -54,7 +54,7 @@ The following Live Search dependencies are captured by Composer:
    -  `Magento_ElasticSearchCatalogPermissions`
    -  `Magento_InventoryElasticSearch`
 
-   This list is current at this time of this writing, but might change as new modules are added. If you find additional `ElasticSearch` modules in your `config.php` file, disable them also.
+   This list might change as new modules are added. If you find additional `ElasticSearch` modules in your `config.php` file, disable them also.
 
 1. In the `core_config_data` table, delete any entry with the `catalog/search/engine` path.
 
