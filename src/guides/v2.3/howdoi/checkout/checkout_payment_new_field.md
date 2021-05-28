@@ -2,40 +2,43 @@
 layout: tutorial
 group: how-do-i
 subgroup:
-title: Add a custom field in offline payment method
+title: Add a custom field for an offline payment method
 contributor_name: Ziffity
 contributor_link: https://www.ziffity.com/
 subtitle: Customize Checkout
-menu_order: 3
+menu_order: 101
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
 ---
 
+This topic describes how to add a custom field to an offline payment method in the payment step of the checkout. The custom field is helpful to store additional information.
+
+## Prerequisites
+
+{:.bs-callout-info}
+The `Purchase Order` payment method must be enabled in the storefront for this task. If the PO payment method cannot be seen on the checkout page, then go to Magento Admin and enable the payment method. See **Stores** > **Settings** > **Configuration** > **Sales** > **Payment Methods** > **Other Payment Methods** > **Purchase Order**.
+
 The following steps are required to add a custom field to an offline payment method:
 
-1. Create a new module.
-1. Add a `db_schema.xml` file.
-1. Add a `requirejs` file to the module.
-1. Override the vendor files.
-1. Add an Observer.
-1. Verify that the module works.
+1. [Create a new module](#create-module).
+1. [Add a `db_schema.xml` file](#add-db-schema).
+1. [Add a `requirejs` file to the module](#add-require-js).
+1. [Override the vendor files](#override-vendor-files).
+1. [Add an Observer](#add-observer).
+1. [Verify that the module works](#verify-implementation).
 
 Let’s go through each step.
 
-## Step 1: Create a new module
+## Step 1: Create a new module {#create-module}
 
-Create a new module named `Learning/CustomField` and register it.
+[Create a new module](https://devdocs.magento.com/videos/fundamentals/create-a-new-module/) named `Learning/CustomField` and register it.
 
-For more information about creating a new module, refer to [Create a Module](https://devdocs.magento.com/videos/fundamentals/create-a-new-module/)
+## Step 2 Add a `db_schema.xml` file {#add-db-schema}
 
-## Step 2 Add a `db_schema.xml` file
-
-Add the `paymentpocomment` column in the `quote_payment` and `sales_order_payment` table using the declarative schema method.
+Add the `paymentpocomment` column in the `quote_payment` and `sales_order_payment` table using the [declarative schema]({{page.baseurl}}/extension-dev-guide/declarative-schema/db-schema.html) method.
 
 Create the declarative schema in the following path `app/code/Learning/CustomField/etc/db_schema.xml`:
-
-{% collapsible Show code %}
 
 ```xml
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -49,7 +52,7 @@ Create the declarative schema in the following path `app/code/Learning/CustomFie
 </schema>
 ```
 
-## Step 3: Add a requirejs file to the module
+## Step 3: Add a requirejs file to the module {#add-require-js}
 
 Next, create the `requirejs-config.js` file:
 
@@ -65,15 +68,17 @@ Next, create the `requirejs-config.js` file:
 }
 ```
 
-{% endcollapsible %}
+## Step 4: Override the vendor files {#override-vendor-files}
 
-## Step 4: Override the vendor files
+1. [Magento_OfflinePayments/view/frontend/web/js/view/payment/offline-payments.js](#offline-payment)
+1. [Magento_OfflinePayments/view/frontend/web/js/view/payment/method-renderer/purchaseorder-method.js](#purchaseorder-method)
+1. [Magento_OfflinePayments/view/frontend/web/template/payment/purchaseorder-form.html](#purchaseorder-form)
 
-Next, override the `offline-payments.js` file to change the renderer of the Purchase Order payment method.
+### Override the `offline-payments.js` {#offline-payment}
+
+Next, override the `Magento_OfflinePayments/view/frontend/web/js/view/payment/offline-payments.js` file to change the renderer of the Purchase Order payment method.
 
 `app/code/Learning/CustomField/view/frontend/web/js/view/payment/offline-payments.js`
-
-{% collapsible Show code %}
 
 ```js
 define(
@@ -110,13 +115,13 @@ define(
 );
 ```
 
-{% endcollapsible %}
+### Override the `purchaseorder-method.js` {#purchaseorder-method}
 
-It is also necessary to override the `purchaseorder-method.js` file.
+It is also necessary to override the `Magento_OfflinePayments/view/frontend/web/js/view/payment/method-renderer/purchaseorder-method.js` file.
+
+The `template` path value used in this file needs to be altered to use the custom template. Also, the logic to get the `additional_data`need to be implemented in this file.
 
 `app/code/Learning/CustomField/view/frontend/web/js/view/payment/method-renderer/purchaseorder-method.js`
-
-{% collapsible Show code %}
 
 ```js
 define([
@@ -166,14 +171,13 @@ define([
 });
 ```
 
-{% endcollapsible %}
+### Override the `purchaseorder-form.html` {#purchaseorder-form}
 
-It is also necessary to override the `purchaseorder-form.html` template file to add the custom input field (Purchase Order Comment).
+It is also necessary to override the `Magento_OfflinePayments/view/frontend/web/template/payment/purchaseorder-form.html` template file to add the custom input field (Purchase Order Comment).
 
 `app/code/Learning/CustomField/view/frontend/web/template/payment/purchaseorder-form.html`
 
 {% collapsible Show code %}
-
 ```html
 <div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
     <div class="payment-method-title field choice">
@@ -233,12 +237,11 @@ It is also necessary to override the `purchaseorder-form.html` template file to 
     </div>
 </div>
 ```
-
 {% endcollapsible %}
 
-## Step 5: Add an Observer
+## Step 5: Add an Observer {#add-observer}
 
-Next, it is necessary to create the Observer file to save the custom field data to the order. For the Observer file an `event.xml` file is required to call the observer for a particular event. For this example, the `checkout_onepage_controller_success_action` event is used.
+Create an Observer file to save the custom field data to the order. For the Observer file an `event.xml` file is required to call the observer for a particular event. For this example, the `checkout_onepage_controller_success_action` event is used.
 
 `app/code/Learning/CustomField/etc/frontend/events.xml`
 
@@ -310,13 +313,10 @@ class OrderPaymentSaveBefore implements \Magento\Framework\Event\ObserverInterfa
     }
 }
 ```
-
 {% endcollapsible %}
 
-## Step 6: Verify that the module works
+## Step 6: Verify that the module works {#verify-implementation}
 
-Add the product to the cart and go to the checkout page and select `purchase order` payment method and check that the new custom field can be seen (Purchase Order Comment).
-
-If the `purchase order` payment method cannot be seen on the checkout page then go to Magento Admin and enable the payment method. See **Stores** > **Settings** > **Configuration** > **Sales** > **Payment Methods** > **Other Payment Methods** > **Purchase Order**
+Add the product to the cart and go to the checkout page and select the `purchase order` payment method. Check that the new Purchase Order Comment field is visible.
 
 ![Custom field in checkout page]({{ site.baseurl }}/common/images/custom_field_payment.png)
