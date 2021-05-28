@@ -26,9 +26,8 @@ To verify that the data has been exported from your Adobe Commerce instance, loo
 
 -  `catalog_data_exporter_products`
 -  `catalog_data_exporter_product_attributes`
--  flag where `flag_code` is:
 
-   `products-feed-version` / `product-attributes-feed-version`
+If you need additional help, check the [Support Knowledge Base](https://support.magento.com/hc/en-us).
 
 ### Test the connection
 
