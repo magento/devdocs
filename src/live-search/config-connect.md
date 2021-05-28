@@ -42,6 +42,6 @@ To verify that the data has been exported from your Adobe Commerce instance, loo
 
 ### Synced and shared data
 
-The list of data that is synced and shared with the catalog service can be found in the schema, which is located at:
+The list of data that is synced and shared with the catalog service can be found in the schema, which is defined in:
 
 `vendor/magento/module-catalog-data-exporter/etc/et_schema.xml`
