@@ -62,7 +62,7 @@ If the count does not exceed the threshold set by the `queryComplexity` attribut
 
 ## Query depth
 
-The `queryDepth` attribute specifies the maximum depth a query can return. This can be an issue for queries that return objects that show a hierarchy, such as [`CategoryTree`]({{page.baseurl}}/graphql/queries/categories.html), or queries that return detailed data on complex [products]({{page.baseurl}}/graphql/queries/products.html). The default value of 20 allows for deep hierarchies and products, but you might want to reduce this number if you know that if legitimate queries will never reach that depth.
+The `queryDepth` attribute specifies the maximum depth a query can return. This can be an issue for queries that return objects that show a hierarchy, such as [`CategoryTree`]({{page.baseurl}}/graphql/queries/categories.html), or queries that return detailed data on complex [products]({{page.baseurl}}/graphql/queries/products.html). The default value of 20 allows for deep hierarchies and products, but you might want to reduce this number if you know that legitimate queries will never reach that depth.
 
 The following query has a maximum depth of 5.
 
