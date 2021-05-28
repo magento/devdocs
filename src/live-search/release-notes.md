@@ -4,7 +4,7 @@ title: Live Search Release Notes
 ee_only: True
 ---
 
-These release notes describe the initial release of Live Search Public Beta, and include:
+These release notes describe the initial release of Live Search Public Beta and include:
 
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
