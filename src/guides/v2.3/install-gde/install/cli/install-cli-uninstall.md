@@ -1,5 +1,5 @@
 ---
-title: Uninstall or reinstall Magento
+title: Uninstall or reinstall Commerce
 functional_areas:
   - Install
   - System

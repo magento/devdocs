@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Upgrade Magento
+title: Upgrade Commerce
 functional_areas:
   - Upgrade
 ---
@@ -85,13 +85,13 @@ See the examples at the end of this section for help specifying different releas
    _{{ ce }}_:
 
    ```bash
-   composer require magento/product-community-edition={{ page.guide_version }}.7 --no-update
+   composer require magento/product-community-edition={{ page.guide_version }}.0 --no-update
    ```
 
    _{{ ee }}_:
 
    ```bash
-   composer require magento/product-enterprise-edition={{ page.guide_version }}.7 --no-update
+   composer require magento/product-enterprise-edition={{ page.guide_version }}.0 --no-update
    ```
 
    <div class="bs-callout-tip" markdown="1">

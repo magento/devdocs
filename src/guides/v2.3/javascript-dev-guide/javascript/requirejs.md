@@ -1,6 +1,6 @@
 ---
 group: javascript-developer-guide
-title: RequireJS in Magento
+title: RequireJS in Commerce
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 ---

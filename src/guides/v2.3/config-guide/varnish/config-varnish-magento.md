@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Configure Magento to use Varnish
+title: Configure Varnish for Commerce or Magento
 functional_areas:
   - Configuration
   - System
