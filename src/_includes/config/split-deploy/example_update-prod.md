@@ -13,9 +13,7 @@ To update the production system:
 
    For additional options, such as the ability to set an IP address whitelist, see [`magento maintenance:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
 
-1. Stop any running queue workers.
-
-   Set `cron_run` to `false` in `app/etc/env.php` as follows:
+1. Stop any running queue workers by setting `cron_run` to `false` in `app/etc/env.php` as follows:
 
    ```php
    'cron_consumers_runner' => [
