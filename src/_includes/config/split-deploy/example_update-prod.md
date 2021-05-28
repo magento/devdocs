@@ -35,7 +35,7 @@ To update the production system:
    kill <PID>
    ```
 
-    where `PID` is the Process ID to be killed. For example:
+    where `PID` is the process ID to be killed. For example:
 
    ```bash
    kill 1234
