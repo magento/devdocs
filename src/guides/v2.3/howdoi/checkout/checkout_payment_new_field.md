@@ -178,6 +178,7 @@ It is also necessary to override the `Magento_OfflinePayments/view/frontend/web/
 `app/code/Learning/CustomField/view/frontend/web/template/payment/purchaseorder-form.html`
 
 {% collapsible Show code %}
+
 ```html
 <div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
     <div class="payment-method-title field choice">
@@ -237,6 +238,7 @@ It is also necessary to override the `Magento_OfflinePayments/view/frontend/web/
     </div>
 </div>
 ```
+
 {% endcollapsible %}
 
 ## Step 5: Add an Observer {#add-observer}
@@ -313,6 +315,7 @@ class OrderPaymentSaveBefore implements \Magento\Framework\Event\ObserverInterfa
     }
 }
 ```
+
 {% endcollapsible %}
 
 ## Step 6: Verify that the module works {#verify-implementation}
