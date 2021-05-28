@@ -8,16 +8,16 @@ To update the production system:
    ```
 
    ```bash
-   php bin/magento maintenance:enable
+   bin/magento maintenance:enable
    ```
 
    For additional options, such as the ability to set an IP address whitelist, see [`magento maintenance:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
 
-1. If you use {{site.data.var.ee}}, stop queue workers.
+1. Stop any running queue workers.
 
-   Set `cron_run` to `false` in `app/etc/env.php`, e.g.:
+   Set `cron_run` to `false` in `app/etc/env.php` as follows:
 
-   ```bash
+   ```php
    'cron_consumers_runner' => [
            'cron_run' => false
        ]
@@ -29,16 +29,16 @@ To update the production system:
    bin/magento app:config:import
    ```
 
-1. Finally, `kill` active consumer processes.
+1. Finally, `kill` any active consumer processes.
 
    ```bash
-   kill SIGNAL PID
+   kill <PID>
    ```
 
-    Where `SIGNAL` is the signal to be sent and `PID` is the Process ID to be killed.
+    where `PID` is the Process ID to be killed. For example:
 
    ```bash
-   kill -9 1234
+   kill 1234
    ```
 
 1. Pull code from source control.
@@ -52,17 +52,17 @@ To update the production system:
 1. Update the configuration:
 
    ```bash
-   php bin/magento app:config:import
+   bin/magento app:config:import
    ```
 
 1. Clean the cache:
 
    ```bash
-   php bin/magento cache:clean
+   bin/magento cache:clean
    ```
 
 1. End maintenance mode:
 
    ```bash
-   php bin/magento maintenance:disable
+   bin/magento maintenance:disable
    ```
