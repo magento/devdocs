@@ -36,7 +36,7 @@ To verify that the data has been exported from your Adobe Commerce instance, loo
 
 1. In the storefront, verify that the **Search** box returns results correctly.
 
-1. If Live Search is not available in the Admin or if the search results are not returned in the storefront, enter the following command to check the `system.log` for API communication failures or errors on the services side:
+1. If Live Search is not available in the Admin or if the search results are not returned in the storefront, check the `var/log/system.log` file for API communication failures or errors on the services side.
 
    `var/log/system.log`
 
