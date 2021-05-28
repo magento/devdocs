@@ -37,7 +37,7 @@ In the `app/code/Magento/CatalogRule/etc/di.xml` configuration, the following `t
 
 In the above configuration, the `catalog_rule_form` is a UI component form. It is defined in `app/code/Magento/CatalogRule/view/adminhtml/ui_component/catalog_rule_form.xml`.
 
-The `Magento\CatalogRule\Model\Rule\Condition\Combine` and the `Magento\CatalogRule\Model\Rule\Condition\Product` classes are important for the listed conditions and validations of the specified conditions.
+The `Magento\CatalogRule\Model\Rule\Condition\Combine` and the `Magento\CatalogRule\Model\Rule\Condition\Product` classes contain the list of conditions and validations used for creating extended conditions.
 
 The `getNewChildSelectOptions` method in `app/code/Magento/CatalogRule/Model/Rule/Condition/Combine.php` is responsible for the listed conditions. It returns an array of the lists of valid conditions.
 
