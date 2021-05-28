@@ -38,8 +38,6 @@ To verify that the data has been exported from your Adobe Commerce instance, loo
 
 1. If Live Search is not available in the Admin or if the search results are not returned in the storefront, check the `var/log/system.log` file for API communication failures or errors on the services side.
 
-   `var/log/system.log`
-
 ### Synced and shared data
 
 The list of data that is synced and shared with the catalog service can be found in the schema, which is defined in:
