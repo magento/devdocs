@@ -25,7 +25,7 @@ The following example adds a comment to the specified negotiable quote.
 ```graphql
 mutation{
   sendNegotiableQuoteForReview(input: {
-    quote_uid: "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb" 
+    quote_uid: "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb"
     comment: { comment: "Thanks!"}
   }){
     quote {

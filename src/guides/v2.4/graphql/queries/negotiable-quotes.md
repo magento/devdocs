@@ -28,8 +28,8 @@ The following example returns general information about the negotiable quotes co
 
 ```graphql
 query {
-  negotiableQuotes(filter: { name: 
-    { match: "request" } 
+  negotiableQuotes(filter: { name:
+    { match: "request" }
     })
     {
     items {

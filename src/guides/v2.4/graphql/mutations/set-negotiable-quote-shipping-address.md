@@ -82,7 +82,7 @@ The `SetNegotiableQuoteShippingAddressOutput` output object contains the followi
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`quote` | NegotiableQuote! | Contains details about the negotiable quote
+`quote` | NegotiableQuote | Contains details about the negotiable quote
 
 ### NegotiableQuote attributes {#NegotiableQuote}
 
