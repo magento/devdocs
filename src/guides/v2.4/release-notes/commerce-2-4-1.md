@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce 2.4.1 Release Notes
+title: Adobe Commerce 2.4.1 Release Notes
 ---
 
 Magento Commerce 2.4.1 introduces enhancements to performance and security plus significant additions to the B2B feature set. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page. B2B improvements focus on the order approval process, B2B shipping methods, expanded logging of Admin actions, and enhanced security on storefront.

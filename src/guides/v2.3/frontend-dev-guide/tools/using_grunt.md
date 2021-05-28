@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Using Grunt for Magento tasks
+title: Using Grunt
 functional_areas:
   - Frontend
   - Tools

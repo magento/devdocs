@@ -1,6 +1,6 @@
 ---
 group: php-developer-guide
-title: Staging (Magento Commerce only)
+title: Staging (Adobe Commerce only)
 ee_only: true
 ---
 

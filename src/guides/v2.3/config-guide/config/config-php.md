@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Magento's deployment configuration
+title: Deployment configuration
 functional_areas:
   - Configuration
   - System
