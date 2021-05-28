@@ -19,6 +19,25 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.0.23
+
+-  **MDVA-37478** _(for Magento `>=2.3.0 <=2.3.7`)_-Fixes the issue where Magento throws an error when creating a partial invoice for orders placed with the "Payment on Account" payment method through REST API.
+-  **MDVA-37362** _(for Magento `>=2.3.4 <=2.4.2-p1`)_-Fixes the issue where configurable product option values and variant attribute values were empty in GraphQL response.
+-  **MDVA-37288** _(for Magento `2.4.2`)_-Fixes the issue where wrong tier prices were returned after GraphQL request.
+-  **MDVA-37225** _(for Magento `>=2.4.1 <=2.4.2-p1`)_-Fixes the issue where the upload process is stuck during quick order creation when there is an integer value in imported SKUs.
+-  **MDVA-37224** _(for Magento `>=2.3.3 <=2.4.2-p1`)_-Fixes the issue where customers cannot pay for negotiable quote with PayFlow Pro with another product in the cart.
+-  **MDVA-36286** _(for Magento `>=2.3.6 <=2.4.2-p1`)_-Fixes the issue where Page Builder products widget preview breaks if the same SKU has a different position in subcategories.
+-  **MDVA-30186** _(for Magento `>=2.3.4 <=2.3.5-p2, >=2.4.0 <=2.4.0-p1, >=2.4.2 <=2.4.2-p1`)_-Fixes the issue where attribute options are sorted by option value instead of attribute item count, in GraphQL response.
+
+## v1.0.22
+
+-  **MDVA-36718** _(for Magento `>=2.3.0 <=2.4.2`)_-Fixes the issue where the old custom options remain after being changed via API.
+-  **MDVA-35773** _(for Magento `>=2.3.6 <=2.3.6-p1 || >=2.4.1 <=2.4.2`)_-Fixes the issue with the Grand Total not being shown as zero on the Invoice for orders with 100% discount.
+-  **MDVA-36833** _(for Magento `2.4.2`)_-Fixes the issue with search results showing random numbers of products per page after excluding some products from shared catalog.
+-  **MDVA-37182** _(for Magento `>=2.4.1 <=2.4.2`)_-Fixes the issue with getting incorrect search results in both Elasticsearch version 6 and version 7.
+-  **MDVA-36253** _(for Magento `>=2.4.0 <=2.4.1-p1`)_-Fixes the issue where the wrong subtotal shows in the mini cart after item deletion.
+-  **MDVA-36853** _(for Magento `2.4.2`)_-Fixes the issue with no images appear when loading large media galleries.
+
 ## v1.0.21
 
 -  **MDVA-34665** _(for Magento `>=2.3.4 <=2.3.4-p2`)_-Fixes the issue with missing bundled products on category pages.

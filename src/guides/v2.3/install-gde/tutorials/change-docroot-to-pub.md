@@ -11,14 +11,9 @@ Within the `magento2` folder are:
 -  other folders
 
 The Magento app is served from `/var/www/html/magento2/pub`. The rest of the Magento file system is vulnerable because it is accessible from a browser.
-Setting the webroot to the `pub/` directory prevents site visitors from accessing the Web Setup Wizard and other sensitive areas of the Magento file system from a browser.
+Setting the webroot to the `pub/` directory prevents site visitors from accessing sensitive areas of the Magento file system from a browser.
 
 This topic describes how to change the Apache docroot on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
-
-{:.bs-callout-warning}
-If you're accustomed to using the Web Setup Wizard during development, be aware that you will not be able to access it when serving files from the `pub/` directory.
-
-{% include install/web/deprecated.md %}
 
 ## A note about nginx
 
@@ -30,7 +25,7 @@ When used in your server block that defines your site, the `nginx.conf.sample` c
     # /etc/nginx/sites-available/magento
 
     upstream fastcgi_backend {
-         server  unix:/run/php/php7.0-fpm.sock;
+         server  unix:/run/php/php7.4-fpm.sock;
      }
 
      server {
@@ -47,10 +42,11 @@ When used in your server block that defines your site, the `nginx.conf.sample` c
 To complete this tutorial, you will need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="_blank"} stack:
 
 -  Linux
--  Apache (2.2+)
--  MySQL (5.6+)
--  PHP (7.1.3+ or 7.2)
--  Magento (2.0+)
+-  Apache (2.4+)
+-  MySQL (5.7+)
+-  PHP (7.4)
+-  Elasticsearch (7.x)
+-  Magento (2.4+)
 
 {:.bs-callout-info}
 Refer to [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html) and the [Installation Guide]({{ page.baseurl }}/install-gde/bk-install-guide.html) for more information.
@@ -168,7 +164,7 @@ Go to the [storefront](https://glossary.magento.com/storefront) in a web browser
 
    Refer to the [troubleshooting section](https://support.magento.com/hc/en-us/articles/360032994352) if the page displays a 404 (Not Found) or fails to load other assets like images, CSS, and JS.
 
-1. Try accessing the Magento directory for the Web Setup Wizard from a browser. Append "_setup/_" to your server's hostname or IP address in the address bar:
+1. Try accessing a Magento directory from a browser. Append the directory name to your server's hostname or IP address in the address bar:
 
    If you see a 404 or the "Access denied" message, you've successfully restricted access to the Magento file system.
 

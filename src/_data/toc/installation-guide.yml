@@ -3,8 +3,8 @@ pages:
 
     - label: Installation flow
       url: /install-gde/install-flow-diagram.html
-    
-    - label: Magento system requirements
+
+    - label: System requirements
       url: /install-gde/system-requirements.html
 
     - label: Prerequisites
@@ -25,18 +25,21 @@ pages:
 
         - label: Elasticsearch
           url: /install-gde/prereq/elasticsearch.html
+          exclude_versions: ["2.3"]
           children:
 
             - label: Configure nginx and Elasticsearch
               url: /install-gde/prereq/es-config-nginx.html
+              exclude_versions: ["2.3"]
 
             - label: Configure Apache and Elasticsearch
-              url: /install-gde/prereq/es-config-apache.html      
+              url: /install-gde/prereq/es-config-apache.html
+              exclude_versions: ["2.3"]
 
         - label: Get your authentication keys
           url: /install-gde/prereq/connect-auth.html
 
-        - label: Magento file system ownership and permissions
+        - label: File system ownership and permissions
           children:
 
             - label: Overview of ownership and permissions
@@ -47,7 +50,7 @@ pages:
 
         - label: RabbitMQ
           url: /install-gde/prereq/install-rabbitmq.html
-          
+
         - label: Set up a remote MySQL database connection
           url: /install-gde/prereq/mysql_remote.html
 
@@ -57,7 +60,7 @@ pages:
         - label: Optional software
           url: /install-gde/prereq/optional.html
 
-        - label: Get the Magento software
+        - label: Get the software
           url: /install-gde/bk-install-guide.html
 
     - label: Quick start install
@@ -67,9 +70,9 @@ pages:
       url: /install-gde/contrib-git.html
       children:
 
-        - label: Clone the Magento repository
+        - label: Clone the repository
           url: /install-gde/prereq/dev_install.html
-        
+
         - label: Change to a released version
           url: /install-gde/install/cli/dev_downgrade.html
 
@@ -86,7 +89,7 @@ pages:
         - label: Verify the installation
           url: /install-gde/install/verify.html
 
-        - label: Configure the Magento application
+        - label: Configure the application
           url: /install-gde/install/post-install-config.html
 
         - label: Optionally set a umask
@@ -110,20 +113,20 @@ pages:
 
         - label: Configure consumer behavior
           url: /install-gde/install/cli/install-cli-subcommands-consumers.html
-        
+
         - label: Configure the lock provider
           url: /install-gde/install/cli/install-cli-subcommands-lock.html
-          
+
         - label: Configure the store
           url: /install-gde/install/cli/install-cli-subcommands-store.html
 
-        - label: Create, edit, or unlock a Magento administrator account
+        - label: Create, edit, or unlock an administrator account
           url: /install-gde/install/cli/install-cli-subcommands-admin.html
 
         - label: Create or update the deployment configuration
           url: /install-gde/install/cli/install-cli-subcommands-deployment.html
 
-        - label: Create the Magento database schema
+        - label: Create the database schema
           url: /install-gde/install/cli/install-cli-subcommands-db.html
 
         - label: Display or change the Admin URI
@@ -147,14 +150,14 @@ pages:
         - label: Uninstall modules
           url: /install-gde/install/cli/install-cli-uninstall-mods.html
 
-        - label: Uninstall or reinstall Magento
+        - label: Uninstall or reinstall Commerce
           url: /install-gde/install/cli/install-cli-uninstall.html
 
-        - label: Update the Magento database schema and data
+        - label: Update the database schema and data
           url: /install-gde/install/cli/install-cli-subcommands-db-upgr.html
-        
+
         - label: Uninstall themes Composer packages
           url: /install-gde/install/cli/install-cli-theme-uninstall.html
-    
+
     - label: Troubleshooting
       url: https://support.magento.com/hc/en-us/categories/115000200533-Troubleshooting

@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Install Magento
+title: Install
 redirect_from:
   - /cloud/before/before-setup-env-perms.html
 functional_areas:
@@ -103,12 +103,7 @@ After you have installed Magento, you need to set the file system permissions an
 
 Prior to installing, you should [Update installation dependencies]({{ site.baseurl }}/guides/v2.3/install-gde/install/prepare-install.html#install-composer-install) using Composer commands.
 
-Be ready to install Magento using one of the following options:
-
--  [Install the Magento software using the command line]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html)
--  [Install the Magento software using the Web Setup Wizard]({{ site.baseurl }}/guides/v2.3/install-gde/install/web/install-web.html)
-
-   {% include install/web/deprecated.md %}
+Be ready to install Magento using the [command line]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html).
 
 {:.procedure}
 To install Magento using the command line:

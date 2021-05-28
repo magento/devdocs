@@ -1,5 +1,5 @@
 ---
-youtube_id: cM_9RkWFqqM
+youtube_id: mZNBENRgC1E
 duration: "7:36"
 group: "Fundamentals of Magento 2 Development"
 title: "How to Add a New Product Attribute"

@@ -1,5 +1,5 @@
 ---
-title: Configure the Magento application
+title: Configure the application
 functional_areas:
   - Install
   - System
@@ -12,7 +12,7 @@ Now that you've finished installing the Magento application, you need to configu
 
 cron---the UNIX task scheduler---is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on. A *crontab* is a cron configuration.
 
-{% include config/setup-cron_2.2_how-to.md %}
+{% include config/setup-cron_2.3_how-to.md %}
 
 For more information about cron, including how to remove a crontab and run cron from the command line, see [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html).
 

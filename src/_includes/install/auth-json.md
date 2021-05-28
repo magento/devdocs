@@ -1,12 +1,12 @@
  Accessing the Magento 2 GitHub repository requires authentication. The command `composer install` fails without it. Requirements to authenticate include:
 
-1. Magento authentication keys
+1. Commerce authentication keys
 1. GitHub personal access token
 1. Composer `auth.json` file
 
-### Create Magento authentication keys
+### Create Commerce authentication keys
 
-Follow this guide to [create Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
+Follow this guide to [create Commerce authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 
 ### Create a GitHub personal access token
 
@@ -20,7 +20,7 @@ When choosing token permissions, select all checkboxes in the `repo` scope. Comp
 
 ### Create `auth.json` file
 
-1. Log in to your Magento server as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Commerce server as the [Commerce file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Create the `auth.json` file in the user's home directory. For example, if `magento_user` is your Unix username, then create `/home/magento_user/.composer/auth.json`.
 
 ### Edit `auth.json` file
