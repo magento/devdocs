@@ -123,7 +123,7 @@ To install Magento using the command line:
 1. Enter a CLI command with options for entering the name, email, ADMIN credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
    ```bash
-   php magento setup:install \
+   php bin/magento setup:install \
      --admin-firstname=John \
      --admin-lastname=Smith \
      --admin-email=jsmith@mail.com \
@@ -155,13 +155,13 @@ After installing Magento, run the commands for [compile]({{ site.baseurl }}/guid
 1. Compile Magento.
 
    ```bash
-   php magento setup:di:compile
+   php bin/magento setup:di:compile
    ```
 
 1. Deploy Magento
 
    ```bash
-   php magento setup:static-content:deploy
+   php bin/magento setup:static-content:deploy
    ```
 
 Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts file.
