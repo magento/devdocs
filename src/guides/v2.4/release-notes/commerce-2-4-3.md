@@ -27,7 +27,7 @@ Look for the following highlights in this release.
 
 ### Substantial security enhancements
 
-This release includes over 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.1-p1 and Magento 2.3.6-p1.
+This release includes over 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.2-p1 and Magento 2.3.7-p1.
 
 #### Over 33 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
@@ -268,7 +268,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41572-->
 
-*  CAPTCHA now correctly validates data provided by a shopper, and CAPTCHA fields are now displayed as expected after a shopper’s multiple unsuccessful attempts to check out with PayPal PayflowPro.
+*  CAPTCHA now correctly validates data provided by a shopper, and CAPTCHA fields are now displayed as expected after a shopper’s multiple unsuccessful attempts to check out with PayPal Payflow Pro.
 
 <!--- MC-41281-->
 
@@ -996,7 +996,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-39895-->
 
-*  Shoppers can now successfully check out a PayPal PayflowPro order with a shipping address that contains special characters. Previously, Magento declined payment for these orders.
+*  Shoppers can now successfully check out a PayPal Payflow Pro order with a shipping address that contains special characters. Previously, Magento declined payment for these orders.
 
 <!--- MC-39861-->
 
