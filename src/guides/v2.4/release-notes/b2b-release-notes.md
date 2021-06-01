@@ -11,6 +11,10 @@ These release notes can include:
 
 ## Magento B2B - Version 1.3.2
 
+-  {:.fix} <!--- MC-39862--> Magento now successfully sends update emails about expired negotiable quotes. Previously, when a negotiable quote expired, Magento did not send update emails.
+
+-  {:.fix} <!--- MC-40682--> Magento now successfully sends update emails about soon-to-expire and expired negotiable quotes when a `cron` job is missing.
+
 ### Company
 
 -  {:.fix} <!--- MC-41542--> The Create New Company Account page country dropdown field no longer lists empty option values. Previously, the first two option values and the country code `AN` were empty.
@@ -22,6 +26,10 @@ These release notes can include:
 -  {:.fix} <!--- MC-40551--> Company users can now edit and update customer custom attribute values. Previously, these attributes did not bind properly with the create and edit use form. A company user could enter different attribute values, but Magento did not save these values correctly.
 
 -  {:.fix} <!--- MC-32653--> The resource tree for company role permissions can now be translated as expected. Previously, the permissions tree was not translated even though valid translation files were present.
+
+-  {:.fix} <!--- MC-40358--> Magento now saves custom customer attribute values for B2B users as expected. Previously, creating a company account that contained custom customer attributes triggered a template error, and Magento did not successfully load the form. Adding an argument to the layout of `company_create_account` resolved this issue.
+
+-  {:.fix} <!--- MC-41721--> Company user filters such as Show All Users, Show Active Users, and Show Inactive Users now work as expected. Previously, filtering actions on the company user page caused a JavaScript error.
 
 ### Company credit
 
@@ -40,6 +48,10 @@ These release notes can include:
 -  {:.fix} <!--- MC-40225--> Using QuickOrder now adds products in the quantity specified by the shopper. Previously, Magento added one product only even when a shopper specified quantities that exceeded one.
 
 -  {:.fix} <!--- MC-41283--> The Quick order autocomplete feature now works with partial SKUs.
+
+-  {:.fix} <!--- MC-41299--> Magento now displays products that have been configured as **Not visible individually** on the Quick Order page’s auto-suggest list and search results.
+
+-  {:.fix} <!--- MC-42402--> Shoppers can now use the quick order form to add multiple products by SKUs that include  upper-case characters. Previously, only the first product was added.
 
 ### Negotiable quote
 
@@ -68,6 +80,10 @@ These release notes can include:
 -  {:.fix} <!--- MC-40155--> Requisition list **Latest Activity Date** values now adhere to locale format.
 
 -  {:.fix} <!--- MC-39580--> Magento no longer throws a fatal error when you edit a bundle product from a requisition list.
+
+-  {:.fix} <!--- MC-40454--> Magento now displays the correct product price when you add a product with a customizable option (File) to a wish list from a requistion list. The link to the uploaded file is also visible as expected. Previously, Magento displayed incorrect product prices and did not display the link to the file.
+
+-  {:.fix} <!--- MC-36383--> Products with a customizable option `(File)` can now be added to a shopping cart from a requisition list. [GitHub-377](https://github.com/magento/partners-magento2b2b/issues/377)
 
 ### Shared catalog
 

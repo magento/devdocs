@@ -1,13 +1,13 @@
 ---
 group: release-notes
-title: Magento Open Source 2.4.2 Release Notes
+title: Magento Open Source 2.4.3 Release Notes
 ---
 
-Magento Open Source 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. Elasticsearch 7.9.x and Redis 6.x are now supported.
+Magento Open Source 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Elasticsearch 7.10.x is supported. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. With this release, Page Builder is now available as a bundled extension in Magento Open Source.
 
 This release includes over 280 new fixes to core code and 35 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
-All known issues identified in Magento 2.4.1 have been fixed in this release.
+All known issues identified in Magento 2.4.2 have been fixed in this release.
 
 {:.bs-callout-info}
 
@@ -29,27 +29,63 @@ Look for the following highlights in this release.
 
 ### Substantial security enhancements
 
-This release includes over 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.1-p1 and Magento 2.3.6-p1.
+This release includes 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.2-p1 and Magento 2.3.7-p1.
 
-#### Over 35 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
+#### Thirty-three security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb21-08.html) for a discussion of these fixed issues.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Adobe Security Bulletin for a discussion of these fixed issues.
+
 #### Additional security enhancements
 
-Security improvements for this release include:
+Security improvements for this release improve compliance with the latest security best practices, including:
+
+*  **Rate limiting is now built in** to Magento APIs to prevent distributed denial-of-service (DDoS) attacks. Web APIs now impose restrictions on the size or number of resources that can be requested by a client/user. <!--- MC-35358-->
+
+*  **ReCAPTCHA  coverage has been extended** to include:
+
+   *  Web API that have corresponding HTML pages are covered through Re-Captcha. (This excludes web APIs that are accessed by integration.) ReCAPTCHA coverage protects endpoints from spam attacks. When web APIs are accessed by a third-party integration service that uses OAuth, ReCAPTCHA is disabled.<!--- MC-34472-->
+
+   *  the Place Order storefront page and payment-related web APIs. ReCAPTCHA protection for these pages is disabled by default and can be enabled from the Admin. This coverage adds an anti-brute force mechanism to protect stores from carding attacks.
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Infrastructure improvements
 
-This release contains enhancements to core quality, which improve the quality of the Framework and these functional areas: Customer Account, Catalog, CMS, OMS, Import/Export, Promotions and Targeting, and Cart and Checkout.
+This release contains enhancements to core quality, which improve the quality of the Framework and these functional areas: Customer Account, Catalog, CMS, OMS, Import/Export, Promotions and Targeting, Cart and Checkout, B2B, and Staging and Preview.
+
+**PayPal Pay Later is now supported** in deployments that include PayPal. This feature allows shoppers to pay for an order in bi-weekly installments instead of paying the full amount at time of purchase. <!--- MC-40556-->
 
 ### Platform enhancements
 
+Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future Magento compatibility with PHP 8.
+
+*  [**Elasticsearch 7.10.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). (Magento 2.4.x remains compatible with Elasticsearch 7.4 and later.) <!--- MC-41128-->
+
+*  The KnockoutJS library has been upgraded to v3.5.1 (the latest version). <!--- MC-40694-->
+
+*  The deprecated TinyMCE v3 library has been removed. The `Magento_Tinymce3Banner` module and MFTF tests related to TinyMCE v3.x have been removed from Adobe Commerce. <!--- MC-42199 42170 -->
+
+*  Magento 2.4.3 has been tested and confirmed to be compatible with Redis 6.0.12. (Magento 2.4.x remains compatible with Redis 5.x).
+
+*  Laminas library dependencies have been upgraded to PHP 8.x-compatible versions. Some redundant dependencies have been removed from `composer.json`. **Adobe Commerce 2.4.3 uses Laminas 3.4.0**. <!--- MC-39513-->
+
+*  Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
+
 ### Performance enhancements
 
-This release includes code enhancements that boost API performance and Admin response time for deployments with large catalogs.
+This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which decreases the number of records for indexing  and improves indexing times.
+
+### Page Builder
+
+Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for Adobe Commerce and Magento Open Source. Page Builder replaces the TinyMCE editor in the following Admin areas:
+
+*  CMS Page
+*  CMS Block
+*  Category Description
+*  Product Description
+
+All the content created in TinyMCE has been migrated into Page Builder as HTML.
 
 ### Adobe Stock Integration
 
@@ -57,17 +93,12 @@ This release includes Adobe Stock Integration v2.1.1.
 
 ### GraphQL
 
-This release adds GraphQL coverage for the following features:
+This release adds GraphQL coverage for shared routes. The [route query](https://devdocs.magento.com/guides/v2.4/graphql/queries/route.html) and [RoutableInterface](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/routable-interface.html) support routing requests on product, category, and CMS pages. The `urlResolver` query has been deprecated, and its functionality has been superseded by the `route` query.
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 ### PWA Studio
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
-
-### Media Gallery
-### Magento Functional Testing Framework (MFTF)
-
-MFTF 3.2.1 is now available. This release introduces error tolerance in both tests and test suite generation. Additional enhancements and bug fixes are described in the [Magento Functional Testing Framework Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md).
 
 ### Vendor Developed Extensions
 
@@ -376,13 +407,9 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 ### Catalog rule
 
-*  At the CatalogGraphQl module, for graphQL query, the `customerGroupId` is missing from the customer session. Retrieving customerGroupId from the product repository will resolve the issue.
+<!--- MC-39896-->
 
-### Cleanup
-
-#### Typo and grammar cleanup
-
-#### Code cleanup
+*  The `products` query now returns the current values when a catalog price rule applies to an item. [GitHub-26738](https://github.com/magento/magento2/issues/26738)
 
 ### CMS content
 
@@ -1047,6 +1074,12 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 <!--- MC-37657-->
 
 *  Magento now pre-fills the **VAT Number** input fields for both the billing and shipping addresses of the Address Information section of the Admin new order page with saved VAT numbers when an administrator creates an order for an existing customer. [GitHub-31846](https://github.com/magento/magento2/issues/31846)
+
+### Test
+
+<!--- MC-41393-->
+
+*  Test environments have been upgraded to Redis 6.0.12.
 
 ### Theme
 

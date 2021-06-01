@@ -3,7 +3,7 @@ group: release-notes
 title: Adobe Commerce 2.4.3 Release Notes
 ---
 
-Adobe Commerce 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. B2B improvements focus on support for online payments for purchase orders. Elasticsearch 7.9.x and Redis 6.x are now supported.
+Adobe Commerce 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Elasticsearch 7.10.x is supported. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
 This release includes over 370 new fixes to core code and 33 security enhancements. All known issues identified in Magento 2.4.2 have been fixed in this release.
 
@@ -27,11 +27,11 @@ Look for the following highlights in this release.
 
 ### Substantial security enhancements
 
-This release includes over 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.2-p1 and Magento 2.3.7-p1.
+This release includes 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.2-p1 and Magento 2.3.7-p1.
 
-#### Over 33 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
+#### Thirt-three security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Adobe Security Bulletin](https://helpx.adobe.com/security/products/magento/apsb21-08.html) for a discussion of these fixed issues.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Adobe Security Bulletin for a discussion of these fixed issues.
 
 #### Additional security enhancements
 
@@ -52,11 +52,11 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these functional areas: Customer Account, Catalog, CMS, OMS, Import/Export, Promotions and Targeting, Cart and Checkout, B2B, and Staging and Preview.
 
-*  **PayPal Pay Later is now supported** in deployments that include PayPal. This feature allows shoppers to pay for an order in bi-weekly installments instead of paying the full amount at time of purchase. <!--- MC-40556-->
+**PayPal Pay Later is now supported** in deployments that include PayPal. This feature allows shoppers to pay for an order in bi-weekly installments instead of paying the full amount at time of purchase. <!--- MC-40556-->
 
 ### Platform enhancements
 
-This release includes platform upgrades to support Magento compatibility with PHP 8.x.
+Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future Magento compatibility with PHP 8.
 
 *  [**Elasticsearch 7.10.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). (Magento 2.4.x remains compatible with Elasticsearch 7.4 and later.) <!--- MC-41128-->
 
@@ -66,17 +66,13 @@ This release includes platform upgrades to support Magento compatibility with PH
 
 *  Magento 2.4.3 has been tested and confirmed to be compatible with Redis 6.0.12. (Magento 2.4.x remains compatible with Redis 5.x).
 
-*  Test environments have been upgraded to Redis 6.0.12. <!--- MC-41393-->
-
 *  Laminas library dependencies have been upgraded to PHP 8.x-compatible versions. Some redundant dependencies have been removed from `composer.json`. **Adobe Commerce 2.4.3 uses Laminas 3.4.0**. <!--- MC-39513-->
 
 *  Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
 
 ### Performance enhancements
 
-This release includes code enhancements that boost API performance and Admin response time for deployments with large catalogs.
-
-**Decreased indexation time for Product Price and Catalog Rule indexers**. Merchants can now exclude a website from a customer group or shared catalog, which decreases the number of records for indexing  and improves indexing times.
+This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which decreases the number of records for indexing  and improves indexing times.
 
 ### GraphQL
 
@@ -100,7 +96,7 @@ This release adds GraphQL support for these features:
 
    *  [Share](https://devdocs.magento.com/guides/v2.4/graphql/mutations/share-gift-registry.html) a gift registry with invitees.
 
-   *  Negotiable quotes**. See the [`negotiableQuote`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quote.html) and [`negotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quotes.html) queries. <!--- PWA-1292-->
+   *  **Negotiable quotes**. See the [`negotiableQuote`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quote.html) and [`negotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quotes.html) queries. <!--- PWA-1292-->
 
    New mutations include:
 
@@ -492,13 +488,9 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 ### Catalog rule
 
-*  At the CatalogGraphQl module, for graphQL query, the `customerGroupId` is missing from the customer session. Retrieving customerGroupId from the product repository will resolve the issue.
+<!--- MC-39896-->
 
-### Cleanup
-
-#### Typo and grammar cleanup
-
-#### Code cleanup
+*  The `products` query now returns the current values when a catalog price rule applies to an item. [GitHub-26738](https://github.com/magento/magento2/issues/26738)
 
 ### CMS content
 
@@ -539,10 +531,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-40906-->
 
 *  Magento now correctly displays custom customer address attributes on both storefront and Admin order pages. Previously, the selected option of the dropdown attribute was missing from the Address information section, and the value of the input attribute contained the attribute code. [GitHub-508](https://github.com/magento/partners-magento2ee/issues/508)
-
-<!--- MC-40358-->
-
-*  Magento now saves custom customer attribute values for B2B users as expected. Previously, creating a company account that contained custom customer attributes triggered a template error, and Magento did not successfully load the form. Adding an argument to the layout of `company_create_account` resolved this issue.
 
 <!--- MC-40329-->
 
@@ -952,7 +940,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41497-->
 
-*  Magento no longer throws an `Invalid header value detected` error on the Contact us form when a shopper enters an email address that contains French diacritics (such as "é", “è”). Magento now converts UTF-8 letters in the user name to ASCII encoding. Previously, UTF-8 letters were not converted to ASCII encoding in the unique section of the email address.
+*  Magento no longer throws an `Invalid header value detected` error on the Contact us form when a shopper enters an email address that contains French diacritic marks (such as "é", “è”). Magento now converts UTF-8 letters in the user name to ASCII encoding. Previously, UTF-8 letters were not converted to ASCII encoding in the unique section of the email address.
 
 <!--- MC-39947-->
 
@@ -1347,6 +1335,12 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 <!--- MC-37657-->
 
 *  Magento now pre-fills the **VAT Number** input fields for both the billing and shipping addresses of the Address Information section of the Admin new order page with saved VAT numbers when an administrator creates an order for an existing customer. [GitHub-31846](https://github.com/magento/magento2/issues/31846)
+
+### Test
+
+ <!--- MC-41393-->
+
+*  Test environments have been upgraded to Redis 6.0.12.
 
 ### Theme
 
