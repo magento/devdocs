@@ -345,5 +345,5 @@ This folder contains the following sub-folders and files:
 [setup]: #setup
 [cli run]: #cli-run
 [phpstorm run]: {{ page.baseurl }}/test/unit/unit_test_execution_phpstorm.html
-[PHPUnit documentation]: https://phpunit.de/manual/4.1/en/appendixes.configuration.html
+[PHPUnit documentation]: https://phpunit.readthedocs.io/en/9.5/
 [RabbitMQ Management Plugin]: https://www.rabbitmq.com/management.html
