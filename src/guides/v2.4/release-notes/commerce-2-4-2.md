@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce 2.4.2 Release Notes
+title: Adobe Commerce 2.4.2 Release Notes
 ---
 
 Magento Commerce 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. B2B improvements focus on support for online payments for purchase orders. Elasticsearch 7.9.x and Redis 6.x are now supported.

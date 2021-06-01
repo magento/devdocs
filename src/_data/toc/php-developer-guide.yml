@@ -113,7 +113,7 @@ pages:
         - label: How to add CLI commands
           url: /extension-dev-guide/cli-cmds/cli-howto.html
 
-    - label: Staging (Magento Commerce only)
+    - label: Staging (Adobe Commerce only)
       url: /extension-dev-guide/staging.html
 
     - label: Component development
@@ -295,7 +295,7 @@ pages:
       url: /extension-dev-guide/versioning/
       children:
 
-        - label: Check the Magento version
+        - label: Check the Commerce version
           url: /extension-dev-guide/versioning/check-version.html
 
         - label: Codebase changes

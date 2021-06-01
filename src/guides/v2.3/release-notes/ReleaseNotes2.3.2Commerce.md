@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce 2.3.2 Release Notes
+title: Adobe Commerce 2.3.2 Release Notes
 ---
 
 *Release notes published on June 25, 2019 and last updated on June 3, 2020.*

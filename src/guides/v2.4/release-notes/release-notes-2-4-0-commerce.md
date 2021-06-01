@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce 2.4.0 Release Notes
+title: Adobe Commerce 2.4.0 Release Notes
 ---
 
 Magento Commerce 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default. B2B enhancements include the new Order Approval workflow.
