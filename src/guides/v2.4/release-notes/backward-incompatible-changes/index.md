@@ -15,12 +15,12 @@ The TinyMCE v3 library, which was deprecated on May 14, 2018, has been removed b
 -  The `Magento_Tinymce3Banner` module has been removed from {{ site.data.var.ee }}.
 -  All MFTF tests related to TinyMCE v3 have been removed.
 
-{:.bs-callout-info}
-An upgrade script that switches TinyMCE to v4 has existed since 2.3.6 ([`Magento\Config\Setup\Patch\Data\UnsetTinymce3`]({{ site.mage2bloburl }}/2.3/app/code/Magento/Config/Setup/Patch/Data/UnsetTinymce3.php)).
-
 To switch to the TinyMCE v4 library, you must change the `cms/wysiwyg/editor` value in the `core_config_data` database table to `mage/adminhtml/wysiwyg/tiny_mce/tinymce4Adapter`.
 
 This change only impacts extensions that depend on the TinyMCE v3 library for WYSIWYG functionality in the Admin.
+
+{:.bs-callout-info}
+An upgrade script that switches TinyMCE to v4 has existed since 2.3.6 ([`Magento\Config\Setup\Patch\Data\UnsetTinymce3`]({{ site.mage2bloburl }}/2.3/app/code/Magento/Config/Setup/Patch/Data/UnsetTinymce3.php)).
 
 ## 2.4.1 - 2.4.2
 
