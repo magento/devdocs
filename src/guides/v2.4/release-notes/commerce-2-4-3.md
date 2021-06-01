@@ -8,7 +8,6 @@ Adobe Commerce 2.4.3 introduces enhancements to performance and security plus si
 This release includes over 370 new fixes to core code and 33 security enhancements. All known issues identified in Magento 2.4.2 have been fixed in this release.
 
 {:.bs-callout-info}
-
 Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.3 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 ## Security-only patch available
@@ -41,26 +40,44 @@ Security improvements for this release improve compliance with the latest securi
 
 *  **ReCAPTCHA  coverage has been extended** to include:
 
-   *  web APIs that have corresponding HTML pages are covered through ReCAPTCHA. (This excludes web APIs that are accessed by integration.) ReCAPTCHA coverage protects endpoints from spam attacks. When web APIs are accessed by a third-party integration service that uses OAuth, ReCAPTCHA is disabled.<!--- MC-34472-->
+   *  Web APIs that have corresponding HTML pages are covered through ReCAPTCHA. (This excludes web APIs that are accessed by integrations.) ReCAPTCHA coverage protects endpoints from spam attacks. When web APIs are accessed by a third-party integration service that uses OAuth, ReCAPTCHA is disabled.<!--- MC-34472-->
 
-   *  the Place Order storefront page and payment-related web APIs. ReCAPTCHA protection for these pages is disabled by default and can be enabled from the Admin. This coverage adds an anti-brute force mechanism to protect stores from carding attacks.
+   *  The Place Order storefront page and payment-related web APIs. ReCAPTCHA protection for these pages is disabled by default and can be enabled from the Admin. This coverage adds an anti-brute force mechanism to protect stores from carding attacks.
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Infrastructure improvements
 
-This release contains enhancements to core quality, which improve the quality of the Framework and these functional areas: Customer Account, Catalog, CMS, OMS, Import/Export, Promotions and Targeting, Cart and Checkout, B2B, and Staging and Preview.
+This release contains enhancements that improve the quality of the framework and the following functional areas:
+
+*  Customer Account
+
+*  Catalog
+
+*  CMS
+
+*  OMS
+
+*  Import/Export
+
+*  Promotions and Targeting
+
+*  Cart and Checkout
+
+*  B2B
+
+*  Staging and Preview
 
 **PayPal Pay Later is now supported** in deployments that include PayPal. This feature allows shoppers to pay for an order in bi-weekly installments instead of paying the full amount at time of purchase. <!--- MC-40556-->
 
 ### Platform enhancements
 
-Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future Magento compatibility with PHP 8.x.
+Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future compatibility with PHP 8.x.
 
 *  [**Elasticsearch 7.10.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). (Magento 2.4.x remains compatible with Elasticsearch 7.4 and later.) <!--- MC-41128-->
 
-*  Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
+*  Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
 
 *  The KnockoutJS library has been upgraded to v3.5.1 (the latest version). <!--- MC-40694-->
 
@@ -68,15 +85,15 @@ Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upg
 
 *  Magento 2.4.3 has been tested and confirmed to be compatible with Redis 6.0.12. (Magento 2.4.x remains compatible with Redis 5.x).
 
-*  Laminas library dependencies have been upgraded to PHP 8.x-compatible versions. Some redundant dependencies have been removed from `composer.json`. **Adobe Commerce 2.4.3 uses Laminas 3.4.0**. <!--- MC-39513-->
+*  Laminas library dependencies have been upgraded to PHP 8.x-compatible versions. Some redundant dependencies have been removed from the `composer.json` file. **Adobe Commerce 2.4.3 uses Laminas 3.4.0**. <!--- MC-39513-->
 
 ### Performance enhancements
 
-This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which decreases the number of records for indexing  and improves indexing times.
+This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which decreases the number of records for indexing and improves indexing times.
 
 ### GraphQL
 
-This release adds GraphQL support for these features:
+This release adds GraphQL support for the following features:
 
 *  **Shared catalogs**<!--- PWA-1294-->
 
@@ -88,7 +105,7 @@ This release adds GraphQL support for these features:
 
    *  [Create](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-gift-registry.html), [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry.html), or [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry.html) gift registries.
 
-   *  [Update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry-items.html), or [remove](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry-items.html) items from a gift registry.
+   *  [Update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry-items.html) or [remove](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry-items.html) items from a gift registry.
 
    *  [Move all items](https://devdocs.magento.com/guides/v2.4/graphql/mutations/move-cart-items-to-gift-registry.html) from the cart to the gift registry.
 
@@ -144,6 +161,7 @@ Interactive In-Product Guidance provides merchants with usage tips and informati
 ### Adobe Stock Integration
 
 This release includes Adobe Stock Integration v2.1.1.
+
 ### Vendor Developed Extensions
 
 See the following topics for updates on features and changes for this release:
@@ -152,7 +170,7 @@ See the following topics for updates on features and changes for this release:
 
 *  [Braintree](https://docs.magento.com/user-guide/payment/braintree.html)
 
-*  [dotdigital Engagement Cloud](https://docs.magento.com/user-guide/marketing/dotdigital/engagement-cloud.html)
+*  [dotdigital Engagement Cloud]({{ site.baseurl }}/extensions/vendor/dotdigital/release-notes.html)
 
 *  [Klarna](https://docs.magento.com/user-guide/payment/klarna.html)
 
@@ -202,7 +220,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-39037-->
 
-*  The generated System report (**System** > **Support** > **System Report**) is is no rendered correctly. Previously, report content was misaligned.
+*  The generated System report (**System** > **Support** > **System Report**) is now rendered correctly. Previously, report content was misaligned.
 
 <!--- MC-30152-->
 
@@ -252,7 +270,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-35638-->
 
-*  Magento now displays the same total price as expected on the shopping cart page and in the Shipping step of the checkout workflow after the price of a bundle option has changed.
+*  Magento now displays the same total price as expected on the shopping cart page and in the shipping step of the checkout workflow after the price of a bundle option has changed.
 
 <!--- MC-32617-->
 
@@ -296,7 +314,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40657-->
 
-*  Magento now displays the Terms and Condition validation message in the relevant block only when a shopper clicks the **Place Order** button. Previously, Magento displayed this message in the Apply Discount Code block whenever a shopper changed payment method in the checkout workflow: `The order wasn't placed. First, agree to the terms and conditions, then try placing your order again`.
+*  Magento now displays the Terms and Conditions validation message in the relevant block only when a shopper clicks the **Place Order** button. Previously, Magento displayed this message in the Apply Discount Code block whenever a shopper changed payment method in the checkout workflow: `The order wasn't placed. First, agree to the terms and conditions, then try placing your order again`.
 
 <!--- MC-40271-->
 
@@ -354,7 +372,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41801-->
 
-*  You can now successfully duplicate a shared catalog that contains numeric-only SKUs. Previously, Magento threw an error when you tried to duplicate a shared catalog because the `\Magento\Catalog\Model\ProductIdLocator` class  did not work correctly with numeric-only SKUs.
+*  You can now successfully duplicate a shared catalog that contains numeric-only SKUs. Previously, Magento threw an error when you tried to duplicate a shared catalog because the `\Magento\Catalog\Model\ProductIdLocator` class did not work correctly with numeric-only SKUs.
 
 <!--- MC-41575-->
 
@@ -454,7 +472,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-39134-->
 
-*  Product detail pages now open with the date customizable option populated with the date from the previous order when **Use JavaScript Calendar** is enabled. The custom date option value resolver now fall backs to an alternative format if the value is not formatted based on the current configuration. Previously, the custom date option value was empty.
+*  Product detail pages now open with the date customizable option populated with the date from the previous order when **Use JavaScript Calendar** is enabled. The custom date option value resolver now falls back to an alternative format if the value is not formatted based on the current configuration. Previously, the custom date option value was empty.
 
 <!--- MC-39104-->
 
