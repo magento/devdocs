@@ -5,6 +5,23 @@ title: Magento 2.4 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
+## 2.4.2 - 2.4.3
+
+### TinyMCE
+
+The TinyMCE v3 library, which was deprecated on May 14, 2018, has been removed because it is not compatible with the latest version of jQuery. You must use TinyMCE v4.
+
+-  The `Magento_Tinymce3` module has been removed from {{ site.data.var.ce }}.
+-  The `Magento_Tinymce3Banner` module has been removed from {{ site.data.var.ee }}.
+-  All MFTF tests related to TinyMCE v3 have been removed.
+
+{:.bs-callout-info}
+An upgrade script that switches TinyMCE to v4 has existed since 2.3.6 ([`Magento\Config\Setup\Patch\Data\UnsetTinymce3`]({{ site.mage2bloburl }}/2.3/app/code/Magento/Config/Setup/Patch/Data/UnsetTinymce3.php)).
+
+To switch to the TinyMCE v4 library, you must change the `cms/wysiwyg/editor` value in the `core_config_data` database table to `mage/adminhtml/wysiwyg/tiny_mce/tinymce4Adapter`.
+
+This change only impacts extensions that depend on the TinyMCE v3 library for WYSIWYG functionality in the Admin.
+
 ## 2.4.1 - 2.4.2
 
 ### Compare lists
