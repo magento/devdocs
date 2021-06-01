@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Magento application initialization and bootstrap
+title: Application initialization and bootstrap
 functional_areas:
   - Configuration
   - System

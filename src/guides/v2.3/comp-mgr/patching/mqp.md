@@ -1,11 +1,11 @@
 ---
 group: software-update-guide
-title: Apply patches using Magento Quality Patches Tool (MQP)
+title: Commerce Quality Patches
 functional_areas:
   - Upgrade
 ---
 
-The [Magento Quality Package (MQP) package][] delivers individual patches developed by Magento and allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}. See the [Apply Patches]({{ site.baseurl }}/cloud/project/project-patch.html) topic in the _Cloud Guide_ for details on installing and using  MQP for {{ site.data.var.ece }}.
+The [Magento Quality Package package][] delivers individual patches developed by Magento and allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}. See the [Apply Patches]({{ site.baseurl }}/cloud/project/project-patch.html) topic in the _Cloud Guide_ for details on installing and using  MQP for {{ site.data.var.ece }}.
 
 {:.bs-callout-warning}
 We do not recommend using the MQP package to apply large numbers of patches because it increases the complexity of your code, which makes upgrading to a new version of Magento more difficult.
@@ -196,4 +196,4 @@ The MQP package logs all operations in the `<Magento_root>/var/log/patch.log` fi
 
 <!-- Link Definitions -->
 
-[Magento Quality Package (MQP) package]: https://github.com/magento/quality-patches
+[Magento Quality Package package]: https://github.com/magento/quality-patches

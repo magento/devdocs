@@ -1,9 +1,6 @@
 ---
 group: extension-best-practices
-subgroup: 02_Extension-Coding
-title: Creating a Magento admin page
-menu_title: Creating a Magento admin page
-menu_order: 1000
+title: Creating an admin page
 functional_areas:
   - Standards
 ---

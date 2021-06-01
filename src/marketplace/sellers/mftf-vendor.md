@@ -3,7 +3,12 @@ group: marketplace-sellers
 title: MFTF Vendor-supplied Tests
 ---
 
+{:.bs-callout-info}
+At this stage, the MFTF Vendor-supplied check is not required to pass technical review. The pass/fail status of this check is ignored. We are still observing the behavior of this set of tests and will start requiring these tests at a later time, with sufficient notice.
+
 ## Overview
+
+This check runs the MFTF tests supplied by the vendor as a part of the extension package.
 
 The Magento Functional Testing Framework (MFTF) is a browser-based acceptance testing framework used to validate the functionality of a Magento site. Running vendor-supplied MFTF tests helps to ensure that the extension functionality is operating as expected for the end user.
 
