@@ -13,7 +13,7 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.
 
 ## Security-only patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release provides (for example, Magento 2.4.1-p1). Patch 2.4.0.12 (Composer package 2.4.1-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.4.1. All hot fixes that were applied to the 2.4.1 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release provides (for example, Magento 2.4.1-p1). Patch 2.4.0.12 (Composer package 2.4.3) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.4.1. All hot fixes that were applied to the 2.4.1 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
 
 For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.4.1-p1), see [Install Magento using Composer]({{ page.baseurl }}/install-gde/composer.html). Security-only patches include security bug fixes only, not the additional security enhancements that are included in the full patch.
 
@@ -29,7 +29,7 @@ Look for the following highlights in this release.
 
 This release includes 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.2-p1 and Magento 2.3.7-p1.
 
-#### Thirt-three security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
+#### Thirty-three security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Adobe Security Bulletin for a discussion of these fixed issues.
 
@@ -37,11 +37,11 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 Security improvements for this release improve compliance with the latest security best practices, including:
 
-*  **Rate limiting is now built in** to Magento APIs to prevent distributed denial-of-service (DDoS) attacks. Web APIs now impose restrictions on the size or number of resources that can be requested by a client/user. <!--- MC-35358-->
+*  **Rate limiting is now built-in** to Magento APIs to prevent distributed denial-of-service (DDoS) attacks. Web APIs now impose restrictions on the size or number of resources that can be requested by a client/user. <!--- MC-35358-->
 
 *  **ReCAPTCHA  coverage has been extended** to include:
 
-   *  Web API that have corresponding HTML pages are covered through Re-Captcha. (This excludes web APIs that are accessed by integration.) ReCAPTCHA coverage protects endpoints from spam attacks. When web APIs are accessed by a third-party integration service that uses OAuth, ReCAPTCHA is disabled.<!--- MC-34472-->
+   *  web APIs that have corresponding HTML pages are covered through ReCAPTCHA. (This excludes web APIs that are accessed by integration.) ReCAPTCHA coverage protects endpoints from spam attacks. When web APIs are accessed by a third-party integration service that uses OAuth, ReCAPTCHA is disabled.<!--- MC-34472-->
 
    *  the Place Order storefront page and payment-related web APIs. ReCAPTCHA protection for these pages is disabled by default and can be enabled from the Admin. This coverage adds an anti-brute force mechanism to protect stores from carding attacks.
 
@@ -56,9 +56,11 @@ This release contains enhancements to core quality, which improve the quality of
 
 ### Platform enhancements
 
-Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future Magento compatibility with PHP 8.
+Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future Magento compatibility with PHP 8.x.
 
 *  [**Elasticsearch 7.10.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). (Magento 2.4.x remains compatible with Elasticsearch 7.4 and later.) <!--- MC-41128-->
+
+*  Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
 
 *  The KnockoutJS library has been upgraded to v3.5.1 (the latest version). <!--- MC-40694-->
 
@@ -68,8 +70,6 @@ Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upg
 
 *  Laminas library dependencies have been upgraded to PHP 8.x-compatible versions. Some redundant dependencies have been removed from `composer.json`. **Adobe Commerce 2.4.3 uses Laminas 3.4.0**. <!--- MC-39513-->
 
-*  Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
-
 ### Performance enhancements
 
 This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which decreases the number of records for indexing  and improves indexing times.
@@ -78,9 +78,9 @@ This release includes enhancements that decrease indexation time for Product Pri
 
 This release adds GraphQL support for these features:
 
-*  Shared Catalogs<!--- PWA-1294-->
+*  **Shared catalogs**<!--- PWA-1294-->
 
-*  Gift registries. Tasks covered include: <!--- PWA-1290-->
+*  **Gift registries**. Tasks covered include: <!--- PWA-1290-->
 
    *  Use the [giftRegistry query](https://devdocs.magento.com/guides/v2.4/graphql/queries/gift-registry.html) to return the contents of the customer's gift registries.
 
@@ -112,7 +112,7 @@ This release adds GraphQL support for these features:
 
    *  [`deleteNegotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-negotiable-quotes.html).
 
-*  Shared routes. The [route query](https://devdocs.magento.com/guides/v2.4/graphql/queries/route.html) and [RoutableInterface](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/routable-interface.html) support routing requests on product, category, and CMS pages. The `urlResolver` query has been deprecated, and its functionality has been superseded by the `route` query.
+*  **Shared routes**. The [route query](https://devdocs.magento.com/guides/v2.4/graphql/queries/route.html) and [RoutableInterface](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/routable-interface.html) support routing requests on product, category, and CMS pages. The `urlResolver` query has been deprecated, and its functionality has been superseded by the `route` query.
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -121,8 +121,6 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thes
 Magento 2.4.3 introduces B2B v1.3.2. This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
 ### PWA Studio
-
-This release of PWA Studio includes:
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 
@@ -182,25 +180,25 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-34453-->
 
-*  Previously created cart price rules are now displayed on the Content Staging Dashboard page after a deployment is upgraded from Magento Open Source to Magento Commerce.
+*  Previously created cart price rules are now displayed on the Content Staging dashboard page after a deployment is upgraded from Magento Open Source to Magento Commerce.
 
 ### AdminGWS
 
 <!--- MC-40703-->
 
-*  Admin GWS now uses `int` values for the `website_id` SQL condition in Admin collections for admin users with custom permissions.
+*  Admin GWS now uses `int` values for the `website_id` SQL condition in Admin collections for administrators with custom permissions.
 
 ### Adobe Stock Integration
 
 <!--- MC-39754-->
 
-*  Magento now displays an informative message and a link to Admin **Stores** > **Configuration** > **Advanced** > **System** page on the Search for Adobe Stock page when **API Key (Client ID)** and **Client Secret** are not set. Previously, Magento displayed this error: `We couldn't find any records` and no link.
+*  Magento now displays an informative message and a link to the Admin **Stores** > **Configuration** > **Advanced** > **System** page on the Search for Adobe Stock page when **API Key (Client ID)** and **Client Secret** are not set. Previously, Magento displayed this error: `We couldn't find any records` and no link.
 
 ### Backend
 
 <!--- MC-40389-->
 
-*  Users with restricted access (for example, who are assigned access to one website only) can no longer edit categories on Global scope.
+*  Administrators with restricted access (for example, who are assigned access to one website only) can no longer edit categories set to  Global scope.
 
 <!--- MC-39037-->
 
@@ -234,11 +232,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40035-->
 
-*  Bundle product stock status is now updated based on stock status of its child products. Previously, bundle products were shown as out-of-stock when one option was removed from the product, and the bundle product had two options with the same SKU.
+*  Bundle product stock status is now updated based on the stock status of its child products. Previously, bundle products were shown as out-of-stock when one option was removed from the product, and the bundle product had two options with the same SKU.
 
 <!--- MC-39276-->
 
-*  An administrator can now change the value for a bundle product’s `Shipment Type` attribute after it has been moved to different attribute group. Previously, this attribute was always saved with a ‘Together' value if it was moved to an attributes group other than the default group in the attribute set.
+*  An administrator can now change the value for a bundle product’s `Shipment Type` attribute after it has been moved to a different attribute group. Previously, this attribute was always saved with a `Together` value if it were moved to an attribute group other than the default group in the attribute set.
 
 <!--- MC-38900-->
 
@@ -298,7 +296,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40657-->
 
-*  Magento now displays the Terms and Condition validation message in the relevant block only when a shopper clicks the **Place Order** button. Previously, Magento displayed this message in the "Apply Discount Code" block whenever a shopper changed payment method in the checkout workflow: `The order wasn't placed. First, agree to the terms and conditions, then try placing your order again`.
+*  Magento now displays the Terms and Condition validation message in the relevant block only when a shopper clicks the **Place Order** button. Previously, Magento displayed this message in the Apply Discount Code block whenever a shopper changed payment method in the checkout workflow: `The order wasn't placed. First, agree to the terms and conditions, then try placing your order again`.
 
 <!--- MC-40271-->
 
@@ -306,11 +304,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-32805-->
 
-*  Shoppers are now redirected to the shopping cart page instead of the product page when they try to update the mini cart for an order that contains deleted items. Previously, shoppers were redirected o the product page.
+*  Shoppers are now redirected to the shopping cart page instead of the product page when they try to update the mini cart for an order that contains deleted items. Previously, shoppers were redirected to the product page.
 
 <!--- MC-39581-->
 
-*  Changes to the billing address form on the checkout payment step are discarded if the update button was not pressed and a customer moved back to the shipping step.
+*  Magento now discards changes to the billing address form on the checkout payment step if the shopper fails to click the **Update** button and returned to the shipping step.
 
 <!--- MC-39517-->
 
@@ -322,11 +320,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-37689-->
 
-*  The Admin shopping cart now displays product prices in correct currencies for stores that support multiple currencies. Previously, prices were converted to the specified currency more than once — first when products were added to the cart from the storefront, and then again when the order was subsequently rendered on the Admin.
+*  The Admin shopping cart now displays product prices in correct currencies for stores that support multiple currencies. Previously, prices were converted to the specified currency more than once — first, when products were added to the cart from the storefront, and then again when the order was subsequently rendered on the Admin.
 
 <!--- MC-36703-->
 
-*  Magento now empties the shopping cart as expected after an administrator completes an order from the Admin that was created by a customer on the storefront. Previously, when the customer logged back in after the administrator completed the order, the storefront cart still contained order contents.
+*  Magento now empties the shopping cart as expected after an administrator completes an order from the Admin that was created by a shopper on the storefront. Previously, when the customer logged back in after the administrator completed the order, the storefront cart still contained order contents.
 
 <!--- MC-35640-->
 
@@ -356,7 +354,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41801-->
 
-*  You can now successfully duplicate a shared catalog that contains numeric-only SKUs. Previously, Magento threw an error when you tried to duplicate a shared catalog because the `\Magento\Catalog\Model\ProductIdLocator` class class did not work correctly with numeric-only SKUs.
+*  You can now successfully duplicate a shared catalog that contains numeric-only SKUs. Previously, Magento threw an error when you tried to duplicate a shared catalog because the `\Magento\Catalog\Model\ProductIdLocator` class  did not work correctly with numeric-only SKUs.
 
 <!--- MC-41575-->
 
@@ -372,7 +370,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41422-->
 
-*  Attribute values now remains unchanged when an attribute is not specified in a product update REST API request for a store view. Previously, if an attribute were not specified, Magento reset the attribute value to its default scope value.
+*  Attribute values now remain unchanged when an attribute is not specified in a product update REST API request for a store view. Previously, if an attribute were not specified, Magento reset the attribute value to its default scope value.
 
 <!--- MC-41284-->
 
@@ -380,15 +378,15 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40873-->
 
-*  Magento now displays accurate stock status when a product is added to the CMS page when Category Permissions are enabled and prevent the display of price for the specified customer's group. Previously, all products were shown as out-of-stock regardless of the real stock status.
+*  Magento now displays accurate stock status when a product is added to a CMS page when Category Permissions are enabled and prevents the display of price for the specified customer's group. Previously, all products were shown as out-of-stock regardless of the real stock status.
 
 <!--- MC-40859-->
 
-*  The Advanced Pricing Customer Group Price block price input field now has a minimum width of five symbols. Previously, only two symbols were visible in this field on low resolution displays.
+*  The Advanced Pricing Customer Group Price block price input field now has a minimum width of five digits. Previously, only two symbols were visible in this field on low resolution displays.
 
 <!--- MC-40825-->
 
-*  Magento now successfully deletes the product media image after deleting the product. Previously, the product media image remained in the folder after successful deletion of the product.
+*  Magento now successfully deletes a product media image after deleting a product. Previously, the product media image remained in the folder after successful deletion of the product.
 
 <!--- MC-40811-->
 
@@ -452,7 +450,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-39140-->
 
-*  Magento no longer throws an error when an administrator with restricted permissions adds a Product widget to a CMS page in the Admin. Previously, Magento threw this error when the admin clicked the **Save** button:  `We are sorry, an error has occurred while generating the content`.
+*  Magento no longer throws an error when an administrator with restricted permissions adds a Product widget to a CMS page in the Admin. Previously, Magento threw this error when the administrator clicked the **Save** button:  `We are sorry, an error has occurred while generating the content`.
 
 <!--- MC-39134-->
 
@@ -472,7 +470,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-38483-->
 
-*  Bundle product data that was previously missing is now included in the staging process. This resolves inconsistencies in product behavior when shoppers purchased a bundle product from the product listing page versus added it directly from a product page.
+*  Bundle product data that was previously missing is now included in the staging process. This resolves inconsistencies in product behavior when shoppers purchased a bundle product from the product listing page versus adding it directly from a product page.
 
 <!--- MC-35717-->
 
@@ -514,13 +512,13 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-37418-->
 
-*  The configuration pop-up that Magento displays when you are editing a configurable product from a wish list now closes as expected when you click the **OK** button.
+*  The configuration pop-up that Magento displays when you are editing a configurable product from a wishlist now closes as expected when you click the **OK** button.
 
 ### cron
 
 <!--- MC-30804-->
 
-*  Cron cleanup queries have been refactored to reduce or eliminate the following performance issues: cronjobs remaining stuck in a pending state, increasingly slow MySQL queries, and an increase in CPU usage.
+*  Cron cleanup queries have been refactored to reduce or eliminate the following performance issues: `cron` jobs remaining stuck in a pending state, increasingly slow MySQL queries, and an increase in CPU usage.
 
 ### Custom customer attributes
 
@@ -556,11 +554,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40502-->
 
-*  The customer grid filter now uses a correct website option for a restricted user if this data was previously cached. Previously, the customer grid filter retrieved website parameters from cache and included incorrect data for restricted users.
+*  The customer grid filter now uses a correct website option for a restricted user if the data was previously cached. Previously, the customer grid filter retrieved website parameters from cache and included incorrect data for restricted users.
 
 <!--- MC-39189-->
 
-*  Magento no longer throws an exception on the Admin Customers page when one website is deleted in a multiple website deployment. Previously, when an administrator tried to access the comprehensive customers list, Magento did not display all customers and displayed this error: `The website with id 2 that was requested wasn't found. Verify the website and try again`.
+*  Magento no longer throws an exception on the Admin Customers page when one website is deleted in a multi-website deployment. Previously, when an administrator tried to access the comprehensive customers list, Magento did not display all customers and displayed this error: `The website with id 2 that was requested wasn't found. Verify the website and try again`.
 
 <!--- MC-38913-->
 
@@ -632,7 +630,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-39757-->
 
-*  The password reset link on the Admin reset password page now works as expected. Previously, when a custom template was used for the reset admin password page, Magento displayed this message when an administrator clicked the link inside the email: `Your password reset link has expired`. This occurred because the custom email template contained the wrong variable for user ID.
+*  The password reset link on the Admin reset password page now works as expected. Previously, when a custom template was used for the reset admin password page, Magento displayed this message when an administrator clicked the link inside the email: `Your password reset link has expired`. This occurred because the custom email template contained the wrong variable for the user ID.
 
 <!--- MC-41588-->
 
@@ -644,7 +642,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-34323-->
 
-*  The email message that Magento sends when you share a gift registry from the Admin no contains a valid link to the registry location. Previously, taking this this link resulted in a 404 error. [GitHub-504](https://github.com/magento/partners-magento2ee/issues/504)
+*  The email message that Magento sends when you share a gift registry from the Admin no contains a valid link to the registry location. Previously, taking this link resulted in a 404 error. [GitHub-504](https://github.com/magento/partners-magento2ee/issues/504)
 
 <!--- MC-30127-->
 
@@ -696,7 +694,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41440-->
 
-*  The performance of the  `catalog_product_alert` cron process when running on large tables (several million rows) has been improved. Previously, `catalog_product_alert` loaded all product alerts, which caused an out-of-memory exception.
+*  The performance of the `catalog_product_alert` `cron` process when running on large tables (several million rows) has been improved. Previously, `catalog_product_alert` loaded all product alerts, which caused an out-of-memory exception.
 
 <!--- MC-41194-->
 
@@ -716,7 +714,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-39747-->
 
-*  The image resizing process no longer stops for images in unsupported format. Previously, when `catalog:images:resize` encountered an unsupported image format, the process stopped and Magento displayed this error: `bin/magento catalog:images:resize Unsupported image format`.
+*  The image resizing process no longer halts for images in unsupported format. Previously, when `catalog:images:resize` encountered an unsupported image format, the process stopped and Magento displayed this error: `bin/magento catalog:images:resize Unsupported image format`.
 
 <!--- MC-38156-->
 
@@ -740,7 +738,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-30084-->
 
-*  Category images are now copied as expected from the `catalog/tmp/category` directory to the `catalog/category` directory when saving categories are saved using the database storage method. The image row in the `media_storage_file_storage` table now also has the correct `directory_id`. [GitHub-11995](https://github.com/magento/magento2/issues/11995)
+*  Category images are now copied as expected from the `catalog/tmp/category` directory to the `catalog/category` directory when categories are saved using the database storage method. The image row in the `media_storage_file_storage` table now also has the correct `directory_id`. [GitHub-11995](https://github.com/magento/magento2/issues/11995)
 
 <!--- MC-24768-->
 
@@ -748,7 +746,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-24725-->
 
-*  Redundant Ajax requests to the cart section of the shopping cart have been reduced. Previously, Magento did not properly load the cart subtotal, which triggered cart reload one more time.
+*  Redundant Ajax requests to the cart section of the shopping cart have been reduced. Previously, Magento did not properly load the cart subtotal, which triggered cart reload again.
 
 <!--- MC-23740-->
 
@@ -826,7 +824,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41030-->
 
-*  The **CartItemPrices** object now contains the new GraphQL field **fixed_product_taxes**, which returns an array of the fixed product taxes that are applied to a cart item. Previously, fixed product taxes that were applied to a cart item were not included in cart query.
+*  The **CartItemPrices** object now contains the new GraphQL field **fixed_product_taxes**, which returns an array of the fixed product taxes that are applied to a cart item. Previously, fixed product taxes that were applied to a cart item were not included in the cart query.
 
 <!--- MC-40920-->
 
@@ -966,7 +964,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-41525-->
 
-*  Magento now renders payment blocks on `frontend` regardless of the area from which the email was sent. (The current area is now emulated as `frontend` before the payment block is rendered.) Previously, payment blocks were rendered in the area from which the email was sent. As a result, whether sales email was triggered from the Admin or by REST API, URLs for assets attempted to load them from the wrong area (`webapi_rest` or `adminhtml`).
+*  Magento now renders payment blocks on `frontend` regardless of the area from which the email was sent. (The current area is now emulated as `frontend` before the payment block is rendered.) Previously, payment blocks were rendered in the area from which the email was sent. As a result, whether sales email was triggered from the Admin or by the REST API, URLs for assets attempted to load them from the wrong area (`webapi_rest` or `adminhtml`).
 
 <!--- MC-40810-->
 
@@ -1040,7 +1038,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-33893-->
 
-*  You can now configure whether to send an invoice. Previously, invoice sending was not configurable, and Magento always sent an invoice after it was created. Invoice and order emails were both sent in the scope of one observer. Now separate observers govern the sending of order email and invoice email. [GitHub-27656](https://github.com/magento/magento2/issues/27656)
+*  You can now configure whether to send an invoice. Previously, invoice sending was not configurable, and Magento always sent an invoice after it was created. Invoice and order emails were both sent in the scope of one observer. Separate observers now govern the sending of order email and invoice email. [GitHub-27656](https://github.com/magento/magento2/issues/27656)
 
 ### Reports
 
@@ -1096,7 +1094,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-39890-->
 
-*  Reward points for product reviews are now associated with the relevant website when multiple reviews are approved from Admin **Marketing** > **Pending Reviews** grid. Previously, reward points were not displayed on the storefront and were not not linked to the relevant website in the Admin.
+*  Reward points for product reviews are now associated with the relevant website when multiple reviews are approved from Admin **Marketing** > **Pending Reviews** grid. Previously, reward points were not displayed on the storefront and were not linked to the relevant website in the Admin.
 
 <!--- MC-39820-->
 
@@ -1244,7 +1242,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-40678-->
 
-*  Magento now displays the correct order subtotal when a shopper returns to the cart page during checkout after navigating away from the multi shipping page. [GitHub-31889](https://github.com/magento/magento2/issues/31889)
+*  Magento now displays the correct order subtotal when a shopper returns to the cart page during checkout after navigating away from the multi-shipping page. [GitHub-31889](https://github.com/magento/magento2/issues/31889)
 
 <!--- MC-40541-->
 
@@ -1266,11 +1264,11 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-41142-->
 
-*  Cart price rule staging preview is now loaded in one of assigned website store view. Previously, cart price rule staging preview was loaded in the default store view regardless of the assigned websites.
+*  The cart price rule staging preview is now loaded in one of assigned website store views. Previously, cart price rule staging preview was loaded in the default store view regardless of the assigned websites.
 
 <!--- MC-40916-->
 
-*  Special prices for products in the non-default store view is now set to the default value as expected after a scheduled update has ended.
+*  Special prices for products in the non-default store view are now set to the default value as expected after a scheduled update has ended.
 
 <!--- MC-40850-->
 
@@ -1278,7 +1276,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-40734-->
 
-*  Magento no longer executes large database queries that include all product IDs during preview of a schedule update of a category. Instead, the category filter is applied to the product collection to make temporary table for staging previewing of the category. Previously, Magento inserted all products into a temporary table for the staging preview, which degraded performance.
+*  Magento no longer executes large database queries that include all product IDs during preview of a schedule update of a category. Instead, the category filter is applied to the product collection to make a temporary table for staging previewing of the category. Previously, Magento inserted all products into a temporary table for the staging preview, which degraded performance.
 
 <!--- MC-40714-->
 
@@ -1316,7 +1314,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-40313-->
 
-*  Plugins for `\Magento\Framework\App\ActionInterface` under `lib/internal/Magento/Framework/App/Action/Plugin` have been removed  to keep with the guideline that plugins should be used to customize behavior of one module from another module. [GitHub-28050](https://github.com/magento/magento2/issues/28050)
+*  Plugins for `\Magento\Framework\App\ActionInterface` under `lib/internal/Magento/Framework/App/Action/Plugin` have been removed to keep with the guideline that plugins should be used to customize behavior of one module from another module. [GitHub-28050](https://github.com/magento/magento2/issues/28050)
 
 <!--- MC-24772-->
 
@@ -1326,7 +1324,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-39571-->
 
-*  Magento now takes into account hidden tax during validation of minimum order amount.
+*  Magento now takes into account hidden tax during validation of the minimum order amount.
 
 <!--- MC-38025-->
 
@@ -1378,7 +1376,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-40240-->
 
-*  The product grid filer now works correctly when you use custom date attributes to filter products and the Admin user locale is `en_GB`.
+*  The product grid filter now works correctly when you use custom date attributes to filter products and the Admin user locale is `en_GB`.
 
 <!--- MC-39279-->
 
@@ -1424,7 +1422,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-40371-->
 
-*  Magento now updates the `url_path` of the category that is assigned to all store scope [ 0 ] when you move a category in the category hierarchy. Previously, moving a category in the hierarchy resulted in an incorrect `url_path`.
+*  Magento now updates the `url_path` of the category that is assigned to all store scope when you move a category in the category hierarchy. Previously, moving a category in the hierarchy resulted in an incorrect `url_path`.
 
 <!--- MC-39463-->
 
@@ -1498,23 +1496,23 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-40651-->
 
-*  Magento no longer resets a configurable product’s configuration settings when you click the **Edit item** button for the product from a wish list. [GitHub-32119](https://github.com/magento/magento2/issues/32119)
+*  Magento no longer resets a configurable product’s configuration settings when you click the **Edit item** button for the product from a wishlist. [GitHub-32119](https://github.com/magento/magento2/issues/32119)
 
 <!--- MC-40417-->
 
-*  Magento now displays the correct product price when you update  a product with a customizable file option in the wish list. Previously, Magento displayed the wrong product price and did not display a link to the uploaded file.
+*  Magento now displays the correct product price when you update a product with a customizable file option in the wish list. Previously, Magento displayed the wrong product price and did not display a link to the uploaded file.
 
 <!--- MC-39060-->
 
-*  The total product count in a wishlist for a customer with multiple wishlists now match the number of items in the wish list. Previously, out-of-stock products were included in the total product count.
+*  The total product count in a wishlist for a customer with multiple wishlists now match the number of items in the wishlist. Previously, out-of-stock products were included in the total product count.
 
 <!--- MC-36779-->
 
-*  Magento now removes a product from a wish list after adding it to an order. [GitHub-30260](https://github.com/magento/magento2/issues/30260)
+*  Magento now removes a product from a wishlist after adding it to an order. [GitHub-30260](https://github.com/magento/magento2/issues/30260)
 
 <!--- MC-34456-->
 
-*  Shoppers can now add related products to their shopping cart from a wish list. Previously, Magento added only the configurable product, not the configurable product and its related products when a shopper clicked the **Select all** link of the Related Products section. [GitHub-32274](https://github.com/magento/magento2/issues/32274)
+*  Shoppers can now add related products to their shopping cart from a wishlist. Previously, Magento added only the configurable product, not the configurable product and its related products when a shopper clicked the **Select all** link of the Related Products section. [GitHub-32274](https://github.com/magento/magento2/issues/32274)
 
 ## Community contributions
 
