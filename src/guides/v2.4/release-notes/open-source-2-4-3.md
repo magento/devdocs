@@ -28,7 +28,7 @@ Look for the following highlights in this release.
 
 ### Substantial security enhancements
 
-This release includes 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.2-p1 and Magento 2.3.7-p1.
+This release includes 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.2-p2 and Magento 2.3.7-p1.
 
 #### Thirty-three security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
@@ -91,11 +91,13 @@ Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upg
 
 ### Performance enhancements
 
-This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which decreases the number of records for indexing and improves indexing times.
+This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which reduces the number of records for indexing and improves indexing times.
 
 ### Page Builder
 
-Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for Adobe Commerce and Magento Open Source. Page Builder replaces the TinyMCE editor in the following Admin areas:
+Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for Adobe Commerce and Magento Open Source. It can replace the WYSIWG editor with any third-party module.
+
+Page Builder replaces the TinyMCE editor in the following Admin areas:
 
 *  CMS Page
 *  CMS Block

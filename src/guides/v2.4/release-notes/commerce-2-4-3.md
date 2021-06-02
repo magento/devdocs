@@ -26,7 +26,7 @@ Look for the following highlights in this release.
 
 ### Substantial security enhancements
 
-This release includes 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.2-p1 and Magento 2.3.7-p1.
+This release includes 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.2-p2 and Magento 2.3.7-p1.
 
 #### Thirty-three security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
@@ -89,7 +89,7 @@ Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upg
 
 ### Performance enhancements
 
-This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which decreases the number of records for indexing and improves indexing times.
+This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which reduces the number of records for indexing and improves indexing times.
 
 ### GraphQL
 
@@ -143,7 +143,9 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 ### Page Builder
 
-Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for Adobe Commerce and Magento Open Source. Page Builder replaces the TinyMCE editor in the following Admin areas:
+Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for Adobe Commerce and Magento Open Source. It can replace the WYSIWG editor with any third-party module.
+
+Page Builder replaces the TinyMCE editor in the following Admin areas:
 
 *  CMS Page
 *  CMS Block
@@ -154,10 +156,6 @@ All the content created in TinyMCE has been migrated into Page Builder as HTM
 
 ### Cloud managed services updates
 
-### Interactive In-Product Guidance
-
-Interactive In-Product Guidance provides merchants with usage tips and information from within the Admin on new feature announcements, walk-through guides, on-boarding information, and tool tips.  **Administrators must opt-in from the Admin to receive in-product guidance if this feature is not enabled**. See [Usage Data Collection](https://docs.magento.com/user-guide/stores/admin.html) and [Admin Usage](https://docs.magento.com/user-guide/configuration/advanced/admin.html#admin-usage).
-
 ### Adobe Stock Integration
 
 This release includes Adobe Stock Integration v2.1.1.
@@ -166,7 +164,7 @@ This release includes Adobe Stock Integration v2.1.1.
 
 See the following topics for updates on features and changes for this release:
 
-*  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html). Amazon Pay has been deprecated and will be removed in Magento 2.5.0. Magento 2.4.3 and higher will contain only updates for compatibility and fixes for major bugs.
+*  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html). Amazon Pay has been deprecated and will be removed in a later Magento 2.4.x release. Magento 2.4.3 and higher will contain only updates for compatibility and fixes for major bugs.
 
 *  [Braintree](https://docs.magento.com/user-guide/payment/braintree.html)
 
