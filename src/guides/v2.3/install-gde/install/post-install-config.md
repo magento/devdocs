@@ -1,5 +1,5 @@
 ---
-title: Configure the Magento application
+title: Configure the application
 functional_areas:
   - Install
   - System

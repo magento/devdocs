@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce 2.3.2 Release Notes
+title: Adobe Commerce 2.3.2 Release Notes
 ---
 
 *Release notes published on June 25, 2019 and last updated on June 3, 2020.*
@@ -818,7 +818,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4695-->
 
-*  The Reporting Security Issues section of the [Magento 2 README](https://github.com/magento/magento2/blob/2.3/README.md) file has been updated to reflect use of HackerOne for the Magento 2 Bug Bounty program. *Fix submitted by Andreas Mautz in pull request [22195](https://github.com/magento/magento2/pull/22195)*. [GitHub-22166](https://github.com/magento/magento2/issues/22166)
+*  The Reporting Security Issues section of the [Magento 2 README]({{ site.mage2bloburl }}/{{ page.guide_version }}/README.md) file has been updated to reflect use of HackerOne for the Magento 2 Bug Bounty program. *Fix submitted by Andreas Mautz in pull request [22195](https://github.com/magento/magento2/pull/22195)*. [GitHub-22166](https://github.com/magento/magento2/issues/22166)
 
 <!--- ENGCOM-4654-->
 

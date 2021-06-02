@@ -3,9 +3,8 @@ layout: full-width
 group: community
 subgroup: resources
 title: Magento Support
-menu_title: Magento Support
-menu_order: 100
-menu_node: parent
+redirect_from:
+  - /community/resources/support.html
 ---
 
 If you have issues, receive error messages, or need additional How To's, see our [Magento Support Knowledge Base](https://support.magento.com). The knowledge base includes a growing amount of troubleshooting, how to, and FAQ articles for Magento 2 Commerce, Commerce (Cloud), and Open Source. We are constantly adding new content for Magento platform, services, modules, and much more.

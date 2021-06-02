@@ -1,6 +1,6 @@
 ---
 group: contributor-guide
-title: Magento Definition of Done
+title: Commerce Definition of Done
 redirect_from:
 - guides/v2.3/contributor-guide/contributing_dod.html
 - guides/v2.4/contributor-guide/contributing_dod.html

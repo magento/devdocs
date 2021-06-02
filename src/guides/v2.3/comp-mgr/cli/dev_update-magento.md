@@ -1,13 +1,13 @@
 ---
 group: software-update-guide
-title: Update the Magento application
+title: Update the Commerce application
 functional_areas:
   - Upgrade
 redirect_from:
   - guides/v2.3/install-gde/install/cli/dev_update-magento.html
 ---
 
-This topic discusses how a contributing developer can update the Magento application without reinstalling it. To perform an upgrade if you are *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
+This topic discusses how a contributing developer can update Magento without reinstalling it. To perform an upgrade if you're *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
 
 To update the Magento software if you are a contributing developer:
 

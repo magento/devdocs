@@ -1,6 +1,6 @@
 ---
 group: php-developer-guide
-title: Check the Magento version
+title: Check the Commerce version
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
