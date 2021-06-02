@@ -73,6 +73,7 @@ Magento and Community Maintainers process contributions based on the issue/pull 
 ### Who and how can define severity and priority?
 
 #### Priority
+
 The Magento team defines priorities during regular triage review meetings, based on the community assessment for severity.
 
 #### Severity
@@ -369,27 +370,89 @@ The import command provides the ability to copy a contributor's code or pull req
 
 ## Report an issue {#report}
 
-If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.
+To maintain an effective bug fix workflow, we ask reporters to follow some simple guidelines.
 
-Before creating an issue:
+Before creating an issue, do the following:
 
-1. Read the [Issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines) to learn how to create an issue that can be processed in a timely manner.
-1. Check the [documentation]({{site.baseurl}}/) to make sure the behavior you are reporting is really a bug, not a feature.
-1. Review the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating another contributor's work.
+-  Check the [Developer Documentation](http://devdocs.magento.com/) and [User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html) to make sure the behavior you are reporting is really a bug, not a feature.
+-  Check the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating somebody’s work.
+-  Ensure that information you are reporting is a technical issue. Refer to the [Community Forums](https://community.magento.com/) or [Magento Stack Exchange](http://magento.stackexchange.com/) for technical questions, feature requests, etc.
+-  Verify that the issue you are reporting does not relate to Magento Commerce. GitHub is intended for Magento Open Source users to report on issues related to Open Source only. You can report Commerce-related issues one of two ways:
 
-To add an issue:
+   -  Use the Support portal associated with your account
+   -  If you are a Partner reporting on behalf of a merchant, use the Partner portal
 
-1. In the Magento 2 public repository, click the **Issues** tab.
+-  Check if the issue exists on the `2.4-develop` branch with a clean Magento installation. We only accept pull requests for the `2.4-develop` branch. If the issue is not reproducible on the `2.4-develop` branch, it will be closed.
 
-    ![Issues tab]({{site.baseurl}}/common/images/issues.png)
-1. Click **New issue**.
+If you are sure that the problem you are experiencing is a bug, file a new issue in GitHub following the recommendations below.
 
-    ![Create new issue]({{site.baseurl}}/common/images/new_issue.png)
-1. Select a type of issue: Bug report, Developer experience issue, or Feature request.
-1. Fill in the Title, description, and additional information for the template.
-1. Click **Submit new issue**.
+### Issue template
 
-When you submit the issue, a validation process begins. If the issue doesn't have enough information, you as the Reporter may need to add more information. See [GitHub Issues Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow) for complete details on issue verification.
+The [Issue Reporting Template](https://github.com/magento/magento2/blob/2.3-develop/.github/ISSUE_TEMPLATE.md) is a default placeholder for every new issue. Follow the sections carefully, as it ensures it will pass `Gate 1` quickly. More information on gates is available in [Magento Issue Gates](https://github.com/magento/magento2/wiki/Magento-Issue-Gates).
+
+{.bs-callout-tip}
+Note that a higher level of detail in the report increases the chance that someone will be able to reproduce the issue.
+
+### Title
+
+The title is a vital part of the bug report. A well written title should contain a clear, brief explanation of the issue, emphasizing the most important points.
+
+A good example:
+
+"Unable to place order with Virtual product and PayPal."
+
+An unclear example:
+
+"Can't checkout."
+
+### Issue description
+
+#### Preconditions
+
+Stating preconditions is very important. Provide information on:
+
+-  System configuration settings you have changed
+-  Detailed information on entities created (Products, Customers, etc)
+-  Magento version
+-  Anything else that would help a developer reproduce the bug
+
+Example:
+
+1. Magento CE 2.0.0 without sample data is installed.
+1. PayPal payment method is set up.
+1. Test category is set up.
+1. Virtual Product is created and assigned to the Test Category.
+
+#### Steps to reproduce
+
+Good steps to reproduce are vital to a good bug report. The issue is more likely to be fixed if it can be reproduced.
+
+Precisely describe each step required to reproduce the issue. Try to include as much information as possible; even minor details could be crucial.
+
+Example:
+
+1. Navigate to storefront as a guest.
+1. Open Test Category.
+1. Click "Add to Cart" on the Virtual Product.
+1. Open mini shopping cart and click "Proceed to Checkout".
+
+#### Actual and expected result
+
+To ensure that everybody involved in the fix understands the issue, precisely describe the result you expected to get and the result you actually observed after performing the steps.
+
+Expected result:
+
+Order is placed successfully, customer is redirected to the success page.
+
+Actual result:
+
+"Place order" button is not visible, order cannot be placed.
+
+#### Additional information
+
+Additional information is often requested when the bug report is processed. You can save time by providing both Magento and browser logs, screenshots, repository branch and HEAD commit you checked out to install Magento and any other artifacts related to the issue.
+
+Once the issue is created, it must pass through a series of [Magento Issue Gates](https://github.com/magento/magento2/wiki/Magento-Issue-Gates).
 
 ## Help triage issues  [![](https://www.codetriage.com/magento/magento2/badges/users.svg)](https://www.codetriage.com/magento/magento2) {#triage}
 

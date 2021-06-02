@@ -1,6 +1,8 @@
 ---
 group: community
 title: Multi-Repo Docs
+redirect_from:
+  - /community/resources/multi-repo-docs.html
 ---
 
 To further expand documentation options for DevDocs, we offer a new opportunity for developers to contribute content through Community Engineering project repositories!
