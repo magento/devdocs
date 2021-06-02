@@ -154,7 +154,7 @@ bin/magento setup:config:set --session-save=redis --session-save-redis-host=<Ela
 
 To verify that Magento is talking to ElasiCache:
 
-1. SSH into the Magento EC2 instance.
+1. Open an SSH connection to the Magento EC2 instance.
 1. Start the Redis monitor.
 
    ```bash

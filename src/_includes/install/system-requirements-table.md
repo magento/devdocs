@@ -15,7 +15,7 @@
 | AWS Aurora (MySQL)|        |            |            |               |               |            |       |         |                  |        |         | 5.7     |         |         |
 | AWS S3        |            |            |            |               |               |            |       |         |                  |        | ✔️       | ✔️       |         |         |
 | AWS MQ        |            |            |            |               |               |            |       |         |                  |        |         | 3.8.11  |         |         |
-| AWS ElasticCache|          |            |            |               |               |            |       |         |                  |        |         | Redis 6.x|        |         |
+| AWS ElastiCache|          |            |            |               |               |            |       |         |                  |        |         | Redis 6.x|        |         |
 | AWS ElasticSearch|         |            |            |               |               |            |       |         |                  |        |         | 7.10    |         |         |
 
 <style>
