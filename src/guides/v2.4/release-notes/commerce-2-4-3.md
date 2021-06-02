@@ -141,20 +141,9 @@ Magento 2.4.3 introduces B2B v1.3.2. This release includes multiple bug fixes. S
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 
-### Page Builder
-
-Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for Adobe Commerce and Magento Open Source. It can replace the WYSIWG editor with any third-party module.
-
-Page Builder replaces the TinyMCE editor in the following Admin areas:
-
-*  CMS Page
-*  CMS Block
-*  Category Description
-*  Product Description
-
-All the content created in TinyMCE has been migrated into Page Builder as HTML.
-
 ### Cloud managed services updates
+
+This release includes enhancements to our support for Amazon Simple Storage Service (AWS S3)  and Amazon Aurora cloud managed services.  It provides certified support for AWS ElastiCache, AWS ElasticSearch, and AWS Managed Queues (Rabbit MQ).  (We have tested the functionality, performance, and integration of these services with Adobe Commerce.)
 
 ### Adobe Stock Integration
 

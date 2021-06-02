@@ -93,19 +93,6 @@ Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upg
 
 This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which reduces the number of records for indexing and improves indexing times.
 
-### Page Builder
-
-Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for Adobe Commerce and Magento Open Source. It can replace the WYSIWG editor with any third-party module.
-
-Page Builder replaces the TinyMCE editor in the following Admin areas:
-
-*  CMS Page
-*  CMS Block
-*  Category Description
-*  Product Description
-
-All the content created in TinyMCE has been migrated into Page Builder as HTML.
-
 ### Adobe Stock Integration
 
 This release includes Adobe Stock Integration v2.1.1.
@@ -115,6 +102,7 @@ This release includes Adobe Stock Integration v2.1.1.
 This release adds GraphQL coverage for shared routes. The [route query](https://devdocs.magento.com/guides/v2.4/graphql/queries/route.html) and [RoutableInterface](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/routable-interface.html) support routing requests on product, category, and CMS pages. The `urlResolver` query has been deprecated, and its functionality has been superseded by the `route` query.
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
+
 ### PWA Studio
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
