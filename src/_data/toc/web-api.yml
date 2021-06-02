@@ -7,8 +7,8 @@ pages:
       url: /get-started/rest_front.html
       children:
 
-        - label: Configure rate limiting
-          url: /get-started/rate-limiting.html
+        - label: API security
+          url: /get-started/api-security.html
           exclude_versions: ["2.3"]
 
         - label: Construct a request
