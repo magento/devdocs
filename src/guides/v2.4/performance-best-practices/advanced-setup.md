@@ -43,6 +43,9 @@ You could also use a Redis cluster that performs parallel read/write operations 
 
 ## Split the database
 
+{:.bs-callout-warning}
+The split database feature was [deprecated](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Split-Database-in-Magento-Commerce/ba-p/465187?_ga=2.40324000.360221148.1622634510-787203218.1621261705) in version 2.4.2 of Adobe Commerce. See [Revert from a split database to a single database](https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html).
+
 {{site.data.var.ee}} allows you to configure scalable database storage to meet the needs of a growing business. You can set up three separate master databases that serve specific domains:
 
 *  Main (Catalog) Database
