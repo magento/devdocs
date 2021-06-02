@@ -95,7 +95,7 @@ To change the default settings:
 
 If you exceed the maximum session size, an error displays and Magento logs the session size constraint to the `var/log` directory.
 
-![Admin session size error]({{ site.baseurl }}/common/images/admin-session-size-error.png)
+![Admin session size error]({{ site.baseurl }}/common/images/admin-session-error.png)
 
 If you lose access to the Admin after setting the session size too low, use the CLI to reset the configuration:
 
