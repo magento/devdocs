@@ -133,6 +133,6 @@ Node.js is only a requirement to check GraphQL compatibility.
 
 ## Third-party extensions
 
-Magento recommends that you contact your search engine vendor to determine whether your extension is fully compatible with Magento 2.4.
+Magento recommends that you contact your extension vendor to determine whether your extension is fully compatible with Magento 2.4.
 
 See [Run the tool]({{site.baseurl}}/upgrade-compatibility-tool/run.html) for information about executing the Upgrade Compatibility Tool.
