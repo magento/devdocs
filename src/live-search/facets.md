@@ -46,7 +46,7 @@ Facet aggregation is performed as follows if the storefront has three facets (ca
 
 ## Default attribute values
 
-The following product attributes have some [storefront properties](https://docs-beta.magento.com/user-guide/stores/attributes-product.html) that are enabled by default.
+Product attributes have some [storefront properties](https://docs-beta.magento.com/user-guide/stores/attributes-product.html) that are enabled by default.
 
 |**Property**|**Storefront Property**|**Attribute**
 |---|---|---|
