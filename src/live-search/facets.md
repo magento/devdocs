@@ -23,7 +23,7 @@ Merchants can pin commonly-used facets to the top of the list.
 
 Dynamic facets appear only when relevant, and the selection changes according to the products returned. In the storefront Filters list, dynamic facets appear in alphabetic order after any pinned facets. To streamline search results, facets are set to `dynamic` by default.
 
-Intelligent facets are product attributes that [Live Search powered by Adobe Sensei](https://www.adobe.com/sensei.html) finds extremely relevant to the given product set and query. This calculation takes into account the attribute meta data of the entire catalog and determines relevance at query time to deliver the most relevant facets for any query.
+Intelligent facets are product attributes that Live Search powered by [Adobe Sensei](https://www.adobe.com/sensei.html) finds extremely relevant to the given product set and query. This calculation takes into account the attribute meta data of the entire catalog and determines relevance at query time to deliver the most relevant facets for any query.
 
 Popular facets are product attributes that are most often present in the result set.
 
@@ -46,7 +46,7 @@ Facet aggregation is performed as follows if the storefront has three facets (ca
 
 ## Default attribute values
 
-The following product attributes have hardcoded properties that correspond to their default [Storefront Property](https://docs-beta.magento.com/user-guide/stores/attributes-product.html) settings in the Admin.
+Product attributes have some [storefront properties](https://docs-beta.magento.com/user-guide/stores/attributes-product.html) that are enabled by default.
 
 |**Property**|**Storefront Property**|**Attribute**
 |---|---|---|
