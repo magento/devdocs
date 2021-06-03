@@ -18,7 +18,6 @@ Two-Factor Authentication gives you the ability to:
 Magento has new workflows for _Admin_ users, including:
 
 -  The ability to configure the 2FA provider globally or individually.
--  _Admin_ users set their own personal 2FA at first login, and receive a confirmation email to verify their identity.
 -  The "Trust this device" option has been removed.
 
 For more information, see [Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication.html) in the _Magento User Guide_.
