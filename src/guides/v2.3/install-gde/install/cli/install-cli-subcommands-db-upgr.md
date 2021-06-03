@@ -1,5 +1,5 @@
 ---
-title: Update the Magento database schema and data
+title: Update the database schema and data
 functional_areas:
   - Install
   - System

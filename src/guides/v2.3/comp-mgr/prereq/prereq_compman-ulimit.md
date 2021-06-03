@@ -1,6 +1,10 @@
 ---
 group: software-update-guide
-title: Set ulimit for the web server user
+subgroup: 02_prereq
+title: Set the open files limit
+menu_title: Set the open files limit
+menu_order: 2
+menu_node:
 functional_areas:
   - Upgrade
 ---

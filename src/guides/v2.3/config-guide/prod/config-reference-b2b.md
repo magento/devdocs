@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Magento Enterprise B2B Extension configuration paths reference
+title: B2B Extension configuration paths reference (Adobe Commerce only)
 functional_areas:
   - Configuration
   - System

@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce 2.3.5 Release Notes
+title: Adobe Commerce 2.3.5 Release Notes
 ---
 
 Magento Commerce 2.3.5 offers significant platform upgrades, substantial security changes, and performance improvements.
