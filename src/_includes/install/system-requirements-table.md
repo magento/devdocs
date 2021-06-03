@@ -12,6 +12,11 @@
 | Varnish       | 4.x, 5.x   | 4.x, 5.x   | 4.x, 5.x   | 6.x           | 4.x, 5.x, 6.x | 6.x        | 6.x   | 6.x     | 6.x              | 6.x    | 6.x     | 6.x     | 6.x     | 6.x.    |
 | Apache        | 2.4        | 2.4        | 2.4        | 2.4           | 2.4           | 2.4        | 2.4   | 2.4     | 2.4              | 2.4    | 2.4     | 2.4     | 2.4     | 2.4     |
 | nginx         | 1.x        | 1.x        | 1.x        | 1.x           | 1.x           | 1.x        | 1.x   | 1.x     | 1.x              | 1.x    | 1.x     | 1.x     | 1.x     | 1.x     |
+| AWS Aurora (MySQL)|        |            |            |               |               |            |       |         |                  |        |         | 5.7     |         |         |
+| AWS S3        |            |            |            |               |               |            |       |         |                  |        | ✔️       | ✔️       |         |         |
+| AWS MQ        |            |            |            |               |               |            |       |         |                  |        |         | 3.8.11  |         |         |
+| AWS ElastiCache|          |            |            |               |               |            |       |         |                  |        |         | Redis 6.x|        |         |
+| AWS ElasticSearch|         |            |            |               |               |            |       |         |                  |        |         | 7.10    |         |         |
 
 <style>
 .comparison-table {

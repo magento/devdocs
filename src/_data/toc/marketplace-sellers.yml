@@ -131,6 +131,10 @@ pages:
       url: /marketplace/sellers/semantic-version-check.html
       versionless: true
 
+    - label: Extension Footprint Analysis
+      url: /marketplace/sellers/extension-footprint.html
+      versionless: true
+
 - label: Submit for Marketing Review
   url: /marketplace/sellers/submit-for-marketing-review.html
   versionless: true
