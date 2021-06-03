@@ -12,10 +12,10 @@ This topic describes best practices for [API security](https://owasp.org/www-pro
 Imposing restrictions on the size and number of resources that a user can request through an API can help mitigate denial-of-service (DoS) vulnerabilities. Magento 2.4.3 provides the following built-in API rate limiting:
 
 -  REST requests containing inputs representing a list of entities are limited to a default maximum of 20 entities
--  REST and GraphQL queries that allow paginated results are not limited to a default maximum of 300 items per page
+-  REST and GraphQL queries that allow paginated results are limited to a default maximum of 300 items per page
 
 {:.bs-callout-info}
-In addition, the Admin provides a configuration setting for limiting session sizes for Admin users and storefront visitors to restrict large session sizes.
+In addition, the Admin provides a configuration setting for limiting session sizes for Admin users and storefront visitors.
 
 You can customize the default limits programmatically using [class constructor arguments]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html).
 
