@@ -29,7 +29,7 @@ Element | Description
 `autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see [Autoloading](https://getcomposer.org/doc/01-basic-usage.md#autoloading) from Composer.
 
 {:.bs-callout-info}
-Note that Commerce Marketplace does not support `source` and `dist`properties. All extensions distributed via Marketplace are installed from the Commerce package repository. If your `composer.json` contains `source` or `dist` properties, it will cause failures in the EQP automation.
+The Commerce Marketplace does not support the Composer `source` and `dist` properties. All extensions distributed via the Marketplace are installed from the Commerce package repository. If your `composer.json` contains `source` or `dist` properties, it will cause failures in the EQP automation.
 
 {% include php-dev/composer-types.md %}
 
