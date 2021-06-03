@@ -12,7 +12,7 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.
 
 ## Security-only patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release provides (for example, Magento 2.4.1-p1). Patch 2.4.0.12 (Composer package 2.4.3) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.4.1. All hot fixes that were applied to the 2.4.1 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release provides (for example, Magento 2.4.1-p1). Patch 2.4.2-p2 is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.4.2. All hot fixes that were applied to the 2.4.2 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
 
 For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.4.1-p1), see [Install Magento using Composer]({{ page.baseurl }}/install-gde/composer.html). Security-only patches include security bug fixes only, not the additional security enhancements that are included in the full patch.
 
@@ -83,7 +83,7 @@ Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upg
 
 *  The deprecated TinyMCE v3 library has been removed. The `Magento_Tinymce3Banner` module and MFTF tests related to TinyMCE v3.x have been removed from Adobe Commerce. <!--- MC-42199 42170 -->
 
-*  Magento 2.4.3 has been tested and confirmed to be compatible with Redis 6.0.12. (Magento 2.4.x remains compatible with Redis 5.x).
+*  Magento 2.4.3 has been tested and confirmed to be compatible with Redis 6.0.12. (Magento 2.4.x remains compatible with Redis 5.x.)
 
 *  Laminas library dependencies have been upgraded to PHP 8.x-compatible versions. Some redundant dependencies have been removed from the `composer.json` file. **Adobe Commerce 2.4.3 uses Laminas 3.4.0**. <!--- MC-39513-->
 
@@ -143,7 +143,7 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 ### Cloud managed services updates
 
-This release includes enhancements to our support for Amazon Simple Storage Service (AWS S3)  and Amazon Aurora cloud managed services.  It provides certified support for AWS ElastiCache, AWS ElasticSearch, and AWS Managed Queues (Rabbit MQ).  (We have tested the functionality, performance, and integration of these services with Adobe Commerce.)
+This release includes enhancements to our support for Amazon Simple Storage Service (AWS S3)  and Amazon Aurora cloud managed services. It provides certified support for AWS ElastiCache, AWS ElasticSearch, and AWS Managed Queues (Rabbit MQ). (We have tested the functionality, performance, and integration of these services with Adobe Commerce.)
 
 ### Adobe Stock Integration
 
@@ -467,7 +467,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-38951-->
 
-*  Image positions are now correct when images are imported into a multi-storeview deployment. Previously, images uploaded in a store view level had undefined (NULL) positions in default scope and other store views. As a result, images were inconsistent both across store views and between storefront and Admin.
+*  Image positions are now correct when images are imported into a multi-store view deployment. Previously, images uploaded at a store-view level had undefined (NULL) positions in default scope and other store views. As a result, images were inconsistent both across store views and between storefront and Admin.
 
 <!--- MC-38575-->
 
@@ -696,10 +696,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 *  Merchants can now assign or delete an image to and from a catalog event by store view. Previously, when you changed store view while editing a catalog event, the **Delete Image** checkbox was not active, and Magento displayed this error: `Uncaught ReferenceError: toggleValueElements is not defined at HTMLInputElement.onclick`. [GitHub-364](https://github.com/magento/partners-magento2ee/issues/364)
 
 ### General fixes
-
-<!--- MC-41440-->
-
-*  The performance of the `catalog_product_alert` `cron` process when running on large tables (several million rows) has been improved. Previously, `catalog_product_alert` loaded all product alerts, which caused an out-of-memory exception.
 
 <!--- MC-41194-->
 
@@ -931,7 +927,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41445-->
 
-*  The Magento dependency `pelago/emogrifier` has been updated from version 3.1.0 to 5.0.0. This update resulted in the introduction of backwards-incompatible changes to the `Magento\Email\Model\Template\Filter` class. The changed code is executed during Magento email templates rendering. See Backward-incompatible Reference.
+*  The Magento dependency `pelago/emogrifier` has been updated from version 3.1.0 to 5.0.0. This update resulted in the introduction of backwards-incompatible changes to the `Magento\Email\Model\Template\Filter` class. The changed code is executed during Magento email templates rendering. See [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html).
 
 <!--- MC-42212-->
 
@@ -998,6 +994,10 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 <!--- MC-41647-->
 
 *  The performance of Admin SKU search on large catalogs has improved. Query optimizer hints now force index usage during query execution.
+
+<!--- MC-41440-->
+
+*  The performance of the `catalog_product_alert` `cron` process when running on large tables (several million rows) has been improved. Previously, `catalog_product_alert` loaded all product alerts, which caused an out-of-memory exception.
 
 ### Pricing
 
@@ -1165,7 +1165,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-23915-->
 
-*  Magento now displays the correct currency symbols for subtotal and shipping & handling values on Order page and Credit Memo page grids. [GitHub-22662](https://github.com/magento/magento2/issues/22662)
+*  Magento now displays the correct currency symbols for subtotal and shipping and handling values on Order page and Credit Memo page grids. [GitHub-22662](https://github.com/magento/magento2/issues/22662)
 
 ### Sales Rule
 
@@ -1367,7 +1367,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-23553-->
 
-*  Brackets that are added to the strings are no longer escaped when Inline translation is configured. Previously, the `escapeHtmlAttr` method converted the brackets into HTML entity codes.
+*  Brackets that are added to the strings are no longer escaped when inline translation is configured. Previously, the `escapeHtmlAttr` method converted the brackets into HTML entity codes.
 
 ### UI
 
@@ -1423,7 +1423,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- MC-40780-->
 
-*  Magento now correctly generates the URL path for child categories when the **Use Default Value** checkbox for the URL key is enabled for the parent category. Previously, moving a category in the hierarchy resulted in an incorrect `url_path` value when using different URL keys in a multi-storeview deployment. [GitHub-16202](https://github.com/magento/magento2/issues/16202)
+*  Magento now correctly generates the URL path for child categories when the **Use Default Value** checkbox for the URL key is enabled for the parent category. Previously, moving a category in the hierarchy resulted in an incorrect `url_path` value when using different URL keys in a multi-store view deployment. [GitHub-16202](https://github.com/magento/magento2/issues/16202)
 
 <!--- MC-40371-->
 
