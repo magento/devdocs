@@ -228,6 +228,10 @@ pages:
         class: tutorial
         url: /rest/tutorials/grouped-product/create-and-manage-grouped-products.html
 
+      - label: Create bundle products
+        class: tutorial
+        url: /rest/tutorials/bundle-product/create-bundle-products.html
+
     - label: Modules
       children:
 
