@@ -12,8 +12,17 @@ A bundle is a build your own, customizable product. Each bundle product can be e
 
 This tutorial describes how you can use the Magento REST API to create bundle products.
 
-{:.bs-callout-info}
-Install a Magento 2.3 (or later) instance with sample data defines a functional store, called Luma. Use REST client to send calls to Magento , see [Postman](https://www.getpostman.com/). Obtain an admin authorization token. See [How to generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information. [REST Tutorials]({{ page.baseurl }}/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
+### Before you begin
+
+*  Install a Magento 2.2 (or later) instance with sample data which creates a functional store using the Luma theme.
+
+*  Use REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
+
+*  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
+
+### Other resources
+
+*  [REST Tutorials]({{ page.baseurl }}/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
 
 ## 1. Create an bundle product
 
@@ -281,7 +290,7 @@ Now that we have created a bundle product, we need to upload product image to it
 
 1. Update the product image by `SKU`.
 1. The product image should be `base64encode`.
-1. Image supported `type` must be `image/png`.
+1. Image supported `type` must be `image/png` or `image/jpg`.
 
 ### Endpoint
 
