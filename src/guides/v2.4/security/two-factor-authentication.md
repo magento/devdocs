@@ -9,19 +9,18 @@ Magento Two-Factor Authentication (2FA) improves security by requiring two-step 
 
 Two-Factor Authentication gives you the ability to:
 
--  Specify which authentication providers are supported from the _Admin_.
--  Manage and configure authenticator settings globally or per user account.
+-  Choose which authentication providers are supported.
+-  Manage and configure authenticator settings globally.
 -  Reset authenticators for users.
 
 ## Magento Admin Workflows
 
-Magento has new workflows for _Admin_ users, including:
+A Magento _Admin_ user can perform the following 2FA workflows:
 
--  The ability to configure the 2FA provider globally or individually.
--  _Admin_ users set their own personal 2FA at first login, and receive a confirmation email to verify their identity.
--  The "Trust this device" option has been removed.
+-  Initially configure the global 2FA providers.
+-  Reset an authenticator associated with a user account.
 
-For more information, see [Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication.html) in the _Magento User Guide_.
+See [Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication.html) in the _Magento User Guide_.
 
 ## Install 2FA
 
