@@ -1,6 +1,8 @@
 ---
 group: rest-api
 title: Create bundle products tutorial
+contributor_name: Ziffity
+contributor_link: https://ziffity.com/
 functional_areas:
   - Integration
 ---
