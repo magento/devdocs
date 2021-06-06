@@ -72,8 +72,6 @@ Each service runs in a separate, secure container. Containers are managed togeth
 -  Git
 -  Secure Shell (SSH)
 
-You can have multiple applications running in the same project. Building a microservice-oriented architecture with {{site.data.var.ee}} is as easy as managing a monolithic application.
-
 ### Software versions {#cloud-arch-software}
 
 {{site.data.var.ece}} uses the Debian GNU/Linux operating system and the [NGINX](https://glossary.magento.com/nginx) web server. You cannot upgrade this software, but you can configure versions for the following:
