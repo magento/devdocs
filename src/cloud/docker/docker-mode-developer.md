@@ -127,6 +127,8 @@ To launch the Docker environment in developer mode:
 
 1. Access the default email service: `http://magento2.docker:8025`
 
+{%include cloud/note-docker-ssl-not-private-connection.md%}
+
 <!--Link definitions-->
 
 [{{site.data.var.mcd-prod}} Docker image]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
