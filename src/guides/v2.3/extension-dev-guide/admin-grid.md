@@ -25,7 +25,7 @@ Here are the required files to get started:
 ```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
- <module name="Dev_Grid" setup_version="1.0.0">
+ <module name="Dev_Grid">
   <sequence>
    <module name="Magento_Backend"/>
    <module name="Magento_Ui"/>
