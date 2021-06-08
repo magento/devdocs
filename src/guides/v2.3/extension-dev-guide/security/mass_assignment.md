@@ -7,6 +7,7 @@ by a user or requires additional authorization.
   
 You have an endpoint or a page where users can edit their own personal information, you have a user table in your DB
 that consists of the following columns:
+
 *  id
 *  first_name
 *  last_name
@@ -164,7 +165,7 @@ controllers/service contracts that do not necessarily correlate with storage sch
 That can be achieved by utilizing operation specific DTOs instead of persistence-layer DTOs.
   
 Example:
- 
+  
 ```xml
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
@@ -180,7 +181,7 @@ Example:
     </route>
 </routes>
 ```
- 
+  
 ```php
 interface UpdatedUserDataInterface extends ExtensibleDataInterface
 {
