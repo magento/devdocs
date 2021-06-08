@@ -51,8 +51,8 @@ and a service contract.
 class Save extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
     ...
-    
-    
+
+
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
@@ -61,7 +61,7 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
             ->load($this->getRequest()->getParam('id'));
         $model->setData($data);
         $model->save();
-        
+
         return $this->generateRedirect();
     }
 }
@@ -91,7 +91,7 @@ controllers and GraphQL resolvers.
     </route>
 </routes>
 ```
-  
+
 ```php
 interface UserInterface extends ExtensibleDataInterface
 {
@@ -117,19 +117,19 @@ interface UserManagerInterface
 class Save extends \Magento\Framework\App\Action\Action implements HttpPostActionInterface
 {
     ...
-    
+
     /**
      * @var DataObjectHelper
      */
     private $dataObjectHelper;
-    
+
     /**
      * @var UserManagerInterface
      */
     private $manager;
-    
+
     ...
-    
+
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
@@ -137,10 +137,10 @@ class Save extends \Magento\Framework\App\Action\Action implements HttpPostActio
         $user = $this->repo->findById($this->userContext->getUserId());
         //hydration
         $this->dataObjectHelper->populateWithArray($user, $data, UserInterface::class);
-        
+
         //Saving
         $this->manager->save($user);
-        
+
         return $this->generateRedirect();
     }
 }
@@ -219,19 +219,19 @@ interface UserManagerInterface
 class Save extends \Magento\Framework\App\Action\Action implements HttpPostActionInterface
 {
     ...
-    
+
     /**
      * @var DataObjectHelper
      */
     private $dataObjectHelper;
-    
+
     /**
      * @var UserManagerInterface
      */
     private $manager;
-    
+
     ...
-    
+
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
@@ -240,10 +240,10 @@ class Save extends \Magento\Framework\App\Action\Action implements HttpPostActio
         $updatedData = new UpdatedUserData();
         //hydration
         $this->dataObjectHelper->populateWithArray($updatedData, $data, UpdatedUserDataInterface::class);
-        
+
         //Saving
         $this->manager->update($updatedData);
-        
+
         return $this->generateRedirect();
     }
 }
@@ -326,31 +326,31 @@ interface AdminUserManagerInterface
 class Save extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
     ...
-    
+
     const ADMIN_RESOURCE = 'Magento_User::manage';
-    
+
     /**
      * @var DataObjectHelper
      */
     private $dataObjectHelper;
-    
+
     /**
      * @var AdminUserManagerInterface
      */
     private $manager;
-    
+
     ...
-    
+
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
         $userData = new UserFullData();
         //hydration
         $this->dataObjectHelper->populateWithArray($userData, $data, UserFullDataInterface::class);
-        
+
         //Saving
         $this->manager->save($userData);
-        
+
         return $this->generateRedirect();
     }
 }
