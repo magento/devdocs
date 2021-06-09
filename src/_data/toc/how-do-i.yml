@@ -56,7 +56,7 @@ pages:
       - label: Customize the list of shipping methods
         url: /howdoi/checkout/checkout_shipping_methods.html
 
-      - label: Add a custom field in offline payment method
+      - label: Add a custom field for an offline payment method
         url: /howdoi/checkout/checkout_payment_new_field.html
 
   - label: Customize the Admin design
