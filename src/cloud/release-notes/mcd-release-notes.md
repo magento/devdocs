@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Cloud Docker release notes
+title: Cloud Docker for Commerce
 functional_areas:
   - Cloud
   - Setup

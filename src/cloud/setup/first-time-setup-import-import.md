@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Import Magento Commerce code into a Cloud project
+title: Import code
 functional_areas:
   - Cloud
   - Setup
@@ -305,6 +305,9 @@ bin/magento cache:clean
 ```
 
 After the [cache](https://glossary.magento.com/cache) flushes, enter `exit` to close the SSH tunnel.
+
+{:.bs-callout-tip}
+Use the [magento-cloud project:clear-build-cache]({{ site.baseurl }}/guides/v2.4/reference/cli/magento-cloud.html#projectclear-build-cache) command to clear a project's build cache (such as composer cache) in the remote environment.
 
 ## Verify the import {#verify}
 

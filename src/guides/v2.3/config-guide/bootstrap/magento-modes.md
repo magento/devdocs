@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: About Magento modes
+title: About application modes
 functional_areas:
   - Configuration
   - System

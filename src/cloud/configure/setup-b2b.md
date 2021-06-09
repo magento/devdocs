@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Set up Magento B2B module
+title: Set up B2B
 functional_areas:
   - Cloud
   - Extensions

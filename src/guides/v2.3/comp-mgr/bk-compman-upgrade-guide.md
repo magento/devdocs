@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Magento upgrade overview
+title: Commerce upgrade overview
 functional_areas:
   - Upgrade
 ---

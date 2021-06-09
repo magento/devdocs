@@ -1,6 +1,6 @@
 ---
 group: compliance
-title: Magento Privacy JavaScript Library
+title: Privacy JavaScript Library
 ---
 
 <!-- TODO: Unpublish this topic and create a topic redirect to the adobe privacy js topic when the adobe privacy library is integrated with Magento -->

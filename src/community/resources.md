@@ -2,7 +2,7 @@
 group: community
 title: Community Resources
 redirect_from:
-  - /community/resources/index.html
+  - /community/resources/resources.html
 ---
 
 ## Magento DevBlog

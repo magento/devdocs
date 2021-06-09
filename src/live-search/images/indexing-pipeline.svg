@@ -1,118 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 25.2.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 25.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1358.43 872.85" style="enable-background:new 0 0 1358.43 872.85;" xml:space="preserve">
+	 viewBox="0 0 1358.43 588.03" style="enable-background:new 0 0 1358.43 588.03;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
-	.st1{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:6;}
-	.st2{fill:#FFEFE3;}
-	.st3{font-family:'OpenSans-Semibold';}
-	.st4{font-size:24px;}
-	.st5{fill:#F7E3E4;stroke:#000000;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-	.st7{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
-	.st8{fill:#DAEADA;stroke:#000000;stroke-miterlimit:10;}
-	.st9{fill:#B62E35;}
-	.st10{font-family:'OpenSans-Bold';}
-	.st11{font-size:30px;}
+	.st0{display:none;}
+	.st1{display:inline;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:6;}
+	.st4{fill:#FFEFE3;}
+	.st5{font-family:'OpenSans-Semibold';}
+	.st6{font-size:24px;}
+	.st7{fill:#F7E3E4;stroke:#000000;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st9{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st10{fill:#DAEADA;stroke:#000000;stroke-miterlimit:10;}
+	.st11{fill:#B62E35;}
+	.st12{font-family:'OpenSans-Bold';}
+	.st13{font-size:30px;}
 </style>
-<g>
-	<rect x="1.5" y="1.5" class="st0" width="1355.43" height="869.85"/>
-	<rect x="1.5" y="1.5" class="st1" width="1355.43" height="869.85"/>
-	<rect x="1.5" y="1.5" class="st2" width="1355.43" height="869.85"/>
+<g class="st0">
+	<path class="st1" d="M1099.53-60.02"/>
 </g>
-<text transform="matrix(1 0 0 1 24.6325 35.5859)" class="st3 st4">Indexing Pipeline</text>
-<path class="st5" d="M296.72,529.44H64.93c-6.63,0-12-5.37-12-12V428.4c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
-	C308.72,524.06,303.35,529.44,296.72,529.44z"/>
-<text transform="matrix(1 0 0 1 89.9367 477.6777)" class="st3 st4">Registry Service</text>
-<path class="st5" d="M798.69,171.62H566.91c-6.63,0-12-5.37-12-12V70.58c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
-	C810.69,166.24,805.32,171.62,798.69,171.62z"/>
-<text transform="matrix(1 0 0 1 597.0057 109.0967)"><tspan x="0" y="0" class="st3 st4">Search Admin </tspan><tspan x="35.74" y="28.8" class="st3 st4"> Service</tspan></text>
 <g>
-	<path d="M310.72,765.11c159.61-2.43,240.8-0.19,240.8-0.19"/>
 	<g>
-		<path class="st6" d="M321.24,764.96c152.66-2.18,230.28-0.03,230.28-0.03"/>
+		<rect x="1.5" y="1.5" class="st2" width="1355.43" height="585.03"/>
+		<rect x="1.5" y="1.5" class="st3" width="1355.43" height="585.03"/>
+		<rect x="1.5" y="1.5" class="st4" width="1355.43" height="585.03"/>
+	</g>
+	<text transform="matrix(1 0 0 1 24.6325 56.7661)" class="st5 st6">Indexing Pipeline</text>
+	<path class="st7" d="M296.72,244.62H64.93c-6.63,0-12-5.37-12-12v-89.04c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
+		C308.72,239.25,303.35,244.62,296.72,244.62z"/>
+	<text transform="matrix(1 0 0 1 89.9367 192.8579)" class="st5 st6">Registry Service</text>
+	<g>
+		<path d="M310.72,480.3c159.61-2.43,240.8-0.19,240.8-0.19"/>
 		<g>
-			<polygon points="322.74,752.85 322.99,777.14 310.72,765.11 			"/>
+			<path class="st8" d="M321.24,480.14c152.66-2.18,230.28-0.03,230.28-0.03"/>
+			<g>
+				<polygon points="322.74,468.03 322.99,492.32 310.72,480.3 				"/>
+			</g>
 		</g>
 	</g>
-</g>
-<g>
-	<path d="M1099.53,224.8"/>
-</g>
-<g>
-	<line x1="617.28" y1="171.62" x2="617.28" y2="416.75"/>
+	<path class="st7" d="M297.72,529.9H65.93c-6.63,0-12-5.37-12-12v-89.04c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
+		C309.72,524.53,304.35,529.9,297.72,529.9z"/>
+	<text transform="matrix(1 0 0 1 80.9367 478.1422)" class="st5 st6">Metadata Service</text>
+	<path class="st9" d="M795.11,529.35H563.32c-6.63,0-12-5.37-12-12V143.93c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v373.42
+		C807.11,523.98,801.74,529.35,795.11,529.35z"/>
+	<text transform="matrix(1 0 0 1 629.3004 303.5704)"><tspan x="0" y="0" class="st5 st6">Indexing </tspan><tspan x="8.61" y="28.8" class="st5 st6">Service</tspan></text>
 	<g>
-		<line class="st6" x1="617.28" y1="182.13" x2="617.28" y2="416.75"/>
+		<path d="M310.72,188.66c159.61-2.43,240.8-0.19,240.8-0.19"/>
 		<g>
-			<polygon points="629.43,183.76 605.14,183.76 617.28,171.62 			"/>
+			<path class="st8" d="M321.24,188.51c152.66-2.18,230.28-0.03,230.28-0.03"/>
+			<g>
+				<polygon points="322.74,176.39 322.99,200.69 310.72,188.66 				"/>
+			</g>
 		</g>
 	</g>
-</g>
-<path class="st5" d="M297.72,814.72H65.93c-6.63,0-12-5.37-12-12v-89.04c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v89.04
-	C309.72,809.35,304.35,814.72,297.72,814.72z"/>
-<text transform="matrix(1 0 0 1 80.9367 762.962)" class="st3 st4">Metadata Service</text>
-<path class="st7" d="M795.11,814.17H563.32c-6.63,0-12-5.37-12-12V428.75c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12v373.42
-	C807.11,808.8,801.74,814.17,795.11,814.17z"/>
-<text transform="matrix(1 0 0 1 629.3004 605.3903)"><tspan x="0" y="0" class="st3 st4">Indexing </tspan><tspan x="3.57" y="28.8" class="st3 st4">Pipeline</tspan></text>
-<g>
-	<path d="M310.72,473.48c159.61-2.43,240.8-0.19,240.8-0.19"/>
 	<g>
-		<path class="st6" d="M321.24,473.33c152.66-2.18,230.28-0.03,230.28-0.03"/>
+		<path d="M807.65,314.66c159.61-2.43,240.8-0.19,240.8-0.19"/>
 		<g>
-			<polygon points="322.74,461.21 322.99,485.51 310.72,473.48 			"/>
+			<path class="st8" d="M807.65,314.66c126.41-1.93,203.64-0.92,230.29-0.42"/>
+			<g>
+				<polygon points="1036.48,302.16 1036.15,326.46 1048.46,314.48 				"/>
+			</g>
 		</g>
 	</g>
-</g>
-<g>
-	<line x1="743.07" y1="171.62" x2="743.07" y2="416.75"/>
+	<path class="st10" d="M1292.24,529.35h-231.79c-6.63,0-12-5.37-12-12V143.93c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12
+		v373.42C1304.24,523.98,1298.87,529.35,1292.24,529.35z"/>
+	<text transform="matrix(1 0 0 1 1095.891 314.6625)"><tspan x="0" y="0" class="st5 st6">Search Index </tspan><tspan x="33.39" y="28.8" class="st5 st6">Cluster</tspan></text>
 	<g>
-		<line class="st6" x1="743.07" y1="182.13" x2="743.07" y2="416.75"/>
 		<g>
-			<polygon points="755.22,183.76 730.93,183.76 743.07,171.62 			"/>
+			<circle class="st11" cx="431.12" cy="216.7" r="18.2"/>
 		</g>
+		<text transform="matrix(1 0 0 1 421.1136 227.0836)" class="st2 st12 st13">1</text>
 	</g>
-</g>
-<g>
-	<path d="M807.65,599.48c159.61-2.43,240.8-0.19,240.8-0.19"/>
 	<g>
-		<path class="st6" d="M807.65,599.48c126.41-1.93,203.64-0.92,230.29-0.42"/>
 		<g>
-			<polygon points="1036.48,586.98 1036.15,611.28 1048.46,599.3 			"/>
+			<circle class="st11" cx="923.33" cy="287.28" r="18.2"/>
 		</g>
+		<text transform="matrix(1 0 0 1 913.3288 297.6671)" class="st2 st12 st13">4</text>
 	</g>
-</g>
-<path class="st8" d="M1292.24,814.17h-231.79c-6.63,0-12-5.37-12-12V428.75c0-6.63,5.37-12,12-12h231.79c6.63,0,12,5.37,12,12
-	v373.42C1304.24,808.8,1298.87,814.17,1292.24,814.17z"/>
-<text transform="matrix(1 0 0 1 1104.9847 599.4823)"><tspan x="0" y="0" class="st3 st4">Live Search </tspan><tspan x="-14.5" y="28.8" class="st3 st4">Query Service</tspan></text>
-<g>
 	<g>
-		<circle class="st9" cx="431.12" cy="501.52" r="18.2"/>
+		<g>
+			<circle class="st11" cx="431.27" cy="503.97" r="18.2"/>
+		</g>
+		<text transform="matrix(1 0 0 1 422.2687 514.3509)" class="st2 st12 st13">2</text>
 	</g>
-	<text transform="matrix(1 0 0 1 421.1136 511.9034)" class="st0 st10 st11">1</text>
-</g>
-<g>
+	<g class="st0">
+	</g>
 	<g>
-		<circle class="st9" cx="923.33" cy="572.1" r="18.2"/>
+		<g>
+			<circle class="st11" cx="678.34" cy="382.12" r="18.2"/>
+		</g>
+		<text transform="matrix(1 0 0 1 669.3358 392.5026)" class="st2 st12 st13">3</text>
 	</g>
-	<text transform="matrix(1 0 0 1 913.3288 582.4869)" class="st0 st10 st11">4</text>
-</g>
-<g>
-	<g>
-		<circle class="st9" cx="591.4" cy="288.59" r="18.2"/>
-	</g>
-	<text transform="matrix(1 0 0 1 582.3942 298.9754)" class="st0 st10 st11">3</text>
-</g>
-<g>
-	<g>
-		<circle class="st9" cx="769.18" cy="288.59" r="18.2"/>
-	</g>
-	<text transform="matrix(1 0 0 1 760.1749 298.9754)" class="st0 st10 st11">5</text>
-</g>
-<g>
-	<g>
-		<circle class="st9" cx="431.27" cy="788.79" r="18.2"/>
-	</g>
-	<text transform="matrix(1 0 0 1 422.2687 799.1707)" class="st0 st10 st11">2</text>
 </g>
 </svg>
