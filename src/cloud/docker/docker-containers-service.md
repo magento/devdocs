@@ -144,7 +144,7 @@ You can customize PHP service settings for PHP-FPM and CLI containers by adding 
 The Cloud Docker deploy process copies the `php.ini` file to the Docker environment after applying the default Docker and Magento extension configurations and applies the settings to the FPM and CLI containers.
 
 {:.bs-callout-warning}
-If you use the `docker-sync` or `mutagen` file synchronization options, the `php.ini` file is available only after the file synchronization completes.
+If you use the `mutagen` file synchronization options, the `php.ini` file is available only after the file synchronization completes.
 
 ### Customize PHP extensions
 
