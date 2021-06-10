@@ -55,7 +55,7 @@ Begin adopting the Adobe Commerce Extensibility platform, if you haven't done so
 
 *  **UI Extensibility**. Extend and evolve your storefront independently of your backend and middleware using [PWA Studio](https://magento.github.io/pwa-studio/).
 
-*  **API Extensibility**. Use [GraphQL]({{page.baseurl}}graphql/index.html) to extend Web API layer by evolving the graph data model and executing lambda functions directly from the graph layer.
+*  **API Extensibility**. Use [GraphQL]({{page.baseurl}}/graphql/index.html) to extend Web API layer by evolving the graph data model and executing lambda functions directly from the graph layer.
 
 *  **Adobe I/O middleware and services**. Connect your systems with {{site.data.var.ee}} using Adobe's middleware and a suite of app connections built on [Adobe I/O](https://www.adobe.io/). In addition,you can extend core platform capabilities by overwriting the default behavior with your own business logic that runs on Adobe I/O.
 
@@ -87,8 +87,8 @@ Assess the work to be done for upgrading:
 
 ### Post-upgrade testing
 
-Testing is the phase of an upgrade that requires more time. As a result, this process should be as automated as possible. You can benefit from using the core testing tools. The [Application Testing Guide]({{page.baseurl}}.test/testing.html) provides details.
+Testing is the phase of an upgrade that requires more time. As a result, this process should be as automated as possible. You can benefit from using the core testing tools. The [Application Testing Guide]({{page.baseurl}}/test/testing.html) provides details.
 
 Use staging to test and validate your upgrade before moving to production.
 
-Make use of a **maintenance page**. Preparing this page in advance allows you to communicate with your customers, notifying them that work happening in the background. This page should be visible for a few minutes, but in case of a problem, you might need to use it longer. Having the appropriate content and design for your maintenance page will give your users a good experience even when your store is not available.  
+Make use of a **maintenance page**. Preparing this page in advance allows you to communicate with your customers, notifying them that work happening in the background. This page should be visible for a few minutes, but in case of a problem, you might need to use it longer. Having the appropriate content and design for your maintenance page will give your users a good experience even when your store is not available.
