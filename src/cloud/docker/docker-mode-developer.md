@@ -9,7 +9,7 @@ functional_areas:
 
 Developer mode supports an active development environment with full, writable file system permissions. This option builds the Docker environment in developer mode and verifies configured service versions.
 
-On macOS and Windows systems, performance is slower in developer mode because of additional file synchronization operations. However, you can improve performance by using `manual-native` mode or `mutagen` file synchronization tool when you generate the `docker-compose.yml` configuration file. See [Synchronizing data in Docker].
+On macOS and Windows systems, performance is slower in developer mode because of additional file synchronization operations. However, you can improve performance by using the `manual-native` option or the `mutagen` option with file synchronization tools when you generate the `docker-compose.yml` file. See [Synchronizing data in Docker].
 
 {: .bs-callout-info }
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
