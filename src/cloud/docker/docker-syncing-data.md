@@ -46,7 +46,7 @@ When you start Docker with the native file synchronization option, the current w
 
 If you do not specify a `--sync-engine` option, the Magento Docker build uses the `native` option.
 
-On macOS or Windows systems, you can configure file synchronization using Mutagen or manual-native by adding the `--sync-engine="<type>"` option to the `ece-docker build:compose` command.
+On macOS or Windows systems, you can configure file synchronization to use the `mutagen` option or the `manual-native` option by adding the `--sync-engine="<type>"` option to the `ece-docker build:compose` command.
 
 For example:
 
