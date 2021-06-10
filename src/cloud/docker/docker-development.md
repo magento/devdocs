@@ -12,7 +12,7 @@ functional_areas:
 -  **Cross-platform support**–Supports Linux, macOS and Windows with WSL2
 -  **Magento Cloud emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
 -  **{{site.data.var.ee}} development**–Creates a local development environment for Magento On-premises projects
--  **Multiple sync options**–Provides three file synchronization options (native, mutagen and manual-native) for best performance
+-  **Multiple sync options**–Provides three file synchronization options: `native`, `mutagen`, and `manual-native`. The `manual-native` option provides the best performance on macOS and Windows.
 -  **Extensibility**–Use a standard Docker configuration file to extend and customize your development environment
 
 {:.bs-callout-info}
