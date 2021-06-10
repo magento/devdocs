@@ -60,7 +60,7 @@ To launch the Docker environment in developer mode:
    ```bash
    ./bin/magento-docker copy-to vendor
    ```
-   
+
    This command copies all data from local machine to the Docker volume.
 
    To copy data from Docker volume to local machine, use:
