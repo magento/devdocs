@@ -30,9 +30,17 @@ Instead use the [`Magento\Framework\HTTP\PhpEnvironment\Request`]({{ site.mage2b
 
 MySQL offers a range of numeric, string, and time data types. If you are storing a date, use a DATE or DATETIME field. Using an INTEGER or STRING can make SQL queries more complicated, if not impossible. It is often tempting to invent your own data formats; for example, storing serialized PHP objects in string. Database management may be easier, but MySQL will become a dumb data store and it may lead to problems later.
 
+## Use InnoDB storage engine
+
+It's recommended to use InnoDB storage engine as other storage engines could not be supported by some Cloud Database Services. Usage of InnoDB storage engine will make extension more compatible with different environments.
+
 ## Avoid raw SQL queries
 
 Raw SQL queries can lead to potential security vulnerabilities and database portability issues. Use data adapter capabilities ([`Magento\Framework\DB\Adapter\Pdo\Mysql`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php){:target="_blank"} by default) to build and execute queries and move all data access code to a resource model. Use prepared statements to make sure that queries are safe to execute.
+
+## Use Primary Key
+
+Primary Key is mandatory required for any DB cluster to run effectively. The absence of Primary Key is also causing performance issues while the tables getting replicated. 
 
 ## Use well-defined indexes
 
