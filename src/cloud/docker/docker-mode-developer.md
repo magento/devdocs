@@ -46,7 +46,7 @@ To launch the Docker environment in developer mode:
    cp .docker/config.php.dist .docker/config.php
    ```
 
-1. If you selected `manual-native` for file synchronization, start the file synchronization.
+1. If you selected the `manual-native` option for file synchronization, start the file synchronization using the following commands.
 
    For the `manual-native` sync:
 
