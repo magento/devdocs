@@ -18,8 +18,9 @@ The {{site.data.var.mcd-prod}} `docker-build` command provides the `--sync-engin
 Option | Description
 --------------------- | ------------
 `native` | Maps the current working directory to the `/app` directory on each volume, which provides direct access to the data without requiring any synchronization. The `native` option is the default and works for Linux hosts. On macOS or Windows hosts, this option results in extremely slow performance in the Docker environment.
+`manual-native` | Provides manual control over synchronization. Requires running manual commands. This option provides the best performance for macOs and Windows.
 `mutagen` | Uses [Mutagen] for file synchronization. When you select Mutagen, you must [install Mutagen] on your host operating system before you [launch Docker in developer mode]. Use this option on macOS or Windows hosts.
-`docker-sync` | Uses [docker-sync] for file synchronization. When you select docker-sync, you must [install docker-sync] on your host operating system before you [launch Docker in developer mode]. Use this option on macOS or Windows hosts.
+`docker-sync` | **Deprecated in 1.2.3**: Uses [docker-sync] for file synchronization. When you select docker-sync, you must [install docker-sync] on your host operating system before you [launch Docker in developer mode]. Use this option on macOS or Windows hosts.
 
 When you start Docker with the native file synchronization option, the current working directory maps to the `/app` folder in the containers:
 
@@ -45,7 +46,7 @@ When you start Docker with the native file synchronization option, the current w
 
 If you do not specify a `--sync-engine` option, the Magento Docker build uses the `native` option.
 
-On macOS or Windows systems, you can configure file synchronization using Mutagen or docker-sync by adding the `--sync-engine="<type>"` option to the `ece-docker build:compose` command.
+On macOS or Windows systems, you can configure file synchronization to use the `mutagen` option or the `manual-native` option by adding the `--sync-engine="<type>"` option to the `ece-docker build:compose` command.
 
 For example:
 
