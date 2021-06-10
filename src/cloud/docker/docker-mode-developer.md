@@ -55,7 +55,7 @@ To launch the Docker environment in developer mode:
    ```
 
    {:.bs-callout-info}
-   Additionally, you may specify a specific directory, for example `vendor`:
+   Additionally, you can provide a specific directory, for example `vendor`:
 
    ```bash
    ./bin/magento-docker copy-to vendor
