@@ -87,7 +87,7 @@ Assess the work to be done for upgrading:
 
 ### Post-upgrade testing
 
-Testing is the phase of an upgrade that requires more time. As a result, this process should be as automated as possible. You can benefit from using the core testing tools. The [Application Testing Guide]({{page.baseurl}}/test/testing.html) provides details.
+Testing is the phase of an upgrade that requires more time. As a result, this process should be as automated as possible. You can benefit from using the core testing tools. The [Application Testing Guide]({{page.baseurl}}.test/testing.html) provides details.
 
 Use staging to test and validate your upgrade before moving to production.
 
