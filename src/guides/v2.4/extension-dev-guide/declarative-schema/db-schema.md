@@ -266,7 +266,6 @@ In the following example, the `declarative_table` table was completely removed f
  {:.bs-callout-info}
 When dropping a table do not remove it from the `db_schema_whitelist.json` file, otherwise it will not be dropped.
 
-
 ### Rename a table
 
 Table renaming is supported. The declarative schema will create a new table with the new name and drop the table with the old name.
