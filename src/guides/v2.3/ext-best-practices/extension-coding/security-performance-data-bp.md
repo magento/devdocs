@@ -32,7 +32,7 @@ MySQL offers a range of numeric, string, and time data types. If you are storing
 
 ## Use InnoDB storage engine
 
-It's recommended to use InnoDB storage engine as other storage engines could not be supported by some Cloud Database Services. Usage of InnoDB storage engine will make extension more compatible with different environments.
+We recommend using the InnoDB storage engine because other storage engines are not supported by some Cloud Database Services. Using the InnoDB storage engine ensures that extensions are more compatible with different environments.
 
 ## Avoid raw SQL queries
 
@@ -40,7 +40,7 @@ Raw SQL queries can lead to potential security vulnerabilities and database port
 
 ## Use Primary Key
 
-Primary Key is mandatory required for any DB cluster to run effectively. The absence of Primary Key is also causing performance issues while the tables getting replicated. 
+A Primary Key is required for any DB cluster to run effectively. Without a Primary Key, you _will_ see performance issues during table replication.
 
 ## Use well-defined indexes
 
