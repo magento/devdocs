@@ -32,7 +32,7 @@ To extend the Fastly timeout for the Magento Admin:
 
 1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
 
-1. In the *Fastly Configuration* section, expand **Advanced**.
+1. In the *Fastly Configuration* section, expand **Advanced Configuration**.
 
 1. Set the **Admin path timeout** value in seconds. This value cannot be more than 10 minutes (600 seconds).
 
@@ -58,7 +58,7 @@ The options include:
 {:.procedure}
 To configure Fastly purge options:
 
-1. In the *Fastly Configuration* section, expand **Advanced** to display the purge options.
+1. In the *Fastly Configuration* section, expand **Advanced Configuration** to display the purge options.
 
 1. For each purge option, select **Yes** to enable automatic purging, or **No** to disable automatic purging.
 
@@ -81,7 +81,7 @@ To set up GeoIp handling:
 
 1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
 
-1. In the *Fastly Configuration* section, expand **Advanced**.
+1. In the *Fastly Configuration* section, expand **Advanced Configuration**.
 
 1. Scroll down and select **Yes** to **Enable GeoIP**. Additional configuration options display.
 
