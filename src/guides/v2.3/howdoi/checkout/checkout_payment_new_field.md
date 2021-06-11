@@ -243,7 +243,7 @@ It is also necessary to override the `Magento_OfflinePayments/view/frontend/web/
 
 ## Step 5: Add an Observer {#add-observer}
 
-Create an Observer file to save the custom field data to the order. For the Observer file an `event.xml` file is required to call the observer for a particular event. For this example, the `checkout_onepage_controller_success_action` event is used.
+Create an Observer file to save the custom field data to the order. For the Observer file an `events.xml` file is required to call the observer for a particular event. For this example, the `checkout_onepage_controller_success_action` event is used.
 
 Create the `app/code/Learning/CustomField/etc/frontend/events.xml` file and add the following code:
 
@@ -319,6 +319,31 @@ class OrderPaymentSaveBefore implements \Magento\Framework\Event\ObserverInterfa
 
 ## Step 6: Verify that the module works {#verify-implementation}
 
+-  Run the below command to enable the new module
+
+```bash
+bin/magento module:enable Learning_CustomField
+```
+
+-  Run the below command to install the new module
+
+```bash
+bin/magento setup:upgrade
+```
+
+-  Run the below command to compile the code
+
+```bash
+bin/magento setup:di:compile
+```
+
+-  Run the below command to deploy the static files
+
+```bash
+bin/magento setup:static-content:deploy
+```
+
 Go to the storefront as a guest user and add the product to the cart. Go to the checkout page and select the **Purchase Order** payment. Verify that the **Purchase Order Comment** field is visible.
+Then fill the purchase order comment field in the checkout and place an order. Now verify that the entered value is stored in the `paymentpocomment` column of the  `sales_order_payment` table.
 
 ![Custom field in checkout page]({{ site.baseurl }}/common/images/custom_field_payment.png)
