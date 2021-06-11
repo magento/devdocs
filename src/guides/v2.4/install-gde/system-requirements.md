@@ -75,13 +75,13 @@ Magento requires the following system tools for some of its operations:
 *  [sed][]
 *  [tar][]
 
-## SSL
+### SSL
 
 *  A valid [security certificate][] is required for HTTPS.
 *  Self-signed SSL certificates are not supported.
 *  Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.2 or later.
 
-## Supported browsers
+### Supported browsers
 
 {% include browsers/supported-browsers-24.md %}
 

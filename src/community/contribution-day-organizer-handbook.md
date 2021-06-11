@@ -1,6 +1,8 @@
 ---
 group: community
 title: Contribution Day Organizer's Handbook
+redirect_from:
+  - /community/resources/contribution-day-organizer-handbook.html
 ---
 
 Thank you for taking the time to organize a Magento Contribution Day! This handbook aims to answer any questions you have on the matter, but if you still have questions feel free to email the Community Engineering team: `engcom@adobe.com`.
