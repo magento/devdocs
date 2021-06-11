@@ -263,8 +263,8 @@ In the following example, the `declarative_table` table was completely removed f
 </schema>
 ```
 
- {:.bs-callout-info}
-When dropping a table do not remove it from the `db_schema_whitelist.json` file, otherwise it will not be dropped.
+{:.bs-callout-info}
+When dropping a table, do not remove it from the `db_schema_whitelist.json` file, otherwise it will not be dropped.
 
 ### Rename a table
 
