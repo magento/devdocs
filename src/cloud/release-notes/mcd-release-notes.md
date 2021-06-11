@@ -16,6 +16,15 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.2.3
+*Release date: June 14, 2021*<br/>
+
+-  {:.new}<!--MCLOUD-7941-->**Added PHP 8.0**—Updated PHP to version 8.0, allowing you take advantage of all the new features and optimizations PHP 8.0 includes.
+-  {:.new}<!--MCLOUD-7921-->**Updated to Varnish 6.6 and Elasticsearch 7.11.2**—The following links provide release information on [Varnish Cache 6.6](https://varnish-cache.org/releases/rel6.6.0.html#rel6-6-0) and [Elasticsearch 7.11.2](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-7.11.2.html).
+-  {:.new}<!--MCLOUD-7921-->**Added `ioncube` extension for PHP 7.4 image**—The `ioncube` extension has been re-added to the PHP 7.4 image after having been initially excluded from the PHP 7.3 to PHP 7.4 upgrade.
+-  {:.new}<!--MCLOUD-7977-->**Added a new file sync option: `manual-native`**—The `manual-native` file synchronization option provides manual control over synchronization, which provides the best performance for macOs and Windows environments.
+-  {:.fix}<!--MCLOUD-7934-->**Updated `CN` value for the generated certificate**—Removed the hardcoded `CN` value from the Dockerfile. This value created a certificate error (`NET::ERR_CERT_INVALID`) that caused the `--host` option for the `ece-docker build:compose` command to be ignored.
+
 ## v1.2.2
 *Release date: April 20, 2021*<br/>
 
@@ -129,10 +138,10 @@ The release notes include:
 
 {: .docker-service-versions-table}
 
-Action                                                                          | Command
---------------------------------------------------------------------------------|---------------------------------------------------------------
-Add an entrypoint to the database container to restore the database from backup | `./vendor/bin/ece-docker build:compose --db --with-entrypoint`
-Add a MariaDB configuration volume                                              | `./vendor/bin/ece-docker build:compose --db --mariadb-conf`
+| Action                                                                          | Command                                                        |
+| ------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Add an entrypoint to the database container to restore the database from backup | `./vendor/bin/ece-docker build:compose --db --with-entrypoint` |
+| Add a MariaDB configuration volume                                              | `./vendor/bin/ece-docker build:compose --db --mariadb-conf`    |
 
 <!--Add release notes below-->
 
@@ -193,16 +202,16 @@ Add a MariaDB configuration volume                                              
 
       {: .docker-service-versions-table}
 
-Action                                                                                                                     | Command
----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------
-Clear Redis cache                                                                                                          | `bin/magento-docker flush-redis`
-Clear Varnish cache                                                                                                        | `bin/magento-docker flush-varnish`
-Skip default Varnish installation                                                                                          | `.vendor/bin/ece-docker build:compose --no-varnish`<!--MCLOUD-2634-->
-[Customize Elasticsearch options]({{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container)    | `.vendor/bin/ece-docker    build:compose --es-env-var`<!--MCLOUD-3059-->
-[Remove Elasticsearch configuration]({{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container) | `.vendor/bin/ece-docker    build:compose --no-es`<!--MCLOUD-3766-->
-Configure DB container with MySQL version 5.6 or 5.7                                                                       | `./vendor/bin/ece-docker build:compose --db <mysql-version-number> --db-image mysql`<!--MCLOUD-5691-->
-Specify custom Magento base URL                                                                                            | `./vendor/bin/ece-docker build:compose --host=<hostname> --port=<port-number>`<!--MCLOUD-3063-->
-[Add container for Xdebug configuration]({{site.baseurl}}/cloud/docker/docker-development-debug.html)                      | `.vendor/bin/ece-docker build:compose --mode    developer --sync-engine native --with-xdebug`<!--MCLOUD-4098-->
+| Action                                                                                                                     | Command                                                                                                         |
+| -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Clear Redis cache                                                                                                          | `bin/magento-docker flush-redis`                                                                                |
+| Clear Varnish cache                                                                                                        | `bin/magento-docker flush-varnish`                                                                              |
+| Skip default Varnish installation                                                                                          | `.vendor/bin/ece-docker build:compose --no-varnish`<!--MCLOUD-2634-->                                           |
+| [Customize Elasticsearch options]({{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container)    | `.vendor/bin/ece-docker    build:compose --es-env-var`<!--MCLOUD-3059-->                                        |
+| [Remove Elasticsearch configuration]({{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container) | `.vendor/bin/ece-docker    build:compose --no-es`<!--MCLOUD-3766-->                                             |
+| Configure DB container with MySQL version 5.6 or 5.7                                                                       | `./vendor/bin/ece-docker build:compose --db <mysql-version-number> --db-image mysql`<!--MCLOUD-5691-->          |
+| Specify custom Magento base URL                                                                                            | `./vendor/bin/ece-docker build:compose --host=<hostname> --port=<port-number>`<!--MCLOUD-3063-->                |
+| [Add container for Xdebug configuration]({{site.baseurl}}/cloud/docker/docker-development-debug.html)                      | `.vendor/bin/ece-docker build:compose --mode    developer --sync-engine native --with-xdebug`<!--MCLOUD-4098--> |
 
 -  {:.fix}Fixed the configuration of mutagen file synchronization to prevent mutagen from creating stale sessions. *[Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/127).*<!--MCLOUD-6010-->
 
