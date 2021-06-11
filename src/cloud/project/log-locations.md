@@ -19,7 +19,7 @@ You can view the logs from the file system, the project web UI, and the `magento
 -  **Magento Cloud CLI**—You can view logs using the `magento-cloud log` command.
 
 {:.bs-callout-tip}
-Automatic log rotation, compression, and removal are enabled in the Cloud environment. Every type of log file has its own rotating pattern and lifetime.
+Automatic log rotation, compression, and removal are enabled in the Cloud environment. Each log file type has a rotating pattern and lifetime.
 
 ## Manage log data
 
@@ -147,7 +147,7 @@ Log file            | Starter and Pro Integration | Pro Staging                 
 **PHP FPM log**     | `/var/log/app.log`          | `/var/log/platform/<project_id>_stg/php5-fpm.log` | `/var/log/platform/<project_id>/php5-fpm.log`
 
 The application logs are compressed and archived once per day and kept for one year. The compressed logs are named using a unique ID that corresponds to the `Number of Days Ago + 1`.
-For example, the PHP access log for 21 days in the past, on the Pro production environments, is stored and named as follows:
+For example, on Pro production environments a PHP access log for 21 days in the past is stored and named as follows:
 
 ```terminal
 /var/log/platform/<project_id>/php.access.log.22.gz
