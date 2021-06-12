@@ -26,7 +26,6 @@ The release notes include:
 -  {:.new}<!--PR #319-->**Removed volume deletions from `up` and `down` commands**—The `--volume` option was removed from the `bin/magento-docker up` and `bin/magento-docker down` commands, replaced by the new `bin/magento-docker init` command with a data loss warning. This change helps prevent the accidental data loss. *[Submitted by joeshelton-wagento](https://github.com/magento/magento-cloud-docker/pull/314).*
 -  {:.fix}<!--MCLOUD-7934-->**Updated `CN` value for the generated certificate**—Removed the hardcoded `CN` value from the Dockerfile. This value created a certificate error (`NET::ERR_CERT_INVALID`) that caused the `--host` option for the `ece-docker build:compose` command to be ignored.
 
-
 ## v1.2.2
 *Release date: April 20, 2021*<br/>
 

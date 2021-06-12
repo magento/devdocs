@@ -52,27 +52,27 @@ To launch the Docker environment in developer mode:
 
 1. If you selected the `manual-native` option, start the file synchronization using the following commands.
 
+   **This command copies all data from the local machine to the Docker volume:**
+
    ```bash
    ./bin/magento-docker copy-to --all
    ```
 
    {:.bs-callout-info}
-   Additionally, you can provide a specific directory, for example `vendor`:
+   Additionally, you can provide a specific directory from the local machine to copy to the Docker volume, for example `vendor`:
 
    ```bash
    ./bin/magento-docker copy-to vendor
    ```
 
-   This command copies all data from the local machine to the Docker volume.
-
-   To copy data from Docker volume to local machine, use:
+   **To copy all data from the Docker volume to the local machine, use:**
 
    ```bash
    ./bin/magento-docker copy-from --all
    ```
 
    {:.bs-callout-info}
-   Additionally, you can provide a specific directory, for example `vendor`:
+   Additionally, you can provide a specific directory from the Docker volume to copy from, such as `vendor`:
 
    ```bash
    ./bin/magento-docker copy-from vendor
