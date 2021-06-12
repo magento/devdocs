@@ -9,12 +9,16 @@ functional_areas:
 
 Developer mode supports an active development environment with full, writable file system permissions. This option builds the Docker environment in developer mode and verifies configured service versions.
 
-On macOS and Windows systems, performance is slower in developer mode because of additional file synchronization operations. However, you can improve performance by using the `manual-native` option or the `mutagen` option with file synchronization tools when you generate the `docker-compose.yml` file. See [Synchronizing data in Docker].
+## Performance considerations
+
+On macOS and Windows systems, performance is slower in developer mode because of additional file synchronization operations. However, you can improve performance by using either the `manual-native` or the `mutagen` file synchronization option when you generate the `docker-compose.yml` file. See [Synchronizing data in Docker].
 
 {: .bs-callout-info }
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 Large files (>1 GB) can cause a period of inactivity. DB dumps and archive files—ZIP, SQL, GZ, and BZ2—are not necessary to sync. You can find exclusions to these file types in the `mutagen.sh` file.
+
+## Launch Docker in developer mode
 
 {%include cloud/note-docker-config-reference-link.md%}
 **Prerequisites:**
@@ -46,9 +50,7 @@ To launch the Docker environment in developer mode:
    cp .docker/config.php.dist .docker/config.php
    ```
 
-1. If you selected the `manual-native` option for file synchronization, start the file synchronization using the following commands.
-
-   For the `manual-native` sync:
+1. If you selected the `manual-native` option, start the file synchronization using the following commands.
 
    ```bash
    ./bin/magento-docker copy-to --all

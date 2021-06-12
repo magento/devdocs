@@ -21,14 +21,16 @@ The release notes include:
 
 -  {:.new}<!--MCLOUD-7941-->**Added PHP 8.0**—Updated PHP to version 8.0, allowing you take advantage of all the new features and optimizations PHP 8.0 includes.
 -  {:.new}<!--MCLOUD-7921-->**Updated to Varnish 6.6 and Elasticsearch 7.11.2**—The following links provide release information on [Varnish Cache 6.6](https://varnish-cache.org/releases/rel6.6.0.html#rel6-6-0) and [Elasticsearch 7.11.2](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-7.11.2.html).
--  {:.new}<!--MCLOUD-7921-->**Added `ioncube` extension for PHP 7.4 image**—The `ioncube` extension has been re-added to the PHP 7.4 image after having been initially excluded from the PHP 7.3 to PHP 7.4 upgrade.
--  {:.new}<!--MCLOUD-7977-->**Added a new file sync option: `manual-native`**—The `manual-native` file synchronization option provides manual control over synchronization, which provides the best performance for macOs and Windows environments.
+-  {:.new}<!--PR #314-->**Added `ioncube` extension for PHP 7.4 image**—The `ioncube` extension has been re-added to the PHP 7.4 image after having been initially excluded from the PHP 7.3 to PHP 7.4 upgrade. *[Submitted by mattskr](https://github.com/magento/magento-cloud-docker/pull/314).*
+-  {:.new}<!--MCLOUD-7977-->**Added a new file sync option: `manual-native`**—The `manual-native` file synchronization option provides manual control over synchronization, which provides the best performance for macOs and Windows environments. Read about using the `manual-native` option in the [Developer mode](https://devdocs.magento.com/cloud/docker/docker-mode-developer.html) and [Synchronizing data in a Docker developer environment](https://devdocs.magento.com/cloud/docker/docker-syncing-data.html#file-synchronization-options) topics.
+-  {:.new}<!--PR #319-->**Removed volume deletions from `up` and `down` commands**—The `--volume` option was removed from the `bin/magento-docker up` and `bin/magento-docker down` commands, replaced by the new `bin/magento-docker init` command with a data loss warning. This change helps prevent the accidental data loss. *[Submitted by joeshelton-wagento](https://github.com/magento/magento-cloud-docker/pull/314).*
 -  {:.fix}<!--MCLOUD-7934-->**Updated `CN` value for the generated certificate**—Removed the hardcoded `CN` value from the Dockerfile. This value created a certificate error (`NET::ERR_CERT_INVALID`) that caused the `--host` option for the `ece-docker build:compose` command to be ignored.
+
 
 ## v1.2.2
 *Release date: April 20, 2021*<br/>
 
--  {:.new}<!--Issue #298-->**Updated `host.docker.internal` to be platform independent**—You can now create the same Docker Compose scripts for Ubuntu, Windows, and macOS. Using Xdebug on Ubuntu no longer requires a separate environment variable. [Fix submitted by Igor Vitol](https://github.com/magento/magento-cloud-docker/pull/299).*
+-  {:.new}<!--Issue #298-->**Updated `host.docker.internal` to be platform independent**—You can now create the same Docker Compose scripts for Ubuntu, Windows, and macOS. Using Xdebug on Ubuntu no longer requires a separate environment variable. *[Fix submitted by Igor Vitol](https://github.com/magento/magento-cloud-docker/pull/299).*
 -  {:.new}<!--Issue #299-->**Updated init-docker.sh**—Added the `mounts` object to the `MAGENTO_CLOUD_APPLICATION` environment variable. *[Fix submitted by Chiranjeevi](https://github.com/magento/magento-cloud-docker/pull/299).*
 -  {:.new}<!--Issue #300-->**Updated init-docker.sh**—Updated the `init-docker.sh` script with PHP 7.4 and Magento Cloud Docker 1.2.1 versions. *[Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/300).*
 -  {:.new}<!--MCLOUD-7548-->**Sodium enabled by default**—Enabled the `sodium` PHP extension by default within PHP Docker images.
