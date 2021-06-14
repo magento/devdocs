@@ -18,7 +18,7 @@ The release notes include:
 
 ## 3.3.0 of magento/product-recommendations for Magento Commerce 2.4.0
 
--  {:.new}Added support to standardized how Adobe collects behavioral data across multiple Adobe Commerce services and features. See the [readme](https://github.com/adobe/magento-storefront-event-collector/blob/main/README.md) to learn more.
+-  {:.new}Added support for Adobe Client Data Layer to standardize behavioral data collection across Adobe Commerce features and services. See the [readme](https://github.com/adobe/magento-storefront-event-collector/blob/main/README.md) to learn more.
 
 ## 3.2.6 of magento/product-recommendations for Magento Commerce 2.4.0
 
