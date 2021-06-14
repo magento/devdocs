@@ -185,7 +185,7 @@ var config = {
 
 ## Overwriting a mixin
 
-A mixin can be overwritten by another mixin, and can't be disabled separately.
+A mixin can be overwritten by another mixin and can't be disabled separately.
 
 ### Example
 
