@@ -21,6 +21,16 @@ Attribute | Data Type | Description | Default or example value
 `catalog_default_sort_by` | String | The default sort order of the search results list | `position`
 `category_fixed_product_tax_display_setting` | [FixedProductTaxDisplaySettings](#FixedProductTaxDisplaySettings) | Corresponds to the **Display Prices In Product Lists** field. It indicates how Fixed Product Tax information is displayed on category pages | FPT_DISABLED
 `category_url_suffix` | String | The suffix applied to category pages, such as `.htm` or `.html` | `.html`
+`check_money_order_enable_for_specific_countries` | Boolean | Indicates whether only specific countries can use this payment method | true or false
+`check_money_order_enabled` | Boolean | Indicates whether the Check/Money Order payment method is enabled | true or false
+`check_money_order_title` | String | The title of the Check/Money Order payment method displayed on the storefront | Check / Money order
+`check_money_order_new_order_status` | String | Status of new orders placed using the Check/Money Order payment method | `pending`
+`check_money_order_payment_from_specific_countries` | String | Comma-separated list of specific countries allowed to use the Check/Money Order payment method | null
+`check_money_order_make_check_payable_to` | String | The name of the party to whom the check must be payable | `TestCo`
+`check_money_order_send_check_to` | String | The full street address or PO Box where the checks are mailed | `TestCo\r\nAttn: Accounts Receivable\r\n11501 Domain Dr #110\r\nAustin, TX 78758`
+`check_money_order_min_order_total` | String | Minimum order amount required to qualify for the Check/Money Order payment method | 50
+`check_money_order_max_order_total` | String | Maximum order amount required to qualify for the Check/Money Order payment method | 500
+`check_money_order_sort_order` | Int | A number indicating the position of the Check/Money Order payment method in the list of available payment methods during checkout | 2
 `cms_home_page` | String | Returns the name of the CMS page that identifies the home page for the store | `home`
 `cms_no_cookies` | String | Identifies a specific CMS page that appears when cookies are not enabled for the browser | `enable-cookies`
 `cms_no_route` | String | Identifies a specific CMS page that you want to appear when a 404 “Page Not Found” error occurs | `no-route`
@@ -100,6 +110,13 @@ Attribute | Data Type | Description | Default or example value
 `website_name` | String | The label assigned to the website | Main Website
 `weight_unit` | String | The weight unit for products | `lbs`, `kgs`, or similar
 `welcome` | String | Text that appears in the header of the page and includes the name of customers who are logged in | Default welcome msg!
+`zero_subtotal_enable_for_specific_countries` | Boolean | Indicates whether only specific countries can use this payment method | true or false
+`zero_subtotal_enabled` | Boolean | Indicates whether the Zero Subtotal payment method is enabled | true or false
+`zero_subtotal_new_order_status` | String | Status of new orders placed using the Zero Subtotal payment method | `pending`
+`zero_subtotal_payment_action` | String | When the new order status is 'Processing', this can be set to 'authorize_capture' to automatically invoice all items that have a zero balance | `authorize_capture`
+`zero_subtotal_payment_from_specific_countries` | String | Comma-separated list of specific countries allowed to use the Zero Subtotal payment method | null
+`zero_subtotal_sort_order` | Int | A number indicating the position of the Zero Subtotal payment method in the list of available payment methods during checkout | 1
+`zero_subtotal_title` | String | The title of the Zero Subtotal payment method displayed on the storefront | `No Payment Information Required`
 
 ### SendFriendConfiguration attributes {#SendFriendConfiguration}
 
