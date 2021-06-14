@@ -243,16 +243,10 @@ Use the following commands to run all available tests for each PHP version:
    ./vendor/bin/codecept run -g php74 --steps
    ```
 
--  **PHP 8.0**
-
-   ```bash
-   ./vendor/bin/codecept run -g php80 --steps
-   ```
-
    If you are testing `{{site.data.var.ct-repo}}` code, use the following command:
 
    ```bash
-   ./vendor/bin/codecept run -x php71 -x php72 -x php73 -x php74 -x php80 --steps
+   ./vendor/bin/codecept run -x php71 -x php72 -x php73 -x php74 --steps
    ```
 
 {:.bs-callout-tip}
