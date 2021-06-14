@@ -89,34 +89,26 @@ The `EntityArrayValidator` class constructor restricts the number of inputs allo
 
 ### Maximum page size
 
-The `SearchCriteriaValidator` class constructor limits the maximum page size, which controls the pagination of various web API responses. By default, the maximum value is `300`. You can change the default in your module's `di.xml` file. The following example changes the limit to `900`:
+The `SearchCriteriaValidator` class constructor limits the maximum page size, which controls the pagination of various web API responses. By default, the maximum value is `300`. You can change the default in your module's `di.xml` file. The following example changes the limit to `200`:
 
 ```xml
 <type name="Magento\Framework\Webapi\Validator\SearchCriteriaValidator">
     <arguments>
-        <argument name="maximumPageSize" xsi:type="number">900</argument>
+        <argument name="maximumPageSize" xsi:type="number">200</argument>
     </arguments>
 </type>
 ```
 
-In GraphQL, the `SearchCriteriaValidator` class constructor limits the maximum page size in queries to `300` by default as well. You can change the default in the `di.xml` file. The following example changes the limit to `400`:
+[GraphQL security configuration]({{page.baseurl}}/graphql/security-configuration.html) describes how to set the maximum page size in GraphQL.
 
-```xml
-<type name="Magento\Framework\GraphQl\Query\Resolver\Argument\Validator\SearchCriteriaValidator">
-    <arguments>
-        <argument name="maxPageSize" xsi:type="number">900</argument>
-    </arguments>
-</type>
-```
+### Default page size
 
-### Minimum page size
-
-The `ServiceInputProcessor` class constructor limits the minimum page size, which controls the pagination of various web API responses. By default, the minimum value is `20`. You can change the default in your module's `di.xml` file. The following example changes the limit to `60`:
+The `ServiceInputProcessor` class constructor defines the default page size, which controls the pagination of various web API responses. You can change the default value of `20` in your custom module's `di.xml` file. The following example changes the default page size to `25`:
 
 ```xml
 <type name="Magento\Framework\Webapi\ServiceInputProcessor">
     <arguments>
-        <argument name="defaultPageSize" xsi:type="number">60</argument>
+        <argument name="defaultPageSize" xsi:type="number">25</argument>
     </arguments>
 </type>
 ```
