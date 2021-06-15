@@ -21,7 +21,7 @@ You can customize the default limits programmatically using [class constructor a
 
 ### Maximum parameter inputs
 
-The `EntityArrayValidator` class constructor limits the number of objects that can be given to inputs that represent arrays of objects. For example, the `/guest-carts/{cartId}/collect-totals` endpoint contains the input parameter `additionalData->extension_attributes->gift_messages`, which represents a list of gift message information objects.
+The `EntityArrayValidator` class constructor limits the number of objects that can be given to inputs that represent arrays of objects. For example, the `PUT /V1/guest-carts/{cartId}/collect-totals` endpoint contains the input parameter `additionalData->extension_attributes->gift_messages`, which represents a list of gift message information objects.
 
 There are four possible input arrays:
 
@@ -82,7 +82,7 @@ The `EntityArrayValidator` class constructor restricts the number of inputs allo
 ```xml
 <type name="Magento\Framework\Webapi\Validator\EntityArrayValidator">
     <arguments>
-        <argument name="complexArrayItemLimit" xsi:type="number">50</argument>
+        <argument name="complexArrayItemLimit" xsi:type="number">30</argument>
     </arguments>
 </type>
 ```
