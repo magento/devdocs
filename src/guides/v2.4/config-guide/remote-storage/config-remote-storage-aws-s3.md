@@ -56,8 +56,14 @@ If you use access and secret keys instead of [AWS IAM][] roles, you must include
 
 The S3 integration relies on being able to generate and store cached images on the local file system. Therefore, folder permissions for  `pub/media` or similar, should be the same as if you were using local storage.
 
+### File Operations
+
+It is highly recommended that you use Magentos file adapter methods in your coding or extension development, regardless of the file storage type.
+When using S3 for storage, you should take care not use any file PHP file I/O operations such as `copy`, `rename` or `file_put_contents`, as S3 files are not within the file system. Reference [DriverInterface.php][] for code examples.
+
 <!-- link definitions -->
 [AWS S3]: https://aws.amazon.com/s3
 [AWS IAM]: https://aws.amazon.com/iam/
 [options]: {{page.baseurl}}/config-guide/remote-storage/config-remote-storage.html#remote-storage-options
 [ngx repo]: https://github.com/anomalizer/ngx_aws_auth
+[DriverInterface.php]: https://github.com/magento/magento2/blob/2.4-develop/lib/internal/Magento/Framework/Filesystem/DriverInterface.php#L18
