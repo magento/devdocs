@@ -7,6 +7,9 @@ pages:
       url: /get-started/rest_front.html
       children:
 
+        - label: API security
+          url: /get-started/api-security.html
+
         - label: Construct a request
           url: /get-started/gs-web-api-request.html
 

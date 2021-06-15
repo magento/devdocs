@@ -1,7 +1,27 @@
 ---
 group: graphql
-title: Query security
+title: GraphQL security configuration
 ---
+
+The Framework and `GraphQl` module `di.xml` files define several security-related configuration values that you should review to ensure they align with types of mutations and queries that you run.
+
+To override these default values, create a custom module and provide a new value in the appropriate [di.xml]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html) file.
+
+## Framework configuration
+
+In GraphQL, the `SearchCriteriaValidator` class constructor limits the maximum page size in queries to `300` by default as well. You can change the default in the `di.xml` file. The following example changes the limit to `100`:
+
+```xml
+<type name="Magento\Framework\GraphQl\Query\Resolver\Argument\Validator\SearchCriteriaValidator">
+    <arguments>
+        <argument name="maxPageSize" xsi:type="number">100</argument>
+    </arguments>
+</type>
+```
+
+[API security]({{page.baseurl}}/get-started/api-security.html) describes additional arguments that are applicable to web APIs in general.
+
+## GraphQl module configuration
 
 The `GraphQl/etc/di.xml` file contains two arguments that can be overridden to enhance security and prevent performance bottlenecks:
 
@@ -10,9 +30,7 @@ Attribute | Default value | Description
 `queryComplexity` | 300 | Defines the maximum number of fields, objects, and fragments that a query can contain.
 `queryDepth` | 20 | Defines the maximum depth of nodes that query can return.
 
-To override these default values, create a custom module and provide a new value in the module's [di.xml]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html).
-
-## Query complexity
+### Query complexity
 
 A complex GraphQL query, such as the [`cart`]({{page.baseurl}}/graphql/queries/cart.html) or [`products`]({{page.baseurl}}/graphql/queries/products.html) query, can potentially generate a heavy workload on the server. Complex queries can potentially be used to create distributed denial of service (DDoS) attacks by overloading the server with specious requests.
 
@@ -60,7 +78,7 @@ Creating the `name1` alias did not cause the system to double count the entry.
 
 If the count does not exceed the threshold set by the `queryComplexity` attribute, Magento validates and processes the query.
 
-## Query depth
+### Query depth
 
 The `queryDepth` attribute specifies the maximum depth a query can return. This can be an issue for queries that return objects that show a hierarchy, such as [`CategoryTree`]({{page.baseurl}}/graphql/queries/categories.html), or queries that return detailed data on complex [products]({{page.baseurl}}/graphql/queries/products.html). The default value of 20 allows for deep hierarchies and products, but you might want to reduce this number if you know that legitimate queries will never reach that depth.
 
