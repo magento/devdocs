@@ -19,6 +19,14 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.0.24
+
+-  **MDVA-37779** _(for Magento `>=2.4.2 <=2.4.4`)_-Fixes the issue with adding a configurable product to cart via GraphQL when website ID does not coincide with store ID.
+-  **MDVA-36832** _(for Magento `>=2.3.4 <=2.4.2-p1`)_-Fixes the issue where images duplicate on pages when view width is 768px.
+-  **MDVA-37874** _(for Magento `>=2.3.6 <=2.3.7 || >=2.4.1 <=2.4.2-p1`)_-Fixes the issue where 'Fixed discount amount for whole cart' is incorrectly applied to a bundle product containing more than one option.
+-  **MDVA-37913** _(for Magento `>=2.3.0 <=2.4.0-p1`)_-Fixes the issue where downloadable links disappear if the downloadable product gets updated via API.
+-  **MDVA-34330** _(for Magento `>=2.3.1 <=2.4.2-p1`)_-Fixes the issue where orders in the Orders grid are not filtered according to admin timezone.
+
 ## v1.0.23
 
 -  **MDVA-37478** _(for Magento `>=2.3.0 <=2.3.7`)_-Fixes the issue where Magento throws an error when creating a partial invoice for orders placed with the "Payment on Account" payment method through REST API.
