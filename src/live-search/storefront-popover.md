@@ -11,14 +11,6 @@ The Live Search popover can be configured to display "search as you type" result
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
 
-## Disabling the popover
-
-To disable the popover and restore standard [Quick Search](https://docs.magento.com/user-guide/catalog/search-quick.html) functionality, enter the following command:
-
-```text
-php bin/magento module:disable Magento_LiveSearchStorefrontPopover
-```
-
 ## Styling popover elements
 
 Elements of the popover can be styled using CSS classes. For example, the following declarations change the background color of the popover container and footer.
@@ -33,57 +25,59 @@ Elements of the popover can be styled using CSS classes. For example, the follow
 }
 ```
 
-For more information about styling storefront elements, refer to [Cascading style sheets (CSS)]({{ page.baseurl }}/guides/v2.4/frontend-dev-guide/css-topics/css-overview.html) in the Adobe Commerce [Frontend Developers Guide]({{ page.baseurl }}/guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html).
+For more information about styling storefront elements, refer to [Cascading style sheets (CSS)]({{ page.baseurl }}/guides/v2.4/frontend-dev-guide/css-topics/css-overview.html) in the {{site.data.var.ee}} [Frontend Developers Guide]({{ page.baseurl }}/guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html).
 
-### Popover class selectors
+### Class selectors
 
-The following class selectors style the popover container and footer.
+The following class selectors can be used to style the container, suggestion, and product elements in the popover.
 
-`livesearch.popover-container`
+- `.livesearch.popover-container`
+- `.livesearch.view-all-footer`
+- `.livesearch.suggestions-container`
+- `.livesearch.suggestions-header`
+- `.livesearch.suggestion`
+- `.livesearch.products-container`
+- `.livesearch.product-result`
+- `.livesearch.product-name`
+- `.livesearch.product-price`
+
+### Container Class Selectors
 
 ![Popover container]({{ page.baseurl }}/live-search/images/livesearch-popover-container.png)
-_Popover container_
-
-`.livesearch.view-all-footer`
+_.livesearch.popover-container_
 
 ![View all footer]({{ page.baseurl }}/live-search/images/livesearch-view-all-footer.png)
-_"View all items" link_
+_.livesearch.view-all-footer_
 
-### Suggestion class selectors
-
-`.livesearch.suggestions-container`
+### Suggestion Class Selectors
 
 ![Suggestions container]({{ page.baseurl }}/live-search/images/livesearch-suggestions-container.png)
-_Suggestions container_
-
-`.livesearch.suggestions-header`
+_.livesearch.suggestions-container_
 
 ![Suggestions header]({{ page.baseurl }}/live-search/images/livesearch-suggestions-header.png)
-_Suggestions header_
-
-`.livesearch.suggestion`
+_.livesearch.suggestions-header_
 
 ![Suggestion]({{ page.baseurl }}/live-search/images/livesearch-suggestion.png)
-_Suggestion_
+_.livesearch.suggestion_
 
-### Product class selectors
+### Product Class Selectors
 
-`.livesearch.products-container`
-
-![Suggestion]({{ page.baseurl }}/live-search/images/livesearch-product-container.png)
-_Products container_
-
-`.livesearch.product-result`
+![Product container]({{ page.baseurl }}/live-search/images/livesearch-product-container.png)
+_.livesearch.products-container_
 
 ![Product result]({{ page.baseurl }}/live-search/images/livesearch-product-result.png)
-_Product result_
-
-`.livesearch.product-name`
+_.livesearch.product-result_
 
 ![Product name]({{ page.baseurl }}/live-search/images/livesearch-product-name.png)
-_Product name_
-
-`.livesearch.product-price`
+_.livesearch.product-name_
 
 ![Product price]({{ page.baseurl }}/live-search/images/livesearch-product-price.png)
-_Product price_
+_.livesearch.product-price_
+
+## Disabling the popover
+
+To disable the popover and restore standard [Quick Search](https://docs.magento.com/user-guide/catalog/search-quick.html) functionality, enter the following command:
+
+```text
+php bin/magento module:disable Magento_LiveSearchStorefrontPopover
+```
