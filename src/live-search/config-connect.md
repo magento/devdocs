@@ -16,7 +16,7 @@ The developer or SI configures the SaaS Environment as described in the Commerce
 
 ## Catalog data sync
 
-Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. After configuring Commerce Services with your API key and SaaS Environment, you must go to Live Search in the Adobe Commerce Admin and complete any [configuration action](https://docs-beta.magento.com/user-guide/live-search/onboarding.html) to trigger indexation. The synchronization between the product catalog and the catalog service begins after Live Search is connected.
+Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. The synchronization between the product catalog and the catalog service begins after Live Search is connected.
 
 It can take up to 24 hours to export catalog data from your Adobe Commerce instance and for it to be indexed by Live Search.
 
