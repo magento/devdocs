@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.4.3 Release Notes
 ---
 
-Magento Open Source 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Elasticsearch 7.10.x is supported. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
+Magento Open Source 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
 This release includes over 280 new fixes to core code and 35 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
@@ -76,8 +76,6 @@ This release contains enhancements that improve the quality of the framework and
 ### Platform enhancements
 
 Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future compatibility with PHP 8.x.
-
-*  [**Elasticsearch 7.10.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). (Magento 2.4.x remains compatible with Elasticsearch 7.4 and later.) <!--- MC-41128-->
 
 *  Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
 
@@ -1233,6 +1231,14 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 <!--- MC-34456-->
 
 *  Shoppers can now add related products to their shopping cart from a wishlist. Previously, Magento added only the configurable product, not the configurable product and its related products when a shopper clicked the **Select all** link of the Related Products section. [GitHub-32274](https://github.com/magento/magento2/issues/32274)
+
+## Known issues
+
+**Known issue**: _JavaScript error when ReCAPTCHA is disabled_. If ReCAPTCHA is disabled for checkout, checkout proceeds, but Magento displays an `Uncaught TypeError` error in the console log:  This issue will be fixed in a later release. <!--- MC-42589—>
+
+**Known issue**: _Content-Security-Policy error_. The storefront displays the following error in the console log: `The Content-Security-Policy directive 'frame-ancestors' does not support the source expression ''unsafe-inline’`. Storefront performance is not affected. <!--- MC-42613—>
+
+**Known issue**: _Anomalies with PayLater Message display of gift card amounts_. PayLater Message now displays the correct selected gift card value on the product page when multiple card amounts are configured for purchase. <!--- MC-425499—>
 
 ## Community contributions
 

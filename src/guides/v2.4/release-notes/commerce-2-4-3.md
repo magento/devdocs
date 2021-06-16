@@ -3,7 +3,7 @@ group: release-notes
 title: Adobe Commerce 2.4.3 Release Notes
 ---
 
-Adobe Commerce 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Elasticsearch 7.10.x is supported. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
+Adobe Commerce 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
 This release includes over 370 new fixes to core code and 33 security enhancements. All known issues identified in Magento 2.4.2 have been fixed in this release.
 
@@ -74,8 +74,6 @@ This release contains enhancements that improve the quality of the framework and
 ### Platform enhancements
 
 Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future compatibility with PHP 8.x.
-
-*  [**Elasticsearch 7.10.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). (Magento 2.4.x remains compatible with Elasticsearch 7.4 and later.) <!--- MC-41128-->
 
 *  Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
 
@@ -175,7 +173,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The `bin/magento setup:db:status` command now returns a message indicating that everything is up-to-date after a successful upgrade. Previously, Magento displayed this error: `Declarative Schema is not up to date`.
 
-<!--- MC-40031-->
+<!--- MC-40031 ENGCOM-8088-->
 
 *  Configuration values are now preserved on form reload when the creation of a new configurable product fails. Previously, values were lost during form reload, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
 
@@ -303,7 +301,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento now displays the Terms and Conditions validation message in the relevant block only when a shopper clicks the **Place Order** button. Previously, Magento displayed this message in the Apply Discount Code block whenever a shopper changed payment method in the checkout workflow: `The order wasn't placed. First, agree to the terms and conditions, then try placing your order again`.
 
-<!--- MC-40271-->
+<!--- MC-40271 magento/partners-magento2ee#476-->
 
 *  You are now redirected to the checkout page as expected after adding a bundle product to the cart from a Schedule Update preview and clicking the cart.
 
@@ -315,7 +313,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento now discards changes to the billing address form on the checkout payment step if the shopper fails to click the **Update** button and returned to the shipping step.
 
-<!--- MC-39517-->
+<!--- MC-39517  magento/partners-magento2ee#460-->
 
 *  Magento now displays an informative error message and does not update product quantity when a shopper adds an invalid product quantity and clicks the **Update items and Quantities** button on the Manage Shopping cart page. Previously, Magento upgraded the product quantity and did not display an error message.
 
@@ -343,7 +341,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  All paid payment transactions created by guests are now saved to the database and visible in the Admin as expected. Previously, only a small subset of concurrent orders were saved in the database, and most orders were lost due to timeouts that resulted from database locks.
 
-<!--- MC-23989-->
+<!--- MC-23989 magento/magento2#32251 -->
 
 *  Magento now correctly displays inline welcome messages that contain special characters when a guest places a product in the mini cart. Previously, Magento did not add the product to the mini cart or display the welcome message. [GitHub-32250](https://github.com/magento/magento2/issues/32250)
 
@@ -393,7 +391,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento now successfully deletes a product media image after deleting a product. Previously, the product media image remained in the folder after successful deletion of the product.
 
-<!--- MC-40811-->
+<!--- MC-40811 magento/magento2#32042-->
 
 *  Page layout now updates as expected when you create or edit a product in the Admin and then create a Schedule Design Update. [GitHub-32007](https://github.com/magento/magento2/issues/32007)
 
@@ -645,7 +643,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento now sends email as expected in multi-site deployments where not all websites have enabled asynchronous email sending. Previously, if at least one website had this setting disabled, email was not sent from any website, even when enabled. Invoice, Shipment, and Credit Memo emails had similar issues. However, Order Comments, Invoice Comments, Shipment Comments, and Credit Memo Comments emails were sent successfully. [GitHub-31950](https://github.com/magento/magento2/issues/31950)
 
-<!--- MC-34323-->
+<!--- MC-34323 magento/partners-magento2ee#505-->
 
 *  The email message that Magento sends when you share a gift registry from the Admin no contains a valid link to the registry location. Previously, taking this link resulted in a 404 error. [GitHub-504](https://github.com/magento/partners-magento2ee/issues/504)
 
@@ -721,11 +719,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  You can no longer change the scope of the `media_gallery` attribute. Previously, when you changed the scope of the `media_gallery` attribute back to `global`, Magento threw an error.
 
-<!--- MC-36818-->
+<!--- MC-36818  magento/partners-magento2ee#470-->
 
 *  Related products that were added as a scheduled update are no longer displayed on a storefront product page after the end date of the update. [GitHub-469](https://github.com/magento/partners-magento2ee/issues/469)
 
-<!--- MC-34489-->
+<!--- MC-34489 magento/partners-magento2ee#491-->
 
 *  Magento now displays an accurate, informative message when you click on **Manage Items** on the My Account Gift Registry page and registry products are out-of-stock. Previously, Magento threw this error: `Error: Call to a member function getId() …`. [GitHub-490](https://github.com/magento/partners-magento2ee/issues/490)
 
@@ -781,7 +779,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 ### Gift registry
 
-<!--- MC-33057-->
+<!--- MC-33057 magento/partners-magento2ee#467-->
 
 *  **Event date** values are now the same on the storefront and Admin during gift registry creation or editing. Previously, each time you edited and saved the gift registry, Magento adjusted the **Event date** one day backward on both the storefront and Admin. [GitHub-466](https://github.com/magento/partners-magento2ee/issues/466)
 
@@ -803,7 +801,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento now removes gift wrapping charges from the shopping cart when all products have been removed.
 
-<!--- MC-32259-->
+<!--- MC-32259 magento/partners-magento2ee#500-->
 
 *  Credit Memo totals are now correct when the credit memo contains gift wrap and configurable product charges. Previously, the gift wrap tax amount was not always included in the credit memo total. [GitHub-34](https://github.com/magento/partners-magento2ee/issues/34)
 
@@ -831,7 +829,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Empty requests to GraphQL now throw response code 200 instead of 500. Previously, the GraphQL parser threw an exception before the query result was generated.
 
-<!--- MC-40867-->
+<!--- MC-40867 magento/partners-magento2ee#532--->
 
 *  The `applyRewardPointsToCart` mutation now updates a cart’s grand total to accurately reflect the value of the reward points deducted. [GitHub-486](https://github.com/magento/partners-magento2ee/issues/486)
 
@@ -861,7 +859,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The Category IDs filter for product entities in the Export page Entity Attributes grid now works as expected.
 
-<!--- MC-41439-->
+<!--- MC-41439 ENGCOM-9005-->
 
 *  Grouped product stock status now updates as expected to out-of-stock when all children products are out-of-stock.
 
@@ -1127,7 +1125,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  The credit memo grid now displays the correct currency symbol when **Website** scope is used for a **Price** attribute in a multi-store deployment.
 
-<!--- MC-40013-->
+<!--- MC-40013 ENGCOM-8781-->
 
 *  Payment methods radio buttons no longer disappear on the Payment & Shipping Information section of the checkout workflow after the Admin Create New Order page is reloaded. [GitHub-32106](https://github.com/magento/magento2/issues/32106)
 
@@ -1241,11 +1239,11 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Magento now takes into account relevant cart price rule discounts when determining whether an order meets conditions for free DHL shipping.
 
-<!--- MC-40702-->
+<!--- MC-40702 ENGCOM-8728-->
 
 *  Shipping labels now use base currency as expected instead of order currency for stores that support multiple currencies when an order is placed in a non-base currency.[GitHub-31891](https://github.com/magento/magento2/issues/31891)
 
-<!--- MC-40678-->
+<!--- MC-40678 magento/magento2#31925-->
 
 *  Magento now displays the correct order subtotal when a shopper returns to the cart page during checkout after navigating away from the multi-shipping page. [GitHub-31889](https://github.com/magento/magento2/issues/31889)
 
@@ -1295,7 +1293,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  The **Use default value** checkbox for a product remains checked after a scheduled update is checked before the update.
 
-<!--- MC-40588-->
+<!--- MC-40588 magento/partners-magento2ee#463-->
 
 *  Catalog price rules now apply as expected to products with undefined attribute values. Previously, discounts that were created through a catalog price rule were not applied to products with undefined attributes. [GitHub-461](https://github.com/magento/partners-magento2ee/issues/461)
 
@@ -1307,7 +1305,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Tier prices are no longer removed when a schedule update is created for a specific website.
 
-<!--- MC-39784-->
+<!--- MC-39784 magento/partners-magento2ee#475-->
 
 *  You can now save a product from the Downloadable Product page after creating a future staging update with an end date. Previously, Magento did not save the product and displayed this message: `The downloadable link isn't related to the product. Verify the link and try again`. [GitHub-474](https://github.com/magento/partners-magento2ee/issues/474)
 
@@ -1317,7 +1315,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Magento no longer treats a string of `0` as an empty value when displaying a store home page. Previously, Magento treated an integer value at the start of a request path as a store ID, which had unintended effects on SEO.
 
-<!--- MC-40313-->
+<!--- MC-40313  magento/magento2#31970-->
 
 *  Plugins for `\Magento\Framework\App\ActionInterface` under `lib/internal/Magento/Framework/App/Action/Plugin` have been removed to keep with the guideline that plugins should be used to customize behavior of one module from another module. [GitHub-28050](https://github.com/magento/magento2/issues/28050)
 
@@ -1365,7 +1363,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 ### Translation and locales
 
-<!--- MC-23553-->
+<!--- MC-23553 ENGCOM-8839-->
 
 *  Brackets that are added to the strings are no longer escaped when inline translation is configured. Previously, the `escapeHtmlAttr` method converted the brackets into HTML entity codes.
 
@@ -1395,15 +1393,15 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Anomalies with the display of the shopping cart when zoomed have been resolved. Previously, display elements overlapped when this page was zoomed.
 
-<!--- MC-38235-->
+<!--- MC-38235 magento/partners-magento2ee#492 -->
 
 *  Alignment issues with the tabs on the Admin invitation page (Admin **Marketing** > **Private Sales** > **Invitations**) have been resolved. Previously, the Tab display for invitations that had been accepted by a customer were misaligned. [GitHub-333](https://github.com/magento/partners-magento2ee/issues/333)
 
-<!--- MC-38226-->
+<!--- MC-38226 magento/magento2#32008-->
 
 *  The order review page displayed during checkout with PayPal Express Checkout now loads successfully. Previously, the template contained the unused **Update delivery method** button, which was only partially hidden by the script during page rendering.
 
-<!--- MC-37941-->
+<!--- MC-37941 magento/magento2#31892-->
 
 *  Rating stars and review text in the Customer Reviews section of the product page are now properly spaced when lengthy rating names are present.
 
@@ -1439,7 +1437,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 ### User
 
-<!--- MC-40777-->
+<!--- MC-40777  magento/magento2#31998-->
 
 *  You can now save an effective new user role (Admin **System** > **Permissions** > **User Roles**) with the entire `Catalog` tree selected excluding `Edit Product Design` ( **Catalog** > **Inventory** > **Products** > **Edit Product Design**). Previously, Magento did not save product changes that were made by a user in this role and displayed this error: `Not allowed to edit the product's design attributes`.
 
@@ -1499,7 +1497,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 ### Wishlist
 
-<!--- MC-40651-->
+<!--- MC-40651 ENGCOM-8769-->
 
 *  Magento no longer resets a configurable product’s configuration settings when you click the **Edit item** button for the product from a wishlist. [GitHub-32119](https://github.com/magento/magento2/issues/32119)
 
@@ -1518,6 +1516,14 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 <!--- MC-34456-->
 
 *  Shoppers can now add related products to their shopping cart from a wishlist. Previously, Magento added only the configurable product, not the configurable product and its related products when a shopper clicked the **Select all** link of the Related Products section. [GitHub-32274](https://github.com/magento/magento2/issues/32274)
+
+## Known issues
+
+**Known issue**: _JavaScript error when ReCAPTCHA is disabled_. If ReCAPTCHA is disabled for checkout, checkout proceeds, but Magento displays an `Uncaught TypeError` error in the console log:  This issue will be fixed in a later release. <!--- MC-42589—>
+
+**Known issue**: _Content-Security-Policy error_. The storefront displays the following error in the console log: `The Content-Security-Policy directive 'frame-ancestors' does not support the source expression ''unsafe-inline’`. Storefront performance is not affected. <!--- MC-42613—>
+
+**Known issue**: _Anomalies with PayLater Message display of gift card amounts_. PayLater Message now displays the correct selected gift card value on the product page when multiple card amounts are configured for purchase. <!--- MC-425499—>
 
 ## Community contributions
 
