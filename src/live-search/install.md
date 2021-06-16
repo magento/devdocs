@@ -4,24 +4,24 @@ title: Install Live Search
 ee_only: True
 ---
 
-Live Search is a set of standalone meta packages that replaces standard Adobe Commerce search capabilities.
+Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ee}} search capabilities.
 
 |**Package**|**Description**|
 |---|---|
-|`module-live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides access to a read-only GraphQL playground to test queries from the Adobe Commerce Admin. |
-|`module-live-search-adapter`|Routes search requests from the storefront to the Live Search service and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs-beta.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs-beta.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
+|`module-live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides access to a read-only GraphQL playground to test queries from the {{site.data.var.ee}} Admin. |
+|`module-live-search-adapter`|Routes search requests from the storefront to the Live Search service and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
 
 ## Requirements
 
--  Adobe Commerce 2.4.x
+-  {{site.data.var.ee}} 2.4.x
 -  PHP 7.3 / 7.4
 -  Composer
 
 ## Step 1: Install Live Search
 
-Adobe Commerce is installed first without Live Search. After the installation, update the project’s root Composer `.json` file to require the `live-search` package.
+{{site.data.var.ee}} is installed first without Live Search. After the installation, update the project’s root Composer `.json` file to require the `live-search` package.
 
-1. Install Adobe Commerce 2.4.x without Live Search.
+1. Install {{site.data.var.ee}} 2.4.x without Live Search.
 
 1. Update `composer.json` to require the `live-search` package as follows:
 
