@@ -31,15 +31,15 @@ For more information about styling storefront elements, refer to [Cascading styl
 
 The following class selectors can be used to style the container, suggestion, and product elements in the popover.
 
-- `.livesearch.popover-container`
-- `.livesearch.view-all-footer`
-- `.livesearch.suggestions-container`
-- `.livesearch.suggestions-header`
-- `.livesearch.suggestion`
-- `.livesearch.products-container`
-- `.livesearch.product-result`
-- `.livesearch.product-name`
-- `.livesearch.product-price`
+-  `.livesearch.popover-container`
+-  `.livesearch.view-all-footer`
+-  `.livesearch.suggestions-container`
+-  `.livesearch.suggestions-header`
+-  `.livesearch.suggestion`
+-  `.livesearch.products-container`
+-  `.livesearch.product-result`
+-  `.livesearch.product-name`
+-  `.livesearch.product-price`
 
 ### Container Class Selectors
 
