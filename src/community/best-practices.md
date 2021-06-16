@@ -31,7 +31,7 @@ The DevDocs and Magento teams verified and provide the following best practices 
 *  [Programming Best Practices]({{ site.baseurl }}/guides/v2.4/ext-best-practices/extension-coding/common-programming-bp.html)
 *  [Observers Best Practices]({{ site.baseurl }}/guides/v2.4/ext-best-practices/extension-coding/observers-bp.html)
 *  [Theme Development Best Practices]({{ site.baseurl }}/guides/v2.4/frontend-dev-guide/theme-best-practice.html)
-*  [Performance Best Practices]({{ site.baseurl }}/guides/v2.4/performance-best-practices//introduction.html)
+*  [Performance Best Practices]({{ site.baseurl }}/guides/v2.4/performance-best-practices/introduction.html)
 *  [Best Practices for Store Configuration]({{ site.baseurl }}/cloud/configure/configure-best-practices.html) for {{ site.data.var.ece }}
 *  [Deployment Process]({{ site.baseurl }}/cloud/reference/discover-deploy.html) for {{ site.data.var.ece }}
 
