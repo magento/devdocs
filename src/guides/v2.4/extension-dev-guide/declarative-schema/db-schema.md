@@ -198,7 +198,7 @@ To keep entity identifiers as immutable values, the declarative schema does not 
 Example:
 
 ```xml
-<constraint xsi:type="foreign" referenceId="COMPANY_CREDIT_COMPANY_ID_DIRECTORY_COUNTRY_COUNTRY_ID" table="company_credit" column="company_id" referenceTable="company" referenceColumn="entity_id" onDelete="CASCADE"/>
+<constraint xsi:type="foreign" referenceId="COMPANY_CREDIT_COMPANY_ID_COMPANY_ENTITY_ID" table="company_credit" column="company_id" referenceTable="company" referenceColumn="entity_id" onDelete="CASCADE"/>
 ```
 
 #### `index` subnode
@@ -262,6 +262,9 @@ In the following example, the `declarative_table` table was completely removed f
 -    </table>
 </schema>
 ```
+
+{:.bs-callout-info}
+When dropping a table, do not remove it from the `db_schema_whitelist.json` file, otherwise it will not be dropped.
 
 ### Rename a table
 
