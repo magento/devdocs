@@ -58,8 +58,8 @@ The S3 integration relies on being able to generate and store cached images on t
 
 ### File Operations
 
-It is highly recommended that you use Magentos file adapter methods in your coding or extension development, regardless of the file storage type.
-When using S3 for storage, you should take care not use any file PHP file I/O operations such as `copy`, `rename` or `file_put_contents`, as S3 files are not within the file system. Reference [DriverInterface.php][] for code examples.
+It is highly recommended that you use Magento's file adapter methods in your coding or extension development, regardless of the file storage type.
+When using S3 for storage, you should take care not use any native PHP file I/O operations such as `copy`, `rename` or `file_put_contents`, as S3 files are not within the file system. Reference [DriverInterface.php][] for code examples.
 
 <!-- link definitions -->
 [AWS S3]: https://aws.amazon.com/s3
