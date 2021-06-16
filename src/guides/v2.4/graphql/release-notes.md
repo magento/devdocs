@@ -7,7 +7,7 @@ title: Release Notes
 
 GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://github.com/magento/pwa-studio) (PWA), and mobile apps for Magento.
 
-To take part and contribute, see the [Magento 2](https://github.com/magento/magento2) repository and look for issues with the `Project: GraphQL` tag. Join us in our [Slack](https://magentocommeng.slack.com/messages/C8076E0KS) channel (or [self signup](https://opensource.magento.com/slack)) to discuss the project.
+To take part and contribute, see the [Magento 2](https://github.com/magento/magento2) repository and look for issues with the `Project: GraphQL` tag. Join us in our [Slack](https://magentocommeng.slack.com/archives/C8076E0KS) channel (or [self signup](https://opensource.magento.com/slack)) to discuss the project.
 
 These release notes can include:
 
