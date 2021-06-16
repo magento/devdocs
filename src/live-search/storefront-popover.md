@@ -9,7 +9,7 @@ When Live Search is installed, a popover appears in the storefront as shoppers t
 The Live Search popover can be configured to display "search as you type" results for one character or more. The minimum number of characters required for a valid search string is determined by the Catalog Search [Minimal Query Length](https://docs.magento.com/user-guide/catalog/search-configuration.html) configuration setting.
 
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
-_"Search as you type" popover_
+_Live Search storefront popover_
 
 ## Disabling the popover
 
