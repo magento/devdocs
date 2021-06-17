@@ -14,63 +14,16 @@ This topic describes how to add custom address validation in to the Magento chec
 
 To change existing address validations to the Magento checkout, do the following steps:
 
-## Step 1: Create a new module
+1. [Create a new module](#create-module).
+1. [Create a di.xml file](#add-dixml-file).
+1. [Adding validation to Shipping Address](#add-shipping-validation).
+1. [Adding validation to Billing Address](#add-billing-validation).
 
-```bash
-cd <magento2_root>/app/code
-```
+## Step 1: Create a new module {#create-module}
 
-```bash
-mkdir Vendor
-```
+[Create a new module](https://devdocs.magento.com/videos/fundamentals/create-a-new-module/) named `Vendor/AddressRestriction` and register it.
 
-```bash
-mkdir Vendor/AddressRestriction
-```
-
-Now, create two files:
-
-`etc/module.xml`
-
-{% collapsible Show code %}
-
-```xml
-<?xml version="1.0"?>
-<!--
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-  <module name="Vendor_AddressRestriction" setup_version="0.0.1">
-  </module>
-</config>
-```
-
-{% endcollapsible %}
-
-`registration.php`
-
-{% collapsible Show code %}
-
-```php?start_inline=1
-<?php
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Vendor_AddressRestriction',
-    __DIR__
-);
-```
-
-{% endcollapsible %}
-
-## Step 2 Create a di.xml file.
+## Step 2 Create a di.xml file {#add-dixml-file}
 
 Create the file `app/code/Vendor/AddressRestriction/etc/di.xml`:
 
@@ -83,10 +36,10 @@ Create the file `app/code/Vendor/AddressRestriction/etc/di.xml`:
 </config>
 ```
 
-## Step 3 Adding validation to Shipping Address
+## Step 3 Adding validation to Shipping Address {#add-shipping-validation}
 
-Create the `app/code/Vendor/AddressRestriction/Block/LayoutProcessor.php`;
-    
+Create the file `app/code/Vendor/AddressRestriction/Block/LayoutProcessor.php`;
+ 
 ```php?start_inline=1
 <?php
 namespace Vendor\AddressRestriction\Block;
@@ -140,7 +93,7 @@ class LayoutProcessor
 }   
 ```
 
-## Step 4 Adding validation to Billing Address
+## Step 4 Adding validation to Billing Address {#add-billing-validation}
 
 ```php?start_inline=1
 $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
@@ -174,25 +127,4 @@ $jsLayout['components']['checkout']['children']['steps']['children']['billing-st
 $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
         ['shippingAddress']['children']['shipping-address-fieldset']
         ['children']['street']['children'][0]['validation']['max_text_length'] = 40;
-        
 ```
-
-## Step 5 Now install the new module like
-
-1. Install the module:
-    
-    ```bash
-    bin/magento setup:upgrade
-    ```
-
-1. Compile the code with:
-
-    ```bash
-    bin/magento setup:di:compile
-    ```
-
-1. Next, deploy static content:
-
-   ```bash
-   bin/magento setup:static-content:deploy
-   ```
