@@ -1234,11 +1234,11 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 ## Known issues
 
-**Known issue**: _JavaScript error when ReCAPTCHA is disabled_. If ReCAPTCHA is disabled for checkout, checkout proceeds, but Magento displays an `Uncaught TypeError` error in the console log:  This issue will be fixed in a later release. <!--- MC-42589—>
+**Known issue**: _JavaScript error when reCAPTCHA is disabled_. If reCAPTCHA is disabled for checkout, checkout proceeds, but Magento displays an `Uncaught TypeError` error in the console log:  This issue will be fixed in a later release. <!--- MC-42589—>
 
-**Known issue**: _Content-Security-Policy error_. The storefront displays the following error in the console log: `The Content-Security-Policy directive 'frame-ancestors' does not support the source expression ''unsafe-inline’`. Storefront performance is not affected. <!--- MC-42613—>
+**Known issue**: _Content-Security-Policy error_. The storefront displays the following error in the console log: `The Content-Security-Policy directive frame-ancestors does not support the source expression unsafe-inline`. Storefront performance is not affected. <!--- MC-42613—>
 
-**Known issue**: _Anomalies with PayLater Message display of gift card amounts_. PayLater Message now displays the correct selected gift card value on the product page when multiple card amounts are configured for purchase. <!--- MC-425499—>
+**Known issue**: _Anomalies with PayPal Credit display of gift card amounts_. When PayPal Credit is enabled and multiple gift card amounts are configured, if a buyer changes the amount for the value of a gift card, the storefront does not update the amount for installment payments. <!--- MC-42499-->
 
 ## Community contributions
 
