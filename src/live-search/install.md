@@ -46,7 +46,7 @@ The following Live Search dependencies are captured by Composer:
 
 ## Step 2: Disable Elasticsearch modules
 
-Because Live Search relies on a backend search service, it is no longer necessary to host and configure Elasticsearch. The exception is if Elasticsearch is required by other extensions or customizations that have been added to your {{site.data.var.ee}} installation.
+The modules that allow the native {{site.data.var.ee}} search and category browse pages function must be disabled for Live Search to work. Because Live Search relies on a backend search service, it is no longer necessary to host and configure Elasticsearch. The exception is if Elasticsearch is required by other extensions or customizations that have been added to your {{site.data.var.ee}} installation.
 
 1. Check your `app/etc/config.php` file and ensure that the following `ElasticSearch` modules are disabled:
 
