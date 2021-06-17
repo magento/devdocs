@@ -10,6 +10,8 @@ return_to:
   url: rest/tutorials/index.html
 functional_areas:
   - Integration
+contributor_name: Ziffity
+contributor_link: https://ziffity.com/
 ---
 
 This tutorial shows a system integrator how to use Magento REST APIs to create a _bundle product_.

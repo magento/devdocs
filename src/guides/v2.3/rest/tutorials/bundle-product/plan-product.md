@@ -11,6 +11,8 @@ return_to:
   url: rest/tutorials/index.html
 functional_areas:
   - Integration
+contributor_name: Ziffity
+contributor_link: https://ziffity.com/
 ---
 
 To create a bundle product programmatically, you'll need to know the following:
