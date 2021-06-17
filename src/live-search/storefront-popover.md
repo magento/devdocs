@@ -78,6 +78,6 @@ _.livesearch.product-price_
 
 To disable the popover and restore standard [Quick Search](https://docs.magento.com/user-guide/catalog/search-quick.html) functionality, enter the following command:
 
-```text
+```bash
 php bin/magento module:disable Magento_LiveSearchStorefrontPopover
 ```
