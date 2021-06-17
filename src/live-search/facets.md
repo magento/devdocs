@@ -52,4 +52,4 @@ Product attributes have some [storefront properties](https://docs.magento.com/us
 |---|---|---|
 | Sortable | Used for Sorting in Product Listing | `price`|
 | Searchable | Use in Search | `price` <br />`sku`<br />`name`|
-| FilterableInSearch | Use in Layered Navigation - Filterable (with results)| `price`<br />`visibility`<br />[category_name]|
+| FilterableInSearch | Use in Layered Navigation - Filterable (with results)| `price`<br />`visibility`<br />`category_name`|
