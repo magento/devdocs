@@ -76,8 +76,7 @@ The `sku` specified in the payload is a string that is appended to the `option` 
 "27"
 ```
 
-* Returns random integer.
-
+Returns random integer.
 
 ## Verify this step
 
