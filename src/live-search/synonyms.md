@@ -20,7 +20,7 @@ A one-way synonym is a subset of a keyword, but with a more granular meaning. Fo
 
 ## Setup and configuration
 
-Live Search synonyms are created and maintained from the {{site.data.var.ee}} Admin and are separate from native synonyms. The synonym setup has no impact on requests.
+Live Search synonyms are separate from native synonyms, and are created and maintained from the Live Search Synonyms tab in the {{site.data.var.ee}} Admin. The synonym setup has no impact on requests.
 
 After a synonym is saved in the Admin, it can take up to two hours for the changes to index and re-cache, and for the storefront search results to reflect the change.
 
