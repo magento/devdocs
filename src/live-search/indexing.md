@@ -41,22 +41,3 @@ _Index Metadata_
 1. Search Service calls Search Admin Service.
 
 1. Search Service calls Indexing Pipeline.
-
-## Category feed
-
-The category feed has two new fields: `StoreCode` and `WebsiteCode`.
-
-|**Field**|**Description**|
-|--- |--- |
-|`Id` |Partition Key: `CategoryId`, `StoreViewCode`, `StoreCode`, `WebsiteCode`, `MageID`, `EnvironmentId`|
-|`StoreViewId`| |
-|`CategoryID`| |
-|`Category`|Protobuf|
-|`StoreViewCode`||
-|`StoreCode`|New field|
-|`WebsiteCode`|New field|
-|`MageId`||
-|`EnvironmentId`||
-|`LastModifiedTs`||
-|`LastPublishedTs`||
-|`Deleted`|
