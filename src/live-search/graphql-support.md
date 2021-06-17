@@ -9,25 +9,25 @@ redirect_from:
 
 GraphQL is a data query language that allows the caller to specify exactly what data to return. When a customer searches for products, the overhead of returning all possible product information and removing unnecessary data leads to longer processing times and unfavorable user experiences.
 
-Live Search provides GraphQL functionality that is currently separate from the GraphQL support provided in {{site.data.var.ce}} and Adobe Commerce. Live Search GraphQL requires connecting to a different endpoint and specifying a different set of HTTP headers.
+Live Search provides GraphQL functionality that is currently separate from the GraphQL support provided in {{site.data.var.ce}} and {{site.data.var.ee}}. Live Search GraphQL requires connecting to a different endpoint and specifying a different set of HTTP headers.
 
 You can connect to the Live Search GraphQL endpoint to test sample queries using an Integrated Development Environment (IDE) in two ways:
 
--  Through the GraphQL Playground IDE embedded in the Adobe Commerce Admin. The embedded IDE manages the endpoint URL and required HTTP headers.
+-  Through the GraphQL Playground IDE embedded in the {{site.data.var.ee}} Admin. The embedded IDE manages the endpoint URL and required HTTP headers.
 
 -  Through a standalone version of GraphQL Playground, or any other IDE, such as GraphiQL or Postman. In these applications you must specify the endpoint URL and provide a set of HTTP headers for each call.
 
-Go to the [GraphQL Developer Guide]({{ site.baseurl }}{{ site.gdeurl }}/graphql/index.html) for general information about Adobe Commerce GraphQL.
+Go to the [GraphQL Developer Guide]({{ site.baseurl }}{{ site.gdeurl }}/graphql/index.html) for general information about {{site.data.var.ee}} GraphQL.
 
 ## Run queries using the embedded GraphQL Playground
 
 {:.bs-callout-info}
-You can run only queries that are specific to Live Search in the embedded GraphQL Playground IDE.
+You can run only queries that are specific to Live Search in the embedded GraphQL Playground IDE. As a starting point, copy code examples from the [attributeMetadata query]({{ page.baseurl }}/live-search/attribute-metadata.html) and [productSearch query]({{ page.baseurl }}/live-search/product-search.html) topics.
 
 1. In the Admin, go to **Marketing** > SEO & Search > **Live Search**.
 1. For multiple stores, set **Scope** to the store view where the settings apply.
 1. Click the **GraphQL** tab.
-1. Enter the query code. You can copy code samples from this documentation as a starting point.
+1. Enter the query code.
 1. Click **Play**.
 
    ![graphQL example]({{ page.baseurl }}/live-search/images/graphql-example.png)
@@ -47,7 +47,7 @@ You can run only queries that are specific to Live Search in the embedded GraphQ
    Magento-Store-View-Code | The code assigned to the active store view. For example, `default`.
    X-Api-Key | This value must be set to `search_gql`
 
-1. Enter the query code. You can copy code samples from the Live Search API Reference topics as a starting point.
+1. Enter the query code.
 
 1. Run the the query.
 

@@ -9,7 +9,7 @@ Faceting is a high-performance filtering method that uses multiple dimensions of
 The [`productSearch` query]({{ site.baseurl }}/live-search/product-search.html) contains an example where facets have been configured.
 
 {:.bs-callout-info}
-Go to [Facets](https://docs-beta.magento.com/user-guide/live-search/facets.html) in the _Adobe Commerce User Guide_ for information about facet setup, attribute requirements, and their use from the Admin and storefront.
+Go to [Facets](https://docs.magento.com/user-guide/live-search/facets.html) in the _{{site.data.var.ee}} User Guide_ for information about facet setup, attribute requirements, and their use from the Admin and storefront.
 
 ## Types of facets
 
@@ -29,7 +29,7 @@ Popular facets are product attributes that are most often present in the result 
 
 ## Select type
 
-A facet can be either single- or multi-select, based on the [input type](https://docs-beta.magento.com/user-guide/stores/attributes-input-types.html) that is assigned to the corresponding attribute.
+A facet can be either single- or multi-select, based on the [input type](https://docs.magento.com/user-guide/stores/attributes-input-types.html) that is assigned to the corresponding attribute.
 
 |**Type**|**Description**|
 |---|---|
@@ -46,10 +46,10 @@ Facet aggregation is performed as follows if the storefront has three facets (ca
 
 ## Default attribute values
 
-Product attributes have some [storefront properties](https://docs-beta.magento.com/user-guide/stores/attributes-product.html) that are enabled by default.
+Product attributes have some [storefront properties](https://docs.magento.com/user-guide/stores/attributes-product.html) that are enabled by default.
 
 |**Property**|**Storefront Property**|**Attribute**
 |---|---|---|
 | Sortable | Used for Sorting in Product Listing | `price`|
 | Searchable | Use in Search | `price` <br />`sku`<br />`name`|
-| FilterableInSearch | Use in Layered Navigation - Filterable (with results)| `price`<br />`visibility`<br />[category_name]|
+| FilterableInSearch | Use in Layered Navigation - Filterable (with results)| `price`<br />`visibility`<br />`category_name`|

@@ -4,31 +4,32 @@ title: Install Live Search
 ee_only: True
 ---
 
-Live Search is a set of standalone meta packages that replaces standard Adobe Commerce search capabilities.
+Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ee}} search capabilities.
 
 |**Package**|**Description**|
 |---|---|
-|`module-live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides access to a read-only GraphQL playground to test queries from the Adobe Commerce Admin. |
-|`module-live-search-adapter`|Routes search requests from the storefront to the Live Search service and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs-beta.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs-beta.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
+|`module-live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides access to a read-only GraphQL playground to test queries from the {{site.data.var.ee}} Admin. |
+|`module-live-search-adapter`|Routes search requests from the storefront to the Live Search service and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
+|`module-live-search-storefront-popover`|A "search as you type" popover replaces the standard quick search and returns dynamic product suggestions and thumbnails of top search results.|
 
 ## Requirements
 
--  Adobe Commerce 2.4.x
+-  {{site.data.var.ee}} 2.4.x
 -  PHP 7.3 / 7.4
 -  Composer
 
 ## Step 1: Install Live Search
 
-Adobe Commerce is installed first without Live Search. After the installation, update the project’s root Composer `.json` file to require the `live-search` package.
+{{site.data.var.ee}} is installed first without Live Search. After the installation, update the project’s root Composer `.json` file to require the `live-search` package.
 
-1. Install Adobe Commerce 2.4.x without Live Search.
+1. Install {{site.data.var.ee}} 2.4.x without Live Search.
 
 1. Update `composer.json` to require the `live-search` package as follows:
 
   ```json
     "require": {
       ...
-      "magento/live-search": ">=1.0.0",
+      "magento/live-search": ">=1.1.0",
       ...
   }
    ```
@@ -45,7 +46,9 @@ The following Live Search dependencies are captured by Composer:
 
 ## Step 2: Disable Elasticsearch modules
 
-1. Check your `app/etc/config.php` file and disable the following `ElasticSearch` modules.
+The modules that allow the native {{site.data.var.ee}} search and category browse pages function must be disabled for Live Search to work. Because Live Search relies on a backend search service, it is no longer necessary to host and configure Elasticsearch. The exception is if Elasticsearch is required by other extensions or customizations that have been added to your {{site.data.var.ee}} installation.
+
+1. Check your `app/etc/config.php` file and ensure that the following `ElasticSearch` modules are disabled:
 
    -  `Magento_ElasticSearch`
    -  `Magento_ElasticSearch6`
@@ -58,9 +61,7 @@ The following Live Search dependencies are captured by Composer:
 
 1. In the `core_config_data` table, delete any entry with the `catalog/search/engine` path.
 
-{:.bs-callout-info}
-If Live Search is installed correctly, but in a headless environment, Live Search will not appear as an option in the Admin _Marketing_ menu, and storefront search results will be unclear.
-## Update Live Search
+## Updating Live Search
 
 To update Live Search, enter the following from the command line:
 
@@ -88,6 +89,6 @@ To update to a major version such as from 1.0 to 2.0, edit the project’s root 
   composer update magento/live-search –-with-dependencies
   ```
 
-## Uninstall
+## Uninstalling Live Search
 
 To uninstall Live Search, go to [Uninstall modules]({{ site.baseurl }}{{ site.gdeurl }}/install-gde/install/cli/install-cli-uninstall-mods.html).

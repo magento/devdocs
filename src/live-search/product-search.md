@@ -31,7 +31,7 @@ phrase: "Watch"
 
 #### filter
 
-Filters are the part of the query that uses product attributes as facets that have been previously defined in the Adobe Commerce Admin. For example, to filter results by color, a color facet must be defined in Live Search, based on the existing `color` attribute.
+Filters are the part of the query that uses product attributes as facets that have been previously defined in the {{site.data.var.ee}} Admin. For example, to filter results by color, a color facet must be defined in Live Search, based on the existing `color` attribute.
 
 A filter consists of a product `attribute`, a comparison operator, and the value that is being searched for. Together, they help narrow down the search results, based on shopper input. For example, if you want to set up a filter for jackets based on size, you could set the product attribute to `size`. To filter on medium-sized jackets only, set the `eq` field to `M`. To filter on both medium- and large-sized jackets, set the `in` field to `["M", "L"]`. If an attribute is numeric, you can filter on it as a price range, such as between $50 and $100. To filter on a price range, set the `attribute` to `price`, and assign the `range` field with `from` and `to` values as `50` and `100`, respectively.
 
@@ -53,7 +53,7 @@ filter: [
 ]
 ```
 
-An attribute that must be set to `filterableInSearch: true` if it is passed in as part of the filter. Otherwise, a "500 error" will be returned.
+An attribute must be set to `filterableInSearch: true` if it is passed in as part of the filter. Otherwise, a "500 error" will be returned.
 
 Only facets specified in Live Search are returned.
 
@@ -96,7 +96,7 @@ page_size: 10
 
 The `currentPage` field specifies which page of results to return. If no value is specified, the first page is returned. To continue with the values mentioned in the `page_size` field, page number `5` contains items 81 - 97.
 
-Adobe Commerce returns an error if you specify a value that is greater than the number of available pages.
+{{site.data.var.ee}} returns an error if you specify a value that is greater than the number of available pages.
 
 The following example sets the current page to 5:
 
@@ -151,7 +151,7 @@ facets {
 
 ### Items list
 
-The `items` object primarily provides details about each item returned. The [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and Adobe Commerce, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
+The `items` object primarily provides details about each item returned. The [`productInterface`]({{ site.baseurl }}{{ site.gdeurl }}/graphql/interfaces/product-interface.html), which is defined in {{site.data.var.ce}} and {{site.data.var.ee}}, gives you access to a large amount of details about the product. A typical query might return the product name, price, SKU and image.
 
 The `items` object can also optionally return highlighted text that shows the matching search terms.
 

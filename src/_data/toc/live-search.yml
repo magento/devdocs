@@ -12,6 +12,10 @@ pages:
   url: /live-search/config-connect.html
   versionless: true
 
+- label: Storefront Popover
+  url: /live-search/storefront-popover.html
+  versionless: true
+
 - label: Facets
   url: /live-search/facets.html
   versionless: true

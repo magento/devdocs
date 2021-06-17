@@ -20,15 +20,9 @@ A one-way synonym is a subset of a keyword, but with a more granular meaning. Fo
 
 ## Setup and configuration
 
-Live Search synonyms are created and maintained from the Adobe Commerce Admin and are separate from native synonyms. The synonym setup has no impact on requests.
+Live Search synonyms are separate from native synonyms, and are created and maintained from the Live Search Synonyms tab in the {{site.data.var.ee}} Admin. The synonym setup has no impact on requests.
 
 After a synonym is saved in the Admin, it can take up to two hours for the changes to index and re-cache, and for the storefront search results to reflect the change.
 
 {:.bs-callout-info}
-Go to [Synonyms](https://docs-beta.magento.com/user-guide/live-search/synonyms.html) in the _Adobe Commerce User Guide_ for more information about synonym setup and use from the Admin and storefront.
-
-## Known issues
-
--  Live Search synonyms are defined per store view, but are currently stored per website and identified with a combination of `environmentId` + `storeViewCode`. As a result, all websites and store views within the Adobe Commerce installation share the same set of synonyms. The most recently created set of synonyms for the store view takes precedence.
-
--  If a synonym contains multiple words, each word is treated as a separate synonym. For example, if you set up "time piece" as a synonym of "watch",  both "time" and "piece" are treated as synonyms of watch.
+Go to [Synonyms](https://docs.magento.com/user-guide/live-search/synonyms.html) in the _{{site.data.var.ee}} User Guide_ for more information about synonym setup and use from the Admin and storefront.
