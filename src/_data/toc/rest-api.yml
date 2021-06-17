@@ -230,7 +230,22 @@ pages:
 
       - label: Create bundle products
         class: tutorial
-        url: /rest/tutorials/bundle-product/create-bundle-products.html
+        children:
+
+          - label: Step 1. Create bundle products tutorial
+            url: /rest/tutorials/bundle-product/bundle-product-intro.html
+
+          - label: Step 2. Plan the product
+            url: /rest/tutorials/bundle-product/plan-product.html
+
+          - label: Step 3. Define bundle product options
+            url: /rest/tutorials/bundle-product/define-bundle-product-options.html
+
+          - label: Step 4. Create the bundle product
+            url: /rest/tutorials/bundle-product/create-bundle-products.html
+
+          - label: Step 5. Create the bundle option
+            url: /rest/tutorials/bundle-product/create-personalization-option.html
 
     - label: Modules
       children:
