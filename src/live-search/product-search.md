@@ -53,7 +53,7 @@ filter: [
 ]
 ```
 
-An attribute that must be set to `filterableInSearch: true` if it is passed in as part of the filter. Otherwise, a "500 error" will be returned.
+An attribute must be set to `filterableInSearch: true` if it is passed in as part of the filter. Otherwise, a "500 error" will be returned.
 
 Only facets specified in Live Search are returned.
 
