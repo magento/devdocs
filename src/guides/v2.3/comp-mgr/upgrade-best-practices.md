@@ -28,19 +28,19 @@ This is the question you should be asking yourself and your team when starting a
 
 The upgrade cost may vary significantly from project to project, based on the variables that impact upgrades, as described previously. Based on our experience, you should plan for upgrades to take the following amounts of time:
 
-Upgrade type | Hours
+Upgrade type | Example versions | Hours
 --- | ---
-Security upgrades | 16 - 24
-Patch release upgrades | 20 - 50
-Minor | 500 - 600
+Security and patchupgrades | 2.4.3-p1 to 2.4.3-p2 | 16 - 24
+Minor release upgrades | 2.3.x to 2.4.x | 20 - 50
+Major release upgrades | 1.x to 2.x | 500 - 600
 
-Do not skip an upgrade. Upgrading every release this will help you to have a shorter upgrade-to-upgrade delivery time.
+Do not skip an upgrade. Upgrading every release will help you to have a shorter upgrade-to-upgrade delivery time.
 
 ## Best practices for planning upgrades
 
 If you are working on a project that is already in production, upgrades are an opportunity for you to improve the quality of your code and customizations and optimize future upgrades. The time you invest today will be time saved in the long term.
 
-If you manage multiple stores, the best approach is to have a base store with the main features and customizations you normally use. Use this store as your testing store for completing an upgrade and then do it on others. This will give you the flexibility to reuse customized modules for different stores and simplify upgrades across projects.
+If you manage multiple sites for different merchants, the best approach is to have a base instance with the main features and customizations you normally use. Use this as your testing site for completing an upgrade and then do it on others. This practice will give you the flexibility to reuse customized modules for different customers and simplify upgrades across projects.
 
 If your project is live, we suggest you run an audit on it to determine its quality, and how you can improve it to make your upgrades more efficient.
 
@@ -71,7 +71,7 @@ To help you plan and budget for upgrades you should monitor our [Release schedul
 
 *  Plan for upgrades at the beginning of the year. You will need to book a budget and resources to complete each upgrade. Use the upgrade cost estimation described above as a guide. Remember, the upgrade effort might vary significantly from project to project. Use your experiences and knowledge to make a plan as accurate as possible.
 
-*  If your upgrades are taking more effort than what we describe here, we recommend you audit your project and make adjustments to your environment reduce the long-term maintenance.
+*  If your upgrades are taking more effort than what we describe here, we recommend you audit your project and make adjustments to your environment to reduce the long-term maintenance.
 
 ### Performing upgrades
 
