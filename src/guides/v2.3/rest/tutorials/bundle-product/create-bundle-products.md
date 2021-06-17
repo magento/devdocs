@@ -17,7 +17,7 @@ contributor_link: https://ziffity.com/
 
 We have the information we need to create the Quest Pursuit Jump Cardo Ball Clone bundle product.
 
-* The `visibility` attribute is set to 4, meaning the product can be found by browsing or searching.
+The `visibility` attribute is set to 4, meaning the product can be found by browsing or searching.
 
 The below table shows the equivalent code for the visibility attribute
 
