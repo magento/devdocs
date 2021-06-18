@@ -39,7 +39,7 @@ Create the file `app/code/Vendor/AddressRestriction/etc/di.xml`:
 ## Step 3 Adding validation to Shipping Address {#add-shipping-validation}
 
 Create the file `app/code/Vendor/AddressRestriction/Block/LayoutProcessor.php`;
- 
+
 ```php?start_inline=1
 <?php
 namespace Vendor\AddressRestriction\Block;
@@ -90,7 +90,7 @@ class LayoutProcessor
 
         return $jsLayout;
     }
-}   
+}
 ```
 
 ## Step 4 Adding validation to Billing Address {#add-billing-validation}
