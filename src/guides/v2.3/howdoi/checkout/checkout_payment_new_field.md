@@ -36,9 +36,9 @@ Let’s go through each step.
 
 ## Step 2 Add a `db_schema.xml` file {#add-db-schema}
 
-Add the `paymentpocomment` column in the `quote_payment` and `sales_order_payment` table using the [declarative schema]({{page.baseurl}}/extension-dev-guide/declarative-schema/db-schema.html) method.
+Add the `paymentpocomment` column in the `quote_payment` and `sales_order_payment` tables using the [declarative schema]({{page.baseurl}}/extension-dev-guide/declarative-schema/db-schema.html) method.
 
-Create the declarative schema in the following path `app/code/Learning/CustomField/etc/db_schema.xml`:
+Create the `app/code/Learning/CustomField/etc/db_schema.xml` and define the declarative schema as follows:
 
 ```xml
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -54,9 +54,7 @@ Create the declarative schema in the following path `app/code/Learning/CustomFie
 
 ## Step 3: Add a requirejs file to the module {#add-require-js}
 
-Next, create the `requirejs-config.js` file:
-
-`app/code/Learning/CustomField/view/frontend/requirejs-config.js`
+Create the `app/code/Learning/CustomField/view/frontend/requirejs-config.js` file and add the following code:
 
 ```js
  var config = {
@@ -70,15 +68,17 @@ Next, create the `requirejs-config.js` file:
 
 ## Step 4: Override the vendor files {#override-vendor-files}
 
-1. [Magento_OfflinePayments/view/frontend/web/js/view/payment/offline-payments.js](#offline-payment)
-1. [Magento_OfflinePayments/view/frontend/web/js/view/payment/method-renderer/purchaseorder-method.js](#purchaseorder-method)
-1. [Magento_OfflinePayments/view/frontend/web/template/payment/purchaseorder-form.html](#purchaseorder-form)
+We must override the behavior of the following files to display the custom field:
+
+-  [Magento_OfflinePayments/view/frontend/web/js/view/payment/offline-payments.js](#offline-payment)
+-  [Magento_OfflinePayments/view/frontend/web/js/view/payment/method-renderer/purchaseorder-method.js](#purchaseorder-method)
+-  [Magento_OfflinePayments/view/frontend/web/template/payment/purchaseorder-form.html](#purchaseorder-form)
 
 ### Override the `offline-payments.js` {#offline-payment}
 
-Next, override the `Magento_OfflinePayments/view/frontend/web/js/view/payment/offline-payments.js` file to change the renderer of the Purchase Order payment method.
+Override the `Magento_OfflinePayments/view/frontend/web/js/view/payment/offline-payments.js` file to change the renderer of the Purchase Order payment method.
 
-`app/code/Learning/CustomField/view/frontend/web/js/view/payment/offline-payments.js`
+Create the `app/code/Learning/CustomField/view/frontend/web/js/view/payment/offline-payments.js` file and add the following code:
 
 ```js
 define(
@@ -119,9 +119,9 @@ define(
 
 It is also necessary to override the `Magento_OfflinePayments/view/frontend/web/js/view/payment/method-renderer/purchaseorder-method.js` file.
 
-The `template` path value used in this file needs to be altered to use the custom template. Also, the logic to get the `additional_data`need to be implemented in this file.
+The `template` path value used in this file must be altered to use the custom template. Also, the logic to get the `additional_data` is implemented in this file.
 
-`app/code/Learning/CustomField/view/frontend/web/js/view/payment/method-renderer/purchaseorder-method.js`
+Create the `app/code/Learning/CustomField/view/frontend/web/js/view/payment/method-renderer/purchaseorder-method.js` file and add the following code:
 
 ```js
 define([
@@ -173,9 +173,9 @@ define([
 
 ### Override the `purchaseorder-form.html` {#purchaseorder-form}
 
-It is also necessary to override the `Magento_OfflinePayments/view/frontend/web/template/payment/purchaseorder-form.html` template file to add the custom input field (Purchase Order Comment).
+We must override the `Magento_OfflinePayments/view/frontend/web/template/payment/purchaseorder-form.html` template file to add the custom input field (**Purchase Order Comment**).
 
-`app/code/Learning/CustomField/view/frontend/web/template/payment/purchaseorder-form.html`
+Create the `app/code/Learning/CustomField/view/frontend/web/template/payment/purchaseorder-form.html` file and add the following code:
 
 {% collapsible Show code %}
 
@@ -238,7 +238,6 @@ It is also necessary to override the `Magento_OfflinePayments/view/frontend/web/
     </div>
 </div>
 ```
-
 {% endcollapsible %}
 
 ## Step 5: Add an Observer {#add-observer}
