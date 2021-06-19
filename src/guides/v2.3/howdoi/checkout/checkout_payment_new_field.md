@@ -319,29 +319,31 @@ class OrderPaymentSaveBefore implements \Magento\Framework\Event\ObserverInterfa
 
 ## Step 6: Verify that the module works {#verify-implementation}
 
--  Run the below command to enable the new module
+### Run the below command to enable the new module {#enable-module}
 
 ```bash
 bin/magento module:enable Learning_CustomField
 ```
 
--  Run the below command to install the new module
+### Run the below command to install the new module {#setup-upgrade}
 
 ```bash
 bin/magento setup:upgrade
 ```
 
--  Run the below command to compile the code
+### Run the below command to compile the code {#compile-code}
 
 ```bash
 bin/magento setup:di:compile
 ```
 
--  Run the below command to deploy the static files
+### Run the below command to deploy the static files {#deploy-static-content}
 
 ```bash
 bin/magento setup:static-content:deploy
 ```
+
+### Place an order {#place-order}
 
 Go to the storefront as a guest user and add the product to the cart. Go to the checkout page and select the **Purchase Order** payment. Verify that the **Purchase Order Comment** field is visible.
 Then fill the purchase order comment field in the checkout and place an order. Now verify that the entered value is stored in the `paymentpocomment` column of the  `sales_order_payment` table.
