@@ -44,7 +44,7 @@ Security improvements for this release improve compliance with the latest securi
 
    *  The Place Order storefront page and payment-related web APIs. ReCAPTCHA protection for these pages is disabled by default and can be enabled from the Admin. This coverage adds an anti-brute force mechanism to protect stores from carding attacks.
 
-   *  This release includes a new Composer plugin that helps prevent dependency confusion and identifies malicious packages with the same names as internal packages that are are included in the release package. See the [Adobe Release New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
+   *  This release includes a new Composer plugin that helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Release New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
