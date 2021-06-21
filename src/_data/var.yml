@@ -31,7 +31,7 @@ mcp-package: magento/magento-cloud-patches
 mcp-release: 1.0.10
 mcd-package: magento/magento-cloud-docker
 mcd-prod: Cloud Docker for Commerce
-mcd-release: 1.2.2
+mcd-release: 1.2.3
 mcc-prod: Cloud Components of Commerce
 mcc-package: magento/magento-cloud-components
 mcc-release: 1.0.7
