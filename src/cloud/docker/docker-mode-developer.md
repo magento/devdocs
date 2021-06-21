@@ -9,12 +9,16 @@ functional_areas:
 
 Developer mode supports an active development environment with full, writable file system permissions. This option builds the Docker environment in developer mode and verifies configured service versions.
 
-On macOS and Windows systems, performance is slower in developer mode because of additional file synchronization operations. However, you can improve performance by using either `mutagen` or `docker-sync` file synchronization tools when you generate the `docker-compose.yml` configuration file. See [Synchronizing data in Docker].
+## Performance considerations
+
+On macOS and Windows systems, performance is slower in developer mode because of additional file synchronization operations. However, you can improve performance by using either the `manual-native` or the `mutagen` file synchronization option when you generate the `docker-compose.yml` file. See [Synchronizing data in Docker].
 
 {: .bs-callout-info }
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
-Large files (>1 GB) can cause a period of inactivity. DB dumps and archive files—ZIP, SQL, GZ, and BZ2—are not necessary to sync. You can find exclusions to these file types in the `docker-sync.yml` and `mutagen.sh` files.
+Large files (>1 GB) can cause a period of inactivity. DB dumps and archive files—ZIP, SQL, GZ, and BZ2—are not necessary to sync. You can find exclusions to these file types in the `mutagen.sh` file.
+
+## Launch Docker in developer mode
 
 {%include cloud/note-docker-config-reference-link.md%}
 **Prerequisites:**
@@ -46,15 +50,33 @@ To launch the Docker environment in developer mode:
    cp .docker/config.php.dist .docker/config.php
    ```
 
-1. If you selected `docker-sync` for file synchronization, start the file synchronization.
+1. If you selected the `manual-native` option, start the file synchronization using the following commands.
 
-   For the `docker-sync` tool:
+   **This command copies all data from the local machine to the Docker volume:**
 
    ```bash
-   docker-sync start
+   ./bin/magento-docker copy-to --all
    ```
 
-   If this is the first installation, expect to wait a few minutes for file synchronization.
+   {:.bs-callout-info}
+   Additionally, you can provide a specific directory from the local machine to copy to the Docker volume, for example `vendor`:
+
+   ```bash
+   ./bin/magento-docker copy-to vendor
+   ```
+
+   **To copy all data from the Docker volume to the local machine, use:**
+
+   ```bash
+   ./bin/magento-docker copy-from --all
+   ```
+
+   {:.bs-callout-info}
+   Additionally, you can provide a specific directory from the Docker volume to copy from, such as `vendor`:
+
+   ```bash
+   ./bin/magento-docker copy-from vendor
+   ```
 
 1. Build files to containers and run in the background.
 
@@ -133,7 +155,6 @@ To launch the Docker environment in developer mode:
 
 [{{site.data.var.mcd-prod}} Docker image]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
 [installation steps]: {{site.baseurl}}/cloud/docker/docker-installation.html
-[dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [latest release of the {{site.data.var.mcd-package}}]: https://github.com/magento/magento-cloud-docker/releases
 [magento-creds]: {{site.baseurl}}/cloud/setup/first-time-setup-import-prepare.html#auth-json
 [mutagen-install]: https://mutagen.io/documentation/introduction/installation/

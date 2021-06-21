@@ -12,7 +12,7 @@ functional_areas:
 -  **Cross-platform support**–Supports Linux, macOS and Windows with WSL2
 -  **Magento Cloud emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
 -  **{{site.data.var.ee}} development**–Creates a local development environment for Magento On-premises projects
--  **Multiple sync options**–Provides three file synchronization options (native, mutagen and docker-sync) for best performance
+-  **Multiple sync options**–Provides three file synchronization options: `native`, `mutagen`, and `manual-native`. The `manual-native` option provides the best performance on macOS and Windows.
 -  **Extensibility**–Use a standard Docker configuration file to extend and customize your development environment
 
 {:.bs-callout-info}
@@ -26,7 +26,7 @@ The Cloud Docker environment supports Linux, macOS, and Windows operating system
 
 -  [Git] for interaction between your local system and {{site.data.var.ece}} source repositories
 -  [Docker] for Mac 2.2.0.0 or later or Docker for Linux
--  Developer mode on MacOS systems might require [mutagen] or [docker-sync] for file synchronization
+-  Developer mode on macOS systems might require the [mutagen] option for file synchronization.
 
 ### Docker engine
 
@@ -110,7 +110,6 @@ Prior to setting up a local workspace, gather the following credentials and acco
 [Docker Compose]: https://docs.docker.com/compose/
 [Docker]: https://www.docker.com/get-started
 [Docker desktop]: https://docs.docker.com/desktop/#configure-docker-desktop
-[docker-sync]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [init-docker.sh]: https://github.com/magento/magento-cloud-docker/blob/develop/bin/init-docker.sh
 [mutagen]: https://mutagen.io/documentation/introduction/installation
 [Magento authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
