@@ -26,6 +26,7 @@ You must perform following steps to add a custom field to an offline payment met
 1. [Add a `requirejs` file to the module](#add-require-js).
 1. [Override the vendor files](#override-vendor-files).
 1. [Add an Observer](#add-observer).
+1. [Compile and deploy the module](#compile-deploy).
 1. [Verify that the module works](#verify-implementation).
 
 Let’s go through each step.
@@ -316,35 +317,46 @@ class OrderPaymentSaveBefore implements \Magento\Framework\Event\ObserverInterfa
 ```
 {% endcollapsible %}
 
-## Step 6: Verify that the module works {#verify-implementation}
+## Step 6: Compile and deploy the module {#compile-deploy}
 
-### Run the below command to enable the new module {#enable-module}
+Run the following sequence of commands to compile and deploy your custom module.
 
-```bash
-bin/magento module:enable Learning_CustomField
-```
+1. Enable the new module.
 
-### Run the below command to install the new module {#setup-upgrade}
+   ```bash
+   bin/magento module:enable Learning_CustomField
+   ```
 
-```bash
-bin/magento setup:upgrade
-```
+1. Install the new module.
 
-### Run the below command to compile the code {#compile-code}
+   ```bash
+   bin/magento setup:upgrade
+   ```
 
-```bash
-bin/magento setup:di:compile
-```
+1. Compile the code.
 
-### Run the below command to deploy the static files {#deploy-static-content}
+   ```bash
+   bin/magento setup:di:compile
+   ```
 
-```bash
-bin/magento setup:static-content:deploy
-```
+1. Deploy the static files.
 
-### Place an order {#place-order}
+   ```bash
+   bin/magento setup:static-content:deploy
+   ```
 
-Go to the storefront as a guest user and add the product to the cart. Go to the checkout page and select the **Purchase Order** payment. Verify that the **Purchase Order Comment** field is visible.
-Then fill the purchase order comment field in the checkout and place an order. Now verify that the entered value is stored in the `paymentpocomment` column of the  `sales_order_payment` table.
+## Step 7: Verify that the module works {#verify-implementation}
+
+Use the following steps to verify your changes work as expected.
+
+1. Go to the storefront as a guest user and add a product to the cart.
+
+1. Go to the checkout page and select the **Purchase Order** payment.
+
+1. Verify that the **Purchase Order Comment** field is visible.
+
+1. Fill the purchase order comment field in the checkout and place an order.
+
+1. Verify that the entered value is stored in the `paymentpocomment` column of the  `sales_order_payment` table.
 
 ![Custom field in checkout page]({{ site.baseurl }}/common/images/custom_field_payment.png)
