@@ -55,42 +55,43 @@ class LayoutProcessor
     */
     public function afterProcess(
     \Magento\Checkout\Block\Checkout\LayoutProcessor $subject,
-    array $jsLayout
+    array $jsLayout,
+    array $fields
     ) {
         // Firstname
-        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
+        $fields = $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
                 ['shippingAddress']['children']['shipping-address-fieldset']['children']['firstname']['validation']['max_text_length'] = 20;
 
         // Lastname
-        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
+        $fields = $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
                 ['shippingAddress']['children']['shipping-address-fieldset']['children']['lastname']['validation']['max_text_length'] = 20;
 
         // Company name
-        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
+        $fields = $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
                 ['shippingAddress']['children']['shipping-address-fieldset']['children']['company']['validation']['max_text_length'] = 31;
 
         // City
-        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
+        $fields = $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
                 ['shippingAddress']['children']['shipping-address-fieldset']['children']['city']['validation']['max_text_length'] = 31;
 
         // Region
-        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
+        $fields = $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
                 ['shippingAddress']['children']['shipping-address-fieldset']['children']['region']['validation']['max_text_length'] = 21;
 
         // Country
-        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
+        $fields = $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
                 ['shippingAddress']['children']['shipping-address-fieldset']['children']['country_id']['validation']['max_text_length'] = 31;
 
         // Postcode
-        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
+        $fields = $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
                 ['shippingAddress']['children']['shipping-address-fieldset']['children']['postcode']['validation']['max_text_length'] = 13;
 
         // Street address
-        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
+        $fields = $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
                 ['shippingAddress']['children']['shipping-address-fieldset']
                 ['children']['street']['children'][0]['validation']['max_text_length'] = 40;
 
-        return $jsLayout;
+        return $fields;
     }
 }
 ```
@@ -98,35 +99,35 @@ class LayoutProcessor
 ## Step 4 Adding validation to Billing Address {#add-billing-validation}
 
 ```php?start_inline=1
-$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+$fields = $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
         ['shippingAddress']['children']['shipping-address-fieldset']['children']['firstname']['validation']['max_text_length'] = 20;
 
 // Lastname
-$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+$fields = $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
         ['shippingAddress']['children']['shipping-address-fieldset']['children']['lastname']['validation']['max_text_length'] = 20;
 
 // Company name
-$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+$fields = $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
         ['shippingAddress']['children']['shipping-address-fieldset']['children']['company']['validation']['max_text_length'] = 31;
 
 // City
-$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+$fields = $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
         ['shippingAddress']['children']['shipping-address-fieldset']['children']['city']['validation']['max_text_length'] = 31;
 
 // Region
-$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+$fields = $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
         ['shippingAddress']['children']['shipping-address-fieldset']['children']['region']['validation']['max_text_length'] = 21;
 
 // Country
-$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+$fields = $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
         ['shippingAddress']['children']['shipping-address-fieldset']['children']['country_id']['validation']['max_text_length'] = 31;
 
 // Postcode
-$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+$fields = $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
         ['shippingAddress']['children']['shipping-address-fieldset']['children']['postcode']['validation']['max_text_length'] = 13;
 
 // Street address
-$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
+$fields = $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
         ['shippingAddress']['children']['shipping-address-fieldset']
         ['children']['street']['children'][0]['validation']['max_text_length'] = 40;
 ```
