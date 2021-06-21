@@ -355,8 +355,9 @@ Use the following steps to verify your changes work as expected.
 
 1. Verify that the **Purchase Order Comment** field is visible.
 
+   ![Custom field in checkout page]({{ site.baseurl }}/common/images/custom_field_payment.png)
+
 1. Fill the purchase order comment field in the checkout and place an order.
 
 1. Verify that the entered value is stored in the `paymentpocomment` column of the  `sales_order_payment` table.
 
-![Custom field in checkout page]({{ site.baseurl }}/common/images/custom_field_payment.png)
