@@ -16,6 +16,10 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.3.1 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.new}Added B2B support for customer grouped pricing. When you set a [price filter on a recommendation unit](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html#filtertypes), B2B customers who are logged in will see the customer grouped pricing set for the products displayed.
+
 ## 3.3.0 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.new}Added support for Adobe Client Data Layer to standardize behavioral data collection across Adobe Commerce features and services. See the [readme](https://github.com/adobe/magento-storefront-event-collector/blob/main/README.md) to learn more.
