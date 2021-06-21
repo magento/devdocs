@@ -27,7 +27,7 @@ To reroute requests from {{ site.data.var.ee }} to WordPress:
 
    -  Log in to the Magento Admin.
 
-   -  Navigate to **Stores** > Settings > **Configuration** > **Advanced** > **System** > **Full Page Cache** > **Fastly Configuration** > **Advanced**.
+   -  Navigate to **Stores** > Settings > **Configuration** > **Advanced** > **System** > **Full Page Cache** > **Fastly Configuration** > **Advanced Configuration**.
 
    -  Set the value for **Fastly Edge Modules** to **Yes**.
 
