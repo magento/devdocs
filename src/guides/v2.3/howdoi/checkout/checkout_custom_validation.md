@@ -3,6 +3,8 @@ layout: tutorial
 group: how-do-i
 subgroup:
 title: Add custom validation rules to checkout address form
+contributor_name: Ziffity
+contributor_link: https://www.ziffity.com/
 subtitle: Customize Checkout
 menu_order: 101
 level3_subgroup: checkout-tutorial
