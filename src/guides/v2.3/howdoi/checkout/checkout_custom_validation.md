@@ -10,14 +10,14 @@ functional_areas:
   - Checkout
 ---
 
-This topic describes how to add custom address validation in to the Magento checkout.  By default it has own set of validations for the address fields in the checkout step. But sometimes you may want to add some custom validations in to the different address fields. Some examples may be like limiting the character limit in the firstname and lastname of shipping and billing address.
+This topic describes how to add custom address validation to the Magento checkout.  By default it has own set of validations for the address fields in the checkout step. But sometimes you may want to add some custom validations to the different address fields. One example may be limiting the character limit in the firstname and lastname of the shipping and billing addresses.
 
-To change existing address validations to the Magento checkout, do the following steps:
+To change the existing address validations to the Magento checkout, do the following steps:
 
 1. [Create a new module](#create-module).
 1. [Create a di.xml file](#add-dixml-file).
-1. [Adding validation to Shipping Address](#add-shipping-validation).
-1. [Adding validation to Billing Address](#add-billing-validation).
+1. [Adding validation to the Shipping Address](#add-shipping-validation).
+1. [Adding validation to the Billing Address](#add-billing-validation).
 
 ## Step 1: Create a new module {#create-module}
 
@@ -36,7 +36,7 @@ Create the file `app/code/Vendor/AddressRestriction/etc/di.xml`:
 </config>
 ```
 
-## Step 3 Adding validation to Shipping Address {#add-shipping-validation}
+## Step 3 Adding validation to the Shipping Address {#add-shipping-validation}
 
 Create the file `app/code/Vendor/AddressRestriction/Block/LayoutProcessor.php`;
 
