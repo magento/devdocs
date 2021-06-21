@@ -360,4 +360,3 @@ Use the following steps to verify your changes work as expected.
 1. Fill the purchase order comment field in the checkout and place an order.
 
 1. Verify that the entered value is stored in the `paymentpocomment` column of the  `sales_order_payment` table.
-
