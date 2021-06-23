@@ -185,7 +185,7 @@ var config = {
 
 ## Overwriting a mixin
 
-A mixin can be overwritten by another mixin and can't be disabled separately.
+A mixin can be overwritten by another mixin but cannot be disabled separately.
 
 ### Example
 
@@ -204,8 +204,8 @@ var config = {
 };
 ```
 
-In this case the `ExampleCorp_Sample/js/original-add-to-cart-mixin` will be overwritten by `ExampleCorp_CartFix/js/overwritten-add-to-cart-mixin`.
-Also, add the origin module as the over written module dependency (sequence tag in `etc/module.xml`).
+In this case, the `ExampleCorp_Sample/js/original-add-to-cart-mixin` is overwritten by `ExampleCorp_CartFix/js/overwritten-add-to-cart-mixin`.
+Be sure to add the origin module as the over-written module dependency (use the sequence tag in `etc/module.xml`).
 
 ```xml
 <?xml version="1.0"?>
@@ -218,7 +218,7 @@ Also, add the origin module as the over written module dependency (sequence tag 
 </config>
 ```
 
-After making changes to `requirejs-config.js` config you need to clean cache and regenerate the static files.
+After making changes to the `requirejs-config.js` configuration, you must clean the cache and regenerate static files.
 
 ## Mixin examples in Magento
 
