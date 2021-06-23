@@ -81,7 +81,7 @@ $this->arrayManager->findPaths('items', $data);
 ...
 ```
 
-```php 
+```php
 [
   0 => "response/items"
   1 => "error/items"
@@ -99,15 +99,14 @@ $this->arrayManager->findPaths('items', $data, 'response');
 ...
 ```
 
-```php 
+```php
 [
   0 => "response/items"
   1 => "response/result/items"
 ]
 ```
 
-If we use `findPaths` with specifying `$internalPath`, the function will return paths that contain `items` that are children
-of element `result`.
+If we use `findPaths` with specifying `$internalPath`, the function will return paths that contain `items` that are children of element `result`.
 
 ```php
 ...
@@ -117,7 +116,7 @@ $this->arrayManager->findPaths('items', $data, null,'result');
 ...
 ```
 
-```php 
+```php
 [
   0 => "response/result/items"
 ]
@@ -125,8 +124,7 @@ $this->arrayManager->findPaths('items', $data, null,'result');
 
 ### Array modification
 
-You can use the  `Magento\Framework\Stdlib\ArrayManager` library to populate an array from the given path if it does not
-exist yet:
+You can use the  `Magento\Framework\Stdlib\ArrayManager` library to populate an array from the given path if it does not exist yet:
 
 ```php
 ...
@@ -136,9 +134,9 @@ $this->arrayManager->populate('response/result/headers', $data)
 ...
 ```
 
-It is possible to modify array in different manners for several values, `merge` is a good option but just one value, 
-`set` is preferable. When using `merge`, `move`, `replace`, `populate`, `set` or `remove`, remember that the basic array 
-is not modified and the modified data is returned by the function for further use. In the following example, the class extends 
+It is possible to modify array in different manners for several values, `merge` is a good option but just one value,
+`set` is preferable. When using `merge`, `move`, `replace`, `populate`, `set` or `remove`, remember that the basic array
+is not modified and the modified data is returned by the function for further use. In the following example, the class extends
 [Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Related]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/Related.php){:target="_blank"}.
 
 ```php
