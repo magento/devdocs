@@ -147,7 +147,7 @@ use Magento\Framework\Stdlib\ArrayManager;
 const DATA_SCOPE_CUSTOM = 'customlink';
 ...
 /**
- * This function will add a new type of link in the product form in back-office.                                                                                  
+ * This function will add a new type of link in the product form in back-office.
  * ArrayManager is injected using constructor.
  *
  * @param array $meta
