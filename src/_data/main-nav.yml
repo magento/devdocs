@@ -195,12 +195,16 @@
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
 
+    - label: Inventory Management
+      url: /inventory/index.html
+
+    - label: Live Search
+      url: /live-search/overview.html
+      versionless: true
+
     - label: Magento Marketplace
       url: /marketplace/sellers/getting-started.html
       versionless: true
-
-    - label: Inventory Management
-      url: /inventory/index.html
 
     - label: Order Management
       url: http://omsdocs.magento.com/en/

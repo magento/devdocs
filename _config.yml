@@ -217,8 +217,12 @@ mage2bloburl: https://github.com/magento/magento2/blob
 # Current version
 gdeurl: /guides/v2.4
 
-# Path to S3 location where we store large downloadable binary files, such as .ai, .psd, .zip, .pdf, .sketch
+# URL to downloadable binary files, such as .ai, .psd, .zip, .pdf, .sketch
 downloads: https://devdocs.magento.com/download
 
+# URL to the User guide
+user_guide_url: https://docs-beta.magento.com/user-guide
+
+# Patterns to exclude for Jekyll
 exclude:
   - .git
