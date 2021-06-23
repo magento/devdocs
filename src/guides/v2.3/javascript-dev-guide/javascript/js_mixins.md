@@ -183,6 +183,43 @@ var config = {
 };
 ```
 
+## Overwriting a mixin
+
+A mixin can be overwritten by another mixin but cannot be disabled separately.
+
+### Example
+
+**File:** `ExampleCorp/CartFix/view/base/requirejs-config.js`
+
+```javascript
+var config = {
+    config: {
+        mixins: {
+            'Magento_Catalog/js/catalog-add-to-cart': {
+                'ExampleCorp_Sample/js/original-add-to-cart-mixin': false,
+                'ExampleCorp_CartFix/js/overwritten-add-to-cart-mixin': true
+            }
+        }
+    }
+};
+```
+
+In this case, the `ExampleCorp_Sample/js/original-add-to-cart-mixin` is overwritten by `ExampleCorp_CartFix/js/overwritten-add-to-cart-mixin`.
+Be sure to add the origin module as the over-written module dependency (use the sequence tag in `etc/module.xml`).
+
+```xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="ExampleCorp_CartFix" setup_version="0.0.1">
+        <sequence>
+            <module name="ExampleCorp_Sample" />
+        </sequence>
+    </module>
+</config>
+```
+
+After making changes to the `requirejs-config.js` configuration, you must clean the cache and regenerate static files.
+
 ## Mixin examples in Magento
 
 The following is a list of files in the [`Magento_CheckoutAgreement`] module that declare and define mixins that modify checkout behavior:
