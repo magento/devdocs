@@ -1,6 +1,10 @@
 label: Release Information
 pages:
 
+  - label: Past releases
+    url: /release/
+    versionless: true
+
   - label: Upcoming releases
     url: /release/
     versionless: true
