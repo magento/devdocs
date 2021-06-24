@@ -1,12 +1,12 @@
 label: Release Information
 pages:
 
-  - label: Past releases
+  - label: Upcoming releases
     url: /release/
     versionless: true
 
-  - label: Upcoming releases
-    url: /release/
+  - label: Released versions
+    url: /release/released-versions.html
     versionless: true
 
   - label: Release policy
