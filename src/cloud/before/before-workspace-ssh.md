@@ -54,7 +54,6 @@ To add your SSH key to the local configuration:
    {:.bs-callout-info}
    You can specify multiple SSH keys by adding multiple `IdentityFile` entries to your configuration.
 
-
 {:.ref-header}
 Next step
 
