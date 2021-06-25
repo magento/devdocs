@@ -5,12 +5,16 @@ title: GraphQL caching
 
 Magento can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and retrieve large amounts of information from the database. Only queries submitted with an HTTP GET operation can be cached. POST queries cannot be cached.
 
-## Cached queries
+## Cached and uncached queries
 
 The definitions for some queries include cache tags. Full page caching uses these tags to keep track of cached content. They also allow public content to be invalidated. Private content invalidation is handled on the client side.
 
+{:.bs-callout-info}
+GraphQL allows you to make multiple queries in a single call. If you specify any query that Magento does not cache, Magento bypasses the cache for all queries in the call.
+
 Magento caches the following queries:
 
+*  `categories`
 *  `category` (deprecated)
 *  `categoryList`
 *  `cmsBlocks`
@@ -30,7 +34,7 @@ Magento explicitly disallows caching the following queries.
 *  `customerOrders`
 *  `customerPaymentTokens`
 *  `storeConfig`
-*  `wishlist`
+*  `wishlist` (deprecated)
 
 [Define the GraphQL schema for a module]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) describes the syntax of a valid query.
 
@@ -38,7 +42,7 @@ Magento explicitly disallows caching the following queries.
 
 We recommend setting up Varnish as a reverse proxy to serve the full page cache in a production environment. See [Configure and use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) for more information.
 
-As of Magento 2.3.2, Magento supports GraphQL caching with Varnish. If you have upgraded from a previous version, you can enable GraphQL caching by generating a new template file, or by editing the `default.vcl` file on your system to match the current default template for your version of Varnish.
+Magento supports GraphQL caching with Varnish. If you have upgraded from a previous version, you can enable GraphQL caching by generating a new template file, or by editing the `default.vcl` file on your system to match the current default template for your version of Varnish.
 
 If you choose to edit an existing `default.vcl` file, update the `vcl_hash` subroutine to check whether the request URL contains `graphql`, as follows:
 
@@ -106,6 +110,25 @@ To enable GraphQL caching on Fastly:
 
 [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) describes how to perform both of these tasks.
 
+By default, the Fastly module for Magento provides the following VCL configuration for GraphQL caching:
+
+```text
+if (req.request == "GET" && req.url.path ~ "/graphql" && req.url.qs ~ "query=") {
+....
+```
+
+Fastly will only cache GET requests that contain a query parameter in the request URL.
+
+### Example
+
+```text
+http://example.com/graphql?query={ products(filter: {sku: {eq: "Test"}}) { items { name } } }&variables={}
+....
+```
+
+{:.bs-callout-info}
+If you call GraphQL queries in the query body rather than the url (for example, as `--data-raw '{"query" .... }'`), the request is not cached.
+
 ## X-Magento-Vary
 
 The `X-Magento-Vary` cache cookie is not supported for GraphQL. The `Store` and `Content-Currency`  headers, along with the content language (which is deduced) determine the context.
@@ -123,6 +146,7 @@ Header | Description
 
 Magento invalidates the cache when any of the following events occur:
 
-*  When a change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
-*  When system configuration changes
-*  When an administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command
+*  A change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
+*  The `Preview-Version` header is specified in a query that supports caching.
+*  The system configuration changes.
+*  An administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command.

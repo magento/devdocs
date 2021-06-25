@@ -12,6 +12,9 @@ The following demonstrates how to manage redirection rules on your {{site.data.v
 
 {% include cloud/note-route-all-placeholder.md %}
 
+{:.bs-callout-warning}
+For {{ site.data.var.ece }} projects, configuring large numbers of non-regex redirects and rewrites in the `routes.yaml` file can cause performance issues. If your `routes.yaml` file is 32KB or larger, offload your non-regex redirects and rewrites to Fastly. See [Offload non-regex redirects to Fastly instead of Nginx (routes)](https://support.magento.com/hc/en-us/articles/360035192891-Offload-non-regex-redirects-to-Fastly-instead-of-Nginx-routes-) in the _Magento Help Center_.
+
 ## Whole-route redirects {#cloud-route-whole}
 
 Using whole-route redirects, you can define simple routes using the `routes.yaml` file. For example, you can redirect from an apex domain to a `www` subdomain as follows:
@@ -24,7 +27,7 @@ http://{default}/:
 
 ## Partial-route redirects {#cloud-route-partial}
 
-In the [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) file, you can also add partial redirect rules to existing routes based on pattern matching:
+In the [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html) file, you can also add partial redirect rules to existing routes based on pattern matching:
 
 ```yaml
 http://{default}/:
@@ -102,7 +105,7 @@ Use the following format to configure redirect requests which append the path su
 http://{default}/:
     type: upstream
     redirects:
-    paths: { "/from": { to: "https://{default}/to", append_suffix: false }
+    paths: "/from": { to: "https://{default}/to", append_suffix: false }
 ```
 
 This configuration works as follows:

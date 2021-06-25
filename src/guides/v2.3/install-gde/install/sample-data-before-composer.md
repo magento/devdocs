@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: T_SampleData
 title: Install using Composer
 menu_title: Install using Composer
@@ -12,4 +11,3 @@ functional_areas:
 ---
 
 {% include install/sampledata/sample-data-composer.md %}
-

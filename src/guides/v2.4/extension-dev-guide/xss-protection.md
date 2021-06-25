@@ -94,7 +94,7 @@ let settings = <?= $myJson ?>
 
 Pass in an optional array of allowed tags that will not be escaped.
 
-If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `target`, `style` and `title`. Any other attribute for that allowed tag will be escaped.
+If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `style` and `title`. Any other attribute for that allowed tag will be escaped.
 
 `embed`, `iframe`, `video`, `source`, `object`, `audio`, `script` and `img` tags are not allowed, regardless of the content of this array.
 
@@ -176,7 +176,7 @@ parentElement.appendChild(newDiv);
 
 #### UI component data providers
 
-UI component data providers pass dynamic (user generated) data to UI components. The data they return is rendered in order to support component dynamic linking. Since user data is supposed to be treated a a literal value which is not refering to any other component, rendering of these properties must be disabled. See [UI component data providers][] to read more about data providers and component linking.
+UI component data providers pass dynamic (user generated) data to UI components. The data they return is rendered in order to support component dynamic linking. Since user data is supposed to be treated as a literal value which is not refering to any other component, rendering of these properties must be disabled. See [UI component data providers][] to read more about data providers and component linking.
 
 ```php
 $uiData = ['linkProperty' => '${ $.otherComponent.value }'];
@@ -193,8 +193,8 @@ To check your .phtml template for XSS vulnerabilities, use the _Magento2.Securit
 This sniff finds all _echo_ calls in PHTML-templates and determines if the output is properly escaped.
 It covers the following cases:
 
--  /_ @noEscape _/ before output. Output does not require escaping. Test is green.
--  /_ @escapeNotVerified _/ before output. Output escaping is not checked and should be verified. Test is green.
+-  `/_ @noEscape _/` before output. Output does not require escaping. Test is green.
+-  `/_ @escapeNotVerified _/` before output. Output escaping is not checked and should be verified. Test is green.
 -  Methods which contain "html" in their names (for example echo $object->{suffix}Html{postfix}()). Data is ready for the HTML output. Test is green.
 -  AbstractBlock methods `escapeHtml`, `escapeHtmlAttr`, `escapeUrl`, `escapeJs` are allowed. Test is green.
 -  Type casting and php function `count()` are allowed (for example `echo (int)$var`, `(bool)$var`, `count($var)`). Test is green.
@@ -203,7 +203,7 @@ It covers the following cases:
 -  Other of previously mentioned. Output is not escaped. Test is red.
 
 <!-- Link Definitions -->
-[product listing template]: https://github.com/magento/magento2/blob/78bb169ff9721c8d05c35b4c29a4464fd45bccbe/app/code/Magento/Catalog/view/frontend/templates/product/list.phtml#L16
+[product listing template]: {{ site.mage2bloburl }}/78bb169ff9721c8d05c35b4c29a4464fd45bccbe/app/code/Magento/Catalog/view/frontend/templates/product/list.phtml#L16
 [Template guide]: {{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html
 [Cross-site scripting]: https://owasp.org/www-community/attacks/xss/
 [Magento binding syntax]: {{ page.baseurl }}/ui_comp_guide/concepts/magento-bindings.html

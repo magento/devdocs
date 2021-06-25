@@ -102,7 +102,7 @@ There are times when an action needs to be confirmed. In these cases, the userâ€
 
 ![](img/datatable11.jpg)
 
-Once an action is taken, success/fail messaging should appear as an overlay which fades away. Certain actions mayâ€¨require that an Undo action be provided. This experience should be the same whether a single file is being deleted via the "actions" button for that record or 1 or more files have been selected via a checkbox and deleted via the mass actions delete.
+Once an action is taken, success/fail messaging should appear as an overlay which fades away. Certain actions mayrequire that an Undo action be provided. This experience should be the same whether a single file is being deleted via the "actions" button for that record or 1 or more files have been selected via a checkbox and deleted via the mass actions delete.
 
 ![](img/datatable12.jpg)
 

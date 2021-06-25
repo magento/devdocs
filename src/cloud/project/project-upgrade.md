@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Upgrade Magento version
+title: Upgrade version
 functional_areas:
   - Cloud
   - Upgrade
@@ -16,18 +16,20 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. Befo
 
 Review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. Your upgrade tasks may include the following:
 
--  Update your PHP version Elasticsearch version, and other services
--  Convert an older configuration management file
--  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
--  Upgrade third-party extensions to the latest supported version
--  Update the `.gitignore` file
+-  Update PHP, Elasticsearch, and other services for compatibility with new Magento version. See [Change service version].
+-  Convert an older configuration management file.
+-  Update the `.magento.app.yaml` file with new settings for hooks and environment variables.
+-  Upgrade third-party extensions to the latest supported version.
+-  Update the `.gitignore` file.
 
 {:.bs-callout-info}
 If you upgrade the PHP version, you must also submit a Support ticket to update the New Relic service.
 
 ### Configuration management
 
-If you are upgrading from 2.1.4 or later to 2.2.x or later and use [Configuration Management], you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly like the `config.local.php` file, but it has different configuration settings that include a list of your enabled modules and additional configuration options.
+Older versions of {{site.data.var.ee}}, such as 2.1.4 or later to 2.2.x or later, used a `config.local.php` file for Configuration Management. {{site.data.var.ee}} version 2.2.0 and later use the `config.php` file, which works exactly like the `config.local.php` file, but it has different configuration settings that include a list of your enabled modules and additional configuration options.
+
+When upgrading from an older version, you must migrate the `config.local.php` file to use the newer `config.php` file. Use the following steps to backup your configuration file and create a new one.
 
 {:.procedure}
 To create a temporary `config.php` file:
@@ -102,10 +104,10 @@ To update the `.magento.app.yaml` file:
 
 ### Verify Zend Framework composer dependencies
 
-When upgrading to 2.3.x or later from 2.2.x, verify that the Zend Framework dependencies in the `autoload` property of the `composer.json` file have been updated with the Laminas plugin. This plugin supports new requirements for the Zend Framework, which has migrated to the Laminas project. See [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) on the _Magento DevBlog_.
+When upgrading to **2.3.x or later from 2.2.x**, verify that the Zend Framework dependencies have been added to the `autoload` property of the `composer.json` file to support Laminas. This plugin supports new requirements for the Zend Framework, which has migrated to the Laminas project. See [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) on the _Magento DevBlog_.
 
 {:.procedure}
-To check and update Zend Framework dependencies:
+To check the `auto-load:psr-4` configuration:
 
 1. On your local workstation, change to the Cloud project root directory.
 
@@ -113,25 +115,25 @@ To check and update Zend Framework dependencies:
 
 1. Open the `composer.json` file in a text editor.
 
-1. Check the `autoload:psr-4` section for the Laminas plugin:
+1. Check the `autoload:psr-4` section for the Zend plugin manager implementation for controllers dependency::
 
    ```diff
     "autoload": {
-      "psr-4": {
-         "Magento\\Framework\\": "lib/internal/Magento/Framework/",
-         "Magento\\Setup\\": "setup/src/Magento/Setup/",
-         "Magento\\": "app/code/Magento/",
-   +     "Laminas\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
-      },
+       "psr-4": {
+          "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+          "Magento\\Setup\\": "setup/src/Magento/Setup/",
+          "Magento\\": "app/code/Magento/",
+          "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
+       },
    ```
    {:.no-copy}
 
-1. If the Laminas plugin is missing, update `composer.json`:
+1. If the Zend dependency is missing, update `composer.json`:
 
    -  Add the following line to the `autoload:psr-4` section.
 
       ```json
-      "Laminas\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
+      "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
       ```
 
    -  Update the project dependencies.
@@ -147,7 +149,7 @@ To check and update Zend Framework dependencies:
       ```
 
       ```bash
-      git commit -m "Add Laminas plugin to Zend Framework composer dependencies"
+      git commit -m "Add Zend plugin manager implementation for controllers dependency for Laminas support"
       ```
 
       ```bash
@@ -300,12 +302,13 @@ To resolve the error:
    ```
 
 <!--Link definitions-->
-[.magento.app.yaml]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html
+[.magento.app.yaml]: {{site.baseurl}}/cloud/project/magento-app.html
 [Configuration Management]: {{site.baseurl}}/cloud/live/sens-data-over.html
+[Change service version]: {{site.baseurl}}/cloud/project/services.html#change-service-version
 [Examine the logs]: {{site.baseurl}}/cloud/project/log-locations.html
-[extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options
+[extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/magento-app.html#configure-php-options
 [Fastly CDN module for Magento 2]: {{site.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
 [Migration of Zend Framework to the Laminas Project]: https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251
 [Upgrades and patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
-[version compatibility matrix]: {{site.baseurl}}/cloud/project/project-conf-files_services.html#service-versions
+[version compatibility matrix]: {{site.baseurl}}/cloud/project/services.html#service-versions
 [version constraint syntax]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage

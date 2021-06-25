@@ -26,7 +26,7 @@ When you complete a partial or full shipment, Magento deducts the reserved produ
 {:.bs-callout-info}
 Although you can use the `POST V1/shipment` endpoint to create a shipment, the `POST /V1/order/:orderId/ship` endpoint is a better option in that it is more efficient and the payload can be simpler.
 
-We'll ship 35 `24-WB01` items and 20 `24-WB03` items from the Northeast warehouse. The `order_item_id` value for `24-WB01` is 9, and the value for `24-WB03` is 8.
+We'll ship 35 `24-WB01` items and 20 `24-WB03` items from the Northeast warehouse. The `order_item_id` value for `24-WB01` is 3, and the value for `24-WB03` is 4.
 
 **Endpoint:**
 

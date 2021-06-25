@@ -5,7 +5,7 @@ title: Release Notes
 
 **{{site.data.var.im}} (provided by the [Magento Inventory (was MSI)](https://github.com/magento/inventory) project)** is available with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} 2.3.x. Merchants can use {{site.data.var.im}} to manage inventory for all product types in a single warehouse and across complex shipping networks. Manage these locations as sources, tracking on-hand inventory quantities per product. Stocks connect these sources with sales channels (websites) to provide an accurate salable quantity, calculating available on-hand products, pending orders (reservations), and configured thresholds. {{site.data.var.im}} also updates order and shipment options, giving you full control over your inventory and deductions at the source level.
 
-{{site.data.var.im}} is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel ([self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+{{site.data.var.im}} is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/archives/C5FU5E2HY) channel ([self signup](https://opensource.magento.com/slack)) to discuss the project.
 
 See the following documentation:
 
@@ -19,6 +19,24 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
+
+### v1.2.2
+{{site.data.var.im}} 1.2.2 (module version: `magento/inventory-metapackage = 1.2.2`) is supported with version 2.4.2 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.fix} Fixed several issues related to the composite product visibility on the frontend.
+
+-  {:.fix} Improved cart page performance during quantity update on B2B.
+
+-  {:.fix} Several bug fixes targeted to resolve issues with in-store pickup, mass updates, and inventory threshold.
+
+-  {:.new} **Functional tests.** Introduced new functional tests and provided fixes for existing tests to make them more stable.
+
+### v1.2.1
+{{site.data.var.im}} 1.2.1 (module version: `magento/inventory-metapackage = 1.2.1`) is supported with version 2.4.1 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.fix} Fixed known issue related to `inventory_cleanup_reservations` cron job, addressed issue related to In-Store Pickup functionality for bundle products, general improvements to stock calculation, bundle product support and backorders functionality.
+
+-  {:.new} **Functional tests.** Introduced new functional tests to provide additional coverage for In-Store Pickup functionality.
 
 ### v1.2.0
 
@@ -44,6 +62,13 @@ The release notes include:
    SELECT GROUP_CONCAT(reservation_id) FROM inventory_reservation GROUP BY stock_id, sku HAVING SUM(quantity) = 0;
    DELETE FROM inventory_reservation where reservation_id IN (result_of_the_first_query);
    ```
+
+### v1.1.6
+{{site.data.var.im}} 1.1.6 (module version: `inventory-composer-metapackage = 1.1.6`) is supported with version 2.3.6 and compatible with version 2.3.5, 2.3.4, 2.3.3, 2.3.2, 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.new} **Asynchronous stock re-indexing.** Added the ability to asynchronously re-index stock and improved the performance of several critical scenarios.
+
+-  {:.fix} Bug fixes to resolve issues related to backorders, credit memos, low stock report grid, fixes connected to "resolve inconsistencies" CLI tool and general improvements.
 
 ### v1.1.5
 

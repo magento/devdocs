@@ -8,7 +8,15 @@ The `removeGiftCardFromCart` mutation removes a previously-applied gift card fro
 
 ## Syntax
 
- `mutation: removeGiftCardFromCart(input: RemoveGiftCardFromCartInput): RemoveGiftCardFromCartOutput`
+```graphql
+mutation {
+  removeGiftCardFromCart(
+    input: RemoveGiftCardFromCartInput
+  ) {
+    RemoveGiftCardFromCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -16,7 +24,7 @@ The `removeGiftCardFromCart` mutation removes a previously-applied gift card fro
 
 **Request:**
 
- ``` text
+```graphql
 mutation {
   removeGiftCardFromCart(
     input: {
@@ -35,7 +43,7 @@ mutation {
 
 **Response:**
 
- ```json
+```json
 {
   "data": {
     "removeGiftCardFromCart": {
@@ -69,3 +77,10 @@ Attribute |  Data Type | Description
  {% include graphql/cart-object.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`Could not find a cart with ID \"xxxxx\"` | The ID provided in the `cart_id` field is invalid or the cart does not exist for the customer.
+`The gift card couldn't be deleted from the quote.` | The value provided in the `gift_card_code` field is invalid or the gift card with that specific ID does not exist in the cart.

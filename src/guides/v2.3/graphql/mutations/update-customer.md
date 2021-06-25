@@ -9,7 +9,15 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Syntax
 
-`mutation: {updateCustomer(input: CustomerInput!) {CustomerOutput}}`
+```graphql
+mutation {
+  updateCustomer(
+    input: CustomerInput!
+  ) {
+    CustomerOutput
+  }
+}
+```
 
 ## Example usage
 

@@ -9,22 +9,24 @@ functional_areas:
 
 The `env.php` file contains the following sections:
 
-| Name                  | Description                                    |
-| --------------------- | ---------------------------------------------- |
-| `backend`             | Settings for the Admin area                    |
-| `cache_types`         | Cache storage settings                         |
-| `cron`                | Enable or disable the cron jobs                |
-| `crypt`               | The encryption key for cryptographic functions |
-| `db`                  | Database connection settings                   |
-| `directories`         | Magento directories mapping settings           |
-| `downloadable_domains`| List of downloadable domains                   |
-| `install`             | The installation date                          |
-| `lock`                | Lock provider settings                         |
-| `MAGE_MODE`           | The [Magento mode][magento-mode]               |
-| `queue`               | [Message queues][message-queues] settings      |
-| `resource`            | Mapping of resource name to a connection       |
-| `session`             | Session storage data                           |
-| `x-frame-options`     | Setting for [x-frame-options][x-frame-options] |
+| Name                          | Description                                                     |
+|-------------------------------|-----------------------------------------------------------------|
+| `backend`                     | Settings for the Admin area                                     |
+| `cache_types`                 | Cache storage settings                                          |
+| `consumers_wait_for_messages` | Configure how consumers process messages from the message queue |
+| `cron`                        | Enable or disable the cron jobs                                 |
+| `crypt`                       | The encryption key for cryptographic functions                  |
+| `db`                          | Database connection settings                                    |
+| `directories`                 | Magento directories mapping settings                            |
+| `downloadable_domains`        | List of downloadable domains                                    |
+| `install`                     | The installation date                                           |
+| `lock`                        | Lock provider settings                                          |
+| `MAGE_MODE`                   | The [Magento mode][magento-mode]                                |
+| `queue`                       | [Message queues][message-queues] settings                       |
+| `resource`                    | Mapping of resource name to a connection                        |
+| `session`                     | Session storage data                                            |
+| `x-frame-options`             | Setting for [x-frame-options][x-frame-options]                  |
+| `system`                      | Configuration values that cannot be edited in the Magento Admin |
 
 ## backend
 
@@ -62,6 +64,26 @@ All the Magento cache types configuration are available from this node.
 
 Learn more about different [Cache Types][cache-types].
 
+## consumers_wait_for_messages
+
+Specify whether consumers should continue polling for messages if the number of processed messages is less than the `max_messages` value. The default value is `1`.
+
+```conf
+'queue' => [
+    'consumers_wait_for_messages' => 1
+]
+```
+
+The following options are available:
+
+-  `1`—Consumers continue to process messages from the message queue until reaching the `max_messages` value specified in the `env.php` file before closing the TCP connection and terminating the consumer process. If the queue empties before reaching the `max_messages` value, the consumer waits for more messages to arrive.
+
+   We recommend this setting for large merchants because a constant message flow is expected and delays in processing are undesirable.
+
+-  `0`—Consumers process available messages in the queue, close the TCP connection, and terminate. Consumers do not wait for additional messages to enter the queue, even if the number of processed messages is less than the `max_messages` value specified in the `env.php` file. This can help prevent issues with cron jobs caused by long delays in message queue processing.
+
+   We recommend this setting for smaller merchants that do not expect a constant message flow and prefer to conserve computing resources in exchange for minor processing delays when there could be no messages for days.
+
 ## cron
 
 Enable or disable cron jobs for the Magento application. By default, cron jobs are enabled. To disable them, add the `cron` configuration to the `env.php` file and set the value to `0`.
@@ -91,7 +113,7 @@ You can learn more about it at [Encryption Key][encryption-key].
 
 ## db
 
-All database configurations are availble in this node.
+All database configurations are available in this node.
 
 ```conf
 'db' => [
@@ -160,7 +182,7 @@ Learn more about [Magento Modes][magento-modes].
 
 ## queue
 
-Message queue releated configurations are availble in this node.
+Message queue related configurations are available in this node.
 
 ```conf
 'queue' => [
@@ -175,7 +197,7 @@ Learn more about Message queue in below link [Message Queue][message-queue]
 
 ## resource
 
-Resource configuration settings are avilable in this node.
+Resource configuration settings are available in this node.
 
 ```conf
 'resource' => [
@@ -187,7 +209,7 @@ Resource configuration settings are avilable in this node.
 
 ## session
 
-Magento session related configurations are stoted in the `session` node.
+Magento session related configurations are stored in the `session` node.
 
 ```conf
 'session' => [
@@ -206,6 +228,23 @@ x-frame-options header can be configured using this node.
 
 Learn more about session in [x-frame-options][x-frame-options].
 
+## system
+
+Magento configuration values that cannot be edited in the Magento Admin.
+
+```conf
+'system' => [
+  'default' => [
+    'web' => [
+      'secure' => [
+          'base_url' => 'https://magento.test/'
+      ]
+    ]
+  ]
+```
+
+Learn more in [env-php-config-set][env-php-config-set].
+
 <!-- Link definitions -->
 [lock-provider-config]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html
 [encryption-key]: https://docs.magento.com/m2/ce/user_guide/system/encryption-key.html
@@ -219,3 +258,4 @@ Learn more about session in [x-frame-options][x-frame-options].
 [downloadable-domains]: {{ page.baseurl }}/reference/cli/magento.html#downloadabledomainsadd
 [change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
 [crons]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html
+[env-php-config-set]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html

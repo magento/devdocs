@@ -1,11 +1,12 @@
 Complete the following tasks in the order shown:
 
-*  [About the shared group](#mage-owner-about-group)
-*  [Step 1: Create the Magento file system owner and give the user a strong password](#mage-owner-create-user)
-*  [Step 2: Find the web server group](#install-update-depend-user-findgroup)
-*  [Step 3: Put the Magento file system owner in the web server's group](#install-update-depend-user-add2group)
-*  [Step 4: Get the Magento software](#perms-get-software)
-*  [Step 5: Set ownership and permissions for the shared group](#perms-set-two-users)
+-  [About the shared group](#mage-owner-about-group)
+-  [Step 1: Create the Magento file system owner and give the user a strong password](#mage-owner-create-user)
+-  [Step 2: Find the web server user's group](#install-update-depend-user-findgroup)
+-  [Step 3: Put the Magento file system owner in the web server's group](#install-update-depend-user-add2group)
+-  [Step 4: Get the Magento software](#perms-get-software)
+-  [Step 5: Set ownership and permissions for the shared group](#perms-set-two-users)
+-  [Next step](#next-step)
 
 ### About the shared group {#mage-owner-about-group}
 
@@ -54,7 +55,7 @@ Because the point of creating this user is to provide added security, make sure 
 
 To find the web server user's group:
 
-*  CentOS:
+-  CentOS:
 
    ```bash
    grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
@@ -68,21 +69,21 @@ To find the web server user's group:
 
 Typically, the user and group name are both `apache`.
 
-*  Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group.
+-  Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group.
 
 Typically, the username and the group name are both `www-data`.
 
 ### Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}
 
-To put the Magento file system owner in the web server's group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
+To put the Magento file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
-*  CentOS: `usermod -a -G apache <username>`
-*  Ubuntu: `usermod -a -G www-data <username>`
+-  CentOS: `usermod -a -G apache <username>`
+-  Ubuntu: `usermod -a -G www-data <username>`
 
 {:.bs-callout-info}
 The `-a -G` options are important because they add `apache` or `www-data` as a _secondary_ group to the user account, which preserves the user's _primary_ group. Adding a secondary group to a user account helps [restrict file ownership and permissions](#perms-set-two-users) to ensure members of a shared group only have access to certain files.
 
-For example, to add `apache` as a secondary group to user `magento_user` on CentOS:
+For example, to add the user `magento_user` to the `apache` primary group on CentOS:
 
 ```bash
 sudo usermod -a -G apache magento_user
@@ -105,16 +106,15 @@ Typically, the username and primary group name are the same.
 
 To complete the task, restart the web server:
 
-*  Ubuntu: `service apache2 restart`
-*  CentOS: `service httpd restart`
+-  Ubuntu: `service apache2 restart`
+-  CentOS: `service httpd restart`
 
 ### Step 4: Get the Magento software {#perms-get-software}
 
-If you haven't done so already, get the Magento software in one of the following ways:
+If you have not done so already, get the Magento software in one of the following ways:
 
-*  [Compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
-*  [Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
-*  [Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+-  [Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
+-  [Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 ### Step 5: Set ownership and permissions for the shared group {#perms-set-two-users}
 
@@ -128,26 +128,23 @@ To set ownership and permissions before you install the Magento software:
    ```
 
    ```bash
-   find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+   find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
    ```
 
    ```bash
-   find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+   find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
    ```
 
    ```bash
-   sudo chown -R :<web server group> .
+   chown -R :<web server group> .
    ```
 
    ```bash
    chmod u+x bin/magento
    ```
 
-{% include install/file-system-perms-twouser_cmds-only.md %}
+{% include install/file-system-perms-twouser_cmds-only_22.md %}
 
 ### Next step
 
-After you have set file system ownership and permissions, continue with any of the following:
-
-*  [Command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-*  [Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+After you have set file system ownership and permissions, [install Magento]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).

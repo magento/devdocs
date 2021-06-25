@@ -32,14 +32,7 @@ Using [Elasticsearch][] as your [catalog](https://glossary.magento.com/catalog) 
 
 ### Supported versions {#es-spt-versions}
 
-Magento 2.3.5 adds support for Elasticsearch 7.x.x (default) and 6.8.x.
-Both ES 2.x and 5.x are [End of Life][] and are no longer supported in Magento.
-Follow the instructions in [Change Elasticsearch Client][].
-
-{{site.data.var.ee}} version 2.3.5 supports the following Elasticsearch versions:
-
-*  Elasticsearch 7.x.x
-*  Elasticsearch 6.8.x
+{% include config/es-version-23.md %}
 
 ### Recommended configuration {#es-arch}
 
@@ -133,9 +126,7 @@ For additional information, see [Elasticsearch documentation][]{:target="_blank"
 [Configure Magento to use Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/configure-magento.html
 [Elasticsearch Ubuntu documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
 [Configuring Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html
-[End of Life]: https://www.elastic.co/support/eol
 [Upgrading Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html
 [Full cluster restart upgrade]: https://www.elastic.co/guide/en/elasticsearch/reference/current/restart-upgrade.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
-[Change Elasticsearch Client]: {{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html
 [Installing Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html

@@ -22,11 +22,10 @@ You can have one build system that meets the following requirements:
 -  Must have a compatible PHP version installed
 -  Must have Composer installed
 -  It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems][].
+-  The build system does not need Magento to be installed, but the code must be available to it.
 
-The build system does _not_ need any of the following:
-
--  Magento database connection
--  Magento software installed (only the code must be present)
+{:.bs-callout-warning}
+The database connection not required if it is already contained in `config.php` (see [Export the configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)). Otherwise, the database connection is required.
 
 {:.bs-callout-info}
 The build machine can be on its own host or on the same host as an installed Magento system.
@@ -95,6 +94,13 @@ To set up the build system:
    ```
 
    See the [`.gitignore` reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html) for more information.
+
+1. The build system should use either [default mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#default-mode) or [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode):
+
+   ```bash
+   bin/magento deploy:mode:set <mode>
+   ```
+   `<mode>` is required. It can be either `default` or `developer`.
 
 {:.ref-header}
 Related topics

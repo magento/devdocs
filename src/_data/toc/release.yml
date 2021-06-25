@@ -5,10 +5,22 @@ pages:
     url: /release/
     versionless: true
 
+  - label: Released versions
+    url: /release/released-versions.html
+    versionless: true
+
   - label: Release policy
     url: /release/policy
     versionless: true
   
+  - label: Lifecycle policy
+    url: /release/lifecycle-policy.html
+    versionless: true
+  
   - label: Availability
     url: /release/availability.html
+    versionless: true
+
+  - label: Commerce features
+    url: /release/commerce-features.html
     versionless: true

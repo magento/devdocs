@@ -15,8 +15,11 @@ For {{site.data.var.ece}} projects, see [Set up Magento B2B module]({{ site.base
 1. Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
 
    ```bash
-   composer require magento/extension-b2b
+   composer require magento/extension-b2b:<version>
    ```
+
+   {:.bs-callout-info}
+   You must specify a [Compatible B2B extension version]({{ site.baseurl }}/release/availability.html#compatibility) in the command, which can be found in the left column of the compatibility table.
 
    If you get an error when trying to install the B2B module for a local instance of {{site.data.var.ee}} for example:
 
@@ -26,7 +29,7 @@ For {{site.data.var.ece}} projects, see [Set up Magento B2B module]({{ site.base
 
    Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).
 
-   If not already denfined globally in your [COMPOSER_HOME](https://getcomposer.org/doc/03-cli.md#composer-home), you will need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your `public_key` and `private_key` for `username` and `password`:
+   If not already defined globally in your [COMPOSER_HOME](https://getcomposer.org/doc/03-cli.md#composer-home), you will need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your `public_key` and `private_key` for `username` and `password`:
 
    ```json
    {
@@ -60,7 +63,7 @@ For {{site.data.var.ece}} projects, see [Set up Magento B2B module]({{ site.base
    ```
 
  {:.bs-callout-info}
-  Note: In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the commands above. Magento does not prompt you to run the compile command in Developer mode.
+ In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the commands above. Magento does not prompt you to run the compile command in Developer mode.
 
 {:.bs-callout-info}
 After completing the installation, you must follow the [post-installation steps](#configure-b2b).

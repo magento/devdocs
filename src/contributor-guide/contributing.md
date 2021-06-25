@@ -23,7 +23,7 @@ The following topics are included in this guide:
 -  [Contribution awards and points](#points)
 
 {:.bs-callout-tip}
-Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://tinyurl.com/engcom-slack), in the [#general](https://magentocommeng.slack.com/messages/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/messages/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
+Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://opensource.magento.com/slack), in the [#general](https://magentocommeng.slack.com/archives/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/archives/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
 
 ## Contribute to Magento 2 code {#contribute}
 
@@ -73,6 +73,7 @@ Magento and Community Maintainers process contributions based on the issue/pull 
 ### Who and how can define severity and priority?
 
 #### Priority
+
 The Magento team defines priorities during regular triage review meetings, based on the community assessment for severity.
 
 #### Severity
@@ -95,6 +96,21 @@ The following list consists of questions you can ask to help determine the prope
 
 The number of 'Yes' answers should help you to determine the severity.
 
+### Pull request risk assessment:
+
+The 'Risk:' label highlights the risk that the suggested changes may bring to the platform.
+It helps maintainers decide:
+
+-  to which version the pull requests should be delivered
+-  which reviewers should see it
+-  whether a request should be approved or not
+
+| Risk | Description |
+| ------------- | ------------- |
+| High | A pull request that makes changes on the framework or changes that will affect multiple areas. |
+| Medium | A pull request that makes changes which may affect multiple areas or makes considerable changes on a specific area. |
+| Low | A pull request that will probably not affect other areas. |
+
 ## GitHub and Two-Factor authentication {#two-factor}
 
 Magento **requires all Partners** who contribute code to enable 2FA on their GitHub accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.
@@ -103,7 +119,7 @@ We also recommend creating a personal access token for your account to use when 
 
 ## Questions or enhancement requests? {#question}
 
-We capture code-related issues in the the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [Magento DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
+We capture code-related issues in the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [Magento DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
 
 Submit feature requests or enhancement suggestions to the [Magento 2 Feature Requests and Improvements forum](https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests). For details about how requests are managed, see [Improvements to GitHub Management](https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96).
 
@@ -133,11 +149,13 @@ Review the following supported and accepted pull request rules. We defined these
 
 For complete information about contributing to Magento projects, see the [Beginner Guides](https://github.com/magento/magento2/wiki/Getting-Started) on the Magento 2 repository. These guides help you:
 
+-  Select an issue to work on and self-assign
 -  Fork a repository
 -  Create a branch
--  Find and work issues
--  Create tests
--  Submit a pull request
+-  Fix/implement the functionality
+-  Cover the changes with tests
+-  Open a pull request
+-  Launch tests and ensure they are green (see more details on [pull request tests]({{ site.baseurl }}/contributor-guide/pull-request-tests.html))
 
 ## Squash commits {#squash-commits}
 
@@ -191,7 +209,11 @@ When you want to verify an issue or pull request, use the `instance` command to 
 @magento give me {$version} instance
 ```
 
-For `version`, the currently supported values are latest [version tags](https://github.com/magento/magento2/tags) and the 2.4-develop branch.
+Replace `{$version}` with the version tag or branch. The following values are supported: the version tag for the latest release and `2.4-develop` for the development branch.
+
+```text
+@magento give me 2.4.0 instance
+```
 
 **Actions:** The following actions complete the command:
 
@@ -233,6 +255,57 @@ Admins access will be shared via comment on GitHub.
 -  Magento EngCom Team
 -  [Contributor]({{ site.baseurl }}/contributor-guide/contributors.html)
 
+### Customize deployed instances {#customize-deployed-instances}
+
+In some cases a custom environment is required to test an issue or a pull request. You can create a custom environment by appending custom configuration settings to the PR comment to [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+#### Magento edition
+
+Append the following text to your PR comment to specify the Magento Commerce edition to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+```text
+with edition {$edition}
+```
+
+Replace `{$edition}` with either of the following values:
+
+-  `ee` deploys the Magento Commerce edition
+-  `b2b` deploys Magento Commerce with B2B modules.
+
+For example, append the following text to the PR comment to deploy a {{site.data.var.ee}} instance with B2B modules:
+
+```text
+with edition b2b
+```
+
+#### Add extensions
+
+Append the following text to your PR comment to specify extensions to add to an instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+```text
+with extensions {$extensionRepo}
+```
+
+Replace `{$extensionRepo}` with one or more extension repositories to include when compiling your instance.  If you specify multiple repositories, use a comma after each repository. You can specify a specific branch in a repository using the pattern: `org/repo-name:branch-name`. For example:
+
+```text
+with extensions magento/security-package:1.0-develop, magento/security-package-ee
+```
+
+#### Remove extensions
+
+Append the following text to your PR comment to specify extensions that you want to remove from the instance when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+
+```text
+without extensions {$extensionRepo}
+```
+
+Replace `{$extensionRepo}` with one or more extension repositories to remove before compiling your instance. If you specify multiple repositories, use a comma after each repository. For example:
+
+```text
+without extensions magento/adobe-stock-integration
+```
+
 ### Combine multiple pull requests {#combine-pr}
 
 To optimize the pull request queue, enter a command with a series of related pull request numbers to merge and test the code. If all tests pass, the entered PRs are merged into the current PR.
@@ -245,7 +318,7 @@ To optimize the pull request queue, enter a command with a series of related pul
 
 The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into the current pull request. For example: `@magento combine 1234 1238 1239`.
 
-**actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
+**Actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
 
 -  Current pull request allows changes from maintainers.
 -  All mentioned pull requests are open.
@@ -258,29 +331,128 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 -  [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers)
 -  Magento EngCom Team
 
+### Import source code to specific repository {#import}
+
+The import command provides the ability to copy a contributor's code or pull request into an internal fork.  The internal team can then proceed with additional fixes or delivery.
+
+**Command:** To import code or a pull request, a member of the Magento team controlling the pull request enters the following command:
+
+```text
+@magento import {code|pr} to {organizationName}/{repositoryName}
+```
+
+**Usage Examples:**
+
+-  To import the code only use
+
+```text
+@magento import code to magento-team/magento2
+@magento import code to https://github.com/magento-team/magento2
+```
+
+-  To import the pull request use
+
+```text
+@magento import pr to magento-team/magento2
+@magento import pull request to magento-team/magento2
+@magento import pr to https://github.com/magento-team/magento2
+@magento import pull request to https://github.com/magento-team/magento2
+```
+
+**Actions:**
+
+-  Code: A branch with a copy of the contributor's source code is created within the target repository.
+-  PR: A copy of the pull request is created within the target repository.
+
+**Permissions:**
+
+-  Magento team
+
 ## Report an issue {#report}
 
-If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.
+To maintain an effective bug fix workflow, we ask reporters to follow some simple guidelines.
 
-Before creating an issue:
+Before creating an issue, do the following:
 
-1. Read the [Issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines) to learn how to create an issue that can be processed in a timely manner.
-1. Check the [documentation]({{site.baseurl}}/) to make sure the behavior you are reporting is really a bug, not a feature.
-1. Review the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating another contributor's work.
+-  Check the [Developer Documentation](http://devdocs.magento.com/) and [User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html) to make sure the behavior you are reporting is really a bug, not a feature.
+-  Check the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating somebody’s work.
+-  Ensure that information you are reporting is a technical issue. Refer to the [Community Forums](https://community.magento.com/) or [Magento Stack Exchange](http://magento.stackexchange.com/) for technical questions, feature requests, etc.
+-  Verify that the issue you are reporting does not relate to Magento Commerce. GitHub is intended for Magento Open Source users to report on issues related to Open Source only. You can report Commerce-related issues one of two ways:
 
-To add an issue:
+   -  Use the Support portal associated with your account
+   -  If you are a Partner reporting on behalf of a merchant, use the Partner portal
 
-1. In the Magento 2 public repository, click the **Issues** tab.
+-  Check if the issue exists on the `2.4-develop` branch with a clean Magento installation. We only accept pull requests for the `2.4-develop` branch. If the issue is not reproducible on the `2.4-develop` branch, it will be closed.
 
-    ![Issues tab]({{site.baseurl}}/common/images/issues.png)
-1. Click **New issue**.
+If you are sure that the problem you are experiencing is a bug, file a new issue in GitHub following the recommendations below.
 
-    ![Create new issue]({{site.baseurl}}/common/images/new_issue.png)
-1. Select a type of issue: Bug report, Developer experience issue, or Feature request.
-1. Fill in the Title, description, and additional information for the template.
-1. Click **Submit new issue**.
+### Issue template
 
-When you submit the issue, a validation process begins. If the issue doesn't have enough information, you as the Reporter may need to add more information. See [GitHub Issues Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow) for complete details on issue verification.
+The [Issue Reporting Template](https://github.com/magento/magento2/blob/2.3-develop/.github/ISSUE_TEMPLATE.md) is a default placeholder for every new issue. Follow the sections carefully, as it ensures it will pass `Gate 1` quickly. More information on gates is available in [Magento Issue Gates](https://github.com/magento/magento2/wiki/Magento-Issue-Gates).
+
+{.bs-callout-tip}
+Note that a higher level of detail in the report increases the chance that someone will be able to reproduce the issue.
+
+### Title
+
+The title is a vital part of the bug report. A well written title should contain a clear, brief explanation of the issue, emphasizing the most important points.
+
+A good example:
+
+"Unable to place order with Virtual product and PayPal."
+
+An unclear example:
+
+"Can't checkout."
+
+### Issue description
+
+#### Preconditions
+
+Stating preconditions is very important. Provide information on:
+
+-  System configuration settings you have changed
+-  Detailed information on entities created (Products, Customers, etc)
+-  Magento version
+-  Anything else that would help a developer reproduce the bug
+
+Example:
+
+1. Magento CE 2.0.0 without sample data is installed.
+1. PayPal payment method is set up.
+1. Test category is set up.
+1. Virtual Product is created and assigned to the Test Category.
+
+#### Steps to reproduce
+
+Good steps to reproduce are vital to a good bug report. The issue is more likely to be fixed if it can be reproduced.
+
+Precisely describe each step required to reproduce the issue. Try to include as much information as possible; even minor details could be crucial.
+
+Example:
+
+1. Navigate to storefront as a guest.
+1. Open Test Category.
+1. Click "Add to Cart" on the Virtual Product.
+1. Open mini shopping cart and click "Proceed to Checkout".
+
+#### Actual and expected result
+
+To ensure that everybody involved in the fix understands the issue, precisely describe the result you expected to get and the result you actually observed after performing the steps.
+
+Expected result:
+
+Order is placed successfully, customer is redirected to the success page.
+
+Actual result:
+
+"Place order" button is not visible, order cannot be placed.
+
+#### Additional information
+
+Additional information is often requested when the bug report is processed. You can save time by providing both Magento and browser logs, screenshots, repository branch and HEAD commit you checked out to install Magento and any other artifacts related to the issue.
+
+Once the issue is created, it must pass through a series of [Magento Issue Gates](https://github.com/magento/magento2/wiki/Magento-Issue-Gates).
 
 ## Help triage issues  [![](https://www.codetriage.com/magento/magento2/badges/users.svg)](https://www.codetriage.com/magento/magento2) {#triage}
 

@@ -87,6 +87,8 @@ You can locate your URLs through the Project Web Interface. There is an _Access 
    -  Staging: `http[s]://<your domain>.c.staging-<project ID>.ent.magento.cloud`
    -  Production: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 
+{%include cloud/cloud-fastly-prereqs-custom-vcl.md%}
+
 ### Add SSH key to project environments {#add-public-ssh-key}
 
 Add your SSH public key to {{ site.data.var.ece }} environments:

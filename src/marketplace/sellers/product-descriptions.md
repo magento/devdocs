@@ -17,7 +17,7 @@ A detailed opening paragraph that describes the extension.
 ### List of features (required)
 
 -  Add a “Features” heading, using H3 or H2 tags.
--  List features vertically with bullet points.
+-  List features vertically with bullet points (minimum 5).
 -  Only use the bullet point button in the Admin to create the bullet points.
 
 ### Demo links (recommended)
@@ -27,7 +27,7 @@ A detailed opening paragraph that describes the extension.
 
 ### Heading Levels
 
-Use headings for any additional sections. (H3 or H2 tags)
+Use headings for any additional sections. Use only after "Features" section. (H3 or H2 tags)
 
 -  Headings can be Black or Orange only.
 -  Provide hyperlinks to functioning demos.

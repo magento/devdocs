@@ -295,7 +295,8 @@ A Reimburse transaction can be updated to include a purchase order and comment.
 `companyCreditCreditHistoryManagementV1`
 
 **REST Endpoints:**
-```
+
+```text
 GET /V1/companyCredits/history
 PUT /V1/companyCredits/history/:historyId
 ```

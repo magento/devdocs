@@ -22,7 +22,15 @@ See [Paypal Payflow Pro payment method]({{page.baseurl}}/graphql/payment-methods
 
 ## Syntax
 
-`handlePayflowProResponse(input: PayflowProResponseInput!): PayflowProResponseOutput`
+```graphql
+mutation {
+  handlePayflowProResponse(
+    input: PayflowProResponseInput!
+  ) {
+    PayflowProResponseOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -37,7 +45,7 @@ mutation {
       cart_id: "Po1WkfK7d3vZE0qga610NwJIbxgqllpt"
       paypal_payload: "$payload"
     }
-  ){
+  ) {
     cart {
       selected_payment_method {
         code

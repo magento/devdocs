@@ -1,5 +1,5 @@
 ---
-youtube_id: cM_9RkWFqqM
+youtube_id: mZNBENRgC1E
 duration: "7:36"
 group: "Fundamentals of Magento 2 Development"
 title: "How to Add a New Product Attribute"
@@ -87,7 +87,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
 
 {% endcollapsible %}
 
-## Step 2 Create an InstallData script
+## Step 2 Create an InstallData script {#CreateProductAttributeByUpgradeScript}
 
 Next, we need to create the InstallData script.
 Because adding an attribute technically adds records into several tables, such as `eav_attribute` and `catalog_eav_attribute,` this is data manipulation, not a schema change.
@@ -196,7 +196,7 @@ For now, we’ll just quickly go through most important ones:
 *  **visible_on_front:** A flag that defines whether an attribute should be shown on the “More Information” tab on the frontend
 *  **is_html_allowed_on_front:** Defines whether an attribute value may contain HTML
 
-## Step 3: Add a source model
+## Step 3: Add a source model {#AddSourceModel}
 
 Next, we need to create the source model:
 
@@ -337,3 +337,54 @@ backend model has executed successfully, so now we’ll set it to Wool and save 
 
 Having saved the product, we’ll now move to the frontend.
 It should be visible and in bold text.
+
+## Product Attribute Option Creation
+
+A product attribute of type multiselect or select will present selectable options to the user. These options may be added manually through the admin panel or by upgrade script. The script process is slightly different depending on whether the options are being added at the moment of attribute creation or whether the options are being added at a later time to an existing attribute.
+
+### Add options to a new prouduct attribute {#AddOptionsAlongNewProductAttribute}
+
+Basic instructions for creating a product attribute by setup or upgrade script can be found [above](#CreateProductAttributeByUpgradeScript). Before scripting the attribute creation, pick one of these two use cases for your options:
+
+1. You want a set of options which cannot be modified by a user through the admin panel and which can only be changed through a future code push.
+1. You want a set of options which can be modified, added or deleted through the admin panel.
+
+For use case `1` (an 'immutable' set of options), follow the above instructions ["Add a source model"](#AddSourceModel). You will create a model that contains and dynamically returns the attribute's selectable options to the client.
+
+For use case `2` (a 'mutable' set of options), see ["EAV and extension attributes"]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/attributes.html). Make sure to declare 'Magento\Eav\Model\Entity\Attribute\Source\Table' as the value for the 'source' attribute option. This ensures that Magento will store options in the appropriate database table.
+
+With `\Magento\Eav\Setup\EavSetup.php::addAttribute()` and `\Magento\Eav\Setup\EavSetup.php::addAttributeOptions()` you can add a series of options with the following array:
+
+```php
+'option' => ['values' => ['Option 1', 'Option 2', 'Option 3', etc.]];
+```
+
+Alternatively, you may designate a specific option sorting order as follows:
+
+```php
+'option' => ['values' => [8 => 'Option 1', 3 => 'Option 2', 11 => 'Option 3', etc.]]
+```
+
+### Add options to an existing product attribute
+
+*  To add options to an 'immutable' set of options, modify the custom source model with the additional options you wish to provide.
+
+*  Adding options to a 'mutable' set of options leverages the same `EavSetup` object as you use when creating an attribute with options, but requires an additional step because `EavSetup` needs to know to which attribute you want to assign new options.
+
+1. Assign an array of new options to a variable:
+
+```php
+   $options = ['attribute_id' => null, 'values' => 'Option 1', 'Option 2', etc]];
+```
+
+1. Update your array with the attribute ID from the database:
+
+```php
+   $options['attribute_id'] = $eavSetup->getAttributeId($eavSetup->getEntityTypeId('catalog_product'), 'your_attribute_code');
+```
+
+1. Add your options:
+
+```php
+   $eavSetup->addAttributeOption($options);
+```

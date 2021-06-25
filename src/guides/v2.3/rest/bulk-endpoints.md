@@ -86,22 +86,22 @@ The response contains an array that indicates whether the call successfully adde
     "request_items": [
         {
             "id": 0,
-            "data_hash": null,
+            "data_hash": "3d3d853839dd442d0b99a1badea756a03f19ffb0fb7aab672c05f83d5a914181",
             "status": "accepted"
         },
         {
             "id": 1,
-            "data_hash": null,
+            "data_hash": "bf8859d03545f0fa80084a47348a629cdf571fc064b952e7396c338d5cf3bf6e",
             "status": "accepted"
         },
         {
             "id": 2,
-            "data_hash": null,
+            "data_hash": "876f3f2e4b226d54dcbf3f5ce752a9f748a45310261d2dd5cc7a7c9ef74b4369",
             "status": "accepted"
         },
         {
             "id": 3,
-            "data_hash": null,
+            "data_hash": "9c1bd4bfd8defcc856ddf129cc01d172625d139d5f7dcf53b6cb09a0e9a843a3",
             "status": "accepted"
         }
     ],
@@ -132,7 +132,7 @@ DELETE <host>/rest/async/bulk/V1/cmsPage/byPageId
 
 ## Store scopes
 
-You can specify a store code in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
+You can specify a store code (which is labeled in the Admin as store view code) in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
 
 ```http
 POST /<store_code>/async/bulk/V1/products

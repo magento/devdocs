@@ -9,7 +9,7 @@ functional_areas:
 
 We require the following software for production instances of Magento:
 
-*  [PHP]({{page.baseurl}}/install-gde/system-requirements-tech.html#php)
+*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html)
 *  Nginx and [PHP-FPM](https://php-fpm.org/)
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
 *  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
@@ -20,14 +20,16 @@ For multi-server deployments, or for merchants planning on scaling their busines
 *  [Redis]({{page.baseurl}}/config-guide/redis/redis-session.html) for sessions (from 2.0.6+)
 *  A separate Redis instance as your [default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) (do not use this instance for page cache)
 
-See [Magento technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html) for information about supported versions of each type of software.
+See [Magento technology stack requirements]({{page.baseurl}}/install-gde/system-requirements.html) for information about supported versions of each type of software.
 
 ## Operating system
 
-Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" and "recycle" TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in `/etc/sysctl.conf`:
+Operating system configurations and optimizations are similar for Magento as compared to other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" TCP connections. To enable this mechanism, set the following value in `/etc/sysctl.conf`:
+
+{:.bs-callout-info}
+Enabling net.ipv4.tcp_tw_reuse has no effect on incoming connections.
 
 ```terminal
-net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_tw_reuse = 1
 ```
 
@@ -43,7 +45,7 @@ Magento fully supports PHP 7.3 and 7.4. There are several factors to account for
 
 We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:
 
-<!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
+<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Adding more extensions increases library load times.
@@ -58,7 +60,18 @@ The presence of any profiling and debugging extensions can negatively impact the
 
 To guarantee successful execution of all Magento instances without dumping data or code to disk, set the memory limit as follows:
 
-`memory_limit=768MB`
+`memory_limit=1G`
+
+For debugging, increase this value to 2G.
+
+#### Realpath_cache configuration
+
+To improve Magento performance, add or update the following recommended `realpath_cache` settings in the `php.ini` file. This configuration allows PHP processes to cache paths to files instead of looking them up each time a page loads. See [Performance Tuning](https://www.php.net/manual/en/ini.core.php) in the PHP documentation.
+
+```text
+realpath_cache_size=10M
+realpath_cache_ttl=7200
+```
 
 #### ByteCode
 
@@ -120,7 +133,7 @@ Parameter | Default | Description
 `innodb_buffer_pool_instances` | 8 | The default value is set to 8 to avoid issues with multiple threads attempting to access the same instance.
 `innodb_buffer_pool_size` | 128MB | Combined with the multiple pool instances described above, this means a default memory allocation of 1024MB. The total size is divided among all the buffer pools. For best efficiency, specify a combination of `innodb_buffer_pool_instances` and `innodb_buffer_pool_size` so that each buffer pool instance is at least 1 GB.
 `max_connections` | 150 | The value of the `max_connections` parameter should correlate with the total number of PHP threads configured in the application server. A general recommendation would be 300 for a small and 1,000 for a medium environment.
-`innodb-thread-concurrency` | 0 | The best value for this configuration should be calculated by the formula: `innodb-thread-concurrency = 2 * (NumCPUs + NumDisks)`
+`innodb_thread_concurrency` | 0 | The best value for this configuration should be calculated by the formula: `innodb_thread_concurrency = 2 * (NumCPUs + NumDisks)`
 
 ## Varnish
 

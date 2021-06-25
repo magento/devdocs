@@ -151,3 +151,26 @@ In order to communicate events—such as a push—with your Cloud Git server, yo
 ## Test the integration
 
 To verify the integration works, make a change in the GitHub repository and use the magento-cloud CLI to pull the change into the local environment.
+
+## Remove the integration
+
+You can safely remove the Github integration from your project without affecting your code.
+
+{:.procedure}
+To remove the Github integration:
+
+1. From the terminal, log in to your {{site.data.var.ece}} project.
+
+1. List your integrations. You need the Github integration ID to complete the next step.
+
+   ```bash
+   magento-cloud integration:list
+   ```
+
+1. Delete the integration.
+
+   ```bash
+   magento-cloud integration:delete <project-ID>
+   ```
+
+Also, you can remove the Github integration by logging in to your Github account and removing the web hook in the _Webhooks_ tab of the repository _Settings_.

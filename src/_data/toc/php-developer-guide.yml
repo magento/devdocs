@@ -113,7 +113,7 @@ pages:
         - label: How to add CLI commands
           url: /extension-dev-guide/cli-cmds/cli-howto.html
 
-    - label: Staging (Magento Commerce only)
+    - label: Staging (Adobe Commerce only)
       url: /extension-dev-guide/staging.html
 
     - label: Component development
@@ -201,33 +201,38 @@ pages:
         - label: Message Queues
           children:
 
+            - label: Asynchronous Message Queue configuration files
+              url: /extension-dev-guide/message-queues/async-message-queue-config-files.html
+
+            - label: Bulk operations
+              url: /extension-dev-guide/message-queues/bulk-operations.html
+
+            - label: Configure message Queues
+              url: /extension-dev-guide/message-queues/config-mq.html
+
+            - label: Example bulk operations implementation
+              url: /extension-dev-guide/message-queues/implement-bulk.html
+
+            - label: Handling outdated in-memory object states
+              url: /extension-dev-guide/message-queues/refresh-config.html              
+
             - label: Message queues overview
               url: /extension-dev-guide/message-queues/message-queues.html
 
             - label: Message queues and stores
               url: /extension-dev-guide/message-queues/message-queues-stores.html
 
-            - label: Configure message Queues
-              url: /extension-dev-guide/message-queues/config-mq.html
-
-            - label: Handling outdated in-memory object states
-              url: /extension-dev-guide/message-queues/refresh-config.html
-            
             - label: Migrate message queue configuration
               url: /extension-dev-guide/message-queues/queue-migration.html
-              
-            - label: Bulk operations
-              url: /extension-dev-guide/message-queues/bulk-operations.html
-
-            - label: Example bulk operations implementation
-              url: /extension-dev-guide/message-queues/implement-bulk.html
-
 
         - label: Adding extension attributes to entity
           url: /extension-dev-guide/extension_attributes/adding-attributes.html
          
         - label: Adding an admin grid
           url: /extension-dev-guide/admin-grid.html
+
+        - label: Price adjustments
+          url: /extension-dev-guide/price-adjustments.html
 
         - label: Searching with repositories
           url: /extension-dev-guide/searching-with-repositories.html
@@ -244,43 +249,64 @@ pages:
         - label: Variable Pool
           url: /extension-dev-guide/variable-pool/
 
+        - label: Extend Catalog Rule Conditions
+          url: /extension-dev-guide/extend-catalog-rule-conditions.html
+
     - label: Configuration
       children:
-        - label: Sensitive Environment Settings
-          url: /extension-dev-guide/configuration/sensitive-and-environment-settings.html
 
         - label: Configuration Importers
           url: /extension-dev-guide/configuration/importers.html
 
+        - label: Sensitive Environment Settings
+          url: /extension-dev-guide/configuration/sensitive-and-environment-settings.html
+
     - label: Framework
       children:
-        - label: Serialize Library
-          url: /extension-dev-guide/framework/serializer.html
 
         - label: Array Manager
           url: /extension-dev-guide/framework/array-manager.html
 
+        - label: DateTime Library
+          url: /extension-dev-guide/framework/datetime.html
+
+        - label: Float Comparator
+          url: /extension-dev-guide/framework/float-comparator.html
+
+        - label: Serialize Library
+          url: /extension-dev-guide/framework/serializer.html
+
+        - label: Math Random
+          url: /extension-dev-guide/framework/math-random.html
+
+        - label: URL Library
+          url: /extension-dev-guide/framework/url-library.html
+
     - label: Security
       children:
 
-        - label: XSS Prevention
-          url: /extension-dev-guide/xss-protection.html
+        - label: Content Security Policies
+          url: /extension-dev-guide/security/content-security-policies.html
 
         - label: Non-secure functions
           url: /extension-dev-guide/security/non-secure-functions.html
 
-        - label: Content Security Policies
-          url: /extension-dev-guide/security/content-security-policies.html
+        - label: XSS Prevention
+          url: /extension-dev-guide/xss-protection.html
 
     - label: Versioning
       url: /extension-dev-guide/versioning/
       children:
 
-        - label: Check the Magento version
+        - label: Check the Commerce version
           url: /extension-dev-guide/versioning/check-version.html
+
+        - label: Codebase changes
+          url: /extension-dev-guide/versioning/codebase-changes.html
 
         - label: Module version dependencies
           url: /extension-dev-guide/versioning/dependencies.html
 
-        - label: Codebase changes
-          url: /extension-dev-guide/versioning/codebase-changes.html
+        - label: MFTF test versioning and backward compatibility policy
+          url: /extension-dev-guide/versioning/mftf-tests-codebase-changes.html
+          exclude_versions: ["2.3"]

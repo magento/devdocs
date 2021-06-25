@@ -104,4 +104,3 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | Commerce | GiftCardAccount | /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode | GET |
 | Commerce | GiftRegistry | /V1/guest-giftregistry/:cartId/estimate-shipping-methods | POST |
 | Commerce | WorldPay | /V1/worldpay-guest-carts/:cartId/payment-information | POST
-

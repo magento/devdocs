@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Applying patches
+title: Apply patches
 functional_areas:
   - Upgrade
 ---
@@ -10,12 +10,6 @@ We strongly recommend testing all patches in a staging or development environmen
 
 ## How patches work
 
-There are three types of patches:
-
--  **Hot fixes**—patches that Magento publishes on the [Magento Security Center][].
--  **Individual patches**—patches that Magento Support creates and distributes on an individual basis.
--  **Custom patches**—unofficial patches that you can create from a git commit.
-
 Patch (or diff) files are text files that note:
 
 -  The file(s) to be changed.
@@ -24,11 +18,17 @@ Patch (or diff) files are text files that note:
 
 When the [patch][] program is run, this file is read in and the specified changes are made to the file(s).
 
-### Hot fixes
+There are three types of patches:
 
-Hot fixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are applied to the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
+-  **Hotfixes**—Patches that Magento publishes on the [Magento Security Center][].
+-  **Individual patches**—Patches that Magento Support creates and distributes on an individual basis.
+-  **Custom patches**—Unofficial patches that you can create from a git commit.
 
-You can find hot fixes in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your Magento version and installation type.
+### Hotfixes
+
+Hotfixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are applied to the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
+
+You can find hotfixes in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your Magento version and installation type. Use the [command line][] or [Composer][] to apply hot fix patches.
 
 {:.bs-callout-info}
 Hot fixes can contain backward incompatible changes.
@@ -37,6 +37,8 @@ Hot fixes can contain backward incompatible changes.
 
 Individual patches contain low-impact quality fixes for a specific issue. These fixes are applied to the most recently supported minor version of Magento (for example, 2.4.x), but could be missing from the previous supported minor version of Magento (for example, 2.3.x). Magento releases individual patches as needed.
 
+Use the [Magento Quality Patches (MQP) package][MQP] to apply individual patches.
+
 {:.bs-callout-info}
 Individual patches do not contain backward incompatible changes.
 
@@ -44,7 +46,9 @@ Individual patches do not contain backward incompatible changes.
 
 Sometimes it takes a while for the Magento Engineering Team to include a bug fix made on GitHub in a Magento 2 Composer release. In the meantime, you can create a patch from GitHub and use the [`cweagans/composer-patches`][1] plugin to apply it to your Composer-based Magento 2 installation.
 
-There are many ways to create patch files. The example below focuses on creating a patch from a known commit.
+Use the [command line][] or [Composer][] to apply custom patches.
+
+There are many ways to create custom patch files. The following example focuses on creating a patch from a known git commit.
 
 To create a custom patch:
 
@@ -75,78 +79,14 @@ index c8a6fef58d31..7d01c195791e 100644
 
 ## Applying patches
 
-There are two ways to apply patches:
+You can apply patches using any of the following methods:
 
--  Using the command line
--  Using Composer
+-  [Magento Quality Patch (MQP) package][MQP]
+-  [Command line][]
+-  [Composer][]
 
 {:.bs-callout-info}
 To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].
-
-### Command line
-
-1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.
-1. Log into the server as the [Magento admin user][] and verify the file is in the correct directory.
-1. In the command line interface, run the following commands according to the patch extension:
-
-   ```bash
-   patch < patch_file_name.patch
-   ```
-
-   The command assumes the file to be patched is located relative to the patch file.
-
-    {:.bs-callout-info}
-   If the command line shows: `File to patch:`, it means it cannot locate the intended file, even if the path seems correct. In the box displayed in the command line terminal, the first line shows the file to be patched. Copy the file path and paste it into the `File to patch:` prompt and press `Enter` and the patch should complete.
-
-1. For the changes to be reflected, refresh the cache in the Admin under **System** > Tools > **Cache Management**.
-
-  Alternatively, the patch can be applied locally with the same command, then committed and pushed normally.
-
-### Composer
-
-{:.bs-callout-warning}
-Always perform comprehensive testing before deploying any custom patch.
-
-To apply a custom patch using Composer:
-
-1. Open your command line application and navigate to your project directory.
-1. Add the `cweagans/composer-patches` plugin to the `composer.json` file.
-
-   ```bash
-   composer require cweagans/composer-patches
-   ```
-
-1. Edit the `composer.json` file and add the following section to specify:
-   -  **Module:** *\"magento/module-payment\"*
-   -  **Title:** *\"MAGETWO-56934: Checkout page freezes when ordering with Authorize.net with invalid credit card\"*
-   -  **Path to patch:** *\"patches/composer/github-issue-6474.diff\"*
-
-   For example:
-
-   ```json
-     "extra": {
-         "composer-exit-on-patch-failure": true,
-         "patches": {
-             "magento/module-payment": {
-                 "MAGETWO-56934: Checkout page freezes when ordering with Authorize.net with invalid credit card": "patches/composer/github-issue-6474.diff"
-             }
-         }
-     }
-   ```
-
-    If a patch affects multiple modules, you must create multiple patch files targeting multiple modules.
-
-1. Apply the patch. Use the `-v` option only if you want to see debugging information.
-
-   ```bash
-   composer -v install
-   ```
-
-1. Update the `composer.lock` file. The lock file tracks which patches have been applied to each Composer package in an object.
-
-   ```bash
-   composer update --lock
-   ```
 
 <!-- Link Definitions -->
 
@@ -161,3 +101,6 @@ To apply a custom patch using Composer:
 [3]: https://github.com/magento/magento2/issues/6474
 [4]: https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.diff
 [Apply patches]:{{ site.baseurl }}/cloud/project/project-patch.html
+[Command line]:{{ page.baseurl }}/comp-mgr/patching/command-line.html
+[Composer]:{{ page.baseurl }}/comp-mgr/patching/composer.html
+[MQP]: {{ page.baseurl }}/comp-mgr/patching/mqp.html

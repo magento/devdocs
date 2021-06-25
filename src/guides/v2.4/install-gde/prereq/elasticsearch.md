@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 title: Elasticsearch
 functional_areas:
   - Configuration
@@ -23,22 +22,30 @@ As of Magento 2.4, all installations must be configured to use [Elasticsearch][]
 
 ## Supported versions {#es-spt-versions}
 
-You must install and configure Elasticsearch 7.6.x before upgrading to Magento 2.4.0.
+You must install and configure Elasticsearch before upgrading to Magento 2.4.x.
 
-{:.bs-callout-info}
+Refer to the [System Requirements][] for specific version information.
+
 Magento does not support Elasticsearch 2.x, 5.x, and 6.x.
 
 ## Recommended configuration {#es-arch}
 
-The following figure shows our recommended configuration. All of the tasks we discuss assume you have configured your system this way.
+We recommend the following:
 
-![]({{ site.baseurl }}/common/images/elastic_config.png){:width="500px"}
+*  [Configure nginx and Elasticsearch][]
+*  [Configure Apache and Elasticsearch][]
+
+## Elasticsearch on different hosts {#es-host}
+
+All of the following tasks we discuss assume you have configured your system this way.
+
+![Magento ElasticSearch diagram]({{ site.baseurl }}/common/images/elastic_config.png){:width="500px"}
 
 The preceding diagram shows:
 
 *  The Magento application and Elasticsearch are installed on different hosts.
 
-   Running on separate hosts is secure, enables Elasticsearch to be scaled, and is necessary for proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch clustering documentation][].)
+   Running on separate hosts requires proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch clustering documentation][].)
 
 *  Each host has its own web server; the web servers do not have to be the same.
 
@@ -68,14 +75,14 @@ The tasks discussed in this section require the following:
 
 *  [Firewall and SELinux](#firewall-selinux)
 *  [Install the Java Software Development Kit (JDK)](#prereq-java)
-*  [Install Elasticsearch](#es-install-es6)
+*  [Install Elasticsearch](#es-install-es7)
 *  [Upgrading Elasticsearch](#es-upgrade6)
 
 {% include config/solr-elastic-selinux.md %}
 
 {% include config/install-java8.md %}
 
-### Install Elasticsearch  {#es-install-es6}
+### Install Elasticsearch  {#es-install-es7}
 
 Follow [Installing Elasticsearch][] for your platform-specific steps.
 
@@ -96,7 +103,6 @@ epoch      timestamp cluster       status node.total node.data shards pri relo i
 
 Refer to [Upgrading Elasticsearch][] for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production. Depending on your current version of Elasticsearch, a full cluster restart may or may not be required.
 
-{:.bs-callout-info}
 Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java) to check which version of JDK is installed.
 
 ## Additional resources {#es-resources}
@@ -120,3 +126,4 @@ For additional information, see [Elasticsearch documentation][]{:target="_blank"
 [Full cluster restart upgrade]: https://www.elastic.co/guide/en/elasticsearch/reference/current/restart-upgrade.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 [Installing Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
+[System Requirements]: {{page.baseurl}}/install-gde/system-requirements.html

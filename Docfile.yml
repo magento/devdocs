@@ -13,16 +13,10 @@ content_map:
 -
   directory: src/mftf/v2
   repository: magento/magento2-functional-testing-framework
-  branch: 2.6.5
+  branch: 2.x-develop
   filter: true
 -
   directory: src/page-builder
   repository: magento/magento2-page-builder-docs
   branch: master
   filter: true
--
-  directory: src/page-builder-migration
-  repository: magento/magento2-page-builder-data-migration
-  branch: 1.0.0-release
-  filter: true
-

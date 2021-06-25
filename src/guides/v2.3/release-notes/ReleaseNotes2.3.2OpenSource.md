@@ -17,7 +17,7 @@ Merchants can now install time-sensitive security fixes without applying the hun
 
 **If you have already upgraded to the pre-release version of this patch (2.3.2-p1), we strongly recommend that you upgrade to 2.3.2-p2 as soon as possible.**  Patch 2.3.2-p2 contains the critical security fixes that are included in Magento  2.3.3, 2.2.10, 1.9.4.3, and 1.14.4.3, but that are not included in patch 2.3.2-p1.
 
-For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage).
+For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html#get-the-metapackage).
 
 ## Apply updated hot fix for CVE-2019-8118
 
@@ -613,7 +613,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-98621-->
 
-*  Scope assigned to prices in Catalog Price Scope (set in **Configuration** > **Price**) are now maintained when price is set to empty. Previously, you could not leave leave special prices empty.
+*  Scope assigned to prices in Catalog Price Scope (set in **Configuration** > **Price**) are now maintained when price is set to empty. Previously, you could not leave special prices empty.
 
 <!--- ENGCOM-3810-->
 
@@ -707,7 +707,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4695-->
 
-*  The Reporting Security Issues section of the [Magento 2 README file] (https://github.com/magento/magento2/blob/2.3-develop/README.md) has been updated to reflect the use of HackerOne for the Magento 2 Bug Bounty program. *Fix submitted by Andreas Mautz in pull request [22195](https://github.com/magento/magento2/pull/22195)*. [GitHub-22166](https://github.com/magento/magento2/issues/22166)
+*  The Reporting Security Issues section of the [Magento 2 README file] ({{ site.mage2bloburl }}/{{ page.guide_version }}/README.md) has been updated to reflect the use of HackerOne for the Magento 2 Bug Bounty program. *Fix submitted by Andreas Mautz in pull request [22195](https://github.com/magento/magento2/pull/22195)*. [GitHub-22166](https://github.com/magento/magento2/issues/22166)
 
 <!--- ENGCOM-4654-->
 
@@ -941,7 +941,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-96138-->
 
-*  The transfer cart line items and transfer shipping options in the the Shipping step of checkout now work for PayPal. [GitHub-19064](https://github.com/magento/magento2/issues/19064)
+*  The transfer cart line items and transfer shipping options in the Shipping step of checkout now work for PayPal. [GitHub-19064](https://github.com/magento/magento2/issues/19064)
 
 <!--- MAGETWO-98424-->
 
@@ -1286,4 +1286,3 @@ You can install {{site.data.var.ee}} 2.3.2  using Composer.
 The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
 
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
-

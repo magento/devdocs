@@ -28,6 +28,9 @@ Element | Description
 `type` | For modules, this value must be set to `magento2-module`. Other possible types are `metapackage`, `magento2-theme`, and `magento2-language`.
 `autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see [Autoloading](https://getcomposer.org/doc/01-basic-usage.md#autoloading) from Composer.
 
+{:.bs-callout-info}
+The Commerce Marketplace does not support the Composer `source` and `dist` properties. All extensions distributed via the Marketplace are installed from the Commerce package repository. If your `composer.json` contains `source` or `dist` properties, it will cause failures in the EQP automation.
+
 {% include php-dev/composer-types.md %}
 
 ### Using metapackages {#package-metapackage}
@@ -49,7 +52,7 @@ The following example is a `composer.json` for a metapackage:
     "version": "2.0.0",
     "type": "metapackage",
     "require": {
-        "php": "~7.1.3|~7.2.0",
+        "php": "~7.2.0||~7.3.0",
         "zendframework/zend-stdlib": "~2.4.6",
         "zendframework/zend-code": "~2.4.6",
         "zendframework/zend-server": "~2.4.6",
@@ -99,7 +102,7 @@ The following example is a `composer.json` file for a module:
     "AFL-3.0"
   ],
   "require": {
-    "php": "~7.1.3|~7.2.0",
+    "php": "~7.2.0||~7.3.0",
     "magento/framework": "~100.0.4"
   },
   "autoload": {
@@ -116,7 +119,9 @@ The following example is a `composer.json` file for a module:
 
 Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:
 
-    zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
+```bash
+zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
+```
 
 Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.
 
@@ -124,7 +129,7 @@ Magento can retrieve your extension package from any valid GitHub [URL](https://
 
 <!-- After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository. -->
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 Third party repositories are supported.
 
 ### Hosting on GitHub and Packagist {#hosting}
@@ -142,8 +147,8 @@ Prerequisite: Git must be set up on your machine.
 
 ### Hosting on a private repository {#private_repos}
 
- {:.bs-callout-info}
-If you use the Setup Wizard, you must use the Magento Marketplace repository. A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).
+{:.bs-callout-info}
+A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).
 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Private Packagist](https://packagist.com/).
 1. Create the package in a way similar to the described above.

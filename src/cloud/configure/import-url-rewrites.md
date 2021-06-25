@@ -10,7 +10,7 @@ functional_areas:
 You can easily migrate to the {{site.data.var.ece}} platform without losing SEO rankings and traffic. Use the `magento/url-rewrite-import-export` module to redirect traffic from your old, indexed URLs to new URLs.
 
 {:.bs-callout-info}
-This module supports PHP versions 7.0.13 and later patch releases and all 7.1.x and 7.2.x patch releases. The module is available for Magento version 2.2.x and 2.3.x only.
+This module supports PHP versions 7.0.13 and later patch releases and all 7.1.x and 7.2.x patch releases. The module is available for Magento version 2.2.x and 2.3.x only. It is deprecated for version 2.4.x and later.
 
 {:.procedure}
 To install the URL rewrite module:
@@ -98,7 +98,7 @@ To import URL Rewrites:
 ## Troubleshooting the import
 
 {:.bs-callout-info}
-Large uploads are limited by the `upload_max_filesize` directive in `php.ini`. If your URL file is bigger than the existing limit, see [Customize php.ini settings]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#customize-phpini-settings) to increase it.
+Large uploads are limited by the `upload_max_filesize` directive in `php.ini`. If your URL file is bigger than the existing limit, see [Customize php.ini settings]({{ site.baseurl }}/cloud/project/magento-app-php-ini.html) to increase it.
 
 If the import is **not** successful, you receive an error message reporting the URL rewrite failed:
 

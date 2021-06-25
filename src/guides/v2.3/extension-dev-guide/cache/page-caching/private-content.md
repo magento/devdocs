@@ -15,7 +15,7 @@ The section source class is responsible for retrieving data for the section. As 
 
 The public method `getSectionData` must return an array with data for a private block.
 
-[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/CustomerData/CompareProducts.php#L45-L54){:target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/CustomerData/CompareProducts.php#L61-L70){:target="_blank"}
 
 Add the following to your component's [dependency injection](https://glossary.magento.com/dependency-injection) configuration (`di.xml`):
 
@@ -56,18 +56,18 @@ The UI component renders block data on the Magento [storefront](https://glossary
 
 All properties are available in the template.
 
-[Example of defining a UI component in a layout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L32){:target="_blank"}
+[Example of defining a UI component in a layout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L35){:target="_blank"}
 
 ## Invalidate private content
 
 Specify actions that trigger cache invalidation for private content blocks in a `sections.xml` configuration file in the `Vendor/ModuleName/etc/frontend` directory. Magento invalidates the cache on a POST or PUT request.
 
-Customer sections was designed to cache private data in browser storage. This means that any customer section will no be updated until proper action was made.
+Customer sections was designed to cache private data in browser storage. This means that any customer section will not be updated until proper action was made.
 
 The are some exception cases:
 
 -  Store and website switching, after any of these action customer section `cart` will be updated.
--  Customer cart lifetime option `section_data_lifetime` which is 60 minutes by default. After scheduled time passe section `cart` will be updated.
+-  Customer cart lifetime option `section_data_lifetime` which is 60 minutes by default. After scheduled time passes, section `cart` will be updated.
 
 {: .bs-callout-info }
 Product information will not be simultaneously updated in customer cart (product name, price, product enabled/disabled). Information will be updated after what comes first: `section_data_lifetime` time passed or an action that the update cart triggered.

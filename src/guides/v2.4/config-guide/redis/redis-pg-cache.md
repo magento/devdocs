@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Use Redis for the Magento page and default cache
+title: Use Redis for default cache
 functional_areas:
   - Configuration
   - System
@@ -104,7 +104,7 @@ As of Magento 2.3.5, it is recommended to use the extended Redis cache implement
 'cache' => [
     'frontend' => [
         'default' => [
-            'backend' => '\\Magento\\Framework\\Cache\\Backend\Redis',
+            'backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
             'backend_options' => [
                 'server' => '127.0.0.1',
                 'database' => '0',
@@ -168,7 +168,7 @@ It is disabled by default, and we recommend keeping it disabled until you have e
 To enable it, run:
 
 ```bash
-bin/magento setup:config:set --allow-parallel-generation`
+bin/magento setup:config:set --allow-parallel-generation
 ```
 
 Since it is a flag, you cannot disable it with a command. You will need to manually set the configuration value to `false`:

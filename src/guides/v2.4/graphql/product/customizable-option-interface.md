@@ -1,1 +1,0 @@
-../../../v2.3/graphql/product/customizable-option-interface.md

@@ -28,7 +28,7 @@ The component's data provider class is declared inside `<dataSource />`. The fol
 
 In the block of code above, [YourNameSpace]\[YourModule] would be the directory that contains all of the module's files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.
 
-The main node of interest is `<argument name="class" />.` This references a PHP class that must implement `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`. To meet that requirement, it can extend [`\Magento\Ui\DataProvider\AbstractDataProvider`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/DataProvider/AbstractDataProvider.php). The `AbstractDataProvider` class implements all of the required methods in the `DataProviderInterface`. The DataProvider class is the primary source of any data or [metadata](https://glossary.magento.com/metadata) that the component needs or will use.
+The main node of interest is `<argument name="class" />.` This references a PHP class that must implement `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`. To meet that requirement, it can extend or implement the [`\Magento\Ui\DataProvider\ModifierPoolDataProvider`] class which inherits the [`\Magento\Ui\DataProvider\AbstractDataProvider`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/DataProvider/AbstractDataProvider.php). The `AbstractDataProvider` class implements all of the required methods in the `DataProviderInterface`. The DataProvider class is the primary source of any data or [metadata](https://glossary.magento.com/metadata) that the component needs or will use.
 
 While the [XML](https://glossary.magento.com/xml) tells Magento about the component's data provider, Magento does not do anything in particular with that unless you hook it up to the component's main PHP class. To make the data available in javascript, add a `getDataSourceData()` method to the UI component's PHP class and return `$this->getContext()->getDataProvider()->getData()`. This will output the result of the data provider's `getData()` method into the JSON that is sent to the browser along with the rest of the UI component's configuration.
 
@@ -61,7 +61,7 @@ A good way to keep configuration data out of the javascript is to declare a "pro
 
 This example declares the name of the data provider class and will be output in the JSON that contains the UI component's configuration. It can then be used to locate the data source component. This is essentially declaring a variable that will be available to a javascript class.
 
-# Javascript Template Literals
+## Javascript Template Literals
 
 Throughout Magento's core Javascript components there are strings like this: `'${ $.provider }:data.totalRecords'`. These are ES2015 [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals). The `${ }` surrounds an expression that will be parsed as Javascript. `$.provider` is the expression, in this example.
 
@@ -71,7 +71,7 @@ When the component is initialized, it will automatically evaluate all string lit
 
 But, XML is static and while that gets us the name of the data provider component, it still does not actually provide data. There is one more important step in providing data to Javascript components.
 
-# Javascript Component Linking
+## Javascript Component Linking
 
 Every Javascript component should extend the core Element class in some way (mapped to [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) with RequireJS and located in [`Magento/Ui/view/base/web/js/lib/core/element/element.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js).  When this class initializes it runs an `initLinks()` method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (`lib/core/element/link.js`) binds the values of those parameters to actual components.
 

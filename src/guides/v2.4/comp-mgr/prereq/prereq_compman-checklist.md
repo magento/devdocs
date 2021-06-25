@@ -80,7 +80,7 @@ Results similar to the following should display:
 
 Another symptom of cron not running is the following error in the Magento Admin:
 
-![cron isn't running]({{ site.baseurl }}/common/images/compman-cron-not-running.png){:width="500px"}
+![cron is not running]({{ site.baseurl }}/common/images/compman-cron-not-running.png){:width="500px"}
 
 To see the error, you might need to click **System Messages** at the top of the window as follows:
 
@@ -121,7 +121,6 @@ drwxrwx---.  4 magento_user apache   4096 Jun  7 07:53 dev
 -rw-rw----.  1 magento_user apache   2926 Apr 27 21:23 Gruntfile.js
 -rw-rw----.  1 magento_user apache   7592 Apr 27 21:23 .htaccess
 -rw-rw----.  1 magento_user apache   6419 Apr 27 21:23 .htaccess.sample
--rw-rw----.  1 magento_user apache   1358 Apr 27 21:23 index.php
 drwxrwx---.  4 magento_user apache   4096 Jun  7 07:53 lib
 -rw-rw----.  1 magento_user apache  10376 Apr 27 21:23 LICENSE_AFL.txt
 -rw-rw----.  1 magento_user apache  30634 Apr 27 21:23 LICENSE_EE.txt

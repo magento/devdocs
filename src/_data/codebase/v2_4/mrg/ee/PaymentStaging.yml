@@ -1,14 +1,10 @@
 ---
 title: Magento_PaymentStaging
 source_repo: magento2ee
-release: 2.4.0
+release: 2.4.2
 github_path: app/code/Magento/PaymentStaging/README.md
-last_modified_at: '2016-07-04 12:55:14 +0000'
-content: |
-  ## Magento Magento_PaymentStaging Module
-
-  ## Overview
-
+last_modified_at: '2020-12-10 20:13:05 -0600'
+content: |-
   The Magento_PaymentStaging module is a part of the staging functionality in Magento EE. It extends the Magento_Payment module for the staging preview functionality.
 
   ## Implementation details
@@ -21,10 +17,6 @@ content: |
 
   ## Extension points
 
-  Extension points enable extension developers to interact with the Magento_PaymentStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
+  Extension points enable extension developers to interact with the Magento_PaymentStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).
 
-  [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_PaymentStaging module.
-
-  ## Additional information
-
-  You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+  [The Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_PaymentStaging module.

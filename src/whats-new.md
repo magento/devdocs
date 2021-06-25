@@ -7,7 +7,7 @@ title: What's new on DevDocs
 
 <a class="btn" href="{{ whatsnew.thread }}"><img src="{{ site.baseurl }}/assets/i/icons/rss.svg" /> RSS feed</a>
 <!-- The link enables RSS readers to recognize the whatsnew-feed thread on the page -->
-<link rel="alternate" type="application/atom+xml" title="What's new on Magento DevDocs" href= "{{ whatsnew.thread }}" />
+<link rel="alternate" type="application/atom+xml" title="What's new on DevDocs" href= "{{ whatsnew.thread }}" />
 
 {{ whatsnew.description }}
 
@@ -15,18 +15,49 @@ title: What's new on DevDocs
 
 {% assign grouped_by_year = entries | group_by_exp: "entry", "entry.date | date: '%Y'" %}
 
-{% for group in grouped_by_year limit:2 %}
+{% for year_group in grouped_by_year limit:2 %}
 
-## {{ group.name }}
+{% assign grouped_by_month = year_group.items | group_by_exp: "entry", "entry.date | date: '%B'" %}
+## {{ year_group.name }}
 
-Description | Versions | Type | Date
----|---|---|---{% for item in group.items %}
-{{ item.description }} | {{ item.versions }} | {{ item.type }} |
-{%- if item.link -%}
-[{{ item.date | date: "%B&nbsp;%e" }}]({{ item.link }})
-{%- else -%}
-{{ item.date | date: "%B&nbsp;%e" }}
-{%- endif -%}
-{% endfor %}
+{% for month_group in grouped_by_month %}
+### {{ month_group.name }}
 
-{% endfor %}
+{% assign grouped_by_date = month_group.items | group_by: "date" %}
+
+{% for date_group in grouped_by_date %}
+#### {{ date_group.name }}
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Versions</th>
+      <th>Type</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in date_group.items %}
+    <tr>
+      <td>
+      {{ item.description | markdownify }}
+      {% if item.membership == false %}
+      <p><i>Community contribution by {{ item.contributor }}</i></p>
+      {% endif %}
+      </td>
+      <td>{{ item.versions }}</td>
+      <td>{{ item.type }}</td>
+      {% if item.link contains "-commerce" %}
+      <td><a href="https://github.com/magento/devdocs/commit/{{ item.merge_commit }}">{{ item.merge_commit | slice: 0, 6 }}</a></td>
+      {% else %}
+      <td><a href="{{ item.link }}">{{ item.link | split: "/" | last }}</a></td>
+      {% endif %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endfor %}<!-- date_group -->
+{% endfor %}<!-- month_group -->
+
+{% endfor %}<!-- year_group -->

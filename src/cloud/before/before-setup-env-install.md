@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Install Magento
+title: Install
 redirect_from:
   - /cloud/before/before-setup-env-perms.html
 functional_areas:
@@ -68,7 +68,7 @@ To create authentication keys through the Magento Marketplace:
 
 ## Set the docroot
 
-Set the `docroot` to the `/magento` directory until you complete all setup. If you change the `docroot` to `/magento/pub` prior to completion, you will encounter issues running the Web Setup Wizard.
+Set the `docroot` to the `/magento` directory until you complete the setup.
 
 For the Production environment, set the `docroot` to `/magento/pub`, which helps restrict access to vulnerable areas of the system. The webserver `docroot` should be set to `/magento/pub` only after Magento is installed (including any upgrades and patches), configured, and static files generated and populated in `/magento/pub`. Alternatively, you could create a subdomain (for example, `install.domain.com`) and configure your webserver `docroot` to the Magento installed root folder.
 
@@ -103,12 +103,7 @@ After you have installed Magento, you need to set the file system permissions an
 
 Prior to installing, you should [Update installation dependencies]({{ site.baseurl }}/guides/v2.3/install-gde/install/prepare-install.html#install-composer-install) using Composer commands.
 
-Be ready to install Magento using one of the following options:
-
--  [Install the Magento software using the command line]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html)
--  [Install the Magento software using the Web Setup Wizard]({{ site.baseurl }}/guides/v2.3/install-gde/install/web/install-web.html)
-
-   {% include install/web/deprecated.md %}
+Be ready to install Magento using the [command line]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html).
 
 {:.procedure}
 To install Magento using the command line:
@@ -181,11 +176,11 @@ Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts 
 
 ## Additional software and services
 
-For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
+For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html).
 
--  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
--  [ElasticSearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
--  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+-  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
+-  [ElasticSearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
+-  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 -  [Additional software]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/optional.html) for Magento
 
 ## Verify your local workspace

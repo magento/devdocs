@@ -41,13 +41,17 @@ To continue the import, enter `yes`.
 
 If deployment configuration files contain some data to import, a message similar to the following is displayed:
 
-    Start import:
-    Some information about importing
+```terminal
+Start import:
+Some information about importing
+```
 
 If deployment configuration files do not contain any data to import, a message similar to the following is displayed:
 
-    Start import:
-    Nothing to import
+```terminal
+Start import:
+Nothing to import
+```
 
 ## What we import
 

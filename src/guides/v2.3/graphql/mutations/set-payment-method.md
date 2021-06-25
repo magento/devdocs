@@ -30,7 +30,15 @@ Supported online payment methods include:
 
 ## Syntax
 
-`mutation: {setPaymentMethodOnCart(input: SetPaymentMethodOnCartInput): SetPaymentMethodOnCartOutput}}`
+```graphql
+mutation {
+  setPaymentMethodOnCart(
+    input: SetPaymentMethodOnCartInput
+  ) {
+    SetPaymentMethodOnCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -40,14 +48,16 @@ The following example assigns the `banktransfer` payment method to the specified
 
 **Request:**
 
-```text
+```graphql
 mutation {
-  setPaymentMethodOnCart(input: {
+  setPaymentMethodOnCart(
+    input: {
       cart_id: "rMQdWEecBZr4SVWZwj2AF6y0dNCKQ8uH"
       payment_method: {
           code: "banktransfer"
       }
-  }) {
+    }
+  ) {
     cart {
       selected_payment_method {
         code

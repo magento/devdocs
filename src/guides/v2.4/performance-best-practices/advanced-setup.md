@@ -43,6 +43,9 @@ You could also use a Redis cluster that performs parallel read/write operations 
 
 ## Split the database
 
+{:.bs-callout-warning}
+The split database feature was [deprecated](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Split-Database-in-Magento-Commerce/ba-p/465187) in version 2.4.2 of Adobe Commerce. See [Revert from a split database to a single database](https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html).
+
 {{site.data.var.ee}} allows you to configure scalable database storage to meet the needs of a growing business. You can set up three separate master databases that serve specific domains:
 
 *  Main (Catalog) Database
@@ -51,9 +54,17 @@ You could also use a Redis cluster that performs parallel read/write operations 
 
 To configure additional databases, you must create an empty database and run one of the following commands:
 
-  `bin/magento setup:db-schema:split-quote` (for Checkout Master DB)
+For Checkout Master DB
 
-  `bin/magento setup:db-schema:split-sales` (for OMS Master DB)
+```bash
+bin/magento setup:db-schema:split-quote
+```
+
+For OMS Master DB
+
+```bash
+bin/magento setup:db-schema:split-sales
+```
 
 These commands migrate specific domain tables from the main database to a domain database. They also change the Magento configuration to allow corresponding connectivity and constraints processing.
 

@@ -18,7 +18,7 @@ This tutorial builds upon the workflow described in the [Order Processing with R
 
 For more information about key inventory features, see [Inventory Management overview]({{ page.baseurl }}/inventory/index.html).
 
-This **13-step tutorial** generally takes **1 hour**.
+This **14-step tutorial** generally takes **1 hour**.
 
 ### Complete these prerequisites
 

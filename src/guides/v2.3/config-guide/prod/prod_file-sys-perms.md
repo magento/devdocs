@@ -19,7 +19,7 @@ The sections that follow discuss requirements for one or two Magento file system
 
    Instead, you have separate users:
 
-   *  The web server user, which runs the Magento Admin (including Setup Wizard) and storefront.
+   *  The web server user, which runs the Magento Admin and storefront.
 
    *  A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
@@ -75,7 +75,13 @@ To remove write permissions to files and directories from the web server user's 
 1. Remove write permissions to the following directories.
 
    ```bash
-   find app/code var/view_preprocessed vendor pub/static app/etc generated/code generated/metadata \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
+   find app/code var/view_preprocessed vendor pub/static app/etc generated/code generated/metadata \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php
+   ```
+
+1. Make the Magento command line tool executable.
+
+   ```bash
+   chmod u+x bin/magento
    ```
 
 #### Make code files and directories writable {#make-files-writable-one-owner}
@@ -99,7 +105,7 @@ To make files and directories writable so you can update components and upgrade 
 <p id="mage-owner-two"></p>{% collapsibleh2 Production file system ownership for private hosting (two users) %}
 If you use your own server (including a hosting provider's private server setup), there are two users:
 
-*  The web server user, which runs the Magento Admin (including the Setup Wizard) and storefront.
+*  The web server user, which runs the Magento Admin and storefront.
 
    Linux systems typically do not provide a shell for this user; you cannot log in to the Magento server as, or switch to, the web server user.
 
@@ -146,7 +152,7 @@ To set `setgid` and permissions for developer mode:
    ```
 
    ```bash
-   find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} + &&
+   find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} +
    ```
 
    ```bash

@@ -110,7 +110,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `address` | [CartAddressInput](#CartAddressInput) | The billing address for the cart
 `customer_address_id` | Int | The unique ID that identifies the customer's address
-`same_as_shipping` | Boolean | Specifies whether to use the billing address for the shipping address (`True`/`False`)
+`same_as_shipping` | Boolean | Specifies whether to use the shipping address for the billing address
 `use_for_shipping` | Boolean | Deprecated. Use `same_as_shipping` instead
 
 ### CartAddressInput object {#CartAddressInput}
@@ -127,6 +127,6 @@ Attribute |  Data Type | Description
 
 ### Cart object {#CartObject}
 
-{% include graphql/cart-object.md %}
+{% include graphql/cart-object-24.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.

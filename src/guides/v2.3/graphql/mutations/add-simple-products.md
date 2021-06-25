@@ -13,7 +13,15 @@ To add a simple or grouped product to a cart, you must provide the cart ID, the 
 
 ## Syntax
 
-`mutation: {addSimpleProductsToCart(input: AddSimpleProductsToCartInput): {AddSimpleProductsToCartOutput}}`
+```graphql
+mutation {
+  addSimpleProductsToCart(
+    input: AddSimpleProductsToCartInput
+  ) {
+    AddSimpleProductsToCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -124,7 +132,7 @@ mutation {
 
 **Response:**
 
-```text
+```json
 {
   "data": {
     "addSimpleProductsToCart": {

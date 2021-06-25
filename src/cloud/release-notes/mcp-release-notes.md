@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Cloud Patches release notes
+title: Cloud Patches for Commerce
 functional_areas:
   - Cloud
   - Setup
@@ -18,6 +18,37 @@ To ensure that your project has all required patches, update to the [latest vers
 
 {:.bs-callout-info}
 See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instructions on applying patches to your Magento projects.
+
+<!--Add release notes below-->
+
+## v1.0.10
+*Release date: May 10, 2021*<br/>
+
+-  {:.fix} **Compatibility with Magento 2.3.7**—Resolved composer dependencies conflict for installation on Magento 2.3.7.<!--MC-42131-->
+-  {:.fix} **Fixed an issue caused by applying a bundled patch multiple times**—Applying a bundled patch (one that includes other deprecated patches) more than once could revert the included deprecated packages. All patches are now applied only once. Trying to apply the same package again shows a message that the patch has already been applied..<!--MC-41912-->
+-  {:.fix} **B2B Layered navigation patch**—Fixed another issue that prevented layered navigation from showing all product options when the user enables the B2B Shared Catalog.<!--MCLOUD-7742-->
+
+## v1.0.9
+*Release date: February 1, 2021*<br/>
+
+-  {:.new} **B2B Layered navigation patch**—Fixed the issue that prevented layered navigation from showing all product options when the B2B Shared Catalog was enabled.<!--MCLOUD-6923-->
+-  {:.fix} **Compatibility with PHP 7.4**—Fixed a cloud-patches compatibility issue with PHP 7.4.<!--MCLOUD-7367-->
+-  {:.fix} **Deprecated patches become visible**—Fixed a cloud-patches issue in which deprecated patches become visible in the patches table after applying a replacement patch that contains the entire contents of the deprecated patch. This could happen if you applied a patch that combined several other patches.<!--MC-40626-->
+-  {:.fix} **Silent failures when applying patches**—Fixed a cloud-patches issue in which the `git apply` command silently failed to apply patches in some environments.<!--MC-40529-->
+
+## v1.0.8
+*Release date: October 14, 2020*<br/>
+
+-  **Compatibility updates for {{site.data.var.mcp-package}}**–Updated the `symfony` and `semver` version constraints in the `composer.json` file for compatibility with Magento 2.4.1 and later releases.<!--MCLOUD-7111-->
+
+## v1.0.7
+*Release date: October 14, 2020*<br/>
+
+-  **Redis patches for Magento 2.3.0 to 2.3.5, 2.4.0**–Updated the Redis patches to support adding products to a category when implementing a Level 2 cache. <!--MCLOUD-6659-->
+
+-  **Braintree VBE patch**–Fixes an issue that generated an error when an Administrator tried to view a Braintree Settlement Report. <!--MCLOUD-6684-->
+
+-  Now, the `ece-patches apply` command uses the Unix `patch` command to apply patches if Git is not available on the host system. <!--MCLOUD-7069-->
 
 ## v1.0.6
 *Release date: {{ site.data.var.ece-release-date }}*<br/>

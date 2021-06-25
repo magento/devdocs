@@ -144,6 +144,6 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
                - "store-page:/contact-us:code1|code2"
    ```
 
-[hooks section]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
+[hooks section]: {{site.baseurl}}/cloud/project/magento-app-properties.html#hooks
 [CMS]: https://glossary.magento.com/cms/
 [Content elements]: https://docs.magento.com/m2/ce/user_guide/cms/content-elements.html

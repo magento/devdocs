@@ -9,7 +9,15 @@ Use the `addBundleProductsToCart` mutation to add bundle products to a specific 
 
 ## Syntax
 
-`mutation: {addBundleProductsToCart(input: AddBundleProductsToCartInput): {AddBundleProductsToCartOutput}}`
+```graphql
+mutation {
+  addBundleProductsToCart(
+    input: AddBundleProductsToCartInput
+  ) {
+    AddBundleProductsToCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -239,10 +247,10 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
 `Could not find a product with SKU "XXX"` | A simple product with the SKU specified in the `data.sku` argument does not exist.
-`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` database table.
 `Required parameter "cart_id" is missing` | The `cart_id` argument is omitted or contains an empty value.
 
 ## Related topics
 
--  [Bundle product data types]({{page.baseurl}}/graphql/product/bundle-product.html)
+-  [Bundle product data types]({{page.baseurl}}/graphql/interfaces/bundle-product.html)

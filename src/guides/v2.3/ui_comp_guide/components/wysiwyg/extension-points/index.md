@@ -128,6 +128,7 @@ public function getVariablesWysiwygActionUrl()
     return $this->_url->getUrl('mui/index/render', ['namespace' => 'variables_modal']);
 }
   ```
+
 *  htmlId of the WYSIWYG editor.
   For CKEditor4, you can get this by calling `editor.element.getId()`.
 

@@ -1,5 +1,4 @@
 ---
-group: installation-guide
 subgroup: Prerequisites
 title: Prerequisites
 menu_node: parent
@@ -67,26 +66,7 @@ To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/a
 
 ### PHP
 
-{:.bs-callout-info}
-Magento 2.3.3 supports PHP 7.2.
-All 3rd party libraries now support PHP 7.2.
-If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
-
-```bash
-php -v
-```
-
-{% include install/php-versions-template.md %}
-
-You must run [PHP](https://glossary.magento.com/php) version 7.2 or 7.3:
-
-```terminal
-PHP 7.2.0 (cli) (built: Jan  9 2018 09:23:16) ( NTS )
-Copyright (c) 1997-2017 The PHP Group
-Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2018, by Zend Technologies
-```
-
-See [PHP](/guides/v2.3/install-gde/prereq/php-settings.html) for info on PHP requirements.
+See [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of PHP and [PHP][] for PHP requirements.
 
 ### MySQL
 
@@ -100,7 +80,7 @@ For example:
 mysql -u magento -p
 ```
 
-You must run MySQL version 5.6 or later as the following result indicates:
+Check you have the correct version of MySQL for the version of Magento you are installing, [Check Here For Supported Versions]({{ page.baseurl }}/install-gde/system-requirements.html). The following result indicates the version you are running.
 
 ```terminal
 Welcome to the MySQL monitor.  Commands end with ; or \g.

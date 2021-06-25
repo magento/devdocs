@@ -5,9 +5,12 @@ title: GraphQL caching
 
 Magento can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and retrieve large amounts of information from the database. Only queries submitted with an HTTP GET operation can be cached. POST queries cannot be cached.
 
-## Cached queries
+## Cached and uncached queries
 
 The definitions for some queries include cache tags. Full page caching uses these tags to keep track of cached content. They also allow public content to be invalidated. Private content invalidation is handled on the client side.
+
+{:.bs-callout-info}
+GraphQL allows you to make multiple queries in a single call. If you specify any query that Magento does not cache, Magento bypasses the cache for all queries in the call.
 
 Magento caches the following queries:
 
@@ -105,6 +108,25 @@ To enable GraphQL caching on Fastly:
 1. Upload the updated VCL code to the Fastly servers.
 
 [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) describes how to perform both of these tasks.
+
+By default, the Fastly module for Magento provides the following VCL configuration for GraphQL caching:
+
+```text
+if (req.request == "GET" && req.url.path ~ "/graphql" && req.url.qs ~ "query=") {
+....
+```
+
+Fastly will only cache GET requests that contain a query parameter in the request URL.
+
+### Example
+
+```text
+http://example.com/graphql?query={ products(filter: {sku: {eq: "Test"}}) { items { name } } }&variables={}
+....
+```
+
+{:.bs-callout-info}
+If you call GraphQL queries in the query body rather than the URL (for example, as `--data-raw '{"query" .... }'`), the request is not cached.
 
 ## X-Magento-Vary
 

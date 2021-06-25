@@ -1,14 +1,10 @@
 ---
-group: installation-guide
-subgroup: 02_sample
 title: Install by cloning repositories
-menu_title: Install by cloning repositories
-menu_node:
-menu_order: 4
 functional_areas:
   - Install
   - System
   - Setup
+redirect_from: /guides/v2.3/install-gde/install/web/install-web-sample-data-clone.html
 ---
 
 {% include install/sampledata/sample-data-clone.md %}
