@@ -10,7 +10,7 @@ logged in customers, or administrators with roles that allow access to certain r
 
 ### Pages (controllers)
 
-* Distinction by user type
+*  Distinction by user type
 
 To make a page accessible to customers (both guests and registered) coming from storefront, a controller
 needs to be placed in the `<Vendor>\\<Module>\\Controller\\**` namespace.
@@ -18,7 +18,7 @@ needs to be placed in the `<Vendor>\\<Module>\\Controller\\**` namespace.
 To make a page accessible only to administrators, a controller needs to reside in the
 `<Vendor>\\<Module>\\Controller\\Adminhtml\\**` namespace.
 
-* Requiring specific resource access for administrators
+*  Requiring specific resource access for administrators
 
 Each administrator has an ACL role assigned to them which provides them access only to selected resources.
 To mark your page (route/controller) as one that requires access to a specific resource, the controller
@@ -31,11 +31,11 @@ a `route` tag and authorization for each is configured by `resource` tags in `ro
 
 Endpoints can be configured to be accessible by specific users as follows:
 
-* For guest customer access:
+*  For guest customer access:
   `<resource>anonymous</resource>`
-* For authenticated customers:
+*  For authenticated customers:
   `<resource>self</resource>`
-* For administrators or 3rd-party integration clients by one or multiple `resource` tags:
+*  For administrators or 3rd-party integration clients by one or multiple `resource` tags:
   `<resource>Module_Name::resource1</resource>`
   `<resource>Module_Name::resource2</resource>`
 
@@ -53,8 +53,8 @@ going through a controller first.
 
 ## Explicit authorization
 
-Some cases however, cannot be covered by a configuration; an authorization has to be verified explicitly
- 
+Some cases however, cannot be covered by a configuration; an authorization has to be verified explicitly.
+
 ### Page (controller) for authenticated customers
 
 The `UserContextInterface` can be utilized to verify that a customer has logged in:
