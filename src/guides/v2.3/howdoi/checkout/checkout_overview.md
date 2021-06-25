@@ -39,3 +39,4 @@ You can customize the default checkout in multiple ways. This tutorial includes 
 -  [Add a new input form to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_form.html)
 -  [Add a new field in address form]({{ page.baseurl }}/howdoi/checkout/checkout_new_field.html)
 -  [Add custom shipping address renderer]({{ page.baseurl }}/howdoi/checkout/checkout_address.html)
+-  [Add custom validation rules to checkout address form]({{ page.baseurl }}/howdoi/checkout/checkout_custom_validation.html)
