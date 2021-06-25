@@ -152,3 +152,94 @@ When the only client of a self-signed token is the application itself, it is not
 a certain standard when generating self-signed tokens, but it would be easier and more secure to utilize one, like JWT.
 Thankfully, the Magento framework provides a tool to help with this process - see `Magento\Framework\Jwt\JwtManagerInterface`
 and its usages within the Community Edition.
+
+An example of using `JwtManagerInterface` for the E-mail link case above:
+
+```php
+class FinishSignUpTokenManager {
+  ...
+
+  private JwtManagerInterface $jwtManager;
+  
+  private EncryptionSettingsInterface $jwtEncSettings;
+  
+  private string $secret;
+  
+  public function construct(JwtManagerInterface $jwtManager, JwkFactory $jwtFactory, string $secret) {
+    $this->jwtManager = $jwtManager;
+    //Configure JWT encryption settings
+    $this->jwtEncSettings = new JweEncryptionJwks(
+      $jwkFactory->createA128KW($secret),
+      JweEncryptionSettingsInterface::CONTENT_ENCRYPTION_ALGO_A128_HS256
+    );
+  }
+
+  public function generate(SignUpFormData $data): string {
+    //Embed signUp data array into JWT claims
+    $jwt = new Jwe(
+      new JweHeader([]),
+      new ClaimsPayload(
+        [
+          new PrivateHeaderParameter('signup-data', $data->getData()),
+          new ExpirationTime((new \DateTimeImmutable())->add(new \DateInterval('P7D')))
+        ]
+      )
+    );
+
+    return $this->jwtManager->create($jwt, $this->jwtEncSettings);
+  }
+
+  public function readToken(string $token): SignUpFormData
+  {
+    $jwt = $this->jwtManager->read($token, $this->jwtEncSettings);
+    /** @var ClaimsPayloadInterface $payload */
+    $payload = $jwt->getPayload();
+    if ($payload instanceof ClaimsPayloadInterface) {
+      if (((int) $payload->getClaims()['exp']->getValue()) <= time()) {
+        throw new LocalizedException(__('Token expired'));
+      }
+      
+      return new SignUpFormData($payload->getClaims()['signup-data']->getValue());
+    } else {
+      throw new LocalizedException(__('Invalid token'));
+    }
+  }
+}
+
+class FinishSignUpNotifier {
+  ...
+
+  private FinishSignUpTokenManager $tokenManager;
+
+  ...
+
+  public function notify(SignUpFormData $data) {
+    ...
+
+    //Generating link for E-mails
+    $link .= '?token=' .$this->tokenManager->generate($data);
+
+    ...
+  }
+}
+
+class SignUp implements ActionInterface, HttpPostActionInterface {
+  ...
+
+  private FinishSignUpTokenManager $tokenManager;
+
+  ...
+
+  public function execute() {
+    //Retrieving previously filled data from token inside the controller to display SignUp form
+    try {
+      $signUpPrefilled = $this->tokenManager->readToken($this->request->getParam('token'));
+    } catch (LocalizedException $ex) {
+      $signUpPrefilled = null;
+      $this->messages->addWarning($ex->getPhrase());
+    }
+
+    ...
+  }
+}
+```
