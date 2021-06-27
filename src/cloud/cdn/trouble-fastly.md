@@ -38,6 +38,7 @@ Use the following list to identify and troubleshoot issues related to the Fastly
 -  **Top level navigation does not work**—The top level navigation relies on Edge Side Includes (ESI) processing which is enabled when you upload the default Magento Fastly VCL snippets. If the navigation is not working, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
 
 -  **Geo-location/GeoIP does not work**— The default Magento Fastly VCL snippets append the country code to the URL. If the country code is not working, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) example below and recheck the site.
+
 ```
 set resp.http.client-geo-city = client.geo.city;
 set resp.http.client-geo-region =  client.geo.region;
