@@ -5,6 +5,10 @@ pages:
     url: /release/
     versionless: true
 
+  - label: Released versions
+    url: /release/released-versions.html
+    versionless: true
+
   - label: Release policy
     url: /release/policy
     versionless: true
