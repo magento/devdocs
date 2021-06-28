@@ -1,4 +1,7 @@
-# Mass Assignment
+---
+group: php-developer-guide
+title: Mass assignment
+---
 
 Mass Assignment is a type of attack in which a client inserts or updates data that either should not be available
 to the user, or should require additional authorization.
@@ -27,19 +30,19 @@ $dbConnection->updateTable('users', $user->getData(), ['id' => $user->getId()]);
 When a client only provides `first_name` and `last_name` properties, this code will perform as expected, but it is vulnerable
 to mass assignment attacks.
 
-First one is possible through the `id` property. Users are only meant ot be able to edit their own data BUT here
+The first vulnerability is through the `id` property. Users are meant to be able to edit only their own data BUT here
 an attacker can set an `id` in their request. The`$user` object's ID will be overwritten, so when you call
-`$dbConnection->updateTable()` instead of having ID from `$authContext` you'll have an arbitrary ID from the HTTP request
+`$dbConnection->updateTable()`, instead of having the ID from `$authContext`, you will have an arbitrary ID from the HTTP request.
 This will allow an attacker to override data of any user in your system!
 
-The second one is possible via `is_admin` property. Clearly the property was meant to be writable only by other admins
+The second possible vulnerability is through the `is_admin` property. Clearly, the property was meant to be writable only by other admins,
 and maybe even by using another page/endpoint. Using the code above, an attacker can set `"is_admin": true`
 inside a request and gain admin access when you save the user record.
 
 Given the `users` table structure, and depending on your application's logic, `email` can also be a vulnerable property.
 An attacker might be able to change their email to any other address without confirming it first.
 
-## Magento
+## Mass Assignment and Magento
 If you are not careful and, especially, if you use legacy approach it is easy to make yourself vulnerable to mass
 assignment.
 
@@ -271,7 +274,7 @@ It serves a similar purpose: to expose only the properties to clients that we wa
 In the example above, we skipped the `isAdmin()` user property. We don't want users to access this property themselves,
 but we do want this property to be writeable by other admin users.
 
-The best solution here would be to have a separate service, controller and DTOs meant for admin users that would expose
+The best solution here would be to have a separate service, controller, and DTOs meant for admin users that would expose
 more properties like `isAdmin()` with the endpoints/pages requiring authorization to related resources.
 
 For example:
@@ -367,6 +370,6 @@ only to admin users by providing extension attributes for `UserFullDataInterface
 
 ### GraphQL
 
-With GraphQL Magento does not rely on interfaces to generate schema but rather for explicit GraphQl schemas so there is
+For GraphQL APIs Magento does not rely on interfaces to generate schema. Instead we have explicit GraphQL schemas so there is
 no risk of exposing fields accidentally when you update data storage schema. However, if for some reason some fields
 do require additional authorization, you would still need to verify it explicitly.
