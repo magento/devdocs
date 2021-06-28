@@ -235,7 +235,7 @@ location ~ (index|get|static|report|404|503|health_check)\.php$ {
 
 ## Step 4: Update the Base URL configuration {#update-base-url}
 
-You need to update the Base URL for the `french` and the `german` websites on the Magento admin.
+It is necessary to update the Base URL for the `french` and the `german` websites in the Magento admin.
 
 ### Update French Website Base URL
 
@@ -243,7 +243,7 @@ You need to update the Base URL for the `french` and the `german` websites on th
 1. Change the _configuration scope_ to the `french` website.
 1. Expand **Base URLs** section and update the **Base URL** and **Base Link URL** value to `http://french.magento24.com/`.
 1. Expand **Base URLs (Secure)** section and update the **Secure Base URL** and **Secure Base Link URL** value to `http://french.magento24.com/`.
-1. Click **Save Config** and save the configuraiton changes.
+1. Click **Save Config** and save the configuration changes.
 
 ### Update German Website Base URL
 
@@ -251,11 +251,11 @@ You need to update the Base URL for the `french` and the `german` websites on th
 1. Change the _configuration scope_ to the `german` website.
 1. Expand **Base URLs** section and update the **Base URL** and **Base Link URL** value to `http://german.magento24.com/`.
 1. Expand **Base URLs (Secure)** section and update the **Secure Base URL** and **Secure Base Link URL** value to `http://german.magento24.com/`.
-1. Click **Save Config** and save the configuraiton changes.
+1. Click **Save Config** and save the configuration changes.
 
 ### Clean the Cache
 
-Run the below command to clean the `config` and `full_page` cache.
+Run the command below to clean the `config` and `full_page` caches.
 
 ```bash
 bin/magento cache:clean config full_page
