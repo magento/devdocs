@@ -160,11 +160,11 @@ class FinishSignUpTokenManager {
   ...
 
   private JwtManagerInterface $jwtManager;
-  
+
   private EncryptionSettingsInterface $jwtEncSettings;
-  
+
   private string $secret;
-  
+
   public function construct(JwtManagerInterface $jwtManager, JwkFactory $jwtFactory, string $secret) {
     $this->jwtManager = $jwtManager;
     //Configure JWT encryption settings
@@ -198,7 +198,7 @@ class FinishSignUpTokenManager {
       if (((int) $payload->getClaims()['exp']->getValue()) <= time()) {
         throw new LocalizedException(__('Token expired'));
       }
-      
+
       return new SignUpFormData($payload->getClaims()['signup-data']->getValue());
     } else {
       throw new LocalizedException(__('Invalid token'));
