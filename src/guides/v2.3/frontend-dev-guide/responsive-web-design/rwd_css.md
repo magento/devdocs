@@ -87,14 +87,20 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
     // your code
 }
 
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+    @media only screen and (max-width: 375px) {
+        // styles for custom breakpoint below <= 375px mobile screen
+    }
+}
+
 //
 //  Tablet
 //  _____________________________________________
 
 // This will add styles for tablet devices. When using native media-queries, we recommend wrapping your media-queries with media-width Magento mixins or media-target
 & when (@media-target = 'desktop'), (@media-target = 'all') {
-    @media only screen and (min-width: @screen__m) and (max-width: @screen__xl - 1) {
-        // your code
+    @media only screen and (min-width: @screen__m) and (max-width: (@screen__xl - 1)) {
+        // styles for breakpoint >= 768px and < 1440px
     }
 }
 
