@@ -13,6 +13,8 @@ As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.co
 
 If you write and contribute a full topic, we will add your name (or your company's name) at the top of the DevDocs page and link it to your blog or website!
 
+If you contribute a major update to a topic, your GitHub username will be added to a description of the update in our [What's New topic](https://devdocs.magento.com/whats-new.html).
+
 ## Get started
 
 ![Get started workflow](https://devdocs.magento.com/common/images/contribute-prerequisites.png)
