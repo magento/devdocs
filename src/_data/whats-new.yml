@@ -6,7 +6,7 @@ link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
 updated: Mon Jun 28 14:44:34 2021
 entries:
-- description: Added a topic about [Released versions](https://devdocs.magento.com/release/past-releases.html)
+- description: Added a topic about [Released versions](https://devdocs.magento.com/release/released-versions.html)
     with dates of past releases and end-of-support dates.
   versions: 2.x
   type: New Topic
