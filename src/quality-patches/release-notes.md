@@ -19,6 +19,14 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.0.25
+
+-  **MDVA-37916** _(for Magento `>=2.3.6 <2.4.3`)_-Fixes the issue where the customer is not taken to the Payment Confirmation page when using Paypal Payment Advanced method.
+-  **MDVA-37082** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue when saving the custom stock of grouped products causes the product to show out of stock in the frontend.
+-  **MDVA-36572** _(for Magento `>=2.3.5 <2.4.3`)_-Fixes the issue when Credit Memo updates no longer cause duplicate product reservation updates in the database.
+-  **MDVA-38132** _(for Magento `>=2.3.3 <2.4.3`)_-Fixes the issue when the Admin panel is unreachable due to a "too many redirects" error.
+-  **MDVA-38270** _(for Magento `>=2.4.1 <2.4.3`)_-Fixes the issue with missing Gift card information in the order total in GraphQL.
+
 ## v1.0.24
 
 -  **MDVA-37779** _(for Magento `>=2.4.2 <=2.4.4`)_-Fixes the issue with adding a configurable product to cart via GraphQL when website ID does not coincide with store ID.
