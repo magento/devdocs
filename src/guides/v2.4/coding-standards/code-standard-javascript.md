@@ -357,11 +357,11 @@ var foo = 'bar',
 
 ## Custom rules
 
-There is a set of Magento custom Eslint rules introduced to ensure the code compatiblity with the latest versions of 3rd party libraries.
+There is a set of custom Eslint rules to ensure code compatiblity with the latest versions of 3rd party libraries.
 
-The custom rules are included using the `rulePaths` setting in the [Eslint Grunt configuration][grunt-eslint-configuration].
+These custom rules are included using the `rulePaths` setting in the [Eslint Grunt configuration][grunt-eslint-configuration].
 
-The source code of the rules can be found in [Eslint custom rules folder][eslint-custom-rules-folder].
+The source code of the rules can be found in the [Eslint custom rules folder][eslint-custom-rules-folder].
 
 [jquery]: https://jquery.com/
 [jquery-widgets]: http://api.jqueryui.com/category/widgets
