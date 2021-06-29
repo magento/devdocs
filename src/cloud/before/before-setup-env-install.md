@@ -123,7 +123,7 @@ To install Magento using the command line:
 1. Enter a CLI command with options for entering the name, email, ADMIN credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
    ```bash
-   php magento setup:install \
+   bin/magento setup:install \
      --admin-firstname=John \
      --admin-lastname=Smith \
      --admin-email=jsmith@mail.com \
@@ -155,13 +155,13 @@ After installing Magento, run the commands for [compile]({{ site.baseurl }}/guid
 1. Compile Magento.
 
    ```bash
-   php magento setup:di:compile
+   bin/magento setup:di:compile
    ```
 
 1. Deploy Magento
 
    ```bash
-   php magento setup:static:deploy
+   bin/magento setup:static:deploy
    ```
 
 Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts file.
@@ -193,7 +193,7 @@ To verify the local, access the store using the URL you passed in the install co
 To change the URI for the Admin panel, use this command to locate it:
 
 ```bash
-php bin/magento info:adminuri
+bin/magento info:adminuri
 ```
 
 To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.

@@ -61,10 +61,10 @@ Replace the example database, username, and password with something that matches
 ### Configure the framework for test environment
 
 The Magento 2 integration test framework comes with a configuration file template
-`mage2ce/dev/tests/integration/etc/install-config-mysql.php.dist`.
+`dev/tests/integration/etc/install-config-mysql.php.dist`.
 
 Copy this file to
-`mage2ce/dev/tests/integration/etc/install-config-mysql.php`
+`dev/tests/integration/etc/install-config-mysql.php`
 (without the `.dist` suffix) and add your test database access credentials.
 
 The contents will look similar to the following. Each array key will be passed as an option argument when the test
