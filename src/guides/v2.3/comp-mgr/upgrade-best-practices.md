@@ -38,11 +38,11 @@ Do not skip an upgrade. Upgrading every release will help you to have a shorter 
 
 ## Best practices for planning upgrades
 
-If you are working on a project that is already in production, upgrades are an opportunity for you to improve the quality of your code and customizations and optimize future upgrades. The time you invest today will be time saved in the long term.
+If you are working on a project that is already in production, upgrades are an opportunity for you to improve the quality of your code and customizations, and to optimize for future upgrades. The time you invest today will be time saved in the long term.
 
 If you manage multiple sites for different merchants, the best approach is to have a base instance with the main features and customizations you normally use. Use this as your testing site for completing an upgrade and then do it on others. This practice will give you the flexibility to reuse customized modules for different customers and simplify upgrades across projects.
 
-If your project is live, we suggest you run an audit on it to determine its quality, and how you can improve it to make your upgrades more efficient.
+If your project is live, we suggest you run an audit to determine its quality, and understand how you can improve it to make upgrades more efficient.
 
 ### Developing with upgrades in mind
 
@@ -57,13 +57,13 @@ Begin adopting the Adobe Commerce Extensibility platform, if you haven't done so
 
 *  **API Extensibility**. Use [GraphQL]({{page.baseurl}}/graphql/index.html) to extend Web API layer by evolving the graph data model and executing lambda functions directly from the graph layer.
 
-*  **Adobe I/O middleware and services**. Connect your systems with {{site.data.var.ee}} using Adobe's middleware and a suite of app connections built on [Adobe I/O](https://www.adobe.io/). In addition,you can extend core platform capabilities by overwriting the default behavior with your own business logic that runs on Adobe I/O.
+*  **Adobe I/O middleware and services**. Connect your systems with {{site.data.var.ee}} using Adobe's middleware and a suite of app connections built on [Adobe I/O](https://www.adobe.io/). In addition, you can extend core platform capabilities by overwriting the default behavior with your own business logic that runs on Adobe I/O.
 
 ### Planning upgrades
 
 As we continually expand the capabilities of {{site.data.var.ee}}, it is critical that you develop on the latest available release and define an upgrade strategy into your project plans. Doing so helps you remain secure, compliant, and up-to-date on the latest enhancements that allow you to grow sales faster, operate more effectively, and stay ahead of your competition now and into the future.
 
-To help you plan and budget for upgrades you should monitor our [Release schedule]({{site.baseurl}}/release), you should plan upgrade tasks within your team's backlog ahead of time. Aim to complete this work with GA.
+To help you plan and budget for upgrades, you should monitor our [Release schedule]({{site.baseurl}}/release). Plan upgrade tasks within your team's backlog ahead of time. Aim to complete this work with GA.
 
 *  Use the pre-release version to learn about each new release. Pre-release is General Availability code that is available to {{site.data.var.ee}} merchants and all partners two weeks before General Availability. If you have multiple stores, use the pre-release on your base store and verify that your custom modules and themes are compatible with it.
 
@@ -87,8 +87,8 @@ Assess the work to be done for upgrading:
 
 ### Post-upgrade testing
 
-Testing is the phase of an upgrade that requires more time. As a result, this process should be as automated as possible. You can benefit from using the core testing tools. The [Application Testing Guide]({{page.baseurl}}/test/testing.html) provides details.
+Testing is the phase of an upgrade that requires the most time. As a result, this process should be as automated as possible. You can benefit from using the core testing tools. The [Application Testing Guide]({{page.baseurl}}/test/testing.html) provides details.
 
-Use staging to test and validate your upgrade before moving to production.
+Use a staging environment to test and validate your upgrade before moving to production.
 
-Make use of a **maintenance page**. Preparing this page in advance allows you to communicate with your customers, notifying them that work happening in the background. This page should be visible for a few minutes, but in case of a problem, you might need to use it longer. Having the appropriate content and design for your maintenance page will give your users a good experience even when your store is not available.
+Make use of a **maintenance page**. Preparing this page in advance allows you to communicate with your customers, notifying them that work is happening in the background. This page should be visible for a few minutes, but in case of a problem, you might need to use it longer. Having the appropriate content and design for your maintenance page will give your users a good experience even when your store is not available.
