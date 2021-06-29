@@ -388,7 +388,7 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 <!--- MC-36548-->
 
-*  The **Add to Cart** functionality now works as expected whenever the **Add to Cart** button ia available to click. Previously, if you clicked this button multiple times while waiting for a product page to load, Magento threw this error: `Invalid Form Key. Please refresh the page`.
+*  The **Add to Cart** functionality now works as expected whenever the **Add to Cart** button is available to click. Previously, if you clicked this button multiple times while waiting for a product page to load, Magento threw this error: `Invalid Form Key. Please refresh the page`.
 
 <!--- MC-37006 36835-->
 

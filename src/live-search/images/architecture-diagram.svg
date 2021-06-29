@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1319.1 705.8" style="enable-background:new 0 0 1319.1 705.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{fill:none;}
+	.st2{display:none;fill:#FFEFE3;}
+	.st3{display:inline;fill:#FFEFE3;}
+	.st4{display:inline;}
+	.st5{fill:none;stroke:#B92700;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#B92700;stroke-miterlimit:10;stroke-dasharray:12.303,12.303;}
+	.st7{fill:none;stroke:#B92700;stroke-miterlimit:10;stroke-dasharray:12.1765,12.1765;}
+	.st8{display:none;fill:#FFE6E6;stroke:#FFE6E6;stroke-miterlimit:10;}
+	.st9{fill:#FFFFFF;}
+	.st10{fill:none;stroke:#B20202;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:6;}
+	.st11{fill:#FFEFE3;}
+	.st12{font-family:'OpenSans-Semibold';}
+	.st13{font-size:24px;}
+	.st14{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st15{font-family:'Wingdings-Regular';}
+	.st16{font-size:18px;}
+	.st17{fill:#F7E3E4;}
+	.st18{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st19{stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g class="st0">
+</g>
+<rect x="43.3" y="-81.1" class="st1" width="52" height="1"/>
+<rect x="84.3" y="82.9" class="st0" width="398" height="181"/>
+<rect x="109.3" y="61.9" class="st2" width="418" height="219"/>
+<g class="st0">
+	<rect x="1078.3" y="213.9" class="st3" width="418" height="219"/>
+	<g class="st4">
+		<polyline class="st5" points="1496.3,426.9 1496.3,432.9 1490.3,432.9 		"/>
+		<line class="st6" x1="1478" y1="432.9" x2="1090.5" y2="432.9"/>
+		<polyline class="st5" points="1084.3,432.9 1078.3,432.9 1078.3,426.9 		"/>
+		<line class="st7" x1="1078.3" y1="414.7" x2="1078.3" y2="226"/>
+		<polyline class="st5" points="1078.3,219.9 1078.3,213.9 1084.3,213.9 		"/>
+		<line class="st6" x1="1096.6" y1="213.9" x2="1484.2" y2="213.9"/>
+		<polyline class="st5" points="1490.3,213.9 1496.3,213.9 1496.3,219.9 		"/>
+		<line class="st7" x1="1496.3" y1="232.1" x2="1496.3" y2="420.8"/>
+	</g>
+</g>
+<rect x="162.3" y="477.9" class="st8" width="258" height="168"/>
+<g>
+	<rect x="2.5" y="2.9" class="st9" width="511.8" height="699.4"/>
+	<rect x="2.5" y="2.9" class="st10" width="511.8" height="699.4"/>
+	<rect x="2.5" y="2.9" class="st11" width="511.8" height="699.4"/>
+</g>
+<text transform="matrix(1 0 0 1 19.236 38.9971)" class="st12 st13">Adobe Commerce</text>
+<path class="st14" d="M454.3,225.5h-399c-6.6,0-12-5.4-12-12v-98.6c0-6.6,5.4-12,12-12h399c6.6,0,12,5.4,12,12v98.6
+	C466.3,220.1,461,225.5,454.3,225.5z"/>
+<path class="st14" d="M454.3,664.7h-399c-6.6,0-12-5.4-12-12V322.4c0-6.6,5.4-12,12-12h399c6.6,0,12,5.4,12,12v330.3
+	C466.3,659.3,461,664.7,454.3,664.7z"/>
+<text transform="matrix(1 0 0 1 58.8886 134.1064)" class="st12 st13">Storefront</text>
+<text transform="matrix(1 0 0 1 60.7682 346.7891)" class="st12 st13">Backend</text>
+<path class="st14" d="M454.3,225.5H222.5c-6.6,0-12-5.4-12-12v-99.1c0-6.6,5.4-12,12-12h231.8c6.6,0,12,5.4,12,12v99.1
+	C466.3,220.1,461,225.5,454.3,225.5z"/>
+<text transform="matrix(1 0 0 1 260.8444 134.2861)" class="st12 st13">Live Search</text>
+<text transform="matrix(1 0 0 1 236.5402 176.6235)" class="st15 st13"></text>
+<text transform="matrix(0.9344 0 0 1 251.5361 176.6235)" class="st12 st13">  Search Requests</text>
+<text transform="matrix(1 0 0 1 236.5402 205.4235)" class="st15 st13"></text>
+<text transform="matrix(0.9399 0 0 1 251.5361 205.4233)" class="st12 st13">  Search Results</text>
+<path class="st14" d="M454.3,469.1H222.5c-6.6,0-12-5.4-12-12V322.9c0-6.6,5.4-12,12-12h231.8c6.6,0,12,5.4,12,12v134.2
+	C466.3,463.8,461,469.1,454.3,469.1z"/>
+<text transform="matrix(1 0 0 1 256.5402 345.9683)" class="st12 st13">Admin</text>
+<text transform="matrix(1 0 0 1 238.5563 385.7871)" class="st15 st13"></text>
+<text transform="matrix(1 0 0 1 251.5363 385.7871)" class="st12 st13"> Facets</text>
+<text transform="matrix(1 0 0 1 238.5563 414.5871)" class="st15 st13"></text>
+<text transform="matrix(1 0 0 1 251.5363 414.5871)" class="st12 st13"> Synonyms</text>
+<text transform="matrix(1 0 0 1 238.5563 443.3871)" class="st15 st13"></text>
+<text transform="matrix(1 0 0 1 251.5363 443.3871)" class="st12 st13"> Rules</text>
+<path class="st14" d="M454.3,664.8H222.5c-6.6,0-12-5.4-12-12v-89c0-6.6,5.4-12,12-12h231.8c6.6,0,12,5.4,12,12v89
+	C466.3,659.5,461,664.8,454.3,664.8z"/>
+<text transform="matrix(1 0 0 1 255.5402 613.0889)" class="st12 st13">Catalog Data</text>
+<text transform="matrix(1 0 0 1 599.6415 120.9349)" class="st12 st16">Storefront </text>
+<text transform="matrix(1 0 0 1 573.1015 142.5349)" class="st12 st16">Search Requests</text>
+<g>
+	<rect x="784.9" y="2.9" class="st9" width="530.2" height="699.4"/>
+	<rect x="784.9" y="2.9" class="st10" width="530.2" height="699.4"/>
+	<rect x="784.9" y="2.9" class="st17" width="530.2" height="699.4"/>
+</g>
+<text transform="matrix(1 0 0 1 799.817 35.5859)" class="st12 st13">SaaS Services</text>
+<path class="st14" d="M1243.9,214.5h-399c-6.6,0-12-5.4-12-12v-88c0-6.6,5.4-12,12-12h399c6.6,0,12,5.4,12,12v88
+	C1255.9,209.1,1250.5,214.5,1243.9,214.5z"/>
+<text transform="matrix(1 0 0 1 949.0776 165.9438)" class="st12 st13">Search Service</text>
+<path class="st14" d="M1250.9,450.3h-399c-6.6,0-12-5.4-12-12v-88c0-6.6,5.4-12,12-12h399c6.6,0,12,5.4,12,12v88
+	C1262.9,444.9,1257.5,450.3,1250.9,450.3z"/>
+<text transform="matrix(1 0 0 1 931.5824 401.7476)" class="st12 st13">Search Admin Service</text>
+<path class="st14" d="M1253.6,668.8h-399c-6.6,0-12-5.4-12-12v-88c0-6.6,5.4-12,12-12h399c6.6,0,12,5.4,12,12v88
+	C1265.6,663.4,1260.3,668.8,1253.6,668.8z"/>
+<text transform="matrix(1 0 0 1 952.2502 617.8013)" class="st12 st13">Catalog Service</text>
+<g>
+	<path d="M466.3,158.1c243-2.3,366.6-0.2,366.6-0.2"/>
+	<g>
+		<path class="st18" d="M476.8,158c195.7-1.8,311.6-0.7,345.6-0.2"/>
+		<g>
+			<polygon points="478.4,145.9 478.5,170.2 466.3,158.1 			"/>
+		</g>
+		<g>
+			<polygon points="820.9,145.7 820.7,170 832.9,157.9 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 639.282 356.2082)" class="st12 st16"> </text>
+<text transform="matrix(1 0 0 1 549.852 377.8082)" class="st12 st16">Search Management</text>
+<g>
+	<path d="M466.3,393.8c247.6-2.3,373.6-0.2,373.6-0.2"/>
+	<g>
+		<path class="st18" d="M476.8,393.7c199.9-1.8,318.2-0.7,352.6-0.2"/>
+		<g>
+			<polygon points="478.4,381.6 478.5,405.9 466.3,393.8 			"/>
+		</g>
+		<g>
+			<polygon points="827.9,381.3 827.7,405.6 839.9,393.6 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<path d="M466.3,612.5c247.6-2.3,373.6-0.2,373.6-0.2"/>
+	<g>
+		<path class="st18" d="M476.8,612.4c199.9-1.8,318.2-0.7,352.6-0.2"/>
+		<g>
+			<polygon points="478.4,600.3 478.5,624.6 466.3,612.5 			"/>
+		</g>
+		<g>
+			<polygon points="827.9,600 827.7,624.3 839.9,612.3 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 639.2798 576.6014)" class="st12 st16"> </text>
+<text transform="matrix(1 0 0 1 584.2998 598.2014)" class="st12 st16">Catalog Sync</text>
+<g>
+	<path d="M1033.1,228.2"/>
+</g>
+<path class="st19" d="M1319.1,253.3"/>
+<g>
+	<line class="st1" x1="1033.1" y1="214.5" x2="1033.1" y2="338.3"/>
+	<g>
+		<line class="st18" x1="1033.1" y1="225" x2="1033.1" y2="324"/>
+		<g>
+			<polygon points="1045.3,226.6 1021,226.6 1033.1,214.5 			"/>
+		</g>
+		<g>
+			<polygon points="1023.2,321 1033.1,338.3 1043.1,321 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<line class="st1" x1="1033.1" y1="450.3" x2="1033.1" y2="566.8"/>
+	<g>
+		<line class="st18" x1="1033.1" y1="460.8" x2="1033.1" y2="552.5"/>
+		<g>
+			<polygon points="1045.3,462.5 1021,462.5 1033.1,450.3 			"/>
+		</g>
+		<g>
+			<polygon points="1023.2,549.5 1033.1,566.8 1043.1,549.5 			"/>
+		</g>
+	</g>
+</g>
+</svg>
