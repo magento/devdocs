@@ -16,6 +16,10 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.3.2 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed missing dependency for B2B support
+
 ## 3.3.1 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.new}Added support for B2B customer group pricing. When you set a [price filter on a recommendation unit](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html#filtertypes), B2B customers who are logged in will see the customer group pricing set for the products displayed.
