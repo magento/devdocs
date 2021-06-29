@@ -54,12 +54,6 @@ To add your SSH key to the local configuration:
    {:.bs-callout-info}
    You can specify multiple SSH keys by adding multiple `IdentityFile` entries to your configuration.
 
-1. Reload your SSH configuration to apply the changes.
-
-    ```bash
-    source ~/.ssh/config
-    ```
-
 {:.ref-header}
 Next step
 
