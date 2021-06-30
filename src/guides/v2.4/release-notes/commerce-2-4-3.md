@@ -353,11 +353,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9006-->
 
-*  Item resolvers are now optional. Previously, when this argument was mandatory, the checkout process for configurable products and grouped products did not complete.
+*  Added the `itemResolvers` argument to the Catalog `di.xml` file. As a result, checkout is no longer broken if configurable and grouped product modules are disabled.
 
 <!--- ENGCOM-8944-->
 
-*  Magento now displays the Payment & Shipping Information section radio buttons as expected during the Admin re-order workflow.
+*  Magento now displays the radio buttons in the **Payment & Shipping Information** section as expected during the Admin re-order workflow.
 
 <!--- MC-39158 ENGCOM-8493-->
 
@@ -507,7 +507,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9010 8947-->
 
-*  You can no longer add a product with a `NULL` value in the SKU field. Previously, you could add the product, but when you tried to edit it from the Admin, Magento threw an error.
+*  You can no longer create a product with a `NULL` SKU value. Previously, you could create a product without a SKU value through a custom importer or directly in the database, but when you tried to edit it from the Admin, Magento threw an error.
 
 ### Catalog rule
 
@@ -517,7 +517,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8367-->
 
-*  Temporary tables `catalogrule_product__temp` are now deleted after a cart or catalog rule expires, is disabled, or becomes inactive.
+*  Temporary tables that begin with `catalogrule_product__temp` are now deleted as expected when reindexing fails after a cart or catalog rule expires, is disabled, or becomes inactive.
 
 <!--- ENGCOM-8949-->
 
@@ -695,7 +695,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-18023 ENGCOM-9000-->
 
-*  Magento now logs an error as expected when an exception occurs during email send using the Magento contact form.
+*  Magento now logs an error as expected when an exception occurs as a customer attempts to send an email from the Contact Us form.
 
 ### Frameworks
 
@@ -803,7 +803,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9037-->
 
-*  Magento now throws a 404 error when you try to access a non existing category path. Previously, Magento displayed this error: `Trying to access array offset on value of type bool` on deployments running PHP 7.4.
+*  On deployments running PHP 7.4, Magento now returns a 404 error when the **Generate "category/product" URL Rewrites** setting is set to **No**, and a shopper tries to access a non-existent category path. Previously, Magento returned a 500 error stating: `Trying to access array offset on value of type bool`.
 
 <!--- MC-32257 magento/partners-magento2ee#507-->
 
@@ -815,7 +815,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9017-->
 
-*  Updated the `README.md` template.
+*  Modified the `PULL_REQUEST_TEMPLATE` to add a requirement to create and update README files, when applicable.
 
 <!--- ENGCOM-8539-->
 
@@ -847,7 +847,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8505-->
 
-*  Added Albania, Denmark, Greece, Iceland, Portugal, and Sweden to the `directory_country_region` table.
+*  Added Albania, Denmark, Greece, Iceland, Portugal, and Sweden regions to the `directory_country_region` table.
 
 ### Gift message
 
@@ -930,10 +930,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-38822-->
 
 *  The GraphQL `products` query response now sorts aggregations according to product attribute position.
-
-<!--- ENGCOM-9087-->
-
-*  The `addGiftRegistryItems` mutation has been deprecated.
 
 <!--- ENGCOM-8462-->
 
@@ -1049,26 +1045,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  `colinmollenhour/php-redis-session-abstract` has been updated to v1.4.4 for PHP 8 compatibility.
 
-<!--- ENGCOM-8951-->
-
-*  Removed `CliCacheFlushActionGroup` use (or changed value) for `Wishlist`, `Swatches`, `Translation`, `UrlRewrite`, `Vault`, and `Weee` modules.
-
-<!--- ENGCOM-8889-->
-
-*  Removed usage or changed value of the `CliIndexerReindexActionGroup` action group for the following modules: `Elasticsearch`,  `Elasticsearch6`,  `LayeredNavigation`,  `LoginAsCustomer`,  `Newsletter`,  `UrlRewrite`,  `Weee`, `Wishlist`.
-
-<!--- ENGCOM-8893-->
-
-*  Removed `CliCacheFlushActionGroup` use for `ConfigurableProduct`, `CatalogUrlRewrite`, `Config`, `Contact`, and `Cookie` modules.
-
-<!--- ENGCOM-8893-->
-
-*  Removed `CliCacheFlushActionGroup` use (or changed value) for the `Checkout`, `CurrencySymbol`, and `Customer` modules.
-
-<!--- ENGCOM-9001-->
-
-*  Removed `CliCacheFlushActionGroup` use in these modules: `Downloadable`, `Elasticsearch`,`Elasticsearch6`,`Fedex`,`Indexer`,`LayeredNavigation`,`LoginAsCustomer`,`Msrp`, and `Multishipping`.
-
 <!--- ENGCOM-8668-->
 
 *  Removed use of obsolete property `$_isScopePrivate` throughout the code base.
@@ -1105,7 +1081,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- ENGCOM-8496-->
 
-*  The 'indexer:reindex', 'cache:flush' commands and usage of the `AdminReindexAndFlushCache` action group has been removed from tests to improve execution for the following modules: `Bundle`, `Catalog`, `CatalogRule`, `CatalogRuleConfigurable`, `CatalogUrlRewrite`, `Downloadable`, `Indexer`, `Paypal`, and `Sales`.
+*  The `magento indexer:reindex` and `cache:flush` commands and the `AdminReindexAndFlushCache` action group have been removed from tests to improve execution for the following modules: `Bundle`, `Catalog`, `CatalogRule`, `CatalogRuleConfigurable`, `CatalogUrlRewrite`, `Downloadable`, `Indexer`, `Paypal`, and `Sales`.
 
 #### Refactored tests
 
@@ -1220,9 +1196,30 @@ Repetitive actions have been replaced with action groups in these tests:
 #### Deleted action groups
 
 `CliIndexerReindexActionGroup` <!--- ENGCOM-8525-->
+
 #### Other
 
-Removed usage of `CliIndexerReindexActionGroup` from tests to improve execution time for the `Catalog` module. <!--- ENGCOM-8546—>
+*  Removed `CliIndexerReindexActionGroup` from tests to improve execution time for the `Catalog` module. <!--- ENGCOM-8546—>
+
+<!--- ENGCOM-8951-->
+
+*  Removed `CliCacheFlushActionGroup` use (or changed value) for `Wishlist`, `Swatches`, `Translation`, `UrlRewrite`, `Vault`, and `Weee` modules.
+
+<!--- ENGCOM-8889-->
+
+*  Removed `CliIndexerReindexActionGroup` action group for the following modules: `Elasticsearch`,  `Elasticsearch6`,  `LayeredNavigation`,  `LoginAsCustomer`,  `Newsletter`,  `UrlRewrite`,  `Weee`, `Wishlist`.
+
+<!--- ENGCOM-8893-->
+
+*  Removed `CliCacheFlushActionGroup` use for `ConfigurableProduct`, `CatalogUrlRewrite`, `Config`, `Contact`, and `Cookie` modules.
+
+<!--- ENGCOM-8893-->
+
+*  Removed `CliCacheFlushActionGroup` use (or changed value) for the `Checkout`, `CurrencySymbol`, and `Customer` modules.
+
+<!--- ENGCOM-9001-->
+
+*  Removed `CliCacheFlushActionGroup` use in these modules: `Downloadable`, `Elasticsearch`,`Elasticsearch6`,`Fedex`,`Indexer`,`LayeredNavigation`,`LoginAsCustomer`,`Msrp`, and `Multishipping`.
 
 ### Newsletter
 
@@ -1460,7 +1457,7 @@ Removed usage of `CliIndexerReindexActionGroup` from tests to improve execution 
 
 <!--- ENGCOM-8486-->
 
-*  Administrators can now successfully add a product to an order from the Admin. Previously, when the administrator clicked the **Add selected products to order** button, Magento displayed the spinning load icon, and the page hung.
+*  Administrators who use Safari can now successfully add a product to an order from the Admin. Previously, when the administrator clicked the **Add selected products to order** button, Magento displayed the spinning load icon, and the page hung.
 
 ### Sales Rule
 
@@ -1559,10 +1556,6 @@ Removed usage of `CliIndexerReindexActionGroup` from tests to improve execution 
 <!--- MC-36425-->
 
 *  Shoppers can now use the Back browser button to return to the Select Shipping Method page while checking out an order with multiple addresses. Previously, Magento displayed a corrupted Select Shipping Method page. [GitHub-30268](https://github.com/magento/magento2/issues/30268)
-
-<!--- ENGCOM-9096-->
-
-*  Flat rate shipping method charges no longer become zero when a cart price rule is applied during checkout.
 
 <!--- MC-40021 ENGCOM-8983-->
 
