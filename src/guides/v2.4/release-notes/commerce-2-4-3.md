@@ -357,11 +357,15 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8944-->
 
-*  Magento now displays the Payment & Shipping Information section radio buttons as expected during the Admin re-order workflow.
+*  Magento now displays the Payment & Shipping Information section radio buttons as expected during the Admin re-order workflow.
 
 <!--- MC-39158 ENGCOM-8493-->
 
 *  Magento now correctly applies cart price rules with a cart-level fixed discount when the cart contains a bundle product with multiple options. Previously, the cart price rule was not completely applied to the order.
+
+<!--- MC-40983 ENGCOM-8828-->
+
+*  The **Add to cart** button on the category list view now works as expected.
 
 ### Catalog
 
@@ -542,6 +546,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-37418-->
 
 *  The configuration pop-up that Magento displays when you are editing a configurable product from a wishlist now closes as expected when you click the **OK** button.
+
+<!--- MC-39878  magento/magento2#31472-->
+
+*  Magento now correctly generates invoices for orders that contain only one configurable product.
 
 ### cron
 
@@ -1073,6 +1081,14 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The `composer.lock` file has been updated to the latest version of the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/releases/tag/v60).
 
+<!--- ENGCOM-9016-->
+
+*  The `composer.lock` file has been updated to match the dependencies listed in the `composer.json` file, including a dependency upon the `web-token/jwt-framework` package.
+
+<!--- ENGCOM-9015 -->
+
+*  Added a missing dependency on the `web-token/jwt-framework` package to the `magento/module-jwt-framework-adapter`.
+
 ### Media Gallery
 
 <!--- MC-41728-->
@@ -1357,6 +1373,10 @@ Removed usage of `CliIndexerReindexActionGroup` from tests to improve execution 
 <!--- ENGCOM-8501-->
 
 *  Administrators can now sort product reviews on the Product Reviews section of the product edit page as expected.
+
+<!--- MC-41003  magento/magento2#32259-->
+
+*  Reviews are now saved with the correct store ID after an administrator approves and saves the review from a different domain than the store.
 
 ### Rewards
 
@@ -1644,6 +1664,10 @@ Removed usage of `CliIndexerReindexActionGroup` from tests to improve execution 
 
 *  Removed `CacheCleaner::cleanAll();` from integration tests.
 
+<!--- ENGCOM-8898-->
+
+*  Added a test for this scenario: Admin users can edit a customer account when the customer is subscribed to a queued newsletter.
+
 ### Theme
 
 <!--- MC-41474-->
@@ -1717,6 +1741,14 @@ Removed usage of `CliIndexerReindexActionGroup` from tests to improve execution 
 <!--- MC-23729  magento/magento2#31549-->
 
 *  Magento now displays a correct time value when the `datetime` component `timeOnly` option is set to **yes**. [GitHub-23157](https://github.com/magento/magento2/issues/23157)
+
+<!--- ENGCOM-8514 -->
+
+*  You can now remove a layout update after creating a new widget on Admin **Content** > **Widgets**.
+
+<!--- ENGCOM-8502 MC-35716-->
+
+*  The **Remove Layout Update** button now works as expected on any layout you have added from Admin **Content** > **Widgets**. Previously, this button did not work on any layout other than the first selected when adding multiple layouts.
 
 ### URL rewrites
 
