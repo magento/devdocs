@@ -38,9 +38,9 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
 1. Complete each section and submit for review when it is complete.
 
--  Click <span class="btn">Save Submit</span> to save progress.
--  Click <span class="btn">Preview</span> to see the output of your marketing information.
--  After adding all content, with full checkmarks across sections, click <span class="btn">Submit</span>.
+   -  Click <span class="btn">Save Submit</span> to save progress.
+   -  Click <span class="btn">Preview</span> to see the output of your marketing information.
+   -  After adding all content, with full checkmarks across sections, click <span class="btn">Submit</span>.
 
 ### Extension description
 
