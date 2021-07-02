@@ -57,6 +57,12 @@ The following examples enable the remote storage with an AWS S3 storage adapter 
    bin/magento setup:config:set --remote-storage-driver="aws-s3" --remote-storage-bucket="myBucket" --remote-storage-region="us-east-1"
    ```
 
+## Limitations
+
+Enabling remote storage might affect your established development experience. For example, certain PHP file functions might not work as expected. The usage of Magento Framework for file operations must be enforced.
+
+The list of prohibited PHP native functions is available in [Magento Coding Standard](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php) repository.
+
 ## Migrate content
 
 After you enable remote storage for a specific adapter, you can use the CLI to migrate existing _media_ files to the remote storage.
