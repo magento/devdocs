@@ -95,6 +95,8 @@ This release adds GraphQL support for the following features:
 
 *  **Shared catalogs**<!--- PWA-1294-->
 
+*  **Wishlists**. The [addWishlistItemsToCart mutation]({{page.baseurl}}/graphql/mutations/add-wishlist-items-to-cart.html) moves items from the specified wish list to the customer's cart. <!--- magento/partners-magento2ee#449-->
+
 *  **Gift registries**. Tasks covered include: <!--- PWA-1290-->
 
    *  Use the [giftRegistry query](https://devdocs.magento.com/guides/v2.4/graphql/queries/gift-registry.html) to return the contents of the customer's gift registries.
@@ -105,13 +107,13 @@ This release adds GraphQL support for the following features:
 
    *  [Update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry-items.html) or [remove](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry-items.html) items from a gift registry.
 
-   *  [Move all items](https://devdocs.magento.com/guides/v2.4/graphql/mutations/move-cart-items-to-gift-registry.html) from the cart to the gift registry.
+   *  [Move all items](https://devdocs.magento.com/guides/v2.4/graphql/mutations/move-cart-items-to-gift-registry.html) from the cart to the gift registry. <!--- ENGCOM-9082 9087-->
 
    *  [Add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-gift-registry-registrants.html), [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry-registrants.html), or [remove](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry-registrants.html) registrants from a gift registry.
 
    *  [Share](https://devdocs.magento.com/guides/v2.4/graphql/mutations/share-gift-registry.html) a gift registry with invitees.
 
-   *  **Negotiable quotes**. See the [`negotiableQuote`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quote.html) and [`negotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quotes.html) queries. <!--- PWA-1292-->
+*  **Negotiable quotes**. See the [`negotiableQuote`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quote.html) and [`negotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quotes.html) queries. <!--- PWA-1292-->
 
    New mutations include:
 
@@ -207,7 +209,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The generated System report (**System** > **Support** > **System Report**) is now rendered correctly. Previously, report content was misaligned.
 
-<!--- MC-30152-->
+<!--- MC-30152 ENGCOM-8625-->
 
 *  Magento now turns off validation on the **Price** field as expected when the **Dynamic price** setting is enabled during bundle product creation. Previously, Magento threw a validation error when you removed a value from the **Price field** when the **Dynamic price** setting was enabled. [GitHub-26214](https://github.com/magento/magento2/issues/26214)
 
@@ -225,7 +227,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Price indexing of bundle products is now executed using temporary tables, which avoids locking database tables. Previously, Magento used physical tables, which resulted in locked tables.
 
-<!--- MC-41177-->
+<!--- MC-41177 magento/magento2#32594-->
 
 *  A bundle item’s price can now be set to 0.00. Previously, when you returned to the edit page after setting the price to 0.00, the price returned to its default value. [GitHub-32383](https://github.com/magento/magento2/issues/32383)
 
@@ -249,7 +251,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Adding, removing, or updating a child product to a bundle product through REST API calls now triggers re-indexing as expected. Previously, these actions did not trigger re-indexing, and as a result, the bundle product did not change its stock status until manual re-indexing was performed.
 
-<!--- MC-35725-->
+<!--- MC-35725 ENGCOM-8568-->
 
 *  Magento now displays the correct price range for bundle products with tier prices. [GitHub-30284](https://github.com/magento/magento2/issues/30284)
 
@@ -317,7 +319,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento now displays an informative error message and does not update product quantity when a shopper adds an invalid product quantity and clicks the **Update items and Quantities** button on the Manage Shopping cart page. Previously, Magento upgraded the product quantity and did not display an error message.
 
-<!--- MC-37807-->
+<!--- MC-37807 ENGCOM-8530-->
 
 *  Products with a customizable option `(File)` now include active links as expected throughout the multi-shipping checkout process. Previously, this link was missing.
 
@@ -325,7 +327,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The Admin shopping cart now displays product prices in correct currencies for stores that support multiple currencies. Previously, prices were converted to the specified currency more than once — first, when products were added to the cart from the storefront, and then again when the order was subsequently rendered on the Admin.
 
-<!--- MC-36703-->
+<!--- MC-36703  magento/partners-magento2ee#439-->
 
 *  Magento now empties the shopping cart as expected after an administrator completes an order from the Admin that was created by a shopper on the storefront. Previously, when the customer logged back in after the administrator completed the order, the storefront cart still contained order contents.
 
@@ -348,6 +350,22 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-41165-->
 
 *  The shipping page of the checkout workflow now successfully loads when in-store delivery is enabled. Previously, Magento threw a JavaScript error and the shipping checkout page did not completely render.
+
+<!--- ENGCOM-9006-->
+
+*  Added the `itemResolvers` argument to the Catalog `di.xml` file. As a result, checkout is no longer broken if configurable and grouped product modules are disabled.
+
+<!--- ENGCOM-8944-->
+
+*  Magento now displays the radio buttons in the **Payment & Shipping Information** section as expected during the Admin re-order workflow.
+
+<!--- MC-39158 ENGCOM-8493-->
+
+*  Magento now correctly applies cart price rules with a cart-level fixed discount when the cart contains a bundle product with multiple options. Previously, the cart price rule was not completely applied to the order.
+
+<!--- MC-40983 ENGCOM-8828-->
+
+*  The **Add to cart** button on the category list view now works as expected.
 
 ### Catalog
 
@@ -411,7 +429,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The Page Builder products widget preview now works as expected in a multi-website deployment when matching products have a different price on each website.
 
-<!--- MC-40344-->
+<!--- MC-40344 ENGCOM-8629-->
 
 *  Sorting by position on product search using GET `/rest/V1/products/?searchCriteria[filterGroups]` now works as expected. Previously, product collection did not have a field `position` value for sorting. [GitHub-31591](https://github.com/magento/magento2/issues/31591)
 
@@ -443,7 +461,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The `product` query no longer overwrites default values for all store views in a multi-store deployment when a product name is updated for one store view only. [GitHub-31083](https://github.com/magento/magento2/issues/31083)
 
-<!--- MC-39470-->
+<!--- MC-39470 magento/magento2#31492-->
 
 *  Magento updates the total page count as expected when you change the per page value of the Admin Related Products, Up-Sells, and Cross-Sells list. [GitHub-31059](https://github.com/magento/magento2/issues/31059)
 
@@ -475,7 +493,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Bundle product data that was previously missing is now included in the staging process. This resolves inconsistencies in product behavior when shoppers purchased a bundle product from the product listing page versus adding it directly from a product page.
 
-<!--- MC-35717-->
+<!--- MC-35717  magento/partners-magento2ee#427-->
 
 *  Administrators can now add a product with a customizable option `(File)` to an order by SKU.
 
@@ -487,11 +505,23 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Group products are now available on the storefront as expected when a REST `PUT /V1/products/:sku/links` request is used to associate a new child product with a new group product. Previously, products were not correctly indexed after running `bin/magento cron:run`.
 
+<!--- ENGCOM-9010 8947-->
+
+*  You can no longer create a product with a `NULL` SKU value. Previously, you could create a product without a SKU value through a custom importer or directly in the database, but when you tried to edit it from the Admin, Magento threw an error.
+
 ### Catalog rule
 
 <!--- MC-39896-->
 
 *  The `products` query now returns the current values when a catalog price rule applies to an item. [GitHub-26738](https://github.com/magento/magento2/issues/26738)
+
+<!--- ENGCOM-8367-->
+
+*  Temporary tables that begin with `catalogrule_product__temp` are now deleted as expected when reindexing fails after a cart or catalog rule expires, is disabled, or becomes inactive.
+
+<!--- ENGCOM-8949-->
+
+*  Time zones are now applied in the same way in `\Magento\CatalogRule\Model\Indexer\IndexBuilder::reindexById` and `\Magento\CatalogRule\Model\Indexer\IndexBuilder::reindexByIds`.
 
 ### CMS content
 
@@ -499,11 +529,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Large images are now resized as expected during upload when the **Enable Frontend Resize** configuration setting is enabled.
 
-<!--- MC-40663-->
+<!--- MC-40663 ENGCOM-8883-->
 
 *  Fixed the error handling for the CMS Page save controller. Previously, when an `Error` object was thrown on the `cms_page_prepare_save` event, Magento passed this object to the `addExceptionMessage` function, breaking its contract because this function expects an `Exception`. This was resolved by adding an error message using the `addErrorMessage` function.
 
-<!--- MC-33490-->
+<!--- MC-33490 magento/partners-magento2ee#435 -->
 
 *  You can now assign a new page to multiple nodes from the CMS Edit page Hierarchy tab. Previously, a unique constraint violation occurred when you tried to assign the page to a node. [GitHub-363](https://github.com/magento/partners-magento2ee/issues/363)
 
@@ -517,6 +547,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The configuration pop-up that Magento displays when you are editing a configurable product from a wishlist now closes as expected when you click the **OK** button.
 
+<!--- MC-39878  magento/magento2#31472-->
+
+*  Magento now correctly generates invoices for orders that contain only one configurable product.
+
 ### cron
 
 <!--- MC-30804-->
@@ -529,7 +563,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The **State** field on the storefront Customer Account address book is now loaded as and remains a drop-down page element. The **Submit** button is now disabled until all page elements have been completely loaded. Previously, Magento loaded this field as a textbox before rendering it as a drop-down element, and shoppers could enter and save values in the text field, which later caused an error during checkout.
 
-<!--- MC-40906-->
+<!--- MC-40906 magento/partners-magento2ee#509-->
 
 *  Magento now correctly displays custom customer address attributes on both storefront and Admin order pages. Previously, the selected option of the dropdown attribute was missing from the Address information section, and the value of the input attribute contained the attribute code. [GitHub-508](https://github.com/magento/partners-magento2ee/issues/508)
 
@@ -647,9 +681,21 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The email message that Magento sends when you share a gift registry from the Admin no contains a valid link to the registry location. Previously, taking this link resulted in a 404 error. [GitHub-504](https://github.com/magento/partners-magento2ee/issues/504)
 
-<!--- MC-30127-->
+<!--- MC-30127 magento/magento2#31455-->
 
 *  Invoices and Invoice PDFs now include the same prices for bundle products as expected. Previously, invoice PDFs included the incorrect price for bundle products. [GitHub-12856](https://github.com/magento/magento2/issues/12856)
+
+<!--- ENGCOM-9021-->
+
+*  String casting has been added to the email template filter method to ensure the return value is a `string`. Previously, when an exception was caught while not in developer mode, Magento returned a `phrase` object. This in turn triggered a fatal `Uncaught TypeError`.
+
+<!--- ENGCOM-8807-->
+
+*  Order confirmation emails are now sent as expected when asynchronous sending is enabled (**Stores**  >  **Configuration**  >  **Sales**  > **Sales Emails**  >  **General Settings**  >  **Asynchronous sending**) on one website in a multi-site deployment.
+
+<!--- MC-18023 ENGCOM-9000-->
+
+*  Magento now logs an error as expected when an exception occurs as a customer attempts to send an email from the Contact Us form.
 
 ### Frameworks
 
@@ -665,9 +711,9 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento now honors the **Exclude media folder from backup** setting when backup is enabled with `bin/magento config:set system/backup/functionality_enabled 1`. Previously, the Media Folder was backed up despite this setting because the path to `/magento` was formed incorrectly with a double //.
 
-<!--- MC-40654-->
+<!--- MC-40654 ENGCOM-8881-->
 
-*  Magento now translates all translatable strings as expected for the Admin cart page. Previously, translation load happened too late and skipped all observers that were subscribed to controller action pre-dispatch. [GitHub-31849](https://github.com/magento/magento2/issues/31849) ENGCOM-8881
+*  Magento now translates all translatable strings as expected for the Admin cart page. Previously, translation load happened too late and skipped all observers that were subscribed to controller action pre-dispatch. [GitHub-31849](https://github.com/magento/magento2/issues/31849)
 
 <!--- MC-39776-->
 
@@ -689,9 +735,13 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Exceptions that occur during initialization are no longer cached and now trigger a 500 response code.
 
-<!--- MC-33179-->
+<!--- MC-33179  magento/partners-magento2ee#431-->
 
 *  Merchants can now assign or delete an image to and from a catalog event by store view. Previously, when you changed store view while editing a catalog event, the **Delete Image** checkbox was not active, and Magento displayed this error: `Uncaught ReferenceError: toggleValueElements is not defined at HTMLInputElement.onclick`. [GitHub-364](https://github.com/magento/partners-magento2ee/issues/364)
+
+<!--- ENGCOM-8232-->
+
+*  The last handler merged into a `communication.xml` file no longer overrides all previously created handlers.
 
 ### General fixes
 
@@ -731,11 +781,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  You can now add a CMS page from the Add New Page page to the website root hierarchy as expected.
 
-<!--- MC-33499-->
+<!--- MC-33499 magento/partners-magento2ee#446-->
 
 *  Filtering now works as expected on the list of scheduled exports when entity type is selected. Previously, the filter did not work, and Magento threw a JavaScript error. [GitHub-361](https://github.com/magento/partners-magento2ee/issues/361)
 
-<!--- MC-30084-->
+<!--- MC-30084 ENGCOM-8674-->
 
 *  Category images are now copied as expected from the `catalog/tmp/category` directory to the `catalog/category` directory when categories are saved using the database storage method. The image row in the `media_storage_file_storage` table now also has the correct `directory_id`. [GitHub-11995](https://github.com/magento/magento2/issues/11995)
 
@@ -750,6 +800,34 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-23740-->
 
 *  Added validation for URLs to prevent reserved words from inclusion in URL keys. See [Defining Well-Known Uniform Resource Identifiers (URIs)](https://tools.ietf.org/html/rfc5785)
+
+<!--- ENGCOM-9037-->
+
+*  On deployments running PHP 7.4, Magento now returns a 404 error when the **Generate "category/product" URL Rewrites** setting is set to **No**, and a shopper tries to access a non-existent category path. Previously, Magento returned a 500 error stating: `Trying to access array offset on value of type bool`.
+
+<!--- MC-32257 magento/partners-magento2ee#507-->
+
+*  You can now successfully edit a product that was created using an attribute set from which **Design Group And Schedule Design Update** groups had been removed.  Previously, when you tried to edit a product created from that attribute set, Magento threw a fatal error.
+
+<!--- ENGCOM-8901-->
+
+*  `nowdoc` has replaced `heredoc` in the `Magento_Backend` store switcher.
+
+<!--- ENGCOM-9017-->
+
+*  Modified the `PULL_REQUEST_TEMPLATE` to add a requirement to create and update README files, when applicable.
+
+<!--- ENGCOM-8539-->
+
+*  Administrators are now directly redirected into the requested Admin page after login.  Previously, when an administrator logged in, they were redirected to the Admin dashboard (or whichever page was configured as the startup page) and had to manually navigate to their destination.
+
+<!--- ENGCOM-8685-->
+
+*  Added Argentina, Bolivia, Chile, Ecuador, Guyana, Paraguay, Peru, Suriname, and Venezuela regions to the `directory_country_region` table.
+
+<!--- ENGCOM-8505-->
+
+*  Added Albania, Denmark, Greece, Iceland, Portugal, and Sweden regions to the `directory_country_region` table.
 
 ## Gift cards
 
@@ -769,6 +847,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Price range validation logic has been added to the gift card creation page. Previously, an administrator could create a card with a minimum value that exceeded the maximum value. [GitHub-493](https://github.com/magento/partners-magento2ee/issues/493)
 
+<!--- MC-32638979 magento/partners-magento2ee#40851-->
+
+*  The `addRequisitionListItemsToCart` query now returns the amount of a custom gift card as expected when the request does not contain a value for `allow_open_amount`.
+
 <!--- MC-32373-->
 
 ### Gift message
@@ -783,7 +865,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  **Event date** values are now the same on the storefront and Admin during gift registry creation or editing. Previously, each time you edited and saved the gift registry, Magento adjusted the **Event date** one day backward on both the storefront and Admin. [GitHub-466](https://github.com/magento/partners-magento2ee/issues/466)
 
-<!--- MC-32587-->
+<!--- MC-32587  magento/partners-magento2ee#511-->
 
 *  Magento no longer displays disabled products in gift registries. Previously, if a product were disabled after being added to a gift registry, Magento displayed this message when a shopper accessed the registry: `Error: Call to a member function getId() …`. [GitHub-510](https://github.com/magento/partners-magento2ee/issues/510)
 
@@ -853,6 +935,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The GraphQL `products` query response now sorts aggregations according to product attribute position.
 
+<!--- ENGCOM-8462-->
+
+*  Magento no longer throws type errors during GraphQL queries when product and category URL suffixes contain null values.
+
 ### Import/export
 
 <!--- MC-41576-->
@@ -899,7 +985,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Duplicate tier prices are no longer imported during the default Magento CSV import process. Previously, validation was missing to prevent the import of duplicate tier prices, and when duplicate tier prices occurred, merchants could not save products. Merchants also saw this error when they tried to schedule a product change: `SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry…`.
 
-<!--- MC-39609-->
+<!--- MC-39609  magento/magento2#31397-->
 
 *  All product images are now validated during import. Previously, Magento validated only the first image when a product had multiple images. [GitHub-28236](https://github.com/magento/magento2/issues/28236)
 
@@ -913,13 +999,17 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 ## Index
 
-<!--- MC-39718-->
+<!--- MC-39718 ENGCOM-8567-->
 
 *  Process Manager now exits with an error when a child process fails. Previously, Process Manager always exited successfully if the number of functions passed to it (for example, indexer dimensions) was lower than the value of the `MAGE_INDEXER_THREADS_COUNT` environment variable. [GitHub-30964](https://github.com/magento/magento2/issues/30964)
 
 <!--- MC-39272-->
 
 *  Products are now available as expected in storefront search results when linking products using a REST PUT `/V1/products/:sku/links` request when indexers mode is set to **Update On Save**.
+
+<!--- MC-38310 magento/magento2#32693-->
+
+*  The catalog price rule indexer now works as expected when the indexer mode is set to **update on save**.
 
 ### Infrastructure
 
@@ -943,15 +1033,204 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento no longer throws a PHP fatal error when a plugin is added to a parent class. [GitHub-31291](https://github.com/magento/magento2/issues/31291)
 
+<!--- ENGCOM-9012-->
+
+*  Updated the README.md files for these modules: `Magento_Msrp`, `Magento_MsrpConfigurableProduct`, `Magento_MsrpGroupedProduct`, `Magento_Multishipping`, `Magento_MysqlMq`.
+
+<!--- magento/partners-magento2ee#501-->
+
+*  `phpcpd` has been updated to v6.0.3 for PHP 8 compatibility.
+
+<!--- ENGCOM-9073-->
+
+*  `ramsey/uuid` has been updated for compatibility with PHP 8.0.
+
+<!--- ENGCOM-8997-->
+
+*  `colinmollenhour/php-redis-session-abstract` has been updated to v1.4.4 for PHP 8 compatibility.
+
+<!--- ENGCOM-8668-->
+
+*  Removed use of obsolete property `$_isScopePrivate` throughout the code base.
+
+<!--- ENGCOM-8551-->
+
+*  Page layouts are no longer hard-coded in  `Magento\Widget\Block\Adminhtml\Widget\Instance\Edit\Chooser\Container`.  As a result, the `getPageLayouts()` function now returns the actual list of page layouts declared by the different modules as expected. Previously, it returned only hard-coded layouts.
+
+<!--- ENGCOM-8509-->
+
+*  The `composer.lock` file has been updated to the latest version of the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/releases/tag/v60).
+
+<!--- ENGCOM-9016-->
+
+*  The `composer.lock` file has been updated to match the dependencies listed in the `composer.json` file, including a dependency upon the `web-token/jwt-framework` package.
+
+<!--- ENGCOM-9015 -->
+
+*  Added a missing dependency on the `web-token/jwt-framework` package to the `magento/module-jwt-framework-adapter`.
+
+### Invoice
+
+<!--- ENGCOM-8472 -->
+
+*  When creating new invoices in the Admin, the **Email Copy of** checkbox now works as expected. Previously, the checkbox was ignored if the global setting to send invoice emails was enabled in **Sales Emails**. It is now consistent and operates the same way as the shipment and creditmemo creation pages.
+
 ### Media Gallery
 
 <!--- MC-41728-->
 
 *  `bin/magento media-gallery:sync` now fails as expected when processing PNG images that lack XMP information.
 
+<!--- ENGCOM-8814-->
+
+*  Entries in the `catalog_product_entity_media_gallery` table are removed as expected when related products are deleted.
+
 ### MFTF
 
 New features and MFTF core bug fixes are described in the [Magento Functional Testing Framework Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md).
+
+<!--- ENGCOM-8496-->
+
+*  The `magento indexer:reindex` and `cache:flush` commands and the `AdminReindexAndFlushCache` action group have been removed from tests to improve execution for the following modules: `Bundle`, `Catalog`, `CatalogRule`, `CatalogRuleConfigurable`, `CatalogUrlRewrite`, `Downloadable`, `Indexer`, `Paypal`, and `Sales`.
+
+<!--- ENGCOM-8562-->
+
+*  `AdminSubmitCategoriesPopupActionGroup` has been added to tests to prevent test failure.
+
+<!--- ENGCOM-8562-->
+
+*  Tests have been refactored with `StorefrontCheckQuickSearchStringActionGroup` and `StorefrontAssertProductNameOnProductMainPageActionGroup` (existing action groups).
+
+#### Refactored tests
+
+The following tests have been refactored to improve execution time:
+
+`AddOutOfStockProductToCompareListTest`  <!--- ENGCOM-8547-->
+
+`AdminApplyTierPriceToProductWithPercentageDiscountTest` <!--- ENGCOM-8522-->
+
+`AdminCheckingCreditMemoTotalsTest` <!--- ENGCOM-8606-->
+
+`AdminCheckDashboardWithChartsTest` <!--- ENGCOM-8897-->
+
+`AdminConfigDefaultProductLayoutFromConfigurationSettingTest`  <!--- ENGCOM-8891-->
+
+`AdminCreateInvoiceTest` <!--- ENGCOM-8581-->
+
+`AdminCreateOrderAddProductCheckboxTest` <!--- ENGCOM-8492-->
+
+`AdminMassOrdersCancelCompleteAndClosedTest` <!--- ENGCOM-8538-->
+
+`AdminMassOrdersCancelProcessingAndClosedTest`  <!--- ENGCOM-8670-->
+
+`AdminMassOrdersHoldOnCompleteTest`  <!--- ENGCOM-8897-->
+
+`AdminMassOrdersHoldOnPendingAndProcessingTest`  (replacement for deprecated `AdminMassOrdersHoldOnPendingAndProcessingTest`) <!--- ENGCOM-8669-->
+
+`AdminMassOrdersUpdateCancelPendingOrderTest` <!--- ENGCOM-8602-->
+
+`AdminMassProductPriceUpdateTest` <!--- ENGCOM-8587-->
+
+`AdminMassUpdateProductAttributesMissingRequiredFieldTest` <!--- ENGCOM-8511-->
+
+`AdminOrdersReleaseInUnholdStatusTest`  <!--- ENGCOM-8592—-->
+
+`AdminPanelIsFrozenIfStorefrontIsOpenedViaCustomerViewTest`  <!--- ENGCOM-8601-->
+
+`AdminSortingByWebsitesTest`  <!--- ENGCOM-8583-->
+
+`AdminUpdateSimpleProduct` <!--- ENGCOM-8536-->
+
+`AdminUpdateSimpleProductWithRegularPriceInStockEnabledFlatTest`  <!--- ENGCOM-8533-->
+
+`AdminValidateShippingTrackingNumberTest`  <!--- ENGCOM-8593-->
+
+`CancelOrdersInOrderSalesReportTest`  <!--- ENGCOM-8591-->
+
+`ProductsQtyReturnAfterOrderCancelTest` <!--- ENGCOM-8506-->
+
+`StorefrontConfigurableProductBasicInfoTest`  <!--- ENGCOM-8711-->
+#### Action groups
+
+Repetitive actions have been replaced with action groups in these tests:
+
+`AdminCheckConfigurableProductPriceWithDisabledChildProductTest`  <!--- ENGCOM-8574-->
+
+`AdminConfigurableProductCreateTest` <!--- ENGCOM-9013-->
+
+`AdminConfigurableProductRemoveAnOptionTest` <!--- ENGCOM-9038-->
+
+`AdminCreateProductDuplicateUrlkeyTest` <!--- ENGCOM-9007-->
+
+`AdminCreateSimpleProductNegativePriceTest` <!--- ENGCOM-900-->
+
+`AdminCreateSimpleProductZeroPriceTest`  <!--- ENGCOM-9040-->
+
+`AdminCreateVirtualProductFillingRequiredFieldsOnlyTest` <!--- ENGCOM-9003-->
+
+`AdminUpdateSimpleProductWithRegularPriceInStockDisabledProductTest` <!--- ENGCOM-9002-->
+
+`AdminUpdateSimpleProductWithRegularPriceInStockNotVisibleIndividuallyTest`  <!--- ENGCOM-9011-->
+
+`AdminUpdateSimpleProductWithRegularPriceInStockVisibleInCatalogOnlyTest`  <!--- ENGCOM-9041-->
+
+#### New action groups
+
+`AdminClearFiltersOnGridActionGroup` <!--- ENGCOM-8604-->
+
+`AdminClickAddNewPageOnPagesGridActionGroup`  <!--- ENGCOM-8613-->
+
+`AdminClickInsertWidgetActionGroup` <!--- ENGCOM-8614-->
+
+`AdminClickRefundOfflineOnNewMemoPageActionGroup` <!--- ENGCOM-8580-->
+
+`AdminFillAccountInformationOnCreateOrderPageActionGroup` <!--- ENGCOM-8495-->
+
+`AdminGoToOrderStatusPageActionGroup`  <!--- ENGCOM-8615-->
+
+`AdminOpenCMSPagesGridActionGroup`<!--- ENGCOM-8682-->
+
+`AdminSelectAttributeSetOnEditProductPageActionGroup` <!--- ENGCOM-8566-->
+
+`AssertAdminProductIsAssignedToCategoryActionGroup`  (replaces filtering Products Grid by SKU and clicking the first row (in order to decrease test execution time) <!--- ENGCOM-8535 8534-->
+
+`AssertLinkActionGroup` <!--- ENGCOM-8457-->
+
+`AssertStorefrontCartDiscountActionGroup` <!--- ENGCOM-8431-->
+
+`ClickPlaceOrderActionGroup` <!--- ENGCOM-8671-->
+
+`SaveCmsPageActionGroup` <!--- ENGCOM-8683-->
+
+`StorefrontGuestCheckoutProceedToPaymentStepActionGroup` <!--- ENGCOM-8582-->
+
+`StorefrontHoverProductOnCategoryPageActionGroup` <!--- ENGCOM-8575-->
+
+`StorefrontAssertProductNameIsNotOnProductMainPageActionGroup` <!--- ENGCOM-8562-->
+
+#### Deleted action groups
+
+<!--- ENGCOM-8525 8558 8608 8546 8695 8889 8681 8627 8714-->
+
+*  Removed  `CliIndexerReindexActionGroup` (or changed value) from tests to improve execution time for the `Backend`, `Bundle`, `BundleImportExport`, `Catalog`, `CatalogRule`, `CatalogSearch`, `Checkout`, `Downloadable`,  `Elasticsearch`,  `Elasticsearch6`,  `Indexer`, `LayeredNavigation`,  `LoginAsCustomer`,  `Newsletter`, `Sales`, `SalesRule`, `Search`, `Store`,  `Swatches`, `UrlRewrite`, `Weee`, and `Wishlist`modules.
+
+<!--- ENGCOM-8893 8951 8893 9001 8715 8724 8721 8843-->
+
+*  Removed `CliCacheFlushActionGroup` from `Catalog`, `CatalogUrlRewrite`, `Checkout`, `Config`, `ConfigurableProduct`,`Contact`, `Cookie`, `CurrencySymbol`, `Customer`, `Downloadable`, `Elasticsearch`, `Elasticsearch6`, `Fedex`, `Indexer`, `LayeredNavigation`,`LoginAsCustomer`, `Msrp`, `Multishipping`, `Sales`, `Swatches`, `Translation`, `UrlRewrite`, `Vault`, `Weee`, and `Wishlist` modules.
+
+### Newsletter
+
+<!--- ENGCOM-8948 MC-40885-->
+
+*  Magento no longer sends newsletter email  to a customer who has been unsubscribed from the newsletter in the time period between newsletter queue creation and the sending of the newsletter.
+
+<!--- ENGCOM-8675-->
+
+*  Magento now honors newsletter enablement settings (**Stores**  >  **Settings**  >  **Configuration**  >  **Customers**  >  **Newsletter**  >  **General Options**). Previously, these settings were always tried from the default scope in multi-store deployments.
+
+<!--- ENGCOM-8551-->
+
+*  The REST call GET `/V1/customers/search` now returns correct information for customers that are subscribed to multiple newsletters.
 
 ### Order
 
@@ -1039,7 +1318,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  The `/V1/guest-carts/examplecartid/items` call now returns the requested store view. Previously, it returned the first store view in the store, not the requested one.
 
-<!--- MC-33893-->
+<!--- MC-33893 ENGCOM-8992-->
 
 *  You can now configure whether to send an invoice. Previously, invoice sending was not configurable, and Magento always sent an invoice after it was created. Invoice and order emails were both sent in the scope of one observer. Separate observers now govern the sending of order email and invoice email. [GitHub-27656](https://github.com/magento/magento2/issues/27656)
 
@@ -1067,7 +1346,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Magento now sends email notification to customers as expected after you change the status of a return using the REST API.
 
-<!--- MC-39981-->
+<!--- MC-39981  magento/partners-magento2ee#442 -->
 
 *  Magento now filters records according to filter values in the Admin customer returns grid. Previously, Magento directed you to the Admin All Customers page, and clicking the **Reset Filter** button also redirected to this page. [GitHub-436](https://github.com/magento/partners-magento2ee/issues/436)
 
@@ -1084,6 +1363,14 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 <!--- MC-36149-->
 
 *  The **Be the first to review this product** link now changes as expected to a review count after an administrator approves a review.
+
+<!--- ENGCOM-8501-->
+
+*  Administrators can now sort product reviews on the Product Reviews section of the product edit page as expected.
+
+<!--- MC-41003  magento/magento2#32259-->
+
+*  Reviews are now saved with the correct store ID after an administrator approves and saves the review from a different domain than the store.
 
 ### Rewards
 
@@ -1137,9 +1424,9 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Magento now calculates partial credit memo tax totals correctly for credit memos that are based on either an order or an invoice in stores that deploy PayPal Payment Pro as a payment gateway. Previously, for orders with multiple invoices, Magento applied the whole tax of that order for partial invoice cancellation in the credit memo.
 
-<!--- MC-39521-->
+<!--- MC-39521 ENGCOM-8528-->
 
-*  Magento no longer creates random database deadlocks when sending new order emails to customers. Previously, deadlocks occurred because Magento saved the entire object and its related objects instead of updated SQL columns. Magento displayed this type of error: `SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction`.[GitHub-31090](https://github.com/magento/magento2/issues/31090)
+*  Magento no longer creates random database deadlocks when sending new order emails to customers. Previously, deadlocks occurred because Magento saved the entire object and its related objects instead of updated SQL columns. Magento displayed this type of error: `SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction`. [GitHub-31090](https://github.com/magento/magento2/issues/31090)
 
 <!--- MC-39353-->
 
@@ -1161,9 +1448,13 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  The pager of order items on the storefront now works as expected when item count exceeds 20. Previously, the pager took into account child products, and the total count was incorrect.
 
-<!--- MC-23915-->
+<!--- MC-23915 ENGCOM-8713-->
 
 *  Magento now displays the correct currency symbols for subtotal and shipping and handling values on Order page and Credit Memo page grids. [GitHub-22662](https://github.com/magento/magento2/issues/22662)
+
+<!--- ENGCOM-8486-->
+
+*  Administrators who use Safari can now successfully add a product to an order from the Admin. Previously, when the administrator clicked the **Add selected products to order** button, Magento displayed the spinning load icon, and the page hung.
 
 ### Sales Rule
 
@@ -1217,9 +1508,13 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Layered navigation filters now display accurate product counts. Previously, product count values from Elasticsearch were not filtered by catalog permissions.
 
-<!--- MC-23881-->
+<!--- MC-23881 ENGCOM-8618-->
 
 *  Elasticsearch no longer throws an error when the category URL page parameter exceeds the pagination. [GitHub-23843](https://github.com/magento/magento2/issues/23843)
+
+<!--- MC-24033  magento/magento2#3274-->
+
+*  You can now add a custom Elasticsearch field mapper to `Magento\Elasticsearch\Model\Adapter\FieldMapper\Product\FieldProvider\FieldName\Resolver\CompositeResolver`.
 
 ### Shipping
 
@@ -1247,17 +1542,25 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Magento now displays the correct order subtotal when a shopper returns to the cart page during checkout after navigating away from the multi-shipping page. [GitHub-31889](https://github.com/magento/magento2/issues/31889)
 
-<!--- MC-40541-->
+<!--- MC-40541 magento/magento2#31841 -->
 
 *  Editing billing information during Admin order creation no longer changes shipping information for customers with different default shipping and billing addresses. [GitHub-31786](https://github.com/magento/magento2/issues/31786)
 
-<!--- MC-37385-->
+<!--- MC-37385 ENGCOM-8578-->
 
 *  Magento no longer unchecks the **Append Comments** checkbox when a shopper clicks **Get shipping methods and rates** and selects a shipping method when creating an order from the Admin.
 
 <!--- MC-36425-->
 
 *  Shoppers can now use the Back browser button to return to the Select Shipping Method page while checking out an order with multiple addresses. Previously, Magento displayed a corrupted Select Shipping Method page. [GitHub-30268](https://github.com/magento/magento2/issues/30268)
+
+<!--- MC-40021 ENGCOM-8983-->
+
+*  Product quantity now remains unchanged as expected after a shopper changes quantity on the Ship to multiple address address page and clicks the browser Back button.
+
+<!--- ENGCOM-9096-->
+
+*  Flat rate shipping method charges no longer become zero when a cart price rule is applied during checkout. [GitHub-21832](https://github.com/magento/magento2/issues/21832)
 
 ### Staging
 
@@ -1329,19 +1632,35 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Magento now takes into account hidden tax during validation of the minimum order amount.
 
-<!--- MC-38025-->
+<!--- MC-38025 ENGCOM-8612-->
 
 *  Magento now displays Fixed Product Taxes (FPT) as expected when a shopper navigates back to shopping cart and proceeds to checkout after adding bundle products to the cart. [GitHub-30250](https://github.com/magento/magento2/issues/30250)
 
-<!--- MC-37657-->
+<!--- MC-37657 magento/magento2#31850-->
 
 *  Magento now pre-fills the **VAT Number** input fields for both the billing and shipping addresses of the Address Information section of the Admin new order page with saved VAT numbers when an administrator creates an order for an existing customer. [GitHub-31846](https://github.com/magento/magento2/issues/31846)
+
+<!--- ENGCOM-8617 magento-engcom/magento2ee#558-->
+
+*  Magento now displays a  **VAT Number**  field on the customer registration page  when `customer/create_account/vat_frontend_visibility` is enabled.
 
 ### Test
 
  <!--- MC-41393-->
 
 *  Test environments have been upgraded to Redis 6.0.12.
+
+<!--- ENGCOM-8529-->
+
+*  Removed `CacheCleaner::cleanAll();` from integration tests.
+
+<!--- ENGCOM-8898-->
+
+*  Added a test for this scenario: Admin users can edit a customer account when the customer is subscribed to a queued newsletter.
+
+<!--- ENGCOM-8484-->
+
+*  Removed the `cache:flush` command from tests to improve execution time for the `Catalog`, `CatalogUrlRewrite`,  and `LoginAsCustomer` modules.
 
 ### Theme
 
@@ -1366,6 +1685,10 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 <!--- MC-23553 ENGCOM-8839-->
 
 *  Brackets that are added to the strings are no longer escaped when inline translation is configured. Previously, the `escapeHtmlAttr` method converted the brackets into HTML entity codes.
+
+<!--- ENGCOM-8694-->
+
+*  Untranslatable phrases in the Admin are now translatable. (This PR contributes to ongoing efforts to make all Admin strings localizable.) [GitHub-11175](https://github.com/magento/magento2/issues/11175)
 
 ### UI
 
@@ -1409,9 +1732,17 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Options are now displayed as expected in the Actions drop-down list on the Archive Invoices, Shipments, and Credit Memos pages.
 
-<!--- MC-23729-->
+<!--- MC-23729  magento/magento2#31549-->
 
 *  Magento now displays a correct time value when the `datetime` component `timeOnly` option is set to **yes**. [GitHub-23157](https://github.com/magento/magento2/issues/23157)
+
+<!--- ENGCOM-8514 -->
+
+*  You can now remove a layout update after creating a new widget on Admin **Content** > **Widgets**.
+
+<!--- ENGCOM-8502 MC-35716-->
+
+*  The **Remove Layout Update** button now works as expected on any layout you have added from Admin **Content** > **Widgets**. Previously, this button did not work on any layout other than the first selected when adding multiple layouts.
 
 ### URL rewrites
 
@@ -1419,7 +1750,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  Product URL rewrites for a specific website in a multi-site deployment are now generated as expected after products are assigned to a website by bulk update.
 
-<!--- MC-40780-->
+<!--- MC-40780 magento/magento2#32598-->
 
 *  Magento now correctly generates the URL path for child categories when the **Use Default Value** checkbox for the URL key is enabled for the parent category. Previously, moving a category in the hierarchy resulted in an incorrect `url_path` value when using different URL keys in a multi-store view deployment. [GitHub-16202](https://github.com/magento/magento2/issues/16202)
 
@@ -1431,7 +1762,7 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  URL redirects that are created from the Admin using a custom URL now work successfully. Previously, GraphQL cached the response from a GraphQL `urlResolver` query and returned the old value after the URL rewrite update.
 
-<!--- MC-38931-->
+<!--- MC-38931  magento/magento2#31106-->
 
 *  Product URL rewrites are now removed as expected when a product is removed from a website. [GitHub-24184](https://github.com/magento/magento2/issues/24184)
 
@@ -1458,6 +1789,12 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 <!--- MC-40431-->
 
 *  Admin users with restricted roles can now successfully add, update, or duplicate the pages that he has access to that are assigned to a hierarchy node. Previously, Magento threw a fatal error under these conditions.
+
+### Video
+
+<!--- MC-42059 ENGCOM-9039-->
+
+*  Videos are now available in the product gallery as expected when advanced JavaScript bundling is enabled and used.
 
 ### Visual Merchandiser
 
@@ -1509,11 +1846,11 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 *  The total product count in a wishlist for a customer with multiple wishlists now match the number of items in the wishlist. Previously, out-of-stock products were included in the total product count.
 
-<!--- MC-36779-->
+<!--- MC-36779 magento/magento2#31110-->
 
 *  Magento now removes a product from a wishlist after adding it to an order. [GitHub-30260](https://github.com/magento/magento2/issues/30260)
 
-<!--- MC-34456-->
+<!--- MC-34456 ENGCOM-8816-->
 
 *  Shoppers can now add related products to their shopping cart from a wishlist. Previously, Magento added only the configurable product, not the configurable product and its related products when a shopper clicked the **Select all** link of the Related Products section. [GitHub-32274](https://github.com/magento/magento2/issues/32274)
 
