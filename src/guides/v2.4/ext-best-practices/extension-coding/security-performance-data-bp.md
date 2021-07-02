@@ -42,17 +42,13 @@ Raw SQL queries can lead to potential security vulnerabilities and database port
 
 A Primary Key is required for any DB cluster to run effectively. Without a Primary Key, you _will_ see performance issues during table replication.
 
-## Use Magento API to for filesystem operations
+## Use Magento API for filesystem operations
 
-With introduction of Remote Storage compatibility, there is no guarantee that files are be present in local filesystem. Because PHP filesystem operations does not support remote storages such as AWS S3, you should always use Magento Filesystem API to work with filesystem.
+With the introduction of Remote Storage compatibility, there is no guarantee that files are present in the local filesystem. Because PHP filesystem operations do not support remote storage solutions such as AWS S3, you should always use the Magento Filesystem API to work with the filesystem.
 
-### Example
+For example, the PHP native function [file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php) does not allow passing any credentials to authenticate to a remote storage. This functionality might be broken if the source file is located in remote storage.
 
-The PHP native function [file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php) does not allow passing any credentials to autehntiace in a remote storage. This functionality might be broken if the source file located in remote storage.
-
-### Solution
-
-Use _\Magento\Framework\Filesystem\File\Read::readAll()_ method instead. You can also check for the list of unsupported PHP methods in [Magento Coding Standard](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php) repository.
+Use `\Magento\Framework\Filesystem\File\Read::readAll()` method instead. You can also check the list of unsupported PHP methods in the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php) repository.
 
 ## Use well-defined indexes
 
