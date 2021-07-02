@@ -1,6 +1,7 @@
 ---
 group: graphql
 title: updateGiftRegistryItems mutation
+ee_only: true
 ---
 
 The `updateGiftRegistryItems` mutation modifies the requested quantity of an item in the specified gift registry. It can also change the description of the item.

@@ -1,6 +1,7 @@
 ---
 group: graphql
 title: removeGiftRegistryItems mutation
+ee_only: true
 ---
 
 The `removeGiftRegistryItems` mutation removes one or more items from the specified gift registry.
