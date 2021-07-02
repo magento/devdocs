@@ -713,7 +713,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40654 ENGCOM-8881-->
 
-*  Magento now translates all translatable strings as expected for the Admin cart page. Previously, translation load happened too late and skipped all observers that were subscribed to controller action pre-dispatch. [GitHub-31849](https://github.com/magento/magento2/issues/31849) ENGCOM-8881
+*  Magento now translates all translatable strings as expected for the Admin cart page. Previously, translation load happened too late and skipped all observers that were subscribed to controller action pre-dispatch. [GitHub-31849](https://github.com/magento/magento2/issues/31849)
 
 <!--- MC-39776-->
 
@@ -821,6 +821,14 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Administrators are now directly redirected into the requested Admin page after login.  Previously, when an administrator logged in, they were redirected to the Admin dashboard (or whichever page was configured as the startup page) and had to manually navigate to their destination.
 
+<!--- ENGCOM-8685-->
+
+*  Added Argentina, Bolivia, Chile, Ecuador, Guyana, Paraguay, Peru, Suriname, and Venezuela regions to the `directory_country_region` table.
+
+<!--- ENGCOM-8505-->
+
+*  Added Albania, Denmark, Greece, Iceland, Portugal, and Sweden regions to the `directory_country_region` table.
+
 ## Gift cards
 
 <!--- MC-40412-->
@@ -839,15 +847,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Price range validation logic has been added to the gift card creation page. Previously, an administrator could create a card with a minimum value that exceeded the maximum value. [GitHub-493](https://github.com/magento/partners-magento2ee/issues/493)
 
+<!--- MC-32638979 magento/partners-magento2ee#40851-->
+
+*  The `addRequisitionListItemsToCart` query now returns the amount of a custom gift card as expected when the request does not contain a value for `allow_open_amount`.
+
 <!--- MC-32373-->
-
-<!--- ENGCOM-8685-->
-
-*  Added Argentina, Bolivia, Chile, Ecuador, Guyana, Paraguay, Peru, Suriname, and Venezuela to the `directory_country_region` table.
-
-<!--- ENGCOM-8505-->
-
-*  Added Albania, Denmark, Greece, Iceland, Portugal, and Sweden regions to the `directory_country_region` table.
 
 ### Gift message
 
@@ -1065,6 +1069,12 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Added a missing dependency on the `web-token/jwt-framework` package to the `magento/module-jwt-framework-adapter`.
 
+### Invoice
+
+<!--- ENGCOM-8472 -->
+
+*  When creating new invoices in the Admin, the **Email Copy of** checkbox now works as expected. Previously, the checkbox was ignored if the global setting to send invoice emails was enabled in **Sales Emails**. It is now consistent and operates the same way as the shipment and creditmemo creation pages.
+
 ### Media Gallery
 
 <!--- MC-41728-->
@@ -1082,6 +1092,14 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 <!--- ENGCOM-8496-->
 
 *  The `magento indexer:reindex` and `cache:flush` commands and the `AdminReindexAndFlushCache` action group have been removed from tests to improve execution for the following modules: `Bundle`, `Catalog`, `CatalogRule`, `CatalogRuleConfigurable`, `CatalogUrlRewrite`, `Downloadable`, `Indexer`, `Paypal`, and `Sales`.
+
+<!--- ENGCOM-8562-->
+
+*  `AdminSubmitCategoriesPopupActionGroup` has been added to tests to prevent test failure.
+
+<!--- ENGCOM-8562-->
+
+*  Tests have been refactored with `StorefrontCheckQuickSearchStringActionGroup` and `StorefrontAssertProductNameOnProductMainPageActionGroup` (existing action groups).
 
 #### Refactored tests
 
@@ -1193,33 +1211,20 @@ Repetitive actions have been replaced with action groups in these tests:
 
 `SaveCmsPageActionGroup` <!--- ENGCOM-8683-->
 
+`AssertAdminProductIsAssignedToCategoryActionGroup`  (replaces filtering Products Grid by SKU and clicking the first row (in order to decrease test execution time) <!--- ENGCOM-8535-->
+
+`StorefrontAssertProductNameIsNotOnProductMainPageActionGroup` <!--- ENGCOM-8562-->
+
+`StorefrontAssertProductNameIsNotOnProductMainPageActionGroup`  <!--- ENGCOM-8562-->
 #### Deleted action groups
 
-`CliIndexerReindexActionGroup` <!--- ENGCOM-8525-->
+<!--- ENGCOM-8525 8558 8608 8546 8695 8889 8681 8627 8714-->
 
-#### Other
+*  Removed  `CliIndexerReindexActionGroup` (or changed value) from tests to improve execution time for the `Catalog`, `CatalogRule`, `CatalogSearch`, `Downloadable`, `CatalogSearch`, `Elasticsearch`,  `Elasticsearch6`,  `LayeredNavigation`,  `LoginAsCustomer`,  `Newsletter`,  `UrlRewrite`,  `Weee`, `Wishlist`, `Sales`, `SalesRule`, `Search`, `Store`, `Checkout`, `CatalogRule`, `Backend`, `Bundle`, `BundleImportExport`,  `Swatches`, and `Indexer` modules.
 
-*  Removed `CliIndexerReindexActionGroup` from tests to improve execution time for the `Catalog` module. <!--- ENGCOM-8546—>
+<!--- ENGCOM-8893 8951 8893 9001 8715 8724 8721 8843-->
 
-<!--- ENGCOM-8951-->
-
-*  Removed `CliCacheFlushActionGroup` use (or changed value) for `Wishlist`, `Swatches`, `Translation`, `UrlRewrite`, `Vault`, and `Weee` modules.
-
-<!--- ENGCOM-8889-->
-
-*  Removed `CliIndexerReindexActionGroup` action group for the following modules: `Elasticsearch`,  `Elasticsearch6`,  `LayeredNavigation`,  `LoginAsCustomer`,  `Newsletter`,  `UrlRewrite`,  `Weee`, `Wishlist`.
-
-<!--- ENGCOM-8893-->
-
-*  Removed `CliCacheFlushActionGroup` use for `ConfigurableProduct`, `CatalogUrlRewrite`, `Config`, `Contact`, and `Cookie` modules.
-
-<!--- ENGCOM-8893-->
-
-*  Removed `CliCacheFlushActionGroup` use (or changed value) for the `Checkout`, `CurrencySymbol`, and `Customer` modules.
-
-<!--- ENGCOM-9001-->
-
-*  Removed `CliCacheFlushActionGroup` use in these modules: `Downloadable`, `Elasticsearch`,`Elasticsearch6`,`Fedex`,`Indexer`,`LayeredNavigation`,`LoginAsCustomer`,`Msrp`, and `Multishipping`.
+*  Removed `CliCacheFlushActionGroup` from `ConfigurableProduct`, `CatalogUrlRewrite`, `Config`, `Contact`, `Wishlist`, `Swatches`, `Translation`, `UrlRewrite`, `Vault`, `Weee``Checkout`, `CurrencySymbol`, `Customer`,  `Cookie`, `Downloadable`, `Elasticsearch`,`Elasticsearch6`,`Fedex`,`Indexer`,`LayeredNavigation`,`LoginAsCustomer`,`Msrp`, `Catalog`, `Sales`, `Checkout`, and `Multishipping` modules.
 
 ### Newsletter
 
@@ -1429,7 +1434,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-39521 ENGCOM-8528-->
 
-*  Magento no longer creates random database deadlocks when sending new order emails to customers. Previously, deadlocks occurred because Magento saved the entire object and its related objects instead of updated SQL columns. Magento displayed this type of error: `SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction`.[GitHub-31090](https://github.com/magento/magento2/issues/31090)
+*  Magento no longer creates random database deadlocks when sending new order emails to customers. Previously, deadlocks occurred because Magento saved the entire object and its related objects instead of updated SQL columns. Magento displayed this type of error: `SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction`. [GitHub-31090](https://github.com/magento/magento2/issues/31090)
 
 <!--- MC-39353-->
 
@@ -1660,6 +1665,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ENGCOM-8898-->
 
 *  Added a test for this scenario: Admin users can edit a customer account when the customer is subscribed to a queued newsletter.
+
+<!--- ENGCOM-8484-->
+
+*  Removed the `cache:flush` command from tests to improve execution time for the `Catalog`, `CatalogUrlRewrite`,  and `LoginAsCustomer` modules.
 
 ### Theme
 
