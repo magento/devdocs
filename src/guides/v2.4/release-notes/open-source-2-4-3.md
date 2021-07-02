@@ -892,53 +892,51 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 The following tests have been refactored to improve execution time:
 
-`AdminOrdersReleaseInUnholdStatusTest`  <!--- ENGCOM-8592—-->
+`AddOutOfStockProductToCompareListTest`  <!--- ENGCOM-8547-->
 
-`AdminMassOrdersUpdateCancelPendingOrderTest` <!--- ENGCOM-8602-->
+`AdminApplyTierPriceToProductWithPercentageDiscountTest` <!--- ENGCOM-8522-->
 
-`StorefrontConfigurableProductBasicInfoTest`  <!--- ENGCOM-8711-->
-
-`AdminConfigDefaultProductLayoutFromConfigurationSettingTest`  <!--- ENGCOM-8891-->
+`AdminCheckingCreditMemoTotalsTest` <!--- ENGCOM-8606-->
 
 `AdminCheckDashboardWithChartsTest` <!--- ENGCOM-8897-->
 
-`AdminMassOrdersHoldOnCompleteTest`  <!--- ENGCOM-8897-->
+`AdminConfigDefaultProductLayoutFromConfigurationSettingTest`  <!--- ENGCOM-8891-->
 
-`AdminMassOrdersCancelProcessingAndClosedTest`  <!--- ENGCOM-8670-->
-
-`AdminPanelIsFrozenIfStorefrontIsOpenedViaCustomerViewTest`  <!--- ENGCOM-8601-->
-
-`AdminValidateShippingTrackingNumberTest`  <!--- ENGCOM-8593-->
-
-`AdminMassOrdersHoldOnPendingAndProcessingTest`  (replacement for deprecated `AdminMassOrdersHoldOnPendingAndProcessingTest`) <!--- ENGCOM-8669-->
-
-`AdminSortingByWebsitesTest`  <!--- ENGCOM-8583-->
-
-`AdminMassUpdateProductAttributesMissingRequiredFieldTest` <!--- ENGCOM-8511-->
-
-`AdminCreateOrderAddProductCheckboxTest` <!--- ENGCOM-8492-->
+`AdminCreateInvoiceTest` <!--- ENGCOM-8581-->
 
 `AdminCreateOrderAddProductCheckboxTest` <!--- ENGCOM-8492-->
 
 `AdminMassOrdersCancelCompleteAndClosedTest` <!--- ENGCOM-8538-->
 
-`ProductsQtyReturnAfterOrderCancelTest` <!--- ENGCOM-8506-->
+`AdminMassOrdersCancelProcessingAndClosedTest`  <!--- ENGCOM-8670-->
 
-`AdminApplyTierPriceToProductWithPercentageDiscountTest` <!--- ENGCOM-8522-->
+`AdminMassOrdersHoldOnCompleteTest`  <!--- ENGCOM-8897-->
 
-`AdminUpdateSimpleProductWithRegularPriceInStockEnabledFlatTest`  <!--- ENGCOM-8533-->
+`AdminMassOrdersHoldOnPendingAndProcessingTest`  (replacement for deprecated `AdminMassOrdersHoldOnPendingAndProcessingTest`) <!--- ENGCOM-8669-->
 
-`AddOutOfStockProductToCompareListTest`  <!--- ENGCOM-8547-->
-
-`AdminCreateInvoiceTest` <!--- ENGCOM-8581-->
+`AdminMassOrdersUpdateCancelPendingOrderTest` <!--- ENGCOM-8602-->
 
 `AdminMassProductPriceUpdateTest` <!--- ENGCOM-8587-->
 
-`CancelOrdersInOrderSalesReportTest`  <!--- ENGCOM-8591-->
+`AdminMassUpdateProductAttributesMissingRequiredFieldTest` <!--- ENGCOM-8511-->
 
-`AdminCheckingCreditMemoTotalsTest` <!--- ENGCOM-8606-->
+`AdminOrdersReleaseInUnholdStatusTest`  <!--- ENGCOM-8592—-->
+
+`AdminPanelIsFrozenIfStorefrontIsOpenedViaCustomerViewTest`  <!--- ENGCOM-8601-->
+
+`AdminSortingByWebsitesTest`  <!--- ENGCOM-8583-->
 
 `AdminUpdateSimpleProduct` <!--- ENGCOM-8536-->
+
+`AdminUpdateSimpleProductWithRegularPriceInStockEnabledFlatTest`  <!--- ENGCOM-8533-->
+
+`AdminValidateShippingTrackingNumberTest`  <!--- ENGCOM-8593-->
+
+`CancelOrdersInOrderSalesReportTest`  <!--- ENGCOM-8591-->
+
+`ProductsQtyReturnAfterOrderCancelTest` <!--- ENGCOM-8506-->
+
+`StorefrontConfigurableProductBasicInfoTest`  <!--- ENGCOM-8711-->
 
 #### Action groups
 
@@ -946,73 +944,67 @@ Repetitive actions have been replaced with action groups in these tests:
 
 `AdminCheckConfigurableProductPriceWithDisabledChildProductTest`  <!--- ENGCOM-8574-->
 
-`AdminCreateProductDuplicateUrlkeyTest` <!--- ENGCOM-9007-->
-
-`AdminUpdateSimpleProductWithRegularPriceInStockVisibleInCatalogOnlyTest`  <!--- ENGCOM-9041-->
-
-`AdminUpdateSimpleProductWithRegularPriceInStockDisabledProductTest` <!--- ENGCOM-9002-->
-
-`AdminConfigurableProductCreateTest` <!--- ENGCOM-9013-->
-
 `AdminConfigurableProductCreateTest` <!--- ENGCOM-9013-->
 
 `AdminConfigurableProductRemoveAnOptionTest` <!--- ENGCOM-9038-->
+
+`AdminCreateProductDuplicateUrlkeyTest` <!--- ENGCOM-9007-->
+
+`AdminCreateSimpleProductNegativePriceTest` <!--- ENGCOM-900-->
 
 `AdminCreateSimpleProductZeroPriceTest`  <!--- ENGCOM-9040-->
 
 `AdminCreateVirtualProductFillingRequiredFieldsOnlyTest` <!--- ENGCOM-9003-->
 
-`AdminCreateSimpleProductNegativePriceTest` <!--- ENGCOM-900-->
+`AdminUpdateSimpleProductWithRegularPriceInStockDisabledProductTest` <!--- ENGCOM-9002-->
 
 `AdminUpdateSimpleProductWithRegularPriceInStockNotVisibleIndividuallyTest`  <!--- ENGCOM-9011-->
 
+`AdminUpdateSimpleProductWithRegularPriceInStockVisibleInCatalogOnlyTest`  <!--- ENGCOM-9041-->
+
 #### New action groups
-
-`AdminFillAccountInformationOnCreateOrderPageActionGroup` <!--- ENGCOM-8495-->
-
-`AssertLinkActionGroup` <!--- ENGCOM-8457-->
-
-`AssertAdminProductIsAssignedToCategoryActionGroup` <!--- ENGCOM-8534-->
-
-`AdminSelectAttributeSetOnEditProductPageActionGroup` <!--- ENGCOM-8566-->
-
-`StorefrontHoverProductOnCategoryPageActionGroup` <!--- ENGCOM-8575-->
-
-`AssertStorefrontCartDiscountActionGroup` <!--- ENGCOM-8431-->
-
-`AdminClickRefundOfflineOnNewMemoPageActionGroup` <!--- ENGCOM-8580-->
-
-`AdminClickAddNewPageOnPagesGridActionGroup`  <!--- ENGCOM-8613-->
 
 `AdminClearFiltersOnGridActionGroup` <!--- ENGCOM-8604-->
 
-`StorefrontGuestCheckoutProceedToPaymentStepActionGroup` <!--- ENGCOM-8582-->
-
-`AdminGoToOrderStatusPageActionGroup`  <!--- ENGCOM-8615-->
+`AdminClickAddNewPageOnPagesGridActionGroup`  <!--- ENGCOM-8613-->
 
 `AdminClickInsertWidgetActionGroup` <!--- ENGCOM-8614-->
 
-`ClickPlaceOrderActionGroup` <!--- ENGCOM-8671-->
+`AdminClickRefundOfflineOnNewMemoPageActionGroup` <!--- ENGCOM-8580-->
+
+`AdminFillAccountInformationOnCreateOrderPageActionGroup` <!--- ENGCOM-8495-->
+
+`AdminGoToOrderStatusPageActionGroup`  <!--- ENGCOM-8615-->
 
 `AdminOpenCMSPagesGridActionGroup`<!--- ENGCOM-8682-->
 
+`AdminSelectAttributeSetOnEditProductPageActionGroup` <!--- ENGCOM-8566-->
+
+`AssertAdminProductIsAssignedToCategoryActionGroup`  (replaces filtering Products Grid by SKU and clicking the first row (in order to decrease test execution time) <!--- ENGCOM-8535 8534-->
+
+`AssertLinkActionGroup` <!--- ENGCOM-8457-->
+
+`AssertStorefrontCartDiscountActionGroup` <!--- ENGCOM-8431-->
+
+`ClickPlaceOrderActionGroup` <!--- ENGCOM-8671-->
+
 `SaveCmsPageActionGroup` <!--- ENGCOM-8683-->
 
-`AssertAdminProductIsAssignedToCategoryActionGroup`  (replaces filtering Products Grid by SKU and clicking the first row (in order to decrease test execution time) <!--- ENGCOM-8535-->
+`StorefrontGuestCheckoutProceedToPaymentStepActionGroup` <!--- ENGCOM-8582-->
+
+`StorefrontHoverProductOnCategoryPageActionGroup` <!--- ENGCOM-8575-->
 
 `StorefrontAssertProductNameIsNotOnProductMainPageActionGroup` <!--- ENGCOM-8562-->
-
-`StorefrontAssertProductNameIsNotOnProductMainPageActionGroup`  <!--- ENGCOM-8562-->
 
 #### Deleted action groups
 
 <!--- ENGCOM-8525 8558 8608 8546 8695 8889 8681 8627 8714-->
 
-*  Removed  `CliIndexerReindexActionGroup` (or changed value) from tests to improve execution time for the `Catalog`, `CatalogRule`, `CatalogSearch`, `Downloadable`, `CatalogSearch`, `Elasticsearch`,  `Elasticsearch6`,  `LayeredNavigation`,  `LoginAsCustomer`,  `Newsletter`,  `UrlRewrite`,  `Weee`, `Wishlist`, `Sales`, `SalesRule`, `Search`, `Store`, `Checkout`, `CatalogRule`, `Backend`, `Bundle`, `BundleImportExport`,  `Swatches`, and `Indexer` modules.
+*  Removed  `CliIndexerReindexActionGroup` (or changed value) from tests to improve execution time for the `Backend`, `Bundle`, `BundleImportExport`, `Catalog`, `CatalogRule`, `CatalogSearch`, `Checkout`, `Downloadable`,  `Elasticsearch`,  `Elasticsearch6`,  `Indexer`, `LayeredNavigation`,  `LoginAsCustomer`,  `Newsletter`, `Sales`, `SalesRule`, `Search`, `Store`,  `Swatches`, `UrlRewrite`, `Weee`, and `Wishlist`modules.
 
 <!--- ENGCOM-8893 8951 8893 9001 8715 8724 8721 8843-->
 
-*  Removed `CliCacheFlushActionGroup` from `ConfigurableProduct`, `CatalogUrlRewrite`, `Config`, `Contact`, `Wishlist`, `Swatches`, `Translation`, `UrlRewrite`, `Vault`, `Weee``Checkout`, `CurrencySymbol`, `Customer`,  `Cookie`, `Downloadable`, `Elasticsearch`,`Elasticsearch6`,`Fedex`,`Indexer`,`LayeredNavigation`,`LoginAsCustomer`,`Msrp`, `Catalog`, `Sales`, `Checkout`, and `Multishipping` modules.
+*  Removed `CliCacheFlushActionGroup` from `Catalog`, `CatalogUrlRewrite`, `Checkout`, `Config`, `ConfigurableProduct`,`Contact`, `Cookie`, `CurrencySymbol`, `Customer`, `Downloadable`, `Elasticsearch`, `Elasticsearch6`, `Fedex`, `Indexer`, `LayeredNavigation`,`LoginAsCustomer`, `Msrp`, `Multishipping`, `Sales`, `Swatches`, `Translation`, `UrlRewrite`, `Vault`, `Weee`, and `Wishlist` modules.
 
 ### Newsletter
 
