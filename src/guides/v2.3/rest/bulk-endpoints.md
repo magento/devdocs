@@ -122,10 +122,10 @@ DELETE <host>/rest/async/bulk/V1/cmsPage/byPageId
 ```json
 [
     {
-        "page_id": "1"
+        "pageId": "1"
     },
     {
-        "page_id": "2"
+        "pageId": "2"
     }
 ]
 ```

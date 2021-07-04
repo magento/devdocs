@@ -4,8 +4,50 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jun 21 14:38:39 2021
+updated: Mon Jun 28 14:44:34 2021
 entries:
+- description: Added a topic about [Released versions](https://devdocs.magento.com/release/released-versions.html)
+    with dates of past releases and end-of-support dates.
+  versions: 2.x
+  type: New Topic
+  date: June 24, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2367
+  merge_commit: e6addc643971a0f8516c2746d583bb2fede6c632
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.x
+  - New Topic
+- description: Added the 'Overwriting a mixin' section to the [Javascript mixins](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/js_mixins.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: June 23, 2021
+  link: https://github.com/magento/devdocs/pull/9003
+  merge_commit: d834f0973d2a628ad66c6b5e4775ef054cfa83c0
+  contributor: DenisSaltanahmedov
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - Major Update
+  - 'Partner: Atwix'
+  - 'Progress: done'
+  - partners-contribution
+- description: "[Live Search](https://devdocs.magento.com/live-search/overview.html)
+    powered by [Adobe Sensei](https://www.adobe.com/sensei.html) delivers a lightning
+    fast, super relevant, and intuitive search experience for the storefront, and
+    is available for Adobe Commerce at no additional charge."
+  versions: 2.4.x
+  type: Major Update
+  date: June 22, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2363
+  merge_commit: d04257eb4b12ed6dfb801a8a70946723b4509069
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.4.x
+  - Major Update
 - description: Published the Cloud Docker for Commerce [version 1.2.3 release notes](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html).
   versions: 2.4.x
   type: Major Update
