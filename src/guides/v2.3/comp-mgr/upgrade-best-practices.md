@@ -30,9 +30,9 @@ The upgrade cost may vary significantly from project to project, based on the va
 
 Upgrade type | Example versions | Hours
 --- | ---
-Security upgrades | 2.4.3-p1 to 2.4.3-p2 | 16 - 24
-Patch release upgrades | 2.4.1 to 2.4.2 | 20 - 50
-Minor release upgrades | 2.3.x to 2.4.x | 500 - 600
+Security and patchupgrades | 2.4.3-p1 to 2.4.3-p2 | 16 - 24
+Minor release upgrades | 2.4.1 to 2.4.2 | 20 - 50
+Major release upgrades | 2.3.x to 2.4.x | 500 - 600
 
 Do not skip an upgrade. Upgrading every release will help you to have a shorter upgrade-to-upgrade delivery time.
 
