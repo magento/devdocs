@@ -21,12 +21,12 @@ The following diagram shows the expected workflow when running the Upgrade Compa
 The following use case describes the typical process for an Adobe Commerce partner to upgrade a client's instance:
 
 1. A partner's Software Engineer downloads the Upgrade Compatibility Tool package from the [Magento repository](https://repo.magento.com/) and executes it during the beta phase of the newest Adobe Commerce release. See the [Download the Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/install.html#download-the-upgrade-compatibility-tool) topic for more information.
-2. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) guide for more information on the complexity score.
-3. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
-4. The Account Manager creates a timeline and cost for the Adobe Commerce upgrade, which allows them to get their manager's approval.
-5. With their manager's approval, the Software Engineer works on the required code modifications to fix the broken modules.
-6. The Software Engineer runs the Upgrade Compatibility Tool one more time with an Adobe Commerce pre-release to ensure there are no new issues and that their code changes fixed the problems found during the beta phase.
-7. Everything checks out and the Software Engineer pushes the code to a staging environment where regression tests confirm all tests are green, which allows them to release the latest Adobe Commerce version to production the same day that the Adobe Commerce pre-release is released.
+1. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) guide for more information on the complexity score.
+1. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
+1. The Account Manager creates a timeline and cost for the Adobe Commerce upgrade, which allows them to get their manager's approval.
+1. With their manager's approval, the Software Engineer works on the required code modifications to fix the broken modules.
+1. The Software Engineer runs the Upgrade Compatibility Tool one more time with an Adobe Commerce pre-release to ensure there are no new issues and that their code changes fixed the problems found during the beta phase.
+1. Everything checks out and the Software Engineer pushes the code to a staging environment where regression tests confirm all tests are green, which allows them to release the latest Adobe Commerce version to production the same day that the Adobe Commerce pre-release is released.
 
 ![Upgrade Compatibility Tool audience](img/audience-uct-v3.png){:height="80%" width="80%"}
 
