@@ -23,12 +23,12 @@ bin/uct upgrade:check INSTALLATION_DIR
 {:.bs-callout-info}
 The `INSTALLATION_DIR` value is the directory where your Adobe Commerce instance is located.
 
-The `upgrade:check` command runs the Upgrade Compatibility Tool and returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce. This command analyzes all core code changes and modules for that specific Adobe Commerce instance.
+The `upgrade:check` command runs the Upgrade Compatibility Tool and returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce. This command analyzes all core code changes and all modules for a specific Adobe Commerce instance.
 
 {:.bs-callout-warning}
-Execute only when project root (main) directory is provided
+Execute only when the project root (main) directory is provided.
 
-It is possible to run only the `core:code:changes` command to analyze only core code changes for that specific Adobe Commerce instance. See [Core code]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
+It is possible to only run the `core:code:changes` command to analyze only core code changes for that specific Adobe Commerce instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
 
 We recommend running the following command to avoid memory limitations:
 
@@ -56,8 +56,9 @@ You must have running `instance before` and `instance after` the upgrade.
 
 ### Arguments and options
 
-#### Core code
+#### Core code changes
 
+You can compare 
 ```bash
 bin/uct 'core:code:changes'
 ```
@@ -112,7 +113,9 @@ The report also includes a detailed summary:
 *  *Installed Version*: the version currently installed
 *  *Adobe Commerce Version*: the version you want to upgrade to
 *  *Running time*: amount of time the analysis took to build the report (mm:ss)
-*  *Checked modules*: amount of modules installed in the current magento version examined during the analysis
+*  *Adobe Commerce core checked modules*: amount of core checked modules
+*  *Adobe Commerce core errors found*: amount of core errors found
+*  *PHP Checked modules*: amount of modules installed in the current Adobe Commerce version examined during the analysis
 *  *PHP errors found*: amount of PHP errors
 *  *PHP warnings found*: amount of PHP warnings
 *  *GraphQL errors found*: amount of GraphQL errors
@@ -128,9 +131,11 @@ The lower this number is, the easier is to perform the upgrade.
 ```terminal
  ------------------------ --------
   Installed version        2.3.5
-  Adobe Commerce version          2.4.1
+  Adobe Commerce version   2.4.1
   Running time             0m:48s
-  Checked modules          60
+  Core checked modules     10
+  Core errors found        60
+  PHP Checked modules      60
   PHP errors found         162
   PHP warnings found       120
   GraphQL errors found     19
