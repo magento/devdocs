@@ -8,7 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrade Compatibility Tool ALPHA is a command line tool that checks a Magento instance against a specific version by analyzing all the non-Magento modules installed on it.
+The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
 
 ## Workflow
 
@@ -18,15 +18,15 @@ The following diagram shows the expected workflow when running the Upgrade Compa
 
 ## Who is the Upgrade Compatibility Tool for?
 
-The following use case describes the typical process for a Magento partner to upgrade a client's Magento instance:
+The following use case describes the typical process for an Adobe Commerce partner to upgrade a client's instance:
 
-1. A partner's Software Engineer downloads the Upgrade Compatibility Tool package from the [Magento repository](https://repo.magento.com/) and executes it during the beta phase of the newest Magento release. See the [Download the Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/install.html#download-the-upgrade-compatibility-tool) topic for more information.
-1. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) guide for more information on the complexity score.
-1. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
-1. The Account Manager creates a timeline and cost for the Magento upgrade, which allows them to get their manager's approval.
-1. With their manager's approval, the Software Engineer works on the required code modifications to fix the broken modules.
-1. The Software Engineer runs the Upgrade Compatibility Tool one more time with a Magento pre-release to ensure there are no new issues and that their code changes fixed the problems found during the beta phase.
-1. Everything checks out and the Software Engineer pushes the code to a staging environment where regression tests confirm all tests are green, which allows them to release the latest Magento version to production the same day that the Magento pre-release is released.
+1. A partner's Software Engineer downloads the Upgrade Compatibility Tool package from the [Magento repository](https://repo.magento.com/) and executes it during the beta phase of the newest Adobe Commerce release. See the [Download the Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/install.html#download-the-upgrade-compatibility-tool) topic for more information.
+2. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) guide for more information on the complexity score.
+3. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
+4. The Account Manager creates a timeline and cost for the Adobe Commerce upgrade, which allows them to get their manager's approval.
+5. With their manager's approval, the Software Engineer works on the required code modifications to fix the broken modules.
+6. The Software Engineer runs the Upgrade Compatibility Tool one more time with an Adobe Commerce pre-release to ensure there are no new issues and that their code changes fixed the problems found during the beta phase.
+7. Everything checks out and the Software Engineer pushes the code to a staging environment where regression tests confirm all tests are green, which allows them to release the latest Adobe Commerce version to production the same day that the Adobe Commerce pre-release is released.
 
 ![Upgrade Compatibility Tool audience](img/audience-uct-v3.png){:height="80%" width="80%"}
 
@@ -44,9 +44,9 @@ See the [Resources]({{site.baseurl}}/community/resources/resources.html) page fo
 See [prerequisites]({{site.baseurl}}/upgrade-compatibility-tool/prerequisites.html) for more information.
 
 {:.bs-callout-info}
-You can run the Upgrade Compatibility Tool in any operating system. There is no requirement to run the Upgrade Compatibility Tool where your Magento instance is located. It is necessary for the Upgrade Compatibility Tool to have access to the source code of the Magento instance. For example, you can install the tool on one server and point it at your Magento installation on another server.
+You can run the Upgrade Compatibility Tool in any operating system. There is no requirement to run the Upgrade Compatibility Tool where your Adobe Commerce instance is located. It is necessary for the Upgrade Compatibility Tool to have access to the source code of the Adobe Commerce instance. For example, you can install the tool on one server and point it at your Adobe Commerce installation on another server.
 
-If you are running the Upgrade Compatibility Tool against a Magento instance with large modules and files, the tool might require a high amount of RAM, at least 2GB RAM.
+If you are running the Upgrade Compatibility Tool against an Adobe Commerce instance with large modules and files, the tool might require a high amount of RAM, at least 2GB RAM.
 
 ### Recommended actions
 
@@ -59,9 +59,9 @@ bin/uct upgrade:check /INSTALLATION_DIR/<instance-name> --coming-version=2.4.1 -
 ```
 
 {:.bs-callout-info}
-The `INSTALLATION_DIR` value is the directory where your Magento instance is located.
+The `INSTALLATION_DIR` value is the directory where your Adobe Commerce instance is located.
 
-The `-m` option allows the Upgrade Compatibility Tool to analyze each specific module independently to avoid encountering 2 modules with the same name in your Magento instance.
+The `-m` option allows the Upgrade Compatibility Tool to analyze each specific module independently to avoid encountering 2 modules with the same name in your Adobe Commerce instance.
 
 This command option also allows the Upgrade Compatibility Tool to analyze a folder containing several modules:
 
@@ -85,7 +85,7 @@ As the Upgrade Compatibility Tool is an independent tool, if you try to run:
 composer require magento/upgrade-compatibility-tool
 ```
 
-It might add the Upgrade Compatibility Tool as a dependency for a Magento project.
+It might add the Upgrade Compatibility Tool as a dependency for an Adobe Commerce project.
 
 ## Install
 
@@ -133,6 +133,6 @@ Node.js is only a requirement to check GraphQL compatibility.
 
 ## Third-party extensions
 
-Magento recommends that you contact your extension vendor to determine whether your extension is fully compatible with Magento 2.4.
+Adobe Commerce recommends that you contact your extension vendor to determine whether your extension is fully compatible with Adobe Commerce 2.4.
 
 See [Run the tool]({{site.baseurl}}/upgrade-compatibility-tool/run.html) for information about executing the Upgrade Compatibility Tool.

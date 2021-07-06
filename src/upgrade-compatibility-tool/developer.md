@@ -8,13 +8,13 @@ functional_areas:
   - Upgrade
 ---
 
-This topic contains information for developers who want to know more technical information about the Upgrade Compatibility Tool ALPHA. It is focused on developers who work closely with the Magento source code. You can use this knowledge to customize the tool's components.
+This topic contains information for developers who want to know more technical information about the Upgrade Compatibility Tool. It is focused on developers who work closely with the Adobe Commerce core code. You can use this knowledge to customize the tool's components.
 
 ## Magento API index integration
 
-Magento API index integration is an internal integration solution that comprehends a set of tools to explore Magento Extensions developed by Magento, an Adobe Company, Magento Partners and 3rd party vendors based on static code analysis.
+Magento API index integration is an internal integration solution that comprehends a set of tools to explore Adobe Commerce Extensions developed by Adobe, Adobe Commerce Partners and 3rd party vendors based on static code analysis.
 
-The integration with Magento API index is done through:
+The integration with the Magento API index is done through:
 
 `sut\Domain\MRay\MRayInterface`
 

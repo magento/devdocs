@@ -8,11 +8,9 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrade Compatibility Tool ALPHA is a command line tool that checks a Magento instance against a specific version by analyzing all the non-Magento modules installed on it.
+The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
 
-The Upgrade Compatibility Tool identifies potential problems that must be fixed in your custom code before attempting to upgrade to a newer version of Magento.
-
-The tool returns a list of errors and warnings that you must address before upgrading to a new version of Magento.
+The Upgrade Compatibility Tool identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of Adobe Commerce.
 
 ## Use the Upgrade Compatibility Tool
 
@@ -23,7 +21,14 @@ bin/uct upgrade:check INSTALLATION_DIR
 ```
 
 {:.bs-callout-info}
-The `INSTALLATION_DIR` value is the directory where your Magento instance is located.
+The `INSTALLATION_DIR` value is the directory where your Adobe Commerce instance is located.
+
+The `upgrade:check` command runs the Upgrade Compatibility Tool and returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce. This command analyzes all core code changes and modules for that specific Adobe Commerce instance.
+
+{:.bs-callout-warning}
+Execute only when project root (main) directory is provided
+
+It is possible to run only the `core:code:changes` command to analyze only core code changes for that specific Adobe Commerce instance. See [Core code]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
 
 We recommend running the following command to avoid memory limitations:
 
@@ -31,9 +36,9 @@ We recommend running the following command to avoid memory limitations:
 php -d memory_limit=-1 /bin/uct
 ```
 
-We also recommend using the `-m` command to run the tool against a specific module.
+We also recommend using the `-m` command when you want to run the tool against a specific module.
 
-To see Upgrade Compatibility Tool command options and help:
+To see the Upgrade Compatibility Tool command options and help, run:
 
 ```bash
 bin/uct --help
@@ -51,9 +56,15 @@ You must have running `instance before` and `instance after` the upgrade.
 
 ### Arguments and options
 
+#### Core code
+
+```bash
+bin/uct 'core:code:changes'
+```
+
 #### Version
 
-You can compare your current Magento installation with Magento versions `>=2.3`.
+You can compare your current Adobe Commerce installation with Adobe Commerce versions `>=2.3`.
 
 You must provide the version as a parameter when running the command:
 
@@ -84,7 +95,7 @@ bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://do
 
 ### Output
 
-The Upgrade Compatibility Tool provides a report identifying the affected non-Magento modules and the severity and description of the problem for every issue encountered:
+The Upgrade Compatibility Tool provides a report identifying the affected code or modules, and the severity and description of the problem for every issue encountered:
 
 #### Example with a list of errors/warnings
 
@@ -99,7 +110,7 @@ File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
 The report also includes a detailed summary:
 
 *  *Installed Version*: the version currently installed
-*  *Magento Version*: the version you want to upgrade to
+*  *Adobe Commerce Version*: the version you want to upgrade to
 *  *Running time*: amount of time the analysis took to build the report (mm:ss)
 *  *Checked modules*: amount of modules installed in the current magento version examined during the analysis
 *  *PHP errors found*: amount of PHP errors
@@ -117,7 +128,7 @@ The lower this number is, the easier is to perform the upgrade.
 ```terminal
  ------------------------ --------
   Installed version        2.3.5
-  Magento version          2.4.1
+  Adobe Commerce version          2.4.1
   Running time             0m:48s
   Checked modules          60
   PHP errors found         162
@@ -146,7 +157,7 @@ See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/develope
 ### Empty output
 
 {:.bs-callout-info}
-The `M2_VERSION` is the target Magento 2 version you want to compare to your Magento instance.
+The `M2_VERSION` is the target Adobe Commerce 2 version you want to compare to your Adobe Commerce instance.
 
 If after running this command:
 
