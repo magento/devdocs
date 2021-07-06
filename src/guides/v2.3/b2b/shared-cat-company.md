@@ -60,7 +60,7 @@ If a specified company is already assigned to a different shared catalog, this r
 
 `true`, indicating the operation was successful
 
-## Unassign categories from a shared catalog
+## Unassign companies from a shared catalog
 
 When you unassign a company from a custom catalog, the system automatically assigns this company to the public shared catalog. You cannot unassign a company from the public catalog.
 
