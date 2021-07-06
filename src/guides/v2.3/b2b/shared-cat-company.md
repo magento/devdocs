@@ -31,7 +31,7 @@ Name | Description | Format | Requirements
 --- | --- | --- | ---
 `id` | The company ID number | integer | Required to assign or unassign a company to a shared catalog
 
-## Assign categories to shared catalog
+## Assign companies to shared catalog
 
 This action works as an update. It does not replace companies that have already been assigned.
 
