@@ -66,12 +66,12 @@ bin/uct core:code:changes <dir> <vanilla dir>
 Where:
 
 *  <dir> - Adobe Commerce installation directory.
-*  <vanilla dir> - Adobe Commerce vanilla installation directory. 
+*  <vanilla dir> - Adobe Commerce vanilla installation directory.
 
 There are some limitations when running this command:
 
 *  Execute only when the project root (or main) directory is provided.
-*  Shows a list of core modifications only. 
+*  Shows a list of core modifications only.
 
 #### Vanilla installation
 
