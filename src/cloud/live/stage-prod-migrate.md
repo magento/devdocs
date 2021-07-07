@@ -312,7 +312,7 @@ mysqldump -h <database host> --user=<database username> --password=<password> --
 Use this command to import the database dump file:
 
 ```bash
-zcat /tmp/database.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <database_host> -u <username> -p <password> <database_name>
+zcat /tmp/database.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <database_host> -u <username> -p<password> <database_name>
 ```
 
 {:.bs-callout-info}
