@@ -58,7 +58,8 @@ You must have running `instance before` and `instance after` the upgrade.
 
 #### Core code changes
 
-You can compare 
+You can compare
+
 ```bash
 bin/uct 'core:code:changes'
 ```
