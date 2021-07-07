@@ -115,4 +115,3 @@ The Upgrade Compatibility Tool calculates this score according to the complexity
 
 {:.bs-callout-warning}
 These are absolute values.
-
