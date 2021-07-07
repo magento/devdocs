@@ -23,7 +23,7 @@ bin/uct upgrade:check <dir>
 {:.bs-callout-info}
 The `<dir>` value is the directory where your Adobe Commerce instance is located.
 
-The `upgrade:check` command runs the Upgrade Compatibility Tool and returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce. This command analyzes all core code changes and all modules for a specific Adobe Commerce instance.
+The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
 
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
@@ -58,10 +58,10 @@ You must have running `instance before` and `instance after` the upgrade.
 
 #### Core code changes
 
-You can compare your current Adobe Commerce installation with a clean vanilla installation to see if the core code has any modifications made to implement a new feature or customization. This validation will help estimate the effort that the upgrade will require based on those changes. See the [Deploy vanilla instance]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) topic for more information.
+You can compare your current Adobe Commerce installation with a clean vanilla installation to see if the core code has any modifications made to implement a new feature or customization. This validation will help estimate the effort that the upgrade will require based on those changes.
 
 ```bash
-bin/uct 'core:code:changes' <dir> <vanilla dir>
+bin/uct core:code:changes <dir> <vanilla dir>
 ```
 Where:
 
@@ -73,9 +73,13 @@ There are some limitations when running this command:
 *  Execute only when the project root (or main) directory is provided.
 *  Shows a list of core modifications only. 
 
-#### Vanilla instance
+#### Vanilla installation
 
-This is a clean installation of a specified version tag or branch of a specified release line.
+This is a clean installation of a specified version tag or branch for a specific release version.
+
+When running the `bin/uct core:code:changes` command, it will check if there is a vanilla instance in your system. In case this is the first time using a vanilla installation, an interactive command-line question is prompted if the vanilla project should be downloaded from the [Adobe Commerce repository](https://repo.magento.com/).
+
+See the [Deploy vanilla instance]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) topic for more information.
 
 #### Version
 
