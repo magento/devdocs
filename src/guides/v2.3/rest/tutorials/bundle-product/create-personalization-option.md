@@ -1,9 +1,9 @@
 ---
 layout: tutorial
 group: rest-api
-title: Step 5. Create the personalization option
+title: Step 2. Create the personalization option
 subtitle: Create a bundle product tutorial
-menu_title: Step 5. Create the personalization option
+menu_title: Step 2. Create the personalization option
 menu_order: 50
 level3_subgroup: bundle-product-tutorial
 return_to:
@@ -15,9 +15,19 @@ contributor_name: Ziffity
 contributor_link: https://ziffity.com/
 ---
 
-Let's add a simple product for the created bundle product
+To add product option for the created bundle product by SKU
 
-The `sku` specified in the payload is a string that is appended to the `option` when a customer decides to purchase this option. Likewise, the `title` supplied in the payload is added to the bundle product title.
+## Set the bundle option
+
+*  The `positon` must be sorted in ascending.
+*  The `sku` must be given for the bundle product option.
+*  The `title` of the bundle product option.
+*  The `type` must be `radio` or `select` or `checkbox` or  `dropdown`.
+*  The `required` must be `boolean`.
+*  The `product_links` can add simple or virtual products.
+*  The `qty` must be `integer`.
+*  The `is_default` must be `boolean`.
+*  The `can_change_quantity` must be either `0` or `1`.
 
 **Endpoint:**
 
@@ -84,17 +94,5 @@ Returns random integer.
 
   ![Product page with simple products]({{ page.baseurl }}/rest/images/new-bundle-product-option.png)
 
-*  On the Luma storefront page, search for `Quest`. Then click on the Quest Pursuit Jump Cardo Ball Kit product.
-
-  ![Search results]({{ page.baseurl }}/rest/images/new-bundle-product-option-storefront.png)
-
   {:.bs-callout-info}
   If the personalization option is not displayed, go to the **Quest Pursuit Jump Cardo Ball Kit** bundle product page in Admin and set  **Stock Status** to **In Stock**.
-
-## Congratulations! You've finished.
-{:.no_toc}
-
-{:.ref-header}
-Related topic
-
-[Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)

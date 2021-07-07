@@ -16,7 +16,7 @@ contributor_link: https://ziffity.com/
 
 This tutorial shows a system integrator how to use Magento REST APIs to create a _bundle product_.
 
-This **5-step tutorial** generally takes **45 minutes**.
+This **3-step tutorial** generally takes **45 minutes**.
 
 ### Before you begin
 
