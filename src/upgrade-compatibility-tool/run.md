@@ -17,11 +17,11 @@ The Upgrade Compatibility Tool identifies potential problems that must be fixed 
 Execute the tool by running the following command:
 
 ```bash
-bin/uct upgrade:check INSTALLATION_DIR
+bin/uct upgrade:check <dir>
 ```
 
 {:.bs-callout-info}
-The `INSTALLATION_DIR` value is the directory where your Adobe Commerce instance is located.
+The `<dir>` value is the directory where your Adobe Commerce instance is located.
 
 The `upgrade:check` command runs the Upgrade Compatibility Tool and returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce. This command analyzes all core code changes and all modules for a specific Adobe Commerce instance.
 
@@ -58,11 +58,24 @@ You must have running `instance before` and `instance after` the upgrade.
 
 #### Core code changes
 
-You can compare
+You can compare your current Adobe Commerce installation with a clean vanilla installation to see if the core code has any modifications made to implement a new feature or customization. This validation will help estimate the effort that the upgrade will require based on those changes. See the [Deploy vanilla instance]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) topic for more information.
 
 ```bash
-bin/uct 'core:code:changes'
+bin/uct 'core:code:changes' <dir> <vanilla dir>
 ```
+Where:
+
+*  <dir> - Adobe Commerce installation directory.
+*  <vanilla dir> - Adobe Commerce vanilla installation directory. 
+
+There are some limitations when running this command:
+
+*  Execute only when the project root (or main) directory is provided.
+*  Shows a list of core modifications only. 
+
+#### Vanilla instance
+
+This is a clean installation of a specified version tag or branch of a specified release line.
 
 #### Version
 

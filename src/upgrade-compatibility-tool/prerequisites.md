@@ -19,7 +19,7 @@ The minimum requirements to run the Upgrade Compatibility Tool are:
 | Node.js | An optional requirement. Only required to check GraphQL compatibility. |
 | Memory limitations | At least 2GB RAM |
 | Adobe Commerce Access keys | none |
-| Adobe Commerce Open Source | none |
+| Adobe Commerce (Open Source or enterprise) | none |
 {:style="table-layout:auto;"}
 
 You can run the Upgrade Compatibility Tool in any operating system. There is no requirement to run the Upgrade Compatibility Tool where your Adobe Commerce instance is located.

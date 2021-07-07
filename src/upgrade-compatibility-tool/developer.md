@@ -101,7 +101,7 @@ This score is based on the results extracted from the analysis:
 *  Number of issues identified
 *  Severity of issues identified
 
-The Upgrade Compatibility Tool calculates this score according to the following formula:
+The Upgrade Compatibility Tool calculates this score according to the complexity score formula below.
 
 ### Complexity score formula
 
