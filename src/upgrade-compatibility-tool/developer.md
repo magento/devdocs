@@ -10,11 +10,11 @@ functional_areas:
 
 This topic contains information for developers who want to know more technical information about the Upgrade Compatibility Tool. It is focused on developers who work closely with the Adobe Commerce core code. You can use this knowledge to customize the tool's components.
 
-## Magento API index integration
+## Adobe Commerce API index integration
 
-Magento API index integration is an internal integration solution that comprehends a set of tools to explore Adobe Commerce Extensions developed by Adobe, Adobe Commerce Partners and 3rd party vendors based on static code analysis.
+Adobe Commerce API index integration is an internal integration solution that comprehends a set of tools to explore Adobe Commerce Extensions developed by Adobe, Adobe Commerce Partners and 3rd party vendors based on static code analysis.
 
-The integration with the Magento API index is done through:
+The integration with the Adobe Commerce API index is done through:
 
 `sut\Domain\MRay\MRayInterface`
 
@@ -51,9 +51,9 @@ To run the integration tests, execute one of the following commands:
 
 ## Acceptance testing
 
-1. Before executing acceptance tests, you must set the Magento URL in the `phpunit` configuration file.
+1. Before executing acceptance tests, you must set the Adobe Commerce URL in the `phpunit` configuration file.
 1. Copy the default `tests/acceptance/phpunit.xml` file (without the .dist suffix).
-1. Change the `TESTS_BASE_URL` value to point to the Magento URL that you want to test.
+1. Change the `TESTS_BASE_URL` value to point to the Adobe Commerce URL that you want to test.
 1. To run the acceptance tests, execute one of the following commands:
 
    *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`

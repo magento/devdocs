@@ -26,7 +26,7 @@ The `INSTALLATION_DIR` value is the directory where your Adobe Commerce instance
 The `upgrade:check` command runs the Upgrade Compatibility Tool and returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce. This command analyzes all core code changes and all modules for a specific Adobe Commerce instance.
 
 {:.bs-callout-warning}
-Execute only when the project root (main) directory is provided.
+Execute only when the project root (or main) directory is provided.
 
 It is possible to only run the `core:code:changes` command to analyze only core code changes for that specific Adobe Commerce instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
 

@@ -20,7 +20,7 @@ The following diagram shows the expected workflow when running the Upgrade Compa
 
 The following use case describes the typical process for an Adobe Commerce partner to upgrade a client's instance:
 
-1. A partner's Software Engineer downloads the Upgrade Compatibility Tool package from the [Magento repository](https://repo.magento.com/) and executes it during the beta phase of the newest Adobe Commerce release. See the [Download the Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/install.html#download-the-upgrade-compatibility-tool) topic for more information.
+1. A partner's Software Engineer downloads the Upgrade Compatibility Tool package from the [Adobe Commerce repository](https://repo.magento.com/) and executes it during the beta phase of the newest Adobe Commerce release. See the [Download the Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/install.html#download-the-upgrade-compatibility-tool) topic for more information.
 1. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) guide for more information on the complexity score.
 1. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
 1. The Account Manager creates a timeline and cost for the Adobe Commerce upgrade, which allows them to get their manager's approval.
@@ -50,9 +50,9 @@ If you are running the Upgrade Compatibility Tool against an Adobe Commerce inst
 
 ### Recommended actions
 
-Magento best practices recommend to avoid having 2 modules with the same name, if this happens the Upgrade Compatibility Tool shows a segmentation fault error.
+Adobe Commerce best practices recommend to avoid having 2 modules with the same name, if this happens the Upgrade Compatibility Tool will show a segmentation fault error.
 
-To avoid this segmentation fault error it is recommended to run the `bin` command with the added option `-m`:
+To avoid this error it is recommended to run the `bin` command with the added option `-m`:
 
 ```bash
 bin/uct upgrade:check /INSTALLATION_DIR/<instance-name> --coming-version=2.4.1 -m /vendor/<vendor-name>/<module-name>
@@ -69,7 +69,7 @@ This command option also allows the Upgrade Compatibility Tool to analyze a fold
 bin/uct upgrade:check /INSTALLATION_DIR/<instance-name> --coming-version=2.4.1 -m /vendor/<vendor-name>/
 ```
 
-This recommended command also helps with memory issues that can occurr when executing the Upgrade Compatibility Tool.
+This recommendation also helps with memory issues that can occur when executing the Upgrade Compatibility Tool.
 
 ## Download the Upgrade Compatibility Tool
 
@@ -91,22 +91,22 @@ It might add the Upgrade Compatibility Tool as a dependency for an Adobe Commerc
 
 To install the Upgrade Compatibility Tool, you must install the necessary prerequisites:
 
-*  Magento access keys
+*  Adobe Commerce access keys
 *  Composer
 *  Node.js (only required to check GraphQL compatibility)
 
 Refer to the [Upgrade Compatibility Tool install]({{site.baseurl}}/upgrade-compatibility-tool/install.html#install) page.
 
-### Magento access keys
+### Adobe Commerce access keys
 
-You must have [Magento access keys]({{site.baseurl}}/marketplace/sellers/profile-information.html#access-keys) to download and use the Upgrade Compatibility Tool. Add your Magento access keys to your `auth.json` file, which is located at `~/.composer` by default.
+You must have [Adobe Commerce access keys]({{site.baseurl}}/marketplace/sellers/profile-information.html#access-keys) to download and use the Upgrade Compatibility Tool. Add your Adobe Commerce access keys to your `auth.json` file, which is located at `~/.composer` by default.
 
 {:.bs-callout-warning}
 Check your **COMPOSER_HOME** environment variable to see where the `auth.json` file is located.
 
 The **public key** corresponds to the _username_ whereas the **private key** is the _password_:
 
-### Example of Magento access keys
+### Example of Adobe Commerce access keys
 
 ```json
     "http-basic": {
@@ -133,6 +133,6 @@ Node.js is only a requirement to check GraphQL compatibility.
 
 ## Third-party extensions
 
-Adobe Commerce recommends that you contact your extension vendor to determine whether your extension is fully compatible with Adobe Commerce 2.4.
+Adobe Commerce recommends that you contact your extension vendor to determine whether your extension is fully compatible with Adobe Commerce 2.4.x.
 
 See [Run the tool]({{site.baseurl}}/upgrade-compatibility-tool/run.html) for information about executing the Upgrade Compatibility Tool.
