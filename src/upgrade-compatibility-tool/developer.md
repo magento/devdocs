@@ -98,14 +98,21 @@ Complexity scores range between 0 and ∞.
 
 This score is based on the results extracted from the analysis:
 
-*  Number of issues identified
+*  Number of issues identified:
+
+   *  PHP errors
+   *  Warnings
+   *  GraphQL issues
+   *  Adobe Commerce core issues
+
 *  Severity of issues identified
 
 The Upgrade Compatibility Tool calculates this score according to the complexity score formula below.
 
 ### Complexity score formula
 
-`Complexity Score = 2 * (# of errors) + 1 * (# of warnings)`
+`Complexity Score = (Adobe Commerce core errors)*4 + [(PHP errors)+(GraphQL errors)] * 2 + [(PHP warnings)+(GraphQL warnings)]*1`
 
 {:.bs-callout-warning}
 These are absolute values.
+
