@@ -12,7 +12,7 @@ The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Comme
 
 The Upgrade Compatibility Tool identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of Adobe Commerce.
 
-## Use the Upgrade Compatibility Tool
+## Use the `upgrade:check` command
 
 Execute the tool by running the following command:
 
@@ -28,11 +28,13 @@ The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an Ad
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
 
-This command allows to check for core code changes for that specific Adobe Commerce instance as well as all modules installed in it.
+This command allows to check for core code changes, if desired for that specific Adobe Commerce instance, as well as all custom code changes installed in it.
 
 It is possible to only run the `core:code:changes` command to analyze only core code changes for that specific Adobe Commerce instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
 
 The command `graphql:compare` allows to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification]({{site.baseurl}}/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
+
+### Recommendations to use the `upgrade:check` command
 
 We recommend running the following command to avoid memory limitations:
 
@@ -42,32 +44,46 @@ php -d memory_limit=-1 /bin/uct
 
 We also recommend using the `-m` command when you want to run the tool against a specific module.
 
-To see the Upgrade Compatibility Tool command options and help, run:
+If you want to know all commands available for the Upgrade Compatibility Tool, run:
+
+```bash
+bin/uct list
+```
+
+### Use the `--help` command
+
+To see the Upgrade Compatibility Tool command general options and help, run:
 
 ```bash
 bin/uct --help
 ```
 
-### GraphQL schema compatibility verification
-
-The Upgrade Compatibility Tool also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
+However, it is possible to run `--help` as an option when running a specific command, like `bin/uct upgrade:check`. This will return specific `--help` options for that command:
 
 ```bash
-bin/uct graphql:compare https://domain1.com/graphql https://domain2.com/graphql
+bin/uct upgrade:check --help
 ```
+Available `--help` options for the `upgrade:check` command:
 
-You must have running `instance before` and `instance after` the upgrade.
+*  --raw: Outputs raw information.
+*  --format=FORMAT: The output format (txt, xml, json, md).
+*  --short: Skip arguments descriptions.
+*  -h, —help: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  -q, —quiet: Do not outputs any message while executing the command.
+*  -v, —version: Display app version.
+*  —ansi | —no-ansi: Enable ANSI output.
+*  -n, —no-interaction: Do not ask any interactive question while executing the command.
+*  -v, --vv, —verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
-### Arguments and options
-
-#### Core code changes
+## Core code changes
 
 You can compare your current Adobe Commerce installation with a clean vanilla installation to see if the core code has any modifications made to implement a new feature or customization. This validation will help estimate the effort that the upgrade will require based on those changes.
 
 ```bash
 bin/uct core:code:changes <dir> <vanilla dir>
 ```
-Where:
+
+Where arguments are as follows:
 
 *  <dir> - Adobe Commerce installation directory.
 *  <vanilla dir> - Adobe Commerce vanilla installation directory.
@@ -77,7 +93,23 @@ There are some limitations when running this command:
 *  Execute only when the project root (or main) directory is provided.
 *  Shows a list of core modifications only.
 
-#### Vanilla installation
+### Core code changes command `--help` options
+
+If you add `--help` to the `core:code:changes` command, it returns several options:
+
+*  Execute only when the project root (or main) directory is provided.
+*  Shows a list of core modifications only.
+
+Available `--help` options for the `core:code:changes` command:
+
+*  -h, —help: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  -q, —quiet: Do not outputs any message while executing the command.
+*  -v, —version: Display app version.
+*  —ansi | —no-ansi: Enable ANSI output.
+*  -n, —no-interaction: Do not ask any interactive question while executing the command.
+*  -v, --vv, —verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+
+### Vanilla installation
 
 This is a clean installation of a specified version tag or branch for a specific release version.
 
@@ -85,7 +117,7 @@ When running the `bin/uct core:code:changes` command, it will check if there is 
 
 See the [Deploy vanilla instance]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) topic for more information.
 
-#### Version
+## Version
 
 You can compare your current Adobe Commerce installation with Adobe Commerce versions `>=2.3`.
 
@@ -102,19 +134,54 @@ There are some limitations when running the previous command:
 *  Provide the tag version without any quotation marks (neither single nor double): ~~'2.4.1-develop'~~.
 *  You should NOT provide older versions than the one you have currently installed, nor older than 2.3, which is the oldest one supported at the moment.
 
-#### Full report
+### Full report
 
 You can also get a full report containing both _PHP-related_ errors and GraphQL. In this case, you must provide at least the following options:
 
 *  `--schema1=SCHEMA1`
 *  `--schema2=SCHEMA2`
-*  `INSTALLATION_DIR`
+*  `<dir>`
 
-#### Example of a bin/uct command
+> Example of a bin/uct command
 
 ```bash
-bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.1 INSTALLATION_DIR
+bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.3 <dir>
 ```
+
+## GraphQL schema compatibility verification
+
+The Upgrade Compatibility Tool also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
+
+```bash
+bin/uct graphql:compare <schema1> <schema2>
+```
+
+Where arguments are as follows:
+
+*  <schema1> - Endpoint URL for the first GraphQL schema.
+*  <schema2> - Endpoint URL for the second GraphQL schema.
+
+You must have running `instance before` and `instance after` the upgrade.
+
+### GraphQL compare command `--help` options
+
+Available `--help` options for the `graphql:compare` command:
+
+*  -h, —help: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  -q, —quiet: Do not outputs any message while executing the command.
+*  -v, —version: Display app version.
+*  —ansi | —no-ansi: Enable ANSI output.
+*  -n, —no-interaction: Do not ask any interactive question while executing the command.
+*  -v, --vv, —verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+
+### Example with a list of errors/warnings for GraphQL
+
+```terminal
+ *   [ERROR] FIELD_CHANGED_KIND: ConfigurableProduct.gender changed type from Int to String.
+ *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
+```
+
+See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) for more information.
 
 ### Output
 
@@ -123,7 +190,7 @@ The Upgrade Compatibility Tool provides a report identifying the affected code o
 {:.bs-callout-info}
 Reports are exported as json files.
 
-#### Example with a list of errors/warnings
+## Example with a list of errors/warnings
 
 ```terminal
 File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
@@ -135,26 +202,26 @@ File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
 
 The report also includes a detailed summary:
 
-*  *Installed Version*: the version currently installed
-*  *Adobe Commerce Version*: the version you want to upgrade to
-*  *Running time*: amount of time the analysis took to build the report (mm:ss)
-*  *Adobe Commerce checked modules*: amount of checked modules
-*  *Adobe Commerce core checked modules*: amount of core checked modules
-*  *Adobe Commerce core modified files*: amount of core modified file
-*  *Adobe Commerce % core modified files*: percentage of core modified files
-*  *PHP errors found*: amount of PHP errors
-*  *PHP warnings found*: amount of PHP warnings
-*  *GraphQL errors found*: amount of GraphQL errors
-*  *GraphQL warnings found*: amount of GraphQL warnings
-*  *Total errors found*: total amount of errors found
-*  *Total warnings found*: total amount of warnings found
-*  *Complexity score*: a figure that indicates how difficult is to upgrade from the current version to the new one
+*  *Installed Version*: the version currently installed.
+*  *Adobe Commerce Version*: the version you want to upgrade to.
+*  *Running time*: amount of time the analysis took to build the report (mm:ss).
+*  *Adobe Commerce checked modules*: amount of checked modules.
+*  *Adobe Commerce core checked modules*: amount of core checked modules.
+*  *Adobe Commerce core modified files*: amount of core modified file.
+*  *Adobe Commerce % core modified files*: percentage of core modified files.
+*  *PHP errors found*: amount of PHP errors.
+*  *PHP warnings found*: amount of PHP warnings.
+*  *GraphQL errors found*: amount of GraphQL errors.
+*  *GraphQL warnings found*: amount of GraphQL warnings.
+*  *Total errors found*: total amount of errors found.
+*  *Total warnings found*: total amount of warnings found.
+*  *Complexity score*: a figure that indicates how difficult is to upgrade from the current version to the new one.
 
 The lower this number is, the easier is to perform the upgrade.
 
 See the [Error message reference]({{site.baseurl}}/upgrade-compatibility-tool/errors.html) topic for more information.
 
-#### Example of a general summary report
+## Example of a general summary report
 
 ```terminal
  ------------------------ --------
@@ -176,15 +243,6 @@ See the [Error message reference]({{site.baseurl}}/upgrade-compatibility-tool/er
 ```
 
 Regarding the GraphQL schema compatibility comparison, the output would be very similar:
-
-#### Example with a list of errors/warnings for GraphQL
-
-```terminal
- *   [ERROR] FIELD_CHANGED_KIND: ConfigurableProduct.gender changed type from Int to String.
- *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
-```
-
-See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) for more information.
 
 ## Troubleshooting
 
