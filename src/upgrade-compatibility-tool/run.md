@@ -93,7 +93,7 @@ bin/uct upgrade:check INSTALLATION_DIR -c 2.4.1
 
 There are some limitations when running the previous command:
 
-*  This parameter refers to any tag that identifies a specific version of Magento.
+*  This parameter refers to any tag that identifies a specific version of Adobe Commerce.
 *  It is a requirement to provide this one explicitly; providing only the value of it will not work.
 *  Provide the tag version without any quotation marks (neither single nor double): ~~'2.4.1-develop'~~.
 *  You should NOT provide older versions than the one you have currently installed, nor older than 2.3, which is the oldest one supported at the moment.
@@ -114,7 +114,10 @@ bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://do
 
 ### Output
 
-The Upgrade Compatibility Tool provides a report identifying the affected code or modules, and the severity and description of the problem for every issue encountered:
+The Upgrade Compatibility Tool provides a report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
+
+{:.bs-callout-info}
+Reports are json file
 
 #### Example with a list of errors/warnings
 
@@ -131,9 +134,10 @@ The report also includes a detailed summary:
 *  *Installed Version*: the version currently installed
 *  *Adobe Commerce Version*: the version you want to upgrade to
 *  *Running time*: amount of time the analysis took to build the report (mm:ss)
+*  *Adobe Commerce checked modules*: amount of checked modules
 *  *Adobe Commerce core checked modules*: amount of core checked modules
-*  *Adobe Commerce core errors found*: amount of core errors found
-*  *PHP Checked modules*: amount of modules installed in the current Adobe Commerce version examined during the analysis
+*  *Adobe Commerce core modified files*: amount of core modified file
+*  *Adobe Commerce % core modified files*: percentage of core modified files
 *  *PHP errors found*: amount of PHP errors
 *  *PHP warnings found*: amount of PHP warnings
 *  *GraphQL errors found*: amount of GraphQL errors
@@ -144,23 +148,24 @@ The report also includes a detailed summary:
 
 The lower this number is, the easier is to perform the upgrade.
 
-#### Example of a summary report
+#### Example of a general summary report
 
 ```terminal
  ------------------------ --------
-  Installed version        2.3.5
-  Adobe Commerce version   2.4.1
+  Installed version        2.4.2
+  Adobe Commerce version   2.4.3
   Running time             0m:48s
-  Core checked modules     10
-  Core errors found        60
-  PHP Checked modules      60
-  PHP errors found         162
-  PHP warnings found       120
-  GraphQL errors found     19
+  Checked modules          14
+  Core checked modules     0
+  Core modified files      0
+  % core modified files    0.00
+  PHP errors found         109
+  PHP warnings found       0
+  GraphQL errors found     0
   GraphQL warnings found   0
-  Total errors found       181
-  Total warnings found     120
-  Complexity score         482
+  Total errors found       109
+  Total warnings found     0
+  Complexity score         218
  ------------------------ --------
 ```
 
