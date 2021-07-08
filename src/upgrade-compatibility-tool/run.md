@@ -88,7 +88,7 @@ You can compare your current Adobe Commerce installation with Adobe Commerce ver
 You must provide the version as a parameter when running the command:
 
 ```bash
-bin/uct upgrade:check INSTALLATION_DIR -c 2.4.1
+bin/uct upgrade:check <dir> -c 2.4.3
 ```
 
 There are some limitations when running the previous command:

@@ -8,7 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-This topic contains information for developers who want to know more technical information about the Upgrade Compatibility Tool. It is focused on developers who work closely with the Adobe Commerce core code. You can use this knowledge to customize the tool's components.
+This topic contains information for developers who want to know more technical information about the Upgrade Compatibility Tool. It is focused on developers who work closely with the Adobe Commerce code. You can use this knowledge to customize the tool's components.
 
 ## Adobe Commerce API index integration
 

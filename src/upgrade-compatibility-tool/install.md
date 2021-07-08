@@ -55,18 +55,18 @@ Adobe Commerce best practices recommend to avoid having 2 modules with the same 
 To avoid this error it is recommended to run the `bin` command with the added option `-m`:
 
 ```bash
-bin/uct upgrade:check /INSTALLATION_DIR/<instance-name> --coming-version=2.4.1 -m /vendor/<vendor-name>/<module-name>
+bin/uct upgrade:check /<dir>/<instance-name> --coming-version=2.4.1 -m /vendor/<vendor-name>/<module-name>
 ```
 
 {:.bs-callout-info}
-The `INSTALLATION_DIR` value is the directory where your Adobe Commerce instance is located.
+The `<dir>` value is the directory where your Adobe Commerce instance is located.
 
 The `-m` option allows the Upgrade Compatibility Tool to analyze each specific module independently to avoid encountering 2 modules with the same name in your Adobe Commerce instance.
 
 This command option also allows the Upgrade Compatibility Tool to analyze a folder containing several modules:
 
 ```bash
-bin/uct upgrade:check /INSTALLATION_DIR/<instance-name> --coming-version=2.4.1 -m /vendor/<vendor-name>/
+bin/uct upgrade:check /<dir>/<instance-name> --coming-version=2.4.1 -m /vendor/<vendor-name>/
 ```
 
 This recommendation also helps with memory issues that can occur when executing the Upgrade Compatibility Tool.
@@ -122,7 +122,7 @@ The **public key** corresponds to the _username_ whereas the **private key** is 
 Clone the Upgrade Compatibility Tool repository and run `composer install` in your terminal to install dependencies.
 
 {:.bs-callout-warning}
-If the **Magento access keys** are not correctly configured, the Upgrade Compatibility Tool will not install and you will get errors when running the `composer install` command.
+If the **Adobe Commerce access keys** are not correctly configured, the Upgrade Compatibility Tool will not install and you will get errors when running the `composer install` command.
 
 ### Node.js
 
