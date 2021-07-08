@@ -117,7 +117,7 @@ bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://do
 The Upgrade Compatibility Tool provides a report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
 
 {:.bs-callout-info}
-Reports are json file
+Reports are exported as json files.
 
 #### Example with a list of errors/warnings
 
