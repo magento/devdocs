@@ -152,6 +152,8 @@ The report also includes a detailed summary:
 
 The lower this number is, the easier is to perform the upgrade.
 
+See the [Error message reference]({{site.baseurl}}/upgrade-compatibility-tool/errors.html) topic for more information.
+
 #### Example of a general summary report
 
 ```terminal
