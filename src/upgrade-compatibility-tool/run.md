@@ -28,7 +28,11 @@ The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an Ad
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
 
+This command allows to check for core code changes for that specific Adobe Commerce instance as well as all modules installed in it.
+
 It is possible to only run the `core:code:changes` command to analyze only core code changes for that specific Adobe Commerce instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
+
+The command `graphql:compare` allows to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification]({{site.baseurl}}/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
 
 We recommend running the following command to avoid memory limitations:
 
