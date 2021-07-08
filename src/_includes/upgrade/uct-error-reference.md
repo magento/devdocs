@@ -69,7 +69,7 @@ Fourth digit is based on the entity resolution:
 | 1214 | Using non-existent Adobe Commerce constant | - |
 | 1215 | Overriding non-existent Adobe Commerce constant | - |
 | 1216 | Assignation of non-existent Adobe Commerce constant | - |
-| 1224 | Using non Adobe Commerce API constant	 | - |
+| 1224 | Using non Adobe Commerce API constant | - |
 | 1225 | Overriding non Adobe Commerce API constant | - |
 | 1226 | Assignation of non Adobe Commerce API constant | - |
 | 1234 | Using Adobe Commerce `@deprecated` constant | - |
@@ -81,7 +81,7 @@ Fourth digit is based on the entity resolution:
 | 1318 | Implemented non-existent Adobe Commerce interface | - |
 | 1322 | Imported non Adobe Commerce API interface | - |
 | 1324 | Used non Adobe Commerce API interface | - |
-| 1327 | Inherited non Adobe Commerce API interface	 | - |
+| 1327 | Inherited non Adobe Commerce API interface | - |
 | 1328 | Implemented non Adobe Commerce API interface | - |
 | 1332 | Imported Adobe Commerce `@deprecated` interface | - |
 | 1334 | Used Adobe Commerce `@deprecated` interface | - |
@@ -92,7 +92,7 @@ Fourth digit is based on the entity resolution:
 | 1428 | Possible dependency on implementation details | Usage of `%s` should be declared instead of `%s`.Called a method from the nonapi class that extends api class |
 | 1429 | Call non Adobe Commerce API methods | - |
 | 1430 | Call not declared dataobject method | - |
-| 1439 | Call Adobe Commerce `@deprecated` method	 | - |
+| 1439 | Call Adobe Commerce `@deprecated` method | - |
 | 1514 | Using non-existent Adobe Commerce property | - |
 | 1515 | Overriding non-existent Adobe Commerce property | - |
 | 1516 | Assignation of non-existent Adobe Commerce property | - |
