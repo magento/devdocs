@@ -15,7 +15,7 @@ The first digit is common for all codes and correspond to the error type:
 | - | - | - |
 | 2001 |Core file was not found | Run the `composer install` command from the project's root directory |
 | 2002 | Core file was modified | Run the `composer install` command from the project's root directory |
-	
+
 ### Custom code
 
 The following digits are unique for custom code errors and warning that appear when the merchant has customized code in their Adobe Commerce instance.
@@ -40,7 +40,7 @@ Fourth digit is based on the entity resolution:
 
 *  Extending - 1
 *  Importing - 2
-*  Loading - 3 
+*  Loading - 3
 *  Using - 4
 *  Overriding - 5
 *  Assignation - 6
@@ -135,7 +135,7 @@ Following digits are based on changed entity type:
 | 3106 | VALUE_REMOVED_FROM_ENUM | - |
 | 3107 | ARG_REMOVED | - |
 | 3109 | DIRECTIVE_REMOVED | - |
-| 3110 | DIRECTIVE_ARG_REMOVED | - |		
+| 3110 | DIRECTIVE_ARG_REMOVED | - |
 | 3111 | DIRECTIVE_REPEATABLE_REMOVED | - |
 | 3112 | DIRECTIVE_LOCATION_REMOVED | - |
 | 3201 | TYPE_CHANGED_KIND | - |
@@ -150,5 +150,3 @@ Following digits are based on changed entity type:
 | 3307 | REQUIRED_ARG_ADDED | - |
 | 3308 | OPTIONAL_ARG_ADDED | - |
 | 3310 | REQUIRED_DIRECTIVE_ARG_ADDED | - |
-
-		
