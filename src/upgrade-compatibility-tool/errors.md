@@ -8,5 +8,12 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
+This error message reference provides information about errors that can occur while executing the [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html).
 
+Error messages are categorized by type – *custom code*, *core modification*, and *GraphQL schemas*. Each type contains a list of associated errors, warnings with the following information for each:
+
+-  **Error code**:  The Adobe Commerce assigned identifier for the error message
+-  **Error description**:  A description that summarizes the cause of the error
+-  **Error suggested action**:  If applicable, provides guidance to troubleshoot and resolve the error
+
+{%include upgrade/uct-error-reference.md%}

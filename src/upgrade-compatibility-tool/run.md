@@ -197,7 +197,7 @@ If after running this command:
 bin/uct upgrade:check INSTALLATION_DIR -c M2_VERSION
 ```
 
-the only output is `Upgrade compatibility tool`:
+The only output is `Upgrade compatibility tool`:
 
 ```terminal
 bin/uct upgrade:check /var/www/project/magento/ -c 2.4.1
@@ -205,7 +205,7 @@ Upgrade compatibility tool
 ```
 {:.no-copy}
 
-the likely cause is a PHP memory limitation.
+The likely cause is a PHP memory limitation.
 Override the memory limitation by setting `memory_limit` to `-1`:
 
 ```bash
