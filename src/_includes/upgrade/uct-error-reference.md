@@ -31,7 +31,7 @@ Second digit is based on the used entity type:
 
 Third digit is based on the used entity issue:
 
-*  Nonexistent - 1
+*  non-existent - 1
 *  Non API - 2
 *  Deprecated - 3
 *  Other - 4
@@ -52,56 +52,56 @@ Fourth digit is based on the entity resolution:
 {:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
-| 1121 | Extending from non Magento API class | Inheritance is not recommended way of extending Adobe Commerce functionality. Please consider updating the code to use Magento class maked as "@api" using composition |
-| 1122 | Importing non Magento API class | - |
-| 1123 | Loading non Magento API class | - |
-| 1124 | Using non Magento API class | - |
-| 1111 | Extending from nonexistent Magento class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Please consider updating the code to use Magento class maked as "@api" using composition |
-| 1112 | Importing non Magento class | - |
-| 1114 | Using non Magento class | - |
-| 1113 | Loading non Magento class | - |
-| 1131 | Extending from Magento @deprecated class | The extended class will be removed in upcoming versions. Inheritance is not recommended way of extending Adobe Commerce functionality. Please consider updating the code to use Magento class maked as "@api" using composition |
-| 1132 | Importing Magento @deprecated class | The extended class will be removed in upcoming versions. Please consider using Magento class marked as "@api" instead |
-| 1133 | Loading Magento @deprecated class | The extended class will be removed in upcoming versions. Please consider using Magento class marked as "@api" instead |
-| 1134 | Using Magento @deprecated class | The extended class will be removed in upcoming versions. Please consider using Magento class marked as "@api" instead |
-| 1104 | You are using %s class | please use interface %s instead |
-| 1224 | Using non Magento API constant	 | - |
-| 1226 | Assignation of non Magento API constant | - |
-| 1225 | Overriding non Magento API constant | - |
-| 1214 | Using nonexistent Magento constant | - |
-| 1216 | Assignation of nonexistent Magento constant | - |
-| 1215 | Overriding nonexistent Magento constant | - |
-| 1234 | Using Magento @deprecated constant | - |
-| 1236 | Assignation of Magento @deprecated constant | - |
-| 1235 | Overriding Magento @deprecated constant | - |
-| 1327 | Inherited non Magento API interface	 | - |
-| 1328 | Implemented non Magento API interface | - |
-| 1322 | Imported non Magento API interface | - |
-| 1324 | Used non Magento API interface | - |
-| 1317 | Inherited nonexistent Magento interface | - |
-| 1318 | Implemented nonexistent Magento interface | - |
-| 1312 | Imported nonexistent Magento interface | - |
-| 1314 | Used nonexistent Magento interface | - |
-| 1337 | Inherited from Magento @deprecated interface | - |
-| 1338 | Implemented Magento @deprecated interface | - |
-| 1332 | Imported Magento @deprecated interface | - |
-| 1334 | Used Magento @deprecated interface | - |
+| 1104 | Using %s class | Use interface %s instead |
+| 1110 | Instantiating non-existent Adobe Commerce class/interface | - |
+| 1111 | Extending from non-existent Adobe Commerce class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Please consider updating the code to use Adobe Commerce class maked as "@api" using composition |
+| 1112 | Importing non Adobe Commerce class | - |
+| 1113 | Loading non Adobe Commerce class | - |
+| 1114 | Using non Adobe Commerce class | - |
+| 1121 | Extending from non Adobe Commerce API class | Inheritance is not recommended way of extending Adobe Commerce functionality. Please consider updating the code to use Adobe Commerce class maked as "@api" using composition |
+| 1122 | Importing non Adobe Commerce API class | - |
+| 1123 | Loading non Adobe Commerce API class | - |
+| 1124 | Using non Adobe Commerce API class | - |
+| 1131 | Extending from Adobe Commerce @deprecated class | The extended class will be removed in upcoming versions. Inheritance is not recommended way of extending Adobe Commerce functionality. Please consider updating the code to use Adobe Commerce class maked as "@api" using composition |
+| 1132 | Importing Adobe Commerce @deprecated class | The extended class will be removed in upcoming versions. Please consider using Adobe Commerce class marked as "@api" instead |
+| 1133 | Loading Adobe Commerce @deprecated class | The extended class will be removed in upcoming versions. Please consider using Adobe Commerce class marked as "@api" instead |
+| 1134 | Using Adobe Commerce @deprecated class | The extended class will be removed in upcoming versions. Please consider using Adobe Commerce class marked as "@api" instead |
+| 1214 | Using non-existent Adobe Commerce constant | - |
+| 1215 | Overriding non-existent Adobe Commerce constant | - |
+| 1216 | Assignation of non-existent Adobe Commerce constant | - |
+| 1224 | Using non Adobe Commerce API constant	 | - |
+| 1225 | Overriding non Adobe Commerce API constant | - |
+| 1226 | Assignation of non Adobe Commerce API constant | - |
+| 1234 | Using Adobe Commerce @deprecated constant | - |
+| 1235 | Overriding Adobe Commerce @deprecated constant | - |
+| 1236 | Assignation of Adobe Commerce @deprecated constant | - |
+| 1312 | Imported non-existent Adobe Commerce interface | - |
+| 1314 | Used non-existent Adobe Commerce interface | - |
+| 1317 | Inherited non-existent Adobe Commerce interface | - |
+| 1318 | Implemented non-existent Adobe Commerce interface | - |
+| 1322 | Imported non Adobe Commerce API interface | - |
+| 1324 | Used non Adobe Commerce API interface | - |
+| 1327 | Inherited non Adobe Commerce API interface	 | - |
+| 1328 | Implemented non Adobe Commerce API interface | - |
+| 1332 | Imported Adobe Commerce @deprecated interface | - |
+| 1334 | Used Adobe Commerce @deprecated interface | - |
+| 1337 | Inherited from Adobe Commerce @deprecated interface | - |
+| 1338 | Implemented Adobe Commerce @deprecated interface | - |
+| 1410 | Call non-existent Adobe Commerce method | - |
+| 1420 | Instantiating non Adobe Commerce API class/interface | - |
 | 1428 | Possible dependency on implementation details | Usage of '%s' should be declared instead of '%s'	Called a method from the nonapi class that extends api class |
-| 1429 | Call non Magento API methods | - |
-| 1420 | Instantiating non Magento API class/interface | - |
-| 1410 | Call nonexistent Magento method | - |
+| 1429 | Call non Adobe Commerce API methods | - |
 | 1430 | Call not declared dataobject method | - |
-| 1110 | Instantiating nonexistent Magento class/interface | - |
-| 1439 | Call Magento @deprecated method	 | - |
-| 1534 | Using Magento @deprecated property | - |
-| 1536 | Assignation of Magento @deprecated property | - |
-| 1535 | Overriding Magento @deprecated property | - |
-| 1524 | Using non Magento API property | - |
-| 1526 | Assignation of non Magento API property | - |
-| 1525 | Overriding non Magento API property | - |
-| 1514 | Using nonexistent Magento property | - |
-| 1516 | Assignation of nonexistent Magento property | - |
-| 1515 | Overriding nonexistent Magento property | - |
+| 1439 | Call Adobe Commerce @deprecated method	 | - |
+| 1514 | Using non-existent Adobe Commerce property | - |
+| 1515 | Overriding non-existent Adobe Commerce property | - |
+| 1516 | Assignation of non-existent Adobe Commerce property | - |
+| 1524 | Using non Adobe Commerce API property | - |
+| 1525 | Overriding non Adobe Commerce API property | - |
+| 1526 | Assignation of non Adobe Commerce API property | - |
+| 1534 | Using Adobe Commerce @deprecated property | - |
+| 1535 | Overriding Adobe Commerce @deprecated property | - |
+| 1536 | Assignation of Adobe Commerce @deprecated property | - |
 
 ### GraphQL Schema
 
