@@ -14,13 +14,13 @@ contributor_link: https://github.com/drpayyne
 
 This tutorial describes how a developer can create a custom text field attribute for the Customer entity using code. This will reflect in both the Magento Admin's [Customer Grid](https://docs.magento.com/user-guide/customers/customer-account-manage.html) and [Customer Form](https://docs.magento.com/user-guide/customers/customer-account-update.html).
 
-This Customer attribute will be used to save and view the customer's ID in an external system, as an example. It will be created as an EAV attribute in a data patch. The EAV model allows a developer to add custom functionality to the Magento entities without modifying the core databases and schemas. Data patches are run just once, so this code will run just once for the custom attribute to be created and never run again causing issues.
+This Customer attribute will be used to save and view the customer's ID in an external system, as an example. It will be created as an EAV attribute in a data patch. The EAV model allows a developer to add custom functionality to the Magento entities without modifying the core databases and schemas. Data patches are run just once, so this code will create the custom attribute and will never run again, which could cause issues.
 
 ## Code
 
 ### Create the data patch class
 
-Let's create a data patch class called `ExternalId` under the `\ExampleCorp\Customer\Setup\Patch\Data` namespace. This makes Magento execute the data patch automatically when run `bin/magento setup:upgrade`. All data patches must implement the `\Magento\Framework\Setup\Patch\DataPatchInterface` interface.
+Create a data patch class called `ExternalId` under the `\ExampleCorp\Customer\Setup\Patch\Data` namespace. This makes Magento execute the data patch automatically when `bin/magento setup:upgrade` is run. All data patches must implement the `\Magento\Framework\Setup\Patch\DataPatchInterface` interface.
 
 ```php
 <?php
@@ -49,11 +49,11 @@ class ExternalId implements DataPatchInterface {
 
 ### Inject the dependencies
 
-The dependencies to our data patch are injected using constructor DI and are listed below:
+The dependencies to the data patch are injected using constructor DI and are listed below:
 
--  `\Magento\Framework\Setup\ModuleDataSetupInterface` for initialising and ending the setup.
--  `\Magento\Customer\Setup\CustomerSetupFactory` for creating a model of `\Magento\Customer\Setup\CustomerSetup` which is required to add our custom attribute to Magento.
--  `\Magento\Customer\Model\ResourceModel\Attribute` aliased as `AttributeResource` for saving our attribute after adding custom data to it.
+-  `\Magento\Framework\Setup\ModuleDataSetupInterface` for initializing and ending the setup.
+-  `\Magento\Customer\Setup\CustomerSetupFactory` for creating a model of `\Magento\Customer\Setup\CustomerSetup` which is required to add the custom attribute to Magento.
+-  `\Magento\Customer\Model\ResourceModel\Attribute` aliased as `AttributeResource` for saving the attribute after adding custom data to it.
 -  `\Psr\Log\LoggerInterface` for logging exceptions thrown during the execution.
 
 ```php
@@ -95,13 +95,13 @@ There are five key steps to develop the data patch. All the steps below are writ
 
 2.  Add the text field customer attribute with our settings.
 
-    The third parameter to `addAttribute` is an array of settings required to configure the attribute. Passing an empty array uses all the default values for each possible setting. To keep our code to a minimum, we can just declare the settings we need to override and the rest of the settings will be used from the Magento defaults. The settings override can be done as described below.
+    The third parameter for `addAttribute` is an array of settings required to configure the attribute. Passing an empty array uses all the default values for each possible setting. To keep the code to a minimum, just declare the settings needing to be overridden and the rest of the settings will be used from the Magento defaults. The settings overrides can be done as described below.
 
     {:.bs-callout-info}
-    For creating a simple text field, we do not need to override the settings for `backend` (database field type) and `input` (frontend HTML input type), as they default to `varchar` and `text` respectively.
+    For creating a simple text field, it is not necessary to override the settings for `backend` (database field type) and `input` (frontend HTML input type), as they default to `varchar` and `text` respectively.
 
     {:.bs-callout-info}
-    The `\Magento\Customer\Api\CustomerMetadataInterface` interface contains constants like the customer entity's code, and the default attribute set code, which we can reference.
+    The `\Magento\Customer\Api\CustomerMetadataInterface` interface contains constants like the customer entity's code and the default attribute set code, which can be referenced.
 
     ```php
     $this->customerSetup->addAttribute(
