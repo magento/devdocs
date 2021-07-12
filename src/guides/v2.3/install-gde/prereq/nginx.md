@@ -10,9 +10,9 @@ Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en
 
 Installation instructions vary based on which operating system you are using. See [PHP](php-settings.html) for information.
 
-## Ubuntu 20.04
+## Ubuntu
 
-The following section describes how to install Magento 2.x on Ubuntu 20.04 using nginx, PHP, and MySQL.
+The following section describes how to install Magento 2.x on Ubuntu using nginx, PHP, and MySQL.
 
 ### Install nginx
 
