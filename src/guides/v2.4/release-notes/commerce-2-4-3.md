@@ -75,6 +75,8 @@ This release contains enhancements that improve the quality of the framework and
 
 Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future compatibility with PHP 8.x.
 
+*  This release includes a new Composer plugin that helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Release New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
+
 *  Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
 
 *  The KnockoutJS library has been upgraded to v3.5.1 (the latest version). <!--- MC-40694-->
@@ -88,6 +90,10 @@ Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upg
 ### Performance enhancements
 
 This release includes enhancements that decrease indexation time for Product Price and Catalog Rule indexers. Merchants can now exclude a website from a customer group or shared catalog, which reduces the number of records for indexing and improves indexing times.
+
+### Live Search
+
+[Live Search](https://docs.magento.com/user-guide/live-search/overview.html) powered by [Adobe Sensei](https://www.adobe.com/sensei.html) delivers an intuitive search experience by using artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated visitor data. See [Live Search Release Notes](https://devdocs.magento.com/live-search/release-notes.html).
 
 ### GraphQL
 
@@ -1068,6 +1074,14 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- ENGCOM-9015 -->
 
 *  Added a missing dependency on the `web-token/jwt-framework` package to the `magento/module-jwt-framework-adapter`.
+
+<!--- ENGCOM-9019 -->
+
+*  Passive listeners have been added to the `fotorama.js` library to improve lighthouse metrics score.
+
+<!--- ENGCOM-9014 -->
+
+*  The README.md file for the Google Analytics module has been updated.
 
 ### Invoice
 

@@ -77,6 +77,8 @@ This release contains enhancements that improve the quality of the framework and
 
 Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future compatibility with PHP 8.x.
 
+*  This release includes a new Composer plugin that helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Release New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
+
 *  Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
 
 *  The KnockoutJS library has been upgraded to v3.5.1 (the latest version). <!--- MC-40694-->
@@ -856,11 +858,19 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Added a missing dependency on the `web-token/jwt-framework` package to the `magento/module-jwt-framework-adapter`.
 
+<!--- ENGCOM-9019 -->
+
+*  Passive listeners have been added to the `fotorama.js` library to improve lighthouse metrics score.
+
+<!--- ENGCOM-9014 -->
+
+*  The README.md file for the Google Analytics module has been updated.
+
 ### Invoice
 
 <!--- ENGCOM-8472 -->
 
-*  When creating new invoices in the Admin, the **Email Copy of** checkbox now works as expected. Previously, the checkbox was ignored if the global setting to send invoice emails was enabled in **Sales Emails**. It is now consistent and operates the same way as the shipment and creditmemo creation pages.
+*  When creating new invoices in the Admin, the **Email Copy of** checkbox now works as expected. Previously, the checkbox was ignored if the global setting to send invoice emails was enabled in **Sales Emails**. It is now consistent and operates the same way as the shipment and credit memo creation pages.
 
 ### Media Gallery
 
