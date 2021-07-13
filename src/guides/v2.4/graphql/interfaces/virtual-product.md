@@ -9,6 +9,7 @@ The `VirtualProduct` data type implements the following interfaces:
 
 -  [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html)
 -  [CustomizableProductInterface]({{page.baseurl}}/graphql/interfaces/customizable-option-interface.html)
+-  [RoutableInterface]({{page.baseurl}}/graphql/interfaces/routable-interface.html)
 
 Attributes that are specific to the virtual products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
 
