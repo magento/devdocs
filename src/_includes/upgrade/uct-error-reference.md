@@ -1,20 +1,12 @@
 <!--Note: The error code tables in this file are auto-generated from source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to [Adobe Commerce repository](https://repo.magento.com/).-->
 ## Error type
 
-The first digit is common for all codes and correspond to the error type:
+The error types yoy can encounter when running Upgrade Compatibility Tool are:
 
-*  Custom Code - 1
-*  Core Code - 2
-*  GraphQL Schema - 3
-*  Database - 4
-
-### Core modification
-
-{:.error-table}
-| Error code | Error description | Suggested action |
-| - | - | - |
-| 2001 |Core file was not found | Run the `composer install` command from the project's root directory |
-| 2002 | Core file was modified | Run the `composer install` command from the project's root directory |
+*  Custom code
+*  Core code
+*  GraphQL Schema
+*  Database
 
 ### Custom code
 
@@ -73,6 +65,14 @@ The following digits are unique for custom code errors and warning that appear w
 | 1534 | Using Adobe Commerce `@deprecated` property | - |
 | 1535 | Overriding Adobe Commerce `@deprecated` property | - |
 | 1536 | Assignation of Adobe Commerce `@deprecated` property | - |
+
+### Core modification
+
+{:.error-table}
+| Error code | Error description | Suggested action |
+| - | - | - |
+| 2001 |Core file was not found | Run the `composer install` command from the project's root directory |
+| 2002 | Core file was modified | Run the `composer install` command from the project's root directory |
 
 ### GraphQL Schema
 
