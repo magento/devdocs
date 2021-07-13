@@ -15,5 +15,3 @@ The Upgrade Compatibility Tool error messages are categorized by type – *custo
 *  *Error code*:  The Adobe Commerce assigned identifier for the error message.
 *  *Error description*:  A description that summarizes the cause of the error.
 *  *Error suggested action*:  If applicable, provides guidance to troubleshoot and resolve the error.
-
-{%include upgrade/uct-error-reference.md%}
