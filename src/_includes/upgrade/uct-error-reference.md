@@ -20,35 +20,6 @@ The first digit is common for all codes and correspond to the error type:
 
 The following digits are unique for custom code errors and warning that appear when the merchant has customized code in their Adobe Commerce instance.
 
-Second digit is based on the used entity type:
-
-*  Class - 1
-*  Constant - 2
-*  Interface - 3
-*  Method - 4
-*  Property - 5
-*  Other - 0
-
-Third digit is based on the used entity issue:
-
-*  non-existent - 1
-*  Non API - 2
-*  Deprecated - 3
-*  Other - 4
-
-Fourth digit is based on the entity resolution:
-
-*  Extending - 1
-*  Importing - 2
-*  Loading - 3
-*  Using - 4
-*  Overriding - 5
-*  Assignation - 6
-*  Inheritance - 7
-*  Implemented - 8
-*  Call - 9
-*  Other - 0
-
 {:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
@@ -104,27 +75,6 @@ Fourth digit is based on the entity resolution:
 | 1536 | Assignation of Adobe Commerce `@deprecated` property | - |
 
 ### GraphQL Schema
-
-Second digit is based on change type:
-
-*  Removed - 1
-*  Changed - 2
-*  Added - 3
-
-Following digits are based on changed entity type:
-
-*  Type - 01
-*  Type from union - 02
-*  Field - 03
-*  Field optional - 04
-*  Implemented Interface - 05
-*  Value - 06
-*  Argument - 07
-*  Optional Argument - 08
-*  Directive - 09
-*  Directive Argument - 10
-*  Directive Repeatable - 11
-*  Direcative Location - 12
 
 {:.error-table}
 | Error code | Error description | Suggested action |

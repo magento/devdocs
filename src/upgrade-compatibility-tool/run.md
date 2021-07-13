@@ -177,7 +177,7 @@ Available `--help` options for the `graphql:compare` command:
 ### Example with a list of errors/warnings for GraphQL
 
 ```terminal
- *   [ERROR] FIELD_CHANGED_KIND: ConfigurableProduct.gender changed type from Int to String.
+ *   [WARNING] FIELD_CHANGED_KIND: ConfigurableProduct.gender changed type from Int to String.
  *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
 ```
 
