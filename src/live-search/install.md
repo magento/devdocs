@@ -20,20 +20,15 @@ Live Search is a set of standalone meta packages that replaces standard {{site.d
 
 ## Step 1: Install Live Search
 
-{{site.data.var.ee}} is installed first without Live Search. After the installation, update the project’s root Composer `.json` file to require the `live-search` package.
+{{site.data.var.ee}} is installed first without Live Search. After the installation, use Composer to install the `live-search` package.
 
 1. Install {{site.data.var.ee}} 2.4.x without Live Search.
 
-1. Update `composer.json` to require the `live-search` package as follows:
+1. To install the `live-search` package, run the following from the command line:
 
-  ```json
-    "require": {
-      ...
-      "magento/live-search": ">=1.1.0",
-      ...
-  }
+   ```bash
+   composer require magento/live-search
    ```
-
 ### Dependencies
 
 The following Live Search dependencies are captured by Composer:
@@ -63,7 +58,7 @@ The modules that allow the native {{site.data.var.ee}} search and category brows
 
 ## Updating Live Search
 
-To update Live Search, enter the following from the command line:
+To update Live Search, run the following from the command line:
 
 ```bash
 composer update magento/live-search -–with-dependencies
@@ -83,11 +78,11 @@ To update to a major version such as from 1.0 to 2.0, edit the project’s root 
     }
    ```
 
-1. **Save** `composer.json` and **Run**.
+1. **Save** `composer.json`. Then, run the following from the command line:
 
-  ```bash
-  composer update magento/live-search –-with-dependencies
-  ```
+   ```bash
+   composer update magento/live-search –-with-dependencies
+   ```
 
 ## Uninstalling Live Search
 
