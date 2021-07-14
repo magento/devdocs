@@ -105,7 +105,7 @@ The Upgrade Compatibility Tool calculates this score according to the complexity
 
 ### Complexity score formula
 
-`Complexity Score = (Adobe Commerce core errors)*4 + [(PHP errors)+(GraphQL errors)] * 2 + [(PHP warnings)+(GraphQL warnings)]*1`
+`Complexity Score = (Adobe Commerce core errors) * 4 + (Critical errors) * 4 + [(PHP errors)+(GraphQL errors)] * 2 + [(PHP warnings)+(GraphQL warnings)] * 1`
 
 {:.bs-callout-warning}
 These are absolute values.
