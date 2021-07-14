@@ -23,8 +23,9 @@ If the new page has a `3-columns-double-footer` layout, create a custom page-lay
 </layout>
 ```
 
-Add a block to the container.
-Create the layout `app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/layout/3-columns-double-footer.xml`.
+To add a block to the container, create the layout:
+
+`app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/layout/3-columns-double-footer.xml`
 
 ```xml
 <?xml version="1.0"?>
