@@ -5,7 +5,7 @@ title: Magento Open Source 2.4.3 Release Notes
 
 Magento Open Source 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
-This release includes over 280 new fixes to core code and 35 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
+This release includes over 280 new fixes to core code and 33 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
 All known issues identified in Magento 2.4.2 have been fixed in this release.
 
@@ -37,6 +37,8 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 #### Additional security enhancements
 
 Security improvements for this release improve compliance with the latest security best practices, including:
+
+*  A **new Composer plugin** helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Release New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
 
 *  **Rate limiting is now built-in** to Magento APIs to prevent distributed denial-of-service (DDoS) attacks. Web APIs now impose restrictions on the size or number of resources that can be requested by a client/user. <!--- MC-35358-->
 
@@ -76,8 +78,6 @@ This release contains enhancements that improve the quality of the framework and
 ### Platform enhancements
 
 Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future compatibility with PHP 8.x.
-
-*  This release includes a new Composer plugin that helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Release New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
 
 *  Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- MC-39514-->
 
@@ -126,6 +126,7 @@ See the following articles for updates on features and changes for this release:
 ## Fixed issues
 
 We have fixed hundreds of issues in the Magento 2.4.3 core code.
+
 ### Installation, upgrade, deployment
 
 <!--- MC-41154-->
@@ -135,6 +136,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-40031-->
 
 *  Configuration values are now preserved on form reload when the creation of a new configurable product fails. Previously, values were lost during form reload, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
+
+<!--- ENGCOM-8508 -->
+
+*  Magento deployments running on Galera cluster now support more customers.
 
 ### Adobe Stock Integration
 
@@ -205,6 +210,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-32617-->
 
 *  You can now successfully configure a bundle product by accessing it from a customer shopping cart. Previously, the Configure Product page never completely loaded, and you could not save your settings.
+
+<!--- MC-30317 ENGCOM-7141-->
+
+*  Merchants can now assign a unique price for a bundle product on each store view of a multistory deployment. Website-specific prices are saved in the `catalog_product_bundle_selection_price` table. Previously, Magento did not base a bundle product’s price on website scope even when  **Stores** > **Configuration** > **Catalog** > **Catalog** > **Price** > **Catalog Price Scope** was set to `Website`. No website-specific prices were saved in `catalog_product_bundle_selection_price`.
 
 ### CAPTCHA
 
@@ -290,6 +299,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The **Add to cart** button on the category list view now works as expected.
 
+<!--- ENGCOM-8490-->
+
+*  You can now use POST `/V1/carts/mine/items` to add a custom quantity of grouped products to a cart.
+
 ### Catalog
 
 <!--- MC-36787-->
@@ -336,7 +349,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  A custom product attribute with a value of zero can now be successfully saved as blank. Previously, Magento did not update this value to blank.
 
-<!--- MC-40736-->
+<!--- MC-40736 ENGCOM-8789-->
 
 *  Custom category layout update files now apply to products as expected. Previously, the update file handle (`catalog_category_view_*`) did not match the product handle. [GitHub-27285](https://github.com/magento/magento2/issues/27285)
 
@@ -428,6 +441,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  You can no longer create a product with a `NULL` SKU value. Previously, you could create a product without a SKU value through a custom importer or directly in the database, but when you tried to edit it from the Admin, Magento threw an error.
 
+<!--- ENGCOM-8902-->
+
+*  Adding required custom options to a simple product no longer removes it from parent composite products without warning. Magento now displays an informative warning and does not save the product.  Previously, Magento saved the product changes and did not display a warning.
+
 ### Catalog rule
 
 <!--- MC-39896-->
@@ -465,6 +482,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-39878  magento/magento2#31472-->
 
 *  Magento now correctly generates invoices for orders that contain only one configurable product.
+
+<!--- ENGCOM-8673-->
+
+*  Shoppers can now add configurable products to their cart from non-default store view. Previously, when the shopper on a non-default store view tried to add a configurable product, Magento displayed this error: `Could not add item to cart. Please check required options and try again`.
 
 ### cron
 
@@ -668,7 +689,23 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Added Albania, Denmark, Greece, Iceland, Portugal, and Sweden regions to the `directory_country_region` table.
 
-## Gift cards
+<!--- MC-30104 magento/magento2#31480 -->
+
+*  Messages are now flagged as errors in the MysqlMQ message queue when exceptions occur. [GitHub-18140](https://github.com/magento/magento2/issues/18140)
+
+<!--- ENGCOM-8579-->
+
+*  Magento now references the correct class object when loading tax info for the Admin credit memo and invoice pages.
+
+<!--- MC-40346-->
+
+*  Royal Mail Click & Drop integration now works as expected. Previously, Magento threw this error when you tried to activate his integration: `Sorry! Something went wrong. Please try again later`.
+
+<!--- ENGCOM-8498-->
+
+*  Magento now displays an informative error message when an incorrect shipment, credit memo, or invoice ID is passed in a URL. Previously, Magento threw a fatal error.
+
+### Gift cards
 
 <!--- MC-32651-->
 
@@ -804,6 +841,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The catalog price rule indexer now works as expected when the indexer mode is set to **update on save**.
 
+<!--- ENGCOM-8890-->
+
+*  Deleting a disabled category that does not include a product now has no effect on catalog search and category flat index tables. Previously, deleting an inactive category triggered a full re-index.
+
 ### Infrastructure
 
 <!--- MC-41445-->
@@ -866,6 +907,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The README.md file for the Google Analytics module has been updated.
 
+<!--- ENGCOM-8375 -->
+
+*  Process Manager now handles exceptions properly in forked processes. The main process now exits, and Magento now displays an error message only once. Also, the exceptions from the forked processes are now handled when they are thrown in the main process. Previously, Magento logged multiple indexer failures and displayed multiple error messages.
+
 ### Invoice
 
 <!--- ENGCOM-8472 -->
@@ -881,6 +926,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- ENGCOM-8814-->
 
 *  Entries in the `catalog_product_entity_media_gallery` table are removed as expected when related products are deleted.
+
+<!--- ENGCOM-8945-->
+
+*  Image details can now be updated in the Media Gallery when JavaScript minification is enabled. Previously, image details were not saved, and Magento displayed this error: `TypeError: Cannot read property 'call' of undefined in jquery.validate`.
 
 ### MFTF
 
@@ -1067,6 +1116,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- MC-41440-->
 
 *  The performance of the  `catalog_product_alert` cron process when running on large tables (several million rows) has been improved. Previously, `catalog_product_alert` loaded all product alerts, which caused an out-of-memory exception.
+
+<!--- ENGCOM-8752-->
+
+*  Magento no longer loads all CMS pages when needing only one edit page to render an Admin form.  These pages now load faster.
 
 ### Pricing
 
@@ -1274,6 +1327,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  You can now add a custom Elasticsearch field mapper to `Magento\Elasticsearch\Model\Adapter\FieldMapper\Product\FieldProvider\FieldName\Resolver\CompositeResolver`.
 
+<!--- ENGCOM-9029 MC-24026-->
+
+*  Developers can now change Elasticsearch mappings. Previously, dynamic templates sent to the Elasticsearch server in the default mappings were hard-coded, which prevented developers from indexing in Elasticsearch any extra data associated with a custom module.
+
 ### Shipping
 
 <!--- MC-41464-->
@@ -1322,7 +1379,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ### Staging
 
-<!--- MC-40850-->
+<!--- MC-40850  magento/partners-magento2ee#489-->
 
 *  Merchants can now successfully save a downloadable product with a linked sample from the downloadable product page after creating a future staging update with an end date. Previously, Magento did not save the product and displayed this message: `The downloadable sample isn't related to the product. Verify the link and try again`.
 
@@ -1420,6 +1477,14 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Untranslatable phrases in the Admin are now translatable. (This PR contributes to ongoing efforts to make all Admin strings localizable.) [GitHub-11175](https://github.com/magento/magento2/issues/11175)
 
+<!--- ENGCOM-8584-->
+
+*  Text strings in the template used to manage stored payment methods (**My Account**  >  **Stored Payment Methods** ) are now translatable.
+
+<!--- MC-30798 ENGCOM-8717-->
+
+*  Order emails sent from the Admin now use the store locale not the locale that is associated with the administrator’s account.
+
 ### UI
 
 <!--- MC-41784-->
@@ -1469,6 +1534,18 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ENGCOM-8502 MC-35716-->
 
 *  The **Remove Layout Update** button now works as expected on any layout you have added from Admin **Content** > **Widgets**. Previously, this button did not work on any layout other than the first selected when adding multiple layouts.
+
+<!--- ENGCOM-8524 -->
+
+*  Magento now uses the page title that is set in the layout file as the browser page title for the Customer Account Edit file. Previously, the  `Magento\Customer\Controller\Account\Edit` controller action enforces the page title value to `Account Information`.
+
+<!--- ENGCOM-8896 8826-->
+
+*  Checkboxes that permit merchants to toggle between showing and hiding passwords have been added to these pages:
+   *  Customer Login
+   *  Customer Registration
+   *  Customer Edit  (Change Password section)
+   *  Customer Set New Password
 
 ### URL rewrites
 
