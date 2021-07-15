@@ -43,10 +43,6 @@ pages:
           url: /upgrade-compatibility-tool/developer.html
           versionless: true
 
-        - label: Error message reference
-          url: /upgrade-compatibility-tool/errors.html
-          versionless: true
-
     - label: Upgrade best practices
       url: /comp-mgr/upgrade-best-practices.html
 
