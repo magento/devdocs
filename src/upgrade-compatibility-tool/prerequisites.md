@@ -24,4 +24,4 @@ The minimum requirements to run the Upgrade Compatibility Tool are:
 
 You can run the Upgrade Compatibility Tool in any operating system. There is no requirement to run the Upgrade Compatibility Tool where your Adobe Commerce instance is located.
 
-It is necessary for the Upgrade Compatibility Tool to have access to the source code of the Adobe Commerce instance. For example, you can install it on one server and point it at your Adobe Commerce installation on another server. Refer to the [install]({{site.baseurl}}/upgrade-compatibility-tool/install.html#install) for more information.
+It is necessary for the Upgrade Compatibility Tool to have access to the source code of the Adobe Commerce instance. For example, you can install it on one server and point it at your Adobe Commerce installation on another server. Refer to the [install]({{site.baseurl}}/upgrade-compatibility-tool/install.html#install) instructions for more information.

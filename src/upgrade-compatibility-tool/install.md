@@ -8,7 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
+The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
 
 ## Workflow
 
@@ -61,7 +61,7 @@ bin/uct upgrade:check /<dir>/<instance-name> --coming-version=2.4.1 -m /vendor/<
 {:.bs-callout-info}
 The `<dir>` value is the directory where your Adobe Commerce instance is located.
 
-The `-m` option allows the Upgrade Compatibility Tool to analyze each specific module independently to avoid encountering 2 modules with the same name in your Adobe Commerce instance.
+The `-m` option allows the Upgrade Compatibility Tool to analyze each specific module independently to avoid encountering two modules with the same name in your Adobe Commerce instance.
 
 This command option also allows the Upgrade Compatibility Tool to analyze a folder containing several modules:
 
@@ -133,6 +133,6 @@ Node.js is only a requirement to check GraphQL compatibility.
 
 ## Third-party extensions
 
-Adobe Commerce recommends that you contact your extension vendor to determine whether your extension is fully compatible with Adobe Commerce 2.4.x.
+Adobe recommends that you contact your extension vendor to determine whether your extension is fully compatible with Adobe Commerce 2.4.x.
 
 See [Run the tool]({{site.baseurl}}/upgrade-compatibility-tool/run.html) for information about executing the Upgrade Compatibility Tool.

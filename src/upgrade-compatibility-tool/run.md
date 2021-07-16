@@ -8,7 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
+The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
 
 The Upgrade Compatibility Tool identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of Adobe Commerce.
 
@@ -23,12 +23,12 @@ bin/uct upgrade:check <dir>
 {:.bs-callout-info}
 The `<dir>` value is the directory where your Adobe Commerce instance is located.
 
-The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
+The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. It then returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
 
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
 
-This command allows to check for core code changes, if desired for that specific Adobe Commerce instance, as well as all custom code changes installed in it.
+This command checks for core code changes, if needed, for that specific Adobe Commerce instance, as well as all custom code changes installed in it.
 
 It is possible to only run the `core:code:changes` command to analyze only core code changes for that specific Adobe Commerce instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
 
@@ -77,7 +77,7 @@ Available `--help` options for the `upgrade:check` command:
 
 ## Core code changes
 
-You can compare your current Adobe Commerce installation with a clean vanilla installation to see if the core code has any modifications made to implement a new feature or customization. This validation will help estimate the effort that the upgrade will require based on those changes.
+You can compare your current Adobe Commerce installation with a clean installation to see if the core code has any modifications made to implement a new feature or customization. This validation will help estimate the effort that the upgrade will require based on those changes.
 
 ```bash
 bin/uct core:code:changes <dir> <vanilla dir>
@@ -111,9 +111,9 @@ Available `--help` options for the `core:code:changes` command:
 
 ### Vanilla installation
 
-This is a clean installation of a specified version tag or branch for a specific release version.
+A _vanilla_ installation is a clean installation of a specified version tag or branch for a specific release version.
 
-When running the `bin/uct core:code:changes` command, it will check if there is a vanilla instance in your system. In case this is the first time using a vanilla installation, an interactive command-line question is prompted if the vanilla project should be downloaded from the [Adobe Commerce repository](https://repo.magento.com/).
+When running the `bin/uct core:code:changes` command, it will check if there is a vanilla instance in your system. In a case where this is the first time using a vanilla installation, an interactive command-line question prompts you to download the vanilla project from the [Adobe Commerce repository](https://repo.magento.com/).
 
 See the [Deploy vanilla instance]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) topic for more information.
 
@@ -247,7 +247,7 @@ Regarding the GraphQL schema compatibility comparison, the output would be very 
 ### Empty output
 
 {:.bs-callout-info}
-The `M2_VERSION` is the target Adobe Commerce 2 version you want to compare to your Adobe Commerce instance.
+The `M2_VERSION` is the target Adobe Commerce version you want to compare to your Adobe Commerce instance.
 
 If after running this command:
 
