@@ -29,6 +29,7 @@ Live Search is a set of standalone meta packages that replaces standard {{site.d
    ```bash
    composer require magento/live-search
    ```
+
 ### Dependencies
 
 The following Live Search dependencies are captured by Composer:
