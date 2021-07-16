@@ -158,8 +158,8 @@ bin/uct graphql:compare <schema1> <schema2>
 
 Where arguments are as follows:
 
-*  <schema1> - Endpoint URL for the first GraphQL schema.
-*  <schema2> - Endpoint URL for the second GraphQL schema.
+*  <schema1> - Endpoint URL for the existing installation.
+*  <schema2> - Endpoint URL for the vanilla installation.
 
 You must have running `instance before` and `instance after` the upgrade.
 
