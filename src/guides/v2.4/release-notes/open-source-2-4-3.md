@@ -141,6 +141,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento deployments running on Galera cluster now support more customers.
 
+<!--- ENGCOM-9036 MC-41938 -->
+
+*  Administrators can now successfully log in to a deployment when Magento has been installed with either the `—use-rewrites=0` option or with `web/seo/use_rewrites` set to 0 in `core_config_data_table`.
+
 ### Adobe Stock Integration
 
 <!--- MC-39754-->
@@ -214,6 +218,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-30317 ENGCOM-7141-->
 
 *  Merchants can now assign a unique price for a bundle product on each store view of a multistory deployment. Website-specific prices are saved in the `catalog_product_bundle_selection_price` table. Previously, Magento did not base a bundle product’s price on website scope even when  **Stores** > **Configuration** > **Catalog** > **Catalog** > **Price** > **Catalog Price Scope** was set to `Website`. No website-specific prices were saved in `catalog_product_bundle_selection_price`.
+
+<!--- ENGCOM-8705 MC-38953-->
+
+*  Invoices for bundle products now display the correct quantity for the associated simple products when **Dynamic Pricing** is disabled. Previously, simple products associated with the bundle product had the incorrect quantity the quantity of the parent product, not the bundle product).
 
 ### CAPTCHA
 
@@ -302,6 +310,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- ENGCOM-8490-->
 
 *  You can now use POST `/V1/carts/mine/items` to add a custom quantity of grouped products to a cart.
+
+<!--- ENGCOM-8886-->
+
+*  Magento no longer populates the billing address area of the checkout workflow with the shipping address. Previously, when the **State/Province** field for the billing address was empty, and shipping and billing addresses differed, Magento populated the billing address **State/Province** field with information from the shilling address.
 
 ### Catalog
 
@@ -487,6 +499,12 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Shoppers can now add configurable products to their cart from non-default store view. Previously, when the shopper on a non-default store view tried to add a configurable product, Magento displayed this error: `Could not add item to cart. Please check required options and try again`.
 
+### Content security Policy CSP)
+
+<!--- ENGCOM-8577-->
+
+*  Content Security Policy now supports the loading of base64-encoded images and fonts through `data: scheme`.
+
 ### cron
 
 <!--- MC-30804-->
@@ -641,6 +659,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The image resizing process no longer halts for images in unsupported format. Previously, when `catalog:images:resize` encountered an unsupported image format, the process stopped and Magento displayed this error: `bin/magento catalog:images:resize Unsupported image format`.
 
+<!--- ENGCOM-8925-->
+
+*  WEBP and AVIF support for logo images has been added to the Admin.
+
 <!--- MC-38156-->
 
 *  You can no longer change the scope of the `media_gallery` attribute. Previously, when you changed the scope of the `media_gallery` attribute back to `global`, Magento threw an error.
@@ -704,6 +726,26 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- ENGCOM-8498-->
 
 *  Magento now displays an informative error message when an incorrect shipment, credit memo, or invoice ID is passed in a URL. Previously, Magento threw a fatal error.
+
+<!--- ENGCOM-8632-->
+
+*  Recursion in the location of static files has been removed.  Magento now displays a 404 page instead of a 500 error. Previously, a bug in the default NGINX configuration lead to infinite recursion.
+
+<!--- ENGCOM-8550-->
+
+*  The name of the `cms_index_noroute.xml` file has been corrected to `cms_noroute_index.xml`.
+
+<!--- ENGCOM-8516-->
+
+*  The `.editorconfig` file has been refactored to correct the automatic formatting of `db_schema_whitelist.json` files.
+
+<!--- ENGCOM-9018-->
+
+*  Resizing a browser window no longer triggers duplicate binding magnifier events.
+
+<!--- ENGCOM-8722-->
+
+*  Magento no longer throws an SQL exception when filtering `Magento\Users\Model\ResourceModel\Users\Collection` by `user_id`.
 
 ### Gift cards
 
@@ -883,6 +925,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  `colinmollenhour/php-redis-session-abstract` has been updated to v1.4.4 for PHP 8 compatibility.
 
+<!--- ENGCOM-8527-->
+
+*  Corrected an invalid combination of tabs and spaces in the `phpstan.neon` file.
+
 <!--- ENGCOM-8551-->
 
 *  Page layouts are no longer hard-coded in  `Magento\Widget\Block\Adminhtml\Widget\Instance\Edit\Chooser\Container`.  As a result, the `getPageLayouts()` function now returns the actual list of page layouts declared by the different modules as expected. Previously, it returned only hard-coded layouts.
@@ -910,6 +956,22 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- ENGCOM-8375 -->
 
 *  Process Manager now handles exceptions properly in forked processes. The main process now exits, and Magento now displays an error message only once. Also, the exceptions from the forked processes are now handled when they are thrown in the main process. Previously, Magento logged multiple indexer failures and displayed multiple error messages.
+
+<!--- ENGCOM-8544 -->
+
+*  Magento no longer throws an error when a plugin is added to a parent class. (The `optionsProvider` parameter is now declared after `getContentIdentities` in `Assest.php`.) Previously, Magento threw this error:  `Error: Cannot instantiate interface Magento\Framework\Data\OptionSourceInterface`.
+
+<!--- ENGCOM-8549 -->
+
+*  Executing `Magento\Framework\Filesystem\Io\Ftp::ls()` on an empty folder now returns an empty array as expected. Previously, Magento threw this exception: `Invalid argument supplied for foreach() in vendor/magento/framework/Filesystem/Io/Ftp.php…`.
+
+<!--- ENGCOM-8791 -->
+
+*  The `update` method for both Role and Rules has been marked as deprecated in `app/code/Magento/Authorization/Model/Role.php`.
+
+<!--- ENGCOM-8946 -->
+
+*  Concatenation for SameSite cookie parameters has been corrected. Previously, incorrect concatenation appended the `lex` suffix to `value`, `domain`, and other parameters.
 
 ### Invoice
 
@@ -1121,6 +1183,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Magento no longer loads all CMS pages when needing only one edit page to render an Admin form.  These pages now load faster.
 
+<!--- ENGCOM-8510-->
+
+*  Numeric values in `WHERE IN` expressions are now cast as number, not as string, which improves query performance in some versions of MariaDB.
+
 ### Pricing
 
 <!--- MC-41767-->
@@ -1331,6 +1397,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Developers can now change Elasticsearch mappings. Previously, dynamic templates sent to the Elasticsearch server in the default mappings were hard-coded, which prevented developers from indexing in Elasticsearch any extra data associated with a custom module.
 
+<!--- ENGCOM-8464 -->
+
+*  Search fields (form minisearch) now work as expected when Search Suggestions are disabled.
+
 ### Shipping
 
 <!--- MC-41464-->
@@ -1449,6 +1519,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Removed the `cache:flush` command from tests to improve execution time for the `Catalog`, `CatalogUrlRewrite`,  and `LoginAsCustomer` modules.
 
+<!--- ENGCOM-8499-->
+
+*  Redundant parameters have been removed and POST changed to GET where needed in `\Magento\Logging\Model\ProcessorTest::testLoggingProcessorLogsActionShipping`.
+
 ### Theme
 
 <!--- MC-41474-->
@@ -1547,6 +1621,14 @@ Repetitive actions have been replaced with action groups in these tests:
    *  Customer Edit  (Change Password section)
    *  Customer Set New Password
 
+<!--- ENGCOM-8545 -->
+
+*  Removed a redundant header in grid cells that appeared when an administrator added a product to a grouped product set after changing the attribute set.
+
+<!--- ENGCOM-8895 -->
+
+*  Magento now displays a DateRange filter on the Logged in area of the **Customer**  >  **Login** page. Previously, Magento displayed a Text filter.
+
 ### URL rewrites
 
 <!--- MC-41550-->
@@ -1594,6 +1676,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- MC-42059 ENGCOM-9039-->
 
 *  Videos are now available in the product gallery as expected when advanced JavaScript bundling is enabled and used.
+
+<!--- ENGCOM-8532-->
+
+*  YouTube videos for simple products that belong to a configurable product now work as expected. Previously, images were ordered by ID instead of position. And consequently, some videos were treated like images.
 
 ### Web API framework
 
