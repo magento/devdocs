@@ -5,7 +5,7 @@ title: Magento Open Source 2.4.3 Release Notes
 
 Magento Open Source 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
-This release includes over 280 new fixes to core code and 33 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
+This release includes over 370 new fixes to core code and 33 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
 All known issues identified in Magento 2.4.2 have been fixed in this release.
 
@@ -38,7 +38,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 Security improvements for this release improve compliance with the latest security best practices, including:
 
-*  A **new Composer plugin** helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Release New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
+*  A **new Composer plugin** helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Releases New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
 
 *  **Rate limiting is now built-in** to Magento APIs to prevent distributed denial-of-service (DDoS) attacks. Web APIs now impose restrictions on the size or number of resources that can be requested by a client/user. <!--- MC-35358-->
 
@@ -139,7 +139,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8508 -->
 
-*  Magento deployments running on Galera cluster now support more customers.
+*  Magento deployments running on Galera Cluster now support more customers.
 
 <!--- ENGCOM-9036 MC-41938 -->
 
@@ -217,7 +217,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-30317 ENGCOM-7141-->
 
-*  Merchants can now assign a unique price for a bundle product on each store view of a multistory deployment. Website-specific prices are saved in the `catalog_product_bundle_selection_price` table. Previously, Magento did not base a bundle product’s price on website scope even when  **Stores** > **Configuration** > **Catalog** > **Catalog** > **Price** > **Catalog Price Scope** was set to `Website`. No website-specific prices were saved in `catalog_product_bundle_selection_price`.
+*  Merchants can now assign a unique price for a bundle product on each store view of a multistore deployment. Website-specific prices are saved in the `catalog_product_bundle_selection_price` table. Previously, Magento did not base a bundle product’s price on website scope even when  **Stores** > **Configuration** > **Catalog** > **Catalog** > **Price** > **Catalog Price Scope** was set to `Website`. No website-specific prices were saved in `catalog_product_bundle_selection_price`.
 
 <!--- ENGCOM-8705 MC-38953-->
 
@@ -497,7 +497,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8673-->
 
-*  Shoppers can now add configurable products to their cart from non-default store view. Previously, when the shopper on a non-default store view tried to add a configurable product, Magento displayed this error: `Could not add item to cart. Please check required options and try again`.
+*  Shoppers can now add configurable products to their cart from a non-default store view. Previously, when the shopper on a non-default store view tried to add a configurable product, Magento displayed this error: `Could not add item to cart. Please check required options and try again`.
 
 ### Content security Policy CSP)
 
@@ -1447,6 +1447,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Flat rate shipping method charges no longer become zero when a cart price rule is applied during checkout. [GitHub-21832](https://github.com/magento/magento2/issues/21832)
 
+<!--- ENGCOM-8537-->
+
+*  Magento no longer throws an error when a merchant tries to ship an order using DHL when the **Create shipping label** checkbox is enabled and the product name contains unicode characters. Previously, Magento displayed this error when requesting label creation: `The response is in wrong format`.
+
 ### Staging
 
 <!--- MC-40850  magento/partners-magento2ee#489-->
@@ -1725,11 +1729,13 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ## Known issues
 
-**Known issue**: _JavaScript error when reCAPTCHA is disabled_. If reCAPTCHA is disabled for checkout, checkout proceeds, but Magento displays an `Uncaught TypeError` error in the console log:  This issue will be fixed in a later release. <!--- MC-42589—>
+**Issue**: _JavaScript error when reCAPTCHA is disabled_. If reCAPTCHA is disabled for checkout, checkout proceeds, but Magento displays an `Uncaught TypeError` error in the console log:  This issue will be fixed in a later release. <!--- MC-42589 42649 -—>
 
-**Known issue**: _Content-Security-Policy error_. The storefront displays the following error in the console log: `The Content-Security-Policy directive frame-ancestors does not support the source expression unsafe-inline`. Storefront performance is not affected. <!--- MC-42613—>
+**Issue**: _Content Security Policy error_. The storefront displays the following error in the console log: `The Content-Security-Policy directive frame-ancestors does not support the source expression unsafe-inline`. Storefront performance is not affected. <!--- MC-42613 -—>
 
-**Known issue**: _Anomalies with PayPal Credit display of gift card amounts_. When PayPal Credit is enabled and multiple gift card amounts are configured, if a buyer changes the amount for the value of a gift card, the storefront does not update the amount for installment payments. <!--- MC-42499-->
+**Issue**: _Anomalies with PayPal Credit display of gift card amounts_. When PayPal Credit is enabled and multiple gift card amounts are configured, if a shopper changes the amount for the value of a gift card, the storefront does not update the amount for installment payments. <!--- MC-42499 AC-344-->
+
+**Issue**:  _The **Add to order** button does not work for products added to the cart by SKU_.  Magento displays this error message when you click on the **Add to order** button after adding products to the order by SKU: `An error has happened during application run`. Products are not added to the cart. **Workaround**: Use the Add Products feature. <!--- AC-345-->
 
 ## Community contributions
 
