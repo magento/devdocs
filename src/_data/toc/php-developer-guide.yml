@@ -294,6 +294,9 @@ pages:
         - label: XSS Prevention
           url: /extension-dev-guide/xss-protection.html
 
+        - label: Avoiding SSRF
+          url: /extension-dev-guide/security/ssrf.html
+
     - label: Versioning
       url: /extension-dev-guide/versioning/
       children:
