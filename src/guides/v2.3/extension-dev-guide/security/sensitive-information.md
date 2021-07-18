@@ -1,0 +1,135 @@
+---
+group: php-developer-guide
+title: Sensitive Information
+---
+
+Sensitive information is information that either requires additional permissions for read/write operations
+or is supposed to be accessed only programmatically for various reasons.
+Good examples are customers' DoBs, passwords, addresses, number of orders for a product etc.
+
+## Exposing sensitive information to users without permissions
+This paragraph will not focus on simply the need to configure authorization for endpoints/pages that expose sensitive
+information. Instead, let's focus on the case when an endpoint, or a page, is configured only
+for authenticated customers/authenticated admin users with certain permissions but still exposes information that
+it shouldn't.
+
+### Example 1: Customer information
+The 1st example would be a page, or an endpoint, that allows admin users to read customer data found by ID.
+The controller/endpoint is properly configured to be accessible only by admin users that have
+`Magento_Customer::read_customer` permission for their role. When developing this functionality a service responsible
+for it will probably look something like this:
+```php
+interface CustomerQueryServiceInterface {
+    public function findById(string $id): CustomerInterface;
+}
+```
+The service is really abstract - most likely it's actively used in other places where there's a need to get customer
+data by ID. There is another requirement - properties
+`dob` and `addresses` require additional `Magento_Customer::personal_info` permission that is meant for the most
+trusted admin users. This creates a problem for the customer read endpoint/page -
+`CustomerQueryServiceInterface::findById()` will always return full customer info including `dob` and `addresses`.
+
+Here's how the sensitive information will be exposed through various interfaces:
+#### REST web API
+Magento framework will serialize all properties defined in `CustomerInterface` into JSON and expose them. If the endpoint
+is configured to require `Magento_Customer::personal_info` then admin users without it won't be able to read basic
+customer data. If it is configured to require `Magento_Customer::read_customer` then admin users without
+`Magento_Customer::personal_info` will be able to get `dob` and `addresses`.
+#### GraphQL
+If there are `dob` and `addresses` nodes available in the `schema.graphqls` then these properties will be exposed to
+all admin users.
+#### HTML page using blocks
+A block will get all customer data from `CustomerQueryServiceInterface` with a high chance that the necessary
+authorization before rendering HTML containing `dob` and `addresses` info will be forgotten.
+#### HTML page using UI components
+UI components read data from a global JS object that contains all data retrieved from data providers.
+The object is rendered into JS on backend and is available in response HTML.
+The data provider that will use `CustomerQueryServiceInterface` will expose full customer data inside response HTML.
+
+### Solution for example 1
+The solution is to have operation-specific DTOs and a case-specific service.
+
+The first step is to make a case-specific service for customer data retrieval by admin users:
+```php
+interface AdminCustomerQueryServiceInterface {}
+```
+The second step is to define operation specific DTOs:
+```php
+interface ReadCustomerDataInterface {
+    public function getId(): string;
+    
+    public function getName(): string;
+    
+    ...
+}
+
+interface ReadPersonalCustomerDataInterface {
+    public function getId(): string;
+    
+    public function getDob(): \DateTime;
+    
+    public function getAddresses(): array;
+}
+```
+The final step is to define case-specific operations:
+```php
+interface AdminCustomerQueryServiceInterface {
+    public function findById(string $id): ReadCustomerDataInterface;
+    
+    public function findPersonalDataById(string $id): ReadPersonalCustomerDataInterface;
+}
+```
+This service belongs to the business logic layer so inside both these methods might use the same repository::method
+from the persistence layer. To avoid redundant calls to the repository consider having an identity-map with full customer info
+to reuse when `findPersonalDataById()` is executed after `findById()` with the same ID.
+
+With this approach it is harder to expose the sensitive data accidentally. `findPersonalDataById()` will only be called
+when there's an explicit need to read sensitive data.
+
+Here's how it will work for different interfaces:
+#### HTML rendered with backend blocks
+The block will have a condition - when user has `Magento_Customer::personal_info` call `findPersonalDataById()` method,
+otherwise leave personal data empty.
+#### HTML rendered on frontend
+Inside the data provider for the UI component the same condition as above is present.
+#### REST/SOAP web API
+Both `findById()` and `findPersonalDataById()` have their own endpoints. First requires `Magento_Customer::read_customer`,
+second - `Magento_Customer::personal_info`. A client that wants to render the customer info page will issue 2 requests:
+1. Fetch basic customer data from `findById()` endpoint
+2. Fetch personal customer data from `findPersonalDataById()` endpoint
+
+The second may fail with 403 status which the client will ignore and proceed to only display basic customer data in case
+when the current admin user does not have access to `Magento_Customer::personal_info`.
+#### GraphQL
+`dob` and `addresses` will have their own resolvers which will validate access to `Magento_Customer::personal_info`
+and only then call `findPersonalDataById()` and return it's result.
+
+## Exposing sensitive information through a persistent storage
+There is always a possibility of bad actors gaining access to persistent storage either through injection attacks,
+through misconfigured environment or any other way. For that reason sensitive information has to be protected not
+only from being exposed through web APIs/HTML interface, but also while it rests in a storage.
+
+### Hashed sensitive information
+Sensitive information that is never exposed in plain text after creation and is only used for comparison can be safely
+stored in the form of a hash.
+
+Good examples would be passwords, tokens and secrets. After a password/token/secret is created there is no need to ever
+display it to a user again. Later on there's only a need to compare user input to already existing password/token/secret.
+A hash allows just that - compare a value to a hashed one and avoid exposing original value. A salt is often used with
+hashes for passwords to prevent attacks using rainbow tables.
+
+`\Magento\Framework\Encryption\EncryptorInterface` helps with hashes. Use `getHash()` method to generate a hash with
+or without salt depending on the second argument (using salt is recommended). Subsequently use `isValidHash()` to
+compare user provided value to an existing hash. These methods will handle salt, choosing a secure algorithm and
+will work after the Magento Encryption Key is updated by an admin user.
+
+### Encrypted sensitive information
+Extremely sensitive information that is only accessible to authorized users must be stored encrypted.
+
+Private information like addresses is good candidate for encryption depending on your application requirements.
+Encrypting such information involves having an encryption key that is not stored in the same storage as the encrypted
+information.
+
+Magento will handle encryption with `\Magento\Framework\Encryption\EncryptorInterface`. `encrypt()` and `decrypt()`
+methods will use Magento Encryption Key for encryption and will choose the most secure algorithm with decent performance.
+It will also handle old and new encryption keys and emerging best practices to encryption with regards to the algorithm.
