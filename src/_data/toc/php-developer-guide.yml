@@ -294,6 +294,9 @@ pages:
         - label: XSS Prevention
           url: /extension-dev-guide/xss-protection.html
 
+        - label: Sensitive Information
+          url: /extension-dev-guide/security/sensitive-information.html
+
     - label: Versioning
       url: /extension-dev-guide/versioning/
       children:
