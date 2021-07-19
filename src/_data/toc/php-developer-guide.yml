@@ -297,6 +297,10 @@ pages:
         - label: Avoiding SSRF
           url: /extension-dev-guide/security/ssrf.html
 
+        - label: Authorization
+          url: /extension-dev-guide/security/authorization.html
+
+
     - label: Versioning
       url: /extension-dev-guide/versioning/
       children:
