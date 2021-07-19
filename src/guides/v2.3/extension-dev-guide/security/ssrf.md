@@ -36,12 +36,12 @@ accessed by the application, or at least limit this functionality to the most tr
 
 ### Limit URL parts that are accepted
 
-* Do not accept protocol/schema
+*  Do not accept protocol/schema
 
   When accepting URL from users accept host and query, but not the protocol (schema). If it's an avatar upload then allow
   only http:// and maybe ftp://, but not phar:// or tcp://.
 
-* Do not accept host
+*  Do not accept host
 
   Only accept query, but not host. If the host is always known and only the route can change then only accept route.
   Or try to limit host to the list of trusted hosts
