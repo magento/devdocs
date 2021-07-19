@@ -57,17 +57,12 @@ The second step is to define operation specific DTOs:
 ```php
 interface ReadCustomerDataInterface {
     public function getId(): string;
-
     public function getName(): string;
-
-    ...
 }
 
 interface ReadPersonalCustomerDataInterface {
     public function getId(): string;
-
     public function getDob(): \DateTime;
-
     public function getAddresses(): array;
 }
 ```
@@ -97,7 +92,7 @@ Both `findById()` and `findPersonalDataById()` have their own endpoints. First r
 second - `Magento_Customer::personal_info`. A client that wants to render the customer info page will issue 2 requests:
 
 1. Fetch basic customer data from `findById()` endpoint
-2. Fetch personal customer data from `findPersonalDataById()` endpoint
+1. Fetch personal customer data from `findPersonalDataById()` endpoint
 
 The second may fail with 403 status which the client will ignore and proceed to only display basic customer data in case
 when the current admin user does not have access to `Magento_Customer::personal_info`.
