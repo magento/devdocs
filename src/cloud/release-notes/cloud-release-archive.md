@@ -396,7 +396,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -  {:.new}<!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{ site.baseurl }}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
 
--  {:.new}<!-- MAGECLOU-1998 -->**Site map and Robots**—Created a [workflow]({{ site.baseurl }}/cloud/trouble/robots-sitemap.html)to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
+-  {:.new}<!-- MAGECLOU-1998 -->**Site map and Robots**—Created a [workflow]({{ site.baseurl }}/cloud/trouble/robots-sitemap.html) to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
 
 -  {:.new}<!-- MAGECLOUD-1910 -->**Wizards**—Added two [wizards]({{ site.baseurl }}/cloud/deploy/smart-wizards.html) to help you with Cloud configuration:
    -  `ideal-state`—configure the ideal state for minimal deployment downtime

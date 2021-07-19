@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-The Remote Storage module provides the option to store media files and schedule imports/exports in a persistent, remote storage container using a storage service, such as AWS S3 or Azure Blob Storage. By default, Magento stores media files in the same filesystem that contains the application. This is inefficient for complex, multi-server configurations, and can result in degraded performance when sharing resources. With the Remote Storage module, you can store media files in the `pub/media` directory and import/export files in the `var` directory of the remote object storage to take advantage of server-side image resizing.
+The Remote Storage module provides the option to store media files and schedule imports/exports in a persistent, remote storage container using a storage service, such as AWS S3. By default, Magento stores media files in the same filesystem that contains the application. This is inefficient for complex, multi-server configurations, and can result in degraded performance when sharing resources. With the Remote Storage module, you can store media files in the `pub/media` directory and import/export files in the `var` directory of the remote object storage to take advantage of server-side image resizing.
 
 {:.bs-callout-info}
 Remote storage is available in version 2.4.2 and later only. See the [2.4.2 release notes]({{page.baseurl}}/release-notes/open-source-2-4-2.html).
@@ -56,6 +56,12 @@ The following examples enable the remote storage with an AWS S3 storage adapter 
    ```bash
    bin/magento setup:config:set --remote-storage-driver="aws-s3" --remote-storage-bucket="myBucket" --remote-storage-region="us-east-1"
    ```
+
+## Limitations
+
+Enabling remote storage might affect your established development experience. For example, certain PHP file functions might not work as expected. The usage of Magento Framework for file operations must be enforced.
+
+The list of prohibited PHP native functions is available in [Magento Coding Standard](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php) repository.
 
 ## Migrate content
 
