@@ -1,15 +1,16 @@
 ---
 group: php-developer-guide
-title: SSRF
+title: Server-side Request Forgery
 ---
 
-Server-side Request Forgery is a type of attack when a server could be tricked into sending a request to an
-internally accessible server. This type of attack is not only limited to HTTP protocol, depending on the network client
-library the targeted server is using, it could be forced to send requests using other protocols like TCP, FTP etc.
+Server-side Request Forgery (SSRF) is a type of attack in which a server is tricked into sending a request to an
+internally accessible server. This type of attack is not only limited to the HTTP protocol. Depending on the network client
+library the targeted server is using, it could be forced to send requests using other protocols such as TCP or FTP.
 This means that an attacker can force an application to send a request to FLUSHALL to an internally accessible Redis
 instance, or to load a file from internal file host instead of a publicly accessible one provided by a user.
 
 ## Identifying potentially vulnerable functionality
+
 Any functionality that allows a user to provide a URL that will later be request on server-side is vulnerable without
 proper validation.
 
@@ -28,9 +29,11 @@ to be able to choose any. Now a malicious admin user can craft a base URL that w
 later on and the request is not limited to GET method.
 
 ## Prevention measures
+
 Find the list of measures starting from the most reliable ones below:
 
 ### Do not accept URLs from users
+
 The most effective measure to avoid potential SSRF attacks completely. Do not allow users to provide URLs that will be
 accessed by the application, or at least limit this functionality to the most trusted users.
 
@@ -38,15 +41,16 @@ accessed by the application, or at least limit this functionality to the most tr
 
 *  Do not accept protocol/schema
 
-  When accepting URL from users accept host and query, but not the protocol (schema). If it's an avatar upload then allow
+   When accepting URL from users accept host and query, but not the protocol (schema). If it's an avatar upload then allow
   only http:// and maybe ftp://, but not phar:// or tcp://.
 
 *  Do not accept host
 
-  Only accept query, but not host. If the host is always known and only the route can change then only accept route.
-  Or try to limit host to the list of trusted hosts
+   Only accept query, but not host. If the host is always known and only the route can change then only accept route.
+   Or try to limit host to the list of trusted hosts
 
 ### Do not expose responses
+
 Your application logic may try to show a response in the exception message when it's structure is not expected. Response
 structure may be unexpected when the URL was forged to access some internal service. If the response is not exposed
 then the attacker, while having successfully tricked the application to sending the request, won't get the sensitive data.
