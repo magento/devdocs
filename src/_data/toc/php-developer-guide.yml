@@ -300,7 +300,6 @@ pages:
         - label: Authorization
           url: /extension-dev-guide/security/authorization.html
 
-
     - label: Versioning
       url: /extension-dev-guide/versioning/
       children:
