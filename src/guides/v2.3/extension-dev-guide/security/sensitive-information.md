@@ -70,7 +70,6 @@ The final step is to define case-specific operations:
 ```php
 interface AdminCustomerQueryServiceInterface {
     public function findById(string $id): ReadCustomerDataInterface;
-
     public function findPersonalDataById(string $id): ReadPersonalCustomerDataInterface;
 }
 ```
