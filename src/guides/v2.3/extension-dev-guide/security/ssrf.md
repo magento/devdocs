@@ -35,12 +35,14 @@ The most effective measure to avoid potential SSRF attacks completely. Do not al
 accessed by the application, or at least limit this functionality to the most trusted users.
 
 ### Limit URL parts that are accepted
+
 * Do not accept protocol/schema
 
   When accepting URL from users accept host and query, but not the protocol (schema). If it's an avatar upload then allow
   only http:// and maybe ftp://, but not phar:// or tcp://.
+
 * Do not accept host
-  
+
   Only accept query, but not host. If the host is always known and only the route can change then only accept route.
   Or try to limit host to the list of trusted hosts
 
@@ -48,4 +50,3 @@ accessed by the application, or at least limit this functionality to the most tr
 Your application logic may try to show a response in the exception message when it's structure is not expected. Response
 structure may be unexpected when the URL was forged to access some internal service. If the response is not exposed
 then the attacker, while having successfully tricked the application to sending the request, won't get the sensitive data.
-
