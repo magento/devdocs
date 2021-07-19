@@ -57,17 +57,17 @@ The second step is to define operation specific DTOs:
 ```php
 interface ReadCustomerDataInterface {
     public function getId(): string;
-    
+
     public function getName(): string;
-    
+
     ...
 }
 
 interface ReadPersonalCustomerDataInterface {
     public function getId(): string;
-    
+
     public function getDob(): \DateTime;
-    
+
     public function getAddresses(): array;
 }
 ```
@@ -75,7 +75,7 @@ The final step is to define case-specific operations:
 ```php
 interface AdminCustomerQueryServiceInterface {
     public function findById(string $id): ReadCustomerDataInterface;
-    
+
     public function findPersonalDataById(string $id): ReadPersonalCustomerDataInterface;
 }
 ```
@@ -95,6 +95,7 @@ Inside the data provider for the UI component the same condition as above is pre
 #### REST/SOAP web API
 Both `findById()` and `findPersonalDataById()` have their own endpoints. First requires `Magento_Customer::read_customer`,
 second - `Magento_Customer::personal_info`. A client that wants to render the customer info page will issue 2 requests:
+
 1. Fetch basic customer data from `findById()` endpoint
 2. Fetch personal customer data from `findPersonalDataById()` endpoint
 
