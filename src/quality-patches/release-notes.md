@@ -16,8 +16,24 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 -  {:.bug}Known issues -->
 
 {:.bs-callout-info}
-See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
+See [Apply patches]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
+
+## v1.0.26
+
+-  **MDVA-38468** _(for Magento `>=2.3.2 <=2.3.5-p2`)_-Fixes the error when saving CMS pages - Item with the same ID 'PAGE_ID' already exists.
+-  **MDVA-34680** _(for Magento `>=2.3.6 <=2.3.7 || >=2.4.1 <2.4.3`)_-Fixes the issue where Customer Account created time is not filtered correctly in customers grid.
+-  **MDVA-37068** _(for Magento `>=2.3.1 <2.4.4`)_-Fixes the issue where the incorrect tax rate displays when the shopping cart has only virtual products.
+-  **MDVA-38608** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue where temporary tables are not deleted when the reindex is not finished successfully.
+-  **MDVA-38308** _(for Magento `>=2.3.5 <=2.3.6-p1 || >=2.4.0 <=2.4.1-p1 || >=2.4.2 <2.4.4`)_-Fixes the issues related to adding Vimeo videos to products.
+
+## v1.0.25
+
+-  **MDVA-37916** _(for Magento `>=2.3.6 <2.4.3`)_-Fixes the issue where the customer is not taken to the Payment Confirmation page when using Paypal Payment Advanced method.
+-  **MDVA-37082** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue when saving the custom stock of grouped products causes the product to show out of stock in the frontend.
+-  **MDVA-36572** _(for Magento `>=2.3.5 <2.4.3`)_-Fixes the issue when Credit Memo updates no longer cause duplicate product reservation updates in the database.
+-  **MDVA-38132** _(for Magento `>=2.3.3 <2.4.3`)_-Fixes the issue when the Admin panel is unreachable due to a "too many redirects" error.
+-  **MDVA-38270** _(for Magento `>=2.4.1 <2.4.3`)_-Fixes the issue with missing Gift card information in the order total in GraphQL.
 
 ## v1.0.24
 

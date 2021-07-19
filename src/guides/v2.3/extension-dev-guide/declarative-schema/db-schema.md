@@ -197,7 +197,7 @@ To keep entity identifiers as immutable values, the declarative schema does not 
 Example:
 
 ```xml
-<constraint xsi:type="foreign" referenceId="COMPANY_CREDIT_COMPANY_ID_DIRECTORY_COUNTRY_COUNTRY_ID" table="company_credit" column="company_id" referenceTable="company" referenceColumn="entity_id" onDelete="CASCADE"/>
+<constraint xsi:type="foreign" referenceId="COMPANY_CREDIT_COMPANY_ID_COMPANY_ENTITY_ID" table="company_credit" column="company_id" referenceTable="company" referenceColumn="entity_id" onDelete="CASCADE"/>
 ```
 
 #### `index` subnode

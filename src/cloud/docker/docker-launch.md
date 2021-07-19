@@ -44,8 +44,6 @@ Action | Command
 Suspend containers to continue your work later | `docker-compose stop`
 Stop and remove all containers, images, and volumes | `docker-compose down`
 Start containers from a suspended state | `docker-compose start`
-Stop the synchronization daemon | `docker-sync stop`
-Start the synchronization daemon | `docker-sync start`
 
 Use the following command to stop and remove the Docker configuration:
 

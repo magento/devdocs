@@ -13,6 +13,8 @@ As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.co
 
 If you write and contribute a full topic, we will add your name (or your company's name) at the top of the DevDocs page and link it to your blog or website!
 
+If you contribute a major update to a topic, your GitHub username will be added to a description of the update in our [What's New topic](https://devdocs.magento.com/whats-new.html).
+
 ## Get started
 
 ![Get started workflow](https://devdocs.magento.com/common/images/contribute-prerequisites.png)
@@ -148,7 +150,7 @@ You can provide feedback using the following options:
 
 Have a question? Need help? Magento DevDocs, Maintainers, and other Contributors are available through:
 
--  [Slack](https://magentocommeng.slack.com/messages/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
+-  [Slack](https://magentocommeng.slack.com/archives/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
 -  [Twitter @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
 
 Thank you for contributing your brilliance to Magento DevDocs!!
