@@ -167,7 +167,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-30152 ENGCOM-8625-->
 
-*  Magento now turns off validation on the **Price** field as expected when the **Dynamic price** setting is enabled during bundle product creation. Previously, Magento threw a validation error when you removed a value from the **Price field** when the **Dynamic price** setting was enabled. [GitHub-26214](https://github.com/magento/magento2/issues/26214)
+*  Magento now turns off validation on the **Price** field as expected when the **Dynamic price** setting is enabled during bundle product creation. Previously, Magento threw a validation error when you removed a value from the **Price** field when the **Dynamic price** setting was enabled. [GitHub-26214](https://github.com/magento/magento2/issues/26214)
 
 <!--- MC-24840-->
 
@@ -221,15 +221,15 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-30317 ENGCOM-7141-->
 
-*  Merchants can now assign a unique price for a bundle product on each store view of a multistore deployment. Website-specific prices are saved in the `catalog_product_bundle_selection_price` table. Previously, Magento did not base a bundle product’s price on website scope even when  **Stores** > **Configuration** > **Catalog** > **Catalog** > **Price** > **Catalog Price Scope** was set to `Website`. No website-specific prices were saved in `catalog_product_bundle_selection_price`.
+*  Merchants can now assign a unique price for a bundle product on each store view of a multistore deployment. Website-specific prices are saved in the `catalog_product_bundle_selection_price` table. Previously, Magento did not base a bundle product’s price on website scope even when **Stores** > **Configuration** > **Catalog** > **Catalog** > **Price** > **Catalog Price Scope** was set to `Website`. No website-specific prices were saved in `catalog_product_bundle_selection_price`.
 
 <!--- ENGCOM-8705 MC-38953-->
 
-*  Invoices for bundle products now display the correct quantity for the associated simple products when **Dynamic Pricing** is disabled. Previously, simple products associated with the bundle product had the incorrect quantity the quantity of the parent product, not the bundle product).
+*  Invoices for bundle products now display the correct quantity for the associated simple products when **Dynamic Pricing** is disabled. Previously, simple products associated with the bundle product had the quantity of the parent product, not the bundle product).
 
 <!--- magento/magento2#30374 MC-36930-->
 
-*  The `updateProductsInWishlist` mutation now successfully updates items that belong to a bundle product in a wishlist. Previously, instead of updating the wishlist item, this mutation deleted the item and created a news one, which changed the item ID.
+*  The `updateProductsInWishlist` mutation now successfully updates items that belong to a bundle product in a wishlist. Previously, instead of updating the wishlist item, this mutation deleted the item and created a new one, which changed the item ID.
 
 ### Cache
 
@@ -257,7 +257,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8630-->
 
-*  `_.isEmpty()` checks in the `defaultCaptcha.js` file now complete successfully. Previously, these checks did no complete, and as result, the checkout page failed to load after upgrade.
+*  `_.isEmpty()` checks in the `defaultCaptcha.js` file now complete successfully. Previously, these checks did not complete, and as result, the checkout page failed to load after upgrade.
 
 ### Cart and checkout
 
@@ -267,11 +267,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40657-->
 
-*  Magento now displays the Terms and Conditions validation message in the relevant block only when a shopper clicks the **Place Order** button. Previously, Magento displayed this message in the "Apply Discount Code" block whenever a shopper changed payment method in the checkout workflow: `The order wasn't placed. First, agree to the terms and conditions, then try placing your order again`.
-
-<!--- MC-40271-->
-
-*  You are now redirected to the checkout page as expected after adding a bundle product to the cart from a Schedule Update preview and clicking the cart.
+*  Magento now displays the Terms and Conditions validation message in the relevant block only when a shopper clicks the **Place Order** button. Previously, Magento displayed this message in the Apply Discount Code block whenever a shopper changed payment method in the checkout workflow: `The order wasn't placed. First, agree to the terms and conditions, then try placing your order again`.
 
 <!--- MC-32805-->
 
@@ -311,7 +307,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9006-->
 
-*  Added the `itemResolvers` argument to the Catalog `di.xml` file. As a result, checkout is no longer broken if configurable and grouped product modules are disabled.
+*  Added the `itemResolvers` argument to the catalog `di.xml` file. As a result, checkout is no longer broken if configurable and grouped product modules are disabled.
 
 <!--- ENGCOM-8944-->
 
@@ -331,7 +327,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8886-->
 
-*  Magento no longer populates the billing address area of the checkout workflow with the shipping address. Previously, when the **State/Province** field for the billing address was empty, and shipping and billing addresses differed, Magento populated the billing address **State/Province** field with information from the shilling address.
+*  Magento no longer populates the billing address area of the checkout workflow with the shipping address. Previously, when the **State/Province** field for the billing address was empty, and shipping and billing addresses differed, Magento populated the billing address **State/Province** field with information from the shipping address.
 
 ### Catalog
 
@@ -483,7 +479,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8367-->
 
-*  Temporary tables that begin with `catalogrule_product__temp` are now deleted as expected when reindexing fails after a cart or catalog rule expires, is disabled, or becomes inactive.
+*  Temporary tables that begin with `catalogrule_product__temp` are now deleted as expected when re-indexing fails after a cart or catalog rule expires, is disabled, or becomes inactive.
 
 ### CMS content
 
@@ -507,7 +503,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-37418-->
 
-*  The configuration pop-up that Magento displays when you are editing a configurable product from a wishlist now closes as expected when you click the **OK** button.
+*  The configuration pop-up that Magento displays when you are editing a configurable product from a wish list now closes as expected when you click the **OK** button.
 
 <!--- MC-39878  magento/magento2#31472-->
 
@@ -527,17 +523,13 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-30804-->
 
-*  Cron cleanup queries have been refactored to reduce or eliminate the following performance issues: `cron` jobs remaining stuck in a pending state, increasingly slow MySQL queries, and an increase in CPU usage.
+*  Cron clean up queries have been refactored to reduce or eliminate the following performance issues: `cron` jobs remaining stuck in a pending state, increasingly slow MySQL queries, and an increase in CPU usage.
 
 ### Custom customer attributes
 
 <!--- MC-41611-->
 
 *  The **State** field on the storefront Customer Account address book is now loaded as and remains a drop-down page element. The **Submit** button is now disabled until all page elements have been completely loaded. Previously, Magento loaded this field as a textbox before rendering it as a drop-down element, and shoppers could enter and save values in the text field, which later caused an error during checkout.
-
-<!--- MC-40358-->
-
-*  Magento now saves custom customer attribute values for B2B users as expected. Previously, creating a company account that contained custom customer attributes triggered a template error, and Magento did not successfully load the form. Adding an argument to the layout of `company_create_account` resolved this issue.
 
 <!--- MC-40329-->
 
@@ -567,7 +559,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-38913-->
 
-*  Administrators with permission can now re-assign customers to different websites from the customers Account Information tab.
+*  Administrators with permission can now re-assign customers to different websites from the customer's Account Information tab.
 
 <!--- MC-39852-->
 
@@ -589,7 +581,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41756-->
 
-*  Customer address attribute date values are now saved in four-digit year instead of two-digit format.
+*  Customer address attribute date values are now saved in four-digit format instead of two-digit format.
 
 ### Email
 
@@ -607,7 +599,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-30127 magento/magento2#31455-->
 
-*  Invoices and Invoice PDFs now include the same prices for bundle products as expected. Previously, invoice PDFs included the incorrect price for bundle products. [GitHub-12856](https://github.com/magento/magento2/issues/12856)
+*  Invoices and invoice PDFs now include the same prices for bundle products as expected. Previously, invoice PDFs included the incorrect price for bundle products. [GitHub-12856](https://github.com/magento/magento2/issues/12856)
 
 <!--- ENGCOM-9021-->
 
@@ -645,7 +637,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-39193-->
 
-*  Exception handling for child processes forked by `ProcessManager` has been improved. When an exception occurs now, the main process exits and an error message is displayed only once. Previously, multiple indexer failures were logged and messages displayed. [GitHub-30622](https://github.com/magento/magento2/issues/30622)
+*  Exception handling for child processes forked by `ProcessManager` has been improved. When an exception occurs now, the main process exits and an error message is displayed only once. Previously, multiple indexer failures were logged and multiple messages were displayed. [GitHub-30622](https://github.com/magento/magento2/issues/30622)
 
 <!--- MC-39132-->
 
@@ -799,7 +791,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41030-->
 
-*  The **CartItemPrices** object now contains the new GraphQL field **fixed_product_taxes**, which returns an array of the fixed product taxes that are applied to a cart item. Previously, fixed product taxes that were applied to a cart item were not included in the cart query.
+*  The `CartItemPrices` object now contains the new GraphQL field `fixed_product_taxes`, which returns an array of the fixed product taxes that are applied to a cart item. Previously, fixed product taxes that were applied to a cart item were not included in the cart query.
 
 <!--- MC-40920-->
 
@@ -885,7 +877,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40898-->
 
-*  Admins can now successfully change the `name` of a bundle product’s `bundle_values` from the Admin. Previously, Magento displayed the product as out-of-stock on the storefront after you changed the name from the Admin. Products were also merged with the same SKU into a single bundle-option section.
+*  Administrators can now successfully change the `name` of a bundle product’s `bundle_values` from the Admin. Previously, Magento displayed the product as out-of-stock on the storefront after you changed the name from the Admin. Products were also merged with the same SKU into a single bundle-option section.
 
 <!--- MC-40333-->
 
@@ -1033,7 +1025,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8469 -->
 
-*  Magento no longer throws an error when a customer tries to complete an order when no shipping carriers are available. Instead, it displays the checkout page and this message: `Sorry, no quotes are available for this order at this time`. Previously, Magento displayed a blank checkout page and records this message in the exception log: `array_keys() expects parameter 1 to be array, null given`.
+*  Magento no longer throws an error when a customer tries to complete an order when no shipping carriers are available. Instead, it displays the checkout page and this message: `Sorry, no quotes are available for this order at this time`. Previously, Magento displayed a blank checkout page and recorded this message in the exception log: `array_keys() expects parameter 1 to be array, null given`.
 
 <!--- ENGCOM-8557 -->
 
@@ -1201,7 +1193,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8675-->
 
-*  Magento now honors newsletter enablement settings (**Stores**  >  **Settings**  >  **Configuration**  >  **Customers**  >  **Newsletter**  >  **General Options**). Previously, these settings were always tried from the default scope in multi-store deployments.
+*  Magento now honors newsletter enablement settings (**Stores**  >  **Settings**  >  **Configuration**  >  **Customers**  >  **Newsletter**  >  **General Options**). Previously, these settings were always retrieved from the default scope in multi-store deployments.
 
 <!--- ENGCOM-8551-->
 
@@ -1323,7 +1315,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-39763-->
 
-*  The Average Product Rating and Product Ratings sections of the product review details page now render correctly. Previously, the review ID was not set when Magento calculated the storefront rating, and the product review template plate was not properly rendered.
+*  The Average Product Rating and Product Ratings sections of the product review details page now render correctly. Previously, the review ID was not set when Magento calculated the storefront rating, and the product review template was not properly rendered.
 
 <!--- MC-36149-->
 
@@ -1341,13 +1333,13 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-39820-->
 
-*  Magento now updates the payment method list when a shopper checking out with multiple addresses and either checks or unchecks the **Store Credit (Reward Points)** option.
+*  Magento now updates the payment method list when a shopper checking out with multiple addresses either checks or unchecks the **Store Credit (Reward Points)** option.
 
 ### Sales
 
 <!--- MC-39796-->
 
-*  Admin users can now place orders for out-of-stock items when **Backorders are allowed** is enabled (**Stores** > **Configuration** > **Catalog** > **Inventory** > **Product Stock Options**). Previously, Magento threw an error.
+*  Admin users can now place orders for out-of-stock items when the **Backorders are allowed** setting is enabled (**Stores** > **Configuration** > **Catalog** > **Inventory** > **Product Stock Options**). Previously, Magento threw an error.
 
 <!--- MC-42280-->
 
@@ -1387,7 +1379,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-39026-->
 
-*  Magento no longer emails copies of an order invoice when the Invoice **Email Copy of Invoice** button is unchecked. Previously, Magento sent email to **Customer** and **Send Invoice Email Copy To**. [GitHub-28511](https://github.com/magento/magento2/issues/28511)
+*  Magento no longer emails copies of an order invoice when the **Email Copy of Invoice** button is unchecked. Previously, Magento sent email to **Customer** and **Send Invoice Email Copy To**. [GitHub-28511](https://github.com/magento/magento2/issues/28511)
 
 <!--- MC-38973-->
 
@@ -1439,7 +1431,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-40715-->
 
-*  Quick search now returns results if the search query has multiple words and the product name is configured as not searchable. Previously, if the product name is configured as not searchable, Magento threw a query exception on search queries with multiple words.
+*  Quick search now returns results if the search query has multiple words and the product name is configured as not searchable. Previously, if the product name was configured as not searchable, Magento threw a query exception on search queries with multiple words.
 
 <!--- MC-40672-->
 
@@ -1531,28 +1523,6 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  You can successfully place an order from the Admin in a multisite deployment in which `United States` is enabled on one website and`Disable all countries` is enabled as the default scope on the other website. Previously, Magento did not place the order and displayed this error: `Please check the shipping address information. "regionId" is required. Enter and try again`.
 
-### Staging
-
-<!--- MC-40850  magento/partners-magento2ee#489-->
-
-*  Merchants can now successfully save a downloadable product with a linked sample from the downloadable product page after creating a future staging update with an end date. Previously, Magento did not save the product and displayed this message: `The downloadable sample isn't related to the product. Verify the link and try again`.
-
-<!--- MC-40588-->
-
-*  Catalog price rules now apply as expected to products with undefined attribute values. Previously, discounts that were created through a catalog price rule were not applied to products with undefined attributes. [GitHub-461](https://github.com/magento/partners-magento2ee/issues/461)
-
-<!--- MC-40283-->
-
-*  Catalog rules now work as expected in multi-website deployments with stores in different timezones. Previously, Magento applied or deactivated catalog rules on all websites at one time.
-
-<!--- MC-40054-->
-
-*  Tier prices are no longer removed when a schedule update is created for a specific website.
-
-<!--- MC-39784-->
-
-*  You can now save a product from the Downloadable Product page after creating a future staging update with an end date. Previously, Magento did not save the product and displayed this message: `The downloadable link isn't related to the product. Verify the link and try again`. [GitHub-474](https://github.com/magento/partners-magento2ee/issues/474)
-
 ### Store
 
 <!--- MC-40538-->
@@ -1575,7 +1545,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-38025 ENGCOM-8612-->
 
-*  Magento now displays Fixed Product Taxes (FPT) as expected when a shopper navigates back to shopping cart and proceeds to checkout after adding bundle products to the cart. [GitHub-30250](https://github.com/magento/magento2/issues/30250)
+*  Magento now displays Fixed Product Taxes (FPT) as expected when a shopper navigates back to their shopping cart and proceeds to checkout after adding bundle products to the cart. [GitHub-30250](https://github.com/magento/magento2/issues/30250)
 
 <!--- MC-37657 magento/magento2#31850-->
 
@@ -1583,7 +1553,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8617 magento-engcom/magento2ee#558-->
 
-*  Magento now displays a  **VAT Number**  field on the customer registration page  when `customer/create_account/vat_frontend_visibility` is enabled.
+*  Magento now displays a **VAT Number** field on the customer registration page when `customer/create_account/vat_frontend_visibility` is enabled.
 
 ### Test
 
@@ -1633,7 +1603,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8694-->
 
-*  Untranslatable phrases in the Admin are now translatable. (This PR contributes to ongoing efforts to make all Admin strings localizable.) [GitHub-11175](https://github.com/magento/magento2/issues/11175)
+*  Untranslatable phrases in the Admin are now translatable. (This pull request contributes to ongoing efforts to make all Admin strings localizable.) [GitHub-11175](https://github.com/magento/magento2/issues/11175)
 
 <!--- ENGCOM-8584-->
 
@@ -1715,7 +1685,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-9009 -->
 
-*  JavaScript has been removed from template files and moved into separate files to reduce rendering issues on Admin pages. Previously, Admin pages did not render properly in deployments in which minify HTML had been enabled. Magento displayed this error: `An error has happened during application run. See exception log for details`.
+*  JavaScript has been removed from template files and moved into separate files to reduce rendering issues on Admin pages. Previously, Admin pages did not render properly in deployments in which minification of HTML had been enabled. Magento displayed this error: `An error has happened during application run. See exception log for details`.
 
 ### URL rewrites
 
@@ -1795,29 +1765,29 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-39107-->
 
-*  Clicking the **Add to Cart** button on the product widget no longer results in a page reload. Previously, clicking the **Add to Cart** button on a product widget was causing a current page to reload before the product was added to the cart.
+*  Clicking the **Add to Cart** button on the product widget no longer results in a page reload. Previously, clicking the **Add to Cart** button on a product widget caused a current page to reload before the product was added to the cart.
 
-### Wishlist
+### Wish list
 
 <!--- MC-40651-->
 
-*  Magento no longer resets a configurable product’s configuration settings when you click the **Edit item** button for the product from a wishlist. [GitHub-32119](https://github.com/magento/magento2/issues/32119)
+*  Magento no longer resets a configurable product’s configuration settings when you click the **Edit item** button for the product from a wish list. [GitHub-32119](https://github.com/magento/magento2/issues/32119)
 
 <!--- MC-40417-->
 
-*  Magento now displays the correct product price when you update a product with a customizable file option in the wishlist. Previously, Magento displayed the wrong product price and did not display a link to the uploaded file.
+*  Magento now displays the correct product price when you update a product with a customizable file option in the wish list. Previously, Magento displayed the wrong product price and did not display a link to the uploaded file.
 
 <!--- MC-39060-->
 
-*  The total product count in a wishlist for a customer with multiple wishlists now match the number of items in the wishlist. Previously, out-of-stock products were included in the total product count.
+*  The total product count in a wishlist for a customer with multiple wish lists now matches the number of items in the wish list. Previously, out-of-stock products were included in the total product count.
 
 <!--- MC-36779 magento/magento2#31110-->
 
-*  Magento now removes a product from a wishlist after adding it to an order. [GitHub-30260](https://github.com/magento/magento2/issues/30260)
+*  Magento now removes a product from a wish list after adding it to an order. [GitHub-30260](https://github.com/magento/magento2/issues/30260)
 
 <!--- MC-34456 ENGCOM-8816-->
 
-*  Shoppers can now add related products to their shopping cart from a wishlist. Previously, Magento added only the configurable product, not the configurable product and its related products when a shopper clicked the **Select all** link of the Related Products section. [GitHub-32274](https://github.com/magento/magento2/issues/32274)
+*  Shoppers can now add related products to their shopping cart from a wish list. Previously, Magento added only the configurable product, not the configurable product and its related products when a shopper clicked the **Select all** link of the Related Products section. [GitHub-32274](https://github.com/magento/magento2/issues/32274)
 
 ## Known issues
 
