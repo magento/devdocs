@@ -31,7 +31,7 @@ Name | Description | Format | Requirements
 --- | --- | --- | ---
 `id` | The company ID number | integer | Required to assign or unassign a company to a shared catalog
 
-## Assign categories to shared catalog
+## Assign companies to shared catalog
 
 This action works as an update. It does not replace companies that have already been assigned.
 
@@ -60,7 +60,7 @@ If a specified company is already assigned to a different shared catalog, this r
 
 `true`, indicating the operation was successful
 
-## Unassign categories from a shared catalog
+## Unassign companies from a shared catalog
 
 When you unassign a company from a custom catalog, the system automatically assigns this company to the public shared catalog. You cannot unassign a company from the public catalog.
 
