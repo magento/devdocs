@@ -145,6 +145,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Administrators can now successfully log in to a deployment when Magento has been installed with either the `—use-rewrites=0` option or with `web/seo/use_rewrites` set to 0 in `core_config_data_table`.
 
+<!--- ENGCOM-8451 -->
+
+*  Updated `sortOrder` load for `AsyncCssPlugin`. Magento now loads `AsyncCssPlugin` before `JsFooterPlugin`.
+
 ### Adobe Stock Integration
 
 <!--- MC-39754-->
@@ -223,6 +227,16 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Invoices for bundle products now display the correct quantity for the associated simple products when **Dynamic Pricing** is disabled. Previously, simple products associated with the bundle product had the incorrect quantity the quantity of the parent product, not the bundle product).
 
+<!--- magento/magento2#30374 MC-36930-->
+
+*  The `updateProductsInWishlist` mutation now successfully updates items that belong to a bundle product in a wishlist. Previously, instead of updating the wishlist item, this mutation deleted the item and created a news one, which changed the item ID.
+
+### Cache
+
+<!--- ENGCOM-8554-->
+
+*  The `varnish6.vcl` file has been updated to bypass caching of the customer page.
+
 ### CAPTCHA
 
 <!--- MC-41572-->
@@ -240,6 +254,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-40359-->
 
 *  CAPTCHA now works as expected on the checkout page. Previously, after a shopper correctly answered a CAPTCHA challenge, the loader on the checkout page never completed, and Magento displayed this error: `captchaData[formId] is undefined`. (This error occurred only when the shopper used the same browser from which they had previously accessed a deployment running Magento 2.3.5-p1.)
+
+<!--- ENGCOM-8630-->
+
+*  `_.isEmpty()` checks in the `defaultCaptcha.js` file now complete successfully. Previously, these checks did no complete, and as result, the checkout page failed to load after upgrade.
 
 ### Cart and checkout
 
@@ -811,6 +829,34 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento no longer throws type errors during GraphQL queries when product and category URL suffixes contain null values.
 
+<!--- magento/magento2#31164-->
+
+*  Added a `type` option to the GraphQL `products` query `CustomizableDateOption` or `CustomizableDateValue` to support different`Date` options. Previously, all `Date` options used the same `type` options.
+
+<!---  magento/partners-magento2ee#421-->
+
+*  The [`dynamicBlocks` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/dynamic-blocks.html) returns the contents of dynamic blocks that match the specified filters.
+
+<!--- ENGCOM-8603-->
+
+*  The GraphQL `V1/products/special-price-delete` request now deletes only the price with a specified `store_id` as expected. Previously, the call removed all special prices for the specified  SKU from all stores.
+
+<!---  magento/partners-magento2ee#280 -->
+
+*  Fixed an error with the `country_code` attribute in the GraphQL `createGiftRegistry` mutation.
+
+<!--- magento/magento2#31380 -->
+
+*  The  `CartQuery` mutation now returns the correct thumbnail of the specified product. Previously, it returned the thumbnail of the parent product.
+
+<!--- ENGCOM-8477-->
+
+*  The GraphQL API no longer exposes a product’s special price when the special price period is set for a future date. [GitHub-30210](https://github.com/magento/magento2/issues/30210), [GitHub-29631](https://github.com/magento/magento2/issues/29631)
+
+<!--- MC-41084 ENGCOM-9042 -->
+
+*  Corrected a problem that caused the `products` query to return erroneous info about price tiers on items that do not have tier pricing set.
+
 ### Import/export
 
 <!--- MC-41576-->
@@ -972,6 +1018,26 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- ENGCOM-8946 -->
 
 *  Concatenation for SameSite cookie parameters has been corrected. Previously, incorrect concatenation appended the `lex` suffix to `value`, `domain`, and other parameters.
+
+<!--- ENGCOM-8698 ENGCOM-9034 -->
+
+*  `allure-framework/allure-phpunit` has been upgraded to v1.3.1 throughout the code base. Previously, Magento displayed this error:  `Warning: Use of undefined constant GLOB_BRACE - assumed 'GLOB_BRACE' (this will throw an Error in a future version of PHP) in /var/www/html/src/vendor/allure-framework/allure-phpunit/src/Yandex/Allure/Adapter/AllureAdapter.php:74.`
+
+<!--- ENGCOM-8783 -->
+
+*  Magento now displays more informative errors when errors occur running `bin/magento` commands in production mode. Previously, either Magento  displayed no error messages or displayed messages that lacked information.
+
+<!--- ENGCOM-8953 -->
+
+*  The `ArrayIterator` PHP object has been updated to work as expected with PHP 7.4.
+
+<!--- ENGCOM-8469 -->
+
+*  Magento no longer throws an error when a customer tries to complete an order when no shipping carriers are available. Instead, it displays the checkout page and this message: `Sorry, no quotes are available for this order at this time`. Previously, Magento displayed a blank checkout page and records this message in the exception log: `array_keys() expects parameter 1 to be array, null given`.
+
+<!--- ENGCOM-8557 -->
+
+*  Magento no longer logs each cookie as a separate context. The `$_COOKIE` array has also been converted to a string. Previously, because each cookie was logged as a separate context, when the number of cookies exceeded 50, Magento logged this message: `Unable to send the cookie. Maximum number of cookies would be exceeded`.
 
 ### Invoice
 
@@ -1140,6 +1206,16 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ENGCOM-8551-->
 
 *  The REST call GET `/V1/customers/search` now returns correct information for customers that are subscribed to multiple newsletters.
+
+### Order
+
+<!--- MC-40963-->
+
+*  Magento now correctly calculates an invoiced customer balance when returning store credit to a customer account for a partially invoiced order.
+
+<!--- ENGCOM-8710-->
+
+*  Magento now saves a modified order as expected when it saves a refunded customer balance.
 
 ### Payment methods
 
@@ -1451,6 +1527,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Magento no longer throws an error when a merchant tries to ship an order using DHL when the **Create shipping label** checkbox is enabled and the product name contains unicode characters. Previously, Magento displayed this error when requesting label creation: `The response is in wrong format`.
 
+<!--- ENGCOM-8952 -->
+
+*  You can successfully place an order from the Admin in a multisite deployment in which `United States` is enabled on one website and`Disable all countries` is enabled as the default scope on the other website. Previously, Magento did not place the order and displayed this error: `Please check the shipping address information. "regionId" is required. Enter and try again`.
+
 ### Staging
 
 <!--- MC-40850  magento/partners-magento2ee#489-->
@@ -1633,6 +1713,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Magento now displays a DateRange filter on the Logged in area of the **Customer**  >  **Login** page. Previously, Magento displayed a Text filter.
 
+<!--- ENGCOM-9009 -->
+
+*  JavaScript has been removed from template files and moved into separate files to reduce rendering issues on Admin pages. Previously, Admin pages did not render properly in deployments in which minify HTML had been enabled. Magento displayed this error: `An error has happened during application run. See exception log for details`.
+
 ### URL rewrites
 
 <!--- MC-41550-->
@@ -1654,6 +1738,14 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- MC-38931  magento/magento2#31106-->
 
 *  Product URL rewrites are now removed as expected when a product is removed from a website. [GitHub-24184](https://github.com/magento/magento2/issues/24184)
+
+<!--- ENGCOM-8719 -->
+
+*  Added a `main_table` reference to the `store_id` in the `addStoreFilter` function of the app/code/Magento/UrlRewrite/Model/ResourceModel/UrlRewriteCollection.ph collection. Previously, problems occurred whenever a `join` is added to the collection on a table that also contains a `store_id` column.
+
+<!--- ENGCOM-8894 -->
+
+*  The `V1/products/:sku` REST endpoint now re-generates product URL rewrites as expected. Previously, `V1/products/:sku` re-generated product `url_key` values but not URL rewrites.
 
 ### User
 
