@@ -18,7 +18,7 @@ An example of such functionality would be an ability for a user to specify a URL
 Your application might attempt to download the image to allow the user to crop it so that it can be used as an avatar.
 If there is also some internal service that exposes a web API accessible by GET HTTP method then an attacker can
 craft a URL that will call the endpoint. If the API is not RESTful then calling the endpoint might actually modify state.
-For example, calling the PHP `file_get_contents('http://internal-service/mess-my-store')` method with a malicious URL 
+For example, calling the PHP `file_get_contents('http://internal-service/mess-my-store')` method with a malicious URL
 that is subsequently used by the application will achieve this.
 
 Another example would be an integration with a 3rd-party tax info provider service. We want to display accurate tax
