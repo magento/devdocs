@@ -149,6 +149,14 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Updated `sortOrder` load for `AsyncCssPlugin`. Magento now loads `AsyncCssPlugin` before `JsFooterPlugin`.
 
+<!--- ENGCOM-8701 -->
+
+*  `Magento\Config\Model\Config\PathValidator` now checks if an element exists by the display path, and if it has a config path, uses the `config.xml` path instead for validation.
+
+<!--- ENGCOM-8684 -->
+
+*  Compiling Less files with Grunt or by server-side compilation now yields the same results. Previously. `.abs- styles`, which extends other `.abs- styles` in `_extends.less`, were not output properly when compiled with Grunt. This resulted in differences between production and development deployments.
+
 ### Adobe Stock Integration
 
 <!--- MC-39754-->
@@ -925,6 +933,14 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Deleting a disabled category that does not include a product now has no effect on catalog search and category flat index tables. Previously, deleting an inactive category triggered a full re-index.
 
+<!--- ENGCOM-8599 8474-->
+
+*  Custom indexers can now use different entity column names for subscriptions. Previously,  the database trigger used the column name from the indexer last set to "update by schedule"  rather than the designated indexer.
+
+<!--- ENGCOM-8887-->
+
+*  Magento no longer sends Ajax requests to reload customer data sections (`Magento_Customer/js/section-config`) that are unaffected by the request.
+
 ### Infrastructure
 
 <!--- MC-41445-->
@@ -1686,6 +1702,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ENGCOM-9009 -->
 
 *  JavaScript has been removed from template files and moved into separate files to reduce rendering issues on Admin pages. Previously, Admin pages did not render properly in deployments in which minification of HTML had been enabled. Magento displayed this error: `An error has happened during application run. See exception log for details`.
+
+<!--- ENGCOM-9044 -->
+
+*  The `dropdownDialog` widget now loads only the draggable and resizable `jquery-ui` chunks it needs. Previously, it loaded large amounts of unnecessary code, which inflated load time and reduced performance.
 
 ### URL rewrites
 
