@@ -831,27 +831,27 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- magento/magento2#31164-->
 
-*  Added a `type` option to the GraphQL `products` query `CustomizableDateOption` or `CustomizableDateValue` to support different`Date` options. Previously, all `Date` options used the same `type` options.
+*  The `CustomizableDateValue` object now contains the `type` attribute. Its value is an enumeration that can be set to DATE, DATE_TIME, or TIME.
 
 <!---  magento/partners-magento2ee#421-->
 
-*  The [`dynamicBlocks` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/dynamic-blocks.html) returns the contents of dynamic blocks that match the specified filters.
+*  The [`dynamicBlocks` query]({{page.baseurl}}/graphql/queries/dynamic-blocks.html) returns the contents of dynamic blocks that match the specified filters.
 
 <!--- ENGCOM-8603-->
 
-*  The GraphQL `V1/products/special-price-delete` request now deletes only the price with a specified `store_id` as expected. Previously, the call removed all special prices for the specified  SKU from all stores.
+*  The POST `V1/products/special-price-delete` request now deletes only the price with a specified `store_id` as expected. Previously, the call removed all special prices for the specified  SKU from all stores.
 
 <!---  magento/partners-magento2ee#280 -->
 
-*  Fixed an error with the `country_code` attribute in the GraphQL `createGiftRegistry` mutation.
+*  Fixed an error with the `country_code` attribute in the `createGiftRegistry` mutation.
 
 <!--- magento/magento2#31380 -->
 
-*  The  `CartQuery` mutation now returns the correct thumbnail of the specified product. Previously, it returned the thumbnail of the parent product.
+*  The  `addConfigurableProductsToCart` mutation now returns the correct thumbnail of the specified product. Previously, it returned the thumbnail of the parent product.
 
 <!--- ENGCOM-8477-->
 
-*  The GraphQL API no longer exposes a product’s special price when the special price period is set for a future date. [GitHub-30210](https://github.com/magento/magento2/issues/30210), [GitHub-29631](https://github.com/magento/magento2/issues/29631)
+*  The `products` query no longer exposes a product’s special price when the special price period is set for a future date. [GitHub-30210](https://github.com/magento/magento2/issues/30210), [GitHub-29631](https://github.com/magento/magento2/issues/29631)
 
 <!--- MC-41084 ENGCOM-9042 -->
 
@@ -1185,11 +1185,13 @@ Repetitive actions have been replaced with action groups in these tests:
 
 `SaveCmsPageActionGroup` <!--- ENGCOM-8683-->
 
+`StorefrontAssertProductNameIsNotOnProductMainPageActionGroup` <!--- ENGCOM-8562-->
+
 `StorefrontGuestCheckoutProceedToPaymentStepActionGroup` <!--- ENGCOM-8582-->
 
 `StorefrontHoverProductOnCategoryPageActionGroup` <!--- ENGCOM-8575-->
 
-`StorefrontAssertProductNameIsNotOnProductMainPageActionGroup` <!--- ENGCOM-8562-->
+`StorefrontSelectCustomizeAndAddToTheCartButtonActionGroup` <!--- ENGCOM-8573-->
 
 #### Deleted action groups
 
@@ -1731,11 +1733,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8719 -->
 
-*  Added a `main_table` reference to the `store_id` in the `addStoreFilter` function of the app/code/Magento/UrlRewrite/Model/ResourceModel/UrlRewriteCollection.ph collection. Previously, problems occurred whenever a `join` is added to the collection on a table that also contains a `store_id` column.
+*  Added a `main_table` reference to the `store_id` in the `addStoreFilter` function of the `app/code/Magento/UrlRewrite/Model/ResourceModel/UrlRewriteCollection.php` collection. Previously, problems occurred whenever a `join` is added to the collection on a table that also contains a `store_id` column.
 
 <!--- ENGCOM-8894 -->
 
-*  The `V1/products/:sku` REST endpoint now re-generates product URL rewrites as expected. Previously, `V1/products/:sku` re-generated product `url_key` values but not URL rewrites.
+*  The `PUT /V1/products/:sku` REST endpoint now re-generates product URL rewrites as expected. Previously, the endpoint re-generated product `url_key` values but not URL rewrites.
 
 ### User
 
