@@ -66,11 +66,11 @@ This ensures net-new customers or existing customers who have not made a purchas
 
 You can set up and run several shops with a single implementation of Magento. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html).
 
-For shops that do not interact with each other, you can create multiple _websites_. Each website has specific articles, customer data, checkouts, and shopping cart that are not shared with other websites in Magento.
+For shops that do not interact with each other, you can create multiple _websites_. Each website has specific articles, customer data, checkout, and shopping cart that are not shared with other websites in Magento.
 
 Each website can include one or more _stores_ with different categories and articles, shared customer data, checkout, and shopping cart. For these stores, a customer can sign up once and shop across different catalogs of products with a single checkout.
 
-You can further create _store views_ for different languages, layouts, and designs. Each view can have a separate domain, branding, and language while sharing articles, customer data, checkout, and shopping cart.
+Additionally, you can create _store views_ for different languages, layouts, and designs. Each view can have a separate domain, branding, and language while sharing articles, customer data, checkout, and shopping cart.
 
 The following are examples to better explain:
 
