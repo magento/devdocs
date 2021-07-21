@@ -12,7 +12,7 @@ Examples of sensitive information include customer passwords, addresses, date of
 Let's focus on the case when an endpoint, or a page, is configured only for authenticated customers or
 admin users with certain permissions, yet still exposes information that it shouldn't.
 
-### Example 1: Customer information
+### Customer information example
 
 Imagine a page or an endpoint that allows admin users to read data of a customer with the specified ID.
 The controller/endpoint is properly configured to be accessible only by admin users that have
@@ -54,7 +54,7 @@ UI components read data from a global JS object that contains all data retrieved
 The object is rendered into JS on the backend and is available in response HTML.
 The data provider that uses `CustomerQueryServiceInterface` will expose full customer data inside the response HTML.
 
-### Solution for example 1
+### A solution for the example
 
 The solution is to have operation-specific DTOs and a case-specific service.
 
