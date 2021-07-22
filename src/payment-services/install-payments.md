@@ -5,7 +5,7 @@ title: Install Payment Services
 
 The Payment Services extension for Adobe Commerce and Magento Open Source can be installed with Composer keys, which are linked to the Magento ID ([mageid]({{ page.baseurl }}/marketplace/sellers/profile-personal.html#field-descriptions)) provided in the signup process. Composer uses these keys during the initial installation of {{site.data.var.ee}}, or in situations in which the Composer keys were not previously saved to the `auth.json` file.
 
-See [Get your authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) for more information about obtaining Composer keys.
+See [Get your authentication keys]({{ site.baseurl }}{{ site.gdeurl }}/install-gde/prereq/connect-auth.html) for more information about obtaining Composer keys.
 
 There are two ways to install this extension---for [{{site.data.var.ece}}](#magento-commerce-cloud) or [On-premises](#on-premises) installations. These methods require you to use the Command Line Interface (CLI).
 
@@ -103,7 +103,7 @@ To see which Composer keys are configured:
    cat /path/to/auth.json
    ```
 
-1. See [which keys are associated with your Magento ID]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
+1. See [which keys are associated with your Magento ID]({{ site.baseurl }}{{ site.gdeurl }}/install-gde/prereq/connect-auth.html).
 
 ### Not enough memory for PHP
 
