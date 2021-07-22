@@ -19,7 +19,7 @@ See a full list of features and more detailed information in the [user guide]({{
 
 Payment Services is available for some supported Magento versions.
 
-See [Lifecycle policy]({{ site.devdocs_url }}/release/lifecycle-policy.html) and [Upcoming releases]({{ site.devdocs_url }}/release/) for more release and version-specific information.
+See [Lifecycle policy]({{ site.baseurl }}/release/lifecycle-policy.html) and [Upcoming releases]({{ site.baseurl }}/release/) for more release and version-specific information.
 
 ## Get started
 
