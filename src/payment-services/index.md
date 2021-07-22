@@ -13,7 +13,7 @@ Payment Services is:
 *  Designed to meet all your payments needs
 *  Self-contained within the Admin
 
-See a full list of features and more detailed information in the [user guide]({{ site.user_guide_url }}/user-guide/payment-services/index.html).
+See a full list of features and more detailed information in the [user guide]({{ site.user_guide_url }}/payment-services/index.html).
 
 ## Availability
 
@@ -23,7 +23,7 @@ See [Lifecycle policy]({{ site.baseurl }}/release/lifecycle-policy.html) and [Up
 
 ## Get started
 
-Onboarding and setting up Payment Services is completed in [just a few steps]({{ site.user_guide_url }}/user-guide/payment-services/index.html#get-started).
+Onboarding and setting up Payment Services is completed in [just a few steps]({{ site.user_guide_url }}/payment-services/index.html#get-started).
 
 This onboarding flow diagram shows the general process, for both the user and the internal system, for onboarding Payment Services.
 
@@ -34,5 +34,5 @@ _Onboarding flow (click to zoom)_
 
 Payment Services is designed to be the simplest payments system you've ever used. Got questions about features, implementation, configuration, fee structure, extensibility, or reporting? We've got you covered.
 
-*  [MerchDocs (user guide)]({{ site.user_guide_url }}/payment-services/payments.html)---See our Payment Services-related user guide documentation.
+*  [MerchDocs (user guide)]({{ site.user_guide_url }}/payment-services/index.html)---See our Payment Services-related user guide documentation.
 *  [Help center](https://support.magento.com/hc/en-us)---See our Payment Services-related knowledgebase and [submit Support tickets](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) for extra help.

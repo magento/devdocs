@@ -3,13 +3,13 @@ group: payment-services
 title: Configure Payment Services
 ---
 
-After you install Payment Services, you can easily configure it from [within the Admin]({{ site.user_guide_url }}/user-guide/payment-services/configure-payments.html) or via the Command Line Interface (CLI).
+After you install Payment Services, you can easily configure it from [within the Admin]({{ site.user_guide_url }}/payment-services/configure-payments.html) or via the Command Line Interface (CLI).
 
 ## Configure data export
 
 Payment Services combines order data exported from Magento Open Source and Adobe Commerce with aggregated payment data from payment providers to create useful reports. The Payment Services extension uses indexers to efficiently collect all of the necessary data for the reports.
 
-See [our user guide]({{ site.user_guide_url }}/user-guide/payment-services/order-payment-status#data-used-in-the-report.html) to learn about the data used in Payment Services reporting.
+See [our user guide]({{ site.user_guide_url }}/payment-services/order-payment-status#data-used-in-the-report.html) to learn about the data used in Payment Services reporting.
 
 ### Set indexers
 
@@ -32,7 +32,7 @@ bin/magento indexer:set-mode schedule sales_order_data_exporter sales_order_stat
 {:.bs-callout-tip}
 If you don't specify any indexers in your command, all indexers are updated to the same value. If you want to change a specific indexer you must list it in your command.
 
-See [Configure indexers]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-index.html#configure-indexers) in [Manage the Indexers]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-index.html) to learn more about manually changing the mode of an indexer or [Index management]({{ site.user_guide_url }}/user-guide/system/index-management.html#change-the-index-mode) to learn how to to change it in the Admin.
+See [Configure indexers]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-index.html#configure-indexers) in [Manage the Indexers]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-index.html) to learn more about manually changing the mode of an indexer or [Index management]({{ site.user_guide_url }}/system/index-management.html#change-the-index-mode) to learn how to to change it in the Admin.
 
 ### Manually reindex data
 
