@@ -33,22 +33,22 @@ When Live Search is configured and synchronized during onboarding, it can take u
 
 The following events trigger a full sync and index build:
 
-- Onboarding [catalog data sync]({{ site.baseurl }}/live-search/config-connect.html#catalog-data-sync)
-- Changes to attribute metadata
+-  Onboarding [catalog data sync]({{ site.baseurl }}/live-search/config-connect.html#catalog-data-sync)
+-  Changes to attribute metadata
 
 For example, changing the `Use in Search` property of the `color` attribute from `No` to `Yes` changes the attribute metadata to `searchable==true`, and triggers a full sync and reindex. The following product metadata are indexed by Live Search and trigger a full sync and reindex when changed:
 
-- `searchable`
-- `sortable`
-- `filterableInSearch`
-- `visibleInSearch`
+-  `searchable`
+-  `sortable`
+-  `filterableInSearch`
+-  `visibleInSearch`
 
 ### Streaming product updates
 
 After the initial index is built during [onboarding]({{ site.baseurl }}/live-search/config-connect.html#catalog-data-sync), the following incremental product updates are continuously synced and reindexed:
 
-- New product(s) added to the catalog
-- Changes to product attribute values
+-  New product(s) added to the catalog
+-  Changes to product attribute values
 
   For example, adding a new swatch value to the `color` attribute is handled as a streaming product update.
 
