@@ -19,7 +19,7 @@ We have the information we need to create the Quest Pursuit Jump Cardo Ball Clon
 
 The `visibility` attribute is set to 4, meaning the product can be found by browsing or searching.
 
-The below table shows the equivalent code for the visibility attribute
+The below table shows the equivalent code for the visibility attribute:
 
 Visibility | Code
 --- | ---
@@ -154,15 +154,15 @@ Visibility | Code
          },
          {
             "attribute_code":"meta_description",
-            "value":" <p>Set of three products like  Quest Lumaflex™ Band,Pursuit Lumaflex™ Tone Band,Zing Jump Rope,Dual Handle Cardio Ball</p>"
+            "value":" <p>Set of three products like Quest Lumaflex™ Band, Pursuit Lumaflex™ Tone Band, Zing Jump Rope, Dual Handle Cardio Ball</p>"
          },
          {
             "attribute_code":"short_description",
-            "value":"<p>The Quest Pursuit Jump Cardo Ball Kit helps stock your studio with the basics you need for a full-range workout. The kit is composed of four best-selling Luma accessories in one easy bundle: quest, zing jump, dual handle cardo ball. Choose what you want  . The kit includes:</p><ul><li>Pursuit Lumaflex™ Tone Band</li><li>Zing Jump Rope</li><li>Dual Handle Cardio Ball</li></ul>"
+            "value":"<p>The Quest Pursuit Jump Cardo Ball Kit helps stock your studio with the basics you need for a full-range workout. The kit is composed of four best-selling Luma accessories in one easy bundle: quest, zing jump, dual handle cardo ball. Choose what you want. The kit includes:</p><ul><li>Pursuit Lumaflex™ Tone Band</li><li>Zing Jump Rope</li><li>Dual Handle Cardio Ball</li></ul>"
          },
          {
             "attribute_code":"description",
-            "value":"<p>The Quest Pursuit Jump Cardo Ball Kit helps stock your studio with the basics you need for a full-range workout. The kit is composed of four best-selling Luma accessories in one easy bundle: quest, zing jump, dual handle cardo ball. Choose what you want  . The kit includes:</p><ul><li>Pursuit Lumaflex™ Tone Band</li><li>Zing Jump Rope</li><li>Dual Handle Cardio Ball</li></ul>"
+            "value":"<p>The Quest Pursuit Jump Cardo Ball Kit helps stock your studio with the basics you need for a full-range workout. The kit is composed of four best-selling Luma accessories in one easy bundle: quest, zing jump, dual handle cardo ball. Choose what you want. The kit includes:</p><ul><li>Pursuit Lumaflex™ Tone Band</li><li>Zing Jump Rope</li><li>Dual Handle Cardio Ball</li></ul>"
          }
       ]
    },
@@ -358,7 +358,7 @@ Visibility | Code
         },
         {
             "attribute_code": "meta_description",
-            "value": " <p>Set of three products like  Quest Lumaflex™ Band,Pursuit Lumaflex™ Tone Band,Zing Jump Rope,Dual Handle Cardio Ball</p>"
+            "value": " <p>Set of three products like  Quest Lumaflex™ Band, Pursuit Lumaflex™ Tone Band, Zing Jump Rope, Dual Handle Cardio Ball</p>"
         },
         {
             "attribute_code": "weight_type",
