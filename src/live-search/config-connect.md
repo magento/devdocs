@@ -12,13 +12,13 @@ To generate an API key and private key, see [Commerce Services](https://docs.mag
 
 ## {{site.data.var.ee}} developer or SI
 
-The developer or SI configures the SaaS Environment as described in the Commerce Services section of the configuration. Commerce Services becomes available in the Configuration sidebar when a SaaS module is installed.
+The developer or SI configures the SaaS environment as described in the Commerce Services section of the configuration. Commerce Services becomes available in the Configuration sidebar when a SaaS module is installed.
 
 ## Catalog data sync
 
-Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. The synchronization between the product catalog and the catalog service begins after Live Search is connected.
+Live Search requires synchronized product data for search operations and synchronized attribute data to configure facets. The initial synchronization between the product catalog and the catalog service begins when Live Search is first connected and can can take up to eight hours to complete. During the process, catalog data is exported from your {{site.data.var.ee}} instance and indexed by Live Search.
 
-It can take up to 24 hours to export catalog data from your {{site.data.var.ee}} instance and for it to be indexed by Live Search.
+After the initial synchronization, it can take up to fifteen minutes for incremental product updates to become available to storefront search. To learn more, go to [Streaming Product Updates]({{ site.baseurl }}/live-search/indexing.html#streaming-product-updates).
 
 ### Verify catalog sync
 
