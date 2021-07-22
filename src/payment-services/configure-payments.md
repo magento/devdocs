@@ -9,7 +9,7 @@ After you install Payment Services, you can easily configure it from [within the
 
 Payment Services combines order data exported from Magento Open Source and Adobe Commerce with aggregated payment data from payment providers to create useful reports. The Payment Services extension uses indexers to efficiently collect all of the necessary data for the reports.
 
-See [our user guide]({{ site.user_guide_url }}/payment-services/order-payment-status#data-used-in-the-report) to learn about the data used in Payment Services reporting.
+See [our user guide]({{ site.user_guide_url }}/payment-services/order-payment-status.html#data-used-in-the-report) to learn about the data used in Payment Services reporting.
 
 ### Set indexers
 
