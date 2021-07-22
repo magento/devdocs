@@ -12,7 +12,9 @@ The Live Search API allows a client to sort by any product attribute that has th
 
 The client calls the search service from the storefront to retrieve (filterable, sortable) index metadata. Only searchable product attributes with the _Use in Layered Navigation_ property set to `Filterable (with results)` and _Use for Sorting in Product Listing_ set to `Yes` can be called by the search service.
 
-To construct a dynamic query, the search service needs to know which attributes are searchable and their weight. Live Search honors {{site.data.var.ee}} search weights (1-10, where 10 is the highest priority).
+To construct a dynamic query, the search service needs to know which attributes are searchable and their weight. Live Search honors {{site.data.var.ee}} search weights (1-10, where 10 is the highest priority). The list of data that is synced and shared with the catalog service can be found in the schema, which is defined in:
+
+`vendor/magento/module-catalog-data-exporter/etc/et_schema.xml`
 
 ![Live Search indexing client search diagram]({{ page.baseurl }}/live-search/images/indexing-pipeline.svg)
 _Indexing pipeline_
@@ -24,6 +26,39 @@ _Indexing pipeline_
 1. Store indexing attributes.
 
 1. Reindex search index cluster.
+
+### Full index
+
+When Live Search is configured and synchronized during onboarding, it can take up to eight hours to build the initial index. The process begins after `cron` submits the feed and finishes running.
+
+The following events trigger a full sync and index build:
+
+- Onboarding [catalog data sync]({{ site.baseurl }}/live-search/config-connect.html#catalog-data-sync)
+- Changes to attribute metadata
+
+  For example, changing the `Use in Search` property of the `color` attribute from `No` to `Yes` changes the attribute metadata and triggers a full sync and reindex.  The following product metadata are indexed:
+
+- `searchable`
+- `sortable`
+- `filterableInSearch`
+- `visibleInSearch`
+
+### Streaming product updates
+
+After the initial index is built during [onboarding]({{ site.baseurl }}/live-search/config-connect.html#catalog-data-sync), the following incremental product updates are continuously synced and reindexed:
+
+- New product(s) added to the catalog
+- Changes to product attribute values
+
+  For example, adding a new swatch value to the `color` attribute is handled as a streaming product update.
+
+Streaming update workflow:
+
+1. Updated products are synced from the {{site.data.var.ee}} instance to the catalog service.
+
+1. The indexing service continuously looks for product updates from the catalog service and reindexes the search index cluster as needed.
+
+1. After reindexing, it takes about fifteen minutes a product update to become available for storefront search.
 
 ## Client search
 
