@@ -103,7 +103,7 @@ To see which Composer keys are configured:
    cat /path/to/auth.json
    ```
 
-1. See [which keys are associated with your Magento ID]({{ site.user_guide_url }}/guides/v2.4/install-gde/prereq/connect-auth.html).
+1. See [which keys are associated with your Magento ID]({{ site.devdocs_url }}/guides/v2.4/install-gde/prereq/connect-auth.html).
 
 ### Not enough memory for PHP
 
