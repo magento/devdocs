@@ -76,3 +76,43 @@ _Index Metadata_
 1. Search Service calls Search Admin Service.
 
 1. Search Service calls Indexing Pipeline.
+
+## Indexed product fields
+
+|Indexed for all products |
+|--- |
+|`environment_id` |
+|`website_code` |
+|`store_code` |
+|`store_view_code` |
+|`product_id` |
+|`sku` |
+|`name` |
+|`type` |
+|`displayable` |
+|`deleted` |
+|`url` |
+|`currency` |
+|`meta_description` |
+|`meta_keyword` |
+|`meta_title` |
+|`description` |
+|`short_description` |
+|`weight` |
+|`image` |
+|`small_image` |
+|`thumbnail_image` |
+|`prices` |
+|`in_stock` |
+|`low_stock` |
+
+|Indexed for configurable products |
+|--- |
+|`childrenSkus` |
+
+|Indexed product metadata|
+|--- |
+|`searchable` |
+|`sortable` |
+|`filterableInSearch` |
+|`visibleInSearch` |
