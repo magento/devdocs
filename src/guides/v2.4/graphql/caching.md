@@ -58,6 +58,22 @@ SHA256(Store ID + Currency + Is-Logged-In + Customer group + Customer tax rate)
 
 Magento caches the results of all applicable queries. If you specify the resultant hash as the input value for the `X-Magento-Cache-Id` header of a GraphQL request, then the cached results can be loaded. Although POST requests are not cached, the resultant hashed value provide more opportunities to obtain updated cache IDs.
 
+To define additional factors for computing `X-Magento-Cache-Id` hash values, add a section similar to the following to the [di.xml file]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html) of a custom module. The `argument name` must be set to `idFactorProviders`, with the additional attribute names assigned as `item names`.
+
+```xml
+<type name="Magento\GraphQlCache\Model\CacheId\CacheIdCalculator">
+    <arguments>
+        <argument name="idFactorProviders" xsi:type="array">
+            <item name="currency" xsi:type="object">Magento\StoreGraphQl\CacheIdFactorProviders\CurrencyProvider</item>
+            <item name="store" xsi:type="object">Magento\StoreGraphQl\CacheIdFactorProviders\StoreProvider</item>
+        </argument>
+    </arguments>
+</type>
+```
+
+{:.bs-callout-info}
+Adding factors could generate too many unique cache keys, thereby reduce caching hits as well as performance.
+
 ## Caching with Varnish
 
 We recommend setting up Varnish as a reverse proxy to serve the full page cache in a production environment. See [Configure and use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) for more information.
