@@ -30,7 +30,7 @@ $('#init_element').alert({
 
 ```javascript
 require([
-    'Magento_Ui/js/modal/alert'
+    'Magento_Ui/js/modal/alert',
     'jquery'
 ], function(alert, $) { // Variable that represents the `alert` function
 
