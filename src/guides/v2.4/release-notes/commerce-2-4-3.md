@@ -181,9 +181,9 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The `bin/magento setup:db:status` command now returns a message indicating that everything is up-to-date after a successful upgrade. Previously, Magento displayed this error: `Declarative Schema is not up to date`.
 
-<!--- MC-40031 ENGCOM-8088-->
+<!--- MC-40031 -->
 
-*  Configuration values are now preserved on form reload when the creation of a new configurable product fails. Previously, values were lost during form reload, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
+*  Configuration values are now preserved on form reload when the creation of a new configurable product fails. Previously, values were lost during form reload, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`. [GitHub-32102](https://github.com/magento/magento2/issues/32102)
 
 <!--- MC-37596-->
 
@@ -195,23 +195,23 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8508 -->
 
-*  Magento deployments running on Galera Cluster now support more customers.
+*  Magento deployments running on Galera Cluster now support more customers. [GitHub-31038](https://github.com/magento/magento2/issues/31038)
 
 <!--- ENGCOM-9036 MC-41938 -->
 
-*  Administrators can now successfully log in to a deployment when Magento has been installed with either the `—use-rewrites=0` option or with `web/seo/use_rewrites` set to 0 in `core_config_data_table`.
+*  Administrators can now successfully log in to a deployment when Magento has been installed with either the `—use-rewrites=0` option or with `web/seo/use_rewrites` set to 0 in `core_config_data_table`. [GitHub-32100](https://github.com/magento/magento2/issues/32100)
 
 <!--- ENGCOM-8451 -->
 
-*  Updated `sortOrder` load for `AsyncCssPlugin`. Magento now loads `AsyncCssPlugin` before `JsFooterPlugin`.
+*  Updated `sortOrder` load for `AsyncCssPlugin`. Magento now loads `AsyncCssPlugin` before `JsFooterPlugin`. [GitHub-30882](https://github.com/magento/magento2/issues/30882)
 
 <!--- ENGCOM-8701 -->
 
-*  `Magento\Config\Model\Config\PathValidator` now checks if an element exists by the display path, and if it has a config path, uses the `config.xml` path instead for validation.
+*  `Magento\Config\Model\Config\PathValidator` now checks if an element exists by the display path, and if it has a config path, uses the `config.xml` path instead for validation. [GitHub-27678](https://github.com/magento/magento2/issues/27678)
 
 <!--- ENGCOM-8684 -->
 
-*  Compiling Less files with Grunt or by server-side compilation now yields the same results. Previously. `.abs- styles`, which extends other `.abs- styles` in `_extends.less`, were not output properly when compiled with Grunt. This resulted in differences between production and development deployments.
+*  Compiling Less files with Grunt or by server-side compilation now yields the same results. Previously. `.abs- styles`, which extends other `.abs- styles` in `_extends.less`, were not output properly when compiled with Grunt. This resulted in differences between production and development deployments. [GitHub-7231](https://github.com/magento/magento2/issues/7231)
 
 ### AdminGWS
 
@@ -291,11 +291,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-30317 ENGCOM-7141-->
 
-*  Merchants can now assign a unique price for a bundle product on each store view of a multistore deployment. Website-specific prices are saved in the `catalog_product_bundle_selection_price` table. Previously, Magento did not base a bundle product’s price on website scope even when  **Stores** > **Configuration** > **Catalog** > **Catalog** > **Price** > **Catalog Price Scope** was set to `Website`. No website-specific prices were saved in `catalog_product_bundle_selection_price`.
+*  Merchants can now assign a unique price for a bundle product on each store view of a multistore deployment. Website-specific prices are saved in the `catalog_product_bundle_selection_price` table. Previously, Magento did not base a bundle product’s price on website scope even when  **Stores** > **Configuration** > **Catalog** > **Catalog** > **Price** > **Catalog Price Scope** was set to `Website`. No website-specific prices were saved in `catalog_product_bundle_selection_price`. [GitHub-12584](https://github.com/magento/magento2/issues/12584)
 
 <!--- ENGCOM-8705 MC-38953-->
 
-*  Invoices for bundle products now display the correct quantity for the associated simple products when **Dynamic Pricing** is disabled. Previously, simple products associated with the bundle product had the quantity of the parent product, not the bundle product).
+*  Invoices for bundle products now display the correct quantity for the associated simple products when **Dynamic Pricing** is disabled. Previously, simple products associated with the bundle product had the quantity of the parent product, not the bundle product). [GitHub-30802](https://github.com/magento/magento2/issues/30802)
 
 <!--- magento/magento2#30374 MC-36930-->
 
@@ -327,7 +327,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8630-->
 
-*  `_.isEmpty()` checks in the `defaultCaptcha.js` file now complete successfully. Previously, these checks did not complete, and as result, the checkout page failed to load after upgrade.
+*  `_.isEmpty()` checks in the `defaultCaptcha.js` file now complete successfully. Previously, these checks did not complete, and as result, the checkout page failed to load after upgrade. [GitHub-31641](https://github.com/magento/magento2/issues/31641)
 
 ### Cart and checkout
 
@@ -353,7 +353,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40271 magento/partners-magento2ee#476-->
 
-*  You are now redirected to the checkout page as expected after adding a bundle product to the cart from a Schedule Update preview and clicking the cart.
+*  You are now redirected to the checkout page as expected after adding a bundle product to the cart from a Schedule Update preview and clicking the cart. [GitHub-447](https://github.com/magento/partners-magento2ee/issues/447)
 
 <!--- MC-32805-->
 
@@ -365,11 +365,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-39517  magento/partners-magento2ee#460-->
 
-*  Magento now displays an informative error message and does not update product quantity when a shopper adds an invalid product quantity and clicks the **Update items and Quantities** button on the Manage Shopping cart page. Previously, Magento upgraded the product quantity and did not display an error message.
+*  Magento now displays an informative error message and does not update product quantity when a shopper adds an invalid product quantity and clicks the **Update items and Quantities** button on the Manage Shopping cart page. Previously, Magento upgraded the product quantity and did not display an error message. [GitHub-459](https://github.com/magento/partners-magento2ee/issues/459)
 
 <!--- MC-37807 ENGCOM-8530-->
 
-*  Products with a customizable option `(File)` now include active links as expected throughout the multi-shipping checkout process. Previously, this link was missing.
+*  Products with a customizable option `(File)` now include active links as expected throughout the multi-shipping checkout process. Previously, this link was missing. [GitHub-31095](https://github.com/magento/magento2/issues/31095)
 
 <!--- MC-37689-->
 
@@ -377,7 +377,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-36703  magento/partners-magento2ee#439-->
 
-*  Magento now empties the shopping cart as expected after an administrator completes an order from the Admin that was created by a shopper on the storefront. Previously, when the customer logged back in after the administrator completed the order, the storefront cart still contained order contents.
+*  Magento now empties the shopping cart as expected after an administrator completes an order from the Admin that was created by a shopper on the storefront. Previously, when the customer logged back in after the administrator completed the order, the storefront cart still contained order contents. [GitHub-30262](https://github.com/magento/magento2/issues/30262)
 
 <!--- MC-35640-->
 
@@ -389,7 +389,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-29335-->
 
-*  All paid payment transactions created by guests are now saved to the database and visible in the Admin as expected. Previously, only a small subset of concurrent orders were saved in the database, and most orders were lost due to timeouts that resulted from database locks.
+*  All paid payment transactions created by guests are now saved to the database and visible in the Admin as expected. Previously, only a small subset of concurrent orders were saved in the database, and most orders were lost due to timeouts that resulted from database locks. [GitHub-25862](https://github.com/magento/magento2/issues/25862)
 
 <!--- MC-23989 magento/magento2#32251 -->
 
@@ -401,27 +401,27 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9006-->
 
-*  Added the `itemResolvers` argument to the catalog `di.xml` file. As a result, checkout is no longer broken if configurable and grouped product modules are disabled.
+*  Added the `itemResolvers` argument to the catalog `di.xml` file. As a result, checkout is no longer broken if configurable and grouped product modules are disabled. [GitHub-30860](https://github.com/magento/magento2/issues/30860)
 
 <!--- ENGCOM-8944-->
 
-*  Magento now displays the radio buttons in the **Payment & Shipping Information** section as expected during the Admin re-order workflow.
+*  Magento now displays the radio buttons in the **Payment & Shipping Information** section as expected during the Admin re-order workflow. [GitHub-30257](https://github.com/magento/magento2/issues/30257)
 
 <!--- MC-39158 ENGCOM-8493-->
 
-*  Magento now correctly applies cart price rules with a cart-level fixed discount when the cart contains a bundle product with multiple options. Previously, the cart price rule was not completely applied to the order.
+*  Magento now correctly applies cart price rules with a cart-level fixed discount when the cart contains a bundle product with multiple options. Previously, the cart price rule was not completely applied to the order. [GitHub-30952](https://github.com/magento/magento2/issues/30952)
 
 <!--- MC-40983 ENGCOM-8828-->
 
-*  The **Add to cart** button on the category list view now works as expected.
+*  The **Add to cart** button on the category list view now works as expected. [GitHub-32232](https://github.com/magento/magento2/issues/32232)
 
 <!--- ENGCOM-8490-->
 
-*  You can now use POST `/V1/carts/mine/items` to add a custom quantity of grouped products to a cart.
+*  You can now use POST `/V1/carts/mine/items` to add a custom quantity of grouped products to a cart. [GitHub-26909](https://github.com/magento/magento2/issues/26909)
 
 <!--- ENGCOM-8886-->
 
-*  Magento no longer populates the billing address area of the checkout workflow with the shipping address. Previously, when the **State/Province** field for the billing address was empty, and shipping and billing addresses differed, Magento populated the billing address **State/Province** field with information from the shipping address.
+*  Magento no longer populates the billing address area of the checkout workflow with the shipping address. Previously, when the **State/Province** field for the billing address was empty, and shipping and billing addresses differed, Magento populated the billing address **State/Province** field with information from the shipping address. [GitHub-31608](https://github.com/magento/magento2/issues/31608)
 
 ### Catalog
 
@@ -551,7 +551,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-35717  magento/partners-magento2ee#427-->
 
-*  Administrators can now add a product with a customizable option `(File)` to an order by SKU.
+*  Administrators can now add a product with a customizable option `(File)` to an order by SKU. [GitHub-30285](https://github.com/magento/magento2/issues/30285)
 
 <!--- MC-30625-->
 
@@ -563,11 +563,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9010 8947-->
 
-*  You can no longer create a product with a `NULL` SKU value. Previously, you could create a product without a SKU value through a custom importer or directly in the database, but when you tried to edit it from the Admin, Magento threw an error.
+*  You can no longer create a product with a `NULL` SKU value. Previously, you could create a product without a SKU value through a custom importer or directly in the database, but when you tried to edit it from the Admin, Magento threw an error. [GitHub-27411](https://github.com/magento/magento2/issues/27411), [GitHub-32525](https://github.com/magento/magento2/issues/32525)
 
 <!--- ENGCOM-8902-->
 
-*  Adding required custom options to a simple product no longer removes it from parent composite products without warning. Magento now displays an informative warning and does not save the product.  Previously, Magento saved the product changes and did not display a warning.
+*  Adding required custom options to a simple product no longer removes it from parent composite products without warning. Magento now displays an informative warning and does not save the product.  Previously, Magento saved the product changes and did not display a warning. [GitHub-30492](https://github.com/magento/magento2/issues/30492)
 
 ### Catalog rule
 
@@ -577,11 +577,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8367-->
 
-*  Temporary tables that begin with `catalogrule_product__temp` are now deleted as expected when re-indexing fails after a cart or catalog rule expires, is disabled, or becomes inactive.
+*  Temporary tables that begin with `catalogrule_product__temp` are now deleted as expected when re-indexing fails after a cart or catalog rule expires, is disabled, or becomes inactive. [GitHub-22273](https://github.com/magento/magento2/issues/22273)
 
 <!--- ENGCOM-8949-->
 
-*  Time zones are now applied in the same way in `\Magento\CatalogRule\Model\Indexer\IndexBuilder::reindexById` and `\Magento\CatalogRule\Model\Indexer\IndexBuilder::reindexByIds`.
+*  Time zones are now applied in the same way in `\Magento\CatalogRule\Model\Indexer\IndexBuilder::reindexById` and `\Magento\CatalogRule\Model\Indexer\IndexBuilder::reindexByIds`. [GitHub-29549](https://github.com/magento/magento2/issues/29549)
 
 ### CMS content
 
@@ -591,7 +591,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-40663 ENGCOM-8883-->
 
-*  Fixed the error handling for the CMS Page save controller. Previously, when an `Error` object was thrown on the `cms_page_prepare_save` event, Magento passed this object to the `addExceptionMessage` function, breaking its contract because this function expects an `Exception`. This was resolved by adding an error message using the `addErrorMessage` function.
+*  Fixed the error handling for the CMS Page save controller. Previously, when an `Error` object was thrown on the `cms_page_prepare_save` event, Magento passed this object to the `addExceptionMessage` function, breaking its contract because this function expects an `Exception`. This was resolved by adding an error message using the `addErrorMessage` function. [GitHub-30149](https://github.com/magento/magento2/issues/30149)
 
 <!--- MC-33490 magento/partners-magento2ee#435 -->
 
@@ -609,17 +609,29 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-39878  magento/magento2#31472-->
 
-*  Magento now correctly generates invoices for orders that contain only one configurable product.
+*  Magento now correctly generates invoices for orders that contain only one configurable product. [GitHub-31143](https://github.com/magento/magento2/issues/31143)
 
 <!--- ENGCOM-8673-->
 
-*  Shoppers can now add configurable products to their cart from a non-default store view. Previously, when the shopper on a non-default store view tried to add a configurable product, Magento displayed this error: `Could not add item to cart. Please check required options and try again`.
+*  Shoppers can now add configurable products to their cart from a non-default store view. Previously, when the shopper on a non-default store view tried to add a configurable product, Magento displayed this error: `Could not add item to cart. Please check required options and try again`. [GitHub-31660](https://github.com/magento/magento2/issues/31660)
 
 ### cron
 
 <!--- MC-30804-->
 
-*  Cron clean up queries have been refactored to reduce or eliminate the following performance issues: `cron` jobs remaining stuck in a pending state, increasingly slow MySQL queries, and an increase in CPU usage.
+*  Cron clean up queries have been refactored to reduce or eliminate the following performance issues: `cron` jobs remaining stuck in a pending state, increasingly slow MySQL queries, and an increase in CPU usage. [GitHub-26507](https://github.com/magento/magento2/issues/26507)
+
+<!--- ENGCOM-8571-->
+
+*  `cron` jobs now complete as expected and no longer throw this serialization error:  `[Magento\Framework\DB\Adapter\DeadlockException]SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock; try restarting transaction, query was: DELETE FROM cron_schedule WHERE (status = 'missed') AND (job_code in ('indexer_reindex_all_invalid', 'indexer_update_all_views', 'indexer_clean_all_changelogs')) AND (created_at < '2018-09-28 18:32:28’)`. [GitHub-18409](https://github.com/magento/magento2/issues/18409)
+
+<!--- ENGCOM-8571-->
+
+*  `indexer_update_all_views`  cron jobs now run as expected after a previous failure. The failed run is marked as a failure in the `cron_schedule schedule`, and the subsequent run does not automatically fail. Previously, the `cron_schedule` table filled with pending jobs, and `indexer_update_all_views` cron job did not run. [GitHub-23054](https://github.com/magento/magento2/issues/23054)
+
+<!--- ENGCOM-8571-->
+
+*  `cron` deadlocks no longer occur as a result of `cron` trying to set a lock in large deployments where groups overlapped. [GitHub-8933](https://github.com/magento/magento2/issues/8933)
 
 ### Custom customer attributes
 
@@ -697,7 +709,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-38346-->
 
-*  A customer segment events processor has been added for GraphQL requests. Previously, cart price rule discounts were not applied to the shopping cart when a customer segment was used in a cart price rule condition.
+*  A customer segment events processor has been added for GraphQL requests. Previously, cart price rule discounts were not applied to the shopping cart when a customer segment was used in a cart price rule condition. [GitHub-371](https://github.com/magento/partners-magento2ee/issues/371)
 
 ### Directory
 
@@ -751,15 +763,15 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9021-->
 
-*  String casting has been added to the email template filter method to ensure the return value is a `string`. Previously, when an exception was caught while not in developer mode, Magento returned a `phrase` object. This in turn triggered a fatal `Uncaught TypeError`.
+*  String casting has been added to the email template filter method to ensure the return value is a `string`. Previously, when an exception was caught while not in developer mode, Magento returned a `phrase` object. This in turn triggered a fatal `Uncaught TypeError`. [GitHub-32671](https://github.com/magento/magento2/issues/32671)
 
 <!--- ENGCOM-8807-->
 
-*  Order confirmation emails are now sent as expected when asynchronous sending is enabled (**Stores**  >  **Configuration**  >  **Sales**  > **Sales Emails**  >  **General Settings**  >  **Asynchronous sending**) on one website in a multi-site deployment.
+*  Order confirmation emails are now sent as expected when asynchronous sending is enabled (**Stores**  >  **Configuration**  >  **Sales**  > **Sales Emails**  >  **General Settings**  >  **Asynchronous sending**) on one website in a multi-site deployment. [GitHub-31950](https://github.com/magento/magento2/issues/31950)
 
 <!--- MC-18023 ENGCOM-9000-->
 
-*  Magento now logs an error as expected when an exception occurs as a customer attempts to send an email from the Contact Us form.
+*  Magento now logs an error as expected when an exception occurs as a customer attempts to send an email from the Contact Us form. [GitHub-23645](https://github.com/magento/magento2/issues/23645)
 
 ### Frameworks
 
@@ -805,7 +817,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8232-->
 
-*  The last handler merged into a `communication.xml` file no longer overrides all previously created handlers.
+*  The last handler merged into a `communication.xml` file no longer overrides all previously created handlers. [GitHub-29528](https://github.com/magento/magento2/issues/29528)
 
 ### General fixes
 
@@ -831,7 +843,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8925-->
 
-*  WEBP and AVIF support for logo images has been added to the Admin.
+*  WEBP and AVIF support for logo images has been added to the Admin. [GitHub-32495](https://github.com/magento/magento2/issues/32495)
 
 <!--- MC-38156-->
 
@@ -871,31 +883,31 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9037-->
 
-*  On deployments running PHP 7.4, Magento now returns a 404 error when the **Generate "category/product" URL Rewrites** setting is set to **No**, and a shopper tries to access a non-existent category path. Previously, Magento returned a 500 error stating: `Trying to access array offset on value of type bool`.
+*  On deployments running PHP 7.4, Magento now returns a 404 error when the **Generate "category/product" URL Rewrites** setting is set to **No**, and a shopper tries to access a non-existent category path. Previously, Magento returned a 500 error stating: `Trying to access array offset on value of type bool`. [GitHub-31984](https://github.com/magento/magento2/issues/31984)
 
 <!--- MC-32257 magento/partners-magento2ee#507-->
 
-*  You can now successfully edit a product that was created using an attribute set from which **Design Group And Schedule Design Update** groups had been removed.  Previously, when you tried to edit a product created from that attribute set, Magento threw a fatal error.
+*  You can now successfully edit a product that was created using an attribute set from which **Design Group And Schedule Design Update** groups had been removed.  Previously, when you tried to edit a product created from that attribute set, Magento threw a fatal error. [GitHub-44](https://github.com/magento/partners-magento2ee/issues/44)
 
 <!--- ENGCOM-8901-->
 
-*  `nowdoc` has replaced `heredoc` in the `Magento_Backend` store switcher.
+*  `nowdoc` has replaced `heredoc` in the `Magento_Backend` store switcher. [GitHub-32262](https://github.com/magento/magento2/issues/32262)
 
 <!--- ENGCOM-9017-->
 
-*  Modified the `PULL_REQUEST_TEMPLATE` to add a requirement to create and update README files, when applicable.
+*  Modified the `PULL_REQUEST_TEMPLATE` to add a requirement to create and update README files, when applicable. [GitHub-32658](https://github.com/magento/magento2/issues/32658)
 
 <!--- ENGCOM-8539-->
 
-*  Administrators are now directly redirected into the requested Admin page after login.  Previously, when an administrator logged in, they were redirected to the Admin dashboard (or whichever page was configured as the startup page) and had to manually navigate to their destination.
+*  Administrators are now directly redirected into the requested Admin page after login.  Previously, when an administrator logged in, they were redirected to the Admin dashboard (or whichever page was configured as the startup page) and had to manually navigate to their destination. [GitHub-31042](https://github.com/magento/magento2/issues/31042)
 
 <!--- ENGCOM-8685-->
 
-*  Added Argentina, Bolivia, Chile, Ecuador, Guyana, Paraguay, Peru, Suriname, and Venezuela regions to the `directory_country_region` table.
+*  Added Argentina, Bolivia, Chile, Ecuador, Guyana, Paraguay, Peru, Suriname, and Venezuela regions to the `directory_country_region` table. [GitHub-31169](https://github.com/magento/magento2/issues/31169)
 
 <!--- ENGCOM-8505-->
 
-*  Added Albania, Denmark, Greece, Iceland, Portugal, and Sweden regions to the `directory_country_region` table.
+*  Added Albania, Denmark, Greece, Iceland, Portugal, and Sweden regions to the `directory_country_region` table. [GitHub-31040](https://github.com/magento/magento2/issues/31040)
 
 <!--- MC-30104 magento/magento2#31480 -->
 
@@ -903,35 +915,35 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8579-->
 
-*  Magento now references the correct class object when loading tax info for the Admin credit memo and invoice pages.
+*  Magento now references the correct class object when loading tax info for the Admin credit memo and invoice pages. [GitHub-31197](https://github.com/magento/magento2/issues/31197)
 
 <!--- MC-40346-->
 
-*  Royal Mail Click & Drop integration now works as expected. Previously, Magento threw this error when you tried to activate his integration: `Sorry! Something went wrong. Please try again later`.
+*  Royal Mail Click & Drop integration now works as expected. Previously, Magento threw this error when you tried to activate his integration: `Sorry! Something went wrong. Please try again later`. [GitHub-28996](https://github.com/magento/magento2/issues/28996)
 
 <!--- ENGCOM-8498-->
 
-*  Magento now displays an informative error message when an incorrect shipment, credit memo, or invoice ID is passed in a URL. Previously, Magento threw a fatal error.
+*  Magento now displays an informative error message when an incorrect shipment, credit memo, or invoice ID is passed in a URL. Previously, Magento threw a fatal error. [GitHub-30424](https://github.com/magento/magento2/issues/30424)
 
 <!--- ENGCOM-8632-->
 
-*  Recursion in the location of static files has been removed.  Magento now displays a 404 page instead of a 500 error. Previously, a bug in the default NGINX configuration lead to infinite recursion.
+*  Recursion in the location of static files has been removed.  Magento now displays a 404 page instead of a 500 error. Previously, a bug in the default NGINX configuration lead to infinite recursion. [GitHub-31530](https://github.com/magento/magento2/issues/31530)
 
 <!--- ENGCOM-8550-->
 
-*  The name of the `cms_index_noroute.xml` file has been corrected to `cms_noroute_index.xml`.
+*  The name of the `cms_index_noroute.xml` file has been corrected to `cms_noroute_index.xml`. [GitHub-31300](https://github.com/magento/magento2/issues/31300)
 
 <!--- ENGCOM-8516-->
 
-*  The `.editorconfig` file has been refactored to correct the automatic formatting of `db_schema_whitelist.json` files.
+*  The `.editorconfig` file has been refactored to correct the automatic formatting of `db_schema_whitelist.json` files. [GitHub-31171](https://github.com/magento/magento2/issues/31171)
 
 <!--- ENGCOM-9018-->
 
-*  Resizing a browser window no longer triggers duplicate binding magnifier events.
+*  Resizing a browser window no longer triggers duplicate binding magnifier events. [GitHub-30788](https://github.com/magento/magento2/issues/30788)
 
 <!--- ENGCOM-8722-->
 
-*  Magento no longer throws an SQL exception when filtering `Magento\Users\Model\ResourceModel\Users\Collection` by `user_id`.
+*  Magento no longer throws an SQL exception when filtering `Magento\Users\Model\ResourceModel\Users\Collection` by `user_id`. [GitHub-31216](https://github.com/magento/magento2/issues/31216)
 
 ### Gift cards
 
@@ -995,7 +1007,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8450-->
 
-*  Magento no longer throws an error when an administrator tries to load a page on the storefront when Google Analytics is enabled. A CSP entry for `connect-src` has been added to allow AJAX requests to www.google-analytics.com.
+*  Magento no longer throws an error when an administrator tries to load a page on the storefront when Google Analytics is enabled. A CSP entry for `connect-src` has been added to allow AJAX requests to www.google-analytics.com. [GitHub-30880](https://github.com/magento/magento2/issues/30880)
 
 ### Google Tag Manager
 
@@ -1047,7 +1059,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8462-->
 
-*  Magento no longer throws type errors during GraphQL queries when product and category URL suffixes contain null values.
+*  Magento no longer throws type errors during GraphQL queries when product and category URL suffixes contain null values. [GitHub-30909](https://github.com/magento/magento2/issues/30909)
 
 <!--- magento/magento2#31164-->
 
@@ -1059,7 +1071,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8603-->
 
-*  The POST `V1/products/special-price-delete` request now deletes only the price with a specified `store_id` as expected. Previously, the call removed all special prices for the specified  SKU from all stores.
+*  The POST `V1/products/special-price-delete` request now deletes only the price with a specified `store_id` as expected. Previously, the call removed all special prices for the specified  SKU from all stores. [GitHub-25907](https://github.com/magento/magento2/issues/25907)
 
 <!---  magento/partners-magento2ee#280 -->
 
@@ -1087,7 +1099,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41084 ENGCOM-9042 -->
 
-*  Corrected a problem that caused the `products` query to return erroneous info about price tiers on items that do not have tier pricing set.
+*  Corrected a problem that caused the `products` query to return erroneous info about price tiers on items that do not have tier pricing set. [GitHub-32279](https://github.com/magento/magento2/issues/32279)
 
 ### Import/export
 
@@ -1097,7 +1109,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41439 ENGCOM-9005-->
 
-*  Grouped product stock status now updates as expected to out-of-stock when all children products are out-of-stock.
+*  Grouped product stock status now updates as expected to out-of-stock when all children products are out-of-stock. [GitHub-32647](https://github.com/magento/magento2/issues/32647)
 
 <!--- MC-41184-->
 
@@ -1159,19 +1171,19 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-38310 magento/magento2#32693-->
 
-*  The catalog price rule indexer now works as expected when the indexer mode is set to **update on save**.
+*  The catalog price rule indexer now works as expected when the indexer mode is set to **update on save**. [GitHub-370](https://github.com/magento/partners-magento2ee/issues/370)
 
 <!--- ENGCOM-8890-->
 
-*  Deleting a disabled category that does not include a product now has no effect on catalog search and category flat index tables. Previously, deleting an inactive category triggered a full re-index.
+*  Deleting a disabled category that does not include a product now has no effect on catalog search and category flat index tables. Previously, deleting an inactive category triggered a full re-index. [GitHub-23297](https://github.com/magento/magento2/issues/23297)
 
 <!--- ENGCOM-8599 8474-->
 
-*  Custom indexers can now use different entity column names for subscriptions. Previously,  the database trigger used the column name from the indexer last set to "update by schedule"  rather than the designated indexer.
+*  Custom indexers can now use different entity column names for subscriptions. Previously,  the database trigger used the column name from the indexer last set to "update by schedule"  rather than the designated indexer. [GitHub-21853](https://github.com/magento/magento2/issues/21853)
 
 <!--- ENGCOM-8887-->
 
-*  Magento no longer sends Ajax requests to reload customer data sections (`Magento_Customer/js/section-config`) that are unaffected by the request.
+*  Magento no longer sends Ajax requests to reload customer data sections (`Magento_Customer/js/section-config`) that are unaffected by the request. [GitHub-31948](https://github.com/magento/magento2/issues/31948)
 
 ### Infrastructure
 
@@ -1197,7 +1209,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9012-->
 
-*  Updated the README.md files for these modules: `Magento_Msrp`, `Magento_MsrpConfigurableProduct`, `Magento_MsrpGroupedProduct`, `Magento_Multishipping`, `Magento_MysqlMq`.
+*  Updated the README.md files for these modules: `Magento_Msrp`, `Magento_MsrpConfigurableProduct`, `Magento_MsrpGroupedProduct`, `Magento_Multishipping`, `Magento_MysqlMq`. [GitHub-32577](https://github.com/magento/magento2/issues/32577)
 
 <!--- magento/partners-magento2ee#501-->
 
@@ -1205,89 +1217,89 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9073-->
 
-*  `ramsey/uuid` has been updated for compatibility with PHP 8.0.
+*  `ramsey/uuid` has been updated for compatibility with PHP 8.0. [GitHub-31777](https://github.com/magento/magento2/issues/31777), [GitHub-826](https://github.com/magento/magento2-functional-testing-framework/issues/8260
 
 <!--- ENGCOM-8997-->
 
-*  `colinmollenhour/php-redis-session-abstract` has been updated to v1.4.4 for PHP 8 compatibility.
+*  `colinmollenhour/php-redis-session-abstract` has been updated to v1.4.4 for PHP 8 compatibility. [GitHub-32709](https://github.com/magento/magento2/issues/32709)
 
 <!--- ENGCOM-8527-->
 
-*  Corrected an invalid combination of tabs and spaces in the `phpstan.neon` file.
+*  Corrected an invalid combination of tabs and spaces in the `phpstan.neon` file. [GitHub-31239](https://github.com/magento/magento2/issues/31239)
 
 <!--- ENGCOM-8668-->
 
-*  Removed use of obsolete property `$_isScopePrivate` throughout the code base.
+*  Removed use of obsolete property `$_isScopePrivate` throughout the code base. [GitHub-30506](https://github.com/magento/magento2/issues/30506)
 
 <!--- ENGCOM-8551-->
 
-*  Page layouts are no longer hard-coded in  `Magento\Widget\Block\Adminhtml\Widget\Instance\Edit\Chooser\Container`.  As a result, the `getPageLayouts()` function now returns the actual list of page layouts declared by the different modules as expected. Previously, it returned only hard-coded layouts.
+*  Page layouts are no longer hard-coded in  `Magento\Widget\Block\Adminhtml\Widget\Instance\Edit\Chooser\Container`.  As a result, the `getPageLayouts()` function now returns the actual list of page layouts declared by the different modules as expected. Previously, it returned only hard-coded layouts. [GitHub-31168](https://github.com/magento/magento2/issues/31168)
 
 <!--- ENGCOM-8509-->
 
-*  The `composer.lock` file has been updated to the latest version of the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/releases/tag/v60).
+*  The `composer.lock` file has been updated to the latest version of the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/releases/tag/v60). [GitHub-31152](https://github.com/magento/magento2/issues/31152)
 
 <!--- ENGCOM-9016-->
 
-*  The `composer.lock` file has been updated to match the dependencies listed in the `composer.json` file, including a dependency upon the `web-token/jwt-framework` package.
+*  The `composer.lock` file has been updated to match the dependencies listed in the `composer.json` file, including a dependency upon the `web-token/jwt-framework` package. [GitHub-32644](https://github.com/magento/magento2/issues/32644)
 
 <!--- ENGCOM-9015 -->
 
-*  Added a missing dependency on the `web-token/jwt-framework` package to the `magento/module-jwt-framework-adapter`.
+*  Added a missing dependency on the `web-token/jwt-framework` package to the `magento/module-jwt-framework-adapter`. [GitHub-32578](https://github.com/magento/magento2/issues/32578)
 
 <!--- ENGCOM-9019 -->
 
-*  Passive listeners have been added to the `fotorama.js` library to improve lighthouse metrics score.
+*  Passive listeners have been added to the `fotorama.js` library to improve lighthouse metrics score. [GitHub-31140](https://github.com/magento/magento2/issues/31140)
 
 <!--- ENGCOM-9014 -->
 
-*  The README.md file for the Google Analytics module has been updated.
+*  The README.md file for the Google Analytics module has been updated. [GitHub-32616](https://github.com/magento/magento2/issues/32616)
 
 <!--- ENGCOM-8375 -->
 
-*  Process Manager now handles exceptions properly in forked processes. The main process now exits, and Magento now displays an error message only once. Also, the exceptions from the forked processes are now handled when they are thrown in the main process. Previously, Magento logged multiple indexer failures and displayed multiple error messages.
+*  Process Manager now handles exceptions properly in forked processes. The main process now exits, and Magento now displays an error message only once. Also, the exceptions from the forked processes are now handled when they are thrown in the main process. Previously, Magento logged multiple indexer failures and displayed multiple error messages.  [GitHub-30622](https://github.com/magento/magento2/issues/30622)
 
 <!--- ENGCOM-8544 -->
 
-*  Magento no longer throws an error when a plugin is added to a parent class. (The `optionsProvider` parameter is now declared after `getContentIdentities` in `Assest.php`.) Previously, Magento threw this error:  `Error: Cannot instantiate interface Magento\Framework\Data\OptionSourceInterface`.
+*  Magento no longer throws an error when a plugin is added to a parent class. (The `optionsProvider` parameter is now declared after `getContentIdentities` in `Assest.php`.) Previously, Magento threw this error:  `Error: Cannot instantiate interface Magento\Framework\Data\OptionSourceInterface`. [GitHub-31291](https://github.com/magento/magento2/issues/31291)
 
 <!--- ENGCOM-8549 -->
 
-*  Executing `Magento\Framework\Filesystem\Io\Ftp::ls()` on an empty folder now returns an empty array as expected. Previously, Magento threw this exception: `Invalid argument supplied for foreach() in vendor/magento/framework/Filesystem/Io/Ftp.php…`.
+*  Executing `Magento\Framework\Filesystem\Io\Ftp::ls()` on an empty folder now returns an empty array as expected. Previously, Magento threw this exception: `Invalid argument supplied for foreach() in vendor/magento/framework/Filesystem/Io/Ftp.php…`. [GitHub-31288](https://github.com/magento/magento2/issues/31288)
 
 <!--- ENGCOM-8791 -->
 
-*  The `update` method for both Role and Rules has been marked as deprecated in `app/code/Magento/Authorization/Model/Role.php`.
+*  The `update` method for both Role and Rules has been marked as deprecated in `app/code/Magento/Authorization/Model/Role.php`. [GitHub-30756](https://github.com/magento/magento2/issues/30756)
 
 <!--- ENGCOM-8946 -->
 
-*  Concatenation for SameSite cookie parameters has been corrected. Previously, incorrect concatenation appended the `lex` suffix to `value`, `domain`, and other parameters.
+*  Concatenation for SameSite cookie parameters has been corrected. Previously, incorrect concatenation appended the `lex` suffix to `value`, `domain`, and other parameters. [GitHub-26377](https://github.com/magento/magento2/issues/26377), [GitHub-32440](https://github.com/magento/magento2/issues/32440)
 
 <!--- ENGCOM-8698 ENGCOM-9034 -->
 
-*  `allure-framework/allure-phpunit` has been upgraded to v1.3.1 throughout the code base. Previously, Magento displayed this error:  `Warning: Use of undefined constant GLOB_BRACE - assumed 'GLOB_BRACE' (this will throw an Error in a future version of PHP) in /var/www/html/src/vendor/allure-framework/allure-phpunit/src/Yandex/Allure/Adapter/AllureAdapter.php:74.`
+*  `allure-framework/allure-phpunit` has been upgraded to v1.3.1 throughout the code base. Previously, Magento displayed this error:  `Warning: Use of undefined constant GLOB_BRACE - assumed 'GLOB_BRACE' (this will throw an Error in a future version of PHP) in /var/www/html/src/vendor/allure-framework/allure-phpunit/src/Yandex/Allure/Adapter/AllureAdapter.php:74.` [GitHub-24635](https://github.com/magento/magento2/issues/24635)
 
 <!--- ENGCOM-8783 -->
 
-*  Magento now displays more informative errors when errors occur running `bin/magento` commands in production mode. Previously, either Magento  displayed no error messages or displayed messages that lacked information.
+*  Magento now displays more informative errors when errors occur running `bin/magento` commands in production mode. Previously, either Magento  displayed no error messages or displayed messages that lacked information. [GitHub-32786](https://github.com/magento/magento2/issues/32786)
 
 <!--- ENGCOM-8953 -->
 
-*  The `ArrayIterator` PHP object has been updated to work as expected with PHP 7.4.
+*  The `ArrayIterator` PHP object has been updated to work as expected with PHP 7.4. [GitHub-32088](https://github.com/magento/magento2/issues/32088)
 
 <!--- ENGCOM-8469 -->
 
-*  Magento no longer throws an error when a customer tries to complete an order when no shipping carriers are available. Instead, it displays the checkout page and this message: `Sorry, no quotes are available for this order at this time`. Previously, Magento displayed a blank checkout page and recorded this message in the exception log: `array_keys() expects parameter 1 to be array, null given`.
+*  Magento no longer throws an error when a customer tries to complete an order when no shipping carriers are available. Instead, it displays the checkout page and this message: `Sorry, no quotes are available for this order at this time`. Previously, Magento displayed a blank checkout page and recorded this message in the exception log: `array_keys() expects parameter 1 to be array, null given`. [GitHub-30830](https://github.com/magento/magento2/issues/30830)
 
 <!--- ENGCOM-8557 -->
 
-*  Magento no longer logs each cookie as a separate context. The `$_COOKIE` array has also been converted to a string. Previously, because each cookie was logged as a separate context, when the number of cookies exceeded 50, Magento logged this message: `Unable to send the cookie. Maximum number of cookies would be exceeded`.
+*  Magento no longer logs each cookie as a separate context. The `$_COOKIE` array has also been converted to a string. Previously, because each cookie was logged as a separate context, when the number of cookies exceeded 50, Magento logged this message: `Unable to send the cookie. Maximum number of cookies would be exceeded`. [GitHub-31334](https://github.com/magento/magento2/issues/31334)
 
 ### Invoice
 
 <!--- ENGCOM-8472 -->
 
-*  When creating new invoices in the Admin, the **Email Copy of** checkbox now works as expected. Previously, the checkbox was ignored if the global setting to send invoice emails was enabled in **Sales Emails**. It is now consistent and operates the same way as the shipment and creditmemo creation pages.
+*  When creating new invoices in the Admin, the **Email Copy of** checkbox now works as expected. Previously, the checkbox was ignored if the global setting to send invoice emails was enabled in **Sales Emails**. It is now consistent and operates the same way as the shipment and credit memo creation pages. [GitHub-28511](https://github.com/magento/magento2/issues/28511)
 
 ### Media Gallery
 
@@ -1297,11 +1309,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8814-->
 
-*  Entries in the `catalog_product_entity_media_gallery` table are removed as expected when related products are deleted.
+*  Entries in the `catalog_product_entity_media_gallery` table are removed as expected when related products are deleted. [GitHub-17727](https://github.com/magento/magento2/issues/17727)
 
 <!--- ENGCOM-8945-->
 
-*  Image details can now be updated in the Media Gallery when JavaScript minification is enabled. Previously, image details were not saved, and Magento displayed this error: `TypeError: Cannot read property 'call' of undefined in jquery.validate`.
+*  Image details can now be updated in the Media Gallery when JavaScript minification is enabled. Previously, image details were not saved, and Magento displayed this error: `TypeError: Cannot read property 'call' of undefined in jquery.validate`. [GitHub-31633](https://github.com/magento/magento2/issues/31633)
 
 ### MFTF
 
@@ -1309,15 +1321,15 @@ New features and MFTF core bug fixes are described in the [Magento Functional Te
 
 <!--- ENGCOM-8496-->
 
-*  The `magento indexer:reindex` and `cache:flush` commands and the `AdminReindexAndFlushCache` action group have been removed from tests to improve execution for the following modules: `Bundle`, `Catalog`, `CatalogRule`, `CatalogRuleConfigurable`, `CatalogUrlRewrite`, `Downloadable`, `Indexer`, `Paypal`, and `Sales`.
+*  The `magento indexer:reindex` and `cache:flush` commands and the `AdminReindexAndFlushCache` action group have been removed from tests to improve execution for the following modules: `Bundle`, `Catalog`, `CatalogRule`, `CatalogRuleConfigurable`, `CatalogUrlRewrite`, `Downloadable`, `Indexer`, `Paypal`, and `Sales`. [GitHub-31031](https://github.com/magento/magento2/issues/31031)
 
 <!--- ENGCOM-8562-->
 
-*  `AdminSubmitCategoriesPopupActionGroup` has been added to tests to prevent test failure.
+*  `AdminSubmitCategoriesPopupActionGroup` has been added to tests to prevent test failure. [GitHub-31251](https://github.com/magento/magento2/issues/31251)
 
 <!--- ENGCOM-8562-->
 
-*  Tests have been refactored with `StorefrontCheckQuickSearchStringActionGroup` and `StorefrontAssertProductNameOnProductMainPageActionGroup` (existing action groups).
+*  Tests have been refactored with `StorefrontCheckQuickSearchStringActionGroup` and `StorefrontAssertProductNameOnProductMainPageActionGroup` (existing action groups). [GitHub-31251](https://github.com/magento/magento2/issues/31251)
 
 #### Refactored tests
 
@@ -1442,15 +1454,15 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8948 MC-40885-->
 
-*  Magento no longer sends newsletter email  to a customer who has been unsubscribed from the newsletter in the time period between newsletter queue creation and the sending of the newsletter.
+*  Magento no longer sends newsletter email  to a customer who has been unsubscribed from the newsletter in the time period between newsletter queue creation and the sending of the newsletter. [GitHub-32116](https://github.com/magento/magento2/issues/32116)
 
 <!--- ENGCOM-8675-->
 
-*  Magento now honors newsletter enablement settings (**Stores**  >  **Settings**  >  **Configuration**  >  **Customers**  >  **Newsletter**  >  **General Options**). Previously, these settings were always retrieved from the default scope in multi-store deployments.
+*  Magento now honors newsletter enablement settings (**Stores**  >  **Settings**  >  **Configuration**  >  **Customers**  >  **Newsletter**  >  **General Options**). Previously, these settings were always retrieved from the default scope in multi-store deployments. [GitHub-31188](https://github.com/magento/magento2/issues/31188)
 
 <!--- ENGCOM-8551-->
 
-*  The REST call GET `/V1/customers/search` now returns correct information for customers that are subscribed to multiple newsletters.
+*  The REST call GET `/V1/customers/search` now returns correct information for customers that are subscribed to multiple newsletters. [GitHub-31168](https://github.com/magento/magento2/issues/31168)
 
 ### Order
 
@@ -1460,7 +1472,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8710-->
 
-*  Magento now saves a modified order as expected when it saves a refunded customer balance.
+*  Magento now saves a modified order as expected when it saves a refunded customer balance. [GitHub-393](https://github.com/magento/partners-magento2ee/issues/393)
 
 ### Payment methods
 
@@ -1502,11 +1514,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8752-->
 
-*  Magento no longer loads all CMS pages when needing only one edit page to render an Admin form.  These pages now load faster.
+*  Magento no longer loads all CMS pages when needing only one edit page to render an Admin form.  These pages now load faster. [GitHub-30936](https://github.com/magento/magento2/issues/30936)
 
 <!--- ENGCOM-8510-->
 
-*  Numeric values in `WHERE IN` expressions are now cast as number, not as string, which improves query performance in some versions of MariaDB.
+*  Numeric values in `WHERE IN` expressions are now cast as number, not as string, which improves query performance in some versions of MariaDB. [GitHub-31135](https://github.com/magento/magento2/issues/31135)
 
 ### Pricing
 
@@ -1598,11 +1610,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8501 MC-30270-->
 
-*  Administrators can now sort product reviews on the Product Reviews section of the product edit page as expected.
+*  Administrators can now sort product reviews on the Product Reviews section of the product edit page as expected. [GitHub-26301](https://github.com/magento/magento2/issues/26301)
 
 <!--- MC-41003  magento/magento2#32259-->
 
-*  Reviews are now saved with the correct store ID after an administrator approves and saves the review from a different domain than the store.
+*  Reviews are now saved with the correct store ID after an administrator approves and saves the review from a different domain than the store. [GitHub-17510](https://github.com/magento/magento2/issues/17510)
 
 ### Rewards
 
@@ -1634,7 +1646,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-41438-->
 
-*  Invoices are now created with the correct grand total when a cart price rule assigning a 100% discount is applied to an order that is also subject to catalog product and discount taxes and that qualifies for free shipping. Previously, the order had the correct price, but the invoice did not.
+*  Invoices are now created with the correct grand total when a cart price rule assigning a 100% discount is applied to an order that is also subject to catalog product and discount taxes and that qualifies for free shipping. Previously, the order had the correct price, but the invoice did not. [GitHub-30853](https://github.com/magento/magento2/issues/30853)
 
 <!--- MC-40384-->
 
@@ -1686,7 +1698,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8486-->
 
-*  Administrators who use Safari can now successfully add a product to an order from the Admin. Previously, when the administrator clicked the **Add selected products to order** button, Magento displayed the spinning load icon, and the page hung.
+*  Administrators who use Safari can now successfully add a product to an order from the Admin. Previously, when the administrator clicked the **Add selected products to order** button, Magento displayed the spinning load icon, and the page hung. [GitHub-30265](https://github.com/magento/magento2/issues/30265)
 
 ### Sales Rule
 
@@ -1746,15 +1758,15 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-24033  magento/magento2#3274-->
 
-*  You can now add a custom Elasticsearch field mapper to `Magento\Elasticsearch\Model\Adapter\FieldMapper\Product\FieldProvider\FieldName\Resolver\CompositeResolver`.
+*  You can now add a custom Elasticsearch field mapper to `Magento\Elasticsearch\Model\Adapter\FieldMapper\Product\FieldProvider\FieldName\Resolver\CompositeResolver`. [GitHub-24350](https://github.com/magento/magento2/issues/24350)
 
 <!--- ENGCOM-9029 MC-24026-->
 
-*  Developers can now change Elasticsearch mappings. Previously, dynamic templates sent to the Elasticsearch server in the default mappings were hard-coded, which prevented developers from indexing in Elasticsearch any extra data associated with a custom module.
+*  Developers can now change Elasticsearch mappings. Previously, dynamic templates sent to the Elasticsearch server in the default mappings were hard-coded, which prevented developers from indexing in Elasticsearch any extra data associated with a custom module. [GitHub-24363](https://github.com/magento/magento2/issues/24363)
 
 <!--- ENGCOM-8464 -->
 
-*  Search fields (form minisearch) now work as expected when Search Suggestions are disabled.
+*  Search fields (form minisearch) now work as expected when Search Suggestions are disabled. [GitHub-30584](https://github.com/magento/magento2/issues/30584)
 
 ### Shipping
 
@@ -1788,7 +1800,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-37385 ENGCOM-8578-->
 
-*  Magento no longer unchecks the **Append Comments** checkbox when a shopper clicks **Get shipping methods and rates** and selects a shipping method when creating an order from the Admin.
+*  Magento no longer unchecks the **Append Comments** checkbox when a shopper clicks **Get shipping methods and rates** and selects a shipping method when creating an order from the Admin. [GitHub-30256](https://github.com/magento/magento2/issues/30256)
 
 <!--- MC-36425-->
 
@@ -1796,7 +1808,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-40021 ENGCOM-8983-->
 
-*  Product quantity now remains unchanged as expected after a shopper changes quantity on the Ship to multiple address address page and clicks the browser Back button.
+*  Product quantity now remains unchanged as expected after a shopper changes quantity on the Ship to multiple address address page and clicks the browser Back button. [GitHub-31956](https://github.com/magento/magento2/issues/31956)
 
 <!--- ENGCOM-9096-->
 
@@ -1804,11 +1816,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8537-->
 
-*  Magento no longer throws an error when a merchant tries to ship an order using DHL when the **Create shipping label** checkbox is enabled and the product name contains unicode characters. Previously, Magento displayed this error when requesting label creation: `The response is in wrong format`.
+*  Magento no longer throws an error when a merchant tries to ship an order using DHL when the **Create shipping label** checkbox is enabled and the product name contains unicode characters. Previously, Magento displayed this error when requesting label creation: `The response is in wrong format`. [GitHub-31032](https://github.com/magento/magento2/issues/31032)
 
 <!--- ENGCOM-8952 -->
 
-*  You can successfully place an order from the Admin in a multisite deployment in which `United States` is enabled on one website and`Disable all countries` is enabled as the default scope on the other website. Previously, Magento did not place the order and displayed this error: `Please check the shipping address information. "regionId" is required. Enter and try again`.
+*  You can successfully place an order from the Admin in a multisite deployment in which `United States` is enabled on one website and`Disable all countries` is enabled as the default scope on the other website. Previously, Magento did not place the order and displayed this error: `Please check the shipping address information. "regionId" is required. Enter and try again`. [GitHub-30577](https://github.com/magento/magento2/issues/30577)
 
 ### Staging
 
@@ -1826,7 +1838,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-40850  magento/partners-magento2ee#489-->
 
-*  Merchants can now successfully save a downloadable product with a linked sample from the downloadable product page after creating a future staging update with an end date. Previously, Magento did not save the product and displayed this message: `The downloadable sample isn't related to the product. Verify the link and try again`.
+*  Merchants can now successfully save a downloadable product with a linked sample from the downloadable product page after creating a future staging update with an end date. Previously, Magento did not save the product and displayed this message: `The downloadable sample isn't related to the product. Verify the link and try again`. [GitHub-488](https://github.com/magento/partners-magento2ee/issues/488)
 
 <!--- MC-40734-->
 
@@ -1890,7 +1902,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8617 magento-engcom/magento2ee#558-->
 
-*  Magento now displays a **VAT Number** field on the customer registration page when `customer/create_account/vat_frontend_visibility` is enabled.
+*  Magento now displays a **VAT Number** field on the customer registration page when `customer/create_account/vat_frontend_visibility` is enabled. [GitHub-31326](https://github.com/magento/magento2/issues/31326)
 
 ### Test
 
@@ -1900,15 +1912,15 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8529-->
 
-*  Removed `CacheCleaner::cleanAll();` from integration tests.
+*  Removed `CacheCleaner::cleanAll();` from integration tests. [GitHub-31074](https://github.com/magento/magento2/issues/31074)
 
 <!--- ENGCOM-8898-->
 
-*  Added a test for this scenario: Admin users can edit a customer account when the customer is subscribed to a queued newsletter.
+*  Added a test for this scenario: Admin users can edit a customer account when the customer is subscribed to a queued newsletter. [GitHub-30645](https://github.com/magento/magento2/issues/30645)
 
 <!--- ENGCOM-8484-->
 
-*  Removed the `cache:flush` command from tests to improve execution time for the `Catalog`, `CatalogUrlRewrite`,  and `LoginAsCustomer` modules.
+*  Removed the `cache:flush` command from tests to improve execution time for the `Catalog`, `CatalogUrlRewrite`,  and `LoginAsCustomer` modules. [GitHub-31056](https://github.com/magento/magento2/issues/31056)
 
 <!--- ENGCOM-8499-->
 
@@ -1936,7 +1948,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-23553 ENGCOM-8839-->
 
-*  Brackets that are added to the strings are no longer escaped when inline translation is configured. Previously, the `escapeHtmlAttr` method converted the brackets into HTML entity codes.
+*  Brackets that are added to the strings are no longer escaped when inline translation is configured. Previously, the `escapeHtmlAttr` method converted the brackets into HTML entity codes. [GitHub-32000](https://github.com/magento/magento2/issues/32000)
 
 <!--- ENGCOM-8694-->
 
@@ -1944,11 +1956,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8584-->
 
-*  Text strings in the template used to manage stored payment methods (**My Account**  >  **Stored Payment Methods** ) are now translatable.
+*  Text strings in the template used to manage stored payment methods (**My Account**  >  **Stored Payment Methods** ) are now translatable. [GitHub-31211](https://github.com/magento/magento2/issues/31211)
 
 <!--- MC-30798 ENGCOM-8717-->
 
-*  Order emails sent from the Admin now use the store locale not the locale that is associated with the administrator’s account.
+*  Order emails sent from the Admin now use the store locale not the locale that is associated with the administrator’s account. [GitHub-26521](https://github.com/magento/magento2/issues/26521)
 
 ### UI
 
@@ -1982,11 +1994,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-38226 magento/magento2#32008-->
 
-*  The order review page displayed during checkout with PayPal Express Checkout now loads successfully. Previously, the template contained the unused **Update delivery method** button, which was only partially hidden by the script during page rendering.
+*  The order review page displayed during checkout with PayPal Express Checkout now loads successfully. Previously, the template contained the unused **Update delivery method** button, which was only partially hidden by the script during page rendering. [GitHub-32006](https://github.com/magento/magento2/issues/32006)
 
 <!--- MC-37941 magento/magento2#31892-->
 
-*  Rating stars and review text in the Customer Reviews section of the product page are now properly spaced when lengthy rating names are present.
+*  Rating stars and review text in the Customer Reviews section of the product page are now properly spaced when lengthy rating names are present. [GitHub-31890](https://github.com/magento/magento2/issues/31890)
 
 <!--- MC-37688-->
 
@@ -1998,15 +2010,15 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8514 -->
 
-*  You can now remove a layout update after creating a new widget on Admin **Content** > **Widgets**.
+*  You can now remove a layout update after creating a new widget on Admin **Content** > **Widgets**.  [GitHub-29936](https://github.com/magento/magento2/issues/29936)
 
 <!--- ENGCOM-8502 MC-35716-->
 
-*  The **Remove Layout Update** button now works as expected on any layout you have added from Admin **Content** > **Widgets**. Previously, this button did not work on any layout other than the first selected when adding multiple layouts.
+*  The **Remove Layout Update** button now works as expected on any layout you have added from Admin **Content** > **Widgets**. Previously, this button did not work on any layout other than the first selected when adding multiple layouts. [GitHub-30286](https://github.com/magento/magento2/issues/30286)
 
 <!--- ENGCOM-8524 -->
 
-*  Magento now uses the page title that is set in the layout file as the browser page title for the Customer Account Edit file. Previously, the  `Magento\Customer\Controller\Account\Edit` controller action enforces the page title value to `Account Information`.
+*  Magento now uses the page title that is set in the layout file as the browser page title for the Customer Account Edit file. Previously, the  `Magento\Customer\Controller\Account\Edit` controller action enforces the page title value to `Account Information`. [GitHub-30724](https://github.com/magento/magento2/issues/30724)
 
 <!--- ENGCOM-8896 8826-->
 
@@ -2014,23 +2026,23 @@ Repetitive actions have been replaced with action groups in these tests:
    *  Customer Login
    *  Customer Registration
    *  Customer Edit  (Change Password section)
-   *  Customer Set New Password
+   *  Customer Set New Password [GitHub-31557](https://github.com/magento/magento2/issues/31557)
 
 <!--- ENGCOM-8545 -->
 
-*  Removed a redundant header in grid cells that appeared when an administrator added a product to a grouped product set after changing the attribute set.
+*  Removed a redundant header in grid cells that appeared when an administrator added a product to a grouped product set after changing the attribute set. [GitHub-30911](https://github.com/magento/magento2/issues/30911)
 
 <!--- ENGCOM-8895 -->
 
-*  Magento now displays a `DateRange` filter on the Logged in area of the **Customer**  >  **Login** page. Previously, Magento displayed a `Text` filter.
+*  Magento now displays a `DateRange` filter on the Logged in area of the **Customer**  >  **Login** page. Previously, Magento displayed a `Text` filter. [GitHub-30328](https://github.com/magento/magento2/issues/30328)
 
 <!--- ENGCOM-9009 -->
 
-*  JavaScript has been removed from template files and moved into separate files to reduce rendering issues on Admin pages. Previously, Admin pages did not render properly in deployments in which minification of HTML had been enabled. Magento displayed this error: `An error has happened during application run. See exception log for details`.
+*  JavaScript has been removed from template files and moved into separate files to reduce rendering issues on Admin pages. Previously, Admin pages did not render properly in deployments in which minification of HTML had been enabled. Magento displayed this error: `An error has happened during application run. See exception log for details`. [GitHub-32454](https://github.com/magento/magento2/issues/32454)
 
 <!--- ENGCOM-9044 -->
 
-*  The `dropdownDialog` widget now loads only the draggable and resizable `jquery-ui` chunks it needs. Previously, it loaded large amounts of unnecessary code, which inflated load time and reduced performance.
+*  The `dropdownDialog` widget now loads only the draggable and resizable `jquery-ui` chunks it needs. Previously, it loaded large amounts of unnecessary code, which inflated load time and reduced performance. [GitHub-32810](https://github.com/magento/magento2/issues/32810)
 
 ### URL rewrites
 
@@ -2056,17 +2068,17 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8719 -->
 
-*  Added a `main_table` reference to the `store_id` in the `addStoreFilter` function of the `app/code/Magento/UrlRewrite/Model/ResourceModel/UrlRewriteCollection.php` collection. Previously, problems occurred whenever a `join` is added to the collection on a table that also contains a `store_id` column.
+*  Added a `main_table` reference to the `store_id` in the `addStoreFilter` function of the `app/code/Magento/UrlRewrite/Model/ResourceModel/UrlRewriteCollection.php` collection. Previously, problems occurred whenever a `join` is added to the collection on a table that also contains a `store_id` column. [GitHub-31853](https://github.com/magento/magento2/issues/31853)
 
 <!--- ENGCOM-8894 -->
 
-*  The `PUT /V1/products/:sku` REST endpoint now re-generates product URL rewrites as expected. Previously, the endpoint re-generated product `url_key` values but not URL rewrites.
+*  The `PUT /V1/products/:sku` REST endpoint now re-generates product URL rewrites as expected. Previously, the endpoint re-generated product `url_key` values but not URL rewrites. [GitHub-30316](https://github.com/magento/magento2/issues/30316)
 
 ### User
 
 <!--- MC-40777  magento/magento2#31998-->
 
-*  You can now save an effective new user role (Admin **System** > **Permissions** > **User Roles**) with the entire `Catalog` tree selected excluding `Edit Product Design` ( **Catalog** > **Inventory** > **Products** > **Edit Product Design**). Previously, Magento did not save product changes that were made by a user in this role and displayed this error: `Not allowed to edit the product's design attributes`.
+*  You can now save an effective new user role (Admin **System** > **Permissions** > **User Roles**) with the entire `Catalog` tree selected excluding `Edit Product Design` ( **Catalog** > **Inventory** > **Products** > **Edit Product Design**). Previously, Magento did not save product changes that were made by a user in this role and displayed this error: `Not allowed to edit the product's design attributes`. [GitHub-31973](https://github.com/magento/magento2/issues/31973)
 
 <!--- MC-38442-->
 
@@ -2090,11 +2102,11 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-42059 ENGCOM-9039-->
 
-*  Videos are now available in the product gallery as expected when advanced JavaScript bundling is enabled and used.
+*  Videos are now available in the product gallery as expected when advanced JavaScript bundling is enabled and used. [GitHub-32501](https://github.com/magento/magento2/issues/32501)
 
 <!--- ENGCOM-8532-->
 
-*  YouTube videos for simple products that belong to a configurable product now work as expected. Previously, images were ordered by ID instead of position. And consequently, some videos were treated like images.
+*  YouTube videos for simple products that belong to a configurable product now work as expected. Previously, images were ordered by ID instead of position. And consequently, some videos were treated like images. [GitHub-29690](https://github.com/magento/magento2/issues/29690)
 
 ### Visual Merchandiser
 
@@ -2163,6 +2175,8 @@ Repetitive actions have been replaced with action groups in these tests:
 **Issue**: _Anomalies with PayPal Credit display of gift card amounts_. When PayPal Credit is enabled and multiple gift card amounts are configured, if a shopper changes the amount for the value of a gift card, the storefront does not update the amount for installment payments. <!--- MC-42499 AC-344-->
 
 **Issue**:  _The **Add to order** button does not work for products added to the cart by SKU_.  Magento displays this error message when you click on the **Add to order** button after adding products to the order by SKU: `An error has happened during application run`. Products are not added to the cart. **Workaround**: Use the Add Products feature. <!--- AC-345-->
+
+**Issue**: The GraphQL `category` and `categoryList` queries ignore Category permissions that determine whether categories in a shared catalog are hidden or exposed. Magento currently displays all categories that have been assigned or unassigned to the shared catalog. This affects Adobe Commerce 2.4.3 deployments that implement a PWA storefront for which B2B shared catalogs have been enabled. <!--- MC-42528-->
 
 ## Community contributions
 
