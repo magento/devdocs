@@ -8,17 +8,21 @@ The {{site.data.var.ee}} API key and its associated private key are required to 
 
 ## {{site.data.var.ee}} license holder
 
-To generate an API key and private key, see [Commerce Services](https://docs.magento.com/user-guide/system/saas.html) in the {{site.data.var.ee}} user guide.
+To generate an API key and private key, see [Commerce Services](https://docs.magento.com/user-guide/system/saas.html) in the {{site.data.var.ee}} User Guide.
 
 ## {{site.data.var.ee}} developer or SI
 
-The developer or SI configures the SaaS Environment as described in the Commerce Services section of the configuration. Commerce Services becomes available in the Configuration sidebar when a SaaS module is installed.
+The developer or SI configures the SaaS environment as described in the Commerce Services section of the configuration. Commerce Services becomes available in the Configuration sidebar when a SaaS module is installed.
 
 ## Catalog data sync
 
-Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. The synchronization between the product catalog and the catalog service begins after Live Search is connected.
+Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. The synchronization between the product catalog and the catalog service begins after Live Search is connected. It can take up to 24 hours to export catalog data from your {{site.data.var.ee}} instance and for it to be indexed by Live Search.
 
-It can take up to 24 hours to export catalog data from your {{site.data.var.ee}} instance and for it to be indexed by Live Search.
+To ensure that catalog export runs correctly, confirm that the [cron jobs]({{ page.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html) and [indexers]({{ page.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html) are running, and that the following indexers are set to `Update by Schedule`:
+
+-  Product Feed
+-  Product Variant Feed
+-  Catalog Attributes Feed
 
 ### Verify catalog sync
 
