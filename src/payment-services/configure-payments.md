@@ -36,9 +36,9 @@ See [Configure indexers]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/co
 
 ### Manually reindex data
 
-You can manually reindex data, instead of waiting for it to happen automatically. See [Reindex]({{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-index.html#reindex) in [Manage the Indexers]({{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-index.html) for more information.
+You can manually reindex data, instead of waiting for it to happen automatically. See [Reindex]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-index.html#reindex) in [Manage the Indexers]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-index.html) for more information.
 
-When `BY SCHEDULE` mode is set, the system keeps track of changed entities and the cron job updates the index for them based on a set schedule. See [Run cron from the command line]({{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) in [Configure and run cron]({{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-cron.html) to learn how to manually trigger indexation using cron jobs.
+When `BY SCHEDULE` mode is set, the system keeps track of changed entities and the cron job updates the index for them based on a set schedule. See [Run cron from the command line]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) in [Configure and run cron]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-cron.html) to learn how to manually trigger indexation using cron jobs.
 
 ### Send reindexed data to payment service
 
