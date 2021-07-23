@@ -32,7 +32,7 @@ To verify that the data has been exported from your {{site.data.var.ee}} instanc
 -  `catalog_data_exporter_products`
 -  `catalog_data_exporter_product_attributes`
 
-If you need additional help, check the [Support Knowledge Base](https://support.magento.com/hc/en-us).
+If you need additional help, refer to [Live search catalog not synchronized](https://support.magento.com/hc/en-us/articles/4405637804301-Live-search-catalog-not-synchronized) in the Support Knowledge Base.
 
 ### Test the connection
 
