@@ -225,7 +225,7 @@ gdeurl: /guides/v2.4
 downloads: https://devdocs.magento.com/download
 
 # URL to the User guide
-user_guide_url: https://docs-beta.magento.com/user-guide
+user_guide_url: https://docs.magento.com/user-guide
 
 # Patterns to exclude for Jekyll
 exclude:
