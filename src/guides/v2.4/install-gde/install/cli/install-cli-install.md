@@ -141,12 +141,12 @@ To enable remote storage services during installation, see [Configure Remote Sto
 
 | Name| Description | Required? |
 |--- |--- |--- |
-| `remote-storage-driver` | Adapter name<br>Possible values:<br>**file**: Disables remote storage and uses the local filesystem<br>**aws-s3**: Use the [Amazon Simple Storage Service (Amazon S3)][AWS S3] | no |
-| `remote-storage-bucket` | Object storage or container name | no |
-| `remote-storage-prefix` | Optional prefix (location inside of object storage) | no |
-| `remote-storage-region` | Region name | no |
-| `remote-storage-key` | Optional access key | no |
-| `remote-storage-secret` | Optional secret key | no |
+| `remote-storage-driver` | Adapter name<br>Possible values:<br>**file**: Disables remote storage and uses the local filesystem<br>**aws-s3**: Use the [Amazon Simple Storage Service (Amazon S3)][AWS S3] | No |
+| `remote-storage-bucket` | Object storage or container name | No |
+| `remote-storage-prefix` | Optional prefix (location inside of object storage) | No |
+| `remote-storage-region` | Region name | No |
+| `remote-storage-key` | Optional access key | No |
+| `remote-storage-secret` | Optional secret key | No |
 
 **Lock configuration options:**
 
