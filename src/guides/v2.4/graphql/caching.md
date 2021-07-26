@@ -49,11 +49,12 @@ To enable caching for logged-in customers, {{site.data.var.ce}} 2.4.4 introduces
 *  A Boolean value indicating whether the customer is logged in (true or false)
 *  The customer's group ID
 *  The customer's tax rate, expressed as a percentage, such as 0.0875
+*  A salt value generated the first time any GraphQL request cache status is `Miss`
 
 The resultant hash is calculated as follows:
 
 ```php
-SHA256(Store ID + Currency + Is-Logged-In + Customer group + Customer tax rate)
+SHA256(Store ID + Currency + Is-Logged-In + Customer group + Customer tax rate + Salt value)
 ```
 
 Magento caches the results of all applicable queries. If you specify the resultant hash as the input value for the `X-Magento-Cache-Id` header of a GraphQL request, then the cached results can be loaded. Although POST requests are not cached, the resultant hashed value provide more opportunities to obtain updated cache IDs.
