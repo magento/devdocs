@@ -17,8 +17,15 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 {:.bs-callout-info}
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
-## v2002.1.6
+## v2002.1.7
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+-  {:.new}<!--MCLOUD-8003-->Added support for Composer 2.0.
+
+-  {:.fix}<!--MCLOUD-7938-->Updated the end-of-life software checks (`eol.yaml`) to include  Elasticsearch 7.9.x.
+
+## v2002.1.6
+*Release date: April 20, 2021*<br/>
 
 -  {:.new}<!--MCLOUD-7694--> **Redis authentication credentials**—Added the ability to read Redis authorization credentials from the `relationships` property during the deploy phase.
 -  {:.new}<!--MCLOUD-7695--> **Elasticsearch authorization credentials**—Added the ability to read Elasticsearch authorization credentials from the `relationships` property during the deploy phase.
