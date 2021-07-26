@@ -303,7 +303,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-38575-->
 
-*  You can now set the `required_options` and `has_options` bundle attributes while creating or updating a bundle product using the REST `product` query. Previously, these custom attributes were set to 0 (zero) despite efforts to set it to 1 (one).
+*  You can now set the `required_options` and `has_options` bundle attributes as expected while creating or updating a bundle product using the `POST /V1/product/:sku` endpoint. Previously, these custom attributes were set to 0 (zero) despite efforts to set it to 1 (one).
 
 <!--- MC-38483-->
 
