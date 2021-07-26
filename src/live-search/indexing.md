@@ -38,9 +38,9 @@ The following events trigger a full sync and index build:
 
 For example, changing the `Use in Search` property of the `color` attribute from `No` to `Yes` changes the attribute metadata to `searchable==true`, and triggers a full sync and reindex. The following product metadata are indexed by Live Search and trigger a full sync and reindex when changed:
 
+-  `filterableInSearch`
 -  `searchable`
 -  `sortable`
--  `filterableInSearch`
 -  `visibleInSearch`
 
 ### Streaming product updates
@@ -79,40 +79,33 @@ _Index Metadata_
 
 ## Indexed product fields
 
-|Indexed for all products |
-|--- |
-|`environment_id` |
-|`website_code` |
-|`store_code` |
-|`store_view_code` |
-|`product_id` |
-|`sku` |
-|`name` |
-|`type` |
-|`displayable` |
-|`deleted` |
-|`url` |
-|`currency` |
-|`meta_description` |
-|`meta_keyword` |
-|`meta_title` |
-|`description` |
-|`short_description` |
-|`weight` |
-|`image` |
-|`small_image` |
-|`thumbnail_image` |
-|`prices` |
-|`in_stock` |
-|`low_stock` |
+The following fields are indexed for all products. For easy reference, the order of the fields in this list reflects the typical order of columns in exported product data.
 
-|Indexed for configurable products |
-|--- |
-|`childrenSkus` |
+-  `environment_id`
+-  `website_code`
+-  `store_code`
+-  `store_view_code`
+-  `product_id`
+-  `sku`
+-  `name`
+-  `type`
+-  `displayable`
+-  `deleted`
+-  `url`
+-  `currency`
+-  `meta_description`
+-  `meta_keyword`
+-  `meta_title`
+-  `description`
+-  `short_description`
+-  `weight`
+-  `image`
+-  `small_image`
+-  `thumbnail_image`
+-  `prices`
+-  `in_stock`
+-  `low_stock`
 
-|Indexed product metadata|
-|--- |
-|`searchable` |
-|`sortable` |
-|`filterableInSearch` |
-|`visibleInSearch` |
+The following field is indexed for configurable products:
+
+-  `childrenSkus`
