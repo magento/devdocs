@@ -50,7 +50,7 @@ After the initial index is built during [onboarding]({{ site.baseurl }}/live-sea
 -  New product(s) added to the catalog
 -  Changes to product attribute values
 
-  For example, adding a new swatch value to the `color` attribute is handled as a streaming product update.
+For example, adding a new swatch value to the `color` attribute is handled as a streaming product update.
 
 Streaming update workflow:
 
