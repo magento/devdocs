@@ -105,37 +105,37 @@ This release adds GraphQL support for the following features:
 
 *  **Gift registries**. Tasks covered include: <!--- PWA-1290-->
 
-   *  Use the [giftRegistry query](https://devdocs.magento.com/guides/v2.4/graphql/queries/gift-registry.html) to return the contents of the customer's gift registries.
+   *  Use the [giftRegistry query]({{page.baseurl}}/graphql/queries/gift-registry.html) to return the contents of the customer's gift registries.
 
-   *  Search for gift registries by [type](https://devdocs.magento.com/guides/v2.4/graphql/queries/gift-registry-type-search.html), [email](https://devdocs.magento.com/guides/v2.4/graphql/queries/gift-registry-email-search.html), or [ID](https://devdocs.magento.com/guides/v2.4/graphql/queries/gift-registry-id-search.html).
+   *  Search for gift registries by [type]({{page.baseurl}}/graphql/queries/gift-registry-type-search.html), [email]({{page.baseurl}}/graphql/queries/gift-registry-email-search.html), or [ID]({{page.baseurl}}/graphql/queries/gift-registry-id-search.html).
 
-   *  [Create](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-gift-registry.html), [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry.html), or [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry.html) gift registries.
+   *  [Create]({{page.baseurl}}/graphql/mutations/create-gift-registry.html), [update]({{page.baseurl}}/graphql/mutations/update-gift-registry.html), or [delete]({{page.baseurl}}/graphql/mutations/remove-gift-registry.html) gift registries.
 
-   *  [Update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry-items.html) or [remove](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry-items.html) items from a gift registry.
+   *  [Update]({{page.baseurl}}/graphql/mutations/update-gift-registry-items.html) or [remove]({{page.baseurl}}/graphql/mutations/remove-gift-registry-items.html) items from a gift registry.
 
-   *  [Move all items](https://devdocs.magento.com/guides/v2.4/graphql/mutations/move-cart-items-to-gift-registry.html) from the cart to the gift registry. <!--- ENGCOM-9082 9087-->
+   *  [Move all items]({{page.baseurl}}/graphql/mutations/move-cart-items-to-gift-registry.html) from the cart to the gift registry. <!--- ENGCOM-9082 9087-->
 
-   *  [Add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-gift-registry-registrants.html), [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry-registrants.html), or [remove](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry-registrants.html) registrants from a gift registry.
+   *  [Add]({{page.baseurl}}/graphql/mutations/add-gift-registry-registrants.html), [update]({{page.baseurl}}/graphql/mutations/update-gift-registry-registrants.html), or [remove]({{page.baseurl}}/graphql/mutations/remove-gift-registry-registrants.html) registrants from a gift registry.
 
-   *  [Share](https://devdocs.magento.com/guides/v2.4/graphql/mutations/share-gift-registry.html) a gift registry with invitees.
+   *  [Share]({{page.baseurl}}/graphql/mutations/share-gift-registry.html) a gift registry with invitees.
 
-*  **Negotiable quotes**. See the [`negotiableQuote`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quote.html) and [`negotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quotes.html) queries. <!--- PWA-1292-->
+*  **Negotiable quotes**. See the [`negotiableQuote`]({{page.baseurl}}/graphql/queries/negotiable-quote.html) and [`negotiableQuotes`]({{page.baseurl}}/graphql/queries/negotiable-quotes.html) queries. <!--- PWA-1292-->
 
    New mutations include:
 
-   *  [`requestNegotiableQuote`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/request-negotiable-quote.html)
+   *  [`requestNegotiableQuote`]({{page.baseurl}}/graphql/mutations/request-negotiable-quote.html)
 
-   *  [`setNegotiableQuoteShippingAddresses`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/set-negotiable-quote-shipping-address.html)
+   *  [`setNegotiableQuoteShippingAddresses`]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-shipping-address.html)
 
-   *  [`updateNegotiableQuoteQuantities`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-negotiable-quote-quantities.html)
+   *  [`updateNegotiableQuoteQuantities`]({{page.baseurl}}/graphql/mutations/update-negotiable-quote-quantities.html)
 
-   *  [`removeNegotiableQuoteItems`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-negotiable-quote-items.html)
+   *  [`removeNegotiableQuoteItems`]({{page.baseurl}}/graphql/mutations/remove-negotiable-quote-items.html)
 
-   *  [`closeNegotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/close-negotiable-quotes.html)
+   *  [`closeNegotiableQuotes`]({{page.baseurl}}/graphql/mutations/close-negotiable-quotes.html)
 
-   *  [`deleteNegotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-negotiable-quotes.html).
+   *  [`deleteNegotiableQuotes`]({{page.baseurl}}/graphql/mutations/delete-negotiable-quotes.html).
 
-*  **Shared routes**. The [route query](https://devdocs.magento.com/guides/v2.4/graphql/queries/route.html) and [RoutableInterface](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/routable-interface.html) support routing requests on product, category, and CMS pages. The `urlResolver` query has been deprecated, and its functionality has been superseded by the `route` query.
+*  **Shared routes**. The [route query]({{page.baseurl}}/graphql/queries/route.html) and [RoutableInterface]({{page.baseurl}}/graphql/interfaces/routable-interface.html) support routing requests on product, category, and CMS pages. The `urlResolver` query has been deprecated, and its functionality has been superseded by the `route` query.
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -207,7 +207,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8701 -->
 
-*  `Magento\Config\Model\Config\PathValidator` now checks if an element exists by the display path, and if it has a config path, uses the `config.xml` path instead for validation. [GitHub-27678](https://github.com/magento/magento2/issues/27678)
+*  `Magento\Config\Model\Config\PathValidator` now checks display path to determine if an element exists, and if it has a config path, uses the `config.xml` path instead for validation. [GitHub-27678](https://github.com/magento/magento2/issues/27678)
 
 <!--- ENGCOM-8684 -->
 
@@ -300,6 +300,14 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- magento/magento2#30374 MC-36930-->
 
 *  The `updateProductsInWishlist` mutation now successfully updates items that belong to a bundle product in a wish list. Previously, instead of updating the wish list item, this mutation deleted the item and created a new one, which changed the item ID.
+
+<!--- MC-38575-->
+
+*  You can now set the `required_options` and `has_options` bundle attributes while creating or updating a bundle product using the REST `product` query. Previously, these custom attributes were set to 0 (zero) despite efforts to set it to 1 (one).
+
+<!--- MC-38483-->
+
+*  Bundle product data that was previously missing is now included in the staging process. This resolves inconsistencies in product behavior when shoppers purchased a bundle product from the product listing page versus adding it directly from a product page.
 
 ### Cache
 
@@ -443,7 +451,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41499-->
 
-*  The product category cache is now cleared as expected by `cron` during `indexer_update_all_views”` execution. Previously, product counts on the Category page after re-indexing were incorrect.
+*  The product category cache is now cleared as expected by `cron` during `indexer_update_all_views` execution. Previously, product counts on the Category page after re-indexing were incorrect.
 
 <!--- MC-41422-->
 
@@ -509,10 +517,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento now displays all subcategories in layout updates (anchor and non-anchor categories) during creation of a new widget.
 
-<!--- MC-39569-->
-
-*  The following indexers are no longer invalidated after you add, remove, or reorder products in a category: `catalog_category_product` and `catalogsearch_fulltext` (and their dependents). Previously, these inadvertent removals triggered full re-indexing of sites. A full re-index is now prevented under these conditions when flat catalog is not enabled.
-
 <!--- MC-39481-->
 
 *  The `product` query no longer overwrites default values for all store views in a multi-store deployment when a product name is updated for one store view only. [GitHub-31083](https://github.com/magento/magento2/issues/31083)
@@ -536,18 +540,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-39104-->
 
 *  Magento now displays only one error in the cart when the product is out-of-stock. Previously, Magento displayed redundant messages. [GitHub-27469](https://github.com/magento/magento2/issues/27469)
-
-<!--- MC-38951-->
-
-*  Image positions are now correct when images are imported into a multi-store view deployment. Previously, images uploaded at a store-view level had undefined (NULL) positions in default scope and other store views. As a result, images were inconsistent both across store views and between storefront and Admin.
-
-<!--- MC-38575-->
-
-*  You can now set the `required_options` and `has_options` bundle attributes while creating or updating a bundle product using the REST `product` query. Previously, these custom attributes were set to 0 (zero) despite efforts to set it to 1 (one).
-
-<!--- MC-38483-->
-
-*  Bundle product data that was previously missing is now included in the staging process. This resolves inconsistencies in product behavior when shoppers purchased a bundle product from the product listing page versus adding it directly from a product page.
 
 <!--- MC-35717  magento/partners-magento2ee#427-->
 
@@ -614,6 +606,12 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- ENGCOM-8673-->
 
 *  Shoppers can now add configurable products to their cart from a non-default store view. Previously, when the shopper on a non-default store view tried to add a configurable product, Magento displayed this error: `Could not add item to cart. Please check required options and try again`. [GitHub-31660](https://github.com/magento/magento2/issues/31660)
+
+### Content security Policy CSP)
+
+<!--- ENGCOM-8577-->
+
+*  Content Security Policy now supports the loading of base64-encoded images and fonts through `data: scheme`.
 
 ### cron
 
@@ -875,7 +873,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-24725-->
 
-*  Redundant Ajax requests to the cart section of the shopping cart have been reduced. Previously, Magento did not properly load the cart subtotal, which triggered cart reload again.
+*  Redundant AJAX requests to the cart section of the shopping cart have been reduced. Previously, Magento did not properly load the cart subtotal, which triggered cart reload again.
 
 <!--- MC-23740-->
 
@@ -1101,6 +1099,12 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Corrected a problem that caused the `products` query to return erroneous info about price tiers on items that do not have tier pricing set. [GitHub-32279](https://github.com/magento/magento2/issues/32279)
 
+### Image
+
+<!--- MC-38951-->
+
+*  Image positions are now correct when images are imported into a multi-store view deployment. Previously, images uploaded at a store-view level had undefined (NULL) positions in default scope and other store views. As a result, images were inconsistent both across store views and between storefront and Admin.
+
 ### Import/export
 
 <!--- MC-41576-->
@@ -1109,15 +1113,15 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-41439 ENGCOM-9005-->
 
-*  Grouped product stock status now updates as expected to out-of-stock when all children products are out-of-stock. [GitHub-32647](https://github.com/magento/magento2/issues/32647)
+*  Grouped product stock status now updates as expected to out-of-stock when all child products are out-of-stock. [GitHub-32647](https://github.com/magento/magento2/issues/32647)
 
 <!--- MC-41184-->
 
-*  Configurable product stock status is now automatically updated as expected when child product stock status is updated by import. Previously, product stock status was not automatically updated when children products stock status was updated by import.
+*  Configurable product stock status is now automatically updated as expected when child product stock status is updated by import. Previously, product stock status was not automatically updated when child products stock status was updated by import.
 
 <!--- MC-41151-->
 
-*  You can now save empty values in a Scheduled Export. Previously, Magento updated empty filter values after export creation or save. Both `no` and `not specified` values were represented by zero in the database, and a value of `not selected` was overridden with `no`.
+*  You can now save empty values in a scheduled export. Previously, Magento updated empty filter values after export creation or save. Both `no` and `not specified` values were represented by zero in the database, and a value of `not selected` was overridden with `no`.
 
 <!--- MC-41092-->
 
@@ -1159,7 +1163,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Products with JSON or HTML content as additional product attributes are now exported correctly to a CSV file. Previously, the CSV file contained overlapped data strings in incorrect fields.
 
-## Index
+### Index
 
 <!--- MC-39718 ENGCOM-8567-->
 
@@ -1167,11 +1171,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-39272-->
 
-*  Products are now available as expected in storefront search results when linking products using a REST PUT `/V1/products/:sku/links` request when indexers mode is set to **Update On Save**.
+*  Products are now available as expected in storefront search results when linking products using a REST PUT `/V1/products/:sku/links` request when indexer mode is set to **Update on Save**.
 
 <!--- MC-38310 magento/magento2#32693-->
 
-*  The catalog price rule indexer now works as expected when the indexer mode is set to **update on save**. [GitHub-370](https://github.com/magento/partners-magento2ee/issues/370)
+*  The catalog price rule indexer now works as expected when the indexer mode is set to **Update on Save**. [GitHub-370](https://github.com/magento/partners-magento2ee/issues/370)
 
 <!--- ENGCOM-8890-->
 
@@ -1179,11 +1183,15 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8599 8474-->
 
-*  Custom indexers can now use different entity column names for subscriptions. Previously,  the database trigger used the column name from the indexer last set to "update by schedule"  rather than the designated indexer. [GitHub-21853](https://github.com/magento/magento2/issues/21853)
+*  Custom indexers can now use different entity column names for subscriptions. Previously,  the database trigger used the column name from the indexer last set to **Update by Schedule** rather than the designated indexer. [GitHub-21853](https://github.com/magento/magento2/issues/21853)
 
 <!--- ENGCOM-8887-->
 
-*  Magento no longer sends Ajax requests to reload customer data sections (`Magento_Customer/js/section-config`) that are unaffected by the request. [GitHub-31948](https://github.com/magento/magento2/issues/31948)
+*  Magento no longer sends AJAX requests to reload customer data sections (`Magento_Customer/js/section-config`) that are unaffected by the request. [GitHub-31948](https://github.com/magento/magento2/issues/31948)
+
+<!--- MC-39569-->
+
+*  The following indexers are no longer invalidated after you add, remove, or reorder products in a category: `catalog_category_product` and `catalogsearch_fulltext` (and their dependents). Previously, these inadvertent removals triggered full re-indexing of sites. A full re-index is now prevented under these conditions when flat catalog is not enabled.
 
 ### Infrastructure
 
@@ -1237,7 +1245,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-8509-->
 
-*  The `composer.lock` file has been updated to the latest version of the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/releases/tag/v60). [GitHub-31152](https://github.com/magento/magento2/issues/31152)
+*  The `composer.lock` file has been updated to the latest version of the Magento Coding Standard. [GitHub-31152](https://github.com/magento/magento2/issues/31152)
 
 <!--- ENGCOM-9016-->
 
@@ -1564,7 +1572,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-33893 ENGCOM-8992-->
 
-*  You can now configure whether to send an invoice. Previously, invoice sending was not configurable, and Magento always sent an invoice after it was created. Invoice and order emails were both sent in the scope of one observer. Separate observers now govern the sending of order email and invoice email. [GitHub-27656](https://github.com/magento/magento2/issues/27656)
+*  Invoice sending is now configurable. Previously, invoice sending was not configurable, and Magento always sent an invoice after it was created. Invoice and order emails were both sent in the scope of one observer. Separate observers now govern the sending of order email and invoice email. [GitHub-27656](https://github.com/magento/magento2/issues/27656)
 
 ### Reports
 
@@ -1686,7 +1694,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-38834-->
 
-*  Magento now uses the logo that has been uploaded in the **Logo for HTML Print View** settings when shoppers print an order from their account. Previously. Magento displayed the LUMA logo instead of the uploaded logo.
+*  Magento now uses the logo that has been uploaded in the **Logo for HTML Print View** settings when shoppers print an order from their account. Previously, Magento displayed the LUMA logo instead of the uploaded logo.
 
 <!--- MC-38625-->
 
@@ -1772,7 +1780,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-41464-->
 
-*  Magento now updates product price as expected when a shopper navigates back to the cart page after deleting a product during checkout with multiple addresses.
+*  Magento now updates shipping price as expected when a shopper navigates back to the cart page after deleting a product during checkout with multiple addresses.
 
 <!--- MC-41343-->
 
@@ -1780,7 +1788,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-41186-->
 
-*  Admin users who are restricted to a specific website can now create a shipment for an order placed on same website. Previously, Magento threw this exception when an Admin user who lacked permission to the default store view tried to ship an order that was placed in a store view that the Admin user has access to: `Notice: Undefined offset: 1 in /app/code/Magento/Catalog/Model/Product/Attribute/Backend/GroupPrice/AbstractGroupPrice.php on line 293`.
+*  Administrators who are restricted to a specific website can now create a shipment for an order placed on the same website. Previously, Magento threw this exception when an administrator  who lacked permission to the default store view tried to ship an order that was placed in a store view that the administrator had access to: `Notice: Undefined offset: 1 in /app/code/Magento/Catalog/Model/Product/Attribute/Backend/GroupPrice/AbstractGroupPrice.php on line 293`.
 
 <!--- MC-41069-->
 
@@ -1788,7 +1796,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-40702 ENGCOM-8728-->
 
-*  Shipping labels now use base currency as expected instead of order currency for stores that support multiple currencies when an order is placed in a non-base currency.[GitHub-31891](https://github.com/magento/magento2/issues/31891)
+*  Shipping labels now use base currency as expected instead of order currency for stores that support multiple currencies when an order is placed in a non-base currency. [GitHub-31891](https://github.com/magento/magento2/issues/31891)
 
 <!--- MC-40678 magento/magento2#31925-->
 
@@ -1820,7 +1828,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8952 -->
 
-*  You can successfully place an order from the Admin in a multisite deployment in which `United States` is enabled on one website and`Disable all countries` is enabled as the default scope on the other website. Previously, Magento did not place the order and displayed this error: `Please check the shipping address information. "regionId" is required. Enter and try again`. [GitHub-30577](https://github.com/magento/magento2/issues/30577)
+*  You can successfully place an order from the Admin in a multi-site deployment in which `United States` is enabled on one website and`Disable all countries` is enabled as the default scope on the other website. Previously, Magento did not place the order and displayed this error: `Please check the shipping address information. "regionId" is required. Enter and try again`. [GitHub-30577](https://github.com/magento/magento2/issues/30577)
 
 ### Staging
 
@@ -1830,7 +1838,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-41142-->
 
-*  The cart price rule staging preview is now loaded in one of the assigned website store views. Previously, the cart price rule staging preview was loaded in the default store view regardless of the assigned websites.
+*  The cart price rule staging preview is now loaded in the appropriate website when assigned to multiple website store views. Previously, the cart price rule staging preview was loaded in the default store view regardless of the assigned websites.
 
 <!--- MC-40916-->
 
@@ -1842,7 +1850,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-40734-->
 
-*  Magento no longer executes large database queries that include all product IDs during preview of a schedule update of a category. Instead, the category filter is applied to the product collection to make a temporary table for staging previewing of the category. Previously, Magento inserted all products into a temporary table for the staging preview, which degraded performance.
+*  Magento no longer executes large database queries that include all product IDs during preview of a schedule update of a category. Instead, the category filter is applied to the product collection to make a temporary table for staging previews of the category. Previously, Magento inserted all products into a temporary table for the staging preview, which degraded performance.
 
 <!--- MC-40714-->
 
@@ -1854,7 +1862,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-40604-->
 
-*  The **Use default value** checkbox for a product remains checked after a scheduled update is checked before the update.
+*  The **Use default value** checkbox for a product remains checked after a scheduled update is unchecked before the update.
 
 <!--- MC-40588 magento/partners-magento2ee#463-->
 
@@ -1942,13 +1950,13 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-35227-->
 
-*  Magento now displays page elements consistently on storefront pages that use standard Magento themes. Previously, not all styles were applied in Blank theme, so not all page elements were displayed in pages using this theme (for example, no magnifier icon was present in the My Orders page search field).
+*  Magento now displays page elements consistently on storefront pages that use standard Magento themes. Previously, not all styles were applied in Blank theme, so not all page elements were displayed in pages using this theme. (For example, no magnifier icon was present in the My Orders page search field.)
 
 ### Translation and locales
 
 <!--- MC-23553 ENGCOM-8839-->
 
-*  Brackets that are added to the strings are no longer escaped when inline translation is configured. Previously, the `escapeHtmlAttr` method converted the brackets into HTML entity codes. [GitHub-32000](https://github.com/magento/magento2/issues/32000)
+*  Brackets that are added to strings are no longer escaped when inline translation is configured. Previously, the `escapeHtmlAttr` method converted the brackets into HTML entity codes. [GitHub-32000](https://github.com/magento/magento2/issues/32000)
 
 <!--- ENGCOM-8694-->
 
@@ -1956,7 +1964,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8584-->
 
-*  Text strings in the template used to manage stored payment methods (**My Account**  >  **Stored Payment Methods** ) are now translatable. [GitHub-31211](https://github.com/magento/magento2/issues/31211)
+*  Text strings in the template that are used to manage stored payment methods (**My Account**  >  **Stored Payment Methods** ) are now translatable. [GitHub-31211](https://github.com/magento/magento2/issues/31211)
 
 <!--- MC-30798 ENGCOM-8717-->
 
@@ -2018,7 +2026,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8524 -->
 
-*  Magento now uses the page title that is set in the layout file as the browser page title for the Customer Account Edit file. Previously, the  `Magento\Customer\Controller\Account\Edit` controller action enforces the page title value to `Account Information`. [GitHub-30724](https://github.com/magento/magento2/issues/30724)
+*  Magento now uses the page title that is set in the layout file as the browser page title for the Customer Account Edit file. Previously, the `Magento\Customer\Controller\Account\Edit` controller action enforced the page title value to `Account Information`. [GitHub-30724](https://github.com/magento/magento2/issues/30724)
 
 <!--- ENGCOM-8896 8826-->
 
@@ -2082,7 +2090,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-38442-->
 
-*  Magento now uses the correct custom email template when generating email for new Admin users. Previously, Magento used the old default template, which omitted the administrator’s first and last names.
+*  Magento now uses the correct custom email template when generating email for new administrators. Previously, Magento used the old default template, which omitted the administrator’s first and last names.
 
 <!--- MC-38122-->
 
@@ -2096,7 +2104,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-40431-->
 
-*  Admin users with restricted roles can now successfully add, update, or duplicate the pages that he has access to that are assigned to a hierarchy node. Previously, Magento threw a fatal error under these conditions.
+*  Administrators with restricted roles can now successfully add, update, or duplicate the pages that he has access to that are assigned to a hierarchy node. Previously, Magento threw a fatal error under these conditions.
 
 ### Video
 
@@ -2106,7 +2114,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8532-->
 
-*  YouTube videos for simple products that belong to a configurable product now work as expected. Previously, images were ordered by ID instead of position. And consequently, some videos were treated like images. [GitHub-29690](https://github.com/magento/magento2/issues/29690)
+*  YouTube videos for simple products that belong to a configurable product now work as expected. Previously, images were ordered by ID instead of position. Consequently, some videos were treated like images. [GitHub-29690](https://github.com/magento/magento2/issues/29690)
 
 ### Visual Merchandiser
 
@@ -2128,13 +2136,13 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-38516-->
 
-*  Shoppers are now redirected to the page they were trying to access before they were prompted to log in. Previously, in deployments where website restrictions are enabled and Restriction Mode is set to **Private Sales: Login Only**, shoppers were redirected to the store home page.
+*  Shoppers are now redirected to the page they were trying to access before they were prompted to log in. Previously, in deployments where website restrictions were enabled and Restriction Mode were set to **Private Sales: Login Only**, shoppers were redirected to the store home page.
 
 ### Widget
 
 <!--- MC-39128-->
 
-*  An administrator can now delete all of a widget’s layout updates. Previously, when a widget had multiple layout updates, an administrator could only delete the first.
+*  An administrator can now delete all of a widget’s layout updates. Previously, when a widget had multiple layout updates, an administrator could delete only the first.
 
 <!--- MC-39107-->
 
@@ -2168,7 +2176,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ## Known issues
 
-**Issue**: _JavaScript error when reCAPTCHA is disabled_. If reCAPTCHA is disabled for checkout, checkout proceeds, but Magento displays an `Uncaught TypeError` error in the console log:  This issue will be fixed in a later release. <!--- MC-42589 42649-->
+**Issue**: _JavaScript error when reCAPTCHA is disabled_. If reCAPTCHA is disabled for checkout, checkout proceeds, but Magento displays an `Uncaught TypeError` error in the console log.  This issue will be fixed in a later release. <!--- MC-42589 42649-->
 
 **Issue**: _Content Security Policy error_. The storefront displays the following error in the console log: `The Content-Security-Policy directive frame-ancestors does not support the source expression unsafe-inline`. Storefront performance is not affected. <!--- MC-42613-->
 
