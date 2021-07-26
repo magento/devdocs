@@ -77,9 +77,9 @@ _Index Metadata_
 
 1. Search Service calls Indexing Pipeline.
 
-## Indexed product fields
+## Indexed for all products
 
-The following fields are indexed for all products. For easy reference, the order of the fields in this list reflects the typical order of columns in exported product data.
+The order of the fields in this list reflects the typical order of columns in exported product data.
 
 -  `environment_id`
 -  `website_code`
@@ -106,6 +106,6 @@ The following fields are indexed for all products. For easy reference, the order
 -  `in_stock`
 -  `low_stock`
 
-The following field is indexed for configurable products:
+The following field is indexed for all configurable products:
 
 -  `childrenSkus`
