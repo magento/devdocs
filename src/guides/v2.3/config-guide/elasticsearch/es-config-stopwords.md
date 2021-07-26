@@ -116,7 +116,7 @@ To change the directory:
 
    If you got an archive or the metapackage, it's located at `vendor/magento/module-elasticsearch/etc/di.xml`
 
-1. Change the value of `fileDir` to the desired directory:
+1. Change the value of `stopwordsDirectory` to the desired directory:
 
    ```xml
    <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
