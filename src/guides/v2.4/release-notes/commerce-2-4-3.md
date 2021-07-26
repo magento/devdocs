@@ -1103,7 +1103,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-38951-->
 
-*  Image positions are now correct when images are imported into a multi-store view deployment. Previously, images uploaded at a store-view level had undefined (NULL) positions in default scope and other store views. As a result, images were inconsistent both across store views and between storefront and Admin.
+*  You can now set the required_options and has_options bundle attributes as expected while creating or updating a bundle product using the POST `/V1/product/:sku` endpoint. Previously, these custom attributes were set to 0 (zero) despite efforts to set it to 1 (one).
 
 ### Import/export
 
