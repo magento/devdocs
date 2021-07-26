@@ -25,6 +25,7 @@ To ensure that catalog export runs correctly, confirm that the [cron jobs]({{ pa
 -  Catalog Attributes Feed
 
 After the initial synchronization, it can take up to fifteen minutes for incremental product updates to become available to storefront search. To learn more, go to [Streaming Product Updates]({{ site.baseurl }}/live-search/indexing.html#streaming-product-updates).
+
 ### Verify catalog sync
 
 To verify that the data has been exported from your {{site.data.var.ee}} instance, look for entries in the following tables:
@@ -32,7 +33,7 @@ To verify that the data has been exported from your {{site.data.var.ee}} instanc
 -  `catalog_data_exporter_products`
 -  `catalog_data_exporter_product_attributes`
 
-If you need additional help, refer to [Live search catalog not synchronized](https://support.magento.com/hc/en-us/articles/4405637804301-Live-search-catalog-not-synchronized) in the Support Knowledge Base.
+For additional help, refer to [Live search catalog not synchronized](https://support.magento.com/hc/en-us/articles/4405637804301-Live-search-catalog-not-synchronized) in the Support Knowledge Base.
 
 ### Test the connection
 
