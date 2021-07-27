@@ -17,7 +17,7 @@ Magento throws the following error when running `composer update` during install
 **Workaround**:  Merchants should run this command:
 
 ```bash
-composer require symfony/console">=4.4.0 <4.4.27 || ~4.4.29"
+composer require symfony/console:">=4.4.0 <4.4.27 || ~4.4.29"
 ```
 
 ## Security-only patch available
