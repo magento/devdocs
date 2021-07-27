@@ -73,7 +73,7 @@ To define additional factors for computing `X-Magento-Cache-Id` hash values, add
 ```
 
 {:.bs-callout-info}
-Adding factors could generate too many unique cache keys, thereby reduce caching hits as well as performance.
+Adding factors could generate too many unique cache keys, thereby reducing the number of caching hits and affecting performance.
 
 ## Caching with Varnish
 
