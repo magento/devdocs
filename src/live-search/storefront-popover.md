@@ -8,12 +8,14 @@ When Live Search is installed, a popover appears in the storefront as shoppers t
 
 The Live Search popover can be configured to display "search as you type" results for one character or more. The minimum number of characters required for a valid search string is determined by the Catalog Search [Minimal Query Length](https://docs.magento.com/user-guide/catalog/search-configuration.html) configuration setting.
 
+The selection of [searchable attributes](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-properties) can impact the speed of the response. Although the difference might be milliseconds, the more data that must be processed, the slower the response. Therefore, give some thought to the attributes that are defined as searchable. To optimize search, focus on high-value attributes and avoid those that contain a large amount of text, such as `Description`.
+
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
 
 ## Styling popover elements
 
-Elements of the popover can be styled using CSS classes. For example, the following declarations change the background color of the popover container and footer.
+The selection of fields that appear in the popover is not configurable. However, elements of the popover can be styled using CSS classes. For example, the following declarations change the background color of the popover container and footer.
 
 ```text
 .livesearch.popover-container {
