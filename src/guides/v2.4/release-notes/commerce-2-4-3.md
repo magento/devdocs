@@ -10,6 +10,16 @@ This release includes over 370 new fixes to core code and 33 security enhancemen
 {:.bs-callout-info}
 Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.3 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
+## Composer update known issue
+
+Magento throws the following error when running `composer update` during installation or upgrade to Magento 2.4.x:  `Incompatible argument type: Required type: int. Actual type: string`. [GitHub-33595](https://github.com/magento/magento2/issues/33595)
+
+**Workaround**:  Merchants should run this command:
+
+```bash
+composer require symfony/console:">=4.4.0 <4.4.27 || ~4.4.29"
+```
+
 ## Security-only patch available
 
 Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release provides (for example, Magento 2.4.1-p1). Patch 2.4.2-p2 is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.4.2. All hot fixes that were applied to the 2.4.2 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
@@ -891,10 +901,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  `nowdoc` has replaced `heredoc` in the `Magento_Backend` store switcher. [GitHub-32262](https://github.com/magento/magento2/issues/32262)
 
-<!--- ENGCOM-9017-->
-
-*  Modified the `PULL_REQUEST_TEMPLATE` to add a requirement to create and update README files, when applicable. [GitHub-32658](https://github.com/magento/magento2/issues/32658)
-
 <!--- ENGCOM-8539-->
 
 *  Administrators are now directly redirected into the requested Admin page after login.  Previously, when an administrator logged in, they were redirected to the Admin dashboard (or whichever page was configured as the startup page) and had to manually navigate to their destination. [GitHub-31042](https://github.com/magento/magento2/issues/31042)
@@ -1246,10 +1252,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- ENGCOM-8509-->
 
 *  The `composer.lock` file has been updated to the latest version of the Magento Coding Standard. [GitHub-31152](https://github.com/magento/magento2/issues/31152)
-
-<!--- ENGCOM-9016-->
-
-*  The `composer.lock` file has been updated to match the dependencies listed in the `composer.json` file, including a dependency upon the `web-token/jwt-framework` package. [GitHub-32644](https://github.com/magento/magento2/issues/32644)
 
 <!--- ENGCOM-9015 -->
 
