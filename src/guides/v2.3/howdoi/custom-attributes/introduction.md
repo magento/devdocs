@@ -2,7 +2,7 @@
 layout: tutorial
 group: how-do-i
 subgroup:
-title: Custom Attributes
+title: Custom attributes
 menu_node:
 level3_subgroup: custom-attributes
 menu_order: 1
