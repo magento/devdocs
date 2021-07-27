@@ -81,7 +81,7 @@ The dependencies to the data patch are injected using constructor DI and are lis
 
 ### Implement the apply method
 
-There are five key steps to develop the data patch. All the steps below are written inside the `apply` method.
+There are five steps in developing a data patch. All the steps below are written inside the `apply` method.
 
 1. Starting and ending the setup execution. This turns off foreign key checks and sets the SQL mode.
 
