@@ -17,7 +17,7 @@ _Storefront popover_
 
 The selection of fields that appear in the popover is not configurable. However, elements of the popover can be styled using CSS classes. For example, the following declarations change the background color of the popover container and footer.
 
-```text
+```css
 .livesearch.popover-container {
     background-color: lavender;
 }
