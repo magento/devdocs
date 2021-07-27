@@ -307,6 +307,26 @@ To mount the custom index.php file using volumes:
         - ./pub/index.php:/app/pub/index.php:ro
 ```
 
+## Zookeeper container
+
+**Container name**: Zookeeper<br/>
+**Docker base image**:  [zookeeper/latest/](https://hub.docker.com/_/zookeeper)<br/>
+**Ports exposed**: 2181<br/>
+
+{{ site.data.var.ee }} uses Zookeeper to manage locks to prevent the launch of duplicate cron jobs and cron groups when your project runs on servers with multiple nodes.
+
+For {{ site.data.var.ee }} on Cloud projects, lock provider settings are configured automatically during provisioning. See [Cloud variables]({{ site.baseurl }}/cloud/env/variables-cloud.html).
+
+For projects hosted on other infrastructure, developers can add the Zookeeper container to the Docker environment and [configure the service][Configure the lock provider].
+
+```bash
+./vendor/bin/ece-docker build:compose --php <version> --with-zookeeper
+```
+The latest Zookeeper version is installed by default from Docker Hub. You can add the following options to customize the installation:
+
+-  `--zookeeper-version` – Specify a specific version to install from [Docker Hub](https://hub.docker.com/_/zookeeper).
+-  `--zookeeper-image`  – Specify your own Zookeeper image name for the installation.
+
 <!--Link definitions-->
 
 [centos]: https://hub.docker.com/_/centos
@@ -333,3 +353,4 @@ To mount the custom index.php file using volumes:
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
 [web config]: https://github.com/magento/docker
+[Configure the lock provider]: {{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-lock.html#instgde-cli-lockconfig

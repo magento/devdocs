@@ -16,6 +16,13 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.2.4
+*Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+-  {:.new}**New `Zookeeper` container**–Added a [Zookeeper container]({{ site.baseurl}}/cloud/docker/docker-containers-service.html#zookeeper-container) to manage lock provider configuration for projects that are not deployed to {{ site.data.var.ee }} on Cloud infrastructure.<!--MCLOUD-8000-->
+
+-  {:.new}**Added support for Composer 2.0.**–Added Composer version 2.0 to the Composer configuration file to support upgrades from Composer 1.0 which is approaching end-of-life.<!--MCLOUD-8003-->
+
 ## v1.2.3
 *Release date: June 14, 2021*<br/>
 
