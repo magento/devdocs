@@ -185,10 +185,10 @@ See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/develope
 
 ### Output
 
-The Upgrade Compatibility Tool provides a report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
+The Upgrade Compatibility Tool exports a json file report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
 
 {:.bs-callout-info}
-Reports are exported as json files.
+To export this report into a different output folder, run `--output <dir>` commmand. Default path for the output folder is `var/output/[TIME]-results.json`.
 
 ## Example with a list of errors/warnings
 
