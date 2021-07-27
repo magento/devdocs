@@ -12,12 +12,13 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.
 
 ## Composer update known issue
 
-Magento throws the following error when running `composer update` during installation or upgrade to Magento 2.4.x:  `Incompatible argument type: Required type: int. Actual type: string`.  **Workaround**:  Merchants should run this command:
+Magento throws the following error when running `composer update` during installation or upgrade to Magento 2.4.x:  `Incompatible argument type: Required type: int. Actual type: string`. [GitHub-33595](https://github.com/magento/magento2/issues/33595)
+
+**Workaround**:  Merchants should run this command:
 
 ```bash
-composer require symfony/console:“>=4.4.0 <4.4.27 || ~4.4.29”
+composer require symfony/console">=4.4.0 <4.4.27 || ~4.4.29"
 ```
-[GitHub-33595](https://github.com/magento/magento2/issues/33595)
 
 ## Security-only patch available
 
