@@ -2,7 +2,7 @@
 layout: tutorial
 group: how-do-i
 subgroup:
-title: Text field custom attribute
+title: Add a custom text field attribute
 menu_node:
 level3_subgroup: custom-attributes
 menu_order: 2
