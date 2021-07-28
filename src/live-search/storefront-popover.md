@@ -6,9 +6,17 @@ ee_only: True
 
 When Live Search is installed, a popover appears in the storefront as shoppers type in the [Search](https://docs.magento.com/user-guide/catalog/search-quick.html) box. With each character typed, the popover is updated with suggested products and thumbnail images of the top search results.
 
-The Live Search popover can be configured to display "search as you type" results for one character or more. The minimum number of characters required for a valid search string is determined by the Catalog Search [Minimal Query Length](https://docs.magento.com/user-guide/catalog/search-configuration.html) configuration setting.
+Live Search returns results for a query of two characters or more. For a partial match, the maximum number of characters per word is 20.  The number of characters in a "search as you type" query is not configurable.  
 
-The selection of [searchable attributes](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-properties) can impact the speed of the response. Although the difference might be milliseconds, the more data that must be processed, the slower the response. Therefore, give some thought to the attributes that are defined as searchable. To optimize search, focus on high-value attributes and avoid those that contain a large amount of text, such as `Description`.
+The following fields are included in the "search as you type" popover: 
+
+-  `category_ids`
+-  `childrenSkus`  (for configurable products)
+-  `name`
+-  `sku`
+-  Any other searchable attribute
+
+The selection of products with [searchable attributes](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-properties) (`searchable=true`) can affect the precision of search results. For example, the `description` attribute might contain text with less precise or multiple meanings. If a person searches for "shorts" and the description includes "short sleeves", results returned as the text is typed might include products that don't fit the intended context. To optimize the process, choose attributes that contain content that has a clear meaning, and avoid using those with less precise text.
 
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
