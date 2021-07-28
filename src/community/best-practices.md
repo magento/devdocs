@@ -25,6 +25,7 @@ The DevDocs and Magento teams verified and provide the following best practices 
 
 *  [Best Practices and Benchmarking]({{ site.baseurl }}/guides/v2.4/migration/migration-overview-practices.html) for Migration
 *  [Best Practices for Extension Development]({{ site.baseurl }}/guides/v2.4/ext-best-practices/bk-ext-best-practices.html)
+*  [Upgrade Best Practices]({{ site.baseurl }}/guides/v2.4/comp-mgr/upgrade-best-practices.html)
 
    We also recommend the [Magento Marketplace Help Center](https://marketplacesupport.magento.com/hc/en-us) for extension questions.
 

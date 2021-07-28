@@ -16,6 +16,14 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.3.2 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed missing dependency for B2B support
+
+## 3.3.1 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.new}Added support for B2B customer group pricing. When you set a [price filter on a recommendation unit](https://docs.magento.com/user-guide/marketing/recommendation-incl-excl.html#filtertypes), B2B customers who are logged in will see the customer group pricing set for the products displayed.
+
 ## 3.3.0 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.new}Added support for Adobe Client Data Layer to standardize behavioral data collection across Adobe Commerce features and services. See the [readme](https://github.com/adobe/magento-storefront-event-collector/blob/main/README.md) to learn more.
@@ -35,7 +43,6 @@ The release notes include:
 
 ## 3.2.3 of magento/product-recommendations for Magento Commerce 2.4.0
 
--  {:.new}Added the ability to [preview recommendation results](https://docs.magento.com/user-guide/marketing/create-new-rec.html#preview) at creation time. This might require that you update dependencies in the current version.
 -  {:.fix}Fixed the "Unable to retrieve configurable product options data" error during Catalog Sync
 -  {:.fix}Fixed an issue where the store code was not being set correctly when you enabled the "Add store code to URL" configuration
 -  {:.fix}Improved detection of Admin Panel configuration changes to ensure these changes are reflected in Catalog Sync data

@@ -27,4 +27,4 @@ Share Wishlist Form | Not applicable
 {:.ref-header}
 Related topics
 
-[Construct a request]({{page.baseurl}}/get-started/gs-web-api-request.html
+[Construct a request]({{page.baseurl}}/get-started/gs-web-api-request.html)

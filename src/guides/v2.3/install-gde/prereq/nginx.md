@@ -10,15 +10,16 @@ Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en
 
 Installation instructions vary based on which operating system you are using. See [PHP](php-settings.html) for information.
 
-## Ubuntu 16
+## Ubuntu
 
-The following section describes how to install Magento 2.x on Ubuntu 16 using nginx, PHP, and MySQL.
+The following section describes how to install Magento 2.x on Ubuntu using nginx, PHP, and MySQL.
 
 ### Install nginx
 
 ```bash
-apt-get -y install nginx
+sudo apt -y install nginx
 ```
+You can also [build nginx from source](https://www.armanism.com/blog/install-nginx-on-ubuntu)
 
 After completing the following sections and [installing Magento]({{page.baseurl }}/install-gde/prereq/nginx.html#install-magento2-ubuntu), we will use a sample configuration file to [configure nginx]({{page.baseurl }}/install-gde/prereq/nginx.html#configure-nginx-ubuntu).
 

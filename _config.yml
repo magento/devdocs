@@ -208,7 +208,11 @@ kramdown:
 algolia:
   application_id: E642SEDTHL
   index_name: devdocs
-  api_key: d2d0f33ab73e291ef8d88d8b565e754c
+  # search-only API key allows to search data immediately.
+  # It is safe to use in production front-end code.
+  # Used at src/_includes/layout/header-scripts.html
+  # For more details, refer to: https://www.algolia.com/doc/guides/security/api-keys/#search-only-api-key
+  search_only_key: d2d0f33ab73e291ef8d88d8b565e754c
 
 google:
   gtm: GTM-KRCLXBB
@@ -231,7 +235,7 @@ gdeurl: /guides/v2.4
 downloads: https://devdocs.magento.com/download
 
 # URL to the User guide
-user_guide_url: https://docs-beta.magento.com/user-guide
+user_guide_url: https://docs.magento.com/user-guide
 
 # Patterns to exclude for Jekyll
 exclude:

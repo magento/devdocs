@@ -33,7 +33,7 @@ Edge ACLs create IP address lists for managing access to your site. In this exam
 
 1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System**.
 
-1. Expand **Full Page Cache** > **Fastly Configuration** > **ACL**.
+1. Expand **Full Page Cache** > **Fastly Configuration** > **Edge ACL**.
 
 1. Create the ACL container:
 
