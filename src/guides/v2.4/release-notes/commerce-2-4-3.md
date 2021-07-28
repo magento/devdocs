@@ -48,7 +48,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  A **new Composer plugin** helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Releases New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
 
-*  **Rate limiting is now built-in** to Magento APIs to prevent distributed denial-of-service (DDoS) attacks. Web APIs now impose restrictions on the size or number of resources that can be requested by a client/user. <!--- MC-35358-->
+*  **Rate limiting is now built-in** to Magento APIs to prevent distributed denial-of-service (DoS) attacks. Web APIs now impose restrictions on the size or number of resources that can be requested by a client/user. <!--- MC-35358-->
 
 *  **ReCAPTCHA  coverage has been extended** to include:
 
@@ -82,6 +82,8 @@ This release contains enhancements that improve the quality of the framework and
 *  Staging and Preview
 
 **PayPal Pay Later is now supported** in deployments that include PayPal. This feature allows shoppers to pay for an order in bi-weekly installments instead of paying the full amount at time of purchase. <!--- MC-40556-->
+
+**New `use_application_lock` indexing mode**. The `use_application_lock` mode lets you enable re-indexing through either the use of environment variables or by configuring the `app/etc/env.php` file. You no longer need to manually reset the indexer after failure with this mode enabled. When this mode is not enabled, you must manually reset the indexer after failure. See [Using application lock mode for reindex processes]({{page.baseurl}}/extension-dev-guide/indexing.html#using-application-lock-mode-for-reindex-processes)
 
 ### Platform enhancements
 
@@ -640,6 +642,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- ENGCOM-8571-->
 
 *  `cron` deadlocks no longer occur as a result of `cron` trying to set a lock in large deployments where groups overlapped. [GitHub-8933](https://github.com/magento/magento2/issues/8933)
+
+<!--- ENGCOM-8571-->
+
+*  `cron` deadlocks no longer occur on the `cron_schedule` table after only a few `cron` jobs have run. [GitHub-22438](https://github.com/magento/magento2/issues/22438)
 
 ### Custom customer attributes
 
@@ -1473,6 +1479,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ENGCOM-8551-->
 
 *  The REST call GET `/V1/customers/search` now returns correct information for customers that are subscribed to multiple newsletters. [GitHub-31168](https://github.com/magento/magento2/issues/31168)
+
+<!--- ENGCOM-8817-->
+
+*  Caching subscription status has been removed from the newsletter plugin. [GitHub-19345](https://github.com/magento/magento2/issues/19345)
 
 ### Order
 
