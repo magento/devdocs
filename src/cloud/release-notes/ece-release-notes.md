@@ -24,7 +24,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}<!--MCLOUD-8003-->Added support for Composer 2.0.
 
--  {:.fix} **Updated composer requirements for `symphony/console`**–Updated the {{ site.data.var.ct }} `composer.json` version requirements for the `symphony/console` package to fix an issue that caused the `di:compile` command to fail with the following error: `Incompatible argument type: Required type: int. Actual type: string`<!--MC-42919-->
+-  {:.fix} **Updated composer requirements for `symphony/console`**–Updated the {{ site.data.var.ct }} `composer.json` version requirements for the `symphony/console` package to fix an issue that caused the `di:compile` commands to fail with the following error: `Incompatible argument type: Required type: int. Actual type: string`<!--MC-42919-->
 
 -  {:.fix}<!--MCLOUD-7938-->Updated the end-of-life software checks (`eol.yaml`) to include Elasticsearch 7.9.x.
 
