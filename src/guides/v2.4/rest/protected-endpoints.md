@@ -49,4 +49,4 @@ Enable for Checkout/Placing Order | `POST /V1/carts/mine/payment-information` <b
 {:.ref-header}
 Related topics
 
-[Construct a request]({{page.baseurl}}/get-started/gs-web-api-request.html
+[Construct a request]({{page.baseurl}}/get-started/gs-web-api-request.html)
