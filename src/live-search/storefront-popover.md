@@ -8,7 +8,7 @@ When Live Search is installed, a popover appears in the storefront as shoppers t
 
 Live Search returns results for a query of two characters or more. For a partial match, the maximum number of characters per word is 20.  The number of characters in a "search as you type" query is not configurable.
 
-The following fields are included in the "search as you type" popover: 
+The following fields are included in the "search as you type" popover:
 
 -  `category_ids`
 -  `childrenSkus`  (for configurable products)
