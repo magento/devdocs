@@ -235,7 +235,7 @@ location ~ (index|get|static|report|404|503|health_check)\.php$ {
 
 ## Step 4: Update the Base URL configuration {#update-base-url}
 
-It is necessary to update the Base URL for the `french` and the `german` websites in the Magento admin.
+You must update the Base URL for the `french` and the `german` websites in the Magento admin.
 
 ### Update French Website Base URL
 
@@ -255,7 +255,7 @@ It is necessary to update the Base URL for the `french` and the `german` website
 
 ### Clean the Cache
 
-Run the command below to clean the `config` and `full_page` caches.
+Run the following command to clean the `config` and `full_page` caches.
 
 ```bash
 bin/magento cache:clean config full_page
