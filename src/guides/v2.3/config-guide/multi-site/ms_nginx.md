@@ -242,7 +242,7 @@ You must update the Base URL for the `french` and the `german` websites in the M
 1. Log in to the Magento admin and navigate to **Stores** > **Settings** > **Configuration** > **General** > **Web**.
 1. Change the _configuration scope_ to the `french` website.
 1. Expand **Base URLs** section and update the **Base URL** and **Base Link URL** value to `http://french.magento24.com/`.
-1. Expand **Base URLs (Secure)** section and update the **Secure Base URL** and **Secure Base Link URL** value to `http://french.magento24.com/`.
+1. Expand **Base URLs (Secure)** section and update the **Secure Base URL** and **Secure Base Link URL** value to `https://french.magento24.com/`.
 1. Click **Save Config** and save the configuration changes.
 
 ### Update German Website Base URL
@@ -250,7 +250,7 @@ You must update the Base URL for the `french` and the `german` websites in the M
 1. Log in to the Magento admin and navigate to **Stores** > **Settings** > **Configuration** > **General** > **Web**.
 1. Change the _configuration scope_ to the `german` website.
 1. Expand **Base URLs** section and update the **Base URL** and **Base Link URL** value to `http://german.magento24.com/`.
-1. Expand **Base URLs (Secure)** section and update the **Secure Base URL** and **Secure Base Link URL** value to `http://german.magento24.com/`.
+1. Expand **Base URLs (Secure)** section and update the **Secure Base URL** and **Secure Base Link URL** value to `https://german.magento24.com/`.
 1. Click **Save Config** and save the configuration changes.
 
 ### Clean the Cache
