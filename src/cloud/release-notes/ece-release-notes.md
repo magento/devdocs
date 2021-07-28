@@ -20,7 +20,11 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 ## v2002.1.7
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
+**Configuration updates**–
+
 -  {:.new}<!--MCLOUD-8003-->Added support for Composer 2.0.
+
+-  {:.fix} **Updated composer requirements for `symphony/console`**–*Updated the {{ site.data.var.ct }} `composer.json` version requirements for the `symphony/console` package to fix an `Incompatible argument type: Required type: int. Actual type: string` error returned by the `bin/magento setup:di:compile` command during the {{ site.data.var.ee }} or {{ site.data.var.ce }} installation or upgrade process.<!--MC-42919-->
 
 -  {:.fix}<!--MCLOUD-7938-->Updated the end-of-life software checks (`eol.yaml`) to include  Elasticsearch 7.9.x.
 
