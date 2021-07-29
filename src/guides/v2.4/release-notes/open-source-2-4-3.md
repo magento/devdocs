@@ -12,16 +12,6 @@ All known issues identified in Magento 2.4.2 have been fixed in this release.
 {:.bs-callout-info}
 Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.2 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
-## Composer update known issue
-
-Magento throws the following error when running `composer update` during installation or upgrade to Magento 2.4.x:  `Incompatible argument type: Required type: int. Actual type: string`. [GitHub-33595](https://github.com/magento/magento2/issues/33595)
-
-**Workaround**:  Merchants should run this command:
-
-```bash
-composer require symfony/console:">=4.4.0 <4.4.27 || ~4.4.29"
-```
-
 ## Security-only patch available
 
 Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release provides (for example, Magento 2.4.1-p1). Patch 2.4.2-p2 is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.4.2. All hot fixes that were applied to the 2.4.2 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
@@ -50,7 +40,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  A **new Composer plugin** helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Releases New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
 
-*  **Rate limiting is now built-in** to Magento APIs to prevent distributed denial-of-service (DoS) attacks. Web APIs now impose restrictions on the size or number of resources that can be requested by a client/user. <!--- MC-35358-->
+*  **Rate limiting is now built-in** to Magento APIs to prevent denial-of-service (DoS) attacks. Web APIs now impose restrictions on the size or number of resources that can be requested by a client/user. <!--- MC-35358-->
 
 *  **ReCAPTCHA  coverage has been extended** to include:
 
@@ -84,9 +74,6 @@ This release contains enhancements that improve the quality of the framework and
 *  Staging and Preview
 
 **PayPal Pay Later is now supported** in deployments that include PayPal. This feature allows shoppers to pay for an order in bi-weekly installments instead of paying the full amount at time of purchase. <!--- MC-40556-->
-
-**New `use_application_lock` indexing mode**. The `use_application_lock` mode lets you enable re-indexing through either the use of environment variables or by configuring the `app/etc/env.php` file. You no longer need to manually reset the indexer after failure with this mode enabled. When this mode is not enabled, you must manually reset the indexer after failure. See [Using application lock mode for reindex processes]({{page.baseurl}}/extension-dev-guide/indexing.html#using-application-lock-mode-for-reindex-processes)
-
 ### Platform enhancements
 
 Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future compatibility with PHP 8.x.
@@ -536,6 +523,10 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-30804-->
 
 *  Cron clean up queries have been refactored to reduce or eliminate the following performance issues: `cron` jobs remaining stuck in a pending state, increasingly slow MySQL queries, and an increase in CPU usage. [GitHub-26507](https://github.com/magento/magento2/issues/26507)
+
+<!--- ENGCOM-8571-->
+
+*  `cronjobs` that have been in status `running` for more than 24 hours are now automatically changed to status `error`.  As a result, a new instance of that job can run again and you do not need to manually change job status when a job incorrectly remains set to status `running`. Previously,  if a `cronjob` were stuck in status `running`, Magento prevented new instances of the same job from starting, and you had to manually change job status. [GitHub-8933](https://github.com/magento/magento2/issues/8933)
 
 <!--- ENGCOM-8571-->
 
