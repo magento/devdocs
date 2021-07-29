@@ -343,7 +343,7 @@ The latest Zookeeper version is installed by default from Docker Hub. You can ad
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb
 [mariadb]: https://hub.docker.com/_/mariadb
 [nginx config]: https://github.com/magento-dockerhub/magento-cloud-docker/blob/master/images/nginx/1.9/etc/vhost.conf
-[nginx configs]: https://github.com/magento/magento-cloud-docker/tree/develop/images/nginx/1.9/etc
+[nginx configs]: https://github.com/magento/magento-cloud-docker/tree/develop/images/nginx/1.19/etc
 [nginx]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
 [PHP extensions]: {{site.baseurl}}/cloud/project/magento-app-php-application.html#php-extensions
 [php-cloud]: https://hub.docker.com/r/magento/magento-cloud-docker-php
