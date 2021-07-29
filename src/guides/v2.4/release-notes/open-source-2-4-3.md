@@ -74,6 +74,8 @@ This release contains enhancements that improve the quality of the framework and
 *  Staging and Preview
 
 **PayPal Pay Later is now supported** in deployments that include PayPal. This feature allows shoppers to pay for an order in bi-weekly installments instead of paying the full amount at time of purchase. <!--- MC-40556-->
+
+**New `use_application_lock` indexing mode**. The `use_application_lock` mode lets you enable re-indexing through either the use of environment variables or by configuring the `app/etc/env.php` file. You no longer need to manually reset the indexer after failure with this mode enabled. When this mode is not enabled, you must manually reset the indexer after failure. See [Using application lock mode for reindex processes]({{page.baseurl}}/extension-dev-guide/indexing.html#using-application-lock-mode-for-reindex-processes)
 ### Platform enhancements
 
 Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future compatibility with PHP 8.x.
@@ -1309,6 +1311,8 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- ENGCOM-8510-->
 
 *  Numeric values in `WHERE IN` expressions are now cast as number, not as string, which improves query performance in some versions of MariaDB. [GitHub-31135](https://github.com/magento/magento2/issues/31135)
+
+*  The `use_application_lock` mode lets you enable re-indexing through either the use of environment variables or by configuring the `app/etc/env.php` file. You no longer need to manually reset the indexer after failure with this mode enabled. When this mode is not enabled, you must manually reset the indexer after failure. See [Using application lock mode for reindex processes]({{page.baseurl}}/extension-dev-guide/indexing.html#using-application-lock-mode-for-reindex-processes)
 
 ### Pricing
 
