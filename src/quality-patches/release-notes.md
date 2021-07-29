@@ -22,9 +22,9 @@ See [Patches available in MQP tool](https://support.magento.com/hc/en-us/section
 ## v1.1.0
 
 -  Patch categories were introduced in order to improve the user experience and make searching for required patches easier for customers.
--  patches.json has been renamed to support-patches.json.
+-  The `patches.json` file has been renamed to `support-patches.json`.
 -  **MDVA-38799** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue where downloadable products weren't saved after creating a staging update.
--  **MDVA-37592** _(for Magento `>=2.3.6 <=2.4.2-p1`)_Fixes the issue when sorting by price doesn't work correctly for products with a zero price assigned to shared catalog.
+-  **MDVA-37592** _(for Magento `>=2.3.6 <=2.4.2-p1`)_-Fixes the issue when sorting by price doesn't work correctly for products with a zero price assigned to shared catalog.
 -  **MDVA-38827** _(for Magento `>=2.3.3-p1 <2.4.4`)_-Fixes the issue where customers receive an order shipment email containing an error message.
 
 ## v1.0.26
