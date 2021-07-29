@@ -36,7 +36,7 @@ The following events trigger a full sync and index build:
 -  Onboarding [catalog data sync]({{ site.baseurl }}/live-search/config-connect.html#catalog-data-sync)
 -  Changes to attribute metadata
 
-For example, changing the `Use in Search` property of the `color` attribute from `No` to `Yes` changes the attribute metadata to `searchable==true`, and triggers a full sync and reindex. The following product metadata are indexed by Live Search and trigger a full sync and reindex when changed:
+For example, changing the `Use in Search` property of the `color` attribute from `No` to `Yes` changes the attribute metadata to `searchable=true`, and triggers a full sync and reindex. The following product metadata are indexed by Live Search and trigger a full sync and reindex when changed:
 
 -  `filterableInSearch`
 -  `searchable`
