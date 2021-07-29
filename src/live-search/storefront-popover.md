@@ -16,7 +16,9 @@ Search results can be based on the value of the following attributes:
 -  `sku`
 -  Any other searchable attribute
 
-The selection of products with [searchable attributes](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-proerties) (`searchable=true`) can affect the precision of search results. For example, if a person searches for "shorts" and there are shirts in the catalog with a description that includes "short sleeves", the shirts will also be returned. To improve the relevancy of the results, make attributes searchable that contain content with a clear and concise meaning. Avoid using attributes that contain less precise, lengthy text. Although the product `description` attribute is searchable by default, you can experiment with the results you want to achieve and make adjustments to attribute properties as needed. Take note that any changes to attribute metadata trigger a [full reindex]({{ site.baseurl }}/live-search/indexing.html#full-index) and can take up to eight hours to complete.
+The selection of products with [searchable attributes](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-proerties) (`searchable=true`) can affect the precision of search results. For example, if a person searches for "shorts" and there are shirts in the catalog with a description that includes "short sleeves", the shirts will also be returned. 
+
+To improve the relevancy of the results, make attributes searchable that contain content with a clear and concise meaning. Avoid using attributes that contain less precise, lengthy text. Although the product `description` attribute is searchable by default, you can experiment with the results you want to achieve and make adjustments to attribute properties as needed. Take note that any changes to attribute metadata trigger a [full reindex]({{ site.baseurl }}/live-search/indexing.html#full-index) which can take up to eight hours to complete.
 
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
