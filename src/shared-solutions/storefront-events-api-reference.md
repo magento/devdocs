@@ -8,8 +8,8 @@ The SDK API functions are organized into the following sections:
 
 -  [Context](#context)
 -  [Publish](#publish)
--  [Subscribe](subscribe)
--  [Unsubscribe](unsubscribe)
+-  [Subscribe](#subscribe)
+-  [Unsubscribe](#unsubscribe)
 
 ## Context
 
@@ -17,138 +17,138 @@ These functions get and set context data.
 
 ### mse.context.getCategory
 
-Gets the category context.
+Gets the `Category` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getCategory();
 ```
 
 ### mse.context.getCustomUrl
 
-Gets the CustomUrl context.
+Gets the `CustomUrl` context.
 
 
 Example:
 
-```javascript
+```text
 mse.context.getCustomUrl();
 ```
 
 ### mse.context.getMagentoExtension
 
-Gets the MagentoExtension context.
+Gets the `MagentoExtension` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getMagentoExtension();
 ```
 
 ### mse.context.getOrder
 
-Gets the Order context.
+Gets the `Order` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getOrder();
 ```
 
 ### mse.context.getPage
 
-Gets the Page context.
+Gets the `Page` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getPage();
 ```
 
 ### mse.context.getProduct
 
-Gets the Product context.
+Gets the `Product` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getProduct();
 ```
 
 ### mse.context.getRecommendations
 
-Gets the Recommendations context.
+Gets the `Recommendations` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getRecommendations();
 ```
 
 ### mse.context.getReferrerUrl
 
-Gets the ReferrerUrl context.
+Gets the `ReferrerUrl` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getReferrerUrl();
 ```
 
 ### mse.context.getSearchInput
 
-Gets the SearchInput context.
+Gets the `SearchInput` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getSearchInput();
 ```
 
 ### mse.context.getSearchResults
 
-Gets the SearchResults context.
+Gets the `SearchResults` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getSearchResults();
 ```
 
 ### mse.context.getShopper
 
-Gets the Shopper context.
+Gets the `Shopper` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getShopper();
 ```
 
 ### mse.context.getShoppingCart
 
-Gets the ShoppingCart context.
+Gets the `ShoppingCart` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getShoppingCart();
 ```
 
 ### mse.context.getStorefrontInstance
 
-Gets the StorefrontInstance context.
+Gets the `StorefrontInstance` context.
 
 Example:
 
-```javascript
+```text
 mse.context.getStorefrontInstance();
 ```
 
 ### mse.context.getContext
 
-Gets a custom Context.
+Gets a custom `Context`.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
@@ -156,13 +156,13 @@ Gets a custom Context.
 
 Example: 
 
-```javascript
+```text
 se.context.getContext(name);
 ```
 
 ### mse.context.setCategory
 
-Sets the Category context.
+Sets the `Category` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
@@ -170,13 +170,13 @@ Sets the Category context.
 
 Example:
 
-```javascript
+```text
 mse.context.setCategory(categoryCtx);
 ```
 
 ### mse.context.setCustomUrl
 
-Sets the CustomUrl context.
+Sets the `CustomUrl` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
@@ -184,13 +184,13 @@ Sets the CustomUrl context.
 
 Example:
 
-```javascript
+```text
 mse.context.setCustomUrl(customUrlCtx);
 ```
 
 ### mse.context.setMagentoExtension
 
-Sets the MagentoExtension context.
+Sets the `MagentoExtension` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
@@ -198,25 +198,25 @@ Sets the MagentoExtension context.
 
 Example:
 
-```javascript
+```text
 mse.context.setMagentoExtension(magentoExtensionCtx);
 ```
 
 ### mse.context.setOrder
 
-Sets the Order context.
+Sets the `Order` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
 |`context`|	Yes |	Order context|
 
-```javascript
+```text
 mse.context.setOrder(orderCtx);
 ```
 
 ### mse.context.setPage
 
-Sets the Page context.
+Sets the `Page` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
@@ -224,13 +224,13 @@ Sets the Page context.
 
 Example:
 
-```javascript
+```text
 mse.context.setPage(pageCtx);
 ```
 
 ### mse.context.setProduct
 
-Sets the Product context.
+Sets the `Product` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
@@ -238,13 +238,13 @@ Sets the Product context.
 
 Example:
 
-```javascript
+```text
 mse.context.setProduct(productCtx);
 ```
 
 ### mse.context.setRecommendations
 
-Sets the Recommendations context.
+Sets the `Recommendations` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
@@ -252,13 +252,13 @@ Sets the Recommendations context.
 
 Example:
 
-```javascript
+```text
 mse.context.setRecommendations(recommendationsCtx);
 ```
 
 ### mse.context.setReferrerUrl
 
-Sets the ReferrerUrl context.
+Sets the `ReferrerUrl` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
@@ -266,13 +266,13 @@ Sets the ReferrerUrl context.
 
 Example:
 
-```javascript
+```text
 mse.context.setReferrerUrl(referrerUrlCtx);
 ```
 
 ### mse.context.setSearchInput
 
-Sets the SearchInput context.
+Sets the `SearchInput` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
@@ -280,13 +280,13 @@ Sets the SearchInput context.
 
 Example:
 
-```javascript
+```text
 mse.context.setSearchInput(searchInputCtx);
 ```
 
 ### mse.context.setSearchResults
 
-Sets the SearchResults context.
+Sets the `SearchResults` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
@@ -294,64 +294,64 @@ Sets the SearchResults context.
 
 Example:
 
-```javascript
+```text
 mse.context.setSearchResults(searchResultsCtx);
 ```
 
 ### mse.context.setShopper
 
-Sets the Shopper context.
+Sets the `Shopper` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
 |`context`|Yes |Shopper context|
 
 Example:
 
-```javascript
+```text
 mse.context.setShopper(shopperCtx);
 ```
 
 ### mse.context.setShoppingCart
 
-Sets the ShoppingCart context.
+Sets the `ShoppingCart` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
 |`context`|Yes |ShoppingCart context |
 
 Example:
 
-```javascript
+```text
 mse.context.setShoppingCart(shoppingCartCtx);
 ```
 
 ### mse.context.setStorefrontInstance
 
-Sets the StorefrontInstance context.
+Sets the `StorefrontInstance` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
 |`context`|Yes	|StorefrontInstance context |
 
 Example:
 
-```javascript
+```text
 mse.context.setStorefrontInstance(storefrontCtx);
 ```
 
 ### mse.context.setContext
 
-Sets a custom Context.
+Sets a custom `Context`.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
 |`name` |Yes |Context name |
 |`context` |Yes |Custom context |
 
 Example:
 
-```javascript
+```text
 mse.context.setContext(ctx);
 ```
 
@@ -361,27 +361,29 @@ These functions publish events to notify all subscribers.
 
 ### mse.publish.addToCart
 
-Publishes the addToCart event.
+Publishes the `addToCart` event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.addToCart(ctx);
 ```
 
 ### mse.publish.customUrl
 
-Publishes the customUrl event.
+Publishes the `customUrl` event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.customUrl(ctx);
 ```
 
@@ -389,12 +391,15 @@ mse.publish.customUrl(ctx);
 
 Publishes the initiateCheckout event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
+
+
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.initiateCheckout(ctx);
 ```
 
@@ -402,12 +407,13 @@ mse.publish.initiateCheckout(ctx);
 
 Publishes the instantPurchase event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.instantPurchase(ctx);
 ```
 
@@ -415,12 +421,13 @@ mse.publish.instantPurchase(ctx);
 
 Publishes the pageActivitySummary event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.pageActivitySummary(ctx);
 ```
 
@@ -428,12 +435,13 @@ mse.publish.pageActivitySummary(ctx);
 
 Publishes the pageView event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.pageView(ctx);
 ```
 
@@ -441,12 +449,13 @@ mse.publish.pageView(ctx);
 
 Publishes the placeOrder event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.placeOrder(ctx);
 ```
 
@@ -454,12 +463,13 @@ mse.publish.placeOrder(ctx);
 
 Publishes the productPageView event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.productPageView(ctx);
 ```
 
@@ -467,14 +477,15 @@ mse.publish.productPageView(ctx);
 
 Publishes the recsItemAddToCartClick event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 unitId	Yes	Recommendations unit id.
 productId	Yes	Recommended product id.
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.recsItemAddToCartClick(unitId, productId, ctx);
 ```
 
@@ -482,14 +493,15 @@ mse.publish.recsItemAddToCartClick(unitId, productId, ctx);
 
 Publishes the recsItemClick event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 unitId	Yes	Recommendations unit id.
 productId	Yes	Recommended product id.
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.recsItemClick(unitId, productId, ctx);
 ```
 
@@ -497,12 +509,14 @@ mse.publish.recsItemClick(unitId, productId, ctx);
 
 Publishes the recsRequestSent event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
+
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.recsRequestSent(ctx);
 ```
 
@@ -510,12 +524,13 @@ mse.publish.recsRequestSent(ctx);
 
 Publishes the recsResponseReceived event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.recsResponseReceived(ctx);
 ```
 
@@ -523,13 +538,14 @@ mse.publish.recsResponseReceived(ctx);
 
 Publishes the recsUnitRender event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 unitId	Yes	Recommendations unit id.
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.recsUnitRender(unitId, ctx);
 ```
 
@@ -537,13 +553,14 @@ mse.publish.recsUnitRender(unitId, ctx);
 
 Publishes the recsUnitView event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 unitId	Yes	Recommendations unit id.
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.recsUnitView(unitId, ctx);
 ```
 
@@ -551,12 +568,13 @@ mse.publish.recsUnitView(unitId, ctx);
 
 Publishes the referrerUrl event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.referrerUrl(ctx);
 ```
 
@@ -564,12 +582,13 @@ mse.publish.referrerUrl(ctx);
 
 Publishes the removeFromCart event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.removeFromCart(ctx);
 ```
 
@@ -577,14 +596,15 @@ mse.publish.removeFromCart(ctx);
 
 Publishes the searchCategoryClick event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 searchUnitId	Yes	Search unit id.
 name	Yes	Category name.
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.searchCategoryClick(searchUnitId, name, ctx);
 ```
 
@@ -592,14 +612,15 @@ mse.publish.searchCategoryClick(searchUnitId, name, ctx);
 
 Publishes the searchProductClick event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 searchUnitId	Yes	Search unit id.
 sku	Yes	Product sku.
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.searchProductClick(searchUnitId, sku, ctx);
 ```
 
@@ -607,13 +628,15 @@ mse.publish.searchProductClick(searchUnitId, sku, ctx);
 
 Publishes the searchRequestSent event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
+
 searchUnitId	Yes	Search unit id.
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.searchRequestSent(searchUnitId, ctx);
 ```
 
@@ -621,13 +644,14 @@ mse.publish.searchRequestSent(searchUnitId, ctx);
 
 Publishes the searchResponseReceived event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 searchUnitId	Yes	Search unit id.
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.searchResponseReceived(searchUnitId, ctx);
 ```
 
@@ -635,13 +659,14 @@ mse.publish.searchResponseReceived(searchUnitId, ctx);
 
 Publishes the searchResultsView event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 searchUnitId	Yes	Search unit id.
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.searchResultsView(searchUnitId, ctx);
 ```
 
@@ -649,14 +674,15 @@ mse.publish.searchResultsView(searchUnitId, ctx);
 
 Publishes the searchSuggestionClick event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 searchUnitId	Yes	Search unit id.
 suggestion	Yes	Query suggestion.
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.searchSuggestionClick(searchUnitId, suggestion, ctx);
 ```
 
@@ -664,12 +690,13 @@ mse.publish.searchSuggestionClick(searchUnitId, suggestion, ctx);
 
 Publishes the shoppingCartView event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.shoppingCartView(ctx);
 ```
 
@@ -677,12 +704,13 @@ mse.publish.shoppingCartView(ctx);
 
 Publishes the signIn event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.signIn(ctx);
 ```
 
@@ -690,12 +718,13 @@ mse.publish.signIn(ctx);
 
 Publishes the signOut event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.signOut(ctx);
 ```
 
@@ -703,12 +732,13 @@ mse.publish.signOut(ctx);
 
 Publishes the updateCart event.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
+|---|---|---|
 context	No	Custom context.
 
 Example:
 
-```javascript
+```text
 mse.publish.updateCart(ctx);
 ```
 
