@@ -294,13 +294,13 @@ To rollback the VCL version:
 1. To get a list of the available VCL versions for a service, run the following command
 
    ```bash
-   curl -H "Fastly-Key: <FASTLY_API_TOKEN>" https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/
+   curl -H "Fastly-Key: <FASTLY_API_TOKEN>" -H "Accept: application/json" https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version
    ```
 
 1. Run the following command to change the active VCL version to a specified version.
 
    ```bash
-   curl -H "Fastly-Key: <FASTLY_API_TOKEN>" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Version #>/activate
+   curl -H "Fastly-Key: <FASTLY_API_TOKEN>" -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -X PUT https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<VERSION_ID>/activate
    ```
 
 For details about using the Fastly API to review and manage VCL, see [Manage VCL using the API]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
