@@ -1492,7 +1492,7 @@ The following product query returns URL rewrite information about the Joust Duff
 
 ### Retrieve variant `uid` values {#variant-uid}
 
-The following query returns information about each variant of the configurable product `WSH12`. Each variant has unique combination of color and size values. Specify the `uid` values in the `selected_options` array of the [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to indicate which variants the shopper selected.
+The following query returns information about each variant of the configurable product `WSH12`. Each variant has a unique combination of color and size values. Specify the `uid` values in the `selected_options` array of the [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to indicate which variants the shopper selected.
 
 **Request:**
 
