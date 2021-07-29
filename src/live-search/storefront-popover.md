@@ -8,22 +8,22 @@ When Live Search is installed, a popover appears in the storefront as shoppers t
 
 Live Search returns results for a query of two characters or more. For a partial match, the maximum number of characters per word is 20.  The number of characters in a "search as you type" query is not configurable.
 
-The following fields are included in the "search as you type" popover:
+Search results can be based on the value of the following attributes:
 
 -  `category_ids`
--  `childrenSkus`  (for configurable products)
+-  `childrenSkus` (for configurable products)
 -  `name`
 -  `sku`
 -  Any other searchable attribute
 
-The selection of products with [searchable attributes](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-properties) (`searchable=true`) can affect the precision of search results. For example, the `description` attribute might contain text with less precise or multiple meanings. If a person searches for "shorts" and the description includes "short sleeves", results returned as the text is typed might include products that don't fit the intended context. To optimize the process, choose attributes that contain content that has a clear meaning, and avoid using those with less precise text.
+The selection of products with [searchable attributes](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-proerties) (`searchable=true`) can affect the precision of search results. For example, if a person searches for "shorts" and there are shirts in the catalog with a description that includes "short sleeves", the shirts will also be returned. To improve the relevancy of the results, make attributes searchable that contain content with a clear and concise meaning. Avoid using attributes that contain less precise, lengthy text. Although the product `description` attribute is searchable by default, you can experiment with the results you want to achieve and make adjustments to attribute properties as needed. Take note that any changes to attribute metadata trigger a [full reindex]({{ site.baseurl }}/live-search/indexing.html#full-index) and can take up to eight hours to complete.
 
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
 
 ## Styling popover elements
 
-The selection of fields that appear in the popover is not configurable. However, elements of the popover can be styled using CSS classes. For example, the following declarations change the background color of the popover container and footer.
+The popover always displays the product `name` and `price`, and the selection of fields is not configurable. However, elements of the popover can be styled using CSS classes. For example, the following declarations change the background color of the popover container and footer.
 
 ```css
 .livesearch.popover-container {
