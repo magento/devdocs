@@ -26,7 +26,7 @@ To override the strings, ExampleCorp plans to use the `en_US.csv` dictionary fil
 1. Run the [i18n (internationalization) tool] to generate the en_US dictionary for the `orange` theme:
 
    ```bash
-   php bin/magento i18n:collect-phrases --output="app/design/frontend/ExampleCorp/orange/i18n/en_US.csv" app/design/frontend/ExampleCorp/orange
+   bin/magento i18n:collect-phrases --output="app/design/frontend/ExampleCorp/orange/i18n/en_US.csv" app/design/frontend/ExampleCorp/orange
    ```
 
 1. Open the newly generated `app/design/frontend/ExampleCorp/orange/i18n/en_US.csv` file and add the following rows:
