@@ -73,7 +73,8 @@ This release contains enhancements that improve the quality of the framework and
 
 **PayPal Pay Later is now supported** in deployments that include PayPal. This feature allows shoppers to pay for an order in bi-weekly installments instead of paying the full amount at time of purchase. <!--- MC-40556-->
 
-**New `use_application_lock` indexing mode**. The `use_application_lock` mode lets you enable re-indexing through either the use of environment variables or by configuring the `app/etc/env.php` file. You no longer need to manually reset the indexer after failure with this mode enabled. When this mode is not enabled, you must manually reset the indexer after failure. See [Using application lock mode for reindex processes]({{page.baseurl}}/extension-dev-guide/indexing.html#using-application-lock-mode-for-reindex-processes)
+**New `use_application_lock` indexing mode**. The `use_application_lock` mode lets you enable re-indexing through either the use of environment variables or by configuring the `app/etc/env.php` file. You no longer need to manually reset the indexer after failure with this mode enabled. See [Using application lock mode for reindex processes]({{page.baseurl}}/extension-dev-guide/indexing.html#using-application-lock-mode-for-reindex-processes).
+
 ### Platform enhancements
 
 Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upgrades bring us closer to future compatibility with PHP 8.x.
@@ -147,6 +148,10 @@ Magento 2.4.3 introduces B2B v1.3.2. This release includes multiple bug fixes. S
 ### PWA Studio
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
+
+### Upgrade Compatibility Tool
+
+The scope of the [Upgrade Compatibility Tool]({{page.baseurl}}/upgrade-compatibility-tool/introduction.html) has been expanded based on feedback from the community. Join our #upgrade-compatibility-tool slack channel to get support from the Adobe product team and the community, as well as to help guide the future direction of the tool.
 
 ### Cloud managed services updates
 
@@ -2187,7 +2192,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 **Issue**: _Content Security Policy error_. The storefront displays the following error in the console log: `The Content-Security-Policy directive frame-ancestors does not support the source expression unsafe-inline`. Storefront performance is not affected. <!--- MC-42613-->
 
-**Issue**: _Anomalies with PayPal Credit display of gift card amounts_. When PayPal Credit is enabled and multiple gift card amounts are configured, if a shopper changes the amount for the value of a gift card, the storefront does not update the amount for installment payments. <!--- MC-42499 AC-344-->
+**Issue**: _Anomalies with PayPal Credit display of gift card amounts_. When PayPal Credit is enabled and multiple gift card amounts are configured, if a shopper changes the amount for the value of a gift card, the storefront does not update the amount for installment payments. A fix for this issue will be included in Adobe Commerce 2.4.4 and Magento Open Source 2.4.4.<!--- MC-42499 AC-344-->
 
 **Issue**:  _The **Add to order** button does not work for products added to the cart by SKU_.  Magento displays this error message when you click on the **Add to order** button after adding products to the order by SKU: `An error has happened during application run`. Products are not added to the cart. **Workaround**: Use the Add Products feature. <!--- AC-345-->
 
@@ -2209,7 +2214,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
-{% include release-notes/engcomm-2-4-2-issues.md %}
+{% include release-notes/engcomm-2-4-3-issues.md %}
 
 ### System requirements
 
