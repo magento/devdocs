@@ -171,7 +171,7 @@ mutation {
 
 #### Specify the SKU with selected options
 
-In this example, the mutation specifies the size and color as selected options. The first option specifies the color, while the second option specifies the size.
+In this example, the mutation specifies the size and color as selected options. The first option specifies the color, while the second option specifies the size. The [`products` query]({{page.baseurl}}/graphql/queries/products.html#variant-uid) shows how to obtain the values specified in the `selected_options` array.
 
 **Request:**
 
