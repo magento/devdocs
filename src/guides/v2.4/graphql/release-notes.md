@@ -6,7 +6,6 @@ title: Release Notes
 {:.bs-callout-info}
 As of version 2.4.1, the GraphQL release notes are included in the [{{site.data.var.ee}} and {{site.data.var.ce}} Release Notes]({{page.baseurl}}/release-notes/bk-release-notes.html).
 
-
 GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://github.com/magento/pwa-studio) (PWA), and mobile apps for Magento.
 
 To take part and contribute, see the [Magento 2](https://github.com/magento/magento2) repository and look for issues with the `Project: GraphQL` tag. Join us in our [Slack](https://magentocommeng.slack.com/archives/C8076E0KS) channel (or [self signup](https://opensource.magento.com/slack)) to discuss the project.
