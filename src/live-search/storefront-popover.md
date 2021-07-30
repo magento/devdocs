@@ -3,20 +3,17 @@ group: live-search
 title: Storefront Popover
 ee_only: True
 ---
-
 When Live Search is installed, a popover appears in the storefront as shoppers type in the [Search](https://docs.magento.com/user-guide/catalog/search-quick.html) box. With each character typed, the popover is updated with suggested products and thumbnail images of the top search results.
 
-Live Search returns results for a query of two characters or more. For a partial match, the maximum number of characters per word is 20.  The number of characters in a "search as you type" query is not configurable.
+Live Search returns results for a query of two characters or more. For a partial match, the maximum number of characters per word is 20. The number of characters in a "search as you type" query is not configurable.
 
-Search results can be based on the value of the following attributes:
+The following attributes are always searchable:
 
 -  `sku`
 -  `name`
 -  `categories`
--  Any other searchable attribute
 
-The selection of products with [searchable attributes](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-properties) (`searchable=true`) can affect the precision of search results. For example, if a person searches for "shorts" and there are shirts in the catalog with a description that includes "short sleeves", the shirts are also returned. To improve the relevancy of the results, make attributes searchable that contain content that has a clear and concise meaning. Avoid using attributes that contain less precise, lengthy text.
-
+In addition to these, you can define additional attributes as [searchable](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-properties) (`searchable=true`) to produce highly targeted results. However, making some attributes searchable can have the opposite effect and reduce the precision of search results. For example, if a person searches for "shorts" and there are shirts in the catalog with a description that includes "short sleeves", the shirts are also returned. To improve the relevancy of the results, make attributes searchable that contain content that has a clear and concise meaning. Avoid using attributes that contain less precise, lengthy text.
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
 
