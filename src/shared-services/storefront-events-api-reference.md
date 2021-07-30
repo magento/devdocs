@@ -13,7 +13,7 @@ The SDK API functions are organized into the following sections:
 
 ## Context
 
-These functions get and set context data.
+The following functions get and set context data.
 
 ### mse.context.getCategory
 
@@ -28,7 +28,6 @@ mse.context.getCategory();
 ### mse.context.getCustomUrl
 
 Gets the `CustomUrl` context.
-
 
 Example:
 
@@ -152,7 +151,7 @@ Gets a custom `Context`.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`name` | Yes | Context name |
+|`name` | Yes | `Context` name |
 
 Example: 
 
@@ -166,7 +165,7 @@ Sets the `Category` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`context` | Yes | Category context |
+|`context` | Yes | `Category` context |
 
 Example:
 
@@ -180,7 +179,7 @@ Sets the `CustomUrl` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`context`|	Yes |	CustomUrl context|
+|`context`|	Yes |	`CustomUrl` context|
 
 Example:
 
@@ -194,7 +193,7 @@ Sets the `MagentoExtension` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`context`|	Yes |MagentoExtension context|
+|`context`|	Yes |`MagentoExtension` context|
 
 Example:
 
@@ -208,7 +207,9 @@ Sets the `Order` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`context`|	Yes |	Order context|
+|`context`|	Yes |	`Order` context|
+
+Example:
 
 ```text
 mse.context.setOrder(orderCtx);
@@ -220,7 +221,7 @@ Sets the `Page` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`context` |Yes |Page context |
+|`context` |Yes |`Page` context |
 
 Example:
 
@@ -234,7 +235,7 @@ Sets the `Product` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`context`|Yes	|Product context |
+|`context`|Yes	|`Product` context |
 
 Example:
 
@@ -248,7 +249,7 @@ Sets the `Recommendations` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`context` |Yes |	Recommendations context |
+|`context` |Yes |	`Recommendations` context |
 
 Example:
 
@@ -262,7 +263,7 @@ Sets the `ReferrerUrl` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`context` |Yes |ReferrerUrl context |
+|`context` |Yes |`ReferrerUrl` context |
 
 Example:
 
@@ -276,7 +277,7 @@ Sets the `SearchInput` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`context` |Yes |SearchInput context |
+|`context` |Yes |`SearchInput` context |
 
 Example:
 
@@ -290,7 +291,7 @@ Sets the `SearchResults` context.
 
 |**Name**|**Required**|**Description**
 |---|---|---|
-|`context`|Yes	|SearchResults context |
+|`context`|Yes	|`SearchResults` context |
 
 Example:
 
@@ -304,7 +305,7 @@ Sets the `Shopper` context.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-|`context`|Yes |Shopper context|
+|`context`|Yes |`Shopper` context|
 
 Example:
 
@@ -318,7 +319,7 @@ Sets the `ShoppingCart` context.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-|`context`|Yes |ShoppingCart context |
+|`context`|Yes |`ShoppingCart` context |
 
 Example:
 
@@ -332,7 +333,7 @@ Sets the `StorefrontInstance` context.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-|`context`|Yes	|StorefrontInstance context |
+|`context`|Yes	|`StorefrontInstance` context |
 
 Example:
 
@@ -346,7 +347,7 @@ Sets a custom `Context`.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-|`name` |Yes |Context name |
+|`name` |Yes |Context `name` |
 |`context` |Yes |Custom context |
 
 Example:
@@ -365,7 +366,7 @@ Publishes the `addToCart` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context` |No |Custom context |
 
 Example:
 
@@ -379,7 +380,7 @@ Publishes the `customUrl` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|	No |Custom context|
 
 Example:
 
@@ -393,9 +394,7 @@ Publishes the initiateCheckout event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-
-
-context	No	Custom context.
+|`context`|	No |Custom context |
 
 Example:
 
@@ -409,7 +408,7 @@ Publishes the instantPurchase event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|	No |Custom context |
 
 Example:
 
@@ -423,7 +422,7 @@ Publishes the pageActivitySummary event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|	No |Custom context |
 
 Example:
 
@@ -437,7 +436,7 @@ Publishes the pageView event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|	No |Custom context |
 
 Example:
 
@@ -451,7 +450,7 @@ Publishes the placeOrder event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|	No |Custom context |
 
 Example:
 
@@ -465,7 +464,7 @@ Publishes the productPageView event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|	No |Custom context |
 
 Example:
 
@@ -479,9 +478,9 @@ Publishes the recsItemAddToCartClick event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-unitId	Yes	Recommendations unit id.
-productId	Yes	Recommended product id.
-context	No	Custom context.
+|`unitId` |Yes	|Recommendations `unitId`|
+|`productId`Yes |Recommended `productId`|
+|`context`|	No	|Custom context |
 
 Example:
 
@@ -495,9 +494,9 @@ Publishes the recsItemClick event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-unitId	Yes	Recommendations unit id.
-productId	Yes	Recommended product id.
-context	No	Custom context.
+|`unitId`	|Yes	|Recommendations `unitId`|
+|`productId`	|Yes	|Recommended `productId`|
+|`context`|	No	|Custom context |
 
 Example:
 
@@ -511,8 +510,7 @@ Publishes the recsRequestSent event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-
-context	No	Custom context.
+|`context`|	No	|Custom context |
 
 Example:
 
@@ -526,7 +524,7 @@ Publishes the recsResponseReceived event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|	No	|Custom context |
 
 Example:
 
@@ -540,8 +538,8 @@ Publishes the recsUnitRender event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-unitId	Yes	Recommendations unit id.
-context	No	Custom context.
+|`unitId`|Yes |Recommendations `unitId` |
+|`context`|	No	|Custom context |
 
 Example:
 
@@ -555,8 +553,8 @@ Publishes the recsUnitView event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-unitId	Yes	Recommendations unit id.
-context	No	Custom context.
+|`unitId` |Yes	|Recommendations `unitId`|
+|`context`|No |Custom context |
 
 Example:
 
@@ -570,7 +568,7 @@ Publishes the referrerUrl event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|No |Custom context |
 
 Example:
 
@@ -584,7 +582,7 @@ Publishes the removeFromCart event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|No |Custom context |
 
 Example:
 
@@ -598,9 +596,9 @@ Publishes the searchCategoryClick event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-searchUnitId	Yes	Search unit id.
-name	Yes	Category name.
-context	No	Custom context.
+|`searchUnitId` |Yes |Search `unitId`|
+|`name` |Yes |Category name |
+|`context`|No |Custom context |
 
 Example:
 
@@ -614,9 +612,9 @@ Publishes the searchProductClick event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-searchUnitId	Yes	Search unit id.
-sku	Yes	Product sku.
-context	No	Custom context.
+|`searchUnitId` |Yes |Search `unitId`|
+|`sku` | Yes |Product `sku`|
+|`context`|No |Custom context |
 
 Example:
 
@@ -630,9 +628,8 @@ Publishes the searchRequestSent event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-
-searchUnitId	Yes	Search unit id.
-context	No	Custom context.
+|`searchUnitId` |Yes	|Search `unitId`|
+|`context`|No |Custom context |
 
 Example:
 
@@ -646,8 +643,8 @@ Publishes the searchResponseReceived event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-searchUnitId	Yes	Search unit id.
-context	No	Custom context.
+|`searchUnitId` |Yes |Search `unitId`|
+|`context`|No |Custom context |
 
 Example:
 
@@ -661,8 +658,8 @@ Publishes the searchResultsView event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-searchUnitId	Yes	Search unit id.
-context	No	Custom context.
+|`searchUnitId` |Yes	|Search `unitId`|
+|`context`|No |Custom context |
 
 Example:
 
@@ -676,9 +673,9 @@ Publishes the searchSuggestionClick event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-searchUnitId	Yes	Search unit id.
-suggestion	Yes	Query suggestion.
-context	No	Custom context.
+|`searchUnitId` |Yes |Search `unitId` |
+|`suggestion` |Yes |Query `suggestion` |
+|`context` |No |Custom context |
 
 Example:
 
@@ -692,7 +689,7 @@ Publishes the shoppingCartView event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|No |Custom context |
 
 Example:
 
@@ -706,7 +703,7 @@ Publishes the signIn event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|No |Custom context |
 
 Example:
 
@@ -720,7 +717,7 @@ Publishes the signOut event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|No |Custom context |
 
 Example:
 
@@ -734,7 +731,7 @@ Publishes the updateCart event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-context	No	Custom context.
+|`context`|No |Custom context |
 
 Example:
 
@@ -744,7 +741,427 @@ mse.publish.updateCart(ctx);
 
 ## Subscribe
 
-These functions subscribe to events.
+The following functions subscribe to events.
+
+### mse.subscribe.addToCart
+
+Subscribes to the `addToCart` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+|`options` |No	|Listener options |
+
+Example:
+
+```text
+mse.subscribe.addToCart(handler, options);
+```
+
+### mse.subscribe.customUrl
+
+Subscribes to the `customUrl` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
+
+Example:
+
+```text
+mse.subscribe.customUrl(handler, options);
+```
+
+### mse.subscribe.dataLayerChange
+
+Subscribes to the `dataLayerChange` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+|`options` |No	|Listener options |
+
+Example:
+
+```text
+mse.subscribe.dataLayerChange(handler, options);
+```
+
+### mse.subscribe.dataLayerEvent
+
+Subscribes to the `dataLayerEvent` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler`|Yes	|Event handler |
+|`options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.dataLayerEvent(handler, options);
+```
+
+### mse.subscribe.initiateCheckout
+
+Subscribes to the `initiateCheckout` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.initiateCheckout(handler, options);
+```
+
+### mse.subscribe.instantPurchase
+
+Subscribes to the `instantPurchase` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.instantPurchase(handler, options);
+```
+
+### mse.subscribe.pageActivitySummary
+
+Subscribes to the `pageActivitySummary` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.pageActivitySummary(handler, options);
+```
+
+### mse.subscribe.pageView
+
+Subscribes to the `pageView` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.pageView(handler, options);
+```
+
+### mse.subscribe.placeOrder
+
+Subscribes to the `placeOrder` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.placeOrder(handler, options);
+```
+
+### mse.subscribe.productPageView
+
+Subscribes to the `productPageView` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.productPageView(handler, options);
+```
+
+### mse.subscribe.recsItemAddToCartClick
+
+Subscribes to the `recsItemAddToCartClick` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.recsItemAddToCartClick(handler, options);
+```
+
+### mse.subscribe.recsItemClick
+
+Subscribes to the `recsItemClick` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.recsItemClick(handler, options);
+```
+
+### mse.subscribe.recsRequestSent
+
+Subscribes to the `recsRequestSent` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.recsRequestSent(handler, options);
+```
+
+### mse.subscribe.recsResponseReceived
+
+Subscribes to the `recsResponseReceived` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.recsResponseReceived(handler, options);
+```
+
+### mse.subscribe.recsUnitRender
+
+Subscribes to the `recsUnitRender` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.recsUnitRender(handler, options);
+```
+
+### mse.subscribe.recsUn itView
+
+Subscribes to the `recsUnitView` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.recsUnitView(handler, options);
+```
+
+### mse.subscribe.referrerUrl
+
+Subscribes to the `referrerUrl` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.referrerUrl(handler, options);
+```
+
+### mse.subscribe.removeFromCart
+
+Subscribes to the `removeFromCart` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.removeFromCart(handler, options);
+```
+
+### mse.subscribe.searchCategoryClick
+
+Subscribes to the `searchCategoryClick` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.searchCategoryClick(handler, options);
+```
+
+### mse.subscribe.searchProductClick
+
+Subscribes to the `searchProductClick` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.searchProductClick(handler, options);
+```
+
+### mse.subscribe.searchRequestSent
+
+Subscribes to the `searchRequestSent` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.searchRequestSent(handler, options);
+```
+
+### mse.subscribe.searchResponseReceived
+
+Subscribes to the `searchResponseReceived` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.searchResponseReceived(handler, options);
+```
+
+### mse.subscribe.searchResultsView
+
+Subscribes to the `searchResultsView` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.searchResultsView(handler, options);
+```
+
+### mse.subscribe.searchSuggestionClick
+
+Subscribes to the `searchSuggestionClick` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.searchSuggestionClick(handler, options);
+```
+
+### mse.subscribe.shoppingCartView
+
+Subscribes to the `shoppingCartView` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.shoppingCartView(handler, options);
+```
+
+### mse.subscribe.signIn
+
+Subscribes to the `signIn` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.signIn(handler, options);
+```
+
+### mse.subscribe.signOut
+
+Subscribes to the `signOut` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.signOut(handler, options);
+```
+
+### mse.subscribe.updateCart
+
+Subscribes to the `updateCart` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+handler	Yes	Event handler.
+options	No	Listener options.
+
+Example:
+
+```text
+mse.subscribe.updateCart(handler, options);
+```
 
 ## Unsubscribe
 
