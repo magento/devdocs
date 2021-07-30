@@ -25,7 +25,7 @@ _Indexing pipeline_
 
 1. Store indexing attributes.
 
-1. Reindex search index cluster.
+1. Reindex search index.
 
 ### Full index
 
@@ -36,7 +36,7 @@ The following events trigger a full sync and index build:
 -  Onboarding [catalog data sync]({{ site.baseurl }}/live-search/config-connect.html#catalog-data-sync)
 -  Changes to attribute metadata
 
-For example, changing the `Use in Search` property of the `color` attribute from `No` to `Yes` changes the attribute metadata to `searchable=true`, and triggers a full sync and reindex. The following product metadata are indexed by Live Search and trigger a full sync and reindex when changed:
+For example, changing the `Use in Search` property of the `color` attribute from `No` to `Yes` changes the attribute metadata to `searchable=true`, and triggers a full sync and reindex. The following attribute metadata trigger a full sync and reindex when changed:
 
 -  `filterableInSearch`
 -  `searchable`
@@ -56,9 +56,9 @@ Streaming update workflow:
 
 1. Updated products are synced from the {{site.data.var.ee}} instance to the catalog service.
 
-1. The indexing service continuously looks for product updates from the catalog service and reindexes the search index cluster as needed.
+1. The indexing service continuously looks for product updates from the catalog service. Updated products are indexed as they arrive in the catalog service.
 
-1. After reindexing, it takes about fifteen minutes a product update to become available for storefront search.
+1. It can take up to fifteen minutes for a product update to become available in Live Search.
 
 ## Client search
 
