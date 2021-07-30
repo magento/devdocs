@@ -21,12 +21,11 @@ craft a URL that will call the endpoint. If the API is not RESTful then calling 
 For example, calling the PHP `file_get_contents('http://internal-service/mess-my-store')` method with a malicious URL
 that is subsequently used by the application will achieve this.
 
-Another example would be an integration with a 3rd-party tax info provider service. We want to display accurate tax
-info during checkout, but keeping tax DB ourselves is too much of a responsibility. We decide to rely on a 3rd-party
-service. Admin users now have the ability to set the tax service base URL just in case it changes in the future, or
-there is a standard tax info API that can be provided by multiple service providers and we want for admin users
-to be able to choose any. Now a malicious Admin user can craft a base URL that will be requested by our application
-later on and the request is not limited to GET method.
+Another example would be an integration with a 3rd-party service that provides tax information. Your module might need
+to display accurate tax information during checkout, but your company does not specialize in calculating taxes. Therefore,
+your module provides a field in which an Admin user can set the tax service base URL or the path to a standard tax
+API. Now, a malicious Admin user can craft a base URL that will be requested by our application
+later on, and the request is not using a GET method.
 
 ## Prevention measures
 
