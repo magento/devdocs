@@ -16,6 +16,12 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.3.3 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed an issue where Fastly's Web Application Firewall (WAF) was incorrectly blocking a cookie
+-  {:.fix}Fixed issue where products assigned to the non-default Store View were not being displayed in the **Recommendations Product Preview** panel when creating a recommendation for that specific Store View
+-  {:.fix}Fixed issue where certain recommendation unit names in Page Builder prevented the recommendation unit to display on the storefront
+
 ## 3.3.2 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.fix}Fixed missing dependency for B2B support
@@ -35,7 +41,7 @@ The release notes include:
 
 ## 3.2.5 of magento/product-recommendations for Magento Commerce 2.4.0
 
--  {:.new}Renamed Magento Services to [Commerce Services](https://docs.magento.com/user-guide/system/saas.html) and improved usability in the Admin.
+-  {:.new}Renamed Magento Services to [Commerce Services](https://docs.magento.com/user-guide/system/saas.html) and improved usability in the Admin
 
 ## 3.2.4 of magento/product-recommendations for Magento Commerce 2.4.0
 
