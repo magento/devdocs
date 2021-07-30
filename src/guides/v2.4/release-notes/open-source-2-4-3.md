@@ -111,7 +111,7 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 ### Upgrade Compatibility Tool
 
-The scope of the [Upgrade Compatibility Tool]({{page.baseurl}}/upgrade-compatibility-tool/introduction.html) has been expanded based on feedback from the community. Join our #upgrade-compatibility-tool slack channel to get support from the Adobe product team and the community, as well as to help guide the future direction of the tool.
+The scope of the [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html) has been expanded based on feedback from the community. Join our #upgrade-compatibility-tool slack channel to get support from the Adobe product team and the community, as well as to help guide the future direction of the tool.
 
 ### Vendor Developed Extensions
 
