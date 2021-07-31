@@ -111,7 +111,7 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 ### Upgrade Compatibility Tool
 
-The scope of the [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html) has been expanded based on feedback from the community. Join our #upgrade-compatibility-tool slack channel to get support from the Adobe product team and the community, as well as to help guide the future direction of the tool.
+The scope of the [Upgrade Compatibility Tool]({{ site.baseurl }}/upgrade-compatibility-tool/introduction.html) has been expanded based on feedback from the community. Join our [#upgrade-compatibility-tool](https://magentocommeng.slack.com/archives/C019Y143U9F) Slack channel to get support from the Adobe product team and the community, as well as to help guide the future direction of the tool.
 
 ### Vendor Developed Extensions
 
@@ -1863,7 +1863,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 **Issue**: _Content Security Policy error_. The storefront displays the following error in the console log: `The Content-Security-Policy directive frame-ancestors does not support the source expression unsafe-inline`. Storefront performance is not affected. <!--- MC-42613-->
 
-**Issue**: _Anomalies with PayPal Credit display of gift card amounts_. When PayPal Credit is enabled and multiple gift card amounts are configured, if a shopper changes the amount for the value of a gift card, the storefront does not update the amount for installment payments. A fix for this issue will be included in Adobe Commerce 2.4.4 and Magento Open Source 2.4.4.<!--- MC-42499 AC-344-->
+**Issue**: _Anomalies with PayPal Credit display of gift card amounts_. When PayPal Credit is enabled and multiple gift card amounts are configured, if a shopper changes the amount for the value of a gift card, the storefront does not update the amount for installment payments. A fix for this issue will be included in {{ site.data.var.ee }} 2.4.4 and {{ site.data.var.ce }} 2.4.4.<!--- MC-42499 AC-344-->
 
 **Issue**:  _The **Add to order** button does not work for products added to the cart by SKU_.  Magento displays this error message when you click on the **Add to order** button after adding products to the order by SKU: `An error has happened during application run`. Products are not added to the cart. **Workaround**: Use the Add Products feature. <!--- AC-345-->
 
