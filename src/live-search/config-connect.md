@@ -16,13 +16,15 @@ The developer or SI configures the SaaS environment as described in the Commerce
 
 ## Catalog data sync
 
-Live Search requires synchronized product data for search operations and synchronized attribute data for facet configuration. The synchronization between the product catalog and the catalog service begins after Live Search is connected. It can take up to 24 hours to export catalog data from your {{site.data.var.ee}} instance and for it to be indexed by Live Search.
+Live Search requires synchronized product data for search operations and synchronized attribute data to configure facets. The initial synchronization between the product catalog and the catalog service begins when Live Search is first connected and can take up to eight hours to complete. During the process, catalog data is exported from your {{site.data.var.ee}} instance and indexed by Live Search.
 
 To ensure that catalog export runs correctly, confirm that the [cron jobs]({{ page.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html) and [indexers]({{ page.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html) are running, and that the following indexers are set to `Update by Schedule`:
 
 -  Product Feed
 -  Product Variant Feed
 -  Catalog Attributes Feed
+
+After the initial synchronization, it can take up to fifteen minutes for incremental product updates to become available to storefront search. To learn more, go to [Streaming Product Updates]({{ site.baseurl }}/live-search/indexing.html#streaming-product-updates).
 
 ### Verify catalog sync
 
@@ -31,7 +33,7 @@ To verify that the data has been exported from your {{site.data.var.ee}} instanc
 -  `catalog_data_exporter_products`
 -  `catalog_data_exporter_product_attributes`
 
-If you need additional help, check the [Support Knowledge Base](https://support.magento.com/hc/en-us).
+For additional help, refer to [Live search catalog not synchronized](https://support.magento.com/hc/en-us/articles/4405637804301-Live-search-catalog-not-synchronized) in the Support Knowledge Base.
 
 ### Test the connection
 

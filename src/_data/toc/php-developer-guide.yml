@@ -297,6 +297,9 @@ pages:
         - label: Sensitive Information
           url: /extension-dev-guide/security/sensitive-information.html
 
+        - label: Avoiding SSRF
+          url: /extension-dev-guide/security/ssrf.html
+
         - label: Authorization
           url: /extension-dev-guide/security/authorization.html
 
