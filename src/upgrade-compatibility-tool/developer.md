@@ -12,7 +12,7 @@ This topic contains information for developers who want to know more technical i
 
 ## Adobe Commerce API index integration
 
-{{site.data.var.ee}} API index integration is an internal integration solution that comprehends a set of tools to explore {{site.data.var.ee}} Extensions developed by Adobe, {{site.data.var.ee}} Partners and 3rd party vendors based on static code analysis.
+{{site.data.var.ee}} API index integration is an internal integration solution that comprehends a set of tools to explore {{site.data.var.ee}} Extensions developed by Adobe, {{site.data.var.ee}} Partners, and 3rd party vendors based on static code analysis.
 
 The integration with the {{site.data.var.ee}} API index is done through:
 

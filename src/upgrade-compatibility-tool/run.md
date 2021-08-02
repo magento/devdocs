@@ -8,7 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrade Compatibility Tool is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
+The Upgrade Compatibility Tool is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
 
 The Upgrade Compatibility Tool identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of {{site.data.var.ee}}.
 
@@ -23,12 +23,12 @@ bin/uct upgrade:check <dir>
 {:.bs-callout-info}
 The `<dir>` value is the directory where your {{site.data.var.ee}} instance is located.
 
-The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
+The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
 
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
 
-This command allows to check for core code changes, if desired for that specific {{site.data.var.ee}} instance, as well as all custom code changes installed in it.
+This command checks for core code changes, if desired, for that specific {{site.data.var.ee}} instance, as well as all custom code changes installed in it.
 
 It is possible to only run the `core:code:changes` command to analyze only core code changes for that specific {{site.data.var.ee}} instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
 

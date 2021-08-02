@@ -8,7 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrade Compatibility Tool is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
+The Upgrade Compatibility Tool is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
 
 ## Workflow
 
@@ -54,7 +54,7 @@ If you are running the Upgrade Compatibility Tool against an {{site.data.var.ee}
 
 ### Recommended actions
 
-{{site.data.var.ee}} best practices recommend to avoid having 2 modules with the same name, if this happens the Upgrade Compatibility Tool will show a segmentation fault error.
+{{site.data.var.ee}} best practices recommend to avoid having two modules with the same name. If this happens, the Upgrade Compatibility Tool will show a segmentation fault error.
 
 To avoid this error it is recommended to run the `bin` command with the added option `-m`:
 
@@ -65,7 +65,7 @@ bin/uct upgrade:check /<dir>/<instance-name> --coming-version=2.4.1 -m /vendor/<
 {:.bs-callout-info}
 The `<dir>` value is the directory where your {{site.data.var.ee}} instance is located.
 
-The `-m` option allows the Upgrade Compatibility Tool to analyze each specific module independently to avoid encountering 2 modules with the same name in your {{site.data.var.ee}} instance.
+The `-m` option allows the Upgrade Compatibility Tool to analyze each specific module independently to avoid encountering two modules with the same name in your {{site.data.var.ee}} instance.
 
 This command option also allows the Upgrade Compatibility Tool to analyze a folder containing several modules:
 
@@ -137,6 +137,6 @@ Node.js is only a requirement to check GraphQL compatibility.
 
 ## Third-party extensions
 
-{{site.data.var.ee}} recommends that you contact your extension vendor to determine whether your extension is fully compatible with {{site.data.var.ee}} 2.4.x.
+Adobe recommends that you contact your extension vendor to determine whether your extension is fully compatible with {{site.data.var.ee}} 2.4.x.
 
 See [Run the tool]({{site.baseurl}}/upgrade-compatibility-tool/run.html) for information about executing the Upgrade Compatibility Tool.
