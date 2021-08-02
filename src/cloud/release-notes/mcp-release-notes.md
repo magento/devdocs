@@ -21,6 +21,15 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 
 <!--Add release notes below-->
 
+## v1.0.11
+*Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+-  {:.fix} **Fixed an issue caused by applying the B2B Layered navigation patch**–For customers that have applied the B2B Layered navigation patch, this fix resolves an `Undefined offset` error that displays on the Search page after switching the Store view.<!--MCLOUD-5287-->
+
+-  {:.fix} **Paypal Checkout patch**–Fixes a Magento 2.3.7 issue with PayPal Express where the previously placed order price is displayed.<!--MC-42674-->
+
+-  {:.fix} **Patch category support**–Added support for processing patch categories and origin sources assigned to Magento Quality Patches. The categories allow customers to use filters and sorting to find patches more quickly when using [Magento Quality Patches](https://github.com/magento/quality-patches) and the Site-wide Analysis Tool (SWAT). <!--MC-38577-->
+
 ## v1.0.10
 *Release date: May 10, 2021*<br/>
 
