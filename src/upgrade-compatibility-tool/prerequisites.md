@@ -8,7 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-Running the Upgrade Compatibility Tool helps you identify what you must do **before** upgrading your Adobe Commerce version.
+Running the Upgrade Compatibility Tool helps you identify what you must do **before** upgrading your {{site.data.var.ee}} version.
 
 The minimum requirements to run the Upgrade Compatibility Tool are:
 
@@ -22,6 +22,6 @@ The minimum requirements to run the Upgrade Compatibility Tool are:
 | Adobe Commerce (Open Source or enterprise) | none |
 {:style="table-layout:auto;"}
 
-You can run the Upgrade Compatibility Tool in any operating system. There is no requirement to run the Upgrade Compatibility Tool where your Adobe Commerce instance is located.
+You can run the Upgrade Compatibility Tool in any operating system. There is no requirement to run the Upgrade Compatibility Tool where your {{site.data.var.ee}} instance is located.
 
-It is necessary for the Upgrade Compatibility Tool to have access to the source code of the Adobe Commerce instance. For example, you can install it on one server and point it at your Adobe Commerce installation on another server. Refer to the [install]({{site.baseurl}}/upgrade-compatibility-tool/install.html#install) for more information.
+It is necessary for the Upgrade Compatibility Tool to have access to the source code of the {{site.data.var.ee}} instance. For example, you can install it on one server and point it at your {{site.data.var.ee}} installation on another server. Refer to the [install]({{site.baseurl}}/upgrade-compatibility-tool/install.html#install) for more information.

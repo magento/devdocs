@@ -8,9 +8,9 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
+The Upgrade Compatibility Tool is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
 
-The Upgrade Compatibility Tool identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of Adobe Commerce.
+The Upgrade Compatibility Tool identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of {{site.data.var.ee}}.
 
 ## Use the `upgrade:check` command
 
@@ -21,16 +21,16 @@ bin/uct upgrade:check <dir>
 ```
 
 {:.bs-callout-info}
-The `<dir>` value is the directory where your Adobe Commerce instance is located.
+The `<dir>` value is the directory where your {{site.data.var.ee}} instance is located.
 
-The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
+The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. Returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
 
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
 
-This command allows to check for core code changes, if desired for that specific Adobe Commerce instance, as well as all custom code changes installed in it.
+This command allows to check for core code changes, if desired for that specific {{site.data.var.ee}} instance, as well as all custom code changes installed in it.
 
-It is possible to only run the `core:code:changes` command to analyze only core code changes for that specific Adobe Commerce instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
+It is possible to only run the `core:code:changes` command to analyze only core code changes for that specific {{site.data.var.ee}} instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
 
 The command `graphql:compare` allows to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification]({{site.baseurl}}/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
 
@@ -77,7 +77,7 @@ Available `--help` options for the `upgrade:check` command:
 
 ## Core code changes
 
-You can compare your current Adobe Commerce installation with a clean vanilla installation to see if the core code has any modifications made to implement a new feature or customization. This validation will help estimate the effort that the upgrade will require based on those changes.
+You can compare your current {{site.data.var.ee}} installation with a clean vanilla installation to see if the core code has any modifications made to implement a new feature or customization. This validation will help estimate the effort that the upgrade will require based on those changes.
 
 ```bash
 bin/uct core:code:changes <dir> <vanilla dir>
@@ -119,7 +119,7 @@ See the [Deploy vanilla instance]({{site.baseurl}}/contributor-guide/contributin
 
 ## Version
 
-You can compare your current Adobe Commerce installation with Adobe Commerce versions `>=2.3`.
+You can compare your current {{site.data.var.ee}} installation with {{site.data.var.ee}} versions `>=2.3`.
 
 You must provide the version as a parameter when running the command:
 
@@ -129,7 +129,7 @@ bin/uct upgrade:check <dir> -c 2.4.3
 
 There are some limitations when running the previous command:
 
-*  This parameter refers to any tag that identifies a specific version of Adobe Commerce.
+*  This parameter refers to any tag that identifies a specific version of {{site.data.var.ee}}.
 *  It is a requirement to provide this one explicitly; providing only the value of it will not work.
 *  Provide the tag version without any quotation marks (neither single nor double): ~~'2.4.1-develop'~~.
 *  You should NOT provide older versions than the one you have currently installed, nor older than 2.3, which is the oldest one supported at the moment.
