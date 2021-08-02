@@ -61,10 +61,6 @@ To add Blackfire.io to your project configuration:
       docker-compose run --rm deploy cloud-deploy
       ```
 
-      ```bash
-      docker-compose run --rm deploy magento-command deploy:mode:set developer
-      ```
-
    -  Run post-deploy hooks.
 
       ```bash
