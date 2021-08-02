@@ -11,6 +11,11 @@ The [Magento Cloud Components](https://github.com/magento/magento-cloud-componen
 
 The `{{site.data.var.mcc-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
+## v1.0.8
+*Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+-  {:.fix}**Removed trailing slashes from auto-generated URLs**–Removed the trailing slashes from Category Page URLs generated during cache warm up.<!--MCLOUD-7192-->
+
 ## v1.0.7
 *Release date: September 9, 2020*<br/>
 

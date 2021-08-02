@@ -60,6 +60,9 @@ To verify installed extensions:
 
 ## Check PHP settings
 
+{:.bs-callout-warning}
+If you are using PHP 7.4.20, set `pcre.jit=0` in your `php.ini` file. This will get around a PHP [bug](https://bugs.php.net/bug.php?id=81101) that prevents CSS from loading.
+
 -  Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
 ```terminal

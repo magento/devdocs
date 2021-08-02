@@ -233,6 +233,9 @@
     - label: Rest Tutorials
       url: /rest/tutorials/index.html
 
+    - label: Custom Attributes
+      url: /howdoi/custom-attributes/introduction.html
+
     - label: Customize Product Creation Form
       url: /howdoi/customize_product.html
 
