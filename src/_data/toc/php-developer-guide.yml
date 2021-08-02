@@ -306,6 +306,9 @@ pages:
         - label: Authorization
           url: /extension-dev-guide/security/authorization.html
 
+        - label: Brute Force attacks
+          url: /extension-dev-guide/security/anti-brute-force.html
+
     - label: Versioning
       url: /extension-dev-guide/versioning/
       children:
