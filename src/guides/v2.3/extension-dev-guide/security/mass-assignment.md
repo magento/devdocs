@@ -11,12 +11,12 @@ Example:
 You have an endpoint or a page where users can edit their own personal information. The user table in your DB
 contains the following columns:
 
-*  id
-*  first_name
-*  last_name
-*  email
-*  password_hash
-*  is_admin
+*  `id`
+*  `first_name`
+*  `last_name`
+*  `email`
+*  `password_hash`
+*  `is_admin`
 
 You want users to be able to edit their first and last names only on a page or through the endpoint, but inside the
 controller/service contract, you have code looking something like this:
@@ -30,7 +30,7 @@ $dbConnection->updateTable('users', $user->getData(), ['id' => $user->getId()]);
 When a client only provides `first_name` and `last_name` properties, this code will perform as expected, but it is vulnerable
 to mass assignment attacks.
 
-The first vulnerability is through the `id` property. Users are meant to be able to edit only their own data BUT here
+The first vulnerability is through the `id` property. Users are meant to be able to edit only their own data, but here
 an attacker can set an `id` in their request. The`$user` object's ID will be overwritten, so when you call
 `$dbConnection->updateTable()`, instead of having the ID from `$authContext`, you will have an arbitrary ID from the HTTP request.
 This will allow an attacker to override data of any user in your system!
@@ -43,7 +43,8 @@ Given the `users` table structure, and depending on your application's logic, `e
 An attacker might be able to change their email to any other address without confirming it first.
 
 ## Mass Assignment and Magento
-If you are not careful and, especially, if you use legacy approach it is easy to make yourself vulnerable to mass
+
+If you are not careful and, especially, if you use the legacy approach described below, it is easy to make yourself vulnerable to mass
 assignment.
 
 ### Legacy approach
@@ -76,6 +77,7 @@ As you can see, this example is similar to the generic example with users before
 thus allowing the client to override ANY property that the model (table) has and then store it.
 
 ### Newer approach
+
 A more recent practice is to have service contracts and DTOs that are directly exposed as REST APIs, used inside related
 controllers and GraphQL resolvers.
 
@@ -160,12 +162,13 @@ This approach is better because we do not accept all data coming from client req
 strictly defined inside `UserInterface` with getters. For REST APIs, this is ensured by the Magento framework automatically,
 and inside the controller, we hydrate the user object retrieved from the DB with `DataObjectHelper`.
 
-However, because our DTO is also implemented by a class that extends `AbstractModel`, it means that it's a de facto active record
+However, because our DTO is also implemented by a class that extends `AbstractModel`, it's a de facto active record
 of the `users` table. As a result, we still have the issue where we exposed the `id`, `is_admin`, and `email` properties.
 The same vulnerabilities persist.
 
 ## Solution
-The vulnerability can be relatively easily fixed by having a strict list of properties accepted by your
+
+The vulnerability can be fixed relatively easily by having a strict list of properties accepted by your
 controllers/service contracts that do not necessarily correlate with the storage schema.
 This can be achieved by using operation-specific DTOs instead of persistence-layer DTOs.
 
@@ -370,6 +373,6 @@ only to admin users by providing extension attributes for `UserFullDataInterface
 
 ### GraphQL
 
-For GraphQL APIs Magento does not rely on interfaces to generate schema. Instead we have explicit GraphQL schemas so there is
+For GraphQL APIs, Magento does not rely on interfaces to generate schema. Instead, we have explicit GraphQL schemas, and there is
 no risk of exposing fields accidentally when you update data storage schema. However, if for some reason some fields
 do require additional authorization, you would still need to verify it explicitly.
