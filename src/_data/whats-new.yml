@@ -4,8 +4,93 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jun 28 14:44:34 2021
+updated: Mon Jul 26 18:01:23 2021
 entries:
+- description: Added the [Sensitive Information](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/sensitive-information.html)
+    topic to the _PHP Developer Guide_. This topic describes how to prevent unauthorized
+    actors from gaining access to sensitive or personal data.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: July 21, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2395
+  merge_commit: 1fcabe8621d62776aedddafc5573a8757734853e
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
+- description: Added the [Authorization](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/authorization.html)
+    topic to the _PHP Developer Guide_. This topic describes how to mark a page (controller)
+    or an endpoint as accessible to guests, logged in customers, or administrators
+    with roles that allow access to certain resources.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: July 19, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2369
+  merge_commit: 19c787be5732b2eae0bc28db5ab1cae3dd4ebbec
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
+- description: Added the "Use Magento API for filesystem operations" section to [Security,
+    Performance, and Data Handling](https://devdocs.magento.com/guides/v2.4/ext-best-practices/extension-coding/security-performance-data-bp.html).
+  versions: 2.4.x
+  type: Major Update
+  date: July 2, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2382
+  merge_commit: 6230ea8fd684aff8d3d24431dea632ca056334c3
+  contributor: shiftedreality
+  membership: true
+  labels:
+  - 2.4.x
+  - Major Update
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.0.26 Magento Quality Patch (MQP) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: July 1, 2021
+  link: https://github.com/magento/devdocs/pull/9031
+  merge_commit: 9fefc5cb33b086d346d7fb5c6f8d54eff7f1c89f
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - Major Update
+  - 'Progress: done'
+- description: Added the topic [Add a custom field for an offline payment method](https://devdocs.magento.com/guides/v2.4/howdoi/checkout/checkout_payment_new_field.html)
+    to the Customize Checkout tutorial.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: June 29, 2021
+  link: https://github.com/magento/devdocs/pull/8940
+  merge_commit: 52ca3e3ea4fbf43c3bebe9c02a153f83027fab88
+  contributor: ajithkumar-maragathavel
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
+  - 'Partner: Ziffity'
+  - 'Progress: done'
+  - partners-contribution
+- description: Added [Upgrade best practices](https://devdocs.magento.com/guides/v2.4/comp-mgr/upgrade-best-practices.html),
+    which describes the actions you should take to manage the complexity of upgrading
+    Magento Open Source and Adobe Commerce.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: June 29, 2021
+  link: https://github.com/magento/devdocs/pull/9010
+  merge_commit: 9f12fa32a4f8ea387e49e2e1eb83e72945a7a8f6
+  contributor: keharper
+  membership: true
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
 - description: Added a topic about [Released versions](https://devdocs.magento.com/release/released-versions.html)
     with dates of past releases and end-of-support dates.
   versions: 2.x

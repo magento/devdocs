@@ -8,7 +8,11 @@ functional_areas:
   - Upgrade
 ---
 
+<<<<<<< HEAD
 The Upgrade Compatibility Tool is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
+=======
+The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
+>>>>>>> dfc19ce401f892086cc3b80e2081d21976678ad4
 
 The Upgrade Compatibility Tool identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of {{site.data.var.ee}}.
 
@@ -111,9 +115,9 @@ Available `--help` options for the `core:code:changes` command:
 
 ### Vanilla installation
 
-This is a clean installation of a specified version tag or branch for a specific release version.
+A _vanilla_ installation is a clean installation of a specified version tag or branch for a specific release version.
 
-When running the `bin/uct core:code:changes` command, it will check if there is a vanilla instance in your system. In case this is the first time using a vanilla installation, an interactive command-line question is prompted if the vanilla project should be downloaded from the [Adobe Commerce repository](https://repo.magento.com/).
+When running the `bin/uct core:code:changes` command, it will check if there is a vanilla instance in your system. In a case where this is the first time using a vanilla installation, an interactive command-line question prompts you to download the vanilla project from the [Adobe Commerce repository](https://repo.magento.com/).
 
 See the [Deploy vanilla instance]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) topic for more information.
 
@@ -144,8 +148,8 @@ bin/uct graphql:compare <schema1> <schema2>
 
 Where arguments are as follows:
 
-*  <schema1> - Endpoint URL for the first GraphQL schema.
-*  <schema2> - Endpoint URL for the second GraphQL schema.
+*  <schema1> - Endpoint URL for the existing installation.
+*  <schema2> - Endpoint URL for the vanilla installation.
 
 You must have running `instance before` and `instance after` the upgrade.
 
@@ -249,7 +253,7 @@ Regarding the GraphQL schema compatibility comparison, the output would be very 
 ### Empty output
 
 {:.bs-callout-info}
-The `M2_VERSION` is the target Adobe Commerce 2 version you want to compare to your Adobe Commerce instance.
+The `M2_VERSION` is the target Adobe Commerce version you want to compare to your Adobe Commerce instance.
 
 If after running this command:
 

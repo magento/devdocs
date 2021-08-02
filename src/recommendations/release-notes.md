@@ -16,6 +16,12 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.3.3 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed an issue where Fastly's Web Application Firewall (WAF) was incorrectly blocking a cookie
+-  {:.fix}Fixed issue where products assigned to the non-default Store View were not being displayed in the **Recommendations Product Preview** panel when creating a recommendation for that specific Store View
+-  {:.fix}Fixed issue where certain recommendation unit names in Page Builder prevented the recommendation unit to display on the storefront
+
 ## 3.3.2 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.fix}Fixed missing dependency for B2B support
@@ -35,7 +41,7 @@ The release notes include:
 
 ## 3.2.5 of magento/product-recommendations for Magento Commerce 2.4.0
 
--  {:.new}Renamed Magento Services to [Commerce Services](https://docs.magento.com/user-guide/system/saas.html) and improved usability in the Admin.
+-  {:.new}Renamed Magento Services to [Commerce Services](https://docs.magento.com/user-guide/system/saas.html) and improved usability in the Admin
 
 ## 3.2.4 of magento/product-recommendations for Magento Commerce 2.4.0
 
@@ -43,7 +49,6 @@ The release notes include:
 
 ## 3.2.3 of magento/product-recommendations for Magento Commerce 2.4.0
 
--  {:.new}Added the ability to [preview recommendation results](https://docs.magento.com/user-guide/marketing/create-new-rec.html#preview) at creation time. This might require that you update dependencies in the current version.
 -  {:.fix}Fixed the "Unable to retrieve configurable product options data" error during Catalog Sync
 -  {:.fix}Fixed an issue where the store code was not being set correctly when you enabled the "Add store code to URL" configuration
 -  {:.fix}Improved detection of Admin Panel configuration changes to ensure these changes are reflected in Catalog Sync data
