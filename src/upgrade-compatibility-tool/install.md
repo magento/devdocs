@@ -65,11 +65,7 @@ bin/uct upgrade:check /<dir>/<instance-name> --coming-version=2.4.1 -m /vendor/<
 {:.bs-callout-info}
 The `<dir>` value is the directory where your {{site.data.var.ee}} instance is located.
 
-<<<<<<< HEAD
 The `-m` option allows the Upgrade Compatibility Tool to analyze each specific module independently to avoid encountering two modules with the same name in your {{site.data.var.ee}} instance.
-=======
-The `-m` option allows the Upgrade Compatibility Tool to analyze each specific module independently to avoid encountering two modules with the same name in your Adobe Commerce instance.
->>>>>>> dfc19ce401f892086cc3b80e2081d21976678ad4
 
 This command option also allows the Upgrade Compatibility Tool to analyze a folder containing several modules:
 
@@ -141,10 +137,6 @@ Node.js is only a requirement to check GraphQL compatibility.
 
 ## Third-party extensions
 
-<<<<<<< HEAD
 Adobe recommends that you contact your extension vendor to determine whether your extension is fully compatible with {{site.data.var.ee}} 2.4.x.
-=======
-Adobe recommends that you contact your extension vendor to determine whether your extension is fully compatible with Adobe Commerce 2.4.x.
->>>>>>> dfc19ce401f892086cc3b80e2081d21976678ad4
 
 See [Run the tool]({{site.baseurl}}/upgrade-compatibility-tool/run.html) for information about executing the Upgrade Compatibility Tool.

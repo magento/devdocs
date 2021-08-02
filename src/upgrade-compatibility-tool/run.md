@@ -8,11 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-<<<<<<< HEAD
 The Upgrade Compatibility Tool is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
-=======
-The Upgrade Compatibility Tool is a command-line tool that checks an Adobe Commerce customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of Adobe Commerce.
->>>>>>> dfc19ce401f892086cc3b80e2081d21976678ad4
 
 The Upgrade Compatibility Tool identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of {{site.data.var.ee}}.
 
