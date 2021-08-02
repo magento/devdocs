@@ -20,6 +20,7 @@ Magento caches the following queries:
 *  `cmsBlocks`
 *  `cmsPage`
 *  `products`
+*  `route`
 *  `urlResolver` (deprecated)
 
 Magento explicitly disallows caching the following queries.

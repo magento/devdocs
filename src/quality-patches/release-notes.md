@@ -19,6 +19,14 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.1.0
+
+-  Patch categories were introduced in order to improve the user experience and make searching for required patches easier for customers.
+-  The `patches.json` file has been renamed to `support-patches.json`.
+-  **MDVA-38799** _(for Magento `>=2.3.0 <2.4.3`)_-Fixes the issue where downloadable products weren't saved after creating a staging update.
+-  **MDVA-37592** _(for Magento `>=2.3.6 <=2.4.2-p1`)_-Fixes the issue when sorting by price doesn't work correctly for products with a zero price assigned to shared catalog.
+-  **MDVA-38827** _(for Magento `>=2.3.3-p1 <2.4.4`)_-Fixes the issue where customers receive an order shipment email containing an error message.
+
 ## v1.0.26
 
 -  **MDVA-38468** _(for Magento `>=2.3.2 <=2.3.5-p2`)_-Fixes the error when saving CMS pages - Item with the same ID 'PAGE_ID' already exists.
