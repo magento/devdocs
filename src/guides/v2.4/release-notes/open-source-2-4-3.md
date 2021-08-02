@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.4.3 Release Notes
 ---
 
-Magento Open Source 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
+{{ site.data.var.ce }} 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
 This release includes over 370 new fixes to core code and 33 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
@@ -12,7 +12,7 @@ All known issues identified in Magento 2.4.2 have been fixed in this release.
 {:.bs-callout-info}
 Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.2 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
-See [Magento 2.4.2-p2 release notes]({{page.baseurl}}/release-notes/2.4.2-p2.html) for information about Magento 2.4.2-p2.
+See [Magento 2.4.2-p2 release notes]({{page.baseurl}}/release-notes/2-4-2-p2.html) for information about Magento 2.4.2-p2.
 
 ## Other release information
 
@@ -24,7 +24,7 @@ Look for the following highlights in this release.
 
 ### Substantial security enhancements
 
-This release includes 35 security fixes and platform security improvements. All security fixes have been backported to Magento 2.4.2-p2 and Magento 2.3.7-p1.
+This release includes 35 security fixes and platform security improvements. Many of these security fixes have been backported to Magento 2.4.2-p2 and Magento 2.3.7-p1.
 
 #### Thirty-three security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
