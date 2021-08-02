@@ -7,7 +7,7 @@ BruteForce is a type of attack when an attacker tries to guess a value/secret st
 all possible variations. Attackers may also use dictionaries (rainbow tables) of previously exposed correct values
 like known passwords for other applications.
 
-# Identifying vulnerable functionality
+## Identifying vulnerable functionality
 The first step is to find where the application can be vulnerable against BruteForce.
 
 ### Human-readable secrets
@@ -17,8 +17,8 @@ login-password pairs, gift card codes, Forgot-Password functionality that asks f
 ### Machine-readable secrets
 Meaning tokens, randomly generated secrets. Examples are authorization tokens or a secret link to a shared document.
 
-# Protection
-## Are you a robot?
+## Protection
+### Are you a robot?
 One of the most effective ways to stop a script from automatically guessing secrets is to verify that a client is
 indeed a real person. Present the client with a challenge that can only be solved by a human.
 Google ReCaptcha is a recommended provider to use for the challenges, although Magento CAPTCHA implementation is also
@@ -30,30 +30,33 @@ Magento has HTML interface and controllers for login, it also has a RESTful endp
 creating an authentication token. If only the controller is protected then attackers will be able to use the RESTful
 or GraphQL endpoint to guess E-mails and passwords.
 
-## Too long to guess
+### Too long to guess
 Another strategy is to make the secrets too long for attackers to be able to cycle through possible values. Use
 a recommended safe hashing algorithm for hash based tokens/secrets and use cryptographically secure randomizers for
 long random secrets of at least 16 or preferably 32 characters minimum.
 
-## Leverage infrastructure
+### Leverage infrastructure
 Sometimes secret values cannot be too long or it is undesirable to introduce friction in form of ReCaptcha, then it is
 still possible to mitigate BruteForce attacks by leveraging infrastructure. Some hosting or cloud providers have built-in
 anti DoS and BruteForce smart detection mechanisms, other allow to simply configure throttling for specific routes.
 Identify the routes that need to be protected and configure your server accordingly.
 
-# When to use what
-## ReCaptcha
-* When the secret value cannot be too long and is entered by users manually
-* When having legit users solving the challenge occasionally is acceptable from product perspective
+## When to use what
+### ReCaptcha
 
-## Long random values
-* When the secret or token can be random or a hash and is not entered by users manually (part of URL, a cookie etc.)
+*  When the secret value cannot be too long and is entered by users manually
+*  When having legit users solving the challenge occasionally is acceptable from product perspective
 
-## Infrastructure level protection
-* When other means fail
-* Alongside ReCaptcha or long values when throttling is acceptable
+### Long random values
 
-# Additional information
+*  When the secret or token can be random or a hash and is not entered by users manually (part of URL, a cookie etc.)
+
+### Infrastructure level protection
+
+*  When other means fail
+*  Alongside ReCaptcha or long values when throttling is acceptable
+
+## Additional information
 More information about configuring ReCaptcha as and admin user can be found
 [here](https://docs.magento.com/user-guide/stores/security-google-recaptcha.html)
 
