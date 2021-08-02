@@ -134,20 +134,6 @@ There are some limitations when running the previous command:
 *  Provide the tag version without any quotation marks (neither single nor double): ~~'2.4.1-develop'~~.
 *  You should NOT provide older versions than the one you have currently installed, nor older than 2.3, which is the oldest one supported at the moment.
 
-### Full report
-
-You can also get a full report containing both _PHP-related_ errors and GraphQL. In this case, you must provide at least the following options:
-
-*  `--schema1=SCHEMA1`
-*  `--schema2=SCHEMA2`
-*  `<dir>`
-
-> Example of a bin/uct command
-
-```bash
-bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.3 <dir>
-```
-
 ## GraphQL schema compatibility verification
 
 The Upgrade Compatibility Tool also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
@@ -189,6 +175,20 @@ The Upgrade Compatibility Tool exports a json file report identifying the affect
 
 {:.bs-callout-info}
 To export this report into a different output folder, run `--output <dir>` commmand. Default path for the output folder is `var/output/[TIME]-results.json`.
+
+### Full report
+
+You can also get a full report containing both _PHP-related_ errors and GraphQL. In this case, you must provide at least the following options:
+
+*  `--schema1=SCHEMA1`
+*  `--schema2=SCHEMA2`
+*  `<dir>`
+
+> Example of a bin/uct command
+
+```bash
+bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.3 <dir>
+```
 
 ## Example with a list of errors/warnings
 
