@@ -149,9 +149,9 @@ mse.context.getStorefrontInstance();
 
 Gets a custom `Context`.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
-|`name` | Yes | `Context` name |
+|`name` |Yes |`Context` name |
 
 Example:
 
@@ -163,9 +163,9 @@ se.context.getContext(name);
 
 Sets the `Category` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
-|`context` | Yes | `Category` context |
+|`context` |Yes |`Category` context |
 
 Example:
 
@@ -177,9 +177,9 @@ mse.context.setCategory(categoryCtx);
 
 Sets the `CustomUrl` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
-|`context`|	Yes |	`CustomUrl` context|
+|`context`|Yes |`CustomUrl` context|
 
 Example:
 
@@ -191,9 +191,9 @@ mse.context.setCustomUrl(customUrlCtx);
 
 Sets the `MagentoExtension` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
-|`context`|	Yes |`MagentoExtension` context|
+|`context` |Yes |`MagentoExtension` context|
 
 Example:
 
@@ -205,9 +205,9 @@ mse.context.setMagentoExtension(magentoExtensionCtx);
 
 Sets the `Order` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
-|`context`|	Yes |	`Order` context|
+|`context`|Yes |`Order` context |
 
 Example:
 
@@ -219,7 +219,7 @@ mse.context.setOrder(orderCtx);
 
 Sets the `Page` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
 |`context` |Yes |`Page` context |
 
@@ -233,7 +233,7 @@ mse.context.setPage(pageCtx);
 
 Sets the `Product` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
 |`context`|Yes	|`Product` context |
 
@@ -247,7 +247,7 @@ mse.context.setProduct(productCtx);
 
 Sets the `Recommendations` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
 |`context` |Yes |	`Recommendations` context |
 
@@ -261,7 +261,7 @@ mse.context.setRecommendations(recommendationsCtx);
 
 Sets the `ReferrerUrl` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
 |`context` |Yes |`ReferrerUrl` context |
 
@@ -275,7 +275,7 @@ mse.context.setReferrerUrl(referrerUrlCtx);
 
 Sets the `SearchInput` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
 |`context` |Yes |`SearchInput` context |
 
@@ -289,7 +289,7 @@ mse.context.setSearchInput(searchInputCtx);
 
 Sets the `SearchResults` context.
 
-|**Name**|**Required**|**Description**
+|**Name**|**Required**|**Description**|
 |---|---|---|
 |`context`|Yes	|`SearchResults` context |
 
