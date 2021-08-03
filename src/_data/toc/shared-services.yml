@@ -1,0 +1,15 @@
+label: Shared Services
+pages:
+- label: Storefront Events
+  children:
+    - label: Storefront Events SDK
+      url: /shared-services/storefront-events-sdk.html
+      versionless: true
+
+    - label: Storefront Event Collector
+      url: /shared-services/storefront-event-collector.html
+      versionless: true
+
+    - label: Storefront Events API Reference
+      url: /shared-services/storefront-events-api-reference.html
+      versionless: true
