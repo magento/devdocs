@@ -479,8 +479,8 @@ Publishes the `recsItemAddToCartClick` event.
 |**Name**|**Required**|**Description**|
 |---|---|---|
 |`unitId` |Yes	|Recommendations `unitId`|
-|`productId`Yes |Recommended `productId`|
-|`context`|	No	|Custom context |
+|`productId`|Yes |Recommended `productId`|
+|`context`|No	|Custom context |
 
 Example:
 
@@ -494,8 +494,8 @@ Publishes the `recsItemClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-|`unitId`	|Yes	|Recommendations `unitId`|
-|`productId`	|Yes	|Recommended `productId`|
+|`unitId` |Yes	|Recommendations `unitId`|
+|`productId` |Yes	|Recommended `productId`|
 |`context`|	No	|Custom context |
 
 Example:
@@ -539,7 +539,7 @@ Publishes the `recsUnitRender` event.
 |**Name**|**Required**|**Description**|
 |---|---|---|
 |`unitId`|Yes |Recommendations `unitId` |
-|`context`|	No	|Custom context |
+|`context`|No |Custom context |
 
 Example:
 
@@ -553,8 +553,8 @@ Publishes the `recsUnitView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-|`unitId` |Yes	|Recommendations `unitId`|
-|`context`|No |Custom context |
+|`unitId` |Yes |Recommendations `unitId`|
+|`context` |No |Custom context |
 
 Example:
 
@@ -629,7 +629,7 @@ Publishes the `searchRequestSent` event.
 |**Name**|**Required**|**Description**|
 |---|---|---|
 |`searchUnitId` |Yes	|Search `unitId`|
-|`context`|No |Custom context |
+|`context` |No |Custom context |
 
 Example:
 
@@ -795,7 +795,7 @@ Subscribes to the `dataLayerEvent` event.
 |**Name**|**Required**|**Description**|
 |---|---|---|
 |`handler`|Yes	|Event handler |
-|`options	No	Listener options.
+|`options |No |Listener options |
 
 Example:
 
