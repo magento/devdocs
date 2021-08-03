@@ -3,19 +3,25 @@ group: live-search
 title: Storefront Popover
 ee_only: True
 ---
-
 When Live Search is installed, a popover appears in the storefront as shoppers type in the [Search](https://docs.magento.com/user-guide/catalog/search-quick.html) box. With each character typed, the popover is updated with suggested products and thumbnail images of the top search results.
 
-The Live Search popover can be configured to display "search as you type" results for one character or more. The minimum number of characters required for a valid search string is determined by the Catalog Search [Minimal Query Length](https://docs.magento.com/user-guide/catalog/search-configuration.html) configuration setting.
+Live Search returns results for a query of two characters or more. For a partial match, the maximum number of characters per word is 20. The number of characters in a "search as you type" query is not configurable.
 
+The following attributes are always searchable:
+
+-  `sku`
+-  `name`
+-  `categories`
+
+Review the set of product attributes that are [searchable](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-properties) (`searchable=true`) to produce highly targeted results. Some attributes that are search-enabled by default, such as `description`, can have the opposite effect and reduce the precision of search results. For example, if a person searches for "shorts" and there are shirts in the catalog with a description that includes "short sleeves", the shirts are also returned. To improve the relevancy of the results, make attributes searchable that contain content that has a clear and concise meaning. Avoid using attributes that contain less precise, lengthy text.
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
 
 ## Styling popover elements
 
-Elements of the popover can be styled using CSS classes. For example, the following declarations change the background color of the popover container and footer.
+The popover always displays the product `name` and `price`, and the selection of fields is not configurable. However, elements of the popover can be styled using CSS classes. For example, the following declarations change the background color of the popover container and footer.
 
-```text
+```css
 .livesearch.popover-container {
     background-color: lavender;
 }
