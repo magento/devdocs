@@ -11,6 +11,7 @@ These errors are reported when some of the core project files are missing does n
 | 2001 | Core file was not found | Run the `composer install` command from the project's root directory. |
 | 2002 | Core file was modified | Run the `composer install` command from the project's root directory. |
 | 2003 | Composer dependency is not installed | Missing composer dependency may potentially result in issues. Restore dependency by running `composer require package_name`. |
+| 2005 | Core folder was not found | Run `composer install` command from the project's root directory. |
 
 ### Custom code
 
