@@ -153,7 +153,7 @@ Gets a custom `Context`.
 |---|---|---|
 |`name` | Yes | `Context` name |
 
-Example: 
+Example:
 
 ```text
 se.context.getContext(name);
