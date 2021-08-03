@@ -1,5 +1,5 @@
 ---
-group: shared-solutions
+group: shared-services
 title: Storefront Events SDK
 ee_only: True
 ---
@@ -12,13 +12,13 @@ This SDK can be used as a hosted script, or bundled in a JavaScript application.
 
 To load the SDK as a script, use the following snippet.
 
-```html
+```text
 <script src="https://unpkg.com/@adobe/magento-storefront-events-sdk/dist/index.js"></script>
 ```
 
 To install the script as a dependency, run this command.
 
-```bash
+```text
 npm install @adobe/magento-storefront-events-sdk
 ```
 
@@ -36,7 +36,7 @@ The following code example shows how to get started.
 {:.bs-callout-warning}
 Relevant context data must be populated before publishing events that require it.
 
-```javascript
+```text
 import mse from "@adobe/magento-storefront-events-sdk";
 
 // subscribe to events
@@ -51,3 +51,8 @@ mse.publish.pageView();
 // unsubscribe from events
 mse.unsubscribe.pageView(pageViewHandler);
 ```
+## Support
+
+If you have any questions or encounter any issues, please reach out at these locations.
+
+-  [GitHub](https://github.com/adobe/magento-storefront-event-collector/issues)
