@@ -39,8 +39,9 @@ Attribute | Type | Description
 `required` | Boolean | Indicates whether the item must be included in the bundle
 `sku` | String | The SKU of the bundle product
 `title` | String | The display name of the item
-`type` | String | The input type that the customer uses to select the item. Examples include radio button and checkbox.
+`type` | String | The input type that the customer uses to select the item. Examples include radio button and checkbox
 `uid` | ID | The unique ID for a `BundleItem` object
+
 ## BundleItemOption object
 
 The `BundleItemOption` object contains the following attributes:

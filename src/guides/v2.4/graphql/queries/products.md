@@ -1489,3 +1489,130 @@ The following product query returns URL rewrite information about the Joust Duff
   }
 }
 ```
+
+### Retrieve variant `uid` values {#variant-uid}
+
+The following query returns information about each variant of the configurable product `WSH12`. Each variant has a unique combination of color and size values. Specify the `uid` values in the `selected_options` array of the [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to indicate which variants the shopper selected.
+
+**Request:**
+
+```graphql
+{
+  products(filter: {sku: {eq: "WSH12"}}) {
+    items {
+      sku
+      ... on ConfigurableProduct {
+        variants {
+          attributes {
+            uid
+            label
+            code
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "sku": "WSH12",
+          "variants": [
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
+                  "label": "Green",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
+                  "label": "Purple",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4",
+                  "label": "Red",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
+                  "label": "Green",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
+                  "label": "Purple",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4",
+                  "label": "Red",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```

@@ -15,7 +15,7 @@ mutation {
     email: String!
     password: String!
   ) {
-    CustomerToken
+    token
   }
 }
 ```
