@@ -1,5 +1,5 @@
 ---
-group: shared-solutions
+group: shared-services
 title: Storefront Events API Reference
 ee_only: True
 ---
@@ -390,7 +390,7 @@ mse.publish.customUrl(ctx);
 
 ### mse.publish.initiateCheckout
 
-Publishes the initiateCheckout event.
+Publishes the `initiateCheckout` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -404,7 +404,7 @@ mse.publish.initiateCheckout(ctx);
 
 ### mse.publish.instantPurchase
 
-Publishes the instantPurchase event.
+Publishes the `instantPurchase` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -418,7 +418,7 @@ mse.publish.instantPurchase(ctx);
 
 ### mse.publish.pageActivitySummary
 
-Publishes the pageActivitySummary event.
+Publishes the `pageActivitySummary` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -432,7 +432,7 @@ mse.publish.pageActivitySummary(ctx);
 
 ### mse.publish.pageView
 
-Publishes the pageView event.
+Publishes the `pageView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -446,7 +446,7 @@ mse.publish.pageView(ctx);
 
 ### mse.publish.placeOrder
 
-Publishes the placeOrder event.
+Publishes the `placeOrder` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -460,7 +460,7 @@ mse.publish.placeOrder(ctx);
 
 ### mse.publish.productPageView
 
-Publishes the productPageView event.
+Publishes the `productPageView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -474,7 +474,7 @@ mse.publish.productPageView(ctx);
 
 ### mse.publish.recsItemAddToCartClick
 
-Publishes the recsItemAddToCartClick event.
+Publishes the `recsItemAddToCartClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -490,7 +490,7 @@ mse.publish.recsItemAddToCartClick(unitId, productId, ctx);
 
 ### mse.publish.recsItemClick
 
-Publishes the recsItemClick event.
+Publishes the `recsItemClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -506,7 +506,7 @@ mse.publish.recsItemClick(unitId, productId, ctx);
 
 ### mse.publish.recsRequestSent
 
-Publishes the recsRequestSent event.
+Publishes the `recsRequestSent` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -520,7 +520,7 @@ mse.publish.recsRequestSent(ctx);
 
 ### mse.publish.recsResponseReceived
 
-Publishes the recsResponseReceived event.
+Publishes the `recsResponseReceived` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -534,7 +534,7 @@ mse.publish.recsResponseReceived(ctx);
 
 ### mse.publish.recsUnitRender
 
-Publishes the recsUnitRender event.
+Publishes the `recsUnitRender` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -549,7 +549,7 @@ mse.publish.recsUnitRender(unitId, ctx);
 
 ### mse.publish.recsUnitView
 
-Publishes the recsUnitView event.
+Publishes the `recsUnitView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -564,7 +564,7 @@ mse.publish.recsUnitView(unitId, ctx);
 
 ### mse.publish.referrerUrl
 
-Publishes the referrerUrl event.
+Publishes the `referrerUrl` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -578,7 +578,7 @@ mse.publish.referrerUrl(ctx);
 
 ### mse.publish.removeFromCart
 
-Publishes the removeFromCart event.
+Publishes the `removeFromCart` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -592,7 +592,7 @@ mse.publish.removeFromCart(ctx);
 
 ### mse.publish.searchCategoryClick
 
-Publishes the searchCategoryClick event.
+Publishes the `searchCategoryClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -608,7 +608,7 @@ mse.publish.searchCategoryClick(searchUnitId, name, ctx);
 
 ### mse.publish.searchProductClick
 
-Publishes the searchProductClick event.
+Publishes the `searchProductClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -624,7 +624,7 @@ mse.publish.searchProductClick(searchUnitId, sku, ctx);
 
 ### mse.publish.searchRequestSent
 
-Publishes the searchRequestSent event.
+Publishes the `searchRequestSent` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -639,7 +639,7 @@ mse.publish.searchRequestSent(searchUnitId, ctx);
 
 ### mse.publish.searchResponseReceived
 
-Publishes the searchResponseReceived event.
+Publishes the `searchResponseReceived` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -654,7 +654,7 @@ mse.publish.searchResponseReceived(searchUnitId, ctx);
 
 ### mse.publish.searchResultsView
 
-Publishes the searchResultsView event.
+Publishes the `searchResultsView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -669,7 +669,7 @@ mse.publish.searchResultsView(searchUnitId, ctx);
 
 ### mse.publish.searchSuggestionClick
 
-Publishes the searchSuggestionClick event.
+Publishes the `searchSuggestionClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -685,7 +685,7 @@ mse.publish.searchSuggestionClick(searchUnitId, suggestion, ctx);
 
 ### mse.publish.shoppingCartView
 
-Publishes the shoppingCartView event.
+Publishes the `shoppingCartView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -699,7 +699,7 @@ mse.publish.shoppingCartView(ctx);
 
 ### mse.publish.signIn
 
-Publishes the signIn event.
+Publishes the `signIn` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -713,7 +713,7 @@ mse.publish.signIn(ctx);
 
 ### mse.publish.signOut
 
-Publishes the signOut event.
+Publishes the `signOut` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -727,7 +727,7 @@ mse.publish.signOut(ctx);
 
 ### mse.publish.updateCart
 
-Publishes the updateCart event.
+Publishes the `updateCart` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
@@ -809,8 +809,8 @@ Subscribes to the `initiateCheckout` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options`|No |Listener options|
 
 Example:
 
@@ -824,8 +824,8 @@ Subscribes to the `instantPurchase` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler|
+|`options` |No |Listener options|
 
 Example:
 
@@ -839,8 +839,8 @@ Subscribes to the `pageActivitySummary` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler|
+|`options` |No |Listener options|
 
 Example:
 
@@ -854,8 +854,8 @@ Subscribes to the `pageView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler`|Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -869,8 +869,8 @@ Subscribes to the `placeOrder` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -884,8 +884,8 @@ Subscribes to the `productPageView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler`|Yes |Event handler |
+|`options`|No |Listener options |
 
 Example:
 
@@ -899,8 +899,8 @@ Subscribes to the `recsItemAddToCartClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -914,8 +914,8 @@ Subscribes to the `recsItemClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -929,8 +929,8 @@ Subscribes to the `recsRequestSent` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No|Listener options |
 
 Example:
 
@@ -944,8 +944,8 @@ Subscribes to the `recsResponseReceived` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -959,8 +959,8 @@ Subscribes to the `recsUnitRender` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -974,8 +974,8 @@ Subscribes to the `recsUnitView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -989,8 +989,8 @@ Subscribes to the `referrerUrl` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1004,8 +1004,8 @@ Subscribes to the `removeFromCart` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1019,8 +1019,8 @@ Subscribes to the `searchCategoryClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1034,8 +1034,8 @@ Subscribes to the `searchProductClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes | Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1049,8 +1049,8 @@ Subscribes to the `searchRequestSent` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1064,8 +1064,8 @@ Subscribes to the `searchResponseReceived` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1079,8 +1079,8 @@ Subscribes to the `searchResultsView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler`|Yes |Event handler |
+|`options`|No | Listener options |
 
 Example:
 
@@ -1094,8 +1094,8 @@ Subscribes to the `searchSuggestionClick` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1109,8 +1109,8 @@ Subscribes to the `shoppingCartView` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1124,8 +1124,8 @@ Subscribes to the `signIn` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1139,8 +1139,8 @@ Subscribes to the `signOut` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1154,8 +1154,8 @@ Subscribes to the `updateCart` event.
 
 |**Name**|**Required**|**Description**|
 |---|---|---|
-handler	Yes	Event handler.
-options	No	Listener options.
+|`handler` |Yes |Event handler |
+|`options` |No |Listener options |
 
 Example:
 
@@ -1165,5 +1165,396 @@ mse.subscribe.updateCart(handler, options);
 
 ## Unsubscribe
 
-These functions unsubscribe from events.
+The following functions unsubscribe from events.
 
+### mse.unsubscribe.addToCart
+
+Unsubscribes from the `addToCart` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler`|Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.addToCart(handler);
+```
+
+### mse.unsubscribe.customUrl
+
+Unsubscribes from the `customUrl` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.customUrl(handler);
+```
+
+### mse.unsubscribe.dataLayerChange
+
+Unsubscribes from the `dataLayerChange` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.dataLayerChange(handler);
+```
+
+### mse.unsubscribe.dataLayerEvent
+
+Unsubscribes from the `dataLayerEvent` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.dataLayerEvent(handler);
+```
+
+### mse.unsubscribe.initiateCheckout
+
+Unsubscribes from the `initiateCheckout` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.initiateCheckout(handler);
+```
+
+### mse.unsubscribe.instantPurchase
+
+Unsubscribes from the `instantPurchase` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.instantPurchase(handler);
+```
+
+### mse.unsubscribe.pageActivitySummary
+
+Unsubscribes from the `pageActivitySummary` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.pageActivitySummary(handler);
+```
+
+### mse.unsubscribe.pageView
+
+Unsubscribes from the `pageView` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler`|Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.pageView(handler);
+```
+
+### mse.unsubscribe.placeOrder
+
+Unsubscribes from the `placeOrder` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler`|Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.placeOrder(handler);
+```
+
+### mse.unsubscribe.productPageView
+
+Unsubscribes from the `productPageView` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.productPageView(handler);
+```
+
+### mse.unsubscribe.recsItemAddToCartClick
+
+Unsubscribes from the `recsItemAddToCartClick` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.recsItemAddToCartClick(handler);
+```
+
+### mse.unsubscribe.recsItemClick
+
+Unsubscribes from the `recsItemClick` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.recsItemClick(handler);
+```
+
+### mse.unsubscribe.recsRequestSent
+
+Unsubscribes from the `recsRequestSent` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler`| Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.recsRequestSent(handler);
+```
+
+### mse.unsubscribe.recsResponseReceived
+
+Unsubscribes from the `recsResponseReceived` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.recsResponseReceived(handler);
+```
+
+### mse.unsubscribe.recsUnitRender
+
+Unsubscribes from the `recsUnitRender` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.recsUnitRender(handler);
+```
+
+### mse.unsubscribe.recsUnitView
+
+Unsubscribes from the `recsUnitView` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.recsUnitView(handler);
+```
+
+### mse.unsubscribe.referrerUrl
+
+Unsubscribes from the `referrerUrl` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.referrerUrl(handler);
+```
+
+### mse.unsubscribe.removeFromCart
+
+Unsubscribes from the `removeFromCart` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` | Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.removeFromCart(handler);
+```
+
+### mse.unsubscribe.searchCategoryClick
+
+Unsubscribes from the `searchCategoryClick` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.searchCategoryClick(handler);
+```
+
+### mse.unsubscribe.searchProductClick
+
+Unsubscribes from the `searchProductClick` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.searchProductClick(handler);
+```
+
+### mse.unsubscribe.searchRequestSent
+
+Unsubscribes from the `searchRequestSent` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.searchRequestSent(handler);
+```
+
+### mse.unsubscribe.searchResponseReceived
+
+Unsubscribes from the `searchResponseReceived` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.searchResponseReceived(handler);
+```
+
+### mse.unsubscribe.searchResultsView
+
+Unsubscribes from the `searchResultsView` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.searchResultsView(handler);
+```
+
+### mse.unsubscribe.searchSuggestionClick
+
+Unsubscribes from the `searchSuggestionClick` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.searchSuggestionClick(handler);
+```
+
+### mse.unsubscribe.shoppingCartView
+
+Unsubscribes from the `shoppingCartView` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.shoppingCartView(handler);
+```
+
+### mse.unsubscribe.signIn
+
+Unsubscribes from the `signIn` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.signIn(handler);
+```
+
+### mse.unsubscribe.signOut
+
+Unsubscribes from the `signOut` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler`|Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.signOut(handler);
+```
+
+### mse.unsubscribe.updateCart
+
+Unsubscribes from the `updateCart` event.
+
+|**Name**|**Required**|**Description**|
+|---|---|---|
+|`handler` |Yes |Event handler |
+
+Example:
+
+```text
+mse.unsubscribe.updateCart(handler);
+```
