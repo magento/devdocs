@@ -18,7 +18,7 @@ To load the SDK as a script, use the following snippet.
 
 To install the script as a dependency, run this command.
 
-```text
+```bash
 npm install @adobe/magento-storefront-events-sdk
 ```
 
