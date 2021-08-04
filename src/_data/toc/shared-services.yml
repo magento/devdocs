@@ -13,3 +13,19 @@ pages:
     - label: Storefront Events API Reference
       url: /shared-services/storefront-events-api-reference.html
       versionless: true
+      children:
+        - label: Context functions
+          url: /shared-services/storefront-events-api-ref-context.html
+          versionless: true
+
+        - label: Publish functions
+          url: /shared-services/storefront-events-api-ref-publish.html
+          versionless: true
+
+        - label: Subscribe functions
+          url: /shared-services/storefront-events-api-ref-subscribe.html
+          versionless: true
+
+        - label: Unsubscribe functions
+          url: /shared-services/storefront-events-api-ref-unsubscribe.html
+          versionless: true
