@@ -8,11 +8,11 @@ functional_areas:
   - Upgrade
 ---
 
-This topic contains information for developers who want to know more technical information about the Upgrade Compatibility Tool. It is focused on developers who work closely with the {{site.data.var.ee}} code. You can use this knowledge to customize the tool's components.
+This topic contains information for developers who work closely with the {{site.data.var.ee}} code and want to learn detailed information about the Upgrade Compatibility Tool. You can use this knowledge to customize the tool's components.
 
 ## Adobe Commerce API index integration
 
-{{site.data.var.ee}} API index integration is an internal integration solution that comprehends a set of tools to explore {{site.data.var.ee}} Extensions developed by Adobe, {{site.data.var.ee}} Partners, and 3rd party vendors based on static code analysis.
+{{site.data.var.ee}} API index integration is an internal integration solution that encompasses a set of tools to explore {{site.data.var.ee}} extensions developed by Adobe, {{site.data.var.ee}} Partners, and 3rd-party vendors based on static code analysis.
 
 The integration with the {{site.data.var.ee}} API index is done through:
 

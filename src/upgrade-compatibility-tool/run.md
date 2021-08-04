@@ -184,7 +184,7 @@ You can also get a full report containing both _PHP-related_ errors and GraphQL.
 *  `--schema2=SCHEMA2`
 *  `<dir>`
 
-> Example of a bin/uct command
+> Example:
 
 ```bash
 bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.3 <dir>

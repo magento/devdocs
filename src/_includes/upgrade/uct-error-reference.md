@@ -11,7 +11,7 @@ These errors are reported when some of the core project files are missing does n
 | 2001 | Core file was not found | Run the `composer install` command from the project's root directory. |
 | 2002 | Core file was modified | Run the `composer install` command from the project's root directory. |
 | 2003 | Composer dependency is not installed | Missing composer dependency may potentially result in issues. Restore dependency by running `composer require package_name`. |
-| 2005 | Core folder was not found | Run `composer install` command from the project's root directory. |
+| 2005 | Core folder was not found | Run the `composer install` command from the project's root directory. |
 
 ### Custom code
 
@@ -64,7 +64,7 @@ GraphQL Schema critical issues are raised if the schema items are not present in
 ## Errors
 ### Custom code
 
-Custom code errors are raised when custom code is using the Adobe Commerce entry points that are not considered/marked as API. The preserved behavior of such entry points is not guaranteed. The customization should rely on API instead. The functionality that is based on non-API Adobe Commerce code should be tested after the upgrade.
+Custom code errors are raised when custom code is using the Adobe Commerce entry points that are not considered/marked as `@api`. The preserved behavior of such entry points is not guaranteed. The customization should rely on `@api` entry points instead. The functionality that is based on non-API Adobe Commerce code should be tested after the upgrade.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
@@ -102,7 +102,7 @@ These errors are reported when some of the core project files are missing does n
 
 ### Custom code
 
-Custom code warnings are raised when the references to deprecated code are detected. Such references should be replaced with the supported extension points. Please pay attention to the "@see" annotation of deprecated item for recommendations.
+Custom code warnings are raised when the references to deprecated code are detected. Such references should be replaced with the supported extension points. Please pay attention to the `@see` annotation of deprecated item for recommendations.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
@@ -135,5 +135,5 @@ GraphQL Schema warnings are raised when the additional items are added to the sc
 | 3302 | Type added to union | The type was added to the union. Check the implementation processing the result of the query returning this union type and ensure it is able to handle the added type. |
 | 3304 | Optional input field added | Optional input field added. Check the implementation to ensure. |
 | 3305 | Implemented interface added | The field can accept/provide more information that can be considered in the implementation. |
-| 3306 | Value added to enum | A value was added to an enum. If clients contain a switch statement on the enum's value and do not include a default case, this change might cause unexpected behaviour. |
-| 3308 | Optional argument added | If the query is using in the customization the new argument may need to be added to the request. |
+| 3306 | Value added to enum | A value was added to an enum. If clients contain a switch statement on the enum's value and do not include a default case, this change might cause unexpected behavior. |
+| 3308 | Optional argument added | If the query is using a new argument in the customization it may need to be added to the request. |
