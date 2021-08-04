@@ -12,7 +12,7 @@ This SDK can be used as a hosted script, or bundled in a JavaScript application.
 
 To load the SDK as a script, use the following snippet.
 
-```text
+```html
 <script src="https://unpkg.com/@adobe/magento-storefront-events-sdk/dist/index.js"></script>
 ```
 
