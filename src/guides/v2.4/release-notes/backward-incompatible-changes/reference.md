@@ -30,6 +30,10 @@ Patch releases are primarily focused on delivering security and quality enhancem
 
 {% include backward-incompatible-changes/commerce/2.4.2-2.4.3-develop.html %}
 
+## 1.3.1 - release (magento2b2b)
+
+{% include backward-incompatible-changes/commerce/b2b_1.3.1-release.html %}
+
 ## 2.4.1 - 2.4.2
 
 {% include backward-incompatible-changes/open-source/2.4.1-2.4.2.md %}
