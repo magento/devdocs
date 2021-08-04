@@ -26,17 +26,17 @@ npm install @adobe/magento-storefront-events-sdk
 
 Once imported, you have access to the four main functions of the Events SDK.
 
--  Context - set context data
--  Publish - publish events
--  Subscribe - subscribe to events
--  Unsubscribe - unsubscribe from events
+-  [Context]({{ site.baseurl }}/shared-services/storefront-events-api-ref-context.html) - Set context data
+-  [Publish]({{ site.baseurl }}/shared-services/storefront-events-api-ref-publish.html) - Publish events
+-  [Subscribe]({{ site.baseurl }}/shared-services/storefront-events-api-ref-subscribe.html) - Subscribe to events
+-  [Unsubscribe]({{ site.baseurl }}/shared-services/storefront-events-api-ref-unsubscribe.html) - Unsubscribe from events
 
 The following code example shows how to get started.
 
 {:.bs-callout-warning}
 Relevant context data must be populated before publishing events that require it.
 
-```text
+```javascript
 import mse from "@adobe/magento-storefront-events-sdk";
 
 // subscribe to events
