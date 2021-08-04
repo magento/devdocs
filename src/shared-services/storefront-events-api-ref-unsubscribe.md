@@ -1,10 +1,10 @@
 ---
 group: shared-services
-title: Storefront Events API Reference - Unsubscribe
+title: Unsubscribe - Events SDK Reference
 ee_only: True
 ---
 
-## Unsubscribe functions
+## Functions
 
 The following functions unsubscribe from events.
 

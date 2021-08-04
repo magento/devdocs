@@ -1,10 +1,10 @@
 ---
 group: shared-services
-title: Storefront Events API Reference - Publish
+title: Publish - Events SDK Reference
 ee_only: True
 ---
 
-## Publish functions
+## Functions
 
 The following functions publish events to notify all subscribers.
 

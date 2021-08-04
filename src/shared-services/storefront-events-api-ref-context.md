@@ -1,10 +1,10 @@
 ---
 group: shared-services
-title: Storefront Events API Reference - Context
+title: Context - Events SDK Reference
 ee_only: True
 ---
 
-## Context functions
+## Functions
 
 The following functions get and set context data.
 

@@ -1,10 +1,9 @@
 ---
 group: shared-services
-title: Storefront Events API Reference - Subscribe
+title: Subscribe - Events SDK Reference
 ee_only: True
 ---
-
-## Subscribe functions
+## Functions
 
 The following functions subscribe to events.
 
