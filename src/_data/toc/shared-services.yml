@@ -10,22 +10,22 @@ pages:
       url: /shared-services/storefront-event-collector.html
       versionless: true
 
-    - label: Storefront Events API Reference
+    - label: Events SDK Reference
       url: /shared-services/storefront-events-api-reference.html
       versionless: true
       children:
-        - label: Context functions
+        - label: Context Functions
           url: /shared-services/storefront-events-api-ref-context.html
           versionless: true
 
-        - label: Publish functions
+        - label: Publish Functions
           url: /shared-services/storefront-events-api-ref-publish.html
           versionless: true
 
-        - label: Subscribe functions
+        - label: Subscribe Functions
           url: /shared-services/storefront-events-api-ref-subscribe.html
           versionless: true
 
-        - label: Unsubscribe functions
+        - label: Unsubscribe Functions
           url: /shared-services/storefront-events-api-ref-unsubscribe.html
           versionless: true
