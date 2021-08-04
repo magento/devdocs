@@ -32,24 +32,24 @@ import "@adobe/magento-storefront-event-collector";
 
 The collector then begins listening for the following events. When any of these events are fired, the collector runs the associated handler and sends the event along with any relevant information to Adobe Commerce for further processing.
 
--  addToCart
--  instantPurchase
--  pageView
--  placeOrder
--  productPageView
--  recsItemAddToCartClick
--  recsItemClick
--  recsRequestSent
--  recsResponseReceived
--  recsUnitRender
--  recsUnitView
--  searchCategoryClick
--  searchProductClick
--  searchRequestSent
--  searchResponseReceived
--  searchResultsView
--  searchSuggestionClick
--  shoppingCartView
+-  `addToCart`
+-  `instantPurchase`
+-  `pageView`
+-  `placeOrder`
+-  `productPageView`
+-  `recsItemAddToCartClick`
+-  `recsItemClick`
+-  `recsRequestSent`
+-  `recsResponseReceived`
+-  `recsUnitRender`
+-  `recsUnitView`
+-  `searchCategoryClick`
+-  `searchProductClick`
+-  `searchRequestSent`
+-  `searchResponseReceived`
+-  `searchResultsView`
+-  `searchSuggestionClick`
+-  `shoppingCartView`
 
 ## Support
 
