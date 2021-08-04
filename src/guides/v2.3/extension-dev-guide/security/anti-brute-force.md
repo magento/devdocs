@@ -18,9 +18,9 @@ Human-readable secrets require a challenge for the user to provide a secret, pos
 *  Gift card codes
 *  **Forgot Password** functionality that asks for an email address or phone number
 
-Machine-readable secrets use randomly genrated strings. Examples include 
+Machine-readable secrets use randomly genrated strings. Examples include:
 
-*  Authorization tokens, 
+*  Authorization tokens
 *  A secret link to a shared document
 
 ## Protection
