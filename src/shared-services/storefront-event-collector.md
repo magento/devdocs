@@ -12,13 +12,13 @@ The collector can be used as a hosted script, or bundled in a JavaScript applica
 
 To load the SDK as a script, use the following snippet.
 
-```text
+```html
 <script src="https://unpkg.com/@adobe/magento-storefront-event-collector/dist/index.js"></script>
 ```
 
 To install the script as a dependency, run this command.
 
-```text
+```bash
 npm install @adobe/magento-storefront-event-collector
 ```
 
@@ -26,7 +26,7 @@ npm install @adobe/magento-storefront-event-collector
 
 After loading the collector script, or importing the package as shown below, there is nothing else that needs to be done.
 
-```text
+```bash
 import "@adobe/magento-storefront-event-collector";
 ```
 
