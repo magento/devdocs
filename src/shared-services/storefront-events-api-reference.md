@@ -156,7 +156,7 @@ Gets a custom `Context`.
 Example:
 
 ```text
-se.context.getContext(name);
+mse.context.getContext(name);
 ```
 
 ### mse.context.setCategory
