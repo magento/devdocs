@@ -22,7 +22,6 @@ The level of effort to upgrade your {{site.data.var.ee}} instance depends upon t
 
 *  **What type of upgrade are you performing?** An upgrade to a minor release (from 2.3.x to 2.4.0, for example) is more extensive than an upgrade between patch releases (such as from 2.4.2 to 2.4.3). Security upgrades are the easiest type to implement.
 
-
 ## Best practices for planning upgrades
 
 If you are working on a project that is already in production, upgrades are an opportunity for you to improve the quality of your code and customizations, and to optimize for future upgrades. The time you invest today will be time saved in the long term.
@@ -55,8 +54,6 @@ To help you plan and budget for upgrades, you should monitor our [Release schedu
 *  Use the pre-release version to learn about each new release. Pre-release is General Availability code that is available to {{site.data.var.ee}} merchants and all partners two weeks before General Availability. If you have multiple stores, use the pre-release on your base store and verify that your custom modules and themes are compatible with it.
 
 *  Review the [Upgrade plan checklist](https://support.magento.com/hc/en-us/articles/360057968951) for {{site.data.var.ee}} to help you plan for your upgrade.
-
-*  Plan for upgrades at the beginning of the year. You will need to book a budget and resources to complete each upgrade. Remember, the upgrade effort might vary significantly from project to project. Use your experiences and knowledge to make a plan as accurate as possible.
 
 *  If your upgrades are taking more effort than what we describe here, we recommend you audit your project and make adjustments to your environment to reduce the long-term maintenance.
 
