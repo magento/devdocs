@@ -15,3 +15,12 @@ The Upgrade Compatibility Tool allows you to identify when core code changes hav
 It is distributed as a Composer package with every release of an {{site.data.var.ee}} version. See the [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) topic for more information.
 
 Refer to the [Install]({{site.baseurl}}/upgrade-compatibility-tool/install.html) for the first steps with the Upgrade Compatibility Tool.
+
+## Contact Upgrade Compatibility Tool
+
+To connect with the Upgrade Compatibility Tool team:
+
+1. Contact us on the Engineering Slack channel [Upgrade Compatibility Tool](https://magentocommeng.slack.com/archives/C019Y143U9F).
+1. Send us an email at [uct@adobe.com](mailto:uct@adobe.com).
+
+See the [Resources]({{site.baseurl}}/community/resources/resources.html) page for more information.
