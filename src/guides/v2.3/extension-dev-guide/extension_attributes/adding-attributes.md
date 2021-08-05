@@ -80,11 +80,11 @@ Function `afterGetList` is similar to `afterGet`:
 ```php
 public function afterGetList(
     \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-    \Magento\Catalog\Api\Data\ProductSearchResultsInterface $searchCriteria
+    \Magento\Catalog\Api\Data\ProductSearchResultsInterface $searchResults
 ) : \Magento\Catalog\Api\Data\ProductSearchResultsInterface
 {
     $products = [];
-    foreach ($searchCriteria->getItems() as $entity) {
+    foreach ($searchResults->getItems() as $entity) {
         $ourCustomData = $this->customDataRepository->get($entity->getId());
 
         $extensionAttributes = $entity->getExtensionAttributes();
@@ -93,8 +93,8 @@ public function afterGetList(
 
         $products[] = $entity;
     }
-    $searchCriteria->setItems($products);
-    return $searchCriteria;
+    $searchResults->setItems($products);
+    return $searchResults;
 }
 ```
 
