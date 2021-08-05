@@ -22,19 +22,6 @@ The level of effort to upgrade your {{site.data.var.ee}} instance depends upon t
 
 *  **What type of upgrade are you performing?** An upgrade to a minor release (from 2.3.x to 2.4.0, for example) is more extensive than an upgrade between patch releases (such as from 2.4.2 to 2.4.3). Security upgrades are the easiest type to implement.
 
-## What should an upgrade cost?
-
-This is the question you should be asking yourself and your team when starting a project. If your project is running already, then how much are upgrades costing you? Is this the regular upgrade cost expected for {{site.data.var.ee}}?
-
-The upgrade cost may vary significantly from project to project, based on the variables that impact upgrades, as described previously. Based on our experience, you should plan for upgrades to take the following amounts of time:
-
-Upgrade type | Example versions | Hours
---- | ---
-Security and patchupgrades | 2.4.3-p1 to 2.4.3-p2 | 16 - 24
-Minor release upgrades | 2.4.1 to 2.4.2 | 20 - 50
-Major release upgrades | 2.3.x to 2.4.x | 500 - 600
-
-Do not skip an upgrade. Upgrading every release will help you to have a shorter upgrade-to-upgrade delivery time.
 
 ## Best practices for planning upgrades
 
@@ -69,7 +56,7 @@ To help you plan and budget for upgrades, you should monitor our [Release schedu
 
 *  Review the [Upgrade plan checklist](https://support.magento.com/hc/en-us/articles/360057968951) for {{site.data.var.ee}} to help you plan for your upgrade.
 
-*  Plan for upgrades at the beginning of the year. You will need to book a budget and resources to complete each upgrade. Use the upgrade cost estimation described above as a guide. Remember, the upgrade effort might vary significantly from project to project. Use your experiences and knowledge to make a plan as accurate as possible.
+*  Plan for upgrades at the beginning of the year. You will need to book a budget and resources to complete each upgrade. Remember, the upgrade effort might vary significantly from project to project. Use your experiences and knowledge to make a plan as accurate as possible.
 
 *  If your upgrades are taking more effort than what we describe here, we recommend you audit your project and make adjustments to your environment to reduce the long-term maintenance.
 
