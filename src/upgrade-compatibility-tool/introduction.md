@@ -20,8 +20,8 @@ Refer to the [Install]({{site.baseurl}}/upgrade-compatibility-tool/install.html)
 
 To connect with the {{site.data.var.uct}} team:
 
-* Contact us on the Engineering Slack channel [Upgrade Compatibility Tool](https://magentocommeng.slack.com/archives/C019Y143U9F). 
-* Send us an email at [uct@adobe.com](mailto:uct@adobe.com).
+*  Contact us on the Engineering Slack channel [Upgrade Compatibility Tool](https://magentocommeng.slack.com/archives/C019Y143U9F).
+*  Send us an email at [uct@adobe.com](mailto:uct@adobe.com).
 
 {:.bs-callout-info}
 We want to hear your feedback, issues and suggestions to help us improve the tool.
