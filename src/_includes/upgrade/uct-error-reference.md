@@ -1,4 +1,3 @@
-<!--Note: The error code tables in this file are auto-generated from source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to [Adobe Commerce repository](https://repo.magento.com/).-->
 ## Critical issues
 
 ### Core code

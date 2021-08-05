@@ -8,9 +8,9 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrade Compatibility Tool is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
+The {{site.data.var.uct}} is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
 
-The Upgrade Compatibility Tool identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of {{site.data.var.ee}}.
+The {{site.data.var.uct}} identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of {{site.data.var.ee}}.
 
 ## Use the `upgrade:check` command
 
@@ -23,7 +23,7 @@ bin/uct upgrade:check <dir>
 {:.bs-callout-info}
 The `<dir>` value is the directory where your {{site.data.var.ee}} instance is located.
 
-The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
+The `upgrade:check` command runs the {{site.data.var.uct}} and checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
 
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
@@ -44,7 +44,7 @@ php -d memory_limit=-1 /bin/uct
 
 We also recommend using the `-m` command when you want to run the tool against a specific module.
 
-If you want to know all commands available for the Upgrade Compatibility Tool, run:
+If you want to know all commands available for the {{site.data.var.uct}}, run:
 
 ```bash
 bin/uct list
@@ -52,7 +52,7 @@ bin/uct list
 
 ### Use the `--help` command
 
-To see the Upgrade Compatibility Tool command general options and help, run:
+To see the {{site.data.var.uct}} command general options and help, run:
 
 ```bash
 bin/uct --help
@@ -136,7 +136,7 @@ There are some limitations when running the previous command:
 
 ## GraphQL schema compatibility verification
 
-The Upgrade Compatibility Tool also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
+The {{site.data.var.uct}} also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
 
 ```bash
 bin/uct graphql:compare <schema1> <schema2>
@@ -171,7 +171,7 @@ See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/develope
 
 ### Output
 
-The Upgrade Compatibility Tool exports a json file report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
+The {{site.data.var.uct}} exports a json file report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
 
 {:.bs-callout-info}
 To export this report into a different output folder, run `--output <dir>` commmand. Default path for the output folder is `var/output/[TIME]-results.json`.
