@@ -15,13 +15,13 @@ developers job to identify them and take appropriate measures - these cases are 
 There are a couple of types of functionality that are especially vulnerable to DoS attacks and cannot be identified
 by the infrastructure level mechanisms:
 
-* Heavy operations
+*  Heavy operations
 
 Meaning routes/endpoints that take a lot of processing power or storage operations to complete. Identify operations
 that issue a big amount of, potentially heavy, requests to the DB, work extensively with files or perform heavy
 calculations.
 
-* Using other services through the network
+*  Using other services through the network
 
 Routes or endpoints that send requests to other services, for example to send a push notification to a mobile client.
 By sending an
@@ -29,17 +29,16 @@ excess amount of requests to such endpoints an attacker can get the application 
 service, get the application banned from using the service and effectively render the functionality unusable.
 Alternatively an attack on such routes or endpoints can make the server hang for too long waiting responses.
 
-* Persisting/updating multiple entities
+*  Persisting/updating multiple entities
 
 Routes and endpoints that allow client to provide multiple entities to be created or updated can be tricked into
 performing an excessive amount of write operations in a single request halting the server and/or flooding
 the persistent storage.
 
-* Querying multiple entries
+*  Querying multiple entries
 
 Routes and endpoints that allow to query a list of entities can be tricked into trying to load and render too much
 data for the server to handle in a single request.
-
 
 Routes/endpoints described above are indistinguishable from any other endpoint that is a part of the application by
 an infrastructure level anti-DoS mechanism . Developers have to take measures to protect the functionality on
@@ -74,17 +73,16 @@ identify especially vulnerable routes and provide configuration accordingly.
 ## When to apply
 ### ReCaptcha (or other type of challenge)
 
-* For heavy operations
-* For routes/endpoints using other services over network
+*  For heavy operations
+*  For routes/endpoints using other services over network
 
 ### Input/output limit
 
-* For endpoints/routes accepting multiple entities to create or update
-* For endpoints/routes that return a list of entities
+*  For endpoints/routes accepting multiple entities to create or update
+*  For endpoints/routes that return a list of entities
 
 ### Infrastructure configuration
 
-* Instead of ReCaptcha when having friction is absolutely unacceptable from a product standpoint
-* Alongside ReCaptcha to prevent malicious traffic from reaching the server in the first place
-* For input/output limited endpoints that are still vulnerable under an excessive amount of requests complying
-  with the set limit
+*  Instead of ReCaptcha when having friction is absolutely unacceptable from a product standpoint
+*  Alongside ReCaptcha to prevent malicious traffic from reaching the server in the first place
+*  For input/output limited endpoints that are still vulnerable under an excessive amount of requests complying with the set limit
