@@ -92,7 +92,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 
 ### Core code
 
-These warnings are reported when some of the core files are missing or do not match the original.
+These warnings are reported when there are minor inconsistencies in the core codebase.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
