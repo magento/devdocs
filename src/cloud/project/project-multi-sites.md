@@ -32,11 +32,11 @@ https://store.com/second/
 {:.no-copy}
 
 {:.bs-callout-tip}
-To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL]({{site.baseurl}}{{ site.gdeurl }}/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl).
+To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL][addstorecode] in the _Config Guide_.
 
 ## Configure local installation
 
-To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/multi-site/ms_over.html) in the _Config Guide_.
+To configure your local installation to use multiple stores, see [Multiple websites or stores][config-multiweb] in the _Config Guide_.
 
 After successfully creating and testing the local installation to use multiple stores, you must prepare your Integration environment:
 
@@ -320,3 +320,8 @@ Push your changes to your {{site.data.var.ece}} Integration environment and test
 Follow the deployment process for [deploying to Staging and Production]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html). For Starter and Pro environments, you use the Project Web Interface to push code across environments.
 
 Adobe recommends fully testing in the Staging environment before pushing to the Production environment. Make code changes in the Integration environment and begin the process to deploy across environments again.
+
+<!-- link definitions -->
+
+[addstorecode]: {{ site.baseurl }}/guides/2.4/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl
+[config-multiweb]: {{ site.baseurl }}/guides/2.4/config-guide/multi-site/ms_over.html
