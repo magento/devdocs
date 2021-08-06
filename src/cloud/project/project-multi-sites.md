@@ -11,7 +11,7 @@ functional_areas:
 You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ site.baseurl }}/cloud/configure/configure-best-practices.html#sites).
 
 {:.bs-callout-warning}
-Be aware that having multiple websites and stores can result in decreased performance. The greater the number of websites and stores, the greater the size of index tables and potential for issues such as a longer indexing process, longer Admin save operations, and slower response time for non-cached catalog pages.
+Be aware that catalog data expands as you increase the number of websites and stores. Depending on your project architecture, the additional stores can lead to a longer indexing process and slower response times for non-cached catalog pages. Adobe recommends that you monitor site performance closely.
 
 The process to set up multiple stores depends on whether you choose to use unique or shared domains.
 
@@ -32,11 +32,11 @@ https://store.com/second/
 {:.no-copy}
 
 {:.bs-callout-tip}
-To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL]({{site.baseurl}}/guides/v2.3/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl).
+To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL]({{site.baseurl}}{{ site.gdeurl }}/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl).
 
 ## Configure local installation
 
-To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ site.baseurl }}/guides/v2.3/config-guide/multi-site/ms_over.html).
+To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/multi-site/ms_over.html) in the _Config Guide_.
 
 After successfully creating and testing the local installation to use multiple stores, you must prepare your Integration environment:
 

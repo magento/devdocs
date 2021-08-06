@@ -87,4 +87,4 @@ The following are examples to better explain:
    ![Store example 3]({{ site.baseurl }}/common/images/cloud/cloud_example-store3.png)
 
 {:.bs-callout-warning}
-Be aware that having multiple websites and stores can result in decreased performance. The greater the number of websites and stores, the greater the size of index tables and other issues, such as a longer indexing process, longer Admin save operations, and slower response time for non-cached catalog pages.
+Be aware that catalog data expands as you increase the number of websites and stores. Depending on your project architecture, the additional stores can lead to a longer indexing process and slower response times for non-cached catalog pages. Adobe recommends that you monitor site performance closely.
