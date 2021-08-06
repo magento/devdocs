@@ -55,7 +55,7 @@ To launch the Docker environment in developer mode:
    ```bash
    docker-compose up -d
    ```
-   
+
 1. If you selected the `manual-native` option, start the file synchronization using the following commands.
 
    **This command copies all data from the local machine to the Docker volume:**
