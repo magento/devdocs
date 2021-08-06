@@ -36,19 +36,24 @@ The command `graphql:compare` allows to compare two GraphQL schemas to check for
 
 ### Recommendations to use the `upgrade:check` command
 
-The {{site.data.var.uct}} requires at least 2GB RAM to run. This setting is recommended to avoid issues due to a low memory limitation. The {{site.data.var.uct}} will automatically question the user if running the `upgrade:check` command with a low `memory_limit` setting.
+*  The {{site.data.var.uct}} requires at least 2GB RAM to run. This setting is recommended to avoid issues due to a low memory limitation. The {{site.data.var.uct}} will automatically question you when running the `upgrade:check` command with a low `memory_limit` setting.
+*  We also recommend using the `-m` command when you want to run the tool against a specific module.
+*  If you want to know all commands available for the Upgrade Compatibility Tool, run:
 
-We also recommend using the `-m` command when you want to run the tool against a specific module.
-
-If you want to know all commands available for the Upgrade Compatibility Tool, run:
-
-```bash
-bin/uct list
-```
+   ```bash
+   bin/uct list
+   ```
 
 ### Use the `--ignore-current-version-compatibility-issues` command
 
-The {{site.data.var.uct}}
+The {{site.data.var.uct}} allows you to run the `upgrade:check` command with an `--ignore-current-version-compatibility-issues` option so it only shows new or unkown critical issues, errors and warnings. It is recommended when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
+
+```bash
+bin/uct upgrade:check --ignore-current-version-compatibility-issues <dir>
+```
+
+{:.bs-callout-info}
+This applies only to PHP API validations. Core validations are compared only with the same version. 
 
 ### Use the `--help` command
 
