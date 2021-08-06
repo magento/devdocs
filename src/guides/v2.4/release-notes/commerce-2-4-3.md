@@ -152,6 +152,7 @@ Page Builder replaces the TinyMCE editor in the following Admin areas:
 *  Product Description
 
 All the content created in TinyMCE has been migrated into Page Builder as HTML.
+
 ### PWA Studio
 
 For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
