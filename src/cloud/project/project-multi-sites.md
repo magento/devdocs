@@ -323,5 +323,5 @@ Adobe recommends fully testing in the Staging environment before pushing to the 
 
 <!-- link definitions -->
 
-[addstorecode]: {{ site.baseurl }}/guides/2.4/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl
-[config-multiweb]: {{ site.baseurl }}/guides/2.4/config-guide/multi-site/ms_over.html
+[addstorecode]: {{ site.baseurl }}/guides/v2.4/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl
+[config-multiweb]: {{ site.baseurl }}/guides/v2.4/config-guide/multi-site/ms_over.html
