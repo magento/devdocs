@@ -36,11 +36,7 @@ The command `graphql:compare` allows to compare two GraphQL schemas to check for
 
 ### Recommendations to use the `upgrade:check` command
 
-We recommend running the following command to avoid memory limitations:
-
-```bash
-php -d memory_limit=-1 /bin/uct
-```
+The {{site.data.var.uct}} requires at least 2GB RAM to run. This setting is recommended to avoid issues due to a low memory limitation. The {{site.data.var.uct}} will automatically question the user if running the `upgrade:check` command with a low `memory_limit` setting.
 
 We also recommend using the `-m` command when you want to run the tool against a specific module.
 
@@ -49,6 +45,10 @@ If you want to know all commands available for the Upgrade Compatibility Tool, r
 ```bash
 bin/uct list
 ```
+
+### Use the `--ignore-current-version-compatibility-issues` command
+
+The {{site.data.var.uct}}
 
 ### Use the `--help` command
 
