@@ -50,6 +50,13 @@ To launch the Docker environment in developer mode:
    cp .docker/config.php.dist .docker/config.php
    ```
 
+
+1. Build files to containers and run in the background.
+
+   ```bash
+   docker-compose up -d
+   ```
+   
 1. If you selected the `manual-native` option, start the file synchronization using the following commands.
 
    **This command copies all data from the local machine to the Docker volume:**
@@ -76,12 +83,6 @@ To launch the Docker environment in developer mode:
 
    ```bash
    ./bin/magento-docker copy-from vendor
-   ```
-
-1. Build files to containers and run in the background.
-
-   ```bash
-   docker-compose up -d
    ```
 
 1. If you selected `mutagen` for file synchronization, start the file synchronization.
