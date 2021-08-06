@@ -224,6 +224,10 @@
       url: /security/security-and-compliance.html
       versionless: true
 
+    - label: Shared Services
+      url: /shared-services/storefront-events-sdk.html
+      versionless: true
+
     - label: Staging
       url: /extension-dev-guide/staging.html
 
@@ -232,6 +236,9 @@
 
     - label: Rest Tutorials
       url: /rest/tutorials/index.html
+
+    - label: Custom Attributes
+      url: /howdoi/custom-attributes/introduction.html
 
     - label: Customize Product Creation Form
       url: /howdoi/customize_product.html
