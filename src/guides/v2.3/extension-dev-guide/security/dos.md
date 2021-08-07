@@ -1,6 +1,6 @@
 ---
 group: php-developer-guide
-title: Denial-of-Service (DoS)
+title: Denial-of-Service (DoS) attacks
 ---
 
 A __Denial-of-Service (DoS) attack__ attempts to shut down (halt) servers serving an application to make it
@@ -45,39 +45,41 @@ of the application. Developers must take measures to protect the functionality o
 
 ## Protection from DoS
 
-Below are a couple of measures that can be taken to protect against DoS:
+The following sections describe measures you can take to protect against DoS attacks.
 
 ### ReCaptcha/CAPTCHA
+
 "Are you a robot?" challenges can stop automated traffic from going through by verifying that a client is a real person.
 The downside of this approach is the friction created by requiring legitimate users to solve a challenge while
-using the store.
+shopping.
 
 [Google ReCaptcha](https://docs.magento.com/user-guide/stores/security-google-recaptcha.html) is an example of a
-challenge provider. One of the biggest advantages of ReCaptcha is that it tries really hard to avoid actually presenting
-a user with a challenge unless suspicious behavior is detected. There's a list of forms/endpoints
-for which ReCaptcha can be enabled out-of-the-box and it's easy to extend the list with store's own endpoints and
-forms. Example on how to add coverage can be found in our
-[SecurityPackage](https://github.com/magento/security-package/tree/develop/ReCaptchaCustomer).
+challenge provider. One of the biggest advantages of ReCaptcha is that it avoids actually presenting
+a user with a challenge, unless it detects suspicious behavior. [Protected endpoints]({{page.baseurl}}/rest/protected-endpoints.html)
+contains a list of forms/endpoints can be enabled for ReCaptcha out-of-the-box. You can extend the list by following the example
+on how to add coverage can be found in the [SecurityPackage](https://github.com/magento/security-package/tree/develop/ReCaptchaCustomer) repo.
 
 Our own [CAPTCHA](https://docs.magento.com/user-guide/stores/security-captcha.html) implementation is also available.
 
 ### Limited input/output
 
 Each endpoint or route that allows querying multiple entities or creating/updating multiple entities must have a reasonable
-maximum number of accepted/returned items set.
-Only by inspecting the functionality a limit that will be enough for legitimate users can be determined.
+maximum number of accepted/returned items set. You must inspect the functionality of your code to determine
+how many create/update are enough for legitimate users.
 
-### Configuring infrastructure
+### Configure infrastructure
 
-Some proxies/load-balancers allow to configure specific throttling rules on a route-by-route basis. A developer must
-identify especially vulnerable routes and provide configuration accordingly.
+Some proxies/load-balancers allow you to configure specific throttling rules on a route-by-route basis. A developer must
+identify especially vulnerable routes and configure the infrastructure accordingly.
 
-## When to apply
+## When to apply these protections
+
+Use the following guidelines to determine when to apply each protection method.
 
 ### ReCaptcha (or other type of challenge)
 
 *  For heavy operations
-*  For routes/endpoints using other services over network
+*  For routes/endpoints using other services over the network
 
 ### Input/output limit
 
