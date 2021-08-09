@@ -4,8 +4,34 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Aug 2 22:16:06 2021
+updated: Mon Aug 9 15:33:58 2021
 entries:
+- description: Corrected the order of the steps in the [Docker Developer Mode in the
+    Cloud guide](https://devdocs.magento.com/cloud/docker/docker-mode-developer.html).
+  versions: 2.x
+  type: Technical
+  date: August 6, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2445
+  merge_commit: 1eecd716419c5f0d05e37239dd76569b19271a05
+  contributor: andriyShevtsov
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: The Adobe Commerce [Storefront Events SDK](https://devdocs.magento.com/shared-services/storefront-events-sdk.html)
+    provides access to a common data layer with event publishing and subscription
+    services. The Adobe Commerce [Storefront Event Collector](https://devdocs.magento.com/shared-services/storefront-event-collector.html)
+    listens for and handles events sent from the Storefront Events SDK.
+  versions: 2.4.x
+  type: Major Update
+  date: August 4, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2439
+  merge_commit: 7ca97a589cb7f14f9c386c07e596f69932bf1408
+  contributor: ccondra
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
 - description: Added the [Mass assignment](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/mass-assignment.html)
     topic to the _PHP Developer Guide_. It describes how to prevent attacks in which
     a client inserts or updates data that either should not be available to the user,
@@ -18,9 +44,9 @@ entries:
   contributor: AlexMaxHorkun
   membership: true
   labels:
+  - New Topic
   - 2.3.x
   - 2.4.x
-  - New Topic
 - description: Added the [Server-side Request Forgery](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/ssrf.html)
     topic to the _PHP Developer Guide_. SSRF attacks trick an externally-facing server
     into sending a request to an internally-accessible server.
