@@ -36,21 +36,31 @@ The command `graphql:compare` allows to compare two GraphQL schemas to check for
 
 ### Recommendations to use the `upgrade:check` command
 
-We recommend running the following command to avoid memory limitations:
+*  The {{site.data.var.uct}} requires at least 2GB RAM to run. This setting is recommended to avoid issues due to a low memory limitation. The {{site.data.var.uct}} displays a question if you run the `upgrade:check` command with a low `memory_limit` setting.
+*  Specify the `-m` option to run the tool against a specific module:
+
+   ```bash
+   bin/uct upgrade:check <dir> -m app/code/Training
+   ```
+
+*  To return a list of {{site.data.var.uct}} commands, run:
+
+   ```bash
+   bin/uct list
+   ```
+
+### Use the `--ignore-current-version-compatibility-issues` option
+
+The {{site.data.var.uct}} allows you to run the `upgrade:check` command with an `--ignore-current-version-compatibility-issues` option, so it only shows new or unknown critical issues, errors and warnings. Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
 
 ```bash
-php -d memory_limit=-1 /bin/uct
+bin/uct upgrade:check --ignore-current-version-compatibility-issues <dir>
 ```
 
-We also recommend using the `-m` command when you want to run the tool against a specific module.
+{:.bs-callout-info}
+This applies only to PHP API validations. Core code validations are compared only with the same version.
 
-If you want to know all commands available for the {{site.data.var.uct}}, run:
-
-```bash
-bin/uct list
-```
-
-### Use the `--help` command
+### Use the `--help` option
 
 To see the {{site.data.var.uct}} command general options and help, run:
 
@@ -68,9 +78,9 @@ Available `--help` options for the `upgrade:check` command:
 *  --raw: Outputs raw information.
 *  --format=FORMAT: The output format (txt, xml, json, md).
 *  --short: Skip arguments descriptions.
-*  -h, —help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —quiet: Do not outputs any message while executing the command.
-*  -v, —version: Display app version.
+*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  -q, —-quiet: Do not outputs any message while executing the command.
+*  -v, —-version: Display app version.
 *  —ansi | —no-ansi: Enable ANSI output.
 *  -n, —no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, —verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
@@ -102,9 +112,9 @@ If you add `--help` to the `core:code:changes` command, it returns several optio
 
 Available `--help` options for the `core:code:changes` command:
 
-*  -h, —help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —quiet: Do not outputs any message while executing the command.
-*  -v, —version: Display app version.
+*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  -q, —-quiet: Do not outputs any message while executing the command.
+*  -v, —-version: Display app version.
 *  —ansi | —no-ansi: Enable ANSI output.
 *  -n, —no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, —verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
@@ -153,9 +163,9 @@ You must have running `instance before` and `instance after` the upgrade.
 
 Available `--help` options for the `graphql:compare` command:
 
-*  -h, —help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —quiet: Do not outputs any message while executing the command.
-*  -v, —version: Display app version.
+*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  -q, —-quiet: Do not outputs any message while executing the command.
+*  -v, —-version: Display app version.
 *  —ansi | —no-ansi: Enable ANSI output.
 *  -n, —no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, —verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
