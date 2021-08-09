@@ -19,6 +19,13 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 See [Apply patches]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html) for instructions on applying patches to your Magento projects.
 See [Patches available in MQP tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
+## v1.1.1
+
+-  **MDVA-36021** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.4`)_-Fixes the issue where the 'Call to a member function getId()' error is displayed on the order details page in the Admin.
+-  **MDVA-34948** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <=2.3.6-p1 || >=2.4.0 <=2.4.0-p1`)_-Fixes the issue with long-running queries, like GET_LOCK.
+-  **MDVA-39305** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <=2.4.2-p1`)_-Fixes the issue where registered customers are not able to log in with enabled Google ReCaptcha.
+-  **MDVA-37897** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue with an incorrect redirect when a customer tries to add products with options from the Recently Viewed widget.
+
 ## v1.1.0
 
 -  Patch categories were introduced in order to improve the user experience and make searching for required patches easier for customers.
