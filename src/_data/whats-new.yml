@@ -7,7 +7,7 @@ thread: "/whatsnew-feed.xml"
 updated: Mon Aug 9 15:25:49 2021
 entries:
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.1.1 Magento Quality Patch (MQP) package release.
+    for the 1.1.1 quality patch for Adobe Commerce and Magento Open Source release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: August 9, 2021
