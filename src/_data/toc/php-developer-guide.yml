@@ -297,6 +297,9 @@ pages:
         - label: Sensitive Information
           url: /extension-dev-guide/security/sensitive-information.html
 
+        - label: Mass assignment
+          url: /extension-dev-guide/security/mass-assignment.html
+
         - label: Avoiding SSRF
           url: /extension-dev-guide/security/ssrf.html
 
