@@ -96,7 +96,7 @@ The menu displays as follows:
 
 ### Restrict admin controllers
 
-We can restrict the access to admin controllers by setting the `ADMIN_RESOURCE` const.
+We can restrict the access to admin controllers by setting the `ADMIN_RESOURCE` constant.
 
 Add the following to your module's `Controller/Adminhtml/Create/Index.php` file:
 
