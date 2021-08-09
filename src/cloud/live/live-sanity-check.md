@@ -57,9 +57,6 @@ To remove these test builds, you can use the `magento-cloud local:clean` command
 
 Before you continue, push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
 
-{:.procedure}
-To prepare your code and branch:
-
 {% include cloud/cli-get-started.md %}
 
 {:.procedure}
