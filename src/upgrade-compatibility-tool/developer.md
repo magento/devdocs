@@ -8,7 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-This topic contains information for developers who work closely with the {{site.data.var.ee}} code and want to learn detailed information about the Upgrade Compatibility Tool. You can use this knowledge to customize the tool's components.
+This topic contains information for developers who work closely with the {{site.data.var.ee}} code and want to learn detailed information about the {{site.data.var.uct}}. You can use this knowledge to customize the tool's components.
 
 ## Adobe Commerce API index integration
 
@@ -26,7 +26,7 @@ Edit this file to customize the response according to your installation. Just re
 
 `sut\Domain\MRay\MRayInterface : "@sut_mray_mock"`
 
-In the previous example, the Upgrade Compatibility Tool uses `@sut_mray_mock` as the `MRayInterface` implementation. The responses from the `api()` and `modules()` methods come from the following files:
+In the previous example, the {{site.data.var.uct}} uses `@sut_mray_mock` as the `MRayInterface` implementation. The responses from the `api()` and `modules()` methods come from the following files:
 
 *  `dev/mray_mock_files/api.json`
 *  `dev/mray_mock_files/modules.json`
@@ -101,7 +101,7 @@ This score is based on the results extracted from the analysis:
 *  Number of issues identified
 *  Severity of issues identified
 
-The Upgrade Compatibility Tool calculates this score according to the complexity score formula below.
+The {{site.data.var.uct}} calculates this score according to the complexity score formula below.
 
 ### Complexity score formula
 
