@@ -104,8 +104,8 @@ entries:
   - New Topic
   - 2.4.3
 - description: Updated the [availability](https://devdocs.magento.com/release/availability.html)
-    and [compatibility](https://devdocs.magento.com/extensions/vendor/) of Magento-developed
-    extensions (MDEs) and vendor-bundled extensions (VBEs).
+    and [compatibility](https://devdocs.magento.com/extensions/vendor/) of Adobe-developed
+    extensions and vendor-bundled extensions (VBEs).
   versions: 2.4.3
   type: Major Update
   date: August 10, 2021
