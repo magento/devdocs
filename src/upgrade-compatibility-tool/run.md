@@ -60,7 +60,7 @@ bin/uct upgrade:check --ignore-current-version-compatibility-issues <dir>
 {:.bs-callout-info}
 This applies only to PHP API validations. Core code validations are compared only with the same version.
 
-### Use the `--help` command
+### Use the `--help` option
 
 To see the Upgrade Compatibility Tool command general options and help, run:
 
