@@ -8,9 +8,9 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrade Compatibility Tool is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
+The {{site.data.var.uct}} is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of critical issues, errors, and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
 
-The Upgrade Compatibility Tool identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of {{site.data.var.ee}}.
+The {{site.data.var.uct}} identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of {{site.data.var.ee}}.
 
 ## Use the `upgrade:check` command
 
@@ -23,7 +23,7 @@ bin/uct upgrade:check <dir>
 {:.bs-callout-info}
 The `<dir>` value is the directory where your {{site.data.var.ee}} instance is located.
 
-The `upgrade:check` command runs the Upgrade Compatibility Tool and checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of errors and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
+The `upgrade:check` command runs the {{site.data.var.uct}} and checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of critical issues, errors, and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
 
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
@@ -62,7 +62,7 @@ This applies only to PHP API validations. Core code validations are compared onl
 
 ### Use the `--help` option
 
-To see the Upgrade Compatibility Tool command general options and help, run:
+To see the {{site.data.var.uct}} command general options and help, run:
 
 ```bash
 bin/uct --help
@@ -146,7 +146,7 @@ There are some limitations when running the previous command:
 
 ## GraphQL schema compatibility verification
 
-The Upgrade Compatibility Tool also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
+The {{site.data.var.uct}} also provides the option to introspect two GraphQL endpoints and compare their schemas looking for breaking and dangerous changes between them:
 
 ```bash
 bin/uct graphql:compare <schema1> <schema2>
@@ -170,7 +170,7 @@ Available `--help` options for the `graphql:compare` command:
 *  -n, —no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, —verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
-### Example with a list of errors/warnings for GraphQL
+### Example with a list of critical issues, errors, and warnings for GraphQL
 
 ```terminal
  *   [WARNING] FIELD_CHANGED_KIND: ConfigurableProduct.gender changed type from Int to String.
@@ -181,7 +181,7 @@ See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/develope
 
 ### Output
 
-The Upgrade Compatibility Tool exports a json file report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
+The {{site.data.var.uct}} exports a json file report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
 
 {:.bs-callout-info}
 To export this report into a different output folder, run `--output <dir>` commmand. Default path for the output folder is `var/output/[TIME]-results.json`.
@@ -200,7 +200,7 @@ You can also get a full report containing both _PHP-related_ errors and GraphQL.
 bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.3 <dir>
 ```
 
-## Example with a list of errors/warnings
+## Example with a list of critical issues, errors, and warnings
 
 ```terminal
 File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php

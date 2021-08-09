@@ -1,9 +1,8 @@
-<!--Note: The error code tables in this file are auto-generated from source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to [Adobe Commerce repository](https://repo.magento.com/).-->
 ## Critical issues
 
 ### Core code
 
-These errors are reported when some of the core project files are missing does not match the original.
+These errors are reported when some of the core files are missing or do not match the original.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
@@ -46,8 +45,8 @@ GraphQL Schema critical issues are raised if the schema items are not present in
 | - | - | - |
 | 3101 | Type was removed | List all queries that are referencing this field. Check if these queries are used by the customization implementation. Update the client code to handle the changed query interface. |
 | 3102 | Type removed from union | If the union type is used in the GraphQL request constructing or response processing implementation it may need to be updated. |
-| 3103 | FIELD_REMOVED | - |
-| 3105 | IMPLEMENTED_INTERFACE_REMOVED | - |
+| 3103 | Field removed | Check if the field is referenced in the customization codebase. Adjust the implementation to correctly handle the new field type. |
+| 3105 | Implemented interface removed | Check if the type implementing the removed interface is used in the cusomization. The implementation may need to be updated if it is relying on the removed interface. |
 | 3106 | Value removed from enum | If the removed enum value is used in the GraphQL request constructing or response processing implementation it may need to be updated. |
 | 3107 | Argument removed | Check if the field is used in the customization codebase. Remove the argument for this field. |
 | 3109 | Directive removed | Check if the directive is used in the customization codebase. Adjust the implementation to remove the reference to the directive. |
@@ -93,7 +92,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 
 ### Core code
 
-These errors are reported when some of the core project files are missing does not match the original.
+These warnings are reported when there are minor inconsistencies in the core codebase.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
@@ -102,7 +101,7 @@ These errors are reported when some of the core project files are missing does n
 
 ### Custom code
 
-Custom code warnings are raised when the references to deprecated code are detected. Such references should be replaced with the supported extension points. Please pay attention to the `@see` annotation of deprecated item for recommendations.
+Custom code warnings are raised when the references to deprecated code are detected. Such references should be replaced with the supported extension points. Pay attention to the `@see` annotation of deprecated item for recommendations.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
