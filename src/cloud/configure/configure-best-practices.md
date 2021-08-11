@@ -64,13 +64,13 @@ This ensures net-new customers or existing customers who have not made a purchas
 
 ## Understanding websites, stores, and store views {#sites}
 
-Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html).
+You can set up and run several stores with a single implementation of {{site.data.var.ece}}. See [Set up multiple websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html).
 
-You can set up and run several shops through a single implementation of Magento. If you want to have shops that do not interact with each other, you create multiple _websites_. Each website has specific articles, customer data, checkouts, and shopping cart not shared with other websites in Magento.
+For stores that do not interact with each other, you can create multiple _websites_. Each website has specific articles, customer data, checkout, and shopping cart that are not shared with other websites in Magento.
 
-Each website can include one or more _stores_ with different categories and articles, with shared customer data, checkout, and shopping cart. For these stores, a customer can sign up once and shop across different catalogs of products with a single checkout.
+Each website can include one or more _stores_ with different categories and articles, shared customer data, checkout, and shopping cart. For these stores, a customer can sign up once and shop across different catalogs of products with a single checkout.
 
-You can further create _store views_ for different languages, layouts, and designs. Each view can have its own domain, look and feel, and language while sharing articles, customer data, checkout, and shopping cart.
+Additionally, you can create _store views_ for different languages, layouts, and designs. Each view can have a separate domain, branding, and language while sharing articles, customer data, checkout, and shopping cart.
 
 The following are examples to better explain:
 
@@ -85,3 +85,6 @@ The following are examples to better explain:
 *  Two websites one for clothing and another for home decor with different catalogs and separate articles, customer data, and shopping cart. Each website could have multiple stores and views sharing articles, customer data, checkout, and shopping cart only within that website.
 
    ![Store example 3]({{ site.baseurl }}/common/images/cloud/cloud_example-store3.png)
+
+{:.bs-callout-warning}
+Be aware that catalog data expands as you increase the number of websites and stores. Depending on your project architecture, the additional stores can lead to a longer indexing process and slower response times for non-cached catalog pages. Adobe recommends that you monitor site performance closely.
