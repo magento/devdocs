@@ -98,7 +98,7 @@ In this example, the `max-length` value of the text-box in the `adminhtml` is al
     };
     ```
 
-1. Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/` and copy the contents of the `input.html` file from the `module_ui` template file.
+1. Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/element/` and copy the contents of the `input.html` file from the `module_ui` template file.
 1. Change the maxlength value to `512`, which was originally set to `256`.
 1. Upgrade the Magento application:
 
