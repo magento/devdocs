@@ -21,6 +21,11 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 
 <!--Add release notes below-->
 
+## v1.0.12
+*Release date: August 12, 2021*<br/>
+
+-  {:.fix}This patch corrects a configurable rate limit that prevented message queues from processing all messages. The rate limit was added to limit resource allocation for RESTful endpoints. This patch raises the default value of the configurable rate limit.<!-- MC-43048 -->
+
 ## v1.0.11
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
