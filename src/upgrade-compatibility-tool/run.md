@@ -40,13 +40,13 @@ While the `graphql:compare` command allows to compare two GraphQL schemas to che
 *  Specify the `-m` option to run the tool against a specific module:
 
    ```bash
-   bin/uct upgrade:check <dir> -m <module>
+   bin/uct upgrade:check <dir> -m[=MODULE-PATH]
    ```
 
 Where arguments are as follows:
 
 *  `<dir>`: Adobe Commerce installation directory.
-*  `<module>`: Specific module path directory.
+*  `[=MODULE-PATH]`: Specific module path directory.
 
 ### Use the `--help` option
 
@@ -68,7 +68,7 @@ Available `--help` options for the `upgrade:check` command:
 *  --format=FORMAT: Output format (txt, xml, json, md).
 *  --short: Skip arguments description.
 *  -o, --output[=OUTPUT]: Path directory to export the `.json` output file.
-*  -m, --module-path: Modules path directory .
+*  -m, --module-path[=MODULE-PATH]: Modules path directory .
 *  --schema1[=SCHEMA1]: Endpoint URL for the existing installation.
 *  --schema2[=SCHEMA2]: Endpoint URL for the vanilla installation.
 *  --vanilla-dir: Adobe Commerce vanilla installation directory.
