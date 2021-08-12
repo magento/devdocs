@@ -21,6 +21,14 @@ The release notes include:
 
 See [Upcoming Releases](https://devdocs.magento.com/release/) for versioning, support, and compatibility.
 
+### v4.4.1
+
+Amazon Sales Channel 4.4.1 is compatible with versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+This version of Amazon Sales Channel includes the following fix.
+
+-  {:.fix}Changed the way Adobe Commerce receives the _User Name_ field from Amazon. Previously, there was an error during order creation when the _User Name_ field contained special characters. Adobe Commerce now receives the _User Name_ data and filters out the special characters so the order can be created successfully.
+
 ### v4.4.0
 
 Amazon Sales Channel 4.4.0 is compatible with versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
