@@ -94,7 +94,7 @@ bin/uct upgrade:check <dir> --output[=OUTPUT]
 Where arguments are as follows:
 
 *  `<dir>` - Adobe Commerce installation directory.
-*  [=OUTPUT] - Path directory to export the `.json` output file.
+*  `[=OUTPUT]` - Path directory to export the `.json` output file.
 
 {:.bs-callout-info}
 The default path for the output folder is `var/output/[TIME]-results.json`.
