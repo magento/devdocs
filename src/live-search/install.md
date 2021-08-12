@@ -62,7 +62,7 @@ The modules that allow the native {{site.data.var.ee}} search and category brows
 To update Live Search, run the following from the command line:
 
 ```bash
-composer update magento/live-search -–with-dependencies
+composer update magento/live-search --with-dependencies
 ```
 
 To update to a major version such as from 1.0 to 2.0, edit the project’s root Composer `.json` file as follows:

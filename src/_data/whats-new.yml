@@ -1979,8 +1979,8 @@ entries:
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
 - description: Updated reference documentation for backward incompatible changes introduced
-    in the [2.4.1](http://127.0.0.1:4000/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#240---241)
-    and [2.3.6](http://127.0.0.1:4000/guides/v2.3/release-notes/backward-incompatible-changes/reference.html#235---236)
+    in the [2.4.1](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#240---241)
+    and [2.3.6](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html#235---236)
     releases.
   versions: 2.3.6, 2.4.1
   type: Major Update
