@@ -45,8 +45,8 @@ While the `graphql:compare` command allows to compare two GraphQL schemas to che
 
   Where arguments are as follows:
 
-    *  `<dir>` - Adobe Commerce installation directory.
-    *  `<module>` - Specific module path directory.
+    *  `<dir>`: Adobe Commerce installation directory.
+    *  `<module>`: Specific module path directory.
 
 ### Use the `--help` option
 
@@ -93,8 +93,8 @@ bin/uct upgrade:check <dir> --output[=OUTPUT]
 
 Where arguments are as follows:
 
-*  `<dir>` - Adobe Commerce installation directory.
-*  `[=OUTPUT]` - Path directory to export the `.json` output file.
+*  `<dir>`: Adobe Commerce installation directory.
+*  `[=OUTPUT]`: Path directory to export the `.json` output file.
 
 {:.bs-callout-info}
 The default path for the output folder is `var/output/[TIME]-results.json`.
@@ -146,8 +146,8 @@ bin/uct core:code:changes <dir> <vanilla dir>
 
 Where arguments are as follows:
 
-*  `<dir>` - Adobe Commerce installation directory.
-*  `<vanilla dir>` - Adobe Commerce vanilla installation directory.
+*  `<dir>`: Adobe Commerce installation directory.
+*  `<vanilla dir>`: Adobe Commerce vanilla installation directory.
 
 There are some limitations when running this command:
 
@@ -196,8 +196,8 @@ bin/uct graphql:compare <schema1> <schema2>
 
 Where arguments are as follows:
 
-*  <schema1> - Endpoint URL for the existing installation.
-*  <schema2> - Endpoint URL for the vanilla installation.
+*  `<schema1>`: Endpoint URL for the existing installation.
+*  `<schema2>`: Endpoint URL for the vanilla installation.
 
 You must have running `instance before` and `instance after` the upgrade.
 
@@ -225,9 +225,9 @@ See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/develope
 
 You can also get a full report containing both _PHP-related_ errors and GraphQL. In this case, you must provide at least the following options:
 
-*  `--schema1=SCHEMA1`
-*  `--schema2=SCHEMA2`
-*  `<dir>`
+*  `--schema1=SCHEMA1`: Endpoint URL for the existing installation.
+*  `--schema2=SCHEMA2`: Endpoint URL for the vanilla installation.
+*  `<dir>`: Adobe Commerce installation directory.
 
 > Example:
 
