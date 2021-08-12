@@ -43,10 +43,10 @@ While the `graphql:compare` command allows to compare two GraphQL schemas to che
    bin/uct upgrade:check <dir> -m <module>
    ```
 
-  Where arguments are as follows:
+Where arguments are as follows:
 
-    *  `<dir>`: Adobe Commerce installation directory.
-    *  `<module>`: Specific module path directory.
+*  `<dir>`: Adobe Commerce installation directory.
+*  `<module>`: Specific module path directory.
 
 ### Use the `--help` option
 
