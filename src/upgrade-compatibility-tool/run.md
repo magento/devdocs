@@ -14,7 +14,7 @@ The {{site.data.var.uct}} identifies potential problems that must be fixed in yo
 
 ## Use the `upgrade:check` command
 
-Execute the tool by running the following command:
+The `upgrade:check` command is the main command to execute the tool:
 
 ```bash
 bin/uct upgrade:check <dir>
@@ -23,16 +23,16 @@ bin/uct upgrade:check <dir>
 {:.bs-callout-info}
 The `<dir>` value is the directory where your {{site.data.var.ee}} instance is located.
 
-The `upgrade:check` command runs the {{site.data.var.uct}} and checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of critical issues, errors, and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
+The `upgrade:check` command runs the {{site.data.var.uct}} and checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of critical issues, errors, and warnings that must be addressed before upgrading to the latest version of your {{site.data.var.ee}}.
 
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
 
-This command checks for core code changes, if desired, for that specific {{site.data.var.ee}} instance, as well as all custom code changes installed in it.
+This command checks for core code changes for that specific {{site.data.var.ee}} instance, as well as all custom code changes installed in it.
 
-It is possible to only run the `core:code:changes` command to analyze only core code changes for that specific {{site.data.var.ee}} instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
+However, you can run the `core:code:changes` command to analyze only core code changes for that specific {{site.data.var.ee}} instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
 
-The command `graphql:compare` allows to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification]({{site.baseurl}}/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
+While the `graphql:compare` command allows to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification]({{site.baseurl}}/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
 
 ### Recommendations to use the `upgrade:check` command
 
@@ -40,25 +40,13 @@ The command `graphql:compare` allows to compare two GraphQL schemas to check for
 *  Specify the `-m` option to run the tool against a specific module:
 
    ```bash
-   bin/uct upgrade:check <dir> -m app/code/Training
+   bin/uct upgrade:check <dir> -m <module>
    ```
 
-*  To return a list of {{site.data.var.uct}} commands, run:
+  Where arguments are as follows:
 
-   ```bash
-   bin/uct list
-   ```
-
-### Use the `--ignore-current-version-compatibility-issues` option
-
-The {{site.data.var.uct}} allows you to run the `upgrade:check` command with an `--ignore-current-version-compatibility-issues` option, so it only shows new or unknown critical issues, errors and warnings. Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
-
-```bash
-bin/uct upgrade:check --ignore-current-version-compatibility-issues <dir>
-```
-
-{:.bs-callout-info}
-This applies only to PHP API validations. Core code validations are compared only with the same version.
+  *  `<dir>` - Adobe Commerce installation directory.
+  *  `<module>` - Specific module path directory.
 
 ### Use the `--help` option
 
@@ -73,19 +61,63 @@ However, it is possible to run `--help` as an option when running a specific com
 ```bash
 bin/uct upgrade:check --help
 ```
+
 Available `--help` options for the `upgrade:check` command:
 
 *  --raw: Outputs raw information.
 *  --format=FORMAT: The output format (txt, xml, json, md).
 *  --short: Skip arguments descriptions.
+*  -m, --module-path: Modules path directory .
+*  --schema1[=SCHEMA1]: Endpoint URL for the existing installation.
+*  --schema2[=SCHEMA2]: Endpoint URL for the vanilla installation.
+*  --vanilla-dir: Adobe Commerce vanilla installation directory.
+*  --min-issue-level: Minimum issue level to show in report. Default is [WARNING].
+*  --ignore-current-version-compatibility-issues: Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
 *  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
 *  -q, —-quiet: Do not outputs any message while executing the command.
 *  -v, —-version: Display app version.
-*  —ansi | —no-ansi: Enable ANSI output.
-*  -n, —no-interaction: Do not ask any interactive question while executing the command.
+*  —-ansi, —-no-ansi: Enable ANSI output.
+*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, —verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
-## Core code changes
+## Use the `--ignore-current-version-compatibility-issues` option
+
+The {{site.data.var.uct}} allows you to run the `upgrade:check` command with an `--ignore-current-version-compatibility-issues` option, so it only shows new or unknown critical issues, errors and warnings. Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
+
+```bash
+bin/uct upgrade:check --ignore-current-version-compatibility-issues <dir>
+```
+
+{:.bs-callout-info}
+This applies only to PHP API validations. Core code validations are compared only with the same version.
+
+### Vanilla installation
+
+A _vanilla_ installation is a clean installation of a specified version tag or branch for a specific release version.
+
+When running the `bin/uct core:code:changes` command, it will check if there is a vanilla instance in your system. In a case where this is the first time using a vanilla installation, an interactive command-line question prompts you to download the vanilla project from the [Adobe Commerce repository](https://repo.magento.com/).
+
+You can run a {{site.data.var.uct}} command with the `--vanilla-dir` option to specify the {{site.data.var.ee}} vanilla installation directory.
+
+See the [Deploy vanilla instance]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) topic for more information.
+
+## Use the `list` command
+
+To return a list of the {{site.data.var.uct}} available commands, run:
+
+```bash
+bin/uct list
+```
+This `list` commands returns the following:
+
+*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  -q, —-quiet: Do not outputs any message while executing the command.
+*  -v, —-version: Display app version.
+*  —-ansi, —-no-ansi: Enable ANSI output.
+*  -n, —no-interaction: Do not ask any interactive question while executing the command.
+*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+
+## Use the `core:code:changes` command
 
 You can compare your current {{site.data.var.ee}} installation with a clean vanilla installation to see if the core code has any modifications made to implement a new feature or customization. This validation will help estimate the effort that the upgrade will require based on those changes.
 
@@ -95,17 +127,17 @@ bin/uct core:code:changes <dir> <vanilla dir>
 
 Where arguments are as follows:
 
-*  <dir> - Adobe Commerce installation directory.
-*  <vanilla dir> - Adobe Commerce vanilla installation directory.
+*  `<dir>` - Adobe Commerce installation directory.
+*  `<vanilla dir>` - Adobe Commerce vanilla installation directory.
 
 There are some limitations when running this command:
 
 *  Execute only when the project root (or main) directory is provided.
 *  Shows a list of core modifications only.
 
-### Core code changes command `--help` options
+### Use the `core:code:changes --help` option
 
-If you add `--help` to the `core:code:changes` command, it returns several options:
+If you add the `--help` option to the `core:code:changes` command, it returns:
 
 *  Execute only when the project root (or main) directory is provided.
 *  Shows a list of core modifications only.
@@ -118,14 +150,6 @@ Available `--help` options for the `core:code:changes` command:
 *  —ansi | —no-ansi: Enable ANSI output.
 *  -n, —no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, —verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
-
-### Vanilla installation
-
-A _vanilla_ installation is a clean installation of a specified version tag or branch for a specific release version.
-
-When running the `bin/uct core:code:changes` command, it will check if there is a vanilla instance in your system. In a case where this is the first time using a vanilla installation, an interactive command-line question prompts you to download the vanilla project from the [Adobe Commerce repository](https://repo.magento.com/).
-
-See the [Deploy vanilla instance]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) topic for more information.
 
 ## Version
 
