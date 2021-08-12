@@ -78,7 +78,7 @@ Available `--help` options for the `upgrade:check` command:
 *  -q, —-quiet: Do not outputs any message while executing the command.
 *  -v, —-version: Display app version.
 *  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —no-interaction: Do not ask any interactive question while executing the command.
+*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ### Output
@@ -133,7 +133,7 @@ This `list` commands returns the following:
 *  -q, —-quiet: Do not outputs any message while executing the command.
 *  -v, —-version: Display app version.
 *  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —no-interaction: Do not ask any interactive question while executing the command.
+*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ## Use the `core:code:changes` command
@@ -162,7 +162,7 @@ Available `--help` options for the `core:code:changes` command:
 *  -q, —-quiet: Do not outputs any message while executing the command.
 *  -v, —-version: Display app version.
 *  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —no-interaction: Do not ask any interactive question while executing the command.
+*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ## Version
@@ -209,7 +209,7 @@ Available `--help` options for the `graphql:compare` command:
 *  -q, —-quiet: Do not outputs any message while executing the command.
 *  -v, —-version: Display app version.
 *  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —no-interaction: Do not ask any interactive question while executing the command.
+*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ### Example with a list of critical issues, errors, and warnings for GraphQL
