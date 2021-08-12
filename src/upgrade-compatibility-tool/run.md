@@ -32,7 +32,7 @@ This command checks for core code changes for that specific {{site.data.var.ee}}
 
 However, you can run the `core:code:changes` command to analyze only core code changes for that specific {{site.data.var.ee}} instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
 
-While the `graphql:compare` command allows to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification]({{site.baseurl}}/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
+While you can use the `graphql:compare` command to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification]({{site.baseurl}}/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
 
 ### Recommendations to use the `upgrade:check` command
 
