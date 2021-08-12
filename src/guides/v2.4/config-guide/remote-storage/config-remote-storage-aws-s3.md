@@ -25,6 +25,12 @@ To enable remote storage with the AWS S3 adapter:
    bin/magento setup:config:set --remote-storage-driver="aws-s3" --remote-storage-bucket="<bucket-name>" --remote-storage-region="<region-name>" --remote-storage-prefix="<optional-prefix>" --remote-storage-key=<optional-access-key> --remote-storage-secret=<optional-secret-key> -n
    ```
 
+Database storage must be disabled if using remote storage.
+
+```bash
+bin/magento setup:config:set --remote-storage-driver=file
+```
+
 ## Configure Nginx
 
 Nginx requires an additional configuration to perform Authentication with the `proxy_pass` directive. Add the following proxy information to the `nginx.conf` file:
