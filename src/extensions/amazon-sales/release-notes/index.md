@@ -27,7 +27,7 @@ Amazon Sales Channel 4.4.1 is compatible with versions 2.3.x and 2.4.0, but is o
 
 This version of Amazon Sales Channel includes the following fix.
 
--  {:.fix}Changed the way Adobe Commerce receives the _User Name_ field from Amazon. Previously, there was an error during order creation when the _User Name_ field contained special characters. Adobe Commerce now receives the _User Name_ data and filters out the special characters so the order can be created successfully.
+-  {:.fix}Changed the way {{site.data.var.ee}} receives the _User Name_ field from Amazon. Previously, there was an error during order creation when the _User Name_ field contained special characters. {{site.data.var.ee}} now receives the _User Name_ data and filters out the special characters so the order can be created successfully.
 
 ### v4.4.0
 
