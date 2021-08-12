@@ -39,7 +39,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Specify a list of Magento quality patches to apply during deployment.
+Specify a list of quality patches to apply during deployment.
 
 ```yaml
 stage:

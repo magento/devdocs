@@ -37,7 +37,7 @@ Hot fixes can contain backward incompatible changes.
 
 Individual patches contain low-impact quality fixes for a specific issue. These fixes are applied to the most recently supported minor version of Magento (for example, 2.4.x), but could be missing from the previous supported minor version of Magento (for example, 2.3.x). Magento releases individual patches as needed.
 
-Use the [Magento Quality Patches (MQP) package][MQP] to apply individual patches.
+Use the [Quality Patches Tool][] to apply individual patches.
 
 {:.bs-callout-info}
 Individual patches do not contain backward incompatible changes.
@@ -81,7 +81,7 @@ index c8a6fef58d31..7d01c195791e 100644
 
 You can apply patches using any of the following methods:
 
--  [Magento Quality Patch (MQP) package][MQP]
+-  [Quality Patches Tool][]
 -  [Command line][]
 -  [Composer][]
 
@@ -103,4 +103,4 @@ To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].
 [Apply patches]:{{ site.baseurl }}/cloud/project/project-patch.html
 [Command line]:{{ page.baseurl }}/comp-mgr/patching/command-line.html
 [Composer]:{{ page.baseurl }}/comp-mgr/patching/composer.html
-[MQP]: {{ page.baseurl }}/comp-mgr/patching/mqp.html
+[Quality Patches Tool]: {{ page.baseurl }}/comp-mgr/patching/mqp.html

@@ -28,7 +28,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 
 -  {:.fix} **Paypal Checkout patch**–Fixes a Magento 2.3.7 issue with PayPal Express where the previously placed order price is displayed.<!--MC-42674-->
 
--  {:.fix} **Patch category support**–Added support for processing patch categories and origin sources assigned to Magento Quality Patches. The categories allow customers to use filters and sorting to find patches more quickly when using [Magento Quality Patches](https://github.com/magento/quality-patches) and the Site-wide Analysis Tool (SWAT). <!--MC-38577-->
+-  {:.fix} **Patch category support**–Added support for processing patch categories and origin sources assigned to Quality Patches Tool. The categories allow customers to use filters and sorting to find patches more quickly when using  [Quality Patches Tool](https://github.com/magento/quality-patches) and the Site-wide Analysis Tool (SWAT). <!--MC-38577-->
 
 ## v1.0.10
 *Release date: May 10, 2021*<br/>

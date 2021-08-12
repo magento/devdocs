@@ -73,14 +73,15 @@ pages:
       url: /comp-mgr/patching.html
       children:
 
-       - label: Commerce quality patches
+       - label: Quality Patches Tool
          url: /comp-mgr/patching/mqp.html
          children:
 
-           - label: Commerce quality patches release notes
+           - label: Release notes for Adobe Commerce
              url: /quality-patches/release-notes.html
              versionless: true
-           - label: Community quality patches release notes
+
+           - label: Release notes for Magento Open Source
              url: https://github.com/magento/quality-patches/blob/master/community-release-notes.md
              versionless: true
 
