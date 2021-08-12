@@ -65,8 +65,9 @@ bin/uct upgrade:check --help
 Available `--help` options for the `upgrade:check` command:
 
 *  --raw: Outputs raw information.
-*  --format=FORMAT: The output format (txt, xml, json, md).
-*  --short: Skip arguments descriptions.
+*  --format=FORMAT: Output format (txt, xml, json, md).
+*  --short: Skip arguments description.
+*  -o, --output[=OUTPUT]: Path directory to export the `.json` output file.
 *  -m, --module-path: Modules path directory .
 *  --schema1[=SCHEMA1]: Endpoint URL for the existing installation.
 *  --schema2[=SCHEMA2]: Endpoint URL for the vanilla installation.
@@ -80,7 +81,25 @@ Available `--help` options for the `upgrade:check` command:
 *  -n, —-no-interaction: Do not ask any interactive question while executing the command.
 *  -v, --vv, —verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
-## Use the `--ignore-current-version-compatibility-issues` option
+### Output
+
+The {{site.data.var.uct}} exports a json file report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
+
+To export this report into a different output folder, run:
+
+```bash
+bin/uct upgrade:check <dir> --output[=OUTPUT]
+```
+
+Where arguments are as follows:
+
+*  `<dir>` - Adobe Commerce installation directory.
+*  [=OUTPUT] - Path directory to export the `.json` output file.
+
+{:.bs-callout-info}
+The default path for the output folder is `var/output/[TIME]-results.json`.
+
+### Use the `--ignore-current-version-compatibility-issues` option
 
 The {{site.data.var.uct}} allows you to run the `upgrade:check` command with an `--ignore-current-version-compatibility-issues` option, so it only shows new or unknown critical issues, errors and warnings. Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
 
@@ -135,12 +154,7 @@ There are some limitations when running this command:
 *  Execute only when the project root (or main) directory is provided.
 *  Shows a list of core modifications only.
 
-### Use the `core:code:changes --help` option
-
-If you add the `--help` option to the `core:code:changes` command, it returns:
-
-*  Execute only when the project root (or main) directory is provided.
-*  Shows a list of core modifications only.
+### Use the `core:code:changes` command  with the `--help` option
 
 Available `--help` options for the `core:code:changes` command:
 
@@ -160,6 +174,10 @@ You must provide the version as a parameter when running the command:
 ```bash
 bin/uct upgrade:check <dir> -c 2.4.3
 ```
+
+Where:
+
+*  -c, --coming-version[=COMING-VERSION]: The Adobe Commerce targeted version.
 
 There are some limitations when running the previous command:
 
@@ -202,13 +220,6 @@ Available `--help` options for the `graphql:compare` command:
 ```
 
 See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) for more information.
-
-### Output
-
-The {{site.data.var.uct}} exports a json file report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
-
-{:.bs-callout-info}
-To export this report into a different output folder, run `--output <dir>` commmand. Default path for the output folder is `var/output/[TIME]-results.json`.
 
 ### Full report
 
