@@ -83,7 +83,7 @@ Available `--help` options for the `upgrade:check` command:
 
 ### Output
 
-The {{site.data.var.uct}} exports a json file report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
+The {{site.data.var.uct}} exports a `json` file report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
 
 To export this report into a different output folder, run:
 
@@ -114,7 +114,7 @@ This applies only to PHP API validations. Core code validations are compared onl
 
 A _vanilla_ installation is a clean installation of a specified version tag or branch for a specific release version.
 
-When running the `bin/uct core:code:changes` command, it will check if there is a vanilla instance in your system. In a case where this is the first time using a vanilla installation, an interactive command-line question prompts you to download the vanilla project from the [Adobe Commerce repository](https://repo.magento.com/).
+The `bin/uct core:code:changes` command checks if there is a vanilla instance in your system. If this is the first time using a vanilla installation, an interactive command-line question prompts you to download the vanilla project from the [Adobe Commerce repository](https://repo.magento.com/).
 
 You can run a {{site.data.var.uct}} command with the `--vanilla-dir` option to specify the {{site.data.var.ee}} vanilla installation directory.
 
