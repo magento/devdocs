@@ -5,7 +5,7 @@ functional_areas:
   - Upgrade
 ---
 
-The [Quality Patches Tool][] delivers individual patches developed by Adobe and the {{ site.data.var.ee }} community. It allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}. See [Apply Patches]({{ site.baseurl }}/cloud/project/project-patch.html) for details about installing and using the Quality Patches Tool on {{ site.data.var.ece }}.
+The [Quality Patches Tool][] delivers individual patches developed by Adobe and the {{ site.data.var.ce }} community. It allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}. See [Apply Patches]({{ site.baseurl }}/cloud/project/project-patch.html) for details about installing and using the Quality Patches Tool on {{ site.data.var.ece }}.
 
 {:.bs-callout-warning}
 We do not recommend using the Quality Patches Tool to apply large numbers of patches because it increases the complexity of your code, which makes upgrading to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }} more difficult.

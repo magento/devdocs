@@ -201,7 +201,7 @@ To apply and test a custom patch on a Cloud environment:
 
 ## Apply patches to a non-Cloud project {#standalone}
 
-Use the [Quality Patches Tool]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html) package for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
+Use the [Quality Patches Tool]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html) for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
 
 ## Revert a patch in a local environment
 

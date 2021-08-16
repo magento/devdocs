@@ -7,7 +7,7 @@ functional_areas:
   - Upgrade
 ---
 
-The [Quality Patches Tool](https://github.com/magento/quality-patches) delivers individual patches developed by Adobe and the {{ site.data.var.ee }} community. It allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}.
+The [Quality Patches Tool](https://github.com/magento/quality-patches) delivers individual patches developed by Adobe and the {{ site.data.var.ce }} community. It allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}.
 
 <!-- The release notes include:
 
