@@ -19,17 +19,17 @@ To enable remote storage with the AWS S3 adapter:
 
 1. Set up [AWS IAM][] roles. Alternatively, generate access and secret keys.
 
+1. Database storage must be disabled if using remote storage:
+
+   ```bash
+   bin/magento config:set system/media_storage_configuration/media_database 0
+   ```
+
 1. Configure Magento to use the private bucket. See [Remote storage options][options] for a full list of parameters.
 
    ```bash
    bin/magento setup:config:set --remote-storage-driver="aws-s3" --remote-storage-bucket="<bucket-name>" --remote-storage-region="<region-name>" --remote-storage-prefix="<optional-prefix>" --remote-storage-key=<optional-access-key> --remote-storage-secret=<optional-secret-key> -n
    ```
-
-Database storage must be disabled if using remote storage.
-
-```bash
-bin/magento config:set system/media_storage_configuration/media_database 0
-```
 
 ## Configure Nginx
 
