@@ -28,7 +28,7 @@ To enable remote storage with the AWS S3 adapter:
 Database storage must be disabled if using remote storage.
 
 ```bash
-bin/magento setup:config:set --remote-storage-driver=file
+bin/magento config:set system/media_storage_configuration/media_database 0
 ```
 
 ## Configure Nginx
