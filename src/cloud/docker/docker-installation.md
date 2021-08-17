@@ -23,15 +23,15 @@ To install a {{ site.data.var.ece }} project:
 
 1. Download an application template from the [Cloud for Commerce repository][cloud-repo]. Be careful to select the branch that corresponds with the Commerce version.
 
-2. Optionally, you can clone the latest template.
+1. Optionally, you can clone the latest template.
 
    ```bash
    git clone https://github.com/magento/magento-cloud.git <install-directory-name>
    ```
 
-3. Change to the new project directory.
+1. Change to the new project directory.
 
-4. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
+1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
 
 ### On-premises projects for Commerce
 

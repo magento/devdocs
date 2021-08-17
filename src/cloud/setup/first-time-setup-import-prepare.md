@@ -12,12 +12,12 @@ Before preparing your project and importing code, push all pending changes from 
 
 The import preparation steps include the following:
 
-- [Prepare and add required files {#required-files}](#prepare-and-add-required-files-required-files)
-- [Add Magento authentication keys {#auth-json}](#add-magento-authentication-keys-auth-json)
-- [Edit `composer.json` {#composer-json}](#edit-composerjson-composer-json)
-- [Back up and transfer media files {#media}](#back-up-and-transfer-media-files-media)
-- [Copy the encryption key {#encryption-key}](#copy-the-encryption-key-encryption-key)
-- [Migrate Commerce data {#migrate-db}](#migrate-commerce-data-migrate-db)
+-  [Prepare and add required files {#required-files}](#prepare-and-add-required-files-required-files)
+-  [Add Magento authentication keys {#auth-json}](#add-magento-authentication-keys-auth-json)
+-  [Edit `composer.json` {#composer-json}](#edit-composerjson-composer-json)
+-  [Back up and transfer media files {#media}](#back-up-and-transfer-media-files-media)
+-  [Copy the encryption key {#encryption-key}](#copy-the-encryption-key-encryption-key)
+-  [Migrate Commerce data {#migrate-db}](#migrate-commerce-data-migrate-db)
 
 ## Prepare and add required files {#required-files}
 
@@ -36,8 +36,8 @@ Add these files to your {{site.data.var.ee}} code:
 
    ![Switch to your current Commerce branch]({{ site.baseurl }}/common/images/cloud/cloud_cloud-git-233.png){:width="600px"}
 
-2. Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-3. Change to the Magento installation directory and create a `.magento` directory.
+1. Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Change to the Magento installation directory and create a `.magento` directory.
 
    ```bash
    cd <Magento installation dir>
@@ -47,7 +47,7 @@ Add these files to your {{site.data.var.ee}} code:
    mkdir .magento
    ```
 
-4. One at a time, create the following files in your {{site.data.var.ee}} system using the contents of the files in the {{site.data.var.ece}} repository:
+1. One at a time, create the following files in your {{site.data.var.ee}} system using the contents of the files in the {{site.data.var.ece}} repository:
 
    -  `<Adobe Commerce install dir>/.magento.app.yaml`
    -  `<Adobe Commerce install dir>/magento-vars.php`

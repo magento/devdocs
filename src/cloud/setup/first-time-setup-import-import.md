@@ -89,13 +89,13 @@ After you have completed the git reference configuration, you can import the {{s
    git fetch prev-project
    ```
 
-2. Reset your Cloud `master` branch to contain the code and the commit history of your {{site.data.var.ee}} branch.
+1. Reset your Cloud `master` branch to contain the code and the commit history of your {{site.data.var.ee}} branch.
 
    ```bash
    git reset --hard prev-project/<branch name>
    ```
 
-3. Push code from your {{site.data.var.ee}} project to your {{site.data.var.ece}} project, overwriting the previous contents and commit history with that of your project.
+1. Push code from your {{site.data.var.ee}} project to your {{site.data.var.ece}} project, overwriting the previous contents and commit history with that of your project.
 
    ```bash
    git push -f cloud-project master
