@@ -12,12 +12,12 @@ Before preparing your project and importing code, push all pending changes from 
 
 The import preparation steps include the following:
 
--  [Prepare and add required files](#required-files)
--  [Add Magento authentication keys](#auth-json)
--  [Modify your existing `composer.json`](#composer-json)
--  [Transfer media files to Cloud](#media)
--  [Add your {{site.data.var.ee}} encryption key](#encryption-key)
--  [Migrate your {{site.data.var.ee}} data](#migrate-db)
+- [Prepare and add required files {#required-files}](#prepare-and-add-required-files-required-files)
+- [Add Magento authentication keys {#auth-json}](#add-magento-authentication-keys-auth-json)
+- [Edit `composer.json` {#composer-json}](#edit-composerjson-composer-json)
+- [Back up and transfer media files {#media}](#back-up-and-transfer-media-files-media)
+- [Copy the encryption key {#encryption-key}](#copy-the-encryption-key-encryption-key)
+- [Migrate Commerce data {#migrate-db}](#migrate-commerce-data-migrate-db)
 
 ## Prepare and add required files {#required-files}
 
@@ -217,7 +217,7 @@ To decrypt the encrypted data from your imported database, copy your encryption 
 
 You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{ site.baseurl }}/cloud/setup/first-time-setup-import-import.html#encryption-key).
 
-## Migrate Magento Commerce data {#migrate-db}
+## Migrate Commerce data {#migrate-db}
 
 Create a database dump and transfer the data from an existing database. You will import this data to your {{site.data.var.ece}} database.
 
