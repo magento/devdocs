@@ -5,15 +5,19 @@ title: Adobe Commerce 2.4.3 Release Notes
 
 {{ site.data.var.ee }} 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
-This release includes over 370 new fixes to core code and 33 security enhancements. All known issues identified in Magento 2.4.2 have been fixed in this release.
+This release includes over 370 new fixes to core code and 33 security enhancements. All known issues identified in the {{ site.data.var.ee }} 2.4.2 release notes have been fixed in this release.
 
 {:.bs-callout-info}
-Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.3 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
+Quarterly releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.3 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 See [Magento 2.4.2-p2 release notes]({{page.baseurl}}/release-notes/2-4-2-p2.html) for information about Magento 2.4.2-p2.
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, B2B, Page Builder, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
+
+## Apply MC-43048__set_rate_limits__2.4.3.patch to address issue with API rate limiting
+
+This hotfix provides a solution for the issue where Web APIs cannot process requests that contain more than 20 items in array. This issue affects deployments running {{ site.data.var.ce }} 2.4.3, {{ site.data.var.ee }} 2.4.3, or Magento 2.3.7-p1. Built-in rate limiting was added to these releases to prevent denial-of-service (DoS) attacks, and the default maximum was set to 20. This patch reverts the default limit to a higher value. If you suspect that your store is experiencing a DoS attack, Adobe recommends lowering the default input limits to a lower value to restrict the number of resources that can be requested. See the [Web API unable to process requests with more than 20 items in array](https://support.magento.com/hc/en-us/articles/4406893342093)Knowledge Base article.
 
 ## Highlights
 
@@ -33,7 +37,7 @@ Security improvements for this release improve compliance with the latest securi
 
 *  A **new Composer plugin** helps prevent dependency confusion and identifies malicious packages with the same names as internal packages on the public package repository. See the [Adobe Releases New Composer Plugin with Magento 2.4.3 Release](https://magento.com/blog/best-practices/adobe-releases-new-composer-plugin-magento-243-release) blog post.
 
-*  **Rate limiting is now built in to Magento APIs** to prevent denial-of-service (DoS) attacks. Web APIs now impose restrictions on the size or number of resources (the default limit is set to 20 and can be configured to a different value based on business need) that can be requested by a client. See [Rate limiting]({{page.baseurl}}/get-started/api-security.html#rate-limiting) for information about configuring these restrictions. <!--- MC-35358-->
+*  **Rate limiting is now built in to Magento APIs** to prevent denial-of-service (DoS) attacks. Web APIs now impose restrictions on the size or number of resources (the default maximum is set to 20 and can be configured to a different value based on business need) that can be requested by a client. See [Rate limiting]({{page.baseurl}}/get-started/api-security.html#rate-limiting) for information about configuring these restrictions. <!--- MC-35358-->
 
 *  **ReCAPTCHA  coverage has been extended** to include:
 
@@ -1637,7 +1641,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- ENGCOM-8501 MC-30270-->
 
-*  Administrators can now sort product reviews on the Product Reviews section of the product edit page as expected. [GitHub-26301](https://github.com/magento/magento2/issues/26301)
+*  Administrators can now sort product reviews on the Product Reviews section of the product edit page as expected. [GitHub-30270](https://github.com/magento/magento2/issues/30270)
 
 <!--- MC-41003  magento/magento2#32259-->
 

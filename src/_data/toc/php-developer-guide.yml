@@ -297,6 +297,9 @@ pages:
         - label: Sensitive Information
           url: /extension-dev-guide/security/sensitive-information.html
 
+        - label: Denial of Service (DoS) attacks
+          url: /extension-dev-guide/security/dos.html
+
         - label: Mass assignment
           url: /extension-dev-guide/security/mass-assignment.html
 
@@ -305,6 +308,9 @@ pages:
 
         - label: Authorization
           url: /extension-dev-guide/security/authorization.html
+
+        - label: Brute force attacks
+          url: /extension-dev-guide/security/anti-brute-force.html
 
     - label: Versioning
       url: /extension-dev-guide/versioning/
