@@ -25,7 +25,7 @@ The PrivateLink service integration for {{site.data.var.ece}} projects includes 
 -  You cannot establish SSH connections using PrivateLink. For SSH, use the Magento SSH capabilities. See [Enable SSH keys][].
 -  Magento support does not cover troubleshooting AWS PrivateLink issues beyond initial enablement.
 -  Customers are responsible for costs associated with managing their own VPC.
--  You cannot use the HTTPS protocol (port 443) to connect to Magento Commerce over PrivateLink.
+-  You cannot use the HTTPS protocol (port 443) to connect to {{ site.data.var.ece }} over PrivateLink.
 -  PrivateDNS is not available.
 
 ## PrivateLink connection types
@@ -36,7 +36,7 @@ The following network diagram shows the PrivateLink connection types available t
 
 You must determine the PrivateLink connection type required for your {{site.data.var.ece}} environments:
 
--  **Unidirectional PrivateLink**–Choose this configuration to retrieve data securely from a Magento Commerce store.
+-  **Unidirectional PrivateLink**–Choose this configuration to retrieve data securely from a {{ site.data.var.ece }} store.
 -  **Bidirectional PrivateLink**–Choose this configuration to establish secure connections to and from systems outside of the {{site.data.var.ece}} environment. The bidirectional option requires two connections:
    -  A connection between the customer VPC and the Magento VPC
    -  A connection between the Magento VPC and the customer VPC

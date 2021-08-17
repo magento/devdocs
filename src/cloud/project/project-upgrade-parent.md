@@ -9,7 +9,7 @@ The Upgrades and patches section contains detailed release notes for the `{{site
 
 The Upgrades and patches section provides information about how to update `{{site.data.var.ct}}`, upgrade the Magento version, and how to [apply patches] to your {{site.data.var.ece}} project.
 
-Some restrictions in the core Magento Commerce code base affect your ability to update to a specific `{{site.data.var.ct}}` release or to upgrade Magento. Use the following table to determine the best path:
+Some restrictions in the core Adobe Commerce code base affect your ability to update to a specific `{{site.data.var.ct}}` release or to upgrade. Use the following table to determine the best path:
 
 | Current Version | Upgrade Path | Instructions
 | --- | --- | --- |

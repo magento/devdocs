@@ -79,7 +79,7 @@ Create a remote Git reference from your Cloud Git repository to the repository c
 ## Import your {{site.data.var.ee}} code to your Cloud project {#cloud-import-imp}
 
 {:.bs-callout-info}
-Before you begin the import process, make sure that you have completed the steps to [prepare your existing Magento Commerce system]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
+Before you begin the import process, make sure that you have completed the steps to [prepare your existing system]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
 
 After you have completed the git reference configuration, you can import the {{site.data.var.ee}} code.
 
@@ -89,13 +89,13 @@ After you have completed the git reference configuration, you can import the {{s
    git fetch prev-project
    ```
 
-1. Reset your Cloud `master` branch to contain the code and the commit history of your {{site.data.var.ee}} branch.
+2. Reset your Cloud `master` branch to contain the code and the commit history of your {{site.data.var.ee}} branch.
 
    ```bash
    git reset --hard prev-project/<branch name>
    ```
 
-1. Push code from your {{site.data.var.ee}} project to your {{site.data.var.ece}} project, overwriting the previous contents and commit history with that of your project.
+3. Push code from your {{site.data.var.ee}} project to your {{site.data.var.ece}} project, overwriting the previous contents and commit history with that of your project.
 
    ```bash
    git push -f cloud-project master

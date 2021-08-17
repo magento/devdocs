@@ -34,10 +34,10 @@ Add these files to your {{site.data.var.ee}} code:
 
    The following figure shows an example of selecting the `2.3.3` branch.
 
-   ![Switch to your current Magento Commerce branch]({{ site.baseurl }}/common/images/cloud/cloud_cloud-git-233.png){:width="600px"}
+   ![Switch to your current Commerce branch]({{ site.baseurl }}/common/images/cloud/cloud_cloud-git-233.png){:width="600px"}
 
-1. Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-1. Change to the Magento installation directory and create a `.magento` directory.
+2. Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+3. Change to the Magento installation directory and create a `.magento` directory.
 
    ```bash
    cd <Magento installation dir>
@@ -47,14 +47,14 @@ Add these files to your {{site.data.var.ee}} code:
    mkdir .magento
    ```
 
-1. One at a time, create the following files in your {{site.data.var.ee}} system using the contents of the files in the {{site.data.var.ece}} repository:
+4. One at a time, create the following files in your {{site.data.var.ee}} system using the contents of the files in the {{site.data.var.ece}} repository:
 
-   -  `<Magento Commerce install dir>/.magento.app.yaml`
-   -  `<Magento Commerce install dir>/magento-vars.php`
-   -  `<Magento Commerce install dir>/.magento/services.yaml`
-   -  `<Magento Commerce install dir>/.magento/routes.yaml`
+   -  `<Adobe Commerce install dir>/.magento.app.yaml`
+   -  `<Adobe Commerce install dir>/magento-vars.php`
+   -  `<Adobe Commerce install dir>/.magento/services.yaml`
+   -  `<Adobe Commerce install dir>/.magento/routes.yaml`
 
-For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from the 2.3.3 branch:
+For example, to create `<Adobe Commerce install dir>/.magento.app.yaml` from the 2.3.3 branch:
 
 1. In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.3.3/.magento.app.yaml).
 1. In the upper right, click **Raw**, as the following figure shows.
@@ -190,15 +190,15 @@ Use the command [`magento setup:backup --media`]({{ site.baseurl }}/guides/v2.3/
 1. To back up media files, enter the following command:
 
    ```bash
-   php <Magento Commerce install dir>/bin/magento setup:backup --media
+   php <Adobe Commerce install dir>/bin/magento setup:backup --media
    ```
 
-   The backup is stored in the `<Magento Commerce install dir>/var/backups` directory.
+   The backup is stored in the `<Adobe Commerce install dir>/var/backups` directory.
 
 1. Transfer the media file to your {{site.data.var.ece}} system:
 
    ```bash
-   rsync <Magento Commerce install dir>/var/backups/<backup file name> <cloud ssh url>:var/media.tgz
+   rsync <Adobe Commerce install dir>/var/backups/<backup file name> <cloud ssh url>:var/media.tgz
    ```
 
    For example,

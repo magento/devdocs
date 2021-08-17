@@ -29,10 +29,10 @@ The following sections detail more about project and environment variables:
 
 ### Upgrade and patch {#upgrade}
 
-To upgrade and patch Magento, see:
+To upgrade and patch {{ site.data.var.ece }} projects, see:
 
--  [Upgrade and test Magento Commerce]({{ site.baseurl }}/cloud/project/project-upgrade.html)
--  [Patch and test Magento Commerce]({{ site.baseurl }}/cloud/project/project-patch.html)
+-  [Upgrade versions]({{ site.baseurl }}/cloud/project/project-upgrade.html)
+-  [Apply patches]({{ site.baseurl }}/cloud/project/project-patch.html)
 
 ## Access the Project Web Interface {#login}
 

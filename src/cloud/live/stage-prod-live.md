@@ -48,7 +48,7 @@ For detailed information of the process, see [Pro Develop and Deploy Workflow]({
 
 ### Git and SSH URLs {#git-ssh}
 
-For Pro, locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Commerce.
+For Pro, locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for {{ site.data.var.ece }}.
 
 After you know these URLs, you can access those environments without further intervention.
 
