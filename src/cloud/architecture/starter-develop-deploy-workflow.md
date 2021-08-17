@@ -102,7 +102,7 @@ For the best information on configurations, review the documentation for {{site.
 *  [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html) for roles, tools, notifications, and your encryption key for your database
 *  Extension settings using their documentation
 
-Beyond just store settings, you can further configure multiple sites and stores, configured services, and more. See [Configure Magento Commerce]({{ site.baseurl }}/cloud/configure/configuration-overview.html).
+Beyond just store settings, you can further configure multiple sites and stores, configured services, and more. See [Configure your store]({{ site.baseurl }}/cloud/configure/configuration-overview.html).
 
 Now you need to get these settings into your code. We have a helpful command to do this, keep reading.
 
