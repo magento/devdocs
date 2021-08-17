@@ -50,7 +50,7 @@ Where:
 
 *  `<store-url>` - specifies the base URL for the Magento instance
 *  `<store-code>` - specifies the store context
-*  `<front-name>` - specifies the `frontName` of the [FrontController] to use
+*  `<front-name>` - specifies the `frontName` of the [FrontController] to use (for example, [routesxml])
 *  `<controller-name>` - specifies the name of the controller
 *  `<action-name>` - specifies the [action class] to execute on the controller class
 
@@ -131,14 +131,14 @@ You can add a `before` or `after` parameter in the `module` entry to override or
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
         <route id="customer">
-            <module name="OrangeCompany_RoutingExample" before="Magento_Customer" />
+            <module name="ExampleCorp_RoutingExample" before="Magento_Customer" />
         </route>
     </router>
 </config>
 ```
 
-This configuration tells the `FrontController` to look for actions in the `OrangeCompany_RoutingExample` module before searching in the `Magento_Customer` module.
-If `app/code/OrangeCompany/RoutingExample/Controller/Account/Login.php` exists, it will use that file for processing the login route instead of the original class.
+This configuration tells the `FrontController` to look for actions in the `ExampleCorp_RoutingExample` module before searching in the `Magento_Customer` module.
+If `app/code/ExampleCorp/RoutingExample/Controller/Account/Login.php` exists, it will use that file for processing the login route instead of the original class.
 
 ## Action class
 
@@ -185,7 +185,7 @@ Declaring a new route:
         xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
         <route id="routing" frontName="routing">
-            <module name="OrangeCompany_RoutingExample" />
+            <module name="ExampleCorp_RoutingExample" />
         </route>
     </router>
 </config>
@@ -215,7 +215,7 @@ Defining a new custom router:
     <arguments>
         <argument name="routerList" xsi:type="array">
             <item name="routingExample" xsi:type="array">
-                <item name="class" xsi:type="string">OrangeCompany\RoutingExample\Controller\Router</item>
+                <item name="class" xsi:type="string">ExampleCorp\RoutingExample\Controller\Router</item>
                 <item name="disable" xsi:type="boolean">false</item>
                 <item name="sortOrder" xsi:type="string">40</item>
             </item>
@@ -230,7 +230,7 @@ Creating the controller that will handle the `routing` route and will get the pa
 <?php
 declare(strict_types=1);
 
-namespace OrangeCompany\RoutingExample\Controller\Index;
+namespace ExampleCorp\RoutingExample\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
@@ -283,7 +283,7 @@ In the end, let's create the router class, that will match the custom route name
 <?php
 declare(strict_types=1);
 
-namespace OrangeCompany\RoutingExample\Controller;
+namespace ExampleCorp\RoutingExample\Controller;
 
 use Magento\Framework\App\Action\Forward;
 use Magento\Framework\App\ActionFactory;

@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Using Grunt for Magento tasks
+title: Using Grunt
 functional_areas:
   - Frontend
   - Tools
@@ -101,7 +101,7 @@ To use a custom file for Grunt configuration:
 
    ```json
    {
-       "themes": "dev/tools/grunt/configs/local-themes"
+       "themes": "dev/tools/grunt/configs/local-themes.js"
    }
    ```
 
@@ -111,10 +111,10 @@ This path is also added to your .gitignore by default.
 
 You can also use the other way to declare a custom config file:
 
-1. In your Grunt related scripts, in the file router set the alias and path to the default configuration file. For example, for the `themes.js` configuration file this would look like following:
+1. In your Grunt related scripts, in the file router, set the alias and path to the custom configuration file. For example, to set the custom `themes.loc.js` configuration file, this would look like the following:
 
    ```js
-   filesRouter.set('themes', 'dev/tools/grunt/configs/themes');
+   filesRouter.set('themes', 'dev/tools/grunt/configs/themes.loc.js');
    ```
 
    It must be added earlier, than the `get()` method with this alias is called.

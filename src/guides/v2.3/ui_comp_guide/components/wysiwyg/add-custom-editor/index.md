@@ -94,14 +94,14 @@ If you are integrating Magento entities such as variable and widget as plugins, 
 **Example:** CKEditor/CKEditor4/view/base/web/ckeditor4Adapter.js
 
 {% collapsible Show file content %}
-{% include_relative _code-samples/ckeditor4Adapter.md %}
+{% include_relative code-samples/ckeditor4Adapter.md %}
 {% endcollapsible %}
 
 ## Step 4. Load editor library
 
 After loading, modifying, and merging all configurations, Magento serializes the result into a JSON object and passes it to the UI component.
 
-In your module's `view/base/requirejs-config.php` file, add a shim configuration entry for your editor in order to have RequireJS load it correctly.
+In your module's `view/base/requirejs-config.js` file, add a shim configuration entry for your editor in order to have RequireJS load it correctly.
 
 **Example:** CKEditor\CKEditor4\view\base\requirejs-config.js
 

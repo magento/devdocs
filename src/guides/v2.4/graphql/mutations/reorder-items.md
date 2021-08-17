@@ -47,7 +47,7 @@ mutation{
     cart {
       id
       items {
-        id
+        uid
         product {
           sku
         }
@@ -78,7 +78,7 @@ mutation{
         "id": "LrMHhWHUaOqiBGC6S0KOcnYKsINUHTWz",
         "items": [
           {
-            "id": "44",
+            "uid": "NDQ=",
             "product": {
               "sku": "24-UG07"
             },
@@ -90,7 +90,7 @@ mutation{
             }
           },
           {
-            "id": "45",
+            "uid": NDU=,
             "product": {
               "sku": "WS06"
             },
@@ -143,7 +143,7 @@ Attribute |  Data Type | Description
 
 ### Cart object {#CartObject}
 
-{% include graphql/cart-object.md %}
+{% include graphql/cart-object-24.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
 

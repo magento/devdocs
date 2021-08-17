@@ -12,7 +12,7 @@ Users that have administrative access to the {{site.data.var.ece}} project can u
 
 Use the ADMIN variables in the following table to override credentials for the Magento Admin user during installation.
 
-If you want to change the values after installation, connect to your environment using ssh and use the the Magento CLI [`admin:user` command]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-admin.html) to create or edit the Magento Admin user credentials.
+If you want to change the values after installation, connect to your environment using ssh and use the Magento CLI [`admin:user` command]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-admin.html) to create or edit the Magento Admin user credentials.
 
 | Variable       | Default                     | Description |
 | -------------- | --------------------------- | ----------- |
@@ -32,3 +32,6 @@ If you need to change the Admin URL after installation, use the `magento-cloud v
 ```bash
 magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
 ```
+
+{:.bs-callout-info}
+The `ADMIN_URL` value accepts letters (a-z or A-Z), numbers (0-9) or underscore character (_) for a custom admin path. Spaces or other characters are **not** accepted.

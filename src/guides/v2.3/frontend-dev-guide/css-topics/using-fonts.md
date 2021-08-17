@@ -47,7 +47,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
    }
    ```
 
-   `@font-format` is optional. If you need to specify a format, enclose it in single quotes. For example, `@font-format: 'ttf'` for TrueType Fonts. The available types are: "woff", "woff2", "ttf", "oet", "otf", and "svg"
+   `@font-format` is optional. If you need to specify a format, enclose it in single quotes. For example, `@font-format: 'ttf'` for TrueType Fonts. The available types are: "woff", "woff2", "ttf", "eot", "otf", and "svg"
 
    ```less
    .lib-font-face(
@@ -64,7 +64,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
 
    Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.
 
-   For more information about font-face, refer to this article [Font-face][https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face]{:target="_blank"}.
+   For more information about font-face, refer to this article [Font-face](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face){:target="_blank"}.
 
 ## `<font>` head type
 
@@ -89,7 +89,7 @@ For Example:
 }
 ```
 
-See the [magento2-ui-library](https://magento-devdocs.github.io/magento2-ui-library/icons.html) for an icon list and implementation.
+See the [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) for an icon list and implementation.
 
 To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/). To override Luma or Blank theme icon fonts, change the font path in the `_theme.less` file. For example:
 
@@ -98,6 +98,8 @@ To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/
 @icons__font-path: '@{baseDir}fonts/Theme-Icons'; //  Add you fonts in your-theme/web/fonts
 @icons__font-name: 'Theme-Icons';
 ```
+
+With uploaded icons from IcoMoon, a "404 error `woff2` file icon not found" may occur in the console. This means the `woff2` file is missing from the IcoMoon package. You just need copy the `woff` file to `woff2`.
 
 {:.bs-callout-info}
 If your theme does not use the Magento UI library, include the font in your theme's CSS files using the `@font-face` CSS rule.

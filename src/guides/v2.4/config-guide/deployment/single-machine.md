@@ -14,7 +14,7 @@ This process applies to technical users responsible for stores running on a sing
 
 ## Assumptions
 
-*  You installed Magento using [Composer][8] or a [compressed archive][7].
+*  You installed Magento using [Composer][8].
 *  You are directly applying updates to the server.
 
 {:.bs-callout-warning}
@@ -97,14 +97,13 @@ Related topics
 
 *  [Enable or disable maintenance mode][4]
 *  [Command line upgrade][1]
-*  [Update the Magento application][2]
+*  [Update Magento][2]
 
 [0]: {{ page.baseurl }}/
 [1]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
 [2]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [4]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [5]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
-[6]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html
-[7]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
+[6]: {{ page.baseurl }}/install-gde/install/prepare-install.html
 [8]: {{ page.baseurl }}/install-gde/composer.html
 [10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner

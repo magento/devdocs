@@ -84,4 +84,3 @@ This is an example of how the ColumnsEditor component integrates with the [Colum
 #### Result
 
 ![DynamicRowsDragAndDrop Component example]({{ site.baseurl }}/common/images/ui_comps/ui-columns-editor-result.png)
-

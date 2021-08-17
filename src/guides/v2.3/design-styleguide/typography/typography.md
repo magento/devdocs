@@ -11,13 +11,11 @@ Typography is used to establish page hierarchy.
 
 ## Heading Types
 
-<br>
-
-# H1 - Page title
+### H1 - Page title
 
 Page titles use Open Sans font, regular weight, 28px font size, and 34px line height.
 
-## H2 - Section heading
+### H2 - Section heading
 
 Section headings use Open Sans font, regular weight, 20px font size, and 25px line height.
 

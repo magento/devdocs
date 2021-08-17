@@ -25,7 +25,8 @@ The PrivateLink service integration for {{site.data.var.ece}} projects includes 
 -  You cannot establish SSH connections using PrivateLink. For SSH, use the Magento SSH capabilities. See [Enable SSH keys][].
 -  Magento support does not cover troubleshooting AWS PrivateLink issues beyond initial enablement.
 -  Customers are responsible for costs associated with managing their own VPC.
--  You cannot use the HTTPS protocol to connect to Magento Commerce over PrivateLink.
+-  You cannot use the HTTPS protocol (port 443) to connect to Magento Commerce over PrivateLink.
+-  PrivateDNS is not available.
 
 ## PrivateLink connection types
 
@@ -60,7 +61,8 @@ Enabling PrivateLink can take up to 5 business days. Providing incomplete, or in
    -  **Services and communication ports**–Magento must open ports to enable service communication between VPCs, for example _Webserver, HTTP port 80_, _SFTP port 2222_
    -  **Magento Cloud Project ID**–Provide the {{site.data.var.ece}} Pro project ID. You can get the Project ID and other project information using the folllowing [Magento Cloud CLI][] command:  ```magento-cloud project:info```
    -  **Connection type**–Specify unidirectional or bidirectional for connection type
-   -  **Service endpoint**–For bidirectional PrivateLink connections, provide the DNS URL for the VPC service endpoint that Magento must connect to, for example `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`.
+   -  **Endpoint service**–For bidirectional PrivateLink connections, provide the DNS URL for the VPC endpoint service that Magento must connect to, for example `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`.
+   -  **Endpoint service access granted**-Provide the Magento account principal with access to this endpoint service: `arn:aws:iam::402592597372:root`. If access to the endpoint service is not provided, the bidirectional PrivateLink connection to the service in your VPC is **not** added, which delays the setup.
 
 ### Enablement workflow
 
@@ -89,7 +91,7 @@ The following workflow outlines the enablement process for PrivateLink integrati
 
    -  **Magento** supplies the Magento account principal (root user for AWS or Azure account) and requests access to the customer VPC endpoint service.
 
-   -  **Customer** enables Magento access to the endpoint service in customer VPC.
+   -  **Customer** enables Magento access to the endpoint service in the customer VPC. This assumes that the Magento account principal has access to `arn:aws:iam::402592597372:root`, as previously described in the **Endpoint service access granted** prerequisite.
 
       -  Update the customer endpoint service configuration to accept requests initiated from Magento account. See the Cloud platform documentation for instructions:
 
@@ -120,7 +122,7 @@ To test the connection to the VPC endpoint service:
    magento-cloud login
    ```
 
-1. From the project root directory, checkout the environment configured to access the PrivateLink service endpoint.
+1. From the project root directory, checkout the environment configured to access the PrivateLink endpoint service.
 
    ```bash
    magento-cloud environment:checkout <environment-id>
@@ -154,7 +156,7 @@ To test the connection to the VPC endpoint service:
    ```
    {:.no-copy}
 
-1. Run the following command to to ensure the service is listening on VM:
+1. Run the following command to ensure the service is listening on VM:
 
    ```bash
    netstat -na |grep <port>

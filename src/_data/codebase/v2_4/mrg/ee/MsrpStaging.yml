@@ -1,14 +1,10 @@
 ---
 title: Magento_MsrpStaging
 source_repo: magento2ee
-release: 2.4.0
+release: 2.4.2
 github_path: app/code/Magento/MsrpStaging/README.md
-last_modified_at: '2016-07-06 16:58:52 +0300'
+last_modified_at: '2020-12-10 20:13:05 -0600'
 content: |-
-  ## Magento_MsrpStaging module
-
-  ## Overview
-
   The Magento_MsrpStaging module is a part of the staging functionality in Magento EE. It enables you to stage the manufacturer's suggested retail price.
 
   ## Implementation details
@@ -24,8 +20,4 @@ content: |-
 
   ## Extension points
 
-  [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_MsrpStaging module.
-
-  ## Additional information
-
-  You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+  [The Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_MsrpStaging module.

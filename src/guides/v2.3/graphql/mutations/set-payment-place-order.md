@@ -25,7 +25,15 @@ Perform the following actions before using the `setPaymentMethodAndPlaceOrder` m
 
 ## Syntax
 
-`mutation: {setPaymentMethodAndPlaceOrder(input: SetPaymentMethodAndPlaceOrderInput): PlaceOrderOutput}`
+```graphql
+mutation {
+  setPaymentMethodAndPlaceOrder(
+    input: SetPaymentMethodAndPlaceOrderInput
+  ) {
+    PlaceOrderOutput
+  }
+}
+```
 
 ## Example usage
 

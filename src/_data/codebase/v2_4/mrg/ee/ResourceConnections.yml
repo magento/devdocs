@@ -1,7 +1,7 @@
 ---
 title: Magento_ResourceConnections
 source_repo: magento2ee
-release: 2.4.0
+release: 2.4.2
 github_path: app/code/Magento/ResourceConnections/README.md
 last_modified_at: '2015-08-25 12:44:48 +0300'
 content: "Magento\\ResourceConnections module adds a mechanism to segregate database
@@ -25,4 +25,4 @@ content: "Magento\\ResourceConnections module adds a mechanism to segregate data
   \   //.......\n```\nTo add slave connection for resources other than 'default' repeat
   the step and add to db/slave_connection \nnew element with same name and slave configuration
   for specified resource. \nConfig structure retains backward compatibility if module
-  is turned off.\n\nWARNING: 'indexer' connection is not designed to have slave configuration.\n"
+  is turned off.\n\nWARNING: 'indexer' connection is not designed to have slave configuration."

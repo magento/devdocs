@@ -57,7 +57,6 @@ The following query shows the status of a cart that is ready to be converted int
         label
       }
       telephone
-      pickup_location_code
       available_shipping_methods {
         amount {
           currency
@@ -160,7 +159,6 @@ The following query shows the status of a cart that is ready to be converted int
             "label": "US"
           },
           "telephone": "(555) 229-3326",
-          "pickup_location_code": "txspeqs",
           "available_shipping_methods": [
             {
               "amount": {
@@ -217,7 +215,7 @@ The following query shows the status of a cart that is ready to be converted int
       ],
       "items": [
         {
-          "id": "14",
+          "uid": "Mg==",
           "product": {
             "name": "Strive Shoulder Pack",
             "sku": "24-MB04"
@@ -225,7 +223,7 @@ The following query shows the status of a cart that is ready to be converted int
           "quantity": 2
         },
         {
-          "id": "17",
+          "uid": "17",
           "product": {
             "name": "Savvy Shoulder Tote",
             "sku": "24-WB05"
@@ -276,7 +274,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
   cart(cart_id: "v7jYJUjvPeHbdMJRcOfZIeQhs2Xc2ZKT") {
     email
     items {
-      id
+      uid
       prices {
         total_item_discount {
           value
@@ -324,7 +322,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
       "email": "roni_cost@example.com",
       "items": [
         {
-          "id": "43",
+          "uid": "MjY=",
           "prices": {
             "total_item_discount": {
               "value": 37.7
@@ -403,7 +401,7 @@ The cart in the example contains 12 units of `24-UG05` and 8 units of `24-UG-01`
 query {
   cart(cart_id: "v7jYJUjvPeHbdMJRcOfZIeQhs2Xc2ZKT"){
     items {
-      id
+      uid
       quantity
       product{
         name
@@ -454,7 +452,7 @@ query {
     "cart": {
       "items": [
         {
-          "id": "65",
+          "uid": "NjU=",
           "quantity": 12,
           "product": {
             "name": "Go-Get'r Pushup Grips",
@@ -489,7 +487,7 @@ query {
           }
         },
         {
-          "id": "66",
+          "uid": "NjY=",
           "quantity": 8,
           "product": {
             "name": "Quest Lumaflex&trade; Band",
@@ -574,7 +572,7 @@ The top-level `Cart` object is listed first. All interfaces and child objects ar
 
 The `Cart` object can contain the following attributes.
 
-{% include graphql/cart-object.md %}
+{% include graphql/cart-object-24.md %}
 
 ### AppliedCoupon object {#AppliedCoupon}
 
@@ -682,26 +680,16 @@ Attribute |  Data Type | Description
 
 ### CartItemInterface {#CartItemInterface}
 
-The `CartItemInterface` can contain the following attributes.
+The `CartItemInterface` has the following implementations:
 
-Attribute |  Data Type | Description
---- | --- | ---
-`id` | String | ID of the item
-`prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | Contains attributes that are common to all types of products
-`quantity` | Float | The number of items in the cart
+*  BundleCartItem
+*  ConfigurableCartItem
+*  DownloadableCartItem
+*  GiftCardCartItem
+*  SimpleCartItem
+*  VirtualCartItem
 
-### CartItemPrices object {#CartItemPrices}
-
-The `CartItemPrices` object can contain the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`discounts`| [Discount] | An array of discounts to be applied to the cart item
-`price` | Money! | The price of the item before any discounts were applied
-`row_total` | Money! | The value of the `price` multiplied by the quantity of the item
-`row_total_including_tax` | Money! | The value of `row_total` plus the tax applied to the item
-`total_item_discount` | Money | The total of all discounts applied to the item
+See [`CartItemInterface`]({{page.baseurl}}/graphql/interfaces/cart-item-interface.html) for details.
 
 ### CartItemQuantity object {#CartItemQuantity}
 
@@ -719,8 +707,9 @@ The `CartPrices` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
-`discount` | CartDiscount | Deprecated. Use `discounts` instead
-`discounts` | [Discount] | An array containing all discounts applied to the cart
+`discount` | [CartDiscount](#CartDiscount) | Deprecated. Use `discounts` instead
+`discounts` | [[Discount]](#Discount) | An array containing all discounts applied to the cart
+`gift_options` | [GiftOptionsPrices](#GiftOptionsPrices) | The list of prices for the selected gift options
 `grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
 `subtotal_excluding_tax` | Money | Subtotal without taxes
 `subtotal_including_tax` | Money | Subtotal with taxes
@@ -747,6 +736,33 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money! | The amount of the discount applied to the cart
 `label` | String! | The description of the discount
+
+### GiftMessage object {#GiftMessage}
+
+{% include graphql/gift-message.md %}
+
+### GiftOptionsPrices object {#GiftOptionsPrices}
+
+The `GiftOptionsPrices` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`gift_wrapping_for_items` | Money | The price of the gift wrapping for all individual order items
+`gift_wrapping_for_order` | Money | The price of the gift wrapping for the whole order
+`printed_card` | Money | The price of the printed card
+
+### GiftWrapping object {#GiftWrapping}
+
+{% include graphql/gift-wrapping.md %}
+
+### RewardPointsAmount {#RewardPointsAmount}
+
+The `RewardPointsAmount` object must contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`points` | Float! | The amount of reward points, in points
+`money` | Money! | The amount of reward points, in the store's currency
 
 ### SelectedPaymentMethod object {#SelectedPaymentMethod}
 
@@ -781,12 +797,22 @@ Attribute |  Data Type | Description
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | Deprecated. Use `cart_items_v2` instead
 `cart_items_v2` | [CartItemInterface] | An array that lists the items in the cart
 `items_weight` | Float | Deprecated. This attribute is not applicable for GraphQL
-`selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 `pickup_location_code` | String | The code of the in-store pickup location where the customer will receive the order
+`selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 
 ## Related topics
 
 *  [createEmptyCart mutation]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
 *  [addSimpleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-simple-products.html)
+*  [setShippingAddressesOnCart mutation]({{page.baseurl}}/graphql/mutations/set-shipping-address.html)
+*  [setShippingMethodsOnCart mutation]({{page.baseurl}}/graphql/mutations/set-shipping-method.html)
 *  [setBillingAddressOnCart mutation]({{page.baseurl}}/graphql/mutations/set-billing-address.html)
 *  [setPaymentMethodOnCart mutation]({{page.baseurl}}/graphql/mutations/set-payment-method.html)
+
+## Errors
+
+Error | Description
+--- | ---
+`Could not find a cart with ID \"xxxxx\"` | The ID provided in the `cart_id` field is invalid or the cart does not exist for the customer.
+`The cart isn't active` | The cart with the specified cart ID is unavailable, because the items have been purchased and the cart ID becomes inactive.
+`Field cart.cart_id of required type String! was not provided` | The value specified in the `cart.cart_id` argument is empty.

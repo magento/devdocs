@@ -49,7 +49,7 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
     "request_items": [
         {
             "id": 0,
-            "data_hash": null,
+            "data_hash": "73170608b04187fe5939ece183711eff1bf9c4f4e30fc334db2affed1055c3f1",
             "status": "accepted"
         }
     ],

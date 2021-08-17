@@ -1,8 +1,8 @@
-version: '3.6'
+version: '3.7'
 
 services:
   jekyll:
-    image: jekyll/jekyll:latest
+    image: jekyll/jekyll:4.2.0
     command: jekyll serve --watch --incremental --open-url --livereload
     ports:
       - 4000:4000

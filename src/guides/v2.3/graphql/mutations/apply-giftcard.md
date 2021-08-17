@@ -10,7 +10,15 @@ The `applyGiftCardToCart` mutation applies a pre-defined gift card code to the s
 
 ## Syntax
 
- `mutation: applyGiftCardToCart(input: ApplyGiftCardToCartInput): ApplyGiftCardToCartOutput`
+```graphql
+mutation {
+  applyGiftCardToCart(
+    input: ApplyGiftCardToCartInput
+  ) {
+    ApplyGiftCardToCartOutput
+  }
+}
+```
 
 ## Example usage
 

@@ -13,7 +13,15 @@ The input includes the cart ID, the payment method code, and a set of URLs that 
 
 ## Syntax
 
-`mutation: {createPaypalExpressToken(input: PaypalExpressTokenInput!): {PaypalExpressTokenOutput}}`
+```graphql
+mutation {
+  createPaypalExpressToken(
+    input: PaypalExpressTokenInput!
+  ) {
+    PaypalExpressTokenOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -21,24 +29,23 @@ The input includes the cart ID, the payment method code, and a set of URLs that 
 
 ```graphql
 mutation {
-    createPaypalExpressToken(
-        input: {
-            cart_id: "rMQdWEecBZr4SVWZwj2AF6y0dNCKQ8uH"
-            code: "paypal_express"
-            express_button: true
-            urls: {
-                return_url: "paypal/action/return.html"
-                cancel_url: "paypal/action/cancel.html"
-            }
-        }
-    )
-    {
-        token
-        paypal_urls{
-            start
-            edit
-        }
+  createPaypalExpressToken(
+    input: {
+      cart_id: "rMQdWEecBZr4SVWZwj2AF6y0dNCKQ8uH"
+      code: "paypal_express"
+      express_button: true
+      urls: {
+        return_url: "paypal/action/return.html"
+        cancel_url: "paypal/action/cancel.html"
+      }
     }
+  ) {
+    token
+    paypal_urls {
+      start
+      edit
+    }
+  }
 }
 ```
 
@@ -48,9 +55,9 @@ mutation {
 {
   "data": {
     "createPaypalExpressToken": {
-      "token": "<PayPal_Token>"
+      "token": "<PayPal_Token>",
       "paypal_urls": {
-        "start": "https://www.sandbox.paypal.com/checkoutnow?token=<PayPal_Token>"
+        "start": "https://www.sandbox.paypal.com/checkoutnow?token=<PayPal_Token>",
         "edit": "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&useraction=continue&token=<PayPal_Token>"
       }
     }
@@ -105,3 +112,14 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `edit` | String | The PayPal URL that allows the buyer to edit their checkout details
 `start` | String | The URL to the PayPal login page
+
+## Errors
+
+Error | Description
+--- | ---
+`Required parameter "cart_id" is missing` | The mutation does not contain a `cart_id` argument.
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
+`Field PaypalExpressTokenInput.code of required type String! was not provided.` | The required attribute `code` is missing.
+`The requested Payment Method is not available.` | The payment method is not configured.
+`Field PaypalExpressUrlsInput.cancel_url of required type String! was not provided.` | The required attribute `cancel_url` is missing.
+`Field PaypalExpressUrlsInput.return_url of required type String! was not provided.` | The required attribute `return_url` is missing.

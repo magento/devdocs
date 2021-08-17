@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: JavaScript in Magento responsive design
+title: JavaScript in responsive design
 functional_areas:
   - Frontend
 ---

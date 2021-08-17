@@ -72,8 +72,11 @@ To add the store and sales related information to a template, use system variabl
 
 System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the Store Hours (`{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`) variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information** section.
 
-{:.bs-callout-info}
-You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > **Custom Variables**.
+![Configuration > General > Store Information section.]({{ site.baseurl }}/common/images/store_information.png)
+
+You may also create your own custom variables and set their values in the Admin, under **SYSTEM** > Other Settings > **Custom Variables**.
+
+![Add new custom variable section]({{ site.baseurl }}/common/images/custom_variables.png)
 
 To add a variable to your template content:
 
@@ -296,11 +299,11 @@ To customize your logo using a theme:
 
 1. Add a file named `logo_email.png` to a `Magento_Email/web` directory in your custom theme.
 
-   For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the `app/design/frontend/OrangeCo/orange/Magento_Email/web` directory.
+   For example, if the ExampleCorp vendor wants to add a logo for their custom Orange, they must add a file in the `app/design/frontend/ExampleCorp/orange/Magento_Email/web` directory.
 
 1. Copy the `<Magento_Email_module_dir>/view/frontend/email/header.html` file into a `Magento_Email/email` directory in your theme.
 
-   For example, the OrangeCo vendor would copy the file to this location: `app/design/frontend/OrangeCo/orange/Magento_Email/email/header.html`
+   For example, the ExampleCorp vendor would copy the file to this location: `app/design/frontend/ExampleCorp/orange/Magento_Email/email/header.html`
 
    Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
 
@@ -347,10 +350,15 @@ To set those values:
    1. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields.
    1. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
    1. Click the **Save Config** button.
+
+   ![Set contact information in emails from Magento Admin]({{ site.baseurl }}/common/images/contact_information_email.png)
+
 1. To set the store email:
    1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
    1. Input values into the **Sender Name** and **Sender Email** fields.
    1. Click the **Save Config** button.
+
+   ![Set the store email from Magento Admin]({{ site.baseurl }}/common/images/set_store_email.png)
 
 The sales emails are configured to display all of the above values, if they're configured in the admin. If you want to add those values to other email templates, you can use the following variables:
 

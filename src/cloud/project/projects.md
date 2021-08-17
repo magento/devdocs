@@ -36,9 +36,19 @@ To upgrade and patch Magento, see:
 
 ## Access the Project Web Interface {#login}
 
-With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud).
+The Project Web Interface provides features to create, manage, and deploy code in Integration, Staging, and Production environments for Starter and Pro plans.
 
-![Log in to a project]({{ site.baseurl }}/common/images/cloud/cloud_project-login.png){:width="450px"}
+{:.procedure}
+To access your projects and environments:
+
+1. Log in to your Magento account at [https://account.magento.com](https://account.magento.com).
+1. Click **Projects (Cloud)**.
+1. Locate your project and click **View Project Page**.
+
+The **View Project Page** link displays for Account Owners only. If you are not an Account Owner, go to [https://accounts.magento.cloud](https://accounts.magento.cloud) instead.
+
+{:.bs-callout-info}
+If you do not see any projects, you must contact the [Account Owner or Super User]({{ site.baseurl }}/cloud/project/user-admin.html) associated with the project and request access.
 
 ## Fastly and New Relic credentials {#integrations}
 
@@ -116,7 +126,7 @@ You can manage variables and settings for Production, Staging, and Integration e
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud/cloud_project-env.png){:width="650px"}
 
-This displays the following page, which enables you to configure settings, [variables]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html), [routes]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html), and [users]({{ site.baseurl }}/cloud/project/user-admin.html).
+This displays the following page, which enables you to configure settings, [variables]({{ site.baseurl }}/cloud/project/magento-app.html), [routes]({{ site.baseurl }}/cloud/project/routes.html), and [users]({{ site.baseurl }}/cloud/project/user-admin.html).
 
 ![configure environments]({{ site.baseurl }}/common/images/cloud/cloud_project-conf-env.png){:width="650px"}
 

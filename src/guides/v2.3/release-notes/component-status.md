@@ -209,4 +209,3 @@ Issues that are not related to the 2.3.0 beta release are not part of this repor
 | Module/ Sales                     | <span class='status yellow'>Yellow</span> |
 | None                              | <span class='status green'>Green</span> |
 | Tools/ Utilities                  | <span class='status green'>Green</span> |
-

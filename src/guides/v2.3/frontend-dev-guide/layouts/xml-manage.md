@@ -80,8 +80,10 @@ You can use either the `<link src="js/sample.js"/>` or the `<script src="js/samp
 
 The path to assets is specified relatively to one the following locations:
 
--  `<theme_dir>/web`-
--  `<theme_dir>/<Namespace>_<Module>/web`-
+-  CSS and LESS files are stored in the `<theme_dir>/web/css/` directory.
+-  Font-related files are stored in the `<theme_dir>/<Namespace>_<Module>/web/fonts/` directory.
+-  Static assets, such as images, are stored in the `<theme_dir>/<Namespace>_<Module>/web/images/` directory.
+-  JS files are stored in the `<theme_dir>/<Namespace>_<Module>/web/js/` directory.
 
 ### Adding conditional comments
 
@@ -101,11 +103,11 @@ This adds an IE conditional comment in the generated HTML, like in the following
 
 ```html
 <!--[if IE 9]>
-<link rel="stylesheet" type="text/css" media="all" href="<your_store_web_address>/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<your_store_web_address>/pub/static/frontend/ExampleCorp/orange/en_US/css/ie-9.css" />
 <![endif]-->
 ```
 
-In this example, `orange` is a custom theme created by the OrangeCo vendor.
+In this example, `orange` is a custom theme created by the ExampleCorp vendor.
 
 ## Remove static resources (JavaScript, CSS, fonts) {#layout_markup_css_remove}
 
@@ -223,6 +225,12 @@ To add a new ID to the container:
 <referenceContainer name="page.wrapper" htmlId="MyWrapper"/>
 ```
 
+To remove a container from the layout:
+
+```xml
+<referenceContainer name="product.info.stock.sku" remove="true"/>
+```
+
 ## Create a block {#xml-manage-block}
 
 Blocks are created (declared) using the `<block>` instruction.
@@ -230,7 +238,7 @@ Blocks are created (declared) using the `<block>` instruction.
 Example: add a block with a product [SKU](https://glossary.magento.com/sku) information.
 
 ```xml
-<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
+<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Magento_Catalog::product/view/attribute.phtml" after="product.info.type">
   <arguments>
     <argument name="at_call" xsi:type="string">getSku</argument>
     <argument name="at_code" xsi:type="string">sku</argument>
@@ -238,6 +246,9 @@ Example: add a block with a product [SKU](https://glossary.magento.com/sku) info
   </arguments>
 </block>
 ```
+
+{:.bs-callout-info}
+Declare the `template` attribute with the name of the module it belongs to: `template="<VendorName>_<ModuleName>::path-to-template.phtml"`. Following this approach avoids failures with template rendering and makes it easier for the developer to find and navigate to the template file.
 
 ## Set body attributes {#layout_body_attributes}
 
@@ -353,20 +364,21 @@ In the admin area, this is implemented for [global search]({{ site.mage2bloburl 
 
 ## Set the template used by a block {#set_template}
 
-There are two ways to set the template for a block:
+There are three ways to set the template for a block:
 
 -  using the `template` attribute
 -  using the `<argument>` instruction
+-  using the `<action method="setTemplate">` instruction
 
-Both approaches are demonstrated in the following examples of changing the template of the page title block.
+Each approach is demonstrated in the following examples:
 
-**Example 1:**
+**Example 1:** using the `template` attribute
 
 ```xml
  <referenceBlock name="page.main.title" template="%Namespace_Module::new_template.phtml%"/>
 ```
 
-**Example 2:**
+**Example 2:** using the `<argument>` instruction
 
 ```xml
  <referenceBlock name="page.main.title">
@@ -376,13 +388,25 @@ Both approaches are demonstrated in the following examples of changing the templ
  </referenceBlock>
 ```
 
-In both examples, the template is specified according to the following:
+**Example 3:** using the `<action method="setTemplate">` instruction
+
+```xml
+ <referenceBlock name="page.main.title">
+   <action method="setTemplate">
+     <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
+   </action>
+ </referenceBlock>
+```
+
+In the above examples, the template is specified according to the following:
 
 -  `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
--  `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
+-  `new_template.phtml`: the path to the template relative to the `templates` directory. For example: `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
 
 {:.bs-callout-info}
-Template values specified as attributes have higher priority during layout generation, than the ones specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block.
+The highest priority template is one with setTemplate action `<action method="setTemplate">`. Second priority has the attribute specified as `<referenceBlock name="..." template="..."/>`, and the lowest priority has the template using `<argument>`.
+
+It means, that if for a certain block, a template is set as an attribute, it will override the value you specify in `<argument>` for the same block. In the case where we have `<action method="setTemplate">` construction - it will override the values that you specified in the template attribute `<referenceBlock name="..." template="..."/>` and the value you specified using `<argument>`.
 
 ## Modify block arguments {#layout_markup_modify-block}
 
@@ -466,7 +490,7 @@ In the Magento Blank theme these elements are located as follows:
 ![]({{site.baseurl}}/common/images/layout_image1.png)
 
 Place the stock availability and SKU blocks after product price block on a product page, and move the review block out of the product-info-price container.
-To do this, add the extending `catalog_product_view.xml` in the `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/` directory:
+To do this, add the extending `catalog_product_view.xml` in the `app/design/frontend/ExampleCorp/orange/Magento_Catalog/layout/` directory:
 
 ```xml
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -494,7 +518,7 @@ Let us say that we want to add functionality to a core template with custom logi
 <body>
   <referenceBlock name="checkout.cart.item.renderers.default">
     <arguments>
-      <argument name="viewModel" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
+      <argument name="view_model" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
     </arguments>
   </referenceBlock>
 </body>
@@ -523,7 +547,7 @@ Then, in the `cart/item/default.phtml` file, use the viewModel:
 
 ```php
 /** @var \Vendor\CustomModule\ViewModel\Class $viewModel */
-$viewModel = $block->getData('viewModel');
+$viewModel = $block->getViewModel();
 
 $viewModel->canShowAdditionalData();
 ```
@@ -544,17 +568,17 @@ Here is an example of how a css class can be added to `<body>` tag on product vi
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Catalog\Helper\Product\View">
         <plugin name="add_custom_body_class_to_product_page"
-                type="OrangeCompany\Learning\Plugin\AddBodyClassToProductPagePlugin"/>
+                type="ExampleCorp\Learning\Plugin\AddBodyClassToProductPagePlugin"/>
     </type>
 </config>
 ```
 
-> `OrangeCompany/Learning/Plugin/AddBodyClassToProductPagePlugin.php`
+> `ExampleCorp/Learning/Plugin/AddBodyClassToProductPagePlugin.php`
 
 ```php
 <?php
 
-namespace OrangeCompany\Learning\Plugin;
+namespace ExampleCorp\Learning\Plugin;
 
 use Magento\Catalog\Helper\Product\View as ProductViewHelper;
 use Magento\Framework\View\Result\Page;
@@ -592,6 +616,8 @@ class AddBodyClassToProductPagePlugin
 ```
 
 As result, the `<body>` tag has a new `my-new-body-class` class on all product pages.
+
+For more information about Plugins, refer to [Plugins in Magento]({{ page.baseurl }}/extension-dev-guide/plugins.html)
 
 ## Manage the 'My Account' dashboard navigation links
 
@@ -673,10 +699,14 @@ You can remove navigation links from the 'My Account' dashboard on the storefron
 <referenceBlock name="customer-account-navigation-return-history-link" remove="true"/>
 ```
 
-## Create cms-page/product/category-specific layouts
+## Create cms-page/product/category-specific selectable layouts
 
 As of Magento 2.3.4, merchants can select layout updates to be applied to specific Category/Product/CMS Page pages on the frontend. These layout
 updates are made by creating layout XML files following specific naming conventions.
+
+{:.bs-callout-info}
+Selectable layout updates can only be loaded from the global store theme and work only in the single website with single theme configurations.
+If a specific entity like `cms-page/product/category` has an individual theme applied in the design configuration tab, the selected theme will have priority over the selected layout update.
 
 For Categories:
 

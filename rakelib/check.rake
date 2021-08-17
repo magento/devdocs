@@ -4,7 +4,6 @@
 # frozen_string_literal: true
 
 namespace :check do
-
   desc 'Optimize images in modified files, or by path (rake check:img path=path/to/dir/or/file).'
   task :image_optim do
     puts
@@ -16,7 +15,7 @@ namespace :check do
       modified_files = `git ls-files --modified --others --exclude-standard`.split("\n")
       deleted_files = `git ls-files --deleted`.split("\n")
       image_files_to_check = (modified_files - deleted_files).select { |file| File.extname(file) =~ /\.(png|jpg|jpeg|gif)/i }
-      
+
       next puts 'No images to check.'.magenta if image_files_to_check.empty?
 
       path = image_files_to_check.join(' ')
@@ -40,7 +39,7 @@ namespace :check do
       modified_files = `git ls-files --modified --others --exclude-standard`.split("\n")
       deleted_files = `git ls-files --deleted`.split("\n")
       md_files_to_check = (modified_files - deleted_files).select { |file| File.extname(file) == '.md' }
-      
+
       next puts 'No Markdown files to check.'.magenta if md_files_to_check.empty?
 
       path = md_files_to_check.join(' ')

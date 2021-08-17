@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: products query
-redirect_from:
-  - /guides/v2.3/graphql/reference/products.html
 ---
 
 The `products` query allows you to search for catalog items.
@@ -58,7 +56,8 @@ By default, you can use the following attributes as filters. To define a custom 
 
 Attribute | Data type | Description
 --- | --- | ---
-`category_id` | FilterEqualTypeInput | Filters by category ID
+`category_id` | FilterEqualTypeInput | Deprecated. Use `category_uid` instead. Filters by category ID
+`category_uid` | FilterEqualTypeInput | Filters by the unique ID of a category for objects that implement `CategoryInterface`
 `description` | FilterMatchTypeInput | Filters on the Description attribute
 `name` | FilterMatchTypeInput | Filters on the Product Name attribute
 `price` | FilterRangeTypeInput | Filters on the Price attribute
@@ -254,7 +253,7 @@ Attribute | Data type | Description
 
 ### Aggregation attributes {#Aggregation}
 
-Each aggregation within the `aggregations` object is a separate bucket that contains the attribute code and label for each filterable option (such as price, category ID, and custom attributes). It also includes the number of products within the filterable option that match the specified search criteria.
+Each aggregation within the `aggregations` object is a separate bucket that contains the attribute code and label for each filterable option (such as price, category UID, and custom attributes). It also includes the number of products within the filterable option that match the specified search criteria.
 
 {:.bs-callout-info}
 To enable a custom attribute to return layered navigation and aggregation data from the Admin, set the **Stores** > Attributes > **Product** > <attribute name> > **Storefront Properties** > **Use in Layered Navigation** field to **Filterable (with results)** or **Filterable (no results)**.
@@ -265,6 +264,7 @@ Attribute | Data type | Description
 `count` | Int | The number of filter items in the filter group
 `label` | String | The filter name displayed in layered navigation
 `options` | [AggregationOption] | Describes each aggregated filter option
+`position` | Int | The relative position of the attribute in a layered navigation block
 
 #### AggregationOption attributes {#AggregationOption}
 
@@ -278,7 +278,7 @@ Attribute | Data type | Description
 
 ### ProductInterface attributes {#ProductInterface}
 
-The `items` object contains information about each product that match the search criteria. [ProductInterface]({{page.baseurl}}/graphql/product/product-interface.html) describes the possible contents of this object.
+The `items` object contains information about each product that match the search criteria. [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html) describes the possible contents of this object.
 
 ### SearchResultPageInfo attributes {#SearchResultPageInfo}
 
@@ -411,12 +411,11 @@ The search returns 45 items, but only the first two items are returned on the cu
 }
 ```
 
-### Full text search with filter
+### Full text search with filter by price attribute
 
 The following sample query returns a list of products that meets the following criteria:
 
 -  The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
--  The SKU begins with `24-MB`
 -  The price is less than $50.
 
 The response for each item includes the `name`, `sku`, and `price` only. Up to 25 results are returned at a time, in decreasing order of price.
@@ -498,6 +497,68 @@ The response for each item includes the `name`, `sku`, and `price` only. Up to 2
       "total_count": 3,
       "page_info": {
         "page_size": 25
+      }
+    }
+  }
+}
+```
+
+### Query with filter by SKU attribute
+
+The following sample query returns product by SKU. You have to pass SKU value to return product information.
+
+**Request:**
+
+```graphql
+{
+  products(filter: { sku: { eq: "24-MB01" } }) {
+    items {
+      name
+      sku
+      url_key
+      stock_status
+      price_range {
+        minimum_price {
+          regular_price {
+            value
+            currency
+          }
+        }
+      }
+    }
+    total_count
+    page_info {
+      page_size
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Joust Duffle Bag",
+          "sku": "24-MB01",
+          "url_key": "joust-duffle-bag",
+          "stock_status": "IN_STOCK",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 34,
+                "currency": "USD"
+              }
+            }
+          }
+        }
+      ],
+      "total_count": 1,
+      "page_info": {
+        "page_size": 20
       }
     }
   }
@@ -989,12 +1050,12 @@ In the following example, a catalog price rule that provides a 10% discount on a
                 "currency": "USD"
               },
               "final_price": {
-                "value": 61,
+                "value": 54.9,
                 "currency": "USD"
               },
               "discount": {
-                "amount_off": 0,
-                "percent_off": 0
+                "amount_off": 6.1,
+                "percent_off": 10
               }
             },
             "maximum_price": {
@@ -1003,12 +1064,12 @@ In the following example, a catalog price rule that provides a 10% discount on a
                 "currency": "USD"
               },
               "final_price": {
-                "value": 77,
+                "value": 69.3,
                 "currency": "USD"
               },
               "discount": {
-                "amount_off": 0,
-                "percent_off": 0
+                "amount_off": 7.7,
+                "percent_off": 10
               }
             }
           }
@@ -1101,18 +1162,18 @@ The following query shows how to get related products, up-sells, and cross-sells
 {
   products(filter: { sku: { eq: "24-WB06" } }) {
     items {
-      id
+      uid
       name
       related_products {
-        id
+        uid
         name
       }
       upsell_products {
-        id
+        uid
         name
       }
       crosssell_products {
-        id
+        uid
         name
       }
     }
@@ -1128,62 +1189,131 @@ The following query shows how to get related products, up-sells, and cross-sells
     "products": {
       "items": [
         {
-          "id": 11,
+          "uid": "MTE=",
           "name": "Endeavor Daytrip Backpack",
-          "related_products": [],
+          "related_products": [
+            {
+              "uid": "MTU=",
+              "name": "Affirm Water Bottle "
+            },
+            {
+              "uid": "MTg=",
+              "name": "Pursuit Lumaflex&trade; Tone Band"
+            },
+            {
+              "uid": "MTY=",
+              "name": "Dual Handle Cardio Ball"
+            },
+            {
+              "uid": "MTc=",
+              "name": "Zing Jump Rope"
+            }
+          ],
           "upsell_products": [
             {
-              "id": 1,
+              "uid": "MQ==",
               "name": "Joust Duffle Bag"
             },
             {
-              "id": 3,
+              "uid": "Mw==",
               "name": "Crown Summit Backpack"
             },
             {
-              "id": 4,
+              "uid": "NA==",
               "name": "Wayfarer Messenger Bag"
             },
             {
-              "id": 5,
+              "uid": "NQ==",
               "name": "Rival Field Messenger"
             },
             {
-              "id": 6,
+              "uid": "Ng==",
               "name": "Fusion Backpack"
             },
             {
-              "id": 7,
+              "uid": "Nw==",
               "name": "Impulse Duffle"
             },
             {
-              "id": 12,
+              "uid": "MTI=",
               "name": "Driven Backpack"
             },
             {
-              "id": 13,
+              "uid": "MTM=",
               "name": "Overnight Duffle"
             },
             {
-              "id": 14,
+              "uid": "MTQ=",
               "name": "Push It Messenger Bag"
             }
           ],
           "crosssell_products": [
             {
-              "id": 18,
+              "uid": "MTI=",
+              "name": "Driven Backpack"
+            },
+            {
+              "uid": "OA==",
+              "name": "Voyage Yoga Bag"
+            },
+            {
+              "uid": "Ng==",
+              "name": "Fusion Backpack"
+            },
+            {
+              "uid": "Nw==",
+              "name": "Impulse Duffle"
+            },
+            {
+              "uid": "OQ==",
+              "name": "Compete Track Tote"
+            },
+            {
+              "uid": "Mw==",
+              "name": "Crown Summit Backpack"
+            },
+            {
+              "uid": "MTQ=",
+              "name": "Push It Messenger Bag"
+            },
+            {
+              "uid": "MQ==",
+              "name": "Joust Duffle Bag"
+            },
+            {
+              "uid": "MTA=",
+              "name": "Savvy Shoulder Tote"
+            },
+            {
+              "uid": "Mg==",
+              "name": "Strive Shoulder Pack"
+            },
+            {
+              "uid": "NA==",
+              "name": "Wayfarer Messenger Bag"
+            },
+            {
+              "uid": "MTM=",
+              "name": "Overnight Duffle"
+            },
+            {
+              "uid": "NQ==",
+              "name": "Rival Field Messenger"
+            },
+            {
+              "uid": "MTg=",
               "name": "Pursuit Lumaflex&trade; Tone Band"
             },
             {
-              "id": 21,
+              "uid": "MjE=",
               "name": "Sprite Foam Yoga Brick"
             },
             {
-              "id": 32,
+              "uid": "MzI=",
               "name": "Sprite Stasis Ball 75 cm"
             },
             {
-              "id": 45,
+              "uid": "NDU=",
               "name": "Set of Sprite Yoga Straps"
             }
           ]
@@ -1211,7 +1341,7 @@ query {
     total_count
     items {
       sku
-      id
+      uid
       name
       image {
         url
@@ -1250,19 +1380,19 @@ query {
       "items": [
         {
           "sku": "24-MB01",
-          "id": 1,
+          "uid": "MQ==",
           "name": "Joust Duffle Bag",
           "image": {
-            "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/fd3509f20f1e8c87464fb5042a4927e6/m/b/mb01-blue-0.jpg",
+            "url": "http://h3.test/media/catalog/product/cache/f2894681b4002ea001bba48638ea0dbc/m/b/mb01-blue-0.jpg",
             "label": "Joust Duffle Bag"
           },
           "small_image": {
-            "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/fd3509f20f1e8c87464fb5042a4927e6/m/b/mb01-blue-0.jpg",
+            "url": "http://h3.test/media/catalog/product/cache/f2894681b4002ea001bba48638ea0dbc/m/b/mb01-blue-0.jpg",
             "label": "Joust Duffle Bag"
           },
           "media_gallery": [
             {
-              "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/07660f0f9920886e0f9d3257a9c68f26/m/b/mb01-blue-0.jpg",
+              "url": "http://h3.test/media/catalog/product/cache/f2894681b4002ea001bba48638ea0dbc/m/b/mb01-blue-0.jpg",
               "label": "Image"
             }
           ]
@@ -1349,6 +1479,133 @@ The following product query returns URL rewrite information about the Joust Duff
                 {
                   "name": "category",
                   "value": "4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Retrieve variant `uid` values {#variant-uid}
+
+The following query returns information about each variant of the configurable product `WSH12`. Each variant has a unique combination of color and size values. Specify the `uid` values in the `selected_options` array of the [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to indicate which variants the shopper selected.
+
+**Request:**
+
+```graphql
+{
+  products(filter: {sku: {eq: "WSH12"}}) {
+    items {
+      sku
+      ... on ConfigurableProduct {
+        variants {
+          attributes {
+            uid
+            label
+            code
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "sku": "WSH12",
+          "variants": [
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
+                  "label": "Green",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
+                  "label": "Purple",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4",
+                  "label": "Red",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
+                  "label": "Green",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
+                  "label": "Purple",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4",
+                  "label": "Red",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
                 }
               ]
             }

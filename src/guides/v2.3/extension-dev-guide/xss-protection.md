@@ -93,7 +93,7 @@ let settings = <?= $myJson ?>
 
 You can pass in an optional array of allowed tags that will not be escaped.
 
-If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `target`, `style` and `title`. Any other attribute for that allowed tag will be escaped.
+If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `style` and `title`. Any other attribute for that allowed tag will be escaped.
 
 `embed`, `iframe`, `video`, `source`, `object`, `audio`, `script` and `img` tags are not allowed, regardless of the content of this array.
 
@@ -171,7 +171,7 @@ parentElement.appendChild(newDiv);
 
 #### UI component data providers
 
-UI component data providers pass dynamic (user generated) data to UI components. The data they return is being rendered in order to support component dynamic linking. Since user data is supposed to be treated a a literal value which is not refering to any other component, rendering of these properties must be disabled. See [UI component data providers](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_data_source.html) to read more about data providers and component linking.
+UI component data providers pass dynamic (user generated) data to UI components. The data they return is being rendered in order to support component dynamic linking. Since user data is supposed to be treated as a literal value which is not refering to any other component, rendering of these properties must be disabled. See [UI component data providers](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_data_source.html) to read more about data providers and component linking.
 
 ```php
 $uiData = ['linkProperty' => '${ $.otherComponent.value }'];
@@ -190,9 +190,9 @@ This sniff finds all _echo_ calls in PHTML-templates and determines if the outpu
 
 It covers the following cases:
 
--  /_ @noEscape _/ before output. Output does not require escaping. Test is green.
+-  `/_ @noEscape _/` before output. Output does not require escaping. Test is green.
 
--  /_ @escapeNotVerified _/ before output. Output escaping is not checked and should be verified. Test is green.
+-  `/_ @escapeNotVerified _/` before output. Output escaping is not checked and should be verified. Test is green.
 
 -  Methods which contain "html" in their names (for example echo $object->{suffix}Html{postfix}()). Data is ready for the HTML output. Test is green.
 

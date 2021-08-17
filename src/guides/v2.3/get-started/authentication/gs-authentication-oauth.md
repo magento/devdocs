@@ -276,6 +276,7 @@ HTML;
 Change the instances of `http://magento.host` in this example to a valid base URL.
 
 {% collapsible Click to expand %}
+
 ```php
 <?php
 
@@ -451,6 +452,7 @@ class OauthClient extends AbstractService
     }
 }
 ```
+
 {% endcollapsible %}
 
 {:.ref-header}

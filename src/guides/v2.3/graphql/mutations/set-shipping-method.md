@@ -19,7 +19,15 @@ United States Postal Service | usps | Varies
 
 ## Syntax
 
-`mutation: {setShippingMethodsOnCart(input: setShippingMethodsOnCartInput) {setShippingMethodsOnCartOutput}}`
+```graphql
+mutation {
+  setShippingMethodsOnCart(
+    input: setShippingMethodsOnCartInput
+  ) {
+    setShippingMethodsOnCartOutput
+  }
+}
+```
 
 ## Example usage
 

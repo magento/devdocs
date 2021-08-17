@@ -12,7 +12,15 @@ Setting the quantity to `0` removes an item from the cart.
 
 ## Syntax
 
-`mutation: {updateCartItems(input: UpdateCartItemsInput): {UpdateCartItemsOutput}}`
+```graphql
+mutation {
+  updateCartItems(
+    input: UpdateCartItemsInput
+  ) {
+    UpdateCartItemsOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -32,7 +40,7 @@ mutation {
         }
       ]
     }
-  ){
+  ) {
     cart {
       items {
         id

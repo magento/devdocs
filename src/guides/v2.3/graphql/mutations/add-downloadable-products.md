@@ -10,12 +10,12 @@ A downloadable product can be anything that you can deliver as a file, such as a
 ## Syntax
 
 ```graphql
-mutation: {
-    addDownloadableProductsToCart(
-        input: AddDownloadableProductsToCartInput
-    ): {
-        AddDownloadableProductsToCartOutput
-    }
+mutation {
+  addDownloadableProductsToCart(
+    input: AddDownloadableProductsToCartInput
+  ) {
+    AddDownloadableProductsToCartOutput
+  }
 }
 ```
 
@@ -74,7 +74,7 @@ mutation {
 
 **Response:**
 
-```text
+```json
 {
   "data": {
     "addDownloadableProductsToCart": {
@@ -160,7 +160,7 @@ mutation {
 
 **Response:**
 
-```text
+```json
 {
   "data": {
     "addDownloadableProductsToCart": {
@@ -258,6 +258,8 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
+`Could not find a product with SKU "YYY"` | A product with the SKU specified in the `data`.`sku` argument does not exist.
 `Required parameter "cart_id" is missing` | The mutation does not contain a `cart_id` argument.
 `Required parameter "cart_items" is missing` | The `cart_items` argument is empty or is not of type `array`.
 `Please specify product link(s).` | You tried to add a downloadable product in which the `Links can be purchased separately` option is enabled, but you did not specify individual product links.

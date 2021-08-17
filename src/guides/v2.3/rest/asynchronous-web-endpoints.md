@@ -31,7 +31,7 @@ PUT /async/V1/products/:sku
 
 {{site.data.var.ce}} and {{site.data.var.ee}} installations support asynchronous web endpoints.
 
-The [REST API documentation]({{site.baseurl}}/redoc/{{page.guide_version}}/) provides a list of all current synchronous Magento API routes.
+The [REST API documentation]({{page.baseurl}}/rest/bk-rest.html) provides a list of all current synchronous Magento API routes.
 
 The response of an asynchronous request contains the following fields:
 
@@ -40,7 +40,7 @@ Field name | Data type | Description
 `bulk_uuid` | String | A generated universally unique identifier.
 `request_items` | Object | An array containing information about the status of the asynchronous request.
 `id` | Integer | A generated ID that identifies the request.
-`data_hash` | String | Reserved for future use. Currently, the value is always `null`.
+`data_hash` | String | SHA256 encoded content of incoming message.
 `status` | String | Reserved for future use. Currently, the value is always `accepted`.
 `errors` | Boolean | Reserved for future use. Currently, the value is always `false`. If an error occurs, the system provides all error-related information as a standard `webapi` exception.
 
@@ -72,7 +72,7 @@ Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uui
     "request_items": [
         {
             "id": 0,
-            "data_hash": null,
+            "data_hash": "9c1bd4bfd8defcc856ddf129cc01d172625d139d5f7dcf53b6cb09a0e9a843a3",
             "status": "accepted"
         }
     ],
@@ -82,7 +82,7 @@ Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uui
 
 ## Store scopes
 
-You can specify a store code in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
+You can specify a store code (which is labeled in the Admin as store view code) in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
 
 ```http
 POST /<store_code>/async/V1/products

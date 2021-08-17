@@ -11,7 +11,13 @@ If you are creating a cart for a logged in customer, you must include the custom
 
 ## Syntax
 
-`mutation: {createEmptyCart}: String`
+```graphql
+mutation {
+  createEmptyCart {
+    String
+  }
+}
+```
 
 ## Example usage
 
@@ -32,7 +38,7 @@ The response is the cart ID, which is sometimes called the quote ID. The remaini
 ```json
 {
   "data": {
-    "createEmptyCart": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"}
+    "createEmptyCart": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
   }
 }
 ```
@@ -43,10 +49,13 @@ You can also create an empty cart with a specified `cart_id`.
 
 **Request:**
 
-``` text
+```graphql
 mutation {
-  createEmptyCart(input:
-     { cart_id: "x2345678901234567890123456789012"})
+  createEmptyCart(
+    input: {
+      cart_id: "x2345678901234567890123456789012"
+    }
+  )
 }
 ```
 

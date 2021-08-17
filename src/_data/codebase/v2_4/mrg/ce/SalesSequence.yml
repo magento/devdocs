@@ -1,10 +1,10 @@
 ---
 title: Magento_SalesSequence
 source_repo: magento2ce
-release: 2.4.0
+release: 2.4.2
 github_path: app/code/Magento/SalesSequence/README.md
 last_modified_at: '2015-03-20 16:50:43 +0200'
-content: |
+content: |-
   ## Purpose of module
 
   Magento\SalesSequence module is responsible for sequences processing in Sales module,

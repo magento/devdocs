@@ -4,7 +4,7 @@ title: Deploy variables
 functional_areas:
   - Cloud
   - Configuration
-redirect_from: 
+redirect_from:
   - /cloud/trouble/message-queues.html
 ---
 
@@ -47,44 +47,11 @@ stage:
       _merge: true
       frontend:
         default:
-          backend:
+          backend_options:
             database: 10
         page_cache:
-          backend:
+          backend_options:
             database: 11
-```
-
-If the _REDIS_BACKEND_ variable specifies  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`for the backend model, you must use the following configuration structure:
-
-```php
-'cache' => [
-    'frontend' => [
-        'default' => [
-             'backend' => '\\Magento\\Framework\\Cache\\Backend\\RemoteSynchronizedCache',
-             'backend_options' => [
-                 'remote_backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
-                 'remote_backend_options' => [
-                     'persistent' => 0,
-                     'server' => 'localhost',
-                     'database' => '0',
-                     'port' => '6370',
-                     'password' => '',
-                     'compress_data' => '1',
-                 ],
-                 'local_backend' => 'Cm_Cache_Backend_File',
-                 'local_backend_options' => [
-                     'cache_dir' => '/dev/shm/'
-                 ]
-             ],
-             'frontend_options' => [
-                 'write_control' => false,
-             ],
-         ]
-    ],
-    'type' => [
-        'default' => ['frontend' => 'default'],
-    ],
-]
 ```
 
 ### `CLEAN_STATIC_FILES`
@@ -173,7 +140,7 @@ When you move the database from one environment to another without an installati
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-If you defined a database in the [relationships property]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
+If you defined a database in the [relationships property]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
 
 ```yaml
 stage:
@@ -401,12 +368,15 @@ stage:
 ```
 
 {:.bs-callout-info}
-If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, then {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.3/config-guide/cache/two-level-cache.html) in the _Magento Configuration Guide_.
+If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html#configuration-example) in the _Magento Configuration Guide_. To override the generated cache configuration, use the [CACHE_CONFIGURATION]({{site.baseurl}}/cloud/env/variables-deploy.html#cache_configuration) deploy variable.
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
 -  **Version**—Magento 2.1.16 and later
+
+{:.bs-callout-warning}
+Do not enable this variable on scaled architecture (split architecture) projects. It causes Redis connection errors. Redis slaves are still active but will not be used for Redis reads. As an alternative, we recommend the following: use Magento 2.3.5 or later on Cloud projects with a scaled architecture, implement a new Redis backend configuration, and implement L2 caching for Redis.
 
 Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _read-only_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
@@ -421,6 +391,26 @@ You must have a Redis service configured in the `.magento.app.yaml` file and in 
 [ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
+
+### `REMOTE_STORAGE`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.4.2 and later
+
+Configure a _storage adapter_ to store media files in a persistent, remote storage container using a storage service, such as AWS S3. Use the remote storage option to improve performance on Cloud projects with complex, multi-server configurations that must share resources.
+
+```yaml
+stage:
+  deploy:
+    REMOTE_STORAGE:
+      driver: aws-s3 # Required
+      prefix: cloud # Optional
+      config:
+        bucket: my-bucket # Required
+        region: my-region # Required
+        key: my-key # Optional
+        secret: my-secret-key # Optional
+```
 
 ### `RESOURCE_CONFIGURATION`
 
@@ -504,7 +494,7 @@ stage:
 
 Allows you to increase the maximum expected execution time for static content deployment.
 
-By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
+By default, Magento Commerce sets the maximum expected execution to 900 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
 
 ```yaml
 stage:
@@ -513,6 +503,19 @@ stage:
 ```
 
 {% include cloud/note-increase-scd-max-execution-time-variable.md%}
+
+### `SCD_NO_PARENT`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.4.2 and later
+
+On the deploy phase, we recommend setting `SCD_NO_PARENT: true` so that the generation of static content for parent themes does not occur during the deploy phase. This setting minimizes deployment time and prevents site downtime that can occur if the static content build fails during the deployment. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
+
+```yaml
+stage:
+  deploy:
+    SCD_NO_PARENT: true
+```
 
 ### `SCD_STRATEGY`
 

@@ -9,7 +9,15 @@ The `setBillingAddressOnCart` mutation sets the billing address for a specific c
 
 ## Syntax
 
-`mutation: {setBillingAddressOnCart(input: SetBillingAddressOnCartInput) {SetBillingAddressOnCartOutput}}`
+```graphql
+mutation {
+  setBillingAddressOnCart(
+    input: SetBillingAddressOnCartInput
+  ) {
+    SetBillingAddressOnCartOutput
+  }
+}
+```
 
 ## Example usage
 

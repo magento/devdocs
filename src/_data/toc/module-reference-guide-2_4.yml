@@ -3,7 +3,7 @@ pages:
   - label: Introduction
     url: /mrg/intro.html
   
-  - label: Open Source (v2.4.0)
+  - label: Core Open Source, 2.4.2
     include_versions: ["2.4"]
     children:
     
@@ -33,6 +33,9 @@ pages:
     
       - label: Authorization
         url: /mrg/ce/Authorization.html
+    
+      - label: AwsS3
+        url: /mrg/ce/AwsS3.html
     
       - label: Backend
         url: /mrg/ce/Backend.html
@@ -117,6 +120,9 @@ pages:
     
       - label: CmsUrlRewriteGraphQl
         url: /mrg/ce/CmsUrlRewriteGraphQl.html
+    
+      - label: CompareListGraphQl
+        url: /mrg/ce/CompareListGraphQl.html
     
       - label: Config
         url: /mrg/ce/Config.html
@@ -211,6 +217,9 @@ pages:
       - label: GiftMessage
         url: /mrg/ce/GiftMessage.html
     
+      - label: GiftMessageGraphQl
+        url: /mrg/ce/GiftMessageGraphQl.html
+    
       - label: GoogleAdwords
         url: /mrg/ce/GoogleAdwords.html
     
@@ -259,8 +268,14 @@ pages:
       - label: LoginAsCustomerApi
         url: /mrg/ce/LoginAsCustomerApi.html
     
+      - label: LoginAsCustomerAssistance
+        url: /mrg/ce/LoginAsCustomerAssistance.html
+    
       - label: LoginAsCustomerFrontendUi
         url: /mrg/ce/LoginAsCustomerFrontendUi.html
+    
+      - label: LoginAsCustomerGraphQl
+        url: /mrg/ce/LoginAsCustomerGraphQl.html
     
       - label: LoginAsCustomerLog
         url: /mrg/ce/LoginAsCustomerLog.html
@@ -289,6 +304,18 @@ pages:
       - label: MediaContentCms
         url: /mrg/ce/MediaContentCms.html
     
+      - label: MediaContentSynchronization
+        url: /mrg/ce/MediaContentSynchronization.html
+    
+      - label: MediaContentSynchronizationApi
+        url: /mrg/ce/MediaContentSynchronizationApi.html
+    
+      - label: MediaContentSynchronizationCatalog
+        url: /mrg/ce/MediaContentSynchronizationCatalog.html
+    
+      - label: MediaContentSynchronizationCms
+        url: /mrg/ce/MediaContentSynchronizationCms.html
+    
       - label: MediaGallery
         url: /mrg/ce/MediaGallery.html
     
@@ -297,6 +324,45 @@ pages:
     
       - label: MediaGalleryCatalog
         url: /mrg/ce/MediaGalleryCatalog.html
+    
+      - label: MediaGalleryCatalogIntegration
+        url: /mrg/ce/MediaGalleryCatalogIntegration.html
+    
+      - label: MediaGalleryCatalogUi
+        url: /mrg/ce/MediaGalleryCatalogUi.html
+    
+      - label: MediaGalleryCmsUi
+        url: /mrg/ce/MediaGalleryCmsUi.html
+    
+      - label: MediaGalleryIntegration
+        url: /mrg/ce/MediaGalleryIntegration.html
+    
+      - label: MediaGalleryMetadata
+        url: /mrg/ce/MediaGalleryMetadata.html
+    
+      - label: MediaGalleryMetadataApi
+        url: /mrg/ce/MediaGalleryMetadataApi.html
+    
+      - label: MediaGalleryRenditions
+        url: /mrg/ce/MediaGalleryRenditions.html
+    
+      - label: MediaGalleryRenditionsApi
+        url: /mrg/ce/MediaGalleryRenditionsApi.html
+    
+      - label: MediaGallerySynchronization
+        url: /mrg/ce/MediaGallerySynchronization.html
+    
+      - label: MediaGallerySynchronizationApi
+        url: /mrg/ce/MediaGallerySynchronizationApi.html
+    
+      - label: MediaGallerySynchronizationMetadata
+        url: /mrg/ce/MediaGallerySynchronizationMetadata.html
+    
+      - label: MediaGalleryUi
+        url: /mrg/ce/MediaGalleryUi.html
+    
+      - label: MediaGalleryUiApi
+        url: /mrg/ce/MediaGalleryUiApi.html
     
       - label: MediaStorage
         url: /mrg/ce/MediaStorage.html
@@ -321,6 +387,9 @@ pages:
     
       - label: Newsletter
         url: /mrg/ce/Newsletter.html
+    
+      - label: NewsletterGraphQl
+        url: /mrg/ce/NewsletterGraphQl.html
     
       - label: OfflinePayments
         url: /mrg/ce/OfflinePayments.html
@@ -358,6 +427,15 @@ pages:
       - label: QuoteAnalytics
         url: /mrg/ce/QuoteAnalytics.html
     
+      - label: QuoteBundleOptions
+        url: /mrg/ce/QuoteBundleOptions.html
+    
+      - label: QuoteConfigurableOptions
+        url: /mrg/ce/QuoteConfigurableOptions.html
+    
+      - label: QuoteDownloadableLinks
+        url: /mrg/ce/QuoteDownloadableLinks.html
+    
       - label: QuoteGraphQl
         url: /mrg/ce/QuoteGraphQl.html
     
@@ -366,6 +444,9 @@ pages:
     
       - label: ReleaseNotification
         url: /mrg/ce/ReleaseNotification.html
+    
+      - label: RemoteStorage
+        url: /mrg/ce/RemoteStorage.html
     
       - label: Reports
         url: /mrg/ce/Reports.html
@@ -378,6 +459,9 @@ pages:
     
       - label: ReviewAnalytics
         url: /mrg/ce/ReviewAnalytics.html
+    
+      - label: ReviewGraphQl
+        url: /mrg/ce/ReviewGraphQl.html
     
       - label: Robots
         url: /mrg/ce/Robots.html
@@ -527,12 +611,15 @@ pages:
         url: /mrg/ce/WishlistGraphQl.html
     
   
-  - label: Commerce (v2.4.0)
+  - label: Core Commerce only, 2.4.2
     include_versions: ["2.4"]
     children:
     
       - label: AdminGws
         url: /mrg/ee/AdminGws.html
+    
+      - label: AdminGwsConfigurableProduct
+        url: /mrg/ee/AdminGwsConfigurableProduct.html
     
       - label: AdminGwsStaging
         url: /mrg/ee/AdminGwsStaging.html
@@ -548,6 +635,9 @@ pages:
     
       - label: AdvancedSalesRule
         url: /mrg/ee/AdvancedSalesRule.html
+    
+      - label: AwsS3CustomerCustomAttributes
+        url: /mrg/ee/AwsS3CustomerCustomAttributes.html
     
       - label: Banner
         url: /mrg/ee/Banner.html
@@ -572,6 +662,9 @@ pages:
     
       - label: CatalogPermissions
         url: /mrg/ee/CatalogPermissions.html
+    
+      - label: CatalogPermissionsGraphQl
+        url: /mrg/ee/CatalogPermissionsGraphQl.html
     
       - label: CatalogRuleStaging
         url: /mrg/ee/CatalogRuleStaging.html
@@ -654,6 +747,9 @@ pages:
       - label: GiftWrapping
         url: /mrg/ee/GiftWrapping.html
     
+      - label: GiftWrappingGraphQl
+        url: /mrg/ee/GiftWrappingGraphQl.html
+    
       - label: GiftWrappingStaging
         url: /mrg/ee/GiftWrappingStaging.html
     
@@ -690,6 +786,9 @@ pages:
       - label: MultipleWishlist
         url: /mrg/ee/MultipleWishlist.html
     
+      - label: MultipleWishlistGraphQl
+        url: /mrg/ee/MultipleWishlistGraphQl.html
+    
       - label: PaymentStaging
         url: /mrg/ee/PaymentStaging.html
     
@@ -705,8 +804,14 @@ pages:
       - label: PromotionPermissions
         url: /mrg/ee/PromotionPermissions.html
     
+      - label: QuoteGiftCardOptions
+        url: /mrg/ee/QuoteGiftCardOptions.html
+    
       - label: Reminder
         url: /mrg/ee/Reminder.html
+    
+      - label: RemoteStorageCommerce
+        url: /mrg/ee/RemoteStorageCommerce.html
     
       - label: ResourceConnections
         url: /mrg/ee/ResourceConnections.html
@@ -762,8 +867,14 @@ pages:
       - label: Support
         url: /mrg/ee/Support.html
     
+      - label: Swat
+        url: /mrg/ee/Swat.html
+    
       - label: TargetRule
         url: /mrg/ee/TargetRule.html
+    
+      - label: TargetRuleGraphQl
+        url: /mrg/ee/TargetRuleGraphQl.html
     
       - label: Tinymce3Banner
         url: /mrg/ee/Tinymce3Banner.html
@@ -774,6 +885,9 @@ pages:
       - label: VersionsCmsUrlRewrite
         url: /mrg/ee/VersionsCmsUrlRewrite.html
     
+      - label: VersionsCmsUrlRewriteGraphQl
+        url: /mrg/ee/VersionsCmsUrlRewriteGraphQl.html
+    
       - label: VisualMerchandiser
         url: /mrg/ee/VisualMerchandiser.html
     
@@ -783,8 +897,11 @@ pages:
       - label: WeeeStaging
         url: /mrg/ee/WeeeStaging.html
     
+      - label: WishlistGiftCard
+        url: /mrg/ee/WishlistGiftCard.html
+    
   
-  - label: B2B (v1.2.0)
+  - label: B2B extension, 1.3.1
     include_versions: ["2.4"]
     children:
     
@@ -797,6 +914,9 @@ pages:
       - label: BundleRequisitionList
         url: /mrg/b2b/BundleRequisitionList.html
     
+      - label: BundleRequisitionListGraphQl
+        url: /mrg/b2b/BundleRequisitionListGraphQl.html
+    
       - label: BundleSharedCatalog
         url: /mrg/b2b/BundleSharedCatalog.html
     
@@ -806,14 +926,26 @@ pages:
       - label: CheckoutAgreementsNegotiableQuote
         url: /mrg/b2b/CheckoutAgreementsNegotiableQuote.html
     
+      - label: CheckoutAgreementsPurchaseOrder
+        url: /mrg/b2b/CheckoutAgreementsPurchaseOrder.html
+    
       - label: Company
         url: /mrg/b2b/Company.html
     
       - label: CompanyCredit
         url: /mrg/b2b/CompanyCredit.html
     
+      - label: CompanyCreditGraphQl
+        url: /mrg/b2b/CompanyCreditGraphQl.html
+    
+      - label: CompanyGraphQl
+        url: /mrg/b2b/CompanyGraphQl.html
+    
       - label: CompanyPayment
         url: /mrg/b2b/CompanyPayment.html
+    
+      - label: CompanyShipping
+        url: /mrg/b2b/CompanyShipping.html
     
       - label: ConfigurableNegotiableQuote
         url: /mrg/b2b/ConfigurableNegotiableQuote.html
@@ -821,14 +953,23 @@ pages:
       - label: ConfigurableRequisitionList
         url: /mrg/b2b/ConfigurableRequisitionList.html
     
+      - label: ConfigurableRequisitionListGraphQl
+        url: /mrg/b2b/ConfigurableRequisitionListGraphQl.html
+    
       - label: ConfigurableSharedCatalog
         url: /mrg/b2b/ConfigurableSharedCatalog.html
+    
+      - label: DownloadableRequisitionListGraphQl
+        url: /mrg/b2b/DownloadableRequisitionListGraphQl.html
     
       - label: GiftCardNegotiableQuote
         url: /mrg/b2b/GiftCardNegotiableQuote.html
     
       - label: GiftCardRequisitionList
         url: /mrg/b2b/GiftCardRequisitionList.html
+    
+      - label: GiftCardRequisitionListGraphQl
+        url: /mrg/b2b/GiftCardRequisitionListGraphQl.html
     
       - label: GiftCardSharedCatalog
         url: /mrg/b2b/GiftCardSharedCatalog.html
@@ -851,6 +992,9 @@ pages:
       - label: OrderHistorySearch
         url: /mrg/b2b/OrderHistorySearch.html
     
+      - label: PaypalPurchaseOrder
+        url: /mrg/b2b/PaypalPurchaseOrder.html
+    
       - label: PurchaseOrder
         url: /mrg/b2b/PurchaseOrder.html
     
@@ -863,11 +1007,17 @@ pages:
       - label: RequisitionList
         url: /mrg/b2b/RequisitionList.html
     
+      - label: RequisitionListGraphQl
+        url: /mrg/b2b/RequisitionListGraphQl.html
+    
       - label: SharedCatalog
         url: /mrg/b2b/SharedCatalog.html
     
+      - label: SharedCatalogGraphQl
+        url: /mrg/b2b/SharedCatalogGraphQl.html
+    
   
-  - label: Inventory Management (v1.2.0)
+  - label: Inventory Management (Open Source), 1.2.2
     include_versions: ["2.4"]
     children:
     
@@ -907,6 +1057,9 @@ pages:
       - label: InventoryCatalogApi
         url: /mrg/msi/InventoryCatalogApi.html
     
+      - label: InventoryCatalogFrontendUi
+        url: /mrg/msi/InventoryCatalogFrontendUi.html
+    
       - label: InventoryCatalogSearch
         url: /mrg/msi/InventoryCatalogSearch.html
     
@@ -915,6 +1068,9 @@ pages:
     
       - label: InventoryConfigurableProductAdminUi
         url: /mrg/msi/InventoryConfigurableProductAdminUi.html
+    
+      - label: InventoryConfigurableProductFrontendUi
+        url: /mrg/msi/InventoryConfigurableProductFrontendUi.html
     
       - label: InventoryConfigurableProductIndexer
         url: /mrg/msi/InventoryConfigurableProductIndexer.html
@@ -1062,5 +1218,37 @@ pages:
     
       - label: InventorySourceSelectionApi
         url: /mrg/msi/InventorySourceSelectionApi.html
+    
+      - label: InventorySwatchesFrontendUi
+        url: /mrg/msi/InventorySwatchesFrontendUi.html
+    
+      - label: InventoryVisualMerchandiser
+        url: /mrg/msi/InventoryVisualMerchandiser.html
+    
+      - label: InventoryWishlist
+        url: /mrg/msi/InventoryWishlist.html
+    
+  
+  - label: Page Builder (Commerce), v1.6.0
+    include_versions: ["2.4"]
+    children:
+    
+      - label: AwsS3PageBuilder
+        url: /mrg/page-builder/AwsS3PageBuilder.html
+    
+      - label: CatalogPageBuilderAnalytics
+        url: /mrg/page-builder/CatalogPageBuilderAnalytics.html
+    
+      - label: CmsPageBuilderAnalytics
+        url: /mrg/page-builder/CmsPageBuilderAnalytics.html
+    
+      - label: PageBuilder
+        url: /mrg/page-builder/PageBuilder.html
+    
+      - label: PageBuilderAdminAnalytics
+        url: /mrg/page-builder/PageBuilderAdminAnalytics.html
+    
+      - label: PageBuilderAnalytics
+        url: /mrg/page-builder/PageBuilderAnalytics.html
     
   

@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Install Magento
+title: Install
 redirect_from:
   - /cloud/before/before-setup-env-perms.html
 functional_areas:
@@ -68,7 +68,7 @@ To create authentication keys through the Magento Marketplace:
 
 ## Set the docroot
 
-Set the `docroot` to the `/magento` directory until you complete all setup. If you change the `docroot` to `/magento/pub` prior to completion, you will encounter issues running the Web Setup Wizard.
+Set the `docroot` to the `/magento` directory until you complete the setup.
 
 For the Production environment, set the `docroot` to `/magento/pub`, which helps restrict access to vulnerable areas of the system. The webserver `docroot` should be set to `/magento/pub` only after Magento is installed (including any upgrades and patches), configured, and static files generated and populated in `/magento/pub`. Alternatively, you could create a subdomain (for example, `install.domain.com`) and configure your webserver `docroot` to the Magento installed root folder.
 
@@ -103,12 +103,7 @@ After you have installed Magento, you need to set the file system permissions an
 
 Prior to installing, you should [Update installation dependencies]({{ site.baseurl }}/guides/v2.3/install-gde/install/prepare-install.html#install-composer-install) using Composer commands.
 
-Be ready to install Magento using one of the following options:
-
--  [Install the Magento software using the command line]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html)
--  [Install the Magento software using the Web Setup Wizard]({{ site.baseurl }}/guides/v2.3/install-gde/install/web/install-web.html)
-
-   {% include install/web/deprecated.md %}
+Be ready to install Magento using the [command line]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html).
 
 {:.procedure}
 To install Magento using the command line:
@@ -128,7 +123,7 @@ To install Magento using the command line:
 1. Enter a CLI command with options for entering the name, email, ADMIN credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
    ```bash
-   php magento setup:install \
+   bin/magento setup:install \
      --admin-firstname=John \
      --admin-lastname=Smith \
      --admin-email=jsmith@mail.com \
@@ -160,13 +155,13 @@ After installing Magento, run the commands for [compile]({{ site.baseurl }}/guid
 1. Compile Magento.
 
    ```bash
-   php magento setup:di:compile
+   bin/magento setup:di:compile
    ```
 
 1. Deploy Magento
 
    ```bash
-   php magento setup:static:deploy
+   bin/magento setup:static:deploy
    ```
 
 Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts file.
@@ -181,11 +176,11 @@ Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts 
 
 ## Additional software and services
 
-For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
+For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html).
 
--  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
--  [ElasticSearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
--  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+-  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
+-  [ElasticSearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
+-  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 -  [Additional software]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/optional.html) for Magento
 
 ## Verify your local workspace
@@ -198,7 +193,7 @@ To verify the local, access the store using the URL you passed in the install co
 To change the URI for the Admin panel, use this command to locate it:
 
 ```bash
-php bin/magento info:adminuri
+bin/magento info:adminuri
 ```
 
 To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.

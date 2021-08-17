@@ -6,12 +6,16 @@ pages:
       versionless: true
 
       children:
-        - label: Magento Definition of Done
+        - label: Commerce Definition of Done
           url: /contributor-guide/contributing_dod.html
           versionless: true
 
         - label: Backward compatible development
           url: /contributor-guide/backward-compatible-development/
+          versionless: true
+
+        - label: Pull Request Tests
+          url: /contributor-guide/pull-request-tests.html
           versionless: true
 
     - label: Docs Contributions
@@ -38,3 +42,7 @@ pages:
     - label: Maintainers
       url: /contributor-guide/maintainers.html
       versionless: true
+      children:
+        - label: Maintainer's Handbook
+          url: /contributor-guide/maintainer-handbook.html
+          versionless: true

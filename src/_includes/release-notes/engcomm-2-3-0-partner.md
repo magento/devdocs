@@ -48,4 +48,3 @@
 | Perficient | [15607](https://github.com/magento/magento2/pull/15607) | [15469](https://github.com/magento/magento2/issues/15469) |
 | CoolBlueWeb | [10627](https://github.com/magento/magento2/pull/10627) | [9533](https://github.com/magento/magento2/issues/9533) |
 | Limesharp | [94](https://github.com/magento/graphql-ce/pull/94) | [80](https://github.com/magento/graphql-ce/issues/80) |
-

@@ -1,9 +1,6 @@
 ---
 group: php-developer-guide
-subgroup: 03_Build
 title: Enable or disable your component
-menu_title: Enable or disable your component
-menu_order: 8000
 ---
 
 After you have built the component and are ready to enable it in your Magento environment, do the following:
@@ -25,7 +22,19 @@ After you have built the component and are ready to enable it in your Magento en
 
    Where `Component_Name` is the name of the component you are enabling.
 
-1. Check under **System** > **Tools** > **Web Setup Wizard** > **Module Manager** that the component is present.
+1. Check that the component is enabled:
+
+   ```bash
+   bin/magento module:status <extension-name>
+   ```
+
+   An extension name uses the format: `<VendorName>_<ComponentName>`.
+
+   Sample response:
+
+   ```terminal
+   Module is enabled
+   ```
 
 ## Order of operations
 

@@ -25,7 +25,7 @@ Here are the required files to get started:
 ```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
- <module name="Dev_Grid" setup_version="1.0.0">
+ <module name="Dev_Grid">
   <sequence>
    <module name="Magento_Backend"/>
    <module name="Magento_Ui"/>
@@ -114,6 +114,9 @@ The UI component `dev_grid_category_listing` must be defined separately in a fil
        <argument name="data" xsi:type="array">
          <item name="config" xsi:type="array">
            <item name="update_url" xsi:type="url" path="mui/index/render"/>
+           <item name="storageConfig" xsi:type="array">
+             <item name="indexField" xsi:type="string">entity_id</item>
+           </item>
          </item>
        </argument>
    </argument>
@@ -192,6 +195,13 @@ The UI component `dev_grid_category_listing` must be defined separately in a fil
          <filter>text</filter>
          <bodyTmpl>ui/grid/cells/text</bodyTmpl>
          <label translate="true">Name</label>
+      </settings>
+    </column>
+    <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+      <settings>
+        <filter>dateRange</filter>
+        <dataType>date</dataType>
+        <label translate="true">Created</label>
       </settings>
     </column>
     <actionsColumn name="actions" class="Dev\Grid\Ui\Component\Category\Listing\Column\Actions" sortOrder="200">
@@ -342,7 +352,7 @@ The `dataSource` name `dev_grid_category_listing_data_source` links to `Dev\Grid
  </virtualType>
 ```
 
-The collection class translates into `app/code/Dev/Grid/Ui/DataProvider/Category/Listing/Collection.php`:
+The collection class translates to `app/code/Dev/Grid/Ui/DataProvider/Category/Listing/Collection.php`:
 
 ```php
 namespace Dev\Grid\Ui\DataProvider\Category\Listing;
@@ -366,6 +376,16 @@ class Collection extends SearchResult
 ```
 
 It uses a custom collection file to add custom filters to map, and makes the grid filters work with the ID and name fields. Without `addFilterToMap`, you will not be able to search within the `name` column.
+
+The resource model class translates to `app/code/Dev/Grid/Model/ResourceModel/Category.php`:
+
+```php
+namespace Dev\Grid\Model\ResourceModel;
+
+class Category extends \Magento\Catalog\Model\ResourceModel\Category
+{
+}
+```
 
 ### 5. Column Actions Class
 
@@ -445,7 +465,7 @@ It gets a frontend URL for every category it lists.
 
 ### 6. Backend Controllers
 
-The main route defined in `app/code/Dev/Grid/etc/adminhtml/menu.xml` as `dev_grid/index/index` translates into `app/code/Dev/Grid/Controller/Adminhtml/Index/Index.php`:
+The main route defined in `app/code/Dev/Grid/etc/adminhtml/menu.xml` as `dev_grid/index/index` translates to `app/code/Dev/Grid/Controller/Adminhtml/Index/Index.php`:
 
 ```php
 namespace Dev\Grid\Controller\Adminhtml\Index;
@@ -454,6 +474,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
+use Magento\Framework\App\Action\HttpGetActionInterface;
 
 class Index extends Action implements HttpGetActionInterface
 {
@@ -493,7 +514,7 @@ class Index extends Action implements HttpGetActionInterface
 }
 ```
 
-The Ui grid file defines the custom route `dev_grid/category/massDelete` (mass delete) and translates into `app/code/Dev/Grid/Controller/Adminhtml/Category/MassDelete.php`:
+The Ui grid file defines the custom route `dev_grid/category/massDelete` (mass delete) and translates to `app/code/Dev/Grid/Controller/Adminhtml/Category/MassDelete.php`:
 
 ```php
 namespace Dev\Grid\Controller\Adminhtml\Category;

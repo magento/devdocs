@@ -9,7 +9,7 @@ redirect_from:
 
 Your {{site.data.var.ece}} Starter architecture supports up to **four** environments, including a Master environment that contains the initial project code, the Staging environment, and up to two Integration environments.
 
-All environments are in PaaS (Platform-as-a-Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from branches pushed from your local workspace.  Each environment provide a database and web server.
+All environments are in PaaS (Platform-as-a-Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from branches pushed from your local workspace.  Each environment provides a database and web server.
 
 You can use any development and branching methodology you like. When you get initial access to your project, we strongly recommend that you create a Staging environment from the Master environment. Then, create the Integration environment by branching from Staging.
 
@@ -59,6 +59,7 @@ The Production and Staging environments include the following technologies. You 
 -  Nginx web server speaking to PHP-FPM, one instance with multiple workers
 -  Redis server
 -  Elasticsearch for searching for {{site.data.var.ece}} 2.2 and later
+-  Egress filtering (outbound firewall)
 
 ### Services {#cloud-arch-services}
 
@@ -70,8 +71,6 @@ Each service runs in a separate, secure container. Containers are managed togeth
 -  PHP application server
 -  Git
 -  Secure Shell (SSH)
-
-You can have multiple applications running in the same project. Building a microservice-oriented architecture with {{site.data.var.ee}} is as easy as managing a monolithic application.
 
 ### Software versions {#cloud-arch-software}
 
@@ -116,20 +115,20 @@ See the following sections for detailed instructions and walk-throughs to develo
 <!--Link definitions-->
 [Deploy your store]: {{ site.baseurl }}/cloud/live/stage-prod-live.html
 [Docker development]: {{ site.baseurl }}/cloud/docker/docker-development.html
-[Elasticsearch]: {{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html
+[Elasticsearch]: {{ site.baseurl }}/cloud/project/services-elastic.html
 [Fastly CDN module for Magento 2]: {{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
 [Manage branches]: {{ site.baseurl }}/cloud/env/environments-start.html
-[MySQL]: {{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html
+[MySQL]: {{ site.baseurl }}/cloud/project/services-mysql.html
 [New Relic]: {{site.baseurl}}/cloud/project/new-relic.html#configure-new-relic-for-starter-environments
-[PHP]: {{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html
-[RabbitMQ]: {{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html
-[Redis]: {{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html
+[PHP]: {{ site.baseurl }}/cloud/project/magento-app.html
+[RabbitMQ]: {{ site.baseurl }}/cloud/project/services-rabbit.html
+[Redis]: {{ site.baseurl }}/cloud/project/services-redis.html
 [Site launch]: {{ site.baseurl }}/cloud/live/live.html
 [Snapshots and backup management]: {{ site.baseurl }}/cloud/project/project-webint-snap.html
 [Starter develop and deploy workflow]: {{ site.baseurl}}/cloud/architecture/starter-develop-deploy-workflow.html
 [Test deployment]: {{ site.baseurl }}/cloud/live/stage-prod-test.html
 [launching your site]: {{ site.baseurl }}/cloud/live/live.html
-[magento.app.yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html
+[magento.app.yaml]: {{ site.baseurl }}/cloud/project/magento-app.html
 [nginx]: https://glossary.magento.com/nginx
-[routes.yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_routes.html
-[services.yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_services.html
+[routes.yaml]: {{ site.baseurl }}/cloud/project/routes.html
+[services.yaml]: {{ site.baseurl }}/cloud/project/services.html

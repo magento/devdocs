@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce 2.3.4 Release Notes
+title: Adobe Commerce 2.3.4 Release Notes
 ---
 
 Magento Commerce 2.3.4 offers significant platform upgrades, substantial security changes, and performance improvements.
@@ -61,7 +61,7 @@ The following platform upgrades help enhance website security and PCI compliance
 
 *  The core integration of the Authorize.net payment method has been deprecated. Please use the official payment integration that is available on Marketplace.
 
-**Note**: Magento 2.3.4 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Life) on December 1, 2019. We recommend updating your deployment to a supported version of PHP. See [Magento 2.3 technology stack requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html) for information about supported versions.
+**Note**: Magento 2.3.4 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Life) on December 1, 2019. We recommend updating your deployment to a supported version of PHP. See [Magento 2.3 technology stack requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html) for information about supported versions.
 
 ### Performance boosts
 
@@ -115,7 +115,7 @@ This release includes improved GraphQL coverage for search, layered navigation, 
 
 *  **You can search categories by ID, name, and/or URL key.** The [`categoryList`]({{page.baseurl}}/graphql/queries/category-list.html) query replaces the deprecated `category` query.
 
-*  **The [`ProductInterface`]({{page.baseurl}}/graphql/product/product-interface.html) supports fixed product taxes (such as WEEE).** Use the [`storeConfig`]({{page.baseurl}}/graphql/queries/store-config.html) query to determine whether to store supports these taxes.
+*  **The [`ProductInterface`]({{page.baseurl}}/graphql/interfaces/product-interface.html) supports fixed product taxes (such as WEEE).** Use the [`storeConfig`]({{page.baseurl}}/graphql/queries/store-config.html) query to determine whether to store supports these taxes.
 
 *  **The [`cart`]({{page.baseurl}}/graphql/queries/cart.html) object has been enhanced to include information about promotions and applied discounts at the line and cart levels.**
 

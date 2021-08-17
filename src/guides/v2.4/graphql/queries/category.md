@@ -6,7 +6,10 @@ title: category query
 {:.bs-callout-warning}
 The `category` query has been deprecated. Use the [categories]({{page.baseurl}}/graphql/queries/categories.html) query instead.
 
-The `category` query allows you to search for a single category definition or the entire category tree. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options. You cannot return the entire category tree if it contains more than 10 sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured.
+The `category` query allows you to search for a single category definition or the entire category tree.
+
+{:.bs-callout-info}
+You cannot return the entire category tree if the total number of nodes in the request exceeds the value specified in the `queryDepth` attribute defined in the GraphQL `di.xml` file. By default, this value is 20. [Query security]({{page.baseurl}}/graphql/security-configuration.html) further describes query depths.
 
 ## Syntax
 
@@ -205,8 +208,15 @@ Attribute | Data type | Description
 
 ## Output attributes {#Categories}
 
-The query returns a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/product/category-interface.html). The `CategoryTree` object can contain the following attribute, as we as all attributes defined in `CategoryInterface`:
+The query returns a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/interfaces/category-interface.html). The `CategoryTree` object can contain the following attribute, as we as all attributes defined in `CategoryInterface`:
 
 Attribute | Data type | Description
 --- | --- | ---
 `children` | `CategoryTree` | An array containing the next level of subcategories. By default, you can specify up to 10 levels of child categories
+
+## Errors
+
+Error | Description
+--- | ---
+`Category doesn't exist` | The specified category ID value does not exist.
+`Field "category" argument "id" requires type Int, found "XXX"` | The specified `id` argument value has the wrong type.

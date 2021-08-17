@@ -1,7 +1,7 @@
 ---
 title: Magento_InventoryLowQuantityNotification
 source_repo: inventory
-release: 1.2.0
+release: 1.2.2
 github_path: InventoryLowQuantityNotification/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventoryLowQuantityNotification` module integrates Inventory Management
@@ -13,4 +13,4 @@ content: "The `InventoryLowQuantityNotification` module integrates Inventory Man
   module cannot be deleted or disabled.\n\n## Extension points and service contracts\n\nAll
   public interfaces related to this module are located in the `InventoryLowQuantityNotificationApi`
   module. \nUse the interfaces defined in `InventoryLowQuantityNotificationApi` to
-  extend this module.\n"
+  extend this module."

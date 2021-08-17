@@ -29,139 +29,23 @@ Profiles are located in `<magento_root>/setup/performance-toolkit/profiles/<ce o
 
 For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 
-<table>
-   <tbody>
-      <tr>
-         <th>Parameter</th>
-         <th>Small profile</th>
-         <th>Medium profile</th>
-         <th>Medium multi-site profile</th>
-         <th>Large profile</th>
-         <th>Extra large profile</th>
-      </tr>
-
-        <tr>
-            <td><p>websites</p></td>
-            <td><p>1</p></td>
-            <td><p>3</p></td>
-            <td><p>25</p></td>
-            <td><p>5</p></td>
-            <td><p>5</p></td>
-        </tr>
-        <tr>
-            <td><p>store_groups</p></td>
-            <td><p>1</p></td>
-            <td><p>3</p></td>
-            <td><p>25</p></td>
-            <td><p>5</p></td>
-            <td><p>5</p></td>
-        </tr>
-        <tr>
-            <td><p>store_views</p></td>
-            <td><p>1</p></td>
-            <td><p>3</p></td>
-            <td><p>50</p></td>
-            <td><p>5</p></td>
-            <td><p>5</p></td>
-        </tr>
-        <tr>
-            <td><p>simple_products</p></td>
-            <td><p>800</p></td>
-            <td><p>24,000</p></td>
-            <td><p>4,000</p></td>
-            <td><p>300,000</p></td>
-            <td><p>600,000</p></td>
-        </tr>
-        <tr>
-            <td><p>configurable_products</p></td>
-            <td><p>16 with 24 options</p></td>
-            <td><p>640 with 24 options</p></td>
-            <td><p>800 with 24 options & 79 with 200 options</p></td>
-            <td><p>8,000 with 24 options</p></td>
-            <td><p>16,000 with 24 options</p></td>
-        </tr>
-        <tr>
-            <td><p>product_images</p></td>
-            <td><p>100 images / 3 images per product</p></td>
-            <td><p>1000 images / 3 images per product</p></td>
-            <td><p>1000 images / 3 images per product</p></td>
-            <td><p>2000 images / 3 images per product</p></td>
-            <td><p>2000 images / 3 images per product</p></td>
-        </tr>
-        <tr>
-            <td><p>categories</p></td>
-            <td><p>30</p></td>
-            <td><p>300</p></td>
-            <td><p>100</p></td>
-            <td><p>3,000</p></td>
-            <td><p>6,000</p></td>
-        </tr>
-        <tr>
-            <td><p>categories_nesting_level</p></td>
-            <td><p>3</p></td>
-            <td><p>3</p></td>
-            <td><p>3</p></td>
-            <td><p>5</p></td>
-            <td><p>5</p></td>
-        </tr>
-        <tr>
-            <td><p>catalog_price_rules</p></td>
-            <td><p>20</p></td>
-            <td><p>20</p></td>
-            <td><p>20</p></td>
-            <td><p>20</p></td>
-            <td><p>20</p></td>
-        </tr>
-        <tr>
-            <td><p>catalog_target_rules</p></td>
-            <td><p>5</p></td>
-            <td><p>5</p></td>
-            <td><p>5</p></td>
-            <td><p>5</p></td>
-            <td><p>5</p></td>
-        </tr>
-        <tr>
-            <td><p>cart_price_rules</p></td>
-            <td><p>20</p></td>
-            <td><p>20</p></td>
-            <td><p>20</p></td>
-            <td><p>20</p></td>
-            <td><p>20</p></td>
-        </tr>
-        <tr>
-            <td><p>cart_price_rules_floor</p></td>
-            <td><p>2</p></td>
-            <td><p>2</p></td>
-            <td><p>2</p></td>
-            <td><p>2</p></td>
-            <td><p>2</p></td>
-        </tr>
-        <tr>
-            <td><p>customers</p></td>
-            <td><p>200</p></td>
-            <td><p>2,000</p></td>
-            <td><p>2,000</p></td>
-            <td><p>5,000</p></td>
-            <td><p>10,000</p></td>
-        </tr>
-        <tr>
-            <td><p>tax rates</p></td>
-            <td><p>130</p></td>
-            <td><p>40,000</p></td>
-            <td><p>40,000</p></td>
-            <td><p>40,000</p></td>
-            <td><p>40,000</p></td>
-        </tr>
-        <tr>
-            <td><p>orders</p></td>
-            <td><p>80</p></td>
-            <td><p>50,000</p></td>
-            <td><p>50,000</p></td>
-            <td><p>100,000</p></td>
-            <td><p>150,000</p></td>
-        </tr>
-   </tbody>
-</table>
+| Parameter | Small profile | Medium profile | Medium multi-site profile | Large profile | Extra large profile |
+| --- | --- | --- | --- | --- | --- |
+| `websites` | 1 | 3 | 25 | 5 | 5 |
+| `store_groups` | 1 | 3 | 25 | 5 | 5 |
+| `store_views` | 1 | 3 | 50 | 5 | 5 |
+| `simple_products` | 800 | 24,000 | 4,000 | 300,000 | 600,000 |
+| `configurable_products` | 16 with 24 options | 640 with 24 options | 800 with 24 options & 79 with 200 options | 8,000 with 24 options | 16,000 with 24 options |
+| `product_images` | 100 images / 3 images per product | 1000 images / 3 images per product | 1000 images / 3 images per product | 2000 images / 3 images per product | 2000 images / 3 images per product |
+| `categories` | 30 | 300 | 100 | 3,000 | 6,000 |
+| `categories_nesting_level` | 3 | 3 | 3 | 5 | 5 |
+| `catalog_price_rules` | 20 | 20 | 20 | 20 | 20 |
+| `catalog_target_rules` | 5 | 5 | 5 | 5 | 5 |
+| `cart_price_rules` | 20 | 20 | 20 | 20 | 20 |
+| `cart_price_rules_floor` | 2 | 2 | 2 | 2 | 2 |
+| `customers` | 200 | 2,000 | 2,000 | 5,000 | 10,000 |
+| `tax rates` | 130 | 40,000 | 40,000 | 40,000 | 40,000 |
+| `orders` | 80 | 50,000 | 50,000 | 100,000 | 150,000 |
 
 ### Run the data generator {#config-cli-perf-run}
 
@@ -241,21 +125,25 @@ The following sections discuss additional details about the performance fixtures
 
 Generates [admin](https://glossary.magento.com/admin) users. [XML](https://glossary.magento.com/xml) profile node:
 
-<pre class="no-copy">&lt;!-- Number of admin users -->
-&lt;admin_users>{int}</admin_users></pre>
+```xml
+<!-- Number of admin users -->
+<admin_users>{int}</admin_users>
+```
 
 ### Attribute sets {#config-cli-gen-attrib}
 
 Generates attribute sets with specified configuration. XML profile node:
 
-<pre class="no-copy">&lt;!-- Number of product attribute sets -->
-&lt;product_attribute_sets>{int}&lt;/product_attribute_sets>
+```xml
+<!-- Number of product attribute sets -->
+<product_attribute_sets>{int}</product_attribute_sets>
 
-&lt;!-- Number of attributes per set -->
-&lt;product_attribute_sets_attributes>{int}&lt;/product_attribute_sets_attributes>
+<!-- Number of attributes per set -->
+<product_attribute_sets_attributes>{int}</product_attribute_sets_attributes>
 
- &lt;!-- Number of values per attribute -->
-&lt;product_attribute_sets_attributes_values>{int}&lt;/product_attribute_sets_attributes_values></pre>
+    <!-- Number of values per attribute -->
+<product_attribute_sets_attributes_values>{int}</product_attribute_sets_attributes_values>
+```
 
 ### Bundle products {#config-cli-gen-bundle}
 
@@ -263,31 +151,37 @@ Generates bundle products. Generated bundle selections are not displayed individ
 
 XML profile node:
 
-<pre class="no-copy">&lt;!-- Number of products -->
-&lt;bundle_products>{int}&lt;/bundle_products>
+```xml
+<!-- Number of products -->
+<bundle_products>{int}</bundle_products>
 
-&lt;!-- Number of options per each product -->
-&lt;bundle_products_options>{int}&lt;/bundle_products_options>
+<!-- Number of options per each product -->
+<bundle_products_options>{int}</bundle_products_options>
 
-&lt;!-- Number of simple products per each option -->
-&lt;bundle_products_variation>{int}&lt;/bundle_products_variation></pre>
+<!-- Number of simple products per each option -->
+<bundle_products_variation>{int}</bundle_products_variation>
+```
 
 ### Cart price rules {#config-cli-gen-cartrules}
 
 Generates cart price rules. XML profile node:
 
-<pre class="no-copy">&lt;!-- Number of cart price rules -->
-&lt;cart_price_rules>{int}&lt;/cart_price_rules>
+```xml
+<!-- Number of cart price rules -->
+<cart_price_rules>{int}</cart_price_rules>
 
-&lt;!-- Number of conditions per rule -->
-&lt;cart_price_rules_floor>{int}&lt;/cart_price_rules_floor></pre>
+<!-- Number of conditions per rule -->
+<cart_price_rules_floor>{int}</cart_price_rules_floor>
+```
 
 ### Catalog price rules {#config-cli-gen-pricerules}
 
 Generates catalog price rules. XML profile node:
 
-<pre class="no-copy">&lt;!-- Number of catalog price rules -->
-&lt;catalog_price_rules>{int}&lt;/catalog_price_rules></pre>
+```xml
+<!-- Number of catalog price rules -->
+<catalog_price_rules>{int}</catalog_price_rules>
+```
 
 ### Categories {#config-cli-gen-cat}
 
@@ -295,27 +189,31 @@ Generates categories. If `assign_entities_to_all_websites` is set to `0`, all ca
 
 XML profile node:
 
-<pre class="no-copy">&lt;!-- Number of categories to generate -->
-&lt;categories>{int}&lt;/categories>
+```xml
+<!-- Number of categories to generate -->
+<categories>{int}</categories>
 
-&lt;!-- Nesting level of categories -->
-&lt;categories_nesting_level>{int}&lt;/categories_nesting_level></pre>
+<!-- Nesting level of categories -->
+<categories_nesting_level>{int}</categories_nesting_level>
+```
 
 ### Configs {#config-cli-gen-config}
 
 Sets values for config fields. XML profile node:
 
-<pre class="no-copy">&lt;!-- Config variables and values for change -->
-    &lt;configs>
-        &lt;config>
-            &lt;path>{string}&lt;/path> &lt;!-- e.g. admin/security/use_form_key -->
-            &lt;scope>{string}&lt;/scope> &lt;!-- e.g. default -->
-            &lt;scopeId>{int}&lt;/scopeId>
-            &lt;value>{int|string}&lt;/value>
-        &lt;/config>
+```xml
+<!-- Config variables and values for change -->
+<configs>
+    <config>
+        <path>{string}</path> <!-- e.g. admin/security/use_form_key -->
+        <scope>{string}</scope> <!-- e.g. default -->
+        <scopeId>{int}</scopeId>
+        <value>{int|string}</value>
+    </config>
 
-        &lt;!-- ... more entries ... -->
-    &lt;/configs></pre>
+    <!-- ... more entries ... -->
+</configs>
+```
 
 ### Configurable products {#config-cli-gen-configprod}
 
@@ -325,94 +223,102 @@ We support the following XML node formats:
 
 *  Distribution per Default and pre-defined attribute sets:
 
-    <pre class="no-copy">&lt;!-- Number of configurable products -->
-    &lt;configurable_products>{int}&lt;/configurable_products></pre>
+```xml
+<!-- Number of configurable products -->
+<configurable_products>{int}</configurable_products>
+```
 
 *  Generate products based on an existing attribute set:
 
-    <pre class="no-copy">&lt;configurable_products>
-        <!-- Configurable product configuration -->
-        &lt;config>
-             &lt;!-- Existing attribute set name -->
-             &lt;attributeSet>{string}&lt;/attributeSet>
+```xml
+<configurable_products>
 
-             &lt;!-- Configurable sku pattern with %s -->
-             &lt;sku>{string}&lt;/sku>
+    <config>
+            <!-- Existing attribute set name -->
+            <attributeSet>{string}</attributeSet>
 
-             &lt;!-- Number of configurable products -->
-             &lt;products>{int}&lt;/products>
+            <!-- Configurable sku pattern with %s -->
+            <sku>{string}</sku>
 
-             &lt;!-- Category Name. Optional. By default category name from Categories fixture will be used -->
-             &lt;category>[{string}]&lt;/category>
+            <!-- Number of configurable products -->
+            <products>{int}</products>
 
-             &lt;!-- Type of Swatch attribute e.g. color|image -->
-             &lt;swatches>{string}&lt;/swatches>
-        &lt;/config>
+            <!-- Category Name. Optional. By default category name from Categories fixture will be used -->
+            <category>[{string}]</category>
 
-        &lt;!-- ... more entries ... -->
-    &lt;/configurable_products></pre>
+            <!-- Type of Swatch attribute e.g. color|image -->
+            <swatches>{string}</swatches>
+    </config>
+
+<!-- ... more entries ... -->
+</configurable_products>
+```
 
 *  Generate products based on a dynamically created [attribute set](https://glossary.magento.com/attribute-set) with a specified amount of attributes and options:
 
-    <pre class="no-copy">&lt;configurable_products>
-        <!-- Configurable product configuration -->
-        &lt;config>
-            &lt;!-- Number of attributes in configurable product -->
-            &lt;attributes>{int}&lt;/attributes>
+```xml
+<configurable_products>
 
-            &lt;!-- Number of options per attribute -->
-            &lt;options>{int}&lt;/options>
+    <config>
+        <!-- Number of attributes in configurable product -->
+        <attributes>{int}</attributes>
 
-            &lt;!-- Configurable sku pattern with %s -->
-            &lt;sku>{string}&lt;/sku>
+        <!-- Number of options per attribute -->
+        <options>{int}</options>
 
-            &lt;!-- Number of configurable products -->
-            &lt;products>{int}&lt;/products>
+        <!-- Configurable sku pattern with %s -->
+        <sku>{string}</sku>
 
-            &lt;!-- Category Name. Optional. By default category name from Categories fixture will be used -->
-            &lt;category>[{string}]&lt;/category>
+        <!-- Number of configurable products -->
+        <products>{int}</products>
 
-            &lt;!-- Type of Swatch attribute e.g. color|image -->
-            &lt;swatches>{string}&lt;/swatches>
-        &lt;/config>
+        <!-- Category Name. Optional. By default category name from Categories fixture will be used -->
+        <category>[{string}]</category>
 
-        &lt;!-- ... more entries ... -->
-    &lt;/configurable_products></pre>
+        <!-- Type of Swatch attribute e.g. color|image -->
+        <swatches>{string}</swatches>
+    </config>
+
+    <!-- ... more entries ... -->
+</configurable_products>
+```
 
 *  Generate products based on a dynamically created attribute set with a specified configuration per each attribute:
 
-    <pre class="no-copy">&lt;configurable_products>
-        <!-- Configurable product configuration -->
-        &lt;config>
-            &lt;attributes>
-                &lt;!-- Configuration for a first attribute -->
-                &lt;attribute>
-                    &lt;!-- Amount of options per attribute -->
-                    &lt;options>{int}&lt;/options>
+```xml
+<configurable_products>
 
-                    &lt;!-- Type of Swatch attribute -->
-                    &lt;swatches>{string}&lt;/swatches>
-                &lt;/attribute>
+    <config>
+        <attributes>
+            <!-- Configuration for a first attribute -->
+            <attribute>
+                <!-- Amount of options per attribute -->
+                <options>{int}</options>
 
-                &lt;!-- Configuration for a second attribute -->
-                &lt;attribute>
-                    &lt;!-- Amount of options per attribute -->
-                    &lt;options>{int}&lt;/options>
-                &lt;/attribute>
-            &lt;/attributes>
+                <!-- Type of Swatch attribute -->
+                <swatches>{string}</swatches>
+            </attribute>
 
-            &lt;!-- Configurable sku pattern with %s -->
-            &lt;sku>{string}&lt;/sku>
+            <!-- Configuration for a second attribute -->
+            <attribute>
+                <!-- Amount of options per attribute -->
+                <options>{int}</options>
+            </attribute>
+        </attributes>
 
-            &lt;!-- Number of configurable products -->
-            &lt;products>{int}&lt;/products>
+        <!-- Configurable sku pattern with %s -->
+        <sku>{string}</sku>
 
-            &lt;!-- Category Name. Optional. By default, the category name from Categories fixture will be used -->
-            &lt;category>[{string}]&lt;/category>
-        &lt;/config>
+        <!-- Number of configurable products -->
+        <products>{int}</products>
 
-        &lt;!-- ... more entries ... -->
-    &lt;/configurable_products></pre>
+        <!-- Category Name. Optional. By default, the category name from Categories fixture will be used -->
+        <category>[{string}]</category>
+    </config>
+
+    <!-- ... more entries ... -->
+</configurable_products>
+```
 
 ### Customers {#config-cli-gen-cust}
 
@@ -420,15 +326,19 @@ Generates customers. Customers have a normal distribution on all available websi
 
 XML profile node:
 
-<pre class="no-copy">&lt;!-- Number of customers to generate -->
-&lt;customers>{int}&lt;/customers></pre>
+```xml
+<!-- Number of customers to generate -->
+<customers>{int}</customers>
+```
 
 You can also use the following XML to change the customer configuration:
 
-<pre class="no-copy">&lt;customer-config>
-    &lt;!-- Number of addresses per each customer -->
-    &lt;addresses-count>{int}&lt;/addresses-count>
-&lt;/customer-config></pre>
+```xml
+<customer-config>
+    <!-- Number of addresses per each customer -->
+    <addresses-count>{int}</addresses-count>
+</customer-config>
+```
 
 ### Product images {#config-cli-gen-prodimg}
 
@@ -436,23 +346,27 @@ Generates product images. Generation does not include resizing.
 
 XML profile node:
 
-<pre class="no-copy">&lt;product-images>
-    &lt;!-- Number of images to generate -->
-    &lt;images-count>{int}&lt;/images-count>
+```xml
+<product-images>
+    <!-- Number of images to generate -->
+    <images-count>{int}</images-count>
 
-    &lt;!-- Number of images to be assigned per each product -->
-    &lt;images-per-product>{int}&lt;/images-per-product>
-&lt;/product-images></pre>
+    <!-- Number of images to be assigned per each product -->
+    <images-per-product>{int}</images-per-product>
+</product-images>
+```
 
 ### Indexers state {#config-cli-gen-index}
 
 Updates indexers' state. XML profile node:
 
-<pre class="no-copy">&lt;indexer>
-    &lt;!-- Name of indexer (e.g. catalogrule_product) -->
-    &lt;id>{string}&lt;/id>
-    &lt;set_scheduled>{bool}&lt;/set_scheduled>
-&lt;/indexer></pre>
+```xml
+<indexer>
+    <!-- Name of indexer (e.g. catalogrule_product) -->
+    <id>{string}</id>
+    <set_scheduled>{bool}</set_scheduled>
+</indexer>
+```
 
 ### Orders {#config-cli-gen-orders}
 
@@ -460,29 +374,31 @@ Generates orders with configurable number of different types of order items. Opt
 
 XML profile node:
 
-<pre class="no-copy">&lt;!-- It is necessary to enable quotes for orders -->
-&lt;order_quotes_enable>{bool}&lt;/order_quotes_enable>
+```xml
+<!-- It is necessary to enable quotes for orders -->
+<order_quotes_enable>{bool}</order_quotes_enable>
 
-&lt;!-- Min number of simple products per each order -->
-&lt;order_simple_product_count_from>{int}&lt;/order_simple_product_count_from>
+<!-- Min number of simple products per each order -->
+<order_simple_product_count_from>{int}</order_simple_product_count_from>
 
-&lt;!-- Max number of simple products per each order -->
-&lt;order_simple_product_count_to>{int}&lt;/order_simple_product_count_to>
+<!-- Max number of simple products per each order -->
+<order_simple_product_count_to>{int}</order_simple_product_count_to>
 
-&lt;!-- Min number of configurable products per each order -->
-&lt;order_configurable_product_count_from>{int}&lt;/order_configurable_product_count_from>
+<!-- Min number of configurable products per each order -->
+<order_configurable_product_count_from>{int}</order_configurable_product_count_from>
 
-&lt;!-- Max number of configurable products per each order -->
-&lt;order_configurable_product_count_to>{int}&lt;/order_configurable_product_count_to>
+<!-- Max number of configurable products per each order -->
+<order_configurable_product_count_to>{int}</order_configurable_product_count_to>
 
-&lt;!-- Min number of big configurable products (with big amount of options) per each order -->
-&lt;order_big_configurable_product_count_from>{int}&lt;/order_big_configurable_product_count_from>
+<!-- Min number of big configurable products (with big amount of options) per each order -->
+<order_big_configurable_product_count_from>{int}</order_big_configurable_product_count_from>
 
-&lt;!-- Max number of big configurable products (with big amount of options) per each order -->
-&lt;order_big_configurable_product_count_to>{int}&lt;/order_big_configurable_product_count_to>
+<!-- Max number of big configurable products (with big amount of options) per each order -->
+<order_big_configurable_product_count_to>{int}</order_big_configurable_product_count_to>
 
-&lt;!-- Number of orders to generate -->
-&lt;orders>{int}&lt;/orders></pre>
+<!-- Number of orders to generate -->
+<orders>{int}</orders>
+```
 
 ### Simple products {#config-cli-gen-simp}
 
@@ -492,15 +408,19 @@ Products are uniformly distributed per categories and websites. If `assign_entit
 
 XML profile node:
 
-<pre class="no-copy">&lt;!-- Number of simple products to generate -->
-&lt;simple_products>{int}&lt;/simple_products></pre>
+```xml
+<!-- Number of simple products to generate -->
+<simple_products>{int}</simple_products>
+```
 
 ### Websites {#config-cli-gen-websites}
 
 Generates websites. XML profile node:
 
-<pre class="no-copy">&lt;!-- Number of websites to be generated -->
-&lt;websites>{int}&lt;/websites></pre>
+```xml
+<!-- Number of websites to be generated -->
+<websites>{int}</websites>
+```
 
 ### Store groups {#config-cli-gen-stores}
 
@@ -508,25 +428,31 @@ Generates store groups (referred to in the [Magento Admin](https://glossary.mage
 
 XML profile node:
 
-<pre class="no-copy">&lt;!-- Number of store groups to be generated -->
-&lt;store_groups>{int}&lt;/store_groups></pre>
+```xml
+<!-- Number of store groups to be generated -->
+<store_groups>{int}</store_groups>
+```
 
 ### Store views {#config-cli-gen-storeview}
 
 Generates store views. Store views are distributed normally among store groups. XML profile node:
 
-<pre class="no-copy">&lt;!-- Number of store views to be generated -->
-&lt;store_views>{int}&lt;/store_views>
+```xml
+<!-- Number of store views to be generated -->
+<store_views>{int}</store_views>
 
-&lt;!-- 1 means that all stores will have the same root category, 0 means that all stores will have unique root category -->
-&lt;assign_entities_to_all_websites>{0|1}&lt;assign_entities_to_all_websites/></pre>
+<!-- 1 means that all stores will have the same root category, 0 means that all stores will have unique root category -->
+<assign_entities_to_all_websites>{0|1}<assign_entities_to_all_websites/>
+```
 
 ### Tax rates {#config-cli-gen-taxrate}
 
 Generates tax rates. XML profile node:
 
-<pre class="no-copy">&lt;!-- Accepts name of [csv](https://glossary.magento.com/csv) file with tax rates (&lt;path to magento folder>/setup/src/Magento/Setup/Fixtures/_files) -->
-&lt;tax_rates_file>{csv file name}&lt;/tax_rates_file></pre>
+```xml
+<!-- Accepts name of [csv](https://glossary.magento.com/csv) file with tax rates (<path to magento folder>/setup/src/Magento/Setup/Fixtures/_files) -->
+<tax_rates_file>{csv file name}</tax_rates_file>
+```
 
 ## Additional information
 

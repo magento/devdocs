@@ -10,7 +10,15 @@ The **Stores** > **Configuration** > **Catalog** > **Email to a friend** > **Ena
 
 ## Syntax
 
-`mutation: {sendEmailToFriend(input: SendEmailToFriendInput): {SendEmailToFriendOutput}}`
+```graphql
+mutation {
+  sendEmailToFriend(
+    input: SendEmailToFriendInput
+  ) {
+    SendEmailToFriendOutput
+  }
+}
+```
 
 ## Example usage
 

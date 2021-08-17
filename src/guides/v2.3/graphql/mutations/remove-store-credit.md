@@ -10,7 +10,15 @@ Store credit must be enabled on the store to run this mutation.
 
 ## Syntax
 
-`mutation: {RemoveStoreCreditFromCart(input: RemoveStoreCreditFromCartInput): {RemoveStoreCreditFromCartOutput}}`
+```graphql
+mutation {
+  removeStoreCreditFromCart(
+    input: RemoveStoreCreditFromCartInput
+  ) {
+    RemoveStoreCreditFromCartOutput
+  }
+}
+```
 
 ## Example usage
 

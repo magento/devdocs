@@ -76,7 +76,6 @@ Usually, your component will extend the default payment method component (defaul
          <td><code>getBillingAddressFormName():string</code></td>
          <td>Gets the unique billing address name.</td>
       </tr>
-
       <tr class="even">
          <td><code>disposeSubscriptions()</code></td>
          <td>Terminates the object's subscription.</td>

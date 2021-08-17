@@ -9,7 +9,7 @@ functional_areas:
 
 We recommend using the following software for production instances of Magento:
 
-*  [PHP]({{page.baseurl}}/install-gde/system-requirements-tech.html#php)
+*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html)
 *  Nginx and [PHP-FPM](https://php-fpm.org/)
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
 *  [Varnish cache]({{page.baseurl}}/config-guide/varnish/config-varnish.html)
@@ -20,14 +20,16 @@ For multi-server deployments, or for merchants planning on scaling their busines
 *  [Redis]({{page.baseurl}}/config-guide/redis/redis-session.html) for sessions (from 2.0.6+)
 *  A separate Redis instance as your [default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) (do not use this instance for page cache)
 
-See [Magento 2.2.x technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html) for information about supported versions of each type of software.
+See [Magento 2.2.x technology stack requirements]({{page.baseurl}}/install-gde/system-requirements.html) for information about supported versions of each type of software.
 
 ## Operating system
 
-Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" and "recycle" TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in `/etc/sysctl.conf`:
+Operating system configurations and optimizations are similar for Magento as compared to other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" TCP connections. To enable this mechanism, set the following value in `/etc/sysctl.conf`:
+
+{:.bs-callout-info}
+Enabling net.ipv4.tcp_tw_reuse has no effect on incoming connections.
 
 ```terminal
-net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_tw_reuse = 1
 ```
 

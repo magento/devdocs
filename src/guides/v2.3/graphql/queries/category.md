@@ -207,8 +207,15 @@ Attribute | Data type | Description
 
 ## Output attributes {#Categories}
 
-The query returns a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/product/category-interface.html). The `CategoryTree` object can contain the following attribute, as we as all attributes defined in `CategoryInterface`:
+The query returns a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/interfaces/category-interface.html). The `CategoryTree` object can contain the following attribute, as we as all attributes defined in `CategoryInterface`:
 
 Attribute | Data type | Description
 --- | --- | ---
 `children` | `CategoryTree` | An array containing the next level of subcategories. By default, you can specify up to 10 levels of child categories
+
+## Errors
+
+Error | Description
+--- | ---
+`Category doesn't exist` | The specified category ID value does not exist.
+`Field "category" argument "id" requires type Int, found "XXX"` | The specified `id` argument value has the wrong type.

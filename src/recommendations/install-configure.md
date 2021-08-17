@@ -37,6 +37,14 @@ composer require magento/module-page-builder-product-recommendations
 
 By enabling Product Recommendations in Page Builder, you can [add an existing, active recommendation unit](https://docs.magento.com/user-guide/marketing/page-builder-add-product-recs.html) to any content created in Page Builder, such as pages, blocks, and dynamic blocks.
 
+### Add Visual similarity recommendation type {#vissimsupport}
+
+The _Visual similarity_ recommendation type allows you to [deploy a recommendation unit](https://docs.magento.com/user-guide/marketing/prex-type-visualsim.html) to your product detail page that displays products that are visually similar to the product being viewed. This recommendation type is most useful where images and visual aspects of the products are important parts of the shopping experience. Install the _Visual similarity_ recommendation type by running the following command:
+
+```bash
+composer require magento/module-visual-product-recommendations
+```
+
 ### Update your Product Recommendations installation
 
 Like all of Magento, Product Recommendations uses Composer for installation and updates. To update the `magento/product-recommendations` module, run the following:
@@ -45,7 +53,7 @@ Like all of Magento, Product Recommendations uses Composer for installation and 
 composer update magento/product-recommendations --with-dependencies
 ```
 
-If you need to update to a major version, such as from 2.0 to 3.0, you need to edit your project's root `composer.json` file. For example, let's open the main `composer.json` file and search for the `magento/product-recommendations` module:
+To update to a major version, such as from 2.0 to 3.0, you must edit your project's root `composer.json` file. (See the [release notes]({{ page.baseurl }}/recommendations/release-notes.html) for information about the latest version.) For example, let's open the main `composer.json` file and search for the `magento/product-recommendations` module:
 
 ```json
 "require": {
@@ -65,7 +73,7 @@ Let's bump the major version from `2.0` to `3.0`:
 }
 ```
 
-Save the the `composer.json` file and run:
+Save the `composer.json` file and run:
 
 ```bash
 composer update magento/product-recommendations --with-dependencies

@@ -39,7 +39,7 @@ The setting for the `MIN_LOGGING_LEVEL` variable does not change the log level c
 
 Enable generation of static content when requested by a user (SCD). This is ideal for the development and testing workflow, because it decreases the deployment time.
 
-Pre-loading the cache using the [`post_deploy` hook]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
+Pre-loading the cache using the [`post_deploy` hook]({{ site.baseurl }}/cloud/project/magento-app-properties.html#hooks) reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -65,7 +65,7 @@ return array(
 
 Allows you to increase the maximum expected execution time for static content deployment.
 
-By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
+By default, Magento Commerce sets the maximum expected execution to 900 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
 
 ```yaml
 stage:
@@ -74,6 +74,19 @@ stage:
 ```
 
 {% include cloud/note-increase-scd-max-execution-time-variable.md%}
+
+### `SCD_NO_PARENT`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.4.2 and later
+
+Set to `true` to prevent generating static content for parent themes during the build and deployment phases. When this option is set to `true`, less static content is generated, which improves your overall build and deployment times.
+
+```yaml
+stage:
+  global:
+    SCD_NO_PARENT: true
+```
 
 ### `SCD_USE_BALER`
 
@@ -122,7 +135,9 @@ Use the `X_FRAME_CONFIGURATION` variable to change the [`X-Frame-Options`]({{ si
 
 -  `DENY`—Page cannot be displayed in a frame.
 -  `SAMEORIGIN`—(The default Magento setting.) Page can be displayed only in a frame on the same origin as the page itself.
--  `ALLOW-FROM` `<uri>`—Page can be displayed only in a frame on the specified origin.
+
+{:.bs-callout-warning}
+The `ALLOW-FROM <uri>` option has been deprecated because Magento-supported browsers no longer support it. See [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility).
 
 Add the `X_FRAME_CONFIGURATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
 

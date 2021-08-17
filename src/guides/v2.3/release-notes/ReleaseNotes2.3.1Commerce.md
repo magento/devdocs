@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce 2.3.1 Release Notes
+title: Adobe Commerce 2.3.1 Release Notes
 ---
 
 *Release notes published on March 26, 2019 and last edited on June 3, 2020.*
@@ -2338,7 +2338,7 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 ## Known issues
 
-**Issue**:  Cart Price rules that were created with undefined end dates (that is, with the **To** field left empty) are not displayed as expected on the Staging dashboard after after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317-->
+**Issue**:  Cart Price rules that were created with undefined end dates (that is, with the **To** field left empty) are not displayed as expected on the Staging dashboard after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317-->
 
 **Issue**: The Web Setup Wizard is not available from the Admin under these conditions:
 
@@ -2402,4 +2402,3 @@ You can install {{site.data.var.ee}} 2.3.1  using Composer.
 The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
 
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Copyright © Magento, Inc. All rights reserved.
 # See COPYING.txt for license details.
 
@@ -30,7 +32,7 @@ module Jekyll
     <b class="collapsible-title">#{@title}</b>
     <div class="collapsible-content">#{content}</div>
   </div>
-        HTML
+      HTML
     end
   end
 
@@ -58,7 +60,7 @@ module Jekyll
     <h2 class="collapsible-title">#{@title}</h2>
     <div class="collapsible-content">#{content}</div>
   </div>
-        HTML
+      HTML
     end
   end
 
@@ -85,7 +87,7 @@ module Jekyll
     <h3 class="collapsible-title">#{@title}</h3>
     <div class="collapsible-content">#{content}</div>
   </div>
-        HTML
+      HTML
     end
   end
 end

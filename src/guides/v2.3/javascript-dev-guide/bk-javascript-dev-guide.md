@@ -46,4 +46,3 @@ JavaScript automatic testing is described in a separate [JavaScript unit testing
 [Magento jQuery widgets]: {{page.baseurl}}/javascript-dev-guide/widgets/jquery-widgets-about.html
 [Customizing JavaScript illustration]: {{page.baseurl}}/javascript-dev-guide/javascript/js_practice.html
 [JavaScript unit testing]: {{page.baseurl}}/test/js/jasmine.html
-

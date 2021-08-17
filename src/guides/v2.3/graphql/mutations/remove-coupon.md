@@ -9,7 +9,15 @@ The `removeCouponFromCart` mutation removes a previously-applied coupon from the
 
 ## Syntax
 
-`mutation: {removeCouponFromCart(input: RemoveCouponFromCartInput)  {RemoveCouponFromCartOutput}}`
+```graphql
+mutation {
+  removeCouponFromCart(
+    input: RemoveCouponFromCartInput
+  ) {
+    RemoveCouponFromCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -17,12 +25,13 @@ The following example removes a coupon from the cart.
 
 **Request:**
 
-``` text
+```graphql
 mutation {
   removeCouponFromCart(
-    input:
-      { cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG" }
-    ) {
+    input: {
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
+    }
+  ) {
     cart {
       items {
         product {
@@ -34,7 +43,7 @@ mutation {
         code
       }
       prices {
-        grand_total{
+        grand_total {
           value
           currency
         }

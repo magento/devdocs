@@ -8,9 +8,14 @@ functional_areas:
   - Setup
 ---
 
+Fastly supports a customized version of the Varnish Configuration Language (VCL) to customize the Fastly service configuration. For example, you can allow, block, or redirect access for specific users or IPs using VCL code blocks in combination with edge and ACL dictionaries.
+
 Custom VCL snippets are blocks of VCL logic added to the active VCL version. A custom VCL snippet modifies how Fastly caching services respond to request traffic. For example, you can add a custom VCL snippet to allow request traffic only from specified client IP addresses, or to block traffic from websites known for sending referral spam to your {{ site.data.var.ece }} sites.
 
 Custom VCL snippets—generated, compiled, and transmitted to all Fastly caches—load and activate without server downtime.
+
+{:.bs-callout-info}
+Before adding custom VCL code, edge dictionaries, and ACLs to your Fastly module configuration, verify that the Fastly caching service works with the default configuration. See [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
 
 Fastly supports two types of custom VCL snippets:
 
@@ -39,6 +44,9 @@ The examples and instructions in the {{ site.data.var.ece }} documentation expla
 You can create and manage custom VCL snippets from the Magento Admin UI or by using the Fastly API:
 
 -  [Magento Admin UI](#manage-custom-vcl-snippets-from-the-magento-admin-ui)—We recommend using the Magento Admin UI to manage custom VCL snippets because it automates the process to validate and upload the custom snippet and apply your changes to the Fastly service configuration. Additionally, you can view and edit the custom VCL snippets added to the Fastly service configuration from the Admin UI.
+
+{:.bs-callout-info}
+You must use the Fastly API to [delete custom VCL snippets](https://devdocs.magento.com/cloud/cdn/cloud-vcl-custom-snippets.html#manage-vcl), or you can delete the contents of the snippet in the  Magento Admin UI and upload an empty snippet. See [Delete a custom snippet](https://devdocs.magento.com/cloud/cdn/fastly-vcl-badreferer.html#delete-the-custom-vcl-snippet).
 
 -  [Fastly API](#manage-custom-vcl-snippets-using-the-api)—Manage custom VCL snippets using the API if you cannot access the Magento Admin UI. For example, if the site is down and you need to troubleshoot the Fastly service configuration or add a custom VCL snippet. Additionally, some operations can only be completed using the API, for example reactivating an older VCL version or viewing all the VCL snippets included in a specified the VCL version. See [API quick reference for VCL snippets](#manage-vcl).
 
