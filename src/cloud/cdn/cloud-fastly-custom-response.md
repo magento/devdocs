@@ -21,6 +21,7 @@ Currently, you can customize the following Fastly response pages for your {{ sit
 
 -  [Timeout or site maintenance outages (503 Service Unavailable)](#customize-the-503-error-page)
 -  [WAF blocking events that occur when the WAF detects suspicious request traffic (403 Forbidden)](#customize-the-waf-error-page)
+-  [Server Error (500 Internal Server Error)](#customize-the-503-error-page) - this is covered by the same function as the 503 error.
 
 **HTML coding requirements:**
 
