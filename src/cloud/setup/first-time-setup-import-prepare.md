@@ -10,16 +10,7 @@ You need to prepare your existing {{site.data.var.ee}} implementation to import 
 
 Before preparing your project and importing code, push all pending changes from your local workstation to your remote {{site.data.var.ece}} repository. When you push, the build and deploy scripts run to update code, static content, and environment services.
 
-The import preparation steps include the following:
-
--  [Prepare and add required files {#required-files}](#prepare-and-add-required-files-required-files)
--  [Add Magento authentication keys {#auth-json}](#add-magento-authentication-keys-auth-json)
--  [Edit `composer.json` {#composer-json}](#edit-composerjson-composer-json)
--  [Back up and transfer media files {#media}](#back-up-and-transfer-media-files-media)
--  [Copy the encryption key {#encryption-key}](#copy-the-encryption-key-encryption-key)
--  [Migrate Commerce data {#migrate-db}](#migrate-commerce-data-migrate-db)
-
-## Prepare and add required files {#required-files}
+## Prepare and add required files
 
 To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you must add the following files to your existing code:
 
@@ -71,7 +62,7 @@ For example, to create `<Adobe Commerce install dir>/.magento.app.yaml` from the
 
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
-## Add Magento authentication keys {#auth-json}
+## Add Magento authentication keys
 
 You must have an authentication key to access the {{site.data.var.ee}} repository and to enable install and update commands for your {{site.data.var.ece}} project. There are two methods for specifying Composer authorization credentials.
 
@@ -133,7 +124,7 @@ To add authentication keys using an environment variable:
 
 1. Remove the `auth.json` file from each environment.
 
-## Edit `composer.json` {#composer-json}
+## Edit `composer.json`
 
 Before you push code to the {{site.data.var.ece}} Git repository, modify your `composer.json` for Cloud. You can also [view a sample `composer.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json).
 
@@ -182,7 +173,7 @@ To edit `composer.json`:
    git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
    ```
 
-## Back up and transfer media files {#media}
+## Back up and transfer media files
 
 Use the command [`magento setup:backup --media`]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-backup.html) to back up media files:
 
@@ -207,7 +198,7 @@ Use the command [`magento setup:backup --media`]({{ site.baseurl }}/guides/v2.3/
    rsync /var/www/html/magento2/var/backups/1487962699_filesystem_media.tgz 43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud:var/media.tgz
    ```
 
-## Copy the encryption key {#encryption-key}
+## Copy the encryption key
 
 To decrypt the encrypted data from your imported database, copy your encryption key from your existing `env.php` file. Every environment in Integration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
 
@@ -217,7 +208,7 @@ To decrypt the encrypted data from your imported database, copy your encryption 
 
 You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{ site.baseurl }}/cloud/setup/first-time-setup-import-import.html#encryption-key).
 
-## Migrate Commerce data {#migrate-db}
+## Migrate Commerce data
 
 Create a database dump and transfer the data from an existing database. You will import this data to your {{site.data.var.ece}} database.
 
