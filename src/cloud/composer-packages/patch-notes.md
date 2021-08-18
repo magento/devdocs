@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Commerce Cloud package updates
+title: Cloud package updates for Commerce
 functional_areas:
   - Cloud
   - Setup

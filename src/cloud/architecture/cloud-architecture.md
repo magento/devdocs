@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Commerce Cloud architecture
+title: Cloud architecture for Commerce
 functional_areas:
   - Cloud
 redirect_from:

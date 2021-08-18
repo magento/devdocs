@@ -89,7 +89,7 @@ Critical patch for {{site.data.var.ee}} 2.4.3 and 2.3.7-p1:
 ## v1.0.5
 *Release date: June 26, 2020*<br/>
 
--  **Redis performance improvements**–Adds Redis optimization features to Magento versions 2.3.3 and 2.3.4. These fixes were included in the Magento version 2.3.5 release. See [Performance boosts]({{site.baseurl}}/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html#performance-boosts) in the _Magento Commerce 2.3.5 Release Notes_.<!--MCLOUD-5771-->
+-  **Redis performance improvements**–Adds Redis optimization features to Magento versions 2.3.3 and 2.3.4. These fixes were included in the Magento version 2.3.5 release. See [Performance boosts]({{site.baseurl}}/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html#performance-boosts) in the _Adobe Commerce 2.3.5 Release Notes_.<!--MCLOUD-5771-->
 
 -  **New Relic log enricher**–Adds the Monolog ProcessorInterface required to support improvements to New Relic logging capabilities introduced in {{site.data.var.mcc-prod}} version 1.0.4. This patch is required to deploy Magento 2.1.x. If the patch is not applied, the build fails during the `di:compile` process.<!--MCLOUD-6029-->
 

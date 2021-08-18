@@ -19,7 +19,7 @@ You can create the Docker Compose configuration to build and deploy the Docker c
 {:.bs-callout-info}
 When you build the Docker Compose configuration file, the `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save customizations for the Docker Compose configuration in a `docker-compose.override.yml` file.  If the `docker-compose.override.yml` file is present, then the override configuration merges with the base configuration. See [Override configuration].
 
-## Magento Commerce Cloud configuration
+## Cloud configuration for Commerce
 
 You need the following {{site.data.var.ece}} project configuration files to emulate a Cloud project in the Docker environment.
 

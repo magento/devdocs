@@ -176,7 +176,7 @@ To set `auto_increment_increment` to 3:
 
 To install the `magento-cloud` CLI , see the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
 
-## Additional requirements for Magento Commerce {#commerce}
+## Additional requirements
 
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 
