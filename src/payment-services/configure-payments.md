@@ -45,14 +45,13 @@ When `BY SCHEDULE` mode is set, the system keeps track of changed entities and t
 After the data is indexed, it will be sent automatically to Payment Services. You can also manually trigger the process of sending indexed data with this command:
 
 ``` bash
-bin/magento saas:resync
+bin/magento saas:resync --feed [feedName]
 ```
 
 Use the following command options:
 
 |   Command    |   Description    |
 |  ---  |  ---  |
-|   `bin/magento saas:resync`    |    Performs a re-indexation of all SaaS export entities (including catalog, categories, and orders) and sends the data to the corresponding services   |
 |   `bin/magento saas:resync --feed [feedName]`    |   Performs a re-indexation of the specified feed and sends it to the corresponding service   |
 |   `bin/magento saas:resync --no-reindex`    |    Skips indexation and sends un-synced data from the indexes  |
 
