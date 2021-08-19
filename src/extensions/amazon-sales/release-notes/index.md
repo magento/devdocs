@@ -67,7 +67,7 @@ This version of Amazon Sales Channel includes the following improvements and fix
 
 ### v4.2.0
 
-Amazon Sales Channel 4.2.0 is compatible with Adobe Commerce versions 2.3.x but only supported for versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. If you have a previous Amazon Sales Channel version installed and attempt to update your Magento to version 2.4.0, you will be prompted to update the extension before you can complete the Adobe Commerce update.
+Amazon Sales Channel 4.2.0 is compatible with Adobe Commerce versions 2.3.x but only supported for versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. If you have a previous Amazon Sales Channel version installed and attempt to update your {{site.data.var.ee}} to version 2.4.0, you will be prompted to update the extension before you can complete the {{site.data.var.ee}} update.
 
 This version of Amazon Sales Channel includes a new feature along with improvements and fixes.
 
