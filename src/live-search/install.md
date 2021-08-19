@@ -20,9 +20,10 @@ Live Search is a set of standalone meta packages that replaces standard {{site.d
 
 Choose the installation method that meets your requirements:
 
--  [Method 1](#method-1-install-without-Elasticsearch): Install without Elasticsearch (Some downtime)
--  [Method 2](#method-2-install-with-Elasticsearch): Install with Elasticsearch (No downtime)
+-  [Method 1](#method-1): Install without Elasticsearch (Some downtime)
+-  [Method 2](#method-2): Install with Elasticsearch (No downtime)
 
+{: #method-1}
 ## Method 1: Install without Elasticsearch
 
 This method is recommended when installing Live Search to a:
@@ -69,6 +70,7 @@ During this installation, Live Search modules are enabled and Elasticsearch modu
 
 1. [Test](#testing-the-connection) the connection.
 
+{: #method-2}
 ## Method 2: Install with Elasticsearch
 
 This method is recommended when installing Live Search to a:
