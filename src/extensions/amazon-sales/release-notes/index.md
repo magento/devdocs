@@ -31,7 +31,7 @@ This version of Amazon Sales Channel includes the following fix.
 
 ### v4.4.0
 
-Amazon Sales Channel 4.4.0 is compatible with Adobe Commerce versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 4.4.0 is compatible with {{site.data.var.ee}} versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 This version of Amazon Sales Channel includes the following improvements and fixes.
 
