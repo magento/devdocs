@@ -80,7 +80,7 @@ A cron job includes the schedule and timing specification and the command to run
 
 Magento uses a five value specification for a cron job. The numbers per each `* * * * *` is as follows:
 
--  Minute (0-59)  For all Starter and Pro environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your Magento Admin.
+-  Minute (0-59)  For all Starter and Pro environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your Admin.
 -  Hour (0-23)
 -  Day of month (1 - 31)
 -  Month (1 - 12)

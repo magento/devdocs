@@ -216,7 +216,7 @@ To upgrade the Magento version:
 
 ### Create a new config.php file
 
-As mentioned in [Configuration management](#configuration-management), after upgrading, you need to create an updated `config.php` file. Complete any additional configuration changes through the Magento Admin in your Integration environment.
+As mentioned in [Configuration management](#configuration-management), after upgrading, you need to create an updated `config.php` file. Complete any additional configuration changes through the Admin in your Integration environment.
 
 {:.procedure}
 To create a system-specific configuration file:
@@ -280,7 +280,7 @@ When you upgrade your Magento version, the upgrade process updates to the latest
 
 ## Troubleshoot upgrade
 
-If the upgrade failed, you receive an error message in the browser indicating that you cannot access your storefront or the Magento Admin panel:
+If the upgrade failed, you receive an error message in the browser indicating that you cannot access your storefront or the Admin panel:
 
 ```terminal
 There has been an error processing your request

@@ -20,13 +20,13 @@ Enabling the Force TLS option is a recommended best practice for {{ site.data.va
 
 ## Extend Fastly timeout
 
-The Fastly service configuration specifies a default timeout period of 180 seconds for HTTPS requests to the Magento Admin. Any request processing that exceeds the timeout period returns a 503 error.
+The Fastly service configuration specifies a default timeout period of 180 seconds for HTTPS requests to the Admin. Any request processing that exceeds the timeout period returns a 503 error.
 As a result, you could receive 503 errors when attempting operations that require lengthy processing, or when trying to perform bulk operations.
 
 If you need to complete bulk actions that take longer than 3 minutes, you can prevent 503 errors by changing the _Admin path timeout_ value.
 
 {:.procedure}
-To extend the Fastly timeout for the Magento Admin:
+To extend the Fastly timeout for the Admin:
 
 {% include cloud/admin-ui-login-step.md %}
 
@@ -40,7 +40,7 @@ To extend the Fastly timeout for the Magento Admin:
 
 1. After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
 
-Fastly retrieves the Magento Admin path for generating the VCL file from the `app/etc/env.php` configuration file.
+Fastly retrieves the Admin path for generating the VCL file from the `app/etc/env.php` configuration file.
 
 ## Configure purge options
 
@@ -139,7 +139,7 @@ To review the back end setting configuration:
 
 1. Click **Upload** to save your changes and upload them to the Fastly servers.
 
-1. In the Magento Admin, click **Save Config**.
+1. In the Admin, click **Save Config**.
 
 For more information, see the [Backend settings guide](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md) in the Fastly module documentation.
 
@@ -151,7 +151,7 @@ authentication on your Production environment. You can configure it on Staging
 to protect your site during the development process. See the [Basic Authentication Guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BASIC-AUTH.md) in the Fastly CDN module documentation.
 
 If you add user access and enable basic authentication on Staging, you can still
-access the Magento Admin without requiring additional credentials.
+access the Admin without requiring additional credentials.
 
 ## Create custom VCL snippets
 
@@ -170,13 +170,13 @@ For Starter projects, use the _Domains_ option to add and manage the Fastly doma
 For Pro plan projects, you must submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to update the Fastly domain configuration for your project.
 
 {:.procedure}
-To manage Fastly domain configuration from the Magento Admin:
+To manage Fastly domain configuration from the Admin:
 
 {% include cloud/admin-ui-login-step.md %}
 
 1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
 
-1. In the Magento Admin _Fastly Configuration_ section, click **Domains**.
+1. In the Admin _Fastly Configuration_ section, click **Domains**.
 
 1. Click **Manage Domains** to open the Domains page.
 
@@ -195,7 +195,7 @@ Use the _Maintenance Mode_ option to allow administrative access to your site fr
 {:.procedure}
 To enable Maintenance mode with Administrative access:
 
-1. Open the _Fastly configuration_ section in the Magento Admin UI.
+1. Open the _Fastly configuration_ section in the Admin UI.
 
 1. In the _Edge ACL_ section, update the `maint_allow` access control list (ACL) with the administrative IP addresses that can access your store while it is in Maintenance mode.
 

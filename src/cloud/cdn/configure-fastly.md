@@ -29,10 +29,10 @@ After you enable and verify that Fastly works with the default settings, you can
 
 During project provisioning, Magento adds your project to the [Fastly service account]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-service-account-and-credentials) for {{ site.data.var.ece }} and creates Fastly account credentials for the Starter `master` and Pro Staging and Production environments. Each environment has unique credentials.
 
-You need the Fastly credentials to configure Fastly CDN services from the Magento Admin UI and to submit Fastly API requests.
+You need the Fastly credentials to configure Fastly CDN services from the Admin UI and to submit Fastly API requests.
 
 {:.bs-callout-info}
-With {{ site.data.var.ece }}, you cannot access the Fastly Admin UI directly. You must use the Magento Admin UI to review and update the Fastly configuration for your environments.  If you cannot resolve an issue using the Fastly capabilities in the Magento Admin UI, submit a [Magento Support](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) ticket.
+With {{ site.data.var.ece }}, you cannot access the Fastly Admin UI directly. You must use the Admin UI to review and update the Fastly configuration for your environments.  If you cannot resolve an issue using the Fastly capabilities in the Admin UI, submit a [Magento Support](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) ticket.
 
 Use the following methods to find and save the Fastly service ID and API token for your environment:
 
@@ -87,7 +87,7 @@ To enable Fastly CDN caching in Staging and Production:
 
 ### Test the Fastly credentials
 
-1. On the Magento Admin UI, navigate to **Stores** > Settings > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
+1. On the Admin UI, navigate to **Stores** > Settings > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
 
 1. If needed, add the **Fastly service ID** and **API token** values for your project environment.
 
@@ -217,7 +217,7 @@ To update your DNS configuration for development:
       ```
 
    {:.bs-callout-info}
-   As an alternative to using the Magento CLI, you can update the Base URL from the [Magento Admin](https://docs.magento.com/user-guide/stores/store-urls.html#configure-the-base-url).
+   As an alternative to using the Magento CLI, you can update the Base URL from the [Admin](https://docs.magento.com/user-guide/stores/store-urls.html#configure-the-base-url).
 
 1. Restart web browser.
 
@@ -283,7 +283,7 @@ To upgrade the Fastly module:
 
 1. Push your updates to the Staging environment.
 
-1. Log in to the Magento Admin UI for your Staging environment to [upload the VCL code](#upload-vcl-snippets).
+1. Log in to the Admin UI for your Staging environment to [upload the VCL code](#upload-vcl-snippets).
 
 1. [Verify Fastly services]({{ site.baseurl }}/cloud/cdn/trouble-fastly.html#verify-or-debug-fastly-services) on the {{ site.data.var.ee }} Staging site.
 

@@ -35,7 +35,7 @@ You can access your project by logging in to [your {{site.data.var.ece}} account
 
 Use the {{site.data.var.ece}} Project Portal (Onboarding UI) to help project administrators, business users, and developers with the tasks required to develop, build, test, and launch your site.
 
--  Access your Cloud environments, site, and Magento Admin
+-  Access your Cloud environments, site, and Admin
 -  Add a Technical Admin, a super user to help manage your project and branches
 -  Access your project environments, including a link to the Project Web Interface
 -  Provide your developer with a getting started workflow to set up their local development environments and begin developing
@@ -83,7 +83,7 @@ You can use the Project Web Interface to manage your project, add user accounts,
 
 See [Project Web Interface][].
 
-## Access your Magento Admin panel {#admin}
+## Access your Admin panel {#admin}
 
 Users that have administrative access to the Admin panel can add users, configure store services, complete store setup and customization work, and more.
 

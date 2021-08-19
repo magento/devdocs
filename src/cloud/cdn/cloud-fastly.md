@@ -45,11 +45,11 @@ Fastly provides the following services to optimize and secure content delivery o
 
 Fastly services for {{ site.data.var.ece }} use the [Fastly CDN module for Magento 2] installed in the following environments: Pro Staging and Production, Starter Production (`master` branch).
 
-On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module in your Staging and Production environments. When Fastly releases module updates, you receive notifications in the Magento Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly].
+On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module in your Staging and Production environments. When Fastly releases module updates, you receive notifications in the Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly].
 
 ## Fastly service account and credentials
 
-{{ site.data.var.ece }} projects do not require a dedicated Fastly account or account owner. Instead, each Staging and Production environment has unique Fastly credentials (API token and service ID) to configure and manage Fastly services from the Magento Admin UI. You also need the credentials to submit Fastly API requests.
+{{ site.data.var.ece }} projects do not require a dedicated Fastly account or account owner. Instead, each Staging and Production environment has unique Fastly credentials (API token and service ID) to configure and manage Fastly services from the Admin UI. You also need the credentials to submit Fastly API requests.
 
 During project provisioning, Magento adds your project to the Fastly service account for {{ site.data.var.ece }} and adds the Fastly credentials to the configuration for the Staging and Production environments. See [Get Fastly credentials].
 
@@ -64,7 +64,7 @@ To change the Fastly API token credential:
 
    Include your {{ site.data.var.ece }} project ID and the environments that require a new credential.
 
-1. After you receive the new API token, update the API token value in the [Fastly credentials configuration] in the Magento Admin UI or from the [Project Web UI environment configuration variables].
+1. After you receive the new API token, update the API token value in the [Fastly credentials configuration] in the Admin UI or from the [Project Web UI environment configuration variables].
 
 1. [Test the new credential].
 

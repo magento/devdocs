@@ -25,7 +25,7 @@ To customize the Magento software on your local workstation, prepare the followi
 -  Admin username, password, and URL created earlier
 -  Magento authentication keys for installing Magento
 
-### List the Magento Admin environment variables
+### List the Admin environment variables
 
 You need the ADMIN environment variables for the installation command line.
 

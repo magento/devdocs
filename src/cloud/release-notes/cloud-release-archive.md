@@ -246,7 +246,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-2573/MAGECLOUD-2848 -->**ADMIN variables**—
 
-      -  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the ADMIN_EMAIL, ADMIN_USERNAME, and ADMIN_PASSWORD environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+      -  Improved security when managing credentials for the Admin user using environment variables. You can no longer use the ADMIN_EMAIL, ADMIN_USERNAME, and ADMIN_PASSWORD environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Admin panel]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
       -  ADMIN_EMAIL is no longer required when upgrading or applying patches.
 
@@ -624,7 +624,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/cloud/composer-packa
 
 -  <!-- MAGECLOUD-1152 -->We fixed an issue preventing `{{site.data.var.ct}}` from halting execution and throwing an exception if no patches can be applied.
 
--  <!-- MAGECLOUD-1138 -->We fixed an issue causing errors when loading the storefront after enabling HTML minification in the Magento Admin.
+-  <!-- MAGECLOUD-1138 -->We fixed an issue causing errors when loading the storefront after enabling HTML minification in the Admin.
 
 ## v2002.0.4
 
