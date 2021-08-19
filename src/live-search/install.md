@@ -62,8 +62,8 @@ During this installation, Live Search modules are enabled and Elasticsearch modu
 
 1.  To verify that the data has been exported from your {{site.data.var.ee}} instance, look for entries in the following tables:
 
-   -  `catalog_data_exporter_products`
-   -  `catalog_data_exporter_product_attributes`
+    -  `catalog_data_exporter_products`
+    -  `catalog_data_exporter_product_attributes`
 
    For additional help, refer to [Live search catalog not synchronized](https://support.magento.com/hc/en-us/articles/4405637804301-Live-search-catalog-not-synchronized) in the Support Knowledge Base.
 
@@ -73,10 +73,10 @@ During this installation, Live Search modules are enabled and Elasticsearch modu
 
 This method is recommended when installing Live Search to a:
 
-- Existing Commerce installation
-- New Commerce installation with customizations or extensions that require Elasticsearch
+-  Existing Commerce installation
+-  New Commerce installation with customizations or extensions that require Elasticsearch
 
-In this scenario, Elasticsearch services search requests from the storefront while the Live Search service works in the background to index all products in the catalog. Although the process might take up to eight hours to complete, there is no interruption to storefront operations. 
+In this scenario, Elasticsearch services search requests from the storefront while the Live Search service works in the background to index all products in the catalog. Although the process might take up to eight hours to complete, there is no interruption to storefront operations.
 
 Before the installation of Live Search, Live Search modules are disabled and Elasticsearch modules are enabled. After the installation, Live Search modules are enabled and Elasticsearch modules are disabled.
 
@@ -110,7 +110,7 @@ Before the installation of Live Search, Live Search modules are disabled and Ela
 
    -  `catalog_data_exporter_products`
    -  `catalog_data_exporter_product_attributes`
-   
+
    For additional help, refer to [Live search catalog not synchronized](https://support.magento.com/hc/en-us/articles/4405637804301-Live-search-catalog-not-synchronized) in the Support Knowledge Base.
 
 1. [Test](#testing-the-connection) the connection.
