@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Upgrade project to use ece-tools 
+title: Upgrade project to use ece-tools
 functional_areas:
   - Cloud
   - Upgrade
