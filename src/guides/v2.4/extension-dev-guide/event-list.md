@@ -5351,6 +5351,7 @@ Where it was introduced:
    $this->_eventManager->dispatch('customer_logout', ['customer' => $this->getCustomer()]);
    }
    ```
+
 {:.procedure}
 Variables passed:
 
@@ -5365,8 +5366,3 @@ There is one classe that fires this event:
 When to listen:
 
 *  If one wants to do something before a customer is logged out
-
-### 155. customer_register_success
-
-
-
