@@ -95,7 +95,7 @@ This version of Amazon Sales Channel includes a new feature along with improveme
 
 ### v4.1.0
 
-Amazon Sales Channel 4.1.0 is compatible with Adobe Commerce versions 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes user-interface enhancements, along with minor bug fixes.
+Amazon Sales Channel 4.1.0 is compatible with {{site.data.var.ee}} 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes user-interface enhancements, along with minor bug fixes.
 
 -  {:.new}<!--4247, 4230-->Changed the order import process to align with Magento order requirements. These changes correct issues that prevented Magento from creating the corresponding order for an imported order. See [Manage Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html) for information on order blockers and solutions.
 
