@@ -166,7 +166,7 @@ Amazon Sales Channel 3.0.0 is compatible with {{site.data.var.ee}} versions 2.2.
 
 ### v2.0.0
 
-Amazon Sales Channel 2.0.0 is compatible with Adobe Commerce version 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 2.0.0 is compatible with {{site.data.var.ee}} version 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
  {:.bs-callout-info}
 Version 1.0.0 was available in limited release only.
