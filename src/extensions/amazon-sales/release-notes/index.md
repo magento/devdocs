@@ -148,7 +148,7 @@ Amazon Sales Channel 3.0.1 is compatible with {{site.data.var.ee}} versions 2.2.
 
 ### v3.0.0
 
-Amazon Sales Channel 3.0.0 is compatible with Adobe Commerce versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 3.0.0 is compatible with {{site.data.var.ee}} versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.new}**Amazon UK Marketplace Now Available**: Users can choose the United Kingdom marketplace when [creating and integrating](https://docs.magento.com/m2/ee/user_guide/sales-channels/amazon/store-integration.html) an Amazon Sales Channel store. This UK upgrade includes additional support for:
 
