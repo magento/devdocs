@@ -68,7 +68,10 @@ A few classes that fire this event:
 *  `\Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Collection`
 *  `\Magento\CatalogInventory\Model\ResourceModel\Stock\Status\Collection`
 
-One can listen to that event to modify product stock items and stock statuses.
+{:.procedure}
+When to listen:
+
+*  One can listen to that event to modify product stock items and stock statuses.
 
 ### 3. adminhtml_block_eav_attribute_edit_form_init
 
@@ -132,7 +135,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* to modify backend block contents
+*  to modify backend block contents
 
 ### 5. adminhtml_block_promo_widget_chooser_prepare_collection
 
