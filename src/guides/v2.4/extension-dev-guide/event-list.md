@@ -167,7 +167,7 @@ Only one class fires this event:
 {:.procedure}
 When to listen:
 
-* to modify collection of shopping cart rules used in a chooser widget
+*  to modify collection of shopping cart rules used in a chooser widget
 
 ### 6. adminhtml_block_salesrule_actions_prepareform
 
@@ -200,7 +200,7 @@ Only one class fires this event:
 {:.procedure}
 When to listen:
 
-* to modify sales rule actions form
+*  to modify sales rule actions form
 
 ### 7. adminhtml_cache_flush_all
 
@@ -215,7 +215,7 @@ Where it was introduced:
    $this->_eventManager->dispatch('adminhtml_cache_flush_all');
    ```
 
-* `\Magento\Backend\Console\Command\CacheFlushCommand::performAction()`:
+*  `\Magento\Backend\Console\Command\CacheFlushCommand::performAction()`:
 
    ```php
    protected function performAction(array $cacheTypes)
@@ -237,7 +237,7 @@ Only two classes fire this event:
 {:.procedure}
 When to listen:
 
-* to do things **before** all cache is flushed
+*  to do things **before** all cache is flushed
 
 ### 8. adminhtml_cache_flush_system
 
@@ -252,7 +252,7 @@ Where it was introduced:
    $this->eventManager->dispatch('adminhtml_cache_flush_system');
    ```
 
-* `\Magento\Backend\Controller\Adminhtml\Cache\FlushSystem::execute()`:
+*  `\Magento\Backend\Controller\Adminhtml\Cache\FlushSystem::execute()`:
 
    ```php
    public function execute()
@@ -261,7 +261,7 @@ Where it was introduced:
    $this->_eventManager->dispatch('adminhtml_cache_flush_system');
    ```
 
-* `\Magento\Backend\Console\Command\CacheCleanCommand::performAction()`
+*  `\Magento\Backend\Console\Command\CacheCleanCommand::performAction()`
 
   ```php
   protected function performAction(array $cacheTypes)
@@ -284,7 +284,7 @@ Only three classes fire this event:
 {:.procedure}
 When to listen:
 
-* to do things when system cache is cleaned
+*  to do things when system cache is cleaned
 
 ### 9. adminhtml_cache_refresh_type
 
@@ -321,8 +321,8 @@ Only three classes fire this event:
 {:.procedure}
 When to listen:
 
-* to do things **before** Full Page Cache is cleared
-* to do things **after** Configuration Cache is cleared
+*  to do things **before** Full Page Cache is cleared
+*  to do things **after** Configuration Cache is cleared
 
 ### 10. adminhtml_catalog_category_tree_can_add_root_category
 
@@ -921,7 +921,7 @@ Where it was introduced:
     $this->_eventManager->dispatch('adminhtml_product_attribute_types', ['response' => $response]);
    ```
 
-* `\Magento\Catalog\Model\Product\Attribute\Source\Inputtype::toOptionArray()`:
+*  `\Magento\Catalog\Model\Product\Attribute\Source\Inputtype::toOptionArray()`:
 
    ```php
    public function toOptionArray()
@@ -2943,7 +2943,7 @@ Where it was introduced:
                 );
    ```
 
-* `\Magento\Bundle\Model\Product\Price::getSelectionFinalTotalPrice()`:
+*  `\Magento\Bundle\Model\Product\Price::getSelectionFinalTotalPrice()`:
 
   ```php
      public function getSelectionFinalTotalPrice(
@@ -4639,7 +4639,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* Modify inventory source before it gets saved
+*  Modify inventory source before it gets saved
 
 ### 134. controller_action_inventory_populate_stock_with_data
 
@@ -4675,7 +4675,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* Modify inventory stock model before it gets saved
+*  Modify inventory stock model before it gets saved
 
 ### 135. controller_action_inventory_source_save_after
 
@@ -4711,7 +4711,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* Modify inventory source after it gets saved
+*  Modify inventory source after it gets saved
 
 ### 136. controller_action_layout_render_before
 
@@ -5312,7 +5312,7 @@ Where it was introduced:
    }
    ```
 
-* `\Magento\Integration\Model\CustomerTokenService::createCustomerAccessToken()`:
+*  `\Magento\Integration\Model\CustomerTokenService::createCustomerAccessToken()`:
 
   ```php
   public function createCustomerAccessToken($username, $password)
