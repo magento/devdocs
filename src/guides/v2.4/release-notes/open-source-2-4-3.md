@@ -706,7 +706,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9148-->
 
-*  The image resizing process now processes images marked as hidden in the admin. Also added the `--skip_hidden_images` option to skip hidden images in the `catalog:images:resize` command. [GitHub-28239](https://github.com/magento/magento2/issues/28239)
+*  The image resizing process now processes images marked as hidden in the Admin. Also added the `--skip_hidden_images` option to skip hidden images in the `catalog:images:resize` command. [GitHub-28239](https://github.com/magento/magento2/issues/28239)
 
 <!--- ENGCOM-8925-->
 
