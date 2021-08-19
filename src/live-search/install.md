@@ -60,10 +60,10 @@ During this installation, Live Search modules are enabled and Elasticsearch modu
    {:.bs-callout-warning}
    After the installation, storefront catalog operations are interrupted while the Live Search service syncs data and indexes all products in the catalog. The process can take up to eight hours to complete.
 
-1.  To verify that the data has been exported from your {{site.data.var.ee}} instance, look for entries in the following tables:
+1. To verify that the data has been exported from your {{site.data.var.ee}} instance, look for entries in the following tables:
 
-    -  `catalog_data_exporter_products`
-    -  `catalog_data_exporter_product_attributes`
+   -  `catalog_data_exporter_products`
+   -  `catalog_data_exporter_product_attributes`
 
    For additional help, refer to [Live search catalog not synchronized](https://support.magento.com/hc/en-us/articles/4405637804301-Live-search-catalog-not-synchronized) in the Support Knowledge Base.
 
