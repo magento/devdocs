@@ -59,7 +59,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `collection`: an object of `\Magento\Framework\Data\AbstractSearchResult` 
+*  `collection`: an object of `\Magento\Framework\Data\AbstractSearchResult`
 
 {:.procedure}
 A few classes that fire this event:
@@ -86,7 +86,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `form`: an object of `\Magento\Framework\Data\Form` 
+*  `form`: an object of `\Magento\Framework\Data\Form`
 
 {:.procedure}
 Only one class fires this event:
@@ -107,9 +107,9 @@ Where it was introduced:
    {
    $this->_eventManager->dispatch('adminhtml_block_html_before', ['block' => $this]);
    ```
-   
+
    and
-    
+
 *  `\Magento\Customer\\Block\Adminhtml\Edit\Tab\Carts::_toHtml()`:
 
    ```php
@@ -121,7 +121,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `block`: an object of `\Magento\Framework\View\Element\Template` 
+*  `block`: an object of `\Magento\Framework\View\Element\Template`
 
 {:.procedure}
 A few classes that fire this event:
@@ -154,7 +154,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `collection`: an object of `\Magento\SalesRule\Model\ResourceModel\Rule\Collection` 
+*  `collection`: an object of `\Magento\SalesRule\Model\ResourceModel\Rule\Collection`
 
 {:.procedure}
 Only one class fires this event:
@@ -187,7 +187,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `form`: an object of `\Magento\Framework\Data\Form` 
+*  `form`: an object of `\Magento\Framework\Data\Form`
 
 {:.procedure}
 Only one class fires this event:
@@ -213,7 +213,7 @@ Where it was introduced:
    ```
 
 * `\Magento\Backend\Console\Command\CacheFlushCommand::performAction()`:
-   
+
    ```php
    protected function performAction(array $cacheTypes)
    {
@@ -250,7 +250,7 @@ Where it was introduced:
    ```
 
 * `\Magento\Backend\Controller\Adminhtml\Cache\FlushSystem::execute()`:
-   
+
    ```php
    public function execute()
    {
@@ -259,7 +259,7 @@ Where it was introduced:
    ```
 
 * `\Magento\Backend\Console\Command\CacheCleanCommand::performAction()`
-   
+
   ```php
   protected function performAction(array $cacheTypes)
   {
@@ -289,7 +289,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Tax\Controller\Adminhtml\Tax\IgnoreTaxNotification::execute()`:
-    
+
    ```php
    public function execute()
    {
@@ -297,7 +297,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\PageCache\Model\Cache\Type::clean()`:
-    
+
    ```php
    public function clean($mode = \Zend_Cache::CLEANING_MODE_ALL, array $tags = [])
    {
@@ -327,7 +327,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Category\Tree::canAddRootCategory()`:
-    
+
    ```php
    public function canAddRootCategory()
    {
@@ -354,7 +354,7 @@ A few other classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to change availability of adding root category
+*  If one wants to change availability of adding root category
 
 ### 11. adminhtml_catalog_category_tree_can_add_sub_category
 
@@ -362,7 +362,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Category\Tree::canAddSubCategory()`:
-    
+
    ```php
    public function canAddSubCategory()
    {
@@ -389,7 +389,7 @@ A few other classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to change availability of adding a subcategory
+*  If one wants to change availability of adding a subcategory
 
 ### 12. adminhtml_catalog_category_tree_is_moveable
 
@@ -397,7 +397,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Category\Tree::_isCategoryMoveable()`:
-    
+
    ```php
    protected function _isCategoryMoveable($node)
    {
@@ -420,7 +420,7 @@ A few other classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to change moveability of a category
+*  If one wants to change moveability of a category
 
 ### 13. adminhtml_catalog_product_attribute_edit_frontend_prepare_form
 
@@ -428,7 +428,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit\Tab\Front::_prepareForm()`:
-    
+
    ```php
    protected function _prepareForm()
    {
@@ -453,7 +453,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to customize a product attribute edit form
+*  If one wants to customize a product attribute edit form
 
 ### 14. adminhtml_catalog_product_attribute_set_main_html_before
 
@@ -461,7 +461,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Main::_toHtml()`:
-    
+
    ```php
     protected function _toHtml()
     {
@@ -484,7 +484,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to customize the adminhtml catalog attribute set main block
+*  If one wants to customize the adminhtml catalog attribute set main block
 
 ### 15. adminhtml_catalog_product_attribute_set_toolbar_main_html_before
 
@@ -492,7 +492,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Toolbar\Main::_toHtml()`:
-    
+
    ```php
     protected function _toHtml()
     {
@@ -515,20 +515,20 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to customize the adminhtml catalog attribute set toolbar main block
+*  If one wants to customize the adminhtml catalog attribute set toolbar main block
 
 ### 16. adminhtml_catalog_product_edit_element_types
 
 {:.procedure}
 Where it was introduced:
 
-*  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes::_getAdditionalElementTypes()`: 
-    
+*  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes::_getAdditionalElementTypes()`:
+
    ```php
     protected function _getAdditionalElementTypes()
     {
     ...
-    $this->_eventManager->dispatch('adminhtml_catalog_product_edit_element_types', 
+    $this->_eventManager->dispatch('adminhtml_catalog_product_edit_element_types',
        ['response' => $response]);
    ```
 
@@ -546,7 +546,7 @@ There are only two classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to add or customize additional element types for catalog product edit attributes tab
+*  If one wants to add or customize additional element types for catalog product edit attributes tab
 
 ### 17. adminhtml_catalog_product_edit_prepare_form
 
@@ -554,7 +554,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes::_prepareForm()`:
-    
+
    ```php
     protected function _prepareForm()
     {
@@ -571,7 +571,7 @@ Where it was introduced:
     protected function _prepareForm()
     {
     ...
-        $this->_eventManager->dispatch('adminhtml_catalog_product_edit_prepare_form', 
+        $this->_eventManager->dispatch('adminhtml_catalog_product_edit_prepare_form',
             ['form' => $form]
         );
    ```
@@ -592,7 +592,7 @@ There are only three classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to customize catalog product edit attribute tab form
+*  If one wants to customize catalog product edit attribute tab form
 
 ### 18. adminhtml_catalog_product_edit_tab_attributes_create_html_before
 
@@ -600,7 +600,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes\Create::_toHtml()`:
-    
+
    ```php
     protected function _toHtml()
     {
@@ -624,7 +624,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to customize catalog product edit create attribute block
+*  If one wants to customize catalog product edit create attribute block
 
 ### 19. adminhtml_catalog_product_form_prepare_excluded_field_list
 
@@ -632,7 +632,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Action\Attribute\Tab\Attributes::_prepareForm()`:
-    
+
    ```php
     protected function _prepareForm(): void
     {
@@ -656,7 +656,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to customize catalog product edit attribute tab block
+*  If one wants to customize catalog product edit attribute tab block
 
 ### 20. adminhtml_catalog_product_grid_prepare_massaction
 
@@ -664,13 +664,13 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Grid::_prepareMassaction()`:
-    
+
    ```php
     protected function _prepareMassaction()
     {
      ...
 
-     $this->_eventManager->dispatch('adminhtml_catalog_product_grid_prepare_massaction', 
+     $this->_eventManager->dispatch('adminhtml_catalog_product_grid_prepare_massaction',
                                     ['block' => $this]);
      return $this;
     }
@@ -690,7 +690,7 @@ There are only two classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to customize Mass Actions of a catalog product grid backend block
+*  If one wants to customize Mass Actions of a catalog product grid backend block
 
 ### 21. adminhtml_cmspage_on_delete
 
@@ -698,7 +698,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Cms\Controller\Adminhtml\Page\Delete::execute()`:
-    
+
    ```php
     protected function execute()
     {
@@ -707,7 +707,7 @@ Where it was introduced:
                     'title' => $title,
                     'status' => 'success'
                 ]);
-                
+
                 return $resultRedirect->setPath('*/*/');
             } catch (\Exception $e) {
                 $this->_eventManager->dispatch(
@@ -732,7 +732,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do things on either successful or unsuccessful cms page removal
+*  If one wants to do things on either successful or unsuccessful cms page removal
 
 ### 22. adminhtml_controller_catalogrule_prepare_save
 
@@ -740,7 +740,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CatalogRule\Controller\Adminhtml\Promo\Catalog\Save::execute()`:
-    
+
    ```php
     protected function execute()
     {
@@ -767,7 +767,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to alter how a catalog price rule is being saved
+*  If one wants to alter how a catalog price rule is being saved
 
 ### 23. adminhtml_controller_salesrule_prepare_save
 
@@ -775,7 +775,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\SalesRule\Controller\Adminhtml\Promo\Quote\Save::execute()`:
-    
+
    ```php
     protected function execute()
     {
@@ -803,7 +803,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to alter how a cart price rule is being saved
+*  If one wants to alter how a cart price rule is being saved
 
 ### 24. adminhtml_customer_orders_add_action_renderer
 
@@ -811,7 +811,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Sales\Block\Adminhtml\Reorder\Renderer\Action::render()`:
-    
+
    ```php
     public function render(\Magento\Framework\DataObject $row)
     {
@@ -836,7 +836,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify the way action sales admin reorder block is rendered
+*  If one wants to modify the way action sales admin reorder block is rendered
 
 ### 25. adminhtml_customer_prepare_save
 
@@ -844,7 +844,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Customer\Controller\Adminhtml\Index\Save::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -869,7 +869,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify a customer object before it is saved in admin panel
+*  If one wants to modify a customer object before it is saved in admin panel
 
 ### 26. adminhtml_customer_save_after
 
@@ -877,7 +877,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Customer\Controller\Adminhtml\Index\Save::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -902,7 +902,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify a customer object after it is saved in admin panel
+*  If one wants to modify a customer object after it is saved in admin panel
 
 ### 27. adminhtml_product_attribute_types
 
@@ -910,7 +910,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit\Tab\Main::execute()`:
-    
+
    ```php
     private function processFrontendInputTypes(): void
     {
@@ -941,15 +941,15 @@ There are only two classes that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify the way product attributes are processed
+*  If one wants to modify the way product attributes are processed
 
-### 28. adminhtml_promo_quote_edit_tab_coupons_form_prepare_form 
+### 28. adminhtml_promo_quote_edit_tab_coupons_form_prepare_form
 
 {:.procedure}
 Where it was introduced:
 
 *  `\Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Coupons\Form::_prepareForm()`:
-    
+
    ```php
     protected function _prepareForm()
     {
@@ -972,19 +972,19 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify the admin coupon code form is generated
+*  If one wants to modify the admin coupon code form is generated
 
-### 29. adminhtml_sales_order_create_process_data 
+### 29. adminhtml_sales_order_create_process_data
 
 {:.procedure}
 Where it was introduced:
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
-    
+
    ```php
     protected function _processActionData()
     {
-    ...    
+    ...
         $eventData = [
             'order_create_model' => $this->_getOrderCreateModel(),
             'request' => $this->getRequest()->getPostValue(),
@@ -1008,7 +1008,7 @@ A few classes that fire the event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify an order after it gets processed
+*  If one wants to modify an order after it gets processed
 
 ### 30. adminhtml_sales_order_create_process_data_before
 
@@ -1016,7 +1016,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
-    
+
    ```php
     protected function _processActionData()
     {
@@ -1045,7 +1045,7 @@ A few classes that fire the event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify an order before it gets processed
+*  If one wants to modify an order before it gets processed
 
 ### 31. adminhtml_sales_order_create_process_item_after
 
@@ -1053,7 +1053,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
-    
+
    ```php
     protected function _processActionData()
     {
@@ -1082,7 +1082,7 @@ A few classes that fire the event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify an order item after it gets processed
+*  If one wants to modify an order item after it gets processed
 
 ### 32. adminhtml_sales_order_create_process_item_before
 
@@ -1090,7 +1090,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
-    
+
    ```php
     protected function _processActionData()
     {
@@ -1119,7 +1119,7 @@ A few classes that fire the event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify an order item before it gets processed
+*  If one wants to modify an order item before it gets processed
 
 ### 33. adminhtml_sales_order_creditmemo_register_before
 
@@ -1127,7 +1127,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\CreditmemoLoader::load()`:
-    
+
    ```php
     public function load()
     {
@@ -1152,7 +1152,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify a credit memo before it gets saved in the registry
+*  If one wants to modify a credit memo before it gets saved in the registry
 
 ### 34. adminhtml_store_edit_form_prepare_form
 
@@ -1160,7 +1160,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Backend\Block\System\Store\Edit\AbstractForm::_prepareForm()`:
-    
+
    ```php
     protected function _prepareForm()
     {
@@ -1183,7 +1183,7 @@ A few classes that fire the event:
 {:.procedure}
 When to listen:
 
-* if one wants to a store edit form before it gets rendered
+*  If one wants to a store edit form before it gets rendered
 
 ### 35. adminhtml_system_config_advanced_disableoutput_render_before
 
@@ -1191,7 +1191,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Config\Block\System\Config\Form\Fieldset\Modules\DisableOutput::render()`:
-    
+
    ```php
     protected function render()
     {
@@ -1216,7 +1216,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to alter modules list before they get displayed
+*  If one wants to alter modules list before they get displayed
 
 ### 36. adminhtml_widget_grid_filter_collection
 
@@ -1224,7 +1224,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Reports\Block\Adminhtml\Grid::_prepareCollection()`:
-    
+
    ```php
     protected function _prepareCollection()
     {
@@ -1249,7 +1249,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to alter report collection or filter values
+*  If one wants to alter report collection or filter values
 
 ### 37. admin_permissions_role_prepare_save
 
@@ -1257,7 +1257,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\User\Controller\Adminhtml\User\Role\SaveRole::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -1282,7 +1282,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to alter role object before it's saved
+*  If one wants to alter role object before it's saved
 
 ### 38. admin_system_config_changed_section_currency
 
@@ -1290,7 +1290,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CurrencySymbol\Model\System\Currencysymbol::setCurrencySymbolsData()`:
-    
+
    ```php
     public function setCurrencySymbolsData($symbols = [])
     {
@@ -1315,7 +1315,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after currency symbol is set in admin panel
+*  If one wants to do something after currency symbol is set in admin panel
 
 ### 39. admin_system_config_changed_section_currency_before_reinit
 
@@ -1323,7 +1323,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CurrencySymbol\Model\System\Currencysymbol::setCurrencySymbolsData()`:
-    
+
    ```php
     public function setCurrencySymbolsData($symbols = [])
     {
@@ -1348,8 +1348,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before admin configuration reinitialized
-
+*  If one wants to do something before admin configuration reinitialized
 
 ### 40. admin_system_config_changed_section_design
 
@@ -1357,7 +1356,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Theme\Model\Design\Config\Plugin::afterSave()` and `\Magento\Theme\Model\Design\Config\Plugin::afterDelete()`:
-    
+
    ```php
     public function afterSave(DesignConfigRepository $subject, DesignConfigInterface $designConfig)
     {
@@ -1367,7 +1366,7 @@ Where it was introduced:
             ['website' => $website, 'store' => $store]
         );
    ```
-   
+
    ```php
     public function afterDelete(DesignConfigRepository $subject, DesignConfigInterface $designConfig)
     {
@@ -1392,7 +1391,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after admin design section saved or deleted
+*  If one wants to do something after admin design section saved or deleted
 
 ### 41. admin_system_config_save
 
@@ -1400,7 +1399,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Config\Controller\Adminhtml\System\Config\Save::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -1414,7 +1413,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `configData` - a data array 
+*  `configData` - a data array
 *  `request` - an object of `\Magento\Framework\App\RequestInterface`
 
 {:.procedure}
@@ -1425,7 +1424,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after admin configuration is saved
+*  If one wants to do something after admin configuration is saved
 
 ### 42. admin_user_authenticate_after
 
@@ -1433,7 +1432,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\User\Model\User::authenticate()`:
-    
+
    ```php
     public function authenticate($username, $password)
     {
@@ -1477,7 +1476,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a user is authenticated
+*  If one wants to do something after a user is authenticated
 
 ### 43. admin_user_authenticate_before
 
@@ -1485,7 +1484,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\User\Model\User::authenticate()`:
-    
+
    ```php
     public function authenticate($username, $password)
     {
@@ -1510,7 +1509,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a user is authenticated
+*  If one wants to do something before a user is authenticated
 
 ### 44. amazon_customer_authenticated
 
@@ -1518,7 +1517,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Amazon\Login\Helper\Session::dispatchAuthenticationEvent()`:
-    
+
    ```php
     protected function dispatchAuthenticationEvent()
     {
@@ -1527,7 +1526,7 @@ Where it was introduced:
    ```
 
 It's used in functions:
-   
+
    ```php
     public function loginById($customerId)
     {
@@ -1538,7 +1537,7 @@ It's used in functions:
     {
         $this->dispatchAuthenticationEvent();
     ...
-    ```  
+    ```
 
 {:.procedure}
 No variables are used.
@@ -1551,7 +1550,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before an amazon user is authenticated
+*  If one wants to do something before an amazon user is authenticated
 
 ### 45. amazon_login_authorize_error
 
@@ -1559,7 +1558,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Amazon\Login\Controller\Login\Authorize::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -1581,7 +1580,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to handle an amazon login exception
+*  If one wants to handle an amazon login exception
 
 ### 46. amazon_login_authorize_validation_error
 
@@ -1589,7 +1588,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Amazon\Login\Controller\Login\Authorize::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -1611,7 +1610,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to handle a `ValidatorException` amazon login exception
+*  If one wants to handle a `ValidatorException` amazon login exception
 
 ### 47. amazon_payment_authorize_before
 
@@ -1619,7 +1618,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Amazon\Payment\Gateway\Request\AuthorizationRequestBuilder::build()`:
-    
+
    ```php
     public function build(array $buildSubject)
     {
@@ -1651,7 +1650,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before amazon authorize a payment
+*  If one wants to do something before amazon authorize a payment
 
 ### 48. amazon_payment_pending_authorization_hard_decline_after
 
@@ -1659,7 +1658,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Amazon\Payment\Model\PaymentManagement\Authorization::hardDeclinePendingAuthorization()`:
-    
+
    ```php
     protected function hardDeclinePendingAuthorization(...)
     {
@@ -1688,7 +1687,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a hard amazon payment decline
+*  If one wants to do something before a hard amazon payment decline
 
 ### 49. amazon_payment_pending_authorization_soft_decline_after
 
@@ -1696,7 +1695,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Amazon\Payment\Model\PaymentManagement\Authorization::softDeclinePendingAuthorization()`:
-    
+
    ```php
     protected function softDeclinePendingAuthorization(...)
     {
@@ -1725,7 +1724,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a soft amazon payment decline
+*  If one wants to do something before a soft amazon payment decline
 
 ### 50. assigned_theme_changed
 
@@ -1733,7 +1732,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Theme\Observer\CheckThemeIsAssignedObserver::execute()`:
-    
+
    ```php
     public function execute(EventObserver $observer)
     {
@@ -1755,7 +1754,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after an assigned theme changed 
+*  If one wants to do something after an assigned theme changed
 
 ### 51. assign_theme_to_stores_after
 
@@ -1763,7 +1762,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Theme\Model\Config::assignToStore()`:
-    
+
    ```php
     public function assignToStore(...)
     {
@@ -1790,7 +1789,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a new theme is assigned to a store
+*  If one wants to do something after a new theme is assigned to a store
 
 ### 52. backend_auth_user_login_failed
 
@@ -1798,7 +1797,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Backend\Model\Auth::login()`:
-    
+
    ```php
     public function login($username, $password)
     {
@@ -1831,7 +1830,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a backend login attempt has failed
+*  If one wants to do something after a backend login attempt has failed
 
 ### 53. backend_auth_user_login_success
 
@@ -1839,7 +1838,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Backend\Model\Auth::login()`:
-    
+
    ```php
     public function login($username, $password)
     {
@@ -1864,7 +1863,7 @@ There is only one class that fires the event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a successful backend login attempt
+*  If one wants to do something after a successful backend login attempt
 
 ### 54. backend_block_widget_grid_prepare_grid_before
 
@@ -1872,7 +1871,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Backend\Block\Widget\Grid::_prepareGrid()`:
-    
+
    ```php
     protected function _prepareGrid()
     {
@@ -1898,7 +1897,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a backend grid is prepared
+*  If one wants to do something before a backend grid is prepared
 
 ### 55. braintree_googlepay_update_quote_after
 
@@ -1906,7 +1905,7 @@ When to listen:
 Where it was introduced:
 
 *  `\PayPal\Braintree\Model\GooglePay\Helper\QuoteUpdater::updateQuote()`:
-    
+
    ```php
     private function updateQuote(Quote $quote, array $details)
     {
@@ -1932,7 +1931,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after braintree updates a quote
+*  If one wants to do something after braintree updates a quote
 
 ### 56. braintree_googlepay_update_quote_before
 
@@ -1940,7 +1939,7 @@ When to listen:
 Where it was introduced:
 
 *  `\PayPal\Braintree\Model\GooglePay\Helper\QuoteUpdater::updateQuote()`:
-    
+
    ```php
     private function updateQuote(Quote $quote, array $details)
     {
@@ -1965,7 +1964,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before braintree updates a quote
+*  If one wants to do something before braintree updates a quote
 
 ### 57. braintree_paypal_update_quote_after
 
@@ -1973,7 +1972,7 @@ When to listen:
 Where it was introduced:
 
 *  `\PayPal\Braintree\Model\Paypal\Helper\QuoteUpdater::updateQuote()`:
-    
+
    ```php
     private function updateQuote(Quote $quote, array $details)
     {
@@ -1999,7 +1998,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after braintree updates a quote
+*  If one wants to do something after braintree updates a quote
 
 ### 58. braintree_paypal_update_quote_before
 
@@ -2007,7 +2006,7 @@ When to listen:
 Where it was introduced:
 
 *  `\PayPal\Braintree\Model\Paypal\Helper\QuoteUpdater::updateQuote()`:
-    
+
    ```php
     private function updateQuote(Quote $quote, array $details)
     {
@@ -2032,7 +2031,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before braintree updates a quote
+*  If one wants to do something before braintree updates a quote
 
 ### 59. catalogrule_dirty_notice
 
@@ -2040,7 +2039,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CatalogRule\Controller\Adminhtml\Promo\Catalog\Index::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -2066,7 +2065,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something when catalog rules are dirty
+*  If one wants to do something when catalog rules are dirty
 
 ### 60. catalogsearch_reset_search_result
 
@@ -2074,7 +2073,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CatalogSearch\Model\ResourceModel\Fulltext::resetSearchResults()` and `\Magento\CatalogSearch\Model\ResourceModel\Fulltext::resetSearchResultsByStore()`:
-    
+
    ```php
     public function resetSearchResults()
     {
@@ -2103,7 +2102,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something when search results are reset
+*  If one wants to do something when search results are reset
 
 ### 61. catalogsearch_searchable_attributes_load_after
 
@@ -2111,7 +2110,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::getSearchableAttributes()`:
-    
+
    ```php
     public function getSearchableAttributes($backendType = null)
     {
@@ -2137,7 +2136,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after searchable attributes get loaded
+*  If one wants to do something after searchable attributes get loaded
 
 ### 62. catalog_block_product_list_collection
 
@@ -2145,7 +2144,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Product\ListProduct::initializeProductCollection()`:
-    
+
    ```php
     private function initializeProductCollection()
     {
@@ -2171,7 +2170,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something with a product collection after it's initialized
+*  If one wants to do something with a product collection after it's initialized
 
 ### 63. catalog_block_product_status_display
 
@@ -2179,7 +2178,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Product\AbstractProduct::displayProductStockStatus()`:
-    
+
    ```php
     public function displayProductStockStatus()
     {
@@ -2204,7 +2203,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something when **displayProductStockStatus()** function is called. 
+*  If one wants to do something when **displayProductStockStatus()** function is called.
 
 ### 64. catalog_category_change_products
 
@@ -2212,7 +2211,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\ResourceModel\Category::_saveCategoryProducts()`:
-    
+
    ```php
     protected function _saveCategoryProducts($category)
     {
@@ -2238,7 +2237,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after new products get assigned to a category, already assigned products get unassigned or positions of assigned products changed
+*  If one wants to do something after new products get assigned to a category, already assigned products get unassigned or positions of assigned products changed
 
 ### 65. catalog_category_delete_after_done
 
@@ -2246,7 +2245,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\ResourceModel\Category::delete()`:
-    
+
    ```php
     public function delete($object)
     {
@@ -2273,7 +2272,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a category gets deleted
+*  If one wants to do something after a category gets deleted
 
 ### 66. catalog_category_flat_loadnodes_before
 
@@ -2281,7 +2280,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\ResourceModel\Category\Flat::_loadNodes()`:
-    
+
    ```php
     protected function _loadNodes($parentNode = null, $recursionLevel = 0, $storeId = 0, $skipMenuFilter = false)
     {
@@ -2303,7 +2302,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify select object before category flat nodes are loaded
+*  If one wants to modify select object before category flat nodes are loaded
 
 ### 67. catalog_category_prepare_save
 
@@ -2311,7 +2310,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Controller\Adminhtml\Category\Save::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -2336,7 +2335,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify a category before it's saved
+*  if one wants to modify a category before it's saved
 
 ### 68. catalog_category_tree_init_inactive_category_ids
 
@@ -2344,8 +2343,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\ResourceModel\Category\Tree::_initInactiveCategoryIds()` and `\Magento\Catalog\Model\ResourceModel\Category\Flat::_initInactiveCategoryIds()`:
-:
-    
+
    ```php
     protected function _initInactiveCategoryIds()
     {
@@ -2369,7 +2367,7 @@ There is only two classes that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to add more inactive category IDs
+*  If one wants to add more inactive category IDs
 
 ### 69. catalog_controller_category_delete
 
@@ -2377,7 +2375,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Controller\Adminhtml\Category\Delete::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -2398,7 +2396,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a category gets deleted
+*  If one wants to do something before a category gets deleted
 
 ### 70. catalog_controller_category_init_after
 
@@ -2406,7 +2404,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Controller\Category\View::_initCategory()`:
-    
+
    ```php
     protected function _initCategory()
     {
@@ -2431,7 +2429,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a category gets initialized
+*  If one wants to do something after a category gets initialized
 
 ### 71. catalog_controller_product_init_after
 
@@ -2439,7 +2437,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Helper\Product::initProduct()`:
-    
+
    ```php
     public function initProduct($productId, $controller, $params = null)
     {
@@ -2464,7 +2462,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a product gets initialized
+*  If one wants to do something after a product gets initialized
 
 ### 72. catalog_controller_product_init_before
 
@@ -2472,7 +2470,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Helper\Product::initProduct()`:
-    
+
    ```php
     public function initProduct($productId, $controller, $params = null)
     {
@@ -2497,7 +2495,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a product gets initialized
+*  If one wants to do something before a product gets initialized
 
 ### 73. catalog_controller_product_view
 
@@ -2505,7 +2503,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Helper\Product\View::prepareAndRender()`:
-    
+
    ```php
     public function initProduct($productId, $controller, $params = null)
     {
@@ -2526,7 +2524,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a product page is displayed on the frontend
+*  If one wants to do something before a product page is displayed on the frontend
 
 ### 74. catalog_prepare_price_select
 
@@ -2534,7 +2532,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\ResourceModel\Product\Collection::_preparePriceExpressionParameters()`:
-    
+
    ```php
     protected function _preparePriceExpressionParameters($select)
     {
@@ -2567,7 +2565,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify the way prices are added to a select statement
+*  If one wants to modify the way prices are added to a select statement
 
 ### 75. catalog_product_attribute_update_before
 
@@ -2575,7 +2573,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\Product\Action::updateAttributes()`:
-    
+
    ```php
     public function updateAttributes($productIds, $attrData, $storeId)
     {
@@ -2600,7 +2598,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a product attribute(s) gets updated
+*  If one wants to do something before a product attribute(s) gets updated
 
 ### 76. catalog_product_collection_apply_limitations_after
 
@@ -2608,7 +2606,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\ResourceModel\Product\Collection::_applyProductLimitations()`:
-    
+
    ```php
     protected function _applyProductLimitations()
     {
@@ -2633,7 +2631,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after product collection limitations have been applied
+*  If one wants to do something after product collection limitations have been applied
 
 ### 77. catalog_product_collection_before_add_count_to_categories
 
@@ -2641,7 +2639,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\ResourceModel\Product\Collection::addCountToCategories()`:
-    
+
    ```php
     public function addCountToCategories($categoryCollection)
     {
@@ -2666,7 +2664,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before category counts get added to a product collection
+*  If one wants to do something before category counts get added to a product collection
 
 ### 78. catalog_product_collection_load_after
 
@@ -2674,7 +2672,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\ResourceModel\Product\Collection::_afterLoad()`:
-    
+
    ```php
     protected function _afterLoad()
     {
@@ -2696,7 +2694,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a product collection gets loaded
+*  If one wants to do something after a product collection gets loaded
 
 ### 79. catalog_product_compare_add_product
 
@@ -2704,7 +2702,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Controller\Product\Compare\Add::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -2725,7 +2723,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a product gets added to a compare list
+*  If one wants to do something after a product gets added to a compare list
 
 ### 80. catalog_product_compare_item_collection_clear
 
@@ -2733,7 +2731,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\ResourceModel\Product\Compare\Item\Collection::clear()`:
-    
+
    ```php
     public function clear()
     {
@@ -2755,7 +2753,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a compare list collection gets cleared
+*  If one wants to do something after a compare list collection gets cleared
 
 ### 81. catalog_product_compare_remove_product
 
@@ -2763,7 +2761,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Controller\Product\Compare\Remove::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -2788,7 +2786,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a product gets removed from a compare list
+*  If one wants to do something after a product gets removed from a compare list
 
 ### 82. catalog_product_delete_after_done
 
@@ -2796,7 +2794,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\ResourceModel\Product::delete()`:
-    
+
    ```php
     public function delete($object)
     {
@@ -2822,7 +2820,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a product gets deleted
+*  If one wants to do something after a product gets deleted
 
 ### 83. catalog_product_edit_action
 
@@ -2830,7 +2828,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Controller\Adminhtml\Product\Edit::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -2852,7 +2850,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a product gets edited in admin panel
+*  If one wants to do something after a product gets edited in admin panel
 
 ### 84. catalog_product_gallery_prepare_layout
 
@@ -2860,7 +2858,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content::_prepareLayout()`:
-    
+
    ```php
     protected function _prepareLayout()
     {
@@ -2881,7 +2879,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify the way a product admin gallery block layout is rendered
+*  If one wants to modify the way a product admin gallery block layout is rendered
 
 ### 85. catalog_product_gallery_upload_image_after
 
@@ -2889,7 +2887,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Controller\Adminhtml\Product\Gallery\Upload::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -2914,7 +2912,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to perform an action after product gallery image gets uploaded
+*  If one wants to perform an action after product gallery image gets uploaded
 
 ### 86. catalog_product_get_final_price
 
@@ -2922,7 +2920,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\Product\Type\Price::getFinalPrice()`:
-    
+
    ```php
     public function getFinalPrice($qty, $product)
     {
@@ -2958,7 +2956,7 @@ Where it was introduced:
                     'catalog_product_get_final_price',
                     ['product' => $product, 'qty' => $bundleQty]
                 );
-  ```  
+  ```
 
 {:.procedure}
 Variables passed:
@@ -2976,7 +2974,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to alter the way the final product price is generated
+*  If one wants to alter the way the final product price is generated
 
 ### 87. catalog_product_import_bunch_delete_after
 
@@ -2984,7 +2982,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CatalogImportExport\Model\Import\Product::_deleteProducts()`:
-    
+
    ```php
     protected function _deleteProducts()
     {
@@ -3009,7 +3007,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to perform an action after products get deleted
+*  If one wants to perform an action after products get deleted
 
 ### 88. catalog_product_import_bunch_delete_commit_before
 
@@ -3017,7 +3015,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CatalogImportExport\Model\Import\Product::_deleteProducts()`:
-    
+
    ```php
     protected function _deleteProducts()
     {
@@ -3047,7 +3045,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to perform an action before products get deleted
+*  If one wants to perform an action before products get deleted
 
 ### 89. catalog_product_import_bunch_save_after
 
@@ -3055,7 +3053,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CatalogImportExport\Model\Import\Product::_saveProducts()`:
-    
+
    ```php
     protected function _deleteProducts()
     {
@@ -3080,7 +3078,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to perform an action after products get saved
+*  If one wants to perform an action after products get saved
 
 ### 90. catalog_product_import_finish_before
 
@@ -3088,7 +3086,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CatalogImportExport\Model\Import\Product::_importData()`:
-    
+
    ```php
     protected function _importData()
     {
@@ -3109,7 +3107,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to perform an action before a product import is finished
+*  If one wants to perform an action before a product import is finished
 
 ### 91. catalog_product_is_salable_after
 
@@ -3117,7 +3115,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\Product::isSalable()`:
-    
+
    ```php
     public function isSalable()
     {
@@ -3144,7 +3142,7 @@ There are two classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to perform an action after it checks if a product is available for sale
+*  If one wants to perform an action after it checks if a product is available for sale
 
 ### 92. catalog_product_is_salable_before
 
@@ -3152,7 +3150,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\Product::isSalable()`:
-    
+
    ```php
     public function isSalable()
     {
@@ -3174,7 +3172,7 @@ There are two classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to perform an action before it checks if a product is available for sale
+*  If one wants to perform an action before it checks if a product is available for sale
 
 ### 93. catalog_product_new_action
 
@@ -3182,7 +3180,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Controller\Adminhtml\Product\NewAction::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -3205,7 +3203,7 @@ There are three classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to perform an action after a new product is created
+*  If one wants to perform an action after a new product is created
 
 ### 94. catalog_product_option_price_configuration_after
 
@@ -3213,7 +3211,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Bundle\Block\Catalog\Product\View\Type\Bundle::getJsonConfig()` and `\Magento\Catalog\Block\Product\View\Options::getJsonConfig()`:
-    
+
    ```php
     public function getJsonConfig()
     {
@@ -3226,7 +3224,6 @@ Where it was introduced:
         $this->_eventManager->dispatch('catalog_product_option_price_configuration_after', ['configObj' => $configObj]);
 
    ```
-
 
 {:.procedure}
 Variables passed:
@@ -3242,7 +3239,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify json representation of product price options
+*  If one wants to modify json representation of product price options
 
 ### 95. catalog_product_prepare_index_select
 
@@ -3250,7 +3247,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Bundle\Model\ResourceModel\Indexer\Price::prepareBundlePriceByType()`:
-    
+
    ```php
     private function prepareBundlePriceByType($priceType, array $dimensions, $entityIds = null)
     {
@@ -3282,7 +3279,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to alter temporary price index data for bundle products
+*  If one wants to alter temporary price index data for bundle products
 
 ### 96. catalog_product_to_website_change
 
@@ -3290,7 +3287,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\Product\Action::updateWebsites()`:
-    
+
    ```php
     public function updateWebsites($productIds, $websiteIds, $type)
     {
@@ -3311,7 +3308,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after product websites have been updated
+*  If one wants to do something after product websites have been updated
 
 ### 97. catalog_product_upsell
 
@@ -3319,7 +3316,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Product\ProductList\Upsell::_prepareData()`:
-    
+
    ```php
     protected function _prepareData()
     {
@@ -3345,7 +3342,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do modify a product's upsell collection
+*  If one wants to do modify a product's upsell collection
 
 ### 98. catalog_product_validate_variations_before
 
@@ -3353,7 +3350,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\ConfigurableProduct\Model\Product\Validator\Plugin::_validateProductVariations()`:
-    
+
    ```php
     protected function _validateProductVariations(Product $parentProduct, array $products, RequestInterface $request)
     {
@@ -3378,7 +3375,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a product variations attributes validation
+*  If one wants to do something before a product variations attributes validation
 
 ### 99. catalog_product_view_config
 
@@ -3386,7 +3383,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Block\Product\View::getJsonConfig()`:
-    
+
    ```php
     public function getJsonConfig()
     {
@@ -3409,7 +3406,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something a JSON encoded product configuration
+*  If one wants to do something a JSON encoded product configuration
 
 ### 100. category_move
 
@@ -3417,7 +3414,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Model\Category::move()`:
-    
+
    ```php
     public function move($parentId, $afterCategoryId)
     {
@@ -3438,7 +3435,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a category has been moved
+*  If one wants to do something after a category has been moved
 
 ### 101. category_prepare_ajax_response
 
@@ -3446,7 +3443,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Controller\Adminhtml\Category::ajaxRequestResponse()`:
-    
+
    ```php
     protected function ajaxRequestResponse($category, $resultPage)
     {
@@ -3472,7 +3469,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify category ajax response object
+*  If one wants to modify category ajax response object
 
 ### 102. catelogsearch_searchable_attributes_load_after
 
@@ -3480,7 +3477,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::getSearchableAttributes()`:
-    
+
    ```php
     public function getSearchableAttributes($backendType = null)
     {
@@ -3505,7 +3502,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify a searchable attributes array
+*  If one wants to modify a searchable attributes array
 
 ### 103. checkout_allow_guest
 
@@ -3513,7 +3510,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Helper\Data::isAllowedGuestCheckout()`:
-    
+
    ```php
     public function isAllowedGuestCheckout(\Magento\Quote\Model\Quote $quote, $store = null)
     {
@@ -3529,7 +3526,7 @@ Variables passed:
 
 *  `quote` - an object of `\Magento\Quote\Model\Quote`
 *  `store` - an integer or an object of `\Magento\Store\Model\Store`
-*  `result` - an object of `\Magento\Framework\DataObject` 
+*  `result` - an object of `\Magento\Framework\DataObject`
 
 {:.procedure}
 There is only one class that fires this event:
@@ -3539,7 +3536,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to modify the allow guest checkout check (or do something if it's on)
+*  If one wants to modify the allow guest checkout check (or do something if it's on)
 
 ### 104. checkout_cart_add_product_complete
 
@@ -3547,7 +3544,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Controller\Cart\Add::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -3573,7 +3570,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a product has been added to the cart
+*  If one wants to do something after a product has been added to the cart
 
 ### 105. checkout_cart_product_add_before
 
@@ -3581,7 +3578,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Model\Cart::addProduct()`:
-    
+
    ```php
     public function addProduct($productInfo, $requestInfo = null)
     {
@@ -3595,7 +3592,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `info` - an integer or an array or an object of `\Magento\Framework\DataObject` 
+*  `info` - an integer or an array or an object of `\Magento\Framework\DataObject`
 *  `product` - an object of `\Magento\Catalog\Model\Product`
 
 {:.procedure}
@@ -3606,7 +3603,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a product has been added to the cart
+*  If one wants to do something before a product has been added to the cart
 
 ### 106. checkout_cart_product_update_after
 
@@ -3614,7 +3611,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Model\Cart::updateItem()`:
-    
+
    ```php
     public function updateItem($itemId, $requestInfo = null, $updatingParams = null)
     {
@@ -3628,7 +3625,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `quote_item` - an object of `\Magento\Quote\Model\Quote\Item` 
+*  `quote_item` - an object of `\Magento\Quote\Model\Quote\Item`
 *  `product` - an object of `\Magento\Catalog\Model\Product`
 
 {:.procedure}
@@ -3639,7 +3636,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a cart item has been updated
+*  If one wants to do something after a cart item has been updated
 
 ### 107. checkout_cart_save_after
 
@@ -3647,7 +3644,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Model\Cart::save()`:
-    
+
    ```php
     public function save()
     {
@@ -3658,7 +3655,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `cart` - an object of `\Magento\Checkout\Model\Cart` 
+*  `cart` - an object of `\Magento\Checkout\Model\Cart`
 
 {:.procedure}
 There is only one class that fires this event:
@@ -3668,7 +3665,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a cart has been saved
+*  If one wants to do something after a cart has been saved
 
 ### 108. checkout_cart_save_before
 
@@ -3676,7 +3673,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Model\Cart::save()`:
-    
+
    ```php
     public function save()
     {
@@ -3687,7 +3684,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `cart` - an object of `\Magento\Checkout\Model\Cart` 
+*  `cart` - an object of `\Magento\Checkout\Model\Cart`
 
 {:.procedure}
 There is only one class that fires this event:
@@ -3697,7 +3694,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a cart is updated
+*  If one wants to do something before a cart is updated
 
 ### 109. checkout_cart_update_items_after
 
@@ -3705,7 +3702,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Model\Cart::updateItems()`:
-    
+
    ```php
     public function updateItems($data)
     {
@@ -3719,7 +3716,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `cart` - an object of `\Magento\Checkout\Model\Cart` 
+*  `cart` - an object of `\Magento\Checkout\Model\Cart`
 *  `info` - an object of `\Magento\Framework\DataObject`
 
 {:.procedure}
@@ -3730,7 +3727,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after cart items have been updated
+*  If one wants to do something after cart items have been updated
 
 ### 110. checkout_cart_update_items_before
 
@@ -3738,7 +3735,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Model\Cart::updateItems()`:
-    
+
    ```php
     public function updateItems($data)
     {
@@ -3752,7 +3749,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `cart` - an object of `\Magento\Checkout\Model\Cart` 
+*  `cart` - an object of `\Magento\Checkout\Model\Cart`
 *  `info` - an object of `\Magento\Framework\DataObject`
 
 {:.procedure}
@@ -3763,7 +3760,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before cart items are updated
+*  If one wants to do something before cart items are updated
 
 ### 111. checkout_cart_update_item_complete
 
@@ -3771,7 +3768,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Controller\Cart\UpdateItemOptions::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -3785,7 +3782,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `item` - an object of `\Magento\Quote\Model\Quote\Item` 
+*  `item` - an object of `\Magento\Quote\Model\Quote\Item`
 *  `request` - an object of `\Magento\Framework\App\RequestInterface`
 *  `response` - an object of `\Magento\Framework\App\ResponseInterface`
 
@@ -3797,7 +3794,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something once a cart item update is complete
+*  If one wants to do something once a cart item update is complete
 
 ### 112. checkout_controller_multishipping_shipping_post
 
@@ -3805,7 +3802,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Multishipping\Controller\Checkout\ShippingPost::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -3830,7 +3827,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a multishipping shipping method is set
+*  If one wants to do something before a multishipping shipping method is set
 
 ### 113. checkout_controller_onepage_saveOrder
 
@@ -3838,7 +3835,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Controller\Onepage\SaveOrder::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -3866,7 +3863,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after an attempt to place an order has been made (successful or not)
+*  If one wants to do something after an attempt to place an order has been made (successful or not)
 
 ### 114. checkout_multishipping_refund_all
 
@@ -3874,7 +3871,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Multishipping\Model\Checkout\Type\Multishipping::createOrders()`:
-    
+
    ```php
     public function execute()
     {
@@ -3899,7 +3896,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do catch a moment when multishipping orders failed to be placed
+*  If one wants to do catch a moment when multishipping orders failed to be placed
 
 ### 115. checkout_onepage_controller_success_action
 
@@ -3907,7 +3904,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Controller\Onepage\Success::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -3935,7 +3932,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something when an onepage checkout success page is rendered
+*  If one wants to do something when an onepage checkout success page is rendered
 
 ### 116. checkout_quote_destroy
 
@@ -3943,7 +3940,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Model\Session::clearQuote()`:
-    
+
    ```php
     public function clearQuote()
     {
@@ -3964,7 +3961,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something when a session quote is cleared
+*  If one wants to do something when a session quote is cleared
 
 ### 117. checkout_quote_init
 
@@ -3972,7 +3969,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Model\Session::getQuote()`:
-    
+
    ```php
     public function getQuote()
     {
@@ -3993,7 +3990,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something when a session quote is initialized
+*  If one wants to do something when a session quote is initialized
 
 ### 118. checkout_submit_all_after
 
@@ -4001,7 +3998,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Model\Type\Onepage::saveOrder()`:
-    
+
    ```php
     public function saveOrder()
     {
@@ -4025,7 +4022,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\Multishipping\Model\Checkout\Type\Multishipping::createOrders()`:
-   
+
    ```php
    public function createOrders()
    {
@@ -4040,7 +4037,7 @@ Where it was introduced:
 
    ```php
    public function placeOrder($cartId, PaymentInterface $paymentMethod = null)
-   {  
+   {
    ...
    $this->eventManager->dispatch('checkout_submit_all_after', ['order' => $order, 'quote' => $quote]);
    ```
@@ -4062,7 +4059,7 @@ There are four classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after an order was placed
+*  If one wants to do something after an order was placed
 
 ### 119. checkout_submit_before
 
@@ -4070,7 +4067,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Quote\Model\QuoteManagement::placeOrder()`:
-    
+
    ```php
     public function placeOrder($cartId, PaymentInterface $paymentMethod = null)
     {
@@ -4091,7 +4088,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something when befor a quote is submitted
+*  If one wants to do something when befor a quote is submitted
 
 ### 120. checkout_type_multishipping_create_orders_single
 
@@ -4099,7 +4096,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Multishipping\Model\Checkout\Type\Multishipping::createOrders()`:
-    
+
    ```php
     public function createOrders()
     {
@@ -4125,7 +4122,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a single order is placed within a multishipping checkout
+*  If one wants to do something after a single order is placed within a multishipping checkout
 
 ### 121. checkout_type_multishipping_set_shipping_items
 
@@ -4133,7 +4130,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Multishipping\Model\Checkout\Type\Multishipping::setShippingItemsInformation()`:
-    
+
    ```php
     public function setShippingItemsInformation($info)
     {
@@ -4154,7 +4151,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after shipping information is set within a mutlishipping checkout
+*  If one wants to do something after shipping information is set within a mutlishipping checkout
 
 ### 122. checkout_type_onepage_save_order_after
 
@@ -4162,7 +4159,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Checkout\Model\Type\Onepage::saveOrder()`:
-    
+
    ```php
     public function saveOrder()
     {
@@ -4187,7 +4184,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after an order is saved within a onepage checkout
+*  If one wants to do something after an order is saved within a onepage checkout
 
 ### 123. clean_cache_after_reindex
 
@@ -4195,7 +4192,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Indexer\Model\Processor\CleanCache::afterUpdateMview()`:
-    
+
    ```php
     public function afterUpdateMview(\Magento\Indexer\Model\Processor $subject)
     {
@@ -4216,7 +4213,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before indexed item cache entries are cleared
+*  If one wants to do something before indexed item cache entries are cleared
 
 ### 124. clean_cache_by_tags
 
@@ -4224,7 +4221,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\Model\AbstractModel::afterSave()`:
-    
+
    ```php
    public function afterSave()
    {
@@ -4233,7 +4230,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\Framework\Model\AbstractModel::afterDelete()`:
-    
+
    ```php
    public function afterSave()
    {
@@ -4242,7 +4239,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\CatalogInventory\Model\Indexer\Stock\CacheCleaner::clean()`:
-   
+
    ```php
    public function clean(array $productIds, callable $reindex)
    {
@@ -4251,7 +4248,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\Catalog\Plugin\Model\Product\Action\UpdateAttributesFlushCache::afterUpdateAttributes()`:
-   
+
    ```php
    public function afterUpdateAttributes(
         \Magento\Catalog\Model\Product\Action $subject,
@@ -4263,17 +4260,17 @@ Where it was introduced:
    ```
 
 *  `\Magento\Catalog\Plugin\Model\Product\Action\UpdateAttributesFlushCache::afterUpdateWebsites()`:
-    
-   ```php   
+
+   ```php
    public function afterUpdateWebsites(
         \Magento\Catalog\Model\Product\Action $subject
     ) {
         $this->eventManager->dispatch('clean_cache_by_tags', ['object' => $this->cacheContext]);
    }
-   ```   
+   ```
 
 *  `\Magento\Catalog\Model\Category::move()`:
-    
+
    ```php
    public function move($parentId, $afterCategoryId)
    {
@@ -4282,7 +4279,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\Catalog\Model\Indexer\Product\Category\Action\Rows::execute()`:
-   
+
    ```php
    public function execute(array $entityIds = [], $useTempTable = false)
    {
@@ -4291,13 +4288,13 @@ Where it was introduced:
    ```
 
 *  `\Magento\Catalog\Model\Indexer\Category\Product\Action\Rows::execute()`:
-    
+
    ```php
    public function execute(array $entityIds = [], $useTempTable = false)
    {
    ...
    $this->eventManager->dispatch('clean_cache_by_tags', ['object' => $this->cacheContext]);
-   ``` 
+   ```
 
 *  `\Magento\InventoryCache\Model\FlushCacheByProductIds::execute()`:
 
@@ -4309,7 +4306,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\CatalogRule\Model\Indexer\AbstractIndexer::executeFull()`:
-  
+
    ```php
    public function executeFull()
    {
@@ -4318,12 +4315,12 @@ Where it was introduced:
    ```
 
 *  `\Magento\Indexer\Model\Indexer\CacheCleaner::cleanCache()`:
-   
+
    ```php
    private function cleanCache()
    {
         $this->eventManager->dispatch('clean_cache_by_tags', ['object' => $this->cacheContext]);
-   ``` 
+   ```
 
 *  `\Magento\Indexer\Model\Processor\CleanCache::afterReindexAllInvalid()`:
 
@@ -4332,7 +4329,6 @@ Where it was introduced:
    {
    $this->eventManager->dispatch('clean_cache_by_tags', ['object' => $this->context]);
    ```
-
 
 {:.procedure}
 Variables passed:
@@ -4349,7 +4345,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something at the time specific tags are cleaned from cache
+*  If one wants to do something at the time specific tags are cleaned from cache
 
 ### 125. clean_catalog_images_cache_after
 
@@ -4357,7 +4353,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Backend\Controller\Adminhtml\Cache\CleanImages::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -4378,7 +4374,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after image cache has been cleared
+*  If one wants to do something after image cache has been cleared
 
 ### 126. clean_media_cache_after
 
@@ -4386,7 +4382,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Backend\Controller\Adminhtml\Cache\CleanMedia::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -4407,7 +4403,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after Javascript/CSS cache has been cleared
+*  If one wants to do something after Javascript/CSS cache has been cleared
 
 ### 127. clean_static_files_cache_after
 
@@ -4415,7 +4411,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Backend\Controller\Adminhtml\Cache\CleanStaticFiles::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -4436,7 +4432,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after static files cache has been cleared
+*  If one wants to do something after static files cache has been cleared
 
 ### 128. cms_controller_router_match_before
 
@@ -4444,7 +4440,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Cms\Controller\Router::match()`:
-    
+
    ```php
     public function match(\Magento\Framework\App\RequestInterface $request)
     {
@@ -4469,7 +4465,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a cms page is matched
+*  If one wants to do something before a cms page is matched
 
 ### 129. cms_page_prepare_save
 
@@ -4477,7 +4473,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Cms\Controller\Adminhtml\Page\Save::execute()`:
-    
+
    ```php
     public function execute()
     {
@@ -4502,7 +4498,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a cms page is saved
+*  If one wants to do something before a cms page is saved
 
 ### 130. cms_page_render
 
@@ -4510,7 +4506,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Cms\Helper\Page::prepareResultPage()`:
-    
+
    ```php
     public function prepareResultPage(ActionInterface $action, $pageId = null)
     {
@@ -4536,7 +4532,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something before a cms page is rendered
+*  If one wants to do something before a cms page is rendered
 
 ### 131. cms_wysiwyg_images_static_urls_allowed
 
@@ -4544,7 +4540,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Cms\Helper\Wysiwyg\Images::isUsingStaticUrlsAllowed()`:
-    
+
    ```php
     public function isUsingStaticUrlsAllowed()
     {
@@ -4569,7 +4565,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do change whether using static URLs is allowed or not
+*  If one wants to do change whether using static URLs is allowed or not
 
 ### 132. controller_action_catalog_product_save_entity_after
 
@@ -4577,7 +4573,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Catalog\Controller\Adminhtml\Product\Save::execute()`:
-    
+
    ```php
    public function execute()
    {
@@ -4592,7 +4588,7 @@ Where it was introduced:
 Variables passed:
 
 *  `product` - an object of `\Magento\Catalog\Model\Product`
-*  `controller` - an object of `\Magento\Catalog\Controller\Adminhtml\Product\Save` 
+*  `controller` - an object of `\Magento\Catalog\Controller\Adminhtml\Product\Save`
 
 {:.procedure}
 There are only there classes that fire this event:
@@ -4604,7 +4600,7 @@ There are only there classes that fire this event:
 {:.procedure}
 When to listen:
 
-* if one wants to do something after a product has been saved in backend
+*  If one wants to do something after a product has been saved in backend
 
 ### 133. controller_action_inventory_populate_source_with_data
 
@@ -4612,7 +4608,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\InventoryAdminUi\Controller\Adminhtml\Source\Save::processSave()`:
-    
+
    ```php
    private function processSave(SourceInterface $source, array $requestData)
    {
@@ -4648,7 +4644,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\InventoryAdminUi\Model\Stock\StockSaveProcessor::process()`:
-    
+
    ```php
    public function process($stockId, RequestInterface $request): int
    {
@@ -4684,7 +4680,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\InventoryAdminUi\Controller\Adminhtml\Source\Save::processSave()`:
-    
+
    ```php
    private function processSave(SourceInterface $source, array $requestData)
    {
@@ -4720,7 +4716,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\App\View::renderLayout()`:
-    
+
    ```php
    public function renderLayout($output = '')
    {
@@ -4741,7 +4737,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something before page layout is rendered
+*  If one wants to do something before page layout is rendered
 
 ### 137. controller_action_nocookies
 
@@ -4749,7 +4745,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Cookie\Controller\Index\NoCookies::execute()`:
-    
+
    ```php
    public function execute()
    {
@@ -4763,7 +4759,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `action` - an object of `\Magento\Cookie\Controller\Index\NoCookies`   
+*  `action` - an object of `\Magento\Cookie\Controller\Index\NoCookies`
 *  `redirect` - an object of `\Magento\Framework\DataObject`
 
 {:.procedure}
@@ -4774,7 +4770,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something before a nocookies page is rendered
+*  If one wants to do something before a nocookies page is rendered
 
 ### 138. controller_action_noroute
 
@@ -4782,19 +4778,19 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\Controller\Noroute\Index::execute()`:
-    
+
    ```php
    public function execute()
    {
    ....
-   $this->_eventManager->dispatch('controller_action_noroute', 
+   $this->_eventManager->dispatch('controller_action_noroute',
        ['action' => $this, 'status' => $status]);
    ```
 
 {:.procedure}
 Variables passed:
 
-*  `action` - an object of `\Magento\Cookie\Controller\Index\NoCookies`   
+*  `action` - an object of `\Magento\Cookie\Controller\Index\NoCookies`
 *  `status` - an object of `\Magento\Framework\DataObject`
 
 {:.procedure}
@@ -4805,7 +4801,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something before a 404 page is rendered
+*  If one wants to do something before a 404 page is rendered
 
 ### 139. controller_action_postdispatch
 
@@ -4813,7 +4809,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\App\Action\Plugin\EventDispatchPlugin::dispatchPostDispatchEvents()`:
-    
+
    ```php
    private function dispatchPostDispatchEvents(ActionInterface $action)
    {
@@ -4824,7 +4820,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `controller_action` - an object of `\Magento\Framework\App\ActionInterface`   
+*  `controller_action` - an object of `\Magento\Framework\App\ActionInterface`
 *  `request` - an object of `\Magento\Framework\App\RequestInterface`
 
 {:.procedure}
@@ -4835,7 +4831,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something when postdispatch events are fired
+*  If one wants to do something when postdispatch events are fired
 
 ### 140. controller_action_predispatch
 
@@ -4843,7 +4839,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\App\Action\Plugin\EventDispatchPlugin::dispatchPreDispatchEvents()`:
-    
+
    ```php
    private function dispatchPreDispatchEvents(ActionInterface $action)
    {
@@ -4854,7 +4850,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `controller_action` - an object of `\Magento\Framework\App\ActionInterface`   
+*  `controller_action` - an object of `\Magento\Framework\App\ActionInterface`
 *  `request` - an object of `\Magento\Framework\App\RequestInterface`
 
 {:.procedure}
@@ -4865,7 +4861,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something when predispatch events are fired
+*  If one wants to do something when predispatch events are fired
 
 ### 141. controller_front_send_response_before
 
@@ -4873,7 +4869,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\App\Http::launch()`:
-    
+
    ```php
    public function launch()
    {
@@ -4886,7 +4882,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `response` - an object of `\Magento\Framework\App\Response\Http`   
+*  `response` - an object of `\Magento\Framework\App\Response\Http`
 *  `request` - an object of `\Magento\Framework\App\Request\Http`
 
 {:.procedure}
@@ -4897,7 +4893,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something before sending application output
+*  If one wants to do something before sending application output
 
 ### 142. core_app_init_current_store_after
 
@@ -4905,7 +4901,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\TestFramework\Store\StoreManager::dispatchInitCurrentStoreAfterEvent()`:
-    
+
    ```php
    protected function dispatchInitCurrentStoreAfterEvent()
    {
@@ -4926,7 +4922,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something after the current store is initialized in test cases
+*  If one wants to do something after the current store is initialized in test cases
 
 ### 143. core_collection_abstract_load_after
 
@@ -4934,7 +4930,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection::_afterLoad()`:
-    
+
    ```php
    protected function _afterLoad()
    {
@@ -4956,7 +4952,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something after a collection is loaded
+*  If one wants to do something after a collection is loaded
 
 ### 144. core_collection_abstract_load_before
 
@@ -4964,7 +4960,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection::_beforeLoad()`:
-    
+
    ```php
    protected function _beforeLoad()
    {
@@ -4986,7 +4982,7 @@ A few classes that fire this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something before a collection is loaded
+*  If one wants to do something before a collection is loaded
 
 ### 145. core_layout_block_create_after
 
@@ -4994,7 +4990,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\View\Layout\Generator\Block::process()`:
-    
+
    ```php
    public function process(Layout\Reader\Context $readerContext, Layout\Generator\Context $generatorContext)
    {
@@ -5015,7 +5011,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something after a particular block is created
+*  If one wants to do something after a particular block is created
 
 ### 146. core_layout_render_element
 
@@ -5023,7 +5019,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\View\Layout::renderElement()`:
-    
+
    ```php
    public function renderElement($name, $useCache = true)
    {
@@ -5037,7 +5033,7 @@ Where it was introduced:
 {:.procedure}
 Variables passed:
 
-*  `element_name` - an element name string 
+*  `element_name` - an element name string
 *  `layout` - an object of `\Magento\Framework\View\Layout`
 *  `transport` - an object of `\Magento\Framework\DataObject`
 
@@ -5049,7 +5045,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something when a layout element is rendered
+*  If one wants to do something when a layout element is rendered
 
 ### 147. cron_job_run
 
@@ -5057,7 +5053,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Cron\Observer\ProcessCronQueueObserver::_runJob()`:
-    
+
    ```php
    protected function _runJob($scheduledTime, $currentTime, $jobConfig, $schedule, $groupId)
    {
@@ -5078,7 +5074,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something before a particular cron job is run
+*  If one wants to do something before a particular cron job is run
 
 ### 148. currency_display_options_forming
 
@@ -5086,7 +5082,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Framework\Locale\Currency::getCurrency()`:
-    
+
    ```php
    public function getCurrency($currency)
    {
@@ -5111,7 +5107,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something after getting getting a currency object by currency code
+*  If one wants to do something after getting getting a currency object by currency code
 
 ### 149. customer_account_edited
 
@@ -5119,7 +5115,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Customer\Controller\Account\EditPost::dispatchSuccessEvent()`:
-    
+
    ```php
    private function dispatchSuccessEvent(\Magento\Customer\Api\Data\CustomerInterface $customerCandidateDataObject)
    {
@@ -5143,7 +5139,7 @@ There is only one class that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something after a customer has been successfully edited
+*  If one wants to do something after a customer has been successfully edited
 
 ### 150. customer_address_format
 
@@ -5151,7 +5147,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Sales\Model\Order\Address\Renderer::format()`:
-    
+
    ```php
    public function format(Address $address, $type)
    {
@@ -5161,7 +5157,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\Customer\Model\Address\AbstractAddress::format()`:
-    
+
    ```php
    public function format(Address $address, $type)
    {
@@ -5186,7 +5182,7 @@ There are three classes that fire this event:
 {:.procedure}
 When to listen:
 
-* If one wants to alter the way an address is formatted
+*  If one wants to alter the way an address is formatted
 
 ### 151. customer_customer_authenticated
 
@@ -5194,7 +5190,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Customer\Model\Customer::authenticate()`:
-    
+
    ```php
    public function authenticate($login, $password)
    {
@@ -5207,7 +5203,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\Customer\Model\AccountManagement::authenticate()`:
-    
+
    ```php
    public function authenticate($username, $password)
    {
@@ -5235,7 +5231,7 @@ There are three classes that fire this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something after a customer has been authenticated
+*  If one wants to do something after a customer has been authenticated
 
 ### 152. customer_data_object_login
 
@@ -5243,7 +5239,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Customer\Model\Session::setCustomerAsLoggedIn()`:
-    
+
    ```php
    public function setCustomerAsLoggedIn($customer)
    {
@@ -5253,7 +5249,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\Customer\Model\Session::setCustomerDataAsLoggedIn()`:
-    
+
    ```php
    public function setCustomerDataAsLoggedIn($customer)
    {
@@ -5263,7 +5259,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\Customer\Model\AccountManagement::authenticate()`:
-    
+
    ```php
    public function authenticate($username, $password)
    {
@@ -5286,7 +5282,7 @@ There are two classes that fire this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something after a customer has been logged in
+*  If one wants to do something after a customer has been logged in
 
 ### 153. customer_login
 
@@ -5294,7 +5290,7 @@ When to listen:
 Where it was introduced:
 
 *  `\Magento\Customer\Model\Session::setCustomerAsLoggedIn()`:
-    
+
    ```php
    public function setCustomerAsLoggedIn($customer)
    {
@@ -5304,7 +5300,7 @@ Where it was introduced:
    ```
 
 *  `\Magento\Customer\Model\Session::setCustomerDataAsLoggedIn()`:
-    
+
    ```php
    public function setCustomerDataAsLoggedIn($customer)
    {
@@ -5314,7 +5310,7 @@ Where it was introduced:
    ```
 
 * `\Magento\Integration\Model\CustomerTokenService::createCustomerAccessToken()`:
-   
+
   ```php
   public function createCustomerAccessToken($username, $password)
   {
@@ -5336,15 +5332,15 @@ There are two classes that fire this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something after a customer has been logged in
+*  If one wants to do something after a customer has been logged in
 
-### 154. customer_logout 
+### 154. customer_logout
 
 {:.procedure}
 Where it was introduced:
 
 *  `\Magento\Customer\Model\Session::logout()`:
-    
+
    ```php
    public function logout()
    {
@@ -5365,7 +5361,7 @@ There is one classe that fires this event:
 {:.procedure}
 When to listen:
 
-* If one wants to do something before a customer is logged out 
+*  If one wants to do something before a customer is logged out
 
 ### 155. customer_register_success
 
