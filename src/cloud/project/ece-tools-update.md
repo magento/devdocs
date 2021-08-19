@@ -9,10 +9,10 @@ functional_areas:
   - Upgrade
 ---
 
-An update to the `{{site.data.var.ct}}` package also updates the other [{{site.data.var.csuite}} packages][], which are dependencies for `{{site.data.var.ct}}`. Therefore, you must use a version of {{site.data.var.ece}} that supports the `{{site.data.var.ct}}` package. The `composer.json` file includes a dependency for the `magento-cloud/metapackage` and uses `{{site.data.var.ct}}` commands to run build, deploy, and post-deploy hooks defined in the  `.magento.app.yaml` file.
+An update to the `{{site.data.var.ct}}` package also updates the other [{{site.data.var.csuite}} packages][], which are dependencies for `{{site.data.var.ct}}`. Therefore, you must use a version of {{site.data.var.ece}} that supports the `{{site.data.var.ct}}` package.
 
 {:.bs-callout-warning}
-If you use a version of {{site.data.var.ece}} that does not contain the {{site.data.var.ct}} package, then you must perform a one-time [upgrade][upgrade-project] to your cloud project to remove deprecated packages.
+If you use a version of {{site.data.var.ece}} that does not contain the {{site.data.var.ct}} package, then you must perform a one-time [upgrade][upgrade-project] to your cloud project to remove deprecated packages. To verify the {{site.data.var.ct}} package is installed, retrieve the Commerce version using the `php vendor/bin/ece-tools -V` command at your local project root directory.
 
 **Prerequisites**:
 
