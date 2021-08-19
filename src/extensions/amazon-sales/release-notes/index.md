@@ -138,7 +138,7 @@ Amazon Sales Channel 4.0.0 is not supported for {{site.data.var.ee}} 2.3.5. For 
 
 ### v3.0.1
 
-Amazon Sales Channel 3.0.1 is compatible with Adobe Commerce versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 3.0.1 is compatible with {{site.data.var.ee}} versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix}**Numerical Field Settings**: <!--CHAN-3779-->Fields that require a numeric-based value have been updated to only accept numeric characters. Example: Pricing Rule Settings > Adjustment Amount field
 
