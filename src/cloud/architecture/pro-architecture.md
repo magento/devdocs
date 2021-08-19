@@ -66,7 +66,7 @@ The following table summarizes the differences between environments:
 </table>
 
 {:.bs-callout-info}
-Adobe also provides the {{site.data.var.mcd-prod}} solution for deploying to a local Cloud Docker environment so that you can develope and test {{site.data.var.ee}} projects. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).
+Adobe also provides the {{site.data.var.mcd-prod}} solution for deploying to a local Cloud Docker environment so that you can develop and test {{site.data.var.ee}} projects. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).
 
 ## Pro environment architecture
 
