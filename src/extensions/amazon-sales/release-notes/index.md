@@ -123,7 +123,7 @@ Amazon Sales Channel 4.1.0 is compatible with {{site.data.var.ee}} 2.3.x of {{si
 
 ### v4.0.0
 
-Amazon Sales Channel 4.0.0 is compatible with Adobe Commerce versions 2.3.0, 2.3.1, 2.3.2, 2.3.3, and 2.3.4 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
+Amazon Sales Channel 4.0.0 is compatible with {{site.data.var.ee}} versions 2.3.0, 2.3.1, 2.3.2, 2.3.3, and 2.3.4 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
 
 {:.bs-callout .bs-callout-warning}
 Amazon Sales Channel 4.0.0 is not supported for {{site.data.var.ee}} 2.3.5. For support with {{site.data.var.ee}} 2.3.5, upgrade to Amazon Sales Channel 4.1.0.
