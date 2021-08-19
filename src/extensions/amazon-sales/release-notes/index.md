@@ -5,7 +5,7 @@ title: Amazon Sales Channel Release Notes
 {:.bs-callout .bs-callout-warning}
 Amazon Sales Channel versions 4.0.0 and 4.1.0 are only supported for {{site.data.var.ee}} 2.3.x versions.<br/>Amazon Sales Channel version 4.2.0 is compatible with {{site.data.var.ee}} 2.3.x versions but is only supported for {{site.data.var.ee}} 2.4.x versions.
 
-**Amazon Sales Channel** can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x and 2.4.x. We no longer support the extension on Adobe Commerce 2.1, Magento 2.2, or Magento 1. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to list and sell products from your Magento catalog on Amazon.
+**Amazon Sales Channel** can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x and 2.4.x. We no longer support the extension on {{site.data.var.ee}} 2.1, Magento 2.2, or Magento 1. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to list and sell products from your Magento catalog on Amazon.
 
 See the following documentation:
 
