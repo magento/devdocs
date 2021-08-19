@@ -57,7 +57,7 @@ This version of Amazon Sales Channel includes the following improvements and fix
 
 -  {:.fix}In the _Marketing_ menu in the Admin, the name has been changed from _Amazon_ to _Amazon Sales Channel_.
 
--  {:.bug}**Important**: Known issues with Adobe Commerce 2.4.0 compatibility are resolved in the Magento 2.4.1 release.
+-  {:.bug}**Important**: Known issues with {{site.data.var.ee}} 2.4.0 compatibility are resolved in the {{site.data.var.ee}} 2.4.1 release.
 
    -  Amazon cron processes in `error` state
 
