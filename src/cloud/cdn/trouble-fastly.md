@@ -17,9 +17,9 @@ For information about setting up and configuring Fastly, see [Set up Fastly]({{ 
 
 ## Locate Fastly service ID {#service-id}
 
-You need the Fastly service ID to configure Fastly from the Magento Admin UI or to submit Fastly API requests for advanced Fastly configuration and troubleshooting.
+You need the Fastly service ID to configure Fastly from the Admin UI or to submit Fastly API requests for advanced Fastly configuration and troubleshooting.
 
-If Fastly is enabled in your project environment, you can get the service ID from the Magento Admin UI. See [Get Fastly credentials]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
+If Fastly is enabled in your project environment, you can get the service ID from the Admin UI. See [Get Fastly credentials]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
 
 Developers and advanced VCL users can use custom VCL to retrieve the service ID using the Fastly variable `req.service_id`. For example, you can add the `req.service_id` to the custom logging directive in your VCL to capture the service ID value:
 
@@ -59,7 +59,7 @@ Use the following list to identify and troubleshoot issues related to the Fastly
 If Fastly returns 503 timeout errors, check the error logs and the 503 error page to identify the root cause.
 
 {:.bs-callout-info}
-If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Magento Admin UI]({{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#extend-fastly-timeout).
+If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Admin UI]({{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#extend-fastly-timeout).
 
 If you receive a 503 error, check the Production or Staging environment error log and php access log to troubleshoot the issue.
 
@@ -246,7 +246,7 @@ Based on the status returned, use the following instructions to update the Fastl
 
 #### Fastly VCL has not been uploaded {#no-VCL}
 
-If the Fastly VCL has not been uploaded (`Fastly-Magento-VCL-Uploaded`: `false`), use the *Upload VCL* option in the Magento Admin UI to upload it. See [Upload Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
+If the Fastly VCL has not been uploaded (`Fastly-Magento-VCL-Uploaded`: `false`), use the *Upload VCL* option in the Admin UI to upload it. See [Upload Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
 
 #### X-Cache contains only MISS, no HIT {#xcache-miss}
 
@@ -286,7 +286,7 @@ After you identify the extension that is resetting Fastly headers, contact the e
 
 ## Rollback Fastly configuration changes
 
-If custom VCL snippet updates or other Fastly configuration changes cause a {{ site.data.var.ece }} site to break or return errors, use the Fastly API [activate](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) command to rollback to an earlier VCL version. You cannot rollback the VCL version from the Magento Admin UI.
+If custom VCL snippet updates or other Fastly configuration changes cause a {{ site.data.var.ece }} site to break or return errors, use the Fastly API [activate](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) command to rollback to an earlier VCL version. You cannot rollback the VCL version from the Admin UI.
 
 {:.procedure}
 To rollback the VCL version:

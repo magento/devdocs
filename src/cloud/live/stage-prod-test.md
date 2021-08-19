@@ -45,7 +45,7 @@ Check the Magento configuration settings through the Admin panel including the B
 {:.procedure}
 To verify the Fastly service configuration:
 
-1. Log into the Magento Admin for Staging and Production using the URL with `/admin`, or the [updated Admin URL]({{ site.baseurl }}/cloud/env/environment-vars_magento.html#admin-url).
+1. Log into the Admin for Staging and Production using the URL with `/admin`, or the [updated Admin URL]({{ site.baseurl }}/cloud/env/environment-vars_magento.html#admin-url).
 
 1. Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
 

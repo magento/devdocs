@@ -313,7 +313,7 @@ Use the [magento-cloud project:clear-build-cache]({{ site.baseurl }}/guides/v2.4
 
 To verify everything imported properly, perform the following tasks in your local Cloud development environment:
 
-1. On your Cloud environment, enter the following commands to find the information to log in to the [Magento Admin](https://glossary.magento.com/magento-admin) and to view the storefront:
+1. On your Cloud environment, enter the following commands to find the information to log in to the [Admin](https://glossary.magento.com/magento-admin) and to view the storefront:
 
    ```bash
    magento-cloud environment:url

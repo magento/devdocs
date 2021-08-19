@@ -30,7 +30,7 @@ You can enable Fastly image optimization (Fastly IO) from the Admin panel by upl
 {:.procedure}
 To enable Fastly IO:
 
-1. Log in to your local [Magento Admin]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin) panel as an administrator.
+1. Log in to your local [Admin]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin) panel as an administrator.
 
 1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 

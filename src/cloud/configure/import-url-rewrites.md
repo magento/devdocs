@@ -69,7 +69,7 @@ Column | Description
 `redirect_type` | The type of redirect: <br>`0` —an internal Magento redirect type. Magento renders a page using the `target_path` path. <br>`301` —permanently moved status code.<br>`302` —temporarily moved status code.
 `store_code` | The store view code.
 
-You use the Magento Admin panel to import the URL Rewrites file.
+You use the Admin panel to import the URL Rewrites file.
 
 {:.procedure}
 To import URL Rewrites:

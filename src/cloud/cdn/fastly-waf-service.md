@@ -43,7 +43,7 @@ When the WAF service is enabled, it filters all web and admin traffic against th
 
 ![WAF error page]
 
-You can customize this error response page from the Magento Admin UI. See [Customize the WAF response page]({{ site.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html#customize-the-waf-error-page).
+You can customize this error response page from the Admin UI. See [Customize the WAF response page]({{ site.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html#customize-the-waf-error-page).
 
 If your {{ site.data.var.ee }} admin page or storefront returns a `403 Forbidden` error page in response to a legitimate URL request, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket). Copy the reference ID from the error response page and paste it into the ticket description.
 

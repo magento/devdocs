@@ -75,7 +75,7 @@ When you install the B2B module using Composer, the deployment process automatic
 
 ## Configure the B2B module
 
-After installing the {{site.data.var.b2b}} module, you must [start the message consumers][messages] so that you can enable the _Shared Catalog_ module, and you must [enable the B2B module in the Magento Admin panel][admin-enable].
+After installing the {{site.data.var.b2b}} module, you must [start the message consumers][messages] so that you can enable the _Shared Catalog_ module, and you must [enable the B2B module in the Admin panel][admin-enable].
 
 For additional information on using and configuring B2B, review the [Magento B2B User Guide][b2b-user].
 

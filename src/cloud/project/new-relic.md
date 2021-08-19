@@ -112,7 +112,7 @@ Updating the environment configuration triggers a redeployment, which takes your
 **Prerequisites:**
 
 -  Log in credentials for the Magento account page, or for the New Relic account associated with your project
--  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or credentials to access the [Magento Admin](https://docs.magento.com/m2/ce/user_guide/system/permissions.html) for the environment.
+-  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or credentials to access the [Admin](https://docs.magento.com/m2/ce/user_guide/system/permissions.html) for the environment.
 
 {:.procedure}
 To configure New Relic for Starter environments:
@@ -129,7 +129,7 @@ To configure New Relic for Starter environments:
 
    -  Copy the license key.
 
-1. Add the New Relic license key to an environment using the Magento Cloud CLI, or [add it from the Magento Admin].
+1. Add the New Relic license key to an environment using the Magento Cloud CLI, or [add it from the Admin].
 
    -  Change to the environment that needs the license key.
 
@@ -362,7 +362,7 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 
 [account dropdown]: https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown
 [account page]: https://accounts.magento.cloud/user
-[add it from the Magento Admin]: https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html#step-3-configure-your-store
+[add it from the Admin]: https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html#step-3-configure-your-store
 [Alerts concepts and workflow]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/getting-started/new-relic-alerts-concepts-workflow
 [Apdex score]: https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction
 [Configure notification channels using the New Relic Alerts user interface]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts
@@ -371,7 +371,7 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [Explore your data with New Relic Logs UI]: https://docs.newrelic.com/docs/logs/new-relic-logs/ui-data/explore-your-data-new-relic-logs-ui
 [Health notifications]: {{site.baseurl}}/cloud/integrations/health-notifications.html
 [Instructions for specific notification channels]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
-[Magento Admin credentials]: https://docs.magento.com/m2/ce/user_guide/system/permissions.html
+[Admin credentials]: https://docs.magento.com/m2/ce/user_guide/system/permissions.html
 [Magento Partnership Owner Account]: https://account.newrelic.com/accounts/1311131/users
 [Managed Alerts for Magento Commerce]: https://support.magento.com/hc/en-us/articles/360045806832
 [New Relic account]: #manage-new-relic-account

@@ -17,7 +17,7 @@ You can update your {{ site.var.data.ee }} store configuration to replace some d
 
 ![Fastly custom error page]
 
-Currently, you can customize the following Fastly response pages for your {{ site.data.var.ece }} project through the Magento Admin UI.
+Currently, you can customize the following Fastly response pages for your {{ site.data.var.ece }} project through the Admin UI.
 
 -  [Server errors - Internal server error, timeout or site maintenance outages (error code 500 or greater)](#customize-the-503-error-page)
 -  [WAF blocking events that occur when the WAF detects suspicious request traffic (403 Forbidden)](#customize-the-waf-error-page)
@@ -56,7 +56,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 {:.procedure}
 To add the custom response page to the Fastly configuration:
 
-1. [Log in to the Magento Admin UI]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+1. [Log in to the Admin UI]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
 1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
@@ -114,7 +114,7 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 {:.procedure}
 To edit the WAF error page:
 
-1. [Log in to the Magento Admin UI]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+1. [Log in to the Admin UI]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
 1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 

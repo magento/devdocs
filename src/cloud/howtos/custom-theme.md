@@ -71,7 +71,7 @@ To install a theme manually:
    ```
 
 1. Wait for deployment to complete.
-1. Log in to the Magento Admin.
+1. Log in to the Admin.
 1. Click **Content** > Design > **Themes**.
 
    The theme displays in the right pane.
@@ -107,7 +107,7 @@ To summarize the procedure:
    git push origin <branch name>
    ```
 
-1. Log in to the Magento Admin.
+1. Log in to the Admin.
 1. Click **Content** > Design > **Themes**.
 
    The theme displays in the right pane.

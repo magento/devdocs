@@ -180,7 +180,7 @@ If you need to restart the [Elasticsearch](https://www.elastic.co) service, you 
 
 -  By default, the search configuration for Cloud environments regenerates each time you deploy. You can use the `SEARCH_CONFIGURATION` deploy variable to retain custom search settings between deployments. See [Deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#search_configuration).
 
--  After you set up the Elasticsearch service for your project, use the Magento Admin UI to test the Elasticsearch connection and customize Elasticsearch settings for {{ site.data.var.ee }}.
+-  After you set up the Elasticsearch service for your project, use the Admin UI to test the Elasticsearch connection and customize Elasticsearch settings for {{ site.data.var.ee }}.
 
 ### Add plugins for Elasticsearch
 
