@@ -368,7 +368,7 @@ stage:
 ```
 
 {:.bs-callout-info}
-If you specify `\{{site.data.var.ee}}\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html#configuration-example) in the _{{site.data.var.ee}} Configuration Guide_. To override the generated cache configuration, use the [CACHE_CONFIGURATION]({{site.baseurl}}/cloud/env/variables-deploy.html#cache_configuration) deploy variable.
+If you specify `\magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html#configuration-example) in the _{{site.data.var.ee}} Configuration Guide_. To override the generated cache configuration, use the [CACHE_CONFIGURATION]({{site.baseurl}}/cloud/env/variables-deploy.html#cache_configuration) deploy variable.
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
@@ -388,7 +388,7 @@ stage:
 
 You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
 
-[ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v2002018) and later uses more fault-tolerant settings. If {{site.data.var.ee}} 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
+[ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v2002018) and later uses more fault-tolerant settings. If {{site.data.var.ee}} cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
