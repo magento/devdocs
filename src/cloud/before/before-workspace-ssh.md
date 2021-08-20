@@ -13,7 +13,7 @@ functional_areas:
 {:.ref-header}
 Previous step
 
-[Install Magento prerequisites]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
+[Install prerequisites]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
 
 The [SSH protocol](https://en.wikipedia.org/wiki/Secure_Shell) is designed to maintain a secure connection between two systems---in this case, your local working environment and your {{site.data.var.ece}} Git project.
 
