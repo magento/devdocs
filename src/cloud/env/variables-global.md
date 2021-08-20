@@ -93,7 +93,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—{{site.data.var.ee}} 2.3.0 and later
 
-[Baler](https://github.com/magento/baler) is a {{site.data.var.ee}} module that scans your generated JavaScript code and creates an optimized JavaScript bundle. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
+[Baler](https://github.com/magento/baler) is a module that scans your generated JavaScript code and creates an optimized JavaScript bundle. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
 
 Set to `true` to run Baler after performing static content deployment.
 

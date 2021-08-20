@@ -90,7 +90,7 @@ log:
   email:
     to: <your-email>
     from: <your-email>
-    subject: "Log notification from MagAdobe Commerce"
+    subject: "Log notification from Adobe Commerce"
     min_level: "notice"
 ```
 

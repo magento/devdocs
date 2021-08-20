@@ -30,7 +30,7 @@ Since values can change over time, it is best to inspect the variable at runtime
 
 ```php
 /**
-  * Get relationships information from {{site.data.var.ee}}Cloud environment variable.
+  * Get relationships information from cloud environment variable.
   *
   * @return mixed
   */
@@ -51,7 +51,7 @@ php ./vendor/bin/ece-tools env:config:show variables
 Sample output for the `variables` option:
 
 ```terminal
-{{site.data.var.ee}} Cloud Environment Variables:
+Magento Cloud Environment Variables:
 +-----------------------------------+----------------------------------+
 | Variable name                     | Value                            |
 +-----------------------------------+----------------------------------+
