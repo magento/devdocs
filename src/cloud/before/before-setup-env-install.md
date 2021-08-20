@@ -15,7 +15,7 @@ Previous step
 
 [Clone and branch the project]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html)
 
-With your workspace prepared, install {{site.data.var.ee}} on your local wokstation to verify custom code, extensions, and more. This section includes the installation prep, options, and post-installation configuration you should complete.
+With your workspace prepared, install {{site.data.var.ee}} on your local workstation to verify custom code, extensions, and more. This section includes the installation prep, options, and post-installation configuration you should complete.
 
 ## Prepare to install {{site.data.var.ee}} {#prepare}
 
