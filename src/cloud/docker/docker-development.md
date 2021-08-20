@@ -10,7 +10,7 @@ functional_areas:
 {{site.data.var.mcd-prod}} provides an option to deploy {{site.data.var.ee}} to a Docker environment for development, testing, and automation tasks. It includes the following features:
 
 -  **Cross-platform support**–Supports Linux, macOS and Windows with WSL2
--  **{{site.data.var.ece}} emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
+-  **Cloud emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
 -  **{{site.data.var.ee}} development**–Creates a local development environment for On-premises projects
 -  **Multiple sync options**–Provides three file synchronization options: `native`, `mutagen`, and `manual-native`. The `manual-native` option provides the best performance on macOS and Windows.
 -  **Extensibility**–Use a standard Docker configuration file to extend and customize your development environment

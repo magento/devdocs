@@ -32,7 +32,7 @@ To add support for multiple websites and stores:
 After updating the `php.ini` file and adding subdomains, start the Docker environment and complete the following tasks to update the website and store configuration from the [Admin](https://glossary.magento.com/magento-admin):
 
 -  Add specific stores and websites. See [Set up websites, stores, and store views][].
--  Add the configuration for store and website codes to the  `magento-vars.php`. See [Modify {{site.data.var.ee}} variables][].
+-  Add the configuration for store and website codes to the `magento-vars.php`. See [Modify {{site.data.var.ee}} variables][].
 
 <!--Link definitions-->
 

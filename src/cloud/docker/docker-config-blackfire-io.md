@@ -97,7 +97,7 @@ To add Blackfire.io to your project configuration:
    ```
 
 {:.procedure}
-To use Blackfire.io for {{site.data.var.ece}} performance testing in Cloud Docker:
+To use Blackfire.io for performance testing in Cloud Docker:
 
 1. Install a profiling client as described in the [Blackfire documentation][].
 
