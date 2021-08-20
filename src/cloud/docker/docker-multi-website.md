@@ -8,7 +8,7 @@ functional_areas:
   - Website
 ---
 
-Magento Cloud Docker supports multiple websites or stores by adding subdomains to your Magento configuration. See [Understanding websites, stores, and store views][].
+Magento Cloud Docker supports multiple websites or stores by adding subdomains to your configuration. See [Understanding websites, stores, and store views][].
 
 {:.procedure}
 To add support for multiple websites and stores:
@@ -32,10 +32,10 @@ To add support for multiple websites and stores:
 After updating the `php.ini` file and adding subdomains, start the Docker environment and complete the following tasks to update the website and store configuration from the [Admin](https://glossary.magento.com/magento-admin):
 
 -  Add specific stores and websites. See [Set up websites, stores, and store views][].
--  Add the configuration for Magento store and website codes to the  `magento-vars.php`. See [Modify Magento variables][].
+-  Add the configuration for store and website codes to the  `magento-vars.php`. See [Modify {{site.data.var.ee}} variables][].
 
 <!--Link definitions-->
 
-[Modify Magento variables]: {{site.baseurl}}/cloud/project/project-multi-sites.html#modify-magento-variables
+[Modify {{site.data.var.ee}} variables]: {{site.baseurl}}/cloud/project/project-multi-sites.html#modify-magento-variables
 [Understanding websites, stores, and store views]: {{site.baseurl}}/cloud/configure/configure-best-practices.html#sites
 [Set up websites, stores, and store views]: {{site.baseurl}}/guides/v2.4/config-guide/multi-site/ms_websites.html
