@@ -10,7 +10,7 @@ The Magento Cloud CLI is the utility for managing Magento Cloud projects and env
 {:.procedure}
 To install the Magento Cloud CLI:
 
-1. On your local workstation, change to a directory where you plan to clone the cloud projects and where the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
+1. On your local workstation, change to a directory where you plan to clone the cloud projects and where the [file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
 
 1. Install the `magento-cloud` CLI.
 

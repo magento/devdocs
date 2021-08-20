@@ -142,9 +142,9 @@ To edit the WAF error page:
 
    -  On the Cache Management page, click **Flush Magento Cache**.
 
-## Display Magento error report number
+## Display error report number
 
-By default, Fastly hides all Magento errors behind the _503 Service Unavailable_ error. To display the Magento error log report number so that you can find and review the error details in the logs, open the website omitting Fastly using these steps:
+By default, Fastly hides all {{site.data.var.ee}} errors behind the _503 Service Unavailable_ error. To display the error log report number so that you can find and review the error details in the logs, open the website omitting Fastly using these steps:
 
 1. Retrieve the IP address of your store:
 
@@ -168,9 +168,9 @@ By default, Fastly hides all Magento errors behind the _503 Service Unavailable_
 
 1. Clear the browser cache and cookies (or switch to incognito mode).
 
-1. Open your store website again to view the Magento error code.
+1. Open your store website again to view the error code.
 
-1. Use the Magento error code to find the details in the error report file:
+1. Use the error code to find the details in the error report file:
 
    -  [Connect to the affected environment using SSH]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
 

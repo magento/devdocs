@@ -23,7 +23,7 @@ You need the following information to import code into your project:
 
 Create a remote Git reference from your Cloud Git repository to the repository containing your {{site.data.var.ee}} installation so you can pull the {{site.data.var.ee}} code into your project.
 
-1. Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
 1. Copy `composer.json` to a _non-tracked directory_ so it does not get overwritten.
 
