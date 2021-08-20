@@ -23,8 +23,7 @@ Choose the installation method that meets your requirements:
 -  [Method 1](#method-1): Install without Elasticsearch (Some downtime)
 -  [Method 2](#method-2): Install with Elasticsearch (No downtime)
 
-{: #method-1}
-## Method 1: Install without Elasticsearch
+## Method 1: Install without Elasticsearch {#method-1}
 
 This method is recommended when installing Live Search to a:
 
