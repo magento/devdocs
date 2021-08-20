@@ -6,7 +6,7 @@ title: Cross-site request forgery (CSRF)
 CSRF is an attack that tricks a user's browser into executing actions on a web application in which the user is currently
 authenticated. This attack can be achieved in multiple ways by crafting a form, or a resource reference,
 like \<img\/\> "src" attribute, that will trigger a browser to send the request to the targeted website where a user
-may be already authenticated and posses the authentication cookies. The target website will consider this request
+may already be authenticated and posses the authentication cookies. The target website will consider this request
 genuine and will execute the action, like transferring money to an account.
 
 The most effective way of protecting against these attacks are, so called, CSRF tokens. These tokens are generated on
