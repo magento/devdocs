@@ -33,4 +33,4 @@ the global _FORM_KEY_ variable on JS side, or by using `Magento\Framework\Data\F
 There may be some cases when a controller expects POST requests, or any other non-GET HTTP method, but those requests are not supposed to be
 protected from CSRF. For example, a webhook that expect a request from another service. In such cases, you can disable CSRF
 protection can be disabled for a controller by it implementing `Magento\Framework\App\CsrfAwareActionInterface`.
-By doing so developers are also able to customize failed CSRF challenge exception or modify the validation logic.
+By doing so, you can also customize failed CSRF challenge exceptions or modify the validation logic.
