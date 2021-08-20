@@ -63,7 +63,7 @@ To uninstall the {{site.data.var.ee}} software:
    The following message displays to confirm a successful uninstallation:
 
    ```terminal
-   [SUCCESS]: {{site.data.var.ee}} uninstallation complete.
+   [SUCCESS]: Magento uninstallation complete.
    ```
 
 ### Reset the git branch
