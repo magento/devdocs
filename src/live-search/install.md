@@ -69,8 +69,7 @@ During this installation, Live Search modules are enabled and Elasticsearch modu
 
 1. [Test](#testing-the-connection) the connection.
 
-{: #method-2}
-## Method 2: Install with Elasticsearch
+## Method 2: Install with Elasticsearch {#method-2}
 
 This method is recommended when installing Live Search to a:
 
