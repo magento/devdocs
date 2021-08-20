@@ -57,4 +57,4 @@ To add your SSH key to the local configuration:
 {:.ref-header}
 Next step
 
-[Set up the Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)
+[Set up the file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)

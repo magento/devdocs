@@ -24,7 +24,7 @@ If your Cloud account has access to multiple projects, you should see a list of 
 
 When working on your local, you will be accessing the [Magento Cloud CLI]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html) to issue commands and programmatically complete tasks and the [Admin](https://glossary.magento.com/magento-admin) for the store UI and configurations.
 
-You need to set up the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) on your local to assign that user as the owner for all created files and directories. For more information, see [Overview of ownership and permissions]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/file-sys-perms-over.html).
+You need to set up the [file system owner](https://glossary.magento.com/magento-file-system-owner) on your local to assign that user as the owner for all created files and directories. For more information, see [Overview of ownership and permissions]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/file-sys-perms-over.html).
 
 ## Recommended tools
 
@@ -48,7 +48,7 @@ You should be ready to go! The following sections provide a link to the previous
 *  Install all prerequisite software and tools on your host system (laptop, desktop, etc) and local workspace (VM)
 *  Install Magento Cloud CLI
 *  Set up SSH keys
-*  Configure the Magento file system owner (optional)
+*  Configure the file system owner (optional)
 *  Clone and branch the project
 *  Install Magento
 *  Complete configurations and file/folder permissions

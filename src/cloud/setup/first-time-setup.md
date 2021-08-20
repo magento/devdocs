@@ -41,7 +41,7 @@ You can manually add a virtual machine (VM) and install {{site.data.var.ee}}. Th
 1. [Prepare for local environment setup]({{ site.baseurl }}/cloud/before/before-workspace.html)
 1. [Install Magento prerequisites]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
 1. [Enable SSH keys]({{ site.baseurl }}/cloud/before/before-workspace-ssh.html)
-1. [Set up the Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) (optional)
+1. [Set up the file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) (optional)
 1. [Clone and branch the project]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html)
 1. [Install Magento]({{ site.baseurl }}/cloud/before/before-setup-env-install.html)
 1. [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html)

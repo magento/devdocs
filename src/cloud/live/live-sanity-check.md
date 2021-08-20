@@ -176,7 +176,7 @@ We highly recommend having Magento already installed prior to deployment. During
 {:.procedure}
 To deploy your site:
 
-1. If you have not already, log in as or switch to the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. If you have not already, log in as or switch to the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 1. Change to your project root directory.
 1. Enter the following command:
 
