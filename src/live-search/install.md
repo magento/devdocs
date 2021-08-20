@@ -90,16 +90,16 @@ Before the installation of Live Search, Live Search modules are disabled and Ela
 
    This list might change as new modules are added. Enable any additional `ElasticSearch` module(s) in your `config.php` file.
 
-1. In your `app/etc/config.php` file, disable the following Live Search modules:
-
-   -  `module-live-search-adapter`
-   -  `module-live-search-storefront-popover`
-
 1. To install the `live-search` package, run the following from the command line:
 
    ```bash
    composer require magento/live-search
    ```
+
+1. In your `app/etc/config.php` file, disable the following Live Search modules:
+
+   -  `module-live-search-adapter`
+   -  `module-live-search-storefront-popover`
 
    For more information, see the list of Live Search [dependencies](#live-search-dependencies) that are captured by Composer.
 
