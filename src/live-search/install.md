@@ -73,8 +73,7 @@ During this installation, Live Search modules are enabled and Elasticsearch modu
 
 This method is recommended when installing Live Search to a:
 
--  Existing Commerce installation
--  New Commerce installation with customizations or extensions that require Elasticsearch
+-  Existing production Commerce installation
 
 In this scenario, Elasticsearch services search requests from the storefront while the Live Search service works in the background to index all products in the catalog. Although the process might take up to eight hours to complete, there is no interruption to storefront operations.
 
