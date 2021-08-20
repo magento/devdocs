@@ -20,9 +20,9 @@ The _build_ phase assembles containers for the services defined in the configura
 The _deploy_ phase places a temporary hold on incoming requests and transitions the site to [maintenance mode]({{site.baseurl}}/guides/v2.3/config-guide/bootstrap/magento-modes.html). The deploy phase uses the new containers and, after mounting the file system, opens network connections, activates the services defined in the `relationships` section of the `.magento.app.yaml` file, and runs the deploy hooks defined in the `.magento.app.yaml` file. Everything is _read only_, except for directories defined in the `.magento.app.yaml` file. By default, the [`mounts` property]({{ site.baseurl }}/cloud/project/magento-app-properties.html#mounts) includes the following directories:
 
 -  `app/etc`—contains the `env.php` and `config.php` configuration files
--  `pub/media`—contains all media data, such as Magento products or categories
+-  `pub/media`—contains all media data, such as products or categories
 -  `pub/static`—contains generated static files
--  `var`—contains temporary files created during Magento runtime
+-  `var`—contains temporary files created during runtime
 
 All other directories have read-only permissions. The new site becomes active at the end of the deploy phase as it transitions out of maintenance mode and releases the temporary hold on incoming requests.
 

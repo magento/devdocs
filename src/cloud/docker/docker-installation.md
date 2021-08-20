@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Install Magento
+title: Prepare Commerce for Docker
 functional_areas:
   - Cloud
   - Configuration
@@ -31,7 +31,7 @@ To install a {{ site.data.var.ece }} project:
 
 1. Change to the new project directory.
 
-1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
+1. Add your [access credentials][magento-creds] to the `auth.json` file.
 
 ### On-premises projects
 
@@ -102,7 +102,7 @@ To install an Adobe Commerce on-premises project:
 
 ## Update the hosts file and install dependencies
 
-Before you use {{site.data.var.mcd-prod}}, you must update the `etc/hosts` file and install required dependencies. You can do this manually, or using a Magento installation script.
+Before you use {{site.data.var.mcd-prod}}, you must update the `etc/hosts` file and install required dependencies. You can do this manually, or using an installation script.
 
 {:.procedure}
 To update and install manually:
@@ -120,7 +120,7 @@ To update and install manually:
    ```
 
 {:.procedure}
-To update and install using the Magento installation script:
+To update and install using the installation script:
 
 1. Install the template dependencies and add the default hostname to your `/etc/hosts` file.
 
