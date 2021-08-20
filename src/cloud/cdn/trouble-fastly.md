@@ -39,9 +39,9 @@ Use the following list to identify and troubleshoot issues related to the Fastly
 
 -  **Geo-location/GeoIP does not work**— The default Magento Fastly VCL snippets append the country code to the URL. If the country code is not working, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
 
--  **Pages are not caching**—By default, Fastly does not cache pages with the `Set-Cookies` header. Magento sets cookies even on cacheable pages (TTL > 0). The default Magento Fastly VCL strips those cookies on cacheable pages. If pages are not caching, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
+-  **Pages are not caching**—By default, Fastly does not cache pages with the `Set-Cookies` header. {{site.data.var.ee}} sets cookies even on cacheable pages (TTL > 0). The default Magento Fastly VCL strips those cookies on cacheable pages. If pages are not caching, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
 
-   This issue can also occur if a page block in a template is marked uncacheable. In that case, the problem is most likely caused by a third-party module or Magento extension blocking or removing the Magento headers. To resolve the issue, see [X-Cache contains only MISS, no HIT](#xcache-miss).
+   This issue can also occur if a page block in a template is marked uncacheable. In that case, the problem is most likely caused by a third-party module or extension blocking or removing the {{site.data.var.ee}} headers. To resolve the issue, see [X-Cache contains only MISS, no HIT](#xcache-miss).
 
 -  **Purge requests are failing**—Fastly returns the following error when you submit a purge request:
 
@@ -52,7 +52,7 @@ Use the following list to identify and troubleshoot issues related to the Fastly
    -  Invalid Fastly credentials in the Fastly service configuration for the {{ site.data.var.ece }} project environment
    -  Invalid code in a custom VCL snippet
 
-   To resolve the issue, see [Error purging Fastly cache on Cloud](https://support.magento.com/hc/en-us/articles/115001853194-Error-purging-Fastly-cache-on-Cloud-The-purge-request-was-not-processed-successfully-) in the Magento Help Center.
+   To resolve the issue, see [Error purging Fastly cache on Cloud](https://support.magento.com/hc/en-us/articles/115001853194-Error-purging-Fastly-cache-on-Cloud-The-purge-request-was-not-processed-successfully-) in the {{site.data.var.ee}} Help Center.
 
 ## 503 errors from Fastly {#errors}
 
@@ -80,7 +80,7 @@ To check the error logs:
    /var/log/platform/<project_ID>/php.access.log
    ```
 
-   Search the log for HTTP 200 responses for the URL that returned the 503 error. If you find the 200 response, it means that Magento returned the page without errors. That indicates the issue might have occurred after the interval that exceeds the `first_byte_timeout` value set in the Fastly service configuration.
+   Search the log for HTTP 200 responses for the URL that returned the 503 error. If you find the 200 response, it means that {{site.data.var.ee}} returned the page without errors. That indicates the issue might have occurred after the interval that exceeds the `first_byte_timeout` value set in the Fastly service configuration.
 
 When a 503 error occurs, Fastly returns the reason on the error and maintenance page. You might not be able to see the reason if you added code for a custom response page. To view the reason code on the default error page, you can remove the HTML code for the custom error page.
 
@@ -276,7 +276,7 @@ If the issue persists, another extension is likely resetting these headers. Repe
 
 1. Complete the following steps for each extension potentially causing issues with Fastly headers:
 
-   -  Enable one extension at a time, save the configuration, and flush the Magento cache.
+   -  Enable one extension at a time, save the configuration, and flush the {{site.data.var.ee}} cache.
 
    -  Run the [`curl` commands](#curl-live) to verify the [response headers](#response-headers).
 

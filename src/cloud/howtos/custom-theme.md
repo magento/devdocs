@@ -11,7 +11,7 @@ functional_areas:
   - Theme
 ---
 
-You can install one or multiple themes to use for one or all of your stores and sites in your project. Themes include multiple static files including images, fonts, CSS, JavaScript, PHP, and more to fully design your stores. You can add the theme by either by extracting its code to the Magento file system or using Composer.
+You can install one or multiple themes to use for one or all of your stores and sites in your project. Themes include multiple static files including images, fonts, CSS, JavaScript, PHP, and more to fully design your stores. You can add the theme by either by extracting its code to the file system or using Composer.
 
 ## Get started with a branch {#branch}
 

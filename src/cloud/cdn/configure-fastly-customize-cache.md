@@ -50,7 +50,7 @@ The options include:
 
 -  **Purge category**–Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.
 -  **Purge product**–Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.
--  **Purge CMS page**–Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
+-  **Purge CMS page**–Purges page content when updating and adding pages to the {{site.data.var.ee}} CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
 -  **Soft purge**–Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
 
 ![Configure purge options]({{ site.baseurl }}/common/images/cloud/cloud_fastly-purgeoptions.png){:width="650px"}
@@ -72,7 +72,7 @@ For more information, see [the Fastly configuration options](https://github.com/
 
 ## Configure GeoIP handling
 
-The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.
+The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use an extension for GeoIP handling, you may need to verify the features with Fastly options.
 
 {:.procedure}
 To set up GeoIp handling:
@@ -87,7 +87,7 @@ To set up GeoIp handling:
 
 1. For GeoIP Action, select if the visitor is automatically redirected with **Redirect** or provided a list of stores to select from with **Dialog**.
 
-1. For **Country Mapping**, click **Add** to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+1. For **Country Mapping**, click **Add** to enter a two-letter country code to map with a specific {{site.data.var.ee}} store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 
    ![Add GeoIP country maps]({{ site.baseurl }}/common/images/cloud/cloud_fastly-geo-code.png)
 
@@ -101,7 +101,7 @@ Fastly also provides a series of [geolocation-related VCL features](https://docs
 
 Fastly Edge Modules is a flexible framework that allows definition of UI components and associated VCL code through a template. These modules make it easy to customize and extend the Fastly service configuration through the user interface instead of using custom VCL snippets.
 
-Edge modules allow you to enable specific functionality like CORS headers, Magento Cloud Sitemap rewrites, and to configure integration between your Magento store and other CMSs or back ends.
+Edge modules allow you to enable specific functionality like CORS headers, Magento Cloud Sitemap rewrites, and to configure integration between your {{site.data.var.ee}} store and other CMSs or back ends.
 
 You must turn on the _Enable Fastly Edge modules_ option to access the Edge Modules menu to view, configure, and manage the available Edge modules. See [Fastly Edge Modules](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULES.md) in the Fastly CDN module documentation.
 
@@ -164,10 +164,10 @@ Before adding custom VCL code, edge dictionaries, and ACLs to your Fastly module
 
 ## Manage domains
 
-For Starter projects, use the _Domains_ option to add and manage the Fastly domain configuration for your store. Before adding a domain to your project, you must submit a [Magento Support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to add the domain to your Cloud configuration. You can add the domain to Fastly after Magento confirms your request.
+For Starter projects, use the _Domains_ option to add and manage the Fastly domain configuration for your store. Before adding a domain to your project, you must submit a [{{site.data.var.ee}} Support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to add the domain to your Cloud configuration. You can add the domain to Fastly after Magento confirms your request.
 
 {:.bs-callout-info}
-For Pro plan projects, you must submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to update the Fastly domain configuration for your project.
+For Pro plan projects, you must submit a [{{site.data.var.ee}} support ticket](https://support.magento.com/hc/en-us/articles/360019088251) to update the Fastly domain configuration for your project.
 
 {:.procedure}
 To manage Fastly domain configuration from the Admin:

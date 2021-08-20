@@ -305,7 +305,7 @@ You must compile Sass files using `grunt` before static content deployment, whic
 
 ## `crons`
 
-Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
+Describes processes that are triggered on a schedule. We recommend you run `cron` as the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
 
 `crons` support the following:
 
