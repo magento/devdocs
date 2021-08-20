@@ -117,7 +117,7 @@ hooks:
 
 Custom scenarios can replace default steps to provide custom implementation. To do so, use the default step name as the name for the custom step.
 
-For example, in the [default deploy scenario] the `enable-maintenance-mode` step runs the default [EnableMaintenanceMode PHP script] provided by Adobe.
+For example, in the [default deploy scenario] the `enable-maintenance-mode` step runs the default [EnableMaintenanceMode PHP script].
 
 ```xml
 <step name="enable-maintenance-mode" type="Magento\MagentoCloud\Step\EnableMaintenanceMode" priority="300"/>

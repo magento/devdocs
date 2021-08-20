@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Install
+title: Prepare Commerce for Docker
 functional_areas:
   - Cloud
   - Configuration
