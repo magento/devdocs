@@ -30,7 +30,7 @@ some reason or at any other case, CSRF token can be added to a form by developer
 the global _FORM_KEY_ variable on JS side, or by using `Magento\Framework\Data\Form\FormKey` on backend.
 
 ### Exceptions
-There may be some cases when a controller expects POST, or any other non-GET, requests but is not supposed to be
+There may be some cases when a controller expects POST requests, or any other non-GET HTTP method, but those requests are not supposed to be
 protected from CSRF. For instance - a webhook, that expect a request from another service. For such cases CSRF
 protection can be disabled for a controller by it implementing `Magento\Framework\App\CsrfAwareActionInterface`.
 By doing so developers are also able to customize failed CSRF challenge exception or modify the validation logic.
