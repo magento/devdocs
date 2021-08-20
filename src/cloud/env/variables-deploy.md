@@ -356,15 +356,15 @@ Specifies the backend model configuration for the Redis cache.
 {{site.data.var.ee}} version 2.3.0 and later includes the following backend models:
 
 -  `Cm_Cache_Backend_Redis`
--  `\{{site.data.var.ee}}\Framework\Cache\Backend\Redis`
--  `\{{site.data.var.ee}}\Framework\Cache\Backend\RemoteSynchronizedCache`
+-  `\Magento\Framework\Cache\Backend\Redis`
+-  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
 
 The example how to set `REDIS_BACKEND`
 
 ```yaml
 stage:
   deploy:
-    REDIS_BACKEND: '\{{site.data.var.ee}}\Framework\Cache\Backend\RemoteSynchronizedCache'
+    REDIS_BACKEND: '\Magento\Framework\Cache\Backend\RemoteSynchronizedCache'
 ```
 
 {:.bs-callout-info}
@@ -465,7 +465,7 @@ stage:
 
 You can configure multiple locales per theme. This customization speeds up the deployment process by reducing the number of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
-The following example deploys the `{{site.data.var.ee}}/backend` theme with three locales:
+The following example deploys the `Magento/backend` theme with three locales:
 
 ```yaml
 stage:
