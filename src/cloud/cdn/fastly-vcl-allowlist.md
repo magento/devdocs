@@ -17,7 +17,7 @@ Create an allow list to limit access to your Staging environment so that only re
 The following example shows how to use a custom VCL snippet with a [Fastly Access Control List (ACL)](https://docs.fastly.com/guides/access-control-lists/about-acls) to secure access to the Admin UI for a {{ site.data.var.ece }} project environment. When you add the custom VCL snippet to the Cloud environment, Fastly allows only requests from IP addresses included in the ACL.
 
 {:.bs-callout-tip}
-For Staging and Integration environments that should not be publicly accessible, you can use the HTTP access control option available in the [Magento Cloud Project UI]({{site.baseurl}}/cloud/project/project-webint-branch.html#security) to manage access to the entire site by IP address.
+For Staging and Integration environments that should not be publicly accessible, you can use the HTTP access control option available in the [Project Web Interface]({{site.baseurl}}/cloud/project/project-webint-branch.html#security) to manage access to the entire site by IP address.
 
 **Prerequisites:**
 
