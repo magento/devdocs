@@ -1,6 +1,6 @@
 ---
 group: php-developer-guide
-title: Cross Site Request Forgery (CSRF)
+title: Cross-site request forgery (CSRF)
 ---
 
 CSRF is an attack that tricks user browser into executing an action on a web application in which the user is currently
