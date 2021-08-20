@@ -9,7 +9,7 @@ like \<img\/\> "src" attribute, that will trigger a browser to send the request 
 may already be authenticated and posses the authentication cookies. The target website will consider this request
 genuine and will execute the action, like transferring money to an account.
 
-The most effective way of protecting against these attacks are, so called, CSRF tokens. These tokens are generated on
+The most effective way of protecting against these attacks is with CSRF tokens. These tokens are generated 
 the server side and inserted into forms. When receiving a form, server then verifies that a valid CSRF token is
 present in the request.
 
