@@ -3,7 +3,7 @@ group: php-developer-guide
 title: Cross-site request forgery (CSRF)
 ---
 
-CSRF is an attack that tricks user browser into executing an action on a web application in which the user is currently
+CSRF is an attack that tricks a user's browser into executing actions on a web application in which the user is currently
 authenticated. This attack can be achieved in multiple ways by crafting a form, or a resource reference,
 like \<img\/\> "src" attribute, that will trigger a browser to send the request to the targeted website where a user
 may be already authenticated and posses the authentication cookies. The target website will consider this request
