@@ -30,7 +30,7 @@ This method is recommended when installing Live Search to a:
 -  New Commerce installation
 -  Staging environment
 
-In this scenario, there is no need to host an Elasticsearch installation. However, storefront operations are interrupted while the Live Search service indexes all products in the catalog.
+When using this method, storefront operations are interrupted while the Live Search service indexes all products in the catalog.
 
 During this installation, Live Search modules are enabled and Elasticsearch modules are disabled.
 
