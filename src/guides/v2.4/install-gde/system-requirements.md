@@ -36,7 +36,6 @@ Magento is not supported on Microsoft Windows and macOS.
 {:.bs-callout-info}
 The [PHP installation instructions][] include a step for installing these extensions.
 
-<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Refer to [official PHP documentation][] for installation details.
