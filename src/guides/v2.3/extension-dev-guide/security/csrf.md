@@ -9,7 +9,7 @@ like \<img\/\> "src" attribute, that will trigger a browser to send the request 
 may already be authenticated and posses the authentication cookies. The target website will consider this request
 genuine and will execute the action, like transferring money to an account.
 
-The most effective way of protecting against these attacks is with CSRF tokens. These tokens are generated 
+The most effective way of protecting against these attacks is with CSRF tokens. These tokens are generated
 the server side and inserted into forms. When receiving a form, server then verifies that a valid CSRF token is
 present in the request.
 
@@ -27,10 +27,9 @@ mechanism will become active for controllers that expect any HTTP method other t
 
 CSRF tokens will be added to all forms automatically by `lib/web/mage/common.js`. If the file was disabled for
 some reason or at any other case, CSRF token can be added to a form by developers manually by grabbing it from
-the global _FORM_KEY_ variable on JS side, or by using `Magento\Framework\Data\Form\FormKey` on backend.
+the global `FORM_KEY` variable on JS side, or by using `Magento\Framework\Data\Form\FormKey` on backend.
 
 ### Exceptions
 There may be some cases when a controller expects POST requests, or any other non-GET HTTP method, but those requests are not supposed to be
-protected from CSRF. For example, a webhook that expect a request from another service. In such cases, you can disable CSRF
-protection can be disabled for a controller by it implementing `Magento\Framework\App\CsrfAwareActionInterface`.
+protected from CSRF. For example, a webhook that expect a request from another service. In such cases, you can disable CSRF protection for a controller by implementing the `Magento\Framework\App\CsrfAwareActionInterface interface`.
 By doing so, you can also customize failed CSRF challenge exceptions or modify the validation logic.
