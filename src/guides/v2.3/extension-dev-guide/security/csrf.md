@@ -18,7 +18,7 @@ Adobe Commerce has anti-CSRF measures, like CSRF tokens, implemented within it's
 required from developers to make these mechanisms work.
 
 The framework cannot be sure which controller is intended to change state and thus needs to be protected. A developer
-has to inform the framework whether a controller needs protection by making the implement one, or multiple
+must inform the framework whether a controller needs protection by implementing one, or multiple,
 of `Http<Method>ActionInterface` interfaces. In most scenarios controllers that accept forms would expect _POST_
 requests and have to marked by the `Magento\Framework\App\Action\HttpPostActionInterface` interface. These are
 marker-interfaces that require no additional implementation. If a controller implements at least one of them,
