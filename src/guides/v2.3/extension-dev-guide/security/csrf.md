@@ -11,7 +11,7 @@ genuine and will execute the action, like transferring money to an account.
 
 The most effective way of protecting against these attacks is with CSRF tokens. These tokens are generated
 server-side and inserted into forms. When receiving a form, the server verifies that a valid CSRF token is
-present in the request.
+included in the request.
 
 ## Adobe Commerce and CSRF
 Adobe Commerce has anti-CSRF measures, like CSRF tokens, implemented within it's framework. Only minimum action is
