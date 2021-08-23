@@ -26,7 +26,7 @@ the framework will deny requests with HTTP methods that do not correspond to one
 mechanism will become active for controllers that expect any HTTP method other than _GET_.
 
 CSRF tokens will be added to all forms automatically by the `lib/web/mage/common.js` file. If the file is disabled, 
-some reason or at any other case, CSRF token can be added to a form by developers manually by grabbing it from
+you can manually add the CSRF token to a form by getting it from
 the global `FORM_KEY` variable on JS side, or by using `Magento\Framework\Data\Form\FormKey` on backend.
 
 ### Exceptions
