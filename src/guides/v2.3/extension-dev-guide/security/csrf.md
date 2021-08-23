@@ -22,7 +22,7 @@ must inform the framework whether a controller needs protection by implementing 
  `Http<Method>ActionInterface` interfaces. In most scenarios, controllers that accept forms would expect _POST_
 requests and must be marked by the `Magento\Framework\App\Action\HttpPostActionInterface` interface. These are
 marker-interfaces that require no additional implementation. If a controller implements at least one of them,
-Magento framework will deny requests with HTTP methods that do not correspond to one of the interfaces. CSRF protection
+the framework will deny requests with HTTP methods that do not correspond to one of the interfaces. The CSRF protection
 mechanism will become active for controllers that expect any HTTP method other than _GET_.
 
 CSRF tokens will be added to all forms automatically by `lib/web/mage/common.js`. If the file was disabled for
