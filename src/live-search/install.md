@@ -8,7 +8,7 @@ redirect_from:
 
 Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ee}} search capabilities.  This topic provides instructions to do the following:
 
--  Install Live Search (Method 1 and Method 2)
+-  [Install Live Search](#before-you-begin) (Method 1 and Method 2)
 -  [Update Live Search](#update-live-search)
 -  [Uninstall Live Search](#uninstall-live-search)
 
@@ -24,7 +24,7 @@ Live Search is a set of standalone meta packages that replaces standard {{site.d
 -  PHP 7.3 / 7.4
 -  Composer
 
-## Before you begin the installation
+## Before you begin
 
 Do the following:
 
@@ -36,14 +36,14 @@ Do the following:
    -  Product Variant Feed
    -  Catalog Attributes Feed
 
-1. Choose the installation method that meets your requirements and follow the instructions.
+1. Choose the onboarding method that meets your requirements, and follow the instructions.
 
    -  [Method 1](#method-1): Install without Elasticsearch (Some downtime)
    -  [Method 2](#method-2): Install with Elasticsearch (No downtime)
 
 ## Method 1: Install without Elasticsearch {#method-1}
 
-This method is recommended when installing Live Search to a:
+This onboarding method is recommended when installing Live Search to a:
 
 -  New Commerce installation
 -  Staging environment
@@ -91,7 +91,7 @@ During the installation, Live Search modules are enabled and Elasticsearch modul
 
 ## Method 2: Install with Elasticsearch {#method-2}
 
-This method is recommended when installing Live Search to a:
+This onboarding method is recommended when installing Live Search to a:
 
 -  Existing production Commerce installation
 
