@@ -25,7 +25,7 @@ marker-interfaces that require no additional implementation. If a controller imp
 the framework will deny requests with HTTP methods that do not correspond to one of the interfaces. The CSRF protection
 mechanism will become active for controllers that expect any HTTP method other than _GET_.
 
-CSRF tokens will be added to all forms automatically by `lib/web/mage/common.js`. If the file was disabled for
+CSRF tokens will be added to all forms automatically by the `lib/web/mage/common.js` file. If the file is disabled, 
 some reason or at any other case, CSRF token can be added to a form by developers manually by grabbing it from
 the global `FORM_KEY` variable on JS side, or by using `Magento\Framework\Data\Form\FormKey` on backend.
 
