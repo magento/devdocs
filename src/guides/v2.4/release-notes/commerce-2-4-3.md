@@ -10,7 +10,7 @@ This release includes over 370 new fixes to core code and 33 security enhancemen
 {:.bs-callout-info}
 Quarterly releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.3 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
-See [Magento 2.4.2-p2 release notes]({{page.baseurl}}/release-notes/2-4-2-p2.html) for information about Magento 2.4.2-p2.
+See [Adobe Commerce 2.4.2-p2 release notes]({{page.baseurl}}/release-notes/2-4-2-p2.html) for information about Magento 2.4.2-p2.
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, B2B, Page Builder, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
