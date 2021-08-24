@@ -63,8 +63,8 @@ In this scenario, storefront operations are interrupted while the Live Search se
 1. To disable Elasticsearch modules and run setup, enter the following on the command line:
 
     ```bash
-    php bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch  Magento_InventoryElasticsearch
-    php bin/magento setup:upgrade
+    bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch  Magento_InventoryElasticsearch
+    bin/magento setup:upgrade
     ```
 
     {:.bs-callout-warning}
@@ -101,8 +101,8 @@ Before the installation of Live Search, Live Search modules must be disabled and
 1. To disable Live Search modules and run setup, enter the following on the command line:
 
    ```bash
-   php bin/magento module:disable Magento_LiveSearchAdapter Magento_LiveSearchStorefrontPopover
-   php bin/magento setup:upgrade
+   bin/magento module:disable Magento_LiveSearchAdapter Magento_LiveSearchStorefrontPopover
+   bin/magento setup:upgrade
    ```
 
    Elasticsearch continues to manage search requests from the storefront while the Live Search service synchronizes the catalog data and indexes products in the background.
@@ -121,9 +121,9 @@ Before the installation of Live Search, Live Search modules must be disabled and
 1. Enter the following from the command line to disable Elasticsearch modules, enable Live Search modules, and run setup.
 
    ```bash
-   php bin/magento module:enable Magento_LiveSearchAdapter Magento_LiveSearchStorefrontPopover
-   php bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch Magento_InventoryElasticsearch
-   php bin/magento setup:upgrade
+   bin/magento module:enable Magento_LiveSearchAdapter Magento_LiveSearchStorefrontPopover
+   bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch Magento_InventoryElasticsearch
+   bin/magento setup:upgrade
    ```
 
 1. [Test](#test-the-connection) the connection from the storefront.
