@@ -171,7 +171,7 @@ We highly recommend installing the {{site.data.var.ee}} application prior to dep
 *  Install the {{site.data.var.ee}} application if needed
 *  If the {{site.data.var.ee}} application is installed, upgrade components
 *  Clear the [cache](https://glossary.magento.com/cache)
-*  Set the {{site.data.var.ee}} application for [`production`]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode) mode
+*  Set the {{site.data.var.ee}} application for [`production`]({{ site.baseurl }}{{site.gdeurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
 
 {:.procedure}
 To deploy your site:
@@ -184,7 +184,7 @@ To deploy your site:
    php bin/magento setup:upgrade
    ```
 
-   We highly recommend having {{site.data.var.ee}} already installed if you followed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the {{site.data.var.ee}} application yet, use the [`magento setup:install`]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+   We highly recommend having {{site.data.var.ee}} already installed if you followed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the {{site.data.var.ee}} application yet, use the [`magento setup:install`]({{ site.baseurl }}{{site.gdeurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 
 1. Clean the cache:
 
