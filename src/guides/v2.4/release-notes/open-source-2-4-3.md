@@ -12,7 +12,7 @@ This release includes over 370 new fixes to core code and 33 security enhancemen
 {:.bs-callout-info}
 Quarterly releases may contain backward-incompatible changes (BIC). {{ site.data.var.ce }}  2.4.2 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
-See [Magento 2.4.2-p2 release notes]({{page.baseurl}}/release-notes/2-4-2-p2.html) for information about Magento 2.4.2-p2.
+See [Adobe Commerce 2.4.2-p2 release notes]({{page.baseurl}}/release-notes/2-4-2-p2.html) for information about Magento 2.4.2-p2.
 
 ## Other release information
 
