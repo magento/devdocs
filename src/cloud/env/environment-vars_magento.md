@@ -25,7 +25,7 @@ If you want to change the values after installation, connect to your environment
 
 Use the following environment variable to secure access to your Admin UI. If specified, this value overrides the default URL during installation.
 
-`ADMIN_URL`—The relative URL to access the Admin UI. The default URL is `/admin`. For security reasons, Magento recommends that you change the default to a unique, custom Admin URL that is not easy to guess.
+`ADMIN_URL`—The relative URL to access the Admin UI. The default URL is `/admin`. For security reasons, Adobe recommends that you change the default to a unique, custom Admin URL that is not easy to guess.
 
 If you need to change the Admin URL after installation, use the `magento-cloud variable:set` command-line tool to change the URL. For example, to set the Admin URL to `magento_A8v10`, use:
 
