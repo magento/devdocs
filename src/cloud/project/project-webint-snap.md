@@ -16,7 +16,7 @@ You have up to **7 days** to _restore_ a snapshot.
 
 We provide two methods for creating and managing snapshots:
 
--  Prpject Web Interface
+-  Project Web Interface
 -  Magento Cloud CLI
 
 ## Create a snapshot {#create-snapshot}

@@ -17,7 +17,7 @@ The _License Owner_ is the person in your business or finance organization that 
 To quickly onboard your project, so you can begin developing your site for live deployment, you must complete required setup and onboarding tasks. Typically, the License Owner begins the process by securing Admin access and creating Technical Admin users that can help with setup, customization, and development work.
 
 {:.bs-callout-info}
-If you need to change the License owner on your account, you must submit a {{site.data.var.ee}} Support ticket.
+If you need to change the License Owner on your account, you must submit a {{site.data.var.ee}} Support ticket.
 
 ## Sign up for a Cloud account {#cloud-first-acct}
 
@@ -71,7 +71,7 @@ You can only add registered users to your {{site.data.var.ece}} projects and env
 
 ### Set up shared account access
 
-The License owner can set up shared access for the account. Shared access allows trusted employees and service providers to use the Help center to submit and track Support tickets related to your {{site.var.data.ece}} projects. For setup instructions, see the [Shared Access][] article in the Help Center.
+The License Owner can set up shared access for the account. Shared access allows trusted employees and service providers to use the Help center to submit and track Support tickets related to your {{site.var.data.ece}} projects. For setup instructions, see the [Shared Access][] article in the Help Center.
 
 ## Get started with the Project Web Interface {#project-setup}
 
