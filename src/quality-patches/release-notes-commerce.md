@@ -10,7 +10,7 @@ redirect_from: /quality-patches/release-notes.html
 
 {% include install/patch/quality-patch-intro.md %}
 
-For information about quality patches created by the community for {{site.data.var.ce}}, see the [release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md) GitHub repository.
+For information about quality patches created by the community for {{site.data.var.ce}}, see the [release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md).
 
 <!-- The release notes include:
 
