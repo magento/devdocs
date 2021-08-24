@@ -108,6 +108,10 @@
           url: /contributor-guide/contributing.html
           versionless: true
 
+        - label: Contribution Resources
+          url: /community/resources.html
+          versionless: true
+
     - label: Frontend
       children:
 
@@ -191,12 +195,16 @@
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
 
+    - label: Inventory Management
+      url: /inventory/index.html
+
+    - label: Live Search
+      url: /live-search/overview.html
+      versionless: true
+
     - label: Magento Marketplace
       url: /marketplace/sellers/getting-started.html
       versionless: true
-
-    - label: Inventory Management
-      url: /inventory/index.html
 
     - label: Order Management
       url: http://omsdocs.magento.com/en/
@@ -216,6 +224,10 @@
       url: /security/security-and-compliance.html
       versionless: true
 
+    - label: Shared Services
+      url: /shared-services/storefront-events-sdk.html
+      versionless: true
+
     - label: Staging
       url: /extension-dev-guide/staging.html
 
@@ -224,6 +236,9 @@
 
     - label: Rest Tutorials
       url: /rest/tutorials/index.html
+
+    - label: Custom Attributes
+      url: /howdoi/custom-attributes/introduction.html
 
     - label: Customize Product Creation Form
       url: /howdoi/customize_product.html

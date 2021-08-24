@@ -195,4 +195,4 @@ This process **overwrites** the store configuration; only do the following if th
 [Pipeline deployment]: {{ site.baseurl }}/guides/v2.3/config-guide/deployment/pipeline/technical-details.html
 [quick]: {{ site.baseurl }}/cloud/env/variables-build.html#scd_strategy
 [scd]: {{ site.baseurl }}/cloud/deploy/static-content-deployment.html
-[Sensitive or system-specific settings]: {{ site.baseurl }}/guides/v2.4/config-guide/prod/config-reference-sens.html
+[Sensitive or system-specific settings]: {{ site.baseurl }}{{ site.gdeurl }}/config-guide/prod/config-reference-sens.html

@@ -9,12 +9,10 @@ Magento continually strives to find the right balance between making product upg
 
 Magento releases security and functional patches for each supported release line of {{site.data.var.ee}} every quarter.
 
-The following table provides the dates for scheduled releases in 2020 and 2021 (dates are subject to change):
+The following table provides the dates for scheduled releases in 2021 (dates are subject to change):
 
 | Quarter             | Versions                      | Beta                                      | Pre-release        | General Availability |
 |---------------------|-------------------------------|-------------------------------------------|--------------------|----------------------|
-| 2020 Q3             | 2.4.0<br>2.3.5-p2             | June 8, 2020                              | None               | July 28, 2020        |
-| 2020 Q4             | 2.4.1<br>2.4.0-p1<br>2.3.6    | September 10, 2020<br>Available for 2.4.1 | October 1, 2020    | October 15, 2020     |
 | 2021 Q1             | 2.4.2<br>2.4.1-p1<br>2.3.6-p1 | December 17, 2020                         | January 26, 2021   | February 9, 2021     |
 | 2021 Q2<sup>1</sup> | 2.4.2-p1<br>2.3.7             | March 30, 2021                            | April 27, 2021     | May 11, 2021         |
 | 2021 Q3<sup>2</sup> | 2.4.3<br>2.4.2-p2<br>2.3.7-p1 | June 7, 2021                              | July 27, 2021      | August 10, 2021      |
@@ -34,3 +32,5 @@ We have introduced a [new policy](https://magento.com/updated-lifecycle-policy-m
 Pre-release is General Availability code that is available to {{site.data.var.ee}} merchants and all partners two weeks before General Availability. It allows for quicker deployment of code before General Availability.
 
 Beta is non-General Availability code that is available to all partners. It allows for extra time to review code and affected components.
+
+For information about our Beta program, go to our [GitHub wiki page](https://github.com/magento/magento2/wiki/Magento-Beta-Program).

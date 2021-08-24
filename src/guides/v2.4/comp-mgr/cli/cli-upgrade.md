@@ -211,4 +211,4 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
 [Update Magento]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
-[Check the catalog search engine]: {{ site.baseurl }}/guides/v2.4/comp-mgr/prereq/prereq-elasticsearch.html
+[Check the catalog search engine]: {{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/prereq/prereq-elasticsearch.html
