@@ -471,7 +471,7 @@ The following example deploys the `Magento/backend` theme with three locales:
 stage:
   deploy:
     SCD_MATRIX:
-      "{{site.data.var.ee}}/backend":
+      "magento/backend":
         language:
           - en_US
           - fr_FR
@@ -484,7 +484,7 @@ Also, you can choose to _not_ deploy a theme:
 stage:
   deploy:
     SCD_MATRIX:
-      "{{site.data.var.ee}}/backend": [ ]
+      "magento/backend": [ ]
 ```
 
 ### `SCD_MAX_EXECUTION_TIME`
