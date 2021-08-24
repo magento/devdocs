@@ -13,8 +13,8 @@ The most effective way of protecting against these attacks is with CSRF tokens. 
 server-side and inserted into forms. When receiving a form, the server verifies that a valid CSRF token is
 included in the request.
 
-## Adobe Commerce and CSRF
-Adobe Commerce has anti-CSRF measures, like CSRF tokens, implemented within it's framework. Only minimum action is
+## Built-in CSRF protection
+There are anti-CSRF measures, like CSRF tokens, built-in within the framework. Only minimum action is
 required from developers to make these mechanisms work.
 
 The framework cannot be sure which controller is intended to change state and thus needs to be protected. A developer
