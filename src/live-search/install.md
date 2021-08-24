@@ -30,12 +30,6 @@ Do the following:
 
 1. Confirm that [cron jobs]({{ page.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-cron.html) and [indexers]({{ page.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html) are running.
 
-1. Verify that the following [indexers](https://docs.magento.com/user-guide/system/index-management.html) are set to `Update by Schedule`:
-
-   -  Product Feed
-   -  Product Variant Feed
-   -  Catalog Attributes Feed
-
 1. Choose the onboarding method that meets your requirements, and follow the instructions.
 
    -  [Method 1](#method-1): Install without Elasticsearch
@@ -52,7 +46,7 @@ In this scenario, storefront operations are interrupted while the Live Search se
 
 1. Install {{site.data.var.ee}} 2.4.x without Live Search.
 
-1. To install the `live-search` package, run the following from the command line:
+1. To download the `live-search` package, run the following from the command line:
 
    ```bash
    composer require magento/live-search
@@ -60,7 +54,7 @@ In this scenario, storefront operations are interrupted while the Live Search se
 
    For more information, see the list of Live Search [dependencies](#live-search-dependencies) that are captured by Composer.
 
-1. To disable Elasticsearch modules and run setup, enter the following on the command line:
+1. Run the following commands to install Live Search and disable Elasticsearch modules:
 
     ```bash
     bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch  Magento_InventoryElasticsearch
@@ -70,13 +64,19 @@ In this scenario, storefront operations are interrupted while the Live Search se
     {:.bs-callout-warning}
     While the data is indexed and synchronized, the search and category browse operations are not available in the storefront. Depending on the size of your catalog, the process can take up to eight hours to complete.
 
-1. Configure your [API keys](#configure-api-keys) and [connect](#synchronize-catalog-data) the synchronized catalog data.
+1. Verify that the following [indexers](https://docs.magento.com/user-guide/system/index-management.html) are set to `Update by Schedule`:
+
+   -  Product Feed
+   -  Product Variant Feed
+   -  Catalog Attributes Feed
+
+1. Configure your [API keys](#configure-api-keys) to [synchronize](#synchronize-catalog-data) your catalog data to Live Search services.
 
 1. To make facets available as filters in the storefront, add at least one [facet](https://docs.magento.com/user-guide/live-search/facets-add.html) that meets the [required settings](https://docs.magento.com/user-guide/live-search/facets.html).
 
    You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services.
 
-1. Wait from 30-60 minutes for the data to be indexed and synchronized. Then, [verify](#verify-export) that the data was exported.
+1. Wait about an hour after `cron` runs to synchronize data. Then, [verify](#verify-export) that the data was exported.
 
 1. [Test](#test-the-connection) the connection from the storefront.
 
@@ -88,9 +88,7 @@ This onboarding method is recommended when installing Live Search to:
 
 In this scenario, Elasticsearch manages search requests from the storefront while the Live Search service indexes all products in the background, without any interruption to normal storefront operations.
 
-Before the installation of Live Search, Live Search modules must be disabled and Elasticsearch modules enabled. After the installation, Live Search modules must be enabled and Elasticsearch modules disabled.
-
-1. To install the `live-search` package, run the following from the command line:
+1. To download the `live-search` package, run the following from the command line:
 
    ```bash
    composer require magento/live-search
@@ -98,7 +96,7 @@ Before the installation of Live Search, Live Search modules must be disabled and
 
    For more information, see the list of Live Search [dependencies](#live-search-dependencies) that are captured by Composer.
 
-1. To disable Live Search modules and run setup, enter the following on the command line:
+1. Run the following command to temporarily disable the Live Search modules that serve storefront search results.
 
    ```bash
    bin/magento module:disable Magento_LiveSearchAdapter Magento_LiveSearchStorefrontPopover
@@ -107,7 +105,13 @@ Before the installation of Live Search, Live Search modules must be disabled and
 
    Elasticsearch continues to manage search requests from the storefront while the Live Search service synchronizes the catalog data and indexes products in the background.
 
-1. Configure your [API keys](#configure-api-keys) and [connect](#synchronize-catalog-data) the synchronized catalog data.
+1. Verify that the following [indexers](https://docs.magento.com/user-guide/system/index-management.html) are set to `Update by Schedule`:
+
+   -  Product Feed
+   -  Product Variant Feed
+   -  Catalog Attributes Feed
+
+1. Configure your [API keys](#configure-api-keys) to [synchronize](#synchronize-catalog-data) your catalog data to Live Search services.
 
 1. To make facets available as filters in the storefront, add at least one [facet](https://docs.magento.com/user-guide/live-search/facets-add.html) that meets the [required settings](https://docs.magento.com/user-guide/live-search/facets.html).
 
@@ -118,7 +122,7 @@ Before the installation of Live Search, Live Search modules must be disabled and
    -  The product count returned is close to what you expect for the store view
    -  Facet(s) are returned
 
-1. Enter the following from the command line to disable Elasticsearch modules, enable Live Search modules, and run setup.
+1. Run the following commands to disable Elasticsearch modules, enable Live Search modules, and run setup.
 
    ```bash
    bin/magento module:enable Magento_LiveSearchAdapter Magento_LiveSearchStorefrontPopover
