@@ -174,13 +174,13 @@ In order to communicate events—such as a push—with your Cloud Git server, is
 
 1. Verify the webhook before continuing.
 
-   If the hook is active, skip the remaining steps and [Test the integration](#test-the-integration). The hook should have a name similar to **"Magento Cloud <project_id>"** and a hook URL format similar to: `https://<zone>.magento.cloud/api/projects/<project_id>/integrations/<id>/hook`
+   If the hook is active, skip the remaining steps and [Test the integration](#test-the-integration). The hook should have a name similar to **"{{site.data.var.ece}} <project_id>"** and a hook URL format similar to: `https://<zone>.magento.cloud/api/projects/<project_id>/integrations/<id>/hook`
 
 1. Click **Add webhook**.
 
 1. In the _Add new webhook_ view, edit the following fields:
 
-   -  **Title**: Magento Cloud Integration
+   -  **Title**: {{site.data.var.ee}} Integration
    -  **URL**: Use the Hook URL from your `magento-cloud` integration list
    -  **Triggers**: The default is a basic _Repository push_
 
