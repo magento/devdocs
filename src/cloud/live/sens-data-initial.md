@@ -43,7 +43,7 @@ To complete these configuration management tasks, you need the following:
    *  For Starter: To an Integration branch and environment
    *  For Pro: To the Integration `master` branch and environment
 
-## Configure Magento through the Integration Admin panel {#configure}
+## Configure {{site.data.var.ee}} through the Integration Admin panel {#configure}
 
 In the Integration environment, you can log in to the Admin panel to modify system configuration settings for stores, websites, modules or extensions, static file optimization, and system values related to static content deployment. See [Configuration data]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data).
 
@@ -68,7 +68,7 @@ To change locale and static file optimization settings:
    ![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud/cloud_vars_set-minify.png){:width="550px"}
 
 1. Click **Save Config**.
-1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+1. If prompted, [flush the cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 1. Log out of the Admin.
 
 ## Export values and transfer config.php to your local system {#export}
@@ -192,7 +192,7 @@ To add additional configuration values in the Integration environment Admin. For
 1. In the right pane, expand **JavaScript Settings**.
 1. From the **Merge JavaScript Files** list, click **Yes**.
 1. Click **Save Config**.
-1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+1. If prompted, [flush the cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 1. Log out of the Admin.
 
 ### Run the config.php command {#regenerate}

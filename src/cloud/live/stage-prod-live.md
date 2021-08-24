@@ -21,7 +21,7 @@ We recommend creating a Staging branch from the `master` to best support your St
 Now you are ready to develop and deploy:
 
 1. Create development branches from the `staging` branch. This allows you to merge up through Staging and Production.
-1. Develop on local: custom modules, Magento extensions, 3rd party integrations, and configurations.
+1. Develop on local: custom modules, extensions, 3rd party integrations, and configurations.
 1. Push your local branch to the Git remote branch to test in a full environment.
 1. To fully test in a near-production level environment, push code to a Staging branch.
 1. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
@@ -34,7 +34,7 @@ For detailed information of the process, see [Starter Develop and Deploy Workflo
 Pro comes with a large Integration environment with two active branches and environments including `master`, Staging, and Production. When you create your project, code is ready to branch, develop, and push for building and deploying your site. Although the Integration environment can have many branches, Staging and Production have only one branch: the deployed Git `master`.
 
 1. Create development branches from the Integration `master` branch.
-1. Develop on local: custom modules, Magento extensions, 3rd party integrations, and configurations.
+1. Develop on local: custom modules, extensions, 3rd party integrations, and configurations.
 1. Push your local branch to the Git remote branch to test in a full environment.
 1. Merge final code to the Integration `master` branch.
 1. To fully test in a near-production level environment, push code to the Staging environment.
