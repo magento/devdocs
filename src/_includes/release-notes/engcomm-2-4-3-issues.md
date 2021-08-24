@@ -212,3 +212,4 @@
 | [engcom-Kilo](https://github.com/engcom-Kilo) | [#32755](https://github.com/magento/magento2/pull/32755) | [24363](https://github.com/magento/magento2/issues/24363) |
 | [ihor-sviziev](https://github.com/ihor-sviziev) | [#32614](https://github.com/magento/magento2/pull/32614) | [31777](https://github.com/magento/magento2/issues/31777), [826](https://github.com/magento/magento2/issues/826) |
 | [rogyar](https://github.com/rogyar) | [#30623](https://github.com/magento/magento2/pull/30623) | [29631](https://github.com/magento/magento2/issues/29631), [30210](https://github.com/magento/magento2/issues/30210) |
+| [BogdanGorbach](https://github.com/BogdanGorbach) | [#33452](https://github.com/magento/magento2/pull/33452) | [28239](https://github.com/magento/magento2/issues/28239) |
