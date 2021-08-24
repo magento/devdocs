@@ -117,7 +117,7 @@ In this scenario, Elasticsearch manages search requests from the storefront whil
 
    You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services.
 
-1. Wait from 30-60 minutes for the data to be indexed and synchronized. Then, use the [GraphQL playground]({{ page.baseurl }}/live-search/graphql-support.html) with an empty search phrase (the default query) to verify the following:
+1. Wait about an hour for the data to be indexed and synchronized. Then, use the [GraphQL playground]({{ page.baseurl }}/live-search/graphql-support.html) with an empty search phrase (the default query) to verify the following:
 
    -  The product count returned is close to what you expect for the store view
    -  Facet(s) are returned
