@@ -101,7 +101,7 @@ Filesystem                                    Size  Used Avail Use% Mounted on
 Two configuration files control the allocation of disk space in the Cloud environments: the `.magento.app.yaml` file and the `.magento/services.yaml` file. Each file contains the `disk` property, which defines the disk size value in MB for the respective configuration.
 
 {:.bs-callout-info}
-You can change disk space allocation on Pro Integration and Starter environments only. You must submit an {{site.data.var.ee}} support ticket to change disk space allocation on Pro Production and Staging environments.
+You can change disk space allocation on Pro Integration and Starter environments only. You must submit an support ticket to change disk space allocation on Pro Production and Staging environments.
 
 ### Application disk space
 

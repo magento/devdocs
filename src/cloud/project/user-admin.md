@@ -249,7 +249,7 @@ To enable TFA on your {{site.data.var.ece}} user account:
    -  Click **Save** to save the codes to your account so you can view and manage them from your account security settings.
 
       {:.bs-callout-warning}
-      If you lose access to an account with TFA and have no recovery codes, you must contact your project administrator, or submit a {{site.data.var.ee}} support ticket to reset the TFA application.
+      If you lose access to an account with TFA and have no recovery codes, you must contact your project administrator, or submit a support ticket to reset the TFA application.
 
 1. After completing the TFA setup, click **Save** to update your account.
 
