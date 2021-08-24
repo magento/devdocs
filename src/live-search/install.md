@@ -8,9 +8,9 @@ redirect_from:
 
 Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ee}} search capabilities.  This topic provides instructions to do the following:
 
--  [Install Live Search](#before-you-begin) (Methods 1 and 2)
--  [Update Live Search](#update-live-search)
--  [Uninstall Live Search](#uninstall-live-search)
+-  [Installing Live Search](#before-you-begin) (Methods 1 and 2)
+-  [Updating Live Search](#updating-live-search)
+-  [Uninstalling Live Search](#uninstalling-live-search)
 
 |**Package**|**Description**|
 |---|---|
@@ -70,15 +70,15 @@ In this scenario, storefront operations are interrupted while the Live Search se
     {:.bs-callout-warning}
     While the data is indexed and synchronized, the search and category browse operations are not available in the storefront. Depending on the size of your catalog, the process can take up to eight hours to complete.
 
-1. Configure your [API keys](#configuring-api-keys) and [connect](#synchronizing-catalog-data) the synchronized catalog data.
+1. Configure your [API keys](#configure-api-keys) and [connect](#synchronize-catalog-data) the synchronized catalog data.
 
-1. To make facets available as filters in the storefront, add at least one [facet](https://docs.magento.com/user-guide/live-search/facets-add.html) that meets the [required settings](https://docs.magento.com/user-guide/live-search/facets.html) for attribute storefront properties.
+1. To make facets available as filters in the storefront, add at least one [facet](https://docs.magento.com/user-guide/live-search/facets-add.html) that meets the [required settings](https://docs.magento.com/user-guide/live-search/facets.html).
 
    You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services. 
 
 1. Wait from 30-60 minutes for the data to be indexed and synchronized. Then, [verify](#verify-export) that the data was exported.
 
-1. [Test](#testing-the-connection) the connection from the storefront.
+1. [Test](#test-the-connection) the connection from the storefront.
 
 ## Method 2: Install with Elasticsearch {#method-2}
 
@@ -107,9 +107,9 @@ Before the installation of Live Search, Live Search modules must be disabled and
 
    Elasticsearch continues to manage search requests from the storefront while the Live Search service synchronizes the catalog data and indexes products in the background.
 
-1. Configure your [API keys](#configuring-api-keys) and [connect](#synchronizing-catalog-data) the synchronized catalog data.
+1. Configure your [API keys](#configure-api-keys) and [connect](#synchronize-catalog-data) the synchronized catalog data.
 
-1. To make facets available as filters in the storefront, add at least one [facet](https://docs.magento.com/user-guide/live-search/facets-add.html) that meets the [required settings](https://docs.magento.com/user-guide/live-search/facets.html) for attribute storefront properties.
+1. To make facets available as filters in the storefront, add at least one [facet](https://docs.magento.com/user-guide/live-search/facets-add.html) that meets the [required settings](https://docs.magento.com/user-guide/live-search/facets.html).
 
    You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services.
 
@@ -126,9 +126,9 @@ Before the installation of Live Search, Live Search modules must be disabled and
    php bin/magento setup:upgrade
    ```
 
-1. [Test](#testing-the-connection) the connection from the storefront.
+1. [Test](#test-the-connection) the connection from the storefront.
 
-## Configuring API keys
+## Configure API keys
 
 The {{site.data.var.ee}} API key and its associated private key are required to connect Live Search to an installation of {{site.data.var.ee}}. The API key is generated and maintained in the account of the {{site.data.var.ee}} license holder, who can share it with the developer or SI. The developer can then create and manage the SaaS environments on behalf of the license-holder. For detailed instructions, see Commerce Services in the [User Guide](https://docs.magento.com/user-guide/system/saas.html) and [Configuration Reference](https://docs.magento.com/user-guide/configuration/services/saas.html).
 
@@ -140,7 +140,7 @@ To generate an API key and private key, see [Commerce Services](https://docs.mag
 
 The developer or SI configures the SaaS environment as described in the Commerce Services section of the configuration. Commerce Services becomes available in the Admin Configuration sidebar when a SaaS module is installed.
 
-## Synchronizing catalog data
+## Synchronize catalog data
 
 Live Search requires synchronized product data for search operations, and synchronized attribute data to configure facets. The initial synchronization between the product catalog and the catalog service begins when Live Search is first connected. Depending on the installation method and size of the catalog, it can take up to eight hours for the data to be exported and indexed by Live Search. The list of data that is synchronized and shared with the catalog service can be found in the schema, which is defined in:
 
@@ -158,7 +158,7 @@ For additional help, refer to [Live search catalog not synchronized](https://sup
 ### Future product updates
 After the initial synchronization, it can take up to fifteen minutes for incremental product updates to become available to storefront search. To learn more, go to [Streaming Product Updates]({{ site.baseurl }}/live-search/indexing.html#streaming-product-updates).
 
-## Testing the connection
+## Test the connection
 
 In the storefront, verify the following:
 
@@ -170,7 +170,7 @@ If everything works correctly, congratulations! Live Search is installed, connec
 
 If you encounter problems in the storefront, check the `var/log/system.log` file for API communication failures or errors on the services side.
 
-## Update Live Search
+## Updating Live Search
 
 To update Live Search, run the following from the command line:
 
@@ -198,7 +198,7 @@ To update to a major version such as from 1.0 to 2.0, edit the project’s root 
    composer update magento/live-search –-with-dependencies
    ```
 
-## Uninstall Live Search
+## Uninstalling Live Search
 
 To uninstall Live Search, go to [Uninstall modules]({{ site.baseurl }}{{ site.gdeurl }}/install-gde/install/cli/install-cli-uninstall-mods.html).
 
