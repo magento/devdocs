@@ -53,7 +53,7 @@ The following class selectors can be used to style the container, suggestion, an
 ![Popover container]({{ page.baseurl }}/live-search/images/livesearch-popover-container.png)
 _.livesearch.popover-container_
 
-![View all footer]({{ page.baseurl }}/live-search/images/livesearch-view-all-footer.png)<br />
+![View all footer]({{ page.baseurl }}/live-search/images/livesearch-view-all-footer.png)\\
 _.livesearch.view-all-footer_
 
 ### Suggestion Class Selectors
