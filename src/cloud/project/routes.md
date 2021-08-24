@@ -31,7 +31,7 @@ magento-cloud environment:routes
 +-------------------+----------+---------------+
 | Route             | Type     | To            |
 +-------------------+----------+---------------+
-| http://{default}/ | upstream | mymagento:php |
+| http://{default}/ | upstream | mymagento     |
 +-------------------+----------+---------------+
 ```
 {:.no-copy}
