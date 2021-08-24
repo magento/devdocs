@@ -32,7 +32,7 @@ When you are ready to launch your site, you must update the DNS configuration to
 
 -  Production environment configuration has been updated with all required domains
 
-   Typically, you work with your Customer Technical Advisor to add all top-level domains and sub-domains required for your stores. To add or change the domains for your Production environment, submit a [{{site.data.var.ee}} Support ticket](https://support.magento.com/hc/en-us/articles/360019088251). Wait for confirmation that your project configuration has been updated.
+   Typically, you work with your Customer Technical Advisor to add all top-level domains and sub-domains required for your stores. To add or change the domains for your Production environment, submit a [Support ticket](https://support.magento.com/hc/en-us/articles/360019088251). Wait for confirmation that your project configuration has been updated.
 
    On Starter projects, you must add the domains to your project. See [Manage domains]({{ site.baseurl }}/cloud/cdn/configure-fastly-customize-cache.html#manage-domains).
 
