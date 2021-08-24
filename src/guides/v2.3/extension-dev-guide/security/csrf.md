@@ -14,7 +14,7 @@ server-side and inserted into forms. When receiving a form, the server verifies 
 included in the request.
 
 ## Built-in CSRF protection
-There are anti-CSRF measures, like CSRF tokens, built-in within the framework. Only minimum action is
+There are anti-CSRF measures, like CSRF tokens, built into the framework. Only minimum action is
 required from developers to make these mechanisms work.
 
 The framework cannot be sure which controller is intended to change state and thus needs to be protected. A developer
