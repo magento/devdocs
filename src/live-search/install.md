@@ -74,7 +74,7 @@ In this scenario, storefront operations are interrupted while the Live Search se
 
 1. To make facets available as filters in the storefront, add at least one [facet](https://docs.magento.com/user-guide/live-search/facets-add.html) that meets the [required settings](https://docs.magento.com/user-guide/live-search/facets.html).
 
-   You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services. 
+   You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services.
 
 1. Wait from 30-60 minutes for the data to be indexed and synchronized. Then, [verify](#verify-export) that the data was exported.
 
@@ -86,7 +86,7 @@ This onboarding method is recommended when installing Live Search to:
 
 -  An existing production Commerce installation
 
-In this scenario, Elasticsearch manages search requests from the storefront while the Live Search service indexes all products in the background, without any interruption to normal storefront operations. 
+In this scenario, Elasticsearch manages search requests from the storefront while the Live Search service indexes all products in the background, without any interruption to normal storefront operations.
 
 Before the installation of Live Search, Live Search modules must be disabled and Elasticsearch modules enabled. After the installation, Live Search modules must be enabled and Elasticsearch modules disabled.
 
@@ -115,8 +115,8 @@ Before the installation of Live Search, Live Search modules must be disabled and
 
 1. Wait from 30-60 minutes for the data to be indexed and synchronized. Then, use the [GraphQL playground]({{ page.baseurl }}/live-search/graphql-support.html) with an empty search phrase (the default query) to verify the following:
 
-   - The product count returned is close to what you expect for the store view
-   - Facet(s) are returned
+   -  The product count returned is close to what you expect for the store view
+   -  Facet(s) are returned
 
 1. Enter the following from the command line to disable Elasticsearch modules, enable Live Search modules, and run setup.
 
@@ -162,9 +162,9 @@ After the initial synchronization, it can take up to fifteen minutes for increme
 
 In the storefront, verify the following:
 
-- The _Search_ box returns results correctly
-- Category browse returns results correctly
-- Facet(s) are available as filters on search results pages
+-  The _Search_ box returns results correctly
+-  Category browse returns results correctly
+-  Facet(s) are available as filters on search results pages
 
 If everything works correctly, congratulations! Live Search is installed, connected, and ready to use.
 
