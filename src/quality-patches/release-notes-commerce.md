@@ -1,23 +1,22 @@
 ---
 group: software-update-guide
-title: Quality patches release notes
+title: Quality patches for Adobe Commerce
 functional_areas:
   - Setup
   - Configuration
   - Upgrade
+redirect_from: /quality-patches/release-notes.html
 ---
 
-The [Quality Patches Tool](https://github.com/magento/quality-patches) delivers individual patches developed by Adobe and the {{ site.data.var.ce }} community. It allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}.
+{% include install/patch/quality-patch-intro.md %}
+
+For information about quality patches created by the community for {{site.data.var.ce}}, see the [release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md) GitHub repository.
 
 <!-- The release notes include:
 
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
-
-{:.bs-callout-info}
-See [Apply patches]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html) for instructions on applying patches to your {{ site.data.var.ee }} or {{ site.data.var.ce }} projects.
-See [Patches available in the Quality Patches Tool](https://support.magento.com/hc/en-us/sections/360010506631-Patches-available-in-MQP-tool-) for additional patch details.
 
 ## v1.1.1
 
