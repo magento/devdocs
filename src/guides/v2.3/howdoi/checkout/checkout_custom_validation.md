@@ -6,7 +6,7 @@ title: Add custom validation rules to checkout address form
 contributor_name: Ziffity
 contributor_link: https://www.ziffity.com/
 subtitle: Customize Checkout
-menu_order: 101
+menu_order: 110
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
@@ -25,7 +25,7 @@ To change the existing address validations to the Magento checkout, do the follo
 
 [Create a new module](https://devdocs.magento.com/videos/fundamentals/create-a-new-module/) named `Vendor/AddressRestriction` and register it.
 
-## Step 2 Create a di.xml file {#add-dixml-file}
+## Step 2: Create a di.xml file {#add-dixml-file}
 
 Create the file `app/code/Vendor/AddressRestriction/etc/di.xml`:
 
@@ -38,9 +38,9 @@ Create the file `app/code/Vendor/AddressRestriction/etc/di.xml`:
 </config>
 ```
 
-## Step 3 Adding validation to the Shipping Address {#add-shipping-validation}
+## Step 3: Add validation for the shipping address {#add-shipping-validation}
 
-Create the file `app/code/Vendor/AddressRestriction/Block/LayoutProcessor.php`;
+Create the file `app/code/Vendor/AddressRestriction/Block/LayoutProcessor.php`:
 
 ```php?start_inline=1
 <?php
@@ -96,7 +96,7 @@ class LayoutProcessor
 }
 ```
 
-## Step 4 Adding validation to Billing Address {#add-billing-validation}
+## Step 4: Add validation for the billing address {#add-billing-validation}
 
 ```php?start_inline=1
 $fields = $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
