@@ -52,6 +52,6 @@ To update the `{{site.data.var.ct}}` package:
 [backward incompatible changes]: {{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html
 [Upgrade to use ece-tools]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html
 [upgrade your project]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html
-[upgrade Magento version]: {{site.baseurl}}/cloud/project/project-upgrade.html
+[upgrade {{site.data.var.ee}} version]: {{site.baseurl}}/cloud/project/project-upgrade.html
 [Upgrades and Patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
 [{{site.data.var.csuite}} packages]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html

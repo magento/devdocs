@@ -23,7 +23,7 @@ The following sections detail more about project and environment variables:
 
 -  [Overview of environment variables]({{ site.baseurl }}/cloud/env/variables-intro.html)
 -  [{{site.data.var.ece}} environment variables]({{ site.baseurl }}/cloud/env/variables-cloud.html)
--  [Magento application environment variables]({{ site.baseurl }}/cloud/env/environment-vars_magento.html)
+-  [Application environment variables]({{ site.baseurl }}/cloud/env/environment-vars_magento.html)
 -  [Configuration management]({{ site.baseurl }}/cloud/live/sens-data-over.html)
 -  [Example of configuration management]({{ site.baseurl }}/cloud/live/sens-data-initial.html)
 
@@ -41,7 +41,7 @@ The Project Web Interface provides features to create, manage, and deploy code i
 {:.procedure}
 To access your projects and environments:
 
-1. Log in to your Magento account at [https://account.magento.com](https://account.magento.com).
+1. Log in to your account at [https://account.magento.com](https://account.magento.com).
 1. Click **Projects (Cloud)**.
 1. Locate your project and click **View Project Page**.
 
@@ -77,7 +77,7 @@ To review your integration tokens, IDs, and more:
 
 ## Access the project and environments {#project}
 
-When you first login, a list of projects you have access to displays. As an Account Owner, you can only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
+When you first login, a list of projects you have access to displays. As an Account Owner, you can only see your company's project. An Adobe Solutions Partner may see multiple projects for all of the clients they support.
 
 Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
 

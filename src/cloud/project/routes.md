@@ -8,7 +8,7 @@ redirect_from:
  - /cloud/project/project-conf-files_routes.html  
 ---
 
-The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes for your {{ site.data.var.ece }} Integration, Staging, and Production environments. Routes determine how Magento processes incoming HTTP and HTTPS requests.
+The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes for your {{ site.data.var.ece }} Integration, Staging, and Production environments. Routes determine how the application processes incoming HTTP and HTTPS requests.
 
 {% include cloud/note-pro-missing-self-service-options.md %}
 
