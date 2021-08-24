@@ -4,8 +4,32 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Aug 16 16:44:00 2021
+updated: Mon Aug 23 15:54:58 2021
 entries:
+- description: Clarified the difference between [updating the ece-tools package](https://devdocs.magento.com/cloud/project/ece-tools-update.html)
+    and [upgrading your cloud project to use the ece-tools package](https://devdocs.magento.com/cloud/project/ece-tools-upgrade-project.html).
+  versions: 2.x
+  type: Technical
+  date: August 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2475
+  merge_commit: a1f714e6bd258fcf93fa5179eab93ce94e5588ad
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Updated [release notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/)
+    for Amazon Sales Channel version 4.4.1.
+  versions: 2.x
+  type: Major Update
+  date: August 19, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2464
+  merge_commit: a921f2a464a3bbfd63677d528eca92880ed4a03f
+  contributor: hickskenh
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
 - description: Added information to the Adobe Commerce 2.4.3, Magento Open Source
     2.4.3, and Magento 2.3.7-p1 release notes about the 8/11/2021 hot fix that addresses
     an issue with API rate limiting.  See [Magento 2.3.7-p1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html)
