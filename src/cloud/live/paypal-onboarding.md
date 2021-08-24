@@ -60,7 +60,7 @@ To configure PayPal Express Checkout:
    *  __API Authentication Methods__ as API Signature or API Certificate.
    *  API Username, Password, and Signature captured from your PayPal account.
    *  __Sandbox Mode__ select Yes or No to indicate if the credentials you entered are for sandbox. If you entered production credentials, select No.
-   *  __API Uses Proxy__ select Yes or No to set if the system uses a proxy server to establish a connection between Magento and the PayPal payment system. If Yes, enter the proxy host and port.
+   *  __API Uses Proxy__ select Yes or No to set if the system uses a proxy server to establish a connection between {{site.data.var.ee}} and the PayPal payment system. If Yes, enter the proxy host and port.
 
 1. For detailed information and steps for configuring your account, see [PayPal Express Checkout](http://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html) starting with Step 2 Complete the Required Settings.
 
