@@ -62,7 +62,7 @@ In this scenario, storefront operations are interrupted while the Live Search se
     ```
 
     {:.bs-callout-warning}
-    While the data is indexed and synchronized, the search and category browse operations are not available in the storefront. Depending on the size of your catalog, the process can take up to eight hours to complete.
+    While the data is indexed and synchronized, the search and category browse operations are not available in the storefront. Depending on the size of your catalog, the process can take about an hour from the time `cron` runs to synchronize your data to Live Search services.
 
 1. Verify that the following [indexers](https://docs.magento.com/user-guide/system/index-management.html) are set to `Update by Schedule`:
 
@@ -72,9 +72,9 @@ In this scenario, storefront operations are interrupted while the Live Search se
 
 1. Configure your [API keys](#configure-api-keys) to [synchronize](#synchronize-catalog-data) your catalog data to Live Search services.
 
-1. To make facets available as filters in the storefront, add at least one [facet](https://docs.magento.com/user-guide/live-search/facets-add.html) that meets the [required settings](https://docs.magento.com/user-guide/live-search/facets.html).
+1. To make facets available as filters in the storefront, add the [facets](https://docs.magento.com/user-guide/live-search/facets-add.html) you need, according to the [requirements](https://docs.magento.com/user-guide/live-search/facets.html).
 
-   You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services.
+   You should be able to add facets after `cron` runs the attribute feeds and exports attribute metadata.
 
 1. Wait about an hour after `cron` runs to synchronize data. Then, [verify](#verify-export) that the data was exported.
 
@@ -113,7 +113,7 @@ In this scenario, Elasticsearch manages search requests from the storefront whil
 
 1. Configure your [API keys](#configure-api-keys) to [synchronize](#synchronize-catalog-data) your catalog data to Live Search services.
 
-1. To make facets available as filters in the storefront, add at least one [facet](https://docs.magento.com/user-guide/live-search/facets-add.html) that meets the [required settings](https://docs.magento.com/user-guide/live-search/facets.html).
+1. To make facets available as filters in the storefront, add the [facets](https://docs.magento.com/user-guide/live-search/facets-add.html) you need, according to the [requirements](https://docs.magento.com/user-guide/live-search/facets.html).
 
    You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services.
 
