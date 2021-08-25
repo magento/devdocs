@@ -54,7 +54,7 @@ In this scenario, storefront operations are interrupted while the Live Search se
 
    For more information, see the list of Live Search [dependencies](#live-search-dependencies) that are captured by Composer.
 
-1. Run the following commands to install Live Search and disable Elasticsearch modules:
+1. Run the following commands to disable Elasticsearch and related modules and install Live Search:
 
     ```bash
     bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch  Magento_InventoryElasticsearch
