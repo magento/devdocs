@@ -163,7 +163,7 @@ To find your project SSH public key (also referred to as a *deploy key*):
 
 ### Enter your GitHub deploy key {#cloud-deploykey-github}
 
-On GitHub, deploy keys are read-only by default. Your Magento project won't push code to the private repository.
+On GitHub, deploy keys are read-only by default. Your project won't push code to the private repository.
 
 To enter your project's public key as a GitHub deploy key:
 

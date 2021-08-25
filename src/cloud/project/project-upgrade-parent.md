@@ -13,13 +13,13 @@ Some restrictions in the {{site.data.var.ee}} code base affect your ability to u
 
 | Current Version | Upgrade Path | Instructions
 | --- | --- | --- |
-| 2.1.3 and earlier | You must upgrade Magento to version 2.1.4 or later before you continue. | [Upgrade Magento version] |
+| 2.1.3 and earlier | You must upgrade {{site.data.var.ee}} to version 2.1.4 or later before you continue. | [Upgrade {{site.data.var.ee}} version] |
 | 2.1.4 – 2.1.14 | You can update to [{{site.data.var.ct}} 2002.0.9]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200209) and later 2002.0.x releases. | [Update {{site.data.var.ct}} version] |
 | 2.1.15 – 2.1.16 | You can update to [{{site.data.var.ct}} 2002.0.9]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200209) and later. | [Update {{site.data.var.ct}} version] |
 | 2.2.x and later | You can update to [{{site.data.var.ct}} 2002.0.8]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200208) and later. | [Update {{site.data.var.ct}} version] |
 
 {% include cloud/note-ece-tools-package.md %}
 
-[Upgrade Magento version]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html
+[Upgrade {{site.data.var.ee}} version]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html
 [Update {{site.data.var.ct}} version]: {{site.baseurl}}/cloud/project/ece-tools-update.html
 [apply patches]: {{site.baseurl}}/cloud/project/project-patch.html

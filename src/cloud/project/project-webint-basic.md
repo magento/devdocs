@@ -102,7 +102,7 @@ To set environment specific variables in the Project Web Interface:
 1. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 {:.bs-callout-warning}
-If you are attempting to [override Magento configuration settings]({{ site.baseurl }}
+If you are attempting to [override configuration settings]({{ site.baseurl }}
 ), you must prepend `env:` to the variable name. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud/cloud_env_var_example.png)
 
@@ -123,7 +123,7 @@ To set project variables in the Project Web Interface:
 
 ## Configure routes {#project-conf-env-route}
 
-Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see [routes.yaml]({{ site.baseurl }}/cloud/project/routes.html). These routes (or URLs) are used to access your Magento storefront.
+Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see [routes.yaml]({{ site.baseurl }}/cloud/project/routes.html). These routes (or URLs) are used to access your storefront.
 
 1. [Access your project](#project-access) and select a specific environment.
 1. Select the Routes tab.
