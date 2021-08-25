@@ -303,10 +303,12 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 
    ```xml
    <?xml version="1.0"?>
-   /**
+   <!--
+
+    /**
     * Copyright © Magento, Inc. All rights reserved.
     * See COPYING.txt for license details.
-    */
+    */-->
 
    <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
        <code>xx_YY</code>
