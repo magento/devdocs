@@ -62,7 +62,7 @@ In this scenario, storefront operations are interrupted while the Live Search se
     ```
 
     {:.bs-callout-warning}
-    While the data is indexed and synchronized, the search and category browse operations are not available in the storefront. Depending on the size of your catalog, the process can take about an hour from the time `cron` runs to synchronize your data to Live Search services.
+    While the data is indexed and synchronized, the search and category browse operations are not available in the storefront. Depending on the size of your catalog, the process can take at least an hour from the time `cron` runs to synchronize your data to Live Search services.
 
 1. Verify that the following [indexers](https://docs.magento.com/user-guide/system/index-management.html) are set to `Update by Schedule`:
 
@@ -76,7 +76,7 @@ In this scenario, storefront operations are interrupted while the Live Search se
 
    You should be able to add facets after `cron` runs the attribute feeds and exports attribute metadata.
 
-1. Wait about an hour after `cron` runs to synchronize data. Then, [verify](#verify-export) that the data was exported.
+1. Wait at least an hour after `cron` runs to synchronize data. Then, [verify](#verify-export) that the data was exported.
 
 1. [Test](#test-the-connection) the connection from the storefront.
 
@@ -117,7 +117,7 @@ In this scenario, Elasticsearch manages search requests from the storefront whil
 
    You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services.
 
-1. Wait about an hour for the data to be indexed and synchronized. Then, use the [GraphQL playground]({{ page.baseurl }}/live-search/graphql-support.html) with an empty search phrase (the default query) to verify the following:
+1. Wait at least an hour for the data to be indexed and synchronized. Then, use the [GraphQL playground]({{ page.baseurl }}/live-search/graphql-support.html) with an empty search phrase (the default query) to verify the following:
 
    -  The product count returned is close to what you expect for the store view
    -  Facet(s) are returned
