@@ -28,10 +28,10 @@ Add these files to your {{site.data.var.ee}} code:
    ![Switch to your current Commerce branch]({{ site.baseurl }}/common/images/cloud/cloud_cloud-git-233.png){:width="600px"}
 
 1. Log in to your {{site.data.var.ee}} system as, or switch to, the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-1. Change to the Magento installation directory and create a `.magento` directory.
+1. Change to the project installation directory and create a `.magento` directory.
 
    ```bash
-   cd <Magento installation dir>
+   cd <Project installation dir>
    ```
 
    ```bash
@@ -57,12 +57,12 @@ For example, to create `<Adobe Commerce install dir>/.magento.app.yaml` from the
 1. Save the file using the name: `.magento.app.yaml`
 1. Repeat these tasks for the other files.
 
-   -  Create `magento-vars.php` in the Magento root directory.
+   -  Create `magento-vars.php` in the project root directory.
    -  Create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
 
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
-## Add Magento authentication keys
+## Add authentication keys
 
 You must have an authentication key to access the {{site.data.var.ee}} repository and to enable install and update commands for your {{site.data.var.ece}} project. There are two methods for specifying Composer authorization credentials.
 
@@ -72,9 +72,9 @@ You must have an authentication key to access the {{site.data.var.ee}} repositor
 {:.procedure}
 To create a new `auth.json` file:
 
-1. If you do not have an `auth.json` file in your Magento root directory, create one.
+1. If you do not have an `auth.json` file in your project root directory, create one.
 
-   -  Using a text editor, create an `auth.json` file in your Magento root directory.
+   -  Using a text editor, create an `auth.json` file in your project root directory.
    -  Copy the contents of the [sample `auth.json`]({{ site.mage2bloburl }}/2.3/auth.json.sample) into the new `auth.json` file.
 
 1. Replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials.
@@ -130,7 +130,7 @@ Before you push code to the {{site.data.var.ece}} Git repository, modify your `c
 
 To edit `composer.json`:
 
-1. Go to the Magento installation directory that contains the code that you downloaded from GitHub as the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Go to the project installation directory that contains the code that you downloaded from GitHub as the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 1. In a text editor, open `composer.json` in the project root directory.
 1. Substitute the following value in the `require` section:
 
@@ -202,7 +202,7 @@ Use the command [`magento setup:backup --media`]({{ site.baseurl }}/guides/v2.3/
 
 To decrypt the encrypted data from your imported database, copy your encryption key from your existing `env.php` file. Every environment in Integration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
 
-1. Open `<Magento install dir>/app/etc/env.php` in a text editor.
+1. Open `<Project install dir>/app/etc/env.php` in a text editor.
 1. Search for the value of `key` in the `crypt` array.
 1. Copy the value to the clipboard and save it.
 

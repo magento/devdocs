@@ -115,7 +115,7 @@ After you have completed the git reference configuration, you can import the {{s
       https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
    ```
 
-## Import the Magento database {#cloud-import-db}
+## Import the database {#cloud-import-db}
 
 {%include cloud/note-db-import-export-warning.md%}
 
@@ -174,7 +174,7 @@ To drop and re-create the Cloud database:
 
 ### Update base URLs {#baseurl}
 
-Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the `core_config_data` table.
+Before you can access {{site.data.var.ee}} from your local Cloud development system, you must change the base URLs in the database. Base URLs are stored in the `core_config_data` table.
 
 The following example shows how to change _only_ the insecure URL but you can use the same procedure to change secure URLs as well.
 
@@ -222,9 +222,9 @@ To update the unsecure base URL:
 {:.bs-callout-info}
 For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.
 
-## Add the Magento encryption key {#encryption-key}
+## Add the {{site.data.var.ee}} encryption key {#encryption-key}
 
-The {{site.data.var.ee}} encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to `env.php`. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.
+The {{site.data.var.ee}} encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production environments. If you deployed {{site.data.var.ee}} when first creating a project across all environments, the encryption key should have been saved to `env.php`. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.
 
 You copied the key in a [previous step]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
@@ -319,7 +319,7 @@ To verify everything imported properly, perform the following tasks in your loca
    magento-cloud environment:url
    ```
 
-1. Log in to the Magento [Admin](https://glossary.magento.com/admin) using the username and password of your {{site.data.var.ee}} system.
+1. Log in to the [Admin](https://glossary.magento.com/admin) using the username and password of your {{site.data.var.ee}} system.
 1. Verify that the settings in the Admin are the same as your {{site.data.var.ee}} system.
 1. Access the [storefront](https://glossary.magento.com/storefront).
 1. Confirm that categories, products, and other content display as expected.

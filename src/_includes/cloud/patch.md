@@ -15,7 +15,7 @@ There are two types of patches:
 
 *  [Custom patches](#cloud-patch-custom)
 
-   Custom patches can be provided by Magento to address a specific issue you raised in a Support ticket. Third-party module / extension developers can also provide a custom patch.
+   Custom patches can be provided by Adobe to address a specific issue you raised in a Support ticket. Third-party module / extension developers can also provide a custom patch.
 
    Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
@@ -76,7 +76,7 @@ Verify other changes you're going to submit to source control before you start t
 
 ### Upgrade the patch
 
-1. Change to your Magento base directory and enter the following command:
+1. Change to your base directory and enter the following command:
 
    ```bash
    composer update
@@ -100,7 +100,7 @@ Verify other changes you're going to submit to source control before you start t
 
    `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages.
 
-   The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in {{site.data.var.ee}}, so you must add the marshaled files to source control.
+   The files Composer marshals belong to the new version of {{site.data.var.ee}}, to overwrite the outdated version of those same files. Currently, marshaling is disabled in {{site.data.var.ee}}, so you must add the marshaled files to source control.
 
 1. Wait for deployment to complete.
 
@@ -120,7 +120,7 @@ We recommend you test a patch in the `master` branch.
 
 To test a general patch on your local system:
 
-1. On your local system, enter the following commands as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html):
+1. On your local system, enter the following commands as the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html):
 
    ```bash
    cd <project root dir>
@@ -144,13 +144,13 @@ To test a general patch on your local system:
    git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
    ```
 
-1. Clean the Magento cache:
+1. Clean the cache:
 
    ```bash
-   php <Magento project root dir>/bin/magento cache:clean
+   php <Project root dir>/bin/magento cache:clean
    ```
 
-   You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+   You can also clean the cache using the [Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
 1. Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 1. After testing the patch, push it to the remote server and deploy it:
@@ -175,7 +175,7 @@ After you've successfully tested a patch locally and on your integration environ
 1. Enter the following commands:
 
    ```bash
-   <Magento project root dir>/composer update
+   <Project root dir>/composer update
    ```
 
 1. Apply the patch locally:
@@ -184,13 +184,13 @@ After you've successfully tested a patch locally and on your integration environ
    git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
    ```
 
-1. Clean the Magento cache:
+1. Clean the cache:
 
    ```bash
-   php <Magento project root dir>/bin/magento cache:clean
+   php <Project root dir>/bin/magento cache:clean
    ```
 
-   You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+   You can also clean the cache using the [Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
 1. Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 1. After testing the patch, push it to the remote server and deploy it:
@@ -219,17 +219,17 @@ We recommend you test a patch locally in the `master` branch.
 
 To test a custom patch on your local system:
 
-1. On your local system, enter the following command as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) if you haven't done so already:
+1. On your local system, enter the following command as the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) if you haven't done so already:
 
    ```bash
-   mkdir <Magento project root dir>/m2-hotfixes
+   mkdir <Project root dir>/m2-hotfixes
    ```
 
 1. Copy the patch file to that directory.
 1. Apply the patch locally:
 
    ```bash
-   cd <Magento project root dir>
+   cd <Project root dir>
    ```
 
    ```bash
@@ -241,16 +241,16 @@ To test a custom patch on your local system:
    ```
 
    ```bash
-   git apply <Magento project root dir>/m2-hotfixes/<patch file name>
+   git apply <Project root dir>/m2-hotfixes/<patch file name>
    ```
 
-1. Clean the Magento cache:
+1. Clean the cache:
 
    ```bash
-   php <Magento project root dir>/bin/magento cache:clean
+   php <Project root dir>/bin/magento cache:clean
    ```
 
-   You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+   You can also clean the cache using the [Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
 1. After testing the patch, push it to the remote server and deploy it:
 
@@ -274,7 +274,7 @@ After you've successfully tested a custom patch locally and on your integration 
 1. On your staging or production system, enter the following command if you haven't done so already:
 
    ```bash
-   mkdir <Magento project root dir>/m2-hotfixes
+   mkdir <Project root dir>/m2-hotfixes
    ```
 
 1. Copy the patch file to that directory.
@@ -300,16 +300,16 @@ After you've successfully tested a custom patch locally and on your integration 
 1. Apply the patch:
 
    ```bash
-   git apply <Magento project root dir>/m2-hotfixes/<patch file name>
+   git apply <Project root dir>/m2-hotfixes/<patch file name>
    ```
 
-1. Clean the Magento cache:
+1. Clean the cache:
 
    ```bash
-   php <Magento project root dir>/bin/magento cache:clean
+   php <Project root dir>/bin/magento cache:clean
    ```
 
-   You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+   You can also clean the cache using the [Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
 1. After testing the patch, push it to the remote server and deploy it:
 
