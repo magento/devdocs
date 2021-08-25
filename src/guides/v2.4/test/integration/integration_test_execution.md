@@ -99,6 +99,35 @@ Leave all the settings that do not start with `db-` and `amqp-` at their default
 You can include additional setup options—available to the `setup:install` command—in the test configuration file. A
 complete list of options is available [here]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
 
+If your project requires custom entries in the `core_config_data` table (like introduction of new 3rd party services
+that affect your application on a basic level or configuration for logic that would prevent access if not configured
+properly), Magento provides a file template that you can use for this purpose.
+
+Copy `dev/tests/integration/etc/config-global.php.dist` to `dev/tests/integration/etc/config-global.php` (without the
+`.dist` suffix) and add your path-value pairs there. Do not remove existing entries from the file as they're required
+for the Integration Test Framework to run tests properly.
+
+Example:
+
+```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+return [
+    'customer/password/limit_password_reset_requests_method' => 0,
+    'admin/security/admin_account_sharing' => 1,
+    'admin/security/limit_password_reset_requests_method' => 0,
+    'some/custom/path' => 'some-custom-value'
+];
+```
+
+Remember that the file above is only for config files required by all the integration tests. If you need to introduce
+new configuration values only for particular tests to perform their function, you should use the
+[@magentoConfigFixture]({{ page.baseurl }}/test/integration/annotations/magento-config-fixture.html) annotation instead.
+
 ## Adjust the PHPUnit configuration file
 
 See the `dev/tests/integration/phpunit.xml.dist` file for the default integration test configuration.
