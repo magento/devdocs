@@ -56,7 +56,7 @@ To get started:
 
 1. Change to a project directory.
 
-   For example if your project is named commerce, `cd commerce`
+   For example if your project is named Commerce, `cd commerce`
 
 #### Update `auth.json` and redeploy the environment
 
