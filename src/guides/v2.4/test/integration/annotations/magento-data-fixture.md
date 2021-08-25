@@ -42,29 +42,29 @@ As mentioned above, there are two ways to declare fixtures:
 ### Fixture as a separate file
 
 Define the fixture in a separate file when you want to reuse it in different test cases.
-To declare the fixture, use one of the following conventions 
+To declare the fixture, use one of the following conventions:
 
-- Fixture declaration as a path relative to the testsuite directory
-
-  - Relative to `dev/tests/integration/<test suite directory>`
-  - With forward slashes `/`
-  - No leading slash
+-  Fixture declaration as a path relative to the testsuite directory
+   -  Relative to `dev/tests/integration/<test suite directory>`
+   -  With forward slashes `/`
+   -  No leading slash
 
   Example:
-  ```
+
+  ```php
   /**
    * @magentoDataFixture Magento/Cms/_files/pages.php
    */
   ```
 
-- Fixture declaration as a path relative to a module
-
-  - Relative to the directory of a module available in the project
-  - With forward slashes `/`
-  - No leading slash in the path part of the declaration
+-  Fixture declaration as a path relative to a module
+   -  Relative to the directory of a module available in the project
+   -  With forward slashes `/`
+   -  No leading slash in the path part of the declaration
 
   Example:
-  ```
+
+  ```php
   /**
    * @magentoDataFixture VendorName_ModuleName::Test/Integration/_files/fixture_name.php
    */
