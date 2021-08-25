@@ -40,7 +40,7 @@ The [PHP installation instructions][] include a step for installing these extens
 If you install Magento after cloning from the [GitHub](https://github.com/magento/magento2) repository, then make sure you have [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) installed on your system.
 
 <!--{% assign packages = site.data.codebase.v2_3.open-source.composer_lock.packages %}-->
-{% include install/php-extensions-template.md %}
+{% include install/php-extensions-template-2.3.md %}
 
 Refer to [official PHP documentation][] for installation details.
 

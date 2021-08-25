@@ -312,6 +312,9 @@ pages:
         - label: Brute force attacks
           url: /extension-dev-guide/security/anti-brute-force.html
 
+        - label: CSRF
+          url: /extension-dev-guide/security/csrf.html
+
     - label: Versioning
       url: /extension-dev-guide/versioning/
       children:
