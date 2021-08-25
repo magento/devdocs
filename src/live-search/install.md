@@ -56,16 +56,16 @@ In this scenario, storefront operations are interrupted while the Live Search se
 
 1. Run the following commands to disable Elasticsearch and related modules and install Live Search:
 
-    ```bash
-    bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch  Magento_InventoryElasticsearch
-    ```
-    
-    ```bash
-    bin/magento setup:upgrade
-    ```
+   ```bash
+   bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch  Magento_InventoryElasticsearch
+   ```
 
-    {:.bs-callout-warning}
-    While the data is indexed and synchronized, the search and category browse operations are not available in the storefront. Depending on the size of your catalog, the process can take at least an hour from the time `cron` runs to synchronize your data to Live Search services.
+   ```bash
+   bin/magento setup:upgrade
+   ```
+
+   {:.bs-callout-warning}
+   While the data is indexed and synchronized, the search and category browse operations are not available in the storefront. Depending on the size of your catalog, the process can take at least an hour from the time `cron` runs to synchronize your data to Live Search services.
 
 1. Verify that the following [indexers](https://docs.magento.com/user-guide/system/index-management.html) are set to `Update by Schedule`:
 
@@ -133,7 +133,7 @@ In this scenario, Elasticsearch manages search requests from the storefront whil
    ```bash
    bin/magento module:enable Magento_LiveSearchAdapter Magento_LiveSearchStorefrontPopover
    ```
-   
+
    ```bash
    bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch Magento_InventoryElasticsearch
    ```
