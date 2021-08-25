@@ -93,15 +93,15 @@ To launch the Docker environment in developer mode:
    {:.bs-callout-info}
    If you host your Docker environment on Windows and the session start fails, update the `mutagen.sh` file to change the value for the `--symlink-mode` option to `portable`.
 
-1. Install Magento in your Docker environment.
+1. Install {{site.data.var.ee}} in your Docker environment.
 
-   -  For Magento version 2.4 and 2.4.1 only, run the following command to apply patches before you deploy.
+   -  For {{site.data.var.ee}} version 2.4 and 2.4.1 only, run the following command to apply patches before you deploy.
 
       ```bash
       docker-compose run --rm deploy php ./vendor/bin/ece-patches apply
       ```
 
-   -  Deploy Magento in the Docker container.
+   -  Deploy {{site.data.var.ee}} in the Docker container.
 
       ```bash
       docker-compose run --rm deploy cloud-deploy

@@ -3,9 +3,9 @@ To get started with environment branches:
 
 1. On your local workstation, change to your Cloud project directory.
 
-1. Switch to the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Switch to the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
-1. Log in to your Magento project.
+1. Log in to your project.
 
    ```bash
    magento-cloud login
