@@ -128,6 +128,10 @@ Remember that the file above is only for config files required by all the integr
 new configuration values only for particular tests to perform their function, you should use the
 [@magentoConfigFixture]({{ page.baseurl }}/test/integration/annotations/magento-config-fixture.html) annotation instead.
 
+{:.bs-callout-info}
+You can change the locations and names of both files used by the Integration Test Framework that were described
+above using the PHPUnit configuration file.
+
 ## Adjust the PHPUnit configuration file
 
 See the `dev/tests/integration/phpunit.xml.dist` file for the default integration test configuration.
