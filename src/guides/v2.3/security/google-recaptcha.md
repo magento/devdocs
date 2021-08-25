@@ -21,11 +21,11 @@ The Google reCAPTCHA extension is bundled and installed with {{site.data.var.ce}
 {:.bs-callout-warning}
 Before reCAPTCHA can be configured, ensure that your `PHP.ini` file includes this setting: `allow_url_fopen = 1`. See [Required PHP Settings]({{page.baseurl}}/install-gde/prereq/php-settings.html).
 
-See the Magento Admin User Guide [Open Source](https://docs.magento.com/m2/ce/user_guide/stores/security-google-recaptcha.html) and [Commerce](https://docs.magento.com/m2/ee/user_guide/stores/security-google-recaptcha.html) for configuration options in the Magento Admin and storefront.
+See the Admin User Guide [Open Source](https://docs.magento.com/m2/ce/user_guide/stores/security-google-recaptcha.html) and [Commerce](https://docs.magento.com/m2/ee/user_guide/stores/security-google-recaptcha.html) for configuration options in the Admin and storefront.
 
 ## Troubleshooting
 
-The extension supports a command line option for disabling reCAPTCHA. Use this command when you cannot access the Magento Admin UI.
+The extension supports a command line option for disabling reCAPTCHA. Use this command when you cannot access the Admin UI.
 
 ```bash
 bin/magento msp:security:recaptcha:disable

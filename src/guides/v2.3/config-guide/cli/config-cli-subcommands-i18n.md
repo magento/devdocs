@@ -39,7 +39,7 @@ Generate the dictionary and translate:
 
 1. You can package the translation dictionaries into a language package and provide the package to the Magento store administrator.
 
-1. In the Magento Admin, the store administrator [configures the translations].
+1. In the Admin, the store administrator [configures the translations].
 
 Command options:
 

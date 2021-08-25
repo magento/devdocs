@@ -7,7 +7,7 @@ functional_areas:
 ---
 ## What's in this topic {#favicon-intro}
 
-This topic describes how to create your custom theme for Magento Admin, referencing the similar [flow for creating a custom storefront theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html).
+This topic describes how to create your custom theme for Admin, referencing the similar [flow for creating a custom storefront theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html).
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ In the `app/design/adminhtml` directory create a new `<Vendor>/<admin_theme>` di
 
 ## Add a declaration `theme.xml` {#declare_theme}
 
-In the theme directory, add `theme.xml` containing at least the theme name and the parent theme name (if the theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from one). We recommend you to inherit from the default Magento Admin theme: `Magento/backend`.
+In the theme directory, add `theme.xml` containing at least the theme name and the parent theme name (if the theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from one). We recommend you to inherit from the default Admin theme: `Magento/backend`.
 
 Add or copy from an existing `theme.xml` to your theme directory `app/design/adminhtml/<Vendor>/<admin_theme>`.
 
@@ -44,7 +44,7 @@ Configure it using the following example (replace placeholders with your [theme]
 </theme>
 ```
 
-If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
 
 ## Add `registration.php` {#add_registry}
 
@@ -95,7 +95,7 @@ To customize the Admin theme logo:
 
 ## Theme registration {#register_theme}
 
-Once you open the Magento Admin (or reload any  Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.
+Once you open the Admin (or reload any  Admin page) having added the theme files to the files system, your theme gets registered and added to the database.
 
 ## Apply the Admin theme
 

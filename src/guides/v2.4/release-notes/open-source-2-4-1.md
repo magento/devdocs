@@ -273,7 +273,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Issues with multi-factor authentication and abandoned carts have been resolved.
 
-*  Amazon Pay now correctly populates the `store name` in emails and other displayed locations.  If the **Store Name** field in Amazon Pay configuration is empty, the extension retrieves the store's default name (that is, the name you give your store in Magento Admin).
+*  Amazon Pay now correctly populates the `store name` in emails and other displayed locations.  If the **Store Name** field in Amazon Pay configuration is empty, the extension retrieves the store's default name (that is, the name you give your store in Admin).
 
 *  Localization/translation issues for Decline scenarios have been addressed. Displayed text is no longer always in English.
 

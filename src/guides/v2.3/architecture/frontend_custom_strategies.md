@@ -17,7 +17,7 @@ Magento provides several tools to help you significantly jumpstart the storefron
 
 *  [Overview of UI components][]
 
-*  [Magento Admin Pattern Library][]
+*  [Admin Pattern Library][]
 
 See the [Frontend Developer Guide][] for information on creating your themes.
 
@@ -36,11 +36,11 @@ This component [library](https://glossary.magento.com/library) contains standard
 
 See [Overview of UI components][] for details about this library.
 
-### Magento Admin pattern library
+### Admin pattern library
 
-A *pattern library* is a collection of user interface (UI) design patterns that can be re-used in locations throughout your product installation. The [Magento Admin Pattern Library][] defines examples of components that administrators working with the storefront can use.
+A *pattern library* is a collection of user interface (UI) design patterns that can be re-used in locations throughout your product installation. The [Admin Pattern Library][] defines examples of components that administrators working with the storefront can use.
 
-Form elements included in the [Magento Admin](https://glossary.magento.com/magento-admin) pattern library include:
+Form elements included in the [Admin](https://glossary.magento.com/magento-admin) pattern library include:
 
 *  address form
 *  button bar
@@ -52,7 +52,7 @@ Users of the default Magento storefront encounter examples of these form element
 
 The Magento [Admin](https://glossary.magento.com/admin) Pattern library is built on the Less preprocessor and implemented as a [module](https://glossary.magento.com/module). You can download a free, current version of this module from [Magento Marketplace](https://marketplace.magento.com/).
 
-See [Magento Admin Pattern Library][] for more information on using this library.
+See [Admin Pattern Library][] for more information on using this library.
 
 ## Storefront customization levels
 
@@ -86,7 +86,7 @@ Related topics
 
 [Global extensibility features][]
 
-[Magento Admin Pattern Library][]
+[Admin Pattern Library][]
 
 [Overview of UI components][]
 
@@ -98,7 +98,7 @@ Related topics
 
 [Extensibility and modularity]:{{page.baseurl}}/architecture/extensibility.html
 [Global extensibility features]: {{page.baseurl}}/architecture/global_extensibility_features.html
-[Magento Admin Pattern Library]: {{page.baseurl}}/pattern-library/bk-pattern.html
+[Admin Pattern Library]: {{page.baseurl}}/pattern-library/bk-pattern.html
 [Overview of UI components]: {{page.baseurl}}/ui_comp_guide/bk-ui_comps.html
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
 [JavaScript Developer Guide]: {{page.baseurl}}/javascript-dev-guide/bk-javascript-dev-guide.html

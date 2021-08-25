@@ -12,7 +12,7 @@ Module interchangeability was one of the main reasons behind introducing [Servic
 
 In Magento 2, a set of interfaces in a module's `/Api` directory typically define the service contracts, including the APIs and their implementations. A module interface expresses the elements (entity interfaces and services to manipulate them) that the module requires. These elements defined in the interface represent a gateway for communication between modules. The implementation contains the working business logic that corresponds to the elements declared in the interface.
 
-By placing service contracts (APIs), implementations, and UI code in the same module, Magento combines different architectural layers of the system in the scope of one component. Unfortunately, this means that a developer who wants to tweak a module's UI would be changing the same module as another developer who would like to substitute the  implementation for predefined business logic. Even modules that the developer expects to be used in headless Magento installations (those that don't use the Magento Admin at all) must contain UI code.
+By placing service contracts (APIs), implementations, and UI code in the same module, Magento combines different architectural layers of the system in the scope of one component. Unfortunately, this means that a developer who wants to tweak a module's UI would be changing the same module as another developer who would like to substitute the  implementation for predefined business logic. Even modules that the developer expects to be used in headless Magento installations (those that don't use the Admin at all) must contain UI code.
 
 ## Inventory management service layer
 

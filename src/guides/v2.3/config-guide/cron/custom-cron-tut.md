@@ -289,7 +289,7 @@ For a description of what the options mean, see [Configure custom cron jobs and 
 
 ## Step 8 (optional): Verify your custom cron group
 
-This step shows how to verify your custom cron group using the [Magento Admin](https://glossary.magento.com/magento-admin).
+This step shows how to verify your custom cron group using the [Admin](https://glossary.magento.com/magento-admin).
 
 {% collapsible To verify your custom cron group: %}
 
@@ -307,7 +307,7 @@ This step shows how to verify your custom cron group using the [Magento Admin](h
    php /var/www/html/magento2/bin/magento cache:clean
    ```
 
-1. Log in to the Magento Admin as an administrator.
+1. Log in to the Admin as an administrator.
 1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 1. In the right pane, expand **Cron**.
 

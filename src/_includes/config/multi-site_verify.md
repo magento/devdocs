@@ -27,4 +27,4 @@ You're done!
 
 *  If your French and German sites return 404s but your Admin loads, make sure you completed [Step 6: Add the store code to the base URL]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl).
 *  If all URLs return 404s, make sure you restarted your web server.
-*  If the Magento Admin doesn't function properly, make sure you set up your virtual hosts properly.
+*  If the Admin doesn't function properly, make sure you set up your virtual hosts properly.

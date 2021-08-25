@@ -95,7 +95,7 @@ To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].
 [Back up and roll back the file system]:{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html
 [patch]:https://en.wikipedia.org/wiki/Patch_(Unix)
 [Magento Help Center]:https://support.magento.com/hc/en-us/articles/360005484154-Create-a-patch-for-a-Magento-2-Composer-installation-from-a-GitHub-commit
-[Magento Admin user]:{{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first
+[Admin user]:{{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first
 [1]: https://github.com/cweagans/composer-patches/
 [2]: https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede
 [3]: https://github.com/magento/magento2/issues/6474

@@ -1225,7 +1225,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8770
   contributor: abukatar
   profile: https://github.com/abukatar
-- description: Added the "Configure product video options from Magento Admin" section
+- description: Added the "Configure product video options from Admin" section
     to the [Configure product video](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/product-video.html)
     topic.
   versions: 2.3.x, 2.4.x
@@ -1834,7 +1834,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8311
   contributor: sathiyaaa
   profile: https://github.com/sathiyaaa
-- description: Added a new topic describing how to [customize the Magento Admin design](https://devdocs.magento.com/guides/v2.4/howdoi/admin/customize_admin.html).
+- description: Added a new topic describing how to [customize the Admin design](https://devdocs.magento.com/guides/v2.4/howdoi/admin/customize_admin.html).
   versions: 2.3.x, 2.4.x
   type: New Topic
   date: December 8, 2020
@@ -3601,7 +3601,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/6811
 - description: Improved the instructions to configure Cloud Starter projects to use
     New Relic to add alternative instructions for users who have access to New Relic
-    and the Magento Admin for a site, but do not have access to configure environment
+    and the Admin for a site, but do not have access to configure environment
     variables through the Magento Cloud project. See [Configure New Relic for Starter
     environments](https://devdocs.magento.com/cloud/project/new-relic.html#configure-new-relic-for-starter-environments).
   versions: 2.3.x
@@ -5809,7 +5809,7 @@ entries:
   date: March  1, 2019
   link: https://github.com/magento/devdocs/pull/3841
 - description: "-  Updated the Custom VCL snippets with instructions for using the
-    Magento Admin UI to create and manage VCL snippets.<br/>-  Updated and corrected
+    Admin UI to create and manage VCL snippets.<br/>-  Updated and corrected
     the following examples for using Fastly Edge Dictionaries and custom VCL snippets
     to manage request routing for Magento Commerce Cloud traffic: Set up redirects
     to WordPress backend, Block referrer spam, and Secure access to the Admin UI by
@@ -5841,7 +5841,7 @@ entries:
     Updated the Cloud Docker content to explain how to configure Xdebug.<br/>- Added
     two new environment variables: RESOURCE_CONFIGURATION deploy variable and X_FRAME_CONFIGURATION
     global variable<br/>- Updated the ADMIN variables and clarified the usage of ADMIN
-    variables in the Access your Magento Admin panel page.<br/>- Added an example
+    variables in the Access your Admin panel page.<br/>- Added an example
     for preloading pages from multiple domains in the WARM_UP_PAGES post-deploy variable.<br/>-
     Deprecated SCD_EXCLUDE_THEMES environment variable.<br/>- Clarified the backup
     and retention statements regarding the most recent 24-hour period.'
