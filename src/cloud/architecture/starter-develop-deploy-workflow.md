@@ -92,7 +92,7 @@ Do not complete any configurations in your local workstation yet.
 ### Configure store {#configure-store}
 
 When you are ready to configure your store, push all your code to the Integration environment.
-Configure your store settings from the Magento Admin panel for the Integration environment, not in your local environment. You can find the URL in the Project Web Interface. The Store Admin URL is located on the branch page.
+Configure your store settings from the Admin panel for the Integration environment, not in your local environment. You can find the URL in the Project Web Interface. The Store Admin URL is located on the branch page.
 
 For the best information on configurations, review the documentation for {{site.data.var.ee}} and the installed extensions. Here are some links and ideas to help you get kickstarted:
 
@@ -102,13 +102,13 @@ For the best information on configurations, review the documentation for {{site.
 *  [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html) for roles, tools, notifications, and your encryption key for your database
 *  Extension settings using their documentation
 
-Beyond just store settings, you can further configure multiple sites and stores, configured services, and more. See [Configure Magento Commerce]({{ site.baseurl }}/cloud/configure/configuration-overview.html).
+Beyond just store settings, you can further configure multiple sites and stores, configured services, and more. See [Configure your store]({{ site.baseurl }}/cloud/configure/configuration-overview.html).
 
 Now you need to get these settings into your code. We have a helpful command to do this, keep reading.
 
 ### Generate configuration management files {#config-management}
 
-If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to the Staging and Production environments. Previously, you had to copy all your configuration settings down on paper or to a file, and then manually apply the settings to other environments. Or you may have dumped your database and pushed that data to another environment.
+If you are familiar with {{site.data.var.ee}}, you may be concerned about how to get your configuration settings from your database in development to the Staging and Production environments. Previously, you had to copy all your configuration settings down on paper or to a file, and then manually apply the settings to other environments. Or you may have dumped your database and pushed that data to another environment.
 
 {{site.data.var.ece}} provides a set of two [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.2 and later**.
 
@@ -117,7 +117,7 @@ If you are familiar with Magento, you may be concerned about how to get your con
 
 The generated file is `app/etc/config.php`.
 
-You generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your branch, and deploying it.
+You generate the file in the Integration environment where you configured {{site.data.var.ee}}. We walk you through the process of generating the file, adding it to your branch, and deploying it.
 
 **Important notes** on Configuration Management:
 
@@ -139,15 +139,15 @@ For more information, see [Configuration Management]({{ site.baseurl }}/cloud/li
 
 At this point, you should have a developed code branch with a configuration file (`config.local.php` or `config.php`) ready to test.
 
-Every time you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local environment to the remote branch, a matching environment updates services, code, and static content.
+Every time you push code from your local environment, a series of build and deploy scripts run. These scripts generate new code and deploy it to the remote environment. For example, if you are pushing a development branch from your local environment to the remote branch, a matching environment updates services, code, and static content.
 
-You can directly access this environment with a store URL, Magento Admin URL, and SSH. These environments include a web server, database, and configured services. When ready, you can start deploying and testing in the Staging environment.
+You can directly access this environment with a store URL, Admin URL, and SSH. These environments include a web server, database, and configured services. When ready, you can start deploying and testing in the Staging environment.
 
 For more information, see [Deployment workflow](#deploy).
 
 ### Optional: Install sample data {#sample-data}
 
-If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a "blank site" {{site.data.var.ece}} template installation when creating your project.
+If you need some example data when developing your store, you can install our sample data. This data simulates an active store, including customers, products, and other data. This sample data works best with a "blank site" {{site.data.var.ece}} template installation when creating your project.
 
 We recommend installing sample data in your local and Integration environments. If you use this data in Staging or Production, you need to remove the sample information and products before going live.
 

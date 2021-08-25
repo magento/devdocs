@@ -9,21 +9,21 @@ redirect_from:
   - /cloud/reference/docker-config.html
 ---
 
-{{site.data.var.mcd-prod}} uses Docker Compose to build and deploy Magento to a multi-container Docker application. You can generate the Docker Compose configuration to build and deploy Docker from the following sources:
+{{site.data.var.mcd-prod}} uses Docker Compose to build and deploy {{site.data.var.ee}} to a multi-container Docker application. You can generate the Docker Compose configuration to build and deploy Docker from the following sources:
 
 -  [{{site.data.var.ece}} project configuration files] for Cloud projects
 -  [Unified configuration] for On-premises projects
 -  [CLI configuration] using `ece-docker build:compose` command options to override configuration values at runtime
--  [Custom Docker Compose configuration file] supports Magento installation for both Cloud and On-premises projects
+-  [Custom Docker Compose configuration file] supports installation for both Cloud and On-premises projects
 
 {:.bs-callout-info}
 When you build the Docker Compose configuration file, the `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save customizations for the Docker Compose configuration in a `docker-compose.override.yml` file.  If the `docker-compose.override.yml` file is present, then the override configuration merges with the base configuration. See [Override configuration].
 
 ## Run Composer with Docker
 
-You can run composer using the `docker` command before you create the container instance. This technique is useful to create an application instance during the CI/CD build process, or even during first time Magento set up.
+You can run composer using the `docker` command before you create the container instance. This technique is useful to create an application instance during the CI/CD build process, or even during first time set up.
 
-When you run composer with Docker commands, you must use the [Docker Hub PHP Image Tag] that matches the Magento application version. The following example uses PHP 7.3. You run this command from the project root directory.
+When you run composer with Docker commands, you must use the [Docker Hub PHP Image Tag] that matches the {{site.data.var.ee}} application version. The following example uses PHP 7.3. You run this command from the project root directory.
 
 ```bash
 docker run -it  -v $(pwd):/app/:delegated -v ~/.composer/:/root/.composer/:delegated magento/magento-cloud-docker-php:7.3-cli-1.1 bash -c "composer install&&chown www. /app/"
@@ -33,7 +33,7 @@ This command passes in the current working directory as `/app/`, includes compos
 
 ## Update Composer for Docker
 
-To update the Composer version in Cloud Docker, add the `COMPOSER_VERSION` variable to your `.docker/config.env` file with the version you want to use. For example, to use Composer 2.x with Magento >=2.4.2:
+To update the Composer version in Cloud Docker, add the `COMPOSER_VERSION` variable to your `.docker/config.env` file with the version you want to use. For example, to use Composer 2.x with {{site.data.var.ee}} >=2.4.2:
 
 ```conf
 COMPOSER_VERSION=2.0.12

@@ -6,13 +6,13 @@ functional_areas:
   - Configuration
 ---
 
-{{site.data.var.mcd-prod}} is a Magento Community Engineering project supported by the Magento developer community. You have several options to get support and learn more about {{site.data.var.mcd-prod}} and Magento local development.
+{{site.data.var.mcd-prod}} is a Magento Community Engineering project supported by the Magento developer community. You have several options to get support and learn more about {{site.data.var.mcd-prod}} and local development.
 
 -  **[Magento Community Engineering Slack organization]**–For support, questions, or discussion, chat with us in the **#cloud-docker** and **#cloud** channels. To join, send a request to _engcom@adobe.com_ or [sign yourself up] using Slack.
 
 -  **[{{site.data.var.mcd-package}} GitHub repository]**–Visit the GitHub repository to read discussions about current issues, check current development, and submit issues or pull requests to improve the project.
 
--  **Magento Cloud Community Engineering demos**–Magento hosts Cloud demo sessions where you can learn about developing Magento on the Cloud platform, including information about local development with {{site.data.var.mcd-prod}}. For a schedule and recordings of previous demos, see the [Magento Cloud Community Engineering Demo Schedule].
+-  **Magento Cloud Community Engineering demos**–Magento hosts Cloud demo sessions where you can learn about developing {{site.data.var.ece}}, including information about local development with {{site.data.var.mcd-prod}}. For a schedule and recordings of previous demos, see the [Magento Cloud Community Engineering Demo Schedule].
 
 ## Troubleshooting
 

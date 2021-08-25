@@ -18,7 +18,7 @@ stage:
 ### `TTFB_TESTED_PAGES`
 
 -  **Default**— `[]` (an empty array)
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Configure _Time To First Byte_ (TTFB) testing for specified pages to test your {{ site.data.var.ece }} site performance. Specify an absolute path reference, or URL with protocol and host, for each page that requires the test.
 
@@ -44,7 +44,7 @@ For redirected paths, the log reports the path of the redirect target instead of
 ### `WARM_UP_CONCURRENCY`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Specify the number of concurrent requests to send during cache warmup operations to reduce server load. This value limits the number of parallel connections and is useful for environment configurations where the `WARM_UP_PAGES` post-deploy variable specifies a large number of pages for cache preloading.
 
@@ -57,7 +57,7 @@ stage:
 ### `WARM_UP_PAGES`
 
 -  **Default**— `index.php`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Customize the list of pages used to preload the cache in the `post_deploy` stage. You must configure the post-deploy hook. See the [hooks section][] of the `.magento.app.yaml` file.
 

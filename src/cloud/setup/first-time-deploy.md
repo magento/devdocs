@@ -12,7 +12,7 @@ functional_areas:
 {:.ref-header}
 Previous step
 
-[Install Magento]({{ site.baseurl }}/cloud/before/before-setup-env-install.html)
+[Install {{site.data.var.ee}}]({{ site.baseurl }}/cloud/before/before-setup-env-install.html)
 
  {:.bs-callout-info}
 You only need to complete this step one time for a new **Pro project**. This code is already on `master` for the Starter project. As a best practice, you need to have the template {{site.data.var.ee}} project (or `master` branch) fully deployed across all environments to ensure all future code pushes correctly deploy.
@@ -21,12 +21,12 @@ After fully setting up your local workspace, for **Pro** you should have the clo
 
 This initial push provides the following benefits:
 
-*  Fully installs Magento in each environment
+*  Fully installs {{site.data.var.ee}} in each environment
 *  Allows the build/deploy scripts to use the `setup:upgrade` command instead of `setup:install` (important for adding extensions)
-*  Pushes the Magento encryption key across all environments
+*  Pushes the {{site.data.var.ee}} encryption key across all environments
 *  Protects against errors and failures when installing with added modules and extensions
 
-  Not all extensions are correctly tested with the setup:install command and application modes. If you initially install Magento code with added 3rd party extensions or custom code, you may receive errors and build/deploy failures. By deploying the unmodified Magento template, all future deployments to Staging and Production typically do not encounter installation issues from 3rd party and custom code.
+  Not all extensions are correctly tested with the setup:install command and application modes. If you initially install the application code with added 3rd party extensions or custom code, you may receive errors and build/deploy failures. By deploying the unmodified {{site.data.var.ee}} template, all future deployments to Staging and Production typically do not encounter installation issues from 3rd party and custom code.
 
 ## Prerequisites {#prereqs}
 
@@ -40,9 +40,9 @@ To deploy, you need the following:
 
 If you need environments provisioned and SSH access, enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html).
 
-To request environment provisioning, you will need to have cleared a payment for the {{site.data.var.ece}} subscription and completed an on-boarding call with Magento.
+To request environment provisioning, you will need to have cleared a payment for the {{site.data.var.ece}} subscription and completed an on-boarding call with Adobe.
 
-To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.
+To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Adobe.
 
 ## Deploy to Staging and Production {#deploy}
 
@@ -105,7 +105,7 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 
 You can use any SSH client you prefer or see our [Recommended tools]({{ site.baseurl }}/cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
 
-The SSH agent forwards authentication requests from Staging or Production to your working Magento system (that is, your local workspace). An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.
+The SSH agent forwards authentication requests from Staging or Production to your working system (that is, your local workspace). An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.
 
 To set up an SSH agent:
 
