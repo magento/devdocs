@@ -6,7 +6,7 @@ redirect_from:
   - /live-search/config-connect.html
 ---
 
-Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ee}} search capabilities.  This topic provides instructions to do the following:
+Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ce}} and {{site.data.var.ee}} search capabilities.  This topic provides instructions to do the following:
 
 -  [Installing Live Search](#before-you-begin) (Methods 1 and 2)
 -  [Updating Live Search](#updating-live-search)
@@ -14,9 +14,9 @@ Live Search is a set of standalone meta packages that replaces standard {{site.d
 
 |**Package**|**Description**|
 |---|---|
-|`module-live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides access to a read-only GraphQL playground to test queries from the {{site.data.var.ee}} Admin. |
-|`module-live-search-adapter`|Routes search requests from the storefront to the Live Search service and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
-|`module-live-search-storefront-popover`|A "search as you type" popover replaces the standard quick search and returns dynamic product suggestions and thumbnails of top search results.|
+|```module-live-search```|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides access to a read-only GraphQL playground to test queries from the {{site.data.var.ee}} Admin. |
+|```module-live-search-adapter```|Routes search requests from the storefront to the Live Search service and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
+|```module-live-search-storefront-popover```|A "search as you type" popover replaces the standard quick search and returns dynamic product suggestions and thumbnails of top search results.|
 
 ## Requirements
 
@@ -58,6 +58,9 @@ In this scenario, storefront operations are interrupted while the Live Search se
 
     ```bash
     bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch  Magento_InventoryElasticsearch
+    ```
+    
+    ```bash
     bin/magento setup:upgrade
     ```
 
@@ -100,6 +103,9 @@ In this scenario, Elasticsearch manages search requests from the storefront whil
 
    ```bash
    bin/magento module:disable Magento_LiveSearchAdapter Magento_LiveSearchStorefrontPopover
+   ```
+
+   ```bash
    bin/magento setup:upgrade
    ```
 
@@ -117,7 +123,7 @@ In this scenario, Elasticsearch manages search requests from the storefront whil
 
    You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services.
 
-1. Wait at least an hour for the data to be indexed and synchronized. Then, use the [GraphQL playground]({{ page.baseurl }}/live-search/graphql-support.html) with an empty search phrase (the default query) to verify the following:
+1. Wait at least an hour for the data to be indexed and synchronized. Then, use the [GraphQL playground]({{ page.baseurl }}/live-search/graphql-support.html) with the default query to verify the following:
 
    -  The product count returned is close to what you expect for the store view
    -  Facet(s) are returned
@@ -126,7 +132,13 @@ In this scenario, Elasticsearch manages search requests from the storefront whil
 
    ```bash
    bin/magento module:enable Magento_LiveSearchAdapter Magento_LiveSearchStorefrontPopover
+   ```
+   
+   ```bash
    bin/magento module:disable Magento_Elasticsearch Magento_Elasticsearch6 Magento_Elasticsearch7 Magento_ElasticsearchCatalogPermissions Magento_AdvancedSearch Magento_InventoryElasticsearch
+   ```
+
+   ```bash
    bin/magento setup:upgrade
    ```
 
@@ -210,8 +222,8 @@ To uninstall Live Search, go to [Uninstall modules]({{ site.baseurl }}{{ site.gd
 
 The following Live Search dependencies are captured by Composer:
 
-|**Dependency**|**Description**|
+|Dependency|Description|
 |---|---|
-|Export modules|The following modules collect and sync catalog data:<br />`saas-export`<br />`module-bundle-product-exporter`<br />`module-catalog-data-exporter`<br />`module-catalog-inventory-data-exporter`<br />`module-catalog-url-rewrite-data-exporter`<br />`module-configurable-product-data-exporter`<br />`module-data-exporter`<br />`module-parent-product-data-exporter`|
-|`services-connector`|Required to configure your connection to Commerce Services.|
-|`module-services-id`|Required to configure your connection to Commerce Services.|
+|Export modules|The following modules collect and sync catalog data:<br />```saas-export```<br />```module-bundle-product-exporter```<br />```module-catalog-data-exporter```<br />```module-catalog-inventory-data-exporter```<br />```module-catalog-url-rewrite-data-exporter```<br />```module-configurable-product-data-exporter```<br />```module-data-exporter```<br />```module-parent-product-data-exporter```|
+|```services-connector```|Required to configure your connection to Commerce Services.|
+|```module-services-id```|Required to configure your connection to Commerce Services.|
