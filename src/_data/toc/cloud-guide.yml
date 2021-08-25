@@ -558,7 +558,7 @@ pages:
       versionless: true
       children:
         - label: Launch checklist
-          url: /cloud/live/go-live-checklist.html
+          url: /cloud/live/site-launch-checklist.html
           versionless: true
 
         - label: Launch steps

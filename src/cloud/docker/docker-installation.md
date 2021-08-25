@@ -38,7 +38,7 @@ To install a {{ site.data.var.ece }} project:
 When you initialize a {{site.data.var.ee}} project for Docker development, you must create a [.magento.docker.yml][unified configuration] configuration source file to create the Docker containers for the local environment.
 
 {:.procedure}
-To install an Adobe Commerce on-premises project:
+To install an {{site.data.var.ee}} on-premises project:
 
 1. Create a project using [Composer]({{site.baseurl}}/guides/v2.4/install-gde/composer.html).
 
@@ -46,7 +46,7 @@ To install an Adobe Commerce on-premises project:
     composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
    ```
 
-   This command installs the latest Magento release. To install a specific version, specify the version number, for example `magento/project-enterprise-edition=2.3.5`.
+   This command installs the latest release. To install a specific version, specify the version number, for example `magento/project-enterprise-edition=2.3.5`.
 
 1. Change to the project directory.
 

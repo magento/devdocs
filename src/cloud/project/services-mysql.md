@@ -172,4 +172,4 @@ See the following {{site.data.var.ee}} Support articles for help troubleshooting
 -  [Checking slow queries and processes MySQL](https://support.magento.com/hc/en-us/articles/360030903091-Checking-slow-queries-and-processes-MySQL-)
 -  [Create database dump on Cloud](https://support.magento.com/hc/en-us/articles/360003254334-Create-database-dump-on-Cloud)
 -  [Data Migration Tool troubleshooting](https://support.magento.com/hc/en-us/articles/360033020451-Data-Migration-Tool-troubleshooting)
--  [Magento upgrade: compact to dynamic tables 2.2.x, 2.3.x to 2.4.x](https://support.magento.com/hc/en-us/articles/360048389631-Magento-upgrade-compact-to-dynamic-tables-2-2-x-2-3-x-to-2-4-x-)
+-  [{{site.data.var.ee}} upgrade: compact to dynamic tables 2.2.x, 2.3.x to 2.4.x](https://support.magento.com/hc/en-us/articles/360048389631-Magento-upgrade-compact-to-dynamic-tables-2-2-x-2-3-x-to-2-4-x-)
