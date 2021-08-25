@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Set up multiple websites or stores using Magento Cloud Docker
+title: Set up multiple websites or stores using Cloud Docker
 functional_areas:
   - Cloud
   - Setup
@@ -8,7 +8,7 @@ functional_areas:
   - Website
 ---
 
-Magento Cloud Docker supports multiple websites or stores by adding subdomains to your configuration. See [Understanding websites, stores, and store views][].
+Cloud Docker supports multiple websites or stores by adding subdomains to your configuration. See [Understanding websites, stores, and store views][].
 
 {:.procedure}
 To add support for multiple websites and stores:
