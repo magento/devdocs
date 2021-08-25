@@ -128,7 +128,7 @@ This release includes the following patches and critical fixes:
 
 -  **PayPal Express Checkout**—Published on February 12, 2020, this patch resolves an issue that affects orders placed with PayPal Express Checkout where the shipping address for the order specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. See the complete patch description on the [patch download page](https://magento.com/tech-resources/download#download2353).
 
--  **Deployment fix**–Added a patch to fix an issue that disabled the full page cache during the deployment process. This patch applies to {{site.data.var.ee}} 2.3.2 and later releases.
+-  **Application deployment fix**–Added a patch to fix an issue that disabled the full page cache during the deployment process. This patch applies to {{site.data.var.ee}} 2.3.2 and later releases.
 
 -  **Scope parameter for Async/Bulk API**—Updated this patch to fix a syntax error in the `composer.json` file. This patch applies to {{site.data.var.ce}} 2.3.1 and 2.3.2. See the complete patch description on the [patch download page](https://magento.com/tech-resources/download#download2312).
 
