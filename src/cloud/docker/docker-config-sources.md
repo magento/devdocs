@@ -9,17 +9,17 @@ redirect_from:
   - /cloud/reference/docker-config.html
 ---
 
-You can create the Docker Compose configuration to build and deploy the Docker containers for your Magento project from the following sources:
+You can create the Docker Compose configuration to build and deploy the Docker containers for your {{site.data.var.ee}} project from the following sources:
 
 -  [{{site.data.var.ece}} project configuration files](#magento-commerce-cloud-configuration) for Cloud projects
 -  [Unified configuration](#unified-configuration) (`.magento.docker.yml`) for On-premises projects
 -  [CLI configuration](#cli-configuration) using `ece-docker build:compose` command options
--  [Custom Docker Compose configuration file](#build-a-custom-docker-compose-configuration) supports Magento installation for both Cloud and On-premises projects
+-  [Custom Docker Compose configuration file](#build-a-custom-docker-compose-configuration) supports installation for both Cloud and On-premises projects
 
 {:.bs-callout-info}
 When you build the Docker Compose configuration file, the `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save customizations for the Docker Compose configuration in a `docker-compose.override.yml` file.  If the `docker-compose.override.yml` file is present, then the override configuration merges with the base configuration. See [Override configuration].
 
-## Magento Commerce Cloud configuration
+## Cloud configuration for Commerce
 
 You need the following {{site.data.var.ece}} project configuration files to emulate a Cloud project in the Docker environment.
 
@@ -53,7 +53,7 @@ services:
 ```
 
 -  `services` can include `php`, `mysql`, `redis`, `elasticsearch`, `rabbitmq`, `cron` and so on
--  `version` specifies a [supported service version][Service configuration options]. The version must be compatible with the Magento version you deploy.
+-  `version` specifies a [supported service version][Service configuration options]. The version must be compatible with the {{site.data.var.ee}} version you deploy.
 -  `enabled` defaults to `true` if not set
 
 #### PHP service
