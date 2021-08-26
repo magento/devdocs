@@ -80,7 +80,7 @@ PHP Warning:  date(): It is not safe to rely on the system's timezone settings. 
    Our detailed recommendations are:
 
    -  Compiling code or deploying static assets, `756M`
-      -  Installing and updating Magento components from Magento Marketplace, `2G`
+      -  Installing and updating Magento components from Commerce Marketplace, `2G`
       -  Testing, `~3-4G`
 
 -  Enable [`opcache.save_comments`](https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments){:target="_blank"}, which is required for Magento 2.1 and later.

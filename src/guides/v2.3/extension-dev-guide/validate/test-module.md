@@ -47,7 +47,7 @@ Before you publish your component, test installing it.
 See these resources for testing in [PHP](https://glossary.magento.com/php) and validating Magento components:
 
 *  The [Magento Coding Standard] provides a set of rules and sniffs for the [PHP_CodeSniffer] tool
-*  [Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program] (video) from Magento Imagine 2017
+*  [Technical Deep Dive: How to Pass the Commerce Marketplace Extension Quality Program] (video) from Magento Imagine 2017
 *  [Extension Quality Program]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html) in the Magento User Guide
 *  [01 The Module Skeleton Kata] (video) by [Mage2Katas]
 
@@ -59,6 +59,6 @@ See these resources for testing in [PHP](https://glossary.magento.com/php) and v
 [Install using Composer]: {{ page.baseurl }}/install-gde/install/sample-data-after-composer.html
 [Magento Coding Standard]: https://github.com/magento/magento-coding-standard
 [PHP_CodeSniffer]: https://github.com/squizlabs/PHP_CodeSniffer
-[Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program]: https://magento.com/resources/technical-deep-dive-how-pass-magento-marketplace-extension-quality-program
+[Technical Deep Dive: How to Pass the Commerce Marketplace Extension Quality Program]: https://magento.com/resources/technical-deep-dive-how-pass-magento-marketplace-extension-quality-program
 [01 The Module Skeleton Kata]: https://www.youtube.com/watch?v=JvBWJ6Lm9MU)
 [Mage2Katas]: http://mage2katas.com/

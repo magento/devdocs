@@ -52,7 +52,7 @@ You need authentication keys to install {{site.data.var.ee}} in your local devel
 {:.procedure}
 To create authentication keys:
 
-1. Log in to the [Magento Marketplace](https://marketplace.magento.com). If you do not have an account, click **Register**.
+1. Log in to the [Commerce Marketplace](https://marketplace.magento.com). If you do not have an account, click **Register**.
 
 1. Click your account name in the top-right and select **My Profile**.
 

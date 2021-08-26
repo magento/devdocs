@@ -47,7 +47,7 @@ To get the Magento metapackage:
     composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
     ```
 
-    When prompted, enter your Magento authentication keys. Public and private keys are created and configured in your [Magento Marketplace][].
+    When prompted, enter your Magento authentication keys. Public and private keys are created and configured in your [Commerce Marketplace][].
 
     If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
 
@@ -152,7 +152,7 @@ Database (simplest way is to use magento setup:upgrade)|
 Hooray! You've completed the quick install. Need more advanced help? Check out our [Advanced install]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) guide.
 
 <!-- Link Definitions -->
-[Magento Marketplace]: https://marketplace.magento.com/customer/accessKeys/
+[Commerce Marketplace]: https://marketplace.magento.com/customer/accessKeys/
 [Modify docroot for security]: {{page.baseurl}}/install-gde/tutorials/change-docroot-to-pub.html
 [Install the Magento software from the command line]: {{page.baseurl}}/install-gde/install/cli/install-cli.html
 [troubleshooting]: https://support.magento.com/hc/en-us/articles/360033818091
