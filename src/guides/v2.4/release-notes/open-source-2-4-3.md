@@ -22,6 +22,14 @@ Although code for these features is bundled with quarterly releases of the Magen
 
 This hotfix provides a solution for the issue where Web APIs cannot process requests that contain more than 20 items in array. This issue affects deployments running {{ site.data.var.ce }} 2.4.3, {{ site.data.var.ee }} 2.4.3, or Magento 2.3.7-p1. Built-in rate limiting was added to these releases to prevent denial-of-service (DoS) attacks, and the default maximum was set to 20. This patch reverts the default limit to a higher value. If you suspect that your store is experiencing a DoS attack, Adobe recommends lowering the default input limits to a lower value to restrict the number of resources that can be requested. See the [Web API unable to process requests with more than 20 items in array](https://support.magento.com/hc/en-us/articles/4406893342093)Knowledge Base article.
 
+## Apply AC-384__Fix_Incompatible_PHP_Method__2.4.3_ce.patch to address PHP fatal error on upgrade
+
+The following fatal error can occur during upgrade to {{ site.data.var.ce }} 2.4.3:
+
+`PHP Fatal error: Uncaught Error: Call to undefined function Magento\Framework\Filesystem\Directory\str_contains() in [...]/magento/vendor/magento/framework/Filesystem/Directory/DenyListPathValidator.php:74`
+
+This error results from the use of the `str_contains` function, which is an PHP 8.x function. {{{ site.data.var.ce }} 2.4.3 does not support PHP 8.x. This hotfix replaces this function with a supported PHP 7.x function. See the Adobe Commerce upgrade 2.4.3, 2.3.7-p1 PHP Fatal error Hotfix Knowledge Base article.
+
 ## Highlights
 
 Look for the following highlights in this release.
