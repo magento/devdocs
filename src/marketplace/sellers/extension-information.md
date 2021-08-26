@@ -4,7 +4,7 @@ title: Complete the Extension Information
 redirect_from: /marketplace/sellers/creating-a-new-extension.html
 ---
 
-When your extension code is complete, the next step is to add an entry for your extension to Magento Marketplace. This creates an entry on your Extensions page in the Magento Marketplace Developer portal, but does not submit the extension.
+When your extension code is complete, the next step is to add an entry for your extension to Commerce Marketplace. This creates an entry on your Extensions page in the Commerce Marketplace Developer portal, but does not submit the extension.
 
 To add an entry, you need to complete these instructions and submit the [version]({{ site.baseurl }}/marketplace/sellers/extension-version.html).
 
