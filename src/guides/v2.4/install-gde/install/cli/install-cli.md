@@ -38,7 +38,7 @@ Before you begin, complete the following steps:
 
 *  Complete the first installation steps. See [Your install or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
-*  After you log in to the Magento server, [switch to the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+*  After you log in to the Magento server, [switch to the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 *  Review the [Get started with the command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html) overview.
 

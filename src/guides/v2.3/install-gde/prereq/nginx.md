@@ -81,7 +81,7 @@ There are several ways to download the Magento software, including:
 
 For this example, we'll install using Composer and the command line.
 
-1. As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
+1. As the [file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
 
 1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
 
@@ -355,7 +355,7 @@ There are several ways to download the Magento software, including:
 
 For this example, we'll install using Composer and the command line.
 
-1. As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
+1. As the [file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
 
 1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
 
