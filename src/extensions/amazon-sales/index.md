@@ -16,7 +16,7 @@ The Amazon Sales Channel extension installs and adds features to integrate your 
 
 ## Install
 
-Amazon Sales Channel install is a `.zip` file available from the Magento Marketplace. It includes a composer.json which provides the name `magento/amazon-sales-channel` and the available version.
+Amazon Sales Channel install is a `.zip` file available from the Commerce Marketplace. It includes a composer.json which provides the name `magento/amazon-sales-channel` and the available version.
 
 1. Log in with your Magento web account.
 

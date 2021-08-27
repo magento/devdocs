@@ -191,8 +191,8 @@ The following example shows a request to update the personal profile bio field:
 
 The `action` field specifies which update operation to perform:
 
-*  `submit` --- Once your profile is complete, publishes the profile to the Magento Marketplace [partners page](https://marketplace.magento.com/partners.html).
-*  `draft` --- The update is saved on the Marketplace Developer Portal, but not published to the Magento Marketplace.
+*  `submit` --- Once your profile is complete, publishes the profile to the Commerce Marketplace [partners page](https://marketplace.magento.com/partners.html).
+*  `draft` --- The update is saved on the Marketplace Developer Portal, but not published to the Commerce Marketplace.
 
 **Request:**
 

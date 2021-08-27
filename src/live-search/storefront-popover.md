@@ -14,6 +14,7 @@ The following attributes are always searchable:
 -  `categories`
 
 Review the set of product attributes that are [searchable](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-properties) (`searchable=true`) to produce highly targeted results. Some attributes that are search-enabled by default, such as `description`, can have the opposite effect and reduce the precision of search results. For example, if a person searches for "shorts" and there are shirts in the catalog with a description that includes "short sleeves", the shirts are also returned. To improve the relevancy of the results, make attributes searchable that contain content that has a clear and concise meaning. Avoid using attributes that contain less precise, lengthy text.
+
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
 
@@ -52,7 +53,7 @@ The following class selectors can be used to style the container, suggestion, an
 ![Popover container]({{ page.baseurl }}/live-search/images/livesearch-popover-container.png)
 _.livesearch.popover-container_
 
-![View all footer]({{ page.baseurl }}/live-search/images/livesearch-view-all-footer.png)
+![View all footer]({{ page.baseurl }}/live-search/images/livesearch-view-all-footer.png)\\
 _.livesearch.view-all-footer_
 
 ### Suggestion Class Selectors

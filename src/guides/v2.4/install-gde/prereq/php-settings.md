@@ -195,7 +195,7 @@ To set `opcache.ini` options:
 
 ## Troubleshooting
 
-See the following Magento Support articles for help troubleshooting PHP problems:
+See the following {{site.data.var.ee}} Support articles for help troubleshooting PHP problems:
 
 -  [PHP version error or 404 error when accessing Magento in browser](https://support.magento.com/hc/en-us/articles/360033117152-PHP-version-error-or-404-error-when-accessing-Magento-in-browser)
 -  [PHP settings errors](https://support.magento.com/hc/en-us/articles/360034599631-PHP-settings-errors)
