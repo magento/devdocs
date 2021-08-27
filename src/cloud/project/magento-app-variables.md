@@ -8,7 +8,7 @@ functional_areas:
 ---
 The following environment variables are included in the `.magento.app.yaml` file.
 
-Required for Magento 2.2.x to 2.3.x:
+Required for {{site.data.var.ee}} 2.2.x to 2.3.x:
 
 ```yaml
 variables:
@@ -18,7 +18,7 @@ variables:
         CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
 ```
 
-For Magento 2.4.x, set the following variables:
+For {{site.data.var.ee}} 2.4.x, set the following variables:
 
 ```yaml
 variables:

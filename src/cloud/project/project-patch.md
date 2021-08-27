@@ -84,7 +84,7 @@ The status table contains the following types of information:
 -  **Type**:
    -  `Optional`—All patches from the Quality Patches Tool and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations. For {{ site.data.var.ece }}, all MQP patches are optional.
    -  `Required`—All patches from the {{ site.data.var.mcp-prod }} package are required for Cloud customers.
-   -  `Deprecated`—The individual patch is marked as deprecated by Magento and we recommend reverting it if you have applied it. After you revert a deprecated patch, it will no longer be displayed in the status table.
+   -  `Deprecated`—The individual patch is marked as deprecated and we recommend reverting it if you have applied it. After you revert a deprecated patch, it will no longer be displayed in the status table.
    -  `Custom`—All patches from the 'm2-hotfixes' directory.
 
 -  **Status**:
@@ -93,7 +93,7 @@ The status table contains the following types of information:
    -  `N/A`—The status of the patch cannot be defined due to conflicts.
 
 -  **Details**:
-   -  `Affected components`—The list of affected Magento modules.
+   -  `Affected components`—The list of affected modules.
    -  `Required patches`—The list of required patches (dependencies).
    -  `Recommended replacement`—The patch that is a recommended replacement for a deprecated patch.
 
@@ -125,7 +125,7 @@ To apply individual patches in a local development environment:
    -  Optional individual patches
    -  Custom patches from the `/m2-hotfixes` directory
 
-1. Clear the Magento cache.
+1. Clear the cache.
 
    ```bash
    php ./bin/magento cache:clean
@@ -152,7 +152,7 @@ To apply patches in a Cloud environment:
    ```
 
    {:.bs-callout-info}
-   After upgrading to a new version of Magento, you must re-apply patches if the patches are not included in the new version.
+   After upgrading to a new version of {{site.data.var.ee}}, you must re-apply patches if the patches are not included in the new version.
 
 1. Commit and push the updated `.magento.env.yaml` file.
 
@@ -166,7 +166,7 @@ To apply patches in a Cloud environment:
 
 ## Apply a custom patch
 
-When you deploy, `{{ site.data.var.ct }}` applies all Magento patches and any custom patches that you add to the `/m2-hotfixes` directory in the Magento project root.
+When you deploy, `{{ site.data.var.ct }}` applies all Adobe patches and any custom patches that you add to the `/m2-hotfixes` directory in the project root.
 
 {:.bs-callout-info}
 All patch file names must end with the `.patch` extension.
@@ -197,7 +197,7 @@ To apply and test a custom patch on a Cloud environment:
    ```
 
    {:.bs-callout-info}
-   Make sure to test all patches in a pre-production environment. For Magento Cloud, you can create new branches with the `magento-cloud environment:branch <branch-name>` CLI command.
+   Make sure to test all patches in a pre-production environment. For {{site.data.var.ece}}, you can create new branches with the `magento-cloud environment:branch <branch-name>` CLI command.
 
 ## Apply patches to a non-Cloud project {#standalone}
 
@@ -221,4 +221,4 @@ This command reverts all patches in the following order:
 
 ## Logging
 
-The Quality Patches Tool logs all operations to the `<Magento_root>/var/log/patch.log` file.
+The Quality Patches Tool logs all operations to the `<Project_root>/var/log/patch.log` file.

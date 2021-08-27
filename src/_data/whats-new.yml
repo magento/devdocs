@@ -4,8 +4,149 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Aug 9 15:33:58 2021
+updated: Mon Aug 23 15:54:58 2021
 entries:
+- description: Clarified the difference between [updating the ece-tools package](https://devdocs.magento.com/cloud/project/ece-tools-update.html)
+    and [upgrading your cloud project to use the ece-tools package](https://devdocs.magento.com/cloud/project/ece-tools-upgrade-project.html).
+  versions: 2.x
+  type: Technical
+  date: August 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2475
+  merge_commit: a1f714e6bd258fcf93fa5179eab93ce94e5588ad
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Updated [release notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/)
+    for Amazon Sales Channel version 4.4.1.
+  versions: 2.x
+  type: Major Update
+  date: August 19, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2464
+  merge_commit: a921f2a464a3bbfd63677d528eca92880ed4a03f
+  contributor: hickskenh
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added information to the Adobe Commerce 2.4.3, Magento Open Source
+    2.4.3, and Magento 2.3.7-p1 release notes about the 8/11/2021 hot fix that addresses
+    an issue with API rate limiting.  See [Magento 2.3.7-p1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html)
+    and [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+  versions: 2.4.3, 2.3.7
+  type: Major Update
+  date: August 12, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2459
+  merge_commit: bf1f6fab30c14f2d116e99b2060b99db4bd8a9c4
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+  - 2.3.7
+- description: Release notes for the [Cloud Patch release 1.0.12](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v1012).
+  versions: 2.4.3, 2.3.7
+  type: Major Update
+  date: August 12, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2462
+  merge_commit: 67a8d0d3515d53eb9f2d51421c7ce8011e9d56e8
+  contributor: hguthrie
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+  - 2.3.7
+- description: Published reference documentation for the 2.4.2-2.4.3 [backward incompatible
+    changes](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html).
+  versions: 2.4.3
+  type: Major Update
+  date: August 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2453
+  merge_commit: f2490a6908b117eaaf78ac1bbfda4082902003a6
+  contributor: devops-devdocs
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Published dependencies for 2.4.3 [Magento Open Source](https://devdocs.magento.com/guides/v2.4/release-notes/packages-open-source.html),
+    [Adobe Commerce](https://devdocs.magento.com/guides/v2.4/release-notes/packages-commerce.html),
+    and [Cloud](https://devdocs.magento.com/guides/v2.4/release-notes/packages-cloud.html).
+    Updated data for [PHP extensions](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/php-settings.html#verify-installed-extensions).
+  versions: 2.4.3
+  type: Major Update
+  date: August 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2455
+  merge_commit: 649b6e703b936cc1aa06b9fae1c4ba3b8eb27515
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Added the [Protecting against brute force attacks](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/anti-brute-force.html)
+    topic to the _PHP Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: August 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2436
+  merge_commit: 99d3ba4d1a10f381966b0532dec489bff3836497
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - New Topic
+  - 2.3.x
+  - 2.4.x
+- description: Added the [Denial of Service attacks](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/dos.html)
+    topic to the _PHP Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: August 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2443
+  merge_commit: 3270adc0c8864cc339fe312693288120196b4754
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - New Topic
+  - 2.3.x
+  - 2.4.x
+- description: Added release notes for the Magento 2.3.7-p1 security-only release.
+    See [2.3 release information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).
+  versions: 2.3.7
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2431
+  merge_commit: 60439940c150c70a124b5248d407bc12b69c5cbf
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.7
+- description: Updated the `bin/magento` command-line tool reference documentation
+    for [Magento Open Source](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html)
+    and [Adobe Commerce](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-commerce.html).
+  versions: 2.4.3
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2454
+  merge_commit: f3d81e9885733ed125f2fcdf551604ebbd0a9723
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.1 Magento Quality Patch (MQP) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 9, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2449
+  merge_commit: 25fce52c2c953588ece30bd6e85272e0faa059d6
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
 - description: Corrected the order of the steps in the [Docker Developer Mode in the
     Cloud guide](https://devdocs.magento.com/cloud/docker/docker-mode-developer.html).
   versions: 2.x
@@ -28,19 +169,6 @@ entries:
   link: https://github.com/magento-commerce/devdocs/pull/2439
   merge_commit: 7ca97a589cb7f14f9c386c07e596f69932bf1408
   contributor: ccondra
-- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.1.1 quality patch for Adobe Commerce and Magento Open Source release.
-  versions: 2.3.x, 2.4.x
-  type: Major Update
-  date: August 9, 2021
-  link: https://github.com/magento-commerce/devdocs/pull/2449
-  merge_commit: 25fce52c2c953588ece30bd6e85272e0faa059d6
-  contributor: agorbivskyi
-  membership: true
-  labels:
-  - Major Update
-  - 2.3.x
-  - 2.4.x
 - description: Added the GA version of the Adobe Commerce 2.4.3 and Magento Open Source
     2.4.3 [release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
   versions: 2.4.3
@@ -501,7 +629,7 @@ entries:
   - Major Update
   - 'Progress: done'
 - description: Added a new topic describing [Extension Footprint Analysis](https://devdocs.magento.com/marketplace/sellers/extension-footprint.html)
-    on the Magento Marketplace.
+    on the Commerce Marketplace.
   versions: 2.x
   type: New Topic
   date: May 27, 2021
@@ -1895,7 +2023,7 @@ entries:
 - description: Updated the [Submit for Technical Review](https://devdocs.magento.com/marketplace/sellers/submit-for-technical-review.html)
     topic in the _Marketplace Developer Guide_ with detailed information about the
     technical review guidelines, tests, tools, and processes that Magento uses to
-    verify and validate third-party extensions submitted to the Magento Marketplace
+    verify and validate third-party extensions submitted to the Commerce Marketplace
     Developer Portal.
   versions: 2.x
   type: Major Update
@@ -1979,8 +2107,8 @@ entries:
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
 - description: Updated reference documentation for backward incompatible changes introduced
-    in the [2.4.1](http://127.0.0.1:4000/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#240---241)
-    and [2.3.6](http://127.0.0.1:4000/guides/v2.3/release-notes/backward-incompatible-changes/reference.html#235---236)
+    in the [2.4.1](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#240---241)
+    and [2.3.6](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html#235---236)
     releases.
   versions: 2.3.6, 2.4.1
   type: Major Update

@@ -8,11 +8,11 @@ redirect_from:
   - /cloud/trouble/environments-logs.html
 ---
 
-Logs for {{site.data.var.ece}} projects are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook], cloud services, and the Magento application.
+Logs for {{site.data.var.ece}} projects are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook], cloud services, and the {{site.data.var.ee}} application.
 
 You can view the logs from the file system, the project web UI, and the `magento-cloud` CLI.
 
--  **File system**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
+-  **File system**—The `/var/log` system directory contains logs for all environments. The `var/log/` directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
 
 -  **Project web UI**—You can see build and post-deploy log information in the environment _messages_ list.
 

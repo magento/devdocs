@@ -29,11 +29,11 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 *  Do not overfill a branch of development work, keep it streamlined to carefully implement and test code, extensions, etc
 *  Keep track of the order you follow for adding extensions to your code. Some extensions require very specific installation orders.
 *  Do not push all of your extensions at once into Staging and Production. Add, push, and test extensions in groups to ensure they are stable.
-*  Use Magento Configuration Management to ensure configuration consistency
+*  Use Configuration Management to ensure configuration consistency
 
 ## Deployment best practices
 
-*  Fully deploy the base {{site.data.var.ece}} site initially to ensure all environments are stable with Magento installed. Some extensions will throw errors during build and deploy if they are added during an install. These work best during an update.
+*  Fully deploy the base {{site.data.var.ece}} site initially to ensure all environments are stable with {{site.data.var.ee}} installed. Some extensions will throw errors during build and deploy if they are added during an install. These work best during an update.
 *  Run a local build prior to fully deploying
 *  Ensure all files are correctly added to the Git branch before pushing
 
