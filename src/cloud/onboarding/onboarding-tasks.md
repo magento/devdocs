@@ -17,7 +17,7 @@ The _License Owner_ is the person in your business or finance organization that 
 To quickly onboard your project, so you can begin developing your site for live deployment, you must complete required setup and onboarding tasks. Typically, the License Owner begins the process by securing Admin access and creating Technical Admin users that can help with setup, customization, and development work.
 
 {:.bs-callout-info}
-If you need to change the License Owner on your account, you must submit a {{site.data.var.ee}} Support ticket.
+If you need to change the License Owner on your account, you must contact your {{site.data.var.ee}} Customer Success Manager.
 
 ## Sign up for a Cloud account {#cloud-first-acct}
 
