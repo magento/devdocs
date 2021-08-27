@@ -23,7 +23,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 {% collapsible To create a root category: %}
 
-1. Log in to the Magento Admin as a user authorized to create categories.
+1. Log in to the Admin as a user authorized to create categories.
 1. Click **Catalog** > **Categories**.
 1. Click **Add Root Category**.
 1. In the **Category Name** field, enter a unique name to identify this category.
@@ -44,7 +44,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 {% collapsible To create a website: %}
 
-1. Log in to the Magento Admin as a user authorized to create websites, stores, and store views.
+1. Log in to the Admin as a user authorized to create websites, stores, and store views.
 1. Click **Stores** > **Settings** > **All Stores**.
 1. On the _Stores_ page, click **Create Website**.
 
@@ -105,7 +105,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 ## Step 5: Change the website base URL
 
-To access a website using a unique URL like `http://french.magento.mg`, you must change the base URL for each site in the [Magento Admin](https://glossary.magento.com/magento-admin).
+To access a website using a unique URL like `http://french.magento.mg`, you must change the base URL for each site in the [Admin](https://glossary.magento.com/magento-admin).
 
 {% collapsible To change the website base URL: %}
 
@@ -157,7 +157,7 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 
 ## Step 7: Change the default store view base URL
 
-You must perform this step last because you will lose access to the Magento Admin; your access returns after you set up virtual hosts as discussed in the web-server-specific topics.
+You must perform this step last because you will lose access to the Admin; your access returns after you set up virtual hosts as discussed in the web-server-specific topics.
 
 {% collapsible To change the default store view base URL: %}
 

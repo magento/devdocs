@@ -29,7 +29,7 @@ If you want instant *XSD validation in your IDE, you can run `bin/magento dev:ur
 In the `system.xml` file, it is possible to define four different types of entities, which are related to each other. The following section describes the relationship between tabs, sections, groups, and fields. The following screenshot displays the Magento 2 System Configuration in the Admin backend.
 The red squares mark the different types that are defined in the `system.xml` file:
 
-![Screenshot displaying a configured section in the Magento Admin.](img/magento2-system-configuration.png)
+![Screenshot displaying a configured section in the Admin.](img/magento2-system-configuration.png)
 
 Tabs are used to split different configuration areas semantically. Each tab can contain one or more sections, which can also be referenced as submenus. A section contains one or more groups.
 Each group lists one or more fields. You can also use a group to add a general description for the following fields. As mentioned, each group can have one or more fields. Fields are the smallest entity

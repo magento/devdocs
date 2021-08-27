@@ -93,7 +93,7 @@ Magento requires the following system tools for some of its operations:
 [php_xdebug 2.5.x][]{:target="_blank"} or later (development environments only; can have an adverse effect on performance)
 
 {:.bs-callout-info}
-There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug][].
+There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Admin after installation. For details, see [Known issue with xdebug][].
 
 <!-- Link Definitions -->
 [Known issue with xdebug]: https://support.magento.com/hc/en-us/articles/360034242212

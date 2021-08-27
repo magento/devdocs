@@ -3,7 +3,7 @@ group: php-developer-guide
 title: Create a cache type
 ---
 
-A *cache type* enables you to specify what is cached and enables merchants to clear that [cache type](https://glossary.magento.com/cache-type) using the [Cache](https://glossary.magento.com/cache) Management page in the [Magento Admin](https://glossary.magento.com/magento-admin).
+A *cache type* enables you to specify what is cached and enables merchants to clear that [cache type](https://glossary.magento.com/cache-type) using the [Cache](https://glossary.magento.com/cache) Management page in the [Admin](https://glossary.magento.com/magento-admin).
 
 The tag *scope* provides a mechanism for a cache type.
 
