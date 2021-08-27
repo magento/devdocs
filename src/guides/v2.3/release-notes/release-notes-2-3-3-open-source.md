@@ -193,7 +193,7 @@ The [Yotpo](https://www.yotpo.com) user-generated content management platform is
 
 ## Backward-incompatible Changes
 
-This release introduces a new, immutable `EmailMessageInterface` that supports the sending of multi-part MIME-type content in email. The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newsletter\Model\Queue\TransportBuilder` structures were refactored to use this new `EmailMessageInterface` instead of `MessageInterface`, which was previously used. If you are a Magento extension developer and rely on `\Magento\Email\Model\Transport::getMessage()` or `\Magento\Framework\Mail\TransportInterface::getMessage()`, those methods will now return the new `EmailMessageInterface`.
+This release introduces a new, immutable `EmailMessageInterface` that supports the sending of multi-part MIME-type content in email. The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newsletter\Model\Queue\TransportBuilder` structures were refactored to use this new `EmailMessageInterface` instead of `MessageInterface`, which was previously used. If you are an extension developer and rely on `\Magento\Email\Model\Transport::getMessage()` or `\Magento\Framework\Mail\TransportInterface::getMessage()`, those methods will now return the new `EmailMessageInterface`.
 
 ## Fixed issues
 

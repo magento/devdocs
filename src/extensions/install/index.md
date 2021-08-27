@@ -16,7 +16,7 @@ redirect_from:
  - guides/v2.3/comp-mgr/extens-man/step3-parent.html
 ---
 
-Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Commerce Marketplace](https://marketplace.magento.com) or another Magento extension distribution system.
+Code that extends or customizes {{site.data.var.ee}} and {{site.data.var.ce}} behavior is called an extension. You can optionally package and distribute extensions on the [Commerce Marketplace](https://marketplace.magento.com) or another extension distribution system.
 
 Extensions include:
 
