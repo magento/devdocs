@@ -21,7 +21,7 @@ The 2FA extension installs when you install or upgrade to Magento Open Source or
 
 ## Configure and manage 2FA
 
-See the Admin User Guide to [configure](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication.html) 2FA settings and [manage user authenticators](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-manage.html).
+See the _User Guide_ to [configure](https://docs.magento.com/user-guide/stores/security-two-factor-authentication.html) 2FA settings and [manage user authenticators](https://docs.magento.com/user-guide/stores/security-two-factor-authentication-manage.html).
 
 Administrators have options to:
 

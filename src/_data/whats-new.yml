@@ -5841,7 +5841,7 @@ entries:
     Updated the Cloud Docker content to explain how to configure Xdebug.<br/>- Added
     two new environment variables: RESOURCE_CONFIGURATION deploy variable and X_FRAME_CONFIGURATION
     global variable<br/>- Updated the ADMIN variables and clarified the usage of ADMIN
-    variables in the Access your Admin panel page.<br/>- Added an example
+    variables in the Access your Admin page.<br/>- Added an example
     for preloading pages from multiple domains in the WARM_UP_PAGES post-deploy variable.<br/>-
     Deprecated SCD_EXCLUDE_THEMES environment variable.<br/>- Clarified the backup
     and retention statements regarding the most recent 24-hour period.'
