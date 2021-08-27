@@ -21,7 +21,7 @@ When the [patch][] program is run, this file is read in and the specified change
 There are three types of patches:
 
 -  **Hotfixes**—Patches that Magento publishes on the [Magento Security Center][].
--  **Individual patches**—Patches that Magento Support creates and distributes on an individual basis.
+-  **Individual patches**—Patches that {{site.data.var.ee}} Support creates and distributes on an individual basis.
 -  **Custom patches**—Unofficial patches that you can create from a git commit.
 
 ### Hotfixes
