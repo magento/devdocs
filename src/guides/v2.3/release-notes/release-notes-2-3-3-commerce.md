@@ -203,7 +203,7 @@ See [Klarna](https://docs.magento.com/m2/ee/user_guide/payment/klarna.html).
 
 #### Yotpo
 
-The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Magento Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.
+The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.
 
 ## Backward-incompatible Changes
 
@@ -313,7 +313,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MC-17275-->
 
-*  The Magento Admin now loads without issue after you change the store domain or set cookies to a different domain. Previously, the page did not redirect as expected.
+*  The Admin now loads without issue after you change the store domain or set cookies to a different domain. Previously, the page did not redirect as expected.
 
 <!--- MC-17675-->
 

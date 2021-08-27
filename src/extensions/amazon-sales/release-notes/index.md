@@ -171,13 +171,13 @@ Amazon Sales Channel 2.0.0 is compatible with {{site.data.var.ee}} version 2.2.4
  {:.bs-callout-info}
 Version 1.0.0 was available in limited release only.
 
--  {:.new} **Simplified Onboarding and Maintenance**: Add and integrate with your Amazon Seller account through a step-by-step process with detailed instructions available through the Magento Admin. Maintain your stores, accounts, and listed products through one dashboard.
+-  {:.new} **Simplified Onboarding and Maintenance**: Add and integrate with your Amazon Seller account through a step-by-step process with detailed instructions available through the Admin. Maintain your stores, accounts, and listed products through one dashboard.
 
--  {:.new} **Multiple Account Support**: Manage and monitor multiple Amazon brands and marketplace regions through the Magento Admin.
+-  {:.new} **Multiple Account Support**: Manage and monitor multiple Amazon brands and marketplace regions through the Admin.
 
 -  {:.new} **Intelligent Pricing**: Set automated repricing rules to increase your chances for the coveted Buy Box. Set prices to dynamically adjust to the current Buy Box price, or lowest competitor pricing. Set limits to repricing to protect your margin.
 
--  {:.new} **Listing Management**: Automate product listings and sync your Magento catalog to the Amazon Marketplace using listing rules. Add specific overrides to finely control your offerings. Monitor and manage all your listings directly from the Magento Admin.
+-  {:.new} **Listing Management**: Automate product listings and sync your Magento catalog to the Amazon Marketplace using listing rules. Add specific overrides to finely control your offerings. Monitor and manage all your listings directly from the Admin.
 
 -  {:.new} **Consistent Inventory Management**: Keep your Magento and Amazon inventory quantities in constant synchronization.
 

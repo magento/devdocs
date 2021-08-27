@@ -29,7 +29,7 @@ To define the [UI component](https://glossary.magento.com/ui-component) using th
 
 A simple example:
 
-1. Launch [Magento Admin](https://glossary.magento.com/magento-admin).
+1. Launch [Admin](https://glossary.magento.com/magento-admin).
 1. Navigate to **Products** > **Catalog** and click **Add Product**. The product creation page opens.
 1. Right-click on the **Product Name** field and click **Inspect**. Go to the **Knockout context** tab. Here you can see the full context of the field, where you can find JS component file, component name, etc.
 

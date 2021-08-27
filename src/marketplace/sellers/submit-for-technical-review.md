@@ -67,8 +67,8 @@ All products and services are subject to the same Commerce Marketplace terms and
 
     You must include **at least one** of the following, in PDF format (less than 5MB):
 
--  Attach User Guide - Documentation describing how to configure and use your extension features in the Magento Admin and extension screens.
--  Attach Reference Manual - Documentation detailing fields, screens, and workflows for the added features, screens, and fields in the Magento Admin.
+-  Attach User Guide - Documentation describing how to configure and use your extension features in the Admin and extension screens.
+-  Attach Reference Manual - Documentation detailing fields, screens, and workflows for the added features, screens, and fields in the Admin.
 -  Attach Installation Guide - Documentation instructing how to install and configure the extension on your Magento instance.
 
     ![]({{ site.baseurl }}/marketplace/sellers/images/technical-submission-docs.png){: .zoom}

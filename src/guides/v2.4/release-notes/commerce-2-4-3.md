@@ -2007,7 +2007,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-41784-->
 
-*  The Magento Admin footer now displays the correct product version.
+*  The Admin footer now displays the correct product version.
 
 <!--- MC-41067-->
 

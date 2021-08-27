@@ -14,7 +14,7 @@ functional_areas:
 
 ### Symptoms
 
-When you try to access your [Magento Admin](https://glossary.magento.com/magento-admin) or [storefront](https://glossary.magento.com/storefront) in a web browser, you get HTTP 503 (Service Unavailable) errors.
+When you try to access your [Admin](https://glossary.magento.com/magento-admin) or [storefront](https://glossary.magento.com/storefront) in a web browser, you get HTTP 503 (Service Unavailable) errors.
 
 To confirm this issue is not related to [maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html), look in your Apache `error.log` for messages that include:
 

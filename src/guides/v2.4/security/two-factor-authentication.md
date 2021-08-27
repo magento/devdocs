@@ -13,7 +13,7 @@ Two-Factor Authentication gives you the ability to:
 -  Manage and configure authenticator settings globally.
 -  Reset authenticators for users.
 
-## Magento Admin Workflows
+## Admin Workflows
 
 A Magento _Admin_ user can perform the following 2FA workflows:
 

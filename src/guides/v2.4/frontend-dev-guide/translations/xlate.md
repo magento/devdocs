@@ -22,7 +22,7 @@ A *translation dictionary* is a comma-separated value (.csv) file with at least 
 "Address %1 of %2","Adresse %1 von %2"
 ```
 
-*UI text strings* are the text elements in the Magento Admin, including field names, instructions, notifications, and table and grid labels. When localizing Magento, you replace these strings with translation dictionary content.
+*UI text strings* are the text elements in the Admin, including field names, instructions, notifications, and table and grid labels. When localizing Magento, you replace these strings with translation dictionary content.
 
 A *language package* is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. [More information about language packages](#m2devgde-xlate-languagepack).
 
@@ -148,7 +148,7 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 Community Engineering accepts translation contributions through the [Magento CrowdIn project] to localize all UI strings. Various Meet Magento and Contribution Day events include developers contributing translations.
 
 1. Create a [CrowdIn account] and join the [Magento CrowdIn project].
-1. Browse and select a language. A percentage displays tracking translation progress overall and per section of the Magento Admin.
+1. Browse and select a language. A percentage displays tracking translation progress overall and per section of the Admin.
 1. Expand and locate an area of UI text strings to translate. Strings marked red need a translation, and marked green have existing translations.
 1. Enter or review translations for strings as described in the [CrowdIn knowledge base].
 
