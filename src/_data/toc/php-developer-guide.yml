@@ -73,7 +73,7 @@ pages:
         - label: Package a component
           url: /extension-dev-guide/package/package_module.html
 
-        - label: Upload your component to the Magento Marketplace
+        - label: Upload your component to the Commerce Marketplace
           url: /extension-dev-guide/package/package_mktpl.html
 
     - label: Validate

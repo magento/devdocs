@@ -44,7 +44,7 @@ Localizing Magento storefronts and the Admin panel gives your company global pre
       Use and distribute the dictionary as a standalone component (similar to modules and themes).
 
 *  Customize the default strings in Magento. For example, changing "Add to Wish List" to "Wish List".
-*  Use ready-to-use language packages prepared by other users or create your own. The [Magento Marketplace] offers language packs to download and install.
+*  Use ready-to-use language packages prepared by other users or create your own. The [Commerce Marketplace] offers language packs to download and install.
 *  Localize strings based on existing, or parent, translations using [language inheritance].
 *  Customize your translations further by creating more than one version of a translation for the same language to cover dialects and different phrasing.
 *  Contribute to [Magento translations](#translations-project) through [Magento CrowdIn project] with Magento Community Engineering. We encourage translation contributions and efforts in the project for future language packs.
@@ -178,7 +178,7 @@ If you need help understanding the context or meaning of a UI string, or have qu
 [engcom@magento.com]: mailto:engcom@magento.com
 [self signup]: https://opensource.magento.com/slack
 [Translations Slack channel]: https://magentocommeng.slack.com/archives/CD97DKBHS
-[Magento Marketplace]: https://marketplace.magento.com/catalogsearch/result/?q=language%20packs#q=language%20pack&idx=m2_cloud_prod_default_products&p=0&nR%5Bvisibility_search%5D%5B%3D%5D%5B0%5D=1
+[Commerce Marketplace]: https://marketplace.magento.com/catalogsearch/result/?q=language%20packs#q=language%20pack&idx=m2_cloud_prod_default_products&p=0&nR%5Bvisibility_search%5D%5B%3D%5D%5B0%5D=1
 [Conventional notations for paths to modules and themes]: {{page.baseurl}}/frontend-dev-guide/conventions.html
 [Use translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
 [Translate theme strings]: {{page.baseurl}}/frontend-dev-guide/translations/translate_theory.html

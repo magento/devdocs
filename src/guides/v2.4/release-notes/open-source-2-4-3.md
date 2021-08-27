@@ -708,10 +708,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  The image resizing process no longer halts for images in unsupported format. Previously, when `catalog:images:resize` encountered an unsupported image format, the process stopped and Magento displayed this error: `bin/magento catalog:images:resize Unsupported image format`.
 
-<!--- ENGCOM-9148-->
-
-*  The image resizing process now processes images marked as hidden in the Admin. Also added the `--skip_hidden_images` option to skip hidden images in the `catalog:images:resize` command. [GitHub-28239](https://github.com/magento/magento2/issues/28239)
-
 <!--- ENGCOM-8925-->
 
 *  WEBP and AVIF support for logo images has been added to the Admin. [GitHub-32495](https://github.com/magento/magento2/issues/32495)

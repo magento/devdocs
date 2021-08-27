@@ -42,7 +42,7 @@ Composer-based themes are loaded from external sources and cannot be modified di
 
 ## Install a theme as an extension
 
-If a theme is distributed on [Magento Marketplace](https://marketplace.magento.com/), see [Install the Extension]({{ site.baseurl }}/extensions/install/).
+If a theme is distributed on [Commerce Marketplace](https://marketplace.magento.com/), see [Install the Extension]({{ site.baseurl }}/extensions/install/).
 
 ## Register a theme
 

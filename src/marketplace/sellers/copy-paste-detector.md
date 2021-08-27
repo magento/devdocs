@@ -9,7 +9,7 @@ The Copy Paste Detector check validates that implementation of the submitted ext
 
 ## What testing is for
 
-Only original extensions can be listed in the [Magento Marketplace](https://marketplace.magento.com/). We test submitted extensions to detect duplication of code from Magento or from another extension available in the Magento Marketplace. If duplication is extensive, the extension submission is rejected on the grounds that the content is plagiarized.
+Only original extensions can be listed in the [Commerce Marketplace](https://marketplace.magento.com/). We test submitted extensions to detect duplication of code from Magento or from another extension available in the Commerce Marketplace. If duplication is extensive, the extension submission is rejected on the grounds that the content is plagiarized.
 
 ## When testing is done
 

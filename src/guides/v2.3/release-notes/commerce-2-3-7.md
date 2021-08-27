@@ -40,13 +40,13 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 ### Platform upgrades
 
-*  **PHP 7.4 support**. Magento 2.3.7 introduces support for PHP 7.4. Magento Marketplace extension vendors must confirm that new versions of their extensions are compatible with PHP 7.4. All unit and integration tests should be run using PHPUnit 9. See the [PHP 7.4 support for Magento 2.3.x release line](https://community.magento.com/t5/Magento-DevBlog/PHP-7-4-support-for-Magento-2-3-x-release-line/ba-p/458946) DevBlog post.
+*  **PHP 7.4 support**. Magento 2.3.7 introduces support for PHP 7.4. Commerce Marketplace extension vendors must confirm that new versions of their extensions are compatible with PHP 7.4. All unit and integration tests should be run using PHPUnit 9. See the [PHP 7.4 support for Magento 2.3.x release line](https://community.magento.com/t5/Magento-DevBlog/PHP-7-4-support-for-Magento-2-3-x-release-line/ba-p/458946) DevBlog post.
 
 *  **PHP 7.3 is now deprecated.**  We do not recommend running Magento 2.3.7 with PHP 7.3. Merchants can run Magento 2.3.7 with PHP 7.3, but this configuration has not been tested. Adobe will continue to perform compatibility testing but not full functional testing with PHP 7.3. PHP 7.3 reaches end-of-life on December 6, 2021, and after that date, all deployments running PHP 7.3 will be vulnerable to security exploits.
 
 *  **Removal of PHP 7.1 and 7.2 compatibility**. You cannot run Magento 2.3.7 on PHP 7.1 or 7.2.
 
-*  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Magento Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all unit and integration tests have been configured to be run with PHPUnit 9.
+*  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Commerce Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all unit and integration tests have been configured to be run with PHPUnit 9.
 
 *  [Elasticsearch 7.9.x is now supported](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html). Although we recommend running Elasticsearch 7.9.3, Magento 2.3.x remains compatible with Elasticsearch 7.4.x.
 

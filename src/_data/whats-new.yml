@@ -629,7 +629,7 @@ entries:
   - Major Update
   - 'Progress: done'
 - description: Added a new topic describing [Extension Footprint Analysis](https://devdocs.magento.com/marketplace/sellers/extension-footprint.html)
-    on the Magento Marketplace.
+    on the Commerce Marketplace.
   versions: 2.x
   type: New Topic
   date: May 27, 2021
@@ -2023,7 +2023,7 @@ entries:
 - description: Updated the [Submit for Technical Review](https://devdocs.magento.com/marketplace/sellers/submit-for-technical-review.html)
     topic in the _Marketplace Developer Guide_ with detailed information about the
     technical review guidelines, tests, tools, and processes that Magento uses to
-    verify and validate third-party extensions submitted to the Magento Marketplace
+    verify and validate third-party extensions submitted to the Commerce Marketplace
     Developer Portal.
   versions: 2.x
   type: Major Update
@@ -2518,7 +2518,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7785
   contributor: dshevtsov
   profile: https://github.com/dshevtsov
-- description: Added information about the Magento Quality Patches package in the
+- description: Added information about the Quality Patches tool in the
     [Software Upgrade Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching.html)
     and [Cloud Guide](https://devdocs.magento.com/cloud/project/project-patch.html).
   versions: 2.3.x, 2.4.x

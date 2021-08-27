@@ -50,7 +50,7 @@ Form elements included in the [Admin](https://glossary.magento.com/magento-admin
 
 Users of the default Magento storefront encounter examples of these form elements throughout the product. These patterns provide a valuable language of software components (and indirectly, user experiences) for [extension](https://glossary.magento.com/extension) developers and administrators.
 
-The Magento [Admin](https://glossary.magento.com/admin) Pattern library is built on the Less preprocessor and implemented as a [module](https://glossary.magento.com/module). You can download a free, current version of this module from [Magento Marketplace](https://marketplace.magento.com/).
+The Magento [Admin](https://glossary.magento.com/admin) Pattern library is built on the Less preprocessor and implemented as a [module](https://glossary.magento.com/module). You can download a free, current version of this module from [Commerce Marketplace](https://marketplace.magento.com/).
 
 See [Admin Pattern Library][] for more information on using this library.
 
@@ -60,7 +60,7 @@ These four levels of potential storefront customization are listed in order to i
 
 ### Extend Magento-Provided CSS
 
-Magento supplies a default [theme](https://glossary.magento.com/theme) and a Less-based CSS. You can substantially change a storefront using CSS only. This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Magento Marketplace to extend the default values.
+Magento supplies a default [theme](https://glossary.magento.com/theme) and a Less-based CSS. You can substantially change a storefront using CSS only. This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Commerce Marketplace to extend the default values.
 
 ### Replace PHTML template files
 
@@ -102,4 +102,4 @@ Related topics
 [Overview of UI components]: {{page.baseurl}}/ui_comp_guide/bk-ui_comps.html
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
 [JavaScript Developer Guide]: {{page.baseurl}}/javascript-dev-guide/bk-javascript-dev-guide.html
-[Magento Marketplace]: https://marketplace.magento.com/
+[Commerce Marketplace]: https://marketplace.magento.com/
