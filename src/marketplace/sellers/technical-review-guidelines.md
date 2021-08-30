@@ -68,7 +68,7 @@ _See also:_ [Coding Standards]({{ site.baseurl }}{{ site.gdeurl }}/coding-standa
 
 ### Copy Paste Detector: Check for plagiarism
 
-All code and marketing content that is submitted to Magento Marketplace is checked for plagiarism to ensure that it has not been copied from existing Marketplace extensions or from the Magento codebase.
+All code and marketing content that is submitted to Commerce Marketplace is checked for plagiarism to ensure that it has not been copied from existing Marketplace extensions or from the Magento codebase.
 
 If the extension contains source code from the Open Source Edition, the extension must be licensed under [Open Source License v. 3.0][3] and properly credit Adobe, Inc.
 

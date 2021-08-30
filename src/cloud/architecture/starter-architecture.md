@@ -21,7 +21,7 @@ The following diagram shows the hierarchical relationships of the Starter enviro
 
 ## Production environment {#cloud-arch-prod}
 
-The Production environment provides the source code to deploy Magento to the Cloud infrastructure that runs your public-facing Magento single and multi-site storefronts. The Production environment uses code from the `master` branch to configure and enable the web server, database, configured services, and your Magento application code.
+The Production environment provides the source code to deploy {{site.data.var.ee}} to the Cloud infrastructure that runs your public-facing single and multi-site storefronts. The Production environment uses code from the `master` branch to configure and enable the web server, database, configured services, and your application code.
 
 Because the production environment is read-only, you must make changes in the Integration environment and deploy across the architecture from the Integration environment to Staging, and finally to the Production environment. See [Deploy your store][] and [Site launch][].
 
@@ -40,7 +40,7 @@ We highly recommend testing every merchant and customer interaction in the Stagi
 
 Developers use the Integration environment to develop, deploy, and test:
 
--  Magento application code
+-  {{site.data.var.ee}} application code
 -  Custom code
 -  Extensions
 -  Services
@@ -63,7 +63,7 @@ The Production and Staging environments include the following technologies. You 
 
 ### Services {#cloud-arch-services}
 
-{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch (Magento 2.2.x and later), Redis, and RabbitMQ.
+{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch ({{site.data.var.ee}} 2.2.x and later), Redis, and RabbitMQ.
 
 Each service runs in a separate, secure container. Containers are managed together in the project. Some services are standard, such as the following:
 
@@ -82,7 +82,7 @@ Each service runs in a separate, secure container. Containers are managed togeth
 -  [RabbitMQ][]
 -  [Elasticsearch][]
 
-In the Staging and Production environments, you use Fastly for CDN and caching. When your environment is initially provisioned, we install the latest version of the Fastly CDN extension for Magento. You can upgrade the extension to get the latest bug fixes and improvements. See [Fastly CDN module for Magento 2][]. You also have access to [New Relic][] for performance management.
+In the Staging and Production environments, you use Fastly for CDN and caching. When your environment is initially provisioned, we install the latest version of the Fastly CDN extension. You can upgrade the extension to get the latest bug fixes and improvements. See [Fastly CDN module for Magento 2][]. You also have access to [New Relic][] for performance management.
 
 You use the following files to configure the software versions that you want to use in your implementation.
 

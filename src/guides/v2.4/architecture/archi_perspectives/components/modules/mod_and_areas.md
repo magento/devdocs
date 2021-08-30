@@ -14,7 +14,7 @@ For example, if you are invoking a REST web service call, rather than load all t
 
 Magento is organized into these main areas:
 
-*  **Magento Admin** (`adminhtml`): entry point for this area is `pub/index.php`. The [Admin](https://glossary.magento.com/admin) panel area includes the code needed for store management. The /app/design/adminhtml directory contains all the code for components you'll see while working in the Admin panel.
+*  **Admin** (`adminhtml`): entry point for this area is `pub/index.php`. The [Admin](https://glossary.magento.com/admin) panel area includes the code needed for store management. The /app/design/adminhtml directory contains all the code for components you'll see while working in the Admin.
 
 *  **Storefront** (`frontend`): entry point for this area is `pub/index.php`. The storefront (or `frontend`)  contains template and [layout](https://glossary.magento.com/layout) files that define the appearance of your [storefront](https://glossary.magento.com/storefront).
 

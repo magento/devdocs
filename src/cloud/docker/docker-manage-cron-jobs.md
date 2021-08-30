@@ -12,7 +12,7 @@ The [Cron container] runs the scheduled cron jobs automatically based on the cro
 {:.bs-callout-info}
 {{site.data.var.ece}} includes a default cron configuration, which can be further customized in the `.magento.app.yaml` file. See [Set up cron jobs]. You can also use the `docker-compose-override.yml` file to customize the Cron container configuration for Docker without updating the environment configuration for the {{site.data.var.ece}} project. The custom settings are applied during the build and deploy process.
 
-The Magento cron implementation has the following limitations:
+The {{site.data.var.ee}} cron implementation has the following limitations:
 
 -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environments
 -  In the Docker environment, cron works only with the CLI container to run the `./bin/magento cron:run` command

@@ -8,7 +8,7 @@ redirect_from:
   - /cloud/project/project-conf-files_services-redis.html
 ---
 
-[Redis](http://redis.io) is an optional, backend cache solution that replaces the Zend Framework [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html), which is used in Magento 2 by default.
+[Redis](http://redis.io) is an optional, backend cache solution that replaces the Zend Framework [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html), which {{site.data.var.ee}} uses by default.
 
 We support Redis versions 3.2, 5.0, and 6.0. See [Configure Redis]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/redis/config-redis.html).
 
@@ -89,9 +89,9 @@ Redis server v=5.0.5 sha=947ee0b5:0 malloc=jemalloc-5.1.0 bits=64 build=c1ca234c
 
 ## Troubleshooting
 
-See the following Magento Support articles for help troubleshooting Redis problems:
+See the following {{site.data.var.ee}} Support articles for help troubleshooting Redis problems:
 
--  [Redis issue delay Magento Admin login or checkout](https://support.magento.com/hc/en-us/articles/360000448493)
+-  [Redis issue delay Admin login or checkout](https://support.magento.com/hc/en-us/articles/360000448493)
 -  [Extended Redis cache implementation Magento Commerce and Cloud 2.3.5+](https://support.magento.com/hc/en-us/articles/360049292532-Extended-Redis-cache-implementation-Magento-Commerce-and-Cloud-2-3-5-)
 -  [MDVA-30102 Magento patch: Redis cache getting full](https://support.magento.com/hc/en-us/articles/360050393371)]
 -  [Managed alerts on Magento Commerce: Redis memory warning alert](https://support.magento.com/hc/en-us/articles/360049928852)

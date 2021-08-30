@@ -5,7 +5,7 @@ For additional details about configuring Elasticsearch, see the [{{site.data.var
 
 To configure Magento to use Elasticsearch:
 
-1. Log in to the Magento Admin as an administrator.
+1. Log in to the Admin as an administrator.
 1. Click **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**.
 1. From the **Search Engine** list, select your Elasticsearch version.
 

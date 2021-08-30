@@ -10,8 +10,8 @@ functional_areas:
 {{site.data.var.mcd-prod}} provides an option to deploy {{site.data.var.ee}} to a Docker environment for development, testing, and automation tasks. It includes the following features:
 
 -  **Cross-platform support**–Supports Linux, macOS and Windows with WSL2
--  **Magento Cloud emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
--  **{{site.data.var.ee}} development**–Creates a local development environment for Magento On-premises projects
+-  **Cloud emulation**–Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
+-  **{{site.data.var.ee}} development**–Creates a local development environment for On-premises projects
 -  **Multiple sync options**–Provides three file synchronization options: `native`, `mutagen`, and `manual-native`. The `manual-native` option provides the best performance on macOS and Windows.
 -  **Extensibility**–Use a standard Docker configuration file to extend and customize your development environment
 
@@ -92,17 +92,17 @@ If you start your Docker environment with Apache running, the following error di
 
 Prior to setting up a local workspace, gather the following credentials and account information:
 
--  **Magento authentication keys (Composer keys)**
+-  **Authentication keys (Composer keys)**
 
-    Magento authentication keys are 32-character authentication tokens that provide secure access to the Magento 2 Composer repository (repo.magento.com), and any other Git services required for Magento development such as GitHub. Your account can have multiple Magento authentication keys. For the workspace setup, start with one specific key for your code repository. If you do not have any keys, contact the Account Owner to create them, or create the [Magento authentication keys] yourself.
+    Authentication keys are 32-character authentication tokens that provide secure access to the {{site.data.var.ee}} Composer repository (repo.magento.com), and any other Git services required for development such as GitHub. Your account can have multiple authentication keys. For the workspace setup, start with one specific key for your code repository. If you do not have any keys, contact the Account Owner to create them, or create the [authentication keys] yourself.
 
 -  **(Optional) Cloud Project account**
 
    The License Owner or Technical Admin (Super User) should invite you to the {{site.data.var.ece}} project. When you receive the e-mail invitation, click the link and follow the prompts to create your account. See [Set up an account] for details.
 
--  **(Optional) Magento Encryption Key**
+-  **(Optional) Encryption Key**
 
-   When importing an existing Magento instance, capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see [Resolve issues with encryption key]
+   When importing an existing {{site.data.var.ee}} instance, capture the encryption key used to protect your access and data for the {{site.data.var.ee}} database. For details on this key, see [Resolve issues with encryption key]
 
 <!--Link definitions-->
 
@@ -112,7 +112,7 @@ Prior to setting up a local workspace, gather the following credentials and acco
 [Docker desktop]: https://docs.docker.com/desktop/#configure-docker-desktop
 [init-docker.sh]: https://github.com/magento/magento-cloud-docker/blob/develop/bin/init-docker.sh
 [mutagen]: https://mutagen.io/documentation/introduction/installation
-[Magento authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
+[authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [Magento Cloud template]: https://github.com/magento/magento-cloud
 [Set up an account]: {{site.baseurl}}/cloud/before/before-workspace.html#newaccount
 [Resolve issues with encryption key]: {{site.baseurl}}/cloud/trouble/trouble-crypt-key-variable.html

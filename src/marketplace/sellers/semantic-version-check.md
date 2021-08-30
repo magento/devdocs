@@ -13,7 +13,7 @@ The Semantic Version Check (SVC) is a quality check that validates the change le
 
 Magento follows Semantic Versioning and encourages all third-party vendors to apply this versioning strategy for their Magento extensions as well.
 
-Magento Marketplace uses version information to fast-track the extension validation process for submissions that introduce patch level changes, as these are expected to be backwards compatible bug fixes without any new functionality.
+Commerce Marketplace uses version information to fast-track the extension validation process for submissions that introduce patch level changes, as these are expected to be backwards compatible bug fixes without any new functionality.
 
 ## When testing is done
 
@@ -55,7 +55,7 @@ php magento-semver/bin/svc compare <path-to-latest-published-extension-version> 
 
 This command requires an environment with PHP version 7.2.29 or later.
 
-If the Semantic Version check detects any issues, [create a Magento Support ticket](https://marketplacesupport.magento.com/hc/en-us) to request assistance. Specify the relevant Submission ID in the ticket.
+If the Semantic Version check detects any issues, [create a support ticket](https://marketplacesupport.magento.com/hc/en-us) to request assistance. Specify the relevant Submission ID in the ticket.
 
 As the check is solely based on [Magento SemVer open source project](https://github.com/magento/magento-semver), submitting an issue or pull request on GitHub is highly recommended.
 
