@@ -295,7 +295,7 @@ To integrate the default Magento UI for widgets, you need access to the followin
 
 Use the global [`MediabrowserUtility`] object to implement or override image browsing functionality in the editor.
 
-**Example:** `lib/web/mage/adminhtml/wysiwyg/tiny_mce/tinymce5Adapter.js` 
+**Example:** `lib/web/mage/adminhtml/wysiwyg/tiny_mce/tinymce5Adapter.js`
 
 ``` js
 .....
