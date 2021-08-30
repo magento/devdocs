@@ -90,7 +90,7 @@ Database Status|Admin Status|Description
 `working`|Processing|Indexing is in progress
 
 The database status can be seen when viewing the SQL table `indexer_state`.
-The admin status can be seen when viewing the indexer grid in Magento Admin or when running the index status from the CLI.
+The admin status can be seen when viewing the indexer grid in Admin or when running the index status from the CLI.
 
 The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the [Admin](https://glossary.magento.com/admin) panel in **System >** Tools **> Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
@@ -110,7 +110,7 @@ Reindexing can be performed in two modes:
 
 To set these options:
 
-1. Log in to the [Magento Admin](https://glossary.magento.com/magento-admin).
+1. Log in to the [Admin](https://glossary.magento.com/magento-admin).
 1. Click **System >** Tools **> Index Management**.
 1. Select the checkbox next to each type of indexer to change.
 1. From the **Actions** list, click the indexing mode.

@@ -42,7 +42,7 @@ You can run Magento in any of the following *modes*:
             <ul><li>Does not show exceptions to the user (exceptions are written to logs only).</li>
                 <li>Serves static view files from cache only.</li>
                 <li>Prevents automatic code file compilation. New or updated files are not written to the file system.</li>
-                <li><b>Does not allow you to enable or disable cache types in Magento Admin.</b> <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">More information about enabling and disabling the cache</a>.</li>
+                <li><b>Does not allow you to enable or disable cache types in Admin.</b> <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">More information about enabling and disabling the cache</a>.</li>
             </ul></td>
     </tr>
    <tr>
@@ -99,7 +99,7 @@ In production mode:
 -  Errors are logged to the file system and are never displayed to the user.
 -  You can enable and disable cache types only using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en).
 
-   You _cannot_ enable or disable cache types using the Magento Admin
+   You _cannot_ enable or disable cache types using the Admin
 
 ## Maintenance mode
 

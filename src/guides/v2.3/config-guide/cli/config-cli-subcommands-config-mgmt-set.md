@@ -12,8 +12,8 @@ functional_areas:
 This topic discusses advanced configuration commands you can use to:
 
 *  Set any configuration option from the command line
-*  Optionally lock any configuration option so its value cannot be changed in the Magento Admin
-*  Change a configuration option that is locked in the Magento Admin
+*  Optionally lock any configuration option so its value cannot be changed in the Admin
+*  Change a configuration option that is locked in the Admin
 
 You can use these commands to set the Magento configuration manually or using scripts. You set configuration options using a _configuration path_, which is a `/`-delimited string that uniquely identifies that configuration option. You can find configuration paths in the following references:
 
@@ -141,8 +141,8 @@ Parameter | Description
 --- | --- | ---
 `--scope` | The scope of the configuration. The possible values are `default`, `website`, or `store`. The default is `default`.
 `--scope-code` | The scope code of configuration (website code or store view code)
-`-le or --lock-env` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/env.php` file.
-`-lc or --lock-config` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/config.php` file. The `--lock-config` option overwrites `--lock-env` if you specify both options.
+`-le or --lock-env` | Either locks the value so it cannot be edited in the Admin or changes a setting that is already locked in the Admin. The command writes the value to the `<Magento base dir>/app/etc/env.php` file.
+`-lc or --lock-config` | Either locks the value so it cannot be edited in the Admin or changes a setting that is already locked in the Admin. The command writes the value to the `<Magento base dir>/app/etc/config.php` file. The `--lock-config` option overwrites `--lock-env` if you specify both options.
 `path` | *Required*. The configuration path
 `value` | *Required*. The value of the configuration
 
@@ -159,12 +159,12 @@ The "wrong/config/path" does not exist
 
 See one of the following sections for more information:
 
-*  [Set configuration values that can be edited in the Magento Admin](#config-cli-config-set-edit)
-*  [Set configuration values that cannot be edited in the Magento Admin](#config-cli-config-file)
+*  [Set configuration values that can be edited in the Admin](#config-cli-config-set-edit)
+*  [Set configuration values that cannot be edited in the Admin](#config-cli-config-file)
 
-### Set configuration values that can be edited in the Magento Admin {#config-cli-config-set-edit}
+### Set configuration values that can be edited in the Admin {#config-cli-config-set-edit}
 
-Use `bin/magento config:set` _without_ `--lock-env` or `--lock-config` to write the value to the database. Values you set this way can be edited in the Magento Admin.
+Use `bin/magento config:set` _without_ `--lock-env` or `--lock-config` to write the value to the database. Values you set this way can be edited in the Admin.
 
 Some examples for setting a store base [URL](https://glossary.magento.com/url) follow:
 
@@ -186,7 +186,7 @@ Set the base URL for the `test` store view:
 bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url http://example3.com/
 ```
 
-### Set configuration values that cannot be edited in the Magento Admin {#config-cli-config-file}
+### Set configuration values that cannot be edited in the Admin {#config-cli-config-file}
 
 If you use the `--lock-env`  option as follows, the command saves the configuration value in `<Magento base dir>/app/etc/env.php` and disables the field for editing this value in Admin.
 

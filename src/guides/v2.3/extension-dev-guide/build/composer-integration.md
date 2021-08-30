@@ -174,10 +174,10 @@ Using the Composer naming convention helps distinguish packages from different v
 All letters in the vendor name must be in lowercase.
 For example, the vendor name format for extensions released by Magento Inc is `magento`.
 
-#### Magento Marketplace Extensions
+#### Commerce Marketplace Extensions
 
-Magento Marketplace uses `vendor-name` to match an extension to a vendor during the extension submission process.
-If you plan to submit your extension to the [Magento Marketplace][7]{:target="_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
+Commerce Marketplace uses `vendor-name` to match an extension to a vendor during the extension submission process.
+If you plan to submit your extension to the [Commerce Marketplace][7]{:target="_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
 
 In the `composer.json` file, use the value of 'Vendor Name' in your profile for the `vendor-name` part of the extension name.
 

@@ -53,7 +53,7 @@ For the purposes of this example, we assume the following:
 
 To set the default locale and weight units in your development system:
 
-1. Log in to the Magento Admin.
+1. Log in to the Admin.
 1. Click **Stores** > Settings > **Configuration** > General > **General**.
 1. If you have more than one website available, use the **Store View** list in the upper left corner to switch to a different website as the following figure shows.
 
@@ -82,7 +82,7 @@ To set the default locale and weight units in your development system:
 
 ## Step 2: Update the configuration
 
-Now that you've changed the configuration in the Magento Admin, write the shared configuration to a file as using the following steps:
+Now that you've changed the configuration in the Admin, write the shared configuration to a file as using the following steps:
 
 {% include config/split-deploy/example_save-shared-config.md %}
 
@@ -152,11 +152,11 @@ This section discusses how to pull all the changes you made on your development 
 
 {% include config/split-deploy/example_update-prod.md %}
 
-### Verify configuration settings in the Magento Admin
+### Verify configuration settings in the Admin
 
 To verify the configuration settings:
 
-1. Log in to your production system's Magento Admin.
+1. Log in to your production system's Admin.
 1. Click **Stores** > Settings > **Configuration** > General > **General**.
 1. Use the **Store View** list in the upper left corner to switch to a different website.
 

@@ -17,9 +17,9 @@ For information about setting up and configuring Fastly, see [Set up Fastly]({{ 
 
 ## Locate Fastly service ID {#service-id}
 
-You need the Fastly service ID to configure Fastly from the Magento Admin UI or to submit Fastly API requests for advanced Fastly configuration and troubleshooting.
+You need the Fastly service ID to configure Fastly from the Admin UI or to submit Fastly API requests for advanced Fastly configuration and troubleshooting.
 
-If Fastly is enabled in your project environment, you can get the service ID from the Magento Admin UI. See [Get Fastly credentials]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
+If Fastly is enabled in your project environment, you can get the service ID from the Admin UI. See [Get Fastly credentials]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
 
 Developers and advanced VCL users can use custom VCL to retrieve the service ID using the Fastly variable `req.service_id`. For example, you can add the `req.service_id` to the custom logging directive in your VCL to capture the service ID value:
 
@@ -39,9 +39,9 @@ Use the following list to identify and troubleshoot issues related to the Fastly
 
 -  **Geo-location/GeoIP does not work**— The default Magento Fastly VCL snippets append the country code to the URL. If the country code is not working, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
 
--  **Pages are not caching**—By default, Fastly does not cache pages with the `Set-Cookies` header. Magento sets cookies even on cacheable pages (TTL > 0). The default Magento Fastly VCL strips those cookies on cacheable pages. If pages are not caching, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
+-  **Pages are not caching**—By default, Fastly does not cache pages with the `Set-Cookies` header. {{site.data.var.ee}} sets cookies even on cacheable pages (TTL > 0). The default Magento Fastly VCL strips those cookies on cacheable pages. If pages are not caching, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
 
-   This issue can also occur if a page block in a template is marked uncacheable. In that case, the problem is most likely caused by a third-party module or Magento extension blocking or removing the Magento headers. To resolve the issue, see [X-Cache contains only MISS, no HIT](#xcache-miss).
+   This issue can also occur if a page block in a template is marked uncacheable. In that case, the problem is most likely caused by a third-party module or extension blocking or removing the {{site.data.var.ee}} headers. To resolve the issue, see [X-Cache contains only MISS, no HIT](#xcache-miss).
 
 -  **Purge requests are failing**—Fastly returns the following error when you submit a purge request:
 
@@ -52,14 +52,14 @@ Use the following list to identify and troubleshoot issues related to the Fastly
    -  Invalid Fastly credentials in the Fastly service configuration for the {{ site.data.var.ece }} project environment
    -  Invalid code in a custom VCL snippet
 
-   To resolve the issue, see [Error purging Fastly cache on Cloud](https://support.magento.com/hc/en-us/articles/115001853194-Error-purging-Fastly-cache-on-Cloud-The-purge-request-was-not-processed-successfully-) in the Magento Help Center.
+   To resolve the issue, see [Error purging Fastly cache on Cloud](https://support.magento.com/hc/en-us/articles/115001853194-Error-purging-Fastly-cache-on-Cloud-The-purge-request-was-not-processed-successfully-) in the {{site.data.var.ee}} Help Center.
 
 ## 503 errors from Fastly {#errors}
 
 If Fastly returns 503 timeout errors, check the error logs and the 503 error page to identify the root cause.
 
 {:.bs-callout-info}
-If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Magento Admin UI]({{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#extend-fastly-timeout).
+If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Admin UI]({{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#extend-fastly-timeout).
 
 If you receive a 503 error, check the Production or Staging environment error log and php access log to troubleshoot the issue.
 
@@ -80,7 +80,7 @@ To check the error logs:
    /var/log/platform/<project_ID>/php.access.log
    ```
 
-   Search the log for HTTP 200 responses for the URL that returned the 503 error. If you find the 200 response, it means that Magento returned the page without errors. That indicates the issue might have occurred after the interval that exceeds the `first_byte_timeout` value set in the Fastly service configuration.
+   Search the log for HTTP 200 responses for the URL that returned the 503 error. If you find the 200 response, it means that {{site.data.var.ee}} returned the page without errors. That indicates the issue might have occurred after the interval that exceeds the `first_byte_timeout` value set in the Fastly service configuration.
 
 When a 503 error occurs, Fastly returns the reason on the error and maintenance page. You might not be able to see the reason if you added code for a custom response page. To view the reason code on the default error page, you can remove the HTML code for the custom error page.
 
@@ -246,7 +246,7 @@ Based on the status returned, use the following instructions to update the Fastl
 
 #### Fastly VCL has not been uploaded {#no-VCL}
 
-If the Fastly VCL has not been uploaded (`Fastly-Magento-VCL-Uploaded`: `false`), use the *Upload VCL* option in the Magento Admin UI to upload it. See [Upload Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
+If the Fastly VCL has not been uploaded (`Fastly-Magento-VCL-Uploaded`: `false`), use the *Upload VCL* option in the Admin UI to upload it. See [Upload Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
 
 #### X-Cache contains only MISS, no HIT {#xcache-miss}
 
@@ -276,7 +276,7 @@ If the issue persists, another extension is likely resetting these headers. Repe
 
 1. Complete the following steps for each extension potentially causing issues with Fastly headers:
 
-   -  Enable one extension at a time, save the configuration, and flush the Magento cache.
+   -  Enable one extension at a time, save the configuration, and flush the {{site.data.var.ee}} cache.
 
    -  Run the [`curl` commands](#curl-live) to verify the [response headers](#response-headers).
 
@@ -286,7 +286,7 @@ After you identify the extension that is resetting Fastly headers, contact the e
 
 ## Rollback Fastly configuration changes
 
-If custom VCL snippet updates or other Fastly configuration changes cause a {{ site.data.var.ece }} site to break or return errors, use the Fastly API [activate](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) command to rollback to an earlier VCL version. You cannot rollback the VCL version from the Magento Admin UI.
+If custom VCL snippet updates or other Fastly configuration changes cause a {{ site.data.var.ece }} site to break or return errors, use the Fastly API [activate](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) command to rollback to an earlier VCL version. You cannot rollback the VCL version from the Admin UI.
 
 {:.procedure}
 To rollback the VCL version:

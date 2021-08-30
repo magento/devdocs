@@ -11,17 +11,17 @@ Previous step
 
 [Enable SSH keys]({{ site.baseurl }}/cloud/before/before-workspace-ssh.html)
 
-**This step is optional if you installed nginx as your web server.** The [Magento file system owner]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner) provides root access and permissions, for security reasons on a hosted system. Apache installations require
+**This step is optional if you installed nginx as your web server.** The [file system owner]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner) provides root access and permissions, for security reasons on a hosted system. Apache installations require
 
-To enable the web server (Apache) to write files and directories in the Magento file system but to also maintain *ownership* by the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner), both users must be in the same group. This is necessary so both users can share access to Magento files, including files created using the [Magento Admin](https://glossary.magento.com/magento-admin) or other web-based utilities.
+To enable the web server (Apache) to write files and directories in the file system but to also maintain *ownership* by the [file system owner](https://glossary.magento.com/magento-file-system-owner), both users must be in the same group. This is necessary so both users can share access to {{site.data.var.ee}} files, including files created using the [Admin](https://glossary.magento.com/magento-admin) or other web-based utilities.
 
-You need to create a new Magento file system owner and put that user in the web server's group. If you use an existing user account, we recommend the user account has a strong password for security reasons.
+You need to create a new file system owner and put that user in the web server's group. If you use an existing user account, we recommend the user account has a strong password for security reasons.
 
-## Create the Magento file system owner {#mage-owner-create-user}
+## Create the file system owner {#mage-owner-create-user}
 
-Create the Magento file system owner with a strong password. Magento file system owner is another term for the *command-line user*.
+Create the file system owner with a strong password. file system owner is another term for the *command-line user*.
 
-To create the Magento file system owner, enter the following command as a user with `root` privileges:
+To create the file system owner, enter the following command as a user with `root` privileges:
 
 ```bash
 adduser <username>
@@ -36,7 +36,7 @@ passwd <username>
 Follow the prompts on your screen to create a password for the user.
 
 {:.bs-callout-warning}
-If you do not have `root` privileges on your Magento server, you can use another local user account. Confirm that the user has a strong password and continue with [Put the Magento file system owner in the web server group](#install-update-depend-user-add2group).
+If you do not have `root` privileges on your server, you can use another local user account. Confirm that the user has a strong password and continue with [Put the file system owner in the web server group](#install-update-depend-user-add2group).
 
 For example, to create a user named `magento_user` and give the user a password, enter:
 
@@ -73,7 +73,7 @@ To find the web server user's group:
 
    Typically, the username and the group name are both `www-data`
 
-## Put the Magento file system owner in the web server's primary group {#install-update-depend-user-add2group}
+## Put the file system owner in the web server's primary group {#install-update-depend-user-add2group}
 
 Assuming the typical Apache group name for CentOS and Ubuntu, enter the following command as a user with `root` privileges:
 
@@ -86,7 +86,7 @@ For example, to add the user `magento_user` to the `apache` primary group on Cen
 usermod -g apache magento_user
 ```
 
-To confirm your Magento user is a member of the web server group, enter the following command:
+To confirm that your user is a member of the web server group, enter the following command:
 
 ```bash
 groups <username>

@@ -74,13 +74,13 @@ One of these environment variables enables or disables outgoing emails for the e
 
    ![Set outgoing emails]({{ site.baseurl }}/common/images/cloud/cloud_project-conf-env.png)
 
-Configure your email notifications, services, and more as needed through the Magento Admin and test emails.
+Configure your email notifications, services, and more as needed through the Admin and test emails.
 
 ## Set environment and project variables {#project-conf-env-var}
 
 You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information, see [Environment variables]({{ site.baseurl }}/cloud/env/variables-intro.html).
 
-For an example of variables, we walk you through creating Magento Admin variables through Onboarding and project creation tasks. You may want to add _environment variables_ for sensitive data like payment method information. _Project variables_ are set across all branches and environments.
+For an example of variables, we walk you through creating Admin variables through Onboarding and project creation tasks. You may want to add _environment variables_ for sensitive data like payment method information. _Project variables_ are set across all branches and environments.
 
 To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ site.baseurl }}/cloud/project/user-admin.html) privileges.
 
@@ -93,7 +93,7 @@ To set environment specific variables in the Project Web Interface:
 1. [Access your project](#project-access) and select a specific environment.
 1. Select the Variables tab.
 1. Click **Add Variable**.
-1. In the **Name** field, enter a variable name. For example, to set the Magento Admin default account password, enter `ADMIN_PASSWORD`.
+1. In the **Name** field, enter a variable name. For example, to set the Admin default account password, enter `ADMIN_PASSWORD`.
 1. In the **Value** field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.
 
    ![Set environment variables]({{ site.baseurl }}/common/images/cloud/cloud_env-var.png)
@@ -102,7 +102,7 @@ To set environment specific variables in the Project Web Interface:
 1. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 {:.bs-callout-warning}
-If you are attempting to [override Magento configuration settings]({{ site.baseurl }}
+If you are attempting to [override configuration settings]({{ site.baseurl }}
 ), you must prepend `env:` to the variable name. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud/cloud_env_var_example.png)
 
@@ -113,7 +113,7 @@ To set project variables in the Project Web Interface:
 1. [Access your project](#project-access) and select a specific environment.
 1. Select the Variables tab.
 1. Click **Add Variable**.
-1. In the **Name** field, enter a variable name. For example, to set the Magento Admin email for the default account, enter `ADMIN_EMAIL`.
+1. In the **Name** field, enter a variable name. For example, to set the Admin email for the default account, enter `ADMIN_EMAIL`.
 1. In the **Value** field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.
 
    ![Set project variables]({{ site.baseurl }}/common/images/cloud/cloud_project_variable.png)
@@ -123,7 +123,7 @@ To set project variables in the Project Web Interface:
 
 ## Configure routes {#project-conf-env-route}
 
-Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see [routes.yaml]({{ site.baseurl }}/cloud/project/routes.html). These routes (or URLs) are used to access your Magento storefront.
+Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see [routes.yaml]({{ site.baseurl }}/cloud/project/routes.html). These routes (or URLs) are used to access your storefront.
 
 1. [Access your project](#project-access) and select a specific environment.
 1. Select the Routes tab.

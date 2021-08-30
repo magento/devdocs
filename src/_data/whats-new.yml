@@ -4,8 +4,32 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Aug 16 16:44:00 2021
+updated: Mon Aug 23 15:54:58 2021
 entries:
+- description: Clarified the difference between [updating the ece-tools package](https://devdocs.magento.com/cloud/project/ece-tools-update.html)
+    and [upgrading your cloud project to use the ece-tools package](https://devdocs.magento.com/cloud/project/ece-tools-upgrade-project.html).
+  versions: 2.x
+  type: Technical
+  date: August 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2475
+  merge_commit: a1f714e6bd258fcf93fa5179eab93ce94e5588ad
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Updated [release notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/)
+    for Amazon Sales Channel version 4.4.1.
+  versions: 2.x
+  type: Major Update
+  date: August 19, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2464
+  merge_commit: a921f2a464a3bbfd63677d528eca92880ed4a03f
+  contributor: hickskenh
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
 - description: Added information to the Adobe Commerce 2.4.3, Magento Open Source
     2.4.3, and Magento 2.3.7-p1 release notes about the 8/11/2021 hot fix that addresses
     an issue with API rate limiting.  See [Magento 2.3.7-p1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html)
@@ -605,7 +629,7 @@ entries:
   - Major Update
   - 'Progress: done'
 - description: Added a new topic describing [Extension Footprint Analysis](https://devdocs.magento.com/marketplace/sellers/extension-footprint.html)
-    on the Magento Marketplace.
+    on the Commerce Marketplace.
   versions: 2.x
   type: New Topic
   date: May 27, 2021
@@ -1201,7 +1225,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8770
   contributor: abukatar
   profile: https://github.com/abukatar
-- description: Added the "Configure product video options from Magento Admin" section
+- description: Added the "Configure product video options from Admin" section
     to the [Configure product video](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/product-video.html)
     topic.
   versions: 2.3.x, 2.4.x
@@ -1810,7 +1834,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8311
   contributor: sathiyaaa
   profile: https://github.com/sathiyaaa
-- description: Added a new topic describing how to [customize the Magento Admin design](https://devdocs.magento.com/guides/v2.4/howdoi/admin/customize_admin.html).
+- description: Added a new topic describing how to [customize the Admin design](https://devdocs.magento.com/guides/v2.4/howdoi/admin/customize_admin.html).
   versions: 2.3.x, 2.4.x
   type: New Topic
   date: December 8, 2020
@@ -1999,7 +2023,7 @@ entries:
 - description: Updated the [Submit for Technical Review](https://devdocs.magento.com/marketplace/sellers/submit-for-technical-review.html)
     topic in the _Marketplace Developer Guide_ with detailed information about the
     technical review guidelines, tests, tools, and processes that Magento uses to
-    verify and validate third-party extensions submitted to the Magento Marketplace
+    verify and validate third-party extensions submitted to the Commerce Marketplace
     Developer Portal.
   versions: 2.x
   type: Major Update
@@ -2494,7 +2518,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7785
   contributor: dshevtsov
   profile: https://github.com/dshevtsov
-- description: Added information about the Magento Quality Patches package in the
+- description: Added information about the Quality Patches tool in the
     [Software Upgrade Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching.html)
     and [Cloud Guide](https://devdocs.magento.com/cloud/project/project-patch.html).
   versions: 2.3.x, 2.4.x
@@ -3577,7 +3601,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/6811
 - description: Improved the instructions to configure Cloud Starter projects to use
     New Relic to add alternative instructions for users who have access to New Relic
-    and the Magento Admin for a site, but do not have access to configure environment
+    and the Admin for a site, but do not have access to configure environment
     variables through the Magento Cloud project. See [Configure New Relic for Starter
     environments](https://devdocs.magento.com/cloud/project/new-relic.html#configure-new-relic-for-starter-environments).
   versions: 2.3.x
@@ -5785,7 +5809,7 @@ entries:
   date: March  1, 2019
   link: https://github.com/magento/devdocs/pull/3841
 - description: "-  Updated the Custom VCL snippets with instructions for using the
-    Magento Admin UI to create and manage VCL snippets.<br/>-  Updated and corrected
+    Admin UI to create and manage VCL snippets.<br/>-  Updated and corrected
     the following examples for using Fastly Edge Dictionaries and custom VCL snippets
     to manage request routing for Magento Commerce Cloud traffic: Set up redirects
     to WordPress backend, Block referrer spam, and Secure access to the Admin UI by
@@ -5817,7 +5841,7 @@ entries:
     Updated the Cloud Docker content to explain how to configure Xdebug.<br/>- Added
     two new environment variables: RESOURCE_CONFIGURATION deploy variable and X_FRAME_CONFIGURATION
     global variable<br/>- Updated the ADMIN variables and clarified the usage of ADMIN
-    variables in the Access your Magento Admin panel page.<br/>- Added an example
+    variables in the Access your Admin page.<br/>- Added an example
     for preloading pages from multiple domains in the WARM_UP_PAGES post-deploy variable.<br/>-
     Deprecated SCD_EXCLUDE_THEMES environment variable.<br/>- Clarified the backup
     and retention statements regarding the most recent 24-hour period.'

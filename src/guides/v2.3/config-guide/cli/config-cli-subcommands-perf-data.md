@@ -424,7 +424,7 @@ Generates websites. XML profile node:
 
 ### Store groups {#config-cli-gen-stores}
 
-Generates store groups (referred to in the [Magento Admin](https://glossary.magento.com/magento-admin) as _stores_). Store groups are distributed normally among websites.
+Generates store groups (referred to in the [Admin](https://glossary.magento.com/magento-admin) as _stores_). Store groups are distributed normally among websites.
 
 XML profile node:
 
