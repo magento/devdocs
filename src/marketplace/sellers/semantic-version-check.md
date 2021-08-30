@@ -11,7 +11,7 @@ The Semantic Version Check (SVC) is a quality check that validates the change le
 
 [Semantic Versioning](https://semver.org/) is a good way to communicate what kind of changes were introduced between software releases. Clients can use this information to estimate the risk level of upgrading a particular software package and to determine how much effort is required to adopt the new version.
 
-Magento follows Semantic Versioning and encourages all third-party vendors to apply this versioning strategy for their Magento extensions as well.
+Magento follows Semantic Versioning and encourages all third-party vendors to apply this versioning strategy for their extensions as well.
 
 Commerce Marketplace uses version information to fast-track the extension validation process for submissions that introduce patch level changes, as these are expected to be backwards compatible bug fixes without any new functionality.
 
