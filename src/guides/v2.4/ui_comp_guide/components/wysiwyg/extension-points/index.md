@@ -53,7 +53,7 @@ init: function (ed) {
     */
     editor.addCommand('openVariablesSlideout', function (commandConfig) {
         var selectedElement;
-      
+
         if (commandConfig) {
             selectedElement = commandConfig.selectedElement;
         } else {
@@ -194,14 +194,14 @@ init: function (ed, url) {
     editor.ui.registry.addToggleButton('magentowidget', {
         icon: 'magentowidget',
         tooltip: jQuery.mage.__('Insert Widget'),
-    
+
         /**
          * execute openVariablesSlideout for onAction callback
          */
         onAction: function () {
             editor.execCommand('mceMagentowidget');
         },
-    
+
         /**
          * Add a node change handler, selects the button in the UI when a image is selected
          * @param {ToolbarToggleButtonInstanceApi} api
@@ -212,7 +212,7 @@ init: function (ed, url) {
              */
             editor.on('NodeChange', function (e) {
                 var placeholder = e.element;
-    
+
                 if (self.isWidgetPlaceholderSelected(placeholder)) {
                     widgetTools.setEditMode(true);
                     api.setActive(true);
@@ -289,8 +289,7 @@ CKEDITOR.plugins.add('widget', {
 To integrate the default Magento UI for widgets, you need access to the following data:
 
 *  The backend `widget_window_url` (`\Magento\Widget\Model\Widget\Config::getWidgetWindowUrl`)
-*  htmlId of the WYSIWYG editor.
-  For CKEditor4, you can get this by calling `editor.element.getId()`.
+*  htmlId of the WYSIWYG editor. For CKEditor4, you can get this by calling `editor.element.getId()`.
 
 #### Media Gallery Entity
 
@@ -400,8 +399,6 @@ These classes are implementations of the following interface:
 
 The `name` attribute for the configuration provider in the `di.xml` entry must match the editor's registered option value.
 In the example provided, this value is `default`
-
-
 
 [`Magento\Cms\Model\Wysiwyg\Config`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Model/Wysiwyg/Config.php
 [virtual type]: {{page.baseurl }}/extension-dev-guide/build/di-xml-file.html#virtual-types
