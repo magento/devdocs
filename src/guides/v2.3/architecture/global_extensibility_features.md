@@ -42,7 +42,7 @@ The wider Magento ecosystem provides an extensive community and rich third-party
 
 ### Flexible attribute types
 
-You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Magento Admin, and the storefront  displays them.
+You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Admin, and the storefront  displays them.
 
 Attribute type | Displayed by storefront?
 --- | ---
@@ -52,7 +52,7 @@ Extension | No
 
 Attribute types fall into three general categories:
 
-*  **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/magento-admin).
+*  **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Admin](https://glossary.magento.com/magento-admin).
 
 *  **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and [Catalog](https://glossary.magento.com/catalog) modules use EAV attributes.
 

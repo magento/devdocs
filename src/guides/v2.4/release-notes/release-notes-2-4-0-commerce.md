@@ -51,7 +51,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 *  **Implementation of 2FA for Admin accounts, Magento.com user accounts, and Cloud SSH access**
 
-   *  **Securing your Magento Admin account**. Two-factor authentication (2FA) is now required for the Magento Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default. We strongly recommend against disabling the 2FA module.  This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
+   *  **Securing your Admin account**. Two-factor authentication (2FA) is now required for the Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default. We strongly recommend against disabling the 2FA module.  This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
 
    *  **Securing your Magento account**. Two-factor Authentication (2FA) provides an added, optional  layer of security to better protect your Magento.com account from unauthorized users who might want to use your account in ways you do not want. See [Securing Your Account](https://docs.magento.com/user-guide/magento/magento-account-secure.html).
 
@@ -212,7 +212,7 @@ This release includes these enhancements:
 *  Wishlist, Review, and Order syncs now look up the transactional data sync limit once only.
 *  Logging output from the Client class has been improved and is now consistent across all methods in the API wrapper.
 *  Configurable products now have a stock figure that is the sum of their child products.
-*  A new plugin detects stock updates that are performed by third-party code (outside the Magento Admin).
+*  A new plugin detects stock updates that are performed by third-party code (outside the Admin).
 *  [Data mapping](https://docs.magento.com/user-guide/configuration/dotdigital/data-mapping.html) and [transactional email](https://docs.magento.com/user-guide/configuration/dotdigital/transactional-emails.html) configuration information has been updated.
 
 #### Amazon Pay
@@ -2068,7 +2068,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6328-->
 
-*  The layout of the Admin Billing Address/Shipping Address page has been refactored to meet Magento Admin form display conventions. _Fix submitted by Alexey Rakitin in pull request [25699](https://github.com/magento/magento2/pull/25699)_. [GitHub-23481](https://github.com/magento/magento2/issues/23481), [GitHub-19805](https://github.com/magento/magento2/issues/19805)
+*  The layout of the Admin Billing Address/Shipping Address page has been refactored to meet Admin form display conventions. _Fix submitted by Alexey Rakitin in pull request [25699](https://github.com/magento/magento2/pull/25699)_. [GitHub-23481](https://github.com/magento/magento2/issues/23481), [GitHub-19805](https://github.com/magento/magento2/issues/19805)
 
 <!--- ENGCOM-6628 6593-->
 

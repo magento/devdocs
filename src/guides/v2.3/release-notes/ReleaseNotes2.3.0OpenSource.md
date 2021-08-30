@@ -13,7 +13,7 @@ The patch addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/
 
 ## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
 
-An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Open Source open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin and subsequently launch malicious code in a store user’s browser.  **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Open Source open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Admin and subsequently launch malicious code in a store user’s browser.  **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
 blog post. Locate the patch by the name. We provide Git-based and Composer-based patches.
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
@@ -77,7 +77,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 *  Added a link to the Klarna merchant portal
 
-*  Added a detailed Klarna message in the Magento Admin where needed
+*  Added a detailed Klarna message in the Admin where needed
 
 *  Added an initial Magento Functional Test Framework (MFTF) test and support for future tests
 
@@ -1539,7 +1539,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-75326 -->
 
-*  The Magento Admin no longer falls into a redirect loop when an administrator logs in with a role that has no resources assigned.  [GitHub-10611](https://github.com/magento/magento2/issues/10611)
+*  The Admin no longer falls into a redirect loop when an administrator logs in with a role that has no resources assigned.  [GitHub-10611](https://github.com/magento/magento2/issues/10611)
 
 <!---MAGETWO-82428 -->
 

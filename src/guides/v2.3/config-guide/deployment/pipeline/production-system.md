@@ -89,7 +89,7 @@ To set sensitive values:
 
    When prompted, enter a value for each sensitive setting or press Enter to skip a value and move to the next one.
 
-1. To verify the value was set, log in to the Magento Admin.
+1. To verify the value was set, log in to the Admin.
 1. Locate the setting in the Admin.
 
    For example, the YouTube API key setting is located in **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Product Video**.

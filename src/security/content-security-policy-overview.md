@@ -15,7 +15,7 @@ To avoid interfering with site operations, CSP can be implemented in phases. CSP
 
 It is important to review all CSP errors as they occur and refine the policies until all necessary resources are whitelisted. It is safe to switch to `restrict mode` when no more errors occur. Otherwise, a poorly configured CSP might cause the browser to display a blank page with numerous console errors. A properly configured CSP allows whitelisted content to be delivered without any perceived impact on performance.
 
-**Restrict mode**: The browser is instructed to enforce all content policies and limit publication to whitelisted resources. Because CSP is configured from the server, rather than from the Magento Admin, most merchants need the assistance of a system integrator or developer to configure it properly. See [Content Security Policies][] in the Magento _PHP Developer Guide_.
+**Restrict mode**: The browser is instructed to enforce all content policies and limit publication to whitelisted resources. Because CSP is configured from the server, rather than from the Admin, most merchants need the assistance of a system integrator or developer to configure it properly. See [Content Security Policies][] in the Magento _PHP Developer Guide_.
 
 ## Reporting
 
