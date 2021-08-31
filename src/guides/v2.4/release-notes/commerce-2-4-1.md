@@ -103,7 +103,7 @@ This release adds GraphQL coverage for the following features:
 
 *  **Stored payment methods**. Logged-in customers can now store payment details (including Braintree credit card and Braintree with PayPal) in My Account. <!--- MC-32348 35945 35946-->
 
-*  **Support for wish lists in Magento Open Source**. Added support for Open Source wish lists. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list.
+*  **Support for wish lists in {{site.data.var.ce}}**. Added support for Open Source wish lists. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list.
 
 *  **Improved management of customer accounts**. We have added the [`createCustomerV2`]({{page.baseurl}}/graphql/mutations/create-customer-v2.html) and [`updateCustomerV2`]({{page.baseurl}}/graphql/mutations/update-customer-v2.html) mutations to manage customer accounts. These new mutations require different input objects than the `createCustomer` and `updateCustomer` mutations. To change a customer's email address, use the new [`updateCustomerEmail`]({{page.baseurl}}/graphql/mutations/update-customer-email.html) mutation.
 
@@ -1060,7 +1060,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  The default GraphQL `Category` method now sorts by category position as expected. _Fix submitted by Derrik Nyomo in pull request [29301](https://github.com/magento/magento2/pull/29301)_. [GitHub-104](https://github.com/magento/catalog-storefront/issues/104)
 
-*  Added support for  wish lists in Magento Open Source. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list. _Fix submitted by Eduard Chitoraga in pull requests [28205](https://github.com/magento/magento2/pull/28205) and 264 in private repo partners-magento2ee_. [GitHub-28551](https://github.com/magento/magento2/issues/28551)
+*  Added support for  wish lists in {{site.data.var.ce}}. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list. _Fix submitted by Eduard Chitoraga in pull requests [28205](https://github.com/magento/magento2/pull/28205) and 264 in private repo partners-magento2ee_. [GitHub-28551](https://github.com/magento/magento2/issues/28551)
 
 *  The [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)
 

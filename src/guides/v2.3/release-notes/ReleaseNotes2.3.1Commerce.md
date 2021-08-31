@@ -22,7 +22,7 @@ blog post. You can directly access patch code through your Magento account for M
 
 ## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
 
-In certain versions of Magento Open Source and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation
+In certain versions of {{site.data.var.ce}} and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation
 will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches]({{ page.baseurl }}/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To apply the patch, navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running.
 
 ## Apply the PRODSECBUG-2198 patch to address critical SQL injection vulnerability
@@ -2338,7 +2338,7 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 ## Known issues
 
-**Issue**:  Cart Price rules that were created with undefined end dates (that is, with the **To** field left empty) are not displayed as expected on the Staging dashboard after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317-->
+**Issue**:  Cart Price rules that were created with undefined end dates (that is, with the **To** field left empty) are not displayed as expected on the Staging dashboard after upgrading from {{site.data.var.ce}} to Magento Commerce 2.3.1. <!--- MC-15317-->
 
 **Issue**: The Web Setup Wizard is not available from the Admin under these conditions:
 

@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.4 Release Notes
 ---
 
-Magento Open Source 2.3.4 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
+{{site.data.var.ce}} 2.3.4 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
 
 This release includes over 220 functional fixes to the core product and  over 30 security enhancements. It includes resolution of over 275 contributions by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
@@ -125,7 +125,7 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 
 ### dotdigital
 
-*  Live Chat powered by dotdigital enables merchants to increase conversion rates, and keep customers coming back with real-time engagement. All Magento 2.3.x merchants (both Magento Open Source and Magento Commerce) can receive a free live chat agent without the need for a full dotdigital Engagement Cloud license.
+*  Live Chat powered by dotdigital enables merchants to increase conversion rates, and keep customers coming back with real-time engagement. All Magento 2.3.x merchants (both {{site.data.var.ce}} and Magento Commerce) can receive a free live chat agent without the need for a full dotdigital Engagement Cloud license.
 
 *  Engagement Cloud includes a new Chat widget that makes it easy for shoppers to communicate in real time with customers as they shop in your store. Chat can be accessed from the Engagement Cloud section of the Magento configuration, or directly from your Engagement Cloud account. See [Engagement Cloud Chat](https://docs.magento.com/m2/ee/user_guide/marketing/engagement-cloud-chat.html).
 

@@ -5,7 +5,7 @@ title: Magento Open Source 2.3.2 Release Notes
 
 *Release notes published on June 25, 2019 and last updated on June 3, 2020.*
 
-We are pleased to present Magento Open Source 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes significant contributions from our community members.
+We are pleased to present {{site.data.var.ce}} 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes significant contributions from our community members.
 
 ## Other release information
 
@@ -25,11 +25,11 @@ The patch addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/
 
 ## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
 
-An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Open Source open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Admin, and subsequently launch malicious code in a store user’s browser.  **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. This issue is discussed in the xxx blog post. Patches are available from the [Magento Download](https://magento.com/tech-resources/download) page. Locate the patch by the name. We provide Git-based and Composer-based patches.
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of {{site.data.var.ce}} open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Admin, and subsequently launch malicious code in a store user’s browser.  **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. This issue is discussed in the xxx blog post. Patches are available from the [Magento Download](https://magento.com/tech-resources/download) page. Locate the patch by the name. We provide Git-based and Composer-based patches.
 
 ## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
 
-In certain versions of Magento Open Source and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation
+In certain versions of {{site.data.var.ce}} and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation
 will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches]({{ page.baseurl }}/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running.
 
 ## Highlights

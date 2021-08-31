@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.4.1 Release Notes
 ---
 
-Magento Open Source 2.4.1 introduces enhancements to performance and security. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page.
+{{site.data.var.ce}} 2.4.1 introduces enhancements to performance and security. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page.
 
 This release includes all improvements to core quality that were included in Magento 2.4.0, over 150 new fixes to core code, and over 15 security enhancements. It includes the resolution of almost 300 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
@@ -95,7 +95,7 @@ This release adds GraphQL coverage for the following features:
 
 *  **Stored payment methods**. Logged-in customers can now store payment details (including Braintree credit card and Braintree with PayPal) in My Account.
 
-*  **Support for wish lists in Magento Open Source**. Added support for Open Source wish lists. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list.
+*  **Support for wish lists in {{site.data.var.ce}}**. Added support for Open Source wish lists. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list.
 
 *  **Improved management of customer accounts**. We have added the [`createCustomerV2`]({{page.baseurl}}/graphql/mutations/create-customer-v2.html) and [`updateCustomerV2`]({{page.baseurl}}/graphql/mutations/update-customer-v2.html) mutations to manage customer accounts. These new mutations require different input objects than the `createCustomer` and `updateCustomer` mutations. To change a customer's email address, use the new [`updateCustomerEmail`]({{page.baseurl}}/graphql/mutations/update-customer-email.html) mutation.
 
@@ -887,7 +887,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 *  The default GraphQL `Category` method now sorts by category position as expected. _Fix submitted by Derrik Nyomo in pull request [29301](https://github.com/magento/magento2/pull/29301)_. [GitHub-104](https://github.com/magento/catalog-storefront/issues/104)
 
-*  Added support for  wish lists in Magento Open Source. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list. _Fix submitted by Eduard Chitoraga in pull request [28205](https://github.com/magento/magento2/pull/28205)_. [GitHub-28551](https://github.com/magento/magento2/issues/28551)
+*  Added support for  wish lists in {{site.data.var.ce}}. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list. _Fix submitted by Eduard Chitoraga in pull request [28205](https://github.com/magento/magento2/pull/28205)_. [GitHub-28551](https://github.com/magento/magento2/issues/28551)
 
 *  We have added the [`createCustomerV2`]({{page.baseurl}}/graphql/mutations/create-customer-v2.html) and [`updateCustomerV2`]({{page.baseurl}}/graphql/mutations/update-customer-v2.html) mutations to manage customer accounts. These new mutations require different input objects than the `createCustomer` and `updateCustomer` mutations. To change a customer's email address, use the new [`updateCustomerEmail`]({{page.baseurl}}/graphql/mutations/update-customer-email.html) mutation.
 
@@ -1688,7 +1688,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Open Source 2.4.1 using Composer.
+You can install {{site.data.var.ce}} 2.4.1 using Composer.
 
 ## Migration toolkits
 

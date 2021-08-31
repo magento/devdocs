@@ -5,7 +5,7 @@ functional_areas:
   - Upgrade
 ---
 
-This topic lists the actions you should take to manage the complexity of upgrading Magento Open Source and {{site.data.var.ee}}. Your team should be thinking about upgrades from the moment your project development starts and continue through each release. By following these best practices, the upgrade process will be much easier, faster, and cheaper.
+This topic lists the actions you should take to manage the complexity of upgrading {{site.data.var.ce}} and {{site.data.var.ee}}. Your team should be thinking about upgrades from the moment your project development starts and continue through each release. By following these best practices, the upgrade process will be much easier, faster, and cheaper.
 
 {:.bs-callout-tip}
 These recommendations are based on best practices supported by evidence for its impact and effectiveness from partners, merchants, Adobe experts, and the community.

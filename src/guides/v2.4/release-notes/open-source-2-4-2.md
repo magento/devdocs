@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.4.2 Release Notes
 ---
 
-Magento Open Source 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. Elasticsearch 7.9.x and Redis 6.x are now supported.
+{{site.data.var.ce}} 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. Elasticsearch 7.9.x and Redis 6.x are now supported.
 
 This release includes over 280 new fixes to core code and 35 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
@@ -2189,7 +2189,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Open Source 2.4.2 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
+You can install {{site.data.var.ce}} 2.4.2 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
 
 ## Migration toolkits
 

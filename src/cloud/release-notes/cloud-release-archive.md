@@ -172,7 +172,7 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 ## v2002.0.17
 
 {:.bs-callout-info}
-The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patch. See [Tech Resources: Magento Open Source Patches](https://magento.com/tech-resources/download#download2288).
+The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patch. See [Tech Resources: {{site.data.var.ce}} Patches](https://magento.com/tech-resources/download#download2288).
 
 -  {:.new}**Service updates**—Supported by the following {{site.data.var.ee}} versions: 2.2.8 and later 2.2.x, 2.3.1 and later 2.3.x
 

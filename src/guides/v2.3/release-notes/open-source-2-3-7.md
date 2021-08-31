@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.7 Release Notes
 ---
 
-Magento Open Source 2.3.7 offers significant platform upgrades, 40 security enhancements, and 10 functional fixes for the core product.
+{{site.data.var.ce}} 2.3.7 offers significant platform upgrades, 40 security enhancements, and 10 functional fixes for the core product.
 
 {:.bs-callout-info}
 

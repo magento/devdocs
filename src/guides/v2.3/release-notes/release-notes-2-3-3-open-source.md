@@ -5,7 +5,7 @@ title: Magento Open Source 2.3.3 Release Notes
 
 *Patch code and release notes published on October 8, 2019 and last updated on June 3, 2020.*
 
-Magento Open Source 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
+{{site.data.var.ce}} 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
 
 This release includes over 170 functional fixes to the core product and  over 75 security enhancements. It includes over 200 contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
@@ -70,7 +70,7 @@ This release contains the following major PSD-related changes:
 *  **75 security enhancements** that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.3) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
 
 {:.bs-callout-info}
-Starting with the release of Magento Open Source 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Open Source to more easily identify unaddressed vulnerabilities in their deployment.
+Starting with the release of {{site.data.var.ce}} 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of {{site.data.var.ce}} to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Platform upgrades
 

@@ -7,7 +7,7 @@
 
 {% endcollapsibleh3 %}
 
-{% collapsibleh3 Magento Commerce 2.1 Release Candidate Notes %}
+{% collapsibleh3 Adobe Commerce 2.1 Release Candidate Notes %}
 
 *  [Commerce 2.1 RC3]({{ page.baseurl }}/release-notes/ReleaseNotes2.1_RC3CE.html){:target="_blank"}
 *  [Commerce 2.1 RC2]({{ page.baseurl }}/release-notes/ReleaseNotes2.1_RC2CE.html){:target="_blank"}

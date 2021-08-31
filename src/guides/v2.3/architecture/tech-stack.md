@@ -33,7 +33,7 @@ Magento's highly modular structure includes the following open-source technologi
 
 ### Search
 
-*  Elasticsearch ({{site.data.var.ee}} in Magento Open Source version 2.3.x)
+*  Elasticsearch ({{site.data.var.ee}} in {{site.data.var.ce}} version 2.3.x)
 
 ### Additional technologies
 

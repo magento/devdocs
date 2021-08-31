@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.6 Release Notes
 ---
 
-Magento Open Source 2.3.6 offers significant platform upgrades, substantial security changes, and performance improvements.
+{{site.data.var.ce}} 2.3.6 offers significant platform upgrades, substantial security changes, and performance improvements.
 
 This release includes over 160 functional fixes to the core product and over 15 security enhancements
 

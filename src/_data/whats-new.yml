@@ -20,7 +20,7 @@ entries:
   - Major Update
 - description: Added information about the August 27 hotfix for MC-43059 to the [Adobe
     Commerce 2.4.3 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-3.html),
-    [Magento Open Source  2.4.3 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/open-source-2-4-3.html),
+    [{{site.data.var.ce}}  2.4.3 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/open-source-2-4-3.html),
     and [Adobe Commerce 2.3.7-p1](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html).
   versions: 2.4.3, 2.3.7
   type: Major Update
@@ -105,7 +105,7 @@ entries:
   labels:
   - 2.x
   - Major Update
-- description: Added information to the Adobe Commerce 2.4.3, Magento Open Source
+- description: Added information to the Adobe Commerce 2.4.3, {{site.data.var.ce}}
     2.4.3, and Magento 2.3.7-p1 release notes about the 8/11/2021 hot fix that addresses
     an issue with API rate limiting.  See [Magento 2.3.7-p1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html)
     and [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
@@ -144,7 +144,7 @@ entries:
   labels:
   - Major Update
   - 2.4.3
-- description: Published dependencies for 2.4.3 [Magento Open Source](https://devdocs.magento.com/guides/v2.4/release-notes/packages-open-source.html),
+- description: Published dependencies for 2.4.3 [{{site.data.var.ce}}](https://devdocs.magento.com/guides/v2.4/release-notes/packages-open-source.html),
     [Adobe Commerce](https://devdocs.magento.com/guides/v2.4/release-notes/packages-commerce.html),
     and [Cloud](https://devdocs.magento.com/guides/v2.4/release-notes/packages-cloud.html).
     Updated data for [PHP extensions](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/php-settings.html#verify-installed-extensions).
@@ -197,7 +197,7 @@ entries:
   - Major Update
   - 2.3.7
 - description: Updated the `bin/magento` command-line tool reference documentation
-    for [Magento Open Source](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html)
+    for [{{site.data.var.ce}}](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html)
     and [Adobe Commerce](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-commerce.html).
   versions: 2.4.3
   type: Major Update
@@ -244,7 +244,7 @@ entries:
   link: https://github.com/magento-commerce/devdocs/pull/2439
   merge_commit: 7ca97a589cb7f14f9c386c07e596f69932bf1408
   contributor: ccondra
-- description: Added the GA version of the Adobe Commerce 2.4.3 and Magento Open Source
+- description: Added the GA version of the Adobe Commerce 2.4.3 and {{site.data.var.ce}}
     2.4.3 [release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
   versions: 2.4.3
   type: Major Update
@@ -607,7 +607,7 @@ entries:
   - partners-contribution
 - description: Added [Upgrade best practices](https://devdocs.magento.com/guides/v2.4/comp-mgr/upgrade-best-practices.html),
     which describes the actions you should take to manage the complexity of upgrading
-    Magento Open Source and Adobe Commerce.
+    {{site.data.var.ce}} and Adobe Commerce.
   versions: 2.3.x, 2.4.x
   type: New Topic
   date: June 29, 2021
@@ -906,7 +906,7 @@ entries:
   - 2.3.x
   - Major Update
 - description: Added [release notes](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html)
-    for Magento Commerce and Magento Open Source 2.3.7 GA.
+    for Magento Commerce and {{site.data.var.ce}} 2.3.7 GA.
   versions: 2.3.7
   type: Major Update
   date: May 11, 2021
@@ -2722,7 +2722,7 @@ entries:
   profile: https://github.com/devops-devdocs
 - description: Added the GA version of the Magento 2.4.0 Release Notes. See [Magento
     Commerce 2.4.0 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/release-notes-2-4-0-commerce.html)<br/>and
-    [Magento Open Source 2.4.0 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/release-notes-2-4-0-open-source.html)
+    [{{site.data.var.ce}} 2.4.0 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/release-notes-2-4-0-open-source.html)
   versions: 2.4.0
   type: Major Update
   date: July 28, 2020
@@ -3339,8 +3339,8 @@ entries:
   type: Technical
   date: April 25, 2020
   link: https://github.com/magento/devdocs/pull/6960
-- description: Added release notes for the Magento Open Source and Commerce 2.3.5
-    Release Notes. See<br/>[Magento Open Source 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-open-source.html)<br/>[Magento
+- description: Added release notes for the {{site.data.var.ce}} and Commerce 2.3.5
+    Release Notes. See<br/>[{{site.data.var.ce}} 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-open-source.html)<br/>[Magento
     Commerce 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html)
   versions: 2.3.5
   type: New Topic
@@ -3620,15 +3620,15 @@ entries:
   date: March 24, 2020
   link: https://github.com/magento/devdocs/pull/6915
 - description: Magento has released a hot fix on March 24, 2020 for Magento 2.3.x.<br/>
-    [Magento Open Source 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html)<br/>
+    [{{site.data.var.ce}} 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html)<br/>
     [Magento Commerce 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-commerce.html)<br/>
-    [Magento Open Source 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html)<br/>
+    [{{site.data.var.ce}} 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html)<br/>
     [Magento Commerce 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html)<br/>
-    [Magento Open Source 2.3.2 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html)<br/>
+    [{{site.data.var.ce}} 2.3.2 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html)<br/>
     [Magento Commerce 2.3.2 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2Commerce.html)<br/>
-    [Magento Open Source 2.3.1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html)<br/>
+    [{{site.data.var.ce}} 2.3.1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html)<br/>
     [Magento Commerce 2.3.1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1Commerce.html)<br/>
-    [Magento Open Source 2.3.0 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html)<br/>
+    [{{site.data.var.ce}} 2.3.0 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html)<br/>
     [Magento Commerce 2.3.0 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0Commerce.html)
   versions: 2.3.x
   type: Major Update
@@ -3758,7 +3758,7 @@ entries:
     with region patch to the Magento 2.3.4 Release Notes. This patch provides a fix
     for a significant PayPal-related vulnerability. See the following release notes:<br>[Magento
     Commerce 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-commerce.html)
-    \| [Magento Open Source 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html)
+    \| [{{site.data.var.ce}} 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html)
   versions: 2.3.4
   type: Major update
   date: February 13, 2020
@@ -4306,7 +4306,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/5547
 - description: Changes to the status of Magento Shipping are now described in the
     [Magento Commerce 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html)  and
-    the [Magento Open Source 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html).
+    the [{{site.data.var.ce}} 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html).
   versions: 2.3.3
   type: Major update
   date: October 20, 2019
@@ -4851,7 +4851,7 @@ entries:
   date: August 2, 2019
   link: https://github.com/magento/devdocs/pull/5111
 - description: Added a new task topic for setting the cache time-to-live (TTL) for
-    static files on Magento Commerce (Cloud).
+    static files on {{site.data.var.ece}}.
   versions: 2.2.x, 2.3.x
   type: New topic
   date: August 2, 2019
@@ -4881,7 +4881,7 @@ entries:
   date: July 29, 2019
   link: https://github.com/magento/devdocs/pull/5056
 - description: Added a new section about changing the Blackfire account owner on a
-    Magento Commerce (Cloud) project.
+    {{site.data.var.ece}} project.
   versions: 2.2.x, 2.3.x
   type: Major update
   date: July 29, 2019
@@ -5146,20 +5146,20 @@ entries:
   type: Major update
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4725
-- description: Added release notes for Magento Commerce and Magento Open Source version
+- description: Added release notes for Magento Commerce and {{site.data.var.ce}} version
     2.3.2.
   versions: 2.3.2
   type: New topic
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4722
 - description: Added release notes for [Magento Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.9EE.html)
-    and [Magento Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.9CE.html)
+    and [{{site.data.var.ce}}](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.9CE.html)
     version 2.2.9.
   versions: 2.2.9
   type: New topic
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4721
-- description: Added Google reCAPTCHA installation information for Magento Open Source
+- description: Added Google reCAPTCHA installation information for {{site.data.var.ce}}
     and Commerce v[2.3.2](https://devdocs.magento.com/guides/v2.3/security/google-recaptcha.html),
     [2.2.9](https://devdocs.magento.com/guides/v2.2/security/google-recaptcha.html),
     and 2.1.18.
@@ -5701,23 +5701,23 @@ entries:
   type: New topic
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3973
-- description: The Magento Open Source 2.1.17 Release Notes and Magento Commerce 2.1.17
-    Release Notes provide detailed information about the Magento Open Source 2.1.17
+- description: The {{site.data.var.ce}} 2.1.17 Release Notes and Magento Commerce 2.1.17
+    Release Notes provide detailed information about the {{site.data.var.ce}} 2.1.17
     and Magento Commerce 2.1.17 releases.
   versions: 2.1.17
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3981
-- description: The [Magento Open Source 2.2.8 Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8CE.html)  and
+- description: The [{{site.data.var.ce}} 2.2.8 Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8CE.html)  and
     [Magento Commerce 2.2.8  Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8EE.html)
-    provide detailed information about the Magento Open Source 2.2.8 and Magento Commerce
+    provide detailed information about the {{site.data.var.ce}} 2.2.8 and Magento Commerce
     2.2.8 releases.
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3963
-- description: The Magento Open Source 2.3.1 Release Notes  and Magento Commerce 2.3.1  Release
-    Notes provide detailed information about the Magento Open Source 2.3.1 and Magento
+- description: The {{site.data.var.ce}} 2.3.1 Release Notes  and Magento Commerce 2.3.1  Release
+    Notes provide detailed information about the {{site.data.var.ce}} 2.3.1 and Magento
     Commerce 2.3.1 releases.
   versions: 2.2.8
   type: Major update

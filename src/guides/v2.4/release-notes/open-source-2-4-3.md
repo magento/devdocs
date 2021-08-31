@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.4.3 Release Notes
 ---
 
-{{ site.data.var.ce }} 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for Adobe Commerce and Magento Open Source.
+{{ site.data.var.ce }} 2.4.3 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of reCAPTCHA coverage and inclusion of built-in rate limiting. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. Page Builder is now available as a bundled extension in {{site.data.var.ce}}. It is now the default content editing tool for Adobe Commerce and {{site.data.var.ce}}.
 
 This release includes over 370 new fixes to core code and 33 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
@@ -117,7 +117,7 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thes
 
 ### Page Builder
 
-Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for {{ site.data.var.ee }} 2.4.3 and {{ site.data.var.ce }} 2.4.3. It can replace the WYSIWG editor with any third-party module.
+Page Builder is now available as a bundled extension in {{site.data.var.ce}}. It is now the default content editing tool for {{ site.data.var.ee }} 2.4.3 and {{ site.data.var.ce }} 2.4.3. It can replace the WYSIWG editor with any third-party module.
 
 Page Builder replaces the TinyMCE editor in the following Admin areas:
 
@@ -168,7 +168,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-37596-->
 
-*  Magento no longer throws an exception when you run `bin/magento setup:upgrade` to upgrade from a Magento Open Source deployment with Redis to Adobe Commerce.
+*  Magento no longer throws an exception when you run `bin/magento setup:upgrade` to upgrade from a {{site.data.var.ce}} deployment with Redis to Adobe Commerce.
 
 <!--- ENGCOM-8508 -->
 
@@ -1914,7 +1914,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Open Source 2.4.3 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
+You can install {{site.data.var.ce}} 2.4.3 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
 
 ## Migration toolkits
 

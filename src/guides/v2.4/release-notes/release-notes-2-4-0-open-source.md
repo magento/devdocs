@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.4.0 Release Notes
 ---
 
-Magento Open Source 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default.
+{{site.data.var.ce}} 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default.
 
 **With this release, the Authorize.Net method integration has been removed from core code. Merchants should migrate to the official extension that is available on the Commerce Marketplace**.
 
@@ -2112,7 +2112,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Open Source 2.4.0 using Composer.
+You can install {{site.data.var.ce}} 2.4.0 using Composer.
 
 ## Migration toolkits
 

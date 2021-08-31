@@ -210,7 +210,7 @@ The Magento `Open Source` application implements the following indexers (use [bi
 | Catalog product rule | `catalogrule_product` | [Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php) |  |
 | Catalog search | `catalogsearch_fulltext` | [Magento\CatalogSearch\Model\Indexer\Fulltext]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php) |  |
 
-Magento Commerce Edition contains all indexers of Magento Open Source Edition and the following ones:
+Magento Commerce Edition contains all indexers of {{site.data.var.ce}} Edition and the following ones:
 
 | Indexer name | Indexer method name | Indexer class | Description |
 | --- | --- | --- | --- |

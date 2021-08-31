@@ -156,7 +156,7 @@ Magento 2.4.3 introduces B2B v1.3.2. This release includes multiple bug fixes. S
 
 ### Page Builder
 
-Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for {{ site.data.var.ee }} 2.4.3 and {{ site.data.var.ce }} 2.4.3. It can replace the WYSIWG editor with any third-party module.
+Page Builder is now available as a bundled extension in {{site.data.var.ce}}. It is now the default content editing tool for {{ site.data.var.ee }} 2.4.3 and {{ site.data.var.ce }} 2.4.3. It can replace the WYSIWG editor with any third-party module.
 
 Page Builder replaces the TinyMCE editor in the following Admin areas:
 
@@ -214,11 +214,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-37596-->
 
-*  Magento no longer throws an exception when you run `bin/magento setup:upgrade` to upgrade from a Magento Open Source deployment with Redis to Adobe Commerce.
+*  Magento no longer throws an exception when you run `bin/magento setup:upgrade` to upgrade from a {{site.data.var.ce}} deployment with Redis to Adobe Commerce.
 
 <!--- MC-34453-->
 
-*  Previously created cart price rules are now displayed on the Content Staging dashboard page after a deployment is upgraded from Magento Open Source to Magento Commerce.
+*  Previously created cart price rules are now displayed on the Content Staging dashboard page after a deployment is upgraded from {{site.data.var.ce}} to Magento Commerce.
 
 <!--- ENGCOM-8508 -->
 
