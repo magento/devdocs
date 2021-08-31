@@ -31,7 +31,7 @@ To enable database caching using the `default` frontend, you must modify `<magen
 
 To modify `di.xml`:
 
-1. Log in to the Magento server as, or switch to, the [Magento file system owner].
+1. Log in to the Magento server as, or switch to, the [file system owner].
 1. Enter the following commands to make a copy of `di.xml`:
 
    ```bash
@@ -108,7 +108,7 @@ Due to a known issue, a custom cache frontend still results in some objects bein
 
 To enable database caching using a custom cache frontend, you must modify `<magento_root>/app/etc/env.php` as follows:
 
-1. Log in to the Magento server as, or switch to, the [Magento file system owner].
+1. Log in to the Magento server as, or switch to, the [file system owner].
 1. Enter the following commands to make a copy of `env.php`:
 
    ```bash
@@ -152,7 +152,7 @@ To verify database caching is working, clear the current cache directories, go t
 
 Use the following steps:
 
-1. If you haven't done so already, log in to the Magento server as, or switch to, the [Magento file system owner].
+1. If you haven't done so already, log in to the Magento server as, or switch to, the [file system owner].
 1. Clear the current cache directories:
 
    ```bash
@@ -277,7 +277,7 @@ This section contains code sample snippets to refer to when configuring database
 [Varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish.html
 [associate cache frontends with cache types]: {{ page.baseurl }}/config-guide/cache/cache-types.html
 [sample configurations]: #mage-cache-db-config
-[Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
+[file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
 [Verify database caching is working]: #mage-cache-db-verify
 [Configuration examples]: #mage-cache-db-config
 [enable developer mode]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode
