@@ -9,6 +9,15 @@ See [Get your authentication keys]({{ site.baseurl }}{{ site.gdeurl }}/install-g
 
 There are two ways to install this extension---for [{{site.data.var.ece}}](#magento-commerce-cloud) or [On-premises](#on-premises) installations. These methods require you to use the Command Line Interface (CLI).
 
+## Update minimum-stability setting
+
+Before installing the extension, you must change the `minimum-stability` requirement to `RC` (release candidate) in your `composer.json` file (text file). You can use IDE or your favorite editor (like Visual Studio Code or Sublime Text), if you use the command-line interface (CLI).
+
+In your `composer.json` file, change `"minimum-stability": "stable"` to `"minimum-stability": "RC"`.
+
+## Install the extension
+
+You can install the Payment Services extension for both Commerce Cloud and On-premises instances.
 ### {{site.data.var.ece}}
 
 This method is used for installing the Payment Services extension for a Commerce Cloud instance.
