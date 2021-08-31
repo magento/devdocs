@@ -24,4 +24,4 @@ It's possible that module A's `composer.json` declares a conflict with module B 
 *Command line [module enable or disable subcommand]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html) only:* To force a module to be enabled or disabled regardless of its dependencies, use the optional `--force` argument.
 
 {:.bs-callout-info}
-Using `--force` can disable your Magento store and cause problems accessing the Magento Admin.
+Using `--force` can disable your Magento store and cause problems accessing the Admin.

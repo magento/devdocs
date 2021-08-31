@@ -4,8 +4,83 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Aug 23 15:54:58 2021
+updated: Mon Aug 30 16:00:00 2021
 entries:
+- description: Added [Community quality patches release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md)
+    to a table of contents at [Commerce Quality Patches](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching/mqp.html).
+  versions: 2.x
+  type: Major Update
+  date: August 27, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2457
+  merge_commit: 148f54f2ff8d4f1b2bd767d020a67f8b6ed30ac1
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added information about the August 27 hotfix for MC-43059 to the [Adobe
+    Commerce 2.4.3 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-3.html),
+    [Magento Open Source  2.4.3 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/open-source-2-4-3.html),
+    and [Adobe Commerce 2.3.7-p1](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html).
+  versions: 2.4.3, 2.3.7
+  type: Major Update
+  date: August 27, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2494
+  merge_commit: 81fbbf3e37cc4b09a2d62ea6cb08e361fd051321
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+  - 2.3.7
+- description: 'Live Search now has two [installation methods](https://devdocs.magento.com/live-search/install.html):
+    Method 1 requires a period of storefront downtime and Method 2 does not.'
+  versions: 2.4.x
+  type: Major Update
+  date: August 26, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2477
+  merge_commit: 1bc5c64a16ba0c6d31ed44415a31bbb3266c4395
+  contributor: ccondra
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: Added a new [cross-site forgery request (CSRF)](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/security/csrf.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: August 25, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2474
+  merge_commit: c99bb90e973a900e4bccd4597a650cd67e23a81e
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - New Topic
+  - 2.3.x
+  - 2.4.x
+- description: Updated [REST API reference](https://magento.redoc.ly/2.4.3-admin/).
+  versions: 2.4.3
+  type: Major Update
+  date: August 24, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2484
+  merge_commit: 9c6fd0a1db45447a24c2d7d0e8e7bc977de12feb
+  contributor: dobooth
+  membership: true
+  labels:
+  - Enhancement
+  - Major Update
+  - 2.4.3
+- description: Updated [Magento 2.4 backward incompatible changes](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/index.html).
+  versions: 2.4.3
+  type: Major Update
+  date: August 23, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2478
+  merge_commit: 8ae72a736b5da9e1dad858bf40bfcb0b3a0aee6f
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
 - description: Clarified the difference between [updating the ece-tools package](https://devdocs.magento.com/cloud/project/ece-tools-update.html)
     and [upgrading your cloud project to use the ece-tools package](https://devdocs.magento.com/cloud/project/ece-tools-upgrade-project.html).
   versions: 2.x
@@ -1225,8 +1300,8 @@ entries:
   link: https://github.com/magento/devdocs/pull/8770
   contributor: abukatar
   profile: https://github.com/abukatar
-- description: Added the "Configure product video options from Magento Admin" section
-    to the [Configure product video](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/product-video.html)
+- description: Added the "Configure product video options from Admin" section to the
+    [Configure product video](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/product-video.html)
     topic.
   versions: 2.3.x, 2.4.x
   type: Major Update
@@ -1834,7 +1909,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8311
   contributor: sathiyaaa
   profile: https://github.com/sathiyaaa
-- description: Added a new topic describing how to [customize the Magento Admin design](https://devdocs.magento.com/guides/v2.4/howdoi/admin/customize_admin.html).
+- description: Added a new topic describing how to [customize the Admin design](https://devdocs.magento.com/guides/v2.4/howdoi/admin/customize_admin.html).
   versions: 2.3.x, 2.4.x
   type: New Topic
   date: December 8, 2020
@@ -2518,9 +2593,9 @@ entries:
   link: https://github.com/magento/devdocs/pull/7785
   contributor: dshevtsov
   profile: https://github.com/dshevtsov
-- description: Added information about the Quality Patches tool in the
-    [Software Upgrade Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching.html)
-    and [Cloud Guide](https://devdocs.magento.com/cloud/project/project-patch.html).
+- description: Added information about the Quality Patches tool in the [Software Upgrade
+    Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching.html) and [Cloud
+    Guide](https://devdocs.magento.com/cloud/project/project-patch.html).
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: August 26, 2020
@@ -3601,9 +3676,8 @@ entries:
   link: https://github.com/magento/devdocs/pull/6811
 - description: Improved the instructions to configure Cloud Starter projects to use
     New Relic to add alternative instructions for users who have access to New Relic
-    and the Magento Admin for a site, but do not have access to configure environment
-    variables through the Magento Cloud project. See [Configure New Relic for Starter
-    environments](https://devdocs.magento.com/cloud/project/new-relic.html#configure-new-relic-for-starter-environments).
+    and the Admin for a site, but do not have access to configure environment variables
+    through the Magento Cloud project. See [Configure New Relic for Starter environments](https://devdocs.magento.com/cloud/project/new-relic.html#configure-new-relic-for-starter-environments).
   versions: 2.3.x
   type: Technical changes
   date: March 11, 2020
@@ -5809,12 +5883,12 @@ entries:
   date: March  1, 2019
   link: https://github.com/magento/devdocs/pull/3841
 - description: "-  Updated the Custom VCL snippets with instructions for using the
-    Magento Admin UI to create and manage VCL snippets.<br/>-  Updated and corrected
-    the following examples for using Fastly Edge Dictionaries and custom VCL snippets
-    to manage request routing for Magento Commerce Cloud traffic: Set up redirects
-    to WordPress backend, Block referrer spam, and Secure access to the Admin UI by
-    client IP address. Included prerequisites and instructions for  adding VCL snippets
-    from the Admin UI or Fastly API."
+    Admin UI to create and manage VCL snippets.<br/>-  Updated and corrected the following
+    examples for using Fastly Edge Dictionaries and custom VCL snippets to manage
+    request routing for Magento Commerce Cloud traffic: Set up redirects to WordPress
+    backend, Block referrer spam, and Secure access to the Admin UI by client IP address.
+    Included prerequisites and instructions for  adding VCL snippets from the Admin
+    UI or Fastly API."
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: March  1, 2019
@@ -5841,10 +5915,10 @@ entries:
     Updated the Cloud Docker content to explain how to configure Xdebug.<br/>- Added
     two new environment variables: RESOURCE_CONFIGURATION deploy variable and X_FRAME_CONFIGURATION
     global variable<br/>- Updated the ADMIN variables and clarified the usage of ADMIN
-    variables in the Access your Magento Admin panel page.<br/>- Added an example
-    for preloading pages from multiple domains in the WARM_UP_PAGES post-deploy variable.<br/>-
-    Deprecated SCD_EXCLUDE_THEMES environment variable.<br/>- Clarified the backup
-    and retention statements regarding the most recent 24-hour period.'
+    variables in the Access your Admin page.<br/>- Added an example for preloading
+    pages from multiple domains in the WARM_UP_PAGES post-deploy variable.<br/>- Deprecated
+    SCD_EXCLUDE_THEMES environment variable.<br/>- Clarified the backup and retention
+    statements regarding the most recent 24-hour period.'
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: February 26, 2019

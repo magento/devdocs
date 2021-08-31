@@ -39,7 +39,7 @@ To deploy static view files:
 1. Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 
    {:.bs-callout-info}
-   If you enable static view file merging in the Magento Admin, the `pub/static` directory system must be writable.
+   If you enable static view file merging in the Admin, the `pub/static` directory system must be writable.
 
 Command options:
 

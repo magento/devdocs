@@ -75,4 +75,4 @@ Copy the value of the id attribute. Use this value in subsequent steps wherever 
 
 ## Verify this step {#verify-step}
 
-There are no additional verification steps. The value of `id` is not displayed on the website or in the Magento Admin.
+There are no additional verification steps. The value of `id` is not displayed on the website or in the Admin.

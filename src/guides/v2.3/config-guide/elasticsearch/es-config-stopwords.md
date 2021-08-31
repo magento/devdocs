@@ -51,7 +51,7 @@ To edit stopwords:
 1. Save your changes and exit the text editor.
 1. Clean the Magento configuration cache.
 
-   *  Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
+   *  Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
 
    *  Command line: As the file system owner, enter the following command:
 
@@ -89,7 +89,7 @@ To add stopwords for a locale:
 1. Save the changes to `esconfig.xml` and exit the text editor.
 1. Clean the Magento configuration cache.
 
-   *  Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
+   *  Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
 
    *  Command line: As the file system owner, enter the following command:
 

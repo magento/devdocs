@@ -62,7 +62,7 @@ Results similar to the following should display:
 * * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run >> /var/www/magento2/var/log/setup.cron.log
 ```
 
-Another symptom of cron not running is the following error in the Magento Admin:
+Another symptom of cron not running is the following error in the Admin:
 
 ![cron isn't running]({{ site.baseurl }}/common/images/compman-cron-not-running.png){:width="500px"}
 
