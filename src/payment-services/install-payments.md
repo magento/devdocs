@@ -14,7 +14,7 @@ There are two ways to install this extension---for [{{site.data.var.ece}}](#mage
 {:.bs-callout-tip}
 This step is only required during our Early Access Program (EAP) and will not be needed for General Availability (GA).
 
-Before installing the extension, you must change the `minimum-stability` requirement to `RC` (release candidate) in your `composer.json` file. You can use IDE or your favorite editor (like Visual Studio Code or Sublime Text).
+Before installing the extension, you must change the `minimum-stability` requirement to `RC` (release candidate) in your `composer.json` file. You can use an IDE or your favorite text editor (like Visual Studio Code or Sublime Text).
 
 In your `composer.json` file, change `"minimum-stability": "stable"` to `"minimum-stability": "RC"`.
 
