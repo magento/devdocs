@@ -10,7 +10,7 @@ functional_areas:
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 
-If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. Before continuing, contact Magento Support to see if this is necessary in your case.
+If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. Before continuing, contact {{site.data.var.ee}} Support to see if this is necessary in your case.
 
 Manually splitting databases involves:
 

@@ -5,12 +5,12 @@ functional_areas:
   - Cloud
 ---
 
-The Magento Cloud CLI is the utility for managing Magento Cloud projects and environments, which implements many features of the Project Web Interface and more. This utility provides an advanced management interface for developers and system administrators to perform routines and automation tasks. You would have to install this on your local workstation, and you can use this utility for all {{site.data.var.ece}} Starter and Pro Integration environments.
+The Magento Cloud CLI is the utility for managing Cloud projects and environments, which implements many features of the Project Web Interface and more. This utility provides an advanced management interface for developers and system administrators to perform routines and automation tasks. You would have to install this on your local workstation, and you can use this utility for all {{site.data.var.ece}} Starter and Pro Integration environments.
 
 {:.procedure}
 To install the Magento Cloud CLI:
 
-1. On your local workstation, change to a directory where you plan to clone the cloud projects and where the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
+1. On your local workstation, change to a directory where you plan to clone the cloud projects and where the [file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
 
 1. Install the `magento-cloud` CLI.
 
@@ -52,7 +52,7 @@ To install the Magento Cloud CLI:
 
 ## Common commands
 
-Magento designed these commands to manage Cloud Integration environments. It is a best practice to run the Magento Cloud CLI from a project directory, because you can omit the `-p <project ID>` parameter.
+Adobe  designed these commands to manage Cloud Integration environments. It is a best practice to run the Magento Cloud CLI from a project directory, because you can omit the `-p <project ID>` parameter.
 
 The following list of commonly used Magento Cloud CLI commands includes required options only. You can use the `--help` option with any command to see more information.
 
@@ -104,7 +104,7 @@ Are you sure you want to redeploy the environment <environment_name>? [Y/n]
 
 ## Git commands
 
-You may notice that some of these commands are similar to Git commands. The `magento-cloud` commands directly connect to the Magento Git-based Cloud project with additional features. For example, when you push a Git branch, it is not activated until you access GitHub. The Magento CLI command includes activation.
+You may notice that some of these commands are similar to Git commands. The `magento-cloud` commands directly connect to the Git-based Cloud project with additional features. For example, when you push a Git branch, it is not activated until you access GitHub. The Magento CLI command includes activation.
 
 To create a new branch, use the magento-cloud command so the branch is activated.
 

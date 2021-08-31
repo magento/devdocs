@@ -47,7 +47,7 @@ To get the Magento metapackage:
     composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
     ```
 
-    When prompted, enter your Magento authentication keys. Public and private keys are created and configured in your [Magento Marketplace][].
+    When prompted, enter your Magento authentication keys. Public and private keys are created and configured in your [Commerce Marketplace][].
 
     If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
 
@@ -133,7 +133,7 @@ The following table summarizes the available commands. Commands are shown in sum
 |`magento setup:install`|Installs the Magento software|None|
 |`magento setup:uninstall`|Removes the Magento software.|Magento software installed|
 |`magento setup:upgrade`|Updates the Magento software.|Deployment configuration|
-|`magento maintenance:{enable/disable}`|Enables or disables maintenance mode (in maintenance mode, only exempt IP addresses can access the Magento Admin or storefront).|Magento software installed|
+|`magento maintenance:{enable/disable}`|Enables or disables maintenance mode (in maintenance mode, only exempt IP addresses can access the Admin or storefront).|Magento software installed|
 |`magento setup:config:set`|Creates or updates the deployment configuration.|None|
 |`magento module:{enable/disable}`|Enable or disable modules.|None|
 |`magento setup:store-config:set`|Sets storefront-related options, such as base URL, language, timezone, and so on.|Deployment configuration
@@ -152,7 +152,7 @@ Database (simplest way is to use magento setup:upgrade)|
 Hooray! You've completed the quick install. Need more advanced help? Check out our [Advanced install]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) guide.
 
 <!-- Link Definitions -->
-[Magento Marketplace]: https://marketplace.magento.com/customer/accessKeys/
+[Commerce Marketplace]: https://marketplace.magento.com/customer/accessKeys/
 [Modify docroot for security]: {{page.baseurl}}/install-gde/tutorials/change-docroot-to-pub.html
 [Install the Magento software from the command line]: {{page.baseurl}}/install-gde/install/cli/install-cli.html
 [troubleshooting]: https://support.magento.com/hc/en-us/articles/360033818091
