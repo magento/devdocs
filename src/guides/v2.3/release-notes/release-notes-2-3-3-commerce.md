@@ -5,7 +5,7 @@ title: Adobe Commerce 2.3.3 Release Notes
 
 *Patch code and release notes published on October 8, 2019 and last updated on June 3, 2020.*
 
-Magento Commerce 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
+{{site.data.var.ee}} 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
 
 This release includes over 170 functional fixes to the core product and  over 75 security enhancements. It includes over 200 contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
@@ -75,7 +75,7 @@ This release contains the following major PSD-related changes:
 *  **75 security enhancements**  that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.3) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
+Starting with the release of {{site.data.var.ee}} 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Platform upgrades
 
@@ -585,7 +585,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MC-5777-->
 
-*  Catalog rules are now applied as expected in deployments that are running Magento Commerce. Previously, there was a discrepancy between the time zone in which catalog rule staging was set (UTC timezone) and the Magento timezone, which is the time zone that the storefront uses.
+*  Catalog rules are now applied as expected. Previously, there was a discrepancy between the time zone in which catalog rule staging was set (UTC timezone) and the Magento timezone, which is the time zone that the storefront uses.
 
 <!--- MC-17020-->
 
@@ -1725,7 +1725,7 @@ This release includes the following changes to integrations for core payment met
 
 *  Shipping is now included on a Vertex invoice if that invoice was sent in the same request that its order was created in if that order was placed using guest checkout.
 
-*  Taxes for Magento Commerce gift wrap are now properly written to the Vertex tax journal.
+*  Taxes for gift wrap are now properly written to the Vertex tax journal.
 
 ### Visual Merchandiser
 
@@ -1795,7 +1795,7 @@ The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newslet
 **Issue**:
 Method chaining does not work as expected in extensions and customizations that are based on a product collection entity. Many extensions rely on product collection entities, which represent a list of products that satisfy search and filtering criteria. In the process of refactoring the `addAttributeToFilter` method, method chaining as it was implemented in Magento versions earlier than 2.3.3 was broken. **Workaround**: Apply the Method chaining fix for product collection patch. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches.
 
-**Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Commerce Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+**Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Commerce Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in {{site.data.var.ee}} 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

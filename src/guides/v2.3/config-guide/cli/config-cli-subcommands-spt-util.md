@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Run the support utilities (Adobe Commerce only)
+title: Run the support utilities ({{site.data.var.ee}} only)
 ee_only: True
 functional_areas:
   - Configuration

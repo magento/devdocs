@@ -83,8 +83,8 @@ When introducing a term that may be unfamiliar to merchants, apply a glossary te
 *Example:*
 
 <ul style="list-style-type:none">
-  <li><strong>No</strong> – “This SaaS feature is only available in Magento Commerce.”</li>
-  <li>Yes – “This [software as a service](https://glossary.magento.com/software-as-a-service) (SaaS) feature is only available in Magento Commerce.”</li>
+  <li><strong>No</strong> – “This SaaS feature is only available in {{site.data.var.ee}}.”</li>
+  <li>Yes – “This [software as a service](https://glossary.magento.com/software-as-a-service) (SaaS) feature is only available in {{site.data.var.ee}}.”</li>
 </ul>
 <br>
 

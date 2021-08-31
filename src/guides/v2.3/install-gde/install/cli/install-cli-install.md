@@ -66,17 +66,17 @@ Any options that contain spaces or special characters must be enclosed in either
 
 **Admin credentials:**
 
-The following options specify the user information and credentials for the Magento admin user.
+The following options specify the user information and credentials for the Admin user.
 
-In Magento Commerce version 2.2.8 and later, you can create the Magento admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
+In {{site.data.var.ee}} version 2.2.8 and later, you can create the Admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
 
 |Name|Value|Required?|
 |--- |--- |--- |
-|`--admin-firstname`|Magento administrator user's first name.|Yes|
-|`--admin-lastname`|Magento administrator user's last name.|Yes|
-|`--admin-email`|Magento administrator user's e-mail address.|Yes|
-|`--admin-user`|Magento administrator username.|Yes|
-|`--admin-password`|Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`|Yes|
+|`--admin-firstname`|Administrator user's first name.|Yes|
+|`--admin-lastname`|Administrator user's last name.|Yes|
+|`--admin-email`|Administrator user's e-mail address.|Yes|
+|`--admin-user`|Administrator username.|Yes|
+|`--admin-password`|Administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`|Yes|
 
 **Site, database, and RabbitMQ configuration options:**
 

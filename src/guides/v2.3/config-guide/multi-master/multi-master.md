@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Split database performance solution (Adobe Commerce only)
+title: Split database performance solution ({{site.data.var.ee}} only)
 ee_only: True
 functional_areas:
   - Configuration

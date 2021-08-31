@@ -71,7 +71,7 @@ Any options that contain spaces or special characters must be enclosed in either
 
 The following options specify the user information and credentials for the Magento admin user.
 
-In Magento Commerce version 2.2.8 and later, you can create the Magento admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
+In {{site.data.var.ee}} version 2.2.8 and later, you can create the Magento admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
 
 |Name|Value|Required?|
 |--- |--- |--- |

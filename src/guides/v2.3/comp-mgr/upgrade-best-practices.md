@@ -32,12 +32,12 @@ If your project is live, we suggest you run an audit to determine its quality, a
 
 ### Developing with upgrades in mind
 
-From the moment you start working on a project, you should consider how future upgrades will be impacted by your current work. Always follow Adobe Commerce development best practices as described here:
+From the moment you start working on a project, you should consider how future upgrades will be impacted by your current work. Always follow {{site.data.var.ee}} development best practices as described here:
 
 *  [Development best practices]({{page.baseurl}}/ext-best-practices/bk-ext-best-practices.html)
 *  [Coding standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html)
 
-Begin adopting the Adobe Commerce Extensibility platform, if you haven't done so already. The platform allows you to efficiently customize processes, integrate systems, and deploy new capabilities while maintaining SaaS-like upgradeability. Its features include:
+Begin adopting the {{site.data.var.ee}} Extensibility platform, if you haven't done so already. The platform allows you to efficiently customize processes, integrate systems, and deploy new capabilities while maintaining SaaS-like upgradeability. Its features include:
 
 *  **UI Extensibility**. Extend and evolve your storefront independently of your backend and middleware using [PWA Studio](https://magento.github.io/pwa-studio/).
 

@@ -37,7 +37,7 @@ This release includes over 15 security fixes and platform security improvements.
   CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks. See [CAPTCHA](https://docs.magento.com/user-guide/stores/security-captcha.html).
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
+Starting with the release of {{site.data.var.ee}} 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment.
 ## Compatibility issues upgrading from Magento 2.3.5 to 2.3.6
 
 Merchants upgrading from Magento 2.3.5 to 2.3.6 and extension developers should be aware of these code changes:
@@ -700,7 +700,7 @@ We have fixed hundreds of issues in the Magento 2.3.6 core code.
 
 ## Known issues
 
-**Issue**: The new CAPTCHA feature for checkout does not work as expected on the Place Order page when using third-party payment providers. Merchants running Magento 2.3.6 or 2.4.1 who have enabled CAPTCHA protection on the Place Order storefront page will see this error when checking out using a third-party payment provider such as PayPal: `Please provide CAPTCHA code and try again`. **Workaround**: A fix for this issue is now available. See the [Magento Commerce v2.3.6/2.4.1 CAPTCHA in checkout not working](https://support.magento.com/hc/en-us/articles/360051235772) Knowledge Base article. A fix will also be included in our next quarterly patch (Q12021).
+**Issue**: The new CAPTCHA feature for checkout does not work as expected on the Place Order page when using third-party payment providers. Merchants running Magento 2.3.6 or 2.4.1 who have enabled CAPTCHA protection on the Place Order storefront page will see this error when checking out using a third-party payment provider such as PayPal: `Please provide CAPTCHA code and try again`. **Workaround**: A fix for this issue is now available. See the [{{site.data.var.ee}} v2.3.6/2.4.1 CAPTCHA in checkout not working](https://support.magento.com/hc/en-us/articles/360051235772) Knowledge Base article. A fix will also be included in our next quarterly patch (Q12021).
 
 **Issue**: Merchants upgrading their stores from 2.3.5-p2 to 2.3.6 will note that two module versions downgrade. These messages reflect the incomplete delivery of two security fixes to the 2.3.x quarterly patches. These fixes for low severity issues are included in Magento 2.3.5-p2, 2.4.1, and 2.4.0-p1 but are missing from Magento 2.3.6. No hot fixes will be provided. These fixes will be merged along with the other security fixes in Magento 2.3.6-p1, which is scheduled for Q12021.
 

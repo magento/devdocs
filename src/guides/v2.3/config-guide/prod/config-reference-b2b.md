@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: B2B Extension configuration paths reference (Adobe Commerce only)
+title: B2B Extension configuration paths reference ({{site.data.var.ee}} only)
 functional_areas:
   - Configuration
   - System
