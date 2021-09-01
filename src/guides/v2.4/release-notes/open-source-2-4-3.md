@@ -30,7 +30,7 @@ The following fatal error can occur during upgrade to {{ site.data.var.ce }} 2.4
 PHP Fatal error: Uncaught Error: Call to undefined function Magento\Framework\Filesystem\Directory\str_contains() in [...]/magento/vendor/magento/framework/Filesystem/Directory/DenyListPathValidator.php:74
 ```
 
-This error results from the use of the `str_contains` function, which is an PHP 8.x function. {{{ site.data.var.ce }} 2.4.3 does not support PHP 8.x. This hotfix replaces this function with a supported PHP 7.x function. See the [{{site.data.var.ee}} upgrade 2.4.3, 2.3.7-p1 PHP Fatal error Hotfix](https://support.magento.com/hc/en-us/articles/4408021533069-Adobe-Commerce-upgrade-2-4-3-2-3-7-p1-PHP-Fatal-error-Hotfix) Knowledge Base article.
+This error results from the use of the `str_contains` function, which is an PHP 8.x function. {{ site.data.var.ce }} 2.4.3 does not support PHP 8.x. This hotfix replaces this function with a supported PHP 7.x function. See the [{{site.data.var.ee}} upgrade 2.4.3, 2.3.7-p1 PHP Fatal error Hotfix](https://support.magento.com/hc/en-us/articles/4408021533069-Adobe-Commerce-upgrade-2-4-3-2-3-7-p1-PHP-Fatal-error-Hotfix) Knowledge Base article.
 
 ## Highlights
 
