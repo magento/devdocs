@@ -72,11 +72,11 @@ In {{site.data.var.ee}} version 2.2.8 and later, you can create the Admin user d
 
 |Name|Value|Required?|
 |--- |--- |--- |
-|`--admin-firstname`|Administrator user's first name.|Yes|
-|`--admin-lastname`|Administrator user's last name.|Yes|
-|`--admin-email`|Administrator user's e-mail address.|Yes|
-|`--admin-user`|Administrator username.|Yes|
-|`--admin-password`|Administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`|Yes|
+|`--admin-firstname`|The Admin user's first name.|Yes|
+|`--admin-lastname`|The Admin user's last name.|Yes|
+|`--admin-email`|The Admin user's e-mail address.|Yes|
+|`--admin-user`|The Admin username.|Yes|
+|`--admin-password`|The Admin user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`|Yes|
 
 **Site, database, and RabbitMQ configuration options:**
 
