@@ -26,8 +26,8 @@ Live Search is a set of standalone meta packages that replaces standard {{site.d
 
 ### Supported Platforms
 
-- Adobe Commerce on prem (EE) : 2.4.x
-- Adobe Commerce on Cloud (ECE) : 2.4.x
+-  Adobe Commerce on prem (EE) : 2.4.x
+-  Adobe Commerce on Cloud (ECE) : 2.4.x
 
   {:.bs-callout-warning}
    At this time, [Adobe Commerce for B2B](https://magento.com/solutions/b2b) is not supported.
