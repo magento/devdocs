@@ -20,7 +20,7 @@ Live Search is a set of standalone meta packages that replaces standard {{site.d
 
 ## Requirements
 
--  {{site.data.var.ee}} 2.4.x
+-  [{{site.data.var.ee}}](https://magento.com/products/magento-commerce) 2.4.x
 -  PHP 7.3 / 7.4
 -  Composer
 
