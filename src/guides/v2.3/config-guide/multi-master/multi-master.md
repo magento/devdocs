@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Split database performance solution ({{site.data.var.ee}} only)
+title: Split database performance solution
 ee_only: True
 functional_areas:
   - Configuration

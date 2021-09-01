@@ -465,7 +465,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!--- ENGCOM-7753-->
 
-*  Updated the {{site.data.var.ee}} logo and removed extraneous spaces from the main README file of the `magento/magento2` repository. _Fix submitted by Rafael Corr̻a Gomes in pull request [28891](https://github.com/magento/magento2/pull/28891)_. [GitHub-29056](https://github.com/magento/magento2/issues/29056)
+*  Updated the Magento Commerce logo and removed extraneous spaces from the main README file of the `magento/magento2` repository. _Fix submitted by Rafael Corr̻a Gomes in pull request [28891](https://github.com/magento/magento2/pull/28891)_. [GitHub-29056](https://github.com/magento/magento2/issues/29056)
 
 <!--- ENGCOM-7771-->
 

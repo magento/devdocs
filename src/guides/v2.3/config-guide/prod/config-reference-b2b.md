@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: B2B Extension configuration paths reference ({{site.data.var.ee}} only)
+title: B2B Extension configuration paths reference
 functional_areas:
   - Configuration
   - System

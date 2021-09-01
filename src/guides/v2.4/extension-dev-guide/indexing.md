@@ -232,11 +232,10 @@ The Magento `Open Source` application implements the following indexers (use [bi
 | Catalog product rule | `catalogrule_product` | [Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php) |  |
 | Catalog search | `catalogsearch_fulltext` | [Magento\CatalogSearch\Model\Indexer\Fulltext]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php) |  |
 
-{{site.data.var.ee}} contains all of the indexers provided by {{site.data.var.ce}}, as well as the following:
+{{site.data.var.ee}} also provides the following indexers:
 
 | Indexer name | Indexer method name | Indexer class | Description |
 | --- | --- | --- | --- |
-| Inventory | `inventory` | `Magento\InventoryIndexer\Indexer\InventoryIndexer` | Inventory index (MSI) |
 | Product/Target Rule | `targetrule_product_rule` | `Magento\TargetRule\Model\Indexer\TargetRule\Product\Rule` | Indexes product/rule association |
 | Target Rule/Product | `targetrule_rule_product` | `Magento\TargetRule\Model\Indexer\TargetRule\Rule\Product` | Indexes rule/product association |
 | Sales Rule | `salesrule_rule` | `Magento\AdvancedSalesRule\Model\Indexer\SalesRule` | Indexes sales rule |

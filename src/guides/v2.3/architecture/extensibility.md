@@ -40,7 +40,7 @@ The wider Magento ecosystem provides an extensive community and rich third-party
 
 ### Open-source software to create and manage extensions
 
-Magento is built on open-source technologies, created for the development community. For example, it uses [Composer](https://glossary.magento.com/composer) to manage dependencies. See [Technology Stack]({{page.baseurl}}/architecture/tech-stack.html) for a complete list of technologies used.
+Magento is built on open-source technologies, created for the development community. For example, it uses [Composer](https://glossary.magento.com/composer) to manage dependencies. See [Technology Stack]({{page.baseurl}}/install-gde/system-requirements.html) for a complete list of technologies used.
 
 ### Coding standards
 
