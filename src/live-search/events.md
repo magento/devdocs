@@ -4,7 +4,7 @@ title: Events
 ee_only: True
 ---
 
-The [Storefront Events SDK](https://devdocs.magento.com/shared-services/storefront-events-sdk.html) provides access to a common data layer, with event publishing and subscription services.  The _Storefront Event Collector_ package listens for events and includes the following search-related functions:
+The [_Storefront Events SDK_](https://devdocs.magento.com/shared-services/storefront-events-sdk.html) provides access to a common data layer, with event publishing and subscription services.  The [_Storefront Event Collector_](https://devdocs.magento.com/shared-services/storefront-event-collector.html) package listens for events and includes the following search-related functions:
 
 |Function|Description|
 |---|---|
