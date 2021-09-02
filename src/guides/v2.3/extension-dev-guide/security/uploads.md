@@ -92,6 +92,7 @@ Notes:
 *  `\Magento\Framework\Filesystem\Io\File` can help extract file extensions from filenames.
 
 Example of an imaginary class dealing with media files:
+
 ```php
 class MyFileUploader {
     private const UPLOAD_DIR = 'my-module/customer-jpegs';
