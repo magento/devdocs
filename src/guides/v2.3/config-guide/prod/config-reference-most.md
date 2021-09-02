@@ -84,6 +84,7 @@ Use SID on Storefront | `web/session/use_frontend_sid` | <!-- ![Not EE-only]({{ 
 Redirect to CMS-page if Cookies are Disabled | `web/browser_capabilities/cookies` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Show Notice if JavaScript is Disabled | `web/browser_capabilities/javascript` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Show Notice if Local Storage is Disabled | `web/browser_capabilities/local_storage` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Add Store Code to Urls | `web/url
 
 ### Currency setup paths
 
