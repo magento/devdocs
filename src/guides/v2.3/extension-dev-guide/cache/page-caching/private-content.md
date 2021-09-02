@@ -61,7 +61,7 @@ initialize: function () {
 
 [Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js#L32-L33){:target="_blank"}
 
-All properties are available in the template where the IU component initialized.
+All properties are available in the template where the UI component initialized.
 
 [Example of defining a UI component in a layout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/default.xml#L55-L61){:target="_blank"}
 
