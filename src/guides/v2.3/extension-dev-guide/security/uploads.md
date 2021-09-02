@@ -4,31 +4,32 @@ title: Working with files
 ---
 
 When working with files, especially user-uploaded files, it is easy to make a mistake and open your store to dangerous
-attacks like Path Traversal and RCE. Magento framework provides abstraction that help safely work with user files,
-but it's up for developers to use it the right way.
+attacks like path traversal and remote code execution (RCE). The {{site.data.var.ee}} and {{site.data.var.ce}} framework provides abstraction to help you safely work with user files,
+but it's your responsibility to use it the right way.
 
 ## When you don't need a file
-There are cases when users can upload files for their own convenience. For instance, consider a functionality that allows
-customers to upload a `.csv` file with the list of SKUs and quantities to add products to their cart. We don't need to
-store the file, we only need it's contents to add those SKUs to cart. One option is to read the uploaded file, add
-SKUs and delete it without ever moving it from the system temporary folder. Another, even better option for security and
+There are cases when users can upload files for their own convenience. For example, consider functionality that allows
+a customer to upload a `.csv` file with a list of SKUs and quantities to add products to their cart. You don't need to
+store the file, you only need the contents of the file to add those SKUs to a cart. One option is to read the uploaded file, add
+SKUs, and delete it without ever moving it from the  temporary folder on the file system. Another, even better option for security and
 performance, is to never upload the file in the first place. The file can be handled on the frontend side using JavaScript
 to extract SKUs and quantities and send those to a web API endpoint on the server.
-Important thing to note is that's the best way to avoid issues with files is to not upload or store them in the first place
+{.:bs-callout-tip}
+The best way to avoid security issues with files is to not upload or store them in the first place
 if you don't have to.
 
 ## Files inaccessible by users
-Some files, generated or uploaded, need to be stored on a server for further processing or querying, but not directly
-accessible through a URL. Below are measures to avoid potential unauthorized access, path traversal or RCE problems
+Some files, generated or uploaded, need to be stored on the server for further processing or querying, but should not be directly
+accessible through a URL. Below are measures to avoid potential unauthorized access, path traversal, or RCE problems
 from such files:
-* use random file names and extensions (better no extension), do not trust file names provided by users
-* store files in a directory specifically for generated/uploaded files
-* do not store these files in an HTTP accessible folder (like `/pub`)
-* store file records in DB if files need to be assigned to an entity
-* do not trust user provided file name/ID when deleting files, validate file ownership through DB
+*  Use random file names and extensions (it's better to use no file extensions); do not trust file names provided by users
+*  Store files in a directory specifically for generated/uploaded files
+*  Do not store these files in an HTTP accessible folder (like `/pub`)
+*  Store file records in a database if the files need to be assigned to an entity
+*  Do not trust user provided file names/IDs when deleting files; validate file ownership through the database
 
-`Magento\Framework\Filesystem` class can help find the right folder to store the files. Usually,
-generated or inaccessible files are stored in the `/var` directory. See examples below:
+The `Magento\Framework\Filesystem` class can help you find the right folder to store the files. Usually,
+generated or inaccessible files are stored in the `/var` directory. See the following examples:
 
 ```php
 class MyClass {
@@ -69,23 +70,23 @@ class MyClass {
 ```
 
 ## Files that require authorization
-Files that require any additional authorization before being downloaded need to be treated the same as inaccessible files
-with a controller that performs authorization and only then serves the files by outputting it's content in response body.
+You should treat files that require authorization to download the same way as inaccessible files;
+with a controller that performs authorization and then serves the file by outputting its content in response body.
 
 ## Publicly accessible media files
-Publicly accessible media files require special care due to a higher risk caused by having to keep user provided path
-and extension. Things to verify:
-* media files can only be placed in a publicly accessible path
-* uploaded file path is inside the designated folder, or it's sub-directories
-* extension is safe (use an allow-list)
-* file path is out of "system" folders where other files are placed by Magento
-* prevent deleting system files in public folders
-* ideally, validate ownership of files, or at least directories when updating or deleting files
+Publicly accessible media files present higher risk and require special care because you must keep the user-provided path
+and file extension. You should verify the following:
+*  Media files can only be placed in a publicly accessible path
+*  Uploaded file path is inside the designated folder or its subdirectories
+*  Extension is safe (use an allow-list)
+*  File path is out of system folders that contain other application files
+*  Prevent deleting system files in public folders
+*  Ideally, validate file ownership (or at least directories) when updating or deleting files
 
 Notes:
-* Magento uses `\Magento\Framework\App\Filesystem\DirectoryList::PUB` directory for public files. 
-* Uploaded file path has to be validated by using `ReadInterface` and `WriteInterface` instances similar to the example above.
-* `\Magento\Framework\Filesystem\Io\File` can help to extract extension from a filename.
+*  Magento uses the `\Magento\Framework\App\Filesystem\DirectoryList::PUB` directory for public files. 
+*  Uploaded file paths must be validated using the `ReadInterface` and `WriteInterface` instances, similar to the preceding example.
+*  `\Magento\Framework\Filesystem\Io\File` can help extract file extensions from filenames.
 
 Example of an imaginary class dealing with media files:
 ```php
