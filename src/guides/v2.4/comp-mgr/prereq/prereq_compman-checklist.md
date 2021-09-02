@@ -7,7 +7,7 @@ functional_areas:
 
 Before you continue, to avoid errors during your installation or update, make sure you verify *all* of the following:
 
-*  You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
+*  You set up a [file system owner](#magento-owner-group) and shared that owner's group with the web server user group
 *  Your [cron jobs](#magento-cron) are set up and running
 *  [Set a value for DATA_CONVERTER_BATCH_SIZE](#batch-size)
 *  [File system permissions](#perms) are set properly
@@ -35,7 +35,7 @@ The following tables are affected the most:
 If you have a large amount of data, you can improve performance by setting the value of an environment variable, `DATA_CONVERTER_BATCH_SIZE`.
 By default, it's set to a value of 50,000.
 
-To set the variable, enter the following command as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) in a bash shell prompt:
+To set the variable, enter the following command as the [file system owner](https://glossary.magento.com/magento-file-system-owner) in a bash shell prompt:
 
 ```bash
 export DATA_CONVERTER_BATCH_SIZE <value>
@@ -56,15 +56,15 @@ unset DATA_CONVERTER_BATCH_SIZE
  {:.bs-callout-info}
 `DATA_CONVERTER_BATCH_SIZE` requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.
 
-### Magento file system owner and group {#magento-owner-group}
+### File system owner and group {#magento-owner-group}
 
-The [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) group must have write access to Magento directories and files.
+The [file system owner](https://glossary.magento.com/magento-file-system-owner) group must have write access to Magento directories and files.
 
 ### Cron jobs are running {#magento-cron}
 
-Magento requires three cron jobs, all running as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+Magento requires three cron jobs, all running as the [file system owner](https://glossary.magento.com/magento-file-system-owner).
 
-To verify your cron jobs are set up properly, enter the following command as the Magento file system owner:
+To verify your cron jobs are set up properly, enter the following command as the file system owner:
 
 ```bash
 crontab -l
@@ -78,7 +78,7 @@ Results similar to the following should display:
 * * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run >> /var/www/magento2/var/log/setup.cron.log
 ```
 
-Another symptom of cron not running is the following error in the Magento Admin:
+Another symptom of cron not running is the following error in the Admin:
 
 ![cron is not running]({{ site.baseurl }}/common/images/compman-cron-not-running.png){:width="500px"}
 
@@ -93,7 +93,7 @@ For details, see [Set up cron]({{ page.baseurl }}/install-gde/install/post-insta
 For security reasons, Magento requires certain permissions on the file system. Permissions are different from [*ownership*](#magento-owner-group).
 Ownership determines *who* can perform actions on the file system; permissions determine *what* the user can do.
 
-Directories in the Magento file system must be writable by the [Magento file system owner's]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) group.
+Directories in the Magento file system must be writable by the [file system owner's]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) group.
 
 To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider's file manager application.
 
@@ -144,7 +144,7 @@ Here,
 *  most of the files are `-rw-rw----`, which is 660
 *  `drwxrwx---` = 770
 *  `-rw-rw-rw-` = 666
-*  the Magento file system owner is `magento_user`.
+*  the file system owner is `magento_user`.
 
 To get more detailed information, you can optionally enter the following command:
 

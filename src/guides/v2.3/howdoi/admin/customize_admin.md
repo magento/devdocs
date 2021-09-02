@@ -3,7 +3,7 @@ group: how-do-i
 title: Customize the design
 ---
 
-Learn how to customize (add, delete, change) the configuration options available in the Magento Admin. These options define the various aspects of storefront design.
+Learn how to customize (add, delete, change) the configuration options available in the Admin. These options define the various aspects of storefront design.
 
 The location of your customizations appears here:
 
@@ -18,7 +18,7 @@ The location of your customizations appears here:
 ## Prerequisites
 
 -  Magento installed
--  Credentials or access to Magento Admin
+-  Credentials or access to Admin
 
 ## Steps
 

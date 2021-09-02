@@ -40,7 +40,7 @@ where
 |session-save-redis-log-level|log_level|Set to any of the following, listed in order from least verbose to most verbose:<br/>0 (emergency: only the most severe errors)<br/>1 (alert: immediate action required)<br/>2 (critical: application component unavailable)<br/>3 (error: runtime errors, not critical but must be monitored)<br/>4 (warning: additional information, recommended)<br/>5 (notice: normal but significant condition)<br/>6 (info: informational messages)<br/>7 (debug: the most information for development or testing only)|1|
 |session-save-redis-max-concurrency|max_concurrency|Maximum number of processes that can wait for a lock on one session. For large production clusters, set this to at least 10% of the number of PHP processes.|6|
 |session-save-redis-break-after-frontend|break_after_frontend|Number of seconds to wait before trying to break the lock for frontend (that is, storefront) session.|5|
-|session-save-redis-break-after-adminhtml|break_after_adminhtml|Number of seconds to wait before trying to break the lock for an adminhtml (that is, Magento Admin) session.|30|
+|session-save-redis-break-after-adminhtml|break_after_adminhtml|Number of seconds to wait before trying to break the lock for an adminhtml (that is, Admin) session.|30|
 |session-save-redis-first-lifetime|first_lifetime|Lifetime, in seconds, of session for non-bots on the first write, or use 0 to disable.|600|
 |session-save-redis-bot-first-lifetime|bot_first_lifetime|Lifetime, in seconds, of session for bots on the first write, or use 0 to disable.|60|
 |session-save-redis-bot-lifetime|bot_lifetime|Lifetime, in seconds, of session for bots on subsequent writes, or use 0 to disable.|7200|

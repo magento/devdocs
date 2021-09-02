@@ -53,7 +53,7 @@ To enable or disable the profiler:
 
 1. Log in to your Magento server.
 1. Change to your Magento installation directory.
-1. As the Magento file system owner, enter the following command to configure the profiler:
+1. As the file system owner, enter the following command to configure the profiler:
 
    To enable the profiler using type `html` and create a flagfile:
 
