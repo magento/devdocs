@@ -50,13 +50,20 @@ Initialize the component as follows:
 
 ## Configure a UI component {#config-cache-priv-how-ui}
 
-The UI component renders block data on the Magento [storefront](https://glossary.magento.com/storefront). To initialize the UI component, you must call the initialization method `_super()`.
+The UI component renders block data on the [storefront](https://glossary.magento.com/storefront). To initialize the UI component, you must trigger the parent initialization method by calling the `_super()` method and defining a property to store customer data. The `customerData.get()` method returns a [Knockout's observable](https://glossary.magento.com/ui-component).
 
-[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js){:target="_blank"}
+```javascript
+initialize: function () {
+    this._super();
+    this.compareProducts = customerData.get('compare-products');
+}
+```
 
-All properties are available in the template.
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js#L32-L33){:target="_blank"}
 
-[Example of defining a UI component in a layout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L35){:target="_blank"}
+All properties are available in the template where the UI component initialized.
+
+[Example of defining a UI component in a layout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/default.xml#L55-L61){:target="_blank"}
 
 ## Invalidate private content
 
