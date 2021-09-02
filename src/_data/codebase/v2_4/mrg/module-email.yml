@@ -1,0 +1,6 @@
+---
+title: Email
+release: 2.4.3
+content: |-
+  **Email** enables you to manage email templates, which are used when you send email through the
+  *\Magento\Framework\Mail\TransportInterface* implementations.

@@ -1,0 +1,51 @@
+---
+title: Msrp
+release: 2.4.3
+content: "The **Magento_Msrp** module is responsible for Manufacturer’s Suggested
+  Retail Price functionality.\nA current module provides base functional for msrp
+  pricing rendering, configuration and calculation.\n\n## Installation\nThe Magento_Msrp
+  module creates the following attributes:\n\nEntity type - `catalog_product`.\n\nAttribute
+  group - `Advanced Pricing`.\n\n- `msrp` - Manufacturer's Suggested Retail Price\n-
+  `msrp_display_actual_price_type` -Display Actual Price\n\n**Pay attention** if described
+  attributes not removed when the module is removed/disabled, it would trigger errors\nbecause
+  they use models and blocks from Magento_Msrp module: \n- `\\Magento\\Msrp\\Block\\Adminhtml\\Product\\Helper\\Form\\Type`\n-
+  `\\Magento\\Msrp\\Model\\Product\\Attribute\\Source\\Type\\Price`\n- `\\Magento\\Msrp\\Block\\Adminhtml\\Product\\Helper\\Form\\Type\\Price`\n\nFor
+  information about a module installation in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Structure\n`Pricing\\` - directory contains interfaces and implementation for msrp
+  pricing calculations\n (`\\Magento\\Msrp\\Pricing\\MsrpPriceCalculatorInterface`),
+  price renderers \n and price models.\n \n`Pricing\\Price\\` - the directory contains
+  declares msrp price model interfaces and implementations.\n\n`Pricing\\Renderer\\`
+  - contains price renderers implementations.\n\nFor information about a typical file
+  structure of a module in Magento 2,\n see [Module file structure](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n
+  \n## Extensibility\n \n Developers can pass custom `msrpPriceCalculators` for `Magento\\Msrp\\Pricing\\MsrpPriceCalculator`
+  using type configuration using  `di.xml`. \n \n For example:\n ```\n    <type name=\"Magento\\Msrp\\Pricing\\MsrpPriceCalculator\">\n
+  \       <arguments>\n            <argument name=\"msrpPriceCalculators\" xsi:type=\"array\">\n
+  \               <item name=\"configurable\" xsi:type=\"array\">\n                    <item
+  name=\"productType\" xsi:type=\"const\">Magento\\ConfigurableProduct\\Model\\Product\\Type\\Configurable::TYPE_CODE</item>\n
+  \                   <item name=\"priceCalculator\" xsi:type=\"object\">Magento\\MsrpConfigurableProduct\\Pricing\\MsrpPriceCalculator</item>\n
+  \               </item>\n            </argument>\n       </arguments>\n   </type>\n```
+  \n More information about [type configuration](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/di-xml-file.html).\n
+  \n Extension developers can interact with the Magento_Msrp module. For more information
+  about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_Msrp module.\n\n### Events\n\nThis
+  module observes the following event:\n\n`etc/frontend/`\n\n - `sales_quote_collect_totals_after`
+  in the `Magento\\Msrp\\Observer\\Frontend\\Quote\\SetCanApplyMsrpObserver` file.
+  \n\n`etc/webapi_rest`\n - `sales_quote_collect_totals_after` in the `Magento\\Msrp\\Observer\\Frontend\\Quote\\SetCanApplyMsrpObserver`
+  file. \n\n`etc/webapi_soap`\n - `sales_quote_collect_totals_after` in the `Magento\\Msrp\\Observer\\Frontend\\Quote\\SetCanApplyMsrpObserver`
+  file. \n\nFor information about an event in Magento 2, see [Events and observers](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/events-and-observers.html#events).\n\n###
+  Layouts\n\nThe module interacts with the following layout handles:\n\n`view/base/layout`
+  directory:\n\n- `catalog_product_prices`\n- `cms_index_index`\n\n`view/frontend/layout`
+  directory:\n\n- `catalog_category_view`\n- `catalog_product_compare_index`\n- `catalog_product_view`\n-
+  `catalogsearch_advanced_result`\n- `catalogsearch_result_index`\n- `checkout_cart_sidebar_total_renderers`\n-
+  `checkout_onepage_failure`\n- `checkout_onepage_success`\n- `review_product_list`\n-
+  `wishlist_index_configure_type_downloadable`\n- `wishlist_index_index`\n- `wishlist_search_view`\n-
+  `wishlist_shared_index`\n\nThis module introduces the following layouts and layout
+  handles:\n\n`view/frontend/layout` directory:\n\n- `msrp_popup`\n\n### UI components\n\nModule
+  provides product admin form modifier: \n\n`Magento\\Msrp\\Ui\\DataProvider\\Product\\Form\\Modifier\\Msrp`
+  - removes `msrp_display_actual_price_type` field from the form if config disabled
+  else adds `validate-zero-or-greater` validation to the fild.\n\n## Additional information\n\n###
+  Catalog attributes\n\nA current module extends `etc/catalog_attributes.xml` and
+  provides following attributes for `quote_item` group:\n- `msrp`\n- `msrp_display_actual_price_type`\n\n###
+  Extension Attributes\nThe Magento_Msrp provides extension attributes for `Magento\\Catalog\\Api\\Data\\ProductRender\\PriceInfoInterface`\n-
+  attribute code: `msrp`\n- attribute type: `Magento\\Msrp\\Api\\Data\\ProductRender\\MsrpPriceInfoInterface`"
