@@ -132,7 +132,7 @@ class MyFileUploader {
         //Validate that the target file name is not a system file
         $this->validateNotSystemFile($realPath);
         //Validate that target folder (UPLOAD_DIR + ['name'] - ['basename']) is not a system folder
-        $this->validateNotSystemFolder(preg_replace('/[^/]+$', '', $realPath));
+        $this->validateNotSystemFolder(preg_replace('/\/[^\/]+/$', '', $realPath));
         //Validate that given file doesn't exist or is own by current customer
         $existingMediaFileInfo = $this->findFileByRelativePath($realPath);
         if ($existingMediaFileInfo && $existingMediaFileInfo->getCustomerId() !== $customerId) {
