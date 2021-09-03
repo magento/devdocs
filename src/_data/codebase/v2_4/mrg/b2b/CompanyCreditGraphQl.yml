@@ -1,7 +1,0 @@
----
-title: Magento_CompanyCreditGraphQl
-source_repo: magento2b2b
-release: 1.3.1
-github_path: app/code/Magento/CompanyCreditGraphQl/README.md
-last_modified_at: '2020-08-24 14:50:49 +0300'
-content: Provides GraphQl queries to access company credit information.
