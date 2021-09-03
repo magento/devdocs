@@ -83,7 +83,7 @@ and file extension. You should verify the following:
 *  Extension is safe (use an allow-list)
 *  File path is out of system folders that contain other application files
 *  Prevent deleting system files in public folders
-*  Ideally, validate file ownership (or at least directories) when updating or deleting files
+*  Ideally, verify user's relation to file (ownership), or containing directory before updating or deleting files
 
 Notes:
 
