@@ -12,7 +12,7 @@ Google reCAPTCHA provides a greater level of security for both the storefront an
 
 Google reCAPTCHA reduces potential user error when entering a Captcha code and encourages cart conversion without adding hurdles during checkout.
 
-## Install Module
+## Install module
 
 The Google reCAPTCHA extension is bundled and installed with {{site.data.var.ce}} and {{site.data.var.ee}} 2.3.x.
 
@@ -21,7 +21,7 @@ The Google reCAPTCHA extension is bundled and installed with {{site.data.var.ce}
 {:.bs-callout-warning}
 Before reCAPTCHA can be configured, ensure that your `PHP.ini` file includes this setting: `allow_url_fopen = 1`. See [Required PHP Settings]({{page.baseurl}}/install-gde/prereq/php-settings.html).
 
-See [Google reCAPTCHA](https://docs.magento.com/user-guide/stores/security-google-recaptcha.html) in the _User Guide_ for configuration options in the Admin and storefront.
+See [Google reCAPTCHA](https://docs.magento.com/user-guide/stores/security-google-recaptcha.html) in the _Commerce User Guide_ for configuration options in the Admin and storefront.
 
 ## Troubleshooting
 

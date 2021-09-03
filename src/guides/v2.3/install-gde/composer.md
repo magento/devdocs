@@ -16,22 +16,22 @@ Before you continue, you must do the following:
 
 -  Set up a server that meets our [system requirements][].
 -  Complete all [prerequisite tasks][].
--  Create and switch to the [Magento file system owner](#instgde-cli-before).
+-  Create and switch to the [file system owner](#instgde-cli-before).
 -  [Install Composer][]{:target="_blank"}.
 -  Obtain [authentication keys][] for the Magento code repository.
 
 ## Log in as file system owner {#instgde-cli-before}
 
-Learn about ownership, permissions, and the Magento file system owner in our [Overview of ownership and permissions topic]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+Learn about ownership, permissions, and the file system owner in our [Overview of ownership and permissions topic]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
-To switch to the Magento file system owner:
+To switch to the file system owner:
 {% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 ## Get the metapackage
 
 To get the Magento metapackage:
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner][].
+1. Log in to your Magento server as, or switch to, the [file system owner][].
 1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot.
 1. Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
 
@@ -156,7 +156,7 @@ Hooray! You've completed the quick install. Need more advanced help? Check out o
 [Modify docroot for security]: {{page.baseurl}}/install-gde/tutorials/change-docroot-to-pub.html
 [Install the Magento software from the command line]: {{page.baseurl}}/install-gde/install/cli/install-cli.html
 [troubleshooting]: https://support.magento.com/hc/en-us/articles/360033818091
-[Magento file system owner]: {{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html
+[file system owner]: {{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html
 [authentication keys]: {{page.baseurl}}/install-gde/prereq/connect-auth.html
 [Install Composer]: https://getcomposer.org/download/
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements.html

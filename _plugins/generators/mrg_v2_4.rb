@@ -12,7 +12,7 @@
 
 module Jekyll
   # Custom generator for MRG pages
-  class Mrg2_4PageGenerator < Generator
+  class Mrg24PageGenerator < Generator
     safe true
 
     def generate(site)
@@ -28,37 +28,33 @@ module Jekyll
       # For example, for '_data/codebase/v2_4/mrg/NewModule.yml' that contains
       #
       #         title: Magento_NewModule
-      #         edition: ce
       #         content: Magento_NewModule is an awesome module
       #
-      # this will create a new virtual page guides/v2.4/mrg/ce/NewModule.md
+      # this will create a new virtual page guides/v2.4/mrg/NewModule.md
       # that would correspond to:
       #         ---
       #         title: Magento_NewModule
       #         ---
       #         Magento_NewModule is an awesome module.
       #
-      mrg_data.each do |category, modules|
-        modules.each do |mod, metadata|
-          # PageWithoutAFile handles processing files without reading it.
-          # mrg_topic is a virtual '.md' file
-          # See details in https://www.rubydoc.info/gems/jekyll/Jekyll/PageWithoutAFile
-          # See tests in https://github.com/jekyll/jekyll/blob/master/test/test_page_without_a_file.rb
-          mrg_topic = PageWithoutAFile.new(
-            @site,
-            @site.source,
-            "guides/v2.4/mrg/#{category}",
-            "#{mod}.md"
-          )
-          mrg_topic.content = metadata['content']
-          mrg_topic.data['title'] = metadata['title']
-          mrg_topic.data['last_modified_at'] = metadata['last_modified_at']
-          mrg_topic.process("#{mod}.md")
+      mrg_data.each do |mod, metadata|
+        # PageWithoutAFile handles processing files without reading it.
+        # mrg_topic is a virtual '.md' file
+        # See details in https://www.rubydoc.info/gems/jekyll/Jekyll/PageWithoutAFile
+        # See tests in https://github.com/jekyll/jekyll/blob/master/test/test_page_without_a_file.rb
+        mrg_topic = PageWithoutAFile.new(
+          @site,
+          @site.source,
+          'guides/v2.4/mrg/',
+          "#{mod}.md"
+        )
+        mrg_topic.content = metadata['content']
+        mrg_topic.data['title'] = metadata['title']
+        mrg_topic.process("#{mod}.md")
 
-          # Add the newly constructed page object to the rest of pages
-          # on the site.
-          @site.pages << mrg_topic
-        end
+        # Add the newly constructed page object to the rest of pages
+        # on the site.
+        @site.pages << mrg_topic
       end
     end
   end
