@@ -1,8 +1,0 @@
----
-title: Magento_InventoryWishlist
-source_repo: inventory
-release: 1.2.2
-github_path: InventoryWishlist/README.md
-last_modified_at: '2020-09-07 11:16:30 -0500'
-content: The InventoryWishlist module adds multi-sourcing capabilities to the Wishlist
-  module

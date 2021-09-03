@@ -1,0 +1,19 @@
+---
+title: QuoteStaging
+release: 2.4.3
+content: |-
+  The Magento_QuoteStaging module is a part of the staging functionality in Magento EE. It`s connect Magento_Quote module with Magento_Staging module.
+
+  ## Implementation details
+
+  The Magento_QuoteStaging module adds StagingApplier post processor to recollect quotes that items product prices changed during staging update.
+
+  ## Dependencies
+
+  You can find the list of modules that have dependencies on the Magento_QuoteStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
+
+  ## Extension points
+
+  You can interact with the Magento_QuoteStaging module using the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).
+
+  [The Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_QuoteStaging module.

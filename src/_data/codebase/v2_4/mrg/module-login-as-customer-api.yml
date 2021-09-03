@@ -1,0 +1,5 @@
+---
+title: LoginAsCustomerApi
+release: 2.4.3
+content: The Magento_LoginAsCustomerApi module provides API for ability to login into
+  customer account for an admin user.

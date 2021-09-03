@@ -1,0 +1,6 @@
+---
+title: CatalogStagingGraphQl
+release: 2.4.3
+content: |-
+  **CatalogStagingGraphQl** supports Staging functionality for Catalog in the scope of GraphQl.
+  This includes preview capabilities for catalog entities.

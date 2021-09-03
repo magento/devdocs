@@ -1,0 +1,6 @@
+---
+title: RewardGraphQl
+release: 2.4.3
+content: |-
+  **RewardGraphQl** provides type information for the GraphQl module
+  to generate reward fields for customer information endpoints.
