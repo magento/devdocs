@@ -1,8 +1,0 @@
----
-title: Magento_AwsS3PageBuilder
-source_repo: magento2-page-builder
-release: v1.6.0
-github_path: app/code/Magento/AwsS3PageBuilder/README.md
-last_modified_at: '2020-10-26 13:06:05 -0500'
-content: The Magento_AwsS3PageBuilder module created for maintaining Page Builder
-  tests related to Aws S3 remote storage functionality

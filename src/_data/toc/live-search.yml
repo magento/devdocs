@@ -42,6 +42,10 @@ pages:
       url: /live-search/product-search.html
       versionless: true
 
+- label: Events
+  url: /live-search/events.html
+  versionless: true
+
 - label: Release Notes
   url: /live-search/release-notes.html
   versionless: true

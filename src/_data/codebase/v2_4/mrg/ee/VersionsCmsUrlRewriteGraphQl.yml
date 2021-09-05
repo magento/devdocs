@@ -1,8 +1,0 @@
----
-title: Magento_VersionsCmsUrlRewriteGraphQl
-source_repo: magento2ee
-release: 2.4.2
-github_path: app/code/Magento/VersionsCmsUrlRewriteGraphQl/README.md
-last_modified_at: '2020-12-02 15:39:53 -0600'
-content: "**VersionsCmsUrlRewriteGraphQl** provides type information for the GraphQl
-  module to locate URL for Hierarchy Nodes features."

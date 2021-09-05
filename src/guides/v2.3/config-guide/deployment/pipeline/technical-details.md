@@ -300,9 +300,9 @@ File permissions and ownership must be consistent across development, build, and
 
 *  All of the following:
 
-   *  Set up the same [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) username on all systems
+   *  Set up the same [file system owner](https://glossary.magento.com/magento-file-system-owner) username on all systems
    *  Make sure the web server runs as the same user on all systems
-   *  Make sure the Magento file system owner is in the web server group on all systems
+   *  Make sure the file system owner is in the web server group on all systems
 
 *  Change Magento file system permissions and ownership on each system as necessary using the following guidelines:
 
@@ -310,7 +310,7 @@ File permissions and ownership must be consistent across development, build, and
    *  Production: [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html)
 
     {:.bs-callout-info}
-   If you choose this approach, you must set file system permissions and ownership every time you pull code from your build system (if the Magento file system owner or web server user are different on your build system).
+   If you choose this approach, you must set file system permissions and ownership every time you pull code from your build system (if the file system owner or web server user are different on your build system).
 
 {:.ref-header}
 Related topics

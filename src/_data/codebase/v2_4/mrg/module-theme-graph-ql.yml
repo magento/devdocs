@@ -1,0 +1,6 @@
+---
+title: ThemeGraphQl
+release: 2.4.3
+content: |-
+  **ThemeGraphQl** provides type information for the GraphQl module
+  to generate theme fields information endpoints.

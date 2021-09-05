@@ -152,7 +152,7 @@ For language packages, you must use the correct [ISO code][4]{:target="_blank"} 
 
 ## Magento-specific package types
 
-Magento extensions can be any of the following types:
+Extensions can be any of the following types:
 
 *  `magento2-module` for modules
 *  `magento2-theme` for themes
@@ -195,7 +195,7 @@ The convention for Magento package names is the following
 
 Where:
 
-:`type-prefix` is any of the Magento extension types:
+:`type-prefix` is any of the extension types:
 
 *  `module-` for module extensions
 *  `theme-` for theme extensions
