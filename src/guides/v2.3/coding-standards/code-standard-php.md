@@ -9,7 +9,7 @@ functional_areas:
   - Standards
 ---
 
-The Magento core development team uses the [Magento Coding Standard](https://github.com/magento/magento-coding-standard){:target="_blank"}. We recommend that developers who create Magento extensions and customizations also use this standard.
+The Magento core development team uses the [Magento Coding Standard](https://github.com/magento/magento-coding-standard){:target="_blank"}. We recommend that developers who create extensions and customizations also use this standard.
 
 The Magento Coding Standard provides a set of rules that covers the following:
 
