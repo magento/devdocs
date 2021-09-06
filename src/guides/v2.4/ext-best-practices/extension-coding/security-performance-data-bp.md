@@ -39,7 +39,7 @@ We recommend using the InnoDB storage engine because other storage engines are n
 Raw SQL queries can lead to potential security vulnerabilities and database portability issues. Use data adapter capabilities ([`Magento\Framework\DB\Adapter\Pdo\Mysql`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php){:target="_blank"} by default) to build and execute queries and move all data access code to a resource model. Use prepared statements to make sure that queries are safe to execute.
 
 {:.bs-callout-warning}
-Building and executing custom queries with Magento data adapter doesn't automatically make them secure. Always be sure to use sanitization methods on dynamic data you use in your queries.
+Building and executing custom queries with Magento data adapter does not automatically make them secure. Always be sure to use sanitization methods on dynamic data you use in your queries.
 
 ## Use Primary Key
 
