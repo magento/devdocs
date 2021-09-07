@@ -71,16 +71,8 @@ This recommendation also helps with memory issues that can occur when executing 
 To download the {{site.data.var.uct}}, run the following command:
 
 ```bash
-composer create-project magento/upgrade-compatibility-tool uct  --repository https://repo.magento.com
+composer create-project magento/upgrade-compatibility-tool uct --repository https://repo.magento.com
 ```
-
-As the {{site.data.var.uct}} is an independent tool, if you try to run:
-
-```bash
-composer require magento/upgrade-compatibility-tool
-```
-
-It might add the {{site.data.var.uct}} as a dependency for an {{site.data.var.ee}} project.
 
 ## Install
 

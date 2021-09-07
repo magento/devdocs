@@ -32,7 +32,7 @@ To update the `{{site.data.var.ct}}` package:
    ```
 
    {:.bs-callout-info}
-   If you cannot update beyond `{{site.data.var.ct}}` version 2002.0.8, see [Upgrade project][upgrade-project].
+   If you cannot update beyond `{{site.data.var.ct}}` version 2002.0.8, see [Upgrade project][].
 
 1. Add, commit, and push code changes.
 
