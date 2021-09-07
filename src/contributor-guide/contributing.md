@@ -259,7 +259,7 @@ Admins access will be shared via comment on GitHub.
 
 In some cases a custom environment is required to test an issue or a pull request. You can create a custom environment by appending custom configuration settings to the PR comment to [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
-#### Edition
+#### Specify the edition
 
 Append the following text to your PR comment to specify the edition to use when you [Deploy a vanilla instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 

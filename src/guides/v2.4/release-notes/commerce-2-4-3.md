@@ -56,7 +56,7 @@ Security improvements for this release improve compliance with the latest securi
    *  The Place Order storefront page and payment-related web APIs. ReCAPTCHA protection for these pages is disabled by default and can be enabled from the Admin. This coverage adds an anti-brute force mechanism to protect stores from carding attacks.
 
 {:.bs-callout-info}
-Starting with the release of {{site.data.var.ee}} 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Infrastructure improvements
 
@@ -2217,7 +2217,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 **Issue**:  _The **Add to order** button does not work for products added to the cart by SKU_.  Magento displays this error message when you click on the **Add to order** button after adding products to the order by SKU: `An error has happened during application run`. Products are not added to the cart. **Workaround**: Use the Add Products feature. <!--- AC-345-->
 
-**Issue**: The GraphQL `category` and `categoryList` queries ignore Category permissions that determine whether categories in a shared catalog are hidden or exposed. Magento currently displays all categories that have been assigned or unassigned to the shared catalog. This affects {{site.data.var.ee}} 2.4.3 deployments that implement a PWA storefront for which B2B shared catalogs have been enabled. <!--- MC-42528-->
+**Issue**: The GraphQL `category` and `categoryList` queries ignore Category permissions that determine whether categories in a shared catalog are hidden or exposed. The storefront currently displays all categories that have been assigned or unassigned to the shared catalog. This affects {{site.data.var.ee}} 2.4.3 deployments that implement a PWA storefront for which B2B shared catalogs have been enabled. <!--- MC-42528-->
 
 ## Community contributions
 

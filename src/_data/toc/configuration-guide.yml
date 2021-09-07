@@ -187,7 +187,7 @@ pages:
 
             - label: B2B Extension configuration paths reference (Adobe Commerce only)
               url: /config-guide/prod/config-reference-b2b.html
-              edition: ee-only
+              edition: b2b-only
 
             - label: .gitignore reference
               url: /config-guide/prod/config-reference-gitignore.html

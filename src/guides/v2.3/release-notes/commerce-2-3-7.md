@@ -36,7 +36,7 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 This release includes 40 security fixes and platform security improvements. The copy-to-clipboard feature has also been disabled for all storefront credit card fields. <!--- MC-38985-->
 
 {:.bs-callout-info}
-Starting with the release of {{site.data.var.ee}} 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Platform upgrades
 

@@ -18,7 +18,7 @@ blog post. Locate the patch by the name. We provide Git-based and Composer-based
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
-A SQL injection vulnerability has been identified in pre-2.2.8 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to {{site.data.var.ee}} or Open Source  2.2.8. **We strongly suggest that you install these full patches as soon as you can**.
+A SQL injection vulnerability has been identified in pre-2.2.8 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to {{site.data.var.ee}} or {{site.data.var.ce}}  2.2.8. **We strongly suggest that you install these full patches as soon as you can**.
 
 See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability.
 
@@ -173,7 +173,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-91863 -->
 
-*  Statistics collection for the Reports module is now disabled by default. To enable or partially disable it, see **System Configuration** > **General** > **Reports**. Note that certain product features, such as  {{site.data.var.ee}} dynamic customer segments (specifically the ones based on viewed products), rely on Reports data collection to function properly.
+*  Statistics collection for the Reports module is now disabled by default. To enable or partially disable it, see **System Configuration** > **General** > **Reports**. Note that certain product features, such as  dynamic customer segments (specifically the ones based on viewed products), rely on Reports data collection to function properly.
 
 <!---MAGETWO-88281 -->
 
