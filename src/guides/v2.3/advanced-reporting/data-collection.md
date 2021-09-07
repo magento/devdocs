@@ -5,7 +5,7 @@ functional_areas:
     - Reports
 ---
 
-An Adobe Commerce or Magento instance collects data that the Commerce Reporting service uses to build the advanced reports. All the data are stored in an encrypted archive file which is securely transferred to Commerce Reporting. Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
+An {{site.data.var.ee}} or {{site.data.var.ce}} instance collects data that the Commerce Reporting service uses to build the advanced reports. All the data are stored in an encrypted archive file which is securely transferred to Commerce Reporting. Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
 
 -  Which report files must be included into the archive file.
 -  Which provider classes must collect data for each report file.

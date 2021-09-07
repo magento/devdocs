@@ -172,7 +172,7 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 ## v2002.0.17
 
 {:.bs-callout-info}
-The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patch. See [Tech Resources: Magento Open Source Patches](https://magento.com/tech-resources/download#download2288).
+The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patch. See [Tech Resources: {{site.data.var.ce}} Patches](https://magento.com/tech-resources/download#download2288).
 
 -  {:.new}**Service updates**—Supported by the following {{site.data.var.ee}} versions: 2.2.8 and later 2.2.x, 2.3.1 and later 2.3.x
 
@@ -256,7 +256,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-2888 -->Now the Docker generator uses the services specified in the `.magento.app.yaml` and `.magento/services.yaml` configuration files when [building your Docker environment]({{ site.baseurl }}/cloud/docker/docker-config.html). You can choose a different service version using build parameters.
 
-   -  <!-- MAGECLOUD-2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ site.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your version of Adobe Commerce.
+   -  <!-- MAGECLOUD-2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ site.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your version of {{site.data.var.ee}}.
 
    -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{ site.baseurl }}/cloud/docker/docker-containers-cli.html#cron-container) based on the PHP-CLI image.
 

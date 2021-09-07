@@ -36,10 +36,10 @@ For information about quality patches created by the community for {{site.data.v
 
 ## v1.1.1
 
--  **MDVA-36021** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.4`)_-Fixes the issue where the 'Call to a member function getId()' error is displayed on the order details page in the Admin.
--  **MDVA-34948** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <=2.3.6-p1 || >=2.4.0 <=2.4.0-p1`)_-Fixes the issue with long-running queries, like GET_LOCK.
--  **MDVA-39305** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <=2.4.2-p1`)_-Fixes the issue where registered customers are not able to log in with enabled Google ReCaptcha.
--  **MDVA-37897** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue with an incorrect redirect when a customer tries to add products with options from the Recently Viewed widget.
+-  **MDVA-36021** _(for {{site.data.var.ee}} and {{site.data.var.ce}} `>=2.4.0 <2.4.4`)_-Fixes the issue where the 'Call to a member function getId()' error is displayed on the order details page in the Admin.
+-  **MDVA-34948** _(for {{site.data.var.ee}} and {{site.data.var.ce}} `>=2.3.6 <=2.3.6-p1 || >=2.4.0 <=2.4.0-p1`)_-Fixes the issue with long-running queries, like GET_LOCK.
+-  **MDVA-39305** _(for {{site.data.var.ee}} and {{site.data.var.ce}} `>=2.4.0 <=2.4.2-p1`)_-Fixes the issue where registered customers are not able to log in with enabled Google ReCaptcha.
+-  **MDVA-37897** _(for {{site.data.var.ee}} and {{site.data.var.ce}} `>=2.3.0 <2.4.4`)_-Fixes the issue with an incorrect redirect when a customer tries to add products with options from the Recently Viewed widget.
 
 ## v1.1.0
 

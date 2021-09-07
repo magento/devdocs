@@ -16,6 +16,6 @@ You can install optional sample data in any of the following ways:
 
 <!-- ABBREVIATIONS -->
 
-*[contributing developer]: A developer who contributes code to the Magento Open Source codebase
-*[contributing developers]: Developers who contribute code to the Magento Open Source codebase
-*[Contributing developers]: Developers who contribute code to the Magento Open Source codebase
+*[contributing developer]: A developer who contributes code to the {{site.data.var.ce}} codebase
+*[contributing developers]: Developers who contribute code to the {{site.data.var.ce}} codebase
+*[Contributing developers]: Developers who contribute code to the {{site.data.var.ce}} codebase

@@ -67,7 +67,7 @@ This version of Amazon Sales Channel includes the following improvements and fix
 
 ### v4.2.0
 
-Amazon Sales Channel 4.2.0 is compatible with Adobe Commerce versions 2.3.x but only supported for versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. If you have a previous Amazon Sales Channel version installed and attempt to update your {{site.data.var.ee}} to version 2.4.0, you will be prompted to update the extension before you can complete the {{site.data.var.ee}} update.
+Amazon Sales Channel 4.2.0 is compatible with {{site.data.var.ee}} versions 2.3.x but only supported for versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. If you have a previous Amazon Sales Channel version installed and attempt to update your {{site.data.var.ee}} to version 2.4.0, you will be prompted to update the extension before you can complete the {{site.data.var.ee}} update.
 
 This version of Amazon Sales Channel includes a new feature along with improvements and fixes.
 
@@ -77,7 +77,7 @@ This version of Amazon Sales Channel includes a new feature along with improveme
 
 -  {:.new}Added support for PHP 7.4.
 
--  {:.new}<!--CHAN-4334-->Added support for Adobe Commerce 2.4.x. Previous versions may be compatible with Magento 2.4.x, but are not supported. See [Upcoming releases](https://devdocs.magento.com/release/) for version compatibility. Amazon Sales Channel must be updated to 4.2.0 before the {{site.data.var.ee}} 2.4.0 update can be completed.
+-  {:.new}<!--CHAN-4334-->Added support for {{site.data.var.ee}} 2.4.x. Previous versions may be compatible with Magento 2.4.x, but are not supported. See [Upcoming releases](https://devdocs.magento.com/release/) for version compatibility. Amazon Sales Channel must be updated to 4.2.0 before the {{site.data.var.ee}} 2.4.0 update can be completed.
 
 -  {:.fix}<!--CHAN-4431-->Corrected an issue that caused an _Access Denied_ error for UK customers.
 
