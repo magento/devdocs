@@ -90,7 +90,7 @@ affiliates. Other names may be trademarks of their respective
 owners.
 ```
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type `help` or `\h` for help. Type `\c` to clear the current input statement.
 
 Enter `exit` at the `mysql>` prompt to exit.
 

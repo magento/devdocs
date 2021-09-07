@@ -21,6 +21,7 @@ Plugins can not be used on following:
 *  `__construct` and `__destruct`
 *  Virtual types
 *  Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
+*  Objects that implement `Magento\Framework\ObjectManager\NoninterceptableInterface`
 
 ## Declaring a plugin
 
