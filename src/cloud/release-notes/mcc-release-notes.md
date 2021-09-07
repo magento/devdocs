@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Components](https://github.com/magento/magento-cloud-components) package provides extended Adobe Commerce core functionality for sites deployed on Cloud infrastructure. This package is a dependency for the {{ site.data.var.ct }} package. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
+The [Magento Cloud Components](https://github.com/magento/magento-cloud-components) package provides extended {{site.data.var.ee}} core functionality for sites deployed on Cloud infrastructure. This package is a dependency for the {{ site.data.var.ct }} package. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
 
 The `{{site.data.var.mcc-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 

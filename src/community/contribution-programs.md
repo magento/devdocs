@@ -17,6 +17,6 @@ When you join, you start receiving program benefits:
 1. Make sure all of your contributors have an active GitHub account with Two-Factor Authentication enabled.
 1. Create a list of your contributors emails and their GitHub accounts (github.com/accountname).
 1. Contact [:email:](mailto:engcom@adobe.com) engcom@adobe.com with the list and ask to join.
-1. After onboarding, in addition to Magento Open Source projects, you will get permissions to [Magento Commerce](https://github.com/magento/partners-magento2ee), [Magento B2B](https://github.com/magento/partners-magento2b2b), and [Page Builder](https://github.com/magento/magento2-page-builder) code repositories.
+1. After onboarding, in addition to {{site.data.var.ce}} projects, you will get permissions to [Magento Commerce](https://github.com/magento/partners-magento2ee) and [Magento B2B](https://github.com/magento/partners-magento2b2b) code repositories.
 
 If you need help, contact us at engcom@adobe.com and we will walk you through enrollment.
