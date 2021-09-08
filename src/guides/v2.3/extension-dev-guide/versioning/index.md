@@ -24,6 +24,9 @@ The format follows [Semantic Versioning][semantic-versioning] rules for any `@ap
 *  The MINOR version increments when backward-compatible functionality has been added or if the module's customization points have changed.
 *  The PATCH version increments when backward-compatible bug fixes occur.
 
+{:.bs-callout-info}
+On an exceptional basis, breaking changes or additional patches or hotfixes may be released on a PATCH version to address security or compliance issues and high-impact quality issues.
+
 ### Pre-release versions
 
 For pre-release versions, the format is:
