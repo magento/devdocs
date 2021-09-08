@@ -181,4 +181,4 @@ Related topics
 
 *  [Release policy]({{ site.baseurl }}/release/policy/)
 *  [Upcoming releases]({{ site.baseurl }}/release/)
-*  [Backward incompatible versions]({{ site.baseurl }}/contributor-guide/backward-compatible-development/)
+*  [Backward compatibility policy]({{ site.baseurl }}/contributor-guide/backward-compatible-development/)
