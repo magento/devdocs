@@ -17,8 +17,6 @@ group: release
 
 ## MINOR release
 
-Adobe makes a minor version of {{site.data.var.ee}} available about once a year.
-
 The following guidelines apply to minor releases:
 
 -  Breaking changes are possible; code written for {{site.data.var.ee}} 2.2.x may no longer work with {{site.data.var.ee}} 2.3.x. For example, minor releases can introduce support for major system requirements and dependencies, such as PHP.
@@ -28,14 +26,14 @@ The following guidelines apply to minor releases:
 
 ## PATCH release
 
-Patch releases are primarily focused on delivering security and quality fixes on a regular basis to help you keep your sites performing at their peak. Adobe typically makes Magento patch releases available for supported release lines of {{site.data.var.ee}} quarterly.
+Patch releases are primarily focused on delivering security and high-priority quality fixes to help you keep your sites performing at their peak.
 
 The following guidelines apply to patch releases:
 
 -  The latest-supported minor release will receive full functional quality fixes and enhancements.
 -  Changes that could break extensions or code compatibility are avoided. For example, code written for Magento 2.2.0 should still work on Magento 2.2.7.
 -  On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues and high-impact quality issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes.
--  Patch releases may include new features as long as they are not expected to break other code. The new feature can be included in core Magento code or as an extension, such as Magento Page Builder.
+-  Patch releases may include new features as long as they are not expected to break other code. New feature can be included in core code, as an extension (like Page Builder), or as an independent feature (like Live Search and Product Recommendations).
 
 ## SECURITY patch release
 
@@ -90,10 +88,11 @@ Individual patches do not contain backward incompatible changes.
 
 ## Custom patch
 
-Created by non-Adobe personnel to fix an issue or modify the {{site.data.var.ee}} code for various reasons. Adobe does not support custom {{site.data.var.ee}} patches.
+Created by non-Adobe personnel to fix an issue or modify the {{site.data.var.ee}} code for various reasons. Custom patches are delivered through the [Quality Patches Tool]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching/mqp.html).
 
-### Related topics
+{:.ref-header}
+Related topics
 
 -  [Planning and Budgeting for Commerce Upgrade Cycles](https://magento.com/sites/default/files8/2019-08/Magento-Release-Cycle-Infosheet_Aug_2019.pdf)
--  [Magento Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf)
 -  [Versioning]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/versioning/).
+-  [Upcoming releases]({{ site.baseurl }}/release/)
