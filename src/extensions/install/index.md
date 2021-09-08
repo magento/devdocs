@@ -37,6 +37,7 @@ Prior to installation, you may want to:
    ```
 
 To install an extension, you must:
+
 1. Get an extension from the Commerce Marketplace or another extension developer.
 1. if you install an extension from the Commerce Marketplace make sure the repo.magento.com repository exists in your composer.json:
     ```bash
