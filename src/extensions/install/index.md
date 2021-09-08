@@ -39,7 +39,8 @@ Prior to installation, you may want to:
 To install an extension, you must:
 
 1. Get an extension from the Commerce Marketplace or another extension developer.
-1. if you install an extension from the Commerce Marketplace make sure the repo.magento.com repository exists in your composer.json:
+1. If you install an extension from the Commerce Marketplace, make sure that the `repo.magento.com` repository exists in your `composer.json` file:
+
     ```bash
    "repositories": [
        {
@@ -48,6 +49,7 @@ To install an extension, you must:
        }
    ]
     ```
+
 1. Get the extension's Composer name and version.
 1. Update the `composer.json` file in your Magento project with the name and version of the extension.
 1. Verify that the extension installed properly.
