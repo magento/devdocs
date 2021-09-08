@@ -315,6 +315,9 @@ pages:
         - label: CSRF
           url: /extension-dev-guide/security/csrf.html
 
+        - label: Working with files
+          url: /extension-dev-guide/security/uploads.html
+
     - label: Versioning
       url: /extension-dev-guide/versioning/
       children:

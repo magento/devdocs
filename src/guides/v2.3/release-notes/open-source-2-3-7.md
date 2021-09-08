@@ -3,11 +3,11 @@ group: release-notes
 title: Magento Open Source 2.3.7 Release Notes
 ---
 
-Magento Open Source 2.3.7 offers significant platform upgrades, 40 security enhancements, and 10 functional fixes for the core product.
+{{site.data.var.ce}} 2.3.7 offers significant platform upgrades, 40 security enhancements, and 10 functional fixes for the core product.
 
 {:.bs-callout-info}
 
-PHP 7.3 reaches end of support in December 2021, and Adobe Commerce 2.3.x reaches end of support in April 2022. **We strongly recommend planning your upgrade now to Adobe Commerce 2.4.x and PHP 7.4.x to help maintain PCI compliance**.
+PHP 7.3 reaches end of support in December 2021, and {{site.data.var.ce}} 2.3.x reaches end of support in April 2022. **We strongly recommend planning your upgrade now to {{site.data.var.ce}} 2.4.x and PHP 7.4.x to help maintain PCI compliance**.
 
 ## Backward-Incompatible Changes (BiCs)
 
@@ -36,7 +36,7 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 This release includes 40 security fixes and platform security improvements. The copy-to-clipboard feature has also been disabled for all storefront credit card fields. <!--- MC-38985-->
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of {{site.data.var.ce}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Platform upgrades
 
