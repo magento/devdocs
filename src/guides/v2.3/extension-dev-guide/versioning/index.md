@@ -65,13 +65,12 @@ Or it can be used to declare a dependency on a particular version of a component
 {:.bs-callout-info}
 If you installed the application from GitHub without using Composer, the `version` is not included. The Admin displays the version as `Magento ver. dev-<GitHub-branch-name>`. In addition, modules inside the `require` declaration list a version of `*`. For example, `"magento/framework": "*"`.
 
-## Related Topics
+{:.ref-header}
+Related Topics
 
-[Module version dependencies][version-dependencies] - Information about how your module can depend on the version of other modules.
-
-[Codebase changes][codebase-changes] - Information on how changes in a module's codebase affect versions.
-
-[Backward compatible development]({{ site.baseurl }}/contributor-guide/backward-compatible-development/index.html) - Information about MAJOR and MINOR changes and how they impact extension developers.
+*  [Module version dependencies][version-dependencies] - Information about how your module can depend on the version of other modules.
+*  [Codebase changes][codebase-changes] - Information on how changes in a module's codebase affect versions.
+*  [Backward compatible development]({{ site.baseurl }}/contributor-guide/backward-compatible-development/index.html) - Information about MAJOR and MINOR changes and how they impact extension developers.
 
 [version-dependencies]: {{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
 [codebase-changes]: {{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html
