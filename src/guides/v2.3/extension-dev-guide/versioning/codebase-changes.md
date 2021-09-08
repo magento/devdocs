@@ -54,7 +54,7 @@ public function save()
 ## Version increase scenarios
 
 This table lists code change scenarios and which version number it affects.
-Use this table to understand what changes Magento can make and which version number gets increased for that change.
+Use this table to understand what changes Adobe can make and which version number gets increased for that change.
 Any change not listed below is considered a PATCH level change.
 
 | API/Customization Point | Code Change| Version Change |
