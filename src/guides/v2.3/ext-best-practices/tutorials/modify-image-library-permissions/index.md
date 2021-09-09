@@ -12,7 +12,7 @@ By default, Magento allows Media Gallery access to the following two directories
 *  `catalog/category`
 *  `wysiwyg`
 
-In this tutorial, you will learn how to extend "Media Gallery Allowed" folders using the config.xml file.
+In this tutorial, you will learn how to extend "Media Gallery Allowed" folders using the `config.xml` file.
 
 1. Create a `config.xml` file.
 
