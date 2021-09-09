@@ -20,7 +20,7 @@ This section discusses how to set ownership and permissions for your own server 
 {% include install/file-system-perms-twouser.md %}
 {% endcollapsible %}
 
-## Switch to the Magento file system owner {#install-update-depend-user-switch}
+## Switch to the file system owner {#install-update-depend-user-switch}
 
 After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:
 

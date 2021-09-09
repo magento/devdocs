@@ -32,7 +32,7 @@ To update the `{{site.data.var.ct}}` package:
    ```
 
    {:.bs-callout-info}
-   If you cannot update beyond `{{site.data.var.ct}}` version 2002.0.8, see [Upgrade project][upgrade-project].
+   If you cannot update beyond `{{site.data.var.ct}}` version 2002.0.8, see [Upgrade project][].
 
 1. Add, commit, and push code changes.
 
@@ -54,7 +54,8 @@ To update the `{{site.data.var.ct}}` package:
 
 [latest `{{site.data.var.ct}}` release]: {{site.baseurl}}/cloud/release-notes/ece-release-notes.html
 [backward incompatible changes]: {{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html
-[upgrade-project]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html
-[upgrade Magento version]: {{site.baseurl}}/cloud/project/project-upgrade.html
+[Upgrade to use ece-tools]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html
+[upgrade project]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html
+[upgrade {{site.data.var.ee}} version]: {{site.baseurl}}/cloud/project/project-upgrade.html
 [Upgrades and Patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
 [{{site.data.var.csuite}} packages]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html

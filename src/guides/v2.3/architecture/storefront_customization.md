@@ -14,7 +14,7 @@ These four levels of potential storefront customization are listed in order to i
 
 ### Extend Magento-Provided CSS
 
-Magento supplies a default [theme](https://glossary.magento.com/theme) and a Less-based CSS. You can substantially change a storefront using CSS only. This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Magento Marketplace to extend the default values.
+Magento supplies a default [theme](https://glossary.magento.com/theme) and a Less-based CSS. You can substantially change a storefront using CSS only. This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Commerce Marketplace to extend the default values.
 
 ### Replace PHTML template files
 

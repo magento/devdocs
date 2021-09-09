@@ -6,7 +6,7 @@ The Image uploader provides the ability for users to upload a single image, or g
 
 ## When to Use
 
-When it is desirable to allow users to upload a single image or multiple images for display within the [Magento Admin](https://glossary.magento.com/magento-admin) or on the [Storefront](https://glossary.magento.com/storefront).
+When it is desirable to allow users to upload a single image or multiple images for display within the [Admin](https://glossary.magento.com/magento-admin) or on the [Storefront](https://glossary.magento.com/storefront).
 
 ## When Not to Use
 
@@ -34,7 +34,7 @@ The user may also upload images (single or multiple) by dragging the desired ima
 
 **Uploading Video Content:**
 
-To upload a video to the Magento Admin application the user taps the "Add Video" button.
+To upload a video to the Admin application the user taps the "Add Video" button.
 
 ![](img/image-uploader-video-button.jpg)
 
@@ -57,13 +57,13 @@ The order in which images are displayed can be arranged by dragging the image or
 
 **Image Settings:**
 
-In some areas of the Magento Admin application uploaded images my have additional settings that effect the display of these images on the Storefront (e.g. Product Creation). These settings can be accessed via the "gear" icon found on the image thumbnail.
+In some areas of the Admin application uploaded images my have additional settings that effect the display of these images on the Storefront (e.g. Product Creation). These settings can be accessed via the "gear" icon found on the image thumbnail.
 
 ![](img/image-uploader-settings.jpg)
 
 **Deleting an Image:**
 
-Likewise, an image may be removed from the Magento Admin application by tapping the "trashcan" icon.
+Likewise, an image may be removed from the Admin application by tapping the "trashcan" icon.
 
 ![](img/image-uploader-delete.jpg)
 

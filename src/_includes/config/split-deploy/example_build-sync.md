@@ -1,6 +1,6 @@
 To update your build system:
 
-1. Log in to your build system as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Log in to your build system as, or switch to, the [file system owner](https://glossary.magento.com/magento-file-system-owner).
 1. Change to the build system's Magento root directory.
 1. Pull the changes to `app/etc/config.php` from source control.
 

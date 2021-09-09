@@ -1,0 +1,6 @@
+---
+title: RequisitionListGraphQl
+release: 2.4.3
+content: |-
+  **RequisitionListGraphQl** provides GraphQL schema and resolvers for the requisition list module.
+  to generate requisition list and requisition list items information endpoints.

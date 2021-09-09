@@ -28,7 +28,7 @@ For more information about icon design and Magento's icon library, see the artic
 
 ### Advertising in Navigation
 
-It is not appropriate to use the [Magento Admin](https://glossary.magento.com/magento-admin) navigation for marketing or to [cross-sell](https://glossary.magento.com/cross-sell) extensions after your extensions has been installed in Magento. A [new section](#feature-extensions) is under proposal that will possibly be more suitable for marketing and advertising content.
+It is not appropriate to use the [Admin](https://glossary.magento.com/magento-admin) navigation for marketing or to [cross-sell](https://glossary.magento.com/cross-sell) extensions after your extensions has been installed in Magento. A [new section](#feature-extensions) is under proposal that will possibly be more suitable for marketing and advertising content.
 
 Do not use the name of your company or marketing jargon as part of an extension name or the extension name itself in the Admin. You should create a unique feature name that users will understand because people usually search for extensions by feature or function keywords, not by a company or brand name.
 

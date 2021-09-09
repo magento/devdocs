@@ -1,8 +1,8 @@
 ---
 group: admin-pattern-library
-title: Iconography in Magento Admin Pattern Library
+title: Iconography in Admin Pattern Library
 ---
-Icons are used throughout the [Magento Admin](https://glossary.magento.com/magento-admin) interface, often as a controls to initiate a function (such as "Filter"), or to direct the user to section (such as "Account").
+Icons are used throughout the [Admin](https://glossary.magento.com/magento-admin) interface, often as a controls to initiate a function (such as "Filter"), or to direct the user to section (such as "Account").
 
 Icons are meant to provide a visual representation of functionality or content and should therefore bear some conceptual resemblance to them. Icons should be able to communicate their "use" to the user without the assistance of a text label, though labels should be used in the UI whenever possible to minimize ambiguity.
 

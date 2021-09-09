@@ -3,7 +3,7 @@ group: marketplace-api
 title: Test results
 ---
 
-Submissions go through several reviews before being released on the Magento Marketplace.
+Submissions go through several reviews before being released on the Commerce Marketplace.
 You can use the following endpoints to get more information about the current status of a submission.
 See [Get package details](packages.html#get-package-details) for details about these endpoints.
 

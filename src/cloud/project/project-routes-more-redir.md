@@ -13,7 +13,7 @@ The following demonstrates how to manage redirection rules on your {{site.data.v
 {% include cloud/note-route-all-placeholder.md %}
 
 {:.bs-callout-warning}
-For {{ site.data.var.ece }} projects, configuring large numbers of non-regex redirects and rewrites in the `routes.yaml` file can cause performance issues. If your `routes.yaml` file is 32KB or larger, offload your non-regex redirects and rewrites to Fastly. See [Offload non-regex redirects to Fastly instead of Nginx (routes)](https://support.magento.com/hc/en-us/articles/360035192891-Offload-non-regex-redirects-to-Fastly-instead-of-Nginx-routes-) in the _Magento Help Center_.
+For {{ site.data.var.ece }} projects, configuring large numbers of non-regex redirects and rewrites in the `routes.yaml` file can cause performance issues. If your `routes.yaml` file is 32KB or larger, offload your non-regex redirects and rewrites to Fastly. See [Offload non-regex redirects to Fastly instead of Nginx (routes)](https://support.magento.com/hc/en-us/articles/360035192891-Offload-non-regex-redirects-to-Fastly-instead-of-Nginx-routes-) in the _{{site.data.var.ee}} Help Center_.
 
 ## Whole-route redirects {#cloud-route-whole}
 

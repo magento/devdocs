@@ -24,7 +24,26 @@ Any Media Gallery files within `pub/media`, or in a folder outside a "Media Gall
 ### Workaround
 
 Copy any Media Gallery files to `pub/media/wysiwyg` or one of the specified "Media Gallery Allowed" folders, or add a new entry under `system/media_storage_configuration/media_storage/allowed_resource/media_gallery_image_folders`.
+
 ## 2.4.2- 2.4.3
+
+### Cookie message is displayed when new page loads
+
+Stores with a pre-existing custom theme and for which cookies are enabled now display this message: **The store will not work correctly in the case when cookies are disabled**. This issue is caused by a backward-incompatible change in how Magento handles cookie status messages. [GitHub-9095](https://github.com/magento/devdocs/issues/9095)
+
+**Workaround**: Add the `cookie-status-message` class to the
+`custom_theme_path/Magento_Theme/web/css/source/_module.less` file for custom themes.
+
+```javascript
+
+& when (@media-common = true) {
+    .cookie-status-message {
+        display: none;
+    }
+}
+
+```
+
 ### pelago/emogrifier update
 
 The Magento dependency `pelago/emogrifier` has been updated from version 3.1.0 to 5.0.0. This update resulted in the introduction of backwards-incompatible changes to the `Magento\Email\Model\Template\Filter` class. The changed code is executed during Magento email templates rendering. See [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). <!--- MC-41445-->
