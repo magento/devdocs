@@ -27,6 +27,7 @@ In this tutorial, you will learn how to extend "Media Gallery Allowed" folders u
                <media_gallery_image_folders>
                    <!-- new "Media Gallery Allowed" folders -->
                    <my_image_folder>custom_folder_name</my_image_folder>
+                   <my_catalog_image_folder>catalog/custom_folder_name</my_catalog_image_folder>
                </media_gallery_image_folders>
            </allowed_resources>
        </media_storage_configuration>
