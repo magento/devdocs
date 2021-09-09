@@ -7,7 +7,7 @@ Learn how to customize (add, delete, change) the configuration options available
 
 The location of your customizations appears here:
 
--  Magento Commerce and Open Source 2.1.0 and later: Options set under **CONTENT > Design > Configuration**
+-  {{site.data.var.ee}} and {{site.data.var.ce}} 2.1.0 and later: Options set under **CONTENT > Design > Configuration**
 
 ## Environment and technologies
 

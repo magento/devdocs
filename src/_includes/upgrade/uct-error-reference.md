@@ -14,7 +14,7 @@ These errors are reported when some of the core files are missing or do not matc
 
 ### Custom code
 
-Critical errors of custom code compatibility are raised when the custom code is referencing entities that are not present in the target Adobe Commerce version.
+Critical errors of custom code compatibility are raised when the custom code is referencing entities that are not present in the target {{site.data.var.ee}} version.
 
 {:.error-table}
 | Error code | Error description | Suggested action |

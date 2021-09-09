@@ -40,12 +40,12 @@ Add these files to your {{site.data.var.ee}} code:
 
 1. One at a time, create the following files in your {{site.data.var.ee}} system using the contents of the files in the {{site.data.var.ece}} repository:
 
-   -  `<Adobe Commerce install dir>/.magento.app.yaml`
-   -  `<Adobe Commerce install dir>/magento-vars.php`
-   -  `<Adobe Commerce install dir>/.magento/services.yaml`
-   -  `<Adobe Commerce install dir>/.magento/routes.yaml`
+   -  `<{{site.data.var.ee}} install dir>/.magento.app.yaml`
+   -  `<{{site.data.var.ee}} install dir>/magento-vars.php`
+   -  `<{{site.data.var.ee}} install dir>/.magento/services.yaml`
+   -  `<{{site.data.var.ee}} install dir>/.magento/routes.yaml`
 
-For example, to create `<Adobe Commerce install dir>/.magento.app.yaml` from the 2.3.3 branch:
+For example, to create `<{{site.data.var.ee}} install dir>/.magento.app.yaml` from the 2.3.3 branch:
 
 1. In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.3.3/.magento.app.yaml).
 1. In the upper right, click **Raw**, as the following figure shows.
@@ -181,15 +181,15 @@ Use the command [`magento setup:backup --media`]({{ site.baseurl }}/guides/v2.3/
 1. To back up media files, enter the following command:
 
    ```bash
-   php <Adobe Commerce install dir>/bin/magento setup:backup --media
+   php <{{site.data.var.ee}} install dir>/bin/magento setup:backup --media
    ```
 
-   The backup is stored in the `<Adobe Commerce install dir>/var/backups` directory.
+   The backup is stored in the `<{{site.data.var.ee}} install dir>/var/backups` directory.
 
 1. Transfer the media file to your {{site.data.var.ece}} system:
 
    ```bash
-   rsync <Adobe Commerce install dir>/var/backups/<backup file name> <cloud ssh url>:var/media.tgz
+   rsync <{{site.data.var.ee}} install dir>/var/backups/<backup file name> <cloud ssh url>:var/media.tgz
    ```
 
    For example,
