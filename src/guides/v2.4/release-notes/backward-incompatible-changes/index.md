@@ -5,7 +5,7 @@ title: Magento 2.4 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
-## 2.4.2- 2.4.3
+## 2.4.3-p1
 
 ## Media Gallery folders
 
@@ -24,7 +24,7 @@ Any Media Gallery files within `pub/media`, or in a folder outside a "Media Gall
 ### Workaround
 
 Copy any Media Gallery files to `pub/media/wysiwyg` or one of the specified "Media Gallery Allowed" folders, or add a new entry under `system/media_storage_configuration/media_storage/allowed_resource/media_gallery_image_folders`.
-
+## 2.4.2- 2.4.3
 ### pelago/emogrifier update
 
 The Magento dependency `pelago/emogrifier` has been updated from version 3.1.0 to 5.0.0. This update resulted in the introduction of backwards-incompatible changes to the `Magento\Email\Model\Template\Filter` class. The changed code is executed during Magento email templates rendering. See [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). <!--- MC-41445-->
