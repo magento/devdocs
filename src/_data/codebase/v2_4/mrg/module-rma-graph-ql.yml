@@ -1,0 +1,6 @@
+---
+title: RmaGraphQl
+release: 2.4.3
+content: |-
+  **RmaGraphQl** provides type information for the GraphQl module
+  to generate rma fields for catalog and product information endpoints.

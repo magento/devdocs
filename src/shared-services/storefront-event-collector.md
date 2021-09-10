@@ -43,7 +43,6 @@ The collector then begins listening for the following events. When any of these 
 -  `recsResponseReceived`
 -  `recsUnitRender`
 -  `recsUnitView`
--  `searchCategoryClick`
 -  `searchProductClick`
 -  `searchRequestSent`
 -  `searchResponseReceived`

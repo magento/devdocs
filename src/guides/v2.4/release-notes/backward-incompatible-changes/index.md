@@ -5,6 +5,26 @@ title: Magento 2.4 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
+## 2.4.3-p1
+
+## Media Gallery folders
+
+Version 2.4.3-p1 introduced a configuration option for Media Gallery content that denotes which folders can contain Media gallery files.
+
+The new configuration path `system/media_storage_configuration/media_storage/allowed_resource/media_gallery_image_folders` is used to define the "Media Gallery Allowed" folders in 'config.xml'.
+
+The initial values are the `wysiwyg` and `catalog/category` folders.
+
+These can be extended by adding a new value in `config.xml`.
+
+### Issue
+
+Any Media Gallery files within `pub/media`, or in a folder outside a "Media Gallery Allowed" folder will not be accessible to the Media Gallery after the patch is installed.
+
+### Workaround
+
+Copy any Media Gallery files to `pub/media/wysiwyg` or one of the specified "Media Gallery Allowed" folders, or add a new entry under `system/media_storage_configuration/media_storage/allowed_resource/media_gallery_image_folders`.
+
 ## 2.4.2- 2.4.3
 
 ### Cookie message is displayed when new page loads
