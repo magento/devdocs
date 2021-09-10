@@ -2,4 +2,4 @@
 
 -  Verify the environment configuration for the Fastly service. See [Check Fastly caching]({{ site.baseurl }}/cloud/live/stage-prod-test.html#fastly).
 
--  You must have Admin credentials to access the Magento Cloud Staging and Production environments.
+-  You must have Admin credentials to access the Staging and Production environments.

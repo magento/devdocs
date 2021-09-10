@@ -16,7 +16,7 @@ redirect_from:
  - guides/v2.3/comp-mgr/extens-man/step3-parent.html
 ---
 
-Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com) or another Magento extension distribution system.
+Code that extends or customizes {{site.data.var.ee}} and {{site.data.var.ce}} behavior is called an extension. You can optionally package and distribute extensions on the [Commerce Marketplace](https://marketplace.magento.com) or another extension distribution system.
 
 Extensions include:
 
@@ -25,7 +25,7 @@ Extensions include:
 -  Language packages (localize the storefront and Admin)
 
 {:.bs-callout-tip}
-This topic explains how to use the command line to install extensions you purchase from the Magento Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's [Composer](https://glossary.magento.com/composer) name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
+This topic explains how to use the command line to install extensions you purchase from the Commerce Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's [Composer](https://glossary.magento.com/composer) name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
 
 Prior to installation, you may want to:
 
@@ -38,7 +38,18 @@ Prior to installation, you may want to:
 
 To install an extension, you must:
 
-1. Get an extension from the Magento Marketplace or another extension developer.
+1. Get an extension from the Commerce Marketplace or another extension developer.
+1. If you install an extension from the Commerce Marketplace, make sure that the `repo.magento.com` repository exists in your `composer.json` file:
+
+    ```bash
+   "repositories": [
+       {
+           "type": "composer",
+           "url": "https://repo.magento.com/"
+       }
+   ]
+    ```
+
 1. Get the extension's Composer name and version.
 1. Update the `composer.json` file in your Magento project with the name and version of the extension.
 1. Verify that the extension installed properly.
@@ -48,9 +59,9 @@ To install an extension, you must:
 
 If you already know the extension's Composer name and version, skip this step and continue with [Update your `composer.json` file](#update-composer-json).
 
-To get the extension's Composer name and version from the Magento Marketplace:
+To get the extension's Composer name and version from the Commerce Marketplace:
 
-1. Log in to [Magento Marketplace](https://marketplace.magento.com) with the username and password you used to purchase the extension.
+1. Log in to [Commerce Marketplace](https://marketplace.magento.com) with the username and password you used to purchase the extension.
 
 1. In the upper-right corner, click **Your name** > **My Profile**.
 
@@ -65,7 +76,7 @@ To get the extension's Composer name and version from the Magento Marketplace:
    ![Technical details shows the extension's Composer name]({{ site.baseurl }}/common/images/marketplace-extension-technical-details.png){:width="200px"}
 
 {:.bs-callout-tip}
-Alternatively, you can find the Composer name and version of _any_ extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension's `composer.json` file.
+Alternatively, you can find the Composer name and version of _any_ extension (whether you purchased it on Commerce Marketplace or somewhere else) in the extension's `composer.json` file.
 
 ## Update your `composer.json` file {#update-composer-json}
 

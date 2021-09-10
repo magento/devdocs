@@ -17,7 +17,7 @@ In this tutorial, we assume the following:
 
 *  The Magento application is installed in `/var/www/html/magento2`
 *  Your Magento database username and password are both `magento`
-*  You perform all actions as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
+*  You perform all actions as the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
 
 ## Step 1: Get a sample module {#cron-tut-get}
 
@@ -27,7 +27,7 @@ If you already have a sample module, you can use it; skip this step and the next
 
 {% collapsible To get a sample module: %}
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as, or switch to, the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Change to a directory that is not in your Magento application root (for example, your home directory).
 1. Clone the [`magento2-samples` repository](https://github.com/magento/magento2-samples).
 
@@ -289,7 +289,7 @@ For a description of what the options mean, see [Configure custom cron jobs and 
 
 ## Step 8 (optional): Verify your custom cron group
 
-This step shows how to verify your custom cron group using the [Magento Admin](https://glossary.magento.com/magento-admin).
+This step shows how to verify your custom cron group using the [Admin](https://glossary.magento.com/magento-admin).
 
 {% collapsible To verify your custom cron group: %}
 
@@ -307,7 +307,7 @@ This step shows how to verify your custom cron group using the [Magento Admin](h
    php /var/www/html/magento2/bin/magento cache:clean
    ```
 
-1. Log in to the Magento Admin as an administrator.
+1. Log in to the Admin as an administrator.
 1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 1. In the right pane, expand **Cron**.
 

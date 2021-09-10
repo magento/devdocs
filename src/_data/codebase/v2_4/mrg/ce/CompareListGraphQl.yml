@@ -1,7 +1,0 @@
----
-title: Magento_CompareListGraphQl
-source_repo: magento2ce
-release: 2.4.2
-github_path: app/code/Magento/CompareListGraphQl/README.md
-last_modified_at: '2020-10-17 10:05:01 +0300'
-content: The CompareListGraphQl module is designed to implement compare product functionality.

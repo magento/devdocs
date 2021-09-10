@@ -105,7 +105,7 @@ To be available for the entire Magento instance, RequireJS library is included i
    ```xml
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
         <head>
-            <title>Magento Admin</title>
+            <title>Admin</title>
             <meta name="viewport" content="width=1024"/>
             <meta name="format-detection" content="telephone=no"/>
             <!-- Here's the library included -->

@@ -20,8 +20,8 @@ The following diagram shows the expected workflow when running the {{site.data.v
 
 The following use case describes the typical process for an {{site.data.var.ee}} partner to upgrade a client's instance:
 
-1. A partner's Software Engineer downloads the {{site.data.var.uct}} package from the [Adobe Commerce repository](https://repo.magento.com/) and executes it during the beta phase of the newest {{site.data.var.ee}} release. See the [Download the Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/install.html#download-the-upgrade-compatibility-tool) topic for more information.
-1. The Software Engineer generates a vanilla instance for the specific version of Adobe Commerce that is currently installed. See the [Contributor guide]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) for more information on using the `instance` command to generate a vanilla installation.
+1. A partner's Software Engineer downloads the {{site.data.var.uct}} package from the [{{site.data.var.ee}} repository](https://repo.magento.com/) and executes it during the beta phase of the newest {{site.data.var.ee}} release. See the [Download the Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/install.html#download-the-upgrade-compatibility-tool) topic for more information.
+1. The Software Engineer generates a vanilla instance for the specific version of {{site.data.var.ee}} that is currently installed. See the [Contributor guide]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) for more information on using the `instance` command to generate a vanilla installation.
 1. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) guide for more information on the complexity score.
 1. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
 1. The Account Manager creates a timeline and cost for the {{site.data.var.ee}} upgrade, which allows them to get their manager's approval.
@@ -71,16 +71,8 @@ This recommendation also helps with memory issues that can occur when executing 
 To download the {{site.data.var.uct}}, run the following command:
 
 ```bash
-composer create-project magento/upgrade-compatibility-tool uct  --repository https://repo.magento.com
+composer create-project magento/upgrade-compatibility-tool uct --repository https://repo.magento.com
 ```
-
-As the {{site.data.var.uct}} is an independent tool, if you try to run:
-
-```bash
-composer require magento/upgrade-compatibility-tool
-```
-
-It might add the {{site.data.var.uct}} as a dependency for an {{site.data.var.ee}} project.
 
 ## Install
 
@@ -92,16 +84,16 @@ To install the {{site.data.var.uct}}, you must install the necessary prerequisit
 
 Refer to the [Upgrade Compatibility Tool install]({{site.baseurl}}/upgrade-compatibility-tool/install.html#install) page.
 
-### Adobe Commerce access keys
+### {{site.data.var.ee}} access keys
 
-You must have [Adobe Commerce access keys]({{site.baseurl}}/marketplace/sellers/profile-information.html#access-keys) to download and use the {{site.data.var.uct}}. Add your {{site.data.var.ee}} access keys to your `auth.json` file, which is located at `~/.composer` by default.
+You must have [{{site.data.var.ee}} access keys]({{site.baseurl}}/marketplace/sellers/profile-information.html#access-keys) to download and use the {{site.data.var.uct}}. Add your {{site.data.var.ee}} access keys to your `auth.json` file, which is located at `~/.composer` by default.
 
 {:.bs-callout-warning}
 Check your **COMPOSER_HOME** environment variable to see where the `auth.json` file is located.
 
 The **public key** corresponds to the _username_ whereas the **private key** is the _password_:
 
-### Example of Adobe Commerce access keys
+### Example of {{site.data.var.ee}} access keys
 
 ```json
     "http-basic": {
@@ -117,7 +109,7 @@ The **public key** corresponds to the _username_ whereas the **private key** is 
 Clone the {{site.data.var.uct}} repository and run `composer install` in your terminal to install dependencies.
 
 {:.bs-callout-warning}
-If the **Adobe Commerce access keys** are not correctly configured, the {{site.data.var.uct}} will not install and you will get errors when running the `composer install` command.
+If the **{{site.data.var.ee}} access keys** are not correctly configured, the {{site.data.var.uct}} will not install and you will get errors when running the `composer install` command.
 
 ### Node.js
 

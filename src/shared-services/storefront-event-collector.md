@@ -4,7 +4,7 @@ title: Storefront Event Collector
 ee_only: True
 ---
 
-This package listens for and handles events sent from the [Adobe Commerce Storefront Events SDK]({{ site.baseurl }}/shared-services/storefront-events-sdk.html). It runs as a side effect and is meant to be a convenience for users who want to send events to Adobe Commerce for processing.
+This package listens for and handles events sent from the [{{site.data.var.ee}} Storefront Events SDK]({{ site.baseurl }}/shared-services/storefront-events-sdk.html). It runs as a side effect and is meant to be a convenience for users who want to send events to {{site.data.var.ee}} for processing.
 
 ## Installation
 
@@ -30,7 +30,7 @@ After loading the collector script, or importing the package as shown below, the
 import "@adobe/magento-storefront-event-collector";
 ```
 
-The collector then begins listening for the following events. When any of these events are fired, the collector runs the associated handler and sends the event along with any relevant information to Adobe Commerce for further processing.
+The collector then begins listening for the following events. When any of these events are fired, the collector runs the associated handler and sends the event along with any relevant information to {{site.data.var.ee}} for further processing.
 
 -  `addToCart`
 -  `instantPurchase`
@@ -43,7 +43,6 @@ The collector then begins listening for the following events. When any of these 
 -  `recsResponseReceived`
 -  `recsUnitRender`
 -  `recsUnitView`
--  `searchCategoryClick`
 -  `searchProductClick`
 -  `searchRequestSent`
 -  `searchResponseReceived`

@@ -23,7 +23,7 @@ Magento’s voice is:
 
 **Write casual, but professional, content in gender-neutral terms.**
 
-Create a consistent tone of communication that sounds like dialogue, as you would hear it. Here’s a useful tip when creating copy:  Imagine describing the product or task face-to-face with a new marketing employee tasked with using Magento Admin.
+Create a consistent tone of communication that sounds like dialogue, as you would hear it. Here’s a useful tip when creating copy:  Imagine describing the product or task face-to-face with a new marketing employee tasked with using Admin.
 
 Write sentences with plain, concise language. Use contractions for verbs. Never use a long word when a shorter word can take its place, and omit unnecessary words.
 
@@ -43,7 +43,7 @@ To ensure that users with special needs – including the use of screen readers 
 
 For more guidance, see this summary of [Web Content Accessibility Guidelines (WCAG) 2.0 standards](https://www.w3.org/WAI/WCAG20/glance/).
 
-Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php), Magento Admin content should score above 50, which is approximately high-school level.
+Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php), Admin content should score above 50, which is approximately high-school level.
 
 **Use correct terms and content style.**
 
@@ -83,8 +83,8 @@ When introducing a term that may be unfamiliar to merchants, apply a glossary te
 *Example:*
 
 <ul style="list-style-type:none">
-  <li><strong>No</strong> – “This SaaS feature is only available in Magento Commerce.”</li>
-  <li>Yes – “This [software as a service](https://glossary.magento.com/software-as-a-service) (SaaS) feature is only available in Magento Commerce.”</li>
+  <li><strong>No</strong> – “This SaaS feature is only available in {{site.data.var.ee}}.”</li>
+  <li>Yes – “This [software as a service](https://glossary.magento.com/software-as-a-service) (SaaS) feature is only available in {{site.data.var.ee}}.”</li>
 </ul>
 <br>
 

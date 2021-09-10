@@ -206,7 +206,7 @@ You also can use the `DELETE` endpoint to delete a simple product from the group
 
 ## Verify the steps
 
-1. Log into the Magento Admin.
+1. Log into the Admin.
 1. Select **Catalog > Products**.
 1. Click on the **New Grouped Product** grouped product and expand the **Grouped Products** section.
 

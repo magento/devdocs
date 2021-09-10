@@ -39,7 +39,7 @@ See one of the following topics for more information:
 
 To edit stopwords:
 
-1. Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server, or switch to, the [file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 1. Use a text editor to open a stopword file in the `<magento_root>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
    `.csv` files use the naming convention `stopwords_<locale_code>.csv`. For example, the German stopword file is named `stopwords_de_DE.csv`.
@@ -51,9 +51,9 @@ To edit stopwords:
 1. Save your changes and exit the text editor.
 1. Clean the Magento configuration cache.
 
-   *  Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
+   *  Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
 
-   *  Command line: As the Magento file system owner, enter the following command:
+   *  Command line: As the file system owner, enter the following command:
 
       ```bash
       php <magento_root>/bin/magento magento cache:clean config
@@ -65,7 +65,7 @@ To edit stopwords:
 
 To add stopwords for a locale:
 
-1. Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server, or switch to, the [file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
 1. Use a text editor to create a stopword file named `stopwords_<locale_code>.csv` in the `<magento_root>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
@@ -89,9 +89,9 @@ To add stopwords for a locale:
 1. Save the changes to `esconfig.xml` and exit the text editor.
 1. Clean the Magento configuration cache.
 
-   *  Magento Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
+   *  Admin: **System** > Tools > **Cache Management**. Select the **Configuration** checkbox and, from the list above it, click **Refresh**. Click **Submit** to complete the action.
 
-   *  Command line: As the Magento file system owner, enter the following command:
+   *  Command line: As the file system owner, enter the following command:
 
       ```bash
       php <magento_root>/bin/magento magento cache:clean config
@@ -110,7 +110,7 @@ The location depends on how you installed the Magento software. If you cloned th
 
 To change the directory:
 
-1. As the Magento file system owner, open the Elasticsearch `di.xml` in a text editor.
+1. As the file system owner, open the Elasticsearch `di.xml` in a text editor.
 
    If you cloned the repository, it's located at `app/code/Magento/Elasticsearch/etc/di.xml`
 
