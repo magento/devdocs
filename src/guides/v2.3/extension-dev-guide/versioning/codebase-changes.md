@@ -11,7 +11,7 @@ A module's codebase consists of public and private code.
 Public code includes Public [API](https://glossary.magento.com/api)(indicated by the `@api` docblock tag) and Public Customization Points.
 All other code is considered private.
 
-Changes in public code always trigger MINOR or MAJOR version increases. On an exceptional basis, breaking changes or additional patches or hotfixes may be released on a PATCH version to address security or compliance issues and high-impact quality issues.
+Changes in public code always trigger MINOR or MAJOR version increases.
 
 In most cases, modifications to private code will trigger PATCH version increases.
 On rare occasions, if the Adobe development team made significant modifications to private code, they will increase the MINOR or MAJOR version.
