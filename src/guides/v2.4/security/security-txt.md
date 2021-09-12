@@ -17,7 +17,7 @@ Magento merchants can enter their contact information for [security issue report
 
 A valid `security.txt` file might look like the following:
 
- ```bash
+ ```text
 Contact: mailto:security@example.com
 Contact: tel:+1-201-555-0123
 Encryption: https://example.com/pgp.asc

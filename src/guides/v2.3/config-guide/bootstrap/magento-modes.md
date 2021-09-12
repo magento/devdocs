@@ -47,7 +47,7 @@ You can run Magento in any of the following *modes*:
     </tr>
    <tr>
         <td>maintenance</td>
-        <td><p>Intended to prevent access to a Magento Commerce site while it is being updated or reconfigured, this mode:</p>
+        <td><p>Intended to prevent access to a site while it is being updated or reconfigured, this mode:</p>
             <ul><li>Redirects site visitors to a default <code>Service Temporarily Unavailable</code> page.</li>
                 <li>When the site is in maintenance mode, the <code>var/</code> directory contains the <code>.maintenance.flag</code> file.</li>
                 <li>You can configure maintenance mode to allow visitor access from a specified list of IP addresses.</li>

@@ -6,6 +6,7 @@ functional_areas:
   - Setup
 redirect_from:
   - /guides/v2.3/install-gde/system-requirements-tech.html
+  - /guides/v2.3/architecture/tech-stack.html
 ---
 
 {:.bs-callout-info}
