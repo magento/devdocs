@@ -18,12 +18,28 @@ For information about quality patches created by the community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.2
+
+-  **MDVA-38929** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where the invoice with FPT shows a wrong Grand Total when the order is paid from the store credit.
+-  **MDVA-37364** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <=2.4.3`)_-Fixes the issue where the custom customer attribute of date type breaks the customer's grid UI.
+-  **MDVA-39195** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <=2.4.2-p2`)_-Fixes the issue where 'Add to Cart'  button was inactive on the category page when redirect to cart enabled.
+-  **MDVA-37115** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <=2.4.2-p2`)_-Fixes the issue where an unnecessary "Only 0 left" notice is shown on the configurable product page.
+-  **MDVA-39521** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.4`)_-Fixes the issue where the user is not able to set shipping addresses on the cart with an empty telephone number via GraphQL.
+-  **MDVA-39384** _(for Adobe Commerce and Magento Open Source `>=2.3.1 <=2.3.6 || >=2.4.1 <=2.4.3`)_-Fixes the issue where the custom customer attribute for a company user is not saved.
+-  **MDVA-39043** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <=2.4.3`)_-Fixes the issue where the admin user with limited access gets an error when trying to add the 'Products' widget to the CMS page.
+-  **MDVA-39966** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <=2.3.5-p2 || >=2.4.0 <=2.4.0-p1`)_-Fixes the issue with deploying incorrect locales.
+-  **MDVA-38852** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <=2.3.5-p2`)_-Fixes the issue where the catalog inventory by design locks tables for updates that significantly decrease performance in cases with several parallel orders.
+-  **MDVA-39986** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.3`)_-Fixes the issue where the user is not able to place an order in the Admin on MacOS using the Safari browser.
+-  **MDVA-38447** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes two issues: where the 'Not visible individually' configurable child products are returned in GraphQL response and optimize MySQL query for GraphQL products query with category filter.
+-  **MDVA-40134** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where the GraphQL does not return related products when the Shared Catalog is enabled.
+-  **MDVA-39935** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.4`)_-Fixes the issue where the GraphQL returns configurable child products disabled at the website level.
+
 ## v1.1.1
 
--  **MDVA-36021** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.4`)_-Fixes the issue where the 'Call to a member function getId()' error is displayed on the order details page in the Admin.
--  **MDVA-34948** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <=2.3.6-p1 || >=2.4.0 <=2.4.0-p1`)_-Fixes the issue with long-running queries, like GET_LOCK.
--  **MDVA-39305** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <=2.4.2-p1`)_-Fixes the issue where registered customers are not able to log in with enabled Google ReCaptcha.
--  **MDVA-37897** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue with an incorrect redirect when a customer tries to add products with options from the Recently Viewed widget.
+-  **MDVA-36021** _(for {{site.data.var.ee}} and {{site.data.var.ce}} `>=2.4.0 <2.4.4`)_-Fixes the issue where the 'Call to a member function getId()' error is displayed on the order details page in the Admin.
+-  **MDVA-34948** _(for {{site.data.var.ee}} and {{site.data.var.ce}} `>=2.3.6 <=2.3.6-p1 || >=2.4.0 <=2.4.0-p1`)_-Fixes the issue with long-running queries, like GET_LOCK.
+-  **MDVA-39305** _(for {{site.data.var.ee}} and {{site.data.var.ce}} `>=2.4.0 <=2.4.2-p1`)_-Fixes the issue where registered customers are not able to log in with enabled Google ReCaptcha.
+-  **MDVA-37897** _(for {{site.data.var.ee}} and {{site.data.var.ce}} `>=2.3.0 <2.4.4`)_-Fixes the issue with an incorrect redirect when a customer tries to add products with options from the Recently Viewed widget.
 
 ## v1.1.0
 
