@@ -11,6 +11,7 @@ group: release
    -  **SECURITY patch release**—2.4.1-p1
       -  Security bug fix
       -  Security enhancement
+-  **Feature release**
 -  **Hotfix**
 -  **Individual patch**
 -  **Custom patch**
@@ -71,6 +72,10 @@ With the announcement of our [updated life cycle policy](https://magento.com
       | Security patch releases for previous, supported minor releases (currently 2.3) | X            | X                    |
 
 For general information about security releases, see [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security patches, see [Quick start install]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html).
+
+## Feature release
+
+Feature releases contain new features and feature updates that are delivered as independent services, separate from the patch releases. Examples include services like Product Recommendations and Live Search, independent modules like PWA Studio and Inventory Management (MSI), and updates to our cloud services and infrastructure.
 
 ## Hotfix
 
