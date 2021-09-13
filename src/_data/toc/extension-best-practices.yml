@@ -32,15 +32,25 @@ pages:
         - label: Coding FAQ
           url: /ext-best-practices/extension-coding/coding-faq.html
 
-    - label: PHPStorm
+    - label: PHPStorm plugin
+      url: /ext-best-practices/phpstorm/introduction.html
       exclude_versions: ["2.3"]
       children:
 
+        - label: Code generation
+          url: /ext-best-practices/phpstorm/code-generation.html
+
+        - label: Code inspection
+          url: /ext-best-practices/phpstorm/code-inspection.html
+
+        - label: Extra
+          url: /ext-best-practices/phpstorm/extra.html
+
+        - label: Run UCT
+          url: /ext-best-practices/phpstorm/run-configuration.html
+
         - label: Inspections
           url: /ext-best-practices/phpstorm/inspections.html
-
-        - label: PHPStorm Plugin
-          url: /ext-best-practices/phpstorm/phpstorm-plugin.html
 
     - label: Storefront
       url: /ext-best-practices/storefront/storefront-best-practices.html

@@ -1,11 +1,8 @@
 ---
-group: software-update-guide
-title: Run Configuration
-ee_only: True
-redirect_from:
-  - /safe-upgrade-tool/run-configuration.html
+group: extension-best-practices
+title: Run configuration
 functional_areas:
-  - Upgrade
+  - Standards
 ---
 
 The Upgrade Compatibility Tool project Run Configuration
