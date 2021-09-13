@@ -19,7 +19,9 @@ The following table provides the dates for scheduled releases in 2022 (dates are
 | April 2022<br>Feature release                    | --                            | --                        | --                               | April 26, 2022                                                      |
 | June 2022<br>Feature release                     | --                            | --                        | --                               | June 21, 2022                                                       |
 | August 2022<br>Feature + patch release           | 2.4.5<br>2.4.4-p1             | --                        | July 26, 2022                    | August 9, 2022                                                      |
-| October 2022<br>Feature + security patch release | 2.4.5-p1                      | --                        | September 7, 2022                | October 11, 2022                                                    |
+| October 2022<br>Feature + security patch release | 2.4.5-p1<sup>1</sup>          | --                        | September 7, 2022                | October 11, 2022                                                    |
+
+<sup>1</sup>There is no full patch release in October 2022.
 
 {:.bs-callout-info}
 We have introduced a [new policy](https://magento.com/updated-lifecycle-policy-magento-releases) that applies to a previous, supported release line.
