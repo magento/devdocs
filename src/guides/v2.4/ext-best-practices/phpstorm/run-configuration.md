@@ -16,7 +16,7 @@ This Run Configuration is a Graphical User Interface (GUI) for the {{site.data.v
 {:.bs-callout-warning}
 The {{site.data.var.uct}} is an {{site.data.var.ee}} feature, keep in mind that you should have your {{site.data.var.ee}} license key to install it.
 
-![]({{site.baseurl}}/common/images/phpstorm/uct-run-configuration-1-min.png)
+![]({{site.baseurl}}/common/images/phpstorm/uct-run-configuration-1-min.gif)
 
 When you create a new run configuration for a specific tool, you create it from one of the dedicated configuration templates, which implement the startup logic, define the list of parameters and their default values.
 
@@ -45,7 +45,7 @@ Once the template is configured correctly, you can run the {{site.data.var.uct}}
 
 To run the {{site.data.var.uct}} click `UCT Run`.
 
-![]({{site.baseurl}}/common/images/phpstorm/uct-run-configuration-3-min.png)
+![]({{site.baseurl}}/common/images/phpstorm/uct-run-configuration-3-min.gif)
 
 The results are displayed in the console, including handy navigation to the compatibility issues in the code.
 
