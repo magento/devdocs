@@ -12,7 +12,7 @@ functional_areas:
 
 ## Set up caching {#cloud-cache-setup}
 
-Enable caching for your Magento application by configuring cache rules in the `.magento/routes.yaml` file as follows:
+Enable caching for your application by configuring cache rules in the `.magento/routes.yaml` file as follows:
 
 ```yaml
 http://{default}/:
@@ -129,10 +129,10 @@ A special case exists if the `cookies` key has the `["*"]` value. This value mea
 {:.bs-callout-info}
 You can't use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (`*`). `SESS*` or `~SESS` are currently **not** valid values.
 
-Magento cookies have the following restrictions:
+Cookies have the following restrictions:
 
--  You can set maximum of **50 cookies** in the system. Otherwise, Magento will throw an `Unable to send the cookie. Maximum number of cookies would be exceeded` exception.
--  A maximum cookie size is **4096 bytes**. Otherwise, Magento will throw an `Unable to send the cookie. Size of '%name' is %size bytes` exception.
+-  You can set maximum of **50 cookies** in the system. Otherwise, the application will throw an `Unable to send the cookie. Maximum number of cookies would be exceeded` exception.
+-  A maximum cookie size is **4096 bytes**. Otherwise, the application will throw an `Unable to send the cookie. Size of '%name' is %size bytes` exception.
 
 ### `default_ttl` {#cloud-cache-attrib-ttl}
 

@@ -404,7 +404,6 @@ pages:
         - label: Build and deploy
           url: /cloud/project/magento-env-yaml.html
           versionless: true
-
           children:
             - label: Set up notifications
               url: /cloud/env/setup-notifications.html
@@ -486,7 +485,6 @@ pages:
               url: /cloud/env/working-with-variables.html
               versionless: true
 
-
     - label: Configuration management for store settings
       url: /cloud/live/sens-data-over.html
       versionless: true
@@ -518,6 +516,7 @@ pages:
         - label: Smart wizards
           url: /cloud/deploy/smart-wizards.html
           versionless: true
+
     - label: Deploy your store
       url: /cloud/live/stage-prod-live.html
       versionless: true
@@ -559,7 +558,7 @@ pages:
       versionless: true
       children:
         - label: Launch checklist
-          url: /cloud/live/go-live-checklist.html
+          url: /cloud/live/site-launch-checklist.html
           versionless: true
 
         - label: Launch steps
@@ -615,7 +614,7 @@ pages:
       url: /cloud/project/project-upgrade-parent.html
       versionless: true
       children:
-        - label: Update ece-tools version
+        - label: Update ece-tools
           url: /cloud/project/ece-tools-update.html
           versionless: true
 
@@ -627,7 +626,7 @@ pages:
           url: /cloud/project/project-upgrade.html
           versionless: true
 
-        - label: Upgrade to use ece-tools
+        - label: Upgrade project
           url: /cloud/project/ece-tools-upgrade-project.html
           versionless: true
 

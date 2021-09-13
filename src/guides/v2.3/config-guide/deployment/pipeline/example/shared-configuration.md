@@ -13,7 +13,7 @@ This example shows how to change the following settings in your development syst
 *  Timezone
 *  Weight unit
 
-These settings are available in the Magento Admin in **Stores** > Settings > **Configuration** > General > **General**.
+These settings are available in the Admin in **Stores** > Settings > **Configuration** > General > **General**.
 
 You can use the same procedure to configure any non-sensitive, non-system-specific settings in the following references:
 
@@ -39,7 +39,7 @@ For the purposes of this example, we assume the following:
 
 To set the timezone and weight units in your development system:
 
-1. Log in to the Magento Admin.
+1. Log in to the Admin.
 1. Click **Stores** > Settings > **Configuration** > General > **General**.
 1. In the right pane, expand **Locale Options**.
 
@@ -71,11 +71,11 @@ The last step in the process is to update your production system from source con
 
 {% include config/split-deploy/example_update-prod.md %}
 
-### Verify the changes in the Magento Admin
+### Verify the changes in the Admin
 
-To verify these settings are not editable in the Magento Admin:
+To verify these settings are not editable in the Admin:
 
-1. Log in to the Magento Admin.
+1. Log in to the Admin.
 1. Click **Stores** > Settings > **Configuration** > General > **General**.
 1. In the right pane, expand **Locale Options**.
 

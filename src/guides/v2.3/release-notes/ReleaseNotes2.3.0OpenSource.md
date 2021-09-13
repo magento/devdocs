@@ -13,12 +13,12 @@ The patch addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/
 
 ## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
 
-An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of Magento Open Source open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Magento Admin and subsequently launch malicious code in a store user’s browser.  **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
+An unauthenticated cross-site scripting vulnerability combined with an authenticated Phar deserialization vulnerability has left this version of {{site.data.var.ce}} open to serious exploit. An attacker can use these vulnerabilities to inject JavaScript into the Admin and subsequently launch malicious code in a store user’s browser.  **We strongly recommend that all users of the affected versions of Magento download and apply the appropriate patch as soon as possible**. This issue and the available patches are discussed in the [Extending the June 25 Security Update to Older Versions of Magento](https://community.magento.com/t5/Magento-DevBlog/Extending-the-June-25-Security-Update-to-Older-Versions-of/ba-p/138231)
 blog post. Locate the patch by the name. We provide Git-based and Composer-based patches.
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
-A SQL injection vulnerability has been identified in pre-2.2.8 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to Magento Commerce or Open Source  2.2.8. **We strongly suggest that you install these full patches as soon as you can**.
+A SQL injection vulnerability has been identified in pre-2.2.8 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to {{site.data.var.ee}} or {{site.data.var.ce}}  2.2.8. **We strongly suggest that you install these full patches as soon as you can**.
 
 See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability.
 
@@ -69,7 +69,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 #### dotmailer
 
-*  dotmailer now supports the Magento Commerce split database mode.
+*  dotmailer now supports the {{site.data.var.ee}} split database mode.
 
 #### Klarna
 
@@ -77,7 +77,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 *  Added a link to the Klarna merchant portal
 
-*  Added a detailed Klarna message in the Magento Admin where needed
+*  Added a detailed Klarna message in the Admin where needed
 
 *  Added an initial Magento Functional Test Framework (MFTF) test and support for future tests
 
@@ -111,7 +111,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 ### Other improvements
 
-*  **Elasticsearch support for {{site.data.var.ce}} version**. Elasticsearch support was previously provided in Magento Commerce only.
+*  **Elasticsearch support for {{site.data.var.ce}} version**. Elasticsearch support was previously provided in {{site.data.var.ee}} only.
 
 *  **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality.
 
@@ -173,7 +173,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-91863 -->
 
-*  Statistics collection for the Reports module is now disabled by default. To enable or partially disable it, see **System Configuration** > **General** > **Reports**. Note that certain product features, such as  Magento Commerce dynamic customer segments (specifically the ones based on viewed products), rely on Reports data collection to function properly.
+*  Statistics collection for the Reports module is now disabled by default. To enable or partially disable it, see **System Configuration** > **General** > **Reports**. Note that certain product features, such as  dynamic customer segments (specifically the ones based on viewed products), rely on Reports data collection to function properly.
 
 <!---MAGETWO-88281 -->
 
@@ -1539,7 +1539,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-75326 -->
 
-*  The Magento Admin no longer falls into a redirect loop when an administrator logs in with a role that has no resources assigned.  [GitHub-10611](https://github.com/magento/magento2/issues/10611)
+*  The Admin no longer falls into a redirect loop when an administrator logs in with a role that has no resources assigned.  [GitHub-10611](https://github.com/magento/magento2/issues/10611)
 
 <!---MAGETWO-82428 -->
 
@@ -2581,7 +2581,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-89990 -->
 
-*  The multi-shipping checkout  flow now supports the CyberSource payment method. This payment method is supported by Magento Commerce only. However,  as part of the process of adding CyberSource support, we've made improvements to the Multi-shipping module to simplify integration process for other payment methods. Users of the CyberSource payment method should note that CyberSource uses the Magento Vault module only to store and retrieve tokens. Stored CyberSource tokens won't be displayed on the checkout page or customer account.
+*  The multi-shipping checkout  flow now supports the CyberSource payment method. This payment method is supported by {{site.data.var.ee}} only. However,  as part of the process of adding CyberSource support, we've made improvements to the Multi-shipping module to simplify integration process for other payment methods. Users of the CyberSource payment method should note that CyberSource uses the Magento Vault module only to store and retrieve tokens. Stored CyberSource tokens won't be displayed on the checkout page or customer account.
 
 <!--- MAGETWO-89991 -->
 
@@ -3517,7 +3517,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 *  Renaming of tables is not supported.
 
-**Known issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/).  See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+**Known issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Commerce Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/).  See [Extension Manager shows no extensions in {{site.data.var.ee}} 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

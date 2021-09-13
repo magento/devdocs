@@ -387,7 +387,7 @@ The method you choose is up to you. You have the following options:
 
 -  Check out code from Git and run `composer install`
 
-   This method works unless `composer.json` references packages in private repositories to which you do not have access. This method results in getting the entire Magento codebase.
+   This method works unless `composer.json` references packages in private repositories to which you do not have access. This method results in getting the entire {{site.data.var.ee}} codebase.
 
 -  Copy the `vendor`, `app`, `pub`, `lib`, and `setup` directories
 
@@ -395,7 +395,7 @@ The method you choose is up to you. You have the following options:
 
 -  Copy the `vendor` directory only
 
-   Because most Magento and third-party code is in the `vendor` directory, this method is likely to result in good testing although you will not be testing the entire codebase.
+   Because most {{site.data.var.ee}} and third-party code is in the `vendor` directory, this method is likely to result in good testing although you will not be testing the entire codebase.
 
 {:.procedure}
 To compress files and copy them to your local machine:

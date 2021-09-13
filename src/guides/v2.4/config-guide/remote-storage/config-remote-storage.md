@@ -59,6 +59,12 @@ The following examples enable the remote storage with an AWS S3 storage adapter 
 
 ## Limitations
 
+You cannot have both remote storage and database storage enabled at the same time. Disable database storage if you are using remote storage.
+
+```bash
+bin/magento config:set system/media_storage_configuration/media_database 0
+```
+
 Enabling remote storage might affect your established development experience. For example, certain PHP file functions might not work as expected. The usage of Magento Framework for file operations must be enforced.
 
 The list of prohibited PHP native functions is available in [Magento Coding Standard](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php) repository.

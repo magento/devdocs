@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Submit for Technical Review
 ---
 
-All extensions submitted to Magento Marketplace must pass the automated technical review as part of the extension submission workflow. Technical review helps to improve the quality of products on Magento Marketplace by checking for indications of plagiarism, malware, and adherence to Magento coding standards. Developers whose extensions do not pass technical review receive a report of the results. After the issues are resolved, you are welcome to resubmit the extension. Extensions must pass technical review to receive a listing on Magento Marketplace.
+All extensions submitted to Commerce Marketplace must pass the automated technical review as part of the extension submission workflow. Technical review helps to improve the quality of products on Commerce Marketplace by checking for indications of plagiarism, malware, and adherence to Magento coding standards. Developers whose extensions do not pass technical review receive a report of the results. After the issues are resolved, you are welcome to resubmit the extension. Extensions must pass technical review to receive a listing on Commerce Marketplace.
 
 When your [extension entry]({{ site.baseurl }}/marketplace/sellers/extension-information.html) is complete, you can submit your extension for technical review. During the process, we review the code according to [technical guidelines]({{ site.baseurl }}/marketplace/sellers/technical-review-guidelines.html), install and use the extension according to your documentation, and verify specifics from your submission form. You can track the status and progress of your extension submission through your Marketplace account.
 
@@ -18,14 +18,14 @@ The following instructions show how to submit an extension for Technical Review.
 
 Before submitting an extension or theme for marketing review, conduct your own internal review of the content to make sure that it is ready for publication.
 
--  Review the [technical]({{ site.baseurl }}/marketplace/sellers/technical-review-guidelines.html) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
+-  Review the [technical]({{ site.baseurl }}/marketplace/sellers/technical-review-guidelines.html) guidelines to ensure that your extension meets Commerce Marketplace and Magento development requirements.
 -  For theme extensions, verify all image, css, and code assets correctly load on the storefront. For feature / service extensions, make sure data and options follow coding standards, logging, etc.
 -  All extensions must be secure, without viruses, malware, or vulnerabilities.
 -  Fully test your extension, including installation, dependencies, shared packages, configuration, and usage.
 
 ### Terms and Conditions
 
-All products and services are subject to the same Magento Marketplace terms and conditions that are communicated to developers upon submission, and to merchants upon the purchase of any product or service. A separate licensing agreement is not required. However, you can include additional terms and conditions as follows:
+All products and services are subject to the same Commerce Marketplace terms and conditions that are communicated to developers upon submission, and to merchants upon the purchase of any product or service. A separate licensing agreement is not required. However, you can include additional terms and conditions as follows:
 
 -  Create a workflow that requires the merchant to accept the terms and conditions when the extension is installed.
 -  Place a link to the separate agreement in the extension description.
@@ -63,12 +63,12 @@ All products and services are subject to the same Magento Marketplace terms and 
 1. Add Documentation and Resources for your extension.
 
     {: .bs-callout .bs-callout-info}
-    Magento Marketplace tests and reviews documentation during the Technical Review. You can add additional documentation during the [Marketing Review]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html).
+    Commerce Marketplace tests and reviews documentation during the Technical Review. You can add additional documentation during the [Marketing Review]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html).
 
     You must include **at least one** of the following, in PDF format (less than 5MB):
 
--  Attach User Guide - Documentation describing how to configure and use your extension features in the Magento Admin and extension screens.
--  Attach Reference Manual - Documentation detailing fields, screens, and workflows for the added features, screens, and fields in the Magento Admin.
+-  Attach User Guide - Documentation describing how to configure and use your extension features in the Admin and extension screens.
+-  Attach Reference Manual - Documentation detailing fields, screens, and workflows for the added features, screens, and fields in the Admin.
 -  Attach Installation Guide - Documentation instructing how to install and configure the extension on your Magento instance.
 
     ![]({{ site.baseurl }}/marketplace/sellers/images/technical-submission-docs.png){: .zoom}

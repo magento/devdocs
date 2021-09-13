@@ -12,11 +12,11 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. Befo
 
 {% include cloud/note-ece-tools-package.md %}
 
-## Upgrade from older versions of the Magento application
+## Upgrade from older versions of the application
 
 Review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. Your upgrade tasks may include the following:
 
--  Update PHP, Elasticsearch, and other services for compatibility with new Magento version. See [Change service version].
+-  Update PHP, Elasticsearch, and other services for compatibility with new {{site.data.var.ee}} versions. See [Change service version].
 -  Convert an older configuration management file.
 -  Update the `.magento.app.yaml` file with new settings for hooks and environment variables.
 -  Upgrade third-party extensions to the latest supported version.
@@ -49,7 +49,7 @@ After upgrading, you can remove the `config.php` file and generate a new, comple
 
 ### Update the configuration file
 
-When you upgrade, you might need to update your [.magento.app.yaml] file to account for changes in the default configuration settings that are sometimes introduced to support changes in {{site.data.var.ece}} or the Magento application.
+When you upgrade, you might need to update your [.magento.app.yaml] file to account for changes in the default configuration settings that are sometimes introduced to support changes in {{site.data.var.ece}} or the application.
 
 {:.procedure}
 To update the `.magento.app.yaml` file:
@@ -79,7 +79,7 @@ To update the `.magento.app.yaml` file:
 
 1. Add the following environment variables to the end of the `magento.app.yaml` file.
 
-   For Magento 2.2.x - 2.3.x–
+   For {{site.data.var.ee}} 2.2.x - 2.3.x–
 
    ```yaml
    variables:
@@ -89,7 +89,7 @@ To update the `.magento.app.yaml` file:
            CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
     ```
 
-   For Magento 2.4.x–
+   For {{site.data.var.ee}} 2.4.x–
 
    ```yaml
    variables:
@@ -158,9 +158,9 @@ To check the `auto-load:psr-4` configuration:
 
    -  Merge changes to the Staging environment, and then to Production.
 
-## Upgrade the Magento application
+## Upgrade the application
 
-Review the [service versions][version compatibility matrix] information for the latest software version requirements before upgrading your Magento application.
+Review the [service versions][version compatibility matrix] information for the latest software version requirements before upgrading your application.
 
 {%include cloud/note-pro-using-yaml-support.md%}
 
@@ -171,16 +171,16 @@ Review the [service versions][version compatibility matrix] information for the 
 ### Complete the upgrade
 
 {:.procedure}
-To upgrade the Magento version:
+To upgrade the application version:
 
-1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax].
+1. Change to your application root directory and set the upgrade version using the [version constraint syntax].
 
    ```bash
    composer require "magento/magento-cloud-metapackage":">=CURRENT_VERSION <NEXT_VERSION" --no-update
    ```
 
    {:.bs-callout-info}
-   You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package. You can find the version constraint in the `composer.json` file for the version of the [Magento application template](https://github.com/magento/magento-cloud/blob/master/composer.json) you are using for the upgrade.
+   You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package. You can find the version constraint in the `composer.json` file for the version of the [application template](https://github.com/magento/magento-cloud/blob/master/composer.json) you are using for the upgrade.
 
 1. Update the project.
 
@@ -204,7 +204,7 @@ To upgrade the Magento version:
 
    `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages. Both `composer install` and `composer update` marshal files from the base package (`magento/magento2-base` and `magento/magento2-ee-base`) into the package root.
 
-   The files that Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in {{site.data.var.ee}}, so you must add the marshaled files to source control.
+   The files that Composer marshals belong to the new version of {{site.data.var.ee}}, to overwrite the outdated version of those same files. Currently, marshaling is disabled in {{site.data.var.ee}}, so you must add the marshaled files to source control.
 
 1. Wait for deployment to complete.
 
@@ -216,7 +216,7 @@ To upgrade the Magento version:
 
 ### Create a new config.php file
 
-As mentioned in [Configuration management](#configuration-management), after upgrading, you need to create an updated `config.php` file. Complete any additional configuration changes through the Magento Admin in your Integration environment.
+As mentioned in [Configuration management](#configuration-management), after upgrading, you need to create an updated `config.php` file. Complete any additional configuration changes through the Admin in your Integration environment.
 
 {:.procedure}
 To create a system-specific configuration file:
@@ -276,11 +276,11 @@ To verify and upgrade your extensions:
 We strongly recommend upgrading your Production environment _before_ including the upgraded extensions in your site launch process.
 
 {:.bs-callout-info}
-When you upgrade your Magento version, the upgrade process updates to the latest version of the [Fastly CDN module for Magento 2] automatically.
+When you upgrade your application version, the upgrade process updates to the latest version of the [Fastly CDN module for Magento 2] automatically.
 
 ## Troubleshoot upgrade
 
-If the upgrade failed, you receive an error message in the browser indicating that you cannot access your storefront or the Magento Admin panel:
+If the upgrade failed, you receive an error message in the browser indicating that you cannot access your storefront or the Admin panel:
 
 ```terminal
 There has been an error processing your request

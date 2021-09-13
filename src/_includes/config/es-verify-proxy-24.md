@@ -3,7 +3,7 @@
 This section discusses two ways to verify that HTTP Basic authentication is working:
 
 *  Using a `curl` command to verify you must enter a username and password to get cluster status
-*  Configuring HTTP Basic authentication in the Magento Admin
+*  Configuring HTTP Basic authentication in the Admin
 
 ### Use a `curl` command to verify cluster status
 
@@ -62,7 +62,7 @@ Connection: keep-alive
 {"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
 ```
 
-### Configure HTTP Basic authentication in the Magento Admin
+### Configure HTTP Basic authentication in the Admin
 
 Perform the same tasks as discussed in [Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html) *except* click **Yes** from the **Enable Elasticsearch HTTP Auth** list and enter your username and password in the provided fields.
 
