@@ -1,6 +1,6 @@
 ---
 group: extension-best-practices
-title: Run configuration
+title: Run the Upgrade Compatibility Tool
 functional_areas:
   - Standards
 ---

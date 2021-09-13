@@ -46,7 +46,7 @@ pages:
         - label: Extra
           url: /ext-best-practices/phpstorm/extra.html
 
-        - label: Run UCT
+        - label: Run the Upgrade Compatibility Tool
           url: /ext-best-practices/phpstorm/run-configuration.html
 
         - label: Inspections
