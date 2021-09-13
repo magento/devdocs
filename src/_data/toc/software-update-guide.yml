@@ -39,6 +39,10 @@ pages:
           url: /upgrade-compatibility-tool/run.html
           versionless: true
 
+        - label: Run configuration
+          url: /upgrade-compatibility-tool/run-configuration.html
+          versionless: true
+
         - label: Developer information
           url: /upgrade-compatibility-tool/developer.html
           versionless: true
