@@ -5,11 +5,22 @@ functional_areas:
   - Standards
 ---
 
-The Upgrade Compatibility Tool project Run Configuration
-Run Configurations are used to run internal and external processes from within IntelliJ Platform based products. To get familiar with the concept of a Run Configuration refer Run/Debug Configuration section of IntelliJ IDEA Web Help.
+Run Configurations are used to run internal and external processes from within IntelliJ Platform based products.
 
-The Upgrade Compatibility Tool Run Configuration is a GUI for the Upgrade Compatibility Tool.
+See the [Run/Debug configurations topic](https://www.jetbrains.com/help/idea/run-debug-configuration.html) in the IntelliJ IDEA to understand the concept of a run configuration.
 
-The UCT Run Configuration provides the ability to configure UCT installed for the project via composer. If the UCT was installed separately (outside the project), such UCT executable can also be chosen in the dedicated Run Configuration. In the case when the UCT was not found in the current project, the corresponding message is shown with the link that provides the ability to download and install the UCT for the current project. Be aware, that the UCT is an Adobe Commerce feature, so to install it you should have your Adobe Commerce license key.
+This Run Configuration is a Graphical User Interface (GUI) for the {{site.data.var.uct}}.
 
-The UCT Run Configuration template can be found in the Run/Debug configurations dialog -> Add New Configuration -> Upgrade Compatibility Tool:
+Allows the {{site.data.var.uct}} instance to be configured via composer. It is recommended that the {{site.data.var.uct}} is installed in the current project. However, if the {{site.data.var.uct}} is located outside the current project, a message is shown alerting of the possibility to download and install {{site.data.var.uct}} in the current project.
+
+{:.bs-callout-warning}
+The {{site.data.var.uct}} is an {{site.data.var.ee}} feature, keep in mind that you should have your {{site.data.var.ee}} license key to install it.
+
+When you create a new run configuration for a specific tool, you create it from one of the dedicated configuration templates, which implement the startup logic, define the list of parameters and their default values.
+
+The {{site.data.var.uct}} Run Configuration template can be found in the Run/Debug configurations dialog -> Add New Configuration -> Upgrade Compatibility Tool
+
+
+[official documentation](https://plugins.jetbrains.com/docs/intellij/code-inspections.html).## Run {{site.data.var.uct}} via PHPstorm plugin
+
+![]({{site.baseurl}}/common/images/phpstorm/xml-file-header.png)
