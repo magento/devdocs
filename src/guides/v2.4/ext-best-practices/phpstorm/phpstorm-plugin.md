@@ -5,7 +5,7 @@ functional_areas:
   - Standards
 ---
 
-The PHPStorm Plugin enabled features and functionality to assist developers in creating custom extensions.
+The PHPStorm Plugin enables features and functionality to assist developers in creating custom extensions.
 This document describes features and fixes in version 4.0.
 
 ## Code generation
