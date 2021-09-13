@@ -6,7 +6,7 @@ link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
 updated: Mon Sep 13 14:39:26 2021
 entries:
-- description: Update the [Service versions compatibility table](https://devdocs.magento.com/cloud/project/services.html#service-versions)
+- description: Updated the [Service versions compatibility table](https://devdocs.magento.com/cloud/project/services.html#service-versions)
     in the Cloud guide.
   versions: 2.x
   type: Technical
