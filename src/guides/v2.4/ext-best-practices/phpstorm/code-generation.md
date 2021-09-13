@@ -39,4 +39,3 @@ There is an example of the output for generated entity when accessing get list R
 ![]({{ site.baseurl }}/common/images/phpstorm/get-list-rest-api-call.png)
 
 ![]({{ site.baseurl }}/common/images/phpstorm/get-list-in-browser.png)
-
