@@ -9,18 +9,35 @@ Run Configurations are used to run internal and external processes from within I
 
 See the [Run/Debug configurations topic](https://www.jetbrains.com/help/idea/run-debug-configuration.html) in the IntelliJ IDEA to understand the concept of a run configuration.
 
-This Run Configuration is a Graphical User Interface (GUI) for the {{site.data.var.uct}}.
-
-Allows the {{site.data.var.uct}} instance to be configured via composer. It is recommended that the {{site.data.var.uct}} is installed in the current project. However, if the {{site.data.var.uct}} is located outside the current project, a message is shown alerting of the possibility to download and install {{site.data.var.uct}} in the current project.
+This Run Configuration is a Graphical User Interface (GUI) for the {{site.data.var.uct}}. Allows the {{site.data.var.uct}} instance to be configured via composer. It is recommended that the {{site.data.var.uct}} is installed in the current project. However, if the {{site.data.var.uct}} is located outside the current project, a message is shown alerting of the possibility to download and install {{site.data.var.uct}} in the current project.
 
 {:.bs-callout-warning}
 The {{site.data.var.uct}} is an {{site.data.var.ee}} feature, keep in mind that you should have your {{site.data.var.ee}} license key to install it.
 
+![]({{site.baseurl}}/common/images/phpstorm/uct-run-configuration-1-min.png)
+
+
+
 When you create a new run configuration for a specific tool, you create it from one of the dedicated configuration templates, which implement the startup logic, define the list of parameters and their default values.
 
-The {{site.data.var.uct}} Run Configuration template can be found in the Run/Debug configurations dialog -> Add New Configuration -> Upgrade Compatibility Tool
+The {{site.data.var.uct}} Run Configuration template is located in your PHPStorm plugin menu, under **Run/Debug configurations** > **Add New Configuration** > **Upgrade Compatibility Tool**.
 
+![]({{site.baseurl}}/common/images/phpstorm/uct-run-configuration-template-position.png)
 
-[official documentation](https://plugins.jetbrains.com/docs/intellij/code-inspections.html).## Run {{site.data.var.uct}} via PHPstorm plugin
+These are the main components of the {{site.data.var.uct}} Run Configuration template:
 
-![]({{site.baseurl}}/common/images/phpstorm/xml-file-header.png)
+![]({{site.baseurl}}/common/images/phpstorm/uct-run-configuration-template-view.png)
+
+*  *{{site.data.var.uct}} (UCT) executable*: Path where the {{site.data.var.uct}} executable script is located. Determined by the `bin/uct` path from the {{site.data.var.uct}} source root directory.
+*  *Project root*: Current PHPStorm plugin root directory.
+*  *Path*: Path to analise. Allows to restrict the search to a specific folder. This is an optional field.
+*  *Coming version*: The {{site.data.var.ee}} targeted version.
+*  *Min issue level*: The minimum issue level to show in the report. Default is [WARNING]. This is an optional field.
+*  *Ignore current version compatibility issues*: use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report. This is an optional field.
+*  *Message*: Message that appears if the {{site.data.var.uct}} cannot be located for the current PHPStorm plugin project.
+*  *Link*: Link to install the {{site.data.var.uct}} for the current PHPStorm plugin project.
+
+See [Run]({{site.baseurl}}/upgrade-compatibility-tool/run.html) topic for more information on these specific options of the {{site.data.var.uct}}.
+
+Once the template is configured correctly, you can run the {{site.data.var.uct}} via a single click in your Run Configuration GUI.
+
