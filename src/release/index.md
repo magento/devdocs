@@ -28,7 +28,7 @@ The following table provides the dates for scheduled releases in 2022 (dates are
 <sup>2</sup> There is no full patch release in October 2022.
 
 {:.bs-callout-info}
-We have introduced a [new policy]({{ site.baseurl }}/release/lifecycle.html) that applies to our supported release lines. To learn more about the new strategy behind our 2022 release calendar and lifecycle policy, visit our blog.
+We have introduced a [new policy]({{ site.baseurl }}/release/lifecycle-policy.html) that applies to our supported release lines. To learn more about the new strategy behind our 2022 release calendar and lifecycle policy, visit our blog.
 
 ## Early access
 
