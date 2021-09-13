@@ -21,7 +21,7 @@ The following table provides the dates for scheduled releases in 2022 (dates are
 | August 2022<br>Feature + patch release           | 2.4.5<br>2.4.4-p1             | \-\-                      | July 26, 2022                    | August 9, 2022                                                      |
 | October 2022<br>Feature + security patch release | 2.4.5-p1<sup>1</sup>          | \-\-                      | September 7, 2022                | October 11, 2022                                                    |
 
-<sup>\-\-</sup> Indicates items that are "not applicable" to this release.
+<sup>\-\-</sup> Indicates items that are not applicable to this release.
 
 <sup>1</sup> There is no full patch release in October 2022.
 
