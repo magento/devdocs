@@ -26,7 +26,7 @@ The following table provides the dates for scheduled releases in 2022 (dates are
 <sup>1</sup> There is no full patch release in October 2022.
 
 {:.bs-callout-info}
-We have introduced a [new policy](https://magento.com/updated-lifecycle-policy-magento-releases) that applies to a previous, supported release line.
+We have introduced a [new policy](https://magento.com/updated-lifecycle-policy-magento-releases) that applies to a previous, supported release line. To learn more about the new strategy behind our 2022 release calendar and lifecycle policy, visit our blog.
 
 ## Early access
 
