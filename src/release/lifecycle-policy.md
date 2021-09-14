@@ -1,6 +1,7 @@
 ---
 title: Lifecycle policy
 group: release
+redirect_to: https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf
 ---
 
 For {{site.data.var.ee}} 2.3 and subsequent releases:
@@ -17,11 +18,12 @@ For {{site.data.var.ee}} 2.3 and subsequent releases:
 
 | Release                          | Release Date  | End of Software Support<sup>1</sup> | Dependent PHP Version |
 |----------------------------------|---------------|-------------------------------------|-----------------------|
-| {{site.data.var.ee}} 2.3         | November 2018 | April 2022<sup>2</sup>              | PHP 7.4               |
+| {{site.data.var.ee}} 2.3         | November 2018 | April 2022<sup>2</sup>              | PHP 7.3 and 7.4<sup>3</sup>               |
 | {{site.data.var.ee}} 2.4.0-2.4.3 | July 2020     | November 2022                       | PHP 7.4               |
 | {{site.data.var.ee}} 2.4.4-2.4.6 | TBA           | November 2024                       | PHP 8.1               |
 
 <sup>1 End of Software Support includes both end of quality fixes and end of security fixes.</sup><br>
 <sup>2 The End of Software Support date for 2.3 has been extended to April 2022 due to impacts from COVID-19.</sup>
+<sup>3 2.3.0-2.3.6 are dependent on PHP 7.3; 2.3.7 is dependent on PHP 7.4.</sup>
 
 See [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf).
