@@ -291,7 +291,7 @@ Regarding the GraphQL schema compatibility comparison, the output would be very 
 
 ## Run {{site.data.var.uct}} via PHPstorm plugin
 
-You can run the {{site.data.var.uct}} with a run configuration via the PHPstorm plugin. See the [Upgrade Compatibility Tool Run Configuration]({{site.baseurl}}/guides/v2.4/ext-best-practices/phpstorm/uct-run-configuration.html) topic for more information.
+You can run the {{site.data.var.uct}} with a run configuration via the PHPstorm plugin. See the [Upgrade Compatibility Tool Run Configuration]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpstorm/uct-run-configuration.html) topic for more information.
 
 ## Troubleshooting
 

@@ -18,6 +18,10 @@ pages:
           url: /contributor-guide/pull-request-tests.html
           versionless: true
 
+        - label: Adding Code Inspections with PHPStorm plugin
+          url: /contributor-guide/phpstorm-code-inspections.html
+          versionless: true
+
     - label: Docs Contributions
       children:
         - label: Contribution Guidelines
