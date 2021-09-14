@@ -5,25 +5,7 @@ functional_areas:
   - Standards
 ---
 
-Best practices for several issues within the PHPStorm Plugin.
-
-### Integrated issue reporting
-
-There is now an extension point for the errorHandler to integrate the plugin with the IDE's dialog to report fatal errors.
-
-*  When an issue occurred click on the `See details and submit report` link for reporting an issue.
-
-*  Fill the issue description and click on the `Report Me` button:
-
-![]({{ site.baseurl }}/common/images/phpstorm/report-me.png)
-
-*  Change the auto generated issue title to the proper one:
-
-![]({{ site.baseurl }}/common/images/phpstorm/issue-title.png)
-
-*  Fill the rest with available information about an issue (such as steps to reproduce, expected behaviour etc.) and click on the `Submit new issue` button:
-
-![]({{ site.baseurl }}/common/images/phpstorm/issue-description.png)
+Best practices for several issues within the PHPStorm plugin.
 
 ### JS and CSS support for Copy Magento Path action
 

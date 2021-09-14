@@ -34,7 +34,6 @@ pages:
 
     - label: PHPStorm plugin
       url: /ext-best-practices/phpstorm/introduction.html
-      exclude_versions: ["2.3"]
       children:
 
         - label: Code generation
@@ -43,14 +42,17 @@ pages:
         - label: Code inspection
           url: /ext-best-practices/phpstorm/code-inspection.html
 
-        - label: Extra
+        - label: New Features
           url: /ext-best-practices/phpstorm/extra.html
+
+        - label: Issue reporting
+          url: /ext-best-practices/phpstorm/issue-reporting.html
 
         - label: Inspections
           url: /ext-best-practices/phpstorm/inspections.html
 
         - label: Run the Upgrade Compatibility Tool
-          url: /ext-best-practices/phpstorm/run-configuration.html
+          url: /ext-best-practices/phpstorm/uct-run-configuration.html
 
     - label: Storefront
       url: /ext-best-practices/storefront/storefront-best-practices.html

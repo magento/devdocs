@@ -1,12 +1,11 @@
 ---
 group: extension-best-practices
-title: Plugin Code Inspections
+title: Adding Code Inspections
 functional_areas:
   - Standards
 ---
 
-The IntelliJ Platform provides tools designed for static code analysis called code inspections,
-which help the user maintain and clean up code without actually executing it.
+The IntelliJ Platform provides tools designed for static code analysis called code inspections, which help the user maintain and clean up code without actually executing it.
 Read more in the [official documentation](https://plugins.jetbrains.com/docs/intellij/code-inspections.html).
 
 The plugin inspections could be found in the `Settings | Preferences... | Editor | Inspections`.

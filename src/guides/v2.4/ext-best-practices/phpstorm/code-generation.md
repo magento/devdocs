@@ -5,7 +5,7 @@ functional_areas:
   - Standards
 ---
 
-The PHPStorm Plugin enables features and functionality to assist developers in creating custom extensions.
+The PHPStorm plugin enables features and functionality to assist developers in creating custom extensions.
 
 ### XML file header
 
