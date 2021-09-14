@@ -9,7 +9,7 @@ Adobe continually strives to find the right balance between making product upgra
 
 Adobe releases security and functional patches for each supported release line of {{site.data.var.ee}} and {{site.data.var.ce}}.
 
-The following table provides the dates for scheduled releases in 2022 (dates are subject to change):
+The following table provides the dates for scheduled releases (dates are subject to change):
 
 | Release                                          | Versions                                  | {{site.data.var.ee}} Beta | {{site.data.var.ee}} Pre-release | {{site.data.var.ee}} & {{site.data.var.ce}}<br>General Availability |
 |--------------------------------------------------|-------------------------------------------|---------------------------|----------------------------------|---------------------------------------------------------------------|
@@ -21,11 +21,9 @@ The following table provides the dates for scheduled releases in 2022 (dates are
 | August 2022<br>Feature + patch release           | 2.4.5<br>2.4.4-p1                         | \-\-                      | July 26, 2022                    | August 9, 2022                                                      |
 | October 2022<br>Feature + security patch release | 2.4.5-p1<sup>2</sup>                      | \-\-                      | September 27, 2022               | October 11, 2022                                                    |
 
-<sup>\-\-</sup> Indicates items that are not applicable to this release.
-
-<sup>1</sup> This is the last patch release for the 2.3.x release line. The 2.3.x release line reaches End of Life (EOL) in April 2022.
-
-<sup>2</sup> There is no full patch release in October 2022.
+<sup>\-\- Indicates items that are not applicable to this release.</sup><br>
+<sup>1 This is the last patch release for the 2.3.x release line. The 2.3.x release line reaches End of Life (EOL) in April 2022.</sup><br>
+<sup>2 There is no full patch release in October 2022.</sup><br>
 
 {:.bs-callout-info}
 We have introduced a [new policy]({{ site.baseurl }}/release/lifecycle-policy.html) that applies to our supported release lines. To learn more about the new strategy behind our 2022 release calendar and lifecycle policy, visit our blog.

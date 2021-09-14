@@ -21,8 +21,7 @@ For {{site.data.var.ee}} 2.3 and subsequent releases:
 | {{site.data.var.ee}} 2.4.0-2.4.3 | July 2020     | November 2022                       | PHP 7.4               |
 | {{site.data.var.ee}} 2.4.4-2.4.6 | TBA           | November 2024                       | PHP 8.1               |
 
-*<sup>1</sup> End of Software Support includes both end of quality fixes and end of security fixes.*
-
-*<sup>2</sup> The End of Software Support date for 2.3 has been extended to April 2022 due to impacts from COVID-19.*
+<sup>1 End of Software Support includes both end of quality fixes and end of security fixes.</sup><br>
+<sup>2 The End of Software Support date for 2.3 has been extended to April 2022 due to impacts from COVID-19.</sup>
 
 See [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf).
