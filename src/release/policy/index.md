@@ -101,3 +101,4 @@ Related topics
 -  [Planning and Budgeting for Commerce Upgrade Cycles](https://magento.com/sites/default/files8/2019-08/Magento-Release-Cycle-Infosheet_Aug_2019.pdf)
 -  [Versioning]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/versioning/).
 -  [Upcoming releases]({{ site.baseurl }}/release/)
+-  [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf)
