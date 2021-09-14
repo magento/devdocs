@@ -3,6 +3,8 @@ group: extension-best-practices
 title: Code inspection
 functional_areas:
   - Standards
+redirect_from:
+- guides/v2.3/ext-best-practices/phpstorm/code-inspection.html
 ---
 
 ### Web API XML service tag attributes inspections

@@ -3,6 +3,8 @@ group: extension-best-practices
 title: Issue reporting
 functional_areas:
   - Standards
+redirect_from:
+- guides/v2.3/ext-best-practices/phpstorm/issue-reporting.html
 ---
 
 There is now an extension point for the errorHandler to integrate the plugin with the IDE's dialog to report fatal errors.

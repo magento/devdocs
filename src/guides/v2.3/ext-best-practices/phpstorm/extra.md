@@ -3,6 +3,8 @@ group: extension-best-practices
 title: New Features
 functional_areas:
   - Standards
+redirect_from:
+- guides/v2.3/ext-best-practices/phpstorm/extra.html
 ---
 
 Best practices for several issues within the PHPStorm plugin.

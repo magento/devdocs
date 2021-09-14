@@ -3,6 +3,8 @@ group: extension-best-practices
 title: Adding Code Inspections
 functional_areas:
   - Standards
+redirect_from:
+- guides/v2.3/ext-best-practices/phpstorm/inspections.html
 ---
 
 The IntelliJ Platform provides tools designed for static code analysis called code inspections, which help the user maintain and clean up code without actually executing it.

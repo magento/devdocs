@@ -3,6 +3,8 @@ group: extension-best-practices
 title: Code generation
 functional_areas:
   - Standards
+redirect_from:
+- guides/v2.3/ext-best-practices/phpstorm/code-generation.html
 ---
 
 The PHPStorm plugin enables features and functionality to assist developers in creating custom extensions.
