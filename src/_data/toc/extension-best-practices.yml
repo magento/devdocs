@@ -42,7 +42,7 @@ pages:
         - label: Code inspection
           url: /ext-best-practices/phpstorm/code-inspection.html
 
-        - label: New Features
+        - label: New features
           url: /ext-best-practices/phpstorm/extra.html
 
         - label: Issue reporting

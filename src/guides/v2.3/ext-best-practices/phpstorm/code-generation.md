@@ -5,18 +5,18 @@ functional_areas:
   - Standards
 ---
 
-The PHPStorm plugin enables features and functionality to assist developers in creating custom extensions.
+The PHPStorm plugin enables features and functionality to help you create custom extensions.
 
 ### XML file header
 
 The new include code template was added to the generated with the plugin XML files.
-To configure it go to the `Preferences -> Editor -> File and Code Templates -> Includes -> XML File Header`:
+To configure it, go to the `Preferences -> Editor -> File and Code Templates -> Includes -> XML File Header`:
 
 ![]({{site.baseurl}}/common/images/phpstorm/xml-file-header.png)
 
 #### Usage
 
-Any generated XML file will have this header, as for example:
+All generated XML files include the header, for example:
 
 ![]({{site.baseurl}}/common/images/phpstorm/xml-file-header-in-file.png)
 

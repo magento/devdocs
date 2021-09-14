@@ -1,11 +1,11 @@
 ---
 group: extension-best-practices
-title: New Features
+title: New features
 functional_areas:
   - Standards
 ---
 
-Best practices for several issues within the PHPStorm plugin.
+The following sections describe best practices for using the PHPStorm plugin.
 
 ### JS and CSS support for Copy Magento Path action
 

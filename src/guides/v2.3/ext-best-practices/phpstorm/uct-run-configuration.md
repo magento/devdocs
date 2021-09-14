@@ -11,14 +11,14 @@ Run Configurations are used to run internal and external processes from within I
 
 See the [Run/Debug configurations topic](https://www.jetbrains.com/help/idea/run-debug-configuration.html) in the IntelliJ IDEA to understand the concept of a run configuration.
 
-The Run Configuration is a Graphical User Interface (GUI) for the {{site.data.var.uct}}. This allows the {{site.data.var.uct}} instance to be configured via composer. It is recommended that the {{site.data.var.uct}} is installed in the current project. However, if the {{site.data.var.uct}} is located outside the current project, a message is shown alerting of the possibility to download and install {{site.data.var.uct}} in the current project.
+The Run Configuration is a Graphical User Interface (GUI) for the {{site.data.var.uct}}. This allows the {{site.data.var.uct}} instance to be configured using Composer. We recommend that you install the {{site.data.var.uct}} in the current project. However, if the {{site.data.var.uct}} is located outside the current project, a message displays providing an optoin to download and install it in the current project.
 
 {:.bs-callout-warning}
-The {{site.data.var.uct}} is an {{site.data.var.ee}} feature. You will need your {{site.data.var.ee}} license key to install it.
+The {{site.data.var.uct}} is an {{site.data.var.ee}} feature. You need your {{site.data.var.ee}} license key to install it.
 
 ![]({{site.baseurl}}/common/images/phpstorm/uct-run-configuration-1-min.gif)
 
-When you create a new run configuration for a specific tool, create it from one of the dedicated configuration templates, which implement the startup logic, defines the list of parameters and their default values.
+When you create a new run configuration for a specific tool, create it from one of the dedicated configuration templates. Templates implement the startup logic and define the list of parameters and their default values.
 
 The {{site.data.var.uct}} Run Configuration template is located in the PHPStorm plugin menu, under **Run/Debug configurations** > **Add New Configuration** > **Upgrade Compatibility Tool**.
 
@@ -39,7 +39,7 @@ These are the main components of the {{site.data.var.uct}} Run Configuration tem
 
 See [Run]({{site.baseurl}}/upgrade-compatibility-tool/run.html) topic for more information on these specific options of the {{site.data.var.uct}}.
 
-Once the template is configured correctly, you can run the {{site.data.var.uct}} via a single click in your Run Configuration GUI.
+After you correctly configure the template, you can run the {{site.data.var.uct}} with a single click in your Run Configuration GUI.
 
 ## Run the tool
 

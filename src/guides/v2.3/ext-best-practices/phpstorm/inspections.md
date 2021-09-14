@@ -1,22 +1,23 @@
 ---
 group: extension-best-practices
-title: Adding Code Inspections
+title: Adding code inspections
 functional_areas:
   - Standards
 ---
 
-The IntelliJ Platform provides tools designed for static code analysis called code inspections, which help the user maintain and clean up code without actually executing it.
+The IntelliJ Platform provides tools designed for static code analysis called code inspections, which help you maintain and clean up code without actually executing it.
 Read more in the [official documentation](https://plugins.jetbrains.com/docs/intellij/code-inspections.html).
 
-The plugin inspections could be found in the `Settings | Preferences... | Editor | Inspections`.
+you can find plugin inspections  in `Settings | Preferences... | Editor | Inspections`.
 Use a filter to find only the plugin inspections: `Magento 2`.
 
 ![Image of the Magento 2 Group Inspections]({{site.baseurl}}/common/images/phpstorm/Intellij-idea-plugin-editor-local-inspections.png)
 
 See [Inspections topic](https://jetbrains.design/intellij/text/inspections/) in the IntelliJ Platform UI Guidelines
-on naming, writing description, and message texts for inspections to avoid basic naming conventions issues before code review.
+for naming, writing descriptions, and messages for inspections to avoid basic naming convention issues before code review.
 
 ### To add a new inspection
+Adding a new code inspection includes:
 
 1. Declaring an inspection in the plugin configuration file
 1. Implementing a local inspection class to inspect code in the IntelliJ Platform-based IDE editor
@@ -28,7 +29,7 @@ on naming, writing description, and message texts for inspections to avoid basic
 
 ### Declaring an inspection in the plugin configuration file
 
-All plugin inspections declared in the `<extensions defaultExtensionNs="com.intellij">` XML node of the plugin configuration file.
+You must declare all plugin inspections in the `<extensions defaultExtensionNs="com.intellij">` XML node of the plugin configuration file.
 
 For example, we will implement a local inspection tool for checking preference XML tag attributes (`di.xml` file)
 if they are valid classes FQNs.
@@ -113,9 +114,9 @@ All visitors should extend `com.intellij.psi.PsiElementVisitor`.
 | `JSON` | `com.intellij.json.psi.JsonElementVisitor` |
 | `JavaScript` | `com.intellij.psi.PsiElementVisitor` |
 
-Let's implement new `XmlElementVisitor` that overrides `visitXmlTag` method. That visitor will check all xml tags
-in the all xml files. We should dedicate it to check only expected xml files (`di.xml`) and expected xml tags (`<type/>`).
-That could be easily be done with the next part of code:
+Let's implement new `XmlElementVisitor` that overrides `visitXmlTag` method. That visitor will check all XML tags
+in all XML files. We should dedicate it to check only expected XML files (`di.xml`) and expected XML tags (`<type/>`).
+Use the following code to check only expected XML files:
 
 ```java
 final PsiFile file = xmlTag.getContainingFile();
@@ -126,15 +127,15 @@ if (!file.getName().equals(ModuleDiXml.FILE_NAME)
 }
 ```
 
-Now we can access `<type/>` tag's `name` attribute to check its value:
+Now we can access the `<type/>` tag's `name` attribute to check its value:
 
 ```java
 final XmlAttribute nameAttribute = xmlTag.getAttribute(ModuleDiXml.NAME_ATTR);
 ```
 
 The `XmlTag.getAttribute()` method returns `@Nullable` value. We should check if our attribute is accessible for working with it.
-Also, later we will need to use `XmlTag.getValueElement()` method to register problem by `ProblemsHolder` if it occurs.
-The `XmlTag.getValueElement()` method also returns `@Nullable` value. Let's use this code to skip visiting not correct XML attributes:
+Also, later we will need to use the `XmlTag.getValueElement()` method to register problems using `ProblemsHolder` if they occur.
+The `XmlTag.getValueElement()` method also returns `@Nullable` value. Let's use this code to skip checking incorrect XML attributes:
 
 ```java
 if (nameAttribute == null || nameAttribute.getValue() == null || nameAttribute.getValueElement() == null) {
@@ -142,8 +143,8 @@ if (nameAttribute == null || nameAttribute.getValue() == null || nameAttribute.g
 }
 ```
 
-Now we can access attributes values. We can check if attribute value is existing class by using [PhpClassExistenceValidator] type instance.
-To report problem on the `name` attribute value you can use the next code snippet:
+Now we can access attribute values. We can check if an attribute value is an existing class by using the [PhpClassExistenceValidator] type instance.
+To report problem with the `name` attribute value, you can use the following code:
 
 ```java
 problemsHolder.registerProblem(
@@ -156,24 +157,27 @@ problemsHolder.registerProblem(
 );
 ```
 
-You cannot access tag value of PsiElement type.
-So you can just report problem for tag element, as it is done by Intellij Idea inspections, for example: `com.intellij.xml.util.CheckEmptyTagInspection`.
+You cannot access the tag value of the `PsiElement` type.
+You should report problems with the tag element similar to Intellij Idea inspections. For example: `com.intellij.xml.util.CheckEmptyTagInspection`.
 
 So, there is a full example: [InvalidDependencyInjectionTypeInspection]
 
-### Writing an HTML description of the inspection for display in the inspection preferences panel
+### Writing HTML descriptions
 
-You must describe all inspections in the description file. To do this you can add a new HTML file by the next path:
+This section shows you how to display an HTML description of the inspection in the inspection preferences panel.
+
+
+You must describe all inspections in the description file. To do this, you can add a new HTML file to the following path:
 `./resources/inspectionDescriptions/{shortName}.html`, where `{shortName}` is a `shortName` attribute value in the
-local inspection declaration. Or you can just use Intellij Idea automation for this (preferred way ).
-All inspection implementation classes have highlighted class name if they don't have description file and quick fix to create it:
+local inspection declaration. Or you can just use Intellij Idea automation to do this (preferred).
+All inspection implementation classes have highlighted class names if they don't have description files. Here's a quick fix to create it:
 ![Create Inspection Description File Quick Fix]({{site.baseurl}}/common/images/phpstorm/Intellij-idea-plugin-create-inspection-description-quick-fix.png)
 
 Use [Inspections topic](https://jetbrains.design/intellij/text/inspections/) to write better descriptions for inspections using naming conventions.
 
 ### Create a unit test for the inspection
 
-You must deliver each inspection with the unit test for it. The root folder for all inspections unit tests is a `./tests/com/magento/idea/magento2plugin/inspections`. As base classes for your tests you should use predefined implementations based on languages.
+You must deliver each inspection with the unit test for it. The root folder for all inspections unit tests is `./tests/com/magento/idea/magento2plugin/inspections`. As base classes for your tests you should use predefined implementations based on languages.
 
 **Base classes implementations for different languages:**
 
@@ -183,8 +187,8 @@ You must deliver each inspection with the unit test for it. The root folder for 
 | `xml` | `com.magento.idea.magento2plugin.inspections.xml.InspectionXmlFixtureTestCase` |
 | `graphql` | `com.magento.idea.magento2plugin.inspections.graphqls.InspectionGraphqlsFixtureTestCase` |
 
-If you cover new language area, please extend `com.magento.idea.magento2plugin.inspections.BaseInspectionsTestCase` class and add new abstract class for that area.
-All test classes names should have a suffix Test and all testing methods should have a prefix test and detailed description in the annotation.
+If you cover new language area, please extend the `com.magento.idea.magento2plugin.inspections.BaseInspectionsTestCase` class and add a new abstract class for that area.
+All test class names should have the suffix "test" and all testing methods should have the prefix "test" and detailed description in the annotation.
 Also, you should enable testing inspection in the `setUp()` method.
 
 ```java

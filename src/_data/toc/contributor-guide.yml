@@ -18,7 +18,7 @@ pages:
           url: /contributor-guide/pull-request-tests.html
           versionless: true
 
-        - label: Adding Code Inspections with PHPStorm plugin
+        - label: PHPStorm plugin code inspections
           url: /contributor-guide/phpstorm-code-inspections.html
           versionless: true
 
