@@ -4,9 +4,11 @@ title: Integrate Product Recommendations into your Headless Storefront
 ee_only: True
 ---
 
-You can integrate Product Recommendations in a headless storefront using either PWA Studio or another frontend application, such as Next.js.
+You can integrate Product Recommendations in a headless storefront using either [PWA Studio](https://magento.github.io/pwa-studio/) or another frontend application, such as Next.js.
 
-In the context of PWA Studio, the storefront is the frontend application and Adobe Commerce is the connected backend service. PWA Studio uses the Commerce GraphQL and REST services to send or request data. If using another headless storefront, you use the Commerce Storefront SDKs to send or request data. These SDKs allow you to control the storefront event publishing, collecting, and fetching.
+If using another headless storefront, you use the Commerce Storefront SDKs to send or request data. These SDKs allow you to control the storefront event publishing, collecting, and fetching.
+
+Use the following workflow to attach your headless storefront to the Product Recommendations backend.
 
 1. [Install the Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html) module.
 
