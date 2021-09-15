@@ -9,14 +9,15 @@ The PHPStorm plugin enables features and functionality to help you create custom
 
 ### XML file header
 
-The new include code template was added to the generated with the plugin XML files.
-To configure it, go to the `Preferences -> Editor -> File and Code Templates -> Includes -> XML File Header`:
+The **XML file header** template is located in the PHPStorm plugin menu, under **Preferences** > **Editor** > **File and Code Templates**.
+
+You can configure the **XML file header** that appears in all generated XML files in the PHPStorm plugin GUI:
 
 ![]({{site.baseurl}}/common/images/phpstorm/xml-file-header.png)
 
 #### Usage
 
-All generated XML files include the header, for example:
+All generated XML files will include the **XML file header**:
 
 ![]({{site.baseurl}}/common/images/phpstorm/xml-file-header-in-file.png)
 
