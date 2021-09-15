@@ -166,7 +166,6 @@ So, there is a full example: [InvalidDependencyInjectionTypeInspection]
 
 This section shows you how to display an HTML description of the inspection in the inspection preferences panel.
 
-
 You must describe all inspections in the description file. To do this, you can add a new HTML file to the following path:
 `./resources/inspectionDescriptions/{shortName}.html`, where `{shortName}` is a `shortName` attribute value in the
 local inspection declaration. Or you can just use Intellij Idea automation to do this (preferred).
