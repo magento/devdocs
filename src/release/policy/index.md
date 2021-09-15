@@ -27,14 +27,13 @@ The following guidelines apply to minor releases:
 
 ## PATCH release
 
-Patch releases are primarily focused on delivering security and high-priority quality fixes to help you keep your sites performing at their peak.
+Patch releases are primarily focused on delivering security, performance, compliance and high-priority quality fixes to help you keep your sites performing at their peak.
 
 The following guidelines apply to patch releases:
 
 -  The latest-supported minor release will receive full functional quality fixes and enhancements.
 -  Changes that could break extensions or code compatibility are avoided. For example, code written for version 2.2.0 should still work on version 2.2.7.
 -  On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues and high-impact quality issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes.
--  Patch releases may include new features as long as they are not expected to break other code. New feature can be included in core code, as an extension (like Page Builder), or as an independent feature (like Live Search and Product Recommendations).
 
 ## SECURITY patch release
 
@@ -46,7 +45,7 @@ With security patch releases, you can keep your site more secure without app
 
 Each security patch release is based on the prior full patch release, hence it contains quality and security fixes from prior patch release and security fixes created between the prior full patch release and the security patch release.
 
-With the announcement of our [updated life cycle policy](https://magento.com/blog/updated-lifecycle-policy-magento-releases) [10/1/2020], our security patch releases are differentiated based on whether they are applicable to the latest-supported minor release or a part of a still-supported previous minor release line:
+With the announcement of our [new release strategy and updated lifecycle policy](https://magento.com/blog/updated-lifecycle-policy-magento-releases) [9/16/2021], our security patch releases are differentiated based on whether they are applicable to the latest-supported minor release or a part of a still-supported previous minor release line:
 
 -  **Security patch releases for the latest-supported minor release**:
 
