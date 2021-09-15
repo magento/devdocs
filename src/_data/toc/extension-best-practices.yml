@@ -43,13 +43,13 @@ pages:
           url: /ext-best-practices/phpstorm/code-inspection.html
 
         - label: New features
-          url: /ext-best-practices/phpstorm/extra.html
+          url: /ext-best-practices/phpstorm/new-features.html
 
         - label: Issue reporting
           url: /ext-best-practices/phpstorm/issue-reporting.html
 
-        - label: Inspections
-          url: /ext-best-practices/phpstorm/inspections.html
+        - label: Adding code inspections
+          url: /ext-best-practices/phpstorm/adding-code-inspections.html
 
         - label: Run the Upgrade Compatibility Tool
           url: /ext-best-practices/phpstorm/uct-run-configuration.html

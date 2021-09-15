@@ -9,4 +9,4 @@ See the [Code generation]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpsto
 
 The PHPStorm plugin includes shortcuts for functional testing, RequireJS mapping, GraphQL, plugin declaration inspection, code generation, and much more.
 
-See the [Adding Code Inspections]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpstorm/inspections.html) topic for more information on static code analysis.
+See the [Adding Code Inspections]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpstorm/adding-code-inspections.html) topic for more information on static code analysis.
