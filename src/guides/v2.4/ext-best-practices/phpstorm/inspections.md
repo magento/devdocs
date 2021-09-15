@@ -1,1 +1,0 @@
-../../../v2.3/ext-best-practices/phpstorm/inspections.md
