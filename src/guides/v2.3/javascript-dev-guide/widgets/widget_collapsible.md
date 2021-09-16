@@ -295,7 +295,7 @@ $("#element").collapsible("option","header",".header");
 ```
 
 ### `icons` {#fedg_collaps_icons}
-The classes for icons to be used in headers. If no classes are specified, icons are not be created. A new span is created and appended to the header, the classes for this span are automatically changed whenever the content gets expanded/collapsed.
+The classes for icons to be used in headers. If no classes are specified, icons are not be created. A new span is created and prepended to the header, the classes for this span are automatically changed whenever the content gets expanded/collapsed.
 
 **Type**: String
 
