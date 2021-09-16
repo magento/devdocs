@@ -3,7 +3,7 @@ group: payment-services
 title: Customize buttons and messaging
 ---
 
-You can easily customize [PayPal Smart button styling](#paypal-smart-buttons) and [PayPal PayLater messaging, styling, and layout](#paypal-paylater) on the product page, in the shopping cart, and in the mini cart for Payment Services.
+You can easily customize [PayPal Smart button styling](#paypal-smart-buttons) and [PayPal PayLater messaging, styling, and layout](#paypal-paylater) on the product page, the checkout page, in the shopping cart, and in the mini cart.
 
 ## PayPal Smart Buttons
 
@@ -58,7 +58,7 @@ To easily customize the PayPal PayLater messaging, style, and layout, create a m
 
 ### Create module for product page, cart, and minicart
 
-1. In the `di.xml` file, create a new `type` entitled `Magento\PaymentServicesPaypal\Block\Message`.
+1. In the [`di.xml` file]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/build/di-xml-file.html), create a new `type` entitled `Magento\PaymentServicesPaypal\Block\Message`.
 1. In the `arguments` block, specify one argument entitled `componentConfig` and `xsi:type="array"`.
 1. Under this new argument, specify three items entitled `product`, `cart`, and `minicart` with `xsi:type="array"`.
 
