@@ -76,7 +76,7 @@ To easily customize the PayPal PayLater messaging, style, and layout, create a m
 <type name="Magento\PaymentServicesPaypal\Block\Message">
         <arguments>
             <argument name="componentConfig" xsi:type="array">
-                <item name="product" xsi:type="array">                   
+                <item name="product" xsi:type="array">
                     <item name="styles" xsi:type="array">
                         <item name="layout" xsi:type="string">text</item>
                         <item name="logo" xsi:type="array">
