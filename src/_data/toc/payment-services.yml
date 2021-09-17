@@ -12,6 +12,10 @@ pages:
 - label: Configure Payment Services
   url: /payment-services/configure-payments.html
   versionless: true
+  children:
+    - label: Customize buttons and messaging
+      url: /payment-services/customize-buttons-messaging.html
+      versionless: true
 
 - label: Security
   url: /payment-services/security.html
