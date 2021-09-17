@@ -11,7 +11,7 @@ To customize Smart Button styling, create a module with a dependency on `Magento
 
 1. In the [`di.xml` file]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/build/di-xml-file.html), create a new type named `Magento\PaymentServicesPaypal\Block\SmartButtons`.
 1. In the `arguments` block, specify one argument named `componentConfig` and `xsi:type="array"`.
-1. Under this new argument, specify three items named `product`, `cart`, and `minicart` with `xi:type="array"`.
+1. Under this new argument, specify three items named `product`, `cart`, and `minicart` with `xsi:type="array"`.
 1. Under each item, specify a nested item named `styles` with `xsi:type="array"`.
 1. Reference [PayPal's available styling](https://developer.paypal.com/docs/archive/checkout/how-to/customize-button/) and apply any desired parameters as nested items.
 
