@@ -27,9 +27,9 @@ A complete list of inspections that are already available in the original tool, 
 
 This feature can be used in three different ways, from the user's point of view:
 
-*  run compatibility inspections in a [run tool window](https://www.jetbrains.com/help/idea/run-tool-window.html), with the familiar output, as in the original Adobe Commerce [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html)
-*  run inspections in real time, on the files that are opened in the editor (default)
-*  [run inspections manually](https://www.jetbrains.com/help/idea/running-inspections.html) through the user interface on the selected scope of files (default)
+*  Run compatibility inspections in a [run tool window](https://www.jetbrains.com/help/idea/run-tool-window.html), with the familiar output, as in the original Adobe Commerce [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html)
+*  Run inspections in real time, on the files that are opened in the editor (default)
+*  [Run inspections manually](https://www.jetbrains.com/help/idea/running-inspections.html) through the user interface on the selected scope of files (default)
 
 It was developed with an aim to use IntelliJ IDEA in the most effective way. So, inspections that are running during
 the code analysis can alternatively be enabled in the [inspections settings](https://www.jetbrains.com/help/idea/code-inspection.html)
@@ -66,10 +66,10 @@ For this inspection type you do not need to have UCT inspections enabled for you
 
 **Advantages from using this inspection:**
 
-*  all problems are gathered in one place
-*  there are links to the problem files, a stored report in json format, links to the web page with detailed descriptions of all the error codes
-*  this report can be easily used from the merchant, management or agency side
-*  there is a complexity score that helps measure the upgrade complexity
+*  All problems are gathered in one place
+*  There are links to the problem files, a stored report in json format, links to the web page with detailed descriptions of all the error codes
+*  This report can be easily used from the merchant, management or agency side
+*  There is a complexity score that helps measure the upgrade complexity
 
 Before using it, you should configure the built-in UCT in a same way to the CLI Run Configuration.
 All fields, as above, are described in the Upgrade Compatibility Tool Run Configuration section and are more detailed
