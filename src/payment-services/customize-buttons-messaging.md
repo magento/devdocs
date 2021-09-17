@@ -9,10 +9,10 @@ You can easily customize [PayPal Smart button styling](#paypal-smart-buttons) an
 
 To easily customize Smart Button styling, create a module with a dependency on `Magento_PaymentServicesPaypal`.
 
-1. In the [`di.xml` file]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/build/di-xml-file.html), create a new type entitled `Magento\PaymentServicesPaypal\Block\SmartButtons`.
-1. In the `arguments` block, specify one argument entitled `componentConfig` and `xsi:type="array"`.
-1. Under this new argument, specify three items entitled `product`, `cart`, and `minicart` with `xi:type="array"`.
-1. Under each item, specify a nested item entitled `styles` with `xsi:type="array"`.
+1. In the [`di.xml` file]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/build/di-xml-file.html), create a new type named `Magento\PaymentServicesPaypal\Block\SmartButtons`.
+1. In the `arguments` block, specify one argument named `componentConfig` and `xsi:type="array"`.
+1. Under this new argument, specify three items named `product`, `cart`, and `minicart` with `xi:type="array"`.
+1. Under each item, specify a nested item named `styles` with `xsi:type="array"`.
 1. Reference [PayPal's available styling](https://developer.paypal.com/docs/archive/checkout/how-to/customize-button/) and apply any desired parameters as nested items.
 
 ``` xml
@@ -58,18 +58,18 @@ To easily customize the PayPal PayLater messaging, style, and layout, create a m
 
 ### Create module for product page, cart, and minicart
 
-1. In the [`di.xml` file]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/build/di-xml-file.html), create a new `type` entitled `Magento\PaymentServicesPaypal\Block\Message`.
-1. In the `arguments` block, specify one argument entitled `componentConfig` and `xsi:type="array"`.
-1. Under this new argument, specify three items entitled `product`, `cart`, and `minicart` with `xsi:type="array"`.
+1. In the [`di.xml` file]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/build/di-xml-file.html), create a new `type` named `Magento\PaymentServicesPaypal\Block\Message`.
+1. In the `arguments` block, specify one argument named `componentConfig` and `xsi:type="array"`.
+1. Under this new argument, specify three items named `product`, `cart`, and `minicart` with `xsi:type="array"`.
 
 ### Create module for checkout page
 
-1. In the [`di.xml` file]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/build/di-xml-file.html), create a new type entitled `Magento\PaymentServicesPaypal\Model\SmartButtonsConfigProvider`.
-1. In the `arguments` block, specify one argument entitled `messageStyles` and `xsi:type="array"`.
+1. In the [`di.xml` file]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/build/di-xml-file.html), create a new type named `Magento\PaymentServicesPaypal\Model\SmartButtonsConfigProvider`.
+1. In the `arguments` block, specify one argument named `messageStyles` and `xsi:type="array"`.
 
 ### Edit the styling
 
-1. Under each element (for the `product`, `cart`, `minicart`, or `checkout`), specify a nested item entitled `styles` with `xsi:type="array"`.
+1. Under each element (for the `product`, `cart`, `minicart`, or `checkout`), specify a nested item named `styles` with `xsi:type="array"`.
 1. Reference [PayPal's available styling](https://developer.paypal.com/docs/business/pay-later/us/integrate/customize-messages/) and apply any desired parameters as nested items.
 
 ``` xml
