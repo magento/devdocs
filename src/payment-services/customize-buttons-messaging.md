@@ -7,7 +7,7 @@ You can easily customize [PayPal Smart button styling](#paypal-smart-buttons) an
 
 ## PayPal Smart Buttons
 
-To easily customize Smart Button styling, create a module with a dependency on `Magento_PaymentServicesPaypal`.
+To customize Smart Button styling, create a module with a dependency on `Magento_PaymentServicesPaypal`.
 
 1. In the [`di.xml` file]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/build/di-xml-file.html), create a new type named `Magento\PaymentServicesPaypal\Block\SmartButtons`.
 1. In the `arguments` block, specify one argument named `componentConfig` and `xsi:type="array"`.
@@ -54,7 +54,7 @@ To easily customize Smart Button styling, create a module with a dependency on `
 
 ## PayPal PayLater
 
-To easily customize the PayPal PayLater messaging, style, and layout, create a module with a dependency on `Magento_PaymentServicesPaypal`, for the [product page, cart, minicart](#create-module-for-product-page-cart-and-minicart), or [checkout page](#create-module-for-checkout-page), and then [edit the styling of the module](#edit-the-styling).
+To customize the PayPal PayLater messaging, style, and layout, create a module with a dependency on `Magento_PaymentServicesPaypal`, for the [product page, cart, minicart](#create-module-for-product-page-cart-and-minicart), or [checkout page](#create-module-for-checkout-page), and then [edit the styling of the module](#edit-the-styling).
 
 ### Create module for product page, cart, and minicart
 
