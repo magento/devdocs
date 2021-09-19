@@ -32,6 +32,31 @@ pages:
         - label: Coding FAQ
           url: /ext-best-practices/extension-coding/coding-faq.html
 
+    - label: PHPStorm plugin
+      url: /ext-best-practices/phpstorm/introduction.html
+      children:
+
+        - label: Code generation
+          url: /ext-best-practices/phpstorm/code-generation.html
+
+        - label: Code inspection
+          url: /ext-best-practices/phpstorm/code-inspection.html
+
+        - label: Adding code inspections
+          url: /ext-best-practices/phpstorm/adding-code-inspections.html
+
+        - label: New features
+          url: /ext-best-practices/phpstorm/new-features.html
+
+        - label: Issue reporting
+          url: /ext-best-practices/phpstorm/issue-reporting.html
+
+        - label: Run the Upgrade Compatibility Tool
+          url: /ext-best-practices/phpstorm/uct-run-configuration.html
+
+        - label: The built-in Upgrade Compatibility Tool (MVP)
+          url: /ext-best-practices/phpstorm/built-in-upgrade-compatibility-tool.html
+
     - label: Storefront
       url: /ext-best-practices/storefront/storefront-best-practices.html
 
