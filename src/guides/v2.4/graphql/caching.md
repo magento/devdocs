@@ -3,16 +3,16 @@ group: graphql
 title: GraphQL caching
 ---
 
-Magento can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and retrieve large amounts of information from the database. Only queries submitted with an HTTP GET operation can be cached. POST queries cannot be cached.
+{{site.data.var.ee}} and {{site.data.var.ee}} can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and retrieve large amounts of information from the database. Only queries submitted with an HTTP GET operation can be cached. POST queries cannot be cached.
 
 ## Cached and uncached queries
 
 The definitions for some queries include cache tags. Full page caching uses these tags to keep track of cached content. They also allow public content to be invalidated. Private content invalidation is handled on the client side.
 
 {:.bs-callout-info}
-GraphQL allows you to make multiple queries in a single call. If you specify any query that Magento does not cache, Magento bypasses the cache for all queries in the call.
+GraphQL allows you to make multiple queries in a single call. If you specify any uncached query, the system bypasses the cache for all queries in the call.
 
-Magento caches the following queries:
+{{site.data.var.ee}} caches the following queries:
 
 *  `categories`
 *  `category` (deprecated)
@@ -23,7 +23,7 @@ Magento caches the following queries:
 *  `route`
 *  `urlResolver` (deprecated)
 
-Magento explicitly disallows caching the following queries.
+{{site.data.var.ee}} explicitly disallows caching the following queries.
 
 *  `cart`
 *  `country`
@@ -78,63 +78,9 @@ Adding factors could generate too many unique cache keys, thereby reducing the n
 
 ## Caching with Varnish
 
-We recommend setting up Varnish as a reverse proxy to serve the full page cache in a production environment. See [Configure and use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) for more information.
+For on-premise installations, we recommend setting up Varnish as a reverse proxy to serve the full page cache in a production environment. The template `vcl` file that ships with each release configures support for GraphQL caching. We recommend that you review the template file each release to determine whether you need to update the `default.vcl` on your system. To view the contents of the latest template file, you can [download a template file from the Admin](https://docs.magento.com/user-guide/system/cache-full-page.html) or review the `app/code/Magento/PageCache/etc/varnish6.vcl` file in the code base.
 
-Magento supports GraphQL caching with Varnish. If you have upgraded from a previous version, you can enable GraphQL caching by generating a new template file, or by editing the `default.vcl` file on your system to match the current default template for your version of Varnish.
-
-If you choose to edit an existing `default.vcl` file, update the `vcl_hash` subroutine to check whether the request URL contains `graphql`, as follows:
-
-```text
-sub vcl_hash {
-    if (req.http.cookie ~ "X-Magento-Vary=") {
-        hash_data(regsub(req.http.cookie, "^.*?X-Magento-Vary=([^;]+);*.*$", "\1"));
-    }
-
-    # For multi site configurations to not cache each other's content
-    if (req.http.host) {
-        hash_data(req.http.host);
-    } else {
-        hash_data(server.ip);
-    }
-
-    if (req.url ~ "/graphql") {
-        call process_graphql_headers;
-    }
-
-    # To make sure http users don't see ssl warning
-    if (req.http./* {{ ssl_offloaded_header }} */) {
-        hash_data(req.http./* {{ ssl_offloaded_header }} */);
-    }
-}
-```
-
-Then add the `process_graphql_headers` subroutine:
-
-```text
-sub process_graphql_headers {
-    if (req.http.Store) {
-        hash_data(req.http.Store);
-    }
-    if (req.http.Content-Currency) {
-        hash_data(req.http.Content-Currency);
-    }
-}
-```
-
-Query results should not be cached for logged in customers, because it cannot be guaranteed that these results are applicable to all customers. For example, you can create multiple customer groups and set up different product prices for each group. Caching results like these might cause customers to see the prices of another customer group.
-
-As of Magento 2.4.0, the following snippet is included in the `default.vcl` file to prevent customers from seeing the incorrect data from cached results. If you are upgrading from a previous version, you might need to add the following to your `.vcl` file in the `vcl_recv` subroutine before the return (hash):
-
-```text
-# Authenticated GraphQL requests should not be cached by default
-if (req.url ~ "/graphql" && req.http.Authorization ~ "^Bearer") {
-    return (pass);
-}
-```
-
-This snippet prevents any query with an authorization token from being cached.
-
-[Configure Varnish and your web server]({{page.baseurl}}/config-guide/varnish/config-varnish-configure.html) further describes how to configure the `default.vcl` file.
+See [Configure and use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) and [Configure Varnish and your web server]({{page.baseurl}}/config-guide/varnish/config-varnish-configure.html) for more information.
 
 ## Caching with Fastly
 
