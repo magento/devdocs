@@ -3,7 +3,7 @@ group: graphql
 title: GraphQL caching
 ---
 
-{{site.data.var.ee}} and {{site.data.var.ee}} can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and retrieve large amounts of information from the database. Only queries submitted with an HTTP GET operation can be cached. POST queries cannot be cached.
+Magento can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and retrieve large amounts of information from the database. Only queries submitted with an HTTP GET operation can be cached. POST queries cannot be cached.
 
 ## Cached and uncached queries
 
@@ -12,7 +12,7 @@ The definitions for some queries include cache tags. Full page caching uses thes
 {:.bs-callout-info}
 GraphQL allows you to make multiple queries in a single call. If you specify any uncached query, the system bypasses the cache for all queries in the call.
 
-{{site.data.var.ee}} caches the following queries:
+Magento caches the following queries:
 
 *  `categories`
 *  `category` (deprecated)
@@ -23,7 +23,7 @@ GraphQL allows you to make multiple queries in a single call. If you specify any
 *  `route`
 *  `urlResolver` (deprecated)
 
-{{site.data.var.ee}} explicitly disallows caching the following queries.
+Magento explicitly disallows caching the following queries.
 
 *  `cart`
 *  `country`
