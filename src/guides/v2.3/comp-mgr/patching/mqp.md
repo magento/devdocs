@@ -89,7 +89,7 @@ After upgrading to a new version of {{ site.data.var.ee }} or {{ site.data.var.c
 #### Apply individual patches
 
 {:.bs-callout-warning}
-We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system][].
+We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html).
 
 To apply a single patch, run the following command where `MAGETWO-XXXX` is the patch ID specified in the status table:
 
@@ -115,7 +115,7 @@ Consider keeping a list of applied patches in a separate location. You might nee
 #### Revert individual patches
 
 {:.bs-callout-warning}
-We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system][].
+We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html).
 
 To revert a single patch, run the following command where `MAGETWO-XXXX` is the patch ID specified in the status table:
 

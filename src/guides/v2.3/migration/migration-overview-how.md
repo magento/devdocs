@@ -24,7 +24,7 @@ The Data Migration Tool splits the migration process into three phases or *modes
 
 ## Steps
 
-The Data Migration Tool uses a list of *steps* within each mode to migrate a particular type of data. For example, in the Settings mode, there are two steps used to migrate the all the settings data: the Stores step and the Settings step. Details about the specific data that is migrated in each of these steps (as well as for steps in the other modes), can be found in the [Data Migration Tool Technical Specification].
+The Data Migration Tool uses a list of *steps* within each mode to migrate a particular type of data. For example, in the Settings mode, there are two steps used to migrate all the settings data: the Stores step and the Settings step. Details about the specific data that is migrated in each of these steps (as well as for steps in the other modes), can be found in the [Data Migration Tool Technical Specification].
 
 ![Migration Overview]
 
