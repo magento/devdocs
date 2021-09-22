@@ -10,7 +10,7 @@ These release notes describe the initial release of Live Search and include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
-## Live Search v1.1.0
+## Live Search v1.2.0
 
 -  Compatible with {{site.data.var.ee}} (EE): 2.4.x
 -  Compatible with {{site.data.var.ece}} (ECE): 2.4.x
