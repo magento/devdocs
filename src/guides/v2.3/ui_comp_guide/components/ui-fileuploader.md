@@ -36,7 +36,7 @@ Here is an example of how File Uploader component integrates with [Form]({{ page
         </settings>
         <field name="bar" formElement="fileUploader">
             <settings>
-                <label translate="true">Bar</label>
+                <label translate="true">Sound Check</label>
             </settings>
             <formElements>
                 <fileUploader>
