@@ -1,6 +1,84 @@
 ---
 title: Customer
 release: 2.4.3
-content: "The Magento_Customer module serves to handle the customer data (Customer,
-  Customer Address and Customer Group entities) both in the admin panel and the storefront.
-  \nFor customer passwords, the module implements upgrading hashes."
+content: |-
+  The Magento_Customer module serves to handle the customer data (Customer,
+  Customer Address and Customer Group entities) both in the admin panel and the 
+  storefront. For customer passwords, the module implements upgrading hashes.
+
+  #### Observer
+  This module observes the following events
+    `etc/events.xml`
+       `customer_address_save_before`  event in 
+       `Magento\Customer\Observer\BeforeAddressSaveObserver` file.
+       `customer_address_save_after`  event in 
+       `Magento\Customer\Observer\AfterAddressSaveObserver` file.
+       `sales_quote_save_after`  event in 
+       `Magento\Customer\Observer\Visitor\BindQuoteCreateObserver` file.
+       `customer_save_after_data_object`  event in 
+       `Magento\Customer\Observer\UpgradeOrderCustomerEmailObserver` file.
+       `customer_save_after_data_object`  event in 
+       `Magento\Customer\Observer\UpgradeQuoteCustomerEmailObserver` file.
+       `customer_customer_authenticated`  event in 
+       `Magento\Customer\Observer\CustomerGroupAuthenticate` file.
+       `catalog_rule_collection_load_after`  event in 
+       `Magento\Customer\Observer\CatalogRule\AddCustomerGroupExcludedWebsite` file.
+    `/etc/frontend/events.xml`
+       `controller_action_predispatch`  event in 
+       `Magento\Customer\Observer\Visitor\InitByRequestObserver` file.
+       `controller_action_postdispatch`  event in 
+       `Magento\Customer\Observer\Visitor\SaveByRequestObserver` file.
+       `customer_data_object_login`  event in 
+       `Magento\Customer\Observer\Visitor\BindCustomerLoginObserver` file.
+       `customer_logout`  event in 
+       `Magento\Customer\Observer\Visitor\BindCustomerLogoutObserver` file.
+       `customer_logout`  event in 
+       `Magento\Customer\Observer\LogLastLogoutAtObserver` file.
+       `checkout_quote_destroy`  event in 
+       `Magento\Customer\Observer\Visitor\BindQuoteDestroyObserver` file.
+       `customer_login`  event in 
+       `Magento\Customer\Observer\LogLastLoginAtObserver` file.
+       `customer_customer_authenticated`  event in 
+       `Magento\Customer\Observer\UpgradeCustomerPasswordObserver` file.
+       `customer_customer_authenticated`  event in 
+       `Magento\Customer\Observer\CustomerLoginSuccessObserver` file.
+
+  ### Layouts
+
+  The module interacts with the following layout handles
+
+    `view/adminhtml/layout`
+       `customer_address_edit`
+       `customer_group_index`
+       `customer_index_cart`
+       `customer_index_carts`
+       `customer_index_edit`
+       `customer_index_index`
+       `customer_index_newsletter`
+       `customer_index_orders`
+       `customer_index_viewcart`
+       `customer_index_viewwishlist`
+       `customer_online_index`
+    `view/frontend/layout`
+       `customer_account`
+       `customer_account_confirmation`
+       `customer_account_create`
+       `customer_account_createpassword`
+       `customer_account_edit`
+       `customer_account_forgotpassword`
+       `customer_account_index`
+       `customer_account_login`
+       `customer_account_logoutsuccess`
+       `customer_address_form`
+       `customer_address_index`
+       `default`
+  
+
+  ### UI components
+  This module extends following ui components located in the 
+    `view/adminhtml/ui_component`
+       `customer_address_form`
+       `customer_address_listing`
+       `customer_group_listing`
+       `customer_listing`
+       `customer_online_grid`
