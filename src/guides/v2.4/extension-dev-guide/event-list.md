@@ -1,107 +1,86 @@
 ---
 group: php-developer-guide
-title: List of Events
+title: List of events
 contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com
 ---
 
-## Overview
+This is the list of [event]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html) names ordered alphabetically.
+Each event contains a short description and a list of supported arguments.
 
-This is the list of all event names ordered alphabetically. Each event has a short description and a list of supported arguments.
+### abstract_search_result_load_after
 
-The list is divided into two sections: constant event names and dynamic event names.
+#### Use cases
 
-## Constant Event Names
+To modify product stock items and stock statuses.
 
-### 1. abstract_search_result_load_after
+#### Origins
 
-{:.procedure}
-Where it was introduced:
+`\Magento\Framework\Data\AbstractSearchResult`:
 
-*  `\Magento\Framework\Data\AbstractSearchResult`:
+```php
+protected function afterLoad()
+{
+   $this->eventManager->dispatch('abstract_search_result_load_after', ['collection' => $this]);
+```
 
-   ```php
-   protected function afterLoad()
-   {
-    $this->eventManager->dispatch('abstract_search_result_load_after', ['collection' => $this]);
-   ```
+*  `collection` is an object of `\Magento\Framework\Data\AbstractSearchResult`
 
-{:.procedure}
-Variables passed:
-
-*  `collection`: an object of `\Magento\Framework\Data\AbstractSearchResult`
-
-{:.procedure}
-A few classes that fire this event:
+#### Examples of classes that raise the event
 
 *  `\Magento\CatalogInventory\Model\ResourceModel\Stock\Collection`
 *  `\Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Collection`
 *  `\Magento\CatalogInventory\Model\ResourceModel\Stock\Status\Collection`
 
-{:.procedure}
-When to listen:
+### abstract_search_result_load_before
 
-*  One can listen to that event to modify product stock items and stock statuses.
+#### Use cases
 
-### 2. abstract_search_result_load_before
+To modify product stock items and stock statuses.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\Data\AbstractSearchResult`:
+`\Magento\Framework\Data\AbstractSearchResult`:
 
-   ```php
-   protected function beforeLoad()
-   {
-   $this->eventManager->dispatch('abstract_search_result_load_before', ['collection' => $this]);
-   ```
+```php
+protected function beforeLoad()
+{
+$this->eventManager->dispatch('abstract_search_result_load_before', ['collection' => $this]);
+```
 
-{:.procedure}
-Variables passed:
+*  `collection` is an object of `\Magento\Framework\Data\AbstractSearchResult`
 
-*  `collection`: an object of `\Magento\Framework\Data\AbstractSearchResult`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogInventory\Model\ResourceModel\Stock\Collection`
 *  `\Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Collection`
 *  `\Magento\CatalogInventory\Model\ResourceModel\Stock\Status\Collection`
 
-{:.procedure}
-When to listen:
+### adminhtml_block_eav_attribute_edit_form_init
 
-*  One can listen to that event to modify product stock items and stock statuses.
+#### Use cases
 
-### 3. adminhtml_block_eav_attribute_edit_form_init
+To modify backend attribute edit page form.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Eav\Block\Adminhtml\Attribute\Edit\Main\AbstractMain`:
+`\Magento\Eav\Block\Adminhtml\Attribute\Edit\Main\AbstractMain`:
 
-   ```php
-   protected function _initFormValue()
-   {
-   $this->eventManager->dispatch('adminhtml_block_eav_attribute_edit_form_init', ['form' => $this->getForm()]);
-   ```
+```php
+protected function _initFormValue()
+{
+$this->eventManager->dispatch('adminhtml_block_eav_attribute_edit_form_init', ['form' => $this->getForm()]);
+```
 
-{:.procedure}
-Variables passed:
+*  `form` is an object of `\Magento\Framework\Data\Form`
 
-*  `form`: an object of `\Magento\Framework\Data\Form`
-
-{:.procedure}
-Only one class fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit\Tab\Main`
 
-One can listen to that event to modify backend attribute edit page form.
+### adminhtml_block_html_before
 
-### 4. adminhtml_block_html_before
-
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Backend\Block\Template::_toHtml()`:
 
@@ -111,8 +90,6 @@ Where it was introduced:
    $this->_eventManager->dispatch('adminhtml_block_html_before', ['block' => $this]);
    ```
 
-   and
-
 *  `\Magento\Customer\\Block\Adminhtml\Edit\Tab\Carts::_toHtml()`:
 
    ```php
@@ -121,91 +98,77 @@ Where it was introduced:
    $this->_eventManager->dispatch('adminhtml_block_html_before', ['block' => $this]);
    ```
 
-{:.procedure}
-Variables passed:
+*  `block` is an object of `\Magento\Framework\View\Element\Template`
 
-*  `block`: an object of `\Magento\Framework\View\Element\Template`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\AdminNotification\Block\System\Messages`
 *  `\Magento\AdobeIms\Block\Adminhtml\SignIn`
 
-{:.procedure}
-When to listen:
+#### Use cases
 
-*  to modify backend block contents
+To modify backend block contents.
 
-### 5. adminhtml_block_promo_widget_chooser_prepare_collection
+### adminhtml_block_promo_widget_chooser_prepare_collection
 
-{:.procedure}
-Where it was introduced:
+#### Use cases
 
-*  `\Magento\SalesRule\Block\Adminhtml\Promo\Widget\Chooser::_prepareCollection()`:
+To modify collection of shopping cart rules used in a chooser widget.
 
-   ```php
-   protected function _prepareCollection()
-   {
-   ...
-   $this->_eventManager->dispatch(
-            'adminhtml_block_promo_widget_chooser_prepare_collection',
-            ['collection' => $collection]
-   );
-   ```
+#### Origins
 
-{:.procedure}
-Variables passed:
+`\Magento\SalesRule\Block\Adminhtml\Promo\Widget\Chooser::_prepareCollection()`:
 
-*  `collection`: an object of `\Magento\SalesRule\Model\ResourceModel\Rule\Collection`
+```php
+protected function _prepareCollection()
+{
+...
+$this->_eventManager->dispatch(
+         'adminhtml_block_promo_widget_chooser_prepare_collection',
+         ['collection' => $collection]
+);
+```
 
-{:.procedure}
-Only one class fires this event:
+*  `collection` is an object of `\Magento\SalesRule\Model\ResourceModel\Rule\Collection`
+
+#### Classes raising the event
 
 *  `\Magento\SalesRule\Block\Adminhtml\Promo\Widget\Chooser`
 
-{:.procedure}
-When to listen:
+### adminhtml_block_salesrule_actions_prepareform
 
-*  to modify collection of shopping cart rules used in a chooser widget
+#### Use cases
 
-### 6. adminhtml_block_salesrule_actions_prepareform
+To modify sales rule actions form.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Actions::addTabToForm()`:
+`\Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Actions::addTabToForm()`:
 
-   ```php
-   protected function addTabToForm($model
-                                 , $fieldsetId = 'actions_fieldset'
-                                 , $formName = 'sales_rule_form')
-   {
-   ...
-   $this->_eventManager->dispatch('adminhtml_block_salesrule_actions_prepareform'
-         , ['form' => $form]);
-   );
-   ```
+```php
+protected function addTabToForm($model
+                              , $fieldsetId = 'actions_fieldset'
+                              , $formName = 'sales_rule_form')
+{
+...
+$this->_eventManager->dispatch('adminhtml_block_salesrule_actions_prepareform'
+      , ['form' => $form]);
+);
+```
 
-{:.procedure}
-Variables passed:
+*  `form` is an object of `\Magento\Framework\Data\Form`
 
-*  `form`: an object of `\Magento\Framework\Data\Form`
-
-{:.procedure}
-Only one class fires this event:
+#### Classes raising the event
 
 *  `\Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Actions`
 
-{:.procedure}
-When to listen:
+### adminhtml_cache_flush_all
 
-*  to modify sales rule actions form
+#### Use cases
 
-### 7. adminhtml_cache_flush_all
+To perform actions **before** all cache is flushed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Backend\Controller\Adminhtml\Cache\FlushAll::execute()`:
 
@@ -223,26 +186,18 @@ Where it was introduced:
    $this->eventManager->dispatch('adminhtml_cache_flush_all');
    ```
 
-{:.procedure}
-Variables passed:
-
-*  N/A
-
-{:.procedure}
-Only two classes fire this event:
+#### Classes raising the event
 
 *  `\Magento\Backend\Controller\Adminhtml\Cache\FlushAll`
 *  `\Magento\Backend\Console\Command\CacheFlushCommand`
 
-{:.procedure}
-When to listen:
+### adminhtml_cache_flush_system
 
-*  to do things **before** all cache is flushed
+#### Use cases
 
-### 8. adminhtml_cache_flush_system
+To perform actions when system cache is cleaned.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Translation\Model\Inline\CacheManager::updateAndGetTranslations()`:
 
@@ -269,27 +224,20 @@ Where it was introduced:
   $this->eventManager->dispatch('adminhtml_cache_flush_system');
   ```
 
-{:.procedure}
-Variables passed:
-
-*  N/A
-
-{:.procedure}
-Only three classes fire this event:
+#### Classes raising the the event
 
 *  `\Magento\Translation\Model\Inline\CacheManager`
 *  `\Magento\Backend\Controller\Adminhtml\Cache\FlushSystem`
 *  `\Magento\Backend\Console\Command\CacheCleanCommand`
 
-{:.procedure}
-When to listen:
+### adminhtml_cache_refresh_type
 
-*  to do things when system cache is cleaned
+#### Use cases
 
-### 9. adminhtml_cache_refresh_type
+*  To perform actions **before** Full Page Cache is cleared.
+*  To perform actions **after** Configuration Cache is cleared.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Tax\Controller\Adminhtml\Tax\IgnoreTaxNotification::execute()`:
 
@@ -298,6 +246,7 @@ Where it was introduced:
    {
    $this->_eventManager->dispatch('adminhtml_cache_refresh_type', ['type' => 'config']);
    ```
+   *  `type` for cache type cleared
 
 *  `\Magento\PageCache\Model\Cache\Type::clean()`:
 
@@ -307,223 +256,178 @@ Where it was introduced:
    $this->eventManager->dispatch('adminhtml_cache_refresh_type');
    ```
 
-{:.procedure}
-Variables passed:
-
-*  N/A or `type` - what cache type has been cleared
-
-{:.procedure}
-Only three classes fire this event:
+#### Classes raising the the event
 
 *  `\Magento\Tax\Controller\Adminhtml\Tax\IgnoreTaxNotification`
 *  `\Magento\PageCache\Model\Cache\Type`
 
-{:.procedure}
-When to listen:
+### adminhtml_catalog_category_tree_can_add_root_category
 
-*  to do things **before** Full Page Cache is cleared
-*  to do things **after** Configuration Cache is cleared
+#### Use cases
 
-### 10. adminhtml_catalog_category_tree_can_add_root_category
+To change availability of adding root category.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Block\Adminhtml\Category\Tree::canAddRootCategory()`:
+`\Magento\Catalog\Block\Adminhtml\Category\Tree::canAddRootCategory()`:
 
-   ```php
-   public function canAddRootCategory()
-   {
-        $options = new \Magento\Framework\DataObject(['is_allow' => true]);
-        $this->_eventManager->dispatch(
-            'adminhtml_catalog_category_tree_can_add_root_category',
-            ['category' => $this->getCategory(), 'options' => $options, 'store' => $this->getStore()->getId()]
-        );
-   ```
-
-{:.procedure}
-Variables passed:
+```php
+public function canAddRootCategory()
+{
+  $options = new \Magento\Framework\DataObject(['is_allow' => true]);
+  $this->_eventManager->dispatch(
+      'adminhtml_catalog_category_tree_can_add_root_category',
+      ['category' => $this->getCategory(), 'options' => $options, 'store' => $this->getStore()->getId()]
+  );
+```
 
 *  `category` - product category
 *  `options` - `\Magento\Framework\DataObject(['is_allow' => true])`
 *  `store` - current store ID
 
-{:.procedure}
-A few other classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Category\Checkboxes\Tree`
 *  `\Magento\Catalog\Block\Adminhtml\Category\Widget\Chooser`
 
-{:.procedure}
-When to listen:
+### adminhtml_catalog_category_tree_can_add_sub_category
 
-*  If one wants to change availability of adding root category
+#### Use cases
 
-### 11. adminhtml_catalog_category_tree_can_add_sub_category
+To change availability of adding a subcategory.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Block\Adminhtml\Category\Tree::canAddSubCategory()`:
+`\Magento\Catalog\Block\Adminhtml\Category\Tree::canAddSubCategory()`:
 
-   ```php
-   public function canAddSubCategory()
-   {
-        $options = new \Magento\Framework\DataObject(['is_allow' => true]);
-        $this->_eventManager->dispatch(
-            'adminhtml_catalog_category_tree_can_add_sub_category',
-            ['category' => $this->getCategory(), 'options' => $options, 'store' => $this->getStore()->getId()]
-        );
-   ```
-
-{:.procedure}
-Variables passed:
+```php
+public function canAddSubCategory()
+{
+      $options = new \Magento\Framework\DataObject(['is_allow' => true]);
+      $this->_eventManager->dispatch(
+         'adminhtml_catalog_category_tree_can_add_sub_category',
+         ['category' => $this->getCategory(), 'options' => $options, 'store' => $this->getStore()->getId()]
+      );
+```
 
 *  `category` - product category
 *  `options` - `\Magento\Framework\DataObject(['is_allow' => true])`
 *  `store` - current store ID
 
-{:.procedure}
-A few other classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Category\Checkboxes\Tree`
 *  `\Magento\Catalog\Block\Adminhtml\Category\Widget\Chooser`
 
-{:.procedure}
-When to listen:
+### adminhtml_catalog_category_tree_is_moveable
 
-*  If one wants to change availability of adding a subcategory
+#### Use cases
 
-### 12. adminhtml_catalog_category_tree_is_moveable
+To change moveability of a category.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Block\Adminhtml\Category\Tree::_isCategoryMoveable()`:
+`\Magento\Catalog\Block\Adminhtml\Category\Tree::_isCategoryMoveable()`:
 
-   ```php
-   protected function _isCategoryMoveable($node)
-   {
-        $options = new \Magento\Framework\DataObject(['is_moveable' => true, 'category' => $node]);
+```php
+protected function _isCategoryMoveable($node)
+{
+      $options = new \Magento\Framework\DataObject(['is_moveable' => true, 'category' => $node]);
 
-        $this->_eventManager->dispatch('adminhtml_catalog_category_tree_is_moveable', ['options' => $options]);
-   ```
-
-{:.procedure}
-Variables passed:
+      $this->_eventManager->dispatch('adminhtml_catalog_category_tree_is_moveable', ['options' => $options]);
+```
 
 *  `options` - `\Magento\Framework\DataObject(['is_moveable' => true, 'category' => $node])`
 
-{:.procedure}
-A few other classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Category\Checkboxes\Tree`
 *  `\Magento\Catalog\Block\Adminhtml\Category\Widget\Chooser`
 
-{:.procedure}
-When to listen:
+### adminhtml_catalog_product_attribute_edit_frontend_prepare_form
 
-*  If one wants to change moveability of a category
+#### Use cases
 
-### 13. adminhtml_catalog_product_attribute_edit_frontend_prepare_form
+To customize a product attribute edit form.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit\Tab\Front::_prepareForm()`:
+`\Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit\Tab\Front::_prepareForm()`:
 
-   ```php
-   protected function _prepareForm()
+```php
+protected function _prepareForm()
+{
+...
+$this->_eventManager->dispatch(
+         'adminhtml_catalog_product_attribute_edit_frontend_prepare_form',
+         ['form' => $form, 'attribute' => $attributeObject]
+);
+```
+
+*  `form` is an object of `\Magento\Framework\Data\Form`
+*  `attribute` is an object of `\Magento\Catalog\Model\Entity\Attribute`
+
+#### Classes raising the event
+
+ `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit\Tab\Front`
+
+### adminhtml_catalog_product_attribute_set_main_html_before
+
+#### Use cases
+
+To customize the adminhtml catalog attribute set main block.
+
+#### Origins
+
+`\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Main::_toHtml()`:
+
+```php
+   protected function _toHtml()
    {
-   ...
-   $this->_eventManager->dispatch(
-            'adminhtml_catalog_product_attribute_edit_frontend_prepare_form',
-            ['form' => $form, 'attribute' => $attributeObject]
-   );
-   ```
+      $this->_eventManager->dispatch(
+         'adminhtml_catalog_product_attribute_set_main_html_before',
+         ['block' => $this]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `block` is an object of `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Main`
 
-*  `form` - an object of `\Magento\Framework\Data\Form`
-*  `attribute` - an object of `\Magento\Catalog\Model\Entity\Attribute`
-
-{:.procedure}
-There is only one class that fires this event:
-
-*  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit\Tab\Front`
-
-{:.procedure}
-When to listen:
-
-*  If one wants to customize a product attribute edit form
-
-### 14. adminhtml_catalog_product_attribute_set_main_html_before
-
-{:.procedure}
-Where it was introduced:
-
-*  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Main::_toHtml()`:
-
-   ```php
-    protected function _toHtml()
-    {
-        $this->_eventManager->dispatch(
-            'adminhtml_catalog_product_attribute_set_main_html_before',
-            ['block' => $this]
-        );
-   ```
-
-{:.procedure}
-Variables passed:
-
-*  `block` - an object of `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Main`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Main`
 
-{:.procedure}
-When to listen:
+### adminhtml_catalog_product_attribute_set_toolbar_main_html_before
 
-*  If one wants to customize the adminhtml catalog attribute set main block
+#### Use cases
 
-### 15. adminhtml_catalog_product_attribute_set_toolbar_main_html_before
+To customize the adminhtml catalog attribute set toolbar main block.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Toolbar\Main::_toHtml()`:
+`\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Toolbar\Main::_toHtml()`:
 
-   ```php
-    protected function _toHtml()
-    {
-        $this->_eventManager->dispatch(
-            'adminhtml_catalog_product_attribute_set_toolbar_main_html_before',
-            ['block' => $this]
-        );
-   ```
+```php
+   protected function _toHtml()
+   {
+      $this->_eventManager->dispatch(
+         'adminhtml_catalog_product_attribute_set_toolbar_main_html_before',
+         ['block' => $this]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `block` is an object of `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Toolbar\Main`
 
-*  `block` - an object of `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Toolbar\Main`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Set\Toolbar\Main`
 
-{:.procedure}
-When to listen:
+### adminhtml_catalog_product_edit_element_types
 
-*  If one wants to customize the adminhtml catalog attribute set toolbar main block
+#### Use cases
 
-### 16. adminhtml_catalog_product_edit_element_types
+To add or customize additional element types for catalog product edit attributes tab.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes::_getAdditionalElementTypes()`:
 
@@ -535,26 +439,16 @@ Where it was introduced:
        ['response' => $response]);
    ```
 
-{:.procedure}
-Variables passed:
+*  `response` is an object of `\Magento\Framework\DataObject`
 
-*  `response` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There are only two classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Bundle\Block\Adminhtml\Catalog\Product\Edit\Tab\Attributes`
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes`
 
-{:.procedure}
-When to listen:
+### adminhtml_catalog_product_edit_prepare_form
 
-*  If one wants to add or customize additional element types for catalog product edit attributes tab
-
-### 17. adminhtml_catalog_product_edit_prepare_form
-
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes::_prepareForm()`:
 
@@ -579,28 +473,23 @@ Where it was introduced:
         );
    ```
 
-{:.procedure}
-Variables passed:
-
-*  `form` - an object of `\Magento\Framework\Data\Form`
-*  `layout` - an object of `\Magento\Framework\View\LayoutInterface`
+*  `form` is an object of `\Magento\Framework\Data\Form`
+*  `layout` is an object of `\Magento\Framework\View\LayoutInterface`
 
 {:.procedure}
-There are only three classes that fire this event:
+There are only three classes that raise this event:
 
 *  `\Magento\Bundle\Block\Adminhtml\Catalog\Product\Edit\Tab\Attributes`
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes`
 *  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\NewAttribute\Product\Attributes`
 
-{:.procedure}
-When to listen:
+#### Use cases
 
-*  If one wants to customize catalog product edit attribute tab form
+To customize catalog product edit attribute tab form
 
-### 18. adminhtml_catalog_product_edit_tab_attributes_create_html_before
+### adminhtml_catalog_product_edit_tab_attributes_create_html_before
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes\Create::_toHtml()`:
 
@@ -614,25 +503,19 @@ Where it was introduced:
         );
    ```
 
-{:.procedure}
-Variables passed:
+*  `block` is an object of `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes\Create`
 
-*  `block` - an object of `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes\Create`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Attributes\Create`
 
-{:.procedure}
-When to listen:
+#### Use cases
 
-*  If one wants to customize catalog product edit create attribute block
+To customize catalog product edit create attribute block
 
-### 19. adminhtml_catalog_product_form_prepare_excluded_field_list
+### adminhtml_catalog_product_form_prepare_excluded_field_list
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Action\Attribute\Tab\Attributes::_prepareForm()`:
 
@@ -646,25 +529,23 @@ Where it was introduced:
         );
    ```
 
-{:.procedure}
-Variables passed:
+*  `object` is an object of `\Magento\Catalog\Block\Adminhtml\Product\Edit\Action\Attribute\Tab\Attributes`
 
-*  `object` - an object of `\Magento\Catalog\Block\Adminhtml\Product\Edit\Action\Attribute\Tab\Attributes`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Edit\Action\Attribute\Tab\Attributes`
 
-{:.procedure}
-When to listen:
+#### Use cases
 
-*  If one wants to customize catalog product edit attribute tab block
+To customize catalog product edit attribute tab block
 
-### 20. adminhtml_catalog_product_grid_prepare_massaction
+### adminhtml_catalog_product_grid_prepare_massaction
 
-{:.procedure}
-Where it was introduced:
+#### Use cases
+
+To customize Mass Actions of a catalog product grid backend block.
+
+#### Origins
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Grid::_prepareMassaction()`:
 
@@ -679,26 +560,16 @@ Where it was introduced:
     }
    ```
 
-{:.procedure}
-Variables passed:
+*  `block` is an object of `\Magento\Catalog\Block\Adminhtml\Product\Grid`
 
-*  `block` - an object of `\Magento\Catalog\Block\Adminhtml\Product\Grid`
-
-{:.procedure}
-There are only two classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Grid`
 *  `\Magento\UrlRewrite\Block\Catalog\Product\Grid`
 
-{:.procedure}
-When to listen:
+### adminhtml_cmspage_on_delete
 
-*  If one wants to customize Mass Actions of a catalog product grid backend block
-
-### 21. adminhtml_cmspage_on_delete
-
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Cms\Controller\Adminhtml\Page\Delete::execute()`:
 
@@ -721,26 +592,20 @@ Where it was introduced:
     }
    ```
 
-{:.procedure}
-Variables passed:
+*  `title` is a string, title of a cms page
+*  `status` is a string, 'success' or 'fail'
 
-*  `title` - a string, title of a cms page
-*  `status` - a string, 'success' or 'fail'
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Cms\Controller\Adminhtml\Page\Delete`
 
-{:.procedure}
-When to listen:
+#### Use cases
 
-*  If one wants to do things on either successful or unsuccessful cms page removal
+To perform actions on either successful or unsuccessful cms page removal
 
-### 22. adminhtml_controller_catalogrule_prepare_save
+### adminhtml_controller_catalogrule_prepare_save
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\CatalogRule\Controller\Adminhtml\Promo\Catalog\Save::execute()`:
 
@@ -757,25 +622,19 @@ Where it was introduced:
     }
    ```
 
-{:.procedure}
-Variables passed:
+*  `request` is a page request object of `\Magento\Framework\App\RequestInterface`
 
-*  `request` - a page request object of `\Magento\Framework\App\RequestInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogRule\Controller\Adminhtml\Promo\Catalog\Save`
 
-{:.procedure}
-When to listen:
+#### Use cases
 
-*  If one wants to alter how a catalog price rule is being saved
+To alter how a catalog price rule is being saved
 
-### 23. adminhtml_controller_salesrule_prepare_save
+### adminhtml_controller_salesrule_prepare_save
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\SalesRule\Controller\Adminhtml\Promo\Quote\Save::execute()`:
 
@@ -793,25 +652,19 @@ Where it was introduced:
     }
    ```
 
-{:.procedure}
-Variables passed:
+*  `request` is a page request object of `\Magento\Framework\App\RequestInterface`
 
-*  `request` - a page request object of `\Magento\Framework\App\RequestInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\SalesRule\Controller\Adminhtml\Promo\Quote\Save`
 
-{:.procedure}
-When to listen:
+#### Use cases
 
-*  If one wants to alter how a cart price rule is being saved
+To alter how a cart price rule is being saved
 
-### 24. adminhtml_customer_orders_add_action_renderer
+### adminhtml_customer_orders_add_action_renderer
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Sales\Block\Adminhtml\Reorder\Renderer\Action::render()`:
 
@@ -825,92 +678,78 @@ Where it was introduced:
         );
    ```
 
-{:.procedure}
-Variables passed:
+*  `renderer` is an object of `\Magento\Sales\Block\Adminhtml\Reorder\Renderer\Action`
+*  `row` is an object of `\Magento\Framework\DataObject`
 
-*  `renderer` - an object of `\Magento\Sales\Block\Adminhtml\Reorder\Renderer\Action`
-*  `row` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Sales\Block\Adminhtml\Reorder\Renderer\Action`
 
-{:.procedure}
-When to listen:
+#### Use cases
 
-*  If one wants to modify the way action sales admin reorder block is rendered
+To modify the way action sales admin reorder block is rendered
 
-### 25. adminhtml_customer_prepare_save
+### adminhtml_customer_prepare_save
 
-{:.procedure}
-Where it was introduced:
+#### Use cases
 
-*  `\Magento\Customer\Controller\Adminhtml\Index\Save::execute()`:
+To modify a customer object before it is saved in admin panel.
 
-   ```php
-    public function execute()
-    {
-    ...
-                $this->_eventManager->dispatch(
-                    'adminhtml_customer_prepare_save',
-                    ['customer' => $customer, 'request' => $this->getRequest()]
-                );
-   ```
+#### Origins
 
-{:.procedure}
-Variables passed:
+`\Magento\Customer\Controller\Adminhtml\Index\Save::execute()`:
 
-*  `customer` - an object of `\Magento\Customer\Api\Data\CustomerInterface`
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
+```php
+   public function execute()
+   {
+   ...
+               $this->_eventManager->dispatch(
+                  'adminhtml_customer_prepare_save',
+                  ['customer' => $customer, 'request' => $this->getRequest()]
+               );
+```
 
-{:.procedure}
-There is only one class that fires this event:
+*  `customer` is an object of `\Magento\Customer\Api\Data\CustomerInterface`
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
+
+#### Classes raising the event
 
 *  `\Magento\Customer\Controller\Adminhtml\Index\Save`
 
-{:.procedure}
-When to listen:
+### adminhtml_customer_save_after
 
-*  If one wants to modify a customer object before it is saved in admin panel
+#### Use cases
 
-### 26. adminhtml_customer_save_after
+To modify a customer object after it is saved in admin panel.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Customer\Controller\Adminhtml\Index\Save::execute()`:
+`\Magento\Customer\Controller\Adminhtml\Index\Save::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-                $this->_eventManager->dispatch(
-                    'adminhtml_customer_save_after',
-                    ['customer' => $customer, 'request' => $this->getRequest()]
-                );
-   ```
+```php
+   public function execute()
+   {
+   ...
+               $this->_eventManager->dispatch(
+                  'adminhtml_customer_save_after',
+                  ['customer' => $customer, 'request' => $this->getRequest()]
+               );
+```
 
-{:.procedure}
-Variables passed:
+*  `customer` is an object of `\Magento\Customer\Api\Data\CustomerInterface`
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
 
-*  `customer` - an object of `\Magento\Customer\Api\Data\CustomerInterface`
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Customer\Controller\Adminhtml\Index\Save`
 
-{:.procedure}
-When to listen:
+### adminhtml_product_attribute_types
 
-*  If one wants to modify a customer object after it is saved in admin panel
+#### Use cases
 
-### 27. adminhtml_product_attribute_types
+To modify the way product attributes are processed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit\Tab\Main::execute()`:
 
@@ -930,204 +769,168 @@ Where it was introduced:
    $this->_eventManager->dispatch('adminhtml_product_attribute_types', ['response' => $response]);
    ```
 
-{:.procedure}
-Variables passed:
+`response` is an object of `\Magento\Framework\DataObject`
 
-*  `response` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There are only two classes that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit\Tab\Main`
 *  `\Magento\Catalog\Model\Product\Attribute\Source\Inputtype`
 
-{:.procedure}
-When to listen:
+### adminhtml_promo_quote_edit_tab_coupons_form_prepare_form
 
-*  If one wants to modify the way product attributes are processed
+#### Use cases
 
-### 28. adminhtml_promo_quote_edit_tab_coupons_form_prepare_form
+To modify the admin coupon code form is generated.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Coupons\Form::_prepareForm()`:
+`\Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Coupons\Form::_prepareForm()`:
 
-   ```php
-    protected function _prepareForm()
-    {
-        $this->_eventManager->dispatch(
-            'adminhtml_promo_quote_edit_tab_coupons_form_prepare_form',
-            ['form' => $form]
-        );
-   ```
+```php
+   protected function _prepareForm()
+   {
+      $this->_eventManager->dispatch(
+         'adminhtml_promo_quote_edit_tab_coupons_form_prepare_form',
+         ['form' => $form]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `form` is an object of `\Magento\Framework\Data\Form`
 
-*  `form` - an object of `\Magento\Framework\Data\Form`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Coupons\Form`
 
-{:.procedure}
-When to listen:
+### adminhtml_sales_order_create_process_data
 
-*  If one wants to modify the admin coupon code form is generated
+#### Use cases
 
-### 29. adminhtml_sales_order_create_process_data
+To modify an order after it gets processed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
+`\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
 
-   ```php
-    protected function _processActionData()
-    {
-    ...
-        $eventData = [
-            'order_create_model' => $this->_getOrderCreateModel(),
-            'request' => $this->getRequest()->getPostValue(),
-        ];
+```php
+   protected function _processActionData()
+   {
+   ...
+      $eventData = [
+         'order_create_model' => $this->_getOrderCreateModel(),
+         'request' => $this->getRequest()->getPostValue(),
+      ];
 
-        $this->_eventManager->dispatch('adminhtml_sales_order_create_process_data', $eventData);
-   ```
+      $this->_eventManager->dispatch('adminhtml_sales_order_create_process_data', $eventData);
+```
 
-{:.procedure}
-Variables passed:
+*  `order_create_model` is an object of `\Magento\Sales\Model\AdminOrder\Create`
+*  `request` is an array of POST values
 
-*  `order_create_model` - an object of `\Magento\Sales\Model\AdminOrder\Create`
-*  `request` - an array of POST values
-
-{:.procedure}
-A few classes that fire the event:
+#### Classes raising the event
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create\Cancel`
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create\ProcessData`
 
-{:.procedure}
-When to listen:
+### adminhtml_sales_order_create_process_data_before
 
-*  If one wants to modify an order after it gets processed
+#### Use cases
 
-### 30. adminhtml_sales_order_create_process_data_before
+To modify an order before it gets processed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
+`\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
 
-   ```php
-    protected function _processActionData()
-    {
-        $eventData = [
-            'order_create_model' => $this->_getOrderCreateModel(),
-            'request_model' => $this->getRequest(),
-            'session' => $this->_getSession(),
-        ];
+```php
+   protected function _processActionData()
+   {
+      $eventData = [
+         'order_create_model' => $this->_getOrderCreateModel(),
+         'request_model' => $this->getRequest(),
+         'session' => $this->_getSession(),
+      ];
 
-        $this->_eventManager->dispatch('adminhtml_sales_order_create_process_data_before', $eventData);
-   ```
+      $this->_eventManager->dispatch('adminhtml_sales_order_create_process_data_before', $eventData);
+```
 
-{:.procedure}
-Variables passed:
+*  `order_create_model` is an object of `\Magento\Sales\Model\AdminOrder\Create`
+*  `request_model` is an object of `\Magento\Framework\App\RequestInterface`
+*  `session` is an object of `\Magento\Backend\Model\Session\Quote`
 
-*  `order_create_model` - an object of `\Magento\Sales\Model\AdminOrder\Create`
-*  `request_model` - an object of `\Magento\Framework\App\RequestInterface`
-*  `session` - an object of `\Magento\Backend\Model\Session\Quote`
-
-{:.procedure}
-A few classes that fire the event:
+#### Classes raising the event
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create\Cancel`
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create\ProcessData`
 
-{:.procedure}
-When to listen:
+### adminhtml_sales_order_create_process_item_after
 
-*  If one wants to modify an order before it gets processed
+#### Use cases
 
-### 31. adminhtml_sales_order_create_process_item_after
+To modify an order item after it gets processed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
+`\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
 
-   ```php
-    protected function _processActionData()
-    {
-        $eventData = [
-            'order_create_model' => $this->_getOrderCreateModel(),
-            'request_model' => $this->getRequest(),
-            'session' => $this->_getSession(),
-        ];
-    ...
-        $this->_eventManager->dispatch('adminhtml_sales_order_create_process_item_after', $eventData);
-   ```
+```php
+   protected function _processActionData()
+   {
+      $eventData = [
+         'order_create_model' => $this->_getOrderCreateModel(),
+         'request_model' => $this->getRequest(),
+         'session' => $this->_getSession(),
+      ];
+   ...
+      $this->_eventManager->dispatch('adminhtml_sales_order_create_process_item_after', $eventData);
+```
 
-{:.procedure}
-Variables passed:
+*  `order_create_model` is an object of `\Magento\Sales\Model\AdminOrder\Create`
+*  `request_model` is an object of `\Magento\Framework\App\RequestInterface`
+*  `session` is an object of `\Magento\Backend\Model\Session\Quote`
 
-*  `order_create_model` - an object of `\Magento\Sales\Model\AdminOrder\Create`
-*  `request_model` - an object of `\Magento\Framework\App\RequestInterface`
-*  `session` - an object of `\Magento\Backend\Model\Session\Quote`
-
-{:.procedure}
-A few classes that fire the event:
+#### Classes raising the event
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create\Cancel`
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create\ProcessData`
 
-{:.procedure}
-When to listen:
+### adminhtml_sales_order_create_process_item_before
 
-*  If one wants to modify an order item after it gets processed
+#### Use cases
 
-### 32. adminhtml_sales_order_create_process_item_before
+To modify an order item before it gets processed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
+`\Magento\Sales\Controller\Adminhtml\Order\Create::_processActionData()`:
 
-   ```php
-    protected function _processActionData()
-    {
-        $eventData = [
-            'order_create_model' => $this->_getOrderCreateModel(),
-            'request_model' => $this->getRequest(),
-            'session' => $this->_getSession(),
-        ];
-    ...
-        $this->_eventManager->dispatch('adminhtml_sales_order_create_process_item_before', $eventData);
-   ```
+```php
+   protected function _processActionData()
+   {
+      $eventData = [
+         'order_create_model' => $this->_getOrderCreateModel(),
+         'request_model' => $this->getRequest(),
+         'session' => $this->_getSession(),
+      ];
+   ...
+      $this->_eventManager->dispatch('adminhtml_sales_order_create_process_item_before', $eventData);
+```
 
-{:.procedure}
-Variables passed:
+*  `order_create_model` is an object of `\Magento\Sales\Model\AdminOrder\Create`
+*  `request_model` is an object of `\Magento\Framework\App\RequestInterface`
+*  `session` is an object of `\Magento\Backend\Model\Session\Quote`
 
-*  `order_create_model` - an object of `\Magento\Sales\Model\AdminOrder\Create`
-*  `request_model` - an object of `\Magento\Framework\App\RequestInterface`
-*  `session` - an object of `\Magento\Backend\Model\Session\Quote`
-
-{:.procedure}
-A few classes that fire the event:
+#### Classes raising the event
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create\Cancel`
 *  `\Magento\Sales\Controller\Adminhtml\Order\Create\ProcessData`
 
-{:.procedure}
-When to listen:
+### adminhtml_sales_order_creditmemo_register_before
 
-*  If one wants to modify an order item before it gets processed
+#### Use cases
 
-### 33. adminhtml_sales_order_creditmemo_register_before
+To modify a credit memo before it gets saved in the registry.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\CreditmemoLoader::load()`:
 
@@ -1141,225 +944,182 @@ Where it was introduced:
         );
    ```
 
-{:.procedure}
-Variables passed:
+*  `creditmemo` is an object of `\Magento\Sales\Model\Order\Creditmemo`
+*  `input` is a data array
 
-*  `creditmemo` - an object of `\Magento\Sales\Model\Order\Creditmemo`
-*  `input` - a data array
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\Sales\Controller\Adminhtml\Order\CreditmemoLoader`
 
-{:.procedure}
-When to listen:
+### adminhtml_store_edit_form_prepare_form
 
-*  If one wants to modify a credit memo before it gets saved in the registry
+#### Use cases
 
-### 34. adminhtml_store_edit_form_prepare_form
+To a store edit form before it gets rendered.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Backend\Block\System\Store\Edit\AbstractForm::_prepareForm()`:
+`\Magento\Backend\Block\System\Store\Edit\AbstractForm::_prepareForm()`:
 
-   ```php
-    protected function _prepareForm()
-    {
-    ...
-        $this->_eventManager->dispatch('adminhtml_store_edit_form_prepare_form', ['block' => $this]);
-   ```
+```php
+   protected function _prepareForm()
+   {
+   ...
+      $this->_eventManager->dispatch('adminhtml_store_edit_form_prepare_form', ['block' => $this]);
+```
 
-{:.procedure}
-Variables passed:
+*  `block` is an object of `\Magento\Backend\Block\System\Store\Edit\AbstractForm`
 
-*  `block` - an object of `\Magento\Backend\Block\System\Store\Edit\AbstractForm`
-
-{:.procedure}
-A few classes that fire the event:
+#### Classes raising the event
 
 *  `\Magento\Backend\Block\System\Store\Edit\Form\Website`
 *  `\Magento\Backend\Block\System\Store\Edit\Form\Group`
 *  `\Magento\Backend\Block\System\Store\Edit\Form\Store`
 
-{:.procedure}
-When to listen:
+### adminhtml_system_config_advanced_disableoutput_render_before
 
-*  If one wants to a store edit form before it gets rendered
+#### Use cases
 
-### 35. adminhtml_system_config_advanced_disableoutput_render_before
+To alter modules list before they get displayed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Config\Block\System\Config\Form\Fieldset\Modules\DisableOutput::render()`:
+`\Magento\Config\Block\System\Config\Form\Fieldset\Modules\DisableOutput::render()`:
 
-   ```php
-    protected function render()
-    {
-    ...
-        $dispatchResult = new \Magento\Framework\DataObject($modules);
-        $this->_eventManager->dispatch(
-            'adminhtml_system_config_advanced_disableoutput_render_before',
-            ['modules' => $dispatchResult]
-        );
-   ```
+```php
+   protected function render()
+   {
+   ...
+      $dispatchResult = new \Magento\Framework\DataObject($modules);
+      $this->_eventManager->dispatch(
+         'adminhtml_system_config_advanced_disableoutput_render_before',
+         ['modules' => $dispatchResult]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `modules` is an object of `\Magento\Framework\DataObject`
 
-*  `modules` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\Config\Block\System\Config\Form\Fieldset\Modules\DisableOutput`
 
-{:.procedure}
-When to listen:
+### adminhtml_widget_grid_filter_collection
 
-*  If one wants to alter modules list before they get displayed
+#### Use cases
 
-### 36. adminhtml_widget_grid_filter_collection
+To alter report collection or filter values.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Reports\Block\Adminhtml\Grid::_prepareCollection()`:
+`\Magento\Reports\Block\Adminhtml\Grid::_prepareCollection()`:
 
-   ```php
-    protected function _prepareCollection()
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'adminhtml_widget_grid_filter_collection',
-                ['collection' => $this->getCollection(), 'filter_values' => $this->_filterValues]
-            );
-   ```
+```php
+   protected function _prepareCollection()
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'adminhtml_widget_grid_filter_collection',
+               ['collection' => $this->getCollection(), 'filter_values' => $this->_filterValues]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `collection` is an object of `\Magento\Reports\Model\ResourceModel\Report\Collection`
+*  `filter_values` is a value array
 
-*  `collection` - an object of `\Magento\Reports\Model\ResourceModel\Report\Collection`
-*  `filter_values` - a value array
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\Reports\Block\Adminhtml\Grid`
 
-{:.procedure}
-When to listen:
+### admin_permissions_role_prepare_save
 
-*  If one wants to alter report collection or filter values
+#### Use cases
 
-### 37. admin_permissions_role_prepare_save
+To alter the role object before it is saved.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\User\Controller\Adminhtml\User\Role\SaveRole::execute()`:
+`\Magento\User\Controller\Adminhtml\User\Role\SaveRole::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'admin_permissions_role_prepare_save',
-                ['object' => $role, 'request' => $this->getRequest()]
-            );
-   ```
+```php
+   public function execute()
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'admin_permissions_role_prepare_save',
+               ['object' => $role, 'request' => $this->getRequest()]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `object` is an object of `\Magento\Authorization\Model\Role`
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
 
-*  `object` - an object of `\Magento\Authorization\Model\Role`
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\User\Controller\Adminhtml\User\Role\SaveRole`
 
-{:.procedure}
-When to listen:
+### admin_system_config_changed_section_currency
 
-*  If one wants to alter role object before it's saved
+#### Use cases
 
-### 38. admin_system_config_changed_section_currency
+To perform actions after currency symbol is set in admin panel.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\CurrencySymbol\Model\System\Currencysymbol::setCurrencySymbolsData()`:
+`\Magento\CurrencySymbol\Model\System\Currencysymbol::setCurrencySymbolsData()`:
 
-   ```php
-    public function setCurrencySymbolsData($symbols = [])
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'admin_system_config_changed_section_currency',
-            ['website' => $this->_websiteId, 'store' => $this->_storeId]
-        );
-   ```
+```php
+   public function setCurrencySymbolsData($symbols = [])
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'admin_system_config_changed_section_currency',
+         ['website' => $this->_websiteId, 'store' => $this->_storeId]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `website` is a website ID
+*  `store` is a store ID
 
-*  `website` - a website ID
-*  `store` - a store ID
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\CurrencySymbol\Model\System\Currencysymbol`
 
-{:.procedure}
-When to listen:
+### admin_system_config_changed_section_currency_before_reinit
 
-*  If one wants to do something after currency symbol is set in admin panel
+#### Use cases
 
-### 39. admin_system_config_changed_section_currency_before_reinit
+To perform actions before admin configuration reinitialized.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\CurrencySymbol\Model\System\Currencysymbol::setCurrencySymbolsData()`:
+`\Magento\CurrencySymbol\Model\System\Currencysymbol::setCurrencySymbolsData()`:
 
-   ```php
-    public function setCurrencySymbolsData($symbols = [])
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'admin_system_config_changed_section_currency_before_reinit',
-            ['website' => $this->_websiteId, 'store' => $this->_storeId]
-        );
-   ```
+```php
+   public function setCurrencySymbolsData($symbols = [])
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'admin_system_config_changed_section_currency_before_reinit',
+         ['website' => $this->_websiteId, 'store' => $this->_storeId]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `website` is a website ID
+*  `store` is a store ID
 
-*  `website` - a website ID
-*  `store` - a store ID
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\CurrencySymbol\Model\System\Currencysymbol`
 
-{:.procedure}
-When to listen:
+### admin_system_config_changed_section_design
 
-*  If one wants to do something before admin configuration reinitialized
+#### Use cases
 
-### 40. admin_system_config_changed_section_design
+To perform actions after admin design section saved or deleted.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Theme\Model\Design\Config\Plugin::afterSave()` and `\Magento\Theme\Model\Design\Config\Plugin::afterDelete()`:
-
+*  `\Magento\Theme\Model\Design\Config\Plugin::afterSave()`:
    ```php
     public function afterSave(DesignConfigRepository $subject, DesignConfigInterface $designConfig)
     {
@@ -1369,7 +1129,7 @@ Where it was introduced:
             ['website' => $website, 'store' => $store]
         );
    ```
-
+*  `\Magento\Theme\Model\Design\Config\Plugin::afterDelete()`:
    ```php
     public function afterDelete(DesignConfigRepository $subject, DesignConfigInterface $designConfig)
     {
@@ -1380,62 +1140,49 @@ Where it was introduced:
         );
    ```
 
-{:.procedure}
-Variables passed:
+*  `website` is an object of `\Magento\Store\Api\Data\WebsiteInterface`
+*  `store` is an object of `\Magento\Store\Api\Data\StoreInterface`
 
-*  `website` - an object of `\Magento\Store\Api\Data\WebsiteInterface`
-*  `store` - an object of `\Magento\Store\Api\Data\StoreInterface`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\Theme\Model\Design\Config\Plugin`
 
-{:.procedure}
-When to listen:
+### admin_system_config_save
 
-*  If one wants to do something after admin design section saved or deleted
+#### Use cases
 
-### 41. admin_system_config_save
+To perform actions after admin configuration is saved.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Config\Controller\Adminhtml\System\Config\Save::execute()`:
+`\Magento\Config\Controller\Adminhtml\System\Config\Save::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'admin_system_config_save',
-                ['configData' => $configData, 'request' => $this->getRequest()]
-            );
-   ```
+```php
+   public function execute()
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'admin_system_config_save',
+               ['configData' => $configData, 'request' => $this->getRequest()]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `configData` is a data array
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
 
-*  `configData` - a data array
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\Config\Controller\Adminhtml\System\Config\Save`
 
-{:.procedure}
-When to listen:
+### admin_user_authenticate_after
 
-*  If one wants to do something after admin configuration is saved
+#### Use cases
 
-### 42. admin_user_authenticate_after
+To perform actions after a user is authenticated.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\User\Model\User::authenticate()`:
-
    ```php
     public function authenticate($username, $password)
     {
@@ -1445,9 +1192,7 @@ Where it was introduced:
                 ['username' => $username, 'password' => $password, 'user' => $this, 'result' => $result]
             );
    ```
-
 *  `\Magento\User\Model\User::performIdentityCheck()`:
-
    ```php
    public function performIdentityCheck($passwordString)
    {
@@ -1463,483 +1208,399 @@ Where it was introduced:
         );
    ```
 
-{:.procedure}
-Variables passed:
+*  `username` is a username string
+*  `password` is a password string
+*  `user` is an object of `\Magento\User\Model\User`
+*  `result` is a boolean value
 
-*  `username` - a username string
-*  `password` - a password string
-*  `user` - an object of `\Magento\User\Model\User`
-*  `result` - a boolean value
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\User\Model\User`
 
-{:.procedure}
-When to listen:
+### admin_user_authenticate_before
 
-*  If one wants to do something after a user is authenticated
+#### Use cases
 
-### 43. admin_user_authenticate_before
+To perform actions before a user is authenticated.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\User\Model\User::authenticate()`:
+`\Magento\User\Model\User::authenticate()`:
 
-   ```php
-    public function authenticate($username, $password)
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'admin_user_authenticate_before',
-                ['username' => $username, 'user' => $this]
-            );
-   ```
+```php
+   public function authenticate($username, $password)
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'admin_user_authenticate_before',
+               ['username' => $username, 'user' => $this]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `username` is a username string
+*  `user` is an object of `\Magento\User\Model\User`
 
-*  `username` - a username string
-*  `user` - an object of `\Magento\User\Model\User`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\User\Model\User`
 
-{:.procedure}
-When to listen:
+### amazon_customer_authenticated
 
-*  If one wants to do something before a user is authenticated
+#### Use cases
 
-### 44. amazon_customer_authenticated
+To perform actions before an Amazon user is authenticated.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Amazon\Login\Helper\Session::dispatchAuthenticationEvent()`:
+`\Amazon\Login\Helper\Session::dispatchAuthenticationEvent()`:
 
-   ```php
-    protected function dispatchAuthenticationEvent()
-    {
-        $this->eventManager->dispatch('amazon_customer_authenticated');
-    }
-   ```
+```php
+   protected function dispatchAuthenticationEvent()
+   {
+      $this->eventManager->dispatch('amazon_customer_authenticated');
+   }
+```
 
-It's used in functions:
+Used in functions:
 
-   ```php
-    public function loginById($customerId)
-    {
-        $this->dispatchAuthenticationEvent();
-    ...
+```php
+   public function loginById($customerId)
+   {
+      $this->dispatchAuthenticationEvent();
+   ...
 
-    public function login(CustomerInterface $customerData)
-    {
-        $this->dispatchAuthenticationEvent();
-    ...
-    ```
+   public function login(CustomerInterface $customerData)
+   {
+      $this->dispatchAuthenticationEvent();
+   ...
+```
 
-{:.procedure}
-No variables are used.
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Amazon\Login\Helper\Session`
 
-{:.procedure}
-When to listen:
+### amazon_login_authorize_error
 
-*  If one wants to do something before an amazon user is authenticated
+#### Use cases
 
-### 45. amazon_login_authorize_error
+To handle an Amazon login exception.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Amazon\Login\Controller\Login\Authorize::execute()`:
+`\Amazon\Login\Controller\Login\Authorize::execute()`:
 
-   ```php
-    public function execute()
-    {
-     ..
-       $this->_eventManager->dispatch('amazon_login_authorize_error', ['exception' => $e]);
-    }
-   ```
+```php
+   public function execute()
+   {
+   ..
+      $this->_eventManager->dispatch('amazon_login_authorize_error', ['exception' => $e]);
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `exception` is an object of `Magento\Framework\Exception\ValidatorException` or `\Exception`
 
-*  `exception` - an object of `Magento\Framework\Exception\ValidatorException` or `\Exception`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Amazon\Login\Controller\Login\Authorize`
 
-{:.procedure}
-When to listen:
+### amazon_login_authorize_validation_error
 
-*  If one wants to handle an amazon login exception
+#### Use cases
 
-### 46. amazon_login_authorize_validation_error
+To handle a `ValidatorException` Amazon login exception.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Amazon\Login\Controller\Login\Authorize::execute()`:
+`\Amazon\Login\Controller\Login\Authorize::execute()`:
 
-   ```php
-    public function execute()
-    {
-     ..
-       $this->_eventManager->dispatch('amazon_login_authorize_validation_error', ['exception' => $e]);
-    }
-   ```
+```php
+   public function execute()
+   {
+   ..
+      $this->_eventManager->dispatch('amazon_login_authorize_validation_error', ['exception' => $e]);
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `exception` is an object of `Magento\Framework\Exception\ValidatorException`
 
-*  `exception` - an object of `Magento\Framework\Exception\ValidatorException`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Amazon\Login\Controller\Login\Authorize`
 
-{:.procedure}
-When to listen:
+### amazon_payment_authorize_before
 
-*  If one wants to handle a `ValidatorException` amazon login exception
+#### Use cases
 
-### 47. amazon_payment_authorize_before
+To perform actions before Amazon authorizes a payment.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Amazon\Payment\Gateway\Request\AuthorizationRequestBuilder::build()`:
+`\Amazon\Payment\Gateway\Request\AuthorizationRequestBuilder::build()`:
 
-   ```php
-    public function build(array $buildSubject)
-    {
-     ..
-            $transport = new DataObject($data);
-            $this->eventManager->dispatch(
-                'amazon_payment_authorize_before',
-                [
-                    'context' => 'authorization',
-                    'payment' => $paymentDO->getPayment(),
-                    'transport' => $transport
-                ]
-            );
-    }
-   ```
+```php
+   public function build(array $buildSubject)
+   {
+   ..
+         $transport = new DataObject($data);
+         $this->eventManager->dispatch(
+               'amazon_payment_authorize_before',
+               [
+                  'context' => 'authorization',
+                  'payment' => $paymentDO->getPayment(),
+                  'transport' => $transport
+               ]
+         );
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `context` is a string `authorization`
+*  `payment` is an object of `Magento\Payment\Model\InfoInterface`
+*  `transport` is a `DataObject` object
 
-*  `context` - a string `authorization`
-*  `payment` - an object of `Magento\Payment\Model\InfoInterface`
-*  `transport` - a `DataObject` object
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Amazon\Payment\Gateway\Request\AuthorizationRequestBuilder`
 
-{:.procedure}
-When to listen:
+### amazon_payment_pending_authorization_hard_decline_after
 
-*  If one wants to do something before amazon authorize a payment
+#### Use cases
 
-### 48. amazon_payment_pending_authorization_hard_decline_after
+To perform actions before a hard decline of Amazon payment.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Amazon\Payment\Model\PaymentManagement\Authorization::hardDeclinePendingAuthorization()`:
+`\Amazon\Payment\Model\PaymentManagement\Authorization::hardDeclinePendingAuthorization()`:
 
-   ```php
-    protected function hardDeclinePendingAuthorization(...)
-    {
-     ..
-        $this->eventManager->dispatch(
-            'amazon_payment_pending_authorization_hard_decline_after',
-            [
-                'order' => $order,
-                'pendingAuthorization' => $pendingAuthorization,
-            ]
-        );
-    }
-   ```
+```php
+   protected function hardDeclinePendingAuthorization(...)
+   {
+   ..
+      $this->eventManager->dispatch(
+         'amazon_payment_pending_authorization_hard_decline_after',
+         [
+               'order' => $order,
+               'pendingAuthorization' => $pendingAuthorization,
+         ]
+      );
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `order` is an object of `\Magento\Sales\Api\Data\OrderInterface`
+*  `pendingAuthorization` is an object of `\Amazon\Payment\Api\Data\PendingAuthorizationInterface`
 
-*  `order` - an object of `\Magento\Sales\Api\Data\OrderInterface`
-*  `pendingAuthorization` - an object of `\Amazon\Payment\Api\Data\PendingAuthorizationInterface`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Amazon\Payment\Model\PaymentManagement\Authorization`
 
-{:.procedure}
-When to listen:
+### amazon_payment_pending_authorization_soft_decline_after
 
-*  If one wants to do something before a hard amazon payment decline
+#### Use cases
 
-### 49. amazon_payment_pending_authorization_soft_decline_after
+To perform actions before a soft Amazon payment decline.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Amazon\Payment\Model\PaymentManagement\Authorization::softDeclinePendingAuthorization()`:
+`\Amazon\Payment\Model\PaymentManagement\Authorization::softDeclinePendingAuthorization()`:
 
-   ```php
-    protected function softDeclinePendingAuthorization(...)
-    {
-     ..
-        $this->eventManager->dispatch(
-            'amazon_payment_pending_authorization_soft_decline_after',
-            [
-                'order' => $order,
-                'pendingAuthorization' => $pendingAuthorization,
-            ]
-        );
-    }
-   ```
+```php
+   protected function softDeclinePendingAuthorization(...)
+   {
+   ..
+      $this->eventManager->dispatch(
+         'amazon_payment_pending_authorization_soft_decline_after',
+         [
+               'order' => $order,
+               'pendingAuthorization' => $pendingAuthorization,
+         ]
+      );
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `order` is an object of `\Magento\Sales\Api\Data\OrderInterface`
+*  `pendingAuthorization` is an object of `\Amazon\Payment\Api\Data\PendingAuthorizationInterface`
 
-*  `order` - an object of `\Magento\Sales\Api\Data\OrderInterface`
-*  `pendingAuthorization` - an object of `\Amazon\Payment\Api\Data\PendingAuthorizationInterface`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Amazon\Payment\Model\PaymentManagement\Authorization`
 
-{:.procedure}
-When to listen:
+### assigned_theme_changed
 
-*  If one wants to do something before a soft amazon payment decline
+#### Use cases
 
-### 50. assigned_theme_changed
+To perform actions after an assigned theme changed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Theme\Observer\CheckThemeIsAssignedObserver::execute()`:
+`\Magento\Theme\Observer\CheckThemeIsAssignedObserver::execute()`:
 
-   ```php
-    public function execute(EventObserver $observer)
-    {
-     ..
-        $this->eventDispatcher->dispatch('assigned_theme_changed', ['theme' => $theme]);
-    }
-   ```
+```php
+   public function execute(EventObserver $observer)
+   {
+   ..
+      $this->eventDispatcher->dispatch('assigned_theme_changed', ['theme' => $theme]);
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `theme` is an object of `\Magento\Framework\View\Design\ThemeInterface`
 
-*  `theme` - an object of `\Magento\Framework\View\Design\ThemeInterface`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\Theme\Observer\CheckThemeIsAssignedObserver`
 
-{:.procedure}
-When to listen:
+### assign_theme_to_stores_after
 
-*  If one wants to do something after an assigned theme changed
+#### Use cases
 
-### 51. assign_theme_to_stores_after
+To perform actions after a new theme is assigned to a store.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Theme\Model\Config::assignToStore()`:
+`\Magento\Theme\Model\Config::assignToStore()`:
 
-   ```php
-    public function assignToStore(...)
-    {
-     ..
-        $this->_eventManager->dispatch(
-            'assign_theme_to_stores_after',
-            ['stores' => $stores, 'scope' => $scope, 'theme' => $theme]
-        );
-    }
-   ```
+```php
+   public function assignToStore(...)
+   {
+   ..
+      $this->_eventManager->dispatch(
+         'assign_theme_to_stores_after',
+         ['stores' => $stores, 'scope' => $scope, 'theme' => $theme]
+      );
+   }
+```
 
-{:.procedure}
-Variables passed:
-
-*  `stores` - an array of stores
+*  `stores` is an array of stores
 *  `scope` - scope value defined in `\Magento\Store\Model\ScopeInterface`
-*  `theme` - an object of `\Magento\Framework\View\Design\ThemeInterface`
+*  `theme` is an object of `\Magento\Framework\View\Design\ThemeInterface`
 
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\Theme\Model\Config`
 
-{:.procedure}
-When to listen:
+### backend_auth_user_login_failed
 
-*  If one wants to do something after a new theme is assigned to a store
+#### Use cases
 
-### 52. backend_auth_user_login_failed
+To perform actions after a backend login attempt has failed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Backend\Model\Auth::login()`:
+`\Magento\Backend\Model\Auth::login()`:
 
-   ```php
-    public function login($username, $password)
-    {
-     ..
-        } catch (PluginAuthenticationException $e) {
-            $this->_eventManager->dispatch(
-                'backend_auth_user_login_failed',
-                ['user_name' => $username, 'exception' => $e]
-            );
-            throw $e;
-        } catch (\Magento\Framework\Exception\LocalizedException $e) {
-            $this->_eventManager->dispatch(
-                'backend_auth_user_login_failed',
-                ['user_name' => $username, 'exception' => $e]
-            );
-    }
-   ```
-
-{:.procedure}
-Variables passed:
+```php
+   public function login($username, $password)
+   {
+   ..
+      } catch (PluginAuthenticationException $e) {
+         $this->_eventManager->dispatch(
+               'backend_auth_user_login_failed',
+               ['user_name' => $username, 'exception' => $e]
+         );
+         throw $e;
+      } catch (\Magento\Framework\Exception\LocalizedException $e) {
+         $this->_eventManager->dispatch(
+               'backend_auth_user_login_failed',
+               ['user_name' => $username, 'exception' => $e]
+         );
+   }
+```
 
 *  `user_name` - username string
-*  `exception` - an object of `\Magento\Framework\Exception\LocalizedException` or `\Magento\Framework\Exception\Plugin\AuthenticationException`
+*  `exception` is an object of `\Magento\Framework\Exception\LocalizedException` or `\Magento\Framework\Exception\Plugin\AuthenticationException`
 
-{:.procedure}
-There is only one class that fires the event:
-
-*  `\Magento\Backend\Model\Auth`
-
-{:.procedure}
-When to listen:
-
-*  If one wants to do something after a backend login attempt has failed
-
-### 53. backend_auth_user_login_success
-
-{:.procedure}
-Where it was introduced:
-
-*  `\Magento\Backend\Model\Auth::login()`:
-
-   ```php
-    public function login($username, $password)
-    {
-     ..
-                $this->_eventManager->dispatch(
-                    'backend_auth_user_login_success',
-                    ['user' => $this->getCredentialStorage()]
-                );
-    }
-   ```
-
-{:.procedure}
-Variables passed:
-
-*  `user` - an object of `\Magento\Backend\Model\Auth\Credential\StorageInterface`
-
-{:.procedure}
-There is only one class that fires the event:
+#### Classes raising the event
 
 *  `\Magento\Backend\Model\Auth`
 
-{:.procedure}
-When to listen:
+### backend_auth_user_login_success
 
-*  If one wants to do something after a successful backend login attempt
+#### Use cases
 
-### 54. backend_block_widget_grid_prepare_grid_before
+To perform actions after a successful backend login attempt.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Backend\Block\Widget\Grid::_prepareGrid()`:
+`\Magento\Backend\Model\Auth::login()`:
 
-   ```php
-    protected function _prepareGrid()
-    {
-        $this->_eventManager->dispatch(
-            'backend_block_widget_grid_prepare_grid_before',
-            ['grid' => $this, 'collection' => $this->getCollection()]
-        );
-    }
-   ```
+```php
+   public function login($username, $password)
+   {
+   ..
+               $this->_eventManager->dispatch(
+                  'backend_auth_user_login_success',
+                  ['user' => $this->getCredentialStorage()]
+               );
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `user` is an object of `\Magento\Backend\Model\Auth\Credential\StorageInterface`
 
-*  `this` - an object of `\Magento\Backend\Block\Widget\Grid`
-*  `collection` - an object of `\Magento\Framework\Data\Collection`
+#### Classes raising the event
 
-{:.procedure}
-A few classes that fire this event:
+*  `\Magento\Backend\Model\Auth`
+
+### backend_block_widget_grid_prepare_grid_before
+
+#### Use cases
+
+To perform actions before a backend grid is prepared.
+
+#### Origins
+
+`\Magento\Backend\Block\Widget\Grid::_prepareGrid()`:
+
+```php
+   protected function _prepareGrid()
+   {
+      $this->_eventManager->dispatch(
+         'backend_block_widget_grid_prepare_grid_before',
+         ['grid' => $this, 'collection' => $this->getCollection()]
+      );
+   }
+```
+
+*  `this` is an object of `\Magento\Backend\Block\Widget\Grid`
+*  `collection` is an object of `\Magento\Framework\Data\Collection`
+
+#### Classes raising the event
 
 *  `\Magento\AdvancedSearch\Block\Adminhtml\Search\Grid`
 *  `\Magento\Newsletter\Block\Adminhtml\Subscriber\Grid`
 
-{:.procedure}
-When to listen:
+### braintree_googlepay_update_quote_after
 
-*  If one wants to do something before a backend grid is prepared
+#### Use cases
 
-### 55. braintree_googlepay_update_quote_after
+To perform actions after braintree updates a quote.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\PayPal\Braintree\Model\GooglePay\Helper\QuoteUpdater::updateQuote()`:
+`\PayPal\Braintree\Model\GooglePay\Helper\QuoteUpdater::updateQuote()`:
 
-   ```php
-    private function updateQuote(Quote $quote, array $details)
-    {
-    ...
-        $this->eventManager->dispatch('braintree_googlepay_update_quote_after', [
-            'quote' => $quote,
-            'googlepay_response' => $details
-        ]);
-    }
-   ```
+```php
+   private function updateQuote(Quote $quote, array $details)
+   {
+   ...
+      $this->eventManager->dispatch('braintree_googlepay_update_quote_after', [
+         'quote' => $quote,
+         'googlepay_response' => $details
+      ]);
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
+*  `googlepay_response` is a response array
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-*  `googlepay_response` - a response array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\PayPal\Braintree\Model\GooglePay\Helper\QuoteUpdater`
 
-{:.procedure}
-When to listen:
+### braintree_googlepay_update_quote_before
 
-*  If one wants to do something after braintree updates a quote
+#### Use cases
 
-### 56. braintree_googlepay_update_quote_before
+To perform actions before braintree updates a quote.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\PayPal\Braintree\Model\GooglePay\Helper\QuoteUpdater::updateQuote()`:
 
@@ -1953,130 +1614,105 @@ Where it was introduced:
     }
    ```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
+*  `googlepay_response` is a response array
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-*  `googlepay_response` - a response array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\PayPal\Braintree\Model\GooglePay\Helper\QuoteUpdater`
 
-{:.procedure}
-When to listen:
+### braintree_paypal_update_quote_after
 
-*  If one wants to do something before braintree updates a quote
+#### Use cases
 
-### 57. braintree_paypal_update_quote_after
+To perform actions after Braintree updates a quote.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\PayPal\Braintree\Model\Paypal\Helper\QuoteUpdater::updateQuote()`:
+`\PayPal\Braintree\Model\Paypal\Helper\QuoteUpdater::updateQuote()`:
 
-   ```php
-    private function updateQuote(Quote $quote, array $details)
-    {
-     ...
-        $this->eventManager->dispatch('braintree_paypal_update_quote_before', [
-            'quote' => $quote,
-            'paypal_response' => $details
-        ]);
-    }
-   ```
+```php
+   private function updateQuote(Quote $quote, array $details)
+   {
+   ...
+      $this->eventManager->dispatch('braintree_paypal_update_quote_before', [
+         'quote' => $quote,
+         'paypal_response' => $details
+      ]);
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
+*  `paypal_response` is a response array
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-*  `paypal_response` - a response array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\PayPal\Braintree\Model\Paypal\Helper\QuoteUpdater`
 
-{:.procedure}
-When to listen:
+### braintree_paypal_update_quote_before
 
-*  If one wants to do something after braintree updates a quote
+#### Use cases
 
-### 58. braintree_paypal_update_quote_before
+To perform actions before Braintree updates a quote.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\PayPal\Braintree\Model\Paypal\Helper\QuoteUpdater::updateQuote()`:
+`\PayPal\Braintree\Model\Paypal\Helper\QuoteUpdater::updateQuote()`:
 
-   ```php
-    private function updateQuote(Quote $quote, array $details)
-    {
-        $this->eventManager->dispatch('braintree_paypal_update_quote_before', [
-            'quote' => $quote,
-            'paypal_response' => $details
-        ]);
-    }
-   ```
+```php
+   private function updateQuote(Quote $quote, array $details)
+   {
+      $this->eventManager->dispatch('braintree_paypal_update_quote_before', [
+         'quote' => $quote,
+         'paypal_response' => $details
+      ]);
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
+*  `paypal_response` is a response array
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-*  `paypal_response` - a response array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\PayPal\Braintree\Model\Paypal\Helper\QuoteUpdater`
 
-{:.procedure}
-When to listen:
+### catalogrule_dirty_notice
 
-*  If one wants to do something before braintree updates a quote
+#### Use cases
 
-### 59. catalogrule_dirty_notice
+To perform actions when some catalog rules have changed but changes have not been applied yet.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\CatalogRule\Controller\Adminhtml\Promo\Catalog\Index::execute()`:
+`\Magento\CatalogRule\Controller\Adminhtml\Promo\Catalog\Index::execute()`:
 
-   ```php
-    public function execute()
-    {
-        $dirtyRules = $this->_objectManager->create(\Magento\CatalogRule\Model\Flag::class)->loadSelf();
-        $this->_eventManager->dispatch(
-            'catalogrule_dirty_notice',
-            ['dirty_rules' => $dirtyRules, 'message' => $this->getDirtyRulesNoticeMessage()]
-        );
-    }
-   ```
+```php
+   public function execute()
+   {
+      $dirtyRules = $this->_objectManager->create(\Magento\CatalogRule\Model\Flag::class)->loadSelf();
+      $this->_eventManager->dispatch(
+         'catalogrule_dirty_notice',
+         ['dirty_rules' => $dirtyRules, 'message' => $this->getDirtyRulesNoticeMessage()]
+      );
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `dirty_rules` is an object of `\Magento\CatalogRule\Model\Flag`
+*  `message` is a message string
 
-*  `dirty_rules` - an object of `\Magento\CatalogRule\Model\Flag`
-*  `message` - a message string
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogRule\Controller\Adminhtml\Promo\Catalog\Index`
 
-{:.procedure}
-When to listen:
+### catalogsearch_reset_search_result
 
-*  If one wants to do something when catalog rules are dirty
+#### Use cases
 
-### 60. catalogsearch_reset_search_result
+To perform actions when search results are reset.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\CatalogSearch\Model\ResourceModel\Fulltext::resetSearchResults()` and `\Magento\CatalogSearch\Model\ResourceModel\Fulltext::resetSearchResultsByStore()`:
-
+*  `\Magento\CatalogSearch\Model\ResourceModel\Fulltext::resetSearchResults()`:
    ```php
     public function resetSearchResults()
     {
@@ -2084,7 +1720,9 @@ Where it was introduced:
         $this->_eventManager->dispatch('catalogsearch_reset_search_result');
         return $this;
     }
-
+    ```
+*  `\Magento\CatalogSearch\Model\ResourceModel\Fulltext::resetSearchResultsByStore()`:
+   ```php
     public function resetSearchResultsByStore($storeId)
     {
     ...
@@ -2092,160 +1730,131 @@ Where it was introduced:
 
    ```
 
-{:.procedure}
-Variables passed:
+`store_id` is a store identifier.
 
-*  `store_id` - store ID
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogSearch\Model\ResourceModel\Fulltext`
 
-{:.procedure}
-When to listen:
+### catalogsearch_searchable_attributes_load_after
 
-*  If one wants to do something when search results are reset
+#### Use cases
 
-### 61. catalogsearch_searchable_attributes_load_after
+To perform actions after searchable attributes get loaded.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::getSearchableAttributes()`:
+`\Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::getSearchableAttributes()`:
 
-   ```php
-    public function getSearchableAttributes($backendType = null)
-    {
-    ...
-            $this->eventManager->dispatch(
-                'catalogsearch_searchable_attributes_load_after',
-                ['engine' => $this->engine, 'attributes' => $attributes]
-            );
-    }
-   ```
+```php
+   public function getSearchableAttributes($backendType = null)
+   {
+   ...
+         $this->eventManager->dispatch(
+               'catalogsearch_searchable_attributes_load_after',
+               ['engine' => $this->engine, 'attributes' => $attributes]
+         );
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `engine` is an object of `\Magento\CatalogSearch\Model\ResourceModel\EngineInterface`
+*  `attributes` is an array of attributes
 
-*  `engine` - an object of `\Magento\CatalogSearch\Model\ResourceModel\EngineInterface`
-*  `attributes` - an array of attributes
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider`
 
-{:.procedure}
-When to listen:
+### catalog_block_product_list_collection
 
-*  If one wants to do something after searchable attributes get loaded
+#### Use cases
 
-### 62. catalog_block_product_list_collection
+To perform actions with a product collection after it is initialized.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Block\Product\ListProduct::initializeProductCollection()`:
+`\Magento\Catalog\Block\Product\ListProduct::initializeProductCollection()`:
 
-   ```php
-    private function initializeProductCollection()
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'catalog_block_product_list_collection',
-            ['collection' => $collection]
-        );
-    }
-   ```
+```php
+   private function initializeProductCollection()
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'catalog_block_product_list_collection',
+         ['collection' => $collection]
+      );
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `collection` is an object of `\Magento\Eav\Model\Entity\Collection\AbstractCollection`
 
-*  `collection` - an object of `\Magento\Eav\Model\Entity\Collection\AbstractCollection`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Product\ProductList\Random`
 *  `\Magento\Catalog\Block\Product\ProductList\Promotion`
 
-{:.procedure}
-When to listen:
+### catalog_block_product_status_display
 
-*  If one wants to do something with a product collection after it's initialized
+#### Use cases
 
-### 63. catalog_block_product_status_display
+To perform actions when the `displayProductStockStatus()` function is called.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Block\Product\AbstractProduct::displayProductStockStatus()`:
+`\Magento\Catalog\Block\Product\AbstractProduct::displayProductStockStatus()`:
 
-   ```php
-    public function displayProductStockStatus()
-    {
-        $statusInfo = new \Magento\Framework\DataObject(['display_status' => true]);
-        $this->_eventManager->dispatch('catalog_block_product_status_display'
-                                     , ['status' => $statusInfo]);
-        return (bool) $statusInfo->getDisplayStatus();
-    }
-   ```
+```php
+   public function displayProductStockStatus()
+   {
+      $statusInfo = new \Magento\Framework\DataObject(['display_status' => true]);
+      $this->_eventManager->dispatch('catalog_block_product_status_display'
+                                    , ['status' => $statusInfo]);
+      return (bool) $statusInfo->getDisplayStatus();
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `status` is an object of `\Magento\Framework\DataObject`
 
-*  `status` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Reports\Block\Product\Compared`
 *  `\Magento\Reports\Block\Product\Widget\Viewed\Item`
 
-{:.procedure}
-When to listen:
+### catalog_category_change_products
 
-*  If one wants to do something when **displayProductStockStatus()** function is called.
+#### Use cases
 
-### 64. catalog_category_change_products
+To perform actions after new products get assigned to a category.
+Assigned products get unassigned, or positions of assigned products are changed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\ResourceModel\Category::_saveCategoryProducts()`:
+`\Magento\Catalog\Model\ResourceModel\Category::_saveCategoryProducts()`:
 
-   ```php
-    protected function _saveCategoryProducts($category)
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'catalog_category_change_products',
-                ['category' => $category, 'product_ids' => $productIds]
-            );
-    }
-   ```
+```php
+   protected function _saveCategoryProducts($category)
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'catalog_category_change_products',
+               ['category' => $category, 'product_ids' => $productIds]
+         );
+   }
+```
 
-{:.procedure}
-Variables passed:
+*  `category` is an object of `\Magento\Catalog\Model\Category`
+*  `product_ids` is a product IDs array
 
-*  `category` - an object of `\Magento\Catalog\Model\Category`
-*  `product_ids` - a product IDs array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Model\ResourceModel\Category`
 
-{:.procedure}
-When to listen:
+### catalog_category_delete_after_done
 
-*  If one wants to do something after new products get assigned to a category, already assigned products get unassigned or positions of assigned products changed
+#### Use cases
 
-### 65. catalog_category_delete_after_done
+To perform actions after a category gets deleted.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Catalog\Model\ResourceModel\Category::delete()`:
 
@@ -2261,92 +1870,72 @@ Where it was introduced:
     }
    ```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Category`
+*  `category` is an object of `\Magento\Catalog\Model\Category`
 
-*  `product` - an object of `\Magento\Catalog\Model\Category`
-*  `category` - an object of `\Magento\Catalog\Model\Category`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Model\ResourceModel\Category`
 
-{:.procedure}
-When to listen:
+### catalog_category_flat_loadnodes_before
 
-*  If one wants to do something after a category gets deleted
+#### Use cases
 
-### 66. catalog_category_flat_loadnodes_before
+To modify a `select` object before category flat nodes are loaded.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\ResourceModel\Category\Flat::_loadNodes()`:
+`\Magento\Catalog\Model\ResourceModel\Category\Flat::_loadNodes()`:
+```php
+   protected function _loadNodes($parentNode = null, $recursionLevel = 0, $storeId = 0, $skipMenuFilter = false)
+   {
+   ...
+      $this->_eventManager->dispatch('catalog_category_flat_loadnodes_before'
+                                    , ['select' => $select]);
+```
 
-   ```php
-    protected function _loadNodes($parentNode = null, $recursionLevel = 0, $storeId = 0, $skipMenuFilter = false)
-    {
-    ...
-        $this->_eventManager->dispatch('catalog_category_flat_loadnodes_before'
-                                     , ['select' => $select]);
-   ```
+*  `select` is an object of `Zend_Db_Select`
 
-{:.procedure}
-Variables passed:
-
-*  `select` - an object of `Zend_Db_Select`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Model\ResourceModel\Category\Flat`
 
-{:.procedure}
-When to listen:
+### catalog_category_prepare_save
 
-*  If one wants to modify select object before category flat nodes are loaded
+#### Use cases
 
-### 67. catalog_category_prepare_save
+To modify a category before it is saved.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Controller\Adminhtml\Category\Save::execute()`:
+`\Magento\Catalog\Controller\Adminhtml\Category\Save::execute()`:
+```php
+   public function execute()
+   {
+   ...
+               $this->_eventManager->dispatch(
+                  'catalog_category_prepare_save',
+                  ['category' => $category, 'request' => $this->getRequest()]
+               );
+```
 
-   ```php
-    public function execute()
-    {
-    ...
-                $this->_eventManager->dispatch(
-                    'catalog_category_prepare_save',
-                    ['category' => $category, 'request' => $this->getRequest()]
-                );
-   ```
+*  `category` is an object of `\Magento\Catalog\Model\Category`
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
 
-{:.procedure}
-Variables passed:
-
-*  `category` - an object of `\Magento\Catalog\Model\Category`
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Controller\Adminhtml\Category\Save`
 
-{:.procedure}
-When to listen:
+### catalog_category_tree_init_inactive_category_ids
 
-*  if one wants to modify a category before it's saved
+#### Use cases
 
-### 68. catalog_category_tree_init_inactive_category_ids
+To add more inactive category IDs.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\ResourceModel\Category\Tree::_initInactiveCategoryIds()` and `\Magento\Catalog\Model\ResourceModel\Category\Flat::_initInactiveCategoryIds()`:
-
+*  `\Magento\Catalog\Model\ResourceModel\Category\Tree::_initInactiveCategoryIds()`
+*  `\Magento\Catalog\Model\ResourceModel\Category\Flat::_initInactiveCategoryIds()`:
    ```php
     protected function _initInactiveCategoryIds()
     {
@@ -2356,290 +1945,234 @@ Where it was introduced:
     }
    ```
 
-{:.procedure}
-Variables passed:
+`tree` is an object of `\Magento\Catalog\Model\ResourceModel\Category\Tree` or `\Magento\Catalog\Model\ResourceModel\Category\Flat`
 
-*  `tree` - an object of `\Magento\Catalog\Model\ResourceModel\Category\Tree` or `\Magento\Catalog\Model\ResourceModel\Category\Flat`
-
-{:.procedure}
-There is only two classes that fires this event:
+#### Classes that raise the event
 
 *  `\Magento\Catalog\Model\ResourceModel\Category\Tree`
 *  `\Magento\Catalog\Model\ResourceModel\Category\Flat`
 
-{:.procedure}
-When to listen:
+### catalog_controller_category_delete
 
-*  If one wants to add more inactive category IDs
+#### Use cases
 
-### 69. catalog_controller_category_delete
+To perform actions before a category gets deleted.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Controller\Adminhtml\Category\Delete::execute()`:
+`\Magento\Catalog\Controller\Adminhtml\Category\Delete::execute()`:
+```php
+   public function execute()
+   {
+   ...
+               $this->_eventManager->dispatch('catalog_controller_category_delete', ['category' => $category]);
+```
 
-   ```php
-    public function execute()
-    {
-    ...
-                $this->_eventManager->dispatch('catalog_controller_category_delete', ['category' => $category]);
-   ```
+*  `category` is an object of `\Magento\Catalog\Model\Category`
 
-{:.procedure}
-Variables passed:
-
-*  `category` - an object of `\Magento\Catalog\Model\Category`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Controller\Adminhtml\Category\Delete`
 
-{:.procedure}
-When to listen:
+### catalog_controller_category_init_after
 
-*  If one wants to do something before a category gets deleted
+#### Use cases
 
-### 70. catalog_controller_category_init_after
+To perform actions after a category gets initialized.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Controller\Category\View::_initCategory()`:
+`\Magento\Catalog\Controller\Category\View::_initCategory()`:
 
-   ```php
-    protected function _initCategory()
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'catalog_controller_category_init_after',
-                ['category' => $category, 'controller_action' => $this]
-            );
-   ```
+```php
+   protected function _initCategory()
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'catalog_controller_category_init_after',
+               ['category' => $category, 'controller_action' => $this]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `category` is an object of `\Magento\Catalog\Model\Category`
+*  `controller_action` is an object of `\Magento\Catalog\Controller\Category\View`
 
-*  `category` - an object of `\Magento\Catalog\Model\Category`
-*  `controller_action` - an object of `\Magento\Catalog\Controller\Category\View`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Controller\Category\View`
 
-{:.procedure}
-When to listen:
+### catalog_controller_product_init_after
 
-*  If one wants to do something after a category gets initialized
+#### Use cases
 
-### 71. catalog_controller_product_init_after
+To perform actions after a product gets initialized.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Helper\Product::initProduct()`:
+`\Magento\Catalog\Helper\Product::initProduct()`:
 
-   ```php
-    public function initProduct($productId, $controller, $params = null)
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'catalog_controller_product_init_after',
-                ['product' => $product, 'controller_action' => $controller]
-            );
-   ```
+```php
+   public function initProduct($productId, $controller, $params = null)
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'catalog_controller_product_init_after',
+               ['product' => $product, 'controller_action' => $controller]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
+*  `controller_action` is an object of `\Magento\Framework\App\Action\Action`
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-*  `controller_action` - an object of `\Magento\Framework\App\Action\Action`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Helper\Product`
 
-{:.procedure}
-When to listen:
+### catalog_controller_product_init_before
 
-*  If one wants to do something after a product gets initialized
+#### Use cases
 
-### 72. catalog_controller_product_init_before
+To perform actions before a product gets initialized.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Helper\Product::initProduct()`:
+`\Magento\Catalog\Helper\Product::initProduct()`:
 
-   ```php
-    public function initProduct($productId, $controller, $params = null)
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'catalog_controller_product_init_before',
-            ['controller_action' => $controller, 'params' => $params]
-        );
-   ```
+```php
+   public function initProduct($productId, $controller, $params = null)
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'catalog_controller_product_init_before',
+         ['controller_action' => $controller, 'params' => $params]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `params` is an object of `\Magento\Framework\DataObject`
+*  `controller_action` is an object of `\Magento\Framework\App\Action\Action`
 
-*  `params` - an object of `\Magento\Framework\DataObject`
-*  `controller_action` - an object of `\Magento\Framework\App\Action\Action`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Helper\Product`
 
-{:.procedure}
-When to listen:
+### catalog_controller_product_view
 
-*  If one wants to do something before a product gets initialized
+#### Use cases
 
-### 73. catalog_controller_product_view
+To perform actions before a product page is displayed on the frontend.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Helper\Product\View::prepareAndRender()`:
+`\Magento\Catalog\Helper\Product\View::prepareAndRender()`:
 
-   ```php
-    public function initProduct($productId, $controller, $params = null)
-    {
-    ...
-        $this->_eventManager->dispatch('catalog_controller_product_view', ['product' => $product]);
-   ```
+```php
+   public function initProduct($productId, $controller, $params = null)
+   {
+   ...
+      $this->_eventManager->dispatch('catalog_controller_product_view', ['product' => $product]);
+```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Helper\Product\View`
 
-{:.procedure}
-When to listen:
+### catalog_prepare_price_select
 
-*  If one wants to do something before a product page is displayed on the frontend
+#### Use cases
 
-### 74. catalog_prepare_price_select
+To modify the way prices are added to a `select` statement.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\ResourceModel\Product\Collection::_preparePriceExpressionParameters()`:
+`\Magento\Catalog\Model\ResourceModel\Product\Collection::_preparePriceExpressionParameters()`:
 
-   ```php
-    protected function _preparePriceExpressionParameters($select)
-    {
-    ...
-        $eventArgs = [
-            'select' => $select,
-            'table' => $table,
-            'store_id' => $this->getStoreId(),
-            'response_object' => $response,
-        ];
+```php
+   protected function _preparePriceExpressionParameters($select)
+   {
+   ...
+      $eventArgs = [
+         'select' => $select,
+         'table' => $table,
+         'store_id' => $this->getStoreId(),
+         'response_object' => $response,
+      ];
 
-        $this->_eventManager->dispatch('catalog_prepare_price_select', $eventArgs);
+      $this->_eventManager->dispatch('catalog_prepare_price_select', $eventArgs);
 
-   ```
+```
 
-{:.procedure}
-Variables passed:
+*  `select` is an object of `\Magento\Framework\DB\Select`
+*  `table` is a table name
+*  `store_id` is a store ID
+*  `response_object` is an object of `\Magento\Framework\DataObject`
 
-*  `select` - an object of `\Magento\Framework\DB\Select`
-*  `table` - a table name
-*  `store_id` - a store ID
-*  `response_object` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Reports\Model\ResourceModel\Product\Lowstock\Collection`
 *  `\Magento\Reports\Model\ResourceModel\Product\Downloads\Collection`
 
-{:.procedure}
-When to listen:
+### catalog_product_attribute_update_before
 
-*  If one wants to modify the way prices are added to a select statement
+#### Use cases
 
-### 75. catalog_product_attribute_update_before
+To perform actions before a product attribute(s) gets updated.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\Product\Action::updateAttributes()`:
+`\Magento\Catalog\Model\Product\Action::updateAttributes()`:
+```php
+   public function updateAttributes($productIds, $attrData, $storeId)
+   {
+      $this->_eventManager->dispatch(
+         'catalog_product_attribute_update_before',
+         ['attributes_data' => &$attrData, 'product_ids' => &$productIds, 'store_id' => &$storeId]
+      );
+```
 
-   ```php
-    public function updateAttributes($productIds, $attrData, $storeId)
-    {
-        $this->_eventManager->dispatch(
-            'catalog_product_attribute_update_before',
-            ['attributes_data' => &$attrData, 'product_ids' => &$productIds, 'store_id' => &$storeId]
-        );
-   ```
+*  `attributes_data` is a data array
+*  `product_ids` is a product IDs array
+*  `store_id` is a store ID
 
-{:.procedure}
-Variables passed:
-
-*  `attributes_data` - a data array
-*  `product_ids` - a product IDs array
-*  `store_id` - a store ID
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Model\Product\Action`
 
-{:.procedure}
-When to listen:
+### catalog_product_collection_apply_limitations_after
 
-*  If one wants to do something before a product attribute(s) gets updated
+#### Use cases
 
-### 76. catalog_product_collection_apply_limitations_after
+To perform actions after product collection limitations have been applied.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\ResourceModel\Product\Collection::_applyProductLimitations()`:
+`\Magento\Catalog\Model\ResourceModel\Product\Collection::_applyProductLimitations()`:
 
-   ```php
-    protected function _applyProductLimitations()
-    {
-    ...
-         $this->_eventManager->dispatch(
-            'catalog_product_collection_apply_limitations_after',
-            ['collection' => $this]
-        );
-   ```
+```php
+   protected function _applyProductLimitations()
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'catalog_product_collection_apply_limitations_after',
+         ['collection' => $this]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `collection` is an object of `\Magento\Catalog\Model\ResourceModel\Product\Collection`
 
-*  `collection` - an object of `\Magento\Catalog\Model\ResourceModel\Product\Collection`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Reports\Model\ResourceModel\Product\Downloads\Collection`
 *  `\Magento\Reports\Model\ResourceModel\Product\Lowstock\Collection`
 
-{:.procedure}
-When to listen:
+### catalog_product_collection_before_add_count_to_categories
 
-*  If one wants to do something after product collection limitations have been applied
+#### Use cases
 
-### 77. catalog_product_collection_before_add_count_to_categories
+To perform actions before category counts get added to a product collection.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Catalog\Model\ResourceModel\Product\Collection::addCountToCategories()`:
 
@@ -2653,286 +2186,227 @@ Where it was introduced:
             );
    ```
 
-{:.procedure}
-Variables passed:
+*  `collection` is an object of `\Magento\Catalog\Model\ResourceModel\Product\Collection`
 
-*  `collection` - an object of `\Magento\Catalog\Model\ResourceModel\Product\Collection`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Reports\Model\ResourceModel\Product\Downloads\Collection`
 *  `\Magento\Reports\Model\ResourceModel\Product\Lowstock\Collection`
 
-{:.procedure}
-When to listen:
+### catalog_product_collection_load_after
 
-*  If one wants to do something before category counts get added to a product collection
+#### Use cases
 
-### 78. catalog_product_collection_load_after
+To perform actions after a product collection gets loaded.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\ResourceModel\Product\Collection::_afterLoad()`:
+`\Magento\Catalog\Model\ResourceModel\Product\Collection::_afterLoad()`:
 
-   ```php
-    protected function _afterLoad()
-    {
-    ...
-    $this->_eventManager->dispatch('catalog_product_collection_load_after', ['collection' => $this]);
-   ```
+```php
+   protected function _afterLoad()
+   {
+   ...
+   $this->_eventManager->dispatch('catalog_product_collection_load_after', ['collection' => $this]);
+```
 
-{:.procedure}
-Variables passed:
+*  `collection` is an object of `\Magento\Catalog\Model\ResourceModel\Product\Collection`
 
-*  `collection` - an object of `\Magento\Catalog\Model\ResourceModel\Product\Collection`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Reports\Model\ResourceModel\Product\Downloads\Collection`
 *  `\Magento\Reports\Model\ResourceModel\Product\Lowstock\Collection`
 
-{:.procedure}
-When to listen:
+### catalog_product_compare_add_product
 
-*  If one wants to do something after a product collection gets loaded
+#### Use cases
 
-### 79. catalog_product_compare_add_product
+To perform actions after a product gets added to a compare list.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Controller\Product\Compare\Add::execute()`:
+`\Magento\Catalog\Controller\Product\Compare\Add::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-    $this->_eventManager->dispatch('catalog_product_compare_add_product', ['product' => $product]);
-   ```
+```php
+   public function execute()
+   {
+   ...
+   $this->_eventManager->dispatch('catalog_product_compare_add_product', ['product' => $product]);
+```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Controller\Product\Compare\Add`
 
-{:.procedure}
-When to listen:
+### catalog_product_compare_item_collection_clear
 
-*  If one wants to do something after a product gets added to a compare list
+#### Use cases
 
-### 80. catalog_product_compare_item_collection_clear
+To perform actions after a compare list collection gets cleared.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\ResourceModel\Product\Compare\Item\Collection::clear()`:
+`\Magento\Catalog\Model\ResourceModel\Product\Compare\Item\Collection::clear()`:
 
-   ```php
-    public function clear()
-    {
-        $this->_catalogProductCompareItem->clearItems($this->getVisitorId(), $this->getCustomerId());
-        $this->_eventManager->dispatch('catalog_product_compare_item_collection_clear');
-    ...
-   ```
+```php
+   public function clear()
+   {
+      $this->_catalogProductCompareItem->clearItems($this->getVisitorId(), $this->getCustomerId());
+      $this->_eventManager->dispatch('catalog_product_compare_item_collection_clear');
+   ...
+```
 
-{:.procedure}
-Variables passed:
-
-none
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Model\ResourceModel\Product\Compare\Item\Collection`
 
-{:.procedure}
-When to listen:
+### catalog_product_compare_remove_product
 
-*  If one wants to do something after a compare list collection gets cleared
+#### Use cases
 
-### 81. catalog_product_compare_remove_product
+To perform actions after a product gets removed from a compare list.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Controller\Product\Compare\Remove::execute()`:
+`\Magento\Catalog\Controller\Product\Compare\Remove::execute()`:
+d
+```php
+   public function execute()
+   {
+   ...
+                  $this->_eventManager->dispatch(
+                     'catalog_product_compare_remove_product',
+                     ['product' => $item]
+                  );
+   ...
+```
 
-   ```php
-    public function execute()
-    {
-    ...
-                    $this->_eventManager->dispatch(
-                        'catalog_product_compare_remove_product',
-                        ['product' => $item]
-                    );
-    ...
-   ```
+*  `product` is an object of `\Magento\Catalog\Model\Product\Compare\Item`
 
-{:.procedure}
-Variables passed:
-
-*  `product` - an object of `\Magento\Catalog\Model\Product\Compare\Item`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Controller\Product\Compare\Remove`
 
-{:.procedure}
-When to listen:
+### catalog_product_delete_after_done
 
-*  If one wants to do something after a product gets removed from a compare list
+#### Use cases
 
-### 82. catalog_product_delete_after_done
+To perform actions after a product gets deleted.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\ResourceModel\Product::delete()`:
+`\Magento\Catalog\Model\ResourceModel\Product::delete()`:
 
-   ```php
-    public function delete($object)
-    {
-        $this->getEntityManager()->delete($object);
-        $this->eventManager->dispatch(
-            'catalog_product_delete_after_done',
-            ['product' => $object]
-        );
-    ...
-   ```
+```php
+   public function delete($object)
+   {
+      $this->getEntityManager()->delete($object);
+      $this->eventManager->dispatch(
+         'catalog_product_delete_after_done',
+         ['product' => $object]
+      );
+   ...
+```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Model\ResourceModel\Product`
 *  `\Magento\CatalogImportExport\Model\Import\Proxy\Product\ResourceModel`
 
-{:.procedure}
-When to listen:
+### catalog_product_edit_action
 
-*  If one wants to do something after a product gets deleted
+#### Use cases
 
-### 83. catalog_product_edit_action
+To perform actions after a product gets edited in admin panel.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Controller\Adminhtml\Product\Edit::execute()`:
+`\Magento\Catalog\Controller\Adminhtml\Product\Edit::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-        $this->_eventManager->dispatch('catalog_product_edit_action', ['product' => $product]);
-   ```
+```php
+   public function execute()
+   {
+   ...
+      $this->_eventManager->dispatch('catalog_product_edit_action', ['product' => $product]);
+```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Downloadable\Controller\Adminhtml\Downloadable\Product\Edit\Edit`
 *  `\Magento\Bundle\Controller\Adminhtml\Bundle\Product\Edit\Edit`
 
-{:.procedure}
-When to listen:
+### catalog_product_gallery_prepare_layout
 
-*  If one wants to do something after a product gets edited in admin panel
+#### Use cases
 
-### 84. catalog_product_gallery_prepare_layout
+To modify the way a product admin gallery block layout is rendered.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content::_prepareLayout()`:
+`\Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content::_prepareLayout()`:
 
-   ```php
-    protected function _prepareLayout()
-    {
-    ...
-        $this->_eventManager->dispatch('catalog_product_gallery_prepare_layout', ['block' => $this]);
-   ```
+```php
+   protected function _prepareLayout()
+   {
+   ...
+      $this->_eventManager->dispatch('catalog_product_gallery_prepare_layout', ['block' => $this]);
+```
 
-{:.procedure}
-Variables passed:
+*  `block` is an object of `\Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content`
 
-*  `block` - an object of `\Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content`
 
-{:.procedure}
-When to listen:
+### catalog_product_gallery_upload_image_after
 
-*  If one wants to modify the way a product admin gallery block layout is rendered
+#### Use cases
 
-### 85. catalog_product_gallery_upload_image_after
+To perform an action after product gallery image gets uploaded.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Controller\Adminhtml\Product\Gallery\Upload::execute()`:
+`\Magento\Catalog\Controller\Adminhtml\Product\Gallery\Upload::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'catalog_product_gallery_upload_image_after',
-                ['result' => $result, 'action' => $this]
-            );
-   ```
+```php
+   public function execute()
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'catalog_product_gallery_upload_image_after',
+               ['result' => $result, 'action' => $this]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `result` is an array of uploader save data
+*  `action` is an object of `\Magento\Catalog\Controller\Adminhtml\Product\Gallery\Upload`
 
-*  `result` - an array of uploader save data
-*  `action` - an object of `\Magento\Catalog\Controller\Adminhtml\Product\Gallery\Upload`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Controller\Adminhtml\Product\Gallery\Upload`
 
-{:.procedure}
-When to listen:
+### catalog_product_get_final_price
 
-*  If one wants to perform an action after product gallery image gets uploaded
+#### Use cases
 
-### 86. catalog_product_get_final_price
+To alter the way the final product price is generated.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Catalog\Model\Product\Type\Price::getFinalPrice()`:
-
    ```php
     public function getFinalPrice($qty, $product)
     {
     ...
      $this->_eventManager->dispatch('catalog_product_get_final_price', ['product' => $product, 'qty' => $qty]);
    ```
-
 *  `\Magento\Bundle\Pricing\Price\BundleSelectionPrice::getValue()`:
-
    ```php
    public function getValue()
    {
@@ -2942,7 +2416,6 @@ Where it was introduced:
                     ['product' => $product, 'qty' => $this->bundleProduct->getQty()]
                 );
    ```
-
 *  `\Magento\Bundle\Model\Product\Price::getSelectionFinalTotalPrice()`:
 
   ```php
@@ -2961,1047 +2434,854 @@ Where it was introduced:
                 );
   ```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
+*  `qty` for quantity float or null
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-*  `qty` - quantity float or null
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Bundle\Model\Product\Price`
 *  `\Magento\Downloadable\Model\Product\Price`
 *  `\Magento\GroupedProduct\Model\Product\Type\Grouped\Price`
 
-{:.procedure}
-When to listen:
+### catalog_product_import_bunch_delete_after
 
-*  If one wants to alter the way the final product price is generated
+#### Use cases
 
-### 87. catalog_product_import_bunch_delete_after
+To perform an action after products get deleted.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\CatalogImportExport\Model\Import\Product::_deleteProducts()`:
+`\Magento\CatalogImportExport\Model\Import\Product::_deleteProducts()`:
 
-   ```php
-    protected function _deleteProducts()
-    {
-    ...
-                $this->_eventManager->dispatch(
-                    'catalog_product_import_bunch_delete_after',
-                    ['adapter' => $this, 'bunch' => $bunch]
-                );
-   ```
+```php
+   protected function _deleteProducts()
+   {
+   ...
+               $this->_eventManager->dispatch(
+                  'catalog_product_import_bunch_delete_after',
+                  ['adapter' => $this, 'bunch' => $bunch]
+               );
+```
 
-{:.procedure}
-Variables passed:
+*  `adapter` is an object of `\Magento\CatalogImportExport\Model\Import\Product`
+*  `bunch` is a data array
 
-*  `adapter` - an object of `\Magento\CatalogImportExport\Model\Import\Product`
-*  `bunch` - a data array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogImportExport\Model\Import\Product`
 
-{:.procedure}
-When to listen:
+### catalog_product_import_bunch_delete_commit_before
 
-*  If one wants to perform an action after products get deleted
+#### Use cases
 
-### 88. catalog_product_import_bunch_delete_commit_before
+To perform an action before products get deleted.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\CatalogImportExport\Model\Import\Product::_deleteProducts()`:
+`\Magento\CatalogImportExport\Model\Import\Product::_deleteProducts()`:
 
-   ```php
-    protected function _deleteProducts()
-    {
-    ...
-                    $this->_eventManager->dispatch(
-                        'catalog_product_import_bunch_delete_commit_before',
-                        [
-                            'adapter' => $this,
-                            'bunch' => $bunch,
-                            'ids_to_delete' => $idsToDelete,
-                        ]
-                    );
-   ```
+```php
+   protected function _deleteProducts()
+   {
+   ...
+                  $this->_eventManager->dispatch(
+                     'catalog_product_import_bunch_delete_commit_before',
+                     [
+                           'adapter' => $this,
+                           'bunch' => $bunch,
+                           'ids_to_delete' => $idsToDelete,
+                     ]
+                  );
+```
 
-{:.procedure}
-Variables passed:
+*  `adapter` is an object of `\Magento\CatalogImportExport\Model\Import\Product`
+*  `bunch` is a data array
+*  `ids_to_delete` is a product IDs array
 
-*  `adapter` - an object of `\Magento\CatalogImportExport\Model\Import\Product`
-*  `bunch` - a data array
-*  `ids_to_delete` - a product IDs array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogImportExport\Model\Import\Product`
 
-{:.procedure}
-When to listen:
+### catalog_product_import_bunch_save_after
 
-*  If one wants to perform an action before products get deleted
+#### Use cases
 
-### 89. catalog_product_import_bunch_save_after
+To perform an action after products get saved.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\CatalogImportExport\Model\Import\Product::_saveProducts()`:
+`\Magento\CatalogImportExport\Model\Import\Product::_saveProducts()`:
 
-   ```php
-    protected function _deleteProducts()
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'catalog_product_import_bunch_save_after',
-                ['adapter' => $this, 'bunch' => $bunch]
-            );
-   ```
+```php
+   protected function _deleteProducts()
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'catalog_product_import_bunch_save_after',
+               ['adapter' => $this, 'bunch' => $bunch]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `adapter` is an object of `\Magento\CatalogImportExport\Model\Import\Product`
+*  `bunch` is a data array
 
-*  `adapter` - an object of `\Magento\CatalogImportExport\Model\Import\Product`
-*  `bunch` - a data array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogImportExport\Model\Import\Product`
 
-{:.procedure}
-When to listen:
+### catalog_product_import_finish_before
 
-*  If one wants to perform an action after products get saved
+#### Use cases
 
-### 90. catalog_product_import_finish_before
+To perform an action before a product import is finished.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\CatalogImportExport\Model\Import\Product::_importData()`:
+`\Magento\CatalogImportExport\Model\Import\Product::_importData()`:
 
-   ```php
-    protected function _importData()
-    {
-    ...
-        $this->_eventManager->dispatch('catalog_product_import_finish_before', ['adapter' => $this]);
-   ```
+```php
+   protected function _importData()
+   {
+   ...
+      $this->_eventManager->dispatch('catalog_product_import_finish_before', ['adapter' => $this]);
+```
 
-{:.procedure}
-Variables passed:
+*  `adapter` is an object of `\Magento\CatalogImportExport\Model\Import\Product`
 
-*  `adapter` - an object of `\Magento\CatalogImportExport\Model\Import\Product`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogImportExport\Model\Import\Product`
 
-{:.procedure}
-When to listen:
+### catalog_product_is_salable_after
 
-*  If one wants to perform an action before a product import is finished
+#### Use cases
 
-### 91. catalog_product_is_salable_after
+To perform an action after it checks if a product is available for sale.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\Product::isSalable()`:
+`\Magento\Catalog\Model\Product::isSalable()`:
 
-   ```php
-    public function isSalable()
-    {
-    ...
-        $object = new \Magento\Framework\DataObject(['product' => $this, 'is_salable' => $salable]);
-        $this->_eventManager->dispatch(
-            'catalog_product_is_salable_after',
-            ['product' => $this, 'salable' => $object]
-        );
-   ```
+```php
+   public function isSalable()
+   {
+   ...
+      $object = new \Magento\Framework\DataObject(['product' => $this, 'is_salable' => $salable]);
+      $this->_eventManager->dispatch(
+         'catalog_product_is_salable_after',
+         ['product' => $this, 'salable' => $object]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
+*  `salable` is an object of `\Magento\Framework\DataObject`
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-*  `salable` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There are two classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogImportExport\Model\Import\Proxy\Product`
 *  `\Magento\Catalog\Model\Product`
 
-{:.procedure}
-When to listen:
+### catalog_product_is_salable_before
 
-*  If one wants to perform an action after it checks if a product is available for sale
+#### Use cases
 
-### 92. catalog_product_is_salable_before
+To perform an action before it checks if a product is available for sale.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\Product::isSalable()`:
+`\Magento\Catalog\Model\Product::isSalable()`:
 
-   ```php
-    public function isSalable()
-    {
-    ...
-        $this->_eventManager->dispatch('catalog_product_is_salable_before', ['product' => $this]);
-   ```
+```php
+   public function isSalable()
+   {
+   ...
+      $this->_eventManager->dispatch('catalog_product_is_salable_before', ['product' => $this]);
+```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-
-{:.procedure}
-There are two classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogImportExport\Model\Import\Proxy\Product`
 *  `\Magento\Catalog\Model\Product`
 
-{:.procedure}
-When to listen:
+### catalog_product_new_action
 
-*  If one wants to perform an action before it checks if a product is available for sale
+#### Use cases
 
-### 93. catalog_product_new_action
+To perform an action after a new product is created.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Controller\Adminhtml\Product\NewAction::execute()`:
+`\Magento\Catalog\Controller\Adminhtml\Product\NewAction::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-        $this->_eventManager->dispatch('catalog_product_new_action', ['product' => $product]);
-   ```
+```php
+   public function execute()
+   {
+   ...
+      $this->_eventManager->dispatch('catalog_product_new_action', ['product' => $product]);
+```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-
-{:.procedure}
-There are three classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Controller\Adminhtml\Product\NewAction`
 *  `\Magento\Bundle\Controller\Adminhtml\Bundle\Product\Edit\NewAction`
 *  `\Magento\Downloadable\Controller\Adminhtml\Downloadable\Product\Edit\NewAction`
 
-{:.procedure}
-When to listen:
+### catalog_product_option_price_configuration_after
 
-*  If one wants to perform an action after a new product is created
+#### Use cases
 
-### 94. catalog_product_option_price_configuration_after
+To modify JSON representation of product price options.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Bundle\Block\Catalog\Product\View\Type\Bundle::getJsonConfig()` and `\Magento\Catalog\Block\Product\View\Options::getJsonConfig()`:
+`\Magento\Bundle\Block\Catalog\Product\View\Type\Bundle::getJsonConfig()` and `\Magento\Catalog\Block\Product\View\Options::getJsonConfig()`:
 
-   ```php
-    public function getJsonConfig()
-    {
-    ...
-        $configObj = new DataObject(
-            [
-                'config' => $config,
-            ]
-        );
-        $this->_eventManager->dispatch('catalog_product_option_price_configuration_after', ['configObj' => $configObj]);
+```php
+   public function getJsonConfig()
+   {
+   ...
+      $configObj = new DataObject(
+         [
+               'config' => $config,
+         ]
+      );
+      $this->_eventManager->dispatch('catalog_product_option_price_configuration_after', ['configObj' => $configObj]);
 
-   ```
+```
 
-{:.procedure}
-Variables passed:
+*  `configObj` is an object of `\Magento\Framework\DataObject`
 
-*  `configObj` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Bundle\Block\Catalog\Product\View\Type\Bundle`
 *  `\Magento\Catalog\Block\Adminhtml\Product\Composite\Fieldset\Options`
 
-{:.procedure}
-When to listen:
+### catalog_product_prepare_index_select
 
-*  If one wants to modify json representation of product price options
+#### Use cases
 
-### 95. catalog_product_prepare_index_select
+To alter temporary price index data for bundle products.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Bundle\Model\ResourceModel\Indexer\Price::prepareBundlePriceByType()`:
+`\Magento\Bundle\Model\ResourceModel\Indexer\Price::prepareBundlePriceByType()`:
 
-   ```php
-    private function prepareBundlePriceByType($priceType, array $dimensions, $entityIds = null)
-    {
-    ...
-        $this->eventManager->dispatch(
-            'catalog_product_prepare_index_select',
-            [
-                'select' => $select,
-                'entity_field' => new \Zend_Db_Expr('e.entity_id'),
-                'website_field' => new \Zend_Db_Expr('pw.website_id'),
-                'store_field' => new \Zend_Db_Expr('cwd.default_store_id')
-            ]
-        );
-   ```
+```php
+   private function prepareBundlePriceByType($priceType, array $dimensions, $entityIds = null)
+   {
+   ...
+      $this->eventManager->dispatch(
+         'catalog_product_prepare_index_select',
+         [
+               'select' => $select,
+               'entity_field' => new \Zend_Db_Expr('e.entity_id'),
+               'website_field' => new \Zend_Db_Expr('pw.website_id'),
+               'store_field' => new \Zend_Db_Expr('cwd.default_store_id')
+         ]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `select` is an object of `\Magento\Framework\DB\Select`
+*  `entity_field` is a `Zend_Db_Expr` object
+*  `website_field` is a `Zend_Db_Expr` object
+*  `store_field` is a `Zend_Db_Expr` object
 
-*  `select` - an object of `\Magento\Framework\DB\Select`
-*  `entity_field` - a `Zend_Db_Expr` object
-*  `website_field` - a `Zend_Db_Expr` object
-*  `store_field` - a `Zend_Db_Expr` object
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Bundle\Model\ResourceModel\Indexer\Price`
 
-{:.procedure}
-When to listen:
+### catalog_product_to_website_change
 
-*  If one wants to alter temporary price index data for bundle products
+#### Use cases
 
-### 96. catalog_product_to_website_change
+To perform actions after product websites have been updated.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\Product\Action::updateWebsites()`:
+`\Magento\Catalog\Model\Product\Action::updateWebsites()`:
 
-   ```php
-    public function updateWebsites($productIds, $websiteIds, $type)
-    {
-    ...
-        $this->_eventManager->dispatch('catalog_product_to_website_change', ['products' => $productIds]);
-   ```
+```php
+   public function updateWebsites($productIds, $websiteIds, $type)
+   {
+   ...
+      $this->_eventManager->dispatch('catalog_product_to_website_change', ['products' => $productIds]);
+```
 
-{:.procedure}
-Variables passed:
+*  `products` is a product IDs array
 
-*  `products` - a product IDs array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Model\Product\Action`
 
-{:.procedure}
-When to listen:
+### catalog_product_upsell
 
-*  If one wants to do something after product websites have been updated
+#### Use cases
 
-### 97. catalog_product_upsell
+To do modify a product's upsell collection.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Block\Product\ProductList\Upsell::_prepareData()`:
+`\Magento\Catalog\Block\Product\ProductList\Upsell::_prepareData()`:
 
-   ```php
-    protected function _prepareData()
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'catalog_product_upsell',
-            ['product' => $product, 'collection' => $this->_itemCollection, 'limit' => null]
-        );
-   ```
+```php
+   protected function _prepareData()
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'catalog_product_upsell',
+         ['product' => $product, 'collection' => $this->_itemCollection, 'limit' => null]
+      );
+```
 
-{:.procedure}
-Variables passed:
-
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-*  `collection` - an object of `\Magento\Catalog\Model\ResourceModel\Product\Collection`
+*  `product` is an object of `\Magento\Catalog\Model\Product`
+*  `collection` is an object of `\Magento\Catalog\Model\ResourceModel\Product\Collection`
 *  `limit` - null
 
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Block\Product\ProductList\Upsell`
 
-{:.procedure}
-When to listen:
+### catalog_product_validate_variations_before
 
-*  If one wants to do modify a product's upsell collection
+#### Use cases
 
-### 98. catalog_product_validate_variations_before
+To perform actions before a product variations attributes validation.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\ConfigurableProduct\Model\Product\Validator\Plugin::_validateProductVariations()`:
+`\Magento\ConfigurableProduct\Model\Product\Validator\Plugin::_validateProductVariations()`:
 
-   ```php
-    protected function _validateProductVariations(Product $parentProduct, array $products, RequestInterface $request)
-    {
-    ...
-        $this->eventManager->dispatch(
-            'catalog_product_validate_variations_before',
-            ['product' => $parentProduct, 'variations' => $products]
-        );
-   ```
+```php
+   protected function _validateProductVariations(Product $parentProduct, array $products, RequestInterface $request)
+   {
+   ...
+      $this->eventManager->dispatch(
+         'catalog_product_validate_variations_before',
+         ['product' => $parentProduct, 'variations' => $products]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
+*  `variations` is an array
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-*  `variations` - an array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\ConfigurableProduct\Model\Product\Validator\Plugin`
 
-{:.procedure}
-When to listen:
+### catalog_product_view_config
 
-*  If one wants to do something before a product variations attributes validation
+#### Use cases
 
-### 99. catalog_product_view_config
+To perform actions a JSON encoded product configuration.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Block\Product\View::getJsonConfig()`:
+`\Magento\Catalog\Block\Product\View::getJsonConfig()`:
 
-   ```php
-    public function getJsonConfig()
-    {
-    ...
-    $responseObject = new \Magento\Framework\DataObject();
-    $this->_eventManager->dispatch('catalog_product_view_config', ['response_object' => $responseObject]);
-   ```
+```php
+   public function getJsonConfig()
+   {
+   ...
+   $responseObject = new \Magento\Framework\DataObject();
+   $this->_eventManager->dispatch('catalog_product_view_config', ['response_object' => $responseObject]);
+```
 
-{:.procedure}
-Variables passed:
+*  `response_object` is an object of `\Magento\Framework\DataObject`
 
-*  `response_object` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\ProductAlert\Block\Product\View\Stock`
 *  `\Magento\ProductAlert\Block\Product\View\Price`
 
-{:.procedure}
-When to listen:
+### category_move
 
-*  If one wants to do something a JSON encoded product configuration
+#### Use cases
 
-### 100. category_move
+To perform actions after a category has been moved.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Model\Category::move()`:
+`\Magento\Catalog\Model\Category::move()`:
 
-   ```php
-    public function move($parentId, $afterCategoryId)
-    {
-    ...
-    $this->_eventManager->dispatch('category_move', $eventParams);
-   ```
+```php
+   public function move($parentId, $afterCategoryId)
+   {
+   ...
+   $this->_eventManager->dispatch('category_move', $eventParams);
+```
 
-{:.procedure}
-Variables passed:
+*  `category_move` is a data array
 
-*  `category_move` - a data array
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Model\Category`
 
-{:.procedure}
-When to listen:
+### category_prepare_ajax_response
 
-*  If one wants to do something after a category has been moved
+#### Use cases
 
-### 101. category_prepare_ajax_response
+To modify category ajax response object.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Catalog\Controller\Adminhtml\Category::ajaxRequestResponse()`:
+`\Magento\Catalog\Controller\Adminhtml\Category::ajaxRequestResponse()`:
 
-   ```php
-    protected function ajaxRequestResponse($category, $resultPage)
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'category_prepare_ajax_response',
-            ['response' => $eventResponse, 'controller' => $this]
-        );
-   ```
+```php
+   protected function ajaxRequestResponse($category, $resultPage)
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'category_prepare_ajax_response',
+         ['response' => $eventResponse, 'controller' => $this]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `response` is an object of `\Magento\Framework\DataObject`
+*  `controller` is an object of `\Magento\Catalog\Controller\Adminhtml\Category`
 
-*  `response` - an object of `\Magento\Framework\DataObject`
-*  `controller` - an object of `\Magento\Catalog\Controller\Adminhtml\Category`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Controller\Adminhtml\Category\Grid`
 *  `\Magento\Catalog\Controller\Adminhtml\Category\RefreshPath`
 
-{:.procedure}
-When to listen:
+### catelogsearch_searchable_attributes_load_after
 
-*  If one wants to modify category ajax response object
+#### Use cases
 
-### 102. catelogsearch_searchable_attributes_load_after
+To modify a searchable attributes array.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::getSearchableAttributes()`:
+`\Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::getSearchableAttributes()`:
 
-   ```php
-    public function getSearchableAttributes($backendType = null)
-    {
-    ...
-       $this->eventManager->dispatch(
-                'catelogsearch_searchable_attributes_load_after',
-                ['engine' => $this->engine, 'attributes' => $attributes]
-       );
-   ```
+```php
+   public function getSearchableAttributes($backendType = null)
+   {
+   ...
+      $this->eventManager->dispatch(
+               'catelogsearch_searchable_attributes_load_after',
+               ['engine' => $this->engine, 'attributes' => $attributes]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `engine` is an object of `\Magento\CatalogSearch\Model\ResourceModel\EngineInterface`
+*  `attributes` is an array of attributes
 
-*  `engine` - an object of `\Magento\CatalogSearch\Model\ResourceModel\EngineInterface`
-*  `attributes` - an array of attributes
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider`
 
-{:.procedure}
-When to listen:
+### checkout_allow_guest
 
-*  If one wants to modify a searchable attributes array
+#### Use cases
 
-### 103. checkout_allow_guest
+To modify the allow guest checkout check (or do something if it is enabled).
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Checkout\Helper\Data::isAllowedGuestCheckout()`:
+`\Magento\Checkout\Helper\Data::isAllowedGuestCheckout()`:
 
-   ```php
-    public function isAllowedGuestCheckout(\Magento\Quote\Model\Quote $quote, $store = null)
-    {
-    ...
-        $this->_eventManager->dispatch(
-                'checkout_allow_guest',
-                ['quote' => $quote, 'store' => $store, 'result' => $result]
-        );
-   ```
+```php
+   public function isAllowedGuestCheckout(\Magento\Quote\Model\Quote $quote, $store = null)
+   {
+   ...
+      $this->_eventManager->dispatch(
+               'checkout_allow_guest',
+               ['quote' => $quote, 'store' => $store, 'result' => $result]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
+*  `store` is an integer or an object of `\Magento\Store\Model\Store`
+*  `result` is an object of `\Magento\Framework\DataObject`
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-*  `store` - an integer or an object of `\Magento\Store\Model\Store`
-*  `result` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Checkout\Helper\Data`
 
-{:.procedure}
-When to listen:
+### checkout_cart_add_product_complete
 
-*  If one wants to modify the allow guest checkout check (or do something if it's on)
+#### Use cases
 
-### 104. checkout_cart_add_product_complete
+To perform actions after a product has been added to the cart.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Checkout\Controller\Cart\Add::execute()`:
+`\Magento\Checkout\Controller\Cart\Add::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'checkout_cart_add_product_complete',
-                ['product' => $product, 'request' => $this->getRequest(), 'response' => $this->getResponse()]
-            );
-   ```
+```php
+   public function execute()
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'checkout_cart_add_product_complete',
+               ['product' => $product, 'request' => $this->getRequest(), 'response' => $this->getResponse()]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
+*  `response` is an object of `\Magento\Framework\App\ResponseInterface`
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-*  `response` - an object of `\Magento\Framework\App\ResponseInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Checkout\Controller\Cart\Add`
 
-{:.procedure}
-When to listen:
+### checkout_cart_product_add_before
 
-*  If one wants to do something after a product has been added to the cart
+#### Use cases
 
-### 105. checkout_cart_product_add_before
+To perform actions before a product has been added to the cart.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Checkout\Model\Cart::addProduct()`:
+`\Magento\Checkout\Model\Cart::addProduct()`:
 
-   ```php
-    public function addProduct($productInfo, $requestInfo = null)
-    {
-    ...
-                $this->_eventManager->dispatch(
-                    'checkout_cart_product_add_before',
-                    ['info' => $requestInfo, 'product' => $product]
-                );
-   ```
+```php
+   public function addProduct($productInfo, $requestInfo = null)
+   {
+   ...
+               $this->_eventManager->dispatch(
+                  'checkout_cart_product_add_before',
+                  ['info' => $requestInfo, 'product' => $product]
+               );
+```
 
-{:.procedure}
-Variables passed:
+*  `info` is an integer or an array or an object of `\Magento\Framework\DataObject`
+*  `product` is an object of `\Magento\Catalog\Model\Product`
 
-*  `info` - an integer or an array or an object of `\Magento\Framework\DataObject`
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Checkout\Model\Cart`
 
-{:.procedure}
-When to listen:
+### checkout_cart_product_update_after
 
-*  If one wants to do something before a product has been added to the cart
+#### Use cases
 
-### 106. checkout_cart_product_update_after
+To perform actions after a cart item has been updated.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Checkout\Model\Cart::updateItem()`:
+`\Magento\Checkout\Model\Cart::updateItem()`:
 
-   ```php
-    public function updateItem($itemId, $requestInfo = null, $updatingParams = null)
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'checkout_cart_product_update_after',
-            ['quote_item' => $result, 'product' => $product]
-        );
-   ```
-
-{:.procedure}
-Variables passed:
-
-*  `quote_item` - an object of `\Magento\Quote\Model\Quote\Item`
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-
-{:.procedure}
-There is only one class that fires this event:
-
-*  `\Magento\Checkout\Model\Cart`
-
-{:.procedure}
-When to listen:
-
-*  If one wants to do something after a cart item has been updated
-
-### 107. checkout_cart_save_after
-
-{:.procedure}
-Where it was introduced:
-
-*  `\Magento\Checkout\Model\Cart::save()`:
-
-   ```php
-    public function save()
-    {
-    ...
-        $this->_eventManager->dispatch('checkout_cart_save_after', ['cart' => $this]);
-   ```
-
-{:.procedure}
-Variables passed:
-
-*  `cart` - an object of `\Magento\Checkout\Model\Cart`
-
-{:.procedure}
-There is only one class that fires this event:
-
-*  `\Magento\Checkout\Model\Cart`
-
-{:.procedure}
-When to listen:
-
-*  If one wants to do something after a cart has been saved
-
-### 108. checkout_cart_save_before
-
-{:.procedure}
-Where it was introduced:
-
-*  `\Magento\Checkout\Model\Cart::save()`:
-
-   ```php
-    public function save()
-    {
-    ...
-        $this->_eventManager->dispatch('checkout_cart_save_before', ['cart' => $this]);
-   ```
-
-{:.procedure}
-Variables passed:
-
-*  `cart` - an object of `\Magento\Checkout\Model\Cart`
-
-{:.procedure}
-There is only one class that fires this event:
-
-*  `\Magento\Checkout\Model\Cart`
-
-{:.procedure}
-When to listen:
-
-*  If one wants to do something before a cart is updated
-
-### 109. checkout_cart_update_items_after
-
-{:.procedure}
-Where it was introduced:
-
-*  `\Magento\Checkout\Model\Cart::updateItems()`:
-
-   ```php
-    public function updateItems($data)
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'checkout_cart_update_items_after',
-            ['cart' => $this, 'info' => $infoDataObject]
-        );
-   ```
-
-{:.procedure}
-Variables passed:
-
-*  `cart` - an object of `\Magento\Checkout\Model\Cart`
-*  `info` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There is only one class that fires this event:
-
-*  `\Magento\Checkout\Model\Cart`
-
-{:.procedure}
-When to listen:
-
-*  If one wants to do something after cart items have been updated
-
-### 110. checkout_cart_update_items_before
-
-{:.procedure}
-Where it was introduced:
-
-*  `\Magento\Checkout\Model\Cart::updateItems()`:
-
-   ```php
-    public function updateItems($data)
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'checkout_cart_update_items_before',
-            ['cart' => $this, 'info' => $infoDataObject]
-        );
-   ```
-
-{:.procedure}
-Variables passed:
-
-*  `cart` - an object of `\Magento\Checkout\Model\Cart`
-*  `info` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There is only one class that fires this event:
-
-*  `\Magento\Checkout\Model\Cart`
-
-{:.procedure}
-When to listen:
-
-*  If one wants to do something before cart items are updated
-
-### 111. checkout_cart_update_item_complete
-
-{:.procedure}
-Where it was introduced:
-
-*  `\Magento\Checkout\Controller\Cart\UpdateItemOptions::execute()`:
-
-   ```php
-    public function execute()
-    {
-    ...
+```php
+   public function updateItem($itemId, $requestInfo = null, $updatingParams = null)
+   {
+   ...
       $this->_eventManager->dispatch(
-                'checkout_cart_update_item_complete',
-                ['item' => $item, 'request' => $this->getRequest(), 'response' => $this->getResponse()]
+         'checkout_cart_product_update_after',
+         ['quote_item' => $result, 'product' => $product]
       );
-   ```
+```
 
-{:.procedure}
-Variables passed:
+*  `quote_item` is an object of `\Magento\Quote\Model\Quote\Item`
+*  `product` is an object of `\Magento\Catalog\Model\Product`
 
-*  `item` - an object of `\Magento\Quote\Model\Quote\Item`
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-*  `response` - an object of `\Magento\Framework\App\ResponseInterface`
+#### Classes raising the event
 
-{:.procedure}
-There is only one class that fires this event:
+*  `\Magento\Checkout\Model\Cart`
+
+### checkout_cart_save_after
+
+#### Use cases
+
+To perform actions after a cart has been saved.
+
+#### Origins
+
+`\Magento\Checkout\Model\Cart::save()`:
+
+```php
+   public function save()
+   {
+   ...
+      $this->_eventManager->dispatch('checkout_cart_save_after', ['cart' => $this]);
+```
+
+*  `cart` is an object of `\Magento\Checkout\Model\Cart`
+
+#### Classes raising the event
+
+*  `\Magento\Checkout\Model\Cart`
+
+### checkout_cart_save_before
+
+#### Use cases
+
+To perform actions before a cart is updated.
+
+#### Origins
+
+`\Magento\Checkout\Model\Cart::save()`:
+
+```php
+   public function save()
+   {
+   ...
+      $this->_eventManager->dispatch('checkout_cart_save_before', ['cart' => $this]);
+```
+
+*  `cart` is an object of `\Magento\Checkout\Model\Cart`
+
+#### Classes raising the event
+
+*  `\Magento\Checkout\Model\Cart`
+
+### checkout_cart_update_items_after
+
+#### Use cases
+
+To perform actions after cart items have been updated.
+
+#### Origins
+
+`\Magento\Checkout\Model\Cart::updateItems()`:
+
+```php
+   public function updateItems($data)
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'checkout_cart_update_items_after',
+         ['cart' => $this, 'info' => $infoDataObject]
+      );
+```
+
+*  `cart` is an object of `\Magento\Checkout\Model\Cart`
+*  `info` is an object of `\Magento\Framework\DataObject`
+
+#### Classes raising the event
+
+*  `\Magento\Checkout\Model\Cart`
+
+### checkout_cart_update_items_before
+
+#### Use cases
+
+To perform actions before cart items are updated.
+
+#### Origins
+
+`\Magento\Checkout\Model\Cart::updateItems()`:
+
+```php
+   public function updateItems($data)
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'checkout_cart_update_items_before',
+         ['cart' => $this, 'info' => $infoDataObject]
+      );
+```
+
+*  `cart` is an object of `\Magento\Checkout\Model\Cart`
+*  `info` is an object of `\Magento\Framework\DataObject`
+
+#### Classes raising the event
+
+*  `\Magento\Checkout\Model\Cart`
+
+### checkout_cart_update_item_complete
+
+#### Use cases
+
+To perform actions once a cart item update is complete.
+
+#### Origins
+
+`\Magento\Checkout\Controller\Cart\UpdateItemOptions::execute()`:
+
+```php
+   public function execute()
+   {
+   ...
+   $this->_eventManager->dispatch(
+               'checkout_cart_update_item_complete',
+               ['item' => $item, 'request' => $this->getRequest(), 'response' => $this->getResponse()]
+   );
+```
+
+*  `item` is an object of `\Magento\Quote\Model\Quote\Item`
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
+*  `response` is an object of `\Magento\Framework\App\ResponseInterface`
+
+#### Classes raising the event
 
 *  `\Magento\Checkout\Controller\Cart\UpdateItemOptions`
 
-{:.procedure}
-When to listen:
+### checkout_controller_multishipping_shipping_post
 
-*  If one wants to do something once a cart item update is complete
+#### Use cases
 
-### 112. checkout_controller_multishipping_shipping_post
+To perform actions before a multishipping shipping method is set.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Multishipping\Controller\Checkout\ShippingPost::execute()`:
+`\Magento\Multishipping\Controller\Checkout\ShippingPost::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'checkout_controller_multishipping_shipping_post',
-                ['request' => $this->getRequest(), 'quote' => $this->_getCheckout()->getQuote()]
-            );
-   ```
+```php
+   public function execute()
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'checkout_controller_multishipping_shipping_post',
+               ['request' => $this->getRequest(), 'quote' => $this->_getCheckout()->getQuote()]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
 
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Multishipping\Controller\Checkout\ShippingPost`
 
-{:.procedure}
-When to listen:
+### checkout_controller_onepage_saveOrder
 
-*  If one wants to do something before a multishipping shipping method is set
+#### Use cases
 
-### 113. checkout_controller_onepage_saveOrder
+To perform actions after an attempt to place an order has been made (successful or not).
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Checkout\Controller\Onepage\SaveOrder::execute()`:
+`\Magento\Checkout\Controller\Onepage\SaveOrder::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'checkout_controller_onepage_saveOrder',
-            [
-                'result' => $result,
-                'action' => $this
-            ]
-        );
-   ```
+```php
+   public function execute()
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'checkout_controller_onepage_saveOrder',
+         [
+               'result' => $result,
+               'action' => $this
+         ]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `result` is an object of `\Magento\Framework\DataObject`
+*  `action` is an object of `\Magento\Checkout\Controller\Onepage\SaveOrder`
 
-*  `result` - an object of `\Magento\Framework\DataObject`
-*  `action` - an object of `\Magento\Checkout\Controller\Onepage\SaveOrder`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Checkout\Controller\Onepage\SaveOrder`
 
-{:.procedure}
-When to listen:
+### checkout_multishipping_refund_all
 
-*  If one wants to do something after an attempt to place an order has been made (successful or not)
+#### Use cases
 
-### 114. checkout_multishipping_refund_all
+To do catch a moment when multishipping orders failed to be placed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Multishipping\Model\Checkout\Type\Multishipping::createOrders()`:
+`\Magento\Multishipping\Model\Checkout\Type\Multishipping::createOrders()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-        } catch (\Exception $e) {
-            $this->_eventManager->dispatch('checkout_multishipping_refund_all', ['orders' => $orders]);
-            throw $e;
-        }
+```php
+   public function execute()
+   {
+   ...
+      } catch (\Exception $e) {
+         $this->_eventManager->dispatch('checkout_multishipping_refund_all', ['orders' => $orders]);
+         throw $e;
+      }
 
-   ```
+```
 
-{:.procedure}
-Variables passed:
+*  `orders` is an array of orders
 
-*  `orders` - an array of orders
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Multishipping\Model\Checkout\Type\Multishipping`
 
-{:.procedure}
-When to listen:
+### checkout_onepage_controller_success_action
 
-*  If one wants to do catch a moment when multishipping orders failed to be placed
+#### Use cases
 
-### 115. checkout_onepage_controller_success_action
+To perform actions when an one page checkout success page is rendered.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Checkout\Controller\Onepage\Success::execute()`:
+`\Magento\Checkout\Controller\Onepage\Success::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ...
-        $this->_eventManager->dispatch(
-            'checkout_onepage_controller_success_action',
-            [
-                'order_ids' => [$session->getLastOrderId()],
-                'order' => $session->getLastRealOrder()
-            ]
-        );
-   ```
+```php
+   public function execute()
+   {
+   ...
+      $this->_eventManager->dispatch(
+         'checkout_onepage_controller_success_action',
+         [
+               'order_ids' => [$session->getLastOrderId()],
+               'order' => $session->getLastRealOrder()
+         ]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `order_ids` is an array of last order ID(s)
+*  `order` is an object of `\Magento\Sales\Model\Order`
 
-*  `order_ids` - an array of last order ID(s)
-*  `order` - an object of `\Magento\Sales\Model\Order`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Checkout\Controller\Onepage\Success`
 
-{:.procedure}
-When to listen:
+### checkout_quote_destroy
 
-*  If one wants to do something when an onepage checkout success page is rendered
+#### Use cases
 
-### 116. checkout_quote_destroy
+To perform actions when a session quote is cleared.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Checkout\Model\Session::clearQuote()`:
+`\Magento\Checkout\Model\Session::clearQuote()`:
 
-   ```php
-    public function clearQuote()
-    {
-    ...
-        $this->_eventManager->dispatch('checkout_quote_destroy', ['quote' => $this->getQuote()]);
-   ```
+```php
+   public function clearQuote()
+   {
+   ...
+      $this->_eventManager->dispatch('checkout_quote_destroy', ['quote' => $this->getQuote()]);
+```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Checkout\Model\Session`
 
-{:.procedure}
-When to listen:
+### checkout_quote_init
 
-*  If one wants to do something when a session quote is cleared
+#### Use cases
 
-### 117. checkout_quote_init
+To perform actions when a session quote is initialized.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Checkout\Model\Session::getQuote()`:
+`\Magento\Checkout\Model\Session::getQuote()`:
 
-   ```php
-    public function getQuote()
-    {
-    ...
-      $this->_eventManager->dispatch('checkout_quote_init', ['quote' => $quote]);
-   ```
+```php
+   public function getQuote()
+   {
+   ...
+   $this->_eventManager->dispatch('checkout_quote_init', ['quote' => $quote]);
+```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Checkout\Model\Session`
 
-{:.procedure}
-When to listen:
+### checkout_submit_all_after
 
-*  If one wants to do something when a session quote is initialized
+#### Use cases
 
-### 118. checkout_submit_all_after
+To perform actions after an order was placed.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Checkout\Model\Type\Onepage::saveOrder()`:
-
    ```php
     public function saveOrder()
     {
@@ -4014,18 +3294,14 @@ Where it was introduced:
             ]
         );
    ```
-
 *  `\Magento\Sales\Model\AdminOrder\Create::createOrder()`:
-
    ```php
    public function createOrder()
    {
    ...
    $this->_eventManager->dispatch('checkout_submit_all_after', ['order' => $order, 'quote' => $quote]);
    ```
-
 *  `\Magento\Multishipping\Model\Checkout\Type\Multishipping::createOrders()`:
-
    ```php
    public function createOrders()
    {
@@ -4035,9 +3311,7 @@ Where it was introduced:
                 ['orders' => $orders, 'quote' => $this->getQuote()]
             );
    ```
-
 *  `\Magento\Quote\Model\QuoteManagement::placeOrder()`:
-
    ```php
    public function placeOrder($cartId, PaymentInterface $paymentMethod = null)
    {
@@ -4045,183 +3319,147 @@ Where it was introduced:
    $this->eventManager->dispatch('checkout_submit_all_after', ['order' => $order, 'quote' => $quote]);
    ```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
+*  `order` is an object of `\Magento\Sales\Api\Data\OrderInterface`
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-*  `order` - an object of `\Magento\Sales\Api\Data\OrderInterface`
-
-{:.procedure}
-There are four classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Quote\Model\QuoteManagement`
 *  `\Magento\Multishipping\Model\Checkout\Type\Multishipping`
 *  `\Magento\Sales\Model\AdminOrder\Create`
 *  `\Magento\Checkout\Model\Type\Onepage`
 
-{:.procedure}
-When to listen:
+### checkout_submit_before
 
-*  If one wants to do something after an order was placed
+#### Use cases
 
-### 119. checkout_submit_before
+To perform actions when before a quote is submitted.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Quote\Model\QuoteManagement::placeOrder()`:
+`\Magento\Quote\Model\QuoteManagement::placeOrder()`:
 
-   ```php
-    public function placeOrder($cartId, PaymentInterface $paymentMethod = null)
-    {
-    ...
-    $this->eventManager->dispatch('checkout_submit_before', ['quote' => $quote]);
-   ```
+```php
+   public function placeOrder($cartId, PaymentInterface $paymentMethod = null)
+   {
+   ...
+   $this->eventManager->dispatch('checkout_submit_before', ['quote' => $quote]);
+```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Quote\Model\QuoteManagement`
 
-{:.procedure}
-When to listen:
+### checkout_type_multishipping_create_orders_single
 
-*  If one wants to do something when befor a quote is submitted
+#### Use cases
 
-### 120. checkout_type_multishipping_create_orders_single
+To perform actions after a single order is placed within a multishipping checkout.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Multishipping\Model\Checkout\Type\Multishipping::createOrders()`:
+`\Magento\Multishipping\Model\Checkout\Type\Multishipping::createOrders()`:
 
-   ```php
-    public function createOrders()
-    {
-    ...
-                $this->_eventManager->dispatch(
-                    'checkout_type_multishipping_create_orders_single',
-                    ['order' => $order, 'address' => $address, 'quote' => $this->getQuote()]
-                );
-   ```
+```php
+   public function createOrders()
+   {
+   ...
+               $this->_eventManager->dispatch(
+                  'checkout_type_multishipping_create_orders_single',
+                  ['order' => $order, 'address' => $address, 'quote' => $this->getQuote()]
+               );
+```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
+*  `order` is an object of `\Magento\Sales\Model\Order`
+*  `address` is an object of `\Magento\Quote\Model\Quote\Address`
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-*  `order` - an object of `\Magento\Sales\Model\Order`
-*  `address` - an object of `\Magento\Quote\Model\Quote\Address`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Multishipping\Model\Checkout\Type\Multishipping`
 
-{:.procedure}
-When to listen:
+### checkout_type_multishipping_set_shipping_items
 
-*  If one wants to do something after a single order is placed within a multishipping checkout
+#### Use cases
 
-### 121. checkout_type_multishipping_set_shipping_items
+To perform actions after shipping information is set within a multishipping checkout.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Multishipping\Model\Checkout\Type\Multishipping::setShippingItemsInformation()`:
+`\Magento\Multishipping\Model\Checkout\Type\Multishipping::setShippingItemsInformation()`:
 
-   ```php
-    public function setShippingItemsInformation($info)
-    {
-    ...
-            $this->_eventManager->dispatch('checkout_type_multishipping_set_shipping_items', ['quote' => $quote]);
-   ```
+```php
+   public function setShippingItemsInformation($info)
+   {
+   ...
+         $this->_eventManager->dispatch('checkout_type_multishipping_set_shipping_items', ['quote' => $quote]);
+```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Multishipping\Model\Checkout\Type\Multishipping`
 
-{:.procedure}
-When to listen:
+### checkout_type_onepage_save_order_after
 
-*  If one wants to do something after shipping information is set within a mutlishipping checkout
+#### Use cases
 
-### 122. checkout_type_onepage_save_order_after
+To perform actions after an order is saved within a onepage checkout.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Checkout\Model\Type\Onepage::saveOrder()`:
+`\Magento\Checkout\Model\Type\Onepage::saveOrder()`:
 
-   ```php
-    public function saveOrder()
-    {
-    ...
-            $this->_eventManager->dispatch(
-                'checkout_type_onepage_save_order_after',
-                ['order' => $order, 'quote' => $this->getQuote()]
-            );
-   ```
+```php
+   public function saveOrder()
+   {
+   ...
+         $this->_eventManager->dispatch(
+               'checkout_type_onepage_save_order_after',
+               ['order' => $order, 'quote' => $this->getQuote()]
+         );
+```
 
-{:.procedure}
-Variables passed:
+*  `quote` is an object of `\Magento\Quote\Model\Quote`
+*  `order` is an object of `\Magento\Sales\Model\Order`
 
-*  `quote` - an object of `\Magento\Quote\Model\Quote`
-*  `order` - an object of `\Magento\Sales\Model\Order`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Checkout\Model\Type\Onepage`
 
-{:.procedure}
-When to listen:
+### clean_cache_after_reindex
 
-*  If one wants to do something after an order is saved within a onepage checkout
+#### Use cases
 
-### 123. clean_cache_after_reindex
+To perform actions before indexed item cache entries are cleared.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Indexer\Model\Processor\CleanCache::afterUpdateMview()`:
+`\Magento\Indexer\Model\Processor\CleanCache::afterUpdateMview()`:
 
-   ```php
-    public function afterUpdateMview(\Magento\Indexer\Model\Processor $subject)
-    {
-        $this->eventManager->dispatch('clean_cache_after_reindex', ['object' => $this->context]);
-    ...
-   ```
+```php
+   public function afterUpdateMview(\Magento\Indexer\Model\Processor $subject)
+   {
+      $this->eventManager->dispatch('clean_cache_after_reindex', ['object' => $this->context]);
+   ...
+```
 
-{:.procedure}
-Variables passed:
+*  `object` is an object of `\Magento\Framework\Indexer\CacheContext`
 
-*  `object` - an object of `\Magento\Framework\Indexer\CacheContext`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Indexer\Model\Processor\CleanCache`
 
-{:.procedure}
-When to listen:
+### clean_cache_by_tags
 
-*  If one wants to do something before indexed item cache entries are cleared
+#### Use cases
 
-### 124. clean_cache_by_tags
+To perform actions at the time specific tags are cleaned from cache.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Framework\Model\AbstractModel::afterSave()`:
 
@@ -4333,214 +3571,166 @@ Where it was introduced:
    $this->eventManager->dispatch('clean_cache_by_tags', ['object' => $this->context]);
    ```
 
-{:.procedure}
-Variables passed:
+`object` is an object of `\Magento\Framework\Indexer\CacheContext`.
 
-*  `object` - an object of `\Magento\Framework\Indexer\CacheContext`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Indexer\Model\Processor\CleanCache`
 *  `\Magento\Weee\Model\Tax`
 *  `\Magento\Reports\Model\Event`
 
-{:.procedure}
-When to listen:
+### clean_catalog_images_cache_after
 
-*  If one wants to do something at the time specific tags are cleaned from cache
+#### Use cases
 
-### 125. clean_catalog_images_cache_after
+To perform actions after image cache has been cleared.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Backend\Controller\Adminhtml\Cache\CleanImages::execute()`:
+`\Magento\Backend\Controller\Adminhtml\Cache\CleanImages::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ....
-    $this->_eventManager->dispatch('clean_catalog_images_cache_after');
-   ```
+```php
+   public function execute()
+   {
+   ....
+   $this->_eventManager->dispatch('clean_catalog_images_cache_after');
+```
 
-{:.procedure}
-Variables passed:
-
-N/A
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Backend\Controller\Adminhtml\Cache\CleanImages`
 
-{:.procedure}
-When to listen:
+### clean_media_cache_after
 
-*  If one wants to do something after image cache has been cleared
+#### Use cases
 
-### 126. clean_media_cache_after
+To perform actions after JavaScript/CSS cache has been cleared.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Backend\Controller\Adminhtml\Cache\CleanMedia::execute()`:
+`\Magento\Backend\Controller\Adminhtml\Cache\CleanMedia::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ....
-    $this->_eventManager->dispatch('clean_media_cache_after');
-   ```
+```php
+   public function execute()
+   {
+   ....
+   $this->_eventManager->dispatch('clean_media_cache_after');
+```
 
-{:.procedure}
-Variables passed:
-
-N/A
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Backend\Controller\Adminhtml\Cache\CleanMedia`
 
-{:.procedure}
-When to listen:
+### clean_static_files_cache_after
 
-*  If one wants to do something after Javascript/CSS cache has been cleared
+#### Use cases
 
-### 127. clean_static_files_cache_after
+To perform actions after static files cache has been cleared.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Backend\Controller\Adminhtml\Cache\CleanStaticFiles::execute()`:
+`\Magento\Backend\Controller\Adminhtml\Cache\CleanStaticFiles::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ....
-    $this->_eventManager->dispatch('clean_static_files_cache_after');
-   ```
+```php
+   public function execute()
+   {
+   ....
+   $this->_eventManager->dispatch('clean_static_files_cache_after');
+```
 
-{:.procedure}
-Variables passed:
-
-N/A
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Backend\Controller\Adminhtml\Cache\CleanStaticFiles`
 
-{:.procedure}
-When to listen:
+### cms_controller_router_match_before
 
-*  If one wants to do something after static files cache has been cleared
+#### Use cases
 
-### 128. cms_controller_router_match_before
+To perform actions before a CMS page is matched.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Cms\Controller\Router::match()`:
+`\Magento\Cms\Controller\Router::match()`:
 
-   ```php
-    public function match(\Magento\Framework\App\RequestInterface $request)
-    {
-    ....
-    $this->_eventManager->dispatch(
-            'cms_controller_router_match_before',
-            ['router' => $this, 'condition' => $condition]
-    );
-   ```
+```php
+   public function match(\Magento\Framework\App\RequestInterface $request)
+   {
+   ....
+   $this->_eventManager->dispatch(
+         'cms_controller_router_match_before',
+         ['router' => $this, 'condition' => $condition]
+   );
+```
 
-{:.procedure}
-Variables passed:
+*  `router` is an object of `\Magento\Cms\Controller\Router`
+*  `condition` is an object of `\Magento\Framework\DataObject`
 
-*  `router` - an object of `\Magento\Cms\Controller\Router`
-*  `condition` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Cms\Controller\Router`
 
-{:.procedure}
-When to listen:
+### cms_page_prepare_save
 
-*  If one wants to do something before a cms page is matched
+#### Use cases
 
-### 129. cms_page_prepare_save
+To perform actions before a cms page is saved.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Cms\Controller\Adminhtml\Page\Save::execute()`:
+`\Magento\Cms\Controller\Adminhtml\Page\Save::execute()`:
 
-   ```php
-    public function execute()
-    {
-    ....
-    $this->_eventManager->dispatch(
-                    'cms_page_prepare_save',
-                    ['page' => $model, 'request' => $this->getRequest()]
-    );
-   ```
+```php
+   public function execute()
+   {
+   ....
+   $this->_eventManager->dispatch(
+                  'cms_page_prepare_save',
+                  ['page' => $model, 'request' => $this->getRequest()]
+   );
+```
 
-{:.procedure}
-Variables passed:
+*  `page` is an object of `\Magento\Cms\Model\Page`
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
 
-*  `page` - an object of `\Magento\Cms\Model\Page`
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Cms\Controller\Adminhtml\Page\Save`
 
-{:.procedure}
-When to listen:
+### cms_page_render
 
-*  If one wants to do something before a cms page is saved
+#### Use cases
 
-### 130. cms_page_render
+To perform actions before a cms page is rendered.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Cms\Helper\Page::prepareResultPage()`:
+`\Magento\Cms\Helper\Page::prepareResultPage()`:
 
-   ```php
-    public function prepareResultPage(ActionInterface $action, $pageId = null)
-    {
-    ....
-        $this->_eventManager->dispatch(
-            'cms_page_render',
-            ['page' => $this->_page, 'controller_action' => $action, 'request' => $this->_getRequest()]
-        );
-   ```
+```php
+   public function prepareResultPage(ActionInterface $action, $pageId = null)
+   {
+   ....
+      $this->_eventManager->dispatch(
+         'cms_page_render',
+         ['page' => $this->_page, 'controller_action' => $action, 'request' => $this->_getRequest()]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `page` is an object of `\Magento\Cms\Model\Page`
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
+*  `controller_action` is an object of `\Magento\Framework\App\ActionInterface`
 
-*  `page` - an object of `\Magento\Cms\Model\Page`
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-*  `controller_action` - an object of `\Magento\Framework\App\ActionInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Cms\Helper\Page`
 
-{:.procedure}
-When to listen:
+### cms_wysiwyg_images_static_urls_allowed
 
-*  If one wants to do something before a cms page is rendered
+#### Use cases
 
-### 131. cms_wysiwyg_images_static_urls_allowed
+To do change whether using static URLs is allowed or not.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Cms\Helper\Wysiwyg\Images::isUsingStaticUrlsAllowed()`:
 
@@ -4554,26 +3744,20 @@ Where it was introduced:
         );
    ```
 
-{:.procedure}
-Variables passed:
+*  `result` is a PHP object variable
+*  `store_id` is a store ID
 
-*  `result` - a PHP object variable
-*  `store_id` - a store ID
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Cms\Helper\Wysiwyg\Images`
 
-{:.procedure}
-When to listen:
+### controller_action_catalog_product_save_entity_after
 
-*  If one wants to do change whether using static URLs is allowed or not
+#### Use cases
 
-### 132. controller_action_catalog_product_save_entity_after
+To perform actions after a product has been saved in backend.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Catalog\Controller\Adminhtml\Product\Save::execute()`:
 
@@ -4587,570 +3771,457 @@ Where it was introduced:
    );
    ```
 
-{:.procedure}
-Variables passed:
+*  `product` is an object of `\Magento\Catalog\Model\Product`
+*  `controller` is an object of `\Magento\Catalog\Controller\Adminhtml\Product\Save`
 
-*  `product` - an object of `\Magento\Catalog\Model\Product`
-*  `controller` - an object of `\Magento\Catalog\Controller\Adminhtml\Product\Save`
-
-{:.procedure}
-There are only there classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Catalog\Controller\Adminhtml\Product\Save`
 *  `\Magento\Bundle\Controller\Adminhtml\Bundle\Product\Edit\Save`
 *  `\Magento\Downloadable\Controller\Adminhtml\Downloadable\Product\Edit\Save`
 
-{:.procedure}
-When to listen:
+### controller_action_inventory_populate_source_with_data
 
-*  If one wants to do something after a product has been saved in backend
+#### Use cases
 
-### 133. controller_action_inventory_populate_source_with_data
+Modify inventory source before it gets saved.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\InventoryAdminUi\Controller\Adminhtml\Source\Save::processSave()`:
+`\Magento\InventoryAdminUi\Controller\Adminhtml\Source\Save::processSave()`:
 
-   ```php
-   private function processSave(SourceInterface $source, array $requestData)
-   {
-   ....
-        $this->_eventManager->dispatch(
-            'controller_action_inventory_populate_source_with_data',
-            [
-                'request' => $this->getRequest(),
-                'source' => $source,
-            ]
-        );
-   ```
+```php
+private function processSave(SourceInterface $source, array $requestData)
+{
+....
+      $this->_eventManager->dispatch(
+         'controller_action_inventory_populate_source_with_data',
+         [
+               'request' => $this->getRequest(),
+               'source' => $source,
+         ]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
+*  `source` is an object of `\Magento\InventoryApi\Api\Data\SourceInterface`
 
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-*  `source` - an object of `\Magento\InventoryApi\Api\Data\SourceInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\InventoryAdminUi\Controller\Adminhtml\Source\Save`
 
-{:.procedure}
-When to listen:
+### controller_action_inventory_populate_stock_with_data
 
-*  Modify inventory source before it gets saved
+#### Use cases
 
-### 134. controller_action_inventory_populate_stock_with_data
+Modify inventory stock model before it gets saved.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\InventoryAdminUi\Model\Stock\StockSaveProcessor::process()`:
+`\Magento\InventoryAdminUi\Model\Stock\StockSaveProcessor::process()`:
 
-   ```php
-   public function process($stockId, RequestInterface $request): int
-   {
-   ....
-        $this->eventManager->dispatch(
-            'controller_action_inventory_populate_stock_with_data',
-            [
-                'request' => $request,
-                'stock' => $stock,
-            ]
-        );
-   ```
+```php
+public function process($stockId, RequestInterface $request): int
+{
+....
+      $this->eventManager->dispatch(
+         'controller_action_inventory_populate_stock_with_data',
+         [
+               'request' => $request,
+               'stock' => $stock,
+         ]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
+*  `stock` is an object of `\Magento\InventoryApi\Api\Data\StockInterface`
 
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-*  `stock` - an object of `\Magento\InventoryApi\Api\Data\StockInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\InventoryAdminUi\Model\Stock\StockSaveProcessor`
 
-{:.procedure}
-When to listen:
+### controller_action_inventory_source_save_after
 
-*  Modify inventory stock model before it gets saved
+#### Use cases
 
-### 135. controller_action_inventory_source_save_after
+Modify inventory source after it gets saved.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\InventoryAdminUi\Controller\Adminhtml\Source\Save::processSave()`:
+`\Magento\InventoryAdminUi\Controller\Adminhtml\Source\Save::processSave()`:
 
-   ```php
-   private function processSave(SourceInterface $source, array $requestData)
-   {
-   ....
-        $this->_eventManager->dispatch(
-            'controller_action_inventory_source_save_after',
-            [
-                'request' => $this->getRequest(),
-                'source' => $source,
-            ]
-        );
-   ```
+```php
+private function processSave(SourceInterface $source, array $requestData)
+{
+....
+      $this->_eventManager->dispatch(
+         'controller_action_inventory_source_save_after',
+         [
+               'request' => $this->getRequest(),
+               'source' => $source,
+         ]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
+*  `source` is an object of `\Magento\InventoryApi\Api\Data\SourceInterface`
 
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-*  `source` - an object of `\Magento\InventoryApi\Api\Data\SourceInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\InventoryAdminUi\Controller\Adminhtml\Source\Save`
 
-{:.procedure}
-When to listen:
+### controller_action_layout_render_before
 
-*  Modify inventory source after it gets saved
+#### Use cases
 
-### 136. controller_action_layout_render_before
+To perform actions before page layout is rendered.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\App\View::renderLayout()`:
+`\Magento\Framework\App\View::renderLayout()`:
 
-   ```php
-   public function renderLayout($output = '')
-   {
-   ....
-   $this->_eventManager->dispatch('controller_action_layout_render_before');
-   ```
+```php
+public function renderLayout($output = '')
+{
+....
+$this->_eventManager->dispatch('controller_action_layout_render_before');
+```
 
-{:.procedure}
-Variables passed:
-
-N/A
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Framework\App\View`
 
-{:.procedure}
-When to listen:
+### controller_action_nocookies
 
-*  If one wants to do something before page layout is rendered
+#### Use cases
 
-### 137. controller_action_nocookies
+To perform actions before a nocookies page is rendered.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Cookie\Controller\Index\NoCookies::execute()`:
+`\Magento\Cookie\Controller\Index\NoCookies::execute()`:
 
-   ```php
-   public function execute()
-   {
-   ....
-   $this->_eventManager->dispatch(
-            'controller_action_nocookies',
-            ['action' => $this, 'redirect' => $redirect]
-   );
-   ```
+```php
+public function execute()
+{
+....
+$this->_eventManager->dispatch(
+         'controller_action_nocookies',
+         ['action' => $this, 'redirect' => $redirect]
+);
+```
 
-{:.procedure}
-Variables passed:
+*  `action` is an object of `\Magento\Cookie\Controller\Index\NoCookies`
+*  `redirect` is an object of `\Magento\Framework\DataObject`
 
-*  `action` - an object of `\Magento\Cookie\Controller\Index\NoCookies`
-*  `redirect` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Cookie\Controller\Index\NoCookies`
 
-{:.procedure}
-When to listen:
+### controller_action_noroute
 
-*  If one wants to do something before a nocookies page is rendered
+#### Use cases
 
-### 138. controller_action_noroute
+To perform actions before a 404 page is rendered.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\Controller\Noroute\Index::execute()`:
+`\Magento\Framework\Controller\Noroute\Index::execute()`:
 
-   ```php
-   public function execute()
-   {
-   ....
-   $this->_eventManager->dispatch('controller_action_noroute',
-       ['action' => $this, 'status' => $status]);
-   ```
+```php
+public function execute()
+{
+....
+$this->_eventManager->dispatch('controller_action_noroute',
+      ['action' => $this, 'status' => $status]);
+```
 
-{:.procedure}
-Variables passed:
+*  `action` is an object of `\Magento\Cookie\Controller\Index\NoCookies`
+*  `status` is an object of `\Magento\Framework\DataObject`
 
-*  `action` - an object of `\Magento\Cookie\Controller\Index\NoCookies`
-*  `status` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Framework\Controller\Noroute\Index`
 
-{:.procedure}
-When to listen:
+### controller_action_postdispatch
 
-*  If one wants to do something before a 404 page is rendered
+#### Use cases
 
-### 139. controller_action_postdispatch
+To perform actions when postdispatch events are raised.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\App\Action\Plugin\EventDispatchPlugin::dispatchPostDispatchEvents()`:
+`\Magento\Framework\App\Action\Plugin\EventDispatchPlugin::dispatchPostDispatchEvents()`:
 
-   ```php
-   private function dispatchPostDispatchEvents(ActionInterface $action)
-   {
-   ....
-   $this->eventManager->dispatch('controller_action_postdispatch', $this->getEventParameters($action));
-   ```
+```php
+private function dispatchPostDispatchEvents(ActionInterface $action)
+{
+....
+$this->eventManager->dispatch('controller_action_postdispatch', $this->getEventParameters($action));
+```
 
-{:.procedure}
-Variables passed:
+*  `controller_action` is an object of `\Magento\Framework\App\ActionInterface`
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
 
-*  `controller_action` - an object of `\Magento\Framework\App\ActionInterface`
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Framework\App\Action\Plugin\EventDispatchPlugin`
 
-{:.procedure}
-When to listen:
+### controller_action_predispatch
 
-*  If one wants to do something when postdispatch events are fired
+#### Use cases
 
-### 140. controller_action_predispatch
+To perform actions when predispatch events are raised.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\App\Action\Plugin\EventDispatchPlugin::dispatchPreDispatchEvents()`:
+`\Magento\Framework\App\Action\Plugin\EventDispatchPlugin::dispatchPreDispatchEvents()`:
 
-   ```php
-   private function dispatchPreDispatchEvents(ActionInterface $action)
-   {
-   $this->eventManager->dispatch('controller_action_predispatch', $this->getEventParameters($action));
-   ...
-   ```
+```php
+private function dispatchPreDispatchEvents(ActionInterface $action)
+{
+$this->eventManager->dispatch('controller_action_predispatch', $this->getEventParameters($action));
+...
+```
 
-{:.procedure}
-Variables passed:
+*  `controller_action` is an object of `\Magento\Framework\App\ActionInterface`
+*  `request` is an object of `\Magento\Framework\App\RequestInterface`
 
-*  `controller_action` - an object of `\Magento\Framework\App\ActionInterface`
-*  `request` - an object of `\Magento\Framework\App\RequestInterface`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Framework\App\Action\Plugin\EventDispatchPlugin`
 
-{:.procedure}
-When to listen:
+### controller_front_send_response_before
 
-*  If one wants to do something when predispatch events are fired
+#### Use cases
 
-### 141. controller_front_send_response_before
+To perform actions before sending application output.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\App\Http::launch()`:
+`\Magento\Framework\App\Http::launch()`:
 
-   ```php
-   public function launch()
-   {
-   ...
-   $eventParams = ['request' => $this->_request, 'response' => $this->_response];
-   $this->_eventManager->dispatch('controller_front_send_response_before', $eventParams);
-   ...
-   ```
+```php
+public function launch()
+{
+...
+$eventParams = ['request' => $this->_request, 'response' => $this->_response];
+$this->_eventManager->dispatch('controller_front_send_response_before', $eventParams);
+...
+```
 
-{:.procedure}
-Variables passed:
+*  `response` is an object of `\Magento\Framework\App\Response\Http`
+*  `request` is an object of `\Magento\Framework\App\Request\Http`
 
-*  `response` - an object of `\Magento\Framework\App\Response\Http`
-*  `request` - an object of `\Magento\Framework\App\Request\Http`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Framework\App\Http`
 
-{:.procedure}
-When to listen:
+### core_app_init_current_store_after
 
-*  If one wants to do something before sending application output
+#### Use cases
 
-### 142. core_app_init_current_store_after
+To perform actions after the current store is initialized in test cases.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\TestFramework\Store\StoreManager::dispatchInitCurrentStoreAfterEvent()`:
+`\Magento\TestFramework\Store\StoreManager::dispatchInitCurrentStoreAfterEvent()`:
 
-   ```php
-   protected function dispatchInitCurrentStoreAfterEvent()
-   {
-   ...
-   $this->eventManager->dispatch('core_app_init_current_store_after');
-   ```
+```php
+protected function dispatchInitCurrentStoreAfterEvent()
+{
+...
+$this->eventManager->dispatch('core_app_init_current_store_after');
+```
 
-{:.procedure}
-Variables passed:
-
-N/A
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\TestFramework\Store\StoreManager`
 
-{:.procedure}
-When to listen:
+### core_collection_abstract_load_after
 
-*  If one wants to do something after the current store is initialized in test cases
+#### Use cases
 
-### 143. core_collection_abstract_load_after
+To perform actions after a collection is loaded.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection::_afterLoad()`:
+`\Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection::_afterLoad()`:
 
-   ```php
-   protected function _afterLoad()
-   {
-   ...
-   $this->_eventManager->dispatch('core_collection_abstract_load_after', ['collection' => $this]);
-   ```
+```php
+protected function _afterLoad()
+{
+...
+$this->_eventManager->dispatch('core_collection_abstract_load_after', ['collection' => $this]);
+```
 
-{:.procedure}
-Variables passed:
+`collection` is an object of `\Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection`
 
-*  `collection` - an object of `\Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Security\Model\ResourceModel\AdminSessionInfo\Collection`
 *  `\Magento\Store\Model\ResourceModel\Config\Collection\Scoped`
 
-{:.procedure}
-When to listen:
+### core_collection_abstract_load_before
 
-*  If one wants to do something after a collection is loaded
+#### Use cases
 
-### 144. core_collection_abstract_load_before
+To perform actions before a collection is loaded.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection::_beforeLoad()`:
+`\Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection::_beforeLoad()`:
 
-   ```php
-   protected function _beforeLoad()
-   {
-   ...
-   $this->_eventManager->dispatch('core_collection_abstract_load_before', ['collection' => $this]);
-   ```
+```php
+protected function _beforeLoad()
+{
+...
+$this->_eventManager->dispatch('core_collection_abstract_load_before', ['collection' => $this]);
+```
 
-{:.procedure}
-Variables passed:
+`collection` is an object of `\Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection`
 
-*  `collection` - an object of `\Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection`
-
-{:.procedure}
-A few classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Security\Model\ResourceModel\AdminSessionInfo\Collection`
 *  `\Magento\Store\Model\ResourceModel\Config\Collection\Scoped`
 
-{:.procedure}
-When to listen:
+### core_layout_block_create_after
 
-*  If one wants to do something before a collection is loaded
+#### Use cases
 
-### 145. core_layout_block_create_after
+To perform actions after a particular block is created.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\View\Layout\Generator\Block::process()`:
+`\Magento\Framework\View\Layout\Generator\Block::process()`:
 
-   ```php
-   public function process(Layout\Reader\Context $readerContext, Layout\Generator\Context $generatorContext)
-   {
-   ...
-   $this->eventManager->dispatch('core_layout_block_create_after', ['block' => $block]);
-   ```
+```php
+public function process(Layout\Reader\Context $readerContext, Layout\Generator\Context $generatorContext)
+{
+...
+$this->eventManager->dispatch('core_layout_block_create_after', ['block' => $block]);
+```
 
-{:.procedure}
-Variables passed:
+`block` is an object of `\Magento\Framework\View\Element\AbstractBlock`
 
-*  `block` - an object of `\Magento\Framework\View\Element\AbstractBlock`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Framework\View\Layout\Generator\Block`
 
-{:.procedure}
-When to listen:
+### core_layout_render_element
 
-*  If one wants to do something after a particular block is created
+#### Use cases
 
-### 146. core_layout_render_element
+To perform actions when a layout element is rendered.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\View\Layout::renderElement()`:
+`\Magento\Framework\View\Layout::renderElement()`:
 
-   ```php
-   public function renderElement($name, $useCache = true)
-   {
-   ...
-   $this->_eventManager->dispatch(
-            'core_layout_render_element',
-            ['element_name' => $name, 'layout' => $this, 'transport' => $this->_renderingOutput]
-        );
-   ```
+```php
+public function renderElement($name, $useCache = true)
+{
+...
+$this->_eventManager->dispatch(
+         'core_layout_render_element',
+         ['element_name' => $name, 'layout' => $this, 'transport' => $this->_renderingOutput]
+      );
+```
 
-{:.procedure}
-Variables passed:
+*  `element_name` is an element name string
+*  `layout` is an object of `\Magento\Framework\View\Layout`
+*  `transport` is an object of `\Magento\Framework\DataObject`
 
-*  `element_name` - an element name string
-*  `layout` - an object of `\Magento\Framework\View\Layout`
-*  `transport` - an object of `\Magento\Framework\DataObject`
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Framework\View\Layout`
 
-{:.procedure}
-When to listen:
+### cron_job_run
 
-*  If one wants to do something when a layout element is rendered
+#### Use cases
 
-### 147. cron_job_run
+To perform actions before a particular cron job is run.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Cron\Observer\ProcessCronQueueObserver::_runJob()`:
+`\Magento\Cron\Observer\ProcessCronQueueObserver::_runJob()`:
 
-   ```php
-   protected function _runJob($scheduledTime, $currentTime, $jobConfig, $schedule, $groupId)
-   {
-   ...
-   $this->eventManager->dispatch('cron_job_run', ['job_name' => 'cron/' . $groupId . '/' . $jobCode]);
-   ```
+```php
+protected function _runJob($scheduledTime, $currentTime, $jobConfig, $schedule, $groupId)
+{
+...
+$this->eventManager->dispatch('cron_job_run', ['job_name' => 'cron/' . $groupId . '/' . $jobCode]);
+```
 
-{:.procedure}
-Variables passed:
+`job_name` is a job name string.
 
-*  `job_name` - a job name string
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Cron\Observer\ProcessCronQueueObserver`
 
-{:.procedure}
-When to listen:
+### currency_display_options_forming
 
-*  If one wants to do something before a particular cron job is run
+#### Use cases
 
-### 148. currency_display_options_forming
+To perform actions after getting getting a currency object by currency code.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Framework\Locale\Currency::getCurrency()`:
+`\Magento\Framework\Locale\Currency::getCurrency()`:
 
-   ```php
-   public function getCurrency($currency)
-   {
-   ...
-   $this->_eventManager->dispatch(
-                'currency_display_options_forming',
-                ['currency_options' => $options, 'base_code' => $currency]
-   );
-   ```
+```php
+public function getCurrency($currency)
+{
+...
+$this->_eventManager->dispatch(
+               'currency_display_options_forming',
+               ['currency_options' => $options, 'base_code' => $currency]
+);
+```
 
-{:.procedure}
-Variables passed:
+*  `currency_options` is an array of currency options
+*  `base_code` is a currency code string
 
-*  `currency_options` - an array of currency options
-*  `base_code` - a currency code string
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Framework\Locale\Currency`
 
-{:.procedure}
-When to listen:
+### customer_account_edited
 
-*  If one wants to do something after getting getting a currency object by currency code
+#### Use cases
 
-### 149. customer_account_edited
+To perform actions after a customer has been successfully edited.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Customer\Controller\Account\EditPost::dispatchSuccessEvent()`:
+`\Magento\Customer\Controller\Account\EditPost::dispatchSuccessEvent()`:
 
-   ```php
-   private function dispatchSuccessEvent(\Magento\Customer\Api\Data\CustomerInterface $customerCandidateDataObject)
-   {
-        $this->_eventManager->dispatch(
-            'customer_account_edited',
-            ['email' => $customerCandidateDataObject->getEmail()]
-        );
-   }
-   ```
+```php
+private function dispatchSuccessEvent(\Magento\Customer\Api\Data\CustomerInterface $customerCandidateDataObject)
+{
+      $this->_eventManager->dispatch(
+         'customer_account_edited',
+         ['email' => $customerCandidateDataObject->getEmail()]
+      );
+}
+```
 
-{:.procedure}
-Variables passed:
+*  `email` is a customer email
 
-*  `email` - a customer email
-
-{:.procedure}
-There is only one class that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Customer\Controller\Account\EditPost`
 
-{:.procedure}
-When to listen:
+### customer_address_format
 
-*  If one wants to do something after a customer has been successfully edited
+#### Use cases
 
-### 150. customer_address_format
+To alter the way an address is formatted.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Sales\Model\Order\Address\Renderer::format()`:
-
    ```php
    public function format(Address $address, $type)
    {
@@ -5158,9 +4229,7 @@ Where it was introduced:
         $this->eventManager->dispatch('customer_address_format', ['type' => $formatType, 'address' => $address]);
    }
    ```
-
 *  `\Magento\Customer\Model\Address\AbstractAddress::format()`:
-
    ```php
    public function format(Address $address, $type)
    {
@@ -5169,31 +4238,24 @@ Where it was introduced:
    }
    ```
 
-{:.procedure}
-Variables passed:
+*  `type` is an object of `\Magento\Framework\DataObject`
+*  `address` is an object of either `\Magento\Customer\Model\Address\AbstractAddress` or `\Magento\Sales\Model\Order\Address`
 
-*  `type` - an object of `\Magento\Framework\DataObject`
-*  `address` - an object of either `\Magento\Customer\Model\Address\AbstractAddress` or `\Magento\Sales\Model\Order\Address`
-
-{:.procedure}
-There are three classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Sales\Model\Order\Address\Renderer`
 *  `\Magento\Customer\Model\Address\AbstractAddress`
 *  `\Magento\Customer\Model\Address`
 
-{:.procedure}
-When to listen:
+### customer_customer_authenticated
 
-*  If one wants to alter the way an address is formatted
+#### Use cases
 
-### 151. customer_customer_authenticated
+To perform actions after a customer has been authenticated.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Customer\Model\Customer::authenticate()`:
-
    ```php
    public function authenticate($login, $password)
    {
@@ -5204,9 +4266,7 @@ Where it was introduced:
         );
    }
    ```
-
 *  `\Magento\Customer\Model\AccountManagement::authenticate()`:
-
    ```php
    public function authenticate($username, $password)
    {
@@ -5218,31 +4278,24 @@ Where it was introduced:
    }
    ```
 
-{:.procedure}
-Variables passed:
+*  `model` is an object of `\Magento\Customer\Model\Customer`
+*  `password` is a password string
 
-*  `model` - an object of `\Magento\Customer\Model\Customer`
-*  `password` - a password string
-
-{:.procedure}
-There are three classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Customer\Model\Customer`
 *  `\Magento\Customer\Model\AccountManagement`
 *  `\Magento\Customer\Model\Backend\Customer`
 
-{:.procedure}
-When to listen:
+### customer_data_object_login
 
-*  If one wants to do something after a customer has been authenticated
+#### Use cases
 
-### 152. customer_data_object_login
+To perform actions after a customer has been logged in.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Customer\Model\Session::setCustomerAsLoggedIn()`:
-
    ```php
    public function setCustomerAsLoggedIn($customer)
    {
@@ -5250,9 +4303,7 @@ Where it was introduced:
      $this->_eventManager->dispatch('customer_data_object_login', ['customer' => $this->getCustomerDataObject()]);
    }
    ```
-
 *  `\Magento\Customer\Model\Session::setCustomerDataAsLoggedIn()`:
-
    ```php
    public function setCustomerDataAsLoggedIn($customer)
    {
@@ -5260,9 +4311,7 @@ Where it was introduced:
      $this->_eventManager->dispatch('customer_data_object_login', ['customer' => $customer]);
    }
    ```
-
 *  `\Magento\Customer\Model\AccountManagement::authenticate()`:
-
    ```php
    public function authenticate($username, $password)
    {
@@ -5271,26 +4320,20 @@ Where it was introduced:
    }
    ```
 
-{:.procedure}
-Variables passed:
+*  `customer` is an object of `\Magento\Customer\Api\Data\CustomerInterface`
 
-*  `customer` - an object of `\Magento\Customer\Api\Data\CustomerInterface`
-
-{:.procedure}
-There are two classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Customer\Model\Session`
 *  `\Magento\Customer\Model\AccountManagement`
 
-{:.procedure}
-When to listen:
+### customer_login
 
-*  If one wants to do something after a customer has been logged in
+#### Use cases
 
-### 153. customer_login
+To perform actions after a customer has been logged in.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
 *  `\Magento\Customer\Model\Session::setCustomerAsLoggedIn()`:
 
@@ -5321,48 +4364,33 @@ Where it was introduced:
   $this->eventManager->dispatch('customer_login', ['customer' => $customerDataObject]);
   ```
 
-{:.procedure}
-Variables passed:
+*  `customer` is an object of either `\Magento\Customer\Api\Data\CustomerInterface` or `\Magento\Customer\Model\Customer`
 
-*  `customer` - an object of either `\Magento\Customer\Api\Data\CustomerInterface` or `\Magento\Customer\Model\Customer`
-
-{:.procedure}
-There are two classes that fire this event:
+#### Classes raising the event
 
 *  `\Magento\Customer\Model\Session`
 *  `\Magento\Integration\Model\CustomerTokenService`
 
-{:.procedure}
-When to listen:
+### customer_logout
 
-*  If one wants to do something after a customer has been logged in
+#### Use cases
 
-### 154. customer_logout
+To perform actions before a customer is logged out.
 
-{:.procedure}
-Where it was introduced:
+#### Origins
 
-*  `\Magento\Customer\Model\Session::logout()`:
+`\Magento\Customer\Model\Session::logout()`:
 
-   ```php
-   public function logout()
-   {
-   ....
-   $this->_eventManager->dispatch('customer_logout', ['customer' => $this->getCustomer()]);
-   }
-   ```
+```php
+public function logout()
+{
+....
+$this->_eventManager->dispatch('customer_logout', ['customer' => $this->getCustomer()]);
+}
+```
 
-{:.procedure}
-Variables passed:
+`customer` is an object of `\Magento\Customer\Model\Customer`
 
-*  `customer` - an object of `\Magento\Customer\Model\Customer`
-
-{:.procedure}
-There is one classe that fires this event:
+#### Classes raising the event
 
 *  `\Magento\Customer\Model\Session`
-
-{:.procedure}
-When to listen:
-
-*  If one wants to do something before a customer is logged out
