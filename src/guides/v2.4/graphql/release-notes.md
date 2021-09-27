@@ -23,7 +23,7 @@ These release notes can include:
 
 -  {:.new} **Added the [`pickupLocations` query]({{page.baseurl}}/graphql/queries/pickup-locations.html).** When the Inventory in-store pickup feature is enabled, this query allows the shopper to select a pickup location. The `pickup_location_code` attribute has been added to the [`setShippingAddressesOnCart` mutation]({{page.baseurl}}/graphql/mutations/set-shipping-address.html) to specify which source will serve as the pickup location.
 
-The [Magento Open Source 2.4.0 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-4-0-open-source.html#graphql-1) and [Magento Commerce 2.4.0 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-4-0-commerce.html#graphql-1) list the bug fixes.
+The [{{site.data.var.ce}} 2.4.0 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-4-0-open-source.html#graphql-1) and [{{site.data.var.ee}} 2.4.0 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-4-0-commerce.html#graphql-1) list the bug fixes.
 
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.5
 

@@ -36,7 +36,7 @@ Verify your `master` code base correctly deployed to Staging and Production envi
 
 ## Verify configuration settings {#configsettings}
 
-Check the Magento configuration settings through the Admin panel including the Base URL, Base Admin URL, multi-site settings, and more. If you need to make any additional changes, complete edits in your local Git branch and push to the `master` branch in Integration, Staging, and Production.
+Check the configuration settings through the Admin panel including the Base URL, Base Admin URL, multi-site settings, and more. If you need to make any additional changes, complete edits in your local Git branch and push to the `master` branch in Integration, Staging, and Production.
 
 ## Check Fastly caching {#fastly}
 
@@ -45,7 +45,7 @@ Check the Magento configuration settings through the Admin panel including the B
 {:.procedure}
 To verify the Fastly service configuration:
 
-1. Log into the Magento Admin for Staging and Production using the URL with `/admin`, or the [updated Admin URL]({{ site.baseurl }}/cloud/env/environment-vars_magento.html#admin-url).
+1. Log into the Admin for Staging and Production using the URL with `/admin`, or the [updated Admin URL]({{ site.baseurl }}/cloud/env/environment-vars_magento.html#admin-url).
 
 1. Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
 
@@ -168,7 +168,7 @@ If you encounter issues, save your reproduction steps, error messages, strange s
 <td>
 <ul>
 <li>Verify all extension settings, especially for any taxation, shipping, and payment modules (example: order sent to warehouse and financial mgmt system)</li>
-<li>Test all customized module and installed Magento extension interactions</li>
+<li>Test all customized module and installed extension interactions</li>
 <li>Check data for any interactions that should complete (payments, orders, email notifications, etc)</li>
 <li>Check configurations per environment for your extensions</li>
 <li>Verify dependencies between modules and extensions work</li>
@@ -180,9 +180,9 @@ If you encounter issues, save your reproduction steps, error messages, strange s
 <td>3rd party integrations</td>
 <td>
 <ul>
-<li>Verify data correctly saves in Magento and exports, pushes, or is accessible by the 3rd party service (example: orders display in 3rd party order mgmt system)</li>
+<li>Verify data correctly saves in {{site.data.var.ee}} and exports, pushes, or is accessible by the 3rd party service (example: orders display in 3rd party order mgmt system)</li>
 <li>Verify any configurations and interactions per integration</li>
-<li>Perform round trip tests originating in Magento and your 3rd party service</li>
+<li>Perform round trip tests originating in {{site.data.var.ee}} and your 3rd party service</li>
 <li>Verify authentication completes</li>
 <li>Check for any logged issues to update code integrations or error messages in control panels</li>
 </ul>
@@ -194,9 +194,9 @@ If you encounter issues, save your reproduction steps, error messages, strange s
 <ul>
 <li>Test and clear cache </li>
 <li>Perform reindexes and verify results</li>
-<li>Check Magento cron jobs, check for any cron_schedule errors</li>
+<li>Check cron jobs, check for any cron_schedule errors</li>
 <li>Verify and check for any shell script issues</li>
-<li>Check for any logged issues: Magento logs, PHP logs, MySQL logs, email logs</li>
+<li>Check for any logged issues: application logs, PHP logs, MySQL logs, email logs</li>
 </ul>
 </td>
 </tr>
@@ -210,11 +210,11 @@ Before launching, we highly recommend performing extensive traffic and performan
 
 Before you begin testing, enter a ticket with support advising the environments you are testing, what tools you are using, and the time frame. Update the ticket with results and information to track performance. When you complete testing, add your updated results and note in the ticket testing is complete with a date and time stamp.
 
-We recommend that you review the [Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit) options as part of your pre-launch readiness process.
+We recommend that you review the [Performance Toolkit]({{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit) options as part of your pre-launch readiness process.
 
 For best results, we recommend the following tools:
 
--  [Magento application performance test][]—Test Magento application performance by configuring the `TTFB_TESTED_PAGES` environment variable to test site response time.
+-  [Application performance test][]—Test application performance by configuring the `TTFB_TESTED_PAGES` environment variable to test site response time.
 -  [Siege][]—Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
 -  [Jmeter][]—Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 -  New Relic (provided)—Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
@@ -222,11 +222,11 @@ For best results, we recommend the following tools:
 
 ### Functional testing
 
-You can use the Magento Functional Testing Framework (MFTF) to complete functional testing for {{site.data.var.ee}} from the Cloud Docker environment. See [Magento application testing][]
+You can use the Magento Functional Testing Framework (MFTF) to complete functional testing for {{site.data.var.ee}} from the Cloud Docker environment. See [Application testing][]
 
-## Set up Magento Security Scan Tool {#security-scan}
+## Set up the Security Scan Tool {#security-scan}
 
-We provide a free Security Scan Tool for your sites. To add your sites and run the tool, see [Magento Security Scan Tool][].
+We provide a free Security Scan Tool for your sites. To add your sites and run the tool, see [Security Scan Tool][].
 
 <!--Link definitions-->
 
@@ -236,10 +236,10 @@ We provide a free Security Scan Tool for your sites. To add your sites and run t
 [Fastly troubleshooting]: {{ site.baseurl }}/cloud/cdn/trouble-fastly.html
 [Get Fastly credentials]: {{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds
 [Jmeter]: https://jmeter.apache.org/
-[Magento Performance Toolkit]: {{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit
-[Magento Security Scan Tool]: {{ site.baseurl }}/cloud/live/live.html#security-scan
-[Magento application performance test]: {{ site.baseurl }}/cloud/env/variables-post-deploy.html#ttfb_tested_pages
-[Magento application testing]: {{site.baseurl}}/cloud/docker/docker-test-app-mftf.html
+[Performance Toolkit]: {{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit
+[Security Scan Tool]: {{ site.baseurl }}/cloud/live/live.html#security-scan
+[Application performance test]: {{ site.baseurl }}/cloud/env/variables-post-deploy.html#ttfb_tested_pages
+[Application testing]: {{site.baseurl}}/cloud/docker/docker-test-app-mftf.html
 [Migrate data and static files]: {{ site.baseurl }}/cloud/live/stage-prod-migrate.html
 [Pingdom]: https://www.pingdom.com/
 [Pro]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#pro-urls

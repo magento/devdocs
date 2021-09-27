@@ -7,7 +7,7 @@ These instructions apply to {{site.data.var.ce}} and {{site.data.var.ee}} users 
 
 To upgrade to Magento {{ page.guide_version }} sample data using the command line:
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner].
+1. Log in to your Magento server as, or switch to, the [file system owner].
 1. Change to the Magento installation directory.
 1. Back up your current `composer.json` file:
 
@@ -63,7 +63,7 @@ To upgrade to Magento {{ page.guide_version }} sample data using the command lin
 
 After you have reset file system permissions:
 
-1. If you haven't done so already, log in to your Magento server as, or switch to, the Magento file system owner.
+1. If you haven't done so already, log in to your Magento server as, or switch to, the file system owner.
 1. Change to your Magento installation directory.
 1. Manually clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
 
@@ -82,5 +82,5 @@ After you have reset file system permissions:
 {% include install/sampledata/file-sys-perms-digest.md %}
 
 <!-- Link definitions -->
-[Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
+[file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
 [authentication keys]: {{ page.baseurl }}/install-gde/prereq/connect-auth.html

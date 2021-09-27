@@ -6,9 +6,9 @@ menu_title: Security
 menu_order:
 ---
 
-The security of your data and digital experiences is our priority. To better protect Adobe Magento Commerce installations from the physical layer up, we have implemented hundreds of processes and controls to help us comply with [industry-accepted standards][1], regulations, and certifications. To help protect installations from the software layer down, we build in security measures that are based on the [Adobe Secure Product Lifecyle][2].
+The security of your data and digital experiences is our priority. To better protect {{site.data.var.ee}} and {{site.data.var.ce}} installations from the physical layer up, we have implemented hundreds of processes and controls to help us comply with [industry-accepted standards][1], regulations, and certifications. To help protect installations from the software layer down, we build in security measures that are based on the [Adobe Secure Product Lifecyle][2].
 
-Although there is no single way to eliminate all security risks, there are many steps you can take to harden your installations and make them a less attractive target for bad actors. The [Adobe Magento Commerce Security Best Practices Guide][3] offers insight and practical guidelines to help protect Adobe Magento Commerce installations from security incidents.
+Although there is no single way to eliminate all security risks, there are many steps you can take to harden your installations and make them a less attractive target for bad actors. The [Security Best Practices Guide][3] offers insight and practical guidelines to help protect all installations from security incidents.
 
 ## Examples of built-in security measures
 
@@ -34,9 +34,9 @@ For details about ownership and permissions in development and production, see [
 
 Magento safeguards your store from clickjacking attacks by using an X-Frame-Options HTTP request header. For more information, see [X-Frame-Options header]({{page.baseurl}}/config-guide/secy/secy-xframe.html).
 
-### Use of non-default Magento Admin URL
+### Use of non-default Admin URL
 
-A simple [Magento Admin](https://glossary.magento.com/magento-admin) [URL](https://glossary.magento.com/url) (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI command `php bin/magento info:adminuri` is provided so that you can  see the URI if you forget it. You can also use the CLI to change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See [Display or change the Admin URI]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html) in Configuration Guide for more information.
+A simple [Admin](https://glossary.magento.com/magento-admin) [URL](https://glossary.magento.com/url) (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI command `php bin/magento info:adminuri` is provided so that you can  see the URI if you forget it. You can also use the CLI to change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See [Display or change the Admin URI]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html) in Configuration Guide for more information.
 
 {:.ref-header}
 Related topics

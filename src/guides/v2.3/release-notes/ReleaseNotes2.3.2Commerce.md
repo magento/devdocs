@@ -5,7 +5,7 @@ title: Adobe Commerce 2.3.2 Release Notes
 
 *Release notes published on June 25, 2019 and last updated on June 3, 2020.*
 
-We are pleased to present Magento Commerce 2.3.2. This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes  contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
+We are pleased to present {{site.data.var.ee}} 2.3.2. This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes  contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
 ## Other release information
 
@@ -25,7 +25,7 @@ The patch addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/
 
 ## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
 
-In certain versions of Magento Open Source and Magento Commerce, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation
+In certain versions of {{site.data.var.ce}} and {{site.data.var.ee}}, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation
 will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches]({{ page.baseurl }}/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running.
 
 ## Highlights
@@ -41,7 +41,7 @@ This release includes extensive security enhancements:
 *  **Google reCAPTCHA module for PayPal Payflow checkout**. The new PaypalRecaptcha module adds Google reCAPTCHA and CAPTCHA to the Payflow Pro checkout form.  This enhanced functionality has been added in response to malicious targeting of Magento deployments that implement Payflow Pro. Configuration information can be found in [Google reCAPTCHA](https://docs.magento.com/m2/ee/user_guide/stores/security-google-recaptcha.html).  <!--- MC-15427-->
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will  assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This  will allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
+Starting with the release of {{site.data.var.ee}} 2.3.2, Magento will  assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This  will allows users to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Performance boosts
 
@@ -1412,12 +1412,12 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 *  **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. This issue has been resolved with the Scope parameter for Async/Bulk API patch, which is now available. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents.
 
-*  **Issue**: The security enhancements that are part of Magento 2.3.2 require the installation of libsodium version 1.0.13 or higher. You will not be able to successfully install Magento Commerce 2.3.2 without first ensuring that your server runs  version 1.0.13 or higher. See [Libsodium releases](https://github.com/jedisct1/libsodium/releases) for a description of the available releases and installation instructions.
+*  **Issue**: The security enhancements that are part of Magento 2.3.2 require the installation of libsodium version 1.0.13 or higher. You will not be able to successfully install {{site.data.var.ee}} 2.3.2 without first ensuring that your server runs  version 1.0.13 or higher. See [Libsodium releases](https://github.com/jedisct1/libsodium/releases) for a description of the available releases and installation instructions.
 
 {:.bs-callout-warning}
 {{site.data.var.ece}} customers must submit a support ticket to upgrade the libsodium package on Pro Production and Staging environments prior to upgrading to {{site.data.var.ee}} 2.3.2. Currently, you cannot upgrade Starter environments to {{site.data.var.ee}} 2.3.2.
 
-*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Commerce Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in {{site.data.var.ee}} 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

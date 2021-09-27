@@ -1,27 +1,29 @@
 ---
 title: Lifecycle policy
 group: release
+redirect_to: https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf
 ---
 
-For {{site.data.var.ece}} 2.3 and subsequent releases:
+For {{site.data.var.ee}} 2.3 and subsequent releases:
 
--  Magento will provide quality fixes for a minor release for a minimum of 12 months from the general availability announcement date of the next minor software release.
+-  {{site.data.var.ee}} will provide quality fixes for a minor release for a minimum of 12 months from the general availability announcement date of the next minor software release.
 
--  Magento will provide security fixes for a minor release for a minimum of 18 months from the general availability announcement date of the next minor software release.
+-  {{site.data.var.ee}} will provide security fixes for a minor release for a minimum of 18 months from the general availability announcement date of the next minor software release.
 
--  Magento will provide security fixes through patch releases for currently supported minor release versions only. Security fixes will not be backported to previous minor releases, nor to previous patch releases within supported minor releases.
+-  {{site.data.var.ee}} will provide security fixes through patch releases for currently supported minor release versions only. Security fixes will not be backported to previous minor releases, nor to previous patch releases within supported minor releases.
 
-   For example, while 2.3 and 2.4 are currently supported minor releases, security fixes will be released as 2.3.X and 2.4.Y, where X and Y represent the next incremental patch release cumulative of all prior patches. Patch releases will not be released for prior minor releases that have reached end of support (for example, 2.2.Z), or as patches to prior patch releases (for example, 2.3.1.X).
+   For example, while Adobe will provide security releases to its 2.3 release line until April 2022, customers must upgrade to the latest patch or security patch to access security fixes. When 2.3.7-p1 is released, customers must upgrade to 2.3.7-p1 to adopt the security fixes. The security fixes will not be backported to previous patch releases of the 2.3 release line (2.3.0-2.3.6-p1).
 
--  Magento will provide quality fixes through patch release for the latest supported minor release version only. Quality fixes will be available as individual patches for all other currently supported minor release versions. Quality fixes will not be backported to other previous minor releases, nor to previous patch releases within supported minor releases.
+-  To better streamline our lifecycle policy, {{site.data.var.ee}} will provide quality fixes to its 2.4 release line until the end of support date of the PHP version upon which it is based. Refer to the table below for the End of Software Support dates for {{site.data.var.ee}} release lines:
 
-   For example, while 2.3 and 2.4 are currently supported minor releases, individual patches will be released as 2.3.X and release patches will be released as 2.4.Y, where X and Y represent the next incremental patch release cumulative of all prior patches. Neither patch releases nor individual patches will be released for prior minor releases that have reached end of support (e.g. 2.2.2).
+| Release                          | Release Date  | End of Software Support<sup>1</sup> | Dependent PHP Version |
+|----------------------------------|---------------|-------------------------------------|-----------------------|
+| {{site.data.var.ee}} 2.3         | November 2018 | April 2022<sup>2</sup>              | PHP 7.3 and 7.4<sup>3</sup>               |
+| {{site.data.var.ee}} 2.4.0-2.4.3 | July 2020     | November 2022                       | PHP 7.4               |
+| {{site.data.var.ee}} 2.4.4-2.4.6 | TBA           | November 2024                       | PHP 8.1               |
 
-| Release                   | Release Date  | End of Quality Fixes | End of Security Fixes/<br>End of Software Support |
-|---------------------------|---------------|----------------------|---------------------------------------------------|
-| {{site.data.var.ece}} 2.3 | November 2018 | July 2021            | April 2022<sup>*</sup>                            |
-| {{site.data.var.ece}} 2.4 | July 2020     |                      |                                                   |
+<sup>1 End of Software Support includes both end of quality fixes and end of security fixes.</sup><br>
+<sup>2 The End of Software Support date for 2.3 has been extended to April 2022 due to impacts from COVID-19.</sup>
+<sup>3 2.3.0-2.3.6 are dependent on PHP 7.3; 2.3.7 is dependent on PHP 7.4.</sup>
 
-*<sup>*</sup> The End of Software Support date for {{site.data.vr.ece}} 2.3 has been extended to April 2022 due to impacts from COVID-19.*
-
-See [Magento Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf).
+See [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf).

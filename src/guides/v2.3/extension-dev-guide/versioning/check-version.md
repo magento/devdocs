@@ -9,7 +9,7 @@ Use any of the following ways to determine which version of Magento is installed
 
 -  From the command line
 -  With an HTTP GET request
--  From within the Magento Admin
+-  From within the Admin
 -  By viewing the `composer.lock` file
 
 ## Command line
@@ -44,7 +44,7 @@ http://<magento2-store>/magento_version
 Magento/2.3 (Community)
 ```
 
-## Magento Admin
+## Admin
 
 Login to Magento as a registered Admin user. The Magento version is displayed at the bottom right of the page, above the  **Account Activity** and **Report an Issue** links:
 

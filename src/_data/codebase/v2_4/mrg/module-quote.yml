@@ -1,0 +1,152 @@
+---
+title: Quote
+release: 2.4.3
+content: "This module provides customer cart management functionality.\n\n## Installation\n\nThe
+  Magento_Quote module is one of the base Magento 2 modules. You cannot disable or
+  uninstall this module.\n\nThe Magento_Quote module creates the following table in
+  the database:\n- `quote`\n- `quote_address`\n- `quote_item`\n- `quote_address_item`\n-
+  `quote_item_option`\n- `quote_payment`\n- `quote_shipping_rate`\n- `quote_id_mask`\n\nFor
+  information about a module installation in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_Quote module.
+  For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_Quote module.\n\n### Events\n\nThe
+  module dispatches the following events:\n- `sales_quote_address_collection_load_after`
+  event in the `\\Magento\\Quote\\Model\\ResourceModel\\Quote\\Address\\Collection::_afterLoad`
+  method. Parameters:\n    - `quote_address_collection` is a `$this` object (`Magento\\Quote\\Model\\ResourceModel\\Quote\\Address\\Collection`
+  class)\n\n- `items_additional_data` event in the `\\Magento\\Quote\\Model\\Cart\\Totals\\ItemConverter::modelToDataObject`
+  method. Parameters:\n    - `item` is a quote_item object (`\\Magento\\Quote\\Model\\Quote\\Item`
+  class)\n\n- `sales_quote_remove_item` event in the `\\Magento\\Quote\\Model\\Quote::removeItem`
+  method. Parameters:\n    - `quote_item` is a quote_item object (`\\Magento\\Quote\\Model\\Quote\\Item`
+  class)\n\n- `sales_quote_add_item` event in the `\\Magento\\Quote\\Model\\Quote::addItem`
+  method. Parameters:\n    - `quote_item` is a quote_item object (`\\Magento\\Quote\\Model\\Quote\\Item`
+  class)\n\n- `sales_quote_product_add_after` event in the `\\Magento\\Quote\\Model\\Quote::addProduct`
+  method. Parameters:\n    - `items` is an array with quot_item objects (`\\Magento\\Quote\\Model\\Quote\\Item`
+  class)\n\n- `sales_quote_merge_before` event in the `\\Magento\\Quote\\Model\\Quote::merge`
+  method. Parameters:\n    - `quote` is a `$this` object (`\\Magento\\Quote\\Model\\Quote`
+  class)\n    - `source` is a quote object (`\\Magento\\Quote\\Model\\Quote` class)\n\n-
+  `sales_quote_merge_after` event in the `\\Magento\\Quote\\Model\\Quote::merge` method.
+  Parameters:\n    - `quote` is a `$this` object (`\\Magento\\Quote\\Model\\Quote`
+  class)\n    - `source` is a quote object (`\\Magento\\Quote\\Model\\Quote` class)\n\n-
+  `sales_convert_quote_to_order` event in the `\\Magento\\Quote\\Model\\Quote\\Address\\ToOrder::convert`
+  method. Parameters:\n    - `order` is an order object (`\\Magento\\Sales\\Model\\Order`
+  class)\n    - `quote` is a quote object (`\\Magento\\Quote\\Model\\Quote` class)\n\n-
+  `sales_quote_item_qty_set_after` event in the `\\Magento\\Quote\\Model\\Quote\\Item::setQty`
+  method. Parameters:\n    - `item` is a `$this` object (`\\Magento\\Quote\\Model\\Quote\\Item`
+  class)\n\n- `sales_quote_item_set_product` event in the `\\Magento\\Quote\\Model\\Quote\\Item::setProduct`
+  method. Parameters:\n    - `product` is a product object (`\\Magento\\Catalog\\Model\\Product`
+  class)\n    - `quote_item` is a `$this` object (`\\Magento\\Quote\\Model\\Quote\\Item`
+  class)\n\n- `sales_quote_payment_import_data_before` event in the `\\Magento\\Quote\\Model\\Quote\\Payment::importData`
+  method. Parameters:\n    - `payment` is a `$this` object (`\\Magento\\Quote\\Model\\Quote\\Payment`
+  class)\n    - `input` is a data object (`\\Magento\\Framework\\DataObject` class)\n\n-
+  `sales_quote_collect_totals_before` event in the `\\Magento\\Quote\\Model\\Quote\\TotalsCollector::collect`
+  method. Parameters:\n    - `quote` is a quote object (`\\Magento\\Quote\\Model\\Quote`
+  class)\n\n- `sales_quote_collect_totals_after` event in the `\\Magento\\Quote\\Model\\Quote\\TotalsCollector::collect`
+  method. Parameters:\n    - `quote` is a quote object (`\\Magento\\Quote\\Model\\Quote`
+  class)\n\n- `sales_quote_address_collect_totals_before` event in the `\\Magento\\Quote\\Model\\Quote\\TotalsCollector::collectAddressTotals`
+  method. Parameters:\n    - `quote` is a quote object (`\\Magento\\Quote\\Model\\Quote`
+  class)\n    - `shipping_assignment` is a shipping_assignment object (`\\Magento\\Quote\\Model\\ShippingAssignment`
+  class)\n    - `total` is a total object (`\\Magento\\Quote\\Model\\Quote\\Address\\Total`
+  class)\n\n- `sales_quote_address_collect_totals_after` event in the `\\Magento\\Quote\\Model\\Quote\\TotalsCollector::collectAddressTotals`
+  method. Parameters:\n    - `quote` is a quote object (`\\Magento\\Quote\\Model\\Quote`
+  class)\n    - `shipping_assignment` is a shipping_assignment object (`\\Magento\\Quote\\Model\\ShippingAssignment`
+  class)\n    - `total` is a total object (`\\Magento\\Quote\\Model\\Quote\\Address\\Total`
+  class)\n\n- `checkout_submit_before` event in the `\\Magento\\Quote\\Model\\QuoteManagement::placeOrder`
+  method. Parameters:\n    - `quote` is a quote object (`\\Magento\\Quote\\Model\\Quote`
+  class)\n\n- `checkout_submit_all_after` event in the `\\Magento\\Quote\\Model\\QuoteManagement::placeOrder`
+  method. Parameters:\n    - `order` is an order object (`\\Magento\\Sales\\Model\\Order`
+  class)\n    - `quote` is a quote object (`\\Magento\\Quote\\Model\\Quote` class)\n\n-
+  `sales_model_service_quote_submit_before` event in the `\\Magento\\Quote\\Model\\QuoteManagement::submitQuote`
+  method. Parameters:\n    - `order` is an order object (`\\Magento\\Sales\\Model\\Order`
+  class)\n    - `quote` is a quote object (`\\Magento\\Quote\\Model\\Quote` class)\n\n-
+  `sales_model_service_quote_submit_success` event in the `\\Magento\\Quote\\Model\\QuoteManagement::submitQuote`
+  method. Parameters:\n    - `order` is an order object (`\\Magento\\Sales\\Model\\Order`
+  class)\n    - `quote` is a quote object (`\\Magento\\Quote\\Model\\Quote` class)\n\n-
+  `sales_model_service_quote_submit_failure` event in the `\\Magento\\Quote\\Model\\QuoteManagement::rollbackAddresses`
+  method. Parameters:\n    - `order` is an order object (`\\Magento\\Sales\\Model\\Order`
+  class)\n    - `quote` is a quote object (`\\Magento\\Quote\\Model\\Quote` class)\n
+  \   - `exception` is an exception object (`\\Exception` class)\n\n- `prepare_catalog_product_collection_prices`
+  event in the `\\Magento\\Quote\\Model\\ResourceModel\\Quote\\Item\\Collection::_assignProducts`
+  method. Parameters:\n    - `collection` is a product collection object (`\\Magento\\Quote\\Model\\ResourceModel\\Quote\\Item\\Collection`
+  class)\n    - `store_id` is a store ID (`int` type)\n\n- `sales_quote_item_collection_products_after_load`
+  event in the `\\Magento\\Quote\\Model\\QuoteManagement::_assignProducts` method.
+  Parameters:\n    - `collection` is a product collection object (`\\Magento\\Catalog\\Model\\ResourceModel\\Product\\Collection`
+  class)\n\nFor information about an event in Magento 2, see [Events and observers](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/events-and-observers.html#events).
+  \  \n\n### Public APIs\n\n#### Data\n\n- `\\Magento\\Quote\\Api\\Data\\AddressAdditionalDataInterface`\n
+  \   - provides additional data with quote address information\n\n- `\\Magento\\Quote\\Api\\Data\\AddressInterface`\n
+  \   - quote address data\n\n- `\\Magento\\Quote\\Api\\Data\\CartInterface`\n    -
+  quote data\n\n- `\\Magento\\Quote\\Api\\Data\\CartItemInterface`\n    - quote item
+  data\n  \n- `\\Magento\\Quote\\Api\\Data\\CartSearchResultsInterfac`\n    - quote
+  search result data\n\n- `\\Magento\\Quote\\Api\\Data\\CurrencyInterface`\n    -
+  currency data\n  \n- `\\Magento\\Quote\\Api\\Data\\EstimateAddressInterface`\n    -
+  estimate address data\n  \n- `\\Magento\\Quote\\Api\\Data\\PaymentInterface`\n    -
+  payment data\n  \n- `\\Magento\\Quote\\Api\\Data\\PaymentMethodInterface`\n    -
+  payment method data\n  \n- `\\Magento\\Quote\\Api\\Data\\ProductOptionInterface`\n
+  \   - product option data\n  \n- `\\Magento\\Quote\\Api\\Data\\ShippingAssignmentInterface`\n
+  \   - shipping assigment data\n\n- `\\Magento\\Quote\\Api\\Data\\ShippingInterface`\n
+  \   - shipping data\n\n- `\\Magento\\Quote\\Api\\Data\\ShippingMethodInterface`\n
+  \   - shipping method data\n  \n- `\\Magento\\Quote\\Api\\Data\\TotalsAdditionalDataInterface`\n
+  \   - provides additional data for totals collection\n\n- `\\Magento\\Quote\\Api\\Data\\TotalSegmentInterface`\n
+  \   - total segment data\n  \n- `\\Magento\\Quote\\Api\\Data\\TotalsInterfacee`\n
+  \   - quote totals data\n  \n- `\\Magento\\Quote\\Api\\Data\\TotalsItemInterface`\n
+  \   - quote items totals data\n\n#### General\n\n- `\\Magento\\Quote\\Api\\ChangeQuoteControlInterface`\n
+  \   - checks if user is allowed to change the quote\n    \n#### Guest\n\n- `\\Magento\\Quote\\Api\\GuestBillingAddressManagementInterface`\n
+  \   - assigns a specified billing address to a specified quote\n    - gets the billing
+  address for a specified quote\n\n- `\\Magento\\Quote\\Api\\GuestCartItemRepositoryInterface`\n
+  \   - gets lists items that are assigned to a specified quote\n    - add/update
+  the specified cart guest item\n    - removes the specified item from the specified
+  quote\n    \n- `\\Magento\\Quote\\Api\\GuestCouponManagementInterface`\n    - gets
+  coupon for a specified quote by quote ID\n    - adds a coupon by code to a specified
+  quote\n    - deletes a coupon from a specified quote by quote ID\n\n- `\\Magento\\Quote\\Api\\GuestCartManagementInterface`\n
+  \   - gets list items that are assigned to a specified quote\n    - add/update the
+  specified quote item\n    - deletes the specified item from the specified quote\n\n-
+  `\\Magento\\Quote\\Api\\GuestPaymentMethodManagementInterface`\n    - adds a specified
+  payment method to a specified shopping quote\n    - gets the payment method for
+  a specified shopping quote\n    - gets list available payment methods for a specified
+  shopping quote\n\n- `\\Magento\\Quote\\Api\\GuestShipmentEstimationInterface`\n
+  \   - estimates shipping by address and return list of available shipping methods\n\n-
+  `\\Magento\\Quote\\Api\\GuestShippingMethodManagementInterface`\n    - gets list
+  applicable shipping methods for a specified quote\n    - estimates shipping\n\n-
+  `\\Magento\\Quote\\Api\\GuestCartRepositoryInterface`\n    - gets quote by quote
+  ID for guest user\n    \n- `\\Magento\\Quote\\Api\\GuestCartTotalManagementInterface`\n
+  \   - sets shipping/billing methods and additional data for a quote and collect
+  totals for guest\n\n- `\\Magento\\Quote\\Api\\GuestCartTotalRepositoryInterface`\n
+  \   - gets quote totals by quote ID for guest user\n\n- `\\Magento\\Quote\\Model\\GuestCart\\GuestShippingAddressManagementInterface`\n
+  \   - assign a specified shipping address to a specified quote\n    - gets the shipping
+  address for a specified quote\n\n- `\\Magento\\Quote\\Model\\GuestCart\\GuestShippingMethodManagementInterface`\n
+  \   - sets the carrier and shipping methods codes for a specified quote\n    - gets
+  the selected shipping method for a specified quote\n\n#### Registered customer\n\n-
+  `\\Magento\\Quote\\Api\\BillingAddressManagementInterface`\n    - assigns a specified
+  billing address to a specified quote\n    - gets the billing address for a specified
+  quote\n\n- `\\Magento\\Quote\\Api\\CartItemRepositoryInterface`\n    - gets lists
+  items that are assigned to a specified quote\n    - add/update the specified quote
+  item\n    - removes the specified item from the specified quote\n\n- `\\Magento\\Quote\\Api\\CartManagementInterface`\n
+  \   - creates an empty quote and quote for a guest\n    - creates an empty quote
+  and quote for a specified customer if customer does not have a quote yet\n    -
+  returns information for the quote for a specified customer\n    - assigns a specified
+  customer to a specified shopping quote\n    - places an order for a specified quote\n
+  \   \n- `\\Magento\\Quote\\Api\\CartRepositoryInterface`\n    - gets quote by quote
+  ID\n    - gets list carts that match specified search criteria\n    - gets quote
+  by customer ID\n    - gets active quote by quote ID\n    - gets active quote by
+  customer ID\n    - saves quote\n    - deletes quote\n  \n- `\\Magento\\Quote\\Api\\CartTotalManagementInterface`\n
+  \   - sets shipping/billing methods and additional data for quote and collect totals\n\n-
+  `\\Magento\\Quote\\Api\\CartTotalRepositoryInterface`\n    - gets quote totals by
+  quote ID\n    \n- `\\Magento\\Quote\\Api\\CouponManagementInterface`\n    - gets
+  coupon for a specified quote by quote ID\n    - adds a coupon by code to a specified
+  quote\n    - deletes a coupon from a specified quote by quote ID\n\n- `\\Magento\\Quote\\Api\\PaymentMethodManagementInterface`\n
+  \   - adds a specified payment method to a specified shopping quote\n    - gets
+  the payment method for a specified shopping quote\n    - gets list available payment
+  methods for a specified shopping quote\n\n- `\\Magento\\Quote\\Api\\ShipmentEstimationInterface`\n
+  \   - estimates shipping by address and return list of available shipping methods\n\n-
+  `\\Magento\\Quote\\Api\\ShippingMethodManagementInterface`\n    - estimates shipping
+  by quote ID an Address\n    - estimates shipping by quote ID an address ID\n    -
+  get lists applicable shipping methods for a specified quote\n\n- `\\Magento\\Quote\\Model\\ShippingAddressManagementInterface`\n
+  \   - assigns a specified shipping address to a specified quote\n    - gets the
+  shipping address for a specified quote\n\n- `\\Magento\\Quote\\Model\\ShippingMethodManagementInterface`\n
+  \   - sets the carrier and shipping methods codes for a specified quote\n    - gets
+  the selected shipping method for a specified quote\n    \n#### Model\n    \n- `\\Magento\\Quote\\Model\\Quote\\Address\\FreeShippingInterface`\n
+  \   - checks if is a free shipping\n\n- `\\Magento\\Quote\\Model\\Quote\\Address\\RateCollectorInterface`\n
+  \   - retrieves all methods for supplied shipping data\n    \n- `\\Magento\\Quote\\Model\\MaskedQuoteIdToQuoteIdInterface`\n
+  \   - converts masked quote ID to the quote ID (entity ID)\n\n- `\\Magento\\Quote\\Model\\QuoteIdToMaskedQuoteIdInterface`\n
+  \   - converts quote ID to the masked quote ID\n    \nFor information about a public
+  API in Magento 2, see [Public interfaces & APIs](http://devdocs.magento.com/guides/v2.4/extension-dev-guide/api-concepts.html)."

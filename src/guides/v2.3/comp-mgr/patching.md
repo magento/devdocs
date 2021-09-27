@@ -21,7 +21,7 @@ When the [patch][] program is run, this file is read in and the specified change
 There are three types of patches:
 
 -  **Hotfixes**—Patches that Magento publishes on the [Magento Security Center][].
--  **Individual patches**—Patches that Magento Support creates and distributes on an individual basis.
+-  **Individual patches**—Patches that {{site.data.var.ee}} Support creates and distributes on an individual basis.
 -  **Custom patches**—Unofficial patches that you can create from a git commit.
 
 ### Hotfixes
@@ -37,7 +37,7 @@ Hot fixes can contain backward incompatible changes.
 
 Individual patches contain low-impact quality fixes for a specific issue. These fixes are applied to the most recently supported minor version of Magento (for example, 2.4.x), but could be missing from the previous supported minor version of Magento (for example, 2.3.x). Magento releases individual patches as needed.
 
-Use the [Magento Quality Patches (MQP) package][MQP] to apply individual patches.
+Use the [Quality Patches Tool][] to apply individual patches.
 
 {:.bs-callout-info}
 Individual patches do not contain backward incompatible changes.
@@ -81,7 +81,7 @@ index c8a6fef58d31..7d01c195791e 100644
 
 You can apply patches using any of the following methods:
 
--  [Magento Quality Patch (MQP) package][MQP]
+-  [Quality Patches Tool][]
 -  [Command line][]
 -  [Composer][]
 
@@ -95,7 +95,7 @@ To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].
 [Back up and roll back the file system]:{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html
 [patch]:https://en.wikipedia.org/wiki/Patch_(Unix)
 [Magento Help Center]:https://support.magento.com/hc/en-us/articles/360005484154-Create-a-patch-for-a-Magento-2-Composer-installation-from-a-GitHub-commit
-[Magento Admin user]:{{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first
+[Admin user]:{{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first
 [1]: https://github.com/cweagans/composer-patches/
 [2]: https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede
 [3]: https://github.com/magento/magento2/issues/6474
@@ -103,4 +103,4 @@ To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].
 [Apply patches]:{{ site.baseurl }}/cloud/project/project-patch.html
 [Command line]:{{ page.baseurl }}/comp-mgr/patching/command-line.html
 [Composer]:{{ page.baseurl }}/comp-mgr/patching/composer.html
-[MQP]: {{ page.baseurl }}/comp-mgr/patching/mqp.html
+[Quality Patches Tool]: {{ page.baseurl }}/comp-mgr/patching/mqp.html

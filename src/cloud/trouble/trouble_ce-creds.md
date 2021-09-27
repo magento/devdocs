@@ -56,7 +56,7 @@ To get started:
 
 1. Change to a project directory.
 
-   For example if your project is named Magento 2, `cd magento-2`
+   For example if your project is named Commerce, `cd commerce`
 
 #### Update `auth.json` and redeploy the environment
 
@@ -162,4 +162,4 @@ To resolve the issue with credentials:
 To verify the deployment was successful, enter one of the URLs displayed under `Environment routes:` in a web browser.
 
 {:.bs-callout-warning}
-For security reasons, we strongly recommend you change your Magento Admin URI, administrator username, and administrator password. For step-by-step details, see [Set environment and project variables]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+For security reasons, we strongly recommend you change your Admin URI, administrator username, and administrator password. For step-by-step details, see [Set environment and project variables]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).

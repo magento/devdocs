@@ -47,7 +47,7 @@ To enable Nginx to resize images:
 1. Create an `nginx.conf` file based on the included template `nginx.conf.sample` file. For example:
 
    ```conf
-   location ~* \.(ico|jpg|jpeg|png|gif|svg)$ {
+   location ~* \.(jpg|jpeg|png|gif|webp)$ {
        set $width "-";
        set $height "-";
        if ($arg_width != '') {

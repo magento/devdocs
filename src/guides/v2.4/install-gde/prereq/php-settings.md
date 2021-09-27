@@ -36,9 +36,8 @@ On CentOS, [additional steps may be required][].
 
 ## Verify installed extensions
 
-Magento requires a set of extensions to be installed:
+Magento requires a set of extensions to be installed.
 
-<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 {:.procedure}
@@ -51,7 +50,6 @@ To verify installed extensions:
    ```
 
 1. Verify that all required extensions are installed.
-
 1. Add any missing modules using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.4 modules can be added with:
 
    ```bash
@@ -197,7 +195,7 @@ To set `opcache.ini` options:
 
 ## Troubleshooting
 
-See the following Magento Support articles for help troubleshooting PHP problems:
+See the following {{site.data.var.ee}} Support articles for help troubleshooting PHP problems:
 
 -  [PHP version error or 404 error when accessing Magento in browser](https://support.magento.com/hc/en-us/articles/360033117152-PHP-version-error-or-404-error-when-accessing-Magento-in-browser)
 -  [PHP settings errors](https://support.magento.com/hc/en-us/articles/360034599631-PHP-settings-errors)

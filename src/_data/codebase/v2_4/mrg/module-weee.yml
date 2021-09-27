@@ -1,0 +1,44 @@
+---
+title: Weee
+release: 2.4.3
+content: "The Magento_Weee module enables the application of fees/fixed product taxes
+  (FPT) on certain types of products, usually related to electronic devices and recycling.\n\nFixed
+  product taxes can be used to setup a WEEE tax that is a fixed amount, rather than
+  a percentage of the product price. FPT can be configured to be displayed at various
+  places in Magento. Rules, amounts, and display options can be configured in the
+  backend.\n\nThis module extends the existing functionality of Magento_Tax.\n\nThe
+  Magento_Weee module includes the following:\n\n- Ability to add different number
+  of fixed product taxes to product. They are treated as a product attribute.\n- Configuration
+  of where WEEE appears (on category, product, sales, invoice, or credit memo pages)
+  and whether FPT should be taxed.\n- A new line item in the totals section.\n\n##
+  Installation details\n\nThe Magento_Weee module can be installed automatically (using
+  native Magento install mechanism) without any additional actions.\n\nBefore installing
+  this module, note that the Magento_Weee is dependent on the following modules:\n\n-
+  Magento_Catalog\n- Magento_Checkout\n- Magento_Customer\n- Magento_Quote\n- Magento_Sales\n-
+  Magento_Store\n- Magento_Tax\n\nRefer to [how to enable or disable modules in Magento
+  2](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Structure\n\n`Pricing/` - directory that contain tax adjustment.\n\nFor information
+  about a typical file structure of a module, see [Module file structure](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/build/module-file-structure.html#module-file-structure).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_Weee module.
+  For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_Weee module.\n\n### Layouts\n\nThis
+  module introduces the following layouts and layout handles in the directories:\n\n-
+  `view/adminhtml/layout`:\n    - `catalog_product_form`\n    - `sales_creditmemo_item_price`\n
+  \   - `sales_invoice_item_price`\n    - `sales_order_create_item_price`\n    - `sales_order_creditmemo_new`\n
+  \   - `sales_order_creditmemo_updateqty`\n    - `sales_order_creditmemo_view`\n
+  \   - `sales_order_invoice_new`\n    - `sales_order_invoice_updateqty`\n    - `sales_order_invoice_view`\n
+  \   - `sales_order_item_price`\n    - `sales_order_view`\n\n- `view/base/layout`:\n
+  \   - `catalog_product_prices`\n\n- `view/frantend/layout`:\n    - `checkout_cart_index`\n
+  \   - `checkout_index_index`\n    - `checkout_item_price_renderers`\n    - `default`\n
+  \   - `sales_email_item_price`\n    - `sales_email_order_creditmemo_items`\n    -
+  `sales_email_order_invoice_items`\n    - `sales_email_order_items`\n    - `sales_guest_creditmemo`\n
+  \   - `sales_guest_invoice`\n    - `sales_guest_print`\n    - `sales_guest_printcreditmemo`\n
+  \   - `sales_guest_printinvoice`\n    - `sales_guest_view`\n    - `sales_order_creditmemo`\n
+  \   - `sales_order_invoice`\n    - `sales_order_item_price`\n    - `sales_order_print`\n
+  \   - `sales_order_printcreditmemo`\n    - `sales_order_printinvoice`\n    - `sales_order_view`\n\nFor
+  more information about a layout, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n###
+  UI components\n\nYou can extend a customer form and widgets using the configuration
+  files located in the directories \n\n- `view/adminhtml/ui_component`:\n    - `product_attribute_add_form`\n-
+  `view/frontend/ui_component`:\n    - `widget_recently_compared`\n    - `widget_recently_viewed`\n\nFor
+  information about a UI component, see [Overview of UI components](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html)."

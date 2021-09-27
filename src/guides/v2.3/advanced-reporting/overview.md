@@ -5,7 +5,7 @@ functional_areas:
     - Reports
 ---
 
-[Advanced reporting functionality] is free to Magento Commerce and Open Source customers and is provided through an integration of a Magento instance with [Adobe Commerce Reporting]. Magento collects data and sends this information to Commerce Reporting for analytics. You do not need to have an Commerce Reporting account to use Advanced Reporting.
+[Advanced reporting functionality] is free to {{site.data.var.ee}} and {{site.data.var.ce}} customers and is provided through an integration of a Magento instance with [{{site.data.var.ee}} Reporting]. Magento collects data and sends this information to Commerce Reporting for analytics. You do not need to have an Commerce Reporting account to use Advanced Reporting.
 
 ## Prerequisites
 
@@ -43,5 +43,5 @@ Related topics
 
 [Advanced reporting functionality]: http://docs.magento.com/m2/ce/user_guide/reports/advanced-reporting.html
 [base url]: http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html
-[Adobe Commerce Reporting]: https://magento.com/products/business-intelligence
+[{{site.data.var.ee}} Reporting]: https://magento.com/products/business-intelligence
 [Magento crontab]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html

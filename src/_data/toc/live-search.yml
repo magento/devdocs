@@ -8,10 +8,6 @@ pages:
   url: /live-search/install.html
   versionless: true
 
-- label: Configure and Connect
-  url: /live-search/config-connect.html
-  versionless: true
-
 - label: Storefront Popover
   url: /live-search/storefront-popover.html
   versionless: true
@@ -45,6 +41,10 @@ pages:
     - label: productSearch query
       url: /live-search/product-search.html
       versionless: true
+
+- label: Events
+  url: /live-search/events.html
+  versionless: true
 
 - label: Release Notes
   url: /live-search/release-notes.html

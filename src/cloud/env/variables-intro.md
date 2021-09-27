@@ -17,4 +17,4 @@ functional_areas:
 
 Variables are _hierarchical_, which means that if a variable is not overridden, it is inherited from the parent environment.
 
-You can set [ADMIN variables]({{ site.baseurl }}/cloud/env/environment-vars_magento.html) from the Project Web interface or using the Magento CLI. You can manage other environment variables from the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
+You can set [ADMIN variables]({{ site.baseurl }}/cloud/env/environment-vars_magento.html) from the Project Web interface or using the {{site.data.var.ee}} CLI. You can manage other environment variables from the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.

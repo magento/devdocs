@@ -939,7 +939,7 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 
 ## 17. Services
 
-17.1. New features with limited customization scenarios SHOULD be implemented as a thin Magento extension that will communicate to a service that contains business logic. This allows developers to release features independently of Magento and makes feature upgrades easier.
+17.1. New features with limited customization scenarios SHOULD be implemented as a thin extension that will communicate to a service that contains business logic. This allows developers to release features independently of Magento and makes feature upgrades easier.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
