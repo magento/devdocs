@@ -18,6 +18,7 @@ The release notes include:
 
 ## 3.3.3 of magento/product-recommendations for {{site.data.var.ee}} 2.4.0
 
+-  {:.new}Added new recommendation types: [Conversion (view to cart)](https://docs.magento.com/user-guide/marketing/prex-type-convcart.html), [Conversion (view to purchase)](https://docs.magento.com/user-guide/marketing/prex-type-convpurchase.html), and [Recently viewed](https://docs.magento.com/user-guide/marketing/prex-type-recentview.html). Note that these new recommendation types are available in the `magento/product-recommendations` module 3.2.2 and later.
 -  {:.fix}Fixed an issue where Fastly's Web Application Firewall (WAF) was incorrectly blocking a cookie
 -  {:.fix}Fixed issue where products assigned to the non-default Store View were not being displayed in the **Recommendations Product Preview** panel when creating a recommendation for that specific Store View
 -  {:.fix}Fixed issue where certain recommendation unit names in Page Builder prevented the recommendation unit to display on the storefront
