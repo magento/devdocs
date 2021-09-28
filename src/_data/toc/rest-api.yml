@@ -228,6 +228,10 @@ pages:
         class: tutorial
         url: /rest/tutorials/grouped-product/create-and-manage-grouped-products.html
 
+      - label: Create custom rest api
+        class: tutorial
+        url: /rest/tutorials/create-custom-rest-api.html
+
     - label: Modules
       children:
 
