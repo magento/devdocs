@@ -16,10 +16,13 @@ These release notes describe the initial release of Live Search and include:
 -  Compatible with {{site.data.var.ece}} (ECE): 2.4.x
 -  Stability: Stable
 
--  {:.new} A "heartbeat controller" keeps the Commerce Admin session alive for extended periods of keyboard inactivity.
--  {:.new} Live Search is automatically enabled after onboarding.
--  {:.fix} Live Search no longer throws an error if search criteria contains an empty sort order value.
--  {:.fix} Range filtering no longer breaks if attribute codes contain the strings "to" or "from".
+-  {:.new} Commerce Admin session stays open during extended periods of keyboard inactivity
+-  {:.new} Live Search is automatically enabled after onboarding
+-  {:.fix} Initial indexing time is less than an hour
+-  {:.fix} Incremental product updates near real time (after install and setup)
+-  {:.fix} Sortable columns in Synonym editor
+-  {:.fix} Live Search no longer throws an error if search criteria contains empty sort order value
+-  {:.fix} Range filtering no longer breaks if attribute codes contain strings "to" or "from"
 
 ## Live Search v1.1.0
 
