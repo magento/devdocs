@@ -1,0 +1,5 @@
+---
+title: Reminder
+release: 2.4.3
+content: Magento_Reminder module provides functionality for sending reminder emails
+  to customers according to pre-configured rules.

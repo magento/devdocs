@@ -22,7 +22,7 @@ This example shows how to use the [recommended procedure]({{ site.baseurl }}/clo
    *  Commit and push to Git.
 
 <!-- {:.bs-callout-info}
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Magento Admin](https://glossary.magento.com/magento-admin). For more information, see [Sensitive and system-specific]({{ site.baseurl }}/guides/v2.3/config-guide/prod/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Admin](https://glossary.magento.com/magento-admin). For more information, see [Sensitive and system-specific]({{ site.baseurl }}/guides/v2.3/config-guide/prod/config-reference-sens.html).
 -->
 For example, you may want to set the following settings:
 
@@ -37,15 +37,15 @@ _Static file optimization_ means merging and minifying [JavaScript](https://glos
 To complete these configuration management tasks, you need the following:
 
 *  Minimum a project reader role with [environment administrator]({{ site.baseurl }}/cloud/project/user-admin.html) privileges
-*  Magento Admin panel URL and credentials for Integration, Staging, and Production environments
+*  Admin panel URL and credentials for Integration, Staging, and Production environments
 *  Push all updated code to your Integration environment:
 
    *  For Starter: To an Integration branch and environment
    *  For Pro: To the Integration `master` branch and environment
 
-## Configure Magento through the Integration Admin panel {#configure}
+## Configure {{site.data.var.ee}} through the Integration Admin panel {#configure}
 
-In the Integration environment, you can log in to the Magento Admin panel to modify system configuration settings for stores, websites, modules or extensions, static file optimization, and system values related to static content deployment. See [Configuration data]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data).
+In the Integration environment, you can log in to the Admin panel to modify system configuration settings for stores, websites, modules or extensions, static file optimization, and system values related to static content deployment. See [Configuration data]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data).
 
 To change locale and static file optimization settings:
 
@@ -68,8 +68,8 @@ To change locale and static file optimization settings:
    ![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud/cloud_vars_set-minify.png){:width="550px"}
 
 1. Click **Save Config**.
-1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
-1. Log out of the Magento Admin.
+1. If prompted, [flush the cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+1. Log out of the Admin.
 
 ## Export values and transfer config.php to your local system {#export}
 
@@ -150,12 +150,12 @@ Wait for deployment to complete in all environments.
 
 ## Verify your configuration changes {#cloud-set-verify}
 
-After you push `config.php` to your environments, any values you changed should be read-only in the Magento Admin. In this example, the modified default locale and static file optimization settings should not be editable in the Magento Admin. These configuration settings are set in `config.php`.
+After you push `config.php` to your environments, any values you changed should be read-only in the Admin. In this example, the modified default locale and static file optimization settings should not be editable in the Admin. These configuration settings are set in `config.php`.
 
 To verify your configuration changes:
 
-1. If you haven't done so already, log out of the Magento Admin in one of the environments.
-1. Log back in to the Magento Admin.
+1. If you haven't done so already, log out of the Admin in one of the environments.
+1. Log back in to the Admin.
 1. Click **Stores** > Settings > **Configuration** > General > **General**.
 1. In the right pane, expand **Locale Options**.
 
@@ -170,7 +170,7 @@ To verify your configuration changes:
 
    ![Can't edit certain values in the Admin ]({{ site.baseurl }}/common/images/cloud/cloud_var_not-editable2.png){:width="550px"}
 
-1. Log out of the Magento Admin.
+1. Log out of the Admin.
 
 ## Change and update system-specific configuration settings {#modify}
 
@@ -184,7 +184,7 @@ For this example, we'll modify static file optimization settings and add a new s
 
 ### Add new configurations in Integration {#change-settings}
 
-To add additional configuration values in the Integration environment Magento Admin. For this example, we are merging JavaScript files.
+To add additional configuration values in the Integration environment Admin. For this example, we are merging JavaScript files.
 
 1. If you haven't done so already, log out of the Integration Admin.
 1. Log in to the Integration Admin.
@@ -192,8 +192,8 @@ To add additional configuration values in the Integration environment Magento Ad
 1. In the right pane, expand **JavaScript Settings**.
 1. From the **Merge JavaScript Files** list, click **Yes**.
 1. Click **Save Config**.
-1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
-1. Log out of the Magento Admin.
+1. If prompted, [flush the cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+1. Log out of the Admin.
 
 ### Run the config.php command {#regenerate}
 

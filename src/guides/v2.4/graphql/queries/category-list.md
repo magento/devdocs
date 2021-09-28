@@ -18,10 +18,10 @@ The `categoryList` query supports the following types of filters. You can specif
 
 If you do not provide any filter input, the query returns the root category.
 
-The query returns a `CategoryTree` object. The top level of the `CategoryTree` object provides details about the queried category. This object includes the `children` attribute, which contains an array of its immediate subcategories. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options.
+The query returns a `CategoryTree` object. The top level of the `CategoryTree` object provides details about the queried category. This object includes the `children` attribute, which contains an array of its immediate subcategories.
 
 {:.bs-callout-info}
-You cannot return the entire category tree if it contains more than ten sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured.
+You cannot return the entire category tree if the total number of nodes in the request exceeds the value specified in the `queryDepth` attribute defined in the GraphQL `di.xml` file. By default, this value is 20. [Query security]({{page.baseurl}}/graphql/security-configuration.html) further describes query depths.
 
 Use the `breadcrumbs` attribute to return information about the parent categories of the queried category.
 

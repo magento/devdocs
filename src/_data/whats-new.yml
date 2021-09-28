@@ -4,8 +4,706 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jul 19 14:38:47 2021
+updated: Mon Sep 27 14:38:55 2021
 entries:
+- description: Fixed [backward incompatible changes for 2.4.2-2.4.3](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#242---243).
+    The topic showed data for 2.4.1-2.4.2 instead.
+  versions: 2.4.3
+  type: Technical
+  date: September 23, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2547
+  merge_commit: 9f28563f024a27d3f541deac50179c69194e1824
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Technical
+  - 2.4.3
+- description: Updated [`magento-cloud` reference](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-cloud.html)
+    (1.38.1).
+  versions: 2.x
+  type: Technical
+  date: September 22, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2544
+  merge_commit: e4563f2b1c7caeebe44cddb3acda037a0ecd5a3f
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Added the [The built-in Upgrade Compatibility Tool (MVP)](https://devdocs.magento.com/guides/v2.4/ext-best-practices/phpstorm/built-in-upgrade-compatibility-tool.html)
+    topic.
+  versions: 2.4.x
+  type: New Topic
+  date: September 17, 2021
+  link: https://github.com/magento/devdocs/pull/9143
+  merge_commit: bbdc15794967ed70af8c78c209bb50560b8e36fa
+  contributor: bohdan-harniuk
+  membership: false
+  labels:
+  - partners-contribution
+  - 'Partner: Atwix'
+  - New Topic
+  - 2.4.x
+  - 'Progress: done'
+- description: Updated [release schedule](https://devdocs.magento.com/release/policy/),
+    [release policy](https://devdocs.magento.com/release/policy/), [versioning schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/),
+    and [code base changes](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/codebase-changes.html)
+    to reflect new Adobe release strategy.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: September 16, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2524
+  merge_commit: bb9bf8601e4229dc7c314d359f82c64ccd19a7ed
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.3 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: September 15, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2531
+  merge_commit: e9e612c7e8fa68148536348d455925e5c857a59b
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Added the [PHPStorm plugin](https://devdocs.magento.com/guides/v2.4/ext-best-practices/phpstorm/introduction.html)
+    documentation and updated the [Run](https://devdocs.magento.com/upgrade-compatibility-tool/run.html)
+    topic with related information about PHPStorm plugin run configurations.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: September 15, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2526
+  merge_commit: 373ca889a71540a0d7821d90a9425ebc69334530
+  contributor: danidelcar
+  membership: true
+  labels:
+  - New Topic
+  - 2.3.x
+  - 2.4.x
+- description: Updated the [Service versions compatibility table](https://devdocs.magento.com/cloud/project/services.html#service-versions)
+    in the Cloud guide.
+  versions: 2.x
+  type: Technical
+  date: September 8, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2512
+  merge_commit: f062510d13a0596f8298bac440bf3b3b0eda356d
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.2 Quality Patches Tool release.
+  versions: 2.x
+  type: Major Update
+  date: September 7, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2516
+  merge_commit: 28cb71a4e8e700cdb0816db7146d3f705a50e894
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added a new [file upload security](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/uploads.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: September 3, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2500
+  merge_commit: 883f3b77234ad01ed752284f3f9a3559141f409e
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - New Topic
+  - 2.3.x
+  - 2.4.x
+- description: An overview of [Storefront Events SDK](https://devdocs.magento.com/live-search/events.html)
+    with a summary of search-related collector functions.
+  versions: 2.4.x
+  type: New Topic
+  date: September 3, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2508
+  merge_commit: 2c5c88524c3ae63145e8bda66e10812fe94c2138
+  contributor: ccondra
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.x
+- description: Updated the [Module Reference Guide](https://devdocs.magento.com/guides/v2.4/mrg/intro.html).
+  versions: 2.4.3
+  type: Major Update
+  date: September 2, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2501
+  merge_commit: 52a9f4a4bae0d5737fc719740b2e5893cc1adcc3
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Added [Community quality patches release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md)
+    to a table of contents at [Commerce Quality Patches](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching/mqp.html).
+  versions: 2.x
+  type: Major Update
+  date: August 27, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2457
+  merge_commit: 148f54f2ff8d4f1b2bd767d020a67f8b6ed30ac1
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added information about the August 27 hotfix for MC-43059 to the [Adobe
+    Commerce 2.4.3 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-3.html),
+    [Magento Open Source  2.4.3 Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/open-source-2-4-3.html),
+    and [Adobe Commerce 2.3.7-p1](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html).
+  versions: 2.4.3, 2.3.7
+  type: Major Update
+  date: August 27, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2494
+  merge_commit: 81fbbf3e37cc4b09a2d62ea6cb08e361fd051321
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+  - 2.3.7
+- description: 'Live Search now has two [installation methods](https://devdocs.magento.com/live-search/install.html):
+    Method 1 requires a period of storefront downtime and Method 2 does not.'
+  versions: 2.4.x
+  type: Major Update
+  date: August 26, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2477
+  merge_commit: 1bc5c64a16ba0c6d31ed44415a31bbb3266c4395
+  contributor: ccondra
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: Added a new [cross-site forgery request (CSRF)](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/security/csrf.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: August 25, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2474
+  merge_commit: c99bb90e973a900e4bccd4597a650cd67e23a81e
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - New Topic
+  - 2.3.x
+  - 2.4.x
+- description: Updated [REST API reference](https://magento.redoc.ly/2.4.3-admin/).
+  versions: 2.4.3
+  type: Major Update
+  date: August 24, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2484
+  merge_commit: 9c6fd0a1db45447a24c2d7d0e8e7bc977de12feb
+  contributor: dobooth
+  membership: true
+  labels:
+  - Enhancement
+  - Major Update
+  - 2.4.3
+- description: Updated [Magento 2.4 backward incompatible changes](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/index.html).
+  versions: 2.4.3
+  type: Major Update
+  date: August 23, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2478
+  merge_commit: 8ae72a736b5da9e1dad858bf40bfcb0b3a0aee6f
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Clarified the difference between [updating the ece-tools package](https://devdocs.magento.com/cloud/project/ece-tools-update.html)
+    and [upgrading your cloud project to use the ece-tools package](https://devdocs.magento.com/cloud/project/ece-tools-upgrade-project.html).
+  versions: 2.x
+  type: Technical
+  date: August 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2475
+  merge_commit: a1f714e6bd258fcf93fa5179eab93ce94e5588ad
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Updated [release notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/)
+    for Amazon Sales Channel version 4.4.1.
+  versions: 2.x
+  type: Major Update
+  date: August 19, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2464
+  merge_commit: a921f2a464a3bbfd63677d528eca92880ed4a03f
+  contributor: hickskenh
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added information to the Adobe Commerce 2.4.3, Magento Open Source
+    2.4.3, and Magento 2.3.7-p1 release notes about the 8/11/2021 hot fix that addresses
+    an issue with API rate limiting.  See [Magento 2.3.7-p1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html)
+    and [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+  versions: 2.4.3, 2.3.7
+  type: Major Update
+  date: August 12, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2459
+  merge_commit: bf1f6fab30c14f2d116e99b2060b99db4bd8a9c4
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+  - 2.3.7
+- description: Release notes for the [Cloud Patch release 1.0.12](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v1012).
+  versions: 2.4.3, 2.3.7
+  type: Major Update
+  date: August 12, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2462
+  merge_commit: 67a8d0d3515d53eb9f2d51421c7ce8011e9d56e8
+  contributor: hguthrie
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+  - 2.3.7
+- description: Published reference documentation for the 2.4.2-2.4.3 [backward incompatible
+    changes](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html).
+  versions: 2.4.3
+  type: Major Update
+  date: August 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2453
+  merge_commit: f2490a6908b117eaaf78ac1bbfda4082902003a6
+  contributor: devops-devdocs
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Published dependencies for 2.4.3 [Magento Open Source](https://devdocs.magento.com/guides/v2.4/release-notes/packages-open-source.html),
+    [Adobe Commerce](https://devdocs.magento.com/guides/v2.4/release-notes/packages-commerce.html),
+    and [Cloud](https://devdocs.magento.com/guides/v2.4/release-notes/packages-cloud.html).
+    Updated data for [PHP extensions](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/php-settings.html#verify-installed-extensions).
+  versions: 2.4.3
+  type: Major Update
+  date: August 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2455
+  merge_commit: 649b6e703b936cc1aa06b9fae1c4ba3b8eb27515
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Added the [Protecting against brute force attacks](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/anti-brute-force.html)
+    topic to the _PHP Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: August 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2436
+  merge_commit: 99d3ba4d1a10f381966b0532dec489bff3836497
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - New Topic
+  - 2.3.x
+  - 2.4.x
+- description: Added the [Denial of Service attacks](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/dos.html)
+    topic to the _PHP Developer Guide_.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: August 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2443
+  merge_commit: 3270adc0c8864cc339fe312693288120196b4754
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - New Topic
+  - 2.3.x
+  - 2.4.x
+- description: Added release notes for the Magento 2.3.7-p1 security-only release.
+    See [2.3 release information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).
+  versions: 2.3.7
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2431
+  merge_commit: 60439940c150c70a124b5248d407bc12b69c5cbf
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.7
+- description: Updated the `bin/magento` command-line tool reference documentation
+    for [Magento Open Source](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html)
+    and [Adobe Commerce](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-commerce.html).
+  versions: 2.4.3
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2454
+  merge_commit: f3d81e9885733ed125f2fcdf551604ebbd0a9723
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.1 Quality Patches Tool release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 9, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2449
+  merge_commit: 25fce52c2c953588ece30bd6e85272e0faa059d6
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Corrected the order of the steps in the [Docker Developer Mode in the
+    Cloud guide](https://devdocs.magento.com/cloud/docker/docker-mode-developer.html).
+  versions: 2.x
+  type: Technical
+  date: August 6, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2445
+  merge_commit: 1eecd716419c5f0d05e37239dd76569b19271a05
+  contributor: andriyShevtsov
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: The Adobe Commerce [Storefront Events SDK](https://devdocs.magento.com/shared-services/storefront-events-sdk.html)
+    provides access to a common data layer with event publishing and subscription
+    services. The Adobe Commerce [Storefront Event Collector](https://devdocs.magento.com/shared-services/storefront-event-collector.html)
+    listens for and handles events sent from the Storefront Events SDK.
+  versions: 2.4.x
+  type: Major Update
+  date: August 4, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2439
+  merge_commit: 7ca97a589cb7f14f9c386c07e596f69932bf1408
+  contributor: ccondra
+- description: Added the GA version of the Adobe Commerce 2.4.3 and Magento Open Source
+    2.4.3 [release notes](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+  versions: 2.4.3
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2438
+  merge_commit: cbb96a3e6ccc7b9dd99e76964b736e2c34d9b464
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Updated the [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html)
+    topics with the latest information for the 2.4.3 release.
+  versions: 2.4.x
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2387
+  merge_commit: a1d58f6f46f6a0ce35583493d88827d972db96c6
+  contributor: danidelcar
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: Added the [Using AWS Elasticsearch](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/es-aws.html)
+    topic.
+  versions: 2.4.3
+  type: New Topic
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2353
+  merge_commit: a888e5ccc023cd0a663fbef4f2de2138439a5052
+  contributor: dobooth
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.3
+- description: Added a new topic about [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html)
+    and rate limiting.
+  versions: 2.4.3
+  type: New Topic
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2332
+  merge_commit: f951b5503df277cc0a8fb8a217841738084e6217
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.3
+- description: Updated topics to include AWS support and added a new [AWS Message
+    Queue](https://devdocs.magento.com/guides/v2.4/config-guide/mq/aws-mq.html) topic.
+  versions: 2.4.3
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2327
+  merge_commit: 44d91afc70855cb37d7ac04d0acf816ece1e714a
+  contributor: dobooth
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: Added major backward incompatible change [highlights](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/index.html)
+    for the 2.4.3 beta release.
+  versions: 2.4.3
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2322
+  merge_commit: 5efad25ea9b28d1b9a789f67ce61db1840623d85
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Added a new [release notes](https://devdocs.magento.com/extensions/vendor/dotdigital/release-notes.html)
+    page for the dotdigital bundled extension.
+  versions: 2.4.3
+  type: New Topic
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2320
+  merge_commit: d3b301b2c2eb14df4ad8ae31b2fdb9027642b380
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.3
+- description: Updated the [availability](https://devdocs.magento.com/release/availability.html)
+    and [compatibility](https://devdocs.magento.com/extensions/vendor/) of Adobe-developed
+    extensions and vendor-bundled extensions (VBEs).
+  versions: 2.4.3
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2323
+  merge_commit: 7ffc9a5af6870b8b45cf3ce1dcc78dd9048bc4de
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Added the [GraphQL security configuration](https://devdocs.magento.com/guides/v2.4/graphql/security-configuration.html)
+    topic, which describes how to limit query complexity and depth.
+  versions: 2.4.3
+  type: New Topic
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2294
+  merge_commit: 584e50f2c48f08bfa142ee93c90022654db9291e
+  contributor: keharper
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.3
+- description: Added documentation for GraphQL support of negotiable quotes. Topics
+    include the [`negotiableQuote`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quote.html)
+    and [`negotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/queries/negotiable-quotes.html)
+    queries. New mutations include [`requestNegotiableQuote`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/request-negotiable-quote.html),
+    [`setNegotiableQuoteShippingAddresses`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/set-negotiable-quote-shipping-address.html),
+    [`updateNegotiableQuoteQuantities`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-negotiable-quote-quantities.html),
+    [`removeNegotiableQuoteItems`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-negotiable-quote-items.html),
+    [`closeNegotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/close-negotiable-quotes.html),
+    and [`deleteNegotiableQuotes`](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-negotiable-quotes.html).
+  versions: 2.4.3
+  type: New Topic
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2268
+  merge_commit: 347718857756809d2b654e20a241cf4ecec47b2f
+  contributor: keharper
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.3
+- description: Published Inventory Management (MSI) 1.2.3 [release notes](https://devdocs.magento.com/guides/v2.4/inventory/release-notes.html).
+  versions: 2.4.3
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2311
+  merge_commit: 03b9a7b2ea51db65813ccf95d0a4c6a4bace078f
+  contributor: danidelcar
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Added the [moveCartItemsToGiftRegistry mutation](https://devdocs.magento.com/guides/v2.4/graphql/mutations/move-cart-items-to-gift-registry.html).
+  versions: 2.4.3
+  type: New Topic
+  date: August 10, 2021
+  link: https://github.com/magento/devdocs/pull/8929
+  merge_commit: 00a0600f28dcaf41c2f8dea90225e1cd6e28b79d
+  contributor: khrystynastolbova
+  membership: false
+  labels:
+  - partners-contribution
+  - 'Partner: Atwix'
+  - New Topic
+  - 'Progress: done'
+- description: Added the `StorefrontProperties` object to the output of the [`customAttributeMetadata`
+    query](https://devdocs.magento.com/guides/v2.4/graphql/queries/custom-attribute-metadata.html).
+  versions: 2.4.3
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2282
+  merge_commit: b44016f70c1f8ba74d5ed748532f7640ccb9c963
+  contributor: keharper
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+- description: Added the [route query](https://devdocs.magento.com/guides/v2.4/graphql/queries/route.html)
+    and [RoutableInterface](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/routable-interface.html)
+    to support routing requests on product, category, and CMS pages. The `urlResolver`
+    query has been deprecated, because its functionality has been superseded by the
+    `route` query.
+  versions: 2.4.3
+  type: New Topic
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2154
+  merge_commit: 15a8bc49ce29595e1aae78117fab4dcb1186dcf8
+  contributor: keharper
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.3
+  - Community
+- description: Added the 'Customer group limitations by websites' section to the [Indexer
+    Optimization](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/indexer-optimization.html)
+    topic.
+  versions: 2.4.3
+  type: Major Update
+  date: August 10, 2021
+  link: https://github.com/magento/devdocs/pull/8794
+  merge_commit: bf5ffdba2cbe585deae70eb1278691808c333ddd
+  contributor: adifucan
+  membership: true
+  labels:
+  - Major Update
+  - Internal Dev
+  - 'Progress: done'
+  - 2.4.3
+- description: Added support for gift registries.<br/>Use the [giftRegistry query](https://devdocs.magento.com/guides/v2.4/graphql/queries/gift-registry.html)
+    to return the contents of the customer's gift registries.<br/>Search for gift
+    registries by [type](https://devdocs.magento.com/guides/v2.4/graphql/queries/gift-registry-type-search.html),
+    [email](https://devdocs.magento.com/guides/v2.4/graphql/queries/gift-registry-email-search.html),
+    or [ID](https://devdocs.magento.com/guides/v2.4/graphql/queries/gift-registry-id-search.html).<br/>[Create](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-gift-registry.html),
+    [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry.html),
+    or [delete](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry.html)
+    gift registries.<br/>Add, [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry-items.html),
+    or [remove](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry-items.html)
+    items from a gift registry.<br/>[Add](https://devdocs.magento.com/guides/v2.4/graphql/mutations/add-gift-registry-registrants.html),
+    [update](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-gift-registry-registrants.html),
+    or [remove](https://devdocs.magento.com/guides/v2.4/graphql/mutations/remove-gift-registry-registrants.html)
+    registrants from a gift registry.<br/>[Share](https://devdocs.magento.com/guides/v2.4/graphql/mutations/share-gift-registry.html)
+    a gift registry with invitees.
+  versions: 2.4.3
+  type: New Topic
+  date: August 10, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2115
+  merge_commit: 1ae5b13b7c11c8866f930c1a2901823f08d6c2d1
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.3
+  - Community
+- description: Added the [Mass assignment](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/mass-assignment.html)
+    topic to the _PHP Developer Guide_. It describes how to prevent attacks in which
+    a client inserts or updates data that either should not be available to the user,
+    or should require additional authorization.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: August 2, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2334
+  merge_commit: 8aa25fdc775cacb4f24794038f33bbb683f3cb2d
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - New Topic
+  - 2.3.x
+  - 2.4.x
+- description: Added the [Server-side Request Forgery](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/ssrf.html)
+    topic to the _PHP Developer Guide_. SSRF attacks trick an externally-facing server
+    into sending a request to an internally-accessible server.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: July 30, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2396
+  merge_commit: bec3f8b11f662ec8ca353b91427116c65e0b5126
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.0 Quality Patches Tool release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: July 29, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2425
+  merge_commit: 5f4ee8948b7409bfbced0ebbf344cdbb1395dd54
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - Major Update
+- description: Updated and expanded [Set up multiple websites or stores with nginx](https://devdocs.magento.com/guides/v2.4/config-guide/multi-site/ms_nginx.html)
+    tutorial.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: July 28, 2021
+  link: https://github.com/magento/devdocs/pull/9022
+  merge_commit: b5751bb08ac0c745eaa17dee18f37c46227d2440
+  contributor: ajithkumar-maragathavel
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - Major Update
+  - 'Partner: Ziffity'
+  - 'Progress: done'
+- description: Added new tutorial for creating [Custom attributes](https://devdocs.magento.com/guides/v2.4/howdoi/custom-attributes/introduction.html).
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: July 27, 2021
+  link: https://github.com/magento/devdocs/pull/9040
+  merge_commit: 3a8acac098b5f0e40ae63d17546587ce25bdd553
+  contributor: drpayyne
+  membership: false
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
+  - 'Progress: done'
+- description: Added the [Sensitive Information](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/sensitive-information.html)
+    topic to the _PHP Developer Guide_. This topic describes how to prevent unauthorized
+    actors from gaining access to sensitive or personal data.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: July 21, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2395
+  merge_commit: 1fcabe8621d62776aedddafc5573a8757734853e
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
+- description: Added the [Authorization](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/authorization.html)
+    topic to the _PHP Developer Guide_. This topic describes how to mark a page (controller)
+    or an endpoint as accessible to guests, logged in customers, or administrators
+    with roles that allow access to certain resources.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: July 19, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2369
+  merge_commit: 19c787be5732b2eae0bc28db5ab1cae3dd4ebbec
+  contributor: AlexMaxHorkun
+  membership: true
+  labels:
+  - 2.3.x
+  - 2.4.x
+  - New Topic
 - description: Added the "Use Magento API for filesystem operations" section to [Security,
     Performance, and Data Handling](https://devdocs.magento.com/guides/v2.4/ext-best-practices/extension-coding/security-performance-data-bp.html).
   versions: 2.4.x
@@ -19,7 +717,7 @@ entries:
   - 2.4.x
   - Major Update
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.26 Magento Quality Patch (MQP) package release.
+    for the 1.0.26 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: July 1, 2021
@@ -132,7 +830,7 @@ entries:
   - 'Progress: done'
   - partners-contribution
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.24 Magento Quality Patch (MQP) package release.
+    for the 1.0.24 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: June 2, 2021
@@ -147,7 +845,7 @@ entries:
   - Major Update
   - 'Progress: done'
 - description: Added a new topic describing [Extension Footprint Analysis](https://devdocs.magento.com/marketplace/sellers/extension-footprint.html)
-    on the Magento Marketplace.
+    on the Commerce Marketplace.
   versions: 2.x
   type: New Topic
   date: May 27, 2021
@@ -189,7 +887,7 @@ entries:
   - Major Update
   - Tracking
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.23 Magento Quality Patch (MQP) package release.
+    for the 1.0.23 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: May 20, 2021
@@ -278,7 +976,7 @@ entries:
   - 2.4.x
   - Major Update
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.22 Magento Quality Patch (MQP) package release.
+    for the 1.0.22 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: May 6, 2021
@@ -430,7 +1128,7 @@ entries:
   - Major Update
   - 'Event: Adobe Summit Hackathon'
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.21 Magento Quality Patch (MQP) package release.
+    for the 1.0.21 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: April 23, 2021
@@ -467,7 +1165,7 @@ entries:
   - 2.4.2
   - Major Update
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.20 Magento Quality Patch (MQP) package release.
+    for the 1.0.20 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: April 14, 2021
@@ -553,7 +1251,7 @@ entries:
   - Technical
   - partners-contribution
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.19 Magento Quality Patch (MQP) package release.
+    for the 1.0.19 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: March 30, 2021
@@ -628,7 +1326,7 @@ entries:
   - Major Update
   - 'Progress: done'
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.18 Magento Quality Patch (MQP) package release.
+    for the 1.0.18 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: March 17, 2021
@@ -736,15 +1434,15 @@ entries:
   contributor: dshevtsov
   profile: https://github.com/dshevtsov
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.17 Magento Quality Patch (MQP) package release.
+    for the 1.0.17 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: March 3, 2021
   link: https://github.com/magento/devdocs/pull/8770
   contributor: abukatar
   profile: https://github.com/abukatar
-- description: Added the "Configure product video options from Magento Admin" section
-    to the [Configure product video](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/product-video.html)
+- description: Added the "Configure product video options from Admin" section to the
+    [Configure product video](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/product-video.html)
     topic.
   versions: 2.3.x, 2.4.x
   type: Major Update
@@ -823,7 +1521,7 @@ entries:
   contributor: hguthrie
   profile: https://github.com/hguthrie
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.16 Magento Quality Patch (MQP) package release.
+    for the 1.0.16 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: February 18, 2021
@@ -1172,7 +1870,7 @@ entries:
   contributor: bdenham
   profile: https://github.com/bdenham
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.15 Magento Quality Patch (MQP) package release.
+    for the 1.0.15 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: February 1, 2021
@@ -1234,7 +1932,7 @@ entries:
   contributor: RakeshJesadiya
   profile: https://github.com/RakeshJesadiya
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.14 Magento Quality Patch (MQP) package release.
+    for the 1.0.14 Quality Patches Tool release.
   versions: ''
   type: Major Update
   date: January 22, 2021
@@ -1337,7 +2035,7 @@ entries:
   contributor: drpayyne
   profile: https://github.com/drpayyne
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.13 Magento Quality Patch (MQP) package release.
+    for the 1.0.13 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: December 10, 2020
@@ -1352,7 +2050,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/8311
   contributor: sathiyaaa
   profile: https://github.com/sathiyaaa
-- description: Added a new topic describing how to [customize the Magento Admin design](https://devdocs.magento.com/guides/v2.4/howdoi/admin/customize_admin.html).
+- description: Added a new topic describing how to [customize the Admin design](https://devdocs.magento.com/guides/v2.4/howdoi/admin/customize_admin.html).
   versions: 2.3.x, 2.4.x
   type: New Topic
   date: December 8, 2020
@@ -1383,7 +2081,7 @@ entries:
   contributor: sathiyaaa
   profile: https://github.com/sathiyaaa
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.12 Magento Quality Patch (MQP) package release.
+    for the 1.0.12 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: November 26, 2020
@@ -1415,7 +2113,7 @@ entries:
   contributor: meker12
   profile: https://github.com/meker12
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.10 Magento Quality Patch (MQP) package release.
+    for the 1.0.10 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: November 19, 2020
@@ -1423,7 +2121,7 @@ entries:
   contributor: viktym
   profile: https://github.com/viktym
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.10 Magento Quality Patch (MQP) package release.
+    for the 1.0.10 Quality Patches Tool release.
   versions: ''
   type: Major Update
   date: November 13, 2020
@@ -1440,7 +2138,7 @@ entries:
   contributor: meker12
   profile: https://github.com/meker12
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.9 Magento Quality Patch (MQP) package release.
+    for the 1.0.9 Quality Patches Tool release.
   versions: ''
   type: Major Update
   date: November 12, 2020
@@ -1515,7 +2213,7 @@ entries:
   contributor: meker12
   profile: https://github.com/meker12
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.8 Magento Quality Patch (MQP) package release.
+    for the 1.0.8 Quality Patches Tool release.
   versions: ''
   type: Major Update
   date: October 28, 2020
@@ -1541,7 +2239,7 @@ entries:
 - description: Updated the [Submit for Technical Review](https://devdocs.magento.com/marketplace/sellers/submit-for-technical-review.html)
     topic in the _Marketplace Developer Guide_ with detailed information about the
     technical review guidelines, tests, tools, and processes that Magento uses to
-    verify and validate third-party extensions submitted to the Magento Marketplace
+    verify and validate third-party extensions submitted to the Commerce Marketplace
     Developer Portal.
   versions: 2.x
   type: Major Update
@@ -1625,8 +2323,8 @@ entries:
   contributor: jeff-matthews
   profile: https://github.com/jeff-matthews
 - description: Updated reference documentation for backward incompatible changes introduced
-    in the [2.4.1](http://127.0.0.1:4000/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#240---241)
-    and [2.3.6](http://127.0.0.1:4000/guides/v2.3/release-notes/backward-incompatible-changes/reference.html#235---236)
+    in the [2.4.1](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#240---241)
+    and [2.3.6](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html#235---236)
     releases.
   versions: 2.3.6, 2.4.1
   type: Major Update
@@ -1831,7 +2529,7 @@ entries:
   contributor: meker12
   profile: https://github.com/meker12
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.7 Magento Quality Patch (MQP) package release.
+    for the 1.0.7 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: October 14, 2020
@@ -1884,7 +2582,7 @@ entries:
   contributor: BarnyShergold
   profile: https://github.com/BarnyShergold
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.6 Magento Quality Patch (MQP) package release.
+    for the 1.0.6 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: September 30, 2020
@@ -1917,7 +2615,7 @@ entries:
   contributor: BarnyShergold
   profile: https://github.com/BarnyShergold
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.5 Magento Quality Patch (MQP) package release.
+    for the 1.0.5 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: September 22, 2020
@@ -1969,7 +2667,7 @@ entries:
   contributor: andrewbess
   profile: https://github.com/andrewbess
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.4 Magento Quality Patch (MQP) package release.
+    for the 1.0.4 Quality Patches Tool release.
   versions: ''
   type: Major Update
   date: September 10, 2020
@@ -2036,9 +2734,9 @@ entries:
   link: https://github.com/magento/devdocs/pull/7785
   contributor: dshevtsov
   profile: https://github.com/dshevtsov
-- description: Added information about the Magento Quality Patches package in the
-    [Software Upgrade Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching.html)
-    and [Cloud Guide](https://devdocs.magento.com/cloud/project/project-patch.html).
+- description: Added information about the Quality Patches tool in the [Software Upgrade
+    Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching.html) and [Cloud
+    Guide](https://devdocs.magento.com/cloud/project/project-patch.html).
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: August 26, 2020
@@ -3119,9 +3817,8 @@ entries:
   link: https://github.com/magento/devdocs/pull/6811
 - description: Improved the instructions to configure Cloud Starter projects to use
     New Relic to add alternative instructions for users who have access to New Relic
-    and the Magento Admin for a site, but do not have access to configure environment
-    variables through the Magento Cloud project. See [Configure New Relic for Starter
-    environments](https://devdocs.magento.com/cloud/project/new-relic.html#configure-new-relic-for-starter-environments).
+    and the Admin for a site, but do not have access to configure environment variables
+    through the Magento Cloud project. See [Configure New Relic for Starter environments](https://devdocs.magento.com/cloud/project/new-relic.html#configure-new-relic-for-starter-environments).
   versions: 2.3.x
   type: Technical changes
   date: March 11, 2020
@@ -5327,12 +6024,12 @@ entries:
   date: March  1, 2019
   link: https://github.com/magento/devdocs/pull/3841
 - description: "-  Updated the Custom VCL snippets with instructions for using the
-    Magento Admin UI to create and manage VCL snippets.<br/>-  Updated and corrected
-    the following examples for using Fastly Edge Dictionaries and custom VCL snippets
-    to manage request routing for Magento Commerce Cloud traffic: Set up redirects
-    to WordPress backend, Block referrer spam, and Secure access to the Admin UI by
-    client IP address. Included prerequisites and instructions for  adding VCL snippets
-    from the Admin UI or Fastly API."
+    Admin UI to create and manage VCL snippets.<br/>-  Updated and corrected the following
+    examples for using Fastly Edge Dictionaries and custom VCL snippets to manage
+    request routing for Magento Commerce Cloud traffic: Set up redirects to WordPress
+    backend, Block referrer spam, and Secure access to the Admin UI by client IP address.
+    Included prerequisites and instructions for  adding VCL snippets from the Admin
+    UI or Fastly API."
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: March  1, 2019
@@ -5359,10 +6056,10 @@ entries:
     Updated the Cloud Docker content to explain how to configure Xdebug.<br/>- Added
     two new environment variables: RESOURCE_CONFIGURATION deploy variable and X_FRAME_CONFIGURATION
     global variable<br/>- Updated the ADMIN variables and clarified the usage of ADMIN
-    variables in the Access your Magento Admin panel page.<br/>- Added an example
-    for preloading pages from multiple domains in the WARM_UP_PAGES post-deploy variable.<br/>-
-    Deprecated SCD_EXCLUDE_THEMES environment variable.<br/>- Clarified the backup
-    and retention statements regarding the most recent 24-hour period.'
+    variables in the Access your Admin page.<br/>- Added an example for preloading
+    pages from multiple domains in the WARM_UP_PAGES post-deploy variable.<br/>- Deprecated
+    SCD_EXCLUDE_THEMES environment variable.<br/>- Clarified the backup and retention
+    statements regarding the most recent 24-hour period.'
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: February 26, 2019

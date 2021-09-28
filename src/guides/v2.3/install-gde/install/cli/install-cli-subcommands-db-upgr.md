@@ -23,7 +23,7 @@ Anytime you perform an action that causes the Magento [database schema](https://
 *  You enabled or disabled a component using the command line
 
 {:.bs-callout-info}
-A Magento *component* can be a module, theme, or language pack; it doesn't matter whether the component comes from the Magento Marketplace or not
+A Magento *component* can be a module, theme, or language pack; it doesn't matter whether the component comes from the Commerce Marketplace or not
 
 1. Start the upgrade:
 

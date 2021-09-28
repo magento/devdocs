@@ -939,7 +939,7 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 
 ## 17. Services
 
-17.1. New features with limited customization scenarios SHOULD be implemented as a thin Magento extension that will communicate to a service that contains business logic. This allows developers to release features independently of Magento and makes feature upgrades easier.
+17.1. New features with limited customization scenarios SHOULD be implemented as a thin extension that will communicate to a service that contains business logic. This allows developers to release features independently of Magento and makes feature upgrades easier.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
@@ -951,5 +951,5 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[rules]: https://github.com/magento/magento-coding-standard/blob/develop/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html

@@ -58,7 +58,7 @@ Where:
 -  `backend_options` is the L2 cache configuration.
    -  `remote_backend` is the remote cache implementation: Redis or MySQL.
    -  `remote_backend_options` is the remote cache configuration.
-   -  `local_backend` is the local cache implementation: `Cm_Cache_Backend_File` or the APC adapter.
+   -  `local_backend` is the local cache implementation: `Cm_Cache_Backend_File`.
    -  `local_backend_options` is the local cache configuration.
       -  `cache_dir` __a file cache specific option.__ This is the directory where the local cache is stored.
    -  `use_stale_cache` is a flag that enables or disables the use of stale cache.

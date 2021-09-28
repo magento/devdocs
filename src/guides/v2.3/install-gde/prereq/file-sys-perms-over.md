@@ -8,11 +8,11 @@ functional_areas:
 
 It is important to secure your Magento installation in a development environment to help prevent issues related to unauthorized people or processes accessing—and potentially harming—your system. Use the following file system ownership and permissions guidelines to protect your installation.
 
-## Magento file system owner
+## File system owner
 
-The Magento file system owner is a user that owns and holds write permissions to files in the Magento file system.
+The file system owner is a user that owns and holds write permissions to files in the Magento file system.
 
-There are two types of Magento file system owners:
+There are two types of file system owners:
 
 -  **Shared hosting with a single user**
 
@@ -22,7 +22,7 @@ There are two types of Magento file system owners:
 
    Private hosting is useful if you manage a Magento server. Each user has a specific responsibility:
 
-   -  The _web server user_ runs the Magento Admin and storefront.
+   -  The _web server user_ runs the Admin and storefront.
 
    -  The _command-line user_ runs the Magento cron jobs and command-line utilities.
 

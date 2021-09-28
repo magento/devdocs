@@ -10,15 +10,15 @@ Before submitting your extension for review, [complete the information]({{ site.
 
 The extension submission process requires you to do the following:
 
--  Review and agree to the Terms and Conditions of Magento Marketplace.
+-  Review and agree to the Terms and Conditions of Commerce Marketplace.
 -  Pass both technical and marketing review.
 -  Provide information about your business to ensure that transactions and payments are processed efficiently. This information includes W-8 / W-9 forms, as required by law. For more information, see the [technical]({{ site.baseurl }}/marketplace/sellers/technical-review-guidelines.html) and [marketing]({{ site.baseurl }}/marketplace/sellers/marketing-review-guidelines.html) review guidelines.
 
-You can submit your extension for [technical review]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html) when you are ready to have Magento Marketplace review the code and technical aspects of your extension. These steps require additional information for your extension including a PDF guide, supported Magento versions, and code package.
+You can submit your extension for [technical review]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html) when you are ready to have Commerce Marketplace review the code and technical aspects of your extension. These steps require additional information for your extension including a PDF guide, supported Magento versions, and code package.
 
 You can submit your extension for [marketing review]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html) as soon as your marketing content is ready for review.
 
-You must complete both the technical and marketing review to fully list your extension on the Magento Marketplace. The following diagram details the submission and review process.
+You must complete both the technical and marketing review to fully list your extension on the Commerce Marketplace. The following diagram details the submission and review process.
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/submit-chart1.png){: .zoom}
 _Workflow for creating and submitting extensions_

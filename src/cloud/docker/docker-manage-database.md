@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The Cloud Docker development environment provides MySQL services through a MariaDB (default) or MySQL database deployed to the [Docker database container][]. You connect to the database using `docker-compose` commands. You can also import data from an existing Magento project into the database container using the `magento-cloud db:dump` command.
+The Cloud Docker development environment provides MySQL services through a MariaDB (default) or MySQL database deployed to the [Docker database container][]. You connect to the database using `docker-compose` commands. You can also import data from an existing {{site.data.var.ece}} project into the database container using the `magento-cloud db:dump` command.
 
 ## Connect to the database
 
@@ -147,7 +147,7 @@ To connect to the database port:
 ## Import a database dump
 
 {:.bs-callout-warning}
-Before you import a database from an existing Magento installation into a new {{ site.data.var.ece }} environment, you must add the encryption key from the remote environment to the new environment, and then deploy the changes. See [Add the Magento encryption key][].
+Before you import a database from an existing {{site.data.var.ee}} installation into a new {{ site.data.var.ece }} environment, you must add the encryption key from the remote environment to the new environment, and then deploy the changes. See [Add the encryption key][].
 
 {:.procedure}
 To import a database dump into the Docker environment:
@@ -192,7 +192,7 @@ See [Docker service containers][Docker database container] for details about the
 
 <!--Link definitions-->
 
-[Add the Magento encryption key]: {{ site.baseurl}}/cloud/setup/first-time-setup-import-import.html#encryption-key
+[Add the encryption key]: {{ site.baseurl}}/cloud/setup/first-time-setup-import-import.html#encryption-key
 [Docker database container]: https://devdocs.magento.com/cloud/docker/docker-containers-service.html#database-container
 [mysqldump]: https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html
 [Service configuration options]: {{ site.baseurl }}/cloud/docker/docker-containers.html#service-configuration-options

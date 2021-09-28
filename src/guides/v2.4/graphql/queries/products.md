@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: products query
-redirect_from:
-  - /guides/v2.3/graphql/reference/products.html
 ---
 
 The `products` query allows you to search for catalog items.
@@ -266,6 +264,7 @@ Attribute | Data type | Description
 `count` | Int | The number of filter items in the filter group
 `label` | String | The filter name displayed in layered navigation
 `options` | [AggregationOption] | Describes each aggregated filter option
+`position` | Int | The relative position of the attribute in a layered navigation block
 
 #### AggregationOption attributes {#AggregationOption}
 
@@ -1480,6 +1479,133 @@ The following product query returns URL rewrite information about the Joust Duff
                 {
                   "name": "category",
                   "value": "4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Retrieve variant `uid` values {#variant-uid}
+
+The following query returns information about each variant of the configurable product `WSH12`. Each variant has a unique combination of color and size values. Specify the `uid` values in the `selected_options` array of the [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to indicate which variants the shopper selected.
+
+**Request:**
+
+```graphql
+{
+  products(filter: {sku: {eq: "WSH12"}}) {
+    items {
+      sku
+      ... on ConfigurableProduct {
+        variants {
+          attributes {
+            uid
+            label
+            code
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "sku": "WSH12",
+          "variants": [
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
+                  "label": "Green",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
+                  "label": "Purple",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4",
+                  "label": "Red",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzE=",
+                  "label": "28",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
+                  "label": "Green",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
+                  "label": "Purple",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
+                }
+              ]
+            },
+            {
+              "attributes": [
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU4",
+                  "label": "Red",
+                  "code": "color"
+                },
+                {
+                  "uid": "Y29uZmlndXJhYmxlLzE2MC8xNzI=",
+                  "label": "29",
+                  "code": "size"
                 }
               ]
             }

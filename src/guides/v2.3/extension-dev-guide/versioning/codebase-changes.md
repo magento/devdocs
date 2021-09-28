@@ -3,19 +3,18 @@ group: php-developer-guide
 title: Codebase changes
 ---
 
-Every Magento version release includes a change in the codebase.
-The scope of the change determines whether the MAJOR, MINOR, or PATCH number increases in the version.
+Every release includes a change in the codebase. The scope of the change determines whether the MAJOR, MINOR, or PATCH number increases in the version.
 
 ## Public vs private code changes
 
-A Magento module's codebase consists of public and private code.
+A module's codebase consists of public and private code.
 Public code includes Public [API](https://glossary.magento.com/api)(indicated by the `@api` docblock tag) and Public Customization Points.
 All other code is considered private.
 
 Changes in public code always trigger MINOR or MAJOR version increases.
 
 In most cases, modifications to private code will trigger PATCH version increases.
-On rare occasions, if the Magento development team made significant modifications to private code, they will increase the MINOR or MAJOR version.
+On rare occasions, if the Adobe development team made significant modifications to private code, they will increase the MINOR or MAJOR version.
 
 Third-party modules should not use private code.
 If this is unavoidable, you must depend on the PATCH version of the core modules used.
@@ -30,13 +29,13 @@ Modifications that break Customization Points will trigger an increase in a modu
 
 An interface represents either an API or a Customization Point.
 
-This policy allows third-party module developers to declare more granular dependencies depending on their module's interaction with Magento modules.
+This policy allows third-party module developers to declare more granular dependencies depending on their module's interaction with core modules.
 
 ## Deprecation
 
-Marking public code with `@deprecated` indicates that Magento plans to remove that code in a future MINOR release.
+Marking public code with `@deprecated` indicates that Adobe plans to remove that code in a future MINOR release or potentially after a year if no MINOR version is released.
 
-When Magento deprecates the API or a customization point in favor of a new implementation, the `@see` annotation points to the new implementation.
+When Adobe deprecates the API or a customization point in favor of a new implementation, the `@see` annotation points to the new implementation.
 
 **Deprecated Code Example:**
 
@@ -55,7 +54,7 @@ public function save()
 ## Version increase scenarios
 
 This table lists code change scenarios and which version number it affects.
-Use this table to understand what changes Magento can make and which version number gets increased for that change.
+Use this table to understand what changes Adobe can make and which version number gets increased for that change.
 Any change not listed below is considered a PATCH level change.
 
 | API/Customization Point | Code Change| Version Change |
@@ -162,7 +161,7 @@ Any change not listed below is considered a PATCH level change.
 
 ### PHP Classes Intended for Extension
 
-Though inheritance is discouraged in Magento, the following classes are still acceptable for extension at the moment:
+Though inheritance is discouraged, the following classes are still acceptable for extensions at the moment:
 
 *  \Magento\Framework\Model\AbstractExtensibleModel
 *  \Magento\Framework\Api\AbstractExtensibleObject
@@ -175,4 +174,11 @@ Though inheritance is discouraged in Magento, the following classes are still ac
 *  \Magento\Framework\View\Element\AbstractBlock
 *  \Magento\Framework\View\Element\Template
 
-As Magento framework improves, this list should be reduced and, eventually, eliminated.
+As the framework improves, this list should be reduced and, eventually, eliminated.
+
+{:.ref-header}
+Related topics
+
+*  [Release policy]({{ site.baseurl }}/release/policy/)
+*  [Upcoming releases]({{ site.baseurl }}/release/)
+*  [Backward compatibility policy]({{ site.baseurl }}/contributor-guide/backward-compatible-development/)

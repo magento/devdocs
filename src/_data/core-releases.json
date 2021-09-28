@@ -2,6 +2,14 @@
     "2.4": {
         "releases": [
             {
+                "publishedAt": "2021-08-10T16:44:14Z",
+                "tagName": "2.4.3"
+            },
+            {
+                "publishedAt": "2021-08-10T16:44:09Z",
+                "tagName": "2.4.2-p2"
+            },
+            {
                 "publishedAt":"2021-05-11T15:16:17Z",
                 "tagName":"2.4.2-p1"
             },
@@ -30,6 +38,10 @@
     },
     "2.3": {
         "releases": [
+            {
+                "publishedAt": "2021-08-10T16:44:05Z",
+                "tagName": "2.3.7-p1"
+            },
             {
                 "publishedAt":"2021-05-11T15:16:04Z",
                 "tagName":"2.3.7"

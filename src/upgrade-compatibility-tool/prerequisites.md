@@ -8,9 +8,9 @@ functional_areas:
   - Upgrade
 ---
 
-Running the Upgrade Compatibility Tool ALPHA helps you identify what you must do **before** upgrading Magento.
+Running the {{site.data.var.uct}} helps you identify what you must do **before** upgrading your {{site.data.var.ee}} version.
 
-The minimum requirements to run the Upgrade Compatibility Tool are:
+The minimum requirements to run the {{site.data.var.uct}} are:
 
 | **Requirements** | **Constraints** |
 |----------------|-----------------|
@@ -18,10 +18,10 @@ The minimum requirements to run the Upgrade Compatibility Tool are:
 | Composer | none |
 | Node.js | An optional requirement. Only required to check GraphQL compatibility. |
 | Memory limitations | At least 2GB RAM |
-| Magento Access keys | none |
-| MC or Magento Open Source | none |
+| {{site.data.var.ee}} Access keys | none |
+| {{site.data.var.ee}} (Open Source or enterprise) | none |
 {:style="table-layout:auto;"}
 
-You can run the Upgrade Compatibility Tool in any operating system. There is no requirement to run the Upgrade Compatibility Tool where your Magento instance is located.
+You can run the {{site.data.var.uct}} in any operating system. There is no requirement to run the {{site.data.var.uct}} where your {{site.data.var.ee}} instance is located.
 
-It is necessary for the Upgrade Compatibility Tool to have access to the source code of the Magento instance. For example, you can install it on one server and point it at your Magento installation on another server. Refer to the [install]({{site.baseurl}}/upgrade-compatibility-tool/install.html#install) for more information.
+It is necessary for the {{site.data.var.uct}} to have access to the source code of the {{site.data.var.ee}} instance. For example, you can install it on one server and point it at your {{site.data.var.ee}} installation on another server. Refer to the [install]({{site.baseurl}}/upgrade-compatibility-tool/install.html#install) for more information.
