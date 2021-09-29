@@ -12,6 +12,9 @@ The Remote Storage module provides the option to store media files and schedule 
 {:.bs-callout-info}
 Remote storage is available in version 2.4.2 and later only. See the [2.4.2 release notes]({{page.baseurl}}/release-notes/open-source-2-4-2.html).
 
+{:.bs-callout-info}
+Remote storage is not supported on Cloud Commerce environments.
+
 ![schema image]
 
 ## Remote storage options
