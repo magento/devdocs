@@ -228,7 +228,7 @@ interface ProductRepositoryInterface
 ## 4. Create Models
 
 The objective of models to create classes that implement our interfaces and process data.
-In this example, we have created models for request, response and process data. In model we have defined two methods `getItem` which provide product details of the given product id and `setDescription` which updates the description of the given product item(s). 
+In this example, we have created models for request, response and process data. In model we have defined two methods `getItem` which provide product details of the given product id and `setDescription` which updates the description of the given product item(s).
 
 `app/code/Dev/RestApi/Model/Api/RequestItem.php`:
 
