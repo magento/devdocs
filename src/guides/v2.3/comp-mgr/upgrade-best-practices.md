@@ -16,7 +16,7 @@ It is important to understand the variables that determine the complexity of an 
 
 The level of effort to upgrade your {{site.data.var.ee}} instance depends upon these factors:
 
-*  **How you have built your site?** The amount of custom work and the number of installed 3rd-party modules strongly affects the complexity of an upgrade. The quality of the custom work and modules also can also determine whether an upgrade will go smoothly.
+*  **How did you build your site?** The amount of custom work and the number of installed 3rd-party modules strongly affects the complexity of an upgrade. The quality of the custom work and modules can determine whether an upgrade will go smoothly.
 
 *  **Are you skipping multiple releases?** Skipping releases will makes the next upgrade more complex, upgrading from consequent versions will make the process easier and cheaper.
 
