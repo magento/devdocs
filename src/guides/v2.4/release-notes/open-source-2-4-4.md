@@ -34,7 +34,6 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 Security improvements for this release improve compliance with the latest security best practices, including:
 
-
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
