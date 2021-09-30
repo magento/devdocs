@@ -7,13 +7,13 @@ contributor_link: https://www.Ziffity.com/
 
 ## Overview
 
-REST API in Magento 2 defines a set of functions used by the developers to perform requests and get responses using the HTTP protocol. By default, Magento 2 provides some predefined rest APIs like Product API, Order API, Customer data API with which you can take virtual control of everything happening on the site.
+The REST API in Magento 2 defines a set of functions used by the developers to perform requests and get responses using the HTTP protocol. By default, Magento 2 provides some predefined rest APIs like Product API, Order API, Customer data API, with which you can take virtual control of everything happening on the site.
 
-Even though Magento 2 has these many rest APIs, they are not enough when it comes to using the custom data and their values. To manage your custom data and fields, you need to create custom rest API in Magento 2. This tutorial describes how you can create custom REST API.
+Even though Magento 2 has many REST APIs, they are not enough when it comes to using the custom data and their values. To manage your custom data and fields, you need to create a custom REST API in Magento 2. This tutorial describes how you can create such a custom REST API.
 
 ## 1. Create a custom module
 
-Everything starts with a module. `Dev_RestApi` will be used as the namespace:
+`Dev_RestApi` will be used as the namespace:
 
 Here are the required files to get started:
 
@@ -65,7 +65,7 @@ Here are the required files to get started:
 </config>
 ```
 
-In this tutorial, we have defined acl entries for each endpoints, to have full control over who can access.
+In this tutorial, we have defined ACL entries for each endpoint which give full control over who can access the endpoints.
 
 ## 3. Define custom endpoints
 
@@ -90,7 +90,7 @@ In this tutorial, we have defined acl entries for each endpoints, to have full c
 </routes>
 ```
 
-*  `route.url` is a URL of the endpoint, the full address would be: `<domain>/rest/<store_code><route.url>`
+*  `route.url` is the URL of the endpoint, the full address would be: `<domain>/rest/<store_code><route.url>`
 
 *  `route.method` defines the request method. You should follow the rules of the REST API specification:
 
@@ -107,7 +107,7 @@ In this tutorial, we have defined acl entries for each endpoints, to have full c
 
 ## 4. Create Interfaces
 
-In this example, we have created interfaces for request and response
+In this example, we have created the interfaces for request and response
 
 `app/code/Dev/RestApi/Api/RequestItemInterface.php`:
 
@@ -227,8 +227,8 @@ interface ProductRepositoryInterface
 
 ## 4. Create Models
 
-The objective of models to create classes that implement our interfaces and process data.
-In this example, we have created models for request, response and process data. In model we have defined two methods `getItem` which provide product details of the given product id and `setDescription` which updates the description of the given product item(s).
+The objective of models is to create classes that implement the interfaces and process data.
+In this example, we have created models for request, response and process data. In each model we have defined two methods `getItem`, which provides product details of the given product id, and `setDescription` which updates the description of the given product item(s).
 
 `app/code/Dev/RestApi/Model/Api/RequestItem.php`:
 
@@ -243,18 +243,12 @@ use Magento\Framework\DataObject;
  */
 class RequestItem extends DataObject implements RequestItemInterface
 {
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId() : int
     {
         return $this->_getData(self::DATA_ID);
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    public function getDescription() : string
     {
         return $this->_getData(self::DATA_DESCRIPTION);
     }
@@ -263,7 +257,7 @@ class RequestItem extends DataObject implements RequestItemInterface
      * @param int $id
      * @return $this
      */
-    public function setId(int $id)
+    public function setId(int $id) : mixed
     {
         return $this->setData(self::DATA_ID, $id);
     }
@@ -272,7 +266,7 @@ class RequestItem extends DataObject implements RequestItemInterface
      * @param string $description
      * @return $this
      */
-    public function setDescription(string $description)
+    public function setDescription(string $description) : mixed
     {
         return $this->setData(self::DATA_DESCRIPTION, $description);
     }
@@ -291,34 +285,22 @@ use Magento\Framework\DataObject;
  */
 class ResponseItem extends DataObject implements ResponseItemInterface
 {
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId() : int
     {
         return $this->_getData(self::DATA_ID);
     }
 
-    /**
-     * @return string
-     */
-    public function getSku()
+    public function getSku() : string
     {
         return $this->_getData(self::DATA_SKU);
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName() : string
     {
         return $this->_getData(self::DATA_NAME);
     }
 
-    /**
-     * @return string|null
-     */
-    public function getDescription()
+    public function getDescription() : string
     {
         return $this->_getData(self::DATA_DESCRIPTION);
     }
@@ -327,7 +309,7 @@ class ResponseItem extends DataObject implements ResponseItemInterface
      * @param int $id
      * @return $this
      */
-    public function setId(int $id)
+    public function setId(int $id) : mixed
     {
         return $this->setData(self::DATA_ID, $id);
     }
@@ -336,7 +318,7 @@ class ResponseItem extends DataObject implements ResponseItemInterface
      * @param string $sku
      * @return $this
      */
-    public function setSku(string $sku)
+    public function setSku(string $sku) : mixed
     {
         return $this->setData(self::DATA_SKU, $sku);
     }
@@ -345,7 +327,7 @@ class ResponseItem extends DataObject implements ResponseItemInterface
      * @param string $name
      * @return $this
      */
-    public function setName(string $name)
+    public function setName(string $name) : mixed
     {
         return $this->setData(self::DATA_NAME, $name);
     }
@@ -354,7 +336,7 @@ class ResponseItem extends DataObject implements ResponseItemInterface
      * @param string $description
      * @return $this
      */
-    public function setDescription(string $description)
+    public function setDescription(string $description) : mixed
     {
         return $this->setData(self::DATA_DESCRIPTION, $description);
     }
@@ -433,7 +415,7 @@ class ProductRepository implements ProductRepositoryInterface
      * @return ResponseItemInterface
      * @throws NoSuchEntityException
      */
-    public function getItem(int $id)
+    public function getItem(int $id) : mixed
     {
         $collection = $this->getProductCollection()
             ->addAttributeToFilter('entity_id', ['eq' => $id]);
@@ -453,7 +435,7 @@ class ProductRepository implements ProductRepositoryInterface
      * @param RequestItemInterface[] $products
      * @return void
      */
-    public function setDescription(array $products)
+    public function setDescription(array $products) : void
     {
         foreach ($products as $product) {
             $this->setDescriptionForProduct(
@@ -466,7 +448,7 @@ class ProductRepository implements ProductRepositoryInterface
     /**
      * @return Collection
      */
-    private function getProductCollection()
+    private function getProductCollection() : mixed
     {
         /** @var Collection $collection */
         $collection = $this->productCollectionFactory->create();
@@ -489,7 +471,7 @@ class ProductRepository implements ProductRepositoryInterface
      * @param ProductInterface $product
      * @return ResponseItemInterface
      */
-    private function getResponseItemFromProduct(ProductInterface $product)
+    private function getResponseItemFromProduct(ProductInterface $product) : mixed
     {
         /** @var ResponseItemInterface $responseItem */
         $responseItem = $this->responseItemFactory->create();
@@ -509,7 +491,7 @@ class ProductRepository implements ProductRepositoryInterface
      * @param string $description
      * @return void
      */
-    private function setDescriptionForProduct(int $id, string $description)
+    private function setDescriptionForProduct(int $id, string $description) : void
     {
         $this->productAction->updateAttributes(
             [$id],
