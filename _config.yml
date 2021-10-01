@@ -115,7 +115,6 @@ defaults:
     values:
       group: module-reference-guide-2_3
       github_link: false
-      feedback_link: false
 
   -
     scope:
@@ -123,7 +122,6 @@ defaults:
     values:
       group: module-reference-guide-2_4
       github_link: false
-      feedback_link: false
 
   -
     scope:

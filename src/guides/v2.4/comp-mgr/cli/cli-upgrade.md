@@ -78,6 +78,8 @@ See the examples at the end of this section for help specifying different releas
    The first time you upgrade using the plugin, you can interactively view and update any out-of-date values that may be remaining from previous versions.
    To enable this, use the `--interactive-magento-conflicts` option on the `composer require` commands.
 
+   To override all conflicting custom values with the expected Magento values, re-run the `composer require` command with the `--use-default-magento-values` option.
+
    {:.bs-callout-tip}
    Use `composer require --help` to learn more about available options.
    To learn more about usage of the plugin, refer to the [Plugin Usage](https://github.com/magento/composer-root-update-plugin/blob/0.1/src/Magento/ComposerRootUpdatePlugin/README.md#usage).
@@ -100,13 +102,13 @@ See the examples at the end of this section for help specifying different releas
    _{{ ce }}_:
 
    ```bash
-   composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
+   composer show magento/product-community-edition {{ page.guide_version }}.* --available | grep -m 1 versions
    ```
 
    _{{ ee }}_:
 
    ```bash
-   composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
+   composer show magento/product-enterprise-edition {{ page.guide_version }}.* --available | grep -m 1 versions
    ```
 
    </div>

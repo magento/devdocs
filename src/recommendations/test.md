@@ -31,7 +31,7 @@ See the [user guide](https://docs.magento.com/user-guide/marketing/recommendatio
 
 1. Deploy the `magento/product-recommendations` module to a non-production environment where the catalog data is similar to your production catalog.
 
-1. Use one of the non-production SaaS Environment IDs for [configuration](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html) in the Admin.
+1. Use one of the non-production Data Space IDs for [configuration](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html) in the Admin.
 
 1. Generate the data yourself by clicking around your storefront to mimic the behavior of actual shoppers (or create an automation script to do this). Through your testing, you will generate behavioral events on your non-production environment. Those events will be used to produce the product affinities that power recommendations. For testing, Magento suggests you interact with the following recommendation types:
 
