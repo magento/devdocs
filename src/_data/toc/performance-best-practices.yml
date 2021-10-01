@@ -21,8 +21,15 @@ pages:
     - label: Deployment flow
       url: /performance-best-practices/deployment-flow.html
 
-    - label: Advanced setup
-      url: /performance-best-practices/advanced-setup.html
+    - label: Performance pack
+      url: /performance-best-practices/performance-pack.html
+      exclude_versions: ["2.3"]
 
-    - label: Advanced JavaScript bundling
-      url: /performance-best-practices/advanced-js-bundling.html
+    - label: Advanced concepts
+      children:
+
+        - label: Advanced setup
+          url: /performance-best-practices/advanced-setup.html
+
+        - label: Advanced JavaScript bundling
+          url: /performance-best-practices/advanced-js-bundling.html
