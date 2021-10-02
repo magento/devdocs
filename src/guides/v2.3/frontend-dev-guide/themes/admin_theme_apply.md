@@ -17,12 +17,14 @@ This topic describes how to apply your custom [theme](https://glossary.magento.c
 1. [Add a new custom module]({{ page.baseurl }}/extension-dev-guide/build/build.html) or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in `<your_custom_module_dir>/etc/module.xml` (replace placeholders with your [module](https://glossary.magento.com/module) information):
 
    ```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
    <module name="%YourVendor_YourModule%" setup_version="2.0.1"> <!-- Example: "Magento_Backend" -->
       <sequence>
          <module name="Magento_Theme"/>
          <module name="Magento_Enterprise"/> <!-- For Enterprise versions only -->
       </sequence>
    </module>
+</config>
    ```
 
 {:.bs-callout-info}
