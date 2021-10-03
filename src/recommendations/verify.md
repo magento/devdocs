@@ -44,7 +44,7 @@ Install the [Snowplow Analytics Debugger extension for Chrome](https://chrome.go
 
 1. Scroll down until you see **Context Data _n_**. Look for the storefront instance in the **Schema**.
 
-1. Verify that the [SaaS Environment ID](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html) is set correctly.
+1. Verify that the [SaaS Data Space ID](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html) is set correctly.
 
     ![Snowplow filter]({{ page.baseurl }}/recommendations/images/snowplow-filter.png)
 
