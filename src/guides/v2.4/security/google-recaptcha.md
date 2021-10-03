@@ -30,3 +30,9 @@ The extension supports a command line option for disabling reCAPTCHA. Use this c
 ```bash
 bin/magento security:recaptcha:disable-for-user-login
 ```
+
+Can disable Google reCAPTCHA for Admin panel Reset Password page from command-line:
+
+```bash
+bin/magento security:recaptcha:disable-for-user-forgot-password
+```
