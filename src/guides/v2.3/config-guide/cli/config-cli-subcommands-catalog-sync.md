@@ -6,7 +6,7 @@ title: Catalog Sync
 Magento compiles catalog data into tables using indexers. This process is automatically [triggered by several events](https://docs.magento.com/user-guide/system/index-management-events.html), such as changes to a product's price or inventory levels. To allow some Magento services to use that catalog data, a catalog sync process runs hourly. The catalog sync process exports product data from the Magento server to SaaS services on an ongoing basis. For example, the [Product Recommendations](https://docs.magento.com/user-guide/marketing/product-recommendations.html) feature needs up-to-date catalog information so that it can accurately return recommendations with correct names, pricing, and availability. Use the command-line interface to trigger the catalog sync and reindex product data for consumption by SaaS services.
 
 {:.bs-callout-info}
-To use the catalog sync commands, you must have an [API key and a SaaS environment configured](https://docs.magento.com/user-guide/system/saas.html). If you do not have an API key and have not configured a SaaS environment, you can still reindex product data but that data will not be exported to SaaS services.
+To use the catalog sync commands, you must have an [API key and a SaaS Data Space configured](https://docs.magento.com/user-guide/system/saas.html). If you do not have an API key and have not configured a SaaS Data Space, you can still reindex product data but that data will not be exported to SaaS services.
 
 The commands used to sync catalog data are part of the `magento/saas-export` package. See [Install and configure Product Recommendations]({{ site.baseurl }}/recommendations/install-configure.html) for more information.
 
