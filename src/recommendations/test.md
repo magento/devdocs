@@ -18,7 +18,7 @@ How can you test your recommendations in a non-production environment using beha
 
 ## Fetch recommendations from your production environment (recommended)
 
-Magento allows you to fetch recommendations from your production environment and preview them in your non-production environment by switching the SaaS Environment.
+Magento allows you to fetch recommendations from your production environment and preview them in your non-production environment by switching the SaaS Data Space.
 
 To fetch recommendations from your production environment, you must make sure that:
 
@@ -41,6 +41,6 @@ See the [user guide](https://docs.magento.com/user-guide/marketing/recommendatio
 
 ### Caveats
 
--  The non-production SaaS Environment behavioral and catalog data identifies an isolated environment in which the resulting product recommendations will be based entirely on the behavioral data generated on the associated storefront.
+-  The non-production SaaS Data Space behavioral and catalog data identifies an isolated environment in which the resulting product recommendations will be based entirely on the behavioral data generated on the associated storefront.
 
 -  Because you will not have large amounts of behavioral data, input data for computing product associations is sparse. However, that data is still sent to Sensei to compute the machine learning models and provide recommendations based on data you generated within this environment.
