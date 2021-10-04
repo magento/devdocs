@@ -367,7 +367,7 @@ The source code of the rules can be found in the [Eslint custom rules folder][es
 [jquery-widgets]: http://api.jqueryui.com/category/widgets
 [jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
 [eslint]: http://eslint.org/
-[eslint-rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
-[jscs-rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc
+[eslint-rules]: https://github.com/magento/magento-coding-standard/blob/develop/eslint/.eslintrc-magento
+[jscs-rules]: https://github.com/magento/magento-coding-standard/blob/develop/jscs/.jscsrc
 [grunt-eslint-configuration]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tools/grunt/configs/eslint.json
 [eslint-custom-rules-folder]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/rules/

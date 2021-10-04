@@ -54,6 +54,9 @@ pages:
         - label: Run the Upgrade Compatibility Tool
           url: /ext-best-practices/phpstorm/uct-run-configuration.html
 
+        - label: The built-in Upgrade Compatibility Tool (MVP)
+          url: /ext-best-practices/phpstorm/built-in-upgrade-compatibility-tool.html
+
     - label: Storefront
       url: /ext-best-practices/storefront/storefront-best-practices.html
 

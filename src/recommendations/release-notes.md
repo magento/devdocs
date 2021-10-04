@@ -18,6 +18,7 @@ The release notes include:
 
 ## 3.3.3 of magento/product-recommendations for {{site.data.var.ee}} 2.4.0
 
+-  {:.new}Added new recommendation types: [Conversion (view to cart)](https://docs.magento.com/user-guide/marketing/prex-type-convcart.html), [Conversion (view to purchase)](https://docs.magento.com/user-guide/marketing/prex-type-convpurchase.html), and [Recently viewed](https://docs.magento.com/user-guide/marketing/prex-type-recentview.html). Note that these new recommendation types are available in the `magento/product-recommendations` module 3.2.2 and later.
 -  {:.fix}Fixed an issue where Fastly's Web Application Firewall (WAF) was incorrectly blocking a cookie
 -  {:.fix}Fixed issue where products assigned to the non-default Store View were not being displayed in the **Recommendations Product Preview** panel when creating a recommendation for that specific Store View
 -  {:.fix}Fixed issue where certain recommendation unit names in Page Builder prevented the recommendation unit to display on the storefront
@@ -108,7 +109,7 @@ The release notes include:
 
 This is a major version release. You must [edit your project's root composer.json file]({{ page.baseurl }}/recommendations/install-configure.html#update-your-product-recommendations-installation).
 
--  {:.new}Fetch Product Recommendations from alternate SaaS environments. This allows you to use product recommendations computed in your product environment on other, non-production environments. [Switching SaaS Environments](https://docs.magento.com/user-guide/marketing/recommendation-change-source.html) further describes this feature.
+-  {:.new}Fetch Product Recommendations from alternate SaaS Data Spaces. This allows you to use product recommendations computed in your product environment on other, non-production environments. [Switching SaaS Data Spaces](https://docs.magento.com/user-guide/marketing/recommendation-change-source.html) further describes this feature.
 
 -  {:.fix}Fixed an issue where checkout was inhibited for shoppers using uBlock Origin
 -  {:.fix}Fixed an issue sending extraneous add-to-cart events

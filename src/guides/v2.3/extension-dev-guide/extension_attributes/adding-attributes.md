@@ -115,7 +115,7 @@ public function afterSave
     $ourCustomData = $extensionAttributes->getOurCustomData();
     $this->customDataRepository->save($ourCustomData);
 
-    $resultAttributes = $result->getExtentionAttributes(); /** get extension attributes as they exist after save **/
+    $resultAttributes = $result->getExtensionAttributes(); /** get extension attributes as they exist after save **/
     $resultAttributes->setOurCustomData($ourCustomData); /** update the extension attributes with correct data **/
     $result->setExtensionAttributes($resultAttributes);
 
