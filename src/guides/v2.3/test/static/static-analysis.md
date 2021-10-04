@@ -29,7 +29,7 @@ To install the JSCS plugin:
 1. Check **Enable**, if it is unchecked.
 1. Enter the path to your node binary (the result of outputting `which node` in your terminal).
 1. Enter the path to your JSCS package: `[magento_root]/node_modules/jscs`
-1. Click **Configuration File** and in the adjacent input field enter the path to the JSCS file Magento uses, which is located in: `dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc`
+1. Click **Configuration File** and in the adjacent input field enter the path to the JSCS file Magento uses, which is located in: `https://github.com/magento/magento-coding-standard/blob/develop/jscs/.jscsrc`
 
 ![JSCS config]({{site.baseurl}}/common/images/static-jscs.png)
 
