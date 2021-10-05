@@ -29,7 +29,7 @@ Large files (>1 GB) can cause a period of inactivity. DB dumps and archive files
 {:.procedure}
 To launch the Docker environment in developer mode:
 
-1. In your local environment, generate the Docker Compose configuration file. You can use the service configuration options, such as `--php`, to [specify a version][services].
+1. In your local project root, generate the Docker Compose configuration file. You can use the service configuration options, such as `--php`, to [specify a version][services].
 
    ```bash
    ./vendor/bin/ece-docker build:compose --mode="developer"
@@ -41,7 +41,7 @@ To launch the Docker environment in developer mode:
    ./vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen"
    ```
 
-   {:.bs-callout-info}
+   {:.bs-callout-tip}
    You can further customize the Docker Compose configuration file by adding additional options to the `build:compose` command. For example, you can set the software version for a service, or add Xdebug configuration. See [service configuration options].
 
 1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
@@ -56,9 +56,9 @@ To launch the Docker environment in developer mode:
    docker-compose up -d
    ```
 
-1. If you selected the `manual-native` option, start the file synchronization using the following commands.
+1. If you selected the `manual-native` option, start the file synchronization.
 
-   **This command copies all data from the local machine to the Docker volume:**
+   **To copy all data from the local machine to the Docker volume:**
 
    ```bash
    ./bin/magento-docker copy-to --all
@@ -71,7 +71,7 @@ To launch the Docker environment in developer mode:
    ./bin/magento-docker copy-to vendor
    ```
 
-   **To copy all data from the Docker volume to the local machine, use:**
+   **To copy all data from the Docker volume to the local machine:**
 
    ```bash
    ./bin/magento-docker copy-from --all
@@ -136,7 +136,7 @@ To launch the Docker environment in developer mode:
    docker-compose run --rm deploy magento-command cache:clean
    ```
 
-1. Access the local Magento Cloud template by opening one of the following URLs in a browser:
+1. Access the local storefront by opening one of the following URLs in a browser:
 
    -  `http://magento2.docker`
 
