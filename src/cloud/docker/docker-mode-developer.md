@@ -35,9 +35,6 @@ To launch the Docker environment in developer mode:
    ./vendor/bin/ece-docker build:compose --mode="developer"
    ```
 
-   {:.bs-callout-info}
-   The mode specified in the `compose` command determines the deployment for the `docker-compose run --rm deploy cloud-deploy` command in a later step.
-
    If required, set the option for [synchronizing data in Docker]. For example:
 
    ```bash
@@ -108,6 +105,10 @@ To launch the Docker environment in developer mode:
 
       ```bash
       docker-compose run --rm deploy cloud-deploy
+      ```
+
+      ```bash
+      docker-compose run --rm deploy magento-command deploy:mode:set developer
       ```
 
    -  Run post-deploy hooks.
