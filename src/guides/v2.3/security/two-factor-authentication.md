@@ -67,7 +67,9 @@ For example:
 
 ```bash
 bin/magento msp:security:tfa:reset admin google
+```
 
+```bash
 bin/magento msp:security:tfa:reset admin u2fkey
 ```
 
