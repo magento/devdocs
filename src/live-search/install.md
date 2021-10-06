@@ -97,7 +97,7 @@ This onboarding method is recommended when installing Live Search to:
 
 -  An existing production Commerce installation
 
-In this scenario, Elasticsearch manages search requests from the storefront while the Live Search service indexes all products in the background, without any interruption to normal storefront operations.
+In this scenario, Elasticsearch temporarily manages search requests from the storefront while the Live Search service indexes all products in the background, without any interruption to normal storefront operations. Elasticsearch is disabled and Live Search enabled after all catalog data is indexed and synchronized.
 
 1. To download the `live-search` package, run the following from the command line:
 
