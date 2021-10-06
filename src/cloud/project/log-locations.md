@@ -144,7 +144,7 @@ Log file            | Starter and Pro Integration | Pro Staging                 
 **Nginx access log**| `/var/log/access.log`       | `/var/log/platform/<project_id>_stg/access.log`   | `/var/log/platform/<project_id>/access.log`
 **Nginx error log** | `/var/log/error.log`        | `/var/log/platform/<project_id>_stg/error.log`    | `/var/log/platform/<project_id>/error.log`
 **PHP access log**  | `/var/log/php.access.log`   | `/var/log/platform/<project_id>_stg/php.access.log` | `/var/log/platform/<project_id>/php.access.log`
-**PHP FPM log**     | `/var/log/php5-fpm.log`          | `/var/log/platform/<project_id>_stg/php5-fpm.log` | `/var/log/platform/<project_id>/php5-fpm.log`
+**PHP FPM log**     | `/var/log/app.log`          | `/var/log/platform/<project_id>_stg/php5-fpm.log` | `/var/log/platform/<project_id>/php5-fpm.log`
 
 The application logs are compressed and archived once per day and kept for one year. The compressed logs are named using a unique ID that corresponds to the `Number of Days Ago + 1`.
 For example, on Pro production environments a PHP access log for 21 days in the past is stored and named as follows:
