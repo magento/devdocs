@@ -25,7 +25,11 @@ GET /rest/v1/users/:mage_id?style=summary
 By default, requests for profile data return all fields.
 You can limit the amount of data that the request returns by using the `style=summary` option.
 
-The following example shows the request/response body for retrieving all profile data:
+The following example shows the request/response body for retrieving all profile data.
+
+|Selected Fields|Type|Description|
+|-------------|-----|-----------------|
+|send_newsletter|boolean|Whether to receive emails about policies and announcements|
 
 **Request:**
 
@@ -56,6 +60,7 @@ curl -X GET \
             "malware_status": "pass"
         },
 
+        "send_newsletter": true,
         "tos_accepted_version": "1.0",
         "tos_accepted_date": "2018-11-16 01:23:45",
         "is_company": false,
