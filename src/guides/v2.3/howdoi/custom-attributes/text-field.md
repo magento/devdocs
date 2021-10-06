@@ -229,22 +229,22 @@ class ExternalId implements DataPatchInterface
     /**
      * @var ModuleDataSetupInterface
      */
-    private ModuleDataSetupInterface $moduleDataSetup;
+    private $moduleDataSetup;
 
     /**
      * @var CustomerSetup
      */
-    private CustomerSetup $customerSetup;
+    private $customerSetup;
 
     /**
      * @var AttributeResource
      */
-    private AttributeResource $attributeResource;
+    private $attributeResource;
 
     /**
      * @var LoggerInterface
      */
-    private LoggerInterface $logger;
+    private $logger;
 
     /**
      * Constructor
