@@ -10,7 +10,7 @@ Deploying Product Recommendations to your storefront requires that you install, 
 
 ## Install Product Recommendations {#install}
 
-Because the Product Recommendations module is a stand-alone metapackage, updates are released more frequently than Magento Commerce. To make sure you are up-to-date with the latest bug fixes and features, refer to the [release notes]({{ page.baseurl }}/recommendations/release-notes.html).
+Because the Product Recommendations module is a stand-alone metapackage, updates are released more frequently than {{site.data.var.ee}}. To make sure you are up-to-date with the latest bug fixes and features, refer to the [release notes]({{ page.baseurl }}/recommendations/release-notes.html).
 
 Install the `magento/product-recommendations` module with Composer:
 
@@ -85,8 +85,8 @@ If needed, you can [uninstall the product-recommendations module]({{ site.baseur
 
 ## Configure Product Recommendations {#configure}
 
-After you install the `magento/product-recommendations` module, you must configure the module by [specifying the API Key and selecting a SaaS Environment](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html).
+After you install the `magento/product-recommendations` module, you must configure the module by [specifying the API Key and selecting a SaaS Data Space](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html). The license-holder must generate these keys in order to pass entitlement validation.
 
 To ensure catalog export is running correctly, confirm that the [cron]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-cron.html) jobs and the [indexers]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-index.html) are running and the `Product Feed` indexer is set to `Update by Schedule`.
 
-When you successfully link to Magento Services through the API key and specify the SaaS Environment, the catalog sync initiates and [behavioral data collection]({{ page.baseurl }}/recommendations/verify.html) begins on your storefront.
+When you successfully link to Magento Services through the API key and specify the SaaS Data Space, the catalog sync initiates and [behavioral data collection]({{ page.baseurl }}/recommendations/verify.html) begins on your storefront.

@@ -1,8 +1,0 @@
----
-title: Magento_AwsS3CustomerCustomAttributes
-source_repo: magento2ee
-release: 2.4.2
-github_path: app/code/Magento/AwsS3CustomerCustomAttributes/README.md
-last_modified_at: '2020-11-27 02:17:48 -0600'
-content: The Magento_AwsS3CustomerCustomAttributes module created for maintaining
-  Customer Custom Attributes tests related to Aws S3 remote storage functionality

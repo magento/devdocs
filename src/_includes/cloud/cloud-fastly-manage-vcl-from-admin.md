@@ -1,6 +1,6 @@
 ## Modify the custom VCL snippet
 
-1. [Log in]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin) to the Magento Admin UI.
+1. [Log in]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin) to the Admin UI.
 
 1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
@@ -19,7 +19,7 @@ The *Custom VCL snippets* UI option shows only the snippets added through the Ad
 
 ## Delete the custom VCL snippet
 
-You can delete custom VCL snippet code from your Fastly configuration by uploading an empty version of the snippet from the Magento Admin UI, or delete it completely using the Fastly API.
+You can delete custom VCL snippet code from your Fastly configuration by uploading an empty version of the snippet from the Admin UI, or delete it completely using the Fastly API.
 
 -  Upload an empty version of the snippet file to Fastly to remove the VCL logic from the active VCL version:
 
@@ -27,7 +27,7 @@ You can delete custom VCL snippet code from your Fastly configuration by uploadi
    -  Save the configuration.
    -  Upload the VCL to Fastly to apply your changes.
 
--  Use the Fastly API [Delete custom VCL snippet]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-vcl) operation to delete the snippet completely, or submit a Magento support ticket to request deletion.
+-  Use the Fastly API [Delete custom VCL snippet]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-vcl) operation to delete the snippet completely, or submit a support ticket to request deletion.
 
 [Manage custom VCL snippets]: {{site.baseurl}}/common/images/cloud/cloud-fastly-manage-snippets.png
 {:width="650px"}

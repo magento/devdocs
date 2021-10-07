@@ -3,7 +3,7 @@
 
   {% if page.url contains "guides/v2.4/payments-integrations/base-integrations/" or page.url contains "guides/v2.4/payments-integrations/payment-gateway" or page.url contains "guides/v2.4/payments-integrations/vault" or page.url contains "guides/v2.4/payments-integrations/bk-payments-integrations" %}
   <div class="bs-callout-warning">
-    The Payment Provider Gateway documentation uses the Magento 2.3.x (now Adobe Commerce) of the Braintree module as a
+    The Payment Provider Gateway documentation uses the Magento 2.3.x (now {{site.data.var.ee}} and {{site.data.var.ce}}) of the Braintree module as a
     reference application. The Braintree module was removed in Magento 2.4.0. The concepts described in this guide are
     still applicable to Magento 2.4.0, but the code samples are not supported.
   </div>
@@ -34,10 +34,15 @@
   </div>
   {% endif %}
 
+  {% unless page.github_link %}
+  <div class="message-banner">
+    This topic is generated and maintained through automation, so we do not accept direct contributions from pull requests on GitHub.
+  </div>
+  {% endunless %}
+
   {% if page.url contains "guides/v2.3/" %}
   <div class="bs-callout-warning">
-    PHP 7.3 reaches end of support in December 2021 and Adobe Commerce 2.3.x reaches end of support in April 2022. We
-    strongly recommend planning your upgrade now to Adobe Commerce 2.4.x and PHP 7.4.x to help maintain PCI compliance.
+    PHP 7.3 reaches end of support in December 2021 and {{site.data.var.ee}} 2.3.x reaches end of support in April 2022. You may want to consider planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance.
   </div>
   {% endif %}
 

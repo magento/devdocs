@@ -85,7 +85,7 @@ Example:
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module.
 
-## Configure product video options from Magento Admin
+## Configure product video options from Admin
 
 1. On the _Admin_ sidebar, go to **Stores** > _Settings_ > **Configuration**.
 

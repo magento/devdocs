@@ -44,7 +44,7 @@ After successfully creating and testing the local installation to use multiple s
    -  [Routes for separate domains](#routes)
    -  [Locations for shared domains](#locations)
 1. **Set up websites, stores, and store views**—configure using the {{site.data.var.ee}} Admin UI
-1. **Modify Magento variables**—specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in the `magento-vars.php` file
+1. **Modify variables**—specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in the `magento-vars.php` file
 1. **Deploy and test environments**—deploy and test the `integration` branch
 
 {:.bs-callout-tip}
@@ -185,7 +185,7 @@ In the _Admin UI_, set up your {{site.data.var.ee}} **Websites**, **Stores**, an
 
 It is important to use the same name and Code of your websites, stores, and store views from your Admin when you set up your local installation. You need these values when you update the `magento-vars.php` file.
 
-### Modify Magento variables
+### Modify variables
 
 Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using the `magento-vars.php` file in your project root directory.
 

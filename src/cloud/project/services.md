@@ -10,9 +10,9 @@ redirect_from:
 
 The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
 
-The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the [`relationships`]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_. Changing a service configuration causes a deployment to provision the environment with the updated services.
+The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the [`relationships`]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_.
 
-This affects the following environments:
+Changing a service configuration causes a deployment to provision the environment with the updated services, which affects the following environments:
 
 -  All Starter environments including Production `master`
 -  Pro Integration environments
@@ -21,7 +21,7 @@ This affects the following environments:
 
 ## Default and supported services
 
-We support and deploy the following services:
+The cloud infrastructure supports and deploys the following services:
 
 -  [`mysql`]({{ site.baseurl }}/cloud/project/services-mysql.html)
 -  [`redis`]({{ site.baseurl }}/cloud/project/services-redis.html)
@@ -67,7 +67,7 @@ relationships:
     redis: "<name>:redis"
 ```
 
-You can name multiple instances of each service type. For example, we could use multiple Redis instances—one for session and one for cache.
+You can name multiple instances of each service type. For example, you could use multiple Redis instances—one for session and one for cache.
 
 ```yaml
 redis:
@@ -79,8 +79,8 @@ redis2:
 
 Renaming a service in the `services.yaml` file **permanently removes** the following:
 
--  The existing service before creating a new service with the new name you specify.
--  All existing data for the service is removed. We strongly recommend you [snapshot your environment]({{ site.baseurl }}/cloud/project/project-webint-snap.html) before you change the name of an existing service.
+-  The existing service before creating a service with the new name you specify.
+-  All existing data for the service is removed. Adobe strongly recommends that you [snapshot your environment]({{ site.baseurl }}/cloud/project/project-webint-snap.html) before you change the name of an existing service.
 
 ### `type`
 
@@ -165,19 +165,19 @@ To verify relationships in remote environments:
 
 {%include cloud/note-cloud-services-compatibility.md%}
 
-The following table lists the services used in {{site.data.var.ece}} and their version compatibility with the [Magento Cloud template](https://github.com/magento/magento-cloud).
+The following table lists the services used in {{site.data.var.ece}} and the service version compatibility with the [Magento Cloud template](https://github.com/magento/magento-cloud). The {{site.data.var.ee}} columns show the service versions that are compatible with that latest version for {{site.data.var.ee}}. The **Version Notes** column specifically calls out compatibility differences from latest, and any other relevant service compatibility notes.
 
 {:.error-table}
-| Service         | Magento 2.4      | Magento 2.3                                                                                                                                         | Magento 2.2                                                                                                                                                                                                                                                                                                 |
-| --------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `elasticsearch` | 7.7, 7.9         | **Magento version 2.3.5 and later**— 5.2, 6.5, 6.8, 7.5, 7.7, 7.9<br>**Magento version 2.3.1 to 2.3.4**— 5.2, 6.5<br>**Magento version 2.3.0**— 5.2 | **Magento version 2.2.8 and later**— 5.2, 6.5 <br>**Magento version 2.2.0 to 2.2.7**— 5.2                                                                                                                                                                                                                   |
-| `mariadb`       | 10.2, 10.3, 10.4 | **Magento version 2.3.0 to 2.3.5**–10.1 to 10.2<br>                                                                                                 | 10.1 to 10.2                                                                                                                                                                                                                                                                                                |
-| `nginx`         |                  | 1.9                                                                                                                                                 | 1.9                                                                                                                                                                                                                                                                                                         |
-| `node`          |                  | 6, 8, 10, 11                                                                                                                                        | 6, 8, 10, 11                                                                                                                                                                                                                                                                                                |
-| `php`           | 7.3, 7.4         | **Magento version 2.3.4 and later**— 7.1, 7.2, 7.3<br>**Magento version 2.3.3**— 7.1, 7.2, 7.3<br>**Magento version 2.3.0 to 2.3.2**—  7.1, 7.2     | **Magento version 2.2.10 and later**—  7.1, 7.2<br>**Magento version 2.2.5 to 2.2.9**— 7.0, 7.1<br>**Magento version 2.2.4 and earlier**— 7.0.2, 7.0.4, ~7.0.6, 7.1<br><br>**Note:** Beginning with {{ site.data.var.ct }} v2002.1.0, you must use PHP version 7.1.3 or later for both Magento 2.2 and 2.3. |
-| `rabbitmq`      | 3.8              | **Magento version 2.3.5**–3.8<br>**Magento version 2.3.3 - 2.3.4**— 3.7, 3.8<br>**Magento version 2.3.0 to 2.3.3**— 3.7                             | 3.5                                                                                                                                                                                                                                                                                                         |
-| `redis`         | 5.x, 6.x         | **Magento version 2.3.1 - 2.3.7**–5.x, 6.x<br>**Magento version 2.3.0**— 3.2                                                                        | 3.2, 5.0, 6.x                                                                                                                                                                                                                                                                                               |
-| `varnish`       | 6.x              | **Magento version 2.3.3 to 2.3.5**— 4.0, 5.0, 6.2<br>**Magento version 2.3.0 to 2.3.2**— 4.0, 5.0                                                   | 4.0, 5.0<br>**Note:** On Cloud projects, you must use the [Fastly service]({{site.baseurl}}/cloud/cdn/cloud-fastly.html) for caching. Varnish is available only for local development.                                                                                                                      |
+| Service         | {{site.data.var.ee}} 2.4 | {{site.data.var.ee}} 2.3  | {{site.data.var.ee}} 2.2   | Version Notes                             |
+| --------------- | ------------------------ | ------------------------- | -------------------------- | ----------------------------------------- |
+| `elasticsearch` | 7.7, 7.9                 | 6.8, 7.5, 7.7, 7.9        | 5.2, 6.5                   | **Commerce 2.3.1 to 2.3.4**— 5.2, 6.5<br>**Commerce 2.3.0**— 5.2<br>**Commerce 2.2.0 to 2.2.7**— 5.2 |
+| `mariadb`       | 10.2 to 10.4             | 10.1 to 10.3              | 10.1 to 10.2               | **Commerce 2.3.0 to 2.3.5**— 10.1 to 10.2 |
+| `nginx`         | 1.9                      | 1.9                       | 1.9                        |                                           |
+| `node`          | 6, 8, 10, 11             | 6, 8, 10, 11              | 6, 8, 10, 11               | Node.js is managed in the `.magento.app.yaml` [dependencies]({{site.baseurl}}/cloud/project/magento-app-properties.html#dependencies) property. |
+| `php`           | 7.3, 7.4                 | 7.2, 7.3, 7.4             | 7.1, 7.2                   | **Note:** Beginning with {{ site.data.var.ct }} v2002.1.0, you must use PHP template version 7.1.3 or later for both 2.2 and 2.3.<br><br>**Commerce 2.3.3**— 7.1, 7.2, 7.3<br>**Commerce 2.3.0 to 2.3.2**— 7.1, 7.2 <br>**Commerce 2.2.5 to 2.2.9**— 7.0, 7.1<br>**Commerce 2.2.4 and earlier**— 7.0.2, 7.0.4, ~7.0.6, 7.1 |
+| `rabbitmq`      | 3.8                      | 3.7, 3.8                  | 3.5                        | **Commerce 2.3.0 to 2.3.3**— 3.7          |
+| `redis`         | 5.x, 6.x                 | 5.x, 6.x                  | 3.2, 5.0, 6.x              | **Commerce 2.3.0**— 3.2                   |
+| `varnish`       | 6.x                      | 4.0, 5.0, 6.2             | 4.0, 5.0                   | **Note:** You must use the [Fastly service]({{site.baseurl}}/cloud/cdn/cloud-fastly.html) for caching. Varnish is available only for local development.<br><br>**Commerce 2.3.0 to 2.3.2**— 4.0, 5.0 |
 
 {:.bs-callout-info}
 When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ site.baseurl }}/cloud/project/services-elastic.html#elasticsearch-software-compatibility).
@@ -189,15 +189,15 @@ During the deployment process, {{site.data.var.ct}} checks installed service ver
 -  If a service version is within three months of the EOL date, a notification displays in the deploy log.
 -  If the EOL date is in the past, a warning notification displays.
 
-To maintain Magento store security, update installed software versions before they reach EOL. You can review the EOL dates in the [{{ site.data.var.ct }} `eol.yaml` file](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml).
+To maintain store security, update installed software versions before they reach EOL. You can review the EOL dates in the [{{ site.data.var.ct }} `eol.yaml` file](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml).
 
 ## Change service version
 
-You can upgrade the installed service version for compatibility with the Magento version deployed in your Cloud environment.
+You can upgrade the installed service version for compatibility with the {{site.data.var.ee}} version deployed in your Cloud environment.
 
-You cannot downgrade the service version for an installed service directly. However, you can create a new service with the required version. See [Downgrade service version](#downgrade-version).
+You cannot downgrade the service version for an installed service directly. However, you can create a service with the required version. See [Downgrade service version](#downgrade-version).
 
-Use the [Service versions](#service-versions) table to check service version compatibility by Magento version. Note that some service versions supported by {{ site.data.var.ee }} are not supported on {{ site.data.var.ece }}.
+Use the [Service versions](#service-versions) table to check service version compatibility by {{site.data.var.ee}} version. Some service versions supported by {{ site.data.var.ee }} are not supported on {{ site.data.var.ece }}.
 
 ### Upgrade installed service version
 
@@ -241,7 +241,7 @@ You cannot downgrade an installed service directly. You have two options:
 
 -  Rename an existing service with the new version, which removes the existing service and data, and adds a new one.
 
--  Create a new service and save the data from the existing service.
+-  Create a service and save the data from the existing service.
 
 When you change the service version, you must update the service configuration in the `services.yaml` file, and update the relationships in the `.magento.app.yaml` file.
 
@@ -251,7 +251,7 @@ To downgrade a service version by renaming an existing service:
 1. Rename the existing service in the `.magento/services.yaml` file and change the version.
 
    {:.bs-callout-warning}
-   Renaming an existing service replaces it and deletes all data. If you need to retain the data, create a new service instead of renaming the existing one.
+   Renaming an existing service replaces it and deletes all data. If you need to retain the data, create a service instead of renaming the existing one.
 
    For example, to downgrade the MariaDB version for the _mysql_ service from version 10.3 to 10.2, change the existing  _service-id_ and _type_ configuration.
 

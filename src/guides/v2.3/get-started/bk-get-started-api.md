@@ -45,10 +45,10 @@ The APIs can be used to perform a wide array of tasks. For example:
 
 ## How do I get started? {#procedure}
 
-You must register a web service on [Magento Admin](https://glossary.magento.com/magento-admin). Use the following general steps to set up Magento to enable web services.
+You must register a web service on [Admin](https://glossary.magento.com/magento-admin). Use the following general steps to set up Magento to enable web services.
 
-1. If you are using token-based authentication, create a web services user on Magento Admin by selecting **System** > Permission > **All Users** > Add New User. (If you are using session-based or OAuth authentication, you do not need to create the new user in the Admin.)
-1. Create a new integration on Magento Admin. To create an integration, click **System** > Extensions > **Integration** > Add New Integration**. Be sure to restrict which resources the integration can access.
+1. If you are using token-based authentication, create a web services user on Admin by selecting **System** > Permission > **All Users** > Add New User. (If you are using session-based or OAuth authentication, you do not need to create the new user in the Admin.)
+1. Create a new integration on Admin. To create an integration, click **System** > Extensions > **Integration** > Add New Integration**. Be sure to restrict which resources the integration can access.
 1. Use a REST or SOAP client to configure authentication.
 
 See the User Guide for more information.

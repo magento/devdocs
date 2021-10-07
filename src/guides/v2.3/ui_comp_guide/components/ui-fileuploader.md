@@ -29,22 +29,24 @@ Here is an example of how File Uploader component integrates with [Form]({{ page
     ...
     <fieldset name="foo">
         ...
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="label" xsi:type="string"/>
-            </item>
-        </argument>
-        <field name="bar">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string">Sound Check</item>
-                    <item name="visible" xsi:type="boolean">true</item>
-                    <item name="formElement" xsi:type="string">fileUploader</item>
-                    <item name="uploaderConfig" xsi:type="array">
-                        <item name="url" xsi:type="url" path="path/to/controller"/>
-                    </item>
-                </item>
-            </argument>
+        <settings>
+            <label translate="true">Foo</label>
+            <collapsible>true</collapsible>
+            <opened>true</opened>
+        </settings>
+        <field name="bar" formElement="fileUploader">
+            <settings>
+                <label translate="true">Sound Check</label>
+            </settings>
+            <formElements>
+                <fileUploader>
+                    <settings>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">path/to/controller</param>
+                        </uploaderConfig>
+                    </settings>
+                </fileUploader>
+            </formElements>
         </field>
     </fieldset>
 </form>

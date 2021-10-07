@@ -39,7 +39,7 @@ Generate the dictionary and translate:
 
 1. You can package the translation dictionaries into a language package and provide the package to the Magento store administrator.
 
-1. In the Magento Admin, the store administrator [configures the translations].
+1. In the Admin, the store administrator [configures the translations].
 
 Command options:
 
@@ -304,11 +304,12 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
    ```xml
    <?xml version="1.0"?>
    <!--
-   /**
+
+    /**
     * Copyright © Magento, Inc. All rights reserved.
     * See COPYING.txt for license details.
-    */
-   -->
+    */-->
+
    <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
        <code>xx_YY</code>
        <vendor>examplecorp</vendor>

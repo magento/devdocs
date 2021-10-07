@@ -66,7 +66,7 @@ The following table summarizes the differences between environments:
 </table>
 
 {:.bs-callout-info}
-Magento also provides the {{site.data.var.mcd-prod}} solution to deploy Magento to a local Cloud Docker environment for developing and testing {{site.data.var.ee}} projects. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).
+Adobe also provides the {{site.data.var.mcd-prod}} solution for deploying to a local Cloud Docker environment so that you can develop and test {{site.data.var.ee}} projects. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).
 
 ## Pro environment architecture
 
@@ -140,7 +140,7 @@ See [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and 
 
 ## Production environment {#cloud-arch-prod}
 
-The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring redundant, high-availability nodes for continuous access and failover protection for your customers. The Production environment includes all services in the Staging environment, plus the [New Relic Infrastructure (NRI)](https://newrelic.com/products/infrastructure) service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
+The Production environment runs your public-facing single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring redundant, high-availability nodes for continuous access and failover protection for your customers. The Production environment includes all services in the Staging environment, plus the [New Relic Infrastructure (NRI)](https://newrelic.com/products/infrastructure) service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
 
 You cannot create a branch from the Production environment branch. You must push code changes from the Staging environment branch to the Production environment branch.
 
@@ -155,7 +155,7 @@ The three gateways map to the three servers in your Production environment clust
 -  DNS
 -  Content Delivery Network (CDN)
 -  Elastic load balancer (ELB)
--  Three-server cluster comprising all Magento services, including the database and web server
+-  Three-server cluster comprising all {{site.data.var.ee}} services, including the database and web server
 
 ### Backup and disaster recovery
 
@@ -210,6 +210,8 @@ The following figure shows the technologies used in the Production environment:
 Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
 
 For example, you can add extra web servers to an existing cluster should the constriction be at the PHP level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level. See [Scaled architecture]({{ site.baseurl }}/cloud/architecture/scaled-architecture.html).
+
+If you expect a significant increase in traffic for an event or other reason, you can request a temporary increase in capacity. See [How to request temporary Magento upsize](https://support.magento.com/hc/en-us/articles/360041138511) in the _Commerce Help Center_.
 
 ## Master environment
 

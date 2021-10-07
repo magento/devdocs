@@ -18,7 +18,7 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 | **Role** | **Scope**  | **Access** |
 |-|-|-|
-| **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Magento assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the {{ site.data.var.ece }} account.<br><br>You must submit a Magento Support ticket to modify settings or change the Account owner. |
+| **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Adobe assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the {{ site.data.var.ece }} account.<br><br>You must submit a {{site.data.var.ee}} Support ticket to modify settings or change the Account owner. |
 | **Super user** | Project | Administrator access to all project settings and Cloud environments. Super users can change settings and perform tasks on any environment, including creating and restoring [snapshots][] and managing users. |
 | **Project reader** | Project | View access to all project environments. Users with this role cannot perform tasks on any environment. However, you can configure environment-level permissions for users with this role to permit write access to a specific environment. |
 | **Admin** | Environment | Change settings and perform tasks on an environment, including merging with the parent environment |
@@ -27,13 +27,13 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 ## Add user authentication requirements
 
-For added security, Magento provides project-level MFA enforcement to require two-factor authentication for SSH access to {{ site.data.var.ece }} project source code and environments. See [Enable MFA for SSH].
+For added security, Adobe provides project-level MFA enforcement to require two-factor authentication for SSH access to {{ site.data.var.ece }} project source code and environments. See [Enable MFA for SSH].
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable two-factor authentication (TFA) on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for TFA and SSH access](#update-account-security-settings).
 
 ## Add users and manage access
 
-You can add users and assign roles using the Magento CLI or the Project Web Interface.
+You can add users and assign roles using the Magento Cloud CLI or the Project Web Interface.
 
 {:.bs-callout-tip}
 Changing user configuration on a {{site.data.var.ece}} environment triggers a site deployment, which takes your site offline until deployment completes. For Production environments, we recommend completing user administration tasks during off-peak hours to prevent service disruptions.
@@ -86,7 +86,7 @@ To add a user and assign roles:
 
    {%include cloud/note-prevent-site-availability-issues.md%}
 
-   After you add the user, Magento sends an email to the specified address with instructions for accessing the {{ site.data.var.ece }} project.
+   After you add the user, Adobe sends an email to the specified address with instructions for accessing the {{ site.data.var.ece }} project.
 
 The following example changes the environment-level role that is assigned to a user:
 
@@ -175,7 +175,7 @@ After you add a user to a Cloud project, ask the user to review their account se
 
 -  Enable two-factor authentication (TFA)
 
-   Magento recommends adding two-factor authentication to all accounts to meet security and compliance standards. Projects configured with [MFA enforcement][Enable MFA for SSH] require two-factor authentication on accounts that use SSH to access the projects.
+   Adobe recommends adding two-factor authentication to all accounts to meet security and compliance standards. Projects configured with [MFA enforcement][Enable MFA for SSH] require two-factor authentication on accounts that use SSH to access the projects.
 
 -  Enable SSH keys
 
@@ -220,7 +220,7 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
    -  On your mobile device, open the authenticator application. Then, add the setup code to the app.
 
-      For example, for Google Authenticator, click the + sign in the app. Then, enter the text code from Magento in the app, or scan the QR code to enable {{site.data.var.ece}} TFA.
+      For example, for Google Authenticator, click the + sign in the app. Then, enter the text code from Adobe in the app, or scan the QR code to enable {{site.data.var.ece}} TFA.
 
       ![Cloud 2FA app device setup]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-app-example.png){:width="400px"}
 
@@ -230,7 +230,7 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
    -  Click **Verify and save**.
 
-      If the code is valid, Magento sends a notification to the account email address confirming that the account now has two-factor authentication.
+      If the code is valid, Adobe sends a notification to the account email address confirming that the account now has two-factor authentication.
 
 1. Optional. Enable _Trusted browser_ settings to cache the authentication code in the browser for 30 days.
 
@@ -249,7 +249,7 @@ To enable TFA on your {{site.data.var.ece}} user account:
    -  Click **Save** to save the codes to your account so you can view and manage them from your account security settings.
 
       {:.bs-callout-warning}
-      If you lose access to an account with TFA and have no recovery codes, you must contact your project administrator, or submit a Magento support ticket to reset the TFA application.
+      If you lose access to an account with TFA and have no recovery codes, you must contact your project administrator, or submit a support ticket to reset the TFA application.
 
 1. After completing the TFA setup, click **Save** to update your account.
 

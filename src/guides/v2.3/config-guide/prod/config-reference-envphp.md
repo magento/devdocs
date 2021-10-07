@@ -26,7 +26,7 @@ The `env.php` file contains the following sections:
 | `resource`                    | Mapping of resource name to a connection                        |
 | `session`                     | Session storage data                                            |
 | `x-frame-options`             | Setting for [x-frame-options][x-frame-options]                  |
-| `system`                      | Configuration values that cannot be edited in the Magento Admin |
+| `system`                      | Configuration values that cannot be edited in the Admin |
 
 ## backend
 
@@ -230,7 +230,7 @@ Learn more about session in [x-frame-options][x-frame-options].
 
 ## system
 
-Magento configuration values that cannot be edited in the Magento Admin.
+Magento configuration values that cannot be edited in the Admin.
 
 ```conf
 'system' => [

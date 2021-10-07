@@ -56,7 +56,7 @@ Complete the following prerequisites to prepare your environment before starting
 ## Manage packages
 
 {:.bs-callout-info}
-See the examples at the end of this section for help specifying different release levels. For example, minor release, quality patch, and security patch. {{site.data.var.ee}} customers can access patches two weeks before the General Availability (GA) date. Pre-release packages are available through Composer only. You cannot find them on the Magento Portal or GitHub until GA. If you cannot find these packages in Composer, contact Magento Support.
+See the examples at the end of this section for help specifying different release levels. For example, minor release, quality patch, and security patch. {{site.data.var.ee}} customers can access patches two weeks before the General Availability (GA) date. Pre-release packages are available through Composer only. You cannot find them on the Magento Portal or GitHub until GA. If you cannot find these packages in Composer, contact {{site.data.var.ee}} Support.
 
 1. Backup the `composer.json` file.
 
@@ -75,6 +75,8 @@ See the examples at the end of this section for help specifying different releas
    {:.bs-callout-info}
    The first time you upgrade using the plugin, you can interactively view and update any out-of-date values that may be remaining from previous versions.
    To enable this, use the `--interactive-magento-conflicts` option on the `composer require` commands.
+
+   To override all conflicting custom values with the expected Magento values, re-run the `composer require` command with the `--use-default-magento-values` option.
 
    {:.bs-callout-tip}
    Use `composer require --help` to learn more about available options.

@@ -10,11 +10,11 @@ functional_areas:
 
 If your customers are companies, you can install the {{site.data.var.b2b}} module to extend your {{site.data.var.ece}} Pro project to accommodate a business-to-business model. Although this topic provides information specific to installing and configuring the B2B module for {{site.data.var.ece}}, you can find additional B2B information in the following guides:
 
--  [Magento B2B Developer Guide][b2b-dev]
--  [Magento B2B User Guide][b2b-user]
+-  [{{site.data.var.ee}} B2B Developer Guide][b2b-dev]
+-  [{{site.data.var.ee}} B2B User Guide][b2b-user]
 
 {:.bs-callout-tip}
-Because we provide B2B as a module for {{site.data.var.ece}}, we highly recommend that you have your Magento application fully deployed to an Integration or Staging environment before beginning.
+Because we provide B2B as a module for {{site.data.var.ece}}, we highly recommend that you have your {{site.data.var.ee}} application fully deployed to an Integration or Staging environment before beginning.
 
 ## Install B2B module
 
@@ -75,11 +75,11 @@ When you install the B2B module using Composer, the deployment process automatic
 
 ## Configure the B2B module
 
-After installing the {{site.data.var.b2b}} module, you must [start the message consumers][messages] so that you can enable the _Shared Catalog_ module, and you must [enable the B2B module in the Magento Admin panel][admin-enable].
+After installing the {{site.data.var.b2b}} module, you must [start the message consumers][messages] so that you can enable the _Shared Catalog_ module, and you must [enable the B2B module in the Admin panel][admin-enable].
 
-For additional information on using and configuring B2B, review the [Magento B2B User Guide][b2b-user].
+For additional information on using and configuring B2B, review the [{{site.data.var.ee}} B2B User Guide][b2b-user].
 
-To extend functionality, see the [Magento B2B Developer Guide][b2b-dev] and the [Extension Guide][extensions].
+To extend functionality, see the [{{site.data.var.ee}} B2B Developer Guide][b2b-dev] and the [Extension Guide][extensions].
 
 <!-- link definitions -->
 

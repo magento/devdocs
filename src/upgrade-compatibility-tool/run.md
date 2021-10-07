@@ -45,7 +45,7 @@ While you can use the `graphql:compare` command to compare two GraphQL schemas t
 
 Where arguments are as follows:
 
-*  `<dir>`: Adobe Commerce installation directory.
+*  `<dir>`: {{site.data.var.ee}} installation directory.
 *  `[=MODULE-PATH]`: Specific module path directory.
 
 ### Use the `--help` option
@@ -71,7 +71,7 @@ Available `--help` options for the `upgrade:check` command:
 *  -m, --module-path[=MODULE-PATH]: Modules path directory .
 *  --schema1[=SCHEMA1]: Endpoint URL for the existing installation.
 *  --schema2[=SCHEMA2]: Endpoint URL for the vanilla installation.
-*  --vanilla-dir: Adobe Commerce vanilla installation directory.
+*  --vanilla-dir: {{site.data.var.ee}} vanilla installation directory.
 *  --min-issue-level: Minimum issue level to show in report. Default is [WARNING].
 *  --ignore-current-version-compatibility-issues: Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
 *  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
@@ -93,7 +93,7 @@ bin/uct upgrade:check <dir> --output[=OUTPUT]
 
 Where arguments are as follows:
 
-*  `<dir>`: Adobe Commerce installation directory.
+*  `<dir>`: {{site.data.var.ee}} installation directory.
 *  `[=OUTPUT]`: Path directory to export the `.json` output file.
 
 {:.bs-callout-info}
@@ -114,7 +114,7 @@ This applies only to PHP API validations. Core code validations are compared onl
 
 A _vanilla_ installation is a clean installation of a specified version tag or branch for a specific release version.
 
-The `bin/uct core:code:changes` command checks if there is a vanilla instance in your system. If this is the first time using a vanilla installation, an interactive command-line question prompts you to download the vanilla project from the [Adobe Commerce repository](https://repo.magento.com/).
+The `bin/uct core:code:changes` command checks if there is a vanilla instance in your system. If this is the first time using a vanilla installation, an interactive command-line question prompts you to download the vanilla project from the [{{site.data.var.ee}} repository](https://repo.magento.com/).
 
 You can run a {{site.data.var.uct}} command with the `--vanilla-dir` option to specify the {{site.data.var.ee}} vanilla installation directory.
 
@@ -146,8 +146,8 @@ bin/uct core:code:changes <dir> <vanilla dir>
 
 Where arguments are as follows:
 
-*  `<dir>`: Adobe Commerce installation directory.
-*  `<vanilla dir>`: Adobe Commerce vanilla installation directory.
+*  `<dir>`: {{site.data.var.ee}} installation directory.
+*  `<vanilla dir>`: {{site.data.var.ee}} vanilla installation directory.
 
 There are some limitations when running this command:
 
@@ -177,7 +177,7 @@ bin/uct upgrade:check <dir> -c 2.4.3
 
 Where:
 
-*  -c, --coming-version[=COMING-VERSION]: The Adobe Commerce targeted version.
+*  -c, --coming-version[=COMING-VERSION]: The {{site.data.var.ee}} targeted version.
 
 There are some limitations when running the previous command:
 
@@ -227,7 +227,7 @@ You can also get a full report containing both _PHP-related_ errors and GraphQL.
 
 *  `--schema1=SCHEMA1`: Endpoint URL for the existing installation.
 *  `--schema2=SCHEMA2`: Endpoint URL for the vanilla installation.
-*  `<dir>`: Adobe Commerce installation directory.
+*  `<dir>`: {{site.data.var.ee}} installation directory.
 
 > Example:
 
@@ -248,12 +248,12 @@ File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
 The report also includes a detailed summary:
 
 *  *Installed Version*: the version currently installed.
-*  *Adobe Commerce Version*: the version you want to upgrade to.
+*  *{{site.data.var.ee}} Version*: the version you want to upgrade to.
 *  *Running time*: amount of time the analysis took to build the report (mm:ss).
-*  *Adobe Commerce checked modules*: amount of checked modules.
-*  *Adobe Commerce core checked modules*: amount of core checked modules.
-*  *Adobe Commerce core modified files*: amount of core modified file.
-*  *Adobe Commerce % core modified files*: percentage of core modified files.
+*  *{{site.data.var.ee}} checked modules*: amount of checked modules.
+*  *{{site.data.var.ee}} core checked modules*: amount of core checked modules.
+*  *{{site.data.var.ee}} core modified files*: amount of core modified file.
+*  *{{site.data.var.ee}} % core modified files*: percentage of core modified files.
 *  *PHP errors found*: amount of PHP errors.
 *  *PHP warnings found*: amount of PHP warnings.
 *  *GraphQL errors found*: amount of GraphQL errors.
@@ -271,7 +271,7 @@ See the [Error message reference]({{site.baseurl}}/upgrade-compatibility-tool/er
 ```terminal
  ------------------------ --------
   Installed version        2.4.2
-  Adobe Commerce version   2.4.3
+  {{site.data.var.ee}} version   2.4.3
   Running time             0m:48s
   Checked modules          14
   Core checked modules     0
@@ -289,12 +289,16 @@ See the [Error message reference]({{site.baseurl}}/upgrade-compatibility-tool/er
 
 Regarding the GraphQL schema compatibility comparison, the output would be very similar:
 
+## Run {{site.data.var.uct}} via PHPstorm plugin
+
+You can run the {{site.data.var.uct}} with a run configuration via the PHPstorm plugin. See the [Upgrade Compatibility Tool Run Configuration]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpstorm/uct-run-configuration.html) topic for more information.
+
 ## Troubleshooting
 
 ### Empty output
 
 {:.bs-callout-info}
-The `M2_VERSION` is the target Adobe Commerce version you want to compare to your Adobe Commerce instance.
+The `M2_VERSION` is the target {{site.data.var.ee}} version you want to compare to your {{site.data.var.ee}} instance.
 
 If after running this command:
 

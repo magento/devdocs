@@ -10,7 +10,7 @@ We recommend setting the open files [`ulimit`](http://ss64.com/bash/ulimit.html)
 
 You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.
 
-Before you continue, if you haven't done so already, switch to the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+Before you continue, if you haven't done so already, switch to the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 Command:
 
@@ -25,7 +25,7 @@ The syntax for open files `ulimit` depends on the UNIX shell you use. The preced
 
 To optionally set the value in the user's Bash shell:
 
-1. If you haven't done so already, switch to the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. If you haven't done so already, switch to the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Open `/home/<username>/.bashrc` in a text editor.
 1. Add the following line:
 

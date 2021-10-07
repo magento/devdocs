@@ -1,8 +1,0 @@
----
-title: Magento_MediaGallerySynchronizationMetadata
-source_repo: magento2ce
-release: 2.4.2
-github_path: app/code/Magento/MediaGallerySynchronizationMetadata/README.md
-last_modified_at: '2020-08-26 18:28:23 +0100'
-content: The purpose of this module is to include assets metadata to media gallery
-  synchronization process

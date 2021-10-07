@@ -815,8 +815,8 @@ extensions:
           2.3.6: compatible
           2.3.7: compatible
           2.4.0: compatible
-          2.4.1: not supported
-          2.4.2: not supported
+          2.4.1: compatible
+          2.4.2: compatible
           2.4.3: supported
       - 
         name: 1.3.1
@@ -830,7 +830,7 @@ extensions:
           2.3.6: compatible
           2.3.7: compatible
           2.4.0: compatible
-          2.4.1: not supported
+          2.4.1: compatible
           2.4.2: supported
           2.4.3: not supported
       -

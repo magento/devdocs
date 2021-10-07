@@ -16,17 +16,17 @@ Before submitting a package, you must first [upload your files](files.html) and 
 
 You can also check package submission status and retrieve [testing information](test-results.html) from the technical and marketing reviews.
 
-A successful submission results in a package being published to the [Magento Marketplace](https://marketplace.magento.com/).
+A successful submission results in a package being published to the [Commerce Marketplace](https://marketplace.magento.com/).
 
 ## EQP review process
 
 The EQP review process includes two steps:
 
 *  In **technical review**, we perform all automated testing. This step also involves manual testing after all automated tests run.
-*  In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
+*  In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Commerce Marketplace.
 
 These review steps occur in parallel when you submit a package.
-If both steps are successful, the package can be published to the Magento Marketplace.
+If both steps are successful, the package can be published to the Commerce Marketplace.
 If there is a failure, you can iteratively fix issues until they are resolved.
 
 ## Package fields
@@ -721,10 +721,10 @@ The PUT method can be used to update packages in the following states:
 *  The package is in draft mode for the technical or marketing review; or both.
 *  The package has been rejected in either the technical or marketing review; or both.
    You must fix these issues and re-submit the package.
-*  The package has been released to the Magento Marketplace.
-*  The package was removed from Magento Marketplace by the developer and needs to be re-published.
+*  The package has been released to the Commerce Marketplace.
+*  The package was removed from Commerce Marketplace by the developer and needs to be re-published.
 *  The package can be recalled while in the EQP pipeline.
-*  After a package has been released to the Magento Marketplace, you can update marketing information only.
+*  After a package has been released to the Commerce Marketplace, you can update marketing information only.
    Changing marketing information causes the package to be placed in marketing review.
    The package continues to be live on the marketplace, and after the marketing approval,
    the updated fields will be published to the store.

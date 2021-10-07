@@ -1,8 +1,0 @@
----
-title: Magento_WishlistGiftCard
-source_repo: magento2ee
-release: 2.4.2
-github_path: app/code/Magento/WishlistGiftCard/README.md
-last_modified_at: '2020-09-04 16:39:40 +0300'
-content: "**WishlistGiftCard** provides the needed provider for adding a gift card
-  product type to wish list."

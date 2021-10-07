@@ -7,6 +7,23 @@ This page highlights backward incompatible changes between releases that have a 
 
 ## 2.4.2- 2.4.3
 
+### Cookie message is displayed when new page loads
+
+Stores with a pre-existing custom theme and for which cookies are enabled now display this message: **The store will not work correctly in the case when cookies are disabled**. This issue is caused by a backward-incompatible change in how Magento handles cookie status messages. [GitHub-9095](https://github.com/magento/devdocs/issues/9095)
+
+**Workaround**: Add the `cookie-status-message` class to the
+`custom_theme_path/Magento_Theme/web/css/source/_module.less` file for custom themes.
+
+```javascript
+
+& when (@media-common = true) {
+    .cookie-status-message {
+        display: none;
+    }
+}
+
+```
+
 ### pelago/emogrifier update
 
 The Magento dependency `pelago/emogrifier` has been updated from version 3.1.0 to 5.0.0. This update resulted in the introduction of backwards-incompatible changes to the `Magento\Email\Model\Template\Filter` class. The changed code is executed during Magento email templates rendering. See [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). <!--- MC-41445-->

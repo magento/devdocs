@@ -10,7 +10,7 @@ functional_areas:
 
 This topic contains information for developers who work closely with the {{site.data.var.ee}} code and want to learn detailed information about the {{site.data.var.uct}}. You can use this knowledge to customize the tool's components.
 
-## Adobe Commerce API index integration
+## {{site.data.var.ee}} API index integration
 
 {{site.data.var.ee}} API index integration is an internal integration solution that encompasses a set of tools to explore {{site.data.var.ee}} extensions developed by Adobe, {{site.data.var.ee}} Partners, and 3rd-party vendors based on static code analysis.
 
@@ -105,7 +105,7 @@ The {{site.data.var.uct}} calculates this score according to the complexity scor
 
 ### Complexity score formula
 
-`Complexity Score = (Adobe Commerce core errors) * 4 + (Critical errors) * 4 + [(PHP errors)+(GraphQL errors)] * 2 + [(PHP warnings)+(GraphQL warnings)] * 1`
+`Complexity Score = ({{site.data.var.ee}} core errors) * 4 + (Critical errors) * 4 + [(PHP errors)+(GraphQL errors)] * 2 + [(PHP warnings)+(GraphQL warnings)] * 1`
 
 {:.bs-callout-warning}
 These are absolute values.

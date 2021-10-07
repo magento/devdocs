@@ -66,7 +66,7 @@ The default configuration for `InventoryCatalog` does not publish messages to Ra
 To test message sending from Magento to RabbitMQ:
 
 1. Log in to the RabbitMQ web console in AWS to monitor queues.
-1. In the Magento Admin, create a product.
+1. In the Admin, create a product.
 1. Create a new Inventory source.
 1. Enable **Stores** > Configuration > **Catalog** > **Inventory** > Admin bulk operations > Run asynchronously.
 1. Go to **Catalog** > Products. From the grid, select the product created above and click **Assign Inventory Source** in drop down.
@@ -81,4 +81,4 @@ You should now see messages appear in the RabbitMQ web console.
    ```
 
 You should now see the queued message get processed in the RabbitMQ web console.
-Verify inventory sources have changed on the product in the Magento Admin.
+Verify inventory sources have changed on the product in the Admin.

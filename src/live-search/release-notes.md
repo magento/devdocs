@@ -10,6 +10,20 @@ These release notes describe the initial release of Live Search and include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+## Live Search v1.2.0
+
+-  Compatible with {{site.data.var.ee}} (EE): 2.4.x
+-  Compatible with {{site.data.var.ece}} (ECE): 2.4.x
+-  Stability: Stable
+
+-  {:.new} Commerce Admin session stays open during extended periods of keyboard inactivity
+-  {:.new} Live Search is automatically enabled after onboarding
+-  {:.fix} Initial indexing time is less than an hour
+-  {:.fix} Incremental product updates near real time (after install and setup)
+-  {:.fix} Sortable columns in Synonym editor
+-  {:.fix} Live Search no longer throws an error if search criteria contains empty sort order value
+-  {:.fix} Range filtering no longer breaks if attribute codes contain strings "to" or "from"
+
 ## Live Search v1.1.0
 
 -  Compatible with {{site.data.var.ee}} (EE): 2.4.x
@@ -27,3 +41,4 @@ To learn more:
 -  [{{site.data.var.ee}} Developer Documentation]({{ site.baseurl }}/live-search/overview.html)
 -  [{{site.data.var.ee}} User Guide](https://docs.magento.com/user-guide/live-search/overview.html)
 -  [Support Knowledge Base](https://support.magento.com/hc/en-us)
+-  [Live Search on Marketplace](https://marketplace.magento.com/magento-live-search.html)

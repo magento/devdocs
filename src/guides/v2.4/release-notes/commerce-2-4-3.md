@@ -10,14 +10,24 @@ This release includes over 370 new fixes to core code and 33 security enhancemen
 {:.bs-callout-info}
 Quarterly releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.3 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
-See [Magento 2.4.2-p2 release notes]({{page.baseurl}}/release-notes/2-4-2-p2.html) for information about Magento 2.4.2-p2.
+See [{{site.data.var.ee}} 2.4.2-p2 release notes]({{page.baseurl}}/release-notes/2-4-2-p2.html) for information about {{ site.data.var.ee }} 2.4.2-p2.
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, B2B, Page Builder, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
 
 ## Apply MC-43048__set_rate_limits__2.4.3.patch to address issue with API rate limiting
 
-This hotfix provides a solution for the issue where Web APIs cannot process requests that contain more than 20 items in array. This issue affects deployments running {{ site.data.var.ce }} 2.4.3, {{ site.data.var.ee }} 2.4.3, or Magento 2.3.7-p1. Built-in rate limiting was added to these releases to prevent denial-of-service (DoS) attacks, and the default maximum was set to 20. This patch reverts the default limit to a higher value. If you suspect that your store is experiencing a DoS attack, Adobe recommends lowering the default input limits to a lower value to restrict the number of resources that can be requested. See the [Web API unable to process requests with more than 20 items in array](https://support.magento.com/hc/en-us/articles/4406893342093)Knowledge Base article.
+This hotfix provides a solution for the issue where Web APIs cannot process requests that contain more than 20 items in an array. This issue affects deployments running {{ site.data.var.ce }} 2.4.3, {{ site.data.var.ee }} 2.4.3, or Magento 2.3.7-p1. Built-in rate limiting was added to these releases to prevent denial-of-service (DoS) attacks, and the default maximum was set to 20. This patch reverts the default limit to a higher value. If you suspect that your store is experiencing a DoS attack, Adobe recommends lowering the default input limits to a lower value to restrict the number of resources that can be requested. See the [Web API unable to process requests with more than 20 items in array](https://support.magento.com/hc/en-us/articles/4406893342093) Knowledge Base article.
+
+## Apply AC-384__Fix_Incompatible_PHP_Method__2.4.3_ce.patch to address PHP fatal error on upgrade
+
+The following fatal error can occur during upgrade to {{ site.data.var.ee }} 2.4.3:
+
+```terminal
+PHP Fatal error: Uncaught Error: Call to undefined function Magento\Framework\Filesystem\Directory\str_contains() in [...]/magento/vendor/magento/framework/Filesystem/Directory/DenyListPathValidator.php:74
+```
+
+This error results from the use of the `str_contains` function, which is an PHP 8.x function. {{ site.data.var.ee }} 2.4.3 does not support PHP 8.x. This hotfix replaces this function with a supported PHP 7.x function. See the [{{site.data.var.ee}} upgrade 2.4.3, 2.3.7-p1 PHP Fatal error Hotfix](https://support.magento.com/hc/en-us/articles/4408021533069-Adobe-Commerce-upgrade-2-4-3-2-3-7-p1-PHP-Fatal-error-Hotfix) Knowledge Base article.
 
 ## Highlights
 
@@ -46,7 +56,7 @@ Security improvements for this release improve compliance with the latest securi
    *  The Place Order storefront page and payment-related web APIs. ReCAPTCHA protection for these pages is disabled by default and can be enabled from the Admin. This coverage adds an anti-brute force mechanism to protect stores from carding attacks.
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Infrastructure improvements
 
@@ -82,11 +92,11 @@ Magento 2.4.3 is not yet compatible with PHP 8.x, but the following platform upg
 
 *  The KnockoutJS library has been upgraded to v3.5.1 (the latest version). <!--- MC-40694-->
 
-*  The deprecated TinyMCE v3 library has been removed. The `Magento_Tinymce3Banner` module and MFTF tests related to TinyMCE v3.x have been removed from Adobe Commerce. <!--- MC-42199 42170 -->
+*  The deprecated TinyMCE v3 library has been removed. The `Magento_Tinymce3Banner` module and MFTF tests related to TinyMCE v3.x have been removed from {{site.data.var.ee}}. <!--- MC-42199 42170 -->
 
 *  Magento 2.4.3 has been tested and confirmed to be compatible with Redis 6.0.12. (Magento 2.4.x remains compatible with Redis 5.x.)
 
-*  Laminas library dependencies have been upgraded to PHP 8.x-compatible versions. Some redundant dependencies have been removed from the `composer.json` file. **Adobe Commerce 2.4.3 uses Laminas 3.4.0**. <!--- MC-39513-->
+*  Laminas library dependencies have been upgraded to PHP 8.x-compatible versions. Some redundant dependencies have been removed from the `composer.json` file. **{{site.data.var.ee}} 2.4.3 uses Laminas 3.4.0**. <!--- MC-39513-->
 
 ### Performance enhancements
 
@@ -146,7 +156,7 @@ Magento 2.4.3 introduces B2B v1.3.2. This release includes multiple bug fixes. S
 
 ### Page Builder
 
-Page Builder is now available as a bundled extension in Magento Open Source. It is now the default content editing tool for {{ site.data.var.ee }} 2.4.3 and {{ site.data.var.ce }} 2.4.3. It can replace the WYSIWG editor with any third-party module.
+Page Builder is now available as a bundled extension in {{site.data.var.ce}}. It is now the default content editing tool for {{ site.data.var.ee }} 2.4.3 and {{ site.data.var.ce }} 2.4.3. It can replace the WYSIWG editor with any third-party module.
 
 Page Builder replaces the TinyMCE editor in the following Admin areas:
 
@@ -166,7 +176,7 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 The scope of the [Upgrade Compatibility Tool]({{ site.baseurl }}/upgrade-compatibility-tool/introduction.html) has been expanded based on feedback from the community. Join our [#upgrade-compatibility-tool](https://magentocommeng.slack.com/archives/C019Y143U9F) Slack channel to get support from the Adobe product team and the community, as well as to help guide the future direction of the tool.
 ### Cloud managed services updates
 
-This release includes enhancements to our support for Amazon Simple Storage Service (AWS S3)  and Amazon Aurora cloud managed services. It provides certified support for AWS ElastiCache, AWS ElasticSearch, and AWS Managed Queues (Rabbit MQ). (We have tested the functionality, performance, and integration of these services with Adobe Commerce.)
+This release includes enhancements to our support for Amazon Simple Storage Service (AWS S3)  and Amazon Aurora cloud managed services. It provides certified support for AWS ElastiCache, AWS ElasticSearch, and AWS Managed Queues (Rabbit MQ). (We have tested the functionality, performance, and integration of these services with {{site.data.var.ee}}.)
 
 ### Adobe Stock Integration
 
@@ -204,11 +214,11 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-37596-->
 
-*  Magento no longer throws an exception when you run `bin/magento setup:upgrade` to upgrade from a Magento Open Source deployment with Redis to Adobe Commerce.
+*  Magento no longer throws an exception when you run `bin/magento setup:upgrade` to upgrade from a {{site.data.var.ce}} deployment with Redis to {{site.data.var.ee}}.
 
 <!--- MC-34453-->
 
-*  Previously created cart price rules are now displayed on the Content Staging dashboard page after a deployment is upgraded from Magento Open Source to Magento Commerce.
+*  Previously created cart price rules are now displayed on the Content Staging dashboard page after a deployment is upgraded from {{site.data.var.ce}} to {{site.data.var.ee}}.
 
 <!--- ENGCOM-8508 -->
 
@@ -1226,7 +1236,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- MC-42199-->
 
-*  The deprecated TinyMCE v3 library has been removed. The `Magento_Tinymce3Banner` module and MFTF tests related to TinyMCE v3.x have been removed from Adobe Commerce.
+*  The deprecated TinyMCE v3 library has been removed. The `Magento_Tinymce3Banner` module and MFTF tests related to TinyMCE v3.x have been removed from {{site.data.var.ee}}.
 
 <!--- MC-41497-->
 
@@ -1246,7 +1256,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9073-->
 
-*  `ramsey/uuid` has been updated for compatibility with PHP 8.0. [GitHub-31777](https://github.com/magento/magento2/issues/31777), [GitHub-826](https://github.com/magento/magento2-functional-testing-framework/issues/8260
+*  `ramsey/uuid` has been updated for compatibility with PHP 8.0. [GitHub-31777](https://github.com/magento/magento2/issues/31777), [GitHub-826](https://github.com/magento/magento2-functional-testing-framework/issues/826)
 
 <!--- ENGCOM-8997-->
 
@@ -1997,7 +2007,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-41784-->
 
-*  The Magento Admin footer now displays the correct product version.
+*  The Admin footer now displays the correct product version.
 
 <!--- MC-41067-->
 
@@ -2207,7 +2217,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 **Issue**:  _The **Add to order** button does not work for products added to the cart by SKU_.  Magento displays this error message when you click on the **Add to order** button after adding products to the order by SKU: `An error has happened during application run`. Products are not added to the cart. **Workaround**: Use the Add Products feature. <!--- AC-345-->
 
-**Issue**: The GraphQL `category` and `categoryList` queries ignore Category permissions that determine whether categories in a shared catalog are hidden or exposed. Magento currently displays all categories that have been assigned or unassigned to the shared catalog. This affects Adobe Commerce 2.4.3 deployments that implement a PWA storefront for which B2B shared catalogs have been enabled. <!--- MC-42528-->
+**Issue**: The GraphQL `category` and `categoryList` queries ignore Category permissions that determine whether categories in a shared catalog are hidden or exposed. The storefront currently displays all categories that have been assigned or unassigned to the shared catalog. This affects {{site.data.var.ee}} 2.4.3 deployments that implement a PWA storefront for which B2B shared catalogs have been enabled. <!--- MC-42528-->
 
 ## Community contributions
 
@@ -2233,7 +2243,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Adobe Commerce 2.4.3 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
+You can install {{site.data.var.ee}} 2.4.3 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
 
 ## Migration tool kits
 

@@ -4,7 +4,7 @@ title: Live Search SDK
 ee_only: True
 ---
 
-Live Search SDK includes a GraphQL Playground that can be used to query products and associated facets from the Magento Admin. As an API counterpart/wrapper, it also provides a Javascript SDK.
+Live Search SDK includes a GraphQL Playground that can be used to query products and associated facets from the Admin. As an API counterpart/wrapper, it also provides a Javascript SDK.
 
 ## Requirements
 

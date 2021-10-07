@@ -18,8 +18,8 @@ The minimum requirements to run the {{site.data.var.uct}} are:
 | Composer | none |
 | Node.js | An optional requirement. Only required to check GraphQL compatibility. |
 | Memory limitations | At least 2GB RAM |
-| Adobe Commerce Access keys | none |
-| Adobe Commerce (Open Source or enterprise) | none |
+| {{site.data.var.ee}} Access keys | none |
+| {{site.data.var.ee}} (Open Source or enterprise) | none |
 {:style="table-layout:auto;"}
 
 You can run the {{site.data.var.uct}} in any operating system. There is no requirement to run the {{site.data.var.uct}} where your {{site.data.var.ee}} instance is located.

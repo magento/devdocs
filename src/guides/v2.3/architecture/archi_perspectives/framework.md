@@ -72,7 +72,7 @@ Other namespaces under `Magento\Framework` that will interest extension develope
 |--- |--- |
 |`Magento\Framework\ObjectManager`|Used to provide dependency injection.|
 |`Magento\Framework\App`|Contains framework code that has knowledge about the Magento application. This code bootstraps the application and reads in the initial configuration. It also contains the entry point to the command line tools, the web application, and the cron job. And finally, it routes requests while providing the deployment context (such as reading in the configuration for the database configuration, languages, and caching systems).|
-|`Magento\Framework\Api`|Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data through Magento Marketplace extensions).|
+|`Magento\Framework\Api`|Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data through Commerce Marketplace extensions).|
 |`Magento\Framework\Config`|Contains the generic configuration reader. Each config file has its own specialized reader extending these classes.|
 |`Magento\Framework\Filesystem`|Contains classes that handle reading from and writing to the file system.|
 |`Magento\Framework\HTTP\PhpEnvironment`||

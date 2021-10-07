@@ -18,4 +18,4 @@ The general installation flow is as follows:
 
    If the step fails because prerequisite software isn't set up correctly, review our [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html).
 
-1. Verify the installation by viewing your storefront and the Magento Admin.
+1. Verify the installation by viewing your storefront and the Admin.

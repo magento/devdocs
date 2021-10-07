@@ -15,7 +15,7 @@ You can recover from a failed deployment in any of the following ways:
 
 ## Clean, remove, and redeploy
 
-To clean up from the previous deployment, you must log in to the remote environment and manually clear the contents of the Magento `var` directory. And then you must remove the component from the `composer.json` file in your local environment and redeploy.
+To clean up from the previous deployment, you must log in to the remote environment and manually clear the contents of the `var` directory. And then you must remove the component from the `composer.json` file in your local environment and redeploy.
 
 {:.procedure}
 To clean the `var` directories:

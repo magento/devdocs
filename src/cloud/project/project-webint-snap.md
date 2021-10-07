@@ -16,13 +16,13 @@ You have up to **7 days** to _restore_ a snapshot.
 
 We provide two methods for creating and managing snapshots:
 
--  Magento Web Interface
--  Magento CLI
+-  Project Web Interface
+-  Magento Cloud CLI
 
 ## Create a snapshot {#create-snapshot}
 
 {:.procedure}
-To create a snapshot using the Magento Web Interface:
+To create a snapshot using the Project Web Interface:
 
 1. Log in to your project.
 1. In the left pane, click the name of the environment to back up.
@@ -30,7 +30,7 @@ To create a snapshot using the Magento Web Interface:
 1. Click **Create**.
 
 {:.procedure}
-To create a snapshot using the Magento CLI:
+To create a snapshot using the Magento Cloud CLI:
 
 1. Open a terminal and navigate to your {{site.data.var.ece}} project.
 1. Checkout the environment branch to snapshot.
@@ -71,7 +71,7 @@ To create a snapshot using the Magento CLI:
 ## Restore a snapshot {#restore-snapshot}
 
 {:.procedure}
-To restore a snapshot using the Magento Web Interface:
+To restore a snapshot using the Project Web Interface:
 
 1. Log in to your project.
 1. In the left pane, click the name of the environment to restore.
@@ -80,7 +80,7 @@ To restore a snapshot using the Magento Web Interface:
 1. Review the Snapshot restore date and click **Restore**.
 
 {:.procedure}
-To restore a snapshot using the Magento CLI:
+To restore a snapshot using the Magento Cloud CLI:
 
 1. Open a terminal and navigate to your {{site.data.var.ece}} project.
 1. Checkout the environment branch to restore.

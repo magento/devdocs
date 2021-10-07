@@ -43,7 +43,7 @@ To create an authentication file:
                "username": "<public-key>",
                "password": "<private-key>"
            }
-       }
+       },
        "github-oauth": {
            "github.com": "<personal-access-token>"
        }

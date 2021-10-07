@@ -14,7 +14,7 @@ pages:
         - label: Adobe Commerce 2.4.3 Release Notes
           url: /release-notes/commerce-2-4-3.html
 
-        - label: Magento 2.4.2-p2 Release Notes
+        - label: Adobe Commerce 2.4.2-p2 Release Notes
           url: /release-notes/2-4-2-p2.html
 
         - label: Magento Open Source 2.4.2 Release Notes
@@ -46,7 +46,7 @@ pages:
         - label: Component Status
           url: /release-notes/component-status.html
 
-        - label: 2.3.7-p1 Release Notes
+        - label: Adobe Commerce 2.3.7-p1 Release Notes
           url: /release-notes/2-3-7-p1.html
 
         - label: Magento Open Source 2.3.7 Release Notes

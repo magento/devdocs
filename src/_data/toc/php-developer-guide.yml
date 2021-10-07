@@ -73,7 +73,7 @@ pages:
         - label: Package a component
           url: /extension-dev-guide/package/package_module.html
 
-        - label: Upload your component to the Magento Marketplace
+        - label: Upload your component to the Commerce Marketplace
           url: /extension-dev-guide/package/package_mktpl.html
 
     - label: Validate
@@ -316,6 +316,12 @@ pages:
 
         - label: Brute force attacks
           url: /extension-dev-guide/security/anti-brute-force.html
+
+        - label: CSRF
+          url: /extension-dev-guide/security/csrf.html
+
+        - label: Working with files
+          url: /extension-dev-guide/security/uploads.html
 
     - label: Versioning
       url: /extension-dev-guide/versioning/

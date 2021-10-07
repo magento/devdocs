@@ -6,6 +6,7 @@ functional_areas:
   - Setup
 redirect_from:
   - /guides/v2.3/install-gde/system-requirements-tech.html
+  - /guides/v2.3/architecture/tech-stack.html
 ---
 
 {:.bs-callout-info}
@@ -62,7 +63,7 @@ PHPUnit (as a command-line tool) 6.2.0
 
 ### RAM
 
-Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
+Upgrading the Magento applications and extensions you obtain from Commerce Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
 
 ### System dependencies
 
@@ -93,7 +94,7 @@ Magento requires the following system tools for some of its operations:
 [php_xdebug 2.5.x][]{:target="_blank"} or later (development environments only; can have an adverse effect on performance)
 
 {:.bs-callout-info}
-There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug][].
+There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Admin after installation. For details, see [Known issue with xdebug][].
 
 <!-- Link Definitions -->
 [Known issue with xdebug]: https://support.magento.com/hc/en-us/articles/360034242212

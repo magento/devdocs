@@ -23,7 +23,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 ## Deployment steps
 
-1. Log in to your production server as, or switch to, the [Magento file system owner][10].
+1. Log in to your production server as, or switch to, the [file system owner][10].
 
 1. Change directory to the Magento base directory:
 

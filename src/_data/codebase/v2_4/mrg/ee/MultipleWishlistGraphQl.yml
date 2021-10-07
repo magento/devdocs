@@ -1,8 +1,0 @@
----
-title: Magento_MultipleWishlistGraphQl
-source_repo: magento2ee
-release: 2.4.2
-github_path: app/code/Magento/MultipleWishlistGraphQl/README.md
-last_modified_at: '2020-05-25 15:49:52 +0300'
-content: "**MultipleWishlistGraphQl** provides type information regarding multiple
-  wishlist functionality for the GraphQl module"

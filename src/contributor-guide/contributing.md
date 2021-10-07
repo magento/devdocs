@@ -259,9 +259,9 @@ Admins access will be shared via comment on GitHub.
 
 In some cases a custom environment is required to test an issue or a pull request. You can create a custom environment by appending custom configuration settings to the PR comment to [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
-#### Magento edition
+#### Specify the edition
 
-Append the following text to your PR comment to specify the Magento Commerce edition to use when you [Deploy a vanilla Magento instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
+Append the following text to your PR comment to specify the edition to use when you [Deploy a vanilla instance](#vanilla-pr) or [Deploy an instance based on PR changes](#deploy-pr).
 
 ```text
 with edition {$edition}
@@ -269,8 +269,8 @@ with edition {$edition}
 
 Replace `{$edition}` with either of the following values:
 
--  `ee` deploys the Magento Commerce edition
--  `b2b` deploys Magento Commerce with B2B modules.
+-  `ee` deploys the {{site.data.var.ee}} edition
+-  `b2b` deploys {{site.data.var.ee}} with B2B modules.
 
 For example, append the following text to the PR comment to deploy a {{site.data.var.ee}} instance with B2B modules:
 
@@ -377,7 +377,7 @@ Before creating an issue, do the following:
 -  Check the [Developer Documentation](http://devdocs.magento.com/) and [User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html) to make sure the behavior you are reporting is really a bug, not a feature.
 -  Check the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating somebody’s work.
 -  Ensure that information you are reporting is a technical issue. Refer to the [Community Forums](https://community.magento.com/) or [Magento Stack Exchange](http://magento.stackexchange.com/) for technical questions, feature requests, etc.
--  Verify that the issue you are reporting does not relate to Magento Commerce. GitHub is intended for Magento Open Source users to report on issues related to Open Source only. You can report Commerce-related issues one of two ways:
+-  Verify that the issue you are reporting does not relate to {{site.data.var.ee}}. GitHub is intended for {{site.data.var.ce}} users to report on issues related to Open Source only. You can report Commerce-related issues one of two ways:
 
    -  Use the Support portal associated with your account
    -  If you are a Partner reporting on behalf of a merchant, use the Partner portal

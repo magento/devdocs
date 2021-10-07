@@ -18,9 +18,9 @@ See [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html) for te
 
 ## TLS and Fastly
 
-Magento provides a Let's Encrypt SSL/TLS certificate for each environment. This certificate is required for Fastly to serve secure traffic over HTTPS.
+Adobe provides a Let's Encrypt SSL/TLS certificate for each environment. This certificate is required for Fastly to serve secure traffic over HTTPS.
 
-To use this certificate, you must update your DNS configuration so that Magento can complete domain validation and apply the certificate to your environment. Each environment has a unique certificate that covers the domains for the Magento Commerce sites deployed in that environment. We recommend completing and the configuration updates during the [Fastly set up process]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
+To use this certificate, you must update your DNS configuration so that Adobe can complete domain validation and apply the certificate to your environment. Each environment has a unique certificate that covers the domains for the {{ site.data.var.ece }} sites deployed in that environment. We recommend completing and the configuration updates during the [Fastly set up process]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
 
 ## Update DNS configuration with production settings {#dns}
 
@@ -32,13 +32,13 @@ When you are ready to launch your site, you must update the DNS configuration to
 
 -  Production environment configuration has been updated with all required domains
 
-   Typically, you work with your Customer Technical Advisor to add all top-level domains and sub-domains required for your Magento stores. To add or change the domains for your Production environment, submit a [Magento Support ticket](https://support.magento.com/hc/en-us/articles/360019088251). Wait for confirmation that your project configuration has been updated.
+   Typically, you work with your Customer Technical Advisor to add all top-level domains and sub-domains required for your stores. To add or change the domains for your Production environment, submit a [Support ticket](https://support.magento.com/hc/en-us/articles/360019088251). Wait for confirmation that your project configuration has been updated.
 
    On Starter projects, you must add the domains to your project. See [Manage domains]({{ site.baseurl }}/cloud/cdn/configure-fastly-customize-cache.html#manage-domains).
 
 -  SSL/TLS certificate provisioned for your production environments.
 
-   If you added the ACME challenge records for your Production domains during the Fastly setup process, Magento uploads the SSL/TLS certificate to your Production environment automatically when you update the DNS configuration to route traffic to the Fastly service. If you did not pre-provision the certificate, or if you updated your domains, Magento must complete domain validation and provision the certificate, which can take up to 12 hours.
+   If you added the ACME challenge records for your Production domains during the Fastly setup process, Adobe uploads the SSL/TLS certificate to your Production environment automatically when you update the DNS configuration to route traffic to the Fastly service. If you did not pre-provision the certificate, or if you updated your domains, Adobe must complete domain validation and provision the certificate, which can take up to 12 hours.
 
 {:.procedure}
 To update DNS configuration for site launch:
@@ -67,7 +67,7 @@ To update DNS configuration for site launch:
    | your-domain.com | `151.101.129.124`
    | your-domain.com | `151.101.193.124`
 
-1. Update the Magento Base URL.
+1. Update the Base URL.
 
    -  Use SSH to log in to the Production environment.
 
@@ -75,14 +75,14 @@ To update DNS configuration for site launch:
       magento-cloud ssh
       ```
 
-   -  Use the Magento CLI to change the base URL for your store.
+   -  Use the CLI to change the base URL for your store.
 
       ```bash
       php bin/magento setup:store-config:set --base-url="https://www.your-domain.com/"
       ```
 
    {:.bs-callout-info}
-   You can also update the Base URL from the [Magento Admin](https://docs.magento.com/user-guide/stores/store-urls.html#configure-the-base-url).
+   You can also update the Base URL from the [Admin](https://docs.magento.com/user-guide/stores/store-urls.html#configure-the-base-url).
 
 1. Wait a few minutes for the site to update.
 
@@ -107,7 +107,7 @@ The following are recommended changes and checks:
 
 ## Performance testing {#performance}
 
-We recommend that you review the [Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit) options as part of your pre-launch readiness process.
+We recommend that you review the [Performance Toolkit]({{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit) options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:
 
@@ -118,7 +118,7 @@ You can also test using the following 3rd party options:
 
 ## Security configuration
 
--  [Set up your Magento Security Scan]({{ site.baseurl }}/cloud/live/live.html#security-scan)
+-  [Set up your Security Scan]({{ site.baseurl }}/cloud/live/live.html#security-scan)
 -  [Secure configuration for Admin user](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html)
 -  [Secure configuration for Admin URL](https://docs.magento.com/m2/ee/user_guide/stores/store-urls-custom-admin.html)
 -  [Remove any users no longer on the {{ site.data.var.ece}} project]({{ site.baseurl}}/cloud/project/user-admin.html)

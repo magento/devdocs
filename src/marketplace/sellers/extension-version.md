@@ -23,7 +23,7 @@ For existing, approved extensions, follow these instructions to add new versions
 
 For **Requested Launch Date**, select an option:
 
--  ***On Approval*** - Immediately publishes when the extensions receives Magento Marketplace approval.
+-  ***On Approval*** - Immediately publishes when the extensions receives Commerce Marketplace approval.
 -  ***Requested Launch Date*** - Date and time for launching and publishing the extension to Marketplace. This date is not necessarily the date the product will launch; it is the earliest it can be launched, provided the product passes all reviews.
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/submit-new-version-detail.png){: .zoom}

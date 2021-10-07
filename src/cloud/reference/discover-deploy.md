@@ -23,25 +23,25 @@ You can track build and deploy actions in real-time using the terminal or the Pr
 If you are using external GitHub repositories, the log of operations does not display in the GitHub session. However, you can still follow activity in the interface for the external repository and the Project Web Interface. See [Integrations]({{ site.baseurl }}/cloud/integrations/cloud-integrations.html).
 
 {:.bs-callout-info}
-In Integration environments, you cannot view the deploy logs from the Project Web Interface. This feature is available only for Production and Staging environments. However, you can view logs for every phase of the deployment in any environment using the Magento [build and deploy]({{ site.baseurl }}/cloud/project/log-locations.html#build-and-deploy-logs) logs. For troubleshooting information, see the [Deployment error reference]({{site.baseurl}}/cloud/reference/error-codes.html).
+In Integration environments, you cannot view the deploy logs from the Project Web Interface. This feature is available only for Production and Staging environments. However, you can view logs for every phase of the deployment in any environment using the [build and deploy]({{ site.baseurl }}/cloud/project/log-locations.html#build-and-deploy-logs) logs. For troubleshooting information, see the [Deployment error reference]({{site.baseurl}}/cloud/reference/error-codes.html).
 
 ## Project configuration {#cloud-deploy-conf}
 
-A set of YAML configuration files located in the project root directory define your Magento installation and describe its dependencies. If you intend to make changes, modify the YAML files in your local branch. The build and deploy scripts access those files for specific settings.
+A set of YAML configuration files located in the project root directory define your {{site.data.var.ee}} installation and describe its dependencies. If you intend to make changes, modify the YAML files in your local branch. The build and deploy scripts access those files for specific settings.
 
 For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files.
 
--  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—defines how to build and deploy Magento, including user access, service mapping (relationships), hooks, cron jobs, and more.
+-  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—defines how to build and deploy {{site.data.var.ee}}, including user access, service mapping (relationships), hooks, cron jobs, and more.
 -  [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
--  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)—defines how Magento processes an incoming URL.
--  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—defines the services Magento uses by name and version. For example, this file can include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
--  [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html)—defines the [system-specific settings]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data) Magento uses to configure your store. Magento generates this file if it does not detect it during the build phase. See [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) for information on how to use this file to manage and synchronize the Magento application configuration across your Cloud environments.
+-  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)—defines how {{site.data.var.ee}} processes an incoming URL.
+-  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—defines the services {{site.data.var.ee}} uses by name and version. For example, this file can include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
+-  [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html)—defines the [system-specific settings]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data) {{site.data.var.ee}} uses to configure your store. {{site.data.var.ee}} generates this file if it does not detect it during the build phase. See [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) for information on how to use this file to manage and synchronize the {{site.data.var.ee}} application configuration across your Cloud environments.
 
 ## Required files for your Git branch {#requiredfiles}
 
 Your Git branch must have the following files for building and deploying in your local environment and to Integration, Staging, and Production environments:
 
--  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshooting deployment]({{ site.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
+-  `auth.json`—in the root project directory. This file includes the authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshooting deployment]({{ site.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 -  [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html)—auto-generates during the build phase if it does not exist.
 -  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—updates and saves to the root directory.
 -  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—updates and saves to the `magento/` directory.
@@ -59,7 +59,7 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Keep sensitive configuration values and data in environment-specific variables**–This includes variables specified using the Magento Cloud CLI, the Project Web interface, or added to the `env.php` file. See [Working with environment variables]({{ site.baseurl }}/cloud/env/working-with-variables.html).
 
--  **Ensure that all code is available in the environment branch**–If you point to or include hooks to code in other branches, such as a private branch, you may encounter problems with the build and deploy process. For example, if you include a theme from a private repository in your branch, the theme will not build with the Magento code.
+-  **Ensure that all code is available in the environment branch**–If you point to or include hooks to code in other branches, such as a private branch, you may encounter problems with the build and deploy process. For example, if you include a theme from a private repository in your branch, the theme will not build with the application code.
 
 -  **Add new extensions, integrations, and code in iterated branches**–Make and test changes locally, push to Integration, then to Staging and Production. Test and resolve issues in each environment before merging the updates to the next environment. Some extensions and integrations must be enabled and configured in a specific order due to dependencies. Adding these in groups can make your build and deploy process much easier and help determine where issues occur.
 
@@ -95,11 +95,11 @@ Follow best practices for builds and deployment, and use the [Upgrades and patch
 
    -  After upgrading third party and custom extensions, use the `magento-cloud local:build` command to validate composer dependencies before deploying.
 
-   -  Review the {{ site.data.var.ee }} release notes and extension documentation to ensure that you have implemented any workarounds or configuration changes required to address known functional issues and bugs related to the upgraded Magento version and extensions.
+   -  Review the {{ site.data.var.ee }} release notes and extension documentation to ensure that you have implemented any workarounds or configuration changes required to address known functional issues and bugs related to the upgraded the {{site.data.var.ee}} version and extensions.
 
    -  Ensure that the installed service versions are compatible with the new {{ site.data.var.ee }} version, and upgrade services as needed. See [Services]({{ site.baseurl }}/cloud/project/services.html).
 
-   -  Test your database to address any issues introduced by the updates to the Magento version and extensions.
+   -  Test your database to address any issues introduced by the updates to the {{site.data.var.ee}} version and extensions.
 
    -  Make any required updates to environment-specific settings before deploying to the remote environment.
 
@@ -125,7 +125,7 @@ Follow best practices for builds and deployment, and use the [Upgrades and patch
 
       -  Check indexer status and reindex as needed. See [Manage the indexers]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html).
 
-      -  Check the `cron` logs and the `cron_schedule` table in the Magento database to verify cron status, and rerun cron jobs as needed.
+      -  Check the `cron` logs and the `cron_schedule` table in the {{site.data.var.ee}} database to verify cron status, and rerun cron jobs as needed.
       See [Logging]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html#logging) in the _Configuration Guide_.
 
    -  Complete post-upgrade User Acceptance Testing UAT on Staging and Production environments and fix any issues related to third-party and custom extension upgrades. See [User Acceptance Testing (UAT)]({{ site.baseurl}}/cloud/live/stage-prod-test.html).
@@ -170,11 +170,11 @@ This phase also runs `composer install` to retrieve dependencies.
 {:.bs-callout-info}
 During the build phase, the site is not in maintenance mode and will not be brought down if errors or issues occur. We build only what has changed since the last build.
 
-This phase builds the codebase and runs hooks in the `build` section of `.magento.app.yaml`. The default Magento build hook is the `php ./vendor/bin/ece-tools` command and performs the following:
+This phase builds the codebase and runs hooks in the `build` section of `.magento.app.yaml`. The default build hook is the `php ./vendor/bin/ece-tools` command and performs the following:
 
 -  Applies patches located in `vendor/magento/ece-patches`, as well as optional, project-specific patches in `m2-hotfixes`
--  Regenerates code and the [dependency injection](https://glossary.magento.com/dependency-injection) configuration (that is, the Magento `generated/` directory, which includes `generated/code` and `generated/metapackage`) using `bin/magento setup:di:compile`.
--  Checks if the [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html) file exists in the codebase. Magento auto-generates this file if it does not detect it during the build phase and includes a list of modules and extensions. If it exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files, which reduces downtime in the deployment phase. Refer to [Magento build options]({{ site.baseurl }}/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
+-  Regenerates code and the [dependency injection](https://glossary.magento.com/dependency-injection) configuration (that is, the `generated/` directory, which includes `generated/code` and `generated/metapackage`) using `bin/magento setup:di:compile`.
+-  Checks if the [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html) file exists in the codebase. {{site.data.var.ee}} auto-generates this file if it does not detect it during the build phase and includes a list of modules and extensions. If it exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files, which reduces downtime in the deployment phase. Refer to [build options]({{ site.baseurl }}/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
 
 {:.bs-callout-warning}
 At this point, the cluster has not been created yet, so you should not try to connect to a database or assume anything was daemonized.
@@ -203,7 +203,7 @@ Now we provision your applications and all of the [backend](https://glossary.mag
 
 -  Mounts each service in a container (web server, Elasticsearch, RabbitMQ)
 -  Mounts the read-write file system (mounted on a highly available distributed storage grid)
--  Configures the network so Magento services can "see" each other (and only each other)
+-  Configures the network so services can "see" each other (and only each other)
 
 {:.bs-callout-info}
 Make your changes in a Git branch after all build and deployment completes and push again. All environment file systems are _read-only_. A read-only system guarantees deterministic deployments and dramatically improves your site security because no process can write to the file system. It also works to ensure your code is identical in the Integration, Staging, and Production environments.
@@ -218,13 +218,13 @@ The last step runs a deployment script, which you can use to anonymize data in d
 If the `app/etc/config.php` file does not exist in the codebase, static files are compressed using `gzip` and deployed during this phase. This increases the length of your deploy phase and site maintenance.
 
 {:.bs-callout-info}
-Refer to [Magento deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html) to learn about customizing or disabling file compression.
+Refer to [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html) to learn about customizing or disabling file compression.
 
 There are two default deploy hooks. The `pre-deploy.php` hook completes necessary cleanup and retrieval of resources and code generated in the build hook. The `php ./vendor/bin/ece-tools deploy` hook runs a series of commands and scripts:
 
--  If Magento is **not installed**, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment, such as Redis and website URLs. **Important:** When you completed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html) during setup, {{site.data.var.ee}} was installed and deployed across all environments.
+-  If {{site.data.var.ee}} is **not installed**, it installs with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment, such as Redis and website URLs. **Important:** When you completed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html) during setup, {{site.data.var.ee}} was installed and deployed across all environments.
 
--  If Magento **is installed**, performs any necessary upgrades. The deployment script runs [`bin/magento setup:upgrade`]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the Magento cache.
+-  If {{site.data.var.ee}} **is installed**, performs any necessary upgrades. The deployment script runs [`bin/magento setup:upgrade`]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the{{site.data.var.ee}} cache.
 
 -  The script optionally generates static web content using the command [`magento setup:static-content:deploy`]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html).
 

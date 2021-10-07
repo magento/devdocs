@@ -1,0 +1,6 @@
+---
+title: StagingGraphQl
+release: 2.4.3
+content: |-
+  **StagingGraphQl** provides type information for the GraphQl module
+  to stage and preview entities.

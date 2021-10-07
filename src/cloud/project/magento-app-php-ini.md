@@ -26,7 +26,7 @@ For debugging, increase the value to 2G.
 
 ## Optimize realpath_cache configuration
 
-Set the following `realpath_cache` settings to improve Magento performance.
+Set the following `realpath_cache` settings to improve application performance.
 
 ```conf
 ;

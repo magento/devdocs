@@ -1,0 +1,6 @@
+---
+title: Sitemap
+release: 2.4.3
+content: |-
+  The Sitemap module allows managing the Magento application sitemap and
+  [sitemap.xml](http://en.wikipedia.org/wiki/Sitemaps) for searching engines.

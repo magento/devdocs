@@ -36,15 +36,15 @@ To launch the Docker environment in production mode:
    docker-compose up -d
    ```
 
-1. Install Magento in your Docker environment.
+1. Install {{site.data.var.ee}} in your Docker environment.
 
-   -  Build Magento in the Docker container.
+   -  Build {{site.data.var.ee}} in the Docker container.
 
       ```bash
       docker-compose run --rm build cloud-build
       ```
 
-   -  Deploy Magento in the Docker container.
+   -  Deploy {{site.data.var.ee}} in the Docker container.
 
       ```bash
       docker-compose run --rm deploy cloud-deploy
@@ -78,7 +78,7 @@ To launch the Docker environment in production mode:
    docker-compose restart
    ```
 
-1. Access the local Magento Cloud template by opening one of the following URLs in a browser:
+1. Access the local storefront by opening one of the following URLs in a browser:
 
    -  `http://magento2.docker`
 

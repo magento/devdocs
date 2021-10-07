@@ -3,7 +3,7 @@ group: release-notes
 title: Adobe Commerce 2.4.2 Release Notes
 ---
 
-Magento Commerce 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. B2B improvements focus on support for online payments for purchase orders. Elasticsearch 7.9.x and Redis 6.x are now supported.
+{{site.data.var.ee}} 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. B2B improvements focus on support for online payments for purchase orders. Elasticsearch 7.9.x and Redis 6.x are now supported.
 
 This release includes over 280 new fixes to core code and 35 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
@@ -48,7 +48,7 @@ Security improvements for this release include:
 *  Core Content Security Policy (CSP) violations have been fixed.
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Infrastructure improvements
 
@@ -2445,7 +2445,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.4.2 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
+You can install {{site.data.var.ee}} 2.4.2 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
 
 ## Migration tool kits
 

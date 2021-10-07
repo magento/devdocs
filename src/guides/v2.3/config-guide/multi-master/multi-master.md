@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Split database performance solution (Adobe Commerce only)
+title: Split database performance solution
 ee_only: True
 functional_areas:
   - Configuration
@@ -67,7 +67,7 @@ This also means you can either:
    You must perform this task if you've already installed components or if Magento is already in production. (*Do not* update a production system; make the updates in a development system and synchronize the changes after you've tested them.)
 
    {:.bs-callout-warning}
-   You must back up the two additional database instances manually. Magento backs up only the main database instance. The [<code>'magento setup:backup --db</code>]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) command and Magento Admin options do not back up the additional tables.
+   You must back up the two additional database instances manually. Magento backs up only the main database instance. The [<code>'magento setup:backup --db</code>]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) command and Admin options do not back up the additional tables.
 
 ## Prerequisites {#config-ee-multidb-prereq}
 

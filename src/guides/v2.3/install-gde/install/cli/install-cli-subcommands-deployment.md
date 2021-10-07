@@ -37,7 +37,7 @@ The following table discusses the meanings of installation parameters and values
 
 |Parameter|Value|Required?|
 |--- |--- |--- |
-|`--backend-frontname`|Uniform Resource Identifier ([URI](http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2)) to access the Magento Admin.<br><br>To prevent exploits, we recommend you not use a common word like admin, backend, and so on. The Admin URI can contain alphanumeric values and the underscore character (`_`) only.|No|
+|`--backend-frontname`|Uniform Resource Identifier ([URI](http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2)) to access the Admin.<br><br>To prevent exploits, we recommend you not use a common word like admin, backend, and so on. The Admin URI can contain alphanumeric values and the underscore character (`_`) only.|No|
 |`--db-host`|Use any of the following:<br><br>- The database server's fully qualified hostname or IP address.<br><br>- `localhost` (default) or `127.0.0.1` if your database server is on the same host as your web server. localhost means the MySQL client library uses UNIX sockets to connect to the database. `127.0.0.1` causes the client library to use the TCP protocol. For more information about sockets, see the [PHP PDO_MYSQL documentation](http://php.net/manual/en/ref.pdo-mysql.php).<br><br>**Note:** You can optionally specify the database server port in its hostname like `www.example.com:9000`|No|
 |`--db-name`|Name of the Magento database instance in which you want to install the Magento database tables.<br><br>Default is `magento2`.|No|
 |`--db-user`|Username of the Magento database instance owner.<br><br>Default is `root`.|No|

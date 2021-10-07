@@ -156,6 +156,7 @@ pages:
 
         - label: Run the support utilities (Adobe Commerce only)
           url: /config-guide/cli/config-cli-subcommands-spt-util.html
+          edition: ee-only
 
     - label: Configuration files
       url: /config-guide/config/config-magento.html
@@ -186,6 +187,7 @@ pages:
 
             - label: B2B Extension configuration paths reference (Adobe Commerce only)
               url: /config-guide/prod/config-reference-b2b.html
+              edition: b2b-only
 
             - label: .gitignore reference
               url: /config-guide/prod/config-reference-gitignore.html
@@ -356,6 +358,7 @@ pages:
 
     - label: Split database performance solution (Adobe Commerce only)
       url: /config-guide/multi-master/multi-master.html
+      edition: ee-only
       children:
 
         - label: Automatically configure master databases

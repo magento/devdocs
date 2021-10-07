@@ -4,7 +4,7 @@ title: Create an Extension
 redirect_from: /marketplace/sellers/completing-your-extension.html
 ---
 
-Before you can submit your extension to Magento Marketplace, the code must be complete, tested, and packaged. For technical information, see the Magento DevDocs for additional technical information for developing extensions and more:
+Before you can submit your extension to Commerce Marketplace, the code must be complete, tested, and packaged. For technical information, see the Magento DevDocs for additional technical information for developing extensions and more:
 
 -  [PHP Developer Guide]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/bk-extension-dev-guide.html)
 -  [Best Practices for Extension Developers]({{ site.baseurl }}{{ site.gdeurl }}/ext-best-practices/bk-ext-best-practices.html)
@@ -15,7 +15,7 @@ Before you can submit your extension to Magento Marketplace, the code must be co
 _Building and Submitting an Extension_
 
 {: .bs-callout .bs-callout-info}
-Magento Marketplace does not support encrypted extensions at this time.
+Commerce Marketplace does not support encrypted extensions at this time.
 
 ## Build your extension
 

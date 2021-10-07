@@ -9,7 +9,7 @@ redirect_from:
   - /cloud/reference/docker-launch.html
 ---
 
-By default, `{{site.data.var.mcd-prod}}` deploys Magento to a read-only file system in the Docker environment. This deployment mirrors the read-only file system in the Production environment. You have the option to deploy a Docker environment in developer mode, which provides an active development environment with full, writable file system permissions.
+By default, `{{site.data.var.mcd-prod}}` deploys {{site.data.var.ee}} to a read-only file system in the Docker environment. This deployment mirrors the read-only file system in the Production environment. You have the option to deploy a Docker environment in developer mode, which provides an active development environment with full, writable file system permissions.
 
 You use the `ece-docker build:compose` command to generate the Docker Compose configuration file from specified configuration settings and to deploy {{site.data.var.ece}} to a local Docker environment. You supply the configuration settings from multiple sources depending on your requirements. See [Configure sources].
 
@@ -33,7 +33,7 @@ For example, the following command starts the Docker configuration generator for
 To skip the interactive mode, use the `-n, --no-interaction` option.
 
 {:.bs-callout-info}
-The `mode` option for the `ece-docker build:compose` command does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
+The `mode` option for the `ece-docker build:compose` command does not affect the mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
 
 ## Stop and start containers
 

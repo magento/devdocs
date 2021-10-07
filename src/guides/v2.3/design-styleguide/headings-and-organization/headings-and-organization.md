@@ -6,7 +6,7 @@ menu_title: Headings and Organization
 menu_order: 6
 menu_node:
 ---
-Use consistent heading structure and content prioritization to create a hierarchy for users to easily navigate Magento Admin.
+Use consistent heading structure and content prioritization to create a hierarchy for users to easily navigate Admin.
 
 ## Headings
 

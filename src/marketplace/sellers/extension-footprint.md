@@ -8,7 +8,7 @@ The footprint analyzer is a beta feature, meaning that some of the information m
 
 ## Overview
 
-Footprint analysis is an automated check that generates a report based on the static analysis of the extension code. After processing, reports are visible on the product listing page and include information on certain specific features, which provide Magento Marketplace customers insights on extension capabilities from the code perspective.
+Footprint analysis is an automated check that generates a report based on the static analysis of the extension code. After processing, reports are visible on the product listing page and include information on certain specific features, which provide Commerce Marketplace customers insights on extension capabilities from the code perspective.
 
 ## When testing is done
 

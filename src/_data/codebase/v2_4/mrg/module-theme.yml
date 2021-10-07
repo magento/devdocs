@@ -1,0 +1,5 @@
+---
+title: Theme
+release: 2.4.3
+content: The Theme module contains common infrastructure that provides an ability
+  to apply and use themes in Magento application.

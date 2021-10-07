@@ -24,7 +24,7 @@ You create an Edge ACL to define the list of IP addresses to block. After creati
 
 If you want to manage access for both Staging and Production sites, create the Edge ACL with the same name in both environments. The VCL snippet code will apply to both environments.
 
-1. Log in to the Magento Admin.
+1. Log in to the Admin.
 1. Navigate to **Stores** > Settings > **Configuration** > **Advanced** > **System** > **Full Page Cache** > **Fastly Configuration**.
 1. Expand the **Edge ACL** section.
 1. Click **Add ACL** to create a list. For this example, name the list "blocklist".
@@ -56,7 +56,7 @@ Before creating a snippet based on this example, review the values to determine 
 
 -  `name`: Name for the VCL snippet. For this example, we used the name `blocklist`.
 
--  `priority`: Determines when the VCL snippet runs. The priority  is `5` to immediately run and check whether a Magento Admin UI requests are coming from an allowed IP address. The snippet runs before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50. You must set the priority for each custom snippet higher or lower than 50 depending on when you want your snippet to run. Snippets with lower priority numbers run first.
+-  `priority`: Determines when the VCL snippet runs. The priority  is `5` to immediately run and check whether a Admin UI requests are coming from an allowed IP address. The snippet runs before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50. You must set the priority for each custom snippet higher or lower than 50 depending on when you want your snippet to run. Snippets with lower priority numbers run first.
 
 -  `type`: Specifies the type of VCL snippet that determines the location of the snippet in the generated VCL code. In this example,  we use `recv`, which inserts the VCL code in the `vcl_recv` subroutine, below the boilerplate VCL and above any objects. See the [Fastly VCL snippet reference](https://docs.fastly.com/api/config#api-section-snippet) for the list of snippet types.
 
@@ -64,9 +64,9 @@ Before creating a snippet based on this example, review the values to determine 
 
 After reviewing and updating the code for your environment, use either of the following methods to add the custom VCL snippet to your Fastly service configuration:
 
--  [Add the custom VCL snippet from the Magento Admin](#add-the-custom-vcl-snippet). This method is recommended if you can access the Magento Admin UI. (Requires [Fastly version 1.2.58]({{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade) or later.)
+-  [Add the custom VCL snippet from the Admin](#add-the-custom-vcl-snippet). This method is recommended if you can access the Admin UI. (Requires [Fastly version 1.2.58]({{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade) or later.)
 
--  Save the JSON code example to a file (for example, `blocklist.json`) and [upload it using the Fastly API]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api). Use this method if you cannot access the Magento Admin UI.
+-  Save the JSON code example to a file (for example, `blocklist.json`) and [upload it using the Fastly API]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api). Use this method if you cannot access the Admin UI.
 
 ## Add the custom VCL snippet
 

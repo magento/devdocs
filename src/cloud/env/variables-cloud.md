@@ -30,7 +30,7 @@ Since values can change over time, it is best to inspect the variable at runtime
 
 ```php
 /**
-  * Get relationships information from MagentoCloud environment variable.
+  * Get relationships information from cloud environment variable.
   *
   * @return mixed
   */

@@ -160,7 +160,7 @@ bin/magento module:disable -f=yes Magento_Catalog
 
 To avoid naming your command the same as another command, we recommend:
 
-*  Looking at other extensions in the Magento Marketplace before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.
+*  Looking at other extensions in the Commerce Marketplace before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.
 
 *  Restricting command names to start with a unique name, such as a vendor name. The [usability](https://glossary.magento.com/usability) of the command depends on what you choose for a vendor name.
 

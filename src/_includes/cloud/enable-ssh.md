@@ -4,7 +4,7 @@ You can add multiple SSH keys for each system or workspace that you use.
 
 The SSH keys require the following:
 
--  Set up SSH keys as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+-  Set up SSH keys as the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 -  Create the keys using the GitHub account email address.
 
 For more information on SSH keys, see the following:
@@ -36,12 +36,12 @@ To check for SSH keys:
 
 If the directory does not exist or has no SSH key files, you must generate at least one SSH key and add it to your GitHub account. For instructions, see [Generate a new SSH key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) in the GitHub documentation.
 
-If you have at least one SSH key in your directory, add the key to your Magento and GitHub accounts:
+If you have at least one SSH key in your directory, add the key to your {{site.data.var.ee}} and GitHub accounts:
 
 -  [Add an SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) and [test the SSH connection](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/testing-your-ssh-connection).
--  [Add your public SSH key to your Magento account](#ssh-add-to-account)
+-  [Add your public SSH key to your {{site.data.var.ee}} account](#ssh-add-to-account)
 
-## Add a public SSH key to your Magento account {#ssh-add-to-account}
+## Add a public SSH key to your {{site.data.var.ee}} account {#ssh-add-to-account}
 
 You can add SSH keys to your account in any of the following ways:
 
@@ -58,7 +58,7 @@ To add an SSH key using the [Magento Cloud CLI]({{site.baseurl}}/cloud/reference
 
 1. Open a terminal application on your local workstation.
 
-1. If you have not done so already, log in (or switch to) the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
+1. If you have not done so already, log in (or switch to) the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
 
 1. Log in to your project:
 

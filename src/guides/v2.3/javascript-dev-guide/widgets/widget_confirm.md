@@ -8,7 +8,7 @@ The Magento confirmation widget implements a modal pop-up window with the cancel
 
 The confirmation [widget](https://glossary.magento.com/widget) source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/confirm.js`].
 
-The widget can be used for implementing confirmation windows for both, Admin and [storefront](https://glossary.magento.com/storefront). The design patterns for the modal pop-up windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
+The widget can be used for implementing confirmation windows for both, Admin and [storefront](https://glossary.magento.com/storefront). The design patterns for the modal pop-up windows in the Admin are described in the [Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
 
 ## Initialize the confirmation widget {#confirm_initialize}
 
@@ -263,6 +263,6 @@ require([
 
 [Magento modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/confirm.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/confirm.js
-[Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
+[Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [navigation of the modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html#key_navigation

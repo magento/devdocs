@@ -38,7 +38,7 @@ In addition to those files, a Magento 2 module also has nested configuration dir
 
 ### Tailor your configuration files for what your module does
 
-The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the [Magento Admin](https://glossary.magento.com/magento-admin) panel, or as a [backend](https://glossary.magento.com/backend) [extension](https://glossary.magento.com/extension) that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to `etc/adminhtml/`, like:
+The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the [Admin](https://glossary.magento.com/magento-admin) panel, or as a [backend](https://glossary.magento.com/backend) [extension](https://glossary.magento.com/extension) that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to `etc/adminhtml/`, like:
 
 *  `<your module root dir>/etc/adminhtml/di.xml`
 *  `<your module root dir>/etc/adminhtml/routes.xml`

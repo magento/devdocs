@@ -123,7 +123,7 @@ To debug web requests:
 
 1. When PhpStorm recognizes the Xdebug connection, you can begin debugging web requests.
 
-You can debug any Magento command or PHP script using the following steps.
+You can debug any {{site.data.var.ee}} command or PHP script using the following steps.
 
 {:.procedure}
 To debug CLI commands:

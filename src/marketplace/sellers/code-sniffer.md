@@ -7,7 +7,7 @@ title: Code Sniffer
 
 Code Sniffer is a static test that uses static code analysis to detect violations of the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) to prevent common coding errors.
 
-Limited information is displayed in the Quality Report section of the product listing page on the Magento Marketplace, including the number of errors, warnings, and the coding standards version that was used.
+Limited information is displayed in the Quality Report section of the product listing page on the Commerce Marketplace, including the number of errors, warnings, and the coding standards version that was used.
 
 ## What testing is for
 
@@ -18,7 +18,7 @@ Magento projects typically use source code from several vendors. By adopting the
 
 ## When testing is done
 
-Code Sniffer is mandatory for extensions of any type. When you submit an extension, Magento uses Code Sniffer to analyze the entire code base regardless of the scope of changes. Only extensions that have passed Code Sniffer testing can be listed in the [Magento Marketplace](https://marketplace.magento.com/).
+Code Sniffer is mandatory for extensions of any type. When you submit an extension, Magento uses Code Sniffer to analyze the entire code base regardless of the scope of changes. Only extensions that have passed Code Sniffer testing can be listed in the [Commerce Marketplace](https://marketplace.magento.com/).
 
 ## What is being checked
 
@@ -54,11 +54,11 @@ According to the Magento Coding Standard, Code Sniffer classifies detected viola
 | Warning | 6 | Code style issues. |
 | Warning | 5 | PHPDoc formatting and commenting issues. |
 
-Only violations of type "Error" (severity >= 10) prevent a submitted extension from being published on the Magento Marketplace. Although other reported issues do not block delivery of the extension, we encourage developers to review and fix them.
+Only violations of type "Error" (severity >= 10) prevent a submitted extension from being published on the Commerce Marketplace. Although other reported issues do not block delivery of the extension, we encourage developers to review and fix them.
 
 ## Troubleshooting
 
-As a best practice, we recommend that developers include [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer) and the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) in their development workflow and CI/CD infrastructure to verify that code complies with the coding standards before submitting to the Magento Marketplace.
+As a best practice, we recommend that developers include [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer) and the [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) in their development workflow and CI/CD infrastructure to verify that code complies with the coding standards before submitting to the Commerce Marketplace.
 
 The [Magento Coding Standard](https://github.com/magento/magento-coding-standard/) is an open source project. You can report issues or submit pull requests with enhancements directly on GitHub.
 

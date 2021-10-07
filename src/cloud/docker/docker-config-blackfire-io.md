@@ -9,10 +9,10 @@ functional_areas:
 
 You can add Blackfire.io to your {{site.data.var.mcd-prod}} environment to fully automate performance testing.
 
-Blackfire.io for Magento Cloud is a PHP profiler and automated performance testing tool for use in development, integration, staging, and production environments. It enables you to locate and investigate performance issues in your environment at the code level and creates a performance profile by tracking every PHP call, method, and SQL query performed by your code.
+Blackfire.io for {{site.data.var.ece}} is a PHP profiler and automated performance testing tool for use in development, integration, staging, and production environments. It enables you to locate and investigate performance issues in your environment at the code level and creates a performance profile by tracking every PHP call, method, and SQL query performed by your code.
 
 {:.bs-callout-warning}
-You must have a Blackfire license and account to use Blackfire.io with {{site.data.var.ece}} projects. See [Blackfire.io for Magento Cloud][].
+You must have a Blackfire license and account to use Blackfire.io with {{site.data.var.ece}} projects. See [Blackfire.io for {{site.data.var.ece}}][].
 
 {:.procedure}
 To add Blackfire.io to your project configuration:
@@ -53,9 +53,9 @@ To add Blackfire.io to your project configuration:
 
 1. Add context to use locally customized PHP images as described in [Extend the Docker configuration][].
 
-1. Install Magento in your Docker environment.
+1. Install {{site.data.var.ee}} in your Docker environment.
 
-   -  Deploy Magento in the Docker container.
+   -  Deploy {{site.data.var.ee}} in the Docker container.
 
       ```bash
       docker-compose run --rm deploy cloud-deploy
@@ -74,7 +74,7 @@ To add Blackfire.io to your project configuration:
    {:.bs-callout-warning}
    Review messages and notifications during the deployment process and address any errors or notifications as needed.
 
-1. Enable the Varnish cache for the Magento application.
+1. Enable the Varnish cache for the {{site.data.var.ee}} application.
 
    ```bash
    docker-compose run --rm deploy magento-command config:set  system/full_page_cache/caching_application 2 --lock-env
@@ -97,14 +97,14 @@ To add Blackfire.io to your project configuration:
    ```
 
 {:.procedure}
-To use Blackfire.io for Magento performance testing in Cloud Docker:
+To use Blackfire.io for performance testing in Cloud Docker:
 
 1. Install a profiling client as described in the [Blackfire documentation][].
 
-1. Profile the Magento website. See the [Blackfire.io documentation].
+1. Profile the {{site.data.var.ee}} website. See the [Blackfire.io documentation].
 
 <!--Link definitions-->
-[Blackfire.io for Magento Cloud]: https://blackfire.io/magento
+[Blackfire.io for {{site.data.var.ece}}]: https://blackfire.io/magento
 [Blackfire documentation]: https://support.blackfire.io/en/collections/145130-blackfire-on-magento-cloud.html
 [build or service configuration options]: https://devdocs.magento.com/cloud/docker/docker-quick-reference.html
 [Extend the Docker configuration]: https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources

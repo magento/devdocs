@@ -8,7 +8,7 @@ functional_areas:
 ---
 
 {:.bs-callout-warning}
-To maintain PCI compliance for Magento sites deployed on the Cloud platform, you must [set up Fastly] on your Starter master, Pro Production, and Pro Staging environments. If you are using {{ site.data.var.ee }} in a headless deployment, we highly recommend that you use Fastly to cache GraphQL responses. See [Caching with Fastly] in the *GraphQL Developer Guide*.
+To maintain PCI compliance for {{site.data.var.ee}} sites deployed on the Cloud platform, you must [set up Fastly] on your Starter master, Pro Production, and Pro Staging environments. If you are using {{ site.data.var.ee }} in a headless deployment, we highly recommend that you use Fastly to cache GraphQL responses. See [Caching with Fastly] in the *GraphQL Developer Guide*.
 
 Fastly provides the following services to optimize and secure content delivery operations for your {{ site.data.var.ece }} projects. These services are included with your {{ site.data.var.ece }} subscription at no additional cost.
 
@@ -33,9 +33,9 @@ Fastly provides the following services to optimize and secure content delivery o
 
    -  **[Web Application Firewall]**—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. The WAF service is available on Pro and Starter Production environments only.
 
-   -  **SSL/TLS certificates**–The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. Magento provides a Domain-validated Let's Encrypt SSL/TLS certificate for each Staging and Production environment. Magento completes domain validation and certificate provisioning during the Fastly set up process. See [TLS and Fastly].
+   -  **SSL/TLS certificates**–The Fastly service requires an SSL/TLS certificate to serve secure traffic over HTTPS. {{site.data.var.ee}} provides a Domain-validated Let's Encrypt SSL/TLS certificate for each Staging and Production environment. {{site.data.var.ee}} completes domain validation and certificate provisioning during the Fastly set up process. See [TLS and Fastly].
 
-   -  **Origin cloaking**–Magento can enable Origin Cloaking for all Magento Commerce projects hosted on the Cloud platform. This option hides the IP addresses of your origin servers to protect them from direct access. When this feature is enabled, all traffic to your Cloud infrastructure must route through the Fastly CDN or another secure channel. Any traffic sent directly to the Origin servers is blocked. If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache].
+   -  **Origin cloaking**–Adobe can enable Origin Cloaking for all {{ site.data.var.ece }} projects. This option hides the IP addresses of your origin servers to protect them from direct access. When this feature is enabled, all traffic to your Cloud infrastructure must route through the Fastly CDN or another secure channel. Any traffic sent directly to the Origin servers is blocked. If you have traffic that does not require caching, you can customize the Fastly service configuration to allow requests to [bypass the Fastly cache].
 
 -  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization].
 
@@ -45,26 +45,26 @@ Fastly provides the following services to optimize and secure content delivery o
 
 Fastly services for {{ site.data.var.ece }} use the [Fastly CDN module for Magento 2] installed in the following environments: Pro Staging and Production, Starter Production (`master` branch).
 
-On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module in your Staging and Production environments. When Fastly releases module updates, you receive notifications in the Magento Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly].
+On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module in your Staging and Production environments. When Fastly releases module updates, you receive notifications in the Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly].
 
 ## Fastly service account and credentials
 
-{{ site.data.var.ece }} projects do not require a dedicated Fastly account or account owner. Instead, each Staging and Production environment has unique Fastly credentials (API token and service ID) to configure and manage Fastly services from the Magento Admin UI. You also need the credentials to submit Fastly API requests.
+{{ site.data.var.ece }} projects do not require a dedicated Fastly account or account owner. Instead, each Staging and Production environment has unique Fastly credentials (API token and service ID) to configure and manage Fastly services from the Admin UI. You also need the credentials to submit Fastly API requests.
 
-During project provisioning, Magento adds your project to the Fastly service account for {{ site.data.var.ece }} and adds the Fastly credentials to the configuration for the Staging and Production environments. See [Get Fastly credentials].
+During project provisioning, Adobe adds your project to the Fastly service account for {{ site.data.var.ece }} and adds the Fastly credentials to the configuration for the Staging and Production environments. See [Get Fastly credentials].
 
 ### Change Fastly API token
 
-If you need to change the Fastly API token credential, you must submit a [Magento support ticket] to request a new token, and then update your Staging or Production environment with the new value.
+If you need to change the Fastly API token credential, you must submit a [{{site.data.var.ee}} support ticket] to request a new token, and then update your Staging or Production environment with the new value.
 
 {:.procedure}
 To change the Fastly API token credential:
 
-1. Submit a [Magento support ticket] requesting the new token.
+1. Submit a [{{site.data.var.ee}} support ticket] requesting the new token.
 
    Include your {{ site.data.var.ece }} project ID and the environments that require a new credential.
 
-1. After you receive the new API token, update the API token value in the [Fastly credentials configuration] in the Magento Admin UI or from the [Project Web UI environment configuration variables].
+1. After you receive the new API token, update the API token value in the [Fastly credentials configuration] in the Admin UI or from the [Project Web UI environment configuration variables].
 
 1. [Test the new credential].
 
@@ -80,15 +80,15 @@ Fastly only allows you to assign an apex domain and associated subdomains to one
 
 -  Submit a support ticket to request domain delegation so that apex and subdomains can be linked to different accounts.
 
-   Use this option if your apex domain has multiple subdomains for Magento and non-Magento sites that you want to link to different Fastly accounts.
+   Use this option if your apex domain has multiple subdomains for {{site.data.var.ee}} and non-{{site.data.var.ee}} sites that you want to link to different Fastly accounts.
 
 #### Request domain delegation
 
 *Scenario 1:*
 
-The apex domain (`testweb.com` and `www.testweb.com`) is linked to an existing Fastly account. You have a {{ site.data.var.ece }} project configured with the following subdomains: `mcstaging.testweb.com` and `mcprod.testweb.com`. You do not want to move the apex domain to the Fastly service account for {{ site.data.var.ece }} Magento.
+The apex domain (`testweb.com` and `www.testweb.com`) is linked to an existing Fastly account. You have a {{ site.data.var.ece }} project configured with the following subdomains: `mcstaging.testweb.com` and `mcprod.testweb.com`. You do not want to move the apex domain to the Fastly service account for {{ site.data.var.ece }}.
 
-Submit a [Fastly support ticket] requesting that the subdomains be delegated from the existing Fastly account to the Fastly account for {{ site.data.var.ece }}. Include your Magento project ID in the ticket.
+Submit a [Fastly support ticket] requesting that the subdomains be delegated from the existing Fastly account to the Fastly account for {{ site.data.var.ece }}. Include your {{site.data.var.ee}} project ID in the ticket.
 
 After the delegation is complete, your project subdomains can be added to the Fastly service account for {{ site.data.var.ece }}. See [Get Fastly credentials].
 
@@ -96,7 +96,7 @@ After the delegation is complete, your project subdomains can be added to the Fa
 
 The apex domain (`testweb.com` and `www.testweb.com`) is linked to the {{ site.data.var.ece }} Fastly service account. You want to manage Fastly services for the `service.testweb.com` and `product-updates.testweb.com` subdomains from a different Fastly account.
 
-Submit a [Magento support ticket] requesting that the subdomains be delegated from the {{ site.data.var.ece }} Fastly service account to the Fastly account. Include the service ID for the Fastly account in the ticket.
+Submit a [{{site.data.var.ee}} support ticket] requesting that the subdomains be delegated from the {{ site.data.var.ece }} Fastly service account to the Fastly account. Include the service ID for the Fastly account in the ticket.
 
 ## DDoS protection
 
@@ -104,7 +104,7 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 
 -  For attacks targeting layer 3 or 4, the Fastly service filters out traffic based on port and protocol, inspecting only HTTP or HTTPS requests. ICMP, UDP, and other network born attacks are dropped at our network edge. This includes reflection and amplification attacks, which use UDP services like SSDP or NTP. By providing this level of protection, we effectively block  multiple common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.  Fastly manages the TCP level attacks at the cache layer, addressing the necessary scale and context per client to deal with SYN flood and its many variants, including TCP stack, resource attacks, and TLS attacks within the Fastly systems.
 
--  Fastly also provides protection against Layer 7 attacks. If your Magento store is experiencing performance issues and you suspect a Layer 7 DDoS attack, submit a [Magento support ticket]. Magento can create and apply custom rules to the Fastly service to inspect for and filter out malicious requests based on header, payload, or a combination of attributes that identify the attack traffic. See [Checking for DDoS attacks][] and [How to block malicious traffic] in the *Magento Help Center*.
+-  Fastly also provides protection against Layer 7 attacks. If your store is experiencing performance issues and you suspect a Layer 7 DDoS attack, submit a [{{site.data.var.ee}} support ticket]. Adobe can create and apply custom rules to the Fastly service to inspect for and filter out malicious requests based on header, payload, or a combination of attributes that identify the attack traffic. See [Checking for DDoS attacks][] and [How to block malicious traffic] in the *{{site.data.var.ee}} Help Center*.
 
 <!--Link definitions-->
 [bypass the Fastly cache]: {{site.baseurl}}/cloud/cdn/fastly-vcl-bypass-to-origin.html
@@ -121,7 +121,7 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 [GeoIP service support]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-geoip-handling
 [Get Fastly credentials]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#cloud-fastly-creds
 [How to block malicious traffic]: https://support.magento.com/hc/en-us/articles/360039447892-How-to-block-malicious-traffic-for-Magento-Commerce-Cloud-on-Fastly-level
-[Magento support ticket]: https://support.magento.com/hc/en-us/articles/360019088251
+[{{site.data.var.ee}} support ticket]: https://support.magento.com/hc/en-us/articles/360019088251
 [New Relic]: {{site.baseurl}}/cloud/project/new-relic.html
 [Project Web UI environment configuration variables]: {{site.baseurl}}/cloud/project/projects.html#environment-configuration-variables
 [purge options]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-purge-options

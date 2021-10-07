@@ -87,6 +87,6 @@ echo "</table>";
 
 ## Step 3: View the results
 
-Go to any page in your [storefront](https://glossary.magento.com/storefront) or [Magento Admin](https://glossary.magento.com/magento-admin) to view the results. A sample follows:
+Go to any page in your [storefront](https://glossary.magento.com/storefront) or [Admin](https://glossary.magento.com/magento-admin) to view the results. A sample follows:
 
 ![Sample database profiler results]({{ site.baseurl }}/common/images/config_db-profiler-results.png){:width="800px"}

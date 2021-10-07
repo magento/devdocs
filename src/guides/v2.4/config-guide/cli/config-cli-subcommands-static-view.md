@@ -34,12 +34,12 @@ You must write static view files to the Magento file system manually using the c
 
 To deploy static view files:
 
-1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [file system owner](https://glossary.magento.com/magento-file-system-owner).
 1. Delete the contents of `<magento_root>/pub/static`, except for the `.htaccess` file. Do not delete this file.
 1. Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 
    {:.bs-callout-info}
-   If you enable static view file merging in the Magento Admin, the `pub/static` directory system must be writable.
+   If you enable static view file merging in the Admin, the `pub/static` directory system must be writable.
 
 Command options:
 
@@ -357,7 +357,7 @@ ERROR: You need to install the Magento application before running this utility.
 Use the following steps:
 
 1. Install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
-1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the Magento file system owner.
+1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the file system owner.
 1. Delete the contents of `<magento_root>/pub/static` directory, except for the `.htaccess` file. Do not delete this file.
 1. [Run the static view files deployment tool](#config-cli-subcommands-staticview).
 

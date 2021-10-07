@@ -1,6 +1,6 @@
 To update the production system:
 
-1. Log in to your production system as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Log in to your production system as, or switch to, the [file system owner](https://glossary.magento.com/magento-file-system-owner).
 1. Start maintenance mode:
 
    ```bash

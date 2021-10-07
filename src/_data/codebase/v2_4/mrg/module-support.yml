@@ -1,0 +1,5 @@
+---
+title: Support
+release: 2.4.3
+content: Magento_Support module is used for generation of system reports, which provide
+  detailed information about the system environment and Magento instance configuration.

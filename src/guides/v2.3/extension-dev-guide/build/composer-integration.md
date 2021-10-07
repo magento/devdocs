@@ -152,7 +152,7 @@ For language packages, you must use the correct [ISO code][4]{:target="_blank"} 
 
 ## Magento-specific package types
 
-Magento extensions can be any of the following types:
+Extensions can be any of the following types:
 
 *  `magento2-module` for modules
 *  `magento2-theme` for themes
@@ -174,10 +174,10 @@ Using the Composer naming convention helps distinguish packages from different v
 All letters in the vendor name must be in lowercase.
 For example, the vendor name format for extensions released by Magento Inc is `magento`.
 
-#### Magento Marketplace Extensions
+#### Commerce Marketplace Extensions
 
-Magento Marketplace uses `vendor-name` to match an extension to a vendor during the extension submission process.
-If you plan to submit your extension to the [Magento Marketplace][7]{:target="_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
+Commerce Marketplace uses `vendor-name` to match an extension to a vendor during the extension submission process.
+If you plan to submit your extension to the [Commerce Marketplace][7]{:target="_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
 
 In the `composer.json` file, use the value of 'Vendor Name' in your profile for the `vendor-name` part of the extension name.
 
@@ -195,7 +195,7 @@ The convention for Magento package names is the following
 
 Where:
 
-:`type-prefix` is any of the Magento extension types:
+:`type-prefix` is any of the extension types:
 
 *  `module-` for module extensions
 *  `theme-` for theme extensions

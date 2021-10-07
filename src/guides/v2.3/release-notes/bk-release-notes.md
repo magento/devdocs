@@ -5,7 +5,7 @@ title: 2.3 Release Information
 
 ## Magento 2.3.x Release Notes
 
-*  [Magento 2.3.7-p1 Release Notes]({{page.baseurl}}/release-notes/2-3-7-p1.html)
+*  [{{site.data.var.ee}} 2.3.7-p1 Release Notes]({{page.baseurl}}/release-notes/2-3-7-p1.html)
 
 *  [{{site.data.var.ce}} 2.3.7 Release Notes]({{page.baseurl}}/release-notes/open-source-2-3-7.html)
 *  [{{site.data.var.ee}} 2.3.7 Release Notes]({{page.baseurl}}/release-notes/commerce-2-3-7.html)

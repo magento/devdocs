@@ -1,0 +1,5 @@
+---
+title: AwsS3PageBuilder
+release: 2.4.3
+content: The Magento_AwsS3PageBuilder module created for maintaining Page Builder
+  tests related to Aws S3 remote storage functionality

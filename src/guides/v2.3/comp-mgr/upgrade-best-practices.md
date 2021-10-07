@@ -5,7 +5,7 @@ functional_areas:
   - Upgrade
 ---
 
-This topic lists the actions you should take to manage the complexity of upgrading Magento Open Source and {{site.data.var.ee}}. Your team should be thinking about upgrades from the moment your project development starts and continue through each release. By following these best practices, the upgrade process will be much easier, faster, and cheaper.
+This topic lists the actions you should take to manage the complexity of upgrading {{site.data.var.ce}} and {{site.data.var.ee}}. Your team should be thinking about upgrades from the moment your project development starts and continue through each release. By following these best practices, the upgrade process will be much easier, faster, and cheaper.
 
 {:.bs-callout-tip}
 These recommendations are based on best practices supported by evidence for its impact and effectiveness from partners, merchants, Adobe experts, and the community.
@@ -16,7 +16,7 @@ It is important to understand the variables that determine the complexity of an 
 
 The level of effort to upgrade your {{site.data.var.ee}} instance depends upon these factors:
 
-*  **How you have built your site?** The amount of custom work and the number of installed 3rd-party modules strongly affects the complexity of an upgrade. The quality of the custom work and modules also can also determine whether an upgrade will go smoothly.
+*  **How did you build your site?** The amount of custom work and the number of installed 3rd-party modules strongly affects the complexity of an upgrade. The quality of the custom work and modules can determine whether an upgrade will go smoothly.
 
 *  **Are you skipping multiple releases?** Skipping releases will makes the next upgrade more complex, upgrading from consequent versions will make the process easier and cheaper.
 
@@ -32,12 +32,12 @@ If your project is live, we suggest you run an audit to determine its quality, a
 
 ### Developing with upgrades in mind
 
-From the moment you start working on a project, you should consider how future upgrades will be impacted by your current work. Always follow Adobe Commerce development best practices as described here:
+From the moment you start working on a project, you should consider how future upgrades will be impacted by your current work. Always follow {{site.data.var.ee}} development best practices as described here:
 
 *  [Development best practices]({{page.baseurl}}/ext-best-practices/bk-ext-best-practices.html)
 *  [Coding standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html)
 
-Begin adopting the Adobe Commerce Extensibility platform, if you haven't done so already. The platform allows you to efficiently customize processes, integrate systems, and deploy new capabilities while maintaining SaaS-like upgradeability. Its features include:
+Begin adopting the {{site.data.var.ee}} Extensibility platform, if you haven't done so already. The platform allows you to efficiently customize processes, integrate systems, and deploy new capabilities while maintaining SaaS-like upgradeability. Its features include:
 
 *  **UI Extensibility**. Extend and evolve your storefront independently of your backend and middleware using [PWA Studio](https://magento.github.io/pwa-studio/).
 

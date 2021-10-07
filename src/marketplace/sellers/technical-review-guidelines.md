@@ -10,7 +10,7 @@ During technical review, your code is examined to detect the presence of viruses
 The technical review begins as soon as you upload an extension package at [Developer Portal](https://developer.magento.com/) and consists of two mandatory steps to generate the submission id and trigger further extension testing:
 
 1. [Malware Scan]({{ site.baseurl }}/marketplace/sellers/malware-scan.html) &mdash; Ensures that uploaded packages do not contain viruses or malware software.
-1. Extension Package Verification &mdash; Checks that the uploaded file is a zip archive which is a [Composer](https://getcomposer.org/) package with Magento extension.
+1. Extension Package Verification &mdash; Checks that the uploaded file is a zip archive which is a [Composer](https://getcomposer.org/) package with extension.
 
 ### Extension Package Verification
 
@@ -68,7 +68,7 @@ _See also:_ [Coding Standards]({{ site.baseurl }}{{ site.gdeurl }}/coding-standa
 
 ### Copy Paste Detector: Check for plagiarism
 
-All code and marketing content that is submitted to Magento Marketplace is checked for plagiarism to ensure that it has not been copied from existing Marketplace extensions or from the Magento codebase.
+All code and marketing content that is submitted to Commerce Marketplace is checked for plagiarism to ensure that it has not been copied from existing Marketplace extensions or from the Magento codebase.
 
 If the extension contains source code from the Open Source Edition, the extension must be licensed under [Open Source License v. 3.0][3] and properly credit Adobe, Inc.
 

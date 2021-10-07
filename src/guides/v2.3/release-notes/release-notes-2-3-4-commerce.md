@@ -3,7 +3,7 @@ group: release-notes
 title: Adobe Commerce 2.3.4 Release Notes
 ---
 
-Magento Commerce 2.3.4 offers significant platform upgrades, substantial security changes, and performance improvements.
+{{site.data.var.ee}} 2.3.4 offers significant platform upgrades, substantial security changes, and performance improvements.
 
 This release includes over 220 functional fixes to the core product and  over 30 security enhancements. It includes resolution of over 275 contributions by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
@@ -47,7 +47,7 @@ Additional security enhancements include:
 
 *  **Redesigned  content template features so that only whitelisted variables can be added to templates**. This avoids the situation where administrator-defined templates such as email, newsletters, and CMS content can include variables and directives that can directly call PHP functions on objects. See [Migrating custom email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email-migration.html) and [Email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html).
 
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
+Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Platform upgrades
 
@@ -79,7 +79,7 @@ This release contains 250 enhancements to core quality, which improve the qualit
 
 ### Merchant tool enhancements
 
-**Integration with Adobe Stock image galleries**. The new bundled Adobe stock integration extension enables merchants to add high quality media assets to their website content without leaving the Magento Admin. Merchants can use the searchable interface in the Magento Media Gallery to explore, preview, license, and deploy stock images in website content. See [Adobe Stock Integration](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock.html) and [Using Adobe Stock Images](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock-manage.html).
+**Integration with Adobe Stock image galleries**. The new bundled Adobe stock integration extension enables merchants to add high quality media assets to their website content without leaving the Admin. Merchants can use the searchable interface in the Magento Media Gallery to explore, preview, license, and deploy stock images in website content. See [Adobe Stock Integration](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock.html) and [Using Adobe Stock Images](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock-manage.html).
 
 ### Page Builder
 
@@ -143,7 +143,7 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 
 ### dotdigital
 
-*  Live Chat powered by dotdigital enables merchants to increase conversion rates, and keep customers coming back with real-time engagement. All Magento 2.3.x merchants (both Magento Open Source and Magento Commerce) can receive a free live chat agent without the need for a full dotdigital Engagement Cloud license.
+*  Live Chat powered by dotdigital enables merchants to increase conversion rates, and keep customers coming back with real-time engagement. All Magento 2.3.x merchants (both {{site.data.var.ce}} and {{site.data.var.ee}}) can receive a free live chat agent without the need for a full dotdigital Engagement Cloud license.
 
 *  Engagement Cloud includes a new Chat widget that makes it easy for shoppers to communicate in real time with customers as they shop in your store. Chat can be accessed from the Engagement Cloud section of the Magento configuration, or directly from your Engagement Cloud account. See [Engagement Cloud Chat](https://docs.magento.com/m2/ee/user_guide/marketing/engagement-cloud-chat.html).
 
@@ -2169,7 +2169,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  **Issue**: Magento throws an error when a customer places an order with PayPal Express Checkout and the order’s shipping address specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. **Workaround**: Apply the PayPal Express Checkout issue with region patch for Magento 2.3.4  (Git-based or Composer-based). A fix for this issue will be included in Magento 2.3.5, which is scheduled for release in April 2020.
 
-*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Commerce Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in {{site.data.var.ee}} 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

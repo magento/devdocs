@@ -16,7 +16,7 @@ The Amazon Sales Channel extension installs and adds features to integrate your 
 
 ## Install
 
-Amazon Sales Channel install is a `.zip` file available from the Magento Marketplace. It includes a composer.json which provides the name `magento/amazon-sales-channel` and the available version.
+Amazon Sales Channel install is a `.zip` file available from the Commerce Marketplace. It includes a composer.json which provides the name `magento/amazon-sales-channel` and the available version.
 
 1. Log in with your Magento web account.
 
@@ -57,7 +57,7 @@ See [Add or Verify the Amazon API Key](https://docs.magento.com/m2/ee/user_guide
 
 You have the following options for configuring Amazon Sales Channel. You do not need to modify these settings to begin onboarding and selling on Amazon. We recommend advanced administrators consider these options.
 
-1. Log into the Magento Admin.
+1. Log into the Admin.
 
 1. On the _Admin_ sidebar, go to **Stores** > _Settings_ > **Configuration**.
 
