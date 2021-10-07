@@ -50,6 +50,9 @@ Install the [Snowplow Analytics Debugger extension for Chrome](https://chrome.go
 
 If you run into any problems verifying that the events are collected and sent to Magento, [contact support](https://support.magento.com/hc/en-us).
 
+{:.bs-callout-info}
+A value of `Data validity : NOT FOUND` in the debugger indicates that that schema is internal, not public. The Snowplow Chrome plugin cannot validate the events with an internal schema. This has no impact on actual functionality.
+
 ## Verify events are firing correctly
 
 To verify that the events used for metrics are firing correctly, look for the `impression-render`, `view`, and `rec-click` events in the Snowplow Analytics Debugger. See the [full list of events](https://devdocs.magento.com/recommendations/events.html).
