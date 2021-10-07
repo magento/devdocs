@@ -2,6 +2,7 @@ The `NegotiableQuote` object contains details of a negotiable quote, including i
 
 Attribute | Data Type | Description
 --- | --- | ---
+`available_payment_methods` | [AvailablePaymentMethod] | An array of payment methods that can be applied to the negotiable quote
 `buyer` | NegotiableQuoteUser! | The first and last name of the buyer
 `comments` | [NegotiableQuoteComment!] | A list of comments made by the buyer and seller
 `created_at` | String | Timestamp indicating when the negotiable quote was created
@@ -9,6 +10,7 @@ Attribute | Data Type | Description
 `items` | [CartItemInterface] | The list of items in the negotiable quote
 `name` | String! | The title assigned to the negotiable quote
 `prices` | CartPrices | A set of subtotals and totals applied to the cart
+`selected_payment_method` | SelectedPaymentMethod | The payment method that was applied to the negotiable quote
 `status` | NegotiableQuoteStatus! | The status of the negotiable quote. Possible values are SUBMITTED, PENDING, UPDATED, OPEN, ORDERED, CLOSED, DECLINED, and EXPIRED
 `uid` | ID! | The unique ID of a NegotiableQuote object
 `updated_at` | String | Timestamp indicating when the negotiable quote was updated
