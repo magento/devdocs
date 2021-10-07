@@ -1,21 +1,21 @@
 ---
 group: rest-api
-title: Create custom rest api tutorial
+title: Create a custom REST API
 contributor_name: Ziffity
 contributor_link: https://www.Ziffity.com/
 ---
 
 ## Overview
 
-The REST API in Magento 2 defines a set of functions used by the developers to perform requests and get responses using the HTTP protocol. By default, Magento 2 provides some predefined rest APIs like Product API, Order API, Customer data API, with which you can take virtual control of everything happening on the site.
+The REST API in Magento 2 defines a set of functions used by developers to perform requests and get responses using the HTTP protocol. By default, Magento 2 provides predefined REST APIs such as Product API, Order API, and Customer data API, with which you can control everything happening on the site.
 
-Even though Magento 2 has many REST APIs, they are not enough when it comes to using the custom data and their values. To manage your custom data and fields, you need to create a custom REST API in Magento 2. This tutorial describes how you can create such a custom REST API.
+Even though Magento 2 has a number of REST APIs, they may not be not enough when it comes to using the custom data. To manage custom data and fields, you need to create a custom REST API in Magento 2. This tutorial describes how you can create such a custom REST API.
 
 ## 1. Create a custom module
 
-`Dev_RestApi` will be used as the namespace:
+`Dev_RestApi` will be the namespace for this tutorial.
 
-Here are the required files to get started:
+Create these files to get started:
 
 `app/code/Dev/RestApi/etc/module.xml`:
 
@@ -65,7 +65,7 @@ Here are the required files to get started:
 </config>
 ```
 
-In this tutorial, we have defined ACL entries for each endpoint which give full control over who can access the endpoints.
+In this tutorial, we have defined ACL entries for each endpoint which gives full control over who can access them.
 
 ## 3. Define custom endpoints
 
@@ -90,8 +90,9 @@ In this tutorial, we have defined ACL entries for each endpoint which give full 
 </routes>
 ```
 
-*  `route.url` is the URL of the endpoint, the full address would be: `<domain>/rest/<store_code><route.url>`
+Where:
 
+*  `route.url` is the URL of the endpoint. The full address would be: `<domain>/rest/<store_code><route.url>`
 *  `route.method` defines the request method. You should follow the rules of the REST API specification:
 
 | Method | Description |
@@ -101,13 +102,12 @@ In this tutorial, we have defined ACL entries for each endpoint which give full 
 | `PUT` | To update existing object(s) |
 | `DELETE` | To delete object(s) |
 
-*  `service` informs about the interface and the method to be called when the endpoint is reached.
-
-*  `resource` sets the ACL resource that is required to have access to the endpoint. If you want to make it public (no authentication), you can use: `<resource ref="anonymous" />`
+*  `service` describes the interface and the method to be called when the endpoint is reached.
+*  `resource` sets the ACL resource that is required to access the endpoint. If you want to make it public (no authentication), use: `<resource ref="anonymous" />`
 
 ## 4. Create Interfaces
 
-In this example, we have created the interfaces for request and response
+In this example, we have created the interfaces for the request and response.
 
 `app/code/Dev/RestApi/Api/RequestItemInterface.php`:
 
@@ -142,6 +142,7 @@ interface RequestItemInterface
     public function setDescription(string $description);
 }
 ```
+
 `app/code/Dev/RestApi/Api/ResponseItemInterface.php`:
 
 ```php
@@ -199,6 +200,7 @@ interface ResponseItemInterface
     public function setDescription(string $description);
 }
 ```
+
 `app/code/Dev/RestApi/Api/ProductRepositoryInterface.php`:
 
 ```php
@@ -227,8 +229,8 @@ interface ProductRepositoryInterface
 
 ## 4. Create Models
 
-The objective of models is to create classes that implement the interfaces and process data.
-In this example, we have created models for request, response and process data. In each model we have defined two methods `getItem`, which provides product details of the given product id, and `setDescription` which updates the description of the given product item(s).
+Models create classes that implement interfaces and process data.
+In this example, we have created models for request, response and process data. In each model we have defined two methods: `getItem`, which provides product details of the given product id, and `setDescription` which updates the description of the given product.
 
 `app/code/Dev/RestApi/Model/Api/RequestItem.php`:
 
@@ -272,6 +274,7 @@ class RequestItem extends DataObject implements RequestItemInterface
     }
 }
 ```
+
 `app/code/Dev/RestApi/Model/Api/ResponseItem.php`:
 
 ```php
@@ -502,15 +505,14 @@ class ProductRepository implements ProductRepositoryInterface
 }
 ```
 
-## 5. Test your custom endpoints
+## 5. Test your custom endpoint
 
 *  You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
-
 *  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
 ### Example 1
 
-### Endpoint
+#### Endpoint
 
 ```GET``` ```<domain>rest/V1/rest_dev/getProduct/<product_id>```
 
@@ -525,11 +527,11 @@ class ProductRepository implements ProductRepositoryInterface
 }
 ```
 
-Above endpoint has tested with magento sample data for `product_id: 1` and endpoint given as ```http://local.magentoee.com/rest/V1/rest_dev/getProduct/1```
+The above endpoint is tested with Magento sample data for `product_id: 1` and the endpoint given as ```http://local.magentoee.com/rest/V1/rest_dev/getProduct/1```
 
 ### Example 2
 
-### Endpoint
+#### Endpoint
 
 ```PUT``` ```<domain>/rest/V1/rest_dev/setDescription```
 
