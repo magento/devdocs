@@ -42,18 +42,67 @@ This mutation requires a valid [customer authentication token]({{page.baseurl}}/
 
 ## Example usage
 
-The following example .
+The following example sets the payment method .
 
 **Request:**
 
 ```graphql
-
+mutation {
+  setNegotiableQuotePaymentMethod(
+    input: {
+      quote_uid: "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb"
+      payment_method: { code: "checkmo" }
+    }
+  ) {
+    quote {
+      uid
+      name
+      status
+      available_payment_methods {
+        code
+        title
+      }
+      selected_payment_method {
+        code
+        title
+        purchase_order_number
+      }
+      items {
+        product {
+          sku
+          name
+        }
+      }
+    }
+  }
+}
 ```
 
 **Response:**
 
 ```json
-
+{
+  "data": {
+    "setNegotiableQuotePaymentMethod": {
+      "quote": {
+        "uid": "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb",
+        "name": "April 22 request",
+        "status": "UPDATED",
+        "available_payment_methods": [
+          {
+            "code": "checkmo",
+            "title": "Check / Money order"
+          }
+        ],
+        "selected_payment_method": {
+          "code": "checkmo",
+          "title": "Check / Money order",
+          "purchase_order_number": null
+        }
+      }
+    }
+  }
+}
 ```
 
 ## Input attributes
