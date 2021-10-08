@@ -118,7 +118,7 @@ Attribute |  Data Type | Description
 `payment_method`| NegotiableQuotePaymentMethodInput! | The payment method to be assigned to the negotiable quote
 `quote_uid` | ID! | The unique ID of a `NegotiableQuote` object
 
-### NegotiableQuotePaymentMethodInput attributes 
+### NegotiableQuotePaymentMethodInput attributes
 
 Attribute |  Data Type | Description
 --- | --- | ---
