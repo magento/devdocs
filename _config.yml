@@ -106,8 +106,8 @@ defaults:
       path: page-builder
     values:
       group: page-builder
-      github_files: https://github.com/magento/magento2-page-builder-docs/tree/master/
-      github_repo: https://github.com/magento/magento2-page-builder-docs/
+      github_files: https://github.com/magento/pagebuilder-docs/tree/master/
+      github_repo: https://github.com/magento/pagebuilder-docs/
 
   -
     scope:
