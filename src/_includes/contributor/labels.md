@@ -16,22 +16,6 @@ Progress labels indicate the Pull Request status on each review stage:
 *  `Progress: accept` - The pull request has been accepted and will be merged into mainline code. <!-- accept -->
 *  `Progress: reject` - The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution. <!-- reject -->
 
-### Contribution awards
-{:.no_toc}
-
-The level of investigation, research, and work required for a task may differ. Contribution Rewards labels  indicate what type of contribution awards will be applied when completing an issue and PR. Some awards will provide higher points and rewards than others.
-
-*  `Award: complex`
-*  `Award: advanced`
-*  `Award: special achievement`
-*  `Award: category of expertise`
-*  `Award: test coverage`
-*  `Award: devdocs update`
-*  `Award: MFTF test coverage`
-*  `Award: bug fix`
-*  `Cleanup`
-*  `Port`
-
 ### Partners
 {:.no_toc}
 
