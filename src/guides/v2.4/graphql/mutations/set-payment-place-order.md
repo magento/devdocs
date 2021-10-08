@@ -24,7 +24,7 @@ Perform the following actions before using the `setPaymentMethodAndPlaceOrder` m
 -  For guest customers, assign an email to the cart
 
 {:.bs-callout-info}
-The `setPaymentMethodAndPlaceOrder` mutation runs [asynchronously]({{page.baseurl}}/performance-best-practices/performance-pack.html#asynchronous-order-placement) if the `AsyncOrder` module has been enabled. By default, the mutation runs asynchronously.
+The `setPaymentMethodAndPlaceOrder` mutation runs [asynchronously]({{page.baseurl}}/performance-best-practices/performance-pack.html#asynchronous-order-placement) if the `AsyncOrder` module has been enabled. By default, the mutation runs synchronously.
 
 ## Syntax
 
