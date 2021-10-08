@@ -17,6 +17,9 @@ Perform the following actions before using the `placeOrder` mutation:
 -  Set the payment method
 -  For guest customers, assign an email to the cart
 
+{:.bs-callout-info}
+The mutation runs [asynchronously]({{page.baseurl}}/performance-best-practices/performance-pack.html#asynchronous-order-placement) if the `AsyncOrder` module has been enabled. By default, the mutation runs asynchronously.
+
 ## Syntax
 
 ```graphql
