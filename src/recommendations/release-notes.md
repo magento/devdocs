@@ -109,7 +109,7 @@ The release notes include:
 
 This is a major version release. You must [edit your project's root composer.json file]({{ page.baseurl }}/recommendations/install-configure.html#update-your-product-recommendations-installation).
 
--  {:.new}Fetch Product Recommendations from alternate SaaS environments. This allows you to use product recommendations computed in your product environment on other, non-production environments. [Switching SaaS Environments](https://docs.magento.com/user-guide/marketing/recommendation-change-source.html) further describes this feature.
+-  {:.new}Fetch Product Recommendations from alternate SaaS Data Spaces. This allows you to use product recommendations computed in your product environment on other, non-production environments. [Switching SaaS Data Spaces](https://docs.magento.com/user-guide/marketing/recommendation-change-source.html) further describes this feature.
 
 -  {:.fix}Fixed an issue where checkout was inhibited for shoppers using uBlock Origin
 -  {:.fix}Fixed an issue sending extraneous add-to-cart events
