@@ -42,7 +42,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 ## v2002.1.5
 *Release date: Feb 1, 2021*<br/>
 
--  {:.new}**Remote storage**—Added the [`REMOTE_STORAGE`]({{site.baseurl}}/cloud/env/variables-deploy.html#remote_storage) environment variable to enable Cloud Projects for remote storage of media files using a storage service, such as AWS S3.<!--MCLOUD-7153-->
+-  {:.new}**Remote storage**—Added the `REMOTE_STORAGE` environment variable to enable Cloud Projects for remote storage of media files using a storage service, such as AWS S3. This configuration option is part of the {{site.data.var.ct}} package, but is not supported on {{site.data.var.ece}}.<!--MCLOUD-7153-->
 
 -  {:.new}**New cloud:config:validate command**—Added command `php vendor/bin/ece-tools cloud:config:validate` to validate the `.magento.env.yaml` configuration before pushing changes to the remote Cloud environment.<!--MCLOUD-7120-->
 
