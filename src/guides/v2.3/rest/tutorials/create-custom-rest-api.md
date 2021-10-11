@@ -1,7 +1,7 @@
 ---
 group: rest-api
 title: Create a custom REST API
-contributor_name: Ziffity
+contributor_name: Nitish Ranjan (Ziffity)
 contributor_link: https://www.Ziffity.com/
 ---
 
@@ -34,6 +34,8 @@ Create these files to get started:
 `app/code/Dev/RestApi/registration.php`:
 
 ```php
+<?php
+
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Dev_RestApi',
@@ -112,6 +114,8 @@ In this example, we have created the interfaces for the request and response.
 `app/code/Dev/RestApi/Api/RequestItemInterface.php`:
 
 ```php
+<?php
+
 namespace Dev\RestApi\Api;
 
 interface RequestItemInterface
@@ -146,6 +150,8 @@ interface RequestItemInterface
 `app/code/Dev/RestApi/Api/ResponseItemInterface.php`:
 
 ```php
+<?php
+
 namespace Dev\RestApi\Api;
 
 interface ResponseItemInterface
@@ -204,6 +210,8 @@ interface ResponseItemInterface
 `app/code/Dev/RestApi/Api/ProductRepositoryInterface.php`:
 
 ```php
+<?php
+
 namespace Dev\RestApi\Api;
 
 interface ProductRepositoryInterface
@@ -235,6 +243,8 @@ In this example, we have created models for request, response and process data. 
 `app/code/Dev/RestApi/Model/Api/RequestItem.php`:
 
 ```php
+<?php
+
 namespace Dev\RestApi\Model\Api;
 
 use Dev\RestApi\Api\RequestItemInterface;
@@ -278,6 +288,8 @@ class RequestItem extends DataObject implements RequestItemInterface
 `app/code/Dev/RestApi/Model/Api/ResponseItem.php`:
 
 ```php
+<?php
+
 namespace Dev\RestApi\Model\Api;
 
 use Dev\RestApi\Api\ResponseItemInterface;
@@ -349,6 +361,8 @@ class ResponseItem extends DataObject implements ResponseItemInterface
 `app/code/Dev/RestApi/Model/Api/ProductRepository.php`:
 
 ```php
+<?php
+
 namespace Dev\RestApi\Model\Api;
 
 use Dev\RestApi\Api\ProductRepositoryInterface;
