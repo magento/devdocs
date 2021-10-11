@@ -4,8 +4,151 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Tue Sep 7 21:38:19 2021
+updated: Mon Oct 11 14:51:53 2021
 entries:
+- description: Added a reference topic for the [list of events](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/event-list.html).
+  versions: 2.4.x
+  type: New Topic
+  date: October 7, 2021
+  link: https://github.com/magento/devdocs/pull/9098
+  merge_commit: 81ded6faff76081405e26021269cc8d66eb302a2
+  contributor: goivvy
+  membership: false
+  labels:
+  - New Topic
+  - Special achievement
+  - 2.4.x
+  - 'Progress: done'
+- description: Updated the [Module reference guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html),
+    version 2.3. Now it contains all the modules included in the B2B with Adobe Commerce
+    edition.
+  versions: 2.3.7
+  type: Major Update
+  date: October 4, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2562
+  merge_commit: c815b7a02dab7764acbe00b28632760bd2ddd7f1
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.7
+- description: Added a topic about how to [implement Product Recommendations on a
+    headless storefront](https://devdocs.magento.com/recommendations/headless.html).
+  versions: 2.4.x
+  type: New Topic
+  date: October 4, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2532
+  merge_commit: 352c25212c008fe4004982c72554c9c20b0479de
+  contributor: erikmarr
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.x
+- description: Fixed [backward incompatible changes for 2.4.2-2.4.3](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#242---243).
+    The topic showed data for 2.4.1-2.4.2 instead.
+  versions: 2.4.3
+  type: Technical
+  date: September 23, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2547
+  merge_commit: 9f28563f024a27d3f541deac50179c69194e1824
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Technical
+  - 2.4.3
+- description: Updated [`magento-cloud` reference](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-cloud.html)
+    (1.38.1).
+  versions: 2.x
+  type: Technical
+  date: September 22, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2544
+  merge_commit: e4563f2b1c7caeebe44cddb3acda037a0ecd5a3f
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Added the [The built-in Upgrade Compatibility Tool (MVP)](https://devdocs.magento.com/guides/v2.4/ext-best-practices/phpstorm/built-in-upgrade-compatibility-tool.html)
+    topic.
+  versions: 2.4.x
+  type: New Topic
+  date: September 17, 2021
+  link: https://github.com/magento/devdocs/pull/9143
+  merge_commit: bbdc15794967ed70af8c78c209bb50560b8e36fa
+  contributor: bohdan-harniuk
+  membership: false
+  labels:
+  - partners-contribution
+  - 'Partner: Atwix'
+  - New Topic
+  - 2.4.x
+  - 'Progress: done'
+- description: Updated [release schedule](https://devdocs.magento.com/release/policy/),
+    [release policy](https://devdocs.magento.com/release/policy/), [versioning schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/),
+    and [code base changes](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/codebase-changes.html)
+    to reflect new Adobe release strategy.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: September 16, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2524
+  merge_commit: bb9bf8601e4229dc7c314d359f82c64ccd19a7ed
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.3 Quality Patches Tool (QPT) package release.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: September 15, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2531
+  merge_commit: e9e612c7e8fa68148536348d455925e5c857a59b
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Added the [PHPStorm plugin](https://devdocs.magento.com/guides/v2.4/ext-best-practices/phpstorm/introduction.html)
+    documentation and updated the [Run](https://devdocs.magento.com/upgrade-compatibility-tool/run.html)
+    topic with related information about PHPStorm plugin run configurations.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: September 15, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2526
+  merge_commit: 373ca889a71540a0d7821d90a9425ebc69334530
+  contributor: danidelcar
+  membership: true
+  labels:
+  - New Topic
+  - 2.3.x
+  - 2.4.x
+- description: Updated the [Service versions compatibility table](https://devdocs.magento.com/cloud/project/services.html#service-versions)
+    in the Cloud guide.
+  versions: 2.x
+  type: Technical
+  date: September 8, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2512
+  merge_commit: f062510d13a0596f8298bac440bf3b3b0eda356d
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.2 Quality Patches Tool release.
+  versions: 2.x
+  type: Major Update
+  date: September 7, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2516
+  merge_commit: 28cb71a4e8e700cdb0816db7146d3f705a50e894
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
 - description: Added a new [file upload security](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/uploads.html)
     topic.
   versions: 2.3.x, 2.4.x
@@ -246,7 +389,7 @@ entries:
   - Major Update
   - 2.4.3
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.1.1 Magento Quality Patch (MQP) package release.
+    for the 1.1.1 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: August 9, 2021
@@ -530,7 +673,7 @@ entries:
   - 2.4.x
   - New Topic
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.1.0 Magento Quality Patch (MQP) package release.
+    for the 1.1.0 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: July 29, 2021
@@ -612,7 +755,7 @@ entries:
   - 2.4.x
   - Major Update
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.26 Magento Quality Patch (MQP) package release.
+    for the 1.0.26 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: July 1, 2021
@@ -725,7 +868,7 @@ entries:
   - 'Progress: done'
   - partners-contribution
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.24 Magento Quality Patch (MQP) package release.
+    for the 1.0.24 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: June 2, 2021
@@ -782,7 +925,7 @@ entries:
   - Major Update
   - Tracking
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.23 Magento Quality Patch (MQP) package release.
+    for the 1.0.23 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: May 20, 2021
@@ -871,7 +1014,7 @@ entries:
   - 2.4.x
   - Major Update
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.22 Magento Quality Patch (MQP) package release.
+    for the 1.0.22 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: May 6, 2021
@@ -1023,7 +1166,7 @@ entries:
   - Major Update
   - 'Event: Adobe Summit Hackathon'
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.21 Magento Quality Patch (MQP) package release.
+    for the 1.0.21 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: April 23, 2021
@@ -1060,7 +1203,7 @@ entries:
   - 2.4.2
   - Major Update
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.20 Magento Quality Patch (MQP) package release.
+    for the 1.0.20 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: April 14, 2021
@@ -1146,7 +1289,7 @@ entries:
   - Technical
   - partners-contribution
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.19 Magento Quality Patch (MQP) package release.
+    for the 1.0.19 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: March 30, 2021
@@ -1221,7 +1364,7 @@ entries:
   - Major Update
   - 'Progress: done'
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.18 Magento Quality Patch (MQP) package release.
+    for the 1.0.18 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: March 17, 2021
@@ -1329,7 +1472,7 @@ entries:
   contributor: dshevtsov
   profile: https://github.com/dshevtsov
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.17 Magento Quality Patch (MQP) package release.
+    for the 1.0.17 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: March 3, 2021
@@ -1416,7 +1559,7 @@ entries:
   contributor: hguthrie
   profile: https://github.com/hguthrie
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.16 Magento Quality Patch (MQP) package release.
+    for the 1.0.16 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: February 18, 2021
@@ -1765,7 +1908,7 @@ entries:
   contributor: bdenham
   profile: https://github.com/bdenham
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.15 Magento Quality Patch (MQP) package release.
+    for the 1.0.15 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: February 1, 2021
@@ -1827,7 +1970,7 @@ entries:
   contributor: RakeshJesadiya
   profile: https://github.com/RakeshJesadiya
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.14 Magento Quality Patch (MQP) package release.
+    for the 1.0.14 Quality Patches Tool release.
   versions: ''
   type: Major Update
   date: January 22, 2021
@@ -1930,7 +2073,7 @@ entries:
   contributor: drpayyne
   profile: https://github.com/drpayyne
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.13 Magento Quality Patch (MQP) package release.
+    for the 1.0.13 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: December 10, 2020
@@ -1976,7 +2119,7 @@ entries:
   contributor: sathiyaaa
   profile: https://github.com/sathiyaaa
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.12 Magento Quality Patch (MQP) package release.
+    for the 1.0.12 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: November 26, 2020
@@ -2008,7 +2151,7 @@ entries:
   contributor: meker12
   profile: https://github.com/meker12
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.10 Magento Quality Patch (MQP) package release.
+    for the 1.0.10 Quality Patches Tool release.
   versions: 2.3.x, 2.4.x
   type: Major Update
   date: November 19, 2020
@@ -2016,7 +2159,7 @@ entries:
   contributor: viktym
   profile: https://github.com/viktym
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.10 Magento Quality Patch (MQP) package release.
+    for the 1.0.10 Quality Patches Tool release.
   versions: ''
   type: Major Update
   date: November 13, 2020
@@ -2033,7 +2176,7 @@ entries:
   contributor: meker12
   profile: https://github.com/meker12
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.9 Magento Quality Patch (MQP) package release.
+    for the 1.0.9 Quality Patches Tool release.
   versions: ''
   type: Major Update
   date: November 12, 2020
@@ -2108,7 +2251,7 @@ entries:
   contributor: meker12
   profile: https://github.com/meker12
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.8 Magento Quality Patch (MQP) package release.
+    for the 1.0.8 Quality Patches Tool release.
   versions: ''
   type: Major Update
   date: October 28, 2020
@@ -2424,7 +2567,7 @@ entries:
   contributor: meker12
   profile: https://github.com/meker12
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.7 Magento Quality Patch (MQP) package release.
+    for the 1.0.7 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: October 14, 2020
@@ -2477,7 +2620,7 @@ entries:
   contributor: BarnyShergold
   profile: https://github.com/BarnyShergold
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.6 Magento Quality Patch (MQP) package release.
+    for the 1.0.6 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: September 30, 2020
@@ -2510,7 +2653,7 @@ entries:
   contributor: BarnyShergold
   profile: https://github.com/BarnyShergold
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.5 Magento Quality Patch (MQP) package release.
+    for the 1.0.5 Quality Patches Tool release.
   versions: 2.x
   type: Major Update
   date: September 22, 2020
@@ -2562,7 +2705,7 @@ entries:
   contributor: andrewbess
   profile: https://github.com/andrewbess
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
-    for the 1.0.4 Magento Quality Patch (MQP) package release.
+    for the 1.0.4 Quality Patches Tool release.
   versions: ''
   type: Major Update
   date: September 10, 2020

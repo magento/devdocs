@@ -699,7 +699,7 @@ Field | Data Type | Description
 `items` | [[ProductSearchItem]](#ProductSearchItem) | An array of products returned by the query
 `page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | Contains information for rendering pages of search results
 `related_terms` | [String] | Reserved for future use
-`suggestions` | [String] | An array of product and category names in the catalog that are similar to the search query. A maximum of five items are returned
+`suggestions` | [String] | An array of product URL keys that are similar to the search query. A maximum of five items are returned
 `total_count` | Int | The total number of items returned
 
 ### Aggregation data type {#Aggregation}

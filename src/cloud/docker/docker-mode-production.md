@@ -78,7 +78,7 @@ To launch the Docker environment in production mode:
    docker-compose restart
    ```
 
-1. Access the local Magento Cloud template by opening one of the following URLs in a browser:
+1. Access the local storefront by opening one of the following URLs in a browser:
 
    -  `http://magento2.docker`
 

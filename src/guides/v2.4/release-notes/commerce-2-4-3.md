@@ -1256,7 +1256,7 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 <!--- ENGCOM-9073-->
 
-*  `ramsey/uuid` has been updated for compatibility with PHP 8.0. [GitHub-31777](https://github.com/magento/magento2/issues/31777), [GitHub-826](https://github.com/magento/magento2-functional-testing-framework/issues/8260
+*  `ramsey/uuid` has been updated for compatibility with PHP 8.0. [GitHub-31777](https://github.com/magento/magento2/issues/31777), [GitHub-826](https://github.com/magento/magento2-functional-testing-framework/issues/826)
 
 <!--- ENGCOM-8997-->
 

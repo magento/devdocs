@@ -44,11 +44,14 @@ Install the [Snowplow Analytics Debugger extension for Chrome](https://chrome.go
 
 1. Scroll down until you see **Context Data _n_**. Look for the storefront instance in the **Schema**.
 
-1. Verify that the [SaaS Environment ID](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html) is set correctly.
+1. Verify that the [SaaS Data Space ID](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html) is set correctly.
 
     ![Snowplow filter]({{ page.baseurl }}/recommendations/images/snowplow-filter.png)
 
 If you run into any problems verifying that the events are collected and sent to Magento, [contact support](https://support.magento.com/hc/en-us).
+
+{:.bs-callout-info}
+A value of `Data validity : NOT FOUND` in the debugger indicates an internal schema. The Snowplow Chrome plugin cannot validate the events with an internal schema. This has no impact on actual functionality.
 
 ## Verify events are firing correctly
 

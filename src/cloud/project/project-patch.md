@@ -82,7 +82,7 @@ Magento 2 Enterprise Edition, version 2.3.5.0
 The status table contains the following types of information:
 
 -  **Type**:
-   -  `Optional`—All patches from the Quality Patches Tool and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations. For {{ site.data.var.ece }}, all MQP patches are optional.
+   -  `Optional`—All patches from the Quality Patches Tool and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations. For {{ site.data.var.ece }}, all patches are optional.
    -  `Required`—All patches from the {{ site.data.var.mcp-prod }} package are required for Cloud customers.
    -  `Deprecated`—The individual patch is marked as deprecated and we recommend reverting it if you have applied it. After you revert a deprecated patch, it will no longer be displayed in the status table.
    -  `Custom`—All patches from the 'm2-hotfixes' directory.

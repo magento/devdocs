@@ -257,7 +257,7 @@ this.element.on('click', function() {
 ```js
 options {
  deleteAction:  '[data-action="delete"]',
- tooltip: '[data-role="tooltip]'
+ tooltip: '[data-role="tooltip"]'
 }
 ...
 this.element.find(this.options.deleteAction).on( ... );

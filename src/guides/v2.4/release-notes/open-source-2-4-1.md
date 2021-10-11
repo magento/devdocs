@@ -1384,7 +1384,7 @@ _Fix submitted by Michał Derlatka in pull request [29256](https://github.com/ma
 
 <!-- ENGCOM-7593 -->
 
-*  Test coverage has been added for these cases of the `updateCustomer` mutation: invalid date of birth, invalid email address, and empty customer last name. _Fix submitted by Alexander Taranovsky in pull request [28304](https://github.com/magento/magento2/pull/28304)_. [GitHub-28394](https://github.com/magento/magento2/issues/28394
+*  Test coverage has been added for these cases of the `updateCustomer` mutation: invalid date of birth, invalid email address, and empty customer last name. _Fix submitted by Alexander Taranovsky in pull request [28304](https://github.com/magento/magento2/pull/28304)_. [GitHub-28394](https://github.com/magento/magento2/issues/28394)
 
 <!--- MC-30844-->
 

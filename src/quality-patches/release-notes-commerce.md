@@ -18,6 +18,15 @@ For information about quality patches created by the community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.3
+
+-  **MDVA-40262** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where GraphQL search queries are not shown in popular search terms in the admin.
+-  **MDVA-40601** _(for Adobe Commerce and Magento Open Source `>=2.3.1 <=2.4.2-p2`)_-Fixes the issue where users get an error when trying to get information about category changed by scheduled update through GraphQL.
+-  **MDVA-37234** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.4.0 || >=2.4.1 <=2.4.2-p2`)_-Fixes the issue where adding an item to the cart multiple times (parallel request) for the same SKU creates a duplicate line item for the same cart ID.
+-  **MDVA-33606** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <=2.4.2-p2`)_-Fixes the issue where users get a “Unique constraint violation” error when saving a CMS page assigned to a hierarchy.
+-  **MDVA-31590** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <=2.4.1-p1`)_-Fixes the issue where users are not able to update attributes in bulk using MySQL async queues.
+-  **MDVA-36309** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <=2.4.2-p2`)_-Fixes the issue where product search by attributes is slow in the admin grids.
+
 ## v1.1.2
 
 -  **MDVA-38929** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where the invoice with FPT shows a wrong Grand Total when the order is paid from the store credit.

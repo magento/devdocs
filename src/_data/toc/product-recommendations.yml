@@ -32,6 +32,10 @@ pages:
   url: /recommendations/customize.html
   versionless: true
 
+- label: Integrate Product Recommendations into your Headless Storefront
+  url: /recommendations/headless.html
+  versionless: true
+
 - label: Recommendations SDK
   url: /recommendations/recs-api.html
   versionless: true

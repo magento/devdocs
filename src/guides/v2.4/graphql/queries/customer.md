@@ -64,7 +64,7 @@ The following call returns information about the logged-in customer. Provide the
          "region": {
            "region_code": "MI",
            "region": "Michigan"
-         }
+         },
          "postcode": "78758",
          "country_code": "US",
          "telephone": "512 555-1212"

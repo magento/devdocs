@@ -12,9 +12,9 @@ Google reCAPTCHA provides a greater level of security for both the storefront an
 
 Google reCAPTCHA reduces potential user error when entering a Captcha code and encourages cart conversion without adding hurdles during checkout.
 
-## Install Mmdule
+## Install Module
 
-The Google reCAPTCHA extension is bundled and installed with {{site.data.var.ce}} and {{site.data.var.ee}} 2.3.x.
+The Google reCAPTCHA extension is bundled and installed with {{site.data.var.ce}} and {{site.data.var.ee}} 2.3.x or later.
 
 ## Configure reCAPTCHA
 
@@ -29,4 +29,10 @@ The extension supports a command line option for disabling reCAPTCHA. Use this c
 
 ```bash
 bin/magento security:recaptcha:disable-for-user-login
+```
+
+You can disable Google reCAPTCHA for the Admin reset password page from the command line:
+
+```bash
+bin/magento security:recaptcha:disable-for-user-forgot-password
 ```
