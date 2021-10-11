@@ -4,7 +4,7 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Oct 4 14:38:45 2021
+updated: Mon Oct 11 14:51:53 2021
 entries:
 - description: Added release notes for the 2.4.3-p1 and 2.3.7-p2 Adobe Commerce releases.
     See [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
@@ -45,6 +45,44 @@ entries:
   labels:
   - Major Update
   - 2.3.x
+- description: Added a reference topic for the [list of events](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/event-list.html).
+  versions: 2.4.x
+  type: New Topic
+  date: October 7, 2021
+  link: https://github.com/magento/devdocs/pull/9098
+  merge_commit: 81ded6faff76081405e26021269cc8d66eb302a2
+  contributor: goivvy
+  membership: false
+  labels:
+  - New Topic
+  - Special achievement
+  - 2.4.x
+  - 'Progress: done'
+- description: Updated the [Module reference guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html),
+    version 2.3. Now it contains all the modules included in the B2B with Adobe Commerce
+    edition.
+  versions: 2.3.7
+  type: Major Update
+  date: October 4, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2562
+  merge_commit: c815b7a02dab7764acbe00b28632760bd2ddd7f1
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.7
+- description: Added a topic about how to [implement Product Recommendations on a
+    headless storefront](https://devdocs.magento.com/recommendations/headless.html).
+  versions: 2.4.x
+  type: New Topic
+  date: October 4, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2532
+  merge_commit: 352c25212c008fe4004982c72554c9c20b0479de
+  contributor: erikmarr
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.x
 - description: Fixed [backward incompatible changes for 2.4.2-2.4.3](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#242---243).
     The topic showed data for 2.4.1-2.4.2 instead.
   versions: 2.4.3
