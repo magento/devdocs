@@ -6,8 +6,8 @@ link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
 updated: Mon Oct 4 14:38:45 2021
 entries:
-- description: Added release notes for the Adobe commerce 2.4.3-p1 and Adobe Commerce
-    2.3.7-p2 releases. See [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
+- description: Added release notes for the 2.4.3-p1 and 2.3.7-p2 Adobe Commerce releases.
+    See [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
     and [2.3 Release Information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).
   versions: 2.4.3, 2.3.7
   type: Major Update
@@ -34,7 +34,7 @@ entries:
   - 2.4.3
   - 2.3.7
 - description: Expanded [GraphQL security configuration](https://devdocs.magento.com/guides/v2.3/graphql/security-configuration.html)
-    to include to include configuration of the GraphQl module.
+    to include configuration of the GraphQL module.
   versions: 2.3.x
   type: Major Update
   date: October 12, 2021
