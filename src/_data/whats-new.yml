@@ -4,8 +4,32 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Sep 20 16:02:49 2021
+updated: Mon Oct 4 14:38:45 2021
 entries:
+- description: Fixed [backward incompatible changes for 2.4.2-2.4.3](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html#242---243).
+    The topic showed data for 2.4.1-2.4.2 instead.
+  versions: 2.4.3
+  type: Technical
+  date: September 23, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2547
+  merge_commit: 9f28563f024a27d3f541deac50179c69194e1824
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Technical
+  - 2.4.3
+- description: Updated [`magento-cloud` reference](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-cloud.html)
+    (1.38.1).
+  versions: 2.x
+  type: Technical
+  date: September 22, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2544
+  merge_commit: e4563f2b1c7caeebe44cddb3acda037a0ecd5a3f
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.x
+  - Technical
 - description: Added the [The built-in Upgrade Compatibility Tool (MVP)](https://devdocs.magento.com/guides/v2.4/ext-best-practices/phpstorm/built-in-upgrade-compatibility-tool.html)
     topic.
   versions: 2.4.x

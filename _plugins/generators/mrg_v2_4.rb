@@ -6,8 +6,6 @@
 # This plugin generates module-specific topics in the 'guides/v2.4/mrg'.
 # It takes data from files in '_data/codebase/mrg' and generates
 # a virtual .md page for it with the same name.
-# The content in data is generated internally from
-# modules' READMEs of magento2ce, magento2ee, magento2b2b repositories.
 #
 
 module Jekyll

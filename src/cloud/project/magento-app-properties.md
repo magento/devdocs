@@ -217,12 +217,11 @@ Once your site has data, do not change the `subpath` portion of the mount name. 
 
 Enables you to specify dependencies that your application might need during the build process.
 
-{{site.data.var.ee}} supports dependencies on the following
-languages:
+{{site.data.var.ee}} supports dependencies on the following languages:
 
 -  PHP
 -  Ruby
--  NodeJS
+-  Node.js
 
 Those dependencies are independent of the eventual dependencies of your application, and are available in the `PATH`, during the build process and in the runtime environment of your application.
 

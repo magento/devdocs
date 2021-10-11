@@ -360,4 +360,4 @@ var foo = 'bar',
 [jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
 [eslint]: http://eslint.org/
 [eslint-rules]: https://github.com/magento/magento-coding-standard/blob/develop/eslint/.eslintrc-magento
-[jscs-rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc
+[jscs-rules]: https://github.com/magento/magento-coding-standard/blob/develop/jscs/.jscsrc
