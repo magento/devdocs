@@ -31,10 +31,6 @@ The following example shows the request/response body for retrieving all profile
 |-------------|-----|-----------------|
 |send_newsletter|boolean|Whether to receive emails about policies and announcements|
 
-|Selected Fields|Type|Description|
-|-------------|-----|-----------------|
-|send_newsletter|boolean|Whether to receive emails about policies and announcements|
-
 **Request:**
 
 ```bash
