@@ -108,11 +108,11 @@ bin/magento security:tfa:reset <user> <provider>
 For example:
 
 ```bash
-bin/magento msp:security:tfa:reset admin google
+bin/magento security:tfa:reset admin google
 ```
 
 ```bash
-bin/magento msp:security:tfa:reset admin u2fkey
+bin/magento security:tfa:reset admin u2fkey
 ```
 
 ### Advanced emergency steps
