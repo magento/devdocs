@@ -6,6 +6,45 @@ link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
 updated: Mon Oct 11 14:51:53 2021
 entries:
+- description: Added release notes for the 2.4.3-p1 and 2.3.7-p2 Adobe Commerce releases.
+    See [2.4 Release Information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
+    and [2.3 Release Information](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html).
+  versions: 2.4.3, 2.3.7
+  type: Major Update
+  date: October 12, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2558
+  merge_commit: 49f0b0cd0aa5886aa0de6f95d4e2659bb335e044
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+  - 2.3.7
+- description: Added a [backwards incompatible change](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/)
+    that describes changes to Media Gallery folders.
+  versions: 2.4.3, 2.3.7
+  type: Major Update
+  date: October 12, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2488
+  merge_commit: 38eb1ac8bd936a9bb8747dba2f1421e9a9f35876
+  contributor: dobooth
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.3
+  - 2.3.7
+- description: Expanded [GraphQL security configuration](https://devdocs.magento.com/guides/v2.3/graphql/security-configuration.html)
+    to include configuration of the GraphQL module.
+  versions: 2.3.x
+  type: Major Update
+  date: October 12, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2511
+  merge_commit: c980768f7a022ebe848cc1019896d3084476f259
+  contributor: keharper
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
 - description: Added a reference topic for the [list of events](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/event-list.html).
   versions: 2.4.x
   type: New Topic
