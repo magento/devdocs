@@ -7,9 +7,9 @@ Adobe Commerce and Magento Open Source compiles catalog data into tables using i
 
 ## Sync catalog data
 
-To use the catalog sync command, you must have an [API key and a SaaS Data Space configured](https://docs.magento.com/user-guide/system/saas.html). If you do not have an API key and have not configured a SaaS Data Space, you can still reindex product data but that data will not be exported to Commerce services.
+To synchronize catalog data, you must have an [API key and a SaaS Data Space configured](https://docs.magento.com/user-guide/system/saas.html). If you do not have an API key and have not configured a SaaS Data Space, you can still reindex product data but that data will not be exported to Commerce services.
 
-The command used to sync catalog data is part of the `magento/saas-export` package. See [Install and configure Product Recommendations]({{ site.baseurl }}/recommendations/install-configure.html) for more information.
+The `saascatalog:resync` command is part of the `magento/saas-export` package. See [Install and configure Product Recommendations]({{ site.baseurl }}/recommendations/install-configure.html) for more information.
 
 See the [user guide](https://docs.magento.com/user-guide/system/catalog-sync.html) to learn how to use the Catalog Sync dashboard in the Admin UI to observe and manage the Commerce to SaaS syncing process.
 
