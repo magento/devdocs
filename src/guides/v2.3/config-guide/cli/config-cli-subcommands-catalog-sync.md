@@ -28,11 +28,14 @@ The following table explains this command’s parameters and descriptions.
 |---| ---| ---|
 |`feed`| Specifies which entity to resync, such as `products`|Yes|
 |`no-reindex`| Resubmits the existing catalog data to Commerce services without reindexing. When this parameter is not specified, the command runs a full reindex before syncing data.|No|
-|`products`| Products in your catalog| No|
-|`categories`| Categories in your catalog| No|
-|`variants`| Product variations of a configurable product, such as color and size| No|
-|`productattributes`| Product attributes such as `activity`, `gender`, `tops`, `bottoms`, and so on| No|
-|`productoverrides`| Customer-specific pricing and catalog visibility rules, such as those based on category permissions| No|
+
+The feed name can be one of the following:
+
+-  `products`-- Products in your catalog
+-  `categories`-- Categories in your catalog
+-  `variants`-- Product variations of a configurable product, such as color and size
+-  `productattributes`-- Product attributes such as `activity`, `gender`, `tops`, `bottoms`, and so on
+-  `productoverrides`-- Customer-specific pricing and catalog visibility rules, such as those based on category permissions
 
 ### Examples
 
@@ -47,5 +50,3 @@ If you do not want to run a full reindex of the products, you can instead sync t
 ```bash
 bin/magento saascatalog:resync --feed products --no-reindex
 ```
-
-Substitute `--feed products` with the type of catalog information you want to resync, such as `--feed categories`, `--feed productattributes`, and so on.
