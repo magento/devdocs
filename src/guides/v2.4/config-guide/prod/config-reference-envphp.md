@@ -12,6 +12,7 @@ The `env.php` file contains the following sections:
 | Name                          | Description                                                     |
 |-------------------------------|-----------------------------------------------------------------|
 | `backend`                     | Settings for the Admin area                                     |
+| `cache`                       | Configure redis page and default cache                          |
 | `cache_types`                 | Cache storage settings                                          |
 | `consumers_wait_for_messages` | Configure how consumers process messages from the message queue |
 | `cron`                        | Enable or disable the cron jobs                                 |
@@ -26,6 +27,7 @@ The `env.php` file contains the following sections:
 | `resource`                    | Mapping of resource name to a connection                        |
 | `session`                     | Session storage data                                            |
 | `x-frame-options`             | Setting for [x-frame-options][x-frame-options]                  |
+| `system`                      | Disables the field for editing in Admin                         |
 
 ## backend
 
@@ -36,6 +38,36 @@ Configure the **frontName** for the Magento admin url using the `backend` node i
   'frontName' => 'admin'
 ]
 ```
+
+## cache
+
+Configure redis page and default caching by using `cache` node in env.php.
+
+```conf
+'cache' => [
+    'frontend' => [
+        'default' => [
+            'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
+            'backend_options' => [
+                'server' => '127.0.0.1',
+                'database' => '0',
+                'port' => '6379'
+            ],
+        ],
+        'page_cache' => [
+            'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
+            'backend_options' => [
+                'server' => '127.0.0.1',
+                'port' => '6379',
+                'database' => '1',
+                'compress_data' => '0'
+            ]
+        ]
+    ]
+]
+```
+
+Learn more in [Redis Configuration][redis-config].
 
 ## cache_types
 
@@ -227,6 +259,23 @@ x-frame-options header can be configured using this node.
 
 Learn more about session in [x-frame-options][x-frame-options].
 
+## system
+
+Using this node, Magento locks the configuration values in `env.php` and then disables the field for editing in Admin.
+
+```conf
+'system' => [
+  'default' => [
+    'web' => [
+      'secure' => [
+          'base_url' => 'https://magento.test/'
+      ]
+    ]
+  ]
+```
+
+Learn more in [env-php-config-set][env-php-config-set].
+
 <!-- Link definitions -->
 [lock-provider-config]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html
 [encryption-key]: https://docs.magento.com/m2/ce/user_guide/system/encryption-key.html
@@ -240,3 +289,5 @@ Learn more about session in [x-frame-options][x-frame-options].
 [downloadable-domains]: {{ page.baseurl }}/reference/cli/magento.html#downloadabledomainsadd
 [change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
 [crons]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html
+[env-php-config-set]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html
+[redis-config]: {{ page.baseurl }}/config-guide/redis/redis-pg-cache.html
