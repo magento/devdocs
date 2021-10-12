@@ -16,6 +16,11 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.3.5 of magento/product-recommendations for {{site.data.var.ee}} 2.4.0
+
+-  {:.new}Added full [B2B support](https://docs.magento.com/user-guide/marketing/prex-type-convcart.html#b2bsupport) in Product Recommendations
+-  {:.new}Added new feeds to [sync catalog to Commerce services via the command line]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-catalog-sync.html)
+
 ## 3.3.3 of magento/product-recommendations for {{site.data.var.ee}} 2.4.0
 
 -  {:.new}Added new recommendation types: [Conversion (view to cart)](https://docs.magento.com/user-guide/marketing/prex-type-convcart.html), [Conversion (view to purchase)](https://docs.magento.com/user-guide/marketing/prex-type-convpurchase.html), and [Recently viewed](https://docs.magento.com/user-guide/marketing/prex-type-recentview.html). Note that these new recommendation types are available in the `magento/product-recommendations` module 3.2.2 and later.
