@@ -6,19 +6,20 @@ title: Adobe Commerce 2.4.4 Release Notes
 {{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
 {:.bs-callout-info}
-Adobe Commerce 2.4.4-beta 1 has been tested against the following component versions:
-
-Elasticsearch 7.9
-MariaDB 10.4.14
-MySQL 8.0.22
-PHP 7.4
-Redis 6.0.12
-Varnish 6.5.1
-
-Vendor-developed extensions have not been removed from Adobe Commerce 2.4.4-beta 1.
-
-{:.bs-callout-info}
 Quarterly releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains  backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
+
+## Adobe Commerce 2.4.4-beta1
+
+Adobe Commerce 2.4.4-beta1 has been tested against the following component versions:
+
+*  Elasticsearch 7.9
+*  MariaDB 10.4.14
+*  MySQL 8.0.22
+*  PHP 7.4
+*  Redis 6.0.12
+*  Varnish 6.5.1
+
+Vendor-developed extensions have not been removed from Adobe Commerce 2.4.4-beta1.
 
 ## Other release information
 
@@ -27,36 +28,35 @@ Although code for these features is bundled with quarterly releases of the Magen
 ## Highlights
 
 Look for the following highlights in this release.
-### Infrastructure improvements
-
-This release contains enhancements that improve the quality of the framework and the following functional areas:
 
 ### Platform enhancements
 
-Magento 2.4.4 introduces compatibility with PHP 8.1. Adobe Commerce 2.4.4-beta 1 includes the following platform upgrades:
+Adobe Commerce 2.4.4-beta1 includes the following platform upgrades:
 
 *  Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. <!--- AC-35-->
 
 *  The `RequireJS` library has been upgraded to the latest version (v2.3.6). [GitHub-33672](https://github.com/magento/magento2/issues/33672) <!--- AC-40 422-->
 
-*  `phpunit/phpunit` Composer dependency to the latest version (v9.5.*). Refactor codebase to eliminate calls deprecated methods of the `phpunit/phpunit`. <!--- AC-404-->
+*  `phpunit/phpunit` Composer dependency to the latest version (v9.5.*). The code base has been refactored to eliminate calls deprecated methods of the `phpunit/phpunit`. <!--- AC-404-->
+
+*  TinyMCE_5 is now supported. <!--- AC-41-->
 
 *  The following libraries have been upgraded to their latest versions:
 
-`script.aculo.us` <!--- AC-363-->
-`ExtJS` <!--- AC-362-->
-`Chart.js`  <!--- AC-361-->
-`moment.js` <!--- AC-11-->
-`moment-timezone-with-data.js`   <!--- AC-10-->
-`matchMedia.js` <!--- AC-8-->
-`underscore.js`  <!--- AC-13-->
-`PrototypeJS`  <!--- AC-17-->
+   *  `script.aculo.us` <!--- AC-363-->
+   *  `ExtJS` <!--- AC-362-->
+   *  `Chart.js`  <!--- AC-361-->
+   *  `moment.js` <!--- AC-11-->
+   *  `moment-timezone-with-data.js`   <!--- AC-10-->
+   *  `matchMedia.js` <!--- AC-8-->
+   *  `underscore.js`  <!--- AC-13-->
+   *  `PrototypeJS`  <!--- AC-17-->
 
 *  The following libraries have been removed from core code dependencies:
 
-`es6-collections.js`   <!--- AC-18-->
-`MutationObserver.js` <!--- AC-15-->
-`Modernizr` <!--- AC-12-->
+   *  `es6-collections.js`   <!--- AC-18-->
+   *  `MutationObserver.js` <!--- AC-15-->
+   *  `Modernizr` <!--- AC-12-->
 
 ### Performance enhancements
 
@@ -119,7 +119,6 @@ We are fixing hundreds of issues in the Magento 2.4.4 core code.
 *  The `products` query now filters bundled products correctly when child products are disabled on the store-view level. Previously, the query returned child products that were disabled at the store-view level.
 
 <!--- MC-42811-->
-
 
 ### Cache
 
@@ -344,6 +343,7 @@ We are fixing hundreds of issues in the Magento 2.4.4 core code.
 <!--- MC-42528-->
 
 *  The GraphQL `categoryList` query now respects category permissions and returns only permitted categories. Previously, it returned all assigned and unassigned categories.
+
 ### Image
 
 <!--- MC-42892-->
@@ -448,7 +448,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-493-->
 
-*  `bin/magento setup:upgrade` now runs as expected when upgrading from Adobe Commerce 2.4.2-p1. Previously, Magento threw this error: `{{Unable to apply data patch Magento\Paypal\Setup\Patch\Data\UpdateBmltoPayLater for module Magento_Paypal`. [GitHub-33678](https://github.com/magento/magento2/issues/33678)
+*  `bin/magento setup:upgrade` now runs as expected when upgrading from Adobe Commerce 2.4.2-p1. Previously, Magento threw this error: `Unable to apply data patch Magento\Paypal\Setup\Patch\Data\UpdateBmltoPayLater for module Magento_Paypal`. [GitHub-33678](https://github.com/magento/magento2/issues/33678)
 
 <!--- MC-42830-->
 
@@ -646,8 +646,6 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-42399-->
 
-*  `rest/V1/company/{id}` now returns `is_purchase_order_enabled` attribute values as expected.
-
 <!--- MC-42008-->
 
 *  Web API requests for self-authorized customer resources no longer throw authorization error when the persistent shopping cart is enabled.
@@ -677,18 +675,6 @@ Repetitive actions have been replaced with action groups in these tests:
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
 The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
-
-### Partner contributions
-
-The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
-
-{% include release-notes/engcomm-2-4-4-partner.md %}
-
-### Individual contributor contributions
-
-The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
-
-{% include release-notes/engcomm-2-4-4-issues.md %}
 
 ### System requirements
 
