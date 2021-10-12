@@ -175,6 +175,12 @@ Service logs are archived and saved for different periods of time, depending on 
 {:.bs-callout-tip}
 Log file locations in the scaled architecture depend on the node type. See [Log locations in the Scaled architecture][scaled] topic.
 
+
+## Related topics in our support knowledge base
+
+-  [Most common database issues in Adobe Commerce on cloud infrastructure](https://support.magento.com/hc/en-us/articles/360041739651-Most-common-database-issues-in-Magento-Commerce-Cloud)
+-  [Adobe Commerce deployment troubleshooter](https://support.magento.com/hc/en-us/articles/360040986912-Magento-deployment-troubleshooter)
+
 <!--Link definitions-->
 
 [configlog]: {{site.baseurl}}/guides/v2.3/config-guide/cli/logging.html
@@ -184,7 +190,3 @@ Log file locations in the scaled architecture depend on the node type. See [Log 
 [slacklog]: {{site.baseurl}}/cloud/env/setup-notifications.html
 [scaled]: {{site.baseurl}}/cloud/architecture/scaled-architecture.html#log-locations
 
-## Related topics in our support knowledge base
-
--  [Most common database issues in Adobe Commerce on cloud infrastructure](https://support.magento.com/hc/en-us/articles/360041739651-Most-common-database-issues-in-Magento-Commerce-Cloud)
--  [Adobe Commerce deployment troubleshooter](https://support.magento.com/hc/en-us/articles/360040986912-Magento-deployment-troubleshooter)
