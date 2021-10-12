@@ -55,7 +55,7 @@ The script option settings determine the PHP version and {{site.data.var.mcd-pro
 {: .install-script-options}
 Option | Description
 :----- | :------
-`-p`, `--php` | PHP version (for installing dependencies). You must specify a PHP version that is compatible with the {{site.data.var.ee}} version deployed to the Cloud Docker envrionment. Defaults to `7.2`
+`-p`, `--php` | PHP version (for installing dependencies). You must specify a PHP version that is compatible with the {{site.data.var.ee}} version deployed to the Cloud Docker environment. Defaults to `7.2`
 `-i`, `--image` |  {{site.data.var.mcd-prod}} image version (for installing dependencies). Defaults to `1.1`
 `--host` | Domain name to add to the `/etc/hosts` file. Defaults to `magento2.docker`
 `--add-host` | Add domain name to `/etc/hosts` file. Defaults to true (`yes`)
