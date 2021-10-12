@@ -18,8 +18,8 @@ The release notes include:
 
 ## 3.3.5 of magento/product-recommendations for {{site.data.var.ee}} 2.4.0
 
--  {:.new}Added full [B2B support](https://docs.magento.com/user-guide/marketing/product-recommendations.html#b2bsupport) in Product Recommendations
--  {:.new}Added new feeds to [sync catalog to Commerce services via the command line]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-catalog-sync.html)
+-  {:.new}Added [B2B support](https://docs.magento.com/user-guide/marketing/product-recommendations.html#b2bsupport) in Product Recommendations
+-  {:.new}Added new feeds to [sync catalog data to Commerce services via the command line]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-catalog-sync.html)
 
 ## 3.3.3 of magento/product-recommendations for {{site.data.var.ee}} 2.4.0
 
