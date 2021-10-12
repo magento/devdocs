@@ -6,20 +6,24 @@ pages:
       versionless: true
 
       children:
+        - label: Backward compatible development
+          url: /contributor-guide/backward-compatible-development/
+          versionless: true
+        
         - label: Commerce Definition of Done
           url: /contributor-guide/contributing_dod.html
           versionless: true
 
-        - label: Backward compatible development
-          url: /contributor-guide/backward-compatible-development/
-          versionless: true
-
-        - label: Pull Request Tests
-          url: /contributor-guide/pull-request-tests.html
+        - label: Github Issue Processing Workflow
+          url: /contributor-guide/processing-workflow.html
           versionless: true
 
         - label: PHPStorm plugin code inspections
           url: /contributor-guide/phpstorm-code-inspections.html
+          versionless: true
+        
+        - label: Pull Request Tests
+          url: /contributor-guide/pull-request-tests.html
           versionless: true
 
     - label: Docs Contributions
