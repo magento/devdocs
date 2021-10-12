@@ -68,7 +68,7 @@ You can run the following commands to find values for some required arguments:
 | ------------------ | ------------------------------- |
 | Language           | magento info:language:list      |
 | Currency           | magento info:currency:list      |
-| Time zone          | php  magento info:timezone:list |
+| Time zone          | magento info:timezone:list      |
 
  {:.bs-callout-info}
 If an error displays when you run these commands, verify that you updated installation dependencies as discussed in [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html).
