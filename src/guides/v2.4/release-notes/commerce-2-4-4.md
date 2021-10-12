@@ -3,7 +3,7 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
-{{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1 and Elasticsearch 7.10. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
+{{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
 {:.bs-callout-info}
 Adobe Commerce 2.4.4-beta 1 has been tested against the following component versions:
