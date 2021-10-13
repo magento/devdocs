@@ -29,15 +29,18 @@ type='warning'
 content='If you have received this error, Magento is in an inconsistent state, and you cannot access the Admin. We recommend that you revert to your previous version of Magento while you resolve this error. To do this, run one of the following commands:
 
 ```bash
-composer require magento/product-enterprise-edition=<version>
+composer require-commerce magento/product-enterprise-edition=<version>
 ```
 
 ```bash
-composer require magento/product-community-edition=<version>
+composer require-commerce magento/product-community-edition=<version>
 ```
 
 where `<version>` is the version of Magento you were running **before** the upgrade. For example, `2.3.5`.'
 %}
+
+{:.bs-callout-warning}
+As of version 2.4.4, you must [install the `require-commerce`]({{page.baseurl}}/comp-mgr/cli/cli-upgrade.html) Composer plugin. If you are attempting to upgrade to an earlier version, run the `composer require magento/product-enterprise-edition=<version>` or `composer require magento/product-community-edition=<version>` command instead.
 
 Follow the guidelines described in the following sections to recover from Magento's inconsistent state.
 

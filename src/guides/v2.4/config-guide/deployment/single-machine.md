@@ -40,7 +40,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 1. Apply updates to Magento or its components using the following command pattern:
 
    ```bash
-   composer require <package> <version> --no-update
+   composer require-commerce <package> <version> --no-update
    ```
 
    **package**: The name of the package you want to update.
