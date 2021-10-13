@@ -86,6 +86,7 @@ The example below shows the construction of a `\Magento\Framework\FlagFactory` o
 ```php
 $flag = $this->flagFactory->create([
   'data' =>  ['flag_code' => 'something']
+]);
 ```
 
 The `Flag` class has a `$data` constructor parameter which corresponds to the data key in the `create` array above.
