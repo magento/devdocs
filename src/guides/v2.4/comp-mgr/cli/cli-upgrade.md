@@ -85,7 +85,7 @@ See the examples at the end of this section for help specifying different releas
 
    `<product>` - (Required) The package to upgrade. For on-premise installations, this value must either `product-community-edition` or `product-enterprise-edition`.
 
-   `<version>` - (Required) The version of {{site.data.var.ce}} or {{site.data.var.ce}} you are upgrading to. For example, `2.4.4`.
+   `<version>` - (Required) The version of {{site.data.var.ce}} or {{site.data.var.ce}} you are upgrading to. For example, `2.4.3`.
 
    `--interactive-root-conflicts` - (Optional) Allows you to interactively view and update any out-of-date values that may be remaining from previous versions.
 
@@ -104,13 +104,13 @@ See the examples at the end of this section for help specifying different releas
    _{{ ce }}_:
 
    ```bash
-   composer require-commerce magento/product-community-edition={{ page.guide_version }}.4 --no-update
+   composer require-commerce magento/product-community-edition=2.4.3 --no-update
    ```
 
    _{{ ee }}_:
 
    ```bash
-   composer require-commerce magento/product-enterprise-edition={{ page.guide_version }}.4 --no-update
+   composer require-commerce magento/product-enterprise-edition=2.4.3 --no-update
    ```
 
    <div class="bs-callout-tip" markdown="1">
@@ -119,13 +119,13 @@ See the examples at the end of this section for help specifying different releas
    _{{ ce }}_:
 
    ```bash
-   composer show magento/product-community-edition {{ page.guide_version }}.* --available | grep -m 1 versions
+   composer show magento/product-community-edition 2.4.* --available | grep -m 1 versions
    ```
 
    _{{ ee }}_:
 
    ```bash
-   composer show magento/product-enterprise-edition {{ page.guide_version }}.* --available | grep -m 1 versions
+   composer show magento/product-enterprise-edition 2.4.* --available | grep -m 1 versions
    ```
 
    </div>
