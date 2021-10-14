@@ -42,7 +42,7 @@ There are three major BICs related to TinyMCE in 2.4.4, including:
 
 -  Renamed TinyMCE4 to tinymce
 -  Refactored TinyMCE MFTF tests
--  Refactored TinyMCE4 for MFTF test
+-  Refactored TinyMCE4 MFTF tests
 
 #### Renamed `tinymce4` to `tinymce`
 
@@ -75,7 +75,7 @@ You are impacted by these changes if:
 
 If these changes impact you, update all tests that use duplicated elements.
 
-#### Refactored TinyMCE4 for MFTF test
+#### Refactored TinyMCE4 MFTF tests
 
 To simplify current and future upgrades to the next version of TinyMCE, we refactored TinyMCE4 MFTF in the following ways:
 
