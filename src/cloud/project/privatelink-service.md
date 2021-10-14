@@ -63,6 +63,7 @@ Enabling PrivateLink can take up to _five_ business days. Providing incomplete o
    -  **Connection type**–Specify unidirectional or bidirectional for connection type
    -  **Endpoint service**–For bidirectional PrivateLink connections, provide the DNS URL for the VPC endpoint service that Adobe must connect to, for example: `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`
    -  **Endpoint service access granted**-Provide the Adobe account principal with access to this endpoint service: `arn:aws:iam::402592597372:root`
+      
       If access to the endpoint service is not provided, the bidirectional PrivateLink connection to the service in your VPC is **not** added, which delays the setup.
 
 ### Enablement workflow
@@ -121,7 +122,7 @@ To test the connection to the VPC endpoint service:
    magento-cloud login
    ```
 
-1. From the project root directory, **checkout** the the Staging or Production environment configured to access the PrivateLink endpoint service.
+1. From the project root directory, **checkout** the Staging or Production environment configured to access the PrivateLink endpoint service.
 
    ```bash
    magento-cloud environment:checkout <environment-id>
@@ -174,7 +175,7 @@ To test the connection to the VPC endpoint service:
    -  The target groups in NLB and verify they are healthy
    -  The netcat/curl endpoint URL from each VM ( listed above)
 
-   See the following articles for help troubleshooting connection issues:
+   See the following articles for help with troubleshooting connection issues:
 
    -  [AWS: Troubleshooting endpoint service connections][]
    -  [Amazon: Troubleshooting Azure Private Link connectivity problems][]
