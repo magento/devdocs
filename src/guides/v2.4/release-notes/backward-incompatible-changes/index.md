@@ -13,10 +13,10 @@ A new "Enable Inventory Check On Cart Load" system configuration option has been
 
 Disabling the inventory check can improve performance for checkout steps, especially when there are many items in the cart. But if this inventory check is skipped, some out-of-stock scenarios could throw other types of errors, including:
 
--  `The requested qty is not available`
--  `Unable to place order: Enter a valid payment method and try again.`
--  `Unable to place order: There are no source items with the in stock status.`
--  `The shipping method is missing. Selefct the shipping method and try again.`
+*  `The requested qty is not available`
+*  `Unable to place order: Enter a valid payment method and try again.`
+*  `Unable to place order: There are no source items with the in stock status.`
+*  `The shipping method is missing. Selefct the shipping method and try again.`
 
 The following table contains metrics of checkout with a large amount of products (750) and additional product by guest:
 
@@ -40,29 +40,29 @@ Checkout success | 270 | -0.4% | -1ms | ok
 
 There are three major BICs related to TinyMCE in 2.4.4, including:
 
--  Renamed TinyMCE4 to tinymce
--  Refactored TinyMCE MFTF tests
--  Refactored TinyMCE4 MFTF tests
+*  Renamed TinyMCE4 to tinymce
+*  Refactored TinyMCE MFTF tests
+*  Refactored TinyMCE4 MFTF tests
 
 #### Renamed `tinymce4` to `tinymce`
 
 Renaming `tinymce4` to `tinymce` removes the strict dependency on a version of TinyMCE from the code.
 The following changes could cause the WYSIWYG interface to break and not display on pages that use it in the Admin and break the Page Builder extension:
 
--  Renamed the array key in the TinyMCE [configuration provider]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Model/Wysiwyg/DefaultConfigProvider.php)
--  Renamed the alias in the [`requirejs-config.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/requirejs-config.js) file
--  Renamed a [Page Builder JavaScript file](https://github.com/magento/magento2-page-builder/blob/develop/app/code/Magento/PageBuilder/view/adminhtml/web/ts/js/wysiwyg/tinymce.ts) that was marked as API from `tinymce4.ts` to `tinymce.ts`
+*  Renamed the array key in the TinyMCE [configuration provider]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Model/Wysiwyg/DefaultConfigProvider.php)
+*  Renamed the alias in the [`requirejs-config.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/requirejs-config.js) file
+*  Renamed a [Page Builder JavaScript file](https://github.com/magento/magento2-page-builder/blob/develop/app/code/Magento/PageBuilder/view/adminhtml/web/ts/js/wysiwyg/tinymce.ts) that was marked as API from `tinymce4.ts` to `tinymce.ts`
 
 You are impacted by these changes if:
 
--  You use a custom configuration for TinyMCE that uses the `tinymce4` alias in `requirejs`
--  If you use the Page Builder Javascript file that was renamed in any other place than the `app/code/Magento/PageBuilder/etc/adminhtml/di.xml` file
+*  You use a custom configuration for TinyMCE that uses the `tinymce4` alias in `requirejs`
+*  If you use the Page Builder Javascript file that was renamed in any other place than the `app/code/Magento/PageBuilder/etc/adminhtml/di.xml` file
 
 If these changes impact you, take the following action:
 
--  Change the name of the array key in the TinyMCE configuration provider from `tinymce4` to `tinymce`
--  Change any `requirejs` file that uses the `tinymce4` alias to `tinymce`
--  Update anywhere that references the Page Builder JavaScript file that was renamed
+*  Change the name of the array key in the TinyMCE configuration provider from `tinymce4` to `tinymce`
+*  Change any `requirejs` file that uses the `tinymce4` alias to `tinymce`
+*  Update anywhere that references the Page Builder JavaScript file that was renamed
 
 #### Refactored TinyMCE MFTF tests
 
@@ -70,8 +70,8 @@ To simplifiy current and future upgrades to the next version of TinyMCE and decr
 
 You are impacted by these changes if:
 
--  You have tests that use elements (selectors) from duplicated sections
--  You have tests that extend core tests with TinyMCE
+*  You have tests that use elements (selectors) from duplicated sections
+*  You have tests that extend core tests with TinyMCE
 
 If these changes impact you, update all tests that use duplicated elements.
 
@@ -79,10 +79,10 @@ If these changes impact you, update all tests that use duplicated elements.
 
 To simplify current and future upgrades to the next version of TinyMCE, we refactored TinyMCE4 MFTF in the following ways:
 
--  Renamed the action group `CliEnableTinyMCE4ActionGroup` to `CliEnableTinyMCEActionGroup`
--  Replaced all references to "TinyMCE 4" in the test code base with `tinymce`
--  Create variable for adapter version
--  Change `stepKey` on each test
+*  Renamed the action group `CliEnableTinyMCE4ActionGroup` to `CliEnableTinyMCEActionGroup`
+*  Replaced all references to "TinyMCE 4" in the test code base with `tinymce`
+*  Create variable for adapter version
+*  Change `stepKey` on each test
 
 These changes can be break tests if you use or extend the TinyMCE4 MFTF tests, but they affect only functional tests (MFTF).
 
