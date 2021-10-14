@@ -18,6 +18,9 @@ Backups are stored in the `var/backups` directory and can be restored at any tim
 
 After backing up, you can [roll back](#instgde-cli-uninst-roll) at a later time.
 
+{:.bs-callout-tip}
+For {{site.data.var.ece}} projects, see [Snapshots and backup management](https://devdocs.magento.com/cloud/project/project-webint-snap.html) in the _Cloud guide_.
+
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).

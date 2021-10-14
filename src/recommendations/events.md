@@ -12,7 +12,7 @@ If shoppers use ad blockers or enable privacy settings that prevent the `magento
 If [Cookie Restriction Mode](https://docs.magento.com/m2/ce/user_guide/stores/compliance-cookie-restriction-mode.html) is enabled, Magento does not collect behavioral data until the shopper consents. If Cookie Restriction Mode is disabled, Magento collects behavioral data by default.
 
 Event | Category | Description
---- | ---
+--- | --- | ---
 `add-to-cart` | product | A product is added to the cart
 `add-to-wishlist` | product | A product is added to the wishlist
 `apply-discount-action` | shopping-cart | A discount code is applied to the cart

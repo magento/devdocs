@@ -105,6 +105,16 @@ If you need to manually reset a single user configuration, enter the following c
 bin/magento security:tfa:reset <user> <provider>
 ```
 
+For example:
+
+```bash
+bin/magento security:tfa:reset admin google
+```
+
+```bash
+bin/magento security:tfa:reset admin u2fkey
+```
+
 ### Advanced emergency steps
 
 {:.bs-callout-warning}

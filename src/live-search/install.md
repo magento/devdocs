@@ -154,7 +154,7 @@ In this scenario, Elasticsearch temporarily manages search requests from the sto
 
 ## Configure API keys
 
-The {{site.data.var.ee}} API key and its associated private key are required to connect Live Search to an installation of {{site.data.var.ee}}. The API key is generated and maintained in the account of the {{site.data.var.ee}} license holder, who can share it with the developer or SI. The developer can then create and manage the SaaS environments on behalf of the license-holder. For detailed instructions, see Commerce Services in the [User Guide](https://docs.magento.com/user-guide/system/saas.html) and [Configuration Reference](https://docs.magento.com/user-guide/configuration/services/saas.html).
+The {{site.data.var.ee}} API key and its associated private key are required to connect Live Search to an installation of {{site.data.var.ee}}. The API key is generated and maintained in the account of the {{site.data.var.ee}} license holder, who can share it with the developer or SI. The developer can then create and manage the SaaS Data Spaces on behalf of the license-holder. For detailed instructions, see Commerce Services in the [User Guide](https://docs.magento.com/user-guide/system/saas.html) and [Configuration Reference](https://docs.magento.com/user-guide/configuration/services/saas.html).
 
 ### {{site.data.var.ee}} license holder
 
@@ -162,7 +162,7 @@ To generate an API key and private key, see [Commerce Services](https://docs.mag
 
 ### {{site.data.var.ee}} developer or SI
 
-The developer or SI configures the SaaS environment as described in the Commerce Services section of the configuration. Commerce Services becomes available in the Admin Configuration sidebar when a SaaS module is installed.
+The developer or SI configures the SaaS Data Space as described in the Commerce Services section of the configuration. Commerce Services becomes available in the Admin Configuration sidebar when a SaaS module is installed.
 
 ## Synchronize catalog data
 
