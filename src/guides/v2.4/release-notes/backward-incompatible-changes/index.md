@@ -5,6 +5,37 @@ title: Magento 2.4 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
+## 2.4.4
+
+### Inventory check on cart load
+
+A new "Enable Inventory Check On Cart Load" system configuration option has been added to Admin > **Stores** > **Configuration** > **General** > **Catalog** > **Inventory** > **Stock Options**. The new option determines if an inventory check is performed when loading a product in the cart. It is enabled by default.
+
+Disabling the inventory check can improve performance for checkout steps, especially when there are many items in the cart. But if this inventory check is skipped, some out-of-stock scenarios could throw other types of errors, including:
+
+-  `The requested qty is not available`
+-  `Unable to place order: Enter a valid payment method and try again.`
+-  `Unable to place order: There are no source items with the in stock status.`
+-  `The shipping method is missing. Selefct the shipping method and try again.`
+
+The following table contains metrics of checkout with a large amount of products (750) and additional product by guest:
+
+Step | Absolute numbers | Percentage change | Change in milliseconds | Status
+-----|------------------|-------------------|--------------|-------
+Add Bulk Of Simple Products to Cart | 6260 | -0.7% | -41ms | ok
+Load Cart Section - Total: 750 | 788 | -49.2% | -762ms | improvement
+Configurable Product 1 Add To Cart - Total: 751 | 1566 | -32.3% | -748ms | improvement
+Load Cart Section - Total: 751 | 789 | -49.0% | -757ms | improvement
+Configurable Product 2 Add To Cart - Total: 752 | 1574 | -32.1% | -745ms | improvement
+Load Cart Section - Total: 752 | 793 | -48.6% | -751ms | improvement
+Open Cart | 1587 | -33.1% | -785ms | improvement
+Checkout start | 942 | -44.6% | -757ms | improvement
+Checkout Email Available | 36 | +0.0% | +0ms | ok
+Checkout Estimate Shipping Methods | 1287 | -58.1% | -1782ms | improvement
+Checkout Billing/Shipping Information | 2098 | -61.5% | -3354ms | improvement
+Checkout Payment Info/Place Order | 4618 | -25.1% | -1549ms | improvement
+Checkout success | 270 | -0.4% | -1ms | ok
+
 ## 2.4.3-p1
 
 ## Media Gallery folders
