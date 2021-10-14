@@ -42,7 +42,7 @@ Choose one of the PrivateLink connection types best suited for your {{site.data.
    -  A connection between the Adobe VPC and the customer VPC
 
 {:.bs-callout-tip}
- Work with your network administrator or Cloud platform provider for help with selecting the PrivateLink connection type, or help with VPC setup and administration. See your Cloud platform PrivateLink documentation: [AWS PrivateLink][] or [Azure Private Link][].
+ Work with your network administrator or Cloud platform provider for help with selecting the PrivateLink connection type, or help with VPC setup and administration. See Cloud platform PrivateLink documentation: [AWS PrivateLink][] or [Azure Private Link][].
 
 ## Request PrivateLink enablement
 
@@ -53,7 +53,7 @@ Enabling PrivateLink can take up to _five_ business days. Providing incomplete o
 
 -  {:.fix}A Cloud account (AWS or Azure) in the same region as the {{site.data.var.ece}} instance.
 -  {:.fix}A VPC in the customer environment that hosts the services to connect via PrivateLink. See the AWS or Azure documentation for help with VPC setup or contact your network administrator.
--  {:.fix}For bidirectional PrivateLink connections, you must create the endpoint service configuration for your application or service, and create an endpoint in your VPC environment before requesting PrivateLink enablement. See [Set up for bidirectional PrivateLink connections](#set-up-for-bidirectional-privateLink-connections).
+-  {:.fix}For bidirectional PrivateLink connections, you must create the endpoint service configuration for your application or service, and create an endpoint in your VPC environment before requesting PrivateLink enablement. See [Set up for bidirectional PrivateLink connections](#set-up-for-bidirectional-privatelink-connections).
 -  {:.fix}Gather the following data required for PrivateLink enablement:
 
    -  **Customer Cloud account number** (AWS or Azure)–Must be in the same region as the {{site.data.var.ece}} instance
