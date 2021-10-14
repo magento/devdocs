@@ -76,6 +76,18 @@ You are impacted by these changes if:
 If these changes impact you, update all tests that use duplicated elements.
 
 #### Refactored TinyMCE4 for MFTF test
+
+To simplify current and future upgrades to the next version of TinyMCE, we refactored TinyMCE4 MFTF in the following ways:
+
+-  Renamed the action group `CliEnableTinyMCE4ActionGroup` to `CliEnableTinyMCEActionGroup`
+-  Replaced all references to "TinyMCE 4" in the test code base with `tinymce`
+-  Create variable for adapter version
+-  Change `stepKey` on each test
+
+These changes can be break tests if you use or extend the TinyMCE4 MFTF tests, but they affect only functional tests (MFTF).
+
+If these changes impact you, you must update all tests that rely on the refactored action group and reference "TinyMCE4".
+
 ## 2.4.3-p1
 
 ## Media Gallery folders
