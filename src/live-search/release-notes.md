@@ -17,7 +17,7 @@ These release notes describe the latest versions of Live Search and include:
 -  Stability: Stable
 
 -  {:.new} [Performance](https://docs.magento.com/user-guide/live-search/performance.html) reporting dashboard provides insight into search terms that shoppers use.
--  {:.new} Live Search [event](https://devdocs.magento.com/shared-services/storefront-events-sdk.html) metrics
+-  {:.new} Live Search [event](https://devdocs.magento.com/shared-services/storefront-events-sdk.html) SDK and metrics
 -  {:.fix} The storefront [popover](https://devdocs.magento.com/live-search/storefront-popover.html) has a new `active` class for the `.search-autocomplete` container that controls visibility.
 -  {:.fix} In the storefront, the [_Search Terms_](https://docs.magento.com/user-guide/marketing/search-terms-popular.html) footer link is removed and its cache disabled for Live Search installations.
 -  {:.bug} Patch for Search adapter handles duplicate products
