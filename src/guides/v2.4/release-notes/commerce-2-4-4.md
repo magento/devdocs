@@ -24,7 +24,7 @@ The {{ site.data.var.ee }} 2.4.4 [Beta program](https://github.com/magento/magen
 *  Varnish 6.5.1
 
 {:.bs-callout-info}
-The vendor-developed extensions that are scheduled for removal in {{ site.data.var.ee }} 2.4.4 GA have not been removed from {{ site.data.var.ee }} 2.4.4-beta1.
+All vendor-bundled extensions, with the exception of  Braintree, have been removed from {{ site.data.var.ee }} 2.4.4 starting with this release (2.4.4-beta1).
 
 ## Other release information
 
@@ -88,9 +88,9 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thes
 
 This release includes Adobe Stock Integration v2.1.1.
 
-### Vendor Developed Extensions
+### Vendor-Bundled Extensions
 
-With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all third-party payment methods will be removed from the {{ site.data.var.ee }} 2.4.4 GA code base. Merchants should migrate to the official extensions, which are available on the Commerce Marketplace.
+With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all vendor-bundled extensions have been removed from the {{ site.data.var.ee }} 2.4.4 GA code base. Merchants should migrate to the official extensions, which will be available on the Commerce Marketplace in early 2022. We are working with each of these partners to ensure that a Marketplace alternative is available.
 
 ## Fixed issues
 
