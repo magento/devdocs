@@ -72,7 +72,7 @@ To install Node.js on your system, see the Node.js [documentation](https://nodej
 
 The following instructions are for MacOS systems:
 
-1. Open a terminal and navigate to the `graphql-schema-compatibility/` directory.
+1. Open a terminal and navigate to the root directory of the project.
 1. Install project dependencies:
 
    ```bash
@@ -85,9 +85,9 @@ The following instructions are for MacOS systems:
    npm run unit-test
    ```
 
-The tests are inside `graphql-schema-compatibility/test/js/unit`.
+The tests are inside `dev/tests/Js`.
 
-The string schemas for testing are inside `dev/graphql_schemas`.
+The string schemas for testing are inside `dev/tests/Acceptance/_files/graphql_schemas`.
 
 ## Complexity score
 
