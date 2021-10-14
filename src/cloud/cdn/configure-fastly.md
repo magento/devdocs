@@ -291,3 +291,11 @@ After you verify Fastly services on the Staging site, repeat the upgrade process
 
 {:.bs-callout-warning}
 If you have added a custom VCL snippet that has the same name as a default snippet, you may need to verify and update those snippets after you upgrade the Fastly module. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see [Custom Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+
+{:.ref-header}
+Related topics
+
+In our support knowledge base:
+
+-  [Adobe SSL/TLS certificate requirements and clean up](https://support.magento.com/hc/en-us/articles/115004685333-Magento-SSL-TLS-certificate-requirements-and-clean-up)
+-  [Adobe Commerce Fastly troubleshooter](https://support.magento.com/hc/en-us/articles/360040759292-Magento-Fastly-troubleshooter)
