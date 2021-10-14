@@ -36,6 +36,36 @@ Checkout Billing/Shipping Information | 2098 | -61.5% | -3354ms | improvement
 Checkout Payment Info/Place Order | 4618 | -25.1% | -1549ms | improvement
 Checkout success | 270 | -0.4% | -1ms | ok
 
+### TinyMCE
+
+There are three major BICs related to TinyMCE in 2.4.4, including:
+
+-  Renamed TinyMCE4 to tinymce
+-  Refactored TinyMCE MFTF tests
+-  Refactored TinyMCE4 for MFTF test
+
+#### Renamed `tinymce4` to `tinymce`
+
+Renaming `tinymce4` to `tinymce` removes the strict dependency on a version of TinyMCE from the code.
+The following changes could cause the WYSIWYG interface to break and not display on pages that use it in the Admin and break the Page Builder extension:
+
+-  Renamed the array key in the TinyMCE [configuration provider]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Model/Wysiwyg/DefaultConfigProvider.php)
+-  Renamed the alias in the [`requirejs-config.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/requirejs-config.js) file
+-  Renamed a [Page Builder JavaScript file](https://github.com/magento/magento2-page-builder/blob/develop/app/code/Magento/PageBuilder/view/adminhtml/web/ts/js/wysiwyg/tinymce.ts) that was marked as API from `tinymce4.ts` to `tinymce.ts`
+
+You are impacted by these changes if:
+
+-  You use a custom configuration for TinyMCE that uses the `tinymce4` alias in `requirejs`
+-  If you use the Page Builder Javascript file that was renamed in any other place than the `app/code/Magento/PageBuilder/etc/adminhtml/di.xml` file
+
+If these changes impact you, take the following action:
+
+-  Change the name of the array key in the TinyMCE configuration provider from `tinymce4` to `tinymce`
+-  Change any `requirejs` file that uses the `tinymce4` alias to `tinymce`
+-  Update anywhere that references the Page Builder JavaScript file that was renamed
+
+#### Refactored TinyMCE MFTF tests
+#### Refactored TinyMCE4 for MFTF test
 ## 2.4.3-p1
 
 ## Media Gallery folders
