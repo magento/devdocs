@@ -3,16 +3,16 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
-{{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. Core composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
+{{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
 {:.bs-callout-info}
 Quarterly releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains  backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
-## Adobe Commerce Beta program
+## {{ site.data.var.ee }} Beta program
 
-The {{ site.data.var.ee }} 2.4.4 [Beta program](https://github.com/magento/magento2/wiki/Magento-Beta-Program) includes four monthly Beta releases that merchants can use to prepare their deployments for upgrade to Adobe Commerce 2.4.4. We are launching this program five months before Adobe Commerce 2.4.4 General Availability (GA). The top three partners and individual contributors will receive special mention in these release notes, Beta blog posts, and in other communications. See the [Breaking News: 2.4.4 beta releases are coming soon](https://community.magento.com/t5/Magento-DevBlog/BREAKING-NEWS-2-4-4-beta-releases-are-coming-soon/ba-p/484310) Magento DevBlog entry.
+The {{ site.data.var.ee }} 2.4.4 [Beta program](https://github.com/magento/magento2/wiki/Magento-Beta-Program) includes four monthly Beta releases that merchants can use to prepare their deployments for upgrade to {{ site.data.var.ee }} 2.4.4. We are launching this program five months before {{ site.data.var.ee }} 2.4.4 General Availability (GA). The top three partners and individual contributors will receive special mention in these release notes, Beta blog posts, and in other communications. See the [Breaking News: 2.4.4 beta releases are coming soon](https://community.magento.com/t5/Magento-DevBlog/BREAKING-NEWS-2-4-4-beta-releases-are-coming-soon/ba-p/484310) Magento DevBlog post.
 
-## Adobe Commerce 2.4.4-beta1
+## {{ site.data.var.ee }} 2.4.4-beta1
 
 {{ site.data.var.ee }} 2.4.4-beta1 has been tested against the following component versions:
 
@@ -23,11 +23,12 @@ The {{ site.data.var.ee }} 2.4.4 [Beta program](https://github.com/magento/magen
 *  Redis 6.0.12
 *  Varnish 6.5.1
 
+{:.bs-callout-info}
 The vendor-developed extensions that are scheduled for removal in {{ site.data.var.ee }} 2.4.4 GA have not been removed from {{ site.data.var.ee }} 2.4.4-beta1.
 
 ## Other release information
 
-Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, B2B, Page Builder, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
+Although code for these features is bundled with releases {{ site.data.var.ee }} and {{ site.data.var.ce }} releases, several of these projects (for example, B2B, Page Builder, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
 
 ## Highlights
 
@@ -41,9 +42,9 @@ Look for the following highlights in this release.
 
 *  The `RequireJS` library has been upgraded to the latest version (v2.3.6). [GitHub-33672](https://github.com/magento/magento2/issues/33672) <!--- AC-40 422-->
 
-*  PHPUnit has been upgraded to the latest 9.5.x version. Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
+*  PHPUnit has been upgraded to the latest version (9.5.x ). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
 
-*  TinyMCE_5 is now supported. <!--- AC-41-->
+*  TinyMCE 5 is now supported. <!--- AC-41-->
 
 *  The following libraries have been upgraded to more recent versions:
 
@@ -55,25 +56,25 @@ Look for the following highlights in this release.
    *  `underscore.js`  <!--- AC-13-->
    *  `PrototypeJS`  <!--- AC-17-->
 
-*  The following libraries have been removed from core code dependencies:
+*  The following libraries have been removed:
 
    *  `es6-collections.js`   <!--- AC-18-->
    *  `MutationObserver.js` <!--- AC-15-->
    *  `Modernizr` <!--- AC-12-->
    *  `FormData.js`
 
-These libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support of this functionality.
+These libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality.
 
 ### GraphQL
 
 This release includes these GraphQL enhancements:
 
-*  Storefront performance has been improved by the following changes to Magento caching of GraphQL requests. Fastly now caches:
+*  Storefront performance has been improved by the following changes to caching GraphQL requests. Fastly now caches:
 
    *  All authorized queries that are specific to customer data
    *  GraphQL requests with Bearer tokens <!--- PWA-1817-->
 
-*  The `storeConfig` query now returns the configuration settings for the  Zero Subtotal Checkout and Check/Money Order payment methods. <!--- PWA-1576-->
+*  The `storeConfig` query now returns the configuration settings for the Zero Subtotal Checkout and Check/Money Order payment methods. <!--- PWA-1576-->
 
 *  Merchants can use the new [`setNegotiableQuotePaymentMethod` mutation]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-payment-method.html) to set the payment method on a negotiable quote. <!--- PWA-2114-->
 
@@ -86,9 +87,11 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thes
 ### Adobe Stock Integration
 
 This release includes Adobe Stock Integration v2.1.1.
+
 ### Vendor Developed Extensions
 
-With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all third-party payment methods will be removed from the {{ site.data.var.ee }} 2.4.4 GA code base. Merchants should migrate to the official extensions , which are available on the Commerce Marketplace.
+With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all third-party payment methods will be removed from the {{ site.data.var.ee }} 2.4.4 GA code base. Merchants should migrate to the official extensions, which are available on the Commerce Marketplace.
+
 ## Fixed issues
 
 We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. A subset of those fixed issues is described below.
@@ -171,11 +174,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-41796-->
 
-*  {{ site.data.var.ee }} no longer throws an exception when performing a mass attribute update action on the product grid  when a product has a `datetime` attribute.
+*  {{ site.data.var.ee }} no longer throws an exception when performing a mass attribute update action on the product grid when a product has a `datetime` attribute.
 
 <!--- MC-42571-->
 
-*  GraphQL queries now take into account visibility settings for child products when returning querying the child products of configurable product.
+*  GraphQL queries now return results for child products of a configurable product according to the visibility filter settings of the child product(s).
 
 <!--- MC-41853-->
 
@@ -187,7 +190,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42214-->
 
-*  The Category page now displays consistent product data while permissions are being generated during partial indexing. A new partial indexer for directory permissions has been added to this process Previously, the data displayed while the indexer ran was incorrect.
+*  The Category page now displays consistent product data while permissions are being generated during partial indexing. A new partial indexer for directory permissions has been added to this process. Previously, the data displayed while the indexer ran was incorrect.
 
 <!--- MC-42659-->
 
@@ -199,21 +202,21 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-43010-->
 
-*  GraphQL queries can now be used to retrieve information about schedule updates for categories. Previously, {{ site.data.var.ee }} threw an error when executing a GraphQL query to retrieve category information for a scheduled category update.
+*  GraphQL queries can now be used to retrieve information about scheduled updates for categories. Previously, {{ site.data.var.ee }} threw an error when executing a GraphQL query to retrieve category information for a scheduled category update.
 
 <!--- MC-41936-->
 
-*  Magento now displays an accurate salable quantity value for all products in the Admin product list view. Previously, Magento displayed a blank value for salable quantity for in-stock products whose SKU contained special characters.
+*  {{ site.data.var.ee }} now displays an accurate salable quantity value for all products in the Admin product list view. Previously, {{ site.data.var.ee }} displayed a blank value for salable quantity of in-stock products with SKUs that contained special characters.
 
 ### Catalog rule
 
 <!--- MC-41807-->
 
-*  Daily updates of catalog rules no longer results in performance degradation. Previously, partial catalog product price Indexing did not remove old price date.
+*  Daily updates of catalog rules no longer results in performance degradation. Previously, partial catalog product price indexing did not remove old price date.
 
 <!--- MC-38263-->
 
-*  {{ site.data.var.ee }} no longer removes catalog rule prices on configurable products during partial re-indexing. Previously, only sub-products were re-indexed when configurable products were re-indexed.
+*  {{ site.data.var.ee }} no longer removes catalog price rules on configurable products during partial re-indexing. Previously, only sub-products were re-indexed when configurable products were re-indexed.
 
 ### Configurable products
 
@@ -261,7 +264,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1068-->
 
-*  Updated the `allure-framework/allure-php-api` composer dependency.
+*  Updated the `allure-framework/allure-php-api` Composer dependency.
 
 <!--- AC-707-->
 
@@ -269,7 +272,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42091-->
 
-*  {{ site.data.var.ee }} now returns a 500 response code when an exception occurs in the bootstrap file. Previously, Magento returned a 200 OK status code. [GitHub-2216](https://github.com/magento/magento2/issues/22196)
+*  {{ site.data.var.ee }} now returns a 500 response code when an exception occurs in the bootstrap file. Previously, {{ site.data.var.ee }} returned a 200 OK status code. [GitHub-2216](https://github.com/magento/magento2/issues/22196)
 
 ### General fixes
 
@@ -291,7 +294,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42775-->
 
-*  Administrators can now retry operations that have been running over the maximum processing time. (This default maximum is 12 hours.)
+*  Administrators can now retry operations that have been running over the maximum processing time. The default maximum is 12 hours.
 
 <!--- MC-42514-->
 
@@ -309,7 +312,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- PWA-1506-->
 
-*  The `setBillingAddressToCart` mutation now correctly uses the `same_as_shipping` parameter to set the billing address to match the shipping address as expected. Previously, Magento displayed this error: `The shipping method is missing. Select the shipping method and try again`. [GitHub-30924](https://github.com/magento/magento2/issues/30924)
+*  The `setBillingAddressToCart` mutation now correctly uses the `same_as_shipping` parameter to set the billing address to match the shipping address as expected. Previously, {{ site.data.var.ee }} displayed this error: `The shipping method is missing. Select the shipping method and try again`. [GitHub-30924](https://github.com/magento/magento2/issues/30924)
 
 <!--- PWA-1980-->
 
@@ -368,7 +371,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-41672-->
 
-*  {{ site.data.var.ee }} now converts the timestamp in the export filename to the user’s timezone after a scheduled export. Previously, these values were not converted, and Magento displayed the UTC timestamp.
+*  {{ site.data.var.ee }} now converts the timestamp in the export filename to the user’s timezone after a scheduled export. Previously, these values were not converted, and {{ site.data.var.ee }} displayed the UTC timestamp.
 
 <!--- MC-42330-->
 
@@ -378,7 +381,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42791-->
 
-*  Magento now displays products as expected on the storefront after re-indexing. Previously, when the first 500 products being re-indexed were in stock, and the next 500 products were out of stock, the storefront did not display any additional products.
+*  {{ site.data.var.ee }} now displays products as expected on the storefront after re-indexing. Previously, when the first 500 products being re-indexed were in stock, and the next 500 products were out of stock, the storefront did not display any additional products.
 
 ### Logging
 
@@ -394,11 +397,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42746-->
 
-*  Invoices for orders that are paid with by store credit and and that have fixed product taxes (FPT) applied now include the correct grand total.
+*  Invoices for orders that are paid by store credit and that have fixed product taxes (FPT) applied now include the correct grand total..
 
 <!--- MC-42332-->
 
-*  The Admin order detail page now loads as expected. Previously, {{ site.data.var.ee }} threw the following error for when loading the order detail page for orders with certain taxes: `Call to a member function getId() on array`.
+*  The Admin order detail page now loads as expected. Previously, {{ site.data.var.ee }} threw the following error when loading the order detail page for orders with certain taxes: `Call to a member function getId() on array`.
 
 ### Page Builder
 
@@ -428,7 +431,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42779-->
 
-*  Administrators with permissions restricted to Content edit only no longer see an error when using Page Builder to add a product widget to a CMS page. Magento also displays an accurate product count on the widget settings page. Previously, {{ site.data.var.ee }} required permissions to the Catalog module when retrieving product count and displayed this error: `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`.
+*  Administrators with permissions restricted to Content edit only no longer see an error when using Page Builder to add a product widget to a CMS page. {{ site.data.var.ee }} also displays an accurate product count on the widget settings page. Previously, {{ site.data.var.ee }} required permissions to the Catalog module when retrieving product count and displayed this error: `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`.
 
 <!--- MC-42265-->
 
@@ -448,7 +451,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42154-->
 
-*  {{ site.data.var.ee }} no longer displays an error during checkout with the PayPal Express payment method. Previously, although the checkout process completed, Magento displayed this error: `Something went wrong`.
+*  {{ site.data.var.ee }} no longer displays an error during checkout with the PayPal Express payment method. Previously, although the checkout process completed, {{ site.data.var.ee }} displayed this error: `Something went wrong`.
 
 ### Performance
 
@@ -468,13 +471,13 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-41917-->
 
-*  The new `product_alert` consumer improves the sending of customer alerts by creating queue messages, running the consumer, and improving execution time. Previously, {{ site.data.var.ee }} threw an out-of-memory exception when sending more than 100,000 product alerts. Magento also took more than 20 hours to send all alerts.
+*  The new `product_alert` consumer improves the sending of customer alerts by creating queue messages, running the consumer, and improving execution time. Previously, {{ site.data.var.ee }} threw an out-of-memory exception when sending more than 100,000 product alerts. {{ site.data.var.ee }} also took more than 20 hours to send all alerts.
 
 ### Return Merchandise Authorizations (RMA)
 
 <!--- MC-42987-->
 
-*  The Admin Create Return Product grid now displays tax including prices only for products that are configured to display tax with prices. Previously, {{ site.data.var.ee }} did not check the configuration display settings on the `tax/calculation/price_includes_tax’`flag.
+*  The Admin Create Return Product grid now displays tax, including prices only for products that are configured to display tax with prices. Previously, {{ site.data.var.ee }} did not check the configuration display settings on the `tax/calculation/price_includes_tax’`flag.
 
 ### Sales
 
@@ -484,7 +487,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42531-->
 
-*  Magento now removes HTML tags as expected from the storefront **Account** > **My Orders** > **View order** page. Previously, {{ site.data.var.ee }} displayed HTML tags in the storefront customer order comment section.
+*  {{ site.data.var.ee }}  now removes HTML tags as expected from the storefront **Account** > **My Orders** > **View order** page. Previously, {{ site.data.var.ee }} displayed HTML tags in the storefront customer order comment section.
 
 <!--- MC-42377-->
 
@@ -494,7 +497,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42288-->
 
-*  Coupon generation is now blocked until the related cart price rule is saved with the `auto` option enabled. If you try to save this rule without enabling the `auto` option, Magento displays this message: `Rule is not saved with auto generate option enabled. Please save the rule and try again`.
+*  Coupon generation is now blocked until the related cart price rule is saved with the `auto` option enabled. If you try to save this rule without enabling the `auto` option, {{ site.data.var.ee }} displays this message: `Rule is not saved with auto generate option enabled. Please save the rule and try again`.
 
 <!--- MC-42743-->
 
@@ -518,11 +521,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42396-->
 
-*  {{ site.data.var.ee }} now updates the mini cart successfully when a shopper deletes a product from their cart while in multi shipping mode, then switches to a single shipping address. Previously, product prices were not updated as expected.
-
-<!--- MC-41494-->
-
-*  The Minimum Advertised Price **What's this?** link on the cart page is now clickable and opens the information popup as expected. Previously, clicking this link had no effect.
+*  {{ site.data.var.ee }} now updates the mini cart successfully when a shopper deletes a product from their cart while in multi-shipping mode, then switches to a single shipping address. Previously, product prices were not updated as expected.
 
 <!--- AC-267-->
 
@@ -532,7 +531,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42194 --->
 
-*  Product scheduled update images and videos are now correctly saved. Previously videos URL, title and description were emptied after creating a new scheduled update.
+*  Product scheduled update images and videos are now correctly saved. Previously, videos, URLs, titles, and descriptions were removed after creating a new scheduled update.
 
 <!--- MC-42501-->
 
@@ -580,10 +579,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 ### UI
 
-<!--- MC-42638-->
-
-*  Assigning a high sort order value to a customer address attribute no longer causes performance degradation on the checkout page.
-
 <!--- AC-1056-->
 
 *  {{ site.data.var.ee }} now displays all options as expected on the Page Builder Font Size options menu. Previously, not all options were displayed.
@@ -594,7 +589,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-446-->
 
-*  Display issues with the Page Builder Format menu have been resolved with the upgrade to TinyMCE_5 library.
+*  Display issues with the Page Builder Format menu have been resolved with the TinyMCE 5 library upgrade.
 
 <!--- AC-258-->
 
@@ -612,24 +607,25 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42008-->
 
-*  Web API requests for self-authorized customer resources no longer throw authorization error when the persistent shopping cart is enabled.
-
-<!--- MC-42443-->
+*  Web API requests for self-authorized customer resources no longer throw authorization errors when persistent shopping cart is enabled.
 
 <!--- MC-42313-->
 
-*  You can now create objects using the child classes of `\Magento\Framework\Api\AbstractSimpleObjectBuilder` on PHP 7.3. Previously, `preg_match` threw this warning message when {{ site.data.var.ee }} was hosted on Redhat PHP 7.3: `Warning: preg_match(): Compilation failed: unrecognized character follows \ at offset 28 in /var/www/nationaloak.com/vendor/magento/framework/Api/AbstractSimpleObjectBuilder.php on line 76`.
+*  You can now create objects using the child classes of `\Magento\Framework\Api\AbstractSimpleObjectBuilder` on PHP 7.3. Previously, `preg_match` threw this warning message when {{ site.data.var.ee }} was hosted on Redhat with PHP 7.3: `Warning: preg_match(): Compilation failed: unrecognized character follows \ at offset 28 in /var/www/nationaloak.com/vendor/magento/framework/Api/AbstractSimpleObjectBuilder.php on line 76`.
 
 <!--- AC-1004-->
 
 <!--- MC-24548-->
 
 <!--- MC-42399-->
+
+<!--- MC-42443-->
+
 ### Wish list
 
 <!--- MC-41880-->
 
-*  {{ site.data.var.ee }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, Magento ignored this option.
+*  {{ site.data.var.ee }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ee }} ignored this option.
 
 ## Known issues
 
