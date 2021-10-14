@@ -63,8 +63,22 @@ Enabling PrivateLink can take up to _five_ business days. Providing incomplete o
    -  **Connection type**–Specify unidirectional or bidirectional for connection type
    -  **Endpoint service**–For bidirectional PrivateLink connections, provide the DNS URL for the VPC endpoint service that Adobe must connect to, for example: `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`
    -  **Endpoint service access granted**-Provide the Adobe account principal with access to this endpoint service: `arn:aws:iam::402592597372:root`
-      
-      If access to the endpoint service is not provided, the bidirectional PrivateLink connection to the service in your VPC is **not** added, which delays the setup.
+
+      {:.bs-callout-warning}
+      If access to the endpoint service is not provided, then the bidirectional PrivateLink connection to the service in your VPC is **not** added, which delays the setup.
+
+Additional prerequisites for Azure enablement:
+
+-  {:.fix}A list of cluster ID numbers intended for PrivateLink set up
+-  {:.fix}To connect to the cluster, you need:
+   -  A list of ports on the cluster to expose to the new external Private Endpoint
+   -  The Azure subscription ID for the Private Endpoint connection
+-  {:.fix}To connect the cluster to an external service, you need:
+   -  The external PrivateLink service resource ID, which looks similar to the following:
+
+      ```text
+      /subscriptions/e1111dca-6e20-4bcc-998c-1234c11c81d3/resourceGroups/57rrnkocp6mvm-group/providers/Microsoft.Network/privateLinkServices/57rrnkocp6mvm-pl-svc
+      ```
 
 ### Enablement workflow
 
