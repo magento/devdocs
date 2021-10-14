@@ -65,6 +65,16 @@ If these changes impact you, take the following action:
 -  Update anywhere that references the Page Builder JavaScript file that was renamed
 
 #### Refactored TinyMCE MFTF tests
+
+To simplifiy current and future upgrades to the next version of TinyMCE and decrease maintenance efforts, we refactored WYSIWYG (TinyMCE) MFTF tests to use the same sections\selectors. We also removed duplicated entities. These changes might break some MFTF tests.
+
+You are impacted by these changes if:
+
+-  You have tests that use elements (selectors) from duplicated sections
+-  You have tests that extend core tests with TinyMCE
+
+If these changes impact you, update all tests that use duplicated elements.
+
 #### Refactored TinyMCE4 for MFTF test
 ## 2.4.3-p1
 
