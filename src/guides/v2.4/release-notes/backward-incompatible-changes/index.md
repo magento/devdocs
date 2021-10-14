@@ -56,7 +56,7 @@ The following changes could cause the WYSIWYG interface to break and not display
 You are impacted by these changes if:
 
 *  You use a custom configuration for TinyMCE that uses the `tinymce4` alias in `requirejs`
-*  If you use the Page Builder Javascript file that was renamed in any other place than the `app/code/Magento/PageBuilder/etc/adminhtml/di.xml` file
+*  If you use the Page Builder JavaScript file that was renamed in any other place than the `app/code/Magento/PageBuilder/etc/adminhtml/di.xml` file
 
 If these changes impact you, take the following action:
 
