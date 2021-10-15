@@ -92,7 +92,7 @@ Run unit tests or `jest` as follows:
 Run `eslint` code analysis as follows:
 
    ```bash
-   npm run eslint -- path/to/analyse 
+   npm run eslint -- path/to/analyse
    ```
 
 ## Complexity score
