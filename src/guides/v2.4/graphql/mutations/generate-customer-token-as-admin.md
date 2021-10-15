@@ -6,7 +6,7 @@ contributor_name: EY
 
 The `generateCustomerTokenAsAdmin` mutation generates a new customer token as an admin so that an administrator can perform remote shopping assistance on behalf of the customer. For example, if a customer has asked for help adding a product into their cart, you would specify the token returned by the `generateCustomerTokenAsAdmin` mutation in the header of your [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html).
 
-To run this mutation, the customer must have enabled the **Allow remote shopping assistance** feature. You can specify the `allow_remote_shopping_assistance` attribute in a [`customer` query]({{page.baseurl}}/graphql/queries/customer.html] to determine whether the customer enabled this feature.
+To run this mutation, the customer must have enabled the **Allow remote shopping assistance** feature. You can specify the `allow_remote_shopping_assistance` attribute in a [`customer` query]({{page.baseurl}}/graphql/queries/customer.html) to determine whether the customer enabled this feature.
 
 ## Syntax
 
