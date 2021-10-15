@@ -77,10 +77,7 @@ These libraries have been removed because all browsers that {{ site.data.var.ee 
 
 This release includes these GraphQL enhancements:
 
-*  Storefront performance has been improved by the following changes to caching GraphQL requests. Fastly now caches:
-
-   *  All authorized queries that are specific to customer data
-   *  GraphQL requests with Bearer tokens <!--- PWA-1817-->
+*  Storefront performance has been improved by changes to how GraphQL requests are cached. Fastly and Varnish now cache GraphQL requests sent with auth tokens. <!--- PWA-1817-->
 
 *  The `storeConfig` query now returns the configuration settings for the Zero Subtotal Checkout and Check/Money Order payment methods. <!--- PWA-1576-->
 
