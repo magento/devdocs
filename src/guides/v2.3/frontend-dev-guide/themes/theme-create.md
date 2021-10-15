@@ -81,7 +81,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
    </theme>
    ```
 
-If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
 
 ## Make your theme a Composer package {#fedg_create_theme_composer}
 
@@ -146,7 +146,7 @@ Product image sizes and other properties used on the [storefront](https://glossa
 
 If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add `view.xml` using the following steps:
 
-1. Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
+1. Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the [file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
 
 1. Create the `etc` directory in your theme folder.
 
@@ -271,7 +271,7 @@ Running this command with the `-f` argument can fix issues regarding deployment 
 
 ### Theme registration {#register_theme}
 
-After adding your theme files to the file system and opening the Magento Admin (or reloading any Magento Admin page), your theme gets registered and added to the database. If a theme is removed, the default theme will automatically be used, but the theme's database record is not automatically removed.
+After adding your theme files to the file system and opening the Admin (or reloading any Admin page), your theme gets registered and added to the database. If a theme is removed, the default theme will automatically be used, but the theme's database record is not automatically removed.
 
 ### Applying a theme
 

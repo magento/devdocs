@@ -89,7 +89,7 @@ To configure PhpStorm to work with Xdebug:
 
 1. In the _Settings_ panel, expand and locate the **Languages & Frameworks** > **PHP** > **Servers** section.
 
-1. Click the **+** to add a server configuration. The project name is in grey at the top.
+1. Click the **+** to add a `PHP Remote Debug` server configuration. The project name is in grey at the top.
 
 1. Configure the following settings for the new server configuration:
 
@@ -123,7 +123,7 @@ To debug web requests:
 
 1. When PhpStorm recognizes the Xdebug connection, you can begin debugging web requests.
 
-You can debug any Magento command or PHP script using the following steps.
+You can debug any {{site.data.var.ee}} command or PHP script using the following steps.
 
 {:.procedure}
 To debug CLI commands:

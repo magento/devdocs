@@ -14,7 +14,7 @@ To update components if you're *not* a contributing developer, see [Updating the
 
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 
-1. Log in to the Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Log in to the Magento server, or switch to, the [file system owner](https://glossary.magento.com/magento-file-system-owner).
 1. Change to the directory to which you cloned the Magento application. For example,
 
    ```bash

@@ -1,9 +1,9 @@
 ---
 group: release-notes
-title: Magento Commerce 2.4.2 Release Notes
+title: Adobe Commerce 2.4.2 Release Notes
 ---
 
-Magento Commerce 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. B2B improvements focus on support for online payments for purchase orders. Elasticsearch 7.9.x and Redis 6.x are now supported.
+{{site.data.var.ee}} 2.4.2 introduces enhancements to performance and security plus significant platform improvements. Security enhancements include expansion of support for the `SameSite` attribute for all cookies. B2B improvements focus on support for online payments for purchase orders. Elasticsearch 7.9.x and Redis 6.x are now supported.
 
 This release includes over 280 new fixes to core code and 35 security enhancements. It includes the resolution of almost 290 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
@@ -48,7 +48,7 @@ Security improvements for this release include:
 *  Core Content Security Policy (CSP) violations have been fixed.
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Infrastructure improvements
 
@@ -56,11 +56,11 @@ This release contains enhancements to core quality, which improve the quality of
 
 ### Platform enhancements
 
-*  [**Elasticsearch 7.9.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html#elasticsearch). Although we recommend running Elasticsearch 7.9.x, Magento 2.4.x remains compatible with Elasticsearch 7.4.x. <!--- MC-36867-->
+*  [**Elasticsearch 7.9.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). Although we recommend running Elasticsearch 7.9.x, Magento 2.4.x remains compatible with Elasticsearch 7.4.x. <!--- MC-36867-->
 
-*  Magento 2.4.2 has been tested with [Varnish 6.4]({{ page.baseurl }}/install-gde/system-requirements.html#recommended-technologies). Magento 2.4.x remains compatible with Varnish 6.x.
+*  Magento 2.4.2 has been tested with [Varnish 6.4]({{ page.baseurl }}/install-gde/system-requirements.html). Magento 2.4.x remains compatible with Varnish 6.x.
 
-*  [**Redis 6.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html#recommended-technologies). Magento 2.4.x remains compatible with Redis 5.x. <!--- MC-34853-->
+*  [**Redis 6.x is now supported**]({{ page.baseurl }}/install-gde/system-requirements.html). Magento 2.4.x remains compatible with Redis 5.x. <!--- MC-34853-->
 
 *  Magento 2.4.2 is now compatible with **Composer 2.x**. We recommend that merchants migrate to Composer 2.x. Although you can install this release using Composer 1.x, Composer 1.x will soon reach end-of-life. For an overview of Composer 2.x features, see [Composer 2.0 is now available!](https://blog.packagist.com/composer-2-0-is-now-available/)
 
@@ -2337,6 +2337,70 @@ We have fixed hundreds of issues in the Magento 2.4.2 core code.
 
 ## Known issues
 
+**Issue**: The `[magento_root]/index.php` file has been removed, and Magento now runs from `/pub` by default for Apache configurations. Stores that are served from subfolders will not work as expected and may display 404 errors. **Workaround**: Use symlinks to emulate the installation of Magento into subfolders. The following example uses two stores (`https://shop01.com/shop/` and `https://shop02.com/shop/`) to illustrate how to use a symlink to emulate an installation in subfolders.
+
+1. Create a subdirectory for `https://shop01.com/shop/`:
+
+   ```bash
+   mkdir magento_root/pub/shop01
+   ```
+   ```bash
+   cd magento_root/pub/shop01
+   ```
+
+1. Create symlinks for the store’s parent directories in the newly created directory:
+
+   ```bash
+   ln -s ../media media
+   ```
+   ```bash
+   ln -s ../static static
+   ```
+   ```bash
+   ln -s ../../pub pub
+   ```
+   ```bash
+   ln -s ../.htaccess .htaccess
+   ```
+   ```bash
+   ln -s ../health_check.php health_check.php
+   ```
+
+1. Create an `index.php` file inside the new directory (`magento_root/pub/shop01/index.php`) and add this content:
+
+```php
+   <?php
+   require realpath(__DIR__) . '/../../app/bootstrap.php';
+
+   switch ($_SERVER['HTTP_HOST']) {
+       case 'shop01.com':
+       case 'www.shop01.com':
+           $params = $_SERVER;
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'shop01';
+           $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
+           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
+           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+           $bootstrap->run($app);
+           break;
+
+       default:
+           $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
+           /** @var \Magento\Framework\App\Http $app */
+           $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+           $bootstrap->run($app);
+       break;
+   }
+```
+
+1. Configure your Apache server to point to the new subdirectory. Deployment configurations can vary widely. Here’s an example server configuration:
+
+```xml
+   <VirtualHost *:80>
+       DocumentRoot "magento_root/pub/shop1"
+       ServerName shop01.com
+   </VirtualHost>
+```
+
 **Issue**: Merchants must activate the Fastly Force TLS functionality from the Admin to enable the global HTTP to HTTPS redirect for all store pages. See the [Redirect HTTP to HTTPS for all pages on Cloud (Force TLS)](https://support.magento.com/hc/en-us/articles/360006296953) Knowledge Base article. <!--- MC-39988-->
 
 **Issue**: You cannot use the `addConfigurableProductToCart` GraphQL mutation to add a configurable product to a cart in a non-default store view in a multi-store deployment that runs Inventory. (Luma storefronts are not affected.) Magento displays this error: `Could not add item to cart. Please check required options and try again`. **Workaround**: Use the `addProductsToCart` mutation instead. [GitHub-31660](https://github.com/magento/magento2/issues/31660)<!--- PWA-1298-->
@@ -2381,7 +2445,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.4.2 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
+You can install {{site.data.var.ee}} 2.4.2 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
 
 ## Migration tool kits
 

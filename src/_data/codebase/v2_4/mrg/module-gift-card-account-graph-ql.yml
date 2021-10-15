@@ -1,0 +1,6 @@
+---
+title: GiftCardAccountGraphQl
+release: 2.4.3
+content: |-
+  **GiftCardAccountGraphQl** provides type and resolver information for the GraphQl module
+  to generate giftcard acccount information.

@@ -8,7 +8,7 @@ redirect_from:
  - /cloud/project/project-conf-files_routes.html  
 ---
 
-The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes for your {{ site.data.var.ece }} Integration, Staging, and Production environments. Routes determine how Magento processes incoming HTTP and HTTPS requests.
+The `routes.yaml` file in the `.magento/routes.yaml` directory defines routes for your {{ site.data.var.ece }} Integration, Staging, and Production environments. Routes determine how the application processes incoming HTTP and HTTPS requests.
 
 {% include cloud/note-pro-missing-self-service-options.md %}
 
@@ -31,7 +31,7 @@ magento-cloud environment:routes
 +-------------------+----------+---------------+
 | Route             | Type     | To            |
 +-------------------+----------+---------------+
-| http://{default}/ | upstream | mymagento:php |
+| http://{default}/ | upstream | mymagento     |
 +-------------------+----------+---------------+
 ```
 {:.no-copy}
@@ -157,7 +157,7 @@ We recommend serving all pages over TLS.  For this configuration, you must confi
        upstream: "mymagento:http"
    ```
 
--  For Staging and Production environments, we recommend enabling the [Force TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) option from the Magento Admin UI.  When you use this option, Fastly handles the redirection to HTTPS, so you do not have to update the `routes.yaml` configuration.
+-  For Staging and Production environments, we recommend enabling the [Force TLS on Fastly](https://support.magento.com/hc/en-us/articles/360006296953-Redirect-HTTP-to-HTTPS-for-all-pages-on-Cloud-Force-TLS-) option from the Admin UI.  When you use this option, Fastly handles the redirection to HTTPS, so you do not have to update the `routes.yaml` configuration.
 
 ## Route options
 

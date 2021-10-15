@@ -20,7 +20,7 @@ This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.ap
 {:.procedure}
 To generate a `sitemap.xml` file in version 2.2 and later:
 
-1. Access the Magento Admin panel.
+1. Access the Admin panel.
 1. On the _Marketing_ menu, click **Site Map** in the _SEO & Search_ section.
 1. In the _Site Map_ view, click **Add Sitemap**.
 1. In the _New Site Map_ view, enter the following values:
@@ -34,7 +34,7 @@ To generate a `sitemap.xml` file in version 2.2 and later:
 {:.procedure}
 To add content to the `robots.txt` file:
 
-1. Access the Magento Admin panel.
+1. Access the Admin panel.
 1. On the _Content_ menu, click **Configuration** in the _Design_ section.
 1. In the _Design Configuration_ view, click **Edit** for the website in the _Action_ column.
 1. In the _Main Website_ view, click **Search Engine Robots**.
@@ -47,10 +47,10 @@ If the `<domain.your.project>/robots.txt` file generates a `404 error`, [submit 
 
 ## Rewrite using Fastly VCL snippet
 
- If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+ If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
  {:.bs-callout-info}
- You can upload custom VCL snippets from the Magento Admin UI or using the Fastly API. See [Custom VCL snippet examples and tutorials]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#custom-vcl-snippet-examples-and-tutorials).
+ You can upload custom VCL snippets from the Admin UI or using the Fastly API. See [Custom VCL snippet examples and tutorials]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#custom-vcl-snippet-examples-and-tutorials).
 
 ### Use a Fastly VCL snippet for redirect
 

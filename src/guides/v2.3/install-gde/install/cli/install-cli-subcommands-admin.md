@@ -1,5 +1,5 @@
 ---
-title: Create, edit, or unlock a Magento administrator account
+title: Create, edit, or unlock an administrator account
 functional_areas:
   - Install
   - System

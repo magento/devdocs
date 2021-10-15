@@ -13,7 +13,7 @@ Magento is a complex, highly extensible platform. To ensure that third-party ext
 
 ## When testing is done
 
-All extension submissions must pass the mandatory Installation and Varnish tests, regardless of extension type and scope of changes. Only extensions that have passed these tests can be listed in the [Magento Marketplace](https://marketplace.magento.com/).
+All extension submissions must pass the mandatory Installation and Varnish tests, regardless of extension type and scope of changes. Only extensions that have passed these tests can be listed in the [Commerce Marketplace](https://marketplace.magento.com/).
 
 ## What is being checked
 

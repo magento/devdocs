@@ -1,5 +1,5 @@
 ---
-youtube_id: l33T2-YC4tk
+youtube_id: bUGbX3K5i-k
 duration: "4:02"
 group: "Fundamentals of Magento 2 Development"
 title: "Create a New Page"

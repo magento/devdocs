@@ -19,7 +19,7 @@ redirect_from:
 {% include cloud/service-config-integration-starter.md %}
 
 {:.bs-callout-tip}
-Magento recommends that you always set up Elasticsearch for your {{ site.data.var.ece }} project even if you plan to configure a third-party search tool for your {{ site.data.var.ee }} application. Setting up Elasticsearch provides a fallback option in the event that the third-party search tool fails.
+Adobe recommends that you always set up Elasticsearch for your {{ site.data.var.ece }} project even if you plan to configure a third-party search tool for your {{ site.data.var.ee }} application. Setting up Elasticsearch provides a fallback option in the event that the third-party search tool fails.
 
 {:.procedure}
 To enable Elasticsearch:
@@ -32,7 +32,7 @@ To enable Elasticsearch:
        disk: 1024
    ```
 
-   For Pro projects, you must submit a Magento Support ticket to change the Elasticsearch version.
+   For Pro projects, you must submit a {{site.data.var.ee}} Support ticket to change the Elasticsearch version.
 
    For details on determining the correct version to install, see [Elasticsearch software compatibility](#elasticsearch-software-compatibility).
 
@@ -73,7 +73,7 @@ When you install or upgrade your {{ site.data.var.ece }} project, always check f
 
 -  **First time setup**–Confirm that the Elasticsearch version specified in the `services.yaml` file is compatible with the Elasticsearch PHP client configured for {{ site.data.var.ee }}.
 
--  **Project upgrade**–Verify that the Elasticsearch PHP client in the new Magento version is compatible with the Elasticsearch service version installed on the Cloud infrastructure.
+-  **Project upgrade**–Verify that the Elasticsearch PHP client in the new application version is compatible with the Elasticsearch service version installed on the Cloud infrastructure.
 
 {% include cloud/cloud-elasticsearch-client-compatibility.md %}
 
@@ -139,7 +139,7 @@ To check Elasticsearch software compatibility:
 1. Retrieve the installed Elasticsearch service `version:number` from the service endpoint.
 
    ```bash
-   curl -XGET <elasticsearch-service-endopint-ip-address>:9200/
+   curl -XGET <elasticsearch-service-endpoint-ip-address>:9200/
    ```
 
    ```terminal
@@ -174,13 +174,13 @@ To check Elasticsearch software compatibility:
 
 ## Restart the Elasticsearch service
 
-If you need to restart the [Elasticsearch](https://www.elastic.co) service, you must contact Magento support.
+If you need to restart the [Elasticsearch](https://www.elastic.co) service, you must contact {{site.data.var.ee}} support.
 
 ## Additional search configuration
 
 -  By default, the search configuration for Cloud environments regenerates each time you deploy. You can use the `SEARCH_CONFIGURATION` deploy variable to retain custom search settings between deployments. See [Deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#search_configuration).
 
--  After you set up the Elasticsearch service for your project, use the Magento Admin UI to test the Elasticsearch connection and customize Elasticsearch settings for {{ site.data.var.ee }}.
+-  After you set up the Elasticsearch service for your project, use the Admin UI to test the Elasticsearch connection and customize Elasticsearch settings for {{ site.data.var.ee }}.
 
 ### Add plugins for Elasticsearch
 
@@ -233,4 +233,14 @@ Removing the plugin entries from `elasticsearch:` in `.magento/services.yaml` do
     ```
 
 {:.bs-callout-tip}
-For details on using or troubleshooting the Elasticsuite plugin with Magento, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
+For details on using or troubleshooting the Elasticsuite plugin with {{site.data.var.ee}}, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
+
+## Troubleshooting
+
+See the following {{site.data.var.ee}} Support articles for help troubleshooting Elasticsearch problems:
+
+-  [Elasticsearch 5 is configured, but search page does not load with "Fielddata is disabled..." error](https://support.magento.com/hc/en-us/articles/360027356612-Elasticsearch-5-is-configured-but-search-page-does-not-load-with-Fielddata-is-disabled-error)
+-  [Catalog pagination doesn't work when Elasticsearch 6.x is used](https://support.magento.com/hc/en-us/articles/360035142371)
+-  [Elasticsearch with ElasticSuite crashes or out of memory](https://support.magento.com/hc/en-us/articles/360035266131-Elasticsearch-with-ElasticSuite-crashes-or-out-of-memory)
+-  [Elasticsearch in Magento troubleshooter](https://support.magento.com/hc/en-us/articles/360040757112-Elasticsearch-in-Magento-troubleshooter)
+-  [Elasticsearch Index Status is `yellow` or `red`](https://support.magento.com/hc/en-us/articles/360039837952-Elasticsearch-Index-Status-is-yellow-or-red-)

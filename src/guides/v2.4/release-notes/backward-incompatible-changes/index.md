@@ -5,6 +5,67 @@ title: Magento 2.4 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
+## 2.4.3-p1
+
+## Media Gallery folders
+
+Version 2.4.3-p1 introduced a configuration option for Media Gallery content that denotes which folders can contain Media gallery files.
+
+The new configuration path `system/media_storage_configuration/media_storage/allowed_resource/media_gallery_image_folders` is used to define the "Media Gallery Allowed" folders in 'config.xml'.
+
+The initial values are the `wysiwyg` and `catalog/category` folders.
+
+These can be extended by adding a new value in `config.xml`.
+
+### Issue
+
+Any Media Gallery files within `pub/media`, or in a folder outside a "Media Gallery Allowed" folder will not be accessible to the Media Gallery after the patch is installed.
+
+### Workaround
+
+Copy any Media Gallery files to `pub/media/wysiwyg` or one of the specified "Media Gallery Allowed" folders, or add a new entry under `system/media_storage_configuration/media_storage/allowed_resource/media_gallery_image_folders`.
+
+## 2.4.2- 2.4.3
+
+### Cookie message is displayed when new page loads
+
+Stores with a pre-existing custom theme and for which cookies are enabled now display this message: **The store will not work correctly in the case when cookies are disabled**. This issue is caused by a backward-incompatible change in how Magento handles cookie status messages. [GitHub-9095](https://github.com/magento/devdocs/issues/9095)
+
+**Workaround**: Add the `cookie-status-message` class to the
+`custom_theme_path/Magento_Theme/web/css/source/_module.less` file for custom themes.
+
+```javascript
+
+& when (@media-common = true) {
+    .cookie-status-message {
+        display: none;
+    }
+}
+
+```
+
+### pelago/emogrifier update
+
+The Magento dependency `pelago/emogrifier` has been updated from version 3.1.0 to 5.0.0. This update resulted in the introduction of backwards-incompatible changes to the `Magento\Email\Model\Template\Filter` class. The changed code is executed during Magento email templates rendering. See [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). <!--- MC-41445-->
+
+### TinyMCE
+
+The TinyMCE v3 library, which was deprecated on May 14, 2018, has been removed because it is not compatible with the latest version of jQuery. You must use TinyMCE v4.
+
+*  The `Magento_Tinymce3` module has been removed from {{ site.data.var.ce }}.
+
+*  The `Magento_Tinymce3Banner` module has been removed from {{ site.data.var.ee }}.
+
+*  All MFTF tests related to TinyMCE v3 have been removed.
+
+To switch to the TinyMCE v4 library, you must change the `cms/wysiwyg/editor` value in the `core_config_data` database table to `mage/adminhtml/wysiwyg/tiny_mce/tinymce4Adapter`.
+
+This change only impacts extensions that depend on the TinyMCE v3 library for WYSIWYG functionality in the Admin.
+
+{:.bs-callout-info}
+
+An upgrade script that switches TinyMCE to v4 has existed since 2.3.6 ([`Magento\Config\Setup\Patch\Data\UnsetTinymce3`]({{ site.mage2bloburl }}/2.3/app/code/Magento/Config/Setup/Patch/Data/UnsetTinymce3.php)).
+
 ## 2.4.1 - 2.4.2
 
 ### Compare lists
@@ -24,9 +85,9 @@ $listId
 
 This feature introduces the following database changes:
 
--  Added the foreign key `catalog_compare_item/CATALOG_COMPARE_ITEM_LIST_ID_CATALOG_COMPARE_LIST_LIST_ID`
--  Added the `catalog_compare_list` table
--  Added the `catalog_compare_item/list_id` column
+*  Added the foreign key `catalog_compare_item/CATALOG_COMPARE_ITEM_LIST_ID_CATALOG_COMPARE_LIST_LIST_ID`
+*  Added the `catalog_compare_list` table
+*  Added the `catalog_compare_item/list_id` column
 
 ## 2.3.0 - 2.4
 
@@ -45,8 +106,8 @@ The changes with removing values from the `system.xml` file require eliminating 
 
 The following modules have been refactored to use the `ElasticSearchResultApplier` class and avoid usage of `CatalogSearch` and `SearchResultApplier`, which was based on MySQL:
 
--  CatalogGraphQL
--  QuickOrder (B2B)
+*  CatalogGraphQL
+*  QuickOrder (B2B)
 
 In addition, the following constructors were modified to provide a mixed type. We have removed deprecated class private and protected components but have left their usages as arguments in the constructor for backward compatibility.
 
@@ -57,6 +118,7 @@ Magento\CatalogSearch\Model\Indexer\Fulltext\Action\Full
 ```
 
 {:.bs-callout-info}
+
 We recommend that you do not inherit from any Magento class. If your extension does inherit from any of the classes above, make sure it is not using any of the deprecated or removed mixed type class members. For compatibility, modify your constructors accordingly.
 
 The following deprecated interfaces were deleted. If your extension implements any of these interfaces, refactor your code to use the Elasticsearch module.
@@ -92,8 +154,8 @@ MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will 
 
 A new Stock/Source reindex strategy configuration setting option was added to the Admin to prevent index table collisions. The setting has the following options:
 
--  Synchronous
--  Asynchronous
+*  Synchronous
+*  Asynchronous
 
 Previously, it was possible to have a "burst" of activity that triggered contention of the index process. Even batching and deferring individual updates that were triggering the indexer, it was still highly likely that an index table collision would occur based on "other" activity.
 
@@ -149,8 +211,8 @@ Magento\InventorySalesApi\Api\AreProductsSalableForRequestedQtyInterface
 
 These changes allow third-party developers to optimize performance by providing an implementation for bulk services.
 
--  Introduced a Bulk version of `IsProductSalableForRequestedQtyInterface` API
--  Introduced a Bulk version of `IsProductSalableInterface` when working with a list of items
+*  Introduced a Bulk version of `IsProductSalableForRequestedQtyInterface` API
+*  Introduced a Bulk version of `IsProductSalableInterface` when working with a list of items
 
 ### PHP
 
@@ -181,7 +243,7 @@ The current PHPUnit framework version used with Magento 2.4.0 is PHPUnit 9. This
 
 The most critical changes include:
 
--  The methods listed below now have a void return type declaration:
+*  The methods listed below now have a void return type declaration:
 
    ```terminal
    PHPUnit\Framework\TestCase::setUpBeforeClass()
@@ -193,7 +255,7 @@ The most critical changes include:
    PHPUnit\Framework\TestCase::onNotSuccessfulTest()
    ```
 
--  The following methods have been removed, and you should change the implementation their tests:
+*  The following methods have been removed, and you should change the implementation their tests:
 
    ```terminal
    assertAttributeContains()
@@ -223,12 +285,12 @@ The most critical changes include:
    getObjectAttribute()
    ```
 
--  The signature of `assertContains()`, `assertNotContains()`, `assertEquals()`, and `assertNotEquals()` were changed. In most cases, more specific methods should be used instead, like `assertStringContainsString()`
+*  The signature of `assertContains()`, `assertNotContains()`, `assertEquals()`, and `assertNotEquals()` were changed. In most cases, more specific methods should be used instead, like `assertStringContainsString()`
 
 #### Tips and Tricks
 
--  Use `\PHPUnit\Framework\Assert::assertEqualsCanonicalizing()` if you need to compare two entities with a different order of elements. `assertEquals()` has been used before.
--  Use `\PHPUnit\Framework\Assert::assertEqualsWithDelta()` if you need non-strict comparison. `assertEquals()` with additional parameters has been used before.
+*  Use `\PHPUnit\Framework\Assert::assertEqualsCanonicalizing()` if you need to compare two entities with a different order of elements. `assertEquals()` has been used before.
+*  Use `\PHPUnit\Framework\Assert::assertEqualsWithDelta()` if you need non-strict comparison. `assertEquals()` with additional parameters has been used before.
 
 ### Size field added to media_gallery_asset table
 

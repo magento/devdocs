@@ -21,7 +21,7 @@ stage:
 ### `CACHE_CONFIGURATION`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Configure Redis page and default caching. When setting the `cm_cache_backend_redis` parameter, you must specify the `server`, `port`, and `database` options.
 
@@ -57,7 +57,7 @@ stage:
 ### `CLEAN_STATIC_FILES`
 
 -  **Default**—`true`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Enables or disables cleaning [static content files]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) generated during the build or deploy phase. We recommend the default value _true_ in development.
 
@@ -78,7 +78,7 @@ deploy updates to existing files without removing the previous versions. Because
 ### `CRON_CONSUMERS_RUNNER`
 
 -  **Default**—`cron_run = false`, `max_messages = 1000`
--  **Version**—Magento 2.2.0 and later
+-  **Version**—{{site.data.var.ee}} 2.2.0 and later
 
 Use this environment variable to confirm message queues are running after a deployment.
 
@@ -108,7 +108,7 @@ The following command returns a list of message queue consumers:
 ### `CONSUMERS_WAIT_FOR_MAX_MESSAGES`
 
 -  **Default**—`false`
--  **Version**—Magento 2.2.0 and later
+-  **Version**—{{site.data.var.ee}} 2.2.0 and later
 
 Configure how consumers process messages from the message queue by choosing one of the following options:
 
@@ -128,17 +128,17 @@ stage:
 ### `CRYPT_KEY`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 {:.bs-callout-warning}
 You must set the `CRYPT_KEY` value through the Project Web UI instead of the `.magento.env.yaml` file to avoid exposing the key in the source code repository for your environment. See [Set environment and project variables]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
-When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file.
+When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. {{site.data.var.ee}} uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file.
 
 ### `DATABASE_CONFIGURATION`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 If you defined a database in the [relationships property]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
 
@@ -205,7 +205,7 @@ MariaDB [main]> SHOW TABLES;
 ### `ELASTICSUITE_CONFIGURATION`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.2.0 and later
+-  **Version**—{{site.data.var.ee}} 2.2.0 and later
 
 Retains customized ElasticSuite service settings between deployments and uses it in the 'system/default/smile_elasticsuite_core_base_settings' section of the main ElasticSuite configuration. If the ElasticSuite composer package is installed, this is configured automatically.
 
@@ -230,7 +230,7 @@ stage:
     ELASTICSUITE_CONFIGURATION:
       indices_settings:
         number_of_shards: 3
-        number_of_replicas: 3
+        number_of_replicas: 2
       _merge: true
 ```
 
@@ -240,12 +240,12 @@ stage:
 -  Removing the ElasticSearch service causes a deploy failure accompanied by an appropriate validation error
 
 {:.bs-callout-info}
-For details on using or troubleshooting the Elasticsuite plugin with Magento, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
+For details on using or troubleshooting the Elasticsuite plugin with {{site.data.var.ee}}, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
 
 ### `ENABLE_GOOGLE_ANALYTICS`
 
 -  **Default**—`false`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Enables and disables Google Analytics when deploying to Staging and Integration environments. By default, Google Analytics is true only for the Production environment. Set this value to `true` to enable Google Analytics in the Staging and Integration environments.
 
@@ -266,9 +266,9 @@ The {{ site.data.var.ece }} deploy process always enables Google Analytics on Pr
 ### `FORCE_UPDATE_URLS`
 
 -  **Default**—`true`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
-On deployment to Pro or Starter Staging and Production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ site.baseurl }}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) deploy variable which is ignored when deploying to Staging or Production environments.
+On deployment to Pro or Starter Staging and Production environments, this variable replaces {{site.data.var.ee}} base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ site.baseurl }}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) deploy variable which is ignored when deploying to Staging or Production environments.
 
 ```yaml
 stage:
@@ -279,7 +279,7 @@ stage:
 ### `LOCK_PROVIDER`
 
 -  **Default**—`file`
--  **Version**—Magento 2.2.5 and later
+-  **Version**—{{site.data.var.ee}} 2.2.5 and later
 
 The lock provider prevents the launch of duplicate cron jobs and cron groups. You must use the `file` lock provider in the Production environment. Starter environments and the Pro Integration environment do not use the [MAGENTO_CLOUD_LOCKS_DIR]({{ site.baseurl }}/cloud/env/variables-cloud.html) variable, so `{{site.data.var.ct}}` applies the `db` lock provider automatically.
 
@@ -294,9 +294,9 @@ See [Configure the lock]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/in
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
-Magento can read multiple databases asynchronously. Set to `true` to automatically use a _read-only_ connection to the database to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
+{{site.data.var.ee}} can read multiple databases asynchronously. Set to `true` to automatically use a _read-only_ connection to the database to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
 ```yaml
 stage:
@@ -307,7 +307,7 @@ stage:
 ### `QUEUE_CONFIGURATION`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Use this environment variable to retain customized AMQP service settings between deployments. For example, if you prefer using an existing message queue service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the `QUEUE_CONFIGURATION` environment variable to connect it to your site:
 
@@ -349,11 +349,11 @@ stage:
 ### `REDIS_BACKEND`
 
 -  **Default**—`Cm_Cache_Backend_Redis`
--  **Version**—Magento 2.3.0 and later
+-  **Version**—{{site.data.var.ee}} 2.3.0 and later
 
 Specifies the backend model configuration for the Redis cache.
 
-Magento version 2.3.0 and later includes the following backend models:
+{{site.data.var.ee}} version 2.3.0 and later includes the following backend models:
 
 -  `Cm_Cache_Backend_Redis`
 -  `\Magento\Framework\Cache\Backend\Redis`
@@ -368,17 +368,17 @@ stage:
 ```
 
 {:.bs-callout-info}
-If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file] ({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html#configuration-example) in the _Magento Configuration Guide_. To override the generated cache configuration, use the [CACHE_CONFIGURATION]({{site.baseurl}}/cloud/env/variables-deploy.html#cache_configuration) deploy variable.
+If you specify `\magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html#configuration-example) in the _{{site.data.var.ee}} Configuration Guide_. To override the generated cache configuration, use the [CACHE_CONFIGURATION]({{site.baseurl}}/cloud/env/variables-deploy.html#cache_configuration) deploy variable.
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
--  **Version**—Magento 2.1.16 and later
+-  **Version**—{{site.data.var.ee}} 2.1.16 and later
 
 {:.bs-callout-warning}
-Do not enable this variable on scaled architecture (split architecture) projects. It causes Redis connection errors. Redis slaves are still active but will not be used for Redis reads. As an alternative, we recommend the following: use Magento 2.3.5 or later on Cloud projects with a scaled architecture, implement a new Redis backend configuration, and implement L2 caching for Redis.
+Do not enable this variable on scaled architecture (split architecture) projects. It causes Redis connection errors. Redis slaves are still active but will not be used for Redis reads. As an alternative, we recommend the following: use {{site.data.var.ee}} 2.3.5 or later on Cloud projects with a scaled architecture, implement a new Redis backend configuration, and implement L2 caching for Redis.
 
-Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _read-only_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
+{{site.data.var.ee}} can read multiple Redis instances asynchronously. Set to `true` to automatically use a _read-only_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
 ```yaml
 stage:
@@ -388,34 +388,14 @@ stage:
 
 You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
 
-[ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
+[ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v2002018) and later uses more fault-tolerant settings. If {{site.data.var.ee}} cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
-
-### `REMOTE_STORAGE`
-
--  **Default**—_Not set_
--  **Version**—Magento 2.4.2 and later
-
-Configure a _storage adapter_ to store media files in a persistent, remote storage container using a storage service, such as AWS S3. Use the remote storage option to improve performance on Cloud projects with complex, multi-server configurations that must share resources.
-
-```yaml
-stage:
-  deploy:
-    REMOTE_STORAGE:
-      driver: aws-s3 # Required
-      prefix: cloud # Optional
-      config:
-        bucket: my-bucket # Required
-        region: my-region # Required
-        key: my-key # Optional
-        secret: my-secret-key # Optional
-```
 
 ### `RESOURCE_CONFIGURATION`
 
 -  **Default**—Not set
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Maps a resource name to a database connection. This configuration corresponds to the `resource` section of the `env.php` file.
 
@@ -435,7 +415,7 @@ stage:
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`4`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
 
@@ -448,7 +428,7 @@ stage:
 ### `SCD_COMPRESSION_TIMEOUT`
 
 -  **Default**—`600`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 When the time it takes to compress the static assets exceeds the compression timeout limit, it interrupts the deployment process. Set the maximum execution time, in seconds, for the static content compression command.
 
@@ -461,7 +441,7 @@ stage:
 ### `SCD_MATRIX`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 You can configure multiple locales per theme. This customization speeds up the deployment process by reducing the number of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
@@ -471,7 +451,7 @@ The following example deploys the `Magento/backend` theme with three locales:
 stage:
   deploy:
     SCD_MATRIX:
-      "Magento/backend":
+      "magento/backend":
         language:
           - en_US
           - fr_FR
@@ -484,17 +464,17 @@ Also, you can choose to _not_ deploy a theme:
 stage:
   deploy:
     SCD_MATRIX:
-      "Magento/backend": [ ]
+      "magento/backend": [ ]
 ```
 
 ### `SCD_MAX_EXECUTION_TIME`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.2.0 and later
+-  **Version**—{{site.data.var.ee}} 2.2.0 and later
 
 Allows you to increase the maximum expected execution time for static content deployment.
 
-By default, Magento Commerce sets the maximum expected execution to 900 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
+By default, {{ site.data.var.ee }} sets the maximum expected execution to 900 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
 
 ```yaml
 stage:
@@ -507,7 +487,7 @@ stage:
 ### `SCD_NO_PARENT`
 
 -  **Default**—`false`
--  **Version**—Magento 2.4.2 and later
+-  **Version**—{{site.data.var.ee}} 2.4.2 and later
 
 On the deploy phase, we recommend setting `SCD_NO_PARENT: true` so that the generation of static content for parent themes does not occur during the deploy phase. This setting minimizes deployment time and prevents site downtime that can occur if the static content build fails during the deployment. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
 
@@ -520,7 +500,7 @@ stage:
 ### `SCD_STRATEGY`
 
 -  **Default**—`quick`
--  **Version**—Magento 2.2.0 and later
+-  **Version**—{{site.data.var.ee}} 2.2.0 and later
 
 Allows you to customize the [deployment strategy]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html).
 
@@ -528,7 +508,7 @@ Use these options _only_ if you have more than one locale:
 
 -  `standard`—deploys all static view files for all packages.
 -  `quick`—minimizes deployment time. This is the default command option, if not specified.
--  `compact`—conserves disk space on the server. In Magento version 2.2.4 and earlier, this setting overrides the value for `scd_threads` with a value of `1`.
+-  `compact`—conserves disk space on the server. In {{site.data.var.ee}} version 2.2.4 and earlier, this setting overrides the value for `scd_threads` with a value of `1`.
 
 ```yaml
 stage:
@@ -539,7 +519,7 @@ stage:
 ### `SCD_THREADS`
 
 -  **Default**—Automatic
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Sets the number of threads for static content deployment. The default value is set based on the detected CPU thread count and does not exceed a value of 4. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down. You can set the thread value, for example:
 
@@ -554,7 +534,7 @@ To further reduce deployment time, we recommend using [Configuration Management]
 ### `SEARCH_CONFIGURATION`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Use this environment variable to retain customized search service settings between deployments. For example:
 
@@ -585,7 +565,7 @@ stage:
 ### `SESSION_CONFIGURATION`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Configure Redis session storage. You must specify the `save`, `redis`, `host`, `port`, and `database` options for the session storage variable. For example:
 
@@ -622,7 +602,7 @@ stage:
 ### `SKIP_SCD`
 
 -  **Default**— _Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Set to `true` to skip static content deployment during the deploy phase.
 
@@ -637,9 +617,9 @@ stage:
 ### `UPDATE_URLS`
 
 -  **Default**—`true`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
-On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ site.baseurl }}/cloud/env/variables-cloud.html) variable. This configuration is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+On deployment, replace {{site.data.var.ee}} base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ site.baseurl }}/cloud/env/variables-cloud.html) variable. This configuration is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Admin using project URLs.
 
 If you need to update URLs when deploying to Pro or Starter Staging and Production environments,  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable.
 
@@ -652,7 +632,7 @@ stage:
 ### `VERBOSE_COMMANDS`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
+-  **Version**—{{site.data.var.ee}} 2.1.4 and later
 
 Enable or disable the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for `bin/magento` CLI commands performed during the deployment phase.
 

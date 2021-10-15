@@ -50,7 +50,7 @@ Where:
 
 *  `<store-url>` - specifies the base URL for the Magento instance
 *  `<store-code>` - specifies the store context
-*  `<front-name>` - specifies the `frontName` of the [FrontController] to use
+*  `<front-name>` - specifies the `frontName` of the [FrontController] to use (for example, [routesxml])
 *  `<controller-name>` - specifies the name of the controller
 *  `<action-name>` - specifies the [action class] to execute on the controller class
 

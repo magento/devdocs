@@ -11,7 +11,7 @@ functional_areas:
   - Services
 ---
 
-{{site.data.var.ece}} provides an on-boarding tool to configure PayPal Express Checkout accounts directly through the Magento Admin panel. This tool is available for ECE 2.1.8 and later. To better support going live and testing PayPal payment methods, you can enable and configure your PayPal Express Checkout account for sandbox or production accounts.
+{{site.data.var.ece}} provides an on-boarding tool to configure PayPal Express Checkout accounts directly through the Admin panel. This tool is available for ECE 2.1.8 and later. To better support going live and testing PayPal payment methods, you can enable and configure your PayPal Express Checkout account for sandbox or production accounts.
 
 You can configure either the sandbox or production account in every environment:
 
@@ -60,7 +60,7 @@ To configure PayPal Express Checkout:
    *  __API Authentication Methods__ as API Signature or API Certificate.
    *  API Username, Password, and Signature captured from your PayPal account.
    *  __Sandbox Mode__ select Yes or No to indicate if the credentials you entered are for sandbox. If you entered production credentials, select No.
-   *  __API Uses Proxy__ select Yes or No to set if the system uses a proxy server to establish a connection between Magento and the PayPal payment system. If Yes, enter the proxy host and port.
+   *  __API Uses Proxy__ select Yes or No to set if the system uses a proxy server to establish a connection between {{site.data.var.ee}} and the PayPal payment system. If Yes, enter the proxy host and port.
 
 1. For detailed information and steps for configuring your account, see [PayPal Express Checkout](http://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html) starting with Step 2 Complete the Required Settings.
 

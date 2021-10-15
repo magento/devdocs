@@ -30,7 +30,7 @@ If using a logged in customer, send the customer's authorization token in the `A
 mutation {
   setShippingAddressesOnCart(
     input: {
-      cart_id: "hD5ac9d7N5539DMVhs5uIzwS04hsD3vy"
+      cart_id: "{ CART_ID }"
       shipping_addresses: [
         {
           address: {

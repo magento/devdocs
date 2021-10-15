@@ -1,10 +1,10 @@
-# Magento Developer Documentation
+# Adobe Commerce Developer Documentation
 
-Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
+Welcome! This site contains the latest Adobe Commerce and Magento Open Source developer documentation for ongoing releases of both products. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
 
 ## Contributors
 
-Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving Magento documentation.
+Our goal is to provide the Commerce and Open Source communities with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving the documentation.
 
 ![](https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
 
@@ -144,7 +144,7 @@ exclude:
 
 ## Building old versions
 
-The published website contains documentation for the latest Magento releases only. For cases, when you need to view the content as it was for an earlier release, we created [tags](https://github.com/magento/devdocs/tags) in this repository. Typically, they point at the commit when the release notes were finalized and published.
+The published website contains documentation for the most current Adobe Commerce and Magento Open Source releases only. For cases, when you need to view the content as it was for an earlier release, we created [tags](https://github.com/magento/devdocs/tags) in this repository. Typically, they point at the commit when the release notes were finalized and published.
 
 To view the list of available tags:
 
@@ -167,5 +167,6 @@ Find guidelines for building the site locally in the checked out README.
 
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
+-  [Slack](https://magentocommeng.slack.com/archives/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
 -  [Visit our wiki](https://github.com/magento/devdocs/wiki)
--  <a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
+-  <a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Twitter @MagentoDevDocs</a>

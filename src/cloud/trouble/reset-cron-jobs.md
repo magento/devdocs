@@ -7,7 +7,7 @@ functional_areas:
 redirect_to: https://support.magento.com/hc/en-us/articles/360033099451
 ---
 
-Sometimes, Magento cron jobs do not finish executing and persist in a `running` status, which prevents other cron jobs from running. This can happen for a number of reasons, such as network issues, application crashes, redeployment issues.
+Sometimes, cron jobs do not finish executing and persist in a `running` status, which prevents other cron jobs from running. This can happen for a number of reasons, such as network issues, application crashes, redeployment issues.
 
 ## Symptom
 

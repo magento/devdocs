@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 ---
 
-The `{{site.data.var.ct}}` package is a set of scripts and tools designed to manage and deploy {{site.data.var.ece}} projects. The `{{site.data.var.ct}}` package simplifies many {{site.data.var.ece}} processes, such as deploying to a Docker environment, managing crons, verifying project configuration, and applying  Magento patches and hot fixes. You can view and contribute to the open-source [ece-tools repository on Github](https://github.com/magento/ece-tools).
+The `{{site.data.var.ct}}` package is a set of scripts and tools designed to manage and deploy {{site.data.var.ece}} projects. The `{{site.data.var.ct}}` package simplifies many {{site.data.var.ece}} processes, such as deploying to a Docker environment, managing crons, verifying project configuration, and applying Adobe patches and hot fixes. You can view and contribute to the open-source [ece-tools repository on Github](https://github.com/magento/ece-tools).
 
 {% include cloud/note-ece-tools-package.md %}
 
@@ -130,9 +130,9 @@ Ideal state is configured
 
 {% include cloud/note-ece-tools-release-info.md %}
 
-## Magento patches and custom patches
+## Adobe patches and custom patches
 
-The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-patches] package, which delivers Magento patches and hot fixes that improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. The `{{site.data.var.mcp-package}}` also delivers custom patches that you add to your {{site.data.var.ece}} project. See [Apply patches].
+The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-patches] package, which delivers Adobe patches and hot fixes that improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. The `{{site.data.var.mcp-package}}` also delivers custom patches that you add to your {{site.data.var.ece}} project. See [Apply patches].
 
 <!-- link definitions -->
 [mode]: {{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode

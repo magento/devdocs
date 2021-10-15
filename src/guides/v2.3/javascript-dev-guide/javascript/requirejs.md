@@ -1,6 +1,6 @@
 ---
 group: javascript-developer-guide
-title: RequireJS in Magento
+title: RequireJS in Commerce
 contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 ---
@@ -68,6 +68,23 @@ paths: {
 }
 ```
 
+{:.bs-callout-info}
+When setting a path to an array with multiple script sources, if the first script fails to load, the next is used as a fallback.
+
+```javascript
+var config = {
+    ...
+    paths: {
+        'alias': [
+            'https://some-library.com/file',
+            'vendor_name>_<module_name>/js/file'
+        ]
+    }
+};
+```
+
+For external content, resources should be whitelisted; otherwise Magento raises error notices in the browser console. See [Content Security Policies]({{ page.baseurl }}/extension-dev-guide/security/content-security-policies.html).
+
 Consider the example of overwriting an HTML file in the adminhtml.
 In this example, the `max-length` value of the text-box in the `adminhtml` is altered. The HTML file is located at `vendor/magento/module_ui/view/base/web/templates/form/element/input.html`.
 
@@ -81,7 +98,7 @@ In this example, the `max-length` value of the text-box in the `adminhtml` is al
     };
     ```
 
-1. Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/` and copy the contents of the `input.html` file from the `module_ui` template file.
+1. Create an `input.html` file under `app/code/<Vendor_Name>/<Module_Name>/view/base/web/template/form/element/` and copy the contents of the `input.html` file from the `module_ui` template file.
 1. Change the maxlength value to `512`, which was originally set to `256`.
 1. Upgrade the Magento application:
 

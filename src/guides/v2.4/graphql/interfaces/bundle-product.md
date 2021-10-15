@@ -10,6 +10,7 @@ The `BundleProduct` data type implements the following interfaces:
 -  [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html)
 -  [PhysicalProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html#PhysicalProductInterface)
 -  [CustomizableProductInterface]({{page.baseurl}}/graphql/interfaces/customizable-option-interface.html)
+-  [RoutableInterface]({{page.baseurl}}/graphql/interfaces/routable-interface.html)
 
 Attributes that are specific to bundle products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
 
@@ -38,8 +39,9 @@ Attribute | Type | Description
 `required` | Boolean | Indicates whether the item must be included in the bundle
 `sku` | String | The SKU of the bundle product
 `title` | String | The display name of the item
-`type` | String | The input type that the customer uses to select the item. Examples include radio button and checkbox.
+`type` | String | The input type that the customer uses to select the item. Examples include radio button and checkbox
 `uid` | ID | The unique ID for a `BundleItem` object
+
 ## BundleItemOption object
 
 The `BundleItemOption` object contains the following attributes:

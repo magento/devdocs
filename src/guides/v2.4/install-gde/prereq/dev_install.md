@@ -1,5 +1,5 @@
 ---
-title: Clone the Magento repository
+title: Clone the repository
 functional_areas:
   - Install
   - System
@@ -43,7 +43,7 @@ To create an authentication file:
                "username": "<public-key>",
                "password": "<private-key>"
            }
-       }
+       },
        "github-oauth": {
            "github.com": "<personal-access-token>"
        }
@@ -64,5 +64,5 @@ After completing the tasks discussed on this page, see [Update installation depe
 [gh-repo]: https://github.com/magento/magento2
 [gh-token]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
 [Magento authentication key]: {{page.baseurl}}/install-gde/prereq/connect-auth.html
-[sample]: https://github.com/magento/magento2/blob/2.4-develop/auth.json.sample
+[sample]: {{ site.mage2bloburl }}/{{ page.guide_version }}/auth.json.sample
 [Update installation dependencies]: {{page.baseurl}}/install-gde/install/prepare-install.html

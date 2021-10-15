@@ -5,7 +5,7 @@ title: Extension Repository Structure
 
 ## Extension Repository Structure
 
-For Magento 2.3 module, theme, and language pack extension repositories, we recommend five best practices:
+For Magento module, theme, and language pack extension repositories, we recommend five best practices:
 
 *  Flatter hierarchy
 *  One *extension type* (module, theme, or language pack) per repository

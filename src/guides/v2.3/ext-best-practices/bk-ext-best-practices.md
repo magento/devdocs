@@ -20,7 +20,7 @@ The table below is data from a recent poll that shows the distribution of the am
 | Community | 10% | 53%   | 26%   | 11% |
 | Enterprise| 9%  | 32%   | 27%   | 32% |
 
-This guide provides best practices, guidelines, and tips for creating Magento extensions.  We encourage you to follow our best practices when developing code for your Magento components.
+This guide provides best practices, guidelines, and tips for creating extensions.  We encourage you to follow our best practices when developing code for your Magento components.
 
 ### Related Content
 

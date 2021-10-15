@@ -1,4 +1,4 @@
-The `CategoryFilterInput` object defines the filters to be used in this query.
+  The `CategoryFilterInput` object defines the filters to be used in this query.
 
 Attribute | Data type | Description
 --- | --- | ---

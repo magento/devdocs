@@ -50,7 +50,7 @@ Where:
 
 *  `<store-url>` - specifies the base URL for the Magento instance
 *  `<store-code>` - specifies the store context
-*  `<front-name>` - specifies the `frontName` of the [FrontController] to use
+*  `<front-name>` - specifies the `frontName` of the [FrontController] to use (for example, [routesxml])
 *  `<controller-name>` - specifies the name of the controller
 *  `<action-name>` - specifies the [action class] to execute on the controller class
 
@@ -220,6 +220,8 @@ Name | Description
 
 Declaring a new route:
 
+**File:** `ExampleCorp/RoutingExample/etc/frontend/routes.xml`
+
 ```xml
 <?xml version="1.0"?>
 
@@ -234,6 +236,8 @@ Declaring a new route:
 ```
 
 Declaring the layout handler for our new route:
+
+**File:** `ExampleCorp/RoutingExample/view/frontend/layout/routing_index_index.xml`
 
 ```xml
 <?xml version="1.0"?>
@@ -252,6 +256,8 @@ Declaring the layout handler for our new route:
 
 Defining a new custom router:
 
+**File:** `ExampleCorp/RoutingExample/etc/frontend/di.xml`
+
 ```xml
 <type name="Magento\Framework\App\RouterList">
     <arguments>
@@ -267,6 +273,8 @@ Defining a new custom router:
 ```
 
 Creating the controller that will handle the `routing` route and will get the parameters passed by our router.
+
+**File:** `ExampleCorp/RoutingExample/Controller/Index/Index.php`
 
 ```php
 <?php
@@ -319,6 +327,8 @@ class Index implements HttpGetActionInterface
 ```
 
 In the end, let's create the router class, that will match the custom route name `learning` with the existing `routing` route.
+
+**File:** `ExampleCorp/RoutingExample/Controller/Router.php`
 
 ```php
 <?php

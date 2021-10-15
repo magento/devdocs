@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Use Redis for the Magento page and default cache
+title: Use Redis for default cache
 functional_areas:
   - Configuration
   - System
@@ -96,6 +96,74 @@ As a result of the two example commands, Magento adds lines similar to the follo
     ]
 ],
 ```
+
+## Using AWS ElastiCache with your EC2 instance
+
+As of Magento 2.4.3, Magento instances hosted on Amazon EC2 may use an AWS ElastiCache in place of a local Redis instance.
+
+{.bs-callout-warning}
+This section only works for Magento instances running on Amazon EC2 VPCs. It does not work for on-premises installations.
+
+### Configure a Redis cluster
+
+After [setting up a Redis cluster on AWS](https://aws.amazon.com/getting-started/hands-on/setting-up-a-redis-cluster-with-amazon-elasticache/), configure the EC2 instance to use the ElastiCache.
+
+1. [Create an ElastiCache Cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/set-up.html) in the same region and VPC of the EC2 instance.
+1. Verify the connection.
+
+   *  Open an SSH connection to your EC2 instance
+   *  On the EC2 instance, install the Redis client:
+
+      ```bash
+      sudo apt-get install redis
+      ```
+
+   *  Add an inbound rule to the EC2 security group: Type - Custom TCP, port - 6379, Source - 0.0.0.0/0
+   *  Add an inbound rule to the ElastiCache Cluster security group: Type - Custom TCP, port - 6379, Source - 0.0.0.0/0
+   *  Connect to the Redis CLI:
+
+      ```bash
+      redis-cli -h <ElastiCache Primary Endpoint host> -p <ElastiCache Primary Endpoint port>
+      ```
+
+### Configure Magento to use the cluster
+
+Magento supports multiple types of caching configurations. Generally, the caching configurations are split between frontend and backend. Frontend caching is classified as 'default', used for any cache type. You can customize or split into lower-level caches to achieve better performance. A common Redis configuration is separating the default cache and page cache into their own Redis Database (RDB).
+
+Run `setup` commands to specify the Redis endpoints.
+
+Configuring Magento for Redis as default caching:
+
+```bash
+bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=<ElastiCache Primary Endpoint host>  --cache-backend-redis-port=<ElastiCache Primary Endpoint port> --cache-backend-redis-db=0
+```
+
+Configure Magento for Redis page caching:
+
+```bash
+bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=<ElastiCache Primary Endpoint host> --page-cache-redis-port=<ElastiCache Primary Endpoint port> --page-cache-redis-db=1
+```
+
+Configure Magento to use Redis for session storage:
+
+```bash
+bin/magento setup:config:set --session-save=redis --session-save-redis-host=<ElastiCache Primary Endpoint host> --session-save-redis-port=<ElastiCache Primary Endpoint port> --session-save-redis-log-level=4 --session-save-redis-db=2
+```
+
+### Verify connectivity
+
+To verify that Magento is talking to ElasiCache:
+
+1. Open an SSH connection to the Magento EC2 instance.
+1. Start the Redis monitor.
+
+   ```bash
+   redis-cli -h <ElastiCache Primary Endpoint host> -p <ElastiCache Primary Endpoint port> monitor
+   ```
+
+1. Open a page in the Magento UI.
+1. Verify the [cache output]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html#redis-verify) in your terminal.
+
 ## New Redis cache implementation
 
 As of Magento 2.3.5, it is recommended to use the extended Redis cache implementation: `\Magento\Framework\Cache\Backend\Redis`.
@@ -168,7 +236,7 @@ It is disabled by default, and we recommend keeping it disabled until you have e
 To enable it, run:
 
 ```bash
-bin/magento setup:config:set --allow-parallel-generation`
+bin/magento setup:config:set --allow-parallel-generation
 ```
 
 Since it is a flag, you cannot disable it with a command. You will need to manually set the configuration value to `false`:

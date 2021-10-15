@@ -9,7 +9,7 @@ functional_areas:
 
 We require the following software for production instances of Magento:
 
-*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html#php)
+*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html)
 *  Nginx and [PHP-FPM](https://php-fpm.org/)
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
 *  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
@@ -43,9 +43,8 @@ Magento fully supports PHP 7.3 and 7.4. There are several factors to account for
 
 ### PHP extensions
 
-We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:
+We recommend limiting the list of active PHP extensions to those that are required for Magento functionality.
 
-<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Adding more extensions increases library load times.
@@ -77,19 +76,19 @@ realpath_cache_ttl=7200
 
 To get maximum speed out of Magento 2 on PHP 7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:
 
-```bash
-  opcache.memory_consumption=512MB
-  opcache.max_accelerated_files=60000
-  opcache.consistency_checks=0
-  opcache.validate_timestamps=0
-  opcache.enable_cli=1
+```text
+opcache.memory_consumption=512
+opcache.max_accelerated_files=60000
+opcache.consistency_checks=0
+opcache.validate_timestamps=0
+opcache.enable_cli=1
 ```
 
 When you fine-tune the memory allocation for opcache, take into account the size of Magento’s code base and all your extensions. Magento’s performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.
 
 If you have a low-memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:
 
-```bash
+```text
 opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
 ```
@@ -133,7 +132,7 @@ Parameter | Default | Description
 `innodb_buffer_pool_instances` | 8 | The default value is set to 8 to avoid issues with multiple threads attempting to access the same instance.
 `innodb_buffer_pool_size` | 128MB | Combined with the multiple pool instances described above, this means a default memory allocation of 1024MB. The total size is divided among all the buffer pools. For best efficiency, specify a combination of `innodb_buffer_pool_instances` and `innodb_buffer_pool_size` so that each buffer pool instance is at least 1 GB.
 `max_connections` | 150 | The value of the `max_connections` parameter should correlate with the total number of PHP threads configured in the application server. A general recommendation would be 300 for a small and 1,000 for a medium environment.
-`innodb-thread-concurrency` | 0 | The best value for this configuration should be calculated by the formula: `innodb-thread-concurrency = 2 * (NumCPUs + NumDisks)`
+`innodb_thread_concurrency` | 0 | The best value for this configuration should be calculated by the formula: `innodb_thread_concurrency = 2 * (NumCPUs + NumDisks)`
 
 ## Varnish
 

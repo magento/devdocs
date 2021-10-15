@@ -55,6 +55,28 @@ Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/M
 </form>
 ```
 
+## Validation
+
+The **validate-date** initialization rule that describes the required **dateFormat** parameter should be specified:
+
+  ```javascript
+  'validate-date': [
+            function (value, params, additionalParams) {
+                var test = moment(value, utils.convertToMomentFormat(additionalParams.dateFormat));
+
+                return $.mage.isEmptyNoTrim(value) || test.isValid();
+            },
+            $.mage.__('Please enter a valid date.')
+
+        ];
+  ```
+
+The following shows how to add date validation using a calendar widget as an example.
+
+  ```javascript
+  data-validate="{'required-entry': true, 'validate-date': {dateFormat: 'MM/dd/Y'}}"
+  ```
+
 ## Result
 
 ![Date Component Example]({{ site.baseurl }}/common/images/ui_comps/ui-date-result.png)

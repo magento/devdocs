@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Magento UI library
+title: UI library
 functional_areas:
   - Frontend
   - Theme

@@ -4,16 +4,17 @@ title: MySQL
 
 ## General guidelines {#instgde-prereq-mysql-intro}
 
-See [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html#database) for supported versions of MySQL.
+See [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported versions of MySQL.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
 *  Magento uses [MySQL database triggers](https://dev.mysql.com/doc/refman/8.0/en/triggers.html){:target="_blank"} to improve database access during reindexing. These get created when the indexer mode is set to [schedule]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-index.html#configure-indexers-1){:target="_blank"}. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
 *  Familiarize yourself with [these potential MySQL trigger limitations](https://dev.mysql.com/doc/mysql-reslimits-excerpt/8.0/en/stored-program-restrictions.html){:target="_blank"} before you continue.
+*  To enhance your database security posture, enable the [`STRICT_ALL_TABLES`](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_strict_all_tables) SQL mode to prevent storing invalid data values, which might cause unwanted database interactions.
 *  If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](https://dev.mysql.com/doc/refman/8.0/en/replication-formats.htmll){:target="_blank"}.
 
 {:.bs-callout-warning}
-Magento 2 currently utilizes `CREATE TEMPORARY TABLE` statements inside transactions, which are [incompatible](https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-restrictions.html) with database implementations utilizing GTID-based replication, such as [Google Cloud SQL second-generation instances](https://cloud.google.com/sql/docs/features#differences).
+Magento 2 currently utilizes `CREATE TEMPORARY TABLE` statements inside transactions, which are [incompatible](https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-restrictions.html) with database implementations utilizing GTID-based replication, such as [Google Cloud SQL second-generation instances](https://cloud.google.com/sql/docs/features#differences). Consider MySQL for Cloud SQL 8.0 as an alternative.
 
 {:.bs-callout-info}
 If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{page.baseurl }}/install-gde/prereq/mysql_remote.html).
@@ -179,6 +180,11 @@ The `explicit_defaults_for_timestamp` setting is deprecated. This setting contro
 
 {:.bs-callout-warning}
 On Magento projects deployed on the Cloud platform, the `explicit_defaults_for_timestamp` setting for MySQL (MariaDB) defaults to *OFF*
+
+Reindexing on MariaDB 10.4 takes more time compared to other MariaDB or MySQL versions. To speed up reindexing, we recommend setting these MariaDB configuration parameters:
+
+*  optimizer_switch='rowid_filter=off'
+*  optimizer_use_condition_selectivity = 1
 
 {:.ref-header}
 Related topics

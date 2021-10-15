@@ -5,7 +5,7 @@ title: Magento Open Source 2.3.3 Release Notes
 
 *Patch code and release notes published on October 8, 2019 and last updated on June 3, 2020.*
 
-Magento Open Source 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
+{{site.data.var.ce}} 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
 
 This release includes over 170 functional fixes to the core product and  over 75 security enhancements. It includes over 200 contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
@@ -15,7 +15,7 @@ Merchants can now install time-sensitive security fixes without applying the hun
 
 **If you have already upgraded to the pre-release version of this patch (2.3.2-p1), we strongly recommend that you upgrade to 2.3.2-p2 as soon as possible.**  Patch 2.3.2-p2 contains the critical security fixes that are included in Magento  2.3.3, 2.2.10, 1.9.4.3, and 1.14.4.3, but that are not included in patch 2.3.2-p1.
 
-For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage).
+For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html#get-the-metapackage).
 
 ## Other release information
 
@@ -70,7 +70,7 @@ This release contains the following major PSD-related changes:
 *  **75 security enhancements** that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.3) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
 
 {:.bs-callout-info}
-Starting with the release of Magento Open Source 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Open Source to more easily identify unaddressed vulnerabilities in their deployment.
+Starting with the release of {{site.data.var.ce}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of {{site.data.var.ce}} to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Platform upgrades
 
@@ -189,11 +189,11 @@ See [Klarna](https://docs.magento.com/m2/ee/user_guide/payment/klarna.html).
 
 #### Yotpo
 
-The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Magento Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.
+The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.
 
 ## Backward-incompatible Changes
 
-This release introduces a new, immutable `EmailMessageInterface` that supports the sending of multi-part MIME-type content in email. The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newsletter\Model\Queue\TransportBuilder` structures were refactored to use this new `EmailMessageInterface` instead of `MessageInterface`, which was previously used. If you are a Magento extension developer and rely on `\Magento\Email\Model\Transport::getMessage()` or `\Magento\Framework\Mail\TransportInterface::getMessage()`, those methods will now return the new `EmailMessageInterface`.
+This release introduces a new, immutable `EmailMessageInterface` that supports the sending of multi-part MIME-type content in email. The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newsletter\Model\Queue\TransportBuilder` structures were refactored to use this new `EmailMessageInterface` instead of `MessageInterface`, which was previously used. If you are an extension developer and rely on `\Magento\Email\Model\Transport::getMessage()` or `\Magento\Framework\Mail\TransportInterface::getMessage()`, those methods will now return the new `EmailMessageInterface`.
 
 ## Fixed issues
 
@@ -257,7 +257,7 @@ We've fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MC-17275-->
 
-*  The Magento Admin now loads without issue after you change the store domain or set cookies to a different domain. Previously, the page did not redirect as expected.
+*  The Admin now loads without issue after you change the store domain or set cookies to a different domain. Previously, the page did not redirect as expected.
 
 <!--- MC-17675-->
 
@@ -1501,7 +1501,7 @@ The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newslet
 **Issue**:
 Method chaining does not work as expected in extensions and customizations that are based on a product collection entity. Many extensions rely on product collection entities, which represent a list of products that satisfy search and filtering criteria. In the process of refactoring the `addAttributeToFilter` method, method chaining as it was implemented in Magento versions earlier than 2.3.3 was broken. **Workaround**: Apply the Method chaining fix for product collection patch. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. You can find this patch [here](https://magento.com/tech-resources/download#download2335).
 
-**Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+**Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Commerce Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in {{site.data.var.ee}} 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

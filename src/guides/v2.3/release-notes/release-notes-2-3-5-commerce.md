@@ -1,9 +1,9 @@
 ---
 group: release-notes
-title: Magento Commerce 2.3.5 Release Notes
+title: Adobe Commerce 2.3.5 Release Notes
 ---
 
-Magento Commerce 2.3.5 offers significant platform upgrades, substantial security changes, and performance improvements.
+{{site.data.var.ee}} 2.3.5 offers significant platform upgrades, substantial security changes, and performance improvements.
 
 This release includes over 180 functional fixes to the core product and over 25 security enhancements. It includes the resolution of over 46 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
@@ -63,17 +63,17 @@ This release includes over 25 security fixes and platform security improvements.
 *  **Removal of session_id from URLs**. Exposure of `session-id` values in URLs creates a potential security vulnerability in the form of session fixation. We are removing code from the classes and methods that add or read session_id from URLs.
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Platform upgrades
 
 The following platform upgrades help enhance website security and performance:
 
-*  **Support for Elasticsearch 7.x**. Elasticsearch 7.x is now the supported catalog search engine for both Magento Commerce and Magento Open Source. With this release, Magento 2.3.x supports only Elasticsearch 6.x and 7.x.  Elasticsearch 2.x and 5.x are now deprecated for Magento 2.3.x and will be removed in Magento 2.4.0. <!--- MC-30796-->
+*  **Support for Elasticsearch 7.x**. Elasticsearch 7.x is now the supported catalog search engine for both {{site.data.var.ee}} and {{site.data.var.ce}}. With this release, {{site.data.var.ee}} 2.3.x supports only Elasticsearch 6.x and 7.x.  Elasticsearch 2.x and 5.x are now deprecated for {{site.data.var.ee}} 2.3.x and will be removed in {{site.data.var.ee}} 2.4.0. <!--- MC-30796-->
 
-*  **Deprecation of core integration of third-party payment methods**. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer  supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-31168-->
+*  **Deprecation of core integration of third-party payment methods**. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer  supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Commerce Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-31168-->
 
-*  **Deprecation of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace. <!--- MC-31315-->
+*  **Deprecation of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Commerce Marketplace. <!--- MC-31315-->
 
 *  **Upgrade of Symfony Components** to the latest lifetime support version (4.4). (Symfony Components are a set of decoupled PHP libraries used by the Magento Framework.) <!--- MC-29549-->
 
@@ -155,7 +155,7 @@ This release includes:
 
 ### Google Shopping ads Channel
 
-The Google Shopping ads Channel bundled extension has reached end-of-life with this release (2.3.5 and 2.3.4-p1). It is no longer supported. Alternative extensions are available on the Magento Marketplace.
+The Google Shopping ads Channel bundled extension has reached end-of-life with this release (2.3.5 and 2.3.4-p1). It is no longer supported. Alternative extensions are available on the Commerce Marketplace.
 
 ### B2B
 
@@ -751,7 +751,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30796-->
 
-*  Elasticsearch 7.5 is now the supported catalog search engine for both Magento Commerce and Magento Open Source. With this release, Magento 2.3.x supports only Elasticsearch 6.x and 7.x. Elasticsearch 2.x and 5.x are now deprecated for Magento 2.3.x and will be removed in Magento 2.4.0.
+*  Elasticsearch 7.5 is now the supported catalog search engine for both {{site.data.var.ee}} and {{site.data.var.ce}}. With this release, {{site.data.var.ee}} 2.3.x supports only Elasticsearch 6.x and 7.x. Elasticsearch 2.x and 5.x are now deprecated for {{site.data.var.ee}} 2.3.x and will be removed in {{site.data.var.ee}} 2.4.0.
 
 <!--- MC-29549-->
 
@@ -817,7 +817,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-31168-->
 
-*  The integration of third-party payment methods into the core Magento code has been deprecated. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace.
+*  The integration of third-party payment methods into the core Magento code has been deprecated. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Commerce Marketplace.
 
 <!--- MC-30810-->
 
@@ -825,7 +825,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-31315-->
 
-*  The core implementation of Signifyd fraud protection is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on Magento Marketplace.
+*  The core implementation of Signifyd fraud protection is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on Commerce Marketplace.
 
 <!--- MC-29082-->
 
@@ -1219,7 +1219,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  **Issue**: Magento throws an error on the Order Summary  section of the checkout workflow when a customer removes store credit after first selecting it as a payment method for the entire order. **Workaround**: Customers can refresh the Order page. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!-- MC-33431-->
 
-*  **Issue**: The storefront checkout workflow will display only the Klarna and Amazon Pay payment methods for some countries, although other payment methods have been enabled. **Workaround**: Download and apply [Patch for specific country payment method issue](https://magento.com/tech-resources/download#download2369). A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. See [Country payment method issue in {{ site.data.var.ece }} and Magento Commerce 2.3.5 and 2.3.5-p1](https://support.magento.com/hc/en-us/articles/360043955991).
+*  **Issue**: The storefront checkout workflow will display only the Klarna and Amazon Pay payment methods for some countries, although other payment methods have been enabled. **Workaround**: Download and apply [Patch for specific country payment method issue](https://magento.com/tech-resources/download#download2369). A fix will be available in {{site.data.var.ee}} 2.3.6, which is scheduled for release in Q4 2020. See [Country payment method issue in {{ site.data.var.ece }} and {{site.data.var.ee}} 2.3.5 and 2.3.5-p1](https://support.magento.com/hc/en-us/articles/360043955991).
 
 *  **Issue**: An error message appears when a shopper attempts to change their credit card from the payments widget while checking out with Amazon Pay.  The shopper cannot successfully complete checkout by ignoring the error and proceeding to checkout. To resolve this issue and remove the error, see [Amazon Pay credit card change error](https://support.magento.com/hc/en-us/articles/360042646332) to apply the fix. <!-- BUNDLE-2554-->
 
@@ -1227,7 +1227,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  **Issue**: The system message displayed by Magento after a bulk action (for example, a mass product update or import/export) displays a count of 0 instead of an accurate count of the products affected by the bulk action. **Workaround**: A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!--- MC-33345-->
 
-*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Commerce Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in {{site.data.var.ee}} 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

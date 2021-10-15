@@ -1,7 +1,7 @@
 ---
 group: testing
-title: Magento Testing Guide
-landing-page: Testing Guide
+title: Application Testing Guide
+landing-page: Application Testing Guide
 ---
 
 Magento actively leverages various testing strategies to ensure product and code quality.

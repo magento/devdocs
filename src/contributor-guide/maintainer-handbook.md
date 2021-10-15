@@ -49,7 +49,7 @@ It is important to check the pull request is targeted to the correct branch. For
 
 #### Code review
 
-The code review is one of the most important parts of the review process. Our community maintainers are responsible for reviewing the proposed changes and confirm they are following the [Magento Technical Guidelines]({{ site.baseurl }}/guides/v2.4/coding-standards/technical-guidelines.html). It is important to evaluate if the proposed changes are backward compatible and follow the rules and best practice of our [Backward Compatible Development Guide]({{ site.baseurl }}/contributor-guide/backward-compatible-development/). We count on our Maintainers judgement for other recommendations to increase contribution quality.
+The code review is one of the most important parts of the review process. Our community maintainers are responsible for reviewing the proposed changes and confirm they are following the [Magento Technical Guidelines]({{ site.baseurl }}{{ site.gdeurl }}/coding-standards/technical-guidelines.html). It is important to evaluate if the proposed changes are backward compatible and follow the rules and best practice of our [Backward Compatible Development Guide]({{ site.baseurl }}/contributor-guide/backward-compatible-development/). We count on our Maintainers judgement for other recommendations to increase contribution quality.
 
 ![Code review]({{ site.baseurl }}/contributor-guide/img/pr-code-review.png)
 
@@ -83,7 +83,7 @@ Besides the repositories, projects and code review process, there are other tool
 
 #### Related pull requests
 
-Magento is a complex platform and, some changes may require changes in multiple repositories. For example, if a contributor’s PR performs a change on a feature that is being used on Magento Commerce edition, it may require a parallel PR in that repository.
+Magento is a complex platform and, some changes may require changes in multiple repositories. For example, if a contributor’s PR performs a change on a feature that is being used on the {{site.data.var.ee}} edition, it may require a parallel PR in that repository.
 
 In that case, builds need to run using the changes from both PRs. To do so, use the 'related pull requests' feature. This feature is enabled by adding the link to the related pull request on the main pull request description using Github keywords. Details on this are in the [Contributor Guide]({{ site.baseurl }}/contributor-guide/pull-request-tests.html#related-pull-requests).
 

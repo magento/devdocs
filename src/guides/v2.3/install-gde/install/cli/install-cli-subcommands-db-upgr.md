@@ -1,5 +1,5 @@
 ---
-title: Update the Magento database schema and data
+title: Update the database schema and data
 functional_areas:
   - Install
   - System
@@ -22,18 +22,13 @@ Anytime you perform an action that causes the Magento [database schema](https://
 *  You installed or updated a component using the command line
 *  You enabled or disabled a component using the command line
 
-Note the following:
-
-*  If you used the Web Setup Wizard to do any of the preceding, you don't have to use the command discussed in this topic.
-
-   {% include install/web/deprecated.md %}
-
-*  A Magento *component* can be a module, theme, or language pack; it doesn't matter whether the component comes from the Magento Marketplace or not
+{:.bs-callout-info}
+A Magento *component* can be a module, theme, or language pack; it doesn't matter whether the component comes from the Commerce Marketplace or not
 
 1. Start the upgrade:
 
    ```bash
-    magento setup:upgrade [--keep-generated]
+    bin/magento setup:upgrade [--keep-generated]
     ```
 
     where `--keep-generated` is an optional argument that does not update [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html). This optional argument is for use *only* in limited circumstances by experienced system integrators. It should be used *only* in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode). It should *not* be used in [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode).

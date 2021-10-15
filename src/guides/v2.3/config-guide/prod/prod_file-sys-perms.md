@@ -11,7 +11,7 @@ This section discusses how to set up the owner or owners of the Magento file sys
 
 This topic focuses on Magento development and production systems. If you are installing Magento, see [Set pre-installation ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
-The sections that follow discuss requirements for one or two Magento file system owners. That means:
+The sections that follow discuss requirements for one or two file system owners. That means:
 
 *  One user: Typically necessary on shared hosting providers, which allow you to access only one user on the server This user can log in, transfer files using FTP, and this user also runs the web server.
 
@@ -19,7 +19,7 @@ The sections that follow discuss requirements for one or two Magento file system
 
    Instead, you have separate users:
 
-   *  The web server user, which runs the Magento Admin (including Setup Wizard) and storefront.
+   *  The web server user, which runs the Admin and storefront.
 
    *  A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
@@ -105,7 +105,7 @@ To make files and directories writable so you can update components and upgrade 
 <p id="mage-owner-two"></p>{% collapsibleh2 Production file system ownership for private hosting (two users) %}
 If you use your own server (including a hosting provider's private server setup), there are two users:
 
-*  The web server user, which runs the Magento Admin (including the Setup Wizard) and storefront.
+*  The web server user, which runs the Admin and storefront.
 
    Linux systems typically do not provide a shell for this user; you cannot log in to the Magento server as, or switch to, the web server user.
 
@@ -114,14 +114,14 @@ If you use your own server (including a hosting provider's private server setup)
    Magento uses this user to run Magento CLI commands and cron.
 
     {:.bs-callout-info}
-   The command-line user is also referred to as the _Magento file system owner_.
+   The command-line user is also referred to as the _file system owner_.
 
 Because these users require access to the same files, we recommend you create a [shared group]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong. The following procedures assume you have already done this.
 
 See one of the following sections:
 
-*  [Two Magento file system owners in developer or default mode](#mage-owner-two-devel)
-*  [Two Magento file system owners in production mode](#mage-owner-two-prod)
+*  [Two file system owners in developer or default mode](#mage-owner-two-devel)
+*  [Two file system owners in production mode](#mage-owner-two-prod)
 
 ### Set up two owners for default or developer mode {#mage-owner-two-devel}
 
@@ -144,7 +144,7 @@ In addition, the directories should be writable by the web server group. Because
 
 To set `setgid` and permissions for developer mode:
 
-1. Log in to your Magento server as, or switch to, the Magento file system owner.
+1. Log in to your Magento server as, or switch to, the file system owner.
 1. Enter the following commands in the order shown:
 
    ```bash
@@ -152,14 +152,14 @@ To set `setgid` and permissions for developer mode:
    ```
 
    ```bash
-   find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} + &&
+   find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} +
    ```
 
    ```bash
    find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
    ```
 
-### Two Magento file system owners in production mode {#mage-owner-two-prod}
+### Two file system owners in production mode {#mage-owner-two-prod}
 
 When you are ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
 
@@ -179,7 +179,7 @@ To remove writable permissions to files and directories from the web server user
 
 1. Log in to your Magento server.
 1. Change to your Magento installation directory.
-1. As the Magento file system owner, enter the following command to change to production mode:
+1. As the file system owner, enter the following command to change to production mode:
 
    ```bash
    bin/magento deploy:mode:set production

@@ -13,7 +13,7 @@ functional_areas:
 {:.ref-header}
 Previous step
 
-[Install Magento prerequisites]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
+[Install prerequisites]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
 
 The [SSH protocol](https://en.wikipedia.org/wiki/Secure_Shell) is designed to maintain a secure connection between two systems---in this case, your local working environment and your {{site.data.var.ece}} Git project.
 
@@ -54,13 +54,7 @@ To add your SSH key to the local configuration:
    {:.bs-callout-info}
    You can specify multiple SSH keys by adding multiple `IdentityFile` entries to your configuration.
 
-1. Reload your SSH configuration to apply the changes.
-
-    ```bash
-    source ~/.ssh/config
-    ```
-
 {:.ref-header}
 Next step
 
-[Set up the Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)
+[Set up the file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)

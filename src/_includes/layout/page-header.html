@@ -3,34 +3,50 @@
 
   {% if page.url contains "guides/v2.4/payments-integrations/base-integrations/" or page.url contains "guides/v2.4/payments-integrations/payment-gateway" or page.url contains "guides/v2.4/payments-integrations/vault" or page.url contains "guides/v2.4/payments-integrations/bk-payments-integrations" %}
   <div class="bs-callout-warning">
-    The Payment Provider Gateway documentation uses the Magento 2.3.x version of the Braintree module as a reference application. The Braintree module was removed in Magento 2.4.0. The concepts described in this guide are still applicable to Magento 2.4.0, but the code samples are not supported.
-  </div>
-  {% endif %}
-
-  {% if page.url contains "guides/v2.3/install-gde/install/web/" or page.url contains "guides/v2.3/comp-mgr/upgrader/" or page.url contains "guides/v2.3/comp-mgr/module-man/" %}
-  <div class="bs-callout-warning">
-    The Web Setup Wizard is being deprecated in Magento 2.3.6 and will be removed in Magento 2.4.0. After it is removed, you must use the command line to <a href="https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli.html">install</a> or <a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html">upgrade</a> Magento.
+    The Payment Provider Gateway documentation uses the Magento 2.3.x (now {{site.data.var.ee}} and {{site.data.var.ce}}) of the Braintree module as a
+    reference application. The Braintree module was removed in Magento 2.4.0. The concepts described in this guide are
+    still applicable to Magento 2.4.0, but the code samples are not supported.
   </div>
   {% endif %}
 
   {% if page.url contains "guides/v2.4/install-gde/" %}
   <div class="message-banner">
-    You must install Elasticsearch before installing {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.0. See <a href="{{ page.baseurl }}/install-gde/prereq/elasticsearch.html">Elasticsearch</a> for details.
+    You must install Elasticsearch before installing {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.0. See <a
+      href="{{ page.baseurl }}/install-gde/prereq/elasticsearch.html">Elasticsearch</a> for details.
   </div>
   {% endif %}
 
   {% if page.url contains "guides/v2.4/comp-mgr/" %}
   <div class="message-banner">
-    You must install and configure Elasticsearch 7.6.x before upgrading to {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.0. See <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html">Check the catalog search engine</a> for details.
+    You must install and configure Elasticsearch 7.6.x before upgrading to {{ site.data.var.ee }} or
+    {{ site.data.var.ce }} 2.4.0. See <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html">Check the
+      catalog search engine</a> for details.
   </div>
   {% endif %}
 
   {% if page.url contains "config-guide/multi-master/" or page.url contains "cloud/docker/docker-split-db" %}
   <div class="message-banner">
-    The split database feature was <a href="https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-split-database-functionality-in-Magento-Commerce/ba-p/465187">deprecated</a> in version 2.4.2 of {{ site.data.var.ee }}. See <a href="https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html">Revert from a split database to a single database</a>.
+    The split database feature was <a
+      href="https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-split-database-functionality-in-Magento-Commerce/ba-p/465187">deprecated</a>
+    in version 2.4.2 of {{ site.data.var.ee }}. See <a
+      href="https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html">Revert from a split
+      database to a single database</a>.
   </div>
-
   {% endif %}
+
+  {% unless page.github_link %}
+  <div class="message-banner">
+    This topic is generated and maintained through automation, so we do not accept direct contributions from pull requests on GitHub.
+  </div>
+  {% endunless %}
+
+  {% if page.url contains "guides/v2.3/" %}
+  <div class="bs-callout-warning">
+    PHP 7.3 reaches end of support in December 2021 and {{site.data.var.ee}} 2.3.x reaches end of support in April 2022. You may want to consider planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance.
+  </div>
+  {% endif %}
+
+  {% include layout/edition-callout.html %}
 
   <h1 class="page-title">{{ page.title }}</h1>
 
@@ -39,13 +55,5 @@
   {% endif %}
 
   {% include layout/github-links.html %}
-
-  {% include layout/edition-callout.html %}
-
-  {% if page.url contains "upgrade-compatibility-tool/" %}
-  <div class="message-banner">
-    The Upgrade Compatibility Tool is an ALPHA version with limited scope, available for all Magento Commerce merchants, and only validating PHP Magento APIs and GraphQL schema. If you are a Magento Commerce user you can download it at the <a href="https://repo.magento.com/">Magento repo</a>.
-  </div>
-  {% endif %}
 
 </section>

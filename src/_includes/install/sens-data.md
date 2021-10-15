@@ -3,7 +3,7 @@
 Magento uses your encryption key to encrypt the following:
 
 *  Credit card information
-*  Usernames and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)
+*  Usernames and passwords specified in the Admin configuration  (for example, logins to payment gateways)
 *  CAPTCHA values sent over the network
 
 Magento does *not* encrypt:

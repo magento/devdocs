@@ -17,6 +17,14 @@ features:
           2.3: false
           2.4: true
       -
+        name: Live Search powered by Adobe Sensei
+        support:
+          2.0: false
+          2.1: false
+          2.2: false
+          2.3: false
+          2.4: true
+      -
         name: Product Recommendations powered by Adobe Sensei
         support:
           2.0: false
@@ -24,7 +32,7 @@ features:
           2.2: false
           2.3: true
           2.4: true
-      - 
+      -
         name: Page Builder drag and drop content management
         support:
           2.0: false
@@ -156,7 +164,7 @@ features:
           2.3: true
           2.4: true
       -
-        name: Business Intelligence
+        name: Adobe Commerce Reporting
         support:
           2.0: false
           2.1: true
@@ -271,7 +279,7 @@ features:
           2.3: true
           2.4: true
       -
-        name: Magento-optimized cloud
+        name: Commerce-optimized cloud
         support:
           2.0: false
           2.1: true

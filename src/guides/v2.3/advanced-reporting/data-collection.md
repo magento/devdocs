@@ -5,16 +5,16 @@ functional_areas:
     - Reports
 ---
 
-A Magento instance collects data that the Magento Business Intelligence (MBI) service uses to build the advanced reports. All the data are stored in an encrypted archive file which is securely transferred to MBI. Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
+An {{site.data.var.ee}} or {{site.data.var.ce}} instance collects data that the Commerce Reporting service uses to build the advanced reports. All the data are stored in an encrypted archive file which is securely transferred to Commerce Reporting. Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
 
 -  Which report files must be included into the archive file.
 -  Which provider classes must collect data for each report file.
 -  Which report data configuration must be applied to collected data.
 
-You do not need to have an MBI account to use Advanced Reporting.
+You do not need to have a Commerce Reporting account to use Advanced Reporting.
 
 {:.bs-callout-warning}
-This topic serves to provide better understanding of how data collection works. Any changes in configuration files will cause issues, because the MBI service does not expect any changes of configuration in the current version.
+This topic serves to provide better understanding of how data collection works. Any changes in configuration files will cause issues, because the Commerce Reporting service does not expect any changes of configuration in the current version.
 
 ## Example
 
@@ -53,7 +53,7 @@ An example of the `etc/analytics.xml` file:
 
 The example configuration file declares the following:
 
--  The `modules.csv`, `store_config.csv`, and `stores.csv` report files must be included in the archive file prepared for the MBI service.
+-  The `modules.csv`, `store_config.csv`, and `stores.csv` report files must be included in the archive file prepared for the Commerce Reporting service.
 -  `modules.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class.
  Provided data must be configured according to the `modules` report declarations defined in the `etc/reports.xml` file.
 -  `store_config.csv` must contain data provided by the `Magento\Analytics\Model\StoreConfigurationProvider` class.
@@ -75,20 +75,20 @@ The `etc/analytics.xsd` schema declares the structure of the `etc/analytics.xml`
 
 Configuration of an XML.
 
-|Attribute|Description|Constant value|Use|
-|---|---|---|---|
-|`xmlns:xsi`|Default namespace declaration|`"http://www.w3.org/2001/XMLSchema-instance"`|Required|
-|`xsi:noNamespaceSchemaLocation`|An XML Schema document that does not have a target namespace|`"urn:magento:module:Magento_Analytics:etc/analytics.xsd"`|Required|
+| Attribute                       | Description                                                  | Constant value                                             | Use      |
+| ------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------- | -------- |
+| `xmlns:xsi`                     | Default namespace declaration                                | `"http://www.w3.org/2001/XMLSchema-instance"`              | Required |
+| `xsi:noNamespaceSchemaLocation` | An XML Schema document that does not have a target namespace | `"urn:magento:module:Magento_Analytics:etc/analytics.xsd"` | Required |
 
 ### `<file>`
 
 A report file (`.csv` by default) with collected data to be added to the archive file.
 The `\Magento\Analytics\Model\ReportWriter` class is responsible for a decision about a data file extension (`.csv`, `.json`, etc.).
 
-|Attribute|Description|Example value|Use|
-|---|---|---|---|
-|`name`|A filename with no extension|`"modules"`|Required|
-|`prefix`|Reserved for future use.|--|--|
+| Attribute | Description                  | Example value | Use      |
+| --------- | ---------------------------- | ------------- | -------- |
+| `name`    | A filename with no extension | `"modules"`   | Required |
+| `prefix`  | Reserved for future use.     | --            | --       |
 
 ```xml
 <config ...>
@@ -141,10 +141,10 @@ The node must contain a `<reportProvider>` node, or a `<customProvider>` node, o
 A class that provides data for a report file.
 It can contain parameters.
 
-|Attribute|Description|Example value|Use|
-|---|---|---|---|
-|`name`|A provider name|`modules`|Required|
-|`class`|Full name of a class that provides data|`"Magento\Analytics\ReportXml\ReportProvider"`|Required|
+| Attribute | Description                             | Example value                                  | Use      |
+| --------- | --------------------------------------- | ---------------------------------------------- | -------- |
+| `name`    | A provider name                         | `modules`                                      | Required |
+| `class`   | Full name of a class that provides data | `"Magento\Analytics\ReportXml\ReportProvider"` | Required |
 
 Currently there is only one report provider available that is `Magento\Analytics\ReportXml\ReportProvider`.
 
@@ -182,10 +182,10 @@ If `reportProvider class="Magento\Analytics\ReportXml\ReportProvider"`, then `<n
 A class that provides data for a report file.
 It cannot contain any parameters.
 
-|Attribute|Description|Example value|Use|
-|---|---|---|---|
-|`name`|A provider name|"store_config"|Required|
-|`class`|Full name of a class that provides data|`"Magento\Analytics\Model\StoreConfigurationProvider"`|Required|
+| Attribute | Description                             | Example value                                          | Use      |
+| --------- | --------------------------------------- | ------------------------------------------------------ | -------- |
+| `name`    | A provider name                         | "store_config"                                         | Required |
+| `class`   | Full name of a class that provides data | `"Magento\Analytics\Model\StoreConfigurationProvider"` | Required |
 
 ```xml
 ...
@@ -204,6 +204,3 @@ Related topics
 <!-- LINK DEFINITIONS -->
 
 [modules]: modules.html
-
-<!-- ABBREVIATIONS -->
-*[MBI]: Magento Business Analytics

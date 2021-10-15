@@ -14,7 +14,7 @@ The following technologies are requirements for developing and deploying your st
 
 *  Git
 *  Composer
-*  Magento 2
+*  {{site.data.var.ee}}
 *  Continuous Integration
 *  Architectures including Starter or Pro architecture
 
@@ -85,10 +85,10 @@ To get started as a developer in a {{site.data.var.ece}} project, you need to se
 
    In the local development environment, you develop in branches to add modules, extensions, third-party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ site.baseurl }}/cloud/architecture/starter-develop-deploy-workflow.html) or [Pro]({{ site.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
 
-## Magento configurations {#cloud-req-test}
+## Project configurations {#cloud-req-test}
 
 {:.bs-callout-info}
-{{ site.data.var.ece }} deploys Magento in [Production mode]({{ site.baseurl }}/guides/v2.4/config-guide/bootstrap/magento-modes.html#production-mode) by default.
+{{ site.data.var.ece }} deploys the application in [Production mode]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/bootstrap/magento-modes.html#production-mode) by default.
 {{ site.data.var.ece }} does not support `Developer` mode.
 
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
@@ -119,18 +119,18 @@ For development and testing, we recommend the following:
 
 *  Fully [test your site]({{ site.baseurl }}/cloud/live/stage-prod-test.html) in Staging as a merchant and customer prior to Production deployment
 *  [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) and verify that the Fastly VCL is uploaded
-*  Before you begin the site launch process, submit a Magento Support ticket to provide all storefront domains and subdomains for Staging and Production environments. This information is required to provision SSL/TLS certificates for each environment. See [Information you need to launch your site]({{ site.baseurl }}/cloud/live/live.html#prerequisites-for-site-launch).
+*  Before you begin the site launch process, submit a support ticket to provide all storefront domains and subdomains for Staging and Production environments. This information is required to provision SSL/TLS certificates for each environment. See [Information you need to launch your site]({{ site.baseurl }}/cloud/live/live.html#prerequisites-for-site-launch).
 *  For custom deploy hooks in Integration, submit a Support ticket to add the hooks to the Staging and Production deployment process
 
 ## License and authentication requirements
 
-When you purchase a {{site.data.var.ece}} subscription, Magento creates an account for the License Owner and sends an invitation to the License Owner email address with account verification and login instructions. The License Owner has the Account owner role with permission to create user accounts and assign roles for technical staff, consultants, and Magento partners involved in the code and production of the stores to the project.
+When you purchase a {{site.data.var.ece}} subscription, Adobe creates an account for the License Owner and sends an invitation to the License Owner email address with account verification and login instructions. The License Owner has the Account owner role with permission to create user accounts and assign roles for technical staff, consultants, and Adobe partners involved in the code and production of the stores to the project.
 
 To work with and deploy stores, you need the following:
 
 *  A [{{site.data.var.ece}} account]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#cloud-first-acct) already created or created via an invitation
 *  [Project invitation]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) for contributing developers from the Account Owner or a super user
-*  [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html) for each user who contributes to the project
+*  [Authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html) for each user who contributes to the project
 
 Your {{site.data.var.ee}} account must *authenticate* using any of the following:
 

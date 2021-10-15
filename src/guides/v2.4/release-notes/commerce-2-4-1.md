@@ -1,9 +1,9 @@
 ---
 group: release-notes
-title: Magento Commerce 2.4.1 Release Notes
+title: Adobe Commerce 2.4.1 Release Notes
 ---
 
-Magento Commerce 2.4.1 introduces enhancements to performance and security plus significant additions to the B2B feature set. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page. B2B improvements focus on the order approval process, B2B shipping methods, expanded logging of Admin actions, and enhanced security on storefront.
+{{site.data.var.ee}} 2.4.1 introduces enhancements to performance and security plus significant additions to the B2B feature set. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page. B2B improvements focus on the order approval process, B2B shipping methods, expanded logging of Admin actions, and enhanced security on storefront.
 
 This release includes all improvements to core quality that were included in Magento 2.4.0, over 150 new fixes to core code, and over 15 security enhancements. It includes the resolution of almost 300 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in GraphQL.
 
@@ -51,13 +51,13 @@ Security improvements for this release include:
 *  **Enhanced Magento Scan Tool**. Adobe has partnered with [Sanguine Security](https://sansec.io/), a leader in preventing digital skimming, to integrate their database of over 8700 threat signatures into the Magento Security Scan Tool. This partnership will enable merchants to get real-time insights into the security status of their site through proactive detection of malware and reduction of false positives. Merchants can register for the tool by visiting `https://account.magento.com/scanner`. For more information, see the [Secure Your Storefront With the Enhanced Magento Security Scan Tool](https://magento.com/blog/magento-news/secure-your-storefront-enhanced-magento-security-scan-tool) blog post.
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Infrastructure improvements
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these functional areas: Customer Account, Catalog, CMS, OMS, Import/Export, Promotions and Targeting, Cart and Checkout, B2B, and Staging and Preview.
 
-*  **Site-Wide Analysis Tool (SWAT) integration with Magento Admin**. (SWAT) provides system insights and instrumentation for {{ site.data.var.ece }} installations of Magento with 24/7 real-time performance monitoring, reports, and self-service recommendations. Merchants can use the new SWAT Admin role to securely access their SWAT Customer Detail pages through the Magento Admin. See [SWAT FAQ](https://support.magento.com/hc/en-us/articles/360048646671) for an overview. For usage information, see [SWAT](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html). <!--- SWAT-807-->
+*  **Site-Wide Analysis Tool (SWAT) integration with Admin**. (SWAT) provides system insights and instrumentation for {{ site.data.var.ece }} installations of Magento with 24/7 real-time performance monitoring, reports, and self-service recommendations. Merchants can use the new SWAT Admin role to securely access their SWAT Customer Detail pages through the Magento Admin. See [SWAT FAQ](https://support.magento.com/hc/en-us/articles/360048646671) for an overview. For usage information, see [SWAT](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html). <!--- SWAT-807-->
 
 ### Performance improvements
 
@@ -103,7 +103,7 @@ This release adds GraphQL coverage for the following features:
 
 *  **Stored payment methods**. Logged-in customers can now store payment details (including Braintree credit card and Braintree with PayPal) in My Account. <!--- MC-32348 35945 35946-->
 
-*  **Support for wish lists in Magento Open Source**. Added support for Open Source wish lists. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list.
+*  **Support for wish lists in {{site.data.var.ce}}**.  You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list.
 
 *  **Improved management of customer accounts**. We have added the [`createCustomerV2`]({{page.baseurl}}/graphql/mutations/create-customer-v2.html) and [`updateCustomerV2`]({{page.baseurl}}/graphql/mutations/update-customer-v2.html) mutations to manage customer accounts. These new mutations require different input objects than the `createCustomer` and `updateCustomer` mutations. To change a customer's email address, use the new [`updateCustomerEmail`]({{page.baseurl}}/graphql/mutations/update-customer-email.html) mutation.
 
@@ -346,7 +346,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Issues with multi-factor authentication and abandoned carts have been resolved.
 
-*  Amazon Pay now correctly populates the `store name` in emails and other displayed locations. If the **Store Name** field in Amazon Pay configuration is empty, the extension retrieves the store's default name (that is, the name you give your store in the Magento Admin).
+*  Amazon Pay now correctly populates the `store name` in emails and other displayed locations. If the **Store Name** field in Amazon Pay configuration is empty, the extension retrieves the store's default name (that is, the name you give your store in the Admin).
 
 *  Localization/translation issues for Decline scenarios have been addressed. Displayed text is no longer always in English.
 
@@ -568,7 +568,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7753-->
 
-*  Updated the Magento Commerce logo and removed extraneous spaces from the README file. _Fix submitted by Rafael Corr̻êa Gomes in pull request [28891](https://github.com/magento/magento2/pull/28891)_. [GitHub-29056](https://github.com/magento/magento2/issues/29056)
+*  Updated the {{site.data.var.ee}} logo and removed extraneous spaces from the README file. _Fix submitted by Rafael Corr̻êa Gomes in pull request [28891](https://github.com/magento/magento2/pull/28891)_. [GitHub-29056](https://github.com/magento/magento2/issues/29056)
 
 <!--- ENGCOM-7771-->
 
@@ -1052,7 +1052,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!-- ENGCOM-7732 7733-->
 
-*  GraphQL product search now considers configured category permissions. Previously, product search ignored the **Enable** setting (**Stores**  >  **Configuration**  >  **Catalog**  >  **Catalog** > **Category Permissions**). _Fix submitted by Petkovski Marjan in pull request [28757](https://github.com/magento/magento2/pull/28757) and pull request 271 in private repo `partners-magento2ee`_. [GitHub-28563](https://github.com/magento/magento2/issues/28563
+*  GraphQL product search now considers configured category permissions. Previously, product search ignored the **Enable** setting (**Stores**  >  **Configuration**  >  **Catalog**  >  **Catalog** > **Category Permissions**). _Fix submitted by Petkovski Marjan in pull request [28757](https://github.com/magento/magento2/pull/28757) and pull request 271 in private repo `partners-magento2ee`_. [GitHub-28563](https://github.com/magento/magento2/issues/28563)
 
 <!--- MC-31084-->
 
@@ -1060,7 +1060,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  The default GraphQL `Category` method now sorts by category position as expected. _Fix submitted by Derrik Nyomo in pull request [29301](https://github.com/magento/magento2/pull/29301)_. [GitHub-104](https://github.com/magento/catalog-storefront/issues/104)
 
-*  Added support for  wish lists in Magento Open Source. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list. _Fix submitted by Eduard Chitoraga in pull requests [28205](https://github.com/magento/magento2/pull/28205) and 264 in private repo partners-magento2ee_. [GitHub-28551](https://github.com/magento/magento2/issues/28551)
+*  Added support for  wish lists in {{site.data.var.ce}}. You can [add items]({{page.baseurl}}/graphql/mutations/add-products-to-wishlist.html) to, [update items]({{page.baseurl}}/graphql/mutations/update-products-in-wishlist.html) in, and [remove items]({{page.baseurl}}/graphql/mutations/remove-products-from-wishlist.html) from a wish list. _Fix submitted by Eduard Chitoraga in pull requests [28205](https://github.com/magento/magento2/pull/28205) and 264 in private repo partners-magento2ee_. [GitHub-28551](https://github.com/magento/magento2/issues/28551)
 
 *  The [`addProductsToCart` mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) allows you to add any type of product to the active cart. We recommend using this mutation instead of single-purpose mutations such as `addSimpleProductsToCart`. _Fix submitted by Yaroslav Rogoza in pull request [27914](https://github.com/magento/magento2/pull/27914)_. [GitHub-28524](https://github.com/magento/magento2/issues/28524)
 
@@ -1946,7 +1946,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.4.1 using Composer.
+You can install {{site.data.var.ee}} 2.4.1 using Composer.
 
 ## Migration tool kits
 

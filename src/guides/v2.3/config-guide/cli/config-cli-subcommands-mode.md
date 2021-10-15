@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Set the Magento mode
+title: Set the operation mode
 functional_areas:
   - Configuration
   - System
@@ -40,7 +40,7 @@ By default, Magento uses the `var` directories to store the cache, logs, and com
 
 ## Display the current mode {#config-mode-show}
 
-The easiest way to do that is to run this command as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html). If you have shared hosting, this is the user your provider gives you to log in to the server. If you have a private server, it's typically a local user account on the Magento server.
+The easiest way to do that is to run this command as the [file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html). If you have shared hosting, this is the user your provider gives you to log in to the server. If you have a private server, it's typically a local user account on the Magento server.
 
 Command usage:
 

@@ -33,7 +33,7 @@ The [`Magento\Framework\Url\DecoderInterface`]({{ site.mage2bloburl }}/{{ page.g
 
 ## Usage
 
-Declare `SerializerInterface` as a [constructor dependency]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to get an instance of a serializer class.
+Declare `DecoderInterface` and `EncoderInterface` as a [constructor dependency]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to get an instance of these classes.
 
 ```php
 use Magento\Framework\Url\DecoderInterface;

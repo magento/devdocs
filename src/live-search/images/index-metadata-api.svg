@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1356.5 792.9" style="enable-background:new 0 0 1356.5 792.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#DAE5DA;}
+	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:6;}
+	.st2{fill:#FFEFE3;}
+	.st3{font-family:'OpenSans-Semibold';}
+	.st4{font-size:24px;}
+	.st5{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st6{fill:#F3F3F3;stroke:#000000;stroke-miterlimit:10;}
+	.st7{fill:#F7E3E4;stroke:#000000;stroke-miterlimit:10;}
+	.st8{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st9{fill:#B62E35;}
+	.st10{fill:#FFFFFF;}
+	.st11{font-family:'OpenSans-Bold';}
+	.st12{font-size:30px;}
+	.st13{fill:#DAEADA;stroke:#000000;stroke-miterlimit:10;}
+	.st14{fill:#DAEADA;}
+	.st15{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st16{fill:none;stroke:#DAEADA;stroke-width:6;stroke-miterlimit:10;}
+	.st17{fill:none;}
+</style>
+<g>
+	<rect x="0.5" y="0.5" class="st0" width="1355.5" height="791.9"/>
+	<rect x="0.5" y="0.5" class="st1" width="1355.5" height="791.9"/>
+	<rect x="0.5" y="0.5" class="st2" width="1355.5" height="791.9"/>
+</g>
+<text transform="matrix(1 0 0 1 26.1325 33.657)" class="st3 st4">Index Metadata API</text>
+<g>
+	<path d="M821.5,309.2c133.3-2.2,201.2-0.2,201.2-0.2"/>
+	<g>
+		<path class="st5" d="M821.5,309.2c103-1.7,166.9-0.9,190.6-0.4"/>
+		<g>
+			<polygon points="1010.6,296.7 1010.3,321 1022.6,309.1 			"/>
+		</g>
+	</g>
+</g>
+<path class="st6" d="M325.6,309.4H93.8c-6.6,0-12-5.4-12-12V112c0-6.6,5.4-12,12-12h231.8c6.6,0,12,5.4,12,12v185.4
+	C337.6,304,332.2,309.4,325.6,309.4z"/>
+<text transform="matrix(1 0 0 1 174.1734 206.5049)" class="st3 st4">Client</text>
+<path class="st7" d="M809.5,366.4H577.7c-6.6,0-12-5.4-12-12v-89c0-6.6,5.4-12,12-12h231.8c6.6,0,12,5.4,12,12v89
+	C821.5,361.1,816.1,366.4,809.5,366.4z"/>
+<text transform="matrix(1 0 0 1 608.407 302.4368)" class="st3 st4">Search Admin </text>
+<text transform="matrix(1 0 0 1 644.147 331.2368)" class="st3 st4"> Service</text>
+<path class="st8" d="M809.5,729.3H577.7c-6.6,0-12-5.4-12-12v-89c0-6.6,5.4-12,12-12h231.8c6.6,0,12,5.4,12,12v89
+	C821.5,723.9,816.1,729.3,809.5,729.3z"/>
+<text transform="matrix(1 0 0 1 632.6841 664.9034)" class="st3 st4">Indexing </text>
+<text transform="matrix(1 0 0 1 636.2541 693.7034)" class="st3 st4">Pipeline</text>
+<g>
+	<g>
+		<circle class="st9" cx="418.7" cy="598.1" r="18.2"/>
+	</g>
+	<text transform="matrix(1 0 0 1 409.2178 608.4623)" class="st10 st11 st12">3</text>
+</g>
+<g>
+	<circle class="st9" cx="418.7" cy="384.7" r="18.2"/>
+</g>
+<text transform="matrix(1 0 0 1 410.8651 394.4769)" class="st10 st11 st12">2</text>
+<g>
+	<g>
+		<path d="M1079.8,211.9"/>
+	</g>
+	<ellipse class="st13" cx="1141.5" cy="376" rx="117.5" ry="38"/>
+	<rect x="1024" y="242.5" class="st13" width="235" height="134.5"/>
+	<rect x="1025" y="323.5" class="st14" width="233.1" height="1.8"/>
+	<path class="st15" d="M1259,258"/>
+	<path class="st15" d="M1024,258"/>
+	<g>
+		<path class="st13" d="M1024.2,264.9c0,21,52.6,38,117.5,38s117.5-17,117.5-38C1259.2,264.7,1024.2,264.2,1024.2,264.9z"/>
+		<line class="st15" x1="1023.2" y1="264.9" x2="1259.8" y2="264.9"/>
+	</g>
+	<rect x="1024" y="246.7" class="st15" width="235" height="130.3"/>
+	<line class="st16" x1="1024.7" y1="264.5" x2="1257.6" y2="264.5"/>
+	<g>
+		<path class="st13" d="M1024.2,254.1c0,21,52.5,38,117.2,38c64.7,0,117.2-17,117.2-38C1258.5,253.9,1024.2,253.4,1024.2,254.1z"/>
+		<line class="st15" x1="1023.2" y1="254.1" x2="1259.2" y2="254.1"/>
+	</g>
+	<line class="st16" x1="1025.6" y1="254.1" x2="1258.5" y2="254.1"/>
+	<line class="st17" x1="1025.1" y1="377" x2="1258" y2="377"/>
+	<line class="st16" x1="1025.6" y1="377" x2="1258.5" y2="377"/>
+	<ellipse class="st13" cx="1141.5" cy="243" rx="117.5" ry="38"/>
+	<text transform="matrix(1 0 0 1 1062.9176 342.1905)" class="st3 st4">Search Admin </text>
+	<text transform="matrix(1 0 0 1 1099.4777 370.9905)" class="st3 st4">storage </text>
+</g>
+<g>
+	<line class="st17" x1="207.5" y1="309.4" x2="207.9" y2="439.7"/>
+	<g>
+		<line class="st5" x1="207.5" y1="309.4" x2="207.9" y2="429.1"/>
+		<g>
+			<polygon points="220,427.5 195.8,427.5 207.9,439.7 			"/>
+		</g>
+	</g>
+</g>
+<path class="st7" d="M322.7,555.4H90.9c-6.6,0-12-5.4-12-12v-89c0-6.6,5.4-12,12-12h231.8c6.6,0,12,5.4,12,12v89
+	C334.7,550,329.3,555.4,322.7,555.4z"/>
+<text transform="matrix(1 0 0 1 123.1675 505.8486)" class="st3 st4">Search Service</text>
+<g>
+	<circle class="st9" cx="180" cy="361" r="18.2"/>
+</g>
+<text transform="matrix(1 0 0 1 170.1818 371.0833)" class="st10 st11 st12">1</text>
+<line class="st5" x1="451.6" y1="305" x2="451.6" y2="670.2"/>
+<line class="st5" x1="337.6" y1="498.9" x2="451.6" y2="498.9"/>
+<g>
+	<line class="st17" x1="451.6" y1="305" x2="565.7" y2="305"/>
+	<g>
+		<line class="st5" x1="451.6" y1="305" x2="555.1" y2="305"/>
+		<g>
+			<polygon points="553.5,292.8 553.5,317.1 565.7,305 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<line class="st17" x1="451.6" y1="670.2" x2="565.7" y2="670.2"/>
+	<g>
+		<line class="st5" x1="451.6" y1="670.2" x2="555.1" y2="670.2"/>
+		<g>
+			<polygon points="553.5,658.1 553.5,682.4 565.7,670.2 			"/>
+		</g>
+	</g>
+</g>
+</svg>

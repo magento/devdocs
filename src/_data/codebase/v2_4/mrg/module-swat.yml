@@ -1,0 +1,11 @@
+---
+title: Swat
+release: 2.4.3
+content: |-
+  The Magento_Swat module provides permission-based access to the Site-Wide Analysis Tool in the admin panel.
+
+  The Magento_Swat module does not affect the storefront.
+
+  ## Additional information
+
+  For more information about this module, see [Site-Wide Analysis Tool](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html)

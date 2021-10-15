@@ -7,7 +7,7 @@ A theme is a collection of files that determines the visual presentation and int
 
 The Themes tab shows the status of each theme you have submitted, and provides access to the profile and version history of each. You can also use the workspace controls to sort and filter the list.
 
-The process to submit a theme to Magento Marketplace is basically the same as [submitting an extension]({{ site.baseurl }}/marketplace/sellers/submit-for-review.html). The only difference is that it takes place from the Themes tab.
+The process to submit a theme to Commerce Marketplace is basically the same as [submitting an extension]({{ site.baseurl }}/marketplace/sellers/submit-for-review.html). The only difference is that it takes place from the Themes tab.
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/themes.png){: .zoom}
 _Themes_

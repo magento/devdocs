@@ -6,7 +6,7 @@ functional_areas:
   - Docker
 ---
 
-This Quick Reference provides information about using Docker Compose commands, the Docker Compose configuration generator, and the {{site.data.var.mcd-prod}} CLI to configure, deploy, and use your Docker environment for Magento development. See the following topics for more detailed instructions:
+This Quick Reference provides information about using Docker Compose commands, the Docker Compose configuration generator, and the {{site.data.var.mcd-prod}} CLI to configure, deploy, and use your Docker environment for application development. See the following topics for more detailed instructions:
 
 -  [Install prerequisities]
 -  [Use Docker]
@@ -16,20 +16,20 @@ This Quick Reference provides information about using Docker Compose commands, t
 
 Docker Compose is a tool for defining and running multi-container Docker applications. The following table lists the `docker-compose` commands for building, deploying, and operating {{site.data.var.mcd-prod}}. You can also use [Magento Cloud Docker CLI](#magento-cloud-docker-cli) commands to complete Docker Compose tasks.
 
-Action | Command
-:----- | :------
-Build and start Docker environment | `docker-compose up -d`
-Build environment | `docker-compose run --rm build cloud-build`
-Deploy environment | `docker-compose run --rm deploy cloud-deploy`
-Run post-deploy hooks | `docker-compose run --rm deploy cloud-post-deploy`
-Connect to CLI container | `docker-compose run --rm deploy bash`
-Use `{{site.data.var.ct}}` command | `docker-compose run --rm deploy ece-command <command>`
-Use Magento command | `docker-compose run --rm deploy magento-command <command>`
-Stop and remove Docker environment (removes volumes) | `docker-compose down -v`
-Stop Docker environment without destroying containers | `docker-compose stop`
-Resume Docker environment | `docker-compose start`
-List images | `docker-compose images`
-List containers and ports | `docker-compose ps` or `docker ps`
+| Action                                                | Command                                                    |
+| :---------------------------------------------------- | :--------------------------------------------------------- |
+| Build and start Docker environment                    | `docker-compose up -d`                                     |
+| Build environment                                     | `docker-compose run --rm build cloud-build`                |
+| Deploy environment                                    | `docker-compose run --rm deploy cloud-deploy`              |
+| Run post-deploy hooks                                 | `docker-compose run --rm deploy cloud-post-deploy`         |
+| Connect to CLI container                              | `docker-compose run --rm deploy bash`                      |
+| Use `{{site.data.var.ct}}` command                    | `docker-compose run --rm deploy ece-command <command>`     |
+| Use Magento command                                   | `docker-compose run --rm deploy magento-command <command>` |
+| Stop and remove Docker environment (removes volumes)  | `docker-compose down -v`                                   |
+| Stop Docker environment without destroying containers | `docker-compose stop`                                      |
+| Resume Docker environment                             | `docker-compose start`                                     |
+| List images                                           | `docker-compose images`                                    |
+| List containers and ports                             | `docker-compose ps` or `docker ps`                         |
 
 {:.bs-callout-info}
 The `--rm` option automatically removes containers when they stop. This setting overrides any restart policy specified in the service configuration and prevents orphaned containers from consuming excess disk space. See [`docker-compose run`][] in the _Docker command-line reference_.
@@ -82,23 +82,23 @@ root@deploy:/app#
 ```
 {:.no-copy}
 
-Action | Command
-:----- | :------
-Connect to bash shell | `./bin/magento-docker bash`
-Pull the latest images | `./bin/magento-docker pull`
-Build application | `./bin/magento-docker ece-build`
-Deploy application | `./bin/magento-docker ece-deploy`
-Run post-deploy hooks | `./bin/magento-docker ece-post-deploy`
-Re-build and re-deploy application | `./bin/magento-docker ece-redeploy`
-Stop containers | `./bin/magento-docker stop`
-Start containers | `./bin/magento-docker start`
-Restart containers | `./bin/magento-docker restart`
-Destroy containers | `./bin/magento-docker down`
-Destroy, re-create, and start containers | `./bin/magento-docker up`
-Clears Redis cache | `./bin/magento-docker flush-redis`
-Clears Varnish cache | `./bin/magento-docker flush-varnish`
-Access database | `./bin/magento-docker ece-db`
-Run a command in a PHP container<br>Supports the following values for the PHP version: 7.1, 7.2, 7.3, 7.4| `./bin/magento-docker php <version>`
+| Action                                                                                                         | Command                                |
+| :------------------------------------------------------------------------------------------------------------- | :------------------------------------- |
+| Connect to bash shell                                                                                          | `./bin/magento-docker bash`            |
+| Pull the latest images                                                                                         | `./bin/magento-docker pull`            |
+| Build application                                                                                              | `./bin/magento-docker ece-build`       |
+| Deploy application                                                                                             | `./bin/magento-docker ece-deploy`      |
+| Run post-deploy hooks                                                                                          | `./bin/magento-docker ece-post-deploy` |
+| Re-build and re-deploy application                                                                             | `./bin/magento-docker ece-redeploy`    |
+| Stop containers                                                                                                | `./bin/magento-docker stop`            |
+| Start containers                                                                                               | `./bin/magento-docker start`           |
+| Restart containers                                                                                             | `./bin/magento-docker restart`         |
+| Destroy containers                                                                                             | `./bin/magento-docker down`            |
+| Destroy, re-create, and start containers                                                                       | `./bin/magento-docker up`              |
+| Clears Redis cache                                                                                             | `./bin/magento-docker flush-redis`     |
+| Clears Varnish cache                                                                                           | `./bin/magento-docker flush-varnish`   |
+| Access database                                                                                                | `./bin/magento-docker ece-db`          |
+| Run a command in a PHP container<br>Supports the following values for the PHP version: 7.1, 7.2, 7.3, 7.4, 8.0 | `./bin/magento-docker php <version>`   |
 
 Use the following command to view the magento-docker CLI command help:
 

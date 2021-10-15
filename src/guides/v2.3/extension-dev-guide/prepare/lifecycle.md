@@ -262,7 +262,7 @@ class UpgradeData implements UpgradeDataInterface
 
 ## Uninstall event
 
-Magento executes the uninstall event class when your module is uninstalled using the command line:
+Magento executes the uninstall event class when your module is uninstalled using the following command:
 
 ```bash
 bin/magento module:uninstall --remove-data <module_name>

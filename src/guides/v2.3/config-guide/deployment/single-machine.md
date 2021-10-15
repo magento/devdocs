@@ -12,8 +12,6 @@ This topic provides instructions for deploying updates to Magento on a productio
 
 This process applies to technical users responsible for stores running on a single machine with some themes and locales installed.
 
-For less technical users, i.e. business users, we recommend using the [System Upgrade][9] feature in the Admin.
-
 ## Assumptions
 
 *  You installed Magento using [Composer][8].
@@ -25,7 +23,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 ## Deployment steps
 
-1. Log in to your production server as, or switch to, the [Magento file system owner][10].
+1. Log in to your production server as, or switch to, the [file system owner][10].
 
 1. Change directory to the Magento base directory:
 
@@ -99,17 +97,15 @@ Related topics
 
 *  [Enable or disable maintenance mode][4]
 *  [Command line upgrade][1]
-*  [Update the Magento application][2]
+*  [Update Magento][2]
 *  [User Guide: Web Setup Wizard][3]
 *  [Running the System Upgrade][9]
 
 [0]: {{ page.baseurl }}/
 [1]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
 [2]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
-[3]: http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html
 [4]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [5]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
-[6]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html
+[6]: {{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html
 [8]: {{ page.baseurl }}/install-gde/composer.html
-[9]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner

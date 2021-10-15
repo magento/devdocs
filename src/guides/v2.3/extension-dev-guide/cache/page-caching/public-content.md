@@ -97,7 +97,7 @@ class CustomerAgeContextPlugin
      * \Magento\Framework\App\Http\Context::getVaryString is used by Magento to retrieve unique identifier for selected context,
      * so this is a best place to declare custom context variables
      */
-    function beforeGetVaryString(\Magento\Framework\App\Http\Context $subject)
+    public function beforeGetVaryString(\Magento\Framework\App\Http\Context $subject)
     {
         $age = $this->customerSession->getCustomerData()->getCustomAttribute('age');
         $defaultAgeContext = 0;

@@ -90,7 +90,7 @@ Database Status|Admin Status|Description
 `working`|Processing|Indexing is in progress
 
 The database status can be seen when viewing the SQL table `indexer_state`.
-The admin status can be seen when viewing the indexer grid in Magento Admin or when running the index status from the CLI.
+The admin status can be seen when viewing the indexer grid in Admin or when running the index status from the CLI.
 
 The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the [Admin](https://glossary.magento.com/admin) panel in **System >** Tools **> Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
@@ -110,7 +110,7 @@ Reindexing can be performed in two modes:
 
 To set these options:
 
-1. Log in to the [Magento Admin](https://glossary.magento.com/magento-admin).
+1. Log in to the [Admin](https://glossary.magento.com/magento-admin).
 1. Click **System >** Tools **> Index Management**.
 1. Select the checkbox next to each type of indexer to change.
 1. From the **Actions** list, click the indexing mode.
@@ -195,7 +195,7 @@ You can reindex by:
 
 ## Magento indexers {#m2devgde-indexing-outofbox}
 
-The Magento `Open Source` application implements the following indexers (use [bin/magento indexer:info]({{ page.baseurl }}/reference/cli/magento.html#indexerinfo) to list the indexers):
+The {{site.data.var.ce}} application implements the following indexers (use [bin/magento indexer:info]({{ page.baseurl }}/reference/cli/magento.html#indexerinfo) to list the indexers):
 
 | Indexer name | Indexer method name | Indexer class | Description |
 | --- | --- | --- | --- |
@@ -210,11 +210,10 @@ The Magento `Open Source` application implements the following indexers (use [bi
 | Catalog product rule | `catalogrule_product` | [Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php) |  |
 | Catalog search | `catalogsearch_fulltext` | [Magento\CatalogSearch\Model\Indexer\Fulltext]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php) |  |
 
-Magento Commerce Edition contains all indexers of Magento Open Source Edition and the following ones:
+{{site.data.var.ee}} also provides the following indexers:
 
 | Indexer name | Indexer method name | Indexer class | Description |
 | --- | --- | --- | --- |
-| Inventory | `inventory` | `Magento\InventoryIndexer\Indexer\InventoryIndexer` | Inventory index (MSI) |
 | Product/Target Rule | `targetrule_product_rule` | `Magento\TargetRule\Model\Indexer\TargetRule\Product\Rule` | Indexes product/rule association |
 | Target Rule/Product | `targetrule_rule_product` | `Magento\TargetRule\Model\Indexer\TargetRule\Rule\Product` | Indexes rule/product association |
 | Sales Rule | `salesrule_rule` | `Magento\AdvancedSalesRule\Model\Indexer\SalesRule` | Indexes sales rule |

@@ -118,20 +118,13 @@ You need the following requirements to sFTP into cloud environments:
 *  You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.
 *  Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) with your public key attached. **Never provide your private SSH key.**
 
-When configuring sFTP, use your SSH public key and the following information for access:
+When configuring sFTP, use the information from your [SSH access environment command](#ssh) (`<project-id>-<environment-id>--<app-name>@ssh<cloud-host>`) and the following information:
 
-*  Username: All content before the `@` in your public SSH key.
+*  Username: All content before the `@` in your SSH access destination.
 *  Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.
-*  Host: All content after the `@` in your public SSH key.
+*  Host: All content after the `@` in your SSH access.
 *  Port: 22, which is the default SSH port.
-
-To add your SSH public key information to your client:
-
-1. Use a text editor to open your generated SSH public key. Locate and edit the file in the directory location you generated it into.
-1. Copy and paste all content before the `@` in the file for the client Username.
-1. Leave Password empty.
-1. Copy and paste all content after the `@` in the file for the client Host.
-1. For the Port, enter 22.
+*  SSH Private Key: If necessary, provide the location of your private key to the sFTP client. By default, private keys are stored in the `~/.ssh` directory.
 
 Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.
 

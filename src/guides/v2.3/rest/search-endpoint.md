@@ -72,7 +72,7 @@ Quick searches return aggreggations and buckets.
 The following example performs a quick search for `digital watch`:
 
 ```http
-GET <host>/rest/<store_code>/V1/search?searchCriteria[requestName]=<quick_search_container>&
+GET <host>/rest/<store_code>/V1/search?searchCriteria[requestName]=quick_search_container&
 searchCriteria[filter_groups][0][filters][0][field]=search_term&
 searchCriteria[filter_groups][0][filters][0][value]=digital watch
 ```

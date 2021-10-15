@@ -13,7 +13,7 @@ You may be able to resolve your issue by searching your logs for one of the exam
 
 ## CredisException
 
-This exception is caused by a known issue with how Magento handles simultaneous connections to Redis during static content deployment in the deploy phase.
+This exception is caused by a known issue with how {{site.data.var.ee}} handles simultaneous connections to Redis during static content deployment in the deploy phase.
 
 ```terminal
 [2018-01-30 18:56:52] Generating static content for locales: en_US

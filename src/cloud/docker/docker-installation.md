@@ -1,27 +1,27 @@
 ---
 group: cloud-guide
-title: Install Magento
+title: Prepare Commerce for Docker
 functional_areas:
   - Cloud
   - Configuration
 ---
 
-{{site.data.var.mcd-prod}} is one of the {{site.data.var.csuite}} packages designed to deploy and manage local {{site.data.var.ee}} Docker environments for both Cloud and On-premises projects.
+{{site.data.var.mcd-prod}} is one of the {{site.data.var.csuite}} packages designed to deploy and manage local {{site.data.var.ee}} Docker environments for both cloud and on-premises projects.
 
 If you are using {{ site.data.var.ee }} on Cloud, you most likely have the `{{ site.data.var.mcd-package }}` package installed together with the `{{site.data.var.ct-repo}}` package.
 
 An on-premises installation requires the stand-alone `{{ site.data.var.mcd-package }}` package available in the [Magento Cloud Docker GitHub repository](https://github.com/magento/magento-cloud-docker).
 
-## Initialize the Magento project
+## Initialize the Commerce project
 
-{{ site.data.var.mcd-prod }} supports the {{site.data.var.ee}} installation for both Cloud and On-premises projects. The initialization steps are different for each project type.
+{{ site.data.var.mcd-prod }} supports the {{site.data.var.ee}} installation for both cloud and on-premises projects. The initialization steps are different for each project type.
 
-### Magento Commerce Cloud projects
+### Cloud projects
 
 {:.procedure}
-To install a Magento Commerce Cloud project:
+To install a {{ site.data.var.ece }} project:
 
-1. Download a Magento application template from the [Magento Cloud repository][cloud-repo]. Be careful to select the branch that corresponds with the Magento version.
+1. Download an application template from the [Magento Cloud repository][cloud-repo]. Be careful to select the branch that corresponds with the Commerce version.
 
 1. Optionally, you can clone the latest template.
 
@@ -31,14 +31,14 @@ To install a Magento Commerce Cloud project:
 
 1. Change to the new project directory.
 
-1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
+1. Add your [access credentials][magento-creds] to the `auth.json` file.
 
-### Magento Commerce On-premises projects
+### On-premises projects
 
 When you initialize a {{site.data.var.ee}} project for Docker development, you must create a [.magento.docker.yml][unified configuration] configuration source file to create the Docker containers for the local environment.
 
 {:.procedure}
-To install a Magento Commerce On-premises project:
+To install an {{site.data.var.ee}} on-premises project:
 
 1. Create a project using [Composer]({{site.baseurl}}/guides/v2.4/install-gde/composer.html).
 
@@ -46,7 +46,7 @@ To install a Magento Commerce On-premises project:
     composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
    ```
 
-   This command installs the latest Magento release. To install a specific version, specify the version number, for example `magento/project-enterprise-edition=2.3.5`.
+   This command installs the latest release. To install a specific version, specify the version number, for example `magento/project-enterprise-edition=2.3.5`.
 
 1. Change to the project directory.
 
@@ -102,7 +102,7 @@ To install a Magento Commerce On-premises project:
 
 ## Update the hosts file and install dependencies
 
-Before you use {{site.data.var.mcd-prod}}, you must update the `etc/hosts` file and install required dependencies. You can do this manually, or using a Magento installation script.
+Before you use {{site.data.var.mcd-prod}}, you must update the `etc/hosts` file and install required dependencies. You can do this manually, or using an installation script.
 
 {:.procedure}
 To update and install manually:
@@ -120,7 +120,7 @@ To update and install manually:
    ```
 
 {:.procedure}
-To update and install using the Magento installation script:
+To update and install using the installation script:
 
 1. Install the template dependencies and add the default hostname to your `/etc/hosts` file.
 

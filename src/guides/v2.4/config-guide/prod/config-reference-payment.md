@@ -18,7 +18,7 @@ To optionally override any configuration settings or to set sensitive settings, 
 
 ## Payment methods paths
 
-These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
+These configuration values are available in the Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
 The settings are further organized by payment method.
 

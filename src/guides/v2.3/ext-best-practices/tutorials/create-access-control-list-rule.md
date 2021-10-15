@@ -96,26 +96,19 @@ The menu displays as follows:
 
 ### Restrict admin controllers
 
-We can restrict the access to admin controllers by overriding the `_isAllowed` method of the `\Magento\Backend\App\Action` class.
+We can restrict the access to admin controllers by setting the `ADMIN_RESOURCE` constant.
 
 Add the following to your module's `Controller/Adminhtml/Create/Index.php` file:
 
 ```php
-protected function _isAllowed()
-{
- return $this->_authorization->isAllowed('Vendor_MyModule::create');
-}
+const ADMIN_RESOURCE = 'Vendor_MyModule::create'
 ```
 
 Add the following to your module's `Controller/Adminhtml/Delete/Index.php` file:
 
 ```php
-protected function _isAllowed()
-{
- return $this->_authorization->isAllowed('Vendor_MyModule::delete');
-}
+const ADMIN_RESOURCE = 'Vendor_MyModule::delete';
 ```
-
 If the user does not have permission, the action page displays an "Access Denied" message.
 
 ### Content restrictions for admin users

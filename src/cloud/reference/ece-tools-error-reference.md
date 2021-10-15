@@ -21,7 +21,7 @@ In the `cloud.error.log` file, each entry is formatted as a JSON string for easi
 
 Error messages are categorized by deployment stage–*build*, *deploy*, and *post-deploy*. Each section provides a list of associated errors with the following information for each error:
 
--  **Error code**:  The Magento-assigned identifier for the error message
+-  **Error code**:  The {{site.data.var.ee}}-assigned identifier for the error message
 -  **Stage**:  Indicates whether the error occurred during the build, deploy, or post-deploy stage
 -  **Step**:  Indicates the step in the deployment scenario that can return the error. If the _Step_ column is blank, the error is a general error that can be returned by multiple steps, or during pre-processing operations. See [Scenario-based deployment]({{ site.baseurl }}/cloud/deploy/scenario-based-deployment.html) for more information about the build, deploy, and post-deploy steps.
 -  **Suggestion**: Provides guidance to troubleshoot and resolve the error

@@ -58,6 +58,20 @@ ExampleCorp wants to change the color of the primary buttons to orange. To achie
    @button-primary__hover__border: 1px solid @color-orange-red2;
    ```
 
+ExampleCorp wants to change the color of the primary buttons to a custom color. In the orange theme directory add the overriding `app/design/frontend/ExampleCorp/orange/web/css/source/_theme.less` file with the following code:
+
+   ```less
+   //  Primary button
+   @btn-color-text: #2e3138;
+   @btn-color-background: #d5d7dd;
+   @btn-color-background-hover: #d9dbe0;
+   @button-primary__color: @btn-color-text;
+   @button-primary__hover__color: @btn-color-text;
+   @button-primary__background: @btn-color-background;
+   @button-primary__hover__background: @btn-color-background-hover;
+   @button-primary__border: 1px solid @btn-color-background;
+   ```
+
 When ExampleCorp [applies their theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the primary buttons will look like on the following image:
 
 ![The customized view of a product page, with the grey Add to Cart button]

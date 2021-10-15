@@ -14,28 +14,31 @@
 # Product Name variables
 
 ce: Magento Open Source
-ee: Magento Commerce
-b2b: Magento Commerce for B2B
-mbi: Magento Business Intelligence
+ee: Adobe Commerce
+b2b: B2B for Adobe Commerce
+mbi: Adobe Commerce Reporting
 
 # Cloud product name variables
 
-ece: Magento Commerce Cloud
-ece-release-date: Feb 1, 2021
-csuite: Magento Commerce Cloud Suite
+ece: Adobe Commerce on cloud infrastructure
+ece-release-date: July 29, 2021
+csuite: Cloud Suite for Commerce
+
 ct: ece-tools
 ct-repo: magento/ece-tools
-ct-release: 2002.1.5
-mcp-prod: Magento Cloud Patches
-mcp-package: magento/magento-cloud-patches
-mcp-release: 1.0.9
-mcd-package: magento/magento-cloud-docker
-mcd-prod: Magento Cloud Docker
-mcd-release: 1.2.1
-mcc-prod: Magento Cloud Components
-mcc-package: magento/magento-cloud-components
-mcc-release: 1.0.7
+ct-release: 2002.1.7
 
+mcc-prod: Cloud Components of Commerce
+mcc-package: magento/magento-cloud-components
+mcc-release: 1.0.8
+
+mcd-prod: Cloud Docker for Commerce
+mcd-package: magento/magento-cloud-docker
+mcd-release: 1.2.4
+
+mcp-prod: Cloud Patches for Commerce
+mcp-package: magento/magento-cloud-patches
+mcp-release: 1.0.12
 
 # TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
 # is the variable value.
@@ -44,3 +47,4 @@ mcc-release: 1.0.7
 
 im: Inventory Management
 pb: Page Builder
+uct: Upgrade Compatibility Tool

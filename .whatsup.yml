@@ -1,0 +1,23 @@
+# Parameters for a GitHub search query
+base_branch: master
+
+repos:
+  - magento/devdocs
+  - magento-commerce/devdocs
+
+# Labels also will be used as a 'type' value in the output file
+labels:
+  required:
+    - New Topic
+    - Major Update
+  optional:
+    - Technical
+
+# Format of output file
+output_format:
+  - yaml
+#  - markdown
+
+magic_word: whatsnew
+
+membership: magento-commerce

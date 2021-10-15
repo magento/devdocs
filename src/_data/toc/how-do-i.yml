@@ -1,5 +1,13 @@
 label: Customization tutorials
 pages:
+  - label: Custom Attributes
+    children:
+      - label: Introduction
+        url: /howdoi/custom-attributes/introduction.html
+
+      - label: Add a text field attribute
+        url: /howdoi/custom-attributes/text-field.html
+
   - label: Customize product creation form
     children:
 
@@ -56,5 +64,8 @@ pages:
       - label: Customize the list of shipping methods
         url: /howdoi/checkout/checkout_shipping_methods.html
 
-  - label: Customize Magento Admin design
+      - label: Add a custom field for an offline payment method
+        url: /howdoi/checkout/checkout_payment_new_field.html
+
+  - label: Customize the Admin design
     url: /howdoi/admin/customize_admin.html

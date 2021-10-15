@@ -53,7 +53,7 @@ To understand the processing for each command, review the [scripts in the {{site
 **Container name**: build<br/>
 **Docker base image**: [magento/magento-cloud-docker-php], which is based on the Docker [php] image<br/>
 
-The Build container mimics the behavior of the Magento Cloud build process so that testing the build and deploy process is as close to testing in production as possible.
+The Build container mimics the behavior of the {{site.data.var.ece}} build process so that testing the build and deploy process is as close to testing in production as possible.
 
 You can also run build commands manually from the build container to perform individual steps from the build process. For example, you can run the following command to deploy static content.
 
@@ -78,9 +78,9 @@ For details on managing cron jobs in the Cloud Docker environment, see [Manage c
 **Container name**: deploy<br/>
 **Docker base image**: [magento/magento-cloud-docker-php], which is based on the [php] Docker image<br/>
 
-The Deploy container mimics the Magento Cloud deploy process so that testing the build and deploy process is as close to testing in production as possible.
+The Deploy container mimics the {{site.data.var.ece}} deploy process so that testing the build and deploy process is as close to testing in production as possible.
 
-You can run `build` and `deploy` commands manually from the deploy container. The following example reindexes the Magento store:
+You can run `build` and `deploy` commands manually from the deploy container. The following example reindexes the {{site.data.var.ee}} store:
 
 ```bash
 docker-compose run --rm deploy magento-command index:reindex

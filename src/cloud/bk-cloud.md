@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Commerce Cloud guide
+title: Cloud guide for Commerce
 functional_areas:
   - Cloud
 ---

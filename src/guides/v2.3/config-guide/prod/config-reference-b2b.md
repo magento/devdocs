@@ -1,6 +1,7 @@
 ---
 group: configuration-guide
-title: Magento Enterprise B2B Extension configuration paths reference
+title: B2B Extension configuration paths reference
+b2b_only: true
 functional_areas:
   - Configuration
   - System

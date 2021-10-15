@@ -1,9 +1,1 @@
----
-title: Set pre-installation ownership and permissions
-functional_areas:
-  - Install
-  - System
-  - Setup
----
-
-{% include install/file-system-perms-before_24.md %}
+../../../v2.3/install-gde/prereq/file-system-perms.md

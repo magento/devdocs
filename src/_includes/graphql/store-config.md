@@ -42,7 +42,8 @@ Attribute | Data Type | Description | Default or example value
 `id` | Int | Deprecated. Use `store_code` instead. The ID number assigned to the store | `1`
 `is_default_store` | Boolean | Indicates whether the store view has been designated as the default within the store group | true or false
 `is_default_store_group` | Boolean | Indicates whether the store group has been designated as the default within the website | true or false
-`is_requisition_list_active` | String | Indicates if requisition lists are enabled.  Possible values: 1 (Yes) and 0 (No) | 0
+`is_negotiable_quote_active` | Boolean | Indicates if negotiable quote functionality is enabled. Possible values: `true` and `false` | `false`
+`is_requisition_list_active` | String | Indicates if requisition lists are enabled. Possible values: 1 (Yes) and 0 (No) | 0
 `list_mode` | String  | The format of the search results list | `grid-list`
 `list_per_page` | Int | The default number of products per page in List View | `10`
 `list_per_page_values` | String | A list of numbers that define how many products can be displayed in List View | `5,10,15,20,25`
@@ -75,7 +76,7 @@ Attribute | Data Type | Description | Default or example value
 `required_character_classes_number` | String | The number of different character classes required in a password (lowercase, uppercase, digits, special characters). <br/>Configuration path: customer/password/required_character_classes_number | 2
 `returns_enabled` | String! | Indicates whether RMA is enabled on the storefront. Possible values: enabled/disabled | Disabled
 `root_category_id` | Int | Deprecated. Use `root_category_uid` instead. The ID of the root category | 2
-`root_category_uid` | Int | The unique ID for the root category object implementing `CategoryInterface` | 2
+`root_category_uid` | ID | The unique ID for the root category object implementing `CategoryInterface` | Mw==
 `sales_fixed_product_tax_display_setting` | [FixedProductTaxDisplaySettings](#FixedProductTaxDisplaySettings) | Corresponds to the **Display Prices In Sales Modules** field. It indicates how Fixed Product Taxes information is displayed on cart, checkout, and order pages | FPT_DISABLED
 `sales_gift_wrapping` | String | Indicates if gift wrapping prices are displayed on the Orders page. Possible values: 1 (Yes) and 0 (No) | 1
 `sales_printed_card` | String | Indicates if printed card prices are displayed on the Orders page. Possible values: 1 (Yes) and 0 (No) | 1

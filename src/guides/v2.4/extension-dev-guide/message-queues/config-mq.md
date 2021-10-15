@@ -116,6 +116,9 @@ The [`consumers-wait-for-messages`]({{page.baseurl}}/install-gde/install/cli/ins
 The problem is that every time the cron job `cron_consumers_runner` runs, it spawns a new consumer process, the consumer checks if messages are available, and it terminates itself if there are no messages.
 Meanwhile, the `onlySpawnWhenMessageAvailable` attribute first checks if there are available messages, and it spawns a new consumer process only if there are messages. It means that it does not spawn unneeded processes which take up memory, live for a very short period, and then disappear.
 
+{:.bs-callout-warning}
+The [`consumers-wait-for-messages`]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-consumers.html) option is a global option and cannot be configured separately for each consumer, such as the `onlySpawnWhenMessageAvailable` option.
+
 #### Consumer handlers
 
 A handler is a class and method that processes a message. Magento has two ways to define a handler for messages.
@@ -203,7 +206,7 @@ Example topic names that include wildcards:
 `*.*.*` | Matches any topic that contains exactly two periods. | `mytopic.createOrder.success`, `mytopic.updatePrice.item1` | `mytopic.createOrder`, `mytopic.createOrder.success.true`
 `#`| Matches any topic name.  | `mytopic`, `mytopic.createOrder.success`, `this.is.a.long.topic.name` | Not applicable
 `mytopic.#` | Matches any topic name that begins with `mytopic` and has a period afterward. |  `mytopic.success`, `mytopic.createOrder.error` | `new.mytopic.success`,
-`*.Order.#` | There must be one string before __.Order__. There can be any number of strings (including 0) after that.  | `mytopic.Order`, `mytopic.Order.Create`, `newtopic.Order.delete.success` |
+`*.Order.#` | There must be one string before __.Order__. There can be any number of strings (including 0) after that.  | `mytopic.Order`, `mytopic.Order.Create`, `newtopic.Order.delete.success` | `mytopic.Sales.Order.Create`
 
 #### `arguments` element
 {:.no_toc}

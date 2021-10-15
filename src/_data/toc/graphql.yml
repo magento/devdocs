@@ -15,6 +15,9 @@ pages:
         - label: Protected mutations
           url: /graphql/protected-mutations.html
 
+        - label: GraphQL security configuration
+          url: /graphql/security-configuration.html
+
         - label: GraphQL caching
           url: /graphql/caching.html
 
@@ -114,6 +117,11 @@ pages:
         - label: customerPaymentTokens query
           url: /graphql/queries/customer-payment-tokens.html
 
+        - label: dynamicBlocks query
+          url: /graphql/queries/dynamic-blocks.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: getHostedProUrl query
           url: /graphql/queries/get-hosted-pro-url.html
 
@@ -123,6 +131,31 @@ pages:
         - label: giftCardAccount query
           url: /graphql/queries/giftcard-account.html
           edition: ee-only
+
+        - label: giftRegistry query
+          url: /graphql/queries/gift-registry.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: giftRegistryEmailSearch query
+          url: /graphql/queries/gift-registry-email-search.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: giftRegistryIdSearch query
+          url: /graphql/queries/gift-registry-id-search.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: giftRegistryTypes query
+          url: /graphql/queries/gift-registry-types.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: giftRegistryTypeSearch query
+          url: /graphql/queries/gift-registry-type-search.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: isCompanyAdminEmailAvailable query
           url: /graphql/queries/is-company-admin-email-available.html
@@ -147,6 +180,16 @@ pages:
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
 
+        - label: negotiableQuote query
+          url: /graphql/queries/negotiable-quote.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: negotiableQuotes query
+          url: /graphql/queries/negotiable-quotes.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: productReviewRatingsMetadata query
           url: /graphql/queries/product-review-ratings-metadata.html
           exclude_versions: ["2.3"]
@@ -156,6 +199,10 @@ pages:
 
         - label: pickupLocations query
           url: /graphql/queries/pickup-locations.html
+          exclude_versions: ["2.3"]
+
+        - label: route query
+          url: /graphql/queries/route.html
           exclude_versions: ["2.3"]
 
         - label: storeConfig query
@@ -184,6 +231,11 @@ pages:
 
         - label: addDownloadableProductsToCart mutation
           url: /graphql/mutations/add-downloadable-products.html
+
+        - label: addGiftRegistryRegistrants mutation
+          url: /graphql/mutations/add-gift-registry-registrants.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: addProductsToCompareList mutation
           url: /graphql/mutations/add-products-to-compare-list.html
@@ -219,6 +271,10 @@ pages:
         - label: addVirtualProductsToCart mutation
           url: /graphql/mutations/add-virtual-products.html
 
+        - label: addWishlistItemsToCart mutation
+          url: /graphql/mutations/add-wishlist-items-to-cart.html
+          exclude_versions: ["2.3"]
+
         - label: applyCouponToCart mutation
           url: /graphql/mutations/apply-coupon.html
 
@@ -244,6 +300,11 @@ pages:
 
         - label: clearCustomerCart mutation
           url: /graphql/mutations/clear-customer-cart.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
+
+        - label: closeNegotiableQuotes mutation
+          url: /graphql/mutations/close-negotiable-quotes.html
           edition: b2b-only
           exclude_versions: [ "2.3" ]
 
@@ -297,6 +358,11 @@ pages:
         - label: createEmptyCart mutation
           url: /graphql/mutations/create-empty-cart.html
 
+        - label: createGiftRegistry mutation
+          url: /graphql/mutations/create-gift-registry.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: createKlarnaPaymentsSession mutation
           url: /graphql/mutations/create-klarna-payments-session.html
           exclude_versions: ["2.3"]
@@ -343,6 +409,11 @@ pages:
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
 
+        - label: deleteNegotiableQuotes mutation
+          url: /graphql/mutations/delete-negotiable-quotes.html
+          editiion: b2b-only
+          exclude_versions: [ "2.3" ]
+
         - label: deleteRequisitionList mutation
           url: /graphql/mutations/delete-requisition-list.html
           edition: b2b-only
@@ -374,6 +445,11 @@ pages:
         - label: mergeCarts mutation
           url: /graphql/mutations/merge-carts.html
 
+        - label: moveCartItemsToGiftRegistry mutation
+          url: /graphql/mutations/move-cart-items-to-gift-registry.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: moveProductsBetweenWishlists mutation
           url: /graphql/mutations/move-products-between-wishlists.html
           edition: ee-only
@@ -402,8 +478,28 @@ pages:
           url: /graphql/mutations/remove-giftcard.html
           edition: ee-only
 
+        - label: removeGiftRegistry mutation
+          url: /graphql/mutations/remove-gift-registry.html
+          edition: ee-only
+          exclude_versions: ["2.3"] 
+
+        - label: removeGiftRegistryItems mutation
+          url: /graphql/mutations/remove-gift-registry-items.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: removeGiftRegistryRegistrants mutation
+          url: /graphql/mutations/remove-gift-registry-registrants.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: removeItemFromCart mutation
           url: /graphql/mutations/remove-item.html
+
+        - label: removeNegotiableQuoteItems mutation
+          url: /graphql/mutations/remove-negotiable-quote-items.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
 
         - label: removeProductsFromWishlist mutation
           url: /graphql/mutations/remove-products-from-wishlist.html
@@ -427,6 +523,11 @@ pages:
           url: /graphql/mutations/reorder-items.html
           exclude_versions: ["2.3"]
 
+        - label: requestNegotiableQuote mutation
+          url: /graphql/mutations/request-negotiable-quote.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: requestPasswordResetEmail mutation
           url: /graphql/mutations/request-password-reset-email.html
           exclude_versions: ["2.3"]
@@ -446,6 +547,11 @@ pages:
         - label: sendEmailToFriend mutation
           url: /graphql/mutations/send-email-to-friend.html
 
+        - label: sendNegotiableQuoteForReview mutation
+          url: /graphql/mutations/send-negotiable-quote-for-review.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
+
         - label: setBillingAddressesOnCart mutation
           url: /graphql/mutations/set-billing-address.html
 
@@ -456,6 +562,11 @@ pages:
 
         - label: setGuestEmailOnCart mutation
           url: /graphql/mutations/set-guest-email.html
+
+        - label: setNegotiableQuoteShippingAddresses mutation
+          url: /graphql/mutations/set-negotiable-quote-shipping-address.html
+          edition: b2b-only
+          exclude_versions: ["2.3"]
 
         - label: setPaymentMethodAndPlaceOrder mutation
           url: /graphql/mutations/set-payment-place-order.html
@@ -468,6 +579,11 @@ pages:
 
         - label: setShippingMethodsOnCart mutation
           url: /graphql/mutations/set-shipping-method.html
+
+        - label: shareGiftRegistry mutation
+          url: /graphql/mutations/share-gift-registry.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: subscribeEmailToNewsletter mutation
           url: /graphql/mutations/subscribe-email-to-newsletter.html
@@ -514,6 +630,26 @@ pages:
 
         - label: updateCustomerAddress mutation
           url: /graphql/mutations/update-customer-address.html
+
+        - label: updateGiftRegistry mutation
+          url: /graphql/mutations/update-gift-registry.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: updateGiftRegistryItems mutation
+          url: /graphql/mutations/update-gift-registry-items.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: updateGiftRegistryRegistrants mutation
+          url: /graphql/mutations/update-gift-registry-registrants.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
+        - label: updateNegotiableQuoteQuantities
+          url: /graphql/mutations/update-negotiable-quote-quantities.html
+          edition: b2b-only
+          exclude_versions: [ "2.3" ]
 
         - label: updateProductsInWishlist mutation
           url: /graphql/mutations/update-products-in-wishlist.html
@@ -588,6 +724,10 @@ pages:
         - label: RequisitionListItemInterface attributes and implementations
           url: /graphql/interfaces/requisition-list-item-interface.html
           edition: b2b-only
+          exclude_versions: ["2.3"]
+
+        - label: RoutableInterface attributes
+          url: /graphql/interfaces/routable-interface.html
           exclude_versions: ["2.3"]
 
         - label: ShipmentItemInterface attributes and implementations

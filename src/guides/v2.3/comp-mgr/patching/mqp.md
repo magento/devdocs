@@ -1,19 +1,19 @@
 ---
 group: software-update-guide
-title: Apply patches using Magento Quality Patches Tool (MQP)
+title: Quality Patches Tool
 functional_areas:
   - Upgrade
 ---
 
-The [Magento Quality Package (MQP) package][] delivers individual patches developed by Magento and allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}. See the [Apply Patches]({{ site.baseurl }}/cloud/project/project-patch.html) topic in the _Cloud Guide_ for details on installing and using  MQP for {{ site.data.var.ece }}.
+{% include install/patch/quality-patch-intro.md %}
 
 {:.bs-callout-warning}
-We do not recommend using the MQP package to apply large numbers of patches because it increases the complexity of your code, which makes upgrading to a new version of Magento more difficult.
+We do not recommend using the Quality Patches Tool to apply large numbers of patches because it increases the complexity of your code, which makes upgrading to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }} more difficult.
 
-#### Install the MQP package
+#### Install
 
 {:.bs-callout-info}
-If it is not already installed, you must install [Git](https://github.com/git-guides/install-git) or [Patch](https://man7.org/linux/man-pages/man1/patch.1.html) before installing the MQP package.
+If it is not already installed, you must install [Git](https://github.com/git-guides/install-git) or [Patch](https://man7.org/linux/man-pages/man1/patch.1.html) before installing the Quality Patches Tool.
 Add the `magento/quality-patches` Composer package to your `composer.json` file:
 
 ```bash
@@ -22,7 +22,7 @@ composer require magento/quality-patches
 
 #### View individual patches
 
-To view the list of individual patches available for your version of Magento:
+To view the list of individual patches available for your version of {{ site.data.var.ee }} or {{ site.data.var.ce }}:
 
 ```bash
 ./vendor/bin/magento-patches status
@@ -70,8 +70,8 @@ Magento 2 Enterprise Edition, version 2.3.5.0
 The status table contains the following types of information:
 
 -  **Type**:
-   -  `Optional`—All patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations.
-   -  `Deprecated`—Magento has deprecated the individual patch. If you have applied the patch, we recommend that you revert it. The revert operation also removes the patch from the status table.
+   -  `Optional`—All patches from the Quality Patches Tool and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations.
+   -  `Deprecated`—Adobe has deprecated the individual patch. If you have applied the patch, we recommend that you revert it. The revert operation also removes the patch from the status table.
 
 -  **Status**:
    -  `Applied`—The patch has been applied.
@@ -79,17 +79,17 @@ The status table contains the following types of information:
    -  `N/A`—The status of the patch cannot be defined due to conflicts.
 
 -  **Details**:
-   -  `Affected components`—The list of affected Magento modules.
+   -  `Affected components`—The list of affected modules.
    -  `Required patches`—The list of patches that must be applied for an indicated patch to work properly (dependencies).
    -  `Recommended replacement`—The patch that is a recommended replacement for a deprecated patch.
 
 {:.bs-callout-info}
-After upgrading to a new version of Magento, you must re-apply patches if the patches are not included in the new version. See [Re-apply patches after an upgrade](#upgrade).
+After upgrading to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }}, you must re-apply patches if the patches are not included in the new version. See [Re-apply patches after an upgrade](#upgrade).
 
 #### Apply individual patches
 
 {:.bs-callout-warning}
-We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system][].
+We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html).
 
 To apply a single patch, run the following command where `MAGETWO-XXXX` is the patch ID specified in the status table:
 
@@ -110,12 +110,12 @@ You must clean the cache after applying patches to see changes in the Magento ap
 ```
 
 {:.bs-callout-info}
-Consider keeping a list of applied patches in a separate location. You might need to re-apply some of them after upgrading to a new version of Magento. See [Re-apply patches after an upgrade](#upgrade).
+Consider keeping a list of applied patches in a separate location. You might need to re-apply some of them after upgrading to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }}. See [Re-apply patches after an upgrade](#upgrade).
 
 #### Revert individual patches
 
 {:.bs-callout-warning}
-We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system][].
+We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html).
 
 To revert a single patch, run the following command where `MAGETWO-XXXX` is the patch ID specified in the status table:
 
@@ -143,7 +143,7 @@ You must clean the cache after reverting patches to see changes in the Magento a
 
 #### Get updates
 
-Magento periodically releases new individual patches. You must update the MQP package to get new individual patches:
+Magento periodically releases new individual patches. You must update the Quality Patches Tool to get new individual patches:
 
 ```bash
 composer update magento/quality-patches
@@ -160,12 +160,12 @@ New add patches display at the bottom of the table.
 
 #### Re-apply patches after an upgrade {#upgrade}
 
-When you upgrade to a new version of Magento, you must re-apply patches if the patches are not included in the new version.
+When you upgrade to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }}, you must re-apply patches if the patches are not included in the new version.
 
 {:procedure}
 To re-apply patches:
 
-1. Update the MQP package:
+1. Update the Quality Patches Tool:
 
    ```bash
    composer update magento/quality-patches.
@@ -192,8 +192,4 @@ To re-apply patches:
 
 #### Logging
 
-The MQP package logs all operations in the `<Magento_root>/var/log/patch.log` file.
-
-<!-- Link Definitions -->
-
-[Magento Quality Package (MQP) package]: https://github.com/magento/quality-patches
+The Quality Patches Tool logs all operations in the `<Magento_root>/var/log/patch.log` file.

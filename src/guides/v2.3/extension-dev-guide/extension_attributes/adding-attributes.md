@@ -80,11 +80,11 @@ Function `afterGetList` is similar to `afterGet`:
 ```php
 public function afterGetList(
     \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-    \Magento\Catalog\Api\Data\ProductSearchResultsInterface $searchCriteria
+    \Magento\Catalog\Api\Data\ProductSearchResultsInterface $searchResults
 ) : \Magento\Catalog\Api\Data\ProductSearchResultsInterface
 {
     $products = [];
-    foreach ($searchCriteria->getItems() as $entity) {
+    foreach ($searchResults->getItems() as $entity) {
         $ourCustomData = $this->customDataRepository->get($entity->getId());
 
         $extensionAttributes = $entity->getExtensionAttributes();
@@ -93,12 +93,12 @@ public function afterGetList(
 
         $products[] = $entity;
     }
-    $searchCriteria->setItems($products);
-    return $searchCriteria;
+    $searchResults->setItems($products);
+    return $searchResults;
 }
 ```
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 To add extension attributes to an entity without plugins, use the `extensionActions` argument of `\Magento\Framework\EntityManager\Operation\ExtensionPool`. See [\Magento\Catalog\Model\ProductRepository::getList()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/ProductRepository.php) as an example of an implementation.
 
 Likewise, the `afterSave` plugin should manipulate the entity data before returning it:
@@ -115,7 +115,7 @@ public function afterSave
     $ourCustomData = $extensionAttributes->getOurCustomData();
     $this->customDataRepository->save($ourCustomData);
 
-    $resultAttributes = $result->getExtentionAttributes(); /** get extension attributes as they exist after save **/
+    $resultAttributes = $result->getExtensionAttributes(); /** get extension attributes as they exist after save **/
     $resultAttributes->setOurCustomData($ourCustomData); /** update the extension attributes with correct data **/
     $result->setExtensionAttributes($resultAttributes);
 

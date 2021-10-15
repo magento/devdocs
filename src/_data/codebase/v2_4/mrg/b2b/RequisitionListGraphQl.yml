@@ -1,9 +1,0 @@
----
-title: Magento_RequisitionListGraphQl
-source_repo: magento2b2b
-release: 1.3.1
-github_path: app/code/Magento/RequisitionListGraphQl/README.md
-last_modified_at: '2020-11-10 13:15:32 +0530'
-content: |-
-  **RequisitionListGraphQl** provides GraphQL schema and resolvers for the requisition list module.
-  to generate requisition list and requisition list items information endpoints.

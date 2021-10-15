@@ -12,11 +12,11 @@ functional_areas:
 
 ## Overview of the support utilities {#config-cli-spt-utils-over}
 
-The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html)) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
+The {{site.data.var.ee}} Support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html)) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
 
-Magento Support uses these backups (also referred to as *dumps*) to analyze issues that require access to your code. A typical scenario follows:
+{{site.data.var.ee}} uses these backups (also referred to as *dumps*) to analyze issues that require access to your code. A typical scenario follows:
 
-1. You're having an issue with your Magento store and you contact Magento Support.
+1. You're having an issue with your Magento store and you contact {{site.data.var.ee}} Support.
 1. Support determines they need to see your code or database to reproduce the issue.
 1. You back up the code to a `.tar.gz` file.
 
@@ -55,7 +55,7 @@ For example, to create a code backup named `/var/www/html/magento2/var/log/mycod
 bin/magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
 ```
 
-After the command completes, provide the code backup to Magento Support.
+After the command completes, provide the code backup to {{site.data.var.ee}} Support.
 
 ## Create a database backup {#config-cli-spt-utils-db}
 
@@ -91,7 +91,7 @@ Sensitive data includes customer information from the following database tables:
 'sales_order_grid'
 ```
 
-After the command completes, provide the database backup to Magento Support.
+After the command completes, provide the database backup to {{site.data.var.ee}} Support.
 
 ## Troubleshooting: display utilities and paths {#config-cli-spt-utils-trouble}
 

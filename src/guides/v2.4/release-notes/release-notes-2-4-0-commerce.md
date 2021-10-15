@@ -1,15 +1,15 @@
 ---
 group: release-notes
-title: Magento Commerce 2.4.0 Release Notes
+title: Adobe Commerce 2.4.0 Release Notes
 ---
 
-Magento Commerce 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default. B2B enhancements include the new Order Approval workflow.
+{{site.data.var.ee}} 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default. B2B enhancements include the new Order Approval workflow.
 
-**With this release, the Authorize.Net, eWay, CyberSource, and Worldpay payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace**.
+**With this release, the Authorize.Net, eWay, CyberSource, and Worldpay payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Commerce Marketplace**.
 
 {:.bs-callout-info}
 
-**Braintree payment integration**: Prior to Magento 2.4.0, it was recommended that merchants install and configure the official Braintree payment integration extension from the Magento Marketplace to replace the core integration. With this release (Magento 2.4.0), the extension is now included in the Magento release. Merchants must follow additional steps to ensure that Braintree works properly in a Magento 2.4.0 deployment. See [Braintree](https://docs.magento.com/user-guide/payment/braintree.html) for more information on how to migrate to Magento 2.4.0.
+**Braintree payment integration**: Prior to Magento 2.4.0, it was recommended that merchants install and configure the official Braintree payment integration extension from the Commerce Marketplace to replace the core integration. With this release (Magento 2.4.0), the extension is now included in the Magento release. Merchants must follow additional steps to ensure that Braintree works properly in a Magento 2.4.0 deployment. See [Braintree](https://docs.magento.com/user-guide/payment/braintree.html) for more information on how to migrate to Magento 2.4.0.
 
 This release includes all the improvements to core quality that were included in Magento 2.3.5-p1, over 100 new fixes to core code, and 30 security enhancements. It includes the resolution of 226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
@@ -51,7 +51,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 *  **Implementation of 2FA for Admin accounts, Magento.com user accounts, and Cloud SSH access**
 
-   *  **Securing your Magento Admin account**. Two-factor authentication (2FA) is now required for the Magento Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default. We strongly recommend against disabling the 2FA module.  This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
+   *  **Securing your Admin account**. Two-factor authentication (2FA) is now required for the Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default. We strongly recommend against disabling the 2FA module.  This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
 
    *  **Securing your Magento account**. Two-factor Authentication (2FA) provides an added, optional  layer of security to better protect your Magento.com account from unauthorized users who might want to use your account in ways you do not want. See [Securing Your Account](https://docs.magento.com/user-guide/magento/magento-account-secure.html).
 
@@ -65,8 +65,10 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 *  **Support for security.txt file**. This file is an industry-standard file on the server that helps security researchers report potential security issues to site administrators.
 
+*  **Enhancements to Content Security Policy (CSP) support**. `SecureHtmlRenderer` has been added to the Framework and is available in `.phtml` templates to whitelist inline `style` and `script` tags. Inline scripts and styles are not permitted with default CSP configuration, which can be overridden by XML files. <!--- MC-34433-->
+
 {:.bs-callout-info}
-Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Platform upgrades
 
@@ -74,9 +76,9 @@ The following platform upgrades help enhance website security and performance. S
 
 *  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.4.0 introduces support for PHP 7.4.
 
-*  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Magento Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all  unit and integration tests have been configured to be run with PHPUnit 9.
+*  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Commerce Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all  unit and integration tests have been configured to be run with PHPUnit 9.
 
-*  **Elasticsearch 7.6.x support**. Elasticsearch 7.6.x is now the default catalog search engine for Magento Commerce and Open Source. You cannot install or upgrade to Magento 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed. Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
+*  **Elasticsearch 7.6.x support**. Elasticsearch 7.6.x is now the default catalog search engine for {{site.data.var.ee}} and {{site.data.var.ee}}. You cannot install or upgrade to version 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed. Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
 
 *  **MySQL 8.0 support**. Magento 2.4.x supports MySQL 8.x. (Magento 2.4.0 was tested with MySQL 8.0.20.) Merchants are encouraged to migrate their deployments to MySQL 8.x to take advantage of its improved performance, security, and reliability. Although MySQL 5.7 is still supported for Magento 2.4.x, MySQL 5.6 is no longer supported. You cannot host Magento 2.4.x with a MySQL 5.6 database. See [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
@@ -87,7 +89,7 @@ The following platform upgrades help enhance website security and performance. S
 
 *  **Decomposition of Magento Controllers** allows extension developers to implement ActionInterface directly without "layer supertype" classes. See the [Decomposition of Magento Controllers](https://community.magento.com/t5/Magento-DevBlog/Decomposition-of-Magento-Controllers/ba-p/430883) DevBlog post. _Enhancement started by Vinai Kopp in pull request [16268](https://github.com/magento/magento2/pull/16268) and finalized by Lukasz Bajsarowicz in pull request [26778](https://github.com/magento/magento2/pull/26778)_. [GitHub-9582](https://github.com/magento/magento2/issues/9582)
 
-*  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace.
+*  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Commerce Marketplace.
 
 *  The **core Braintree module has been removed from the code base**. The Braintree Payments module now provides the same feature set. See [Braintree Payments](https://marketplace.magento.com/paypal-module-braintree.html).
 
@@ -97,7 +99,7 @@ The following platform upgrades help enhance website security and performance. S
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these modules: Customer Account, Catalog, CMS, Import, Cart and Checkout, and B2B.
 
-*  **Removal of core integration of third-party payment methods**. With this release, the Authorize.Net payment method integration has been removed from core code. Merchants should migrate to the official extension that is available on the Magento Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-29029-->
+*  **Removal of core integration of third-party payment methods**. With this release, the Authorize.Net payment method integration has been removed from core code. Merchants should migrate to the official extension that is available on the Commerce Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-29029-->
 
 *  **Support for partial-word search for Elasticsearch (new default search engine)**. Elasticsearch now supports the use of  partial words in search terms for  product names and SKUs when using quick search. This capability was supported by the MySQL search engine, which has been deprecated and replaced by Elasticsearch in this release.
 
@@ -136,7 +138,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Improvement of up to 25-30% to Quick Order add-to-cart performance**.
 
-*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. See [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html).
+*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images.
 
 ### Adobe Stock Integration v2.0
 
@@ -198,7 +200,7 @@ This release also removes deprecated actions and upgrades scripts that were adde
 
 This release of Magento includes extensions developed by third-party vendors. It introduces both quality and UX improvements to these extensions and an expansion of MFTF coverage.
 
-Magento Marketplace extension vendors should confirm that their extensions are compatible with PHP 7.4 when publishing a new version of their extension for Magento 2.4.0.
+Commerce Marketplace extension vendors should confirm that their extensions are compatible with PHP 7.4 when publishing a new version of their extension for Magento 2.4.0.
 
 #### dotdigital
 
@@ -210,7 +212,7 @@ This release includes these enhancements:
 *  Wishlist, Review, and Order syncs now look up the transactional data sync limit once only.
 *  Logging output from the Client class has been improved and is now consistent across all methods in the API wrapper.
 *  Configurable products now have a stock figure that is the sum of their child products.
-*  A new plugin detects stock updates that are performed by third-party code (outside the Magento Admin).
+*  A new plugin detects stock updates that are performed by third-party code (outside the Admin).
 *  [Data mapping](https://docs.magento.com/user-guide/configuration/dotdigital/data-mapping.html) and [transactional email](https://docs.magento.com/user-guide/configuration/dotdigital/transactional-emails.html) configuration information has been updated.
 
 #### Amazon Pay
@@ -1414,11 +1416,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC--->
 
-*  The integration of third-party payment methods Authorize.Net, eWay, CyberSource, Braintree, and Worldpay into the core Magento code have been removed. Merchants should migrate to the official extensions that are available on the Magento Marketplace.
+*  The integration of third-party payment methods Authorize.Net, eWay, CyberSource, Braintree, and Worldpay into the core Magento code have been removed. Merchants should migrate to the official extensions that are available on the Commerce Marketplace.
 
 <!--- MC--->
 
-*  The core implementation of Signifyd fraud protection is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on Magento Marketplace.
+*  The core implementation of Signifyd fraud protection is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on Commerce Marketplace.
 
 <!--- MC-32546-->
 
@@ -1502,7 +1504,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-23383 ENGCOM-7006-->
 
-*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. See [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html). _Fix submitted by Timon de Groot in pull request [27033](https://github.com/magento/magento2/pull/27033)_. [GitHub-27032](https://github.com/magento/magento2/issues/27032)
+*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. _Fix submitted by Timon de Groot in pull request [27033](https://github.com/magento/magento2/pull/27033)_. [GitHub-27032](https://github.com/magento/magento2/issues/27032)
 
 <!--- ENGCOM-6988-->
 
@@ -1676,7 +1678,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Search
 
-*  Elasticsearch 7.6.x is now the default catalog search engine for Magento Commerce and Open Source. You cannot install or upgrade to Magento 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed. Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
+*  Elasticsearch 7.6.x is now the default catalog search engine for {{site.data.var.ee}} and {{site.data.var.ee}}. You cannot install or upgrade to version 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed. Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
 
 <!--- MC-23753-->
 
@@ -2066,7 +2068,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6328-->
 
-*  The layout of the Admin Billing Address/Shipping Address page has been refactored to meet Magento Admin form display conventions. _Fix submitted by Alexey Rakitin in pull request [25699](https://github.com/magento/magento2/pull/25699)_. [GitHub-23481](https://github.com/magento/magento2/issues/23481), [GitHub-19805](https://github.com/magento/magento2/issues/19805)
+*  The layout of the Admin Billing Address/Shipping Address page has been refactored to meet Admin form display conventions. _Fix submitted by Alexey Rakitin in pull request [25699](https://github.com/magento/magento2/pull/25699)_. [GitHub-23481](https://github.com/magento/magento2/issues/23481), [GitHub-19805](https://github.com/magento/magento2/issues/19805)
 
 <!--- ENGCOM-6628 6593-->
 
@@ -2300,7 +2302,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.4.0 using Composer.
+You can install {{site.data.var.ee}} 2.4.0 using Composer.
 
 ## Migration tool kits
 

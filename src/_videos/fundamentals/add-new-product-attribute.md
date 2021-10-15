@@ -1,5 +1,5 @@
 ---
-youtube_id: cM_9RkWFqqM
+youtube_id: mZNBENRgC1E
 duration: "7:36"
 group: "Fundamentals of Magento 2 Development"
 title: "How to Add a New Product Attribute"
@@ -351,7 +351,7 @@ Basic instructions for creating a product attribute by setup or upgrade script c
 
 For use case `1` (an 'immutable' set of options), follow the above instructions ["Add a source model"](#AddSourceModel). You will create a model that contains and dynamically returns the attribute's selectable options to the client.
 
-For use case `2` (a 'mutable' set of options), see ["EAV and extension attributes"]({{ site.baseurl }}/guides/v2.4/extension-dev-guide/attributes.html). Make sure to declare 'Magento\Eav\Model\Entity\Attribute\Source\Table' as the value for the 'source' attribute option. This ensures that Magento will store options in the appropriate database table.
+For use case `2` (a 'mutable' set of options), see ["EAV and extension attributes"]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/attributes.html). Make sure to declare 'Magento\Eav\Model\Entity\Attribute\Source\Table' as the value for the 'source' attribute option. This ensures that Magento will store options in the appropriate database table.
 
 With `\Magento\Eav\Setup\EavSetup.php::addAttribute()` and `\Magento\Eav\Setup\EavSetup.php::addAttributeOptions()` you can add a series of options with the following array:
 

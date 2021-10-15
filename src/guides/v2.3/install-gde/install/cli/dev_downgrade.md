@@ -1,9 +1,5 @@
 ---
-subgroup: 99_contrib
 title: Change to a released version
-menu_title: Change to a released version
-menu_order: 200
-menu_node:
 functional_areas:
   - Install
   - System
@@ -30,7 +26,7 @@ You have the following options:
 
 To change versions after cloning:
 
-1. Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as, or switch to, [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Use the following command to uninstall the Magento software:
 
    ```bash
@@ -56,13 +52,13 @@ To change versions after cloning:
    git checkout tags/2.2.0 -b 2.2.0
    ```
 
-1. Install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).
+1. Install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html).
 
 ### Change versions by installing the Magento software in a new database instance {#downgrade-db}
 
 To change versions after cloning:
 
-1. Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as, or switch to, [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Create a [new database instance]({{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config) for your installation.
 1. [Back up]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back) the Magento file system, database, and media files:
 
@@ -90,4 +86,4 @@ To change versions after cloning:
 
 1. Install the Magento software in your new database instance.
 
-   You can install using either the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).
+   You must install using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html).

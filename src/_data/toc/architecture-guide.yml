@@ -25,7 +25,7 @@ pages:
 
         - label: Persistence layer
           url: /architecture/archi_perspectives/persist_layer.html
-        
+
         - label: Presentation layer
           url: /architecture/archi_perspectives/present_layer.html
 
@@ -35,7 +35,7 @@ pages:
     - label: Coding Standards
       url: /coding-standards/bk-coding-standards.html
 
-    - label: Magento Framework
+    - label: Commerce and Magento Framework
       url: /architecture/archi_perspectives/framework.html
 
     - label: Modules and Extensibility

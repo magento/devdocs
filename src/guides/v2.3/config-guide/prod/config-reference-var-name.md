@@ -20,7 +20,7 @@ You can use variables for any of the following:
 
    *  Environment variables
    *  The [`magento config:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command
-   *  The Magento Admin followed by the [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)
+   *  The Admin followed by the [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)
 
 Configuration paths can be found in:
 
@@ -81,11 +81,11 @@ Scope values come from the `store`, `store_group`, and `store_website` tables.
 *  The `store` table specifies store view names and codes
 *  The `store_website` table specifies website names and codes
 
-You can also find the code values using the Magento Admin.
+You can also find the code values using the Admin.
 
 How to read the table:
 
-*  `Path in Magento Admin` column
+*  `Path in Admin` column
 
    Values before the comma are paths in the Admin navigation. Values after the comma are options in the right pane.
 
@@ -95,21 +95,21 @@ How to read the table:
 
    *  The entire variable name is always ALL CAPS
    *  Start a variable name with `CONFIG__` (note two underscore characters)
-   *  You can find the `<STORE_VIEW_CODE>` or `<WEBSITE_CODE>` portion of a variable name in either the Magento Admin or the Magento database, as indicated in the following sections.
+   *  You can find the `<STORE_VIEW_CODE>` or `<WEBSITE_CODE>` portion of a variable name in either the Admin or the Magento database, as indicated in the following sections.
    *  You can find `<SYSTEM__VARIABLE__NAME>` as discussed in [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
-### Find a website or store view scope in the Magento Admin
+### Find a website or store view scope in the Admin
 
 The following table summarizes how to find website or store view value in the Admin.
 
-| Description  | Path in Magento Admin | Variable name |
+| Description  | Path in Admin | Variable name |
 |--------------|--------------|----------------------|
 | Create, edit, delete store views | **Stores** > **All Stores** | `CONFIG__STORES__<STORE_VIEW_CODE>__<SYSTEM__VARIABLE__NAME>`  |
 | Create, edit, delete websites | **Stores** > **All Stores**  | `CONFIG__WEBSITES__<WEBSITE_CODE>__<SYSTEM__VARIABLE__NAME>` |
 
 For example, to find a website or store view scope value in the Admin:
 
-1. Log in to the Magento Admin as a user authorized to view websites.
+1. Log in to the Admin as a user authorized to view websites.
 1. Click **Stores** > **All Stores**.
 1. Click the name of a website or store view.
 
@@ -124,7 +124,7 @@ For example, to find a website or store view scope value in the Admin:
 
 To get these values from the database:
 
-1. If you haven't done so already, log in to your development system as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. If you haven't done so already, log in to your development system as the [file system owner](https://glossary.magento.com/magento-file-system-owner).
 1. Enter the following command:
 
    ```bash
@@ -184,7 +184,7 @@ This section discusses how to set system variables.
 
 The following table shows a few sample variables.
 
-| Description  | Path in Magento Admin (omitting **Stores** > **Settings** > **Configuration**) | Variable name |
+| Description  | Path in Admin (omitting **Stores** > **Settings** > **Configuration**) | Variable name |
 |--------------|--------------|----------------------|
 | Elasticsearch server hostname  | Catalog > **Catalog**, **Elasticsearch Server Hostname**   |  `<SCOPE>__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME` |
 | Elasticsearch server port |  Catalog > **Catalog**, **Elasticsearch Server Port** | `<SCOPE>__CATALOG__SEARCH__ELASTICSEARCH_SERVER_PORT`  |
@@ -242,7 +242,7 @@ content='
 
 *  To use values you set in the `$_ENV` array, you must set `variables_order = "EGPCS"` in your `php.ini` file. For details, see [PHP documentation](http://us.php.net/manual/en/ini.core.php#ini.variables-order).
 
-*  For Magento Commerce Cloud, if you are attempting to override Magento configuration settings using the [Project Web Interface](https://devdocs.magento.com/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
+*  For Adobe Commerce on cloud infrastructure, if you are attempting to override configuration settings using the [Project Web Interface](https://devdocs.magento.com/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
 
 ![Environment variable example](https://devdocs.magento.com/common/images/cloud/cloud_env_var_example.png)'
 

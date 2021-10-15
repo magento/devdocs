@@ -1,0 +1,4 @@
+---
+title: Version
+release: 2.4.3
+content: Magento\Version Allows to get Magento version and edition by HTTP GET request

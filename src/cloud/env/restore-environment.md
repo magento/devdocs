@@ -13,12 +13,12 @@ If you encounter issues in your environment and do not have a [valid snapshot]({
 If you have not created a snapshot, but you can access the environment using SSH, follow these steps to restore your environment:
 
 1. Disable configuration management
-1. Uninstall Magento
+1. Uninstall {{site.data.var.ee}}
 1. Reset the git branch
 
 Performing these steps:
 
--  Returns your Magento installation to its original state by restoring the database, removing the deployment configuration, and clearing `var/` subdirectories.
+-  Returns your {{site.data.var.ee}} installation to its original state by restoring the database, removing the deployment configuration, and clearing `var/` subdirectories.
 -  Resets your git branch to a stable state in the past.
 
 ### Disable configuration management
@@ -32,33 +32,33 @@ To remove the configuration file:
 
 1. [SSH to your environment]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
 1. Remove the configuration file:
-   -  For Magento 2.2:
+   -  For {{site.data.var.ee}} 2.2:
 
       ```bash
       rm app/etc/config.php
       ```
 
-   -  For Magento 2.1:
+   -  For {{site.data.var.ee}} 2.1:
 
       ```bash
       rm app/etc/config.local.php
       ```
 
-### Uninstall Magento
+### Uninstall {{site.data.var.ee}}
 
-Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears `var/` subdirectories.
+Uninstalling the {{site.data.var.ee}} software drops and restores the database, removes the deployment configuration, and clears `var/` subdirectories.
 
 {:.procedure}
-To uninstall the Magento software:
+To uninstall the {{site.data.var.ee}} software:
 
 1. [SSH to your environment]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
-1. Uninstall the Magento application.
+1. Uninstall the {{site.data.var.ee}} application.
 
    ```bash
    php bin/magento setup:uninstall
    ```
 
-1. Confirm that Magento was successfully uninstalled.
+1. Confirm that {{site.data.var.ee}} was successfully uninstalled.
 
    The following message displays to confirm a successful uninstallation:
 
@@ -95,7 +95,7 @@ To reset your branch:
    git reset --h <commit_hash>
    ```
 
-1. Push your changes to trigger a redeploy, which reinstalls Magento.
+1. Push your changes to trigger a redeploy, which reinstalls {{site.data.var.ee}}.
 
    ```bash
    git push --force <origin> <branch>
@@ -143,4 +143,4 @@ If executing the `setup:uninstall` command fails and cannot be completed, you mi
    -  `env.php`
    -  `env.php.bak`
 
-After resetting the database, [push your changes to trigger a redeploy]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#git-commands) and install Magento using the new database. Or [run the redeploy command]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#environment-commands).
+After resetting the database, [push your changes to trigger a redeploy]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#git-commands) and install {{site.data.var.ee}} using the new database. Or [run the redeploy command]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#environment-commands).

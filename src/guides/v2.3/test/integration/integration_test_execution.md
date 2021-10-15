@@ -171,7 +171,7 @@ For core tests, it makes sense that the integration tests do not reside within i
 
 Specific integration tests for shop implementation could also be placed within a different subdirectory of `dev/tests/integration/testsuite`, and then would be executed together with the core tests.
 
-However, third-party Magento extensions are contained within a single directory and might supply custom integration tests too.
+However, third-party extensions are contained within a single directory and might supply custom integration tests too.
 These tests usually reside in the `Test/Integration/` subdirectory within the [module](https://glossary.magento.com/module) folder.
 
 These third-party integration tests are not picked up by the default integration test configuration.
@@ -345,5 +345,5 @@ This folder contains the following sub-folders and files:
 [setup]: #setup
 [cli run]: #cli-run
 [phpstorm run]: {{ page.baseurl }}/test/unit/unit_test_execution_phpstorm.html
-[PHPUnit documentation]: https://phpunit.de/manual/4.1/en/appendixes.configuration.html
+[PHPUnit documentation]: https://phpunit.readthedocs.io/en/9.5/
 [RabbitMQ Management Plugin]: https://www.rabbitmq.com/management.html

@@ -23,7 +23,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 ## Deployment steps
 
-1. Log in to your production server as, or switch to, the [Magento file system owner][10].
+1. Log in to your production server as, or switch to, the [file system owner][10].
 
 1. Change directory to the Magento base directory:
 
@@ -97,13 +97,13 @@ Related topics
 
 *  [Enable or disable maintenance mode][4]
 *  [Command line upgrade][1]
-*  [Update the Magento application][2]
+*  [Update Magento][2]
 
 [0]: {{ page.baseurl }}/
 [1]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
 [2]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [4]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [5]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
-[6]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html
+[6]: {{ page.baseurl }}/install-gde/install/prepare-install.html
 [8]: {{ page.baseurl }}/install-gde/composer.html
 [10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner

@@ -27,11 +27,46 @@ The supported `type` language is [PHP](https://glossary.magento.com/php). Specif
 type: php:<version>
 ```
 
-The `build` property determines what happens by default when building the project. The `flavor` specifies a default set of build tasks to run. The supported flavor is `composer`.
+The `build` property determines what happens by default when building the project. The `flavor` specifies a default set of build tasks to run. The following example shows the default configuration for `type` and `build` from `magento-cloud/.magento.app.yaml`:
 
 ```yaml
+# The toolstack used to build the application.
+type: php:7.4
 build:
     flavor: composer
+```
+
+The default flavor is `composer`, which refers to the latest Composer 1.x release. During the build, this configuration runs the following command:
+
+```terminal
+composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
+```
+
+### Installing and using Composer 2
+
+To install and use Composer 2.x in your Starter and Pro projects, you need to make three changes to your `.magento.app.yaml` configuration:
+
+1. Remove `composer` as the `build: flavor:` and add `none`. This change prevents Cloud from using the default 1.x version of Composer to run build tasks.
+1. Add `composer/composer: '^2.0'` as a `php` dependency to install Composer 2.x.
+1. Add the `composer` build tasks to a `build` hook to run the build tasks using Composer 2.x.
+
+Use the following configuration fragments in your own `.magento.app.yaml` configuration:
+
+```yaml
+# 1. Change flavor to none.
+build:
+    flavor: none
+
+# 2. Add composer ^2.0 as a php dependency.
+dependencies:
+    php:
+        composer/composer: '^2.0'
+
+# 3. Add a build hook to run the build tasks using Composer 2.x.
+hooks:
+    build: |
+        set -e
+        composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 ```
 
 ## `access`
@@ -84,15 +119,15 @@ web:
 
 You can fine-tune your `locations` configuration using the following key values for each `locations` block:
 
-Attribute  | Description
----------- | -----------
-`allow` | Serve files that do not match "rules". Default value = `true`
-`expires` | Set the number of seconds to cache content in the browser. This key enables the `cache-control` and `expires` headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files. A negative 1 (`-1`) value results in no caching and is the default value. You can express time value with the following units:  `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days), `w` (weeks), `M` (months, 30d), or `y` (years, 365d)
-`index` | List the static files to serve your application, such as the `index.html` file. This key expects a collection. This only works if access to the file or files is "allowed" by the `allow` or `rules` key for this location.
-`rules` | Specify overrides for a location. Use a regular expression to match a request. If an incoming request matches the rule, then regular handling of the request is overridden by the keys used in the rule.
-`passthru` | Set the URL used in the event that a static file or PHP file cannot be found. Typically, this URL is the front controller for your applications, such as `/index.php` or `/app.php`.
-`root` | Set the path relative to the root of the application that is exposed on the web. The public directory (location "/") for a Cloud project is set to "pub" by default.
-`scripts` | Allow loading scripts in this location. Set the value to `true` to allow scripts.
+| Attribute  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `allow`    | Serve files that do not match "rules". Default value = `true`                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `expires`  | Set the number of seconds to cache content in the browser. This key enables the `cache-control` and `expires` headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files. A negative 1 (`-1`) value results in no caching and is the default value. You can express time value with the following units:  `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days), `w` (weeks), `M` (months, 30d), or `y` (years, 365d) |
+| `index`    | List the static files to serve your application, such as the `index.html` file. This key expects a collection. This only works if access to the file or files is "allowed" by the `allow` or `rules` key for this location.                                                                                                                                                                                                                                                                                                            |
+| `rules`    | Specify overrides for a location. Use a regular expression to match a request. If an incoming request matches the rule, then regular handling of the request is overridden by the keys used in the rule.                                                                                                                                                                                                                                                                                                                               |
+| `passthru` | Set the URL used in the event that a static file or PHP file cannot be found. Typically, this URL is the front controller for your applications, such as `/index.php` or `/app.php`.                                                                                                                                                                                                                                                                                                                                                   |
+| `root`     | Set the path relative to the root of the application that is exposed on the web. The public directory (location "/") for a Cloud project is set to "pub" by default.                                                                                                                                                                                                                                                                                                                                                                   |
+| `scripts`  | Allow loading scripts in this location. Set the value to `true` to allow scripts.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 Our default configuration allows the following:
 
@@ -176,18 +211,17 @@ The format for adding your mount to this list is as follows:
 You can make the mount web accessible by adding it to the [`web`](#web) block of locations.
 
 {:.bs-callout-warning}
-Once your Magento site has data, do not change the `subpath` portion of the mount name. This value is the unique identifier for the files area. If you change this name, you will lose all site data stored at the old location.
+Once your site has data, do not change the `subpath` portion of the mount name. This value is the unique identifier for the files area. If you change this name, you will lose all site data stored at the old location.
 
 ## `dependencies`
 
 Enables you to specify dependencies that your application might need during the build process.
 
-{{site.data.var.ee}} supports dependencies on the following
-languages:
+{{site.data.var.ee}} supports dependencies on the following languages:
 
 -  PHP
 -  Ruby
--  NodeJS
+-  Node.js
 
 Those dependencies are independent of the eventual dependencies of your application, and are available in the `PATH`, during the build process and in the runtime environment of your application.
 
@@ -270,7 +304,7 @@ You must compile Sass files using `grunt` before static content deployment, whic
 
 ## `crons`
 
-Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
+Describes processes that are triggered on a schedule. We recommend you run `cron` as the [file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
 
 `crons` support the following:
 
@@ -284,7 +318,7 @@ A cron job is well suited for the following tasks:
 -  Or it is long, but can be easily divided into many small queued tasks.
 -  A delay between when a task is registered and when it actually happens is acceptable.
 
-By default, every Cloud project has the following default crons configuration to run the default Magento cron jobs:
+By default, every Cloud project has the following default crons configuration to run the default cron jobs:
 
 ```yaml
 crons:
@@ -299,7 +333,7 @@ If your project requires custom cron jobs, you can add them to the default cron 
 
 ## `firewall` (Starter plans only)
 
-For Starter plans, the `firewall` property adds an _outbound_ firewall to Magento applications. This firewall has no affect on incoming requests. It defines which `tcp` outbound requests can _leave_ a Magento site. This is called egress filtering. The outbound firewall is filtering what can egress—exit or escape—your site. And when you limit what can escape, you add a powerful security tool to your server.
+For Starter plans, the `firewall` property adds an _outbound_ firewall to the application. This firewall has no affect on incoming requests. It defines which `tcp` outbound requests can _leave_ a {{site.data.var.ee}} site. This is called egress filtering. The outbound firewall is filtering what can egress—exit or escape—your site. And when you limit what can escape, you add a powerful security tool to your server.
 
 ### Default restriction policies
 

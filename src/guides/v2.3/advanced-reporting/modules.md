@@ -5,16 +5,16 @@ functional_areas:
     - Reports
 ---
 
-Advanced reporting functionality is implemented in the following Magento modules.
+Advanced reporting functionality is implemented in the following Commerce modules.
 
 [Analytics] implements the following:
 
-*  Enabling subscription to Magento Business Intelligence (MBI) and automatic re-subscription
-*  Changing the base URL without change of the MBI account
+*  Enabling subscription to Commerce Reporting and automatic re-subscription
+*  Changing the base URL without changing the Commerce Reporting account
 *  Declaring the configuration schemas for [report data collection]
-*  Collecting the Magento instance data as reports for the MBI
+*  Collecting the Commerce instance data as reports for Commerce Reporting
 *  Introducing API that provides the collected data
-*  Extending Magento configuration with the module parameters:
+*  Extending the Commerce configuration with the module parameters:
    *  Subscription status (enabled/disabled)
    *  Industry (a business area in which the instance website works)
    *  Time of data collection (time of the day when the module collects data)

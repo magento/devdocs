@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Magento Commerce Cloud architecture
+title: Cloud architecture for Commerce
 functional_areas:
   - Cloud
 redirect_from:
@@ -22,16 +22,16 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>Core features</td>
       <td>
         <ul>
-          <li>All Magento 2 core features</li>
+          <li><a href="{{ site.baseurl }}/release/commerce-features.html">All {{site.data.var.ee}} features</a></li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/products/business-intelligence">Business Intelligence</a></li>
+          <li><a href="https://magento.com/products/business-intelligence">Commerce Reporting</a></li>
         </ul>
       </td>
       <td>
         <ul>
-          <li>All Magento 2 core features</li>
+          <li><a href="{{ site.baseurl }}/release/commerce-features.html">All {{site.data.var.ee}} features</a></li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/products/business-intelligence">Business Intelligence</a></li>
+          <li><a href="https://magento.com/products/business-intelligence">Commerce Reporting</a></li>
           <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>

@@ -8,15 +8,18 @@ redirect_from:
   - /cloud/trouble/environments-logs.html
 ---
 
-Logs for {{site.data.var.ece}} projects are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook], cloud services, and the Magento application.
+Logs for {{site.data.var.ece}} projects are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook], cloud services, and the {{site.data.var.ee}} application.
 
 You can view the logs from the file system, the project web UI, and the `magento-cloud` CLI.
 
--  **File system**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
+-  **File system**—The `/var/log` system directory contains logs for all environments. The `var/log/` directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
 
 -  **Project web UI**—You can see build and post-deploy log information in the environment _messages_ list.
 
 -  **Magento Cloud CLI**—You can view logs using the `magento-cloud log` command.
+
+{:.bs-callout-tip}
+Automatic log rotation, compression, and removal are enabled in the Cloud environment. Each log file type has a rotating pattern and lifetime.
 
 ## Manage log data
 
@@ -86,7 +89,9 @@ The following logs have a common location for all Cloud projects:
 -  **Last deployment error log**: `var/log/cloud.error.log`
 -  **Debug log**: `var/log/debug.log`
 -  **Exception log**: `var/log/exception.log`
--  **Reports**: `var/reports/`
+-  **System log**: `var/log/system.log`
+-  **Support log**: `var/log/support_report.log`
+-  **Reports**: `var/report/`
 
 Though the `cloud.log` file contains feedback from each stage of the deployment process, logs from the deploy hook are unique to each environment. The environment-specific deploy log is in the following directories:
 
@@ -141,16 +146,31 @@ Log file            | Starter and Pro Integration | Pro Staging                 
 **PHP access log**  | `/var/log/php.access.log`   | `/var/log/platform/<project_id>_stg/php.access.log` | `/var/log/platform/<project_id>/php.access.log`
 **PHP FPM log**     | `/var/log/app.log`          | `/var/log/platform/<project_id>_stg/php5-fpm.log` | `/var/log/platform/<project_id>/php5-fpm.log`
 
+The application logs are compressed and archived once per day and kept for one year. The compressed logs are named using a unique ID that corresponds to the `Number of Days Ago + 1`.
+For example, on Pro production environments a PHP access log for 21 days in the past is stored and named as follows:
+
+```terminal
+/var/log/platform/<project_id>/php.access.log.22.gz
+```
+
+The archived log files are always stored in the directory where the original file was located before compression.
+
+{:.bs-callout-info}
+**Deploy** and **Post-deploy** log files are not rotated and archived. The entire deployment history is written within those log files.
+
 ## Service logs
 
 Because each service runs in a separate container, the service logs are not available in the Integration environment. {{ site.data.var.ece }} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Production and Staging environments:
 
 -  **Redis log**: `/var/log/platform/<project_id>_stg/redis-server-<project_id>_stg.log`
 -  **Elasticsearch log**: `/var/log/elasticsearch/elasticsearch.log`
+-  **Java garbage collection log**: `/var/log/elasticsearch/gc.log`
 -  **Mail log**: `/var/log/mail.log`
 -  **MySQL error log**: `/var/log/mysql/mysql-error.log`
 -  **MySQL slow log**: `/var/log/mysql/mysql-slow.log`
 -  **RabbitMQ log**: `/var/log/rabbitmq/rabbit@host1.log`
+
+Service logs are archived and saved for different periods of time, depending on the log type. For example, MySQL logs have the shortest lifetime—removed after 7 days.
 
 {:.bs-callout-tip}
 Log file locations in the scaled architecture depend on the node type. See [Log locations in the Scaled architecture][scaled] topic.

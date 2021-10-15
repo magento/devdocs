@@ -6,7 +6,7 @@ pages:
       versionless: true
 
       children:
-        - label: Magento Definition of Done
+        - label: Commerce Definition of Done
           url: /contributor-guide/contributing_dod.html
           versionless: true
 
@@ -16,6 +16,10 @@ pages:
 
         - label: Pull Request Tests
           url: /contributor-guide/pull-request-tests.html
+          versionless: true
+
+        - label: PHPStorm plugin code inspections
+          url: /contributor-guide/phpstorm-code-inspections.html
           versionless: true
 
     - label: Docs Contributions

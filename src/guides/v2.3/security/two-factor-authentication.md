@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
 ---
 
-Magento Two-Factor Authentication (2FA) improves security by requiring two-step authentication to access the Magento Admin UI from all devices. The extension supports multiple authenticators including Google Authenticator, Authy, Duo, and U2F keys. It applies to Magento Admin UI users only; it does not apply to storefront customer accounts.
+Magento Two-Factor Authentication (2FA) improves security by requiring two-step authentication to access the Admin UI from all devices. The extension supports multiple authenticators including Google Authenticator, Authy, Duo, and U2F keys. It applies to Admin UI users only; it does not apply to storefront customer accounts.
 
 Two-Factor Authentication gives you the ability to:
 
@@ -17,11 +17,11 @@ At this time, Two-Factor Authentication can be installed only from the command l
 
 ## Install 2FA
 
-The 2FA extension installs when you install or upgrade to Magento Open Source or Commerce 2.3.X. This extensions installs like a Core Bundled Extension (CBE).
+The 2FA extension installs when you install or upgrade to {{site.data.var.ce}} or {{site.data.var.ee}} 2.3.X. This extensions installs like a Core Bundled Extension (CBE).
 
 ## Configure and manage 2FA
 
-See the Magento Admin User Guide to [configure](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication.html) 2FA settings and [manage user authenticators](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-manage.html).
+See the _User Guide_ to [configure](https://docs.magento.com/user-guide/stores/security-two-factor-authentication.html) 2FA settings and [manage user authenticators](https://docs.magento.com/user-guide/stores/security-two-factor-authentication-manage.html).
 
 Administrators have options to:
 
@@ -32,7 +32,7 @@ Administrators have options to:
 
 ## Install authenticator
 
-After enabling and configuring 2FA for your Magento instance, Magento Admin users need to install and configure an authenticator. For complete instructions, see [Using Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-use.html).
+After enabling and configuring 2FA for your Magento instance, Admin users need to install and configure an authenticator. For complete instructions, see [Using Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-use.html).
 
 ### Supported authenticators
 
@@ -45,7 +45,15 @@ After enabling and configuring 2FA for your Magento instance, Magento Admin user
 
 ## Troubleshooting
 
-The extension supports command line options for disabling, revoking, and resetting authenticators. Use these commands when you cannot access the Magento Admin UI.
+The extension supports command line options for disabling, revoking, and resetting authenticators. Use these commands when you cannot access the Admin UI.
+
+### List all available 2FA providers
+
+If you need to know all the available 2FA providers, enter the following command.
+
+```bash
+bin/magento msp:security:tfa:providers
+```
 
 ### Disable authenticator
 
@@ -61,6 +69,16 @@ If you need to manually reset a single user configuration, enter the following c
 
 ```bash
 bin/magento msp:security:tfa:reset <username> <provider>
+```
+
+For example:
+
+```bash
+bin/magento msp:security:tfa:reset admin google
+```
+
+```bash
+bin/magento msp:security:tfa:reset admin u2fkey
 ```
 
 ### Advanced emergency steps

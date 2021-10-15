@@ -1,8 +1,5 @@
 ---
-subgroup: Prerequisites
 title: nginx
-menu_title: nginx
-menu_order: 2
 functional_areas:
   - Install
   - System
@@ -13,17 +10,18 @@ Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en
 
 Installation instructions vary based on which operating system you are using. See [PHP](php-settings.html) for information.
 
-## Ubuntu 16
+## Ubuntu
 
-The following section describes how to install Magento 2.x on Ubuntu 16 using nginx, PHP, and MySQL.
+The following section describes how to install Magento 2.x on Ubuntu using nginx, PHP, and MySQL.
 
 ### Install nginx
 
 ```bash
-apt-get -y install nginx
+sudo apt -y install nginx
 ```
+You can also [build nginx from source](https://www.armanism.com/blog/install-nginx-on-ubuntu)
 
-After completing the following sections and [installing Magento]({{page.baseurl }}/install-gde/prereq/nginx.html#install-magento2-ubuntu), we'll use a sample configuration file to [configure nginx]({{page.baseurl }}/install-gde/prereq/nginx.html#configure-nginx-ubuntu).
+After completing the following sections and [installing Magento]({{page.baseurl }}/install-gde/prereq/nginx.html#install-magento2-ubuntu), we will use a sample configuration file to [configure nginx]({{page.baseurl }}/install-gde/prereq/nginx.html#configure-nginx-ubuntu).
 
 ### Install and configure php-fpm
 
@@ -34,20 +32,20 @@ To install and configure `php-fpm`:
 1. Install `php-fpm` and `php-cli`:
 
    ```bash
-   apt-get -y install php7.3-fpm php7.3-cli
+   apt-get -y install php7.2-fpm php7.2-cli
    ```
 
    {:.bs-callout-info}
-   This command installs the latest available version of PHP 7.3.X. See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported PHP versions.
+   This command installs the latest available version of PHP 7.2.X. See [Magento 2.3.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html) for supported PHP versions.
 
 1. Open the `php.ini` files in an editor:
 
    ```bash
-   vim /etc/php/7.3/fpm/php.ini
+   vim /etc/php/7.2/fpm/php.ini
    ```
 
    ```bash
-   vim /etc/php/7.3/cli/php.ini
+   vim /etc/php/7.2/cli/php.ini
    ```
 
 1. Edit both files to match the following lines:
@@ -66,7 +64,7 @@ To install and configure `php-fpm`:
 1. Restart the `php-fpm` service:
 
    ```bash
-   systemctl restart php7.3-fpm
+   systemctl restart php7.2-fpm
    ```
 
 ### Install and configure MySQL
@@ -81,12 +79,9 @@ There are several ways to download the Magento software, including:
 
 *  [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-For this example, we will install using Composer and the command line.
+For this example, we'll install using Composer and the command line.
 
-{:.bs-callout-info}
-You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
-
-1. As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
+1. As the [file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
 
 1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
 
@@ -116,7 +111,7 @@ You cannot use the Web Setup Wizard when installing Magento on nginx. You must u
 
    When prompted, enter your [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html). Your _public key_ is your username; your _private key_ is your password.
 
-1. Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the Setup Wizard and command line can write files to the Magento file system.
+1. Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the command line can write files to the Magento file system.
 
    ```bash
    cd /var/www/html/<magento install directory>
@@ -358,12 +353,9 @@ There are several ways to download the Magento software, including:
 
 *  [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-For this example, we will install using Composer and the command line.
+For this example, we'll install using Composer and the command line.
 
-{:.bs-callout-info}
-You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
-
-1. As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
+1. As the [file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
 
 1. Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
 
@@ -393,7 +385,7 @@ You cannot use the Web Setup Wizard when installing Magento on nginx. You must u
 
    When prompted, enter your [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html). Your _public key_ is your username; your _private key_ is your password.
 
-1. Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the Setup Wizard and command line can write files to the Magento file system.
+1. Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the and command line can write files to the Magento file system.
 
    ```bash
    cd /var/www/html/<magento install directory>

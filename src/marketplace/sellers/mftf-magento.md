@@ -1,11 +1,16 @@
 ---
 group: marketplace-sellers
-title: MFTF Magento-supplied Tests
+title: MFTF Commerce-supplied Tests
 ---
+
+{:.bs-callout-info}
+At this stage, the MFTF Magento-supplied check is not required to pass technical review. The pass/fail status of this check is ignored. We are still observing the behavior of this set of tests and will start requiring these tests at a later time, with sufficient notice.
 
 ## Overview
 
 The Magento Functional Testing Framework (MFTF) is a browser-based acceptance testing framework used to validate the functionality of a Magento site. Running Magento-supplied MFTF tests aids Extension Quality Program (EQP) QA efforts in assessing critical functionality of a Magento instance with the extension installed.
+
+Magento supplied MFTF tests are not required to pass for technical review. The outcome of this testing is used to assist with QA efforts and provide feedback on functional quality.
 
 For information on how to setup, create and modify MFTF tests, see [Introduction to the Magento Functional Testing Framework][1]
 
@@ -21,6 +26,28 @@ MFTF Magento supplied tests will be run for all Marketplace extension submission
 
 -  Magento 2.3 and 2.4 release lines
 -  Open Source and Commerce editions
+
+The MFTF tests executed are:
+
+-  StorefrontGuestCheckoutTest
+-  AdminCreateCustomerWithCountryUSATest
+-  AdminCreateNewCustomerOnStorefrontTest
+-  StorefrontCustomerCheckoutTest
+-  AddConfigurableProductToOrderFromShoppingCartTest
+-  StorefrontReorderAsGuestTest
+-  StorefrontUpdateWishlistTest
+-  StorefrontClearAllCompareProductsTest
+-  MoveConfigurableProductsInComparedOnOrderPageTest
+-  CreateInvoiceWithZeroSubtotalCheckoutTest
+-  CreateInvoiceWithShipmentAndCheckInvoicedOrderTest
+-  AdminCreateCreditMemoPartialRefundTest
+-  AdminCreateOrderWithSimpleProductTest
+-  AdminCreateSimpleProductTest
+-  AdminConfigurableProductCreateTest
+-  AdminCreateCategoryTest
+-  AdminCreateAndEditBundleProductSettingsTest
+-  AdminCreateAndEditConfigurableProductSettingsTest
+-  AdminCreateAndEditVirtualGiftCardProductSettingsTest
 
 ## What is being checked
 

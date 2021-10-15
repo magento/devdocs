@@ -1,5 +1,5 @@
 ---
-youtube_id: 4q43-auwAbU
+youtube_id: 4i2HJryIcdU
 duration: "4:20"
 group: "Fundamentals of Magento 2 Development"
 title: "How to Add a JavaScript Module"

@@ -53,7 +53,6 @@ pages:
 
         - label: ColumnsResize component
           url: /ui_comp_guide/components/ui-columns-resize.html
-          exclude_versions: ["2.2"]
 
         - label: ColumnsControls component
           url: /ui_comp_guide/components/ui-columnscontrols.html
@@ -246,10 +245,10 @@ pages:
         - label: Template Literals
           url: /ui_comp_guide/concepts/ui_comp_template_literals.html
 
-        - label: Magento custom Knockout.js bindings
+        - label: Custom Knockout.js bindings
           url: /ui_comp_guide/concepts/knockout-bindings.html
 
-        - label: Magento binding syntax
+        - label: Binding syntax
           url: /ui_comp_guide/concepts/magento-bindings.html
 
         - label: About the uiClass library
@@ -284,6 +283,10 @@ pages:
 
         - label: Declare a custom UI component
           url: /ui_comp_guide/howto/new_component_declaration.html
+
+        - label: Show or Hide Password Checkbox
+          url: /ui_comp_guide/howto/show_or_hide_password_checkbox.html
+          exclude_versions: ["2.3"]
 
     - label: Troubleshoot
       children:

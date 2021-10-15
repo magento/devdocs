@@ -61,10 +61,10 @@ Replace the example database, username, and password with something that matches
 ### Configure the framework for test environment
 
 The Magento 2 integration test framework comes with a configuration file template
-`mage2ce/dev/tests/integration/etc/install-config-mysql.php.dist`.
+`dev/tests/integration/etc/install-config-mysql.php.dist`.
 
 Copy this file to
-`mage2ce/dev/tests/integration/etc/install-config-mysql.php`
+`dev/tests/integration/etc/install-config-mysql.php`
 (without the `.dist` suffix) and add your test database access credentials.
 
 The contents will look similar to the following. Each array key will be passed as an option argument when the test
@@ -98,6 +98,33 @@ Leave all the settings that do not start with `db-` and `amqp-` at their default
 
 You can include additional setup options—available to the `setup:install` command—in the test configuration file. A
 complete list of options is available [here]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
+
+If your project requires custom entries in the `core_config_data` table, such as the introduction of new 3rd party services
+that affect your application on a basic level or configuration for logic that would prevent access if not configured
+properly, Magento provides a file template for this purpose.
+
+Copy `dev/tests/integration/etc/config-global.php.dist` to `dev/tests/integration/etc/config-global.php` (without the
+`.dist` suffix) and add your path-value pairs there. Do not remove existing entries from the file as they are required
+for the Integration Test Framework to run tests properly.
+
+Example:
+
+```php
+return [
+    'customer/password/limit_password_reset_requests_method' => 0,
+    'admin/security/admin_account_sharing' => 1,
+    'admin/security/limit_password_reset_requests_method' => 0,
+    'some/custom/path' => 'some-custom-value'
+];
+```
+
+Note that the file above is only for configuration files required by all integration tests. If you need to introduce
+new configuration values for particular tests to perform their function, use the
+[@magentoConfigFixture]({{ page.baseurl }}/test/integration/annotations/magento-config-fixture.html) annotation instead.
+
+{:.bs-callout-info}
+You can change the locations and names of both files used by the Integration Test Framework that were described
+above using the PHPUnit configuration file.
 
 ## Adjust the PHPUnit configuration file
 
@@ -171,7 +198,7 @@ For core tests, it makes sense that the integration tests do not reside within i
 
 Specific integration tests for shop implementation could also be placed within a different subdirectory of `dev/tests/integration/testsuite`, and then would be executed together with the core tests.
 
-However, third-party Magento extensions are contained within a single directory and might supply custom integration tests too.
+However, third-party extensions are contained within a single directory and might supply custom integration tests too.
 These tests usually reside in the `Test/Integration/` subdirectory within the [module](https://glossary.magento.com/module) folder.
 
 These third-party integration tests are not picked up by the default integration test configuration.

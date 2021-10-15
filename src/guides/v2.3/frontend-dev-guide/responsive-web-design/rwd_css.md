@@ -37,6 +37,8 @@ The Blank and Luma themes use Less variables to implement the following [breakpo
 -  `@screen__l`: 1024px
 -  `@screen__xl`: 1440px
 
+The default breakpoint variables are located in the Magento UI library: `lib/web/css/source/lib/variables/_responsive.less`.
+
 You can change these breakpoints or add new ones in your custom theme. For instructions see the [Add a new breakpoint][rwd-breakpoints] topic.
 
 ## Media queries in Magento default themes {#lib_rwd}
@@ -85,14 +87,20 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
     // your code
 }
 
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+    @media only screen and (max-width: 375px) {
+        // styles for custom breakpoint below <= 375px mobile screen
+    }
+}
+
 //
 //  Tablet
 //  _____________________________________________
 
 // This will add styles for tablet devices. When using native media-queries, we recommend wrapping your media-queries with media-width Magento mixins or media-target
 & when (@media-target = 'desktop'), (@media-target = 'all') {
-    @media only screen and (min-width: @screen__m) and (max-width: @screen__xl - 1) {
-        // your code
+    @media only screen and (min-width: @screen__m) and (max-width: (@screen__xl - 1)) {
+        // styles for breakpoint >= 768px and < 1440px
     }
 }
 

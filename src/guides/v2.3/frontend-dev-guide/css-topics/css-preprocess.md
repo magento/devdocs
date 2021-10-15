@@ -25,7 +25,7 @@ The topic describes how stylesheets are preprocessed and compiled to [CSS](https
             <p>Root source files</p>
         </td>
         <td>
-            The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html">included in layout</a> are compiled. For example, in one of the <a href="{{ site.mage2bloburl }}/2.2/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included in the <code>head</code>:
+            The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html">included in layout</a> are compiled. For example, in one of the <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included in the <code>head</code>:
 <pre>
 &lt;head&gt;
     &lt;css src="css/styles-m.css"/&gt;
@@ -57,7 +57,7 @@ In the Magento application, the following modes of compiling `.less` files to CS
 
 To set the compilation mode, do the following:
 
-1. In the Magento Admin, navigate to **Stores** > **Settings** > **Configuration** > ADVANCED > **Developer**.
+1. In the Admin, navigate to **Stores** > **Settings** > **Configuration** > ADVANCED > **Developer**.
 1. In the **Store View** drop-down field, select **Default Config**.
 1. Under **Frontend development workflow**, in the **Workflow type** field, select the compilation mode.
 1. To save the settings, click **Save Config**.
@@ -94,6 +94,18 @@ Once you save your changes, run the following command from your `<Magento_root>`
 
 ```bash
 bin/magento setup:static-content:deploy
+```
+
+To generate frontend static view files in all languages:
+
+```bash
+bin/magento setup:static-content:deploy --area frontend
+```
+
+To generates backend static view files:
+
+```bash
+bin/magento setup:static-content:deploy --area adminhtml
 ```
 
 The tool pre-processes (including compilation) and publishes the static view files.

@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Magento application initialization and bootstrap
+title: Application initialization and bootstrap
 functional_areas:
   - Configuration
   - System
@@ -79,10 +79,10 @@ We have the following entry point applications (that is, applications defined by
 1. Error handling (in the following priority order):
 
    1. If you're using [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode):
-     *  If the Magento application is not installed, redirect to Setup Wizard.
+     *  If the Magento application is not installed, display an error.
      *  If the Magento application is installed, display an error and HTTP status code 500 (Internal Server Error).
    1. If the Magento application is in maintenance mode, display a user-friendly "Service Unavailable" landing page with HTTP status code 503 (Service Temporary Unavailable).
-   1. If the Magento application is *not* installed, redirect to Setup Wizard.
+   1. If the Magento application is *not* installed, display an error.
    1. If the session is invalid, redirect to the home page.
    1. If there is any other application initialization error, display a user-friendly "Page Not Found" page with HTTP status code 404 (Not Found).
    1. On any other error, display a user-friendly "Service Unavailable" page with HTTP response 503 and generate an error report and display its ID on the page.

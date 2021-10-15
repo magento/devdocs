@@ -7,7 +7,7 @@ menu_order: 2
 menu_node:
 ---
 
-Icons are used throughout the [Magento Admin](https://glossary.magento.com/magento-admin) interface, often as controls to initiate a function (such as a "Filter") or to direct a user to a section (such as "Account").
+Icons are used throughout the [Admin](https://glossary.magento.com/magento-admin) interface, often as controls to initiate a function (such as a "Filter") or to direct a user to a section (such as "Account").
 
 Icons are meant to provide a visual representation of functionality or content and should therefore bear some conceptual resemblance to them. Icons should be able to communicate their "use" to the user without the assistance of a text label, though labels should be used in the UI whenever possible to minimize ambiguity.
 
@@ -27,7 +27,7 @@ However, an icon or a design element in an icon can sometimes serve different fu
 
 ## Icon Library
 
-In the Magento Admin, icons have a simple, flat, single-color, and two-dimensional style. This style prevents loss of detail at smaller sizes and makes the shapes easier to recognize.
+In the Admin, icons have a simple, flat, single-color, and two-dimensional style. This style prevents loss of detail at smaller sizes and makes the shapes easier to recognize.
 
 ![](img/Magento-icon-contact-sheet.png)
 
@@ -51,7 +51,7 @@ In the Magento Admin, icons have a simple, flat, single-color, and two-dimension
 
 *  Keep a limited perspective — all icons should appear from the same perspective.
 
-For any icon to be used in Magento Admin, ask the Magento Product Team to review the icon and add it to the "icon font".
+For any icon to be used in Admin, ask the Magento Product Team to review the icon and add it to the "icon font".
 
 ### Create with the Icon Grid
 

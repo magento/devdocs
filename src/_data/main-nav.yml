@@ -47,11 +47,11 @@
 
     - label: Functional Testing
       children:
-        - label: Magento application testing
+        - label: Application testing
           url: /cloud/docker/docker-mftf.html
           versionless: true
 
-        - label: Magento Cloud code testing
+        - label: Cloud code testing
           url: /cloud/docker/docker-test-magecloud-pkg-code.html
           versionless: true
 
@@ -61,7 +61,7 @@
     - label: Installation Guide
       url: /install-gde/install-flow-diagram.html
 
-    - label: Magento Extensions Guide
+    - label: Extensions Guide
       url: /extensions/
       versionless: true
 
@@ -108,6 +108,10 @@
           url: /contributor-guide/contributing.html
           versionless: true
 
+        - label: Contribution Resources
+          url: /community/resources.html
+          versionless: true
+
     - label: Frontend
       children:
 
@@ -136,7 +140,7 @@
     - label: API
       children:
 
-        - label: Get Started with Magento Web APIs
+        - label: Get Started with our Web APIs
           url: /get-started/bk-get-started-api.html
 
         - label: REST API Reference
@@ -152,7 +156,7 @@
           url: /marketplace/eqp/v1/api.html
           versionless: true
 
-        - label: Business Intelligence API
+        - label: Commerce Reporting API
           url: /mbi/docs/getting-started.html
           versionless: true
 
@@ -160,7 +164,7 @@
 - label: Testing
   children:
 
-    - label: Magento Testing Guide
+    - label: Application Testing Guide
       url: /test/testing.html
 
     - label: Functional Acceptance Testing (MFTF)
@@ -191,12 +195,16 @@
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
 
-    - label: Magento Marketplace
-      url: /marketplace/sellers/getting-started.html
-      versionless: true
-
     - label: Inventory Management
       url: /inventory/index.html
+
+    - label: Live Search
+      url: /live-search/overview.html
+      versionless: true
+
+    - label: Commerce Marketplace
+      url: /marketplace/sellers/getting-started.html
+      versionless: true
 
     - label: Order Management
       url: http://omsdocs.magento.com/en/
@@ -216,6 +224,10 @@
       url: /security/security-and-compliance.html
       versionless: true
 
+    - label: Shared Services
+      url: /shared-services/storefront-events-sdk.html
+      versionless: true
+
     - label: Staging
       url: /extension-dev-guide/staging.html
 
@@ -225,13 +237,16 @@
     - label: Rest Tutorials
       url: /rest/tutorials/index.html
 
+    - label: Custom Attributes
+      url: /howdoi/custom-attributes/introduction.html
+
     - label: Customize Product Creation Form
       url: /howdoi/customize_product.html
 
     - label: Customize Checkout
       url: /howdoi/checkout/checkout_overview.html
 
-    - label: Magento Support
+    - label: Support
       url: /community/resources/support.html
       versionless: true
 

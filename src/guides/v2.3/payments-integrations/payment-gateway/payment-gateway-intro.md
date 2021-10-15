@@ -1,10 +1,6 @@
 ---
 group: payments-integrations
-subgroup: A_gateway
-title: Magento payment provider gateway
-menu_title: Magento payment provider gateway
-menu_node: parent
-menu_order: 1
+title: Commerce payment provider gateway
 ---
 
 ### What is Magento payment provider gateway

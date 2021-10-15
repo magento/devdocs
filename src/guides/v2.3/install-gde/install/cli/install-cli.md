@@ -1,17 +1,19 @@
 ---
-subgroup: 05_Command-line installation
 title: Install the Magento software using the command line
-menu_title: Install the Magento software using the command line
-menu_node: parent
-menu_order: 1
 functional_areas:
   - Install
   - System
   - Setup
+redirect_from:
+  - /guides/v2.3/install-gde/install/web/install-web-configure-catalog-search.html
+  - /guides/v2.3/install-gde/install/web/install-web.html
+  - /guides/v2.3/install-gde/install/web/install-web_1-readiness.html
+  - /guides/v2.3/install-gde/install/web/install-web_2-db.html
+  - /guides/v2.3/install-gde/install/web/install-web_3-web-conf.html
+  - /guides/v2.3/install-gde/install/web/install-web_4-customize-store.html
+  - /guides/v2.3/install-gde/install/web/install-web_5-create-admin.html
+  - /guides/v2.3/install-gde/install/web/install-web_6-install.html
 ---
-
-{:.bs-callout-tip}
-Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
 {:.bs-callout-info}
 If you chose to enable SELinux, see [SELinux and iptables]({{ page.baseurl }}/install-gde/prereq/security.html).

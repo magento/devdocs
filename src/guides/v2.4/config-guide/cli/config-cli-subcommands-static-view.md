@@ -34,17 +34,17 @@ You must write static view files to the Magento file system manually using the c
 
 To deploy static view files:
 
-1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
+1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [file system owner](https://glossary.magento.com/magento-file-system-owner).
 1. Delete the contents of `<magento_root>/pub/static`, except for the `.htaccess` file. Do not delete this file.
 1. Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 
    {:.bs-callout-info}
-   If you enable static view file merging in the Magento Admin, the `pub/static` directory system must be writable.
+   If you enable static view file merging in the Admin, the `pub/static` directory system must be writable.
 
 Command options:
 
 ```bash
-bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
+bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [--no-parent] [-f|--force]
 ```
 
 The following table explains this command's parameters and values.
@@ -253,6 +253,16 @@ The following table explains this command's parameters and values.
         </td>
     </tr>
     <tr>
+        <td>--no-parent</td>
+        <td>
+            <p>Do not generate files for the parent themes of the current theme. It is strongly recommended to use this flag if you do not explicitly use the parent theme of the current theme you are trying to deploy. This will significantly increase the speed of the process.
+This flag is available in Magento 2.4.2</p>
+        </td>
+        <td>
+            <p>No</p>
+        </td>
+    </tr>
+    <tr>
         <td>--force (-f)</td>
         <td>
             <p>Deploy files in any mode. (by default, the static content deployment tool can be run only in production mode. Use this option to run it in default or developer mode).</p>
@@ -347,7 +357,7 @@ ERROR: You need to install the Magento application before running this utility.
 Use the following steps:
 
 1. Install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
-1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the Magento file system owner.
+1. Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the file system owner.
 1. Delete the contents of `<magento_root>/pub/static` directory, except for the `.htaccess` file. Do not delete this file.
 1. [Run the static view files deployment tool](#config-cli-subcommands-staticview).
 

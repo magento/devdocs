@@ -34,13 +34,8 @@ The `name` parameter defines the name of your component. It is required for all 
 Avoid using "Ui" for your custom module name, because the `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
 ## Add the component's `composer.json` file {#add-composer-json}
+
 `composer.json` provides a component name and also specifies component dependencies.
-
-In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies:
-
-*  If a component has `composer.json` *and* the component was installed using [Composer](https://glossary.magento.com/composer) (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.
-*  If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.
-*  We strongly recommend you include `composer.json` in your component's root directory whether or not you intend to distribute it to other Magento merchants.
 
 Refer to [Module version dependencies]({{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html) to determine versioning requirements.
 
@@ -51,7 +46,7 @@ Refer to [Module version dependencies]({{ page.baseurl }}/extension-dev-guide/ve
     "name": "your-name/module-Acme",
     "description": "Test component for Magento 2",
     "require": {
-        "php": "~7.2.0||~7.3.0",
+        "php": "~7.3.0||~7.4.0",
         "magento/module-store": "102.1",
         "magento/module-catalog": "102.1",
         "magento/module-catalog-inventory": "102.1",

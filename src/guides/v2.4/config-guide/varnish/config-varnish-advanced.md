@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the `default.vcl` file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from [Magento Admin](https://glossary.magento.com/magento-admin).
+Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the `default.vcl` file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from [Admin](https://glossary.magento.com/magento-admin).
 
 See the [Varnish Reference Manual](https://varnish-cache.org/docs/6.3/reference/index.html) for details about using the Varnish Configuration Language.
 

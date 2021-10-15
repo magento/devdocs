@@ -9,7 +9,7 @@ functional_areas:
 
 We recommend using the following software for production instances of Magento:
 
-*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html#php)
+*  [PHP]({{page.baseurl}}/install-gde/system-requirements.html)
 *  Nginx and [PHP-FPM](https://php-fpm.org/)
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
 *  [Varnish cache]({{page.baseurl}}/config-guide/varnish/config-varnish.html)
@@ -46,7 +46,7 @@ Magento fully supports PHP 7.2.11. There are several factors to account for when
 We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:
 
 <!--{% assign packages = site.data.codebase.v2_3.open-source.composer_lock.packages %}-->
-{% include install/php-extensions-template.md %}
+{% include install/php-extensions-template-2.3.md %}
 
 Adding more extensions increases library load times.
 

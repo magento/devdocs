@@ -1,0 +1,6 @@
+---
+title: GiftCardImportExport
+release: 2.4.3
+content: |-
+  Magento_GiftCardImportExport module introduces import and export form GiftCard Product.
+  This module extends existing functionality of Magento_CatalogImportExport module by adding new product type.

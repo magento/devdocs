@@ -7,18 +7,7 @@ functional_areas:
   - Setup
 ---
 
-As of Magento 2.4, all installations must be configured to use [Elasticsearch][] as the [catalog](https://glossary.magento.com/catalog) search solution. Elasticsearch provides the following benefits:
-
-*  Quick and advanced searches on products in the catalog
-*  Support for multiple languages
-*  Support for stop words and synonyms
-*  Shoppers are not disrupted while Elasticsearch reindexes
-*  Accurate, performant, and scalable
-*  Works well out of the box
-*  Easy to horizontally scale
-*  Supports real-time data and analysis
-*  Can be used as a document-oriented data store
-*  Applications in framework beyond search, including reporting, personalization, performance, and storage
+As of Magento 2.4, all installations must be configured to use [Elasticsearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
 
 ## Supported versions {#es-spt-versions}
 

@@ -67,7 +67,7 @@ Repository interfaces must provide these functions:
 Method | Description
 --- | ---
 `save(data entity interface)` | If entity ID is not specified, creates a record. If entity ID is specified, updates the record for the specified ID.
-`get(id)` | Performs a database lookup by ID and returns a data entity interface, such as `CustomerInterface`or `AddressInterface`.
+`get(id)` | Performs a database lookup by ID and returns a data entity interface, such as `CustomerInterface` or `AddressInterface`.
 `getList(search criteria)` | Performs a search for all data entities that match specified search criteria and returns a search result interface that gives access to the set of matches.
 `delete(data entity interface)` | Deletes a specified entity. The entity contains the key (ID).
 `deleteById(id)` | Deletes a specified entity by key (ID).

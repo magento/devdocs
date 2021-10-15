@@ -10,7 +10,7 @@ During technical review, your code is examined to detect the presence of viruses
 The technical review begins as soon as you upload an extension package at [Developer Portal](https://developer.magento.com/) and consists of two mandatory steps to generate the submission id and trigger further extension testing:
 
 1. [Malware Scan]({{ site.baseurl }}/marketplace/sellers/malware-scan.html) &mdash; Ensures that uploaded packages do not contain viruses or malware software.
-1. Extension Package Verification &mdash; Checks that the uploaded file is a zip archive which is a [Composer](https://getcomposer.org/) package with Magento extension.
+1. Extension Package Verification &mdash; Checks that the uploaded file is a zip archive which is a [Composer](https://getcomposer.org/) package with extension.
 
 ### Extension Package Verification
 
@@ -38,7 +38,7 @@ Package submissions must contain a Magento module, theme, language pack, or meta
    -  `magento/magento2-ee-base`
    -  `magento/product-enterprise-edition`
 
-1. The package does not use `*` as a version restriction for Magento packages (packages with `magento` vendor). You must specify version restriction according to the [recommendations]({{ site.baseurl }}/guides/v2.4/extension-dev-guide/versioning/dependencies.html#determine-module-dependency) in the _Magento PHP Developer Guide_.
+1. The package does not use `*` as a version restriction for Magento packages (packages with `magento` vendor). You must specify version restriction according to the [recommendations]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/versioning/dependencies.html#determine-module-dependency) in the _Magento PHP Developer Guide_.
 
 1. [Require inline aliases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in the `composer.json` file.
 
@@ -51,8 +51,8 @@ Additional requirements for package declarations are applied based on the packag
 
 _See also:_
 
--  [PHP Developer Guide]({{ site.baseurl }}/guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html)
--  [How to Package Magento Extensions]({{ site.baseurl }}/guides/v2.4/extension-dev-guide/package/package_module.html)
+-  [PHP Developer Guide]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/bk-extension-dev-guide.html)
+-  [How to Package Magento Extensions]({{ site.baseurl }}{{ site.gdeurl }}/extension-dev-guide/package/package_module.html)
 
 ## Extension Validation and QA
 
@@ -64,11 +64,11 @@ The Marketplace coding standard review uses a custom set of coding sniffs. If th
 
 _More details:_ [Code Sniffer]({{ site.baseurl }}/marketplace/sellers/code-sniffer.html)
 
-_See also:_ [Coding Standards]({{ site.baseurl }}/guides/v2.4/coding-standards/bk-coding-standards.html)
+_See also:_ [Coding Standards]({{ site.baseurl }}{{ site.gdeurl }}/coding-standards/bk-coding-standards.html)
 
 ### Copy Paste Detector: Check for plagiarism
 
-All code and marketing content that is submitted to Magento Marketplace is checked for plagiarism to ensure that it has not been copied from existing Marketplace extensions or from the Magento codebase.
+All code and marketing content that is submitted to Commerce Marketplace is checked for plagiarism to ensure that it has not been copied from existing Marketplace extensions or from the Magento codebase.
 
 If the extension contains source code from the Open Source Edition, the extension must be licensed under [Open Source License v. 3.0][3] and properly credit Adobe, Inc.
 
@@ -78,7 +78,7 @@ _See also:_ [OSL 3.0: A Better License for Open Source Software][4]
 
 ### Installation and Varnish Tests: Verify that product installs and caching works correctly
 
-Extensions for Magento are installed with Varnish Cache enabled for each supported version of PHP and switched from development to [production mode]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html). If you have shared packages and dependencies required for your extension, the Installation test also tests Magento installation and usage with those packages included.
+Extensions for Magento are installed with Varnish Cache enabled for each supported version of PHP and switched from development to [production mode]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-mode.html). If you have shared packages and dependencies required for your extension, the Installation test also tests Magento installation and usage with those packages included.
 
 In addition, cacheable pages are accessed to ensure that they are served directly from Varnish Cache. You will be notified if your extension fails the test.
 
@@ -86,8 +86,8 @@ _More details:_ [Installation and Varnish Tests]({{ site.baseurl }}/marketplace/
 
 _See also:_
 
--  [Configure and Use Varnish]({{ site.baseurl }}/guides/v2.4/config-guide/varnish/config-varnish.html)
--  [Magento System Requirements]({{ site.baseurl }}/guides/v2.4/install-gde/system-requirements.html)
+-  [Configure and Use Varnish]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/varnish/config-varnish.html)
+-  [Magento System Requirements]({{ site.baseurl }}{{ site.gdeurl }}/install-gde/system-requirements.html)
 
 ### MFTF Magento-supplied Tests
 

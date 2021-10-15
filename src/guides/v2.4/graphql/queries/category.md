@@ -6,7 +6,10 @@ title: category query
 {:.bs-callout-warning}
 The `category` query has been deprecated. Use the [categories]({{page.baseurl}}/graphql/queries/categories.html) query instead.
 
-The `category` query allows you to search for a single category definition or the entire category tree. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options. You cannot return the entire category tree if it contains more than 10 sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured.
+The `category` query allows you to search for a single category definition or the entire category tree.
+
+{:.bs-callout-info}
+You cannot return the entire category tree if the total number of nodes in the request exceeds the value specified in the `queryDepth` attribute defined in the GraphQL `di.xml` file. By default, this value is 20. [Query security]({{page.baseurl}}/graphql/security-configuration.html) further describes query depths.
 
 ## Syntax
 

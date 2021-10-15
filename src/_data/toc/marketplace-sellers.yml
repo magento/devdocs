@@ -115,7 +115,7 @@ pages:
       url: /marketplace/sellers/installation-and-varnish-tests.html
       versionless: true
 
-    - label: MFTF Magento-supplied Tests
+    - label: MFTF Commerce-supplied Tests
       url: /marketplace/sellers/mftf-magento.html
       versionless: true
 
@@ -129,6 +129,10 @@ pages:
 
     - label: Semantic Version Check
       url: /marketplace/sellers/semantic-version-check.html
+      versionless: true
+
+    - label: Extension Footprint Analysis
+      url: /marketplace/sellers/extension-footprint.html
       versionless: true
 
 - label: Submit for Marketing Review

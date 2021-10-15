@@ -140,7 +140,7 @@ The following call returns the special price information for three SKU values.
 
 ### Delete a special price
 
-If any item to be deleted has an invalid `price`, `store_id`, `sku` or date, Magento marks the item as failed and excludes it from the delete list. Valid items are deleted as requested.
+If any item to be deleted has an invalid `price`, `store_id`, `sku` or `date`, Magento marks the item as failed and excludes it from the delete list. Valid items are deleted as requested.
 
 **Sample Usage:**
 

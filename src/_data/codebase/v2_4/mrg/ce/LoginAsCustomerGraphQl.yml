@@ -1,9 +1,0 @@
----
-title: Magento_LoginAsCustomerGraphQl
-source_repo: magento2ce
-release: 2.4.2
-github_path: app/code/Magento/LoginAsCustomerGraphQl/README.md
-last_modified_at: '2020-11-18 10:50:52 +0530'
-content: "**LoginAsCustomerGraphQl** provides flexible login as a customer so a merchant
-  or merchant admin can log into an end customer's account to assist them with their
-  account."
