@@ -6,7 +6,7 @@ title: Adobe Commerce 2.4.4 Release Notes
 {{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
 {:.bs-callout-info}
-Quarterly releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains  backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
+Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains  backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 ## {{ site.data.var.ee }} Beta program
 
@@ -24,11 +24,11 @@ The {{ site.data.var.ee }} 2.4.4 [Beta program](https://github.com/magento/magen
 *  Varnish 6.5.1
 
 {:.bs-callout-info}
-All vendor-bundled extensions, with the exception of  Braintree, have been removed from {{ site.data.var.ee }} 2.4.4 starting with this release (2.4.4-beta1).
+All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ee }} 2.4.4 starting with this release (2.4.4-beta1).
 
 ## Other release information
 
-Although code for these features is bundled with releases {{ site.data.var.ee }} and {{ site.data.var.ce }} releases, several of these projects (for example, B2B, Page Builder, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
+Although code for these features is bundled with releases {{ site.data.var.ee }} and {{ site.data.var.ce }} releases, several of these projects (for example, Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
 
 ## Highlights
 
@@ -64,6 +64,17 @@ Look for the following highlights in this release.
    *  `FormData.js`
 
 These libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality.
+
+### Performance enhancements
+
+*  Cart operations for carts containing over 750 configurable products has been improved with these changes:
+
+   *  `Zend_Currency` has been replaced with `Intl.NumberFormatter`, which has improved the performance of price formatting.
+   *  Reduced the loading of unnecessary information when receiving product images for a shopping cart. <!--- MCP-78-->
+
+*  Optimization of sales rules processing during checkout by deferring total calculation. Merchants can enable this deferment by setting the `checkout/deferred_total_calculating` variable in the `env.php` file. Alternatively, you can run `bin/magento setup:config:set --deferred-total-calculating 1|0`.  <!--- MCP-573-->
+
+*  Improvements to order validation process for orders affected by a cart price rule during asynchronous order placement. <!--- MCP-304-->
 
 ### GraphQL
 
@@ -126,15 +137,15 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-41794-->
 
-*  The `products` query now filters bundled products correctly when child products are disabled on the store-view level. Previously, the query returned child products that were disabled at the store-view level.
+*  The `products` query now filters bundle products correctly when child products are disabled on the store-view level. Previously, the query returned child products that were disabled at the store-view level.
 
 <!--- MC-42811-->
 
-*  `cron` now clears the product category cache as expected during `indexer_update_all_views”` execution. Previously, {{ site.data.var.ee }} displayed an incorrect product count on the category page after the mass update of many products in the category.
+*  `cron` now clears the product category cache as expected during `indexer_update_all_views` execution. Previously, {{ site.data.var.ee }} displayed an incorrect product count on the category page after the mass update of many products in the category.
 
 <!--- MC-42811-->
 
-*  Magento now updates the category product cache as expected when a bundled product reappears in stock.
+*  Magento now updates the category product cache as expected when a bundle product reappears in stock.
 
 <!--- MC-42811-->
 
@@ -230,11 +241,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42340-->
 
-*  You can now use GraphQL to add a configurable product to the cart on a non-default store view. Previously, you could not add a configurable product to a cart when website ID and store ID differed.
+*  You can now use the `addConfigurableProductsToCart` mutation to add a configurable product to the cart on a non-default store view. Previously, you could not add a configurable product to a cart when website ID and store ID differed.
 
 <!--- MC-43051-->
 
-*  GraphQL `product` queries no longer retrieve data about the disabled child products of configurable products.
+*  GraphQL `product` queries no longer return data about the disabled child products of configurable products.
 
 ### Customer
 
@@ -320,7 +331,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42567-->
 
-*  The GraphQL ` categoryList` query now returns the correct number of products when catalog permissions are used and products are assigned to a shared catalog.
+*  The `categoryList` query now returns the correct number of products when catalog permissions are used and products are assigned to a shared catalog.
 
 <!--- MC-42781-->
 
@@ -336,11 +347,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-41794-->
 
-*  The `products` query now filters bundled products correctly when child products are disabled on the store-view level. Previously, the query returned child products that were disabled at the store-view level.
+*  The `products` query now filters bundle products correctly when child products are disabled on the store-view level. Previously, the query returned child products that were disabled at the store-view level.
 
 <!--- MC-42528-->
 
-*  The GraphQL `categoryList` query now respects category permissions and returns only permitted categories. Previously, it returned all assigned and unassigned categories.
+*  The `categoryList` query now respects category permissions and returns only permitted categories. Previously, it returned all assigned and unassigned categories.
 
 <!--- PWA-1311-->
 
@@ -359,6 +370,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-42666-->
 
 <!--- MC-42652-->
+
 ### Image
 
 <!--- MC-42080-->
@@ -397,7 +409,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42746-->
 
-*  Invoices for orders that are paid by store credit and that have fixed product taxes (FPT) applied now include the correct grand total..
+*  Invoices for orders that are paid by store credit and that have fixed product taxes (FPT) applied now include the correct grand total.
 
 <!--- MC-42332-->
 
@@ -477,7 +489,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42987-->
 
-*  The Admin Create Return Product grid now displays tax, including prices only for products that are configured to display tax with prices. Previously, {{ site.data.var.ee }} did not check the configuration display settings on the `tax/calculation/price_includes_tax’`flag.
+*  The Admin Create Return Product grid now displays tax, including prices only for products that are configured to display tax with prices. Previously, {{ site.data.var.ee }} did not check the configuration display settings on the `tax/calculation/price_includes_tax` flag.
 
 ### Sales
 
@@ -563,7 +575,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-41955-->
 
-*  Added test to verify custom date attribute format for storefront and Admin.
+*  Added a test to verify custom date attribute format for storefront and Admin.
 
 <!--- AC-1085-->
 
@@ -626,8 +638,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-41880-->
 
 *  {{ site.data.var.ee }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ee }} ignored this option.
-
-## Known issues
 
 ### System requirements
 
