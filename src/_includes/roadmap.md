@@ -138,7 +138,7 @@ tbody tr.category-feature:last-child td {
 /*** Cells ***/
 
 .category-feature td {
-  padding: 7px 0px 0px 10px;
+  padding: 10px;
 }
 
 /* .category-feature td:nth-child(2) {
