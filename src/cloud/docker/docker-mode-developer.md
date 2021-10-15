@@ -36,7 +36,7 @@ To launch the Docker environment in developer mode:
    ```
 
    {:.bs-callout-info}
-   The `--mode` option in this step determines the deployment mode in a later step.
+   The `--mode` option in this step determines the mode in a later `deploy` step.
 
    If required, set the option for [synchronizing data in Docker][sync]. For example:
 
