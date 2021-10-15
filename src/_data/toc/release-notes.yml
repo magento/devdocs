@@ -7,6 +7,13 @@ pages:
       include_versions: ["2.4"]
       children:
 
+
+        - label: Magento Open Source 2.4.4 Release Notes
+          url: /release-notes/open-source-2-4-4.html
+
+        - label: Adobe Commerce 2.4.4 Release Notes
+          url: /release-notes/commerce-2-4-4.html
+
         - label: Adobe Commerce 2.4.3-p1 Release Notes
           url: /release-notes/2-4-3-p1.html
 
