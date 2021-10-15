@@ -5,6 +5,89 @@ title: Magento 2.4 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
+## 2.4.4
+
+### Inventory check on cart load
+
+A new "Enable Inventory Check On Cart Load" system configuration option has been added to Admin > **Stores** > **Configuration** > **General** > **Catalog** > **Inventory** > **Stock Options**. The new option determines if an inventory check is performed when loading a product in the cart. It is enabled by default.
+
+Disabling the inventory check can improve performance for checkout steps, especially when there are many items in the cart. But if this inventory check is skipped, some out-of-stock scenarios could throw other types of errors, including:
+
+*  `The requested qty is not available`
+*  `Unable to place order: Enter a valid payment method and try again.`
+*  `Unable to place order: There are no source items with the in stock status.`
+*  `The shipping method is missing. Selefct the shipping method and try again.`
+
+The following table contains metrics of checkout with a large amount of products (750) and additional product by guest:
+
+Step | Absolute numbers | Percentage change | Change in milliseconds | Status
+-----|------------------|-------------------|--------------|-------
+Add Bulk Of Simple Products to Cart | 6260 | -0.7% | -41ms | ok
+Load Cart Section - Total: 750 | 788 | -49.2% | -762ms | improvement
+Configurable Product 1 Add To Cart - Total: 751 | 1566 | -32.3% | -748ms | improvement
+Load Cart Section - Total: 751 | 789 | -49.0% | -757ms | improvement
+Configurable Product 2 Add To Cart - Total: 752 | 1574 | -32.1% | -745ms | improvement
+Load Cart Section - Total: 752 | 793 | -48.6% | -751ms | improvement
+Open Cart | 1587 | -33.1% | -785ms | improvement
+Checkout start | 942 | -44.6% | -757ms | improvement
+Checkout Email Available | 36 | +0.0% | +0ms | ok
+Checkout Estimate Shipping Methods | 1287 | -58.1% | -1782ms | improvement
+Checkout Billing/Shipping Information | 2098 | -61.5% | -3354ms | improvement
+Checkout Payment Info/Place Order | 4618 | -25.1% | -1549ms | improvement
+Checkout success | 270 | -0.4% | -1ms | ok
+
+### TinyMCE
+
+There are three major BICs related to TinyMCE in 2.4.4, including:
+
+*  Renamed TinyMCE4 to tinymce
+*  Refactored TinyMCE MFTF tests
+*  Refactored TinyMCE4 MFTF tests
+
+#### Renamed `tinymce4` to `tinymce`
+
+Renaming `tinymce4` to `tinymce` removes the strict dependency on a version of TinyMCE from the code.
+The following changes could cause the WYSIWYG interface to break and not display on pages that use it in the Admin and break the Page Builder extension:
+
+*  Renamed the array key in the TinyMCE [configuration provider]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Model/Wysiwyg/DefaultConfigProvider.php)
+*  Renamed the alias in the [`requirejs-config.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/requirejs-config.js) file
+*  Renamed a [Page Builder JavaScript file](https://github.com/magento/magento2-page-builder/blob/develop/app/code/Magento/PageBuilder/view/adminhtml/web/ts/js/wysiwyg/tinymce.ts) that was marked as API from `tinymce4.ts` to `tinymce.ts`
+
+You are impacted by these changes if:
+
+*  You use a custom configuration for TinyMCE that uses the `tinymce4` alias in `requirejs`
+*  If you use the Page Builder JavaScript file that was renamed in any other place than the `app/code/Magento/PageBuilder/etc/adminhtml/di.xml` file
+
+If these changes impact you, take the following action:
+
+*  Change the name of the array key in the TinyMCE configuration provider from `tinymce4` to `tinymce`
+*  Change any `requirejs` file that uses the `tinymce4` alias to `tinymce`
+*  Update anywhere that references the Page Builder JavaScript file that was renamed
+
+#### Refactored TinyMCE MFTF tests
+
+To simplifiy current and future upgrades to the next version of TinyMCE and decrease maintenance efforts, we refactored WYSIWYG (TinyMCE) MFTF tests to use the same sections\selectors. We also removed duplicated entities. These changes might break some MFTF tests.
+
+You are impacted by these changes if:
+
+*  You have tests that use elements (selectors) from duplicated sections
+*  You have tests that extend core tests with TinyMCE
+
+If these changes impact you, update all tests that use duplicated elements.
+
+#### Refactored TinyMCE4 MFTF tests
+
+To simplify current and future upgrades to the next version of TinyMCE, we refactored TinyMCE4 MFTF in the following ways:
+
+*  Renamed the action group `CliEnableTinyMCE4ActionGroup` to `CliEnableTinyMCEActionGroup`
+*  Replaced all references to "TinyMCE 4" in the test code base with `tinymce`
+*  Create variable for adapter version
+*  Change `stepKey` on each test
+
+These changes can be break tests if you use or extend the TinyMCE4 MFTF tests, but they affect only functional tests (MFTF).
+
+If these changes impact you, you must update all tests that rely on the refactored action group and reference "TinyMCE4".
+
 ## 2.4.3-p1
 
 ## Media Gallery folders
