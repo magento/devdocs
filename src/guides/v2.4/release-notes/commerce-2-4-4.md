@@ -632,4 +632,3 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/system-requirements.html).
-
