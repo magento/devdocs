@@ -9,6 +9,24 @@ These release notes can include:
 -  {:.new} New features
 -  {:.fix} Fixes and improvements
 
+## Magento B2B - Adobe Commerce 2.4.4
+
+-  {:.fix} <!--- MC-42153--> The POST `/rest/V1/order/<order_id>/invoice` request now supports the creation of partial invoices when the **Payment on Account** payment method is enabled. Previously, Magento threw this error: `An invoice for partial quantities cannot be issued for this order. To continue, change the specified quantity to the full quantity`. [GitHub-32428](https://github.com/magento/magento2/issues/32428)
+
+-  {:.fix} <!--- MC-41975--> PayPal PayFlow Pro now works as expected with B2B negotiable quote when the customer’s cart contains other products. Magento now successfully processes the order and sends email to the customer as expected. Previously, Magento threw a fatal error and sent a confirmation email to the customer that contained zero values.
+
+-  {:.fix} <!--- MC-41819--> Pagination is now correctly displayed on catalog search result page after excluding some products in shared catalog.
+
+-  {:.fix} <!--- MC-42886--> Customer custom attributes are now saved as expected when creating or saving a company user in the Admin.
+
+-  {:.fix} <!--- MC-42927--> The **Submit** button on the Create New Company form is now disabled after one click to prevent multiple form submissions. Previously, you could submit this form multiple times by clicking on this button repeatedly, which generated an error.
+
+-  {:.fix} <!--- MC-42787--> Magento no longer displays the reorder link on the storefront when a shopper logs into a store for which re-orders have been disabled. Magento now uses the Admin configuration settings (Admin **Reorder** > **Stores** > **Configuration** > **Sales** > **Allow Reorder** set to **no**).
+
+-  {:.fix} <!--- MC-43115--> Quick Order search by SKU is now case-insensitive when shared catalog is enabled.
+
+-  {:.fix} <!--- MC-42203--> You can now update a file for a customer attribute when creating a company. Previously, when you tried to create a company with an attachment of type `File`, Magento did not create the company and logged this error in the exception log: `Something went wrong while saving file`.
+
 ## Magento B2B - Version 1.3.2
 
 -  {:.fix} <!--- MC-39862--> Magento now successfully sends update emails about expired negotiable quotes. Previously, when a negotiable quote expired, Magento did not send update emails.

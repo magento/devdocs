@@ -67,10 +67,7 @@ These libraries have been removed because all browsers that {{ site.data.var.ee 
 
 ### Performance enhancements
 
-*  Cart operations for carts containing over 750 configurable products has been improved with these changes:
-
-   *  `Zend_Currency` has been replaced with `Intl.NumberFormatter`, which has improved the performance of price formatting.
-   *  Reduced the loading of unnecessary information when receiving product images for a shopping cart. <!--- MCP-78-->
+*  Cart operations for carts containing over 750 configurable products has been improved by increasing the memory limit set by `max_input_vars` in the `php.ini` file to support input variables volume.
 
 *  Optimization of sales rules processing during checkout by deferring total calculation. Merchants can enable this deferment by setting the `checkout/deferred_total_calculating` variable in the `env.php` file. Alternatively, you can run `bin/magento setup:config:set --deferred-total-calculating 1|0`.  <!--- MCP-573-->
 
@@ -93,11 +90,7 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thes
 
 ### B2B
 
-{{ site.data.var.ee }} 2.4.4-beta 1 introduces B2B v1.3.2. This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
-
-### Adobe Stock Integration
-
-This release includes Adobe Stock Integration v2.1.1.
+This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html)
 
 ### Vendor-Bundled Extensions
 
