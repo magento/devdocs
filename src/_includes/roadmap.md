@@ -28,24 +28,24 @@
 <table class="status-table">
   <tbody>
     <tr class="category-name">
-      <th>Planned</th>
       <th>In progress</th>
+      <th>Planned</th>
     </tr>
     <tr class="category-feature">
-      <td>Accessibility improvments</td>
       <td>PHP 8.1 support</td>
+      <td>Accessibility improvments</td>
     </tr>
     <tr class="category-feature">
+      <td></td>
       <td>PWA Studio - B2B support</td>
-      <td></td>
     </tr>
     <tr class="category-feature">
+      <td></td>
       <td>PWA Studio - Performance improvements</td>
-      <td></td>
     </tr>
     <tr class="category-feature">
-      <td>UI library upgrades</td>
       <td></td>
+      <td>UI library upgrades</td>
     </tr>
   </tbody>
 </table>
