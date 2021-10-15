@@ -87,8 +87,7 @@ Run unit tests or `jest` as follows:
    npm run unit-test
    ```
 ### Eslint code analysis
-[Eslint](https://eslint.org/docs/user-guide/getting-started) is a static code analysis tool for identifying 
-problematic patterns found in JavaScript code, with the goal of making code more consistent and avoiding bugs.
+[Eslint](https://eslint.org/docs/user-guide/getting-started) is a static code analysis tool for identifying problematic patterns found in JavaScript code, with the goal of making code more consistent and avoiding bugs.
 
 Run `eslint` code analysis as follows:
 
