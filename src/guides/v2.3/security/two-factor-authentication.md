@@ -47,6 +47,14 @@ After enabling and configuring 2FA for your Magento instance, Admin users need t
 
 The extension supports command line options for disabling, revoking, and resetting authenticators. Use these commands when you cannot access the Admin UI.
 
+### List all available 2FA providers
+
+If you need to know all the available 2FA providers, enter the following command.
+
+```bash
+bin/magento msp:security:tfa:providers
+```
+
 ### Disable authenticator
 
 If you have issues with 2FA, you can disable 2FA globally for the Magento instance.
