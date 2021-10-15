@@ -38,9 +38,7 @@ The popover always displays the product `name` and `price`, and the selection of
 ```
 ### Container visibility
 
-The parent component of the `.livesearch.popover-container` is `.search-autocomplete`.  The `.active` class indicates the visibility of the container. The .active class is conditionally added when the popover is open and makes it easier to style.
-
-Examples:
+The parent component of the `.livesearch.popover-container` is `.search-autocomplete`.  The `.active` class indicates the visibility of the container. The `.active` class is conditionally added when the popover is open and makes it easier to style.
 
 ```css
 .search-autocomplete.active   /* visible */
