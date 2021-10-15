@@ -1,17 +1,11 @@
 categories:
-  - name: Accessibility
-    features:
-      - name: Improvements
-        status: planned
-  - name: Platform
-    features:
-      - name: PHP 8.1
-        status: in-progress
-      - name: UI library upgrades
-        status: planned
-  - name: PWA Studio
-    features:
-      - name: B2B support
-        status: planned
-      - name: Performance enhancements
-        status: planned
+  - name: Accessibility improvments
+    status: planned
+  - name: PHP 8.1 support
+    status: in progress
+  - name: UI library upgrades
+    status: planned
+  - name: PWA Studio - B2B support
+    status: planned
+  - name: PWA Studio - Performance enhancements
+    status: planned

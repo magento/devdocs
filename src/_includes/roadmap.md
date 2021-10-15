@@ -3,27 +3,51 @@
 {% assign categories = include.data.categories | where: "name", include.categories %}
 {% endif %}
 
-**Planned**{:.status.planned} - Lorem ipsum dolor sit amet
+<!-- **Planned**{:.status.planned} - Lorem ipsum dolor sit amet
 
 **In progress**{:.status.in-progress} – Lorem ipsum dolor sit amet
 
-**Complete**{:.status.complete} – Lorem ipsum dolor sit amet
+**Complete**{:.status.complete} – Lorem ipsum dolor sit amet -->
 
-<table class="status-table">
+<!-- <table class="status-table">
   {% for categories in categories %}
   <tbody>
     <tr class="category-name">
-      <th>{{ categories.name }}</th>
-      <th>Status</th>
+      <th>Planned</th>
+      <th>In progress</th>
     </tr>
-    {% for categoryFeature in categories.features %}
     <tr class="category-feature">
-      <td>{{ categoryFeature.name }}</td>
-      <td><span class="status {{ categoryFeature.status }}"></span></td>
+      <td>{% if categories.name.status == "planned" }} %}{{ categories.name }}</td>
+      <td>{% elsif categories.name.status == "in progress" }} %}{{ categories.name }}</td>
+      {% endif %}
     </tr>
-    {% endfor %}
   </tbody>
   {% endfor %}
+</table> -->
+
+<table class="status-table">
+  <tbody>
+    <tr class="category-name">
+      <th>Planned</th>
+      <th>In progress</th>
+    </tr>
+    <tr class="category-feature">
+      <td>Accessibility improvments</td>
+      <td>PHP 8.1 support</td>
+    </tr>
+    <tr class="category-feature">
+      <td>PWA Studio - B2B support</td>
+      <td></td>
+    </tr>
+    <tr class="category-feature">
+      <td>PWA Studio - Performance improvements</td>
+      <td></td>
+    </tr>
+    <tr class="category-feature">
+      <td>UI library upgrades</td>
+      <td></td>
+    </tr>
+  </tbody>
 </table>
 
 <style>
@@ -58,14 +82,14 @@ tbody tr.category-feature:last-child td {
   background-color: #f1f1f1;
 }
 
-.category-name th:nth-child(1) {
+/* .category-name th:nth-child(1) {
    width: 100%;
 }
 
 .category-name th:nth-child(2) {
   width: 90px;
   text-align: center;
-}
+} */
 
 /*** Cells ***/
 
@@ -73,9 +97,9 @@ tbody tr.category-feature:last-child td {
   padding: 7px 0px 0px 10px;
 }
 
-.category-feature td:nth-child(2) {
+/* .category-feature td:nth-child(2) {
   text-align: center;
-}
+} */
 
 /*** Icons ***/
 
