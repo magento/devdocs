@@ -1,28 +1,28 @@
-{% assign categories = include.data.categories %}
+<!-- {% assign categories = include.data.categories %}
 {% if include.categories %}
 {% assign categories = include.data.categories | where: "name", include.categories %}
 {% endif %}
 
-<!-- **Planned**{:.status.planned} - Lorem ipsum dolor sit amet
-
-**In progress**{:.status.in-progress} – Lorem ipsum dolor sit amet
-
-**Complete**{:.status.complete} – Lorem ipsum dolor sit amet -->
-
-<!-- <table class="status-table">
-  {% for categories in categories %}
+<table class="status-table">
   <tbody>
     <tr class="category-name">
-      <th>Planned</th>
       <th>In progress</th>
+      <th>Planned</th>
     </tr>
+    {% for categories in categories %}
+    {% if categories.name == "In progress" %}
     <tr class="category-feature">
-      <td>{% if categories.name.status == "planned" }} %}{{ categories.name }}</td>
-      <td>{% elsif categories.name.status == "in progress" }} %}{{ categories.name }}</td>
-      {% endif %}
+      <td>{{ categories.features }}</td>
+      <td></td>
     </tr>
+    {% elsif categories.name == "Planned" %}
+    <tr class="category-feature">
+      <td></td>
+      <td>{{ categories.features }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
   </tbody>
-  {% endfor %}
 </table> -->
 
 <table class="status-table">
@@ -32,20 +32,64 @@
       <th>Planned</th>
     </tr>
     <tr class="category-feature">
+      <td>GraphQL - Asynchronous orders</td>
+      <td>Accessibility improvements for storefront/admin</td>
+    </tr>
+    <tr class="category-feature">
+      <td>GraphQL - Admin configuration</td>
+      <td>Framework updates (e.g. KnockoutJS, RequireJS, etc.)</td>
+    </tr>
+    <tr class="category-feature">
+      <td>GraphQL - Caching updates</td>
+      <td>GraphQL - Personalization updates</td>
+    </tr>
+    <tr class="category-feature">
+      <td>jQuery 3.6.x support</td>
+      <td>GraphQL - Page Builder improvements</td>
+    </tr>
+    <tr class="category-feature">
+      <td>OpenSearch 1.x support</td>
+      <td>GraphQL - Inventory improvements</td>
+    </tr>
+    <tr class="category-feature">
+      <td>PayPal and Braintree updates</td>
+      <td>Walmart Marketplace (extension)</td>
+    </tr>
+    <tr class="category-feature">
       <td>PHP 8.1 support</td>
-      <td>Accessibility improvments</td>
+      <td>Page Builder - Mobile layout optimization</td>
+    </tr>
+    <tr class="category-feature">
+      <td>PWA - Global theming/styling</td>
+      <td>Page Builder - Column grid layouts (viewports)</td>
+    </tr>
+    <tr class="category-feature">
+      <td>PWA - Custom product attributes</td>
+      <td>Payment services (extension)</td>
+    </tr>
+    <tr class="category-feature">
+      <td>PWA - Performance optimizations</td>
+      <td>PWA - Server-side rendering (SSR)</td>
+    </tr>
+    <tr class="category-feature">
+      <td>PWA - Shopping and cart improvements</td>
+      <td>PWA - Extensibility improvements (payment/ship)</td>
+    </tr>
+    <tr class="category-feature">
+      <td>Security and quality improvements</td>
+      <td>PWA - Staging and preview</td>
+    </tr>
+    <tr class="category-feature">
+      <td>Vendor Bundled Extensions (VBEs) – Updates</td>
+      <td>PWA - Bundle product type</td>
     </tr>
     <tr class="category-feature">
       <td></td>
-      <td>PWA Studio - B2B support</td>
+      <td>PWA - Live Search (Venia)</td>
     </tr>
     <tr class="category-feature">
       <td></td>
-      <td>PWA Studio - Performance improvements</td>
-    </tr>
-    <tr class="category-feature">
-      <td></td>
-      <td>UI library upgrades</td>
+      <td>Security and quality improvements</td>
     </tr>
   </tbody>
 </table>

@@ -15,7 +15,7 @@ The following table describes the status of Magento software availability and wh
 
 ## {{ site.data.var.ce }} roadmap
 
-The following table contains the status of items on the {{ site.data.var.ce }} roadmap:
+The following table contains the status of items on the {{ site.data.var.ce }} roadmap (items are subject to change):
 
 {% include roadmap.md data=site.data.roadmap %}
 

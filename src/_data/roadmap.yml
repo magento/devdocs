@@ -1,11 +1,33 @@
 categories:
-  - name: Accessibility improvments
-    status: planned
-  - name: PHP 8.1 support
-    status: in progress
-  - name: UI library upgrades
-    status: planned
-  - name: PWA Studio - B2B support
-    status: planned
-  - name: PWA Studio - Performance enhancements
-    status: planned
+  - name: In progress
+    features:
+      - name: GraphQL - Asynchronous orders
+      - name: GraphQL - Admin configuration
+      - name: GraphQL - Caching updates
+      - name: jQuery 3.6.x support
+      - name: OpenSearch 1.x support
+      - name: PayPal and Braintree updates
+      - name: PHP 8.1 support
+      - name: PWA - Global theming/styling
+      - name: PWA - Custom product attributes
+      - name: PWA - Performance optimizations
+      - name: PWA - Shopping and cart improvements
+      - name: Security and quality improvements
+      - name: Vendor Bundled Extensions (VBEs) – Updates
+  - name: Planned
+    features:
+      - name: Accessibility improvements for storefront/admin
+      - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
+      - name: GraphQL - Personalization updates
+      - name: GraphQL - Page Builder improvements
+      - name: GraphQL - Inventory improvements
+      - name: Walmart Marketplace (extension)
+      - name: Page Builder - Mobile layout optimization
+      - name: Page Builder - Column grid layouts (viewports)
+      - name: Payment services (extension)
+      - name: PWA - Server-side rendering (SSR)
+      - name: PWA - Extensibility improvements (payment/ship)
+      - name: PWA - Staging and preview
+      - name: PWA - Bundle product type
+      - name: PWA - Live Search (Venia)
+      - name: Security and quality improvements
