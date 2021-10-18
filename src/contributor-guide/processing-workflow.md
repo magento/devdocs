@@ -60,8 +60,8 @@ Steps for validating the issue format and all information provided checks out: d
 1. If the ticket has enough information, the maintainer analyzes the problem described in the ticket: described steps to reproduce are valid, expected behavior is valid, configuration described in preconditions is valid.
 1. Is it validated?
 
-    *  If all provided information is clear and sufficient, it is validated. The maintainer applies the `Issue: Clear description` label to indicate that ticket is ready for manual testing.
-    *  If it is not validated, the maintainer adds the label `Progress: needs update` and requests more information from the reporter.
+   *  If all provided information is clear and sufficient, it is validated. The maintainer applies the `Issue: Clear description` label to indicate that ticket is ready for manual testing.
+   *  If it is not validated, the maintainer adds the label `Progress: needs update` and requests more information from the reporter.
 
 ### Gate 3: Reproduce the issue
 
@@ -70,8 +70,8 @@ Be advised, we only accept pull requests for `2.4-develop`.
 
 1. Maintainer checks if the issue exists on the `2.4-develop` branch with a clean installation, configured by described preconditions, following the exact reproduction steps.
 
-    *  If the described behavior **was**  reproduced, the maintainer should apply the `Reproduced on 2.4` label to the ticket, indicating that issue was reproduced and specific version.
-    *  If the issue **was not**  reproducible with `2.4-develop`, the maintainer should close the issue and **stop verification process here!**
+   *  If the described behavior **was**  reproduced, the maintainer should apply the `Reproduced on 2.4` label to the ticket, indicating that issue was reproduced and specific version.
+   *  If the issue **was not**  reproducible with `2.4-develop`, the maintainer should close the issue and **stop verification process here!**
 
 1. If steps required to reproduce were different from the initially described reproduction steps, update the ticket description with the actual information.
 1. Based on the verification flow, add at least one or more `Component: xxx` labels to the issue. See [Magento Components Assignment](https://github.com/magento/magento2/wiki/Magento-Components-Assignment) for a list. Use your best judgment to determine the components affected.
