@@ -55,6 +55,7 @@ class ProductAttributeTypeTest extends GraphQlAbstract
       attribute_code
       attribute_type
       entity_type
+      input_type
     }
   }
  }
@@ -75,7 +76,8 @@ QUERY;
             \Magento\Catalog\Api\Data\ProductInterface::class
         ];
         $attributeTypes = ['String', 'Int', 'Float','Boolean', 'Float'];
-        $this->assertAttributeType($attributeTypes, $expectedAttributeCodes, $entityType, $response);
+        $inputTypes = ['textarea', 'select', 'price', 'boolean', 'price'];
+        $this->assertAttributeType($attributeTypes, $expectedAttributeCodes, $entityType, $inputTypes, $response);
     }
 ```
 

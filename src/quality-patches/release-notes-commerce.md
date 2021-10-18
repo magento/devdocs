@@ -18,6 +18,20 @@ For information about quality patches created by the community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.4
+
+-  **MDVA-40399** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where partial invoices for the same order can not be created simultaneously via REST API.
+-  **MDVA-40101** _(for Adobe Commerce and Magento Open Source `>=2.3.2 <2.4.0`)_-Fixes the issue where items are not removed from the mini cart  after a successful order placement using PayPal Express Checkout.
+-  **MDVA-40401** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <=2.3.7-p2 || >=2.4.1 <2.4.4`)_-Fixes the issue where coupon usage value changes even if placing an order fails.
+-  **MDVA-40537** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <=2.4.0-p1`)_-Fixes the issue where users get an error when creating a store view, if several CMS pages with the same URL key exist.
+-  **MDVA-37725** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <=2.4.3-p1`)_-Fixes the issue where asynchronous order emails sent from non-default websites contain logo URLs from the default website.
+-  **MDVA-39482** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <=2.3.7-p2 || >=2.4.1 <2.4.4`)_-Fixes the issue where a product goes out of stock if imported with "0" quantity when backorders enabled.
+-  **MDVA-40435** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.4`)_-Fixes the issue with an incorrect discount on bundle products with dynamic prices when applied via GraphQL.
+-  **MC-42528** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <=2.4.3-p1`)_-Fixes the issue where the `categoryList` GraphQL query returns both assigned and unassigned categories.
+-  **MDVA-29400** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <=2.3.7-p1 || >=2.4.0 <=2.4.0-p1`)_-Fixes the issue with duplicated orders placed with PayPal Express Checkout.
+-  **MDVA-26005** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <=2.3.5-p2`)_-Fixes the issue where it is impossible to select a category in a category tree for Cart Price rule conditions.
+-  **MDVA-25631** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <=2.3.5-p2`)_-Improves performance for editing and saving customer segments that contain large number of customers.
+
 ## v1.1.3
 
 -  **MDVA-40262** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where GraphQL search queries are not shown in popular search terms in the admin.
