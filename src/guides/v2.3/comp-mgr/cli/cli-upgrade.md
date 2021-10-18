@@ -76,7 +76,7 @@ See the examples at the end of this section for help specifying different releas
    composer remove magento/product-community-edition --no-update
    ```
 
-1. Run the appropriate `composer` command to upgrade your instance. The command has the following syntax:
+1. Choose one of the following `composer` commands based on the PHP version, and run the command to upgrade your instance. For PHP 7.3 and later, use the `require-commerce` syntax.
 
    For PHP 7.2 or lower:
 
