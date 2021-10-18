@@ -77,7 +77,7 @@ realpath_cache_ttl=7200
 To get maximum speed out of Magento 2 on PHP 7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:
 
 ```text
-opcache.memory_consumption=512MB
+opcache.memory_consumption=512
 opcache.max_accelerated_files=60000
 opcache.consistency_checks=0
 opcache.validate_timestamps=0

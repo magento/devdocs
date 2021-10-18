@@ -289,7 +289,7 @@ To migrate a database:
    The following example references the gzip file created by the database dump operation:
 
    ```bash
-   zcat /tmp/database.sql.gz | mysql -h database.internal -u user main
+   zcat /tmp/database.sql.gz | mysql -h database.internal -u user -ppassword main
    ```
 
 ### Troubleshooting the database migration
