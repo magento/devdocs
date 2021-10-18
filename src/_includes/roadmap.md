@@ -1,7 +1,27 @@
 <!-- {% assign categories = include.data.categories %}
 {% if include.categories %}
 {% assign categories = include.data.categories | where: "name", include.categories %}
-{% endif %}
+{% endif %} -->
+
+<!-- <table class="status-table">
+  <tbody>
+    <tr class="category-name">
+      <th>In progress</th>
+      <th>Planned</th>
+    </tr>
+    {% for categories in categories %}
+    {% for categoryFeature in categories.features %}
+    <tr class="category-feature">
+      {% if categories.name == "In progress" %}
+      <td>{{ categoryFeature.name }}</td>
+      {% elsif categories.name == "Planned" %}
+      <td>{{ categoryFeature.name }}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+    {% endfor %}
+  </tbody>
+</table> -->
 
 <table class="status-table">
   <tbody>
@@ -10,20 +30,18 @@
       <th>Planned</th>
     </tr>
     {% for categories in categories %}
-    {% if categories.name == "In progress" %}
+    {% for categoryFeature in categories.features %}
     <tr class="category-feature">
-      <td>{{ categories.features }}</td>
-      <td></td>
+      {% case categories.name == "In progress" %}
+      <td>{{ categoryFeature.name }}</td>
+      {% elsif categories.name == "Planned" %}
+      <td>{{ categoryFeature.name }}</td>
+      {% endif %}
     </tr>
-    {% elsif categories.name == "Planned" %}
-    <tr class="category-feature">
-      <td></td>
-      <td>{{ categories.features }}</td>
-    </tr>
-    {% endif %}
+    {% endfor %}
     {% endfor %}
   </tbody>
-</table> -->
+</table>
 
 <table class="status-table">
   <tbody>
@@ -52,20 +70,20 @@
       <td>GraphQL - Inventory improvements</td>
     </tr>
     <tr class="category-feature">
-      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> PayPal and Braintree updates</td>
-      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> Walmart Marketplace (extension)</td>
+      <td>PayPal and Braintree updates <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
+      <td>Walmart Marketplace (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
     </tr>
     <tr class="category-feature">
       <td>PHP 8.1 support</td>
-      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> Page Builder - Mobile layout optimization</td>
+      <td>Page Builder - Mobile layout optimization</td>
     </tr>
     <tr class="category-feature">
       <td>PWA - Global theming/styling</td>
-      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> Page Builder - Column grid layouts (viewports)</td>
+      <td>Page Builder - Column grid layouts (viewports)</td>
     </tr>
     <tr class="category-feature">
       <td>PWA - Custom product attributes</td>
-      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> Payment services (extension)</td>
+      <td>Payment services (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
     </tr>
     <tr class="category-feature">
       <td>PWA - Performance optimizations</td>
@@ -80,7 +98,7 @@
       <td>PWA - Staging and preview</td>
     </tr>
     <tr class="category-feature">
-      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> Vendor Bundled Extensions (VBEs) – Updates</td>
+      <td>Vendor Bundled Extensions (VBEs) – Updates <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
       <td>PWA - Bundle product type</td>
     </tr>
     <tr class="category-feature">
