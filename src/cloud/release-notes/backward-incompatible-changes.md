@@ -83,7 +83,7 @@ In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and
 
    -  **Running post-deploy hooks**–The `cloud-deploy` command no longer runs post deploy hooks. You must use the new `cloud-post-deploy` command to run post deploy hooks after you deploy. Update your scripts to add the command to run post deploy hooks.
 
-      ```php
+      ```shell
       bin/magento-docker ece-deploy
       bin/magento-docker ece-post-deploy
       ```
