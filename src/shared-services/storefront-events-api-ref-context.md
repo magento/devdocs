@@ -332,7 +332,7 @@ Syntax:
 
 ```javascript
 mse.context.setStorefrontInstance(storefrontCtx);
-``
+```
 
 ### mse.context.setContext
 
