@@ -72,7 +72,7 @@ Be advised, we only accept pull requests for `2.4-develop`.
 
     *  If the described behavior **was**  reproduced, the maintainer should apply the `Reproduced on 2.4` label to the ticket, indicating that issue was reproduced and specific version.
     *  If the issue **was not**  reproducible with `2.4-develop`, the maintainer should close the issue and **stop verification process here!**
-    *  
+
 1. If steps required to reproduce were different from the initially described reproduction steps, update the ticket description with the actual information.
 1. Based on the verification flow, add at least one or more `Component: xxx` labels to the issue. See [Magento Components Assignment](https://github.com/magento/magento2/wiki/Magento-Components-Assignment) for a list. Use your best judgment to determine the components affected.
 
@@ -81,9 +81,9 @@ Be advised, we only accept pull requests for `2.4-develop`.
 Steps for final review of issue for contributors/developers to work the issue.
 
 1. Please make sure that all required conditions are met:
-   * [ ] Issue format is considered valid by automatic system.
-   * [ ] Issue is reproducible at least with one of the supported versions and labeled appropriately.
-   * [ ] At least one `Component` label(s) applied to the ticket.
+   *  [ ] Issue format is considered valid by automatic system.
+   *  [ ] Issue is reproducible at least with one of the supported versions and labeled appropriately.
+   *  [ ] At least one `Component` label(s) applied to the ticket.
 1. Add the label `Issue: Confirmed` to the ticket.
 1. Wait for the response from the Automated Contributor Assistant, which normally takes 30-60 seconds.
 1. If all required information was provided Automated Contributor Assistant will apply label `Issue: Ready for work` and comment with reference ticket numbers. Otherwise, label `Issue: Confirmed` will be removed and information on what's missing in the report will be provided to the maintainer.
