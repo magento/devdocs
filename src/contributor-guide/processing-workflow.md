@@ -6,7 +6,7 @@ title: Github Issue Processing Workflow
 The Github issue workflow ensures that issues are clear, well written, and thoroughly vetted. Following these procedures allows valid issues to get the attention they deserve.
 
 Magento issues that are reported on the public [GitHub](https://github.com/magento/magento2/issues) must pass through a series of gates, or stages of quality assessment, to ensure that their quality meets our standards. There are three gates, and an issue must pass through all three of these assessments before we will transfer it to either Magento core developers or community developers.
-The purpose of these gates is to identify core technical issues common to all reported tickets, and to show the progress on each reported issue. 
+The purpose of these gates is to identify core technical issues common to all reported tickets, and to show the progress on each reported issue.
 
 ## Issue Gates
 
@@ -38,27 +38,27 @@ The reported issue must contain **all**  the following keywords in the descripti
 Gate 2 verifies a submitted issue is ready for development.
 By the end of the process, it has been vetted for development including all labels for components, affected versions, and so on, reproduction steps are correct, and all the format passes automated review.
 
-**Supporting the Process**: Working on an issue report as a reporter, maintainer, or developer is always a commitment. It is beneficial for every participating party to monitor activity and comments on the ticket during it's lifetime, and provide necessary information or insights. 
+**Supporting the Process**: Working on an issue report as a reporter, maintainer, or developer is always a commitment. It is beneficial for every participating party to monitor activity and comments on the ticket during it's lifetime, and provide necessary information or insights.
 
 #### Preparation
 
 Steps for reviewing the issue, verifying reproduction steps, and assigning a Maintainer to work it.
 
 1. Maintainer picks a ticket from the GitHub tracker which is not yet processed. The recommended tool is [Community Backlog](https://github.com/magento/magento2/projects/20) Dashboard.
-2. A maintainer reviews the list from "Ready for QA" column and selects an issue to begin processing.
-3. After selecting the ticket, the maintainer checks the description and reproduction steps.
-4. When the maintainer is ready to start processing the issue, the maintainer should assign the ticket to himself. This indicates someone is actively working on the issue.
+1. A maintainer reviews the list from "Ready for QA" column and selects an issue to begin processing.
+1. After selecting the ticket, the maintainer checks the description and reproduction steps.
+1. When the maintainer is ready to start processing the issue, the maintainer should assign the ticket to himself. This indicates someone is actively working on the issue.
 
 #### Validation
 
 Steps for validating the issue format and all information provided checks out: described steps to reproduce are valid, expected behavior is valid, configuration described in preconditions is valid.
 
 1. When the issue is entered, the Automated Contributor Assistant automatically checks the format and assigns one of the following labels after review: `Issue: Format is valid` or `Issue: Format is not valid`.
-2. If the format is not valid (receives `Issue: Format is not valid`), the maintainer should read the report carefully and edit the issue to better match one of the required [templates](https://github.com/magento/magento2/tree/2.4-develop/.github/ISSUE_TEMPLATE). The maintainer edits the report content to comply with requirements.
-3. After saving any changes, the Automated Contributor Assistant runs again and updates the format label (usually less than one minute). 
-4. A maintainer can select the issue and review all information, reproduction steps, etc. If the information is incomplete, the maintainer requests more information from the reporter and applies the label `Progress: needs update`. All work pauses on this ticket until the reporter provides more information. 
-5. If the ticket has enough information, the maintainer analyzes the problem described in the ticket: described steps to reproduce are valid, expected behavior is valid, configuration described in preconditions is valid.
-6. Is it validated?
+1. If the format is not valid (receives `Issue: Format is not valid`), the maintainer should read the report carefully and edit the issue to better match one of the required [templates](https://github.com/magento/magento2/tree/2.4-develop/.github/ISSUE_TEMPLATE). The maintainer edits the report content to comply with requirements.
+1. After saving any changes, the Automated Contributor Assistant runs again and updates the format label (usually less than one minute).
+1. A maintainer can select the issue and review all information, reproduction steps, etc. If the information is incomplete, the maintainer requests more information from the reporter and applies the label `Progress: needs update`. All work pauses on this ticket until the reporter provides more information.
+1. If the ticket has enough information, the maintainer analyzes the problem described in the ticket: described steps to reproduce are valid, expected behavior is valid, configuration described in preconditions is valid.
+1. Is it validated?
 
     *  If all provided information is clear and sufficient, it is validated. The maintainer applies the `Issue: Clear description` label to indicate that ticket is ready for manual testing.
     *  If it is not validated, the maintainer adds the label `Progress: needs update` and requests more information from the reporter.
@@ -73,8 +73,8 @@ Be advised, we only accept pull requests for `2.4-develop`.
     *  If the described behavior **was**  reproduced, the maintainer should apply the `Reproduced on 2.4` label to the ticket, indicating that issue was reproduced and specific version.
     *  If the issue **was not**  reproducible with `2.4-develop`, the maintainer should close the issue and **stop verification process here!**
     *  
-2. If steps required to reproduce were different from the initially described reproduction steps, update the ticket description with the actual information.
-3. Based on the verification flow, add at least one or more `Component: xxx` labels to the issue. See [Magento Components Assignment](https://github.com/magento/magento2/wiki/Magento-Components-Assignment) for a list. Use your best judgment to determine the components affected.
+1. If steps required to reproduce were different from the initially described reproduction steps, update the ticket description with the actual information.
+1. Based on the verification flow, add at least one or more `Component: xxx` labels to the issue. See [Magento Components Assignment](https://github.com/magento/magento2/wiki/Magento-Components-Assignment) for a list. Use your best judgment to determine the components affected.
 
 ## Finalization
 
@@ -84,10 +84,10 @@ Steps for final review of issue for contributors/developers to work the issue.
    * [ ] Issue format is considered valid by automatic system.
    * [ ] Issue is reproducible at least with one of the supported versions and labeled appropriately.
    * [ ] At least one `Component` label(s) applied to the ticket.
-2. Add the label `Issue: Confirmed` to the ticket.
-3. Wait for the response from the Automated Contributor Assistant, which normally takes 30-60 seconds.
-4. If all required information was provided Automated Contributor Assistant will apply label `Issue: Ready for work` and comment with reference ticket numbers. Otherwise, label `Issue: Confirmed` will be removed and information on what's missing in the report will be provided to the maintainer.
-5. Unassign the ticket from yourself so that developers can claim the issue and start development.
+1. Add the label `Issue: Confirmed` to the ticket.
+1. Wait for the response from the Automated Contributor Assistant, which normally takes 30-60 seconds.
+1. If all required information was provided Automated Contributor Assistant will apply label `Issue: Ready for work` and comment with reference ticket numbers. Otherwise, label `Issue: Confirmed` will be removed and information on what's missing in the report will be provided to the maintainer.
+1. Un-assign the ticket from yourself so that developers can claim the issue and start development.
 
 If the issue was reproduced on `Gate 3`, we’ll create an internal `MAGETWO` ticket to track the progress of the issue.
 
