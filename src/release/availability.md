@@ -13,12 +13,6 @@ The following table describes the status of Magento software availability and wh
 | **PWA Studio**                                   | Available now                                                                   | [Documentation](http://pwastudio.io) and [GitHub](https://github.com/magento-research/pwa-studio)                                                                                                                                                                                         |
 | **Amazon Sales Channel 4.4.1**                   | Available now for {{site.data.var.ee}} versions 2.4.x and 2.3.x (US, Canada, Mexico, and UK) | [Commerce Marketplace](https://marketplace.magento.com/magento-module-amazon.html) \| [Release Notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes) \| [User Guide](https://docs.magento.com/user-guide/sales-channels/asc/amazon-sales-channel.html)                 |
 
-## {{ site.data.var.ce }} roadmap
-
-The following table contains the status of items on the {{ site.data.var.ce }} roadmap (items are subject to change):
-
-{% include roadmap.md data=site.data.roadmap %}
-
 ## Compatibility
 
 Magento modules that have been built to be decoupled from the {{site.data.var.ee}} core release process; this allows us to release iterations of these modules faster to merchants who are willing to accept a little risk in exchange for earlier access to new features.

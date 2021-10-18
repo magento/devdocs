@@ -52,20 +52,20 @@
       <td>GraphQL - Inventory improvements</td>
     </tr>
     <tr class="category-feature">
-      <td>PayPal and Braintree updates</td>
-      <td>Walmart Marketplace (extension)</td>
+      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> PayPal and Braintree updates</td>
+      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> Walmart Marketplace (extension)</td>
     </tr>
     <tr class="category-feature">
       <td>PHP 8.1 support</td>
-      <td>Page Builder - Mobile layout optimization</td>
+      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> Page Builder - Mobile layout optimization</td>
     </tr>
     <tr class="category-feature">
       <td>PWA - Global theming/styling</td>
-      <td>Page Builder - Column grid layouts (viewports)</td>
+      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> Page Builder - Column grid layouts (viewports)</td>
     </tr>
     <tr class="category-feature">
       <td>PWA - Custom product attributes</td>
-      <td>Payment services (extension)</td>
+      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> Payment services (extension)</td>
     </tr>
     <tr class="category-feature">
       <td>PWA - Performance optimizations</td>
@@ -80,7 +80,7 @@
       <td>PWA - Staging and preview</td>
     </tr>
     <tr class="category-feature">
-      <td>Vendor Bundled Extensions (VBEs) – Updates</td>
+      <td><img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"> Vendor Bundled Extensions (VBEs) – Updates</td>
       <td>PWA - Bundle product type</td>
     </tr>
     <tr class="category-feature">
