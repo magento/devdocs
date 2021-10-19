@@ -1,6 +1,7 @@
 categories:
   - name: In progress
     features:
+      - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
       - name: GraphQL - Admin configuration
       - name: GraphQL - Caching updates
       - name: jQuery 3.6.x support
@@ -15,6 +16,7 @@ categories:
       - name: Vendor Bundled Extensions (VBEs) – Updates
   - name: Planned
     features:
+      - name: Accelerated checkout powered by Bolt (extension)
       - name: Accessibility improvements for storefront/admin
       - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
       - name: GraphQL - Personalization updates
