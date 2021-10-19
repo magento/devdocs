@@ -36,48 +36,44 @@
       <td>Accelerated checkout powered by Bolt (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
    </tr>
    <tr class="category-feature">
-      <td>GraphQL - Asynchronous orders</td>
+      <td>GraphQL - Admin configuration</td>
       <td>Accessibility improvements for storefront/admin</td>
     </tr>
     <tr class="category-feature">
-      <td>GraphQL - Admin configuration</td>
+      <td>GraphQL - Caching updates</td>
       <td>Framework updates (e.g. KnockoutJS, RequireJS, etc.)</td>
     </tr>
     <tr class="category-feature">
-      <td>GraphQL - Caching updates</td>
+      <td>jQuery 3.6.x support</td>
       <td>GraphQL - Personalization updates</td>
     </tr>
     <tr class="category-feature">
-      <td>jQuery 3.6.x support</td>
+      <td>OpenSearch 1.x support</td>
       <td>GraphQL - Page Builder improvements</td>
     </tr>
     <tr class="category-feature">
-      <td>OpenSearch 1.x support</td>
+      <td>PayPal and Braintree updates <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
       <td>GraphQL - Inventory improvements</td>
     </tr>
     <tr class="category-feature">
-      <td>PayPal and Braintree updates <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
+      <td>PHP 8.1 support</td>
       <td>Page Builder - Mobile layout optimization</td>
     </tr>
     <tr class="category-feature">
-      <td>PHP 8.1 support</td>
+      <td>PWA - Global theming/styling</td>
       <td>Page Builder - Column grid layouts (viewports)</td>
     </tr>
     <tr class="category-feature">
-      <td>PWA - Global theming/styling</td>
+      <td>PWA - Custom product attributes</td>
       <td>Payment services (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
     </tr>
     <tr class="category-feature">
-      <td>PWA - Custom product attributes</td>
+      <td>PWA - Performance optimizations</td>
       <td>PWA - Server-side rendering (SSR)</td>
     </tr>
     <tr class="category-feature">
-      <td>PWA - Performance optimizations</td>
-      <td>PWA - Extensibility improvements (payment/ship)</td>
-    </tr>
-    <tr class="category-feature">
       <td>PWA - Shopping and cart improvements</td>
-      <td>PWA - Staging and preview</td>
+      <td>PWA - Extensibility improvements (payment/ship)</td>
     </tr>
     <tr class="category-feature">
       <td>Security and quality improvements</td>
@@ -85,10 +81,6 @@
     </tr>
     <tr class="category-feature">
       <td>Vendor Bundled Extensions (VBEs) – Updates <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
-      <td>PWA - Live Search (Venia)</td>
-    </tr>
-    <tr class="category-feature">
-      <td></td>
       <td>Security and quality improvements</td>
     </tr>
     <tr class="category-feature">

@@ -1,7 +1,6 @@
 categories:
   - name: In progress
     features:
-      - name: GraphQL - Asynchronous orders
       - name: GraphQL - Admin configuration
       - name: GraphQL - Caching updates
       - name: jQuery 3.6.x support
@@ -27,7 +26,5 @@ categories:
       - name: Payment services (extension)
       - name: PWA - Server-side rendering (SSR)
       - name: PWA - Extensibility improvements (payment/ship)
-      - name: PWA - Staging and preview
       - name: PWA - Bundle product type
-      - name: PWA - Live Search (Venia)
       - name: Security and quality improvements
