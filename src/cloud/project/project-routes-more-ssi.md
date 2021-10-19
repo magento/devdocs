@@ -32,14 +32,14 @@ The following example shows how to insert a dynamic date control at the top of a
 
 Add the following to any page, such as `/index.php`:
 
-```php
+```php?start_inline=1
 echo date(DATE_RFC2822);
 <!--#include virtual="time.php" -->
 ```
 
 Add the following to `time.php`:
 
-```php
+```php?start_inline=1
 header("Cache-Control: max-age=600");
 echo date(DATE_RFC2822);
 ```

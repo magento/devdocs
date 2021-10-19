@@ -14,7 +14,7 @@ The following steps provide an example of accessing a database:
 
    Sample output follows:
 
-   ```php
+   ```terminal
    Array
     (
          [0] => stdClass Object
