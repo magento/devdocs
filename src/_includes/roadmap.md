@@ -3,7 +3,7 @@
 {% assign categories = include.data.categories | where: "name", include.categories %}
 {% endif %} -->
 
-<table class="status-table">
+<!-- <table class="status-table">
   <tbody>
     <tr class="category-name">
       <th>In progress</th>
@@ -23,7 +23,7 @@
     {% endfor %}
     {% endfor %}
   </tbody>
-</table>
+</table> -->
 
 <table class="status-table">
   <tbody>
@@ -31,7 +31,11 @@
       <th>In progress</th>
       <th>Planned</th>
     </tr>
-    <tr class="category-feature">
+   <tr class="category-feature">
+      <td>Framework updates (e.g. KnockoutJS, RequireJS, etc.)</td>
+      <td>Accelerated checkout powered by Bolt (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
+   </tr>
+   <tr class="category-feature">
       <td>GraphQL - Asynchronous orders</td>
       <td>Accessibility improvements for storefront/admin</td>
     </tr>
@@ -53,46 +57,48 @@
     </tr>
     <tr class="category-feature">
       <td>PayPal and Braintree updates <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
-      <td>Walmart Marketplace (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
-    </tr>
-    <tr class="category-feature">
-      <td>PHP 8.1 support</td>
       <td>Page Builder - Mobile layout optimization</td>
     </tr>
     <tr class="category-feature">
-      <td>PWA - Global theming/styling</td>
+      <td>PHP 8.1 support</td>
       <td>Page Builder - Column grid layouts (viewports)</td>
     </tr>
     <tr class="category-feature">
-      <td>PWA - Custom product attributes</td>
+      <td>PWA - Global theming/styling</td>
       <td>Payment services (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
     </tr>
     <tr class="category-feature">
-      <td>PWA - Performance optimizations</td>
+      <td>PWA - Custom product attributes</td>
       <td>PWA - Server-side rendering (SSR)</td>
     </tr>
     <tr class="category-feature">
-      <td>PWA - Shopping and cart improvements</td>
+      <td>PWA - Performance optimizations</td>
       <td>PWA - Extensibility improvements (payment/ship)</td>
     </tr>
     <tr class="category-feature">
-      <td>Security and quality improvements</td>
+      <td>PWA - Shopping and cart improvements</td>
       <td>PWA - Staging and preview</td>
     </tr>
     <tr class="category-feature">
-      <td>Vendor Bundled Extensions (VBEs) – Updates <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
+      <td>Security and quality improvements</td>
       <td>PWA - Bundle product type</td>
     </tr>
     <tr class="category-feature">
-      <td></td>
+      <td>Vendor Bundled Extensions (VBEs) – Updates <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
       <td>PWA - Live Search (Venia)</td>
     </tr>
     <tr class="category-feature">
       <td></td>
       <td>Security and quality improvements</td>
     </tr>
+    <tr class="category-feature">
+      <td></td>
+      <td>Walmart Marketplace (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
+    </tr>
   </tbody>
 </table>
+
+![Extension icon]({{ site.baseurl }}/common/images/Smock_Extension_18_N.svg) Indicates extensions available on the Commerce Marketplace.
 
 <style>
 /*** Table ***/
