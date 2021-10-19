@@ -44,7 +44,7 @@ Complete the following prerequisites to prepare your environment before starting
    To install the plugin when using PHP 7.2 or lower:
 
    {:.bs-callout-info}
-   This plugin is not compatible with PHP 7.2 or lower and Composer 2.1.6 or higher
+   This version of the plugin is not compatible with Composer 2.1.6 or higher
 
    ```bash
    composer require magento/composer-root-update-plugin=~1.0 --no-update
