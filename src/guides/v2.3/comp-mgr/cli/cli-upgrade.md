@@ -43,6 +43,9 @@ Complete the following prerequisites to prepare your environment before starting
 
    To install the plugin when using PHP 7.2 or lower:
 
+   {:.bs-callout-info}
+   This plugin is not compatible with PHP 7.2 or lower and Composer 2.1.6 or higher
+
    ```bash
    composer require magento/composer-root-update-plugin=~1.0 --no-update
    ```
@@ -81,13 +84,13 @@ See the examples at the end of this section for help specifying different releas
    For PHP 7.2 or lower:
 
    ```bash
-   composer require magento/<product.version> [--interactive-root-conflicts] [--force-root-updates] [--no update]
+   composer require magento/<product>.<version> [--interactive-magento-conflicts] [--use-default-magento-values] --no-update [--help]
    ```
 
    For 7.3 or higher:
 
    ```bash
-   composer require-commerce magento/<product.version> [--interactive-root-conflicts] [--force-root-updates] [--no update]
+   composer require-commerce magento/<product>.<version> [--interactive-magento-conflicts] [--use-default-magento-values] --no-update [--help]
    ```
 
    where:
@@ -96,17 +99,20 @@ See the examples at the end of this section for help specifying different releas
 
    `<version>` - (Required) The version of {{site.data.var.ce}} or {{site.data.var.ce}} you are upgrading to. For example, `2.3.7`.
 
-   `--interactive-root-conflicts` - (Optional) Allows you to interactively view and update any out-of-date values that may be remaining from previous versions.
+   `--interactive-magento-conflicts` - (Optional) Allows you to interactively view and update any out-of-date values that may be remaining from previous versions.
 
-   `--force-root-updates` - (Optional) Overrides all conflicting custom values with the expected Magento values.
+   `--use-default-magento-values` - (Optional) Overrides all conflicting custom values with the expected Magento values.
 
-   `--no-update` - (Optional) Disables the automatic update of the dependencies.
+   `--no-update` - (Required) Disables the automatic update of the dependencies.
 
-   If neither `--interactive-root-conflicts` nor `--force-root-updates` are specified, the command keeps the existing values that are in conflict and displays a warning message.
+   `--help` - (Optional) Provides usage details about the plugin.
 
-   {:.bs-callout-tip}
-   Use `composer require-commerce --help` to learn more about available options.
-   To learn more about usage of the plugin, refer to the [Plugin Usage](https://github.com/magento/composer-root-update-plugin/blob/0.1/src/Magento/ComposerRootUpdatePlugin/README.md#usage).
+   If neither `--interactive-magento-conflicts` nor `--use-default-magento-values` are specified, the command keeps the existing values that are in conflict and displays a warning message.
+
+   To learn more about the plugin, refer to one of the following Plugin Usage README files:
+
+   -  [PHP 7.3 or higher](https://github.com/magento/composer-root-update-plugin/blob/develop/src/Magento/ComposerRootUpdatePlugin/README.md)
+   -  [PHP 7.2 or lower](https://github.com/magento/composer-root-update-plugin/blob/0.1/src/Magento/ComposerRootUpdatePlugin/README.md)
 
    **Examples:**
 

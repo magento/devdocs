@@ -21,7 +21,7 @@ Do not use this method to upgrade if you cloned the Magento 2 GitHub repository.
 The following instructions show you how to upgrade Magento using Composer. Magento 2.4.2 introduced support for Composer 2. If you are attempting to upgrade from Magento <2.4.1, you must first upgrade to a version of Magento that is compatible with Composer 2 (for example, 2.4.2) using Composer 1 _before_ upgrading to Composer 2 for Magento >2.4.2 upgrades. In addition, you must be running a [supported version]({{page.baseurl}}/install-gde/system-requirements.html) of PHP.
 
 {:.bs-callout-warning}
-The procedure for upgrading {{site.data.var.ce}} and {{site.data.var.ee}} has changed. You must install a new version of the Composer update plugin. In addition, the commands for upgrading have changed from `composer require magento/<package_name>` to `composer require-commerce magento/<package_name>`.
+The procedure for upgrading {{site.data.var.ce}} and {{site.data.var.ee}} has changed. You must install a new version of the `magento/composer-root-update-plugin` package. In addition, the commands for upgrading have changed from `composer require magento/<package_name>` to `composer require-commerce magento/<package_name>`.
 
 ## Before you begin {#prerequisites}
 
@@ -78,26 +78,26 @@ See the examples at the end of this section for help specifying different releas
 1. Run the `composer require-commerce` command to upgrade your instance. The command has the following syntax:
 
    ```bash
-   composer require-commerce magento/<product.version> [--interactive-root-conflicts] [--force-root-updates] [--no update]
+   composer require-commerce magento/<product>.<version> [--interactive-root-conflicts] [--force-root-updates] --no update [--help]
    ```
 
    where:
 
-   `<product>` - (Required) The package to upgrade. For on-premise installations, this value must either `product-community-edition` or `product-enterprise-edition`.
+   `<product>` - (Required) The package to upgrade. For on-premise installations, this value must be either `product-community-edition` or `product-enterprise-edition`.
 
    `<version>` - (Required) The version of {{site.data.var.ce}} or {{site.data.var.ce}} you are upgrading to. For example, `2.4.3`.
 
-   `--interactive-root-conflicts` - (Optional) Allows you to interactively view and update any out-of-date values that may be remaining from previous versions.
+   `--interactive-root-conflicts` - (Optional) Allows you to interactively view and update any out-of-date values that may be remaining from previous versions, or any customized values that do not match the version you are upgrading to.
 
    `--force-root-updates` - (Optional) Overrides all conflicting custom values with the expected Magento values.
 
-   `--no-update` - (Optional) Disables the automatic update of the dependencies.
+   `--no-update` - (Required) Disables the automatic update of the dependencies.
+
+   `--help` - (Optional) Provides usage details about the plugin.
 
    If neither `--interactive-root-conflicts` nor `--force-root-updates` are specified, the command keeps the existing values that are in conflict and displays a warning message.
 
-   {:.bs-callout-tip}
-   Use `composer require-commerce --help` to learn more about available options.
-   To learn more about usage of the plugin, refer to the [Plugin Usage](https://github.com/magento/composer-root-update-plugin/blob/0.1/src/Magento/ComposerRootUpdatePlugin/README.md#usage).
+   To learn more about the plugin, refer to the [Plugin Usage README](https://github.com/magento/composer-root-update-plugin/blob/develop/src/Magento/ComposerRootUpdatePlugin/README.md).
 
    **Examples:**
 
