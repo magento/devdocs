@@ -93,13 +93,13 @@
 ![Extension icon]({{ site.baseurl }}/common/images/Smock_Extension_18_N.svg) Indicates extensions available on the Commerce Marketplace.
 
 <style>
-/*** Table ***/
+/***Table***/
 
 .status-table {
   table-layout: fixed;
 }
 
-/*** Rows ***/
+/***Rows***/
 
 .category-feature {
   transition: all .2s;
@@ -114,7 +114,7 @@ tbody tr.category-feature:last-child td {
   padding-bottom: 5px;
 }
 
-/*** Columns ***/
+/***Columns***/
 
 .category-name th {
   padding: 10px;
@@ -133,7 +133,7 @@ tbody tr.category-feature:last-child td {
   text-align: center;
 } */
 
-/*** Cells ***/
+/***Cells***/
 
 .category-feature td {
   padding: 10px;
