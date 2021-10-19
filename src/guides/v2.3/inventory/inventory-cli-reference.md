@@ -32,7 +32,7 @@ These commands include:
 -  Refund order or issue a credit memo (compensation reservation)
 -  Order cancellation (compensation reservation)
 
-Reservation inconsistencies may occur when {{site.data.var.im}} loses the initial reservation and enters too many reservation compensations (overcompensating and leading to inconsistent amounts), or correctly places the initial reservation but loses compensational reservations. Reservations can be manually reviewed and checked in the table "reservation".
+Reservation inconsistencies may occur when {{site.data.var.im}} loses the initial reservation and enters too many reservation compensations (overcompensating and leading to inconsistent amounts), or correctly places the initial reservation but loses compensational reservations. Reservations can be manually reviewed and checked in the table "inventory_reservation".
 
 The following configurations and events can cause reservation inconsistencies:
 
