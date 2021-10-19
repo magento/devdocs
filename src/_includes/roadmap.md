@@ -3,7 +3,7 @@
 {% assign categories = include.data.categories | where: "name", include.categories %}
 {% endif %} -->
 
-<!-- <table class="status-table">
+<table class="status-table">
   <tbody>
     <tr class="category-name">
       <th>In progress</th>
@@ -14,27 +14,9 @@
     <tr class="category-feature">
       {% if categories.name == "In progress" %}
       <td>{{ categoryFeature.name }}</td>
+      <td></td>
       {% elsif categories.name == "Planned" %}
-      <td>{{ categoryFeature.name }}</td>
-      {% endif %}
-    </tr>
-    {% endfor %}
-    {% endfor %}
-  </tbody>
-</table> -->
-
-<table class="status-table">
-  <tbody>
-    <tr class="category-name">
-      <th>In progress</th>
-      <th>Planned</th>
-    </tr>
-    {% for categories in categories %}
-    {% for categoryFeature in categories.features %}
-    <tr class="category-feature">
-      {% case categories.name == "In progress" %}
-      <td>{{ categoryFeature.name }}</td>
-      {% elsif categories.name == "Planned" %}
+      <td></td>
       <td>{{ categoryFeature.name }}</td>
       {% endif %}
     </tr>
