@@ -41,7 +41,7 @@ If you are not in the partner contribution program already, complete the followi
 
 ## Get the Code
 
-Third, the pre-production code will be released via Composer or <repo.magento.com>.
+Third, the pre-production code will be released via Composer or <https://repo.magento.com>.
 The date of this Beta release will be announced on our private GitHub space.
 Visit this page six weeks ahead of our set [release calendar][] for the latest information about our upcoming Beta release.
 ​
