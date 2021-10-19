@@ -124,7 +124,7 @@ tbody tr.category-feature:last-child td {
   background-color: #f1f1f1;
 }
 
-/* .category-name th:nth-child(1) {
+/*.category-name th:nth-child(1) {
    width: 100%;
 }
 
@@ -139,11 +139,11 @@ tbody tr.category-feature:last-child td {
   padding: 10px;
 }
 
-/* .category-feature td:nth-child(2) {
+/*.category-feature td:nth-child(2) {
   text-align: center;
-} */
+}*/
 
-/*** Icons ***/
+/***Icons***/
 
   .status {
     height: 32px;
