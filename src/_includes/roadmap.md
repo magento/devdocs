@@ -1,179 +1,131 @@
-<!-- {% assign categories = include.data.categories %}
-{% if include.categories %}
-{% assign categories = include.data.categories | where: "name", include.categories %}
-{% endif %} -->
-
-<!-- <table class="status-table">
-  <tbody>
-    <tr class="category-name">
-      <th>In progress</th>
-      <th>Planned</th>
-    </tr>
-    {% for categories in categories %}
-    {% for categoryFeature in categories.features %}
-    <tr class="category-feature">
-      {% if categories.name == "In progress" %}
-      <td>{{ categoryFeature.name }}</td>
-      <td></td>
-      {% elsif categories.name == "Planned" %}
-      <td></td>
-      <td>{{ categoryFeature.name }}</td>
-      {% endif %}
-    </tr>
-    {% endfor %}
-    {% endfor %}
-  </tbody>
-</table> -->
-
-<table class="status-table">
-  <tbody>
-    <tr class="category-name">
-      <th>In progress</th>
-      <th>Planned</th>
-    </tr>
-   <tr class="category-feature">
-      <td>Framework updates (e.g. KnockoutJS, RequireJS, etc.)</td>
-      <td>Accelerated checkout powered by Bolt (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
-   </tr>
-   <tr class="category-feature">
-      <td>GraphQL - Admin configuration</td>
-      <td>Accessibility improvements for storefront/admin</td>
-    </tr>
-    <tr class="category-feature">
-      <td>GraphQL - Caching updates</td>
-      <td>Framework updates (e.g. KnockoutJS, RequireJS, etc.)</td>
-    </tr>
-    <tr class="category-feature">
-      <td>jQuery 3.6.x support</td>
-      <td>GraphQL - Personalization updates</td>
-    </tr>
-    <tr class="category-feature">
-      <td>OpenSearch 1.x support</td>
-      <td>GraphQL - Page Builder improvements</td>
-    </tr>
-    <tr class="category-feature">
-      <td>PayPal and Braintree updates <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
-      <td>GraphQL - Inventory improvements</td>
-    </tr>
-    <tr class="category-feature">
-      <td>PHP 8.1 support</td>
-      <td>Page Builder - Mobile layout optimization</td>
-    </tr>
-    <tr class="category-feature">
-      <td>PWA - Global theming/styling</td>
-      <td>Page Builder - Column grid layouts (viewports)</td>
-    </tr>
-    <tr class="category-feature">
-      <td>PWA - Custom product attributes</td>
-      <td>Payment services (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
-    </tr>
-    <tr class="category-feature">
-      <td>PWA - Performance optimizations</td>
-      <td>PWA - Server-side rendering (SSR)</td>
-    </tr>
-    <tr class="category-feature">
-      <td>PWA - Shopping and cart improvements</td>
-      <td>PWA - Extensibility improvements (payment/ship)</td>
-    </tr>
-    <tr class="category-feature">
-      <td>Security and quality improvements</td>
-      <td>PWA - Bundle product type</td>
-    </tr>
-    <tr class="category-feature">
-      <td>Vendor Bundled Extensions (VBEs) – Updates <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
-      <td>Security and quality improvements</td>
-    </tr>
-    <tr class="category-feature">
-      <td></td>
-      <td>Walmart Marketplace (extension) <img src="{{ site.baseurl }}/common/images/Smock_Extension_18_N.svg"></td>
-    </tr>
-  </tbody>
-</table>
+{% assign roadmap = include.data.roadmap %}
+{% if include.roadmap %}
+{% assign roadmap = include.data.roadmap | where: "name", include.roadmap %}
+{% endif %}
 
 ![Extension icon]({{ site.baseurl }}/common/images/Smock_Extension_18_N.svg) Indicates extensions available on the Commerce Marketplace.
 
+<table class="roadmap-table">
+  <tr class="roadmap-header">
+      {% for roadmap in roadmap %}
+      <th>{{roadmap.name}}</th>
+      {% endfor %}
+  </tr>
+  <tr>
+    {% for roadmap in roadmap %}
+    <td class="table-container">
+      <table class="inner-table">
+        {% for roadmapFeature in roadmap.features %}
+        <tr class="inner-row"><td class="inner-cell">{{ roadmapFeature.name }}</td></tr>
+        {% endfor %}
+      </table>
+    </td>
+    {% endfor %}
+  </tr>
+</table>
+
 <style>
-/***Table***/
 
-.status-table {
-  table-layout: fixed;
+/****************/
+/***— Tables —***/
+/****************/
+
+/**
+ * Main Table
+ */
+table.roadmap-table {
+  padding: 0.5em;
+  margin: 0;
+  border: 1 solid #ddd;
 }
 
-/***Rows***/
-
-.category-feature {
-  transition: all .2s;
-  height: 26px;
+/**
+ * Inner Tables
+ */
+table.roadmap-table tr td.table-container table.inner-table {
+  padding: 0.5em;
+  margin: 0;
+  border: 0 solid #ddd;
 }
 
-.category-feature:hover {
-  background: rgba(20,115,230,10%);
-}
+/*****************/
+/***— Headers —***/
+/*****************/
 
-tbody tr.category-feature:last-child td {
-  padding-bottom: 5px;
-}
-
-/***Columns***/
-
-.category-name th {
-  padding: 10px;
-  font-size: 14px !important;
+/**
+ * Main Table Header
+ */
+table.roadmap-table tr.roadmap-header th {
+  padding: .7rem;
+  margin: 0;
+  border: 1 solid #ddd;
+  text-align: left;
+  background-color: #f5f5f5;
   font-weight: bold;
-  color: black;
-  background-color: #f1f1f1;
+  color: #333;
+  font-size: 1rem;
 }
 
-/*.category-name th:nth-child(1) {
-   width: 100%;
+/**************/
+/***— Rows —***/
+/**************/
+
+/**
+ * Main Table Row
+ */
+ table.roadmap-table tr {
+  padding: 0.7rem;
+  margin-left: 1rem;
+  border: 0 solid #ddd;
+  border-collapse: collapse;
 }
 
-.category-name th:nth-child(2) {
-  width: 90px;
-  text-align: center;
-} */
-
-/***Cells***/
-
-.category-feature td {
-  padding: 10px;
+/**
+ * Inner Table Rows
+ */
+table.roadmap-table tr td.table-container table.inner-table tr.inner-row {
+  padding: 0.7rem;
+  margin: 0;
+  border-bottom: 1 solid #ddd;
+  border-collapse: collapse;
 }
 
-/*.category-feature td:nth-child(2) {
-  text-align: center;
-}*/
+/***************/
+/***— Cells —***/
+/***************/
 
-/***Icons***/
+/**
+ * Main Table Cell
+ */
+ table.roadmap-table tr td.table-container {
+  padding: 0;
+  margin: 0;
+  border: 0 solid #ddd;
+  border-collapse: collapse;
+}
 
-  .status {
-    height: 32px;
-    font-size: 14px;
-    font-weight: 400;
-  }
+/**
+ * Inner Table Cell
+ */
+table.roadmap-table tr td.table-container table.inner-table tr.inner-row td.inner-cell {
+  padding: 0.7rem;
+  margin: 0;
+  border: 0 solid #ddd;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
 
-  .status::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin: 0 12px;
-  }
+/***************/
+/***— Icons —***/
+/***************/
 
-  .status.complete::before {
-    background: rgb(45, 157, 120);
-  }
-
-  .status.in-progress::before {
-    background: rgb(230, 134, 25);
-  }
-
-  .status.planned {
-    font-style: italic;
-  }
-
-  .status.planned::before {
-    background: rgb(179, 179, 179);
-  }
+.extension::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 12px;
+}
 
 </style>
