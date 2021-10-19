@@ -39,8 +39,8 @@ query {
     "currency": {
       "base_currency_code": "USD",
       "base_currency_symbol": "$",
-      "default_display_currency_code": null,
-      "default_display_currency_symbol": null,
+      "default_display_currency_code": "USD",
+      "default_display_currency_symbol": "$",
       "available_currency_codes": [
         "EUR",
         "USD"
@@ -66,7 +66,7 @@ The `currency` object provides the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`available_currency_codes` | [String] | An array of currencies accepted by the store
+`available_currency_codes` | [String] | An array of three-letter currency codes accepted by the store, such as `USD` and `EUR`
 `base_currency_code` | String | The base currency set for the store, such as USD
 `base_currency_symbol` | String | The symbol for the specified base currency, such as $
 `default_display_currency_code` | String | Specifies if the currency code is set as the store's default
