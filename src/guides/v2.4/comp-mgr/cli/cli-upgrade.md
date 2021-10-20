@@ -134,6 +134,7 @@ See the examples at the end of this section for help specifying different releas
 
    ```bash
    composer update
+
 ### Example - Minor release
 
 Minor releases contain new features, quality fixes, and security fixes. Use Composer to specify a minor release. For example, to specify the {{site.data.var.ee}} 2.4.3 metapackage:

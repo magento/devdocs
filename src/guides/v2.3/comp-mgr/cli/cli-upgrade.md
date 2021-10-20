@@ -79,7 +79,7 @@ See the examples at the end of this section for help specifying different releas
    composer remove magento/product-community-edition --no-update
    ```
 
-1. Choose one of the following `composer` commands based on the PHP version, and run the command to upgrade your instance. For PHP 7.3 and later, use the `require-commerce` syntax.
+1. Choose one of the following `composer` commands based on the PHP version, and run the command to upgrade your instance.
 
 
    For 7.3 or higher:
@@ -108,7 +108,7 @@ See the examples at the end of this section for help specifying different releas
 
    `--help` - (Optional) Provides usage details about the plugin.
 
-   If neither `--interactive-magento-conflicts` nor `--use-default-magento-values` are specified, the command keeps the existing values that are in conflict and displays a warning message.
+   If neither `--interactive-root-conflicts` nor `--force-root-updates` (or their PHP 7.2 equivalents) are specified, the command keeps the existing values that are in conflict and displays a warning message.
 
    To learn more about the plugin, refer to one of the following Plugin Usage README files:
 
