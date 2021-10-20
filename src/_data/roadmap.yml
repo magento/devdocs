@@ -3,8 +3,6 @@ roadmap:
     features:
       - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
         status: inProgress
-      - name: GraphQL - Asynchronous orders
-        status: inProgress
       - name: GraphQL - Admin configuration
         status: inProgress
       - name: GraphQL - Caching updates
@@ -60,12 +58,6 @@ roadmap:
       - name: PWA - Extensibility improvements (payment/ship)
         status: Planned
       - name: PWA - Bundle product type
-        status: Planned
-      - name: PWA - Staging and preview
-        status: Planned
-      - name: PWA - Bundle product type
-        status: Planned
-      - name: PWA - Live Search (Venia)
         status: Planned
       - name: Security and quality improvements
         status: Planned

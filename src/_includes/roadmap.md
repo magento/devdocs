@@ -27,21 +27,17 @@
 <style>
 
 /****************/
-/***— Tables —***/
+/*****Tables*****/
 /****************/
 
-/**
- * Main Table
- */
+/***Main Table***/
 table.roadmap-table {
   padding: 1rem;
   margin: 0;
   border: 1px solid #ddd;
 }
 
-/**
- * Inner Tables
- */
+/***Inner Tables**/
 table.roadmap-table tr td.table-container table.inner-table {
   padding: 0.5rem;
   margin: 0;
@@ -49,12 +45,10 @@ table.roadmap-table tr td.table-container table.inner-table {
 }
 
 /*****************/
-/***— Headers —***/
+/*****Headers*****/
 /*****************/
 
-/**
- * Main Table Header
- */
+/***Main Table Header***/
 table.roadmap-table tr.roadmap-header th {
   padding: .7rem;
   margin: 0;
@@ -67,12 +61,10 @@ table.roadmap-table tr.roadmap-header th {
 }
 
 /**************/
-/***— Rows —***/
+/*****Rows*****/
 /**************/
 
-/**
- * Main Table Row
- */
+/***Main Table Row***/
  table.roadmap-table tr {
   padding: 0.7rem;
   margin-left: 1rem;
@@ -82,9 +74,7 @@ table.roadmap-table tr:hover {
   background-color: #fff;
 }
 
-/**
- * Inner Table Rows
- */
+/***Inner Table Rows***/
 table.roadmap-table tr td.table-container table.inner-table tr.inner-row {
   padding: 0.7rem;
   margin: 0;
@@ -92,12 +82,10 @@ table.roadmap-table tr td.table-container table.inner-table tr.inner-row {
 }
 
 /***************/
-/***— Cells —***/
+/*****Cells*****/
 /***************/
 
-/**
- * Main Table Cell
- */
+/***Main Table Cell***/
  table.roadmap-table tr td.table-container {
   padding: 0;
   margin: 0;
@@ -110,9 +98,7 @@ table.roadmap-table tr td.table-container {
   border-right: 1px solid #ddd;
 }
 
-/**
- * Inner Table Cell
- */
+/***Inner Table Cell***/
 table.roadmap-table tr td.table-container table.inner-table tr.inner-row td.inner-cell {
   margin: 0;
   padding: 0.8rem;
@@ -122,7 +108,7 @@ table.roadmap-table tr td.table-container table.inner-table tr.inner-row td.inne
 }
 
 /***************/
-/***— Icons —***/
+/*****Icons*****/
 /***************/
 
 .icon {
