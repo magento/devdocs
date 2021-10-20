@@ -41,6 +41,12 @@ Complete the following prerequisites to prepare your environment before starting
 
    The plugin partially automates the manual upgrade by identifying and helping you resolve dependency conflicts instead of requiring you to identify and fix them manually.
 
+   To install the plugin when using PHP 7.3 or higher:
+
+   ```bash
+   composer require magento/composer-root-update-plugin ~2.0 --no-update
+   ```
+
    To install the plugin when using PHP 7.2 or lower:
 
    {:.bs-callout-info}
@@ -48,12 +54,6 @@ Complete the following prerequisites to prepare your environment before starting
 
    ```bash
    composer require magento/composer-root-update-plugin ~1.1 --no-update
-   ```
-
-   To install the plugin when using PHP 7.3 or higher:
-
-   ```bash
-   composer require magento/composer-root-update-plugin ~2.0 --no-update
    ```
 
    Update the dependencies:
