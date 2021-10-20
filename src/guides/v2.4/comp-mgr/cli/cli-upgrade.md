@@ -83,13 +83,13 @@ See the examples at the end of this section for help specifying different releas
 
    where:
 
-   `<product>` - (Required) The package to upgrade. For on-premise installations, this value must be either `product-community-edition` or `product-enterprise-edition`.
+   `<product>` - (Required) The package to upgrade. For on-premises installations, this value must be either `product-community-edition` or `product-enterprise-edition`.
 
    `<version>` - (Required) The version of {{site.data.var.ce}} or {{site.data.var.ce}} you are upgrading to. For example, `2.4.3`.
 
    `--no-update` - (Required) Disables the automatic update of the dependencies.
 
-   `--interactive-root-conflicts` - (Optional) Allows you to interactively view and update any out-of-date values that may be remaining from previous versions, or any customized values that do not match the version you are upgrading to.
+   `--interactive-root-conflicts` - (Optional) Allows you to interactively view and update any out-of-date values from previous versions, or any customized values that do not match the version you are upgrading to.
 
    `--force-root-updates` - (Optional) Overrides all conflicting custom values with the expected Magento values.
 
@@ -130,7 +130,7 @@ See the examples at the end of this section for help specifying different releas
 
    </div>
 
-1. Update the dependencies:
+1. Update the dependencies.
 
    ```bash
    composer update
