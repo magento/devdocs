@@ -81,7 +81,6 @@ See the examples at the end of this section for help specifying different releas
 
 1. Choose one of the following `composer` commands based on the PHP version, and run the command to upgrade your instance.
 
-
    For 7.3 or higher:
 
    ```bash
@@ -157,7 +156,7 @@ See the examples at the end of this section for help specifying different releas
 Minor releases contain new features, quality fixes, and security fixes. Use Composer to specify a minor release. For example, to specify the {{site.data.var.ee}} 2.3.7 metapackage:
 
 ```bash
-composer require magento/product-community-edition 2.3.7 --no-update
+composer require-commerce magento/product-community-edition 2.3.7 --no-update
 ```
 
 ### Example - Quality patch
@@ -165,7 +164,7 @@ composer require magento/product-community-edition 2.3.7 --no-update
 Quality patches primarily contain functional _and_ security fixes. However, they can also sometimes contain new, backward-compatible features. Use Composer to download a quality patch. For example, to specify the {{site.data.var.ee}} 2.3.7 metapackage:
 
 ```bash
-composer require magento/product-community-edition 2.3.7 --no-update
+composer require-commerce magento/product-community-edition 2.3.7 --no-update
 ```
 
 ### Example - Security patch
@@ -175,7 +174,7 @@ Security patches contain security fixes only. They are designed to make the upgr
 Security patches use the Composer naming convention `2.3.x-px`. Use Composer to specify a patch. For example, to download the {{site.data.var.ce}} 2.3.6-p1 metapackage:
 
 ```bash
-composer require magento/product-community-edition 2.3.6-p1 --no-update
+composer require-commerce magento/product-community-edition 2.3.6-p1 --no-update
 ```
 
 ## Update metadata
