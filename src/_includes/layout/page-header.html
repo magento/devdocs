@@ -1,12 +1,14 @@
 <!-- page-header -->
 <section class="page-intro">
 
-  {% if page.url contains "guides/v2.4/payments-integrations/base-integrations/" or page.url contains "guides/v2.4/payments-integrations/payment-gateway" or page.url contains "guides/v2.4/payments-integrations/vault" or page.url contains "guides/v2.4/payments-integrations/bk-payments-integrations" %}
+  {% if page.url contains "guides/v2.4/payments-integrations/" %}
+  {% unless page.url contains "guides/v2.4/payments-integrations/cardinal" %}
   <div class="bs-callout-warning">
-    The Payment Provider Gateway documentation uses the Magento 2.3.x (now {{site.data.var.ee}} and {{site.data.var.ce}}) of the Braintree module as a
-    reference application. The Braintree module was removed in Magento 2.4.0. The concepts described in this guide are
-    still applicable to Magento 2.4.0, but the code samples are not supported.
+    The Payment Provider Gateway documentation uses the Magento 2.3 (now {{site.data.var.ee}} and {{site.data.var.ce}}) of the Braintree module as a
+    reference application. The Braintree module was removed in version 2.4.0. The concepts described in this guide are
+    still applicable to version 2.4.0, but the code samples are not supported.
   </div>
+  {% endunless %}
   {% endif %}
 
   {% if page.url contains "guides/v2.4/install-gde/" %}
@@ -29,14 +31,14 @@
     The split database feature was <a
       href="https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-split-database-functionality-in-Magento-Commerce/ba-p/465187">deprecated</a>
     in version 2.4.2 of {{ site.data.var.ee }}. See <a
-      href="https://devdocs.magento.com/guides/v2.4/config-guide/revert-split-database.html">Revert from a split
+      href="{{ page.baseurl }}/config-guide/revert-split-database.html">Revert from a split
       database to a single database</a>.
   </div>
   {% endif %}
 
   {% unless page.github_link %}
   <div class="message-banner">
-    This topic is generated and maintained through automation, so we do not accept direct contributions from pull requests on GitHub.
+    Contributions through pull requests are not supported for this topic. Open a GitHub issue to provide feedback.
   </div>
   {% endunless %}
 
