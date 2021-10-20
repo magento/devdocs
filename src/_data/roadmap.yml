@@ -20,7 +20,6 @@ roadmap:
         status: inProgress
       - name: PWA - Custom product attributes
         status: inProgress
-        type: Extension
       - name: PWA - Performance optimizations
         status: inProgress
       - name: PWA - Shopping and cart improvements
@@ -45,8 +44,6 @@ roadmap:
         status: Planned
       - name: GraphQL - Inventory improvements
         status: Planned
-      - name: Walmart Marketplace (extension)
-        status: Planned
       - name: Page Builder - Mobile layout optimization
         status: Planned
       - name: Page Builder - Column grid layouts (viewports)
@@ -61,3 +58,6 @@ roadmap:
         status: Planned
       - name: Security and quality improvements
         status: Planned
+      - name: Walmart Marketplace (extension)
+        status: Planned
+        type: Extension
