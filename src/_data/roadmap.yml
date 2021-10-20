@@ -15,11 +15,14 @@ roadmap:
         status: inProgress
       - name: PayPal and Braintree updates
         status: inProgress
+        type: Extension
       - name: PHP 8.1 support
+        status: inProgress
       - name: PWA - Global theming/styling
         status: inProgress
       - name: PWA - Custom product attributes
         status: inProgress
+        type: Extension
       - name: PWA - Performance optimizations
         status: inProgress
       - name: PWA - Shopping and cart improvements
@@ -28,9 +31,12 @@ roadmap:
         status: inProgress
       - name: Vendor Bundled Extensions (VBEs) – Updates
         status: inProgress
+        type: Extension
   - name: Planned
     features:
       - name: Accelerated checkout powered by Bolt (extension)
+        status: Planned
+        type: Extension
       - name: Accessibility improvements for storefront/admin
         status: Planned
       - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
