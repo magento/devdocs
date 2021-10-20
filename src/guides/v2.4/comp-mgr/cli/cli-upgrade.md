@@ -49,7 +49,7 @@ Complete the following prerequisites to prepare your environment before starting
    To install the plugin:
 
    ```bash
-   composer require magento/composer-root-update-plugin=~2.0 --no-update
+   composer require magento/composer-root-update-plugin ~2.0 --no-update
    ```
 
    Update the dependencies:
@@ -78,7 +78,7 @@ See the examples at the end of this section for help specifying different releas
 1. Run the `composer require-commerce` command to upgrade your instance. The command has the following syntax:
 
    ```bash
-   composer require-commerce magento/<product>.<version> [--interactive-root-conflicts] [--force-root-updates] --no update [--help]
+   composer require-commerce magento/<product> <version> --no-update [--interactive-root-conflicts] [--force-root-updates] [--help]
    ```
 
    where:
@@ -87,11 +87,11 @@ See the examples at the end of this section for help specifying different releas
 
    `<version>` - (Required) The version of {{site.data.var.ce}} or {{site.data.var.ce}} you are upgrading to. For example, `2.4.3`.
 
+   `--no-update` - (Required) Disables the automatic update of the dependencies.
+
    `--interactive-root-conflicts` - (Optional) Allows you to interactively view and update any out-of-date values that may be remaining from previous versions, or any customized values that do not match the version you are upgrading to.
 
    `--force-root-updates` - (Optional) Overrides all conflicting custom values with the expected Magento values.
-
-   `--no-update` - (Required) Disables the automatic update of the dependencies.
 
    `--help` - (Optional) Provides usage details about the plugin.
 
@@ -104,13 +104,13 @@ See the examples at the end of this section for help specifying different releas
    _{{ ce }}_:
 
    ```bash
-   composer require-commerce magento/product-community-edition=2.4.3 --no-update
+   composer require-commerce magento/product-community-edition 2.4.3 --no-update
    ```
 
    _{{ ee }}_:
 
    ```bash
-   composer require-commerce magento/product-enterprise-edition=2.4.3 --no-update
+   composer require-commerce magento/product-enterprise-edition 2.4.3 --no-update
    ```
 
    <div class="bs-callout-tip" markdown="1">
@@ -130,12 +130,16 @@ See the examples at the end of this section for help specifying different releas
 
    </div>
 
+1. Update the dependencies:
+
+   ```bash
+   composer update
 ### Example - Minor release
 
 Minor releases contain new features, quality fixes, and security fixes. Use Composer to specify a minor release. For example, to specify the {{site.data.var.ee}} 2.4.3 metapackage:
 
 ```bash
-composer require-commerce magento/product-community-edition=2.4.3 --no-update
+composer require-commerce magento/product-community-edition 2.4.3 --no-update
 ```
 
 ### Example - Quality patch
@@ -143,17 +147,17 @@ composer require-commerce magento/product-community-edition=2.4.3 --no-update
 Quality patches primarily contain functional _and_ security fixes. However, they can also sometimes contain new, backward-compatible features. Use Composer to download a quality patch. For example, to specify the {{site.data.var.ee}} 2.4.1 metapackage:
 
 ```bash
-composer require-commerce magento/product-community-edition=2.4.1 --no-update
+composer require-commerce magento/product-community-edition 2.4.1 --no-update
 ```
 
 ### Example - Security patch
 
 Security patches contain security fixes only. They are designed to make the upgrade process faster and easier.
 
-Security patches use the Composer naming convention `2.4.3-px`. Use Composer to specify a patch. For example, to download the {{site.data.var.ce}} 2.4.3-p1 metapackage:
+Security patches use the Composer naming convention `2.4.x-px`. Use Composer to specify a patch. For example, to download the {{site.data.var.ce}} 2.4.3-p1 metapackage:
 
 ```bash
-composer require-commerce magento/product-community-edition=2.4.3-p1 --no-update
+composer require-commerce magento/product-community-edition 2.4.3-p1 --no-update
 ```
 
 ## Update metadata
