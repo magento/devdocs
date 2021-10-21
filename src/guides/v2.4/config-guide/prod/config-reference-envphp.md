@@ -261,7 +261,7 @@ Learn more about session in [x-frame-options][x-frame-options].
 
 ## system
 
-Using this node, Magento locks the configuration values in `env.php` and then disables the field for editing in Admin.
+Using this node, Magento locks the configuration values in `env.php` and then disables the field in the admin.
 
 ```conf
 'system' => [
