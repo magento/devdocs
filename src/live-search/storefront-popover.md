@@ -36,6 +36,14 @@ The popover always displays the product `name` and `price`, and the selection of
     background-color: magenta;
 }
 ```
+### Container visibility
+
+The parent component of the `.livesearch.popover-container` is `.search-autocomplete`.  The `.active` class indicates the visibility of the container. The `.active` class is conditionally added when the popover is open.
+
+```css
+.search-autocomplete.active   /* visible */
+.search-autocomplete          /* not visible */
+```
 
 For more information about styling storefront elements, refer to [Cascading style sheets (CSS)]({{ page.baseurl }}/guides/v2.4/frontend-dev-guide/css-topics/css-overview.html) in the [Frontend Developers Guide]({{ page.baseurl }}/guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html).
 
