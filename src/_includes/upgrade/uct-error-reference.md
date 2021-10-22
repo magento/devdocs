@@ -100,10 +100,10 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5012 | Template @vars comment block is missing a variable used in the template | TODO |
 | 5013 | Avoid using self-closing tag with non-void html element | TODO |
 | 5014 | The "active" attribute is obsolete. The list of active modules is defined in deployment configuration | TODO |
-| 5015 | The <param> node is obsolete | Instead, use the <argument name="..." xsi:type="..."> |
-| 5015 | The <instance> node is obsolete | Instead, use the <argument name="..." xsi:type="object"> |
-| 5015 | The <array> node is obsolete | Instead, use the <argument name="..." xsi:type="array"> |
-| 5015 | The <item key="..."> node is obsolete | Instead, use the <item name="..." xsi:type="..."> |
+| 5015 | The <param> node is obsolete | Use <argument name="..." xsi:type="..."> instead |
+| 5015 | The <instance> node is obsolete | Use <argument name="..." xsi:type="object"> instead |
+| 5015 | The <array> node is obsolete | Use <argument name="..." xsi:type="array"> instead |
+| 5015 | The <item key="..."> node is obsolete | Use <item name="..." xsi:type="..."> instead |
 | 5015 | The <value> node is obsolete | Instead, provide the actual value as a text literal. |
 | 5016 | Obsolete node: <supported_blocks> | To be replaced with <supported_containers> |
 | 5016 | Obsolete node: <block_name> | To be replaced with <container_name> |
