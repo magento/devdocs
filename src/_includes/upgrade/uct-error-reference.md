@@ -122,7 +122,14 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5021 | Access to protected and private members of Block class is obsolete in phtml templates | Use only public members |
 | 5021 | Access to members and methods of Block class through $this is obsolete in phtml templates | Use only $block instead of $this |
 | 5021 | Please do not use "text/javascript" type attribute | Use only public members |
-| 5022 | Contains obsolete method '_getReadConnection', '_getWriteConnection', '_getReadAdapter', '_getWriteAdapter', 'getReadConnection', 'getWriteConnection', 'getReadAdapter', 'getWriteAdapter' | Please use getConnection method instead. |
+| 5022 | Contains obsolete method '_getReadConnection' | Please use getConnection method instead. |
+| 5022 | Contains obsolete method '_getWriteConnection' | Please use getConnection method instead. |
+| 5022 | Contains obsolete method '_getReadAdapter' | Please use getConnection method instead. |
+| 5022 | Contains obsolete method '_getWriteAdapter' | Please use getConnection method instead. |
+| 5022 | Contains obsolete method 'getReadConnection' | Please use getConnection method instead. |
+| 5022 | Contains obsolete method 'getWriteConnection' | Please use getConnection method instead. |
+| 5022 | Contains obsolete method 'getReadAdapter' | Please use getConnection method instead. |
+| 5022 | Contains obsolete method 'getWriteAdapter' | Please use getConnection method instead. |
 | 5023 | loadLayout method is deprecated | Please use \Magento\Framework\View\Layout\Builder::build instead. |
 | 5023 | renderLayout method is deprecated | Please use \Magento\Framework\Controller\ResultInterface::renderResult instead. |
 | 5023 | _redirect method is deprecated | Please use \Magento\Backend\Model\View\Result\Redirect::render instead. |
