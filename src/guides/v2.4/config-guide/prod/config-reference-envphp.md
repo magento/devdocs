@@ -26,8 +26,8 @@ The `env.php` file contains the following sections:
 | `queue`                       | [Message queues][message-queues] settings                       |
 | `resource`                    | Mapping of resource name to a connection                        |
 | `session`                     | Session storage data                                            |
+| `system`                      | Disables the field for editing in the admin                     |
 | `x-frame-options`             | Setting for [x-frame-options][x-frame-options]                  |
-| `system`                      | Disables the field for editing in Admin                         |
 
 ## backend
 
