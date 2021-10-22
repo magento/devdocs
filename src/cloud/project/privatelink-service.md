@@ -59,7 +59,7 @@ Enabling PrivateLink can take up to _five_ business days. Providing incomplete o
    -  **Customer Cloud account number** (AWS or Azure)–Must be in the same region as the {{site.data.var.ece}} instance
    -  **Cloud region**–Provide the Cloud region where the account is hosted for verification purposes
    -  **Services and communication ports**–Adobe must open ports to enable service communication between VPCs, for example _Webserver, HTTP port 80_, _SFTP port 2222_
-   -  **Project ID**–Provide the {{site.data.var.ece}} Pro project ID. You can get the Project ID and other project information using the following [Magento Cloud CLI][] command:  `magento-cloud project:info`
+   -  **Project ID**–Provide the {{site.data.var.ece}} Pro project ID. You can get the Project ID and other project information using the following [Magento Cloud CLI][] command: `magento-cloud project:info`
    -  **Connection type**–Specify unidirectional or bidirectional for connection type
    -  **Endpoint service**–For bidirectional PrivateLink connections, provide the DNS URL for the VPC endpoint service that Adobe must connect to, for example: `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`
    -  **Endpoint service access granted**-Provide the Adobe account principal with access to this endpoint service: `arn:aws:iam::402592597372:root`
@@ -67,18 +67,23 @@ Enabling PrivateLink can take up to _five_ business days. Providing incomplete o
       {:.bs-callout-warning}
       If access to the endpoint service is not provided, then the bidirectional PrivateLink connection to the service in your VPC is **not** added, which delays the setup.
 
-Additional prerequisites for Azure enablement:
+Additional prerequisites for Azure Private Link enablement:
 
--  {:.fix}A list of cluster ID numbers intended for Azure Private Link set up
--  {:.fix}To connect to the cluster, you need:
-   -  A list of ports on the cluster to expose to the new external Private Endpoint
-   -  The Azure subscription ID for the Private Endpoint connection
--  {:.fix}To connect the cluster to an external service, you need:
-   -  The external Private Link service ID, which looks similar to the following:
+-  {:.fix}The cluster ID; using SSH, log in to the remote and use the command: `cat /etc/platform_cluster`
 
-      ```text
-      /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/privateLinkServices/{svcNameID}
-      ```
+-  {:.fix}For an external service to connect to your {{site.data.var.ee}} Pro cluster, you need:
+
+   -  A list of ports on your Pro cluster to expose to the new external Private Endpoint
+
+   -  A list of Azure subscription IDs for the Private Endpoint connections
+
+-  {:.fix}To connect your {{site.data.var.ee}} Pro cluster to an external service, you need:
+
+   -  A list of resource IDs for the target services. External Private Link service IDs look similar to the following:
+
+   ```text
+   /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/privateLinkServices/{svcNameID}
+   ```
 
 ### Enablement workflow
 
@@ -173,13 +178,13 @@ To test the connection to the VPC endpoint service:
 1. Verify the service is listening on VM.
 
    ```bash
-   netstat -na |grep <port>
+   netstat -na | grep <port>
    ```
 
 1. Check the packages flow.
 
    ```bash
-   tcpdump -i <ethernet interface> -tt -nn port <destination port> and host <source host>
+   tcpdump -i <ethernet-interface> -tt -nn port <destination-port> and host <source-host>
    ```
 
    Check the following internal settings to ensure that the configuration is valid:
@@ -187,7 +192,7 @@ To test the connection to the VPC endpoint service:
    -  Endpoint and endpoint services settings
    -  NLB settings
    -  The target groups in NLB and verify they are healthy
-   -  The netcat/curl endpoint URL from each VM ( listed above)
+   -  The netcat/curl endpoint URL from each VM (listed above)
 
    See the following articles for help with troubleshooting connection issues:
 
@@ -219,7 +224,7 @@ If these resources are not available in the customer VPC, you must sign into you
 
 See your Cloud platform documentation for PrivateLink set up instructions:
 
--  **AWS PrivateLink  documentation**
+-  **AWS PrivateLink documentation**
    -  [Create a Network Load Balancer][]
    -  [Create an endpoint service configuration][]
    -  [Create an interface endpoint][]
