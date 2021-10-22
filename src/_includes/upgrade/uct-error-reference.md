@@ -87,6 +87,206 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 1524 | Using non Adobe Commerce API property | Values of the properties that are not marked as `@api` may be changed. Consider relying on the API interface method instead. |
 | 1525 | Overriding non Adobe Commerce API property | Values of the properties that are not marked as `@api` may be changed. Consider relying on the API interface method instead. |
 | 1526 | Assignation of non Adobe Commerce API property | Values of the properties that are not marked as `@api` may be changed. Consider relying on the API interface method instead. |
+| 5001 | Call-time pass-by-reference calls are prohibited | TODO |
+| 5002 | The opening PHP tag must be the first content in the file | TODO |
+| 5003 | Function has been deprecated | TODO |
+| 5005 | PHP syntax error | TODO |
+| 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | TODO |
+| 5007 | The use of function is discouraged | TODO |
+| 5008 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | TODO |
+| 5009 | Template directives may not invoke methods. Only scalar array access is allowed | TODO |
+| 5010 | Template @vars comment block contains invalid JSON | TODO |
+| 5011 | Template @vars comment block contains invalid label | TODO |
+| 5012 | Template @vars comment block is missing a variable used in the template | TODO |
+| 5013 | Avoid using self-closing tag with non-void html element | TODO |
+| 5014 | The "active" attribute is obsolete. The list of active modules is defined in deployment configuration | TODO |
+| 5015 | The <param> node is obsolete | Instead, use the <argument name="..." xsi:type="..."> |
+| 5015 | The <instance> node is obsolete | Instead, use the <argument name="..." xsi:type="object"> |
+| 5015 | The <array> node is obsolete | Instead, use the <argument name="..." xsi:type="array"> |
+| 5015 | The <item key="..."> node is obsolete | Instead, use the <item name="..." xsi:type="..."> |
+| 5015 | The <value> node is obsolete | Instead, provide the actual value as a text literal. |
+| 5016 | Obsolete node: <supported_blocks> | To be replaced with <supported_containers> |
+| 5016 | Obsolete node: <block_name> | To be replaced with <container_name> |
+| 5017 | Factory name detected | TODO |
+| 5018 | Obsolete ACL structure detected in line | TODO |
+| 5019 | Obsolete menu structure detected in line | TODO |
+| 5020 | Obsolete system configuration structure detected in file | TODO |
+| 5021 | Please do not use "jquery/ui" library in templates | Use needed jquery ui widget instead |
+| 5021 | Please do not initialize JS component in php | initialize JS component it in template |
+| 5021 | Access to protected and private members of Block class is obsolete in phtml templates | Use only public members |
+| 5021 | Access to members and methods of Block class through $this is obsolete in phtml templates | Use only $block instead of $this |
+| 5021 | Please do not use "text/javascript" type attribute | Use only public members |
+| 5022 | Contains obsolete method '_getReadConnection', '_getWriteConnection', '_getReadAdapter', '_getWriteAdapter', 'getReadConnection', 'getWriteConnection', 'getReadAdapter', 'getWriteAdapter' | Please use getConnection method instead. |
+| 5023 | loadLayout method is deprecated | Please use \Magento\Framework\View\Layout\Builder::build instead. |
+| 5023 | renderLayout method is deprecated | Please use \Magento\Framework\Controller\ResultInterface::renderResult instead. |
+| 5023 | _redirect method is deprecated | Please use \Magento\Backend\Model\View\Result\Redirect::render instead. |
+| 5023 | _forward method is deprecated | Please use \Magento\Backend\Model\View\Result\Forward::forward instead. |
+| 5023 | _setActiveMenu method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::setActiveMenu instead. |
+| 5023 | _addBreadcrumb method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::addBreadcrumb instead. |
+| 5023 | _addContent method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::addContent instead. |
+| 5023 | _addLeft method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::addLeft instead. |
+| 5023 | _addJs method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::addJs instead |
+| 5023 | _moveBlockToContainer method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::moveBlockToContainer instead. |
+| 5024 | Incorrect format of PHP class reference | TODO |
+| 5025 | Incorrect format of module reference | TODO |
+| 5026 | Class 'Zend_Db_Select' is restricted | Suggested replacement: \Magento\Framework\DB\Select |
+| 5026 | Class 'Zend_Db_Adapter_Pdo_Mysql' is restricted | Suggested replacement: \Magento\Framework\DB\Adapter\Pdo\Mysql |
+| 5026 | Class 'Magento\Framework\Serialize\Serializer\Serialize' is restricted | Suggested replacement: Magento\Framework\Serialize\SerializerInterface |
+| 5026 | Class 'ArrayObject' is restricted | Suggested replacement: Custom class, extended from ArrayObject with overwritten serialize/unserialize methods |
+| 5026 | Class 'Magento\Framework\View\Element\UiComponent\ArrayObjectFactory' is restricted | Suggested replacement: Factory that creates custom class, extended from ArrayObject with overwritten serialize/unserialize methods |
+| 5027 | Blocks \Magento\Theme\Block\Html\Head\{Css,Link,Script} are allowed within the "head" block only | Verify integrity of the nodes nesting |
+| 5028 | The block being referenced is removed | TODO |
+| 5028 | output="toHtml" is obsolete | Use output="1" |
+| 5029 | The class \Magento\Framework\View\Element\Text\ListText' is not supposed to be used in layout anymore | TODO |
+| 5030 | Call of method "xx" via layout instruction <action> is not allowed | TODO |
+| 5031 | 'helper' attribute contains '/' | TODO |
+| 5032 | 'helper' attribute does not contain '::' | TODO |
+| 5033 | Install scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file |
+| 5033 | InstallSchema scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file |
+| 5033 | InstallData scripts are obsolete | Please use data patches approach in module\'s Setup/Patch/Data dir |
+| 5033 | Install scripts are obsolete | Please create class InstallData in module\'s Setup folder |
+| 5033 | Upgrade scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file |
+| 5033 | UpgradeSchema scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file |
+| 5033 | UpgradeData scripts are obsolete | Please use data patches approach in module\'s Setup/Patch/Data dir |
+| 5033 | Upgrade scripts are obsolete | Please use data patches approach in module\'s Setup/Patch/Data dir |
+| 5033 | Recurring scripts are obsolete | Please create class Recurring in module\'s Setup folder |
+| 5033 | 'data' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
+| 5033 | 'sql' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
+| 5034 | Nodes identified by XPath 'Nodes identified by XPath '/config/global/fieldsets' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config/global/cache/betatypes' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config/admin/fieldsets' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config/general/locale' are obsolete | This configuration moved to Di configuration of \Magento\Framework\Locale\ConfigInterface |
+| 5034 | Nodes identified by XPath '/config/global/can_use_base_url' are obsolete | This configuration moved to Di configuration of \Magento\Backend\App\Action\Context class |
+| 5034 | Nodes identified by XPath '/config/global/locale/allow/codes' are obsolete | This configuration moved to Di configuration of \Magento\Framework\Locale\ConfigInterface |
+| 5034 | Nodes identified by XPath '/config/global/locale/allow/currencies' are obsolete | This configuration moved to Di configuration of \Magento\Framework\Locale\ConfigInterface |
+| 5034 | Nodes identified by XPath '/config/global/mime/types' are obsolete | This configuration moved to Di configuration for \Magento\Downloadable\Helper\File class |
+| 5034 | Nodes identified by XPath '/config/global/models/*/deprecatedNode' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config/global/models/*/entities/*/table' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config/global/models/*/class' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config/global/helpers/*/class' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config/global/blocks/*/class' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config/global/models/*/resourceModel' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config/global/page/layouts' are obsolete | Moved to page_layouts.xml |
+| 5034 | Nodes identified by XPath '/config/global/cms/layouts' are obsolete | This was never used and is no longer supported |
+| 5034 | Nodes identified by XPath '/config/global/payment/cc/types/*/validator' are obsolete | This configuration was moved to DI configuration of \Magento\Centinel\Model\StateFactory |
+| 5034 | Nodes identified by XPath '/config/global/payment' are obsolete | Move them to payment.xml. |
+| 5034 | Nodes identified by XPath '/config/adminhtml/menu' are obsolete | Move them to adminhtml.xml. |
+| 5034 | Nodes identified by XPath '/config/adminhtml/acl' are obsolete | Move them to adminhtml.xml. |
+| 5034 | Nodes identified by XPath '/config/adminhtml/global_search' are obsolete | This configuration moved to Di configuration of \Magento\Backend\Controller\Index |
+| 5034 | Nodes identified by XPath '/config/*[self::global|self::adminhtml|self::frontend]/di' are obsolete | This configuration moved to di.xml file |
+| 5034 | Nodes identified by XPath '/config/*[self::global|self::adminhtml|self::frontend]/events' are obsolete | This configuration moved to events.xml file |
+| 5034 | Nodes identified by XPath '/config/*[self::global|self::adminhtml|self::frontend]/routers' are obsolete | outers list can be set through Di configuration of \Magento\Framework\App\RouterList model |
+| 5034 | Nodes identified by XPath '/config/global/importexport' are obsolete | This configuration moved to import.xml and export.xml files |
+| 5034 | Nodes identified by XPath '/config/global/catalog/product/type' are obsolete | This configuration moved to product_types.xml file |
+| 5034 | Nodes identified by XPath '/config/global/catalog/product/options' are obsolete | This configuration moved to product_options.xml file |
+| 5034 | Nodes identified by XPath '/config/global/catalog/product/media/image_types' are obsolete | This configuration moved to Di configuration of \Magento\Backend\Block\Catalog\Product\Frontend\Product\Watermark |
+| 5034 | Nodes identified by XPath '/config/global/eav_attributes' are obsolete | This configuration moved to eav_attributes.xml file |
+| 5034 | Nodes identified by XPath '/config/global/index' are obsolete | This configuration moved to indexers.xml file |
+| 5034 | Nodes identified by XPath '/config/global/catalogrule' are obsolete | This configuration moved to Di configuration of \Magento\CatalogRule\Model\Rule |
+| 5034 | Nodes identified by XPath '/config/global/salesrule' are obsolete| This configuration moved to Di configuration of \Magento\SalesRule\Helper\Coupon |
+| 5034 | Nodes identified by XPath '/config/global/session' are obsolete | This configuration moved to Di configuration of \Magento\Framework\Session\Validator |
+| 5034 | Nodes identified by XPath '/config/global/ignore_user_agents' are obsolete | This configuration moved to Di configuration of \Magento\Log\Model\Visitor |
+| 5034 | Nodes identified by XPath '/config/global/request' are obsolete | This configuration moved to Di configuration of \Magento\Framework\App\RequestInterface |
+| 5034 | Nodes identified by XPath '/config/global/secure_url' are obsolete | This configuration moved to Di configuration of \Magento\Framework\Url\SecurityInfo |
+| 5034 | Nodes identified by XPath '/config/global/dev' are obsolete | This configuration moved to Di configuration of \Magento\Framework\App\Action\Context |
+| 5034 | Nodes identified by XPath '/config/global/webapi' are obsolete | This configuration moved to Di configuration of \Magento\Webapi\Controller\Request\Rest\Interpreter\Factory' and \Magento\Webapi\Controller\Response\Rest\Renderer\Factory |
+| 5034 | Nodes identified by XPath '/config/global/cms' are obsolete | This configuration moved to Di configuration of \Magento\Cms\Model\Wysiwyg\Images\Storage' .' and \Magento\Cms\Model\Wysiwyg\Config |
+| 5034 | Nodes identified by XPath '/config/global/widget' are obsolete | This configuration moved to Di configuration of \Magento\Cms\Model\Template\FilterProvider |
+| 5034 | Nodes identified by XPath '/config/global/catalog/product/flat/max_index_count' are obsolete | This configuration moved to Di configuration of '.'\Magento\Catalog\Model\ResourceModel\Product\Flat\Indexer |
+| 5034 | Nodes identified by XPath '/config/global/catalog/product/flat/attribute_groups' are obsolete | This configuration moved to Di configuration of '.'\Magento\Catalog\Model\ResourceModel\Product\Flat\Indexer |
+| 5034 | Nodes identified by XPath '/config/global/catalog/product/flat/add_filterable_attributes' are obsolete | This configuration moved to Di configuration of \Magento\Catalog\Helper\Product\Flat\Indexer |
+| 5034 | Nodes identified by XPath '/config/global/catalog/product/flat/add_child_data' are obsolete | This configuration moved to Di configuration of \Magento\Catalog\Helper\Product\Flat\Indexer |
+| 5034 | Nodes identified by XPath '/config/global/catalog/content/template_filter' are obsolete |This configuration moved to Di configuration of \Magento\Catalog\Helper\Data |
+| 5034 | Nodes identified by XPath '/config/frontend/catalog/per_page_values/list' are obsolete | This configuration moved to Di configuration of \Magento\Catalog\Model\Config\Source\ListPerPage |
+| 5034 | Nodes identified by XPath '/config/frontend/catalog/per_page_values/grid' are obsolete | This configuration moved to Di configuration of \Magento\Catalog\Model\Config\Source\GridPerPage |
+| 5034 | Nodes identified by XPath '/config/global/catalog/product/design' are obsolete | This configuration moved to Di configuration of' .' \Magento\Catalog\Model\Entity\Product\Attribute\Design\Option\Container |
+| 5034 | Nodes identified by XPath '/config/global/catalog/product/attributes' are obsolete | This configuration moved catalog_attributes.xml |
+| 5034 | Nodes identified by XPath '/config/global/eav_frontendclasses' are obsolete | This configuration was removed. ' .'Please pluginize \Magento\Eav\Helper\Data::getFrontendClasses to extend frontend classes list |
+| 5034 | Nodes identified by XPath '/config/global/resources' are obsolete | This configuration moved to Di configuration of \Magento\Framework\App\ResourceConnection |
+| 5034 | Nodes identified by XPath '/config/global/resource' are obsolete | This configuration moved to Di configuration of \Magento\Framework\App\ResourceConnection |
+| 5034 | Nodes identified by XPath '/config/*/events/core_block_abstract_to_html_after' are obsolete | Event has been replaced with "core_layout_render_element" |
+| 5034 | Nodes identified by XPath '/config/*/events/catalog_controller_product_delete' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config//observers/*/args' are obsolete | This was an undocumented and unused feature in event subscribers |
+| 5034 | Nodes identified by XPath '/config/default/design/theme' are obsolete | Relocated to /config/<area>/design/theme |
+| 5034 | Nodes identified by XPath '/config/global/theme' are obsolete | Configuration moved to DI file settings |
+| 5034 | Nodes identified by XPath '/config/default/web/*/base_js_url' are obsolete |xxx |
+| 5034 | Nodes identified by XPath '/config/default/web/*/base_skin_url' are obsolete | /config/default/web/*/base_static_url |
+| 5034 | Nodes identified by XPath '/config/default/web/*/base_cache_url' are obsolete | /config/default/web/*/base_static_url |
+| 5034 | Nodes identified by XPath '/config/global/cache/types/*/tags' are obsolete | use /config/global/cache/types/*/class node instead |
+| 5034 | Nodes identified by XPath '/config/global/disable_local_modules' are obsolete | xxx |
+| 5034 | Nodes identified by XPath '/config/global/newsletter/tempate_filter' are obsolete | Use DI configs to setup model for template processing |
+| 5034 | Nodes identified by XPath '/config/*/layout' are obsolete | Use convention for layout files placement instead of configuration |
+| 5034 | Nodes identified by XPath '/config/frontend/product/collection/attributes' are obsolete | Use /config/group[@name="catalog_product"] of catalog_attributes.xml |
+| 5034 | Nodes identified by XPath '/config/frontend/category/collection/attributes' are obsolete | Use /config/group[@name="catalog_category"] of catalog_attributes.xml |
+| 5034 | Nodes identified by XPath '/config/global/sales/quote/item/product_attributes' are obsolete | Use /config/group[@name="quote_item"] of catalog_attributes.xml |
+| 5034 | Nodes identified by XPath '/config/global/wishlist/item/product_attributes' are obsolete | Use /config/group[@name="wishlist_item"] of catalog_attributes.xml |
+| 5034 | Nodes identified by XPath '/config/global/catalog/product/flat/attribute_nodes' are obsolete | Use /config/global/catalog/product/flat/attribute_groups |
+| 5034 | Nodes identified by XPath '/config/global/customer/address/formats' are obsolete | Use /config/format of address_formats.xml |
+| 5034 | Nodes identified by XPath '/config/global/pdf' are obsolete | Use configuration in pdf.xml |
+| 5034 | Nodes identified by XPath '/config/install' are obsolete | Configurations moved to DI file settings |
+| 5034 | Nodes identified by XPath '/config/install/design' are obsolete | Configurations moved to DI file settings |
+| 5034 | Nodes identified by XPath '/config/adminhtml/design' are obsolete | Configurations moved to DI file settings |
+| 5034 | Nodes identified by XPath '/config/frontend/design' are obsolete | Configurations moved to DI file settings |
+| 5034 | Nodes identified by XPath '/config/crontab' are obsolete | All cron configurations moved to crontab.xml |
+| 5034 | Nodes identified by XPath '/config/global/areas' are obsolete | Configurations moved to DI file settings |
+| 5034 | Nodes identified by XPath '/config/vde' are obsolete | Was moved to di |
+| 5034 | Nodes identified by XPath '/config/global/ignoredModules' are obsolete | Was replaced using di |
+| 5034 | Nodes identified by XPath '/config/global/helpers' are obsolete | Was replaced using di |
+| 5034 | Nodes identified by XPath '/config/global/external_cache' are obsolete | Was replaced using di |
+| 5034 | Nodes identified by XPath '/config/global/currency/import/services' are obsolete | Configurations moved to DI file settings |
+| 5034 | Nodes identified by XPath '/config/global/template' are obsolete | Use /config/template of email_templates.xml |
+| 5034 | Nodes identified by XPath '/config/default/general/file/sitemap_generate_valid_paths' are obsolete | /config/default/sitemap/file/valid_paths |
+| 5034 | Nodes identified by XPath '/config/dev/css/minify_adapter' are obsolete | Was replaced using di |
+| 5034 | Nodes identified by XPath '/config/dev/js/minify_adapter' are obsolete | Was replaced using di |
+| 5034 | Nodes identified by XPath '/config/global/full_page_cache' are obsolete | /config/global/cache_advanced/full_page |
+| 5034 | Nodes identified by XPath '/config/adminhtml/enterprise/admingws' are obsolete | This configuration moved to admingws.xml file |
+| 5034 | Nodes identified by XPath '/config/adminhtml/enterprise/websiterestriction' are obsolete | This configuration moved to websiterestrictions.xml file |
+| 5034 | Nodes identified by XPath '/config/global/enterprise_cms' are obsolete | This configuration moved to menu_hierarchy.xml file |
+| 5034 | Nodes identified by XPath '/config/global/enterprise/banner' are obsolete | This configuration moved to Di configuration of \Magento\Banner\Model\Config |
+| 5034 | Nodes identified by XPath '/config/global/enterprise/giftcardaccount' are obsolete | This configuration moved to Di configuration of \Magento\GiftCardAccountModelPool |
+| 5034 | Nodes identified by XPath '/config/global/skip_process_modules_updates' are obsolete | Was replaced using di |
+| 5034 | Nodes identified by XPath '/config/system/page_cache' are obsolete | Module is eliminated. Use PageCache module instead |
+| 5034 | Nodes identified by XPath '/config/system/cms/content/versioning' are obsolete | Functionality is eliminated |
+| 5035 | Directive {{htmlescape}} is obsolete | Use {{var}} instead. |
+| 5035 | Directive {{escapehtml}} is obsolete | Use {{var}} instead. |
+| 5036 | 3rd parameter is not needed anymore for getChildHtml() | TODO |
+| 5036 | 4th parameter is not needed anymore for getChildHtml() | TODO |
+| 5037 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | TODO |
+| 5038 | Legacy table names with slash must be fixed to direct table names | TODO |
+| 5039 | The use of the deprecated method 'getResource()' to (save|load|delete) the data detected. | TODO |
+| 5040 | Application modules should not use classes from test modules | TODO |
+| 5041 | Cannot use "int" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "float" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "bool" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "string" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "true" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "false" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "null" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "void" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "iterable" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "resource" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "object" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "mixed" in namespace as it is reserved since PHP 7 | TODO |
+| 5041 | Cannot use "numeric" in namespace as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "int" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "float" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "bool" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "string" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "true" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "false" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "null" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "void" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "iterable" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "resource" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "object" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "mixed" as class name as it is reserved since PHP 7 | TODO |
+| 5042 | Cannot use "numeric" as class name as it is reserved since PHP 7 | TODO |
+| 5043 | Class needs to be requested in constructor, otherwise compiler will not be able to find and generate these classes | TODO |
+| 5044 | Use of var class variables is discouraged | TODO |
+| 5045 | Possible raw SQL statement %s detected | TODO |
+| 5046 | The use of helpers in templates is discouraged. Use ViewModel instead | TODO |
+| 5047 | The use of $this in templates is deprecated. Use $block instead | TODO |
+| 5048 | Constants are not allowed as the first argument of translation function, use string literal instead | TODO |
 
 ## Warnings
 
