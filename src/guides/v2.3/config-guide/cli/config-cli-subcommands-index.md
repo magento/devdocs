@@ -125,7 +125,9 @@ Reindexing all indexers can take a long time for stores with large numbers of pr
 
 ### Reindex in parallel mode
 
-Indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time. It parallelizes by the indexer’s dimension and executes across multiple threads.
+As of Magento 2.2.6 or later, Indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time. It parallelizes by the indexer’s dimension and executes across multiple threads.
+
+Index parallelization can affect only the indexers which are scoped, which means Magento split the data into multiple tables by indexer as its scope instead of keeping all data in one table.
 
 These indexes can be run in parallel mode:
 
@@ -135,7 +137,7 @@ These indexes can be run in parallel mode:
 
 By default, Catalog Price does not use a partitioning into dimension.
 
-If you want to use parallelization you need to set one of available modes of dimensions for product price indexer:
+If you want to use parallelization you need to set one of the available modes of dimensions for the product price indexer:
 
 -  `none` (default)
 -  `website`
@@ -148,7 +150,7 @@ For example, to set the mode by website run:
 bin/magento indexer:set-dimensions-mode catalog_product_price website
 ```
 
-To check the current mode you can use next command:
+To check the current mode you can use the command:
 
 ```bash
 bin/magento indexer:show-dimensions-mode
