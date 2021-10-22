@@ -574,10 +574,6 @@ pages:
           url: /cloud/trouble/trouble_comp-deploy-fail.html
           versionless: true
 
-        - label: Resolve issues with HTML minification
-          url: /cloud/trouble/trouble-error-html-minification.html
-          versionless: true
-
         - label: Add site map and search engine robots
           url: /cloud/trouble/robots-sitemap.html
           versionless: true
