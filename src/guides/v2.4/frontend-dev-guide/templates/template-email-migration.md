@@ -55,13 +55,20 @@ This `order_data` object is passed to the view page as a `DataObject` and is ref
 ```php
 public function send(Invoice $invoice, $forceSyncMode = false)
 {
+    $this->identityContainer->setStore($invoice->getStore());
     $invoice->setSendEmail($this->identityContainer->isEnabled());
     if (!$this->globalConfig->getValue('sales_email/general/async_sending') || $forceSyncMode) {
         $order = $invoice->getOrder();
-        $this->identityContainer->setStore($order->getStore());
+        if ($this->checkIfPartialInvoice($order, $invoice)) {
+            $order->setBaseSubtotal((float) $invoice->getBaseSubtotal());
+            $order->setBaseTaxAmount((float) $invoice->getBaseTaxAmount());
+            $order->setBaseShippingAmount((float) $invoice->getBaseShippingAmount());
+        }
         $transport = [
             'order' => $order,
+            'order_id' => $order->getId(),
             'invoice' => $invoice,
+            'invoice_id' => $invoice->getId(),
             'comment' => $invoice->getCustomerNoteNotify() ? $invoice->getCustomerNote() : '',
             'billing' => $order->getBillingAddress(),
             'payment_html' => $this->getPaymentHtml($order),
