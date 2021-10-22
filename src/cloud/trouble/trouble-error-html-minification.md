@@ -22,7 +22,7 @@ As a work-around, complete the following:
 1. Copy the file `app/etc/config.local.php` to your local.
 1. Edit and remove the minify section from `config.local.php`:
 
-   ```php
+   ```php?start_inline=1
    'template' =>
          array (
            'allow_symlink' => '0',

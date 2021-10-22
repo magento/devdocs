@@ -38,31 +38,59 @@ Patch releases are primarily focused on delivering security and quality enhancem
 
 ## 2.4.3 - 2.4.3-p1
 
+### {{ site.data.var.ce }}
+
 {% include backward-incompatible-changes/open-source/2.4.3-2.4.3-p1.md %}
+
+### {{ site.data.var.ee }}
 
 {% include backward-incompatible-changes/commerce/2.4.3-2.4.3-p1.md %}
 
-{% include backward-incompatible-changes/commerce/b2b-1.3.2-1.3.2-p1.md %}
+### {{ site.data.var.b2b }}
+
+{% include backward-incompatible-changes/commerce/2.4.3-2.4.3-p1.md %}
 
 ## 2.4.2 - 2.4.3
 
+### {{ site.data.var.ce }}
+
 {% include backward-incompatible-changes/open-source/2.4.2-2.4.3.md %}
+
+### {{ site.data.var.ee }}
 
 {% include backward-incompatible-changes/commerce/2.4.2-2.4.3.md %}
 
-{% include backward-incompatible-changes/b2b/1.3.1-1.3.2.md %}
+### {{ site.data.var.b2b }}
+
+{% include backward-incompatible-changes/b2b/2.4.2-2.4.3.md %}
 
 ## 2.4.1 - 2.4.2
 
+### {{ site.data.var.ce }}
+
 {% include backward-incompatible-changes/open-source/2.4.1-2.4.2.md %}
+
+### {{ site.data.var.ee }}
 
 {% include backward-incompatible-changes/commerce/2.4.1-2.4.2.md %}
 
+### {{ site.data.var.b2b }}
+
+{% include backward-incompatible-changes/b2b/2.4.1-2.4.2.md %}
+
 ## 2.4.0 - 2.4.1
+
+### {{ site.data.var.ce }}
 
 {% include backward-incompatible-changes/open-source/2.4.0-2.4.1.md %}
 
+### {{ site.data.var.ee }}
+
 {% include backward-incompatible-changes/commerce/2.4.0-2.4.1.md %}
+
+### {{ site.data.var.b2b }}
+
+{% include backward-incompatible-changes/b2b/2.4.0-2.4.1.md %}
 
 ## 2.3.0 - 2.4.0
 
