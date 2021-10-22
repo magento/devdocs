@@ -61,7 +61,7 @@ GraphQL Schema critical issues are raised if the schema items are not present in
 | 3310 | Required directive argument added | Check if the directive is used in the customization codebase. Add the directive argument. |
 
 ## Errors
-### Custom code
+### Non API references
 
 Custom code errors are raised when custom code is using the Adobe Commerce entry points that are not considered/marked as `@api`. The preserved behavior of such entry points is not guaranteed. The customization should rely on `@api` entry points instead. The functionality that is based on non-API Adobe Commerce code should be tested after the upgrade.
 
@@ -87,6 +87,12 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 1524 | Using non Adobe Commerce API property | Values of the properties that are not marked as `@api` may be changed. Consider relying on the API interface method instead. |
 | 1525 | Overriding non Adobe Commerce API property | Values of the properties that are not marked as `@api` may be changed. Consider relying on the API interface method instead. |
 | 1526 | Assignation of non Adobe Commerce API property | Values of the properties that are not marked as `@api` may be changed. Consider relying on the API interface method instead. |
+
+### Compatibility issues
+
+{:.error-table}
+| Error code | Error description | Suggested action |
+| - | - | - |
 | 5001 | Call-time pass-by-reference calls are prohibited | TODO |
 | 5002 | The opening PHP tag must be the first content in the file | TODO |
 | 5003 | Function has been deprecated | TODO |
