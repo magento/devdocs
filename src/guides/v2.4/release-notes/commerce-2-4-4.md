@@ -141,6 +141,12 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  The cache cleaning algorithm that runs during re-indexing has been optimized. Bundle products are now displayed as expected when a category is cached during re-indexing. Previously, bundle products were not displayed for hours after product categories were cached during re-indexing.
 
+<!--- AC-715-->
+
+### Cache
+
+<!--- AC-328-->
+
 ### Cart and checkout
 
 <!--- MC-41494-->
@@ -170,6 +176,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-24379-->
 
 *  {{ site.data.var.ee }} now correctly applies the free shipping threshold to orders when table rates are enabled. [GitHub-21832](https://github.com/magento/magento2/issues/21832)
+
+<!--- AC-271-->
+
+<!--- AC-1089-->
 
 ### Catalog
 
@@ -241,7 +251,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-24204-->
 
-*  {{ site.data.var.ee }} now takes into account website scope for Admin locales during order creation. Previously, order details such as customer address attributes worked properly on one website only in a multiple-site deployment. [GitHub-23254](https://github.com/magento/magento2/issues/23254)
+*  {{ site.data.var.ee }} now considers website scope for Admin locales during order creation. Previously, order details such as customer address attributes worked properly on one website only in a multi-site deployment. [GitHub-23254](https://github.com/magento/magento2/issues/23254)
+
+### Customer segment
+
+<!--- MC-42241-->
 
 ### Email
 
@@ -274,6 +288,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-42091-->
 
 *  {{ site.data.var.ee }} now returns a 500 response code when an exception occurs in the bootstrap file. Previously, {{ site.data.var.ee }} returned a 200 OK status code. [GitHub-2216](https://github.com/magento/magento2/issues/22196)
+
+<!--- AC-1318-->
+
+<!--- AC-719-->
 
 ### General fixes
 
@@ -361,6 +379,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42652-->
 
+<!--- AC-856-->
+
 ### Image
 
 <!--- MC-42080-->
@@ -368,6 +388,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 *  Watermark images with transparent backgrounds no longer have a white background on the transparent product image that it overlays. Previously, when both the watermark image and product image had a transparent background, the watermark was displayed with a white background.
 
 <!--- MC-42892-->
+
+<!--- AC-1240-->
 
 ### Import/export
 
@@ -378,6 +400,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-42330-->
 
 *  {{ site.data.var.ee }} no longer creates duplicate images in remote storage when the same CSV file is imported more than once.
+
+<!--- AC-1045-->
 
 ### Index
 
@@ -390,6 +414,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-42360-->
 
 *  {{ site.data.var.ee }} no longer creates log entries for failed API calls executing bulk actions in **System** > **Bulk Actions**. Previously, permanent entries for failed API calls were added to the bulk action log.
+
+### MFTF
+
+<!--- AC-1397-->
 
 ### Order
 
@@ -439,6 +467,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} no longer converts all dynamic blocks to one language during upgrade.
 
+<!--- MC-42268-->
+
 ### Payment methods
 
 <!--- AC-493-->
@@ -463,6 +493,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1170-->
 
+<!--- AC-932-->
+
 ### Pricing
 
 <!--- MC-42243-->
@@ -474,6 +506,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-41917-->
 
 *  The new `product_alert` consumer improves the sending of customer alerts by creating queue messages, running the consumer, and improving execution time. Previously, {{ site.data.var.ee }} threw an out-of-memory exception when sending more than 100,000 product alerts. {{ site.data.var.ee }} also took more than 20 hours to send all alerts.
+
+### Product video
+
+<!--- MC-42105-->
 
 ### Return Merchandise Authorizations (RMA)
 
@@ -579,6 +615,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Notification messages are now displayed correctly when {{ site.data.var.ee }} has a subpath configured in its base URL.
 
+### UCT
+
+<!--- AC-686-->
+
 ### UI
 
 <!--- AC-1056-->
@@ -622,6 +662,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-42399-->
 
 <!--- MC-42443-->
+
+<!--- AC-1050-->
 
 ### Wish list
 
