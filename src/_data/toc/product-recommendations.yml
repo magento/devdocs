@@ -12,7 +12,7 @@ pages:
   url: /recommendations/install-configure.html
   versionless: true
 
-- label: Recommendation Events
+- label: Recommendation-Specific Events
   url: /recommendations/events.html
   versionless: true
 

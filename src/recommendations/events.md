@@ -1,10 +1,10 @@
 ---
 group: product-recommendations
-title: Recommendation-specific Events
+title: Recommendation-Specific Events
 ee_only: True
 ---
 
-When you install and deploy an Adobe Commerce services product, such as [Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html) or [Live Search]({{ page.baseurl }}/live-search/install.md), the modules add user events that enable behavioral data collection. Refer to the [Storefront Events SDK]({{ site.baseurl }}/shared-services/storefront-events-sdk.html) to learn how to handle events on an [{{site.data.var.ee}}](https://business.adobe.com/products/magento/magento-commerce.html) storefront. The Storefront Events SDK lists all events deployed. However, there are events specific to Product Recommendations as listed in the following table:
+When you install and deploy an Adobe Commerce services product, such as [Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html) or [Live Search]({{ page.baseurl }}/live-search/install.html), the modules add user events that enable behavioral data collection. Refer to the [Storefront Events SDK]({{ site.baseurl }}/shared-services/storefront-events-sdk.html) to learn how to handle events on an [{{site.data.var.ee}}](https://business.adobe.com/products/magento/magento-commerce.html) storefront. The Storefront Events SDK lists all events deployed. However, there are events specific to Product Recommendations as listed in the following table:
 
 Event | Description | Used for metrics?
 --- | --- | ---
