@@ -64,4 +64,4 @@ pages:
       url: https://support.magento.com/hc/en-us/articles/360033020451
 
     - label: Changelog
-      url: https://github.com/magento/data-migration-tool/blob/2.3/CHANGELOG.md
+      url: https://github.com/magento/data-migration-tool/blob/2.4/CHANGELOG.md
