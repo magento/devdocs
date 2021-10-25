@@ -54,20 +54,21 @@ Enabling PrivateLink can take up to _five_ business days. Providing incomplete o
 -  {:.fix}A Cloud account (AWS or Azure) in the same region as the {{site.data.var.ece}} instance.
 -  {:.fix}A VPC in the customer environment that hosts the services to connect via PrivateLink. See the AWS or Azure documentation for help with VPC setup or contact your network administrator.
 -  {:.fix}For bidirectional PrivateLink connections, you must create the endpoint service configuration for your application or service, and create an endpoint in your VPC environment before requesting PrivateLink enablement. See [Set up for bidirectional PrivateLink connections](#set-up-for-bidirectional-privatelink-connections).
--  {:.fix}Gather the following data required for PrivateLink enablement:
 
-   -  **Customer Cloud account number** (AWS or Azure)–Must be in the same region as the {{site.data.var.ece}} instance
-   -  **Cloud region**–Provide the Cloud region where the account is hosted for verification purposes
-   -  **Services and communication ports**–Adobe must open ports to enable service communication between VPCs, for example _Webserver, HTTP port 80_, _SFTP port 2222_
-   -  **Project ID**–Provide the {{site.data.var.ece}} Pro project ID. You can get the Project ID and other project information using the following [Magento Cloud CLI][] command: `magento-cloud project:info`
-   -  **Connection type**–Specify unidirectional or bidirectional for connection type
-   -  **Endpoint service**–For bidirectional PrivateLink connections, provide the DNS URL for the VPC endpoint service that Adobe must connect to, for example: `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`
-   -  **Endpoint service access granted**-Provide the Adobe account principal with access to this endpoint service: `arn:aws:iam::402592597372:root`
+Gather the following data required for PrivateLink enablement:
 
-      {:.bs-callout-warning}
-      If access to the endpoint service is not provided, then the bidirectional PrivateLink connection to the service in your VPC is **not** added, which delays the setup.
+-  {:.fix}**Customer Cloud account number** (AWS or Azure)—Must be in the same region as the {{site.data.var.ece}} instance
+-  {:.fix}**Cloud region**—Provide the Cloud region where the account is hosted for verification purposes
+-  {:.fix}**Services and communication ports**—Adobe must open ports to enable service communication between VPCs, for example _Webserver, HTTP port 80_, _SFTP port 2222_
+-  {:.fix}**Project ID**—Provide the {{site.data.var.ece}} Pro project ID. You can get the Project ID and other project information using the following [Magento Cloud CLI][] command: `magento-cloud project:info`
+-  {:.fix}**Connection type**—Specify unidirectional or bidirectional for connection type
+-  {:.fix}**Endpoint service**—For bidirectional PrivateLink connections, provide the DNS URL for the VPC endpoint service that Adobe must connect to, for example: `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`
+-  {:.fix}**Endpoint service access granted**—Provide the Adobe account principal with access to this endpoint service: `arn:aws:iam::402592597372:root`
 
-Additional prerequisites for Azure Private Link enablement:
+   {:.bs-callout-warning}
+   If access to the endpoint service is not provided, then the bidirectional PrivateLink connection to the service in your VPC is **not** added, which delays the setup.
+
+Additional prerequisites specific to Azure Private Link enablement:
 
 -  {:.fix}The cluster ID; using SSH, log in to the remote and use the command: `cat /etc/platform_cluster`
 
