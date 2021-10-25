@@ -63,14 +63,14 @@ Gather the following data required for PrivateLink enablement:
 -  {:.fix}**Project ID**—Provide the {{site.data.var.ece}} Pro project ID. You can get the Project ID and other project information using the following [Magento Cloud CLI][] command: `magento-cloud project:info`
 -  {:.fix}**Connection type**—Specify unidirectional or bidirectional for connection type
 -  {:.fix}**Endpoint service**—For bidirectional PrivateLink connections, provide the DNS URL for the VPC endpoint service that Adobe must connect to, for example: `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`
--  {:.fix}**Endpoint service access granted**—Provide the Adobe account principal with access to this endpoint service: `arn:aws:iam::402592597372:root`
+-  {:.fix}**Endpoint service access granted**—To connect to external service, allow the endpoint service access to the following AWS account principal: `arn:aws:iam::402592597372:root`
 
    {:.bs-callout-warning}
    If access to the endpoint service is not provided, then the bidirectional PrivateLink connection to the service in your VPC is **not** added, which delays the setup.
 
 Additional prerequisites specific to Azure Private Link enablement:
 
--  {:.fix}The cluster ID; using SSH, log in to the remote and use the command: `cat /etc/platform_cluster`
+-  {:.fix}Provide the cluster ID; using SSH, log in to the remote and use the command: `cat /etc/platform_cluster`
 
 -  {:.fix}For an external service to connect to your {{site.data.var.ee}} Pro cluster, you need:
 
