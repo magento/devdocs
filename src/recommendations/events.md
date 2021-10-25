@@ -1,6 +1,6 @@
 ---
 group: product-recommendations
-title: Recommendation-Specific Events
+title: Data Collection for Recommendations
 ee_only: True
 ---
 
