@@ -22,7 +22,7 @@ The release notes include:
 
 Release date: October 25, 2021
 
--  {:.fix}**Improve Developer mode workflow**—Previously, you needed to specify the mode in the build and deploy steps. Now, the `--mode` option in the `build` step determines the mode in the later `deploy` step. Setting the mode after the deployment is no longer required. See [Developer mode](({{ site.baseurl}}/cloud/docker/docker-mode-developer.html).<!-- ACMP-1086 -->
+-  {:.fix}**Improve Developer mode workflow**—Previously, you needed to specify the mode in the build and deploy steps. Now, the `--mode` option in the `build` step determines the mode in the later `deploy` step. Setting the mode after the deployment is no longer required. See [Developer mode]({{ site.baseurl }}/cloud/docker/docker-mode-developer.html).<!-- ACMP-1086 -->
 -  {:.fix}**Improvements for RO filesystem**—<!-- ACMP-1106 -->
    -  Fix issue starting a PHP container for mail configuration.
    -  Can use environment variables in INI files.
