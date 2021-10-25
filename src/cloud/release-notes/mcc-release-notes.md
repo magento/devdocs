@@ -20,7 +20,9 @@ The release notes include:
 
 ## v1.0.9
 
-Release date: October xx, 2021
+Release date: October 25, 2021
+
+-  {:.fix}**Update Monolog**—Updated the minimum version required for the `monolog` package to `^2.3`.<!-- ACMP-1263 -->
 
 ## v1.0.8
 

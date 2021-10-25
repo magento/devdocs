@@ -23,7 +23,12 @@ The release notes include:
 
 ## v2002.1.8
 
-Release date: October xx, 2021
+Release date: October 25, 2021
+
+-  {:.new}**Alternative dump location**—Added the `--dump-directory` option so that you can choose a target directory for a DB dump. Now `/app/var/dump-main` is the default target directory for a DB dump.<!-- MCLOUD-8063 -->
+-  {:.fix}**Update Monolog**—Updated the minimum version required for the `monolog` package to `^2.3`.<!-- ACMP-1263 -->
+-  {:.fix}**Update Symfony**—Updated the Symfony dependencies to be compatible with {{site.data.var.ee}} 2.4.4.<!-- ACMP-1533 -->
+-  {:.fix}**Feature/resolve autoload**—Fixed an issue when deploying to an integration environment and seeing the `CRITICAL: [9] Required configuration is missed in autoload section of composer.json file.` error.<!-- https://github.com/magento/ece-tools/pull/799 -->
 
 ## v2002.1.7
 

@@ -23,7 +23,11 @@ The `{{site.data.var.mcp-package}}` package uses the following version sequence:
 
 ## v1.0.13
 
-Release date: October xx, 2021
+Release date: October 25, 2021
+
+-  **Update Monolog**—Updated the minimum version required for the `monolog` package to `^2.3`.<!-- ACMP-1263 -->
+-  **Incompatible PHP Method**—Fixed incompatible PHP method for {{site.data.var.ee}} versions 2.4.3 and 2.3.7-p1.<!-- AC-384 -->
+-  **PHP error**—Fixed a `PHP error 'Undefined variable: errorMessage' ...` error that occurred while trying to apply a patch.<!-- ACP2E-138 -->
 
 ## v1.0.12
 
