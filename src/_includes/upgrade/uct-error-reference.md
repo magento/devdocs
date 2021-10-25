@@ -119,7 +119,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5019 | Obsolete menu structure detected in line | TODO |
 | 5020 | Obsolete system configuration structure detected in file | TODO |
 | 5021 | Please do not use "jquery/ui" library in templates | Use needed jquery ui widget instead |
-| 5021 | Please do not initialize JS component in php | initialize JS component it in template |
+| 5021 | Please do not initialize JS component in PHP | initialize JS component in template |
 | 5021 | Access to protected and private members of Block class is obsolete in phtml templates | Use only public members |
 | 5021 | Access to members and methods of Block class through $this is obsolete in phtml templates | Use only $block instead of $this |
 | 5021 | Please do not use "text/javascript" type attribute | Use only public members |
@@ -166,7 +166,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5033 | Recurring scripts are obsolete | Please create class Recurring in module\'s Setup folder |
 | 5033 | 'data' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
 | 5033 | 'sql' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
-| 5034 | Nodes identified by XPath 'Nodes identified by XPath '/config/global/fieldsets' are obsolete | TODO |
+| 5034 | Nodes identified by XPath '/config/global/fieldsets' are obsolete | TODO |
 | 5034 | Nodes identified by XPath '/config/global/cache/betatypes' are obsolete | TODO |
 | 5034 | Nodes identified by XPath '/config/admin/fieldsets' are obsolete | TODO |
 | 5034 | Nodes identified by XPath '/config/general/locale' are obsolete | This configuration has been moved to DI configuration of \Magento\Framework\Locale\ConfigInterface |
