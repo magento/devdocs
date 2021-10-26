@@ -160,7 +160,7 @@ To update an extension:
    git push origin <branch-names>
    ```
 
-If you encounter errors, see [extension deployment failure][].
+If you encounter errors, see [extension deployment failure][trouble].
 
 <!-- link definitions -->
 
