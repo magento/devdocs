@@ -4,7 +4,11 @@ title: Data Collection for Recommendations
 ee_only: True
 ---
 
-When you install and deploy an Adobe Commerce services product, such as [Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html) or [Live Search]({{ page.baseurl }}/live-search/install.html), the modules add user events that enable storefront behavioral data collection. Refer to the [Storefront Events SDK]({{ site.baseurl }}/shared-services/storefront-events-sdk.html) to learn how to handle events on an [{{site.data.var.ee}}](https://business.adobe.com/products/magento/magento-commerce.html) storefront. The Storefront Events SDK lists all events deployed. However, there are events specific to Product Recommendations as listed in the following table:
+When you install and configure an Adobe Commerce services product, such as [Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html) or [Live Search]({{ page.baseurl }}/live-search/install.html), the modules deploy user events to your storefront. These events collect behavioral data from your shoppers and are used to compute product recommendations. For example, the `view` event is used to compute the `Viewed this, viewed that` recommendation type and the `place-order` event is used to compute the `Bought this, bought that` recommendation type.
+
+If you are using the default Adobe Commerce storefront or [PWA](https://magento.github.io/pwa-studio/product-recs/), handling these events is done for you. If you are writing your own custom storefront, learn how you can [integrate Product Recommendations]({{ site.baseurl }}/recommendations/headless.html) into your storefront.
+
+The [Storefront Events Collector]({{ site.baseurl }}/shared-services/storefront-event-collector.html#quick-start) lists all the events deployed to your storefront. From that list, however, there is a subset of events specific to Product Recommendations. These events collect data when shoppers interact with recommendation units on the storefront and power the metrics used to help you analyze how well your recommendations are performing.
 
 Event | Description | [Used for metrics?](https://docs.magento.com/user-guide/marketing/recommendation-metrics.html)
 --- | --- | ---
@@ -14,9 +18,13 @@ Event | Description | [Used for metrics?](https://docs.magento.com/user-guide/ma
 `view` | The recommendation unit becomes viewable on the page, such as by scrolling into view. | Yes
 
 {:.bs-callout-info}
-The following events are not specific to Product Recommendations, but are required to return results: `view`, `add-to-cart`, and `place-order`.
+The following events are not specific to Product Recommendations, but are required to return results:
 
-If shoppers use ad blockers or enable privacy settings that prevent the `magento/product-recommendations` module from capturing events, the metrics reflected in the [Product Recommendations dashboard](https://docs.magento.com/user-guide/marketing/product-recommendations.html#dashboard) will not be accurate. Most likely, the engagement and revenue numbers will be underrepresented.
+-  `view`
+-  `add-to-cart`
+-  `place-order`
+
+Many shoppers use ad blockers or enable privacy settings. These configurations prevent the `magento/product-recommendations` module from capturing events, which causes the metrics in the [Product Recommendations dashboard](https://docs.magento.com/user-guide/marketing/product-recommendations.html#dashboard) to underreport engagement and revenue numbers.
 
 {:.bs-callout-info}
-If [Cookie Restriction Mode](https://docs.magento.com/user-guide/stores/compliance-cookie-restriction-mode.html) is enabled, Magento does not collect behavioral data until the shopper consents to using cookies. If Cookie Restriction Mode is disabled, Magento collects behavioral data by default.
+If [Cookie Restriction Mode](https://docs.magento.com/user-guide/stores/compliance-cookie-restriction-mode.html) is enabled, Adobe Commerce does not collect behavioral data until the shopper consents to using cookies. If Cookie Restriction Mode is disabled, Adobe Commerce collects behavioral data by default.
