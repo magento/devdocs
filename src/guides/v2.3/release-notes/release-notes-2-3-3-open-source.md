@@ -1311,7 +1311,7 @@ This release includes the following changes to integrations for core payment met
 
 <!--- MC-16887-->
 
-*  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages We recommend that module developers update custom storefront code to remove the `jquery/ui` dependency. Otherwise, a performance degradation warning message might be displayed in the console.
+*  The `jQuery/ui` library has been refactored into separate widgets so that core modules load only the widgets they need. This update improves the performance of core storefront tasks including the loading of category, configurable product, home, and checkout pages. We recommend that module developers update custom storefront code to remove the `jquery/ui` dependency. Otherwise, a performance degradation warning message might be displayed in the console.
 
 <!--- MC-17922-->
 

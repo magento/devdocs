@@ -1215,7 +1215,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-20322-->
 
-*  Statistics collection for the Reports module is now disabled by default. A new configuration setting (**System Configuration** > **General** > **Reports** > **General Options**)  allows merchants to completely or partially disable Magento Reports. (Statistics collection for the Reports module is disabled by default We recommend disabling Reports functionality for performance reasons when this capability is not required.)
+*  Statistics collection for the Reports module is now disabled by default. A new configuration setting (**System Configuration** > **General** > **Reports** > **General Options**)  allows merchants to completely or partially disable Magento Reports. (Statistics collection for the Reports module is disabled by default. We recommend disabling Reports functionality for performance reasons when this capability is not required.)
 
 <!--- MC-19791-->
 
