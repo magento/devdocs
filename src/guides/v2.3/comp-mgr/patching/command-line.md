@@ -27,4 +27,4 @@ To apply patches from the command line:
 
 <!-- Link Definitions -->
 
-[Admin user]:{{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first
+[Magento admin user]:{{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first
