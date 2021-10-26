@@ -224,7 +224,7 @@ To register a module with the {{site.data.var.ct}} package:
 
 1. Create or extend the `registration.php` file in the root of your module.
 
-   ```php
+   ```php?start_inline=1
    \Magento\MagentoCloud\ExtensionRegistrar::register('module-name', __DIR__);
    ```
 

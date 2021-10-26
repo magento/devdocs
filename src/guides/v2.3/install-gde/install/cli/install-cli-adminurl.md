@@ -31,7 +31,7 @@ Admin Panel URI: /admin_1wgrah
 
 You can also view the Admin URI in `<magento_root>/app/etc/env.php`. A snippet follows:
 
-```php?startinline=1
+```php?start_inline=1
   'backend' =>
   array (
     'frontName' => 'admin_1wgrah',

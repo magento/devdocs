@@ -5,6 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
   - Services
+redirect_to: https://support.magento.com/hc/en-us/articles/360033743772
 ---
 
 ## Resolve issues with Google Analytics during deployment

@@ -4,6 +4,7 @@ title: Resolve issues with encryption key
 functional_areas:
   - Cloud
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360033978652
 ---
 
 This topic discusses solutions to typical issues you might experience with {{site.data.var.ee}} encryption key in your environments.
@@ -29,7 +30,7 @@ To verify and update the encryption key environment variable:
 1. Open `app/etc/env.php` in a text editor.
 1. Verify the existing value of `key` for `crypt`. The value should be your [{{site.data.var.ee}} key]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
-   ```php
+   ```php?start_inline=1
        return array (
          'crypt' =>
          array (
