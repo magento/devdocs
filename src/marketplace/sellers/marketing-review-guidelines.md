@@ -73,7 +73,7 @@ The price of your extension is included as part of the marketing information. To
 *  All purchases are paid for in US currency.
 *  Items sold on the Commerce Marketplace are subject to a revenue-sharing fee that is paid by the developer.
 *  Any additional fees or subscription pricing—including fees charged by a third-party company for integrated services—must be included in the opening paragraph of the Long Description with bold formatting.
-*  Magento recommends $99 for Open Source and $199 for Commerce extension pricing.
+*  We recommend $99 for Open Source and $199 for Commerce extension pricing.
 
 ## Content: Complete the product profile
 
