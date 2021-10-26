@@ -23,17 +23,12 @@ The release notes include:
 Release date: October 25, 2021
 
 -  {:.fix}**Improve Developer mode workflow**—Previously, you needed to specify the mode in the build and deploy steps. Now, the `--mode` option in the `build` step determines the mode in the later `deploy` step. Setting the mode after the deployment is no longer required. See [Developer mode]({{ site.baseurl }}/cloud/docker/docker-mode-developer.html).<!-- ACMP-1086 -->
--  {:.fix}**Improvements for RO filesystem**—<!-- ACMP-1106 -->
+-  {:.fix}**Improvements for read-only filesystem**—<!-- ACMP-1106 -->
    -  Fix issue starting a PHP container for mail configuration.
    -  Can use environment variables in INI files.
    -  Ensure PHP entry points do not need write permission.
 -  {:.fix}**Update Node**—Update the bundled Node version; when installing Node in PHP-CLI images, it now uses the current LTS version.<!-- ACMP-1539 -->
 -  {:.fix}**Update Symfony**—Updated the Symfony config dependencies to be compatible with {{site.data.var.ee}} 2.4.4.<!-- ACMP-1533 -->
-
-*ini files are using environment variables to no require writable FS
-PHP-FPM files are using environment variables to no require writable FS
-PHP container is configured to read php.ini in the root directory with lower priority than the system in files
-ARG added to replace container-specific services like crontab and Compsoer version
 
 ## v1.2.4
 
