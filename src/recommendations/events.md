@@ -4,7 +4,7 @@ title: Data Collection for Recommendations
 ee_only: True
 ---
 
-When you install and configure an Adobe Commerce services product, such as [Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html) or [Live Search]({{ page.baseurl }}/live-search/install.html), the modules deploy user events to your storefront. These events collect behavioral data from your shoppers and are used to compute product recommendations. For example, the `view` event is used to compute the `Viewed this, viewed that` recommendation type and the `place-order` event is used to compute the `Bought this, bought that` recommendation type.
+When you install and configure an Adobe Commerce services product, such as [Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html) or [Live Search]({{ page.baseurl }}/live-search/install.html), the modules deploy user events to your storefront. These events collect behavioral data from your shoppers and are used to compute product recommendations. For example, the `view` event is used to compute the `Viewed this, viewed that` recommendation type, and the `place-order` event is used to compute the `Bought this, bought that` recommendation type.
 
 If you are using the default Adobe Commerce storefront or [PWA](https://magento.github.io/pwa-studio/product-recs/), handling these events is done for you. If you are writing your own custom storefront, learn how you can [integrate Product Recommendations]({{ site.baseurl }}/recommendations/headless.html) into your storefront.
 
