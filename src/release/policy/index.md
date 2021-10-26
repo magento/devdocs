@@ -78,7 +78,7 @@ Feature releases contain new features and feature updates that are delivered as 
 
 ## Hotfix
 
-Hotfixes are patches that contain high-impact security or quality fixes that affect a large number of merchants. These fixes are applied to the next patch release for the applicable minor version. Adobe releases hotfixes for {{site.data.var.ee}} as needed.
+Hotfixes are patches that contain high-impact security or quality fixes, such as fixes to zero-day vulnerabilities, that affect a large number of merchants. Adobe releases hotfixes for Adobe Commerce versions that are still supported and affected by critical security or quality issues, as needed. Hotfixes are published to the [Known Issues section] (https://support.magento.com/hc/en-us/sections/360003869892-Known-issues-patches-attached-) of our Knowledge Base. These fixes will also be included in the next planned patch release.
 
 {:.bs-callout-info}
 Hotfixes can contain backward incompatible changes.
