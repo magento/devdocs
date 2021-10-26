@@ -17,17 +17,13 @@ contributor_link: https://ziffity.com/
 
 Create a bundle product out of the following existing simple products.
 
-SKU | Product Type
+SKU |Product Name| Product Type
 --- | ---
-24-WG080 | Bundle Product
-24-WG081-blue | Simple Product
-24-WG082-blue | Simple Product
-24-WG083-blue | Simple Product
-24-WG084|  Simple Product
-24-WG085 | Simple Product
-24-WG086 | Simple Product
-24-WG087 | Simple Product
-24-WG088 | Simple Product
+new-bundle | Quest Pursuit Jump Cardio Ball Kit | Bundle Product
+24-UG01 | Quest Lumaflex™ Band | Simple Product
+24-UG02 | Pursuit Lumaflex™ Tone Band | Simple Product
+24-UG04 | Zing Jump Rope | Simple Product
+24-UG07 | Dual Handle Cardio Ball | Simple Product
 
 ## Define bundle product characteristics
 
@@ -38,7 +34,7 @@ Characteristic | Description
 Status | 1
 Attribute Set | Gear
 Product Name | Quest Pursuit Jump Cardio Ball Kit
-SKU | 24-UG00
+SKU | new-bundle
 In Stock | true
 Categories | Gear, Fitness Equipment
 Visibility | Catalog, Search

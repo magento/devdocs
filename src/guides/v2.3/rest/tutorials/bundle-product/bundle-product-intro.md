@@ -22,7 +22,7 @@ This **3-step tutorial** generally takes **45 minutes**.
 
 *  Install a Magento 2.3 (or later) instance with sample data. The sample data defines a functional store, called Luma, that sells fitness clothing and accessories.
 
-*  To Install sample data. See [Install sample data after Magento]({{ page.baseurl }}/install-gde/install/sample-data-after-magento.html) for more information.
+*  Install sample data. See [Install sample data after Magento]({{ page.baseurl }}/install-gde/install/sample-data-after-magento.html) for more information.
 
 *  Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
