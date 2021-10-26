@@ -39,4 +39,4 @@ Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Develop
 
 ## Third-party extensions
 
-Magento recommends that you contact your search engine vendor to determine whether your extension is fully compatible with Magento 2.4.
+We recommend that you contact your search engine vendor to determine whether your extension is fully compatible with Magento 2.4.
