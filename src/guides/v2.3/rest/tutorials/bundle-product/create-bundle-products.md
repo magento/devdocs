@@ -40,10 +40,7 @@ Visibility | Code
       "sku":"24-UG00",
       "name":"Quest Pursuit Jump Cardio Ball Kit",
       "attribute_set_id":11,
-      "status":1,
-      "visibility":4,
       "type_id":"bundle",
-      "created_at":"2021-06-15 00:00:00",
       "extension_attributes":{
          "stock_item":{
             "is_in_stock":true,
@@ -386,7 +383,7 @@ Visibility | Code
 
 ## Verify this step
 
-*  Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
+Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
 
   ![Product page with bundle product]({{ page.baseurl }}/rest/images/new-bundle-product.png)
 

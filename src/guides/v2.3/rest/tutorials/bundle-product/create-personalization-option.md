@@ -1,9 +1,9 @@
 ---
 layout: tutorial
 group: rest-api
-title: Step 2. Create the personalization option
+title: Step 2. Create the bundle option
 subtitle: Create a bundle product tutorial
-menu_title: Step 2. Create the personalization option
+menu_title: Step 2. Create the bundle option
 menu_order: 50
 level3_subgroup: bundle-product-tutorial
 return_to:
@@ -15,7 +15,7 @@ contributor_name: Ziffity
 contributor_link: https://ziffity.com/
 ---
 
-To add a product option for the created bundle product by SKU
+To add a product option for the created bundle product by SKU need to define bundle product options and product links.
 
 ## Set the bundle option
 
@@ -38,7 +38,6 @@ To add a product option for the created bundle product by SKU
 ```json
 {
    "option":{
-      "option_id":26,
       "title":"Jumbo Kit",
       "required":true,
       "type":"radio",
@@ -47,7 +46,6 @@ To add a product option for the created bundle product by SKU
       "product_links":[
          {
             "sku":"24-UG01",
-            "option_id":26,
             "qty":1,
             "position":1,
             "is_default":true,
@@ -57,7 +55,6 @@ To add a product option for the created bundle product by SKU
          },
          {
             "sku":"24-UG04",
-            "option_id":26,
             "qty":1,
             "position":2,
             "is_default":false,
@@ -66,8 +63,7 @@ To add a product option for the created bundle product by SKU
             "can_change_quantity":1
          },
          {
-            "sku":"24-UG07",
-            "option_id":26,
+            "sku":"24-MB01",
             "qty":1,
             "position":2,
             "is_default":false,
@@ -83,16 +79,17 @@ To add a product option for the created bundle product by SKU
 **Response:**
 
 ```json
-"27"
+Return type
+int
 ```
 
 Returns random integer.
 
 ## Verify this step
 
-*  Log in to the Luma website and select **Catalog > Products**. Click on the **Quest Pursuit Jump Cardio Ball Kit** bundle product and expand the **Bundle Items** section.
+   Log in to the Luma website and select **Catalog > Products**. Click on the **Quest Pursuit Jump Cardio Ball Kit** bundle product and expand the **Bundle Items** section.
 
   ![Product page with simple products]({{ page.baseurl }}/rest/images/new-bundle-product-option.png)
 
   {:.bs-callout-info}
-  If the personalization option is not displayed, go to the **Quest Pursuit Jump Cardio Ball Kit** bundle product page in Admin and set  **Stock Status** to **In Stock**.
+  If the option is not displayed, go to the **Quest Pursuit Jump Cardio Ball Kit** bundle product page in Admin and set  **Stock Status** to **In Stock**.
