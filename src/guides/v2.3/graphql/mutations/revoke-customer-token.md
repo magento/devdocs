@@ -5,7 +5,7 @@ title: revokeCustomerToken mutation
 
 Use the `revokeCustomerToken` mutation to revokes the customer's token.
 
-To return or modify information about a customer, Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
+To return or modify information about a customer, we recommend you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
 ## Syntax
 

@@ -36,7 +36,7 @@ exception 'Magento\Framework\Exception\LocalizedException' with message 'Can't c
 
 ### Details
 
-Magento recommends different ownership and permissions settings based on if you use one user or two to run the Magento application.
+We recommend different ownership and permissions settings based on if you use one user or two to run the Magento application.
 
 Typically, you have one user on shared hosting and two users on private hosting (or if you have your own server). There could be exceptions to this, however.
 
