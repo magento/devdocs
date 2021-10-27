@@ -149,7 +149,7 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
 
 1. Connect to the database:
 
-   -  For Starter(all environments) and Pro(integration/dev environemnts), use the following command:
+   -  For Starter(all environments) and Pro(integration/dev environments), use the following command:
 
       ```bash
       mysql -h database.internal -u <username>
