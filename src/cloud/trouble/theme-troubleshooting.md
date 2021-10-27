@@ -1,6 +1,7 @@
 ---
 group: cloud-guide
 title: Theme troubleshooting
+redirect_to: https://support.magento.com/hc/en-us/articles/360034358571
 ---
 
 This information helps you troubleshoot issues with themes added to your {{site.data.var.ece}} sites and stores.

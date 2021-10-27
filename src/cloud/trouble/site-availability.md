@@ -5,6 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
   - Services
+redirect_to: https://support.magento.com/hc/en-us/articles/115002729613
 ---
 
 If you have site availability issues, the first thing you should do is review your [deployment logs]({{ site.baseurl }}/cloud/project/log-locations.html) to see if you can identify the problem.
