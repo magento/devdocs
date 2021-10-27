@@ -149,13 +149,13 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
 
 1. Connect to the database:
 
-   -  For Starter, use the following command:
+   -  For Starter(all environments) and Pro(integration/dev environemnts), use the following command:
 
       ```bash
       mysql -h database.internal -u <username>
       ```
 
-   -  For Pro, use the following command with hostname, port number, username, and password retrieved from the `$MAGENTO_CLOUD_RELATIONSHIPS` variable.
+   -  For Pro(any dedicated environments i.e. Production, Staging, Staging2 etc.), use the following command with hostname, port number, username, and password retrieved from the `$MAGENTO_CLOUD_RELATIONSHIPS` variable.
 
       ```bash
       mysql -h <hostname> -P <number> -u <username> -p'<password>'
