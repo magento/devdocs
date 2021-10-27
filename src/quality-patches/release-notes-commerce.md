@@ -20,7 +20,7 @@ For information about quality patches created by the community for {{site.data.v
 
 ## v1.1.5
 
--  **MDVA-41236** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where it is impossible to create a new or an edit existing scheduled update for a product, if the End Date has been previously removed.
+-  **MDVA-41236** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where it is impossible to create a new or edit an existing scheduled update for a product if the End Date has been previously removed.
 -  **MDVA-41046** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where simple products with custom options are available for assigning to configurable/grouped products.
 -  **MDVA-40545** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue when in case of multiple nodes having the CSM page assigned, on the store front the links and breadcrumbs for the first node only will be displayed in all cases.
 -  **MDVA-41164** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3-p1`)_-Fixes the issue where an admin user is not able to save or edit a Company with a file or image type custom customer attribute.
