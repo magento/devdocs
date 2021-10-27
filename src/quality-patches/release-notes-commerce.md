@@ -25,7 +25,7 @@ For information about quality patches created by the community for {{site.data.v
 -  **MDVA-40545** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where only the first node for a page was retrieved even if there was more than one node for the same page.
 -  **MDVA-41164** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3-p1`)_-Fixes the issue where an admin user is not able to save or edit a Company with a file or image type custom customer attribute.
 -  **MDVA-39229** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue which causes the following error to appear after updating Catalog rule Staging Update start time: "Cron Job staging_synchronize_entities_period has an error: The active update can't be deleted."
--  **MDVA-40619** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where the CMS pages hierarchy changes cause issues in CMS page inline edit and result in 500 error.
+-  **MDVA-40619** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where changes to CMS page hierarchy causes a 500 error when attempting to do inline editing on a CMS page.
 -  **MDVA-41061** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where stock status resets to salable when a product is saved from Admin.
 -  **MDVA-31763** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where catalog price rules are reverted (or not applied) until manual reindex.
 -  **MDVA-37748** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where a GraphQL query returns products not assigned to a shared catalog.
