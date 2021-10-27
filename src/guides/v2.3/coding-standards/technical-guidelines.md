@@ -822,8 +822,9 @@ You need to read configuration from different sources (like database or filesyst
 {% collapsible Example: %}
 
 ``` php
-use Magento\Framework\Event\ObserverInterface;
+use Magento\Framework\App\DataObject;
 use Magento\Framework\Event\Observer;
+use Magento\Framework\Event\ObserverInterface;
 
 class SampleEventObserverThatModifiesInputs implements ObserverInterface
 {
@@ -832,7 +833,7 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
      */
     public function execute(Observer $observer)
     {
-        /** @var \Magento\Framework\App\DataObject $transport */
+        /** @var DataObject $transport */
         $transport = $observer->getData('transport');
 
         if ($transport->getData('some_value') === true) {

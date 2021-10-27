@@ -27,7 +27,7 @@ interface BatchSizeManagementInterface
      * @param int $batchSize
      * @return void
      */
-    public function ensureBatchSize(\Magento\Framework\DB\Adapter\AdapterInterface $adapter, $batchSize);
+    public function ensureBatchSize(AdapterInterface $adapter, int $batchSize): void;
 }
 ```
 
@@ -47,7 +47,7 @@ interface IndexTableRowSizeEstimatorInterface
      *
      * @return float
      */
-    public function estimateRowSize();
+    public function estimateRowSize(): float;
 }
 ```
 

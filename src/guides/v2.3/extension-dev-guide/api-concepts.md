@@ -43,6 +43,11 @@ The ``Magento\CatalogRule\Api\CatalogRuleRepositoryInterface`` interface
 ```php
 namespace Magento\CatalogRule\Api;
 
+use Magento\CatalogRule\Api\Data\RuleInterface;
+use Magento\Framework\Exception\CouldNotDeleteException;
+use Magento\Framework\Exception\CouldNotSaveException;
+use Magento\Framework\Exception\NoSuchEntityException;
+
 /**
  * Interface CatalogRuleRepositoryInterface
  * @api
@@ -51,36 +56,36 @@ namespace Magento\CatalogRule\Api;
 interface CatalogRuleRepositoryInterface
 {
     /**
-     * @param \Magento\CatalogRule\Api\Data\RuleInterface $rule
-     * @return \Magento\CatalogRule\Api\Data\RuleInterface
-     * @throws \Magento\Framework\Exception\CouldNotSaveException
+     * @param RuleInterface $rule
+     * @return RuleInterface
+     * @throws CouldNotSaveException
      * @since 100.1.0
      */
-    public function save(\Magento\CatalogRule\Api\Data\RuleInterface $rule);
+    public function save(RuleInterface $rule): RuleInterface;
 
     /**
      * @param int $ruleId
-     * @return \Magento\CatalogRule\Api\Data\RuleInterface
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @return RuleInterface
+     * @throws NoSuchEntityException
      * @since 100.1.0
      */
-    public function get($ruleId);
+    public function get(int $ruleId): RuleInterface;
 
     /**
-     * @param \Magento\CatalogRule\Api\Data\RuleInterface $rule
+     * @param RuleInterface $rule
      * @return bool
-     * @throws \Magento\Framework\Exception\CouldNotDeleteException
+     * @throws CouldNotDeleteException
      * @since 100.1.0
      */
-    public function delete(\Magento\CatalogRule\Api\Data\RuleInterface $rule);
+    public function delete(RuleInterface $rule): bool;
 
     /**
      * @param int $ruleId
      * @return bool
-     * @throws \Magento\Framework\Exception\CouldNotDeleteException
+     * @throws CouldNotDeleteException
      * @since 100.1.0
      */
-    public function deleteById($ruleId);
+    public function deleteById(int $ruleId): bool;
 }
 ```
 
@@ -104,39 +109,40 @@ use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Exception\ValidatorException;
+use Magento\CatalogRule\Api\CatalogRuleRepositoryInterface;
 
-class CatalogRuleRepository implements \Magento\CatalogRule\Api\CatalogRuleRepositoryInterface
+class CatalogRuleRepository implements CatalogRuleRepositoryInterface
 {
     ...
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    public function save(Data\RuleInterface $rule)
+    public function save(Data\RuleInterface $rule): Data\RuleInterface
     {
         ...
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    public function get($ruleId)
+    public function get(int $ruleId): Data\RuleInterface
     {
         ...
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    public function delete(Data\RuleInterface $rule)
+    public function delete(Data\RuleInterface $rule): bool
     {
         ...
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    public function deleteById($ruleId)
+    public function deleteById(int $ruleId): bool
     {
         ...
     }

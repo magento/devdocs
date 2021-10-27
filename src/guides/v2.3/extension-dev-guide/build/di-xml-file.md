@@ -297,22 +297,28 @@ The example below overrides the `isVisible` method from the `Magento\Checkout\Bl
 ```php
 namespace ExampleCorp\OverrideExample\Block\Onepage;
 
-class Success extends \Magento\Checkout\Block\Onepage\Success
+use Magento\Checkout\Block\Onepage\Success as MagentoSuccess;
+use Magento\Framework\View\Element\Template\Context;
+use Magento\Checkout\Model\Session;
+use Magento\Sales\Model\Order\Config;
+use Magento\Framework\App\Http\Context as HttpContext;
+
+class Success extends MagentoSuccess
 {
     /**
      * Constructor Modification
      *
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Checkout\Model\Session $checkoutSession
-     * @param \Magento\Sales\Model\Order\Config $orderConfig
-     * @param \Magento\Framework\App\Http\Context $httpContext
+     * @param Context $context
+     * @param Session $checkoutSession
+     * @param Config $orderConfig
+     * @param HttpContext $httpContext
      * @param array $data
      */
     public function __construct(
-        \Magento\Framework\View\Element\Template\Context $context,
-        \Magento\Checkout\Model\Session $checkoutSession,
-        \Magento\Sales\Model\Order\Config $orderConfig,
-        \Magento\Framework\App\Http\Context $httpContext,
+        Context $context,
+        Session $checkoutSession,
+        Config $orderConfig,
+        HttpContext $httpContext,
         array $data = []
     ) {
         parent::__construct(

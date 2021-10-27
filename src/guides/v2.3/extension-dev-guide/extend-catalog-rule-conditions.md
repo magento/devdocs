@@ -79,13 +79,16 @@ The `validate` method from the `app/code/Magento/CatalogRule/Model/Rule/Conditio
 Below is the definition of the `validate` method:
 
 ```php
+use Magento\Catalog\Model\Product;
+use Magento\Framework\Model\AbstractModel;
+
 /**
  * Validate product attribute value for condition
  *
- * @param \Magento\Catalog\Model\Product|\Magento\Framework\Model\AbstractModel $model
+ * @param Product|AbstractModel $model
  * @return bool
  */
-public function validate(\Magento\Framework\Model\AbstractModel $model)
+public function validate(AbstractModel $model): bool
 {
     $attrCode = $this->getAttribute();
     if ('category_ids' === $attrCode) {

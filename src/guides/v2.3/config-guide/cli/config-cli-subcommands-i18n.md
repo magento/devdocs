@@ -292,11 +292,15 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 
    ```php?start_inline=1
    /**
-   * Copyright © Magento, Inc. All rights reserved.
-   * See COPYING.txt for license details.
-   */
-   use \Magento\Framework\Component\ComponentRegistrar;
-   ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_xx_yy', __DIR__);
+    * Copyright © Magento, Inc. All rights reserved.
+    * See COPYING.txt for license details.
+    */
+   use Magento\Framework\Component\ComponentRegistrar;
+   ComponentRegistrar::register(
+       ComponentRegistrar::LANGUAGE,
+       'magento_xx_yy',
+       __DIR__
+   );
    ```
 
    **Sample `language.xml`:**

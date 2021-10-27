@@ -54,10 +54,13 @@ Scalar is a simple attribute.
 Non-scalar attributes can be represented by Data Object.
 
 ```php
+use Magento\Catalog\Api\ProductRepositoryInterface;
+use Magento\Catalog\Api\Data\ProductInterface;
+
 public function afterGet
 (
-    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-    \Magento\Catalog\Api\Data\ProductInterface $entity
+    ProductRepositoryInterface $subject,
+    ProductInterface $entity
 ) {
     $ourCustomData = $this->customDataRepository->get($entity->getId());
 
@@ -78,11 +81,13 @@ This is the simplest way to add extension attributes without causing a conflict:
 Function `afterGetList` is similar to `afterGet`:
 
 ```php
+use Magento\Catalog\Api\ProductRepositoryInterface;
+use Magento\Catalog\Api\Data\ProductSearchResultsInterface;
+
 public function afterGetList(
-    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-    \Magento\Catalog\Api\Data\ProductSearchResultsInterface $searchResults
-) : \Magento\Catalog\Api\Data\ProductSearchResultsInterface
-{
+    ProductRepositoryInterface $subject,
+    ProductSearchResultsInterface $searchResults
+) : ProductSearchResultsInterface {
     $products = [];
     foreach ($searchResults->getItems() as $entity) {
         $ourCustomData = $this->customDataRepository->get($entity->getId());
@@ -104,11 +109,14 @@ To add extension attributes to an entity without plugins, use the `extensionActi
 Likewise, the `afterSave` plugin should manipulate the entity data before returning it:
 
 ```php
+use Magento\Catalog\Api\Data\ProductInterface;
+use Magento\Catalog\Api\ProductRepositoryInterface;
+
 public function afterSave
 (
-    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-    \Magento\Catalog\Api\Data\ProductInterface $result, /** result from the save call **/
-    \Magento\Catalog\Api\Data\ProductInterface $entity  /** original parameter to the call **/
+    ProductRepositoryInterface $subject,
+    ProductInterface $result, /** result from the save call **/
+    ProductInterface $entity  /** original parameter to the call **/
     /** other parameter not required **/
 ) {
     $extensionAttributes = $entity->getExtensionAttributes(); /** get original extension attributes from entity **/

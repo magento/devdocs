@@ -35,13 +35,17 @@ You can use the Admin to define caching policies or you can define them programm
 > Example
 
 ```php
-class DynamicController extends \Magento\Framework\App\Action\Action
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
+
+class DynamicController extends Action
 {
     protected $pageFactory;
 
     public function __construct(
-        \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory
+        Context $context,
+        PageFactory $resultPageFactory
     ) {
         parent::__construct($context);
         $this->pageFactory = $resultPageFactory;
@@ -83,13 +87,16 @@ Magento generates a hash based on all context variables (`\Magento\Framework\App
 For example, let's declare a context variable that shows a drinks catalog and advertisement to adult customers only. The following code snippet will create a copy of every page in Magento for users under the age of 18.
 
 ```php
+use Magento\Customer\Model\Session;
+use Magento\Framework\App\Http\Context;
+
 /**
  * Plugin on \Magento\Framework\App\Http\Context
  */
 class CustomerAgeContextPlugin
 {
     public function __construct(
-        \Magento\Customer\Model\Session $customerSession
+        Session $customerSession
     ) {
         $this->customerSession = $customerSession;
     }
@@ -97,7 +104,7 @@ class CustomerAgeContextPlugin
      * \Magento\Framework\App\Http\Context::getVaryString is used by Magento to retrieve unique identifier for selected context,
      * so this is a best place to declare custom context variables
      */
-    public function beforeGetVaryString(\Magento\Framework\App\Http\Context $subject)
+    public function beforeGetVaryString(Context $subject)
     {
         $age = $this->customerSession->getCustomerData()->getCustomAttribute('age');
         $defaultAgeContext = 0;
@@ -155,7 +162,8 @@ class Product implements IdentityInterface
 Second, the block object must also implement `Magento/Framework/DataObject/IdentityInterface` as follows:
 
 ```php
-class View extends AbstractProduct implements \Magento\Framework\DataObject\IdentityInterface
+use Magento\Framework\DataObject\IdentityInterface;
+class View extends AbstractProduct implements IdentityInterface
 {
     /**
      * Return identifiers for produced content

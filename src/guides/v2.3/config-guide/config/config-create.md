@@ -86,7 +86,9 @@ To create a new configuration type:
 ```php
 namespace Vendor\ModuleName\Model\Config;
 
-class Reader extends \Magento\Framework\Config\Reader\Filesystem
+use Magento\Framework\Config\Reader\Filesystem;
+
+class Reader extends Filesystem
 {
     /**
      * List of identifier attributes for merging

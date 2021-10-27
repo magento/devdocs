@@ -59,60 +59,67 @@ Example upgrade script content:
 ```php
 namespace Magento\CustomModule\Setup;
 
-class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
+use Magento\Framework\DB\FieldDataConverterFactory;
+use Magento\Framework\DB\Query\Generator;
+use Magento\Framework\DB\Select\QueryModifierFactory;
+use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Framework\Setup\UpgradeDataInterface;
+
+class UpgradeData implements UpgradeDataInterface
 {
     /**
-     * @var \Magento\Framework\DB\FieldDataConverterFactory
+     * @var FieldDataConverterFactory
      */
     private $fieldDataConverterFactory;
 
     /**
-     * @var \Magento\Framework\DB\Select\QueryModifierFactory
+     * @var QueryModifierFactory
      */
     private $queryModifierFactory;
 
     /**
-     * @var \Magento\Framework\DB\Query\Generator
+     * @var Generator
      */
     private $queryGenerator;
 
     /**
      * Constructor
      *
-     * @param \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory
-     * @param \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory
-     * @param \Magento\Framework\DB\Query\Generator $queryGenerator
+     * @param FieldDataConverterFactory $fieldDataConverterFactory
+     * @param QueryModifierFactory $queryModifierFactory
+     * @param Generator $queryGenerator
      */
     public function __construct(
-        \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory,
-        \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory,
-        \Magento\Framework\DB\Query\Generator $queryGenerator
+        FieldDataConverterFactory $fieldDataConverterFactory,
+        QueryModifierFactory $queryModifierFactory,
+        Generator $queryGenerator
     ) {
-          $this->fieldDataConverterFactory = $fieldDataConverterFactory;
-          $this->queryModifierFactory = $queryModifierFactory;
-          $this->queryGenerator = $queryGenerator;
+        $this->fieldDataConverterFactory = $fieldDataConverterFactory;
+        $this->queryModifierFactory = $queryModifierFactory;
+        $this->queryGenerator = $queryGenerator;
     }
 
     /**
      * {@inheritdoc}
      */
     public function upgrade(
-        \Magento\Framework\Setup\ModuleDataSetupInterface $setup,
-        \Magento\Framework\Setup\ModuleContextInterface $context
+        ModuleDataSetupInterface $setup,
+        ModuleContextInterface $context
     ) {
-          if (version_compare($context->getVersion(), '2.0.1', '<')) {
-              $this->convertSerializedDataToJson($setup);
-          }
+        if (version_compare($context->getVersion(), '2.0.1', '<')) {
+            $this->convertSerializedDataToJson($setup);
+        }
     }
 
     /**
      * Upgrade to version 2.0.1, convert data for the sales_order_item.product_options and quote_item_option.value
      * from serialized to JSON format
      *
-     * @param \Magento\Framework\Setup\ModuleDataSetupInterface $setup
+     * @param ModuleDataSetupInterface $setup
      * @return void
      */
-    private function convertSerializedDataToJson(\Magento\Framework\Setup\ModuleDataSetupInterface $setup)
+    private function convertSerializedDataToJson(ModuleDataSetupInterface $setup)
     {
         // Upgrade logic here
     }
@@ -177,8 +184,9 @@ The following code sample upgrades the data for options in the `value` column in
 
 {% collapsible Show code %}
 ```php
+use Magento\Framework\DB\DataConverter\SerializedToJson;
 $fieldDataConverter = $this->fieldDataConverterFactory->create(
-    \Magento\Framework\DB\DataConverter\SerializedToJson::class
+    SerializedToJson::class
 );
 
 // Convert data for the option with static name in quote_item_option.value
@@ -227,8 +235,10 @@ To update custom options data in the `quote_item_option` table:
 
 {% collapsible Show code %}
 ```php
+use Magento\Framework\DB\DataConverter\SerializedToJson;
+
 $fieldDataConverter = $this->fieldDataConverterFactory->create(
-    \Magento\Framework\DB\DataConverter\SerializedToJson::class
+    SerializedToJson::class
 );
 // Convert data for the option with dynamic name in quote_item_option.value
 $select = $setup->getConnection()
@@ -280,13 +290,14 @@ Since you cannot assume the format of the data when initially converted, the fol
 ```php
 namespace Magento\CustomModule\Setup;
 
-use Magento\Framework\Serialize\Serializer\Serialize;
+use Magento\Framework\DB\DataConverter\DataConverterInterface;
 use Magento\Framework\Serialize\Serializer\Json;
+use Magento\Framework\Serialize\Serializer\Serialize;
 
 /**
  * Serializer used to convert data in product_options field
  */
-class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConverter\DataConverterInterface
+class SerializedToJsonDataConverter implements DataConverterInterface
 {
     /**
      * @var Serialize
@@ -366,10 +377,11 @@ After creating your custom data converter class, use the `FieldDataConverterFact
 
 {% collapsible Show code %}
 ```php
+use Magento\CustomModule\Setup\SerializedToJsonDataConverter;
 
 // Convert options in sales_order_item.product_options
 $fieldDataConverter = $this->fieldDataConverterFactory->create(
-    \Magento\CustomModule\Setup\SerializedToJsonDataConverter::class
+    SerializedToJsonDataConverter::class
 );
 $fieldDataConverter->convert(
     $setup->getConnection(),
@@ -388,7 +400,8 @@ Use the specific connections for each of these modules to update your extension'
 The following code sample obtains the Sales module connection and uses it during data update.
 {% collapsible Show code %}
 ```php
-/** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */
+use Magento\Sales\Setup\SalesSetupFactory;
+/** SalesSetupFactory $salesSetup */
 $salesSetup = $this->salesSetupFactory->create(['setup' => $setup]);
 
 $fieldDataConverter->convert(
@@ -408,7 +421,8 @@ The following code sample updates two fields in different tables taking into acc
 It is possible to aggregate fields for the same connection only. If it is necessary to use multiple connections in one setup script, multiple calls to `\Magento\Framework\DB\AggregatedFieldDataConverter::convert()` must be made.
 {% collapsible Show code %}
 ```php
-/** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */
+use Magento\Sales\Setup\SalesSetupFactory;
+/** SalesSetupFactory $salesSetup */
 $salesSetup = $this->salesSetupFactory->create(['setup' => $setup]);
 
 $fieldsToUpdate = [

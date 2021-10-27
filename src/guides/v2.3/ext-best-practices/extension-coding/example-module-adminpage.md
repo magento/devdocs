@@ -67,8 +67,9 @@ For more information see: [registering your component]({{ page.baseurl }}/extens
 {% collapsible File content for registration.php %}
 ```php
   <?php
-  \Magento\Framework\Component\ComponentRegistrar::register(
-      \Magento\Framework\Component\ComponentRegistrar::MODULE,
+  use Magento\Framework\Component\ComponentRegistrar;
+  ComponentRegistrar::register(
+      ComponentRegistrar::MODULE,
       'MyCompany_ExampleAdminNewPage',
       __DIR__
   );

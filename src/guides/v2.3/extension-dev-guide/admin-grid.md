@@ -37,8 +37,9 @@ Here are the required files to get started:
 `app/code/Dev/Grid/registration.php`:
 
 ```php
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
+use Magento\Framework\Component\ComponentRegistrar;
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
     'Dev_Grid',
     __DIR__
 );
@@ -233,7 +234,9 @@ The corresponding file is `app/code/Dev/Grid/Ui/DataProvider/Category/ListingDat
 ```php
 namespace Dev\Grid\Ui\DataProvider\Category;
 
-class ListingDataProvider extends \Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
+use Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider;
+
+class ListingDataProvider extends DataProvider
 {
 }
 ```
@@ -286,8 +289,8 @@ class AddAttributesToUiDataProvider
     /**
      * Constructor
      *
-     * @param \Magento\Eav\Api\AttributeRepositoryInterface $attributeRepository
-     * @param \Magento\Framework\App\ProductMetadataInterface $productMetadata
+     * @param AttributeRepositoryInterface $attributeRepository
+     * @param ProductMetadataInterface $productMetadata
      */
     public function __construct(
         AttributeRepositoryInterface $attributeRepository,
@@ -300,9 +303,9 @@ class AddAttributesToUiDataProvider
     /**
      * Get Search Result after plugin
      *
-     * @param \Dev\Grid\Ui\DataProvider\Category\ListingDataProvider $subject
-     * @param \Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult $result
-     * @return \Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult
+     * @param CategoryDataProvider $subject
+     * @param SearchResult $result
+     * @return SearchResult
      */
     public function afterGetSearchResult(CategoryDataProvider $subject, SearchResult $result)
     {
@@ -382,7 +385,9 @@ The resource model class translates to `app/code/Dev/Grid/Model/ResourceModel/Ca
 ```php
 namespace Dev\Grid\Model\ResourceModel;
 
-class Category extends \Magento\Catalog\Model\ResourceModel\Category
+use Magento\Catalog\Model\ResourceModel\Category;
+
+class Category extends Category
 {
 }
 ```
@@ -416,9 +421,9 @@ class Actions extends Column
     /**
      * Constructor
      *
-     * @param \Magento\Framework\View\Element\UiComponent\ContextInterface $context
-     * @param \Magento\Framework\View\Element\UiComponentFactory $uiComponentFactory
-     * @param \Magento\Framework\Url $urlBuilder
+     * @param ContextInterface $context
+     * @param UiComponentFactory $uiComponentFactory
+     * @param Url $urlBuilder
      * @param string $viewUrl
      * @param array $components
      * @param array $data
@@ -486,8 +491,8 @@ class Index extends Action implements HttpGetActionInterface
     /**
      * Constructor
      *
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Framework\View\Result\PageFactory $rawFactory
+     * @param Context $context
+     * @param PageFactory $rawFactory
      */
     public function __construct(
         Context $context,
@@ -537,27 +542,27 @@ class MassDelete extends Action implements HttpPostActionInterface
     const ADMIN_RESOURCE = 'Magento_Catalog::categories';
 
     /**
-     * @var \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory
+     * @var CollectionFactory
      */
     protected $collectionFactory;
 
     /**
-     * @var \Magento\Catalog\Api\CategoryRepositoryInterface
+     * @var CategoryRepositoryInterface
      */
     private $categoryRepository;
 
     /**
-     * @var \Magento\Ui\Component\MassAction\Filter
+     * @var Filter
      */
     protected $filter;
 
     /**
      * Constructor
      *
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Ui\Component\MassAction\Filter $filter
-     * @param \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $collectionFactory
-     * @param \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository
+     * @param Context $context
+     * @param Filter $filter
+     * @param CollectionFactory $collectionFactory
+     * @param CategoryRepositoryInterface $categoryRepository
      */
     public function __construct(
         Context $context,

@@ -41,7 +41,7 @@ Below are ways of improving code to help simplify documentation:
 *  Break down a method into smaller methods with descriptive names.
    For example:
 
-   ```php
+```php
     public function getPrice()
     {
         $price = 0;
@@ -57,12 +57,13 @@ Below are ways of improving code to help simplify documentation:
 
     private function getDiscount()
     {
-      if (it's discount time) {
-        return 10;
-      }
-      return 0;
+        if (it is discount time) {
+            return 10;
+        }
+
+        return 0;
     }
-   ```
+```
 
 ### Include all necessary details
 
@@ -224,12 +225,14 @@ class Bootstrap
 ```php
 namespace Magento\Framework\Profiler\Adapter;
 
+use Magento\Framework\Profiler\AdapterAbstract;
+
 /**
  * Profiler CSV adapter
  *
  * ...
  */
-class Csv extends \Magento\Framework\Profiler\AdapterAbstract
+class Csv extends AdapterAbstract
 {
 // ...
     public function setFile($file)
@@ -728,6 +731,9 @@ Syntax:
 See [PHP documentation](https://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDocumentor/tutorial_tags.method.pkg.html) for more information about the `@method` tag.
 
 ```php
+
+use Magento\Framework\Model\AbstractModel;
+
 /**
  * Image operations
  *
@@ -735,7 +741,7 @@ See [PHP documentation](https://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDoc
  * @method string getLabel()
  * @method string getPosition()
  */
-class Image extends \Magento\Framework\Model\AbstractModel
+class Image extends AbstractModel
 {
     //.....
 }
