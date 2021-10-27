@@ -17,7 +17,7 @@ The [Storefront Events Collector]({{ site.baseurl }}/shared-services/storefront-
 Event | Description | [Used for metrics?](https://docs.magento.com/user-guide/marketing/recommendation-metrics.html)
 --- | --- | ---
 `impression-render` | The recommendation unit is rendered on the page. | Yes
-`rec-add-to-cart-click` | The customer clicks the **Add to cart** button for an item in the recommendation unit. | No (unless there is an add to cart button present in the recommendations template)
+`rec-add-to-cart-click` | The customer clicks the **Add to cart** button for an item in the recommendation unit. | Yes, when an **Add to cart** button is present in the recommendations template.
 `rec-click` | The customer clicks a product in the recommendation unit. | Yes
 `view` | The recommendation unit becomes viewable on the page, such as by scrolling into view. | Yes
 
