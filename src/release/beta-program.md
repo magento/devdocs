@@ -28,7 +28,7 @@ Further instructions while filling out the form:
 
 ## Developer access to GitHub
 
-Second, to provide your feedback on the Beta and receive important updates about the Beta, we need to grant users access to our private GitHub space.
+Second, to provide feedback and receive important updates about the Beta, we must grant users access to our private GitHub repository.
 
 If you are already in the Adobe Partner Program, we will give the GitHub users access to our private repository after the Beta Program Agreement is signed.
 No need to do anything else.
