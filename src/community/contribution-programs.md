@@ -3,8 +3,6 @@ group: community
 title: Contribution programs
 ---
 
-## Solution Partners program
-
 Adobe is pleased to provide a Solution Partners program for partners.
 
 Every active partner that is willing to collaborate is eligible to join the **Solutions Contribution Rewards Program**.
@@ -14,7 +12,7 @@ When you join, you start receiving program benefits:
 -  Badges
 -  Adobe Digital Learning Services rewards
 
-### How do you join?
+## How do you join?
 
 1. Make sure all of your contributors have an active GitHub account with two-factor authentication enabled.
 1. Create a list of your contributors' emails and their GitHub accounts (example format: `github.com/accountname`).
