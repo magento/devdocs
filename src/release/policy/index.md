@@ -92,7 +92,7 @@ Individual patches do not contain backward incompatible changes.
 
 ## Custom patch
 
-Created by non-Adobe personnel to fix an issue or modify the {{site.data.var.ee}} code for various reasons. Custom patches are delivered through the [Quality Patches Tool]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html).
+Created by non-Adobe personnel to fix an issue or modify the {{site.data.var.ee}} code for various reasons. Custom patches are delivered through the [Quality Patches Tool]({{ site.baseurl }}/quality-patches/usage.html).
 
 {:.ref-header}
 Related topics

@@ -1,16 +1,19 @@
 ---
 group: software-update-guide
-title: Quality patches for Adobe Commerce
+title: Release notes
 functional_areas:
   - Setup
   - Configuration
   - Upgrade
-redirect_from: /quality-patches/release-notes.html
+redirect_from:
+  - /quality-patches/release-notes-commerce.html
+  - /quality-patches/release-notes-open-source.html
 ---
 
 {% include install/patch/quality-patch-intro.md %}
 
-For information about quality patches created by the community for {{site.data.var.ce}}, see the [release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md).
+{: .bs-callout-info}
+For information about quality patches created by the Community for {{site.data.var.ce}}, see the [release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md).
 
 <!-- The release notes include:
 
@@ -138,7 +141,7 @@ For information about quality patches created by the community for {{site.data.v
 
 ## v1.0.20
 
--  **MDVA-36170** _(for Magento `>=2.3.4 <2.4.2`)_-This fixes the issue where the GraphqQL query is not caching by using the category cache tag.
+-  **MDVA-36170** _(for Magento `>=2.3.4 <2.4.2`)_-This fixes the issue where the GraphQL query is not caching by using the category cache tag.
 -  **MDVA-33168** _(for Magento `>=2.3.3 <2.4.2`)_-Fixes the issue when updating a product attribute via API all other attributes change to an empty value.
 -  **MDVA-19640** _(for Magento `>=2.3.0`)_-Fixes the issue where Advanced Reporting is not showing any data.
 -  **MDVA-11189**  _(for Magento `>=2.3.0 <2.3.5`)_-Fixes the issue when after importing a .csv file to update product stock, rows from the cataloginventory_stock table are deleted.
