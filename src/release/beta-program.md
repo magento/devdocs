@@ -33,7 +33,7 @@ Second, to provide your feedback on the Beta and receive important updates about
 If you are already in the Adobe Partner Program, we will give the GitHub users access to our private repo once the Beta program NDA is signed.
 No need to do anything else.
 ​
-If you are not in the partner contribution program already, complete the following:
+If you are not already in the Adobe Partner Program, you must do the following:
 
 1. Make sure all of your contributors have an active GitHub account with two-factor authentication enabled.
 1. Provide a maintainer GitHub username, and we will provide that user the ability to add additional users associated to the parent company who signed the NDA (`github.com/accountname`).
