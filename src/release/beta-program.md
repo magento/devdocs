@@ -24,7 +24,7 @@ To verify the authenticity of the signature, we ask you to have the Adobe relati
 Further instructions while filling out the form:
 
 -  Make sure to use the email associated with the primary MageID.
--  For _Adobe Contact Email_, use `magebeta@adobe.com` - _If you do not use this email we may not receive your request!_.
+-  For _Adobe Contact Email_, use `magebeta@adobe.com` - _We may not receive your request if you do not use this email!_.
 
 ## Developer access to GitHub
 
