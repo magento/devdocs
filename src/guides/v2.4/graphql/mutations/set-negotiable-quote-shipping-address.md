@@ -28,8 +28,11 @@ The following example adds a predefined shipping address to a negotiable quote.
 
 ```graphql
 mutation{
-  setNegotiableQuoteShippingAddress(input: {customer_address_id: "Mg=="
-  quote_uid: "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb"}){
+  setNegotiableQuoteShippingAddress(input: 
+    {customer_address_id: "Mg=="
+    quote_uid: "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb"
+    })
+    {
     quote {
       uid
       name
