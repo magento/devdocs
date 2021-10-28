@@ -16,7 +16,7 @@ The other optional utilities discussed in this topic might assist you with your 
 
 ## Installing and Configuring Network Time Protocol (NTP) {#install-optional-ntp}
 
-[NTP](http://www.ntp.org){:target="_blank"} enables servers to synchronize their system clocks using [globally available pool servers](http://www.pool.ntp.org/en){:target="_blank"}. Magento recommends you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.
+[NTP](http://www.ntp.org){:target="_blank"} enables servers to synchronize their system clocks using [globally available pool servers](http://www.pool.ntp.org/en){:target="_blank"}. We recommend you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.
 
 If you are deploying Magento on multiple hosts, NTP is a simple way to guarantee their clocks are all synchronized, no matter what time zone the servers are in. Also, cron-related tasks (such as indexing and transactional e-mails) depend on the server clock being accurate.
 

@@ -14,15 +14,13 @@ To integrate Product Recommendations in a headless storefront you must:
 
 1. Fetch product recommendation results and render those results on the page.
 
-You can perform both of these actions using the available SDKs as described below.
-
-The following workflow describes how to integrate Product Recommendation in a headless storefront.
+You can perform both of these actions using the available SDKs as described in the following workflow.
 
 1. [Install the Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html) module.
 
 1. Install and use the [Storefront Events SDK]({{ page.baseurl }}/shared-services/storefront-events-sdk.html) to fire the [behavioral events]({{ page.baseurl }}/recommendations/events.html).
 
-    The minimum required events to enable Product Recommendations are:
+    The minimum required events to return Product Recommendations results:
 
     Event | Category
     --- | ---

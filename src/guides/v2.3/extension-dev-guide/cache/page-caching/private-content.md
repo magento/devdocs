@@ -11,7 +11,7 @@ This example displays a customer's name on a cacheable page.
 
 ## Create a section source {#config-cache-priv-how-source}
 
-The section source class is responsible for retrieving data for the section. As a best practice, Magento recommends that you put your code within the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\CustomerData\SectionSourceInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface.
+The section source class is responsible for retrieving data for the section. As a best practice, we recommend that you put your code within the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\CustomerData\SectionSourceInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface.
 
 The public method `getSectionData` must return an array with data for a private block.
 
