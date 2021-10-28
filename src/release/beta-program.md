@@ -36,7 +36,7 @@ No need to do anything else.
 If you are not already in the Adobe Partner Program, you must do the following:
 
 1. Make sure all of your contributors have an active GitHub account with two-factor authentication enabled.
-1. Provide a maintainer GitHub username, and we will provide that user the ability to add additional users associated to the parent company who signed the NDA (`github.com/accountname`).
+1. Provide a maintainer GitHub username. We will provide that user the ability to add additional users associated with the parent company who signed the Beta Program Agreement (`github.com/accountname`).
 1. Contact <magebeta@adobe.com> from the official partner’s company email with the maintainer and ask to join.
 
 ## Get the Code
