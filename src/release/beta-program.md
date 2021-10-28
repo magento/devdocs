@@ -49,7 +49,7 @@ Visit this page six weeks ahead of our set [release calendar][] for the latest i
 
 -  Use the MageID associated with the Adobe Commerce license or Partner license (same MageID used to sign the Beta Agreement).
    For more information on how to install with Composer, refer to [Quick start install][].
-   For troubleshooting accessing Beta code, see [Cannot access the latest Beta version][].
+   For troubleshooting access to Beta code, see [Cannot access the latest Beta version][].
 -  Lastly, we ask you to provide your feedback and comments through the private Beta Github after installing and using the code.
 
 For more information about this program, refer to our [FAQ][].
