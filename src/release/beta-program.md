@@ -1,6 +1,6 @@
 ---
 group: release
-title: Adobe Beta program
+title: Adobe Commerce Beta program
 ---
 
 Welcome to the Adobe Beta Program and thank you for your interest in participating.
