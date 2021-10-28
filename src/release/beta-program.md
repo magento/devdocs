@@ -42,7 +42,7 @@ If you are not already in the Adobe Partner Program, you must do the following:
 ## Get the Code
 
 Third, the pre-production code will be released as a Composer metapackage on <https://repo.magento.com>.
-The date of this Beta release will be announced on our private GitHub space.
+The date of this Beta release will be announced on our private GitHub repository.
 Visit this page six weeks ahead of our set [release calendar][] for the latest information about our upcoming Beta release.
 ​
 ### Instructions to successfully download the Beta code
