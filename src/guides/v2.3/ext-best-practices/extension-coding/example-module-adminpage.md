@@ -66,13 +66,19 @@ For more information see: [registering your component]({{ page.baseurl }}/extens
 
 {% collapsible File content for registration.php %}
 ```php
-  <?php
-  use Magento\Framework\Component\ComponentRegistrar;
-  ComponentRegistrar::register(
-      ComponentRegistrar::MODULE,
-      'MyCompany_ExampleAdminNewPage',
-      __DIR__
-  );
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'MyCompany_ExampleAdminNewPage',
+    __DIR__
+);
 ```
 {% endcollapsible %}
 
@@ -186,6 +192,11 @@ Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`.
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld;
 
 use Magento\Backend\App\Action;

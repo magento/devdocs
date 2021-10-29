@@ -21,6 +21,12 @@ You can set `MAGE_DIRS` in any of the following ways:
 *  Use a custom entry point script such as the following:
 
    ```php
+   <?php
+   /**
+    * Copyright © Magento, Inc. All rights reserved.
+    * See COPYING.txt for license details.
+    */
+
    use Magento\Framework\App\Bootstrap;
    use Magento\Framework\App\Filesystem\DirectoryList;
    use Magento\Framework\App\Http;

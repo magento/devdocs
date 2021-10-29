@@ -309,6 +309,11 @@ And finally, we create a frontend model to make our value bold:
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Learning\ClothingMaterial\Model\Attribute\Frontend;
 
 use Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend;

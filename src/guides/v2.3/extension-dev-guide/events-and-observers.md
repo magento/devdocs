@@ -23,6 +23,11 @@ To dispatch an event, call the `dispatch` function of the event manager class an
 The following example shows you how to dispatch an event with and without an array of data.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace MyCompany\MyModule;
 
@@ -96,6 +101,12 @@ To create an observer, you must place your class file under your `<module-root>/
 Below is an example of the basic observer class structure:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace MyCompany\MyModule\Observer;
 
 use Magento\Framework\Event\Observer;
@@ -119,6 +130,12 @@ class MyObserver implements ObserverInterface
 One of the more powerful feature of observers is that they are able to use parameters passed into the event when it was dispatched. Below is an example of an observer obtaining data passed in when the event was dispatched.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace MyCompany\MyModule\Observer;
 
 use Magento\Framework\Event\Observer;

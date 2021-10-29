@@ -87,6 +87,11 @@ Each module must have this file, which tells Magento how to locate the module. C
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(

@@ -102,6 +102,11 @@ Below is an example of a before method modifying the `$name` argument before pas
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
 
 use Magento\Catalog\Model\Product;
@@ -125,6 +130,11 @@ Below is an example of an after method modifying the return value `$result` of a
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
 
 use Magento\Catalog\Model\Product;
@@ -144,6 +154,11 @@ Below is an example of an after method that accepts the `null` result and argume
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
 
 use Magento\Backend\Model\Auth;
@@ -177,6 +192,12 @@ After methods do not need to declare all the arguments of their observed methods
 The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Psr\Log\LoggerInterface;
 use Magento\Catalog\Model\Product\Action;
 
@@ -220,6 +241,11 @@ Below is an example of an around method adding behavior before and after an obse
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
 
 use Magento\Catalog\Model\Product;
@@ -250,6 +276,11 @@ For example, the following code defines a parameter of type `SomeType`, which is
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Model;
 
 class MyUtility
@@ -265,6 +296,11 @@ You should wrap this method with a plugin:
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
 
 use My\Module\Model\MyUtility;
@@ -284,6 +320,11 @@ You are responsible for forwarding the arguments from the plugin to the `proceed
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace My\Module\Plugin;
 
 use My\Module\Model\MyUtility;
@@ -383,6 +424,12 @@ With these methods:
 `PluginB`::`aroundDispatch()` defines the [$next]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php) argument with a `callable` type. For example:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Framework\App\Action\Action;
 
 class PluginB
@@ -432,6 +479,12 @@ Using these methods:
 `PluginB`::`aroundDispatch()` does not define the ($next)[{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php] argument with a `callable` type. For example:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Framework\App\Action\Action;
 
 class PluginB

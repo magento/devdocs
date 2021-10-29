@@ -103,6 +103,11 @@ The following code snippets highlight the code pieces needed to copy a fieldset 
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Vendor\Module\Observer;
 
 use Magento\Framework\DataObject\Copy;

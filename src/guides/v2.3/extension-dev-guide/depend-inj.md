@@ -45,6 +45,11 @@ Service classes that do not exist in the codebase, such as [proxies], [factories
 The following code sample highlights the two types of dependency injections used in Magento:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace Magento\Backend\Model\Menu;
 

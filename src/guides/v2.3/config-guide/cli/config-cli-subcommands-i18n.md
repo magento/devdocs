@@ -298,6 +298,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
     */
 
    use Magento\Framework\Component\ComponentRegistrar;
+
    ComponentRegistrar::register(
        ComponentRegistrar::LANGUAGE,
        'magento_xx_yy',

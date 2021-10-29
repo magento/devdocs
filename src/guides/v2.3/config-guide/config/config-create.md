@@ -84,6 +84,12 @@ To create a new configuration type:
 **Example:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Vendor\ModuleName\Model\Config;
 
 use Magento\Framework\Config\Reader\Filesystem;

@@ -37,7 +37,14 @@ Here are the required files to get started:
 `app/code/Dev/Grid/registration.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Framework\Component\ComponentRegistrar;
+
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
     'Dev_Grid',
@@ -232,6 +239,12 @@ The UI references `Dev\Grid\Ui\DataProvider\Category\ListingDataProvider` as the
 The corresponding file is `app/code/Dev/Grid/Ui/DataProvider/Category/ListingDataProvider.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Ui\DataProvider\Category;
 
 use Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider;
@@ -271,6 +284,12 @@ The plugin then gets a `name` attribute:
 `app/code/Dev/Grid/Plugin/AddAttributesToUiDataProvider.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Plugin;
 
 use Dev\Grid\Ui\DataProvider\Category\ListingDataProvider as CategoryDataProvider;
@@ -358,6 +377,12 @@ The `dataSource` name `dev_grid_category_listing_data_source` links to `Dev\Grid
 The collection class translates to `app/code/Dev/Grid/Ui/DataProvider/Category/Listing/Collection.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Ui\DataProvider\Category\Listing;
 
 use Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult;
@@ -383,6 +408,12 @@ It uses a custom collection file to add custom filters to map, and makes the gri
 The resource model class translates to `app/code/Dev/Grid/Model/ResourceModel/Category.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Model\ResourceModel;
 
 use Magento\Catalog\Model\ResourceModel\Category;
@@ -399,6 +430,12 @@ The UI grid file defines a column actions class `Dev\Grid\Ui\Component\Category\
 `app/code/Dev/Grid/Ui/Component/Category/Listing/Column/Actions.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Ui\Component\Category\Listing\Column;
 
 use Magento\Framework\View\Element\UiComponentFactory;
@@ -473,6 +510,12 @@ It gets a frontend URL for every category it lists.
 The main route defined in `app/code/Dev/Grid/etc/adminhtml/menu.xml` as `dev_grid/index/index` translates to `app/code/Dev/Grid/Controller/Adminhtml/Index/Index.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Controller\Adminhtml\Index;
 
 use Magento\Backend\App\Action;
@@ -522,6 +565,12 @@ class Index extends Action implements HttpGetActionInterface
 The Ui grid file defines the custom route `dev_grid/category/massDelete` (mass delete) and translates to `app/code/Dev/Grid/Controller/Adminhtml/Category/MassDelete.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Controller\Adminhtml\Category;
 
 use Magento\Backend\App\Action;

@@ -79,6 +79,12 @@ The `validate` method from the `app/code/Magento/CatalogRule/Model/Rule/Conditio
 Below is the definition of the `validate` method:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Catalog\Model\Product;
 use Magento\Framework\Model\AbstractModel;
 

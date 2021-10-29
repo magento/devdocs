@@ -23,6 +23,12 @@ Factories are an [exception](https://glossary.magento.com/exception) to this rul
 The following example illustrates the relationship between a simple factory and the `ObjectManager`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\Framework\App\Config;
 
 use Magento\Framework\ObjectManagerInterface;

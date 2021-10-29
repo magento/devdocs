@@ -40,6 +40,11 @@ Sample entry point script that modifies the bootstrap object:
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Framework\App\Bootstrap;
 use Magento\Framework\App\Http;
 

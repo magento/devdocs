@@ -48,6 +48,10 @@ Both the `save()` and `getResource()` methods for `Magento\Framework\Model\Abstr
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace Magento\Customer\Setup\Patch\Data;
 

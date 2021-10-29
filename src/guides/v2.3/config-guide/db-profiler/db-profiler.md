@@ -63,7 +63,13 @@ The following example displays results in a three-column table:
 
 To configure the output, add the following after the `$bootstrap->run($app);` line in your bootstrap file:
 
-```php?start_inline=1
+```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\DB\Profiler;

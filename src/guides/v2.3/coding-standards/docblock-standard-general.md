@@ -203,6 +203,12 @@ There are two solutions possible:
 **DocBlock with Included Script File:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 /**
  * Magento integration Magento test framework (MTF) bootstrap
  *
@@ -223,6 +229,12 @@ class Bootstrap
 **DocBlock with Included Class File:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\Framework\Profiler\Adapter;
 
 use Magento\Framework\Profiler\AdapterAbstract;
@@ -302,7 +314,12 @@ Class attributes must have a type declaration using `@var` tag.
 **Example of Class Attribute:**
 
 ```php
-// ...
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento;
 
 class Profiler
@@ -576,6 +593,12 @@ In general, such method overrides are a [code smell](https://en.wikipedia.org/wi
 **DocBlock for the Interface:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 /**
  * Interface for mutable value object for integer values
  */
@@ -598,6 +621,12 @@ interface MutableInterface
 **DocBlock for the implementation:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 /**
  * Limited mutable value object for integer values
  */
@@ -731,6 +760,11 @@ Syntax:
 See [PHP documentation](https://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDocumentor/tutorial_tags.method.pkg.html) for more information about the `@method` tag.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 use Magento\Framework\Model\AbstractModel;
 

@@ -295,6 +295,12 @@ Here is an example of overriding a method from a core file:
 The example below overrides the `isVisible` method from the `Magento\Checkout\Block\Onepage\Success` block class.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace ExampleCorp\OverrideExample\Block\Onepage;
 
 use Magento\Checkout\Block\Onepage\Success as MagentoSuccess;

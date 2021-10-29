@@ -35,6 +35,12 @@ You can use the Admin to define caching policies or you can define them programm
 > Example
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
@@ -87,6 +93,12 @@ Magento generates a hash based on all context variables (`\Magento\Framework\App
 For example, let's declare a context variable that shows a drinks catalog and advertisement to adult customers only. The following code snippet will create a copy of every page in Magento for users under the age of 18.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Customer\Model\Session;
 use Magento\Framework\App\Http\Context;
 
@@ -140,7 +152,14 @@ This section shows you how to tell Magento what cache to clear when you change a
 First, your entity [module](https://glossary.magento.com/module) must implement [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Framework\DataObject\IdentityInterface;
+
 class Product implements IdentityInterface
 {
      /**
@@ -162,7 +181,14 @@ class Product implements IdentityInterface
 Second, the block object must also implement `Magento/Framework/DataObject/IdentityInterface` as follows:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Framework\DataObject\IdentityInterface;
+
 class View extends AbstractProduct implements IdentityInterface
 {
     /**

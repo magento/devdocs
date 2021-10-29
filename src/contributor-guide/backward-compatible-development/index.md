@@ -136,6 +136,11 @@ Prefix the type name with a question mark when declaring a parameter with a `nul
 {% collapsible Example Code %}
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 use Magento\Framework\App\ObjectManager;
 

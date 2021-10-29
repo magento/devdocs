@@ -35,6 +35,11 @@ If the `schema_version` for your module is found in the `setup_module` table, Ma
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace VendorName\ModuleName\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
@@ -64,6 +69,11 @@ The purpose of this class is to update the database structure or apply patches.
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace VendorName\ModuleName\Setup;
 
 use Magento\Framework\Setup\UpgradeSchemaInterface;
@@ -93,6 +103,11 @@ This class makes final modifications to the database schema after it has been in
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace VendorName\ModuleName\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
@@ -126,6 +141,11 @@ The purpose of this class is to populate the database with initial data.
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace VendorName\ModuleName\Setup;
 
 use Magento\Framework\Setup\InstallDataInterface;
@@ -155,6 +175,11 @@ The purpose of this class is to fix corrupted data or populate a new data field 
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace VendorName\ModuleName\Setup;
 
 use Magento\Framework\Setup\UpgradeDataInterface;
@@ -184,6 +209,11 @@ This class makes final modifications to the database store after data has been i
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace VendorName\ModuleName\Setup;
 
 use Magento\Framework\Setup\InstallDataInterface;
@@ -208,6 +238,12 @@ If your installation or upgrade logic spans multiple classes, pass this resource
 **Example:** [Customer module's DefaultCustomerGroupsAndAttributes.php]
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class DefaultCustomerGroupsAndAttributes implements DataPatchInterface, PatchVersionInterface
 {
     /**
@@ -264,6 +300,12 @@ Use the [`ModuleContextInterface`] to get the current module version and execute
 **Example:** [User module's UpgradeData.php]
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\User\Setup;
 
 use Magento\Framework\Encryption\Encryptor;
@@ -308,6 +350,11 @@ In this phase, your module should remove all traces of its existence in the data
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace VendorName\ModuleName\Setup;
 
 use Magento\Framework\Setup\UninstallInterface;

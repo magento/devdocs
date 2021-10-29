@@ -57,6 +57,12 @@ Example upgrade script content:
 {% collapsible Show upgrade script content%}
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\CustomModule\Setup;
 
 use Magento\Framework\DB\FieldDataConverterFactory;
@@ -185,6 +191,7 @@ The following code sample upgrades the data for options in the `value` column in
 {% collapsible Show code %}
 ```php
 use Magento\Framework\DB\DataConverter\SerializedToJson;
+
 $fieldDataConverter = $this->fieldDataConverterFactory->create(
     SerializedToJson::class
 );
@@ -288,6 +295,12 @@ Since you cannot assume the format of the data when initially converted, the fol
 {% collapsible Show code %}
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\CustomModule\Setup;
 
 use Magento\Framework\DB\DataConverter\DataConverterInterface;
@@ -401,6 +414,7 @@ The following code sample obtains the Sales module connection and uses it during
 {% collapsible Show code %}
 ```php
 use Magento\Sales\Setup\SalesSetupFactory;
+
 /** SalesSetupFactory $salesSetup */
 $salesSetup = $this->salesSetupFactory->create(['setup' => $setup]);
 
@@ -422,6 +436,7 @@ It is possible to aggregate fields for the same connection only. If it is necess
 {% collapsible Show code %}
 ```php
 use Magento\Sales\Setup\SalesSetupFactory;
+
 /** SalesSetupFactory $salesSetup */
 $salesSetup = $this->salesSetupFactory->create(['setup' => $setup]);
 

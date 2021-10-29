@@ -55,6 +55,12 @@ Use [RFC2119] to interpret keywords like:
 __Not recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Config
 {
     private $data;
@@ -74,6 +80,12 @@ class Config
 __Recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Config
 {
     private $data;
@@ -141,6 +153,12 @@ class Composite
 __Not recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Config
 {
     private $data;
@@ -156,6 +174,12 @@ class Config
 __Recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Config
 {
     private $fileReader;
@@ -233,6 +257,12 @@ class SessionManager
 __Not recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class AbstractController extends Action
 {
     // ...
@@ -268,6 +298,12 @@ class Edit extends AbstractController
 __Recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Edit extends Action
 {
     public function __constructor(
@@ -341,6 +377,12 @@ echo $url->get($baseUrl, 'custom/path');
 __Not recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Edit extends Action
 {
     public function execute()
@@ -364,6 +406,12 @@ class View extends Template
 __Recommended:__
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 class Edit extends Action
 {
     public function execute()

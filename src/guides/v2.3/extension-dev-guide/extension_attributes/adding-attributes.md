@@ -54,6 +54,12 @@ Scalar is a simple attribute.
 Non-scalar attributes can be represented by Data Object.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Catalog\Api\Data\ProductInterface;
 
@@ -81,6 +87,12 @@ This is the simplest way to add extension attributes without causing a conflict:
 Function `afterGetList` is similar to `afterGet`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Catalog\Api\Data\ProductSearchResultsInterface;
 
@@ -109,6 +121,12 @@ To add extension attributes to an entity without plugins, use the `extensionActi
 Likewise, the `afterSave` plugin should manipulate the entity data before returning it:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 
@@ -136,6 +154,11 @@ But if some entity doesn't have implementation to fetch extension attributes, we
 Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might look like this:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 use Magento\Catalog\Api\Data\ProductExtensionInterface;
 use Magento\Catalog\Api\Data\ProductInterface;

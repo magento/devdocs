@@ -18,6 +18,12 @@ Third-party developers should use only these interfaces, that is, interfaces wit
 ### Example of public interface annotation
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\CatalogRule\Api;
 
 /**
@@ -41,6 +47,12 @@ The ``Magento_CatalogRule`` module.
 The ``Magento\CatalogRule\Api\CatalogRuleRepositoryInterface`` interface
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\CatalogRule\Api;
 
 use Magento\CatalogRule\Api\Data\RuleInterface;
@@ -102,6 +114,12 @@ An interface implementation is declared in the `di.xml` as `<preference />`
 The ``Magento\CatalogRule\Model\CatalogRuleRepository`` implements the default methods of the``CatalogRuleRepositoryInterface``:  ``save``, ``get``, ``delete``, ``deleteById``.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\CatalogRule\Model;
 
 use Magento\CatalogRule\Api\Data;
