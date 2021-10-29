@@ -766,6 +766,8 @@ See [PHP documentation](https://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDoc
  * See COPYING.txt for license details.
  */
 
+namespace Magento\Catalog\Model\Product;
+
 use Magento\Framework\Model\AbstractModel;
 
 /**
