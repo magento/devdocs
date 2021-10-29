@@ -330,7 +330,7 @@ entries:
   - Major Update
   - 2.4.3
 - description: Added [Community quality patches release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md)
-    to a table of contents at [Commerce Quality Patches](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching/mqp.html).
+    to a table of contents at [Commerce Quality Patches](https://devdocs.magento.com/quality-patches/usage.html).
   versions: 2.x
   type: Major Update
   date: August 27, 2021
