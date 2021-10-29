@@ -416,7 +416,7 @@ For multi-system deployments, such as the [pipeline deployment model]({{ page.ba
 
 The following code sample is a template for specifying values as sensitive or system-specific:
 
-```php
+```xml
 <type name="Magento\Config\Model\Config\TypePool">
    <arguments>
       <argument name="VALUE_TYPE" xsi:type="array">
