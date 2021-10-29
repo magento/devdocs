@@ -101,20 +101,20 @@ interface AdapterInterface
 
 1. Copy `dev/tests/api-functional/phpunit_rest.xml.dist` and `phpunit_soap.xml.dist` to `dev/tests/api-functional/phpunit_rest.xml` and `phpunit_soap.xml`.
 
-1. Define the Magento instance URL as a value of `TESTS_BASE_URL`, Test Webservice User as value of `TESTS_WEBSERVICE_USER` and Test Webservice API key as value of `TESTS_WEBSERVICE_APIKEY` in copied file i.e. `phpunit_rest.xml` or `phpunit_soap.xml`.
+2. Define the Magento instance URL as a value of `TESTS_BASE_URL`, Test Webservice User as value of `TESTS_WEBSERVICE_USER` and Test Webservice API key as value of `TESTS_WEBSERVICE_APIKEY` in copied file i.e. `phpunit_rest.xml` or `phpunit_soap.xml`.
 
-1. Copy `dev/tests/api-functional/config/install-config-mysql.php.dist` to `dev/tests/api-functional/config/install-config-mysql.php`.
+3. Copy `dev/tests/api-functional/config/install-config-mysql.php.dist` to `dev/tests/api-functional/config/install-config-mysql.php`.
 
-1. Configure your DB connection and install settings in `dev/tests/api-functional/config/install-config-mysql.php`. Specify the Magento database. The base URL to access this Magento instance must be the same specified in the `phpunit_rest.xml` or `phpunit_soap.xml` file.
+4. Configure your DB connection and install settings in `dev/tests/api-functional/config/install-config-mysql.php`. Specify the Magento database. The base URL to access this Magento instance must be the same specified in the `phpunit_rest.xml` or `phpunit_soap.xml` file.
 
-1. Run `phpunit` using the `dev/tests/api-functional/phpunit_rest.xml` or `dev/tests/api-functional/phpunit_soap.xml` configuration file::
+5. Run `phpunit` using the `dev/tests/api-functional/phpunit_rest.xml` or `dev/tests/api-functional/phpunit_soap.xml` configuration file::
 
    ```bash
-   vendor/bin/phpunit --config ./dev/tests/api-functional/phpunit_rest.xml
+   vendor/bin/phpunit --configuration <full xml file path>
    ```
 
    or
 
    ```bash
-   vendor/bin/phpunit --config ./dev/tests/api-functional/phpunit_soap.xml
+   vendor/bin/phpunit -c <full xml file path>
    ```
