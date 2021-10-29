@@ -138,10 +138,12 @@ mkdir Controller/Page
 Let’s create an action file `Controller/Page/View.php`:
 
 ```php
-<?php /**
+<?php
+/**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Learning\HelloPage\Controller\Page;
 
 use Magento\Framework\App\Action\Action;

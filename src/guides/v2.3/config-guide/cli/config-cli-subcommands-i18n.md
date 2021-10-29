@@ -290,11 +290,13 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 
    **Sample `registration.php`:**
 
-   ```php?start_inline=1
+   ```php
+   <?php
    /**
     * Copyright © Magento, Inc. All rights reserved.
     * See COPYING.txt for license details.
     */
+
    use Magento\Framework\Component\ComponentRegistrar;
    ComponentRegistrar::register(
        ComponentRegistrar::LANGUAGE,

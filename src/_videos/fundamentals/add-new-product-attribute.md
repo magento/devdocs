@@ -103,7 +103,7 @@ Create the file `app/code/Learning/ClothingMaterial/Setup/InstallData.php`:
 ```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -213,7 +213,7 @@ Next, we need to create the source model:
 ```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -259,7 +259,7 @@ Now we will create a backend model:
 ```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
