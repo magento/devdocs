@@ -27,7 +27,7 @@ Prior to setting up a workspace, gather the following credentials and accounts:
 
 -  **{{site.data.var.ee}} Encryption Key**
 
-    When importing an existing system only, capture the encryption key used to protect your access and data for the database. For details on this key, see [Resolve issues with encryption key]({{ site.baseurl }}/cloud/trouble/trouble-crypt-key-variable.html)
+    When importing an existing system only, capture the encryption key used to protect your access and data for the database. For details on this key, see [Resolve issues with encryption key](https://support.magento.com/hc/en-us/articles/360033978652)
 
 ## Launch a Docker environment {#docker}
 
