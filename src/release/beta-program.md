@@ -3,7 +3,7 @@ group: release
 title: Adobe Commerce Beta program
 ---
 
-Welcome to the Adobe Beta Program and thank you for your interest in participating.
+Welcome to the {{ site.data.var.ee }} Beta Program and thank you for your interest in participating.
 This program is available to all our partners.
 To sign up for the Beta program, you must be a current [Solution Partner][] or Technology Partner with Adobe.
 Read and follow the steps outlined below to participate in the program.
@@ -16,9 +16,9 @@ Read and follow the steps outlined below to participate in the program.
 
 Ready to participate? Follow the steps below.
 
-## Sign the NDA
+## Sign the Beta Program Agreement
 
-First, we need your company to sign our [Beta Agreement][].
+First, we need your company to sign our [Beta Program Agreement][].
 To verify the authenticity of the signature, we ask you to have the Adobe relationship owner, typically the owner of the _primary_ MageID associated with your company, read and sign the document linked above.
 ​
 Further instructions while filling out the form:
@@ -42,8 +42,7 @@ If you are not already in the Adobe Partner Program, you must do the following:
 ## Get the Code
 
 Third, the pre-production code will be released as a Composer metapackage on <https://repo.magento.com>.
-The date of this Beta release will be announced on our private GitHub repository.
-Visit this page six weeks ahead of our set [release calendar][] for the latest information about our upcoming Beta release.
+See our [release schedule][] for the latest information about our upcoming Beta release.
 ​
 ### Instructions to successfully download the Beta code
 
@@ -56,9 +55,9 @@ For more information about this program, refer to our [FAQ][].
 For additional questions, email us at <magebeta@adobe.com>.
 
 <!-- Link definitions -->
-[Beta Agreement]: https://experiencecloudpanel.adobe.com/c/r/mbeta
+[Beta Program Agreement]: https://experiencecloudpanel.adobe.com/c/r/mbeta
 [Cannot access the latest Beta version]: https://support.magento.com/hc/en-us/articles/360048169471
 [FAQ]: https://fieldreadiness-adobe.highspot.com/items/5e5e6b8fc714332f32a7cd96?lfrm=rhp.0
 [Quick start install]: {{site.baseurl}}{{site.gdeurl}}/install-gde/composer.html
-[release calendar]: {{site.baseurl}}/release/
+[release schedule]: {{site.baseurl}}/release/
 [Solution Partner]: {{site.baseurl}}/community/contribution-programs.html
