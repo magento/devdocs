@@ -9,6 +9,10 @@ pages:
     url: /release/
     versionless: true
 
+  - label: Beta program
+    url: /release/beta-program.html
+    versionless: true
+
   - label: Released versions
     url: /release/released-versions.html
     versionless: true
