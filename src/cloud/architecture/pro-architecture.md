@@ -211,6 +211,8 @@ Our redundant architecture means we can offer upscaling without downtime. When u
 
 For example, you can add extra web servers to an existing cluster should the constriction be at the PHP level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level. See [Scaled architecture]({{ site.baseurl }}/cloud/architecture/scaled-architecture.html).
 
+If you expect a significant increase in traffic for an event or other reason, you can request a temporary increase in capacity. See [How to request temporary Magento upsize](https://support.magento.com/hc/en-us/articles/360041138511) in the _Commerce Help Center_.
+
 ## Master environment
 
 On Pro plan projects, the Master branch provides an active PaaS environment with your Production environment. Always push a copy of the Production code to the Master environment in case you need to debug the Production environment without interrupting services.

@@ -41,7 +41,7 @@ You can now use this token in the Authorization request header field for any que
 
 ![GraphQL Authorization Bearer]({{site.baseurl}}/common/images/graphql/graphql-authorization.png)
 
-If necessary, you also can [revoke the customer's token]({{ page.baseurl }}/graphql/mutations/revoke-customer-token.html
+If necessary, you also can [revoke the customer's token]({{page.baseurl}}/graphql/mutations/revoke-customer-token.html)
 
 By default, a customer token is valid for 1 hour. You can change these values from Admin by selecting **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration** > **Customer Token Lifetime**.
 

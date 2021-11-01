@@ -13,7 +13,7 @@ Building your component involves laying out the file structure, creating the nec
 
 Before you begin creating your new component, make sure that you have a working installation of Magento 2, and the Magento [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
-Also, Magento recommends that you disable caching while setting up the component file structure and adding configuration files.
+Also, we recommend that you disable caching while setting up the component file structure and adding configuration files.
 
 The following details the component building process:
 

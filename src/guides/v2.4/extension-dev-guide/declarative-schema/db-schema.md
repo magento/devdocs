@@ -23,10 +23,10 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 ```xml
 <table name="catalog_product_entity_datetime" resource="default" engine="innodb"
            comment="Catalog Product Datetime Attribute Backend Table">
-    <column xsi:type="int" name="value_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
-    <column xsi:type="smallint" name="attribute_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Attribute ID"/>
-    <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Store ID"/>
-    <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Entity ID"/>
+    <column xsi:type="int" name="value_id" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
+    <column xsi:type="smallint" name="attribute_id" unsigned="true" nullable="false" identity="false" default="0" comment="Attribute ID"/>
+    <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false" identity="false" default="0" comment="Store ID"/>
+    <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="false" default="0" comment="Entity ID"/>
     <column xsi:type="datetime" name="value" on_update="false" nullable="true" comment="Value"/>
     <constraint xsi:type="primary" referenceId="PRIMARY">
         <column name="value_id"/>
@@ -160,7 +160,7 @@ For more information about each type, refer to the annotations in the correspond
 Example:
 
 ```xml
-<column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Credit ID"/>
+<column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="Credit ID"/>
 ```
 
 #### `constraint` subnode
@@ -230,10 +230,10 @@ The following example creates the `declarative_table` table with four columns. T
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
 +    <table name="declarative_table">
-+        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
-+        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
++        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
++        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
 +        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
-+        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
++        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
 +        <constraint xsi:type="primary" referenceId="PRIMARY">
 +            <column name="id_column"/>
 +        </constraint>
@@ -252,10 +252,10 @@ In the following example, the `declarative_table` table was completely removed f
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
 -    <table name="declarative_table">
--        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
--        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+-        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
+-        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
 -        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
--        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+-        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
 -        <constraint xsi:type="primary" referenceId="PRIMARY">
 -            <column name="id_column"/>
 -        </constraint>
@@ -285,10 +285,10 @@ This declarative process of renaming a table is not fast. If you need to migrate
                  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
 +    <table name="new_declarative_table" onCreate="migrateDataFromAnotherTable(declarative_table)">
 -    <table name="declarative_table">
-        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
-        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
         <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
-        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
@@ -307,11 +307,11 @@ The following example adds the `date_closed` column.
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="declarative_table">
-        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
-        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
         <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
-        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
-+       <column xsi:type="timestamp" name="date_closed" padding="10" comment="Time of event"/>
+        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
++       <column xsi:type="timestamp" name="date_closed" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
@@ -330,11 +330,11 @@ The following example removes the  `date_closed` column by deleting its `column`
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="declarative_table">
-        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
-        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
         <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
-        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
--       <column xsi:type="timestamp" name="date_closed" padding="10" comment="Time of event"/>
+        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
+-       <column xsi:type="timestamp" name="date_closed" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
@@ -353,11 +353,11 @@ The following example changes the `type` of the `title` column from `varchar` to
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="declarative_table">
-        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
-        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
 -       <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
 +       <column xsi:type="text" name="title" nullable="false" comment="Title"/>
-        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
@@ -384,10 +384,10 @@ The following example adds the `INDEX_SEVERITY` index to the `declarative_table`
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="declarative_table">
-        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
-        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
         <column xsi:type="text" name="title" nullable="false" length="255" comment="Title"/>
-        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
@@ -405,10 +405,10 @@ In the following example, the selected `constraint` node defines the characteris
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="declarative_table">
-        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
-        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
         <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
-        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
@@ -430,10 +430,10 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="declarative_table">
-        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
-        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
         <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
-        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
@@ -458,7 +458,7 @@ Module B disables the original primary key and sets a new primary key with a `re
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="declarative_table">
-        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
@@ -472,7 +472,7 @@ Module B disables the original primary key and sets a new primary key with a `re
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="declarative_table">
-        <column xsi:type="int" name="new_id_column" padding="10" unsigned="true" nullable="false"
+        <column xsi:type="int" name="new_id_column" unsigned="true" nullable="false"
                 comment="New Entity Id"/>
         <constraint xsi:type="primary" referenceId="PRIMARY" disabled="true"/>
         <constraint xsi:type="primary" referenceId="NEW_PRIMARY">

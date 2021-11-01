@@ -10,11 +10,11 @@ You can back up and restore specific environments at any time using a snapshot. 
 A _snapshot_ is a complete backup of an environment that includes all persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes. Because an environment deploys as a read-only file system, restoring a snapshot is very fast.
 
 {:.bs-callout-warning}
-If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See [Rollbacks to remove code](#rollback-code). If you need to restore an unstable environment that does not have a snapshot, see [Restore an environment]({{ site.baseurl }}/cloud/env/restore-environment.html).
+If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See [Rollbacks to remove code](#rollback-code). If you must restore an unstable environment that does not have a snapshot, see [Restore an environment]({{ site.baseurl }}/cloud/env/restore-environment.html).
 
-You have up to **7 days** to _restore_ a snapshot.
+You have up to **seven days** to _restore_ a snapshot.
 
-We provide two methods for creating and managing snapshots:
+Adobe provides two methods for creating and managing snapshots:
 
 -  Project Web Interface
 -  Magento Cloud CLI
@@ -116,10 +116,9 @@ To restore a snapshot using the Magento Cloud CLI:
 
 ## Dump your database {#db-dump}
 
-You can create a copy of your database using the [`magento/ece-tools`]({{ site.baseurl }}/cloud/reference/cloud-composer.html#cloud-composer-cloudmeta) `db-dump` command.
+You can create a copy of your database using the `{{site.data.var.ct}} db-dump` command. By default, this command creates backups in the `/app/var/dump-main` directory for all database connections that are specified in the environment configuration. For example, if you configured your project to use split databases, the `db-dump` operation creates backups for each of the configured databases.
 
-By default, this command creates backups for all database connections that are specified in the environment configuration. For example, if you configured your project to use split databases, the `db-dump` operation creates backups for each of the configured databases.
-You can also backup only selected databases by appending the database names to the command, for example:
+You can also back up only selected databases by appending the database names to the command, for example:
 
 ```bash
 php vendor/bin/ece-tools -- main sales
@@ -128,43 +127,43 @@ php vendor/bin/ece-tools -- main sales
 For help, use the command: `php vendor/bin/ece-tools db-dump --help`
 
 {:.procedure}
-To create a database dump:
+To create a database dump in the Staging or Production environment:
 
-1. [SSH into the environment]({{ site.baseurl }}/cloud/env/environments-ssh.html) that contains the database you want to copy:
+1. [Use SSH to log in to the environment]({{ site.baseurl }}/cloud/env/environments-ssh.html) that contains the database to copy:
 
    -  **Staging:** `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
    -  **Production:** `ssh -A <project ID>@<project ID>.ent.magento.cloud`
-   -  To SSH into the `master` branch of your Integration environment:
 
-      ```bash
-      magento-cloud environment:ssh
-      ```
+   ```bash
+   magento-cloud environment:ssh
+   ```
 
-1. Enter the following command:
+1. Create a backup of the database. To choose a target directory for the DB dump, use the `--dump-directory` option.
 
-    ```bash
-    php vendor/bin/ece-tools db-dump
-    ```
+   ```bash
+   php vendor/bin/ece-tools db-dump
+   ```
 
-    ```terminal
-    php vendor/bin/ece-tools db-dump
-    The db-dump operation switches the site to maintenance mode, stops all active cron jobs and consumer queue processes, and     disables cron jobs before starting the dump process.
-    Your site will not receive any traffic until the operation completes.
-    Do you wish to proceed with this process? (y/N)? y
-    2020-01-28 16:38:08] INFO: Starting backup.
-    [2020-01-28 16:38:08] NOTICE: Enabling Maintenance mode
-    [2020-01-28 16:38:10] INFO: Trying to kill running cron jobs and consumers processes
-    [2020-01-28 16:38:10] INFO: Running Magento cron and consumers processes were not found.
-    [2020-01-28 16:38:10] INFO: Waiting for lock on db dump.
-    [2020-01-28 16:38:10] INFO: Start creation DB dump for main database...
-    [2020-01-28 16:38:10] INFO: Finished DB dump for main database, it can be found here: /tmp/qxmtlseakof6y/dump-main-1580229490.sql.gz
-    [2020-01-28 16:38:10] INFO: Backup completed.
-    [2020-01-28 16:38:11] NOTICE: Maintenance mode is disabled.
-    ```
+   Sample response:
 
- {:.bs-callout-info}
+   ```terminal
+   The db-dump operation switches the site to maintenance mode, stops all active cron jobs and consumer queue processes, and disables cron jobs before starting the dump process.
+   Your site will not receive any traffic until the operation completes.
+   Do you wish to proceed with this process? (y/N)? y
+   2020-01-28 16:38:08] INFO: Starting backup.
+   [2020-01-28 16:38:08] NOTICE: Enabling Maintenance mode
+   [2020-01-28 16:38:10] INFO: Trying to kill running cron jobs and consumers processes
+   [2020-01-28 16:38:10] INFO: Running Magento cron and consumers processes were not found.
+   [2020-01-28 16:38:10] INFO: Waiting for lock on db dump.
+   [2020-01-28 16:38:10] INFO: Start creation DB dump for main database...
+   [2020-01-28 16:38:10] INFO: Finished DB dump for main database, it can be found here: /tmp/qxmtlseakof6y/dump-main-1580229490.sql.gz
+   [2020-01-28 16:38:10] INFO: Backup completed.
+   [2020-01-28 16:38:11] NOTICE: Maintenance mode is disabled.
+   ```
 
--  For Production environments, we recommend completing database dump operations during off-peak hours to minimize service disruptions that occur when the site is in maintenance mode.
+{:.bs-callout-info}
+
+-  For Production environments, Adobe recommends completing database dump operations during off-peak hours to minimize service disruptions that occur when the site is in maintenance mode.
 -  The `db-dump` command creates an archive in your remote project directory called  `dump-<timestamp>.sql.gz`.
 -  If an error occurs during the dump operation, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
 -  For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump might not be copied. The command generates a `var/dbdump.lock` file to prevent the command from running on more than one node.
@@ -174,8 +173,8 @@ If you want to push this data into an environment, see [Migrate data and static 
 
 ## Rollbacks to remove code {#rollback-code}
 
-We recommend creating a snapshot of the environment and a backup of the database prior to deployments.
+Adobe recommends creating a snapshot of the environment and a backup of the database prior to deployments.
 
-If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks might require database changes.
+If you must restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the number of changes and when you roll back. Some rollbacks might require database changes.
 
 Specifically for code, you should investigate reverting code changes from your branch before redeploying. If not, every deploy pushes the master branch (code and extensions) to the target environment again. See the [Deployment Process]({{ site.baseurl }}/cloud/reference/discover-deploy.html).

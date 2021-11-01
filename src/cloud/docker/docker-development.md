@@ -55,7 +55,7 @@ The script option settings determine the PHP version and {{site.data.var.mcd-pro
 {: .install-script-options}
 Option | Description
 :----- | :------
-`-p`, `--php` | PHP version (for installing dependencies). You must specify a PHP version that is compatible with the {{site.data.var.ee}} version deployed to the Cloud Docker envrionment. Defaults to `7.2`
+`-p`, `--php` | PHP version (for installing dependencies). You must specify a PHP version that is compatible with the {{site.data.var.ee}} version deployed to the Cloud Docker environment.
 `-i`, `--image` |  {{site.data.var.mcd-prod}} image version (for installing dependencies). Defaults to `1.1`
 `--host` | Domain name to add to the `/etc/hosts` file. Defaults to `magento2.docker`
 `--add-host` | Add domain name to `/etc/hosts` file. Defaults to true (`yes`)
@@ -115,7 +115,7 @@ Prior to setting up a local workspace, gather the following credentials and acco
 [authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [Magento Cloud template]: https://github.com/magento/magento-cloud
 [Set up an account]: {{site.baseurl}}/cloud/before/before-workspace.html#newaccount
-[Resolve issues with encryption key]: {{site.baseurl}}/cloud/trouble/trouble-crypt-key-variable.html
+[Resolve issues with encryption key]: https://support.magento.com/hc/en-us/articles/360033978652
 [Update the hosts file and install dependencies]: {{site.baseurl}}/cloud/docker/docker-installation.html#update-the-hosts-file-and-install-dependencies
 [{{site.data.var.mcd-package}} GitHub repository]: https://github.com/magento/magento-cloud-docker
 [Get support for {{site.data.var.mcd-prod}}]: {{site.baseurl}}/cloud/docker/docker-troubleshooting.html

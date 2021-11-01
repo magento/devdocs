@@ -21,7 +21,7 @@ The `ConfigurableProduct` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `configurable_options` | [[ConfigurableProductOptions]](#configProdOptions) | An array of linked simple product items
-`configurable_product_options_selection(configurableOptionValueUids: [ID!])` | [ConfigurableProductOptionsSelection](#ConfigurableProductOptionsSelection) | Contains media gallery items and other details about selected configurable product options as well as details about remaining selectable options. Magento recommends you filter by one or more `uid` values to prevent loading a large amount of media gallery data
+`configurable_product_options_selection(configurableOptionValueUids: [ID!])` | [ConfigurableProductOptionsSelection](#ConfigurableProductOptionsSelection) | Contains media gallery items and other details about selected configurable product options as well as details about remaining selectable options. We recommend you filter by one or more `uid` values to prevent loading a large amount of media gallery data
 `variants` | ConfigurableVariant | An array of variants of products
 
 ### ConfigurableAttributeOption object

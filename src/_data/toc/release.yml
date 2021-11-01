@@ -1,6 +1,10 @@
 label: Release Information
 pages:
 
+  - label: Roadmap
+    url: /release/roadmap.html
+    versionless: true
+
   - label: Upcoming releases
     url: /release/
     versionless: true
