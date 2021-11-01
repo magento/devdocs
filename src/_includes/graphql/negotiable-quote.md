@@ -3,6 +3,7 @@ The `NegotiableQuote` object contains details of a negotiable quote, including i
 Attribute | Data Type | Description
 --- | --- | ---
 `available_payment_methods` | [AvailablePaymentMethod] | An array of payment methods that can be applied to the negotiable quote
+`billing_address` | NegotiableQuoteBillingAddress | The billing address applied to the negotiable quote
 `buyer` | NegotiableQuoteUser! | The first and last name of the buyer
 `comments` | [NegotiableQuoteComment!] | A list of comments made by the buyer and seller
 `created_at` | String | Timestamp indicating when the negotiable quote was created
