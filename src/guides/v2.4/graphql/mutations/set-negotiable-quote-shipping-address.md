@@ -4,7 +4,7 @@ title: setNegotiableQuoteShippingAddresses mutation
 b2b_only: true
 ---
 
-The `setNegotiableQuoteShippingAddresses` mutation assigns a previously-defined address as the shipping address for the specified negotiable quote. If the company user needs to add a new shipping address, use the [`setShippingAddressesOnCart` mutation]({{page.baseurl}}/graphql/mutations/set-shipping-address.html) instead.
+The `setNegotiableQuoteBillingAddresses` mutation assigns the shipping address for the specified negotiable quote. You can assign an address from the company user's address book, or define a new one.
 
 To return a list of valid shipping addresses, construct a [`company` query]({{page.baseurl}}/graphql/queries/) that includes the `user` input attribute.
 
@@ -29,8 +29,9 @@ The following example adds a predefined shipping address to a negotiable quote.
 ```graphql
 mutation{
   setNegotiableQuoteShippingAddress(input: 
-    {customer_address_id: "Mg=="
-    quote_uid: "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb"
+    {
+      customer_address_id: "Mg=="
+      quote_uid: "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb"
     })
     {
     quote {
@@ -68,9 +69,11 @@ mutation{
 
 ## Input attributes
 
-The `SetNegotiableQuoteShippingAddressInput` input object specifies the company user's cart ID and other information to identify a new negotiable quote.
+The `SetNegotiableQuoteShippingAddressInput` input object specifies the company user's cart ID and one or more shipping addresses.
 
 ### SetNegotiableQuoteShippingAddressInput attributes {#SetNegotiableQuoteShippingAddressInput}
+
+The `customer_address_id` field is deprecated. If you specify both the `customer_address_id` and `shipping_addresses` field, the system returns an error.
 
 The `SetNegotiableQuoteShippingAddressInput` object contains the following attributes.
 
@@ -92,21 +95,7 @@ Attribute |  Data Type | Description
 
 ### NegotiableQuoteAddressInput {#NegotiableQuoteAddressInput}
 
-The `NegotiableQuoteShippingAddressInput` object contains the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`city` | String! | The city specified for the billing or shipping address
-`company` | String | The company name
-`country_code` | String! | The country code and label for the billing or shipping address
-`firstname` | String! | The first name of the company user
-`lastname` | String! | The last name of the company user
-`postcode` | String | The ZIP or postal code of the billing or shipping address
-`region` | String | A string that defines the state or province of the billing or shipping address
-`region_id` | Int | An integer that defines the state or province of the billing or shipping address
-`save_in_address_book` | Boolean | Determines whether to save the address in the customer's address book. The default value is true
-`street` | [String!]! | An array containing the street for the billing or shipping address
-`telephone` | String | The telephone number for the billing or shipping address
+{% include graphql/negotiable-quote-address-input.md %}
 
 ## Output attributes
 
