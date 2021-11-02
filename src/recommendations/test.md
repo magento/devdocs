@@ -6,13 +6,7 @@ ee_only: True
 
 Before you deploy recommendations to your production environment, you should test on a non-production environment to ensure everything is working as expected.
 
-Product Recommendations return products based on shopper [behavioral data]({{ page.baseurl }}/recommendations/product-recs.html#types-of-data) collected from your storefront. In a non-production environment, however, it is likely you will not have any behavioral data from shoppers. The only recommendation type you can test without behavioral data is **More like this**. This recommendation type does not require any input data, as it uses a direct content similarity match.
-
-The following recommendation types require behavioral data:
-
--  **Most Viewed**
--  **Viewed this, viewed that**
--  **Bought this, bought that**
+Product Recommendations return products based on shopper [behavioral data]({{ page.baseurl }}/recommendations/product-recs.html#types-of-data) collected from your storefront. In a non-production environment, however, it is likely you will not have any behavioral data from shoppers. The only recommendation types you can test without behavioral data are **More like this** and **Visual Similarity**. These recommendation types do not require any input data, as they use a direct content similarity match.
 
 How can you test your recommendations in a non-production environment using behavioral data? There are a couple of options.
 
@@ -41,6 +35,6 @@ See the [user guide](https://docs.magento.com/user-guide/marketing/recommendatio
 
 ### Caveats
 
--  The non-production SaaS Data Space behavioral and catalog data identifies an isolated environment in which the resulting product recommendations will be based entirely on the behavioral data generated on the associated storefront.
+-  The behavioral and catalog data associated with your non-production SaaS Data Space identifies an isolated environment. This results in Product Recommendations based entirely on the behavioral data generated on the associated storefront.
 
--  Because you will not have large amounts of behavioral data, input data for computing product associations is sparse. However, that data is still sent to Sensei to compute the machine learning models and provide recommendations based on data you generated within this environment.
+-  Because you will not have large amounts of behavioral data, input data for computing product associations is sparse. However, that data is still sent to Adobe Sensei to compute the machine learning models and provide recommendations based on data you generated within this environment.

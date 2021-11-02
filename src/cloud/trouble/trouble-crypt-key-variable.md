@@ -4,6 +4,7 @@ title: Resolve issues with encryption key
 functional_areas:
   - Cloud
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360033978652
 ---
 
 This topic discusses solutions to typical issues you might experience with {{site.data.var.ee}} encryption key in your environments.

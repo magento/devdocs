@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `addProductsToCart` mutation adds any type of product to the shopping cart. It streamlines the process of adding products by allowing you to specify multiple product types in a single call. Magento recommends using this mutation to add products to the cart instead of the single-purpose mutations, such as `addSimpleProductsToCart` and `addConfigurableProductsToCart`.
+The `addProductsToCart` mutation adds any type of product to the shopping cart. It streamlines the process of adding products by allowing you to specify multiple product types in a single call. We recommend using this mutation to add products to the cart instead of the single-purpose mutations, such as `addSimpleProductsToCart` and `addConfigurableProductsToCart`.
 
 You must specify the Cart ID along with the list of SKU and quantity pairs as parameters to add the products to the shopping cart.
 

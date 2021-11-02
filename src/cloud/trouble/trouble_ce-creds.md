@@ -4,6 +4,7 @@ title: Incorrect credentials
 functional_areas:
   - Cloud
   - Configuration
+redirect_to: https://support.magento.com/hc/en-us/articles/360040296392
 ---
 
 ## Incorrect credentials
