@@ -4,7 +4,7 @@ title: setNegotiableQuoteShippingAddresses mutation
 b2b_only: true
 ---
 
-The `setNegotiableQuoteBillingAddresses` mutation assigns the shipping address for the specified negotiable quote. You can assign an address from the company user's address book, or define a new one.
+The `setNegotiableQuoteBillingAddresses` mutation assigns the shipping address for the specified negotiable quote. You can assign an address from the company user's address book, or define a new one. The negotiable quote must be in the UPDATED state to successfully set a shipping address.
 
 To return a list of valid shipping addresses, construct a [`company` query]({{page.baseurl}}/graphql/queries/company.html) that includes the `user` input attribute.
 
