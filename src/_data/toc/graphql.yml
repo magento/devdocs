@@ -568,7 +568,7 @@ pages:
           edition: b2b-only
           exclude_versions: ["2.3"]
 
-        - label: setNegotiableQuoteShippingAddresses mutation
+        - label: setNegotiableQuoteShippingAddress mutation
           url: /graphql/mutations/set-negotiable-quote-shipping-address.html
           edition: b2b-only
           exclude_versions: ["2.3"]
