@@ -11,7 +11,7 @@ Developer mode supports an active development environment with full, writable fi
 
 ## Performance considerations
 
-On macOS and Windows systems, performance is slower in developer mode because of additional file synchronization operations. However, you can improve performance by using either the `manual-native` or the `mutagen` file synchronization option when you generate the `docker-compose.yml` file. See [Synchronizing data in Docker].
+On macOS and Windows systems, performance is slower in developer mode because of additional file synchronization operations. However, you can improve performance by using either the `manual-native` or the `mutagen` file synchronization option when you generate the `docker-compose.yml` file. See [Synchronizing data in Docker][sync].
 
 {: .bs-callout-info }
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
@@ -24,7 +24,7 @@ Large files (>1 GB) can cause a period of inactivity. DB dumps and archive files
 **Prerequisites:**
 
 -  Complete the [installation steps].
--  [Install file synchronization tools][Synchronizing data in Docker] if needed.
+-  [Install file synchronization tools][sync] if needed.
 
 {:.procedure}
 To launch the Docker environment in developer mode:
@@ -35,7 +35,10 @@ To launch the Docker environment in developer mode:
    ./vendor/bin/ece-docker build:compose --mode="developer"
    ```
 
-   If required, set the option for [synchronizing data in Docker]. For example:
+   {:.bs-callout-info}
+   The `--mode` option in this step determines the mode in a later `deploy` step.
+
+   If required, set the option for [synchronizing data in Docker][sync]. For example:
 
    ```bash
    ./vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen"
@@ -107,10 +110,6 @@ To launch the Docker environment in developer mode:
       docker-compose run --rm deploy cloud-deploy
       ```
 
-      ```bash
-      docker-compose run --rm deploy magento-command deploy:mode:set developer
-      ```
-
    -  Run post-deploy hooks.
 
        ```bash
@@ -153,12 +152,10 @@ To launch the Docker environment in developer mode:
 
 <!--Link definitions-->
 
-[{{site.data.var.mcd-prod}} Docker image]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
 [installation steps]: {{site.baseurl}}/cloud/docker/docker-installation.html
-[latest release of the {{site.data.var.mcd-package}}]: https://github.com/magento/magento-cloud-docker/releases
 [magento-creds]: {{site.baseurl}}/cloud/setup/first-time-setup-import-prepare.html#auth-json
 [mutagen-install]: https://mutagen.io/documentation/introduction/installation/
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
-[Synchronizing data in Docker]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
+[sync]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
 [xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug]

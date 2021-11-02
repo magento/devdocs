@@ -27,7 +27,7 @@ If you modified your `composer.json` file to add modules, we recommend running t
 
 Your Git branch must have the following files for building and deploying to your local, Integration, Staging, and Production environments:
 
-*  `auth.json` in the root project directory. This file includes the authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ site.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
+*  `auth.json` in the root project directory. This file includes the authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment](https://support.magento.com/hc/en-us/articles/4411647469965).
 *  `config.php` if you use [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) to manage configuration settings
 *  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html) is updated and saved in the root directory
 *  [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html) is updated and saved in `magento/`

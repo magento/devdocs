@@ -177,6 +177,45 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5082 | The use of $this in templates is deprecated | Use $block instead |
 | 5083 | Constants are not allowed as the first argument of translation function | use string literal instead |
 | 5084 | Please do not initialize JS component in php | Initialize JS component in template |
+| 6001 | jQuery.andSelf() removed | Use jQuery.addBack() |
+| 6002 | jQuery $.bind and $.unbind are deprecated | Use $.on and $.off instead |
+| 6003 | Instead of .blur(fn) use .on("blur", fn). Instead of .blur() use .trigger("blur") | Instead of .blur(fn) use .on("blur", fn). Instead of .blur() use .trigger("blur") |
+| 6003 | Instead of .focus(fn) use .on("focus", fn). Instead of .focus() use .trigger("focus") | Instead of .focus(fn) use .on("focus", fn). Instead of .focus() use .trigger("focus") |
+| 6003 | Instead of .focusin(fn) use .on("focusin", fn). Instead of .focusin() use .trigger("focusin") | Instead of .focusin(fn) use .on("focusin", fn). Instead of .focusin() use .trigger("focusin") |
+| 6003 | Instead of .focusout(fn) use .on("focusout", fn). Instead of .focusout() use .trigger("focusout") | Instead of .focusout(fn) use .on("focusout", fn). Instead of .focusout() use .trigger("focusout") |
+| 6003 | Instead of .resize(fn) use .on("resize", fn). Instead of .resize() use .trigger("resize") | Instead of .resize(fn) use .on("resize", fn). Instead of .resize() use .trigger("resize") |
+| 6003 | Instead of .scroll(fn) use .on("scroll", fn). Instead of .scroll() use .trigger("scroll") | Instead of .scroll(fn) use .on("scroll", fn). Instead of .scroll() use .trigger("scroll") |
+| 6003 | Instead of .dblclick(fn) use .on("dblclick", fn). Instead of .dblclick() use .trigger("dblclick") | Instead of .dblclick(fn) use .on("dblclick", fn). Instead of .dblclick() use .trigger("dblclick") |
+| 6003 | Instead of .mousedown(fn) use .on("mousedown", fn). Instead of .mousedown() use .trigger("mousedown") | Instead of .mousedown(fn) use .on("mousedown", fn). Instead of .mousedown() use .trigger("mousedown") |
+| 6003 | Instead of .mouseup(fn) use .on("mouseup", fn). Instead of .mouseup() use .trigger("mouseup") | Instead of .mouseup(fn) use .on("mouseup", fn). Instead of .mouseup() use .trigger("mouseup") |
+| 6003 | Instead of .mousemove(fn) use .on("mousemove", fn). Instead of .mousemove() use .trigger("mousemove") | Instead of .mousemove(fn) use .on("mousemove", fn). Instead of .mousemove() use .trigger("mousemove") |
+| 6003 | Instead of .mouseover(fn) use .on("mouseover", fn). Instead of .mouseover() use .trigger("mouseover") | Instead of .mouseover(fn) use .on("mouseover", fn). Instead of .mouseover() use .trigger("mouseover") |
+| 6003 | Instead of .mouseout(fn) use .on("mouseout", fn). Instead of .mouseout() use .trigger("mouseout") | Instead of .mouseout(fn) use .on("mouseout", fn). Instead of .mouseout() use .trigger("mouseout") |
+| 6003 | Instead of .mouseenter(fn) use .on("mouseenter", fn). Instead of .mouseenter() use .trigger("mouseenter") | Instead of .mouseenter(fn) use .on("mouseenter", fn). Instead of .mouseenter() use .trigger("mouseenter") |
+| 6003 | Instead of .mouseleave(fn) use .on("mouseleave", fn). Instead of .mouseleave() use .trigger("mouseleave") | Instead of .mouseleave(fn) use .on("mouseleave", fn). Instead of .mouseleave() use .trigger("mouseleave") |
+| 6003 | Instead of .change(fn) use .on("change", fn). Instead of .change() use .trigger("change") | Instead of .change(fn) use .on("change", fn). Instead of .change() use .trigger("change") |
+| 6003 | Instead of .select(fn) use .on("select", fn). Instead of .select() use .trigger("select") | Instead of .select(fn) use .on("select", fn). Instead of .select() use .trigger("select") |
+| 6003 | Instead of .submit(fn) use .on("submit", fn). Instead of .submit() use .trigger("submit") | Instead of .submit(fn) use .on("submit", fn). Instead of .submit() use .trigger("submit") |
+| 6003 | Instead of .keydown(fn) use .on("keydown", fn). Instead of .keydown() use .trigger("keydown") | Instead of .keydown(fn) use .on("keydown", fn). Instead of .keydown() use .trigger("keydown") |
+| 6003 | Instead of .keypress(fn) use .on("keypress", fn). Instead of .keypress() use .trigger("keypress") | Instead of .keypress(fn) use .on("keypress", fn). Instead of .keypress() use .trigger("keypress") |
+| 6003 | Instead of .keyup(fn) use .on("keyup", fn). Instead of .keyup() use .trigger("keyup") | Instead of .keyup(fn) use .on("keyup", fn). Instead of .keyup() use .trigger("keyup") |
+| 6003 | Instead of .contextmenu(fn) use .on("contextmenu", fn). Instead of .contextmenu() use .trigger("contextmenu") | Instead of .contextmenu(fn) use .on("contextmenu", fn). Instead of .contextmenu() use .trigger("contextmenu") |
+| 6003 | Instead of .click(fn) use .on("click", fn). Instead of .click() use .trigger("click") | Instead of .click(fn) use .on("click", fn). Instead of .click() use .trigger("click") |
+| 6004 | jQuery $.delegate and $.undelegate are deprecated | Use $.on and $.off instead |
+| 6005 | jQuery.load() was removed | Use .on("load", fn) instead |
+| 6005 | jQuery.unload() was removed | Use .on("unload", fn) instead |
+| 6005 | jQuery.error() was removed | Use .on("error", fn) instead |
+| 6006 | jQuery.size() removed | Use jQuery.length |
+| 6007 | jQuery.trim is deprecated | Use String.prototype.trim |
+| 6008 | addButton is removed | Update code to be compatible with tinymce5 |
+| 6008 | addContextToolbar is removed | Update code to be compatible with tinymce5 |
+| 6008 | addMenuItem is removed | Update code to be compatible with tinymce5 |
+| 6008 | addSidebar is removed | Update code to be compatible with tinymce5 |
+| 6008 | file_browser_callback is removed | Update code to be compatible with tinymce5 |
+| 6008 | insert_button_items is removed | Update code to be compatible with tinymce5 |
+| 6008 | 'inlite' theme is removed | Update code to be compatible with tinymce5 |
+| 6008 | 'mobile' theme is removed | Update code to be compatible with tinymce5 |
+| 6008 | 'modern' theme is removed | Update code to be compatible with tinymce5 |
 
 ## Warnings
 

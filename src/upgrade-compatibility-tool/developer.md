@@ -62,6 +62,7 @@ To run the integration tests, execute one of the following commands:
 ## GraphQL unit testing and Eslint code analysis
 
 ### Requirements
+
 {:.bs-callout-info}
 You must have Node.js on your system, see the [documentation](https://nodejs.dev/learn/how-to-install-nodejs).
 
