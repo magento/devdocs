@@ -390,7 +390,7 @@ If you are sure that the problem you are experiencing is a bug, file a new issue
 
 The [Issue Reporting Template](https://github.com/magento/magento2/blob/2.3-develop/.github/ISSUE_TEMPLATE.md) is a default placeholder for every new issue. Follow the sections carefully, as it ensures it will pass `Gate 1` quickly. More information on gates is available in [Magento Issue Gates](https://github.com/magento/magento2/wiki/Magento-Issue-Gates).
 
-{.bs-callout-tip}
+{:.bs-callout-tip}
 Note that a higher level of detail in the report increases the chance that someone will be able to reproduce the issue.
 
 ### Title

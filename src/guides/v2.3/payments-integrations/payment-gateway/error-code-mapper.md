@@ -15,7 +15,7 @@ In most cases, you must define one or more mapping files and configure the defau
 
 ### Map the messages
 
-The first step is to create one or more XML files that map message codes to messages. Magento recommends naming these files `<gateway_name>_error_mapping.xml`, but you can use any name you like. If you create more than one mapping file, each file must have the same file name. Use the following table to determine where to place mapping files:
+The first step is to create one or more XML files that map message codes to messages. We recommend naming these files `<gateway_name>_error_mapping.xml`, but you can use any name you like. If you create more than one mapping file, each file must have the same file name. Use the following table to determine where to place mapping files:
 
 Audience | location
 --- | ---
