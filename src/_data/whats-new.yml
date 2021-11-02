@@ -4,8 +4,57 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Oct 25 15:15:23 2021
+updated: Mon Nov 1 14:38:45 2021
 entries:
+- description: Moved the [Adobe Commerce Beta Program](https://devdocs.magento.com/release/beta-program.html)
+    topic from the `magento/magento2` GitHub wiki to devdocs.magento.com.
+  versions: 2.x
+  type: New Topic
+  date: November 1, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2564
+  merge_commit: af2a640a23703ea740a9819ac27503c082526635
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.x
+  - New Topic
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.5 Quality Patches Tool (QPT) package release.
+  versions: 2.x
+  type: Major Update
+  date: October 27, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2618
+  merge_commit: 4f9cf19e36c015ece29d6f550cc9f759af11575a
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Update the [Cloud guide PrivateLink service](https://devdocs.magento.com/cloud/project/privatelink-service.html)
+    prerequisites, clarifying some points and providing additional guidance for Azure
+    Private Link.
+  versions: 2.x
+  type: Major Update
+  date: October 26, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2593
+  merge_commit: 2da06e674511632801f969492b98ca35a8cbcb49
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: 'Cloud Release for October 25: Updated release notes for all cloud
+    packages. See [Release notes for Cloud suite](https://devdocs.magento.com/cloud/release-notes/cloud-tools.html).'
+  versions: 2.x
+  type: Major Update
+  date: October 26, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2601
+  merge_commit: 5a325413c97a2a50a6a993f6dfa831708fdd1dca
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
 - description: Added the "cache" and "system"  descriptions to the [env.php reference](https://devdocs.magento.com/guides/v2.4/config-guide/prod/config-reference-envphp.html)
     topic.
   versions: 2.4.x
@@ -330,7 +379,7 @@ entries:
   - Major Update
   - 2.4.3
 - description: Added [Community quality patches release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md)
-    to a table of contents at [Commerce Quality Patches](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching/mqp.html).
+    to a table of contents at [Commerce Quality Patches](https://devdocs.magento.com/quality-patches/usage.html).
   versions: 2.x
   type: Major Update
   date: August 27, 2021
