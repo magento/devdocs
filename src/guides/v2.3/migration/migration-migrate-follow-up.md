@@ -43,7 +43,7 @@ In the following example, Magento 1 has been incorrectly saving time in the UTC-
 
 1. Copy the `map-customer.xml.dist` configuration file from the appropriate directory of the Data Migration Tool (`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>`) into the `<your Magento 2 install dir>/app/code/Vendor/Migration/etc/<migration edition>/map-customer.xml` file.
 
-1. Update <customer_map_file> node in `config.xml` remove .dist from `map-customer.xml.dist`
+1. Update the `<customer_map_file>` node in `config.xml` and remove the `.dist` extension from `map-customer.xml.dist`
 
 1. Add the following rule to the `map-customer.xml` file:
 
