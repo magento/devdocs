@@ -3,9 +3,4 @@ pages:
   - label: Site Wide Analysis Tool
     url: /tools/site-wide-analysis.html
     versionless: true
-    children:
-
-      - label: Agent for on-premises deployments
-        url: /tools/site-wide-analysis/agent.html
-        versionless: true
-
+    edition: ee-only
