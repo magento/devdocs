@@ -85,6 +85,7 @@
 
     - label: Tools
       url: /tools/site-wide-analysis.html
+      versionless: true
 
 - label: Development
   children:
