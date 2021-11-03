@@ -7,9 +7,9 @@ contributor_link: https://www.Ziffity.com/
 
 ## Overview
 
-The REST API in Magento 2 defines a set of functions used by developers to perform requests and get responses using the HTTP protocol. By default, Magento 2 provides predefined REST APIs such as Product API, Order API, and Customer data API, with which you can control everything happening on the site.
+The REST API in Magento 2 defines a set of functions used by developers to perform requests and get responses using the HTTP protocol. By default, Magento 2 provides predefined REST APIs such as Product API, Order API, and Customer data API, with which you can control many aspects of the site.
 
-Even though Magento 2 has a number of REST APIs, they may not be not enough when it comes to using the custom data. To manage custom data and fields, you need to create a custom REST API in Magento 2. This tutorial describes how you can create such a custom REST API.
+Even though Magento has a number of REST APIs, they may not be not enough when using custom data. To manage custom data and fields, you need to create a custom REST API in Magento. This tutorial describes how you can create such a custom REST API.
 
 ## 1. Create a custom module
 
@@ -31,7 +31,7 @@ Create these files to get started:
 </config>
 ```
 
-`app/code/Dev/RestApi/registration.php`:
+and `app/code/Dev/RestApi/registration.php`:
 
 ```php
 <?php
@@ -45,7 +45,7 @@ Create these files to get started:
 
 ## 2. Create custom ACL entries
 
-`app/code/Dev/RestApi/etc/acl.xml`:
+Next, create the required ACL entries with `app/code/Dev/RestApi/etc/acl.xml`:
 
 ```xml
 <?xml version="1.0"?>
@@ -67,11 +67,11 @@ Create these files to get started:
 </config>
 ```
 
-In this tutorial, we have defined ACL entries for each endpoint which gives full control over who can access them.
+In this tutorial, we have defined ACL entries for each endpoint, which gives us full control over who can access them.
 
 ## 3. Define custom endpoints
 
-`app/code/Dev/RestApi/etc/webapi.xml`:
+Endpoints are described in `app/code/Dev/RestApi/etc/webapi.xml`:
 
 ```xml
 <?xml version="1.0"?>
@@ -95,7 +95,7 @@ In this tutorial, we have defined ACL entries for each endpoint which gives full
 Where:
 
 *  `route.url` is the URL of the endpoint. The full address would be: `<domain>/rest/<store_code><route.url>`
-*  `route.method` defines the request method. You should follow the rules of the REST API specification:
+*  `route.method` defines the request method.
 
 | Method | Description |
 | --------- | ----------- |
@@ -109,9 +109,7 @@ Where:
 
 ## 4. Create Interfaces
 
-In this example, we have created the interfaces for the request and response.
-
-`app/code/Dev/RestApi/Api/RequestItemInterface.php`:
+In this example, we have created the interfaces for the request and response in `app/code/Dev/RestApi/Api/RequestItemInterface.php`:
 
 ```php
 <?php
@@ -147,7 +145,7 @@ interface RequestItemInterface
 }
 ```
 
-`app/code/Dev/RestApi/Api/ResponseItemInterface.php`:
+and in `app/code/Dev/RestApi/Api/ResponseItemInterface.php`:
 
 ```php
 <?php
@@ -207,7 +205,7 @@ interface ResponseItemInterface
 }
 ```
 
-`app/code/Dev/RestApi/Api/ProductRepositoryInterface.php`:
+and `app/code/Dev/RestApi/Api/ProductRepositoryInterface.php`:
 
 ```php
 <?php
@@ -240,7 +238,7 @@ interface ProductRepositoryInterface
 Models create classes that implement interfaces and process data.
 In this example, we have created models for request, response and process data. In each model we have defined two methods: `getItem`, which provides product details of the given product id, and `setDescription` which updates the description of the given product.
 
-`app/code/Dev/RestApi/Model/Api/RequestItem.php`:
+This is `app/code/Dev/RestApi/Model/Api/RequestItem.php`:
 
 ```php
 <?php
@@ -285,7 +283,7 @@ class RequestItem extends DataObject implements RequestItemInterface
 }
 ```
 
-`app/code/Dev/RestApi/Model/Api/ResponseItem.php`:
+and `app/code/Dev/RestApi/Model/Api/ResponseItem.php`:
 
 ```php
 <?php
@@ -358,7 +356,7 @@ class ResponseItem extends DataObject implements ResponseItemInterface
 }
 ```
 
-`app/code/Dev/RestApi/Model/Api/ProductRepository.php`:
+and `app/code/Dev/RestApi/Model/Api/ProductRepository.php`:
 
 ```php
 <?php
@@ -541,7 +539,7 @@ class ProductRepository implements ProductRepositoryInterface
 }
 ```
 
-The above endpoint is tested with Magento sample data for `product_id: 1` and the endpoint given as ```http://local.magentoee.com/rest/V1/rest_dev/getProduct/1```
+The above example uses Magento sample data for `product_id: 1` and the endpoint ```http://local.magentoee.com/rest/V1/rest_dev/getProduct/1```.
 
 ### Example 2
 
