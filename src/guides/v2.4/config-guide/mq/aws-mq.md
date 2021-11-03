@@ -36,7 +36,7 @@ where:
 *  `user`—The username value entered when creating the AWS MQ broker
 *  `password`—The password value entered when creating the AWS MQ broker
 
-{.bs-callout-info}
+{:.bs-callout-info}
 Amazon MQ supports TLS connections only. Peer verification is not supported.
 
 After editing the `env.php` file, run the following command to finish the setup:
