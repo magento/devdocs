@@ -4,34 +4,34 @@ group: tools
 ee_only: true
 ---
 
-The Site Wide Analysis Tool provides 24/7 real-time performance monitoring, reports, and recommendations to ensure the security and operability for {{ site.data.var.ece }} installations. If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool.
+The Site Wide Analysis Tool provides 24/7 real-time performance monitoring, reports, and recommendations to ensure the security and operability of {{ site.data.var.ece }} installations. It also does the following:
+
+-  Provides information about available and installed patches
+-  Provides information about third-party extensions
+-  Provides detailed information about your {{ site.data.var.ee }} installation
 
 {:.bs-callout-info}
 See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about dashboards and reports.
 
+If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool.
 ## Agent
 
 The Site Wide Analysis Tool Agent allows you to use the Site Wide Analysis Tool for on-premises installations of {{ site.data.var.ee }}.
 
 The agent collects application and business data, analyzes it, and provides additional insights about the health of your installation so that you can improve customer experience. It monitors your application and helps you identify performance, security, availability, and application issues.
 
-The tool also does the following:
-
--  Provides best practices recommendations
--  Provides information about available and installed patches
--  Provides information about third-party extensions
--  Provides detailed information about your {{ site.data.var.ee }} installation
-
-{:.bs-callout-info}
-See this short [introduction on YouTube](https://youtu.be/KW2R8ki_RG4) to learn more about the Site Wide Analysis Tool.
+{:.bs-callout-tip}
+The agent supports multi-node {{ site.data.var.ee }} installations. You must install and confidure the agent on each node.
 
 ## Architecture
 
 ![Architectural diagram of the Site Wide Analysis Tool agent]({{ site.baseurl }}/common/images/tools/swat-agent.svg)
 
-## System requirements
+## Requirements
 
-Your infrasture must meet the following requirements before installing the agent:
+Before you begin, you must contact your Adobe Customer Success Manager (CSM) to obtain a license key and application name. You must use this information to configure the agent after installation.
+
+Your on-premises infrasture must meet the following requirements before installing the agent:
 
 -  Operating systems
    -  Linux x86-64 distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar
@@ -46,11 +46,14 @@ Your infrasture must meet the following requirements before installing the agent
    -  `nice`
    -  `grep`
 
-## Installation
+## Install
 
-Before you begin, you must contact your Adobe Customer Success Manager (CSM) to obtain a license key and application name. You must use this information to configure the agent after installation.
+We've created a [shell script](https://github.com/magento-swat/install-agent-helpers/blob/main/install.sh) to simplify installation. We recommend using the shell script, but you can follow the [manual installation](#manual) method if necessary.
 
-We've created a [shell script](https://github.com/magento-swat/install-agent-helpers/blob/main/install.sh) to simplify installation. We recommend using the shell script, but you can follow the [manual installation](#manual-installation) method if necessary.
+{:.bs-callout-info}
+After the agent is installed, it will self update when a new release is available.
+
+### Scripted
 
 1. Download and execute the shell script:
 
@@ -63,7 +66,7 @@ We've created a [shell script](https://github.com/magento-swat/install-agent-hel
    -  Daemon service (preferred if you have root access)
    -  Cron
 
-### Manual installation
+### Manual
 
 If you do not want to use our [shell script](https://github.com/magento-swat/install-agent-helpers/blob/main/install.sh) to install the agent, then you must manually install it by following these steps:
 
@@ -138,13 +141,18 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    ```
 
    {:.bs-callout-info}
-   See [Agent configuration reference](#agent-configuration-reference) for descriptions and recommended values for all properties.
+   See [configuration reference](#configuration-reference) for descriptions and recommended values for all properties.
+
+1. After downlloading and installing the agent, you must [configure it to run](#run-the-agent) using one of the following methods:
+
+   -  Daemon service (preferred if you have root access)
+   -  Cron
 
 ## Run the agent
 
-We recommend configuring the agent to run as a daemon service. If you have limited access to your infrastructure and do not have root permissions, then you must use [cron](#run-agent-with-cron) instead.
+We recommend configuring the agent to run as a daemon service. If you have limited access to your infrastructure and do not have root permissions, then you must use [cron](#run-with-cron) instead.
 
-### Run agent as a daemon service
+### Daemon service
 
 1. Copy the scheduler binary file to the directory where you want to store it:
 
@@ -191,7 +199,7 @@ We recommend configuring the agent to run as a daemon service. If you have limit
    journalctl -u scheduler | grep "Next Version might update" | tail -1 && echo "Agent is successfuly installed"
    ```
 
-### Run agent with cron
+### Cron
 
 If you do not have root permissions or do not have permissions to configure a daemon service as root, you can use cron instead.
 
@@ -222,7 +230,7 @@ Watch the logs:
 journalctl -f -u scheduler
 ```
 
-## Uninstall Procedure
+## Uninstall
 
 Run the following commands to uninstall the daemon from your system and remove all generated files:
 
@@ -274,9 +282,9 @@ If you configured the agent to run with cron instead, remove it from the crontab
 crontab -e
 ```
 
-## Agent configuration reference
+## Configuration reference
 
-The following tbale provides descriptions and recommended values for all properties in the agent's `.env` configuration file:
+The following table provides descriptions and recommended values for all properties in the agent `.env` configuration file:
 
 Property | Description |
 ---------|-------------|

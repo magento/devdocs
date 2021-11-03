@@ -83,6 +83,9 @@
     - label: Command-line Tools Reference
       url: /reference/cli/magento.html
 
+    - label: Tools
+      url: /tools/site-wide-analysis.html
+
 - label: Development
   children:
 
