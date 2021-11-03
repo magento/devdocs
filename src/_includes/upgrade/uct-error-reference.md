@@ -98,56 +98,56 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5003 | Function has been deprecated | Use an alternative function |
 | 5005 | PHP syntax error | Fix syntax error |
 | 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | Pass original base classes in constructor instead |
-| 5007 | The use of function sizeof() is discouraged | Use count() instead |
-| 5007 | The use of function delete() is discouraged | Use unset() instead |
+| 5007 | The use of function `sizeof()` is discouraged | Use `count()` instead |
+| 5007 | The use of function `delete()` is discouraged | Use `unset()` instead |
 | 5008 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | Update code to use Magento 2 standards |
 | 5009 | Template directives may not invoke methods. Only scalar array access is allowed | Remove method invocations from template |
-| 5010 | Template @vars comment block contains invalid JSON | Fix invalid JSON |
-| 5011 | Template @vars comment block contains invalid label | Fix invalid label |
-| 5012 | Template @vars comment block is missing a variable used in the template | Add missing variable to @vars comment block |
+| 5010 | Template `@vars` comment block contains invalid JSON | Fix invalid JSON |
+| 5011 | Template `@vars` comment block contains invalid label | Fix invalid label |
+| 5012 | Template `@vars` comment block is missing a variable used in the template | Add missing variable to @vars comment block |
 | 5013 | Avoid using self-closing tag with non-void html element | Use close tag instead |
-| 5014 | The "active" attribute is obsolete | The list of active modules is defined in deployment configuration |
-| 5015 | The <param> node is obsolete | Use <argument name="..." xsi:type="..."> instead |
-| 5016 | The <instance> node is obsolete | Use <argument name="..." xsi:type="object"> instead |
-| 5017 | The <array> node is obsolete | Use <argument name="..." xsi:type="array"> instead |
-| 5018 | The <item key="..."> node is obsolete | Use <item name="..." xsi:type="..."> instead |
-| 5019 | The <value> node is obsolete | Instead, provide the actual value as a text literal. |
-| 5020 | Obsolete node: <supported_blocks> | To be replaced with <supported_containers> |
-| 5021 | Obsolete node: <block_name> | To be replaced with <container_name> |
+| 5014 | The `"active"` attribute is obsolete | The list of active modules is defined in deployment configuration |
+| 5015 | The `<param>` node is obsolete | Use `<argument name="..." xsi:type="...">` instead |
+| 5016 | The `<instance>` node is obsolete | Use `<argument name="..." xsi:type="object">` instead |
+| 5017 | The `<array>` node is obsolete | Use `<argument name="..." xsi:type="array">` instead |
+| 5018 | The `<item key="...">` node is obsolete | Use `<item name="..." xsi:type="...">` instead |
+| 5019 | The `<value>` node is obsolete | Instead, provide the actual value as a text literal. |
+| 5020 | Obsolete node: `<supported_blocks>` | To be replaced with `<supported_containers>` |
+| 5021 | Obsolete node: `<block_name>` | To be replaced with `<container_name>` |
 | 5022 | Factory name detected | Widget type should not begin with / |
 | 5023 | Obsolete ACL structure detected in line | Check lib/internal/Magento/Framework/Acl/etc/acl.xsd |
 | 5024 | Obsolete menu structure detected in line | Check app/code/Magento/Backend/etc/menu.xsd |
 | 5025 | Obsolete system configuration structure detected in file | Check app/code/Magento/Config/etc/system_file.xsd |
-| 5026 | Please do not use "text/javascript" type attribute | Use only public members |
-| 5027 | Access to members and methods of Block class through $this is obsolete in phtml templates | Use only $block instead of $this |
-| 5028 | Access to protected and private members of Block class is obsolete in phtml templates | Use only public members |
-| 5029 | Please do not use "jquery/ui" library in templates | Use needed jquery ui widget instead |
+| 5026 | Please do not use `"text/javascript"` type attribute | Use only public members |
+| 5027 | Access to members and methods of Block class through $this is obsolete in phtml templates | Use only `$block` instead of `$this` |
+| 5028 | Access to protected and private members of `Block` class is obsolete in phtml templates | Use only public members |
+| 5029 | Please do not use `"jquery/ui"` library in templates | Use needed jquery ui widget instead |
 | 5030 | Please do not initialize JS component in PHP | initialize JS component in template |
-| 5031 | Contains obsolete method 'xxx' | Please use getConnection() method instead. |
-| 5032 | loadLayout method is deprecated | Please use \Magento\Framework\View\Layout\Builder::build instead. |
-| 5033 | renderLayout method is deprecated | Please use \Magento\Framework\Controller\ResultInterface::renderResult instead. |
-| 5034 | _redirect method is deprecated | Please use \Magento\Backend\Model\View\Result\Redirect::render instead. |
-| 5035 | _forward method is deprecated | Please use \Magento\Backend\Model\View\Result\Forward::forward instead. |
-| 5036 | _setActiveMenu method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::setActiveMenu instead. |
-| 5037 | _addBreadcrumb method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::addBreadcrumb instead. |
-| 5038 | _addContent method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::addContent instead. |
-| 5039 | _addLeft method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::addLeft instead. |
-| 5040 | _addJs method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::addJs instead |
-| 5041 | _moveBlockToContainer method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::moveBlockToContainer instead. |
+| 5031 | Contains obsolete method `'xxx'` | Please use `getConnection()` method instead. |
+| 5032 | `loadLayout` method is deprecated | Please use `\Magento\Framework\View\Layout\Builder::build` instead. |
+| 5033 | `renderLayout` method is deprecated | Please use `\Magento\Framework\Controller\ResultInterface::renderResult` instead. |
+| 5034 | `_redirect` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Redirect::render` instead. |
+| 5035 | `_forward` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Forward::forward` instead. |
+| 5036 | `_setActiveMenu` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::setActiveMenu` instead. |
+| 5037 | `_addBreadcrumb` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::addBreadcrumb` instead. |
+| 5038 | `_addContent` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::addContent` instead. |
+| 5039 | `_addLeft` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::addLeft` instead. |
+| 5040 | `_addJs` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::addJs` instead |
+| 5041 | `_moveBlockToContainer` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::moveBlockToContainer` instead. |
 | 5042 | Incorrect format of PHP class reference | Check that class is referenced using only camelCased letters, numbers and no leading slash |
 | 5043 | Incorrect format of module reference | Check that module is referenced using only letters, numbers, underscores and no leading slash |
-| 5044 | Class 'Zend_Db_Select' is restricted | Suggested replacement: \Magento\Framework\DB\Select |
-| 5045 | Class 'Zend_Db_Adapter_Pdo_Mysql' is restricted | Suggested replacement: \Magento\Framework\DB\Adapter\Pdo\Mysql |
-| 5046 | Class 'Magento\Framework\Serialize\Serializer\Serialize' is restricted | Suggested replacement: Magento\Framework\Serialize\SerializerInterface |
-| 5047 | Class 'ArrayObject' is restricted | Suggested replacement: Custom class, extended from ArrayObject with overwritten serialize/unserialize methods |
-| 5048 | Class 'Magento\Framework\View\Element\UiComponent\ArrayObjectFactory' is restricted | Suggested replacement: Factory that creates custom class, extended from ArrayObject with overwritten serialize/unserialize methods |
-| 5049 | Blocks \Magento\Theme\Block\Html\Head\{Css,Link,Script} are allowed within the "head" block only | Verify integrity of the nodes nesting |
+| 5044 | Class `Zend_Db_Select` is restricted | Suggested replacement: `\Magento\Framework\DB\Select` |
+| 5045 | Class `Zend_Db_Adapter_Pdo_Mysql` is restricted | Suggested replacement: `\Magento\Framework\DB\Adapter\Pdo\Mysql` |
+| 5046 | Class `Magento\Framework\Serialize\Serializer\Serialize` is restricted | Suggested replacement: `Magento\Framework\Serialize\SerializerInterface` |
+| 5047 | Class `ArrayObject` is restricted | Suggested replacement: Custom class, extended from `ArrayObject` with overwritten serialize/unserialize methods |
+| 5048 | Class `Magento\Framework\View\Element\UiComponent\ArrayObjectFactory` is restricted | Suggested replacement: Factory that creates custom class, extended from `ArrayObject` with overwritten serialize/unserialize methods |
+| 5049 | Blocks `\Magento\Theme\Block\Html\Head\{Css,Link,Script}` are allowed within the "head" block only | Verify integrity of the nodes nesting |
 | 5050 | The block being referenced is removed | Remove reference to block |
-| 5051 | output="toHtml" is obsolete | Use output="1" |
-| 5052 | The class '\Magento\Framework\View\Element\Text\ListText' is not supposed to be used in layout anymore | Remove class '\Magento\Framework\View\Element\Text\ListText' from layout |
-| 5053 | Call of method "xx" via layout instruction <action> is not allowed | Avoid using offending method in <action> |
-| 5054 | 'helper' attribute contains '/' | Remove '/' from helper attribute |
-| 5055 | 'helper' attribute does not contain '::' | Add '::' to helper attribute |
+| 5051 | `output="toHtml"` is obsolete | Use `output="1"` |
+| 5052 | The class `\Magento\Framework\View\Element\Text\ListText` is not supposed to be used in layout anymore | Remove class `\Magento\Framework\View\Element\Text\ListText` from layout |
+| 5053 | Call of method "xx" via layout instruction `<action>` is not allowed | Avoid using offending method in <action> |
+| 5054 | `helper` attribute contains `/` | Remove `/` from helper attribute |
+| 5055 | `helper` attribute does not contain `::` | Add `::` to helper attribute |
 | 5056 | Install scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file |
 | 5057 | InstallSchema scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file |
 | 5058 | InstallData scripts are obsolete | Please use data patches approach in module\'s Setup/Patch/Data dir |
@@ -160,13 +160,13 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5065 | 'data' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
 | 5066 | 'sql' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
 | 5067 | Nodes identified by XPath 'xx' are obsolete | Use suggestion from error message itself |
-| 5068 | Directive {{htmlescape}} is obsolete | Use {{var}} instead |
-| 5069 | Directive {{escapehtml}} is obsolete | Use {{var}} instead |
-| 5070 | 3rd parameter is not needed anymore for getChildHtml() | Remove 3rd parameter from call to getChildHtml() |
-| 5071 | 4th parameter is not needed anymore for getChildHtml() | Remove 4th parameter from call to getChildHtml() |
+| 5068 | Directive `{{htmlescape}}` is obsolete | Use `{{var}}` instead |
+| 5069 | Directive `{{escapehtml}}` is obsolete | Use `{{var}}` instead |
+| 5070 | 3rd parameter is not needed anymore for `getChildHtml()` | Remove 3rd parameter from call to `getChildHtml()` |
+| 5071 | 4th parameter is not needed anymore for `getChildHtml()` | Remove 4th parameter from call to `getChildHtml()` |
 | 5072 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | Update construction to Magento 2 standards |
 | 5073 | Legacy table names with slash must be fixed to direct table names | Use direct table name instead |
-| 5074 | Use of deprecated method 'getResource()' to (save / load / delete) data detected. | Use a repository instead |
+| 5074 | Use of deprecated method `getResource()` to (save / load / delete) data detected. | Use a repository instead |
 | 5075 | Application modules should not use classes from test modules | Remove usage of classes from test modules |
 | 5076 | Cannot use "xxx" in namespace as it is reserved since PHP 7 | Remove usage of "xxx" from namespace |
 | 5077 | Cannot use "xxx" as class name as it is reserved since PHP 7 | Remove usage of "xxx" from class name |
@@ -177,15 +177,15 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5082 | The use of $this in templates is deprecated | Use $block instead |
 | 5083 | Constants are not allowed as the first argument of translation function | use string literal instead |
 | 5084 | Please do not initialize JS component in php | Initialize JS component in template |
-| 6001 | jQuery.andSelf() removed | Use jQuery.addBack() |
-| 6002 | jQuery $.bind and $.unbind are deprecated | Use $.on and $.off instead |
-| 6003 | Instead of .blur(fn), .focus(fn), focusin(fn), .focusout(fn), .resize(fn), .scroll(fn), .dblclick(fn), .mousedown(fn), .mouseup(fn), .mousemove(fn), .mouseover(fn), .mouseout(fn), .mouseenter(fn), .mouseleave(fn), .change(fn), .select(fn), .submit(fn), .keydown(fn), .keypress(fn), .keyup(fn), .contextmenu(fn) or .click(fn) | use .on("blur", fn), .on("focus", fn), .on("focusin", fn), .on("focusout", fn), .on("resize", fn), .on("scroll", fn), .on("dblclick", fn), .on("mousedown", fn), .on("mouseup", fn), .on("mousemove", fn), .on("mouseover", fn), .on("mouseout", fn), .on("mouseenter", fn), .on("mouseleave", fn), .on("change", fn), .on("select", fn), .on("submit", fn), .on("keydown", fn), .on("keypress", fn), .on("keyup", fn), .on("contextmenu", fn) or .on("click", fn) |
-| 6003 | Instead of .blur(), .focus(), focusin(), .focusout(), .resize(), .scroll(), .dblclick(), .mousedown(), .mouseup(), .mousemove(), .mouseover(), .mouseout(), .mouseenter(), .mouseleave(), .change(), .select(), .submit(), .keydown(), .keypress(), .keyup(), .contextmenu() or .click() | use .trigger("blur"), .trigger("focus"), .trigger("focusin"), .trigger("focusout"), .trigger("resize"), .trigger("scroll"), .trigger("dblclick"), .trigger("mousedown"), .trigger("mouseup"), .trigger("mousemove"), .trigger("mouseover"), .trigger("mouseout"), .trigger("mouseenter"), .trigger("mouseleave"), .trigger("change"), .trigger("select"), .trigger("submit"), .trigger("keydown"), .trigger("keypress"), .trigger("keyup"), .trigger("contextmenu") or .trigger("click") |
-| 6004 | jQuery $.delegate and $.undelegate are deprecated | Use $.on and $.off instead |
-| 6005 | (jQuery.load() / jQuery.unload() / jQuery.error()) was removed | Use (.on("load", fn), .on("unload", fn), .on("error", fn)) instead |
-| 6006 | jQuery.size() removed | Use jQuery.length |
-| 6007 | jQuery.trim is deprecated | Use String.prototype.trim |
-| 6008 | (addButton, addContextToolbar, addMenuItem, addSidebar, file_browser_callback, insert_button_items, 'inlite' theme, 'mobile' theme, 'modern' theme) is removed | Update code to be compatible with tinymce5 |
+| 6001 | `jQuery.andSelf()` removed | Use `jQuery.addBack()` |
+| 6002 | jQuery `$.bind` and `$.unbind` are deprecated | Use `$.on` and `$.off` instead |
+| 6003 | Instead of `.blur(fn)`, `.focus(fn)`, `.focusin(fn)`, `.focusout(fn)`, `.resize(fn)`, `.scroll(fn)`, `.dblclick(fn)`, `.mousedown(fn)`, `.mouseup(fn)`, `.mousemove(fn)`, `.mouseover(fn)`, `.mouseout(fn)`, `.mouseenter(fn)`, `.mouseleave(fn)`, `.change(fn)`, `.select(fn)`, `.submit(fn)`, `.keydown(fn)`, `.keypress(fn)`, `.keyup(fn)`, `.contextmenu(fn)` or `.click(fn)` | Use `.on("blur", fn)`, `.on("focus", fn)`, `.on("focusin", fn)`, `.on("focusout", fn)`, `.on("resize", fn)`, `.on("scroll", fn)`, `.on("dblclick", fn)`, `.on("mousedown", fn)`, `.on("mouseup", fn)`, `.on("mousemove", fn)`, `.on("mouseover", fn)`, `.on("mouseout", fn)`, `.on("mouseenter", fn)`, `.on("mouseleave", fn)`, `.on("change", fn)`, `.on("select", fn)`, `.on("submit", fn)`, `.on("keydown", fn)`, `.on("keypress", fn)`, `.on("keyup", fn)`, `.on("contextmenu", fn)` or `.on("click", fn)` |
+| 6003 | Instead of `.blur()`, `.focus()`, `.focusin()`, `.focusout()`, `.resize()`, `.scroll()`, `.dblclick()`, `.mousedown()`, `.mouseup()`, `.mousemove()`, `.mouseover()`, `.mouseout()`, `.mouseenter()`, `.mouseleave()`, `.change()`, `.select()`, `.submit()`, `.keydown()`, `.keypress()`, `.keyup()`, `.contextmenu()` or `.click()` | Use `.trigger("blur")`, `.trigger("focus")`, `.trigger("focusin")`, `.trigger("focusout")`, `.trigger("resize")`, `.trigger("scroll")`, `.trigger("dblclick")`, `.trigger("mousedown")`, `.trigger("mouseup")`, `.trigger("mousemove")`, `.trigger("mouseover")`, `.trigger("mouseout")`, `.trigger("mouseenter")`, `.trigger("mouseleave")`, `.trigger("change")`, `.trigger("select")`, `.trigger("submit")`, `.trigger("keydown")`, `.trigger("keypress")`, `.trigger("keyup")`, `.trigger("contextmenu")` or `.trigger("click")` |
+| 6004 | jQuery `$.delegate` and `$.undelegate` are deprecated | Use `$.on` and `$.off` instead |
+| 6005 | (`jQuery.load()` / `jQuery.unload()` / `jQuery.error()`) was removed | Use (`.on("load", fn)` / `.on("unload", fn)` / `.on("error", fn)`) instead |
+| 6006 | `jQuery.size()` removed | Use `jQuery.length` |
+| 6007 | `jQuery.trim` is deprecated | Use `String.prototype.trim` |
+| 6008 | (`addButton`, `addContextToolbar`, `addMenuItem`, `addSidebar`, `file_browser_callback`, `insert_button_items`, 'inlite' theme, 'mobile' theme, 'modern' theme) is removed | Update code to be compatible with tinymce5 |
 
 ## Warnings
 
