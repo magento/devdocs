@@ -86,9 +86,18 @@ Each module must have this file, which tells Magento how to locate the module. C
 `app/code/Learning/FirstUnit/registration.php`. Then put the following content into it:
 
 ```php
-<?php \Magento\Framework\Component\ComponentRegistrar::register(
-\Magento\Framework\Component\ComponentRegistrar::MODULE, 'Learning_FirstUnit',
-__DIR__
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'Learning_FirstUnit',
+    __DIR__
 );
 ```
 
