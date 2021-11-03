@@ -69,10 +69,10 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 1104 | Using non API class that is inheriting API interface | Classes that are not marked as `@api` may be changed. Consider updating the code to rely on the interface marked as `@api` instead. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
-| 1121 | Extending from non Adobe Commerce API class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
-| 1122 | Importing non Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade.  |
-| 1123 | Loading non Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
-| 1124 | Using non Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
+| 1121 | Extending from non existing Adobe Commerce API class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
+| 1122 | Importing non existing Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade.  |
+| 1123 | Loading non existing Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
+| 1124 | Using non existing Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
 | 1224 | Using non Adobe Commerce API constant | Constants that are not marked as `@api` may be changed. Consider introducing and using a private constant of the required value within the custom code instead. |
 | 1225 | Overriding non Adobe Commerce API constant | Constants that are not marked as `@api` may be changed. Consider introducing and using a private constant of the required value within the custom code instead. |
 | 1226 | Assignation of non Adobe Commerce API constant | Constants that are not marked as `@api` may be changed. Consider introducing and using a private constant of the required value within the custom code instead. |
@@ -93,11 +93,11 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 {:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
-| 5001 | Call-time pass-by-reference calls are prohibited | TODO |
+| 5001 | Call-time pass-by-reference calls are prohibited | Passing by reference is not supported after PHP 5.6 |
 | 5002 | The opening PHP tag must be the first content in the file | Put PHP opening tag in first line of file |
 | 5003 | Function has been deprecated | Use an alternative function |
 | 5005 | PHP syntax error | Fix syntax error |
-| 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | TODO |
+| 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | Pass original base classes in constructor instead |
 | 5007 | The use of function sizeof() is discouraged | Use count() instead |
 | 5007 | The use of function delete() is discouraged | Use unset() instead |
 | 5008 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | Update code to use Magento 2 standards |
@@ -115,9 +115,9 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5020 | Obsolete node: <supported_blocks> | To be replaced with <supported_containers> |
 | 5021 | Obsolete node: <block_name> | To be replaced with <container_name> |
 | 5022 | Factory name detected | TODO |
-| 5023 | Obsolete ACL structure detected in line | TODO |
-| 5024 | Obsolete menu structure detected in line | TODO |
-| 5025 | Obsolete system configuration structure detected in file | TODO |
+| 5023 | Obsolete ACL structure detected in line | Check lib/internal/Magento/Framework/Acl/etc/acl.xsd |
+| 5024 | Obsolete menu structure detected in line | Check app/code/Magento/Backend/etc/menu.xsd |
+| 5025 | Obsolete system configuration structure detected in file | Check app/code/Magento/Config/etc/system_file.xsd |
 | 5026 | Please do not use "text/javascript" type attribute | Use only public members |
 | 5027 | Access to members and methods of Block class through $this is obsolete in phtml templates | Use only $block instead of $this |
 | 5028 | Access to protected and private members of Block class is obsolete in phtml templates | Use only public members |
@@ -134,8 +134,8 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5039 | _addLeft method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::addLeft instead. |
 | 5040 | _addJs method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::addJs instead |
 | 5041 | _moveBlockToContainer method is deprecated | Please use \Magento\Backend\Model\View\Result\Page::moveBlockToContainer instead. |
-| 5042 | Incorrect format of PHP class reference | TODO |
-| 5043 | Incorrect format of module reference | TODO |
+| 5042 | Incorrect format of PHP class reference | Check that class is referenced using only camelCased letters, numbers and no leading slash |
+| 5043 | Incorrect format of module reference | Check that module is referenced using only letters, numbers, underscores and no leading slash |
 | 5044 | Class 'Zend_Db_Select' is restricted | Suggested replacement: \Magento\Framework\DB\Select |
 | 5045 | Class 'Zend_Db_Adapter_Pdo_Mysql' is restricted | Suggested replacement: \Magento\Framework\DB\Adapter\Pdo\Mysql |
 | 5046 | Class 'Magento\Framework\Serialize\Serializer\Serialize' is restricted | Suggested replacement: Magento\Framework\Serialize\SerializerInterface |
@@ -144,7 +144,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5049 | Blocks \Magento\Theme\Block\Html\Head\{Css,Link,Script} are allowed within the "head" block only | Verify integrity of the nodes nesting |
 | 5050 | The block being referenced is removed | Remove reference to block |
 | 5051 | output="toHtml" is obsolete | Use output="1" |
-| 5052 | The class \Magento\Framework\View\Element\Text\ListText' is not supposed to be used in layout anymore | TODO |
+| 5052 | The class '\Magento\Framework\View\Element\Text\ListText' is not supposed to be used in layout anymore | Remove class '\Magento\Framework\View\Element\Text\ListText' from layout |
 | 5053 | Call of method "xx" via layout instruction <action> is not allowed | Avoid using offending method in <action> |
 | 5054 | 'helper' attribute contains '/' | Remove '/' from helper attribute |
 | 5055 | 'helper' attribute does not contain '::' | Add '::' to helper attribute |
@@ -159,63 +159,33 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5064 | Recurring scripts are obsolete | Please create class Recurring in module\'s Setup folder |
 | 5065 | 'data' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
 | 5066 | 'sql' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
-| 5067 | Nodes identified by XPath 'xx' are obsolete | Re |
+| 5067 | Nodes identified by XPath 'xx' are obsolete | Use suggestion from error message itself |
 | 5068 | Directive {{htmlescape}} is obsolete | Use {{var}} instead |
 | 5069 | Directive {{escapehtml}} is obsolete | Use {{var}} instead |
 | 5070 | 3rd parameter is not needed anymore for getChildHtml() | Remove 3rd parameter from call to getChildHtml() |
 | 5071 | 4th parameter is not needed anymore for getChildHtml() | Remove 4th parameter from call to getChildHtml() |
 | 5072 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | Update construction to Magento 2 standards |
 | 5073 | Legacy table names with slash must be fixed to direct table names | Use direct table name instead |
-| 5074 | Use of deprecated method 'getResource()' to (save|load|delete) data detected. | TODO |
+| 5074 | Use of deprecated method 'getResource()' to (save / load / delete) data detected. | Use a repository instead |
 | 5075 | Application modules should not use classes from test modules | Remove usage of classes from test modules |
 | 5076 | Cannot use "xxx" in namespace as it is reserved since PHP 7 | Remove usage of "xxx" from namespace |
 | 5077 | Cannot use "xxx" as class name as it is reserved since PHP 7 | Remove usage of "xxx" from class name |
-| 5078 | Class needs to be requested in constructor, otherwise compiler will not be able to find and generate these classes | TODO |
-| 5079 | Use of var class variables is discouraged | TODO |
-| 5080 | Possible raw SQL statement %s detected | TODO |
+| 5078 | Class needs to be requested in constructor, otherwise compiler will not be able to find and generate these classes | Add class to constructor |
+| 5079 | Use of var class variables is discouraged | Avoid using 'var' to declare class variable |
+| 5080 | Possible raw SQL statement 'xx' detected | Use repositories or data patches instead |
 | 5081 | The use of helpers in templates is discouraged | Use ViewModel instead |
 | 5082 | The use of $this in templates is deprecated | Use $block instead |
 | 5083 | Constants are not allowed as the first argument of translation function | use string literal instead |
 | 5084 | Please do not initialize JS component in php | Initialize JS component in template |
 | 6001 | jQuery.andSelf() removed | Use jQuery.addBack() |
 | 6002 | jQuery $.bind and $.unbind are deprecated | Use $.on and $.off instead |
-| 6003 | Instead of .blur(fn) use .on("blur", fn). Instead of .blur() use .trigger("blur") | Instead of .blur(fn) use .on("blur", fn). Instead of .blur() use .trigger("blur") |
-| 6003 | Instead of .focus(fn) use .on("focus", fn). Instead of .focus() use .trigger("focus") | Instead of .focus(fn) use .on("focus", fn). Instead of .focus() use .trigger("focus") |
-| 6003 | Instead of .focusin(fn) use .on("focusin", fn). Instead of .focusin() use .trigger("focusin") | Instead of .focusin(fn) use .on("focusin", fn). Instead of .focusin() use .trigger("focusin") |
-| 6003 | Instead of .focusout(fn) use .on("focusout", fn). Instead of .focusout() use .trigger("focusout") | Instead of .focusout(fn) use .on("focusout", fn). Instead of .focusout() use .trigger("focusout") |
-| 6003 | Instead of .resize(fn) use .on("resize", fn). Instead of .resize() use .trigger("resize") | Instead of .resize(fn) use .on("resize", fn). Instead of .resize() use .trigger("resize") |
-| 6003 | Instead of .scroll(fn) use .on("scroll", fn). Instead of .scroll() use .trigger("scroll") | Instead of .scroll(fn) use .on("scroll", fn). Instead of .scroll() use .trigger("scroll") |
-| 6003 | Instead of .dblclick(fn) use .on("dblclick", fn). Instead of .dblclick() use .trigger("dblclick") | Instead of .dblclick(fn) use .on("dblclick", fn). Instead of .dblclick() use .trigger("dblclick") |
-| 6003 | Instead of .mousedown(fn) use .on("mousedown", fn). Instead of .mousedown() use .trigger("mousedown") | Instead of .mousedown(fn) use .on("mousedown", fn). Instead of .mousedown() use .trigger("mousedown") |
-| 6003 | Instead of .mouseup(fn) use .on("mouseup", fn). Instead of .mouseup() use .trigger("mouseup") | Instead of .mouseup(fn) use .on("mouseup", fn). Instead of .mouseup() use .trigger("mouseup") |
-| 6003 | Instead of .mousemove(fn) use .on("mousemove", fn). Instead of .mousemove() use .trigger("mousemove") | Instead of .mousemove(fn) use .on("mousemove", fn). Instead of .mousemove() use .trigger("mousemove") |
-| 6003 | Instead of .mouseover(fn) use .on("mouseover", fn). Instead of .mouseover() use .trigger("mouseover") | Instead of .mouseover(fn) use .on("mouseover", fn). Instead of .mouseover() use .trigger("mouseover") |
-| 6003 | Instead of .mouseout(fn) use .on("mouseout", fn). Instead of .mouseout() use .trigger("mouseout") | Instead of .mouseout(fn) use .on("mouseout", fn). Instead of .mouseout() use .trigger("mouseout") |
-| 6003 | Instead of .mouseenter(fn) use .on("mouseenter", fn). Instead of .mouseenter() use .trigger("mouseenter") | Instead of .mouseenter(fn) use .on("mouseenter", fn). Instead of .mouseenter() use .trigger("mouseenter") |
-| 6003 | Instead of .mouseleave(fn) use .on("mouseleave", fn). Instead of .mouseleave() use .trigger("mouseleave") | Instead of .mouseleave(fn) use .on("mouseleave", fn). Instead of .mouseleave() use .trigger("mouseleave") |
-| 6003 | Instead of .change(fn) use .on("change", fn). Instead of .change() use .trigger("change") | Instead of .change(fn) use .on("change", fn). Instead of .change() use .trigger("change") |
-| 6003 | Instead of .select(fn) use .on("select", fn). Instead of .select() use .trigger("select") | Instead of .select(fn) use .on("select", fn). Instead of .select() use .trigger("select") |
-| 6003 | Instead of .submit(fn) use .on("submit", fn). Instead of .submit() use .trigger("submit") | Instead of .submit(fn) use .on("submit", fn). Instead of .submit() use .trigger("submit") |
-| 6003 | Instead of .keydown(fn) use .on("keydown", fn). Instead of .keydown() use .trigger("keydown") | Instead of .keydown(fn) use .on("keydown", fn). Instead of .keydown() use .trigger("keydown") |
-| 6003 | Instead of .keypress(fn) use .on("keypress", fn). Instead of .keypress() use .trigger("keypress") | Instead of .keypress(fn) use .on("keypress", fn). Instead of .keypress() use .trigger("keypress") |
-| 6003 | Instead of .keyup(fn) use .on("keyup", fn). Instead of .keyup() use .trigger("keyup") | Instead of .keyup(fn) use .on("keyup", fn). Instead of .keyup() use .trigger("keyup") |
-| 6003 | Instead of .contextmenu(fn) use .on("contextmenu", fn). Instead of .contextmenu() use .trigger("contextmenu") | Instead of .contextmenu(fn) use .on("contextmenu", fn). Instead of .contextmenu() use .trigger("contextmenu") |
-| 6003 | Instead of .click(fn) use .on("click", fn). Instead of .click() use .trigger("click") | Instead of .click(fn) use .on("click", fn). Instead of .click() use .trigger("click") |
+| 6003 | Instead of .blur(fn), .focus(fn), focusin(fn), .focusout(fn), .resize(fn), .scroll(fn), .dblclick(fn), .mousedown(fn), .mouseup(fn), .mousemove(fn), .mouseover(fn), .mouseout(fn), .mouseenter(fn), .mouseleave(fn), .change(fn), .select(fn), .submit(fn), .keydown(fn), .keypress(fn), .keyup(fn), .contextmenu(fn) or .click(fn) | use .on("blur", fn), .on("focus", fn), .on("focusin", fn), .on("focusout", fn), .on("resize", fn), .on("scroll", fn), .on("dblclick", fn), .on("mousedown", fn), .on("mouseup", fn), .on("mousemove", fn), .on("mouseover", fn), .on("mouseout", fn), .on("mouseenter", fn), .on("mouseleave", fn), .on("change", fn), .on("select", fn), .on("submit", fn), .on("keydown", fn), .on("keypress", fn), .on("keyup", fn), .on("contextmenu", fn) or .on("click", fn) |
+| 6003 | Instead of .blur(), .focus(), focusin(), .focusout(), .resize(), .scroll(), .dblclick(), .mousedown(), .mouseup(), .mousemove(), .mouseover(), .mouseout(), .mouseenter(), .mouseleave(), .change(), .select(), .submit(), .keydown(), .keypress(), .keyup(), .contextmenu() or .click() | use .trigger("blur"), .trigger("focus"), .trigger("focusin"), .trigger("focusout"), .trigger("resize"), .trigger("scroll"), .trigger("dblclick"), .trigger("mousedown"), .trigger("mouseup"), .trigger("mousemove"), .trigger("mouseover"), .trigger("mouseout"), .trigger("mouseenter"), .trigger("mouseleave"), .trigger("change"), .trigger("select"), .trigger("submit"), .trigger("keydown"), .trigger("keypress"), .trigger("keyup"), .trigger("contextmenu") or .trigger("click") |
 | 6004 | jQuery $.delegate and $.undelegate are deprecated | Use $.on and $.off instead |
-| 6005 | jQuery.load() was removed | Use .on("load", fn) instead |
-| 6005 | jQuery.unload() was removed | Use .on("unload", fn) instead |
-| 6005 | jQuery.error() was removed | Use .on("error", fn) instead |
+| 6005 | (jQuery.load() / jQuery.unload() / jQuery.error()) was removed | Use (.on("load", fn), .on("unload", fn), .on("error", fn)) instead |
 | 6006 | jQuery.size() removed | Use jQuery.length |
 | 6007 | jQuery.trim is deprecated | Use String.prototype.trim |
-| 6008 | addButton is removed | Update code to be compatible with tinymce5 |
-| 6008 | addContextToolbar is removed | Update code to be compatible with tinymce5 |
-| 6008 | addMenuItem is removed | Update code to be compatible with tinymce5 |
-| 6008 | addSidebar is removed | Update code to be compatible with tinymce5 |
-| 6008 | file_browser_callback is removed | Update code to be compatible with tinymce5 |
-| 6008 | insert_button_items is removed | Update code to be compatible with tinymce5 |
-| 6008 | 'inlite' theme is removed | Update code to be compatible with tinymce5 |
-| 6008 | 'mobile' theme is removed | Update code to be compatible with tinymce5 |
-| 6008 | 'modern' theme is removed | Update code to be compatible with tinymce5 |
+| 6008 | (addButton, addContextToolbar, addMenuItem, addSidebar, file_browser_callback, insert_button_items, 'inlite' theme, 'mobile' theme, 'modern' theme) is removed | Update code to be compatible with tinymce5 |
 
 ## Warnings
 
