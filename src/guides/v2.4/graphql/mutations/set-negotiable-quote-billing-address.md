@@ -15,7 +15,7 @@ This query requires a valid [customer authentication token]({{page.baseurl}}/gra
 ```graphql
 {
     setNegotiableQuoteBillingAddress(
-        input: SetNegotiableQuoteBillingAddressInput! 
+        input: SetNegotiableQuoteBillingAddressInput!
     ): SetNegotiableQuoteBillingAddressOutput
 }
 ```
@@ -29,7 +29,7 @@ The following example adds a new billing address to a negotiable quote.
 ```graphql
 mutation {
   setNegotiableQuoteBillingAddress(input: {
-    quote_uid: "prFSdZyHOpMXeiJ32XlBzd8e1Mte9loS", 
+    quote_uid: "prFSdZyHOpMXeiJ32XlBzd8e1Mte9loS",
     billing_address: {
       address: {
         company: "TestCo"
