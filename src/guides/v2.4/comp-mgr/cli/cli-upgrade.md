@@ -134,6 +134,7 @@ See the examples at the end of this section for help specifying different releas
 
    ```bash
    composer update
+   ```
 
 ### Example - Minor release
 

@@ -570,44 +570,12 @@ pages:
       versionless: true
       children:
 
-        - label: Troubleshoot deployment
-          url: /cloud/trouble/troubleshoot-deployment.html
-          versionless: true
-
-        - label: Incorrect credentials
-          url: /cloud/trouble/trouble_ce-creds.html
-          versionless: true
-
-        - label: Resolve issues with a new project
-          url: /cloud/trouble/trouble_proj-startover.html
-          versionless: true
-
         - label: Component deployment failure
           url: /cloud/trouble/trouble_comp-deploy-fail.html
           versionless: true
 
-        - label: Resolve issues with encryption key
-          url: /cloud/trouble/trouble-crypt-key-variable.html
-          versionless: true
-
-        - label: Resolve issues with HTML minification
-          url: /cloud/trouble/trouble-error-html-minification.html
-          versionless: true
-
-        - label: Resolve issues with Google Analytics during deployment
-          url: /cloud/trouble/trouble-google-analytics-deploy.html
-          versionless: true
-
-        - label: Site availability
-          url: /cloud/trouble/site-availability.html
-          versionless: true
-
         - label: Add site map and search engine robots
           url: /cloud/trouble/robots-sitemap.html
-          versionless: true
-
-        - label: Theme troubleshooting
-          url: /cloud/trouble/theme-troubleshooting.html
           versionless: true
 
     - label: Upgrades and patches

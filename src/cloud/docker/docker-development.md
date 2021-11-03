@@ -115,7 +115,7 @@ Prior to setting up a local workspace, gather the following credentials and acco
 [authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [Magento Cloud template]: https://github.com/magento/magento-cloud
 [Set up an account]: {{site.baseurl}}/cloud/before/before-workspace.html#newaccount
-[Resolve issues with encryption key]: {{site.baseurl}}/cloud/trouble/trouble-crypt-key-variable.html
+[Resolve issues with encryption key]: https://support.magento.com/hc/en-us/articles/360033978652
 [Update the hosts file and install dependencies]: {{site.baseurl}}/cloud/docker/docker-installation.html#update-the-hosts-file-and-install-dependencies
 [{{site.data.var.mcd-package}} GitHub repository]: https://github.com/magento/magento-cloud-docker
 [Get support for {{site.data.var.mcd-prod}}]: {{site.baseurl}}/cloud/docker/docker-troubleshooting.html

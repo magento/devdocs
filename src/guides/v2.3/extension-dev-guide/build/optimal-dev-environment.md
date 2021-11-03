@@ -40,7 +40,7 @@ The following is a list of the different ways you can install Magento 2 locally:
 
 The following is a list of optimizations you can make on your local development machine
 
-*  Magento recommends installing and using the latest supported version of [PHP](https://glossary.magento.com/php) 7 to increase performance.
+*  We recommend installing and using the latest supported version of [PHP](https://glossary.magento.com/php) 7 to increase performance.
 *  Replace your MySQL database with [Percona](https://www.percona.com/software/mysql-database/percona-server){:target="_blank"}.
 *  Make sure you install and enable [PHP OPcache](http://php.net/manual/en/intro.opcache.php){:target="_blank"}.
 *  Xdebug is off by default. Enable this feature only when you need it because it requires a lot of memory and degrades performance.

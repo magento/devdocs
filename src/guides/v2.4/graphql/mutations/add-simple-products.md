@@ -6,7 +6,7 @@ redirect from:
 ---
 
 {:.bs-callout-warning}
-Magento recommends using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
+We recommend using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
 
 The `addSimpleProductsToCart` mutation allows you to add any number of simple and group products to the cart at the same time.
 

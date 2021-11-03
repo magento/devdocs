@@ -4,8 +4,73 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Oct 18 14:38:48 2021
+updated: Mon Oct 25 15:15:23 2021
 entries:
+- description: Added the "cache" and "system"  descriptions to the [env.php reference](https://devdocs.magento.com/guides/v2.4/config-guide/prod/config-reference-envphp.html)
+    topic.
+  versions: 2.4.x
+  type: Major Update
+  date: October 22, 2021
+  link: https://github.com/magento/devdocs/pull/9186
+  merge_commit: ecfce43befaea1054d0ed8451a208ea07de3d2b4
+  contributor: srsathish92
+  membership: false
+  labels:
+  - Major Update
+  - partners-contribution
+  - 2.4.x
+  - 'Progress: done'
+  - 'Partner: ITG Commerce'
+- description: "[Release notes](https://devdocs.magento.com/live-search/release-notes.html)
+    for Live Search 1.3.0"
+  versions: 2.4.x
+  type: Major Update
+  date: October 21, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2592
+  merge_commit: ecd524f562b0f03de9b65c06d849415617e53dd6
+  contributor: ccondra
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: The Composer `root-update-plugin` has been updated to be compatible
+    with Composer 2.1.6. [Upgrade Commerce](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html)
+    provides details about upgrading Magento Open Source and Adobe Commerce with the
+    new version of the plugin.
+  versions: 2.4.4
+  type: Major Update
+  date: October 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2581
+  merge_commit: 5a9604f08dac24aaf84ecf423486d460798df5dd
+  contributor: keharper
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Update [reference data for the backward incompatible changes](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html).
+    Covering entire products instead of the main source code repositories.
+  versions: 2.4.x
+  type: Major Update
+  date: October 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2598
+  merge_commit: 7c08bc0fb8369b1c524dca7abd027eb837aeb3a0
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: Added a [public roadmap](https://devdocs.magento.com/release/roadmap.html)
+    for Magento Open Source.
+  versions: 2.x
+  type: New Topic
+  date: October 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2603
+  merge_commit: 5a0d39d531a142d92d97a6b0e7cec249aa03757e
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - New Topic
 - description: Reference data for the [2.4.3-p1](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html),
     [2.3.7-p1 and 2.3.7-p2](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html)
     backward incompatible changes.
@@ -265,7 +330,7 @@ entries:
   - Major Update
   - 2.4.3
 - description: Added [Community quality patches release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md)
-    to a table of contents at [Commerce Quality Patches](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching/mqp.html).
+    to a table of contents at [Commerce Quality Patches](https://devdocs.magento.com/quality-patches/usage.html).
   versions: 2.x
   type: Major Update
   date: August 27, 2021
