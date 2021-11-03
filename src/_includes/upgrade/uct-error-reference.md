@@ -114,7 +114,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5019 | The <value> node is obsolete | Instead, provide the actual value as a text literal. |
 | 5020 | Obsolete node: <supported_blocks> | To be replaced with <supported_containers> |
 | 5021 | Obsolete node: <block_name> | To be replaced with <container_name> |
-| 5022 | Factory name detected | TODO |
+| 5022 | Factory name detected | Widget type should not begin with / |
 | 5023 | Obsolete ACL structure detected in line | Check lib/internal/Magento/Framework/Acl/etc/acl.xsd |
 | 5024 | Obsolete menu structure detected in line | Check app/code/Magento/Backend/etc/menu.xsd |
 | 5025 | Obsolete system configuration structure detected in file | Check app/code/Magento/Config/etc/system_file.xsd |
