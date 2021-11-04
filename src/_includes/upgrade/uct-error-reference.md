@@ -81,7 +81,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 1327 | Inherited non Adobe Commerce API interface | Constants that are not marked as `@api` may be changed. Consider introducing and using a private constant of the required value within the custom code instead. |
 | 1328 | Implemented non Adobe Commerce API interface | Interfaces not marked as `@api` may be changed. Consider removing this inheritance or replacing it with inheritance from the Adobe Commerce interface that is marked as `@api` or an interface introduced in the scope of customization code. |
 | 1420 | Instantiating non Adobe Commerce API class/interface | Classes that are not marked as `@api` may be changed. Consider updating the code to rely on the interface marked as `@api` instead. Otherwise, the functionality relying on this implementation should be tested after the upgrade. Also, the recommended way of retrieving an instance of the class is using DI. Consider using a factory if a new instance of the class is required. |
-| 1428 | Possible dependency on implementation details. Usage of `xx` should be declared instead of `xx` | Classes that are not marked as `@api` may be changed. Consider updating the code to rely on the interface marked as `@api` instead. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
+| 1428 | Possible dependency on implementation details. | Classes that are not marked as `@api` may be changed. Consider updating the code to rely on the interface marked as `@api` instead. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
 | 1429 | Call non Adobe Commerce API methods | Methods that are not marked as `@api` or are not declared within API class/interface may be changed. Even if the interface of the method is not updated in the new version, its behaviour or output can be different. Consider relying on an interface method. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
 | 1449 | Call to non-interface method (that is present in implementation) | Methods that are not declared in the interface may be changed. Consider relying on an interface method. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
 | 1524 | Using non Adobe Commerce API property | Values of the properties that are not marked as `@api` may be changed. Consider relying on the API interface method instead. |
@@ -94,13 +94,13 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 5001 | Call-time pass-by-reference calls are prohibited | Passing by reference is not supported after PHP 5.6 |
-| 5002 | The opening PHP tag must be the first content in the file | Put PHP opening tag in first line of file |
-| 5003 | Function has been deprecated | Use an alternative function |
-| 5005 | PHP syntax error | Fix syntax error |
-| 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | Pass original base classes in constructor instead |
+| 5002 | The opening PHP tag must be the first content in the file | Ensure there is no content in the file before the  PHP opening tag |
+| 5003 | Function has been deprecated | Please use a replacement suggested in the error message. If the message does not provide the replacement suggestion, this case requires a close review to select an alternative safe function or implementation |
+| 5005 | PHP syntax error | The code requires to be updated to comply with the PHP interpretation |
+| 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | The original class should be declared as a type of the constructor parameter, the Interceptor/Proxy class will be passed by the framework dependency injection implemtation |
 | 5007 | The use of function `sizeof()` is discouraged | Use `count()` instead |
 | 5007 | The use of function `delete()` is discouraged | Use `unset()` instead |
-| 5008 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | Update code to use Magento 2 standards |
+| 5008 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | The code requires review and refactoring. Magento 1 constructions may no longer be supported by Magento 2 framework. |
 | 5009 | Template directives may not invoke methods. Only scalar array access is allowed | Remove method invocations from template |
 | 5010 | Template `@vars` comment block contains invalid JSON | Fix invalid JSON |
 | 5011 | Template `@vars` comment block contains invalid label | Fix invalid label |
