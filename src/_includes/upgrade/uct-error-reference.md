@@ -123,7 +123,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5028 | Access to protected and private members of `Block` class is obsolete in phtml templates | Use only public members |
 | 5029 | Please do not use `"jquery/ui"` library in templates | Use needed jquery ui widget instead |
 | 5030 | Please do not initialize JS component in PHP | initialize JS component in template |
-| 5031 | Contains obsolete method `xx` | Please use `getConnection()` method instead. |
+| 5031 | Contains obsolete method | Please use `getConnection()` method instead. |
 | 5032 | `loadLayout` method is deprecated | Please use `\Magento\Framework\View\Layout\Builder::build` instead. |
 | 5033 | `renderLayout` method is deprecated | Please use `\Magento\Framework\Controller\ResultInterface::renderResult` instead. |
 | 5034 | `_redirect` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Redirect::render` instead. |
@@ -145,7 +145,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5050 | The block being referenced is removed | Remove reference to block |
 | 5051 | `output="toHtml"` is obsolete | Use `output="1"` |
 | 5052 | The class `\Magento\Framework\View\Element\Text\ListText` is not supposed to be used in layout anymore | Remove class `\Magento\Framework\View\Element\Text\ListText` from layout |
-| 5053 | Call of method `xx` via layout instruction `<action>` is not allowed | Avoid using offending method in <action> |
+| 5053 | Call of method via layout instruction `<action>` is not allowed | Avoid using offending method in <action> |
 | 5054 | `helper` attribute contains `/` | Remove `/` from helper attribute |
 | 5055 | `helper` attribute does not contain `::` | Add `::` to helper attribute |
 | 5056 | Install scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file |
@@ -159,7 +159,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5064 | Recurring scripts are obsolete | Please create class Recurring in module\'s Setup folder |
 | 5065 | 'data' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
 | 5066 | 'sql' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
-| 5067 | Nodes identified by XPath `xx` are obsolete | Use suggestion from error message itself |
+| 5067 | Nodes identified by XPath are obsolete | Use suggestion from error message itself |
 | 5068 | Directive `{{htmlescape}}` is obsolete | Use `{{var}}` instead |
 | 5069 | Directive `{{escapehtml}}` is obsolete | Use `{{var}}` instead |
 | 5070 | 3rd parameter is not needed anymore for `getChildHtml()` | Remove 3rd parameter from call to `getChildHtml()` |
@@ -168,11 +168,11 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5073 | Legacy table names with slash must be fixed to direct table names | Use direct table name instead |
 | 5074 | Use of deprecated method `getResource()` to (save / load / delete) data detected. | Use a repository instead |
 | 5075 | Application modules should not use classes from test modules | Remove usage of classes from test modules |
-| 5076 | Cannot use `xx` in namespace as it is reserved since PHP 7 | Remove usage of `xx` from namespace |
-| 5077 | Cannot use `xx` as class name as it is reserved since PHP 7 | Remove usage of `xx` from class name |
+| 5076 | Cannot use in namespace as it is reserved since PHP 7 | Remove usage from namespace |
+| 5077 | Cannot use as class name as it is reserved since PHP 7 | Remove usage from class name |
 | 5078 | Class needs to be requested in constructor, otherwise compiler will not be able to find and generate these classes | Add class to constructor |
 | 5079 | Use of var class variables is discouraged | Avoid using 'var' to declare class variable |
-| 5080 | Possible raw SQL statement `xx` detected | Use repositories or data patches instead |
+| 5080 | Possible raw SQL statement detected | Use repositories or data patches instead |
 | 5081 | The use of helpers in templates is discouraged | Use ViewModel instead |
 | 5082 | The use of $this in templates is deprecated | Use $block instead |
 | 5083 | Constants are not allowed as the first argument of translation function | use string literal instead |
