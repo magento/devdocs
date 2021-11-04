@@ -21,7 +21,7 @@ Critical errors of custom code compatibility are raised when the custom code is 
 | - | - | - |
 | 1110 | Instantiating non-existent Adobe Commerce class/interface | Update code to use a class marked as `@api`. Instantiating non-existent Adobe Commerce class/interface |
 | 1111 | Extending from non-existent Adobe Commerce class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
-| 1112 | Importing non existing Adobe Commerce class | Update code to use a class marked as `@api`. |
+| 1112 | Importing non-existing Adobe Commerce class | Update code to use a class marked as `@api`. |
 | 1113 | Loading non existing Adobe Commerce class | Update code to use a class marked as `@api`. |
 | 1114 | Using non existing Adobe Commerce class | Update code to use a class marked as `@api`. |
 | 1214 | Using non-existent Adobe Commerce constant | Consider introducing and using a private constant of the required value within the custom code instead. |
@@ -159,7 +159,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5064 | Recurring scripts are obsolete | Please create class Recurring in module\'s Setup folder |
 | 5065 | 'data' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
 | 5066 | 'sql' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
-| 5067 | Nodes identified by XPath are obsolete | Use suggestion from error message itself |
+| 5067 | Nodes identified by XPath are obsolete | Obsolete XML pointed out in the error should be updated. Follow the suggestions from the error message. |
 | 5068 | Directive `{{htmlescape}}` is obsolete | Use `{{var}}` instead |
 | 5069 | Directive `{{escapehtml}}` is obsolete | Use `{{var}}` instead |
 | 5070 | 3rd parameter is not needed anymore for `getChildHtml()` | Remove 3rd parameter from call to `getChildHtml()` |
