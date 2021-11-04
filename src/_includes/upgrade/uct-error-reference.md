@@ -179,8 +179,8 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5084 | Please do not initialize JS component in php | Initialize JS component in template |
 | 6001 | `jQuery.andSelf()` removed | Use `jQuery.addBack()` |
 | 6002 | jQuery `$.bind` and `$.unbind` are deprecated | Use `$.on` and `$.off` instead |
-| 6003 | jQuery method to subscribe to that event is deprecated and shouldn't be used anymore | Use `.on("event name", fn)` method instead to subscribe to that event |
-| 6003 | jQuery method to trigger that event is deprecated and shouldn't be used anymore | Use `.trigger("event name")` method instead to trigger that event |
+| 6003 | jQuery method to subscribe to event is deprecated and shouldn't be used anymore | Use `.on("event name", fn)` method instead to subscribe to that event |
+| 6003 | jQuery method to trigger event is deprecated and shouldn't be used anymore | Use `.trigger("event name")` method instead to trigger that event |
 | 6004 | jQuery `$.delegate` and `$.undelegate` are deprecated | Use `$.on` and `$.off` instead |
 | 6005 | (`jQuery.load()` / `jQuery.unload()` / `jQuery.error()`) was removed | Use (`.on("load", fn)` / `.on("unload", fn)` / `.on("error", fn)`) instead |
 | 6006 | `jQuery.size()` removed | Use `jQuery.length` |
