@@ -21,9 +21,9 @@ Critical errors of custom code compatibility are raised when the custom code is 
 | - | - | - |
 | 1110 | Instantiating non-existent Adobe Commerce class/interface | Update code to use a class marked as `@api`. Instantiating non-existent Adobe Commerce class/interface |
 | 1111 | Extending from non-existent Adobe Commerce class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
-| 1112 | Importing non Adobe Commerce class | Update code to use a class marked as `@api`. |
-| 1113 | Loading non Adobe Commerce class | Update code to use a class marked as `@api`. |
-| 1114 | Using non Adobe Commerce class | Update code to use a class marked as `@api`. |
+| 1112 | Importing non existing Adobe Commerce class | Update code to use a class marked as `@api`. |
+| 1113 | Loading non existing Adobe Commerce class | Update code to use a class marked as `@api`. |
+| 1114 | Using non existing Adobe Commerce class | Update code to use a class marked as `@api`. |
 | 1214 | Using non-existent Adobe Commerce constant | Consider introducing and using a private constant of the required value within the custom code instead. |
 | 1215 | Overriding non-existent Adobe Commerce constant | Consider introducing and using a private constant of the required value within the custom code instead. |
 | 1216 | Assignation of non-existent Adobe Commerce constant | Consider introducing and using a private constant of the required value within the custom code instead. |
@@ -69,10 +69,10 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 1104 | Using non API class that is inheriting API interface | Classes that are not marked as `@api` may be changed. Consider updating the code to rely on the interface marked as `@api` instead. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
-| 1121 | Extending from non existing Adobe Commerce API class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
-| 1122 | Importing non existing Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade.  |
-| 1123 | Loading non existing Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
-| 1124 | Using non existing Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
+| 1121 | Extending from non Adobe Commerce API class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
+| 1122 | Importing non Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
+| 1123 | Loading non Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
+| 1124 | Using non Adobe Commerce API class | The extended class is no longer present in the codebase. Update code to use a class marked as `@api`. Otherwise, the functionality relying on this implementation should be tested after the upgrade. |
 | 1224 | Using non Adobe Commerce API constant | Constants that are not marked as `@api` may be changed. Consider introducing and using a private constant of the required value within the custom code instead. |
 | 1225 | Overriding non Adobe Commerce API constant | Constants that are not marked as `@api` may be changed. Consider introducing and using a private constant of the required value within the custom code instead. |
 | 1226 | Assignation of non Adobe Commerce API constant | Constants that are not marked as `@api` may be changed. Consider introducing and using a private constant of the required value within the custom code instead. |
@@ -94,7 +94,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | Error code | Error description | Suggested action |
 | - | - | - |
 | 5001 | Call-time pass-by-reference calls are prohibited | Passing by reference is not supported after PHP 5.6 |
-| 5002 | The opening PHP tag must be the first content in the file | Ensure there is no content in the file before the  PHP opening tag |
+| 5002 | The opening PHP tag must be the first content in the file | Ensure there is no content in the file before the PHP opening tag |
 | 5003 | Function has been deprecated | Please use a replacement suggested in the error message. If the message does not provide the replacement suggestion, this case requires a close review to select an alternative safe function or implementation |
 | 5005 | PHP syntax error | The code requires to be updated to comply with the PHP interpretation |
 | 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | The original class should be declared as a type of the constructor parameter, the Interceptor/Proxy class will be passed by the framework dependency injection implemtation |
@@ -212,8 +212,8 @@ Custom code warnings are raised when the references to deprecated code are detec
 | 1234 | Using Adobe Commerce `@deprecated` constant | The deprecated constant will be removed in upcoming versions. Consider using a constant marked as `@api` or a private constant within your implementation instead. |
 | 1235 | Overriding Adobe Commerce `@deprecated` constant | The deprecated constant will be removed in upcoming versions. Consider using a constant marked as `@api` or a private constant within your implementation instead. |
 | 1236 | Assignation of Adobe Commerce `@deprecated` constant | The deprecated constant will be removed in upcoming versions. Consider using a constant marked as `@api` or a private constant within your implementation instead. |
-| 1332 | Imported Adobe Commerce `@deprecated` interface | The  deprecated interface will be removed in upcoming versions. Consider using an interface or class marked as `@api` instead. |
-| 1334 | Used Adobe Commerce `@deprecated` interface | The  deprecated interface will be removed in upcoming versions. Consider using an interface or class marked as `@api` instead. |
+| 1332 | Imported Adobe Commerce `@deprecated` interface | The deprecated interface will be removed in upcoming versions. Consider using an interface or class marked as `@api` instead. |
+| 1334 | Used Adobe Commerce `@deprecated` interface | The deprecated interface will be removed in upcoming versions. Consider using an interface or class marked as `@api` instead. |
 | 1337 | Inherited from Adobe Commerce `@deprecated` interface | The deprecated interface will be removed in upcoming versions. Consider removing the interface inheritance, using an interface marked as `@api` or an interface introduced within your implementation instead. |
 | 1338 | Implemented Adobe Commerce `@deprecated` interface | The deprecated interface will be removed in upcoming versions. Consider removing the interface inheritance, using an interface marked as `@api` or an interface introduced within your implementation instead. |
 | 1430 | Call not declared dataobject method | The magic methods that are not declared may be changed. Consider relying on interface methods instead. |
