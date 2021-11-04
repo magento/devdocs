@@ -26,11 +26,13 @@ The following code sample shows how these duties can be completed.
  * See COPYING.txt for license details.
  */
 
-use Magento\Framework\Bulk\BulkManagementInterface;
 use Magento\AsynchronousOperations\Api\Data\OperationInterface;
 use Magento\AsynchronousOperations\Api\Data\OperationInterfaceFactory;
-use Magento\Framework\DataObject\IdentityGeneratorInterface;
 use Magento\Authorization\Model\UserContextInterface;
+use Magento\Framework\Bulk\BulkManagementInterface;
+use Magento\Framework\DataObject\IdentityGeneratorInterface;
+use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\Json\Helper\Data as JsonHelper;
 use Magento\Framework\UrlInterface;
 
 /**
@@ -64,7 +66,7 @@ class ScheduleBulk
     private $userContext;
 
     /**
-     * @var \Magento\Framework\Json\Helper\Data
+     * @var JsonHelper
      */
     private $jsonHelper;
 
@@ -83,7 +85,7 @@ class ScheduleBulk
         IdentityGeneratorInterface $identityService,
         UserContextInterface $userContextInterface,
         UrlInterface $urlBuilder,
-        \Magento\Framework\Json\Helper\Data $jsonHelper
+        JsonHelper $jsonHelper
     ) {
         $this->userContext = $userContextInterface;
         $this->bulkManagement = $bulkManagement;
@@ -98,7 +100,7 @@ class ScheduleBulk
      * Schedule new bulk operation
      *
      * @param array $operationData
-     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws LocalizedException
      * @return void
      */
     public function execute($operationData)
@@ -137,7 +139,7 @@ class ScheduleBulk
             $userId = $this->userContext->getUserId();
             $result = $this->bulkManagement->scheduleBulk($bulkUuid, $operations, $bulkDescription, $userId);
             if (!$result) {
-                throw new \Magento\Framework\Exception\LocalizedException(
+                throw new LocalizedException(
                     __('Something went wrong while processing the request.')
                 );
             }
@@ -163,13 +165,18 @@ A consumer class receives messages from the message queue and changes the status
 
 namespace Magento\SharedCatalog\Model\ResourceModel\ProductItem\Price;
 
-use Magento\Framework\Bulk\BulkManagementInterface;
 use Magento\AsynchronousOperations\Api\Data\OperationInterface;
 use Magento\AsynchronousOperations\Api\Data\OperationInterfaceFactory;
+use Magento\Framework\Bulk\BulkManagementInterface;
+use Magento\Framework\Bulk\OperationManagementInterface;
 use Magento\Framework\DB\Adapter\ConnectionException;
 use Magento\Framework\DB\Adapter\DeadlockException;
 use Magento\Framework\DB\Adapter\LockWaitException;
+use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Exception\TemporaryStateExceptionInterface;
+use Magento\Framework\Json\Helper\Data as JsonHelper;
+use Psr\Log\LoggerInterface;
 
 /**
  * Class Consumer
@@ -177,30 +184,30 @@ use Magento\Framework\Exception\TemporaryStateExceptionInterface;
 class Consumer
 {
     /**
-     * @var \Psr\Log\LoggerInterface
+     * @var LoggerInterface
      */
     private $logger;
 
     /**
-     * @var \Magento\Framework\Json\Helper\Data
+     * @var JsonHelper
      */
     private $jsonHelper;
 
     /**
-     * @var \Magento\BulkOperations\Model\OperationManagement
+     * @var OperationManagementInterface
      */
     private $operationManagement;
 
     /**
      * Consumer constructor.
      *
-     * @param \Psr\Log\LoggerInterface $logger
-     * @param \Magento\Framework\Json\Helper\Data $jsonHelper
+     * @param LoggerInterface $logger
+     * @param JsonHelper $jsonHelper
      */
     public function __construct(
-        \Psr\Log\LoggerInterface $logger,
-        \Magento\Framework\Json\Helper\Data $jsonHelper,
-        \Magento\Framework\Bulk\OperationManagementInterface $operationManagement
+        LoggerInterface $logger,
+        JsonHelper $jsonHelper,
+        OperationManagementInterface $operationManagement
     ) {
         $this->logger = $logger;
         $this->jsonHelper = $jsonHelper;
@@ -210,10 +217,10 @@ class Consumer
     /**
      * Processing operation for update price
      *
-     * @param \Magento\AsynchronousOperations\Api\Data\OperationInterface $operation
+     * @param OperationInterface $operation
      * @return void
      */
-    public function processOperation(\Magento\AsynchronousOperations\Api\Data\OperationInterface $operation)
+    public function processOperation(OperationInterface $operation)
     {
         $status = OperationInterface::STATUS_TYPE_COMPLETE;
         $errorCode = null;
@@ -240,7 +247,7 @@ class Consumer
                 $message = __('Sorry, something went wrong during product prices update. Please see log for details.');
             }
 
-        } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
+        } catch (NoSuchEntityException $e) {
             $this->logger->critical($e->getMessage());
             $status = ($e instanceof TemporaryStateExceptionInterface) ? OperationInterface::STATUS_TYPE_NOT_RETRIABLY_FAILED : OperationInterface::STATUS_TYPE_NOT_RETRIABLY_FAILED;
             $errorCode = $e->getCode();
@@ -248,7 +255,7 @@ class Consumer
             $message = $e->getMessage();
             unset($unserializedData['entity_link']);
             $serializedData = $this->jsonHelper->jsonEncode($unserializedData);
-        } catch (\Magento\Framework\Exception\LocalizedException $e) {
+        } catch (LocalizedException $e) {
             $this->logger->critical($e->getMessage());
             $status = OperationInterface::STATUS_TYPE_NOT_RETRIABLY_FAILED;
             $errorCode = $e->getCode();
