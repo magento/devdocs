@@ -24,6 +24,7 @@ The following table provides the dates for scheduled releases (dates are subject
 <sup>\-\- Indicates items that are not applicable to this release.</sup><br>
 <sup>1 This is the last patch release for the 2.3.x release line. The 2.3.x release line reaches End of Life (EOL) in April 2022.</sup><br>
 <sup>2 There is no full patch release in October 2022.</sup><br>
+Note: Releases highlighted in gray (Patch and Security Patch) are three opportunities for you to upgrade your core code in 2022 to keep your platform secure, reliable and performant. Feature releases will occur every other month. New releases will be available via external module or extension. Updates to independent features already implemented will happen automatically.
 
 {:.bs-callout-info}
 We have introduced a [new policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf) that applies to our supported release lines. To learn more about the new strategy behind our 2022 release calendar and lifecycle policy, visit our [blog](https://magento.com/blog/accelerating-innovation-through-simplified-release-strategy).
