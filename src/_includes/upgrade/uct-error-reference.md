@@ -46,7 +46,7 @@ GraphQL Schema critical issues are raised if the schema items are not present in
 | 3101 | Type was removed | List all queries that are referencing this field. Check if these queries are used by the customization implementation. Update the client code to handle the changed query interface. |
 | 3102 | Type removed from union | If the union type is used in the GraphQL request constructing or response processing implementation it may need to be updated. |
 | 3103 | Field removed | Check if the field is referenced in the customization codebase. Adjust the implementation to correctly handle the new field type. |
-| 3105 | Implemented interface removed | Check if the type implementing the removed interface is used in the cusomization. The implementation may need to be updated if it is relying on the removed interface. |
+| 3105 | Implemented interface removed | Check if the type implementing the removed interface is used in the customization. The implementation may need to be updated if it is relying on the removed interface. |
 | 3106 | Value removed from enum | If the removed enum value is used in the GraphQL request constructing or response processing implementation it may need to be updated. |
 | 3107 | Argument removed | Check if the field is used in the customization codebase. Remove the argument for this field. |
 | 3109 | Directive removed | Check if the directive is used in the customization codebase. Adjust the implementation to remove the reference to the directive. |
@@ -168,8 +168,8 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5073 | Legacy table names with slash must be fixed to direct table names | Use direct table name instead |
 | 5074 | Use of deprecated method `getResource()` to (save / load / delete) data detected. | Use a repository instead |
 | 5075 | Application modules should not use classes from test modules | Remove usage of classes from test modules |
-| 5076 | Cannot use in namespace as it is reserved since PHP 7 | Remove usage from namespace |
-| 5077 | Cannot use as class name as it is reserved since PHP 7 | Remove usage from class name |
+| 5076 | Cannot use in namespace as it is reserved since PHP 7 | Replace reserved word in namespace by another one not used by PHP as keyword |
+| 5077 | Cannot use as class name as it is reserved since PHP 7 | Replace reserved word in class name by another one not used by PHP as keyword |
 | 5078 | Class needs to be requested in constructor, otherwise compiler will not be able to find and generate these classes | Add class to constructor |
 | 5079 | Use of var class variables is discouraged | Avoid using 'var' to declare class variable |
 | 5080 | Possible raw SQL statement detected | Use repositories or data patches instead |
@@ -179,8 +179,8 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5084 | Please do not initialize JS component in php | Initialize JS component in template |
 | 6001 | `jQuery.andSelf()` removed | Use `jQuery.addBack()` |
 | 6002 | jQuery `$.bind` and `$.unbind` are deprecated | Use `$.on` and `$.off` instead |
-| 6003 | Instead of `.blur(fn)`, `.focus(fn)`, `.focusin(fn)`, `.focusout(fn)`, `.resize(fn)`, `.scroll(fn)`, `.dblclick(fn)`, `.mousedown(fn)`, `.mouseup(fn)`, `.mousemove(fn)`, `.mouseover(fn)`, `.mouseout(fn)`, `.mouseenter(fn)`, `.mouseleave(fn)`, `.change(fn)`, `.select(fn)`, `.submit(fn)`, `.keydown(fn)`, `.keypress(fn)`, `.keyup(fn)`, `.contextmenu(fn)` or `.click(fn)` | Use `.on("blur", fn)`, `.on("focus", fn)`, `.on("focusin", fn)`, `.on("focusout", fn)`, `.on("resize", fn)`, `.on("scroll", fn)`, `.on("dblclick", fn)`, `.on("mousedown", fn)`, `.on("mouseup", fn)`, `.on("mousemove", fn)`, `.on("mouseover", fn)`, `.on("mouseout", fn)`, `.on("mouseenter", fn)`, `.on("mouseleave", fn)`, `.on("change", fn)`, `.on("select", fn)`, `.on("submit", fn)`, `.on("keydown", fn)`, `.on("keypress", fn)`, `.on("keyup", fn)`, `.on("contextmenu", fn)` or `.on("click", fn)` |
-| 6003 | Instead of `.blur()`, `.focus()`, `.focusin()`, `.focusout()`, `.resize()`, `.scroll()`, `.dblclick()`, `.mousedown()`, `.mouseup()`, `.mousemove()`, `.mouseover()`, `.mouseout()`, `.mouseenter()`, `.mouseleave()`, `.change()`, `.select()`, `.submit()`, `.keydown()`, `.keypress()`, `.keyup()`, `.contextmenu()` or `.click()` | Use `.trigger("blur")`, `.trigger("focus")`, `.trigger("focusin")`, `.trigger("focusout")`, `.trigger("resize")`, `.trigger("scroll")`, `.trigger("dblclick")`, `.trigger("mousedown")`, `.trigger("mouseup")`, `.trigger("mousemove")`, `.trigger("mouseover")`, `.trigger("mouseout")`, `.trigger("mouseenter")`, `.trigger("mouseleave")`, `.trigger("change")`, `.trigger("select")`, `.trigger("submit")`, `.trigger("keydown")`, `.trigger("keypress")`, `.trigger("keyup")`, `.trigger("contextmenu")` or `.trigger("click")` |
+| 6003 | jQuery method to subscribe to that event is deprecated and shouldn't be used anymore | Use `.on("event name", fn)` method instead to subscribe to that event |
+| 6003 | jQuery method to trigger that event is deprecated and shouldn't be used anymore | Use `.trigger("event name")` method instead to trigger that event |
 | 6004 | jQuery `$.delegate` and `$.undelegate` are deprecated | Use `$.on` and `$.off` instead |
 | 6005 | (`jQuery.load()` / `jQuery.unload()` / `jQuery.error()`) was removed | Use (`.on("load", fn)` / `.on("unload", fn)` / `.on("error", fn)`) instead |
 | 6006 | `jQuery.size()` removed | Use `jQuery.length` |
