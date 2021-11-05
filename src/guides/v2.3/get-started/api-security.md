@@ -11,9 +11,9 @@ This topic describes best practices for [API security](https://owasp.org/www-pro
 
 Imposing restrictions on the size and number of resources that a user can request through an API can help mitigate denial-of-service (DoS) vulnerabilities. By default, the following built-in API rate limiting is available:
 
-- REST requests containing inputs representing a list of entities. When enabled, the default maximum is 20
-- REST and GraphQL queries that allow paginated results can be limited maximum number of items per page. When enabled, the default maximum is 300
-- REST queries that allow paginated results can have a default number of items per page imposed, When enabled, the default maximum is 20
+-  REST requests containing inputs representing a list of entities. When enabled, the default maximum is 20
+-  REST and GraphQL queries that allow paginated results can be limited maximum number of items per page. When enabled, the default maximum is 300
+-  REST queries that allow paginated results can have a default number of items per page imposed, When enabled, the default maximum is 20
 
 By default, these input limits are disabled but can be enabled via admin UI system configuration and also via the command line.
 
@@ -25,11 +25,11 @@ In addition, the Admin provides a configuration setting for limiting session siz
 
 ### Enabling the input limiting system
 
-To enabled these input limiting features via admin UI, go to `Stores -> Configuration -> Services` and set `Enable Input Limits` to `Yes` under `GraphQl Input Limits` and/or `Web Api Input Limits`.
+To enable these input limiting features via admin UI, go to `Stores -> Configuration -> Services` and set `Enable Input Limits` to `Yes` under `GraphQl Input Limits` and/or `Web Api Input Limits`.
 
 Or to enable via CLI, you can run
 
-```
+```shell
 bin/magento config:set webapi/validation/input_limit_enabled 1
 ```
 
