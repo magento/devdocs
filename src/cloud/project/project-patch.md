@@ -11,6 +11,8 @@ functional_areas:
 -  {{ site.data.var.mcp-prod }} delivers required patches with critical fixes
 -  Quality Patches deliver optional, low-impact quality fixes as [individual patches]({{ site.baseurl }}/release/policy/#individual-patch), which do not contain backward incompatible changes.
 
+See [patches available in the Quality Patches Tool]({{ site.baseurl }}/quality-patches/tool.html) to review a full list of released patches.
+
 Both packages improve the integration of all {{site.data.var.ee}} versions with Cloud environments and support quick delivery of critical, optional, and custom fixes. You can use these packages to apply, revert, and view general information about all individual patches that are available for Magento.
 
 {:.bs-callout-tip}
