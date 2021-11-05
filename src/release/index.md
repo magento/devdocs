@@ -24,7 +24,8 @@ The following table provides the dates for scheduled releases (dates are subject
 <sup>\-\- Indicates items that are not applicable to this release.</sup><br>
 <sup>1 This is the last patch release for the 2.3.x release line. The 2.3.x release line reaches End of Life (EOL) in April 2022.</sup><br>
 <sup>2 There is no full patch release in October 2022.</sup><br>
-`{:.bs-callout-tip}`
+
+{:.bs-callout-tip}
 Patch and Security Patch Releases are opportunities to upgrade the core codebase to keep your platform secure, reliable, and performant. Feature Releases occur every other month. Feature releases are independent of the core codebase and are available through external modules or extensions. Any updates to existing independent features will also be released during Feature Release periods and will happen automatically if the feature is already implemented.
 
 {:.bs-callout-info}
