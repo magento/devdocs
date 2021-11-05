@@ -11,6 +11,7 @@ Attribute | Data Type | Description
 `name` | String! | The title assigned to the negotiable quote
 `prices` | CartPrices | A set of subtotals and totals applied to the cart
 `selected_payment_method` | SelectedPaymentMethod | The payment method that was applied to the negotiable quote
+`shipping_addresses` | [NegotiableQuoteShippingAddress]! | A list of shipping addresses applied to the negotiable quote.
 `status` | NegotiableQuoteStatus! | The status of the negotiable quote. Possible values are SUBMITTED, PENDING, UPDATED, OPEN, ORDERED, CLOSED, DECLINED, and EXPIRED
 `uid` | ID! | The unique ID of a NegotiableQuote object
 `updated_at` | String | Timestamp indicating when the negotiable quote was updated

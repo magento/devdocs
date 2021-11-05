@@ -9,7 +9,7 @@ functional_areas:
 To apply patches from the command line:
 
 1. Upload the local file into the `<Magento_root>` directory on the server using FTP, SFTP, SSH or your normal transport method.
-1. Log into the server as the [Magento admin user][] and verify the file is in the correct directory.
+1. Log into the server as the [admin user][] and verify the file is in the correct directory.
 1. In the command line interface, run the following commands according to the patch extension:
 
    ```bash
@@ -27,4 +27,4 @@ To apply patches from the command line:
 
 <!-- Link Definitions -->
 
-[Admin user]:{{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first
+[admin user]:{{ page.baseurl }}/config-guide/cli/config-cli.html#config-install-cli-first

@@ -568,7 +568,7 @@ pages:
           edition: b2b-only
           exclude_versions: ["2.3"]
 
-        - label: setNegotiableQuoteShippingAddresses mutation
+        - label: setNegotiableQuoteShippingAddress mutation
           url: /graphql/mutations/set-negotiable-quote-shipping-address.html
           edition: b2b-only
           exclude_versions: ["2.3"]
@@ -720,6 +720,11 @@ pages:
 
         - label: InvoiceItemInterface attributes and implementations
           url: /graphql/interfaces/invoice-item-interface.html
+          exclude_versions: ["2.3"]
+
+        - label: NegotiableQuoteAddressInterface attributes and implementations
+          url: /graphql/interfaces/negotiable-quote-address-interface.html
+          edition: b2b-only
           exclude_versions: ["2.3"]
 
         - label: OrderItemInterface attributes and implementations

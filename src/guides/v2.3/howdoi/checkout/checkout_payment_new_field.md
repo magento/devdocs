@@ -261,7 +261,7 @@ Then create the `app/code/Learning/CustomField/Observer/Frontend/Sales/OrderPaym
 
 {% collapsible Show code %}
 
-```php?start_inline=1
+```php
 <?php
 
 namespace Learning\CustomField\Observer\Frontend\Sales;
