@@ -266,12 +266,6 @@ Attribute | Data type | Description
 `options` | [AggregationOption] | Describes each aggregated filter option
 `position` | Int | The relative position of the attribute in a layered navigation block
 
-#### includeDirectChildrenOnly filter
-
-When the `category_id` field is specified as part of the `ProductAttributeFilterInput` input object, the `includeDirectChildrenOnly` field of the `AggregationsCategoryFilterInput` object can be used in the response to refine the returned aggregations. If `includeDirectChildrenOnly` is set to true, then the aggregations will contain only direct child categories. Otherwise, the category aggregations will follow the default algorithm. The default value is false.
-
-The `AggregationsFilterInput` input object specifies the filters used in aggregations. `AggregationsCategoryFilterInput` is the filter object that determines how the category `AggregationOption` attribute aggregated in response.
-
 #### AggregationOption attributes {#AggregationOption}
 
 The `AggregationOption` array contains a list of possible options for the `attribute_code` defined in the aggregation. For example, if the `attribute_code` is `category_id`, the return options could include tops, bottoms, gear, and so on.
@@ -281,6 +275,12 @@ Attribute | Data type | Description
 `count` | Int | The number of items returned by the filter
 `label` | String | The label of the filter
 `value` | String! | The internal ID representing the value of the option
+
+#### includeDirectChildrenOnly filter
+
+When the `category_id` field is specified as part of the `ProductAttributeFilterInput` input object, the `includeDirectChildrenOnly` field of the `AggregationsCategoryFilterInput` object can be used in the response to refine the returned aggregations. If `includeDirectChildrenOnly` is set to true, then the aggregations will contain only direct child categories. Otherwise, the category aggregations will follow the default algorithm. The default value is false.
+
+The `AggregationsFilterInput` input object specifies the filters used in aggregations. `AggregationsCategoryFilterInput` is the filter object that determines how the category `AggregationOption` attribute aggregated in response.
 
 ### ProductInterface attributes {#ProductInterface}
 
@@ -994,11 +994,13 @@ By default, you cannot filter on the `color` attribute. [Filtering with custom a
 
 ### Query with layered navigation and includeDirectChildrenOnly input filter applied
 
-The following query returns aggregations that filters on items with these characteristics but because the includeDirectChildrenOnly input filter is set to true, the category aggregation in the response includes only the Women's Pants and Shorts categories, which are direct children of the Women's Bottoms category.
+The following query returns aggregations that filters on items with these characteristics:
 
 -  Women's Bottoms (category ID 22)
 -  In the price range of $40 - $49.99
 -  Comes in black (color 49)
+
+Because the includeDirectChildrenOnly input filter is set to true, the category aggregation in the response will include only the Women's Pants and Shorts categories, which are direct children of the Women's Bottoms category.
 
 {:.bs-callout-info}
 By default, you cannot filter on the `color` attribute. [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) describes how to enable this attribute for filtering. You can also run the following query without enabling the attribute by deleting `, color: {eq: "49"}`.
