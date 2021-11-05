@@ -21,9 +21,9 @@ Critical errors of custom code compatibility are raised when the custom code is 
 | - | - | - |
 | 1110 | Instantiating non-existent Adobe Commerce class/interface | Update code to use a class marked as `@api`. Instantiating non-existent Adobe Commerce class/interface |
 | 1111 | Extending from non-existent Adobe Commerce class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
-| 1112 | Importing non-existing Adobe Commerce class | Update code to use a class marked as `@api`. |
-| 1113 | Loading non existing Adobe Commerce class | Update code to use a class marked as `@api`. |
-| 1114 | Using non existing Adobe Commerce class | Update code to use a class marked as `@api`. |
+| 1112 | Importing non-existent Adobe Commerce class | Update code to use a class marked as `@api`. |
+| 1113 | Loading non-existent Adobe Commerce class | Update code to use a class marked as `@api`. |
+| 1114 | Using non-existent Adobe Commerce class | Update code to use a class marked as `@api`. |
 | 1214 | Using non-existent Adobe Commerce constant | Consider introducing and using a private constant of the required value within the custom code instead. |
 | 1215 | Overriding non-existent Adobe Commerce constant | Consider introducing and using a private constant of the required value within the custom code instead. |
 | 1216 | Assignation of non-existent Adobe Commerce constant | Consider introducing and using a private constant of the required value within the custom code instead. |
