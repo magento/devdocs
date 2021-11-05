@@ -57,7 +57,7 @@ Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publ
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these functional areas: Customer Account, Catalog, CMS, OMS, Import/Export, Promotions and Targeting, Cart and Checkout, B2B, and Staging and Preview.
 
-*  **Site-Wide Analysis Tool (SWAT) integration with Admin**. (SWAT) provides system insights and instrumentation for {{ site.data.var.ece }} installations of Magento with 24/7 real-time performance monitoring, reports, and self-service recommendations. Merchants can use the new SWAT Admin role to securely access their SWAT Customer Detail pages through the Magento Admin. See [SWAT FAQ](https://support.magento.com/hc/en-us/articles/360048646671) for an overview. For usage information, see [SWAT](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html). <!--- SWAT-807-->
+*  **Site-Wide Analysis Tool integration with Admin**. The [tool](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) provides system insights and instrumentation for {{ site.data.var.ece }} installations with 24/7 real-time performance monitoring, reports, and self-service recommendations. Merchants can use the new Admin [role resource](https://docs.magento.com/user-guide/system/permissions-role-resources.html) to securely access their Customer Detail pages through the Admin. See the [FAQ](https://support.magento.com/hc/en-us/articles/360048646671) for an overview. <!--- SWAT-807-->
 
 ### Performance improvements
 

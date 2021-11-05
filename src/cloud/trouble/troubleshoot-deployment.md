@@ -3,6 +3,7 @@ group: cloud-guide
 title: Troubleshoot deployment
 redirect_from:
    - /cloud/access-acct/trouble.html
+redirect_to: https://support.magento.com/hc/en-us/articles/4411647469965
 functional_areas:
   - Cloud
   - Deploy

@@ -2038,7 +2038,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ## Known issues -- General
 
-**Issue**: Anomalies in storefront error messages occur in deployments where PHP 7.4.2 is installed. When Magento 2.4.0 is deployed with PHP 7.4.2, the space symbols in storefront error messages are replaced with plus (+) characters.  This bug is native to PHP 7.4.2 and cannot be corrected by Magento. **Workaround**: Magento recommends using other versions of PHP 7.4.x. See [Raw message data display on storefront](https://support.magento.com/hc/en-us/articles/360045804332)  Knowledge Base article. <!--- MC-34170-->
+**Issue**: Anomalies in storefront error messages occur in deployments where PHP 7.4.2 is installed. When Magento 2.4.0 is deployed with PHP 7.4.2, the space symbols in storefront error messages are replaced with plus (+) characters.  This bug is native to PHP 7.4.2 and cannot be corrected by Magento. **Workaround**: We recommend using other versions of PHP 7.4.x. See [Raw message data display on storefront](https://support.magento.com/hc/en-us/articles/360045804332)  Knowledge Base article. <!--- MC-34170-->
 
 **Issue**: Merchants cannot add ordered products to a package from the Admin Create Package page and save the package. See [Shipping labels creation](https://support.magento.com/hc/en-us/articles/360046750171) Knowledge Base article. The **MC-35514-2.4.0-CE-composer.patch** hotfix  for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- MC-35514-->
 

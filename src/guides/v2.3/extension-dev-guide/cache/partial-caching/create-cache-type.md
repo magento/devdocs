@@ -42,6 +42,11 @@ You may declare multiple cache types.
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace VendorName\ModuleName\Model\Cache\Type;
 
 use Magento\Framework\App\Cache\Type\FrontendPool;
@@ -184,12 +189,15 @@ Translate cache type model class is defined in `Magento\Framework\App\Cache\Type
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Magento\Framework\App\Cache\Type;
+
+use Magento\Framework\Cache\Frontend\Decorator\TagScope;
 
 /**
  * System / Cache Management / Cache type "Translations"
  */
-class Translate extends \Magento\Framework\Cache\Frontend\Decorator\TagScope
+class Translate extends TagScope
 {
     /**
      * Cache type code unique among all cache types

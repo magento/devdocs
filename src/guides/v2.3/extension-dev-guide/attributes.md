@@ -48,6 +48,10 @@ Both the `save()` and `getResource()` methods for `Magento\Framework\Model\Abstr
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace Magento\Customer\Setup\Patch\Data;
 
@@ -237,9 +241,12 @@ This only works for extension attributes (those attributes defined in an `extens
 
 An `ExtensionInterface` will be empty if no extension attributes have been added. In the following example—in an unmodified installation—`CustomerExtensionInterface` will be generated, but will be empty:
 
-`interface CustomerExtensionInterface extends \Magento\Framework\Api\ExtensionAttributesInterface
+```php
+use Magento\Framework\Api\ExtensionAttributesInterface;
+interface CustomerExtensionInterface extends ExtensionAttributesInterface
 {
-}`
+}
+```
 
 However, if an extension similar to the following has been defined, the interface will not be empty:
 
