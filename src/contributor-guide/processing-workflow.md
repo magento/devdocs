@@ -3,7 +3,7 @@ group: contributor-guide
 title: GitHub issue processing workflow
 ---
 
-The Github issue workflow ensures that issues are clear, well written, and thoroughly vetted. Following these procedures allows valid issues to get the attention they deserve.
+The GitHub issue workflow ensures that issues are clear, well written, and thoroughly vetted. Following these procedures allows valid issues to get the attention they deserve.
 
 Magento issues that are reported on the public [GitHub](https://github.com/magento/magento2/issues) must pass through a series of gates, or stages of quality assessment, to ensure that their quality meets our standards. There are three gates, and an issue must pass through all three of these assessments before we will transfer it to either Magento core developers or community developers.
 The purpose of these gates is to identify core technical issues common to all reported tickets, and to show the progress on each reported issue.
