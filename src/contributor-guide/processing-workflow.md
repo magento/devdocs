@@ -1,6 +1,6 @@
 ---
 group: contributor-guide
-title: Github Issue Processing Workflow
+title: GitHub issue processing workflow
 ---
 
 The Github issue workflow ensures that issues are clear, well written, and thoroughly vetted. Following these procedures allows valid issues to get the attention they deserve.
@@ -18,7 +18,7 @@ Issue gates are a series of steps that are run to make sure the issue has all th
 
 ### Gate 1 - Verification of the report format
 
-The main goal of this initial verification stage is to be sure that report has well-structured content according to the requirements from [Issue Reporting Guidelines](contributing.html#report). This stage looks trivial and formal but it will definitely affect processing speed. Generally, an issue that has the expected structure and clear information will be processed faster than the same report with a poor format.
+The main goal of this initial verification stage is to be sure that the report has well-structured content that meets the requirements from [Issue Reporting Guidelines](contributing.html#report). This stage looks trivial and formal, but it will definitely affect processing speed. Generally, an issue that has the expected structure and clear information will be processed faster than the same report with a poor format.
 The reported issue must contain **all** the following keywords in the description section:
 
 *  _Preconditions_
@@ -26,7 +26,7 @@ The reported issue must contain **all** the following keywords in the descriptio
 *  _Actual Result_
 *  _Expected Result_
 
-A maintainer can request the reporter to update the issue description and provide additional information. The `Issue: needs update` label will be added. A reporter has 14 days to update the issue description; otherwise, the issue will be closed. The maintainer may update the issue description format if sufficient information is provided.
+A maintainer can request the reporter to update the issue description and provide additional information. The maintainer will add the `Issue: needs update` label. A reporter has 14 days to update the issue description; otherwise, the issue will be closed. The maintainer may update the issue description format if sufficient information is provided.
 
 ### Gate 2 - Manual verification
 
@@ -37,9 +37,9 @@ Working on an issue report as a reporter, maintainer, or developer is always a c
 
 #### Preparation
 
-These are steps for reviewing the issue, verifying reproduction steps, and assigning a Maintainer to work it.
+These are steps for reviewing the issue, verifying reproduction steps, and assigning a maintainer to work it.
 
-1. A maintainer selects a ticket from the GitHub tracker which is not yet processed. The recommended tool is the [Issue Confirmation and Triage Board](https://github.com/magento/magento2/projects/23).
+1. A maintainer selects an unprocessed ticket from the GitHub tracker. The recommended tool is the [Issue Confirmation and Triage Board](https://github.com/magento/magento2/projects/23).
 1. The maintainer reviews the list from the "Ready for Confirmation" column and selects an issue to begin processing.
 1. After selecting the ticket, the maintainer checks the description and reproduction steps.
 1. When the maintainer is ready to start processing the issue, the maintainer should assign the ticket to him/her self. This indicates someone is actively working on the issue.
@@ -84,7 +84,7 @@ Steps for final review of an issue for contributors/developers to work the issue
 
 1. Add the label `Issue: Confirmed` to the ticket.
 1. Wait for a response from the Automated Contributor Assistant, which normally takes 30-60 seconds.
-1. If all required information was provided Automated Contributor Assistant will comment with reference ticket numbers and link in the internal backlog. Otherwise, the label `Issue: Confirmed` will be removed and information on what is missing in the report will be provided to the maintainer.
+1. If all required information was provided, the Automated Contributor Assistant will comment with reference ticket numbers and a link in the internal backlog. Otherwise, the label `Issue: Confirmed` will be removed, and information on what is missing in the report will be provided to the maintainer.
 1. Un-assign the ticket from yourself so that developers can claim the issue and start development.
 
 If the issue was reproduced on `Gate 3`, we will create an internal `AC-XXXX` ticket to track the progress of the issue.
@@ -102,21 +102,21 @@ After triage, either Magento core developers or Magento community developers may
 
 The following terms help define the process:
 
-*  `Reporter` – User who filed initial issue report.
-*  `Maintainer` – User a member of Community Maintainers Team who is and working on the issue report to update and confirm report in accordance with all requirements.
+*  `Reporter` – The user who filed the initial issue report.
+*  `Maintainer` – A member of Community Maintainers Team who is working on the issue report to update and confirm report in accordance with all requirements.
 *  `Automated Contributor Assistant` – Non-human users/bots that perform automatic checks and provide assistance to human users.
-*  `Label` – GitHub label applied to the ticket.
+*  `Label` – The GitHub label applied to the ticket.
 
 Label descriptions:
 
-*  `Issue: Confirmed` – Label assigned when the Maintainer reproduced the issue using the latest `2.4-develop` branch.
-*  `Issue: Cannot reproduce` – Label assigned when the described issue is not reproducible by the described scenario or reproduction steps.
-*  `non-issue` – Label assigned when the described behavior in the report is correct, expected behavior, and not an issue.
-*  `Area: xxx` – Labels indicating Magento Open Source functional area that may be the origin of the issue. There is a specific label for each major area.
-*  `Reproduced on 2.4.x` - Label indicating the release line where the Maintainer can reproduce the issue.
-*  `Issue: needs update` – Label indicating that the issue is pending a response from the reporter.
-*  `Reported on 2.x.x` - Label indicating original Magento Open Source version for the Issue report.
+*  `Issue: Confirmed` – The maintainer has reproduced the issue using the latest `2.4-develop` branch.
+*  `Issue: Cannot reproduce` – The described issue is not reproducible by the described scenario or reproduction steps.
+*  `non-issue` – The described behavior in the report is correct or expected behavior, and is not an issue.
+*  `Area: xxx` – The {{site.data.var.ce}} functional area that might be the origin of the issue. There is a specific label for each major area.
+*  `Reproduced on 2.4.x` - The release line where the maintainer reproduced the issue.
+*  `Issue: needs update` – The issue is pending a response from the reporter.
+*  `Reported on 2.x.x` - The original {{site.data.var.ce}} version for the issue report.
 
 ## Questions and Discussion
 
-If you have any questions, feedback, or proposals for this workflow, please join the [Community Engineering Slack Workspace](https://opensource.magento.com/slack). We have a [#backlog-maintainers](https://magentocommeng.slack.com/messages/CCV2S9P7S) channel specifically for these discussions.
+If you have any questions, feedback, or proposals for this workflow, join the [Community Engineering Slack Workspace](https://opensource.magento.com/slack). We have a [#backlog-maintainers](https://magentocommeng.slack.com/messages/CCV2S9P7S) channel specifically for these discussions.
