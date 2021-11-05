@@ -266,6 +266,12 @@ Attribute | Data type | Description
 `options` | [AggregationOption] | Describes each aggregated filter option
 `position` | Int | The relative position of the attribute in a layered navigation block
 
+#### includeDirectChildrenOnly filter
+
+When the `category_id` field is specified as part of the `ProductAttributeFilterInput` input object, the `includeDirectChildrenOnly` field of the `AggregationsCategoryFilterInput` object can be used in the response to refine the returned aggregations. If `includeDirectChildrenOnly` is set to true, then the aggregations will contain only direct child categories. Otherwise, the category aggregations will follow the default algorithm. The default value is false.
+
+The `AggregationsFilterInput` input object specifies the filters used in aggregations. `AggregationsCategoryFilterInput` is the filter object that determines how the category `AggregationOption` attribute aggregated in response.
+
 #### AggregationOption attributes {#AggregationOption}
 
 The `AggregationOption` array contains a list of possible options for the `attribute_code` defined in the aggregation. For example, if the `attribute_code` is `category_id`, the return options could include tops, bottoms, gear, and so on.
@@ -970,6 +976,439 @@ By default, you cannot filter on the `color` attribute. [Filtering with custom a
             "minimum_price": {
               "regular_price": {
                 "value": 48,
+                "currency": "USD"
+              }
+            }
+          }
+        }
+      ],
+      "page_info": {
+        "page_size": 25
+      }
+    }
+  }
+}
+```
+
+{% endcollapsible %}
+
+### Query with layered navigation and includeDirectChildrenOnly input filter applied
+
+The following query returns aggregations that filters on items with these characteristics but because the includeDirectChildrenOnly input filter is set to true, the category aggregation in the response includes only the Women's Pants and Shorts categories, which are direct children of the Women's Bottoms category.
+
+-  Women's Bottoms (category ID 22)
+-  In the price range of $40 - $49.99
+-  Comes in black (color 49)
+
+{:.bs-callout-info}
+By default, you cannot filter on the `color` attribute. [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) describes how to enable this attribute for filtering. You can also run the following query without enabling the attribute by deleting `, color: {eq: "49"}`.
+
+**Request:**
+
+```graphql
+{
+products(filter: {category_id: {eq: "22"}, price: {from: "40", to: "49.99"}, color: {eq: "49"}}, pageSize: 25, sort: {name: DESC}) {
+    aggregations (filter: {category: {includeDirectChildrenOnly: true}}) {
+      attribute_code
+      count
+      label
+      options {
+        label
+        value
+        count
+      }
+    }
+    items {
+      name
+      sku
+      price_range {
+        minimum_price {
+          regular_price {
+            value
+            currency
+          }
+        }
+      }
+    }
+    page_info {
+      page_size
+    }
+  }
+}
+```
+
+**Response:**
+
+{% collapsible Show sample response %}
+
+```json
+{
+  "data": {
+    "products": {
+      "aggregations": [
+        {
+          "attribute_code": "price",
+          "count": 1,
+          "label": "Price",
+          "options": [
+            {
+              "label": "40-50",
+              "value": "40_50",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "attribute_code": "category_id",
+          "count": 2,
+          "label": "Category",
+          "options": [
+            {
+              "label": "Pants",
+              "value": "27",
+              "count": 3
+            },
+            {
+              "label": "Shorts",
+              "value": "28",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "attribute_code": "climate",
+          "count": 7,
+          "label": "Climate",
+          "options": [
+            {
+              "label": "All-Weather",
+              "value": "201",
+              "count": 5
+            },
+            {
+              "label": "Cool",
+              "value": "203",
+              "count": 1
+            },
+            {
+              "label": "Indoor",
+              "value": "204",
+              "count": 4
+            },
+            {
+              "label": "Mild",
+              "value": "205",
+              "count": 4
+            },
+            {
+              "label": "Spring",
+              "value": "207",
+              "count": 3
+            },
+            {
+              "label": "Warm",
+              "value": "208",
+              "count": 5
+            },
+            {
+              "label": "Hot",
+              "value": "211",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "pattern",
+          "count": 3,
+          "label": "Pattern",
+          "options": [
+            {
+              "label": "Color-Blocked",
+              "value": "194",
+              "count": 1
+            },
+            {
+              "label": "Solid",
+              "value": "196",
+              "count": 2
+            },
+            {
+              "label": "Solid-Highlight",
+              "value": "197",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "attribute_code": "style_bottom",
+          "count": 4,
+          "label": "Style",
+          "options": [
+            {
+              "label": "Basic",
+              "value": "105",
+              "count": 2
+            },
+            {
+              "label": "Capri",
+              "value": "106",
+              "count": 3
+            },
+            {
+              "label": "Compression",
+              "value": "107",
+              "count": 1
+            },
+            {
+              "label": "Leggings",
+              "value": "108",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "attribute_code": "sale",
+          "count": 1,
+          "label": "Sale",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "attribute_code": "new",
+          "count": 1,
+          "label": "New",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "attribute_code": "erin_recommends",
+          "count": 2,
+          "label": "Erin Recommends",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 4
+            },
+            {
+              "label": "1",
+              "value": "1",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "performance_fabric",
+          "count": 1,
+          "label": "Performance Fabric",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "attribute_code": "eco_collection",
+          "count": 2,
+          "label": "Eco Collection",
+          "options": [
+            {
+              "label": "0",
+              "value": "0",
+              "count": 3
+            },
+            {
+              "label": "1",
+              "value": "1",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "attribute_code": "size",
+          "count": 5,
+          "label": "Size",
+          "options": [
+            {
+              "label": "28",
+              "value": "171",
+              "count": 5
+            },
+            {
+              "label": "29",
+              "value": "172",
+              "count": 5
+            },
+            {
+              "label": "30",
+              "value": "173",
+              "count": 1
+            },
+            {
+              "label": "31",
+              "value": "174",
+              "count": 1
+            },
+            {
+              "label": "32",
+              "value": "175",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "material",
+          "count": 7,
+          "label": "Material",
+          "options": [
+            {
+              "label": "Cotton",
+              "value": "33",
+              "count": 1
+            },
+            {
+              "label": "Polyester",
+              "value": "38",
+              "count": 2
+            },
+            {
+              "label": "Microfiber",
+              "value": "149",
+              "count": 1
+            },
+            {
+              "label": "Spandex",
+              "value": "150",
+              "count": 4
+            },
+            {
+              "label": "Organic Cotton",
+              "value": "153",
+              "count": 2
+            },
+            {
+              "label": "CoolTech&trade;",
+              "value": "155",
+              "count": 1
+            },
+            {
+              "label": "Wool",
+              "value": "158",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "attribute_code": "color",
+          "count": 7,
+          "label": "Color",
+          "options": [
+            {
+              "label": "Black",
+              "value": "49",
+              "count": 5
+            },
+            {
+              "label": "Blue",
+              "value": "50",
+              "count": 2
+            },
+            {
+              "label": "Gray",
+              "value": "52",
+              "count": 1
+            },
+            {
+              "label": "Green",
+              "value": "53",
+              "count": 1
+            },
+            {
+              "label": "Orange",
+              "value": "56",
+              "count": 3
+            },
+            {
+              "label": "Purple",
+              "value": "57",
+              "count": 1
+            },
+            {
+              "label": "White",
+              "value": "59",
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "name": "Diana Tights",
+          "sku": "WP06",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 59,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Daria Bikram Pant",
+          "sku": "WP10",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 51,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Carina Basic Capri",
+          "sku": "WP09",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 51,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Artemis Running Short",
+          "sku": "WSH04",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 45,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Ana Running Short",
+          "sku": "WSH10",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
+                "value": 40,
                 "currency": "USD"
               }
             }
