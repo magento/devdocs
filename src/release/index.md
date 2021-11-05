@@ -26,7 +26,7 @@ The following table provides the dates for scheduled releases (dates are subject
 <sup>2 There is no full patch release in October 2022.</sup><br>
 
 {:.bs-callout-tip}
-Patch and Security Patch Releases are opportunities to upgrade the core codebase to keep your platform secure, reliable, and performant. Feature Releases occur every other month. Feature releases are independent of the core codebase and are available through external modules or extensions. Any updates to existing independent features will also be released during Feature Release periods and will happen automatically if the feature is already implemented.
+Patch and Security Patch Releases are opportunities to upgrade the core codebase to keep your platform secure, reliable, and performant. Feature Releases occur every other month. Feature releases are independent of the core codebase and are available through external module or extension. Any updates to existing independent features will also be released during Feature Release periods and will happen automatically if the feature is already implemented.
 
 {:.bs-callout-info}
 We have introduced a [new policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf) that applies to our supported release lines. To learn more about the new strategy behind our 2022 release calendar and lifecycle policy, visit our [blog](https://magento.com/blog/accelerating-innovation-through-simplified-release-strategy).
