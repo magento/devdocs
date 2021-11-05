@@ -22,7 +22,7 @@ pages:
           url: /contributor-guide/phpstorm-code-inspections.html
           versionless: true
         
-        - label: Pull Request Tests
+        - label: Pull request tests
           url: /contributor-guide/pull-request-tests.html
           versionless: true
 
