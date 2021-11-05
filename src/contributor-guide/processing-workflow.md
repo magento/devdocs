@@ -5,16 +5,16 @@ title: GitHub issue processing workflow
 
 The GitHub issue workflow ensures that issues are clear, well written, and thoroughly vetted. Following these procedures allows valid issues to get the attention they deserve.
 
-Magento issues that are reported on the public [GitHub](https://github.com/magento/magento2/issues) must pass through a series of gates, or stages of quality assessment, to ensure that their quality meets our standards. There are three gates, and an issue must pass through all three of these assessments before we will transfer it to either Magento core developers or community developers.
+Issues that are reported on the public [GitHub](https://github.com/magento/magento2/issues) must pass through a series of gates, or stages of quality assessment, to ensure that their quality meets our standards. There are three gates, and an issue must pass through all three of these assessments before we will transfer it to either core developers or community developers.
 The purpose of these gates is to identify core technical issues common to all reported tickets, and to show the progress on each reported issue.
 
 ## Issue Gates
 
-Issue gates are a series of steps that are run to make sure the issue has all the information needed to reproduce the bug. This includes system configurations, required Magento configurations, reproduction steps and any other required information.
+Issue gates are a series of steps that are run to make sure the issue has all the information needed to reproduce the bug. This includes system configurations, required configurations, reproduction steps and any other required information.
 
 *  Gate 1: Verification of the report format - ensures that report content and structure meet all of our requirements.
 *  Gate 2: Manual verification - Someone manually confirms that all necessary information has been provided: steps to reproduce, system configs, etc.
-*  Gate 3: Reproduce the bug - Someone sets up a Magento environment and tries to reproduce the bug. The issue is then confirmed or closed.
+*  Gate 3: Reproduce the bug - Someone sets up an environment and tries to reproduce the bug. The issue is then confirmed or closed.
 
 ### Gate 1 - Verification of the report format
 
@@ -69,7 +69,7 @@ Currently, we only accept pull requests for the `2.4-develop` branch.
 
 1. If the steps required to reproduce the issue are different from the initially described reproduction steps, update the ticket description with the actual steps.
 1. Based on the verification flow, add only one `Area: xxx` label to the issue. Use your best judgment to determine the functional area affected.
-1. (optional if possible) Based on the original issue report add one `Reported on: XXX` label to indicate the original Magento Open Source version for the Issue report.
+1. (optional if possible) Based on the original issue report add one `Reported on: XXX` label to indicate the original Open Source version for the Issue report.
 
 ## Finalization
 
@@ -90,7 +90,7 @@ Steps for final review of an issue for contributors/developers to work the issue
 If the issue was reproduced on `Gate 3`, we will create an internal `AC-XXXX` ticket to track the progress of the issue.
 
 Once an issue has been acknowledged and confirmed, it goes through the Triage Process and be [prioritized(triaged)](contributing.html#backlog).
-After triage, either Magento core developers or Magento community developers may fix it. We encourage everyone to join the Magento Community Contribution Team and submit Pull Request with the bug fix to [magento/magento2](https://github.com/magento/magento2/pulls) repository.
+After triage, either core developers or community developers may fix it. We encourage everyone to join the Community Contribution Team and submit Pull Request with the bug fix to [magento/magento2](https://github.com/magento/magento2/pulls) repository.
 
 ## Tips and tricks
 
