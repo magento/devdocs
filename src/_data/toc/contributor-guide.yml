@@ -14,7 +14,7 @@ pages:
           url: /contributor-guide/contributing_dod.html
           versionless: true
 
-        - label: Github Issue Processing Workflow
+        - label: GitHub issue processing workflow
           url: /contributor-guide/processing-workflow.html
           versionless: true
 
