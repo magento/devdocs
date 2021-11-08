@@ -136,7 +136,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5041 | `_moveBlockToContainer` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::moveBlockToContainer` instead. |
 | 5042 | Incorrect format of PHP class reference | Check that class is referenced using only camelCased letters, numbers and no leading slash. |
 | 5043 | Incorrect format of module reference | Check that module is referenced using only letters, numbers, underscores and no leading slash. |
-| 5044 | Class `Zend_Db_Select` is restricted | Suggested replacement: `\Magento\Framework\DB\Select` |
+| 5044 | Class `Zend_Db_Select` is restricted | Suggested replacement: `\Magento\Framework\DB\Select`. |
 | 5045 | Class `Zend_Db_Adapter_Pdo_Mysql` is restricted | Suggested replacement: `\Magento\Framework\DB\Adapter\Pdo\Mysql`. |
 | 5046 | Class `Magento\Framework\Serialize\Serializer\Serialize` is restricted | Suggested replacement: `Magento\Framework\Serialize\SerializerInterface`. |
 | 5047 | Class `ArrayObject` is restricted | Suggested replacement: Custom class, extended from `ArrayObject` with overwritten serialize/unserialize methods. |
