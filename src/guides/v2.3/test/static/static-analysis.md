@@ -22,11 +22,11 @@ For all of the static configuration installations below involving the PHPStorm P
 {:.bs-callout-warning}
 [JSCS package has been deprecated](https://www.npmjs.com/package/jscs) and [merged with ESLint](https://eslint.org/blog/2016/04/welcoming-jscs-to-eslint).
 
+### ESLint
+
 {:.bs-callout-info}
 Javascript code analysis is done through [ESLint]({{site.baseurl}}/guides/v2.4/coding-standards/code-standard-javascript.html#eslint-code-analysis).
 The ESLint rules are set up in `magento-coding-standard`, which is installed on Magento2 via `composer` since it's a development dependency.
-
-### ESLint
 
 1. Go to PHPStorm preferences > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint.
 1. Click **Manual ESLint configuration**.
