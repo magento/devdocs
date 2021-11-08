@@ -21,7 +21,7 @@ entries:
   - 2.4.x
 - description: Added the [Github Issue Processing Workflow](https://devdocs.magento.com/contributor-guide/processing-workflow.html)
     topic to the Contributor's Guide.
-  versions: ''
+  versions: 2.x
   type: New Topic
   date: November 5, 2021
   link: https://github.com/magento-commerce/devdocs/pull/2578
@@ -29,6 +29,7 @@ entries:
   contributor: dobooth
   membership: true
   labels:
+  - 2.x
   - New Topic
 - description: Moved the [Adobe Commerce Beta Program](https://devdocs.magento.com/release/beta-program.html)
     topic from the `magento/magento2` GitHub wiki to devdocs.magento.com.
