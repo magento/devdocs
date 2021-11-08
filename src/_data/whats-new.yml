@@ -4,8 +4,32 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Nov 1 14:38:45 2021
+updated: Mon Nov 8 15:38:46 2021
 entries:
+- description: Added hotfix information to the [Adobe Commerce 2.3.7-p2 release notes](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p2.html)
+    and [Adobe Commerce 2.4.3-p1 release notes](https://devdocs.magento.com/guides/v2.4/release-notes/2-4-3-p1.html)
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: November 5, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2623
+  merge_commit: ce18ee23ed3e59b9ca561b82e28edbd9cd46fcbe
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Added the [Github Issue Processing Workflow](https://devdocs.magento.com/contributor-guide/processing-workflow.html)
+    topic to the Contributor's Guide.
+  versions: ''
+  type: New Topic
+  date: November 5, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2578
+  merge_commit: 18306a54a9151938b0e2441c5a567e547ee6c869
+  contributor: dobooth
+  membership: true
+  labels:
+  - New Topic
 - description: Moved the [Adobe Commerce Beta Program](https://devdocs.magento.com/release/beta-program.html)
     topic from the `magento/magento2` GitHub wiki to devdocs.magento.com.
   versions: 2.x
