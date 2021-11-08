@@ -113,7 +113,7 @@ In this file, add the following:
 
 ## Step 4: Deploy static content and clean cache
 
-{.bs-callout-info}
+{:.bs-callout-info}
 These commands are for production mode. They are not necessary when in developer mode.
 
 1. Deploy static content:

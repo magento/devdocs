@@ -295,24 +295,36 @@ Here is an example of overriding a method from a core file:
 The example below overrides the `isVisible` method from the `Magento\Checkout\Block\Onepage\Success` block class.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace ExampleCorp\OverrideExample\Block\Onepage;
 
-class Success extends \Magento\Checkout\Block\Onepage\Success
+use Magento\Checkout\Block\Onepage\Success as MagentoSuccess;
+use Magento\Framework\View\Element\Template\Context;
+use Magento\Checkout\Model\Session;
+use Magento\Sales\Model\Order\Config;
+use Magento\Framework\App\Http\Context as HttpContext;
+
+class Success extends MagentoSuccess
 {
     /**
      * Constructor Modification
      *
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Checkout\Model\Session $checkoutSession
-     * @param \Magento\Sales\Model\Order\Config $orderConfig
-     * @param \Magento\Framework\App\Http\Context $httpContext
+     * @param Context $context
+     * @param Session $checkoutSession
+     * @param Config $orderConfig
+     * @param HttpContext $httpContext
      * @param array $data
      */
     public function __construct(
-        \Magento\Framework\View\Element\Template\Context $context,
-        \Magento\Checkout\Model\Session $checkoutSession,
-        \Magento\Sales\Model\Order\Config $orderConfig,
-        \Magento\Framework\App\Http\Context $httpContext,
+        Context $context,
+        Session $checkoutSession,
+        Config $orderConfig,
+        HttpContext $httpContext,
         array $data = []
     ) {
         parent::__construct(
@@ -404,7 +416,7 @@ For multi-system deployments, such as the [pipeline deployment model]({{ page.ba
 
 The following code sample is a template for specifying values as sensitive or system-specific:
 
-```php
+```xml
 <type name="Magento\Config\Model\Config\TypePool">
    <arguments>
       <argument name="VALUE_TYPE" xsi:type="array">
