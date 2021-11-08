@@ -23,32 +23,43 @@ Factories are an [exception](https://glossary.magento.com/exception) to this rul
 The following example illustrates the relationship between a simple factory and the `ObjectManager`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\Framework\App\Config;
+
+use Magento\Framework\ObjectManagerInterface;
+use Magento\Framework\Simplexml\Element;
+use Magento\Framework\App\Config\Base;
 
 class BaseFactory
 {
-  /**
-   * @var \Magento\Framework\ObjectManagerInterface
-   */
-  protected $_objectManager;
+    /**
+     * @var ObjectManagerInterface
+     */
+    protected $_objectManager;
 
-  /**
-   * @param \Magento\Framework\ObjectManagerInterface $objectManager
-   */
-  public function __construct(\Magento\Framework\ObjectManagerInterface $objectManager)
-  {
-    $this->_objectManager = $objectManager;
-  }
+    /**
+     * @param ObjectManagerInterface $objectManager
+     */
+    public function __construct(ObjectManagerInterface $objectManager)
+    {
+        $this->_objectManager = $objectManager;
+    }
 
-  /**
-   * Create config model
-   * @param string|\Magento\Framework\Simplexml\Element $sourceData
-   * @return \Magento\Framework\App\Config\Base
-   */
-  public function create($sourceData = null)
-  {
-    return $this->_objectManager->create(\Magento\Framework\App\Config\Base::class, ['sourceData' => $sourceData]);
-  }
+    /**
+     * Create config model
+     *
+     * @param string|Element $sourceData
+     * @return Base
+     */
+    public function create($sourceData = null): Base
+    {
+        return $this->_objectManager->create(Base::class, ['sourceData' => $sourceData]);
+    }
 }
 ```
 
@@ -86,6 +97,7 @@ The example below shows the construction of a `\Magento\Framework\FlagFactory` o
 ```php
 $flag = $this->flagFactory->create([
   'data' =>  ['flag_code' => 'something']
+]);
 ```
 
 The `Flag` class has a `$data` constructor parameter which corresponds to the data key in the `create` array above.

@@ -97,6 +97,14 @@ MFTF uses Google Authenticator to execute tests with 2FA enabled. The following 
 
 The extension supports command line options to revoke and reset authenticators. Use these commands when you cannot access the Magento _Admin_.
 
+### List all available 2FA providers
+
+If you need to know all the available 2FA providers, enter the following command.
+
+```bash
+bin/magento security:tfa:providers
+```
+
 ### Reset authenticator per account
 
 If you need to manually reset a single user configuration, enter the following command. It restarts configuration and 2FA subscription for the user account.
@@ -108,11 +116,11 @@ bin/magento security:tfa:reset <user> <provider>
 For example:
 
 ```bash
-bin/magento msp:security:tfa:reset admin google
+bin/magento security:tfa:reset admin google
 ```
 
 ```bash
-bin/magento msp:security:tfa:reset admin u2fkey
+bin/magento security:tfa:reset admin u2fkey
 ```
 
 ### Advanced emergency steps

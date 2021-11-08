@@ -74,7 +74,7 @@ To install an extension:
    Module is enabled
    ```
 
-   If you encounter deployment errors, see [extension deployment failure][trouble].
+   If you encounter deployment errors, see [extension deployment failure][].
 
 ## Manage extensions
 
@@ -160,7 +160,7 @@ To update an extension:
    git push origin <branch-names>
    ```
 
-If you encounter errors, see [extension deployment failure][].
+If you encounter errors, see [extension deployment failure][trouble].
 
 <!-- link definitions -->
 
@@ -168,4 +168,4 @@ If you encounter errors, see [extension deployment failure][].
 [config]: {{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html
 [extensions]: {{ site.baseurl }}/extensions/
 [Commerce Marketplace]: https://marketplace.magento.com
-[trouble]: {{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html
+[extension deployment failure]: {{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html

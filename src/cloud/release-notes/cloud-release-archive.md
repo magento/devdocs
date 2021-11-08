@@ -498,7 +498,7 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
 ## v2002.0.9
 
-{.bs-callout-info}
+{:.bs-callout-info}
 You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) to get this and all future updates.
 
 -  {:.new}<!-- MAGECLOUD-1086 -->**ece-tools**—The `{{site.data.var.ct}}` package now supports {{site.data.var.ee}} 2.1.x.

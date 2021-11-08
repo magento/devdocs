@@ -59,35 +59,42 @@ To run the integration tests, execute one of the following commands:
    *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
    *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
 
-## JS unit testing for GraphQL
+## GraphQL unit testing and Eslint code analysis
 
-The [Jest](https://jestjs.io/docs/en/getting-started.html) framework was used to create these JS unit tests:
+### Requirements
 
 {:.bs-callout-info}
-To run JS unit tests for GraphQL, you must have Node.js installed.
-
-### Node.js
-
-To install Node.js on your system, see the Node.js [documentation](https://nodejs.dev/learn/how-to-install-nodejs).
+You must have Node.js on your system, see the [documentation](https://nodejs.dev/learn/how-to-install-nodejs).
 
 The following instructions are for MacOS systems:
 
-1. Open a terminal and navigate to the `graphql-schema-compatibility/` directory.
+1. Open a terminal and navigate to the root directory of the project.
 1. Install project dependencies:
 
    ```bash
    npm install
    ```
 
-1. Run unit tests or `jest`:
+### GraphQL unit testing
+The [Jest](https://jestjs.io/docs/en/getting-started.html) framework was used to create these JS unit tests:
+
+The tests are inside `dev/tests/Js`.
+
+The string schemas for testing are inside `dev/tests/Acceptance/_files/graphql_schemas`.
+
+Run unit tests or `jest` as follows:
 
    ```bash
    npm run unit-test
    ```
+### Eslint code analysis
+[Eslint](https://eslint.org/docs/user-guide/getting-started) is a static code analysis tool for identifying problematic patterns found in JavaScript code, with the goal of making code more consistent and avoiding bugs.
 
-The tests are inside `graphql-schema-compatibility/test/js/unit`.
+Run `eslint` code analysis as follows:
 
-The string schemas for testing are inside `dev/graphql_schemas`.
+   ```bash
+   npm run eslint -- path/to/analyse
+   ```
 
 ## Complexity score
 

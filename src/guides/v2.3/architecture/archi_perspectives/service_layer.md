@@ -44,7 +44,7 @@ This directory contains:
 
 *  Service interfaces in the `/Api` [namespace](https://glossary.magento.com/namespace) of the module ([Catalog API][catalog-api]).
 
-*  Data (or *entity*) interfaces in the `Api/Data` directory ([Catalog API/Data][catalog-api-data][]).
+*  Data (or *entity*) interfaces in the `Api/Data` directory ([Catalog API/Data][catalog-api-data]).
    Data entities* are data structures passed to and returned from service interfaces.
 
    Files in the data directory contain `get()` and `set()` methods for entries in the entity table and extension attributes.
