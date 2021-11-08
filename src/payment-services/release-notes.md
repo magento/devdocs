@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Commerce Payments Release Notes
+title: Payment Services Release Notes
 ---
 
 These release notes describe the initial release of Payment Services and include:
