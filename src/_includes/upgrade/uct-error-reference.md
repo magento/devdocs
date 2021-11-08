@@ -142,7 +142,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5047 | Class `ArrayObject` is restricted | Suggested replacement: Custom class, extended from `ArrayObject` with overwritten serialize/unserialize methods. |
 | 5048 | Class `Magento\Framework\View\Element\UiComponent\ArrayObjectFactory` is restricted | Suggested replacement: Factory that creates custom class, extended from `ArrayObject` with overwritten serialize/unserialize methods. |
 | 5049 | Blocks `\Magento\Theme\Block\Html\Head\{Css,Link,Script}` are allowed within the "head" block only | Verify integrity of the nodes nesting. |
-| 5050 | The block being referenced is removed | Remove reference to block |
+| 5050 | The block being referenced is removed | Remove reference to block. |
 | 5051 | `output="toHtml"` is obsolete | Use `output="1"`. |
 | 5052 | The class `\Magento\Framework\View\Element\Text\ListText` is not supposed to be used in layout anymore | Remove class `\Magento\Framework\View\Element\Text\ListText` from layout. |
 | 5053 | Call of method via layout instruction `<action>` is not allowed | Avoid using offending method in <action>. |
