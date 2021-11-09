@@ -96,10 +96,10 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | - | - | - |
 | 5001 | Call-time pass-by-reference calls are prohibited | Passing by reference is not supported after PHP 5.6. |
 | 5002 | The opening PHP tag must be the first content in the file | Ensure there is no content in the file before the PHP opening tag. |
-| 5003 | Function has been deprecated | Please use a replacement suggested in the error message. If the message does not provide the replacement suggestion, this case requires a close review to select an alternative safe function or implementation. |
+| 5003 | Function has been deprecated | Use a replacement suggested in the error message. If the message does not provide the replacement suggestion, this case requires a close review to select an alternative safe function or implementation. |
 | 5005 | PHP syntax error | The code requires to be updated to comply with the PHP interpretation. |
 | 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | The original class should be declared as a type of the constructor parameter, the Interceptor/Proxy class will be passed by the framework dependency injection implementation. |
-| 5007 | The use of certain functions is discouraged | Please avoid using these functions. |
+| 5007 | The use of certain functions is discouraged | Avoid using these functions. |
 | 5008 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | The code requires review and refactoring. Magento 1 constructions may no longer be supported by Magento 2 framework. |
 | 5009 | Template directives may not invoke methods. Only scalar array access is allowed | Remove method invocations from the template. |
 | 5010 | Template `@vars` comment block contains invalid JSON | Fix invalid JSON. |
@@ -118,22 +118,22 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5023 | Obsolete ACL structure detected in line | Check lib/internal/Magento/Framework/Acl/etc/acl.xsd. |
 | 5024 | Obsolete menu structure detected in line | Check app/code/Magento/Backend/etc/menu.xsd. |
 | 5025 | Obsolete system configuration structure detected in file | Check app/code/Magento/Config/etc/system_file.xsd. |
-| 5026 | Please do not use `"text/javascript"` type attribute | Use only public members. |
+| 5026 | Do not use `"text/javascript"` type attribute | Use only public members. |
 | 5027 | Access to members and methods of Block class through $this is obsolete in phtml templates | Use only `$block` instead of `$this`. |
 | 5028 | Access to protected and private members of `Block` class is obsolete in phtml templates | Use only public members. |
-| 5029 | Please do not use `"jquery/ui"` library in templates | Use needed jquery ui widget instead. |
-| 5030 | Please do not initialize JS component in PHP | initialize JS component in template. |
-| 5031 | Contains obsolete method | Please use `getConnection()` method instead. |
-| 5032 | `loadLayout` method is deprecated | Please use `\Magento\Framework\View\Layout\Builder::build` instead. |
-| 5033 | `renderLayout` method is deprecated | Please use `\Magento\Framework\Controller\ResultInterface::renderResult` instead. |
-| 5034 | `_redirect` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Redirect::render` instead. |
-| 5035 | `_forward` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Forward::forward` instead. |
-| 5036 | `_setActiveMenu` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::setActiveMenu` instead. |
-| 5037 | `_addBreadcrumb` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::addBreadcrumb` instead. |
-| 5038 | `_addContent` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::addContent` instead. |
-| 5039 | `_addLeft` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::addLeft` instead. |
-| 5040 | `_addJs` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::addJs` instead. |
-| 5041 | `_moveBlockToContainer` method is deprecated | Please use `\Magento\Backend\Model\View\Result\Page::moveBlockToContainer` instead. |
+| 5029 | Do not use `"jquery/ui"` library in templates | Use needed jquery ui widget instead. |
+| 5030 | Do not initialize JS component in PHP | initialize JS component in template. |
+| 5031 | Contains obsolete method | Use `getConnection()` method instead. |
+| 5032 | `loadLayout` method is deprecated | Use `\Magento\Framework\View\Layout\Builder::build` instead. |
+| 5033 | `renderLayout` method is deprecated | Use `\Magento\Framework\Controller\ResultInterface::renderResult` instead. |
+| 5034 | `_redirect` method is deprecated | Use `\Magento\Backend\Model\View\Result\Redirect::render` instead. |
+| 5035 | `_forward` method is deprecated | Use `\Magento\Backend\Model\View\Result\Forward::forward` instead. |
+| 5036 | `_setActiveMenu` method is deprecated | Use `\Magento\Backend\Model\View\Result\Page::setActiveMenu` instead. |
+| 5037 | `_addBreadcrumb` method is deprecated | Use `\Magento\Backend\Model\View\Result\Page::addBreadcrumb` instead. |
+| 5038 | `_addContent` method is deprecated | Use `\Magento\Backend\Model\View\Result\Page::addContent` instead. |
+| 5039 | `_addLeft` method is deprecated | Use `\Magento\Backend\Model\View\Result\Page::addLeft` instead. |
+| 5040 | `_addJs` method is deprecated | Use `\Magento\Backend\Model\View\Result\Page::addJs` instead. |
+| 5041 | `_moveBlockToContainer` method is deprecated | Use `\Magento\Backend\Model\View\Result\Page::moveBlockToContainer` instead. |
 | 5042 | Incorrect format of PHP class reference | Check that class is referenced using only camelCased letters, numbers and no leading slash. |
 | 5043 | Incorrect format of module reference | Check that module is referenced using only letters, numbers, underscores and no leading slash. |
 | 5044 | Class `Zend_Db_Select` is restricted | Suggested replacement: `\Magento\Framework\DB\Select`. |
@@ -148,15 +148,15 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5053 | Call of method via layout instruction `<action>` is not allowed | Avoid using offending method in <action>. |
 | 5054 | `helper` attribute contains `/` | Remove `/` from helper attribute. |
 | 5055 | `helper` attribute does not contain `::` | Add `::` to helper attribute. |
-| 5056 | Install scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file. |
-| 5057 | InstallSchema scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file. |
-| 5058 | InstallData scripts are obsolete | Please use data patches approach in module\'s Setup/Patch/Data dir. |
-| 5059 | Install scripts are obsolete | Please create class InstallData in module\'s Setup folder. |
-| 5060 | Upgrade scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file. |
-| 5061 | UpgradeSchema scripts are obsolete | Please use declarative schema approach in module\'s etc/db_schema.xml file. |
-| 5062 | UpgradeData scripts are obsolete | Please use data patches approach in module\'s Setup/Patch/Data dir. |
-| 5063 | Upgrade scripts are obsolete | Please use data patches approach in module\'s Setup/Patch/Data dir. |
-| 5064 | Recurring scripts are obsolete | Please create class Recurring in module\'s Setup folder. |
+| 5056 | Install scripts are obsolete | Use declarative schema approach in module\'s etc/db_schema.xml file. |
+| 5057 | InstallSchema scripts are obsolete | Use declarative schema approach in module\'s etc/db_schema.xml file. |
+| 5058 | InstallData scripts are obsolete | Use data patches approach in module\'s Setup/Patch/Data dir. |
+| 5059 | Install scripts are obsolete | Create a class InstallData in the module\'s Setup folder. |
+| 5060 | Upgrade scripts are obsolete | Use declarative schema approach in module\'s etc/db_schema.xml file. |
+| 5061 | UpgradeSchema scripts are obsolete | Use declarative schema approach in module\'s etc/db_schema.xml file. |
+| 5062 | UpgradeData scripts are obsolete | Use data patches approach in module\'s Setup/Patch/Data dir. |
+| 5063 | Upgrade scripts are obsolete | Use data patches approach in the module\'s Setup/Patch/Data dir. |
+| 5064 | Recurring scripts are obsolete | Create class Recurring in the module\'s Setup folder. |
 | 5065 | 'data' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
 | 5066 | 'sql' is in an invalid directory | Create a data patch within module's Setup/Patch/Data folder for data upgrades or use declarative schema approach in module's etc/db_schema.xml file for schema changes. |
 | 5067 | Nodes identified by XPath are obsolete | Obsolete XML pointed out in the error should be updated. Follow the suggestions from the error message. |
@@ -176,7 +176,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5081 | The use of helpers in templates is discouraged | Use ViewModel instead. |
 | 5082 | The use of $this in templates is deprecated | Use $block instead. |
 | 5083 | Constants are not allowed as the first argument of translation function | Use string literal instead. |
-| 5084 | Please do not initialize JS component in php | Initialize JS component in a template. |
+| 5084 | Do not initialize JS component in php | Initialize JS component in a template. |
 | 5085 | The use of certain functions is discouraged | Use the alternative function advised on the message instead. |
 | 6001 | `jQuery.andSelf()` removed | Use `jQuery.addBack()`. |
 | 6002 | jQuery `$.bind` and `$.unbind` are deprecated | Use `$.on` and `$.off` instead. |
