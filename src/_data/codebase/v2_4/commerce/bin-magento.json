@@ -7447,15 +7447,6 @@
             "description": "The file path for saving PID (This option is deprecated, use --single-thread instead)",
             "default": null
           },
-          "multi-process": {
-            "name": "--multi-process",
-            "shortcut": "",
-            "accept_value": true,
-            "is_value_required": false,
-            "is_multiple": false,
-            "description": "The number of processes per consumer.",
-            "default": null
-          },
           "help": {
             "name": "--help",
             "shortcut": "-h",
