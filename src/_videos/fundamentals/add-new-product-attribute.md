@@ -75,11 +75,14 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
 ```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
     'Learning_ClothingMaterial',
     __DIR__
 );
@@ -100,12 +103,15 @@ Create the file `app/code/Learning/ClothingMaterial/Setup/InstallData.php`:
 ```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 namespace Learning\ClothingMaterial\Setup;
 
+use Magento\Catalog\Model\Product;
+use Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface;
+use Magento\Eav\Setup\EavSetupFactory;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -125,13 +131,13 @@ class InstallData implements InstallDataInterface
      * Init
      * @param EavSetupFactory $eavSetupFactory
      */
-    public function __construct(\Magento\Eav\Setup\EavSetupFactory $eavSetupFactory)
+    public function __construct(EavSetupFactory $eavSetupFactory)
     {
         $this->eavSetupFactory = $eavSetupFactory;
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      * @SuppressWarnings(PHPMD.NPathComplexity)
@@ -140,7 +146,7 @@ class InstallData implements InstallDataInterface
     {
         $eavSetup = $this->eavSetupFactory->create();
         $eavSetup->addAttribute(
-            \Magento\Catalog\Model\Product::ENTITY,
+            Product::ENTITY,
             'clothing_material',
             [
                 'group' => 'General',
@@ -152,7 +158,7 @@ class InstallData implements InstallDataInterface
                 'backend' => 'Learning\ClothingMaterial\Model\Attribute\Backend\Material',
                 'required' => false,
                 'sort_order' => 50,
-                'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
+                'global' => ScopedAttributeInterface::SCOPE_GLOBAL,
                 'is_used_in_grid' => false,
                 'is_visible_in_grid' => false,
                 'is_filterable_in_grid' => false,
@@ -207,13 +213,15 @@ Next, we need to create the source model:
 ```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 namespace Learning\ClothingMaterial\Model\Attribute\Source;
 
-class Material extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
+use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
+
+class Material extends AbstractSource
 {
     /**
      * Get all options
@@ -251,25 +259,29 @@ Now we will create a backend model:
 ```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 namespace Learning\ClothingMaterial\Model\Attribute\Backend;
 
-class Material extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend
+use Magento\Catalog\Model\Product;
+use Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend;
+use Magento\Framework\Exception\LocalizedException;
+
+class Material extends AbstractBackend
 {
     /**
      * Validate
-     * @param \Magento\Catalog\Model\Product $object
-     * @throws \Magento\Framework\Exception\LocalizedException
+     * @param Product $object
+     * @throws LocalizedException
      * @return bool
      */
     public function validate($object)
     {
         $value = $object->getData($this->getAttribute()->getAttributeCode());
         if ( ($object->getAttributeSetId() == 10) && ($value == 'wool')) {
-            throw new \Magento\Framework\Exception\LocalizedException(
+            throw new LocalizedException(
                 __('Bottom can not be wool.')
             );
         }
@@ -297,11 +309,19 @@ And finally, we create a frontend model to make our value bold:
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Learning\ClothingMaterial\Model\Attribute\Frontend;
 
-class Material extends \Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend
+use Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend;
+use Magento\Framework\DataObject;
+
+class Material extends AbstractFrontend
 {
-    public function getValue(\Magento\Framework\DataObject $object)
+    public function getValue(DataObject $object)
     {
         $value = $object->getData($this->getAttribute()->getAttributeCode());
         return "<b>$value</b>";
