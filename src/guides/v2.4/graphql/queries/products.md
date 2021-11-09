@@ -244,12 +244,28 @@ The query returns a `Products` object containing the following information:
 
 Attribute | Data type | Description
 --- | --- | ---
-`aggregations` | [[Aggregation]](#Aggregation) | Layered navigation aggregations
+`aggregations (filter: AggregationsFilterInput)` | [[Aggregation]](#Aggregation) | Layered navigation aggregations with filters
 `filters` | LayerFilter | Deprecated. Use `aggregations` instead
 `items` | [[ProductInterface]](#ProductInterface) | An array of products that match the specified search criteria
 `page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | An object that includes the `page_info` and `currentPage` values specified in the query
 `sort_fields` |  [SortFields](#SortFields) | An object that includes the default sort field and all available sort fields
 `total_count` | Int | The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not
+
+### AggregationsFilterInput filter
+
+The `AggregationsFilterInput` input object specifies the filters used in aggregations. `AggregationsCategoryFilterInput` is the filter object that determines how the category `AggregationOption` attribute is aggregated in the response.
+
+Attribute | Data type | Description
+--- | --- | ---
+`category` | AggregationsCategoryFilterInput | Filter category aggregations in layered navigation
+
+### AggregationsCategoryFilterInput attributes
+
+When the `category_id` field is specified as part of the `ProductAttributeFilterInput` input object, the `includeDirectChildrenOnly` field of the `AggregationsCategoryFilterInput` object can be used in the response to refine the returned aggregations. If `includeDirectChildrenOnly` is set to true, then the aggregations will contain only direct child categories. Otherwise, the category aggregations will follow the default algorithm. The default value is false.
+
+Attribute | Data type | Description
+--- | --- | ---
+`includeDirectChildrenOnly` | Boolean | Indicates whether to include only direct subcategories or all children categories at all levels. The default value is false
 
 ### Aggregation attributes {#Aggregation}
 
@@ -275,12 +291,6 @@ Attribute | Data type | Description
 `count` | Int | The number of items returned by the filter
 `label` | String | The label of the filter
 `value` | String! | The internal ID representing the value of the option
-
-#### includeDirectChildrenOnly filter
-
-When the `category_id` field is specified as part of the `ProductAttributeFilterInput` input object, the `includeDirectChildrenOnly` field of the `AggregationsCategoryFilterInput` object can be used in the response to refine the returned aggregations. If `includeDirectChildrenOnly` is set to true, then the aggregations will contain only direct child categories. Otherwise, the category aggregations will follow the default algorithm. The default value is false.
-
-The `AggregationsFilterInput` input object specifies the filters used in aggregations. `AggregationsCategoryFilterInput` is the filter object that determines how the category `AggregationOption` attribute aggregated in response.
 
 ### ProductInterface attributes {#ProductInterface}
 
@@ -1000,7 +1010,7 @@ The following query returns aggregations that filters on items with these charac
 -  In the price range of $40 - $49.99
 -  Comes in black (color 49)
 
-Because the includeDirectChildrenOnly input filter is set to true, the category aggregation in the response will include only the Women's Pants and Shorts categories, which are direct children of the Women's Bottoms category.
+Because the `includeDirectChildrenOnly` input filter is set to true, the category aggregation in the response will include only the Women's Pants and Shorts categories, which are direct children of the Women's Bottoms category.
 
 {:.bs-callout-info}
 By default, you cannot filter on the `color` attribute. [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) describes how to enable this attribute for filtering. You can also run the following query without enabling the attribute by deleting `, color: {eq: "49"}`.
