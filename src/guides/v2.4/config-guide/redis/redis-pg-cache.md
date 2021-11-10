@@ -101,7 +101,7 @@ As a result of the two example commands, Magento adds lines similar to the follo
 
 As of Magento 2.4.3, Magento instances hosted on Amazon EC2 may use an AWS ElastiCache in place of a local Redis instance.
 
-{.bs-callout-warning}
+{:.bs-callout-warning}
 This section only works for Magento instances running on Amazon EC2 VPCs. It does not work for on-premises installations.
 
 ### Configure a Redis cluster

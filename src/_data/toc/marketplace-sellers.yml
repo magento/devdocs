@@ -14,6 +14,23 @@ pages:
       url: /marketplace/sellers/extension-quality-program.html
       versionless: true
 
+- label: Compatibility Requirements
+  url: /marketplace/sellers/compatibility/requirements.html
+  versionless: true
+  children:
+
+     - label: Release Compatibility
+       url: /marketplace/sellers/compatibility/releases.html
+       versionless: true
+
+     - label: Abandoned Extensions
+       url: /marketplace/sellers/compatibility/abandoned-extensions.html
+       versionless: true
+
+     - label: Obsolete Extensions
+       url: /marketplace/sellers/compatibility/obsolete-extensions.html
+       versionless: true
+
 - label: Seller Overview
   url: /marketplace/sellers/seller-overview.html
   versionless: true

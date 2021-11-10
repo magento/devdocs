@@ -59,11 +59,18 @@ Learning/HelloPage/etc/module.xml
 ### registration.php
 
 ```php
-<?php /**
-* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
-*/
-\Magento\Framework\Component\ComponentRegistrar::register( \Magento\Framework\Component\ComponentRegistrar::MODULE, 'Learning_HelloPage',
-__DIR__
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'Learning_HelloPage',
+    __DIR__
 );
 ```
 
@@ -94,8 +101,9 @@ Now, since we’re working in the frontend area, we’ll add the `etc/frontend/r
 <?xml version="1.0"?>
 <!--
 /**
-* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
-*/
+ * Copyright © Magento, Inc. All rights reserved.
+ * * See COPYING.txt for license details.
+ */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
@@ -130,40 +138,51 @@ mkdir Controller/Page
 Let’s create an action file `Controller/Page/View.php`:
 
 ```php
-<?php /**
- * Copyright © 2016 Magento. All rights reserved.
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Learning\HelloPage\Controller\Page;
-class View extends \Magento\Framework\App\Action\Action
+
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\Controller\Result\JsonFactory;
+use Magento\Framework\Controller\ResultInterface;
+
+class View extends Action
 {
     /**
-     * @var \Magento\Framework\Controller\Result\JsonFactory
+     * @var JsonFactory
      */
     protected $resultJsonFactory;
+
     /**
-     * @param \Magento\Framework\App\Action\Context $context
-     * @param \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory
+     * @param Context $context
+     * @param JsonFactory $resultJsonFactory
      */
     public function __construct(
-       \Magento\Framework\App\Action\Context $context,
-       \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory)
-{
-       $this->resultJsonFactory = $resultJsonFactory;
-       parent::__construct($context);
-}
+        Context $context,
+        JsonFactory $resultJsonFactory
+    ) {
+        parent::__construct($context);
+        $this->resultJsonFactory = $resultJsonFactory;
+    }
+
     /**
      * View  page action
      *
-     * @return \Magento\Framework\Controller\ResultInterface
+     * @return ResultInterface
      */
     public function execute()
     {
-       $result = $this->resultJsonFactory->create();
-       $data = ['message' => 'Hello world!'];
+        $result = $this->resultJsonFactory->create();
+        $data = ['message' => 'Hello world!'];
 
-return $result->setData($data);
-} }
+        return $result->setData($data);
+    }
+}
 ```
 
 Note we created a JSON-type page. This can be seen in the results factory that we specify in our constructor. In order to activate our module and our page we should run the Magento setup upgrade:

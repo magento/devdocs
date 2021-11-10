@@ -122,17 +122,19 @@ If the interface does not exist or an earlier version of Magento 2 is being exec
 Here is an example:
 
 ```php
+use Magento\Framework\Serialize\SerializerInterface;
+use Magento\Framework\App\ObjectManager;
 
 ...
 /**
  * @param mixed $data
  * @return string
  */
- private function serialize($data)
- {
-    if (class_exists(\Magento\Framework\Serialize\SerializerInterface::class)) {
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $serializer = $objectManager->create(\Magento\Framework\Serialize\SerializerInterface::class);
+private function serialize($data)
+{
+    if (class_exists(SerializerInterface::class)) {
+        $objectManager = ObjectManager::getInstance();
+        $serializer = $objectManager->create(SerializerInterface::class);
         return $serializer->serialize($data);
     }
     return \serialize($data);
