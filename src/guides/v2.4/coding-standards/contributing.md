@@ -10,10 +10,10 @@ functional_areas:
 ---
 
 Although we try to cover as many issues as possible, it may happen that a rule that you consider important is not covered yet.
-Fortunately, you can add your own custom rules, using either PHPCS or ESLint, 
+Fortunately, you can add your own custom rules, using either PHPCS or ESLint,
 and contribute those to the [magento-coding-standard](https://github.com/magento/magento-coding-standard) repository so everyone can take advantage of your work.
 
-To start your contribution, first fork the code and clone this fork into your local environment, then create a new branch and start adding your 
+To start your contribution, first fork the code and clone this fork into your local environment, then create a new branch and start adding your
 changes to it which, eventually, may end up merged into magento-coding-standard.
 
 ## Creating a new PHPCS sniff
@@ -23,19 +23,19 @@ every time it finds an occurrence of any tokens we choose. This custom logic is 
 of a certain rule in the analysed code, and will return an *error* or *warning* depending on the severity of that issue.
 
 How to write a sniff is way out the scope of this document,
-but you can follow the [official PHPCS guide](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Coding-Standard-Tutorial) 
+but you can follow the [official PHPCS guide](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Coding-Standard-Tutorial)
 to learn more. The coding standards repository has also plenty of examples at `Magento2/Sniffs` directory.
 
 Sniffs must be also covered by a unit test to ensure its behaviour is correct. In a nutshell, this test defines a set
 of line numbers, each of them with a number of expected errors or warnings, which will be compared with the results
 obtained from executing the sniff against one or several fixtures containing real code.
 
-The unit test must extend the `AbstractSniffUnitTest` class and its file name must be equal to the sniff's file name, 
-excluding the `sniff` suffix. Fixture files must follow the same rule, changing its extension to `.inc` in the 
+The unit test must extend the `AbstractSniffUnitTest` class and its file name must be equal to the sniff's file name,
+excluding the `sniff` suffix. Fixture files must follow the same rule, changing its extension to `.inc` in the
 case of PHP fixtures. E.g: the sniff called `Sniffs/Legacy/MageEntitySniff.php` has its unit test at `Tests/Legacy/MageEntityUnitTest.php`,
 which in turn will use the fixture at `Tests/Legacy/MageEntityUnitTest.inc`.
 
-Finally, add your new sniff to the `Magento2/ruleset.xml` file, so it is executed alongside the other existing coding standards. Depending 
+Finally, add your new sniff to the `Magento2/ruleset.xml` file, so it is executed alongside the other existing coding standards. Depending
 on the type of issue returned, the rule will have assigned a type of *warning* or *error*, as well as a severity level from
 10 to 1, being 10 the most severe. This number is assigned based on your own judgment, but make sure to review the current
 sniffs and their assigned levels beforehand to get an idea of in which severity your new issue fits better. Also, rules are sorted
