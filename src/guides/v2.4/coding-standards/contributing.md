@@ -28,7 +28,7 @@ to learn more. The coding standards repository has also plenty of examples at `M
 
 Sniffs must be also covered by a unit test to ensure its behaviour is correct. In a nutshell, this test defines a set
 of line numbers, each of them with a number of expected errors or warnings, which will be compared with the results
-obtained from executing the sniff against one or several fixtures.
+obtained from executing the sniff against one or several fixtures containing real code.
 
 The unit test must extend the `AbstractSniffUnitTest` class and its file name must be equal to the sniff's file name, 
 excluding the `sniff` suffix. Fixture files must follow the same rule, changing its extension to `.inc` in the 
