@@ -48,7 +48,7 @@ to learn how to write your custom rules is by following the [official guide](htt
 Rules must be added to the `eslint/rules` directory, and also registered in one of the `.eslintrc-*` files, depending on which area the
 rule focuses on.
 
-As with PHPCS sniffs, ESLint rules need to be covered by a unit tests in order to be considered for merging into the mainline.
+As with PHPCS sniffs, ESLint rules need to be covered by a unit test in order to be considered for merging into the mainline.
 In this case, unit tests itself are written in PHP instead of Javascript, and follow a similar structure than their PHP counterparts.
 Test classes extend from `AbstractEslintTestCase` and must implement the `testExecute()` method, which basically asserts that
 checking the passed JS file will return the expected error message. You can check examples at `Tests/Eslint`.
