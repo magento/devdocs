@@ -18,8 +18,11 @@ changes to it which, eventually, may end up merged into magento-coding-standards
 
 ## Creating a new PHPCS sniff
 
-PHPCS rules are called _sniffs_. Basically, a _sniff_ is just a static code analyzer that will process our custom logic
-every time it finds an occurrence of any tokens we choose. How to write a sniff is way out the scope of this document,
+PHPCS' rules are called _sniffs_. Basically, a _sniff_ is just a static code analyzer that will process our custom logic
+every time it finds an occurrence of any tokens we choose. This custom logic is in charge of identify if there's a violation
+of a certain rule in the analysed code, and will return an *error* or *warning* depending on the severity of that issue.
+
+How to write a sniff is way out the scope of this document,
 but you can follow the [official PHPCS guide](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Coding-Standard-Tutorial) 
 to learn more. The coding standards repository has also plenty of examples at `Magento2/Sniffs` directory.
 
@@ -32,7 +35,10 @@ excluding the `sniff` suffix. Fixture files must follow the same rule, changing 
 case of PHP fixtures. E.g: the sniff called `Sniffs/Legacy/MageEntitySniff.php` has its unit test at `Tests/Legacy/MageEntityUnitTest.php`,
 which in turn will use the fixture at `Tests/Legacy/MageEntityUnitTest.inc`.
 
-Finally, add your new sniff to the `ruleset.xml` file, so it is executed alongside the other existing coding standards.
+Finally, add your new sniff to the `Magento2/ruleset.xml` file, so it is executed alongside the other existing coding standards. Depending 
+on the type of issue returned, the rule will have assigned a type of *warning* or *error*, as well as a severity level from
+10 to 1, being 10 the most severe. This number is assigned based on your own judgment, but make sure to review the current
+sniffs and their assigned levels beforehand.
 
 ## Creating a new ESLint rule
 
