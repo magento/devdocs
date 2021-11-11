@@ -57,3 +57,4 @@ checking the passed JS file will return the expected error message. You can chec
 
 Once your code is ready and properly tested, it is time to open a pull request against magento-coding-standard from your
 branch into upstream's `develop` one. It will be reviewed by one of the repository's maintainers and, if review is positive, merged.
+Also, please review general [Adobe Commerce documentation for contributors](https://devdocs.magento.com/contributor-guide/contributing.html).
