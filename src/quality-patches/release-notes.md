@@ -32,7 +32,7 @@ For information about quality patches created by the Community for {{site.data.v
 -  **MDVA-27456** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.3.7`)_-Fixes the issue where users get an error when trying to load Swagger.
 -  **MDVA-32776** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.2`)_-Fixes the issue where stock status is not updated when an order is placed but not shipped.
 -  **MDVA-30862** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.0`)_-Fixes the issue with incorrect order date on the printed PDF invoice.
-- Improved the [index page for the Quality Patch Tool]({{ site.baseurl }}/quality-patches/tool.html). Added convenient search and filtering for quality patches at the latest version of the tool.
+-  Improved the [index page for the Quality Patch Tool]({{ site.baseurl }}/quality-patches/tool.html). Added convenient search and filtering for quality patches at the latest version of the tool.
 - Updated patches: MDVA-33382, MDVA-39482.
 
 ## v1.1.5
