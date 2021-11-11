@@ -24,3 +24,4 @@ Use Magento's coding standards when you contribute to Magento's codebase or crea
 -  [JavaScript DocBlock standard]({{ page.baseurl }}/coding-standards/docblock-standard-javascript.html)
 -  [LESS coding standard]({{ page.baseurl }}/coding-standards/code-standard-less.html)
 -  [HTML style guide]({{ page.baseurl }}/coding-standards/code-standard-html.html)
+-  [Contribute]({{ page.baseurl }}/coding-standards/contributing.html)
