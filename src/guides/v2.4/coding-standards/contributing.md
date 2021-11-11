@@ -45,7 +45,8 @@ by severity, so place yours accordingly.
 
 ESLint rules are similar in purpose to PHPCS sniffs, but this time targeted against Javascript files. Again, the best way
 to learn how to write your custom rules is by following the [official guide](https://eslint.org/docs/developer-guide/working-with-rules).
-Rules must be added to the `eslint/rules` directory, and also registered in one of the `.eslintrc-*` files 
+Rules must be added to the `eslint/rules` directory, and also registered in one of the `.eslintrc-*` files, depending on which area the
+rule focuses on.
 
 As with PHPCS sniffs, ESLint rules need to be covered by a unit tests in order to be considered for merging into the mainline.
 In this case, unit tests itself are written in PHP instead of Javascript, and follow a similar structure than their PHP counterparts.
