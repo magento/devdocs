@@ -11,10 +11,10 @@ functional_areas:
 
 Although we try to cover as many issues as possible, it may happen that a rule that you consider important is not covered yet.
 Fortunately, you can add your own custom rules, using either PHPCS or ESLint, 
-and contribute those to the magento-coding-standards repository so everyone can take advantage of your work.
+and contribute those to the [magento-coding-standard](https://github.com/magento/magento-coding-standard) repository so everyone can take advantage of your work.
 
 To start your contribution, first fork the code and clone this fork into your local environment, then create a new branch and start adding your 
-changes to it which, eventually, may end up merged into magento-coding-standards.
+changes to it which, eventually, may end up merged into magento-coding-standard.
 
 ## Creating a new PHPCS sniff
 
