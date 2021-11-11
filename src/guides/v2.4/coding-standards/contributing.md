@@ -19,7 +19,7 @@ changes to it which, eventually, may end up merged into magento-coding-standard.
 ## Creating a new PHPCS sniff
 
 PHPCS' rules are called _sniffs_. Basically, a _sniff_ is just a static code analyzer that will process our custom logic
-every time it finds an occurrence of any tokens we choose. This custom logic is in charge of identify if there's a violation
+every time it finds an occurrence of any tokens we choose. This custom logic is in charge of identifying if there's a violation
 of a certain rule in the analysed code, and will return an *error* or *warning* depending on the severity of that issue.
 
 How to write a sniff is way out the scope of this document,
@@ -27,7 +27,7 @@ but you can follow the [official PHPCS guide](https://github.com/squizlabs/PHP_C
 to learn more. The coding standards repository has also plenty of examples at `Magento2/Sniffs` directory.
 
 Sniffs must be also covered by a unit test to ensure its behaviour is correct. In a nutshell, this test defines a set
-of line numbers, each of them with a number of expected errors or warnings that will be compared against the results
+of line numbers, each of them with a number of expected errors or warnings, which will be compared with the results
 obtained from executing the sniff against one or several fixtures.
 
 The unit test must extend the `AbstractSniffUnitTest` class and its file name must be equal to the sniff's file name, 
