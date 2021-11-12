@@ -23,13 +23,13 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.
 
 {:.bs-callout-info}
 
-The package names of security-only releases are typically appended with -p1. However, we could not avoid deviating from these naming conventions with Magento 2.3.5, which in turn has had a temporary ripple effect on the subsequent security package names. Specifically, the full-feature Magento 2.3.5 release is Magento 2.3.5-p1. The security-only release that we will release when Magento 2.4.0 GAs will be Magento 2.3.5-p2. We hope to return to the usual naming conventions in future releases.
+The package names of security releases are typically appended with -p1. However, we could not avoid deviating from these naming conventions with Magento 2.3.5, which in turn has had a temporary ripple effect on the subsequent security package names. Specifically, the full-feature Magento 2.3.5 release is Magento 2.3.5-p1. The security release that we will release when Magento 2.4.0 GAs will be Magento 2.3.5-p2. We hope to return to the usual naming conventions in future releases.
 
-## Security-only patch available
+## Security patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.5-p2) provides. Patch 2.3.5.2 (Composer package 2.3.5-p2) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.5-p1. All hot fixes that were applied to the 2.3.5 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.5-p2) provides. Patch 2.3.5.2 (Composer package 2.3.5-p2) is a security patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.5-p1. All hot fixes that were applied to the 2.3.5 release are included in this security patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
 
-For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.5-p2), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security-only patches include security bug fixes only, not the additional security enhancements that are included in the full patch.
+For general information about security patches, see [Introducing the New Security Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-Patch-Release/ba-p/141287).For instructions on downloading and applying security patches (including patch 2.3.5-p2), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security patches include security bug fixes only, not the additional security enhancements that are included in the full patch.
 
 ## Other release information
 
@@ -2038,7 +2038,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ## Known issues -- General
 
-**Issue**: Anomalies in storefront error messages occur in deployments where PHP 7.4.2 is installed. When Magento 2.4.0 is deployed with PHP 7.4.2, the space symbols in storefront error messages are replaced with plus (+) characters.  This bug is native to PHP 7.4.2 and cannot be corrected by Magento. **Workaround**: Magento recommends using other versions of PHP 7.4.x. See [Raw message data display on storefront](https://support.magento.com/hc/en-us/articles/360045804332)  Knowledge Base article. <!--- MC-34170-->
+**Issue**: Anomalies in storefront error messages occur in deployments where PHP 7.4.2 is installed. When Magento 2.4.0 is deployed with PHP 7.4.2, the space symbols in storefront error messages are replaced with plus (+) characters.  This bug is native to PHP 7.4.2 and cannot be corrected by Magento. **Workaround**: We recommend using other versions of PHP 7.4.x. See [Raw message data display on storefront](https://support.magento.com/hc/en-us/articles/360045804332)  Knowledge Base article. <!--- MC-34170-->
 
 **Issue**: Merchants cannot add ordered products to a package from the Admin Create Package page and save the package. See [Shipping labels creation](https://support.magento.com/hc/en-us/articles/360046750171) Knowledge Base article. The **MC-35514-2.4.0-CE-composer.patch** hotfix  for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- MC-35514-->
 

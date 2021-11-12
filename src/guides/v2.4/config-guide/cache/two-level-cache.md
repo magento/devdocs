@@ -14,7 +14,7 @@ To reduce the network bandwidth to Redis, we can store cache data locally on eac
 -  To check the cache data version, ensuring we have the latest cache stored locally.
 -  If the data is out of date, transfer the latest cache from the remote machine to the local machine.
 
-Magento stores the hashed data version in Redis, with the suffix ':version' appended to the regular key. In case of an outdated local cache, the data is transferred to the local machine with a cache adapter.
+Magento stores the hashed data version in Redis, with the suffix ':hash' appended to the regular key. In case of an outdated local cache, the data is transferred to the local machine with a cache adapter.
 
 ## Configuration example
 

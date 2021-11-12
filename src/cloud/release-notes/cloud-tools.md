@@ -21,6 +21,7 @@ This release information details the latest improvements to the {{site.data.var.
 When you update to `{{site.data.var.ct}}` 2002.1.0 or later, you automatically update to the latest versions of the other packages, which are dependencies for `{{site.data.var.ct}}`.
 
 <!--Link definitions-->
+
 [`{{site.data.var.ct}}` release notes]: {{site.baseurl}}/cloud/release-notes/ece-release-notes.html
 [`{{site.data.var.mcc-prod}}` release notes]: {{site.baseurl}}/cloud/release-notes/mcc-release-notes.html
 [`{{site.data.var.mcd-prod}}` release notes]: {{site.baseurl}}/cloud/release-notes/mcd-release-notes.html

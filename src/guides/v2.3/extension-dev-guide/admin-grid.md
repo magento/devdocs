@@ -37,8 +37,16 @@ Here are the required files to get started:
 `app/code/Dev/Grid/registration.php`:
 
 ```php
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
     'Dev_Grid',
     __DIR__
 );
@@ -231,9 +239,17 @@ The UI references `Dev\Grid\Ui\DataProvider\Category\ListingDataProvider` as the
 The corresponding file is `app/code/Dev/Grid/Ui/DataProvider/Category/ListingDataProvider.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Ui\DataProvider\Category;
 
-class ListingDataProvider extends \Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
+use Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider;
+
+class ListingDataProvider extends DataProvider
 {
 }
 ```
@@ -268,6 +284,12 @@ The plugin then gets a `name` attribute:
 `app/code/Dev/Grid/Plugin/AddAttributesToUiDataProvider.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Plugin;
 
 use Dev\Grid\Ui\DataProvider\Category\ListingDataProvider as CategoryDataProvider;
@@ -286,8 +308,8 @@ class AddAttributesToUiDataProvider
     /**
      * Constructor
      *
-     * @param \Magento\Eav\Api\AttributeRepositoryInterface $attributeRepository
-     * @param \Magento\Framework\App\ProductMetadataInterface $productMetadata
+     * @param AttributeRepositoryInterface $attributeRepository
+     * @param ProductMetadataInterface $productMetadata
      */
     public function __construct(
         AttributeRepositoryInterface $attributeRepository,
@@ -300,9 +322,9 @@ class AddAttributesToUiDataProvider
     /**
      * Get Search Result after plugin
      *
-     * @param \Dev\Grid\Ui\DataProvider\Category\ListingDataProvider $subject
-     * @param \Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult $result
-     * @return \Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult
+     * @param CategoryDataProvider $subject
+     * @param SearchResult $result
+     * @return SearchResult
      */
     public function afterGetSearchResult(CategoryDataProvider $subject, SearchResult $result)
     {
@@ -355,6 +377,12 @@ The `dataSource` name `dev_grid_category_listing_data_source` links to `Dev\Grid
 The collection class translates to `app/code/Dev/Grid/Ui/DataProvider/Category/Listing/Collection.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Ui\DataProvider\Category\Listing;
 
 use Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult;
@@ -380,9 +408,17 @@ It uses a custom collection file to add custom filters to map, and makes the gri
 The resource model class translates to `app/code/Dev/Grid/Model/ResourceModel/Category.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Model\ResourceModel;
 
-class Category extends \Magento\Catalog\Model\ResourceModel\Category
+use Magento\Catalog\Model\ResourceModel\Category;
+
+class Category extends Category
 {
 }
 ```
@@ -394,6 +430,12 @@ The UI grid file defines a column actions class `Dev\Grid\Ui\Component\Category\
 `app/code/Dev/Grid/Ui/Component/Category/Listing/Column/Actions.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Ui\Component\Category\Listing\Column;
 
 use Magento\Framework\View\Element\UiComponentFactory;
@@ -416,9 +458,9 @@ class Actions extends Column
     /**
      * Constructor
      *
-     * @param \Magento\Framework\View\Element\UiComponent\ContextInterface $context
-     * @param \Magento\Framework\View\Element\UiComponentFactory $uiComponentFactory
-     * @param \Magento\Framework\Url $urlBuilder
+     * @param ContextInterface $context
+     * @param UiComponentFactory $uiComponentFactory
+     * @param Url $urlBuilder
      * @param string $viewUrl
      * @param array $components
      * @param array $data
@@ -468,6 +510,12 @@ It gets a frontend URL for every category it lists.
 The main route defined in `app/code/Dev/Grid/etc/adminhtml/menu.xml` as `dev_grid/index/index` translates to `app/code/Dev/Grid/Controller/Adminhtml/Index/Index.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Controller\Adminhtml\Index;
 
 use Magento\Backend\App\Action;
@@ -486,8 +534,8 @@ class Index extends Action implements HttpGetActionInterface
     /**
      * Constructor
      *
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Framework\View\Result\PageFactory $rawFactory
+     * @param Context $context
+     * @param PageFactory $rawFactory
      */
     public function __construct(
         Context $context,
@@ -517,6 +565,12 @@ class Index extends Action implements HttpGetActionInterface
 The Ui grid file defines the custom route `dev_grid/category/massDelete` (mass delete) and translates to `app/code/Dev/Grid/Controller/Adminhtml/Category/MassDelete.php`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Dev\Grid\Controller\Adminhtml\Category;
 
 use Magento\Backend\App\Action;
@@ -537,27 +591,27 @@ class MassDelete extends Action implements HttpPostActionInterface
     const ADMIN_RESOURCE = 'Magento_Catalog::categories';
 
     /**
-     * @var \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory
+     * @var CollectionFactory
      */
     protected $collectionFactory;
 
     /**
-     * @var \Magento\Catalog\Api\CategoryRepositoryInterface
+     * @var CategoryRepositoryInterface
      */
     private $categoryRepository;
 
     /**
-     * @var \Magento\Ui\Component\MassAction\Filter
+     * @var Filter
      */
     protected $filter;
 
     /**
      * Constructor
      *
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Ui\Component\MassAction\Filter $filter
-     * @param \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $collectionFactory
-     * @param \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository
+     * @param Context $context
+     * @param Filter $filter
+     * @param CollectionFactory $collectionFactory
+     * @param CategoryRepositoryInterface $categoryRepository
      */
     public function __construct(
         Context $context,
