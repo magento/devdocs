@@ -23,6 +23,6 @@ To connect with the {{site.data.var.uct}} team contact us on the Engineering Sla
 {:.bs-callout-info}
 We want to hear your feedback, issues and suggestions to help us improve the tool.
 
-Do you have an idea how to improve our compatibility analysis?. Check the [how to contribute]({{site.baseurl}}/guides/2.4/coding-standards/contribute.html) page for more information.
+Do you have an idea how to improve our compatibility analysis?. Check the [how to contribute]({{site.baseurl}}/guides/2.4/coding-standards/contributing.html) page for more information.
 
 See the [Resources]({{site.baseurl}}/community/resources/resources.html) page for more information.
