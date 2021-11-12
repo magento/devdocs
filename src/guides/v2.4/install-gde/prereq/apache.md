@@ -23,7 +23,7 @@ Magento supports Apache 2.4.x.
 
 ## Important: Apache rewrites and .htaccess {#apache-help-rewrite}
 
-This topic discusses how to enable Apache 2.4 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html){:target="_blank"}.
+This topic discusses how to enable Apache 2.4 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html).
 
 Magento uses server rewrites and `.htaccess` to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.
 
@@ -137,7 +137,7 @@ To upgrade to Apache 2.4:
    ```
 
    {:.bs-callout-info}
-   If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="_blank"}.
+   If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa).
 
 1. Verify the installation.
 
@@ -299,7 +299,7 @@ If you encounter 403 Forbidden errors when trying to access the Magento site, yo
 
 ### Solving 403 Forbidden errors for Apache 2.4 {#apache-error-2-4}
 
-To enable website visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html){:target="_blank"}.
+To enable website visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html).
 
 For example:
 
@@ -313,7 +313,7 @@ For example:
 ```
 
 {:.bs-callout-info}
-The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="_blank"}.
+The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order).
 {% endcollapsible %}
 
 {:.ref-header}

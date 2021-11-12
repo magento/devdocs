@@ -61,6 +61,6 @@ See the [Upgrade Compatibility Tool ALPHA]({{site.baseurl}}/upgrade-compatibilit
 [Migration Guide]: {{ page.baseurl }}/migration/bk-migration-guide.html
 [Prerequisites]: {{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html
 [Shared account]: http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html
-{:target="_blank"}
+
 [Upgrade from Open Source to Commerce]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html#manage-packages
 [upgrade the software manually]: {{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html

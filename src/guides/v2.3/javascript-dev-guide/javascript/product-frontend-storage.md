@@ -18,7 +18,7 @@ This section is responsible for holding all product data that come from the serv
 
 ## Instantiate the repository
 
-The following code snippet uses the [`Magento_Catalog/js/product/storage/storage-service`][storage-service]{:target="_blank"} to initialize the repository when the data storage cache itself initializes:
+The following code snippet uses the [`Magento_Catalog/js/product/storage/storage-service`][storage-service] to initialize the repository when the data storage cache itself initializes:
 
 ```javascript
 define([
@@ -79,7 +79,7 @@ dataCollectionHandler: function(data){
 
 ## Get data from the server
 
-Use the [`loadDataFromServer`][load-data-from-server]{:target="_blank"} method from the `data-storage` class to get product data from a list of IDs.
+Use the [`loadDataFromServer`][load-data-from-server] method from the `data-storage` class to get product data from a list of IDs.
 
 ```javascript
 
@@ -111,7 +111,7 @@ Use the following REST endpoint to get product information:
 
 For UI Components, add this information in the [`dataProvider`][datasource-component] entry inside your `etc/view/frontend/ui_component/<ui-component-name>.xml` file.
 
-The following example is from the [recently-viewed widget][recently-viewed-widget]{:target="_blank"}:
+The following example is from the [recently-viewed widget][recently-viewed-widget]:
 
 ```xml
 
@@ -136,7 +136,7 @@ The following example is from the [recently-viewed widget][recently-viewed-widge
 
 This sets the appropriate information inside the `updateRequestConfig` object in the product storage configuration(`productStorageConfig` in the example code).
 
-The object structure for this REST response is represented by [`\Magento\Catalog\Api\Data\ProductRenderInterface`][product-render-interface]{:target="_blank"}:
+The object structure for this REST response is represented by [`\Magento\Catalog\Api\Data\ProductRenderInterface`][product-render-interface]:
 
 {% collapsible Show Object Structure %}
 

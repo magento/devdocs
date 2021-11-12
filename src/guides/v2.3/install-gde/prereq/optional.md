@@ -16,7 +16,7 @@ The other optional utilities discussed in this topic might assist you with your 
 
 ## Installing and Configuring Network Time Protocol (NTP) {#install-optional-ntp}
 
-[NTP](http://www.ntp.org){:target="_blank"} enables servers to synchronize their system clocks using [globally available pool servers](http://www.pool.ntp.org/en){:target="_blank"}. Magento recommends you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.
+[NTP](http://www.ntp.org) enables servers to synchronize their system clocks using [globally available pool servers](http://www.pool.ntp.org/en). Magento recommends you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.
 
 If you are deploying Magento on multiple hosts, NTP is a simple way to guarantee their clocks are all synchronized, no matter what time zone the servers are in. Also, cron-related tasks (such as indexing and transactional e-mails) depend on the server clock being accurate.
 
@@ -64,7 +64,7 @@ To install and configure NTP:
 
 ### Use NTP pool servers {#install-optional-ntp-servers}
 
-Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use [pool servers](http://www.pool.ntp.org/en){:target="_blank"} that are close to your servers' time zone as discussed on the [NTP pool project help page](http://www.pool.ntp.org/en/use.html){:target="_blank"}. If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.
+Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use [pool servers](http://www.pool.ntp.org/en) that are close to your servers' time zone as discussed on the [NTP pool project help page](http://www.pool.ntp.org/en/use.html). If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.
 
 1. Open `/etc/ntp.conf` in a text editor.
 
@@ -104,7 +104,7 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 ## Create phpinfo.php {#install-optional-phpinfo}
 
-[`phpinfo.php`](http://php.net/manual/en/function.phpinfo.php){:target="_blank"} displays a large amount of information about [PHP](https://glossary.magento.com/php) and its extensions.
+[`phpinfo.php`](http://php.net/manual/en/function.phpinfo.php) displays a large amount of information about [PHP](https://glossary.magento.com/php) and its extensions.
 
 {:.bs-callout-info}
 Use `phpinfo.php` in a development system _only_. It can be a security issue in production.
@@ -117,7 +117,7 @@ Add the following code anywhere in your web server's docroot:
 phpinfo();
 ```
 
-For more information, see the [phpinfo manual page](http://php.net/manual/en/function.phpinfo.php){:target="_blank"}.
+For more information, see the [phpinfo manual page](http://php.net/manual/en/function.phpinfo.php).
 
 To view the results, enter the following [URL](https://glossary.magento.com/url) in your browser's location or address field:
 
@@ -132,15 +132,15 @@ If a 404 (Not Found) error displays, check the following:
 
    [Help for Ubuntu](https://help.ubuntu.com/community/UFW)
 
-   [Help for CentOS](http://wiki.centos.org/HowTos/Network/IPTables){:target="_blank"}
+   [Help for CentOS](http://wiki.centos.org/HowTos/Network/IPTables)
 
 ## phpmyadmin {#install-optional-phpmyadmin}
 
 `phpmyadmin` is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to `phpmyadmin` as the MySQL database administrative user.
 
-For more information about `phpmyadmin`, see the [phpmyadmin home page](http://www.phpmyadmin.net/home_page/index.php){:target="_blank"}.
+For more information about `phpmyadmin`, see the [phpmyadmin home page](http://www.phpmyadmin.net/home_page/index.php).
 
-For more detailed information about installation, see the [phpmyadmin installation documentation](http://docs.phpmyadmin.net/en/latest/setup.html#quick-install){:target="_blank"}.
+For more detailed information about installation, see the [phpmyadmin installation documentation](http://docs.phpmyadmin.net/en/latest/setup.html#quick-install).
 
 {:.bs-callout-info}
 Use phpmyadmin in a development system _only_. It can be a security issue in production.

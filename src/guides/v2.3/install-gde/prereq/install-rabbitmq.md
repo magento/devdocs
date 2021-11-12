@@ -32,10 +32,10 @@ This command also installs the required Erlang packages.
 
 If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their website.
 
-1. Download the .deb package from [rabbitmq-server](https://www.rabbitmq.com/download.html){:target="_blank"}.
+1. Download the .deb package from [rabbitmq-server](https://www.rabbitmq.com/download.html).
 1. Install the package with `dpkg`.
 
-Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html){:target="_blank"} for more information.
+Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html) for more information.
 
 ## Install RabbitMQ on CentOS {#centos-install}
 
@@ -43,7 +43,7 @@ Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.h
 
 RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ.
 
-See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="_blank"} for more information.
+See [Manual installation](https://www.erlang-solutions.com/resources/download.html) for more information.
 
 Refer to the [RabbitMQ/Erlang version matrix](https://www.rabbitmq.com/which-erlang.html) to install the correct version.
 
@@ -53,7 +53,7 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
 
 Refer to the RabbitMQ install page to get the latest supported version. Magento 2.3 and 2.4 support RabbitMQ 3.8.x.
 
-Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="_blank"} for more information.
+Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html) for more information.
 
 ## Configure RabbitMQ {#config}
 
