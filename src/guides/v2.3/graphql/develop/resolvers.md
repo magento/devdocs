@@ -23,7 +23,7 @@ A GraphQL resolver must implement one of the following interfaces:
 
 -  [`\Magento\Framework\GraphQl\Query\ResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/ResolverInterface.php)
 
-The first two interfaces provide a way to resolve multiple branches/leaves at once (known as batching), while the last one resolves one request at a time. Magento recommends using batch resolvers for queries because they improve performance by fetching information required to resolve multiple GraphQL requests with a single operation.
+The first two interfaces provide a way to resolve multiple branches/leaves at once (known as batching), while the last one resolves one request at a time. We recommend using batch resolvers for queries because they improve performance by fetching information required to resolve multiple GraphQL requests with a single operation.
 
 ## Query resolvers
 

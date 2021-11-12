@@ -1,22 +1,51 @@
 ---
 group: software-update-guide
-title: Quality patches for Adobe Commerce
+title: Release notes
 functional_areas:
   - Setup
   - Configuration
   - Upgrade
-redirect_from: /quality-patches/release-notes.html
+redirect_from:
+  - /quality-patches/release-notes-commerce.html
+  - /quality-patches/release-notes-open-source.html
 ---
 
 {% include install/patch/quality-patch-intro.md %}
 
-For information about quality patches created by the community for {{site.data.var.ce}}, see the [release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md).
+{: .bs-callout-info}
+For information about quality patches created by the Community for {{site.data.var.ce}}, see the [release notes](https://github.com/magento/quality-patches/blob/master/community-release-notes.md).
 
 <!-- The release notes include:
 
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
+
+## v1.1.6
+
+-  **MDVA-40550** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.4.4`)_-Fixes the issue with missing products on the frontend during reindexing.
+-  **MDVA-40120** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.4`)_-Fixes the issue where GraphQL sorting by DESC/ASC doesn't work with products having the same relevance or price.
+-  **MDVA-41399** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <2.4.2`)_-Fixes the issue where admin users are unable to access the "Manage Shopping Cart" page if a customer adds a product to the wishlist.
+-  **MDVA-40609** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where disabled products data is absent in the `cataloginventory_stock_status` index table, displaying incorrect disabled product quantities.
+-  **MDVA-39031** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.4`)_-Fixes the issue where adding a product to the cart via GraphQL is possible even if it is not assigned to the target website.
+-  **MDVA-41597** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where users get an error when adding more than one configurable product to the cart using GraphQL.
+-  **MDVA-27456** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.3.7`)_-Fixes the issue where users get an error when trying to load Swagger.
+-  **MDVA-32776** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.2`)_-Fixes the issue where stock status is not updated when an order is placed but not shipped.
+-  **MDVA-30862** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.0`)_-Fixes the issue with incorrect order date on the printed PDF invoice.
+-  Improved the [index page for the Quality Patch Tool]({{ site.baseurl }}/quality-patches/tool.html). Added convenient search and filtering for quality patches at the latest version of the tool.
+-  Updated patches: MDVA-33382, MDVA-39482.
+
+## v1.1.5
+
+-  **MDVA-41236** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where it is impossible to create a new or edit an existing scheduled update for a product if the End Date has been previously removed.
+-  **MDVA-41046** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where simple products with custom options are available for assigning to configurable/grouped products.
+-  **MDVA-40545** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where only the first node for a page was retrieved even if there was more than one node for the same page.
+-  **MDVA-41164** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3-p1`)_-Fixes the issue where an admin user is not able to save or edit a Company with a file or image type custom customer attribute.
+-  **MDVA-39229** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue which causes the following error to appear after updating Catalog rule Staging Update start time: "Cron Job staging_synchronize_entities_period has an error: The active update can't be deleted."
+-  **MDVA-40619** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where changes to CMS page hierarchy causes a 500 error when attempting to do inline editing on a CMS page.
+-  **MDVA-41061** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where stock status resets to salable when a product is saved from Admin.
+-  **MDVA-31763** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where catalog price rules are reverted (or not applied) until manual reindex.
+-  **MDVA-37748** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where a GraphQL query returns products not assigned to a shared catalog.
 
 ## v1.1.4
 
@@ -126,7 +155,7 @@ For information about quality patches created by the community for {{site.data.v
 
 ## v1.0.20
 
--  **MDVA-36170** _(for Magento `>=2.3.4 <2.4.2`)_-This fixes the issue where the GraphqQL query is not caching by using the category cache tag.
+-  **MDVA-36170** _(for Magento `>=2.3.4 <2.4.2`)_-This fixes the issue where the GraphQL query is not caching by using the category cache tag.
 -  **MDVA-33168** _(for Magento `>=2.3.3 <2.4.2`)_-Fixes the issue when updating a product attribute via API all other attributes change to an empty value.
 -  **MDVA-19640** _(for Magento `>=2.3.0`)_-Fixes the issue where Advanced Reporting is not showing any data.
 -  **MDVA-11189**  _(for Magento `>=2.3.0 <2.3.5`)_-Fixes the issue when after importing a .csv file to update product stock, rows from the cataloginventory_stock table are deleted.

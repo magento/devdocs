@@ -1,8 +1,11 @@
 ---
 group: software-update-guide
-title: Quality Patches Tool
+title: Usage
 functional_areas:
   - Upgrade
+redirect_from:
+   - guides/v2.4/comp-mgr/patching/mqp.html
+   - guides/v2.3/comp-mgr/patching/mqp.html
 ---
 
 {% include install/patch/quality-patch-intro.md %}
@@ -10,7 +13,7 @@ functional_areas:
 {:.bs-callout-warning}
 We do not recommend using the Quality Patches Tool to apply large numbers of patches because it increases the complexity of your code, which makes upgrading to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }} more difficult.
 
-#### Install
+## Install
 
 {:.bs-callout-info}
 If it is not already installed, you must install [Git](https://github.com/git-guides/install-git) or [Patch](https://man7.org/linux/man-pages/man1/patch.1.html) before installing the Quality Patches Tool.
@@ -20,7 +23,7 @@ Add the `magento/quality-patches` Composer package to your `composer.json` file:
 composer require magento/quality-patches
 ```
 
-#### View individual patches
+## View individual patches
 
 To view the list of individual patches available for your version of {{ site.data.var.ee }} or {{ site.data.var.ce }}:
 
@@ -86,10 +89,10 @@ The status table contains the following types of information:
 {:.bs-callout-info}
 After upgrading to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }}, you must re-apply patches if the patches are not included in the new version. See [Re-apply patches after an upgrade](#upgrade).
 
-#### Apply individual patches
+## Apply individual patches
 
 {:.bs-callout-warning}
-We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html).
+We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system][backup].
 
 To apply a single patch, run the following command where `MAGETWO-XXXX` is the patch ID specified in the status table:
 
@@ -112,10 +115,10 @@ You must clean the cache after applying patches to see changes in the Magento ap
 {:.bs-callout-info}
 Consider keeping a list of applied patches in a separate location. You might need to re-apply some of them after upgrading to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }}. See [Re-apply patches after an upgrade](#upgrade).
 
-#### Revert individual patches
+## Revert individual patches
 
 {:.bs-callout-warning}
-We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html).
+We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system][backup].
 
 To revert a single patch, run the following command where `MAGETWO-XXXX` is the patch ID specified in the status table:
 
@@ -141,7 +144,7 @@ You must clean the cache after reverting patches to see changes in the Magento a
 ./bin/magento cache:clean
 ```
 
-#### Get updates
+## Get updates
 
 Magento periodically releases new individual patches. You must update the Quality Patches Tool to get new individual patches:
 
@@ -158,7 +161,7 @@ New add patches display at the bottom of the table.
 ./vendor/bin/magento-patches status
 ```
 
-#### Re-apply patches after an upgrade {#upgrade}
+## Re-apply patches after an upgrade {#upgrade}
 
 When you upgrade to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }}, you must re-apply patches if the patches are not included in the new version.
 
@@ -190,6 +193,9 @@ To re-apply patches:
    {:.bs-callout-info}
    When you run the `status` command, the patches that where included in the new version are no longer displayed in the table of available patches.
 
-#### Logging
+## Logging
 
 The Quality Patches Tool logs all operations in the `<Magento_root>/var/log/patch.log` file.
+
+<!-- link definitions -->
+[backup]: {{ site.baseurl }}{{ site.gdeurl }}/install-gde/install/cli/install-cli-backup.html

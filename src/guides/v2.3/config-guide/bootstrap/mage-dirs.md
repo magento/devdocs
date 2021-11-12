@@ -21,8 +21,15 @@ You can set `MAGE_DIRS` in any of the following ways:
 *  Use a custom entry point script such as the following:
 
    ```php
-   use Magento\Framework\App\Filesystem\DirectoryList;
+   <?php
+   /**
+    * Copyright © Magento, Inc. All rights reserved.
+    * See COPYING.txt for license details.
+    */
+
    use Magento\Framework\App\Bootstrap;
+   use Magento\Framework\App\Filesystem\DirectoryList;
+   use Magento\Framework\App\Http;
 
    require __DIR__ . '/app/bootstrap.php';
    $params = $_SERVER;
@@ -33,9 +40,9 @@ You can set `MAGE_DIRS` in any of the following ways:
         DirectoryList::UPLOAD => [DirectoryList::URL_PATH => '/mnt/nfs/media/upload'],
         DirectoryList::CACHE => [DirectoryList::PATH => '/mnt/nfs/cache'],
    ];
-   $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
-   /** @var \Magento\Framework\App\Http $app */
-   $app = $bootstrap->createApplication('Magento\Framework\App\Http');
+   $bootstrap = Bootstrap::create(BP, $params);
+   /** @var Http $app */
+   $app = $bootstrap->createApplication(Http::class);
    $bootstrap->run($app);
    ```
 
