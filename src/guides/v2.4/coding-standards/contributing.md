@@ -17,9 +17,9 @@ You can add your own custom rules, using either PHPCS or ESLint, and contribute 
 
 To start your contribution:
 
-1.  Fork the code and clone this fork into your local environment.
-1.  Create a new branch and add changes.
-1.  Merge changes into the magento-coding-standard repository.
+1. Fork the code and clone this fork into your local environment.
+1. Create a new branch and add changes.
+1. Merge changes into the magento-coding-standard repository.
 
 ## Creating a new PHPCS sniff
 
@@ -32,7 +32,7 @@ The [magento-coding-standard](https://github.com/magento/magento-coding-standard
 
 Sniffs must be also covered by a unit test to ensure its behaviour is correct. This unit test defines a set of line numbers, each of them with a number of expected errors or warnings, which will be compared with the results obtained from executing the sniff against one or several fixtures containing real code.
 
-The unit test must extend the `AbstractSniffUnitTest` class and its file name must be equal to the sniff's file name, excluding the `sniff` suffix. Fixture files must follow the same rule, changing its extension to `.inc` in the case of PHP fixtures. 
+The unit test must extend the `AbstractSniffUnitTest` class and its file name must be equal to the sniff's file name, excluding the `sniff` suffix. Fixture files must follow the same rule, changing its extension to `.inc` in the case of PHP fixtures.
 
 > Example of Sniff
 
@@ -40,7 +40,7 @@ The sniff called `Sniffs/Legacy/MageEntitySniff.php` has its unit test at `Tests
 
 Add your new sniff to the `Magento2/ruleset.xml` file, so it is executed alongside the other existing coding standards.
 
-Depending on the type of issue returned, the rule will have assigned a type of *warning* or *error*, as well as a severity level from 10 to 1, being 10 the most severe. This number is assigned based on your own judgment, but make sure to review the current sniffs and their assigned levels beforehand to get an idea of in which severity your new issue fits better. 
+Depending on the type of issue returned, the rule will have assigned a type of *warning* or *error*, as well as a severity level from 10 to 1, being 10 the most severe. This number is assigned based on your own judgment, but make sure to review the current sniffs and their assigned levels beforehand to get an idea of in which severity your new issue fits better.
 
 {:.bs-callout-warning}
 Rules are sorted by severity.
