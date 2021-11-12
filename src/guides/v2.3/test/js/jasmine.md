@@ -302,21 +302,20 @@ npm install
 
 <!-- External -->
 [`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
-{:target="_blank"}
+
 [`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
-{:target="_blank"}
+
 [Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html
-{:target="_blank"}
+
 [fontconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
-{:target="_blank"}
+
 [Grunt]: http://gruntjs.com/
-{:target="_blank"}
+
 [Install grunt-cli]: http://gruntjs.com/getting-started
-{:target="_blank"}
+
 [Install Node.js]: https://nodejs.org/en/
-{:target="_blank"}
+
 [Learn more about testing with Jasmine.]: https://jasmine.github.io/edge/introduction.html
-{:target="_blank"}
 
 <!-- Internal -->
 [Step 6]: #prepare-step6

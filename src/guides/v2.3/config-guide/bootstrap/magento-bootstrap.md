@@ -9,19 +9,19 @@ functional_areas:
 
 ## Overview of bootstrapping {#config-boot-overview}
 
-To run the Magento application, the following actions are implemented in [index.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/index.php){:target="_blank"}:
+To run the Magento application, the following actions are implemented in [index.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/index.php):
 
-*  Include [app/bootstrap.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/bootstrap.php){:target="_blank"} which performs essential initialization routines, such as error handling, initializing the autoloader, setting profiling options, setting the default timezone, and so on.
-*  Create an instance of [\Magento\Framework\App\Bootstrap]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Bootstrap.php){:target="_blank"}. <!-- It requires initialization parameters to be specified in constructor.  Normally, the $_SERVER super-global variable is supposed to be passed there. -->
-*  Create a Magento application instance ([\Magento\Framework\AppInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/AppInterface.php){:target="_blank"}).
+*  Include [app/bootstrap.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/bootstrap.php) which performs essential initialization routines, such as error handling, initializing the autoloader, setting profiling options, setting the default timezone, and so on.
+*  Create an instance of [\Magento\Framework\App\Bootstrap]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Bootstrap.php). <!-- It requires initialization parameters to be specified in constructor.  Normally, the $_SERVER super-global variable is supposed to be passed there. -->
+*  Create a Magento application instance ([\Magento\Framework\AppInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/AppInterface.php)).
 *  Run Magento
 
 ## Bootstrap run logic {#config-boot-logic}
 
-[The bootstrap object]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/bootstrap.php){:target="_blank"} uses the following algorithm to run the Magento application:
+[The bootstrap object]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/bootstrap.php) uses the following algorithm to run the Magento application:
 
 1. Initializes the error handler.
-1. Creates the [object manager]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/ObjectManager){:target="_blank"} and basic shared services that are used everywhere and are affected by the environment. The environment parameters are injected properly into these objects.
+1. Creates the [object manager]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/ObjectManager) and basic shared services that are used everywhere and are affected by the environment. The environment parameters are injected properly into these objects.
 1. Asserts that maintenance mode is *not* enabled; otherwise, terminates.
 1. Asserts that the Magento application is installed; otherwise, terminates.
 1. Starts the Magento application.
@@ -78,7 +78,7 @@ We have the following entry point applications (that is, applications defined by
 
 ### HTTP entry point {#config-boot-entry-http}
 
-[\Magento\Framework\App\Http]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http){:target="_blank"} operates as follows:
+[\Magento\Framework\App\Http]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http) operates as follows:
 
 1. Determines the [application area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
 1. Starts the front controller and routing systems in order to find and execute a controller action.
@@ -96,7 +96,7 @@ We have the following entry point applications (that is, applications defined by
 
 ### Static resource entry point {#config-boot-entry-static}
 
-[\Magento\Framework\App\StaticResource]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php){:target="_blank"} is an application for retrieving static resources (for example, CSS, JavaScript, and images). It postpones any actions with a static resource until the resource is requested.
+[\Magento\Framework\App\StaticResource]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php) is an application for retrieving static resources (for example, CSS, JavaScript, and images). It postpones any actions with a static resource until the resource is requested.
 
  {:.bs-callout-info}
 The entry point for static view files is not used in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the `<your Magento install dir>/pub/static` directory.
@@ -111,7 +111,7 @@ When the request is redirected to the entry point, the Magento application parse
 
 ### Media resource entry point {#config-boot-entry-media}
 
-[Magento\MediaStorage\App\Media]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/MediaStorage/App/Media.php){:target="_blank"} retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a [media storage](https://glossary.magento.com/media-storage).
+[Magento\MediaStorage\App\Media]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/MediaStorage/App/Media.php) retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a [media storage](https://glossary.magento.com/media-storage).
 
 `\Magento\Core\App\Media` attempts to find the media file in the configured database storage and write it into the `pub/static` directory, then return its contents. On error, it returns an HTTP 404 (Not Found) status code in the header with no contents.
 
