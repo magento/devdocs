@@ -317,7 +317,6 @@ npm install
 
 [Learn more about testing with Jasmine.]: https://jasmine.github.io/edge/introduction.html
 
-
 <!-- Internal -->
 [Step 6]: #prepare-step6
 
