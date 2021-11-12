@@ -150,7 +150,7 @@ class ProductAttributesUpdater
 
 The after methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If the observed method does not return a result (`@return void`), then it passes a `null` value to the next after method.
 
-Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
+Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Auth.php):
 
 ```php
 <?php
@@ -189,7 +189,7 @@ class AuthLogger
 
 After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
 
-The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
+The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Product/Action.php):
 
 ```php
 <?php
@@ -575,5 +575,5 @@ Related topics
 
 *  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
 *  [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
-*  [The Plugin Integration Test Kata](http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list){:target="_blank"}
-*  [The Around Interceptor Kata](http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list){:target="_blank"}
+*  [The Plugin Integration Test Kata](http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata) by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list)
+*  [The Around Interceptor Kata](http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata) by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list)

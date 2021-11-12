@@ -15,7 +15,7 @@ To implement your own indexer, add the following code in your module:
 
 ### Custom indexer logic
 
-Your custom indexer class should implement [\Magento\Framework\Indexer\ActionInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Indexer/ActionInterface.php){:target="_blank"}, and the indexer should be able to perform three types of operations:
+Your custom indexer class should implement [\Magento\Framework\Indexer\ActionInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Indexer/ActionInterface.php), and the indexer should be able to perform three types of operations:
 
 *  Row reindex: processing a single entry from a dictionary; responsibility of `executeRow($id)`
 *  List reindex: processing a set of dictionary entries; responsibility of `executeList($ids)`, where `$ids` is an array of [entity](https://glossary.magento.com/entity) IDs
@@ -86,7 +86,7 @@ Add the `mview.xml` configuration file in the `etc` module directory, where you 
 *  the database tables the indexer tracks
 *  what column data is sent to the indexer
 
-[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/etc/mview.xml){:target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/etc/mview.xml)
 
 All Mview declarations related to a module should be declared in one file.
 
