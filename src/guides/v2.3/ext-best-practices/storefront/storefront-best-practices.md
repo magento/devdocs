@@ -21,7 +21,7 @@ You can manage your cache in the [Admin](https://glossary.magento.com/admin) sec
 
 ### Consider different resolutions/devices
 
-When developing your theme extension, you should check how it looks using different resolutions or devices. We recommend you apply [responsive web design(RWD)](https://en.wikipedia.org/wiki/Responsive_web_design){:target="_blank"} concepts to optimize the look and feel of your theme on different devices and resolutions. To help you with this task, both [Chrome](https://developer.chrome.com/devtools){:target="_blank"} and [Firefox](https://developer.mozilla.org/en-US/docs/Tools){:target="_blank"} web browsers have built-in developer tools that allow you to view your theme under different resolutions.
+When developing your theme extension, you should check how it looks using different resolutions or devices. We recommend you apply [responsive web design(RWD)](https://en.wikipedia.org/wiki/Responsive_web_design) concepts to optimize the look and feel of your theme on different devices and resolutions. To help you with this task, both [Chrome](https://developer.chrome.com/devtools) and [Firefox](https://developer.mozilla.org/en-US/docs/Tools) web browsers have built-in developer tools that allow you to view your theme under different resolutions.
 
 **Recommended Reading:**
 

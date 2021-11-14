@@ -16,7 +16,7 @@ The minimum requirements to run the {{site.data.var.uct}} are:
 |----------------|-----------------|
 | PHP version| >= 7.3 |
 | Composer | none |
-| Node.js | An optional requirement. Only required to check GraphQL compatibility. |
+| Node.js | [Node.js](https://nodejs.org/) (`^12.22.0`, `^14.17.0`, or `>=16.0.0`) |
 | Memory limitations | At least 2GB RAM |
 | {{site.data.var.ee}} Access keys | none |
 | {{site.data.var.ee}} (Open Source or enterprise) | none |

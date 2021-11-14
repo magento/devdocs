@@ -6,22 +6,6 @@ redirect_from:
 - guides/v2.4/contributor-guide/contributing.html
 ---
 
-The following topics are included in this guide:
-
--  [Contribute to Magento 2 code](#contribute)
--  [Community Backlog Priority](#backlog)
--  [GitHub and Two-Factor authentication](#two-factor)
--  [Questions or enhancement requests?](#question)
--  [Accepted pull requests and ported code](#rules)
--  [Contribution requirements](#requirements)
--  [Forks and pull requests](#forks-and-pull-requests)
--  [Squash commits](#squash-commits)
--  [Magento Contributor Assistant](#contributor-assist)
--  [Report an issue](#report)
--  [Help triage issues](#triage)
--  [Labels applied by the Community Engineering team](#labels)
--  [Contribution awards and points](#points)
-
 {:.bs-callout-tip}
 Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://opensource.magento.com/slack), in the [#general](https://magentocommeng.slack.com/archives/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/archives/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
 
@@ -96,7 +80,7 @@ The following list consists of questions you can ask to help determine the prope
 
 The number of 'Yes' answers should help you to determine the severity.
 
-### Pull request risk assessment:
+### Pull request risk assessment
 
 The 'Risk:' label highlights the risk that the suggested changes may bring to the platform.
 It helps maintainers decide:
@@ -111,7 +95,7 @@ It helps maintainers decide:
 | Medium | A pull request that makes changes which may affect multiple areas or makes considerable changes on a specific area. |
 | Low | A pull request that will probably not affect other areas. |
 
-## GitHub and Two-Factor authentication {#two-factor}
+## GitHub and two-factor authentication {#two-factor}
 
 Magento **requires all Partners** who contribute code to enable 2FA on their GitHub accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.
 
@@ -388,7 +372,7 @@ If you are sure that the problem you are experiencing is a bug, file a new issue
 
 ### Issue template
 
-The [Issue Reporting Template](https://github.com/magento/magento2/blob/2.3-develop/.github/ISSUE_TEMPLATE.md) is a default placeholder for every new issue. Follow the sections carefully, as it ensures it will pass `Gate 1` quickly. More information on gates is available in [Magento Issue Gates](https://github.com/magento/magento2/wiki/Magento-Issue-Gates).
+The [Issue Reporting Template](https://github.com/magento/magento2/blob/{{site.version}}-develop/.github/ISSUE_TEMPLATE.md) is a default placeholder for every new issue. Follow the sections carefully, as it ensures it will pass `Gate 1` quickly. More information on gates is available in [Magento Issue Gates](https://github.com/magento/magento2/wiki/Magento-Issue-Gates).
 
 {:.bs-callout-tip}
 Note that a higher level of detail in the report increases the chance that someone will be able to reproduce the issue.
@@ -463,7 +447,3 @@ In addition to contributing code, you can help triage issues. This can include r
 We apply labels to public pull requests and issues to help other participants retrieve additional information about current progress, component assignments, Magento release lines, and much more. The following information details global labels used in Magento 2 repositories and across Community Engineering contributions.
 
 {% include contributor/labels.md %}
-
-## Contribution awards and points {#points}
-
-{% include contributor/rewards.md %}

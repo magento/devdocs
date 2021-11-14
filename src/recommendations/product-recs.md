@@ -6,11 +6,14 @@ redirect_from:
 ee_only: True
 ---
 
-Product Recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product Recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”, “Customers who bought this product also bought", "Recommended for you", and so on. Magento's Product Recommendations are powered by [Adobe Sensei](https://www.adobe.com/sensei.html), which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper.
+Product Recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product Recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”, “Customers who bought this product also bought", "Recommended for you", and so on. Adobe Commerce Product Recommendations are powered by [Adobe Sensei](https://www.adobe.com/sensei.html), which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Commerce catalog, results in highly engaging, relevant, and personalized experiences for the shopper.
+
+{:.bs-callout-info}
+If your storefront is implemented using PWA Studio, refer to the [PWA documentation](https://magento.github.io/pwa-studio/product-recs). If you use a custom frontend technology such as React or Vue JS, learn how to [integrate]({{ site.devdocs_url }}/recommendations/headless.html) Product Recommendations into your headless storefront.
 
 ## Architectural overview
 
-At a high level, Magento's Product Recommendations are deployed as a SaaS service. The Magento side includes the storefront, which contains the event collector and recommendations layout template, and the backend, which includes the Data Services, SaaS Export module, and the Admin UI. Adobe Sensei intelligence services are leveraged on the SaaS services side.
+At a high level, Commerce Product Recommendations are deployed as SaaS. The Commerce side includes the storefront, which contains the event collector and recommendations layout template, and the backend, which includes the Data Services, SaaS Export module, and the Admin UI. Adobe Sensei intelligence services are leveraged on the SaaS side.
 
    ![Product recommendations architecture diagram]({{ page.baseurl }}/recommendations/images/arch-diag-sensei.svg)
 
@@ -20,7 +23,7 @@ Once the recommendation modules are installed and configured, your storefront wi
 
 Product Recommendations require the following data:
 
--  **Behavioral** - Data from a shopper's engagement on your site, such as product views, items added to a cart, and purchases. Magento and Adobe Sensei do not collect personally identifiable information.
+-  **Behavioral** - Data from a shopper's engagement on your site, such as product views, items added to a cart, and purchases. Commerce and Adobe Sensei do not collect personally identifiable information.
 
 -  **Catalog** - Product metadata, such as name, price, availability, and so on.
 

@@ -106,11 +106,11 @@ The `Flag` class has a `$data` constructor parameter which corresponds to the da
 
 Factories are smart enough to resolve dependencies and allow you to get the correct instance of an interface as defined in your module's `di.xml`.
 
-For example, in the [`CatalogInventory`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory){:target="_blank"} module, the `di.xml` file contains the following entry:
+For example, in the [`CatalogInventory`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory) module, the `di.xml` file contains the following entry:
 
 ```xml
 <preference for="Magento\CatalogInventory\Api\Data\StockItemInterface" type="Magento\CatalogInventory\Model\Stock\Item" />
 ```
 
-It instructs Magento to use the specific [`Item`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Model/Stock/Item.php){:target="_blank"} class wherever the [`StockItemInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php){:target="_blank"} is used.
+It instructs Magento to use the specific [`Item`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Model/Stock/Item.php) class wherever the [`StockItemInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php) is used.
 When a class in that [module](https://glossary.magento.com/module) includes the factory `StockItemInterfaceFactory` as a dependency, Magento generates a factory that is capable of creating the specific `Item` objects.
