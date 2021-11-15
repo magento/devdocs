@@ -5,7 +5,7 @@ For access to {{site.data.var.ee}} and {{site.data.var.ece}} packages, you must 
 
 To create authentication keys:
 
-1. Log in to the [Commerce Marketplace](https://marketplace.magento.com){:target="_blank"}. If you don't have an account, click **Register**.
+1. Log in to the [Commerce Marketplace](https://marketplace.magento.com). If you don't have an account, click **Register**.
 1. Click your account name in the top-right of the page and select **My Profile**.
 
 1. Click **Access Keys** in the Marketplace tab.
@@ -28,7 +28,7 @@ You can also disable or delete authentication keys. For example, you can disable
 
 To download Magento releases using SSH, you must generate a Downloads Access Token. To generate a token:
 
-1. Log in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="_blank"}.
+1. Log in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login).
 1. Click **My Account** at the top of the page.
 1. Click **Account Settings** > **Downloads Access Token**.
 

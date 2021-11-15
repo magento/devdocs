@@ -40,7 +40,7 @@ If you're cloning the GitHub repository, make sure you check out a release tag a
 
 ### Find released versions of Data Migration Tool {#migration-tool-release-version}
 
-Go to the [Releases](https://github.com/magento/data-migration-tool/releases){:target="_blank"} page of the Data Migration Tool GitHub repository to find available released versions.
+Go to the [Releases](https://github.com/magento/data-migration-tool/releases) page of the Data Migration Tool GitHub repository to find available released versions.
 
 ## Install Data Migration Tool {#data-migrate-install}
 

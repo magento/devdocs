@@ -71,8 +71,8 @@ Save your changes to `composer.json`, exit the text editor, and enter `composer 
 {:.ref-header}
 Related topics
 
-If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md).
 
 <!-- ABBREVIATIONS -->
 
-If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md).

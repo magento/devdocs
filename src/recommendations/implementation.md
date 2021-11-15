@@ -6,6 +6,9 @@ ee_only: True
 
 To help you implement product recommendations on your storefront, use the following workflow:
 
+{:.bs-callout-info}
+If your storefront is implemented using PWA Studio, refer to the [PWA documentation](https://magento.github.io/pwa-studio/product-recs). If you use a custom frontend technology such as React or Vue JS, learn how to [integrate]({{ site.devdocs_url }}/recommendations/headless.html) Product Recommendations into your headless storefront.
+
 1. **Deploy data collection to production**
 
    Deploying Product Recommendations requires two main data sources: [catalog and behavioral]({{ page.baseurl }}/recommendations/product-recs.html#types-of-data). Because production is the only environment where your shoppers' actions are captured and analyzed, it is in your best interest to start data collection on production as early as possible. See the [user guide](https://docs.magento.com/user-guide/marketing/product-recommendations.html#trainmlmodels) to learn how Adobe Sensei trains machine learning models that results in higher quality recommendations. As an added benefit, when you start collecting behavioral data on production, you can [fetch recommendations based on this production data while operating in non-production environments]({{ page.baseurl }}/recommendations/test.html). This allows you to test and experiment with different recommendations that are computed based on real shopper data collected in production.
