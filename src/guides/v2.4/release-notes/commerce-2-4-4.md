@@ -12,19 +12,20 @@ Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }}
 
 The {{ site.data.var.ee }} 2.4.4 [Beta program](https://github.com/magento/magento2/wiki/Magento-Beta-Program) includes four monthly Beta releases that merchants can use to prepare their deployments for upgrade to {{ site.data.var.ee }} 2.4.4. We are launching this program five months before {{ site.data.var.ee }} 2.4.4 General Availability (GA). The top three partners and individual contributors will receive special mention in these release notes, Beta blog posts, and in other communications. See the [Breaking News: 2.4.4 beta releases are coming soon](https://community.magento.com/t5/Magento-DevBlog/BREAKING-NEWS-2-4-4-beta-releases-are-coming-soon/ba-p/484310) Magento DevBlog post.
 
-## {{ site.data.var.ee }} 2.4.4-beta1
+## {{ site.data.var.ee }} 2.4.4-beta2
 
-{{ site.data.var.ee }} 2.4.4-beta1 has been tested against the following component versions:
+{{ site.data.var.ee }} 2.4.4-beta2 has been tested against the following component versions:
 
+*  Composer 2.1.6
 *  Elasticsearch 7.9
 *  MariaDB 10.4.14
 *  MySQL 8.0.22
-*  PHP 7.4
+*  PHP 8.0
 *  Redis 6.0.12
 *  Varnish 6.5.1
 
 {:.bs-callout-info}
-All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ee }} 2.4.4 starting with this release (2.4.4-beta1).
+All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ee }} 2.4.4.
 
 ## Other release information
 
@@ -36,7 +37,7 @@ Look for the following highlights in this release.
 
 ### Platform enhancements
 
-{{ site.data.var.ee }} 2.4.4-beta1 includes the following platform upgrades:
+{{ site.data.var.ee }} 2.4.4-beta2 includes the following platform upgrades:
 
 *  Adobe Composer dependencies have been upgraded to the latest versions that are compatible with PHP 8.0.x. <!--- AC-35-->
 
@@ -67,7 +68,7 @@ These libraries have been removed because all browsers that {{ site.data.var.ee 
 
 ### Performance enhancements
 
-*  Cart operations for carts containing over 750 configurable products has been improved by increasing the memory limit set by `max_input_vars` in the `php.ini` file to support input variables volume.
+*  Cart operations for carts containing over 750 configurable products have been improved by increasing the memory limit set by `max_input_vars` in the `php.ini` file to support input variables volume.
 
 *  Optimization of sales rules processing during checkout by deferring total calculation. Merchants can enable this deferment by setting the `checkout/deferred_total_calculating` variable in the `env.php` file. Alternatively, you can run `bin/magento setup:config:set --deferred-total-calculating 1|0`.  <!--- MCP-573-->
 
@@ -101,7 +102,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42026-->
 
-*  {{ site.data.var.ee }} now logs static content deployment errors in the build log files as expected.
+*  {{ site.data.var.ee }} now logs static content deployment errors in build log files as expected.
 
 ### AdminGWS
 
@@ -143,9 +144,13 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-715-->
 
+*  Currency conversion now occurs as expected in email confirmations for bundle product purchases in multi-store deployments that use different currencies. [GitHub-33426](https://github.com/magento/magento2/issues/33426)
+
 ### Cache
 
 <!--- AC-328-->
+
+*  Page cache no longer grows rapidly under typical use. [GitHub-9458](https://github.com/magento/magento2/issues/9458)
 
 ### Cart and checkout
 
@@ -179,7 +184,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-271-->
 
+*  You can now use `POST /V1/guest-carts/:cartId/items` to add simple products with different options to a cart. Previously, this call changed the quantity of the first simple product you added instead of adding a second simple product with the specified options. [GitHub-32302](https://github.com/magento/magento2/issues/32302)
+
 <!--- AC-1089-->
+
+*  The Order Summary section of the checkout page now displays the correct currency and amount when a deployment is configured for `Poland` country and `PLN` currency. Previously, the shopping cart and checkout page displayed the amount **PLN 0**.
 
 ### Catalog
 
@@ -257,6 +266,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42241-->
 
+*  The Matched Customers count for a new customer segment now updates automatically when you create a company account. Previously, you had to refresh segment data to get an accurate count.
+
 ### Email
 
 <!--- MC-42592-->
@@ -291,7 +302,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1318-->
 
+*  The currency symbol is now loaded as expected on storefront product details pages. Previously, this symbol sometimes disappeared after JavaScript page reloads.
+
 <!--- AC-719-->
+
+*  Updating `symfony/console` no longer causes a `setup:di:compile` failure. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
 
 ### General fixes
 
@@ -316,6 +331,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 *  Administrators can now retry operations that have been running over the maximum processing time. The default maximum is 12 hours.
 
 <!--- MC-42514-->
+
+*  Broken pipe errors no longer occurs during bulk action processing due to unacknowledged messages for the consumer. A prefetch count property now limits these messages for the consumer and avoids errors. Previously, running `bin/magento queue:consumers:start async.operations.all` generated this error:  `Broken pipe or closed connection`.
 
 ### Gift cards
 
@@ -369,6 +386,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42970-->
 
+*  The `addSimpleProductsToCart` mutation no longer supports adding simple products to a cart that are not assigned to the target website.
+
 <!--- MC-42600-->
 
 <!--- MC-43189-->
@@ -381,6 +400,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-856-->
 
+*  The `addProductsToCompareList` mutation can now be used to compare variants of configurable products.
+
 ### Image
 
 <!--- MC-42080-->
@@ -390,6 +411,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-42892-->
 
 <!--- AC-1240-->
+
+*  Logos for invoices and shipping receipts are now uploaded and displayed as expected when AWS S3 is enabled.
 
 ### Import/export
 
@@ -403,11 +426,19 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1045-->
 
+*  Import no longer fails with this message:  `Import failed: Area code not set: Area code must be set before starting a session`. [GitHub-16171](https://github.com/magento/magento2/issues/16171)
+
 ### Index
 
 <!--- MC-42791-->
 
 *  {{ site.data.var.ee }} now displays products as expected on the storefront after re-indexing. Previously, when the first 500 products being re-indexed were in stock, and the next 500 products were out of stock, the storefront did not display any additional products.
+
+### Infrastructure
+
+<!--- AC-719-->
+
+*  Updating `symfony/console` no longer causes a `setup:di:compile` failure. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
 
 ### Logging
 
@@ -415,9 +446,13 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} no longer creates log entries for failed API calls executing bulk actions in **System** > **Bulk Actions**. Previously, permanent entries for failed API calls were added to the bulk action log.
 
-### MFTF
+### Email
 
-<!--- AC-1397-->
+<!--- AC-721-->
+
+*  {{ site.data.var.ee }} now includes `Content-Disposition: inline` headers in email as expected. [GitHub-29258](https://github.com/magento/magento2/issues/29258)
+
+### MFTF
 
 ### Order
 
@@ -469,6 +504,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42268-->
 
+*  The `products` query now returns an accurate `total_count` field when shared catalog is enabled.
+
 ### Payment methods
 
 <!--- AC-493-->
@@ -495,6 +532,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-932-->
 
+*  The performance of the Popular Search Term cache has improved. Previously, the larger the `search_query` table,  the longer a search query took to complete. [GitHub-27559](https://github.com/magento/magento2/issues/27559)
+
 ### Pricing
 
 <!--- MC-42243-->
@@ -510,6 +549,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 ### Product video
 
 <!--- MC-42105-->
+
+*  Magento now enables the **Save** button and autocompletes fields when you enter an incomplete URL while adding a video (Admin **Catalog**  > **Products** > Add Video). Previously, the **Save** button was disabled, and fields were not populated.
 
 ### Return Merchandise Authorizations (RMA)
 
@@ -549,7 +590,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42545-->
 
+*  Magento now shows all sub-categories of current category in layered navigation regardless of number of categories available in the catalog.
+
 <!--- MC-41706-->
+
+*  Elasticsearch catalog searches are now diacritic-insensitive. Previously, searches for terms without an accent resulted in different results than searches on the same term with an accent.
 
 ### Shipping
 
@@ -581,6 +626,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-23994-->
 
+*  Product stock status is now displayed correctly in Schedule Update previews. Previously, product status was displayed as out-of-stock when a previously disabled product was enabled during creation of the Schedule Update.
+
 ### Store
 
 <!--- MC-42884-->
@@ -603,21 +650,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Added a test to verify custom date attribute format for storefront and Admin.
 
-<!--- AC-1085-->
-
-<!--- AC-352-->
-
-<!--- AC-1193-->
-
 ### Theme
 
 <!--- MC-41887-->
 
 *  Notification messages are now displayed correctly when {{ site.data.var.ee }} has a subpath configured in its base URL.
-
-### UCT
-
-<!--- AC-686-->
 
 ### UI
 
@@ -655,21 +692,26 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  You can now create objects using the child classes of `\Magento\Framework\Api\AbstractSimpleObjectBuilder` on PHP 7.3. Previously, `preg_match` threw this warning message when {{ site.data.var.ee }} was hosted on Redhat with PHP 7.3: `Warning: preg_match(): Compilation failed: unrecognized character follows \ at offset 28 in /var/www/nationaloak.com/vendor/magento/framework/Api/AbstractSimpleObjectBuilder.php on line 76`.
 
-<!--- AC-1004-->
-
 <!--- MC-24548-->
+
+*  The totals retrieved by the `PUT /V1/guest-carts/{cartId}/collect-totals` request are now updated by the correct `shippingMethod.` [GitHub-18508](https://github.com/magento/magento2/issues/18508)
 
 <!--- MC-42399-->
 
-<!--- MC-42443-->
+*  `rest/V1/company/{id}` now returns `is_purchase_order_enabled` attribute values as expected.
 
-<!--- AC-1050-->
+<!--- MC-42443-->
 
 ### Wish list
 
 <!--- MC-41880-->
 
 *  {{ site.data.var.ee }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ee }} ignored this option.
+
+## Known issue
+
+**Known issue**: Deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0.
+ Adobe Commerce displays the following deprecation message during download: `Deprecation Notice: Required parameter $pathSuffix follows optional parameter $translations in vendor/magento/magento-composer-installer/src/MagentoHackathon/Composer/Magento/MapParser.php:12`. Installation is not affected by this message. <!--- AC-1678-->
 
 ### System requirements
 
