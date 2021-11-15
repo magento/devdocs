@@ -84,9 +84,9 @@ PHP Warning:  date(): It is not safe to rely on the system's timezone settings. 
 
    These settings allow PHP processes to cache paths to files instead of looking them up each time a page loads. See [Performance Tuning](https://www.php.net/manual/en/ini.core.php) in the PHP documentation.
 
--  Enable [`opcache.save_comments`](https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments){:target="_blank"}, which is required for Magento 2.1 and later.
+-  Enable [`opcache.save_comments`](https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments), which is required for Magento 2.1 and later.
 
-   We recommend you enable the [PHP OPcache](https://www.php.net/manual/en/book.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
+   We recommend you enable the [PHP OPcache](https://www.php.net/manual/en/book.opcache.php) for performance reasons. The OPcache is enabled in many PHP distributions.
 
    Magento 2.1 and later use PHP code comments for code generation.
 
@@ -139,7 +139,7 @@ If you have more than one `opcache.ini`, modify all of them.
 To set PHP options:
 
 1. Open a `php.ini` in a text editor.
-1. Locate your server's time zone in the available [time zone settings](https://php.net/manual/en/timezones.php){:target="_blank"}
+1. Locate your server's time zone in the available [time zone settings](https://php.net/manual/en/timezones.php)
 1. Locate the following setting and uncomment it if necessary:
 
    ```conf

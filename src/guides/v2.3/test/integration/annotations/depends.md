@@ -118,4 +118,4 @@ public function testEmail(CustomerInterface $customer)
 }
 ```
 
-You can read more about PHPUnit dependency annotation [here](https://phpunit.readthedocs.io/en/8.2/annotations.html#depends){:target="_blank"}.
+You can read more about PHPUnit dependency annotation [here](https://phpunit.readthedocs.io/en/8.2/annotations.html#depends).

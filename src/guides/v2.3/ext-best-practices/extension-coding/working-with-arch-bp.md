@@ -30,10 +30,10 @@ There have been some significant changes from Magento 1. Be sure to study the ca
 
 For example:
 
--  Instead of creating custom validators from scratch, implement the [`\Magento\Framework\Validator\ValidatorInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Validator/ValidatorInterface.php){:target="_blank"}.
+-  Instead of creating custom validators from scratch, implement the [`\Magento\Framework\Validator\ValidatorInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Validator/ValidatorInterface.php).
 -  Instantiating a database connection can be expensive and unnecessary. Magento provides resource models for performing SQL commands. (See [Persistence Layer]({{ page.baseurl }}/architecture/archi_perspectives/persist_layer.html))
 -  Consider using Magento framework conventions instead of low-level or [PHP](https://glossary.magento.com/php) functionality.
--  Use the  [`Magento\Framework\Data\Collection`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Data/Collection.php){:target="_blank"} class to retrieve a collection of filtered objects instead of directly querying the database.
+-  Use the  [`Magento\Framework\Data\Collection`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Data/Collection.php) class to retrieve a collection of filtered objects instead of directly querying the database.
 
 ### Use dependency injection
 
@@ -52,4 +52,4 @@ Some important things to check in your extensions:
 
 ### Use the PHP_CodeSniffer tool
 
-[PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"} is a set of PHP scripts that checks your code for violations of a particular coding standard. It can be used in conjunction with the [Magento Coding Standard](https://github.com/magento/magento-coding-standard){:target="_blank"} to check your code for some of the more common Magento and PHP problems. Using these two tools will ensure that your extension code meets many of [Magento's coding standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html). It also has the added benefits of keeping your code clean and maintainable.
+[PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a set of PHP scripts that checks your code for violations of a particular coding standard. It can be used in conjunction with the [Magento Coding Standard](https://github.com/magento/magento-coding-standard) to check your code for some of the more common Magento and PHP problems. Using these two tools will ensure that your extension code meets many of [Magento's coding standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html). It also has the added benefits of keeping your code clean and maintainable.

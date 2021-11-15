@@ -3543,7 +3543,7 @@ The following table identifies contributions from our community members. This ta
 
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements.html)
 
- For more information, see [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
+ For more information, see [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ### Installation and upgrade instructions
 

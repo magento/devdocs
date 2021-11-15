@@ -7,7 +7,7 @@ functional_areas:
 
 ## In this topic
 
-Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your theme [inherit][theme-inherit]{:target="_blank"} from the Magento Blank theme.
+Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your theme [inherit][theme-inherit] from the Magento Blank theme.
 
 ## Mobile first
 
