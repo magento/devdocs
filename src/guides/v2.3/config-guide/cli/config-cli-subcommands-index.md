@@ -135,8 +135,6 @@ These indexes can be run in parallel mode:
 -  'Category Product' can be paralleled by store views.
 -  'Catalog Price' can be paralleled by website and customer groups.
 
-By default, Catalog Price does not use a partitioning into dimension.
-
 If you want to use parallelization, you need to set one of the available modes of dimensions for the product price indexer:
 
 -  `none` (default)
