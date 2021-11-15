@@ -12,7 +12,7 @@ functional_areas:
 
 ## Clone the repo {#instgde-prereq-compose-clone}
 
-This section discusses how to get current code by cloning [Magento's GitHub repository][]{:target="_blank"} and checking out branches.
+This section discusses how to get current code by cloning [Magento's GitHub repository][] and checking out branches.
 You can either checkout a release branch or a development branch:
 
 *  Release branches, like `2.x.0`, are more stable. You _must_ use a release branch with the [Data Migration Tool][].
@@ -21,7 +21,7 @@ You can either checkout a release branch or a development branch:
 
 You can checkout a specific release branch after cloning the latest code.
 
-Refer to [GitHub's documentation][]{:target="_blank"} for instructions on cloning a repository.
+Refer to [GitHub's documentation][] for instructions on cloning a repository.
 
 ### Creating an authorization file {#instgde-prereq-compose-clone-auth}
 

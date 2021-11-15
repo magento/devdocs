@@ -64,22 +64,22 @@ bin/uct upgrade:check --help
 
 Available `--help` options for the `upgrade:check` command:
 
-*  --raw: Outputs raw information.
-*  --format=FORMAT: Output format (txt, xml, json, md).
-*  --short: Skip arguments description.
-*  -o, --output[=OUTPUT]: Path directory to export the `.json` output file.
-*  -m, --module-path[=MODULE-PATH]: Modules path directory .
-*  --schema1[=SCHEMA1]: Endpoint URL for the existing installation.
-*  --schema2[=SCHEMA2]: Endpoint URL for the vanilla installation.
-*  --vanilla-dir: {{site.data.var.ee}} vanilla installation directory.
-*  --min-issue-level: Minimum issue level to show in report. Default is [WARNING].
-*  --ignore-current-version-compatibility-issues: Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `--raw`: Outputs raw information.
+*  `--format=FORMAT`: Output format (txt, xml, json, md).
+*  `--short`: Skip arguments description.
+*  `-o, --output[=OUTPUT]`: Path directory to export the `.json` output file.
+*  `-m, --module-path[=MODULE-PATH]`: Modules path directory .
+*  `--schema1[=SCHEMA1]`: Endpoint URL for the existing installation.
+*  `--schema2[=SCHEMA2]`: Endpoint URL for the vanilla installation.
+*  `--vanilla-dir`: {{site.data.var.ee}} vanilla installation directory.
+*  `--min-issue-level`: Minimum issue level to show in report. Default is [WARNING].
+*  `--ignore-current-version-compatibility-issues`: Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ### Output
 
@@ -127,14 +127,15 @@ To return a list of the {{site.data.var.uct}} available commands, run:
 ```bash
 bin/uct list
 ```
+
 This `list` commands returns the following:
 
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ## Use the `core:code:changes` command
 
@@ -158,12 +159,12 @@ There are some limitations when running this command:
 
 Available `--help` options for the `core:code:changes` command:
 
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ## Version
 
@@ -177,7 +178,7 @@ bin/uct upgrade:check <dir> -c 2.4.3
 
 Where:
 
-*  -c, --coming-version[=COMING-VERSION]: The {{site.data.var.ee}} targeted version.
+*  `-c, --coming-version[=COMING-VERSION]`: The {{site.data.var.ee}} targeted version.
 
 There are some limitations when running the previous command:
 
@@ -205,12 +206,12 @@ You must have running `instance before` and `instance after` the upgrade.
 
 Available `--help` options for the `graphql:compare` command:
 
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ### Example with a list of critical issues, errors, and warnings for GraphQL
 

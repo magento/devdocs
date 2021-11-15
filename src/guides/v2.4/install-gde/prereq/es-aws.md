@@ -47,7 +47,7 @@ To test that the new configuration is working, test the Elasticsearch endpoint d
 
 ## Additional resources {#es-resources}
 
-For additional information, see [Elasticsearch documentation][]{:target="_blank"}
+For additional information, see [Elasticsearch documentation][]
 
 <!-- Link Definitions -->
 

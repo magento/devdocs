@@ -44,7 +44,7 @@ On CentOS, `<name>` is `httpd`. On Ubuntu, `<name>` is `apache2`.
 
 ### Additional resources
 
-*  [Apache documentation about mod_access_compat](http://httpd.apache.org/docs/current/mod/mod_access_compat.html){:target="_blank"}
-*  [Apache documentation about mod_authz_host](http://httpd.apache.org/docs/current/mod/mod_authz_host.html){:target="_blank"}
-*  [Order, Allow, Deny from the Apache Definitive Guide](http://docstore.mik.ua/orelly/linux/apache/ch05_06.htm){:target="_blank"}
-*  [askubuntu.com](http://askubuntu.com/questions/335228/changes-in-apache-config-between-12-04-2-and-12-04-3-lts){:target="_blank"}
+*  [Apache documentation about mod_access_compat](http://httpd.apache.org/docs/current/mod/mod_access_compat.html)
+*  [Apache documentation about mod_authz_host](http://httpd.apache.org/docs/current/mod/mod_authz_host.html)
+*  [Order, Allow, Deny from the Apache Definitive Guide](http://docstore.mik.ua/orelly/linux/apache/ch05_06.htm)
+*  [askubuntu.com](http://askubuntu.com/questions/335228/changes-in-apache-config-between-12-04-2-and-12-04-3-lts)

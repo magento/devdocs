@@ -9,7 +9,7 @@ Adobe Commerce and Magento Open Source compiles catalog data into tables using i
 
 To synchronize catalog data, you must have an [API key and a SaaS Data Space configured](https://docs.magento.com/user-guide/system/saas.html). If you do not have an API key and have not configured a SaaS Data Space, you can still reindex product data but that data will not be exported to Commerce services.
 
-The `saascatalog:resync` command is part of the `magento/saas-export` package. See [Install and configure Product Recommendations]({{ site.baseurl }}/recommendations/install-configure.html) for more information.
+The `saas:resync` command is part of the `magento/saas-export` package. See [Install and configure Product Recommendations]({{ site.baseurl }}/recommendations/install-configure.html) for more information.
 
 See the [user guide](https://docs.magento.com/user-guide/system/catalog-sync.html) to learn how to use the Catalog Sync dashboard in the Admin UI to observe and manage the Commerce to SaaS syncing process.
 
@@ -19,7 +19,7 @@ When you trigger a data resync from the command line, it can take up to an hour 
 Command options:
 
 ```bash
-bin/magento saascatalog:resync --feed <feed name> [no-reindex]
+bin/magento saas:resync --feed <feed name> [no-reindex]
 ```
 
 The following table explains this command’s parameters and descriptions.
@@ -42,11 +42,11 @@ The feed name can be one of the following:
 The following example reindexes the product data from the Commerce catalog and resyncs it to Commerce services:
 
 ```bash
-bin/magento saascatalog:resync --feed products
+bin/magento saas:resync --feed products
 ```
 
 If you do not want to run a full reindex of the products, you can instead sync the product data that has already been generated:
 
 ```bash
-bin/magento saascatalog:resync --feed products --no-reindex
+bin/magento saas:resync --feed products --no-reindex
 ```

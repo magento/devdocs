@@ -15,7 +15,7 @@ redirect_from:
 Before you continue, you must do the following:
 
 -  Complete all [prerequisite tasks][].
--  [Install Composer][]{:target="_blank"}.
+-  [Install Composer][].
 -  Get [authentication keys][] to the Magento Composer repository.
 
 ## Log in as file system owner {#instgde-cli-before}

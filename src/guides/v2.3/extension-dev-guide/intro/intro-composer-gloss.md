@@ -34,7 +34,7 @@ For example, you might want to list two metapackages in the Commerce Marketplace
 Merchants do not need to understand that, under the covers, some packages are shared.
 
 {:.bs-callout-warning}
-You can upload to Commerce Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the [Commerce Marketplace User Guide](http://docs.magento.com/marketplace/user_guide/getting-started.html){:target="_blank"}.
+You can upload to Commerce Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the [Commerce Marketplace User Guide](http://docs.magento.com/marketplace/user_guide/getting-started.html).
 
 {:.ref-header}
 Related topics

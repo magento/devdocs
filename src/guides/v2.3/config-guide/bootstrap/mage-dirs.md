@@ -13,7 +13,7 @@ The `MAGE_DIRS` environment variable enables you to specify custom base director
 
 ## Set MAGE_DIRS {#dirs-set}
 
-Specify an associative array where keys are constants from [\\Magento\\App\\Filesystem\\DirectoryList]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Filesystem/DirectoryList.php){:target="_blank"} and values are absolute paths of directories or their [URL](https://glossary.magento.com/url) paths, respectively.
+Specify an associative array where keys are constants from [\\Magento\\App\\Filesystem\\DirectoryList]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Filesystem/DirectoryList.php) and values are absolute paths of directories or their [URL](https://glossary.magento.com/url) paths, respectively.
 
 You can set `MAGE_DIRS` in any of the following ways:
 
