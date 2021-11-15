@@ -28,6 +28,9 @@ pages:
         - label: HTML style guide
           url: /coding-standards/code-standard-html.html
 
+        - label: Contributing
+          url: /coding-standards/contributing.html
+
     - label: Technical guidelines
       url: /coding-standards/technical-guidelines.html
 
