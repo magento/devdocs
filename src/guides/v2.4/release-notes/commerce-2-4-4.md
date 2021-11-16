@@ -428,6 +428,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Import no longer fails with this message:  `Import failed: Area code not set: Area code must be set before starting a session`. [GitHub-16171](https://github.com/magento/magento2/issues/16171)
 
+<!--- AC-988-->
+
+*  You can now import successfully after running  `bin/magento app:config:dump` and manually changing `config.php`.
+
 ### Index
 
 <!--- MC-42791-->
@@ -440,6 +444,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Updating `symfony/console` no longer causes a `setup:di:compile` failure. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
 
+<!--- AC-1077-->
+
+*  You can now pass a `data` argument to a block instance constructor by `di.xml`.
+
+<!--- AC-1172-->
+
+*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for Magento 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
+
 ### Logging
 
 <!--- MC-42360-->
@@ -451,6 +463,18 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- AC-721-->
 
 *  {{ site.data.var.ee }} now includes `Content-Disposition: inline` headers in email as expected. [GitHub-29258](https://github.com/magento/magento2/issues/29258)
+
+### Locales
+
+<!--- AC-285-->
+
+*  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ee }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
+
+### Media Gallery
+
+<!--- AC-1054-->
+
+*  The `bin/magento media-gallery:sync` command no longer fails in deployments where AS S3 is enabled.
 
 ### MFTF
 
@@ -521,6 +545,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-42154-->
 
 *  {{ site.data.var.ee }} no longer displays an error during checkout with the PayPal Express payment method. Previously, although the checkout process completed, {{ site.data.var.ee }} displayed this error: `Something went wrong`.
+
+<!--- AC-722-->
+
+*  PayPal Express now works as expected from the shopping cart. Previously, when you clicked the **PayPal** button to start express checkout from the cart, Magento threw this error:  `To check out, please sign in with your email address`. [GitHub-33445](https://github.com/magento/magento2/issues/33445)
 
 ### Performance
 
@@ -643,6 +671,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-41945-->
 
 *  {{ site.data.var.ee }} now shows the same tax rate on all checkout pages when the shopping cart contains only virtual products.
+
+<!--- AC-714-->
+
+*  Tier prices for configurable now display accurate included and excluded tax values on the storefront. Previously, the same values were displayed for both included and excluded taxes. [GitHub-33673}( https://github.com/magento/magento2/issues/33673)
 
 ### Test
 
