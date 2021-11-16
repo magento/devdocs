@@ -30,6 +30,7 @@ pages:
 
         - label: Contributing
           url: /coding-standards/contributing.html
+          versionless: true
 
     - label: Technical guidelines
       url: /coding-standards/technical-guidelines.html
