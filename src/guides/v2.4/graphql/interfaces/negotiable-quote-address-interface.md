@@ -6,6 +6,7 @@ b2b_only: true
 
 The `NegotiableQuoteAddressInterface` has the following implementations:
 
+*  NegotiableQuoteBillingAddress
 *  NegotiableQuoteShippingAddress
 
 ## NegotiableQuoteAddressInterface attributes
