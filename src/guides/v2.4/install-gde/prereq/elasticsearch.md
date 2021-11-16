@@ -96,7 +96,7 @@ Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Develop
 
 ## Additional resources {#es-resources}
 
-For additional information, see [Elasticsearch documentation][]{:target="_blank"}
+For additional information, see [Elasticsearch documentation][]
 
 ### Next
 

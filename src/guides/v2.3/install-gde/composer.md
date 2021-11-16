@@ -17,7 +17,7 @@ Before you continue, you must do the following:
 -  Set up a server that meets our [system requirements][].
 -  Complete all [prerequisite tasks][].
 -  Create and switch to the [file system owner](#instgde-cli-before).
--  [Install Composer][]{:target="_blank"}.
+-  [Install Composer][].
 -  Obtain [authentication keys][] for the Magento code repository.
 
 ## Log in as file system owner {#instgde-cli-before}

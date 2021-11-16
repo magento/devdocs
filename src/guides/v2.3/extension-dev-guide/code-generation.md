@@ -56,7 +56,7 @@ The code compiler creates the `generated/metadata/global.php` file, which is a P
 
 <!-- Link Definitions -->
 [Magento/Customer/Model/Resource/AddressRepository]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php
-{:target="_blank"}
+
 [production mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [Instantiating objects with factories]: {{ page.baseurl }}/extension-dev-guide/factories.html
 [Proxies]: {{ page.baseurl }}/extension-dev-guide/proxies.html

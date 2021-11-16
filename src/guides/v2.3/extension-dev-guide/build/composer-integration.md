@@ -5,7 +5,7 @@ title: The composer.json file
 
 ## Overview
 
-Magento 2 uses [Composer][0]{:target="_blank"}, a [PHP](https://glossary.magento.com/php) dependency manager, to package components and product editions.
+Magento 2 uses [Composer][0], a [PHP](https://glossary.magento.com/php) dependency manager, to package components and product editions.
 
 Composer reads a `composer.json` file in Magento's root directory to download third-party dependencies listed in the file.
 
@@ -50,7 +50,7 @@ Keep this in mind while customizing, updating, or troubleshooting composer while
 
 ## Project vs product
 
-In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="_blank"} to set up the project structure.
+In Composer, a "project" package is a template used by the [`composer create-project`][9] to set up the project structure.
 The [installation instructions for system integrators][10] use the {{site.data.var.ce}} and {{site.data.var.ee}} project packages to set up the Magento directory structure.
 
 A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.
@@ -146,7 +146,7 @@ The `composer.json` file for a [theme](https://glossary.magento.com/theme) compo
 
 **Type:** `magento2-language`
 
-For language packages, you must use the correct [ISO code][4]{:target="_blank"} for the language code in the `composer.json` file.
+For language packages, you must use the correct [ISO code][4] for the language code in the `composer.json` file.
 
 ---
 
@@ -177,11 +177,11 @@ For example, the vendor name format for extensions released by Magento Inc is `m
 #### Commerce Marketplace Extensions
 
 Commerce Marketplace uses `vendor-name` to match an extension to a vendor during the extension submission process.
-If you plan to submit your extension to the [Commerce Marketplace][7]{:target="_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
+If you plan to submit your extension to the [Commerce Marketplace][7], you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
 
 In the `composer.json` file, use the value of 'Vendor Name' in your profile for the `vendor-name` part of the extension name.
 
-Please see the [Marketplace Documentation][5]{:target="_blank"} for more information about your unique vendor name.
+Please see the [Marketplace Documentation][5] for more information about your unique vendor name.
 
 ### package-name
 
