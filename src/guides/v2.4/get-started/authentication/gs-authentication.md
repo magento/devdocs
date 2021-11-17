@@ -168,7 +168,7 @@ This method is a good choice for authenticating customers and Admin users in thi
 *  **Customer Token**—Use this token in applications to authorize specific customer and query data related to that customer (for example, customer details, cart, and orders).
 *  **Admin Token**—Use this token in applications to authorize an Admin user and access Admin-related APIs.
 
-[Request a token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#request-token) and then (include it in future requests)({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access).
+[Request a token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#request-token) and then include it in [future requests]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access).
 
 {:.bs-callout-info}
 You should use this type of authentication mechanism over HTTPS.
