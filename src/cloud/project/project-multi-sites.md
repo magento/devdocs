@@ -38,12 +38,12 @@ To add a store view to the site base URL, you do not have to create multiple dir
 
 ### Cloud Pro
 
-- You must open a Support ticket to request new domains to be added to the cluster.
+-  You must open a Support ticket to request new domains to be added to the cluster.
 
 ### Cloud Starter
 
-- You can either add the domain to Fastly in Production yourself or open a ticket to request this.
-- You will also have to add the domain to the Domains tab at `https://<zone>.magento.cloud/projects/<project ID>/edit`
+-  You can either add the domain to Fastly in Production yourself or open a ticket to request this.
+-  You will also have to add the domain to the Domains tab at `https://<zone>.magento.cloud/projects/<project ID>/edit`
 
 ## Configure local installation
 
