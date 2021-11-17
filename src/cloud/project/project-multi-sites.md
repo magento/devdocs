@@ -43,7 +43,7 @@ To add a store view to the site base URL, you do not have to create multiple dir
 ### Cloud Starter
 
 - You can either add the domain to Fastly in Production yourself or open a ticket to request this.
-- You will also have to add the domain to the Domains tab at https://<zone>.magento.cloud/projects/<project ID>/edit
+- You will also have to add the domain to the Domains tab at `https://<zone>.magento.cloud/projects/<project ID>/edit`
 
 ## Configure local installation
 
