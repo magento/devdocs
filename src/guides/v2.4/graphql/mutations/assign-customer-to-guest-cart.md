@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: assignCustomerToGuestCart mutation
+contributor_name: Atwix
+contributor_link: https://www.atwix.com/
 ---
 
 The `assignCustomerToGuestCart` mutation assigns a logged in customer and merge customer's shopping cart items to the specified guest shopping cart.
