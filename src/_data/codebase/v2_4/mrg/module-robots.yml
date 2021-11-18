@@ -1,6 +1,5 @@
 ---
 title: Robots
-release: 2.4.3
 content: "The Robots module provides the following functionalities: \n* contains a
   router to match application action class for requests to the `robots.txt` file;\n*
   allows obtaining the content of the `robots.txt` file depending on the settings

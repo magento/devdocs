@@ -1,6 +1,5 @@
 ---
 title: CheckoutStaging
-release: 2.4.3
 content: |-
   The Magento_CheckoutStaging module is a part of the staging functionality in Magento EE.
   It extends the checkout functionality and enables you to use it in the staging preview mode.

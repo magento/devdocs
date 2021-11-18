@@ -1,6 +1,5 @@
 ---
 title: InventoryCatalog
-release: 2.4.3
 content: |-
   The `InventoryCatalog` module integrates inventory management business logic into Magento's catalog logic.
 

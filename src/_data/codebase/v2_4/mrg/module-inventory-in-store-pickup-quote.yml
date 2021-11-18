@@ -1,6 +1,5 @@
 ---
 title: InventoryInStorePickupQuote
-release: 2.4.3
 content: |-
   The `InventoryInStorePickupQuote` module provides business logic for In-Store Pickup implementation in order placement flow.
 

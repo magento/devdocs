@@ -1,6 +1,5 @@
 ---
 title: MediaContentSynchronizationCatalog
-release: 2.4.3
 content: |-
   The Magento_MediaContentCatalog provides the implementation of MediaContentSyncronization functionality for Magento_Catalog module
 

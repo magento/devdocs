@@ -1,6 +1,5 @@
 ---
 title: MediaGallery
-release: 2.4.3
 content: |-
   The Magento_MediaGallery module is responsible for storing and managing media gallery assets attributes.
 

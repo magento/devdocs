@@ -1,6 +1,5 @@
 ---
 title: InventoryBundleProductAdminUi
-release: 2.4.3
 content: |-
   The `InventoryBundleProductAdminUi`extends the Magento Admin UI to add MSI functionality.
 

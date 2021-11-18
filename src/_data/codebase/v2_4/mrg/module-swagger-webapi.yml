@@ -1,5 +1,4 @@
 ---
 title: SwaggerWebapi
-release: 2.4.3
 content: The Magento_SwaggerWebapi module provides the implementation of the REST
   Webapi module with Magento_Swagger.

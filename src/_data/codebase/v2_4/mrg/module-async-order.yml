@@ -1,0 +1,7 @@
+---
+title: AsyncOrder
+content: "**AsyncOrder** module provides the ability to save order items asynchronously.\n\nThis
+  functionality is optional and disabled by default. \nIt could be enabled by setting
+  *'checkout/async'* variable inside *env.php* file\ne.g.\n\n```php\n<?php\n      'checkout'
+  => [\n               'async' => 1\n       ]\n```\n\nIt can also be enabled through
+  \n\n```php\n    bin/magento setup:config:set --checkout-async 1\n```"

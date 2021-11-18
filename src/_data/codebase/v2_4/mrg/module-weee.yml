@@ -1,6 +1,5 @@
 ---
 title: Weee
-release: 2.4.3
 content: "The Magento_Weee module enables the application of fees/fixed product taxes
   (FPT) on certain types of products, usually related to electronic devices and recycling.\n\nFixed
   product taxes can be used to setup a WEEE tax that is a fixed amount, rather than
