@@ -17,7 +17,7 @@ To reduce the network bandwidth to Redis, we can store cache data locally on eac
 Magento stores the hashed data version in Redis, with the suffix ':version' appended to the regular key. In case of an outdated local cache, the data is transferred to the local machine with a cache adapter.
 
 {:.bs-callout-info}
-For Adobe Commerce Cloud it is recommended to follow the configuration best practice and Extended Redis Cache [implementation guide](https://support.magento.com/hc/en-us/articles/360049292532).
+For {{ site.data.var.ece }}, consider the [Extended Redis cache implementation](https://support.magento.com/hc/en-us/articles/360049292532) best practice guide.
 
 ## Configuration example
 
