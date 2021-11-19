@@ -40,7 +40,7 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 *  shopping cart
 *  mini cart
 
-**Workaround**: Shoppers can use PayPal Express checkout using the full checkout workflow. <!--- AC-1765-->
+**Workaround**: Shoppers can use PayPal Express checkout in the full checkout workflow. <!--- AC-1765-->
 
 **Issue: Label not created for DHL shipments**. The **Length**, **Width**, and **Height** fields of the Admin Create Packages window in the checkout workflow are disabled when adding a bundle product to a package. <!--- AC-1764-->
 
@@ -505,8 +505,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  The `bin/magento media-gallery:sync` command no longer fails in deployments where AS S3 is enabled.
 
-### MFTF
-
 ### Order
 
 <!--- MC-41981-->
@@ -751,7 +749,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42313-->
 
-*  You can now create objects using the child classes of `\Magento\Framework\Api\AbstractSimpleObjectBuilder` on PHP 7.3. Previously, `preg_match` threw this warning message when {{ site.data.var.ee }} was hosted on Redhat with PHP 7.3: `Warning: preg_match(): Compilation failed: unrecognized character follows \ at offset 28 in /var/www/nationaloak.com/vendor/magento/framework/Api/AbstractSimpleObjectBuilder.php on line 76`.
+*  You can now create objects using the child classes of `\Magento\Framework\Api\AbstractSimpleObjectBuilder` on PHP 7.3. Previously, `preg_match` threw this warning message when {{ site.data.var.ee }} was hosted on Redhat with PHP 7.3: `Warning: preg_match(): Compilation failed: unrecognized character follows...`.
 
 <!--- MC-24548-->
 

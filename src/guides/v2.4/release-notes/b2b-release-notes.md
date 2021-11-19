@@ -29,7 +29,7 @@ These release notes can include:
 
 -  {:.fix} <!--- MC-42203--> You can now update a file for a customer attribute when creating a company. Previously, when you tried to create a company with an attachment of type `File`, {{ site.data.var.ee }} did not create the company and logged this error in the exception log: `Something went wrong while saving file`.
 
--  {:.fix} <!--- MC-42242--> You can now create a company with a customer account that has a custom attribute with a (`File`) or (`Image`)type. Previously, if the account had one of these customizable options, the Company edit page loader did not resolve, which prevented editing company details.
+-  {:.fix} <!--- MC-42242--> You can now create a company with a customer account that has a custom attribute with a (`File`) or (`Image`) type. Previously, if the account had one of these customizable options, the Company edit page loader did not resolve, which prevented the editing of company details.
 
 ## Magento B2B - Version 1.3.2
 
