@@ -13,7 +13,7 @@ These release notes can include:
 
 -  {:.fix} <!--- MC-41985--> The time required to upgrade from {{ site.data.var.ee }} 2.3.x to {{ site.data.var.ee }} 2.4.x in deployments with more than 100,000 company roles has been substantially reduced.
 
--  {:.fix} <!--- MC-42153--> The POST `/rest/V1/order/<order_id>/invoice` request now supports the creation of partial invoices when the **Payment on Account** payment method is enabled. Previously, {{ site.data.var.ee }} threw this error: `An invoice for partial quantities cannot be issued for this order. To continue, change the specified quantity to the full quantity`. [GitHub-32428](https://github.com/magento/magento2/issues/32428)
+-  {:.fix} <!--- MC-42153--> The POST `V1/order/:orderId/invoice` request now supports the creation of partial invoices when the **Payment on Account** payment method is enabled. Previously, {{ site.data.var.ee }} threw this error: `An invoice for partial quantities cannot be issued for this order. To continue, change the specified quantity to the full quantity`. [GitHub-32428](https://github.com/magento/magento2/issues/32428)
 
 -  {:.fix} <!--- MC-41975--> PayPal PayFlow Pro now works as expected with B2B negotiable quote when the customer’s cart contains other products. {{ site.data.var.ee }} now successfully processes the order and sends email to the customer as expected. Previously, {{ site.data.var.ee }} threw a fatal error and sent a confirmation email to the customer that contained zero values.
 

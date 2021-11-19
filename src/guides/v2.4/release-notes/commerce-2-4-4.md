@@ -12,7 +12,7 @@ Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }}
 
 ## {{ site.data.var.ee }} Beta program
 
-The {{ site.data.var.ee }} 2.4.4 [Beta program](https://github.com/magento/magento2/wiki/Magento-Beta-Program) includes four monthly Beta releases that merchants can use to prepare their deployments for upgrade to {{ site.data.var.ee }} 2.4.4. We are launching this program five months before {{ site.data.var.ee }} 2.4.4 General Availability (GA). The top three partners and individual contributors will receive special mention in these release notes, Beta blog posts, and in other communications. See the [Breaking News: 2.4.4 beta releases are coming soon](https://community.magento.com/t5/Magento-DevBlog/BREAKING-NEWS-2-4-4-beta-releases-are-coming-soon/ba-p/484310) DevBlog post.
+The {{ site.data.var.ee }} 2.4.4 [Beta program](https://devdocs.magento.com/release/beta-program.html) includes four monthly Beta releases that merchants can use to prepare their deployments for upgrade to {{ site.data.var.ee }} 2.4.4. We are launching this program five months before {{ site.data.var.ee }} 2.4.4 General Availability (GA). The top three partners and individual contributors will receive special mention in these release notes, Beta blog posts, and in other communications. See the [Breaking News: 2.4.4 beta releases are coming soon](https://community.magento.com/t5/Magento-DevBlog/BREAKING-NEWS-2-4-4-beta-releases-are-coming-soon/ba-p/484310) DevBlog post.
 
 ## {{ site.data.var.ee }} 2.4.4-beta2
 
@@ -31,14 +31,13 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 ## Known issues
 
-**Issue: Deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0**.
- Adobe Commerce displays the following deprecation message during download: `Deprecation Notice: Required parameter $pathSuffix follows optional parameter $translations in vendor/magento/magento-composer-installer/src/MagentoHackathon/Composer/Magento/MapParser.php:12`. Installation is not affected by this message. <!--- AC-1678-->
+**Issue: Deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0**. {{ site.data.var.ee }} displays the following deprecation message during download: `Deprecation Notice: Required parameter $pathSuffix follows optional parameter $translations in vendor/magento/magento-composer-installer/src/MagentoHackathon/Composer/Magento/MapParser.php:12`. Installation is not affected by this message. <!--- AC-1678-->
 
 **Issue: The PayPal button is missing from the mini cart, shopping cart, and product detail pages**. When the PayPal Express Checkout payment method is enabled on a deployment running B2B, the **PayPal** button is not displayed on these pages:
 
-*  product details
-*  shopping cart
-*  mini cart
+*  Product details
+*  Shopping cart
+*  Mini cart
 
 **Workaround**: Shoppers can use PayPal Express checkout in the full checkout workflow. <!--- AC-1765-->
 
@@ -335,7 +334,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-719-->
 
-*  Updating `symfony/console` no longer causes a `setup:di:compile` failure. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
+*  Updating `symfony/console` no longer causes a failure when running `bin/magento setup:di:compile`. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
 
 ### General fixes
 
@@ -361,7 +360,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42514-->
 
-*  Broken pipe errors no longer occurs during bulk action processing due to unacknowledged messages for the consumer. A prefetch count property now limits these messages for the consumer and avoids errors. Previously, running `bin/magento queue:consumers:start async.operations.all` generated this error:  `Broken pipe or closed connection`.
+*  Broken pipe errors no longer occur during bulk action processing due to unacknowledged messages for the consumer. A prefetch count property now limits these messages for the consumer and avoids errors. Previously, running `bin/magento queue:consumers:start async.operations.all` generated this error:  `Broken pipe or closed connection`.
 
 ### Gift cards
 
@@ -415,7 +414,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42970-->
 
-*  The `addSimpleProductsToCart` mutation no longer supports adding simple products to a cart that are not assigned to the target website.
+*  Corrected an issue where the `addSimpleProductsToCart` mutation allowed you to add simple products to a cart that are not assigned to the target website.
 
 <!--- MC-42600-->
 
@@ -503,7 +502,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1054-->
 
-*  The `bin/magento media-gallery:sync` command no longer fails in deployments where AS S3 is enabled.
+*  The `bin/magento media-gallery:sync` command no longer fails in deployments where AWS S3 is enabled.
 
 ### Order
 
@@ -575,7 +574,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-722-->
 
-*  PayPal Express now works as expected from the shopping cart. Previously, when you clicked the **PayPal** button to start express checkout from the cart, Magento threw this error:  `To check out, please sign in with your email address`. [GitHub-33445](https://github.com/magento/magento2/issues/33445)
+*  PayPal Express now works as expected from the shopping cart. Previously, when you clicked the **PayPal** button to start express checkout from the cart, {{ site.data.var.ee }} threw this error:  `To check out, please sign in with your email address`. [GitHub-33445](https://github.com/magento/magento2/issues/33445)
 
 ### Performance
 
@@ -587,7 +586,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-932-->
 
-*  The performance of the Popular Search Term cache has improved. Previously, the larger the `search_query` table,  the longer a search query took to complete. [GitHub-27559](https://github.com/magento/magento2/issues/27559)
+*  The performance of the Popular Search Term cache has improved. Previously, the larger the `search_query` table, the longer a search query took to complete. [GitHub-27559](https://github.com/magento/magento2/issues/27559)
 
 ### Pricing
 
@@ -605,7 +604,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42105-->
 
-*  Magento now enables the **Save** button and autocompletes fields when you enter an incomplete URL while adding a video (Admin **Catalog**  > **Products** > Add Video). Previously, the **Save** button was disabled, and fields were not populated.
+*  {{ site.data.var.ee }} now enables the **Save** button and autocompletes fields when you enter an incomplete URL while adding a video (Admin **Catalog**  > **Products** > Add Video). Previously, the **Save** button was disabled, and fields were not populated.
 
 ### Return Merchandise Authorizations (RMA)
 
@@ -645,7 +644,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42545-->
 
-*  Magento now shows all sub-categories of current category in layered navigation regardless of number of categories available in the catalog.
+*  The storefront now shows all sub-categories of the current category in layered navigation regardless of number of categories available in the catalog.
 
 <!--- MC-41706-->
 
@@ -701,7 +700,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-714-->
 
-*  Tier prices for configurable now display accurate included and excluded tax values on the storefront. Previously, the same values were displayed for both included and excluded taxes. [GitHub-33673}( https://github.com/magento/magento2/issues/33673)
+*  Tier prices for configurable products now display accurate included and excluded tax values on the storefront. Previously, the same values were displayed for both included and excluded taxes. [GitHub-33673}( https://github.com/magento/magento2/issues/33673)
 
 ### Test
 
@@ -753,11 +752,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-24548-->
 
-*  The totals retrieved by the `PUT /V1/guest-carts/{cartId}/collect-totals` request are now updated by the correct `shippingMethod.` [GitHub-18508](https://github.com/magento/magento2/issues/18508)
+*  The totals retrieved by the `PUT /V1/guest-carts/:cartId/collect-totals` request are now updated by the correct `shippingMethod.` [GitHub-18508](https://github.com/magento/magento2/issues/18508)
 
 <!--- MC-42399-->
 
-*  `rest/V1/company/{id}` now returns `is_purchase_order_enabled` attribute values as expected.
+*  `GET /V1/company/:id` now returns `is_purchase_order_enabled` attribute values as expected.
 
 <!--- MC-42443-->
 
