@@ -5,12 +5,14 @@ title: Adobe Commerce 2.4.4 Release Notes
 
 {{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
+{{ site.data.var.ee }} 2.4.4-beta2 introduces support for PHP 8.0.
+
 {:.bs-callout-info}
 Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains  backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 ## {{ site.data.var.ee }} Beta program
 
-The {{ site.data.var.ee }} 2.4.4 [Beta program](https://github.com/magento/magento2/wiki/Magento-Beta-Program) includes four monthly Beta releases that merchants can use to prepare their deployments for upgrade to {{ site.data.var.ee }} 2.4.4. We are launching this program five months before {{ site.data.var.ee }} 2.4.4 General Availability (GA). The top three partners and individual contributors will receive special mention in these release notes, Beta blog posts, and in other communications. See the [Breaking News: 2.4.4 beta releases are coming soon](https://community.magento.com/t5/Magento-DevBlog/BREAKING-NEWS-2-4-4-beta-releases-are-coming-soon/ba-p/484310) Magento DevBlog post.
+The {{ site.data.var.ee }} 2.4.4 [Beta program](https://github.com/magento/magento2/wiki/Magento-Beta-Program) includes four monthly Beta releases that merchants can use to prepare their deployments for upgrade to {{ site.data.var.ee }} 2.4.4. We are launching this program five months before {{ site.data.var.ee }} 2.4.4 General Availability (GA). The top three partners and individual contributors will receive special mention in these release notes, Beta blog posts, and in other communications. See the [Breaking News: 2.4.4 beta releases are coming soon](https://community.magento.com/t5/Magento-DevBlog/BREAKING-NEWS-2-4-4-beta-releases-are-coming-soon/ba-p/484310) DevBlog post.
 
 ## {{ site.data.var.ee }} 2.4.4-beta2
 
@@ -27,9 +29,20 @@ The {{ site.data.var.ee }} 2.4.4 [Beta program](https://github.com/magento/magen
 {:.bs-callout-info}
 All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ee }} 2.4.4.
 
-## Other release information
+## Known issues
 
-Although code for these features is bundled with releases {{ site.data.var.ee }} and {{ site.data.var.ce }} releases, several of these projects (for example, Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
+**Issue: Deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0**.
+ Adobe Commerce displays the following deprecation message during download: `Deprecation Notice: Required parameter $pathSuffix follows optional parameter $translations in vendor/magento/magento-composer-installer/src/MagentoHackathon/Composer/Magento/MapParser.php:12`. Installation is not affected by this message. <!--- AC-1678-->
+
+**Issue: The PayPal button is missing from the mini cart, shopping cart, and product detail pages**. When the PayPal Express Checkout payment method is enabled on a deployment running B2B, the **PayPal** button is not displayed on these pages:
+
+*  product details
+*  shopping cart
+*  mini cart
+
+**Workaround**: Shoppers can use PayPal Express checkout using the full checkout workflow. <!--- AC-1765-->
+
+**Issue: Label not created for DHL shipments**. The **Length**, **Width**, and **Height** fields of the Admin Create Packages window in the checkout workflow are disabled when adding a bundle product to a package. <!--- AC-1764-->
 
 ## Highlights
 
@@ -37,15 +50,17 @@ Look for the following highlights in this release.
 
 ### Platform enhancements
 
-{{ site.data.var.ee }} 2.4.4-beta2 includes the following platform upgrades:
+{{ site.data.var.ee }} 2.4.4-beta2 provides support for PHP 8.0. These additional platform upgrades support PHP 8.0  and store security and performance:
 
 *  Adobe Composer dependencies have been upgraded to the latest versions that are compatible with PHP 8.0.x. <!--- AC-35-->
 
 *  The `RequireJS` library has been upgraded to the latest version (v2.3.6). [GitHub-33672](https://github.com/magento/magento2/issues/33672) <!--- AC-40 422-->
 
-*  PHPUnit has been upgraded to the latest version (9.5.x ). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
+*  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
 
 *  TinyMCE 5 is now supported. <!--- AC-41-->
+
+#### Library upgrades
 
 *  The following libraries have been upgraded to more recent versions:
 
@@ -57,6 +72,8 @@ Look for the following highlights in this release.
    *  `underscore.js`  <!--- AC-13-->
    *  `PrototypeJS`  <!--- AC-17-->
 
+#### Library removals
+
 *  The following libraries have been removed:
 
    *  `es6-collections.js`   <!--- AC-18-->
@@ -65,6 +82,18 @@ Look for the following highlights in this release.
    *  `FormData.js`
 
 These libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality.
+
+#### jQuery UI upgrade
+
+jQuery UI has been upgraded to the latest version (v1.12.1). The following v1.10.0 jQuery components have been removed:
+
+*  `ajaxOptions` and `cache` options for tabs. See [Tabs](https://jqueryui.com/changelog/1.10.0/#tabs).
+
+*  `.zIndex()`.  jQuery UI v1.12.1 includes `jquery/z-index.js`, which supports the use of `.zIndex()`. See [UI Core](https://jqueryui.com/changelog/1.12.0/#ui-core).
+
+*  Data fallbacks for widget names. You must use the full name for the `.data()` key. See [Widget Factory](https://jqueryui.com/changelog/1.10.0/#widget-factory).
+
+*  Hardcoding of classes such as `ui-corner-all` in widgets. See [Widgets}( https://jqueryui.com/upgrade-guide/1.12/#widget). <!--- AC-106-->
 
 ### Performance enhancements
 
@@ -739,11 +768,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-41880-->
 
 *  {{ site.data.var.ee }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ee }} ignored this option.
-
-## Known issue
-
-**Known issue**: Deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0.
- Adobe Commerce displays the following deprecation message during download: `Deprecation Notice: Required parameter $pathSuffix follows optional parameter $translations in vendor/magento/magento-composer-installer/src/MagentoHackathon/Composer/Magento/MapParser.php:12`. Installation is not affected by this message. <!--- AC-1678-->
 
 ### System requirements
 
