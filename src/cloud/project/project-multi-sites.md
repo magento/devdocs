@@ -34,16 +34,17 @@ https://store.com/second/
 {:.bs-callout-tip}
 To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL][addstorecode] in the _Config Guide_.
 
-## Adding New Domains
+## Add New Domains
 
-### Cloud Pro
+The process to add a new domain depends on the type of Cloud account:
 
--  You must open a Support ticket to request new domains to be added to the cluster.
+-  For Pro
 
-### Cloud Starter
+   You must open a Support ticket to request new domains to be added to the cluster.
 
--  You can either add the domain to Fastly in Production yourself or open a ticket to request this.
--  You will also have to add the domain to the Domains tab at `https://<zone>.magento.cloud/projects/<project ID>/edit`
+-  For Starter
+
+   You can add the new domain to Fastly in Production or you can create a support ticket to request assistance. You must add the new domain to the **Domains** tab in the Program UI: `https://<zone>.magento.cloud/projects/<project-ID>/edit`
 
 ## Configure local installation
 
