@@ -17,6 +17,9 @@ All asynchronous operations in {{site.data.var.ce}} are performed using the Linu
 
 An indexer can run in either **Update on Save** or **Update on Schedule** mode. The **Update on Save** mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. We recommend using **Update on Schedule** mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  **System** > Tools > **Index Management** configuration page.
 
+{:.bs-callout-info} Currently not all indexers support **Update on Schedule** mode.Please review https://devdocs.magento.com/guides/v2.4/extension-dev-guide/indexing.html for which modes can be used with the different indexers.
+
+
 Reindexing on MariaDB 10.4 takes more time compared to other MariaDB or MySQL versions. As a workaround, we suggest modifying the default MariaDB configuration and setting the following parameters:
 
 *  [`optimizer_switch='rowid_filter=off'`](https://mariadb.com/kb/en/optimizer-switch/)
