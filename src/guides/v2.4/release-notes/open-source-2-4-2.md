@@ -122,7 +122,7 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 *  Manage folder structure.
 
-**Web-optimized images in content**. Merchants can now use [web-optimized image rendition](https://docs-beta.magento.com/user-guide/cms/media-gallery-image-optimization.html) in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
+**Web-optimized images in content**. Merchants can now use [web-optimized image rendition]({{ site.user_guide_url }}/cms/media-gallery-image-optimization.html) in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
 
 ### Magento Functional Testing Framework (MFTF)
 

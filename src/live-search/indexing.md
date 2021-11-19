@@ -62,7 +62,7 @@ Streaming update workflow:
 
 ## Client search
 
-The Live Search API allows a client to sort by any sortable product attribute by setting the [storefront property](https://docs-beta.magento.com/user-guide/stores/attributes-product.html), _Used for sorting in product listings_ to `Yes`. Depending on the theme, this setting causes the attribute to be included as an option in the [Sort by](https://docs-beta.magento.com/user-guide/catalog/navigation-pagination.html) pagination control on catalog pages. Up to 300 product attributes can be indexed by Live Search, with [storefront properties](https://docs-beta.magento.com/user-guide/stores/attributes-product.html) that are searchable and filterable.
+The Live Search API allows a client to sort by any sortable product attribute by setting the [storefront property]({{ site.user_guide_url }}/stores/attributes-product.html), _Used for sorting in product listings_ to `Yes`. Depending on the theme, this setting causes the attribute to be included as an option in the [Sort by]({{ site.user_guide_url }}/catalog/navigation-pagination.html) pagination control on catalog pages. Up to 300 product attributes can be indexed by Live Search, with [storefront properties]({{ site.user_guide_url }}/stores/attributes-product.html) that are searchable and filterable.
 
 The index metadata is stored in the indexing pipeline and is accessible by the search service.
 

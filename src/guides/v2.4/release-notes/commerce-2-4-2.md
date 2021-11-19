@@ -103,7 +103,7 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thes
 
 Magento 2.4.2 introduces B2B v1.3.1. This release includes support for online payments for purchase orders as well as multiple bug fixes.
 
-**Purchase orders can now be completed using online payment methods**. B2B buyers are prompted to select their preferred payment method for each [purchase order](https://docs-beta.magento.com/user-guide/stores/b2b-purchase-order-flow.html) during the initial checkout. After the purchase order has been approved, buyers are prompted to enter payment details to convert the purchase order to a final order.
+**Purchase orders can now be completed using online payment methods**. B2B buyers are prompted to select their preferred payment method for each [purchase order]({{ site.user_guide_url }}/stores/b2b-purchase-order-flow.html) during the initial checkout. After the purchase order has been approved, buyers are prompted to enter payment details to convert the purchase order to a final order.
 
 To support a complete workflow for accepting online payments, this feature also:
 
@@ -145,11 +145,11 @@ This release includes enhancements to Page Builder content migration and Page Bu
 
 *  Content migrated to Page Builder is no longer padded with default inline styling.
 
-*  Page Builder no longer requires all content types to be placed within a row. The [Page Builder stage](https://docs-beta.magento.com/user-guide/cms/page-builder-workspace.html#stage) is now initially blank and supports adding the following content types directly to the stage: Rows, Columns, Tabs, HTML Code, Blocks, Dynamic Blocks.
+*  Page Builder no longer requires all content types to be placed within a row. The [Page Builder stage]({{ site.user_guide_url }}/cms/page-builder-workspace.html#stage) is now initially blank and supports adding the following content types directly to the stage: Rows, Columns, Tabs, HTML Code, Blocks, Dynamic Blocks.
 
 *  Predefined margins and paddings are no longer required for content types.
 
-*  The new mobile [viewport switcher](https://docs-beta.magento.com/user-guide/cms/page-builder-workspace.html#viewports) and viewport scope for form field values lets users and developers perform these actions:
+*  The new mobile [viewport switcher]({{ site.user_guide_url }}/cms/page-builder-workspace.html#viewports) and viewport scope for form field values lets users and developers perform these actions:
 
    *  View content on different view ports when authoring.
 
@@ -179,7 +179,7 @@ This release includes Adobe Stock Integration v2.1.1.
 
 *  Manage folder structure.
 
-**Web-optimized images in content**. Merchants can now use [web-optimized image rendition](https://docs-beta.magento.com/user-guide/cms/media-gallery-image-optimization.html) in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
+**Web-optimized images in content**. Merchants can now use [web-optimized image rendition]({{ site.user_guide_url }}/cms/media-gallery-image-optimization.html) in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
 
 ### AWS S3 support enhancements
 
