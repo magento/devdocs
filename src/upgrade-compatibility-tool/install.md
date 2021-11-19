@@ -80,7 +80,7 @@ To install the {{site.data.var.uct}}, you must install the necessary prerequisit
 
 *  {{site.data.var.ee}} access keys
 *  Composer
-*  Node.js (only required to check GraphQL compatibility)
+*  Node.js
 
 Refer to the [Upgrade Compatibility Tool install]({{site.baseurl}}/upgrade-compatibility-tool/install.html#install) page.
 
@@ -114,9 +114,6 @@ If the **{{site.data.var.ee}} access keys** are not correctly configured, the {{
 ### Node.js
 
 To install Node.js, see the Node.js [documentation](https://nodejs.dev/learn/how-to-install-nodejs).
-
-{:.bs-callout-info}
-Node.js is only a requirement to check GraphQL compatibility.
 
 ## Third-party extensions
 

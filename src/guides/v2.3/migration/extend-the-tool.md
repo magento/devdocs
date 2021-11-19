@@ -5,7 +5,7 @@ functional_areas:
   - Tools
 ---
 
-Sometimes the data format and structure created by [extensions](https://marketplace.magento.com/extensions.html){:target="_blank"} or custom code is different between Magento 1 and Magento 2. Use extension points within the Data Migration Tool to migrate this data. If the data format and structure are the same, the tool can automatically migrate the data without user intervention.
+Sometimes the data format and structure created by [extensions](https://marketplace.magento.com/extensions.html) or custom code is different between Magento 1 and Magento 2. Use extension points within the Data Migration Tool to migrate this data. If the data format and structure are the same, the tool can automatically migrate the data without user intervention.
 
 During migration, the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) scans and compares all Magento 1 and Magento 2 tables, including those created by extensions. If the tables are the same, the tool automatically migrates the data. If the tables differ, the tool terminates and notifies the user.
 
@@ -398,4 +398,4 @@ records will be delivered on delta migration using the `Vendor\Migration\Step\Gr
 
 Since the Data Migration Tool and Magento 2 are constantly evolving, existing steps and handlers are subject to change. We highly recommend not overriding the behavior of steps like the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step), [URL Rewrite Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#url-rewrite-step), and handlers by extending their classes.
 
-Some steps do not support mapping and cannot be changed without altering the code. You can either write an extra step that changes data at the end of migration or create a [GitHub issue](https://github.com/magento/data-migration-tool/issues){:target="_blank"} and ask for a new extension point on the existing step.
+Some steps do not support mapping and cannot be changed without altering the code. You can either write an extra step that changes data at the end of migration or create a [GitHub issue](https://github.com/magento/data-migration-tool/issues) and ask for a new extension point on the existing step.

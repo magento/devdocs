@@ -8,10 +8,10 @@ See [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.htm
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
-*  Magento uses [MySQL database triggers](https://dev.mysql.com/doc/refman/8.0/en/triggers.html){:target="_blank"} to improve database access during reindexing. These get created when the indexer mode is set to [schedule]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-index.html#configure-indexers-1){:target="_blank"}. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
-*  Familiarize yourself with [these potential MySQL trigger limitations](https://dev.mysql.com/doc/mysql-reslimits-excerpt/8.0/en/stored-program-restrictions.html){:target="_blank"} before you continue.
+*  Magento uses [MySQL database triggers](https://dev.mysql.com/doc/refman/8.0/en/triggers.html) to improve database access during reindexing. These get created when the indexer mode is set to [schedule]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-index.html#configure-indexers-1). Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
+*  Familiarize yourself with [these potential MySQL trigger limitations](https://dev.mysql.com/doc/mysql-reslimits-excerpt/8.0/en/stored-program-restrictions.html) before you continue.
 *  To enhance your database security posture, enable the [`STRICT_ALL_TABLES`](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_strict_all_tables) SQL mode to prevent storing invalid data values, which might cause unwanted database interactions.
-*  If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](https://dev.mysql.com/doc/refman/8.0/en/replication-formats.htmll){:target="_blank"}.
+*  If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](https://dev.mysql.com/doc/refman/8.0/en/replication-formats.htmll).
 
 {:.bs-callout-warning}
 Magento 2 currently utilizes `CREATE TEMPORARY TABLE` statements inside transactions, which are [incompatible](https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-restrictions.html) with database implementations utilizing GTID-based replication, such as [Google Cloud SQL second-generation instances](https://cloud.google.com/sql/docs/features#differences). Consider MySQL for Cloud SQL 8.0 as an alternative.
@@ -26,7 +26,7 @@ Magento 2.4 requires a clean installation of MySQL 8.0. Follow the links below f
 *  [Ubuntu](https://ubuntu.com/server/docs/databases-mysql)
 *  [CentOS](https://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html)
 
-If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](https://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
+If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](https://dev.mysql.com/doc/refman/5.6/en/program-variables.html) that is larger than the default, 16MB.
 
 {:.bs-callout-info}
 The default value applies to {{site.data.var.ece}} *and* on-premises projects. {{site.data.var.ece}} Pro customers must open a support ticket to increase the `max_allowed_packet` value. {{site.data.var.ece}} Starter customers can increase the value by updating the configuration in the `/etc/mysql/mysql.cnf` file.

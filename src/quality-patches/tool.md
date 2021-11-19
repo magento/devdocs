@@ -24,7 +24,7 @@ are available in the [Magento Security Center][security] .
 
 <div id="root"></div>
 
-<script src="{{ site.baseurl }}/common/js/qpt.app.min.js?v=1"></script>
+<script src="{{ site.baseurl }}/common/js/qpt.app.min.js?v=3"></script>
 
 ## Related topics   {#related-topics}
 
