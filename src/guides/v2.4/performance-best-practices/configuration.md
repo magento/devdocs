@@ -19,7 +19,6 @@ An indexer can run in either **Update on Save** or **Update on Schedule** mode. 
 
 {:.bs-callout-info} Currently not all indexers support **Update on Schedule** mode.Please review https://devdocs.magento.com/guides/v2.4/extension-dev-guide/indexing.html for which modes can be used with the different indexers.
 
-
 Reindexing on MariaDB 10.4 takes more time compared to other MariaDB or MySQL versions. As a workaround, we suggest modifying the default MariaDB configuration and setting the following parameters:
 
 *  [`optimizer_switch='rowid_filter=off'`](https://mariadb.com/kb/en/optimizer-switch/)
