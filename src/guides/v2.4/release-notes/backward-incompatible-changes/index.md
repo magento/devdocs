@@ -16,7 +16,7 @@ Disabling the inventory check can improve performance for checkout steps, especi
 *  `The requested qty is not available`
 *  `Unable to place order: Enter a valid payment method and try again.`
 *  `Unable to place order: There are no source items with the in stock status.`
-*  `The shipping method is missing. Selefct the shipping method and try again.`
+*  `The shipping method is missing. Select the shipping method and try again.`
 
 The following table contains metrics of checkout with a large amount of products (750) and additional product by guest:
 
