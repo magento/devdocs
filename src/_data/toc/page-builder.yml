@@ -91,7 +91,7 @@ pages:
           versionless: true
 
         - label: Workflow tips
-          url: /page-builder/docs/content-types/create/Troubleshooting.html
+          url: /page-builder/docs/content-types/create/troubleshooting.html
           versionless: true
 
     - label: 'Customize'
