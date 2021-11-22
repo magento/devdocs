@@ -18,6 +18,7 @@
 -  ext-sockets
 -  ext-sodium
 -  ext-spl
+-  ext-tokenizer
 -  ext-xmlwriter
 -  ext-xsl
 -  ext-zip

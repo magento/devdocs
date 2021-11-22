@@ -17,6 +17,7 @@
 -  ext-soap
 -  ext-sockets
 -  ext-sodium
+-  ext-tokenizer
 -  ext-xmlwriter
 -  ext-xsl
 -  ext-zip
