@@ -25,7 +25,7 @@ These release notes describe the initial release of Payment Services and include
 
 *  {:.new}<!-- Issue PAY-311 -->Tiered pricing (based on TPV) adapted to any merchant.
 
-*  {:.bug}<!-- Issue PAY-1443 -->It is possible to customise the look and feel of PayPal buttons and the CC fields for the [Payment Services](https://devdocs.magento.com/payment-services/customize-buttons-messaging.html) extension.
+*  {:.bug}<!-- Issue PAY-1443 -->It is possible to customise the look and feel of PayPal buttons and the CC fields for the [Payment Services](https://devdocs-beta.magento.com/payment-services/customize-buttons-messaging.html) extension.
 
 ### Documentation
 
