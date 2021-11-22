@@ -1,20 +1,13 @@
 ---
 title: DeferredTotalCalculating
-content: |-
-  The Magento_DeferredTotalCalculating allows you to deffer total calculating until it requested, e.g. on cart page or final steps on checkout
-  This functionality is optional and disabled by default.
-  It could be enabled by setting *'checkout/deferred_total_calculating'* variable inside *env.php* file
-  e.g.
-
-  ```php
-  <?php
-        'checkout' => [
-                 'deferred_total_calculating' => 1
-         ]
-  ```
-
-  It can also be enabled through
-
-  ```php
-      bin/magento setup:config:set --deferred-total-calculating 1
-  ```
+content: "The _Magento_DeferredTotalCalculating_ module optimizes the checkout process
+  by deferring the total calculation until it is requested for shopping cart or final
+  checkout steps.\n\nDeferredTotalCalculating values:\n\n-  `0` — (_Default value_)
+  Disable the DeferredTotalCalculating module and use the standard total calculation
+  throughout the shopping process. \n-  `1` — Enable the DeferredTotalCalculating
+  module to show a subtotal and defer calculating the complete total until in the
+  shopping cart or final checkout steps.\n\nTo enable DeferredTotalCalculating, set
+  the `checkout/deferred_total_calculating` variable in the `env.php` file. For example:\n\n```php\n<?php\n
+  \     'checkout' => [\n               'deferred_total_calculating' => 1\n       ]\n```\n\nAlternatively,
+  you can set the variable using the command-line interface:\n\n```bash\nbin/magento
+  setup:config:set --deferred-total-calculating 1\n```"
