@@ -5,15 +5,9 @@ group: release
 
 For {{site.data.var.ee}} 2.3 and subsequent releases:
 
--  {{site.data.var.ee}} will provide quality fixes for a minor release for a minimum of 12 months from the general availability announcement date of the next minor software release.
+-  Customers must upgrade to the latest security patch or patch release to access security fixes.
 
--  {{site.data.var.ee}} will provide security fixes for a minor release for a minimum of 18 months from the general availability announcement date of the next minor software release.
-
--  {{site.data.var.ee}} will provide security fixes through patch releases for currently supported minor release versions only. Security fixes will not be backported to previous minor releases, nor to previous patch releases within supported minor releases.
-
-   For example, while Adobe will provide security releases to its 2.3 release line until April 2022, customers must upgrade to the latest patch or security patch to access security fixes. When 2.3.7-p1 is released, customers must upgrade to 2.3.7-p1 to adopt the security fixes. The security fixes will not be backported to previous patch releases of the 2.3 release line (2.3.0-2.3.6-p1).
-
--  To better streamline our lifecycle policy, {{site.data.var.ee}} will provide quality fixes to its 2.4 release line until the end of support date of the PHP version upon which it is based. Refer to the table below for the End of Software Support dates for {{site.data.var.ee}} release lines:
+-  To better streamline our lifecycle policy, Adobe will provide quality fixes to the 2.4 release line until the end of support date of the PHP version upon which it is based. Refer to the table below for the End of Software Support dates for {{site.data.var.ee}} release lines:
 
 | Release                          | Release Date  | End of Software Support<sup>1</sup> | Dependent PHP Version       |
 |----------------------------------|---------------|-------------------------------------|-----------------------------|
@@ -54,18 +48,10 @@ See [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-
   <tr>
     <td class="tg-0pky">Commerce</td>
     <td class="tg-0lax">PHP</td>
-    <td class="tg-0lax">Q1</td>
-    <td class="tg-0lax">Q2</td>
-    <td class="tg-0lax">Q3</td>
-    <td class="tg-0lax">Q4</td>
-    <td class="tg-0lax">Q1</td>
-    <td class="tg-0lax">Q2</td>
-    <td class="tg-0lax">Q3</td>
-    <td class="tg-0lax">Q4</td>
-    <td class="tg-0lax">Q1</td>
-    <td class="tg-0lax">Q2</td>
-    <td class="tg-0lax">Q3</td>
-    <td class="tg-0lax">Q4</td>
+    <td class="tg-0lax" colspan="4"></td>
+    <td class="tg-0lax" colspan="4"></td>
+    <td class="tg-0lax" colspan="4"></td>
+
   </tr>
   <tr>
     <td class="tg-0pky">2.4.0</td>
@@ -118,5 +104,3 @@ See [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-
   </tr>
  </tbody>
 </table>
-
-![Support period table]({{ site.baseurl }}/common/images/support-period.png)
