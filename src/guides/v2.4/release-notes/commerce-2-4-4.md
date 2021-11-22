@@ -47,11 +47,11 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 ### Workaround for Fastly module known issue
 
-Beta partners must edit the `composer.json` file in  `magento/magento-cloud-template` and `.magento.app.yaml` files as described below.
+To upgrade to 2.4.4-beta2, Beta partners that build and deploy {{ site.data.var.ee }} on cloud infrastructure must update the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json) and `.magento.app.yaml` files as described below.
 
-#### Update the `repositories` and `require` sections of the `magento/magento-cloud-template` file.
+#### Update the `repositories` and `require` sections in the Magento Cloud template `composer.json` file.
 
-Update the `repositories` section to add the listed packages to specify the Magento Cloud packages that support the 2.4.4-beta2 version.
+Update the `repositories` section to add the Magento Cloud and Quality packages that support the 2.4.4-beta2 version.
 
 ```php
     "repositories": {
@@ -81,22 +81,23 @@ Update the `repositories` section to add the listed packages to specify the Mage
         }
 ```
 
-Update the  `require` section in the `magento/magento-cloud-template`  `composer.json` to include  the correct version of each repository as follows:
+Update the  `require` section to include the correct version of each repository as follows:
 
 ```json
    "require": {
         "magento/product-enterprise-edition": ">=2.4.4 <2.4.5",
         "magento/composer-root-update-plugin": "~1.1",
-        "magento/ece-tools": "dev-2.4.4-beta2 as 2002.1.9",
-        "magento/magento-cloud-docker": "dev-2.4.4-beta2 as 1.3.1",
-        "magento/magento-cloud-components": "dev-2.4.4-beta2 as 1.0.10",
-        "magento/magento-cloud-patches": "dev-2.4.4-beta2 as 1.0.14",
-        "magento/quality-patches": "dev-2.4.4-beta2 as 1.1.5"
+        "magento/ece-tools": "dev-2.4.4-beta as 2002.1.9",
+        "magento/magento-cloud-docker": "dev-2.4.4-beta as 1.3.1",
+        "magento/magento-cloud-components": "dev-2.4.4-beta as 1.0.10",
+        "magento/magento-cloud-patches": "dev-2.4.4-beta as 1.0.14",
+        "magento/quality-patches": "dev-2.4.4-beta as 1.1.5"
     },
 ```
+
 #### Update the `magento.app.yaml` file
 
-Partners should edit the `magento.app.yaml` file to add new PHP and Composer values, change the build phase to values illustrated below, and add `composer install`.
+In the `magento.app.yaml` file, update the `type`, `build`, and `dependency` values to use PHP 8.0 and Composer. Add `composer install`.
 
 ```yaml
 type: php:8.0
@@ -114,6 +115,7 @@ hooks:
         php ./vendor/bin/ece-tools run scenario/build/generate.xml
         php ./vendor/bin/ece-tools run scenario/build/transfer.xml
 ```
+
 ## {{ site.data.var.ee }} 2.4.4-beta2 highlights
 
 The following highlights are introduced in this release. We are not releasing Cloud packages for this beta release.
