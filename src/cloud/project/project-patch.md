@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-[{{ site.data.var.mcp-prod }}](https://github.com/magento/magento-cloud-patches) and the [Quality Patches Tool]({{ site.baseurl }}/quality-patches/usage.html) deliver patches to your installed {{site.data.var.ee}} application.
+[{{ site.data.var.mcp-prod }}](https://github.com/magento/magento-cloud-patches) and the [Quality Patches Tool](https://github.com/magento/quality-patches) deliver patches to your installed {{site.data.var.ee}} application.
 
 -  {{ site.data.var.mcp-prod }} delivers required patches with critical fixes
 -  Quality Patches deliver optional, low-impact quality fixes as [individual patches]({{ site.baseurl }}/release/policy/#individual-patch) that do not contain backward incompatible changes
