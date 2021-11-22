@@ -44,7 +44,7 @@ The process to add a new domain depends on the type of Cloud account:
 
 -  For Starter
 
-   You can add the new domain to Fastly in Production or you can create a support ticket to request assistance. You must add the new domain to the **Domains** tab in the Program UI: `https://<zone>.magento.cloud/projects/<project-ID>/edit`
+   You can add the new domain to Fastly for Production, or you can create a support ticket to request assistance. You must add the new domain to the **Domains** tab in the Program UI: `https://<zone>.magento.cloud/projects/<project-ID>/edit`
 
 ## Configure local installation
 
