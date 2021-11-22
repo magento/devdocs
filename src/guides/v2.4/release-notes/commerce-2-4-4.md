@@ -33,7 +33,7 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 **Issue: Deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0**. {{ site.data.var.ee }} displays the following deprecation message during download: `Deprecation Notice: Required parameter $pathSuffix follows optional parameter $translations in vendor/magento/magento-composer-installer/src/MagentoHackathon/Composer/Magento/MapParser.php:12`. Installation is not affected by this message. <!--- AC-1678-->
 
-**Issue: The PayPal button is missing from the mini cart, shopping cart, and product detail pages**. When the PayPal Express Checkout payment method is enabled on a deployment running B2B, the **PayPal** button is not displayed on these pages:
+**Issue: The PayPal button is missing from the mini cart, shopping cart, and product detail pages**. When the PayPal Express Checkout payment method is enabled on a 2.4.4-beta2 deployment running B2B, the **PayPal** button is not displayed on these pages:
 
 *  Product details
 *  Shopping cart
@@ -43,9 +43,9 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 **Issue: Label not created for DHL shipments**. The **Length**, **Width**, and **Height** fields of the Admin Create Packages window in the checkout workflow are disabled when adding a bundle product to a package. <!--- AC-1764-->
 
-## Highlights
+## {{ site.data.var.ee }} 2.4.4-beta2 highlights
 
-Look for the following highlights in this release.
+The following highlights are introduced in this release.
 
 ### Platform enhancements
 
@@ -53,34 +53,11 @@ Look for the following highlights in this release.
 
 *  Adobe Composer dependencies have been upgraded to the latest versions that are compatible with PHP 8.0.x. <!--- AC-35-->
 
-*  The `RequireJS` library has been upgraded to the latest version (v2.3.6). [GitHub-33672](https://github.com/magento/magento2/issues/33672) <!--- AC-40 422-->
+*  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Outdated Laminas dependencies have been removed from the codebase.
 
-*  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
+*  Significant code changes for the upgrade of the jQuery library to 3.6.0.
 
-*  TinyMCE 5 is now supported. <!--- AC-41-->
-
-#### Library upgrades
-
-*  The following libraries have been upgraded to more recent versions:
-
-   *  `script.aculo.us` <!--- AC-363-->
-   *  `Chart.js`  <!--- AC-361-->
-   *  `moment.js` <!--- AC-11-->
-   *  `moment-timezone-with-data.js`   <!--- AC-10-->
-   *  `matchMedia.js` <!--- AC-8-->
-   *  `underscore.js`  <!--- AC-13-->
-   *  `PrototypeJS`  <!--- AC-17-->
-
-#### Library removals
-
-*  The following libraries have been removed:
-
-   *  `es6-collections.js`   <!--- AC-18-->
-   *  `MutationObserver.js` <!--- AC-15-->
-   *  `Modernizr` <!--- AC-12-->
-   *  `FormData.js`
-
-These libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality.
+*  The `endroid/qr-code` dependency has been updated to the latest version.
 
 #### jQuery UI upgrade
 
@@ -93,6 +70,39 @@ jQuery UI has been upgraded to the latest version (v1.12.1). The following v1.10
 *  Data fallbacks for widget names. You must use the full name for the `.data()` key. See [Widget Factory](https://jqueryui.com/changelog/1.10.0/#widget-factory).
 
 *  Hardcoding of classes such as `ui-corner-all` in widgets. See [Widgets}( https://jqueryui.com/upgrade-guide/1.12/#widget). <!--- AC-106-->
+
+## {{ site.data.var.ee }} 2.4.4 highlights
+
+The following highlights were added in earlier versions of 2.4.4 and are included in this release.
+
+*  The `RequireJS` library has been upgraded to the latest version (v2.3.6). [GitHub-33672](https://github.com/magento/magento2/issues/33672) <!--- AC-40 422-->
+
+*  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
+
+*  TinyMCE 5 is now supported. <!--- AC-41-->
+
+### Library upgrades
+
+*  The following libraries have been upgraded to more recent versions:
+
+   *  `script.aculo.us` <!--- AC-363-->
+   *  `Chart.js`  <!--- AC-361-->
+   *  `moment.js` <!--- AC-11-->
+   *  `moment-timezone-with-data.js`   <!--- AC-10-->
+   *  `matchMedia.js` <!--- AC-8-->
+   *  `underscore.js`  <!--- AC-13-->
+   *  `PrototypeJS`  <!--- AC-17-->
+
+### Library removals
+
+*  The following libraries have been removed:
+
+   *  `es6-collections.js`   <!--- AC-18-->
+   *  `MutationObserver.js` <!--- AC-15-->
+   *  `Modernizr` <!--- AC-12-->
+   *  `FormData.js`
+
+These libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality.
 
 ### Performance enhancements
 
@@ -470,7 +480,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-719-->
 
-*  Updating `symfony/console` no longer causes a `setup:di:compile` failure. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
+*  Updating `symfony/console` no longer causes failure when running `bin/magento setup:di:compile`. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
 
 <!--- AC-1077-->
 
