@@ -31,5 +31,5 @@ These release notes describe the initial release of Payment Services and include
 
 To learn more about Payment Services and Payment Services development:
 
-* [{{site.data.var.ee}} Developer Documentation]({{page.baseurl}}/payment-services/index.html).
-* [{{site.data.var.ee}} User Guide](https://docs.magento.com/user-guide/payment-services/index.html).
+*  [{{site.data.var.ee}} Developer Documentation]({{page.baseurl}}/payment-services/index.html).
+*  [{{site.data.var.ee}} User Guide](https://docs.magento.com/user-guide/payment-services/index.html).
