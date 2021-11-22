@@ -17,9 +17,9 @@ See a full list of features and more detailed information in the [user guide]({{
 
 ## Availability
 
-Payment Services is available for some supported Magento versions.
+Payment Services is available for Adobe Commerce and Magento Open Source. Payment Services is now compatible with Adobe Commerce versions 2.4.0 to 2.4.3-p1.
 
-See [Lifecycle policy]({{ site.baseurl }}/release/lifecycle-policy.html) and [Upcoming releases]({{ site.baseurl }}/release/) for more release and version-specific information.
+See [Lifecycle policy]({{site.baseurl}}/release/lifecycle-policy.html) and [Payment Services release notes]({{site.baseurl}}/payment-services/release-notes.html) pages for more release and version-specific information.
 
 ## Get started
 
