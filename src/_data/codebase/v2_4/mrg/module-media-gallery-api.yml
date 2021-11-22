@@ -1,14 +1,30 @@
 ---
 title: MediaGalleryApi
-content: |-
-  The Magento_MediaGalleryApi module serves as application program interface (API) responsible for storing and managing media gallery asset attributes.
-
-  ## Extensibility
-
-  Extension developers can interact with the Magento_MediaGallery module. For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).
-
-  [The Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_MediaGalleryApi module.
-
-  ## Additional information
-
-  For information about significant changes in patch releases, see [Release information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
+content: "The Magento_MediaGalleryApi module serves as application program interface
+  (API) responsible for storing and managing media gallery asset attributes.\n\n##
+  Installation details\n\nFor information about module installation in Magento 2,
+  see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).\n\n##
+  Extensibility\n\nExtension developers can interact with the Magento_MediaGalleryApi
+  module. For more information about the Magento extension mechanism, see [Magento
+  plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).\n\n[The
+  Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html)
+  enables you to override the functionality of the Magento_MediaGalleryApi module.\n\n###
+  Public APIs\n\n- `\\Magento\\MediaGalleryApi\\Api\\Data\\AssetInterface`\n    -
+  media asset entity data\n\n- `\\Magento\\MediaGalleryApi\\Api\\Data\\AssetKeywordsInterface`\n
+  \   - assets keywords aggregation\n\n- `\\Magento\\MediaGalleryApi\\Api\\Data\\AssetKeywordsInterface`\n
+  \   - media asset keyword entity data\n\n- `\\Magento\\MediaGalleryApi\\Api\\CreateDirectoriesByPathsInterface`:\n
+  \   - create new directories by provided paths\n\n- `\\Magento\\MediaGalleryApi\\Api\\DeleteAssetsByPathsInterface`:\n
+  \   - delete media assets by paths. Removes all the assets which paths start with
+  provided paths\n\n- `\\Magento\\MediaGalleryApi\\Api\\DeleteDirectoriesByPathsInterface`:\n
+  \   - delete folders by provided paths\n\n- `\\Magento\\MediaGalleryApi\\Api\\GetAssetsByIdsInterface`:\n
+  \   - get media gallery assets by id attribute\n    \n- `\\Magento\\MediaGalleryApi\\Api\\GetAssetsByPathsInterface`:\n
+  \   - get media gallery assets by paths in media storage\n\n- `\\Magento\\MediaGalleryApi\\Api\\GetAssetsKeywordsInterface`:\n
+  \   - get a media gallery asset keywords related to media gallery asset ids provided\n\n-
+  `\\Magento\\MediaGalleryApi\\Api\\IsPathExcludedInterface`:\n    - check if the
+  path is excluded from displaying and processing in the media gallery\n\n- `\\Magento\\MediaGalleryApi\\Api\\SaveAssetsInterface`:\n
+  \   - save media gallery assets to the database\n\n- `\\Magento\\MediaGalleryApi\\Api\\SaveAssetsKeywordsInterface`:\n
+  \   - save keywords related to assets to the database\n  \n- `\\Magento\\MediaGalleryApi\\Api\\SearchAssetsInterface`:\n
+  \   - search media gallery assets\n\nFor information about a public API in Magento
+  2, see [Public interfaces & APIs](http://devdocs.magento.com/guides/v2./extension-dev-guide/api-concepts.html).\n\n##
+  Additional information\n\nFor information about significant changes in patch releases,
+  see [2.4.x Release information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)."

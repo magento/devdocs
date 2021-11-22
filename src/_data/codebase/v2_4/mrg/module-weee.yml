@@ -28,7 +28,7 @@ content: "The Magento_Weee module enables the application of fees/fixed product 
   \   - `sales_order_creditmemo_updateqty`\n    - `sales_order_creditmemo_view`\n
   \   - `sales_order_invoice_new`\n    - `sales_order_invoice_updateqty`\n    - `sales_order_invoice_view`\n
   \   - `sales_order_item_price`\n    - `sales_order_view`\n\n- `view/base/layout`:\n
-  \   - `catalog_product_prices`\n\n- `view/frantend/layout`:\n    - `checkout_cart_index`\n
+  \   - `catalog_product_prices`\n\n- `view/frontend/layout`:\n    - `checkout_cart_index`\n
   \   - `checkout_index_index`\n    - `checkout_item_price_renderers`\n    - `default`\n
   \   - `sales_email_item_price`\n    - `sales_email_order_creditmemo_items`\n    -
   `sales_email_order_invoice_items`\n    - `sales_email_order_items`\n    - `sales_guest_creditmemo`\n

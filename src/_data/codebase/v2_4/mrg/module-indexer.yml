@@ -26,7 +26,7 @@ content: "This module provides Magento Indexing functionality.\nIt allows to:\n 
   class)\n\nFor information about an event in Magento 2, see [Events and observers](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/events-and-observers.html#events).\n\n###
   Layouts\n\nThis module introduces the following layout handles in the `view/adminhtml/layout`
   directory:\n- `indexer_indexer_list`\n- `indexer_indexer_list_grid`\n\nFor more
-  information about layouts in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html).\n\n##
+  information about layouts in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).\n\n##
   Additional information\n\n### Indexer modes\n\nThere are 2 modes of the Indexers:\n\n-
   Update on Save - index tables are updated immediately after the dictionary data
   is changed\n- Update by Schedule - index tables are updated by cron job according
