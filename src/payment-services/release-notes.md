@@ -11,7 +11,7 @@ These release notes describe the initial release of Payment Services and include
 
 ### v1.0.0
 
-*  {:.new}<!-- Issue PAY-2127 -->**Payment Services compatible with Adobe Commerce versions 2.4.0 to 2.4.3-p1**---Payment Services is now compatible with Adobe Commerce versions 2.4.0 to 2.4.3-p1.
+*  {:.new}<!-- Issue PAY-2127 -->General availability release!. Payment Services is now compatible with Adobe Commerce versions 2.4.0 to 2.4.3-p1.
 
 *  {:.new}<!-- Issue PAY-1986 -->**Row container now optional**---Sandbox checkout testing.
 
