@@ -25,7 +25,7 @@ See [Lifecycle policy]({{site.baseurl}}/release/lifecycle-policy.html) and [Paym
 
 Onboarding and setting up Payment Services is completed in [just a few steps]({{ site.user_guide_url }}/payment-services/index.html#get-started).
 
-This onboarding flow diagram shows the general process, for both the user and the internal system, for onboarding Payment Services.
+This complete onboarding flow diagram shows the general process, for both the user and the internal system, for onboarding Payment Services.
 
 ![Onboarding flow]({% link payment-services/assets/onboardingflow-docs-v2.png %}){: .zoom}
 _Onboarding flow (click to zoom)_
