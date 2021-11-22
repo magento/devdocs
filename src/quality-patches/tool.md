@@ -18,7 +18,8 @@ It allows you to:
 
 The Quality Patches Tool is for quality patches only. Security patches are available in the [Magento Security Center][security] .
 
-{:.bs-callout-warning} We do not recommend using the Quality Patches Tool to apply large numbers of patches because it increases the complexity of your code, which makes upgrading to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }} more difficult.
+{:.bs-callout-warning}
+We do not recommend using the Quality Patches Tool to apply large numbers of patches, because it increases the complexity of your code, which makes upgrading to a new version of {{ site.data.var.ee }} or {{ site.data.var.ce }} more difficult.
 
 ## Available patches   {#patch-grid}
 

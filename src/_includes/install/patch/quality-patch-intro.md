@@ -2,4 +2,4 @@ The [Quality Patches Tool](https://github.com/magento/quality-patches) delivers 
 
 {:.bs-callout-info}
 See [Apply patches]({{ site.baseurl }}/quality-patches/usage.html) for instructions on applying patches to your {{ site.data.var.ee }} or {{ site.data.var.ce }} projects.
-See [patches available in the Quality Patches Tool]({{ site.baseurl }}/quality-patches/tool.html) to review a full list of released patches.
+See [Available Patches]({{ site.baseurl }}/quality-patches/tool.html#patch-grid) in the _Software Update Guide_ to review a full list of released patches.
