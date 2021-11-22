@@ -13,7 +13,7 @@ These release notes describe the initial release of Payment Services and include
 
 *  {:.new}<!-- Issue PAY-2127 -->General availability release!. [Payment Services](https://marketplace.magento.com/) is now compatible with Adobe Commerce versions 2.4.0 to 2.4.3-p1.
 
-*  {:.new}<!-- Issue PAY-124 -->The Payment Services extension for Adobe Commerce and Magento Open Source can be installed either for [{{site.data.var.ece}}]({{site.base_url}}payment-services/install-payments.html#magento-commerce-cloud) or [On-premises]({{site.base_url}}payment-services/install-payments.html#on-premises) instances. These methods require the use of a Command Line Interface.
+*  {:.new}<!-- Issue PAY-124 -->The Payment Services extension for Adobe Commerce and Magento Open Source can be installed either for [{{site.data.var.ece}}]({{site.base_url}}/payment-services/install-payments.html#magento-commerce-cloud) or [On-premises]({{site.base_url}}/payment-services/install-payments.html#on-premises) instances. These methods require the use of a Command Line Interface.
 
 *  {:.new}<!-- Issue PAY-1986 -->A [sandbox account]({{site.user_guide_url}}/payment-services/onboard-payments.html#enable-sandbox-testing) that allows merchants to use the extension in test mode.
 
@@ -25,7 +25,7 @@ These release notes describe the initial release of Payment Services and include
 
 *  {:.new}<!-- Issue PAY-311 -->Tiered pricing (based on TPV) adapted to any merchant.
 
-*  {:.bug}<!-- Issue PAY-1443 -->It is possible to customise the look and feel of PayPal buttons and the CC fields for the [Payment Services]({{site.base_url}}payment-services/customize-buttons-messaging.html) extension.
+*  {:.bug}<!-- Issue PAY-1443 -->It is possible to customise the look and feel of PayPal buttons and the CC fields for the [Payment Services]({{site.base_url}}/payment-services/customize-buttons-messaging.html) extension.
 
 *  {:.bug}<!-- Issue PAY-2473 -->Using [incorrect Composer keys](https://support.magento.com/hc/en-us/articles/4406603542541) during installation of Payment Services extension.
 
