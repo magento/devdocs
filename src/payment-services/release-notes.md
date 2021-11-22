@@ -11,21 +11,21 @@ These release notes describe the initial release of Payment Services and include
 
 ### v1.0.0
 
-*  {:.new}<!-- Issue PAY-2127 -->General availability release!. Payment Services is now compatible with Adobe Commerce versions 2.4.0 to 2.4.3-p1.
+*  {:.new}<!-- Issue PAY-2127 -->General availability release!. [Payment Services](https://marketplace.magento.com/) is now compatible with Adobe Commerce versions 2.4.0 to 2.4.3-p1.
 
-*  {:.new}<!-- Issue PAY-1986 -->**Row container now optional**---Sandbox checkout testing.
+*  {:.new}<!-- Issue PAY-124 -->The Payment Services extension for Adobe Commerce and Magento Open Source can be installed either for [{{site.data.var.ece}}](https://devdocs-beta.magento.com/payment-services/install-payments.html#magento-commerce-cloud) or [On-premises](https://devdocs-beta.magento.com/payment-services/install-payments.html#on-premises) instances. These methods require the use of a Command Line Interface.
 
-*  {:.new}<!-- Issue PAY-666 -->**Row container now optional**---Configure basic payment behaviours (e.g. Auth-capture together or separated, switch sandbox/production).
+*  {:.new}<!-- Issue PAY-1986 -->A [sandbox account](https://docs-beta.magento.com/user-guide/payment-services/onboard-payments.html#enable-sandbox-testing) that allows merchants to use the extension in test mode.
 
-*  {:.new}<!-- Issue PAY-780 -->**Row container now optional**---Process Payments in checkout (admin).
+*  {:.new}<!-- Issue PAY-666 -->Merchants can [configure Payment Services](https://docs-beta.magento.com/user-guide/payment-services/configure-payments.html) extension with basic payment behaviours (i.e. Auth-capture together, switch between sandbox or production environments).
 
-*  {:.new}<!-- Issue PAY-1856 -->**Row container now optional**---Reports: Order payment status and Payouts.
+*  {:.new}<!-- Issue PAY-780 -->[Create an entire order](https://docs-beta.magento.com/user-guide/payment-services/order-admin-payments.html) in Admin using Payment Services.
 
-*  {:.new}<!-- Issue PAY-311 -->**Row container now optional**---Tiered pricing (based on TPV).
+*  {:.new}<!-- Issue PAY-1856 -->Payment Services offer merchants comprehensive [reporting](https://docs-beta.magento.com/user-guide/payment-services/financial-reporting.html) so that you can get a clear view of your store orders and payments.
 
-*  {:.new}<!-- Issue PAY-124 -->**Row container now optional**---Payments Support as a separate product.
+*  {:.new}<!-- Issue PAY-311 -->Tiered pricing (based on TPV) adapted to any merchant.
 
-*  {:.bug}<!-- Issue PAY-1443 -->**Example**---If you need to customise the look and feel of buttons and the CC fields https://devdocs.magento.com/payment-services/customize-buttons-messaging.html
+*  {:.bug}<!-- Issue PAY-1443 -->It is possible to customise the look and feel of PayPal buttons and the CC fields for the [Payment Services](https://devdocs.magento.com/payment-services/customize-buttons-messaging.html) extension.
 
 ### Documentation
 
