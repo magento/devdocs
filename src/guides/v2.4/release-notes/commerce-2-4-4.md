@@ -43,11 +43,11 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 **Issue: Label not created for DHL shipments**. The **Length**, **Width**, and **Height** fields of the Admin Create Packages window in the checkout workflow are disabled when adding a bundle product to a package. <!--- AC-1764-->
 
-**Issue**: The Fastly module does not support PHP 8.0. We are not releasing to Cloud packages for this beta release. To deploy {{ site.data.var.ee }} 2.4.4-beta2, Cloud users must edit both the `composer.json` in `cloud-template` and the `.magento.app.yaml` file. See the workaround described below. <!--- MCLOUD-8318-->
+**Issue**: The Fastly module does not currently support PHP 8.0. We will update these release notes when Fastly releases a new module. To deploy {{ site.data.var.ee }} 2.4.4-beta2, Cloud users must edit both the `composer.json` in `cloud-template` and the `.magento.app.yaml` file. See the workaround described below. <!--- MCLOUD-8318-->
 
 ### Workaround for Fastly module known issue
 
-Beta partners must edit the `magento/magento-cloud-template` and `.magento.app.yaml` files as described below.
+Beta partners must edit the `composer.json` file in  `magento/magento-cloud-template` and `.magento.app.yaml` files as described below.
 
 #### Update the `repositories` and `require` sections of the `magento/magento-cloud-template` file.
 
@@ -83,7 +83,7 @@ Update the `repositories` section to add the listed packages to specify the Mage
 
 Update the  `require` section in the `magento/magento-cloud-template`  `composer.json` to include  the correct version of each repository as follows:
 
-```php
+```json
    "require": {
         "magento/product-enterprise-edition": ">=2.4.4 <2.4.5",
         "magento/composer-root-update-plugin": "~1.1",
@@ -96,21 +96,27 @@ Update the  `require` section in the `magento/magento-cloud-template`  `composer
 ```
 #### Update the `magento.app.yaml` file
 
-Partners should edit the `magento.app.yaml` file to add new PHP and Composer values and change the build phass to values illustrated below:
+Partners should edit the `magento.app.yaml` file to add new PHP and Composer values, change the build phase to values illustrated below, and add `composer install`.
 
 ```yaml
 type: php:8.0
 build:
     flavor: none
-
 dependencies:
     php:
         composer/composer: '^2.0'
+...
+hooks:
+    # We run build hooks before your application has been packaged.
+    build: |
+        set -e
+        composer install
+        php ./vendor/bin/ece-tools run scenario/build/generate.xml
+        php ./vendor/bin/ece-tools run scenario/build/transfer.xml
 ```
-
 ## {{ site.data.var.ee }} 2.4.4-beta2 highlights
 
-The following highlights are introduced in this release.
+The following highlights are introduced in this release. We are not releasing Cloud packages for this beta release.
 
 ### Platform enhancements
 
