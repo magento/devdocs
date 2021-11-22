@@ -43,6 +43,71 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 **Issue: Label not created for DHL shipments**. The **Length**, **Width**, and **Height** fields of the Admin Create Packages window in the checkout workflow are disabled when adding a bundle product to a package. <!--- AC-1764-->
 
+**Issue**: The Fastly module does not support PHP 8.0. We are not releasing to Cloud packages for this beta release. To deploy {{ site.data.var.ee }} 2.4.4-beta2, Cloud users must edit both the `composer.json` in `cloud-template` and the `.magento.app.yaml` file. See the workaround described below. <!--- MCLOUD-8318-->
+
+### Workaround for Fastly module known issue
+
+Beta partners must edit the `magento/magento-cloud-template` and `.magento.app.yaml` files as described below.
+
+#### Update the `repositories` and `require` sections of the `magento/magento-cloud-template` file.
+
+Update the `repositories` section to add the listed packages to specify the Magento Cloud packages that support the 2.4.4-beta2 version.
+
+```php
+    "repositories": {
+        "ece-tools": {
+            "type": "vcs",
+            "url": "https://github.com/magento/ece-tools.git"
+        },
+        "mcd": {
+            "type": "vcs",
+            "url": "https://github.com/magento/magento-cloud-docker.git"
+        },
+        "mcc": {
+            "type": "vcs",
+            "url": "https://github.com/magento/magento-cloud-components.git"
+        },
+        "mcp": {
+            "type": "vcs",
+            "url": "https://github.com/magento/magento-cloud-patches.git"
+        },
+        "mqp": {
+            "type": "vcs",
+            "url": "https://github.com/magento/quality-patches.git"
+        },
+        "repo": {
+            "type": "composer",
+            "url": "https://repo.magento.com"
+        }
+```
+
+Update the  `require` section in the `magento/magento-cloud-template`  `composer.json` to include  the correct version of each repository as follows:
+
+```php
+   "require": {
+        "magento/product-enterprise-edition": ">=2.4.4 <2.4.5",
+        "magento/composer-root-update-plugin": "~1.1",
+        "magento/ece-tools": "dev-2.4.4-beta2 as 2002.1.9",
+        "magento/magento-cloud-docker": "dev-2.4.4-beta2 as 1.3.1",
+        "magento/magento-cloud-components": "dev-2.4.4-beta2 as 1.0.10",
+        "magento/magento-cloud-patches": "dev-2.4.4-beta2 as 1.0.14",
+        "magento/quality-patches": "dev-2.4.4-beta2 as 1.1.5"
+    },
+```
+#### Update the `magento.app.yaml` file
+
+Partners should edit the `magento.app.yaml` file to add new PHP and Composer values and change the build phass to values illustrated below:
+
+```yaml
+type: php:8.0
+build:
+    flavor: none
+
+dependencies:
+    php:
+        composer/composer: '^2.0'
+```
+
 ## {{ site.data.var.ee }} 2.4.4-beta2 highlights
 
 The following highlights are introduced in this release.
