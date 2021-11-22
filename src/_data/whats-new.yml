@@ -6,7 +6,7 @@ link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
 updated: Mon Nov 22 15:39:00 2021
 entries:
-- description: Added the 'Reindex in parallel mode` section to the [Manage the indexers](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html)
+- description: Added the 'Reindexing in parallel mode` section to the [Manage the indexers](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html)
     topic.
   versions: 2.3.x, 2.4.x
   type: Major Update
