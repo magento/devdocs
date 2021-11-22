@@ -1,6 +1,5 @@
 ---
 title: GroupedSharedCatalog
-release: 2.4.3
 content: |-
   The Magento_GroupedSharedCatalog module enables grouped products to be added to a shared catalog in an B2B environment. This module extends Magento_SharedCatalog and Magento_Grouped modules.
 

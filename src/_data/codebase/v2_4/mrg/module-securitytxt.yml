@@ -1,6 +1,5 @@
 ---
 title: Securitytxt
-release: 2.4.3
 content: "### Summary\n>  When security vulnerabilities are discovered by researchers,
   proper reporting channels are often lacking. As a result, vulnerabilities may be
   left unreported. This document defines a format (\"security.txt\") to help organizations

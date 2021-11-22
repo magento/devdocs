@@ -1,6 +1,5 @@
 ---
 title: InventoryCatalogFrontendUi
-release: 2.4.3
 content: |-
   The `InventoryCatalogFrontendUi` module adds new extension point for getting info about a product for ui usage.
 

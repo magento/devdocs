@@ -1,5 +1,4 @@
 ---
 title: LoginAsCustomerPageCache
-release: 2.4.3
 content: The Magento_LoginAsCustomerPageCache module provides adaptation to PageCache
   functionality

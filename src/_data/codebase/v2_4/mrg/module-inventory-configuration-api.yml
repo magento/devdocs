@@ -1,6 +1,5 @@
 ---
 title: InventoryConfigurationApi
-release: 2.4.3
 content: |-
   The `InventoryConfigurationApi` module provides service contracts for inventory management configuration.
 

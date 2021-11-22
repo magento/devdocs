@@ -1,6 +1,5 @@
 ---
 title: GoogleOptimizer
-release: 2.4.3
 content: "Magento_GoogleOptimizer module implements functionality of Google Experiment
   tool that is the part of Google Analytics functionality.\n\nGoogle Experiment (on
   Google side) allows to make two variants of the same page and compare their popularity.

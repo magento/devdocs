@@ -1,6 +1,5 @@
 ---
 title: InventoryGroupedProductIndexer
-release: 2.4.3
 content: |-
   The `InventoryGroupedProductIndexer` module integrates inventory management business logic into Magento's indexation logic for grouped products.
 

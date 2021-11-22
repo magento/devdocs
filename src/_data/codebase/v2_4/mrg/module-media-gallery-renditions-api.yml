@@ -1,6 +1,5 @@
 ---
 title: MediaGalleryRenditionsApi
-release: 2.4.3
 content: |-
   The Magento_MediaGalleryRenditionsApi module is responsible for the API implementation of Media Gallery Renditions.
 

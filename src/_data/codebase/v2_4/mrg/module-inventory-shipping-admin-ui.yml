@@ -1,6 +1,5 @@
 ---
 title: InventoryShippingAdminUi
-release: 2.4.3
 content: |-
   The `InventoryShippingAdminUi` module extends Magento's Admin UI with Inventory Management functionality.
 

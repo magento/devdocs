@@ -1,6 +1,5 @@
 ---
 title: InventoryConfigurableProductFrontendUi
-release: 2.4.3
 content: |-
   The `InventoryConfigurableProductFrontendUi` adds info about salable quantity for configurable variations in product page.
 
