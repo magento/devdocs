@@ -48,10 +48,18 @@ See [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-
   <tr>
     <td class="tg-0pky">Commerce</td>
     <td class="tg-0lax">PHP</td>
-    <td class="tg-0lax" colspan="4"></td>
-    <td class="tg-0lax" colspan="4"></td>
-    <td class="tg-0lax" colspan="4"></td>
-
+    <td class="tg-0lax">Q1</td>
+    <td class="tg-0lax">Q2</td>
+    <td class="tg-0lax">Q3</td>
+    <td class="tg-0lax">Q4</td>
+    <td class="tg-0lax">Q1</td>
+    <td class="tg-0lax">Q2</td>
+    <td class="tg-0lax">Q3</td>
+    <td class="tg-0lax">Q4</td>
+    <td class="tg-0lax">Q1</td>
+    <td class="tg-0lax">Q2</td>
+    <td class="tg-0lax">Q3</td>
+    <td class="tg-0lax">Q4</td>
   </tr>
   <tr>
     <td class="tg-0pky">2.4.0</td>
