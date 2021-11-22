@@ -1,6 +1,5 @@
 ---
 title: InventoryInStorePickupShipping
-release: 2.4.3
 content: |-
   The `InventoryInStorePickupShipping` module provides business logic for In-Store Pickup functionality on Checkout.
 

@@ -1,6 +1,5 @@
 ---
 title: AdminGwsStaging
-release: 2.4.3
 content: |-
   The Magento_AdminGwsStaging module is a part of the staging functionality in Magento EE. It extends the Magento_AdminGws module functionality to be used in staging mode.
 

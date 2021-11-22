@@ -1,5 +1,4 @@
 ---
 title: LoginAsCustomerSales
-release: 2.4.3
 content: The Magento_LoginAsCustomerSales module is responsible for communication
   between Magento_LoginAsCustomer and order placement.

@@ -1,6 +1,5 @@
 ---
 title: CmsStaging
-release: 2.4.3
 content: |-
   The Magento_CmsStaging module is a part of the staging functionality in Magento EE. It enables you to create new CMS Page and the CMS Block updates or add new changes to the existing store updates. In other words, you can modify the CMS Pages and the CMS Blocks in updates. These updates are shown on the content dashboard.
 

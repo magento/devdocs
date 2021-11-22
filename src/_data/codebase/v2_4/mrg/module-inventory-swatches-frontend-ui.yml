@@ -1,6 +1,5 @@
 ---
 title: InventorySwatchesFrontendUi
-release: 2.4.3
 content: |-
   The `InventorySwatchesFrontendUi` adds info about salable quantity to configurable product in case a user choose some
   specific product variation.

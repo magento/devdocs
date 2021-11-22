@@ -1,9 +1,6 @@
 ---
 group: php-developer-guide
-subgroup: 03_Build
 title: The di.xml file
-menu_title: The di.xml file
-menu_order: 1
 ---
 
 ## Overview
@@ -27,6 +24,7 @@ The areas are:
 
 *  adminhtml
 *  frontend
+*  graphql
 *  webapi_rest
 *  webapi_soap
 *  crontab

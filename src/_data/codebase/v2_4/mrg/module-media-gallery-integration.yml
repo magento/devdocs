@@ -1,5 +1,4 @@
 ---
 title: MediaGalleryIntegration
-release: 2.4.3
 content: The purpose of this module is to keep the integration of enhanced media gallery
   to Magento separated from implementation.

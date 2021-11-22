@@ -1,5 +1,4 @@
 ---
 title: MediaStorage
-release: 2.4.3
 content: The Magento_MediaStorage module implements functionality related with upload
   media files and synchronize it by database.

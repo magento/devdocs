@@ -1,6 +1,5 @@
 ---
 title: Staging
-release: 2.4.3
 content: |-
   ## Overview
   Magento_Staging module is used for setting up, previewing and managing future store updates.
