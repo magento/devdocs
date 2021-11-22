@@ -27,6 +27,12 @@ These release notes describe the initial release of Payment Services and include
 
 *  {:.bug}<!-- Issue PAY-1443 -->It is possible to customise the look and feel of PayPal buttons and the CC fields for the [Payment Services](https://devdocs-beta.magento.com/payment-services/customize-buttons-messaging.html) extension.
 
+*  {:.bug}<!-- Issue PAY-2473 -->Using [incorrect Composer keys](https://support.magento.com/hc/en-us/articles/4406603542541) during installation of Payment Services extension.
+
+*  {:.bug}<!-- Issue PAY-2474 -->Payment Services [reports](https://support.magento.com/hc/en-us/articles/4406114741517) for Payout and Order payment status may not synchronize immediately.
+
+*  {:.bug}<!-- Issue PAY-2475 -->[PayPal sandbox account](https://support.magento.com/hc/en-us/articles/4406954952461) for Payment Services cannot be verified.
+
 ### Documentation
 
 To learn more about Payment Services and Payment Services development:
