@@ -90,7 +90,7 @@ pages:
           url: /page-builder/docs/content-types/create/add-icon.html
           versionless: true
 
-        - label: Workflow tips
+        - label: Troubleshooting
           url: /page-builder/docs/content-types/create/troubleshooting.html
           versionless: true
 
