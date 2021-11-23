@@ -92,5 +92,5 @@ Click **Partner Portal** to open the Magento Partner Portal dashboard.
 _Partner Portal_
 
 [1]: http://docs.magento.com/m2/ce/user_guide/system/encryption-key.html
-[2]: http://devdocs.magento.com/guides/v2.3/install-gde/prereq/connect-auth.html
+[2]: {{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html
 [3]: https://magento.com/partners/become

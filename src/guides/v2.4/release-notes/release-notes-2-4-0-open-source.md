@@ -9,13 +9,13 @@ title: Magento Open Source 2.4.0 Release Notes
 
 {:.bs-callout-info}
 
-**Braintree payment integration**: Prior to Magento 2.4.0, it was recommended that merchants install and configure the official Braintree payment integration extension from the Commerce Marketplace to replace the core integration. With this release (Magento 2.4.0), the extension is now included in the Magento release. Merchants must follow additional steps to ensure that Braintree works properly in a Magento 2.4.0 deployment. See [Braintree](https://docs.magento.com/user-guide/payment/braintree.html) for more information on how to migrate to Magento 2.4.0.
+**Braintree payment integration**: Prior to Magento 2.4.0, it was recommended that merchants install and configure the official Braintree payment integration extension from the Commerce Marketplace to replace the core integration. With this release (Magento 2.4.0), the extension is now included in the Magento release. Merchants must follow additional steps to ensure that Braintree works properly in a Magento 2.4.0 deployment. See [Braintree]({{ site.user_guide_url }}/payment/braintree.html) for more information on how to migrate to Magento 2.4.0.
 
 This release includes all the improvements to core quality that were included in Magento 2.3.5-p1, over 100 new fixes to core code, and 30 security enhancements. It includes the resolution of 226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
 {:.bs-callout-info}
 
-Minor releases bring substantial code enhancements. Before upgrading to Magento 2.4.0, confirm that your environment meets the minimal [technical stack requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html).
+Minor releases bring substantial code enhancements. Before upgrading to Magento 2.4.0, confirm that your environment meets the minimal [technical stack requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 {:.bs-callout-info}
 
@@ -53,9 +53,9 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
    *  **Securing your Admin account**. Two-factor authentication (2FA) is now required for the Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default. We strongly recommend against disabling the 2FA module.  This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
 
-   *  **Securing your Magento account**. Two-factor Authentication (2FA) provides an added, optional  layer of security to better protect your Magento.com account from unauthorized users who might want to use your account in ways you do not want. See [Securing Your Account](https://docs.magento.com/user-guide/magento/magento-account-secure.html).
+   *  **Securing your Magento account**. Two-factor Authentication (2FA) provides an added, optional  layer of security to better protect your Magento.com account from unauthorized users who might want to use your account in ways you do not want. See [Securing Your Account]({{ site.user_guide_url }}/magento/magento-account-secure.html).
 
-*  **Securing Cloud SSH access**. {{ site.data.var.ece }} provides multi-factor authentication (MFA) enforcement to manage authentication requirements for SSH access to Cloud environments. Multi-factor authentication for 2FA is not enabled by default on a project.  Magento highly recommends enabling this feature. Contact Support for assistance. See [Enable multi-factor authentication for SSH access](https://devdocs.magento.com/cloud/project/project-enable-mfa-enforcement.html).
+*  **Securing Cloud SSH access**. {{ site.data.var.ece }} provides multi-factor authentication (MFA) enforcement to manage authentication requirements for SSH access to Cloud environments. Multi-factor authentication for 2FA is not enabled by default on a project.  Magento highly recommends enabling this feature. Contact Support for assistance. See [Enable multi-factor authentication for SSH access]({{ site.baseurl }}/cloud/project/project-enable-mfa-enforcement.html).
 
 *  **Template filter strict mode is now enabled by default**. Magento components (including CMS pages and blocks) that use the template filter in legacy mode can be vulnerable to remote code execution (RCE). Enabling strict mode by default ensures that RCE attacks cannot be deliberately enabled. <!--- MC-22982-->
 
@@ -106,11 +106,11 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **PayPal JavaScript SDK upgrade**. We’ve migrated the PayPal Express Checkout integration to the latest PayPal JavaScript SDK, an SDK that  automatically collects and passes needed risk parameters to PayPal. The behavior of the PayPal Express Checkout payment method remains unchanged. However, upgrading this SDK to the latest version let merchants access the latest features and security enhancements. <!--- MC-30962-->
 
-*  **Deprecation and removal of the Web Set Up Wizard**. You must use the command line to install or upgrade Magento 2.4.0. See [Install Magento](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli.html).
+*  **Deprecation and removal of the Web Set Up Wizard**. You must use the command line to install or upgrade Magento 2.4.0. See [Install Magento]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
 
-*  **Composer update plugin**. Composer plugin streamlines the  upgrade process by resolving changes that must be made to the root project `composer.json` file before updating to a new Magento product requirement. This plug-in protects against overwriting customizations. See [Upgrade using the Magento composer root plugin](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html).
+*  **Composer update plugin**. Composer plugin streamlines the  upgrade process by resolving changes that must be made to the root project `composer.json` file before updating to a new Magento product requirement. This plug-in protects against overwriting customizations. See [Upgrade using the Magento composer root plugin]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
 
-*  **Seller-assisted shopping**. This feature allows merchants to view the storefront on behalf of their customers. Customers opt to allow storefront access to their accounts. This community-developed feature includes an original extension developed by [MAGEFAN](https://magefan.com/). See [Seller Assisted Shopping](https://docs.magento.com/user-guide/configuration/customers/login-as-customer.html). Features include:
+*  **Seller-assisted shopping**. This feature allows merchants to view the storefront on behalf of their customers. Customers opt to allow storefront access to their accounts. This community-developed feature includes an original extension developed by [MAGEFAN](https://magefan.com/). See [Seller Assisted Shopping]({{ site.user_guide_url }}/configuration/customers/login-as-customer.html). Features include:
 
    *  ACL to control which administrators can log in to customer accounts can be configured on a per-website basis
    *  Compatibility with multiple websites and customer account scopes
@@ -205,7 +205,7 @@ This release includes new on-site messaging options to help shoppers understand 
 *  API efficiency
 *  cookies and unit tests
 *  discounts
-*  configuration settings now contain On-Site Messaging section for the control of the storefront display of Klarna promotional messaging. See [Setting Up Klarna](https://docs.magento.com/user-guide/payment/klarna-setup.html).
+*  configuration settings now contain On-Site Messaging section for the control of the storefront display of Klarna promotional messaging. See [Setting Up Klarna]({{ site.user_guide_url }}/payment/klarna-setup.html).
 
 #### Vertex
 
@@ -1682,7 +1682,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 {:.bs-callout-info}
 
-**MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration steps to enable Google Authenticator**. See  [Configuring MFTF for Two-Factor Authentication (2FA)](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html#magento-functional-testing-framework).
+**MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration steps to enable Google Authenticator**. See  [Configuring MFTF for Two-Factor Authentication (2FA)]({{ page.baseurl }}/security/two-factor-authentication.html#magento-functional-testing-framework).
 
 <!-- ENGCOM-6585-->
 

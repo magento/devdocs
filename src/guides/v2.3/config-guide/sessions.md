@@ -39,7 +39,7 @@ As a user with `root` privileges, open your `php.ini` file and search for the va
 
 ## Manage session size
 
-See the [User Guide](https://docs.magento.com/user-guide/stores/security-session-management.html).
+See the [User Guide]({{ site.user_guide_url }}/stores/security-session-management.html).
 
 ## Garbage collection configuration {#session-gc}
 

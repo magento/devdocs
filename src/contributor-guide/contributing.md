@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 {:.bs-callout-tip}
-Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://opensource.magento.com/slack), in the [#general](https://magentocommeng.slack.com/archives/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/archives/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
+Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://opensource.magento.com/slack), in the [#general](https://magentocommeng.slack.com/archives/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/archives/C7FA71S3V), and browse for more [channels]({{ site.baseurl }}/community/resources/resources.html#community-engineering-slack)!
 
 ## Contribute to Magento 2 code {#contribute}
 
@@ -358,7 +358,7 @@ To maintain an effective bug fix workflow, we ask reporters to follow some simpl
 
 Before creating an issue, do the following:
 
--  Check the [Developer Documentation](http://devdocs.magento.com/) and [User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html) to make sure the behavior you are reporting is really a bug, not a feature.
+-  Check the [Developer Documentation]({{ site.baseurl }}/) and [User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html) to make sure the behavior you are reporting is really a bug, not a feature.
 -  Check the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating somebody’s work.
 -  Ensure that information you are reporting is a technical issue. Refer to the [Community Forums](https://community.magento.com/) or [Magento Stack Exchange](http://magento.stackexchange.com/) for technical questions, feature requests, etc.
 -  Verify that the issue you are reporting does not relate to {{site.data.var.ee}}. GitHub is intended for {{site.data.var.ce}} users to report on issues related to Open Source only. You can report Commerce-related issues one of two ways:

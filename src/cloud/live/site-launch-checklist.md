@@ -82,7 +82,7 @@ To update DNS configuration for site launch:
       ```
 
    {:.bs-callout-info}
-   You can also update the Base URL from the [Admin](https://docs.magento.com/user-guide/stores/store-urls.html#configure-the-base-url).
+   You can also update the Base URL from the [Admin]({{ site.user_guide_url }}/stores/store-urls.html#configure-the-base-url).
 
 1. Wait a few minutes for the site to update.
 
