@@ -6,7 +6,7 @@ ee_only: True
 
 The release notes contain updates to the following Product Recommendations modules:
 
--  As of March 2021, Product Recommendations are now supported in [PWA Studio](https://magento.github.io/pwa-studio/product-recs) storefronts.
+-  As of March 2021, Product Recommendations are now supported in [PWA Studio](https://developer.adobe.com/commerce/pwa-studio/integrations/product-recommendations/) storefronts.
 -  Product Recommendations metapackage: `magento/product-recommendations`
 -  Page Builder support in Product Recommendations (optional) module: `magento/module-page-builder-product-recommendations`
 -  Visual similarity recommendation type support for Product Recommendations (optional) module: `magento/module-visual-product-recommendations`

@@ -131,7 +131,7 @@ See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-note
 
 *  Routing is now handled through the React Router (library of navigational components)
 
-*  Refactored Venia [state management](https://magento.github.io/pwa-studio/technologies/basic-concepts/state-management/) to abstract and reduce dependency on Redux
+*  Refactored Venia [state management](https://developer.adobe.com/commerce/pwa-studio/guides/general-concepts/state-management/) to abstract and reduce dependency on Redux
 
 *  Continued migration from REST to GraphQL
 
