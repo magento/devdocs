@@ -19,7 +19,7 @@ These release notes describe the initial release of Payment Services and include
 
 *  {:.new}<!-- Issue PAY-666 -->Merchants can [configure Payment Services]({{site.user_guide_url}}/payment-services/configure-payments.html) extension with basic payment behaviours (i.e. Auth-capture together, switch between sandbox or production environments).
 
-*  {:.new}<!-- Issue PAY-780 -->[Create an entire order]({{site.user_guide_url}}/payment-services/order-admin-payments.html) in Admin using Payment Services.
+*  {:.new}<!-- Issue PAY-780 -->Shoppers can checkout with Payment Services or you can take the order over the phone and [create an entire order]({{site.user_guide_url}}/payment-services/order-admin-payments.html) in Admin for them.
 
 *  {:.new}<!-- Issue PAY-1856 -->Payment Services offer merchants comprehensive [reporting]({{site.user_guide_url}}/payment-services/financial-reporting.html) so that you can get a clear view of your store orders and payments.
 
