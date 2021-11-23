@@ -3,11 +3,13 @@ title: Lifecycle policy
 group: release
 ---
 
-For {{site.data.var.ee}} 2.3 and subsequent releases:
+For {{ site.data.var.ee }} 2.4 and subsequent releases:
 
--  Customers must upgrade to the latest security patch or patch release to access security fixes.
+-  To better streamline our lifecycle policy, Adobe provides quality fixes to the 2.4 release line until the end of support date of the PHP version upon which it is based. A customer can access quality fixes by contacting Support or through the self-serve Quality Patches Tool if their version is still eligible for quality support. Refer to the table below for the End of Software Support dates for {{ site.data.var.ee }} release lines.
 
--  To better streamline our lifecycle policy, Adobe will provide quality fixes to the 2.4 release line until the end of support date of the PHP version upon which it is based. Refer to the table below for the End of Software Support dates for {{site.data.var.ee}} release lines:
+-  Adobe provides security fixes only through the latest patch or security patch release, even if a customer's version is still eligible for quality support. Unlike quality fixes, security fixes cannot be backported to previous minor releases nor to previous patch releases within supported minor releases.
+
+-  For critical security issues, such as zero-day vulnerabilities, Adobe provides hotfixes for all customers on a supported version, even if they are not on the latest patch or security patch release. It is important to note that a hotfix is not a catch-all and will not address all the security issues that would be fixed by upgrading to the latest release.
 
 | Release                          | Release Date  | End of Software Support<sup>1</sup> | Dependent PHP Version       |
 |----------------------------------|---------------|-------------------------------------|-----------------------------|
