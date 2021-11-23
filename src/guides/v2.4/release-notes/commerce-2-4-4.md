@@ -43,13 +43,11 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 **Issue: Label not created for DHL shipments**. The **Length**, **Width**, and **Height** fields of the Admin Create Packages window in the checkout workflow are disabled when adding a bundle product to a package. <!--- AC-1764-->
 
-**Issue**: The Fastly CDN module for Magento 2 does not currently support PHP 8.0. We will update these release notes when Fastly releases a new module. When installing the 2.4.4-beta2 version, partners that use {{ site.data.var.ee }} on cloud infrastructure must customize the Magento Cloud template `composer.json` and `.magento.app.yaml` files before building and deploying their project See the workaround described below. <!--- MCLOUD-8318-->
-
-### Workaround for Fastly module known issue
+## Installation on cloud infrastructure
 
 To upgrade to 2.4.4-beta2, Beta partners that build and deploy {{ site.data.var.ee }} on cloud infrastructure must update the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json) and `.magento.app.yaml` files as described below.
 
-#### Update the `repositories` and `require` sections in the Magento Cloud template `composer.json` file
+### Update the `repositories` and `require` sections in the Magento Cloud template `composer.json` file
 
 Update the `repositories` section to add the Magento Cloud and Quality packages that support the 2.4.4-beta2 version.
 
@@ -91,11 +89,12 @@ Update the  `require` section to include the correct version of each repository 
         "magento/magento-cloud-docker": "dev-2.4.4-beta as 1.3.1",
         "magento/magento-cloud-components": "dev-2.4.4-beta as 1.0.10",
         "magento/magento-cloud-patches": "dev-2.4.4-beta as 1.0.14",
-        "magento/quality-patches": "dev-2.4.4-beta as 1.1.5"
+        "magento/quality-patches": "dev-2.4.4-beta as 1.1.5",
+        "fastly/magento2": "^1.2.34"
     },
 ```
 
-#### Update the `magento.app.yaml` file
+### Update the `magento.app.yaml` file
 
 In the `magento.app.yaml` file, update the `type`, `flavor`, and `dependency` sections to use PHP 8.0 and Composer 2. Add `composer install`.
 
