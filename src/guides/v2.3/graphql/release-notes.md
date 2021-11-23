@@ -5,7 +5,7 @@ title: Release Notes
 
 *Release notes published January 2020.*
 
-GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://github.com/magento/pwa-studio) (PWA), and mobile apps for Magento.
+GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://developer.adobe.com/commerce/pwa-studio/) (PWA), and mobile apps for Magento.
 
 The **[Magento GraphQL](https://github.com/magento/graphql-ce) project** is a Magento Community Engineering special project open to contributors.
 To take part and contribute, see the [Magento GraphQL](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/archives/C8076E0KS) channel (or [self signup](https://opensource.magento.com/slack)) to discuss the project.

@@ -7,7 +7,7 @@ ee_only: True
 To help you implement product recommendations on your storefront, use the following workflow:
 
 {:.bs-callout-info}
-If your storefront is implemented using PWA Studio, refer to the [PWA documentation](https://magento.github.io/pwa-studio/product-recs). If you use a custom frontend technology such as React or Vue JS, learn how to [integrate]({{ site.devdocs_url }}/recommendations/headless.html) Product Recommendations into your headless storefront.
+If your storefront is implemented using PWA Studio, refer to the [PWA documentation](https://developer.adobe.com/commerce/pwa-studio/integrations/product-recommendations/). If you use a custom frontend technology such as React or Vue JS, learn how to [integrate]({{ site.devdocs_url }}/recommendations/headless.html) Product Recommendations into your headless storefront.
 
 1. **Deploy data collection to production**
 

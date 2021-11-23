@@ -4,7 +4,7 @@ title: Integrate Product Recommendations into your Headless Storefront
 ee_only: True
 ---
 
-You can integrate Product Recommendations in a headless storefront using either [PWA Studio](https://magento.github.io/pwa-studio/) or a custom frontend technology, such as React or Vue JS.
+You can integrate Product Recommendations in a headless storefront using either [PWA Studio](https://developer.adobe.com/commerce/pwa-studio/) or a custom frontend technology, such as React or Vue JS.
 
 Product Recommendations require [behavioral and catalog data]({{ page.baseurl }}recommendations/product-recs.html#types-of-data) to operate. The catalog data sync process remains unchanged in a headless implementation, but changes are needed for behavioral data collection.
 

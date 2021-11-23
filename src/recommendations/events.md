@@ -21,7 +21,7 @@ Event | Description | [Used for metrics?](https://docs.magento.com/user-guide/ma
 `rec-click` | The customer clicks a product in the recommendation unit. | Yes
 `view` | The recommendation unit becomes viewable on the page, such as by scrolling into view. | Yes
 
-If you are using the default Adobe Commerce storefront or [PWA](https://magento.github.io/pwa-studio/product-recs/), handling these events is done for you. If you are writing your own custom storefront, learn how you can [integrate Product Recommendations]({{ site.baseurl }}/recommendations/headless.html) into your storefront.
+If you are using the default Adobe Commerce storefront or [PWA](https://developer.adobe.com/commerce/pwa-studio/integrations/product-recommendations/), handling these events is done for you. If you are writing your own custom storefront, learn how you can [integrate Product Recommendations](https://developer.adobe.com/commerce/pwa-studio/integrations/product-recommendations/) into your storefront.
 
 Many shoppers use ad blockers or enable privacy settings. These configurations prevent the `magento/product-recommendations` module from capturing events, which might cause the metrics in the [Product Recommendations dashboard](https://docs.magento.com/user-guide/marketing/product-recommendations.html#dashboard) to underreport engagement and revenue numbers.
 

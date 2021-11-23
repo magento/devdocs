@@ -80,7 +80,7 @@ The Magento Inventory (was MSI) community project has added multiple new feature
 
 #### Progressive Web Apps (PWA) Studio
 
-PWA Studio is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.x. See [Magento PWA Documentation](https://magento.github.io/pwa-studio/).
+PWA Studio is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.x. See [Magento PWA Documentation](https://developer.adobe.com/commerce/pwa-studio/).
 
 #### GraphQL
 
