@@ -12,7 +12,7 @@ The following sections describe the different kinds of tests that are currently 
 ### Semantic Version Checker
 
 Semantic Version Checker is a test that compares the changed code against the mainline and detects levels of code changes. It shows a list of changes grouped by the class (level) of changes (MAJOR, MINOR, PATCH) with an explanation of the change (Class was removed, [public] Method implementation changed, [private] Property has been removed etc.) The allowed level is PATCH.
-See [Backward Compatibility Development](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/index.html) for more information.
+See [Backward Compatibility Development]({{ site.baseurl }}/guides/v2.3/contributor-guide/backward-compatible-development/index.html) for more information.
 
 ### Functional Tests
 

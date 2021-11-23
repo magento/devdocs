@@ -14,7 +14,7 @@ The following events are not specific to Product Recommendations, but are requir
 
 The [Storefront Events Collector]({{ site.baseurl }}/shared-services/storefront-event-collector.html#quick-start) lists all the events deployed to your storefront. From that list, however, there is a subset of events specific to Product Recommendations. These events collect data when shoppers interact with recommendation units on the storefront and power the metrics used to help you analyze how well your recommendations are performing.
 
-Event | Description | [Used for metrics?](https://docs.magento.com/user-guide/marketing/recommendation-metrics.html)
+Event | Description | [Used for metrics?]({{ site.user_guide_url }}/marketing/recommendation-metrics.html)
 --- | --- | ---
 `impression-render` | The recommendation unit is rendered on the page. | Yes
 `rec-add-to-cart-click` | The customer clicks the **Add to cart** button for an item in the recommendation unit. | Yes, when an **Add to cart** button is present in the recommendations template.
@@ -23,7 +23,7 @@ Event | Description | [Used for metrics?](https://docs.magento.com/user-guide/ma
 
 If you are using the default Adobe Commerce storefront or [PWA](https://developer.adobe.com/commerce/pwa-studio/integrations/product-recommendations/), handling these events is done for you. If you are writing your own custom storefront, learn how you can [integrate Product Recommendations](https://developer.adobe.com/commerce/pwa-studio/integrations/product-recommendations/) into your storefront.
 
-Many shoppers use ad blockers or enable privacy settings. These configurations prevent the `magento/product-recommendations` module from capturing events, which might cause the metrics in the [Product Recommendations dashboard](https://docs.magento.com/user-guide/marketing/product-recommendations.html#dashboard) to underreport engagement and revenue numbers.
+Many shoppers use ad blockers or enable privacy settings. These configurations prevent the `magento/product-recommendations` module from capturing events, which might cause the metrics in the [Product Recommendations dashboard]({{ site.user_guide_url }}/marketing/product-recommendations.html#dashboard) to underreport engagement and revenue numbers.
 
 {:.bs-callout-info}
-If [Cookie Restriction Mode](https://docs.magento.com/user-guide/stores/compliance-cookie-restriction-mode.html) is enabled, Adobe Commerce does not collect behavioral data until the shopper consents to using cookies. If Cookie Restriction Mode is disabled, Adobe Commerce collects behavioral data by default.
+If [Cookie Restriction Mode]({{ site.user_guide_url }}/stores/compliance-cookie-restriction-mode.html) is enabled, Adobe Commerce does not collect behavioral data until the shopper consents to using cookies. If Cookie Restriction Mode is disabled, Adobe Commerce collects behavioral data by default.

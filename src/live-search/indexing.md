@@ -6,7 +6,7 @@ ee_only: True
 
 Product attribute properties (metadata) determine how an attribute can be used in the catalog, its appearance and behavior in the store, and the data that is included in data transfer operations. The scope of attribute metadata is `website/store/store view`.
 
-The Live Search API allows a client to sort by any product attribute that has the [storefront property](https://docs.magento.com/user-guide/stores/attributes-product.html) `Use in Search` set to `Yes` in the {{site.data.var.ee}} Admin.
+The Live Search API allows a client to sort by any product attribute that has the [storefront property]({{ site.user_guide_url }}/stores/attributes-product.html) `Use in Search` set to `Yes` in the {{site.data.var.ee}} Admin.
 
 ## Indexing pipeline
 

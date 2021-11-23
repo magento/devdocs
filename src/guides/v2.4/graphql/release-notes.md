@@ -27,7 +27,7 @@ The [{{site.data.var.ce}} 2.4.0 Release Notes]({{page.baseurl}}/release-notes/re
 
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.5
 
--  {:.new} **The `products` and `categoryList` queries can now be used to retrieve information about products and categories that have been added to a staged campaign.** These queries require an admin authorization token. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) for details.
+-  {:.new} **The `products` and `categoryList` queries can now be used to retrieve information about products and categories that have been added to a staged campaign.** These queries require an admin authorization token. See [Using queries]({{ site.baseurl }}/guides/v2.3/graphql/queries/index.html#staging) for details.
 -  {:.fix} Custom attributes used in layered navigation no longer require the **Use in Search**, **Visible in Advanced Search**, and **Use in Search Results Layered Navigation** fields be set to Yes.
 -  {:.fix} Added the `position` and `disabled` attributes to the `MediaGalleryInterface`.
 -  {:.fix} When you apply a gift card to a cart, an exception is no longer thrown when the last product is removed from the cart.
