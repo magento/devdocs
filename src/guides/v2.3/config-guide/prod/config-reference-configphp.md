@@ -78,7 +78,7 @@ Contains an array of scope configuration values. It has the following subnodes:
 ]
 ```
 
-Learn more about [Magento Scopes](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html)
+Learn more about [Magento Scopes]({{ site.user_guide_url }}/configuration/scope.html)
 
 ## system
 

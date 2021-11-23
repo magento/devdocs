@@ -41,7 +41,7 @@ Related topics
 [modules]: modules.html
 [collection]: data-collection.html
 
-[Advanced reporting functionality]: http://docs.magento.com/m2/ce/user_guide/reports/advanced-reporting.html
-[base url]: http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html
+[Advanced reporting functionality]: {{ site.user_guide_url }}/reports/advanced-reporting.html
+[base url]: {{ site.user_guide_url }}/stores/store-urls.html
 [{{site.data.var.ee}} Reporting]: https://magento.com/products/business-intelligence
 [Magento crontab]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html

@@ -91,6 +91,6 @@ Click **Partner Portal** to open the Magento Partner Portal dashboard.
 ![Partner portal]({{ site.baseurl }}/marketplace/sellers/images/partner-portal.png){: .zoom}
 _Partner Portal_
 
-[1]: http://docs.magento.com/m2/ce/user_guide/system/encryption-key.html
+[1]: {{ site.user_guide_url }}/system/encryption-key.html
 [2]: {{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html
 [3]: https://magento.com/partners/become

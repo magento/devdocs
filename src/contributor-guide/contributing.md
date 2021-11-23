@@ -358,7 +358,7 @@ To maintain an effective bug fix workflow, we ask reporters to follow some simpl
 
 Before creating an issue, do the following:
 
--  Check the [Developer Documentation]({{ site.baseurl }}/) and [User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html) to make sure the behavior you are reporting is really a bug, not a feature.
+-  Check the [Developer Documentation]({{ site.baseurl }}/) and [User Guide]({{ site.user_guide_url }}/getting-started.html) to make sure the behavior you are reporting is really a bug, not a feature.
 -  Check the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating somebody’s work.
 -  Ensure that information you are reporting is a technical issue. Refer to the [Community Forums](https://community.magento.com/) or [Magento Stack Exchange](http://magento.stackexchange.com/) for technical questions, feature requests, etc.
 -  Verify that the issue you are reporting does not relate to {{site.data.var.ee}}. GitHub is intended for {{site.data.var.ce}} users to report on issues related to Open Source only. You can report Commerce-related issues one of two ways:
