@@ -249,21 +249,21 @@ File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
 
 The report also includes a detailed summary:
 
-* *Installed Version*: the version currently installed.
-* *{{site.data.var.ee}} Version*: the version you want to upgrade to.
-* *Running time*: amount of time the analysis took to build the report (mm:ss).
-* *{{site.data.var.ee}} core checked modules*: amount of core checked modules.
-* *{{site.data.var.ee}} core modified files*: amount of core modified file.
-* *{{site.data.var.ee}} % core modified files*: percentage of core modified files.
-* *{{site.data.var.ee}} checked modules*: amount of checked modules.
-* *Compatibility errors found*: amount of compatibility errors.
-* *Compatibility warnings found*: amount of compatibility warnings.
-* *Compatibility critical errors found*: amount of compatibility critical errors.
-* *GraphQL critical errors found*: amount of GraphQL critical errors.
-* *GraphQL warnings found*: amount of GraphQL warnings.
-* *Total errors found*: total amount of errors found.
-* *Total warnings found*: total amount of warnings found.
-* *Complexity score*: a figure that indicates how difficult is to upgrade from the current version to the new one.
+*  *Installed Version*: the version currently installed.
+*  *{{site.data.var.ee}} Version*: the version you want to upgrade to.
+*  *Running time*: amount of time the analysis took to build the report (mm:ss).
+*  *{{site.data.var.ee}} core checked modules*: amount of core checked modules.
+*  *{{site.data.var.ee}} core modified files*: amount of core modified file.
+*  *{{site.data.var.ee}} % core modified files*: percentage of core modified files.
+*  *{{site.data.var.ee}} checked modules*: amount of checked modules.
+*  *Compatibility errors found*: amount of compatibility errors.
+*  *Compatibility warnings found*: amount of compatibility warnings.
+*  *Compatibility critical errors found*: amount of compatibility critical errors.
+*  *GraphQL critical errors found*: amount of GraphQL critical errors.
+*  *GraphQL warnings found*: amount of GraphQL warnings.
+*  *Total errors found*: total amount of errors found.
+*  *Total warnings found*: total amount of warnings found.
+*  *Complexity score*: a figure that indicates how difficult is to upgrade from the current version to the new one.
 
 The lower this number is, the easier is to perform the upgrade.
 
