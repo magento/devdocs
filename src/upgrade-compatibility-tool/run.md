@@ -274,7 +274,7 @@ See the [Error message reference]({{site.baseurl}}/upgrade-compatibility-tool/er
 ```terminal
  ------------------------------------- -------
   Installed version                    2.4.2
-  {{site.data.var.ee}} version         2.4.3
+  {{site.data.var.ee}} version            2.4.3
   Running time                         0m:48s
   Core files checked                   0
   Core files modified                  0
