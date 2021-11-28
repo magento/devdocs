@@ -15,7 +15,7 @@ We have some resources here to help get you started using the eCommerce platform
 
 ## How to get the Magento software {#install-get-software}
 
-Check the availability of new features and releases, and learn how you can obtain them, on our [Magento product availability page](https://devdocs.magento.com/release/availability.html).
+Check the availability of new features and releases, and learn how you can obtain them, on our [Magento product availability page]({{ site.baseurl }}/release/availability.html).
 
 Consult the following table for getting started with installing {{site.data.var.ce}} or {{site.data.var.ee}}.
 

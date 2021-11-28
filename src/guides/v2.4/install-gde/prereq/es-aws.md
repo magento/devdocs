@@ -55,4 +55,4 @@ For additional information, see [Elasticsearch documentation][]
 [Elasticdump]: https://www.npmjs.com/package/elasticdump
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 [Migrating to Amazon Elasticsearch Service]: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/migration.html
-[Advanced Install]: https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli.html
+[Advanced Install]: {{ page.baseurl }}/install-gde/install/cli/install-cli.html

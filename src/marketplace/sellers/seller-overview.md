@@ -14,4 +14,4 @@ As an extension seller, your process starts with the extension development and t
 
 Although you are not prevented from listing and selling your products and services on your own site, we believe that Commerce Marketplace presents the greatest opportunity to drive sales for your Magento-related products and services.
 
-[1]: https://devdocs.magento.com/guides/v2.3/ext-best-practices/bk-ext-best-practices.html
+[1]: {{ site.baseurl }}/guides/v2.3/ext-best-practices/bk-ext-best-practices.html

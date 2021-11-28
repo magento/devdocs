@@ -17,9 +17,9 @@ If you have configured the `product-recommendations` module correctly, but you a
 
 For issues related to the Catalog SaaS Export module:
 
--  Confirm the [cron](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html) jobs are running.
+-  Confirm the [cron]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html) jobs are running.
 
--  Confirm the [indexers](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html) are running and the `Product Feed` indexer is set to `Update by Schedule`.
+-  Confirm the [indexers]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html) are running and the `Product Feed` indexer is set to `Update by Schedule`.
 
 -  Confirm the modules are enabled. The `saas-export` metapackage installs the following modules, all of which must be enabled:
 
@@ -32,7 +32,7 @@ For issues related to the Catalog SaaS Export module:
        "magento/module-saas-catalog"
    ```
 
--  Check the [logs](https://devdocs.magento.com/guides/v2.3/config-guide/cli/logging.html). Make sure there are no errors associated with the above modules.
+-  Check the [logs]({{ site.baseurl }}/guides/v2.3/config-guide/cli/logging.html). Make sure there are no errors associated with the above modules.
 
 -  Refresh Configuration cache. Go to **System** > **Tools** > **Cache Management**, and clear the configuration cache.
 
@@ -40,4 +40,4 @@ For issues related to the Catalog SaaS Export module:
 
 ### Events
 
-[Recommendation Events](https://devdocs.magento.com/recommendations/verify.html) describes the behavioral events that are sent to Magento.
+[Recommendation Events]({{ site.baseurl }}/recommendations/verify.html) describes the behavioral events that are sent to Magento.

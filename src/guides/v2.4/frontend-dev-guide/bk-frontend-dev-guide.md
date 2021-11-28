@@ -57,7 +57,7 @@ To use this guide, you must be familiar with:
 *  [JavaScript](https://glossary.magento.com/javascript)
 *  [PHTML](https://glossary.magento.com/phtml)
 *  [PHP (Basic)](https://glossary.magento.com/php)
-*  [Responsive Web Design (RWD)](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd_overview.html)
+*  [Responsive Web Design (RWD)]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
 
 {:.ref-header}
 Related topics

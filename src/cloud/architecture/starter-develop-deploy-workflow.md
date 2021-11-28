@@ -97,9 +97,9 @@ Configure your store settings from the Admin panel for the Integration environme
 For the best information on configurations, review the documentation for {{site.data.var.ee}} and the installed extensions. Here are some links and ideas to help you get kickstarted:
 
 *  [Best practices for store configuration]({{ site.baseurl }}/cloud/configure/configure-best-practices.html) for specific best practices in the cloud
-*  [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html) for store admin access, name, languages, currencies, branding, sites, store views and more
-*  [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html) for your look and feel of the site and stores including CSS and layouts
-*  [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html) for roles, tools, notifications, and your encryption key for your database
+*  [Basic configuration]({{ site.user_guide_url }}/configuration/configuration-basic.html) for store admin access, name, languages, currencies, branding, sites, store views and more
+*  [Theme]({{ site.user_guide_url }}/design/design-theme.html) for your look and feel of the site and stores including CSS and layouts
+*  [System configuration]({{ site.user_guide_url }}/system/system.html) for roles, tools, notifications, and your encryption key for your database
 *  Extension settings using their documentation
 
 Beyond just store settings, you can further configure multiple sites and stores, configured services, and more. See [Configure your store]({{ site.baseurl }}/cloud/configure/configuration-overview.html).

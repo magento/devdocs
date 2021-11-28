@@ -9,10 +9,10 @@ functional_areas:
 
 This task requires you to create a root [category](https://glossary.magento.com/category) (and additional categories if desired) for each store. The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
 
-*  [Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html)
-*  [Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html)
-*  [Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html)
-*  [Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
+*  [Categories]({{ site.user_guide_url }}/catalog/categories.html)
+*  [Adding Websites]({{ site.user_guide_url }}/stores/stores-all-create-website.html)
+*  [Store URLs]({{ site.user_guide_url }}/stores/store-urls.html)
+*  [Content]({{ site.user_guide_url }}/cms/content-menu.html)
 
  {:.bs-callout-info}
 For example purposes only, we use a French [website](https://glossary.magento.com/website) with website code `french` in this topic. For step-by-step tutorials, see [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html) and [Tutorial: Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
@@ -29,7 +29,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 1. In the **Category Name** field, enter a unique name to identify this category.
 1. Make sure **Enable Category** is set to **Yes**.
 
-   For information about the other options on this page, see [Root Categories](http://docs.magento.com/m2/ce/user_guide/catalog/category-root.html?Highlight=create%20root%20category).
+   For information about the other options on this page, see [Root Categories]({{ site.user_guide_url }}/catalog/category-root.html?Highlight=create%20root%20category).
 
    The following figure shows an example.
 
@@ -135,7 +135,7 @@ Magento gives you the option to add the store code to the site base URL, which s
 
 This prevents `index.php` and `.htaccess` from getting out of sync with the Magento codebase in future upgrades.
 
-For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html).
+For more information, see the [Magento User Guide]({{ site.user_guide_url }}/stores/store-urls.html).
 
 {% collapsible To add the store code to the base URL: %}
 
@@ -183,6 +183,6 @@ You must perform this step last because you will lose access to the Admin; your 
 {:.ref-header}
 Related topics
 
-*  [Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
+*  [Add content to your websites]({{ site.user_guide_url }}/cms/content-menu.html)
 *  [Tutorial: Set up multiple websites or stores with NGINX]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 *  [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)

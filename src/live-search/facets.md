@@ -7,7 +7,7 @@ ee_only: True
 Faceting is a high-performance filtering method that uses multiple dimensions of searchable static and dynamic attribute values as search criteria. The available facets appear in the left sidebar of search results pages, with the most commonly used facets “pinned” to the top of the list. The [`productSearch` query]({{ site.baseurl }}/live-search/product-search.html) contains an example where facets have been configured.
 
 {:.bs-callout-info}
-Go to [Facets](https://docs.magento.com/user-guide/live-search/facets.html) in the _{{site.data.var.ee}} User Guide_ for information about facet setup, attribute requirements, [types of facets](https://docs.magento.com/user-guide/live-search/facets-type.html), and their use from the Admin and storefront.
+Go to [Facets]({{ site.user_guide_url }}/live-search/facets.html) in the _{{site.data.var.ee}} User Guide_ for information about facet setup, attribute requirements, [types of facets]({{ site.user_guide_url }}/live-search/facets-type.html), and their use from the Admin and storefront.
 
 ## Facet aggregation
 
@@ -19,7 +19,7 @@ Facet aggregation is performed as follows if the storefront has three facets (ca
 
 ## Default attribute values
 
-Product attributes have some [storefront properties](https://docs.magento.com/user-guide/stores/attributes-product.html) that are enabled by default.
+Product attributes have some [storefront properties]({{ site.user_guide_url }}/stores/attributes-product.html) that are enabled by default.
 
 |**Property**|**Storefront Property**|**Attribute**
 |---|---|---|

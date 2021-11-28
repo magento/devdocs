@@ -5,7 +5,7 @@ title: Yotpo Release Notes
 
 [Yotpo](https://www.yotpo.com/) is a user-generated content marketing platform enabling merchants to gather, curate, manage, and respond to all kinds of user content from just a single platform. Yotpo integrates with Magento to help you to maximize the power of user-generated content.
 
-See our [User Guide](https://docs.magento.com/user-guide/marketing/yotpo-reviews-intro.html) for information about setup and configuration of Yotpo product reviews in the Admin.
+See our [User Guide]({{ site.user_guide_url }}/marketing/yotpo-reviews-intro.html) for information about setup and configuration of Yotpo product reviews in the Admin.
 
 These release notes include:
 

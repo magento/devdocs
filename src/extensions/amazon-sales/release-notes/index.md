@@ -19,7 +19,7 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
-See [Upcoming Releases](https://devdocs.magento.com/release/) for versioning, support, and compatibility.
+See [Upcoming Releases]({{ site.baseurl }}/release/) for versioning, support, and compatibility.
 
 ### v4.4.1
 
@@ -35,7 +35,7 @@ Amazon Sales Channel 4.4.0 is compatible with {{site.data.var.ee}} versions 2.3.
 
 This version of Amazon Sales Channel includes the following improvements and fixes.
 
--  {:.new}Added support for Read-Only Mode to the configuration. See [Global Settings](https://docs.magento.com/user-guide/configuration/sales-channels/global-settings.html).
+-  {:.new}Added support for Read-Only Mode to the configuration. See [Global Settings]({{ site.user_guide_url }}/configuration/sales-channels/global-settings.html).
 
 -  {:.fix}Changed the data flow so that multiple copies of the same instance can fetch updates simultaneously.
 
@@ -71,13 +71,13 @@ Amazon Sales Channel 4.2.0 is compatible with {{site.data.var.ee}} versions 2.3.
 
 This version of Amazon Sales Channel includes a new feature along with improvements and fixes.
 
--  {:.bug}When Amazon Sales Channel 4.2.0 is integrated with Magento 2.4.0 and [Inventory Management](https://docs.magento.com/user-guide/catalog/inventory.html) (MSI) is enabled, there is a known issue that prevents the addition of products in your Magento catalog. This issue will be addressed in a future Magento release.
+-  {:.bug}When Amazon Sales Channel 4.2.0 is integrated with Magento 2.4.0 and [Inventory Management]({{ site.user_guide_url }}/catalog/inventory.html) (MSI) is enabled, there is a known issue that prevents the addition of products in your Magento catalog. This issue will be addressed in a future Magento release.
 
 -  {:.new}Amazon Sales Channel has been enhanced to accept text-based address data and match it to standardized address formats, including city, state, and zip code. This enables order and shipping data to synchronize (sync) with Amazon without address errors.<br/>For example, a shopper inputs the city, state, zip code as `Escondido, californiA 92025-1501`. Amazon Sales Channel imports and matches the data to the standard format as `Escondido, CA 92025`, and then syncs it back to Amazon in this standardized format.
 
 -  {:.new}Added support for PHP 7.4.
 
--  {:.new}<!--CHAN-4334-->Added support for {{site.data.var.ee}} 2.4.x. Previous versions may be compatible with Magento 2.4.x, but are not supported. See [Upcoming releases](https://devdocs.magento.com/release/) for version compatibility. Amazon Sales Channel must be updated to 4.2.0 before the {{site.data.var.ee}} 2.4.0 update can be completed.
+-  {:.new}<!--CHAN-4334-->Added support for {{site.data.var.ee}} 2.4.x. Previous versions may be compatible with Magento 2.4.x, but are not supported. See [Upcoming releases]({{ site.baseurl }}/release/) for version compatibility. Amazon Sales Channel must be updated to 4.2.0 before the {{site.data.var.ee}} 2.4.0 update can be completed.
 
 -  {:.fix}<!--CHAN-4431-->Corrected an issue that caused an _Access Denied_ error for UK customers.
 
