@@ -7,6 +7,18 @@ contributor_link: https://www.atwix.com/
 
 The `assignCustomerToGuestCart` mutation assigns a logged in customer and merge customer's shopping cart items to the specified guest shopping cart.
 
+The customer must be logged in (You must specify the customer’s authorization token in the headers).
+
+If this mutation is successful, the customer's shopping cart becomes inactive and all the products it contains are added to the contents of the guest cart (the active one).
+Customer now is assigned to that active cart.
+
+*Note:*
+Customer cart becomes inactive and the guest cart remains active; but for guest cart new `masked_id` is being generated.
+`quote_id` remains same.
+
+The other similar mutation, [mergeCarts]({{page.baseurl}}/graphql/mutations/merge-carts.html), just merges cart items.
+Unlike `assignCustomerToGuestCart`, it transfers the contents of a guest cart into the customer's cart. The mutation deletes the original guest cart.
+
 ## Syntax
 
 ```graphql
@@ -69,7 +81,7 @@ mutation {
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_id` | String! | The unique ID that identifies the customer's cart
+`cart_id` | String! | The unique ID that identifies the guest's cart
 
 ## Output attributes
 
