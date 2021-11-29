@@ -15,6 +15,7 @@ pages:
 
   - label: Released versions
     url: /release/released-versions.html
+    versionless: true
 
   - label: Release policy
     url: /release/policy
