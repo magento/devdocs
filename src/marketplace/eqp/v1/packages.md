@@ -90,11 +90,14 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |original_launch_date|DateTime|GET|-|yes|The UTC date and time this version of the package was first released to the store.|`YYYY-MM-DD HH:MM:SS`|
 |offset|integer|GET|-|no|In combination with the `limit` parameter, it can be used for paging the collection of packages.|See [Get package details](#get-package-details). Default value is 0.|
 |platform|string|GET, POST, PUT|technical|yes|The Magento platform compatibility of this package.|`M2`|
+|pricing_model|object|GET, POST|marketing|no|How to interpret the pricing for this package.|See [Object Details](#object-details)|
+|pricing_model.pricing_type|string|GET, POST|marketing|no|Which pricing model is used by this package.|`one-time`, `subscription`|
+|pricing_model.payment_period|string|GET, POST|marketing|no|For a package using the "one-time" payment model, the number `1` signifies "once."  For a subscription, how often (in terms of months) payments are due.  Currently, only annual subscriptions are supported.|`1` for "one-time" payments, or `12` for yearly subscriptions.|
 |prices|array|GET, POST, PUT|marketing|no|The list of prices in USD set for this package by edition, and the respective installation prices (if any). Editions must match `version_compatibility`.|Array of sub-objects.|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
 |prices[N].edition|string|GET, POST, PUT|marketing|no|The Magento edition for this price|`CE`, `EE`, `ECE`|
-|prices[N].price|number|GET, POST, PUT|marketing|no|The value for the purchase price of this package|A number, with up to two decimal places, eg 123.45|
-|prices[N].installation_price|string|GET, POST, PUT|marketing|no|The value for the installation price of this package|A number, with up to two decimal places, eg 123.45|
+|prices[N].price|number|GET, POST, PUT|marketing|no|The value for the purchase price of this package.  For subscriptions, this is the periodic (ex: yearly) price.|A number, with up to two decimal places, eg 123.45|
+|prices[N].installation_price|string|GET, POST, PUT|marketing|no|The value for the installation price of this package. This is only paid once, even for subscriptions.|A number, with up to two decimal places, eg 123.45|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
 |priority|string|GET, POST, PUT|-|no|The priority for this submission|`high`, `medium`, `low`|
 |process_as_patch|string|GET, POST, PUT|technical|yes|A flag to indicate the submission should follow the [expedited process for patch releases.](https://community.magento.com/t5/Magento-DevBlog/New-Expedited-Marketplace-Submission-Path/ba-p/77303)|`yes`, `no`, `unknown`|
@@ -109,7 +112,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |stability|string|GET, POST, PUT|marketing|yes|The version's build stability|`stable`, `beta`|
 |sort|string|GET|-|no|A comma-separated list of fields to sort the list, each field prefixed by `-` for descending order, or `+` for ascending order.|See [Get package details](#get-package-details).|
 |submission_id|substring|GET, PUT|-|yes|A globally unique ID assigned to a package when it is submitted in a POST request. All further references to this package using GET or PUT requests can be made supplying this identifier.|A generated string|
-|support_tiers|array|GET, POST, PUT|marketing|no|List of up to three support tiers per edition|See [Object Details](#object-details)|
+|support_tiers|array|GET, POST, PUT|marketing|no|List of up to three support tiers per edition. Not used for subscriptions.|See [Object Details](#object-details)|
 |support_tiers[N].tier|int|GET, POST, PUT|marketing|no|Which of the three support tiers (numbered 0-2 or 1-3)|`0`, `1`, `2`, `3`|
 |support_tiers[N].edition|string|GET, POST, PUT|marketing|no|Which Magento edition this support is for|`CE`, `EE`, `ECE`|
 |support_tiers[N].monthly_period|int|GET, POST, PUT|marketing|no|How many months the support lasts.|`1`, `3`, `6`, `9`, `12`|
@@ -189,7 +192,6 @@ For a new Magento 2 package:
     "file_upload_id" : "5c644f4dcb1900.18508194.9"
   }
 }
-
 ```
 
 #### shared_packages
@@ -241,6 +243,15 @@ For a new Magento 2 package:
 ```
 
 The **video_urls** property is optional.
+
+#### pricing model
+
+```json
+"pricing_model" : {
+  "pricing_type" : "subscription",
+  "payment_period" : 12
+}
+```
 
 #### prices
 
@@ -646,6 +657,10 @@ The following example shows a POST request with all required parameters set for 
     "categories" : [
       "//Extensions//Payments & Security//Checkout Enhancements"
     ],
+    "pricing_model" : {
+       "pricing_type" : "one-time",
+       "payment_period" : 1
+    },
     "prices" : [
       {
         "edition" : "CE",
@@ -951,6 +966,10 @@ curl -X GET \
     "categories" : [
       "//Extensions//Payments & Security//Checkout Enhancements"
     ],
+    "pricing_model" : {
+       "pricing_type" : "one-time",
+       "payment_period" : 1
+    },
     "prices" : [
       {
         "edition" : "CE",
