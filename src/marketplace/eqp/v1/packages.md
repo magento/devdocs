@@ -96,7 +96,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |prices|array|GET, POST, PUT|marketing|no|The list of prices in USD set for this package by edition, and the respective installation prices (if any). Editions must match `version_compatibility`.|Array of sub-objects.|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
 |prices[N].edition|string|GET, POST, PUT|marketing|no|The Magento edition for this price|`CE`, `EE`, `ECE`|
-|prices[N].price|number|GET, POST, PUT|marketing|no|The value for the purchase price of this package.  For subscriptions, this is the periodic (ex: yearly) price.|A number, with up to two decimal places, eg 123.45|
+|prices[N].price|number|GET, POST, PUT|marketing|no|The value for the purchase price of this package. For subscriptions, this is the annual price.|A number, with up to two decimal places, eg 123.45|
 |prices[N].installation_price|string|GET, POST, PUT|marketing|no|The value for the installation price of this package. This is only paid once, even for subscriptions.|A number, with up to two decimal places, eg 123.45|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
 |priority|string|GET, POST, PUT|-|no|The priority for this submission|`high`, `medium`, `low`|
