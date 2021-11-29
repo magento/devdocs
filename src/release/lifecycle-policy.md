@@ -5,11 +5,13 @@ group: release
 
 For {{ site.data.var.ee }} 2.4 and subsequent releases:
 
--  To better streamline our lifecycle policy, Adobe provides quality fixes to the 2.4 release line until the end of support date of the PHP version upon which it is based. A customer can access quality fixes by contacting Support or through the self-serve [Quality Patches Tool]({{ site.baseurl }}/quality-patches/tool.html) if their version is still eligible for quality support. Refer to the table below for the End of Software Support dates for {{ site.data.var.ee }} release lines.
+-  To better streamline our lifecycle policy, Adobe provides quality fixes to the 2.4 release line until the end of support date of the PHP version upon which it is based. A customer can access quality fixes by contacting [{{ site.data.var.ee }} Support]({{ site.baseurl }}/community/support.html) or through the self-serve [Quality Patches Tool]({{ site.baseurl }}/quality-patches/tool.html) if their version is still eligible for quality support. Refer to the table below for the End of Software Support dates for {{ site.data.var.ee }} release lines.
 
 -  Adobe provides security fixes only through the latest patch or security patch release, even if a customer's version is still eligible for quality support. Unlike quality fixes, security fixes cannot be backported to previous minor releases nor to previous patch releases within supported minor releases.
 
 -  For critical security issues, such as zero-day vulnerabilities, Adobe provides [hotfixes](https://support.magento.com/hc/en-us/sections/360003869892-Known-issues-patches-attached-) for all customers on a supported version, even if they are not on the latest patch or security patch release. It is important to note that a hotfix is not a catch-all and will not address all the security issues that would be fixed by upgrading to the latest release.
+
+## End of Software Support
 
 | Release                          | Release Date  | End of Software Support<sup>1</sup> | Dependent PHP Version       |
 |----------------------------------|---------------|-------------------------------------|-----------------------------|
@@ -33,12 +35,12 @@ See [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-
 .tg .tg-bs27{background-color:#67ac68;text-align:left;vertical-align:top}
 .tg .tg-pmnn{background-color:#cd3c3c;text-align:left;vertical-align:top}
 .tg .tg-0pky{text-align:left;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:center;vertical-align:top;font-weight:bold}
 .tg .tg-ka61{background-color:#67ac68;border-color:#c0c0c0;text-align:left;vertical-align:top}
 </style>
 
 <table class="tg">
-<thead>
+<thead style="text-align:center;">
   <tr>
     <th class="tg-0pky" colspan="2"></th>
     <th class="tg-0lax" colspan="4">2022</th>
@@ -48,7 +50,7 @@ See [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky">Commerce</td>
+    <td class="tg-0pky" style="font-weight:bold">Commerce</td>
     <td class="tg-0lax">PHP</td>
     <td class="tg-0lax">Q1</td>
     <td class="tg-0lax">Q2</td>
@@ -64,24 +66,15 @@ See [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-
     <td class="tg-0lax">Q4</td>
   </tr>
   <tr>
-    <td class="tg-0pky">2.4.0</td>
-    <td class="tg-0lax" rowspan="4">7.4</td>
-    <td class="tg-bs27" colspan="3" rowspan="4"></td>
-    <td class="tg-pmnn" rowspan="4">Nov</td>
-    <td class="tg-0lax" colspan="8" rowspan="4"></td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">2.4.1</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">2.4.2</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">2.4.3</td>
+    <td class="tg-0pky">2.4.0 - 2.4.3</td>
+    <td style="text-align:center">7.4</td>
+    <td class="tg-bs27" colspan="3"></td>
+    <td class="tg-pmnn">Nov</td>
+    <td class="tg-0lax" colspan="8"></td>
   </tr>
   <tr>
     <td class="tg-0pky">2.4.4</td>
-    <td class="tg-0lax" rowspan="2">8.1</td>
+    <td rowspan="2" style="text-align:center">8.1</td>
     <td class="tg-0lax"></td>
     <td class="tg-bs27" colspan="10">Mar</td>
     <td class="tg-pmnn" rowspan="2">Nov</td>
