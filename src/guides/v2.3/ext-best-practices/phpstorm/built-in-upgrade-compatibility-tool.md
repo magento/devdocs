@@ -6,7 +6,7 @@ functional_areas:
 ---
 
 The built-in Upgrade Compatibility Tool aims to achieve the same issues coverage as original Adobe Commerce [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html).
-There are types of inspections that are covered by this MVP version:
+There are three types of inspections that are covered by this MVP version:
 
 *  Deprecation (severity level: WARNING)
 *  Api coverage (severity level: ERROR)
