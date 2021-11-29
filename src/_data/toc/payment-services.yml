@@ -20,3 +20,7 @@ pages:
 - label: Security
   url: /payment-services/security.html
   versionless: true
+
+- label: Release Notes
+  url: /payment-services/release-notes.html
+  versionless: true

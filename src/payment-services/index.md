@@ -17,15 +17,15 @@ See a full list of features and more detailed information in the [user guide]({{
 
 ## Availability
 
-Payment Services is available for some supported Magento versions.
+Payment Services is available for Adobe Commerce and Magento Open Source. Payment Services is now compatible with Adobe Commerce versions 2.4.0 to 2.4.3-p1.
 
-See [Lifecycle policy]({{ site.baseurl }}/release/lifecycle-policy.html) and [Upcoming releases]({{ site.baseurl }}/release/) for more release and version-specific information.
+See [Lifecycle policy]({{site.baseurl}}/release/lifecycle-policy.html) and [Payment Services release notes]({{site.baseurl}}/payment-services/release-notes.html) pages for more release and version-specific information.
 
 ## Get started
 
 Onboarding and setting up Payment Services is completed in [just a few steps]({{ site.user_guide_url }}/payment-services/index.html#get-started).
 
-This onboarding flow diagram shows the general process, for both the user and the internal system, for onboarding Payment Services.
+This complete onboarding flow diagram shows the general process, for both the user and the internal system, for onboarding Payment Services.
 
 ![Onboarding flow]({% link payment-services/assets/onboardingflow-docs-v2.png %}){: .zoom}
 _Onboarding flow (click to zoom)_
