@@ -333,7 +333,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 [Translations overview]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html
 [Community Engineering contributions]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translations-project
 [translation dictionary]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries
-[configures the translations]: http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation
+[configures the translations]: {{ site.user_guide_url }}/stores/store-language-add.html?Highlight=translation
 [Learn more about language packages]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack
 [ISO 639-1]: http://www.iso.org/iso/home/standards/language_codes.htm
 [ISO 3166]: http://www.iso.org/iso/country_codes.htm

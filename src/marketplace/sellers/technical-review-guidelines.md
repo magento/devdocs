@@ -127,7 +127,7 @@ _See also:_ [Polishing your Marketplace submission: 7 tips from the Marketplace 
 To pass Manual QA, the extension must meet the following requirements:
 
 1. Installs with Composer.
-1. Compiles without errors using the following command: [`deploy:mode:set production`](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html#change-to-production-mode)
+1. Compiles without errors using the following command: [`deploy:mode:set production`]({{ site.baseurl }}/guides/v2.4/config-guide/cli/config-cli-subcommands-mode.html#change-to-production-mode)
 1. Extension has all supporting documentation that complies with the [documentation requirements](#documentation-and-resources)
 1. Works with each version of Magento that the extension claims to support in the extension product profile.
 
@@ -153,8 +153,8 @@ To pass Manual QA, the extension must meet the following requirements:
 
 _See also:_
 
--  [Install an Extension via Composer](https://devdocs.magento.com/cloud/howtos/install-components.html#install-an-extension)
--  [General CLI installation](https://devdocs.magento.com/extensions/install/)
+-  [Install an Extension via Composer]({{ site.baseurl }}/cloud/howtos/install-components.html#install-an-extension)
+-  [General CLI installation]({{ site.baseurl }}/extensions/install/)
 
 #### Additional checks for Page Builder extensions
 

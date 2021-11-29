@@ -58,7 +58,7 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 
 This release includes over 25 security fixes and platform security improvements. Additional security enhancements include:
 
-*  **Implementation of Content Security Policies (CSP)**. This release includes a set of powerful new security tools for Magento installations. Content Security Policies (CSP) provide additional layers of defense by helping to detect and mitigate Cross-Site Scripting (XSS) and related data injection attacks. This common attack vector works by injecting malicious content that falsely claims to originate from the website. After the malicious content is loaded and executed, it can initiate the unauthorized transfer of data. See [Content Security Policy Overview](https://devdocs.magento.com/security/content-security-policy-overview.html). For technical information, see [Content Security Policies](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/security/content-security-policies.html) in the *PHP Developer Guide*.
+*  **Implementation of Content Security Policies (CSP)**. This release includes a set of powerful new security tools for Magento installations. Content Security Policies (CSP) provide additional layers of defense by helping to detect and mitigate Cross-Site Scripting (XSS) and related data injection attacks. This common attack vector works by injecting malicious content that falsely claims to originate from the website. After the malicious content is loaded and executed, it can initiate the unauthorized transfer of data. See [Content Security Policy Overview]({{ site.baseurl }}/security/content-security-policy-overview.html). For technical information, see [Content Security Policies]({{ page.baseurl }}/extension-dev-guide/security/content-security-policies.html) in the *PHP Developer Guide*.
 
 *  **Removal of session_id from URLs**. Exposure of `session-id` values in URLs creates a potential security vulnerability in the form of session fixation. We are removing code from the classes and methods that add or read session_id from URLs.
 
@@ -113,7 +113,7 @@ Page Builder enhancements for this release include:
 
 *  **Full Height Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to set their heights to the full-height of the page using a number with any CSS unit (px, %, vh, em) or a calculation between units (100vh - 237px). See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
 
-*  **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions. See [Upgrade content types](https://devdocs.magento.com/page-builder/docs/administration/upgrade-content-types.html).
+*  **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions. See [Upgrade content types]({{ site.baseurl }}/page-builder/docs/administration/upgrade-content-types.html).
 
 ### Inventory Management
 
@@ -163,7 +163,7 @@ This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl
 
 ### Product Recommendations
 
-Magento’s Product Recommendations is a new marketing tool that merchants can use to increase conversions, boost revenue, and stimulate shopper engagement. It is powered by Adobe Sensei, which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper. See [Product Recommendations](https://devdocs.magento.com/recommendations/product-recs.html).
+Magento’s Product Recommendations is a new marketing tool that merchants can use to increase conversions, boost revenue, and stimulate shopper engagement. It is powered by Adobe Sensei, which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper. See [Product Recommendations]({{ site.baseurl }}/recommendations/product-recs.html).
 
 ### Vendor-developed extension enhancements
 

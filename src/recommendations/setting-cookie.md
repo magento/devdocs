@@ -4,7 +4,7 @@ title: Handle Cookie Restrictions
 ee_only: True
 ---
 
-Magento has a native feature that allows the site to ask for cookie consent from its shoppers before storing any data in browser cookies. This feature is called [cookie restriction mode](https://docs.magento.com/user-guide/stores/compliance-cookie-restriction-mode.html).
+Magento has a native feature that allows the site to ask for cookie consent from its shoppers before storing any data in browser cookies. This feature is called [cookie restriction mode]({{ site.user_guide_url }}/stores/compliance-cookie-restriction-mode.html).
 
 When you deploy the `magento/product-recommendations` module to production, it starts collecting shopper interaction events on your storefront. Because data for these events can be stored in browser cookies or local storage, the feature supports cookie restriction mode by not collecting events until the shopper has given cookie consent.
 

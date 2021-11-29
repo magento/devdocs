@@ -47,7 +47,6 @@ return [
             ],
         ],
 ```
-{:.no-copy}
 
 {:.procedure}
 To connect to the database using Docker commands:
@@ -84,7 +83,6 @@ To connect to the database using Docker commands:
    | 10.0.38-MariaDB-1~xenial |
    +--------------------------+
    ```
-   {:.no-copy}
 
 {:.procedure}
 To connect to the database port:
@@ -108,7 +106,6 @@ To connect to the database port:
    magento-cloud_db-sales_1    docker-entrypoint.sh mysqld      Up       0.0.0.0:32874->3306/tcp
 
    ```
-   {:.no-copy}
 
 1. Connect to the database with port information from the previous step.
 
@@ -140,7 +137,6 @@ To connect to the database port:
    | 10.0.38-MariaDB-1~xenial |
    +--------------------------+
    ```
-   {: .no-copy}
 
 [db-image]: https://hub.docker.com/_/mariadb
 
@@ -193,6 +189,6 @@ See [Docker service containers][Docker database container] for details about the
 <!--Link definitions-->
 
 [Add the encryption key]: {{ site.baseurl}}/cloud/setup/first-time-setup-import-import.html#encryption-key
-[Docker database container]: https://devdocs.magento.com/cloud/docker/docker-containers-service.html#database-container
+[Docker database container]: {{ site.baseurl }}/cloud/docker/docker-containers-service.html#database-container
 [mysqldump]: https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html
 [Service configuration options]: {{ site.baseurl }}/cloud/docker/docker-containers.html#service-configuration-options

@@ -45,7 +45,7 @@ Release date: June 14, 2021
 -  {:.new}**Added PHP 8.0**—Updated PHP to version 8.0, allowing you take advantage of all the new features and optimizations PHP 8.0 includes.<!--MCLOUD-7941-->
 -  {:.new}**Updated to Varnish 6.6 and Elasticsearch 7.11.2**—The following links provide release information on [Varnish Cache 6.6](https://varnish-cache.org/releases/rel6.6.0.html#rel6-6-0) and [Elasticsearch 7.11.2](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-7.11.2.html).<!--MCLOUD-7921-->
 -  {:.new}**Added `ioncube` extension for PHP 7.4 image**—The `ioncube` extension has been re-added to the PHP 7.4 image after having been initially excluded from the PHP 7.3 to PHP 7.4 upgrade. *[Submitted by mattskr](https://github.com/magento/magento-cloud-docker/pull/314).*<!--PR #314-->
--  {:.new}**Added a new file sync option: `manual-native`**—The `manual-native` file synchronization option provides manual control over synchronization, which provides the best performance for macOs and Windows environments. Read about using the `manual-native` option in the [Developer mode](https://devdocs.magento.com/cloud/docker/docker-mode-developer.html) and [Synchronizing data in a Docker developer environment](https://devdocs.magento.com/cloud/docker/docker-syncing-data.html#file-synchronization-options) topics.<!--MCLOUD-7977-->
+-  {:.new}**Added a new file sync option: `manual-native`**—The `manual-native` file synchronization option provides manual control over synchronization, which provides the best performance for macOs and Windows environments. Read about using the `manual-native` option in the [Developer mode]({{ site.baseurl }}/cloud/docker/docker-mode-developer.html) and [Synchronizing data in a Docker developer environment]({{ site.baseurl }}/cloud/docker/docker-syncing-data.html#file-synchronization-options) topics.<!--MCLOUD-7977-->
 -  {:.new}**Removed volume deletions from `up` and `down` commands**—The `--volume` option was removed from the `bin/magento-docker up` and `bin/magento-docker down` commands, replaced by the new `bin/magento-docker init` command with a data loss warning. This change helps prevent the accidental data loss. *[Submitted by joeshelton-wagento](https://github.com/magento/magento-cloud-docker/pull/319).*<!--PR #319-->
 -  {:.fix}**Updated `CN` value for the generated certificate**—Removed the hardcoded `CN` value from the Dockerfile. This value created a certificate error (`NET::ERR_CERT_INVALID`) that caused the `--host` option for the `ece-docker build:compose` command to be ignored.<!--MCLOUD-7934-->
 
@@ -58,9 +58,11 @@ Release date: April 20, 2021
 -  {:.new}<!--Issue #300-->**Updated init-docker.sh**—Updated the `init-docker.sh` script with PHP 7.4 and Magento Cloud Docker 1.2.1 versions. *[Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/300).*
 -  {:.new}<!--MCLOUD-7548-->**Sodium enabled by default**—Enabled the `sodium` PHP extension by default within PHP Docker images.
 -  {:.new}<!--MCLOUD-7476-->**`custom-registry` option**—Added a `--custom-registry` option to `php ./vendor/bin/ece-docker build:compose` command for using your own images registry.
+
    ```bash
-    ./vendor/bin/ece-docker build:compose --custom-registry=my-registry.example.com
-    ```
+   ./vendor/bin/ece-docker build:compose --custom-registry=my-registry.example.com
+   ```
+
 -  {:.new}<!--MCLOUD-7504-->**Removed old Elasticsearch versions**—Removed Elasticsearch versions 1.7 and 2.4 from the Elasticsearch images.
 -  {:.new}<!--MCLOUD-7396-->**Auto-generating NGINX certificates**—Removed the existing certificates from the NGINX image. The NGINX certificates are now auto-generated with each new deployment for improved security.
 -  {:.fix}<!--MCLOUD-7466-->**Enabled `opcache.validate_timestamps`**—Enabled the `opcache.validate_timestamps` PHP setting by default in developer mode. Enabling this setting fixed the issue where changes to the filesystem were not recognized in Docker.
@@ -121,7 +123,7 @@ Release date: November 9, 2020
 
    -  {:.fix}**TLS container**—Now, the [TLS container]({{ site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container) is based on the `https://hub.docker.com/r/magento/magento-cloud-docker-nginx` Docker image instead of the Centos image. This change fixes issues that caused errors when sending HTTPS requests between containers in the Cloud Docker environment.<!--MCLOUD-6469-->
 
-   -  {:.new}**Test container**—Added a test container for application testing, and added the `--with-test` option to the Docker `build:compose` command to create the container only when testing in the Docker environment. See [application testing](https://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html).<!--MCLOUD-6394-->
+   -  {:.new}**Test container**—Added a test container for application testing, and added the `--with-test` option to the Docker `build:compose` command to create the container only when testing in the Docker environment. See [application testing]({{ site.baseurl }}/cloud/docker/docker-test-app-mftf.html).<!--MCLOUD-6394-->
 
    -  {:.new}**FPM-XDEBUG container**
 
