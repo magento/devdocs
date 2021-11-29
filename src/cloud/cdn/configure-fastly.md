@@ -217,7 +217,7 @@ To update your DNS configuration for development:
       ```
 
    {:.bs-callout-info}
-   As an alternative to using the Magento CLI, you can update the Base URL from the [Admin](https://docs.magento.com/user-guide/stores/store-urls.html#configure-the-base-url).
+   As an alternative to using the Magento CLI, you can update the Base URL from the [Admin]({{ site.user_guide_url }}/stores/store-urls.html#configure-the-base-url).
 
 1. Restart web browser.
 

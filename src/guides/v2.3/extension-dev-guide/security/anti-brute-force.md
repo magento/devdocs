@@ -29,8 +29,8 @@ Machine-readable secrets use randomly genrated strings. Examples include:
 
 One of the most effective ways to stop a script from automatically guessing secrets is to verify that a client is
 indeed a real person: you present the client with a challenge that can only be solved by a human.
-[Google ReCaptcha](https://docs.magento.com/user-guide/stores/security-google-recaptcha.html) is a recommended provider
-to use for these challenges, although [CAPTCHA](https://docs.magento.com/user-guide/stores/security-captcha.html) implementation
+[Google ReCaptcha]({{ site.user_guide_url }}/stores/security-google-recaptcha.html) is a recommended provider
+to use for these challenges, although [CAPTCHA]({{ site.user_guide_url }}/stores/security-captcha.html) implementation
 is also available. ReCaptcha is less intrusive and can even be completely invisible by end users.
 
 When protecting a functionality with ReCaptcha, it is vital that you cover all interfaces that expose

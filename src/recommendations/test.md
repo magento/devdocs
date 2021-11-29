@@ -19,7 +19,7 @@ To fetch recommendations from your production environment, you must make sure th
 -  Storefront data collection is [configured and enabled]({{ page.baseurl }}/recommendations/verify.html) on production.
 -  Your non-production environment catalog is largely the same as the one that you have in production. Using similar catalogs ensures that the products returned in the recommendation units closely mimic those on production.
 
-See the [user guide](https://docs.magento.com/user-guide/marketing/recommendation-change-source.html) for more information.
+See the [user guide]({{ site.user_guide_url }}/marketing/recommendation-change-source.html) for more information.
 
 ## Generate behavioral data on your non-production environment
 

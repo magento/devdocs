@@ -106,7 +106,7 @@ To use Blackfire.io for performance testing in Cloud Docker:
 <!--Link definitions-->
 [Blackfire.io for {{site.data.var.ece}}]: https://blackfire.io/magento
 [Blackfire documentation]: https://support.blackfire.io/en/collections/145130-blackfire-on-magento-cloud.html
-[build or service configuration options]: https://devdocs.magento.com/cloud/docker/docker-quick-reference.html
-[Extend the Docker configuration]: https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources
+[build or service configuration options]: {{ site.baseurl }}/cloud/docker/docker-quick-reference.html
+[Extend the Docker configuration]: {{ site.baseurl }}/cloud/docker/docker-extend.html#specify-docker-build-sources
 [file synchronization options]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
 [Launch Docker in developer mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
