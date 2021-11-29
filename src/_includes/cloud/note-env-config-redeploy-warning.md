@@ -1,0 +1,2 @@
+{:.bs-callout-warning}
+Updating the environment configuration triggers a redeployment, which takes your site offline until deployment completes. For Production environments, we recommend completing this work during off-peak hours to avoid service disruptions. See [Working with variables]({{site.baseurl}}/cloud/env/working-with-variables.html).

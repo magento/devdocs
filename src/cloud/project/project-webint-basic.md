@@ -13,6 +13,7 @@ functional_areas:
 The {{site.data.var.ece}} [Project Web Interface](https://account.magento.com/customer/account/login/) enables you to do the following for all Starter and Pro environments:
 
 -  [Access projects](#project-access)
+-  [Configure environment settings ](#configure-environment-settings)
 -  [Add users and manage access]({{ site.baseurl }}/cloud/project/user-admin.html)
 -  [Manage Git branches]({{ site.baseurl }}/cloud/project/project-webint-branch.html)
 
@@ -56,25 +57,90 @@ You can set the following configuration options for each environment:
    </tr>
    <tr>
       <td>Outgoing emails</td>
-      <td>Setting to <strong>On</strong> means that code in your environment can send and receive e-mails (for example, using PHP <code>mail()</code> function. </td>
+      <td>Setting this option <strong>On</strong> enables support for sending emails from the environment using the SMTP protocol.</td>
    </tr>
    <tr>
       <td>HTTP access control</td>
-      <td>Setting to <strong>On</strong> enables you to configure security for the project's Web Interface using a login and also IP address access control.</td>
+      <td>Setting this option <strong>On</strong> enables you to configure security for the project's Web Interface using a login and also IP address access control.</td>
    </tr>
 </table>
 
 ### Configure emails for testing {#email}
 
-One of these environment variables enables or disables outgoing emails for the environment. If you wanted to test email notifications for the environment, you need to set this option On.
+By default, email support is **disabled** on Staging and Production environments. You must enable email support on an environment to send emails including Welcome, password reset, and two-factor authentication emails for Cloud project users.
 
-1. [Access your project](#project-access) and select a specific environment.
-1. Select the Settings tab.
-1. For the **Outgoing emails** option, select the toggle to On.
+You can manage email support for each Cloud project environment from the Project Web interface or from the command line.
 
-   ![Set outgoing emails]({{ site.baseurl }}/common/images/cloud/cloud_project-conf-env.png)
+-  On master and integration branches, use the *Outgoing emails* toggle in the Project Web interface to enable or disable email support.
 
-Configure your email notifications, services, and more as needed through the Admin and test emails.
+-  On Production and Staging environments or other environments where the *Outgoing emails toggle* is not available in the Project Web interface, you can check the current configuration from the Project Web interface, but you can only change the configuration from the command line using the [Cloud CLI for Commerce]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html) `environment:info` command to set the `enable_smtp` property.
+
+   Enabling SMTP updates the `MAGENTO_CLOUD_SMTP_HOST` environment variable with the IP address of the SMTP host for sending mail.
+
+{% include cloud/note-env-config-redeploy-warning.md%}
+
+{:.procedure}
+To manage email support from the Project Web interface:
+
+1. [Access your project](#project-access) and select the environment to configure.
+
+1. Select **Configure environment**.
+
+1. To enable or disable outgoing emails, toggle *Outgoing emails* **On** or **Off**.
+
+   ![Set outgoing emails]({{ site.baseurl }}/common/images/cloud/cloud-env-outgoing-emails-config.png){:width="650px"}
+
+After you change the setting, the environment builds and deploys with the new configuration.
+
+{:.procedure}
+To manage email support from the command line:
+
+1. Check the current email configuration in the Project web interface.
+
+   ![Check outgoing email configuration]({{ site.baseurl }}/common/images/cloud/cloud-env-outgoing-emails-current-setting.png){:width="650px"}
+
+1. If needed, change the email configuration.
+
+1. From the command line, change to the directory where you [cloned your Cloud project]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html#clone-the-project).
+
+1. Log in to the project.
+
+   ```bash
+   magento-cloud login
+   ```
+
+1. If you do not have the project ID and environment ID for the environment, use the following commands to get the values.
+
+   ```bash
+   magento-cloud project:list
+   ```
+
+   ```bash
+   magento-cloud environments -p <project-id>
+   ```
+
+1. Change the email support configuration by setting the `enable_smtp` environment variable to `true` or `false`.
+
+   ```bash
+   magento-cloud environment:info --refresh -p <project-id> -e <environment-id> enable_smtp true
+   ```
+
+   Wait for the environment to build and deploy.
+
+1. Verify that email is working:
+
+   -  Use SSH to connect to your environment.
+
+   -  Check that the `MAGENTO_CLOUD_SMTP_HOST` value is set.
+
+      ```bash
+      printenv MAGENTO_CLOUD_SMTP_HOST
+      ```
+   -  Send a test email to your email address or another address you can check.
+
+      ```bash
+      php -r 'mail("mail@example.com", "test message", "just testing", "From: tester@example.com");'
+      ```
 
 ## Set environment and project variables {#project-conf-env-var}
 
