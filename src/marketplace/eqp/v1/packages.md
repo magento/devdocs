@@ -92,7 +92,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |platform|string|GET, POST, PUT|technical|yes|The Magento platform compatibility of this package.|`M2`|
 |pricing_model|object|GET, POST|marketing|no|How to interpret the pricing for this package.|See [Object Details](#object-details)|
 |pricing_model.pricing_type|string|GET, POST|marketing|no|Which pricing model is used by this package.|`one-time`, `subscription`|
-|pricing_model.payment_period|string|GET, POST|marketing|no|For a package using the "one-time" payment model, the number `1` signifies "once."  For a subscription, how often (in terms of months) payments are due.  Currently, only annual subscriptions are supported.|`1` for "one-time" payments, or `12` for yearly subscriptions.|
+|pricing_model.payment_period|string|GET, POST|marketing|no|For a package using the "one-time" payment model, the number `1` signifies "once."  For a subscription, how often (in terms of months) payments are due.  Currently, only annual subscriptions are supported.|`1` for "one-time" payments, or `12` for annual subscriptions.|
 |prices|array|GET, POST, PUT|marketing|no|The list of prices in USD set for this package by edition, and the respective installation prices (if any). Editions must match `version_compatibility`.|Array of sub-objects.|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
 |prices[N].edition|string|GET, POST, PUT|marketing|no|The Magento edition for this price|`CE`, `EE`, `ECE`|
