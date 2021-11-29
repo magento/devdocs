@@ -310,10 +310,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  Magento now displays the Terms and Conditions validation message in the relevant block only when a shopper clicks the **Place Order** button. Previously, Magento displayed this message in the Apply Discount Code block whenever a shopper changed payment method in the checkout workflow: `The order wasn't placed. First, agree to the terms and conditions, then try placing your order again`.
 
-<!--- MC-32805-->
-
-*  Shoppers are now redirected to the shopping cart page instead of the product page when they try to update the mini cart for an order that contains deleted items. Previously, shoppers were redirected to the product page.
-
 <!--- MC-39581-->
 
 *  Magento now discards changes to the billing address form on the checkout payment step if the shopper fails to click the **Update** button and returned to the shipping step.
