@@ -37,7 +37,7 @@ If you select the second option (replace), you will be able to select a replacem
 ## Pricing management
 You can change your extension price every time you submit a new version of your extension.
 Pricing model cannot be changed once at least one version of the extension is initially created on the DevPortal.
-The existing customers will be notified that the price of the extension has been changed.
+Existing customers will be notified that the price of the extension has changed.
 
 ## Tracking sales
 You can see the subscription sales as a regular transactions in the Developer Portal. We are working on improving developer sales tracking functionality and will update documentation when it will be ready.
