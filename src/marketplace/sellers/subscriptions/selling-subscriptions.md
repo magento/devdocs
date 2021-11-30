@@ -23,7 +23,7 @@ We recommend starting by submitting a new SKU. This allows new sales operations 
 You can then either remove the original extension unconditionally, or mark the new extension as a replacement. This triggers a 180-day grace period for merchants who have purchased the original extension.
 To remove an extension from the Marketplace, use the **Remove from Store** button on your original extension.
 
-[]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-remove-from-store.png){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-remove-from-store.png){: .zoom}
 
 If you decide to use the first option (unconditional removal), your original extension will disappear from the Marketplace and no other action will be taken.
 If you select the second option (replace), you will be able to select a replacement extension from the list of your active SKUs. The 180-day grace period will be applied to the replacement extension for customers who have purchased the original extension.
