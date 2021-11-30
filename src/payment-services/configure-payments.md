@@ -11,6 +11,10 @@ Payment Services combines order data exported from Magento Open Source and Adobe
 
 See [our user guide]({{ site.user_guide_url }}/payment-services/order-payment-status.html#data-used-in-the-report) to learn about the data used in Payment Services reporting.
 
+### Configure cron Magento Open Source
+
+Magento Open Source requires that you configure a cron job and use a `BY SCHEDULE` index mode. See [Configure and run cron]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-cron.html) for more information.
+
 ### Set indexers
 
 Order data is exported and persisted in the Payment Service, using one of two index modes---`ON SAVE` (default) or `BY SCHEDULE` (recommended).
