@@ -29,9 +29,9 @@ You can check your subscriptions in the **My Account** section. In the list, you
 
 To update a payment method:
 
-1.  Go to **My Profile** > **My Subscriptions**.
-1.  Choose the subscription that needs to be updated.
-1.  Click **View and Edit** > **Update payment method**.
+1.Go to **My Profile** > **My Subscriptions**.
+1.Choose the subscription that needs to be updated.
+1.Click **View and Edit** > **Update payment method**.
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-payment-methods.png){: .zoom}
 
@@ -43,10 +43,10 @@ You can cancel your subscription at any time.
 
 To cancel a subscription:
 
-1.  Go to **My Profile** > **My Subscriptions**.
-1.  Choose subscription that you want to cancel.
-1.  Click **View and Edit**. 
-1.  Change the **Current Subscription Status** to **Cancelled**.
+1.Go to **My Profile** > **My Subscriptions**.
+1.Choose subscription that you want to cancel.
+1.Click **View and Edit**. 
+1.Change the **Current Subscription Status** to **Cancelled**.
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-cancel.png){: .zoom}
 
