@@ -29,7 +29,7 @@ If you decide to use the first option (unconditional removal), your original ext
 If you select the second option (replace), you will be able to select a replacement extension from the list of your active SKUs. The 180-day grace period will be applied to the replacement extension for customers who have purchased the original extension.
 
 []({{ site.baseurl }}/marketplace/sellers/images/subscriptions-confirm-remove.png){: .zoom}
-[]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-remove-replace.png){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-remove-replace.png){: .zoom}
 
 {: .bs-callout .bs-callout-info}
 **Important:** once the extension is removed from the Marketplace, the customers will still be able to download the latest version of the module, but you will no longer be able to submit new versions. Plan your rollout accordingly.
