@@ -24,7 +24,14 @@ Vendors can change the price of a subscription extension when submitting a new v
 If you hold an active license to the extension, you will get an email notification explaining the pricing change.
 
 ## Managing your active subscriptions
-Customers can check their subscriptions in the My Account section. In the list, the customer will see next payment date for each subscription. Merchant will have ability to add/edit various payment methods for every subscription extension. To update payment method go to My Profile → My Subscriptions → choose subscription which has to be updated → View and Edit and after that click on "Update payment method".
+
+You can check your subscriptions in the **My Account** section. In the list, you will see the next payment date for each subscription. Merchants have the ability to add/edit various payment methods for every subscription extension.
+
+To update a payment method:
+
+1.  Go to **My Profile** > **My Subscriptions**.
+1.  Choose the subscription that needs to be updated.
+1.  Click **View and Edit** > **Update payment method**.
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-payment-methods.png){: .zoom}
 
