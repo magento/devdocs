@@ -6,7 +6,8 @@ title: Buying Subscription-based Extensions
 Starting December 2021, Adobe Commerce Marketplace provides extension vendors an opportunity to sell their extensions under an auto-renewing subscription model.
 
 ## Subscribing to an extension
-Subscription extensions can be identified by pricing displaying price per period.
+
+You can identify subscription extensions by pricing. They display price per period.
 
 []({{ site.baseurl }}/marketplace/sellers/images/subscriptions-buying-pricing.png){: .zoom}
 
