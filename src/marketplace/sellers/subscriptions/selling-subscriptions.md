@@ -11,7 +11,7 @@ When submitting a new extension to the marketplace, you must select the pricing 
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-pricing-model.png){: .zoom}
 
-{: .bs-callout .bs-callout-info}
+{:.bs-callout-info}
 At this moment, Adobe Commerce Marketplace supports annual extension subscriptions only.
 
 There are no subscription-specific settings other than Pricing Model.
@@ -31,7 +31,6 @@ If you select the second option (replace), you will be able to select a replacem
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-confirm-remove.png){: .zoom}
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-remove-replace.png){: .zoom}
 
-{: .bs-callout .bs-callout-info}
 {:.bs-callout-warning}
 After the extension is removed from the Marketplace, customers will still be able to download the latest version of the module, but you will no longer be able to submit new versions. Plan your rollout accordingly.
 
