@@ -198,3 +198,16 @@ pages:
     - label: Analytics
       url: /marketplace/sellers/analytics.html
       versionless: true
+
+- label: Subscriptions
+  url: /marketplace/sellers/subscriptions.html
+  versionless: true
+  children:
+
+    - label: Selling Subscription-based Extensions
+      url: /marketplace/sellers/selling-subscriptions.html
+      versionless: true
+
+    - label: Buying Subscription-based Extensions
+      url: /marketplace/sellers/buying-subscriptions.html
+      versionless: true
