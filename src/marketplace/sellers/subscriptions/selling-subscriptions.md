@@ -17,7 +17,8 @@ At this moment, Adobe Commerce Marketplace supports annual extension subscriptio
 There are no subscription-specific settings other than Pricing Model.
 
 ## Changing existing extension from flat fee to subscription
-You may elect to change licensing for their existing extension from Flat Fee to Subscription. In order to do so, you will need to remove their original extension from the Marketplace and replace it with a new SKU sold under a subscription license.
+
+You may elect to change licensing for an existing extension from Flat Fee to Subscription. In order to do so, you must remove the original extension from the Marketplace and replace it with a new SKU sold under a subscription license.
 We recommend starting by submitting a new SKU. This allows new sales operations and marketing activities to start generating revenue right away. Follow the section above to set up a new SKU under a subscription license.
 You can then either remove the original extension unconditionally, or mark the new extension as a replacement. This will trigger a 180-day grace period for merchants who have purchased the original extension in the past.
 To make that choice, use the "Remove from Store" button on your original extension.
