@@ -45,7 +45,7 @@ To cancel a subscription:
 
 1.Go to **My Profile** > **My Subscriptions**.
 1.Choose subscription that you want to cancel.
-1.Click **View and Edit**. 
+1.Click **View and Edit**.
 1.Change the **Current Subscription Status** to **Cancelled**.
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-cancel.png){: .zoom}
