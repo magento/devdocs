@@ -13,7 +13,7 @@ functional_areas:
 The {{site.data.var.ece}} [Project Web Interface](https://account.magento.com/customer/account/login/) enables you to do the following for all Starter and Pro environments:
 
 -  [Access projects](#project-access)
--  [Configure environment settings ](#configure-environment-settings)
+-  [Configure environment settings](#configure-environment-settings)
 -  [Add users and manage access]({{ site.baseurl }}/cloud/project/user-admin.html)
 -  [Manage Git branches]({{ site.baseurl }}/cloud/project/project-webint-branch.html)
 
