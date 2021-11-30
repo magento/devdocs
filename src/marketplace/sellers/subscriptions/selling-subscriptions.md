@@ -35,7 +35,8 @@ If you select the second option (replace), you will be able to select a replacem
 {:.bs-callout-warning}
 After the extension is removed from the Marketplace, customers will still be able to download the latest version of the module, but you will no longer be able to submit new versions. Plan your rollout accordingly.
 
-**Note:** the grace period will only apply if the replacement extension is a subscription extension.
+{:.bs-callout-info}
+The grace period only applies if the replacement extension is a subscription extension.
 
 ## Pricing management
 You can change your extension price every time you submit a new version of your extension.
