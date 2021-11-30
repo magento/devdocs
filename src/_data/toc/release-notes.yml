@@ -143,10 +143,14 @@ pages:
     - label: Product Recommendations
       url: /recommendations/release-notes.html
       versionless: true
-
+    
     - label: Sales Channels
       children:
       
         - label: Amazon
           url: /extensions/amazon-sales/release-notes/
           versionless: true
+
+    - label: Payment Services
+      url: /payment-services/release-notes.html
+      versionless: true
