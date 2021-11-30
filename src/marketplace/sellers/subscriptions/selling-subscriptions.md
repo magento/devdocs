@@ -7,7 +7,7 @@ Starting December 2021, Adobe Commerce Marketplace provides extension vendors an
 ## Setting up subscription-based billing
 While submitting a new extension to the marketplace, you need to select the Pricing Model for the extension. The Pricing model can only be selected when the initial version is being set up. Once the initial version is created on the Developer Portal, the pricing model cannot be changed for this SKU. Choose Subscription to set the SKU under subscription license, and set the subscription price.
 
-[]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-pricing-model.png){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-pricing-model.png){: .zoom}
 
 {: .bs-callout .bs-callout-info}
 **Note:** at this time, only Annual subscription licenses are supported.
