@@ -13,7 +13,7 @@ See [our user guide]({{ site.user_guide_url }}/payment-services/order-payment-st
 
 ### Configure cron on Magento Open Source
 
-If you want to use a `BY SCHEDULE` index mode on Magento Open Source you will need to configure cron. See [Configure and run cron]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-cron.html) for more information.
+If you want to use a `BY SCHEDULE` index mode on Magento Open Source, you must configure cron. See [Configure and run cron]({{ site.baseurl }}{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-cron.html).
 
 ### Set indexers
 
