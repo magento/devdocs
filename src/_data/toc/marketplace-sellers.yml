@@ -200,7 +200,7 @@ pages:
       versionless: true
 
 - label: Subscriptions
-  url: /marketplace/sellers/subscriptions.html
+  url: /marketplace/sellers/extension-subscriptions.html
   versionless: true
   children:
 
