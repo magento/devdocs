@@ -39,6 +39,7 @@ After the extension is removed from the Marketplace, customers will still be abl
 The grace period only applies if the replacement extension is a subscription extension.
 
 ## Pricing management
+
 You can change your extension price every time you submit a new version of your extension.
 Pricing model cannot be changed after at least one version of the extension is initially created on the Developer Portal.
 Existing customers will be notified that the price of the extension has changed.
