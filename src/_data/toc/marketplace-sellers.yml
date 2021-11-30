@@ -209,5 +209,5 @@ pages:
       versionless: true
 
     - label: Buying Subscription-based Extensions
-      url: /marketplace/sellers/buying-subscriptions.html
+      url: /marketplace/sellers/subscriptions/buying-subscriptions.html
       versionless: true
