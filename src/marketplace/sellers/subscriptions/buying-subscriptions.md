@@ -35,7 +35,7 @@ Merchant can cancel their subscription at any time. To do so, go to My Profileâ†
 
 []({{ site.baseurl }}/marketplace/sellers/images/subscriptions-cancel.png){: .zoom}
 
-To re-subscribe to a previously cancelled subscription, you will need to create a support ticket with Marketplace Support.
+To re-subscribe to a previously cancelled subscription, you must create a support ticket with Marketplace Support.
 
 ## Requesting a refund
 A refund can be requested within 25 days of the initial purchase payment. Once the 25 day term expires, refund for the initial or any subsequent payments will not be possible.
