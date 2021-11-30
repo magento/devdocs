@@ -44,7 +44,8 @@ Existing customers will be notified that the price of the extension has changed.
 You can see subscription sales as regular transactions in the Developer Portal. We are working on improving developer sales tracking functionality and will update documentation when it's ready.
 
 ## Cancellations and refunds
-A customer who purchased an extension under a subscription license can request a refund within 25 days. The customer will need to open a Support ticket for this request.
+
+A customer who purchased an extension under a subscription license can request a refund within 25 days. The customer must open a Marketplace Support ticket for this request.
 Customers can cancel their extension subscription at any time.
 
 {:.bs-callout-info}
