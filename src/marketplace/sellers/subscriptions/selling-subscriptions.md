@@ -12,7 +12,7 @@ When submitting a new extension to the marketplace, you must select the pricing 
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-pricing-model.png){: .zoom}
 
 {: .bs-callout .bs-callout-info}
-**Note:** at this time, only Annual subscription licenses are supported.
+At this moment, Adobe Commerce Marketplace supports annual extension subscriptions only.
 
 There are no subscription-specific settings other than Pricing Model.
 
