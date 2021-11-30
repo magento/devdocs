@@ -20,7 +20,7 @@ At this moment, Adobe Commerce Marketplace supports annual extension subscriptio
 While flat fee extensions are fully licensed in perpetuity, subscription extension licenses only make you eligible for support, notifications, and other services provided by the vendor while the subscription is active.
 Vendors cannot turn a flat fee extension into an auto-renewable subscription.
 Instead, vendors can elect to "sunset" the existing extension and replace it with an extension sold under a subscription license. They do that by removing the extension from the store, which triggers an email notification for all customers who have licensed the extension.
-Vendors can change the price on a subscription extension while submitting a new version.
+Vendors can change the price of a subscription extension when submitting a new version.
 If you hold an active license to the extension, you will get an email notification explaining the pricing change.
 
 ## Managing your active subscriptions
