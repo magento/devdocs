@@ -11,9 +11,6 @@ There are two ways to install this extension---for [{{site.data.var.ece}}](#mage
 
 ## Update minimum-stability setting
 
-{:.bs-callout-tip}
-This step is only required during our Early Access Program (EAP) and will not be needed for General Availability (GA).
-
 Before installing the extension, you must change the `minimum-stability` requirement to `RC` (release candidate) in your `composer.json` file. You can use an IDE or your favorite text editor (like Visual Studio Code or Sublime Text).
 
 In your `composer.json` file, change `"minimum-stability": "stable"` to `"minimum-stability": "RC"`.
@@ -38,7 +35,7 @@ This method is used for installing the Payment Services extension for a Commerce
    composer update
    ```
 
-   The `composer update` command will update all dependencies. If you do not want to update all dependencies at the same time, use this command instead: `composer require magento/commerce-payments`.
+   The `composer update` command will update all dependencies. If you do not want to update all dependencies at the same time, use this command instead: `composer require magento/payment-services`.
 
 1. Commit and push your changes.
 
@@ -58,7 +55,7 @@ This method is used for installing the Payment Services extension for an On-prem
    composer update
    ```
 
-   The `composer update` command will update all dependencies. If you do not want to update all dependencies at the same time, use this command instead: `composer require magento/commerce-payments`.
+   The `composer update` command will update all dependencies. If you do not want to update all dependencies at the same time, use this command instead: `composer require magento/payment-services`.
 
 1. Upgrade {{site.data.var.ee}}:
 
@@ -69,7 +66,7 @@ This method is used for installing the Payment Services extension for an On-prem
 1. Clear the cache:
 
    ```bash
-   bin/magento cache:clear
+   bin/magento cache:clean
    ```
 
 1. Commit changes.
