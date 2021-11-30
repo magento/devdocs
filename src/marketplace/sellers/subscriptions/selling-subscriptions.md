@@ -28,7 +28,7 @@ To remove an extension from the Marketplace, use the **Remove from Store** butto
 If you decide to use the first option (unconditional removal), your original extension will disappear from the Marketplace and no other action will be taken.
 If you select the second option (replace), you will be able to select a replacement extension from the list of your active SKUs. The 180-day grace period will be applied to the replacement extension for customers who have purchased the original extension.
 
-[]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-confirm-remove.png){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-confirm-remove.png){: .zoom}
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-remove-replace.png){: .zoom}
 
 {: .bs-callout .bs-callout-info}
