@@ -47,6 +47,7 @@ You can see subscription sales as regular transactions in the Developer Portal. 
 A customer who purchased an extension under a subscription license can request a refund within 25 days. The customer will need to open a Support ticket for this request.
 Customers can cancel their extension subscription at any time.
 
-**Important:** Customers can only re-subscribe to a cancelled extension subscription once. Repeated cancellations and re-subscriptions to an extension are not supported.
+{:.bs-callout-info}
+Customers can only re-subscribe to a cancelled extension subscription once. Repeated cancellations and re-subscriptions to an extension are not supported.
 
 Thank you for using the Adobe Commerce Marketplace. For all questions and suggestions regarding extension subscriptions, please contact [Marketplace Support](https://marketplacesupport.magento.com) or find us in the [Community Slack workspace](https://opensource.magento.com/slack).
