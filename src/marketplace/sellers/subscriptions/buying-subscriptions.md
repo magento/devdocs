@@ -48,7 +48,7 @@ To cancel a subscription:
 1.  Click **View and Edit**. 
 1.  Change the **Current Subscription Status** to **Cancelled**.
 
-[]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-cancel.png){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-cancel.png){: .zoom}
 
 To re-subscribe to a previously cancelled subscription, you must create a support ticket with Marketplace Support.
 
