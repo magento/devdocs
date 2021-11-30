@@ -35,7 +35,7 @@ To update a payment method:
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-payment-methods.png){: .zoom}
 
-It is the buyer's responsibility to keep payment methods up-to-date. At least one payment method must be added. If payment method has not been added by the payment date, then the subscription will be cancelled.
+It is the buyer's responsibility to keep payment methods up-to-date. At least one payment method must be added. If a payment method has not been added by the payment date, then the subscription will be cancelled.
 
 ## Canceling an extension subscription
 Merchant can cancel their subscription at any time. To do so, go to My Profile→My Subscriptions→ choose subscription which has to be updated → View and Edit.  Change the Current Subscription Status to Cancelled.
