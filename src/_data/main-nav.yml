@@ -206,6 +206,10 @@
       url: /marketplace/sellers/getting-started.html
       versionless: true
 
+    - label: Payment Services
+      url: /payment-services/index.html
+      versionless: true
+
     - label: Order Management
       url: http://omsdocs.magento.com/en/
 

@@ -21,6 +21,14 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.7
+
+-  **MDVA-39711** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.3`)_-Fixes the issue where admin users cannot access the customers grid after deleting website.
+-  **MDVA-40311** _(for Adobe Commerce and Magento Open Source `>=2.4.2-p2 <2.4.4`)_-Fixes the issue where admin users get the error message "Invalid security or form key. Please refresh the page" after login to the admin if custom admin path is configured and secret key is enabled.
+-  **MDVA-41631** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.4`)_-Fixes the issue where users get an error when trying to retrieve order information without an optional "telephone" value through GraphQL.
+-  **MDVA-27239** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.3.6`)_-Fixes the issue where cross-sell products are not displayed.
+-  Updated patches: MDVA-37068, MDVA-35254, MDVA-41164, MDVA-37916, MDVA-37478, MDVA-34551, MDVA-31791.
+
 ## v1.1.6
 
 -  **MDVA-40550** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.4.4`)_-Fixes the issue with missing products on the frontend during reindexing.
