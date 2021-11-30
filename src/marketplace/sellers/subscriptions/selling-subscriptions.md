@@ -11,7 +11,7 @@ While submitting a new extension to the marketplace, you need to select the Pric
 []({{ site.baseurl }}/marketplace/sellers/images/subscriptions-pricing-model.png){: .zoom}
 
 {: .bs-callout .bs-callout-info}
-**Note:** at this moment, only Annual subscription licenses are supported. 
+**Note:** at this time, only Annual subscription licenses are supported.
 
 There are no subscription-specific settings other than Pricing Model.
 
@@ -28,7 +28,6 @@ If you select the second option (replace), you will be able to select a replacem
 
 []({{ site.baseurl }}/marketplace/sellers/images/subscriptions-confirm-remove.png){: .zoom}
 []({{ site.baseurl }}/marketplace/sellers/images/subscriptions-remove-replace.png){: .zoom}
-
 
 {: .bs-callout .bs-callout-info}
 **Important:** once the extension is removed from the Marketplace, the customers will still be able to download the latest version of the module, but you will no longer be able to submit new versions. Plan your rollout accordingly.
