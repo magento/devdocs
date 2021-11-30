@@ -205,7 +205,7 @@ pages:
   children:
 
     - label: Selling Subscription-based Extensions
-      url: /marketplace/sellers/selling-subscriptions.html
+      url: /marketplace/sellers/subscriptions/selling-subscriptions.html
       versionless: true
 
     - label: Buying Subscription-based Extensions
