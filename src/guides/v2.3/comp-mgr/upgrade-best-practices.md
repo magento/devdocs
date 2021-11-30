@@ -16,7 +16,7 @@ It is important to understand the variables that determine the complexity of an 
 
 The level of effort to upgrade your {{site.data.var.ee}} instance depends upon these factors:
 
-*  **How you have built your site?** The amount of custom work and the number of installed 3rd-party modules strongly affects the complexity of an upgrade. The quality of the custom work and modules also can also determine whether an upgrade will go smoothly.
+*  **How did you build your site?** The amount of custom work and the number of installed 3rd-party modules strongly affects the complexity of an upgrade. The quality of the custom work and modules can determine whether an upgrade will go smoothly.
 
 *  **Are you skipping multiple releases?** Skipping releases will makes the next upgrade more complex, upgrading from consequent versions will make the process easier and cheaper.
 
@@ -39,7 +39,7 @@ From the moment you start working on a project, you should consider how future u
 
 Begin adopting the {{site.data.var.ee}} Extensibility platform, if you haven't done so already. The platform allows you to efficiently customize processes, integrate systems, and deploy new capabilities while maintaining SaaS-like upgradeability. Its features include:
 
-*  **UI Extensibility**. Extend and evolve your storefront independently of your backend and middleware using [PWA Studio](https://magento.github.io/pwa-studio/).
+*  **UI Extensibility**. Extend and evolve your storefront independently of your backend and middleware using [PWA Studio](https://developer.adobe.com/commerce/pwa-studio/).
 
 *  **API Extensibility**. Use [GraphQL]({{page.baseurl}}/graphql/index.html) to extend Web API layer by evolving the graph data model and executing lambda functions directly from the graph layer.
 

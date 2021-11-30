@@ -54,10 +54,19 @@ Scalar is a simple attribute.
 Non-scalar attributes can be represented by Data Object.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Catalog\Api\ProductRepositoryInterface;
+use Magento\Catalog\Api\Data\ProductInterface;
+
 public function afterGet
 (
-    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-    \Magento\Catalog\Api\Data\ProductInterface $entity
+    ProductRepositoryInterface $subject,
+    ProductInterface $entity
 ) {
     $ourCustomData = $this->customDataRepository->get($entity->getId());
 
@@ -78,11 +87,19 @@ This is the simplest way to add extension attributes without causing a conflict:
 Function `afterGetList` is similar to `afterGet`:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Catalog\Api\ProductRepositoryInterface;
+use Magento\Catalog\Api\Data\ProductSearchResultsInterface;
+
 public function afterGetList(
-    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-    \Magento\Catalog\Api\Data\ProductSearchResultsInterface $searchResults
-) : \Magento\Catalog\Api\Data\ProductSearchResultsInterface
-{
+    ProductRepositoryInterface $subject,
+    ProductSearchResultsInterface $searchResults
+) : ProductSearchResultsInterface {
     $products = [];
     foreach ($searchResults->getItems() as $entity) {
         $ourCustomData = $this->customDataRepository->get($entity->getId());
@@ -104,18 +121,27 @@ To add extension attributes to an entity without plugins, use the `extensionActi
 Likewise, the `afterSave` plugin should manipulate the entity data before returning it:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Catalog\Api\Data\ProductInterface;
+use Magento\Catalog\Api\ProductRepositoryInterface;
+
 public function afterSave
 (
-    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-    \Magento\Catalog\Api\Data\ProductInterface $result, /** result from the save call **/
-    \Magento\Catalog\Api\Data\ProductInterface $entity  /** original parameter to the call **/
+    ProductRepositoryInterface $subject,
+    ProductInterface $result, /** result from the save call **/
+    ProductInterface $entity  /** original parameter to the call **/
     /** other parameter not required **/
 ) {
     $extensionAttributes = $entity->getExtensionAttributes(); /** get original extension attributes from entity **/
     $ourCustomData = $extensionAttributes->getOurCustomData();
     $this->customDataRepository->save($ourCustomData);
 
-    $resultAttributes = $result->getExtentionAttributes(); /** get extension attributes as they exist after save **/
+    $resultAttributes = $result->getExtensionAttributes(); /** get extension attributes as they exist after save **/
     $resultAttributes->setOurCustomData($ourCustomData); /** update the extension attributes with correct data **/
     $result->setExtensionAttributes($resultAttributes);
 
@@ -128,6 +154,11 @@ But if some entity doesn't have implementation to fetch extension attributes, we
 Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might look like this:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 use Magento\Catalog\Api\Data\ProductExtensionInterface;
 use Magento\Catalog\Api\Data\ProductInterface;

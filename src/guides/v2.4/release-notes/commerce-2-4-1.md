@@ -13,11 +13,11 @@ All known issues identified in Magento 2.4.0 have been fixed in this release.
 
 Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.1 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
-## Security-only patch available
+## Security patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.4.0-p1) provides. Patch 2.4.0.1 (Composer package 2.4.0-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.4.0. All hot fixes that were applied to the 2.4.0 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.4.0-p1) provides. Patch 2.4.0.1 (Composer package 2.4.0-p1) is a security patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.4.0. All hot fixes that were applied to the 2.4.0 release are included in this security patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
 
-For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.5-p2), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security-only patches include security bug fixes only, not the additional security enhancements that are included in the full patch.
+For general information about security patches, see [Introducing the New Security Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-Patch-Release/ba-p/141287). For instructions on downloading and applying security patches (including patch 2.3.5-p2), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security patches include security bug fixes only, not the additional security enhancements that are included in the full patch.
 
 ## Other release information
 
@@ -44,7 +44,7 @@ Security improvements for this release include:
    *  Place Order storefront page and REST and GraphQL endpoints <!--- MC-36067-->
    *  Payment-related REST and GraphQL endpoints.<!--- MC-36064-->
 
-   CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks. See [CAPTCHA](https://docs.magento.com/user-guide/stores/security-captcha.html).
+   CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks. See [CAPTCHA]({{ site.user_guide_url }}/stores/security-captcha.html).
 
 *  **Support for the SameSite attribute for cookies**. To support the Google Chrome enforcement of the new cookie classification system, Magento classes that handle cookies have been updated to support the `SameSite` cookie attribute. This attribute is set to `Lax` by default but can be explicitly overridden. <!--- MC-35389-->
 
@@ -57,7 +57,7 @@ Starting with the release of {{site.data.var.ee}} 2.3.2, we will assign and publ
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these functional areas: Customer Account, Catalog, CMS, OMS, Import/Export, Promotions and Targeting, Cart and Checkout, B2B, and Staging and Preview.
 
-*  **Site-Wide Analysis Tool (SWAT) integration with Admin**. (SWAT) provides system insights and instrumentation for {{ site.data.var.ece }} installations of Magento with 24/7 real-time performance monitoring, reports, and self-service recommendations. Merchants can use the new SWAT Admin role to securely access their SWAT Customer Detail pages through the Magento Admin. See [SWAT FAQ](https://support.magento.com/hc/en-us/articles/360048646671) for an overview. For usage information, see [SWAT](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html). <!--- SWAT-807-->
+*  **Site-Wide Analysis Tool integration with Admin**. The [tool]({{ site.user_guide_url }}/reports/site-wide-analysis-tool.html) provides system insights and instrumentation for {{ site.data.var.ece }} installations with 24/7 real-time performance monitoring, reports, and self-service recommendations. Merchants can use the new Admin [role resource]({{ site.user_guide_url }}/system/permissions-role-resources.html) to securely access their Customer Detail pages through the Admin. See the [FAQ](https://support.magento.com/hc/en-us/articles/360048646671) for an overview. <!--- SWAT-807-->
 
 ### Performance improvements
 
@@ -85,7 +85,7 @@ The New Media Gallery is now enabled by default in the Admin. Merchants can now
 
 ### Page Builder
 
-Page Builder now supports full screen mode, which supports easier editing of content and provides a consistent experience editing content across the Admin. See [Workspace](https://docs.magento.com/user-guide/cms/page-builder-workspace.html). <!--- PB-543-->
+Page Builder now supports full screen mode, which supports easier editing of content and provides a consistent experience editing content across the Admin. See [Workspace]({{ site.user_guide_url }}/cms/page-builder-workspace.html). <!--- PB-543-->
 
 ### GraphQL
 
@@ -129,7 +129,7 @@ PWA Studio v8.0.0 introduces new features and enhancements:
 
 *  Numerous improvements to the MyAccount experience of the Venia storefront <!--- PWA-247-->
 
-See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions. For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
+See [Magento compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions. For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
 
 ### B2B
 
@@ -150,7 +150,7 @@ Improvements to order approval and rejection include the following:
 
 *  Examples of how to configure Order Approval rules are provided on the Rule Configuration page. <!--- BUNDLE-103 -->
 
-See [Approval rules](https://docs.magento.com/user-guide/customers/account-dashboard-approval-rules.html)
+See [Approval rules]({{ site.user_guide_url }}/customers/account-dashboard-approval-rules.html)
 
 #### B2B shipping methods enhancements
 
@@ -173,11 +173,11 @@ B2B merchants can now control shipping methods that are offered to each Company.
 *  Merchants can now filter the Customers Now Online grid by Company. <!--- BUNDLE-137 -->
 *  Admins can now filter customers in the Admin by Sales Rep. <!--- BUNDLE-110 -->
 
-See [B2B Features](https://docs.magento.com/user-guide/configuration/general/b2b-features.html).
+See [B2B Features]({{ site.user_guide_url }}/configuration/general/b2b-features.html).
 
 #### Enhanced security on storefront
 
-To reduce creation of fraudulent or spam accounts, merchants can now enable Google reCAPTCHA on the New Company Request form on the storefront. See [reCAPTCHA](https://docs.magento.com/user-guide/configuration/security/google-recaptcha-storefront.html).<!--- BUNDLE-154 -->
+To reduce creation of fraudulent or spam accounts, merchants can now enable Google reCAPTCHA on the New Company Request form on the storefront. See [reCAPTCHA]({{ site.user_guide_url }}/configuration/security/google-recaptcha-storefront.html).<!--- BUNDLE-154 -->
 
 #### Expanded logging of Admin actions
 
@@ -194,17 +194,17 @@ MFTF 3.1.0 is now available. See [Magento Functional Testing Framework Changelog
 
 See the following articles for updates on features and changes for this release:
 
-*  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html)
+*  [Amazon Pay]({{ site.user_guide_url }}/payment/amazon-pay.html)
 
-*  [Braintree](https://docs.magento.com/user-guide/payment/braintree.html)
+*  [Braintree]({{ site.user_guide_url }}/payment/braintree.html)
 
-*  [dotdigital Engagement Cloud](https://docs.magento.com/user-guide/marketing/dotdigital/engagement-cloud.html)
+*  [dotdigital Engagement Cloud]({{ site.user_guide_url }}/marketing/dotdigital/engagement-cloud.html)
 
-*  [Klarna](https://docs.magento.com/user-guide/payment/klarna.html)
+*  [Klarna]({{ site.user_guide_url }}/payment/klarna.html)
 
-*  [Vertex Cloud](https://docs.magento.com/user-guide/tax/vertex.html)
+*  [Vertex Cloud]({{ site.user_guide_url }}/tax/vertex.html)
 
-*  [Yotpo Product Reviews](https://docs.magento.com/user-guide/marketing/yotpo-reviews-intro.html)
+*  [Yotpo Product Reviews]({{ site.user_guide_url }}/marketing/yotpo-reviews-intro.html)
 
 ## Fixed issues
 
@@ -246,7 +246,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7219-->
 
-*  You can now use `bin/magento sampledata:deploy` to deploy sample data as expected after installing Magento using Composer. Previously, Magento threw this error: `Git installations must deploy sample data from GitHub; see https://devdocs.magento.com/guides/v2.3/install-gde/install/sample-data-after-clone.html for more information`. _Fix submitted by Andrii Beziazychnyi in pull request [27481](https://github.com/magento/magento2/pull/27481)_. [GitHub-19481](https://github.com/magento/magento2/issues/19481)
+*  You can now use `bin/magento sampledata:deploy` to deploy sample data as expected after installing Magento using Composer. Previously, Magento threw this error: `Git installations must deploy sample data from GitHub; see {{ site.baseurl }}/guides/v2.3/install-gde/install/sample-data-after-clone.html for more information`. _Fix submitted by Andrii Beziazychnyi in pull request [27481](https://github.com/magento/magento2/pull/27481)_. [GitHub-19481](https://github.com/magento/magento2/issues/19481)
 
 <!--- ENGCOM-7459-->
 

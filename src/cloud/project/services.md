@@ -173,11 +173,11 @@ The following table lists the services used in {{site.data.var.ece}} and the ser
 | `elasticsearch` | 7.7, 7.9                 | 6.8, 7.5, 7.7, 7.9        | 5.2, 6.5                   | **Commerce 2.3.1 to 2.3.4**— 5.2, 6.5<br>**Commerce 2.3.0**— 5.2<br>**Commerce 2.2.0 to 2.2.7**— 5.2 |
 | `mariadb`       | 10.2 to 10.4             | 10.1 to 10.3              | 10.1 to 10.2               | **Commerce 2.3.0 to 2.3.5**— 10.1 to 10.2 |
 | `nginx`         | 1.9                      | 1.9                       | 1.9                        |                                           |
-| `node`          | 6, 8, 10, 11             | 6, 8, 10, 11              | 6, 8, 10, 11               |                                           |
+| `node`          | 6, 8, 10, 11             | 6, 8, 10, 11              | 6, 8, 10, 11               | Node.js is managed in the `.magento.app.yaml` [dependencies]({{site.baseurl}}/cloud/project/magento-app-properties.html#dependencies) property. |
 | `php`           | 7.3, 7.4                 | 7.2, 7.3, 7.4             | 7.1, 7.2                   | **Note:** Beginning with {{ site.data.var.ct }} v2002.1.0, you must use PHP template version 7.1.3 or later for both 2.2 and 2.3.<br><br>**Commerce 2.3.3**— 7.1, 7.2, 7.3<br>**Commerce 2.3.0 to 2.3.2**— 7.1, 7.2 <br>**Commerce 2.2.5 to 2.2.9**— 7.0, 7.1<br>**Commerce 2.2.4 and earlier**— 7.0.2, 7.0.4, ~7.0.6, 7.1 |
 | `rabbitmq`      | 3.8                      | 3.7, 3.8                  | 3.5                        | **Commerce 2.3.0 to 2.3.3**— 3.7          |
 | `redis`         | 5.x, 6.x                 | 5.x, 6.x                  | 3.2, 5.0, 6.x              | **Commerce 2.3.0**— 3.2                   |
-| `varnish`       | 6.x                      | 4.0, 5.0, 6.2             | 4.0, 5.0                   | **Note:** On Cloud projects, you must use the [Fastly service]({{site.baseurl}}/cloud/cdn/cloud-fastly.html) for caching. Varnish is available only for local development.<br><br>**Commerce 2.3.0 to 2.3.2**— 4.0, 5.0 |
+| `varnish`       | 6.x                      | 4.0, 5.0, 6.2             | 4.0, 5.0                   | **Note:** You must use the [Fastly service]({{site.baseurl}}/cloud/cdn/cloud-fastly.html) for caching. Varnish is available only for local development.<br><br>**Commerce 2.3.0 to 2.3.2**— 4.0, 5.0 |
 
 {:.bs-callout-info}
 When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ site.baseurl }}/cloud/project/services-elastic.html#elasticsearch-software-compatibility).

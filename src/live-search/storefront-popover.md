@@ -3,7 +3,7 @@ group: live-search
 title: Storefront Popover
 ee_only: True
 ---
-When Live Search is installed, a popover appears in the storefront as shoppers type in the [Search](https://docs.magento.com/user-guide/catalog/search-quick.html) box. With each character typed, the popover is updated with suggested products and thumbnail images of the top search results.
+When Live Search is installed, a popover appears in the storefront as shoppers type in the [Search]({{ site.user_guide_url }}/catalog/search-quick.html) box. With each character typed, the popover is updated with suggested products and thumbnail images of the top search results.
 
 Live Search returns results for a query of two characters or more. For a partial match, the maximum number of characters per word is 20. The number of characters in a "search as you type" query is not configurable.
 
@@ -18,7 +18,7 @@ The following attributes are always searchable:
 -  `name`
 -  `categories`
 
-Review the set of product attributes that are [searchable](https://docs.magento.com/user-guide/stores/attributes-product.html#storefront-properties) (`searchable=true`) to produce highly targeted results. Some attributes that are search-enabled by default, such as `description`, can have the opposite effect and reduce the precision of search results. For example, if a person searches for "shorts" and there are shirts in the catalog with a description that includes "short sleeves", the shirts are also returned. To improve the relevancy of the results, make attributes searchable that contain content that has a clear and concise meaning. Avoid using attributes that contain less precise, lengthy text.
+Review the set of product attributes that are [searchable]({{ site.user_guide_url }}/stores/attributes-product.html#storefront-properties) (`searchable=true`) to produce highly targeted results. Some attributes that are search-enabled by default, such as `description`, can have the opposite effect and reduce the precision of search results. For example, if a person searches for "shorts" and there are shirts in the catalog with a description that includes "short sleeves", the shirts are also returned. To improve the relevancy of the results, make attributes searchable that contain content that has a clear and concise meaning. Avoid using attributes that contain less precise, lengthy text.
 
 ![Live Search popover]({{ page.baseurl }}/live-search/images/storefront-popover.png)
 _Storefront popover_
@@ -35,6 +35,14 @@ The popover always displays the product `name` and `price`, and the selection of
 .livesearch.view-all-footer {
     background-color: magenta;
 }
+```
+### Container visibility
+
+The parent component of the `.livesearch.popover-container` is `.search-autocomplete`.  The `.active` class indicates the visibility of the container. The `.active` class is conditionally added when the popover is open.
+
+```css
+.search-autocomplete.active   /* visible */
+.search-autocomplete          /* not visible */
 ```
 
 For more information about styling storefront elements, refer to [Cascading style sheets (CSS)]({{ page.baseurl }}/guides/v2.4/frontend-dev-guide/css-topics/css-overview.html) in the [Frontend Developers Guide]({{ page.baseurl }}/guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html).
@@ -88,7 +96,7 @@ _.livesearch.product-price_
 
 ## Working with a modified theme
 
-The storefront popover can be used with a customized [theme](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/theme-overview.html) that inherits the required files from _Luma_. The `top.search` block in the `header-wrapper` of the `Magento_Search` module must not be modified.
+The storefront popover can be used with a customized [theme]({{ site.baseurl }}/guides/v2.3/frontend-dev-guide/themes/theme-overview.html) that inherits the required files from _Luma_. The `top.search` block in the `header-wrapper` of the `Magento_Search` module must not be modified.
 
 ```html
 <referenceContainer name="header-wrapper">
@@ -102,7 +110,7 @@ The storefront popover can be used with a customized [theme](https://devdocs.mag
 
 ## Disabling the popover
 
-To disable the popover and restore standard [Quick Search](https://docs.magento.com/user-guide/catalog/search-quick.html) functionality, enter the following command:
+To disable the popover and restore standard [Quick Search]({{ site.user_guide_url }}/catalog/search-quick.html) functionality, enter the following command:
 
 ```bash
 bin/magento module:disable Magento_LiveSearchStorefrontPopover

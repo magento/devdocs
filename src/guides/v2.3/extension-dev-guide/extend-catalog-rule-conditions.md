@@ -6,7 +6,7 @@ group: php-developer-guide
 ---
 
 Catalog price rules can be used to offer products to buyers at a discounted price, based on a set of defined conditions. Catalog price rules do not use coupon codes. The discounts are applied to the final product price in the product listing and the product description page even before adding the product to the shopping cart.
-For more information about catalog price rules, refer to [Catalog Rules](https://docs.magento.com/user-guide/marketing/price-rules-catalog.html).
+For more information about catalog price rules, refer to [Catalog Rules]({{ site.user_guide_url }}/marketing/price-rules-catalog.html).
 
 ## Default Conditions
 
@@ -79,13 +79,22 @@ The `validate` method from the `app/code/Magento/CatalogRule/Model/Rule/Conditio
 Below is the definition of the `validate` method:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Catalog\Model\Product;
+use Magento\Framework\Model\AbstractModel;
+
 /**
  * Validate product attribute value for condition
  *
- * @param \Magento\Catalog\Model\Product|\Magento\Framework\Model\AbstractModel $model
+ * @param Product|AbstractModel $model
  * @return bool
  */
-public function validate(\Magento\Framework\Model\AbstractModel $model)
+public function validate(AbstractModel $model): bool
 {
     $attrCode = $this->getAttribute();
     if ('category_ids' === $attrCode) {

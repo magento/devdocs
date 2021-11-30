@@ -41,10 +41,19 @@ Complete the following prerequisites to prepare your environment before starting
 
    The plugin partially automates the manual upgrade by identifying and helping you resolve dependency conflicts instead of requiring you to identify and fix them manually.
 
-   To install the plugin:
+   To install the plugin when using PHP 7.3 or higher:
 
    ```bash
-   composer require magento/composer-root-update-plugin=~1.0 --no-update
+   composer require magento/composer-root-update-plugin ~2.0 --no-update
+   ```
+
+   To install the plugin when using PHP 7.2 or lower:
+
+   {:.bs-callout-info}
+   This version of the plugin is not compatible with Composer 2.1.6 or higher
+
+   ```bash
+   composer require magento/composer-root-update-plugin ~1.1 --no-update
    ```
 
    Update the dependencies:
@@ -70,26 +79,53 @@ See the examples at the end of this section for help specifying different releas
    composer remove magento/product-community-edition --no-update
    ```
 
-1. Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.0`), that you want to upgrade to.
+1. Choose one of the following `composer` commands based on the PHP version, and run the command to upgrade your instance.
 
-   {:.bs-callout-info}
-   The first time you upgrade using the plugin, you can interactively view and update any out-of-date values that may be remaining from previous versions.
-   To enable this, use the `--interactive-magento-conflicts` option on the `composer require` commands.
+   For 7.3 or higher:
 
-   {:.bs-callout-tip}
-   Use `composer require --help` to learn more about available options.
-   To learn more about usage of the plugin, refer to the [Plugin Usage](https://github.com/magento/composer-root-update-plugin/blob/0.1/src/Magento/ComposerRootUpdatePlugin/README.md#usage).
+   ```bash
+   composer require-commerce magento/<product> <version> --no-update [--interactive-root-conflicts] [--force-root-updates] [--help]
+   ```
+
+   For PHP 7.2 or lower:
+
+   ```bash
+   composer require magento/<product> <version> --no-update [--interactive-magento-conflicts] [--use-default-magento-values] [--help]
+   ```
+
+   where:
+
+   `<product>` - (Required) The package to upgrade. For on-premises installations, you must specify either `product-community-edition` or `product-enterprise-edition`.
+
+   `<version>` - (Required) The version of {{site.data.var.ce}} or {{site.data.var.ce}} you are upgrading to. For example, `2.3.7`.
+
+   `--no-update` - (Required) Disables the automatic update of the dependencies.
+
+   `--interactive-root-conflicts` or `interactive-magento-conflicts` - (Optional) Allows you to interactively view and update any out-of-date values from previous versions.
+
+   `--force-root-updates` or `--use-default-magento-values` - (Optional) Overrides all conflicting custom values with the expected Magento values.
+
+   `--help` - (Optional) Provides usage details about the plugin.
+
+   If neither `--interactive-root-conflicts` nor `--force-root-updates` (or their PHP 7.2 equivalents) are specified, the command keeps the existing values that are in conflict and displays a warning message.
+
+   To learn more about the plugin, refer to one of the following Plugin Usage README files:
+
+   -  [PHP 7.3 or higher](https://github.com/magento/composer-root-update-plugin/blob/develop/src/Magento/ComposerRootUpdatePlugin/README.md)
+   -  [PHP 7.2 or lower](https://github.com/magento/composer-root-update-plugin/blob/1.1/src/Magento/ComposerRootUpdatePlugin/README.md)
+
+   **Examples:**
 
    _{{ ce }}_:
 
    ```bash
-   composer require magento/product-community-edition={{ page.guide_version }}.7 --no-update
+   composer require-commerce magento/product-community-edition 2.3.7 --no-update
    ```
 
    _{{ ee }}_:
 
    ```bash
-   composer require magento/product-enterprise-edition={{ page.guide_version }}.7 --no-update
+   composer require-commerce magento/product-enterprise-edition 2.3.7 --no-update
    ```
 
    <div class="bs-callout-tip" markdown="1">
@@ -98,23 +134,29 @@ See the examples at the end of this section for help specifying different releas
    _{{ ce }}_:
 
    ```bash
-   composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
+   composer show magento/product-community-edition 2.3.* --all | grep -m 1 versions
    ```
 
    _{{ ee }}_:
 
    ```bash
-   composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
+   composer show magento/product-enterprise-edition 2.3.* --all | grep -m 1 versions
    ```
 
    </div>
+
+1. Update the dependencies.
+
+   ```bash
+   composer update
+   ```
 
 ### Example - Minor release
 
 Minor releases contain new features, quality fixes, and security fixes. Use Composer to specify a minor release. For example, to specify the {{site.data.var.ee}} 2.3.7 metapackage:
 
 ```bash
-composer require magento/product-community-edition=2.3.7 --no-update
+composer require-commerce magento/product-community-edition 2.3.7 --no-update
 ```
 
 ### Example - Quality patch
@@ -122,17 +164,17 @@ composer require magento/product-community-edition=2.3.7 --no-update
 Quality patches primarily contain functional _and_ security fixes. However, they can also sometimes contain new, backward-compatible features. Use Composer to download a quality patch. For example, to specify the {{site.data.var.ee}} 2.3.7 metapackage:
 
 ```bash
-composer require magento/product-community-edition=2.3.7 --no-update
+composer require-commerce magento/product-community-edition 2.3.7 --no-update
 ```
 
 ### Example - Security patch
 
 Security patches contain security fixes only. They are designed to make the upgrade process faster and easier.
 
-Security patches use the Composer naming convention `2.3.6-px`. Use Composer to specify a patch. For example, to download the {{site.data.var.ce}} 2.3.6-p1 metapackage:
+Security patches use the Composer naming convention `2.3.x-px`. Use Composer to specify a patch. For example, to download the {{site.data.var.ce}} 2.3.6-p1 metapackage:
 
 ```bash
-composer require magento/product-community-edition=2.3.6-p1 --no-update
+composer require-commerce magento/product-community-edition 2.3.6-p1 --no-update
 ```
 
 ## Update metadata

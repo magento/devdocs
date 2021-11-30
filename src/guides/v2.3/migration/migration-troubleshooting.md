@@ -28,7 +28,7 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
 #### Possible solutions
 
-*  Install the corresponding Magento 2 extensions from [Commerce Marketplace](https://marketplace.magento.com/){:target="_blank"}
+*  Install the corresponding Magento 2 extensions from [Commerce Marketplace](https://marketplace.magento.com/)
 
     If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.
 

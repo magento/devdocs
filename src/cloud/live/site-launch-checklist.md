@@ -82,7 +82,7 @@ To update DNS configuration for site launch:
       ```
 
    {:.bs-callout-info}
-   You can also update the Base URL from the [Admin](https://docs.magento.com/user-guide/stores/store-urls.html#configure-the-base-url).
+   You can also update the Base URL from the [Admin]({{ site.user_guide_url }}/stores/store-urls.html#configure-the-base-url).
 
 1. Wait a few minutes for the site to update.
 
@@ -95,7 +95,7 @@ Make a final pass to validate the Production configuration for the store(s).You 
 The following are recommended changes and checks:
 
 -  [Completed Outgoing email testing]({{ site.baseurl }}/cloud/project/sendgrid.html)
--  [Secure configuration for Admin credentials and Base Admin URL](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html)
+-  [Secure configuration for Admin credentials and Base Admin URL]({{ site.user_guide_url }}/stores/security-admin.html)
 -  [Optimize all images for the web]({{ site.baseurl }}/cloud/cdn/fastly-image-optimization.html)
 -  [Check minification settings for HTML, Javascript, and CSS]({{ site.baseurl }}/cloud/deploy/static-content-deployment.html)
 
@@ -119,7 +119,7 @@ You can also test using the following 3rd party options:
 ## Security configuration
 
 -  [Set up your Security Scan]({{ site.baseurl }}/cloud/live/live.html#security-scan)
--  [Secure configuration for Admin user](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html)
+-  [Secure configuration for Admin user]({{ site.user_guide_url }}/stores/security-admin.html)
 -  [Secure configuration for Admin URL](https://docs.magento.com/m2/ee/user_guide/stores/store-urls-custom-admin.html)
 -  [Remove any users no longer on the {{ site.data.var.ece}} project]({{ site.baseurl}}/cloud/project/user-admin.html)
 -  [Configure two-factor authentication]({{ site.baseurl }}/guides/v2.3/security/two-factor-authentication.html)

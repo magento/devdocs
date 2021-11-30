@@ -33,14 +33,14 @@ For pre-release versions, the format is:
 
 `MAJOR.MINOR.PATCH-<alpha | beta | rc>n`
 
-| `alpha`, `beta` or `rc` | Stability indicators, as described in the [`version_compare()`][php-version-compare]{:target="_blank"} specification|
+| `alpha`, `beta` or `rc` | Stability indicators, as described in the [`version_compare()`][php-version-compare] specification|
 | `n` | An increment number to distinguish releases of the non-stable versions |
 
 Adobe's module versioning policy complies with the following specifications:
 
-*  [Semantic Versioning][semantic-versioning]{:target="_blank"}
-*  [Composer version specification][composer-versioning]{:target="_blank"}
-*  [PHP `version_compare()` specification][php-version-compare]{:target="_blank"}
+*  [Semantic Versioning][semantic-versioning]
+*  [Composer version specification][composer-versioning]
+*  [PHP `version_compare()` specification][php-version-compare]
 
 ## Where versioning is used
 

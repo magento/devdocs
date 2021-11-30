@@ -64,7 +64,7 @@ The mixin generates the CSS, which includes the font. The following example show
 `@font-display: swap` is declared by default for Magento Blank theme in `app/design/frontend/Magento/blank/web/css/source/_typography.less`.
 
 Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.
-For more information about font-face, refer to this article [Font-face][https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face]{:target="_blank"}.
+For more information about font-face, refer to this article [Font-face][https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face].
 
 ## `<font>` head type
 

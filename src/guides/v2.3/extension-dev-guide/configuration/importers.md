@@ -23,7 +23,7 @@ Currently Magento has the following importers:
 
 ## `ImporterInterface`
 
-All Magento importers implement the interface [`Magento\Framework\App\DeploymentConfig\ImporterInterface`][importer-interface]{:target="_blank"} and define the following methods:
+All Magento importers implement the interface [`Magento\Framework\App\DeploymentConfig\ImporterInterface`][importer-interface] and define the following methods:
 
 *  `import(array $data)` - The argument `$data` is the configuration array from `config.php`.
 
@@ -41,7 +41,7 @@ All Magento importers implement the interface [`Magento\Framework\App\Deployment
 
 ### Implement your own importer
 
-1. Create an `Importer` class that implements [`Magento\Framework\App\DeploymentConfig\ImporterInterface`][importer-interface]{:target="_blank"}.
+1. Create an `Importer` class that implements [`Magento\Framework\App\DeploymentConfig\ImporterInterface`][importer-interface].
 1. Register your importer in your module's [`di.xml`]({{ page.baseurl }}/extension-dev-guide/depend-inj.html):
 
    ```xml

@@ -14,15 +14,14 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "must," "mu
 Magento uses the [jQuery library][jquery] including standard and custom [jQuery widgets][jquery-widgets].
 For the jQuery widget coding standard, see [jQuery widget coding standard][jquery-widget-coding-standard].
 
-## Eslint and JSCS tools
+## Eslint code analysis
 
-Use [ESLint][eslint] and `JSCS` to ensure the quality of your JavaScript code.
+Use [ESLint][eslint] to ensure the quality of your JavaScript code.
 
 ESLint is a community-driven tool that detects errors and potential problems in JavaScript code.
 It can use custom rules to enforce specific coding standards.
 
 *  [Magento ESLint Rules][eslint-rules]
-*  [Magento JSCS Rules][jscs-rules]
 
 ## Additional formatting standards
 
@@ -360,4 +359,3 @@ var foo = 'bar',
 [jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
 [eslint]: http://eslint.org/
 [eslint-rules]: https://github.com/magento/magento-coding-standard/blob/develop/eslint/.eslintrc-magento
-[jscs-rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc

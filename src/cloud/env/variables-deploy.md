@@ -230,7 +230,7 @@ stage:
     ELASTICSUITE_CONFIGURATION:
       indices_settings:
         number_of_shards: 3
-        number_of_replicas: 3
+        number_of_replicas: 2
       _merge: true
 ```
 
@@ -368,7 +368,7 @@ stage:
 ```
 
 {:.bs-callout-info}
-If you specify `\magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html#configuration-example) in the _{{site.data.var.ee}} Configuration Guide_. To override the generated cache configuration, use the [CACHE_CONFIGURATION]({{site.baseurl}}/cloud/env/variables-deploy.html#cache_configuration) deploy variable.
+If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.4/config-guide/cache/two-level-cache.html#configuration-example) in the _{{site.data.var.ee}} Configuration Guide_. To override the generated cache configuration, use the [CACHE_CONFIGURATION]({{site.baseurl}}/cloud/env/variables-deploy.html#cache_configuration) deploy variable.
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
@@ -391,26 +391,6 @@ You must have a Redis service configured in the `.magento.app.yaml` file and in 
 [ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v2002018) and later uses more fault-tolerant settings. If {{site.data.var.ee}} cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
-
-### `REMOTE_STORAGE`
-
--  **Default**—_Not set_
--  **Version**—{{site.data.var.ee}} 2.4.2 and later
-
-Configure a _storage adapter_ to store media files in a persistent, remote storage container using a storage service, such as AWS S3. Use the remote storage option to improve performance on Cloud projects with complex, multi-server configurations that must share resources.
-
-```yaml
-stage:
-  deploy:
-    REMOTE_STORAGE:
-      driver: aws-s3 # Required
-      prefix: cloud # Optional
-      config:
-        bucket: my-bucket # Required
-        region: my-region # Required
-        key: my-key # Optional
-        secret: my-secret-key # Optional
-```
 
 ### `RESOURCE_CONFIGURATION`
 

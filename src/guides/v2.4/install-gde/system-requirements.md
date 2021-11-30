@@ -6,6 +6,7 @@ functional_areas:
   - Setup
 redirect_from:
   - /guides/v2.4/install-gde/system-requirements-tech.html
+  - /guides/v2.4/architecture/tech-stack.html
 ---
 
 {:.bs-callout-info}
@@ -86,7 +87,7 @@ Magento requires the following system tools for some of its operations:
 
 ### Xdebug
 
-[php_xdebug 2.5.x][]{:target="_blank"} or later (development environments only; can have an adverse effect on performance)
+[php_xdebug 2.5.x][] or later (development environments only; can have an adverse effect on performance)
 
 {:.bs-callout-info}
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Admin after installation. For details, see [Known issue with xdebug][].

@@ -64,22 +64,22 @@ bin/uct upgrade:check --help
 
 Available `--help` options for the `upgrade:check` command:
 
-*  --raw: Outputs raw information.
-*  --format=FORMAT: Output format (txt, xml, json, md).
-*  --short: Skip arguments description.
-*  -o, --output[=OUTPUT]: Path directory to export the `.json` output file.
-*  -m, --module-path[=MODULE-PATH]: Modules path directory .
-*  --schema1[=SCHEMA1]: Endpoint URL for the existing installation.
-*  --schema2[=SCHEMA2]: Endpoint URL for the vanilla installation.
-*  --vanilla-dir: {{site.data.var.ee}} vanilla installation directory.
-*  --min-issue-level: Minimum issue level to show in report. Default is [WARNING].
-*  --ignore-current-version-compatibility-issues: Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `--raw`: Outputs raw information.
+*  `--format=FORMAT`: Output format (txt, xml, json, md).
+*  `--short`: Skip arguments description.
+*  `-o, --output[=OUTPUT]`: Path directory to export the `.json` output file.
+*  `-m, --module-path[=MODULE-PATH]`: Modules path directory .
+*  `--schema1[=SCHEMA1]`: Endpoint URL for the existing installation.
+*  `--schema2[=SCHEMA2]`: Endpoint URL for the vanilla installation.
+*  `--vanilla-dir`: {{site.data.var.ee}} vanilla installation directory.
+*  `--min-issue-level`: Minimum issue level to show in report. Default is [WARNING].
+*  `--ignore-current-version-compatibility-issues`: Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ### Output
 
@@ -127,14 +127,15 @@ To return a list of the {{site.data.var.uct}} available commands, run:
 ```bash
 bin/uct list
 ```
+
 This `list` commands returns the following:
 
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ## Use the `core:code:changes` command
 
@@ -158,12 +159,12 @@ There are some limitations when running this command:
 
 Available `--help` options for the `core:code:changes` command:
 
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ## Version
 
@@ -177,7 +178,7 @@ bin/uct upgrade:check <dir> -c 2.4.3
 
 Where:
 
-*  -c, --coming-version[=COMING-VERSION]: The {{site.data.var.ee}} targeted version.
+*  `-c, --coming-version[=COMING-VERSION]`: The {{site.data.var.ee}} targeted version.
 
 There are some limitations when running the previous command:
 
@@ -205,12 +206,12 @@ You must have running `instance before` and `instance after` the upgrade.
 
 Available `--help` options for the `graphql:compare` command:
 
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ### Example with a list of critical issues, errors, and warnings for GraphQL
 
@@ -241,8 +242,9 @@ bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://do
 File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
 ------------------------------------------------------------------
 
- *   [ERROR] Line 84: Used nonexistent or non Magento API interface 'Magento\Catalog\Model\ProductRepositoryInterface'
- *   [WARNING] Line 6: Importing Magento @deprecated class 'Magento\Catalog\Model\ProductRepository'
+ * [WARNING][1131] Line 23: Extending from class 'Magento\Framework\App\Action\Action' that is @deprecated on version '2.4.2'
+ * [ERROR][1429] Line 103: Call method 'Magento\Framework\Api\SearchCriteriaBuilder::addFilters' that is non API on version '2.4.2'
+ * [CRITICAL][1110] Line 60: Instantiating class/interface 'Magento\Catalog\Model\ProductRepository' that does not exist on version '2.4.2'
 ```
 
 The report also includes a detailed summary:
@@ -250,13 +252,14 @@ The report also includes a detailed summary:
 *  *Installed Version*: the version currently installed.
 *  *{{site.data.var.ee}} Version*: the version you want to upgrade to.
 *  *Running time*: amount of time the analysis took to build the report (mm:ss).
-*  *{{site.data.var.ee}} checked modules*: amount of checked modules.
 *  *{{site.data.var.ee}} core checked modules*: amount of core checked modules.
 *  *{{site.data.var.ee}} core modified files*: amount of core modified file.
 *  *{{site.data.var.ee}} % core modified files*: percentage of core modified files.
-*  *PHP errors found*: amount of PHP errors.
-*  *PHP warnings found*: amount of PHP warnings.
-*  *GraphQL errors found*: amount of GraphQL errors.
+*  *{{site.data.var.ee}} checked modules*: amount of checked modules.
+*  *Compatibility errors found*: amount of compatibility errors.
+*  *Compatibility warnings found*: amount of compatibility warnings.
+*  *Compatibility critical errors found*: amount of compatibility critical errors.
+*  *GraphQL critical errors found*: amount of GraphQL critical errors.
 *  *GraphQL warnings found*: amount of GraphQL warnings.
 *  *Total errors found*: total amount of errors found.
 *  *Total warnings found*: total amount of warnings found.
@@ -269,22 +272,24 @@ See the [Error message reference]({{site.baseurl}}/upgrade-compatibility-tool/er
 ## Example of a general summary report
 
 ```terminal
- ------------------------ --------
-  Installed version        2.4.2
-  {{site.data.var.ee}} version   2.4.3
-  Running time             0m:48s
-  Checked modules          14
-  Core checked modules     0
-  Core modified files      0
-  % core modified files    0.00
-  PHP errors found         109
-  PHP warnings found       0
-  GraphQL errors found     0
-  GraphQL warnings found   0
-  Total errors found       109
-  Total warnings found     0
-  Complexity score         218
- ------------------------ --------
+ ------------------------------------- -------
+  Installed version                    2.4.2
+  {{site.data.var.ee}} version               2.4.3
+  Running time                         0m:48s
+  Core files checked                   0
+  Core files modified                  0
+  % of files modified                  0.00
+  Checked modules                      14
+  Compatibility errors found           109
+  Compatibility warnings found         0
+  Compatibility critical errors found  0
+  GraphQL critical errors found        0
+  GraphQL warnings found               0
+  Total errors found                   109
+  Total warnings found                 0
+  Total critical errors found          0
+  Complexity score                     218
+ ------------------------------------- -------
 ```
 
 Regarding the GraphQL schema compatibility comparison, the output would be very similar:
