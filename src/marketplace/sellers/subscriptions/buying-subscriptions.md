@@ -12,7 +12,8 @@ You can identify subscription extensions by pricing. They display price per peri
 ![]({{ site.baseurl }}/marketplace/sellers/images/subscriptions-buying-pricing.png){: .zoom}
 
 During checkout, subscription extensions display the recurring amount that you will be charged.
-Note: at this moment, Adobe Commerce Marketplace only supports annual extension subscriptions.
+{:.bs-callout-info}
+At this moment, Adobe Commerce Marketplace supports annual extension subscriptions only.
 
 ## Handling an extension license or pricing change
 
