@@ -114,8 +114,6 @@ defaults:
       path: magento-payments
     values:
       group: magento-payments
-      github_link: false
-      feedback_link: false
 
   -
     scope:
