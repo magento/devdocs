@@ -116,7 +116,6 @@ defaults:
       group: magento-payments
       github_link: false
       feedback_link: false
-      ee_only: false
 
   -
     scope:
