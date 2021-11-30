@@ -49,6 +49,7 @@ To re-subscribe to a previously cancelled subscription, you must create a suppor
 You can request a refund within 25 days of the initial purchase payment. After the 25-day term expires, refund for the initial (or any subsequent payments) is not possible.
 
 ## Re-subscribing to an extension
-You can resubscribe to a cancelled extension subscription once. If you decide to cancel the subscription for the second time, you will not be able to re-subscribe to that SKU.
+
+You can re-subscribe to a cancelled extension subscription once. If you decide to cancel the subscription for a second time, you will not be able to re-subscribe to that SKU.
 
 Thank you for using the Adobe Commerce Marketplace. For all questions and suggestions regarding extension subscriptions, please contact [Marketplace Support](https://marketplacesupport.magento.com) or find us in the [Community Slack workspace](https://opensource.magento.com/slack).
