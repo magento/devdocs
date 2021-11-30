@@ -21,7 +21,7 @@ There are no subscription-specific settings other than Pricing Model.
 You may elect to change licensing for an existing extension from Flat Fee to Subscription. In order to do so, you must remove the original extension from the Marketplace and replace it with a new SKU sold under a subscription license.
 We recommend starting by submitting a new SKU. This allows new sales operations and marketing activities to start generating revenue right away. Follow the section above to set up a new SKU under a subscription license.
 You can then either remove the original extension unconditionally, or mark the new extension as a replacement. This triggers a 180-day grace period for merchants who have purchased the original extension.
-To make that choice, use the "Remove from Store" button on your original extension.
+To remove an extension from the Marketplace, use the **Remove from Store** button on your original extension.
 
 []({{ site.baseurl }}/marketplace/sellers/images/subscriptions-remove-from-store.png){: .zoom}
 
