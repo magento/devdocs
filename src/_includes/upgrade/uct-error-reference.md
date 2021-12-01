@@ -171,7 +171,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5083 | Constants are not allowed as the first argument of translation function | Use string literal instead. |
 | 5084 | Do not initialize JS component in php | Initialize JS component in a template. |
 | 5085 | The use of certain functions is discouraged | Use the alternative function advised on the message instead. |
-| 5087 | PHP cross-version compatibility issue | Follow the suggestions from the message and check the migration guide: `https://www.php.net/manual/en/migration81.php`. |
+| 5087 | PHP cross-version compatibility issue | Follow the suggestions from the message and check the [migration guide](https://www.php.net/manual/en/migration81.php). |
 | 6001 | `jQuery.andSelf()` removed | Use `jQuery.addBack()`. |
 | 6002 | jQuery `$.bind` and `$.unbind` are deprecated | Use `$.on` and `$.off` instead. |
 | 6003 | jQuery method to subscribe to event is deprecated and shouldn't be used | Use `.on("event name", fn)` method instead to subscribe to that event. |
