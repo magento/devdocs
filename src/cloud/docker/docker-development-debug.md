@@ -100,7 +100,7 @@ To configure PhpStorm to work with Xdebug:
 
 1. Select **Use path mappings**. In the _File/Directory_ pane, the root of the project for the `serverName` displays.
 
-1. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/install_docker_php-storm-edit.png){:width="15px"} and add a value to the `MAGENTO_ROOT` option. The default value is `/app`
+1. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/cloud/cloud-install_docker_php-storm-edit.png){:width="15px"} and add a value to the `MAGENTO_ROOT` option. The default value is `/app`
 
 1. Change the Xdebug port to 9001 in the **Languages & Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port** panel.
 
@@ -113,7 +113,7 @@ The following steps describe debugging web requests and CLI commands.
 {:.procedure}
 To debug web requests:
 
-1. In your PhpStorm project, click ![Start listening for connections]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"} (**Start listening**) in the top navigation bar.
+1. In your PhpStorm project, click ![Start listening for connections]({{ site.baseurl }}/common/images/cloud/cloud-install_docker_php-storm_xdebug-start-listening.png){:width="25px"} (**Start listening**) in the top navigation bar.
 
 1. Add breakpoints in the `pub/index.php` file.
 
@@ -168,9 +168,9 @@ To use Xdebug Helper with Chrome:
 
 1. Enable the extension in Chrome as shown in the following figure.
 
-   ![Enable the Xdebug extension in Chrome]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-chrome.png)
+   ![Enable the Xdebug extension in Chrome]({{ site.baseurl }}/common/images/cloud/cloud-install_docker_php-storm_xdebug-chrome.png)
 
-1. In _Chrome_, click ![Xdebug helper icon]({{ site.baseurl }}/common/images/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
+1. In _Chrome_, click ![Xdebug helper icon]({{ site.baseurl }}/common/images/cloud/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
 
 1. From the _Xdebug helper_ menu, click **Options**.
 
@@ -178,7 +178,7 @@ To use Xdebug Helper with Chrome:
 
 1. Click **Save**.
 
-   ![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
+   ![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud/cloud-xdebug_helper-options.png){:width="400px"}
 
 [docker-config]: {{site.baseurl}}/cloud/docker/docker-config.html
 [launch the Docker environment in Developer mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
