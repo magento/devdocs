@@ -67,7 +67,7 @@ Edit the `/app/etc/env.php` file to configure the cron job `consumers_runner`.
 *  `multiple_processes` - An array of key-value pairs specifying which consumer to run in how many processes.
 
    {:.bs-callout-info}
-   We do not recommned to run multiple consumers on Mysql operated queue. See [`how to change queue from Mysql to Rabbit`]({{ page.baseurl }}/guides/v2.3/extension-dev-guide/message-queues/message-queues.html#change-message-queue-from-mysql-to-amqp)
+   We do not recommend running multiple consumers on a Mysql operated queue. See [`how to change queue from Mysql to Rabbit`]({{ page.baseurl }}/guides/v2.3/extension-dev-guide/message-queues/message-queues.html#change-message-queue-from-mysql-to-amqp)
 
    {:.bs-callout-info}
    If your {{ site.data.var.ee }} store is hosted on the Cloud platform, use the [`CONSUMERS_WAIT_FOR_MAX_MESSAGES`]({{ site.baseurl }}/cloud/env/variables-deploy.html#consumers_wait_for_max_messages) to configure how consumers process messages from the message queue.
