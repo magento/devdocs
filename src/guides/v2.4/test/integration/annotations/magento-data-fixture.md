@@ -16,12 +16,14 @@ To set up a date fixture, use the `@magentoDataFixture` annotation.
 
 ```php?start_inline=1
 /**
- * @magentoDataFixture <script_filename>|<method_name>
+ * @magentoDataFixture <script_filename>|<method_name>|<fully_qualified_class_name> [as:alias | with:{}]
  */
 ```
 
 -  `<script_filename>` is the filename of the PHP script.
 -  `<method_name>` is the name of the method declared in the current class.
+-  `<fully_qualified_class_name>` is the fully qualified name of a class that implements
+   `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
 
 ## Principles
 
@@ -32,12 +34,27 @@ To set up a date fixture, use the `@magentoDataFixture` annotation.
 1. Test case fixtures are applied to each test in the test case, unless a test has its own fixtures declared.
 1. Annotation declaration at a test case level does not affect tests that have their own annotation declarations.
 
+### For Parametrized Data Fixtures
+
+{:.bs-callout-info}
+Parametrized Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
+
+1. Fixture class MUST implement `Magento\TestFramework\FixtureInterface`
+1. Fixture class MUST implement `Magento\TestFramework\RevertibleFixtureInterface` if the data created by the fixture
+   is revertible. For instance a fixture that creates an entity (e.g. product).
+1. Fixture class SHOULD be placed in `<ModuleName>/Test/Fixture` Folder of corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (e.g Magento\Catalog\Test\Fixture)
+1. Fixture class SHOULD follow single responsibility principle.
+1. Fixture alias SHOULD be camelcase
+1. Fixture JSON parameter MUST be a valid JSON string
+
 ## Usage
 
-As mentioned above, there are two ways to declare fixtures:
+As mentioned above, there are three ways to declare fixtures:
 
 -  as a PHP script file that is used by other tests and test cases.
 -  as a local method that is used by other tests in the test cases.
+-  as a Parametrized Fixture class that implements
+   `Magento\TestFramework\FixtureInterface` or `Magento\TestFramework\RevertibleFixtureInterface`
 
 ### Fixture as a separate file
 
@@ -81,6 +98,140 @@ Test case that uses the above data fixture: [`dev/tests/integration/testsuite/Ma
 ### Fixture as a method
 
 [`dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php`][] demonstrates an example of the `testCreatePageWithSameModuleName()` test method that uses data from the `cmsPageWithSystemRouteFixture()` data fixture.
+
+### Parametrized Fixture class
+
+{:.bs-callout-info}
+Parametrized Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
+
+Define the fixture in a separate Parametrized Fixture class when you think it could be reused in different test cases.
+Fixture class can be provided with a data provider for additional parameters and customizations.
+
+There are two types of data providers:
+-  Inline JSON as data provider
+-  Callable script as data provider
+
+#### Inline JSON as data provider
+
+Example:
+
+```php?start_inline=1
+class ProductsList extends \PHPUnit\Framework\TestCase
+{
+    /**
+    * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"price": 5.0}
+    * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"price": 10.0}
+    * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"price": 15.0}
+    */
+    public function testGetProductsCount(): void
+    {
+    }
+}
+```
+
+### A class method as data provider
+
+Example:
+
+```php?start_inline=1
+class ProductsList extends \PHPUnit\Framework\TestCase
+{
+   /**
+   * @magentoDataFixture Magento\Catalog\Fixture\CreateSimpleProduct as:product1
+   * @magentoDataFixture Magento\Catalog\Fixture\CreateSimpleProduct as:product2
+   * @magentoDataFixture Magento\Catalog\Fixture\CreateSimpleProduct as:product3
+   */
+   public function testGetProductsCount(): void
+   {
+   }
+
+   public function getProductsCountFixtureDataProvider(): array
+   {
+      return [
+         [
+             'product1' => [
+                 'sku' => 'simple1'
+             ],
+             'product2' => [
+                 'sku' => 'simple2'
+             ],
+             'product3' => [
+                 'sku' => 'simple3',
+                 'status' => Status::STATUS_DISABLED,
+             ],
+         ]
+      ];
+   }
+}
+```
+
+### Decoupled fixtures class
+
+Example 1:
+
+```php?start_inline=1
+class QuoteTest extends \PHPUnit\Framework\TestCase
+{
+   /**
+   * @magentoDataFixture \Magento\Catalog\Fixture\CreateSimpleProduct with:{"sku": "simple1", "price": 5.0} as:product1
+   * @magentoDataFixture \Magento\Catalog\Fixture\CreateSimpleProduct with:{"sku": "simple2", "price": 10.0} as:product2
+   * @magentoDataFixture \Magento\Quote\Fixture\CreateEmptyCartForGuest as:cart
+   * @magentoDataFixture \Magento\Quote\Fixture\AddSimpleProductToCart with:{"cart": "$cart", "product": "$product1", "qty": 2}
+   * @magentoDataFixture \Magento\Quote\Fixture\AddSimpleProductToCart with:{"cart": "$cart", "product": "$product2", "qty": 1}
+   */
+   public function testGetProductsCount(): void
+   {
+   }
+}
+```
+
+Example 2:
+
+```php?start_inline=1
+class QuoteTest extends \PHPUnit\Framework\TestCase
+{
+   /**
+   * @magentoApiDataFixture Magento\Customer\Fixture\CreateCustomer as:customer
+   * @magentoApiDataFixture Magento\Catalog\Fixture\CreateDropdownAttribute with:{"options":["option_a","option_b"]} as:attr1
+   * @magentoApiDataFixture Magento\Catalog\Fixture\CreateDropdownAttribute with:{"options":["option_1","option_2"]} as:attr2
+   * @magentoApiDataFixture Magento\Catalog\Fixture\CreateSimpleProduct with:{"sku":"simple1"} as:product1
+   * @magentoApiDataFixture Magento\Catalog\Fixture\CreateSimpleProduct with:{"sku":"simple2"} as:product2
+   * @magentoApiDataFixture Magento\ConfigurableProduct\Fixture\CreateConfigurableProduct as:configurable
+   * @magentoApiDataFixture Magento\Quote\Fixture\CreateEmptyCartForCustomer with:{"customer":"$customer"} as:cart
+   * @magentoApiDataFixture Magento\ConfigurableProduct\Fixture\AddConfigurableProductToCart with:{"cart":"$cart","product":"$configurable", "selection":"$product1"}
+   * @magentoApiDataFixture Magento\ConfigurableProduct\Fixture\AddConfigurableProductToCart with:{"cart":"$cart","product":"$configurable", "selection":"$product2"}
+   * @magentoApiDataFixture Magento\Quote\Fixture\AddShippingAddressToCart with:{"cart":"$cart"}
+   */
+   public function testCartWithConfigurable()
+   {
+   }
+
+   public function cartWithConfigurableFixtureDataProvider(): array
+   {
+      return [
+         'configurable' => [
+             'attributes' => ['$attr1', '$attr2'],
+             'products' => [
+                 [
+                     'product' => '$product1',
+                     'options' => [
+                         ['attribute' => '$attr1', 'option' => 'option_a'],
+                         ['attribute' => '$attr2', 'option' => 'option_1']
+                     ]
+                 ],
+                 [
+                     'product' => '$product2',
+                     'options' => [
+                         ['attribute' => '$attr1', 'option' => 'option_a'],
+                         ['attribute' => '$attr1', 'option' => 'option_2']
+                     ]
+                 ]
+             ]
+         ]
+      ];
+   }
+}
+```
 
 ### Test case and test method scopes
 
