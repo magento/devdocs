@@ -50,6 +50,11 @@ If you use Redis for page caching, you'll see output similar to the following:
 ... more ...
 ```
 
+### Inspect Compressed Sesssion data and Page Cache with GUI tool
+
+To easily inspect compressed Session data and Page Cache you can use [RDM](https://flathub.org/apps/details/dev.rdm.RDM)
+It supports automatic decompression of Magento 2 Session and Page cache and displays PHP session data in human-readable form.
+
 ### Redis ping command
 
 Enter the following command:
