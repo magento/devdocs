@@ -105,6 +105,7 @@ Define the fixture as a class when you think it could be reused in different tes
 Fixture class can be provided with a data provider for additional parameters and customizations.
 
 There are two types of data providers:
+
 -  Inline JSON as data provider
 -  Callable script as data provider
 
