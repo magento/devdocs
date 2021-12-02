@@ -34,18 +34,18 @@ To set up a date fixture, use the `@magentoDataFixture` annotation.
 1. Test case fixtures are applied to each test in the test case, unless a test has its own fixtures declared.
 1. Annotation declaration at a test case level does not affect tests that have their own annotation declarations.
 
-### For Parametrized Data Fixtures
+### For Parameterized Data Fixtures
 
 {:.bs-callout-info}
-Parametrized Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
+Parameterized Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
 
-1. Fixture class MUST implement `Magento\TestFramework\FixtureInterface`
+1. Fixture class MUST implement `Magento\TestFramework\FixtureInterface`.
 1. Fixture class MUST implement `Magento\TestFramework\RevertibleFixtureInterface` if the data created by the fixture
    is revertible. For instance a fixture that creates an entity (e.g. product).
-1. Fixture class SHOULD be placed in `<ModuleName>/Test/Fixture` Folder of corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (e.g Magento\Catalog\Test\Fixture)
+1. Fixture class SHOULD be placed in `<ModuleName>/Test/Fixture` Folder of corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (e.g Magento\Catalog\Test\Fixture).
 1. Fixture class SHOULD follow single responsibility principle.
-1. Fixture alias SHOULD be camelcase
-1. Fixture JSON parameter MUST be a valid JSON string
+1. Fixture alias SHOULD be camelcase.
+1. Fixture JSON parameter MUST be a valid JSON string.
 
 ## Usage
 
@@ -53,7 +53,7 @@ As mentioned above, there are three ways to declare fixtures:
 
 -  as a PHP script file that is used by other tests and test cases.
 -  as a local method that is used by other tests in the test cases.
--  as a Parametrized Fixture class that implements
+-  as a Parameterized Fixture class that implements
    `Magento\TestFramework\FixtureInterface` or `Magento\TestFramework\RevertibleFixtureInterface`
 
 ### Fixture as a separate file
@@ -99,12 +99,12 @@ Test case that uses the above data fixture: [`dev/tests/integration/testsuite/Ma
 
 [`dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php`][] demonstrates an example of the `testCreatePageWithSameModuleName()` test method that uses data from the `cmsPageWithSystemRouteFixture()` data fixture.
 
-### Parametrized Fixture class
+### Parameterized Fixture class
 
 {:.bs-callout-info}
-Parametrized Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
+Parameterized Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
 
-Define the fixture in a separate Parametrized Fixture class when you think it could be reused in different test cases.
+Define the fixture in a separate Parameterized Fixture class when you think it could be reused in different test cases.
 Fixture class can be provided with a data provider for additional parameters and customizations.
 
 There are two types of data providers:
