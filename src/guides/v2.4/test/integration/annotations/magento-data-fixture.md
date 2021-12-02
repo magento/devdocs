@@ -126,7 +126,6 @@ class ProductsList extends \PHPUnit\Framework\TestCase
 }
 ```
 
-
 ### Test case and test method scopes
 
 The `@magentoDataFixture` can be specified for a particular test or for an entire test case.

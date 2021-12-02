@@ -6,7 +6,23 @@ title: Parameterized Data Fixtures
 {:.bs-callout-info}
 Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
 
-### Decoupled fixtures class
+## Overview
+
+Parameterized data fixtures is a scalable and flexible way to create a data fixture for integration tests. Such fixtures can accept parameters directly from annotations, like, but not limited to, entity name, status, quantity and so on,
+therefore eliminating the need of creating almost identical fixtures every time a slight change is needed.
+
+### Benefits
+
+Parameterized data fixtures allows developers to:
+
+-  Reduce duplicated codes in integration fixture files.
+-  Reduce the number of fixture files.
+-  Remove fixtures coupling.
+-  Write reusable and customizable data fixtures.
+-  Focus on test scenarios and not fixtures.
+-  Save time in development and code review process.
+
+### Decoupled fixtures class examples
 
 Example 1:
 
