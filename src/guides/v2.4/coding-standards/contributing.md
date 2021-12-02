@@ -60,4 +60,4 @@ As with PHPCS sniffs, ESLint rules need to be covered by a unit test in order to
 1. PR will be reviewed by the repository's maintainers and merged.
 
 {:.bs-callout-info}
-Review general [Adobe Commerce documentation for contributors](https://devdocs.magento.com/contributor-guide/contributing.html).
+Review general [Adobe Commerce documentation for contributors]({{ site.baseurl }}/contributor-guide/contributing.html).

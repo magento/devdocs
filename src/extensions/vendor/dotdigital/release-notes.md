@@ -4,7 +4,7 @@ title: dotdigital Release Notes
 ---
 
 [dotdigital](https://dotdigital.com/) is a feature-rich ecommerce integration supporting omnichannel marketing automation. Communicate with your customers and prospects via email, chat, SMS - and add logic with our powerful automation tools.
-See our [User Guide](https://docs.magento.com/user-guide/marketing/dotdigital/engagement-cloud.html) for information about setup and configuration of dotdigital features in the Admin.
+See our [User Guide]({{ site.user_guide_url }}/marketing/dotdigital/engagement-cloud.html) for information about setup and configuration of dotdigital features in the Admin.
 
 These release notes include:
 

@@ -110,11 +110,11 @@ interface AdapterInterface
 1. Run `phpunit` using the `dev/tests/api-functional/phpunit_rest.xml` or `dev/tests/api-functional/phpunit_soap.xml` configuration file::
 
    ```bash
-   vendor/bin/phpunit --config ./dev/tests/api-functional/phpunit_rest.xml
+   vendor/bin/phpunit --configuration <full xml file path>
    ```
 
    or
 
    ```bash
-   vendor/bin/phpunit --config ./dev/tests/api-functional/phpunit_soap.xml
+   vendor/bin/phpunit -c <full xml file path>
    ```

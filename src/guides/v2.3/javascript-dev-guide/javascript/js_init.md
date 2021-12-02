@@ -123,7 +123,7 @@ Or a custom JS component, implemented with a component path: `Vendor_Module/js/c
 <nav data-mage-init='{"Vendor_Module/js/component": {"status":"<?= /* @noEscape */ $block->getStatus(); ?>"}}'></nav>
 ```
 
-Read more about [locate JS components](https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/javascript/js_debug.html).
+Read more about [locate JS components]({{ page.baseurl }}/javascript-dev-guide/javascript/js_debug.html).
 
 -  If a function is returned, the initializer passes the <code>config</code> and <code>element</code> values to this function. For example:
 

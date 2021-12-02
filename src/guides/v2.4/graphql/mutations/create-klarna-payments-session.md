@@ -110,4 +110,4 @@ Attribute | Data type | Description
 
 Error | Description
 --- | ---
-`The Klarna payment method is not active.` | The [Klarna](https://docs.magento.com/user-guide/payment/klarna.html) payment method is disabled in admin.
+`The Klarna payment method is not active.` | The [Klarna]({{ site.user_guide_url }}/payment/klarna.html) payment method is disabled in admin.

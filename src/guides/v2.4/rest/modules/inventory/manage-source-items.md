@@ -35,7 +35,7 @@ status |  Indicates whether the product is out of stock (0) or in stock (1) | In
 Use the `POST V1/inventory/source-items-delete` endpoint to unassign one or more products from the specified source. The `sku` and `source_code` attributes are required for each product.
 
 {:.bs-callout-warning}
-Unassigning a source clears all quantity data. For this example, this is OK, because the default source did not contain any quantity data. Reassigning a source that contains real quantity data can potentially cause havoc with pending orders with reservations and affect the salable quantity counts. See the [merchant documentation](https://docs.magento.com/user-guide/catalog/inventory-bulk-transfer-inventory.html) for more details.
+Unassigning a source clears all quantity data. For this example, this is OK, because the default source did not contain any quantity data. Reassigning a source that contains real quantity data can potentially cause havoc with pending orders with reservations and affect the salable quantity counts. See the [merchant documentation]({{ site.user_guide_url }}/catalog/inventory-bulk-transfer-inventory.html) for more details.
 
 **Sample usage:**
 

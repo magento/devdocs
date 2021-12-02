@@ -16,12 +16,12 @@ These release notes describe the latest versions of Live Search and include:
 -  Compatible with {{site.data.var.ece}} (ECE): 2.4.x
 -  Stability: Stable
 
--  {:.new} [Performance](https://docs.magento.com/user-guide/live-search/performance.html) reporting dashboard provides insight into search terms that shoppers use.
--  {:.new} Live Search [event](https://devdocs.magento.com/shared-services/storefront-events-sdk.html) SDK provides access to a common data layer with event publishing and subscription services, and metrics.
--  {:.fix} The storefront [popover](https://devdocs.magento.com/live-search/storefront-popover.html) has a new `active` class for the `.search-autocomplete` container that controls visibility.
--  {:.fix} In the storefront, the [_Search Terms_](https://docs.magento.com/user-guide/marketing/search-terms-popular.html) footer link is removed and its cache disabled for Live Search installations.
+-  {:.new} [Performance]({{ site.user_guide_url }}/live-search/performance.html) reporting dashboard provides insight into search terms that shoppers use.
+-  {:.new} Live Search [event]({{ site.baseurl }}/shared-services/storefront-events-sdk.html) SDK provides access to a common data layer with event publishing and subscription services, and metrics.
+-  {:.fix} The storefront [popover]({{ site.baseurl }}/live-search/storefront-popover.html) has a new `active` class for the `.search-autocomplete` container that controls visibility.
+-  {:.fix} In the storefront, the [_Search Terms_]({{ site.user_guide_url }}/marketing/search-terms-popular.html) footer link is removed and its cache disabled for Live Search installations.
 -  {:.bug} Patch for Search adapter handles duplicate products.
--  {:.bug} Live Search supports [single-source](https://docs.magento.com/user-guide/catalog/inventory-sources.html) (physical) inventory locations with multiple (virtual) [stocks](https://docs.magento.com/user-guide/catalog/inventory-stock.html). Multiple inventory sources are not supported at this time.
+-  {:.bug} Live Search supports [single-source]({{ site.user_guide_url }}/catalog/inventory-sources.html) (physical) inventory locations with multiple (virtual) [stocks]({{ site.user_guide_url }}/catalog/inventory-stock.html). Multiple inventory sources are not supported at this time.
 
 ## Live Search 1.2.0
 
@@ -29,7 +29,7 @@ These release notes describe the latest versions of Live Search and include:
 -  Compatible with {{site.data.var.ece}} (ECE): 2.4.x
 -  Stability: Stable
 
--  {:.new} Storefront [popover](https://devdocs.magento.com/live-search/storefront-popover.html) displays suggested products and thumbnail images of top search results as shoppers type queries into the Search box.
+-  {:.new} Storefront [popover]({{ site.baseurl }}/live-search/storefront-popover.html) displays suggested products and thumbnail images of top search results as shoppers type queries into the Search box.
 -  {:.new} Commerce Admin session stays open during extended periods of keyboard inactivity
 -  {:.new} Live Search is automatically enabled after onboarding
 -  {:.fix} Initial indexing time is less than an hour
@@ -44,8 +44,8 @@ These release notes describe the latest versions of Live Search and include:
 -  Compatible with {{site.data.var.ece}} (ECE): 2.4.x
 -  Stability: Stable
 
--  {:.bug}The Live Search service supports only the [base currency](https://docs.magento.com/user-guide/stores/currency-configuration.html) of the {{site.data.var.ee}} installation.
--  {:.bug}When adding a facet, the _Product Attributes Feed_ does not update correctly when set to `Update on Save`. To avoid this problem, go to [Index Management](https://docs.magento.com/user-guide/system/index-management.html) and set _Product Attributes Feed_ to `Update by Schedule`.
+-  {:.bug}The Live Search service supports only the [base currency]({{ site.user_guide_url }}/stores/currency-configuration.html) of the {{site.data.var.ee}} installation.
+-  {:.bug}When adding a facet, the _Product Attributes Feed_ does not update correctly when set to `Update on Save`. To avoid this problem, go to [Index Management]({{ site.user_guide_url }}/system/index-management.html) and set _Product Attributes Feed_ to `Update by Schedule`.
 -  {:.bug}Live Search synonyms are defined per store view, but are currently stored per website and identified with a combination of `environmentId` + `storeViewCode`. As a result, all websites and store views within the {{site.data.var.ee}} installation share the same set of synonyms. The most recently created set of synonyms for the store view takes precedence.
 -  {:.bug}If a synonym term contains multiple words, each word is treated as a separate synonym. For example, if you define “time piece” as a synonym of “watch”, both “time” and “piece” are treated as synonyms of watch.
 
@@ -54,6 +54,6 @@ These release notes describe the latest versions of Live Search and include:
 To learn more:
 
 -  [{{site.data.var.ee}} Developer Documentation]({{ site.baseurl }}/live-search/overview.html)
--  [{{site.data.var.ee}} User Guide](https://docs.magento.com/user-guide/live-search/overview.html)
+-  [{{site.data.var.ee}} User Guide]({{ site.user_guide_url }}/live-search/overview.html)
 -  [Support Knowledge Base](https://support.magento.com/hc/en-us)
 -  [Live Search on Marketplace](https://marketplace.magento.com/magento-live-search.html)

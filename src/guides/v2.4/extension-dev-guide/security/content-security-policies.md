@@ -120,13 +120,13 @@ adding a `csp_whitelist.xml` to your custom module's `etc` folder.
     <policies>
         <policy id="script-src">
             <values>
-                <value id="devdocs-base" type="host">https://devdocs.magento.com</value>
+                <value id="devdocs-base" type="host">{{ site.baseurl }}</value>
                 <value id="magento" type="host">https://magento.com</value>
             </values>
         </policy>
         <policy id="connect-src">
             <values>
-                <value id="devdocs" type="host">https://devdocs.magento.com</value>
+                <value id="devdocs" type="host">{{ site.baseurl }}</value>
             </values>
         </policy>
     </policies>
