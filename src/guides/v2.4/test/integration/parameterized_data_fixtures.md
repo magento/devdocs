@@ -32,7 +32,7 @@ Parameterized data fixtures allows developers to:
 
 ## Supply data to parameterized fixture as a variable
 
-It is possible to supply data as a variable from one fixture to another using `$variableName$` in annotation. 
+It is possible to supply data as a variable from one fixture to another using `$variableName$` in annotation.
 
 Example 1:
 
