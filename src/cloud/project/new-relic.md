@@ -106,8 +106,7 @@ To connect a Cloud environment to New Relic, add the New Relic license key to th
 
 For Starter environments, enable the New Relic integration by adding the New Relic license key to the environment configuration. We recommend adding the key to the Staging and Production (master) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the [New Relic reporting] topic in the _{{site.data.var.ee}} User Guide_.
 
-{:.bs-callout-warning}
-Updating the environment configuration triggers a redeployment, which takes your site offline until deployment completes. For Production environments, we recommend completing this work during off-peak hours to avoid service disruptions. See [Working with variables].
+{% include cloud/note-env-config-redeploy-warning.md%}
 
 **Prerequisites:**
 
@@ -393,4 +392,3 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [Update the account owner]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [Update policies or conditions]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/configuring-alert-policies/update-or-disable-policies-conditions
 [View your license key]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
-[Working with variables]: {{site.baseurl}}/cloud/env/working-with-variables.html
