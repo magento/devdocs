@@ -30,46 +30,6 @@ Parameterized data fixtures allows developers to:
 1. Fixture alias SHOULD be camelcase.
 1. Fixture JSON parameter MUST be a valid JSON string.
 
-## Supply data to parameterized fixture as a variable
-
-It is possible to supply data as a variable from one fixture to another using `$variableName$` in annotation.
-
-Example 1:
-
-```php?start_inline=1
-class QuoteTest extends \PHPUnit\Framework\TestCase
-{
-    /**
-     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple1", "price": 5.0} as:product1
-     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple2", "price": 10.0} as:product2
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\GuestCart as:cart
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cart": "$cart$", "product": "$product1$", "qty": 2}
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cart": "$cart$", "product": "$product2$", "qty": 1}
-     */
-    public function testGetProductsCount(): void
-    {
-    }
-}
-```
-
-Example 2:
-
-```php?start_inline=1
-class QuoteTest extends \PHPUnit\Framework\TestCase
-{
-    /**
-     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple1", "price": 5.0} as:product1
-     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple2", "price": 10.0} as:product2
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\GuestCart as:cart
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cartId": "$cart.id$", "productId": "$product1.id$", "qty": 2}
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cartId": "$cart.id$", "productId": "$product2.id$", "qty": 1}
-     */
-    public function testGetProductsCount(): void
-    {
-    }
-}
-```
-
 ## Automatic data generation
 
 The system can automatically generate unique data values like, but not limited to, product names, SKUs, etc.

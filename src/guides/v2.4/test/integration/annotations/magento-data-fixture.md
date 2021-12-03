@@ -121,6 +121,46 @@ class ProductsList extends \PHPUnit\Framework\TestCase
 }
 ```
 
+#### Supply data to parameterized fixture as a variable
+
+It is possible to supply data as a variable from one fixture to another using `$variableName$` in annotation.
+
+Example 1:
+
+```php?start_inline=1
+class QuoteTest extends \PHPUnit\Framework\TestCase
+{
+    /**
+     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple1", "price": 5.0} as:product1
+     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple2", "price": 10.0} as:product2
+     * @magentoDataFixture \Magento\Quote\Test\Fixture\GuestCart as:cart
+     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cart": "$cart$", "product": "$product1$", "qty": 2}
+     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cart": "$cart$", "product": "$product2$", "qty": 1}
+     */
+    public function testGetProductsCount(): void
+    {
+    }
+}
+```
+
+Example 2:
+
+```php?start_inline=1
+class QuoteTest extends \PHPUnit\Framework\TestCase
+{
+    /**
+     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple1", "price": 5.0} as:product1
+     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple2", "price": 10.0} as:product2
+     * @magentoDataFixture \Magento\Quote\Test\Fixture\GuestCart as:cart
+     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cartId": "$cart.id$", "productId": "$product1.id$", "qty": 2}
+     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cartId": "$cart.id$", "productId": "$product2.id$", "qty": 1}
+     */
+    public function testGetProductsCount(): void
+    {
+    }
+}
+```
+
 ### Test case and test method scopes
 
 The `@magentoDataFixture` can be specified for a particular test or for an entire test case.
