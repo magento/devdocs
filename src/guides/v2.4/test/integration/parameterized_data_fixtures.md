@@ -38,7 +38,7 @@ class QuoteTest extends \PHPUnit\Framework\TestCase
    * @magentoDataFixture \Magento\Quote\Fixture\AddSimpleProductToCart with:{"cart": "$cart", "product": "$product1", "qty": 2}
    * @magentoDataFixture \Magento\Quote\Fixture\AddSimpleProductToCart with:{"cart": "$cart", "product": "$product2", "qty": 1}
    */
-   public function testGetProductsCount(): void
+   public function testCollectTotals(): void
    {
    }
 }
