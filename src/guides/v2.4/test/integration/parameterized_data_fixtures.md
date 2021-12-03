@@ -22,8 +22,21 @@ Parameterized data fixtures allows developers to:
 -  Focus on test scenarios and not fixtures.
 -  Save time in development and code review process.
 
+### Principles
+
+1. Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance fixture that creates an entity (e.g. product).
+1. Fixture class SHOULD be placed in `<ModuleName>/Test/Fixture` folder of corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (e.g. Magento\Catalog\Test\Fixture).
+1. Fixture class SHOULD follow single responsibility principle.
+1. Fixture alias SHOULD be camelcase.
+1. Fixture JSON parameter MUST be a valid JSON string.
+
 ### Decoupling fixtures
-Fixtures must be written in the way that they only use one API to generate data. For example, the fixture that creates a product should only call "create product" API and return the product created. This fixture should not add any extra logic beyond the "create product" API capabilities, such logic should be implemented in a separate fixture and take advantage of fixtures binding to link fixtures.
+
+Fixtures must be written in the way that they only use one API to generate data. For example, the fixture that creates
+a product should only call "create product" API and return the product created. This fixture should not add any extra
+logic beyond the "create product" API capabilities, such logic should be implemented in a separate fixture and take
+advantage of fixtures binding to link fixtures.
+
 #### Examples
 
 Example 1:
@@ -31,12 +44,14 @@ Example 1:
 ```php?start_inline=1
 class QuoteTest extends \PHPUnit\Framework\TestCase
 {
-   /**
-   * @magentoDataFixture \Magento\Catalog\Fixture\CreateSimpleProduct with:{"sku": "simple1", "price": 5.0} as:product1
-   * @magentoDataFixture \Magento\Catalog\Fixture\CreateSimpleProduct with:{"sku": "simple2", "price": 10.0} as:product2
-   * @magentoDataFixture \Magento\Quote\Fixture\CreateEmptyCartForGuest as:cart
-   * @magentoDataFixture \Magento\Quote\Fixture\AddSimpleProductToCart with:{"cart": "$cart", "product": "$product1", "qty": 2}
-   * @magentoDataFixture \Magento\Quote\Fixture\AddSimpleProductToCart with:{"cart": "$cart", "product": "$product2", "qty": 1}
+
+  /**
+   * @magentoApiDataFixture Magento\Catalog\Test\Fixture\Product as:product
+   * @magentoApiDataFixture Magento\Quote\Test\Fixture\GuestCart as:cart
+   * @magentoApiDataFixture Magento\Quote\Test\Fixture\AddProductToCart as:item1
+   * @magentoApiDataFixture Magento\Quote\Test\Fixture\SetBillingAddress with:{"cart_id":"$cart.id$"}
+   * @magentoApiDataFixture Magento\Quote\Test\Fixture\SetShippingAddress with:{"cart_id":"$cart.id$"}
+   * @magentoDataFixtureDataProvider {"item1":{"cart_id":"$cart.id$","product_id":"$product.id$","qty":2}}
    */
    public function testCollectTotals(): void
    {

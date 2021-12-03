@@ -15,11 +15,14 @@ Parameterized Data Fixtures currently only available for Magento Open Source con
  * @magentoDataFixtureDataProvider <callable>|{}
  */
 ```
+
 ## Principles
-1.  Callable Fixtures Data Provider must be publicly accessible.
-1.  Fixtures Data Provider must return an associative array with fixture aliases as key.
-1.  Fixtures Data Provider will not apply to a fixture that has an inline data provider with `with` directive
-1.  Fixtures Data Provider declared at a test level have a higher priority than Fixtures Data Provider declared at a test case level.
+
+1. Callable Fixtures Data Provider must be publicly accessible.
+1. Fixtures Data Provider must return an associative array with fixture aliases as key.
+1. Fixtures Data Provider will not apply to a fixture that has an inline data provider with `with` directive.
+1. Fixtures Data Provider declared at a test level have a higher priority than Fixtures Data Provider declared at a test case level.
+
 ## Usage
 
 ### Inline JSON as Data Provider

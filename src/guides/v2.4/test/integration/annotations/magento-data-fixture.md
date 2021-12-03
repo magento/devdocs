@@ -39,12 +39,6 @@ To set up a date fixture, use the `@magentoDataFixture` annotation.
 {:.bs-callout-info}
 Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
 
-1. Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance fixture that creates an entity (e.g. product).
-1. Fixture class SHOULD be placed in `<ModuleName>/Test/Fixture` folder of corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (e.g. Magento\Catalog\Test\Fixture).
-1. Fixture class SHOULD follow single responsibility principle.
-1. Fixture alias SHOULD be camelcase.
-1. Fixture JSON parameter MUST be a valid JSON string.
-
 ## Usage
 
 As mentioned above, there are three ways to declare fixtures:
@@ -107,7 +101,6 @@ Fixture class can be provided with a data provider for additional parameters and
 There are two types of data providers:
 
 -  Inline JSON as data provider
--  Callable method as data provider
 -  [`@magentoDataFixtureDataProvider`][magentoDataFixtureDataProvider] annotation
 
 #### Inline JSON as data provider
