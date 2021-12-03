@@ -216,7 +216,7 @@ Custom code warnings are raised when the references to deprecated code are detec
 | 1534 | Using Adobe Commerce `@deprecated` property | The deprecated method will be removed in upcoming versions. Consider relying on methods declared in API interfaces instead. |
 | 1535 | Overriding Adobe Commerce `@deprecated` property | The deprecated property will be removed in upcoming versions. Consider relying on methods declared in API interfaces or using a private property within your implementation instead. |
 | 1536 | Assignation of Adobe Commerce `@deprecated` property | The deprecated method will be removed in upcoming versions. Consider relying on methods declared in API interfaces instead. |
-| 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | The original class should be declared as a type of the constructor parameter, the Interceptor/Proxy class will be passed by the framework dependency injection implementation. |
+| 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | The original class should be declared as a type of the constructor parameter. The Interceptor/Proxy class will be passed by the framework dependency injection implementation. |
 | 5074 | Use of deprecated method `getResource()` to (save / load / delete) data detected. | Use a repository instead. |
 | 5086 | Visibility is not declared on a constant | Declare the visibility on all constants. |
 
