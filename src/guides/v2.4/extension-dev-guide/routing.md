@@ -71,7 +71,7 @@ define the `match()` function in this class to use your own route matching logic
 
 If you need route configuration data, use the Route [`Config`] class.
 
-To add your custom router to the list of routers for the `FrontController`, add the following entry in your module's `di.xml` file:
+To add your custom router to the list of routers for the `FrontController`, add the following entry in your module's `frontend/di.xml` file:
 
 ```xml
 <type name="Magento\Framework\App\RouterList">
