@@ -96,7 +96,7 @@ Test case that uses the above data fixture: [`dev/tests/integration/testsuite/Ma
 
 [`dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php`][] demonstrates an example of the `testCreatePageWithSameModuleName()` test method that uses data from the `cmsPageWithSystemRouteFixture()` data fixture.
 
-### Parameterized Data Fixture class
+### Fixture as a Parameterized Data Fixture class
 
 {:.bs-callout-info}
 Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
@@ -107,7 +107,8 @@ Fixture class can be provided with a data provider for additional parameters and
 There are two types of data providers:
 
 -  Inline JSON as data provider
--  Callable script as data provider
+-  Callable method as data provider
+-  [`@magentoDataFixtureDataProvider`][magentoDataFixtureDataProvider] annotation
 
 #### Inline JSON as data provider
 
@@ -165,6 +166,7 @@ Do not rely on and do not modify an application state from within a fixture, bec
 <!-- Link definitions -->
 
 [magentoAppIsolation]: magento-app-isolation.html
+[magentoDataFixtureDataProvider]: magento-data-fixture-data-provider.html
 [`dev/tests/integration/testsuite/Magento/Cms/_files/pages.php`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/integration/testsuite/Magento/Cms/_files/pages.php
 [`dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php
 [`dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php
