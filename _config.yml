@@ -109,6 +109,12 @@ defaults:
       github_files: https://github.com/magento/magento2-page-builder-docs/tree/master/
       github_repo: https://github.com/magento/magento2-page-builder-docs/
 
+  - 
+    scope:
+      path: magento-payments
+    values:
+      group: magento-payments
+
   -
     scope:
       path: guides/v2.3/mrg

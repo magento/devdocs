@@ -14,7 +14,7 @@ functional_areas:
 
 The Magento web [API](https://glossary.magento.com/api) framework provides integrators and developers the means to use web services that communicate with the Magento system. Key features include:
 
-*  Support for both [REST]({{ page.baseurl }}/rest/bk-rest.html) (Representational State Transfer) and [SOAP]({{ page.baseurl }}/soap/bk-soap.html) (Simple Object Access Protocol). In Magento 2, the [web API](https://glossary.magento.com/web-api) coverage is the same for both REST and SOAP.
+*  Support for [GraphQL]({{page.baseurl}}/graphql/index.html), [REST]({{ page.baseurl }}/rest/bk-rest.html) (Representational State Transfer) and [SOAP]({{ page.baseurl }}/soap/bk-soap.html) (Simple Object Access Protocol). In Magento 2, the [web API](https://glossary.magento.com/web-api) coverage is the same for both REST and SOAP.
 
 *  Three types of [authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html):
    *  Third-party applications authenticate with [OAuth 1.0a]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html).
