@@ -26,7 +26,7 @@ Example:
 class ProductsList extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @magentoDataFixture Magento\Catalog\Fixture\CreateSimpleProduct as:product1
+     * @magentoDataFixture Magento\Catalog\Test\Fixture\Product as:product1
      * @magentoDataFixture Magento\Catalog\Fixture\CreateSimpleProduct as:product2
      * @magentoDataFixture Magento\Catalog\Fixture\CreateSimpleProduct as:product3
      * @magentoDataFixtureDataProvider {"product1":{"sku":"simple1"}}
