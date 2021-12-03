@@ -22,7 +22,9 @@ Parameterized data fixtures allows developers to:
 -  Focus on test scenarios and not fixtures.
 -  Save time in development and code review process.
 
-### Decoupled fixtures class examples
+### Decoupling fixtures
+Fixtures must be written in the way that they only use one API to generate data. For example, the fixture that creates a product should only call "create product" API and return the product created. This fixture should not add any extra logic beyond the "create product" API capabilities, such logic should be implemented in a separate fixture and take advantage of fixtures binding to link fixtures.
+#### Examples
 
 Example 1:
 
