@@ -14,7 +14,7 @@ These errors are reported when some of the core files are missing or do not matc
 
 ### Custom code
 
-Critical errors are raised when the custom code is referencing entities that are not present in the target {{site.data.var.ee}} version. Also these critical errors are reported when there are some critical coding standards transgressed.
+Critical errors are raised when the custom code is referencing entities that are not present in the target {{site.data.var.ee}} version. These errors are also reported when critical coding standards have been broken.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
@@ -37,12 +37,12 @@ Critical errors are raised when the custom code is referencing entities that are
 | 1516 | Assignation of non-existent Adobe Commerce property | Update code to use a class marked as `@api`. Update the property access level to private if it can be used within a single class only. |
 | 5001 | Call-time pass-by-reference calls are prohibited | Passing by reference is not supported after PHP 5.6. |
 | 5002 | The opening PHP tag must be the first content in the file | Ensure there is no content in the file before the PHP opening tag. |
-| 5003 | Function has been deprecated | Use a replacement suggested in the error message. If the message does not provide the replacement suggestion, this case requires a close review to select an alternative safe function or implementation. |
-| 5005 | PHP syntax error | The code requires to be updated to comply with the PHP interpretation. |
-| 5008 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | The code requires review and refactoring. Magento 1 constructions may no longer be supported by Magento 2 framework. |
-| 5072 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | Update construction to Magento 2 standards. |
-| 5076 | Cannot use in namespace as it is reserved since PHP 7 | Replace reserved word in namespace by another one not used by PHP as keyword. |
-| 5077 | Cannot use as class name as it is reserved since PHP 7 | Replace reserved word in class name by another one not used by PHP as keyword. |
+| 5003 | Function has been deprecated | Use a replacement suggested in the error message. If the message does not suggest a replacement, a close review is needed to select an alternative function or implementation. |
+| 5005 | PHP syntax error | The code must be updated to comply with the PHP syntax standards. |
+| 5008 | Possible Magento 2 design violation. Detected a typical Magento 1.x construction | The code requires review and refactoring. Magento 1 constructions may no longer be supported by Magento 2 framework. |
+| 5072 | Possible Magento 2 design violation. Detected a typical Magento 1.x construction | Update construction to Magento 2 standards. |
+| 5076 | Cannot use in namespace as it is reserved since PHP 7 | Replace the reserved word in the namespace with a non-reserved keyword. |
+| 5077 | Cannot use as class name as it is reserved since PHP 7 | Replace the reserved class name with a non-reserved name. |
 
 ### GraphQL Schema
 
@@ -195,7 +195,7 @@ These warnings are reported when there are minor inconsistencies in the core cod
 
 ### Custom code
 
-Custom code warnings are raised when the references to deprecated code are detected. Such references should be replaced with the supported extension points. Pay attention to the `@see` annotation of deprecated item for recommendations. Also these warnings are reported when there are some minor coding standards transgressed.
+Custom code warnings are raised when the references to deprecated code are detected. Such references should be replaced with the supported extension points. Pay attention to the `@see` annotation of deprecated item for recommendations. These errors are also reported when minor coding standards have been broken.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
