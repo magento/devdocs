@@ -82,4 +82,4 @@ class ProductsList extends \PHPUnit\Framework\TestCase
 
 ### Test case and test method scopes
 
-The `@magentoDataFixtureDataProvider` can be specified for a particular test or for an entire test case.
+`@magentoDataFixtureDataProvider` does not recursively merge fixtures data, thus if multiple `@magentoDataFixtureDataProvider` declare the same fixture, only the latest value is used
