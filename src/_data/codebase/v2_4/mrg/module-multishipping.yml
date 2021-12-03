@@ -1,6 +1,5 @@
 ---
 title: Multishipping
-release: 2.4.3
 content: "**Magento_Multishipping** module provides functionality that allows customer
   to request shipping to more than one address\nusing different carriers. The module
   provides alternative to standard checkout flow.\n\n## Installation\n\nFor information

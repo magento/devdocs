@@ -1,5 +1,4 @@
 ---
 title: AwsS3CustomerCustomAttributes
-release: 2.4.3
 content: The Magento_AwsS3CustomerCustomAttributes module created for maintaining
   Customer Custom Attributes tests related to Aws S3 remote storage functionality

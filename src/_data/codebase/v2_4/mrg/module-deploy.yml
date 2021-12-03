@@ -1,6 +1,5 @@
 ---
 title: Deploy
-release: 2.4.3
 content: "## Purpose of module\n\nDeploy is a module that holds collection of services
   and command line tools to help with Magento application deployment. \nTo execute
   this command, please, run \"bin/magento setup:static-content:deploy\" from the Magento

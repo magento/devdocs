@@ -1,6 +1,5 @@
 ---
 title: B2b
-release: 2.4.3
 content: |-
   The Magento_B2b module is the base module for B2B. It must be present on all B2B installations.
 

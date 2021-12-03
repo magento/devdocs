@@ -1,5 +1,4 @@
 ---
 title: QuoteGiftCardOptions
-release: 2.4.3
 content: "**QuoteGiftCardOptions** defines the data provider that creates buy requests
   for gift card products."

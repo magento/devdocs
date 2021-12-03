@@ -66,11 +66,11 @@ Sample result:
 | Catalog Product Rule | Reindex required | Save      |                     |                     |
 | Catalog Rule Product | Reindex required | Save      |                     |                     |
 | Catalog Search       | Ready            | Save      |                     |                     |
-| Category Products    | Reindex required | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:53 |
-| Customer Grid        | Ready            | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:52 |
+| Category Products    | Reindex required | Schedule  | idle (0 in backlog) | 2021-06-28 09:45:53 |
+| Customer Grid        | Ready            | Schedule  | idle (0 in backlog) | 2021-06-28 09:45:52 |
 | Design Config Grid   | Ready            | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:52 |
 | Inventory            | Ready            | Save      |                     |
-| Product Categories   | Reindex required | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:53 |
+| Product Categories   | Reindex required | Schedule  | idle (0 in backlog) | 2021-06-28 09:45:53 |
 | Product EAV          | Reindex required | Save      |                     |                     |
 | Product Price        | Reindex required | Save      |                     |                     |
 | Stock                | Reindex required | Save      |                     |                     |
@@ -122,6 +122,47 @@ Catalog Search index has been rebuilt successfully in <time>
 
 {:.bs-callout-info}
 Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules.
+
+### Reindexing in parallel mode
+
+Indexers are scoped and multi-threaded to support reindexing in parallel mode. It parallelizes by the indexer’s dimension and executes across multiple threads, reducing processing time.
+
+In this context, `dimension` is the scope of the reindexing, for instance a `website` or just a specific `customer_group`.
+
+Index parallelization affects scoped indexers only, which means Magento splits the data into multiple tables using the indexer as its scope instead of keeping all data in one table.
+
+You can run the following indexes in parallel mode:
+
+-  `Catalog Search Fulltext` can be paralleled by store views.
+-  `Category Product` can be paralleled by store views.
+-  `Catalog Price` can be paralleled by website and customer groups.
+
+If you want to use parallelization, you must set one of the available modes of dimensions for the product price indexer:
+
+-  `none` (default)
+-  `website`
+-  `customer_group`
+-  `website_and_customer_group`
+
+For example, to set the mode per website:
+
+```bash
+bin/magento indexer:set-dimensions-mode catalog_product_price website
+```
+
+Or to check the current mode:
+
+```bash
+bin/magento indexer:show-dimensions-mode
+```
+
+To reindex in parallel mode, run the reindex command using the environment variable `MAGE_INDEXER_THREADS_COUNT`, or add an environment variable to the `env.php` file. This variable sets the number of threads for the reindex processing.
+
+For example, the following command runs the `Catalog Search Fulltext` indexer across three threads:
+
+```bash
+MAGE_INDEXER_THREADS_COUNT=3 php -f bin/magento indexer:reindex catalogsearch_fulltext
+```
 
 ## Reset indexer
 

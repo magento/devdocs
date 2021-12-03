@@ -111,7 +111,7 @@ This release includes Adobe Stock Integration v2.1.1.
 
 ### GraphQL
 
-This release adds GraphQL coverage for shared routes. The [route query](https://devdocs.magento.com/guides/v2.4/graphql/queries/route.html) and [RoutableInterface](https://devdocs.magento.com/guides/v2.4/graphql/interfaces/routable-interface.html) support routing requests on product, category, and CMS pages. The `urlResolver` query has been deprecated, and its functionality has been superseded by the `route` query.
+This release adds GraphQL coverage for shared routes. The [route query]({{ page.baseurl }}/graphql/queries/route.html) and [RoutableInterface]({{ page.baseurl }}/graphql/interfaces/routable-interface.html) support routing requests on product, category, and CMS pages. The `urlResolver` query has been deprecated, and its functionality has been superseded by the `route` query.
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -130,7 +130,7 @@ All the content created in TinyMCE has been migrated into Page Builder as HTM
 
 ### PWA Studio
 
-For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 
 ### Upgrade Compatibility Tool
 
@@ -140,15 +140,15 @@ The scope of the [Upgrade Compatibility Tool]({{ site.baseurl }}/upgrade-compati
 
 See the following articles for updates on features and changes for this release:
 
-*  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html)
+*  [Amazon Pay]({{ site.user_guide_url }}/payment/amazon-pay.html)
 
-*  [Braintree](https://docs.magento.com/user-guide/payment/braintree.html)
+*  [Braintree]({{ site.user_guide_url }}/payment/braintree.html)
 
 *  [dotdigital Engagement Cloud]({{ site.baseurl }}/extensions/vendor/dotdigital/release-notes.html)
 
-*  [Klarna](https://docs.magento.com/user-guide/payment/klarna.html)
+*  [Klarna]({{ site.user_guide_url }}/payment/klarna.html)
 
-*  [Vertex Cloud](https://docs.magento.com/user-guide/tax/vertex.html)
+*  [Vertex Cloud]({{ site.user_guide_url }}/tax/vertex.html)
 
 *  [Yotpo Product Reviews]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html)
 

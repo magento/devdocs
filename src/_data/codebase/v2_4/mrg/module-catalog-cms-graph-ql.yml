@@ -1,5 +1,4 @@
 ---
 title: CatalogCmsGraphQl
-release: 2.4.3
 content: "**CatalogCmsGraphQl** provides type and resolver information for GraphQL
   attributes that have dependencies on the Catalog and Cms modules."

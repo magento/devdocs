@@ -1,6 +1,5 @@
 ---
 title: CatalogPermissions
-release: 2.4.3
 content: |-
   Magento_CatalogPermissions feature allows to restrict the following permissions:
   - Browse categories

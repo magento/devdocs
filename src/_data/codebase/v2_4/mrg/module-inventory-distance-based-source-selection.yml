@@ -1,6 +1,5 @@
 ---
 title: InventoryDistanceBasedSourceSelection
-release: 2.4.3
 content: |-
   The `InventoryDistanceBasedSourceSelection` module implements logic for distance based source selection
 

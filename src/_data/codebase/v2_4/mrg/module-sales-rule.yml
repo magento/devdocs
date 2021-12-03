@@ -1,5 +1,4 @@
 ---
 title: SalesRule
-release: 2.4.3
 content: SalesRule module is responsible for managing and processing Promotion Shopping
   Cart Rules.

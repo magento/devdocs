@@ -1,6 +1,5 @@
 ---
 title: CompanyCredit
-release: 2.4.3
 content: |-
   The Magento_CompanyCredit module adds the "Payment on Account" payment method for B2B companies. It also allows the credit history to be viewed from both Admin and the storefront.
 

@@ -55,7 +55,7 @@ A value of `Data validity : NOT FOUND` in the debugger indicates an internal sch
 
 ## Verify events are firing correctly
 
-To verify that the events used for metrics are firing correctly, look for the `impression-render`, `view`, and `rec-click` events in the Snowplow Analytics Debugger. See the [full list](https://devdocs.magento.com/recommendations/events.html) of events specific to Product Recommendations.
+To verify that the events used for metrics are firing correctly, look for the `impression-render`, `view`, and `rec-click` events in the Snowplow Analytics Debugger. See the [full list]({{ site.baseurl }}/recommendations/events.html) of events specific to Product Recommendations.
 
 {:.bs-callout-info}
 If [Cookie Restriction Mode](https://docs.magento.com/m2/ce/user_guide/stores/compliance-cookie-restriction-mode.html) is enabled, Magento does not collect behavioral data until the shopper consents. If Cookie Restriction Mode is disabled, Magento collects behavioral data by default.

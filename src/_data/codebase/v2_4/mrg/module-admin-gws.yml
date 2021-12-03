@@ -1,6 +1,5 @@
 ---
 title: AdminGws
-release: 2.4.3
 content: "**AdminGws** provides configuration management within the Global, Website,
   and Store data scopes. Restrictions can be \nimposed on various system elements
   through configurations that are applied at the desired level."

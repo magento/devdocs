@@ -1,6 +1,5 @@
 ---
 title: InventoryBundleProduct
-release: 2.4.3
 content: |-
   The `InventoryBundleProduct` module integrates inventory management business logic into Magento's bundle product logic.
 

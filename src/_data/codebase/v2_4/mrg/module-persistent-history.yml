@@ -1,6 +1,5 @@
 ---
 title: PersistentHistory
-release: 2.4.3
 content: |-
   Magento\PersistentHistory module extends functionality of Magento\Persistent by providing ability to keep track of
   products added to  wishlist, recently ordered items, currently compared products, comparison history, recently viewed

@@ -1,6 +1,5 @@
 ---
 title: CmsGraphQl
-release: 2.4.3
 content: |-
   **CmsGraphQl** provides type information for the GraphQl module
   to generate CMS fields for cms information endpoints.

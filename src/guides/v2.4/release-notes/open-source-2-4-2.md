@@ -106,7 +106,7 @@ This release of PWA Studio includes:
 
 *  Various performance optimizations and bug fixes.
 
-For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 
 ### Media Gallery
 
@@ -122,7 +122,7 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 *  Manage folder structure.
 
-**Web-optimized images in content**. Merchants can now use [web-optimized image rendition](https://docs-beta.magento.com/user-guide/cms/media-gallery-image-optimization.html) in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
+**Web-optimized images in content**. Merchants can now use [web-optimized image rendition]({{ site.user_guide_url }}/cms/media-gallery-image-optimization.html) in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
 
 ### Magento Functional Testing Framework (MFTF)
 
@@ -132,15 +132,15 @@ MFTF 3.2.1 is now available. This release introduces error tolerance in both te
 
 See the following articles for updates on features and changes for this release:
 
-*  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html)
+*  [Amazon Pay]({{ site.user_guide_url }}/payment/amazon-pay.html)
 
-*  [Braintree](https://docs.magento.com/user-guide/payment/braintree.html)
+*  [Braintree]({{ site.user_guide_url }}/payment/braintree.html)
 
-*  [dotdigital Engagement Cloud](https://docs.magento.com/user-guide/marketing/dotdigital/engagement-cloud.html)
+*  [dotdigital Engagement Cloud]({{ site.user_guide_url }}/marketing/dotdigital/engagement-cloud.html)
 
-*  [Klarna](https://docs.magento.com/user-guide/payment/klarna.html)
+*  [Klarna]({{ site.user_guide_url }}/payment/klarna.html)
 
-*  [Vertex Cloud](https://docs.magento.com/user-guide/tax/vertex.html)
+*  [Vertex Cloud]({{ site.user_guide_url }}/tax/vertex.html)
 
 *  [Yotpo Product Reviews]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html)
 
