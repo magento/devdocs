@@ -72,7 +72,7 @@ GraphQL Schema critical issues are raised if the schema items are not present in
 
 ### Custom code
 
-Custom code errors are raised when custom code is using the Adobe Commerce entry points that are not considered/marked as `@api`. The preserved behavior of such entry points is not guaranteed. The customization should rely on `@api` entry points instead. The functionality that is based on non-API Adobe Commerce code should be tested after the upgrade. Also these errors are reported when there are some major coding standards transgressed.
+Custom code errors are raised when custom code is using the Adobe Commerce entry points that are not considered/marked as `@api`. The preserved behavior of such entry points is not guaranteed. The customization should rely on `@api` entry points instead. The functionality that is based on non-API Adobe Commerce code should be tested after the upgrade. These errors are also reported when major coding standards have been broken.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
