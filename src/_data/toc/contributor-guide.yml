@@ -9,10 +9,20 @@ pages:
         - label: Backward compatible development
           url: /contributor-guide/backward-compatible-development/
           versionless: true
-        
+
         - label: Commerce Definition of Done
           url: /contributor-guide/contributing_dod.html
           versionless: true
+          children:
+            - label: DoD - Automated Tests
+              url: /contributor-guide/dod/automated-tests.html
+              versionless: true
+            - label: DoD - Backward Compatibility
+              url: /contributor-guide/dod/backward-compatibility.html
+              versionless: true
+            - label: DoD - TCO Analysis
+              url: /contributor-guide/dod/tco-analysis.html
+              versionless: true
 
         - label: GitHub issue processing workflow
           url: /contributor-guide/processing-workflow.html
@@ -21,7 +31,7 @@ pages:
         - label: PHPStorm plugin code inspections
           url: /contributor-guide/phpstorm-code-inspections.html
           versionless: true
-        
+
         - label: Pull request tests
           url: /contributor-guide/pull-request-tests.html
           versionless: true
