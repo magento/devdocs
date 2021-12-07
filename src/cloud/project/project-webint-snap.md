@@ -5,7 +5,13 @@ functional_areas:
   - Cloud
 ---
 
-You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Starter environments and Pro Integration environments. You cannot snapshot Pro Staging or Production environments.
+You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Starter environments and Pro Integration environments.
+
+For Pro Plan projects, you will not be able to list the snapshots in Staging/Production clusters as this feature has been disabled in those environments.
+
+Regular backups of those environments are taken for disaster recovery purposes by default, see [Pro Backup & Disaster Recovery]({{ site.baseurl }}/cloud/architecture/pro-architecture.html#backup-and-disaster-recovery), however these are not publicly accessible as they are placed on a different system not directly connected to the cluster.
+
+You will need to open a ticket and request a backup from a specific timeframe (please provide the date and time - with timezone) and we will then extract it from the external system and provide it to you.
 
 A _snapshot_ is a complete backup of an environment that includes all persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes. Because an environment deploys as a read-only file system, restoring a snapshot is very fast.
 
