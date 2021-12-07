@@ -24,7 +24,7 @@ The checklist that can be used to evaluate if the DoD has been met:
 -  All changes must be covered by automated tests.
 -  All functional changes should be documented.
 -  All backward incompatible changes should be approved and covered by static tests.
--  TCO impact should be defined for all changes. 
+-  TCO impact should be defined for all changes.
 
 The following sections provide additional details about each of these criteria:
 
