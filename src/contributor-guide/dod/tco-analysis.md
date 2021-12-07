@@ -8,33 +8,33 @@ title: DoD - TCO Analysis
 All functional changes must be analysed for the impact on merchant total cost of ownership (TCO) and the results of the analysis should be added to the pull request or issue description to meet the "Definition of Done" (DoD).
 
 The goal of TCO analysis is to identify:
-- If the changes have impact on TCO
-- The value of the impact, that consists of
-  - The level of the change (patch/minor/major)
-  - Potential number of affected extensions/customisations (several/many/most/all)
+-  If the changes have impact on TCO
+-  The value of the impact, that consists of
+  -  The level of the change (patch/minor/major)
+  -  Potential number of affected extensions/customisations (several/many/most/all)
 
 ### Changes that have impact on TCO
 
 Changes can impact total cost of ownership if the extensions or customisations, established processes or integrations within the projects build on Adobe Commerce framework may need to be adjusted to accommodate the changes.
 
 Changes that have impact on TCO:
-- Result in SVC build failure on pull request
-- JavaScript changes (not covered by SVC build)
-  - Introduced or removed javascript events, classes, methods, properties or parameters
-  - Changed javascript event ordering
-- URL/Request changes
-  - Removed URL paths
-  - Removed or introduced required or optional request parameters
-- CLI commands changes
-  - Introduced or removed/renamed console commands, arguments or return codes
-- Events changes
-  - Removed or added events and their arguments
-- Removing, changing or adding default parameter values for methods
-- Removing or adding traits
-- Changing arguments or return value format of methods
-- Changing topics or consumers in message queue
-- Any layout or block changes
-- Removing or renaming of any files
+-  Result in SVC build failure on pull request
+-  JavaScript changes (not covered by SVC build)
+  -  Introduced or removed javascript events, classes, methods, properties or parameters
+  -  Changed javascript event ordering
+-  URL/Request changes
+  -  Removed URL paths
+  -  Removed or introduced required or optional request parameters
+-  CLI commands changes
+  -  Introduced or removed/renamed console commands, arguments or return codes
+-  Events changes
+  -  Removed or added events and their arguments
+-  Removing, changing or adding default parameter values for methods
+-  Removing or adding traits
+-  Changing arguments or return value format of methods
+-  Changing topics or consumers in message queue
+-  Any layout or block changes
+-  Removing or renaming of any files
 
 ### Level of change
 
