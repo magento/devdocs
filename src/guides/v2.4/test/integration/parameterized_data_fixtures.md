@@ -27,8 +27,9 @@ Parameterized data fixtures allows developers to:
 1. Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance fixture that creates an entity (e.g. product).
 1. Fixture class SHOULD be placed in `<ModuleName>/Test/Fixture` folder of corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (e.g. Magento\Catalog\Test\Fixture).
 1. Fixture class SHOULD follow single responsibility principle.
-1. Fixture alias SHOULD be camelcase.
-1. Fixture JSON parameter MUST be a valid JSON string.
+1. Fixture MUST NOT extend or depend ON another fixture.
+1. Fixture SHOULD be implemented using service APIs.
+1. Fixture SHOULD have default data and placeholder "%uniqid%" MUST be used in unique fields in order to generate unique fixture.
 
 ## Automatic data generation
 
