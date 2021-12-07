@@ -20,11 +20,11 @@ At a high level, the criteria defined in our "definition of done" revolve around
 
 The checklist that can be used to evaluate if the DoD has been met:
 
- - All changes must be approved by reviewer.
- - All changes must be covered by automated tests.
- - All functional changes should be documented.
- - All backward incompatible changes should be approved and covered by static tests.
- - TCO impact should be defined for all changes. 
+-  All changes must be approved by reviewer.
+-  All changes must be covered by automated tests.
+-  All functional changes should be documented.
+-  All backward incompatible changes should be approved and covered by static tests.
+-  TCO impact should be defined for all changes. 
 
 The following sections provide additional details about each of these criteria:
 
@@ -72,4 +72,3 @@ The work cannot be considered as complete unless all the criteria are verified.
 [2]:{{ site.baseurl }}/contributor-guide/backward-compatible-development/index.html#where-to-document
 [3]:{{ site.gdeurl }}/contributor-guide/dod/automated-tests.html
 [4]:{{ site.gdeurl }}/contributor-guide/dod/tco-analysis.html
-
