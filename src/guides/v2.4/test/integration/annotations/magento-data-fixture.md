@@ -102,6 +102,8 @@ There are two types of data providers:
 
 #### Inline JSON as data provider
 
+Data can be passed to the parameterized data fixture using `with` directive as follows:
+
 Example:
 
 ```php?start_inline=1
