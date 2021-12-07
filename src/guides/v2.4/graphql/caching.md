@@ -151,3 +151,6 @@ Magento invalidates the cache when any of the following events occur:
 *  The `Preview-Version` header is specified in a query that supports caching.
 *  The system configuration changes.
 *  An administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command.
+
+### GraphQL Schema
+The GraphQL schema is cached in the Configuration cache, which can be refreshed from the Cache Management page (System > Tools > Cache Management).
