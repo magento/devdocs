@@ -90,13 +90,10 @@ Test case that uses the above data fixture: [`dev/tests/integration/testsuite/Ma
 
 [`dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php`][] demonstrates an example of the `testCreatePageWithSameModuleName()` test method that uses data from the `cmsPageWithSystemRouteFixture()` data fixture.
 
-### Fixture as a Parameterized Data Fixture class
+### Fixture Data Provider
 
 {:.bs-callout-info}
 Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
-
-Define the fixture as a class when you think it could be reused in different test cases.
-Fixture class can be provided with a data provider for additional parameters and customizations.
 
 There are two types of data providers:
 
