@@ -8,27 +8,29 @@ title: DoD - TCO Analysis
 All functional changes must be analysed for the impact on merchant total cost of ownership (TCO) and the results of the analysis should be added to the pull request or issue description to meet the "Definition of Done" (DoD).
 
 The goal of TCO analysis is to identify:
+
 -  If the changes have impact on TCO
 -  The value of the impact, that consists of
-  -  The level of the change (patch/minor/major)
-  -  Potential number of affected extensions/customisations (several/many/most/all)
+   -  The level of the change (patch/minor/major)
+   -  Potential number of affected extensions/customisations (several/many/most/all)
 
 ### Changes that have impact on TCO
 
 Changes can impact total cost of ownership if the extensions or customisations, established processes or integrations within the projects build on Adobe Commerce framework may need to be adjusted to accommodate the changes.
 
 Changes that have impact on TCO:
+
 -  Result in SVC build failure on pull request
 -  JavaScript changes (not covered by SVC build)
-  -  Introduced or removed javascript events, classes, methods, properties or parameters
-  -  Changed javascript event ordering
+   -  Introduced or removed javascript events, classes, methods, properties or parameters
+   -  Changed javascript event ordering
 -  URL/Request changes
-  -  Removed URL paths
-  -  Removed or introduced required or optional request parameters
+   -  Removed URL paths
+   -  Removed or introduced required or optional request parameters
 -  CLI commands changes
-  -  Introduced or removed/renamed console commands, arguments or return codes
+   -  Introduced or removed/renamed console commands, arguments or return codes
 -  Events changes
-  -  Removed or added events and their arguments
+   -  Removed or added events and their arguments
 -  Removing, changing or adding default parameter values for methods
 -  Removing or adding traits
 -  Changing arguments or return value format of methods
@@ -96,7 +98,7 @@ The analysis result should indicate all the changes that have TCO impact (or sim
 
 For example, if the non-api "SomeClass::someMethod" was changed and the new required argument was added to the CLI command, the analysis result may look like:
 
-```
+```text
 Changes have TCO impact.
 Change to SomeClass::someMethod is PATCH level but impacts 5 out of 10 reviewed projects.
 Change to CLI command is MAJOR level, it impacts 2 out of 10 reviewed projects.
