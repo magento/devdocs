@@ -119,7 +119,21 @@ class ProductsList extends \PHPUnit\Framework\TestCase
     }
 }
 ```
+### Fixture Alias
+Fixture can be given an alias using directive `as` as follows:
 
+```php?start_inline=1
+class ProductsList extends \PHPUnit\Framework\TestCase
+{
+    /**
+    * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product as:product1
+    * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product as:product2
+    * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product as:product3
+    */
+    public function testGetProductsCount(): void
+    {
+    }
+}
 #### Supply data to parameterized fixture as a variable
 
 It is possible to supply data as a variable from one fixture to another using `$variableName$` in annotation.
