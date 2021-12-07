@@ -132,8 +132,8 @@ For example:
 
 Code to cover:
 
-* Must cover all introduced conventions and discovered faulty or insecure code structures.
-* Must cover any formal backward-incompatible changes on code level. The replacement suggestion should be provided in static test message.
+*  Must cover all introduced conventions and discovered faulty or insecure code structures.
+*  Must cover any formal backward-incompatible changes on code level. The replacement suggestion should be provided in static test message.
      For more information, see [Magento's backward compatibility policy][2].
 
 Expected code coverage:
