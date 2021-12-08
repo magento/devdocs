@@ -37,7 +37,10 @@ To set up a date fixture, use the `@magentoDataFixture` annotation.
 ### For Parameterized Data Fixtures
 
 {:.bs-callout-info}
-Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
+Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.4.5.
+
+1. Fixture alias SHOULD be camelcase.
+1. Fixture JSON parameter MUST be a valid JSON string.
 
 ## Usage
 
@@ -45,7 +48,7 @@ As mentioned above, there are three ways to declare fixtures:
 
 -  as a PHP script file that is used by other tests and test cases.
 -  as a local method that is used by other tests in the test cases.
--  as a Parameterized Data Fixture class that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`
+-  as a [Parameterized Data Fixture][parameterizedDataFixtures] class that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`
 
 ### Fixture as a separate file
 
@@ -93,7 +96,7 @@ Test case that uses the above data fixture: [`dev/tests/integration/testsuite/Ma
 ### Fixture Data Provider
 
 {:.bs-callout-info}
-Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
+Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.4.5.
 
 There are two types of data providers:
 
@@ -119,7 +122,9 @@ class ProductsList extends \PHPUnit\Framework\TestCase
     }
 }
 ```
+
 ### Fixture Alias
+
 Fixture can be given an alias using directive `as` as follows:
 
 ```php?start_inline=1
@@ -134,6 +139,8 @@ class ProductsList extends \PHPUnit\Framework\TestCase
     {
     }
 }
+```
+
 #### Supply data to parameterized fixture as a variable
 
 It is possible to supply data as a variable from one fixture to another using `$variableName$` in annotation.
@@ -143,34 +150,17 @@ Example 1:
 ```php?start_inline=1
 class QuoteTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple1", "price": 5.0} as:product1
-     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple2", "price": 10.0} as:product2
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\GuestCart as:cart
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cart": "$cart$", "product": "$product1$", "qty": 2}
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cart": "$cart$", "product": "$product2$", "qty": 1}
-     */
-    public function testGetProductsCount(): void
-    {
-    }
-}
-```
-
-Example 2:
-
-```php?start_inline=1
-class QuoteTest extends \PHPUnit\Framework\TestCase
-{
-    /**
-     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple1", "price": 5.0} as:product1
-     * @magentoDataFixture \Magento\Catalog\Test\Fixture\Product with:{"sku": "simple2", "price": 10.0} as:product2
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\GuestCart as:cart
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cartId": "$cart.id$", "productId": "$product1.id$", "qty": 2}
-     * @magentoDataFixture \Magento\Quote\Test\Fixture\AddSimpleProductToCart with:{"cartId": "$cart.id$", "productId": "$product2.id$", "qty": 1}
-     */
-    public function testGetProductsCount(): void
-    {
-    }
+  /**
+   * @magentoApiDataFixture Magento\Catalog\Test\Fixture\Product as:product
+   * @magentoApiDataFixture Magento\Quote\Test\Fixture\GuestCart as:cart
+   * @magentoApiDataFixture Magento\Quote\Test\Fixture\AddProductToCart as:item1
+   * @magentoApiDataFixture Magento\Quote\Test\Fixture\SetBillingAddress with:{"cart_id":"$cart.id$"}
+   * @magentoApiDataFixture Magento\Quote\Test\Fixture\SetShippingAddress with:{"cart_id":"$cart.id$"}
+   * @magentoDataFixtureDataProvider {"item1":{"cart_id":"$cart.id$","product_id":"$product.id$","qty":2}}
+   */
+   public function testCollectTotals(): void
+   {
+   }
 }
 ```
 
@@ -213,6 +203,7 @@ Do not rely on and do not modify an application state from within a fixture, bec
 
 [magentoAppIsolation]: magento-app-isolation.html
 [magentoDataFixtureDataProvider]: magento-data-fixture-data-provider.html
+[parameterizedDataFixtures]: ../parameterized_data_fixtures.html
 [`dev/tests/integration/testsuite/Magento/Cms/_files/pages.php`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/integration/testsuite/Magento/Cms/_files/pages.php
 [`dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php
 [`dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php

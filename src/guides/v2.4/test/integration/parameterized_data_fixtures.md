@@ -4,7 +4,7 @@ title: Parameterized Data Fixtures
 ---
 
 {:.bs-callout-info}
-Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
+Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.4.5.
 
 ## Overview
 

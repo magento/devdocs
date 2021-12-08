@@ -4,11 +4,11 @@ title: Data fixture data provider annotation
 ---
 
 {:.bs-callout-info}
-Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.5.5.
+Parameterized Data Fixtures currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.4.5.
 
 ## Format
 
-`@magentoDataFixtureDataProvider` takes an argument that points to a Data Provider callable or contains inline JSON string for Parameterized Data Fixtures.
+`@magentoDataFixtureDataProvider` takes an argument that points to a Data Provider callable or contains inline JSON string for [Parameterized Data Fixture][parameterizedDataFixtures].
 
 ```php?start_inline=1
 /**
@@ -85,4 +85,8 @@ class ProductsList extends \PHPUnit\Framework\TestCase
 
 ### Test case and test method scopes
 
-`@magentoDataFixtureDataProvider` does not recursively merge fixtures data, thus if multiple `@magentoDataFixtureDataProvider` declare the same fixture, only the latest value is used
+`@magentoDataFixtureDataProvider` does not recursively merge fixtures data, thus if multiple `@magentoDataFixtureDataProvider` declare the same fixture, only the latest value is used.
+
+<!-- Link definitions -->
+
+[parameterizedDataFixtures]: ../parameterized_data_fixtures.html
