@@ -390,10 +390,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 
 *  You are now redirected to the checkout page as expected after adding a bundle product to the cart from a Schedule Update preview and clicking the cart. [GitHub-447](https://github.com/magento/partners-magento2ee/issues/447)
 
-<!--- MC-32805-->
-
-*  Shoppers are now redirected to the shopping cart page instead of the product page when they try to update the mini cart for an order that contains deleted items. Previously, shoppers were redirected to the product page.
-
 <!--- MC-39581-->
 
 *  Magento now discards changes to the billing address form on the checkout payment step if the shopper fails to click the **Update** button and returned to the shipping step.
