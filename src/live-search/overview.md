@@ -17,4 +17,4 @@ Live Search is deployed as a service. The {{site.data.var.ee}} side includes hos
 ![Live Search architecture diagram]({{ page.baseurl }}/live-search/images/architecture-diagram.svg)
 _Live Search architecture_
 
-After the Live Search module (with catalog modules as dependencies) is installed and configured, {{site.data.var.ee}} begins sharing search and catalog data with SaaS services. At this point, Admin users can set up, customize, and manage search facets, synonyms, and merchandising rules.
+After the Live Search module (with catalog modules as dependencies) is [installed and configured]({{ site.user_guide_url }}/live-search/install.html), {{site.data.var.ee}} begins sharing search and catalog data with SaaS services. At this point, Admin users can set up, customize, and manage search facets, synonyms, and merchandising rules.
