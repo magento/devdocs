@@ -107,9 +107,13 @@ If you configure one MySQL user, you cannot use the [`DEFINER`](https://dev.mysq
 
 ## Connect to the database
 
-Accessing the MariaDB database directly requires you to use a SSH to log in to the remote server, and connect to the database.
+Accessing the MariaDB database directly requires you to use a SSH to log in to the remote Cloud environment, and connect to the database.
 
-1. Log in to the remote server using a SSH.
+1. Use SSH to log in to the remote environment.
+
+   ```bash
+   magento-cloud ssh
+   ```
 
 1. Retrieve the MySQL login credentials from the `database` and `type` properties in the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) variable.
 
@@ -147,7 +151,7 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
    ],
    ```
 
-1. Connect to the database:
+1. Connect to the database.
 
    -  For Starter, use the following command:
 
@@ -160,6 +164,9 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
       ```bash
       mysql -h <hostname> -P <number> -u <username> -p'<password>'
       ```
+
+{:.bs-callout-tip}
+You can use the `magento-cloud db:sql` command to connect to the remote database and run SQL commands.
 
 ## Connect to secondary database
 
