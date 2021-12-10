@@ -53,7 +53,7 @@ All components options are separate nodes, and a node's purpose is defined by it
         </validation>
         <dataType>number</dataType>
         <tooltip>
-            <link>http://docs.magento.com/m2/ce/user_guide/configuration/scope.html</link>
+            <link>{{ site.user_guide_url }}/configuration/scope.html</link>
             <description translate="true">If your Magento installation has multiple websites, you can edit the scope to associate the customer with a specific site.</description>
         </tooltip>
         <imports>

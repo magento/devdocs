@@ -21,7 +21,7 @@ The 2FA extension installs when you install or upgrade to {{site.data.var.ce}} o
 
 ## Configure and manage 2FA
 
-See the _User Guide_ to [configure](https://docs.magento.com/user-guide/stores/security-two-factor-authentication.html) 2FA settings and [manage user authenticators](https://docs.magento.com/user-guide/stores/security-two-factor-authentication-manage.html).
+See the _User Guide_ to [configure]({{ site.user_guide_url }}/stores/security-two-factor-authentication.html) 2FA settings and [manage user authenticators]({{ site.user_guide_url }}/stores/security-two-factor-authentication-manage.html).
 
 Administrators have options to:
 

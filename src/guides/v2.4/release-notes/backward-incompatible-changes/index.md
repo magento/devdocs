@@ -16,7 +16,7 @@ Disabling the inventory check can improve performance for checkout steps, especi
 *  `The requested qty is not available`
 *  `Unable to place order: Enter a valid payment method and try again.`
 *  `Unable to place order: There are no source items with the in stock status.`
-*  `The shipping method is missing. Selefct the shipping method and try again.`
+*  `The shipping method is missing. Select the shipping method and try again.`
 
 The following table contains metrics of checkout with a large amount of products (750) and additional product by guest:
 
@@ -231,7 +231,7 @@ Magento\CatalogSearch\Model\Adapter\Mysql\Filter\AliasResolver
 
 ### Magento Functional Testing Framework (MFTF)
 
-MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration steps to enable Google Authenticator. See [Configuring MFTF for Two-Factor Authentication (2FA)](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html#magento-functional-testing-framework).
+MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration steps to enable Google Authenticator. See [Configuring MFTF for Two-Factor Authentication (2FA)]({{ page.baseurl }}/security/two-factor-authentication.html#magento-functional-testing-framework).
 
 ### Inventory asynchronous reindex
 

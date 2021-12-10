@@ -130,7 +130,7 @@ Save your changes to `di.xml` and exit the text editor.
 
 ## To change the directory from your module {#to-change-directory-stopwords}
 
-1. [Create a new module](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html)
+1. [Create a new module]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)
 1. In your module `etc/di.xml` add instructions:
 
    ```xml

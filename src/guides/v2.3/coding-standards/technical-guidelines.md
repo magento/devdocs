@@ -801,7 +801,7 @@ You need to read configuration from different sources (like database or filesyst
 
 #### 11.3.3. Elements
 
-11.3.3.1. All element selectors MUST follow these [best practices](https://devdocs.magento.com/mftf/docs/best-practices.html).
+11.3.3.1. All element selectors MUST follow these [best practices]({{ site.baseurl }}/mftf/docs/best-practices.html).
 
 11.3.3.2. The element `name` MUST be unique within the `<section>`.
 
