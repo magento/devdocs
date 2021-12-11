@@ -7,7 +7,8 @@ The `mergeCarts` mutation transfers the contents of a guest cart into the cart o
 
 The mutation retains any items that were already in the logged-in customer's cart. If both the guest and customer carts contain the same item, `mergeCarts` adds the quantities. Upon success, the mutation deletes the original guest cart.
 
-There is a similar [assignCustomerToGuestCart]({{page.baseurl}}/graphql/mutations/assign-customer-to-guest-cart.html) mutation which works in a different way: it assigns a logged in customer and merge customer's shopping cart items to the guest shopping cart.
+{:.bs-callout-info}
+Use the [assignCustomerToGuestCart]({{page.baseurl}}/graphql/mutations/assign-customer-to-guest-cart.html) mutation to assign the contents of a logged-in customer's cart to a guest cart.
 Customer cart becomes inactive and the guest cart remains active.
 
 ## Syntax
