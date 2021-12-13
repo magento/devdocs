@@ -62,7 +62,7 @@ bin/uct upgrade:check --help
 
 Available `--help` options for the `upgrade:check` command:
 
-*  `-m, --module-path[=MODULE-PATH]`: Path to modules to be analysed
+*  `-m, --module-path[=MODULE-PATH]`: Path of the modules to be analysed
 *  `-a, --current-version[=CURRENT-VERSION]`: Current Adobe Commerce version, version of the Adobe Commerce installation will be used if omitted.
 *  `-c, --coming-version[=COMING-VERSION]`: Target Adobe Commerce version, version of the Adobe Commerce installation will be used if omitted.
 *  `--json-output-path[=JSON-OUTPUT-PATH]`: Path of the file where the output will be exported in json format
