@@ -1,6 +1,7 @@
 ---
 group: graphql
 title: placeNegotiableQuoteOrder mutation
+b2b_only: true
 ---
 
 The `placeNegotiableQuoteOrder` mutation converts the cart into an order and returns an order ID. You cannot manage orders with GraphQL, because orders are part of the backend. You can use REST or SOAP calls to manage orders to their completion.
