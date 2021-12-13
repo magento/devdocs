@@ -125,7 +125,7 @@ By default, the {{site.data.var.uct}} exports the report into 2 different format
 
 #### JSON
 
-The JSON file contains exactly the same information shown on output: 
+The JSON file contains exactly the same information shown on output:
 
 *  List of the identified issues.
 *  Summary of the analysis.
