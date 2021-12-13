@@ -61,6 +61,7 @@ bin/uct upgrade:check --help
 ```
 
 Available `--help` options for the `upgrade:check` command:
+
 *  `-m, --module-path[=MODULE-PATH]`: Path to modules to be analysed
 *  `-a, --current-version[=CURRENT-VERSION]`: Current Adobe Commerce version, version of the Adobe Commerce installation will be used if omitted.
 *  `-c, --coming-version[=COMING-VERSION]`: Target Adobe Commerce version, version of the Adobe Commerce installation will be used if omitted.
@@ -144,10 +145,11 @@ Where arguments are as follows:
 The HTML file apart from the list of the identified issues and the summary of the analysis it also includes a set of charts that makes the report more visually understandable.
 
 They are the following ones:
-* Modules by issue severity: shows a severity distribution by modules.
-* Files by issue severity: shows a severity distribution by files.
-* Modules ordered by total number of issues.
-* Modules with relative sizes and issues: The more files a module contains, the bigger its circle. The more issues a module has, the more red its circle appears.
+
+*  *Modules by issue severity*: shows a severity distribution by modules.
+*  *Files by issue severity*: shows a severity distribution by files.
+*  *Modules ordered by total number of issues*.
+*  *Modules with relative sizes and issues*: The more files a module contains, the bigger its circle. The more issues a module has, the more red its circle appears.
 
 These charts will allow you to identify the parts are most compromised and the ones that require more work to perform the upgrade to a later version with just a glance.
 
