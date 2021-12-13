@@ -14,9 +14,9 @@ This query requires a valid [customer authentication token]({{page.baseurl}}/gra
 
 ```graphql
 {
-  setNegotiableQuoteBillingAddress(
-      input: SetNegotiableQuoteBillingAddressInput!
-  ): SetNegotiableQuoteBillingAddressOutput
+    setNegotiableQuoteBillingAddress(
+        input: SetNegotiableQuoteBillingAddressInput!
+    ): SetNegotiableQuoteBillingAddressOutput
 }
 ```
 
