@@ -18,7 +18,6 @@ The {{ site.data.var.ee }} 2.4.4 [Beta program](https://devdocs.magento.com/rele
 
 *  Composer 2.1.6
 *  Elasticsearch 7.10
-*  OpenSearch 1.1
 *  MariaDB 10.4.14
 *  MySQL 8.0.22
 *  PHP 8.0.13
@@ -42,43 +41,41 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 ## {{ site.data.var.ee }} 2.4.4-beta3 highlights
 
-The following highlights are introduced in this release. We are not releasing Cloud packages for this beta release.
+{{ site.data.var.ee }} 2.4.4-beta3 provides support for PHP 8.0.13. This Beta release also includes the following enhancements:
 
-### Platform enhancements
+*  Significant code changes to support compatibility with the latest version of PHP 8.1.
 
-{{ site.data.var.ee }} 2.4.4-beta3 provides support for PHP 8.0.13. These additional platform upgrades support PHP 8.0  and store security and performance:
+*  `phpgt/dom` has been updated to use newly related version 2.2.3 with PHP 8.1 support. <!--- AC-1750 1751 1752-->
 
-#### Upgrade for PHP 8.1 compatibility
+*  The `JQuery` library and `jQuery` modules have been upgraded to version 3.6.0.  <!--- AC-109-->
 
-*  Integers and floats in result sets will now be returned using native PHP types instead of strings when using emulated prepared statements. [GitHub-34625](https://github.com/magento/magento2/issues/34625) <!--- AC-1770 —->
+*  The third-party `jstree` library has been updated to the latest version.  <!--- AC-107-->
 
-*  Magento custom error handlers now ignore deprecation messages. This change is temporary and for 2.4.4-beta3 only. [GitHub-34532](https://github.com/magento/magento2/issues/34532) <!--- AC-1722 —->
+We are not releasing Cloud packages for this Beta release.
 
-*  Updated declared PHP versions in `composer.json` for extensions to include PHP 8.1 and PHP 7.4. [GitHub-34609](https://github.com/magento/magento2/issues/34609) <!--- AC-1721 —->
+### Additional platform enhancements
 
-*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`. <!--- AC-1650 —->
+*  Integers and floats in result sets are now returned using native PHP types instead of strings when using emulated prepared statements. [GitHub-34625](https://github.com/magento/magento2/issues/34625) <!--- AC-1770-->
 
-*  Updated the `phpgt/dom` Composer dependency to the latest version compatible with PHP 8.1. <!--- AC-1750 1751 1752 —->
+*  Magento custom error handlers now ignore deprecation messages. This change is temporary and for 2.4.4-beta3 only. [GitHub-34532](https://github.com/magento/magento2/issues/34532) <!--- AC-1722-->
 
-*  Auto-creation of arrays from false value have been disabled to ensure compatibility with PHP 8.1. <!--- AC-1697 —->
+*  Updated declared PHP versions in `composer.json` for extensions to include PHP 8.1 and PHP 7.4. [GitHub-34609](https://github.com/magento/magento2/issues/34609) <!--- AC-1721-->
 
-#### Other platform upgrades
+*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`. <!--- AC-1650-->
 
-*  The JQuery library has been upgraded to version 3.6.0. <!--- AC-109 —->
+*  Auto-creation of arrays from false value have been disabled to ensure compatibility with PHP 8.1. <!--- AC-1697-->
 
-*  MySQL has been upgraded to the latest 8.0.x version.  <!--- AC-491 —->
+*  MySQL has been upgraded to the latest 8.0.x version.  <!--- AC-491-->
 
-*  MariaDB has been upgraded to version 10.4.22.  <!--- AC-1469 —->
-
-*  Updated the `lib/web/jquery/jstree` third-party library. <!--- AC-107 —->
+*  MariaDB has been upgraded to version 10.4.22.  <!--- AC-1469-->
 
 #### Additional changes
 
-*  Added Venmo payment option. <!--- AC-1229 —->
+*  Added Venmo payment option. <!--- AC-1229-->
 
-*  Added an index to `magento_giftcardaccount.code` to improve performance. <!--- AC-705 —->
+*  Added an index to `magento_giftcardaccount.code` to improve performance. <!--- AC-705-->
 
-*  PayPal can now track by BN code. <!--- AC-1228 —->
+*  PayPal can now track by BN code. <!--- AC-1228-->
 
 ## {{ site.data.var.ee }} 2.4.4 highlights
 
@@ -94,8 +91,6 @@ The following highlights were added in earlier versions of 2.4.4 and are include
 
 *  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Outdated Laminas dependencies have been removed from the codebase.
 
-*  Significant code changes for the upgrade of the jQuery library to 3.6.0.
-
 *  The `endroid/qr-code` dependency has been updated to the latest version.
 
 ### jQuery UI upgrade
@@ -106,9 +101,9 @@ jQuery UI has been upgraded to the latest version (v1.12.1). The following v1.10
 
 *  `.zIndex()`.  jQuery UI v1.12.1 includes `jquery/z-index.js`, which supports the use of `.zIndex()`. See [UI Core](https://jqueryui.com/changelog/1.12.0/#ui-core).
 
-*  Data fallbacks for widget names. You must use the full name for the `.data()` key. See [Widget Factory](https://jqueryui.com/changelog/1.10.0/#widget-factory).
+*  Data fallbacks for widget names. You must use the full name for the `.data()` key.
 
-*  Hard coding of classes such as `ui-corner-all` in widgets. See [Widgets]( https://jqueryui.com/upgrade-guide/1.12/#widget). <!--- AC-106-->
+*  Hard coding of classes such as `ui-corner-all` in widgets.
 
 ### Library upgrades
 
@@ -507,7 +502,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-988-->
 
-*  You can now import successfully after running  `bin/magento app:config:dump` and manually changing `config.php`.
+*  You can now import successfully after running  `bin/magento app:config:dump` and manually editing `config.php`.
 
 ### Index
 
@@ -528,6 +523,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- AC-1172-->
 
 *  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for Magento 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
+
+<!--- AC-97-->
+
+*  Removed the unused `jquery.hoverIntent` JavaScript library. [GitHub-33732](https://github.com/magento/magento2/issues/33732)
 
 ### Logging
 
@@ -555,6 +554,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 ### MFTF
 
+<!--- AC-1397-->
+
+*  Fixed errors in MFTF tests for downloadable products. [GitHub-34270](https://github.com/magento/magento2/issues/34270)
+
 #### New action groups
 
 `AdminCheckOrderStatusInGridActionGroup` [GitHub-33747](https://github.com/magento/magento2/issues/33747)
@@ -565,61 +568,63 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 Repetitive actions have been replaced with action groups in these tests:
 
+`AdminAddBundleItemsTest` [GitHub-34312](https://github.com/magento/magento2/issues/34312)
+
 `AdminConfigurableProductAddConfigurationTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
-
-`AdminConfigurableProductDisableAnOptionTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
-
-`AdminConfigurableProductRemoveAnOptionTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
-
-`AdminConfigurableProductRemoveConfigurationTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
-
-`AdminCreateInactiveInMenuFlatCategoryTest` [GitHub-34510](https://github.com/magento/magento2/issues/34510)
-
-`AdminCreateInactiveFlatCategoryTest` [GitHub-34490](https://github.com/magento/magento2/issues/34490)
-
-`AdminUpdateFlatCategoryAndAddProductsTest` [GitHub-34490](https://github.com/magento/magento2/issues/34490)
-
-`AdminSimpleProductSetEditContentTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
-
-`AdminCreateAndEditSimpleProductSettingsTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
-
-`AdminCreateAndEditVirtualProductSettingsTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
 
 `AdminConfigurableProductBulkUpdateTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
 
-`CreateProductAttributeEntityWithReservedKeysTest`[GitHub-34422](https://github.com/magento/magento2/issues/34422)
-
-`AdminCreateDuplicateCategoryTest` [GitHub-34414](https://github.com/magento/magento2/issues/34414)
-
-`AdminCreateDuplicateProductTest` [GitHub-34414](https://github.com/magento/magento2/issues/34414)
-
-`StorefrontProductNameWithDoubleQuoteTest` [GitHub-34317](https://github.com/magento/magento2/issues/34317)
+`AdminConfigurableProductDisableAnOptionTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
 
 `AdminConfigurableProductOutOfStockAndDeleteCombinationTest` [GitHub-34316](https://github.com/magento/magento2/issues/34316)
 
 `AdminConfigurableProductOutOfStockTestDeleteChildrenTest` [GitHub-34316](https://github.com/magento/magento2/issues/34316)
 
-`StorefrontCheckRefundGrandTotalActionGroup` [GitHub-34315](https://github.com/magento/magento2/issues/34315)
+`AdminConfigurableProductRemoveAnOptionTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
 
-`AdminNavigateMultipleUpSellProductsTest` [GitHub-34314](https://github.com/magento/magento2/issues/34314)
+`AdminConfigurableProductRemoveConfigurationTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
+
+`AdminCreateAndEditSimpleProductSettingsTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
+
+`AdminCreateAndEditVirtualProductSettingsTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
+
+`AdminCreateInactiveFlatCategoryTest` [GitHub-34490](https://github.com/magento/magento2/issues/34490)
+
+`AdminCreateInactiveInMenuFlatCategoryTest` [GitHub-34510](https://github.com/magento/magento2/issues/34510)
+
+`AdminCreateDuplicateCategoryTest` [GitHub-34414](https://github.com/magento/magento2/issues/34414)
+
+`AdminCreateDuplicateProductTest` [GitHub-34414](https://github.com/magento/magento2/issues/34414)
+
+`AdminDeleteSimpleProductTest` [GitHub-33783](https://github.com/magento/magento2/issues/33783)
 
 `AdminEditRelatedBundleProductTest` [GitHub-34313](https://github.com/magento/magento2/issues/34313)
 
-`EnableDisableBundleProductStatusTest` [GitHub-34313](https://github.com/magento/magento2/issues/34313)
-
 `AdminMassDeleteBundleProductsTest` [GitHub-34313](https://github.com/magento/magento2/issues/34313)
 
-`AdminAddBundleItemsTest` [GitHub-34312](https://github.com/magento/magento2/issues/34312)
+`AdminNavigateMultipleUpSellProductsTest` [GitHub-34314](https://github.com/magento/magento2/issues/34314)
 
-`StorefrontConfigurableProductGridViewTest` [GitHub-34311](https://github.com/magento/magento2/issues/34311)
-
-`StorefrontConfigurableProductListViewTest` [GitHub-34311](https://github.com/magento/magento2/issues/34311)
-
-`StorefrontProductNameWithHTMLEntitiesTest` [GitHub-33806](https://github.com/magento/magento2/issues/33806)
+`AdminSimpleProductSetEditContentTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
 
 `AdminSimpleProductTypeSwitchingToConfigurableProductTest` [GitHub-33788](https://github.com/magento/magento2/issues/33788)
 
 `AdminConfigurableProductTypeSwitchingToVirtualProductTest` [GitHub-33788](https://github.com/magento/magento2/issues/33788)
+
+`AdminCreateConfigurableProductWithDisabledChildrenProductsTest` [GitHub-33775](https://github.com/magento/magento2/issues/33775)
+
+`AdminUpdateFlatCategoryAndAddProductsTest` [GitHub-34490](https://github.com/magento/magento2/issues/34490)
+
+`AdminUpdateTopCategoryUrlWithNoRedirectTest` [GitHub-33774](https://github.com/magento/magento2/issues/33774)
+
+`AdminUpdateTopCategoryUrlWithRedirectTest` [GitHub-33774](https://github.com/magento/magento2/issues/33774)
+
+`CreateProductAttributeEntityWithReservedKeysTest`[GitHub-34422](https://github.com/magento/magento2/issues/34422)
+
+`EnableDisableBundleProductStatusTest` [GitHub-34313](https://github.com/magento/magento2/issues/34313)
+
+`StorefrontCheckRefundGrandTotalActionGroup` [GitHub-34315](https://github.com/magento/magento2/issues/34315)
+
+`StorefrontInactiveCatalogRuleTest` [GitHub-33556](https://github.com/magento/magento2/issues/33556)
 
 `StorefrontConfigurableProductCantAddToCartTest` [GitHub-33786](https://github.com/magento/magento2/issues/33786)
 
@@ -627,15 +632,13 @@ Repetitive actions have been replaced with action groups in these tests:
 
 `StorefrontConfigurableProductCanAddToCartTest` [GitHub-33784](https://github.com/magento/magento2/issues/33784)
 
-`AdminDeleteSimpleProductTest` [GitHub-33783](https://github.com/magento/magento2/issues/33783)
+`StorefrontConfigurableProductGridViewTest` [GitHub-34311](https://github.com/magento/magento2/issues/34311)
 
-`AdminCreateConfigurableProductWithDisabledChildrenProductsTest` [GitHub-33775](https://github.com/magento/magento2/issues/33775)
+`StorefrontConfigurableProductListViewTest` [GitHub-34311](https://github.com/magento/magento2/issues/34311)
 
-`AdminUpdateTopCategoryUrlWithNoRedirectTest` [GitHub-33774](https://github.com/magento/magento2/issues/33774)
+`StorefrontProductNameWithHTMLEntitiesTest` [GitHub-33806](https://github.com/magento/magento2/issues/33806)
 
-`AdminUpdateTopCategoryUrlWithRedirectTest` [GitHub-33774](https://github.com/magento/magento2/issues/33774)
-
-`StorefrontInactiveCatalogRuleTest` [GitHub-33556](https://github.com/magento/magento2/issues/33556)
+`StorefrontProductNameWithDoubleQuoteTest` [GitHub-34317](https://github.com/magento/magento2/issues/34317)
 
 #### New tests
 
@@ -743,7 +746,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- MC-42105-->
 
-*  {{ site.data.var.ee }} now enables the **Save** button and autocompletes fields when you enter an incomplete URL while adding a video (Admin **Catalog**  > **Products** > Add Video). Previously, the **Save** button was disabled, and fields were not populated.
+*  {{ site.data.var.ee }} now enables the **Save** button and autocompletes fields when you enter an incomplete URL while adding a video (Admin **Catalog**  > **Products** > **Add Video**). Previously, the **Save** button was disabled, and fields were not populated.
 
 ### Return Merchandise Authorizations (RMA)
 
@@ -851,11 +854,29 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Added a test to verify custom date attribute format for storefront and Admin.
 
+<!--- AC-1517-->
+
+*  Corrected errors with `StorefrontPOWorkflowVerifyApprovalFlowTabTest`. [GitHub-34378](https://github.com/magento/magento2/issues/34378)
+
+<!--- AC-1571-->
+
+*  Functional tests have been stabilized for PHP 8.x compatibility. [GitHub-34327](https://github.com/magento/magento2/issues/34327), [GitHub-34188](https://github.com/magento/magento2/issues/34188)
+
 ### Theme
 
 <!--- MC-41887-->
 
 *  Notification messages are now displayed correctly when {{ site.data.var.ee }} has a subpath configured in its base URL.
+
+### Translations and locales
+
+<!--- magento/magento2/pull/33787-->
+
+*  Swiss region names are now consistently presented in English in the create or edit address forms. [GitHub-32602](https://github.com/magento/magento2/issues/32602)
+
+<!--- magento/magento2/pull/33128-->
+
+*  Updated `zip_codes.xml` patterns for Guernsey to support GY10 postcodes for the Island of Sark. [GitHub-33144](https://github.com/magento/magento2/issues/33144)
 
 ### UI
 
