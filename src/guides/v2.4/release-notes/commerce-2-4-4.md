@@ -71,7 +71,7 @@ We are not releasing Cloud packages for this Beta release.
 
 #### Additional changes
 
-*  Added Venmo payment option. <!--- AC-1229-->
+*  Added the Venmo payment option. <!--- AC-1229-->
 
 *  Added an index to `magento_giftcardaccount.code` to improve performance. <!--- AC-705-->
 
