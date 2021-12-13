@@ -150,11 +150,11 @@ When domain validation completes, Adobe provisions the Let's Encrypt TLS/SSL cer
 
 During the initial Fastly setup process, you can use the following URLs to configure and test Fastly caching in Staging and Production environments:
 
--  Pro projects:
+-  For Pro Staging and Production:
    -  `mcprod.<your-domain>.com`
    -  `mcstaging.<your-domain>.com`
 
--  Starter projects:
+-  For Starter Production only:
    -  `mcprod.<your-domain>.com`
 
 {:.bs-callout-info}

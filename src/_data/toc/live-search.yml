@@ -4,10 +4,6 @@ pages:
   url: /live-search/overview.html
   versionless: true
 
-- label: Install Live Search
-  url: /live-search/install.html
-  versionless: true
-
 - label: Storefront Popover
   url: /live-search/storefront-popover.html
   versionless: true
@@ -44,8 +40,4 @@ pages:
 
 - label: Events
   url: /live-search/events.html
-  versionless: true
-
-- label: Release Notes
-  url: /live-search/release-notes.html
   versionless: true
