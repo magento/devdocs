@@ -31,13 +31,31 @@ mutation {
 **Request:**
 
 ```graphql
-
+mutation {
+  placeNegotiableQuoteOrder(
+    input: {
+      quote_uid: "xCA4wSZEHsb5QbFiKfoq5k1Dk8vIPBgb"
+    }
+  ) {
+    order {
+      order_number
+    }
+  }
+}
 ```
 
 **Response:**
 
 ```json
-
+{
+  "data": {
+    "placeNegotiableQuoteOrder": {
+      "order": {
+        "order_number": "000000006"
+      }
+    }
+  }
+}
 ```
 
 ## Input attributes
@@ -61,17 +79,3 @@ Attribute |  Data Type | Description
 Attribute |  Data Type | Description
 --- | --- | ---
 `order_number` | String | The unique ID that identifies the order
-
-## Errors
-
-Error | Description
---- | ---
-`Enter a valid payment method and try again` | The payment method was not set. See [setPaymentMethodOnCart]({{ page.baseurl }}/graphql/mutations/set-payment-method.html) mutation.
-`Guest email for cart is missing.` | The guest attempted to place an order but did not provide an email address. See [setGuestEmailOnCart]({{ page.baseurl }}/graphql/mutations/set-guest-email.html) mutation.
-`Please check the billing address information` | The billing address was not set. See [setBillingAddressOnCart]({{ page.baseurl }}/graphql/mutations/set-billing-address.html) mutation.
-`Required parameter "cart_id" is missing` | The mutation does not contain a `cart_id` parameter.
-`Some addresses can't be used due to the configurations for specific countries` | The shipping method was not set. See [setShippingMethodsOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-method.html) mutation.
-`Some of the products are out of stock` | One of the products in the shopping cart are currently out of stock.
-`The current user cannot perform operations on cart` | An unauthorized user (guest) tried to place an order on behalf of an authorized user (customer), or a customer tried to place an order on behalf of another customer.
-`The shipping method is missing. Select the shipping method and try again` | The shipping method was not set. See [setShippingMethodsOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-method.html) mutation.
-`Unable to place order: A server error stopped your order from being placed. Please try to place your order again` | The shopper tried to place an order when no products are in the shopping cart.
