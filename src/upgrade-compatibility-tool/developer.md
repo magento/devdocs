@@ -76,6 +76,7 @@ The following instructions are for MacOS systems:
    ```
 
 ### GraphQL unit testing
+
 The [Jest](https://jestjs.io/docs/en/getting-started.html) framework was used to create these JS unit tests:
 
 The tests are inside `dev/tests/Js`.
@@ -88,6 +89,7 @@ Run unit tests or `jest` as follows:
   ./node_modules/.bin/jest --verbose --rootDir=dev/tests/Js/
    ```
 ### Eslint code analysis
+
 [Eslint](https://eslint.org/docs/user-guide/getting-started) is a static code analysis tool for identifying problematic patterns found in JavaScript code, with the goal of making code more consistent and avoiding bugs.
 
 Run `eslint` code analysis as follows:
@@ -113,7 +115,7 @@ The {{site.data.var.uct}} calculates this score according to the complexity scor
 
 ### Complexity score formula
 
-`Complexity Score = Critical issues * 3 + Errors * 2 + Warnings`
+`Complexity Score = (Critical issues * 3) + (Errors * 2) + Warnings`
 
 {:.bs-callout-warning}
 These are absolute values.
