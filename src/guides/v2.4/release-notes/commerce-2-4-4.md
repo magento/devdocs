@@ -63,7 +63,7 @@ We are not releasing Cloud packages for this Beta release.
 
 *  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`. <!--- AC-1650-->
 
-*  Auto-creation of arrays from false value have been disabled to ensure compatibility with PHP 8.1. <!--- AC-1697-->
+*  Auto-creation of arrays from false values have been disabled to ensure compatibility with PHP 8.1. <!--- AC-1697-->
 
 *  MySQL has been upgraded to the latest 8.0.x version.  <!--- AC-491-->
 
@@ -921,10 +921,6 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- MC-42399-->
 
 *  `GET /V1/company/:id` now returns `is_purchase_order_enabled` attribute values as expected.
-
-<!--- AC-1169-->
-
-*  The `V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**.  [GitHub-30132](https://github.com/magento/magento2/issues/30132)
 
 ### Wish list
 
