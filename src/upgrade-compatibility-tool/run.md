@@ -79,7 +79,8 @@ Available `--help` options for the `upgrade:check` command:
 
 ### Output
 
-As a result of the analysis performed, UCT outputs a report that contains a list of issues per file specifying its severity, error code and error description.
+As a result of the analysis performed, UCT exports a report that contains a list of issues for each file specifying its severity, error code and error description.
+
 See the example below:
 
 ```terminal
@@ -123,8 +124,13 @@ See the example below:
 By default, the {{site.data.var.uct}} exports the report into 2 different formats: `json` and `html`.
 
 #### JSON
-The JSON file contains exactly the same information shown on the output: a list of the identified issues and the summary of the analysis.
-Per each issue encountered, the report provides detailed information such as the severity and description of the problem.
+
+The JSON file contains exactly the same information shown on output: 
+
+*  List of the identified issues.
+*  Summary of the analysis.
+
+For each encountered issue, the report provides detailed information such as the severity and description of the problem.
 
 {:.bs-callout-info}
 The default path for the output folder is `var/output/[TIME]-results.json`.
@@ -160,7 +166,7 @@ These charts will allow you to identify the parts are most compromised and the o
 {:.bs-callout-info}
 The default path for the output folder is `var/output/[TIME]-results.html`.
 
-To export this report into a different output folder, run:
+To export this report into a different output folder run:
 
 ```bash
 bin/uct upgrade:check <dir> --html-output-path[=HTML-OUTPUT-PATH]
