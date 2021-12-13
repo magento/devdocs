@@ -118,10 +118,11 @@ See the example below:
  ----------------------------- ------------------
 ```
 
-The {{site.data.var.uct}} exports the report into 2 different formats: `json` and `html`.
+{:.bs-callout-warning}
+By default, the {{site.data.var.uct}} exports the report into 2 different formats: `json` and `html`.
 
 #### JSON
-The JSON file contains exactly the same information shown on the ouput: a list of the identified issues and the summary of the analysis.
+The JSON file contains exactly the same information shown on the output: a list of the identified issues and the summary of the analysis.
 Per each issue encountered, the report provides detailed information such as the severity and description of the problem.
 
 {:.bs-callout-info}
@@ -140,7 +141,33 @@ Where arguments are as follows:
 
 #### HTML
 
-WIP
+The HTML file apart from the list of the identified issues and the summary of the analysis it also includes a set of charts that makes the report more visually understandable.
+
+They are the following ones:
+* Modules by issue severity: shows a severity distribution by modules.
+* Files by issue severity: shows a severity distribution by files.
+* Modules ordered by total number of issues.
+* Modules with relative sizes and issues: The more files a module contains, the bigger its circle. The more issues a module has, the more red its circle appears.
+
+These charts will allow you to identify the parts are most compromised and the ones that require more work to perform the upgrade to a later version with just a glance.
+
+![HTML report - Summary](img/uct-html-summary.png){:height="80%" width="80%"}
+
+![HTML report - Details](img/uct-html-details.png){:height="80%" width="80%"}
+
+{:.bs-callout-info}
+The default path for the output folder is `var/output/[TIME]-results.html`.
+
+To export this report into a different output folder, run:
+
+```bash
+bin/uct upgrade:check <dir> --html-output-path[=HTML-OUTPUT-PATH]
+```
+
+Where arguments are as follows:
+
+*  `<dir>`: {{site.data.var.ee}} installation directory.
+*  `[=HTML-OUTPUT-PATH]`: Path directory to export the `.html` output file.
 
 ### Use the `--ignore-current-version-compatibility-issues` option
 
@@ -151,7 +178,7 @@ bin/uct upgrade:check --ignore-current-version-compatibility-issues <dir>
 ```
 
 {:.bs-callout-info}
-This applies only to PHP API validations. Core code validations are compared only with the same version.
+This applies only to PHP API validations.
 
 ### Vanilla installation
 
