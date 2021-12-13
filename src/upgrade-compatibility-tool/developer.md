@@ -85,7 +85,7 @@ The string schemas for testing are inside `dev/tests/Acceptance/_files/graphql_s
 Run unit tests or `jest` as follows:
 
    ```bash
-   npm run unit-test
+  ./node_modules/.bin/jest --verbose --rootDir=dev/tests/Js/
    ```
 ### Eslint code analysis
 [Eslint](https://eslint.org/docs/user-guide/getting-started) is a static code analysis tool for identifying problematic patterns found in JavaScript code, with the goal of making code more consistent and avoiding bugs.
@@ -94,6 +94,7 @@ Run `eslint` code analysis as follows:
 
    ```bash
    npm run eslint -- path/to/analyse
+   ./node_modules/.bin/eslint -c dev/tests/Static/.eslintrc --rulesdir vendor/magento/magento-coding-standard/eslint/rules path/to/analyse
    ```
 
 ## Complexity score
@@ -112,7 +113,7 @@ The {{site.data.var.uct}} calculates this score according to the complexity scor
 
 ### Complexity score formula
 
-`Complexity Score = ({{site.data.var.ee}} core errors) * 4 + (Critical errors) * 4 + [(PHP and JS errors)+(GraphQL errors)] * 2 + [(PHP and JS warnings)+(GraphQL warnings)] * 1`
+`Complexity Score = Critical issues * 3 + Errors * 2 + Warnings`
 
 {:.bs-callout-warning}
 These are absolute values.
