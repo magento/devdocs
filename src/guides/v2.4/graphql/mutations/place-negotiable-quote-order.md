@@ -14,7 +14,7 @@ The negotiable quote must have one of the following statuses:
 
 If the status is DECLINED or EXPIRED, the negotiable quote is processed like a standard cart, without applying any discounts. The negotiable quote is not converted to a standard cart.
 
-Perform the following actions before using the `placeNegotiableQuoteOrder` mutation:
+Perform the following actions before using the `placeNegotiableQuoteOrder` mutation. It might be necessary to perform additional steps during the process of coming to an agreement during the negotiable quote lifecycle.
 
 -  [Create an empty cart]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
 -  [Add one or more products]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to the cart
