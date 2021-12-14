@@ -27,17 +27,9 @@ The {{ site.data.var.ee }} 2.4.4 [Beta program](https://devdocs.magento.com/rele
 {:.bs-callout-info}
 All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ee }} 2.4.4.
 
-## Known issues
+## Known issue
 
 **Issue: Deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0**. {{ site.data.var.ee }} displays the following deprecation message during download: `Deprecation Notice: Required parameter $pathSuffix follows optional parameter $translations in vendor/magento/magento-composer-installer/src/MagentoHackathon/Composer/Magento/MapParser.php:12`. Installation is not affected by this message. <!--- AC-1678-->
-
-**Issue: The PayPal button is missing from the mini cart, shopping cart, and product detail pages**. When the PayPal Express Checkout payment method is enabled on a 2.4.4-beta2 deployment running B2B, the **PayPal** button is not displayed on these pages:
-
-*  Product details
-*  Shopping cart
-*  Mini cart
-
-**Workaround**: Shoppers can use PayPal Express checkout in the full checkout workflow. <!--- AC-1765-->
 
 ## {{ site.data.var.ee }} 2.4.4-beta3 highlights
 
@@ -528,6 +520,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Removed the unused `jquery.hoverIntent` JavaScript library. [GitHub-33732](https://github.com/magento/magento2/issues/33732)
 
+<!--- magento/magento2/pull/34366)-->
+
+*  `lib/internal/Magento/Framework/Filter/Money.php` has been deprecated. It contains the `money_format()` function, which was removed in PHP 8.x. [GitHub-33870](https://github.com/magento/magento2/issues/33870)
+
+<!--- AC-1366-->
+
+*  Added support for PHP 8.1 to `laminas/laminas-math`. [GitHub-34242](https://github.com/magento/magento2/issues/34242)
+
 ### Logging
 
 <!--- MC-42360-->
@@ -557,6 +557,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- AC-1397-->
 
 *  Fixed errors in MFTF tests for downloadable products. [GitHub-34270](https://github.com/magento/magento2/issues/34270)
+
+<!--- magento/magento2/pull/33530-->
+
+*  Removed `CliCacheFlushActionGroup` from `CatalogSearch`, `GroupedProduct`, `Newsletter`, `Paypal`, `Quote`, and `Review` modules. [GitHub-33531](https://github.com/magento/magento2/issues/33531)
 
 #### New action groups
 
@@ -754,6 +758,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The Admin Create Return Product grid now displays tax, including prices only for products that are configured to display tax with prices. Previously, {{ site.data.var.ee }} did not check the configuration display settings on the `tax/calculation/price_includes_tax` flag.
 
+### Reviews
+
+*  The product list view now displays the correct starred rating for products. [GitHub-30196](https://github.com/magento/magento2/issues/30196)
+
 ### Sales
 
 <!--- MC-42025-->
@@ -805,6 +813,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-267-->
 
 *  Import of table rates now works as expected when using the S3 storage adapter. Previously, {{ site.data.var.ee }} displayed this error: `File "https://[bucket].s3.eu-central-1.amazonaws.com/[prefix]/tmp/phpLjGmHf" not found`. [GitHub-33072](https://github.com/magento/magento2/issues/33072)
+
+<!--- magento/magento2/pull/33232-->
+
+*  You can now disable shipment update emails as expected from **Stores**  > **Configuration**  >  **Sales**  >  **Sales Emails**. [GitHub-33165](https://github.com/magento/magento2/issues/33165)
 
 ### Staging
 
@@ -903,6 +915,14 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- MC-42793-->
 
 *  {{ site.data.var.ee }} now displays related products, up-sell products, and cross-sell products according to their positions in the Admin.
+
+<!--- magento/magento2/pull/33098-->
+
+*  `.action-close` buttons now work as expected when `Multiselect` is used in a modal. Previously, the `action-close` button did not work because it inherited the CSS of the  `.action-close` button of the modal. [GitHub-27240](https://github.com/magento/magento2/issues/27240)
+
+<!--- AC-1217-->
+
+*  The Offers rich snippet is now present on the main price field in Product view. Previously, this snippet was missing from this field in related products block in Product view, which resulted in Google search results displaying incorrect prices. [GitHub-34063](https://github.com/magento/magento2/issues/34063)
 
 ### Web API framework
 
