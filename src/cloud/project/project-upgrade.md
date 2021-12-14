@@ -22,9 +22,6 @@ Review the [{{site.data.var.ece}} service versions][version compatibility matrix
 -  Upgrade third-party extensions to the latest supported version.
 -  Update the `.gitignore` file.
 
-{:.bs-callout-info}
-If you upgrade the PHP version, you must also submit a Support ticket to update the New Relic service.
-
 ### Configuration management
 
 Older versions of {{site.data.var.ee}}, such as 2.1.4 or later to 2.2.x or later, used a `config.local.php` file for Configuration Management. {{site.data.var.ee}} version 2.2.0 and later use the `config.php` file, which works exactly like the `config.local.php` file, but it has different configuration settings that include a list of your enabled modules and additional configuration options.
