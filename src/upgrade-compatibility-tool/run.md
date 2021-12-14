@@ -98,12 +98,12 @@ The report also includes a detailed summary that shows:
 
 *  *Current version*: the version currently installed.
 *  *Target Version*: the version you want to upgrade to.
-*  *Execution time*: amount of time the analysis took to build the report (mm:ss).
-*  *Modules that require update*: percentage of modules that contain compatibility issues and require update.
-*  *Files that require update*: percentage of files that contain compatibility issues and require update.
-*  *Total critical errors*: total amount of critical errors found.
-*  *Total errors*: total amount of errors found.
-*  *Total warnings*: total amount of warnings found.
+*  *Execution time*: the amount of time the analysis took to build the report (mm:ss).
+*  *Modules that require update*: the percentage of modules that contain compatibility issues and require update.
+*  *Files that require update*: the percentage of files that contain compatibility issues and require update.
+*  *Total critical errors*: the number of critical errors found.
+*  *Total errors*: the number of errors found.
+*  *Total warnings*: the number of warnings found.
 
 See the example below:
 
