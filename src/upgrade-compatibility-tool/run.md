@@ -148,13 +148,11 @@ Where arguments are as follows:
 
 #### HTML
 
-The HTML file apart from the list of the identified issues and the summary of the analysis it also includes a set of charts that makes the report more visually understandable.
-
-They are the following ones:
+The HTML file will also contain the list of identified issues and the summary of the analysis. But on top of this, it will include 4 different charts that makes the report more visually understandable:
 
 *  *Modules by issue severity*: shows a severity distribution by modules.
 *  *Files by issue severity*: shows a severity distribution by files.
-*  *Modules ordered by total number of issues*.
+*  *Modules ordered by total number of issues*: shows the 10 most compromised modules taking into account warnings, errors and critical errors.
 *  *Modules with relative sizes and issues*: The more files a module contains, the bigger its circle. The more issues a module has, the more red its circle appears.
 
 These charts will allow you to identify the parts are most compromised and the ones that require more work to perform the upgrade to a later version with just a glance.
