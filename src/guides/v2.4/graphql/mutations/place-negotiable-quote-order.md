@@ -4,7 +4,15 @@ title: placeNegotiableQuoteOrder mutation
 b2b_only: true
 ---
 
-The `placeNegotiableQuoteOrder` mutation converts the cart into an order and returns an order ID. You cannot manage orders with GraphQL, because orders are part of the backend. You can use REST or SOAP calls to manage orders to their completion.
+The `placeNegotiableQuoteOrder` mutation converts a negotiable quote into an order and returns an order ID.
+
+The negotiable quote must have one of the following statuses:
+
+-  SUBMITTED
+-  DECLINED
+-  EXPIRED
+
+If the status is DECLINED or EXPIRED, the negotiable quote is processed as a standard cart, without applying any discounts.
 
 Perform the following actions before using the `placeNegotiableQuoteOrder` mutation:
 
@@ -14,6 +22,8 @@ Perform the following actions before using the `placeNegotiableQuoteOrder` mutat
 -  Set the shipping address
 -  Set the shipping method
 -  Set the payment method
+
+You cannot manage orders with GraphQL, because orders are part of the backend. You can use REST or SOAP calls to manage orders to their completion.
 
 ## Syntax
 
