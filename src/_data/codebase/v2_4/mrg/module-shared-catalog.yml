@@ -1,6 +1,5 @@
 ---
 title: SharedCatalog
-release: 2.4.3
 content: "## Overview\n\nThe Magento_SharedCatalog modules defines the visibility
   of products as well as product prices in the catalog and in B2B quotes for different
   company accounts. \n\nThe module allows a merchant to create multiple shared catalogs,

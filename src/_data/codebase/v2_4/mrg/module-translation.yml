@@ -1,6 +1,5 @@
 ---
 title: Translation
-release: 2.4.3
 content: |-
   **Translation** enables localization of a store for multiple regions and markets.
   Also provides the inline translation tool.

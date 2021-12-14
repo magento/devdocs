@@ -1,6 +1,5 @@
 ---
 title: AdobeStockImageAdminUi
-release: 2.4.3
 content: |-
   The Magento_AdobeStockImageAdminUi module is responsible for the admin panel user interface (UI) implementation.
 

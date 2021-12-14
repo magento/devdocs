@@ -1,6 +1,5 @@
 ---
 title: RmaStaging
-release: 2.4.3
 content: |-
   The Magento_RmaStaging module is a part of the staging functionality in Magento EE. It enables you to create updates for the parameters of the Autosettings field set of a product.
 

@@ -1,6 +1,5 @@
 ---
 title: InventoryInStorePickupWebapiExtension
-release: 2.4.3
 content: "The `InventoryInStorePickupWebapiExtension`  is a part of `InStorePickup`
   implementation.\n\nThis module is part of the new inventory infrastructure. The\n[Inventory
   Management overview](https://devdocs.magento.com/guides/v2.4/inventory/index.html)\ndescribes

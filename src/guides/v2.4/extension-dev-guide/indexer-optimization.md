@@ -195,7 +195,7 @@ To disable the Product EAV indexer in the Admin, go to **Stores** > Settings > *
 
 By default, all websites are assigned to a customer group. If there are a large number of products, websites, customer groups, and B2B shared catalogs, the execution time of the `Product Price` and `Catalog Rule` indexers may be quite long. This is because each website, customer group, shared catalog, and product SKU must all be indexed against each other in the product price and catalog rule indexer-related tables.
 
-You can exclude websites from a customer group or shared catalog on the [customer group create/edit page](https://docs.magento.com/user-guide/customers/customer-groups.html#create-a-customer-group). Excluding websites can decrease `Product Price` and `Catalog Rule` indexing time, because excluded websites are not indexed.
+You can exclude websites from a customer group or shared catalog on the [customer group create/edit page]({{ site.user_guide_url }}/customers/customer-groups.html#create-a-customer-group). Excluding websites can decrease `Product Price` and `Catalog Rule` indexing time, because excluded websites are not indexed.
 
 When a customer group with a new, excluded website is saved, the `Product Price`, `Catalog Rule` and `Catalog Search` indexes are invalidated. If you have a large number of products, websites, and customer groups, we recommended you pause the reindex process until you have excluded websites from the customer groups.
 
@@ -207,7 +207,7 @@ You cannot exclude websites from the `NOT LOGGED IN` customer group.
 
 {:.bs-callout-warning}
 When a website is added to the excluded customer group and a customer who belongs to this group is trying to login to their account on the excluded website, the customer gets the `"This website is excluded from customer's group."` warning.
-Customers are not allowed to login to the website even if [the scope of customer accounts is shared with all websites](https://docs.magento.com/user-guide/customers/account-scope.html), because there are no prices in the index table for this user.
+Customers are not allowed to login to the website even if [the scope of customer accounts is shared with all websites]({{ site.user_guide_url }}/customers/account-scope.html), because there are no prices in the index table for this user.
 
 {:.ref-header}
 Related topics

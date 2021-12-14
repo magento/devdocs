@@ -1,6 +1,5 @@
 ---
 title: InventoryConfigurableProductIndexer
-release: 2.4.3
 content: |-
   The `InventoryConfigurableProductIndexer` module integrates inventory management business logic into Magento's indexation logic for configurable products.
 

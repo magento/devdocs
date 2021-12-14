@@ -1,6 +1,5 @@
 ---
 title: CompanyPayment
-release: 2.4.3
 content: |-
   The Magento_CompanyPayment module allows a merchant to configure which payment methods are available for B2B companies.
 

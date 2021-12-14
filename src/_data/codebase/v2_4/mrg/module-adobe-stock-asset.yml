@@ -1,6 +1,5 @@
 ---
 title: AdobeStockAsset
-release: 2.4.3
 content: |-
   The Magento_AdobeStockAsset module is responsible for the Adobe Stock assets handling implementation on Magento side.
 

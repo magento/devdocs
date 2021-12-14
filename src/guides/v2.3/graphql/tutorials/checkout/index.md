@@ -36,7 +36,7 @@ Complete the following prerequisites:
 
 -  Know how to generate a customer token. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for details.
 
--  In the Magento admin, create a [coupon](https://docs.magento.com/user-guide/marketing/price-rules-cart-coupon-code-configure.html) that will be used in [Step 7. Apply a coupon]({{page.baseurl}}/graphql/tutorials/checkout/checkout-coupon.html).
+-  In the Magento admin, create a [coupon]({{ site.user_guide_url }}/marketing/price-rules-cart-coupon-code-configure.html) that will be used in [Step 7. Apply a coupon]({{page.baseurl}}/graphql/tutorials/checkout/checkout-coupon.html).
 
 ### Other resources
 

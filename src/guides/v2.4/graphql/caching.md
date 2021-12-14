@@ -5,6 +5,8 @@ title: GraphQL caching
 
 Magento can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and retrieve large amounts of information from the database. Only queries submitted with an HTTP GET operation can be cached. POST queries cannot be cached.
 
+The GraphQL schema is cached in the Configuration cache, which can be refreshed from the Cache Management page (**System** > **Tools** > **Cache Management**).
+
 ## Cached and uncached queries
 
 The definitions for some queries include cache tags. Full page caching uses these tags to keep track of cached content. They also allow public content to be invalidated. Private content invalidation is handled on the client side.

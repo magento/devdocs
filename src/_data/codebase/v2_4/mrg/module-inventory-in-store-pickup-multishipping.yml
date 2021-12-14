@@ -1,6 +1,5 @@
 ---
 title: InventoryInStorePickupMultishipping
-release: 2.4.3
 content: |-
   The `InventoryInStorePickupMultishipping` module provides business logic for In-Store Pickup functionality on Multishipping Checkout.
   In-Store Pickup Delivery is not available for Multishipping for now.

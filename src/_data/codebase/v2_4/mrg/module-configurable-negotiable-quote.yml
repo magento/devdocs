@@ -1,6 +1,5 @@
 ---
 title: ConfigurableNegotiableQuote
-release: 2.4.3
 content: |-
   The Magento_ConfigurableNegotiableQuote module enables configurable products to be displayed in a negotiable quote in an B2B environment. This module extends Magento_NegotiableQuote and Magento_Configurable modules.
 

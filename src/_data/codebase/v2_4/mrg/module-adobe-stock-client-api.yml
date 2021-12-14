@@ -1,6 +1,5 @@
 ---
 title: AdobeStockClientApi
-release: 2.4.3
 content: |-
   The Magento_AdobeStockClientApi module serves as application program interface (API) for the communication to Adobe Stock.
 

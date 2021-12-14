@@ -1,6 +1,5 @@
 ---
 title: InventoryApi
-release: 2.4.3
 content: |-
   The `InventoryApi` module provides Inventory Management service contracts.
 

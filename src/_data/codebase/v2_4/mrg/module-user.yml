@@ -1,6 +1,5 @@
 ---
 title: User
-release: 2.4.3
 content: |-
   **User** enables admin users to manage and assign roles to administrators and other non-customer users,
   reset user passwords, and invalidate access tokens.

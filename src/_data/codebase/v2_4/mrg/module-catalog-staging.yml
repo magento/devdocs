@@ -1,6 +1,5 @@
 ---
 title: CatalogStaging
-release: 2.4.3
 content: |-
   The Magento_CatalogStaging module is a part of the staging functionality in Magento EE. It enables you to create new catalog updates or add new changes to the existing store updates. In other words, you can modify the category and product entity attributes in updates. These updates are shown on the content dashboard.
 

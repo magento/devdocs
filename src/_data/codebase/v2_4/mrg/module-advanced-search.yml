@@ -1,6 +1,5 @@
 ---
 title: AdvancedSearch
-release: 2.4.3
 content: |-
   The Magento_AdvancedSearch module introduces advanced search functionality and provides interfaces that allow third-party search engines to implement this functionality.
 

@@ -103,7 +103,7 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thes
 
 Magento 2.4.2 introduces B2B v1.3.1. This release includes support for online payments for purchase orders as well as multiple bug fixes.
 
-**Purchase orders can now be completed using online payment methods**. B2B buyers are prompted to select their preferred payment method for each [purchase order](https://docs-beta.magento.com/user-guide/stores/b2b-purchase-order-flow.html) during the initial checkout. After the purchase order has been approved, buyers are prompted to enter payment details to convert the purchase order to a final order.
+**Purchase orders can now be completed using online payment methods**. B2B buyers are prompted to select their preferred payment method for each [purchase order]({{ site.user_guide_url }}/stores/b2b-purchase-order-flow.html) during the initial checkout. After the purchase order has been approved, buyers are prompted to enter payment details to convert the purchase order to a final order.
 
 To support a complete workflow for accepting online payments, this feature also:
 
@@ -135,7 +135,7 @@ This release of PWA Studio includes:
 
 *  Various performance optimizations and bug fixes.
 
-For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 
 ### Page Builder
 
@@ -145,11 +145,11 @@ This release includes enhancements to Page Builder content migration and Page Bu
 
 *  Content migrated to Page Builder is no longer padded with default inline styling.
 
-*  Page Builder no longer requires all content types to be placed within a row. The [Page Builder stage](https://docs-beta.magento.com/user-guide/cms/page-builder-workspace.html#stage) is now initially blank and supports adding the following content types directly to the stage: Rows, Columns, Tabs, HTML Code, Blocks, Dynamic Blocks.
+*  Page Builder no longer requires all content types to be placed within a row. The [Page Builder stage]({{ site.user_guide_url }}/cms/page-builder-workspace.html#stage) is now initially blank and supports adding the following content types directly to the stage: Rows, Columns, Tabs, HTML Code, Blocks, Dynamic Blocks.
 
 *  Predefined margins and paddings are no longer required for content types.
 
-*  The new mobile [viewport switcher](https://docs-beta.magento.com/user-guide/cms/page-builder-workspace.html#viewports) and viewport scope for form field values lets users and developers perform these actions:
+*  The new mobile [viewport switcher]({{ site.user_guide_url }}/cms/page-builder-workspace.html#viewports) and viewport scope for form field values lets users and developers perform these actions:
 
    *  View content on different view ports when authoring.
 
@@ -159,7 +159,7 @@ This release includes enhancements to Page Builder content migration and Page Bu
 
 ### Interactive In-Product Guidance
 
-Interactive In-Product Guidance provides merchants with usage tips and information from within the Admin on new feature announcements, walk-through guides, on-boarding information, and tool tips.  **Administrators must opt-in from the Admin to receive in-product guidance if this feature is not enabled**. See [Usage Data Collection](https://docs.magento.com/user-guide/stores/admin.html) and [Admin Usage](https://docs.magento.com/user-guide/configuration/advanced/admin.html#admin-usage).
+Interactive In-Product Guidance provides merchants with usage tips and information from within the Admin on new feature announcements, walk-through guides, on-boarding information, and tool tips.  **Administrators must opt-in from the Admin to receive in-product guidance if this feature is not enabled**. See [Usage Data Collection]({{ site.user_guide_url }}/stores/admin.html) and [Admin Usage]({{ site.user_guide_url }}/configuration/advanced/admin.html#admin-usage).
 
 ### Adobe Stock Integration
 
@@ -179,7 +179,7 @@ This release includes Adobe Stock Integration v2.1.1.
 
 *  Manage folder structure.
 
-**Web-optimized images in content**. Merchants can now use [web-optimized image rendition](https://docs-beta.magento.com/user-guide/cms/media-gallery-image-optimization.html) in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
+**Web-optimized images in content**. Merchants can now use [web-optimized image rendition]({{ site.user_guide_url }}/cms/media-gallery-image-optimization.html) in content instead of high resolution images. The original image remains unmodified in the Media Gallery, and the image rendition is dynamically generated when the image is inserted in the content.
 
 ### AWS S3 support enhancements
 
@@ -203,15 +203,15 @@ The MCOM Connector is fully compatible with Magento 2.4.2. Bug fixes and enhance
 
 See the following articles for updates on features and changes for this release:
 
-*  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html). Amazon Pay has been deprecated in this release and will be removed in Magento 2.5.0. Magento 2.4.3 and higher will contain only updates for compatibility and fixes for major bugs.
+*  [Amazon Pay]({{ site.user_guide_url }}/payment/amazon-pay.html). Amazon Pay has been deprecated in this release and will be removed in Magento 2.5.0. Magento 2.4.3 and higher will contain only updates for compatibility and fixes for major bugs.
 
-*  [Braintree](https://docs.magento.com/user-guide/payment/braintree.html)
+*  [Braintree]({{ site.user_guide_url }}/payment/braintree.html)
 
-*  [dotdigital Engagement Cloud](https://docs.magento.com/user-guide/marketing/dotdigital/engagement-cloud.html)
+*  [dotdigital Engagement Cloud]({{ site.user_guide_url }}/marketing/dotdigital/engagement-cloud.html)
 
-*  [Klarna](https://docs.magento.com/user-guide/payment/klarna.html)
+*  [Klarna]({{ site.user_guide_url }}/payment/klarna.html)
 
-*  [Vertex Cloud](https://docs.magento.com/user-guide/tax/vertex.html)
+*  [Vertex Cloud]({{ site.user_guide_url }}/tax/vertex.html)
 
 *  [Yotpo Product Reviews]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html)
 

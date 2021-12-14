@@ -16,6 +16,9 @@ To reduce the network bandwidth to Redis, we can store cache data locally on eac
 
 Magento stores the hashed data version in Redis, with the suffix ':hash' appended to the regular key. In case of an outdated local cache, the data is transferred to the local machine with a cache adapter.
 
+{:.bs-callout-info}
+For {{ site.data.var.ece }}, consider the best practices in the [Extended Redis cache implementation](https://support.magento.com/hc/en-us/articles/360049292532) support article.
+
 ## Configuration example
 
 Use the following example to modify or replace the existing cache section in the `app/etc/env.php` file.
@@ -64,7 +67,7 @@ Where:
    -  `use_stale_cache` is a flag that enables or disables the use of stale cache.
 
 We recommend using Redis for remote caching (`\Magento\Framework\Cache\Backend\Redis`) and `Cm_Cache_Backend_File` for the local caching of data in shared memory, using `'local_backend_options' => ['cache_dir' => '/dev/shm/']`.
-We also recommend the use of the [`cache preload`](https://devdocs.magento.com/guides/v2.4/config-guide/redis/redis-pg-cache.html#redis-preload-feature) feature, as it will drastically decrease the pressure on Redis. Do not forget to add suffix ':version' for preload keys.
+We also recommend the use of the [`cache preload`]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html#redis-preload-feature) feature, as it will drastically decrease the pressure on Redis. Do not forget to add suffix ':hash' for preload keys.
 
 ## Stale cache options
 

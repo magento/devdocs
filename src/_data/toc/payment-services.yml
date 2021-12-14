@@ -1,0 +1,26 @@
+label: Payment Services
+versionless: true
+pages:
+- label: Introduction
+  url: /payment-services/index.html
+  versionless: true
+
+- label: Install Payment Services
+  url: /payment-services/install-payments.html
+  versionless: true
+
+- label: Configure Payment Services
+  url: /payment-services/configure-payments.html
+  versionless: true
+  children:
+    - label: Customize buttons and messaging
+      url: /payment-services/customize-buttons-messaging.html
+      versionless: true
+
+- label: Security
+  url: /payment-services/security.html
+  versionless: true
+
+- label: Release Notes
+  url: /payment-services/release-notes.html
+  versionless: true

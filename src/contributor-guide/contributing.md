@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 {:.bs-callout-tip}
-Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://opensource.magento.com/slack), in the [#general](https://magentocommeng.slack.com/archives/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/archives/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
+Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://opensource.magento.com/slack), in the [#general](https://magentocommeng.slack.com/archives/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/archives/C7FA71S3V), and browse for more [channels]({{ site.baseurl }}/community/resources/resources.html#community-engineering-slack)!
 
 ## Contribute to Magento 2 code {#contribute}
 
@@ -20,7 +20,7 @@ The Community Engineering Team reviews all issues and contributions submitted by
 When the Community Engineering Team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like the status or who is working the issue. See [Labels](#labels) to learn more.
 
 {:.bs-callout-tip}
-Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.
+Refer to the [Adobe Contributor Agreement](https://opensource.adobe.com/cla.html) for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.
 
 ## Community Backlog Priority {#backlog}
 
@@ -97,13 +97,13 @@ It helps maintainers decide:
 
 ## GitHub and two-factor authentication {#two-factor}
 
-Magento **requires all Partners** who contribute code to enable 2FA on their GitHub accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.
+Adobe **requires all Partners** who contribute code to enable 2FA on their GitHub accounts. You can use a mobile device or 2FA application for added protection. See [Configuring two-factor authentication](https://help.github.com/en/articles/configuring-two-factor-authentication) in the GitHub help.
 
 We also recommend creating a personal access token for your account to use when interacting with GitHub in scripts and on the command line. See [Creating a personal access token for the command line](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) in the GitHub help.
 
 ## Questions or enhancement requests? {#question}
 
-We capture code-related issues in the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [Magento DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
+We capture code-related issues in the [Magento 2 repo](https://github.com/magento/magento2) and documentation-related issues in the [DevDocs repo](https://github.com/magento/devdocs). If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/) and the [Magento Forums](https://community.magento.com/), where Magento community members can quickly provide recommendations and advice.
 
 Submit feature requests or enhancement suggestions to the [Magento 2 Feature Requests and Improvements forum](https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests). For details about how requests are managed, see [Improvements to GitHub Management](https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96).
 
@@ -117,8 +117,8 @@ Review the following supported and accepted pull request rules. We defined these
 
 ## Contribution requirements {#requirements}
 
-1. Contributions must adhere to [Magento coding standards]({{ site.gdeurl }}/coding-standards/bk-coding-standards.html).
-1. Refer to the Magento development team's [Definition of Done]({{ site.baseurl }}/contributor-guide/contributing_dod.html). We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!
+1. Contributions must adhere to the [coding standards]({{ site.gdeurl }}/coding-standards/bk-coding-standards.html).
+1. Refer to the [Definition of Done]({{ site.baseurl }}/contributor-guide/contributing_dod.html). We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!
 1. Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.
 1. Commits must be accompanied by meaningful commit messages.
 1. PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.
@@ -131,7 +131,7 @@ Review the following supported and accepted pull request rules. We defined these
 
 ## Forks and pull requests
 
-For complete information about contributing to Magento projects, see the [Beginner Guides](https://github.com/magento/magento2/wiki/Getting-Started) on the Magento 2 repository. These guides help you:
+For complete information about contributing to Magento Open Source projects, see the [Beginner Guides](https://github.com/magento/magento2/wiki/Getting-Started) on the Magento 2 repository. These guides help you:
 
 -  Select an issue to work on and self-assign
 -  Fork a repository
@@ -358,7 +358,7 @@ To maintain an effective bug fix workflow, we ask reporters to follow some simpl
 
 Before creating an issue, do the following:
 
--  Check the [Developer Documentation](http://devdocs.magento.com/) and [User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html) to make sure the behavior you are reporting is really a bug, not a feature.
+-  Check the [Developer Documentation]({{ site.baseurl }}/) and [User Guide]({{ site.user_guide_url }}/getting-started.html) to make sure the behavior you are reporting is really a bug, not a feature.
 -  Check the [existing issues](https://github.com/magento/magento2/issues) to make sure you are not duplicating somebody’s work.
 -  Ensure that information you are reporting is a technical issue. Refer to the [Community Forums](https://community.magento.com/) or [Magento Stack Exchange](http://magento.stackexchange.com/) for technical questions, feature requests, etc.
 -  Verify that the issue you are reporting does not relate to {{site.data.var.ee}}. GitHub is intended for {{site.data.var.ce}} users to report on issues related to Open Source only. You can report Commerce-related issues one of two ways:
@@ -402,7 +402,7 @@ Stating preconditions is very important. Provide information on:
 
 Example:
 
-1. Magento CE 2.0.0 without sample data is installed.
+1. Magento Open Source 2.0.0 without sample data is installed.
 1. PayPal payment method is set up.
 1. Test category is set up.
 1. Virtual Product is created and assigned to the Test Category.

@@ -1,5 +1,5 @@
 This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2.
-For additional details about configuring Elasticsearch, see the [{{site.data.var.ee}} User Guide](http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html).
+For additional details about configuring Elasticsearch, see the [{{site.data.var.ee}} User Guide]({{ site.user_guide_url }}/catalog/search-elasticsearch.html).
 
 {% include config/es-version-23.md %}
 
