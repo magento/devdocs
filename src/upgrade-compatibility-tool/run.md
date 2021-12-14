@@ -63,8 +63,8 @@ bin/uct upgrade:check --help
 Available `--help` options for the `upgrade:check` command:
 
 *  `-m, --module-path[=MODULE-PATH]`: Path of the modules to be analysed
-*  `-a, --current-version[=CURRENT-VERSION]`: Current Adobe Commerce version, version of the Adobe Commerce installation will be used if omitted.
-*  `-c, --coming-version[=COMING-VERSION]`: Target Adobe Commerce version, version of the Adobe Commerce installation will be used if omitted.
+*  `-a, --current-version[=CURRENT-VERSION]`: Current {{site.data.var.ee}} version, version of the {{site.data.var.ee}} installation will be used if omitted.
+*  `-c, --coming-version[=COMING-VERSION]`: Target {{site.data.var.ee}} version, version of the {{site.data.var.ee}} installation will be used if omitted.
 *  `--json-output-path[=JSON-OUTPUT-PATH]`: Path of the file where the output will be exported in json format
 *  `--html-output-path[=HTML-OUTPUT-PATH]`: Path of the file where the output will be exported in HTML format
 *  `--min-issue-level`: Minimum issue level to show in report. Default is [WARNING].
@@ -79,7 +79,7 @@ Available `--help` options for the `upgrade:check` command:
 
 ### Output
 
-As a result of the analysis performed, UCT exports a report that contains a list of issues for each file specifying its severity, error code and error description.
+As a result of the analysis performed, the {{site.data.var.uct}} exports a report that contains a list of issues for each file specifying its severity, error code and error description.
 
 See the example below:
 
@@ -300,7 +300,7 @@ See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/develope
 
 ## Run {{site.data.var.uct}} via PHPstorm plugin
 
-You can run the {{site.data.var.uct}} with a run configuration via the PHPstorm plugin. See the [Upgrade Compatibility Tool Run Configuration]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpstorm/uct-run-configuration.html) topic for more information.
+You can run the {{site.data.var.uct}} with a run configuration via the PHPstorm plugin. See the [{{site.data.var.uct}} Run Configuration]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpstorm/uct-run-configuration.html) topic for more information.
 
 ## Troubleshooting
 
@@ -315,7 +315,7 @@ If after running this command:
 bin/uct upgrade:check INSTALLATION_DIR -c M2_VERSION
 ```
 
-The only output is `Upgrade compatibility tool`:
+The only output is `{{site.data.var.uct}}`:
 
 ```terminal
 bin/uct upgrade:check /var/www/project/magento/ -c 2.4.1
