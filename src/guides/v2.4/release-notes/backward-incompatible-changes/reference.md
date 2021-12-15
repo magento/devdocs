@@ -26,15 +26,15 @@ Patch releases are primarily focused on delivering security and quality enhancem
 
 ### {{ site.data.var.ce }}
 
-{% include backward-incompatible-changes/open-source/2.4.3-2.4.4-beta2.md %}
+{% include backward-incompatible-changes/open-source/2.4.3-2.4.4-beta3.md %}
 
 ### {{ site.data.var.ee }}
 
-{% include backward-incompatible-changes/commerce/2.4.3-2.4.4-beta2.md %}
+{% include backward-incompatible-changes/commerce/2.4.3-2.4.4-beta3.md %}
 
 ### {{ site.data.var.b2b }}
 
-{% include backward-incompatible-changes/b2b/2.4.3-2.4.4-beta2.md %}
+{% include backward-incompatible-changes/b2b/2.4.3-2.4.4-beta3.md %}
 
 ## 2.4.3 - 2.4.3-p1
 
