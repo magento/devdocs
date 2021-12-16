@@ -5,7 +5,7 @@ permalink: extensions/vendor/
 ---
 
 {:.bs-callout-warning}
-Adobe removed all VBEs from the core platform code in 2.4.4. These extensions continue to be supported as optional Marketplace extensions published by vendors. This change gives merchants faster access to the latest support and new capabilities from each vendor. Extension partners no longer need to depend on core releases to deliver updates.
+Adobe removed all VBEs in 2.4.4. Vendors continue to support these extensions on the {{ site.data.var.ee }} Marketplace. If you want to continue using these extensions after upgrading to 2.4.4, see [Upgrade modules]({{ site.baseurl }}/guides/v2.4/comp-mgr/upgrade-module.html). Since vendors no longer need to depend on core releases to deliver updates, they can provide merchants with the latest support and new capabilities faster.
 
 Vendor Bundled Extensions (VBEs) are third-party extensions that we have thoroughly tested and included with each supported version of {{site.data.var.ce}} and {{site.data.var.ee}}.
 
