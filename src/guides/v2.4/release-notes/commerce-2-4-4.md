@@ -53,8 +53,6 @@ We are not releasing Cloud packages for this Beta release.
 
 *  Updated declared PHP versions in `composer.json` for extensions to include PHP 8.1 and PHP 7.4. [GitHub-34609](https://github.com/magento/magento2/issues/34609) <!--- AC-1721-->
 
-*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`. <!--- AC-1650-->
-
 *  Auto-creation of arrays from false values have been disabled to ensure compatibility with PHP 8.1. <!--- AC-1697-->
 
 *  MySQL has been upgraded to the latest 8.0.x version.  <!--- AC-491-->
