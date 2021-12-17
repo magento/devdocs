@@ -3,7 +3,7 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
-{{ site.data.var.ee }} 2.4.4-beta3 introduces support for PHP 8.0.13. Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. {{ site.data.var.ee }} 2.4.4 GA will introduce support for PHP 8.1.
+{{ site.data.var.ee }} 2.4.4-beta4 introduces support for PHP 8.1. Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
 
 {:.bs-callout-info}
 Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
@@ -12,9 +12,9 @@ Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }}
 
 The {{ site.data.var.ee }} 2.4.4 [Beta program](https://devdocs.magento.com/release/beta-program.html) includes four monthly Beta releases that merchants can use to prepare their deployments for upgrade to {{ site.data.var.ee }} 2.4.4. We are launching this program five months before {{ site.data.var.ee }} 2.4.4 General Availability (GA). The top three partners and individual contributors will receive special mention in these release notes, Beta blog posts, and in other communications. See the [Breaking News: 2.4.4 beta releases are coming soon](https://community.magento.com/t5/Magento-DevBlog/BREAKING-NEWS-2-4-4-beta-releases-are-coming-soon/ba-p/484310) DevBlog post.
 
-## {{ site.data.var.ee }} 2.4.4-beta3
+## {{ site.data.var.ee }} 2.4.4-beta4
 
-{{ site.data.var.ee }} 2.4.4-beta3 has been tested against the following component versions:
+{{ site.data.var.ee }} 2.4.4-beta4 has been tested against the following component versions:
 
 *  Composer 2.1.6
 *  Elasticsearch 7.10
@@ -31,9 +31,9 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 
 **Issue: Deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0**. {{ site.data.var.ee }} displays the following deprecation message during download: `Deprecation Notice: Required parameter $pathSuffix follows optional parameter $translations in vendor/magento/magento-composer-installer/src/MagentoHackathon/Composer/Magento/MapParser.php:12`. Installation is not affected by this message. <!--- AC-1678-->
 
-## {{ site.data.var.ee }} 2.4.4-beta3 highlights
+## {{ site.data.var.ee }} 2.4.4-beta4 highlights
 
-{{ site.data.var.ee }} 2.4.4-beta3 provides support for PHP 8.0.13. This Beta release also includes the following enhancements:
+{{ site.data.var.ee }} 2.4.4-beta4 provides support for PHP 8.1. This Beta release also includes the following enhancements:
 
 *  Significant code changes to support compatibility with the latest version of PHP 8.1.
 
@@ -50,8 +50,6 @@ We are not releasing Cloud packages for this Beta release.
 *  Integers and floats in result sets are now returned using native PHP types instead of strings when using emulated prepared statements. [GitHub-34625](https://github.com/magento/magento2/issues/34625) <!--- AC-1770-->
 
 *  Magento custom error handlers now ignore deprecation messages. This change is temporary and for 2.4.4-beta3 only. [GitHub-34532](https://github.com/magento/magento2/issues/34532) <!--- AC-1722-->
-
-*  Updated declared PHP versions in `composer.json` for extensions to include PHP 8.1 and PHP 7.4. [GitHub-34609](https://github.com/magento/magento2/issues/34609) <!--- AC-1721-->
 
 *  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`. <!--- AC-1650-->
 
@@ -396,6 +394,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Broken pipe errors no longer occur during bulk action processing due to unacknowledged messages for the consumer. A prefetch count property now limits these messages for the consumer and avoids errors. Previously, running `bin/magento queue:consumers:start async.operations.all` generated this error:  `Broken pipe or closed connection`.
 
+<!--- MC-42075-->
+
+*  Shoppers are now redirected back to the login page as expected after a second failed login attempt. Previously, shoppers were redirected to a 404 page after a second unsuccessful login attempt. [GitHub-32885](https://github.com/magento/magento2/issues/32885)
+
 ### Gift cards
 
 <!--- MC-42327-->
@@ -528,6 +530,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Added support for PHP 8.1 to `laminas/laminas-math`. [GitHub-34242](https://github.com/magento/magento2/issues/34242)
 
+<!--- magento/magento2/pull/33932 magento/magento2/pull/33992-->
+
+*  The codebase has been refactored to remove calls to deprecated methods of `phpunit/phpunit`. [GitHub-33916](https://github.com/magento/magento2/issues/33916)
+
 ### Logging
 
 <!--- MC-42360-->
@@ -567,6 +573,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 `AdminCheckOrderStatusInGridActionGroup` [GitHub-33747](https://github.com/magento/magento2/issues/33747)
 
 `StorefrontSelectFirstShippingMethodActionGroup` [GitHub-33773](https://github.com/magento/magento2/issues/33773)
+
+`AdminClickUpdateChangesOnCreateOrderPageActionGroup` [GitHub-33689](https://github.com/magento/magento2/issues/33689)
 
 #### Action groups
 
