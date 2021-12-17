@@ -51,8 +51,6 @@ We are not releasing Cloud packages for this Beta release.
 
 *  Magento custom error handlers now ignore deprecation messages. This change is temporary and for 2.4.4-beta3 only. [GitHub-34532](https://github.com/magento/magento2/issues/34532) <!--- AC-1722-->
 
-*  Updated declared PHP versions in `composer.json` for extensions to include PHP 8.1 and PHP 7.4. [GitHub-34609](https://github.com/magento/magento2/issues/34609) <!--- AC-1721-->
-
 *  Auto-creation of arrays from false values have been disabled to ensure compatibility with PHP 8.1. <!--- AC-1697-->
 
 *  MySQL has been upgraded to the latest 8.0.x version.  <!--- AC-491-->
