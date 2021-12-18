@@ -33,7 +33,6 @@ This is an example of how the DateColumn component integrates with the [Listing]
             <settings>
                 <filter>dateRange</filter>
                 <dataType>date</dataType>
-                <dataType>date</dataType>
                 <label translate="true">Date Column Example 1</label>
             </settings>
         </column>
