@@ -3,6 +3,9 @@ group: graphql
 title: Unions
 ---
 
+A GraphQL union represents an object that could be one of several data types, but there is no guarantee that the data types contain fields in common. Use an inline fragment to return details about each possible data type.
+
+See the GraphQL specification for more details about [unions](https://graphql.org/learn/schema/#union-types).
 ## CloseNegotiableQuoteError union
 
 The [`CloseNegotiableQuoteError` union]({{page.baseurl}}/graphql/mutations/close-negotiable-quotes.html#CloseNegotiableQuoteError) provides details about failed attempts to close one or more negotiable quotes.
