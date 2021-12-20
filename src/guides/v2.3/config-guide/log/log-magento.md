@@ -31,15 +31,15 @@ Other channels can have a different set of handlers and logic.
 
 To start working with a logger, you must create an instance of `\Psr\Log\LoggerInterface`. With this interface, you can call the following functions to write data to log files:
 
-*  [alert()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L43)
-*  [critical()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L55)
-*  [debug()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L111)
-*  [emergency()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L30)
-*  [error()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L66)
-*  [info()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L101)
-*  [log()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L122)
-*  [notice()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L89)
-*  [warning()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L79)
+*  [alert()](https://github.com/php-fig/log/blob/master/src/LoggerInterface.php#L43)
+*  [critical()](https://github.com/php-fig/log/blob/master/src/LoggerInterface.php#L55)
+*  [debug()](https://github.com/php-fig/log/blob/master/src/LoggerInterface.php#L111)
+*  [emergency()](https://github.com/php-fig/log/blob/master/src/LoggerInterface.php#L30)
+*  [error()](https://github.com/php-fig/log/blob/master/src/LoggerInterface.php#L66)
+*  [info()](https://github.com/php-fig/log/blob/master/src/LoggerInterface.php#L101)
+*  [log()](https://github.com/php-fig/log/blob/master/src/LoggerInterface.php#L122)
+*  [notice()](https://github.com/php-fig/log/blob/master/src/LoggerInterface.php#L89)
+*  [warning()](https://github.com/php-fig/log/blob/master/src/LoggerInterface.php#L79)
 
 One way to do that is illustrated in the [database logging example]({{ page.baseurl }}/config-guide/log/log-db.html).
 

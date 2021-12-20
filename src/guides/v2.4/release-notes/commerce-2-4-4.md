@@ -3,145 +3,67 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
-{{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x.
-
-{{ site.data.var.ee }} 2.4.4-beta2 introduces support for PHP 8.0.
+{{ site.data.var.ee }} 2.4.4-beta3 introduces support for PHP 8.0.13. Core Composer dependencies and third-party libraries have been upgraded to the latest versions that are compatible with PHP 8.x. {{ site.data.var.ee }} 2.4.4 GA will introduce support for PHP 8.1.
 
 {:.bs-callout-info}
-Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains  backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
+Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 ## {{ site.data.var.ee }} Beta program
 
 The {{ site.data.var.ee }} 2.4.4 [Beta program](https://devdocs.magento.com/release/beta-program.html) includes four monthly Beta releases that merchants can use to prepare their deployments for upgrade to {{ site.data.var.ee }} 2.4.4. We are launching this program five months before {{ site.data.var.ee }} 2.4.4 General Availability (GA). The top three partners and individual contributors will receive special mention in these release notes, Beta blog posts, and in other communications. See the [Breaking News: 2.4.4 beta releases are coming soon](https://community.magento.com/t5/Magento-DevBlog/BREAKING-NEWS-2-4-4-beta-releases-are-coming-soon/ba-p/484310) DevBlog post.
 
-## {{ site.data.var.ee }} 2.4.4-beta2
+## {{ site.data.var.ee }} 2.4.4-beta3
 
-{{ site.data.var.ee }} 2.4.4-beta2 has been tested against the following component versions:
+{{ site.data.var.ee }} 2.4.4-beta3 has been tested against the following component versions:
 
 *  Composer 2.1.6
-*  Elasticsearch 7.9
+*  Elasticsearch 7.10
 *  MariaDB 10.4.14
 *  MySQL 8.0.22
-*  PHP 8.0
+*  PHP 8.0.13
 *  Redis 6.0.12
 *  Varnish 6.5.1
 
 {:.bs-callout-info}
 All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ee }} 2.4.4.
 
-## Known issues
+## Known issue
 
 **Issue: Deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0**. {{ site.data.var.ee }} displays the following deprecation message during download: `Deprecation Notice: Required parameter $pathSuffix follows optional parameter $translations in vendor/magento/magento-composer-installer/src/MagentoHackathon/Composer/Magento/MapParser.php:12`. Installation is not affected by this message. <!--- AC-1678-->
 
-**Issue: The PayPal button is missing from the mini cart, shopping cart, and product detail pages**. When the PayPal Express Checkout payment method is enabled on a 2.4.4-beta2 deployment running B2B, the **PayPal** button is not displayed on these pages:
+## {{ site.data.var.ee }} 2.4.4-beta3 highlights
 
-*  Product details
-*  Shopping cart
-*  Mini cart
+{{ site.data.var.ee }} 2.4.4-beta3 provides support for PHP 8.0.13. This Beta release also includes the following enhancements:
 
-**Workaround**: Shoppers can use PayPal Express checkout in the full checkout workflow. <!--- AC-1765-->
+*  Significant code changes to support compatibility with the latest version of PHP 8.1.
 
-**Issue: Label not created for DHL shipments**. The **Length**, **Width**, and **Height** fields of the Admin Create Packages window in the checkout workflow are disabled when adding a bundle product to a package. <!--- AC-1764-->
+*  `phpgt/dom` has been updated to use newly related version 2.2.3 with PHP 8.1 support. <!--- AC-1750 1751 1752-->
 
-## Installation on cloud infrastructure
+*  The `JQuery` library and `jQuery` modules have been upgraded to version 3.6.0.  <!--- AC-109-->
 
-To upgrade to 2.4.4-beta2, Beta partners that build and deploy {{ site.data.var.ee }} on cloud infrastructure must update the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json) and `.magento.app.yaml` files as described below.
+*  The third-party `jstree` library has been updated to the latest version.  <!--- AC-107-->
 
-### Update the `repositories` and `require` sections in the Magento Cloud template `composer.json` file
+We are not releasing Cloud packages for this Beta release.
 
-Update the `repositories` section to add the Magento Cloud and Quality packages that support the 2.4.4-beta2 version.
+### Additional platform enhancements
 
-```php
-    "repositories": {
-        "ece-tools": {
-            "type": "vcs",
-            "url": "https://github.com/magento/ece-tools.git"
-        },
-        "mcd": {
-            "type": "vcs",
-            "url": "https://github.com/magento/magento-cloud-docker.git"
-        },
-        "mcc": {
-            "type": "vcs",
-            "url": "https://github.com/magento/magento-cloud-components.git"
-        },
-        "mcp": {
-            "type": "vcs",
-            "url": "https://github.com/magento/magento-cloud-patches.git"
-        },
-        "mqp": {
-            "type": "vcs",
-            "url": "https://github.com/magento/quality-patches.git"
-        },
-        "repo": {
-            "type": "composer",
-            "url": "https://repo.magento.com"
-        }
-```
+*  Integers and floats in result sets are now returned using native PHP types instead of strings when using emulated prepared statements. [GitHub-34625](https://github.com/magento/magento2/issues/34625) <!--- AC-1770-->
 
-Update the  `require` section to include the correct version of each repository as follows:
+*  Magento custom error handlers now ignore deprecation messages. This change is temporary and for 2.4.4-beta3 only. [GitHub-34532](https://github.com/magento/magento2/issues/34532) <!--- AC-1722-->
 
-```json
-   "require": {
-        "magento/product-enterprise-edition": ">=2.4.4 <2.4.5",
-        "magento/composer-root-update-plugin": "~1.1",
-        "magento/ece-tools": "dev-2.4.4-beta as 2002.1.9",
-        "magento/magento-cloud-docker": "dev-2.4.4-beta as 1.3.1",
-        "magento/magento-cloud-components": "dev-2.4.4-beta as 1.0.10",
-        "magento/magento-cloud-patches": "dev-2.4.4-beta as 1.0.14",
-        "magento/quality-patches": "dev-2.4.4-beta as 1.1.5",
-        "fastly/magento2": "^1.2.34"
-    },
-```
+*  Auto-creation of arrays from false values have been disabled to ensure compatibility with PHP 8.1. <!--- AC-1697-->
 
-### Update the `magento.app.yaml` file
+*  MySQL has been upgraded to the latest 8.0.x version.  <!--- AC-491-->
 
-In the `magento.app.yaml` file, update the `type`, `flavor`, and `dependency` sections to use PHP 8.0 and Composer 2. Add `composer install`.
+*  MariaDB has been upgraded to version 10.4.22.  <!--- AC-1469-->
 
-```yaml
-type: php:8.0
-build:
-    flavor: none
-dependencies:
-    php:
-        composer/composer: '^2.0'
-...
-hooks:
-    # We run build hooks before your application has been packaged.
-    build: |
-        set -e
-        composer install
-        php ./vendor/bin/ece-tools run scenario/build/generate.xml
-        php ./vendor/bin/ece-tools run scenario/build/transfer.xml
-```
+#### Additional changes
 
-## {{ site.data.var.ee }} 2.4.4-beta2 highlights
+*  Added the Venmo payment option. <!--- AC-1229-->
 
-The following highlights are introduced in this release. We are not releasing Cloud packages for this beta release.
+*  Added an index to `magento_giftcardaccount.code` to improve performance. <!--- AC-705-->
 
-### Platform enhancements
-
-{{ site.data.var.ee }} 2.4.4-beta2 provides support for PHP 8.0. These additional platform upgrades support PHP 8.0  and store security and performance:
-
-*  Adobe Composer dependencies have been upgraded to the latest versions that are compatible with PHP 8.0.x. <!--- AC-35-->
-
-*  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Outdated Laminas dependencies have been removed from the codebase.
-
-*  Significant code changes for the upgrade of the jQuery library to 3.6.0.
-
-*  The `endroid/qr-code` dependency has been updated to the latest version.
-
-#### jQuery UI upgrade
-
-jQuery UI has been upgraded to the latest version (v1.12.1). The following v1.10.0 jQuery components have been removed:
-
-*  `ajaxOptions` and `cache` options for tabs. See [Tabs](https://jqueryui.com/changelog/1.10.0/#tabs).
-
-*  `.zIndex()`.  jQuery UI v1.12.1 includes `jquery/z-index.js`, which supports the use of `.zIndex()`. See [UI Core](https://jqueryui.com/changelog/1.12.0/#ui-core).
-
-*  Data fallbacks for widget names. You must use the full name for the `.data()` key. See [Widget Factory](https://jqueryui.com/changelog/1.10.0/#widget-factory).
-
-*  Hardcoding of classes such as `ui-corner-all` in widgets. See [Widgets}( https://jqueryui.com/upgrade-guide/1.12/#widget). <!--- AC-106-->
+*  PayPal can now track by BN code. <!--- AC-1228-->
 
 ## {{ site.data.var.ee }} 2.4.4 highlights
 
@@ -152,6 +74,24 @@ The following highlights were added in earlier versions of 2.4.4 and are include
 *  PHPUnit has been upgraded to the latest version (9.5.x). Tests and test frameworks have been updated to be compatible with the new version. <!--- AC-404-->
 
 *  TinyMCE 5 is now supported. <!--- AC-41-->
+
+*  Adobe Composer dependencies have been upgraded to the latest versions that are compatible with PHP 8.0.x. <!--- AC-35-->
+
+*  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Outdated Laminas dependencies have been removed from the codebase.
+
+*  The `endroid/qr-code` dependency has been updated to the latest version.
+
+### jQuery UI upgrade
+
+jQuery UI has been upgraded to the latest version (v1.12.1). The following v1.10.0 jQuery components have been removed:
+
+*  `ajaxOptions` and `cache` options for tabs. See [Tabs](https://jqueryui.com/changelog/1.10.0/#tabs).
+
+*  `.zIndex()`.  jQuery UI v1.12.1 includes `jquery/z-index.js`, which supports the use of `.zIndex()`. See [UI Core](https://jqueryui.com/changelog/1.12.0/#ui-core).
+
+*  Data fallbacks for widget names. You must use the full name for the `.data()` key.
+
+*  Hard coding of classes such as `ui-corner-all` in widgets.
 
 ### Library upgrades
 
@@ -299,6 +239,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- AC-1089-->
 
 *  The Order Summary section of the checkout page now displays the correct currency and amount when a deployment is configured for `Poland` country and `PLN` currency. Previously, the shopping cart and checkout page displayed the amount **PLN 0**.
+
+<!--- MC-32805-->
+
+*  {{ site.data.var.ee }} no longer throws an error when a shopper clicks **Update Cart** after changing  a product quantity in the mini cart. Previously, {{ site.data.var.ee }} displayed this error:  `The quote item isn't found. Verify the item and try again`.
+
+<!--- MC-43176-->
+
+*  GraphQL `product` queries for configurable products in a specific store now return the price ranges of products on the specified store only. Previously, requests returned price ranges for simple products on non-specified stores.
 
 ### Catalog
 
@@ -508,6 +456,8 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42652-->
 
+*  `addSimpleProductsToCart` requests can now run successfully in parallel. Previously, multiple requests for the same SKU created duplicate line items for the same cart ID rather than increasing the product quantity as expected.
+
 <!--- AC-856-->
 
 *  The `addProductsToCompareList` mutation can now be used to compare variants of configurable products.
@@ -540,7 +490,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-988-->
 
-*  You can now import successfully after running  `bin/magento app:config:dump` and manually changing `config.php`.
+*  You can now import successfully after running  `bin/magento app:config:dump` and manually editing `config.php`.
 
 ### Index
 
@@ -561,6 +511,18 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- AC-1172-->
 
 *  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for Magento 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
+
+<!--- AC-97-->
+
+*  Removed the unused `jquery.hoverIntent` JavaScript library. [GitHub-33732](https://github.com/magento/magento2/issues/33732)
+
+<!--- magento/magento2/pull/34366)-->
+
+*  `lib/internal/Magento/Framework/Filter/Money.php` has been deprecated. It contains the `money_format()` function, which was removed in PHP 8.x. [GitHub-33870](https://github.com/magento/magento2/issues/33870)
+
+<!--- AC-1366-->
+
+*  Added support for PHP 8.1 to `laminas/laminas-math`. [GitHub-34242](https://github.com/magento/magento2/issues/34242)
 
 ### Logging
 
@@ -585,6 +547,106 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- AC-1054-->
 
 *  The `bin/magento media-gallery:sync` command no longer fails in deployments where AWS S3 is enabled.
+
+### MFTF
+
+<!--- AC-1397-->
+
+*  Fixed errors in MFTF tests for downloadable products. [GitHub-34270](https://github.com/magento/magento2/issues/34270)
+
+<!--- magento/magento2/pull/33530-->
+
+*  Removed `CliCacheFlushActionGroup` from `CatalogSearch`, `GroupedProduct`, `Newsletter`, `Paypal`, `Quote`, and `Review` modules. [GitHub-33531](https://github.com/magento/magento2/issues/33531)
+
+#### New action groups
+
+`AdminCheckOrderStatusInGridActionGroup` [GitHub-33747](https://github.com/magento/magento2/issues/33747)
+
+`StorefrontSelectFirstShippingMethodActionGroup` [GitHub-33773](https://github.com/magento/magento2/issues/33773)
+
+#### Action groups
+
+Repetitive actions have been replaced with action groups in these tests:
+
+`AdminAddBundleItemsTest` [GitHub-34312](https://github.com/magento/magento2/issues/34312)
+
+`AdminConfigurableProductAddConfigurationTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
+
+`AdminConfigurableProductBulkUpdateTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
+
+`AdminConfigurableProductDisableAnOptionTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
+
+`AdminConfigurableProductOutOfStockAndDeleteCombinationTest` [GitHub-34316](https://github.com/magento/magento2/issues/34316)
+
+`AdminConfigurableProductOutOfStockTestDeleteChildrenTest` [GitHub-34316](https://github.com/magento/magento2/issues/34316)
+
+`AdminConfigurableProductRemoveAnOptionTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
+
+`AdminConfigurableProductRemoveConfigurationTest` [GitHub-34511](https://github.com/magento/magento2/issues/34511)
+
+`AdminCreateAndEditSimpleProductSettingsTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
+
+`AdminCreateAndEditVirtualProductSettingsTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
+
+`AdminCreateInactiveFlatCategoryTest` [GitHub-34490](https://github.com/magento/magento2/issues/34490)
+
+`AdminCreateInactiveInMenuFlatCategoryTest` [GitHub-34510](https://github.com/magento/magento2/issues/34510)
+
+`AdminCreateDuplicateCategoryTest` [GitHub-34414](https://github.com/magento/magento2/issues/34414)
+
+`AdminCreateDuplicateProductTest` [GitHub-34414](https://github.com/magento/magento2/issues/34414)
+
+`AdminDeleteSimpleProductTest` [GitHub-33783](https://github.com/magento/magento2/issues/33783)
+
+`AdminEditRelatedBundleProductTest` [GitHub-34313](https://github.com/magento/magento2/issues/34313)
+
+`AdminMassDeleteBundleProductsTest` [GitHub-34313](https://github.com/magento/magento2/issues/34313)
+
+`AdminNavigateMultipleUpSellProductsTest` [GitHub-34314](https://github.com/magento/magento2/issues/34314)
+
+`AdminSimpleProductSetEditContentTest` [GitHub-34435](https://github.com/magento/magento2/issues/34435)
+
+`AdminSimpleProductTypeSwitchingToConfigurableProductTest` [GitHub-33788](https://github.com/magento/magento2/issues/33788)
+
+`AdminConfigurableProductTypeSwitchingToVirtualProductTest` [GitHub-33788](https://github.com/magento/magento2/issues/33788)
+
+`AdminCreateConfigurableProductWithDisabledChildrenProductsTest` [GitHub-33775](https://github.com/magento/magento2/issues/33775)
+
+`AdminUpdateFlatCategoryAndAddProductsTest` [GitHub-34490](https://github.com/magento/magento2/issues/34490)
+
+`AdminUpdateTopCategoryUrlWithNoRedirectTest` [GitHub-33774](https://github.com/magento/magento2/issues/33774)
+
+`AdminUpdateTopCategoryUrlWithRedirectTest` [GitHub-33774](https://github.com/magento/magento2/issues/33774)
+
+`CreateProductAttributeEntityWithReservedKeysTest`[GitHub-34422](https://github.com/magento/magento2/issues/34422)
+
+`EnableDisableBundleProductStatusTest` [GitHub-34313](https://github.com/magento/magento2/issues/34313)
+
+`StorefrontCheckRefundGrandTotalActionGroup` [GitHub-34315](https://github.com/magento/magento2/issues/34315)
+
+`StorefrontInactiveCatalogRuleTest` [GitHub-33556](https://github.com/magento/magento2/issues/33556)
+
+`StorefrontConfigurableProductCantAddToCartTest` [GitHub-33786](https://github.com/magento/magento2/issues/33786)
+
+`StorefrontConfigurableProductOptionsTest` [GitHub-33785](https://github.com/magento/magento2/issues/33785)
+
+`StorefrontConfigurableProductCanAddToCartTest` [GitHub-33784](https://github.com/magento/magento2/issues/33784)
+
+`StorefrontConfigurableProductGridViewTest` [GitHub-34311](https://github.com/magento/magento2/issues/34311)
+
+`StorefrontConfigurableProductListViewTest` [GitHub-34311](https://github.com/magento/magento2/issues/34311)
+
+`StorefrontProductNameWithHTMLEntitiesTest` [GitHub-33806](https://github.com/magento/magento2/issues/33806)
+
+`StorefrontProductNameWithDoubleQuoteTest` [GitHub-34317](https://github.com/magento/magento2/issues/34317)
+
+#### New tests
+
+`StorefrontGiftMessageForOrderOnCheckoutCartPageTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+
+#### Refactored tests
+
+`CaptchaWithDisabledGuestCheckoutTest` [GitHub-30828](https://github.com/magento/magento2/issues/30828)
 
 ### Order
 
@@ -664,8 +726,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Module list load execution time has improved.
 
-<!--- AC-1170-->
-
 <!--- AC-932-->
 
 *  The performance of the Popular Search Term cache has improved. Previously, the larger the `search_query` table, the longer a search query took to complete. [GitHub-27559](https://github.com/magento/magento2/issues/27559)
@@ -686,13 +746,17 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42105-->
 
-*  {{ site.data.var.ee }} now enables the **Save** button and autocompletes fields when you enter an incomplete URL while adding a video (Admin **Catalog**  > **Products** > Add Video). Previously, the **Save** button was disabled, and fields were not populated.
+*  {{ site.data.var.ee }} now enables the **Save** button and autocompletes fields when you enter an incomplete URL while adding a video (Admin **Catalog**  > **Products** > **Add Video**). Previously, the **Save** button was disabled, and fields were not populated.
 
 ### Return Merchandise Authorizations (RMA)
 
 <!--- MC-42987-->
 
 *  The Admin Create Return Product grid now displays tax, including prices only for products that are configured to display tax with prices. Previously, {{ site.data.var.ee }} did not check the configuration display settings on the `tax/calculation/price_includes_tax` flag.
+
+### Reviews
+
+*  The product list view now displays the correct starred rating for products. [GitHub-30196](https://github.com/magento/magento2/issues/30196)
 
 ### Sales
 
@@ -746,6 +810,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Import of table rates now works as expected when using the S3 storage adapter. Previously, {{ site.data.var.ee }} displayed this error: `File "https://[bucket].s3.eu-central-1.amazonaws.com/[prefix]/tmp/phpLjGmHf" not found`. [GitHub-33072](https://github.com/magento/magento2/issues/33072)
 
+<!--- magento/magento2/pull/33232-->
+
+*  You can now disable shipment update emails as expected from **Stores**  > **Configuration**  >  **Sales**  >  **Sales Emails**. [GitHub-33165](https://github.com/magento/magento2/issues/33165)
+
 ### Staging
 
 <!--- MC-42194 --->
@@ -786,15 +854,37 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 ### Test
 
+<!--- AC-1225-->
+
+*  Merchants can now test the shopper experience of the country in which the shopper is located, rather than the merchant’s location.
+
 <!--- MC-41955-->
 
 *  Added a test to verify custom date attribute format for storefront and Admin.
+
+<!--- AC-1517-->
+
+*  Corrected errors with `StorefrontPOWorkflowVerifyApprovalFlowTabTest`. [GitHub-34378](https://github.com/magento/magento2/issues/34378)
+
+<!--- AC-1571-->
+
+*  Functional tests have been stabilized for PHP 8.x compatibility. [GitHub-34327](https://github.com/magento/magento2/issues/34327), [GitHub-34188](https://github.com/magento/magento2/issues/34188)
 
 ### Theme
 
 <!--- MC-41887-->
 
 *  Notification messages are now displayed correctly when {{ site.data.var.ee }} has a subpath configured in its base URL.
+
+### Translations and locales
+
+<!--- magento/magento2/pull/33787-->
+
+*  Swiss region names are now consistently presented in English in the create or edit address forms. [GitHub-32602](https://github.com/magento/magento2/issues/32602)
+
+<!--- magento/magento2/pull/33128-->
+
+*  Updated `zip_codes.xml` patterns for Guernsey to support GY10 postcodes for the Island of Sark. [GitHub-33144](https://github.com/magento/magento2/issues/33144)
 
 ### UI
 
@@ -822,6 +912,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} now displays related products, up-sell products, and cross-sell products according to their positions in the Admin.
 
+<!--- magento/magento2/pull/33098-->
+
+*  `.action-close` buttons now work as expected when `Multiselect` is used in a modal. Previously, the `action-close` button did not work because it inherited the CSS of the  `.action-close` button of the modal. [GitHub-27240](https://github.com/magento/magento2/issues/27240)
+
+<!--- AC-1217-->
+
+*  The Offers rich snippet is now present on the main price field in Product view. Previously, this snippet was missing from this field in related products block in Product view, which resulted in Google search results displaying incorrect prices. [GitHub-34063](https://github.com/magento/magento2/issues/34063)
+
 ### Web API framework
 
 <!--- MC-42008-->
@@ -839,8 +937,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-42399-->
 
 *  `GET /V1/company/:id` now returns `is_purchase_order_enabled` attribute values as expected.
-
-<!--- MC-42443-->
 
 ### Wish list
 
