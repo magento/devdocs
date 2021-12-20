@@ -1,0 +1,71 @@
+---
+group: graphql
+title: Unions
+---
+
+## CloseNegotiableQuoteError union
+
+The [`CloseNegotiableQuoteError` union]({{page.baseurl}}/graphql/mutations/close-negotiable-quotes.html#CloseNegotiableQuoteError) provides details about failed attempts to close one or more negotiable quotes.
+
+**Possible types:**
+
+*  `InternalError`
+*  `NegotiableQuoteInvalidStateError`
+*  `NoSuchEntityUidError`
+
+**Fields with this union:**
+
+`CloseNegotiableQuoteOperationFailure.errors`
+
+## CloseNegotiableQuoteOperationResult union
+
+The [`CloseNegotiableQuoteOperationResult` union]({{page.baseurl}}/graphql/mutations/close-negotiable-quotes.html#CloseNegotiableQuoteOperationResult) provides details about the result of a request to close a negotiable quote.
+
+**Possible types:**
+
+*  `CloseNegotiableQuoteOperationFailure`
+*  `NegotiableQuoteUidOperationSuccess`
+
+**Fields with this union:**
+
+`CloseNegotiableQuotesOutput.operation_results`
+
+## CompanyStructureEntity union
+
+The [`CompanyStructureEntity` union]({{page.baseurl}}/graphql/queries/company.html#CompanyStructureItem) provides details about a node in a company structure.
+
+**Possible types:**
+
+*  `CompanyTeam`
+*  `Customer`
+
+**Fields with this union:**
+
+*  `CompanyStructureItem.entity`
+
+## DeleteNegotiableQuoteError union
+
+The [`DeleteNegotiableQuoteError` union]({{page.baseurl}}/graphql/mutations/delete-negotiable-quotes.html#DeleteNegotiableQuoteError) provides details about failed attempts to delete one or more negotiable quotes.
+
+**Possible types:**
+
+*  `InternalError`
+*  `NegotiableQuoteInvalidStateError`
+*  `NoSuchEntityUidError`
+
+**Fields with this union:**
+
+`DeleteNegotiableQuoteOperationFailure.errors`
+
+## DeleteNegotiableQuoteOperationResult union
+
+The [`DeleteNegotiableQuoteOperationResult` union]({{page.baseurl}}/graphql/mutations/delete-negotiable-quotes.html#DeleteNegotiableQuoteOperationResult) provides details about the result of a request to delete a negotiable quote.
+
+**Possible types:**
+
+*  DeleteNegotiableQuoteOperationFailure
+*  NegotiableQuoteUidOperationSuccess
+
+**Fields with this union:**
+
+`DeleteNegotiableQuotesOutput.operation_results`
