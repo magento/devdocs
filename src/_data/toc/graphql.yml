@@ -461,7 +461,7 @@ pages:
           exclude_versions: [ "2.3" ]
 
         - label: placeNegotiableQuoteOrder mutation
-          url: graphql/mutations/place-negotiable-quote-order.html
+          url: /graphql/mutations/place-negotiable-quote-order.html
           edition: b2b-only
           exclude_versions: ["2.3"]
 
