@@ -8,7 +8,7 @@ Parameterized Data Fixture is currently only available for Magento Open Source c
 
 ## Overview
 
-Parameterized data fixture is a dynamic and scalable data fixture that accepts parameters directly from annotations, and therefore eliminating the need of creating almost identical fixture every time a slight change is needed.
+Parameterized data fixture is a dynamic and scalable data fixture that accepts parameters directly from annotations. It eliminates the need to create almost identical fixtures every time you need a slight change.
 
 ## Principles
 
