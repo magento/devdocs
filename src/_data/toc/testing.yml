@@ -41,8 +41,8 @@ pages:
           - label: '@magentoDbIsolation'
             url: /test/integration/annotations/magento-db-isolation.html
 
-        - label: Parameterized Data Fixtures
-          url: /test/integration/parameterized_data_fixtures.html
+        - label: Parameterized Data Fixture
+          url: /test/integration/parameterized_data_fixture.html
           exclude_versions: ["2.3"]
 
     - label: JavaScript Unit Testing
