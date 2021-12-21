@@ -12,7 +12,7 @@ Parameterized data fixture is a dynamic and scalable data fixture that accepts p
 
 ## Principles
 
-1. Parameterized Data Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance fixture that creates an entity (e.g. product).
+1. Parameterized Data Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance, a fixture that creates an entity (for example, product).
 1. Parameterized Data Fixture class MUST be placed in `<ModuleName>/Test/Fixture` folder of corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (e.g. Magento\Catalog\Test\Fixture).
 1. Parameterized Data Fixture class SHOULD follow single responsibility principle.
 1. Parameterized Data Fixture MUST NOT depend on another fixture.
