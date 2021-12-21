@@ -12,7 +12,7 @@ To set up a date fixture, use the `@magentoDataFixture` annotation.
 
 ## Format
 
-`@magentoDataFixture` takes an argument that points to the data fixture as a filename, full class name or local method.
+`@magentoDataFixture` takes an argument that points to the data fixture as a filename, full class name, or local method.
 
 ```php?start_inline=1
 /**
