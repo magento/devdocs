@@ -3,6 +3,7 @@
 
 {% for minor_release in releases %}
 {% assign minor_release_version = minor_release[0] %}
+{% assign patch_releases = minor_release[1].releases %}
 {% assign end_of_support = minor_release[1].end-of-support %}
 {% assign end_of_support_array = end_of_support | split: '-' %}
 ## {{ minor_release_version }}
@@ -21,7 +22,6 @@ Support for the {{ minor_release_version }} release line ended on {{ end_of_supp
 Support for the {{ minor_release_version }} release line ends on {{ end_of_support | date: "%B&nbsp;%e, %Y" }}.
 {% endif %}
 {% endif %}
-
 <table>
   <thead>
     <tr>
@@ -30,10 +30,14 @@ Support for the {{ minor_release_version }} release line ends on {{ end_of_suppo
     </tr>
   </thead>
   <tbody>
-  {% for patch_release in minor_release[1].releases %}
+  {% for patch_release in patch_releases %}
     <tr>
         <td>{{ patch_release.tagName }}</td>
         <td>{{ patch_release.publishedAt | date: "%B&nbsp;%e, %Y" }}</td>
+    </tr>
+    {% else %}
+    <tr>
+        <td colspan="2" align="center">See in <a href="{{ site.baseurl }}/release/">Upcoming releases</a></td>
     </tr>
   {% endfor %}<!-- patch_releases -->
   </tbody>
