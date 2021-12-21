@@ -120,7 +120,7 @@ class ProductsList extends \PHPUnit\Framework\TestCase
 ### Fixture Alias
 
 {:.bs-callout-info}
-Fixture Alias is only applicable to Parameterized Data Fixture and is currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.4.5.
+Fixture Alias is only applicable to Parameterized Data Fixture and is currently only available for Magento Open Source contributors. It will be released for general use with Magento Open Source 2.4.5.
 
 [Parameterized Data Fixture][parameterizedDataFixture] can be given an alias using directive `as`. The fixture alias is used as reference to retrieve the data returned by the fixture and also as reference in other fixtures parameters.
 
