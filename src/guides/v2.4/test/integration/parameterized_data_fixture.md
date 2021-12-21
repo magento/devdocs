@@ -25,7 +25,7 @@ In order to generate multiple fixtures of the same type without having to manual
 
 [`Magento\Catalog\Test\Fixture\Product`][] demonstrates the usage of `%uniqid%` (`sku`: `simple-product%uniqid%`) in the fixture default data.
 
-In the example below, a unique `sku` will be automatically generated for the first fixture (e.g `simple-product61c10b2e86f991`) and the second fixture (e.g `simple-product61c10b2e86f992`). The sequence is random, and therefore unpredictable.
+In the following example, a unique `sku` is automatically generated for the first fixture (for example, `simple-product61c10b2e86f991`) and the second fixture (for example, `simple-product61c10b2e86f992`). The sequence is random and therefore unpredictable.
 
 ```php?start_inline=1
 class ProductsList extends \PHPUnit\Framework\TestCase
