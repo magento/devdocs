@@ -174,7 +174,7 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5087 | PHP cross-version compatibility issue | Follow the suggestions from the message and check the [migration guide](https://www.php.net/manual/en/migration81.php). |
 | 5088 | Optional parameters found after required ones | Move required parameters after optional ones. |
 | 5089 | Method visibility `final private` found | Change method visibility from `final private` to only `private`. |
-| 5090 | Magic method `__set_state` is not defined as static | Magic method `__set_state` must be defined as static. |
+| 5090 | Magic method `__set_state` is not defined as `static` | Magic method `__set_state` must be defined as `static`. |
 | 5091 | Class with `__toString()` method not inheriting from `Stringable` interface | Add `Stringable` interface to class with `__toString()` method. |
 | 5092 | `is_resource()` method used for functions that now return Object | Change `is_resource()` to `instanceof` Object. |
 | 6001 | `jQuery.andSelf()` removed | Use `jQuery.addBack()`. |
