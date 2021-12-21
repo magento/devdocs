@@ -99,7 +99,7 @@ There are two types of data providers:
 
 #### Inline JSON as data provider
 
-Data can be passed to the [Parameterized Data Fixture][parameterizedDataFixture] using `with` directive as follows:
+Data can be passed to the [Parameterized Data Fixture][parameterizedDataFixture] using the `with` directive as follows:
 
 Example:
 
