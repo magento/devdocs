@@ -42,7 +42,7 @@ As mentioned above, there are three ways to declare fixtures:
 
 -  as a PHP script file that is used by other tests and test cases.
 -  as a local method that is used by other tests in the test cases.
--  as a [Class][parameterizedDataFixture] that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`
+-  as a [Class][parameterizedDataFixture] that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
 
 ### Fixture as a separate file
 
