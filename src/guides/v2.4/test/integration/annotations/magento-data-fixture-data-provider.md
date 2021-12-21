@@ -4,7 +4,7 @@ title: Data fixture data provider annotation
 ---
 
 {:.bs-callout-info}
-Data Fixture Data Provider is only applicable to Parameterized Data Fixture and is currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.4.5.
+Data Fixture Data Provider is only applicable to Parameterized Data Fixture and is currently only available for Magento Open Source contributors. It will be released for general use with Magento Open Source 2.4.5.
 
 Data Fixture Data Provider is any valid PHP callable or valid JSON string that returns an associative array with fixture aliases as key and their respective parameters.
 

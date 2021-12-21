@@ -4,7 +4,7 @@ title: Data fixture annotation
 ---
 
 A data fixture is a PHP script that sets data you want to reuse in your test.
-The script can be defined in a separate PHP file, class or as a local test case method.
+The script can be defined in a separate PHP file, class, or as a local test case method.
 
 Use data fixtures to prepare a database for tests.
 The Integration Testing Framework (ITF) reverts the database to its initial state automatically.
@@ -12,7 +12,7 @@ To set up a date fixture, use the `@magentoDataFixture` annotation.
 
 ## Format
 
-`@magentoDataFixture` takes an argument that points to the data fixture as a filename, full class name or local method.
+`@magentoDataFixture` takes an argument that points to the data fixture as a filename, full class name, or local method.
 
 ```php?start_inline=1
 /**
@@ -42,7 +42,7 @@ As mentioned above, there are three ways to declare fixtures:
 
 -  as a PHP script file that is used by other tests and test cases.
 -  as a local method that is used by other tests in the test cases.
--  as a [Class][parameterizedDataFixture] that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`
+-  as a [Class][parameterizedDataFixture] that implements `Magento\TestFramework\Fixture\DataFixtureInterface` or `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface`.
 
 ### Fixture as a separate file
 
@@ -90,7 +90,7 @@ Test case that uses the above data fixture: [`dev/tests/integration/testsuite/Ma
 ### Data Fixture Data Provider
 
 {:.bs-callout-info}
-Data Fixture Data Provider is only applicable to Parameterized Data Fixture and is currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.4.5.
+Data Fixture Data Provider is only applicable to Parameterized Data Fixture and is currently only available for Magento Open Source contributors. It will be released for general use with Magento Open Source 2.4.5.
 
 There are two types of data providers:
 

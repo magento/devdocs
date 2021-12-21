@@ -12,8 +12,8 @@ Parameterized data fixture is a dynamic and scalable data fixture that accepts p
 
 ## Principles
 
-1. Parameterized Data Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance fixture that creates an entity (e.g. product).
-1. Parameterized Data Fixture class MUST be placed in `<ModuleName>/Test/Fixture` folder of corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (e.g. Magento\Catalog\Test\Fixture).
+1. Parameterized Data Fixture class MUST implement `Magento\TestFramework\Fixture\DataFixtureInterface` or  `Magento\TestFramework\Fixture\RevertibleDataFixtureInterface` if the data created by the fixture is revertible. For instance, a fixture that creates an entity (for example, product).
+1. Parameterized Data Fixture class MUST be placed in the `<ModuleName>/Test/Fixture` folder of the corresponding module with namespace: `<VendorName>\<ModuleName>\Test\Fixture` (for example, `Magento\Catalog\Test\Fixture`).
 1. Parameterized Data Fixture class SHOULD follow single responsibility principle.
 1. Parameterized Data Fixture MUST NOT depend on another fixture.
 1. Parameterized Data Fixture SHOULD be implemented using service APIs.
@@ -21,11 +21,11 @@ Parameterized data fixture is a dynamic and scalable data fixture that accepts p
 
 ## Dynamic default data
 
-In order to generate multiple fixtures of the same type without having to manually configure unique fields, the placeholder `%uniqid%` can be used in the default value of unique fields and `Magento\TestFramework\Fixture\Data\ProcessorInterface` to substitute the placeholder with unique sequence.
+In order to generate multiple fixtures of the same type without having to manually configure unique fields, you can use the placeholder `%uniqid%` in the default value of unique fields and `Magento\TestFramework\Fixture\Data\ProcessorInterface` to substitute the placeholder with unique sequence.
 
 [`Magento\Catalog\Test\Fixture\Product`][] demonstrates the usage of `%uniqid%` (`sku`: `simple-product%uniqid%`) in the fixture default data.
 
-In the example below, a unique `sku` will be automatically generated for the first fixture (e.g `simple-product61c10b2e86f991`) and the second fixture (e.g `simple-product61c10b2e86f992`). The sequence is random, and therefore unpredictable.
+In the following example, a unique `sku` is automatically generated for the first fixture (for example, `simple-product61c10b2e86f991`) and the second fixture (for example, `simple-product61c10b2e86f992`). The sequence is random and therefore unpredictable.
 
 ```php?start_inline=1
 class ProductsList extends \PHPUnit\Framework\TestCase
