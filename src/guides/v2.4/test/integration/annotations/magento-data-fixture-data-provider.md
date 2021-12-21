@@ -118,7 +118,3 @@ The basic rules for Data Fixture Data Provider annotation at different levels ar
 ### Restrictions
 
 `@magentoDataFixtureDataProvider` does not recursively merge fixtures data, thus if the fixture alias is defined in multiple `@magentoDataFixtureDataProvider`, only the last value will be used. `@magentoDataFixtureDataProvider` will not apply to a fixture that has an inline data provider with `with` directive.
-
-<!-- Link definitions -->
-
-[parameterizedDataFixture]: ../parameterized_data_fixture.html
