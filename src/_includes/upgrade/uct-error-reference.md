@@ -19,7 +19,7 @@ Critical errors are raised when the custom code is referencing entities that are
 {:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
-| 1110 | Instantiating non-existent Adobe Commerce class/interface | Update code to use a class marked as `@api`. Instantiating non-existent Adobe Commerce class/interface |
+| 1110 | Instantiating non-existent Adobe Commerce class/interface | Update code to use a class marked as `@api`. Instantiating non-existent Adobe Commerce class/interface. |
 | 1111 | Extending from non-existent Adobe Commerce class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
 | 1112 | Importing non-existent Adobe Commerce class | Update code to use a class marked as `@api`. |
 | 1113 | Loading non-existent Adobe Commerce class | Update code to use a class marked as `@api`. |
