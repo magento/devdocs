@@ -152,8 +152,8 @@ class ProductsList extends \PHPUnit\Framework\TestCase
 
 It is possible to supply data as a variable from one fixture to another using the fixture alias in one of the following formats:
 
-- `$fixtureAlias$` is a reference to the data that was returned by the fixture with alias `fixtureAlias`
-- `$fixtureAlias.snake_case_property_name$` is a reference to the property `snake_case_property_name` in the data that was returned by the fixture with alias `fixtureAlias`.
+-  `$fixtureAlias$` is a reference to the data that was returned by the fixture with alias `fixtureAlias`
+-  `$fixtureAlias.snake_case_property_name$` is a reference to the property `snake_case_property_name` in the data that was returned by the fixture with alias `fixtureAlias`.
 
 The following example shows how a fixture can use the data of another fixture:
 

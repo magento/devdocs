@@ -23,7 +23,7 @@ Parameterized data fixture is a dynamic and scalable data fixture that accepts p
 
 In order to generate multiple fixtures of the same type without having to manually configure unique fields, the placeholder `%uniqid%` can be used in the default value of unique fields and `Magento\TestFramework\Fixture\Data\ProcessorInterface` to substitute the placeholder with unique sequence.
 
-[`Magento\Catalog\Test\Fixture\Product`][] demonstrates the usage of `%uniqid%` (`sku`: `simple-product%uniqid%`) in the fixture default data. 
+[`Magento\Catalog\Test\Fixture\Product`][] demonstrates the usage of `%uniqid%` (`sku`: `simple-product%uniqid%`) in the fixture default data.
 
 In the example below, a unique `sku` will be automatically generated for the first fixture (e.g `simple-product61c10b2e86f991`) and the second fixture (e.g `simple-product61c10b2e86f992`). The sequence is random, and therefore unpredictable.
 

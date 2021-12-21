@@ -69,8 +69,8 @@ class ProductsList extends \PHPUnit\Framework\TestCase
 
 A callable data provider is any valid PHP callable that is publicly accessible. The following formats are supported:
 
-  - `methodName` a public method declared in the current test class
-  - `Namespace\Class::method` an external static method
+-  `methodName` a public method declared in the current test class
+-  `Namespace\Class::method` an external static method
 
 The following example shows how to use test class method as data provider:
 
