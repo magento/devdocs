@@ -90,7 +90,7 @@ Test case that uses the above data fixture: [`dev/tests/integration/testsuite/Ma
 ### Data Fixture Data Provider
 
 {:.bs-callout-info}
-Data Fixture Data Provider is only applicable to Parameterized Data Fixture and is currently only available for Magento Open Source contributors, and will be released for public with Magento Open Source 2.4.5.
+Data Fixture Data Provider is only applicable to Parameterized Data Fixture and is currently only available for Magento Open Source contributors. It will be released for general use with Magento Open Source 2.4.5.
 
 There are two types of data providers:
 
