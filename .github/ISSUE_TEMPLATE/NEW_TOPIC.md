@@ -1,13 +1,11 @@
 ---
 name: New topic
 about: Create a request to add missing information to devdocs
-title: ''
-labels: ''
+title: 'Request for a new topic'
+labels: New Topic
 assignees: ''
 
 ---
-
-# New topic request
 
 ## Description
 
@@ -19,9 +17,10 @@ assignees: ''
 
 <!-- Use the following checklist template as a starting point -->
 
--  Clear explanation
--  Reproducible steps
--  Codesamples
+-  [ ] The topic provides an explanation of how ____ works.
+-  [ ] The topic provides steps for ____.
+-  [ ] The topic contains code samples that shows ____.
+-  [ ] Other (please specify)
 
 ## Additional information/resources
 
@@ -29,12 +28,12 @@ assignees: ''
 
 <!--
 Thank you for taking the time to report this issue!
-GitHub Issues should only be created for problems/topics related to this project's codebase.
+GitHub Issues in this repo should relate to this project's codebase.
 
 Before submitting this issue, please make sure you are complying with our Code of Conduct:
 https://github.com/magento/devdocs/blob/master/.github/CODE_OF_CONDUCT.md
 
-Issues that do not comply with our Code of Conduct or do not contain enough information may be closed at the maintainers' discretion.
+Issues that do not comply with our Code of Conduct or contain not enough information may be closed at the maintainers' discretion.
 
 Feel free to remove this section before creating this issue.
 -->
