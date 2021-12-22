@@ -4,7 +4,7 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Dec 13 15:38:42 2021
+updated: Mon Dec 20 15:38:51 2021
 entries:
 - description: Added instructions to manage [_Outgoing emails_  configuration](https://devdocs.magento.com/cloud/project/project-webint-basic.html)
     for Adobe Commerce on cloud Staging and Production environments using the Magento
