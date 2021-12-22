@@ -1,6 +1,10 @@
 ---
 name: New feature
 about: Create a request for new functionality in devdocs
+title: ''
+labels: enhancement
+assignees: dshevtsov
+
 ---
 
 # New feature request

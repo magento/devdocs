@@ -1,6 +1,10 @@
 ---
 name: Topic clarification/correction
 about: Create a request to clarify or correct a documentation topic
+title: ''
+labels: ''
+assignees: ''
+
 ---
 
 # Topic clarification/correction request

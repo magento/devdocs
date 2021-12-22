@@ -1,6 +1,10 @@
 ---
 name: Bug report
 about: Create an issue about a bug on the devdocs website
+title: ''
+labels: ''
+assignees: ''
+
 ---
 
 # Bug report
