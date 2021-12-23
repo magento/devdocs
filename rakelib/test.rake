@@ -76,7 +76,7 @@ namespace :test do
       images.delete_if { |image| File.read(file).include?(File.basename(image)) }
     end
 
-    abort 'No unliked images' if images.empty?
+    abort 'No unlinked images' if images.empty?
 
     images.each do |image|
       puts "No links for #{image}".yellow
