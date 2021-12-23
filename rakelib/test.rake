@@ -103,5 +103,6 @@ namespace :test do
       puts "No links for #{include}".yellow
     end
     puts "Found #{includes.size} unlinked includes".red
+    puts 'Note, some includes such as layout/** can be used implicitly by a theme.'
   end
 end
