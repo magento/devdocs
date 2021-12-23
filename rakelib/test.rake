@@ -86,7 +86,7 @@ namespace :test do
 
   desc 'Find unused includes'
   task :unused_includes do
-    puts 'Running a task to find unused images'.magenta
+    puts 'Running a task to find unused _includes'.magenta
     includes = Dir['src/_includes/**/*']
     puts "The project contains a total of #{includes.size} includes"
     puts "Let's see how many are unused..."
