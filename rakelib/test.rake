@@ -83,4 +83,25 @@ namespace :test do
     end
     puts "Found #{images.size} dangling images".red
   end
+
+  desc 'Find unused includes'
+  task :unused_includes do
+    puts 'Running a task to find unused images'.magenta
+    includes = Dir['src/_includes/**/*']
+    puts "The project contains a total of #{includes.size} includes"
+    puts "Let's see how many are unused..."
+    Dir['src/**/*.{md,html}'].each do |file|
+      # Exclude symmlinks
+      next if File.symlink? file
+
+      includes.delete_if { |include| File.read(file).include?(File.basename(include)) }
+    end
+
+    abort 'No unlinked includes' if includes.empty?
+
+    includes.each do |include|
+      puts "No links for #{include}".yellow
+    end
+    puts "Found #{includes.size} unlinked includes".red
+  end
 end
