@@ -15,7 +15,7 @@ To update the production system:
 
 1. Stop any running queue workers by setting `cron_run` to `false` in `app/etc/env.php` as follows:
 
-   ```php
+   ```php?start_inline=1
    'cron_consumers_runner' => [
            'cron_run' => false
        ]

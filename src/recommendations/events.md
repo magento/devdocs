@@ -1,32 +1,29 @@
 ---
 group: product-recommendations
-title: Recommendation Events
+title: Data Collection for Recommendations
 ee_only: True
 ---
 
-When you deploy the `magento/product-recommendations` module, the module tracks the following user events. These events enable behavioral data collection.
+When you install and configure SaaS-based Adobe Commerce features such as [Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html) or [Live Search]({{ page.baseurl }}/live-search/install.html), the modules deploy behavioral data collection to your storefront. This mechanism collects anonymized behavioral data from your shoppers and powers product recommendations. For example, the `view` event is used to compute the `Viewed this, viewed that` recommendation type, and the `place-order` event is used to compute the `Bought this, bought that` recommendation type.
 
-If shoppers use ad blockers or enable privacy settings that prevent the `magento/product-recommendations` module from capturing events, the metrics reflected in the [Product Recommendations dashboard](https://docs.magento.com/user-guide/marketing/product-recommendations.html#dashboard) will not be accurate. Most likely, the engagement and revenue numbers will be underrepresented.
+The following events are not specific to Product Recommendations, but are required to return results:
+
+-  `view`
+-  `add-to-cart`
+-  `place-order`
+
+The [Storefront Events Collector]({{ site.baseurl }}/shared-services/storefront-event-collector.html#quick-start) lists all the events deployed to your storefront. From that list, however, there is a subset of events specific to Product Recommendations. These events collect data when shoppers interact with recommendation units on the storefront and power the metrics used to help you analyze how well your recommendations are performing.
+
+Event | Description | [Used for metrics?]({{ site.user_guide_url }}/marketing/recommendation-metrics.html)
+--- | --- | ---
+`impression-render` | The recommendation unit is rendered on the page. | Yes
+`rec-add-to-cart-click` | The customer clicks the **Add to cart** button for an item in the recommendation unit. | Yes, when an **Add to cart** button is present in the recommendations template.
+`rec-click` | The customer clicks a product in the recommendation unit. | Yes
+`view` | The recommendation unit becomes viewable on the page, such as by scrolling into view. | Yes
+
+If you are using the default Adobe Commerce storefront or [PWA](https://developer.adobe.com/commerce/pwa-studio/integrations/product-recommendations/), handling these events is done for you. If you are writing your own custom storefront, learn how you can [integrate Product Recommendations](https://developer.adobe.com/commerce/pwa-studio/integrations/product-recommendations/) into your storefront.
+
+Many shoppers use ad blockers or enable privacy settings. These configurations prevent the `magento/product-recommendations` module from capturing events, which might cause the metrics in the [Product Recommendations dashboard]({{ site.user_guide_url }}/marketing/product-recommendations.html#dashboard) to underreport engagement and revenue numbers.
 
 {:.bs-callout-info}
-If [Cookie Restriction Mode](https://docs.magento.com/m2/ce/user_guide/stores/compliance-cookie-restriction-mode.html) is enabled, Magento does not collect behavioral data until the shopper consents. If Cookie Restriction Mode is disabled, Magento collects behavioral data by default.
-
-Event | Category | Description
---- | --- | ---
-`add-to-cart` | product | A product is added to the cart
-`add-to-wishlist` | product | A product is added to the wishlist
-`apply-discount-action` | shopping-cart | A discount code is applied to the cart
-`edit-product-qty` | shopping-cart | The quantity of a product in a cart changed to a non-zero value
-`impression-render` | recommendation-unit | The recommendation unit is rendered on the page.
-`initiate-checkout` | shopping-cart | The customer initiates checkout
-`instant-purchase` | checkout |  The customer completes an instant purchase
-`place-order` | checkout | The customer's order is submitted
-`rec-add-to-cart-click` | recommendation-unit | The customer clicks the **Add to cart** button for an item in the recommendation unit.
-`rec-click` | recommendation-unit | The customer clicks a product in the recommendation unit.
-`remove-discount-action` | shopping-cart | A discount code is removed from a cart
-`remove-from-cart` | product | A product is removed from a cart
-`remove-from-wishlist` | product | A product is removed from a wishlist
-`sign-in` | shopper | The customer signs into their account
-`sign-out` | shopper | The customer signs out of their account
-`view` | product | The customer views a product details page (PDP)
-`view` | recommendation-unit | The recommendation unit becomes viewable on the page, such as by scrolling into view
+If [Cookie Restriction Mode]({{ site.user_guide_url }}/stores/compliance-cookie-restriction-mode.html) is enabled, Adobe Commerce does not collect behavioral data until the shopper consents to using cookies. If Cookie Restriction Mode is disabled, Adobe Commerce collects behavioral data by default.

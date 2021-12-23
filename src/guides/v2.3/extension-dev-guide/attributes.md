@@ -5,7 +5,7 @@ title: EAV and extension attributes
 
 There are two types of attributes you can use to extend Magento functionality:
 
-*  Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes in the [Admin](https://glossary.magento.com/magento-admin) panel. See the [merchant documentation](http://docs.magento.com/m2/ce/user_guide/stores/attributes.html) for information about managing custom attributes.
+*  Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes in the [Admin](https://glossary.magento.com/magento-admin) panel. See the [merchant documentation]({{ site.user_guide_url }}/stores/attributes.html) for information about managing custom attributes.
 
    Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules are the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
@@ -48,6 +48,10 @@ Both the `save()` and `getResource()` methods for `Magento\Framework\Model\Abstr
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace Magento\Customer\Setup\Patch\Data;
 
@@ -237,9 +241,12 @@ This only works for extension attributes (those attributes defined in an `extens
 
 An `ExtensionInterface` will be empty if no extension attributes have been added. In the following example—in an unmodified installation—`CustomerExtensionInterface` will be generated, but will be empty:
 
-`interface CustomerExtensionInterface extends \Magento\Framework\Api\ExtensionAttributesInterface
+```php
+use Magento\Framework\Api\ExtensionAttributesInterface;
+interface CustomerExtensionInterface extends ExtensionAttributesInterface
 {
-}`
+}
+```
 
 However, if an extension similar to the following has been defined, the interface will not be empty:
 

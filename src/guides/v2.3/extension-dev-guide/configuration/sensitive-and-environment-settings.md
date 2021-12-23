@@ -50,7 +50,7 @@ Examples of environment or system-specific values include:
 
 ## How to specify values as sensitive or system-specific
 
-Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool]{:target="_blank"} to the [`di.xml`][di-xml] file to specify either a system-specific or sensitive configuration value.
+Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool] to the [`di.xml`][di-xml] file to specify either a system-specific or sensitive configuration value.
 
 ### Example: Sensitive settings
 

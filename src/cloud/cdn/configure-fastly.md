@@ -125,7 +125,7 @@ To upload the Fastly VCL:
 
 ## Provision SSL/TLS certificates
 
-Adobe provides a Domain-Validated Let's Encrypt SSL/TLS certificate to serve secure HTTPS traffic from Fastly. Adobe provides one certificate for each Pro Production, Staging, and Starter Production environment to secure all domains in that environment.
+Adobe provides a Domain-Validated Let's Encrypt SSL/TLS certificate to serve secure HTTPS traffic from Fastly. Adobe provides one certificate for each Pro Production, Staging, and Starter Production environment to secure all domains in that environment. See [Adobe SSL/TLS certificate requirements and clean up](https://support.magento.com/hc/en-us/articles/115004685333-Magento-SSL-TLS-certificate-requirements-and-clean-up) in the _Support knowledge base_.
 
 {:.bs-callout-info}
 You can provide your own TLS/SSL certificate instead of using the Let's Encrypt certificate provided by Adobe. However, this process requires additional work to set up and maintain. To choose this option, submit a [{{site.data.var.ee}} Support ticket](https://support.magento.com/hc/en-us/articles/360019088251) or work with your CTA to add custom hosted certificates to your Cloud environments.
@@ -150,11 +150,11 @@ When domain validation completes, Adobe provisions the Let's Encrypt TLS/SSL cer
 
 During the initial Fastly setup process, you can use the following URLs to configure and test Fastly caching in Staging and Production environments:
 
--  Pro projects:
+-  For Pro Staging and Production:
    -  `mcprod.<your-domain>.com`
    -  `mcstaging.<your-domain>.com`
 
--  Starter projects:
+-  For Starter Production only:
    -  `mcprod.<your-domain>.com`
 
 {:.bs-callout-info}
@@ -217,7 +217,7 @@ To update your DNS configuration for development:
       ```
 
    {:.bs-callout-info}
-   As an alternative to using the Magento CLI, you can update the Base URL from the [Admin](https://docs.magento.com/user-guide/stores/store-urls.html#configure-the-base-url).
+   As an alternative to using the Magento CLI, you can update the Base URL from the [Admin]({{ site.user_guide_url }}/stores/store-urls.html#configure-the-base-url).
 
 1. Restart web browser.
 
@@ -291,3 +291,6 @@ After you verify Fastly services on the Staging site, repeat the upgrade process
 
 {:.bs-callout-warning}
 If you have added a custom VCL snippet that has the same name as a default snippet, you may need to verify and update those snippets after you upgrade the Fastly module. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see [Custom Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+
+{:.bs-callout-tip}
+If you experience problems setting up your Fastly configuration, you can visit the _Support knowledge base_ and use the [Adobe Commerce Fastly troubleshooter](https://support.magento.com/hc/en-us/articles/360040759292-Magento-Fastly-troubleshooter).

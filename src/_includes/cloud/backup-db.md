@@ -25,7 +25,7 @@ To back up your Staging or Production environment database before deploying:
 
 1. Use SSH to log in to the remote server.
 
-1. Create a database dump.
+1. Create a database dump. To choose a target directory for the DB dump, use the `--dump-directory` option.
 
    ```bash
    vendor/bin/ece-tools db-dump

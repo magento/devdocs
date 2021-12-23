@@ -39,7 +39,7 @@ From the moment you start working on a project, you should consider how future u
 
 Begin adopting the {{site.data.var.ee}} Extensibility platform, if you haven't done so already. The platform allows you to efficiently customize processes, integrate systems, and deploy new capabilities while maintaining SaaS-like upgradeability. Its features include:
 
-*  **UI Extensibility**. Extend and evolve your storefront independently of your backend and middleware using [PWA Studio](https://magento.github.io/pwa-studio/).
+*  **UI Extensibility**. Extend and evolve your storefront independently of your backend and middleware using [PWA Studio](https://developer.adobe.com/commerce/pwa-studio/).
 
 *  **API Extensibility**. Use [GraphQL]({{page.baseurl}}/graphql/index.html) to extend Web API layer by evolving the graph data model and executing lambda functions directly from the graph layer.
 

@@ -35,13 +35,23 @@ You can use the Admin to define caching policies or you can define them programm
 > Example
 
 ```php
-class DynamicController extends \Magento\Framework\App\Action\Action
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
+
+class DynamicController extends Action
 {
     protected $pageFactory;
 
     public function __construct(
-        \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory
+        Context $context,
+        PageFactory $resultPageFactory
     ) {
         parent::__construct($context);
         $this->pageFactory = $resultPageFactory;
@@ -83,13 +93,22 @@ Magento generates a hash based on all context variables (`\Magento\Framework\App
 For example, let's declare a context variable that shows a drinks catalog and advertisement to adult customers only. The following code snippet will create a copy of every page in Magento for users under the age of 18.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Customer\Model\Session;
+use Magento\Framework\App\Http\Context;
+
 /**
  * Plugin on \Magento\Framework\App\Http\Context
  */
 class CustomerAgeContextPlugin
 {
     public function __construct(
-        \Magento\Customer\Model\Session $customerSession
+        Session $customerSession
     ) {
         $this->customerSession = $customerSession;
     }
@@ -97,7 +116,7 @@ class CustomerAgeContextPlugin
      * \Magento\Framework\App\Http\Context::getVaryString is used by Magento to retrieve unique identifier for selected context,
      * so this is a best place to declare custom context variables
      */
-    public function beforeGetVaryString(\Magento\Framework\App\Http\Context $subject)
+    public function beforeGetVaryString(Context $subject)
     {
         $age = $this->customerSession->getCustomerData()->getCustomAttribute('age');
         $defaultAgeContext = 0;
@@ -109,11 +128,11 @@ class CustomerAgeContextPlugin
 
 The `subject->setValue` argument specifies the value for newcomer context and is used to guarantee parity during cache key generation for newcomers and users who already received the `X-Magento-Vary` cookie.
 
-For another example of a context class, see [Magento/Framework/App/Http/Context]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http/Context.php){:target="_blank"}.
+For another example of a context class, see [Magento/Framework/App/Http/Context]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http/Context.php).
 
 ### `X-Magento-Vary` cookie
 
-Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68){:target="_blank"} uses the following:
+Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68) uses the following:
 
 ```conf
 sub vcl_hash {
@@ -130,10 +149,17 @@ You can clear cached content immediately after a entity changes. Magento uses  `
 
 This section shows you how to tell Magento what cache to clear when you change an entity.
 
-First, your entity [module](https://glossary.magento.com/module) must implement [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
+First, your entity [module](https://glossary.magento.com/module) must implement [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DataObject/IdentityInterface.php) as follows:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 use Magento\Framework\DataObject\IdentityInterface;
+
 class Product implements IdentityInterface
 {
      /**
@@ -155,7 +181,15 @@ class Product implements IdentityInterface
 Second, the block object must also implement `Magento/Framework/DataObject/IdentityInterface` as follows:
 
 ```php
-class View extends AbstractProduct implements \Magento\Framework\DataObject\IdentityInterface
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\DataObject\IdentityInterface;
+
+class View extends AbstractProduct implements IdentityInterface
 {
     /**
      * Return identifiers for produced content
@@ -172,6 +206,6 @@ class View extends AbstractProduct implements \Magento\Framework\DataObject\Iden
 Magento uses cache tags for link creation. The performance of cache storage has a direct dependency on the number of tags per cache record, so try to minimize the number of tags and use them only for entities that are used in production mode. In other words, don't use invalidation for actions related to store setup.
 
 {:.bs-callout-warning}
-Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don't expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html){:target="_blank"}
+Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don't expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html)
 
 {% include cache/page-cache-checklists.md%}

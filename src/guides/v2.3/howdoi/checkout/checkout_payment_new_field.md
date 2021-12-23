@@ -33,7 +33,7 @@ Let’s go through each step.
 
 ## Step 1: Create a new module {#create-module}
 
-[Create a new module](https://devdocs.magento.com/videos/fundamentals/create-a-new-module/) named `Learning/CustomField` and register it.
+[Create a new module]({{ site.baseurl }}/videos/fundamentals/create-a-new-module/) named `Learning/CustomField` and register it.
 
 ## Step 2 Add a `db_schema.xml` file {#add-db-schema}
 
@@ -261,7 +261,7 @@ Then create the `app/code/Learning/CustomField/Observer/Frontend/Sales/OrderPaym
 
 {% collapsible Show code %}
 
-```php?start_inline=1
+```php
 <?php
 
 namespace Learning\CustomField\Observer\Frontend\Sales;

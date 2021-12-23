@@ -68,7 +68,7 @@ To change locale and static file optimization settings:
    ![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud/cloud_vars_set-minify.png){:width="550px"}
 
 1. Click **Save Config**.
-1. If prompted, [flush the cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+1. If prompted, [flush the cache]({{ site.user_guide_url }}/system/cache-management.html).
 1. Log out of the Admin.
 
 ## Export values and transfer config.php to your local system {#export}
@@ -192,7 +192,7 @@ To add additional configuration values in the Integration environment Admin. For
 1. In the right pane, expand **JavaScript Settings**.
 1. From the **Merge JavaScript Files** list, click **Yes**.
 1. Click **Save Config**.
-1. If prompted, [flush the cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+1. If prompted, [flush the cache]({{ site.user_guide_url }}/system/cache-management.html).
 1. Log out of the Admin.
 
 ### Run the config.php command {#regenerate}

@@ -8,7 +8,7 @@ The Magento application should be accessible for all people, whatever their hard
 
 -  **Be mindful of text length**—Don't make textual content too long or too short.
 
--  **Provide adequate contrast**—Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here: [http://webaim.org/resources/contrastchecker/](http://webaim.org/resources/contrastchecker/){:target="_blank"} or here: [http://www.paciellogroup.com/resources/contrastAnalyser](http://www.paciellogroup.com/resources/contrastAnalyser){:target="_blank"}
+-  **Provide adequate contrast**—Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here: [http://webaim.org/resources/contrastchecker/](http://webaim.org/resources/contrastchecker/) or here: [http://www.paciellogroup.com/resources/contrastAnalyser](http://www.paciellogroup.com/resources/contrastAnalyser)
 
    **Acceptable**
 
@@ -32,11 +32,11 @@ The Magento application should be accessible for all people, whatever their hard
 
    **Examples:**
 
-   -  [http://www.nomensa.com/](http://www.nomensa.com/){:target="_blank"}
-   -  [https://www.paypal.com/](https://www.paypal.com/){:target="_blank"}
-   -  [http://www.standardchartered.com/en/](http://www.standardchartered.com/en/){:target="_blank"}
-   -  [http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/](http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/){:target="_blank"}
-   -  [Skip-To Widget](https://github.com/paypal/skipto){:target="_blank"}
+   -  [http://www.nomensa.com/](http://www.nomensa.com/)
+   -  [https://www.paypal.com/](https://www.paypal.com/)
+   -  [http://www.standardchartered.com/en/](http://www.standardchartered.com/en/)
+   -  [http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/](http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/)
+   -  [Skip-To Widget](https://github.com/paypal/skipto)
 
 -  **Use animation, video and audio with caution**—If used, provide a play/pause button. Avoid flashing or strobing content, which can cause seizures. Provide captions and other alternatives for multimedia.
 
@@ -90,6 +90,6 @@ The Magento application should be accessible for all people, whatever their hard
 
 ## Resources
 
--  Overview: [http://www.w3.org/WAI/WCAG20/glance/](http://www.w3.org/WAI/WCAG20/glance/){:target="_blank"}
--  Authoring Tool Accessibility Guidelines (ATAG) 1.0: [http://www.w3.org/TR/WCAG10-HTML-TECHS/](http://www.w3.org/TR/WCAG10-HTML-TECHS/){:target="_blank"}
--  Authoring Tool Accessibility Guidelines (ATAG) 2.0: [http://www.w3.org/TR/WCAG20-HTML-TECHS/](http://www.w3.org/TR/WCAG20-HTML-TECHS/){:target="_blank"}
+-  Overview: [http://www.w3.org/WAI/WCAG20/glance/](http://www.w3.org/WAI/WCAG20/glance/)
+-  Authoring Tool Accessibility Guidelines (ATAG) 1.0: [http://www.w3.org/TR/WCAG10-HTML-TECHS/](http://www.w3.org/TR/WCAG10-HTML-TECHS/)
+-  Authoring Tool Accessibility Guidelines (ATAG) 2.0: [http://www.w3.org/TR/WCAG20-HTML-TECHS/](http://www.w3.org/TR/WCAG20-HTML-TECHS/)

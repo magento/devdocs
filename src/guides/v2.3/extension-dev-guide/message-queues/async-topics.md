@@ -7,7 +7,7 @@ functional_areas:
   - Services
 ---
 
-The Magento Queuing system uses 'topic exchange' for managing messages. More information about topics can be found [here](https://www.rabbitmq.com/tutorials/tutorial-five-python.html){:target="_blank"}.
+The Magento Queuing system uses 'topic exchange' for managing messages. More information about topics can be found [here](https://www.rabbitmq.com/tutorials/tutorial-five-python.html).
 
 In Magento, topics are usually defined in a `communication.xml` configuration file. See [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html#communicationxml)
 

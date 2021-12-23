@@ -11,7 +11,7 @@ functional_areas:
 You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ site.baseurl }}/cloud/configure/configure-best-practices.html#sites).
 
 {:.bs-callout-warning}
-Be aware that catalog data expands as you increase the number of websites and stores. Depending on your project architecture, the additional stores can lead to a longer indexing process and slower response times for non-cached catalog pages. Adobe recommends that you monitor site performance closely.
+Catalog data expands as you increase the number of websites and stores. Depending on your project architecture, the additional stores can lead to a longer indexing process and slower response times for non-cached catalog pages. Adobe recommends that you monitor site performance closely.
 
 The process to set up multiple stores depends on whether you choose to use unique or shared domains.
 
@@ -33,6 +33,20 @@ https://store.com/second/
 
 {:.bs-callout-tip}
 To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL][addstorecode] in the _Config Guide_.
+
+## Add New Domains
+
+Custom domains can be added to Pro Staging and any Production environment; they cannot be added to Integration environments.
+
+The process to add a domain depends on the type of Cloud account:
+
+-  For Pro Staging and Production
+
+   Add the new domain to Fastly, see [Manage domains][], or open a support ticket to request assistance. In addition, you must open a Support ticket to request new domains to be added to a cluster.
+
+-  For Starter Production only
+
+   Add the new domain to Fastly, see [Manage domains][], or open a support ticket to request assistance. In addition, you must add the new domain to the **Domains** tab in the Project Web Interface: `https://<zone>.magento.cloud/projects/<project-ID>/edit`
 
 ## Configure local installation
 
@@ -325,3 +339,4 @@ Adobe recommends fully testing in the Staging environment before pushing to the 
 
 [addstorecode]: {{ site.baseurl }}/guides/v2.4/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl
 [config-multiweb]: {{ site.baseurl }}/guides/v2.4/config-guide/multi-site/ms_over.html
+[Manage domains]: {{ site.baseurl }}cloud/cdn/configure-fastly-customize-cache.html#manage-domains

@@ -12,7 +12,7 @@ functional_areas:
 ## Introduction {#frontend-dev-guide-javascript-js-coding-docblock-overview}
 
 To add [JavaScript](https://glossary.magento.com/javascript) code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
-This standard are a subset of [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml){:target="_blank"} regulations.
+This standard are a subset of [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml) regulations.
 
 Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
