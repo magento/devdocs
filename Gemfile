@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'github-pages'
-gem 'devdocs', :git => 'https://github.com/magento-devdocs/devdocs-theme.git', :branch => 'devdocs-stable'
+gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git', ref: 'edabd81'
 
 gem 'wdm' if Gem.win_platform?
 
