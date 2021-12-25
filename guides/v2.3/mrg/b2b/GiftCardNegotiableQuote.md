@@ -23,8 +23,8 @@ The Magento_GiftCardNegotiableQuote module has a dependency on the Magento_Negot
 
 ## Structure
 
-[Learn about a typical file structure for a Magento 2 module](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/build/module-file-structure.html).
+[Learn about a typical file structure for a Magento 2 module]({{site.baseurl}}/guides/v2.2/extension-dev-guide/build/module-file-structure.html).
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html).
+You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{site.baseurl}}/guides/v2.2/release-notes/changes/b2b_changes.html).

@@ -20,19 +20,19 @@ This module does not create any backward incompatible changes. This module can b
  
 ## Structure
  
-[Learn about a typical file structure for a Magento 2 module](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/build/module-file-structure.html).
+[Learn about a typical file structure for a Magento 2 module]({{site.baseurl}}/guides/v2.2/extension-dev-guide/build/module-file-structure.html).
  
 ## Extensibility
  
-Extension developers can interact with the Magento_Company module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html).
+Extension developers can interact with the Magento_Company module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{site.baseurl}}/guides/v2.2/extension-dev-guide/plugins.html).
  
-[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_Company module.
+[The Magento dependency injection mechanism]({{site.baseurl}}/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_Company module.
 
 ### Layouts
  
 You can extend and override layouts in the `Magento\Company\view\adminhtml\layout` and `Magento\Company\view\frontend\layout` directories.
 
-For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html).
+For more information about layouts, see the [Layout documentation]({{site.baseurl}}/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html).
  
 ### UI components
 
@@ -45,8 +45,8 @@ The following directories contain extensible UI components:
 * `Magento\Company\view\frontend\ui_component` - company users listing, role listing
 
 
-For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html).
+For more information, see [UI Listing/Grid Component]({{site.baseurl}}/guides/v2.2/ui-components/ui-listing-grid.html).
 
 ## Additional information
  
-You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html).
+You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{site.baseurl}}/guides/v2.2/release-notes/changes/b2b_changes.html).

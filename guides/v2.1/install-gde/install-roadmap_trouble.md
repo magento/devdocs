@@ -50,7 +50,7 @@ Topics include:
 
 ## Deploy to production
 
-[Deploy Magento to production](https://devdocs.magento.com/guides/v2.1/config-guide/prod/prod.html)
+[Deploy Magento to production]({{site.baseurl}}/guides/v2.1/config-guide/prod/prod.html)
 
 *[Contributing developers]: A developer who contributes code to the Magento 2 CE codebase
 

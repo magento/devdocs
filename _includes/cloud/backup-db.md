@@ -27,4 +27,4 @@ We recommend creating a backup of your project before an upgrade. Use the follow
     ```
 
 -   We recommend setting the application in maintenance mode before doing a database dump in Production environments.
--   This creates an `dump-<timestamp>.sql.gz` archive file in your local project directory. See [Snapshot and backup management](http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump).
+-   This creates an `dump-<timestamp>.sql.gz` archive file in your local project directory. See [Snapshot and backup management]({{site.baseurl}}/guides/v2.2/cloud/project/project-webint-snap.html#db-dump).

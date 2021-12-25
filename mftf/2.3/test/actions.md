@@ -252,9 +252,9 @@ Attribute|Type|Use|Description
 Pre-condition: the current base URL is `https://www.magento.com`.
 
 ```xml
-<!-- Change the sub-domain to `https://devdocs.magento.com`. -->
+<!-- Change the sub-domain to `{{site.baseurl}}`. -->
 <amOnSubdomain url="devdocs" stepKey="changeSubdomain"/>
-<!-- Open the page `https://devdocs.magento.com` -->
+<!-- Open the page `{{site.baseurl}}` -->
 <amOnPage url="/" stepKey="goToDataPage"/>
 ```
 

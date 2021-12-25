@@ -22,14 +22,14 @@ You can find the list of modules that have dependencies on the Magento_LayeredNa
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_LayeredNavigationStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_LayeredNavigationStaging module.
+Extension points enable extension developers to interact with the Magento_LayeredNavigationStaging module. [The Magento dependency injection mechanism]({{site.baseurl}}/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_LayeredNavigationStaging module.
 
 ### Layouts
 
 You can extend and override layouts in the `Magento/LayeredNavigationStaging/view/frontend/layout/` directory.
-For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).
+For more information about layouts, see the [Layout documentation]({{site.baseurl}}/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release]({{site.baseurl}}/guides/v2.0/release-notes/changes/ee_changes.html).
 

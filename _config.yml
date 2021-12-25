@@ -2,20 +2,17 @@
 # Each setting is available on pages using Liquid {{ site.<config key> }}. For example, {{ site.title }}.
 # For more details about available options and defaults, refer to https://jekyllrb.com/docs/configuration/
 #
-title: Magento 2 Developer Documentation
-logo: DevDocs
-description: Magento 2 Developer Documentation.
-
-# the base protocol and domain
-url: https://devdocs.magento.com
+title: Magento 2 Developer Documentation (copy)
+logo: DevDocs (archived, unofficial)
+description: Copy of the Magento 2 Developer Documentation.
 
 # Site theme. https://jekyllrb.com/docs/themes/
 theme: devdocs
 
 # Base url that forms 
-baseurl: ""
+baseurl: ''
 
-# Parameters for the version switcher. Numeric values must be wraped in quotes.
+# Parameters for the version switcher. Numeric values must be in quotes.
 #
 version: "2.3"
 versions:
@@ -46,17 +43,12 @@ defaults:
       path: ""
     values:
       layout: default
-      github_repo: https://github.com/magento/devdocs/
-      github_files: https://github.com/magento/devdocs/blob/master/
-      # Enables the 'Edit this page on GitHub' appearences on pages
-      github_link: true
-      # Enables the 'Give us feedback' appearences on pages
-      feedback_link: true
+
   -
     scope:
       path: guides/m1x
     values:
-      layout: null
+      layout: 'null'
   -
     scope:
       type: videos
@@ -125,11 +117,6 @@ algolia:
   application_id: E642SEDTHL
   index_name: devdocs
   api_key: d2d0f33ab73e291ef8d88d8b565e754c
-  files_to_exclude:
-    - guides/m1x/**/*.html
-    - guides/m1x/**/*.md
-    - swagger
-    - redoc
 
 google:
   analytics: UA-66243208-1
@@ -147,26 +134,23 @@ mage2bloburl: https://github.com/magento/magento2/blob/
 
 # 2.0 variables
 gdeurl: /guides/v2.0/
-githuburl: https://github.com/magento/devdocs/tree/master/guides/v2.0/
+githuburl: https://github.com/magento/devdocs/tree/2.3.0/guides/v2.0/
 mage2000url: https://github.com/magento/magento2/blob/2.0/
 
 # 1.x variables
 m1xgdeurl: /guides/m1x/
-m1xgithuburl: https://github.com/magento/devdocs/blob/master/
+m1xgithuburl: https://github.com/magento/devdocs/blob/2.3.0/
 
 # 2.1 variables
 gdeurl21: /guides/v2.1/
-githuburl21: https://github.com/magento/devdocs/tree/master/guides/v2.1/
 mage2100url: https://github.com/magento/magento2/blob/2.1/
 
 # 2.2 variables
 gdeurl22: /guides/v2.2/
-githuburl22: https://github.com/magento/devdocs/tree/master/guides/v2.2/
 mage2200url: https://github.com/magento/magento2/blob/2.2/
 
 # 2.3 variables
 gdeurl23: /guides/v2.3/
-githuburl23: https://github.com/magento/devdocs/tree/master/guides/v2.3/
 mage2300url: https://github.com/magento/magento2/blob/2.3/
 
 

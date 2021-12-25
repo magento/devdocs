@@ -27,4 +27,4 @@ The Magento_BundleImportExportStaging module does not provide any specific exten
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com).
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation]({{site.baseurl}}).
