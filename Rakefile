@@ -42,7 +42,7 @@ task build: %w[clean] do
   # Back up an environmental variable
   jekyll_env = ENV['JEKYLL_ENV']
   ENV['JEKYLL_ENV'] = 'production'
-  jekyll('build --verbose')
+  jekyll('build --verbose --baseurl=/devdocs')
   # Restore the environmental variable
   ENV['JEKYLL_ENV'] = jekyll_env
   puts 'Built!'.green
