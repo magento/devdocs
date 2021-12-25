@@ -2,7 +2,7 @@
 
 **Do not refer to the website deployed from this project as official documentation.**
 
-For official documentation, refer to <{{site.baseurl}}/>.
+For official documentation, refer to <https://devdocs.magento.com/>.
 
 This project is a personal effort to help the Community with missing docs.
 
