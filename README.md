@@ -1,6 +1,6 @@
 # What's this fork about
 
-**Do not refer to the website deployed from this project as official documentation.**
+**Do not refer to <https://dshevtsov.github.io/devdocs/> as to official documentation.**
 
 For official documentation, refer to <https://devdocs.magento.com/>.
 
