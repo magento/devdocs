@@ -45,6 +45,8 @@ task build: %w[clean] do
   jekyll('build --verbose --baseurl=/devdocs')
   # Restore the environmental variable
   ENV['JEKYLL_ENV'] = jekyll_env
+  `git checkout gh-pages`
+  `cp -R _site/ ./`
   puts 'Built!'.green
 end
 
