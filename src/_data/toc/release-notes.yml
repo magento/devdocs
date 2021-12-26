@@ -7,6 +7,8 @@ pages:
       include_versions: ["2.4"]
       children:
 
+        - label: Adobe Commerce 2.4.3-p1 Release Notes
+          url: /release-notes/2-4-3-p1.html
 
         - label: Magento Open Source 2.4.3 Release Notes
           url: /release-notes/open-source-2-4-3.html
@@ -45,6 +47,9 @@ pages:
 
         - label: Component Status
           url: /release-notes/component-status.html
+
+        - label: Adobe Commerce 2.3.7-p2 Release Notes
+          url: /release-notes/2-3-7-p2.html
 
         - label: Adobe Commerce 2.3.7-p1 Release Notes
           url: /release-notes/2-3-7-p1.html
@@ -138,10 +143,14 @@ pages:
     - label: Product Recommendations
       url: /recommendations/release-notes.html
       versionless: true
-
+    
     - label: Sales Channels
       children:
       
         - label: Amazon
           url: /extensions/amazon-sales/release-notes/
           versionless: true
+
+    - label: Payment Services
+      url: /payment-services/release-notes.html
+      versionless: true

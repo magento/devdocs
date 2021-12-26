@@ -62,4 +62,25 @@ namespace :test do
     abort 'Fix the reported issues'.red unless output.empty?
     puts 'No issues found'.green
   end
+
+  desc 'Find unused images'
+  task :unused_images do
+    puts 'Running a task for finding unused images'.magenta
+    images = Dir['src/**/*.{png,svg,jpeg,jpg,ico}']
+    puts "The project contains a total of #{images.size} images."
+    puts 'Checking for unlinked images...'
+    Dir['src/**/*.{md,html,js,css}'].each do |file|
+      # Exclude symmlinks
+      next if File.symlink? file
+
+      images.delete_if { |image| File.read(file).include?(File.basename(image)) }
+    end
+
+    abort 'No unlinked images' if images.empty?
+
+    images.each do |image|
+      puts "No links for #{image}".yellow
+    end
+    puts "Found #{images.size} dangling images".red
+  end
 end

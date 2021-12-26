@@ -56,7 +56,7 @@ Look for the following highlights in this release:
 
 #### Page Builder
 
-Page Builder is a drag-and-drop visual content editing tool that lets merchants customize content page layout and create shopping experiences that blend content and commerce without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. Page Builder is available on {{site.data.var.ee}} only. See [Page Builder User Guide](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html) and [Page Builder Developer Documentation](https://devdocs.magento.com/page-builder/docs/index.html).
+Page Builder is a drag-and-drop visual content editing tool that lets merchants customize content page layout and create shopping experiences that blend content and commerce without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. Page Builder is available on {{site.data.var.ee}} only. See [Page Builder User Guide](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html) and [Page Builder Developer Documentation]({{ site.baseurl }}/page-builder/docs/index.html).
 
 #### Improved order creation workflow in the Admin
 
@@ -80,7 +80,7 @@ The Magento Inventory (was MSI) community project has added multiple new feature
 
 #### Progressive Web Apps (PWA) Studio
 
-PWA Studio is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.x. See [Magento PWA Documentation](https://magento.github.io/pwa-studio/).
+PWA Studio is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.x. See [Magento PWA Documentation](https://developer.adobe.com/commerce/pwa-studio/).
 
 #### GraphQL
 

@@ -21,24 +21,23 @@ mbi: Adobe Commerce Reporting
 # Cloud product name variables
 
 ece: Adobe Commerce on cloud infrastructure
-ece-release-date: July 29, 2021
 csuite: Cloud Suite for Commerce
 
 ct: ece-tools
 ct-repo: magento/ece-tools
-ct-release: 2002.1.7
+ct-release: 2002.1.8
 
 mcc-prod: Cloud Components of Commerce
 mcc-package: magento/magento-cloud-components
-mcc-release: 1.0.8
+mcc-release: 1.0.9
 
 mcd-prod: Cloud Docker for Commerce
 mcd-package: magento/magento-cloud-docker
-mcd-release: 1.2.4
+mcd-release: 1.3.0
 
 mcp-prod: Cloud Patches for Commerce
 mcp-package: magento/magento-cloud-patches
-mcp-release: 1.0.12
+mcp-release: 1.0.13
 
 # TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
 # is the variable value.

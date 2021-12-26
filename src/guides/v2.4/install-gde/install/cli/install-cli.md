@@ -47,7 +47,7 @@ You must install Magento from its `bin` subdirectory.
 
 You can run the installer multiple times with different options to complete installation tasks like the following:
 
-*  Install in phases—For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer again to set SSL options.
+*  Install in phases — For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer again to set SSL options.
 
 *  Correct mistakes in previous installations.
 
@@ -66,9 +66,9 @@ You can run the following commands to find values for some required arguments:
 
 | Installer argument | Command                         |
 | ------------------ | ------------------------------- |
-| Language           | magento info:language:list      |
-| Currency           | magento info:currency:list      |
-| Time zone          | php  magento info:timezone:list |
+| Language           | bin/magento info:language:list      |
+| Currency           | bin/magento info:currency:list      |
+| Time zone          | bin/magento info:timezone:list      |
 
  {:.bs-callout-info}
 If an error displays when you run these commands, verify that you updated installation dependencies as discussed in [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html).
@@ -78,7 +78,7 @@ If an error displays when you run these commands, verify that you updated instal
 The install command uses the following format:
 
 ```bash
-magento setup:install --<option>=<value> ... --<option>=<value>
+bin/magento setup:install --<option>=<value> ... --<option>=<value>
 ```
 
 The following tables describe the installation option names and values. For example installation commands. see [Sample localhost installations](#install-cli-example).

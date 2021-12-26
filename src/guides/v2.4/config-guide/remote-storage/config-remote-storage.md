@@ -12,6 +12,9 @@ The Remote Storage module provides the option to store media files and schedule 
 {:.bs-callout-info}
 Remote storage is available in version 2.4.2 and later only. See the [2.4.2 release notes]({{page.baseurl}}/release-notes/open-source-2-4-2.html).
 
+{:.bs-callout-info}
+The Remote storage module is _not_ supported on {{site.data.var.ece}}.
+
 ![schema image]
 
 ## Remote storage options
@@ -78,11 +81,11 @@ After you enable remote storage for a specific adapter, you can use the CLI to m
 ```
 
 {:.bs-callout-info}
-The sync command only migrates files in the `pub/media` directory, _not_ the import/export files in the `var` directory. See [Scheduled Import/Export][import-export] in the _Magento 2.4 User Guide_.
+The sync command only migrates files in the `pub/media` directory, _not_ the import/export files in the `var` directory. See [Scheduled Import/Export][import-export] in the _Commerce 2.4 User Guide_.
 
 <!-- link definitions -->
 [AWS S3]: {{site.baseurl}}/guides/v2.4/config-guide/remote-storage/config-remote-storage-aws-s3.html
-[import-export]: https://docs.magento.com/user-guide/system/data-scheduled-import-export.html
+[import-export]: {{ site.user_guide_url }}/system/data-scheduled-import-export.html
 [nginx-module]: http://nginx.org/en/docs/http/ngx_http_image_filter_module.html
 [schema image]: {{site.baseurl}}/common/images/config-remote-storage-schema.png
 {:width="500px"}

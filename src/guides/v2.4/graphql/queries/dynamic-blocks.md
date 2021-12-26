@@ -8,7 +8,7 @@ The `dynamicBlocks` query returns a list of dynamic blocks that have been placed
 {:.bs-callout-info}
 The Banner functionality was removed from Magento 2.4.0 and replaced with dynamic blocks.
 
-When a [Dynamic Blocks Rotator inline widget is created](https://docs.magento.com/user-guide/cms/dynamic-blocks-rotate.html), the Magento administrator can select the following options:
+When a [Dynamic Blocks Rotator inline widget is created]({{ site.user_guide_url }}/cms/dynamic-blocks-rotate.html), the Magento administrator can select the following options:
 
 *  **Specified Dynamic Blocks**
 *  **Cart Price Rule Related**

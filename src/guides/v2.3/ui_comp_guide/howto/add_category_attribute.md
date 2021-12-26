@@ -14,6 +14,8 @@ The following is a full example of an install script that creates a [category](h
 ```php
 // File: Namespace/Module/Setup/InstallData.php
 
+namespace Namespace\Module\Setup;
+
 use Magento\Framework\Setup\{
     ModuleContextInterface,
     ModuleDataSetupInterface,

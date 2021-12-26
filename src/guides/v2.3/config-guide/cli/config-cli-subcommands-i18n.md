@@ -290,13 +290,20 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 
    **Sample `registration.php`:**
 
-   ```php?start_inline=1
+   ```php
+   <?php
    /**
-   * Copyright © Magento, Inc. All rights reserved.
-   * See COPYING.txt for license details.
-   */
-   use \Magento\Framework\Component\ComponentRegistrar;
-   ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_xx_yy', __DIR__);
+    * Copyright © Magento, Inc. All rights reserved.
+    * See COPYING.txt for license details.
+    */
+
+   use Magento\Framework\Component\ComponentRegistrar;
+
+   ComponentRegistrar::register(
+       ComponentRegistrar::LANGUAGE,
+       'magento_xx_yy',
+       __DIR__
+   );
    ```
 
    **Sample `language.xml`:**
@@ -326,7 +333,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 [Translations overview]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html
 [Community Engineering contributions]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translations-project
 [translation dictionary]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries
-[configures the translations]: http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation
+[configures the translations]: {{ site.user_guide_url }}/stores/store-language-add.html?Highlight=translation
 [Learn more about language packages]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack
 [ISO 639-1]: http://www.iso.org/iso/home/standards/language_codes.htm
 [ISO 3166]: http://www.iso.org/iso/country_codes.htm

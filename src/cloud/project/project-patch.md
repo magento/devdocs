@@ -9,12 +9,14 @@ functional_areas:
 [{{ site.data.var.mcp-prod }}](https://github.com/magento/magento-cloud-patches) and the [Quality Patches Tool](https://github.com/magento/quality-patches) deliver patches to your installed {{site.data.var.ee}} application.
 
 -  {{ site.data.var.mcp-prod }} delivers required patches with critical fixes
--  Quality Patches deliver optional, low-impact quality fixes as [individual patches]({{ site.baseurl }}/release/policy/#individual-patch), which do not contain backward incompatible changes.
+-  Quality Patches deliver optional, low-impact quality fixes as [individual patches]({{ site.baseurl }}/release/policy/#individual-patch) that do not contain backward incompatible changes
+
+See [Available Patches]({{ site.baseurl }}/quality-patches/tool.html#patch-grid) in the _Software Update Guide_ to review a full list of released patches.
 
 Both packages improve the integration of all {{site.data.var.ee}} versions with Cloud environments and support quick delivery of critical, optional, and custom fixes. You can use these packages to apply, revert, and view general information about all individual patches that are available for Magento.
 
 {:.bs-callout-tip}
-You can use the [Quality Patches Tool]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html) and [{{ site.data.var.mcp-prod }}](#standalone) packages as stand-alone packages for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects. We recommend using the Quality Patches Tool for non-Cloud projects.
+You can use the [Quality Patches Tool]({{ site.baseurl }}/quality-patches/usage.html) and [{{ site.data.var.mcp-prod }}](#standalone) packages as stand-alone packages for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects. We recommend using the Quality Patches Tool for non-Cloud projects.
 
 When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses {{ site.data.var.mcp-package }} and `magento/quality-patches` to check for pending patches and applies them automatically in the following order:
 
@@ -201,7 +203,7 @@ To apply and test a custom patch on a Cloud environment:
 
 ## Apply patches to a non-Cloud project {#standalone}
 
-Use the [Quality Patches Tool]({{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/patching/mqp.html) for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
+Use the [Quality Patches Tool]({{ site.baseurl }}/quality-patches/usage.html) for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
 
 ## Revert a patch in a local environment
 

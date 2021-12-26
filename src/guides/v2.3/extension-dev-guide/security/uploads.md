@@ -14,7 +14,8 @@ store the file, you only need the contents of the file to add those SKUs to a ca
 SKUs, and delete it without ever moving it from the  temporary folder on the file system. Another, even better option for security and
 performance, is to never upload the file in the first place. The file can be handled on the frontend side using JavaScript
 to extract SKUs and quantities and send those to a web API endpoint on the server.
-{.:bs-callout-tip}
+
+{:.bs-callout-tip}
 The best way to avoid security issues with files is to not upload or store them in the first place
 if you don't have to.
 

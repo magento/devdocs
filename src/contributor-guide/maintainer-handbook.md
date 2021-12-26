@@ -9,7 +9,7 @@ This document describes activities performed by a community maintainer, provides
 
 Our maintainers work on numerous repositories within the Magento Github organization. The repository that has most activity is [magento2](https://github.com/magento/magento2). Depending on your interest, you might also interact with some of our other repositories, such as:
 
--  [pwa-studio](https://github.com/magento/pwa-studio)
+-  [pwa-studio](https://developer.adobe.com/commerce/pwa-studio/)
 -  [magento2-phpstorm-plugin](https://github.com/magento/magento2-phpstorm-plugin)
 -  [inventory](https://github.com/magento/inventory)
 -  [adobe-stock-integration](https://github.com/magento/adobe-stock-integration)

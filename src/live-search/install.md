@@ -2,11 +2,11 @@
 group: live-search
 title: Install Live Search
 ee_only: True
-redirect_from: 
-  - /live-search/config-connect.html
+redirect_from: /live-search/config-connect.html
+redirect_to: https://docs.magento.com/user-guide/live-search/install.html
 ---
 
-Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ce}} and {{site.data.var.ee}} search capabilities.  This topic provides instructions to do the following:
+Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ce}} and {{site.data.var.ee}} search capabilities. This topic provides instructions to do the following:
 
 -  [Installing Live Search](#before-you-begin) (Methods 1 and 2)
 -  [Updating Live Search](#updating-live-search)
@@ -15,7 +15,7 @@ Live Search is a set of standalone meta packages that replaces standard {{site.d
 |Package|Description|
 |---|---|
 |`module-live-search`|Allows merchants to configure their search settings for faceting, synonyms, query rules, etc., and provides access to a read-only GraphQL playground to test queries from the {{site.data.var.ee}} Admin. |
-|`module-live-search-adapter`|Routes search requests from the storefront to the Live Search service and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation](https://docs.magento.com/user-guide/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search](https://docs.magento.com/user-guide/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
+|`module-live-search-adapter`|Routes search requests from the storefront to the Live Search service and renders the results in the storefront. <br />- Category browse - Routes requests from the storefront [top navigation]({{ site.user_guide_url }}/catalog/navigation-top.html) to the search service.<br />- Global search - Routes requests from the [quick search]({{ site.user_guide_url }}/catalog/search-quick.html) box in the upper-right of the storefront to the Live Search service.|
 |`module-live-search-storefront-popover`|A "search as you type" popover replaces the standard quick search and returns dynamic product suggestions and thumbnails of top search results.|
 
 ## Requirements
@@ -75,7 +75,7 @@ In this scenario, storefront operations are interrupted while the Live Search se
    {:.bs-callout-warning}
    While the data is indexed and synchronized, the search and category browse operations are not available in the storefront. Depending on the size of your catalog, the process can take at least an hour from the time `cron` runs to synchronize your data to Live Search services.
 
-1. Verify that the following [indexers](https://docs.magento.com/user-guide/system/index-management.html) are set to `Update by Schedule`:
+1. Verify that the following [indexers]({{ site.user_guide_url }}/system/index-management.html) are set to `Update by Schedule`:
 
    -  Product Feed
    -  Product Variant Feed
@@ -83,7 +83,7 @@ In this scenario, storefront operations are interrupted while the Live Search se
 
 1. Configure your [API keys](#configure-api-keys) to [synchronize](#synchronize-catalog-data) your catalog data to Live Search services.
 
-1. To make facets available as filters in the storefront, add the [facets](https://docs.magento.com/user-guide/live-search/facets-add.html) you need, according to the [requirements](https://docs.magento.com/user-guide/live-search/facets.html).
+1. To make facets available as filters in the storefront, add the [facets]({{ site.user_guide_url }}/live-search/facets-add.html) you need, according to the [requirements]({{ site.user_guide_url }}/live-search/facets.html).
 
    You should be able to add facets after `cron` runs the attribute feeds and exports attribute metadata.
 
@@ -119,7 +119,7 @@ In this scenario, Elasticsearch temporarily manages search requests from the sto
 
    Elasticsearch continues to manage search requests from the storefront while the Live Search service synchronizes the catalog data and indexes products in the background.
 
-1. Verify that the following [indexers](https://docs.magento.com/user-guide/system/index-management.html) are set to `Update by Schedule`:
+1. Verify that the following [indexers]({{ site.user_guide_url }}/system/index-management.html) are set to `Update by Schedule`:
 
    -  Product Feed
    -  Product Variant Feed
@@ -127,7 +127,7 @@ In this scenario, Elasticsearch temporarily manages search requests from the sto
 
 1. Configure your [API keys](#configure-api-keys) to [synchronize](#synchronize-catalog-data) your catalog data to Live Search services.
 
-1. To make facets available as filters in the storefront, add the [facets](https://docs.magento.com/user-guide/live-search/facets-add.html) you need, according to the [requirements](https://docs.magento.com/user-guide/live-search/facets.html).
+1. To make facets available as filters in the storefront, add the [facets]({{ site.user_guide_url }}/live-search/facets-add.html) you need, according to the [requirements]({{ site.user_guide_url }}/live-search/facets.html).
 
    You should be able to add facets after `cron` runs the product and attribute feeds and exports attribute metadata to Live Search services.
 
@@ -154,15 +154,15 @@ In this scenario, Elasticsearch temporarily manages search requests from the sto
 
 ## Configure API keys
 
-The {{site.data.var.ee}} API key and its associated private key are required to connect Live Search to an installation of {{site.data.var.ee}}. The API key is generated and maintained in the account of the {{site.data.var.ee}} license holder, who can share it with the developer or SI. The developer can then create and manage the SaaS environments on behalf of the license-holder. For detailed instructions, see Commerce Services in the [User Guide](https://docs.magento.com/user-guide/system/saas.html) and [Configuration Reference](https://docs.magento.com/user-guide/configuration/services/saas.html).
+The {{site.data.var.ee}} API key and its associated private key are required to connect Live Search to an installation of {{site.data.var.ee}}. The API key is generated and maintained in the account of the {{site.data.var.ee}} license holder, who can share it with the developer or SI. The developer can then create and manage the SaaS Data Spaces on behalf of the license-holder. For detailed instructions, see Commerce Services in the [User Guide]({{ site.user_guide_url }}/system/saas.html) and [Configuration Reference]({{ site.user_guide_url }}/configuration/services/saas.html).
 
 ### {{site.data.var.ee}} license holder
 
-To generate an API key and private key, see [Commerce Services](https://docs.magento.com/user-guide/system/saas.html) in the {{site.data.var.ee}} User Guide.
+To generate an API key and private key, see [Commerce Services]({{ site.user_guide_url }}/system/saas.html) in the {{site.data.var.ee}} User Guide.
 
 ### {{site.data.var.ee}} developer or SI
 
-The developer or SI configures the SaaS environment as described in the Commerce Services section of the configuration. Commerce Services becomes available in the Admin Configuration sidebar when a SaaS module is installed.
+The developer or SI configures the SaaS Data Space as described in the Commerce Services section of the configuration. Commerce Services becomes available in the Admin Configuration sidebar when a SaaS module is installed.
 
 ## Synchronize catalog data
 

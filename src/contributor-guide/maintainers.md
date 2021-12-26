@@ -6,14 +6,14 @@ redirect_from:
 - guides/v2.4/contributor-guide/maintainers.html
 ---
 
-Magento trusts our active community members to review pull requests and accept or reject proposed code changes. [Community Maintainers](https://magento.com/magento-contributors#maintainers){:target="_blank"} take part in discussions, reviews, and help process pull requests.
+Magento trusts our active community members to review pull requests and accept or reject proposed code changes. [Community Maintainers](https://magento.com/magento-contributors#maintainers) take part in discussions, reviews, and help process pull requests.
 
 ## Who becomes a Maintainer?
 
 When considering new maintainers, we look for contributors who have shown a propensity for:
 
 -  Contributing good and accepted code to multiple Magento projects, including fixes for issues and new features
--  Participating in discussions in our development projects, including the [architecture](https://github.com/magento/architecture){:target="_blank"} and [backlog](https://github.com/magento/backlog){:target="_blank"} projects
+-  Participating in discussions in our development projects, including the [architecture](https://github.com/magento/architecture) and [backlog](https://github.com/magento/backlog) projects
 -  Reviewing and discussing pull requests from other contributors
 -  Helping other contributors with complex decisions and questions, like architecture questions, and providing advice according to [Magento technical guidelines]({{ site.gdeurl }}/coding-standards/technical-guidelines.html)
 

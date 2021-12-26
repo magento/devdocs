@@ -7,7 +7,7 @@ This document provides additional technical details for integrating Magento paym
 
 The integration is based on the *Magento_CardinalCommerce* module that implements the [Cardinal Cruise Standard][] integration approach.
 
-The Cardinal Cruise Standard integration is purely a JavaScript approach that is all encompassing. When enabling this approach for [Cardinal Consumer Authentication][], this integration will handle the device data collection, initiating the transaction for [CCA][], presenting the authentication session if required, and returning the results of authentication once completed. This is recommended integration approach for CCA.
+The Cardinal Cruise Standard integration is purely a JavaScript approach that is all encompassing. When enabling this approach for [Cardinal Consumer Authentication][], this integration will handle the device data collection, initiating the transaction for [CCA][Cardinal Consumer Authentication], presenting the authentication session if required, and returning the results of authentication once completed. This is recommended integration approach for CCA.
 
 The following diagram shows a simplified 3-D Secure verification flow using Cardinal Cruise Standard integration approach provided by CardinalCommerce:
 

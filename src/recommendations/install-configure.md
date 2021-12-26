@@ -35,11 +35,11 @@ Product Recommendations for [Page Builder]({{ site.baseurl }}/page-builder/docs/
 composer require magento/module-page-builder-product-recommendations
 ```
 
-By enabling Product Recommendations in Page Builder, you can [add an existing, active recommendation unit](https://docs.magento.com/user-guide/marketing/page-builder-add-product-recs.html) to any content created in Page Builder, such as pages, blocks, and dynamic blocks.
+By enabling Product Recommendations in Page Builder, you can [add an existing, active recommendation unit]({{ site.user_guide_url }}/marketing/page-builder-add-product-recs.html) to any content created in Page Builder, such as pages, blocks, and dynamic blocks.
 
 ### Add Visual similarity recommendation type {#vissimsupport}
 
-The _Visual similarity_ recommendation type allows you to [deploy a recommendation unit](https://docs.magento.com/user-guide/marketing/prex-type-visualsim.html) to your product detail page that displays products that are visually similar to the product being viewed. This recommendation type is most useful where images and visual aspects of the products are important parts of the shopping experience. Install the _Visual similarity_ recommendation type by running the following command:
+The _Visual similarity_ recommendation type allows you to [deploy a recommendation unit]({{ site.user_guide_url }}/marketing/prex-type-visualsim.html) to your product detail page that displays products that are visually similar to the product being viewed. This recommendation type is most useful where images and visual aspects of the products are important parts of the shopping experience. Install the _Visual similarity_ recommendation type by running the following command:
 
 ```bash
 composer require magento/module-visual-product-recommendations
@@ -85,8 +85,8 @@ If needed, you can [uninstall the product-recommendations module]({{ site.baseur
 
 ## Configure Product Recommendations {#configure}
 
-After you install the `magento/product-recommendations` module, you must configure the module by [specifying the API Key and selecting a SaaS Environment](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html).
+After you install the `magento/product-recommendations` module, you must configure the module by [specifying the API Key and selecting a SaaS Data Space](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html). The license-holder must generate these keys in order to pass entitlement validation.
 
 To ensure catalog export is running correctly, confirm that the [cron]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-cron.html) jobs and the [indexers]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-index.html) are running and the `Product Feed` indexer is set to `Update by Schedule`.
 
-When you successfully link to Magento Services through the API key and specify the SaaS Environment, the catalog sync initiates and [behavioral data collection]({{ page.baseurl }}/recommendations/verify.html) begins on your storefront.
+When you successfully link to Magento Services through the API key and specify the SaaS Data Space, the catalog sync initiates and [behavioral data collection]({{ page.baseurl }}/recommendations/verify.html) begins on your storefront.
