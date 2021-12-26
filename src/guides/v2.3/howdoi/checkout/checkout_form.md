@@ -128,6 +128,7 @@ It should be similar to the following:
                                                                 <item name="custom-checkout-form-container" xsi:type="array">
                                                                     <!-- Add this item to configure your js file  -->
                                                                     <item name="component" xsi:type="string">VendorName_ModuleName/js/view/custom-checkout-form</item>
+                                                                    <item name="provider" xsi:type="string">checkoutProvider</item>
                                                                     <item name="config" xsi:type="array">
                                                                         <!-- And this to add your html template  -->
                                                                         <item name="template" xsi:type="string">VendorName_ModuleName/custom-checkout-form</item>
