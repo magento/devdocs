@@ -129,11 +129,7 @@ To assign severity tags do the following:
 </type>
 ```
 
-For example, `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml`:
-
-```xml
-{%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml %}
-```
+For example, `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml`.
 
 ## How to create constraint {#mtf_constraint_create}
 

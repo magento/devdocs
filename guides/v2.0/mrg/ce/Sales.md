@@ -161,25 +161,9 @@ The service returns an identifier of the created Invoice.
 
 `\Magento\Sales\Api\InvoiceOrderInterface`
 
-{% collapsible Click to show/hide a code %}
-
-{% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/app/code/Magento/Sales/Api/InvoiceOrderInterface.php %}
-{% endhighlight %}
-
-{% endcollapsible %}
-
 ### PHP implementation
 
 `\Magento\Sales\Model\InvoiceOrder`
-
-{% collapsible Click to show/hide included code %}
-
-{% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/app/code/Magento/Sales/Model/InvoiceOrder.php %}
-{% endhighlight %}
-
-{% endcollapsible %}
 
 #### Exceptions
 
@@ -468,25 +452,9 @@ The service returns an identifier of a created Credit Memo.
 
 `\Magento\Sales\Api\RefundInvoiceInterface`
 
-{% collapsible Click to show/hide a code %}
-
-{% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/app/code/Magento/Sales/Api/RefundInvoiceInterface.php %}
-{% endhighlight %}
-
-{% endcollapsible %}
-
 ### PHP implementation
 
 `\Magento\Sales\Model\RefundInvoice`
-
-{% collapsible Click to show/hide a code %}
-
-{% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/app/code/Magento/Sales/Model/RefundInvoice.php %}
-{% endhighlight %}
-
-{% endcollapsible %}
 
 #### Exceptions
 
@@ -747,25 +715,9 @@ The service returns an identifier of a created Credit Memo.
 
 `\Magento\Sales\Api\RefundOrderInterface`
 
-{% collapsible Click to show/hide a code %}
-
-{% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/app/code/Magento/Sales/Api/RefundOrderInterface.php %}
-{% endhighlight %}
-
-{% endcollapsible %}
-
 ### PHP implementation
 
 `\Magento\Sales\Model\RefundOrder`
-
-{% collapsible Click to show/hide a code %}
-
-{% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/app/code/Magento/Sales/Model/RefundOrder.php %}
-{% endhighlight %}
-
-{% endcollapsible %}
 
 #### Exceptions
 
@@ -967,25 +919,9 @@ The service returns the identifier of a created shipment.
 
 `\Magento\Sales\Api\ShipOrderInterface`
 
-{% collapsible Click to show/hide a code %}
-
-{% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/app/code/Magento/Sales/Api/ShipOrderInterface.php %}
-{% endhighlight %}
-
-{% endcollapsible %}
-
 ### PHP implementation
 
 `\Magento\Sales\Model\ShipOrder`
-
-{% collapsible Click to show/hide a code %}
-
-{% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/app/code/Magento/Sales/Model/ShipOrder.php %}
-{% endhighlight %}
-
-{% endcollapsible %}
 
 #### Exceptions
 

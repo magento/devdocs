@@ -2,8 +2,8 @@
 # Each setting is available on pages using Liquid {{ site.<config key> }}. For example, {{ site.title }}.
 # For more details about available options and defaults, refer to https://jekyllrb.com/docs/configuration/
 #
-title: Magento 2 Developer Documentation (copy)
-logo: DevDocs (archived, unofficial)
+title: Copy of Magento 2 Developer Documentation
+logo: DevDocs (unofficial copy)
 description: Copy of the Magento 2 Developer Documentation.
 
 # Site theme. https://jekyllrb.com/docs/themes/
@@ -17,6 +17,10 @@ baseurl: ''
 version: "2.3"
 versions:
    -
+     name: "1.x"
+     url: /guides/m1x/
+
+   - 
       name: "2.0"
       url: /guides/v2.0/
    -
@@ -48,7 +52,7 @@ defaults:
     scope:
       path: guides/m1x
     values:
-      layout: 'null'
+      layout: null
   -
     scope:
       type: videos
@@ -76,8 +80,6 @@ defaults:
       path: guides/v2.3/mrg
     values:
       group: module-reference-guide-2_3
-      github_link: false
-      feedback_link: false
 
 ##########################
 # Plugins and extensions #

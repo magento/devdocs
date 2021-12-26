@@ -147,13 +147,7 @@ Create the handler in the same directory where the interface is stored: `<magent
 The `di.xml` file declares relationship between the [interface](#mtf_handler_interface) and the [handler](#mtf_handler_conf_hand) class.
 The file must be placed in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
 
-See an example for the Widget cURL handler (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
-
-```xml
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-```
-
- In this example, the `di.xml` file causes the `Curl` class to replace the `WidgetInterface`.
+See an example for the Widget cURL handler (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`). In this example, the `di.xml` file causes the `Curl` class to replace the `WidgetInterface`.
 
 See the directory structure mentioned for the case with the Widget cURL handler:
 
@@ -273,10 +267,6 @@ This file contains a [handler class](#mtf_handler_conf_hand), which defines prep
   ```
 
 * Create [`di.xml`](#mtf_handler_di) in the `etc/curl` directory of the Magento_Widget module.
-
-```xml
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-```
 
 ### cURL authentication classes {#mtf_handler_decor}
 

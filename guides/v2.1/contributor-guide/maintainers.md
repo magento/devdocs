@@ -2,7 +2,6 @@
 group: contributor-guide
 title: Maintainers
 version: 2.1
-github_link: contributor-guide/maintainers.md
 redirect_from:
   - guides/v2.1/contributor-guide/devdocs-maintainers.html
   - guides/v2.2/contributor-guide/devdocs-maintainers.html
