@@ -95,3 +95,6 @@ pages:
 
         - label: Creating an integration with an external API
           url: /ext-best-practices/tutorials/create-integration-with-api.html
+
+        - label: Create a custom REST API
+          url: /ext-best-practices/tutorials/create-custom-rest-api.html
