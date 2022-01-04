@@ -89,7 +89,7 @@ namespace :test do
     puts 'Running a task to find unused _includes'.magenta
     includes = Dir['src/_includes/**/*']
     puts "The project contains a total of #{includes.size} includes"
-    puts "Let's see how many are unused..."
+    puts "The following includes are not linked:"
     Dir['src/**/*.{md,html}'].each do |file|
       # Exclude symmlinks
       next if File.symlink? file
