@@ -155,7 +155,7 @@ To add custom crons:
 1. Add, commit, and push code changes.
 
    ```bash
-   git add -A && git commit -m "cron config updates" && git push origin <branch-name>
+   git add .magento.app.yaml && git commit -m "cron config updates" && git push origin <branch-name>
    ```
 
 ## Update custom cron jobs {#update}
