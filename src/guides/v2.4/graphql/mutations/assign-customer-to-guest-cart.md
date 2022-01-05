@@ -5,14 +5,10 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `assignCustomerToGuestCart` mutation assigns a logged in customer and merge customer's shopping cart items to the specified guest shopping cart.
-
-If this mutation is successful, the customer's shopping cart becomes inactive and all the products it contains are added to the contents of the guest cart (the active one).
-Customer now is assigned to that active cart.
+The `assignCustomerToGuestCart` mutation merges a logged-in customer's shopping cart into the specified guest cart. The mutation inactivates the customer's shopping cart and moves the products to the guest cart. The guest cart is then assigned to the customer.
 
 {:.bs-callout-info}
-Customer cart becomes inactive and the guest cart remains active; but for guest cart new `masked_id` is being generated.
-`quote_id` remains same.
+The `masked_id` of the guest cart contains a new value. The `quote_id` remains the same.
 
 This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
