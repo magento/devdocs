@@ -38,7 +38,7 @@ The following example shows a PHTML file using the script:
 
 ## Options
 
-The RedirectUrl widget has the following options:
+The Multiselect widget has the following options:
 
 -  [containerClass](#containerclass)
 -  [currentPage](#currentpage)
