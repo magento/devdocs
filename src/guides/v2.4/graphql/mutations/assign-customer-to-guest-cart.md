@@ -98,7 +98,7 @@ Attribute |  Data Type | Description
 Error | Description
 --- | ---
 `The current customer isn't authorized.` | The current customer is not currently logged in.
-`Unable to assign the customer to the guest cart` | The current customer can't be assigned to the provided guset cart.
+`Unable to assign the customer to the guest cart` | The current customer can't be assigned to the provided guest cart.
 `The cart isn't active` | The cart with the specified cart ID is unavailable, because the items have been purchased and the cart ID becomes inactive.
 `Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
 `The current user cannot perform operations on cart "XXX"` | Tried to assign the customer to the customer's cart.
