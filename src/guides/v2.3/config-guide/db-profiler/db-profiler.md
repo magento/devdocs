@@ -63,10 +63,21 @@ The following example displays results in a three-column table:
 
 To configure the output, add the following after the `$bootstrap->run($app);` line in your bootstrap file:
 
-```php?start_inline=1
-/** @var \Magento\Framework\App\ResourceConnection $res */
-$res = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\App\ResourceConnection');
-/** @var Magento\Framework\DB\Profiler $profiler */
+```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\App\ObjectManager;
+use Magento\Framework\App\ResourceConnection;
+use Magento\Framework\DB\Profiler;
+
+/** @var ResourceConnection $res */
+$res = ObjectManager::getInstance()->get(ResourceConnection::class);
+
+/** @var Profiler $profiler */
 $profiler = $res->getConnection('read')->getProfiler();
 echo "<table cellpadding='0' cellspacing='0' border='1'>";
 echo "<tr>";

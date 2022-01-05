@@ -62,6 +62,7 @@ To run the integration tests, execute one of the following commands:
 ## GraphQL unit testing and Eslint code analysis
 
 ### Requirements
+
 {:.bs-callout-info}
 You must have Node.js on your system, see the [documentation](https://nodejs.dev/learn/how-to-install-nodejs).
 
@@ -111,7 +112,7 @@ The {{site.data.var.uct}} calculates this score according to the complexity scor
 
 ### Complexity score formula
 
-`Complexity Score = ({{site.data.var.ee}} core errors) * 4 + (Critical errors) * 4 + [(PHP errors)+(GraphQL errors)] * 2 + [(PHP warnings)+(GraphQL warnings)] * 1`
+`Complexity Score = ({{site.data.var.ee}} core errors) * 4 + (Critical errors) * 4 + [(PHP and JS errors)+(GraphQL errors)] * 2 + [(PHP and JS warnings)+(GraphQL warnings)] * 1`
 
 {:.bs-callout-warning}
 These are absolute values.

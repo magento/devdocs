@@ -37,7 +37,7 @@ For example, you can use the `MAGE_PROFILER` system environment variable to spec
 MAGE_PROFILER={firebug|csv|<custom value>}
 ```
 
-Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like [unix.stackexchange.com](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables){:target="_blank"}.
+Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like [unix.stackexchange.com](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables).
 
 Bash shell example for CentOS:
 
@@ -60,7 +60,7 @@ See one of the following sections for more information:
 
 ### Specify a variable using an nginx setting {#mode-specify-web-nginx}
 
-See the [nginx sample configuration]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample#L16){:target="_blank"} on GitHub.
+See the [nginx sample configuration]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample#L16) on GitHub.
 
 ### Specify a variable using .htaccess (Apache only) {#mode-specify-web-htaccess}
 
@@ -95,7 +95,7 @@ To set a variable:
 
 The Apache web server supports setting the Magento mode using `mod_env` directives.
 
-The Apache `mod_env` directive is slightly different in [version 2.2](http://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv){:target="_blank"} and [version 2.4](http://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv){:target="_blank"}.
+The Apache `mod_env` directive is slightly different in [version 2.2](http://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv) and [version 2.4](http://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv).
 
 The procedures that follows show how to set the Magento mode in an Apache virtual host. This is not the only way to use `mod_env` directives; consult the Apache documentation for details.
 
@@ -104,7 +104,7 @@ The procedures that follows show how to set the Magento mode in an Apache virtua
 
 #### Specify a bootstrap variable for Apache on Ubuntu {#mode-specify-ubuntu}
 
-This section assumes you've already set up your virtual host. If you have not, consult a resource such as [this DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts){:target="_blank"}.
+This section assumes you've already set up your virtual host. If you have not, consult a resource such as [this DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts).
 
 To set a Magento bootstrap variable using your web server's environment:
 
@@ -147,7 +147,7 @@ To set a Magento bootstrap variable using your web server's environment:
 
 #### Specify a bootstrap variable for Apache on CentOS {#mode-specify-centos}
 
-This section assumes you've already set up your virtual host. If you have not, consult a resource such as [this DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-centos-6){:target="_blank"}.
+This section assumes you've already set up your virtual host. If you have not, consult a resource such as [this DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-centos-6).
 
 To set a Magento bootstrap variable using your web server's environment:
 

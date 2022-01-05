@@ -22,9 +22,9 @@ pages:
     versionless: true
   
   - label: Lifecycle policy
-    url: https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf
+    url: /release/lifecycle-policy.html
     versionless: true
-  
+
   - label: Availability
     url: /release/availability.html
     versionless: true

@@ -66,12 +66,19 @@ For more information see: [registering your component]({{ page.baseurl }}/extens
 
 {% collapsible File content for registration.php %}
 ```php
-  <?php
-  \Magento\Framework\Component\ComponentRegistrar::register(
-      \Magento\Framework\Component\ComponentRegistrar::MODULE,
-      'MyCompany_ExampleAdminNewPage',
-      __DIR__
-  );
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'MyCompany_ExampleAdminNewPage',
+    __DIR__
+);
 ```
 {% endcollapsible %}
 
@@ -179,12 +186,17 @@ In the module's root directory, run the following command:
 mkdir -p Controller/Adminhtml/HelloWorld
 ```
 
-Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`. This file is the class assigned to the default Index action for the `HelloWorld` controller. Since the admin area serves this page, the file belongs in the `Adminhtml` directory, and the class itself extends [`\Magento\Backend\App\Action`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/App/Action.php){:target="_blank"}.
+Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`. This file is the class assigned to the default Index action for the `HelloWorld` controller. Since the admin area serves this page, the file belongs in the `Adminhtml` directory, and the class itself extends [`\Magento\Backend\App\Action`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/App/Action.php).
 
 {% collapsible File content for Index.php %}
 
 ```php
 <?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld;
 
 use Magento\Backend\App\Action;

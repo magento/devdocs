@@ -34,7 +34,7 @@ This release includes over 15 security fixes and platform security improvements.
 *  Place Order storefront page and REST and GraphQL endpoints<!--- MC-36067-->
 *  Payment-related REST and GraphQL endpoints.<!--- MC-36064-->
 
-  CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks. See [CAPTCHA](https://docs.magento.com/user-guide/stores/security-captcha.html).
+  CAPTCHA protection for these additional pages is disabled by default. It can be enabled on the Admin in the same way that other pages covered by CAPTCHA are. This protection has been added as an anti-brute force mechanism to protect stores against carding attacks. See [CAPTCHA]({{ site.user_guide_url }}/stores/security-captcha.html).
 
 {:.bs-callout-info}
 Starting with the release of {{site.data.var.ce}} 2.3.2, we will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users to more easily identify unaddressed vulnerabilities in their deployment.

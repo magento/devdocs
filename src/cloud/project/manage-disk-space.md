@@ -135,7 +135,7 @@ The `.magento/services.yaml` file controls the disk space available to each serv
 {:.procedure}
 To increase disk space for a service:
 
-1. In your local development environment, open the `.magento/service.yaml` configuration file.
+1. In your local development environment, open the `.magento/services.yaml` configuration file.
 
 1. Add or find a service in the file. See [more about configuring services]({{ site.baseurl }}/cloud/project/services.html).
 

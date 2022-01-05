@@ -18,10 +18,10 @@ You must manage your Elasticsearch stopwords using `.csv` files located in the `
 
 For more information about how Elasticsearch uses stopwords, see the following resources:
 
-*  [Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html){:target="_blank"}
-*  [Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html){:target="_blank"}
-*  [Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html){:target="_blank"}
-*  [Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html){:target="_blank"}
+*  [Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html)
+*  [Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html)
+*  [Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html)
+*  [Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html)
 
 ## Configure stopwords {#config-stopwords}
 
@@ -130,7 +130,7 @@ Save your changes to `di.xml` and exit the text editor.
 
 ## To change the directory from your module {#to-change-directory-stopwords}
 
-1. [Create a new module](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html){:target="_blank"}
+1. [Create a new module]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)
 1. In your module `etc/di.xml` add instructions:
 
    ```xml

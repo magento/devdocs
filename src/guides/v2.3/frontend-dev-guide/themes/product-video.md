@@ -8,7 +8,7 @@ functional_areas:
 
 ## What's in this topic
 
-In Magento 2 on product pages you can add video from external resources (currently, from [YouTube](https://youtube.com) and [Vimeo](https://vimeo.com/)). Video is [added in Admin](https://docs.magento.com/user-guide/catalog/product-video.html) when creating or editing a product.
+In Magento 2 on product pages you can add video from external resources (currently, from [YouTube](https://youtube.com) and [Vimeo](https://vimeo.com/)). Video is [added in Admin]({{ site.user_guide_url }}/catalog/product-video.html) when creating or editing a product.
 Certain product video options can be set in the `config.xml` configuration file. These settings are not theme-specific.
 
 ## Configure product video options

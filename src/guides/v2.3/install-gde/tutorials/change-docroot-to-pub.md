@@ -39,7 +39,7 @@ When used in your server block that defines your site, the `nginx.conf.sample` c
 
 ## Before you begin
 
-To complete this tutorial, you will need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="_blank"} stack:
+To complete this tutorial, you will need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) stack:
 
 -  Linux
 -  Apache (2.4+)

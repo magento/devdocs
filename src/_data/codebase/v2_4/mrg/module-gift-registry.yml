@@ -1,6 +1,5 @@
 ---
 title: GiftRegistry
-release: 2.4.3
 content: |-
   Magento\GiftRegistry module that allows to create sets of gifts specified for specific holiday(Birthday, Wedding, etc).
   It resembles wishlist, but there are differences. You can describe Gift Registry as a wishlist of products you would

@@ -21,6 +21,38 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.8
+
+-  **MDVA-41215** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where users get the 500 error after setting the "mage-messages" cookie, if it already exists but there are no new messages.
+-  **MDVA-41139** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where configurable products become Out of Stock after product import, when a simple product's qty=0 for one of its sources.
+-  **MDVA-42326** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <=2.3.7-p2 || >=2.4.1 <2.4.4`)_-Fixes the issue where customers get an error on checkout after a session timeout even if persistent shopping cart is enabled.
+-  **MDVA-42341** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where the “categoryList” GraphQL query does not filter results if a request has the Store header.
+-  **MDVA-38393** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where Catalog rules stop working for a configurable product if its simple product is re-named.
+-  **MDVA-39153** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where a discount amount is calculated incorrectly during reorder in the Admin.
+-  Updated patches: MDVA-28993, MDVA-41061, MDVA-35984.
+
+## v1.1.7
+
+-  **MDVA-39711** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.3`)_-Fixes the issue where admin users cannot access the customers grid after deleting website.
+-  **MDVA-40311** _(for Adobe Commerce and Magento Open Source `>=2.4.2-p2 <2.4.4`)_-Fixes the issue where admin users get the error message "Invalid security or form key. Please refresh the page" after login to the admin if custom admin path is configured and secret key is enabled.
+-  **MDVA-41631** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.4`)_-Fixes the issue where users get an error when trying to retrieve order information without an optional "telephone" value through GraphQL.
+-  **MDVA-27239** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.3.6`)_-Fixes the issue where cross-sell products are not displayed.
+-  Updated patches: MDVA-37068, MDVA-35254, MDVA-41164, MDVA-37916, MDVA-37478, MDVA-34551, MDVA-31791.
+
+## v1.1.6
+
+-  **MDVA-40550** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.4.4`)_-Fixes the issue with missing products on the frontend during reindexing.
+-  **MDVA-40120** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.4`)_-Fixes the issue where GraphQL sorting by DESC/ASC doesn't work with products having the same relevance or price.
+-  **MDVA-41399** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <2.4.2`)_-Fixes the issue where admin users are unable to access the "Manage Shopping Cart" page if a customer adds a product to the wishlist.
+-  **MDVA-40609** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where disabled products data is absent in the `cataloginventory_stock_status` index table, displaying incorrect disabled product quantities.
+-  **MDVA-39031** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.4`)_-Fixes the issue where adding a product to the cart via GraphQL is possible even if it is not assigned to the target website.
+-  **MDVA-41597** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where users get an error when adding more than one configurable product to the cart using GraphQL.
+-  **MDVA-27456** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.3.7`)_-Fixes the issue where users get an error when trying to load Swagger.
+-  **MDVA-32776** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.2`)_-Fixes the issue where stock status is not updated when an order is placed but not shipped.
+-  **MDVA-30862** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.0`)_-Fixes the issue with incorrect order date on the printed PDF invoice.
+-  Improved the [index page for the Quality Patch Tool]({{ site.baseurl }}/quality-patches/tool.html). Added convenient search and filtering for quality patches at the latest version of the tool.
+-  Updated patches: MDVA-33382, MDVA-39482.
+
 ## v1.1.5
 
 -  **MDVA-41236** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where it is impossible to create a new or edit an existing scheduled update for a product if the End Date has been previously removed.

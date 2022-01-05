@@ -1,5 +1,4 @@
 ---
 title: CatalogRuleGraphQl
-release: 2.4.3
 content: The *Magento_CatalogRuleGraphQl* module applies catalog rules to products
   for GraphQL requests.

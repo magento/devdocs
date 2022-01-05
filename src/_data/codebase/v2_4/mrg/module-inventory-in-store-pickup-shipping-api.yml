@@ -1,6 +1,5 @@
 ---
 title: InventoryInStorePickupShippingApi
-release: 2.4.3
 content: |-
   The `InventoryInStorePickupShippingApi` module provides service contracts for "In-Store Pickup Delivery Method" implementation of In-Store Pickup functionality.
 

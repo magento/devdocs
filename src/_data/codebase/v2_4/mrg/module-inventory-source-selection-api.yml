@@ -1,6 +1,5 @@
 ---
 title: InventorySourceSelectionApi
-release: 2.4.3
 content: |-
   The `InventorySourceSelectionApi` module provides service contracts for source selection algorithms (SSA).
 

@@ -1,5 +1,4 @@
 ---
 title: CatalogPermissionsGraphQl
-release: 2.4.3
 content: Magento_CatalogPermissionsGraphQL feature allows to apply Magento_CatalogPermissions
   features to product queries in GraphQl area

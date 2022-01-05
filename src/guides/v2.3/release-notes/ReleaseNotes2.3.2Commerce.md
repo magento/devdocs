@@ -122,7 +122,7 @@ See [Release notes]({{ page.baseurl }}/graphql/release-notes.html) for a more de
 
 ### BlueFoot to Page Builder content migration
 
-**Assistance for BlueFoot to Page Builder migration**.  The BlueFoot content migration module (PageBuilderDataMigration) enables merchants who are running Magento 2.1.x or 2.2.x with BlueFoot  to upgrade to Magento 2.3.1+ with PageBuilder 1.0 without losing their website content. This module  migrates only content created with native BlueFoot. See [Overview of content migration](https://devdocs.magento.com/page-builder/docs/migration/overview.html) for information about module installation and supported content types.
+**Assistance for BlueFoot to Page Builder migration**.  The BlueFoot content migration module (PageBuilderDataMigration) enables merchants who are running Magento 2.1.x or 2.2.x with BlueFoot  to upgrade to Magento 2.3.1+ with PageBuilder 1.0 without losing their website content. This module  migrates only content created with native BlueFoot. See [Overview of content migration]({{ site.baseurl }}/page-builder/docs/migration/overview.html) for information about module installation and supported content types.
 
 ### Vendor-developed extension enhancements
 

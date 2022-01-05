@@ -1,6 +1,5 @@
 ---
 title: Authorization
-release: 2.4.3
 content: |-
   The Magento_Authorization module enables management of access control list roles and rules in the application.
 

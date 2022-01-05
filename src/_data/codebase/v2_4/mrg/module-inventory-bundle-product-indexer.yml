@@ -1,6 +1,5 @@
 ---
 title: InventoryBundleProductIndexer
-release: 2.4.3
 content: |-
   The `InventoryBundleProductIndexer` module integrates inventory management business logic into Magento's indexation logic for bundle products.
 

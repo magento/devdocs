@@ -57,7 +57,7 @@ The Security Scan Tool enables you to regularly monitor your store websites and 
 -  Monitor your sites security status and applied security updates
 -  Receive security updates and site-specific notifications
 
-See the [User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html) for information about setting up and using the security scan tool. Typically, you start using this tool when you begin user acceptance testing (UAT).
+See the [User Guide]({{ site.user_guide_url }}/magento/security-scan.html) for information about setting up and using the security scan tool. Typically, you start using this tool when you begin user acceptance testing (UAT).
 
 Each site you scan must be registered through the Security Scan tab. During the registration process, you must accept the disclaimer before you can begin scanning. You control both the schedule and authorizing the user to receive notifications when each scan is complete.  You can schedule scans for a specific, recurring date and time, or run a scan on demand as needed.
 

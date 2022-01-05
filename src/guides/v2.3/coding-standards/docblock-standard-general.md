@@ -41,7 +41,7 @@ Below are ways of improving code to help simplify documentation:
 *  Break down a method into smaller methods with descriptive names.
    For example:
 
-   ```php
+```php
     public function getPrice()
     {
         $price = 0;
@@ -57,12 +57,13 @@ Below are ways of improving code to help simplify documentation:
 
     private function getDiscount()
     {
-      if (it's discount time) {
-        return 10;
-      }
-      return 0;
+        if (it is discount time) {
+            return 10;
+        }
+
+        return 0;
     }
-   ```
+```
 
 ### Include all necessary details
 
@@ -202,6 +203,12 @@ There are two solutions possible:
 **DocBlock with Included Script File:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 /**
  * Magento integration Magento test framework (MTF) bootstrap
  *
@@ -222,14 +229,22 @@ class Bootstrap
 **DocBlock with Included Class File:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento\Framework\Profiler\Adapter;
+
+use Magento\Framework\Profiler\AdapterAbstract;
 
 /**
  * Profiler CSV adapter
  *
  * ...
  */
-class Csv extends \Magento\Framework\Profiler\AdapterAbstract
+class Csv extends AdapterAbstract
 {
 // ...
     public function setFile($file)
@@ -299,7 +314,12 @@ Class attributes must have a type declaration using `@var` tag.
 **Example of Class Attribute:**
 
 ```php
-// ...
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace Magento;
 
 class Profiler
@@ -573,6 +593,12 @@ In general, such method overrides are a [code smell](https://en.wikipedia.org/wi
 **DocBlock for the Interface:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 /**
  * Interface for mutable value object for integer values
  */
@@ -595,6 +621,12 @@ interface MutableInterface
 **DocBlock for the implementation:**
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 /**
  * Limited mutable value object for integer values
  */
@@ -728,6 +760,16 @@ Syntax:
 See [PHP documentation](https://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDocumentor/tutorial_tags.method.pkg.html) for more information about the `@method` tag.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\Catalog\Model\Product;
+
+use Magento\Framework\Model\AbstractModel;
+
 /**
  * Image operations
  *
@@ -735,7 +777,7 @@ See [PHP documentation](https://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDoc
  * @method string getLabel()
  * @method string getPosition()
  */
-class Image extends \Magento\Framework\Model\AbstractModel
+class Image extends AbstractModel
 {
     //.....
 }
