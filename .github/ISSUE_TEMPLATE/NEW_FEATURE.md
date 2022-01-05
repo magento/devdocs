@@ -1,9 +1,11 @@
 ---
-name: New feature
+name: New devdocs feature
 about: Create a request for new functionality in devdocs
----
+title: Request for a devdocs feature 
+labels: enhancement
+assignees: dshevtsov
 
-# New feature request
+---
 
 ## Description
 
@@ -27,7 +29,7 @@ about: Create a request for new functionality in devdocs
 
 <!--
 Thank you for taking the time to report this issue!
-GitHub Issues should only be created for problems/topics related to this project's codebase.
+GitHub Issues in this repo should only relate to this project's codebase.
 
 Before submitting this issue, please make sure you are complying with our Code of Conduct:
 https://github.com/magento/devdocs/blob/master/.github/CODE_OF_CONDUCT.md

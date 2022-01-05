@@ -83,4 +83,26 @@ namespace :test do
     end
     puts "Found #{images.size} dangling images".red
   end
+
+  desc 'Find unused includes'
+  task :unused_includes do
+    puts 'Running a task to find unused _includes'.magenta
+    includes = Dir['src/_includes/**/*']
+    puts "The project contains a total of #{includes.size} includes"
+    puts 'The following includes are not linked:'
+    Dir['src/**/*.{md,html}'].each do |file|
+      # Exclude symmlinks
+      next if File.symlink? file
+
+      includes.delete_if { |include| File.read(file).include?(File.basename(include)) }
+    end
+
+    abort 'No unlinked includes' if includes.empty?
+
+    includes.each do |include|
+      puts "No links for #{include}".yellow
+    end
+    puts "Found #{includes.size} unlinked includes".red
+    puts 'Be careful removing include files. Some include files, such as those in the layout/** directory, may not be linked in the project, but may be used implicitly by the doc theme.'.bold
+  end
 end
