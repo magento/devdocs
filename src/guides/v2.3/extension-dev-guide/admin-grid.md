@@ -416,9 +416,9 @@ The resource model class translates to `app/code/Dev/Grid/Model/ResourceModel/Ca
 
 namespace Dev\Grid\Model\ResourceModel;
 
-use Magento\Catalog\Model\ResourceModel\Category;
+use Magento\Catalog\Model\ResourceModel\Category as BaseCategory;
 
-class Category extends Category
+class Category extends BaseCategory
 {
 }
 ```
