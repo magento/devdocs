@@ -155,7 +155,7 @@ There are five steps in developing a data patch. All the steps below are written
     ```php
     // Get the newly created attribute's model
     $attribute = $this->customerSetup->getEavConfig()
-        ->getAttribute(CustomerMetadataInterface::ENTITY, 'externalcorp_external_id');
+        ->getAttribute(CustomerMetadataInterface::ENTITY_TYPE_CUSTOMER, 'externalcorp_external_id');
 
     // Make attribute visible in Admin customer form
     $attribute->setData('used_in_forms', [
@@ -214,7 +214,6 @@ namespace ExampleCorp\Customer\Setup\Patch\Data;
 use Exception;
 use Psr\Log\LoggerInterface;
 use Magento\Customer\Api\CustomerMetadataInterface;
-use Magento\Customer\Model\Customer;
 use Magento\Customer\Model\ResourceModel\Attribute as AttributeResource;
 use Magento\Customer\Setup\CustomerSetup;
 use Magento\Customer\Setup\CustomerSetupFactory;
@@ -329,7 +328,7 @@ class ExternalId implements DataPatchInterface
 
             // Get the newly created attribute's model
             $attribute = $this->customerSetup->getEavConfig()
-                ->getAttribute(Customer::ENTITY, 'externalcorp_external_id');
+                ->getAttribute(CustomerMetadataInterface::ENTITY_TYPE_CUSTOMER, 'externalcorp_external_id');
 
             // Make attribute visible in Admin customer form
             $attribute->setData('used_in_forms', [
