@@ -98,4 +98,4 @@ class PriceTest extends \PHPUnit\Framework\TestCase
 
 <!-- Link definitions -->
 
-[`Magento\Catalog\Test\Fixture\Product`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Test/Fixture/Product.php
+[`Magento\Catalog\Test\Fixture\Product`]: {{ site.mage2bloburl }}/{{ page.guide_version }}-develop/app/code/Magento/Catalog/Test/Fixture/Product.php
