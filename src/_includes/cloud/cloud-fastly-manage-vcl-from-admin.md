@@ -33,7 +33,6 @@ The *Custom VCL snippets* UI option shows only the snippets added through the Ad
 
 {:.bs-callout-warning}
 The *Custom VCL snippets* UI option shows only the snippets added through the Admin UI. You must use the Fastly API to [manage custom snippets added through the Fastly API]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
--  Use the Fastly API [Delete custom VCL snippet]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-vcl) operation to delete the snippet completely, or submit a support ticket to request deletion.
 
 [Manage custom VCL snippets]: {{site.baseurl}}/common/images/cloud/cloud-fastly-manage-snippets.png
 {:width="650px"}
