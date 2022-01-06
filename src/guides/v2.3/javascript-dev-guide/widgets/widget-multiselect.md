@@ -101,7 +101,7 @@ Multiselect items wrapper class.
 
 ### `nextPageUrl`
 
-The url of the controller or API which returns the JSON response.
+The URL of the controller or API which returns the JSON response.
 
 ```json
 {
