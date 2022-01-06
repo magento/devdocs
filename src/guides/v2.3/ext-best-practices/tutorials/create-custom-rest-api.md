@@ -7,13 +7,13 @@ contributor_link: https://www.Ziffity.com/
 
 Although {{site.data.var.ee}} and {{site.data.var.ce}} provide a number of REST APIs, you might need to create your own to manage custom data within your extension. This tutorial describes how you can create such a custom REST [API](https://glossary.magento.com/api).
 
-In this tutorial, we are creating two custom endpoints to read or modify the product information. `GET /V1/getProduct/{productId}` will return specified product details and `PUT /V1/setDescription` will modify product description data.
+In this tutorial, we will create two custom endpoints to read or modify the product information. `GET /V1/rest_dev/getProduct/{productId}` will return details about a specified product, and `PUT /V1/rest_dev/setDescription` will modify product description data.
 
 ## Step 1. Create a custom module
 
 `Dev_RestApi` will be the namespace for this tutorial.
 
-Create the `module.xml` and `registration.php` files to get started. For more information [click here]({{page.baseurl}}/extension-dev-guide/prepare/prepare_file-str.html).
+Create the `module.xml` and `registration.php` files to get started. [About component file structure]({{page.baseurl}}/extension-dev-guide/prepare/prepare_file-str.html) provides additional information.
 
 `app/code/Dev/RestApi/etc/module.xml`:
 
@@ -45,7 +45,7 @@ Create the `module.xml` and `registration.php` files to get started. For more in
 
 We must create [Access Control List (ACL)]({{page.baseurl}}/ext-best-practices/tutorials/create-access-control-list-rule.html) rules for each endpoint. These rules give full control over who can access them.
 
-Create the required ACL entries with `app/code/Dev/RestApi/etc/acl.xml`:
+Create the required ACL entries in `app/code/Dev/RestApi/etc/acl.xml`:
 
 ```xml
 <?xml version="1.0"?>
@@ -69,7 +69,7 @@ Create the required ACL entries with `app/code/Dev/RestApi/etc/acl.xml`:
 
 ## Step 3. Define custom endpoints
 
-To define endpoints, need to [configure a web API]({{page.baseurl}}/extension-dev-guide/service-contracts/service-to-web-service.html) service as described in `app/code/Dev/RestApi/etc/webapi.xml`:
+To define endpoints, we need to [configure a web API]({{page.baseurl}}/extension-dev-guide/service-contracts/service-to-web-service.html) service as described in `app/code/Dev/RestApi/etc/webapi.xml`:
 
 ```xml
 <?xml version="1.0"?>
@@ -92,14 +92,14 @@ To define endpoints, need to [configure a web API]({{page.baseurl}}/extension-de
 
 Where:
 
-*  `url` is the URL of the endpoint. The full address would be: `<domain>/rest/<store_code>/<url>`.
+*  `url` is the URL of the endpoint. The full address would be `<domain>/rest/<store_code>/<url>`.
 *  `method` defines the request method (GET, POST, PUT, DELETE).
 *  `service` describes the interface and the method to be called when the endpoint is reached.
 *  `resource` sets the ACL resource that is required to access the endpoint. If you want to make it public (no authentication), use: `<resource ref="anonymous" />`
 
 ## Step 4. Create interfaces
 
-In this example, we have created the interfaces for the request and response in `app/code/Dev/RestApi/Api/RequestItemInterface.php`:
+In this example, we created the interfaces for the request in `app/code/Dev/RestApi/Api/RequestItemInterface.php`.
 
 ```php
 <?php
@@ -135,7 +135,7 @@ interface RequestItemInterface
 }
 ```
 
-and in `app/code/Dev/RestApi/Api/ResponseItemInterface.php`:
+The interfaces for the response is in `app/code/Dev/RestApi/Api/ResponseItemInterface.php`.
 
 ```php
 <?php
@@ -195,7 +195,7 @@ interface ResponseItemInterface
 }
 ```
 
-and `app/code/Dev/RestApi/Api/ProductRepositoryInterface.php`:
+We define the 'ProductRepositoryInterface' in `app/code/Dev/RestApi/Api/ProductRepositoryInterface.php`.
 
 ```php
 <?php
@@ -273,7 +273,7 @@ class RequestItem extends DataObject implements RequestItemInterface
 }
 ```
 
-and `app/code/Dev/RestApi/Model/Api/ResponseItem.php`:
+This is `app/code/Dev/RestApi/Model/Api/ResponseItem.php`.
 
 ```php
 <?php
@@ -346,7 +346,7 @@ class ResponseItem extends DataObject implements ResponseItemInterface
 }
 ```
 
-and `app/code/Dev/RestApi/Model/Api/ProductRepository.php`:
+This is `app/code/Dev/RestApi/Model/Api/ProductRepository.php`.
 
 ```php
 <?php
