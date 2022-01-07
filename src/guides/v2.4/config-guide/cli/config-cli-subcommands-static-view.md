@@ -308,12 +308,12 @@ Successful: 1993 files; errors: 0
 ---
 ```
 
-The following command deploy only js with 4 jobs, deployment strategy is standard
+The following command deploys only JS with 4 jobs, deployment strategy is standard
 ```bash
 bin/magento setup:static-content:deploy -s standard --no-misc --no-html --no-fonts --no-images --no-less --no-css -j 4
 ```
 
-The following command deploy only css and less with 3 jobs, deployment strategy is quick
+The following command deploys only CSS and LESS with 3 jobs, deployment strategy is quick
 ```bash
 bin/magento setup:static-content:deploy -s quick --no-misc --no-html --no-fonts --no-images --no-javascript -j 3
 ```
