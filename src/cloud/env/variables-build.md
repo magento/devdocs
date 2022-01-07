@@ -120,6 +120,7 @@ stage:
           - fr_FR
           - af_ZA
 ```
+
 The following example builds the three themes with three locales:
 
 ```yaml
@@ -143,7 +144,7 @@ stage:
             - af_ZA
 ```
 
-Also, you can choose to _not_ deploy a theme:
+You can also choose to _not_ deploy a theme:
 
 ```yaml
 stage:
