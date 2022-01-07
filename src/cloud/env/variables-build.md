@@ -126,11 +126,21 @@ The following example builds the three themes with three locales:
 stage:
   build:
     SCD_MATRIX:
-          {
-            "Magento/backend": { "language": ["en_US", "fr_FR", "af_ZA"] },
-            "Magento/blank": { "language": ["en_US", "fr_FR", "af_ZA"] },
-            "Magento/luma": { "language": ["en_US", "fr_FR", "af_ZA"] },
-          }
+        "Magento/backend":
+          language:
+            - en_US
+            - fr_FR
+            - af_ZA
+        "Magento/blank":
+          language:
+            - en_US
+            - fr_FR
+            - af_ZA
+        "Magento/luma":
+          language:
+            - en_US
+            - fr_FR
+            - af_ZA
 ```
 
 Also, you can choose to _not_ deploy a theme:
