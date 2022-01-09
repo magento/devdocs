@@ -10,8 +10,6 @@ functional_areas:
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate [module](https://glossary.magento.com/module).
 
-You can use the [sample Magento_SamplePaymentGateway module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway) files as basis for your custom module structure and files.
-
 ## Specify your module dependencies
 
 Your custom payment integration module must have at least the following dependencies:
