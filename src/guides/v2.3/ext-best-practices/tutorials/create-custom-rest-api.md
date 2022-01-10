@@ -1,21 +1,21 @@
 ---
 group: extension-best-practices
 title: Create a custom REST API
-contributor_name: Nitish Ranjan
+contributor_name: Ziffity
 contributor_link: https://www.Ziffity.com/
 ---
 
-Although {{site.data.var.ee}} and {{site.data.var.ce}} provide a number of REST APIs, you might need to create your own to manage custom data within your extension. This tutorial describes how you can create such a custom REST [API](https://glossary.magento.com/api).
+Although {{site.data.var.ee}} and {{site.data.var.ce}} provide numerous REST endpoints, you might need to create your own to manage custom data within your extension. This tutorial describes how you can create such a custom REST [API](https://glossary.magento.com/api).
 
-In this tutorial, we will create two custom endpoints to read or modify the product information. `GET /V1/rest_dev/getProduct/{productId}` will return details about a specified product, and `PUT /V1/rest_dev/setDescription` will modify product description data.
+In this tutorial, we will create two custom endpoints to read or modify the product information. `GET /V1/rest_dev/getProduct/{productId}` returns details about a specified product, and `PUT /V1/rest_dev/setDescription` modifies product description data.
 
 ## Step 1. Create a custom module
 
-`Dev_RestApi` will be the namespace for this tutorial.
+We will use `Dev_RestApi` as the namespace for this tutorial.
 
 Create the `module.xml` and `registration.php` files to get started. [About component file structure]({{page.baseurl}}/extension-dev-guide/prepare/prepare_file-str.html) provides additional information.
 
-`app/code/Dev/RestApi/etc/module.xml`:
+**`app/code/Dev/RestApi/etc/module.xml`**:
 
 ```xml
 <?xml version="1.0"?>
@@ -29,7 +29,7 @@ Create the `module.xml` and `registration.php` files to get started. [About comp
 </config>
 ```
 
-`app/code/Dev/RestApi/registration.php`:
+**`app/code/Dev/RestApi/registration.php`**:
 
 ```php
 <?php
@@ -43,7 +43,7 @@ Create the `module.xml` and `registration.php` files to get started. [About comp
 
 ## Step 2. Create custom ACL entries
 
-We must create [Access Control List (ACL)]({{page.baseurl}}/ext-best-practices/tutorials/create-access-control-list-rule.html) rules for each endpoint. These rules give full control over who can access them.
+We must create [Access Control List (ACL) rules]({{page.baseurl}}/ext-best-practices/tutorials/create-access-control-list-rule.html) for each endpoint. These rules give full control over who can access them.
 
 Create the required ACL entries in `app/code/Dev/RestApi/etc/acl.xml`:
 
@@ -226,9 +226,10 @@ interface ProductRepositoryInterface
 ## Step 5. Create models
 
 Models create classes that implement interfaces and process data.
-In this example, we have created models to request, response to, and process data. In each model, we have defined two methods: `getItem`, which provides product details of the given product ID, and `setDescription` which updates the description of the given product.
 
-This is `app/code/Dev/RestApi/Model/Api/RequestItem.php`:
+In this example, we have created models to request, respond to, and process data. In each model, we have defined two methods: `getItem`, which provides product details of the given product ID, and `setDescription` which updates the description of the given product.
+
+**`app/code/Dev/RestApi/Model/Api/RequestItem.php`**:
 
 ```php
 <?php
@@ -273,7 +274,7 @@ class RequestItem extends DataObject implements RequestItemInterface
 }
 ```
 
-This is `app/code/Dev/RestApi/Model/Api/ResponseItem.php`.
+**`app/code/Dev/RestApi/Model/Api/ResponseItem.php`**:
 
 ```php
 <?php
@@ -346,7 +347,7 @@ class ResponseItem extends DataObject implements ResponseItemInterface
 }
 ```
 
-This is `app/code/Dev/RestApi/Model/Api/ProductRepository.php`.
+**`app/code/Dev/RestApi/Model/Api/ProductRepository.php`**:
 
 ```php
 <?php
@@ -512,7 +513,7 @@ class ProductRepository implements ProductRepositoryInterface
 *  You can use any REST client to send calls. [Postman](https://www.getpostman.com/) is recommended.
 *  Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
-### Example 1
+### Test the GET endpoint
 
 The example uses Magento sample data for `product_id: 1` and the endpoint ```http://local.magentoee.com/rest/V1/rest_dev/getProduct/1```.
 
@@ -531,7 +532,7 @@ The example uses Magento sample data for `product_id: 1` and the endpoint ```htt
 }
 ```
 
-### Example 2
+### Test the PUT endpoint
 
 **Request:**
 
