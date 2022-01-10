@@ -17,7 +17,7 @@ The {{ site.data.var.ee }} 2.4.4 [Beta program](https://devdocs.magento.com/rele
 {{ site.data.var.ee }} 2.4.4-beta4 has been tested against the following component versions:
 
 *  Composer 2.1.6
-*  Elasticsearch
+*  Elasticsearch 7.16.1
 *  MariaDB 10.4.14
 *  MySQL 8.0.22
 *  Open Search 1.1
@@ -40,9 +40,13 @@ We are not releasing Cloud packages for this Beta release.
 
 ### Additional changes
 
-*  The `Magento\Framework\MessageQueue\TopologyTest` is now compatible with the AWS MQ (rabbitmq) service. Previously, this test failed with this message: `Invalid exchange configuration: magento-topic-based-exchange1 Failed asserting that two arrays are equal`. <!--- AC-1248-->
+*  The `Magento\Framework\MessageQueue\TopologyTest` is now compatible with the AWS MQ for RabbitMQ service. Previously, this test failed with this message: `Invalid exchange configuration: magento-topic-based-exchange1 Failed asserting that two arrays are equal`. <!--- AC-1248-->
 
 *  {{ site.data.var.ee }} no longer displays a deprecation notice during download of Composer packages for 2.4.4-beta on PHP 8.0. <!--- AC-1678-->
+
+*  HTML tags are now nested and closed properly to meet standards in JQuery 3.5.x for non-void elements including custom elements. <!--- AC-1942-->
+
+*  Added return type declarations to internal methods with incomplete return types for compatibility with PHP 8.1. [GitHub-34498](https://github.com/magento/magento2/issues/34498) <!--- AC-1606-->
 
 ## {{ site.data.var.ee }} 2.4.4 highlights
 
@@ -59,18 +63,6 @@ The following highlights were added in earlier versions of 2.4.4 and are include
 *  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Outdated Laminas dependencies have been removed from the codebase.
 
 *  The `endroid/qr-code` dependency has been updated to the latest version.
-
-### jQuery UI upgrade
-
-jQuery UI has been upgraded to the latest version (v1.12.1). The following v1.10.0 jQuery components have been removed:
-
-*  `ajaxOptions` and `cache` options for tabs. See [Tabs](https://jqueryui.com/changelog/1.10.0/#tabs).
-
-*  `.zIndex()`.  jQuery UI v1.12.1 includes `jquery/z-index.js`, which supports the use of `.zIndex()`. See [UI Core](https://jqueryui.com/changelog/1.12.0/#ui-core).
-
-*  Data fallbacks for widget names. You must use the full name for the `.data()` key.
-
-*  Hard coding of classes such as `ui-corner-all` in widgets.
 
 ### Library upgrades
 
@@ -398,6 +390,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- AC-1328-->
 
 *  Corrected regression issue that affected messages left in the exception logs for the Contact Us form. [GitHub-34483](https://github.com/magento/magento2/issues/34483)
+
+<!--- AC-1316-->
+
+*  Permission assigned to new integrations are now respected. [GitHub-33347](https://github.com/magento/magento2/issues/33347)
 
 ### Gift cards
 
@@ -837,6 +833,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The performance of the Popular Search Term cache has improved. Previously, the larger the `search_query` table, the longer a search query took to complete. [GitHub-27559](https://github.com/magento/magento2/issues/27559)
 
+<!--- MC-42892-->
+
+*  {{ site.data.var.ee }} by default resizes images synchronously during product save. Merchants can now resize images as a background asynchronous process by minor edits to a `di.xml` file.
+
 ### Pricing
 
 <!--- MC-42243-->
@@ -1071,10 +1071,6 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Storefront catalog product widget sort order (**Catalog** > **Category** > **Products**) now matches the order configured in the Admin. [GitHub-27126](https://github.com/magento/magento2/issues/27126)
 
-<!--- AC-1942-->
-
-*  HTML tags are now nested and closed properly to meet standards in JQuery 3.5.x for non-void elements including custom elements.
-
 <!--- AC-725-->
 
 *  The region selector now works as expected on the Create an Account page. [GitHub-30099](https://github.com/magento/magento2/issues/30099)
@@ -1122,6 +1118,14 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-1276-->
 
 *  The triggers that expands tooltips now provide textual names.
+
+<!--- AC-1285-->
+
+*  Buttons throughout the storefront now have unique, descriptive accessible names. Previously, split buttons with a text button and an adjacent down arrow icon button had the same accessible name.
+
+<!--- AC-1286-->
+
+*  The product page **New View** text input field now has an accessible name.
 
 ### Web API framework
 
