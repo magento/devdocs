@@ -445,7 +445,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42903-->
 
-*  GraphQL now supports setting shipping addresses on a shopping cart with an empty telephone number value when the **Show Telephone**  Admin configuration setting is set to optional. Previously, {{ site.data.var.ee }} threw this error: `Field CartAddressInput.telephone of required type String! was not provided`.
+*  GraphQL now supports setting shipping addresses on a shopping cart with an empty telephone number value when the **Show Telephone** Admin configuration setting is set to optional. Previously, {{ site.data.var.ee }} threw this error: `Field CartAddressInput.telephone of required type String! was not provided`.
 
 <!--- MC-42970-->
 
@@ -473,7 +473,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42443-->
 
-*  Quotes are now updated correctly when product price are updated by `product` queries. Previously, although the subtotal in the cart summary section was updated correctly, the row subtotal was not updated.
+*  Quotes are now updated correctly when product prices are updated by `product` queries. Previously, although the subtotal in the cart summary section was updated correctly, the row subtotal was not updated.
 
 <!--- AC-697-->
 
@@ -493,7 +493,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42160-->
 
-*  The media tag associated with an image added to a CMS page in a deployment where the Admin is set to a different domain than the store URL now contains store URLs as expected. Previously, media tags contained static Magento Admin URLs instead of the expected store URLs (for example, `<img src="{{media url="https://dev.magentotest.local/wysiwyg/test-image.png"}}" alt=“”>). [GitHub-32930](https://github.com/magento/magento2/issues/32930)
+*  The media tag associated with an image added to a CMS page in a deployment where the Admin is set to a different domain than the store URL now contains store URLs as expected. Previously, media tags contained static Admin URLs instead of the expected store URLs (for example, `<img src="{{media url="https://dev.magentotest.local/wysiwyg/test-image.png"}}" alt=“”>). [GitHub-32930](https://github.com/magento/magento2/issues/32930)
 
 ### Import/export
 
@@ -543,7 +543,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1172-->
 
-*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for Magento 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
+*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
 
 <!--- AC-97-->
 
@@ -579,11 +579,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1977-->
 
-*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` (Magento Open Source) to `Magento/GiftCardSampleData` (Magento Commerce). This has resolved problems installing Magento Open Source with sample data on PHP8.1.
+*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` (Magento Open Source) to `Magento/GiftCardSampleData` (Adobe Commerce). This has resolved problems installing Magento Open Source with sample data on PHP8.1.
 
 <!--- AC-1001-->
 
-*  Interfaces throughout the Adobe Stock Integration codebase with `@api` as needed. [GitHub-32875](https://github.com/magento/magento2/issues/32875)
+*  Marked interfaces throughout the Adobe Stock Integration codebase with `@api` as needed. [GitHub-32875](https://github.com/magento/magento2/issues/32875)
 
 <!--- AC-1770-->
 
@@ -803,7 +803,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-344-->
 
-*  Anomalies with PayPal Credit display of gift card amounts have been resolved. Previously, when PayPal Credit was enabled and multiple gift card amounts ere configured, if a shopper changed the amount for the value of a gift card, the storefront did not update the amount for installment payments. This was a known issue in {{ site.data.var.ee }} 2.4.3.
+*  Anomalies with PayPal Credit display of gift card amounts have been resolved. Previously, when PayPal Credit was enabled and multiple gift card amounts were configured, if a shopper changed the amount for the value of a gift card, the storefront did not update the amount for installment payments. This was a known issue in {{ site.data.var.ee }} 2.4.3.
 
 #### PayPal
 
