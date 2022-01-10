@@ -20,7 +20,7 @@ The {{ site.data.var.ee }} 2.4.4 [Beta program](https://devdocs.magento.com/rele
 *  Elasticsearch 7.16.1
 *  MariaDB 10.4.14
 *  MySQL 8.0.22
-*  Open Search 1.1
+*  OpenSearch 1.1
 *  PHP 8.0.13
 *  Redis 6.0.12
 *  Varnish 6.5.1
@@ -32,6 +32,7 @@ All vendor-bundled extensions, with the exception of Braintree, have been remove
 {{ site.data.var.ee }} 2.4.4-beta4 includes the following enhancements:
 
 *  All Magento project libraries and dependencies have been updated for compatibility with PHP 8.1.
+*  Support for the latest ElasticSearch version (7.16.1) and OpenSearch 1.1
 *  The `jquery-ui` library has been upgraded to version 1.13.0.
 *  Deprecated methods in jQuery 3.6.x and earlier have been removed to simplify future upgrade.
 *  The third-party `jquery.tabs` library has been updated to the latest version.
