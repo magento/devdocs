@@ -196,7 +196,7 @@ When you want to verify an issue or pull request, use the `instance` command to 
 Replace `{$version}` with the version tag or branch. The following values are supported: the version tag for the latest release and `2.4-develop` for the development branch.
 
 ```text
-@magento give me 2.4.0 instance
+@magento give me 2.4.3 instance
 ```
 
 **Actions:** The following actions complete the command:
@@ -289,31 +289,6 @@ Replace `{$extensionRepo}` with one or more extension repositories to remove bef
 ```text
 without extensions magento/adobe-stock-integration
 ```
-
-### Combine multiple pull requests {#combine-pr}
-
-To optimize the pull request queue, enter a command with a series of related pull request numbers to merge and test the code. If all tests pass, the entered PRs are merged into the current PR.
-
-**Command:** To combine pull requests, a member of the [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers) or Magento EngCom Team under the existing Pull Request will enter the following command:
-
-```text
-@magento combine {xxx} {yyy} {zzz}
-```
-
-The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into the current pull request. For example: `@magento combine 1234 1238 1239`.
-
-**Actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
-
--  Current pull request allows changes from maintainers.
--  All mentioned pull requests are open.
--  All mentioned pull requests have been created by the same contributor (author).
--  All mentioned pull requests have same target (base) branch.
--  All mentioned pull requests can be merged with each other.
-
-**Permissions:**
-
--  [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers)
--  Magento EngCom Team
 
 ### Import source code to specific repository {#import}
 

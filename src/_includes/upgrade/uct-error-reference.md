@@ -14,12 +14,12 @@ These errors are reported when some of the core files are missing or do not matc
 
 ### Custom code
 
-Critical errors of custom code compatibility are raised when the custom code is referencing entities that are not present in the target {{site.data.var.ee}} version.
+Critical errors are raised when the custom code is referencing entities that are not present in the target {{site.data.var.ee}} version. These errors are also reported when critical coding standards have been broken.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
-| 1110 | Instantiating non-existent Adobe Commerce class/interface | Update code to use a class marked as `@api`. Instantiating non-existent Adobe Commerce class/interface |
+| 1110 | Instantiating non-existent Adobe Commerce class/interface | Update code to use a class marked as `@api`. Instantiating non-existent Adobe Commerce class/interface. |
 | 1111 | Extending from non-existent Adobe Commerce class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
 | 1112 | Importing non-existent Adobe Commerce class | Update code to use a class marked as `@api`. |
 | 1113 | Loading non-existent Adobe Commerce class | Update code to use a class marked as `@api`. |
@@ -35,6 +35,14 @@ Critical errors of custom code compatibility are raised when the custom code is 
 | 1514 | Using non-existent Adobe Commerce property | Update code to use a class marked as `@api`. |
 | 1515 | Overriding non-existent Adobe Commerce property | Update code to use a class marked as `@api`. |
 | 1516 | Assignation of non-existent Adobe Commerce property | Update code to use a class marked as `@api`. Update the property access level to private if it can be used within a single class only. |
+| 5001 | Call-time pass-by-reference calls are prohibited | Passing by reference is not supported after PHP 5.6. |
+| 5002 | The opening PHP tag must be the first content in the file | Ensure there is no content in the file before the PHP opening tag. |
+| 5003 | Function has been deprecated | Use a replacement suggested in the error message. If the message does not suggest a replacement, a close review is needed to select an alternative function or implementation. |
+| 5005 | PHP syntax error | The code must be updated to comply with the PHP syntax standards. |
+| 5008 | Possible Magento 2 design violation. Detected a typical Magento 1.x construction | The code requires review and refactoring. Magento 1 constructions may no longer be supported by Magento 2 framework. |
+| 5072 | Possible Magento 2 design violation. Detected a typical Magento 1.x construction | Update construction to Magento 2 standards. |
+| 5076 | Cannot use in namespace as it is reserved since PHP 7 | Replace the reserved word in the namespace with a non-reserved keyword. |
+| 5077 | Cannot use as class name as it is reserved since PHP 7 | Replace the reserved class name with a non-reserved name. |
 
 ### GraphQL Schema
 
@@ -62,9 +70,9 @@ GraphQL Schema critical issues are raised if the schema items are not present in
 
 ## Errors
 
-### Non API references
+### Custom code
 
-Custom code errors are raised when custom code is using the Adobe Commerce entry points that are not considered/marked as `@api`. The preserved behavior of such entry points is not guaranteed. The customization should rely on `@api` entry points instead. The functionality that is based on non-API Adobe Commerce code should be tested after the upgrade.
+Custom code errors are raised when custom code is using the Adobe Commerce entry points that are not considered/marked as `@api`. The preserved behavior of such entry points is not guaranteed. The customization should rely on `@api` entry points instead. The functionality that is based on non-API Adobe Commerce code should be tested after the upgrade. These errors are also reported when major coding standards have been broken.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
@@ -88,19 +96,8 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 1524 | Using non Adobe Commerce API property | Values of the properties that are not marked as `@api` may be changed. Consider relying on the API interface method instead. |
 | 1525 | Overriding non Adobe Commerce API property | Values of the properties that are not marked as `@api` may be changed. Consider relying on the API interface method instead. |
 | 1526 | Assignation of non Adobe Commerce API property | Values of the properties that are not marked as `@api` may be changed. Consider relying on the API interface method instead. |
-
-### Compatibility issues
-
-{:.error-table}
-| Error code | Error description | Suggested action |
-| - | - | - |
-| 5001 | Call-time pass-by-reference calls are prohibited | Passing by reference is not supported after PHP 5.6. |
-| 5002 | The opening PHP tag must be the first content in the file | Ensure there is no content in the file before the PHP opening tag. |
-| 5003 | Function has been deprecated | Use a replacement suggested in the error message. If the message does not provide the replacement suggestion, this case requires a close review to select an alternative safe function or implementation. |
-| 5005 | PHP syntax error | The code requires to be updated to comply with the PHP interpretation. |
-| 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | The original class should be declared as a type of the constructor parameter, the Interceptor/Proxy class will be passed by the framework dependency injection implementation. |
+| 5004 | Function without argument has been deprecated | Pass the input to validate as the first argument of the function. |
 | 5007 | The use of certain functions is discouraged | Avoid using these functions. |
-| 5008 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | The code requires review and refactoring. Magento 1 constructions may no longer be supported by Magento 2 framework. |
 | 5009 | Template directives may not invoke methods. Only scalar array access is allowed | Remove method invocations from the template. |
 | 5010 | Template `@vars` comment block contains invalid JSON | Fix invalid JSON. |
 | 5011 | Template `@vars` comment block contains invalid label | Fix invalid label. |
@@ -164,12 +161,8 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5069 | Directive {%raw%}`{{escapehtml}}`{%endraw%} is obsolete | Use {%raw%}`{{var}}`{%endraw%} instead. |
 | 5070 | 3rd parameter is not needed anymore for `getChildHtml()` | Remove 3rd parameter from call to `getChildHtml()`. |
 | 5071 | 4th parameter is not needed anymore for `getChildHtml()` | Remove 4th parameter from call to `getChildHtml()`. |
-| 5072 | Possible Magento 2 design violation. Detected typical Magento 1.x construction | Update construction to Magento 2 standards. |
 | 5073 | Legacy table names with slash must be fixed to direct table names | Use direct table name instead. |
-| 5074 | Use of deprecated method `getResource()` to (save / load / delete) data detected. | Use a repository instead. |
 | 5075 | Application modules should not use classes from test modules | Remove usage of classes from test modules. |
-| 5076 | Cannot use in namespace as it is reserved since PHP 7 | Replace reserved word in namespace by another one not used by PHP as keyword. |
-| 5077 | Cannot use as class name as it is reserved since PHP 7 | Replace reserved word in class name by another one not used by PHP as keyword. |
 | 5078 | Class needs to be requested in constructor, otherwise compiler will not be able to find and generate these classes | Add class to constructor. |
 | 5079 | Use of var class variables is discouraged | Avoid using 'var' to declare class variable. |
 | 5080 | Possible raw SQL statement detected | Use repositories or data patches instead. |
@@ -178,6 +171,12 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5083 | Constants are not allowed as the first argument of translation function | Use string literal instead. |
 | 5084 | Do not initialize JS component in php | Initialize JS component in a template. |
 | 5085 | The use of certain functions is discouraged | Use the alternative function advised on the message instead. |
+| 5087 | PHP cross-version compatibility issue | Follow the suggestions from the message and check the [migration guide](https://www.php.net/manual/en/migration81.php). |
+| 5088 | Optional parameters found after required ones | Move required parameters after optional ones. |
+| 5089 | Method visibility `final private` found | Change method visibility from `final private` to only `private`. |
+| 5090 | Magic method `__set_state` is not defined as `static` | Magic method `__set_state` must be defined as `static`. |
+| 5091 | Class with `__toString()` method not inheriting from `Stringable` interface | Add `Stringable` interface to class with `__toString()` method. |
+| 5092 | `is_resource()` method used for functions that now return Object | Change `is_resource()` to `instanceof` Object. |
 | 6001 | `jQuery.andSelf()` removed | Use `jQuery.addBack()`. |
 | 6002 | jQuery `$.bind` and `$.unbind` are deprecated | Use `$.on` and `$.off` instead. |
 | 6003 | jQuery method to subscribe to event is deprecated and shouldn't be used | Use `.on("event name", fn)` method instead to subscribe to that event. |
@@ -201,7 +200,7 @@ These warnings are reported when there are minor inconsistencies in the core cod
 
 ### Custom code
 
-Custom code warnings are raised when the references to deprecated code are detected. Such references should be replaced with the supported extension points. Pay attention to the `@see` annotation of deprecated item for recommendations.
+Custom code warnings are raised when the references to deprecated code are detected. Such references should be replaced with the supported extension points. Pay attention to the `@see` annotation of deprecated item for recommendations. These errors are also reported when minor coding standards have been broken.
 
 {:.error-table}
 | Error code | Error description | Suggested action |
@@ -222,6 +221,9 @@ Custom code warnings are raised when the references to deprecated code are detec
 | 1534 | Using Adobe Commerce `@deprecated` property | The deprecated method will be removed in upcoming versions. Consider relying on methods declared in API interfaces instead. |
 | 1535 | Overriding Adobe Commerce `@deprecated` property | The deprecated property will be removed in upcoming versions. Consider relying on methods declared in API interfaces or using a private property within your implementation instead. |
 | 1536 | Assignation of Adobe Commerce `@deprecated` property | The deprecated method will be removed in upcoming versions. Consider relying on methods declared in API interfaces instead. |
+| 5006 | Proxies and interceptors MUST never be explicitly requested in constructors | The original class should be declared as a type of the constructor parameter. The Interceptor/Proxy class will be passed by the framework dependency injection implementation. |
+| 5074 | Use of deprecated method `getResource()` to (save / load / delete) data detected. | Use a repository instead. |
+| 5086 | Visibility is not declared on a constant | Declare the visibility on all constants. |
 
 ### GraphQL Schema
 
