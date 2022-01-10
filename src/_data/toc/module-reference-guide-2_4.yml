@@ -1059,6 +1059,9 @@ pages:
   - label: ReCaptchaCheckout
     url: /mrg/module-re-captcha-checkout.html
 
+  - label: ReCaptchaCheckoutSalesRule
+    url: /mrg/module-re-captcha-checkout-sales-rule.html
+
   - label: ReCaptchaCompany
     url: /mrg/module-re-captcha-company.html
 
