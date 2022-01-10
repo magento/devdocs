@@ -212,7 +212,7 @@ You must paste the encryption key into your {{site.data.var.ece}} `env.php` file
 
 Create a database dump and transfer the data from an existing database. You will import this data to your {{site.data.var.ece}} database.
 
-The following example compresses the dump so that it does not significantly interfere with traffic from a live site. The dump file is named `db.sql.gz`. You may want to include the date in the file name if you do multiple dumps over time. Because the database dump can be large, we recommend you create it in a directory not tracked by Git.
+The following example compresses the dump so that it does not significantly interfere with traffic from a live site. The dump file is named `db.sql.tgz`. You may want to include the date in the file name if you do multiple dumps over time. Because the database dump can be large, we recommend you create it in a directory not tracked by Git.
 
 1. In your existing environment, create a database dump.
 
@@ -229,7 +229,7 @@ The following example compresses the dump so that it does not significantly inte
 1. Use the `rsync` command to transfer the database dump to the {{site.data.var.ece}} environment in the `var` directory of the application you are importing into:
 
    ```bash
-   rsync <db dump file name> <cloud SSH URL>:var/db.sql.gz
+   rsync <db dump file name> <cloud SSH URL>:var/db.sql.tgz
    ```
 
 To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ site.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds).
