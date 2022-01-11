@@ -4,8 +4,36 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jan 3 15:38:47 2022
+updated: Mon Jan 10 15:38:44 2022
 entries:
+- description: Added new supported versions of Elasticsearch, OpenSearch, Redis, RabbitMQ,
+    and Varnish to the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    for 2.4.4 and 2.4.5
+  versions: 2.4.4
+  type: Major Update
+  date: January 7, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2726
+  merge_commit: 98c3b406f2275faac00f8fa7a24a04bf315ed961
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added new [parameterized data fixture](https://devdocs.magento.com/guides/v2.4/test/integration/parameterized_data_fixture.html)
+    and [data fixture data provider annotation](https://devdocs.magento.com/guides/v2.4/test/integration/annotations/magento-data-fixture-data-provider.html)
+    documentation for writing tests.
+  versions: 2.4.x
+  type: New Topic
+  date: January 4, 2022
+  link: https://github.com/magento/devdocs/pull/9273
+  merge_commit: ad816f5435223fd1bbdf8187f458fe1582193cb0
+  contributor: thiaramus
+  membership: true
+  labels:
+  - Internal Dev
+  - New Topic
+  - 2.4.x
+  - 'Progress: done'
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
     for the 1.1.8 Quality Patches Tool (QPT) package release.
   versions: 2.x
