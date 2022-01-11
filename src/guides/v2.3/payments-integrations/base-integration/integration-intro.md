@@ -19,6 +19,10 @@ The Magento payment provider gateway allows creating secure and PCI-compliant in
 The topics in this chapter explain how to add an integration with a custom payment service provider (in other words, add a new payment method) and implement the authorize payment action for this [payment method](https://glossary.magento.com/payment-method). For illustration, we use code
 samples from the [Braintree]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree) payment integration.
 
+{:.bs-callout-info}
+You can also view the [Payment sample module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway) in the `magento/magento2-samples`
+repository to understand the underlying principles. However, be aware that this code is NOT supported.
+
 To add a new payment method, take the following high-level steps:
 
 1. Configure general payment method module options. Described in the [Payment method module configuration]({{ page.baseurl }}/payments-integrations/base-integration/module-configuration.html) topic.
