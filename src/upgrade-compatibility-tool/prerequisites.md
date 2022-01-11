@@ -6,6 +6,7 @@ redirect_from:
   - /safe-upgrade-tool/prerequisites.html
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/prerequisites.html
 ---
 
 Running the {{site.data.var.uct}} helps you identify what you must do **before** upgrading your {{site.data.var.ee}} version.

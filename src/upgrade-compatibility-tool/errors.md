@@ -6,6 +6,7 @@ redirect_from:
   - /safe-upgrade-tool/errors.html
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/error-messages.html
 ---
 
 This error message reference provides information about errors that can occur while executing the [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html).
