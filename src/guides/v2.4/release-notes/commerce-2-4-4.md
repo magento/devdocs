@@ -118,7 +118,7 @@ With the exception of [Braintree](https://docs.magento.com/user-guide/payment/br
 
 ## Installation on cloud infrastructure
 
-To upgrade to 2.4.4-beta2, Beta partners that build and deploy {{ site.data.var.ee }} on cloud infrastructure must update the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json) and `.magento.app.yaml` files as described below.
+To upgrade to 2.4.4-beta, Beta partners that build and deploy {{ site.data.var.ee }} on cloud infrastructure must update the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json) and `.magento.app.yaml` files as described below.
 
 ### Update the `repositories` and `require` sections in the Magento Cloud template `composer.json` file
 
