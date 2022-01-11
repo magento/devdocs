@@ -116,6 +116,77 @@ This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl
 
 With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all vendor-bundled extensions have been removed from the {{ site.data.var.ee }} 2.4.4 GA code base. Merchants should migrate to the official extensions, which will be available on the Commerce Marketplace in early 2022. We are working with each of these partners to ensure that a Marketplace alternative is available.
 
+## Installation on cloud infrastructure
+
+To upgrade to 2.4.4-beta2, Beta partners that build and deploy {{ site.data.var.ee }} on cloud infrastructure must update the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json) and `.magento.app.yaml` files as described below.
+
+### Update the `repositories` and `require` sections in the Magento Cloud template `composer.json` file
+
+Update the `repositories` section to add the Magento Cloud and Quality packages that support the 2.4.4-beta2 version.
+
+```php
+    "repositories": {
+        "ece-tools": {
+            "type": "vcs",
+            "url": "https://github.com/magento/ece-tools.git"
+        },
+        "mcd": {
+            "type": "vcs",
+            "url": "https://github.com/magento/magento-cloud-docker.git"
+        },
+        "mcc": {
+            "type": "vcs",
+            "url": "https://github.com/magento/magento-cloud-components.git"
+        },
+        "mcp": {
+            "type": "vcs",
+            "url": "https://github.com/magento/magento-cloud-patches.git"
+        },
+        "mqp": {
+            "type": "vcs",
+            "url": "https://github.com/magento/quality-patches.git"
+        },
+        "repo": {
+            "type": "composer",
+            "url": "https://repo.magento.com"
+        }
+```
+
+Update the  `require` section to include the correct version of each repository as follows:
+
+```json
+   "require": {
+        "magento/product-enterprise-edition": ">=2.4.4 <2.4.5",
+        "magento/composer-root-update-plugin": "~1.1",
+        "magento/ece-tools": "dev-2.4.4-beta as 2002.1.9",
+        "magento/magento-cloud-docker": "dev-2.4.4-beta as 1.3.1",
+        "magento/magento-cloud-components": "dev-2.4.4-beta as 1.0.10",
+        "magento/magento-cloud-patches": "dev-2.4.4-beta as 1.0.14",
+        "magento/quality-patches": "dev-2.4.4-beta as 1.1.5",
+        "fastly/magento2": "^1.2.34"
+    },
+```
+### Update the `magento.app.yaml` file
+
+In the `magento.app.yaml` file, update the `type`, `flavor`, and `dependency` sections to use PHP 8.0 and Composer 2. Add `composer install`.
+
+```yaml
+type: php:8.0
+build:
+    flavor: none
+dependencies:
+    php:
+        composer/composer: '^2.0'
+...
+hooks:
+    # We run build hooks before your application has been packaged.
+    build: |
+        set -e
+        composer install
+        php ./vendor/bin/ece-tools run scenario/build/generate.xml
+        php ./vendor/bin/ece-tools run scenario/build/transfer.xml
+```
+
 ## Fixed issues
 
 We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. A subset of those fixed issues is described below.
