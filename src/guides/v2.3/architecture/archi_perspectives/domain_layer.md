@@ -6,7 +6,7 @@ menu_title: Domain layer
 
 ## The Magento Domain layer
 
-The [domain](https://glossary.magento.com/domain) layer holds the business logic layer of a Magento [module](https://glossary.magento.com/module). It typically does not contain resource-specific or database-specific information. Its primary functions include:
+The domain layer holds the business logic layer of a Magento [module](https://glossary.magento.com/module). It typically does not contain resource-specific or database-specific information. Its primary functions include:
 
 *  Defining the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. These models contain generic information only. Applications can also use SOAP or RESTful endpoints to request data from models.
 
