@@ -3,6 +3,7 @@ group: software-update-guide
 title: Maintenance mode options for upgrade
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/maintenance-mode-options.html
 ---
 
 This topic discusses how you can create a custom maintenance page to display to users while your Magento application is being upgraded. Creating a custom page is optional but recommended because your site is accessible during part of the upgrade.
