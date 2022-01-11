@@ -12,7 +12,7 @@ This topic contains information for developers who work closely with the {{site.
 
 ## {{site.data.var.ee}} API index integration
 
-{{site.data.var.ee}} API index integration is an internal integration solution that encompasses a set of tools to explore {{site.data.var.ee}} extensions developed by Adobe, {{site.data.var.ee}} Partners, and 3rd-party vendors based on static code analysis.
+{{site.data.var.ee}} API index integration is an internal integration solution that encompasses a set of tools to explore {{site.data.var.ee}} extensions developed by Adobe, {{site.data.var.ee}} Partners, and third-party vendors based on static code analysis.
 
 The integration with the {{site.data.var.ee}} API index is done through:
 
@@ -59,14 +59,14 @@ To run the integration tests, execute one of the following commands:
    *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
    *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
 
-## GraphQL unit testing and Eslint code analysis
+## GraphQL unit testing and ESLint code analysis
 
 ### Requirements
 
 {:.bs-callout-info}
 You must have Node.js on your system, see the [documentation](https://nodejs.dev/learn/how-to-install-nodejs).
 
-The following instructions are for MacOS systems:
+The following instructions are for macOS systems:
 
 1. Open a terminal and navigate to the root directory of the project.
 1. Install project dependencies:
@@ -88,9 +88,9 @@ Run unit tests or `jest` as follows:
    ```bash
   ./node_modules/.bin/jest --verbose --rootDir=dev/tests/Js/
    ```
-### Eslint code analysis
+### ESLint code analysis
 
-[Eslint](https://eslint.org/docs/user-guide/getting-started) is a static code analysis tool for identifying problematic patterns found in JavaScript code, with the goal of making code more consistent and avoiding bugs.
+[ESLint](https://eslint.org/docs/user-guide/getting-started) is a static code analysis tool for identifying problematic patterns found in JavaScript code, with the goal of making code more consistent and avoiding bugs.
 
 Run `eslint` code analysis as follows:
 

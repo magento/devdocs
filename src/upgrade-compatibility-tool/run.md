@@ -298,9 +298,9 @@ Available `--help` options for the `graphql:compare` command:
 
 See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) for more information.
 
-## Run {{site.data.var.uct}} via PHPstorm plugin
+## Run {{site.data.var.uct}} via PhpStorm plugin
 
-You can run the {{site.data.var.uct}} with a run configuration via the PHPstorm plugin. See the [{{site.data.var.uct}} Run Configuration]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpstorm/uct-run-configuration.html) topic for more information.
+You can run the {{site.data.var.uct}} with a run configuration via the PhpStorm plugin. See the [{{site.data.var.uct}} Run Configuration]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpstorm/uct-run-configuration.html) topic for more information.
 
 ## Troubleshooting
 
