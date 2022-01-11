@@ -7,6 +7,7 @@ menu_node:
 functional_areas:
   - Upgrade
 redirect_from: /guides/v2.4/install-gde/install/cli/dev_add-update.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/developer/manage-modules.html
 ---
 
 A contributing developer updates components by specifying components and their versions in Magento's `composer.json`.
