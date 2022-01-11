@@ -3,6 +3,7 @@ group: software-update-guide
 title: Commerce upgrade overview
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html
 ---
 
 <!-- Topic variables

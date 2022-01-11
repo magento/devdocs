@@ -3,6 +3,7 @@ group: software-update-guide
 title: Prerequisites
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
 ---
 
 Complete the following tasks before upgrading Magento:
