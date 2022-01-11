@@ -29,9 +29,9 @@ The `upgrade:check` command runs the {{site.data.var.uct}} and checks an {{site.
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
 
-You can run the `core:code:changes` command to analyze only core code changes for that specific {{site.data.var.ee}} instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
+You can run the `core:code:changes` command to analyze only core code changes for that specific {{site.data.var.ee}} instance. See [Core code changes](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/run.html#core-code) section for more information.
 
-While you can use the `graphql:compare` command to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification]({{site.baseurl}}/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
+While you can use the `graphql:compare` command to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
 
 ### Recommendations to use the `upgrade:check` command
 
@@ -93,7 +93,7 @@ File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
  * [CRITICAL][1110] Line 60: Instantiating class/interface 'Magento\Catalog\Model\ProductRepository' that does not exist on version '2.4.2'
 ```
 
-Check the [Error message reference]({{site.baseurl}}/upgrade-compatibility-tool/errors.html) topic for more information.
+Check the [Error message reference](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/error-messages.html) topic for more information.
 
 The report also includes a detailed summary that shows:
 
@@ -297,7 +297,7 @@ Available `--help` options for the `graphql:compare` command:
  *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
 ```
 
-See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) for more information.
+See [Developer information](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/developer.html) for more information.
 
 ## Run {{site.data.var.uct}} via PhpStorm plugin
 

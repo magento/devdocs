@@ -73,5 +73,5 @@ After you configure Elasticsearch and reindex, you are ready to upgrade to Magen
 {:.ref-header}
 Related topics
 
-*  [Check the catalog search engine]({{page.baseurl}}/comp-mgr/prereq/prereq-elasticsearch.html)
+*  [Verify Elasticsearch is installed](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html)
 *  [Configure Elasticsearch stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)

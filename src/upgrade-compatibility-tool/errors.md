@@ -9,7 +9,7 @@ functional_areas:
 redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/error-messages.html
 ---
 
-This error message reference provides information about errors that can occur while executing the [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html).
+This error message reference provides information about errors that can occur while executing the [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html).
 
 The {{site.data.var.uct}} error messages are categorized by level (*critical issues*, *errors*, and *warnings*) and type  (*core code*, *custom code*, and *GraphQL schemas*). Each type contains the following information:
 

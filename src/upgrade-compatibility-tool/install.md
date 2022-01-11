@@ -21,9 +21,9 @@ The following diagram shows the expected workflow when running the {{site.data.v
 
 The following use case describes the typical process for an {{site.data.var.ee}} partner to upgrade a client's instance:
 
-1. A partner's Software Engineer downloads the {{site.data.var.uct}} package from the [{{site.data.var.ee}} repository](https://repo.magento.com/) and executes it during the beta phase of the newest {{site.data.var.ee}} release. See the [Download the Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/install.html#download-the-upgrade-compatibility-tool) topic for more information.
+1. A partner's Software Engineer downloads the {{site.data.var.uct}} package from the [{{site.data.var.ee}} repository](https://repo.magento.com/) and executes it during the beta phase of the newest {{site.data.var.ee}} release. See the [Download the Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/install.html#download-the-upgrade-compatibility-tool) topic for more information.
 1. The Software Engineer generates a vanilla instance for the specific version of {{site.data.var.ee}} that is currently installed. See the [Contributor guide]({{site.baseurl}}/contributor-guide/contributing.html#vanilla-pr) for more information on using the `instance` command to generate a vanilla installation.
-1. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) guide for more information on the complexity score.
+1. The Software Engineer sees that there are several customized areas broken in the inventory and catalog modules and they also get a complexity score of X. See the [Developer](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/developer.html) guide for more information on the complexity score.
 1. With this information, the Software Engineer is able to understand the complexity of the upgrade and is able to relay this information back to the partner's Account Manager.
 1. The Account Manager creates a timeline and cost for the {{site.data.var.ee}} upgrade, which allows them to get their manager's approval.
 1. With their manager's approval, the Software Engineer works on the required code modifications to fix the broken modules.
@@ -37,7 +37,7 @@ A vanilla instance is a clean installation of a specified version tag or branch 
 
 ## Prerequisites
 
-See [prerequisites]({{site.baseurl}}/upgrade-compatibility-tool/prerequisites.html) for more information.
+See [prerequisites](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/prerequisites.html) for more information.
 
 {:.bs-callout-info}
 You can run the {{site.data.var.uct}} in any operating system. There is no requirement to run the {{site.data.var.uct}} where your {{site.data.var.ee}} instance is located. It is necessary for the {{site.data.var.uct}} to have access to the source code of the {{site.data.var.ee}} instance. For example, you can install the tool on one server and point it at your {{site.data.var.ee}} installation on another server.
@@ -83,7 +83,7 @@ To install the {{site.data.var.uct}}, you must install the necessary prerequisit
 *  Composer
 *  Node.js
 
-Refer to the [Upgrade Compatibility Tool install]({{site.baseurl}}/upgrade-compatibility-tool/install.html#install) page.
+Refer to the [Upgrade Compatibility Tool install](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/install.html#install) page.
 
 ### {{site.data.var.ee}} access keys
 
@@ -120,4 +120,4 @@ To install Node.js, see the Node.js [documentation](https://nodejs.dev/learn/how
 
 Adobe recommends that you contact your extension vendor to determine whether your extension is fully compatible with {{site.data.var.ee}} 2.4.x.
 
-See [Run the tool]({{site.baseurl}}/upgrade-compatibility-tool/run.html) for information about executing the {{site.data.var.uct}}.
+See [Run the tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/run.html) for information about executing the {{site.data.var.uct}}.

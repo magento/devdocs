@@ -28,7 +28,7 @@ The procedure for upgrading {{site.data.var.ce}} and {{site.data.var.ee}} has ch
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 
--  **Determine whether your current catalog search engine is supported**-Avoid significant upgrade errors by ensuring your search engine complies with 2.4 requirements. See [Check the catalog search engine] for more details.
+-  **Determine whether your current catalog search engine is supported**-Avoid significant upgrade errors by ensuring your search engine complies with 2.4 requirements. See [Verify Elasticsearch is installed] for more details.
 -  **Complete the Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
 -  **Set the `pub/` directory root**—See [Modify docroot to improve security][] for more details.
 -  **Check PHP and environment settings**—Verify that your PHP and other environment settings are compatible with the [system requirements].
@@ -229,7 +229,7 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 <!-- Link definitions -->
 
 [custom composer plugin]: https://github.com/magento/composer-root-update-plugin
-[custom maintenance mode page]: {{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html
+[custom maintenance mode page]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/maintenance-mode-options.html
 [Enable or disable maintenance mode]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
 [metapackage]: https://glossary.magento.com/metapackage
@@ -237,4 +237,4 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
 [Update Magento]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
-[Check the catalog search engine]: {{ site.baseurl }}{{ site.gdeurl }}/comp-mgr/prereq/prereq-elasticsearch.html
+[Verify Elasticsearch is installed]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
