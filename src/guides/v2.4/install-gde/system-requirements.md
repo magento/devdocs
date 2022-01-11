@@ -12,7 +12,7 @@ redirect_from:
 {:.bs-callout-info}
 If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/services.html#service-versions) in the _Cloud Guide_.
 
-This table notes software versions that were officially tested and supported at the time of the Magento version's release. Newer versions of required software may work but have not been tested.
+This table shows versions of third-party software dependecies that Adobe tested with specific {{site.data.var.ee}} and {{site.data.var.ce}} releases. Adobe only supports the combination of system requirements described in the following table.
 
 {% include install/system-requirements-table.md %}
 
