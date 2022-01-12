@@ -15,7 +15,7 @@
 1. After the upload completes, refresh the cache according to the notification at the top of the page.
 
 {:.bs-callout-warning}
-The *Custom VCL snippets* UI option shows only the snippets added through the Admin UI. You must use the Fastly API to [manage custom snippets added through the Fastly API]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
+The *Custom VCL snippets* UI option shows only the snippets added through the Admin UI. You must [manage custom VCL snippets using the Fastly API]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
 
 ## Delete the custom VCL snippet
 
