@@ -18,14 +18,6 @@
   </div>
   {% endif %}
 
-  {% if page.url contains "guides/v2.4/comp-mgr/" %}
-  <div class="message-banner">
-    You must install and configure Elasticsearch 7.6.x before upgrading to {{ site.data.var.ee }} or
-    {{ site.data.var.ce }} 2.4.0. See <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html">Check the
-      catalog search engine</a> for details.
-  </div>
-  {% endif %}
-
   {% if page.url contains "config-guide/multi-master/" or page.url contains "cloud/docker/docker-split-db" %}
   <div class="message-banner">
     The split database feature was <a
