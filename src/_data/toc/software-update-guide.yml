@@ -69,19 +69,6 @@ pages:
     - label: Add or update components
       url: /install-gde/install/cli/dev_add-update.html
 
-    - label: Quality Patches Tool
-      url: /quality-patches/tool.html
-      versionless: true
-      children:
-
-        - label: Usage
-          url: /quality-patches/usage.html
-          versionless: true
-
-        - label: Release notes
-          url: /quality-patches/release-notes.html
-          versionless: true
-
     - label: Apply patches
       url: /comp-mgr/patching.html
       children:
