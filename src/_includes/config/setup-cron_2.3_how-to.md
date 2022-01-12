@@ -48,7 +48,7 @@ In [Composer-based installations](https://glossary.magento.com/composer), runnin
 Starting in Magento version 2.3.4, cron tasks are categorized into two groups:
 
 *  The `all` group includes the `cron:run`, `update/cron.php`, and `setup:cron:run` tasks.
-*  The `non-optional` group includes only the `cron:run` task.  
+*  The `non-optional` group includes only the `cron:run` task.
 
 Use `--non-optional` (or `-d`) to install a non-optional CRON job:
 
