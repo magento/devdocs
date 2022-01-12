@@ -50,7 +50,7 @@ Related topics
 Complete the tasks discussed in [Prerequisites].
 
  {:.bs-callout-info}
-See the [Upgrade Compatibility Tool ALPHA](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html) page for more information about the new Magento command line tool that helps you update your Magento software.
+See the [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html) page for more information about the new Magento command line tool that helps you update your Magento software.
 
 <!-- ABBREVIATIONS -->
 
