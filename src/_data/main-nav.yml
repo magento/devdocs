@@ -83,6 +83,10 @@
     - label: Command-line Tools Reference
       url: /reference/cli/magento.html
 
+    - label: Tools
+      url: /quality-patches/tool.html
+      versionless: true
+
 - label: Development
   children:
 
