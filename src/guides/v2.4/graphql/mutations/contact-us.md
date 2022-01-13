@@ -4,7 +4,7 @@ title: contactUs mutation
 pwa_only: true
 ---
 
-The `contactUs` mutation allows a Contact Us form to display on the site.
+The `contactUs` mutation submits the contents of the Contact Us form.
 
 ## Syntax
 
