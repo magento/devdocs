@@ -104,7 +104,7 @@ public function __construct(CacheInterface $cache, SerializerInterface $serializ
 }
 ```
 
-1. Store data in the cache.
+2. Store data in the cache.
 
 ```php
 $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
@@ -132,7 +132,7 @@ $data = $this->serializer->unserialize($this->cache->load($cacheKey));
 
 To invalidate a custom cache type, follow these steps:
 
-1. Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` `$typeList` of a required class (Repository, Model, Block, etc)
+1. Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` `$typeList` of a required class (Repository, Model, Block, etc).
 
 ```php
 /**
@@ -144,7 +144,7 @@ public function __construct(TypeListInterface $typeList)
 }
 ```
 
-1. Invalidate the cache
+2. Invalidate the cache
 
 ```php
 $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
