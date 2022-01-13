@@ -26,7 +26,7 @@ In addition to the `recommendations.html` file, the `ProductRecommendationsLayou
 |`web/js`|Contains the JavaScript files that fetch and render recommendations for your store|
 |`web/template`|Contains the template for the `magento/product-recommendations` module|
 
-## Customize recommendation unit positioning
+## Recommendation unit positioning
 
 When you [create a recommendation]({{ site.user_guide_url }}/marketing/create-new-rec.html), you specify [where you want the recommendation unit to appear]({{ site.user_guide_url }}/marketing/product-recommendations.html#productrecplacement) on your page. For example, you can select to place the recommendations either at the top or the bottom of the main content container. However, you can customize this placement. If you created a recommendation unit for Page Builder, you can use the Page Builder editing environment to customize where you want the recommendation unit to display on the page. For all other page types, you can edit the `*.xml` files responsible for the layout. Magento generates these `*.xml` files when you create a recommendation.
 
@@ -96,3 +96,13 @@ When you [create a recommendation]({{ site.user_guide_url }}/marketing/create-ne
     This change results in your recommendation unit appearing after the product image on the product detail page. If you want the recommendation unit to appear before the `product.info.media`, change the `after="-"` attribute to `before="-"`. The `pagePlacement` argument is an internal argument that should not be modified.
 
 Refer to [layout overview]({{ site.gdeurl }}/frontend-dev-guide/layouts/layout-overview.html) for more information about the types of blocks on the page.
+
+## Product attributes
+
+If you want to draw attention to certain products in a recommendation unit, you can fetch and render any custom product attributes you have defined in the Admin. For example, you can apply a badge in a recommendation unit to indicate a product is on sale:
+
+![Add Badge]({{ page.baseurl }}/recommendations/images/unit.png)
+
+To make sure a custom product attribute in available when you render the recommendation unit on the page, set the `Used in Product Listing` property to `Yes` in the [Product Attributes](https://docs.magento.com/user-guide/stores/attribute-product-create.html#step-4-describe-the-storefront-properties) page in the Admin.
+
+When this property is set, that custom product attribute is included in the JSON payload when the recommendations service fetches the product data. You can then apply your storefront stylings so that attribute is applied to the product.
