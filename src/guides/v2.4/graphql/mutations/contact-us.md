@@ -23,7 +23,8 @@ mutation {
       comment: "My comment",
       email: "bobloblaw@example.com",
       telephone: "(555)-CALL-BOB",
-      name: "Bob Loblaw" }) {
+      name: "Bob Loblaw" }
+      ) {
     status
   }
 }
