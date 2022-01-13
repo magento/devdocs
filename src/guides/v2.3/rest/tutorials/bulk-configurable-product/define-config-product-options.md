@@ -21,8 +21,8 @@ contributor_link: http://comwrap.com/
 
  The `POST async/bulk/V1/configurable-products/bySku/options` call assigns the specified `attribute_id` to be the configurable attribute.
 
- {:.bs-callout-warning}
- The attribute ID and value numbers might be different on your installation. Check the values carefully before using them in your calls. To get the correct attribute_id see [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+{:.bs-callout-warning}
+ The `attribute_id` and its value may be different on your installation. Check the values carefully before using them in your calls. To get the correct `attribute_id`, see [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 
  The value assigned to the `value_index` must be unique within the system.
 
