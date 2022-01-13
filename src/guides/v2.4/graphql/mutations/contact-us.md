@@ -20,7 +20,7 @@ The following example adds a Contact Us form to the site.
 mutation {
   contactUs(
     input: {
-      comment: "My comment", 
+      comment: "My comment",
       email: "bobloblaw@example.com",
       telephone: "(555)-CALL-BOB",
       name: "Bob Loblaw" }) {
