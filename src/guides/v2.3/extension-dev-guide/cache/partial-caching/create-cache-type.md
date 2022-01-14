@@ -104,7 +104,7 @@ To store serialized data in a custom cache, follow these steps:
     }
     ```
 
-2. Store data in the cache.
+1. Store data in the cache.
 
     ```php
     $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
@@ -144,7 +144,7 @@ To invalidate a custom cache type, follow these steps:
     }
     ```
 
-2. Invalidate the cache
+1. Invalidate the cache.
 
     ```php
     $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
