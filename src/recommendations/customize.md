@@ -99,12 +99,12 @@ Refer to [layout overview]({{ site.gdeurl }}/frontend-dev-guide/layouts/layout-o
 
 ## Custom Product attributes
 
-Often developers need access to custom product attribute values in recommendations units on storefront so that they can add visual treatments to products based on those attributes. 
+Often developers need access to custom product attribute values in recommendations units on storefronts so that they can add visual treatments to products based on those attributes.
 
-For example, if your store sells some organic products, you might have a custom attribute on those products designating them as "Organic = true". You may need access to this attribute value on the storefront so that you can give these products special visual treatment when they appear in Recommendations. Similarly, access to these custom product attribute values allows you to badge products or drive custom logic in the presentation layer of your site. 
+For example, if your store sells some organic products, you might have a custom attribute on those products designating them as `Organic = true`. You may need access to this attribute value on the storefront so that you can give these products special visual treatment when they appear in Recommendations. Similarly, access to these custom product attribute values allows you to badge products or drive custom logic in the presentation layer of your site.
 
 ![Add Badge]({{ page.baseurl }}/recommendations/images/unit.png)
 
-To make sure a custom product attribute in available when you render the recommendation unit on the page, set the `Used in Product Listing` property to `Yes` in the [Product Attributes](https://docs.magento.com/user-guide/stores/attribute-product-create.html#step-4-describe-the-storefront-properties) page in the Admin.
+To make sure a custom product attribute is available when you render the recommendation unit on the page, set the `Used in Product Listing` property to `Yes` in the [Product Attributes](https://docs.magento.com/user-guide/stores/attribute-product-create.html#step-4-describe-the-storefront-properties) page in the Admin.
 
 When this property is set, that custom product attribute value is included in the JSON payload when the recommendations service fetches the product metadata. You can then apply custom storefront styling based on this attribute value.
