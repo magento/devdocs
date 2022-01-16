@@ -3,6 +3,7 @@ group: software-update-guide
 title: Apply patches
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/overview.html
 ---
 
 {:.bs-callout-warning}
@@ -101,6 +102,6 @@ To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].
 [3]: https://github.com/magento/magento2/issues/6474
 [4]: https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.diff
 [Apply patches]:{{ site.baseurl }}/cloud/project/project-patch.html
-[Command line]:{{ page.baseurl }}/comp-mgr/patching/command-line.html
-[Composer]:{{ page.baseurl }}/comp-mgr/patching/composer.html
+[Command line]:https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/apply.html
+[Composer]:https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/apply.html
 [Quality Patches Tool]: {{ page.baseurl }}/comp-mgr/patching/mqp.html

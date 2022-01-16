@@ -3,6 +3,7 @@ group: software-update-guide
 title: Update and upgrade checklist
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
 ---
 
 Before you continue, to avoid errors during your installation or update, make sure you verify *all* of the following:
