@@ -74,7 +74,7 @@ The following highlights were added in earlier versions of 2.4.4 and are include
    *  `moment.js` <!--- AC-11-->
    *  `moment-timezone-with-data.js`   <!--- AC-10-->
    *  `matchMedia.js` <!--- AC-8-->
-   *  `underscore.js`  <!--- AC-13-->
+   *  `underscore.js`  [GitHub-32850](https://github.com/magento/magento2/issues/32850) <!--- AC-13-->
    *  `PrototypeJS`  <!--- AC-17-->
 
 ### Library removals
@@ -197,6 +197,14 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} now logs static content deployment errors in build log files as expected.
 
+<!--- AC-1480-->
+
+*  [GitHub-33760](https://github.com/magento/magento2/issues/33760)
+
+<!--- MC-43094-->
+
+*  Data patches can no longer ignore a table’s unique constraints and  insert duplicate values into a MySQL database table. Previously, patches could insert duplicate values, which corrupted the database. [GitHub-32283](https://github.com/magento/magento2/issues/32283)
+
 ### AdminGWS
 
 <!--- MC-42239-->
@@ -248,6 +256,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- magento/magento2/pull/33468-->
 
 *  Placing an order no longer results in the removal of all cache tags that are related to the ordered products from the Varnish cache. [GitHub-30128](https://github.com/magento/magento2/issues/30128)
+
+<!--- AC-1478-->
+
+*  Full-site page cache is no longer wiped out when you update a product from top categories or run an index to update product attributes or stock status.  Previously, Varnish cache added top menu category IDs to all page cache tags. [GitHub-33465](https://github.com/magento/magento2/issues/33465)
 
 ### Cart and checkout
 
@@ -337,6 +349,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} now displays an accurate salable quantity value for all products in the Admin product list view. Previously, {{ site.data.var.ee }} displayed a blank value for salable quantity of in-stock products with SKUs that contained special characters.
 
+<!--- AC-1169-->
+
+*  The `V1/products/base-prices` endpoint now works as expected with **Catalog Price Mode - Website**.  [GitHub-30132](https://github.com/magento/magento2/issues/30132)
+
 ### Catalog rule
 
 <!--- MC-41807-->
@@ -364,6 +380,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-43051-->
 
 *  GraphQL `product` queries no longer return data about the disabled child products of configurable products.
+
+<!--- MC-38815-->
+
+*  GraphQL queries now return billing address as expected when the value of an optional telephone field is set to an empty string. Previously, queries returned a null address value. [GitHub-30218](https://github.com/magento/magento2/issues/30218), [GitHub-30948](https://github.com/magento/magento2/issues/30948)
 
 ### Customer
 
@@ -395,6 +415,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Sales update emails sent from the Admin for non-default store views now contain correct order status labels. Previously, these emails always displayed status from the default store. [GitHub-29263](https://github.com/magento/magento2/issues/29263)
 
+<!--- magento/magento2/pull/32720-->
+
+*  Order and shipment notification emails now work as expected in deployments using Microsoft Outlook and MS Exchange Server. Previously, the email body was empty but contained an ATT*-labeled attachment.[GitHub-25076](https://github.com/magento/magento2/issues/25076)
+
 ### Frameworks
 
 <!--- AC-1068-->
@@ -415,7 +439,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-719-->
 
-*  Updating `symfony/console` no longer causes a failure when running `bin/magento setup:di:compile`. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
+*  Updating `symfony/console` no longer causes a failure when running `bin/magento setup:di:compile`. [GitHub-33595](https://github.com/magento/magento2/issues/33595)
 
 <!--- AC-1504-->
 
@@ -557,8 +581,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Watermark images with transparent backgrounds no longer have a white background on the transparent product image that it overlays. Previously, when both the watermark image and product image had a transparent background, the watermark was displayed with a white background.
 
-<!--- MC-42892-->
-
 <!--- AC-1240-->
 
 *  Logos for invoices and shipping receipts are now uploaded and displayed as expected when AWS S3 is enabled.
@@ -597,6 +619,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 ### Infrastructure
 
+<!--- AC-301-->
+
+*  Updated `phpseclib/phpseclib` from 2.0.31 to the latest version (v3.0.8). [GitHub-32864](https://github.com/magento/magento2/issues/32864)
+
 <!--- AC-491-->
 
 *  MySQL has been upgraded to the latest 8.0.x version.
@@ -605,9 +631,21 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  MariaDB has been upgraded to version 10.4.22.
 
+<!--- ENGCOM-8667-->
+
+*  Updated `Less.js` to 3.13.1. [GitHub-32845](https://github.com/magento/magento2/issues/32845)
+
 <!--- AC-719-->
 
 *  Updating `symfony/console` no longer causes failure when running `bin/magento setup:di:compile`. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
+
+<!---magento/magento-coding-standard/pull/206 -->
+
+*  Updated the `webonyx/graphql-php` dependency to the latest version in the Magento coding standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
+
+<!---magento/magento2/pull/33860 -->
+
+*  Updated `guzzlehttp/guzzle` from 6.5.5 to the latest version (7.3.0). [GitHub-32869](https://github.com/magento/magento2/issues/32869)
 
 <!--- AC-1077-->
 
@@ -661,13 +699,33 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Integers and floats in result sets are now returned using native PHP types instead of strings when using emulated prepared statements. [GitHub-34625](https://github.com/magento/magento2/issues/34625)
 
-<!--- AC-1650-->
+<!--- AC-1650 1521-->
 
-*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`.
+*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`. [GitHub-34541](https://github.com/magento/magento2/issues/34541)
 
 <!--- AC-1697-->
 
 *  Auto-creation of arrays from false values have been disabled to ensure compatibility with PHP 8.1.
+
+<!--- magento/magento-coding-standard/pull/322-->
+
+*  Added new sniff `Magento2. PHP.ArrayAutovivification` to the Magento Coding standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
+
+<!--- AC-710-->
+
+*  `magento/semver` is now compatible with PHP 8.0. [GitHub-32872](https://github.com/magento/magento2/issues/32872)
+
+<!--- AC-1192-->
+
+*  Removed the deprecated, unsupported `grunt-autoprefixer` package. [GitHub-34037](https://github.com/magento/magento2/issues/34037)
+
+<!--- magento/magento2/pull/34555-->
+
+*  The `phpstan/phpstan` Composer dependency has been updated to v1.x. [GitHub-34604](https://github.com/magento/magento2/issues/34604)
+
+<!--- magento/magento2-page-builder/pull/794-->
+
+*  Updated the `phpgt/dom` Composer dependency to  the most recent 2.x version. [GitHub-34633](https://github.com/magento/magento2/issues/34633)!--- AC-1750 1751 1752 —->
 
 ### Logging
 
@@ -696,6 +754,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- AC-1000-->
 
 *  Newly added Media Gallery Content submenu titles are now displayed when menu items exceed 11 and the **Enable Old Media Gallery** configuration setting is enabled. [GitHub-33889](https://github.com/magento/magento2/issues/33889)
+
+<!--- MC-42837-->
+
+*  Loading time for the Media Gallery tab when editing a product with many images has improved.  [GitHub-33434](https://github.com/magento/magento2/issues/33434)
 
 ### MFTF
 
@@ -793,12 +855,13 @@ Repetitive actions have been replaced with action groups in these tests:
 
 `StorefrontProductNameWithHTMLEntitiesTest` [GitHub-33806](https://github.com/magento/magento2/issues/33806)
 
-`StorefrontProductNameWithDoubleQuoteTest` [GitHub-34317](https://github.com/magento/magento2/issues/34317)
+`StorefrontProductNameWithDoubleQuoteTest` [GitHub-32991](https://github.com/magento/magento2/issues/32991)
 
 #### New tests
 
 `StorefrontGiftMessageForOrderOnCheckoutCartPageTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
 
+StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.com/magento/magento2/issues/32821)
 #### Refactored tests
 
 `CaptchaWithDisabledGuestCheckoutTest` [GitHub-30828](https://github.com/magento/magento2/issues/30828)
@@ -850,10 +913,6 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- MC-42265-->
 
 *  {{ site.data.var.ee }} no longer converts all dynamic blocks to one language during upgrade.
-
-<!--- MC-42268-->
-
-*  The `products` query now returns an accurate `total_count` field when shared catalog is enabled.
 
 ### Payment methods
 
@@ -1033,6 +1092,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ### Test
 
+<!--- magento/magento2/pull/34575-->
+
+*  Integration tests are now compatible with PHP 8.1. [GitHub-34568](https://github.com/magento/magento2/issues/34568)
+
 <!--- AC-1225-->
 
 *  Merchants can now test the shopper experience of the country in which the shopper is located, rather than the merchant’s location.
@@ -1064,6 +1127,14 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- AC-1978-->
 
 *  The `Magento\GraphQl\CatalogGraphQl\ProductSearchTest` test no longer throws this error when run with AWS Elasticsearch: `Magento\GraphQl\CatalogGraphQl\ProductSearchTest::testSearchSuggestions Failed asserting that an array is not empty. /var/www/html/dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogGraphQl/ProductSearchTest.php:94 /var/www/html/dev/tests/api-functional/framework/Magento/TestFramework/TestCase/GraphQlAbstract.php:257`.
+
+<!--- magento/magento2/pull/33762-->
+
+*  (Updating the `phpunit/phpunit` composer dependency to the latest version has eliminated this error.)[GitHub-33761](https://github.com/magento/magento2/issues/33761)
+
+<!--- magento/magento2/pull/34203-->
+
+*  Fixed functional issues in WebAPI tests. [GitHub-34196](https://github.com/magento/magento2/issues/34196)
 
 ### Theme
 
