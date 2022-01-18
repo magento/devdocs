@@ -104,7 +104,7 @@ This release includes enhancements that decrease indexation time for Product Pri
 
 ### Live Search
 
-[Live Search](https://docs.magento.com/user-guide/live-search/overview.html) powered by [Adobe Sensei](https://www.adobe.com/sensei.html) delivers an intuitive search experience by using artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated visitor data. See [Live Search Release Notes](https://devdocs.magento.com/live-search/release-notes.html).
+[Live Search]({{ site.user_guide_url }}/live-search/overview.html) powered by [Adobe Sensei](https://www.adobe.com/sensei.html) delivers an intuitive search experience by using artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated visitor data. See [Live Search Release Notes]({{ site.baseurl }}/live-search/release-notes.html).
 
 ### GraphQL
 
@@ -169,11 +169,11 @@ All the content created in TinyMCE has been migrated into Page Builder as HTM
 
 ### PWA Studio
 
-For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
+For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Magento compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions.
 
 ### Upgrade Compatibility Tool
 
-The scope of the [Upgrade Compatibility Tool]({{ site.baseurl }}/upgrade-compatibility-tool/introduction.html) has been expanded based on feedback from the community. Join our [#upgrade-compatibility-tool](https://magentocommeng.slack.com/archives/C019Y143U9F) Slack channel to get support from the Adobe product team and the community, as well as to help guide the future direction of the tool.
+The scope of the [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html) has been expanded based on feedback from the community. Join our [#upgrade-compatibility-tool](https://magentocommeng.slack.com/archives/C019Y143U9F) Slack channel to get support from the Adobe product team and the community, as well as to help guide the future direction of the tool.
 ### Cloud managed services updates
 
 This release includes enhancements to our support for Amazon Simple Storage Service (AWS S3)  and Amazon Aurora cloud managed services. It provides certified support for AWS ElastiCache, AWS ElasticSearch, and AWS Managed Queues (Rabbit MQ). (We have tested the functionality, performance, and integration of these services with {{site.data.var.ee}}.)
@@ -186,15 +186,15 @@ This release includes Adobe Stock Integration v2.1.1.
 
 See the following topics for updates on features and changes for this release:
 
-*  [Amazon Pay](https://docs.magento.com/user-guide/payment/amazon-pay.html). Amazon Pay has been deprecated and will be removed in a later Magento 2.4.x release. Magento 2.4.3 and higher will contain only updates for compatibility and fixes for major bugs.
+*  [Amazon Pay]({{ site.user_guide_url }}/payment/amazon-pay.html). Amazon Pay has been deprecated and will be removed in a later Magento 2.4.x release. Magento 2.4.3 and higher will contain only updates for compatibility and fixes for major bugs.
 
-*  [Braintree](https://docs.magento.com/user-guide/payment/braintree.html)
+*  [Braintree]({{ site.user_guide_url }}/payment/braintree.html)
 
 *  [dotdigital Engagement Cloud]({{ site.baseurl }}/extensions/vendor/dotdigital/release-notes.html)
 
-*  [Klarna](https://docs.magento.com/user-guide/payment/klarna.html)
+*  [Klarna]({{ site.user_guide_url }}/payment/klarna.html)
 
-*  [Vertex Cloud](https://docs.magento.com/user-guide/tax/vertex.html)
+*  [Vertex Cloud]({{ site.user_guide_url }}/tax/vertex.html)
 
 *  [Yotpo Product Reviews]({{ site.baseurl }}/extensions/vendor/yotpo/release-notes.html)
 
@@ -389,10 +389,6 @@ We have fixed hundreds of issues in the Magento 2.4.3 core code.
 <!--- MC-40271 magento/partners-magento2ee#476-->
 
 *  You are now redirected to the checkout page as expected after adding a bundle product to the cart from a Schedule Update preview and clicking the cart. [GitHub-447](https://github.com/magento/partners-magento2ee/issues/447)
-
-<!--- MC-32805-->
-
-*  Shoppers are now redirected to the shopping cart page instead of the product page when they try to update the mini cart for an order that contains deleted items. Previously, shoppers were redirected to the product page.
 
 <!--- MC-39581-->
 

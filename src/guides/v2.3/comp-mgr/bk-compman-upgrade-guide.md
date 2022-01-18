@@ -3,6 +3,7 @@ group: software-update-guide
 title: Commerce upgrade overview
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html
 ---
 
 <!-- Topic variables
@@ -49,18 +50,17 @@ Related topics
 Complete the tasks discussed in [Prerequisites].
 
  {:.bs-callout-info}
-See the [Upgrade Compatibility Tool ALPHA]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html) page for more information about the new Magento command line tool that helps you update your Magento software.
+See the [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html) page for more information about the new Magento command line tool that helps you update your Magento software.
 
 <!-- ABBREVIATIONS -->
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
 
-[command line]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
+[command line]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/implementation/perform-upgrade.html
 [Composer]: {{ page.baseurl }}/install-gde/composer.html
 [Migration Guide]: {{ page.baseurl }}/migration/bk-migration-guide.html
-[Prerequisites]: {{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html
-[Shared account]: http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html
-{:target="_blank"}
-[Upgrade from Open Source to Commerce]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html#manage-packages
-[upgrade the software manually]: {{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html
+[Prerequisites]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html
+[Shared account]: {{ site.user_guide_url }}/magento/magento-account-share.html
+[Upgrade from Open Source to Commerce]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/implementation/perform-upgrade.html
+[upgrade the software manually]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/developer/git-installs.html

@@ -23,6 +23,11 @@ To dispatch an event, call the `dispatch` function of the event manager class an
 The following example shows you how to dispatch an event with and without an array of data.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 namespace MyCompany\MyModule;
 
@@ -30,27 +35,27 @@ use Magento\Framework\Event\ManagerInterface as EventManager;
 
 class MyClass
 {
-  /**
-   * @var EventManager
-   */
-  private $eventManager;
+    /**
+     * @var EventManager
+     */
+    private $eventManager;
 
-  /*
-   * @param \Magento\Framework\Event\ManagerInterface as EventManager
-   */
-  public function __construct(EventManager $eventManager)
-  {
-    $this->eventManager = $eventManager;
-  }
+    /*
+     * @param EventManager $eventManager
+     */
+    public function __construct(EventManager $eventManager)
+    {
+        $this->eventManager = $eventManager;
+    }
 
-  public function something()
-  {
-    $eventData = null;
-    // Code...
-    $this->eventManager->dispatch('my_module_event_before');
-    // More code that sets $eventData...
-    $this->eventManager->dispatch('my_module_event_after', ['myEventData' => $eventData]);
-  }
+    public function something()
+    {
+        $eventData = null;
+        // Code...
+        $this->eventManager->dispatch('my_module_event_before');
+        // More code that sets $eventData...
+        $this->eventManager->dispatch('my_module_event_after', ['myEventData' => $eventData]);
+    }
 }
 
 ```
@@ -96,45 +101,59 @@ To create an observer, you must place your class file under your `<module-root>/
 Below is an example of the basic observer class structure:
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace MyCompany\MyModule\Observer;
 
+use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 
 class MyObserver implements ObserverInterface
 {
-  public function __construct()
-  {
-    // Observer initialization code...
-    // You can use dependency injection to get any class this observer may need.
-  }
+    public function __construct()
+    {
+        // Observer initialization code...
+        // You can use dependency injection to get any class this observer may need.
+    }
 
-  public function execute(\Magento\Framework\Event\Observer $observer)
-  {
-    // Observer execution code...
-  }
+    public function execute(Observer $observer)
+    {
+        // Observer execution code...
+    }
 }
 ```
 
 One of the more powerful feature of observers is that they are able to use parameters passed into the event when it was dispatched. Below is an example of an observer obtaining data passed in when the event was dispatched.
 
 ```php
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 namespace MyCompany\MyModule\Observer;
 
+use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 
 class AnotherObserver implements ObserverInterface
 {
-  public function __construct()
-  {
-    // Observer initialization code...
-    // You can use dependency injection to get any class this observer may need.
-  }
+    public function __construct()
+    {
+        // Observer initialization code...
+        // You can use dependency injection to get any class this observer may need.
+    }
 
-  public function execute(\Magento\Framework\Event\Observer $observer)
-  {
-    $myEventData = $observer->getData('myEventData');
-    // Additional observer execution code...
-  }
+    public function execute(Observer $observer)
+    {
+        $myEventData = $observer->getData('myEventData');
+        // Additional observer execution code...
+    }
 }
 ```
 

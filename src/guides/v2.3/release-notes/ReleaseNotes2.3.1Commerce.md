@@ -23,7 +23,7 @@ blog post. You can directly access patch code through your Magento account for {
 ## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
 
 In certain versions of {{site.data.var.ce}} and {{site.data.var.ee}}, the Asynchronous and Bulk REST endpoints support the default store view scope only. After this patch is applied to deployments running those versions of Magento, the current Magento message queue implementation
-will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches]({{ page.baseurl }}/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. To apply the patch, navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running.
+will factor in the store that executes queue operations. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents. See [Applying patches](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/overview.html) for specific instructions on downloading and applying Magento patches. To apply the patch, navigate to the [Magento Security Center](https://magento.com/security/patches), and select the patch associated with the version of Magento you are running.
 
 ## Apply the PRODSECBUG-2198 patch to address critical SQL injection vulnerability
 
@@ -56,7 +56,7 @@ Look for the following highlights in this release:
 
 #### Page Builder
 
-Page Builder is a drag-and-drop visual content editing tool that lets merchants customize content page layout and create shopping experiences that blend content and commerce without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. Page Builder is available on {{site.data.var.ee}} only. See [Page Builder User Guide](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html) and [Page Builder Developer Documentation](https://devdocs.magento.com/page-builder/docs/index.html).
+Page Builder is a drag-and-drop visual content editing tool that lets merchants customize content page layout and create shopping experiences that blend content and commerce without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. Page Builder is available on {{site.data.var.ee}} only. See [Page Builder User Guide](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html) and [Page Builder Developer Documentation]({{ site.baseurl }}/page-builder/docs/index.html).
 
 #### Improved order creation workflow in the Admin
 
@@ -80,7 +80,7 @@ The Magento Inventory (was MSI) community project has added multiple new feature
 
 #### Progressive Web Apps (PWA) Studio
 
-PWA Studio is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.x. See [Magento PWA Documentation](https://magento.github.io/pwa-studio/).
+PWA Studio is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.x. See [Magento PWA Documentation](https://developer.adobe.com/commerce/pwa-studio/).
 
 #### GraphQL
 

@@ -7,11 +7,12 @@ menu_node:
 functional_areas:
   - Upgrade
 redirect_from: /guides/v2.4/install-gde/install/cli/dev_add-update.html
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/developer/manage-modules.html
 ---
 
 A contributing developer updates components by specifying components and their versions in Magento's `composer.json`.
 
-To update components if you are *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
+To update components if you are *not* a contributing developer, see [Updating the Magento application and components](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).
 
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 
@@ -72,8 +73,8 @@ Save your changes to `composer.json`, exit the text editor, and enter `composer 
 {:.ref-header}
 Related topics
 
-If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md).
 
 <!-- ABBREVIATIONS -->
 
-If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md).

@@ -13,7 +13,7 @@ This URL library provides numerous utilities to work with URLs. Some of the most
 
 ### Encoder
 
-The [`Magento\Framework\Url\EncoderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url/EncoderInterface.php){:target="_blank"} provides a method to `encode` the URL provided to it into a base64 format and also escapes the special charaters described in the table below.
+The [`Magento\Framework\Url\EncoderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url/EncoderInterface.php) provides a method to `encode` the URL provided to it into a base64 format and also escapes the special charaters described in the table below.
 
 |Special Character|Encoded Value|
 |--- |--- |
@@ -23,7 +23,7 @@ The [`Magento\Framework\Url\EncoderInterface`]({{ site.mage2bloburl }}/{{ page.g
 
 ### Decoder
 
-The [`Magento\Framework\Url\DecoderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url/DecoderInterface.php){:target="_blank"} provides a method to `decode` the base64 encoded URL provided to it and also decodes the special characters described in the table below.
+The [`Magento\Framework\Url\DecoderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url/DecoderInterface.php) provides a method to `decode` the base64 encoded URL provided to it and also decodes the special characters described in the table below.
 
 |Special Character|Decoded Value|
 |--- |--- |

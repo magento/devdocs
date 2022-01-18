@@ -110,7 +110,6 @@ To add a new PHP extension:
        ],
        ...
       ```
-      {:.no-copy}
 
       In this case, the `bcmath` PHP core extension installs from `docker-php-source` images.
 
@@ -279,9 +278,9 @@ BASH
 ...
 ```
 
-[Docker build sources]: https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources
+[Docker build sources]: {{ site.baseurl }}/cloud/docker/docker-extend.html#specify-docker-build-sources
 [ExtensionResolver.php]: https://github.com/magento/magento-cloud-docker/tree/develop/src/Compose/Php
 [PECL]: https://pecl.php.net/
 [PHP, Docker Official Images]: https://hub.docker.com/_/php
 [multiple compose files]: https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files
-[service versions]: https://devdocs.magento.com/cloud/docker/docker-containers.html#service-containers
+[service versions]: {{ site.baseurl }}/cloud/docker/docker-containers.html#service-containers

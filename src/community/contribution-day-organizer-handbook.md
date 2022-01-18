@@ -96,7 +96,7 @@ Having the above information can also be useful as feedback into [issue backlog 
 Once your website and registration page is ready, you should compile materials to send to your attendees after they register and before the event. Some basic information that should be present in this material includes:
 
 *  Links to any relevant Contribution Day boards or backlogs containing issues that would be good challenges for attendees.
-*  A friendly reminder on basic contribution guidelines. A good place to start are the generic [DevDocs Contribution Guidelines](https://devdocs.magento.com/contributor-guide/contributing.html), but specific community projects focused on during your event may have their own CONTRIBUTION.md with project-specific guidelines in addition to the generic Magento ones.
+*  A friendly reminder on basic contribution guidelines. A good place to start are the generic [DevDocs Contribution Guidelines]({{ site.baseurl }}/contributor-guide/contributing.html), but specific community projects focused on during your event may have their own CONTRIBUTION.md with project-specific guidelines in addition to the generic Magento ones.
 *  Share any [social media promotional decisions](#marketing-and-communication) like which hashtag to use.
 
 ### Marketing and communications {#marketing-and-communication}

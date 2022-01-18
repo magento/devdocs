@@ -7,7 +7,7 @@ functional_areas:
 
 ## What's in this topic {#fedg_layout_override_overview}
 
-Not all layout customizations can be performed by [extending layouts]. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent [theme] layout file of [base] layout file.
+Not all layout customizations can be performed by [extending layouts]. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent [theme] layout file or [base] layout file.
 
 In this article, [page layouts], [page configurations], and [generic layouts] are referred to as *layout files*, as the mechanism of overriding is similar for all of them.
 

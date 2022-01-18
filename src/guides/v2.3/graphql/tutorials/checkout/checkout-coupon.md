@@ -24,7 +24,7 @@ Use [applyCouponToCart]({{ page.baseurl }}/graphql/mutations/apply-coupon.html) 
 
 Coupons must be generated from the Admin.
 
-Creating a coupon is described in [Coupon Codes](https://docs.magento.com/user-guide/marketing/price-rules-cart-coupon.html).
+Creating a coupon is described in [Coupon Codes]({{ site.user_guide_url }}/marketing/price-rules-cart-coupon.html).
 For the purpose of this tutorial, create a Cart Price Rule with:
 
 For **Rule Information**:

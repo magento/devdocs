@@ -52,8 +52,8 @@ The general format of system settings variable names follows:
    For more information about scopes, see:
 
    *  [Step 1: Find the website or store view scope value](#deploy-system-vars-scopes)
-   *  [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html)
-   *  [Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html)
+   *  [Magento User Guide]({{ site.user_guide_url }}/configuration/scope.html)
+   *  [Scope quick reference]({{ site.user_guide_url }}/stores/store-scope-reference.html)
 
 `<SYSTEM__VARIABLE__NAME>` is the configuration path with double underscore characters substituted for `/`. For more information, see [Step 2: Set system variables](#cloud-system-vars-sys).
 
@@ -251,5 +251,5 @@ content='
 {:.ref-header}
 Related topics
 
-*  [Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html)
-*  [Magento User Guide scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html)
+*  [Magento User Guide discussion of scope]({{ site.user_guide_url }}/configuration/scope.html)
+*  [Magento User Guide scope quick reference]({{ site.user_guide_url }}/stores/store-scope-reference.html)
