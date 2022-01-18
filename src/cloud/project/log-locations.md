@@ -152,8 +152,14 @@ For example, on Pro production environments a PHP access log for 21 days in the 
 ```terminal
 /var/log/platform/<project_id>/php.access.log.22.gz
 ```
-
 The archived log files are always stored in the directory where the original file was located before compression.
+
+Full details of the environment's log rotation and lifespan of compressed logs can be found in the following locations :
+
+```terminal
+/etc/logrotate.conf
+/etc/logrotate.d/<various>
+```
 
 {:.bs-callout-info}
 **Deploy** and **Post-deploy** log files are not rotated and archived. The entire deployment history is written within those log files.
