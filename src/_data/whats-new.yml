@@ -8,7 +8,7 @@ updated: Mon Jan 17 15:38:41 2022
 entries:
 - description: Added the [contactUs](https://devdocs.magento.com/guides/v2.4/graphql/mutations/contact-us.html)
     mutation topic.
-  versions: ''
+  versions: 2.4.x
   type: New Topic
   date: January 14, 2022
   link: https://github.com/magento-commerce/devdocs/pull/2737
@@ -17,6 +17,7 @@ entries:
   membership: true
   labels:
   - New Topic
+  - 2.4.x
 - description: Redirected [Software Update Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html)
     topics to the new location on [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).
   versions: 2.3.x, 2.4.x
