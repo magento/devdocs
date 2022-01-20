@@ -24,7 +24,7 @@ You can use the command-line interface to enable these features, or you can edit
 
 ## Asynchronous order placement
 
-The _Async Order_ module enables asynchronous order placement, which marks the order as `received`, places the order in a queue, and processes orders from the queue on a first-in-first-out basis. See AsyncOrder in the _Module Reference Guide_.
+The _Async Order_ module enables asynchronous order placement, which marks the order as `received`, places the order in a queue, and processes orders from the queue on a first-in-first-out basis. See [AsyncOrder][] in the _Module Reference Guide_.
 
 AsyncOrder is **disabled** by default.
 
@@ -75,7 +75,7 @@ To disable check inventory when loading a product in the cart, set **Enable Inve
 
 ## Sales rule optimization
 
-The _Deferred Total Calculation_ module optimizes the checkout process by deferring the total calculation until it is requested for the shopping cart or during final checkout steps. When enabled, only the subtotal calculates as a customer adds products to the shopping cart. See DeferredTotalCalculating in the _Module Reference Guide_.
+The _Deferred Total Calculation_ module optimizes the checkout process by deferring the total calculation until it is requested for the shopping cart or during final checkout steps. When enabled, only the subtotal calculates as a customer adds products to the shopping cart. See [DeferredTotalCalculating][] in the _Module Reference Guide_.
 
 DeferredTotalCalculation is **disabled** by default.
 
@@ -98,4 +98,7 @@ This writes the following to the `app/etc/env.php` file:
 
 [global]: https://docs.magento.com/user-guide/catalog/inventory-options-global.html
 [inventory]: https://docs.magento.com/user-guide/configuration/catalog/inventory.html
+
 [mrg]: {{site.baseurl}}{{site.gdeurl}}/mrg/intro.html
+[asyncorder]: {{site.baseurl}}/guides/v2.4/mrg/module-async-order.html
+[DeferredTotalCalculating]: {{site.baseurl}}/guides/v2.4/mrg/module-deferred-total-calculating.html
