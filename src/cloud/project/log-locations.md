@@ -21,6 +21,13 @@ You can view the logs from the file system, the project web UI, and the `magento
 {:.bs-callout-tip}
 Automatic log rotation, compression, and removal are enabled in the Cloud environment. Each log file type has a rotating pattern and lifetime.
 
+Full details of the environment's log rotation and lifespan of compressed logs can be found in the following locations :
+
+```terminal
+/etc/logrotate.conf
+/etc/logrotate.d/<various>
+```
+
 ## Manage log data
 
 On Pro Production and Staging environments, use the New Relic Logs application integrated with your project to manage aggregated log data from all logs associated with your {{ site.data.var.ece }} project.
@@ -152,7 +159,6 @@ For example, on Pro production environments a PHP access log for 21 days in the 
 ```terminal
 /var/log/platform/<project_id>/php.access.log.22.gz
 ```
-
 The archived log files are always stored in the directory where the original file was located before compression.
 
 {:.bs-callout-info}
