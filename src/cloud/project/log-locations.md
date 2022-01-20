@@ -19,14 +19,7 @@ You can view the logs from the file system, the project web UI, and the `magento
 -  **Magento Cloud CLI**—You can view logs using the `magento-cloud log` command.
 
 {:.bs-callout-tip}
-For Pro environments, automatic log rotation, compression, and removal are enabled for log files with a fixed file name. Each log file type has a rotating pattern and lifetime. Starter environments do not have log rotation.
-
-Full details of the environment's log rotation and lifespan of compressed logs can be found in the following locations :
-
-```terminal
-/etc/logrotate.conf
-/etc/logrotate.d/<various>
-```
+For Pro environments, automatic log rotation, compression, and removal are enabled for log files with a fixed file name. Each log file type has a rotating pattern and lifetime. Starter environments do not have log rotation. Full details of the environment's log rotation and lifespan of compressed logs can be found in: `/etc/logrotate.conf` and `/etc/logrotate.d/<various>`
 
 ## Manage log data
 
