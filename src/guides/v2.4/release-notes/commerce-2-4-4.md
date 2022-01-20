@@ -611,7 +611,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42160-->
 
-*  The media tag associated with an image added to a CMS page in a deployment where the Admin is set to a different domain than the store URL now contains store URLs as expected. Previously, media tags contained static Admin URLs instead of the expected store URLs (for example, `<img src="{{media url="https://dev.magentotest.local/wysiwyg/test-image.png"}}" alt=“”>). [GitHub-32930](https://github.com/magento/magento2/issues/32930)
+*  The media tag associated with an image added to a CMS page in a deployment where the Admin is set to a different domain than the store URL now contains store URLs as expected. Previously, media tags contained static Admin URLs instead of the expected store URLs. [GitHub-32930](https://github.com/magento/magento2/issues/32930)
 
 ### Import/export
 
