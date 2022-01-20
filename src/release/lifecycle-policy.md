@@ -20,7 +20,7 @@ For {{ site.data.var.ee }} 2.4 and subsequent releases:
 | {{site.data.var.ee}} 2.4.4-2.4.6 | TBA           | November 2024                       | PHP 8.1                     |
 
 <sup>1 End of Software Support includes both end of quality fixes and end of security fixes.</sup><br>
-<sup>2 The End of Software Support date for 2.3 has been extended to April 2022 due to impacts from COVID-19.</sup><br>
+<sup>2 The End of Software Support date for 2.3 has been extended to April 2022 due to impacts from  COVID-19.</sup><br>
 <sup>3 2.3.0-2.3.6 are dependent on PHP 7.3; 2.3.7 is dependent on PHP 7.4.</sup>
 
 {:.bs-callout-info}
