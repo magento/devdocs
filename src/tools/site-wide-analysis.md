@@ -13,7 +13,7 @@ The Site Wide Analysis Tool provides 24/7 real-time performance monitoring, repo
 {:.bs-callout-info}
 See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about dashboards and reports.
 
-If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool. 
+If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool.
 
 ## Agent
 
