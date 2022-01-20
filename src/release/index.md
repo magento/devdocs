@@ -43,7 +43,7 @@ For more information, refer to the [Beta program][].
 
 -  **Patch releases**—Updates to the core {{site.data.var.ee}} and {{site.data.var.ce}} application that include security, compliance, performance, and high-priority quality fixes.
 -  **Security patch releases**—Security-only updates to the {{site.data.var.ee}} and {{site.data.var.ce}} application released to keep merchants secure and compliant.
--  **Feature releases**—New features and feature updates that are delivered as independent services, separate from the patch releases. Examples include services like Product Recommendations and Live Search, independent modules like PWA Studio and Inventory Management (MSI), and updates to our cloud services and infrastructure.
+-  **Feature releases**—New features and feature updates that are delivered as independent services, separate from the patch releases. Examples include services like Product Recommendations and Live Search, independent modules like PWA Studio and Inventory Management (MSI), and updates to our cloud services and infrastructure. 
 
 <!-- Link definitions -->
 [Beta program]: {{site.baseurl}}/release/beta-program.html
