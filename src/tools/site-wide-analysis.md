@@ -13,21 +13,29 @@ The Site Wide Analysis Tool provides 24/7 real-time performance monitoring, repo
 {:.bs-callout-info}
 See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about dashboards and reports.
 
-If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool.
+If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool. 
+
 ## Agent
 
 The Site Wide Analysis Tool Agent allows you to use the Site Wide Analysis Tool for on-premises installations of {{ site.data.var.ee }}.
 
 The agent collects application and business data, analyzes it, and provides additional insights about the health of your installation so that you can improve customer experience. It monitors your application and helps you identify performance, security, availability, and application issues.
 
+Installing the agent requires the following steps:
+
+1. Verify system requirements
+1. Configure API keys in the Commerce Services Connector extension
+1. Install the agent
+1. Run the agent
+
 {:.bs-callout-tip}
-The agent supports multi-node {{ site.data.var.ee }} installations. You must install and confidure the agent on each node.
+The agent supports multi-node {{ site.data.var.ee }} installations. You must install and configure the agent on each node.
 
 ## Architecture
 
 ![Architectural diagram of the Site Wide Analysis Tool agent]({{ site.baseurl }}/common/images/tools/swat-agent.svg)
 
-## Requirements
+## System requirements
 
 Before you begin, you must contact your Adobe Customer Success Manager (CSM) to obtain a license key and application name. You must use this information to configure the agent after installation.
 
@@ -40,12 +48,43 @@ Your on-premises infrasture must meet the following requirements before installi
    {{ site.data.var.ee }} is not supported on Microsoft Windows and macOS.
 
 -  {{ site.data.vaar.ee }} 2.4.1 or later
+-  Commerce Services Connector extension
 -  PHP CLI
 -  Bash/shell utilities
    -  `grep`
    -  `awk`
    -  `nice`
    -  `grep`
+
+## Commerce Services Connector
+
+The agent requires the [Commerce Services Connector]({{ site.user_guide_url }}/user-guide/system/saas.html) extension to be installed on your system and [configured]({{ site.user_guide_url }}/system/saas.html#createsaasenv) with API keys. To verify that the extension is installed, run the following command:
+
+```bash
+bin/magento module:status Magento_ServicesConnector
+```
+
+Use the following instructions to install the extension (if necessary):
+
+1. Add the extension to your `composer.json` file and install it.
+
+   ```bash
+   composer require magento/services-connector:1.*
+   ```
+
+1. Enable the extension.
+
+   ```bash
+   bin/magento module:enable Magento_ServicesConnector
+   ```
+
+1. Update the database schema.
+
+   ```bash
+   bin/magento setup:upgrade
+   ```
+
+1. [Configure API keys]({{ site.user_guide_url }}/system/saas.html#createsaasenv) to connect the extension to your system.
 
 ## Install
 
@@ -124,8 +163,9 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 1. Generate an `.env` configuration file with the following properties:
 
    ```config
+   cat <<EOT >> /path/to/swat-agent.env
+   SWAT_AGENT_PREFERRED_APPLICATION_NAME=<Test Inc>
    SWAT_AGENT_APP_NAME=<APP_NAME>
-   SWAT_AGENT_LICENSE_KEY=<LICENSE_KEY>
    SWAT_AGENT_APPLICATION_PHP_PATH=php
    SWAT_AGENT_APPLICATION_MAGENTO_PATH=<APPLICATION ROOT e.g: /var/www/html >
    SWAT_AGENT_APPLICATION_DB_USER=<APPLICATION_DB_USER>
@@ -133,12 +173,15 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    SWAT_AGENT_APPLICATION_DB_HOST=<APPLICATION_DB_HOST>
    SWAT_AGENT_APPLICATION_DB_NAME=<APPLICATION_DB_NAME>
    SWAT_AGENT_APPLICATION_DB_PORT=3306
+   SWAT_AGENT_APPLICATION_DB_TABLE_PREFIX=<TABLE_PREFIX>
    SWAT_AGENT_APPLICATION_DB_REPLICATED=<false or true>
    SWAT_AGENT_APPLICATION_CHECK_REGISTRY_PATH=<TEMPORARY DIRECTORY e.g: /tmp/swat-agent-production >
    SWAT_AGENT_BACKEND_HOST=check.swat.magento.com:443
-   SWAT_AGENT_LOGIN_BACKEND_HOST=login.swat.magento.com:443
    SWAT_AGENT_RUN_CHECKS_ON_START=1
    SWAT_AGENT_LOG_LEVEL=error
+   SWAT_AGENT_ENABLE_AUTO_UPGRADE=true
+   SWAT_AGENT_IS_SANDBOX=false
+   EOT
    ```
 
    {:.bs-callout-info}
@@ -207,8 +250,7 @@ If you do not have root permissions or do not have permissions to configure a da
 Update your cron schedule:
 
 ```bash
-crontab -e
-* * * * * SHELL=/bin/bash flock -n /tmp/swat-agent.lockfile -c 'set +o allexport; source /path/to/swat-agent/swat-agent.env; set -o allexport; /path/to/swat-agent/scheduler' >> /path/to/swat-agent/errors.log 2>&1
+( crontab -l ; echo "* * * * * flock -n /tmp/swat-agent.lockfile -c 'source /path/to/agent/swat-agent.env; /path/to/agent/scheduler' >> /path/to/agent/errors.log 2>&1" ) | sort - | uniq - | crontab -
 ```
 
 ## Access the dashboard
@@ -298,9 +340,12 @@ Property | Description |
 `SWAT_AGENT_APPLICATION_DB_HOST` | Database host for your {{ site.data.var.ee }} installation
 `SWAT_AGENT_APPLICATION_DB_NAME` | Database name for your {{ site.data.var.ee }} installation
 `SWAT_AGENT_APPLICATION_DB_PORT` | Database port for your {{ site.data.var.ee }} installation (usually `3306`)
+`SWAT_AGENT_APPLICATION_DB_TABLE_PREFIX` | Table Prefix for your {{ site.data.var.ee }} installation (default value: empty)
 `SWAT_AGENT_APPLICATION_DB_REPLICATED` | Whether your {{ site.data.var.ee }} installation has a secondary database instance (usually `false`)
 `SWAT_AGENT_APPLICATION_CHECK_REGISTRY_PATH` | Temporary directory for the agent (usually `/usr/local/swat-agent/tmp`)
 `SWAT_AGENT_BACKEND_HOST` | Site Wide Analysis Backend Server and port (usually `check.swat.magento.com:443`)
 `SWAT_AGENT_LOGIN_BACKEND_HOST` | Site Wide Analysis Tool backend login server and port (usually `login.swat.magento.com:443`)
 `SWAT_AGENT_RUN_CHECKS_ON_START` | Collect data on the first run (usually `1`)
 `SWAT_AGENT_LOG_LEVEL` | Determines what events are logged based on severity  (usually `error`)
+`SWAT_AGENT_ENABLE_AUTO_UPGRADE` | Enables automatic upgrade (restart required after an upgrade; agent does not check for upgrades if the option is disabled)
+`SWAT_AGENT_IS_SANDBOX=false` | Enabling sandbox mode to use the agent on staging environment
