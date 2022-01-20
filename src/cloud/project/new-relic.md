@@ -61,7 +61,7 @@ A New Relic account can have only one person assigned to the Owner role. If you 
 {:.bs-callout-tip}
 Before assigning the Owner role to a user, verify that the user exists on the New Relic account for {{site.data.var.ece}}. If you need to add the user to that account and an existing account Owner or Admin cannot help, any user with access to the [Adobe Partnership Owner Account] for New Relic can add users on behalf of the customer.
 
-We recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and tool usage. {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
+We recommend adding at least one **Admin** user to your New Relic account to manage all access, integrations, and tool usage. {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account. We also recommend that you do not create more than 5 full-access **Users**. Only grant full access to those that strictly require access to the complete feature set. There is no specific guidance on free **Restricted** users.
 
 {:.procedure}
 To add a user:
