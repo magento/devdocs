@@ -5,18 +5,18 @@ functional_areas:
 - Standards
 ---
 
-The built-in Upgrade Compatibility Tool aims to achieve the same issues coverage as original Adobe Commerce [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html).
+The built-in Upgrade Compatibility Tool aims to achieve the same issues coverage as original Adobe Commerce [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html).
 There are three types of inspections covered by this MVP version:
 
 *  Deprecation (severity level: WARNING)
 *  API coverage (severity level: ERROR)
 *  Existence (severity level: CRITICAL)
 
-A complete list of inspections that are already available in the original tool, can be found by the [following link]({{site.baseurl}}/upgrade-compatibility-tool/errors.html).
+A complete list of inspections that are already available in the original tool, can be found by the [following link](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/error-messages.html).
 
 This feature can be used in three different ways, from the user's point of view:
 
-*  Run compatibility inspections in a [run tool window](https://www.jetbrains.com/help/idea/run-tool-window.html), with the familiar output, as in the original Adobe Commerce [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html)
+*  Run compatibility inspections in a [run tool window](https://www.jetbrains.com/help/idea/run-tool-window.html), with the familiar output, as in the original Adobe Commerce [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html)
 *  Run inspections in real time, on the files that are opened in the editor (default)
 *  [Run inspections manually](https://www.jetbrains.com/help/idea/running-inspections.html) through the user interface on the selected scope of files (default)
 
@@ -54,7 +54,7 @@ For this inspection type you do not need to have UCT inspections enabled for you
 
 ![]({{site.baseurl}}/common/images/phpstorm/built-in-uct/uct-analysis-through-intellj-idea-inspect-code-action.png)
 
-**The most powerful inspection type is the execution of compatibility inspections in a [run tool window](https://www.jetbrains.com/help/idea/run-tool-window.html) with the familiar output as in the original Adobe Commerce [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html)**.
+**The most powerful inspection type is the execution of compatibility inspections in a [run tool window](https://www.jetbrains.com/help/idea/run-tool-window.html) with the familiar output as in the original Adobe Commerce [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html)**.
 
 **Advantages from using this inspection:**
 
@@ -65,7 +65,7 @@ For this inspection type you do not need to have UCT inspections enabled for you
 
 Before using it, you should configure the built-in UCT in a same way to the CLI Run Configuration.
 All fields, as above, are described in the Upgrade Compatibility Tool Run Configuration section and are more detailed
-in the [official documentation]({{site.baseurl}}/upgrade-compatibility-tool/run.html).
+in the [official documentation](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/run.html).
 Go to the UCT configuration dialog `Tools -> Configure The Upgrade Compatibility Tool` and configure it as required:
 
 ![]({{site.baseurl}}/common/images/phpstorm/built-in-uct/uct-settings.png)

@@ -3,6 +3,7 @@ group: software-update-guide
 title: Maintenance mode options for upgrade
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/maintenance-mode-options.html
 ---
 
 This topic discusses how you can create a custom maintenance page to display to users while your Magento application is being upgraded. Creating a custom page is optional but recommended because your site is accessible during part of the upgrade.
@@ -93,7 +94,7 @@ To redirect traffic to a custom maintenance page:
    touch <web server docroot>/maintenance.enable
    ```
 
-1. [Upgrade your system]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
+1. [Upgrade your system](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/implementation/perform-upgrade.html).
 1. Test your site to make sure it functions correctly.
 1. After the upgrade is done, delete `maintenance.enable`.
 
@@ -153,7 +154,7 @@ To redirect traffic to a custom maintenance page:
    service nginx reload
    ```
 
-1. [Upgrade your system]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
+1. [Upgrade your system](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/implementation/perform-upgrade.html).
 1. Test your site to make sure it functions correctly.
 1. After the upgrade is done, delete or rename `maintenance.enable`
 1. Reload the nginx configuration:

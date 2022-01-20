@@ -1,5 +1,5 @@
 ---
-group: software-update-guide
+group: tools
 title: Usage
 functional_areas:
   - Upgrade
