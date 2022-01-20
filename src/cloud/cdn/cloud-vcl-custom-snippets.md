@@ -241,7 +241,7 @@ Use the Fastly API [create snippet](https://docs.fastly.com/api/config#snippet_4
 curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_EDIT_VERSION/snippet -H 'Content-Type: application/json' -X POST --data @<filename.json>
 ```
 
-The `<filename.vcl>` is the name of the file you prepared in the previous step. Repeat this command for each VCL snippet.
+The `<filename.json>` is the name of the file you prepared in the previous step. Repeat this command for each VCL snippet.
 
 If you receive a `500 Internal Server Error` response from the Fastly service, check the JSON file syntax to make sure you are uploading a valid file.
 
