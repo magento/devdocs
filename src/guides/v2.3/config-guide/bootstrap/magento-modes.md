@@ -43,6 +43,7 @@ You can run Magento in any of the following *modes*:
                 <li>Serves static view files from cache only.</li>
                 <li>Prevents automatic code file compilation. New or updated files are not written to the file system.</li>
                 <li><b>Does not allow you to enable or disable cache types in Admin.</b> <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">More information about enabling and disabling the cache</a>.</li>
+                <li>Some fields, such as the Advanced and Developer system configuration sections in the Admin, are not available in production mode.</li>
             </ul></td>
     </tr>
    <tr>
