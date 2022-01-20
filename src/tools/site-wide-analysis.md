@@ -39,6 +39,7 @@ Your on-premises infrasture must meet the following requirements before installi
    {:.bs-callout-warning}
    {{ site.data.var.ee }} is not supported on Microsoft Windows and macOS.
 
+-  {{ site.data.vaar.ee }} 2.4.1 or later
 -  PHP CLI
 -  Bash/shell utilities
    -  `grep`
