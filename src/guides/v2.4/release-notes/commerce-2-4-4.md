@@ -653,11 +653,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-1514-->
 
-*  Upgraded `pelago/emogrifier` to v6.x or PHP 8.1 support. [GitHub-34374](https://github.com/magento/magento2/issues/34374)
+*  Upgraded `pelago/emogrifier` to v6.x for PHP 8.1 support. [GitHub-34374](https://github.com/magento/magento2/issues/34374)
 
 <!--- AC-1147-->
 
-*  Updated the root `composer.json` / metapackage and `composer.json` file for each module to PHP 8.1. [GitHub-34009](https://github.com/magento/magento2/issues/34009)
+*  Updated the root `composer.json` metapackage and `composer.json` file for each module to PHP 8.1. [GitHub-34009](https://github.com/magento/magento2/issues/34009)
 
 <!--- AC-301-->
 
@@ -774,10 +774,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- magento/magento2/pull/34279 magento/magento2/pull/34367-->
 
 *  Added support for PHP 8.1 to `laminas/laminas-server` and `laminas/laminas-view`. [GitHub-34240](https://github.com/magento/magento2/issues/34240), [GitHub-34214](https://github.com/magento/magento2/issues/34214)
-
-<!--- AC-710-->
-
-*  `magento/semver` is now compatible with PHP 8.0. [GitHub-32872](https://github.com/magento/magento2/issues/32872)
 
 <!--- AC-1192-->
 
