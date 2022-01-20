@@ -113,7 +113,10 @@ bin/magento setup:install \
 --language=en_US \
 --currency=USD \
 --timezone=America/Chicago \
---use-rewrites=1
+--use-rewrites=1 \
+--search-engine=elasticsearch7 \
+--elasticsearch-host=es-host.example.com \
+--elasticsearch-port=9200
 ```
 
 {:.bs-callout-tip}
