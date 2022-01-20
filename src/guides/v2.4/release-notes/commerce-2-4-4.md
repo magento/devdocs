@@ -427,7 +427,15 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Order and shipment notification emails now work as expected in deployments using Microsoft Outlook and MS Exchange Server. Previously, the email body was empty but contained an ATT*-labeled attachment.[GitHub-25076](https://github.com/magento/magento2/issues/25076)
 
+<!--- AC-721-->
+
+*  {{ site.data.var.ee }} now includes `Content-Disposition: inline` headers in email as expected. [GitHub-29258](https://github.com/magento/magento2/issues/29258)
+
 ### Frameworks
+
+<!--- AC-515-->
+
+*  Non-strict comparisons between numbers and non-numeric strings now work by casting the number to string and comparing the strings. Comparisons between numbers and numeric strings continue to work as before. This means that `0 == "not-a-number"` is now considered false. [GitHub-33780](https://github.com/magento/magento2/issues/33780)
 
 <!--- AC-102-->
 
@@ -808,18 +816,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-42360-->
 
 *  {{ site.data.var.ee }} no longer creates log entries for failed API calls executing bulk actions in **System** > **Bulk Actions**. Previously, permanent entries for failed API calls were added to the bulk action log.
-
-### Email
-
-<!--- AC-721-->
-
-*  {{ site.data.var.ee }} now includes `Content-Disposition: inline` headers in email as expected. [GitHub-29258](https://github.com/magento/magento2/issues/29258)
-
-### Locales
-
-<!--- AC-285-->
-
-*  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ee }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
 
 ### Media Gallery
 
@@ -1227,6 +1223,10 @@ StorefrontCaptchaCheckoutWithEnabledCaptchaTest [GitHub-32821](https://github.co
 *  Notification messages are now displayed correctly when {{ site.data.var.ee }} has a subpath configured in its base URL.
 
 ### Translations and locales
+
+<!--- AC-285-->
+
+*  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ee }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
 
 <!--- magento/magento2/pull/33787-->
 
