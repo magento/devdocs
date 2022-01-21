@@ -1,5 +1,5 @@
 ---
-group: software-update-guide
+group: tools
 title: Release notes
 functional_areas:
   - Setup
