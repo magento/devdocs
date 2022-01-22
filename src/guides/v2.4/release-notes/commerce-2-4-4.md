@@ -299,6 +299,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} no longer throws this error when a shopper adds a billing address that is missing a street field:  `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }”`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
 
+<!--- AC-1625-->
+
+*  {{ site.data.var.ee }} no longer throws a console error during checkout in stores from which the mini cart has been removed. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
+
 ### Catalog
 
 <!--- MC-41796-->
@@ -395,6 +399,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Sales update emails sent from the Admin for non-default store views now contain correct order status labels. Previously, these emails always displayed status from the default store. [GitHub-29263](https://github.com/magento/magento2/issues/29263)
 
+<!--- AC-721-->
+
+*  {{ site.data.var.ee }} now includes `Content-Disposition: inline` headers in email as expected. [GitHub-29258](https://github.com/magento/magento2/issues/29258)
+
 ### Frameworks
 
 <!--- AC-1068-->
@@ -424,6 +432,10 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-42448-->
 
 *  Merchants can now upload a video for multiple products. The file generation process now appends an extension to the file name only if the uploaded file name includes an extension. Previously, when a merchant tried to upload then save the same video for two different products, {{ site.data.var.ee }} threw this error: `Notice: Undefined index: extension in /app/7ha7zds7wvqys_stg/vendor/magento/framework/File/Uploader.php on line 699`. This occurred because {{ site.data.var.ee }} tried to append a file extension to the name irrespective of whether the uploaded file name had an extension.
+
+<!--- magento/magento2/pull/34106-->
+
+*  Corrected issues with `sprintf(__())` and `sprintf(Magento\Framwork\Phrase())` construction for compatibility with PHP 8.x throughout the codebase. Previously, {{ site.data.var.ee }}  threw this type of error: `Expected parameter of type 'string', 'Magento\Framework\Phrase' provided`. [GitHub-34085](https://github.com/magento/magento2/issues/34085)
 
 ### General fixes
 
@@ -609,6 +621,12 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Updating `symfony/console` no longer causes failure when running `bin/magento setup:di:compile`. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
 
+<!--- AC-622-->
+
+*  Updated the `squizlabs/php_codesniffer` Composer dependency to the latest version (3.6.0). [GitHub-33832](https://github.com/magento/magento2/issues/33832)
+
+*  Updated the `ramsey/uuid` Composer dependency to the latest version (4.2.0). [GitHub-33832](https://github.com/magento/magento2/issues/33832)
+
 <!--- AC-1077-->
 
 *  You can now pass a `data` argument to a block instance constructor by `di.xml`.
@@ -647,7 +665,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-853-->
 
-*  All member-level  `@api` annotations have been moved to their class throughout the codebase.
+*  All member-level `@api` annotations have been moved to their class throughout the codebase.
 
 <!--- AC-1977-->
 
@@ -675,11 +693,9 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  {{ site.data.var.ee }} no longer creates log entries for failed API calls executing bulk actions in **System** > **Bulk Actions**. Previously, permanent entries for failed API calls were added to the bulk action log.
 
-### Email
+<!--- AC-1607-->
 
-<!--- AC-721-->
-
-*  {{ site.data.var.ee }} now includes `Content-Disposition: inline` headers in email as expected. [GitHub-29258](https://github.com/magento/magento2/issues/29258)
+*  The auto-creation of arrays from false values is no longer permitted. [GitHub-34499](https://github.com/magento/magento2/issues/34499), [GitHub-34589](https://github.com/magento/magento2/issues/34589)
 
 ### Locales
 
@@ -698,6 +714,12 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 *  Newly added Media Gallery Content submenu titles are now displayed when menu items exceed 11 and the **Enable Old Media Gallery** configuration setting is enabled. [GitHub-33889](https://github.com/magento/magento2/issues/33889)
 
 ### MFTF
+
+<!--- AC-516-->
+
+*  `CURLOPT_POSTFIELDS` no longer accepts objects as arrays. To interpret an object as an array, perform an explicit (`array`) cast. This practice also applies to other options that accept arrays.  [GitHub-33781](https://github.com/magento/magento2/issues/33781)
+
+*  `curl_init()` now returns a `CurlHandle` object rather than a resource. The `curl_close()` function no longer has an effect. Instead, the `CurlHandle` instance is automatically destroyed if it is no longer referenced. [GitHub-33781](https://github.com/magento/magento2/issues/33781)
 
 <!--- AC-1397-->
 
@@ -819,6 +841,14 @@ Repetitive actions have been replaced with action groups in these tests:
 
 ### Page Builder
 
+<!--- magento/magento2-page-builder/pull/779-->
+
+*  Upgraded the `phpgt/dom` Composer dependency for the `magento/magento2-page-builder` extension to the latest versions. [GitHub-34096](https://github.com/magento/magento2/issues/34096)
+
+<!--- AC-1300-->
+
+*  Page Builder is now compatible with PHP 8.1. [GitHub-34131](https://github.com/magento/magento2/issues/34131)
+
 <!--- AC-973-->
 
 *  {{ site.data.var.ee }} no longer resizes the Page Builder Insert Link and Insert Image modals when displaying the slider in a small column.
@@ -908,6 +938,10 @@ Repetitive actions have been replaced with action groups in these tests:
 <!--- MC-42892-->
 
 *  {{ site.data.var.ee }} by default resizes images synchronously during product save. Merchants can now resize images as a background asynchronous process by minor edits to a `di.xml` file.
+
+<!--- ENGCOM-9168-->
+
+*  The performance of the Category Products indexer has been improved in multi-store deployments. [GitHub-33984](https://github.com/magento/magento2/issues/33984)
 
 ### Pricing
 
@@ -1065,11 +1099,32 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The `Magento\GraphQl\CatalogGraphQl\ProductSearchTest` test no longer throws this error when run with AWS Elasticsearch: `Magento\GraphQl\CatalogGraphQl\ProductSearchTest::testSearchSuggestions Failed asserting that an array is not empty. /var/www/html/dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogGraphQl/ProductSearchTest.php:94 /var/www/html/dev/tests/api-functional/framework/Magento/TestFramework/TestCase/GraphQlAbstract.php:257`.
 
+<!--- magento/magento2/pull/33699-->
+
+*  Fixed numerous non-critical unit test warnings by renaming all mock variables to include the `Mock` suffix and removing references to a deprecated Object Manager class. [GitHub-33695](https://github.com/magento/magento2/issues/33695)
+
+#### Unit tests
+
+The following unit tests have been refactored to use `PHPUnit` instead of `AspectMock`:
+
+`AllureHelperTest` [GitHub-33294](https://github.com/magento/magento2/issues/33294)
+`ObjectHandlerUtil` [GitHub-33584](https://github.com/magento/magento2/issues/33584)
+`MockModuleResolverBuilder` [GitHub-33583](https://github.com/magento/magento2/issues/33583)
+`MagentoTestCase`  [GitHub-33582](https://github.com/magento/magento2/issues/33582)
+`ModuleResolverTest` [GitHub-33308](https://github.com/magento/magento2/issues/33308)
+`ParallelGroupSorterTest` [GitHub-33306](https://github.com/magento/magento2/issues/33306)
+`SuiteGeneratorTest` [GitHub-33299](https://github.com/magento/magento2/issues/33299)
+`OperationDataArrayResolverTest`  [GitHub-33296](https://github.com/magento/magento2/issues/33296)
+
 ### Theme
 
 <!--- MC-41887-->
 
 *  Notification messages are now displayed correctly when {{ site.data.var.ee }} has a subpath configured in its base URL.
+
+<!--- MC-42469-->
+
+*  Added an `aria-label`  element to the storefront page template to indicate the page to which the shopper will navigate to when taking a link. Previously,  the same link text was used for links to different pages. [GitHub-33075](https://github.com/magento/magento2/issues/33075)
 
 ### Translations and locales
 
@@ -1219,7 +1274,15 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-786-->
 
-*  Adding a new deserializer to the REST API no longer removes other deserializers. Previously, the REST API accepted a new content type, but CORE defined content types for APIs  no longer worked and returned a 400 error.  [GitHub-26433](https://github.com/magento/magento2/issues/26433)
+*  Adding a new deserializer to the REST API no longer removes other deserializers. Previously, the REST API accepted a new content type, but CORE defined content types for APIs  no longer worked and returned a 400 error. [GitHub-26433](https://github.com/magento/magento2/issues/26433)
+
+<!--- AC-698-->
+
+*  You can now remove an override for a parameter that is defined in a `webapi.xml`file.[GitHub-33843](https://github.com/magento/magento2/issues/33843)
+
+<!--- AC-1212-->
+
+*  {{ site.data.var.ee }} now generates a `customertoken` by GraphQL or REST API requests as expected after multiple consecutive failed login attempts. Previously, {{ site.data.var.ee }} did not check whether the value of `lock_expires_at` in `oauth_token_request_log` was greater than the current date and time, and always returned the number of failed attempts, which prevented the customer from ever logging in. [GitHub-34067](https://github.com/magento/magento2/issues/34067)
 
 ### Wish list
 
