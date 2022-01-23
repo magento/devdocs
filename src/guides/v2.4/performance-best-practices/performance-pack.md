@@ -7,20 +7,44 @@ functional_areas:
   - Setup
 ---
 
-The Performance Pack contains a set of modules for optimizing the Order Placement process and Checkout experience.
-
-{: .bs-callout-info}
-For {{site.data.var.ee}} 2.4.3, the features in the Performance pack were released as separate composer packages and patches.
+The Performance Pack offers high-throughput order processing by using a set of modules to optimize the Order Placement and Checkout experience.
 
 Modules included in the Performance Pack:
 
--  [AsyncOrder](#asynchronous-order-placement)—add orders to a queue
--  [Enable Inventory check](#inventory-check)—control the inventory check on cart load
--  [DeferredTotalCalculation](#sales-rule-optimization)—defer calculations for order totals until checkout begins
+-  [AsyncOrder](#asynchronous-order-placement)—An asynchronous order placement module that processes orders using a queue.
+-  [Enable Inventory check](#inventory-check)—An module to enable or disable the inventory check on cart load.
+-  [DeferredTotalCalculation](#sales-rule-optimization)—A sales rule optimization module that can defer calculations for order totals until checkout begins.
 
-All features work independently. You can use all the features simultaneously or enable and disable in any combination.
+All features work independently. You can use all the features simultaneously or enable and disable features in any combination.
 
-You can use the command-line interface to enable these features, or you can edit the `app/etc/env.php` file according to the corresponding readme files in the [_Module Reference Guide_][mrg].
+Use the command-line interface to enable these features, or edit the `app/etc/env.php` file according to the corresponding readme files located in the [_Module Reference Guide_][mrg].
+
+## Special installation for 2.4.3
+
+For {{site.data.var.ee}} 2.4.3, the features in the Performance pack were released as separate composer packages and patches. Before you begin, make sure you apply the latest available patches for 2.4.3.
+
+From your project root directory, add the following Performance pack modules to the `require` section of the `composer.json` file:
+
+```bash
+composer require magento/module-async-order:0.1.0
+```
+
+```bash
+composer require magento/module-async-order-graph-ql:0.1.0
+```
+
+```bash
+composer require magento/module-deferred-total-calculating:0.1.0
+```
+
+Add an additional module if installing for B2B:
+
+```bash
+composer require magento/module-negotiable-quote-async-order:0.1.0
+```
+
+{:.bs-callout-tip}
+For more information on how to install and manage extensions for on-premises projects, see [Install extensions][], and for Cloud projects, see [Install, manage, and upgrade extensions][cloud-extensions].
 
 ## Asynchronous order placement
 
@@ -98,6 +122,8 @@ This writes the following to the `app/etc/env.php` file:
 
 [global]: https://docs.magento.com/user-guide/catalog/inventory-options-global.html
 [inventory]: https://docs.magento.com/user-guide/configuration/catalog/inventory.html
+[Install extensions]: {{site.baseurl}}/extensions/install/
+[cloud-extensions]: {{site.baseurl}}/cloud/howtos/install-components.html
 
 [mrg]: {{site.baseurl}}{{site.gdeurl}}/mrg/intro.html
 [asyncorder]: {{site.baseurl}}/guides/v2.4/mrg/module-async-order.html
