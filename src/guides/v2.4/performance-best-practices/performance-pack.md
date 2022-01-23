@@ -17,7 +17,7 @@ Modules included in the Performance Pack:
 
 All features work independently. You can use all the features simultaneously or enable and disable features in any combination.
 
-Use the command-line interface to enable these features, or edit the `app/etc/env.php` file according to the corresponding readme files located in the [_Module Reference Guide_][mrg].
+Use the command-line interface to enable these features, or edit the `app/etc/env.php` file according to the corresponding readme files defined in the [_Module Reference Guide_][mrg].
 
 ## Special installation for 2.4.3
 
