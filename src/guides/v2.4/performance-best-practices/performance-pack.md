@@ -12,7 +12,7 @@ The Performance Pack offers high-throughput order processing by using a set of m
 Modules included in the Performance Pack:
 
 -  [AsyncOrder](#asynchronous-order-placement)—An asynchronous order placement module that processes orders using a queue.
--  [Enable Inventory check](#inventory-check)—An module to enable or disable the inventory check on cart load.
+-  [Enable Inventory check](#inventory-check)—Enable or disable the inventory check on cart load.
 -  [DeferredTotalCalculation](#sales-rule-optimization)—A sales rule optimization module that can defer calculations for order totals until checkout begins.
 
 All features work independently. You can use all the features simultaneously or enable and disable features in any combination.
@@ -21,9 +21,9 @@ Use the command-line interface to enable these features, or edit the `app/etc/en
 
 ## Special installation for 2.4.3
 
-For {{site.data.var.ee}} 2.4.3, the features in the Performance pack were released as separate composer packages and patches. Before you begin, make sure you apply the latest available patches for 2.4.3.
+For {{site.data.var.ee}} 2.4.4, the Performance pack modules are included in the installation. For {{site.data.var.ee}} 2.4.3, the features in the Performance pack were released as separate composer packages and patches. Before you begin installing these separate modules, make sure to apply the latest available patches for 2.4.3. See [Apply patches][].
 
-From your project root directory, add the following Performance pack modules to the `require` section of the `composer.json` file:
+After applying the patches, add the following Performance pack modules to the `require` section of the `composer.json` file:
 
 ```bash
 composer require magento/module-async-order:0.1.0
@@ -37,7 +37,7 @@ composer require magento/module-async-order-graph-ql:0.1.0
 composer require magento/module-deferred-total-calculating:0.1.0
 ```
 
-Add an additional module if installing for B2B:
+Add an extra module if installing for B2B:
 
 ```bash
 composer require magento/module-negotiable-quote-async-order:0.1.0
@@ -120,6 +120,7 @@ This writes the following to the `app/etc/env.php` file:
 
 <!-- link definitions -->
 
+[Apply patches]: {{site.baseurl}}/cloud/project/project-patch.html
 [global]: https://docs.magento.com/user-guide/catalog/inventory-options-global.html
 [inventory]: https://docs.magento.com/user-guide/configuration/catalog/inventory.html
 [Install extensions]: {{site.baseurl}}/extensions/install/
