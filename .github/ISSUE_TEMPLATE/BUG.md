@@ -1,9 +1,11 @@
 ---
 name: Bug report
 about: Create an issue about a bug on the devdocs website
----
+title: Bug report
+labels: bug
+assignees: dshevtsov
 
-# Bug report
+---
 
 ## Description
 
@@ -11,7 +13,7 @@ about: Create an issue about a bug on the devdocs website
 
 ### Steps to reproduce
 
-<!-- (OPTIONAL) What needs to be done to replicate this issue? (provide Gist if needed) -->
+<!-- (OPTIONAL) What needs to be done to replicate this issue? You can provide your scenario in a Gist. -->
 
 1. First Step
 1. Second Step
@@ -19,7 +21,7 @@ about: Create an issue about a bug on the devdocs website
 
 ## Expected result
 
-<!-- (REQUIRED) When this issue is resolved, what is the expected result/behavior? -->
+<!-- (REQUIRED) What is the expected result/behavior after resolving this issue? -->
 
 ## Possible solutions
 
@@ -31,7 +33,7 @@ about: Create an issue about a bug on the devdocs website
 
 <!--
 Thank you for taking the time to report this issue!
-GitHub Issues should only be created for problems/topics related to this project's codebase.
+GitHub Issues in this repo should relate to this project's codebase.
 
 Before submitting this issue, please make sure you are complying with our Code of Conduct:
 https://github.com/magento/devdocs/blob/master/.github/CODE_OF_CONDUCT.md
