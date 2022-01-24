@@ -48,9 +48,16 @@ For more information on how to install and manage extensions for on-premises pro
 
 ## Asynchronous order placement
 
-The _Async Order_ module enables asynchronous order placement, which marks the order as `received`, places the order in a queue, and processes orders from the queue on a first-in-first-out basis. See [AsyncOrder][] in the _Module Reference Guide_.
+The _Async Order_ module enables asynchronous order placement, which marks the order as `received`, places the order in a queue, and processes orders from the queue on a first-in-first-out basis. AsyncOrder is **disabled** by default.
 
-AsyncOrder is **disabled** by default.
+For example, a customer adds a product to their shopping cart and selects **Proceed to Checkout**. They fill out the **Shipping Address** form, select their preferred **Shipping Method**, select a payment method, and place the order. The shopping cart is cleared, the order is marked as **Received**, but the Product quantity is not adjusted yet, nor is an email sent to the customer. The order is received, but not yet available in Order lists because the order has not been processed. It remains in the queue until the `placeOrderProcess` consumer is triggered.
+
+When the `placeOrderProcess` consumer selects the order from the queue and resumes the order process:
+
+-  **Product available**—the order status changes to _Pending_, the product quantity is adjusted, an email is sent to the customer, and the order becomes available for viewing in the order lists.
+-  **Product out of stock or low supply**—the order status changes to _Rejected_, the Product quantity is not changed, and an email is sent to the customer detailing the issue.
+
+### Enable AsyncOrder
 
 {: .bs-callout-warning}
 Before enabling the AsyncOrder module, you must verify that there are no active quotes.
@@ -70,8 +77,29 @@ This writes the following to the `app/etc/env.php` file:
    ]
 ```
 
+See [AsyncOrder][] in the _Module Reference Guide_.
+
+### Disable AsyncOrder
+
 {: .bs-callout-warning}
 Before disabling the AsyncOrder module, you must verify that _all_ asynchronous order processes are complete.
+
+You can disable AsyncOrder using the command-line interface:
+
+```bash
+bin/magento setup:config:set --checkout-async 0
+```
+
+This writes the following to the `app/etc/env.php` file:
+
+```php?start_inline=1
+...
+   'checkout' => [
+       'async' => 0
+   ]
+```
+
+See [AsyncOrder][] in the _Module Reference Guide_.
 
 ### AsyncOrder compatibility
 
@@ -83,7 +111,7 @@ Checkout types   | OnePage Checkout<br>B2B Negotiable Quote<br>GraphQL
 Payment methods  | Check/Money Order<br>Cash on Delivery<br>Braintree<br>PayPal PayFlow Pro
 Shipping methods | All shipping methods are supported.
 
-The following features are **not** supported by AsyncOrder, but continues to work synchronously:
+The following features are **not** supported by AsyncOrder, but continue to work synchronously:
 
 -  Payment Methods not included in the supported feature list
 -  Multi Address Checkout
