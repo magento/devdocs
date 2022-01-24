@@ -21,7 +21,7 @@ Use the command-line interface to enable these features, or edit the `app/etc/en
 
 ## Special installation for 2.4.3
 
-For {{site.data.var.ee}} 2.4.4, the Performance pack modules are included in the installation. For {{site.data.var.ee}} 2.4.3, the features in the Performance pack were released as separate composer packages and patches. Before you begin installing these separate modules, make sure to apply the latest available patches for 2.4.3. See [Apply patches][].
+For {{site.data.var.ee}} 2.4.4, the Performance pack modules are part of standard installation. For {{site.data.var.ee}} 2.4.3, the features in the Performance pack were released as separate composer packages and patches. Before you begin installing these separate modules, make sure to apply the latest available patches for 2.4.3. See [Apply patches][].
 
 After applying the patches, add the following Performance pack modules to the `require` section of the `composer.json` file:
 
@@ -50,14 +50,13 @@ For more information on how to install and manage extensions for on-premises pro
 
 The _Async Order_ module enables asynchronous order placement, which marks the order as `received`, places the order in a queue, and processes orders from the queue on a first-in-first-out basis. AsyncOrder is **disabled** by default.
 
-For example, a customer adds a product to their shopping cart and selects **Proceed to Checkout**. They fill out the **Shipping Address** form, select their preferred **Shipping Method**, select a payment method, and place the order. The shopping cart is cleared, the order is marked as **Received**, but the Product quantity is not adjusted yet, nor is an email sent to the customer. The order is received, but not yet available in Order lists because the order has not been processed. It remains in the queue until the `placeOrderProcess` consumer is triggered.
+For example, a customer adds a product to their shopping cart and selects **Proceed to Checkout**. They fill out the **Shipping Address** form, select their preferred **Shipping Method**, select a payment method, and place the order. The shopping cart is cleared, the order is marked as **Received**, but the Product quantity is not adjusted yet, nor is a sales email sent to the customer. The order is received, but the order details are not yet available because the order has not been fully processed. It remains in the queue until the `placeOrderProcess` begins, verifies the inventory (the [inventory check](#inventory-check) feature is enabled by default), and updates the order as follows:
 
-When the `placeOrderProcess` consumer selects the order from the queue and resumes the order process:
+-  **Product available**—the order status changes to _Pending_, the product quantity is adjusted, an email with order details is sent to the customer, and the successful order details become available for viewing in the **Orders and Returns** list with actionable options, such as reorder.
+-  **Product out of stock or low supply**—the order status changes to _Rejected_, the Product quantity is not adjusted, an email with order details about the issue is sent to the customer, and the rejected order details become available in the **Orders and Returns** list with no actionable options.
 
--  **Product available**—the order status changes to _Pending_, the product quantity is adjusted, an email is sent to the customer, and the order becomes available for viewing in the order lists.
--  **Product out of stock or low supply**—the order status changes to _Rejected_, the Product quantity is not changed, and an email is sent to the customer detailing the issue.
-
-### Enable AsyncOrder
+{:.procedure}
+To enable AsyncOrder:
 
 {: .bs-callout-warning}
 Before enabling the AsyncOrder module, you must verify that there are no active quotes.
@@ -68,7 +67,7 @@ You can enable AsyncOrder using the command-line interface:
 bin/magento setup:config:set --checkout-async 1
 ```
 
-This writes the following to the `app/etc/env.php` file:
+The `set` command writes the following to the `app/etc/env.php` file:
 
 ```php?start_inline=1
 ...
@@ -79,7 +78,8 @@ This writes the following to the `app/etc/env.php` file:
 
 See [AsyncOrder][] in the _Module Reference Guide_.
 
-### Disable AsyncOrder
+{:.procedure}
+To disable AsyncOrder:
 
 {: .bs-callout-warning}
 Before disabling the AsyncOrder module, you must verify that _all_ asynchronous order processes are complete.
@@ -90,7 +90,7 @@ You can disable AsyncOrder using the command-line interface:
 bin/magento setup:config:set --checkout-async 0
 ```
 
-This writes the following to the `app/etc/env.php` file:
+The `set` command writes the following to the `app/etc/env.php` file:
 
 ```php?start_inline=1
 ...
@@ -103,7 +103,7 @@ See [AsyncOrder][] in the _Module Reference Guide_.
 
 ### AsyncOrder compatibility
 
-AsyncOrder supports a limited set of Commerce features. For example,  _Negotiable Quote Async Order_ enables you to save order items asynchronously for the `NegotiableQuote` functionality.
+AsyncOrder supports a limited set of Commerce features. For example, _Negotiable Quote Async Order_ enables you to save order items asynchronously for the `NegotiableQuote` functionality.
 
 Category         | Supported Feature
 ---------------- | -----------------------
@@ -117,13 +117,17 @@ The following features are **not** supported by AsyncOrder, but continue to work
 -  Multi Address Checkout
 -  Admin Order Creation
 
+#### Excluding payment methods
+
+Developers can explicitly exclude certain payments methods from Asynchronous Order placement by adding them to the `Magento\AsyncOrder\Model\OrderManagement::paymentMethods` array. Orders that use excluded payment methods are processed synchronously.
+
 ## Inventory check
 
-The _Enable Inventory On Cart Load_ global setting determines whether to perform an inventory check when loading a product in the cart. Disabling the inventory check process improves performance for all checkout steps, particularly when dealing with bulk products in the cart. If this setting is disabled, a customer might receive an error during the checkout process when a product becomes out of stock while placing the order.
+The _Enable Inventory On Cart Load_ global setting determines whether to perform an inventory check when loading a product in the cart. Disabling the inventory check process improves performance for all checkout steps, particularly when dealing with bulk products in the cart; however, customers would encounter out-of-stock errors later in the ordering process.
 
 Enable Inventory On Cart Load is **enabled** by default.
 
-To disable check inventory when loading a product in the cart, set **Enable Inventory Check On Cart Load** to `No` in the Admin UI. See [Configure Global Options][global] and [Catalog Inventory][inventory] in the _User Guide_.
+To disable the inventory check when loading the cart, set **Enable Inventory Check On Cart Load** to `No` in the Admin UI. See [Configure Global Options][global] and [Catalog Inventory][inventory] in the _User Guide_.
 
 ## Sales rule optimization
 
@@ -131,18 +135,39 @@ The _Deferred Total Calculation_ module optimizes the checkout process by deferr
 
 DeferredTotalCalculation is **disabled** by default.
 
+{:.procedure}
+To enable DeferredTotalCalculation:
+
 You can enable DeferredTotalCalculation using the command-line interface:
 
 ```bash
 bin/magento setup:config:set --deferred-total-calculating 1
 ```
 
-This writes the following to the `app/etc/env.php` file:
+The `set` command writes the following to the `app/etc/env.php` file:
 
 ```php?start_inline=1
 ...
    'checkout' => [
        'deferred_total_calculating' => 1
+   ]
+```
+
+{:.procedure}
+To disable DeferredTotalCalculation:
+
+You can disable DeferredTotalCalculation using the command-line interface:
+
+```bash
+bin/magento setup:config:set --deferred-total-calculating 0
+```
+
+The `set` command writes the following to the `app/etc/env.php` file:
+
+```php?start_inline=1
+...
+   'checkout' => [
+       'deferred_total_calculating' => 0
    ]
 ```
 
