@@ -101,7 +101,7 @@ After the agent is installed, it will self update when a new release is availabl
 
 1. After downlloading and installing the agent, you must [configure it to run](#run-the-agent) using one of the following methods:
 
-   -  Daemon service (preferred if you have root access)
+   -  Service (preferred if you have root access)
    -  Cron
 
 ### Manual
@@ -187,14 +187,14 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 
 1. After downlloading and installing the agent, you must [configure it to run](#run-the-agent) using one of the following methods:
 
-   -  Daemon service (preferred if you have root access)
+   -  Service (preferred if you have root access)
    -  Cron
 
 ## Run the agent
 
-We recommend configuring the agent to run as a daemon service. If you have limited access to your infrastructure and do not have root permissions, then you must use [cron](#run-with-cron) instead.
+We recommend configuring the agent to run as a service. If you have limited access to your infrastructure and do not have root permissions, then you must use [cron](#run-with-cron) instead.
 
-### Daemon service
+### Service
 
 1. Copy the scheduler binary file to the directory where you want to store it:
 
@@ -221,7 +221,7 @@ We recommend configuring the agent to run as a daemon service. If you have limit
    WantedBy=multi-user.target
    ```
 
-1. Launch the daemon:
+1. Launch the service:
 
    ```bash
    systemctl daemon-reload
@@ -235,7 +235,7 @@ We recommend configuring the agent to run as a daemon service. If you have limit
    systemctl enable scheduler
    ```
 
-1. Validate that the daemon is up and running:
+1. Validate that the service is up and running:
 
    ```bash
    journalctl -u scheduler | grep "Next Version might update" | tail -1 && echo "Agent is successfuly installed"
@@ -243,7 +243,7 @@ We recommend configuring the agent to run as a daemon service. If you have limit
 
 ### Cron
 
-If you do not have root permissions or do not have permissions to configure a daemon service as root, you can use cron instead.
+If you do not have root permissions or do not have permissions to configure a service as root, you can use cron instead.
 
 Update your cron schedule:
 
@@ -273,7 +273,7 @@ journalctl -f -u scheduler
 
 ## Uninstall
 
-Run the following commands to uninstall the daemon from your system and remove all generated files:
+Run the following commands to uninstall the service from your system and remove all generated files:
 
 1. Stop the scheduler:
 
