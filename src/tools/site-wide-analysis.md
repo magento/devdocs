@@ -99,6 +99,17 @@ After the agent is installed, it will self update when a new release is availabl
    bash -c "$(wget -qO - https://raw.githubusercontent.com/magento-swat/install-agent-helpers/main/install.sh)"
    ```
 
+1. Verify installation.
+
+   ```bash
+   scheduler -v
+   ```
+
+   ```terminal
+   Version: 1.0.1
+   Success exit.
+   ```
+
 1. After downlloading and installing the agent, you must [configure it to run](#run-the-agent) using one of the following methods:
 
    -  Service (preferred if you have root access)
@@ -185,6 +196,17 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    {:.bs-callout-info}
    See [configuration reference](#configuration-reference) for descriptions and recommended values for all properties.
 
+1. Verify installation.
+
+   ```bash
+   scheduler -v
+   ```
+
+   ```terminal
+   Version: 1.0.1
+   Success exit.
+   ```
+
 1. After downlloading and installing the agent, you must [configure it to run](#run-the-agent) using one of the following methods:
 
    -  Service (preferred if you have root access)
@@ -262,14 +284,6 @@ If you encounter issues or get an application error, you may need to install the
 
 {:.bs-callout-info}
 See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about dashboards and reports.
-
-## Logging
-
-Watch the logs:
-
-```bash
-journalctl -f -u scheduler
-```
 
 ## Uninstall
 
