@@ -62,7 +62,19 @@ The agent requires the [Commerce Services Connector]({{ site.user_guide_url }}/u
 bin/magento module:status Magento_ServicesConnector
 ```
 
-Use the following instructions to install the extension (if necessary):
+If you have installed the extension and configured it using an existing API key for a different service, you must regenerate the API key and and update it in the {{ site.data.var.ee }} Admin for the agent.
+
+1. Put your website into [maintenance mode]({{ site.baseurl }}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-maint.html).
+1. Go to [accounts.magento.com](https://accounts.magento.com/).
+1. Click **API Portal**.
+1. Click **Delete** next to the existing API key.
+
+   {:.bs-callout-warning}
+   If you generate new keys in the API Portal, immediately update the API keys in the Admin configuration. If you generate new keys and do not update them in the Admin, your SaaS extensions will no longer work and you will lose valuable data.
+
+1. [Configure]({{ site.user_guide_url }}/user-guide/system/saas.html) a new API key.
+
+If the extension is not insalled, use the following instructions to install it:
 
 1. Add the extension to your `composer.json` file and install it.
 
