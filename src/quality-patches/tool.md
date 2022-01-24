@@ -1,5 +1,5 @@
 ---
-group: software-update-guide
+group: tools
 title: Quality Patches Tool
 functional_areas:
   - Upgrade

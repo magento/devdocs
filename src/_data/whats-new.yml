@@ -4,11 +4,89 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Dec 6 15:38:46 2021
+updated: Mon Jan 17 15:38:41 2022
 entries:
-- description: Added instructions to manage [_Outgoing emails_  configuration](https://devdocs.magento.com/cloud/project/project-webint-basic.html) for Adobe
-    Commerce on cloud Staging and Production environments using the Magento Cloud
-    CLI command `magento-cloud environment:info`.
+- description: Added the [contactUs](https://devdocs.magento.com/guides/v2.4/graphql/mutations/contact-us.html)
+    mutation topic.
+  versions: 2.4.x
+  type: New Topic
+  date: January 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2737
+  merge_commit: 9b2b6d74a7e866d899ef83b4391de3d6c7e8b4ba
+  contributor: dobooth
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.x
+- description: Redirected [Software Update Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html)
+    topics to the new location on [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2734
+  merge_commit: 9e570a8ea66876b5086ba909810e95f5d7d21b77
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Added a new Tools section to the top navigation and moved the [Quality
+    Patches Tool](https://devdocs.magento.com/quality-patches/tool.html) content to
+    the new section.
+  versions: 2.x
+  type: Major Update
+  date: January 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2735
+  merge_commit: dce1c7fdc03ffa7f88a12b26b8907320d1c8143a
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added new supported versions of Elasticsearch, OpenSearch, Redis, RabbitMQ,
+    and Varnish to the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    for 2.4.4 and 2.4.5
+  versions: 2.4.4
+  type: Major Update
+  date: January 7, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2726
+  merge_commit: 98c3b406f2275faac00f8fa7a24a04bf315ed961
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added new [parameterized data fixture](https://devdocs.magento.com/guides/v2.4/test/integration/parameterized_data_fixture.html)
+    and [data fixture data provider annotation](https://devdocs.magento.com/guides/v2.4/test/integration/annotations/magento-data-fixture-data-provider.html)
+    documentation for writing tests.
+  versions: 2.4.x
+  type: New Topic
+  date: January 4, 2022
+  link: https://github.com/magento/devdocs/pull/9273
+  merge_commit: ad816f5435223fd1bbdf8187f458fe1582193cb0
+  contributor: thiaramus
+  membership: true
+  labels:
+  - Internal Dev
+  - New Topic
+  - 2.4.x
+  - 'Progress: done'
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.8 Quality Patches Tool (QPT) package release.
+  versions: 2.x
+  type: Major Update
+  date: December 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2705
+  merge_commit: 4f69651f1891591171c92aefb0ea3ff527ec1b32
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added instructions to manage [_Outgoing emails_  configuration](https://devdocs.magento.com/cloud/project/project-webint-basic.html)
+    for Adobe Commerce on cloud Staging and Production environments using the Magento
+    Cloud CLI command `magento-cloud environment:info`.
   versions: 2.x
   type: Technical
   date: December 1, 2021

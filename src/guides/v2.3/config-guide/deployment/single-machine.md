@@ -102,10 +102,10 @@ Related topics
 *  [Running the System Upgrade][9]
 
 [0]: {{ page.baseurl }}/
-[1]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
+[1]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/implementation/perform-upgrade.html
 [2]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [4]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [5]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
-[6]: {{ page.baseurl }}/comp-mgr/cli/dev_update-magento.html
+[6]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/developer/git-installs.html
 [8]: {{ page.baseurl }}/install-gde/composer.html
 [10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner

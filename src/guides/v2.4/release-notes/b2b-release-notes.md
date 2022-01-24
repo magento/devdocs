@@ -31,6 +31,8 @@ These release notes can include:
 
 -  {:.fix} <!--- MC-42242--> You can now create a company with a customer account that has a custom attribute with a (`File`) or (`Image`) type. Previously, if the account had one of these customizable options, the Company edit page loader did not resolve, which prevented the editing of company details.
 
+-  {:.fix} <!--- MC-42242--> -  The `products` query now returns an accurate `total_count` field when shared catalog is enabled.
+
 ## Magento B2B - Version 1.3.2
 
 -  {:.fix} <!--- MC-39862--> Magento now successfully sends update emails about expired negotiable quotes. Previously, when a negotiable quote expired, Magento did not send update emails.
@@ -250,6 +252,12 @@ This release includes improvements to order approvals, shipping methods, shoppin
 -  {:.fix} Notification emails that are sent to sales representatives assigned to a company now include the assigned corporate logo. Previously, the notification email included the default LUMA logo, not the uploaded corporate logo. <!--- MC-33232-->
 
 -  {:.fix} A requisition list now includes all grouped products and quantities that have been added to the list. Previously, when a merchant navigated to a requisition list after adding products to it from a product detail page, Magento displayed this error: `1 product(s) require your attention - Options were updated. Please review available configurations`. <!--- MC-32877-->
+
+-  {:.fix} The `products` query now returns an accurate `total_count` field when shared catalog is enabled. <!--- MC-42268-->
+
+-  {:.fix} The Company Configuration and Create Company pages now work as expected after you disable an online shipping method. Verification has been added to prevent the attempted processing of disabled Shipping modules. Previously, Magento displayed this error: `Type Error occurred when creating object: Magento\CompanyShipping\Model\Source\ShippingMethod, Too few arguments to function Magento\CompanyShipping\Model\Source\ShippingMethod::__construct(), 1 passed in /var/www/html/elmtup/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 and exactly 2 expected`. <!--- MC-43178-->
+
+-  {:.fix} Integration test memory consumption has been reduced, which improves test performance and reduces the time required for test completion. <!--- AC-266-->
 
 ## Magento B2B - Version 1.2.0
 

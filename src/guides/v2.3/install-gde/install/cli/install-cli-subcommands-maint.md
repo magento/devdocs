@@ -10,7 +10,7 @@ functional_areas:
   - Setup
 ---
 
-The following guide refers to a standard Magento maintenance mode page. If you need to use a custom maintenance page, see [Create the custom maintenance page]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html#compman-trouble-maint-create) topic.
+The following guide refers to a standard Magento maintenance mode page. If you need to use a custom maintenance page, see [Create the custom maintenance page](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/maintenance-mode-options.html) topic.
 
 Magento uses [maintenance mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#maintenance-mode) to disable bootstrapping. Disabling bootstrapping is helpful while you are maintaining, upgrading, or reconfiguring your site.
 

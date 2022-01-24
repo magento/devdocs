@@ -43,6 +43,7 @@ You can run Magento in any of the following *modes*:
                 <li>Serves static view files from cache only.</li>
                 <li>Prevents automatic code file compilation. New or updated files are not written to the file system.</li>
                 <li><b>Does not allow you to enable or disable cache types in Admin.</b> <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">More information about enabling and disabling the cache</a>.</li>
+                <li>Some fields, such as the Advanced and Developer system configuration sections in the Admin, are not available in production mode.</li>
             </ul></td>
     </tr>
    <tr>
@@ -105,7 +106,7 @@ In production mode:
 
 Run Magento in maintenance mode to take your site offline while you complete maintenance, upgrade, or configuration tasks.  In maintenance mode, the site redirects visitors to a default `Service Temporarily Unavailable` page.
 
-You can create a [custom maintenance page]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html#compman-trouble-maint-create), manually enable and disable maintenance mode, and configure maintenance mode to allow visitors from authorized IP addresses to view the store normally. See [enable and disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
+You can create a [custom maintenance page](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/maintenance-mode-options.html), manually enable and disable maintenance mode, and configure maintenance mode to allow visitors from authorized IP addresses to view the store normally. See [enable and disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
 
 If you are using {{site.data.var.ece}}, the Magento application runs in maintenance mode during the deploy phase. When the deployment completes successfully, Magento returns to running in production mode. See [Deployment hooks]({{ site.baseurl }}/cloud/reference/discover-deploy.html).
 
