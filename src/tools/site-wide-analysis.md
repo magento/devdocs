@@ -37,8 +37,6 @@ The agent supports multi-node {{ site.data.var.ee }} installations. You must ins
 
 ## System requirements
 
-Before you begin, you must contact your Adobe Customer Success Manager (CSM) to obtain a license key and application name. You must use this information to configure the agent after installation.
-
 Your on-premises infrasture must meet the following requirements before installing the agent:
 
 -  Operating systems
@@ -332,7 +330,6 @@ The following table provides descriptions and recommended values for all propert
 Property | Description |
 ---------|-------------|
 `SWAT_AGENT_APP_NAME` | Application name provided to you by Adobe
-`SWAT_AGENT_LICENSE_KEY` | Private license key provided to you by Adobe
 `SWAT_AGENT_APPLICATION_PHP_PATH` | Path to your PHP CLI interpretator (usually `/usr/bin/php`)
 `SWAT_AGENT_APPLICATION_MAGENTO_PATH` | Root directory where your {{ site.data.var.ee }} application is installed (usually `/var/www/html`)
 `SWAT_AGENT_APPLICATION_DB_USER` | Database user for your {{ site.data.var.ee }} installation
