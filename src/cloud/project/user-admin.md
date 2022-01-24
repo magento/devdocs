@@ -36,7 +36,7 @@ When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users wi
 You can add users and assign roles using the Magento Cloud CLI or the Project Web Interface.
 
 {:.bs-callout-tip}
-Changing user configuration on a {{site.data.var.ece}} environment triggers a site deployment, which takes your site offline until deployment completes. For Production environments, we recommend completing user administration tasks during off-peak hours to prevent service disruptions.
+Changing user configuration on an {{site.data.var.ece}} environment requires a site deployment for the changes to take effect, which takes your site offline until the deployment completes. For Production environments, we recommend completing user administration tasks during off-peak hours to prevent service disruptions.
 
 **Prerequisites:**
 
