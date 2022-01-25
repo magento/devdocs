@@ -134,6 +134,7 @@ When the AsyncOrder module is enabled, the following REST endpoints and GraphQL 
 
 {:.bs-callout-info}
 GraphQL does not support placing negotiable quote orders asynchronously.
+
 #### Excluding payment methods
 
 Developers can explicitly exclude certain payments methods from Asynchronous Order placement by adding them to the `Magento\AsyncOrder\Model\OrderManagement::paymentMethods` array. Orders that use excluded payment methods are processed synchronously.
