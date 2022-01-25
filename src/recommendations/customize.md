@@ -99,7 +99,7 @@ Refer to [layout overview]({{ site.gdeurl }}/frontend-dev-guide/layouts/layout-o
 
 <!--## Custom Product attributes
 
-Often developers need access to custom product attribute values in recommendations units on storefronts so that they can add visual treatments to products based on those attributes.
+Developers often need access to custom product attribute values in recommendations units on storefronts so that they can add visual treatments to products based on those attributes.
 
 For example, if your store sells some organic products, you might have a custom attribute on those products designating them as `Organic = true`. You may need access to this attribute value on the storefront so that you can give these products special visual treatment when they appear in Recommendations. Similarly, access to these custom product attribute values allows you to badge products or drive custom logic in the presentation layer of your site.
 
