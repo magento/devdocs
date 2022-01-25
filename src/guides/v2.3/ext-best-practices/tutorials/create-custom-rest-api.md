@@ -1,8 +1,8 @@
 ---
 group: extension-best-practices
 title: Create a custom REST API
-contributor_name: Ziffity
-contributor_link: https://www.Ziffity.com/
+contributor_name: Nitish Ranjan
+contributor_link: https://github.com/nitish-ranjan05
 ---
 
 Although {{site.data.var.ee}} and {{site.data.var.ce}} provide numerous REST endpoints, you might need to create your own to manage custom data within your extension. This tutorial describes how you can create such a custom REST [API](https://glossary.magento.com/api).
