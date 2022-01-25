@@ -17,7 +17,7 @@ If you have an on-premises installation of {{ site.data.var.ee }}, you must inst
 
 ## Architecture
 
-![Architectural diagram of the Site Wide Analysis Tool agent]({{ site.baseurl }}/common/images/tools/swat-agent.svg)
+![Architectural diagram of the Site Wide Analysis Tool]({{ site.baseurl }}/common/images/tools/swat-agent.svg)
 
 ## Agent
 
@@ -72,7 +72,7 @@ If you have installed the extension and configured it using an existing API key 
    {:.bs-callout-warning}
    If you generate new keys in the API Portal, immediately update the API keys in the Admin configuration. If you generate new keys and do not update them in the Admin, your SaaS extensions will no longer work and you will lose valuable data.
 
-1. [Configure]({{ site.user_guide_url }}/user-guide/system/saas.html) a new API key.
+1. [Configure]({{ site.user_guide_url }}/system/saas.html) a new API key.
 
 If the extension is not insalled, use the following instructions to install it:
 
