@@ -15,6 +15,10 @@ See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analy
 
 If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool.
 
+## Architecture
+
+![Architectural diagram of the Site Wide Analysis Tool agent]({{ site.baseurl }}/common/images/tools/swat-agent.svg)
+
 ## Agent
 
 The Site Wide Analysis Tool Agent allows you to use the Site Wide Analysis Tool for on-premises installations of {{ site.data.var.ee }}.
@@ -30,10 +34,6 @@ Installing the agent requires the following steps:
 
 {:.bs-callout-tip}
 The agent supports multi-node {{ site.data.var.ee }} installations. You must install and configure the agent on each node.
-
-## Architecture
-
-![Architectural diagram of the Site Wide Analysis Tool agent]({{ site.baseurl }}/common/images/tools/swat-agent.svg)
 
 ## System requirements
 
