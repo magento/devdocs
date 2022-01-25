@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: placeOrder mutation
-redirect from:
-  - /guides/v2.3/graphql/reference/quote-place-order.html
 ---
 
 The `placeOrder` mutation converts the cart into an order and returns an order ID. You cannot manage orders with GraphQL, because orders are part of the backend. You can use REST or SOAP calls to manage orders to their completion.
@@ -18,7 +16,7 @@ Perform the following actions before using the `placeOrder` mutation:
 -  For guest customers, assign an email to the cart
 
 {:.bs-callout-info}
-The mutation runs [asynchronously]({{page.baseurl}}/performance-best-practices/performance-pack.html#asynchronous-order-placement) if the `AsyncOrder` module has been enabled. By default, the mutation runs synchronously.
+The `placeOrder` mutation runs asynchronously if the `AsyncOrder` module has been enabled. By default, the mutation runs synchronously. [Asynchronous order placement]({{page.baseurl}}/performance-best-practices/performance-pack.html#asynchronous-order-placement) describes the benefits of enabling the module.
 
 ## Syntax
 

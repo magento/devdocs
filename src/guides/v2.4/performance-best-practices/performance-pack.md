@@ -107,7 +107,7 @@ AsyncOrder supports a limited set of Commerce features. For example, _Negotiable
 
 Category         | Supported Feature
 ---------------- | -----------------------
-Checkout types   | OnePage Checkout<br>B2B Negotiable Quote<br>GraphQL
+Checkout types   | OnePage Checkout<br>Standard Checkout<br>B2B Negotiable Quote
 Payment methods  | Check/Money Order<br>Cash on Delivery<br>Braintree<br>PayPal PayFlow Pro
 Shipping methods | All shipping methods are supported.
 
@@ -117,6 +117,22 @@ The following features are **not** supported by AsyncOrder, but continue to work
 -  Multi Address Checkout
 -  Admin Order Creation
 
+#### Web API support
+
+When the AsyncOrder module is enabled, the following REST endpoints and GraphQL mutations run asynchronously:
+
+**REST:**
+
+-  `/V1/carts/mine/payment-information`
+-  `/V1/guest-carts/:cartId/payment-information`
+-  `/V1/negotiable-carts/:cartId/payment-information`
+
+**GraphQL:**
+-  [`placeOrder`]({{page.baseurl}}/graphql/mutations/place-order.html)
+-  [`setPaymentMethodAndPlaceOrder`]({{page.baseurl}}/graphql/mutations/set-payment-place-order.html)
+
+{:.bs-callout-info}
+GraphQL does not support placing negotiable quote orders asynchronously.
 #### Excluding payment methods
 
 Developers can explicitly exclude certain payments methods from Asynchronous Order placement by adding them to the `Magento\AsyncOrder\Model\OrderManagement::paymentMethods` array. Orders that use excluded payment methods are processed synchronously.
