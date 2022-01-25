@@ -62,7 +62,7 @@ The agent requires the [Commerce Services Connector]({{ site.user_guide_url }}/u
 bin/magento module:status Magento_ServicesConnector
 ```
 
-If you have installed the extension and configured it using an existing API key for a different service, you must regenerate the API key and and update it in the {{ site.data.var.ee }} Admin for the agent.
+If you have installed the extension and configured it using an existing API key for a different service, you must regenerate the API key and update it in the {{ site.data.var.ee }} Admin for the agent.
 
 1. Put your website into [maintenance mode]({{ site.baseurl }}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-maint.html).
 1. Go to [accounts.magento.com](https://accounts.magento.com/).
