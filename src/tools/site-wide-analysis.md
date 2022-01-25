@@ -98,7 +98,7 @@ If the extension is not insalled, use the following instructions to install it:
 
 ## Install
 
-We've created a [shell script](https://github.com/magento-swat/install-agent-helpers/blob/main/install.sh) to simplify installation. We recommend using the shell script, but you can follow the [manual installation](#manual) method if necessary.
+We have created a [shell script](https://github.com/magento-swat/install-agent-helpers/blob/main/install.sh) to simplify installation. We recommend using the shell script, but you can follow the [manual installation](#manual) method if necessary.
 
 {:.bs-callout-info}
 After the agent is installed, it will self update when a new release is available.
