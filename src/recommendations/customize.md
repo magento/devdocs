@@ -97,7 +97,7 @@ When you [create a recommendation]({{ site.user_guide_url }}/marketing/create-ne
 
 Refer to [layout overview]({{ site.gdeurl }}/frontend-dev-guide/layouts/layout-overview.html) for more information about the types of blocks on the page.
 
-## Custom Product attributes
+<!--## Custom Product attributes
 
 Developers often need access to custom product attribute values in recommendations units on storefronts so that they can add visual treatments to products based on those attributes.
 
@@ -107,4 +107,4 @@ For example, if your store sells some organic products, you might have a custom 
 
 To make sure a custom product attribute is available when you render the recommendation unit on the page, set the `Used in Product Listing` property to `Yes` in the [Product Attributes](https://docs.magento.com/user-guide/stores/attribute-product-create.html#step-4-describe-the-storefront-properties) page in the Admin.
 
-When this property is set, that custom product attribute value is included in the JSON payload when the recommendations service fetches the product metadata. You can then apply custom storefront styling based on this attribute value.
+When this property is set, that custom product attribute value is included in the JSON payload when the recommendations service fetches the product metadata. You can then apply custom storefront styling based on this attribute value.-->
