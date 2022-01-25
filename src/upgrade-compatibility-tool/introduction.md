@@ -6,15 +6,16 @@ redirect_from:
   - /safe-upgrade-tool/introduction.html
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html
 ---
 
 The {{site.data.var.uct}} is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules and core code installed in it. It returns a list of critical issues, errors, and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}. It also identifies potential problems that must be fixed in your code before attempting to upgrade to a newer version of {{site.data.var.ee}}.
 
-The {{site.data.var.uct}} allows you to identify when core code changes have been made to customized features. See the [Run the tool]({{site.baseurl}}/upgrade-compatibility-tool/run.html) topic for more information.
+The {{site.data.var.uct}} allows you to identify when core code changes have been made to customized features. See the [Run the tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/run.html) topic for more information.
 
-It is distributed as a Composer package with every release of an {{site.data.var.ee}} version. See the [Developer]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) topic for more information.
+It is distributed as a Composer package with every release of an {{site.data.var.ee}} version. See the [Developer](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/developer.html) topic for more information.
 
-Refer to the [Install]({{site.baseurl}}/upgrade-compatibility-tool/install.html) for the first steps with the {{site.data.var.uct}}.
+Refer to the [Install](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/install.html) for the first steps with the {{site.data.var.uct}}.
 
 ## Help improve the Upgrade Compatibility Tool
 

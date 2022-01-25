@@ -186,6 +186,11 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 6006 | `jQuery.size()` removed | Use `jQuery.length`. |
 | 6007 | `jQuery.trim` is deprecated | Use `String.prototype.trim`. |
 | 6008 | (`addButton`, `addContextToolbar`, `addMenuItem`, `addSidebar`, `file_browser_callback`, `insert_button_items`, 'inlite' theme, 'mobile' theme, 'modern' theme) is removed | Update code to be compatible with tinymce5. |
+| 6009 | `jQuery.isFunction()` is deprecated | In most cases, it can be replaced by [typeof x === "function"]. |
+| 6009 | `jQuery.type()` is deprecated | Replace with an appropriate type check like [typeof x === "function"]. |
+| 6009 | `jQuery.isArray()` is deprecated | Use the native Array.isArray method instead. |
+| 6009 | `jQuery.parseJSON()` is deprecated | To parse JSON strings, use the native JSON.parse method instead. |
+| 6010 | (`jQuery.expr[":"]`, `jQuery.expr.filters`) is deprecated | Use jQuery.expr.pseudos instead. |
 
 ## Warnings
 
