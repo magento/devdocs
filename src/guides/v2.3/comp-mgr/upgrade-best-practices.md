@@ -3,7 +3,6 @@ group: software-update-guide
 title: Upgrade best practices
 functional_areas:
   - Upgrade
-redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/best-practices.html
 ---
 
 This topic lists the actions you should take to manage the complexity of upgrading {{site.data.var.ce}} and {{site.data.var.ee}}. Your team should be thinking about upgrades from the moment your project development starts and continue through each release. By following these best practices, the upgrade process will be much easier, faster, and cheaper.

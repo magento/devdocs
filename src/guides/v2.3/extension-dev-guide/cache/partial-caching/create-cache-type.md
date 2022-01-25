@@ -92,31 +92,31 @@ To store serialized data in a custom cache, follow these steps:
 
 1. Pass the argument to the constructor `Magento\Framework\App\CacheInterface` `$cache` of a required class (Repository, Model, Block, etc).
 
-```php
-/**
- * @param CacheInterface $cache
- * @param SerializerInterface $serializer
- */
-public function __construct(CacheInterface $cache, SerializerInterface $serializer)
-{
-    $this->cache = $cache;
-    $this->serializer = $serializer;
-}
-```
+    ```php
+    /**
+     * @param CacheInterface $cache
+     * @param SerializerInterface $serializer
+     */
+    public function __construct(CacheInterface $cache, SerializerInterface $serializer)
+    {
+        $this->cache = $cache;
+        $this->serializer = $serializer;
+    }
+    ```
 
 1. Store data in the cache.
 
-```php
-$cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
-$cacheTag  = \VendorName\ModuleName\Model\Cache\Type\CacheType::CACHE_TAG;
+    ```php
+    $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
+    $cacheTag  = \VendorName\ModuleName\Model\Cache\Type\CacheType::CACHE_TAG;
 
-$storeData = $this->cache->save(
-    $this->serializer->serialize($cacheData),
-    $cacheKey,
-    [$cacheTag],
-    86400
-);
-```
+    $storeData = $this->cache->save(
+        $this->serializer->serialize($cacheData),
+        $cacheKey,
+        [$cacheTag],
+        86400
+    );
+    ```
 
 ## Retrieve data from custom cache type {#m2devgde-retrieve-data-cache-type}
 
@@ -132,25 +132,25 @@ $data = $this->serializer->unserialize($this->cache->load($cacheKey));
 
 To invalidate a custom cache type, follow these steps:
 
-1. Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` `$typeList` of a required class (Repository, Model, Block, etc)
+1. Pass the argument to the constructor `Magento\Framework\App\Cache\TypeListInterface` `$typeList` of a required class (Repository, Model, Block, etc).
 
-```php
-/**
- * @param TypeListInterface $typeList
- */
-public function __construct(TypeListInterface $typeList)
-{
-    $this->typeList = $typeList;
-}
-```
+    ```php
+    /**
+     * @param TypeListInterface $typeList
+     */
+    public function __construct(TypeListInterface $typeList)
+    {
+        $this->typeList = $typeList;
+    }
+    ```
 
-1. Invalidate the cache
+1. Invalidate the cache.
 
-```php
-$cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
+    ```php
+    $cacheKey  = \VendorName\ModuleName\Model\Cache\Type\CacheType::TYPE_IDENTIFIER;
 
-$this->typeList->invalidate($cacheKey);
-```
+    $this->typeList->invalidate($cacheKey);
+    ```
 
 ## Flush custom cache type {#m2devgde-flush-cache-type}
 
