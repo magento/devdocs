@@ -128,6 +128,7 @@ When the AsyncOrder module is enabled, the following REST endpoints and GraphQL 
 -  `/V1/negotiable-carts/:cartId/payment-information`
 
 **GraphQL:**
+
 -  [`placeOrder`]({{page.baseurl}}/graphql/mutations/place-order.html)
 -  [`setPaymentMethodAndPlaceOrder`]({{page.baseurl}}/graphql/mutations/set-payment-place-order.html)
 
