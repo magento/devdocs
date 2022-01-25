@@ -96,7 +96,7 @@ If the extension is not insalled, use the following instructions to install it:
 
 1. [Configure API keys]({{ site.user_guide_url }}/system/saas.html#createsaasenv) to connect the extension to your system.
 
-##3 Install
+### Install
 
 We have created a [shell script](https://github.com/magento-swat/install-agent-helpers/blob/main/install.sh) to simplify installation. We recommend using the shell script, but you can follow the [manual installation](#manual) method if necessary.
 
