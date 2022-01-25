@@ -35,7 +35,7 @@ Installing the agent requires the following steps:
 {:.bs-callout-tip}
 The agent supports multi-node {{ site.data.var.ee }} installations. You must install and configure the agent on each node.
 
-## System requirements
+### System requirements
 
 Your on-premises infrasture must meet the following requirements before installing the agent:
 
@@ -54,7 +54,7 @@ Your on-premises infrasture must meet the following requirements before installi
    -  `nice`
    -  `grep`
 
-## Commerce Services Connector
+### Commerce Services Connector
 
 The agent requires the [Commerce Services Connector]({{ site.user_guide_url }}/user-guide/system/saas.html) extension to be installed on your system and [configured]({{ site.user_guide_url }}/system/saas.html#createsaasenv) with API keys. To verify that the extension is installed, run the following command:
 
@@ -96,14 +96,14 @@ If the extension is not insalled, use the following instructions to install it:
 
 1. [Configure API keys]({{ site.user_guide_url }}/system/saas.html#createsaasenv) to connect the extension to your system.
 
-## Install
+##3 Install
 
 We have created a [shell script](https://github.com/magento-swat/install-agent-helpers/blob/main/install.sh) to simplify installation. We recommend using the shell script, but you can follow the [manual installation](#manual) method if necessary.
 
 {:.bs-callout-info}
 After the agent is installed, it will self update when a new release is available.
 
-### Scripted
+#### Scripted
 
 1. Download and execute the shell script:
 
@@ -127,7 +127,7 @@ After the agent is installed, it will self update when a new release is availabl
    -  Service (preferred if you have root access)
    -  Cron
 
-### Manual
+#### Manual
 
 If you do not want to use our [shell script](https://github.com/magento-swat/install-agent-helpers/blob/main/install.sh) to install the agent, then you must manually install it by following these steps:
 
@@ -224,11 +224,11 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    -  Service (preferred if you have root access)
    -  Cron
 
-## Run the agent
+### Run the agent
 
 We recommend configuring the agent to run as a service. If you have limited access to your infrastructure and do not have root permissions, then you must use [cron](#run-with-cron) instead.
 
-### Service
+#### Service
 
 1. Copy the scheduler binary file to the directory where you want to store it:
 
@@ -275,7 +275,7 @@ We recommend configuring the agent to run as a service. If you have limited acce
    journalctl -u scheduler | grep "Next Version might update" | tail -1 && echo "Agent is successfuly installed"
    ```
 
-### Cron
+#### Cron
 
 If you do not have root permissions or do not have permissions to configure a service as root, you can use cron instead.
 
@@ -285,19 +285,7 @@ Update your cron schedule:
 ( crontab -l ; echo "* * * * * flock -n /tmp/swat-agent.lockfile -c 'source /path/to/agent/swat-agent.env; /path/to/agent/scheduler' >> /path/to/agent/errors.log 2>&1" ) | sort - | uniq - | crontab -
 ```
 
-## Access the dashboard
-
-To get access to Site Wide Analysist Tool user interface:
-
-1. Go to your {{ site.data.var.ee }} Admin.
-1. Click **Reports** > **System Insights** > **Site Wide Analysis Tool**.
-
-If you encounter issues or get an application error, you may need to install the MDVA-38526 patch.
-
-{:.bs-callout-info}
-See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about dashboards and reports.
-
-## Uninstall
+### Uninstall
 
 Run the following commands to uninstall the service from your system and remove all generated files:
 
@@ -349,7 +337,7 @@ If you configured the agent to run with cron instead, remove it from the crontab
 crontab -e
 ```
 
-## Configuration reference
+### Configuration reference
 
 The following table provides descriptions and recommended values for all properties in the agent `.env` configuration file:
 
@@ -372,3 +360,15 @@ Property | Description |
 `SWAT_AGENT_LOG_LEVEL` | Determines what events are logged based on severity  (usually `error`)
 `SWAT_AGENT_ENABLE_AUTO_UPGRADE` | Enables automatic upgrade (restart required after an upgrade; agent does not check for upgrades if the option is disabled)
 `SWAT_AGENT_IS_SANDBOX=false` | Enabling sandbox mode to use the agent on staging environment
+
+## Access the dashboard
+
+To get access to Site Wide Analysist Tool user interface:
+
+1. Go to your {{ site.data.var.ee }} Admin.
+1. Click **Reports** > **System Insights** > **Site Wide Analysis Tool**.
+
+If you encounter issues or get an application error, you may need to install the MDVA-38526 patch.
+
+{:.bs-callout-info}
+See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about dashboards and reports.
