@@ -11,18 +11,18 @@ Adobe releases security and functional patches for each supported release line o
 
 The following table provides the dates for scheduled releases (dates are subject to change):
 
-| Release                                          | Versions                                  | {{site.data.var.ee}} Beta | {{site.data.var.ee}} Pre-release | {{site.data.var.ee}} & {{site.data.var.ce}}<br>General Availability |
-|--------------------------------------------------|-------------------------------------------|---------------------------|----------------------------------|---------------------------------------------------------------------|
-| October 2021<br>Security patch release           | 2.4.3-p1<br>2.3.7-p2                      | \-\-                      | September 28, 2021               | October 12, 2021                                                    |
-| January 2022<br>Feature release                  | \-\-                                      | \-\-                      | \-\-                             | January 18, 2022                                                    |
-| March 2022<br>Feature + patch release            | 2.4.4<br>2.4.3-p2<br>2.3.7-p3<sup>1</sup> | October 2021 and ongoing  | February 22, 2022                | March 8, 2022                                                       |
-| April 2022<br>Feature release                    | \-\-                                      | \-\-                      | \-\-                             | April 26, 2022                                                      |
-| June 2022<br>Feature release                     | \-\-                                      | \-\-                      | \-\-                             | June 21, 2022                                                       |
-| August 2022<br>Feature + patch release           | 2.4.5<br>2.4.4-p1                         | \-\-                      | July 26, 2022                    | August 9, 2022                                                      |
-| October 2022<br>Feature + security patch release | 2.4.5-p1<sup>2</sup>                      | \-\-                      | September 27, 2022               | October 11, 2022                                                    |
+| Release                                                         | Versions                                              | {{site.data.var.ee}} Beta | {{site.data.var.ee}} Pre-release | {{site.data.var.ee}} & {{site.data.var.ce}}<br>General Availability |
+|-----------------------------------------------------------------|-------------------------------------------------------|---------------------------|----------------------------------|---------------------------------------------------------------------|
+| October 2021<br>Security patch release                          | 2.4.3-p1<br>2.3.7-p2                                  | \-\-                      | September 28, 2021               | October 12, 2021                                                    |
+| January 2022<br>Feature release                                 | \-\-                                                  | \-\-                      | \-\-                             | January 18, 2022                                                    |
+| March 2022<br>Feature + patch release + security patch release  | 2.4.4<br>2.4.3-p2<br>2.3.7-p3                         | October 2021 and ongoing  | February 22, 2022                | March 8, 2022                                                       |
+| April 2022<br>Feature release                                   | \-\-                                                  | \-\-                      | \-\-                             | April 26, 2022                                                      |
+| June 2022<br>Feature release                                    | \-\-                                                  | \-\-                      | \-\-                             | June 21, 2022                                                       |
+| August 2022<br>Feature + patch release + security patch release | 2.4.5<br>2.4.4-p1<br>2.4.3-p3<br>2.3.7-p4<sup>1</sup> | \-\-                      | July 26, 2022                    | August 9, 2022                                                      |
+| October 2022<br>Feature + security patch release                | 2.4.5-p1<sup>2</sup>                                  | \-\-                      | September 27, 2022               | October 11, 2022                                                    |
 
 <sup>\-\- Indicates items that are not applicable to this release.</sup><br>
-<sup>1 This is the last patch release for the 2.3.x release line. The 2.3.x release line reaches End of Life (EOL) in April 2022.</sup><br>
+<sup>1 This is the last patch release for the 2.3.x release line. The 2.3.x release line reaches End of Support (EOS) in September 2022.</sup><br>
 <sup>2 There is no full patch release in October 2022.</sup><br>
 
 {:.bs-callout-tip}
