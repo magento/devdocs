@@ -1,5 +1,5 @@
 ---
-title: Site Wide Analysis Tool
+title: Site-Wide Analysis Tool
 group: tools
 ee_only: true
 ---
@@ -37,7 +37,7 @@ The agent supports multi-node {{ site.data.var.ee }} installations. You must ins
 
 ### System requirements
 
-Your on-premises infrasture must meet the following requirements before installing the agent:
+Your on-premises infrastructure must meet the following requirements before installing the agent:
 
 -  Operating systems
    -  Linux x86-64 distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar
@@ -45,7 +45,7 @@ Your on-premises infrasture must meet the following requirements before installi
    {:.bs-callout-warning}
    {{ site.data.var.ee }} is not supported on Microsoft Windows and macOS.
 
--  {{ site.data.vaar.ee }} 2.4.1 or later
+-  {{ site.data.var.ee }} 2.4.1 or later
 -  Commerce Services Connector extension
 -  PHP CLI
 -  Bash/shell utilities
@@ -62,7 +62,7 @@ The agent requires the [Commerce Services Connector]({{ site.user_guide_url }}/u
 bin/magento module:status Magento_ServicesConnector
 ```
 
-If you have installed the extension and configured it using an existing API key for a different service, you must regenerate the API key and update it in the {{ site.data.var.ee }} Admin for the agent.
+__If you have installed the extension__ and configured it using an existing API key for a different service, you must regenerate the API key and update it in the {{ site.data.var.ee }} Admin for the agent.
 
 1. Put your website into [maintenance mode]({{ site.baseurl }}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-maint.html).
 1. Go to [accounts.magento.com](https://accounts.magento.com/).
@@ -70,11 +70,11 @@ If you have installed the extension and configured it using an existing API key 
 1. Click **Delete** next to the existing API key.
 
    {:.bs-callout-warning}
-   If you generate new keys in the API Portal, immediately [update]({{ site.user_guide_url }}/system/saas.html)) the API keys in the Admin configuration. If you generate new keys and do not update them in the Admin, your SaaS extensions will no longer work and you will lose valuable data.
+   If you generate new keys in the API Portal, immediately [update]({{ site.user_guide_url }}/system/saas.html) the API keys in the Admin configuration. If you generate new keys and do not update them in the Admin, your SaaS extensions will no longer work and you will lose valuable data.
 
 1. [Configure]({{ site.user_guide_url }}/system/saas.html) a new API key.
 
-If the extension is not insalled, use the following instructions to install it:
+__If the extension is not installed__, use the following instructions to install it:
 
 1. Add the extension to your `composer.json` file and install it.
 
@@ -122,10 +122,10 @@ After the agent is installed, it will self update when a new release is availabl
    Success exit.
    ```
 
-1. After downlloading and installing the agent, you must [configure it to run](#run-the-agent) using one of the following methods:
+1. After downloading and installing the agent, you must [configure it to run](#run-the-agent) using one of the following methods:
 
-   -  Service (preferred if you have root access)
-   -  Cron
+   -  [Service](#service) (preferred if you have root access)
+   -  [Cron](#cron)
 
 #### Manual
 
@@ -135,9 +135,9 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 1. Download the binary file and unpack it.
 
    {:.bs-callout-info}
-   To use the Site Wide Analysis Tool, you must first read and accept the Terms of Use that are presented when you access the dashboard from the {{ site.data.var.ee }} Admin.
+   To use the Site Wide Analysis Tool, you must first read and accept the Terms of Use that are presented when you [access the dashboard](#access-the-dashboard) from the {{ site.data.var.ee }} Admin.
 
-   For the amd64 architecture:
+   For the __AMD64__ architecture:
 
    1. Download the launcher archive.
 
@@ -151,7 +151,7 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
       tar -xf launcher.linux-amd64.tar.gz
       ```
 
-   For the arm64 architecture:
+   For the __ARM64__ architecture:
 
    1. Download the launcher archive.
 
@@ -208,7 +208,7 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    {:.bs-callout-info}
    See [configuration reference](#configuration-reference) for descriptions and recommended values for all properties.
 
-1. Verify installation.
+1. Verify the installation.
 
    ```bash
    scheduler -v
@@ -219,7 +219,7 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    Success exit.
    ```
 
-1. After downlloading and installing the agent, you must [configure it to run](#run-the-agent) using one of the following methods:
+1. After downloading and installing the agent, you must [configure it to run](#run-the-agent) using one of the following methods:
 
    -  Service (preferred if you have root access)
    -  Cron
@@ -272,7 +272,7 @@ We recommend configuring the agent to run as a service. If you have limited acce
 1. Validate that the service is up and running:
 
    ```bash
-   journalctl -u scheduler | grep "Next Version might update" | tail -1 && echo "Agent is successfuly installed"
+   journalctl -u scheduler | grep "Next Version might update" | tail -1 && echo "Agent is successfully installed"
    ```
 
 #### Cron
@@ -344,14 +344,14 @@ The following table provides descriptions and recommended values for all propert
 Property | Description |
 ---------|-------------|
 `SWAT_AGENT_APP_NAME` | Application name provided to you by Adobe
-`SWAT_AGENT_APPLICATION_PHP_PATH` | Path to your PHP CLI interpretator (usually `/usr/bin/php`)
+`SWAT_AGENT_APPLICATION_PHP_PATH` | Path to your PHP CLI interpreter (usually `/usr/bin/php`)
 `SWAT_AGENT_APPLICATION_MAGENTO_PATH` | Root directory where your {{ site.data.var.ee }} application is installed (usually `/var/www/html`)
 `SWAT_AGENT_APPLICATION_DB_USER` | Database user for your {{ site.data.var.ee }} installation
 `SWAT_AGENT_APPLICATION_DB_PASSWORD` | Database password for the specified user for your {{ site.data.var.ee }} installation
 `SWAT_AGENT_APPLICATION_DB_HOST` | Database host for your {{ site.data.var.ee }} installation
 `SWAT_AGENT_APPLICATION_DB_NAME` | Database name for your {{ site.data.var.ee }} installation
 `SWAT_AGENT_APPLICATION_DB_PORT` | Database port for your {{ site.data.var.ee }} installation (usually `3306`)
-`SWAT_AGENT_APPLICATION_DB_TABLE_PREFIX` | Table Prefix for your {{ site.data.var.ee }} installation (default value: empty)
+`SWAT_AGENT_APPLICATION_DB_TABLE_PREFIX` | Table Prefix for your {{ site.data.var.ee }} installation (default value: `empty`)
 `SWAT_AGENT_APPLICATION_DB_REPLICATED` | Whether your {{ site.data.var.ee }} installation has a secondary database instance (usually `false`)
 `SWAT_AGENT_APPLICATION_CHECK_REGISTRY_PATH` | Temporary directory for the agent (usually `/usr/local/swat-agent/tmp`)
 `SWAT_AGENT_BACKEND_HOST` | Site Wide Analysis Backend Server and port (usually `check.swat.magento.com:443`)
@@ -363,7 +363,7 @@ Property | Description |
 
 ## Access the dashboard
 
-To get access to Site Wide Analysist Tool user interface:
+To get access to Site Wide Analysis Tool user interface:
 
 1. Go to your {{ site.data.var.ee }} Admin.
 1. Click **Reports** > **System Insights** > **Site Wide Analysis Tool**.
