@@ -5,7 +5,7 @@ title: Modify Media Library folder permissions
 
 The Magento Media Gallery gives admins the ability to upload image files in specific folders. The Storage class for images in the CMS module manages image file uploads, file retrievals, and directory creation.
 
-For security purposes, Magento provides Media Gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/media_storage/allowed_resource/media_gallery_image_folders` in `config.xml` is used to define "Media Gallery Allowed" folders
+For security purposes, Magento provides Media Gallery access to contents in specific folders. The configuration path `system/media_storage_configuration/allowed_resources/media_gallery_image_folders` in `config.xml` is used to define "Media Gallery Allowed" folders
 
 By default, Magento allows Media Gallery access to the following two directories under `/pub/media`:
 

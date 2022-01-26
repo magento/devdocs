@@ -128,6 +128,7 @@ It should be similar to the following:
                                                                 <item name="custom-checkout-form-container" xsi:type="array">
                                                                     <!-- Add this item to configure your js file  -->
                                                                     <item name="component" xsi:type="string">VendorName_ModuleName/js/view/custom-checkout-form</item>
+                                                                    <item name="provider" xsi:type="string">checkoutProvider</item>
                                                                     <item name="config" xsi:type="array">
                                                                         <!-- And this to add your html template  -->
                                                                         <item name="template" xsi:type="string">VendorName_ModuleName/custom-checkout-form</item>
@@ -265,7 +266,7 @@ The following code sample shows the configuration of the `custom-checkout-form-c
 Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the **Admin > Stores > Settings > Configuration > Customers > Customer Configuration > Name and Address Options**.
 
 For such forms, you must implement a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
-A plugin can add custom fields definitions to layout at run-time. The format of the field definition is the same as for fields defined in layout.
+A plugin can add custom fields definitions to layout at runtime. The format of the field definition is the same as for fields defined in layout.
 
 For example:
 

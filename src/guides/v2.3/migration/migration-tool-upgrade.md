@@ -21,7 +21,7 @@ Before upgrading the Data Migration Tool, you must:
 
 ### Upgrade your Magento software {#data-migrate-upgr-magento}
 
-If you haven't already done so, [upgrade the Magento software]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
+If you haven't already done so, [upgrade the Magento software](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).
 
 ### Back up the `vendor/magento/data-migration-tool` directory
 
