@@ -68,11 +68,10 @@ __If you have installed the extension__ and configured it using an existing API 
 1. Go to [accounts.magento.com](https://accounts.magento.com/).
 1. Click **API Portal**.
 1. Click **Delete** next to the existing API key.
+1. [Configure]({{ site.user_guide_url }}/system/saas.html) a new API key.
 
    {:.bs-callout-warning}
-   If you generate new keys in the API Portal, immediately [update]({{ site.user_guide_url }}/system/saas.html) the API keys in the Admin configuration. If you generate new keys and do not update them in the Admin, your SaaS extensions will no longer work and you will lose valuable data.
-
-1. [Configure]({{ site.user_guide_url }}/system/saas.html) a new API key.
+   If you generate new keys in the API Portal, immediately update the API keys in the Admin configuration. If you generate new keys and do not update them in the Admin, your SaaS extensions will no longer work and you will lose valuable data.
 
 __If the extension is not installed__, use the following instructions to install it:
 
