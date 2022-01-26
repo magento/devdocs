@@ -21,7 +21,7 @@ Use the command-line interface to enable these features, or edit the `app/etc/en
 
 ## Special installation for 2.4.3
 
-For {{site.data.var.ee}} 2.4.4, the Performance pack modules are part of standard installation. For {{site.data.var.ee}} 2.4.3, the features in the Performance pack were released as separate composer packages and patches. Before you begin installing these separate modules, make sure to apply the latest available patches for 2.4.3. See [Apply patches][].
+For {{site.data.var.ee}} 2.4.4, the Performance pack modules are part of standard installation. For {{site.data.var.ee}} 2.4.3, the features in the Performance pack were released as separate Composer packages and patches. Before you begin installing these separate modules, make sure to apply the latest available patches for 2.4.3. See [Apply patches][].
 
 After applying the patches, add the following Performance pack modules to the `require` section of the `composer.json` file:
 
@@ -69,7 +69,7 @@ bin/magento setup:config:set --checkout-async 1
 
 The `set` command writes the following to the `app/etc/env.php` file:
 
-```php?start_inline=1
+```conf
 ...
    'checkout' => [
        'async' => 1
@@ -92,7 +92,7 @@ bin/magento setup:config:set --checkout-async 0
 
 The `set` command writes the following to the `app/etc/env.php` file:
 
-```php?start_inline=1
+```conf
 ...
    'checkout' => [
        'async' => 0
@@ -164,7 +164,7 @@ bin/magento setup:config:set --deferred-total-calculating 1
 
 The `set` command writes the following to the `app/etc/env.php` file:
 
-```php?start_inline=1
+```conf
 ...
    'checkout' => [
        'deferred_total_calculating' => 1
@@ -182,7 +182,7 @@ bin/magento setup:config:set --deferred-total-calculating 0
 
 The `set` command writes the following to the `app/etc/env.php` file:
 
-```php?start_inline=1
+```conf
 ...
    'checkout' => [
        'deferred_total_calculating' => 0
