@@ -11,9 +11,9 @@ This topic describes best practices for [API security](https://owasp.org/www-pro
 
 Imposing restrictions on the size and number of resources that a user can request through an API can help mitigate denial-of-service (DoS) vulnerabilities. By default, the following built-in API rate limiting is available:
 
--  REST requests containing inputs representing a list of entities. When enabled, the default maximum is 20
--  REST and GraphQL queries that allow paginated results can be limited maximum number of items per page. When enabled, the default maximum is 300
--  REST queries that allow paginated results can have a default number of items per page imposed, When enabled, the default maximum is 20
+-  REST requests containing inputs representing a list of entities. When enabled, the default maximum is 20.
+-  REST and GraphQL queries that allow paginated results can be limited to a maximum number of items per page. When enabled, the default maximum is 300.
+-  REST queries that allow paginated results can have a default number of items per page imposed. When enabled, the default maximum is 20.
 
 By default, these input limits are disabled but can be enabled via admin UI system configuration and also via the command line.
 
@@ -23,13 +23,13 @@ Please note that while there are some simple examples for configuring these valu
 {:.bs-callout-info}
 In addition, the Admin provides a configuration setting for limiting session sizes for Admin users and storefront visitors.
 
-### Enabling the input limiting system
+### Enable the input limiting system
 
-To enable these input limiting features via admin UI, go to `Stores -> Configuration -> Services` and set `Enable Input Limits` to `Yes` under `GraphQl Input Limits` and/or `Web Api Input Limits`.
+To enable these input limiting features from the Admin, go to **Stores** > Settings > **Configuration** > **Services** > **Web Api Limits** or **GraphQL Input Limits** and set **Enable Input Limits** to **Yes**. 
 
-Or to enable via CLI, you can run
+To enable with the CLI, run one or both of the following commands:
 
-```shell
+```bash
 bin/magento config:set webapi/validation/input_limit_enabled 1
 ```
 
@@ -95,10 +95,10 @@ By default, any one of these arrays can include up to 20 items, but you can chan
 
 ### Maximum page size
 
-The `SearchCriteriaValidator` class constructor limits the maximum page size, which controls the pagination of various web API responses. By default, the maximum value is `300`. You can change the default in the configuration UI via `Stores -> Configuration -> Services` in the `Maximum Page Size` field under `Web API Input Limits` and/or `GraphQl Input Limits`. Or via CLI using either the `webapi/validation/complex_array_limit` or `graphql/validation/maximum_page_size` configuration path.
+The maximum page size setting controls the pagination of various web API responses. By default, the maximum value is `300`. You can change the default in the Admin by selecting **Stores** > Settings > **Configuration** > **Services** > **Web API Input Limits** or **GraphQl Input Limits** >  **Maximum Page Size** field.
 
 [GraphQL security configuration]({{page.baseurl}}/graphql/security-configuration.html) describes how to set the maximum page size in GraphQL.
 
 ### Default page size
 
-The `ServiceInputProcessor` class constructor defines the default page size, which controls the pagination of various web API responses. You can change the default value of `20` in the configuration UI via `Stores -> Configuration -> Services -> Web API Input Limits -> Default Page Size` or via CLI using the `webapi/validation/default_page_size` configuration path.
+The Default Page Size setting controls the pagination of various web API responses. You can change the default value of `20` in the Admin by selecting **Stores** > Settings > **Configuration** > **Services** > **Web API Input Limits** > **Default Page Size**. To change the value from the CLI, run the following command:
