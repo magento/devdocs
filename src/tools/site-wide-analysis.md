@@ -105,7 +105,7 @@ After the agent is installed, it will self update when a new release is availabl
 
 #### Scripted
 
-1. Download and execute the shell script:
+1. Download and execute the shell script.
 
    ```bash
    bash -c "$(wget -qO - https://raw.githubusercontent.com/magento-swat/install-agent-helpers/main/install.sh)"
@@ -165,7 +165,7 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
       tar -xf launcher.linux-arm64.tar.gz
       ```
 
-1. _(Optional)_ Verify the signature for the checksum file:
+1. _(Optional)_ Verify the signature for the checksum file.
 
    ```bash
    echo -n "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQ0lqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FnOEFNSUlDQ2dLQ0FnRUE0M2FBTk1WRXR3eEZBdTd4TE91dQpacG5FTk9pV3Y2aXpLS29HendGRitMTzZXNEpOR3lRS1Jha0MxTXRsU283VnFPWnhUbHZSSFhQZWt6TG5vSHVHCmdmNEZKa3RPUEE2S3d6cjF4WFZ3RVg4MEFYU1JNYTFadzdyOThhenh0ZHdURVh3bU9GUXdDcjYramFOM3ErbUoKbkRlUWYzMThsclk0NVJxWHV1R294QzBhbWVoakRnTGxJUSs1d1kxR1NtRGRiaDFJOWZqMENVNkNzaFpsOXFtdgorelhjWGh4dlhmTUU4MUZsVUN1elRydHJFb1Bsc3dtVHN3ODNVY1lGNTFUak8zWWVlRno3RFRhRUhMUVVhUlBKClJtVzdxWE9kTGdRdGxIV0t3V2ppMFlrM0d0Ylc3NVBMQ2pGdEQzNytkVDFpTEtzYjFyR0VUYm42V3I0Nno4Z24KY1Q4cVFhS3pYRThoWjJPSDhSWjN1aFVpRHhZQUszdmdsYXJSdUFacmVYMVE2ZHdwYW9ZcERKa29XOXNjNXlkWApBTkJsYnBjVXhiYkpaWThLS0lRSURnTFdOckw3SVNxK2FnYlRXektFZEl0Ni9EZm1YUnJlUmlMbDlQMldvOFRyCnFxaHNHRlZoRHZlMFN6MjYyOU55amgwelloSmRUWXRpdldxbGl6VTdWbXBob1NrVnNqTGtwQXBiUUNtVm9vNkgKakJmdU1sY1JPeWI4TXJCMXZTNDJRU1MrNktkMytwR3JyVnh0akNWaWwyekhSSTRMRGwrVzUwR1B6LzFkeEw2TgprZktZWjVhNUdCZm00aUNlaWVNa3lBT2lKTkxNa1cvcTdwM200ejdUQjJnbWtldm1aU3Z5MnVMNGJLYlRoYXRlCm9sdlpFd253WWRxaktkcVkrOVM1UlNVQ0F3RUFBUT09Ci0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQ==" | base64 -d > release.pub
@@ -175,13 +175,13 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    openssl dgst -sha256 -verify release.pub -signature launcher.sha256 launcher.checksum
    ```
 
-1. _(Optional)_ Verify the checksum:
+1. _(Optional)_ Verify the checksum.
 
    ```bash
    shasum -a 512 -c launcher.checksum
    ```
 
-1. Generate an `.env` configuration file with the following properties:
+1. Generate an `.env` configuration file with the following properties.
 
    ```config
    cat <<EOT >> /path/to/swat-agent.env
@@ -230,13 +230,13 @@ We recommend configuring the agent to run as a service. If you have limited acce
 
 #### Service
 
-1. Copy the scheduler binary file to the directory where you want to store it:
+1. Copy the scheduler binary file to the directory where you want to store it.
 
    ```bash
    cp scheduler /usr/local/bin/
    ```
 
-1. Create a systemd unit file (`/etc/systemd/system/scheduler.service`) with the following configuration. Copy values from the `.env` file that was generated during installation:
+1. Create a systemd unit file (`/etc/systemd/system/scheduler.service`) with the following configuration.
 
    ```config
    [Unit]
@@ -255,7 +255,9 @@ We recommend configuring the agent to run as a service. If you have limited acce
    WantedBy=multi-user.target
    ```
 
-1. Launch the service:
+   Copy values from the `.env` file that was generated during installation.
+
+1. Launch the service.
 
    ```bash
    systemctl daemon-reload
@@ -269,7 +271,7 @@ We recommend configuring the agent to run as a service. If you have limited acce
    systemctl enable scheduler
    ```
 
-1. Validate that the service is up and running:
+1. Validate that the service is up and running.
 
    ```bash
    journalctl -u scheduler | grep "Next Version might update" | tail -1 && echo "Agent is successfully installed"
@@ -289,7 +291,7 @@ Update your cron schedule:
 
 Run the following commands to uninstall the service from your system and remove all generated files:
 
-1. Stop the scheduler:
+1. Stop the scheduler.
 
    ```bash
    systemctl stop scheduler
@@ -301,31 +303,31 @@ Run the following commands to uninstall the service from your system and remove 
    systemctl disable scheduler
    ```
 
-1. Remove the scheduler service's `systemd` unit file:
+1. Remove the scheduler service's `systemd` unit file.
 
    ```bash
    rm /etc/systemd/system/scheduler.service
    ```
 
-1. Reload the `systemd` manager configuration:
+1. Reload the `systemd` manager configuration.
 
    ```bash
    systemctl daemon-reload
    ```
 
-1. Reset any `systemd` units from a failed state:
+1. Reset any `systemd` units from a failed state.
 
    ```bash
    systemctl reset-failed
    ```
 
-1. Remove the scheduler service directory:
+1. Remove the scheduler service directory.
 
    ```bash
    rm -rf <CHECK_REGISTRY_PATH> #see SWAT_AGENT_APPLICATION_CHECK_REGISTRY_PATH in /etc/systemd/system/scheduler.service
    ```
 
-1. Remove the scheduler binary file:
+1. Remove the scheduler binary file.
 
    ```bash
    rm /usr/local/bin/scheduler
