@@ -7,7 +7,7 @@ title: Adobe Commerce 2.3.7 Release Notes
 
 {:.bs-callout-info}
 
-PHP 7.3 reaches end of support in December 2021, and {{site.data.var.ee}} 2.3.x reaches end of support in April 2022. **We strongly recommend planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance**.
+PHP 7.3 reached end of support in December 2021, and {{site.data.var.ee}} 2.3.x reaches end of support in April 2022. **We strongly recommend planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance**.
 
 ## Backward-Incompatible Changes (BiCs)
 

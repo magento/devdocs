@@ -308,6 +308,18 @@ Successful: 1993 files; errors: 0
 ---
 ```
 
+The following command deploys only Javascript, with 4 jobs, with a standard deployment strategy:
+
+```bash
+bin/magento setup:static-content:deploy -s standard --no-misc --no-html --no-fonts --no-images --no-less --no-css -j 4
+```
+
+The following command deploys only CSS and LESS with 3 jobs, and a quick deployment strategy:
+
+```bash
+bin/magento setup:static-content:deploy -s quick --no-misc --no-html --no-fonts --no-images --no-javascript -j 3
+```
+
 #### Generating static view files for one theme and one area
 
 The following command generates static view files for all languages, the [frontend](https://glossary.magento.com/frontend) area only, the Magento Luma theme only, without generating fonts:

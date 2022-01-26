@@ -37,7 +37,7 @@ These are the main components of the {{site.data.var.uct}} Run Configuration tem
 *  *Message*: Message that appears if the {{site.data.var.uct}} cannot be located for the current PHPStorm plugin project.
 *  *Link*: Link to install the {{site.data.var.uct}} for the current PHPStorm plugin project.
 
-See [Run]({{site.baseurl}}/upgrade-compatibility-tool/run.html) topic for more information on these specific options of the {{site.data.var.uct}}.
+See [Run](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/run.html) topic for more information on these specific options of the {{site.data.var.uct}}.
 
 After you correctly configure the template, you can run the {{site.data.var.uct}} with a single click in your Run Configuration GUI.
 

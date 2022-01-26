@@ -12,7 +12,7 @@ functional_areas:
 
 A contributing developer updates components by specifying components and their versions in Magento's `composer.json`.
 
-To update components if you're *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
+To update components if you're *not* a contributing developer, see [Updating the Magento application and components](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).
 
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 

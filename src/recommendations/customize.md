@@ -26,7 +26,7 @@ In addition to the `recommendations.html` file, the `ProductRecommendationsLayou
 |`web/js`|Contains the JavaScript files that fetch and render recommendations for your store|
 |`web/template`|Contains the template for the `magento/product-recommendations` module|
 
-## Customize recommendation unit positioning
+## Recommendation unit positioning
 
 When you [create]({{ site.user_guide_url }}/recommendations/create.html) a recommendation, you specify the [location]({{ site.user_guide_url }}/recommendations/placement.html) where it appears on the page. A recommendation unit can be placed at either the top or the bottom of the main content container. However, you can customize this placement. If you create a Page Builder recommendation content type, use the Page Builder tools to position the recommendation unit on the page. For all other page types, edit the `*.xml` files that are generated when the recommendation is created.
 

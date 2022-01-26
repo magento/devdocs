@@ -1,5 +1,5 @@
 ---
-group: software-update-guide
+group: tools
 title: Release notes
 functional_areas:
   - Setup
@@ -20,6 +20,30 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
+
+## v1.1.9
+
+-  **MDVA-38346** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where date filters are not working properly when the Magento timezone is different from the local environment timezone.
+-  **MDVA-42657** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.5`)_-Fixes the issue where the admin user is unable to select categories in the customer segment conditions.
+-  **MDVA-42806** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where a “New company registration” email is sent each time an existing company is updated via REST API.
+-  **MDVA-37984** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.5`)_-Fixes the issue where visual merchandiser “Match product by rule” functionality does not correctly filter products with staging updates.
+-  **MDVA-40488** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where configurable products with out-of-stock child products are not shown in their correct price range.
+-  **MDVA-42507** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.5`)_-Fixes the issue where the full-page cache is cleaned after applying staging update for the cart rule.
+-  **MDVA-39163** _(for Adobe Commerce and Magento Open Source `>=2.3.5 <2.4.5`)_-Fixes the issue where shipping methods are not available when a new user is registered, and products in the cart are from the guest session.
+-  **MDVA-38626** _(for Adobe Commerce and Magento Open Source `>=2.3.3 <2.4.5`)_-Fixes the issue where the admin user is not able to place an order on the backend using the PayPal Payflow Pro payment.
+-  **MDVA-38666** _(for Adobe Commerce and Magento Open Source `>=2.3.2 <2.3.6`)_-Fixes the issue where the admin user is not able to change the configurable product options in the customer’s cart.
+-  **MDVA-38526** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.4`)_-Fixes the issue where the admin user is not able to access the SWAT tool.
+-  Updated patches: MDVA-40101.
+
+## v1.1.8
+
+-  **MDVA-41215** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where users get the 500 error after setting the "mage-messages" cookie, if it already exists but there are no new messages.
+-  **MDVA-41139** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where configurable products become Out of Stock after product import, when a simple product's qty=0 for one of its sources.
+-  **MDVA-42326** _(for Adobe Commerce and Magento Open Source `>=2.3.6 <=2.3.7-p2 || >=2.4.1 <2.4.4`)_-Fixes the issue where customers get an error on checkout after a session timeout even if persistent shopping cart is enabled.
+-  **MDVA-42341** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where the “categoryList” GraphQL query does not filter results if a request has the Store header.
+-  **MDVA-38393** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.4`)_-Fixes the issue where Catalog rules stop working for a configurable product if its simple product is re-named.
+-  **MDVA-39153** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where a discount amount is calculated incorrectly during reorder in the Admin.
+-  Updated patches: MDVA-28993, MDVA-41061, MDVA-35984.
 
 ## v1.1.7
 

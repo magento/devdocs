@@ -19,7 +19,7 @@ Critical errors are raised when the custom code is referencing entities that are
 {:.error-table}
 | Error code | Error description | Suggested action |
 | - | - | - |
-| 1110 | Instantiating non-existent Adobe Commerce class/interface | Update code to use a class marked as `@api`. Instantiating non-existent Adobe Commerce class/interface |
+| 1110 | Instantiating non-existent Adobe Commerce class/interface | Update code to use a class marked as `@api`. Instantiating non-existent Adobe Commerce class/interface. |
 | 1111 | Extending from non-existent Adobe Commerce class | The extended class is no longer present in the codebase. Inheritance is not recommended way of extending Adobe Commerce functionality. Update code to use a class marked as `@api`. |
 | 1112 | Importing non-existent Adobe Commerce class | Update code to use a class marked as `@api`. |
 | 1113 | Loading non-existent Adobe Commerce class | Update code to use a class marked as `@api`. |
@@ -172,6 +172,11 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 5084 | Do not initialize JS component in php | Initialize JS component in a template. |
 | 5085 | The use of certain functions is discouraged | Use the alternative function advised on the message instead. |
 | 5087 | PHP cross-version compatibility issue | Follow the suggestions from the message and check the [migration guide](https://www.php.net/manual/en/migration81.php). |
+| 5088 | Optional parameters found after required ones | Move required parameters after optional ones. |
+| 5089 | Method visibility `final private` found | Change method visibility from `final private` to only `private`. |
+| 5090 | Magic method `__set_state` is not defined as `static` | Magic method `__set_state` must be defined as `static`. |
+| 5091 | Class with `__toString()` method not inheriting from `Stringable` interface | Add `Stringable` interface to class with `__toString()` method. |
+| 5092 | `is_resource()` method used for functions that now return Object | Change `is_resource()` to `instanceof` Object. |
 | 6001 | `jQuery.andSelf()` removed | Use `jQuery.addBack()`. |
 | 6002 | jQuery `$.bind` and `$.unbind` are deprecated | Use `$.on` and `$.off` instead. |
 | 6003 | jQuery method to subscribe to event is deprecated and shouldn't be used | Use `.on("event name", fn)` method instead to subscribe to that event. |
@@ -181,6 +186,11 @@ Custom code errors are raised when custom code is using the Adobe Commerce entry
 | 6006 | `jQuery.size()` removed | Use `jQuery.length`. |
 | 6007 | `jQuery.trim` is deprecated | Use `String.prototype.trim`. |
 | 6008 | (`addButton`, `addContextToolbar`, `addMenuItem`, `addSidebar`, `file_browser_callback`, `insert_button_items`, 'inlite' theme, 'mobile' theme, 'modern' theme) is removed | Update code to be compatible with tinymce5. |
+| 6009 | `jQuery.isFunction()` is deprecated | In most cases, it can be replaced by [typeof x === "function"]. |
+| 6009 | `jQuery.type()` is deprecated | Replace with an appropriate type check like [typeof x === "function"]. |
+| 6009 | `jQuery.isArray()` is deprecated | Use the native Array.isArray method instead. |
+| 6009 | `jQuery.parseJSON()` is deprecated | To parse JSON strings, use the native JSON.parse method instead. |
+| 6010 | (`jQuery.expr[":"]`, `jQuery.expr.filters`) is deprecated | Use jQuery.expr.pseudos instead. |
 
 ## Warnings
 
