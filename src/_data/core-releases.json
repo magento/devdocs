@@ -1,5 +1,9 @@
 {
-    "2.4": {
+    "2.4.4-2.4.6": {
+        "releases": [],
+        "end-of-support": "2024-11-??"
+    },
+    "2.4.0-2.4.3": {
         "releases": [
             {
                 "publishedAt": "2021-10-12T14:41:27Z",
@@ -38,7 +42,7 @@
                 "tagName":"2.4.0"
             }
         ],
-        "end-of-support": "????-??-??"
+        "end-of-support": "2022-11-??"
     },
     "2.3": {
         "releases": [
@@ -107,7 +111,7 @@
                 "tagName":"2.3.0"
             }
         ],
-        "end-of-support": "2022-04-??"
+        "end-of-support": "2022-09-08"
     },
     "2.2": {
         "releases": [

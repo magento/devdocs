@@ -24,7 +24,7 @@ desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]
 
 desc "Same as 'test:report'"
-task test: %w[test:md test:report]
+task test: %w[test:md test:report test:unused_images test:unused_includes]
 
 desc 'Preview the devdocs locally'
 task preview: %w[install clean] do

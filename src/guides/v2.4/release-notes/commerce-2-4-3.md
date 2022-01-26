@@ -173,7 +173,7 @@ For information about enhancements and bug fixes, see [PWA Studio releases](http
 
 ### Upgrade Compatibility Tool
 
-The scope of the [Upgrade Compatibility Tool]({{ site.baseurl }}/upgrade-compatibility-tool/introduction.html) has been expanded based on feedback from the community. Join our [#upgrade-compatibility-tool](https://magentocommeng.slack.com/archives/C019Y143U9F) Slack channel to get support from the Adobe product team and the community, as well as to help guide the future direction of the tool.
+The scope of the [Upgrade Compatibility Tool](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/overview.html) has been expanded based on feedback from the community. Join our [#upgrade-compatibility-tool](https://magentocommeng.slack.com/archives/C019Y143U9F) Slack channel to get support from the Adobe product team and the community, as well as to help guide the future direction of the tool.
 ### Cloud managed services updates
 
 This release includes enhancements to our support for Amazon Simple Storage Service (AWS S3)  and Amazon Aurora cloud managed services. It provides certified support for AWS ElastiCache, AWS ElasticSearch, and AWS Managed Queues (Rabbit MQ). (We have tested the functionality, performance, and integration of these services with {{site.data.var.ee}}.)
