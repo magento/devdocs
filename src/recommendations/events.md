@@ -21,9 +21,9 @@ Event | Description | [Used for metrics?]({{ site.user_guide_url }}/recommendati
 `rec-click` | The customer clicks a product in the recommendation unit. | Yes
 `view` | The recommendation unit becomes viewable on the page, such as by scrolling into view. | Yes
 
-If you are using the default Adobe Commerce storefront or [PWA](https://developer.adobe.com/commerce/pwa-studio/integrations/product-recommendations/), handling these events is done for you. If you are writing your own custom storefront, learn how you can [integrate Product Recommendations]({{ site.user_guide_url }}/recommendations/headless.html) into your storefront.
+If your storefront is implemented with PWA Studio, refer to the [PWA documentation](https://developer.adobe.com/commerce/pwa-studio/integrations/product-recommendations/). If you use a custom frontend technology such as React or Vue JS, refer to the user guide to learn how to integrate Product Recommendations in a [headless]({{ site.user_guide_url }}/recommendations/headless.html) environment.
 
-Many shoppers use ad blockers or enable privacy settings. These configurations prevent the `magento/product-recommendations` module from capturing events, which might cause the metrics in the [Product Recommendations dashboard]({{ site.user_guide_url }}/recommendations/workspace.html) to underreport engagement and revenue numbers.
+Ad blockers and privacy settings can prevent the `magento/product-recommendations` module from capturing events and might cause the engagement and revenue [metrics]({{ site.user_guide_url }}/recommendations/workspace.html) to be underreported.
 
 {:.bs-callout-info}
 If [Cookie Restriction Mode]({{ site.user_guide_url }}/stores/compliance-cookie-restriction-mode.html) is enabled, Adobe Commerce does not collect behavioral data until the shopper consents to using cookies. If Cookie Restriction Mode is disabled, Adobe Commerce collects behavioral data by default.

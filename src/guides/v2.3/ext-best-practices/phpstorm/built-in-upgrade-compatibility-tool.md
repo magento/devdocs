@@ -6,22 +6,11 @@ functional_areas:
 ---
 
 The built-in Upgrade Compatibility Tool aims to achieve the same issues coverage as original Adobe Commerce [Upgrade Compatibility Tool]({{site.baseurl}}/upgrade-compatibility-tool/introduction.html).
-There are issues that covered by this MVP version:
+There are three types of inspections covered by this MVP version:
 
-| Code | Name |
-| ----- | ------ |
-| 1131 | extending from @deprecated class |
-| 1132 | importing @deprecated class |
-| 1332 | importing @deprecated interface |
-| 1134 | using @deprecated class |
-| 1334 | using @deprecated interface |
-| 1234 | using @deprecated constant |
-| 1534 | using @deprecated property |
-| 1235 | overriding @deprecated constant |
-| 1535 | overriding @deprecated property |
-| 1337 | inherited from @deprecated interface |
-| 1338 | implemented @deprecated interface |
-| 1439 | call @deprecated method |
+*  Deprecation (severity level: WARNING)
+*  API coverage (severity level: ERROR)
+*  Existence (severity level: CRITICAL)
 
 A complete list of inspections that are already available in the original tool, can be found by the [following link]({{site.baseurl}}/upgrade-compatibility-tool/errors.html).
 
@@ -41,6 +30,9 @@ It allows you to see the problematic code just in real time, without running it 
 **The result of the real time inspection is most suitable for use during development, to be always compatible with future versions**:
 
 ![]({{site.baseurl}}/common/images/phpstorm/built-in-uct/uct-inspections-highlighting.png)
+![]({{site.baseurl}}/common/images/phpstorm/built-in-uct/uct-inspections-highlighting-2.png)
+![]({{site.baseurl}}/common/images/phpstorm/built-in-uct/uct-inspections-highlighting-3.png)
+![]({{site.baseurl}}/common/images/phpstorm/built-in-uct/uct-inspections-highlighting-4.png)
 
 The second IntelliJ IDEA tool that we can use for running UCT inspections is called **Inspect Code**. It is available under menu item
 `Code -> Inspect Code`. Also, you can open a context menu under the target directory that allows IntelliJ IDEA to populate the path to analyse for you automatically:

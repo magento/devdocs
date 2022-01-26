@@ -2,11 +2,11 @@
 group: live-search
 title: Install Live Search
 ee_only: True
-redirect_from: 
-  - /live-search/config-connect.html
+redirect_from: /live-search/config-connect.html
+redirect_to: https://docs.magento.com/user-guide/live-search/install.html
 ---
 
-Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ce}} and {{site.data.var.ee}} search capabilities.  This topic provides instructions to do the following:
+Live Search is a set of standalone meta packages that replaces standard {{site.data.var.ce}} and {{site.data.var.ee}} search capabilities. This topic provides instructions to do the following:
 
 -  [Installing Live Search](#before-you-begin) (Methods 1 and 2)
 -  [Updating Live Search](#updating-live-search)

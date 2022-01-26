@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 100_project
 title: Configure your project
-menu_title: Configure your project
-menu_order: 5
-menu_node:
 functional_areas:
   - Cloud
   - Configuration
@@ -30,7 +26,7 @@ The Project Web Interface provides several ways to access your project and envir
 To access projects and environments through the Project Web Interface:
 
 1. [Log in to your project](https://account.magento.com/customer/account/login/).
-1. Click **Access Project** for a list of URLs and SSH.
+1. Click **Access Site** for a list of URLs for web access and the command for SSH access.
 
    ![Access your project by URL or SSH]({{ site.baseurl }}/common/images/cloud/cloud_project-access.png){:width="600px"}
 
