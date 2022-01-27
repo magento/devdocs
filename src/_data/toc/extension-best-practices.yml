@@ -9,10 +9,10 @@ pages:
       children:
 
           - label: Admin Panel Placement and Design
-          url: /ext-best-practices/admin/placement-and-design.html
+            url: /ext-best-practices/admin/placement-and-design.html
 
           - label: Admin FAQ
-          url: /ext-best-practices/admin/ext-best-practices_admin_FAQ.html
+            url: /ext-best-practices/admin/ext-best-practices_admin_FAQ.html
 
     - label: Extension Coding
       url: /ext-best-practices/extension-coding/coding-best-practices.html
