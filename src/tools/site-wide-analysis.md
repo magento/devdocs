@@ -11,7 +11,7 @@ The Site Wide Analysis Tool provides 24/7 real-time performance monitoring, repo
 -  Provides detailed information about your {{ site.data.var.ee }} installation
 
 {:.bs-callout-info}
-See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about dashboards and reports.
+See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about enabling the Site Wide Analysis Tool and generating reports.
 
 If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool.
 
@@ -23,7 +23,7 @@ If you have an on-premises installation of {{ site.data.var.ee }}, you must inst
 
 The Site Wide Analysis Tool Agent allows you to use the Site Wide Analysis Tool for on-premises installations of {{ site.data.var.ee }}.
 
-The agent collects application and business data, analyzes it, and provides additional insights about the health of your installation so that you can improve customer experience. It monitors your application and helps you identify performance, security, availability, and application issues.
+The Site Wide Analysis Tool Agent collects application and business data, analyzes it, and provides additional insights about the health of your installation so that you can improve customer experience. It monitors your application and helps you identify performance, security, availability, and application issues.
 
 Installing the agent requires the following steps:
 
@@ -43,7 +43,7 @@ Your on-premises infrastructure must meet the following requirements before inst
    -  Linux x86-64 distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar
 
    {:.bs-callout-warning}
-   {{ site.data.var.ee }} is not supported on Microsoft Windows and macOS.
+   {{ site.data.var.ee }} is not supported on Microsoft Windows or macOS.
 
 -  {{ site.data.var.ee }} 2.4.1 or later
 -  Commerce Services Connector extension
@@ -65,7 +65,7 @@ bin/magento module:status Magento_ServicesConnector
 __If you have installed the extension__ and configured it using an existing API key for a different service, you must regenerate the API key and update it in the {{ site.data.var.ee }} Admin for the agent.
 
 1. Put your website into [maintenance mode]({{ site.baseurl }}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-maint.html).
-1. Go to [accounts.magento.com](https://accounts.magento.com/).
+1. Log in to [accounts.magento.com](https://accounts.magento.com/).
 1. Click **API Portal**.
 1. Click **Delete** next to the existing API key.
 1. [Configure]({{ site.user_guide_url }}/system/saas.html) a new API key.
@@ -95,12 +95,12 @@ __If the extension is not installed__, use the following instructions to install
 
 1. [Configure API keys]({{ site.user_guide_url }}/system/saas.html#createsaasenv) to connect the extension to your system.
 
-### Install
+### Install the agent
 
 We have created a [shell script](https://github.com/magento-swat/install-agent-helpers/blob/main/install.sh) to simplify installation. We recommend using the shell script, but you can follow the [manual installation](#manual) method if necessary.
 
 {:.bs-callout-info}
-After the agent is installed, it will self update when a new release is available.
+After the agent is installed, it will self-update when a new release is available.
 
 #### Scripted
 
@@ -229,7 +229,7 @@ We recommend configuring the agent to run as a service. If you have limited acce
 
 #### Service
 
-1. Copy the scheduler binary file to the directory where you want to store it.
+1. Copy the `scheduler` binary file to the directory where you want to store it.
 
    ```bash
    cp scheduler /usr/local/bin/
