@@ -334,11 +334,25 @@ Run the following commands to uninstall the service from your system and remove 
    rm /usr/local/bin/scheduler
    ```
 
-If you configured the agent to run with cron instead, remove it from the crontab list.
+If you configured the agent to run with cron instead, use the following instructions:
 
-```bash
-crontab -e
-```
+1. Remove the agent from the crontab list.
+
+   ```bash
+   crontab -e
+   ```
+
+1. Stop the running job.
+
+   ```bash
+   ps aux | grep scheduler
+   ```
+
+1. Remove the directory where you installed the agent.
+
+   ```bash
+   rm -rf swat-agent
+   ```
 
 ### Configuration reference
 
