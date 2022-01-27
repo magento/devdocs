@@ -34,7 +34,7 @@ In addition, the Admin provides a configuration setting for limiting session siz
 
 ### Enable the input limiting system
 
-To enable these input limiting features from the Admin, go to **Stores** > Settings > **Configuration** > **Services** > **Web Api Limits** or **GraphQL Input Limits** and set **Enable Input Limits** to **Yes**. 
+To enable these input limiting features from the Admin, go to **Stores** > Settings > **Configuration** > **Services** > **Web Api Limits** or **GraphQL Input Limits** and set **Enable Input Limits** to **Yes**.
 
 To enable with the CLI, run one or both of the following commands:
 
