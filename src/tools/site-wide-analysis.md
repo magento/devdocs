@@ -17,6 +17,8 @@ If you have an on-premises installation of {{ site.data.var.ee }}, you must inst
 
 ## Architecture
 
+The following diagram describes the Site Wide Analysis Tool architecture:
+
 ![Architectural diagram of the Site Wide Analysis Tool]({{ site.baseurl }}/common/images/tools/swat-agent.svg)
 
 ## Agent
@@ -359,7 +361,7 @@ Property | Description |
 `SWAT_AGENT_LOGIN_BACKEND_HOST` | Site Wide Analysis Tool backend login server and port (usually `login.swat.magento.com:443`)
 `SWAT_AGENT_RUN_CHECKS_ON_START` | Collect data on the first run (usually `1`)
 `SWAT_AGENT_LOG_LEVEL` | Determines what events are logged based on severity  (usually `error`)
-`SWAT_AGENT_ENABLE_AUTO_UPGRADE` | Enables automatic upgrade (restart required after an upgrade; agent does not check for upgrades if the option is disabled)
+`SWAT_AGENT_ENABLE_AUTO_UPGRADE` | Enables automatic upgrade (restart required after an upgrade; agent does not check for upgrades if the option is disabled; `true` or `false`)
 `SWAT_AGENT_IS_SANDBOX=false` | Enabling sandbox mode to use the agent on staging environment
 
 ## Access the dashboard
