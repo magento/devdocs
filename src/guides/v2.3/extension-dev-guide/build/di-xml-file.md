@@ -276,7 +276,7 @@ This mapping is in `app/etc/di.xml`, so the object manager injects the `Magento\
 </config>
 ```
 
-This mapping is in `app/code/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\Url` implementation class wherever there is a request for the `Magento\Framework\UrlInterface` in the [admin](https://glossary.magento.com/admin) area.
+This mapping is in `app/code/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\UrlInterface` implementation class wherever there is a request for the `Magento\Framework\UrlInterface` in the [admin](https://glossary.magento.com/admin) area.
 
 ### Override a method using 'preference' nodes
 
