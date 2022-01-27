@@ -53,13 +53,13 @@ The following sections describe measures you can take to protect against DoS att
 The downside of this approach is the friction created by requiring legitimate users to solve a challenge while
 shopping.
 
-[Google ReCaptcha](https://docs.magento.com/user-guide/stores/security-google-recaptcha.html) is an example of a
+[Google ReCaptcha]({{ site.user_guide_url }}/stores/security-google-recaptcha.html) is an example of a
 challenge provider. One of the biggest advantages of ReCaptcha is that it avoids actually presenting
 a user with a challenge, unless it detects suspicious behavior. [Protected endpoints]({{page.baseurl}}/rest/protected-endpoints.html)
 contains a list of forms/endpoints can be enabled for ReCaptcha out-of-the-box. You can extend the list by following the example
 on how to add coverage can be found in the [SecurityPackage](https://github.com/magento/security-package/tree/develop/ReCaptchaCustomer) repo.
 
-Our own [CAPTCHA](https://docs.magento.com/user-guide/stores/security-captcha.html) implementation is also available.
+Our own [CAPTCHA]({{ site.user_guide_url }}/stores/security-captcha.html) implementation is also available.
 
 ### Limited input/output
 

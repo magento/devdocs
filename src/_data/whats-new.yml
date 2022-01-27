@@ -4,8 +4,231 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Nov 1 14:38:45 2021
+updated: Mon Jan 17 15:38:41 2022
 entries:
+- description: Added the [contactUs](https://devdocs.magento.com/guides/v2.4/graphql/mutations/contact-us.html)
+    mutation topic.
+  versions: 2.4.x
+  type: New Topic
+  date: January 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2737
+  merge_commit: 9b2b6d74a7e866d899ef83b4391de3d6c7e8b4ba
+  contributor: dobooth
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.x
+- description: Redirected [Software Update Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html)
+    topics to the new location on [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2734
+  merge_commit: 9e570a8ea66876b5086ba909810e95f5d7d21b77
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Added a new Tools section to the top navigation and moved the [Quality
+    Patches Tool](https://devdocs.magento.com/quality-patches/tool.html) content to
+    the new section.
+  versions: 2.x
+  type: Major Update
+  date: January 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2735
+  merge_commit: dce1c7fdc03ffa7f88a12b26b8907320d1c8143a
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added new supported versions of Elasticsearch, OpenSearch, Redis, RabbitMQ,
+    and Varnish to the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+    for 2.4.4 and 2.4.5
+  versions: 2.4.4
+  type: Major Update
+  date: January 7, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2726
+  merge_commit: 98c3b406f2275faac00f8fa7a24a04bf315ed961
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.4
+- description: Added new [parameterized data fixture](https://devdocs.magento.com/guides/v2.4/test/integration/parameterized_data_fixture.html)
+    and [data fixture data provider annotation](https://devdocs.magento.com/guides/v2.4/test/integration/annotations/magento-data-fixture-data-provider.html)
+    documentation for writing tests.
+  versions: 2.4.x
+  type: New Topic
+  date: January 4, 2022
+  link: https://github.com/magento/devdocs/pull/9273
+  merge_commit: ad816f5435223fd1bbdf8187f458fe1582193cb0
+  contributor: thiaramus
+  membership: true
+  labels:
+  - Internal Dev
+  - New Topic
+  - 2.4.x
+  - 'Progress: done'
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.8 Quality Patches Tool (QPT) package release.
+  versions: 2.x
+  type: Major Update
+  date: December 20, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2705
+  merge_commit: 4f69651f1891591171c92aefb0ea3ff527ec1b32
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added instructions to manage [_Outgoing emails_  configuration](https://devdocs.magento.com/cloud/project/project-webint-basic.html)
+    for Adobe Commerce on cloud Staging and Production environments using the Magento
+    Cloud CLI command `magento-cloud environment:info`.
+  versions: 2.x
+  type: Technical
+  date: December 1, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2668
+  merge_commit: abb2648eaf97973f7bc2f4bd449069a2d43f860b
+  contributor: meker12
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+- description: Added [Payment Services](https://devdocs.magento.com/payment-services/index.html)
+    topics with the latest information of the new marketplace extension.
+  versions: 2.4.x
+  type: Major Update
+  date: November 30, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2555
+  merge_commit: cacf3206b238119950bd247d7c99e4513c3ef64d
+  contributor: shrielenee
+  membership: true
+  labels:
+  - Major Update
+  - 2.4.x
+- description: Added new topics about [buying](https://devdocs.magento.com/marketplace/sellers/subscriptions/buying-subscriptions.html)
+    and [selling](https://devdocs.magento.com/marketplace/sellers/subscriptions/selling-subscriptions.html)
+    subscription-based extensions.
+  versions: 2.x
+  type: New Topic
+  date: November 30, 2021
+  link: https://github.com/magento/devdocs/pull/9266
+  merge_commit: 15e085d7855e3f6b31d38dc71a9a831743641531
+  contributor: igorin
+  membership: true
+  labels:
+  - 2.x
+  - Internal Dev
+  - New Topic
+  - 'Progress: done'
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.7 Quality Patches Tool (QPT) package release.
+  versions: 2.x
+  type: Major Update
+  date: November 29, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2670
+  merge_commit: fab5665a3fc37f662a3ce6565e4c5eda0dc54da0
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Restored the original Adobe Commerce [lifecycle policy](https://devdocs.magento.com/release/lifecycle-policy.html)
+    page and added a new end of software support table.
+  versions: 2.x
+  type: New Topic
+  date: November 29, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2658
+  merge_commit: b1d4477825c7358b8069d3cef6c68ae49106881b
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - New Topic
+- description: Added the 'Reindexing in parallel mode` section to the [Manage the
+    indexers](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-index.html)
+    topic.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: November 15, 2021
+  link: https://github.com/magento/devdocs/pull/9208
+  merge_commit: b524213fe1fd9a63bbe117eee6c57ba70097665b
+  contributor: nitish-ranjan05
+  membership: false
+  labels:
+  - Major Update
+  - 2.3.x
+  - partners-contribution
+  - 'Partner: Ziffity'
+  - 2.4.x
+  - 'Progress: done'
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.6 Quality Patches Tool (QPT) package release.
+  versions: 2.x
+  type: Major Update
+  date: November 11, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2640
+  merge_commit: 34051b2dfafe457fae79c24aeb32650b0034b95f
+  contributor: agorbivskyi
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added a new section describing [compatibility requirements](https://devdocs.magento.com/marketplace/sellers/compatibility/requirements.html)
+    for Adobe Commerce Marketplace extensions.
+  versions: 2.x
+  type: New Topic
+  date: November 9, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2636
+  merge_commit: f592e8c38194c1a8b59e6b7434f4e9ed8c535a60
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - New Topic
+- description: Removed the information about contribution points from the [Contribution
+    guide](https://devdocs.magento.com/contributor-guide/contributing.html) and replaced
+    the deprecated leaderboard widget with a link to the new Top Contributors Leaderboard
+    on the [Contributors](https://devdocs.magento.com/contributor-guide/contributors.html)
+    page.
+  versions: 2.x
+  type: Major Update
+  date: November 8, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2573
+  merge_commit: 24e2b0c349ad491a06381ed48ac40b3ac0eb0f3b
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Added hotfix information to the [Adobe Commerce 2.3.7-p2 release notes](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p2.html)
+    and [Adobe Commerce 2.4.3-p1 release notes](https://devdocs.magento.com/guides/v2.4/release-notes/2-4-3-p1.html)
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: November 5, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2623
+  merge_commit: ce18ee23ed3e59b9ca561b82e28edbd9cd46fcbe
+  contributor: jfrontain
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Added the [Github Issue Processing Workflow](https://devdocs.magento.com/contributor-guide/processing-workflow.html)
+    topic to the Contributor's Guide.
+  versions: 2.x
+  type: New Topic
+  date: November 5, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2578
+  merge_commit: 18306a54a9151938b0e2441c5a567e547ee6c869
+  contributor: dobooth
+  membership: true
+  labels:
+  - 2.x
+  - New Topic
 - description: Moved the [Adobe Commerce Beta Program](https://devdocs.magento.com/release/beta-program.html)
     topic from the `magento/magento2` GitHub wiki to devdocs.magento.com.
   versions: 2.x
@@ -18,6 +241,20 @@ entries:
   labels:
   - 2.x
   - New Topic
+- description: Adding a [new topic](https://devdocs.magento.com/quality-patches/tool.html)
+    with the widget to navigate through the patches in the latest release of the Quality
+    Patches Tool. Also, rearranging the related topics.
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: October 28, 2021
+  link: https://github.com/magento-commerce/devdocs/pull/2619
+  merge_commit: d9db3ab65b710930656d5f70e7d32cd84c7486e3
+  contributor: dshevtsov
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
 - description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
     for the 1.1.5 Quality Patches Tool (QPT) package release.
   versions: 2.x

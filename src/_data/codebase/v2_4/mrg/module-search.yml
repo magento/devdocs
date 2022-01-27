@@ -1,5 +1,4 @@
 ---
 title: Search
-release: 2.4.3
 content: Magento_Search module introduces basic search functionality and provides
   interfaces that allow to implement search for specific module.

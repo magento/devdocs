@@ -12,7 +12,7 @@ contributor_link: https://github.com/drpayyne
 
 ## Overview
 
-This tutorial describes how a developer can create a custom text field attribute for the Customer entity using code. This will reflect in both the [Customer Grid](https://docs.magento.com/user-guide/customers/customer-account-manage.html) and the [Customer Form](https://docs.magento.com/user-guide/customers/customer-account-update.html) in the Admin.
+This tutorial describes how a developer can create a custom text field attribute for the Customer entity using code. This will reflect in both the [Customer Grid]({{ site.user_guide_url }}/customers/customer-account-manage.html) and the [Customer Form]({{ site.user_guide_url }}/customers/customer-account-update.html) in the Admin.
 
 This Customer attribute will be used to save and view the customer's ID in an external system, as an example. It will be created as an EAV attribute in a data patch. The EAV model allows a developer to add custom functionality to the Magento entities without modifying the core databases and schemas. Data patches are run just once, so this code will create the custom attribute and will never run again, which could cause issues.
 
@@ -155,7 +155,7 @@ There are five steps in developing a data patch. All the steps below are written
     ```php
     // Get the newly created attribute's model
     $attribute = $this->customerSetup->getEavConfig()
-        ->getAttribute(CustomerMetadataInterface::ENTITY, 'externalcorp_external_id');
+        ->getAttribute(CustomerMetadataInterface::ENTITY_TYPE_CUSTOMER, 'externalcorp_external_id');
 
     // Make attribute visible in Admin customer form
     $attribute->setData('used_in_forms', [
@@ -214,7 +214,6 @@ namespace ExampleCorp\Customer\Setup\Patch\Data;
 use Exception;
 use Psr\Log\LoggerInterface;
 use Magento\Customer\Api\CustomerMetadataInterface;
-use Magento\Customer\Model\Customer;
 use Magento\Customer\Model\ResourceModel\Attribute as AttributeResource;
 use Magento\Customer\Setup\CustomerSetup;
 use Magento\Customer\Setup\CustomerSetupFactory;
@@ -329,7 +328,7 @@ class ExternalId implements DataPatchInterface
 
             // Get the newly created attribute's model
             $attribute = $this->customerSetup->getEavConfig()
-                ->getAttribute(Customer::ENTITY, 'externalcorp_external_id');
+                ->getAttribute(CustomerMetadataInterface::ENTITY_TYPE_CUSTOMER, 'externalcorp_external_id');
 
             // Make attribute visible in Admin customer form
             $attribute->setData('used_in_forms', [

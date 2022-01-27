@@ -9,17 +9,17 @@ functional_areas:
   - Standards
 ---
 
-In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base---the [jQuery UI Widget Factory][jquery-ui-widget-factory]{:target="_blank"}.
+In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base---the [jQuery UI Widget Factory][jquery-ui-widget-factory].
 
 The factory provides a flexible base for building complex, stateful plug-ins with a consistent [API](https://glossary.magento.com/api).
 It is designed not only for plug-ins that are part of [jQuery](https://glossary.magento.com/jquery) UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.
 
-For more information, see the [jQuery Widget API documentation][jquery-ui-api-doc]{:target="_blank"}.
+For more information, see the [jQuery Widget API documentation][jquery-ui-api-doc].
 
 This standard is mandatory for Magento core developers and recommended for third-party [extension](https://glossary.magento.com/extension) developers.
 Some parts of Magento code might not comply with the standard, but we are working to gradually improve this.
 
-Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
+Use [RFC 2119][rfc2119] to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
 ## Naming conventions
 
@@ -171,7 +171,7 @@ When a component is initialized, it is also important to send parameters to it, 
 
 ## Development standards
 
-*  Widgets should comply with the [single responsibility principle][single-responsibility-principle]{:target="_blank"}.
+*  Widgets should comply with the [single responsibility principle][single-responsibility-principle].
 
    Widgets should not have responsibilities not related to the [entity](https://glossary.magento.com/entity) described by the widget.
 
@@ -248,9 +248,9 @@ When a component is initialized, it is also important to send parameters to it, 
    });
    ```
 
-*  You must use [DOM event bubbling][dom-event-bubbling]{:target="_blank"} to perform one-way communication between a child widget and its parent widget.
+*  You must use [DOM event bubbling][dom-event-bubbling] to perform one-way communication between a child widget and its parent widget.
 
-*  Widgets must comply with the [Law of Demeter][law-of-demeter]{:target="_blank"} principle.
+*  Widgets must comply with the [Law of Demeter][law-of-demeter] principle.
 
    Do not instantiate a widget or call a widget's methods inside another widget.
 

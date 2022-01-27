@@ -1,6 +1,5 @@
 ---
 title: MysqlMq
-release: 2.4.3
 content: "**Magento_MysqlMq** provides message queue implementation based on MySQL.\n\nModule
   contain recurring script, declared in `Magento\\MysqlMq\\Setup\\Recurring` \nclass.
   This script is executed by Magento post each schema installation or upgrade\nstage

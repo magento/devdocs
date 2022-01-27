@@ -1,6 +1,5 @@
 ---
 title: PaypalNegotiableQuote
-release: 2.4.3
 content: |-
   The Magento_PaypalNegotiableQuote module provides support for PayPal payment methods when using negotiable quotes.
 

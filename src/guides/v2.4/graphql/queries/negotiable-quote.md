@@ -25,6 +25,8 @@ query{
   negotiableQuote(uid: "kw6mLEvl6vjjPNsjtJqwpamv5o0iT1bc"){
     uid
     status
+    total_quantity
+    email
     items {
       product {
         name
@@ -96,6 +98,8 @@ query{
     "negotiableQuote": {
       "uid": "kw6mLEvl6vjjPNsjtJqwpamv5o0iT1bc",
       "status": "ORDERED",
+      "total_quantity": 3,
+      "email": "tgarofalo@example.com",
       "items": [
         {
           "product": {

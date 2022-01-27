@@ -1,6 +1,5 @@
 ---
 title: GiftCardRequisitionListGraphQl
-release: 2.4.3
 content: "**GiftCardRequisitionListGraphQl** provides GraphQL schema and resolvers
   for the requisition list module to extend and implement gift card products in requisition
   list"

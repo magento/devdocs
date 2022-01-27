@@ -52,7 +52,7 @@ See these resources for testing in [PHP](https://glossary.magento.com/php) and v
 *  [01 The Module Skeleton Kata] (video) by [Mage2Katas]
 
 [Magento Testing Overview]: {{ page.baseurl }}/test/testing.html
-[Magento Functional Testing Framework]: https://devdocs.magento.com/mftf/docs/introduction.html
+[Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
 [register]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
 [Package your component]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html
 [Install your component]: {{ page.baseurl }}/install-gde/install/cli/dev_add-update.html

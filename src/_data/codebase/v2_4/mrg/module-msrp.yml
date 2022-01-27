@@ -1,6 +1,5 @@
 ---
 title: Msrp
-release: 2.4.3
 content: "The **Magento_Msrp** module is responsible for Manufacturer’s Suggested
   Retail Price functionality.\nA current module provides base functional for msrp
   pricing rendering, configuration and calculation.\n\n## Installation\nThe Magento_Msrp

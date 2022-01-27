@@ -1,6 +1,5 @@
 ---
 title: VersionsCmsUrlRewrite
-release: 2.4.3
 content: "The Versions CMS Url Rewrite Module ties up the Store Switcher program with
   implementation of the Hierarchy structure. See also Magento_UrlRewrite and Magento_VersionsCms
   modules. \n\nExtends the Store Switcher program and makes it take into account nodes

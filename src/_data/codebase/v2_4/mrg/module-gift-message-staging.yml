@@ -1,6 +1,5 @@
 ---
 title: GiftMessageStaging
-release: 2.4.3
 content: |-
   The Magento_GiftMessageStaging module is a part of the staging functionality in Magento EE. It extends the Magento_GiftMessage module functionality to be used in the Schedule Update form.
 

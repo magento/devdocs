@@ -1,6 +1,5 @@
 ---
 title: TaxGraphQl
-release: 2.4.3
 content: |-
   **TaxGraphQl** provides type information for the GraphQl module
   to generate tax fields for catalog and product information endpoints.

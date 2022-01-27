@@ -6,13 +6,14 @@ redirect_from:
   - /safe-upgrade-tool/developer.html
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/developer.html
 ---
 
 This topic contains information for developers who work closely with the {{site.data.var.ee}} code and want to learn detailed information about the {{site.data.var.uct}}. You can use this knowledge to customize the tool's components.
 
 ## {{site.data.var.ee}} API index integration
 
-{{site.data.var.ee}} API index integration is an internal integration solution that encompasses a set of tools to explore {{site.data.var.ee}} extensions developed by Adobe, {{site.data.var.ee}} Partners, and 3rd-party vendors based on static code analysis.
+{{site.data.var.ee}} API index integration is an internal integration solution that encompasses a set of tools to explore {{site.data.var.ee}} extensions developed by Adobe, {{site.data.var.ee}} Partners, and third-party vendors based on static code analysis.
 
 The integration with the {{site.data.var.ee}} API index is done through:
 
@@ -59,14 +60,14 @@ To run the integration tests, execute one of the following commands:
    *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml tests/acceptance`
    *  `vendor/bin/phpunit -c tests/acceptance/phpunit.xml --testsuite=acceptance-tests`
 
-## GraphQL unit testing and Eslint code analysis
+## GraphQL unit testing and ESLint code analysis
 
 ### Requirements
 
 {:.bs-callout-info}
 You must have Node.js on your system, see the [documentation](https://nodejs.dev/learn/how-to-install-nodejs).
 
-The following instructions are for MacOS systems:
+The following instructions are for macOS systems:
 
 1. Open a terminal and navigate to the root directory of the project.
 1. Install project dependencies:
@@ -76,6 +77,7 @@ The following instructions are for MacOS systems:
    ```
 
 ### GraphQL unit testing
+
 The [Jest](https://jestjs.io/docs/en/getting-started.html) framework was used to create these JS unit tests:
 
 The tests are inside `dev/tests/Js`.
@@ -85,15 +87,17 @@ The string schemas for testing are inside `dev/tests/Acceptance/_files/graphql_s
 Run unit tests or `jest` as follows:
 
    ```bash
-   npm run unit-test
+  ./node_modules/.bin/jest --verbose --rootDir=dev/tests/Js/
    ```
-### Eslint code analysis
-[Eslint](https://eslint.org/docs/user-guide/getting-started) is a static code analysis tool for identifying problematic patterns found in JavaScript code, with the goal of making code more consistent and avoiding bugs.
+### ESLint code analysis
+
+[ESLint](https://eslint.org/docs/user-guide/getting-started) is a static code analysis tool for identifying problematic patterns found in JavaScript code, with the goal of making code more consistent and avoiding bugs.
 
 Run `eslint` code analysis as follows:
 
    ```bash
    npm run eslint -- path/to/analyse
+   ./node_modules/.bin/eslint -c dev/tests/Static/.eslintrc --rulesdir vendor/magento/magento-coding-standard/eslint/rules path/to/analyse
    ```
 
 ## Complexity score
@@ -112,7 +116,7 @@ The {{site.data.var.uct}} calculates this score according to the complexity scor
 
 ### Complexity score formula
 
-`Complexity Score = ({{site.data.var.ee}} core errors) * 4 + (Critical errors) * 4 + [(PHP errors)+(GraphQL errors)] * 2 + [(PHP warnings)+(GraphQL warnings)] * 1`
+`Complexity Score = (Critical issues * 3) + (Errors * 2) + Warnings`
 
 {:.bs-callout-warning}
 These are absolute values.

@@ -1,6 +1,5 @@
 ---
 title: OrderHistorySearch
-release: 2.4.3
 content: |-
   The Magento_OrderHistorySearch module serves to handle advanced orders filtering on customer account.
 

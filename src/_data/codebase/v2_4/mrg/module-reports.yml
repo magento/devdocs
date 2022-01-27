@@ -1,6 +1,5 @@
 ---
 title: Reports
-release: 2.4.3
 content: |-
   Magento_Reports module provides ability to collect various reports such as:
    - products reports (bestsellers, low stock, most viewed, products ordered),

@@ -108,26 +108,48 @@ stage:
 
 You can configure multiple locales per theme. This customization helps speed up the build process by reducing the number of unnecessary theme files. For example, you can build the _magento/backend_ theme in English and a custom theme in other languages.
 
-The following example builds the `magento/backend` theme with three locales:
+The following example builds the `Magento/backend` theme with three locales:
 
 ```yaml
 stage:
   build:
     SCD_MATRIX:
-      "magento/backend":
+      "Magento/backend":
+        language:
+          - en_US
+          - fr_FR
+          - af_ZA
+```
+The following example builds three themes with three locales:
+
+```yaml
+stage:
+  build:
+    SCD_MATRIX:
+      "Magento/backend":
+        language:
+          - en_US
+          - fr_FR
+          - af_ZA
+      "Magento/blank":
+        language:
+          - en_US
+          - fr_FR
+          - af_ZA
+      "Magento/luma":
         language:
           - en_US
           - fr_FR
           - af_ZA
 ```
 
-Also, you can choose to _not_ deploy a theme:
+Or, you can choose to _not_ deploy a theme:
 
 ```yaml
 stage:
   build:
     SCD_MATRIX:
-      "magento/backend": [ ]
+      "Magento/backend": [ ]
 ```
 
 ### `SCD_MAX_EXECUTION_TIME`

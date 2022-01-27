@@ -4,7 +4,7 @@ subgroup: 3_Widgets
 title: DropdownDialog widget
 ---
 
-Magento dropdownDialog [widget](https://glossary.magento.com/widget) is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/){:target="_blank"}. As extra functionality it implements the following:
+Magento dropdownDialog [widget](https://glossary.magento.com/widget) is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/). As extra functionality it implements the following:
 
 -  triggering [event](https://glossary.magento.com/event) for opening
 -  delaying to automatically close the drop-down on mouse out
@@ -18,7 +18,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 
 ## Options {#dialog_options}
 
-Magento customized Dialog widget has default [jQuery UI Dialog widget](http://api.jqueryui.com/dialog/){:target="_blank"} options, plus several custom options:
+Magento customized Dialog widget has default [jQuery UI Dialog widget](http://api.jqueryui.com/dialog/) options, plus several custom options:
 
 -  [autoPosition](#d_autoPosition)
 -  [autoSize](#d_autoSize)

@@ -1,9 +1,11 @@
 ---
 name: New topic
 about: Create a request to add missing information to devdocs
----
+title: 'Request for a new topic'
+labels: New Topic
+assignees: ''
 
-# New topic request
+---
 
 ## Description
 
@@ -26,7 +28,7 @@ about: Create a request to add missing information to devdocs
 
 <!--
 Thank you for taking the time to report this issue!
-GitHub Issues should only be created for problems/topics related to this project's codebase.
+GitHub Issues in this repo should relate to this project's codebase.
 
 Before submitting this issue, please make sure you are complying with our Code of Conduct:
 https://github.com/magento/devdocs/blob/master/.github/CODE_OF_CONDUCT.md

@@ -12,7 +12,9 @@ redirect_from:
 {:.bs-callout-info}
 If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/services.html#service-versions) in the _Cloud Guide_.
 
-This table notes software versions that were officially tested and supported at the time of the Magento version's release. Newer versions of required software may work but have not been tested.
+This table shows versions of third-party software dependencies that Adobe has tested with specific {{ site.data.var.ee }} and {{ site.data.var.ce }} releases. Adobe only supports the combination of system requirements described in the following table.
+
+For example, 2.4.3 is fully tested with MariaDB 10.4. Adobe recommends that you upgrade to MariaDB 10.4 before upgrading to 2.4.3.
 
 {% include install/system-requirements-table.md %}
 
@@ -91,7 +93,7 @@ Magento requires the following system tools for some of its operations:
 
 ### Xdebug
 
-[php_xdebug 2.5.x][]{:target="_blank"} or later (development environments only; can have an adverse effect on performance)
+[php_xdebug 2.5.x][] or later (development environments only; can have an adverse effect on performance)
 
 {:.bs-callout-info}
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Admin after installation. For details, see [Known issue with xdebug][].

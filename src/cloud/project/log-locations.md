@@ -19,7 +19,7 @@ You can view the logs from the file system, the project web UI, and the `magento
 -  **Magento Cloud CLI**—You can view logs using the `magento-cloud log` command.
 
 {:.bs-callout-tip}
-Automatic log rotation, compression, and removal are enabled in the Cloud environment. Each log file type has a rotating pattern and lifetime.
+For Pro environments, automatic log rotation, compression, and removal are enabled for log files with a fixed file name. Each log file type has a rotating pattern and lifetime. Starter environments do not have log rotation. Full details of the environment's log rotation and lifespan of compressed logs can be found in: `/etc/logrotate.conf` and `/etc/logrotate.d/<various>`
 
 ## Manage log data
 
@@ -152,7 +152,6 @@ For example, on Pro production environments a PHP access log for 21 days in the 
 ```terminal
 /var/log/platform/<project_id>/php.access.log.22.gz
 ```
-
 The archived log files are always stored in the directory where the original file was located before compression.
 
 {:.bs-callout-info}
@@ -175,6 +174,11 @@ Service logs are archived and saved for different periods of time, depending on 
 {:.bs-callout-tip}
 Log file locations in the scaled architecture depend on the node type. See [Log locations in the Scaled architecture][scaled] topic.
 
+## Related topics in our support knowledge base
+
+-  [Most common database issues in Adobe Commerce on cloud infrastructure][database issues]
+-  [Adobe Commerce deployment troubleshooter][deployment troubleshooter]
+
 <!--Link definitions-->
 
 [configlog]: {{site.baseurl}}/guides/v2.3/config-guide/cli/logging.html
@@ -183,3 +187,5 @@ Log file locations in the scaled architecture depend on the node type. See [Log 
 [New Relic services]: {{site.baseurl}}/cloud/project/new-relic.html
 [slacklog]: {{site.baseurl}}/cloud/env/setup-notifications.html
 [scaled]: {{site.baseurl}}/cloud/architecture/scaled-architecture.html#log-locations
+[database issues]: https://support.magento.com/hc/en-us/articles/360041739651-Most-common-database-issues-in-Magento-Commerce-Cloud
+[deployment troubleshooter]: https://support.magento.com/hc/en-us/articles/360040986912-Magento-deployment-troubleshooter

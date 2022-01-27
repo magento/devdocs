@@ -1,6 +1,5 @@
 ---
 title: InventoryConfigurableProduct
-release: 2.4.3
 content: |-
   The `InventoryConfigurableProduct` module integrates inventory management business logic into Magento's configurable product logic.
 

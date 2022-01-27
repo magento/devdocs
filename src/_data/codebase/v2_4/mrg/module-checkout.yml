@@ -1,7 +1,17 @@
 ---
 title: Checkout
-release: 2.4.3
-content: |-
-  Magento\Checkout module allows merchant to register sale transaction with the customer. Module implements consumer flow
-  that includes such actions like adding products to cart, providing shipping and billing information and confirming
-  the purchase.
+content: "Magento\\Checkout module allows merchant to register sale transaction with
+  the customer. Module implements consumer flow\nthat includes such actions like adding
+  products to cart, providing shipping and billing information and confirming\nthe
+  purchase.\n\n#### Observer\n  This module observes the following events\n    `etc/events.xml`\n
+  \     `sales_quote_save_after` event in \n      `Magento\\Checkout\\Observer\\SalesQuoteSaveAfterObserver`
+  file.\n    `/etc/frontend/events.xml`\n      `customer_login` event in `Magento\\Checkout\\Observer\\LoadCustomerQuoteObserver`\n
+  \      file.\n      `customer_logout` event in `Magento\\Checkout\\Observer\\UnsetAllObserver`\n
+  \ \n  ### Layouts\n  The module interacts with the following layout handles in the
+  \n    `view/frontend/layout`\n       `catalog_category_view`\n       `catalog_product_view`\n
+  \      `checkout_cart_configure`\n       `checkout_cart_configure_type_simple`\n
+  \      `checkout_cart_index`\n       `checkout_cart_item_renderers`\n       `checkout_cart_sidebar_item_price_renderers`\n
+  \      `checkout_cart_sidebar_item_renderers`\n       `checkout_cart_sidebar_total_renderers`\n
+  \      `checkout_index_index`\n       `checkout_item_price_renderers`\n       `checkout_onepage_failure`\n
+  \      `checkout_onepage_review_item_renderers`\n       `checkout_onepage_success`\n
+  \      `default`"

@@ -1,6 +1,5 @@
 ---
 title: CustomAttributeManagement
-release: 2.4.3
 content: |-
   Magento_CustomAttributeManagement implements user-defined attributes management which provides ability to manage attributes of customers and their address.
   Admin user can manage attributes on UI level without assistance of programmer.

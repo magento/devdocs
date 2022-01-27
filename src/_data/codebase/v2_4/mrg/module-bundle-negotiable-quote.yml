@@ -1,6 +1,5 @@
 ---
 title: BundleNegotiableQuote
-release: 2.4.3
 content: |-
   The Magento_BundleNegotiableQuote module enables bundle products to be displayed in a negotiable quote in an B2B environment. This module extends Magento_NegotiableQuote module and Magento_Bundle module.
 

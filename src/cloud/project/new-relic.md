@@ -43,7 +43,7 @@ The aggregated data includes information from the following logs:
 -  Logs for cloud services from the `var/log/platform/<project-ID>` directory
 -  Fastly CDN and WAF logs
 
-As soon as your project is connected to New Relic, you can use the New Relic Logs service to complete tasks like the following:
+When your project is connected to New Relic, you can use the New Relic Logs service to complete tasks like the following:
 
 -  Use [New Relic queries][New Relic query syntax for logs] to search aggregated log data
 -  Visualize log data through the New Relic Logs application
@@ -59,9 +59,9 @@ When Adobe provisions your {{site.data.var.ece}} project, the License Owner rece
 A New Relic account can have only one person assigned to the Owner role. If you must change the account owner, assign the Admin role to the current Owner, then assign the Owner role to another user. See [Update the account owner] in the New Relic documentation for instructions.
 
 {:.bs-callout-tip}
-Before assigning the Owner role to a user, verify that the user exists on the New Relic account for {{site.data.var.ece}}. If you need to add the user to that account and an existing account Owner or Admin cannot help, any user with access to the [Adobe Partnership Owner Account] for New Relic can add users on behalf of the customer.
+Before assigning the Owner role to a user, verify that the user exists on the New Relic account for {{site.data.var.ece}}. If you must add the user to that account and an existing account Owner or Admin cannot help, any user with access to the [Adobe Partnership Owner Account] for New Relic can add users on behalf of the customer.
 
-We recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and tool usage. {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
+We recommend adding at least one **Admin** user to your New Relic account to manage all access, integrations, and tool usage. {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account. We also recommend that you do not create more than five full-access **Users**. Only grant full access to users that strictly require access to the complete feature set. There is no specific guidance on free **Restricted** users.
 
 {:.procedure}
 To add a user:
@@ -106,8 +106,7 @@ To connect a Cloud environment to New Relic, add the New Relic license key to th
 
 For Starter environments, enable the New Relic integration by adding the New Relic license key to the environment configuration. We recommend adding the key to the Staging and Production (master) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the [New Relic reporting] topic in the _{{site.data.var.ee}} User Guide_.
 
-{:.bs-callout-warning}
-Updating the environment configuration triggers a redeployment, which takes your site offline until deployment completes. For Production environments, we recommend completing this work during off-peak hours to avoid service disruptions. See [Working with variables].
+{% include cloud/note-env-config-redeploy-warning.md%}
 
 **Prerequisites:**
 
@@ -227,7 +226,7 @@ To use the New Relic Logs application:
 1. To review infrastructure log data for cloud services, enter the query string `has: "filePath"` in the _Find logs where_ field. Then, click **Query logs**.
    The names of the log files are stored in the `filePath` field, with full paths to the log file.
 
-   ![Cloud project New Relic service log data]({{ site.baseurl }}/common/images/cloud/cloud_new-relic-log-query-has-ident.png){:width="650px"}
+   ![Cloud project New Relic service log data]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-log-query-has-ident.png){:width="650px"}
 
 1. To review Fastly log data, enter the query string `has: "client_ip"` in the _Find logs where_ field. Then, click **Query logs**.
 
@@ -250,15 +249,15 @@ For further information and examples, see [Introduction to New Relic Logs][New R
 Adobe provides the Managed Alerts for {{ site.data.var.ee }} alert policy to track performance metrics.
 Based on industry best practices, the policy includes a collection of alerts that set thresholds to trigger warning and critical notifications when site infrastructure or application issues affect performance. The Managed Alerts policy tracks the following metrics on Production environments only:
 
-| Metric | Data collection | Availability
-|:--------|:------------------------|:-------------
-| [Apdex score] | APM   | Pro and Starter
-| error rate    | APM   | Pro and Starter
-| disk space    | NRI   | Pro
-| CPU usage     | NRI   | Pro
-| memory usage  | NRI   | Pro
-| Redis         | NRI   | Pro
-| MariaDB       | NRI   | Pro
+| Metric        | Data collection | Availability    |
+|:--------------|:----------------|:----------------|
+| [Apdex score] | APM             | Pro and Starter |
+| error rate    | APM             | Pro and Starter |
+| disk space    | NRI             | Pro             |
+| CPU usage     | NRI             | Pro             |
+| memory usage  | NRI             | Pro             |
+| Redis         | NRI             | Pro             |
+| MariaDB       | NRI             | Pro             |
 
 When site infrastructure or application conditions trigger an alert threshold, New Relic sends alert notifications so that you can proactively address the issue.  See [Managed Alerts for Magento Commerce] in the _{{site.data.var.ee}} Help Center_ for details about alert thresholds and troubleshooting steps to resolve the issues that triggered the alert.
 
@@ -393,4 +392,3 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [Update the account owner]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [Update policies or conditions]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/configuring-alert-policies/update-or-disable-policies-conditions
 [View your license key]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
-[Working with variables]: {{site.baseurl}}/cloud/env/working-with-variables.html

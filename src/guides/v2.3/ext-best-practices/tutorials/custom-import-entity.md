@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-This tutorial shows you how to extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:target="_blank"} class to import data into your custom module's table.
+This tutorial shows you how to extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0] class to import data into your custom module's table.
 The current import entities can be found in **System** > **Import**:
 
 -  Advanced Pricing
@@ -48,7 +48,7 @@ Extending the **Magento_ImportExport** module, we create a dependency to it in t
 
 ## Step 2: Defining the import model
 
-As we extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0]{:target="_blank"}, we implement the following abstract methods:
+As we extend the [Magento/ImportExport/Model/Import/Entity/AbstractEntity][0], we implement the following abstract methods:
 
 -  `_importData` - Import data rows
 -  `getEntityTypeCode` - EAV entity type code getter

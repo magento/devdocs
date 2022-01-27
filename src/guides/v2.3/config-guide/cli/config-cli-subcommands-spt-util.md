@@ -12,7 +12,7 @@ functional_areas:
 
 ## Overview of the support utilities {#config-cli-spt-utils-over}
 
-The {{site.data.var.ee}} Support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html)) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
+The {{site.data.var.ee}} Support utilities (also referred to as the [*Data Collector*]({{ site.user_guide_url }}/system/support-data-collector.html)) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
 
 {{site.data.var.ee}} uses these backups (also referred to as *dumps*) to analyze issues that require access to your code. A typical scenario follows:
 

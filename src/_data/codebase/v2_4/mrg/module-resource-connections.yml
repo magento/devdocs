@@ -1,6 +1,5 @@
 ---
 title: ResourceConnections
-release: 2.4.3
 content: "Magento\\ResourceConnections module adds a mechanism to segregate database
   connections between master and slave \ndatabase servers based on the request type.\n\nFor
   each master database connection (except the indexer connection) that are configured

@@ -1,6 +1,5 @@
 ---
 title: Persistent
-release: 2.4.3
 content: |-
   This module enables setting a long-term cookie containing internal id (random hash - to exclude brute
   force) of persistent session for customer. Persistent session data is kept in DB - so it's not deleted in some days and is kept for

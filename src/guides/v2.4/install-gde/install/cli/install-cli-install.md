@@ -137,6 +137,17 @@ To enable remote storage services during installation, see [Configure Remote Sto
 |`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
 |`--consumers-wait-for-messages`|Should consumers wait for a message from the queue? 1 - Yes, 0 - No|No|
 
+**Remote storage options:**
+
+| Name| Description | Required? |
+|--- |--- |--- |
+| `remote-storage-driver` | Adapter name<br>Possible values:<br>**file**: Disables remote storage and uses the local filesystem<br>**aws-s3**: Use the [Amazon Simple Storage Service (Amazon S3)](https://aws.amazon.com/s3/) | No |
+| `remote-storage-bucket` | Object storage or container name | No |
+| `remote-storage-prefix` | Optional prefix (location inside of object storage) | No |
+| `remote-storage-region` | Region name | No |
+| `remote-storage-key` | Optional access key | No |
+| `remote-storage-secret` | Optional secret key | No |
+
 **Lock configuration options:**
 
 |Name|Value|Required?|

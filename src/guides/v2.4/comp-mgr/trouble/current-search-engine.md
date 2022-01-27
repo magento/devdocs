@@ -3,6 +3,7 @@ group: software-update-guide
 title: Your current search engine is not supported
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/troubleshooting/search-engine-not-supported.html
 ---
 
 The following error message indicates that the Magento version you are upgrading from is configured to use a catalog search engine that is not supported in the Magento version you are upgrading to:
@@ -72,5 +73,5 @@ After you configure Elasticsearch and reindex, you are ready to upgrade to Magen
 {:.ref-header}
 Related topics
 
-*  [Check the catalog search engine]({{page.baseurl}}/comp-mgr/prereq/prereq-elasticsearch.html)
+*  [Verify Elasticsearch is installed](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/prerequisites.html)
 *  [Configure Elasticsearch stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)

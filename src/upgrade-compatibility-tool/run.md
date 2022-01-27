@@ -6,6 +6,7 @@ redirect_from:
   - /safe-upgrade-tool/run.html
 functional_areas:
   - Upgrade
+redirect_to: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/run.html
 ---
 
 The {{site.data.var.uct}} is a command-line tool that checks an {{site.data.var.ee}} customized instance against a specific version by analyzing all modules installed in it. It returns a list of critical issues, errors, and warnings that must be addressed before upgrading to the latest version of {{site.data.var.ee}}.
@@ -28,11 +29,9 @@ The `upgrade:check` command runs the {{site.data.var.uct}} and checks an {{site.
 {:.bs-callout-warning}
 Execute only when the project root (or main) directory is provided.
 
-This command checks for core code changes for that specific {{site.data.var.ee}} instance, as well as all custom code changes installed in it.
+You can run the `core:code:changes` command to analyze only core code changes for that specific {{site.data.var.ee}} instance. See [Core code changes](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/run.html#core-code) section for more information.
 
-However, you can run the `core:code:changes` command to analyze only core code changes for that specific {{site.data.var.ee}} instance. See [Core code changes]({{site.baseurl}}/upgrade-compatibility-tool/run.html#core-code) section for more information.
-
-While you can use the `graphql:compare` command to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification]({{site.baseurl}}/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
+While you can use the `graphql:compare` command to compare two GraphQL schemas to check for any changes between them. See [GraphQL schema compatibility verification](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/run.html#graphql-schema-compatibility-verification) section for more information.
 
 ### Recommendations to use the `upgrade:check` command
 
@@ -64,40 +63,118 @@ bin/uct upgrade:check --help
 
 Available `--help` options for the `upgrade:check` command:
 
-*  --raw: Outputs raw information.
-*  --format=FORMAT: Output format (txt, xml, json, md).
-*  --short: Skip arguments description.
-*  -o, --output[=OUTPUT]: Path directory to export the `.json` output file.
-*  -m, --module-path[=MODULE-PATH]: Modules path directory .
-*  --schema1[=SCHEMA1]: Endpoint URL for the existing installation.
-*  --schema2[=SCHEMA2]: Endpoint URL for the vanilla installation.
-*  --vanilla-dir: {{site.data.var.ee}} vanilla installation directory.
-*  --min-issue-level: Minimum issue level to show in report. Default is [WARNING].
-*  --ignore-current-version-compatibility-issues: Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `-m, --module-path[=MODULE-PATH]`: Path of the modules to be analysed
+*  `-a, --current-version[=CURRENT-VERSION]`: Current {{site.data.var.ee}} version, version of the {{site.data.var.ee}} installation will be used if omitted.
+*  `-c, --coming-version[=COMING-VERSION]`: Target {{site.data.var.ee}} version, version of the {{site.data.var.ee}} installation will be used if omitted.
+*  `--json-output-path[=JSON-OUTPUT-PATH]`: Path of the file where the output will be exported in json format
+*  `--html-output-path[=HTML-OUTPUT-PATH]`: Path of the file where the output will be exported in HTML format
+*  `--min-issue-level`: Minimum issue level to show in report. Default is [WARNING].
+*  `--ignore-current-version-compatibility-issues`: Use this option when you do not want to include known critical issues, errors and warnings in your {{site.data.var.uct}} report.
+*  `--context=CONTEXT`: Execution context. This option is for integration purposes and does not affect the execution result.
+*  `-h, --help`: Display help for the given command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not output any message while executing the command.
+*  `-v, --version`: Display application version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ### Output
 
-The {{site.data.var.uct}} exports a `json` file report identifying the affected code or modules, and the severity and description of the problem for every issue encountered.
+As a result of the analysis performed, the {{site.data.var.uct}} exports a report that contains a list of issues for each file specifying its severity, error code and error description.
+
+See the example below:
+
+```terminal
+File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
+------------------------------------------------------------------
+
+ * [WARNING][1131] Line 23: Extending from class 'Magento\Framework\App\Action\Action' that is @deprecated on version '2.4.2'
+ * [ERROR][1429] Line 103: Call method 'Magento\Framework\Api\SearchCriteriaBuilder::addFilters' that is non API on version '2.4.2'
+ * [CRITICAL][1110] Line 60: Instantiating class/interface 'Magento\Catalog\Model\ProductRepository' that does not exist on version '2.4.2'
+```
+
+Check the [Error message reference](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/error-messages.html) topic for more information.
+
+The report also includes a detailed summary that shows:
+
+*  *Current version*: the version currently installed.
+*  *Target Version*: the version you want to upgrade to.
+*  *Execution time*: the amount of time the analysis took to build the report (mm:ss).
+*  *Modules that require update*: the percentage of modules that contain compatibility issues and require update.
+*  *Files that require update*: the percentage of files that contain compatibility issues and require update.
+*  *Total critical errors*: the number of critical errors found.
+*  *Total errors*: the number of errors found.
+*  *Total warnings*: the number of warnings found.
+
+See the example below:
+
+```terminal
+ ----------------------------- ------------------
+  Current version               2.4.2
+  Target version                2.4.3
+  Execution time                1m:10s
+  Modules that require update   78.33% (47/60)
+  Files that require update     21.62% (115/532)
+  Total critical issues         35
+  Total errors                  201
+  Total warnings                103
+ ----------------------------- ------------------
+```
+
+{:.bs-callout-warning}
+By default, the {{site.data.var.uct}} exports the report into 2 different formats: `json` and `html`.
+
+#### JSON
+
+The JSON file contains exactly the same information shown on output:
+
+*  List of the identified issues.
+*  Summary of the analysis.
+
+For each encountered issue, the report provides detailed information such as the severity and description of the problem.
+
+{:.bs-callout-info}
+The default path for the output folder is `var/output/[TIME]-results.json`.
 
 To export this report into a different output folder, run:
 
 ```bash
-bin/uct upgrade:check <dir> --output[=OUTPUT]
+bin/uct upgrade:check <dir> --json-output-path[=JSON-OUTPUT-PATH]
 ```
 
 Where arguments are as follows:
 
 *  `<dir>`: {{site.data.var.ee}} installation directory.
-*  `[=OUTPUT]`: Path directory to export the `.json` output file.
+*  `[=JSON-OUTPUT-PATH]`: Path directory to export the `.json` output file.
+
+#### HTML
+
+The HTML file will also contain the list of identified issues and the summary of the analysis. But on top of this, it will include 4 different charts that makes the report more visually understandable:
+
+*  *Modules by issue severity*: shows a severity distribution by modules.
+*  *Files by issue severity*: shows a severity distribution by files.
+*  *Modules ordered by total number of issues*: shows the 10 most compromised modules taking into account warnings, errors and critical errors.
+*  *Modules with relative sizes and issues*: The more files a module contains, the bigger its circle. The more issues a module has, the more red its circle appears.
+
+These charts will allow you to identify the parts are most compromised and the ones that require more work to perform the upgrade to a later version with just a glance.
+
+![HTML report - Summary](img/uct-html-summary.png){:height="80%" width="80%"}
+
+![HTML report - Details](img/uct-html-details.png){:height="80%" width="80%"}
 
 {:.bs-callout-info}
-The default path for the output folder is `var/output/[TIME]-results.json`.
+The default path for the output folder is `var/output/[TIME]-results.html`.
+
+To export this report into a different output folder run:
+
+```bash
+bin/uct upgrade:check <dir> --html-output-path[=HTML-OUTPUT-PATH]
+```
+
+Where arguments are as follows:
+
+*  `<dir>`: {{site.data.var.ee}} installation directory.
+*  `[=HTML-OUTPUT-PATH]`: Path directory to export the `.html` output file.
 
 ### Use the `--ignore-current-version-compatibility-issues` option
 
@@ -108,7 +185,7 @@ bin/uct upgrade:check --ignore-current-version-compatibility-issues <dir>
 ```
 
 {:.bs-callout-info}
-This applies only to PHP API validations. Core code validations are compared only with the same version.
+This applies only to PHP API validations.
 
 ### Vanilla installation
 
@@ -127,14 +204,15 @@ To return a list of the {{site.data.var.uct}} available commands, run:
 ```bash
 bin/uct list
 ```
+
 This `list` commands returns the following:
 
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ## Use the `core:code:changes` command
 
@@ -158,12 +236,12 @@ There are some limitations when running this command:
 
 Available `--help` options for the `core:code:changes` command:
 
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ## Version
 
@@ -177,7 +255,7 @@ bin/uct upgrade:check <dir> -c 2.4.3
 
 Where:
 
-*  -c, --coming-version[=COMING-VERSION]: The {{site.data.var.ee}} targeted version.
+*  `-c, --coming-version[=COMING-VERSION]`: The {{site.data.var.ee}} targeted version.
 
 There are some limitations when running the previous command:
 
@@ -205,12 +283,12 @@ You must have running `instance before` and `instance after` the upgrade.
 
 Available `--help` options for the `graphql:compare` command:
 
-*  -h, —-help: Display help for that specific command. If no command is provided, `list` command is the default result.
-*  -q, —-quiet: Do not outputs any message while executing the command.
-*  -v, —-version: Display app version.
-*  —-ansi, —-no-ansi: Enable ANSI output.
-*  -n, —-no-interaction: Do not ask any interactive question while executing the command.
-*  -v, --vv, --vvv, —-verbose: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
+*  `-h, --help`: Display help for that specific command. If no command is provided, `list` command is the default result.
+*  `-q, --quiet`: Do not outputs any message while executing the command.
+*  `-v, --version`: Display app version.
+*  `--ansi, --no-ansi`: Enable ANSI output.
+*  `-n, --no-interaction`: Do not ask any interactive question while executing the command.
+*  `-v, --vv, --vvv, --verbose`: Increase verbosity of output communications. 1 for normal output, 2 for verbose output, and 3 for DEBUG output.
 
 ### Example with a list of critical issues, errors, and warnings for GraphQL
 
@@ -219,79 +297,11 @@ Available `--help` options for the `graphql:compare` command:
  *   [WARNING] OPTIONAL_INPUT_FIELD_ADDED: An optional field sku on input type ProductAttributeSortInput was added.
 ```
 
-See [Developer information]({{site.baseurl}}/upgrade-compatibility-tool/developer.html) for more information.
+See [Developer information](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/upgrade-compatibility-tool/developer.html) for more information.
 
-### Full report
+## Run {{site.data.var.uct}} via PhpStorm plugin
 
-You can also get a full report containing both _PHP-related_ errors and GraphQL. In this case, you must provide at least the following options:
-
-*  `--schema1=SCHEMA1`: Endpoint URL for the existing installation.
-*  `--schema2=SCHEMA2`: Endpoint URL for the vanilla installation.
-*  `<dir>`: {{site.data.var.ee}} installation directory.
-
-> Example:
-
-```bash
-bin/uct upgrade:check --schema1=https://domain1.com/graphql --schema2=https://domain2.com/graphql -c 2.4.3 <dir>
-```
-
-## Example with a list of critical issues, errors, and warnings
-
-```terminal
-File: /app/code/Custom/CatalogExtension/Controller/Index/Index.php
-------------------------------------------------------------------
-
- *   [ERROR] Line 84: Used nonexistent or non Magento API interface 'Magento\Catalog\Model\ProductRepositoryInterface'
- *   [WARNING] Line 6: Importing Magento @deprecated class 'Magento\Catalog\Model\ProductRepository'
-```
-
-The report also includes a detailed summary:
-
-*  *Installed Version*: the version currently installed.
-*  *{{site.data.var.ee}} Version*: the version you want to upgrade to.
-*  *Running time*: amount of time the analysis took to build the report (mm:ss).
-*  *{{site.data.var.ee}} checked modules*: amount of checked modules.
-*  *{{site.data.var.ee}} core checked modules*: amount of core checked modules.
-*  *{{site.data.var.ee}} core modified files*: amount of core modified file.
-*  *{{site.data.var.ee}} % core modified files*: percentage of core modified files.
-*  *PHP errors found*: amount of PHP errors.
-*  *PHP warnings found*: amount of PHP warnings.
-*  *GraphQL errors found*: amount of GraphQL errors.
-*  *GraphQL warnings found*: amount of GraphQL warnings.
-*  *Total errors found*: total amount of errors found.
-*  *Total warnings found*: total amount of warnings found.
-*  *Complexity score*: a figure that indicates how difficult is to upgrade from the current version to the new one.
-
-The lower this number is, the easier is to perform the upgrade.
-
-See the [Error message reference]({{site.baseurl}}/upgrade-compatibility-tool/errors.html) topic for more information.
-
-## Example of a general summary report
-
-```terminal
- ------------------------ --------
-  Installed version        2.4.2
-  {{site.data.var.ee}} version   2.4.3
-  Running time             0m:48s
-  Checked modules          14
-  Core checked modules     0
-  Core modified files      0
-  % core modified files    0.00
-  PHP errors found         109
-  PHP warnings found       0
-  GraphQL errors found     0
-  GraphQL warnings found   0
-  Total errors found       109
-  Total warnings found     0
-  Complexity score         218
- ------------------------ --------
-```
-
-Regarding the GraphQL schema compatibility comparison, the output would be very similar:
-
-## Run {{site.data.var.uct}} via PHPstorm plugin
-
-You can run the {{site.data.var.uct}} with a run configuration via the PHPstorm plugin. See the [Upgrade Compatibility Tool Run Configuration]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpstorm/uct-run-configuration.html) topic for more information.
+You can run the {{site.data.var.uct}} with a run configuration via the PhpStorm plugin. See the [{{site.data.var.uct}} Run Configuration]({{site.baseurl}}/guides/v2.3/ext-best-practices/phpstorm/uct-run-configuration.html) topic for more information.
 
 ## Troubleshooting
 
@@ -306,7 +316,7 @@ If after running this command:
 bin/uct upgrade:check INSTALLATION_DIR -c M2_VERSION
 ```
 
-The only output is `Upgrade compatibility tool`:
+The only output is `{{site.data.var.uct}}`:
 
 ```terminal
 bin/uct upgrade:check /var/www/project/magento/ -c 2.4.1
