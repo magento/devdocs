@@ -13,7 +13,7 @@ The Site Wide Analysis Tool provides 24/7 real-time performance monitoring, repo
 {:.bs-callout-info}
 See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about enabling the Site Wide Analysis Tool and generating reports.
 
-If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool.
+If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool. You do not need to install the agent on {{ site.data.var.ece }} projects.
 
 ## Architecture
 
@@ -180,7 +180,7 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    shasum -a 512 -c launcher.checksum
    ```
 
-1. Generate an `.env` configuration file with the following properties.
+1. Create the `swat-agent.env` file with the following contents.
 
    ```config
    cat <<EOT >> /path/to/swat-agent.env
@@ -254,7 +254,7 @@ We recommend configuring the agent to run as a service. If you have limited acce
    WantedBy=multi-user.target
    ```
 
-   Copy values from the `.env` file that was generated during installation.
+   Make sure that value for the `EnvrionmentFile` property matches the path to the `swat-agent.env` file that was created during installatio.
 
 1. Launch the service.
 
