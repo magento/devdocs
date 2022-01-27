@@ -2,7 +2,7 @@
 group: web-api
 title: API security
 functional_areas:
-- Integration
+  - Integration
 ---
 
 This topic describes best practices for [API security](https://owasp.org/www-project-api-security/).
@@ -15,7 +15,16 @@ Imposing restrictions on the size and number of resources that a user can reques
 -  REST and GraphQL queries that allow paginated results can be limited to a maximum number of items per page. When enabled, the default maximum is 300.
 -  REST queries that allow paginated results can have a default number of items per page imposed. When enabled, the default maximum is 20.
 
-By default, these input limits are disabled but can be enabled via admin UI system configuration and also via the command line.
+By default, these input limits are disabled, but you can use the following methods to enable them:
+
+-  Set the values in the [Admin](https://docs.magento.com/user-guide/configuration/services/magento-web-api.html).
+-  Run the [`bin/magento config:set` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set).
+-  Add entries to the [`env.php` file]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html#system).
+-  Set [environment variables]({{ page.baseurl }}/config-guide/deployment/pipeline/example/environment-variables.html).
+
+This topic discusses the Admin and command line options.
+
+When input limiting has been enabled, the system uses the default value for each limitation listed above. You can also configure custom values.
 
 Please note that while there are some simple examples for configuring these values via CLI below, all of the values can be [configured per website and per store view]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set) in additional to being configurable globally. for more details. In addition, these values can also be configure [via `env.php`]({{ page.baseurl }}
 /config-guide/prod/config-reference-configphp.html#system) as well as via [environment variables]({{ page.baseurl }}/config-guide/deployment/pipeline/example/environment-variables.html).
@@ -33,7 +42,9 @@ To enable with the CLI, run one or both of the following commands:
 bin/magento config:set webapi/validation/input_limit_enabled 1
 ```
 
-Once input limiting has been enabled, the default values for each limitation listed above will be used unless more specific limits are configured (such as via admin UI or CLI). However, you can also customize the default limits programmatically using [class constructor arguments]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html).
+```bash
+bin/magento config:set graphql/validation/input_limit_enabled 1
+```
 
 ### Maximum parameter inputs
 
