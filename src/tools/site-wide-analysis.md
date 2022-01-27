@@ -4,28 +4,28 @@ group: tools
 ee_only: true
 ---
 
-The Site Wide Analysis Tool provides 24/7 real-time performance monitoring, reports, and recommendations to ensure the security and operability of {{ site.data.var.ece }} installations. It also does the following:
+The Site-Wide Analysis Tool provides 24/7 real-time performance monitoring, reports, and recommendations to ensure the security and operability of {{ site.data.var.ece }} installations. It also does the following:
 
 -  Provides information about available and installed patches
 -  Provides information about third-party extensions
 -  Provides detailed information about your {{ site.data.var.ee }} installation
 
 {:.bs-callout-info}
-See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about enabling the Site Wide Analysis Tool and generating reports.
+See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about enabling the Site-Wide Analysis Tool and generating reports.
 
 If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool. You do not need to install the agent on {{ site.data.var.ece }} projects.
 
 ## Architecture
 
-The following diagram describes the Site Wide Analysis Tool architecture:
+The following diagram describes the Site-Wide Analysis Tool architecture:
 
-![Architectural diagram of the Site Wide Analysis Tool]({{ site.baseurl }}/common/images/tools/swat-agent.svg)
+![Architectural diagram of the Site-Wide Analysis Tool]({{ site.baseurl }}/common/images/tools/swat-agent.svg)
 
 ## Agent
 
-The Site Wide Analysis Tool Agent allows you to use the Site Wide Analysis Tool for on-premises installations of {{ site.data.var.ee }}.
+The Site-Wide Analysis Tool Agent allows you to use the Site-Wide Analysis Tool for on-premises installations of {{ site.data.var.ee }}.
 
-The Site Wide Analysis Tool Agent collects application and business data, analyzes it, and provides additional insights about the health of your installation so that you can improve customer experience. It monitors your application and helps you identify performance, security, availability, and application issues.
+The Site-Wide Analysis Tool Agent collects application and business data, analyzes it, and provides additional insights about the health of your installation so that you can improve customer experience. It monitors your application and helps you identify performance, security, availability, and application issues.
 
 Installing the agent requires the following steps:
 
@@ -136,7 +136,7 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 1. Download the binary file and unpack it.
 
    {:.bs-callout-info}
-   To use the Site Wide Analysis Tool, you must first read and accept the Terms of Use that are presented when you [access the dashboard](#access-the-dashboard) from the {{ site.data.var.ee }} Admin.
+   To use the Site-Wide Analysis Tool, you must first read and accept the Terms of Use that are presented when you [access the dashboard](#access-the-dashboard) from the {{ site.data.var.ee }} Admin.
 
    For the __AMD64__ architecture:
 
@@ -256,7 +256,7 @@ We recommend configuring the agent to run as a service. If you have limited acce
    WantedBy=multi-user.target
    ```
 
-   Make sure that value for the `EnvrionmentFile` property matches the path to the `swat-agent.env` file that was created during installatio.
+   Make sure that the value for the `EnvironmentFile` property matches the path to the `swat-agent.env` file that was created during installation.
 
 1. Launch the service.
 
@@ -380,10 +380,10 @@ Property | Description |
 
 ## Access the dashboard
 
-To get access to Site Wide Analysis Tool user interface:
+To get access to Site-Wide Analysis Tool user interface:
 
 1. Go to your {{ site.data.var.ee }} Admin.
-1. Click **Reports** > **System Insights** > **Site Wide Analysis Tool**.
+1. Click **Reports** > **System Insights** > **Site-Wide Analysis Tool**.
 
 If you encounter issues or get an application error, you may need to install the MDVA-38526 patch.
 
