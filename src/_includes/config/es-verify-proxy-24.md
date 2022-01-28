@@ -13,7 +13,7 @@ Enter the following command:
 curl -i http://<hostname, ip, or localhost>:<proxy port>/_cluster/health
 ```
 
-For example, if you enter the command on the Elasticsearch/Opensearch server and your proxy uses port 8080:
+For example, if you enter the command on the Elasticsearch/OpenSearch server and your proxy uses port 8080:
 
 ```bash
 curl -i http://localhost:8080/_cluster/health
