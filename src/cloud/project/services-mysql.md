@@ -13,12 +13,12 @@ The `mysql` service provides persistent data storage based on [MariaDB](https://
 {% include install/maria-db.md %}
 
 {:.bs-callout-warning}
-Be careful when upgrading MariaDB from version 10.1 to 10.2.
-MariaDB 10.1 is the last version that supports XtraDB as the storage engine. Version 10.2 uses InnoDB for the storage engine. Once you upgrade from 10.1 to 10.2, you cannot rollback the change. {{site.data.var.ee}} supports both storage engines; however, you must check extensions and other systems used by your project to make sure they are compatible with MariaDB 10.2. Read about this [backwards incompatible change](https://mariadb.com/kb/en/upgrading-from-mariadb-101-to-mariadb-102/#incompatible-changes-between-101-and-102).
+Be careful when upgrading MariaDB from version 10.1 to 10.2. MariaDB 10.1 is the last version that supports _XtraDB_ as the storage engine.  MariaDB 10.2 uses _InnoDB_ for the storage engine. After you upgrade from 10.1 to 10.2, you cannot roll back the change. {{site.data.var.ee}} supports both storage engines; however, you must check extensions and other systems used by your project to make sure they are compatible with MariaDB 10.2. See [Incompatible Changes Between 10.1 and 10.2](https://mariadb.com/kb/en/upgrading-from-mariadb-101-to-mariadb-102/#incompatible-changes-between-101-and-102).
 
 {% include cloud/service-config-integration-starter.md %}
 
-## Enable MySQL
+{:.procedure}
+To enable MySQL:
 
 1. Add the required name, type, and disk value (in MB) to the `.magento/services.yaml` file.
 
@@ -41,21 +41,38 @@ MariaDB 10.1 is the last version that supports XtraDB as the storage engine. Ver
 1. Add, commit, and push your code changes.
 
    ```bash
-   git add -A && git commit -m "Enable mysql service" && git push   origin <branch-name>
+   git add -A && git commit -m "Enable mysql service" && git push origin <branch-name>
    ```
 
 1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships).
 
    {%include cloud/tip-change-installed-service-version.md%}
 
-## Set up multiple database users
+## Configure MySQL database
 
-Optionally, you can set up multiple databases and multiple users with different permissions.
+You have the following options when configuring the MySQL database:
 
-An _endpoint_ is a set of credentials (or users) with specific privileges. By default, there is one endpoint named `mysql` that has administrator access to all defined databases. To set up multiple database users, you must define multiple endpoints in the services.yaml file and declare the relationships in the `.magento.app.yaml` file. For Pro Staging and Production environments, submit a Support ticket to request the additional user.
+-  **`schemas`**—A schema defines a database. The default schema is the `main` database.
+-  **`endpoints`**—Each endpoint represents a credential with specific privileges. The default endpoint is `mysql`, which has `admin` access to the `main` database.
+-  **`properties`**—Properties are used to define additional database configurations.
 
-{:.bs-callout-warning}
-You cannot use multiple _databases_ with {{site.data.var.ee}}, but you **can** create multiple endpoints to restrict access to the `main` database.
+The following is a basic example configuration in the `.magento/services.yaml` file:
+
+```yaml
+mysql:
+    type: mysql:10.4
+    disk: 5120
+    configuration:
+        properties:
+            optimizer_switch: "rowid_filter=off"
+            optimizer_use_condition_selectivity: 1
+```
+
+### Set up multiple database users
+
+Optionally, you can set up multiple users with different permissions for accessing the `main` database.
+
+By default, there is one endpoint named `mysql` that has administrator access to the database. To set up multiple database users, you must define multiple endpoints in the `services.yaml` file and declare the relationships in the `.magento.app.yaml` file. For Pro Staging and Production environments, submit a Support ticket to request the additional user.
 
 Use a nested array to define the endpoints for specific user access. Each endpoint can designate access to one or more schemas (databases) and different levels of permission on each.
 
@@ -65,11 +82,11 @@ The valid permission levels are:
 -  `rw`: SELECT queries and INSERT, UPDATE, and DELETE queries are allowed.
 -  `admin`: All queries are allowed, including DDL queries (CREATE TABLE, DROP TABLE, and so on).
 
-If no endpoints are defined, a single endpoint named `mysql` has `admin` access to the `main` database. For example:
+For example:
 
 ```yaml
 mysql:
-    type: mysql:10.3
+    type: mysql:10.4
     disk: 5120
     configuration:
         schemas:
@@ -85,6 +102,9 @@ mysql:
             importer:
                 privileges:
                     main: rw
+        properties:
+            optimizer_switch: "rowid_filter=off"
+            optimizer_use_condition_selectivity: 1
 ```
 
 In the preceding example, the `admin` endpoint provides admin-level access to the `main` database, the `reporter` endpoint provides read-only access, and the `importer` endpoint provides read-write access, which means:
