@@ -7,15 +7,18 @@ functional_areas:
   - Setup
 ---
 
-As of Magento 2.4, all installations must be configured to use [Elasticsearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
+As of Magento 2.4, all installations must be configured to use [Elasticsearch][] or [Opensearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
+
+{:.bs-callout-info}
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. Instructions on [Migrating ElasticSearch to OpenSearch] are available.
 
 ## Supported versions {#es-spt-versions}
 
-You must install and configure Elasticsearch before upgrading to Magento 2.4.x.
+You must install and configure Elasticsearch/OpenSearch before upgrading to Magento 2.4.x.
 
 Refer to the [System Requirements][] for specific version information.
 
-Magento does not support Elasticsearch 2.x, 5.x, and 6.x.
+Magento 2.4.4 only supports ElasticSearch 7.x and OpenSearch 1.x
 
 ## Recommended configuration {#es-arch}
 
@@ -46,15 +49,15 @@ The preceding diagram shows:
 
 Search requests are processed as follows:
 
-1. A search request from a user is received by the Magento web server, which forwards it to the Elasticsearch server.
+1. A search request from a user is received by the Magento web server, which forwards it to the Elasticsearch/OpenSearch server.
 
-   You configure the Elasticsearch to connect to the proxy's host and port. We recommend the web server's SSL port (by default, 443).
+   You configure the Elasticsearch/OpenSearch to connect to the proxy's host and port. We recommend the web server's SSL port (by default, 443).
 
-1. The Elasticsearch web server (listening on port 443) proxies the request to the Elasticsearch server (by default, it listens on port 9200).
+1. The Elasticsearch/OpenSearch web server (listening on port 443) proxies the request to the Elasticsearch/OpenSearch server (by default, it listens on port 9200).
 
-1. Access to Elasticsearch is further protected by HTTP Basic authentication. For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid username and password.
+1. Access to Elasticsearch/OpenSearch is further protected by HTTP Basic authentication. For any request to reach Elasticsearch/OpenSearch, it must travel over SSL *and* provide a valid username and password.
 
-1. Elasticsearch processes the search request.
+1. Elasticsearch/OpenSearch processes the search request.
 
 1. Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 
@@ -71,11 +74,11 @@ The tasks discussed in this section require the following:
 
 {% include config/install-java8.md %}
 
-### Install Elasticsearch  {#es-install-es7}
+### Install Elasticsearch or OpenSearch  {#es-install-es7}
 
-Follow [Installing Elasticsearch][] for your platform-specific steps.
+Follow [Installing Elasticsearch][] or [Installing OpenSearch][] for your platform-specific steps.
 
-To verify that Elasticsearch is working, enter the following command on the server on which it is running:
+To verify that Elasticsearch/OpenSearch is working, enter the following command on the server on which it is running:
 
 ```bash
 curl -XGET '<host>:9200/_cat/health?v&pretty'
@@ -107,12 +110,16 @@ For additional information, see [Elasticsearch documentation][]
 [Configure nginx and Elasticsearch]: {{page.baseurl}}/install-gde/prereq/es-config-nginx.html
 [Configure Apache and Elasticsearch]: {{page.baseurl}}/install-gde/prereq/es-config-apache.html
 [Configure Elasticsearch stopwords]: {{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html
+[Migrating ElasticSearch to OpenSearch]: {{page.baseurl}}/install-gde/prereq/os-migration.html
 [Elasticsearch]: https://www.elastic.co
+[OpenSearch]: https://opensearch.org/
 [Elasticsearch clustering documentation]: https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html
 [Elasticsearch Ubuntu documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
 [Configuring Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html
 [Upgrading Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html
 [Full cluster restart upgrade]: https://www.elastic.co/guide/en/elasticsearch/reference/current/restart-upgrade.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+[OpenSearch documentation]: https://opensearch.org/docs/latest/opensearch/index/
 [Installing Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
+[Installing OpenSearch]: https://opensearch.org/docs/latest/opensearch/install/index/
 [System Requirements]: {{page.baseurl}}/install-gde/system-requirements.html

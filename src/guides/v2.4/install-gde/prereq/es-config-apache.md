@@ -12,6 +12,8 @@ functional_areas:
 {% include config/es-webserver-overview.md %}
 
 ## Set up a proxy {#es-apache-proxy}
+{:.bs-callout-info}
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. Instructions on [Migrating ElasticSearch to OpenSearch] are available.
 
 This section discusses how to configure Apache as an *unsecure* proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with Apache](#es-ws-secure-apache).
 

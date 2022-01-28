@@ -44,7 +44,7 @@ Follow the guidelines described in the following sections to recover from Magent
 
 ## If your search engine is `mysql`
 
-Before Magento 2.4, MySQL was the default catalog search engine, but MySQL is no longer supported in this capacity. Now, you must install and configure Elasticsearch as your search engine before upgrading to 2.4.
+Before Magento 2.4, MySQL was the default catalog search engine, but MySQL is no longer supported in this capacity. Now, you must install and configure Elasticsearch or OpenSearch as your search engine before upgrading to 2.4.
 
 Use the following resources to help guide you through this process:
 
@@ -53,7 +53,7 @@ Use the following resources to help guide you through this process:
 *  Configure Elasticsearch to work with [nginx]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/es-config-nginx.html) or [Apache]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/es-config-apache.html)
 *  [Configure Magento to use Elasticsearch]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/configure-magento.html)
 
-After you configure Elasticsearch and reindex, you are ready to upgrade to Magento 2.4.
+After you configure Elasticsearch/Opensearch and reindex, you are ready to upgrade to Magento 2.4.
 
 ## If your search engine is `elasticsearch`
 
@@ -61,14 +61,14 @@ A value of `elasticsearch` indicates your down-level version of Magento is confi
 
 You must perform the following tasks before upgrading to Magento 2.4:
 
-1. Update Elasticsearch. We recommend updating to Elasticsearch 7.x. Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html) for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production. Depending on your current version of Elasticsearch, a full cluster restart may or may not be required.
+1. Update Elasticsearch. We recommend updating to Elasticsearch 7.x or OpenSearch 1.x. Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html) for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production. Depending on your current version of Elasticsearch, a full cluster restart may or may not be required.
 
    {:.bs-callout-info}
    Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Development Kit (JDK)]({{page.baseurl}}/install-gde/prereq/elasticsearch.html#prereq-java) to check which version of JDK is installed.
 
 1. [Configure Magento to use Elasticsearch]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/configure-magento.html) and reindex.
 
-After you configure Elasticsearch and reindex, you are ready to upgrade to Magento 2.4.
+After you configure Elasticsearch/OpenSearch and reindex, you are ready to upgrade to Magento 2.4.
 
 {:.ref-header}
 Related topics
