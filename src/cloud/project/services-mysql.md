@@ -68,6 +68,8 @@ mysql:
             optimizer_use_condition_selectivity: 1
 ```
 
+The `properties` in the above example modifies the default `optimizer` settings as [recommended in the Performance Best Practices guide]({{ site.baseurl }}{{ site.gdeurl }}/performance-best-practices/configuration.html#indexers).
+
 ### Set up multiple database users
 
 Optionally, you can set up multiple users with different permissions for accessing the `main` database.
