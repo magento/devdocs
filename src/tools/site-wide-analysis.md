@@ -112,6 +112,9 @@ After the agent is installed, it will self-update when a new release is availabl
    bash -c "$(wget -qO - https://raw.githubusercontent.com/magento-swat/install-agent-helpers/main/install.sh)"
    ```
 
+   {:.bs-calout-tip}
+   We recommend installing the agent outside of your root {{ site.data.var.ee }} project directory.
+
 1. Verify installation.
 
    ```bash
