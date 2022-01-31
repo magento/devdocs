@@ -188,7 +188,6 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 1. Create the `swat-agent.env` file with the following contents.
 
    ```config
-   cat <<EOT >> /path/to/swat-agent.env
    SWAT_AGENT_PREFERRED_APPLICATION_NAME=<Test Inc>
    SWAT_AGENT_APP_NAME=<APP_NAME>
    SWAT_AGENT_APPLICATION_PHP_PATH=php
@@ -206,7 +205,6 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    SWAT_AGENT_LOG_LEVEL=error
    SWAT_AGENT_ENABLE_AUTO_UPGRADE=true
    SWAT_AGENT_IS_SANDBOX=false
-   EOT
    ```
 
    {:.bs-callout-info}
