@@ -363,7 +363,7 @@ The following table provides descriptions and recommended values for all propert
 
 Property | Description |
 ---------|-------------|
-`SWAT_AGENT_APP_NAME` | Application name provided to you by Adobe
+`SWAT_AGENT_APP_NAME` | Company or site name that you provided when installing the agent
 `SWAT_AGENT_APPLICATION_PHP_PATH` | Path to your PHP CLI interpreter (usually `/usr/bin/php`)
 `SWAT_AGENT_APPLICATION_MAGENTO_PATH` | Root directory where your {{ site.data.var.ee }} application is installed (usually `/var/www/html`)
 `SWAT_AGENT_APPLICATION_DB_USER` | Database user for your {{ site.data.var.ee }} installation
