@@ -135,7 +135,11 @@ After the agent is installed, it will self-update when a new release is availabl
 
 If you do not want to use our [shell script](https://github.com/magento-swat/install-agent-helpers/blob/main/install.sh) to install the agent, then you must manually install it by following these steps:
 
-1. Select and create a directory where you want to download the agent.
+1. Create a directory where you want to download the agent.
+
+   {:.bs-calout-tip}
+   We recommend installing the agent outside of your root {{ site.data.var.ee }} project directory.
+
 1. Download the binary file and unpack it.
 
    {:.bs-callout-info}
