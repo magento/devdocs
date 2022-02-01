@@ -91,17 +91,17 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 #### `consumer` element
 {:.no_toc}
 
-| Attribute                     | Description |
-| ----------------------------- | ----------- |
-| name (required)               | The name of the consumer.  |
-| queue (required)              | Defines the queue name to send the message to.  |
-| handler                       | Specifies the class and method that processes the message. The value must be specified in the format `<Vendor>\Module\<ServiceName>::<methodName>`.|
-| consumerInstance              | The Magento class name that consumes the message |
-| connection                    | For AMQP connections, the connection name must match the `connection` attribute in the `queue_topology.xml` file. Otherwise, the connection name must be `db`.  |
-| maxMessages                   | Specifies the maximum number of messages to consume.|
-| maxIdleTime                   | Defines the maximum waiting time in seconds for a new message from the queue. If no message was handled within this period of time, the consumer exits. Default value: `null`|
-| sleep                         | Specifies time in seconds to sleep before checking if a new message is available in the queue. Default value is `null` which equals to 1 second.|
-| onlySpawnWhenMessageAvailable | Boolean value (`1` or `0` only) that identifies whether a consumer should be spawned only if there is available message in the related queue. Default value: `null`|
+| Attribute                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ----------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name (required)               | The name of the consumer.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| queue (required)              | Defines the queue name to send the message to.                                                                                                                                                                                                                                                                                                                                                                                                               |
+| handler                       | Specifies the class and method that processes the message. The value must be specified in the format `<Vendor>\Module\<ServiceName>::<methodName>`.                                                                                                                                                                                                                                                                                                          |
+| consumerInstance              | The Magento class name that consumes the message. Default value: `Magento\Framework\MessageQueue\Consumer`.                                                                                                                                                                                                                                                                                                                                                  |
+| connection                    | Connection is defined dynamically based on deployment configuration of message queue in `env.php`. If AMQP is configured in deployment configuration, AMQP connection is used. Otherwise, db connection is used. If you still want to specify connection type for consumer, keep in mind that for AMQP connections, the connection name must match the `connection` attribute in the `queue_topology.xml` file. Otherwise, the connection name must be `db`. |
+| maxMessages                   | Specifies the maximum number of messages to consume.                                                                                                                                                                                                                                                                                                                                                                                                         |
+| maxIdleTime                   | Defines the maximum waiting time in seconds for a new message from the queue. If no message was handled within this period of time, the consumer exits. Default value: `null`                                                                                                                                                                                                                                                                                |
+| sleep                         | Specifies time in seconds to sleep before checking if a new message is available in the queue. Default value is `null` which equals to 1 second.                                                                                                                                                                                                                                                                                                             |
+| onlySpawnWhenMessageAvailable | Boolean value (`1` or `0` only) that identifies whether a consumer should be spawned only if there is available message in the related queue. Default value: `null`                                                                                                                                                                                                                                                                                          |
 
 {:.bs-callout-info}
 The `maxIdleTime` and `sleep` attributes will be handled only by consumers that were fired with a defined `maxMessages` parameter. The `onlySpawnWhenMessageAvailable` attribute is only checked and validated by the `\Magento\MessageQueue\Model\Cron\ConsumersRunner` class that runs consumer processes with cron.
@@ -154,8 +154,8 @@ The `queue_topology.xml` file defines the message routing rules and declares que
 ```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
-  <exchange name="magento-topic-based-exchange1" type="topic" connection="db">
-    <binding id="topicBasedRouting2" topic="anotherTopic" destinationType="queue" destination="topic-queue1">
+  <exchange name="magento-topic-based-exchange1">
+    <binding id="topicBasedRouting2" topic="anotherTopic" destination="topic-queue1">
         <arguments>
             <!--Not part of our use case, but will be processed if someone specifies them-->
             <argument name="argument1" xsi:type="string">value</argument>
@@ -179,25 +179,25 @@ The `queue_topology.xml` file defines the message routing rules and declares que
 
 | Attribute      | Description |
 | -------------- | ----------- |
- name (required) | A unique ID for the exchange.
- type (required) | Specifies the type of exchange. Must be `topic`.
- connection  (required) | For AMQP connections, a string that identifies the connection.  For MySQL connections, the connection name must be `db`.
- durable | Boolean value indicating whether the exchange is persistent. Non-durable exchanges are purged when the server restarts. The default is `true`.
- autoDelete | Boolean value indicating whether the exchange is deleted when all queues have finished using it. The default is `false`.
- internal | Boolean value. If set to true, the exchange may not be used directly by publishers, but only when bound to other exchanges. The default is `false`.
+name (required) | A unique ID for the exchange.
+type | Specifies the type of exchange. The default value is `topic` because only `topic` type is supported.
+connection | Connection is defined dynamically based on deployment configuration of message queue in `env.php`. If AMQP is configured in deployment configuration, AMQP connection is used. Otherwise, db connection is used. If you still want to specify connection, the connection name must be `amqp` for AMQP. For MySQL connections, the connection name must be `db`.
+durable | Boolean value indicating whether the exchange is persistent. Non-durable exchanges are purged when the server restarts. The default is `true`.
+autoDelete | Boolean value indicating whether the exchange is deleted when all queues have finished using it. The default is `false`.
+internal | Boolean value. If set to true, the exchange may not be used directly by publishers, but only when bound to other exchanges. The default is `false`.
 
 #### `binding` element
 {:.no_toc}
 
 The `binding` element is a subnode of the `exchange` element.
 
-| Attribute      | Description |
-| -------------- | ----------- |
-| id (required)  | A unique ID for this binding. |
-| topic (required)  | The name of a topic. You can specify an asterisk (*) or pound sign (#) as wildcards. These are described below the table.|
-| destinationType (required)  | Must be `queue`. |
-| destination (required)  | Identifies the name of a queue. |
-| disabled       | Determines whether this binding is disabled. The default value is `false`. |
+| Attribute      | Description                                                                                                               |
+| -------------- |---------------------------------------------------------------------------------------------------------------------------|
+| id (required)  | A unique ID for this binding.                                                                                             |
+| topic (required) | The name of a topic. You can specify an asterisk (*) or pound sign (#) as wildcards. These are described below the table. |
+| destinationType  | The default value is `queue`.                                                                                             |
+| destination (required) | Identifies the name of a queue.                                                                                           |
+| disabled       | Determines whether this binding is disabled. The default value is `false`.                                                |
 
 Example topic names that include wildcards:
 
@@ -261,13 +261,13 @@ The `queue_publisher.xml` file defines which connection and exchange to use to p
 #### `connection` element
 {:.no_toc}
 
-The `connection` element is a subnode of the `publisher` element. There must not be more than one enabled active connection to a publisher defined at a time. If you omit the `connection` element, the default connection of `amqp` and exchange `magento` will be used.
+The `connection` element is a subnode of the `publisher` element. There must not be more than one enabled active connection to a publisher defined at a time. If you omit the `connection` element, connection will be defined dynamically based on deployment configuration of message queue in `env.php` and exchange `magento` will be used. If AMQP is configured in deployment configuration, AMQP connection is used. Otherwise, db connection is used.
 
-| Attribute            | Description |
-| -------------------- | ----------- |
-| name (required)      | For AMQP connections, the connection name must match the `connection` attribute in the `queue_topology.xml` file. Otherwise, the connection name must be `db`. |
-| exchange             | The name of the exchange to publish to. The default system exchange name is `magento`. |
-| disabled             | Determines whether this queue is disabled. The default value is `false`. |
+| Attribute | Description                                                                                                                                                                                                                                                                                                                                          |
+| --------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name      | Connection name is defined dynamically based on deployment configuration of message queue in `env.php`. If you still want to specify connection type for publisher, keep in mind that for AMQP connections, the connection name must match the `connection` attribute in the `queue_topology.xml` file. Otherwise, the connection name must be `db`. |
+| exchange  | The name of the exchange to publish to. The default system exchange name is `magento`.                                                                                                                                                                                                                                                               |
+| disabled  | Determines whether this queue is disabled. The default value is `false`.                                                                                                                                                                                                                                                                             |
 
 {:.bs-callout-warning}
 You cannot enable more than one `publisher` for each `topic`.
