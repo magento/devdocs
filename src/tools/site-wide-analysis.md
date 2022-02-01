@@ -4,17 +4,12 @@ group: tools
 ee_only: true
 ---
 
-The Site-Wide Analysis Tool provides 24/7 real-time performance monitoring, reports, and recommendations to ensure the security and operability of {{ site.data.var.ece }} installations. It also does the following:
-
--  Provides information about available and installed patches
--  Provides information about third-party extensions
--  Provides detailed information about your {{ site.data.var.ee }} installation
+The Site-Wide Analysis Tool provides 24/7 real-time performance monitoring, reports, and recommendations to ensure the security and operability of {{ site.data.var.ece }} installations. It also provides detailed information about available and installed patches, third-party extensions, and your {{ site.data.var.ee }} installation.
 
 {:.bs-callout-info}
 See the [user guide](https://docs.magento.com/user-guide/reports/site-wide-analysis-tool.html) for details about enabling the Site-Wide Analysis Tool and generating reports.
 
 If you have an on-premises installation of {{ site.data.var.ee }}, you must install an agent on your infrastructure to use the tool. You do not need to install the agent on {{ site.data.var.ece }} projects.
-
 ## Architecture
 
 The following diagram describes the Site-Wide Analysis Tool architecture:
