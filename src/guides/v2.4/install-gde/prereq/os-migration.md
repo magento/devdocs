@@ -9,7 +9,7 @@ functional_areas:
 
 OpenSearch is an open source fork of Elasticsearch 7.10.2, following Elasticsearch's licensing change.
 
-{{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.4 supports OpenSearch support has been added to Magento 2.4.4. On-premises installations continue to support Elasticsearch, although it is no longer supported for {{ site.data.var.ece }} 2.4.4.
+{{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.4 supports OpenSearch. On-premises installations continue to support Elasticsearch, although it is no longer supported for {{ site.data.var.ece }} 2.4.4.
 
 ## Migrating to OpenSearch
 
