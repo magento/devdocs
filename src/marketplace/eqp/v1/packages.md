@@ -515,9 +515,9 @@ Send the "submit" action for the marketing content to re-publish the product.
 }
 ```
 
-* This is a read-only field. 
-* The **overall** value indicates where the package is in the EQP pipeline.
-* Additional details are provided in the two main EQP areas:
+*  This is a read-only field.
+*  The **overall** value indicates where the package is in the EQP pipeline.
+*  Additional details are provided in the two main EQP areas:
    *  **technical** - Provides the current technical status.
    *  **marketing** - Provides the current marketing status.
 
@@ -570,9 +570,9 @@ PUT /rest/v1/products/packages/:item_id
 
 You can submit a package in either of the following ways:
 
-* A single POST request with all required fields set. You must explicitly indicate that you are submitting for technical and marketing review using the `action` parameter.
-  *  If this package represents a newer version to an already existing extension, then also supply the `sku` parameter.
-* A series of requests, typically in the following order:
+*  A single POST request with all required fields set. You must explicitly indicate that you are submitting for technical and marketing review using the `action` parameter.
+   *  If this package represents a newer version to an already existing extension, then also supply the `sku` parameter.
+*  A series of requests, typically in the following order:
    1. A single POST request with the minimum required fields set and `action` set to `draft` in either `technical`, `marketing`, or both. This request accepts the new package and saves it on the Developer Portal for further updates. It returns a unique `submission_id` for subsequent PUT operations.
    1. One or more PUT requests in which you configure the package parameters. In these requests, set `action` to `draft` in `technical`, `marketing`, or both.
    1. A final PUT request indicating submission for `technical`, `marketing`, or both.
@@ -615,7 +615,7 @@ The following example shows a POST request with all required parameters set for 
     "name" : "One Click Checkout",
     "short_description" : "<Short description here>",
     "long_description" : "<Long description here>",
-    "release_notes" : "<Release notes here>", 
+    "release_notes" : "<Release notes here>",
     "version" : "1.1.5",
     "artifact" : {
       "file_upload_id" : "5c11e656057b42.97931218.5"
@@ -736,13 +736,13 @@ curl -X POST \
 
 The PUT method can be used to update packages in the following states:
 
-* The package is in draft mode for the technical or marketing review; or both.
-* The package has been rejected in either the technical or marketing review; or both.
+*  The package is in draft mode for the technical or marketing review; or both.
+*  The package has been rejected in either the technical or marketing review; or both.
    You must fix these issues and re-submit the package.
-* The package has been released to the Commerce Marketplace.
-* The package was removed from Commerce Marketplace by the developer and needs to be re-published.
-* The package can be recalled while in the EQP pipeline.
-* After a package has been released to the Commerce Marketplace, you can update marketing information only.
+*  The package has been released to the Commerce Marketplace.
+*  The package was removed from Commerce Marketplace by the developer and needs to be re-published.
+*  The package can be recalled while in the EQP pipeline.
+*  After a package has been released to the Commerce Marketplace, you can update marketing information only.
    Changing marketing information causes the package to be placed in marketing review.
    The package continues to be live on the marketplace, and after the marketing approval,
    the updated fields will be published to the store.
