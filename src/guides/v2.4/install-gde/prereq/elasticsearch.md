@@ -1,5 +1,5 @@
 ---
-title: Elasticsearch
+title: Search engine prerequisites
 functional_areas:
   - Configuration
   - Search
@@ -7,18 +7,16 @@ functional_areas:
   - Setup
 ---
 
-As of Magento 2.4, all installations must be configured to use [Elasticsearch][] or [Opensearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
+As of {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4, all installations must be configured to use [Elasticsearch][] or [OpenSearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
 
 {:.bs-callout-info}
-OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. Instructions on [Migrating ElasticSearch to OpenSearch] are available.
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. [Migrate ElasticSearch to OpenSearch]({{page.baseurl}}/install-gde/prereq/os-migration.html) provides guidance on switching to OpenSearch.
 
 ## Supported versions {#es-spt-versions}
 
-You must install and configure Elasticsearch/OpenSearch before upgrading to Magento 2.4.x.
+You must install and configure either Elasticsearch or OpenSearch before installing {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.4.
 
 Refer to the [System Requirements][] for specific version information.
-
-Magento 2.4.4 only supports ElasticSearch 7.x and OpenSearch 1.x
 
 ## Recommended configuration {#es-arch}
 
@@ -27,21 +25,21 @@ We recommend the following:
 *  [Configure nginx and Elasticsearch][]
 *  [Configure Apache and Elasticsearch][]
 
-## Elasticsearch on different hosts {#es-host}
+## Installation location {#es-host}
 
 All of the following tasks we discuss assume you have configured your system this way.
 
-![Magento ElasticSearch diagram]({{ site.baseurl }}/common/images/elastic_config.png){:width="500px"}
+![Search Engine diagram]({{ site.baseurl }}/common/images/search-engine-config.svg){:width="500px"}
 
 The preceding diagram shows:
 
-*  The Magento application and Elasticsearch are installed on different hosts.
+*  The Commerce application and the search engine are installed on different hosts.
 
-   Running on separate hosts requires proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch clustering documentation][].)
+   Running on separate hosts requires proxying to work. (Clustering the search engine is beyond the scope of this guide, but you can find more information in the [Elasticsearch clustering documentation][].)
 
 *  Each host has its own web server; the web servers do not have to be the same.
 
-   For example, the Magento application can run Apache and Elasticsearch can run nginx.
+   For example, the Commerce application can run Apache and the search engine can run nginx.
 
 *  Both web servers use Transport Layer Security (TLS).
 
@@ -49,19 +47,19 @@ The preceding diagram shows:
 
 Search requests are processed as follows:
 
-1. A search request from a user is received by the Magento web server, which forwards it to the Elasticsearch/OpenSearch server.
+1. A search request from a user is received by the Commerce web server, which forwards it to the search engine server.
 
-   You configure the Elasticsearch/OpenSearch to connect to the proxy's host and port. We recommend the web server's SSL port (by default, 443).
+   You configure the search engine to connect to the proxy's host and port. We recommend the web server's SSL port (by default, 443).
 
-1. The Elasticsearch/OpenSearch web server (listening on port 443) proxies the request to the Elasticsearch/OpenSearch server (by default, it listens on port 9200).
+1. The search engine web server (listening on port 443) proxies the request to the search engine server (by default, it listens on port 9200).
 
-1. Access to Elasticsearch/OpenSearch is further protected by HTTP Basic authentication. For any request to reach Elasticsearch/OpenSearch, it must travel over SSL *and* provide a valid username and password.
+1. Access to the search engine is further protected by HTTP Basic authentication. For any request to reach the search engine, it must travel over SSL *and* provide a valid username and password.
 
-1. Elasticsearch/OpenSearch processes the search request.
+1. The search engine processes the request.
 
 1. Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 
-## Prerequisites and Elasticsearch {#es-prereq}
+## Prerequisites {#es-prereq}
 
 The tasks discussed in this section require the following:
 
@@ -74,11 +72,11 @@ The tasks discussed in this section require the following:
 
 {% include config/install-java8.md %}
 
-### Install Elasticsearch or OpenSearch  {#es-install-es7}
+### Install the search engine  {#es-install-es7}
 
-Follow [Installing Elasticsearch][] or [Installing OpenSearch][] for your platform-specific steps.
+Follow [Installing Elasticsearch][] or [Install and configure OpenSearch][] for your platform-specific steps.
 
-To verify that Elasticsearch/OpenSearch is working, enter the following command on the server on which it is running:
+To verify that Elasticsearch is working, enter the following command on the server on which it is running:
 
 ```bash
 curl -XGET '<host>:9200/_cat/health?v&pretty'
@@ -89,6 +87,16 @@ A message similar to the following is displayed:
 ```terminal
 epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks
 1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
+```
+
+To verify Opensearch is working, enter the following commands:
+
+```bash
+curl -XGET https://<host>:9200 -u 'admin:admin' --insecure
+```
+
+```bash
+curl -XGET https://<host>:9200/_cat/plugins?v -u 'admin:admin' --insecure
 ```
 
 ## Upgrading Elasticsearch {#es-upgrade6}

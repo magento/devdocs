@@ -14,13 +14,13 @@ functional_areas:
 You must first establish an OpenSearch instance in AWS.
 Read [Creating and managing Amazon OpenSearch Service domains][] for detailed instructions.
 
-## Get data to AWS OS
+## Get data to AWS OpenSearch
 
 Once everything is prepared on AWS, it is time to populate it with data.
 
 For smaller installations, we recommended that you create new indices directly on the AWS instance for the following reasons:
 
-*  It is a rather quick operation to recreate the indices.
+*  Recreating the indices is a quick operation.
 *  There may be version incompatibilities between the old instance and the AWS instance, and these can be avoided by building directly on the AWS instance.
 
 Larger installations may want to consider migrating their data indices from the existing instance to AWS. While this may reduce downtime, there is still a small risk of incompatibility issues due to differing versions between the old ElasticSearch server and AWS.
