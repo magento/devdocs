@@ -123,9 +123,9 @@ When the AsyncOrder module is enabled, the following REST endpoints and GraphQL 
 
 **REST:**
 
--  `/V1/carts/mine/payment-information`
--  `/V1/guest-carts/:cartId/payment-information`
--  `/V1/negotiable-carts/:cartId/payment-information`
+-  `POST /V1/carts/mine/payment-information`
+-  `POST /V1/guest-carts/:cartId/payment-information`
+-  `POST /V1/negotiable-carts/:cartId/payment-information`
 
 **GraphQL:**
 
