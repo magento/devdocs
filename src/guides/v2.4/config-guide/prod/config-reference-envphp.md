@@ -166,7 +166,7 @@ All database configurations are available in this node.
 ```
 
 ## default_connection
-Specify message queues default connection. Can be `db`, `amqp` or any custom value like `redismq` (but `redismq` should be configured to be able to use it). The default value is `db`.
+Specify message queues default connection. Can be `db`, `amqp` or any custom message queue broker like `redismq`. But `redismq` or `amqp` should be configured first to be able to use it, otherwise messages won't be processed correctly. The default value is `db`.
 
 ```conf
 'queue' => [
