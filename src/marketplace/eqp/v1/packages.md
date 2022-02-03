@@ -780,7 +780,7 @@ the required parameters are listed below by their respective parallel EQP pipeli
 |version_compatibility||
 |release_notes||
 |version||
-|sku|only valid when a previous version exists|
+|sku|Only valid when a previous version exists|
 |artifact||
 |documentation_artifacts|At least the `user` guide must be supplied.|
 
@@ -810,7 +810,7 @@ POST request in draft mode can be done with a minimal set of parameters:
 |platform|
 |name||
 |version||
-|sku|only valid when a previous version exists|
+|sku|Only valid when a previous version exists|
 |short_description||
 |long_description||
 
