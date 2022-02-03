@@ -29,7 +29,7 @@ We recommend the following:
 
 All of the following tasks we discuss assume you have configured your system this way.
 
-![Search Engine diagram]({{ site.baseurl }}/common/images/search-engine-config.svg){:width="500px"}
+![Search Engine diagram]({{ site.baseurl }}/common/images/elastic_config.png){:width="500px"}
 
 The preceding diagram shows:
 
