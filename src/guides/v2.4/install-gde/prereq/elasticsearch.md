@@ -7,7 +7,10 @@ functional_areas:
   - Setup
 ---
 
-As of {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.4, all installations must be configured to use [Elasticsearch][] or [OpenSearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
+As of {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4, all installations must be configured to use [Elasticsearch][] or [OpenSearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
+
+{:.bs-callout-info}
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. [Migrate ElasticSearch to OpenSearch]({{page.baseurl}}/install-gde/prereq/os-migration.html) provides guidance on switching to OpenSearch.
 
 ## Supported versions {#es-spt-versions}
 
@@ -115,14 +118,18 @@ For additional information, see [Elasticsearch documentation][]
 [Configure nginx and Elasticsearch]: {{page.baseurl}}/install-gde/prereq/es-config-nginx.html
 [Configure Apache and Elasticsearch]: {{page.baseurl}}/install-gde/prereq/es-config-apache.html
 [Configure Elasticsearch stopwords]: {{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html
+[Migrating ElasticSearch to OpenSearch]: {{page.baseurl}}/install-gde/prereq/os-migration.html
 [Elasticsearch]: https://www.elastic.co
+[OpenSearch]: https://opensearch.org/
 [Elasticsearch clustering documentation]: https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html
 [Elasticsearch Ubuntu documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
 [Configuring Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html
 [Upgrading Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html
 [Full cluster restart upgrade]: https://www.elastic.co/guide/en/elasticsearch/reference/current/restart-upgrade.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+[OpenSearch documentation]: https://opensearch.org/docs/latest/opensearch/index/
 [Installing Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
+[Installing OpenSearch]: https://opensearch.org/docs/latest/opensearch/install/index/
 [System Requirements]: {{page.baseurl}}/install-gde/system-requirements.html
 [OpenSearch]: https://opensearch.org/
 [Install and configure OpenSearch]: https://opensearch.org/docs/latest/opensearch/install/index/

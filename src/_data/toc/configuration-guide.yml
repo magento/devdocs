@@ -336,7 +336,7 @@ pages:
       exclude_versions: ["2.3"]
       children:
 
-        - label: Configure Elasticsearch stopwords
+        - label: Configure stopwords
           url: /config-guide/elasticsearch/es-config-stopwords.html
 
         - label: Configure Commerce and Magento to use Elasticsearch

@@ -13,7 +13,10 @@ functional_areas:
 
 ## Set up a proxy {#es-apache-proxy}
 
-This section discusses how to configure Apache as an *unsecure* proxy so that {{ site.data.var.ee }} can use a search engine running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with Apache](#es-ws-secure-apache).
+{:.bs-callout-info}
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. See [Migrate ElasticSearch to OpenSearch]({{page.baseurl}}/install-gde/prereq/os-migration.html) for more information.
+
+This section discusses how to configure Apache as an *unsecure* proxy so that {{ site.data.var.ee }} or {{ site.data.var.ce }} can use a search engine running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with Apache](#es-ws-secure-apache).
 
 {:.bs-callout-info}
 The reason the proxy is not secured in this example is that it is easier to set up and verify. You can use TLS with this proxy. If you wish to do so, make sure you add the proxy information to your secure virtual host configuration.
@@ -119,6 +122,7 @@ This section discusses how to specify who can access the Apache server.
    ```
 
 1. If you added the preceding to your secure virtual host, remove `Listen 8080` and the `<VirtualHost *:8080>` directives you added earlier to your unsecure virtual host.
+
 1. Save your changes, exit the text editor, and restart Apache:
 
    *  CentOS: `service httpd restart`
