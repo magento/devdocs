@@ -108,7 +108,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |shared_packages[N].artifact.sku|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
 |shared_packages[N].artifact.version|string|GET, POST, PUT|both|no|The shared package file|Unique file upload ID obtained from the Files API.|
 |short_description|substring|GET, POST, PUT|marketing|yes|The short description for the package.|Short free text|
-|sku|substring|GET|-|yes|The SKU generated from metadata in the code artifact.|A SKU|
+|sku|substring|GET, POST|-|yes|The SKU generated from metadata in the code artifact. Only specified in a `POST` when creating another version of an existing extension.|A SKU|
 |stability|string|GET, POST, PUT|marketing|yes|The version's build stability|`stable`, `beta`|
 |sort|string|GET|-|no|A comma-separated list of fields to sort the list, each field prefixed by `-` for descending order, or `+` for ascending order.|See [Get package details](#get-package-details).|
 |submission_id|substring|GET, PUT|-|yes|A globally unique ID assigned to a package when it is submitted in a POST request. All further references to this package using GET or PUT requests can be made supplying this identifier.|A generated string|
@@ -124,7 +124,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |version_compatibility|array|GET, POST, PUT|technical|no|List of Magento versions that this package supports. Must match the editions in `prices`|Array of objects|
 |version_compatibility[N].edition|string|GET, POST, PUT|technical|no|Magento edition for the accompanying versions list|`M2`|
 |version_compatibility[N].versions|array|GET, POST, PUT|technical|no|List of Magento versions that this package supports in the given edition.|Array of version strings, eg ["2.3","2.4"]
-|version|substring|GET|-|yes|The version of this package.|`major.minor.patch`, eg `2.5.3`.|
+|version|substring|GET, POST|both|yes|The version of this package.|`major.minor.patch`, eg `2.5.3`.|
 
 ### Additional notes
 
@@ -515,7 +515,8 @@ Send the "submit" action for the marketing content to re-publish the product.
 }
 ```
 
-*  The *overall* value indicates where the package is in the EQP pipeline.
+*  This is a read-only field.
+*  The **overall** value indicates where the package is in the EQP pipeline.
 *  Additional details are provided in the two main EQP areas:
    *  **technical** - Provides the current technical status.
    *  **marketing** - Provides the current marketing status.
@@ -570,6 +571,7 @@ PUT /rest/v1/products/packages/:item_id
 You can submit a package in either of the following ways:
 
 *  A single POST request with all required fields set. You must explicitly indicate that you are submitting for technical and marketing review using the `action` parameter.
+   *  If this package represents a newer version to an already existing extension, then also supply the `sku` parameter.
 *  A series of requests, typically in the following order:
    1. A single POST request with the minimum required fields set and `action` set to `draft` in either `technical`, `marketing`, or both. This request accepts the new package and saves it on the Developer Portal for further updates. It returns a unique `submission_id` for subsequent PUT operations.
    1. One or more PUT requests in which you configure the package parameters. In these requests, set `action` to `draft` in `technical`, `marketing`, or both.
@@ -614,6 +616,7 @@ The following example shows a POST request with all required parameters set for 
     "short_description" : "<Short description here>",
     "long_description" : "<Long description here>",
     "release_notes" : "<Release notes here>",
+    "version" : "1.1.5",
     "artifact" : {
       "file_upload_id" : "5c11e656057b42.97931218.5"
     },
@@ -765,7 +768,7 @@ The HTTP response code will indicate success or failure.
 
 #### Required parameters
 
-If the **action** parameter gives a `submit` value for technical, marketing or both,
+If the **action** parameter gives a `submit` value for **technical**, **marketing** or both,
 the required parameters are listed below by their respective parallel EQP pipelines:
 
 ##### Technical
@@ -776,6 +779,8 @@ the required parameters are listed below by their respective parallel EQP pipeli
 |platform||
 |version_compatibility||
 |release_notes||
+|version||
+|sku|Only valid when a previous version exists|
 |artifact||
 |documentation_artifacts|At least the `user` guide must be supplied.|
 
@@ -796,7 +801,7 @@ the required parameters are listed below by their respective parallel EQP pipeli
 
 ##### Submission in several steps
 
-As described earlier, a submission can also be done in several steps in draft mode, followed by the action to `submit` for technical and/or `marketing` review. In such cases, the first
+As described earlier, a submission can also be done in several steps in draft mode, followed by the action to `submit` for **technical** and/or **marketing** review. In such cases, the first
 POST request in draft mode can be done with a minimal set of parameters:
 
 |Parameter|Comments|
@@ -804,6 +809,8 @@ POST request in draft mode can be done with a minimal set of parameters:
 |type|
 |platform|
 |name||
+|version||
+|sku|Only valid when a previous version exists|
 |short_description||
 |long_description||
 
