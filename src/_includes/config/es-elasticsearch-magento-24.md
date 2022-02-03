@@ -7,7 +7,7 @@ To configure your system to use Elasticsearch or OpenSearch:
 
 1. Log in to the Admin as an administrator.
 1. Click **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**.
-1. From the **Search Engine** list, select the version of your search engine.
+1. From the **Search Engine** list, select the corresponding version of your search engine If you are using OpenSearch, you must select Elasticsearch7.
 
    The following table lists the required configuration options to configure and test the connection with Magento.
    Unless you changed the server settings of your search engine, the defaults should work. Skip to the next step.
