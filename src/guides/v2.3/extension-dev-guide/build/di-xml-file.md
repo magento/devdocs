@@ -263,20 +263,20 @@ The `preference` node specifies the default implementation:
 ```xml
 <!--  File: app/etc/di.xml -->
 <config>
-    <preference for="Magento\Core\Model\UrlInterface" type="Magento\Core\Model\Url" />
+    <preference for="Magento\Framework\UrlInterface" type="Magento\Framework\Url" />
 </config>
 ```
 
-This mapping is in `app/etc/di.xml`, so the object manager injects the `Magento\Core\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the global scope.
+This mapping is in `app/etc/di.xml`, so the object manager injects the `Magento\Framework\Url` implementation class wherever there is a request for the `Magento\Framework\UrlInterface` in the global scope.
 
 ```xml
 <!-- File: app/code/Magento/Backend/etc/adminhtml/di.xml -->
 <config>
-    <preference for="Magento\Core\Model\UrlInterface" type="Magento\Backend\Model\Url" />
+    <preference for="Magento\Framework\UrlInterface" type="Magento\Backend\Model\UrlInterface" />
 </config>
 ```
 
-This mapping is in `app/code/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the [admin](https://glossary.magento.com/admin) area.
+This mapping is in `app/code/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\UrlInterface` implementation class wherever there is a request for the `Magento\Framework\UrlInterface` in the [admin](https://glossary.magento.com/admin) area.
 
 ### Override a method using 'preference' nodes
 
@@ -363,7 +363,7 @@ Any descendant can override the parameters configured for its supertype; that is
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Framework\View\Element\Context">
         <arguments>
-            <argument name="urlBuilder" xsi:type="object">Magento\Core\Model\Url</argument>
+            <argument name="urlBuilder" xsi:type="object">Magento\Framework\Url</argument>
         </arguments>
     </type>
     <type name="Magento\Backend\Block\Context">
@@ -376,7 +376,7 @@ Any descendant can override the parameters configured for its supertype; that is
 
 In the preceding example, [`Magento\Backend\Block\Context`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Block/Context.php) is a descendant of [`Magento\Framework\View\Element\Context`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Element/Context.php).
 
-The first entry configures all instances of `Magento\Framework\View\Element\Context` as well as its children to pass in [`Magento\Core\Model\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url.php) as `$urlBuilder` in their constructors.
+The first entry configures all instances of `Magento\Framework\View\Element\Context` as well as its children to pass in [`Magento\Framework\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url.php) as `$urlBuilder` in their constructors.
 
 The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Url.php) as the `$urlBuilder` instead.
 
