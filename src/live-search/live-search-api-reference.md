@@ -4,7 +4,7 @@ title: Live Search API Reference
 ee_only: True
 ---
 
-Populate all fields with information that is specific to the Magento account and storefront of the {{site.data.var.ee}} license holder. The `apiKey` parameter should be hard coded to `search_gql`.
+Populate all fields with information that is specific to the account and storefront of the {{site.data.var.ee}} license holder. The `apiKey` parameter should be hard coded to `search_gql`.
 
 ## Create client
 
