@@ -28,15 +28,6 @@ Scenario: Used on a search page to retrieve products and facets for filtering.
 |`filter`|[]|Default: []<br />Example:<br />`[{attribute: "color", eq: "red"}]`|
 |`sort`|[]|Default: []<br />Example:<br />`[{attribute: "price", direction: "ASC"}]`|
 
-## categorySearch
-
-Scenario: Used on search page to retrieve categories for filtering.
-
-|**Parameter**|**Type**|**Required**|**Example**|
-|---|---|---|---|
-|`phrase`|string|(Required)<br />Example: `yoga`|
-|`category_size`|number|Default: `5`<br />Example: `10`|
-
 ## quickSearch
 
 Scenario: Used in a search box to return product and category matches, as well as search suggestions.
