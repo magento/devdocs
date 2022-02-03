@@ -11,7 +11,7 @@ This topic describes best practices for [API security](https://owasp.org/www-pro
 
 Imposing restrictions on the size and number of resources that a user can request through an API can help mitigate denial-of-service (DoS) vulnerabilities. By default, the following built-in API rate limiting is available:
 
--  REST requests containing inputs representing a list of entities. When enabled, the default maximum is 20.
+-  REST requests containing inputs representing a list of entities. When enabled, the default maximum is 20 for synchronous requests and 5000 for asynchronous requests.
 -  REST and GraphQL queries that allow paginated results can be limited to a maximum number of items per page. When enabled, the default maximum is 300.
 -  REST queries that allow paginated results can have a default number of items per page imposed. When enabled, the default maximum is 20.
 
@@ -21,8 +21,6 @@ By default, these input limits are disabled, but you can use the following metho
 -  Run the [`bin/magento config:set` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set).
 -  Add entries to the [`env.php` file]({{ page.baseurl }}/config-guide/prod/config-reference-configphp.html#system).
 -  Set [environment variables]({{ page.baseurl }}/config-guide/deployment/pipeline/example/environment-variables.html).
-
-This topic discusses the Admin and command line options.
 
 When input limiting has been enabled, the system uses the default value for each limitation listed above. You can also configure custom values.
 
@@ -103,6 +101,56 @@ There are four possible input arrays:
 ```
 
 By default, any one of these arrays can include up to 20 items, but you can change this value in the configuration UI via `Stores -> Configuration -> Services -> Web API Input Limits -> Input List Limit` or via CLI using the `webapi/validation/complex_array_limit` configuration path.
+
+###  Input limit for REST endpoints
+
+Some REST endpoints can be given a high number of elements, and Magento developers need a way to set the limit for each endpoint. The limit for a specific REST endpoint can be set in the `webapi.xml` configuration file for synchronous requests and `webapi_async.xml` for asynchronous requests.
+To do it, just needs to set a value of the attribute `input-array-size-limit` of the tag `data` for a particular tag `route`. In this case, the value can be a non-negative integer (0<=).
+
+Let's see, how to set the input limit for the `/V1/some-custom-route` REST route.
+Open the configuration file `<module_dir>/etc/webapi.xml`, if this route only works with synchronous requests, if this route works with asynchronous requests, then need to change `<module_dir>/etc/webapi_async.xml`.
+Add the `data` tag with the `input-array-size-limit` attribute to the route configuration.  
+
+```xml
+<?xml version="1.0"?>
+<!--
+Some custom module
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/some-custom-route" method="POST">
+        <service class="Vendor\Module\Api\EntityRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Vendor_Entity::entities" />
+        </resources>
+        <data input-array-size-limit="5" /> <!--  limit only for route `/V1/some-custom-route`  -->
+    </route>
+</routes>
+```
+
+{:.bs-callout-info}
+Need to clear the configuration cache for the changes to take effect.
+
+```bash
+bin/magento cache:clear config
+```
+
+### Values by default for REST endpoints
+If there is a need to change the default limits for REST endpoints, then for this need to change the configuration file     `<magento_root>/app/etc/env.php`. And paste the following part of the configuration:
+```
+[
+//...
+    'webapi' => [
+        'sync' => [
+            'default_input_array_size_limit' => <non-negative value>, //overrides values for synchronous REST endpoints
+        ],
+        'async' => [
+            'default_input_array_size_limit' => <non-negative value>, //overrides values for asynchronous REST endpoints
+        ],
+    ]
+//...
+];
+```
 
 ### Maximum page size
 
