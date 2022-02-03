@@ -1,5 +1,5 @@
 ---
-title: Using AWS Elasticsearch
+title: Using AWS OpenSearch
 functional_areas:
   - Configuration
   - Search
@@ -7,52 +7,53 @@ functional_areas:
   - Setup
 ---
 
-As of version 2.4.3, Magento supports using Elasticsearch (ES) provided by Amazon Web Services (AWS). This topic describes how to configure Magento to use AWS Elasticsearch and how to migrate data from a local Elasticsearch instance to an AWS Elasticsearch cluster
+{{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4.3 supports using Amazon OpenSearch Service clusters. This service is the successor to Amazon Elasticsearch Service. This topic describes how to configure Commerce to use AWS OpenSearch, and how to migrate data from a local Elasticsearch or OpenSearch instance to an AWS OpenSearch cluster.
 
-## Creating an AWS Elasticsearch service domain
+## Create an AWS OpenSearch service domain
 
-An Elasticsearch instance must first be established in AWS.
-Read [Creating and managing Amazon Elasticsearch Service domains][] for detailed instructions.
+You must first establish an OpenSearch instance in AWS.
+Read [Creating and managing Amazon OpenSearch Service domains][] for detailed instructions.
 
-## Getting data to AWS ES
+## Get data to AWS OpenSearch
 
 Once everything is prepared on AWS, it is time to populate it with data.
 
-For smaller installations, we recommended that new indices be created directly on the AWS instance.
-First, it is a rather quick operation to recreate the indices.
-Second, there may be version incompatibilities between the old instance and the AWS instance and these can be avoided by building directly on the AWS instance.
+For smaller installations, we recommended that you create new indices directly on the AWS instance for the following reasons:
 
-### Migrating data to AWS ES
+*  Recreating the indices is a quick operation.
+*  There may be version incompatibilities between the old instance and the AWS instance, and these can be avoided by building directly on the AWS instance.
 
-Larger installations may want to consider migrating their data indices from the existing instance to AWS.
-While this may reduce downtime, there is still a small risk of incompatibility issues due to differing ES versions between the old ES server and AWS.
-Note that there is no need to migrate indexes, as these can be easily recreated on the AWS instance.
-When migrating data indices, ensure that the ES versions are compatible.
+Larger installations may want to consider migrating their data indices from the existing instance to AWS. While this may reduce downtime, there is still a small risk of incompatibility issues due to differing versions between the old ElasticSearch server and AWS.
 
-See Amazon's [Migrating to Amazon Elasticsearch Service][] instructions for more information.
+There is no need to migrate indexes, as these can be easily recreated on the AWS instance.
+However, when migrating data indices, ensure that the versions of ElasticSearch/OpenSearch are compatible.
 
-### Configuring Magento for Elasticsearch
+See Amazon's [Migrating to Amazon OpenSearch Service][] instructions for more information.
 
-Steps for configuring Elasticsearch for a Magento instance  to use Elasticsearch is covered in the [Advanced Install][] topic.
+### Configure Commerce for OpenSearch
 
-To test that the new configuration is working, test the Elasticsearch endpoint directly:
+Steps for configuring OpenSearch for a Magento instance  to use OpenSearch is covered in the [Advanced Install][] topic.
 
-1. Create a product in Magento (ex: sku="testproduct1").
-1. Reindex through the Magento admin.
-1. Query the Elasticsearch endpoint (found in AWS UI):
+To test that the new configuration is working, test the OpenSearch endpoint directly:
+
+1. Create a product in the Admin (For example: sku="testproduct1").
+1. Reindex through the Admin.
+1. Query the OpenSearch endpoint (found in AWS UI):
+
    To get indices, append: `/_cat/indices/*?v=true` to the URL:
-  `<AWS ES endpoint>/_cat/indices/*?v=true`
-  To get products from index, append: `/magento2docker_product_1/_search?q=*` to the URL.
-  `<AWS ES endpoint>/magento2docker_product_1/_search?q=testproduct1`
+  `<AWS OS endpoint>/_cat/indices/*?v=true`
+
+  To get products from index, append: `/magento2docker_product_1/_search?q=*` to the URL:
+  `<AWS OS endpoint>/magento2docker_product_1/_search?q=testproduct1`
 
 ## Additional resources {#es-resources}
 
-For additional information, see [Elasticsearch documentation][]
+For additional information, see the [OpenSearch AWS documentation][].
 
 <!-- Link Definitions -->
 
-[Creating and managing Amazon Elasticsearch Service domains]: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html
+[Creating and managing Amazon OpenSearch Service domains]: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html
 [Elasticdump]: https://www.npmjs.com/package/elasticdump
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
-[Migrating to Amazon Elasticsearch Service]: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/migration.html
+[Migrating to Amazon OpenSearch Service]: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/migration.html
 [Advanced Install]: {{ page.baseurl }}/install-gde/install/cli/install-cli.html
