@@ -102,7 +102,7 @@ There are four possible input arrays:
 
 By default, any one of these arrays can include up to 20 items, but you can change this value in the configuration UI via **Stores** > Settings > **Configuration** > **Services** > **Web API Input Limits** > **Input List Limit** or via CLI using the `webapi/validation/complex_array_limit` configuration path.
 
-###  Input limit for REST endpoints
+### Input limit for REST endpoints
 
 Some REST endpoints can contain a high number of elements, and developers need a way to set the limit for each endpoint. The limit for a specific REST endpoint can be set in the `webapi.xml` configuration file for synchronous requests and `webapi_async.xml` for asynchronous requests.
 To do this, assign a value for the `<data input-array-size-limit/>` attribute within a `<route>` definition. The value for `input-array-size-limit` must be a non-negative integer.
