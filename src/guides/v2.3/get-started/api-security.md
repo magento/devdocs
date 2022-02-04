@@ -108,7 +108,7 @@ Some REST endpoints can contain a high number of elements, and developers need a
 To do this, assign a value for the `<data input-array-size-limit/>" attribute within a `<route>` definition. The value for `input-array-size-limit` must be a non-negative integer.
 
 The following example sets the input limit for the `/V1/some-custom-route` route.
-Open the configuration file `<module_dir>/etc/webapi.xml`, if this route only works with synchronous requests, if this route works with asynchronous requests, then need to change `<module_dir>/etc/webapi_async.xml`.
+If the route works synchronously, open the `<module_dir>/etc/webapi.xml` configuration file. Otherwise, open `<module_dir>/etc/webapi_async.xml`.
 Add the `data` tag with the `input-array-size-limit` attribute to the route configuration.  
 
 ```xml
@@ -128,7 +128,6 @@ Some custom module
 </routes>
 ```
 
-{:.bs-callout-info}
 Clear the configuration cache for the changes to take effect.
 
 ```bash
