@@ -21,6 +21,15 @@ The release notes include:
 
 See [Upcoming Releases]({{ site.baseurl }}/release/) for versioning, support, and compatibility.
 
+### v4.4.2
+
+Amazon Sales Channel 4.4.2 is compatible with {{site.data.var.ee}} versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}
+
+This version of Amazon Sales Channel includes the following fix.
+
+-  {:.fix}Updated dependencies to support other updated extensions.
+-  {:.fix}Added support for PHP 8.1.
+
 ### v4.4.1
 
 Amazon Sales Channel 4.4.1 is compatible with {{site.data.var.ee}} versions 2.3.x and 2.4.0, but is only supported for versions 2.4.1+, of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
