@@ -85,7 +85,7 @@ Hotfixes can contain backward incompatible changes.
 
 ## Individual patch
 
-Individual patches contain low-impact quality fixes for a specific issue. These fixes are applied to the supported minor versions of {{site.data.var.ee}}. Adobe releases individual patches as needed for {{site.data.var.ee}} in accordance with our [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf).
+Individual patches contain low-impact quality fixes for a specific issue. These fixes are applied to the supported minor versions of {{site.data.var.ee}}. Adobe releases individual patches as needed for {{site.data.var.ee}} in accordance with our [Software Lifecycle Policy](https://www.adobe.com/content/dam/cc/en/legal/terms/enterprise/pdfs/Adobe-Commerce-Software-Lifecycle-Policy.pdf).
 
 {:.bs-callout-info}
 Individual patches do not contain backward incompatible changes.
@@ -100,4 +100,4 @@ Related topics
 -  [Planning and Budgeting for Commerce Upgrade Cycles](https://magento.com/sites/default/files8/2019-08/Magento-Release-Cycle-Infosheet_Aug_2019.pdf)
 -  [Versioning]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/versioning/).
 -  [Upcoming releases]({{ site.baseurl }}/release/)
--  [Software Lifecycle Policy](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf)
+-  [Software Lifecycle Policy](https://www.adobe.com/content/dam/cc/en/legal/terms/enterprise/pdfs/Adobe-Commerce-Software-Lifecycle-Policy.pdf)

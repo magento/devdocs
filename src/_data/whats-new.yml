@@ -4,8 +4,88 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Jan 10 15:38:44 2022
+updated: Mon Jan 24 15:38:42 2022
 entries:
+- description: Restored 2.3.x [Upgrade Guide](https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html)
+    topics and redirected only the 2.4.x topics to the migrated guide on [Experience
+    League](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 21, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2749
+  merge_commit: f73452c4b7575cfca7beb37dab422d1547a8a8ef
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Updated the Cloud guide to [clarify log rotation tip](https://devdocs.magento.com/cloud/project/log-locations.html),
+    [delete custom VCL snippets](http://devdocs.magento.com/cloud/cdn/fastly-vcl-bypass-to-origin.html#delete-the-custom-vcl-snippet),
+    and provide an additional example with multiple themes and locales for the [SCD_MATRIX
+    build variable](https://devdocs.magento.com/cloud/env/variables-build.html#scd_matrix).
+  versions: 2.x
+  type: Technical
+  date: January 20, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2736
+  merge_commit: bb55fd340360edd73af89dfc02628bb169843593
+  contributor: hguthrie
+  membership: true
+  labels:
+  - 2.x
+  - Technical
+  - imported
+- description: Added [extended support](https://devdocs.magento.com/release/lifecycle-policy.html)
+    date for 2.3.
+  versions: 2.3.x
+  type: Major Update
+  date: January 20, 2022
+  link: https://github.com/magento/devdocs/pull/9329
+  merge_commit: 9c12b816643b303e5bcf07252d3402a1b5115b33
+  contributor: misuadobe
+  membership: false
+  labels:
+  - Major Update
+  - 2.3.x
+  - 'Progress: done'
+- description: Added the [contactUs](https://devdocs.magento.com/guides/v2.4/graphql/mutations/contact-us.html)
+    mutation topic.
+  versions: 2.4.x
+  type: New Topic
+  date: January 14, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2737
+  merge_commit: 9b2b6d74a7e866d899ef83b4391de3d6c7e8b4ba
+  contributor: dobooth
+  membership: true
+  labels:
+  - New Topic
+  - 2.4.x
+- description: Redirected [Software Update Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html)
+    topics to the new location on [Adobe Experience League](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: January 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2734
+  merge_commit: 9e570a8ea66876b5086ba909810e95f5d7d21b77
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Major Update
+  - 2.3.x
+  - 2.4.x
+- description: Added a new Tools section to the top navigation and moved the [Quality
+    Patches Tool](https://devdocs.magento.com/quality-patches/tool.html) content to
+    the new section.
+  versions: 2.x
+  type: Major Update
+  date: January 12, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2735
+  merge_commit: dce1c7fdc03ffa7f88a12b26b8907320d1c8143a
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
 - description: Added new supported versions of Elasticsearch, OpenSearch, Redis, RabbitMQ,
     and Varnish to the [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
     for 2.4.4 and 2.4.5
