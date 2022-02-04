@@ -9,9 +9,9 @@ functional_areas:
 
 Performance best practices offers **high-throughput order processing** by using the following set of modules to optimize the Order Placement and Checkout experience:
 
--  [AsyncOrder](#asynchronous-order-placement)—An asynchronous order placement module that processes orders using a queue.
--  [Enable Inventory check](#inventory-check)—Enable or disable the inventory check on cart load.
--  [Deferred Total Calculation](#deferred-total-calculation)—A sales rule optimization module that can defer calculations for order totals until checkout begins.
+-  [AsyncOrder](#asynchronous-order-placement)—Asynchronously processes orders using a queue.
+-  [NegotiableQuoteAsyncOrder](#negotiable-quote-asyn-order)—Asynchronously processes NegotiableQuote save order items.
+-  [DeferredTotalCalculation](#deferred-total-calculation)—Defers calculations for order totals until checkout begins.
 
 All features work independently. You can use all the features simultaneously or enable and disable features in any combination.
 
@@ -28,9 +28,6 @@ For example, a customer adds a product to their shopping cart and selects **Proc
 
 {:.procedure}
 To enable AsyncOrder:
-
-{: .bs-callout-warning}
-Before enabling the AsyncOrder module, you must verify that there are no active quotes.
 
 You can enable AsyncOrder using the command-line interface:
 
@@ -70,11 +67,9 @@ The `set` command writes the following to the `app/etc/env.php` file:
    ]
 ```
 
-See [AsyncOrder][] in the _Module Reference Guide_.
-
 ### AsyncOrder compatibility
 
-AsyncOrder supports a limited set of Commerce features. For example, _Negotiable Quote Async Order_ enables you to save order items asynchronously for the `NegotiableQuote` functionality.
+AsyncOrder supports a limited set of Commerce features.
 
 Category         | Supported Feature
 ---------------- | -----------------------
@@ -110,17 +105,15 @@ GraphQL does not support placing negotiable quote orders asynchronously.
 
 Developers can explicitly exclude certain payments methods from Asynchronous Order placement by adding them to the `Magento\AsyncOrder\Model\OrderManagement::paymentMethods` array. Orders that use excluded payment methods are processed synchronously.
 
-## Inventory check
+## Negotiable Quote Async Order
 
-The _Enable Inventory On Cart Load_ global setting determines whether to perform an inventory check when loading a product in the cart. Disabling the inventory check process improves performance for all checkout steps, particularly when dealing with bulk products in the cart; however, customers would encounter out-of-stock errors later in the ordering process.
+The _Negotiable Quote Async Order_ module enables you to save order items asynchronously for the `NegotiableQuote` functionality.
 
-Enable Inventory On Cart Load is **enabled** by default.
-
-To disable the inventory check when loading the cart, set **Enable Inventory Check On Cart Load** to `No` in the Admin UI. See [Configure Global Options][global] and [Catalog Inventory][inventory] in the _User Guide_.
+See [NegotiableQuoteAsyncOrder][] in the _Module Reference Guide_.
 
 ## Deferred Total Calculation
 
-The _Deferred Total Calculation_ module optimizes the checkout process by deferring the total calculation until it is requested for the shopping cart or during final checkout steps. When enabled, only the subtotal calculates as a customer adds products to the shopping cart. See [DeferredTotalCalculating][] in the _Module Reference Guide_.
+The _Deferred Total Calculation_ module optimizes the checkout process by deferring the total calculation until it is requested for the shopping cart or during final checkout steps. When enabled, only the subtotal calculates as a customer adds products to the shopping cart.
 
 DeferredTotalCalculation is **disabled** by default.
 
@@ -160,6 +153,22 @@ The `set` command writes the following to the `app/etc/env.php` file:
    ]
 ```
 
+See [DeferredTotalCalculating][] in the _Module Reference Guide_.
+
+### Fixed Product Tax
+
+When DeferredTotalCalculation is enabled, the Fixed Product Tax (FPT) is not included in the product price and cart subtotal of the mini cart after adding the product to the shopping cart. The FPT calculation is deferred on the "adding product to mini cart" step. The FPT displays correctly in the shopping cart after proceeding to final checkout.
+
+## Disable Inventory check
+
+The _Enable Inventory On Cart Load_ global setting determines whether to perform an inventory check when loading a product in the cart. Disabling the inventory check process improves performance for all checkout steps, particularly when dealing with bulk products in the cart.
+
+When disabled, inventory check does not occur when adding a product to the shopping cart. An inventory check _always_ occurs at the order placement step, even when disabled.
+
+Enable Inventory On Cart Load is **enabled** by default.
+
+To disable the inventory check when loading the cart, set **Enable Inventory Check On Cart Load** to `No` in the Admin UI. See [Configure Global Options][global] and [Catalog Inventory][inventory] in the _User Guide_.
+
 <!-- link definitions -->
 
 [Apply patches]: {{site.baseurl}}/cloud/project/project-patch.html
@@ -169,5 +178,6 @@ The `set` command writes the following to the `app/etc/env.php` file:
 [cloud-extensions]: {{site.baseurl}}/cloud/howtos/install-components.html
 
 [mrg]: {{site.baseurl}}{{site.gdeurl}}/mrg/intro.html
-[asyncorder]: {{site.baseurl}}/guides/v2.4/mrg/module-async-order.html
+[AsyncOrder]: {{site.baseurl}}/guides/v2.4/mrg/module-async-order.html
 [DeferredTotalCalculating]: {{site.baseurl}}/guides/v2.4/mrg/module-deferred-total-calculating.html
+[NegotiableQuoteAsyncOrder]: {{site.baseurl}}/guides/v2.4/mrg/module-negotiable-quote-async-order.html
