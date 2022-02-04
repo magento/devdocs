@@ -41,7 +41,3 @@ pages:
 - label: Events
   url: /live-search/events.html
   versionless: true
-
-- label: API Reference
-  url: /live-search/live-search-api-reference.html
-  versionless: true
