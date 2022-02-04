@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-Performance best practices offers **high-throughput order processing** by using the following set of modules to optimize the Order Placement and Checkout experience:
+You can configure **high-throughput order processing** by using the following set of modules to optimize the Order Placement and Checkout experience:
 
 -  [AsyncOrder](#asynchronous-order-placement)—Asynchronously processes orders using a queue.
 -  [NegotiableQuoteAsyncOrder](#negotiable-quote-asyn-order)—Asynchronously processes NegotiableQuote save order items.
@@ -107,9 +107,7 @@ Developers can explicitly exclude certain payments methods from Asynchronous Ord
 
 ## Negotiable Quote Async Order
 
-The _Negotiable Quote Async Order_ module enables you to save order items asynchronously for the `NegotiableQuote` functionality.
-
-See [NegotiableQuoteAsyncOrder][] in the _Module Reference Guide_.
+The _Negotiable Quote Async Order_ B2B module enables you to save order items asynchronously for the `NegotiableQuote` functionality.
 
 ## Deferred Total Calculation
 
@@ -157,13 +155,13 @@ See [DeferredTotalCalculating][] in the _Module Reference Guide_.
 
 ### Fixed Product Tax
 
-When DeferredTotalCalculation is enabled, the Fixed Product Tax (FPT) is not included in the product price and cart subtotal of the mini cart after adding the product to the shopping cart. The FPT calculation is deferred on the "adding product to mini cart" step. The FPT displays correctly in the shopping cart after proceeding to final checkout.
+When DeferredTotalCalculation is enabled, the Fixed Product Tax (FPT) is not included in the product price and cart subtotal of the mini cart after adding the product to the shopping cart. The FPT calculation is deferred when adding a product to the mini cart. The FPT displays correctly in the shopping cart after proceeding to final checkout.
 
 ## Disable Inventory check
 
 The _Enable Inventory On Cart Load_ global setting determines whether to perform an inventory check when loading a product in the cart. Disabling the inventory check process improves performance for all checkout steps, particularly when dealing with bulk products in the cart.
 
-When disabled, inventory check does not occur when adding a product to the shopping cart. An inventory check _always_ occurs at the order placement step, even when disabled.
+When disabled, inventory check does not occur when adding a product to the shopping cart. If this inventory check is skipped, some out-of-stock scenarios could throw other types of errors. An inventory check _always_ occurs at the order placement step, even when disabled.
 
 Enable Inventory On Cart Load is **enabled** by default.
 
