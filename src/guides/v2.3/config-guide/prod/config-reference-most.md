@@ -115,7 +115,7 @@ These configuration values are available in the Admin in **Stores** > Settings >
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enable Contact Us | `contact/contact/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Send Emails To | `contact/contact/recipient_email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Send Emails To | `contact/email/recipient_email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Email Sender | `contact/email/sender_email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Email Template | `contact/email/email_template` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 
