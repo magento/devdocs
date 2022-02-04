@@ -9,7 +9,7 @@ To override these default values, create a custom module and provide a new value
 
 ## Input limiting
 
-In GraphQL you can limit the maximum page size allowed. For information about how to enable and configure this feature, as well as additional arguments that are applicable to web APIs in general, visit [API security]({{page.baseurl}}/get-started/api-security.html).
+In GraphQL, you can limit the maximum page size allowed. For information about how to enable and configure this feature, as well as additional arguments that are applicable to web APIs in general, see [API security]({{page.baseurl}}/get-started/api-security.html).
 
 ## GraphQl module configuration
 
