@@ -3,7 +3,7 @@ group: release-notes
 title: Adobe Commerce 2.4.4 Release Notes
 ---
 
-{{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1.  All Magento project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.1.
+{{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
 
 This release includes 241 quality fixes and enhancements.
 
@@ -15,7 +15,7 @@ Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }}
 Although code for these features is bundled with quarterly releases of the {{ site.data.var.ee }} core code, several of these projects (for example, B2B, Page Builder, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
 
 {:.bs-callout-info}
-All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ee }} 2.4.4
+All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ee }} 2.4.4.
 
 ## {{ site.data.var.ee }} 2.4.4 highlights
 
@@ -23,15 +23,23 @@ Look for the following highlights in this release.
 
 ### Security enhancements
 
-This release includes three security fixes and platform security improvements. Several of these security fixes have been backported to Magento 2.4.3-p2 and Magento 2.3.7-p3.
+This release includes three security fixes and platform security improvements. Several of these security fixes have been backported to {{ site.data.var.ee }} 2.4.3-p2 and {{ site.data.var.ee }} 2.3.7-p3.
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Adobe Security Bulletin for a discussion of these fixed issues.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts:
+
+*  IP allowlisting
+*  [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html)
+*  use of a VPN
+*  use of a unique location rather than `/admin`
+*  good password hygiene
+
+See [Adobe Security Bulletin](https://helpx.adobe.com/security.html) for the latest discussion of these fixed issues.
 
 ### Platform enhancements
 
-{{ site.data.var.ee }} 2.4.4 now supports PHP 8.1. All Magento project libraries and dependencies have been updated for compatibility with PHP 8.1. Additional platform enhancements include:
+{{ site.data.var.ee }} 2.4.4 now supports PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Additional platform enhancements include:
 
-*  {{ site.data.var.ee }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ee }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ee }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to 2.4.4 version must use OpenSearch. See [Switching to OpenSearch for Adobe Commerce on Cloud 2.4.4](https://support.magento.com/hc/en-us/articles/4419942355725-Switching-to-OpenSearch-for-Adobe-Commerce-on-Cloud-2-4-4)
+*  {{ site.data.var.ee }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ee }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ee }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to version 2.4.4 must use OpenSearch.
 
 *  The `JQuery` library has been upgraded to version 3.6. The `jquery-ui` library has been upgraded to version 1.13.0. Several other JavaScript libraries have been updated to the latest versions.
 
@@ -122,7 +130,7 @@ PWA Studio v.12.3.0 is compatible with {{ site.data.var.ee }} 2.4.4. For informa
 
 *  Pay Later has been added as an option for shoppers based on the shopper's location, not the merchant’s location.
 
-*  Merchants can now set the shopper country when testing the shopper experience in their country of choice. Previously, tests were limited to testing only for the country in which the merchant is located. Note: This change is valid in sandbox mode only.
+*  Merchants can now set the shopper country when testing the shopper experience in their country of choice. Previously, tests were limited to testing only for the country in which the merchant is located. This change is valid in sandbox mode only.
 
 *  Messaging on the checkout page now displays accurate messaging on how much and in how many increments shopper will be expected to pay when using Pay Later.
 
@@ -277,7 +285,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/33468-->
 
-*  Full-site page cache is no longer wiped out when you update a product from top categories or run an index to update product attributes or stock status.  Previously, Varnish cache added top menu category IDs to all page cache tags. [GitHub-33465](https://github.com/magento/magento2/issues/33465)
+*  Full-site page cache is no longer wiped out when you update a product from top categories or run an index to update product attributes or stock status. Previously, Varnish cache added top menu category IDs to all page cache tags. [GitHub-33465](https://github.com/magento/magento2/issues/33465)
 
 ### Cart and checkout
 
@@ -335,7 +343,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-691-->
 
-*  Checkout no longer fails at the payment stage when the billing address is missing street field values or the street field value is not an array. Previously, checkout failed, and Magento threw this error: `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }”`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
+*  Checkout no longer fails at the payment stage when the billing address is missing street field values or the street field value is not an array. Previously, checkout failed with this error: `Uncaught TypeError: Unable to process binding "text: function(){return currentBillingAddress().street.join(', ') }”`. [GitHub-33826](https://github.com/magento/magento2/issues/33826)
 
 ### Catalog
 
@@ -479,7 +487,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42934-->
 
-*  Improved validation of the advanced search query parameters. GitHub-33589](https://github.com/magento/magento2/issues/33589)
+*  Improved validation of the advanced search query parameters. [GitHub-33589](https://github.com/magento/magento2/issues/33589)
 
 ### General fixes
 
@@ -514,10 +522,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- magento/magento2/pull/25279-->
 
 *  Password reset token validity has been extended to avoid the occurrence of a race condition during submission of the password change page.  [GitHub-29647](https://github.com/magento/magento2/issues/29647)
-
-<!--- AC-1328-->
-
-*  Corrected regression issue that affected messages left in the exception logs for the Contact Us form. [GitHub-34483](https://github.com/magento/magento2/issues/34483)
 
 <!--- AC-1316-->
 
@@ -743,7 +747,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-516-->
 
-*  `CURLOPT_POSTFIELDS` no longer accepts objects as arrays. To interpret an object as an array, perform an explicit (`array`) cast. This practice also applies to other options that accept arrays.  [GitHub-33781](https://github.com/magento/magento2/issues/33781)
+*  `CURLOPT_POSTFIELDS` no longer accepts objects as arrays. To interpret an object as an array, perform an explicit (`array`) cast. This practice also applies to other options that accept arrays. [GitHub-33781](https://github.com/magento/magento2/issues/33781)
 
 *  `curl_init()` now returns a `CurlHandle` object rather than a resource. The `curl_close()` function no longer has an effect. Instead, the `CurlHandle` instance is automatically destroyed if it is no longer referenced. [GitHub-33781](https://github.com/magento/magento2/issues/33781)
 
@@ -765,7 +769,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-517-->
 
-*  `parse_url()` now distinguishes between absent and empty queries and fragments.  [GitHub-33782](https://github.com/magento/magento2/issues/33782)
+*  `parse_url()` now distinguishes between absent and empty queries and fragments. [GitHub-33782](https://github.com/magento/magento2/issues/33782)
 
 <!--- magento/magento2-functional-testing-framework/pull/873-->
 
@@ -948,7 +952,9 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-344-->
 
-*  Anomalies with PayPal Credit display of gift card amounts have been resolved. Previously, when PayPal Credit was enabled and multiple gift card amounts were configured, if a shopper changed the amount for the value of a gift card, the storefront did not update the amount for installment payments. This was a known issue in {{ site.data.var.ee }} 2.4.3.*  PayPal Payflow Pro now performs delayed capture with correct parent transaction IDs in deployments where the PayPal Payflow Pro gateway with **Payment Action** is set to **Authorization**. A **Sale** transaction is sent to Payflow with a parent transaction ID of the vault token created at checkout as expected. Previously, a **Delayed Capture** transaction was created and sent to PayPal Payflow.
+*  Anomalies with PayPal Credit display of gift card amounts have been resolved. Previously, when PayPal Credit was enabled and multiple gift card amounts were configured, if a shopper changed the amount for the value of a gift card, the storefront did not update the amount for installment payments. This was a known issue in {{ site.data.var.ee }} 2.4.3.
+
+*  PayPal Payflow Pro now performs delayed capture with correct parent transaction IDs in deployments where the PayPal Payflow Pro gateway with **Payment Action** is set to **Authorization**. A **Sale** transaction is sent to Payflow with a parent transaction ID of the vault token created at checkout as expected. Previously, a **Delayed Capture** transaction was created and sent to PayPal Payflow.
 
 #### PayPal
 
@@ -992,7 +998,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-1179-->
 
-*  The new in-memory cache for `glob()` system calls improves performance by reducing the number of `glob()` calls.  GitHub-34025](https://github.com/magento/magento2/issues/34025)
+*  The new in-memory cache for `glob()` system calls improves performance by reducing the number of `glob()` calls.  [GitHub-34025](https://github.com/magento/magento2/issues/34025)
 
 ### Pricing
 
@@ -1166,7 +1172,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Fixed numerous non-critical unit test warnings by renaming all mock variables to include the `Mock` suffix and removing references to a deprecated Object Manager class. [GitHub-33695](https://github.com/magento/magento2/issues/33695)
 
-*  The `Magento\Framework\MessageQueue\TopologyTest` is now compatible with the AWS MQ for RabbitMQ service. Previously, this test failed with this message: `Invalid exchange configuration: magento-topic-based-exchange1 Failed asserting that two arrays are equal`. <!--- AC-1248-->
+*  The `Magento\Framework\MessageQueue\TopologyTest` test is now compatible with the AWS MQ for RabbitMQ service. Previously, this test failed with this message: `Invalid exchange configuration: magento-topic-based-exchange1 Failed asserting that two arrays are equal`. <!--- AC-1248-->
 
 <!--- magento/magento2/pull/34454-->
 
@@ -1193,7 +1199,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- MC-42469-->
 
-*  Added an `aria-label`  element to the storefront page template to indicate the page to which the shopper will navigate to when taking a link. Previously,  the same link text was used for links to different pages. [GitHub-33075](https://github.com/magento/magento2/issues/33075)
+*  Added an `aria-label` element to the storefront page template to indicate the page to which the shopper will navigate to when clicking a link. Previously, the same link text was used for links to different pages. [GitHub-33075](https://github.com/magento/magento2/issues/33075)
 
 ### Translations and locales
 
@@ -1329,11 +1335,11 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- AC-1481-->
 
-*  The active (click) state of the multi-select **Close** button now works consistently.  [GitHub-34338](https://github.com/magento/magento2/issues/34338)
+*  The active (click) state of the multi-select **Close** button now works consistently. [GitHub-34338](https://github.com/magento/magento2/issues/34338)
 
 <!--- magento/magento2/pull/31879-->
 
-*  {{ site.data.var.ee }} no longer displays this message after upgrade when  Cookie Restriction Mode is disabled: `The store will not work correctly in the case when cookies are disabled`. [GitHub-33811](https://github.com/magento/magento2/issues/33811)
+*  {{ site.data.var.ee }} no longer displays this message after upgrade when Cookie Restriction Mode is disabled: `The store will not work correctly in the case when cookies are disabled`. [GitHub-33811](https://github.com/magento/magento2/issues/33811)
 
 ### URL rewrites
 
@@ -1361,11 +1367,11 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 <!--- AC-786-->
 
-*  Adding a new deserializer to the REST API no longer removes other deserializers. Previously, the REST API accepted a new content type, but CORE defined content types for APIs  no longer worked and returned a 400 error. [GitHub-26433](https://github.com/magento/magento2/issues/26433)
+*  Adding a new deserializer to the REST API no longer removes other deserializers. Previously, the REST API accepted a new content type, but CORE defined content types for APIs no longer worked and returned a 400 error. [GitHub-26433](https://github.com/magento/magento2/issues/26433)
 
 <!--- AC-698-->
 
-*  You can now remove an override for a parameter that is defined in a `webapi.xml`file.[GitHub-33843](https://github.com/magento/magento2/issues/33843)
+*  You can now remove an override for a parameter that is defined in a `webapi.xml`file. [GitHub-33843](https://github.com/magento/magento2/issues/33843)
 
 <!--- AC-1212-->
 
@@ -1391,16 +1397,17 @@ The following table highlights contributions made by Partners. This table lists 
 
 ### Individual contributor contributions
 
-The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
+The following table identifies contributions from our community members. This table lists the community member who contributed the pull request, the external pull request number, and the GitHub issue number associated with it (if available).
 
 {% include release-notes/engcomm-2-4-4-issues.md %}
 
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/system-requirements.html).
+
 ### Installation and upgrade instructions
 
-You can install {{site.data.var.ee}} 2.4.3 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
+You can install {{site.data.var.ee}} 2.4.4 using [Composer]({{ page.baseurl }}/install-gde/composer.html).
 
 ## Migration tool kits
 
