@@ -161,3 +161,7 @@ The maximum page size setting controls the pagination of various web API respons
 ### Default page size
 
 The Default Page Size setting controls the pagination of various web API responses. You can change the default value of `20` in the Admin by selecting **Stores** > Settings > **Configuration** > **Services** > **Web API Input Limits** > **Default Page Size**. To change the value from the CLI, run the following command:
+
+```shell
+bin/magento config:set webapi/validation/default_page_size 30
+```
