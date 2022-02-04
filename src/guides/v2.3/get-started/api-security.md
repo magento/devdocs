@@ -105,7 +105,7 @@ By default, any one of these arrays can include up to 20 items, but you can chan
 ###  Input limit for REST endpoints
 
 Some REST endpoints can contain a high number of elements, and developers need a way to set the limit for each endpoint. The limit for a specific REST endpoint can be set in the `webapi.xml` configuration file for synchronous requests and `webapi_async.xml` for asynchronous requests.
-To do this, assign a value for the `<data input-array-size-limit/>" attribute within a `<route>` definition. The value for `input-array-size-limit` must be a non-negative integer.
+To do this, assign a value for the `<data input-array-size-limit/>` attribute within a `<route>` definition. The value for `input-array-size-limit` must be a non-negative integer.
 
 The following example sets the input limit for the `/V1/some-custom-route` route.
 If the route works synchronously, open the `<module_dir>/etc/webapi.xml` configuration file. Otherwise, open `<module_dir>/etc/webapi_async.xml`.
