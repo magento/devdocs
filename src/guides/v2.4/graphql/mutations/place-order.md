@@ -16,7 +16,7 @@ Perform the following actions before using the `placeOrder` mutation:
 -  For guest customers, assign an email to the cart
 
 {:.bs-callout-info}
-The `placeOrder` mutation runs asynchronously if the `AsyncOrder` module has been enabled. By default, the mutation runs synchronously. [Asynchronous order placement]({{page.baseurl}}/performance-best-practices/performance-pack.html#asynchronous-order-placement) describes the benefits of enabling the module.
+The `placeOrder` mutation runs asynchronously if the `AsyncOrder` module has been enabled. By default, the mutation runs synchronously. [Asynchronous order placement]({{page.baseurl}}/performance-best-practices/high-throughput-order-processing.html#asynchronous-order-placement) describes the benefits of enabling the module.
 
 ## Syntax
 

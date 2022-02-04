@@ -1,15 +1,13 @@
 ---
 group: performance-best-practices
-title: Performance pack
+title: High-throughput order processing
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-The Performance Pack offers high-throughput order processing by using a set of modules to optimize the Order Placement and Checkout experience.
-
-Modules included in the Performance Pack:
+Performance best practices offers **high-throughput order processing** by using the following set of modules to optimize the Order Placement and Checkout experience:
 
 -  [AsyncOrder](#asynchronous-order-placement)—An asynchronous order placement module that processes orders using a queue.
 -  [Enable Inventory check](#inventory-check)—Enable or disable the inventory check on cart load.
@@ -18,33 +16,6 @@ Modules included in the Performance Pack:
 All features work independently. You can use all the features simultaneously or enable and disable features in any combination.
 
 Use the command-line interface to enable these features, or edit the `app/etc/env.php` file according to the corresponding readme files defined in the [_Module Reference Guide_][mrg].
-
-## Special installation for 2.4.3
-
-For {{site.data.var.ee}} 2.4.4, the Performance pack modules are part of standard installation. For {{site.data.var.ee}} 2.4.3, the features in the Performance pack were released as separate Composer packages and patches. Before you begin installing these separate modules, make sure to apply the latest available patches for 2.4.3. See [Apply patches][].
-
-After applying the patches, add the following Performance pack modules to the `require` section of the `composer.json` file:
-
-```bash
-composer require magento/module-async-order:0.1.0
-```
-
-```bash
-composer require magento/module-async-order-graph-ql:0.1.0
-```
-
-```bash
-composer require magento/module-deferred-total-calculating:0.1.0
-```
-
-Add an extra module if installing for B2B:
-
-```bash
-composer require magento/module-negotiable-quote-async-order:0.1.0
-```
-
-{:.bs-callout-tip}
-For more information on how to install and manage extensions for on-premises projects, see [Install extensions][], and for Cloud projects, see [Install, manage, and upgrade extensions][cloud-extensions].
 
 ## Asynchronous order placement
 

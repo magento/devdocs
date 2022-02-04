@@ -939,7 +939,7 @@ None
 The buyer is now ready to complete the purchase. Since the buyer has already specified the billing address, only the `paymentMethod` information must be included.
 
 {:.bs-callout-info}
-The `/V1/negotiable-carts/:cartId/payment-information` endpoint runs asynchronously if the `AsyncOrder` module has been enabled. By default, the mutation runs synchronously. [Asynchronous order placement]({{page.baseurl}}/performance-best-practices/performance-pack.html#asynchronous-order-placement) describes the benefits of enabling the module.
+The `/V1/negotiable-carts/:cartId/payment-information` endpoint runs asynchronously if the `AsyncOrder` module has been enabled. By default, the mutation runs synchronously. [Asynchronous order placement]({{page.baseurl}}/performance-best-practices/high-throughput-order-processing.html#asynchronous-order-placement) describes the benefits of enabling the module.
 
 **Headers:**
 
