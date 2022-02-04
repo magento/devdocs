@@ -76,7 +76,17 @@ This release includes these GraphQL enhancements:
 
 *  **Complete GraphQL coverage for negotiable quotes**.  B2B company users can now complete all tasks related to negotiable quotes using GraphQL. Previous versions of this API supported negotiation flows but not checkout. <!--- PWA-2101-->
 
-*  Merchants can use the new [`setNegotiableQuotePaymentMethod` mutation]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-payment-method.html) to set the payment method on a negotiable quote. <!--- PWA-2114-->
+#### New mutations
+
+*  `placeNegotiableQuoteOrder`
+
+*  `setNegotiableQuoteBillingAddress`
+
+*  [`setNegotiableQuotePaymentMethod` mutation]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-payment-method.html) <!--- PWA-2114-->
+
+*  `setNegotiableQuoteShippingMethods`
+
+*  `setNegotiableQuoteShippingAddress`
 
 *  **Performance improvements**:
 
@@ -86,21 +96,11 @@ This release includes these GraphQL enhancements:
 
 *  **New storefront-related Admin configuration settings**. The `storeConfig` query now returns the configuration settings for the Zero Subtotal Checkout and Check/Money Order payment methods. <!--- PWA-1576-->
 
-*  **Updated core GQL library**. The `webonyx` library, which enables core GraphQL to function, has been upgraded to its latest version. <!--- PWA-2137 2184 -->
+*  **Updated core GraphQL library**. The `webonyx` library, which enables core GraphQL to function, has been upgraded to version ^14.9. <!--- PWA-2137 2184 -->
 
 *  **Fixed translation issues in GraphQL with multi-site and multi-language stores**. The GraphQl resolver now returns translated strings based on store scope as expected. <!--- PWA-1946-->
 
 *  GraphQL now provides New Relic with descriptive transaction names, which can be helpful for debugging. [GitHub-30915](https://github.com/magento/magento2/issues/30915) <!--- PWA-1311-->
-
-#### New mutations
-
-*  `setNegotiableQuoteShippingMethods`
-
-*  `placeNegotiableQuoteOrder`
-
-*  `setNegotiableQuoteBillingAddress`
-
-*  `setNegotiableQuoteShippingAddress`
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
 
@@ -323,7 +323,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-43176-->
 
-*  GraphQL `product` queries for configurable products in a specific store now return the price ranges of products on the specified store only. Previously, requests returned price ranges for simple products on non-specified stores.
+*  GraphQL `products` queries for configurable products in a specific store now return the price ranges of products on the specified store only. Previously, requests returned price ranges for simple products on non-specified stores.
 
 <!--- AC-691-->
 
@@ -707,7 +707,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/33858-->
 
-*  Updated the `webonyx/graphql-php` dependency to the latest version in the Magento coding standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
+*  Updated the `webonyx/graphql-php` dependency to version ^14.9 in the Magento coding standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
 
 <!--- magento/magento-coding-standard/pull/322-->
 
