@@ -21,11 +21,11 @@ When a merchant creates and activates an integration, Magento generates a consum
 
 In previous versions of Magento, the access token could be used on its own for token-based authentication. This behavior has been disabled by default due to the security implications of a never-expiring access token. Namely, if the access token is compromised it provides undetected persistent access to a store.
 
-However, while it is not recommended, this behavior can be restored in the Admin under **Stores** > **Configuration** > **Services** > **OAuth** > **Consumer Settings** and setting the **Allow OAuth Access Tokens to be used as standalone Bearer tokens** option to **Yes**. It can also be enabled via CLI by setting the `oauth/consumer/enable_integration_as_bearer` configuration option to `1`.
+However, while it is not recommended, this behavior can be restored in the Admin by setting the **Stores** > **Configuration** > **Services** > **OAuth** > **Consumer Settings** > **Allow OAuth Access Tokens to be used as standalone Bearer tokens** option to **Yes**. You can also enable this setting from the CLI by running the following command:
 
-If you are trying to upgrade from a previous version and wish to update your integration implementation to properly utilize the OAuth workflow, please view the [OAuth-based Authentication guide]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html). Otherwise, you can partially update your integration to simply store and utilize all four credentials to sign your requests.
+If you are trying to upgrade from a previous version and need to update your integration implementation to properly utilize the OAuth workflow, review [OAuth-based Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html). Otherwise, you can partially update your integration to simply store and utilize all four credentials to sign your requests.
 
-There is a comprehensive guide for this on the OAuth-based authentication page but can also be done in isolation without supporting the entire OAuth workflow. For example, in the following script the four credentials are used to create a new CMS page without using external libraries or implementing the full OAuth handshake:
+There is a comprehensive guide for this on the OAuth-based authentication page, but can also be done in isolation without supporting the entire OAuth workflow. For example, in the following script the four credentials are used to create a new CMS page without using external libraries or implementing the full OAuth handshake.
 
 ### standalone-oauth.php
 
