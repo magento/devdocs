@@ -11,7 +11,7 @@ Performance best practices offers **high-throughput order processing** by using 
 
 -  [AsyncOrder](#asynchronous-order-placement)—An asynchronous order placement module that processes orders using a queue.
 -  [Enable Inventory check](#inventory-check)—Enable or disable the inventory check on cart load.
--  [DeferredTotalCalculation](#sales-rule-optimization)—A sales rule optimization module that can defer calculations for order totals until checkout begins.
+-  [Deferred Total Calculation](#deferred-total-calculation)—A sales rule optimization module that can defer calculations for order totals until checkout begins.
 
 All features work independently. You can use all the features simultaneously or enable and disable features in any combination.
 
@@ -118,7 +118,7 @@ Enable Inventory On Cart Load is **enabled** by default.
 
 To disable the inventory check when loading the cart, set **Enable Inventory Check On Cart Load** to `No` in the Admin UI. See [Configure Global Options][global] and [Catalog Inventory][inventory] in the _User Guide_.
 
-## Sales rule optimization
+## Deferred Total Calculation
 
 The _Deferred Total Calculation_ module optimizes the checkout process by deferring the total calculation until it is requested for the shopping cart or during final checkout steps. When enabled, only the subtotal calculates as a customer adds products to the shopping cart. See [DeferredTotalCalculating][] in the _Module Reference Guide_.
 
