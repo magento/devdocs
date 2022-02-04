@@ -31,7 +31,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 {{ site.data.var.ee }} 2.4.4 now supports PHP 8.1. All Magento project libraries and dependencies have been updated for compatibility with PHP 8.1. Additional platform enhancements include:
 
-*  {{ site.data.var.ee }} 2.4.4 provides support for Elasticsearch 7.16.1 and OpenSearch 1.2.1. {{ site.data.var.ee }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ee }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to 2.4.4 version must use OpenSearch. See [Switching to OpenSearch for Adobe Commerce on Cloud 2.4.4](https://support.magento.com/hc/en-us/articles/4419942355725-Switching-to-OpenSearch-for-Adobe-Commerce-on-Cloud-2-4-4)
+*  {{ site.data.var.ee }} 2.4.4 provides support for Elasticsearch 7.16 and OpenSearch 1.2. {{ site.data.var.ee }} merchants with deployments hosted on-premises can use either solution. However, OpenSearch is now the default search engine for {{ site.data.var.ee }} 2.4.4 deployments hosted in the cloud. All customers with cloud deployments who upgrade to 2.4.4 version must use OpenSearch. See [Switching to OpenSearch for Adobe Commerce on Cloud 2.4.4](https://support.magento.com/hc/en-us/articles/4419942355725-Switching-to-OpenSearch-for-Adobe-Commerce-on-Cloud-2-4-4)
 
 *  The `JQuery` library has been upgraded to version 3.6. The `jquery-ui` library has been upgraded to version 1.13.0. Several other JavaScript libraries have been updated to the latest versions.
 
@@ -114,7 +114,7 @@ With the exception of [Braintree](https://docs.magento.com/user-guide/payment/br
 
 ### PWA Studio
 
-PWA Studio v.13 is compatible with {{ site.data.var.ee }} 2.4.4. Developers can now apply industry-standard theming practices to their PWA storefronts using Tailwind CSS. The redesigned theming framework ensures brand consistency and streamlines styles. For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
+PWA Studio v.12.3.0 is compatible with {{ site.data.var.ee }} 2.4.4. For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
 
 ### PayPal Payment enhancements
 
