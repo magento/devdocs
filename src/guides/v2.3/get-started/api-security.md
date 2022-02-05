@@ -109,7 +109,7 @@ To do this, assign a value for the `<data input-array-size-limit/>` attribute wi
 
 The following example sets the input limit for the `/V1/some-custom-route` route.
 If the route works synchronously, open the `<module_dir>/etc/webapi.xml` configuration file. Otherwise, open `<module_dir>/etc/webapi_async.xml`.
-Add the `data` tag with the `input-array-size-limit` attribute to the route configuration. 
+Add the `data` tag with the `input-array-size-limit` attribute to the route configuration.
 
 ```xml
 <?xml version="1.0"?>
