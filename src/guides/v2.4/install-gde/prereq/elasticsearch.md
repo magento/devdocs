@@ -10,7 +10,7 @@ functional_areas:
 As of {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4, all installations must be configured to use [Elasticsearch][] or [OpenSearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
 
 {:.bs-callout-info}
-OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. [Migrate ElasticSearch to OpenSearch]({{page.baseurl}}/install-gde/prereq/os-migration.html) provides guidance on switching to OpenSearch.
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. [Migrate from Elasticsearch to OpenSearch][] provides guidance on switching to OpenSearch.
 
 ## Supported versions {#es-spt-versions}
 
@@ -118,7 +118,7 @@ For additional information, see [Elasticsearch documentation][]
 [Configure nginx for your search engine]: {{page.baseurl}}/install-gde/prereq/es-config-nginx.html
 [Configure Apache for your search engine]: {{page.baseurl}}/install-gde/prereq/es-config-apache.html
 [Configure search stopwords]: {{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html
-[Migrating ElasticSearch to OpenSearch]: {{page.baseurl}}/install-gde/prereq/os-migration.html
+[Migrate from Elasticsearch to OpenSearch]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/opensearch-migration.html
 [Elasticsearch]: https://www.elastic.co
 [OpenSearch]: https://opensearch.org/
 [Elasticsearch clustering documentation]: https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html
