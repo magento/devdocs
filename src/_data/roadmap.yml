@@ -1,6 +1,9 @@
 roadmap:
   - name: In Progress
     features:
+      - name: Express Checkout for Adobe Commerce (extension)
+        status: inProgress
+        type: Extension
       - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
         status: inProgress
       - name: GraphQL - Admin configuration
@@ -26,14 +29,11 @@ roadmap:
         status: inProgress
       - name: Security and quality improvements
         status: inProgress
-      - name: Vendor Bundled Extensions (VBEs) – Updates
+      - name: Vendor Bundled Extensions (VBEs) – Remove (except Braintree)
         status: inProgress
         type: Extension
   - name: Planned
     features:
-      - name: Accelerated checkout powered by Bolt (extension)
-        status: Planned
-        type: Extension
       - name: Accessibility improvements for storefront/admin
         status: Planned
       - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)

@@ -103,4 +103,4 @@ To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].
 [Apply patches]:{{ site.baseurl }}/cloud/project/project-patch.html
 [Command line]:https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/apply.html
 [Composer]:https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/patches/apply.html
-[Quality Patches Tool]: {{ page.baseurl }}/comp-mgr/patching/mqp.html
+[Quality Patches Tool]:{{ site.baseurl }}/quality-patches/tool.html

@@ -4,7 +4,7 @@ title: GraphQL Support
 ee_only: True
 redirect_from: 
   - /live-search/graphql-playground.html
-
+  - /live-search/live-search-api-reference.html
 ---
 
 GraphQL is a data query language that allows the caller to specify exactly what data to return. When a customer searches for products, the overhead of returning all possible product information and removing unnecessary data leads to longer processing times and unfavorable user experiences.
