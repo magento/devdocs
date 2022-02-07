@@ -18,7 +18,7 @@ As of version 2.4.4, {{ site.data.var.ee }} and {{ site.data.var.ce }} requires 
 After you install and integrate your search engine with {{ site.data.var.ee }}, you might need to perform additional maintenance:
 
 *  [Configure search stopwords][]
-*  [Configure Magento to use Elasticsearch][]
+*  [Configure Magento to use a search engine][]
 
 ## Additional resources {#es-resources}
 
@@ -30,7 +30,7 @@ For additional information, see the [Elasticsearch documentation][]
 [Configure Apache for your search engine]: {{page.baseurl}}/install-gde/prereq/es-config-apache.html
 [Configure search stopwords]: {{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html
 [Elasticsearch]: https://www.elastic.co
-[Configure Magento to use Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/configure-magento.html
+[Configure Magento to use a search engine]: {{page.baseurl}}/config-guide/elasticsearch/configure-magento.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 [Install the Magento software]: {{page.baseurl}}/install-gde/install/cli/install-cli-install.html
 [OpenSearch]: https://opensearch.org/docs/latest/opensearch/install/index/
