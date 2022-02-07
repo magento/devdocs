@@ -215,4 +215,4 @@ This section discusses how to specify who can access the search engine server.
 {:.ref-header}
 Related topic
 
-[Configure Elasticsearch stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)
+[Configure search stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)

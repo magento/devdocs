@@ -111,13 +111,13 @@ For additional information, see [Elasticsearch documentation][]
 
 ### Next
 
-*  [Configure nginx and Elasticsearch][]
-*  [Configure Apache and Elasticsearch][]
+*  [Configure nginx for your search engine][]
+*  [Configure nginx for your search engine][]
 
 <!-- Link Definitions -->
-[Configure nginx and Elasticsearch]: {{page.baseurl}}/install-gde/prereq/es-config-nginx.html
-[Configure Apache and Elasticsearch]: {{page.baseurl}}/install-gde/prereq/es-config-apache.html
-[Configure Elasticsearch stopwords]: {{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html
+[Configure nginx for your search engine]: {{page.baseurl}}/install-gde/prereq/es-config-nginx.html
+[Configure Apache for your search engine]: {{page.baseurl}}/install-gde/prereq/es-config-apache.html
+[Configure search stopwords]: {{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html
 [Migrating ElasticSearch to OpenSearch]: {{page.baseurl}}/install-gde/prereq/os-migration.html
 [Elasticsearch]: https://www.elastic.co
 [OpenSearch]: https://opensearch.org/

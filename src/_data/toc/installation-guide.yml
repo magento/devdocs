@@ -28,14 +28,11 @@ pages:
           exclude_versions: ["2.3"]
           children:
 
-            - label: Migrate from Elasticsearch to OpenSearch
-              url: /install-gde/prereq/os-migration.html
-
-            - label: Configure nginx and Elasticsearch
+            - label: Configure nginx
               url: /install-gde/prereq/es-config-nginx.html
               exclude_versions: ["2.3"]
 
-            - label: Configure Apache and Elasticsearch
+            - label: Configure Apache
               url: /install-gde/prereq/es-config-apache.html
               exclude_versions: ["2.3"]
 

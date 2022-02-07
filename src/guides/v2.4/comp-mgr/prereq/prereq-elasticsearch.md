@@ -20,7 +20,7 @@ The following sections describe what actions you must take before upgrading to M
 
 Magento 2.4 no longer uses MySQL as a catalog search engine. You must install and configure Elasticsearch before upgrading. Use the following resources to help guide you through this process:
 
--  [Install and configure Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html)
+-  [Install and configure the search engine]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html)
 -  [Installing Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
 -  Configure Elasticsearch to work with [nginx]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html) or [Apache]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
 -  [Configure Magento to use Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/configure-magento.html) and reindex

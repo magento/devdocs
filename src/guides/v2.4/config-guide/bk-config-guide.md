@@ -36,7 +36,7 @@ You can configure the Magento application in any of the following ways:
    *  [How to locate session files]({{page.baseurl}}/config-guide/sessions.html)
 
 *  Search engine
-   *  [Configure and maintain Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html)
+   *  [Configure and maintain the search engine]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html)
 
 *  Message queues
    *  [RabbitMQ]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)

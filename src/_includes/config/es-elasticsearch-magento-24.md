@@ -29,8 +29,8 @@ You will see either:
 
 Continue with:
 
-*  [Configure Apache and Elasticsearch]({{ page.baseurl }}/install-gde/prereq/es-config-apache.html)
-*  [Configure nginx and Elasticsearch]({{ page.baseurl }}/install-gde/prereq/es-config-nginx.html)
+*  [Configure Apache for your search engine]({{ page.baseurl }}/install-gde/prereq/es-config-apache.html)
+*  [Configure nginx for your search engine]({{ page.baseurl }}/install-gde/prereq/es-config-nginx.html)
 
 or you will see:
 
