@@ -16,6 +16,10 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.3.6 of magento/product-recommendations for {{site.data.var.ee}} 2.4.0
+
+-  {:.new}Optimized Product Recommendations metapackage by explicitly listing all dependencies
+
 ## 3.3.5 of magento/product-recommendations for {{site.data.var.ee}} 2.4.0
 
 -  {:.new}Added [B2B support]({{ site.user_guide_url }}/marketing/product-recommendations.html#b2bsupport) in Product Recommendations
