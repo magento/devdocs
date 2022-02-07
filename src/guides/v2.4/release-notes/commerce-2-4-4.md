@@ -39,7 +39,7 @@ See [Adobe Security Bulletin](https://helpx.adobe.com/security.html) for the lat
 
 Security improvements for this release improve compliance with the latest security best practices, including:
 
-*  Integration tokens can no longer be used for API Bearer token authentication. Previously, access token could be used as a standalone key to authenticate instead of performing the full OAuth authentication process. The previous behavior can be enabled through the command line or Admin. See [Token-based authentication](https://devdocs.magento.com/guides/v2.4/get-started/authentication/gs-authentication-token.html). <!--- AC-1619-->
+*  Integration tokens can no longer be used for API Bearer token authentication. Previously, an integration token could be used as a standalone key for token-based authentication. However, this behavior has been disabled by default due to the security implications of a never-expiring access token. The previous behavior can be enabled through the command line or Admin. See [Token-based authentication](https://devdocs.magento.com/guides/v2.4/get-started/authentication/gs-authentication-token.html). <!--- AC-1619-->
 
 *  Session IDs are no longer stored in the database. <!--- AC-522-->
 
