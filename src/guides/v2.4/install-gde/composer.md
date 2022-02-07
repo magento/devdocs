@@ -117,8 +117,8 @@ bin/magento setup:install \
 --search-engine=elasticsearch7 \
 --elasticsearch-host=es-host.example.com \
 --elasticsearch-port=9200 \
---elasticsearch-index-prefix=magento2 \ 
---elasticsearch-timeout=15 
+--elasticsearch-index-prefix=magento2 \
+--elasticsearch-timeout=15
 ```
 
 {:.bs-callout-tip}
