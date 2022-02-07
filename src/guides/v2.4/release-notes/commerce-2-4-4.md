@@ -35,6 +35,30 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 See [Adobe Security Bulletin](https://helpx.adobe.com/security.html) for the latest discussion of these fixed issues.
 
+#### Additional security enhancements
+
+Security improvements for this release improve compliance with the latest security best practices, including:
+
+*  Integration tokens can no longer be used for API Bearer token authentication. Previously, an integration token could be used as a standalone key for token-based authentication. However, this behavior has been disabled by default due to the security implications of a never-expiring access token. The previous behavior can be enabled through the command line or Admin. See [Token-based authentication](https://devdocs.magento.com/guides/v2.4/get-started/authentication/gs-authentication-token.html). <!--- AC-1619--->
+
+*  Session IDs are no longer stored in the database. <!--- AC-522-->
+
+*  OAuth access tokens and password reset tokens are now encrypted when stored in the database. <!--- AC-520 1323-->
+
+*  Validation has been strengthened to prevent the upload of non alpha-numeric file extensions. <!--- AC-479-->
+
+*  Added reCAPTCHA support to coupon codes. <!--- AC-461-->
+
+*  Swagger is now disabled by default when {{ site.data.var.ee }} is in production mode. <!--- AC-1450-->
+
+*  HTTPS is now enabled by default for the {{ site.data.var.ee }} storefront. The **Use Secure URLs on Storefront** and **Use Secure URLs in Admin** settings are enabled by default, and all built-in cookies are now set as secure.  <!--- AC-1173-->
+
+*  The dependency confusion plugin is now required for all {{ site.data.var.ee }} installations. Previously, this plugin was required for Composer-based installations only. It now permits trusted versions. Merchants can bypass the constraints set in this plugin that prohibit certain combinations of Composer installations. The constraints can be bypassed for trusted versions, and {{ site.data.var.ee }} now displays a warning before proceeding with installation.  <!--- AC-501 970-->
+
+*  Developers can now configure the limit on the size of arrays accepted by {{ site.data.var.ee }} RESTful endpoints on a per-endpoint basis. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html). <!--- AC-465-->
+
+*  Added mechanisms for limiting the size and number of resources that a user can request through a web API on a system-wide basis, and for overriding the defaults on individual modules. See [API security](https://devdocs.magento.com/guides/v2.4/get-started/api-security.html). <!--- AC-1120-->
+
 ### Platform enhancements
 
 {{ site.data.var.ee }} 2.4.4 now supports PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Additional platform enhancements include:
@@ -271,7 +295,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- AC-715-->
 
-*  Currency conversion now occurs as expected in email confirmations for bundle product purchases in multi-store deployments that use different currencies.[GitHub-33426](https://github.com/magento/magento2/issues/33426)
+*  Currency conversion now occurs as expected in email confirmations for bundle product purchases in multi-store deployments that use different currencies. [GitHub-33426](https://github.com/magento/magento2/issues/33426)
 
 ### Cache
 
@@ -888,6 +912,7 @@ Repetitive actions have been replaced with action groups in these tests:
 #### New tests
 
 `StorefrontGiftMessageForOrderOnCheckoutCartPageTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
+
 `CheckoutWithEnabledCaptchaTest` [GitHub-32991](https://github.com/magento/magento2/issues/32991)
 
 `StorefrontCaptchaCheckoutWithEnabledCaptchaTest` [GitHub-32821](https://github.com/magento/magento2/issues/32821)
@@ -1137,7 +1162,7 @@ Repetitive actions have been replaced with action groups in these tests:
 
 <!--- AC-714-->
 
-*  Tier prices for configurable products now display accurate included and excluded tax values on the storefront. Previously, the same values were displayed for both included and excluded taxes. [GitHub-33673}( https://github.com/magento/magento2/issues/33673)
+*  Tier prices for configurable products now display accurate included and excluded tax values on the storefront. Previously, the same values were displayed for both included and excluded taxes. [GitHub-33673](https://github.com/magento/magento2/issues/33673)
 
 ### Test
 
@@ -1200,12 +1225,19 @@ Repetitive actions have been replaced with action groups in these tests:
 The following unit tests have been refactored to use `PHPUnit` instead of `AspectMock`:
 
 `AllureHelperTest` [GitHub-33294](https://github.com/magento/magento2/issues/33294)
+
 `ObjectHandlerUtil` [GitHub-33584](https://github.com/magento/magento2/issues/33584)
+
 `MockModuleResolverBuilder` [GitHub-33583](https://github.com/magento/magento2/issues/33583)
+
 `MagentoTestCase`  [GitHub-33582](https://github.com/magento/magento2/issues/33582)
+
 `ModuleResolverTest` [GitHub-33308](https://github.com/magento/magento2/issues/33308)
+
 `ParallelGroupSorterTest` [GitHub-33306](https://github.com/magento/magento2/issues/33306)
+
 `SuiteGeneratorTest` [GitHub-33299](https://github.com/magento/magento2/issues/33299)
+
 `OperationDataArrayResolverTest`  [GitHub-33296](https://github.com/magento/magento2/issues/33296)
 
 ### Theme
