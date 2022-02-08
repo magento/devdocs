@@ -45,7 +45,7 @@ To complete this tutorial, you will need access to a working Magento installatio
 -  Apache (2.4+)
 -  MySQL (5.7+)
 -  PHP (7.4)
--  Elasticsearch (7.x) or OpenSearch (1.1)
+-  Elasticsearch (7.x) or OpenSearch (1.2)
 -  Magento (2.4+)
 
 {:.bs-callout-info}
