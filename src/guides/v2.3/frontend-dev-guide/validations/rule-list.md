@@ -52,10 +52,10 @@ Date in Italy, **\d{1,2}\/\d{1,2}\/\d{4}** format, i.e. **4/4/24** or **24/12/21
 </form>
 ```
 
-* 44/44/40 - **false**
-* 12-12-2021 - **false**
-* 1/1/2022 - **true**
-* 12/10/2022 - **true**
+*  `44/44/40` - false
+*  `12-12-2021` - false
+*  `1/1/2022` - true
+*  `12/10/2022` - true
 
 There is a sanity check so dates like `99/12/2021` will be false.
 
@@ -221,7 +221,6 @@ It checks for no more than predefined number of words. Max number of words shoul
 
 Here, it accepts no more than 4 words.
 
-
 ### min-words
 
 It checks for more than predefined number of words. Min number of words should be set as a parameter.
@@ -252,8 +251,8 @@ It checks for a valid UK mobile number
 </form>
 ```
 
-* `+447911123456` - **true**
-* `44791112` - **false**
+*  `+447911123456` - true
+*  `44791112` - false
 
 ### no-marginal-whitespace
 
@@ -299,10 +298,10 @@ It checks for a non negative number
 
 There is a sanity check, so **0a** will result in a warning.
 
-* `0` - pass
-* `2.4`  - pass
-* `0a` - fail
-* `+2` - fail
+*  `0` - pass
+*  `2.4`  - pass
+*  `0a` - fail
+*  `+2` - fail
 
 ### password-not-equal-to-user-name
 
@@ -380,9 +379,9 @@ It checks for a predefined number of words.
 
 In the example above, only 2,3 or 4 word input string will not trigger a warning:
 
-* `not used` - pass
-* `not` - fail
-* `not used before` - pass
+*  `not used` - pass
+*  `not` - fail
+*  `not used before` - pass
 
 ### required-dropdown-attribute-entry
 
@@ -636,8 +635,8 @@ It checks for a valid URL link.
 </form>
 ```
 
-* `http://www.m2.com` - true
-* `magento.com` - false
+*  `http://www.m2.com` - true
+*  `magento.com` - false
 
 ### validate-admin-password
 
@@ -653,8 +652,8 @@ It checks for a valid admin password, it has to be 7 or more chacaters long and 
 </form>
 ```
 
-* `admindsdsdsd` - false
-* `minsdsdss8` - true
+*  `admindsdsdsd` - false
+*  `minsdsdss8` - true
 
 ### validate-ajax-error
 
@@ -684,8 +683,8 @@ It checks for letters (a-z or A-Z) only input.
 </form>
 ```
 
-* `jkjkjk` - true
-* `dfdfdf1` - false
+*  `jkjkjk` - true
+*  `dfdfdf1` - false
 
 ### validate-alphanum
 
@@ -747,8 +746,8 @@ It checks for a valid credit card expiration month.
 
 It interprets input as a month number with year set in a predefined field. Sanity check is limited.
 
-* `40` - true
-* `G` - false
+*  `40` - true
+*  `G` - false
 
 ### validate-cc-number
 
@@ -830,11 +829,11 @@ It checks for a valid URL. Protocal type isn't necessary.
 </form>
 ```
 
-* `fsdsd` - false
-* `https://www.domain.com` - true
-* `http://domain.com` - false
-* `www.domain.com` - true
-* `domain.com` - false
+*  `fsdsd` - false
+*  `https://www.domain.com` - true
+*  `http://domain.com` - false
+*  `www.domain.com` - true
+*  `domain.com` - false
 
 ### validate-code
 
@@ -850,8 +849,8 @@ It checks for an input that has only letters (a-z or A-Z), numbers (0-9) or unde
 </form>
 ```
 
-* `1ddf` - false
-* `Ad` - true
+*  `1ddf` - false
+*  `Ad` - true
 
 ### validate-cpassword
 
@@ -898,9 +897,9 @@ It checks for a valid US dollar amount, for example $100.
 </form>
 ```
 
-* `$100` - true
-* `200` - true
-* `$ 100` - false
+*  `$100` - true
+*  `200` - true
+*  `$ 100` - false
 
 ### validate-customer-password
 
@@ -918,9 +917,9 @@ It checks for a password to be greater or equal to a predefined number of charac
 
 In the example above the password must be 10 or more characters long and have two or more different character classes:
 
-* `dfdfdfdfdfdfdfdfdfdfdfdf` - false
-* `dfdfdfdfdfdfdfdfdfdfdfdf1` - true
-* `d1$` - false
+*  `dfdfdfdfdfdfdfdfdfdfdfdf` - false
+*  `dfdfdfdfdfdfdfdfdfdfdfdf1` - true
+*  `d1$` - false
 
 ### validate-data
 
@@ -952,9 +951,9 @@ It checks for a valid date against a predefined format.
 
 In the example above:
 
-* `09 09` - true
-* `dfdf` - false
-* `98-98` - false
+*  `09 09` - true
+*  `dfdf` - false
+*  `98-98` - false
 
 ### validate-date-au
 
@@ -999,8 +998,8 @@ It checks for a digits only input.
 </form>
 ```
 
-* `sdsd` - false
-* `34` - true
+*  `sdsd` - false
+*  `34` - true
 
 ### validate-digits-range
 
@@ -1047,9 +1046,9 @@ It checks for a valid email(s) separated (if several) by a comma or a newline or
 </form>
 ```
 
-* `test@test.com` - true
-* `test@test.com,test@test2.com` - true
-* `test@test.com - test@test2.com` - false
+*  `test@test.com` - true
+*  `test@test.com,test@test2.com` - true
+*  `test@test.com - test@test2.com` - false
 
 ### validate-emailSender
 
@@ -1079,9 +1078,9 @@ It checks for a valid fax number.
 </form>
 ```
 
-* `044-434-3434` - true
-* `111 222-2323` - true
-* `111-12-2323` - false
+*  `044-434-3434` - true
+*  `111 222-2323` - true
+*  `111-12-2323` - false
 
 ### validate-forbidden-extensions
 
@@ -1097,9 +1096,9 @@ It checks for an input (comma separated file extensions) to not have predefined 
 </form>
 ```
 
-* `ddff` - true
-* `jpg,png` - false
-* `ddf` - false
+*  `ddff` - true
+*  `jpg,png` - false
+*  `ddf` - false
 
 ### validate-greater-than-zero
 
@@ -1115,10 +1114,10 @@ It checks for a number greater than zero. There is a sanity check so `dfdf` inpu
 </form>
 ```
 
-* `r4` - false
-* `3.4` - true
-* `+1.3` - true
-* `0` - false
+*  `r4` - false
+*  `3.4` - true
+*  `+1.3` - true
+*  `0` - false
 
 ### validate-identifier
 
@@ -1134,9 +1133,9 @@ It checks for a valid URL key.
 </form>
 ```
 
-* `dfdfdf` - true
-* `hepee.html` - true
-* `fdf$%.html` - false
+*  `dfdfdf` - true
+*  `hepee.html` - true
+*  `fdf$%.html` - false
 
 ### validate-item-quantity
 
@@ -1152,10 +1151,10 @@ It checks for a quantity number to be within `minAllowed` and `maxAllowed` and t
 </form>
 ```
 
-* `9` - false
-* `28` - true
-* `29` - false
-* `300` - false
+*  `9` - false
+*  `28` - true
+*  `29` - false
+*  `300` - false
 
 ### validate-length
 
@@ -1173,9 +1172,9 @@ It checks for input length to be within specified limits.
 
 In the example above:
 
-* `f` - false
-* `fa` - true
-* `dfdfdf` - false
+*  `f` - false
+*  `fa` - true
+*  `dfdfdf` - false
 
 ### validate-new-password
 
@@ -1384,8 +1383,8 @@ It checks for input to be a specified value from a comma separated field.
 </form>
 ```
 
-* `44` - false
-* `8` - true
+*  `44` - false
+*  `8` - true
 
 ### validate-per-page-value-list
 
@@ -1403,9 +1402,9 @@ It checks for a comma separated numbers input.
 </form>
 ```
 
-* `kjkjdf,dfdf` - false
-* `1` - true
-* `1,3,4,5` - true
+*  `kjkjdf,dfdf` - false
+*  `1` - true
+*  `1,3,4,5` - true
 
 ### validate-phoneLax
 
@@ -1455,8 +1454,8 @@ It checks for input to be within a specified range.
 </form>
 ```
 
-* `100` - false
-* `9` - true
+*  `100` - false
+*  `9` - true
 
 ### validate-required-datetime
 
