@@ -15,7 +15,7 @@ You can configure **high-throughput order processing** by using the following se
 
 All features work independently. You can use all the features simultaneously or enable and disable features in any combination.
 
-Use the command-line interface to enable these features, or edit the `app/etc/env.php` file according to the corresponding readme files defined in the [_Module Reference Guide_][mrg].
+Use the command-line interface to enable these features, or edit the `app/etc/env.php` file according to the corresponding README files defined in the [_Module Reference Guide_][mrg].
 
 ## Asynchronous order placement
 
