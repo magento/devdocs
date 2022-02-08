@@ -1053,4 +1053,613 @@ It checks for a valid email(s) separated (if several) by a comma or a newline or
 
 ### validate-emailSender
 
+It checks for a valid email address although no sanity check is performed, i.e. any input is valid. Regex is `^[\S ]+$`.
 
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-emailSender':true}"/>
+...
+</form>
+```
+
+### validate-fax
+
+It checks for a valid fax number.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-fax':true}"/>
+...
+</form>
+```
+
+* `044-434-3434` - true
+* `111 222-2323` - true
+* `111-12-2323` - false
+
+### validate-forbidden-extensions
+
+It checks for an input (comma separated file extensions) to not have predefined extensions.
+
+### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-forbidden-extensions':true}" data-validation-params="jpg,ddf"/>
+...
+</form>
+```
+
+* `ddff` - true
+* `jpg,png` - false
+* `ddf` - false
+
+### validate-greater-than-zero
+
+It checks for a number greater than zero. There is a sanity check so `dfdf` input will trigger a warning.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-greater-than-zero':true}"/>
+...
+</form>
+```
+
+* `r4` - false
+* `3.4` - true
+* `+1.3` - true
+* `0` - false
+
+### validate-identifier
+
+It checks for a valid URL key.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-identifier':true}"/>
+...
+</form>
+```
+
+* `dfdfdf` - true
+* `hepee.html` - true
+* `fdf$%.html` - false
+
+### validate-item-quantity
+
+It checks for a quantity number to be within `minAllowed` and `maxAllowed` and to be in `qtyIncremenets`.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-item-quantity':{'minAllowed':10,'maxAllowed':200,'qtyIncrements':4}}"/>
+...
+</form>
+```
+
+* `9` - false
+* `28` - true
+* `29` - false
+* `300` - false
+
+### validate-length
+
+It checks for input length to be within specified limits.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-length':true}" class="minimum-length-2 maximum-length-5"/>
+...
+</form>
+```
+
+In the example above:
+
+* `f` - false
+* `fa` - true
+* `dfdfdf` - false
+
+### validate-new-password
+
+It checks for input to be 6 or more characters. Leading and trailing spaces will be ignored.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-new-password':true}"/>
+...
+</form>
+```
+
+### validate-no-empty
+
+It checks for input not to be empty.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-no-empty':true}"/>
+...
+</form>
+```
+
+### validate-no-html-tags
+
+It checks for input to not have html tags.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-no-html-tags':true}"/>
+...
+</form>
+```
+
+### validate-no-utf8mb4-characters
+
+It checks for input to not have chars that would require more than 3 bytes.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-no-utf8mb4-characters':true}"/>
+...
+</form>
+```
+
+### validate-not-negative-number
+
+It checks for non negative number input.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-not-negative-number':true}"/>
+...
+</form>
+```
+
+### validate-not-number-first
+
+It checks for input that doesn't start with a number.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-not-number-first':true}"/>
+...
+</form>
+```
+
+### validate-number
+
+It checks for a valid number.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-number':true}"/>
+...
+</form>
+```
+
+### validate-number-range
+
+It checks for a number to be within a specified range.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <input name="field-4" id="field-3" title="Field 3" type="text" data-validate="{'validate-number-range':'19-30'}"/>
+...
+</form>
+```
+
+### validate-one-required
+
+It's supposed to check for radio buttons selection but it always returns true. There is probably a bug in JS files.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="radio" value="1" data-validate="{'validate-one-required':true}"/>
+     <input name="field-4" id="field-3" title="Field 3" type="radio" value="2"/>
+     <input name="field-4" id="field-6" title="Field 6" type="radio" value="2"/>
+   </div>
+...
+</form>
+```
+
+### validate-one-required-by-name
+
+It checks for radio buttons selection.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="radio" value="1" data-validate="{'validate-one-required':true}"/>
+     <input name="field-4" id="field-3" title="Field 3" type="radio" value="2"/>
+     <input name="field-4" id="field-6" title="Field 6" type="radio" value="2"/>
+   </div>
+...
+</form>
+```
+
+### validate-optional-datetime
+
+It validates an optional datetime field.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+        <div class="control">
+                <select name="options[2][month]" id="options_2_month" class="product-custom-option admin__control-select datetime-picker" data-selector="options[2][month]">
+                      <option value="">-</option>
+                      <option value="1">01</option>/option>
+                </select>
+                <select name="options[2][day]" id="options_2_day" class="product-custom-option admin__control-select datetime-picker" data-selector="options[2][day]">
+                       <option value="">-</option><option value="1">01</option><option value="2">02</option>
+                </select>
+                <select name="options[2][year]" id="options_2_year" class="product-custom-option admin__control-select datetime-picker" data-selector="options[2][year]">
+                       <option value="">-</option><option value="2022">2022</option>
+                </select>
+                <input type="hidden" name="validate_datetime_2" class="validate-datetime-2" value="" data-validate="{'validate-optional-datetime':2}">
+        </div>
+...
+</form>
+```
+
+### validate-password
+
+It checks for input to be 6 or more characters long. Leading and trailing spaces will be ignored.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-password':true}"/>
+   </div>
+...
+</form>
+```
+
+### validate-per-page-value
+
+It checks for input to be a specified value from a comma separated field.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-per-page-value':true}"/>
+     <input name="field-5" id="field-5_values" type="hidden" value="1,3,4,5,6,8"/>
+   </div>
+...
+</form>
+```
+
+* `44` - false
+* `8` - true
+
+### validate-per-page-value-list
+
+It checks for a comma separated numbers input.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-per-page-value-list':true}"/>
+   </div>
+...
+</form>
+```
+
+* `kjkjdf,dfdf` - false
+* `1` - true
+* `1,3,4,5` - true
+
+### validate-phoneLax
+
+It checks for a valid phone number, formatting could be lax.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-phoneLax':true}"/>
+   </div>
+...
+</form>
+```
+
+### validate-phoneStrict
+
+It checks for a valid phone number with strict formatting.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-phoneStrict':true}"/>
+   </div>
+...
+</form>
+```
+
+### validate-range
+
+It checks for input to be within a specified range.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" class="range-9-20" title="Field 5" type="text" data-validate="{'validate-range':true}"/>
+   </div>
+...
+</form>
+```
+
+* `100` - false
+* `9` - true
+
+### validate-required-datetime
+
+It validates a required datetime field.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+        <div class="control">
+                <select name="options[2][month]" id="options_2_month" class="product-custom-option admin__control-select datetime-picker" data-selector="options[2][month]">
+                      <option value="">-</option>
+                      <option value="1">01</option>/option>
+                </select>
+                <select name="options[2][day]" id="options_2_day" class="product-custom-option admin__control-select datetime-picker" data-selector="options[2][day]">
+                       <option value="">-</option><option value="1">01</option><option value="2">02</option>
+                </select>
+                <select name="options[2][year]" id="options_2_year" class="product-custom-option admin__control-select datetime-picker" data-selector="options[2][year]">
+                       <option value="">-</option><option value="2022">2022</option>
+                </select>
+                <input type="hidden" name="validate_datetime_2" class="validate-datetime-2" value="" data-validate="{'validate-required-datetime':2}">
+        </div>
+...
+</form>
+```
+
+### validate-select
+
+It checks for a select field to be selected.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+               <select name="field-4" id="field-5"  data-validate="{'validate-select':true}">
+                   <option value=""></option>
+                   <option value="1">1</option>
+                   <option value="2">2</option>
+               </select>
+   </div>
+...
+</form>
+```
+
+### validate-ssn
+
+It checks for a valid social security number.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-ssn':true}"/>
+   </div>
+...
+</form>
+```
+
+### validate-state
+
+It checks for a valid state.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-state':true}"/>
+   </div>
+...
+</form>
+```
+
+### validate-street
+
+It checks for a valid street address, it allows only letters (a-z or A-Z), numbers (0-9), spaces and `#`.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-street':true}"/>
+   </div>
+...
+</form>
+```
+
+### validate-url
+
+It checks for a valid URL.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-url':true}"/>
+   </div>
+...
+</form>
+```
+
+### validate-xml-identifier
+
+It checks for a valid XML-identifier (Ex: something\_1, block5, id-4).
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-xml-identifier':true}"/>
+   </div>
+...
+</form>
+```
+
+### validate-zero-or-greater
+
+It checks for a number 0 or greater in this field.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-zero-or-greater':true}"/>
+   </div>
+...
+</form>
+```
+
+### validate-zip-international
+
+It checks for a valid international zip code.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-zip-international':true}"/>
+   </div>
+...
+</form>
+```
+
+### validate-zip-us
+
+It checks for a valid US zip code (Ex: 90602 or 90602-1234).
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'validate-zip-us':true}"/>
+   </div>
+...
+</form>
+```
+
+### vinUS
+
+It checks for a valid vehicle identification number (VIN).
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'vinUS':true}"/>
+   </div>
+...
+</form>
+```
+
+### zip-range
+
+It checks for a zip code to be in the range 902xx-xxxx to 905-xx-xxxx.
+
+#### Example
+
+```html
+<form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
+...
+   <div class="control">
+     <input name="field-4" id="field-5" title="Field 5" type="text" data-validate="{'zip-range':true}"/>
+   </div>
+...
+</form>
+```
