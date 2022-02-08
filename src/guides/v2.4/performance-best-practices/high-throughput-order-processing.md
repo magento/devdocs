@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-You can configure **high-throughput order processing** by using the following set of modules to optimize the Order Placement and Checkout experience:
+You can optimize the order placement and checkout experience by configuring the following set of modules for **high-throughput order processing**:
 
 -  [AsyncOrder](#asynchronous-order-placement)—Asynchronously processes orders using a queue.
 -  [NegotiableQuoteAsyncOrder](#negotiable-quote-asyn-order)—Asynchronously processes NegotiableQuote save order items.
@@ -107,7 +107,7 @@ Developers can explicitly exclude certain payments methods from Asynchronous Ord
 
 ## Negotiable Quote Async Order
 
-The _Negotiable Quote Async Order_ B2B module enables you to save order items asynchronously for the `NegotiableQuote` functionality.
+The _Negotiable Quote Async Order_ B2B module enables you to save order items asynchronously for the `NegotiableQuote` functionality. You must have AsyncOrder and NegotiableQuote enabled.
 
 ## Deferred Total Calculation
 
