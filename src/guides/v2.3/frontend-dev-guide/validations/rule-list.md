@@ -61,7 +61,7 @@ There is a sanity check so dates like `99/12/2021` will be false.
 
 ### dateNL
 
-Date in Netherlands, **\d\d?[\.\/-]\d\d?[\.\/-]\d\d\d?\d?** format, i.e. 
+Date in Netherlands, **\d\d?[\.\/-]\d\d?[\.\/-]\d\d\d?\d?** format.
 
 ### Example
 
@@ -386,7 +386,7 @@ In the example above, only 2,3 or 4 word input string will not trigger a warning
 
 ### required-dropdown-attribute-entry
 
-It checks for all disabled input fields (with a `required-option` class) within a table tag to be empty. 
+It checks for all disabled input fields (with a `required-option` class) within a table tag to be empty.
 
 #### Example
 
@@ -455,7 +455,7 @@ It makes the field required if specified fields and a specified file input are e
 </form>
 ```
 
-In the example above, a warning is only displayed if all fields are empty. 
+In the example above, a warning is only displayed if all fields are empty.
 
 ### required-if-not-specified
 
@@ -493,7 +493,7 @@ If `field-5` isn't empty, `field-3` is required.
 
 ### required-number
 
-It requires a number to be entered. 
+It requires a number to be entered.
 
 ```html
 <form class="form" id="my-form" method="post" data-mage-init='{"validation": {}}'>
@@ -524,7 +524,7 @@ If `field-5` isn't empty, `field-3` is required, although any input would work, 
 
 ### required-text-swatch-entry
 
-It checks for all disabled input fields (with a `required-option` class) within a table tag to be empty. 
+It checks for all disabled input fields (with a `required-option` class) within a table tag to be empty.
 
 #### Example
 
@@ -551,7 +551,7 @@ In the example above it will trigger a warning as `field-1` isn't empty.
 
 ### required-visual-swatch-entry
 
-It checks for all disabled input fields (with a `required-option` class) within a table tag to be empty. 
+It checks for all disabled input fields (with a `required-option` class) within a table tag to be empty.
 
 #### Example
 
@@ -732,7 +732,7 @@ It checks for a valid credit card identification number.
 
 ### validate-cc-exp
 
-It checks for a valid credit card expiration month. 
+It checks for a valid credit card expiration month.
 
 #### Example
 
@@ -834,7 +834,7 @@ It checks for a valid URL. Protocal type isn't necessary.
 * `https://www.domain.com` - true
 * `http://domain.com` - false
 * `www.domain.com` - true
-* `domain.com` - false 
+* `domain.com` - false
 
 ### validate-code
 
