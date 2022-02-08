@@ -23,10 +23,18 @@ pages:
         - label: PHP
           url: /install-gde/prereq/php-settings.html
 
-        - label: Elasticsearch
+        - label: Search engine prerequisites
           url: /install-gde/prereq/elasticsearch.html
           exclude_versions: ["2.3"]
           children:
+
+            - label: Migrate from Elasticsearch to OpenSearch
+              url: /install-gde/prereq/os-migration.html
+              exclude_versions: ["2.3"]
+
+            - label: Using AWS Elasticsearch
+              url: /install-gde/prereq/es-aws.html
+              exclude_versions: ["2.3"]
 
             - label: Configure nginx and Elasticsearch
               url: /install-gde/prereq/es-config-nginx.html

@@ -90,7 +90,9 @@ Any options that contain spaces or special characters must be enclosed in either
 
 The following options specify the user information and credentials for the Magento admin user.
 
-In {{site.data.var.ee}} version 2.2.8 and later, you can create the Magento admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
+You can create the Magento admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
+
+The following tables provide many but not all available install parameters. For a complete list, see the [Command-line Tools Reference](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html).
 
 |Name|Value|Required?|
 |--- |--- |--- |
@@ -128,18 +130,18 @@ In {{site.data.var.ee}} version 2.2.8 and later, you can create the Magento admi
 |`--db-init-statements`|Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to this one before you set any values.<br><br>Default is `SET NAMES utf8;`.|No|
 |`--sales-order-increment-prefix`|Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.|No|
 
-**Elasticsearch configuration options:**
+**Search engine configuration options:**
 
 |Name|Value|Required?|
 |--- |--- |--- |
-`--search-engine` | The version of Elasticsearch to use as the search engine. Possible values are `elasticsearch7`, `elasticsearch6`, and `elasticsearch5`. The default is `elasticsearch7`. Elasticsearch 5 has been deprecated and is not recommended. | No
-`--elasticsearch-host` | The host name or IP address where Elasticsearch is running. The default is `localhost`. | No
+`--search-engine` | The version of Elasticsearch or OpenSearch to use as the search engine. Possible values are `elasticsearch7`, `elasticsearch6`, and `elasticsearch5`. The default is `elasticsearch7`. To use OpenSearch, specify `elasticsearch7`.  Elasticsearch 5 has been deprecated and is not recommended. | No
+`--elasticsearch-host` | The host name or IP address where search engine is running. The default is `localhost`. | No
 `--elasticsearch-port` | The port for incoming HTTP requests. The default is `9200`. | No
-`--elasticsearch-index-prefix` | A prefix that identifies the Elasticsearch index. The default is `magento2`. | No
+`--elasticsearch-index-prefix` | A prefix that identifies the search engine index. The default is `magento2`. | No
 `--elasticsearch-timeout` | The number of seconds before the system times out. The default is `15`. | No
-`--elasticsearch-enable-auth` | Enables authentication on the Elasticsearch server. The default is `false`. | No
-`--elasticsearch-username` | The user ID to authenticate Elasticsearch | No, unless authentication is enabled
-`--elasticsearch-password` | The password to authenticate Elasticsearch | No, unless authentication is enabled
+`--elasticsearch-enable-auth` | Enables authentication on the search engine server. The default is `false`. | No
+`--elasticsearch-username` | The user ID to authenticate the search engine | No, unless authentication is enabled
+`--elasticsearch-password` | The password to authenticate the search engine | No, unless authentication is enabled
 
 **RabbitMQ configuration options:**
 
@@ -200,7 +202,7 @@ The following example installs Magento with the following options:
 *  Default language is `en_US` (U.S. English)
 *  Default currency is U.S. dollars
 *  Default time zone is U.S. Central (America/Chicago)
-*  Elasticsearch 7 is installed on `es-host.example.com` and connects on port 9200
+*  OpenSearch 1.1 is installed on `es-host.example.com` and connects on port 9200
 
 ```bash
 magento setup:install --base-url=http://127.0.0.1/magento2/ \
