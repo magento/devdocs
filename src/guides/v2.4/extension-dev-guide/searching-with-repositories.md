@@ -41,6 +41,9 @@ $filter
 
 This filter will find all urls with the suffix of "magento.com".
 
+{:.bs-callout-info}
+A full list of condition types can be found in the [Rest API Reference]({{ page.baseurl }}/rest/performing-searches.html).
+
 ### Filter Group
 
 The [`FilterGroup`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/Search/FilterGroup.php) class acts like a collection of Filters that apply one or more criteria to a search.

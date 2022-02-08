@@ -1,5 +1,5 @@
-{{ site.data.var.ce }}:
+{{ site.data.var.ce }} and {{ site.data.var.ee }}:
 {% include install/php-ext-opensource.md %}
 
-{{ site.data.var.ee }}:
+Additionally {{ site.data.var.ee }} requires:
 {% include install/php-ext-commerce.md %}

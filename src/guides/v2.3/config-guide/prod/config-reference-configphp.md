@@ -55,7 +55,7 @@ Contains an array of scope configuration values. It has the following subnodes:
     ]
   ],
   'groups' => [
-    [
+    0 => [
       'group_id' => '0',
       'website_id' => '0',
       'code' => 'default',
