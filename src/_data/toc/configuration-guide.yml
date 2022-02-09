@@ -316,6 +316,9 @@ pages:
       include_versions: ["2.3"]
       children:
 
+        - label: Migrate from Elasticsearch to OpenSearch
+          url: /config-guide/elasticsearch/opensearch-migration.html
+
         - label: Configure nginx and Elasticsearch
           url: /config-guide/elasticsearch/es-config-nginx.html
 
