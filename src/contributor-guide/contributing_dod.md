@@ -23,8 +23,7 @@ The checklist that can be used to evaluate if the DoD has been met:
 - All changes must be approved by reviewer.
 - All changes must be covered by automated tests if that is possible.
 - All functional changes should be documented.
-- All backward incompatible changes should be approved and covered by static tests if that is possible.
-  - Static tests should be delivered to the [magento-coding-standard][5] repository.
+- All backward incompatible changes should be approved and covered by static tests if that is possible. Static tests should be delivered to the [magento-coding-standard][5] repository.
 - TCO impact should be defined for all changes.
 
 The following sections provide additional details about each of these criteria:
