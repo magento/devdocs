@@ -31,20 +31,20 @@ Second, for partners to provide feedback and receive important updates about the
 
 If you are already in the Adobe Partner Program, we will give the GitHub users access to our private repository after the Beta Program Agreement is signed.
 No need to do anything else.
-​
+
 If you are not already in the Adobe Partner Program, you must do the following:
 
 1. Make sure all of your contributors have an active GitHub account with two-factor authentication enabled.
 1. Provide a maintainer GitHub username. We will provide that user the ability to add additional users associated with the parent company who signed the Beta Program Agreement (`github.com/accountname`).
 1. Contact <magebeta@adobe.com> from the official partner’s company email with the maintainer and ask to join.
 
-If you are not a partner, this time you won't be able to provide feedback. We are working to change this for next beta release. 
+If you are not a partner, this time you won't be able to provide feedback. We are working to change this for next beta release.
 
 ## Get the Code
 
 Third, the pre-production code will be released as a Composer metapackage on <https://repo.magento.com>.
 See our [release schedule][] for the latest information about our upcoming Beta release.
-​
+
 ### Instructions to successfully download the Beta code
 
 -  Use the MageID associated with the {{ site.data.var.ee }} license or Partner license (same MageID used to sign the Beta Program Agreement).
