@@ -58,7 +58,7 @@ The 2FA provider for Magento Headless can be selected with the `config:set` comm
 
 Two-Factor Authentication is implemented for Magento Web APIs with the following changes:
 
--  `AdminTokenServiceInterface::createAdminAccessToken()` throws an exception when the _Admin_ user doesn’t have personal 2FA configured, and also indicates that the confirmationh email has been sent.
+-  `AdminTokenServiceInterface::createAdminAccessToken()` throws an exception when the _Admin_ user doesn’t have personal 2FA configured, and also indicates that the confirmation email has been sent.
 -  `AdminTokenServiceInterface::createAdminAccessToken()` throws an exception that indicates which provider is configured for the user and suggests a provider-specific login endpoint.
 -  2FA provider-specific endpoints allow each _Admin_ user to configure a personal 2FA and provides tokens for username, password, and OTP (2FA code).
 
@@ -67,7 +67,7 @@ Two-Factor Authentication is implemented for Magento Web APIs with the following
 
 ## Magento Functional Testing Framework
 
-MFTF uses Google Authenticator to execute tests with 2FA enabled. The following steps summarize how to configure MFTF with an encoded shared secret. For more information, see [Configuring MFTF for Two-Factor Authentication (2FA)]({{ page.baseurl }}/security/two-factor-authentication.html#magento-functional-testing-framework).
+MFTF uses Google Authenticator to execute tests with 2FA enabled. The following steps summarize how to configure MFTF with an encoded shared secret.
 
 1. Select Google Authenticator as the 2FA provider:
 
@@ -95,7 +95,7 @@ MFTF uses Google Authenticator to execute tests with 2FA enabled. The following 
 
 ## Troubleshooting
 
-The extension supports command line options to revoke and reset authenticators. Use these commands when you cannot access the Magento _Admin_.
+The extension supports command-line options to revoke and reset authenticators. Use these commands when you cannot access the Magento _Admin_.
 
 ### List all available 2FA providers
 

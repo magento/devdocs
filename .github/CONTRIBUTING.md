@@ -148,6 +148,6 @@ You can provide feedback using the following options:
 Have a question? Need help? Magento DevDocs, Maintainers, and other Contributors are available through:
 
 -  [Slack](https://magentocommeng.slack.com/archives/CAN932A3H) ([Join us](https://opensource.magento.com/slack))
--  [Twitter @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
+-  [Twitter @AdobeCommrcDocs](https://twitter.com/AdobeCommrcDocs)
 
 Thank you for contributing your brilliance to Magento DevDocs!!

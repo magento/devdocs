@@ -2,6 +2,7 @@
 group: live-search
 title: Live Search Release Notes
 ee_only: True
+redirect_to: https://docs.magento.com/user-guide/live-search/release-notes.html
 ---
 
 These release notes describe the latest versions of Live Search and include:
@@ -55,5 +56,4 @@ To learn more:
 
 -  [{{site.data.var.ee}} Developer Documentation]({{ site.baseurl }}/live-search/overview.html)
 -  [{{site.data.var.ee}} User Guide]({{ site.user_guide_url }}/live-search/overview.html)
--  [Support Knowledge Base](https://support.magento.com/hc/en-us)
 -  [Live Search on Marketplace](https://marketplace.magento.com/magento-live-search.html)

@@ -1,0 +1,21 @@
+---
+label: Tools
+pages:
+
+  - label: Quality Patches Tool
+    url: /quality-patches/tool.html
+    versionless: true
+    children:
+
+      - label: Usage
+        url: /quality-patches/usage.html
+        versionless: true
+
+      - label: Release notes
+        url: /quality-patches/release-notes.html
+        versionless: true
+ 
+  - label: Site Wide Analysis Tool
+    url: /tools/site-wide-analysis.html
+    versionless: true
+    edition: ee-only
