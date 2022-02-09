@@ -38,7 +38,7 @@ If you are not already in the Adobe Partner Program, you must do the following:
 1. Provide a maintainer GitHub username. We will provide that user the ability to add additional users associated with the parent company who signed the Beta Program Agreement (`github.com/accountname`).
 1. Contact <magebeta@adobe.com> from the official partner’s company email with the maintainer and ask to join.
 
-If you are not a partner, this time you won't be able to provide feedback. We are working to change this for next beta release.
+If you are not a partner, you won't be able to provide feedback for the 2.4.4 beta. We are working to change this for the next beta release.
 
 ## Get the Code
 
