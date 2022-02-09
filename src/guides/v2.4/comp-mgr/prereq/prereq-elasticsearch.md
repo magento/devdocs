@@ -36,7 +36,7 @@ Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch
 {:.bs-callout-info}
 Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Development Kit (JDK)]({{page.baseurl}}/install-gde/prereq/elasticsearch.html#prereq-java) to check which version of JDK is installed.
 
-[Configure Magento to use a search engine]({{ page.baseurl }}/config-guide/elasticsearch/configure-magento.html) describes the tasks you must perform after updating Elasticsearch 2 to a supported version.
+[Search engine configuration]({{ page.baseurl }}/config-guide/elasticsearch/configure-magento.html) describes the tasks you must perform after updating Elasticsearch 2 to a supported version.
 
 ## Third-party extensions
 

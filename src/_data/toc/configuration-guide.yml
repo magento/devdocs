@@ -339,7 +339,7 @@ pages:
         - label: Configure stopwords
           url: /config-guide/elasticsearch/es-config-stopwords.html
 
-        - label: Configure Commerce and Magento to use a search engine
+        - label: Search engine configuration
           url: /config-guide/elasticsearch/configure-magento.html
 
     - label: Message Queues
