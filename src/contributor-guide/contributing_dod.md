@@ -20,11 +20,12 @@ At a high level, the criteria defined in our "definition of done" revolve around
 
 The checklist that can be used to evaluate if the DoD has been met:
 
--  All changes must be approved by reviewer.
--  All changes must be covered by automated tests.
--  All functional changes should be documented.
--  All backward incompatible changes should be approved and covered by static tests.
--  TCO impact should be defined for all changes.
+- All changes must be approved by reviewer.
+- All changes must be covered by automated tests if that is possible.
+- All functional changes should be documented.
+- All backward incompatible changes should be approved and covered by static tests if that is possible.
+  - Static tests should be delivered to the [magento-coding-standard][5] repository.
+- TCO impact should be defined for all changes.
 
 The following sections provide additional details about each of these criteria:
 
@@ -61,7 +62,7 @@ The details on backward compatiblity criterias included in the "Definition of Do
 
 ## TCO Analysis
 
-All functional changes should analysed for the impact on merchant total cost of ownership (TCO) and the results of the analysis should be added to the pull request or issue description to meet the "Definition of Done" (DoD).
+All functional changes should analysed for the impact on merchant total cost of ownership (TCO) and the results of the analysis should be added to the issue or pull request description to meet the "Definition of Done" (DoD).
 
 The details on TCO analysis required to meet the "Definition of Done" (DoD) can be found on [DoD - TCO Analysis][4]
 
@@ -72,3 +73,4 @@ The work cannot be considered as complete unless all the criteria are verified.
 [2]:{{ site.baseurl }}/contributor-guide/backward-compatible-development/index.html#where-to-document
 [3]:{{ site.gdeurl }}/contributor-guide/dod/automated-tests.html
 [4]:{{ site.gdeurl }}/contributor-guide/dod/tco-analysis.html
+[5]:https://github.com/magento/magento-coding-standard

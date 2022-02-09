@@ -18,7 +18,7 @@ The goal of TCO analysis is to identify:
 
 Changes can impact total cost of ownership if the extensions or customisations, established processes or integrations within the projects build on Adobe Commerce framework may need to be adjusted to accommodate the changes.
 
-Changes that have impact on TCO:
+Some changes that have impact on TCO:
 
 -  Result in SVC build failure on pull request
 -  JavaScript changes (not covered by SVC build)
@@ -103,3 +103,6 @@ Changes have TCO impact.
 Change to SomeClass::someMethod is PATCH level but impacts 5 out of 10 reviewed projects.
 Change to CLI command is MAJOR level, it impacts 2 out of 10 reviewed projects.
 ```
+
+The project in the example above is referring to any Adobe Commerce project with customizations.
+The change impacts the project if the project custom code needs to be changed in response to the analyzed change of the core.
