@@ -223,7 +223,7 @@ Here, it accepts no more than 4 words.
 
 ### min-words
 
-It checks for more than predefined number of words. Min number of words should be set as a parameter.
+It checks that there are not less than a predefined number of words. Minimum number of words should be set as a parameter.
 
 #### Example
 
@@ -607,7 +607,7 @@ It checks for a valid time between 00:00 and 23:59:59.
 
 ### time12h
 
-It checks for a valid time between 00:00 am and 12:00 pm.
+It checks for a valid time between 00:00 am and 12:00 pm. `12:01 pm` and `11:59 pm` value are valid.
 
 #### Example
 
@@ -778,7 +778,7 @@ It checks for a credit card number to match a predefined credit card type.
 </form>
 ```
 
-Field `field-5` holds a credit card type, `AE` stands for American Express.
+Field `field-5` holds a credit card type, possible values are: `SO`, `SM`, `VI`, `MC`, `AE`, `DI`, `JCB`, `DN`, `UN`, `MI`, `MD`.
 
 ### validate-cc-type-select
 
@@ -1521,7 +1521,7 @@ It checks for a valid social security number.
 
 ### validate-state
 
-It checks for a valid state.
+It checks for a valid State/Province.
 
 #### Example
 
