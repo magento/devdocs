@@ -1,4 +1,5 @@
-This section discusses the minimum settings you must choose to test Elasticsearch or OpenSearch with {{ site.data.var.ee }} and {{ site.data.var.ce }}.
+This section discusses the minimum settings you must choose to test Elasticsearch or OpenSearch with {{ site.data.var.ee }} and {{ site.data.var.ce }}. As of versions 2.4.4 and 2.4.3-p2, all fields labeled **Elasticsearch** also apply to OpenSearch.
+
 For additional details about configuring your search engine, see the [User Guide]({{ site.user_guide_url }}/catalog/search-elasticsearch.html).
 
 ## Configure your search engine from the Admin
