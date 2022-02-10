@@ -16,6 +16,9 @@ roadmap:
         status: inProgress
       - name: OpenSearch 1.x support
         status: inProgress
+      - name: Payment services (extension)
+        status: inProgress
+        type: Extension
       - name: PayPal and Braintree updates
         status: inProgress
         type: Extension
@@ -50,8 +53,6 @@ roadmap:
       - name: Page Builder - Mobile layout optimization
         status: Planned
       - name: Page Builder - Column grid layouts (viewports)
-        status: Planned
-      - name: Payment services (extension)
         status: Planned
       - name: PWA - Server-side rendering (SSR)
         status: Planned
