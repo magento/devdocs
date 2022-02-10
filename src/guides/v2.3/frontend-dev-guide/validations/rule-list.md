@@ -778,7 +778,19 @@ It checks for a credit card number to match a predefined credit card type.
 </form>
 ```
 
-Field `field-5` holds a credit card type, possible values are: `SO`, `SM`, `VI`, `MC`, `AE`, `DI`, `JCB`, `DN`, `UN`, `MI`, `MD`.
+Field `field-5` holds a credit card type, possible values are:
+
+*  `SO` - Solo
+*  `SM` - Switch/Maestro
+*  `VI` - Visa
+*  `MC` - MasterCard
+*  `AE` - American Express
+*  `DI` - Discover
+*  `JCB` - JCB (Japan Credit Bureau)
+*  `DN` - Diners
+*  `UN` - UN
+*  `MI` - Maestro International
+*  `MD` - Maestro Domestic
 
 ### validate-cc-type-select
 
