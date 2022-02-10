@@ -7,15 +7,19 @@
         "releases": [
             {
                 "publishedAt": "2021-10-12T14:41:27Z",
-                "tagName": "2.4.3-p1"
+                "tagName": "2.4.3-p1",
+                "combinedReleaseNotes": "guides/v2.4/release-notes/2-4-3-p1.html"
             },
             {
                 "publishedAt": "2021-08-10T16:44:14Z",
-                "tagName": "2.4.3"
+                "tagName": "2.4.3",
+                "commerceReleaseNotes": "guides/v2.4/release-notes/commerce-2-4-3.html",
+                "opensourceReleaseNotes": "guides/v2.4/release-notes/open-source-2-4-3.html"
             },
             {
                 "publishedAt": "2021-08-10T16:44:09Z",
-                "tagName": "2.4.2-p2"
+                "tagName": "2.4.2-p2",
+                "combinedReleaseNotes": "guides/v2.4/release-notes/2-4-2-p2.html"
             },
             {
                 "publishedAt":"2021-05-11T15:16:17Z",
@@ -23,7 +27,9 @@
             },
             {
                 "publishedAt":"2021-02-09T18:05:14Z",
-                "tagName":"2.4.2"
+                "tagName":"2.4.2",
+                "commerceReleaseNotes": "guides/v2.4/release-notes/commerce-2-4-2.html",
+                "opensourceReleaseNotes": "guides/v2.4/release-notes/open-source-2-4-2.html"
             },
             {
                 "publishedAt":"2021-02-09T18:05:10Z",
@@ -31,7 +37,9 @@
             },
             {
                 "publishedAt":"2020-10-15T14:21:36Z",
-                "tagName":"2.4.1"
+                "tagName":"2.4.1",
+                "commerceReleaseNotes": "guides/v2.4/release-notes/commerce-2-4-1.html",
+                "opensourceReleaseNotes": "guides/v2.4/release-notes/open-source-2-4-1.html"
             },
             {
                 "publishedAt":"2020-10-15T14:21:04Z",
@@ -39,10 +47,13 @@
             },
             {
                 "publishedAt":"2020-07-28T14:40:42Z",
-                "tagName":"2.4.0"
+                "tagName":"2.4.0",
+                "commerceReleaseNotes": "guides/v2.4/release-notes/release-notes-2-4-0-commerce.html",
+                "opensourceReleaseNotes": "guides/v2.4/release-notes/release-notes-2-4-0-open-source.html"
             }
         ],
-        "end-of-support": "2022-11-??"
+        "end-of-support": "2022-11-??",
+        "release-notes" : true
     },
     "2.3": {
         "releases": [

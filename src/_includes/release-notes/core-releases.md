@@ -5,6 +5,7 @@
 {% assign minor_release_version = minor_release[0] %}
 {% assign patch_releases = minor_release[1].releases %}
 {% assign end_of_support = minor_release[1].end-of-support %}
+{% assign release_notes = minor_release[1].release-notes %}
 {% assign end_of_support_array = end_of_support | split: '-' %}
 ## {{ minor_release_version }}
 
@@ -27,6 +28,7 @@ Support for the {{ minor_release_version }} release line ends on {{ end_of_suppo
     <tr>
       <th>Patch version</th>
       <th>Release date</th>
+      {% if release_notes %}<th>Release notes</th>{% endif %}
     </tr>
   </thead>
   <tbody>
@@ -34,6 +36,13 @@ Support for the {{ minor_release_version }} release line ends on {{ end_of_suppo
     <tr>
         <td>{{ patch_release.tagName }}</td>
         <td>{{ patch_release.publishedAt | date: "%B&nbsp;%e, %Y" }}</td>
+        {% if release_notes %}
+          <td>
+              {% if patch_release.commerceReleaseNotes %}<a href="{{ site.baseurl }}/{{ patch_release.commerceReleaseNotes}}">Adobe Commerce Release Notes</a><br>{% endif %}
+              {% if patch_release.opensourceReleaseNotes %}<a href="{{ site.baseurl }}/{{ patch_release.opensourceReleaseNotes}}">Magento Open Source Release Notes</a><br>{% endif %}
+              {% if patch_release.combinedReleaseNotes %}<a href="{{ site.baseurl }}/{{ patch_release.combinedReleaseNotes}}">Release Notes</a><br>{% endif %}
+          </td>
+        {% endif %}
     </tr>
     {% else %}
     <tr>
