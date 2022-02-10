@@ -4,7 +4,7 @@ roadmap:
       - name: Express Checkout for Adobe Commerce (extension)
         status: inProgress
         type: Extension
-      - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
+      - name: Framework updates (for example, KnockoutJS and RequireJS)
         status: inProgress
       - name: GraphQL - Admin configuration
         status: inProgress
@@ -30,6 +30,9 @@ roadmap:
       - name: Security and quality improvements
         status: inProgress
       - name: Vendor Bundled Extensions (VBEs) – Remove (except Braintree)
+        status: inProgress
+        type: Extension
+      - name: Walmart Marketplace (extension)
         status: inProgress
         type: Extension
   - name: Planned
@@ -58,6 +61,3 @@ roadmap:
         status: Planned
       - name: Security and quality improvements
         status: Planned
-      - name: Walmart Marketplace (extension)
-        status: Planned
-        type: Extension
