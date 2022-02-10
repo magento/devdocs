@@ -42,7 +42,7 @@ roadmap:
         type: Extension
   - name: Planned
     features:
-      - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
+      - name: Framework updates (for example, KnockoutJS and RequireJS)
         status: Planned
       - name: GraphQL - Personalization updates
         status: Planned
