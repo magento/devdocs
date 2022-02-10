@@ -3,6 +3,9 @@ roadmap:
     features:
       - name: Accessibility improvements for storefront/admin
         status: inProgress
+      - name: Channel manager with Walmart Marketplace (extension)
+        status: inProgress
+        type: Extension
       - name: Express Checkout for Adobe Commerce (extension)
         status: inProgress
         type: Extension
@@ -35,9 +38,6 @@ roadmap:
       - name: Security and quality improvements
         status: inProgress
       - name: Vendor Bundled Extensions (VBEs) – Remove (except Braintree)
-        status: inProgress
-        type: Extension
-      - name: Walmart Marketplace (extension)
         status: inProgress
         type: Extension
   - name: Planned
