@@ -607,7 +607,7 @@ It checks for a valid time between 00:00 and 23:59:59.
 
 ### time12h
 
-It checks for a valid time between 00:00 am and 12:00 pm. `12:01 pm` and `11:59 pm` value are valid.
+It checks for a valid time between 00:00 am and 12:00 pm. `12:01 pm` and `11:59 pm` values are also valid.
 
 #### Example
 
