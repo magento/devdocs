@@ -1,6 +1,8 @@
 roadmap:
   - name: In Progress
     features:
+      - name: Accessibility improvements for storefront/admin
+        status: inProgress
       - name: Express Checkout for Adobe Commerce (extension)
         status: inProgress
         type: Extension
@@ -37,8 +39,6 @@ roadmap:
         type: Extension
   - name: Planned
     features:
-      - name: Accessibility improvements for storefront/admin
-        status: Planned
       - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
         status: Planned
       - name: GraphQL - Personalization updates
