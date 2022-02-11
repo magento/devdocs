@@ -20,6 +20,36 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+### v1.2.4
+
+{{site.data.var.im}} 1.2.4 (module version: `magento/inventory-metapackage = 1.2.4`) is supported with version 2.4.4 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.fix} {{ site.data.var.ce }} now displays an accurate salable quantity value for all products in the Admin product list view. Previously, {{ site.data.var.ce }} displayed a blank value for salable quantity of in-stock products with SKUs that contained special characters. <!--- MC-41936-->
+
+-  {:.fix} Performance has improved for cart-and-checkout actions such as adding products to the cart in deployments with many (approximately 10,000) inventory sources. <!--- MC-42570-->
+
+-  {:.fix} The `bin/magento inventory:reservation:list-inconsistencies` command now handles orders with partial shipments correctly even if the reservations are missed from the database and the cache has been cleared. Previously, when this command was executed with a pre-cleared cache, Magento displayed this error: `Area code is not set`. <!--- MC-42142-->
+
+-  {:.fix} Incremental indexing of grouped product child products no longer causes other grouped products to be incorrectly indexed when children are shared. <!--- MC-41963-->
+
+-  {:.fix} Performance has improved for cart-and-checkout actions such as adding products to the cart in deployments with many (approximately 10,000) inventory sources. <!--- MC-42570-->
+
+-  {:.fix} The storefront category page now displays the correct product count after removing a product from a category by API. Previously, the category page product count was incorrect until re-indexing occurred. <!--- MC-42287-->
+
+-  {:.fix} Configurable products can now be returned to stock when creating a credit memo when the **Manage Stock** option is disabled. Previously, Magento did not display the **Return to stock** checkbox on the credit memo creation page when this option was disabled. <!--- MC-42002-->
+
+-  {:.fix} Management of Inventory stock that exceeds 10,000 items has improved. Previously, performance issues sometimes prevented merchants from editing stock in the Admin before launching their website. <!--- MC-42643-->
+
+-  {:.fix} The Admin **SYSTEM** > **Permissions** > **User Roles** page has been changed to provide administrators with restricted permissions access to delivery methods configuration. The Shipping methods section has been renamed to Delivery methods, and In-Store Pickup has been moved under Delivery methods section. [GitHub-30053](https://github.com/magento/magento2/issues/30053)  <!--- MC-41545-->
+
+-  {:.fix} Credit Memo updates no longer cause unnecessary product reservation update. Previously, certain Credit Memo updates via API call were causing product reservation compensation to issue the second time. <!--- MC-41757-->
+
+-  {:.fix} Switching from the Pick in Store tab to the Shipping tab in the checkout workflow no longer triggers a JavaScript error when only In-Store Pickup Delivery is available. <!--- MC-42808-->
+
+-  {:.fix} Saleable product quantity and in-stock product quantity are now synced correctly. Previously, inventory reservation compensation was not recreated for canceled orders. <!--- MC-42485-->
+
+-  {:.fix} We’ve optimized the performance of the validator that prevents adding new source to a bundled product’s child product with shipment type `Ship Together`. <!--- MC-43039-->
+
 ### v1.2.3
 
 {{site.data.var.im}} 1.2.3 (module version: `magento/inventory-metapackage = 1.2.3`) is supported with version 2.4.3 and compatible with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
