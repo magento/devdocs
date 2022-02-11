@@ -100,9 +100,11 @@ For example, if the non-api "SomeClass::someMethod" was changed and the new requ
 
 ```text
 Changes have TCO impact.
-Change to SomeClass::someMethod is PATCH level but impacts 5 out of 10 reviewed projects.
-Change to CLI command is MAJOR level, it impacts 2 out of 10 reviewed projects.
+Change to SomeClass::someMethod is PATCH level but impacts 5 out of 10 reviewed custom modules.
+Change to CLI command is MAJOR level, it impacts 2 out of 10 reviewed custom modules.
 ```
 
-The project in the example above is referring to any Adobe Commerce project with customizations.
-The change impacts the project if the project custom code needs to be changed in response to the analyzed change of the core.
+A custom module is a [Magento module][1] that is not part of Adobe Commerce product.
+The change impacts the custom modules if the custom module's code needs to be changed in response to the analyzed change of the core.
+
+[1]: {{site.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html
