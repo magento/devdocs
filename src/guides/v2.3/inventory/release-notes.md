@@ -32,8 +32,6 @@ The release notes include:
 
 -  {:.fix} Incremental indexing of grouped product child products no longer causes other grouped products to be incorrectly indexed when children are shared. <!--- MC-41963-->
 
--  {:.fix} Performance has improved for cart-and-checkout actions such as adding products to the cart in deployments with many (approximately 10,000) inventory sources. <!--- MC-42570-->
-
 -  {:.fix} The storefront category page now displays the correct product count after removing a product from a category by API. Previously, the category page product count was incorrect until re-indexing occurred. <!--- MC-42287-->
 
 -  {:.fix} Configurable products can now be returned to stock when creating a credit memo when the **Manage Stock** option is disabled. Previously, Magento did not display the **Return to stock** checkbox on the credit memo creation page when this option was disabled. <!--- MC-42002-->
@@ -42,7 +40,7 @@ The release notes include:
 
 -  {:.fix} The Admin **SYSTEM** > **Permissions** > **User Roles** page has been changed to provide administrators with restricted permissions access to delivery methods configuration. The Shipping methods section has been renamed to Delivery methods, and In-Store Pickup has been moved under Delivery methods section. [GitHub-30053](https://github.com/magento/magento2/issues/30053)  <!--- MC-41545-->
 
--  {:.fix} Credit Memo updates no longer cause unnecessary product reservation update. Previously, certain Credit Memo updates via API call were causing product reservation compensation to issue the second time. <!--- MC-41757-->
+-  {:.fix} {{site.data.var.ee}} no longer creates a duplicate product reservation after a credit memo is updated by API. <!--- MC-41757-->
 
 -  {:.fix} Switching from the Pick in Store tab to the Shipping tab in the checkout workflow no longer triggers a JavaScript error when only In-Store Pickup Delivery is available. <!--- MC-42808-->
 
