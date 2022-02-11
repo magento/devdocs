@@ -120,15 +120,11 @@ This release includes these GraphQL enhancements:
 
 *  **Updated core GraphQL library**. The `webonyx` library, which enables core GraphQL to function, has been upgraded to version ^14.9. <!--- PWA-2137 2184 -->
 
-*  **Fixed translation issues in GraphQL with multi-site and multi-language stores**. The GraphQl resolver now returns translated strings based on store scope as expected. <!--- PWA-1946-->
+*  **Fixed translation issues in GraphQL with multi-site and multi-language stores**. The GraphQL resolver now returns translated strings based on store scope as expected. <!--- PWA-1946-->
 
 *  GraphQL now provides New Relic with descriptive transaction names, which can be helpful for debugging. [GitHub-30915](https://github.com/magento/magento2/issues/30915) <!--- PWA-1311-->
 
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on these enhancements.
-
-### B2B
-
-This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html)
 
 ### Vendor-Bundled Extensions
 
@@ -1291,7 +1287,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 ### Known issue
 
-**Issue**: Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree.  When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not editable.  **Workaround**: Apply patch `braintree-disabled-partial-capture-for-applepay-googlepay.patch`. See the Knowledge Base article.
+**Issue**: Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree.  When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not editable.  **Workaround**: Apply patch `braintree-disabled-partial-capture-for-applepay-googlepay.patch`.
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
