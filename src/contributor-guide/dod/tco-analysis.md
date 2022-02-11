@@ -105,6 +105,6 @@ Change to CLI command is MAJOR level, it impacts 2 out of 10 reviewed custom mod
 ```
 
 A custom module is a [Magento module][1] that is not part of Adobe Commerce product.
-The change impacts the custom modules if the custom module's code needs to be changed in response to the analyzed change of the core.
+A change impacts a custom module if it's code needs to be changed in response.
 
 [1]: {{site.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html
