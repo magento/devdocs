@@ -1285,9 +1285,6 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  {{ site.data.var.ce }} no longer renders a wish list in the category sidebar when the **Show In Sidebar** wish list option is disabled. Previously, {{ site.data.var.ce }} ignored this option.
 
-### Known issue
-
-**Issue**: Merchants cannot submit partial refunds for orders paid with Apple Pay through Braintree.  When a merchant tries to create a credit memo for a partial refund from the order invoice, the **Qty to Refund** field is not editable.  **Workaround**: Apply patch `braintree-disabled-partial-capture-for-applepay-googlepay.patch`.
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
