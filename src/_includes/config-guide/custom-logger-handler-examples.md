@@ -41,7 +41,7 @@ This example shows how to use [virtual types]({{page.baseurl}}/extension-dev-gui
    </type>
    ```
 
-1. The virtual class `Magento\Payment\Model\Method\MyCustomLogger` will be injected into the `debug` handler of the `$logger` property in the `Magento\Payment\Model\Method\Logger` class.
+1. The virtual class `Magento\Payment\Model\Method\MyCustomDebug` will be injected into the `debug` handler of the `$logger` property in the `Magento\Payment\Model\Method\Logger` class.
 
    ```xml
    ...

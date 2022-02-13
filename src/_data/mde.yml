@@ -17,6 +17,21 @@ extensions:
     name: Amazon Sales Channel
     versions:
       -
+        name: 4.4.2
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.3.6: compatible
+          2.3.7: compatible
+          2.4.0: compatible
+          2.4.1: supported
+          2.4.2: supported
+          2.4.3: supported
+      -
         name: 4.4.1
         support:
           2.3.0: compatible
@@ -570,7 +585,7 @@ extensions:
     name: Product Recommendations
     versions:
       -
-        name: 3.3.5
+        name: 3.3.6
         support:
           2.3.0: supported
           2.3.1: supported
@@ -585,6 +600,21 @@ extensions:
           2.4.2: supported
           2.4.3: supported
           2.4.4: supported
+      -
+        name: 3.3.5
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.3.6: compatible
+          2.3.7: compatible
+          2.4.0: compatible
+          2.4.1: compatible
+          2.4.2: compatible
+          2.4.3: compatible
       -
         name: 3.3.3
         support:

@@ -1,3 +1,4 @@
+---
 - label: Cloud
   children:
 
@@ -169,7 +170,6 @@
           url: /mbi/docs/getting-started.html
           versionless: true
 
-
 - label: Testing
   children:
 
@@ -191,6 +191,8 @@
 
     - label: Web API Functional Testing
       url: /get-started/web-api-functional-testing.html
+
+- separator: true
 
 - label: Functional Areas
   children:
