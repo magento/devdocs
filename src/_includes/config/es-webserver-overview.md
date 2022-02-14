@@ -1,6 +1,6 @@
 ## Overview of secure web server communication {#es-ws-secure-over}
 
-This topic discusses an example of securing communication between your web server and Elasticsearch using a combination of Transport Layer Security (TLS) encryption and [HTTP basic authentication](http://tools.ietf.org/html/rfc2617). You can optionally configure other types of authentication as well; we provide references for that information.
+This topic discusses an example of securing communication between your web server and search engine (Elasticsearch or OpenSearch) using a combination of Transport Layer Security (TLS) encryption and [HTTP basic authentication](http://tools.ietf.org/html/rfc2617). You can optionally configure other types of authentication as well; we provide references for that information.
 
 (An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to *TLS*.)
 
@@ -15,10 +15,10 @@ We recommend the following:
 
    TLS is beyond the scope of this topic; however, we strongly recommend you use a real certificate in production and not a self-signed certificate.
 
-*  Elasticsearch runs on the same host as a web server. Running Elasticsearch and the web server on different hosts is beyond the scope of this topic.
+*  Your search engine runs on the same host as a web server. Running the search engine and the web server on different hosts is beyond the scope of this topic.
 
-   The advantage of putting Elasticsearch and the web server on the same host is that it makes intercepting encrypted communication impossible. The Elasticsearch web server does not have to be the same as the Magento web server; for example, Magento can run Apache and Elasticsearch can run nginx.
-   If Elasticsearch is exposed to the public web, you should configure authentication. If your Elasticsearch instance is protected within your network, this may not be necessary. Work with your hosting provider to determine which security measures you should implement to protect your instance.
+   The advantage of putting search engine and the web server on the same host is that it makes intercepting encrypted communication impossible. The search engine web server does not have to be the same as the {{ site.data.var.ee }} or {{ site.data.var.ce }} web server; for example, {{ site.data.var.ee }} can run Apache and Elasticsearch/OpenSearch can run nginx.
+   If the search engine is exposed to the public web, you should configure authentication. If your search engine instance is protected within your network, this may not be necessary. Work with your hosting provider to determine which security measures you should implement to protect your instance.
 
 ### More information about TLS
 

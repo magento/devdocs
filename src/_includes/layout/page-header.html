@@ -13,8 +13,8 @@
 
   {% if page.url contains "guides/v2.4/install-gde/" %}
   <div class="message-banner">
-    You must install Elasticsearch before installing {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.0. See <a
-      href="{{ page.baseurl }}/install-gde/prereq/elasticsearch.html">Elasticsearch</a> for details.
+    You must install Elasticsearch or OpenSearch before installing {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.0. See <a
+      href="{{ page.baseurl }}/install-gde/prereq/elasticsearch.html">Search engine prerequisites</a> for details.
   </div>
   {% endif %}
 
@@ -36,7 +36,7 @@
 
   {% if page.url contains "guides/v2.3/" %}
   <div class="bs-callout-warning">
-    PHP 7.3 reached end of support in December 2021 and {{site.data.var.ee}} 2.3.x reaches end of support in April 2022. You may want to consider planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance.
+    PHP 7.3 reached end of support in December 2021 and {{site.data.var.ee}} 2.3.x reaches end of support in September 2022. You may want to consider planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance.
   </div>
   {% endif %}
 
