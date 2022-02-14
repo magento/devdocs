@@ -1,16 +1,16 @@
 ---
 group: product-recommendations
-title: Customize Recommendations
+title: Customize
 ee_only: True
 ---
 
-When you install the Product Recommendations module, Magento creates the `ProductRecommendationsLayout` directory. This directory contains template files that you can customize to change how the recommendations appear on your storefront. Specifically, you can modify or override the following template:
+When you install the Product Recommendations module, Adobe Commerce creates the `ProductRecommendationsLayout` directory. This directory contains template files that you can customize to change how the recommendations appear on your storefront. Specifically, you can modify or override the following template:
 
 `<your theme>/Magento_ProductRecommendationsLayout/web/template/recommendations.html`
 
-For more information about how to modify template files in Magento, refer to the [template overview]({{ site.gdeurl }}/frontend-dev-guide/templates/template-walkthrough.html).
+For more information about modifying template files, refer to [Template customization]({{ site.gdeurl }}/frontend-dev-guide/templates/template-walkthrough.html) in the Frontend Developer Guide.
 
-If you do modify the `recommendations.html` file, you must preserve the following tags within the file to ensure Magento can successfully collect metrics for the recommendations on your storefront:
+If you modify the `recommendations.html` file, you must preserve the following tags in the file to ensure that Adobe Commerce can collect recommendation metrics from your storefront:
 
 |Tag|Use|
 |---|---|
@@ -28,7 +28,7 @@ In addition to the `recommendations.html` file, the `ProductRecommendationsLayou
 
 ## Recommendation unit positioning
 
-When you [create a recommendation]({{ site.user_guide_url }}/marketing/create-new-rec.html), you specify [where you want the recommendation unit to appear]({{ site.user_guide_url }}/marketing/product-recommendations.html#productrecplacement) on your page. For example, you can select to place the recommendations either at the top or the bottom of the main content container. However, you can customize this placement. If you created a recommendation unit for Page Builder, you can use the Page Builder editing environment to customize where you want the recommendation unit to display on the page. For all other page types, you can edit the `*.xml` files responsible for the layout. Magento generates these `*.xml` files when you create a recommendation.
+When you [create]({{ site.user_guide_url }}/recommendations/create.html) a recommendation, you specify the [location]({{ site.user_guide_url }}/recommendations/placement.html) where it appears on the page. A recommendation unit can be placed at either the top or the bottom of the main content container. However, you can customize this placement. If you create a Page Builder recommendation content type, use the Page Builder tools to position the recommendation unit on the page. For all other page types, edit the `*.xml` files that are generated when the recommendation is created.
 
 1. Change to the `layout` directory:
 
