@@ -897,60 +897,6 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  The Admin order detail page now loads as expected. Previously, {{ site.data.var.ee }} threw the following error when loading the order detail page for orders with certain taxes: `Call to a member function getId() on array`.
 
-### Page Builder
-
-<!--- AC-446-->
-
-*  Display issues with the Page Builder Format menu have been resolved with the TinyMCE 5 library upgrade.
-
-<!--- AC-982-->
-
-*  You can now use the mouse click to edit a **Text To Display** value in the Page Builder Insert Link popup.
-
-<!--- AC-1056-->
-
-*  {{ site.data.var.ee }} now displays all options as expected on the Page Builder Font Size options menu. Previously, not all options were displayed.
-
-<!--- magento/magento2-page-builder/pull/779-->
-
-*  Upgraded the `phpgt/dom` Composer dependency for the `magento/magento2-page-builder` extension to the latest versions. [GitHub-34096](https://github.com/magento/magento2/issues/34096)
-
-<!--- AC-1300-->
-
-*  Page Builder is now compatible with PHP 8.1. [GitHub-34131](https://github.com/magento/magento2/issues/34131)
-
-<!--- AC-973-->
-
-*  {{ site.data.var.ee }} no longer resizes the Page Builder Insert Link and Insert Image modals when displaying the slider in a small column.
-
-<!--- AC-407-->
-
-*  The Page Builder Table Properties menu is now displayed as expected.
-
-<!--- AC-406-->
-
-*  Slider dots are no longer displayed on the Page Builder Insert link or image modal when the mouse is not hovering over the slider.
-
-<!--- AC-396-->
-
-*  The font size used to display Page Builder Table menu options has been optimized.
-
-<!--- AC-397-->
-
-*  Corrected anomalies with the positioning of the Insert/Edit Image and Insert/Edit Link popup windows.
-
-<!--- AC-398-->
-
-*  {{ site.data.var.ee }} no longer throws an error when you click on **Text Editor** for a banner in Page Builder.
-
-<!--- MC-42779-->
-
-*  Administrators with permissions restricted to Content edit only no longer see an error when using Page Builder to add a product widget to a CMS page. {{ site.data.var.ee }} also displays an accurate product count on the widget settings page. Previously, {{ site.data.var.ee }} required permissions to the Catalog module when retrieving product count and displayed this error: `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`.
-
-<!--- MC-42265-->
-
-*  {{ site.data.var.ee }} no longer converts all dynamic blocks to one language during upgrade.
-
 ### Payment methods
 
  <!--- AC-1229-->
