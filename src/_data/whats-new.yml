@@ -4,8 +4,57 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Feb 7 15:38:40 2022
+updated: Mon Feb 14 15:38:43 2022
 entries:
+- description: Updated the [public roadmap](https://devdocs.magento.com/release/roadmap.html)
+    with the latest information.
+  versions: 2.x
+  type: Major Update
+  date: February 10, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2793
+  merge_commit: c8f85237b92b52462df3eae0dbf3140c0612eede
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Published [release notes](https://devdocs.magento.com/quality-patches/release-notes.html)
+    for the 1.1.10 Quality Patches Tool (QPT) package release.
+  versions: 2.x
+  type: Major Update
+  date: February 9, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2792
+  merge_commit: 3d4b3aab5990c9b4c06db4b17663ff81d90d7eea
+  contributor: apoltoratskyi
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Published [release notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/)
+    for Amazon Sales Channel 4.4.2.
+  versions: 2.x
+  type: Major Update
+  date: February 8, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2779
+  merge_commit: '09c0f4b969154ce31ac96b7987ab69da596ab20d'
+  contributor: hickskenh
+  membership: true
+  labels:
+  - 2.x
+  - Major Update
+- description: Restored introductory topics for the [Upgrade Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html)
+    and [Upgrade Compatibility Tool](https://devdocs.magento.com/upgrade-compatibility-tool/introduction.html)
+    so that they appear in site search results.
+  versions: 2.4.x
+  type: Technical
+  date: February 7, 2022
+  link: https://github.com/magento-commerce/devdocs/pull/2783
+  merge_commit: 49f421ee343f792f787f7303d885950d756d7185
+  contributor: jeff-matthews
+  membership: true
+  labels:
+  - Technical
+  - 2.4.x
 - description: When creating a new [package in Marketplace EQP](https://devdocs.magento.com/marketplace/eqp/v1/packages.html),
     you must specify a new field, `version`. Another field, `sku`, is conditionally
     required.
