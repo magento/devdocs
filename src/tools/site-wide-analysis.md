@@ -59,7 +59,7 @@ The agent requires the [Commerce Services Connector]({{ site.user_guide_url }}/u
 bin/magento module:status Magento_ServicesConnector
 ```
 
-__If you have installed the extension__ and configured it using an existing API key for a different service, you must regenerate the API key and update it in the {{ site.data.var.ee }} Admin for the agent.
+__If you have installed the extension__ and configured it using an existing API key for a different service, you **MUST regenerate the API key** and update it in the {{ site.data.var.ee }} Admin for the agent.
 
 1. Put your website into [maintenance mode]({{ site.baseurl }}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-maint.html).
 1. Log in to [accounts.magento.com](https://accounts.magento.com/).
@@ -113,7 +113,7 @@ After the agent is installed, it will self-update when a new release is availabl
 1. Verify installation.
 
    ```bash
-   scheduler -v
+   . swat-agent.env ; scheduler -v
    ```
 
    ```terminal
@@ -212,7 +212,7 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 1. Verify the installation.
 
    ```bash
-   scheduler -v
+   . swat-agent.env ; scheduler -v
    ```
 
    ```terminal
@@ -285,7 +285,7 @@ If you do not have root permissions or do not have permissions to configure a se
 Update your cron schedule:
 
 ```bash
-( crontab -l ; echo "* * * * * flock -n /tmp/swat-agent.lockfile -c 'source /path/to/agent/swat-agent.env; /path/to/agent/scheduler' >> /path/to/agent/errors.log 2>&1" ) | sort - | uniq - | crontab -
+( crontab -l ; echo "* * * * * flock -n /tmp/swat-agent.lockfile -c '. /path/to/agent/swat-agent.env; /path/to/agent/scheduler' >> /path/to/agent/errors.log 2>&1" ) | sort - | uniq - | crontab -
 ```
 
 ### Uninstall
