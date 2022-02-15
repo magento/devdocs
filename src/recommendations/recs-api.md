@@ -1,6 +1,6 @@
 ---
 group: product-recommendations
-title: Recommendations SDK
+title: SDK
 ee_only: True
 ---
 
