@@ -5,9 +5,15 @@
 {% assign minor_release_version = minor_release[0] %}
 {% assign patch_releases = minor_release[1].releases %}
 {% assign end_of_support = minor_release[1].end-of-support %}
-{% assign release_notes = minor_release[1].release-notes %}
 {% assign end_of_support_array = end_of_support | split: '-' %}
 ## {{ minor_release_version }}
+
+{% assign release_notes = false %}
+{% for patch_release in patch_releases %}
+{% if patch_release.releaseNotes %}
+{% assign release_notes = true %}
+{% endif %}
+{% endfor %}
 
 {% if end_of_support_array[0] contains '?' %}
 The date when support of the {{ minor_release_version }} release line ends has not been set yet.
@@ -38,9 +44,9 @@ Support for the {{ minor_release_version }} release line ends on {{ end_of_suppo
         <td>{{ patch_release.publishedAt | date: "%B&nbsp;%e, %Y" }}</td>
         {% if release_notes %}
           <td>
-              {% if patch_release.commerceReleaseNotes %}<a href="{{ site.baseurl }}/{{ patch_release.commerceReleaseNotes}}">Adobe Commerce Release Notes</a><br>{% endif %}
-              {% if patch_release.opensourceReleaseNotes %}<a href="{{ site.baseurl }}/{{ patch_release.opensourceReleaseNotes}}">Magento Open Source Release Notes</a><br>{% endif %}
-              {% if patch_release.combinedReleaseNotes %}<a href="{{ site.baseurl }}/{{ patch_release.combinedReleaseNotes}}">Release Notes</a><br>{% endif %}
+              {% if patch_release.releaseNotes.commerce %}<a href="{{ patch_release.releaseNotes.commerce}}">Adobe Commerce Release Notes</a><br>{% endif %}
+              {% if patch_release.releaseNotes.opensource %}<a href="{{ patch_release.releaseNotes.opensource}}">Magento Open Source Release Notes</a><br>{% endif %}
+              {% if patch_release.releaseNotes.common %}<a href="{{ patch_release.releaseNotes.common}}">Release Notes</a><br>{% endif %}
           </td>
         {% endif %}
     </tr>
