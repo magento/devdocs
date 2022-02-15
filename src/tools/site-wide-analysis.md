@@ -113,7 +113,7 @@ After the agent is installed, it will self-update when a new release is availabl
 1. Verify installation.
 
    ```bash
-   . swat-agent.env ; scheduler -v
+   scheduler -v
    ```
 
    ```terminal
@@ -184,26 +184,27 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
    shasum -a 512 -c launcher.checksum
    ```
 
-1. Create the `swat-agent.env` file with the following contents.
+1. Create the `config.yaml` file with the following contents.
 
    ```config
-   SWAT_AGENT_PREFERRED_APPLICATION_NAME=<Test Inc>
-   SWAT_AGENT_APP_NAME=<APP_NAME>
-   SWAT_AGENT_APPLICATION_PHP_PATH=php
-   SWAT_AGENT_APPLICATION_MAGENTO_PATH=<APPLICATION ROOT e.g: /var/www/html >
-   SWAT_AGENT_APPLICATION_DB_USER=<APPLICATION_DB_USER>
-   SWAT_AGENT_APPLICATION_DB_PASSWORD=<APPLICATION_DB_PASSWORD>
-   SWAT_AGENT_APPLICATION_DB_HOST=<APPLICATION_DB_HOST>
-   SWAT_AGENT_APPLICATION_DB_NAME=<APPLICATION_DB_NAME>
-   SWAT_AGENT_APPLICATION_DB_PORT=3306
-   SWAT_AGENT_APPLICATION_DB_TABLE_PREFIX=<TABLE_PREFIX>
-   SWAT_AGENT_APPLICATION_DB_REPLICATED=<false or true>
-   SWAT_AGENT_APPLICATION_CHECK_REGISTRY_PATH=<TEMPORARY DIRECTORY e.g: /tmp/swat-agent-production >
-   SWAT_AGENT_BACKEND_HOST=check.swat.magento.com:443
-   SWAT_AGENT_RUN_CHECKS_ON_START=1
-   SWAT_AGENT_LOG_LEVEL=error
-   SWAT_AGENT_ENABLE_AUTO_UPGRADE=true
-   SWAT_AGENT_IS_SANDBOX=false
+   project:
+     appname: <Test Inc>
+   application:
+     phppath: php
+     magentopath: <APPLICATION ROOT e.g: /var/www/html >
+     database:
+       user: <APPLICATION_DB_USER>
+       password: <APPLICATION_DB_PASSWORD>
+       host: <APPLICATION_DB_HOST>
+       dbname: <APPLICATION_DB_NAME>
+       port: "3306"
+       isreplicated: <false or true>
+       tableprefix: <TABLE_PREFIX>
+     checkregistrypath: <TEMPORARY DIRECTORY e.g: /tmp/swat-agent-production >
+     issandbox: false
+   enableautoupgrade: true
+   runchecksonstart: false
+   loglevel: error
    ```
 
    {:.bs-callout-info}
@@ -212,7 +213,7 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 1. Verify the installation.
 
    ```bash
-   . swat-agent.env ; scheduler -v
+   scheduler -v
    ```
 
    ```terminal
@@ -231,12 +232,6 @@ We recommend configuring the agent to run as a service. If you have limited acce
 
 #### Service
 
-1. Copy the `scheduler` binary file to the directory where you want to store it.
-
-   ```bash
-   cp scheduler /usr/local/bin/
-   ```
-
 1. Create a systemd unit file (`/etc/systemd/system/scheduler.service`) with the following configuration.
 
    ```config
@@ -247,16 +242,13 @@ We recommend configuring the agent to run as a service. If you have limited acce
    [Service]
    Type=simple
    DynamicUser=yes
-   ExecStart=/usr/local/bin/scheduler
+   ExecStart=/path/to/agent/scheduler
    Restart=always
    RestartSec=3
-   EnvironmentFile=/path/to/swat-agent.env
 
    [Install]
    WantedBy=multi-user.target
    ```
-
-   Make sure that the value for the `EnvironmentFile` property matches the path to the `swat-agent.env` file that was created during installation.
 
 1. Launch the service.
 
@@ -285,7 +277,7 @@ If you do not have root permissions or do not have permissions to configure a se
 Update your cron schedule:
 
 ```bash
-( crontab -l ; echo "* * * * * flock -n /tmp/swat-agent.lockfile -c '. /path/to/agent/swat-agent.env; /path/to/agent/scheduler' >> /path/to/agent/errors.log 2>&1" ) | sort - | uniq - | crontab -
+( crontab -l ; echo "* * * * * flock -n /tmp/swat-agent.lockfile -c '/path/to/agent/scheduler' >> /path/to/agent/errors.log 2>&1" ) | sort - | uniq - | crontab -
 ```
 
 ### Uninstall
