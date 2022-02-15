@@ -4,14 +4,14 @@ title: Magento Open Source 2.4.4 Release Notes
 ---
 {{ site.data.var.ce }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
 
-This release includes 241 quality fixes and enhancements.
+This release includes almost 250 quality fixes and enhancements.
 
 {:.bs-callout-info}
 Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ce }} 2.4.4 contains backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 ## Other release information
 
-Although code for these features is bundled with quarterly releases of the {{ site.data.var.ce }} core code, several of these projects (for example, B2B, Page Builder, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
+Although code for these features is bundled with quarterly releases of the {{ site.data.var.ce }} core code, several of these projects are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
 
 {:.bs-callout-info}
 All vendor-bundled extensions, with the exception of Braintree, have been removed from {{ site.data.var.ce }} 2.4.4.
@@ -76,39 +76,19 @@ Security improvements for this release improve compliance with the latest securi
 
 ### Performance and scalability enhancements
 
-{{ site.data.var.ce }} performance enhancements boost high throughput order processing and message queue optimization. The asynchronous orders feature introduced in this release supports the creation of approximately 60,000 orders/hour. Earlier versions of {{ site.data.var.ce }} supported the processing of approximately 10,000 orders/hour, which presented a potential bottleneck for flash sales. The new multiple consumers feature supports scaling the number of message queue consumers on a single Cloud instance and increases the number of orders processed per hour.
-
 Performance enhancements in this release:
 
 *  The new **Enable Inventory Check On Cart Load** configuration option (Admin > **Stores** > **Configuration** >  **Catalog** > **Inventory** > **Stock Options**) provides switchable inventory checks on quote load. It is enabled by default. When this option is disabled, {{ site.data.var.ce }} skips the inventory check as the quote loads, which speeds up checkout, especially for carts containing many items.
 
-*  The AsyncOrder feature supports faster order placement than synchronous execution provides. When asynchronous order is enabled, order placement is executed in the background while shoppers complete other tasks on the storefront. An initial order with an introduced status **Received** is created, and the customer receives a successful order placement notification with a new order number. This newly placed order is then placed in a queue as a new message and is executed by the consumer as a regular order. When the order is successfully executed, its status is changed to **Pending**.
-
 *  The new `multiple_processes` configuration option supports running parallel consumers in multiple processes. To enable this feature, add `multiple_processes` to the `app/etc/env.php` file.
 
 *  Cart operations for carts containing over 750 configurable products have been improved by increasing the memory limit set by `max_input_vars` in the `php.ini` file to support input variables volume.
-
-*  Optimization of sales rules processing during checkout by deferring total calculation. Merchants can enable this deferment by setting the `checkout/deferred_total_calculating` variable in the `env.php` file. Alternatively, you can run `bin/magento setup:config:set --deferred-total-calculating 1|0`.  <!--- MCP-573-->
 
 *  Improvements to the validation process for orders affected by a cart price rule during asynchronous order placement. <!--- MCP-304-->
 
 ### GraphQL
 
 This release includes these GraphQL enhancements:
-
-*  **Complete GraphQL coverage for negotiable quotes**.  B2B company users can now complete all tasks related to negotiable quotes using GraphQL. Previous versions of this API supported negotiation flows but not checkout. <!--- PWA-2101-->
-
-#### New mutations
-
-*  `placeNegotiableQuoteOrder`
-
-*  `setNegotiableQuoteBillingAddress`
-
-*  [`setNegotiableQuotePaymentMethod` mutation]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-payment-method.html) <!--- PWA-2114-->
-
-*  `setNegotiableQuoteShippingMethods`
-
-*  `setNegotiableQuoteShippingAddress`
 
 *  **Performance improvements**:
 
@@ -212,10 +192,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  Buttons throughout the storefront now have unique, descriptive accessible names. Previously, split buttons with a text button and an adjacent down arrow icon button had the same accessible name.
 
-<!--- AC-1286-->
-
-*  The product page **New View** text input field now has an accessible name.
-
 <!--- AC-1277-->
 
 *  Contrast has been improved for image delete and move icon buttons throughout the storefront to improve readability for low vision users.
@@ -227,14 +203,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- AC-1272-->
 
 *  The magnifying glass icon that is used to execute searches throughout the product interface has been assigned an accessible name and textual alternative.
-
-<!--- AC-1288-->
-
-*  Edit links in the Products table now have unique, meaningful link text.
-
-<!--- AC-1276-->
-
-*  The triggers that expands tooltips now provide textual names.
 
 <!--- AC-1286-->
 
@@ -376,7 +344,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-43010-->
 
-*  GraphQL queries can now be used to retrieve information about scheduled updates for categories. Previously, {{ site.data.var.ce }} threw an error when executing a GraphQL query to retrieve category information for a scheduled category update.
+*  GraphQL category queries return information about changes to staged categories as expected.
 
 ### Catalog rule
 
@@ -405,10 +373,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- MC-43051-->
 
 *  GraphQL `product` queries no longer return data about the disabled child products of configurable products.
-
-<!--- MC-38815-->
-
-*  GraphQL queries now return billing address as expected when the value of an optional telephone field is set to an empty string. Previously, queries returned a null address value. [GitHub-30218](https://github.com/magento/magento2/issues/30218), [GitHub-30948](https://github.com/magento/magento2/issues/30948)
 
 ### Customer
 
@@ -560,11 +524,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-42831-->
 
-*  The `ConfigurableCartItem` mutation now returns requested data as expected.
+*  Queries and mutations that return the `ConfigurableCartItem` object contain information about configured variants as expected.
 
 <!--- MC-42082-->
 
-*  GraphQL queries now return configuration product option values and variant attribute values. Previously, these values were empty in query responses.
+*  The `products` query now returns configuration product option values and variant attribute values. Previously, these values were empty in query responses.
 
 <!--- MC-41794-->
 
@@ -572,7 +536,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-42903-->
 
-*  GraphQL now supports setting shipping addresses on a shopping cart with an empty telephone number value when the **Show Telephone** Admin configuration setting is set to optional. Previously, {{ site.data.var.ce }} threw this error: `Field CartAddressInput.telephone of required type String! was not provided`.
+*  The `setShippingAddressesOnCart` mutation now supports setting shipping addresses on a shopping cart with an empty telephone number value when the **Show Telephone** Admin configuration setting is set to optional. Previously, {{ site.data.var.ce }} threw this error: `Field CartAddressInput.telephone of required type String! was not provided`.
 
 <!--- MC-42970-->
 
@@ -588,7 +552,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-42666-->
 
-*  The `products` mutation  now returns only configurable variants that are assigned to the requested storeview. Previously, all variants of the requested configurable product were returned.
+*  The `products` query  now returns only configurable variants that are assigned to the requested storeview. Previously, all variants of the requested configurable product were returned.
 
 <!--- MC-42652-->
 
@@ -600,7 +564,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- MC-42443-->
 
-*  Quotes are now updated correctly when product prices are updated by `product` queries. Previously, although the subtotal in the cart summary section was updated correctly, the row subtotal was not updated.
+*  When the price of a tier product is updated from the backend, the new price is updated correctly on the customer's cart. Previously, although the subtotal in the cart summary section was updated correctly, the row subtotal was not updated.
 
 <!--- AC-697-->
 
@@ -609,18 +573,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- MC-38815-->
 
 *  GraphQL queries now return billing address as expected when the value of an optional telephone field is set to an empty string. Previously, queries returned a null address value. [GitHub-30218](https://github.com/magento/magento2/issues/30218)
-
-<!--- MC-42783-->
-
-*  `products` queries using layered navigation filters now return correct child category lists. [GitHub-33387](https://github.com/magento/magento2/issues/33387)
-
-<!--- AC-1946-->
-
-*  The GraphQl resolver now returns translated strings based on store scope as expected. [GitHub-31351](https://github.com/magento/magento2/issues/31351)
-
-<!--- PWA-2110-->
-
-*  The performance of GraphQL cart operations has improved. The `collectQuoteTotals()` method is now called only once during a GraphQL request, which reduces response time.
 
 ### Image
 

@@ -5,7 +5,7 @@ title: Adobe Commerce 2.4.4 Release Notes
 
 {{ site.data.var.ee }} 2.4.4 introduces support for PHP 8.1. All project libraries and dependencies have been updated for compatibility with PHP 8.1. Core Composer dependencies and third-party libraries have also been upgraded to the latest versions that are compatible with PHP 8.1. This release also provides support for OpenSearch 1.2.
 
-This release includes 241 quality fixes and enhancements.
+This release includes almost 250 quality fixes and enhancements.
 
 {:.bs-callout-info}
 Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
@@ -93,6 +93,7 @@ Performance enhancements in this release:
 
 *  Improvements to the validation process for orders affected by a cart price rule during asynchronous order placement. <!--- MCP-304-->
 
+See [High-throughput Order Processing](https://devdocs.magento.com/guides/v2.4/performance-best-practices/high-throughput-order-processing.html).
 ### GraphQL
 
 This release includes these GraphQL enhancements:
@@ -101,15 +102,15 @@ This release includes these GraphQL enhancements:
 
 #### New mutations
 
-*  `placeNegotiableQuoteOrder`
+*  [`placeNegotiableQuoteOrder`]({{page.baseurl}}/graphql/mutations/place-negotiable-quote-order.html) mutation
 
-*  `setNegotiableQuoteBillingAddress`
+*  [`setNegotiableQuoteBillingAddress`]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-billing-address.html) mutation
 
-*  [`setNegotiableQuotePaymentMethod` mutation]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-payment-method.html) <!--- PWA-2114-->
+*  [`setNegotiableQuotePaymentMethod`]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-payment-method.html) mutation<!--- PWA-2114-->
 
-*  `setNegotiableQuoteShippingMethods`
+*  [`setNegotiableQuoteShippingMethods`]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-shipping-methods.html) mutation
 
-*  `setNegotiableQuoteShippingAddress`
+*  [`setNegotiableQuoteShippingAddress`]({{page.baseurl}}/graphql/mutations/set-negotiable-quote-shipping-address.html) mutation
 
 *  **Performance improvements**:
 
@@ -133,11 +134,11 @@ This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl
 
 ### Vendor-Bundled Extensions
 
-With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all vendor-bundled extensions have been removed from the {{ site.data.var.ee }} 2.4.4 code base. Merchants should migrate to the official extensions, which are available on the Commerce Marketplace.
+With the exception of [Braintree](https://docs.magento.com/user-guide/payment/braintree.html), all vendor-bundled extensions have been removed from the {{ site.data.var.ee }} 2.4.4 code base. Merchants should migrate to the official extensions, which are available on the Commerce Marketplace. <!--- AC-1165-->
 
 ### PWA Studio
 
-PWA Studio v.12.3.0 is compatible with {{ site.data.var.ee }} 2.4.4. For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
+PWA Studio v.12.3.0 is compatible with {{ site.data.var.ee }} 2.4.4. It includes support for reCaptcha, Page Builder content optimization, and personalized content. For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases). See [Version compatibility](https://developer.adobe.com/commerce/pwa-studio/integrations/adobe-commerce/version-compatibility/) for a list of PWA Studio versions and their compatible {{ site.data.var.ee }} core versions.
 
 ### PayPal Payment enhancements
 
@@ -245,6 +246,72 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- AC-1480-->
 
 *  Merchants can now successfully upgrade from an {{ site.data.var.ee }} 2.4.2 deployment with Klarna to {{ site.data.var.ee }} 2.4.3. [GitHub-33760](https://github.com/magento/magento2/issues/33760)
+
+### Accessibility
+
+<!--- AC-1589-->
+
+*  Accessibility errors with navigation on the cart and checkout pages have been resolved. [GitHub-34483](https://github.com/magento/magento2/issues/34483)
+
+<!--- AC-1289-->
+
+*  Screen readers can now read all relevant form elements on product pages.
+
+<!--- AC-1277-->
+
+*  Contrast has been improved for image delete and move icon buttons throughout the storefront to improve readability for low vision users.
+
+<!--- AC-1272-->
+
+*  The magnifying glass icon that is used to execute searches throughout the product interface has been assigned an accessible name and textual alternative.
+
+<!--- AC-1275-->
+
+*  The rich text editor toolbar can now be accessed using the Tab key.
+
+<!--- AC-1283-->
+
+*  The **This item has weight** select input on the **Catalog** > **Product** details page now has visible labels and an accessible name.
+
+<!--- AC-1284-->
+
+*  The accessible name of the control now includes the text of its visible label for the number of items per page dropdown.
+
+<!--- AC-1287-->
+
+*  The table controls on the **Catalog** > **Product** details page now have visible labels and an accessible name when the table is collapsed.
+
+<!--- AC-1288-->
+
+*  Edit links in the Products table now have unique, meaningful link text.
+
+<!--- AC-1276-->
+
+*  The triggers that expands tooltips now provide textual names.
+
+<!--- AC-1285-->
+
+*  Buttons throughout the storefront now have unique, descriptive accessible names. Previously, split buttons with a text button and an adjacent down arrow icon button had the same accessible name.
+
+<!--- AC-1277-->
+
+*  Contrast has been improved for image delete and move icon buttons throughout the storefront to improve readability for low vision users.
+
+<!--- AC-1279-->
+
+*  Textual alternatives have been added to the pencil icon that appears when a merchant edits input for the Search Engine Optimization accordion.
+
+<!--- AC-1272-->
+
+*  The magnifying glass icon that is used to execute searches throughout the product interface has been assigned an accessible name and textual alternative.
+
+<!--- AC-1286-->
+
+*  The product page **New View** text input field now has an accessible name.
+
+<!--- AC-1283-->
+
+*  The **This item has weight** select input on the **Catalog** > **Product** details page now has visible labels and an accessible name.
 
 ### AdminGWS
 
@@ -388,7 +455,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-43010-->
 
-*  GraphQL queries can now be used to retrieve information about scheduled updates for categories. Previously, {{ site.data.var.ee }} threw an error when executing a GraphQL query to retrieve category information for a scheduled category update.
+*  GraphQL category queries return information about changes to staged categories as expected.
 
 ### Catalog rule
 
@@ -417,10 +484,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-43051-->
 
 *  GraphQL `product` queries no longer return data about the disabled child products of configurable products.
-
-<!--- MC-38815-->
-
-*  GraphQL queries now return billing address as expected when the value of an optional telephone field is set to an empty string. Previously, queries returned a null address value. [GitHub-30218](https://github.com/magento/magento2/issues/30218), [GitHub-30948](https://github.com/magento/magento2/issues/30948)
 
 ### Customer
 
@@ -588,11 +651,11 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42831-->
 
-*  The `ConfigurableCartItem` mutation now returns requested data as expected.
+*  Queries and mutations that return the `ConfigurableCartItem` object contain information about configured variants as expected.
 
 <!--- MC-42082-->
 
-*  GraphQL queries now return configuration product option values and variant attribute values. Previously, these values were empty in query responses.
+*  The `products` query now returns configuration product option values and variant attribute values. Previously, these values were empty in query responses.
 
 <!--- MC-41794-->
 
@@ -604,7 +667,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42903-->
 
-*  GraphQL now supports setting shipping addresses on a shopping cart with an empty telephone number value when the **Show Telephone** Admin configuration setting is set to optional. Previously, {{ site.data.var.ee }} threw this error: `Field CartAddressInput.telephone of required type String! was not provided`.
+*  The `setShippingAddressesOnCart` mutation now supports setting shipping addresses on a shopping cart with an empty telephone number value when the **Show Telephone** Admin configuration setting is set to optional. Previously, {{ site.data.var.ee }} threw this error: `Field CartAddressInput.telephone of required type String! was not provided`.
 
 <!--- MC-42970-->
 
@@ -620,7 +683,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42666-->
 
-*  The `products` mutation  now returns only configurable variants that are assigned to the requested storeview. Previously, all variants of the requested configurable product were returned.
+*  The `products` query  now returns only configurable variants that are assigned to the requested storeview. Previously, all variants of the requested configurable product were returned.
 
 <!--- MC-42652-->
 
@@ -632,7 +695,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 <!--- MC-42443-->
 
-*  Quotes are now updated correctly when product prices are updated by `product` queries. Previously, although the subtotal in the cart summary section was updated correctly, the row subtotal was not updated.
+*  When the price of a tier product is updated from the backend, the new price is updated correctly on the customer's cart. Previously, although the subtotal in the cart summary section was updated correctly, the row subtotal was not updated.
 
 <!--- AC-697-->
 
@@ -641,18 +704,6 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 <!--- MC-38815-->
 
 *  GraphQL queries now return billing address as expected when the value of an optional telephone field is set to an empty string. Previously, queries returned a null address value. [GitHub-30218](https://github.com/magento/magento2/issues/30218)
-
-<!--- MC-42783-->
-
-*  `products` queries using layered navigation filters now return correct child category lists. [GitHub-33387](https://github.com/magento/magento2/issues/33387)
-
-<!--- AC-1946-->
-
-*  The GraphQl resolver now returns translated strings based on store scope as expected. [GitHub-31351](https://github.com/magento/magento2/issues/31351)
-
-<!--- PWA-2110-->
-
-*  The performance of GraphQL cart operations has improved. The `collectQuoteTotals()` method is now called only once during a GraphQL request, which reduces response time.
 
 ### Image
 
