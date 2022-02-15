@@ -81,9 +81,9 @@ Security improvements for this release improve compliance with the latest securi
 
 Performance enhancements in this release:
 
-*  The new **Enable Inventory Check On Cart Load** configuration option (Admin > **Stores** > **Configuration** >  **Catalog** > **Inventory** > **Stock Options**) provides switchable inventory checks on quote load. It is enabled by default. When this option is disabled, {{ site.data.var.ee }} skips the inventory check as the quote loads, which speeds up checkout, especially for carts containing many items.
+*  The AsyncOrder feature supports faster order placement than synchronous execution provides. When AsyncOrder is enabled, order placement is executed in the background while shoppers complete other tasks on the storefront.
 
-*  The AsyncOrder feature supports faster order placement than synchronous execution provides. When asynchronous order is enabled, order placement is executed in the background while shoppers complete other tasks on the storefront. An initial order with an introduced status **Received** is created, and the customer receives a successful order placement notification with a new order number. This newly placed order is then placed in a queue as a new message and is executed by the consumer as a regular order. When the order is successfully executed, its status is changed to **Pending**.
+*  The new **Enable Inventory Check On Cart Load** configuration option (Admin > **Stores** > **Configuration** >  **Catalog** > **Inventory** > **Stock Options**) provides switchable inventory checks on quote load. It is enabled by default. When this option is disabled, {{ site.data.var.ee }} skips the inventory check as the quote loads, which speeds up checkout, especially for carts containing many items.
 
 *  The new `multiple_processes` configuration option supports running parallel consumers in multiple processes. To enable this feature, add `multiple_processes` to the `app/etc/env.php` file.
 
@@ -94,6 +94,7 @@ Performance enhancements in this release:
 *  Improvements to the validation process for orders affected by a cart price rule during asynchronous order placement. <!--- MCP-304-->
 
 See [High-throughput Order Processing](https://devdocs.magento.com/guides/v2.4/performance-best-practices/high-throughput-order-processing.html).
+
 ### GraphQL
 
 This release includes these GraphQL enhancements:

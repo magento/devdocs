@@ -74,18 +74,6 @@ Security improvements for this release improve compliance with the latest securi
 
 *  Most Laminas dependencies have been upgraded to the latest versions that are compatible with PHP 8.1. Three Laminas dependencies were removed from the codebase to reduce the number of dependencies.
 
-### Performance and scalability enhancements
-
-Performance enhancements in this release:
-
-*  The new **Enable Inventory Check On Cart Load** configuration option (Admin > **Stores** > **Configuration** >  **Catalog** > **Inventory** > **Stock Options**) provides switchable inventory checks on quote load. It is enabled by default. When this option is disabled, {{ site.data.var.ce }} skips the inventory check as the quote loads, which speeds up checkout, especially for carts containing many items.
-
-*  The new `multiple_processes` configuration option supports running parallel consumers in multiple processes. To enable this feature, add `multiple_processes` to the `app/etc/env.php` file.
-
-*  Cart operations for carts containing over 750 configurable products have been improved by increasing the memory limit set by `max_input_vars` in the `php.ini` file to support input variables volume.
-
-*  Improvements to the validation process for orders affected by a cart price rule during asynchronous order placement. <!--- MCP-304-->
-
 ### GraphQL
 
 This release includes these GraphQL enhancements:
