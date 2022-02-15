@@ -18,6 +18,7 @@ We recommend the following:
 *  Your search engine runs on the same host as a web server. Running the search engine and the web server on different hosts is beyond the scope of this topic.
 
    The advantage of putting search engine and the web server on the same host is that it makes intercepting encrypted communication impossible. The search engine web server does not have to be the same as the {{ site.data.var.ee }} or {{ site.data.var.ce }} web server; for example, {{ site.data.var.ee }} can run Apache and Elasticsearch/OpenSearch can run nginx.
+
    If the search engine is exposed to the public web, you should configure authentication. If your search engine instance is protected within your network, this may not be necessary. Work with your hosting provider to determine which security measures you should implement to protect your instance.
 
 ### More information about TLS

@@ -202,7 +202,7 @@ The following example installs Magento with the following options:
 *  Default language is `en_US` (U.S. English)
 *  Default currency is U.S. dollars
 *  Default time zone is U.S. Central (America/Chicago)
-*  OpenSearch 1.1 is installed on `es-host.example.com` and connects on port 9200
+*  OpenSearch 1.2 is installed on `es-host.example.com` and connects on port 9200
 
 ```bash
 magento setup:install --base-url=http://127.0.0.1/magento2/ \

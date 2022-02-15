@@ -10,7 +10,7 @@ functional_areas:
 As of {{ site.data.var.ee }} and {{ site.data.var.ce }} 2.4, all installations must be configured to use [Elasticsearch][] or [OpenSearch][] as the [catalog](https://glossary.magento.com/catalog) search solution.
 
 {:.bs-callout-info}
-OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. [Migrate ElasticSearch to OpenSearch]({{page.baseurl}}/install-gde/prereq/os-migration.html) provides guidance on switching to OpenSearch.
+OpenSearch support has been added in 2.4.4. OpenSearch is a compatible fork of ElasticSearch. All instructions to configure Magento to use ElasticSearch 7 apply to OpenSearch. [Migrate from Elasticsearch to OpenSearch][] provides guidance on switching to OpenSearch.
 
 ## Supported versions {#es-spt-versions}
 
@@ -29,7 +29,7 @@ We recommend the following:
 
 All of the following tasks we discuss assume you have configured your system this way.
 
-![Search Engine diagram]({{ site.baseurl }}/common/images/elastic_config.png){:width="500px"}
+![Search Engine diagram]({{ site.baseurl }}/common/images/search-engine-config.svg){:width="500px"}
 
 The preceding diagram shows:
 
@@ -111,14 +111,14 @@ For additional information, see [Elasticsearch documentation][]
 
 ### Next
 
-*  [Configure nginx and Elasticsearch][]
-*  [Configure Apache and Elasticsearch][]
+*  [Configure nginx for your search engine][]
+*  [Configure nginx for your search engine][]
 
 <!-- Link Definitions -->
-[Configure nginx and Elasticsearch]: {{page.baseurl}}/install-gde/prereq/es-config-nginx.html
-[Configure Apache and Elasticsearch]: {{page.baseurl}}/install-gde/prereq/es-config-apache.html
-[Configure Elasticsearch stopwords]: {{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html
-[Migrating ElasticSearch to OpenSearch]: {{page.baseurl}}/install-gde/prereq/os-migration.html
+[Configure nginx for your search engine]: {{page.baseurl}}/install-gde/prereq/es-config-nginx.html
+[Configure Apache for your search engine]: {{page.baseurl}}/install-gde/prereq/es-config-apache.html
+[Configure search stopwords]: {{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html
+[Migrate from Elasticsearch to OpenSearch]: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/prepare/opensearch-migration.html
 [Elasticsearch]: https://www.elastic.co
 [OpenSearch]: https://opensearch.org/
 [Elasticsearch clustering documentation]: https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html
@@ -131,3 +131,5 @@ For additional information, see [Elasticsearch documentation][]
 [Installing Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
 [Installing OpenSearch]: https://opensearch.org/docs/latest/opensearch/install/index/
 [System Requirements]: {{page.baseurl}}/install-gde/system-requirements.html
+[OpenSearch]: https://opensearch.org/
+[Install and configure OpenSearch]: https://opensearch.org/docs/latest/opensearch/install/index/
