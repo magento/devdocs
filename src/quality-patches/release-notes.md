@@ -21,6 +21,19 @@ For information about quality patches created by the Community for {{site.data.v
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues -->
 
+## v1.1.10
+
+-  **MDVA-38728** _(for Adobe Commerce and Magento Open Source `>=2.3.2 <2.4.5`)_-Fixes the issue where mass attribute update creates URL rewrite for Default Store only after changing "Product visibility".
+-  **MDVA-43091** _(for Adobe Commerce and Magento Open Source `>=2.4.3 <2.4.4`)_-Fixes the issue where ordering a bundle product from admin in the backend gives the error "You cannot use decimal quantity for this product".
+-  **MDVA-40816** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where related product rules show products from categories not defined in the rule conditions.
+-  **MDVA-41305** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.5`)_-Fixes the issue where GraphQL mutation doesn’t return configurable product options after adding it to the wishlist.
+-  **MDVA-39181** _(for Adobe Commerce and Magento Open Source `>=2.4.1 <2.4.5`)_-Fixes the issue where related product rules show products from categories not defined in the rule conditions.
+-  **MDVA-42584** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.3`)_-Fixes the issue where configurable stock status in the backend is not updated after changing qty and stock status via Import or API.
+-  **MDVA-40175** _(for Adobe Commerce and Magento Open Source `>=2.4.0 <2.4.3`)_-Fixes the issue where "Click to change shipping method" doesn’t show radio buttons to select shipping methods in admin during reorder.
+-  **MDVA-42768** _(for Adobe Commerce and Magento Open Source `>=2.3.4 <2.4.5`)_-Fixes the issue where  Configurable product displays regular price as 0 when "Display Out-of-Stock" is Yes.
+-  **MDVA-43201** _(for Adobe Commerce and Magento Open Source `>=2.4.2 <2.4.4`)_-Fixes the issue where an error occurs in customer login when using DOB attribute with certain locales.
+-  Updated patches: MDVA-35092, MDVA-33970.
+
 ## v1.1.9
 
 -  **MDVA-38346** _(for Adobe Commerce and Magento Open Source `>=2.3.0 <2.4.5`)_-Fixes the issue where date filters are not working properly when the Magento timezone is different from the local environment timezone.

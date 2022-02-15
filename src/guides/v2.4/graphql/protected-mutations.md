@@ -43,6 +43,7 @@ Enable for Send To Friend | `sendEmailToFriend`
 Enable for PayPal PayflowPro payment form | `createPayflowProToken`
 Enable for Braintree payment form | Not applicable
 Enable for Checkout/Placing Order | `setPaymentMethodOnCart`, `setPaymentMethodAndPlaceOrder`
+Enable for Coupon Codes | `applyCouponToCart`
 
 {:.ref-header}
 Related topics

@@ -12,9 +12,9 @@ functional_areas:
   - Setup
 ---
 
-_Performance Best Practices_ provides recommendations and instructions for optimizing the performance of your production deployment. Technical users who are responsible for maintaining stores in production mode should use the best practices described in this guide to help ensure your stores are running at peak efficiency at all times.
+The _Performance Best Practices_ guide provides recommendations and instructions for optimizing the performance of your production deployment. Technical users who are responsible for maintaining stores in production mode should use the best practices described in this guide to help ensure their stores run at peak efficiency at all times.
 
 ### Assumptions
 
-*  You installed Magento using [Composer]({{ page.baseurl }}/install-gde/composer.html).
-*  You will be using this installation to run your live production instance of Magento 2.
+*  You installed Adobe Commerce or Magento Open Source using [Composer]({{ page.baseurl }}/install-gde/composer.html).
+*  You use this installation to run a live production instance of Adobe Commerce or Magento Open Source v2.
