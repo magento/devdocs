@@ -188,20 +188,19 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 
    ```config
    project:
-     appname: <Test Inc>
+     appname: "Acme Inc"
    application:
      phppath: php
-     magentopath: <APPLICATION ROOT e.g: /var/www/html >
-     database:
-       user: <APPLICATION_DB_USER>
-       password: <APPLICATION_DB_PASSWORD>
-       host: <APPLICATION_DB_HOST>
-       dbname: <APPLICATION_DB_NAME>
-       port: "3306"
-       isreplicated: <false or true>
-       tableprefix: <TABLE_PREFIX>
-     checkregistrypath: <TEMPORARY DIRECTORY e.g: /tmp/swat-agent-production >
+     magentopath: /var/www/html/example.com
+     checkregistrypath: /path/to/swat-agent/tmp
      issandbox: false
+     database:
+       user: your-adobe-commerce-db-username
+       password: your-password
+       host: 127.0.0.1
+       dbname: your-adobe-commerce-db-name
+       port: 3306
+       tableprefix:
    enableautoupgrade: true
    runchecksonstart: false
    loglevel: error
