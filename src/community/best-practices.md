@@ -42,4 +42,4 @@ You can [contribute](https://github.com/magento/devdocs/blob/master/.github/CONT
 
 Some PRs may require architectural and internal development reviews to verify and approve the contributed best practices. These reviews may require more time to complete before merging content.
 
-If you have any questions, contact us through [#DevDocs Slack](https://magentocommeng.slack.com/archives/CAN932A3H) (or [join us](https://t.co/9HImUyCmyh)) or Twitter [@MagentoDevDocs](https://twitter.com/MagentoDevDocs).
+If you have any questions, contact us through [#DevDocs Slack](https://magentocommeng.slack.com/archives/CAN932A3H) (or [join us](https://t.co/9HImUyCmyh)) or Twitter [@AdobeCommrcDocs](https://twitter.com/AdobeCommrcDocs).

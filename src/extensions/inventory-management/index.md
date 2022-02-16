@@ -138,7 +138,7 @@ For the latest, update your metapackage version:
 
 See the following guides for more information on upgrades:
 
-*  [Software Update Guide]({{site.baseurl}}/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html)
+*  [Software Update Guide](https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html)
 *  [Enable or disable modules]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html)
 
 ## Additional information

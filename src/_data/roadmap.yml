@@ -1,7 +1,15 @@
 roadmap:
   - name: In Progress
     features:
-      - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
+      - name: Accessibility improvements for storefront/admin
+        status: inProgress
+      - name: Channel manager with Walmart Marketplace (extension)
+        status: inProgress
+        type: Extension
+      - name: Express Checkout for Adobe Commerce (extension)
+        status: inProgress
+        type: Extension
+      - name: Framework updates (for example, KnockoutJS and RequireJS)
         status: inProgress
       - name: GraphQL - Admin configuration
         status: inProgress
@@ -11,6 +19,9 @@ roadmap:
         status: inProgress
       - name: OpenSearch 1.x support
         status: inProgress
+      - name: Payment services (extension)
+        status: inProgress
+        type: Extension
       - name: PayPal and Braintree updates
         status: inProgress
         type: Extension
@@ -26,17 +37,12 @@ roadmap:
         status: inProgress
       - name: Security and quality improvements
         status: inProgress
-      - name: Vendor Bundled Extensions (VBEs) – Updates
+      - name: Vendor Bundled Extensions (VBEs) – Remove (except Braintree)
         status: inProgress
         type: Extension
   - name: Planned
     features:
-      - name: Accelerated checkout powered by Bolt (extension)
-        status: Planned
-        type: Extension
-      - name: Accessibility improvements for storefront/admin
-        status: Planned
-      - name: Framework updates (e.g. KnockoutJS, RequireJS, etc.)
+      - name: Framework updates (for example, KnockoutJS and RequireJS)
         status: Planned
       - name: GraphQL - Personalization updates
         status: Planned
@@ -48,8 +54,6 @@ roadmap:
         status: Planned
       - name: Page Builder - Column grid layouts (viewports)
         status: Planned
-      - name: Payment services (extension)
-        status: Planned
       - name: PWA - Server-side rendering (SSR)
         status: Planned
       - name: PWA - Extensibility improvements (payment/ship)
@@ -58,6 +62,3 @@ roadmap:
         status: Planned
       - name: Security and quality improvements
         status: Planned
-      - name: Walmart Marketplace (extension)
-        status: Planned
-        type: Extension

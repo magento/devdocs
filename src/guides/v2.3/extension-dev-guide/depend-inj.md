@@ -85,7 +85,7 @@ class Builder
 
 ### Constructor injection
 
-In the code sample, the `Builder` class declares its dependency on the `Factory` and `Menu` classes in its constructor.
+In the code sample, the `Builder` class declares its dependency on the `Factory` class in its constructor.
 Magento uses the `di.xml` file to determine which implementations to inject into the `Builder` class.
 
 #### Optional dependencies

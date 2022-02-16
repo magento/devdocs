@@ -63,7 +63,7 @@ df -h
 
 The `-h` option displays the report using a human-readable format (KB, MB, or GB).
 
-In the following sample response, the `/data/exports/` mount shows the disk space for media and `/data/mysql/` mount shows disk space for the database:
+In the following sample response, the `/mnt/shared` mount shows the disk space for media and `/data/mysql/` mount shows disk space for the database:
 
 ```terminal
 Filesystem                                    Size  Used Avail Use% Mounted on

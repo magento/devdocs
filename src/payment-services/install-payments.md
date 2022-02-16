@@ -11,9 +11,12 @@ There are two ways to install this extension---for [{{site.data.var.ece}}](#mage
 
 ## Update minimum-stability setting
 
-Before installing the extension, you must change the `minimum-stability` requirement to `RC` (release candidate) in your `composer.json` file. You can use an IDE or your favorite text editor (like Visual Studio Code or Sublime Text).
+Before installing the extension, you can change the `minimum-stability` requirement to `RC` (release candidate) in your `composer.json` file if you want to try the release candidate version. You can use an IDE or your favorite text editor (like Visual Studio Code or Sublime Text).
 
 In your `composer.json` file, change `"minimum-stability": "stable"` to `"minimum-stability": "RC"`.
+
+{:.bs-callout-warning}
+Changing the `minimum-stability` requirement to `RC` is only mandatory if it is a release candidate. The default value should be `"minimum-stability": "stable"`.
 
 ## Install the extension
 

@@ -1,3 +1,4 @@
+---
 - label: Cloud
   children:
 
@@ -66,7 +67,12 @@
       versionless: true
 
     - label: Software Update Guide
+      url: https://experienceleague.adobe.com/docs/commerce-operations/upgrade-guide/overview.html
+      exclude_versions: ["2.3"]
+
+    - label: Software Update Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
+      exclude_versions: ["2.4"]
 
     - label: Configuration Guide
       url: /config-guide/bk-config-guide.html
@@ -82,6 +88,10 @@
 
     - label: Command-line Tools Reference
       url: /reference/cli/magento.html
+
+    - label: Tools
+      url: /quality-patches/tool.html
+      versionless: true
 
 - label: Development
   children:
@@ -160,7 +170,6 @@
           url: /mbi/docs/getting-started.html
           versionless: true
 
-
 - label: Testing
   children:
 
@@ -182,6 +191,8 @@
 
     - label: Web API Functional Testing
       url: /get-started/web-api-functional-testing.html
+
+- separator: true
 
 - label: Functional Areas
   children:

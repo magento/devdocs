@@ -18,14 +18,6 @@
   </div>
   {% endif %}
 
-  {% if page.url contains "guides/v2.4/comp-mgr/" %}
-  <div class="message-banner">
-    You must install and configure Elasticsearch 7.6.x before upgrading to {{ site.data.var.ee }} or
-    {{ site.data.var.ce }} 2.4.0. See <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html">Check the
-      catalog search engine</a> for details.
-  </div>
-  {% endif %}
-
   {% if page.url contains "config-guide/multi-master/" or page.url contains "cloud/docker/docker-split-db" %}
   <div class="message-banner">
     The split database feature was <a
@@ -44,7 +36,7 @@
 
   {% if page.url contains "guides/v2.3/" %}
   <div class="bs-callout-warning">
-    PHP 7.3 reaches end of support in December 2021 and {{site.data.var.ee}} 2.3.x reaches end of support in April 2022. You may want to consider planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance.
+    PHP 7.3 reached end of support in December 2021 and {{site.data.var.ee}} 2.3.x reaches end of support in September 2022. You may want to consider planning your upgrade now to {{site.data.var.ee}} 2.4.x and PHP 7.4.x to help maintain PCI compliance.
   </div>
   {% endif %}
 
