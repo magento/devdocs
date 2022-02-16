@@ -1,6 +1,8 @@
 name: Bug report
 description: Technical issue with https://devdocs.magento.com/
 labels: ["bug"]
+assignees:
+  - dshevtsov
 body:
   - type: markdown
     attributes:
