@@ -1,0 +1,38 @@
+name: Site feature request
+description: Propose a new functionality or an improvement of the devdocs.magento.com website or of the local development tools.
+labels: ["Site Improvements"]
+assignees:
+  - dshevtsov
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report this issue!
+        This feature request should only relate to the devdocs website itself or other non-content request such as rake commands.
+        If you are having an issue with the actual product (as opposed to the docs), search the [Help Center](https://support.magento.com/hc/en-us) or report it as a [codebase issue](https://devdocs.magento.com/contributor-guide/contributing.html#report).
+        Requests that do not comply with our Code of Conduct or do not contain enough information may be closed at the maintainers' discretion.
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the feature you are requesting.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: textarea
+    attributes:
+      label: What feature should be added?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What is the expected behavior?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: How will this feature improve the user experience?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What would a solution for this issue look like?
