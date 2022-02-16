@@ -107,4 +107,7 @@ For example, if your store sells some organic products, you might have a custom 
 
 To make sure a custom product attribute is available when you render the recommendation unit on the page, set the `Used in Product Listing` property to `Yes` in the [Product Attributes](https://docs.magento.com/user-guide/stores/attribute-product-create.html#step-4-describe-the-storefront-properties) page in the Admin.
 
-When this property is set, that custom product attribute value is included in the JSON payload when the recommendations service fetches the product metadata. You can then apply custom storefront styling based on this attribute value.
+When this property is set, the JSON payload includes an `attributes` object that contains an array of attribute codes and values. You can then apply custom storefront styling based on these attribute values.
+
+{:.bs-callout-info}
+Product attribute changes can take up to an hour to appear in the JSON payload.
