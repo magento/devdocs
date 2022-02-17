@@ -7,6 +7,9 @@ title: Magento Open Source 2.4.4 Release Notes
 This release includes almost 250 quality fixes and enhancements.
 
 {:.bs-callout-info}
+Thanks to our partner [Atwix](https://www.atwix.com/) for their substantial contributions to making our 2.4.4 framework compatible with PHP 8.1.
+
+{:.bs-callout-info}
 Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ce }} 2.4.4 contains backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 ## Other release information
@@ -603,6 +606,66 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 <!--- magento/magento2/pull/27212-->
 
 *  Resolved consistency issues in merged `indexer.xml` files. The allowed values in `classType` are now the same in unmerged and merged `indexer.xml` files. [GitHub-29609](https://github.com/magento/magento2/issues/29609)
+
+### Infrastructure
+
+<!--- AC-1172-->
+
+*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for Magento 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
+
+<!--- magento/partners-magento2ee/pull/573-->
+
+*  Refactored the codebase to correct usage of the keyword `match`, which is a reserved keyword in PHP 8.x. [GitHub-33626](https://github.com/magento/magento2/issues/33626)
+
+*  HTML tags are now nested and closed properly to meet standards in JQuery 3.5.x for non-void elements including custom elements. <!--- AC-1942-->
+
+<!--- magento/magento2/pull/34234)-->
+
+*  Fixed `abs()` and `round()` functions for compatibility with PHP7.x and PHP8.x  [GitHub-34322](https://github.com/magento/magento2/issues/34322)
+
+<!--- AC-719-->
+
+*  Updating `symfony/console` no longer causes failure when running `bin/magento setup:di:compile`. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
+
+<!--- magento/magento2/pull/34175-->
+
+*  Corrected the restriction for the `colinmollenhour/cache-backend-redis` Composer dependency. [GitHub-34177](https://github.com/magento/magento2/issues/34177)
+
+<!--- magento/magento2/pull/33932 magento/magento2/pull/33992-->
+
+*  The codebase has been refactored to remove calls to deprecated methods of `phpunit/phpunit`. [GitHub-33916](https://github.com/magento/magento2/issues/33916)
+
+<!--- MC-42960-->
+
+*  {{ site.data.var.ee }} now displays an informative error when an administrator with a read-only `pubs/media` tries to access the product details page for a product that includes images. Previously, {{ site.data.var.ee }} threw a PHP error. [GitHub-32819](https://github.com/magento/magento2/issues/32819)
+
+<!--- AC-853-->
+
+*  All member-level `@api` annotations have been moved to their class throughout the codebase.
+
+<!--- AC-1977-->
+
+*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` ({{ site.data.var.ce }}) to `Magento/GiftCardSampleData` ({{ site.data.var.ee }}). This has resolved problems installing Magento Open Source with sample data on PHP8.1.
+
+<!--- AC-1001-->
+
+*  Marked interfaces throughout the Adobe Stock Integration codebase with `@api` as needed. [GitHub-32875](https://github.com/magento/magento2/issues/32875)
+
+<!--- AC-1770-->
+
+*  Integers and floats in result sets are now returned using native PHP types instead of strings when using emulated prepared statements. [GitHub-34625](https://github.com/magento/magento2/issues/34625)
+
+<!--- AC-1697-->
+
+*  Auto-creation of arrays from false values have been disabled to ensure compatibility with PHP 8.1.
+
+<!--- AC-1338-->
+
+*  The helper `Magento\Payment\Helper\Data` no longer creates new layouts in constructors. Previously, when this helper was used in custom commands without specifying an area code,  {{ site.data.var.ee }} threw an error. [GitHub-33908](https://github.com/magento/magento2/issues/33908)
+
+<!--- AC-1077-->
+
+*  You can now pass a `data` argument to a block instance constructor by `di.xml`.
 
 ### Logging
 
