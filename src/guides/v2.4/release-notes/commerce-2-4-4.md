@@ -8,6 +8,9 @@ title: Adobe Commerce 2.4.4 Release Notes
 This release includes almost 250 quality fixes and enhancements.
 
 {:.bs-callout-info}
+Thanks to our partner [Atwix](https://www.atwix.com/) for their substantial contributions to making our 2.4.4 framework compatible with PHP 8.1.
+
+{:.bs-callout-info}
 Releases may contain backward-incompatible changes (BIC). {{ site.data.var.ee }} 2.4.4 contains backward-incompatible changes. To review these backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 ## Other release information
@@ -748,6 +751,201 @@ We are fixing hundreds of issues in the {{ site.data.var.ee }} 2.4.4 core code. 
 
 *  Resolved consistency issues in merged `indexer.xml` files. The allowed values in `classType` are now the same in unmerged and merged `indexer.xml` files. [GitHub-29609](https://github.com/magento/magento2/issues/29609)
 
+### Infrastructure
+
+<!--- AC-1172-->
+
+*  The unsupported `str_contains` method has been replaced with a supported function. This was a known issue for Magento 2.4.3. [GitHub-33680](https://github.com/magento/magento2/issues/33680)
+
+<!--- magento/partners-magento2ee/pull/573-->
+
+*  Refactored the codebase to correct usage of the keyword `match`, which is a reserved keyword in PHP 8.x. [GitHub-33626](https://github.com/magento/magento2/issues/33626)
+
+*  HTML tags are now nested and closed properly to meet standards in JQuery 3.5.x for non-void elements including custom elements. <!--- AC-1942-->
+
+<!--- magento/magento2/pull/34234)-->
+
+*  Fixed `abs()` and `round()` functions for compatibility with PHP7.x and PHP8.x  [GitHub-34322](https://github.com/magento/magento2/issues/34322)
+
+<!--- AC-719-->
+
+*  Updating `symfony/console` no longer causes failure when running `bin/magento setup:di:compile`. [GitHub-33595 ](https://github.com/magento/magento2/issues/33595)
+
+<!--- magento/magento2/pull/34175-->
+
+*  Corrected the restriction for the `colinmollenhour/cache-backend-redis` Composer dependency. [GitHub-34177](https://github.com/magento/magento2/issues/34177)
+
+<!--- magento/magento2/pull/33932 magento/magento2/pull/33992-->
+
+*  The codebase has been refactored to remove calls to deprecated methods of `phpunit/phpunit`. [GitHub-33916](https://github.com/magento/magento2/issues/33916)
+
+<!--- MC-42960-->
+
+*  {{ site.data.var.ee }} now displays an informative error when an administrator with a read-only `pubs/media` tries to access the product details page for a product that includes images. Previously, {{ site.data.var.ee }} threw a PHP error. [GitHub-32819](https://github.com/magento/magento2/issues/32819)
+
+<!--- AC-853-->
+
+*  All member-level `@api` annotations have been moved to their class throughout the codebase.
+
+<!--- AC-1977-->
+
+*  `gift-card Cms` widget data has been moved from `Magento/WidgetSampleData` ({{ site.data.var.ce }}) to `Magento/GiftCardSampleData` ({{ site.data.var.ee }}). This has resolved problems installing Magento Open Source with sample data on PHP8.1.
+
+<!--- AC-1001-->
+
+*  Marked interfaces throughout the Adobe Stock Integration codebase with `@api` as needed. [GitHub-32875](https://github.com/magento/magento2/issues/32875)
+
+<!--- AC-1770-->
+
+*  Integers and floats in result sets are now returned using native PHP types instead of strings when using emulated prepared statements. [GitHub-34625](https://github.com/magento/magento2/issues/34625)
+
+<!--- AC-1697-->
+
+*  Auto-creation of arrays from false values have been disabled to ensure compatibility with PHP 8.1.
+
+<!--- AC-1338-->
+
+*  The helper `Magento\Payment\Helper\Data` no longer creates new layouts in constructors. Previously, when this helper was used in custom commands without specifying an area code,  {{ site.data.var.ee }} threw an error. [GitHub-33908](https://github.com/magento/magento2/issues/33908)
+
+<!--- AC-1077-->
+
+*  You can now pass a `data` argument to a block instance constructor by `di.xml`.
+
+#### Upgrades for PHP 8.1 compatibility
+
+<!--- AC-1605-->
+
+*  Functions that have been deprecated in PHP 8.1 have been removed from the codebase. [GitHub-34497](https://github.com/magento/magento2/issues/34497)
+
+*  Added return type declarations to internal methods with incomplete return types for compatibility with PHP 8.1. [GitHub-34498](https://github.com/magento/magento2/issues/34498) <!--- AC-1606-->
+
+<!--- AC-1147-->
+
+*  Updated the root `composer.json` metapackage and  `composer.json` file for each module to PHP 8.1. [GitHub-34009](https://github.com/magento/magento2/issues/34009)
+
+<!--- AC-1650-->
+
+*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`.
+
+*  Third-party `jquery.tabs` library (latest version)
+
+*  NPM packages (latest version) [GitHub-33512](https://github.com/magento/magento2/issues/33512), [GitHub-33972](https://github.com/magento/magento2/issues/33972) <!--- magento/magento2/pull/33515 33998-->
+
+*  `jquery.cookie` third-party library (latest version) [GitHub-34427](https://github.com/magento/magento2/issues/34427) <!--- AC-101-->
+
+*  `aws-sdk-php`  [GitHub-34751](https://github.com/magento/magento2/issues/34751) <!--- AC-1924-->
+
+*  `magento/semver`  [GitHub-34538](https://github.com/magento/magento2/issues/34538) <!--- magento/magento-semver/pull/68-->
+
+#### Composer dependency updates
+
+The following dependencies have been updated for PHP 8.1 compatibility:
+
+<!--- AC-1750 1751 1752-->
+
+*  `phpgt/dom` (most recent 2.x version) [GitHub-34633](https://github.com/magento/magento2/issues/34633)
+
+<!--- magento/magento2/pull/34788-->
+
+*  `elasticsearch/elasticsearch`  [GitHub-34533](https://github.com/magento/magento2/issues/34533)
+
+<!--- magento/magento2/pull/34555-->
+
+*  `phpstan/phpstan` (v1.x) [GitHub-34604](https://github.com/magento/magento2/issues/34604)
+
+<!--- magento/magento2/pull/34788-->
+
+*  `fgrosse/phpasn1` [GitHub-34591](https://github.com/magento/magento2/issues/34591)
+
+<!--- AC-1258-->
+
+*  `endroid/qr-code` [GitHub-34101](https://github.com/magento/magento2/issues/34101)
+
+<!--- AC-1304-->
+
+*  Updated dependency versions for `infra-tools` and MHCI to the latest compatible version in sync with the root `composer.json` file. [GitHub-34133](https://github.com/magento/magento2/issues/34133)
+
+<!--- magento/magento2/pull/33762-->
+
+*  `phpunit/phpunit` (v9.3.0). (Updating the `phpunit/phpunit` Composer dependency to the latest version has eliminated integration test errors.) [GitHub-33761](https://github.com/magento/magento2/issues/33761), [GitHub-33596](https://github.com/magento/magento2/issues/33596)
+
+<!--- AC-622-->
+
+*  `squizlabs/php_codesniffer` (v3.6.0) [GitHub-33832](https://github.com/magento/magento2/issues/33832)
+
+*  `ramsey/uuid` Composer dependency (v4.2.0) [GitHub-33832](https://github.com/magento/magento2/issues/33832)
+
+<!--- AC-301-->
+
+*  `phpseclib/phpseclib`  (v3.0.8) [GitHub-32864](https://github.com/magento/magento2/issues/32864)
+
+<!--- magento/magento2/pull/33363-->
+
+*  `phpseclib/mcrypt_compat`  (v2.0)  [GitHub-32865](https://github.com/magento/magento2/issues/32865)
+
+<!--- magento/magento2/pull/33605)-->
+
+*  `laminas/laminas-code` (v4.4.2) [GitHub-33509](https://github.com/magento/magento2/issues/33509), [GitHub-34543](https://github.com/magento/magento2/issues/34543)
+
+<!--- ENGCOM-8667-->
+
+*  `Less.js` (v3.13.1) [GitHub-32845](https://github.com/magento/magento2/issues/32845)
+
+<!--- magento/magento2/pull/33860-->
+
+*  `guzzlehttp/guzzle` (v7.3.0)  [GitHub-32869](https://github.com/magento/magento2/issues/32869)
+
+<!--- magento/magento2/pull/33871-->
+
+*  `jquery-validate` third-party library  [GitHub-33853](https://github.com/magento/magento2/issues/33853)
+
+<!--- magento/magento2/pull/34367)-->
+
+*  `laminas/laminas-server`, `laminas/laminas-view` [GitHub-34240](https://github.com/magento/magento2/issues/34240), [GitHub-34214](https://github.com/magento/magento2/issues/34214)
+
+<!--- magento/magento2/pull/34396)-->
+
+*  `pelago/emogrifier` (v6.x) [GitHub-34374](https://github.com/magento/magento2/issues/34374)
+
+<!--- AC-1521 1650-->
+
+*  Updated required PHP versions for each module in the root `composer.json/metapackage` and `composer.json` file for each module to `~7.4.0||~8.0.0||~8.1.0`.
+
+<!--- AC-1366-->
+
+*  `laminas/laminas-math` [GitHub-34242](https://github.com/magento/magento2/issues/34242)
+
+[GitHub-34700](https://github.com/magento/magento2/issues/34700)
+
+#### Library removals and deprecations
+
+*  The following libraries have been removed because all browsers that {{ site.data.var.ee }} 2.4.x supports have built-in support for this functionality:
+
+   *  `es6-collections.js`   <!--- AC-18-->
+   *  `MutationObserver.js` <!--- AC-15-->
+   *  `Modernizr` <!--- AC-12-->
+   *  `FormData.js`
+
+*  Removed the unused `jquery.hoverIntent` JavaScript library. [GitHub-33732](https://github.com/magento/magento2/issues/33732) <!--- AC-97-->
+
+*  `lib/internal/Magento/Framework/Filter/Money.php` has been deprecated. It contains the `money_format()` function, which was removed in PHP 8.x. [GitHub-33870](https://github.com/magento/magento2/issues/33870)<!--- magento/magento2/pull/34366)-->
+
+*  Removed the deprecated, unsupported `grunt-autoprefixer` package. [GitHub-34037](https://github.com/magento/magento2/issues/34037) <!--- magento/magento2/pull/34032-->
+
+#### Library upgrades
+
+*  The following libraries have been upgraded to more recent versions:
+
+   *  `script.aculo.us` <!--- AC-363-->
+   *  `Chart.js`  <!--- AC-361-->
+   *  `moment.js` <!--- AC-11-->
+   *  `moment-timezone-with-data.js`   <!--- AC-10-->
+   *  `matchMedia.js` <!--- AC-8-->
+   *  `underscore.js`  <!--- AC-13-->
+   *  `PrototypeJS`  <!--- AC-17-->
+   *  `RequireJS`
+   *  `LessCSS`
+
 ### Logging
 
 <!--- MC-42360-->
@@ -1147,6 +1345,10 @@ Repetitive actions have been replaced with action groups in these tests:
 
 *  Merchants can now test the shopper experience of the country in which the shopper is located, rather than the merchant’s location.
 
+<!--- AC-266-->
+
+*  Integration test memory consumption has been reduced, which improves test performance and reduces the time required for test completion.
+
 <!--- MC-41955-->
 
 *  Added a test to verify custom date attribute format for storefront and Admin.
@@ -1339,7 +1541,7 @@ The following unit tests have been refactored to use `PHPUnit` instead of `Aspec
 
 *  The totals retrieved by the `PUT /V1/guest-carts/:cartId/collect-totals` request are now updated by the correct `shippingMethod`. [GitHub-18508](https://github.com/magento/magento2/issues/18508)
 
-<!--- MC-30627-->
+<!--- MC-30627 AC-796-->
 
 *  Adding a new deserializer to the REST API no longer removes other deserializers. Previously, the REST API accepted a new content type, but CORE defined content types for APIs no longer worked and returned a 400 error. [GitHub-26433](https://github.com/magento/magento2/issues/26433)
 
