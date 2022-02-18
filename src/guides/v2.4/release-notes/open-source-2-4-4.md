@@ -677,13 +677,7 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 *  The auto-creation of arrays from false values is no longer permitted. [GitHub-34499](https://github.com/magento/magento2/issues/34499), [GitHub-34589](https://github.com/magento/magento2/issues/34589)
 
-### Locales
-
-<!--- AC-285-->
-
-*  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ce }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
-
-### Magento Coding Standard
+### {{ site.data.var.ee }} coding standard
 
 <!--- magento/magento-coding-standard/pull/219-->
 
@@ -691,19 +685,19 @@ We are fixing hundreds of issues in the {{ site.data.var.ce }} 2.4.4 core code. 
 
 <!--- magento/magento2/pull/33858-->
 
-*  Updated the `webonyx/graphql-php` dependency to version ^14.9 in the Magento Coding Standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
+*  Updated the `webonyx/graphql-php` dependency to version ^14.9 in the {{ site.data.var.ee }} coding standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
 
 <!--- magento/magento-coding-standard/pull/322-->
 
-*  Added new sniff `Magento2.PHP.ArrayAutovivification` to the Magento Coding Standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
+*  Added new sniff `Magento2.PHP.ArrayAutovivification` to the {{ site.data.var.ee }} coding standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
 
 <!--- magento/magento-coding-standard/pull/325-->
 
-*  Added new sniff `Magento2.Functions.DeprecatedFunction` to the Magento Coding Standard. [GitHub-34547](https://github.com/magento/magento2/issues/34547)
+*  Added new sniff `Magento2.Functions.DeprecatedFunction` to the {{ site.data.var.ee }} coding standard. [GitHub-34547](https://github.com/magento/magento2/issues/34547)
 
 <!--- magento/magento-coding-standard/pull/326-->
 
-*  Added deprecated functions to sniff `Magento2.Functions.DiscouragedFunction` in the Magento Coding Standard. [GitHub-34548](https://github.com/magento/magento2/issues/34548)
+*  Added deprecated functions to sniff `Magento2.Functions.DiscouragedFunction` in the {{ site.data.var.ee }} coding standard. [GitHub-34548](https://github.com/magento/magento2/issues/34548)
 
 <!--- magento/magento-coding-standard/pull/335-->
 

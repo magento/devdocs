@@ -156,7 +156,16 @@ PWA Studio v.12.3.0 is compatible with {{ site.data.var.ee }} 2.4.4. It includes
 
 ### Accessibility updates
 
-This release brings enhanced conformance to standard accessibility guidelines. It includes improved tooltips, accessible naming and tagging of screen elements, and redesigned icons and buttons. Over 80% of these fixes help improve the shopping experience for users Without Vision or Limited Vision.
+This release brings enhanced conformance to standard accessibility guidelines. These enhancements improve the experience of users with limited vision or with limited language, cognitive, and learning abilities, and the performance of Screen Reader tools.
+
+Additions include tooltip triggers/links with text and accurate, task-focused, visible labels for inputs.
+
+Feature updates include:
+
+*  Edit buttons now have unique text.
+*  Admin buttons now have accessible, descriptive purpose of the button in unique terms in adherence to AA standards
+*  Icon images that convey meaning to provide a textual alternative.
+*  Enhanced contrast in Admin buttons and form fields in user interface to a contrast ratio of at least 3:1 with adjacent colors.
 
 ### Page Builder
 
@@ -956,13 +965,7 @@ The following dependencies have been updated for PHP 8.1 compatibility:
 
 *  The auto-creation of arrays from false values is no longer permitted. [GitHub-34499](https://github.com/magento/magento2/issues/34499), [GitHub-34589](https://github.com/magento/magento2/issues/34589)
 
-### Locales
-
-<!--- AC-285-->
-
-*  The `UserExpiration` validator no longer fails with `de_DE` and `uk_UA` locales. Previously, {{ site.data.var.ee }} threw an error when an administrator tried to set an expiration date when creating a new user from the Admin with locales set to `de_DE` or `uk_UA`. [GitHub-32497](https://github.com/magento/magento2/issues/32497)
-
-### Magento Coding Standard
+### {{ site.data.var.ee }} coding standard
 
 <!--- magento/magento-coding-standard/pull/219-->
 
@@ -970,19 +973,19 @@ The following dependencies have been updated for PHP 8.1 compatibility:
 
 <!--- magento/magento2/pull/33858-->
 
-*  Updated the `webonyx/graphql-php` dependency to version ^14.9 in the Magento Coding Standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
+*  Updated the `webonyx/graphql-php` dependency to version ^14.9 in the {{ site.data.var.ee }} coding standard repository. [GitHub-32863](https://github.com/magento/magento2/issues/32863)
 
 <!--- magento/magento-coding-standard/pull/322-->
 
-*  Added new sniff `Magento2.PHP.ArrayAutovivification` to the Magento Coding Standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
+*  Added new sniff `Magento2.PHP.ArrayAutovivification` to the {{ site.data.var.ee }} coding standard to identify the auto-creation of arrays from a false value. [GitHub-34509](https://github.com/magento/magento2/issues/34509)
 
 <!--- magento/magento-coding-standard/pull/325-->
 
-*  Added new sniff `Magento2.Functions.DeprecatedFunction` to the Magento Coding Standard. [GitHub-34547](https://github.com/magento/magento2/issues/34547)
+*  Added new sniff `Magento2.Functions.DeprecatedFunction` to the {{ site.data.var.ee }} coding standard. [GitHub-34547](https://github.com/magento/magento2/issues/34547)
 
 <!--- magento/magento-coding-standard/pull/326-->
 
-*  Added deprecated functions to sniff `Magento2.Functions.DiscouragedFunction` in the Magento Coding Standard. [GitHub-34548](https://github.com/magento/magento2/issues/34548)
+*  Added deprecated functions to sniff `Magento2.Functions.DiscouragedFunction` in the {{ site.data.var.ee }} coding standard. [GitHub-34548](https://github.com/magento/magento2/issues/34548)
 
 <!--- magento/magento-coding-standard/pull/335-->
 
