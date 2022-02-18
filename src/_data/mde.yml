@@ -973,7 +973,6 @@ extensions:
       -
         name: 1.1.7
         support:
-
           2.4.3: not supported
           2.4.2: not supported
           2.4.1: compatible
