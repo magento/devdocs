@@ -186,7 +186,7 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 
 1. Create the `config.yaml` file with the following contents.
 
-   ```config
+   ```yaml
    project:
      appname: "Acme Inc"
    application:
