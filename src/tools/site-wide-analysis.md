@@ -188,26 +188,23 @@ If you do not want to use our [shell script](https://github.com/magento-swat/ins
 
    ```yaml
    project:
-     appname: "Acme Inc"
+     appname: "Acme Inc" # Company or site name that you provided when installing the agent
    application:
-     phppath: php
-     magentopath: /var/www/html/example.com
-     checkregistrypath: /path/to/swat-agent/tmp
-     issandbox: false
+     phppath: php # Path to your PHP CLI interpreter (usually /usr/bin/php)
+     magentopath: /var/www/html/example.com # Root directory where your Adobe Commerce application is installed (usually /var/www/html)
+     checkregistrypath: /path/to/swat-agent/tmp # Temporary directory for the agent (usually /usr/local/swat-agent/tmp)
+     issandbox: false # Enabling sandbox mode to use the agent on staging environment (true or false)
      database:
-       user: your-adobe-commerce-db-username
-       password: your-password
-       host: 127.0.0.1
-       dbname: your-adobe-commerce-db-name
-       port: 3306
-       tableprefix:
-   enableautoupgrade: true
-   runchecksonstart: false
-   loglevel: error
+       user: your-adobe-commerce-db-username # Database user for your Adobe Commerce installation
+       password: your-password # Database password for the specified user for your Adobe Commerce installation
+       host: 127.0.0.1 # Database host for your Adobe Commerce installation
+       dbname: your-adobe-commerce-db-name # Database name for your Adobe Commerce installation
+       port: 3306 # Database port for your Adobe Commerce installation (usually 3306)
+       tableprefix: # Table Prefix for your Adobe Commerce installation (default value: empty)
+   enableautoupgrade: true # Enables automatic upgrade (restart required after an upgrade; agent does not check for upgrades if the option is disabled; true or false)
+   runchecksonstart: true # Collect data on the first run (Usually 1)
+   loglevel: error # Determines what events are logged based on severity (usually error)
    ```
-
-   {:.bs-callout-info}
-   See [configuration reference](#configuration-reference) for descriptions and recommended values for all properties.
 
 1. Verify the installation.
 
